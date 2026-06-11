@@ -13,7 +13,7 @@ export function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <Shield className="h-4 w-4" />
               </div>
-              <span>InterstateMovers USA</span>
+              <span>Move Trust Hub</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground max-w-[220px]">
               Independent directory helping Americans choose trusted interstate movers since 2024.
@@ -56,7 +56,7 @@ export function Footer() {
               This site is <strong>not affiliated</strong> with any moving company. We earn no referral commissions.
             </p>
             <div className="mt-4 text-xs">
-              © {year} InterstateMovers USA. Educational &amp; informational purposes only.
+              © {year} Move Trust Hub. Educational &amp; informational purposes only.
             </div>
           </div>
         </div>

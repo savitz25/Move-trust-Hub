@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60" fill="none">
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield / Trust Icon -->
+  <g transform="translate(8, 8)">
+    <!-- Shield outline -->
+    <path d="M22 2 L42 10 V30 Q32 48 22 42 Q12 48 2 30 V10 Z" fill="url(#brandGrad)" stroke="#0F172A" stroke-width="1.5"/>
+    <!-- Inner check / hub mark -->
+    <path d="M10 22 L17 29 L32 14" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Brand Text -->
+  <text x="58" y="32" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#0F172A" letter-spacing="-0.5">Move Trust</text>
+  <text x="58" y="52" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" fill="#14B8A6" letter-spacing="-0.3">Hub</text>
+</svg>

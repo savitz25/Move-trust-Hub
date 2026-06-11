@@ -1,5 +1,5 @@
 -- =====================================================
--- InterstateMovers USA - Supabase PostgreSQL Schema
+-- Move Trust Hub - Supabase PostgreSQL Schema
 -- =====================================================
 -- Run this in Supabase SQL Editor to set up your database.
 -- Then use the seed script or Supabase dashboard to populate data.

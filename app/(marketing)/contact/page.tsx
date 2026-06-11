@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 
-export const metadata = { title: 'Contact InterstateMovers USA' };
+export const metadata = { title: 'Contact Move Trust Hub' };
 
 export default function ContactPage() {
   return (
@@ -12,7 +12,7 @@ export default function ContactPage() {
           <p>This is an informational directory. For questions about specific moves, please contact the moving company directly.</p>
           <div>
             <strong>General inquiries &amp; data corrections</strong><br />
-            <a href="mailto:hello@interstatemoversusa.com" className="text-primary">hello@interstatemoversusa.com</a>
+            <a href="mailto:hello@movetrusthub.com" className="text-primary">hello@movetrusthub.com</a>
           </div>
           <div>
             <strong>Press / Partnerships</strong><br />

@@ -1,4 +1,4 @@
-// Core domain types for InterstateMovers USA
+// Core domain types for Move Trust Hub
 
 export type ServiceType = 
   | 'Full Service'
@@ -98,7 +98,7 @@ export interface DirectoryFilters {
   maxPrice: number;
   services: ServiceType[];
   coverage: Region | 'Any';
-  bbbMin: string;
+  bbbMin?: string;
   onlyFullService: boolean;
   onlyVerified: boolean;
   specialties: string[];

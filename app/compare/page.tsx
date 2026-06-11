@@ -3,7 +3,7 @@ import { CompareClient } from '@/components/compare/compare-client';
 import { getAllCompanies } from '@/lib/data';
 
 export const metadata = {
-  title: 'Compare Interstate Movers Side-by-Side',
+  title: 'Compare Movers Side-by-Side | Move Trust Hub',
   description: 'Select up to 4 interstate moving companies and compare reputation scores, ratings, pricing, licensing, services, and complaint ratios in one table.',
 };
 

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Search, Shield, FileText } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { QuoteModal } from '@/components/quote-modal';
@@ -23,14 +23,11 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2.5 font-semibold text-xl tracking-tighter">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Shield className="h-5 w-5" />
-            </div>
-            <span>InterstateMovers <span className="text-primary">USA</span></span>
+          <Link href="/" className="flex items-center gap-2 font-semibold text-xl tracking-tighter">
+            <img src="/logo.svg" alt="Move Trust Hub" className="h-8 w-auto" />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-medium tracking-widest text-muted-foreground">
-            VERIFIED DIRECTORY
+            TRUSTED DIRECTORY
           </div>
         </div>
 

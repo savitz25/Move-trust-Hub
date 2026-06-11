@@ -12,14 +12,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/about',
     '/contact',
   ].map((route) => ({
-    url: `https://interstatemoversusa.com${route}`,
+    url: `https://www.movetrusthub.com${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1 : 0.8,
   }));
 
   const companyPages = companies.map((company) => ({
-    url: `https://interstatemoversusa.com/companies/${company.slug}`,
+    url: `https://www.movetrusthub.com/companies/${company.slug}`,
     lastModified: new Date(company.lastUpdated),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

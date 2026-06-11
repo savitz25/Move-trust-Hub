@@ -90,7 +90,7 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <div className="text-primary font-semibold tracking-widest text-sm mb-2">3 SIMPLE STEPS</div>
-          <h2 className="text-4xl font-semibold tracking-tight">How InterstateMovers USA Works</h2>
+          <h2 className="text-4xl font-semibold tracking-tight">How Move Trust Hub Works</h2>
           <p className="mt-3 text-muted-foreground max-w-md mx-auto">We make finding and booking the right interstate mover easy and transparent.</p>
         </div>
 

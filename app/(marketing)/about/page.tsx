@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About InterstateMovers USA & Trust Center',
+  title: 'About Move Trust Hub & Trust Center',
   description: 'Our mission, how we calculate reputation scores, data sources, and important disclaimers.',
 };
 
@@ -13,7 +13,7 @@ export default function AboutPage() {
 
       <div className="prose prose-neutral dark:prose-invert mt-8">
         <h2>Our Mission</h2>
-        <p>InterstateMovers USA exists to bring transparency to the long-distance moving industry. We aggregate publicly available data (FMCSA, BBB, review platforms) and present it in a clean, comparable format without paid placements or referral kickbacks.</p>
+        <p>Move Trust Hub exists to bring transparency to the long-distance moving industry. We aggregate publicly available data (FMCSA, BBB, review platforms) and present it in a clean, comparable format without paid placements or referral kickbacks.</p>
 
         <h2>How Reputation Score Is Calculated</h2>
         <ul>

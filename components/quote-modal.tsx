@@ -52,7 +52,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     // In a real marketing site, this would POST to your CRM, email service, or Supabase leads table
     console.log('Lead captured:', {
       ...formData,
-      source: 'interstatemovers-usa',
+      source: 'move-trust-hub',
       timestamp: new Date().toISOString(),
     });
 

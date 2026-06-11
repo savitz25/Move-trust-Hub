@@ -192,7 +192,7 @@ export default async function CompanyProfilePage({ params }: Props) {
 
           <Card className="bg-muted/30">
             <CardContent className="pt-5 text-xs leading-relaxed text-muted-foreground">
-              This profile is for informational purposes only. InterstateMovers USA is not affiliated with {company.name}. 
+              This profile is for informational purposes only. Move Trust Hub is not affiliated with {company.name}. 
               Always obtain multiple in-home or virtual estimates and verify current licensing directly with FMCSA and your state authorities.
             </CardContent>
           </Card>

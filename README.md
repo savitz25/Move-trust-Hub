@@ -1,4 +1,4 @@
-# InterstateMovers USA
+# Move Trust Hub
 
 **The most trusted, transparent directory for comparing interstate moving companies in the United States.**
 

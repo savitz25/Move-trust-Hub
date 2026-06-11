@@ -22,12 +22,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://interstatemoversusa.com'),
+  metadataBase: new URL('https://www.movetrusthub.com'),
   title: {
-    default: 'InterstateMovers USA | Free Quotes from Top Long-Distance Movers',
-    template: '%s | InterstateMovers USA',
+    default: 'Move Trust Hub | Trusted Directory for Interstate & Long-Distance Movers',
+    template: '%s | Move Trust Hub',
   },
-  description: 'Get free personalized quotes from trusted interstate moving companies. Compare movers, estimate your move with our free calculator, and book with confidence.',
+  description: 'Find trusted interstate moving companies. Compare movers by reputation, price, reviews & FMCSA data. Get free quotes and book with confidence at Move Trust Hub.',
   keywords: [
     'interstate movers',
     'moving companies USA',
@@ -35,21 +35,22 @@ export const metadata: Metadata = {
     'compare moving companies',
     'FMCSA licensed movers',
     'long distance movers',
+    'trusted movers directory',
+    'move trust hub',
     'Allied Van Lines',
     'United Van Lines',
-    'North American Van Lines',
     'moving reviews',
   ],
-  authors: [{ name: 'InterstateMovers USA' }],
+  authors: [{ name: 'Move Trust Hub' }],
   openGraph: {
-    title: 'InterstateMovers USA — Trusted Directory & Reviews for Interstate Movers',
-    description: 'Research, compare, and choose reputable interstate moving companies with verified reviews, FMCSA data, and transparent pricing.',
-    images: [{ url: '/og-image.png' }],
+    title: 'Move Trust Hub — Trusted Directory & Reviews for Interstate Movers',
+    description: 'Research, compare, and choose reputable interstate moving companies with verified reviews, FMCSA data, and transparent pricing. Your hub for trusted movers.',
+    images: [{ url: '/logo.jpg' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'InterstateMovers USA',
+    title: 'Move Trust Hub',
     description: 'The most trusted directory for comparing interstate moving companies.',
   },
   robots: {
