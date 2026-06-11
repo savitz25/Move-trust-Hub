@@ -38,3 +38,15 @@ next-env.d.ts
 .idea/
 .vscode/
 *.swp
+
+
+# Local logs and install artifacts
+*.log
+dev-server*.log
+node-install.log
+npm-*.log
+nodever.txt
+npmver.txt
+winget*.txt
+winget-output.txt
+winget2.txt
