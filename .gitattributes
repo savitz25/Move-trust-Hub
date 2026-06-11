@@ -1,0 +1,69 @@
+# Auto-detect text files and normalize to LF in the repository,
+# but keep the working tree with the platform default (CRLF on Windows).
+* text=auto
+
+# Explicitly force LF for source code and text files (recommended for JS/TS/Next.js projects)
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.mdx text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.less text eol=lf
+*.html text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+
+# Config files that should stay LF
+*.config.* text eol=lf
+tailwind.config.ts text eol=lf
+next.config.ts text eol=lf
+tsconfig.json text eol=lf
+postcss.config.mjs text eol=lf
+
+# Lockfiles
+package-lock.json text eol=lf
+yarn.lock text eol=lf
+pnpm-lock.yaml text eol=lf
+
+# Shell scripts - LF (even on Windows)
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Windows-specific batch files - CRLF is traditional
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files - do not modify
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.mp3 binary
+*.mp4 binary
+*.mov binary
+*.xlsx binary
+
+# Environment and sensitive files (already mostly ignored)
+.env* text eol=lf
+*.pem binary
+
+# Generated / build artifacts (already ignored)
+*.tsbuildinfo binary
+next-env.d.ts text eol=lf

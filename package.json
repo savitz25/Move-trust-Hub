@@ -1,6 +1,14 @@
 {
   "name": "interstatemovers-usa",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/savitz25/Move-trust-Hub.git"
+  },
+  "homepage": "https://github.com/savitz25/Move-trust-Hub#readme",
+  "bugs": {
+    "url": "https://github.com/savitz25/Move-trust-Hub/issues"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
