@@ -1,0 +1,209 @@
+import { notFound } from 'next/navigation';
+import { getCompanyBySlugAsync, getReviews } from '@/lib/data';
+import { StarRating } from '@/components/ui/star-rating';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
+import { ReviewsSection } from '@/components/reviews/reviews-section';
+import { CoverageMap } from '@/components/map/coverage-map';
+import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
+
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const company = await getCompanyBySlugAsync(slug);
+  if (!company) return { title: 'Company Not Found' };
+
+  return {
+    title: `${company.name} — Reviews, Pricing & FMCSA Info`,
+    description: `${company.name} interstate mover profile. ${company.overallRating}★ from ${company.reviewCount} reviews. USDOT ${company.usdotNumber}. BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
+  };
+}
+
+export default async function CompanyProfilePage({ params }: Props) {
+  const { slug } = await params;
+  const company = await getCompanyBySlugAsync(slug);
+
+  if (!company) notFound();
+
+  const reviews = await getReviews(company.id, 8);
+  const complaintRatio = (company.fmcsaComplaints / Math.max(company.fmcsaShipments, 1) * 1000).toFixed(2);
+
+  const trustSignals = [
+    company.fmcsaSafetyRating === 'Satisfactory' && 'FMCSA Satisfactory',
+    company.bbbAccredited && `BBB ${company.bbbRating} Accredited`,
+    company.isVerified && 'Directory Verified',
+  ].filter(Boolean);
+
+  return (
+    <div className="container mx-auto px-4 py-8 max-w-5xl">
+      <Link href="/companies" className="inline-flex items-center gap-1 text-sm mb-4 text-muted-foreground hover:text-foreground">
+        <ArrowLeft className="h-4 w-4" /> Back to Directory
+      </Link>
+
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+        <div>
+          <div className="flex items-center gap-3">
+            <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
+            {company.isVerified && <Badge variant="success">VERIFIED</Badge>}
+          </div>
+          <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
+        </div>
+        <div className="flex items-center gap-3">
+          <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">
+            Visit official site <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+          <Link href={`/compare?add=${company.slug}`}>
+            <Button>Add to Compare</Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Quick Stats Bar */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
+        <Card className="p-4">
+          <div className="text-xs text-muted-foreground">OVERALL RATING</div>
+          <div className="flex items-baseline gap-2 mt-0.5">
+            <StarRating rating={company.overallRating} size="lg" />
+            <span className="text-xs text-muted-foreground">({company.reviewCount.toLocaleString()} reviews)</span>
+          </div>
+        </Card>
+        <Card className="p-4">
+          <div className="text-xs text-muted-foreground">REPUTATION SCORE</div>
+          <div className="text-4xl font-semibold mt-0.5 tabular-nums text-primary">{company.reputationScore}<span className="text-xl font-normal text-muted-foreground">/100</span></div>
+        </Card>
+        <Card className="p-4">
+          <div className="text-xs text-muted-foreground">AVG. PRICE (3BR CROSS-COUNTRY)</div>
+          <div className="text-3xl font-semibold mt-0.5 tabular-nums">${company.avgPricePerMove.toLocaleString()}</div>
+          <div className="text-xs">{company.priceRange}</div>
+        </Card>
+        <Card className="p-4">
+          <div className="text-xs text-muted-foreground">FMCSA COMPLAINT RATIO</div>
+          <div className="text-3xl font-semibold mt-0.5 tabular-nums">{complaintRatio}</div>
+          <div className="text-xs">per 1,000 shipments</div>
+        </Card>
+        <Card className="p-4">
+          <div className="text-xs text-muted-foreground">COVERAGE</div>
+          <div className="font-semibold mt-1">{company.coverage}</div>
+          <div className="text-xs mt-1 text-emerald-600 flex items-center gap-1"><ShieldCheck className="h-3.5 w-3.5" /> {company.services.join(' • ')}</div>
+        </Card>
+      </div>
+
+      <div className="grid lg:grid-cols-3 gap-6">
+        {/* Left/Main column */}
+        <div className="lg:col-span-2 space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none text-foreground">
+              <p>{company.description}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {trustSignals.map((t, i) => (
+                  <Badge key={i} variant="success" className="text-xs">{t}</Badge>
+                ))}
+                {company.specialties.map(s => <Badge key={s} variant="outline">{s}</Badge>)}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Licensing & Compliance */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Licensing &amp; Compliance</CardTitle>
+            </CardHeader>
+            <CardContent className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm">
+              <div>
+                <div className="text-muted-foreground text-xs">USDOT Number</div>
+                <div className="font-mono font-semibold">{company.usdotNumber}</div>
+              </div>
+              <div>
+                <div className="text-muted-foreground text-xs">MC Number</div>
+                <div className="font-mono font-semibold">{company.mcNumber}</div>
+              </div>
+              <div>
+                <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>
+                <div>
+                  <Badge variant={company.fmcsaSafetyRating === 'Satisfactory' ? 'success' : 'warning'}>
+                    {company.fmcsaSafetyRating}
+                  </Badge>
+                </div>
+              </div>
+              <div>
+                <div className="text-muted-foreground text-xs">FMCSA Data (approx last 24mo)</div>
+                <div>{company.fmcsaComplaints} complaints on {company.fmcsaShipments.toLocaleString()} shipments</div>
+              </div>
+              <div>
+                <div className="text-muted-foreground text-xs">BBB Rating</div>
+                <div className="flex items-center gap-2">
+                  {company.bbbRating} {company.bbbAccredited && <Badge variant="success" className="text-[10px]">Accredited</Badge>}
+                </div>
+              </div>
+              <div className="text-[11px] text-muted-foreground col-span-2">
+                Always verify the most current licensing and complaint information directly on the <a href="https://www.fmcsa.dot.gov/" target="_blank" className="underline">FMCSA website</a>.
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Services & Specialties */}
+          <Card>
+            <CardHeader><CardTitle>Services &amp; Specialties</CardTitle></CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                <div>
+                  <div className="font-medium mb-1">Services Offered</div>
+                  <ul className="list-disc pl-5 space-y-0.5 text-muted-foreground">
+                    {company.services.map(s => <li key={s}>{s}</li>)}
+                  </ul>
+                </div>
+                <div>
+                  <div className="font-medium mb-1">Specialties</div>
+                  <div className="flex flex-wrap gap-2">
+                    {company.specialties.map(s => <Badge key={s} variant="secondary">{s}</Badge>)}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Recent Reviews */}
+          <ReviewsSection companyId={company.id} companyName={company.name} initialReviews={reviews} />
+        </div>
+
+        {/* Sidebar */}
+        <div className="space-y-6">
+          <Card>
+            <CardHeader><CardTitle className="text-base">Quick Facts</CardTitle></CardHeader>
+            <CardContent className="text-sm space-y-3">
+              <div className="flex justify-between"><span className="text-muted-foreground">HQ</span><span>{company.headquarters}</span></div>
+              <div className="flex justify-between"><span className="text-muted-foreground">Founded</span><span>{company.foundedYear}</span></div>
+              <div className="flex justify-between"><span className="text-muted-foreground">Price Tier</span><span>{company.priceRange}</span></div>
+              <div className="flex justify-between"><span className="text-muted-foreground">Review Volume</span><span>{company.reviewCount.toLocaleString()}</span></div>
+              <div className="pt-2 border-t text-xs text-muted-foreground">Last data refresh: {company.lastUpdated}</div>
+            </CardContent>
+          </Card>
+
+          <CoverageMap companyName={company.name} coverage={company.coverage} />
+
+          <Card className="bg-muted/30">
+            <CardContent className="pt-5 text-xs leading-relaxed text-muted-foreground">
+              This profile is for informational purposes only. InterstateMovers USA is not affiliated with {company.name}. 
+              Always obtain multiple in-home or virtual estimates and verify current licensing directly with FMCSA and your state authorities.
+            </CardContent>
+          </Card>
+
+          <div>
+            <Link href={`/compare?add=${company.slug}`}>
+              <Button className="w-full" size="lg">Add {company.name.split(' ')[0]} to Comparison</Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

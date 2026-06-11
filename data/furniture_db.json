@@ -1,0 +1,1818 @@
+[
+  {
+    "name": "GOLF CART 6 SEATER",
+    "volume": 400.0
+  },
+  {
+    "name": "GOLF CART (STANDARD SIZE)",
+    "volume": 300.0
+  },
+  {
+    "name": "SOFA, U SHAPED",
+    "volume": 200.0
+  },
+  {
+    "name": "ATV",
+    "volume": 180.0
+  },
+  {
+    "name": "SOFA, L",
+    "volume": 150.0
+  },
+  {
+    "name": "MOTORCYCLE (LARGE)",
+    "volume": 143.0
+  },
+  {
+    "name": "POOL TABLE (SLATE TOP)",
+    "volume": 143.0
+  },
+  {
+    "name": "BED, BUNK (WITH MATTRESSES)",
+    "volume": 105.0
+  },
+  {
+    "name": "LAWNMOWER, RIDING",
+    "volume": 100.0
+  },
+  {
+    "name": "WALL UNIT 4 PIECE",
+    "volume": 100.0
+  },
+  {
+    "name": "MOTORCYCLE (MEDIUM)",
+    "volume": 93.0
+  },
+  {
+    "name": "SOFA, SECTIONAL",
+    "volume": 90.0
+  },
+  {
+    "name": "PIANO, GRAND",
+    "volume": 85.0
+  },
+  {
+    "name": "SAFE, EXTRA LARGE",
+    "volume": 80.0
+  },
+  {
+    "name": "ELLIPTICAL",
+    "volume": 75.0
+  },
+  {
+    "name": "SOFA, 3 CUSHION (RECLINER`S BUILT IN)",
+    "volume": 75.0
+  },
+  {
+    "name": "WALL UNIT 3 PIECE",
+    "volume": 75.0
+  },
+  {
+    "name": "POOL TABLE",
+    "volume": 71.0
+  },
+  {
+    "name": "BED, KING (MATTRESS AND BOX SPRING)",
+    "volume": 70.0
+  },
+  {
+    "name": "BED, WATER Q/K",
+    "volume": 70.0
+  },
+  {
+    "name": "PIANO, BABYGRAND",
+    "volume": 70.0
+  },
+  {
+    "name": "SOFA, 3 CUSHION",
+    "volume": 68.0
+  },
+  {
+    "name": "BED, QUEEN (MATTRESS AND BOX SPRING)",
+    "volume": 65.0
+  },
+  {
+    "name": "PICNIC TABLE",
+    "volume": 65.0
+  },
+  {
+    "name": "ADJUSTABLE BASE KING",
+    "volume": 60.0
+  },
+  {
+    "name": "PIANO, UPRIGHT",
+    "volume": 60.0
+  },
+  {
+    "name": "REFRIGERATOR, SIDE BY SIDE",
+    "volume": 60.0
+  },
+  {
+    "name": "SOFA, BED (PULL OUT)",
+    "volume": 60.0
+  },
+  {
+    "name": "FREEZER, XLG.",
+    "volume": 57.0
+  },
+  {
+    "name": "TV OLDER REAR PROJECTOR STYLE",
+    "volume": 57.0
+  },
+  {
+    "name": "ADJUSTABLE BASE QUEEN",
+    "volume": 55.0
+  },
+  {
+    "name": "ADJUSTABLE BASE FULL",
+    "volume": 50.0
+  },
+  {
+    "name": "AIR HOCKEY TABLE",
+    "volume": 50.0
+  },
+  {
+    "name": "ARCADE GAME",
+    "volume": 50.0
+  },
+  {
+    "name": "ARMOIRE, LARGE",
+    "volume": 50.0
+  },
+  {
+    "name": "BED, CAPTAIN (WITH MATTRESS)",
+    "volume": 50.0
+  },
+  {
+    "name": "BED, DAY",
+    "volume": 50.0
+  },
+  {
+    "name": "BED, DOUBLE/FULL (MATTRESS AND BOX SPRING)",
+    "volume": 50.0
+  },
+  {
+    "name": "CHINA CAB, 2 PIECE",
+    "volume": 50.0
+  },
+  {
+    "name": "DRESSER, TRIPLE",
+    "volume": 50.0
+  },
+  {
+    "name": "MATTRESS, CAL KING",
+    "volume": 50.0
+  },
+  {
+    "name": "PIANO, SPINET",
+    "volume": 50.0
+  },
+  {
+    "name": "PINBALL MACHINE",
+    "volume": 50.0
+  },
+  {
+    "name": "ROWING MACHINE",
+    "volume": 50.0
+  },
+  {
+    "name": "SAFE, LARGE",
+    "volume": 50.0
+  },
+  {
+    "name": "SOFA, 2 CUSHION LOVESEAT (RECLINER`S BUILT IN)",
+    "volume": 50.0
+  },
+  {
+    "name": "TOOL CHEST ROLLING LARGE",
+    "volume": 50.0
+  },
+  {
+    "name": "TRAMPOLINE",
+    "volume": 50.0
+  },
+  {
+    "name": "WALL UNIT 2 PIECE",
+    "volume": 50.0
+  },
+  {
+    "name": "WASHER/DRYER COMBO",
+    "volume": 50.0
+  },
+  {
+    "name": "SOFA, 2 CUSHION LOVESEAT",
+    "volume": 45.0
+  },
+  {
+    "name": "MOTOR SCOOTER",
+    "volume": 43.0
+  },
+  {
+    "name": "TABLE, CONFERENCE",
+    "volume": 43.0
+  },
+  {
+    "name": "ADJUSTABLE BASE TWIN",
+    "volume": 40.0
+  },
+  {
+    "name": "BED FRAME, CALI KING",
+    "volume": 40.0
+  },
+  {
+    "name": "BED, SINGLE (MATTRESS AND BOX SPRING)",
+    "volume": 40.0
+  },
+  {
+    "name": "BED, TWIN (MATTRESS AND BOX SPRING)",
+    "volume": 40.0
+  },
+  {
+    "name": "DESK, LARGE",
+    "volume": 40.0
+  },
+  {
+    "name": "DISPLAY CABINET (GLASS)",
+    "volume": 40.0
+  },
+  {
+    "name": "DRESSER, DOUBLE",
+    "volume": 40.0
+  },
+  {
+    "name": "ENTERTAINMENT CENTER, LG",
+    "volume": 40.0
+  },
+  {
+    "name": "EXERCISE EQUIP LARGE",
+    "volume": 40.0
+  },
+  {
+    "name": "FILE CABINET, 4 DRAWER LATERAL",
+    "volume": 40.0
+  },
+  {
+    "name": "FILE CABINET, 5 DRAWER",
+    "volume": 40.0
+  },
+  {
+    "name": "FOOSBALL TABLE",
+    "volume": 40.0
+  },
+  {
+    "name": "FREEZER, LARGE",
+    "volume": 40.0
+  },
+  {
+    "name": "HUTCH",
+    "volume": 40.0
+  },
+  {
+    "name": "LATHE",
+    "volume": 40.0
+  },
+  {
+    "name": "PING PONG TABLE",
+    "volume": 40.0
+  },
+  {
+    "name": "REFRIGERATOR, TOP AND BOTTOM",
+    "volume": 40.0
+  },
+  {
+    "name": "SIDEBOARD, LG",
+    "volume": 40.0
+  },
+  {
+    "name": "WICKER SOFA (3 PERSON)",
+    "volume": 40.0
+  },
+  {
+    "name": "CHINA CAB, 1 PIECE",
+    "volume": 36.0
+  },
+  {
+    "name": "CURIO CABINET LG",
+    "volume": 36.0
+  },
+  {
+    "name": "FUTON",
+    "volume": 36.0
+  },
+  {
+    "name": "BED FRAME, KING",
+    "volume": 35.0
+  },
+  {
+    "name": "CHEST OF DRAWERS ( LARGE)",
+    "volume": 35.0
+  },
+  {
+    "name": "DESK, L",
+    "volume": 35.0
+  },
+  {
+    "name": "PATIO SWING (A FRAME)",
+    "volume": 35.0
+  },
+  {
+    "name": "SETTEE",
+    "volume": 35.0
+  },
+  {
+    "name": "SMOKER LG",
+    "volume": 35.0
+  },
+  {
+    "name": "TOOL CHEST ROLLING MEDIUM",
+    "volume": 34.0
+  },
+  {
+    "name": "MATTRESS ONLY, KING",
+    "volume": 31.0
+  },
+  {
+    "name": "ARMOIRE, REGULAR",
+    "volume": 30.0
+  },
+  {
+    "name": "BAR, PORTABLE",
+    "volume": 30.0
+  },
+  {
+    "name": "BED FRAME, QUEEN",
+    "volume": 30.0
+  },
+  {
+    "name": "BUFFET, BASE",
+    "volume": 30.0
+  },
+  {
+    "name": "CABINET, CORNER",
+    "volume": 30.0
+  },
+  {
+    "name": "COPIER, LARGE OFFICE",
+    "volume": 30.0
+  },
+  {
+    "name": "DINING TABLE (LARGE)",
+    "volume": 30.0
+  },
+  {
+    "name": "DRILL PRESS",
+    "volume": 30.0
+  },
+  {
+    "name": "FILE CABINET, 3 DRAWER LATERAL",
+    "volume": 30.0
+  },
+  {
+    "name": "GENERATOR, LG",
+    "volume": 30.0
+  },
+  {
+    "name": "GLIDER (2 SEAT)",
+    "volume": 30.0
+  },
+  {
+    "name": "LAWYERS BOOKCASE",
+    "volume": 30.0
+  },
+  {
+    "name": "PATIO TABLE GLASS TOP LARGE",
+    "volume": 30.0
+  },
+  {
+    "name": "PRINTER, LARGE OFFICE",
+    "volume": 30.0
+  },
+  {
+    "name": "SAFE, MEDIUM",
+    "volume": 30.0
+  },
+  {
+    "name": "STAIR CLIMBER",
+    "volume": 30.0
+  },
+  {
+    "name": "VICTROLA",
+    "volume": 30.0
+  },
+  {
+    "name": "AQUARIUM STAND, LG.",
+    "volume": 29.0
+  },
+  {
+    "name": "BARBECUE GRILL, LARGE",
+    "volume": 29.0
+  },
+  {
+    "name": "BED, WOOD PLATFORM/FRAME",
+    "volume": 29.0
+  },
+  {
+    "name": "CLOCK, GRANDFATHER",
+    "volume": 29.0
+  },
+  {
+    "name": "FREEZER, MEDIUM",
+    "volume": 29.0
+  },
+  {
+    "name": "KAYAK",
+    "volume": 29.0
+  },
+  {
+    "name": "MATTRESS ONLY, QUEEN",
+    "volume": 26.0
+  },
+  {
+    "name": "ADJUSTABLE DESK",
+    "volume": 25.0
+  },
+  {
+    "name": "BED FRAME, FULL",
+    "volume": 25.0
+  },
+  {
+    "name": "BISTRO SET",
+    "volume": 25.0
+  },
+  {
+    "name": "BOOKCASE LG",
+    "volume": 25.0
+  },
+  {
+    "name": "CABINET, HOOSIER",
+    "volume": 25.0
+  },
+  {
+    "name": "CABINET, LARGE",
+    "volume": 25.0
+  },
+  {
+    "name": "CANTILEVER UMBRELLA",
+    "volume": 25.0
+  },
+  {
+    "name": "CHAIR, OVERSTUFFED",
+    "volume": 25.0
+  },
+  {
+    "name": "CHAISE LOUNGE",
+    "volume": 25.0
+  },
+  {
+    "name": "CHEST OF DRAWERS ( MEDIUM)",
+    "volume": 25.0
+  },
+  {
+    "name": "CHURCH PEW",
+    "volume": 25.0
+  },
+  {
+    "name": "CLOCK, GRANDMOTHER",
+    "volume": 25.0
+  },
+  {
+    "name": "CREDENZA",
+    "volume": 25.0
+  },
+  {
+    "name": "DESK, ROLL TOP",
+    "volume": 25.0
+  },
+  {
+    "name": "DRESSER, SINGLE",
+    "volume": 25.0
+  },
+  {
+    "name": "DRY SINK",
+    "volume": 25.0
+  },
+  {
+    "name": "DRYER",
+    "volume": 25.0
+  },
+  {
+    "name": "ENTERTAINMENT CENTER, REG",
+    "volume": 25.0
+  },
+  {
+    "name": "PATIO SWING",
+    "volume": 25.0
+  },
+  {
+    "name": "PATIO TABLE GLASS TOP MEDIUM",
+    "volume": 25.0
+  },
+  {
+    "name": "PATIO TABLE, LARGE",
+    "volume": 25.0
+  },
+  {
+    "name": "PLANER",
+    "volume": 25.0
+  },
+  {
+    "name": "STOVE",
+    "volume": 25.0
+  },
+  {
+    "name": "TABLE, ENTRY (GLASS TOP)",
+    "volume": 25.0
+  },
+  {
+    "name": "TABLE, ENTRY (MARBLE TOP)",
+    "volume": 25.0
+  },
+  {
+    "name": "TOWER HEATER",
+    "volume": 25.0
+  },
+  {
+    "name": "TREADMILL",
+    "volume": 25.0
+  },
+  {
+    "name": "TV STAND LRG",
+    "volume": 25.0
+  },
+  {
+    "name": "WALL UNIT 1 PIECE",
+    "volume": 25.0
+  },
+  {
+    "name": "WARDROBE CLOSET",
+    "volume": 25.0
+  },
+  {
+    "name": "WASHING MACHINE",
+    "volume": 25.0
+  },
+  {
+    "name": "WICKER LOVESEAT (2 PERSON)",
+    "volume": 25.0
+  },
+  {
+    "name": "MATTRESS ONLY, DOUBLE/FULL",
+    "volume": 23.0
+  },
+  {
+    "name": "CHAIR, EASY",
+    "volume": 22.0
+  },
+  {
+    "name": "MATTRESS, TWIN XL",
+    "volume": 22.0
+  },
+  {
+    "name": "TV FLAT SCREEN 75+",
+    "volume": 22.0
+  },
+  {
+    "name": "BED, HEADBOARD (LARGE)",
+    "volume": 21.0
+  },
+  {
+    "name": "BUTCHER BLOCK",
+    "volume": 21.0
+  },
+  {
+    "name": "CHAIR, RECLINER",
+    "volume": 21.0
+  },
+  {
+    "name": "CRIB, LARGE",
+    "volume": 21.0
+  },
+  {
+    "name": "DESK, MEDIUM",
+    "volume": 21.0
+  },
+  {
+    "name": "DESK, SECRETARY",
+    "volume": 21.0
+  },
+  {
+    "name": "DINING TABLE (MEDIUM)",
+    "volume": 21.0
+  },
+  {
+    "name": "SNOW BLOWER",
+    "volume": 21.0
+  },
+  {
+    "name": "TOOL CHEST ROLLING SMALL",
+    "volume": 21.0
+  },
+  {
+    "name": "BARBECUE GRILL, MEDIUM",
+    "volume": 20.0
+  },
+  {
+    "name": "BED FRAME, TWIN",
+    "volume": 20.0
+  },
+  {
+    "name": "BED, TRUNDLE",
+    "volume": 20.0
+  },
+  {
+    "name": "CABINET, STEREO",
+    "volume": 20.0
+  },
+  {
+    "name": "CHAIR AND A HALF",
+    "volume": 20.0
+  },
+  {
+    "name": "CHANDELIER, LG.",
+    "volume": 20.0
+  },
+  {
+    "name": "CHANGING, TABLE",
+    "volume": 20.0
+  },
+  {
+    "name": "CHOP SAW",
+    "volume": 20.0
+  },
+  {
+    "name": "CONSOLE TABLE (GLASS)",
+    "volume": 20.0
+  },
+  {
+    "name": "CRADLE",
+    "volume": 20.0
+  },
+  {
+    "name": "DECK BOX",
+    "volume": 20.0
+  },
+  {
+    "name": "DISHWASHER",
+    "volume": 20.0
+  },
+  {
+    "name": "ETAGERE",
+    "volume": 20.0
+  },
+  {
+    "name": "EXERCISE EQUIP SMALL",
+    "volume": 20.0
+  },
+  {
+    "name": "FILE CABINET, 2 DRAWER LATERAL",
+    "volume": 20.0
+  },
+  {
+    "name": "FILE CABINET, 4 DRAWER",
+    "volume": 20.0
+  },
+  {
+    "name": "FIRE PIT, LARGE",
+    "volume": 20.0
+  },
+  {
+    "name": "FREEZER, SMALL",
+    "volume": 20.0
+  },
+  {
+    "name": "GENERATOR, MED",
+    "volume": 20.0
+  },
+  {
+    "name": "HUTCH (TOP PIECE ABOVE BUFFET)",
+    "volume": 20.0
+  },
+  {
+    "name": "INVERSION TABLE",
+    "volume": 20.0
+  },
+  {
+    "name": "LAWNMOWER, PUSH",
+    "volume": 20.0
+  },
+  {
+    "name": "LIVING ROOM CHAIR",
+    "volume": 20.0
+  },
+  {
+    "name": "MATTRESS ONLY, TWIN/SINGLE",
+    "volume": 20.0
+  },
+  {
+    "name": "METAL PLATFORM BED FRAME",
+    "volume": 20.0
+  },
+  {
+    "name": "MITER SAW",
+    "volume": 20.0
+  },
+  {
+    "name": "PARSONS TABLE",
+    "volume": 20.0
+  },
+  {
+    "name": "PATIO TABLE GLASS TOP SMALL",
+    "volume": 20.0
+  },
+  {
+    "name": "RADIAL ARM SAW",
+    "volume": 20.0
+  },
+  {
+    "name": "REFRIGERATOR, WINE",
+    "volume": 20.0
+  },
+  {
+    "name": "ROUTER TABLE",
+    "volume": 20.0
+  },
+  {
+    "name": "SAFE, SMALL",
+    "volume": 20.0
+  },
+  {
+    "name": "SMOKER MD",
+    "volume": 20.0
+  },
+  {
+    "name": "TABLE SAW",
+    "volume": 20.0
+  },
+  {
+    "name": "TABLE, COFFEE (GLASS TOP)",
+    "volume": 20.0
+  },
+  {
+    "name": "TABLE, COFFEE (MARBLE TOP)",
+    "volume": 20.0
+  },
+  {
+    "name": "TABLE, DISPLAY",
+    "volume": 20.0
+  },
+  {
+    "name": "TABLE, KITCHEN (LG)",
+    "volume": 20.0
+  },
+  {
+    "name": "TODDLER BED",
+    "volume": 20.0
+  },
+  {
+    "name": "VANITY, DRESSER",
+    "volume": 20.0
+  },
+  {
+    "name": "WORK BENCH, REG.",
+    "volume": 20.0
+  },
+  {
+    "name": "AQUARIUM, 75 GAL",
+    "volume": 19.0
+  },
+  {
+    "name": "BAKERS RACK",
+    "volume": 18.0
+  },
+  {
+    "name": "CHEST OF DRAWERS ( SMALL)",
+    "volume": 18.0
+  },
+  {
+    "name": "COMPUTER DESK",
+    "volume": 18.0
+  },
+  {
+    "name": "CURIO CABINET",
+    "volume": 18.0
+  },
+  {
+    "name": "PATIO TABLE, MEDIUM",
+    "volume": 18.0
+  },
+  {
+    "name": "BED CANOPY",
+    "volume": 17.0
+  },
+  {
+    "name": "TV FLAT SCREEN 61",
+    "volume": 17.0
+  },
+  {
+    "name": "AQUARIUM, 55 GAL",
+    "volume": 16.0
+  },
+  {
+    "name": "BOX SPRINGS",
+    "volume": 16.0
+  },
+  {
+    "name": "DRESSER, CHILD",
+    "volume": 16.0
+  },
+  {
+    "name": "EXERCISE BIKE",
+    "volume": 16.0
+  },
+  {
+    "name": "SERVER",
+    "volume": 16.0
+  },
+  {
+    "name": "TABLE, DROP LEAF",
+    "volume": 16.0
+  },
+  {
+    "name": "TABLE, VANITY",
+    "volume": 16.0
+  },
+  {
+    "name": "AIR COMPRESSOR, LG",
+    "volume": 15.0
+  },
+  {
+    "name": "AIR CONDITIONER LARGE",
+    "volume": 15.0
+  },
+  {
+    "name": "BAR CART",
+    "volume": 15.0
+  },
+  {
+    "name": "BARBECUE GRILL, SMALL",
+    "volume": 15.0
+  },
+  {
+    "name": "BENCH, LARGE",
+    "volume": 15.0
+  },
+  {
+    "name": "BENCH, STORAGE",
+    "volume": 15.0
+  },
+  {
+    "name": "BOOKCASE, MED",
+    "volume": 15.0
+  },
+  {
+    "name": "CABINET, JELLY",
+    "volume": 15.0
+  },
+  {
+    "name": "CABINET, MEDIUM",
+    "volume": 15.0
+  },
+  {
+    "name": "CHAIR, ARM UPHOLSTERED",
+    "volume": 15.0
+  },
+  {
+    "name": "CHAIR, EGG",
+    "volume": 15.0
+  },
+  {
+    "name": "CHAIR, GAMING",
+    "volume": 15.0
+  },
+  {
+    "name": "CHAIR, WINGBACK",
+    "volume": 15.0
+  },
+  {
+    "name": "CHIMANEA",
+    "volume": 15.0
+  },
+  {
+    "name": "CONSOLE TABLE",
+    "volume": 15.0
+  },
+  {
+    "name": "CRAFT TABLE",
+    "volume": 15.0
+  },
+  {
+    "name": "CUBBY STORAGE, LARGE",
+    "volume": 15.0
+  },
+  {
+    "name": "FILE CABINET, 3 DRAWER",
+    "volume": 15.0
+  },
+  {
+    "name": "FOOTBOARD LG",
+    "volume": 15.0
+  },
+  {
+    "name": "LADDER, EXTENSION",
+    "volume": 15.0
+  },
+  {
+    "name": "LINGERIE CHEST",
+    "volume": 15.0
+  },
+  {
+    "name": "MANNEQUIN",
+    "volume": 15.0
+  },
+  {
+    "name": "MIRROR, STANDING",
+    "volume": 15.0
+  },
+  {
+    "name": "PATIO COFFEE TABLE",
+    "volume": 15.0
+  },
+  {
+    "name": "PATIO TABLE, SMALL",
+    "volume": 15.0
+  },
+  {
+    "name": "SCREEN, FOLDING",
+    "volume": 15.0
+  },
+  {
+    "name": "SMOKER SM",
+    "volume": 15.0
+  },
+  {
+    "name": "TABLE, COFFEE",
+    "volume": 15.0
+  },
+  {
+    "name": "TABLE, END (GLASS TOP)",
+    "volume": 15.0
+  },
+  {
+    "name": "TABLE, END (MARBLE TOP)",
+    "volume": 15.0
+  },
+  {
+    "name": "TABLE, ENTRY",
+    "volume": 15.0
+  },
+  {
+    "name": "TABLE, KITCHEN (SM.)",
+    "volume": 15.0
+  },
+  {
+    "name": "TABLE, SOFA",
+    "volume": 15.0
+  },
+  {
+    "name": "TRICYCLE",
+    "volume": 15.0
+  },
+  {
+    "name": "TV STAND (REGULAR)",
+    "volume": 15.0
+  },
+  {
+    "name": "CHAIR, CLUB",
+    "volume": 14.0
+  },
+  {
+    "name": "CHAIR, OCCASIONAL",
+    "volume": 14.0
+  },
+  {
+    "name": "CHAIR, QUEEN ANNE",
+    "volume": 14.0
+  },
+  {
+    "name": "CHEST, CEDAR",
+    "volume": 14.0
+  },
+  {
+    "name": "CHEST, HOPE",
+    "volume": 14.0
+  },
+  {
+    "name": "DESK, SMALL",
+    "volume": 14.0
+  },
+  {
+    "name": "ENTERTAINMENT CENTER, SM",
+    "volume": 14.0
+  },
+  {
+    "name": "GLIDER CHAIR",
+    "volume": 14.0
+  },
+  {
+    "name": "STATUE, LARGE",
+    "volume": 14.0
+  },
+  {
+    "name": "STROLLER, DOUBLE",
+    "volume": 14.0
+  },
+  {
+    "name": "TRUNK, LARGE",
+    "volume": 14.0
+  },
+  {
+    "name": "WEIGHT BENCH",
+    "volume": 14.0
+  },
+  {
+    "name": "BOX, WARDROBE",
+    "volume": 13.0
+  },
+  {
+    "name": "TV FLAT SCREEN 49",
+    "volume": 13.0
+  },
+  {
+    "name": "ADIRONDACK CHAIR",
+    "volume": 12.0
+  },
+  {
+    "name": "BIKE, ELECTRIC",
+    "volume": 12.0
+  },
+  {
+    "name": "FIRE PIT, SMALL",
+    "volume": 12.0
+  },
+  {
+    "name": "HEAVY BAG W/ STAND",
+    "volume": 12.0
+  },
+  {
+    "name": "NESTING TABLES",
+    "volume": 12.0
+  },
+  {
+    "name": "OTTOMAN, LG.",
+    "volume": 12.0
+  },
+  {
+    "name": "TOILET SHELF",
+    "volume": 12.0
+  },
+  {
+    "name": "WHEELBARROW",
+    "volume": 12.0
+  },
+  {
+    "name": "CHAIR, PAPASAN",
+    "volume": 11.0
+  },
+  {
+    "name": "ELECTRIC FIREPLACE",
+    "volume": 11.0
+  },
+  {
+    "name": "JEWELRY ARMOIRE",
+    "volume": 11.0
+  },
+  {
+    "name": "POWER WHEELS",
+    "volume": 11.0
+  },
+  {
+    "name": "PRESSURE WASHER",
+    "volume": 11.0
+  },
+  {
+    "name": "RUG 10X12",
+    "volume": 11.0
+  },
+  {
+    "name": "TABLE, PUB",
+    "volume": 11.0
+  },
+  {
+    "name": "TOOL BOX HANDHELD LARGE",
+    "volume": 11.0
+  },
+  {
+    "name": "AIR COMPRESSOR, MED",
+    "volume": 10.0
+  },
+  {
+    "name": "AIR CONDITIONER SMALL",
+    "volume": 10.0
+  },
+  {
+    "name": "AQUARIUM STAND, SM.",
+    "volume": 10.0
+  },
+  {
+    "name": "AQUARIUM, 20 GAL",
+    "volume": 10.0
+  },
+  {
+    "name": "BED, FOOTBOARD (REGULAR)",
+    "volume": 10.0
+  },
+  {
+    "name": "BED, HEADBOARD (REGULAR)",
+    "volume": 10.0
+  },
+  {
+    "name": "BENCH, SMALL",
+    "volume": 10.0
+  },
+  {
+    "name": "BIRD BATH",
+    "volume": 10.0
+  },
+  {
+    "name": "BOOKCASE, SM",
+    "volume": 10.0
+  },
+  {
+    "name": "CABINET, SMALL",
+    "volume": 10.0
+  },
+  {
+    "name": "CAR TIRE W/RIM",
+    "volume": 10.0
+  },
+  {
+    "name": "CAT TREE",
+    "volume": 10.0
+  },
+  {
+    "name": "CHAIR, ARM",
+    "volume": 10.0
+  },
+  {
+    "name": "CHAIR, HIGH BACK",
+    "volume": 10.0
+  },
+  {
+    "name": "CHAIR, ROCKING",
+    "volume": 10.0
+  },
+  {
+    "name": "CHANDELIER, SM.",
+    "volume": 10.0
+  },
+  {
+    "name": "CHRISTMAS TREE",
+    "volume": 10.0
+  },
+  {
+    "name": "COAT RACK",
+    "volume": 10.0
+  },
+  {
+    "name": "CUBBY STORAGE, MEDIUM",
+    "volume": 10.0
+  },
+  {
+    "name": "DESK CHAIR, LARGE",
+    "volume": 10.0
+  },
+  {
+    "name": "DESK, HUTCH",
+    "volume": 10.0
+  },
+  {
+    "name": "FILE CABINET, 2 DRAWER",
+    "volume": 10.0
+  },
+  {
+    "name": "GENERATOR, SM",
+    "volume": 10.0
+  },
+  {
+    "name": "GOLF CLUBS W/BAG",
+    "volume": 10.0
+  },
+  {
+    "name": "GRIDDLE",
+    "volume": 10.0
+  },
+  {
+    "name": "HAMMOCK",
+    "volume": 10.0
+  },
+  {
+    "name": "KEYBOARD",
+    "volume": 10.0
+  },
+  {
+    "name": "LOUNGE CHAIR",
+    "volume": 10.0
+  },
+  {
+    "name": "MIRROR, LARGE",
+    "volume": 10.0
+  },
+  {
+    "name": "NIGHT STAND",
+    "volume": 10.0
+  },
+  {
+    "name": "PATIO CHAIR",
+    "volume": 10.0
+  },
+  {
+    "name": "PATIO CHAIR ALUMINUM",
+    "volume": 10.0
+  },
+  {
+    "name": "PATIO CHAIR METAL",
+    "volume": 10.0
+  },
+  {
+    "name": "PATIO CHAIR WICKER",
+    "volume": 10.0
+  },
+  {
+    "name": "PLASTIC BIN, XL",
+    "volume": 10.0
+  },
+  {
+    "name": "PLAY HOUSE (FOR KIDS)",
+    "volume": 10.0
+  },
+  {
+    "name": "QUILT RACK",
+    "volume": 10.0
+  },
+  {
+    "name": "REFRIGERATOR DORMITORY",
+    "volume": 10.0
+  },
+  {
+    "name": "RUG 8X10",
+    "volume": 10.0
+  },
+  {
+    "name": "SEWING MACHINE, CONSOLE",
+    "volume": 10.0
+  },
+  {
+    "name": "SHELF LARGE",
+    "volume": 10.0
+  },
+  {
+    "name": "SIDEBOARD",
+    "volume": 10.0
+  },
+  {
+    "name": "SPEAKER, LG.",
+    "volume": 10.0
+  },
+  {
+    "name": "TABLE, END",
+    "volume": 10.0
+  },
+  {
+    "name": "TABLE, SIDE",
+    "volume": 10.0
+  },
+  {
+    "name": "TEA CART",
+    "volume": 10.0
+  },
+  {
+    "name": "TOY CHEST",
+    "volume": 10.0
+  },
+  {
+    "name": "TRUNK, MEDIUM",
+    "volume": 10.0
+  },
+  {
+    "name": "TV STAND (SMALL)",
+    "volume": 10.0
+  },
+  {
+    "name": "WORK BENCH, SM.",
+    "volume": 10.0
+  },
+  {
+    "name": "BIKE, ADULT",
+    "volume": 9.0
+  },
+  {
+    "name": "PLANT ARTIFICIAL, LARGE",
+    "volume": 9.0
+  },
+  {
+    "name": "STATUE, MEDIUM",
+    "volume": 9.0
+  },
+  {
+    "name": "SUITCASE, LG.",
+    "volume": 9.0
+  },
+  {
+    "name": "TV FLAT SCREEN 30",
+    "volume": 9.0
+  },
+  {
+    "name": "DINING CHAIR WITH ARMS",
+    "volume": 8.0
+  },
+  {
+    "name": "OTTOMAN, MD.",
+    "volume": 8.0
+  },
+  {
+    "name": "BAR STOOL WITH BACK",
+    "volume": 7.0
+  },
+  {
+    "name": "CHAIR, DINING",
+    "volume": 7.0
+  },
+  {
+    "name": "CHAIR, KITCHEN",
+    "volume": 7.0
+  },
+  {
+    "name": "CHILD CAR (PUSH)",
+    "volume": 7.0
+  },
+  {
+    "name": "COPIER, TABLE TOP",
+    "volume": 7.0
+  },
+  {
+    "name": "DEHUMIDIFIER",
+    "volume": 7.0
+  },
+  {
+    "name": "DESK CHAIR, MEDIUM",
+    "volume": 7.0
+  },
+  {
+    "name": "DOLL HOUSE",
+    "volume": 7.0
+  },
+  {
+    "name": "GARDEN CART",
+    "volume": 7.0
+  },
+  {
+    "name": "HOSE W/REEL",
+    "volume": 7.0
+  },
+  {
+    "name": "HUMIDIFIER",
+    "volume": 7.0
+  },
+  {
+    "name": "LADDER TO 7",
+    "volume": 7.0
+  },
+  {
+    "name": "LAMP, FLOOR",
+    "volume": 7.0
+  },
+  {
+    "name": "MASSAGE CHAIR",
+    "volume": 7.0
+  },
+  {
+    "name": "MICROWAVE CART",
+    "volume": 7.0
+  },
+  {
+    "name": "PLANT ARTIFICIAL, MEDIUM",
+    "volume": 7.0
+  },
+  {
+    "name": "PLASTIC BIN, LG.",
+    "volume": 7.0
+  },
+  {
+    "name": "PLAY KITCHEN",
+    "volume": 7.0
+  },
+  {
+    "name": "RUG 5X8",
+    "volume": 7.0
+  },
+  {
+    "name": "STROLLER",
+    "volume": 7.0
+  },
+  {
+    "name": "TABLE, FOLDING",
+    "volume": 7.0
+  },
+  {
+    "name": "TOOL BOX HANDHELD MEDIUM",
+    "volume": 7.0
+  },
+  {
+    "name": "WATER COOLER",
+    "volume": 7.0
+  },
+  {
+    "name": "BOX, EXTRA LARGE 23X23X16",
+    "volume": 6.0
+  },
+  {
+    "name": "CARD TABLE",
+    "volume": 6.0
+  },
+  {
+    "name": "DRESSER, MIRROR",
+    "volume": 6.0
+  },
+  {
+    "name": "LADDER SHELF",
+    "volume": 6.0
+  },
+  {
+    "name": "METAL SHELVING",
+    "volume": 6.0
+  },
+  {
+    "name": "OTTOMAN, SM.",
+    "volume": 6.0
+  },
+  {
+    "name": "PICTURE/PAINTING LARGE",
+    "volume": 6.0
+  },
+  {
+    "name": "PORTABLE HEATER",
+    "volume": 6.0
+  },
+  {
+    "name": "TV FLAT SCREEN 21",
+    "volume": 6.0
+  },
+  {
+    "name": "WIRE SHELVING",
+    "volume": 6.0
+  },
+  {
+    "name": "AIR COMPRESSOR, SM",
+    "volume": 5.0
+  },
+  {
+    "name": "AIR PURIFIER",
+    "volume": 5.0
+  },
+  {
+    "name": "AQUARIUM, 10 GAL",
+    "volume": 5.0
+  },
+  {
+    "name": "BAR, STOOL",
+    "volume": 5.0
+  },
+  {
+    "name": "BED, POSTS",
+    "volume": 5.0
+  },
+  {
+    "name": "BIKE, CHILD",
+    "volume": 5.0
+  },
+  {
+    "name": "BOX, CHINA/DISH 18X18X28",
+    "volume": 5.0
+  },
+  {
+    "name": "BOX, LAMP",
+    "volume": 5.0
+  },
+  {
+    "name": "BOX, LARGE (4.5 CF) 18X18X24",
+    "volume": 5.0
+  },
+  {
+    "name": "CAR TIRE",
+    "volume": 5.0
+  },
+  {
+    "name": "CARPET CLEANER",
+    "volume": 5.0
+  },
+  {
+    "name": "CHAIR, HIGH",
+    "volume": 5.0
+  },
+  {
+    "name": "CHAIR, SINGLE",
+    "volume": 5.0
+  },
+  {
+    "name": "CHAIR, WICKER",
+    "volume": 5.0
+  },
+  {
+    "name": "CHILD, CHAIR",
+    "volume": 5.0
+  },
+  {
+    "name": "CHILD, TABLE",
+    "volume": 5.0
+  },
+  {
+    "name": "CHILD, TOY",
+    "volume": 5.0
+  },
+  {
+    "name": "COMPUTER SCREEN",
+    "volume": 5.0
+  },
+  {
+    "name": "COMPUTER SYSTEM",
+    "volume": 5.0
+  },
+  {
+    "name": "CUBBY STORAGE, SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "DOLLEY",
+    "volume": 5.0
+  },
+  {
+    "name": "EDGER",
+    "volume": 5.0
+  },
+  {
+    "name": "FAN, FLOOR",
+    "volume": 5.0
+  },
+  {
+    "name": "FAX MACHINE",
+    "volume": 5.0
+  },
+  {
+    "name": "GUITAR (IN CASE)",
+    "volume": 5.0
+  },
+  {
+    "name": "HANDHELD POWER TOOLS",
+    "volume": 5.0
+  },
+  {
+    "name": "HOSE",
+    "volume": 5.0
+  },
+  {
+    "name": "LADDER UP TO 6 FEET",
+    "volume": 5.0
+  },
+  {
+    "name": "LEAF BLOWER",
+    "volume": 5.0
+  },
+  {
+    "name": "MICROWAVE",
+    "volume": 5.0
+  },
+  {
+    "name": "MIRROR, VANITY",
+    "volume": 5.0
+  },
+  {
+    "name": "PATIO CHAIR PLASTIC",
+    "volume": 5.0
+  },
+  {
+    "name": "PATIO END TABLE",
+    "volume": 5.0
+  },
+  {
+    "name": "PATIO UMBRELLA",
+    "volume": 5.0
+  },
+  {
+    "name": "PEDESTAL (FOR WASHER /DRYER)",
+    "volume": 5.0
+  },
+  {
+    "name": "PIANO BENCH",
+    "volume": 5.0
+  },
+  {
+    "name": "PLANT ARTIFICIAL, SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "PLASTIC BIN, MED.",
+    "volume": 5.0
+  },
+  {
+    "name": "PLASTIC DRAWERS",
+    "volume": 5.0
+  },
+  {
+    "name": "PLASTIC SHELVING",
+    "volume": 5.0
+  },
+  {
+    "name": "PLAYPEN, FOLDING",
+    "volume": 5.0
+  },
+  {
+    "name": "PRINTER, SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "SEWING MACHINE, PORTABLE",
+    "volume": 5.0
+  },
+  {
+    "name": "SHAMPOOER",
+    "volume": 5.0
+  },
+  {
+    "name": "SHELF SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "SHOE RACK",
+    "volume": 5.0
+  },
+  {
+    "name": "SHREDDER",
+    "volume": 5.0
+  },
+  {
+    "name": "SPEAKER, REGULAR",
+    "volume": 5.0
+  },
+  {
+    "name": "STAND, MED.",
+    "volume": 5.0
+  },
+  {
+    "name": "STATUE, SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "SUITCASE SM.",
+    "volume": 5.0
+  },
+  {
+    "name": "SURF BOARD",
+    "volume": 5.0
+  },
+  {
+    "name": "TOOL BOX HANDHELD SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "TRIMMER",
+    "volume": 5.0
+  },
+  {
+    "name": "TRUNK, SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "TV 20 (OR SMALLER)",
+    "volume": 5.0
+  },
+  {
+    "name": "VACUUM CLEANER",
+    "volume": 5.0
+  },
+  {
+    "name": "VANITY, BENCH",
+    "volume": 5.0
+  },
+  {
+    "name": "WEED WACKER",
+    "volume": 5.0
+  },
+  {
+    "name": "WHEELCHAIR (FOLDING)",
+    "volume": 5.0
+  },
+  {
+    "name": "WINE RACK, SMALL",
+    "volume": 5.0
+  },
+  {
+    "name": "COOLER",
+    "volume": 4.0
+  },
+  {
+    "name": "HAMPER",
+    "volume": 4.0
+  },
+  {
+    "name": "MIRROR BOX 40X60",
+    "volume": 4.0
+  },
+  {
+    "name": "MIRROR, MEDIUM",
+    "volume": 4.0
+  },
+  {
+    "name": "PICTURE BOX 40X60",
+    "volume": 4.0
+  },
+  {
+    "name": "TABLE LEAVES",
+    "volume": 4.0
+  },
+  {
+    "name": "BABY GATE",
+    "volume": 3.0
+  },
+  {
+    "name": "BOX, MED (3.0 CF) 18X18X16",
+    "volume": 3.0
+  },
+  {
+    "name": "CHAIR, STACKABLE",
+    "volume": 3.0
+  },
+  {
+    "name": "CLOCK, WALL",
+    "volume": 3.0
+  },
+  {
+    "name": "DRYING RACK",
+    "volume": 3.0
+  },
+  {
+    "name": "FOOT STOOL",
+    "volume": 3.0
+  },
+  {
+    "name": "GARBAGE CAN",
+    "volume": 3.0
+  },
+  {
+    "name": "LAMP, TABLE",
+    "volume": 3.0
+  },
+  {
+    "name": "MAGAZINE RACK",
+    "volume": 3.0
+  },
+  {
+    "name": "PICTURE/PAINTING MEDIUM",
+    "volume": 3.0
+  },
+  {
+    "name": "PLASTIC BIN, SM.",
+    "volume": 3.0
+  },
+  {
+    "name": "SOUNDBAR",
+    "volume": 3.0
+  },
+  {
+    "name": "STAND, SM.",
+    "volume": 3.0
+  },
+  {
+    "name": "STOOL, SM.",
+    "volume": 3.0
+  },
+  {
+    "name": "BOX, BOOK",
+    "volume": 2.0
+  },
+  {
+    "name": "BOX, SMALL (1.5. CF) 16X12X12",
+    "volume": 2.0
+  },
+  {
+    "name": "CHAIR, FOLDING",
+    "volume": 2.0
+  },
+  {
+    "name": "IRONING BOARD",
+    "volume": 2.0
+  },
+  {
+    "name": "KITCHENAIDE MIXER",
+    "volume": 2.0
+  },
+  {
+    "name": "METAL BED FRAME",
+    "volume": 2.0
+  },
+  {
+    "name": "MIRROR, SM",
+    "volume": 2.0
+  },
+  {
+    "name": "PICTURE/PAINTING SMALL",
+    "volume": 2.0
+  },
+  {
+    "name": "STEP STOOL",
+    "volume": 2.0
+  },
+  {
+    "name": "TOOLS, GARDEN (RAKES, SHOVELS, ETC.)",
+    "volume": 1.0
+  }
+]
