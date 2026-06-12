@@ -23,8 +23,9 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2 font-semibold text-xl tracking-tighter">
+          <Link href="/" className="flex items-center gap-2">
             <img src="/logo.svg" alt="Move Trust Hub" className="h-8 w-auto" />
+            <span className="font-semibold text-xl tracking-tighter">Move Trust Hub</span>
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-medium tracking-widest text-muted-foreground">
             TRUSTED DIRECTORY
