@@ -1,6 +1,5 @@
 // Curated furniture list for the move calculator.
-// Source: items-volume.xlsx + bedroom inv list.csv (expanded Bedroom category with many additional items like lamps, mirrors, trunks, adjustable bases, etc.)
-// Bedroom section significantly expanded per user-provided bedroom inventory CSV.
+// Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance inv CSVs (new Appliances category added).
 // Other categories from original xlsx curated subset.
 
 export interface FurnitureItem {
@@ -143,6 +142,20 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Microwave", volume: 5.0, category: "Kitchen" },
   { name: "Garbage Can", volume: 3.0, category: "Kitchen" },
   { name: "Kitchenaide Mixer", volume: 2.0, category: "Kitchen" },
+  // Appliances - new category from appliance inv (3).csv
+  { name: "Air Conditioner, Large", volume: 15.0, category: "Appliances" },
+  { name: "Air Conditioner, Small", volume: 10.0, category: "Appliances" },
+  { name: "Air Purifier", volume: 5.0, category: "Appliances" },
+  { name: "Carpet Cleaner", volume: 5.0, category: "Appliances" },
+  { name: "Dehumidifier", volume: 7.0, category: "Appliances" },
+  { name: "Dishwasher", volume: 20.0, category: "Appliances" },
+  { name: "Dryer", volume: 25.0, category: "Appliances" },
+  { name: "Fan, Floor", volume: 5.0, category: "Appliances" },
+  { name: "Humidifier", volume: 7.0, category: "Appliances" },
+  { name: "Portable Heater", volume: 6.0, category: "Appliances" },
+  { name: "Vacuum Cleaner", volume: 5.0, category: "Appliances" },
+  { name: "Washer/Dryer Combo", volume: 50.0, category: "Appliances" },
+  { name: "Washing Machine", volume: 25.0, category: "Appliances" },
   { name: "Sofa, U Shaped", volume: 200.0, category: "Living Room" },
   { name: "Sofa, L", volume: 150.0, category: "Living Room" },
   { name: "Piano, Grand", volume: 85.0, category: "Living Room" },
@@ -322,7 +335,7 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Box, Wardrobe", volume: 13, category: "Packing Supplies" },
 ];
 
-export const roomCategories = ['Bathroom', 'Bedroom', 'Dining Room', 'Garage / Laundry', 'Kitchen', 'Living Room', 'Office', 'Other', 'Outdoor', 'Packing Supplies'];
+export const roomCategories = ['Bathroom', 'Bedroom', 'Dining Room', 'Garage / Laundry', 'Kitchen', 'Appliances', 'Living Room', 'Office', 'Other', 'Outdoor', 'Packing Supplies'];
 
 export function getItemsByCategory(category: string) {
   return furnitureItems.filter(item => item.category === category);
