@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Move Trust Hub — Trusted Directory & Reviews for Interstate Movers',
     description: 'Research, compare, and choose reputable interstate moving companies with verified reviews, FMCSA data, and transparent pricing. Your hub for trusted movers.',
-    images: [{ url: '/logo.jpg' }],
+    images: [{ url: '/logo.svg' }],
     type: 'website',
   },
   twitter: {
