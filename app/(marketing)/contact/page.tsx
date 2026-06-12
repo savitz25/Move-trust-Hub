@@ -15,6 +15,10 @@ export default function ContactPage() {
             <a href="mailto:hello@movetrusthub.com" className="text-primary">hello@movetrusthub.com</a>
           </div>
           <div>
+            <strong>Phone</strong><br />
+            <a href="tel:8702606352" className="text-primary">(870) 260-6352</a>
+          </div>
+          <div>
             <strong>Press / Partnerships</strong><br />
             We do not accept paid placements or affiliate partnerships with movers.
           </div>
