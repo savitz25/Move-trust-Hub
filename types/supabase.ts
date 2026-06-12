@@ -65,6 +65,35 @@ export interface Database {
         Insert: Partial<Database['public']['Tables']['reviews']['Row']>;
         Update: Partial<Database['public']['Tables']['reviews']['Row']>;
       };
+      quote_requests: {
+        Row: {
+          id: string;
+          name: string;
+          email: string;
+          phone: string | null;
+          from_zip: string;
+          to_zip: string;
+          move_date: string | null;
+          home_size: string | null;
+          estimated_volume: number | null;
+          notes: string | null;
+          source: string | null;
+          created_at: string;
+        };
+        Insert: {
+          name: string;
+          email: string;
+          phone?: string | null;
+          from_zip: string;
+          to_zip: string;
+          move_date?: string | null;
+          home_size?: string | null;
+          estimated_volume?: number | null;
+          notes?: string | null;
+          source?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['quote_requests']['Row']>;
+      };
     };
   };
 }

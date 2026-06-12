@@ -155,6 +155,40 @@ select
 from public.companies c;
 
 -- =====================================================
+-- QUOTE REQUESTS (Lead capture from "Get Free Quotes" form)
+-- =====================================================
+create table if not exists public.quote_requests (
+  id uuid primary key default uuid_generate_v4(),
+  name text not null,
+  email text not null,
+  phone text,
+  from_zip text not null,
+  to_zip text not null,
+  move_date date,
+  home_size text,
+  estimated_volume numeric,
+  notes text,
+  source text default 'website',
+  created_at timestamptz default now()
+);
+
+create index if not exists idx_quote_requests_created on public.quote_requests (created_at desc);
+create index if not exists idx_quote_requests_email on public.quote_requests (email);
+
+-- RLS: Public can submit leads (insert only). No public read.
+alter table public.quote_requests enable row level security;
+
+create policy "Anyone can submit quote requests"
+  on public.quote_requests for insert
+  with check (true);
+
+create policy "Service role can manage quote requests"
+  on public.quote_requests for all
+  using (auth.role() = 'service_role');
+
+comment on table public.quote_requests is 'Lead capture from Get Free Quotes modal. Contains contact + move details for matching with movers.';
+
+-- =====================================================
 -- SEED DATA NOTES
 -- =====================================================
 -- After running this schema:

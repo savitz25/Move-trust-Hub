@@ -13,6 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { QuoteModal } from '@/components/quote-modal';
 import { useCalculatorStore, type InventoryItem, type InputMode } from '@/store/calculator-store';
 import { furnitureItems, roomCategories, getItemsByCategory, searchItems, type FurnitureItem } from '@/data/furniture';
 import { toast } from 'sonner';
@@ -102,10 +103,7 @@ export default function MovingCalculatorPage() {
   const [quickSearch, setQuickSearch] = useState('');
   const [customName, setCustomName] = useState('');
   const [customVolume, setCustomVolume] = useState('');
-  const [showQuoteDialog, setShowQuoteDialog] = useState(false);
-  const [quoteName, setQuoteName] = useState('');
-  const [quoteEmail, setQuoteEmail] = useState('');
-  const [quoteNotes, setQuoteNotes] = useState('');
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   // For browsing the full (larger) list from xlsx in a modal
   const [showBrowseDialog, setShowBrowseDialog] = useState(false);
@@ -175,30 +173,7 @@ export default function MovingCalculatorPage() {
     toast.success('Custom item added');
   };
 
-  // Handle quote "submission" (demo)
-  const handleQuoteSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!quoteName || !quoteEmail) {
-      toast.error('Please provide your name and email');
-      return;
-    }
-    // In real app this would POST to API or email service
-    console.log('Quote request:', { 
-      name: quoteName, 
-      email: quoteEmail, 
-      notes: quoteNotes, 
-      totalVolume, 
-      recommendation: recommendation.label,
-      items: inventory.length 
-    });
-    toast.success('Quote request received!', {
-      description: "We'll contact you within 24 hours with a personalized estimate.",
-    });
-    setShowQuoteDialog(false);
-    setQuoteName('');
-    setQuoteEmail('');
-    setQuoteNotes('');
-  };
+
 
   // Visual progress: how far into the current bracket
   const progress = useMemo(() => {
@@ -474,7 +449,7 @@ export default function MovingCalculatorPage() {
                 <Button 
                   size="lg" 
                   className="w-full" 
-                  onClick={() => setShowQuoteDialog(true)}
+                  onClick={() => setShowQuoteModal(true)}
                 >
                   Get Free Quote Based on This Estimate
                 </Button>
@@ -484,7 +459,7 @@ export default function MovingCalculatorPage() {
 
                 <div className="pt-4 border-t text-center">
                   <p className="text-sm font-medium mb-2">Want quotes from real movers right now?</p>
-                  <Button variant="outline" onClick={() => setShowQuoteDialog(true)}>
+                  <Button variant="outline" onClick={() => setShowQuoteModal(true)}>
                     Get Matched with 3–5 Verified Movers
                   </Button>
                 </div>
@@ -544,35 +519,12 @@ export default function MovingCalculatorPage() {
           </div>
         </div>
 
-        {/* Quote Dialog */}
-        <Dialog open={showQuoteDialog} onOpenChange={setShowQuoteDialog}>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Get a Free Personalized Quote</DialogTitle>
-            </DialogHeader>
-            <form onSubmit={handleQuoteSubmit} className="space-y-4 pt-2">
-              <div>
-                <label className="text-sm font-medium">Full Name</label>
-                <Input value={quoteName} onChange={e => setQuoteName(e.target.value)} required placeholder="Jane Doe" />
-              </div>
-              <div>
-                <label className="text-sm font-medium">Email Address</label>
-                <Input type="email" value={quoteEmail} onChange={e => setQuoteEmail(e.target.value)} required placeholder="you@example.com" />
-              </div>
-              <div>
-                <label className="text-sm font-medium">Move Date or Additional Notes (optional)</label>
-                <Input value={quoteNotes} onChange={e => setQuoteNotes(e.target.value)} placeholder="Moving in June from Austin to Denver..." />
-              </div>
-              <div className="bg-muted p-3 rounded text-xs text-muted-foreground">
-                Based on your estimate: <strong>{Math.round(totalVolume)} cu ft</strong> • {recommendation.label}
-              </div>
-              <div className="flex gap-2 pt-2">
-                <Button type="submit" className="flex-1">Request Quote</Button>
-                <Button type="button" variant="outline" onClick={() => setShowQuoteDialog(false)}>Cancel</Button>
-              </div>
-            </form>
-          </DialogContent>
-        </Dialog>
+        {/* Shared clean Quote Modal (prefills the calculator volume) */}
+        <QuoteModal
+          open={showQuoteModal}
+          onOpenChange={setShowQuoteModal}
+          prefilledData={{ estimatedVolume: totalVolume }}
+        />
 
         {/* Full catalog browser for accessing items from the large xlsx source */}
         <Dialog open={showBrowseDialog} onOpenChange={setShowBrowseDialog}>
