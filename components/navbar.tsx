@@ -23,12 +23,12 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.svg" alt="Move Trust Hub" className="h-8 w-auto" />
-            <span className="font-semibold text-xl tracking-tighter">Move Trust Hub</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <img src="/logo.svg" alt="Move Trust Hub" className="h-8 w-auto transition-transform group-hover:scale-[1.02]" />
+            <span className="font-semibold text-[17px] tracking-[-0.02em]">Move Trust Hub</span>
           </Link>
-          <div className="hidden md:flex items-center rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-medium tracking-widest text-muted-foreground">
-            TRUSTED DIRECTORY
+          <div className="hidden md:flex items-center rounded-full bg-muted/70 px-2 py-px text-[9px] font-medium tracking-[1.5px] text-muted-foreground border border-border/50">
+            TRUSTED
           </div>
         </div>
 
@@ -38,7 +38,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
             >
               {link.label}
             </Link>
@@ -46,7 +46,7 @@ export function Navbar() {
           <Button 
             size="sm" 
             onClick={() => setShowQuoteModal(true)}
-            className="gap-2 bg-primary hover:bg-primary/90"
+            className="gap-2 bg-primary hover:bg-primary/90 shadow-sm"
           >
             <FileText className="h-4 w-4" /> Get Free Quotes
           </Button>

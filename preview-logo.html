@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Move Trust Hub — Logo Preview</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap');
+    
+    body {
+      margin: 0;
+      padding: 60px 20px;
+      background: #f8fafc;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 720px;
+      width: 100%;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #0f172a;
+      margin-bottom: 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 48px;
+      font-size: 15px;
+    }
+    
+    .logo-display {
+      background: white;
+      border-radius: 20px;
+      padding: 60px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    
+    .logo-svg {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    
+    .usage-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    
+    .usage-card h3 {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .code {
+      background: #0f172a;
+      color: #e0f0ff;
+      padding: 14px;
+      border-radius: 8px;
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin: 0;
+    }
+    
+    .color-swatches {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .swatch {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: flex-end;
+      padding: 4px;
+      font-size: 10px;
+      color: white;
+      font-weight: 600;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+    
+    .note {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 32px;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Move Trust Hub</h1>
+    <p class="subtitle">Official Logo — Vector (SVG) Version</p>
+    
+    <div class="logo-display">
+      <!-- The SVG logo is embedded inline for immediate preview -->
+      <svg width="320" height="160" viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="mGradient" x1="20%" y1="15%" x2="85%" y2="95%">
+            <stop offset="0%" stop-color="#1E9FFF"/>
+            <stop offset="35%" stop-color="#0077D4"/>
+            <stop offset="65%" stop-color="#0055AA"/>
+            <stop offset="100%" stop-color="#003366"/>
+          </linearGradient>
+          <linearGradient id="mCenter" x1="30%" y1="25%" x2="70%" y2="85%">
+            <stop offset="0%" stop-color="#004D80"/>
+            <stop offset="100%" stop-color="#002B4D"/>
+          </linearGradient>
+          <linearGradient id="arrowGradient" x1="25%" y1="10%" x2="95%" y2="90%">
+            <stop offset="0%" stop-color="#00C6FF"/>
+            <stop offset="45%" stop-color="#00A3E0"/>
+            <stop offset="100%" stop-color="#0077CC"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Left vertical bar -->
+        <rect x="38" y="22" width="38" height="96" rx="6" fill="url(#mGradient)"/>
+        
+        <!-- Center connection (darker) -->
+        <polygon points="72,22 108,118 128,22" fill="url(#mCenter)"/>
+        
+        <!-- Right lower vertical -->
+        <rect x="128" y="68" width="28" height="50" rx="5" fill="#003366"/>
+        
+        <!-- Arrow body -->
+        <polygon points="102,32 138,58 138,74 162,74 162,52 195,78 162,26 162,48 138,48" fill="url(#arrowGradient)"/>
+        
+        <!-- Arrow head -->
+        <polygon points="178,42 212,72 178,58" fill="url(#arrowGradient)"/>
+        
+        <!-- Subtle highlight -->
+        <line x1="115" y1="38" x2="160" y2="38" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+      
+      <p style="margin: 0; color: #475569; font-size: 15px; font-weight: 500;">Move Trust Hub</p>
+    </div>
+
+    <div class="usage-grid">
+      <div class="usage-card">
+        <h3>Inline SVG (Recommended)</h3>
+        <pre class="code">&lt;svg ...&gt; ... &lt;/svg&gt;</pre>
+        <p style="font-size:12px; color:#64748b; margin-top:8px;">Best for headers, hero, and interactive states. You can change colors via CSS.</p>
+      </div>
+      
+      <div class="usage-card">
+        <h3>Next.js / React Usage</h3>
+        <pre class="code">import Logo from './move-trust-hub-logo.svg';
+
+&lt;Logo className="h-10 w-auto" /&gt;</pre>
+        <p style="font-size:12px; color:#64748b; margin-top:8px;">Place the .svg in /public or use as component.</p>
+      </div>
+      
+      <div class="usage-card">
+        <h3>Favicon &amp; App Icons</h3>
+        <p style="font-size:13px; color:#475569;">Export a 512×512 or 1024×1024 PNG version of just the mark (without the wordmark) for favicon, apple-touch-icon, and PWA icons.</p>
+      </div>
+      
+      <div class="usage-card">
+        <h3>Brand Colors</h3>
+        <div class="color-swatches">
+          <div class="swatch" style="background:#1E9FFF;">#1E9FFF</div>
+          <div class="swatch" style="background:#0077D4;">#0077D4</div>
+          <div class="swatch" style="background:#003366;">#003366</div>
+          <div class="swatch" style="background:#00A3E0;">#00A3E0</div>
+          <div class="swatch" style="background:#00C6FF; color:#003366;">#00C6FF</div>
+        </div>
+        <p style="font-size:12px; color:#64748b; margin-top:12px;">Primary blue + bright accent for the arrow. Use the darker blue for text and emphasis.</p>
+      </div>
+    </div>
+
+    <p class="note">
+      This SVG was recreated to closely match your provided logo artwork.<br>
+      For pixel-perfect results, you can replace this file with your original high-resolution vector export from your design tool.
+    </p>
+  </div>
+</body>
+</html>

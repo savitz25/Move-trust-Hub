@@ -51,13 +51,13 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Custom brand
+        // Custom brand - aligned to new sharp logo (bright blues + deep navy)
         brand: {
-          blue: '#0A4D8C',
-          'blue-dark': '#052E56',
-          green: '#0F766E',
-          'green-light': '#14B8A6',
-          gold: '#B8860B',
+          blue: '#0077D4',
+          'blue-light': '#1E9FFF',
+          'blue-deep': '#003366',
+          cyan: '#00C6FF',
+          'cyan-light': '#00A3E0',
         },
       },
       borderRadius: {
@@ -70,8 +70,8 @@ const config: Config = {
         mono: ['var(--font-geist-mono)', 'monospace'],
       },
       boxShadow: {
-        'trust': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-        'trust-lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        'trust': '0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px -1px rgb(0 0 0 / 0.06)',
+        'trust-lg': '0 8px 16px -4px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.05)',
       },
       keyframes: {
         'accordion-down': {

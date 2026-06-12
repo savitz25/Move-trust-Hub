@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* MARKETING HERO - Strong CTA focused */}
-      <section className="relative bg-gradient-to-br from-primary/10 via-background to-background border-b">
+      <section className="relative bg-gradient-to-br from-primary/8 via-background to-background border-b">
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-4 py-1 text-sm font-medium mb-6">
@@ -64,24 +64,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST / SOCIAL PROOF BAR - Marketing style */}
-      <div className="border-b bg-muted/30 py-5">
-        <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-12 gap-y-3 text-sm font-medium">
+      {/* TRUST / SOCIAL PROOF BAR - cleaner & sharper */}
+      <div className="trust-proof py-4">
+        <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-10 gap-y-2 text-sm font-medium text-muted-foreground">
           <div className="flex items-center gap-2">
-            <CheckCircle className="h-5 w-5 text-emerald-600" /> 
-            <span>25+ Verified Interstate Movers</span>
+            <CheckCircle className="h-4 w-4 text-emerald-600" /> 
+            <span>25+ Verified Movers</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle className="h-5 w-5 text-emerald-600" /> 
-            <span>52,000+ Real Customer Reviews</span>
+            <CheckCircle className="h-4 w-4 text-emerald-600" /> 
+            <span>52k+ Real Reviews</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle className="h-5 w-5 text-emerald-600" /> 
-            <span>FMCSA Licensed &amp; Insured</span>
+            <CheckCircle className="h-4 w-4 text-emerald-600" /> 
+            <span>FMCSA Licensed</span>
           </div>
           <div className="flex items-center gap-2">
-            <Star className="h-5 w-5 text-amber-500" /> 
-            <span>4.3 Average Rating</span>
+            <Star className="h-4 w-4 text-amber-500" /> 
+            <span>4.3 Avg Rating</span>
           </div>
         </div>
       </div>
@@ -116,8 +116,8 @@ export default function Home() {
             },
           ].map((item, index) => (
             <div key={index} className="text-center">
-              <div className="mx-auto w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <item.icon className="h-8 w-8 text-primary" />
+              <div className="mx-auto w-14 h-14 rounded-xl bg-primary/8 flex items-center justify-center mb-5">
+                <item.icon className="h-7 w-7 text-primary" />
               </div>
               <div className="text-sm font-mono text-primary mb-1">STEP {item.step}</div>
               <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
@@ -141,7 +141,7 @@ export default function Home() {
               { icon: Clock, title: "Save Time", desc: "Skip the phone calls. Get matched with the right movers instantly." },
               { icon: Headphones, title: "Dedicated Support", desc: "Our team is here to answer questions before, during, and after your move." },
             ].map((benefit, i) => (
-              <Card key={i} className="p-6 border-0 shadow-sm">
+              <Card key={i} className="p-6 border border-border/50 shadow-trust">
                 <benefit.icon className="h-8 w-8 text-primary mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.desc}</p>
