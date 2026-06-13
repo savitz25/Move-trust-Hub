@@ -333,11 +333,13 @@ export default function MovingCalculatorPage() {
                                  (mode !== 'room' || inv.room === selectedRoom)
                         )?.quantity || 0;
 
-                        const nameClass = item.name.length > 30 
-                          ? 'text-[11px]' 
-                          : item.name.length > 22 
-                            ? 'text-xs' 
-                            : 'text-sm';
+                        const nameClass = item.name.length > 36 
+                          ? 'text-[9px] leading-[1.05] tracking-tighter' 
+                          : item.name.length > 30 
+                            ? 'text-[10px] leading-tight tracking-tighter' 
+                            : item.name.length > 22 
+                              ? 'text-xs leading-tight' 
+                              : 'text-sm leading-tight';
 
                         return (
                           <motion.div
@@ -370,7 +372,7 @@ export default function MovingCalculatorPage() {
                                   }
                                 }}
                               >
-                                <div className={`font-semibold ${nameClass} leading-tight tracking-tight text-center`}>
+                                <div className={`font-semibold ${nameClass} text-center`}>
                                   {item.name}
                                 </div>
                                 {qty > 0 && (
@@ -621,11 +623,13 @@ export default function MovingCalculatorPage() {
                            (mode !== 'room' || inv.room === selectedRoom)
                   )?.quantity || 0;
 
-                  const nameClass = item.name.length > 32 
-                    ? 'text-xs' 
-                    : item.name.length > 24 
-                      ? 'text-[13px]' 
-                      : 'text-sm';
+                  const nameClass = item.name.length > 36 
+                    ? 'text-[10px] leading-tight' 
+                    : item.name.length > 28 
+                      ? 'text-xs leading-tight' 
+                      : item.name.length > 22 
+                        ? 'text-[13px] leading-tight' 
+                        : 'text-sm leading-tight';
 
                   return (
                     <div key={item.name} className="flex items-center gap-1 rounded-2xl overflow-hidden border bg-card text-sm min-h-[42px] px-1">
