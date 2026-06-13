@@ -336,11 +336,21 @@ export default function MovingCalculatorPage() {
                       })
                     ) : (
                       <div className="col-span-full text-center py-8 text-muted-foreground text-sm">
-                        No items match your search.
+                        {mode === 'room' && !selectedRoom 
+                          ? 'Select a room above to browse its full inventory list.'
+                          : mode === 'quick' && !quickSearch 
+                            ? 'Type in the search box or use "Browse full list" to see everything.'
+                            : 'No items match your search.'}
                       </div>
                     )}
                   </AnimatePresence>
                 </div>
+
+                {currentItems.length > 0 && (
+                  <div className="text-[10px] text-center text-muted-foreground mt-1.5">
+                    Showing all {currentItems.length} items
+                  </div>
+                )}
 
                 {/* Custom Item Adder */}
                 <div className="mt-4 pt-4 border-t">
