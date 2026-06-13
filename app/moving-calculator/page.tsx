@@ -220,7 +220,7 @@ export default function MovingCalculatorPage() {
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-3">
             Smart Move Estimator
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Build your inventory and instantly see your total volume, recommended truck size, and mover requirements.
           </p>
         </div>
@@ -329,7 +329,7 @@ export default function MovingCalculatorPage() {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-[620px] overflow-auto pr-1 custom-scroll">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-[420px] sm:max-h-[620px] overflow-auto pr-1 custom-scroll">
                   <AnimatePresence>
                     {currentItems.length > 0 ? (
                       currentItems.map((item) => {
@@ -450,29 +450,29 @@ export default function MovingCalculatorPage() {
             {/* Prominent Total */}
             <Card className="bg-primary text-primary-foreground border-0 shadow-trust-lg">
               <CardContent className="pt-6 pb-5">
-                <div className="flex items-end justify-between">
-                  <div className="flex gap-8">
+                <div className="flex flex-col sm:flex-row items-end justify-between gap-4 sm:gap-8">
+                  <div className="flex gap-4 sm:gap-8">
                     {/* Volume */}
                     <div>
                       <div className="text-sm opacity-90 font-medium tracking-wider">TOTAL VOLUME</div>
-                      <div className="text-7xl font-semibold tabular-nums tracking-tighter mt-1">
+                      <div className="text-5xl sm:text-6xl md:text-7xl font-semibold tabular-nums tracking-tighter mt-1">
                         {Math.round(totalVolume)}
                       </div>
-                      <div className="text-xl -mt-2 opacity-90">cubic feet</div>
+                      <div className="text-lg sm:text-xl -mt-2 opacity-90">cubic feet</div>
                     </div>
                     {/* Weight */}
                     <div>
                       <div className="text-sm opacity-90 font-medium tracking-wider">TOTAL WEIGHT</div>
-                      <div className="text-7xl font-semibold tabular-nums tracking-tighter mt-1">
+                      <div className="text-5xl sm:text-6xl md:text-7xl font-semibold tabular-nums tracking-tighter mt-1">
                         {totalWeight}
                       </div>
-                      <div className="text-xl -mt-2 opacity-90">lbs</div>
-                      <div className="text-xs opacity-75 -mt-1">(7 lbs/cf)</div>
+                      <div className="text-lg sm:text-xl -mt-2 opacity-90">lbs</div>
+                      <div className="text-[10px] sm:text-xs opacity-75 -mt-1">(7 lbs/cf)</div>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl font-medium">{totalItems}</div>
-                    <div className="text-sm opacity-75">items</div>
+                    <div className="text-2xl sm:text-3xl font-medium">{totalItems}</div>
+                    <div className="text-xs sm:text-sm opacity-75">items</div>
                   </div>
                 </div>
 
