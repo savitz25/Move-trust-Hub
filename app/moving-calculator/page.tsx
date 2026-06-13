@@ -609,7 +609,7 @@ export default function MovingCalculatorPage() {
         <QuoteModal
           open={showQuoteModal}
           onOpenChange={setShowQuoteModal}
-          prefilledData={{ estimatedVolume: totalVolume }}
+          prefilledData={{ estimatedVolume: totalVolume, estimatedWeight: totalWeight }}
         />
 
         {/* Full catalog browser for accessing items from the large xlsx source */}
