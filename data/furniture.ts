@@ -1,5 +1,5 @@
 // Curated furniture list for the move calculator.
-// Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance inv CSVs (new Appliances category added).
+// Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance/office inv CSVs (new Appliances and Office categories expanded).
 // Other categories from original xlsx curated subset.
 
 export interface FurnitureItem {
@@ -284,6 +284,29 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Desk, Small", volume: 14.0, category: "Office" },
   { name: "Desk Chair, Large", volume: 10.0, category: "Office" },
   { name: "Desk Chair, Medium", volume: 7.0, category: "Office" },
+  // Office - expanded with items from office inventory.csv (added all not currently listed)
+  { name: "Chair, Folding", volume: 2.0, category: "Office" },
+  { name: "Computer Screen", volume: 5.0, category: "Office" },
+  { name: "Computer System", volume: 5.0, category: "Office" },
+  { name: "Copier, Large Office", volume: 30.0, category: "Office" },
+  { name: "Copier, Table Top", volume: 7.0, category: "Office" },
+  { name: "Craft Table", volume: 15.0, category: "Office" },
+  { name: "Desk, Hutch", volume: 10.0, category: "Office" },
+  { name: "Desk, L-Shape", volume: 35.0, category: "Office" },
+  { name: "Desk, Large", volume: 40.0, category: "Office" },
+  { name: "Fax Machine", volume: 5.0, category: "Office" },
+  { name: "File Cabinet, 2 Drawer", volume: 10.0, category: "Office" },
+  { name: "File Cabinet, 2 Drawer Lateral", volume: 20.0, category: "Office" },
+  { name: "File Cabinet, 3 Drawer", volume: 15.0, category: "Office" },
+  { name: "File Cabinet, 3 Drawer Lateral", volume: 30.0, category: "Office" },
+  { name: "File Cabinet, 4 Drawer", volume: 20.0, category: "Office" },
+  { name: "File Cabinet, 4 Drawer Lateral", volume: 40.0, category: "Office" },
+  { name: "File Cabinet, 5 Drawer", volume: 40.0, category: "Office" },
+  { name: "Lawyers Bookcase", volume: 30.0, category: "Office" },
+  { name: "Printer, Large Office", volume: 30.0, category: "Office" },
+  { name: "Printer, Small", volume: 5.0, category: "Office" },
+  { name: "Table, Conference", volume: 43.0, category: "Office" },
+  { name: "Table, Display", volume: 20.0, category: "Office" },
   { name: "Golf Cart 6 Seater", volume: 400.0, category: "Other" },
   { name: "Golf Cart (Standard Size)", volume: 300.0, category: "Other" },
   { name: "Atv", volume: 180.0, category: "Other" },
