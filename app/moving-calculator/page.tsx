@@ -375,11 +375,6 @@ export default function MovingCalculatorPage() {
                                 <div className={`font-semibold ${nameClass} text-center`}>
                                   {item.name}
                                 </div>
-                                {qty > 0 && (
-                                  <div className="mt-0.5 text-[9px] font-mono tracking-tighter opacity-80">
-                                    × {qty}
-                                  </div>
-                                )}
                               </div>
 
                               {/* Right: Increment */}
@@ -659,9 +654,6 @@ export default function MovingCalculatorPage() {
                       >
                         <span className={`font-medium ${nameClass}`}>{item.name}</span>
                         <span className="text-[10px] opacity-75">• {item.category}</span>
-                        {qty > 0 && (
-                          <span className="ml-auto text-[10px] font-mono opacity-80">×{qty}</span>
-                        )}
                       </div>
 
                       {/* Increment */}
