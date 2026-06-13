@@ -2,6 +2,7 @@
 // Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance/office/patio/boxes and bins/other/nursery inv CSVs (Outdoor, Boxes and Bins, Other, Nursery categories expanded).
 // Other categories from original xlsx curated subset.
 // UI caps removed (was .slice(0,24) in calculator grid) so all 70+ item categories (e.g. Bedroom) display fully in scrollable multi-col grid.
+// Force fresh Vercel deploy tip (user reported build was on 859e4ac). Latest changes: 4-col grid + no slice + counts + improved empty states.
 
 export interface FurnitureItem {
   name: string;
