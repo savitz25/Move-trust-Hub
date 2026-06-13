@@ -610,22 +610,52 @@ export default function MovingCalculatorPage() {
               </div>
               <div className="max-h-[520px] overflow-auto border rounded-lg p-2 space-y-1">
                 {searchItems(browseSearch).map((item: FurnitureItem) => {
-                  const alreadyInInventory = inventory.some(
+                  const qty = inventory.find(
                     inv => inv.name === item.name && 
                            (mode !== 'room' || inv.room === selectedRoom)
-                  );
+                  )?.quantity || 0;
+
                   return (
-                    <div key={item.name} className="flex items-center justify-between gap-2 p-2 hover:bg-muted/50 rounded text-sm">
-                      <div>
+                    <div key={item.name} className="flex items-stretch rounded-lg overflow-hidden border bg-card text-sm">
+                      {/* Decrement */}
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="w-8 rounded-none text-xl font-light text-muted-foreground hover:bg-muted active:bg-muted/70 border-r disabled:opacity-30"
+                        onClick={() => handleDecrement(item.name)}
+                        disabled={qty === 0}
+                      >
+                        <Minus className="h-3.5 w-3.5" />
+                      </Button>
+
+                      {/* Middle: description in blue */}
+                      <div
+                        role="button"
+                        tabIndex={0}
+                        className="flex-1 bg-primary px-3 py-2 text-primary-foreground cursor-pointer active:opacity-95 flex items-center gap-2 focus:outline-none"
+                        onClick={() => handleAdd(item.name)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            handleAdd(item.name);
+                          }
+                        }}
+                      >
                         <span className="font-medium">{item.name}</span>
-                        <span className="ml-2 text-xs text-muted-foreground">{item.volume} cu ft • {item.category}</span>
+                        <span className="text-[10px] opacity-75">• {item.category}</span>
+                        {qty > 0 && (
+                          <span className="ml-auto text-[10px] font-mono opacity-80">×{qty}</span>
+                        )}
                       </div>
-                      <Button 
-                        size="sm" 
-                        variant={alreadyInInventory ? "secondary" : "default"}
+
+                      {/* Increment */}
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="w-8 rounded-none text-xl font-light text-muted-foreground hover:bg-primary/10 active:bg-primary/5 border-l"
                         onClick={() => handleAdd(item.name)}
                       >
-                        <Plus className="h-3 w-3 mr-1" /> Add
+                        <Plus className="h-3.5 w-3.5" />
                       </Button>
                     </div>
                   );
