@@ -1,5 +1,5 @@
 // Curated furniture list for the move calculator.
-// Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance/office/patio inv CSVs (Outdoor category expanded).
+// Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance/office/patio/boxes and bins inv CSVs (Outdoor and Boxes and Bins categories expanded).
 // Other categories from original xlsx curated subset.
 
 export interface FurnitureItem {
@@ -405,21 +405,24 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Smoker Sm", volume: 15.0, category: "Outdoor" },
   { name: "Barbecue Grill, Small", volume: 15.0, category: "Outdoor" },
   { name: "Chair, Stackable", volume: 3.0, category: "Outdoor" },
-  { name: "Plastic Bin, Xl", volume: 10.0, category: "Packing Supplies" },
-  { name: "Plastic Bin, Lg.", volume: 7.0, category: "Packing Supplies" },
-  { name: "Box, Extra Large 23X23X16", volume: 6.0, category: "Packing Supplies" },
-  { name: "Box, China/Dish 18X18X28", volume: 5.0, category: "Packing Supplies" },
-  { name: "Box, Lamp", volume: 5.0, category: "Packing Supplies" },
-  { name: "Box, Large (4.5 Cf) 18X18X24", volume: 5.0, category: "Packing Supplies" },
-  { name: "Plastic Bin, Med.", volume: 5.0, category: "Packing Supplies" },
-  { name: "Box, Med (3.0 Cf) 18X18X16", volume: 3.0, category: "Packing Supplies" },
-  { name: "Plastic Bin, Sm.", volume: 3.0, category: "Packing Supplies" },
-  { name: "Box, Book", volume: 2.0, category: "Packing Supplies" },
-  { name: "Box, Small (1.5. Cf) 16X12X12", volume: 2.0, category: "Packing Supplies" },
-  { name: "Box, Wardrobe", volume: 13, category: "Packing Supplies" },
+  { name: "Plastic Bin, Xl", volume: 10.0, category: "Boxes and Bins" },
+  { name: "Plastic Bin, Lg.", volume: 7.0, category: "Boxes and Bins" },
+  { name: "Box, Extra Large 23X23X16", volume: 6.0, category: "Boxes and Bins" },
+  { name: "Box, China/Dish 18X18X28", volume: 5.0, category: "Boxes and Bins" },
+  { name: "Box, Lamp", volume: 5.0, category: "Boxes and Bins" },
+  { name: "Box, Large (4.5 Cf) 18X18X24", volume: 5.0, category: "Boxes and Bins" },
+  { name: "Plastic Bin, Med.", volume: 5.0, category: "Boxes and Bins" },
+  { name: "Box, Med (3.0 Cf) 18X18X16", volume: 3.0, category: "Boxes and Bins" },
+  { name: "Plastic Bin, Sm.", volume: 3.0, category: "Boxes and Bins" },
+  { name: "Box, Book", volume: 2.0, category: "Boxes and Bins" },
+  { name: "Box, Small (1.5. Cf) 16X12X12", volume: 2.0, category: "Boxes and Bins" },
+  { name: "Box, Wardrobe", volume: 13, category: "Boxes and Bins" },
+  // Boxes and Bins - expanded with items from boxes and bins inv.csv (added missing items)
+  { name: "Mirror Box 40X60", volume: 4.0, category: "Boxes and Bins" },
+  { name: "Picture Box 40X60", volume: 4.0, category: "Boxes and Bins" },
 ];
 
-export const roomCategories = ['Bathroom', 'Bedroom', 'Dining Room', 'Garage / Laundry', 'Kitchen', 'Appliances', 'Living Room', 'Office', 'Other', 'Outdoor', 'Packing Supplies'];
+export const roomCategories = ['Bathroom', 'Bedroom', 'Dining Room', 'Garage / Laundry', 'Kitchen', 'Appliances', 'Living Room', 'Office', 'Other', 'Outdoor', 'Boxes and Bins'];
 
 export function getItemsByCategory(category: string) {
   return furnitureItems.filter(item => item.category === category);
