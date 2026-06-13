@@ -82,7 +82,9 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
   'Outdoor': <Trees className="h-4 w-4" />,
   'Bathroom': <Bath className="h-4 w-4" />,
   'Other': <Package className="h-4 w-4" />,
-  'Packing Supplies': <Package className="h-4 w-4" />,
+  'Appliances': <Package className="h-4 w-4" />,
+  'Nursery': <Bed className="h-4 w-4" />,
+  'Boxes and Bins': <Package className="h-4 w-4" />,
 };
 
 export default function MovingCalculatorPage() {
@@ -134,20 +136,15 @@ export default function MovingCalculatorPage() {
     return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
   }, [inventory, mode]);
 
-  // Items for current view
-  // Note: Source xlsx has 400+ items. We use a large curated subset (~127).
-  // See scripts/update-furniture-from-xlsx.py to adjust how many are included.
+  // Items for current view - full lists per category (no artificial cap).
+  // Bedroom etc. now show 70+ items from CSVs; grid is scrollable with more columns.
   const currentItems = useMemo(() => {
-    let list: FurnitureItem[] = [];
-
     if (mode === 'room' && selectedRoom) {
-      list = getItemsByCategory(selectedRoom);
+      return getItemsByCategory(selectedRoom);
     } else if (mode === 'quick') {
-      list = quickSearch ? searchItems(quickSearch) : furnitureItems;
+      return quickSearch ? searchItems(quickSearch) : furnitureItems;
     }
-
-    // Cap the visible grid for cleanliness. The full set is searchable + available in "Browse full list".
-    return list.slice(0, 24);
+    return [];
   }, [mode, selectedRoom, quickSearch]);
 
   // Handle adding from list
@@ -271,10 +268,16 @@ export default function MovingCalculatorPage() {
             <Card>
               <CardHeader className="pb-2">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-base">
+                  <CardTitle className="text-base flex items-center gap-2">
                     {mode === 'room' && selectedRoom 
-                      ? `${selectedRoom} Items` 
-                      : mode === 'quick' ? 'Browse / Search Items' : 'Select Items'}
+                      ? `${selectedRoom} Items`
+                      : mode === 'quick' ? (quickSearch ? 'Search Results' : 'All Items') : 'Select Items'}
+                    {mode === 'room' && selectedRoom && (
+                      <span className="text-xs font-normal text-muted-foreground align-middle">({getItemsByCategory(selectedRoom).length})</span>
+                    )}
+                    {mode === 'quick' && !quickSearch && (
+                      <span className="text-xs font-normal text-muted-foreground align-middle">({furnitureItems.length})</span>
+                    )}
                   </CardTitle>
                   {mode === 'quick' && (
                     <div className="relative w-56">
@@ -294,13 +297,13 @@ export default function MovingCalculatorPage() {
                       onClick={() => { setBrowseSearch(''); setShowBrowseDialog(true); }}
                       className="ml-2"
                     >
-                      Browse full list ({furnitureItems.length})
+                      Browse full list
                     </Button>
                   )}
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[420px] overflow-auto pr-1 custom-scroll">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-h-[520px] overflow-auto pr-1 custom-scroll">
                   <AnimatePresence>
                     {currentItems.length > 0 ? (
                       currentItems.map((item) => {
@@ -342,7 +345,7 @@ export default function MovingCalculatorPage() {
                 {/* Custom Item Adder */}
                 <div className="mt-4 pt-4 border-t">
                   <div className="text-xs font-medium text-muted-foreground mb-2">DON&apos;T SEE IT? ADD A CUSTOM ITEM</div>
-                  <div className="text-[10px] text-muted-foreground">Sourced from your items-volume.xlsx (curated subset of the 400+; now includes Packing Supplies boxes/bins). Use search or "Browse full list" below for more.</div>
+                  <div className="text-[10px] text-muted-foreground">Full inventory lists loaded from your CSVs (Bedroom 70+, Living, Garage, etc.). Use room selector or search / "Browse full list" to see everything. Add custom for anything missing.</div>
                   <div className="flex flex-col sm:flex-row gap-2">
                     <Input 
                       placeholder="Item name (e.g. Antique Armoire)" 
@@ -542,8 +545,8 @@ export default function MovingCalculatorPage() {
                   className="pl-9"
                 />
               </div>
-              <div className="max-h-[420px] overflow-auto border rounded-lg p-2 space-y-1">
-                {searchItems(browseSearch).slice(0, 60).map((item: FurnitureItem) => {
+              <div className="max-h-[520px] overflow-auto border rounded-lg p-2 space-y-1">
+                {searchItems(browseSearch).map((item: FurnitureItem) => {
                   const alreadyInInventory = inventory.some(
                     inv => inv.name === item.name && 
                            (mode !== 'room' || inv.room === selectedRoom)
@@ -564,9 +567,12 @@ export default function MovingCalculatorPage() {
                     </div>
                   );
                 })}
-                {searchItems(browseSearch).length > 60 && (
-                  <div className="text-xs text-center text-muted-foreground pt-2">Showing first 60 matches. Refine search for more.</div>
+                {searchItems(browseSearch).length === 0 && (
+                  <div className="text-xs text-center text-muted-foreground py-3">No matches. Try a different search.</div>
                 )}
+              </div>
+              <div className="text-xs text-center text-muted-foreground">
+                {searchItems(browseSearch).length} items
               </div>
               <p className="text-xs text-muted-foreground">This is the curated list generated from your items-volume.xlsx. Add customs for anything missing.</p>
             </div>
