@@ -333,29 +333,35 @@ export default function MovingCalculatorPage() {
                                  (mode !== 'room' || inv.room === selectedRoom)
                         )?.quantity || 0;
 
+                        const nameClass = item.name.length > 30 
+                          ? 'text-[11px]' 
+                          : item.name.length > 22 
+                            ? 'text-xs' 
+                            : 'text-sm';
+
                         return (
                           <motion.div
                             key={item.name}
                             whileHover={{ scale: 1.005 }}
-                            className="rounded-2xl overflow-hidden border bg-card"
+                            className="rounded-3xl overflow-hidden border bg-card min-h-[66px]"
                           >
-                            <div className="flex items-stretch">
+                            <div className="flex items-stretch h-full">
                               {/* Left: Decrement */}
                               <Button
                                 variant="ghost"
                                 size="icon"
-                                className="h-auto w-10 rounded-none text-2xl font-light text-muted-foreground hover:bg-muted hover:text-foreground active:bg-muted/70 border-r disabled:opacity-30"
+                                className="h-full w-9 rounded-none text-2xl font-light text-muted-foreground hover:bg-muted hover:text-foreground active:bg-muted/70 border-r disabled:opacity-30"
                                 onClick={() => handleDecrement(item.name)}
                                 disabled={qty === 0}
                               >
                                 <Minus className="h-4 w-4" />
                               </Button>
 
-                              {/* Center: Large blue button area with description (name) */}
+                              {/* Center: Large blue button area with description (name) — fixed height for uniformity */}
                               <div
                                 role="button"
                                 tabIndex={0}
-                                className="flex-1 bg-primary px-3 py-3.5 text-primary-foreground cursor-pointer active:opacity-95 transition-opacity select-none flex flex-col items-center justify-center min-h-[58px] focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-primary/50"
+                                className="flex-1 bg-primary px-2 py-1.5 text-primary-foreground cursor-pointer active:opacity-95 transition-opacity select-none flex flex-col items-center justify-center min-h-[66px] focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-primary/50"
                                 onClick={() => handleAdd(item.name)}
                                 onKeyDown={(e) => {
                                   if (e.key === 'Enter' || e.key === ' ') {
@@ -364,11 +370,11 @@ export default function MovingCalculatorPage() {
                                   }
                                 }}
                               >
-                                <div className="font-semibold text-sm leading-tight tracking-tight text-center">
+                                <div className={`font-semibold ${nameClass} leading-tight tracking-tight text-center`}>
                                   {item.name}
                                 </div>
                                 {qty > 0 && (
-                                  <div className="mt-1 text-[10px] font-mono tracking-tighter opacity-80">
+                                  <div className="mt-0.5 text-[9px] font-mono tracking-tighter opacity-80">
                                     × {qty}
                                   </div>
                                 )}
@@ -378,7 +384,7 @@ export default function MovingCalculatorPage() {
                               <Button
                                 variant="ghost"
                                 size="icon"
-                                className="h-auto w-10 rounded-none text-2xl font-light text-muted-foreground hover:bg-primary/10 hover:text-primary active:bg-primary/5 border-l"
+                                className="h-full w-9 rounded-none text-2xl font-light text-muted-foreground hover:bg-primary/10 hover:text-primary active:bg-primary/5 border-l"
                                 onClick={() => handleAdd(item.name)}
                               >
                                 <Plus className="h-4 w-4" />
@@ -615,8 +621,14 @@ export default function MovingCalculatorPage() {
                            (mode !== 'room' || inv.room === selectedRoom)
                   )?.quantity || 0;
 
+                  const nameClass = item.name.length > 32 
+                    ? 'text-xs' 
+                    : item.name.length > 24 
+                      ? 'text-[13px]' 
+                      : 'text-sm';
+
                   return (
-                    <div key={item.name} className="flex items-stretch rounded-lg overflow-hidden border bg-card text-sm">
+                    <div key={item.name} className="flex items-stretch rounded-2xl overflow-hidden border bg-card text-sm min-h-[42px]">
                       {/* Decrement */}
                       <Button
                         variant="ghost"
@@ -632,7 +644,7 @@ export default function MovingCalculatorPage() {
                       <div
                         role="button"
                         tabIndex={0}
-                        className="flex-1 bg-primary px-3 py-2 text-primary-foreground cursor-pointer active:opacity-95 flex items-center gap-2 focus:outline-none"
+                        className="flex-1 bg-primary px-3 py-1.5 text-primary-foreground cursor-pointer active:opacity-95 flex items-center gap-2 focus:outline-none"
                         onClick={() => handleAdd(item.name)}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter' || e.key === ' ') {
@@ -641,7 +653,7 @@ export default function MovingCalculatorPage() {
                           }
                         }}
                       >
-                        <span className="font-medium">{item.name}</span>
+                        <span className={`font-medium ${nameClass}`}>{item.name}</span>
                         <span className="text-[10px] opacity-75">• {item.category}</span>
                         {qty > 0 && (
                           <span className="ml-auto text-[10px] font-mono opacity-80">×{qty}</span>
