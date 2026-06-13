@@ -324,7 +324,7 @@ export default function MovingCalculatorPage() {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-h-[540px] overflow-auto pr-1 custom-scroll">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-[620px] overflow-auto pr-1 custom-scroll">
                   <AnimatePresence>
                     {currentItems.length > 0 ? (
                       currentItems.map((item) => {
@@ -343,9 +343,9 @@ export default function MovingCalculatorPage() {
                           <motion.div
                             key={item.name}
                             whileHover={{ scale: 1.005 }}
-                            className="rounded-3xl overflow-hidden border bg-card min-h-[66px]"
+                            className="rounded-3xl overflow-hidden border bg-card h-[70px]"
                           >
-                            <div className="flex items-center gap-1 h-full px-1">
+                            <div className="flex items-center gap-1 h-full w-full px-1">
                               {/* Left: Decrement */}
                               <Button
                                 variant="ghost"
