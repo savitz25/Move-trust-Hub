@@ -122,6 +122,11 @@ export default function MovingCalculatorPage() {
     [inventory]
   );
 
+  const totalWeight = useMemo(() => 
+    Math.round(totalVolume * 7), 
+    [totalVolume]
+  );
+
   const recommendation = getRecommendation(totalVolume);
 
   // Grouped by room (only meaningful in room mode)
@@ -452,6 +457,9 @@ export default function MovingCalculatorPage() {
                       {Math.round(totalVolume)}
                     </div>
                     <div className="text-xl -mt-2 opacity-90">cubic feet</div>
+                    <div className="text-sm mt-1 opacity-90">
+                      ≈ {totalWeight} lbs <span className="text-[10px] opacity-75">(7 lbs/cf)</span>
+                    </div>
                   </div>
                   <div className="text-right">
                     <div className="text-3xl font-medium">{totalItems}</div>
@@ -538,7 +546,7 @@ export default function MovingCalculatorPage() {
             {/* Current Inventory */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between pb-2">
-                <CardTitle className="text-base">Your Inventory ({totalItems} items)</CardTitle>
+                <CardTitle className="text-base">Your Inventory ({totalItems} items, {totalWeight} lbs)</CardTitle>
                 {inventory.length > 0 && (
                   <Button variant="ghost" size="sm" onClick={clearInventory} className="text-destructive hover:text-destructive">
                     Clear All
@@ -684,7 +692,7 @@ export default function MovingCalculatorPage() {
         </Dialog>
 
         <div className="mt-10 text-center text-xs text-muted-foreground max-w-md mx-auto">
-          Volumes are industry-standard averages. Actual space may vary based on packing style and item sizes. 
+          Volumes are industry-standard averages (7 lbs per cu ft for weight estimate). Actual space and weight may vary based on packing style and item sizes. 
           This tool is for estimation only.
         </div>
       </div>
@@ -707,7 +715,7 @@ function InventoryRow({
       <div className="min-w-0 flex-1">
         <div className="font-medium leading-tight">{item.name}</div>
         {item.room && <div className="text-[10px] text-muted-foreground">{item.room}</div>}
-        <div className="text-xs text-muted-foreground tabular-nums">{item.volume} cu ft × {item.quantity}</div>
+        <div className="text-xs text-muted-foreground tabular-nums">{item.volume} cu ft × {item.quantity} ≈ {Math.round(item.volume * item.quantity * 7)} lbs</div>
       </div>
 
       <div className="flex items-center gap-1.5 shrink-0">
