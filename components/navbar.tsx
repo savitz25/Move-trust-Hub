@@ -12,9 +12,10 @@ export function Navbar() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   const navLinks = [
-    { href: '/companies', label: 'Directory' },
+    { href: '/companies', label: 'Movers Directory' },
+    { href: '/auto-transport', label: 'Auto Transport' },
     { href: '/moving-calculator', label: 'Move Calculator' },
-    { href: '/compare', label: 'Compare Movers' },
+    { href: '/compare', label: 'Compare' },
     { href: '/resources', label: 'Resources' },
     { href: '/about', label: 'About & Trust' },
   ];
@@ -87,8 +88,8 @@ export function Navbar() {
             >
               Get Free Quotes
             </Button>
-            <Link href="/companies" onClick={() => setIsOpen(false)} className="text-center py-2 text-primary">
-              Browse Movers →
+            <Link href="/auto-transport" onClick={() => setIsOpen(false)} className="text-center py-2 text-primary">
+              Browse Auto Transport →
             </Link>
           </div>
         </div>

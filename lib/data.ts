@@ -1,6 +1,7 @@
 import { Company, Review, DirectoryFilters, SortOption } from '@/types';
 import { seedCompanies, getCompanyBySlug } from '@/data/seed-companies';
 import { seedReviews, getReviewsForCompany } from '@/data/seed-reviews';
+import { seedAutoTransportCompanies, getAutoTransportBySlug } from '@/data/seed-auto-transport';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
 import { computeReputationScore } from '@/data/seed-companies';
 
@@ -174,4 +175,18 @@ export async function saveCompany(company: Company): Promise<Company> {
 export async function deleteCompany(id: string): Promise<void> {
   const companies = await getAllCompanies();
   companiesCache = companies.filter(c => c.id !== id);
+}
+
+// Auto Transport specific (demo seed for now)
+let autoTransportCache: Company[] | null = null;
+
+export async function getAllAutoTransportCompanies(): Promise<Company[]> {
+  if (autoTransportCache) return autoTransportCache;
+  autoTransportCache = [...seedAutoTransportCompanies];
+  return autoTransportCache;
+}
+
+export async function getAutoTransportBySlugAsync(slug: string): Promise<Company | undefined> {
+  const companies = await getAllAutoTransportCompanies();
+  return companies.find(c => c.slug === slug) || getAutoTransportBySlug(slug);
 }
