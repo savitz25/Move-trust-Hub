@@ -157,6 +157,27 @@ export default function MovingCalculatorPage() {
     toast.success(`Added ${itemName}`, { description: 'Quantity increased' });
   };
 
+  // Handle decrementing (directly from the item list, respects current room)
+  const handleDecrement = (itemName: string) => {
+    if (mode === 'room' && !selectedRoom) {
+      toast.error('Please select a room first');
+      return;
+    }
+    const effectiveRoom = mode === 'room' ? selectedRoom || undefined : undefined;
+    const existing = inventory.find(
+      (it) => it.name === itemName && (it.room || undefined) === effectiveRoom
+    );
+    if (!existing) return;
+
+    if (existing.quantity <= 1) {
+      removeItem(existing.id);
+      toast.info(`Removed ${itemName}`);
+    } else {
+      updateQuantity(existing.id, existing.quantity - 1);
+      toast.success(`Updated ${itemName}`, { description: 'Quantity decreased' });
+    }
+  };
+
   // Add custom
   const handleAddCustom = () => {
     const vol = parseFloat(customVolume);
@@ -303,34 +324,66 @@ export default function MovingCalculatorPage() {
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-h-[520px] overflow-auto pr-1 custom-scroll">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-h-[540px] overflow-auto pr-1 custom-scroll">
                   <AnimatePresence>
                     {currentItems.length > 0 ? (
                       currentItems.map((item) => {
-                        const alreadyInInventory = inventory.some(
+                        const qty = inventory.find(
                           inv => inv.name === item.name && 
                                  (mode !== 'room' || inv.room === selectedRoom)
-                        );
+                        )?.quantity || 0;
+
                         return (
                           <motion.div
                             key={item.name}
-                            whileHover={{ scale: 1.01 }}
-                            className="flex items-center justify-between gap-3 rounded-lg border p-3 hover:bg-muted/50 transition-colors"
+                            whileHover={{ scale: 1.005 }}
+                            className="rounded-2xl overflow-hidden border bg-card"
                           >
-                            <div className="min-w-0">
-                              <div className="font-medium text-sm leading-tight">{item.name}</div>
-                              <div className="text-xs text-muted-foreground tabular-nums">
-                                {item.volume} cu ft
+                            <div className="flex items-stretch">
+                              {/* Left: Decrement */}
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-auto w-10 rounded-none text-2xl font-light text-muted-foreground hover:bg-muted hover:text-foreground active:bg-muted/70 border-r disabled:opacity-30"
+                                onClick={() => handleDecrement(item.name)}
+                                disabled={qty === 0}
+                              >
+                                <Minus className="h-4 w-4" />
+                              </Button>
+
+                              {/* Center: Large blue button area with description (name) */}
+                              <div
+                                role="button"
+                                tabIndex={0}
+                                className="flex-1 bg-primary px-3 py-3.5 text-primary-foreground cursor-pointer active:opacity-95 transition-opacity select-none flex flex-col items-center justify-center min-h-[58px] focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:ring-primary/50"
+                                onClick={() => handleAdd(item.name)}
+                                onKeyDown={(e) => {
+                                  if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    handleAdd(item.name);
+                                  }
+                                }}
+                              >
+                                <div className="font-semibold text-sm leading-tight tracking-tight text-center">
+                                  {item.name}
+                                </div>
+                                {qty > 0 && (
+                                  <div className="mt-1 text-[10px] font-mono tracking-tighter opacity-80">
+                                    × {qty}
+                                  </div>
+                                )}
                               </div>
+
+                              {/* Right: Increment */}
+                              <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-auto w-10 rounded-none text-2xl font-light text-muted-foreground hover:bg-primary/10 hover:text-primary active:bg-primary/5 border-l"
+                                onClick={() => handleAdd(item.name)}
+                              >
+                                <Plus className="h-4 w-4" />
+                              </Button>
                             </div>
-                            <Button 
-                              size="sm" 
-                              variant={alreadyInInventory ? "secondary" : "default"}
-                              onClick={() => handleAdd(item.name)}
-                              className="shrink-0"
-                            >
-                              <Plus className="h-3.5 w-3.5 mr-1" /> Add
-                            </Button>
                           </motion.div>
                         );
                       })
