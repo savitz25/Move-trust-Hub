@@ -10,14 +10,14 @@ export interface FurnitureItem {
 
 export const furnitureItems: FurnitureItem[] = [
   { name: "Toilet Shelf", volume: 12.0, category: "Bathroom" },
-  // Bedroom - expanded with full list from bedroom inv list.csv (all items from the provided CSV)
+  // Bedroom - full list from bedroom inv list.csv (all items from the provided CSV, normalized)
   { name: "Bed, Bunk (With Mattresses)", volume: 105.0, category: "Bedroom" },
-  { name: "Sofa, 3 Cushion (Recliner'S Built In)", volume: 75.0, category: "Bedroom" },
+  { name: "Sofa, 3 Cushion (Recliner's Built In)", volume: 75.0, category: "Bedroom" },
   { name: "Bed, King (Mattress And Box Spring)", volume: 70.0, category: "Bedroom" },
   { name: "Bed, Water Q/K", volume: 70.0, category: "Bedroom" },
   { name: "Bed, Queen (Mattress And Box Spring)", volume: 65.0, category: "Bedroom" },
   { name: "Adjustable Base King", volume: 60.0, category: "Bedroom" },
-  { name: "Sofa, 2 Cushion Loveseat (Recliner'S Built In)", volume: 50.0, category: "Bedroom" },
+  { name: "Sofa, 2 Cushion Loveseat (Recliner's Built In)", volume: 50.0, category: "Bedroom" },
   { name: "Armoire, Large", volume: 50.0, category: "Bedroom" },
   { name: "Bed, Captain (With Mattress)", volume: 50.0, category: "Bedroom" },
   { name: "Bed, Day", volume: 50.0, category: "Bedroom" },
@@ -50,6 +50,7 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Bed, Trundle", volume: 20.0, category: "Bedroom" },
   { name: "Mattress Only, Twin/Single", volume: 20.0, category: "Bedroom" },
   { name: "Table, Vanity", volume: 16.0, category: "Bedroom" },
+  { name: "Vanity, Dresser", volume: 20.0, category: "Bedroom" },
   { name: "Chest Of Drawers (Small)", volume: 18.0, category: "Bedroom" },
   { name: "Bed Canopy", volume: 17.0, category: "Bedroom" },
   { name: "Box Springs", volume: 16.0, category: "Bedroom" },
@@ -66,11 +67,10 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Night Stand", volume: 10.0, category: "Bedroom" },
   { name: "Quilt Rack", volume: 10.0, category: "Bedroom" },
   { name: "Trunk, Medium", volume: 10.0, category: "Bedroom" },
-  { name: "Vanity, Dresser", volume: 20.0, category: "Bedroom" },
+  { name: "Vanity, Bench", volume: 5.0, category: "Bedroom" },
   { name: "Dresser, Mirror", volume: 6.0, category: "Bedroom" },
   { name: "Mirror, Vanity", volume: 5.0, category: "Bedroom" },
   { name: "Trunk, Small", volume: 5.0, category: "Bedroom" },
-  { name: "Vanity, Bench", volume: 5.0, category: "Bedroom" },
   { name: "Bed, Posts", volume: 5.0, category: "Bedroom" },
   { name: "Mirror, Medium", volume: 4.0, category: "Bedroom" },
   { name: "Hamper", volume: 4.0, category: "Bedroom" },
