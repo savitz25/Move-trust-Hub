@@ -1,5 +1,5 @@
 // Curated furniture list for the move calculator.
-// Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance/office/patio/boxes and bins/other inv CSVs (Outdoor, Boxes and Bins, Other categories expanded).
+// Source: items-volume.xlsx + bedroom/living/dining/kitchen/appliance/office/patio/boxes and bins/other/nursery inv CSVs (Outdoor, Boxes and Bins, Other, Nursery categories expanded).
 // Other categories from original xlsx curated subset.
 
 export interface FurnitureItem {
@@ -344,6 +344,24 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Printer, Small", volume: 5.0, category: "Office" },
   { name: "Table, Conference", volume: 43.0, category: "Office" },
   { name: "Table, Display", volume: 20.0, category: "Office" },
+  // Nursery - from Nursery Inventory.csv
+  { name: "Crib, Large", volume: 21.0, category: "Nursery" },
+  { name: "Changing Table", volume: 20.0, category: "Nursery" },
+  { name: "Cradle", volume: 20.0, category: "Nursery" },
+  { name: "Toddler Bed", volume: 20.0, category: "Nursery" },
+  { name: "Glider Chair", volume: 14.0, category: "Nursery" },
+  { name: "Stroller, Double", volume: 14.0, category: "Nursery" },
+  { name: "Power Wheels", volume: 11.0, category: "Nursery" },
+  { name: "Play House (For Kids)", volume: 10.0, category: "Nursery" },
+  { name: "Toy Chest", volume: 10.0, category: "Nursery" },
+  { name: "Doll House", volume: 7.0, category: "Nursery" },
+  { name: "Stroller", volume: 7.0, category: "Nursery" },
+  { name: "Chair, High", volume: 5.0, category: "Nursery" },
+  { name: "Child, Chair", volume: 5.0, category: "Nursery" },
+  { name: "Child, Table", volume: 5.0, category: "Nursery" },
+  { name: "Child, Toy", volume: 5.0, category: "Nursery" },
+  { name: "Playpen, Folding", volume: 5.0, category: "Nursery" },
+  { name: "Baby Gate", volume: 3.0, category: "Nursery" },
   { name: "Golf Cart 6 Seater", volume: 400.0, category: "Other" },
   { name: "Golf Cart (Standard Size)", volume: 300.0, category: "Other" },
   { name: "Atv", volume: 180.0, category: "Other" },
@@ -479,7 +497,7 @@ export const furnitureItems: FurnitureItem[] = [
   { name: "Picture Box 40X60", volume: 4.0, category: "Boxes and Bins" },
 ];
 
-export const roomCategories = ['Bathroom', 'Bedroom', 'Dining Room', 'Garage / Laundry', 'Kitchen', 'Appliances', 'Living Room', 'Office', 'Other', 'Outdoor', 'Boxes and Bins'];
+export const roomCategories = ['Bathroom', 'Bedroom', 'Dining Room', 'Garage / Laundry', 'Kitchen', 'Appliances', 'Living Room', 'Office', 'Nursery', 'Other', 'Outdoor', 'Boxes and Bins'];
 
 export function getItemsByCategory(category: string) {
   return furnitureItems.filter(item => item.category === category);
