@@ -450,15 +450,24 @@ export default function MovingCalculatorPage() {
             {/* Prominent Total */}
             <Card className="bg-primary text-primary-foreground border-0 shadow-trust-lg">
               <CardContent className="pt-6 pb-5">
-                <div className="flex items-baseline justify-between">
-                  <div>
-                    <div className="text-sm opacity-90 font-medium tracking-wider">TOTAL VOLUME</div>
-                    <div className="text-7xl font-semibold tabular-nums tracking-tighter mt-1">
-                      {Math.round(totalVolume)}
+                <div className="flex items-end justify-between">
+                  <div className="flex gap-8">
+                    {/* Volume */}
+                    <div>
+                      <div className="text-sm opacity-90 font-medium tracking-wider">TOTAL VOLUME</div>
+                      <div className="text-7xl font-semibold tabular-nums tracking-tighter mt-1">
+                        {Math.round(totalVolume)}
+                      </div>
+                      <div className="text-xl -mt-2 opacity-90">cubic feet</div>
                     </div>
-                    <div className="text-xl -mt-2 opacity-90">cubic feet</div>
-                    <div className="text-sm mt-1 opacity-90">
-                      ≈ {totalWeight} lbs <span className="text-[10px] opacity-75">(7 lbs/cf)</span>
+                    {/* Weight */}
+                    <div>
+                      <div className="text-sm opacity-90 font-medium tracking-wider">TOTAL WEIGHT</div>
+                      <div className="text-7xl font-semibold tabular-nums tracking-tighter mt-1">
+                        {totalWeight}
+                      </div>
+                      <div className="text-xl -mt-2 opacity-90">lbs</div>
+                      <div className="text-xs opacity-75 -mt-1">(7 lbs/cf)</div>
                     </div>
                   </div>
                   <div className="text-right">
