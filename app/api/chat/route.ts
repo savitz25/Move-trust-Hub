@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.XAI_API_KEY || '',
-  baseURL: 'https://api.x.ai/v1',
-});
+export const dynamic = 'force-dynamic';
 
 const SYSTEM_PROMPT = `You are Grok, a helpful, witty, and maximally truthful AI assistant built by xAI, embedded on Move Trust Hub (movetrusthub.com).
 
@@ -38,17 +34,54 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Messages are required' }, { status: 400 });
     }
 
-    const completion = await openai.chat.completions.create({
-      model: 'grok-4.3', // or 'grok-beta' / latest available
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...messages,
-      ],
-      temperature: 0.7,
-      max_tokens: 800,
+    // Build input array matching the /responses API (system + history)
+    const input = [
+      {
+        role: "system",
+        content: SYSTEM_PROMPT
+      },
+      ...messages
+    ];
+
+    const response = await fetch('https://api.x.ai/v1/responses', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.XAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "grok-4.3",
+        input: input
+      }),
     });
 
-    const reply = completion.choices[0]?.message?.content || "I'm sorry, I couldn't generate a response. Please try again.";
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('xAI API error:', response.status, errorText);
+      throw new Error(`API request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // Extract the reply from the responses API format
+    // The API typically returns output with the assistant message
+    let reply = "I'm sorry, I couldn't generate a response right now. Please try again.";
+
+    if (data.output && Array.isArray(data.output) && data.output.length > 0) {
+      const assistantOutput = data.output.find((o: any) => o.role === 'assistant' || o.type === 'message');
+      if (assistantOutput && assistantOutput.content) {
+        if (typeof assistantOutput.content === 'string') {
+          reply = assistantOutput.content;
+        } else if (Array.isArray(assistantOutput.content)) {
+          reply = assistantOutput.content.map((c: any) => c.text || c.content || '').join(' ');
+        }
+      }
+    } else if (data.choices && data.choices[0]?.message?.content) {
+      // Fallback for chat/completions style responses
+      reply = data.choices[0].message.content;
+    } else if (data.content) {
+      reply = data.content;
+    }
 
     return NextResponse.json({ reply });
   } catch (error: any) {
