@@ -196,45 +196,49 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[580px] rounded-2xl border p-0 overflow-hidden">
-        {/* Enhanced Engaging Header */}
-        <DialogHeader className="px-6 pt-6 pb-4 border-b bg-gradient-to-r from-primary/5 to-transparent">
+      <DialogContent 
+        className="fixed left-[50%] top-[6vh] z-50 w-full max-w-[580px] -translate-x-1/2 rounded-3xl border bg-background p-0 shadow-2xl outline-none overflow-hidden max-h-[88vh] flex flex-col data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
+      >
+        {/* Fixed, always-visible engaging header */}
+        <div className="px-6 pt-5 pb-4 border-b bg-gradient-to-r from-primary/5 via-primary/5 to-transparent flex-shrink-0">
           <div className="flex items-start justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <DialogTitle className="text-2xl tracking-tight">Get 3–5 Competitive Quotes</DialogTitle>
-                <Badge variant="secondary" className="text-[10px] px-1.5 py-0.5">FREE</Badge>
+                <DialogTitle className="text-2xl tracking-tight font-semibold">Get 3–5 Competitive Quotes</DialogTitle>
+                <Badge variant="secondary" className="text-[10px] px-2 py-0.5 font-medium">FREE</Badge>
               </div>
               <p className="text-sm text-muted-foreground">
-                No obligation. Licensed movers only. We&apos;ll match you within 24 hours.
+                No obligation. Only licensed interstate movers. Matched within 24 hours.
               </p>
             </div>
             <button
               onClick={handleClose}
-              className="rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors -mt-1 -mr-1"
+              className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
               aria-label="Close"
             >
               <X className="h-4 w-4" />
             </button>
           </div>
 
-          {/* Trust bar - high conversion element */}
-          <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px]">
-            <div className="inline-flex items-center gap-1 rounded-full bg-background px-2.5 py-0.5 border text-muted-foreground">
-              <ShieldCheck className="h-3 w-3 text-emerald-500" /> FMCSA Licensed
+          {/* Trust bar */}
+          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px]">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> FMCSA Licensed
             </div>
-            <div className="inline-flex items-center gap-1 rounded-full bg-background px-2.5 py-0.5 border text-muted-foreground">
-              4.8★ average from 12k+ moves
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground">
+              4.8★ from 12k+ moves
             </div>
-            <div className="inline-flex items-center gap-1 rounded-full bg-background px-2.5 py-0.5 border text-muted-foreground">
-              Avg customer saves $1,200+
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground">
+              Customers save $1,200+ on avg
             </div>
           </div>
-        </DialogHeader>
+        </div>
 
-        {!submitted ? (
-          /* ENGAGING FORM */
-          <form onSubmit={handleSubmit} className="p-6 space-y-5">
+        {/* Scrollable body so the full modal (header + form/success) is always complete and nice on all screen sizes */}
+        <div className="flex-1 overflow-y-auto p-6">
+          {!submitted ? (
+            /* ENGAGING FORM */
+            <form onSubmit={handleSubmit} className="space-y-5">
             {/* Value reinforcement + prefill highlight */}
             {estimatedWeight && (
               <div className="rounded-lg bg-primary/5 border border-primary/20 p-3 text-sm flex items-center gap-3">
@@ -449,6 +453,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
             </p>
           </div>
         )}
+        </div> {/* end scrollable body */}
       </DialogContent>
     </Dialog>
   );
