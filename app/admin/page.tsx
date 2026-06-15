@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import React, { useEffect, useState } from 'react';
 import { Company } from '@/types';
 import { getAllCompanies, saveCompany, deleteCompany } from '@/lib/data';
