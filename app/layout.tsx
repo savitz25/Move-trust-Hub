@@ -6,6 +6,7 @@ import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/sonner';
 import { Suspense } from 'react';
+import { Chatbot } from '@/components/chatbot';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -97,6 +98,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <Toaster position="top-center" richColors closeButton />
+          <Chatbot />
         </ThemeProvider>
       </body>
     </html>
