@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     `;
 
     const { error } = await resend.emails.send({
-      from: 'Move Trust Hub <quotes@movetrusthub.com>', // Update this to a verified domain in Resend if needed
+      from: 'Move Trust Hub <onboarding@resend.dev>', // Safe default for testing. For production, verify movetrusthub.com in Resend and use quotes@movetrusthub.com or hello@movetrusthub.com
       to: 'mhenry@amerisafemoving.com',
       reply_to: payload.email || undefined,
       subject,
