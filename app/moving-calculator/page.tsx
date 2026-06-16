@@ -546,7 +546,7 @@ export default function MovingCalculatorPage() {
                 <div className="pt-4 border-t text-center">
                   <p className="text-sm font-medium mb-2">Want quotes from real movers right now?</p>
                   <Button variant="outline" onClick={() => setShowQuoteModal(true)}>
-                    Get Matched with 3–5 Verified Movers
+                    Get Matched with 2-3 Verified Movers
                   </Button>
                 </div>
               </CardContent>

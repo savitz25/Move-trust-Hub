@@ -105,7 +105,7 @@ export default function Home() {
             {
               step: "02",
               title: "Compare Personalized Quotes",
-              desc: "Receive 3-5 competitive quotes from top-rated, licensed interstate movers within 24 hours.",
+              desc: "Receive 2-3 competitive quotes from top-rated, licensed interstate movers within 24 hours.",
               icon: Star,
             },
             {

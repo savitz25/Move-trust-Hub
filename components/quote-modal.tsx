@@ -154,7 +154,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
 
       // Also fire a nice toast in case they miss the in-modal success
       toast.success('Request received!', {
-        description: "We'll connect you with 3-5 top-rated licensed movers within 24 hours.",
+        description: "We'll connect you with 2-3 top-rated licensed movers within 24 hours.",
       });
     } catch (err) {
       console.error('Quote submission error:', err);
@@ -162,7 +162,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       setIsSubmitting(false);
       setSubmitted(true);
       toast.success('Request received!', {
-        description: "We'll connect you with 3-5 top-rated licensed movers within 24 hours.",
+        description: "We'll connect you with 2-3 top-rated licensed movers within 24 hours.",
       });
     }
   };
@@ -205,7 +205,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
           <div className="flex items-start justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <DialogTitle className="text-2xl tracking-tight font-semibold">Get 3–5 Competitive Quotes</DialogTitle>
+                <DialogTitle className="text-2xl tracking-tight font-semibold">Get 2-3 Competitive Quotes</DialogTitle>
                 <Badge variant="secondary" className="text-[10px] px-2 py-0.5 font-medium">FREE</Badge>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -420,7 +420,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
                 <ArrowRight className="h-4 w-4" /> What happens next
               </div>
               <ol className="space-y-1.5 text-muted-foreground text-xs pl-1">
-                <li>1. We match you with 3–5 pre-vetted, licensed movers</li>
+                <li>1. We match you with 2-3 pre-vetted, licensed movers</li>
                 <li>2. Movers will reach out directly with custom quotes</li>
                 <li>3. You compare, negotiate, and choose — zero pressure</li>
               </ol>

@@ -190,7 +190,7 @@ The site has been evolved into a **customer-focused marketing and lead-generatio
 - "How it Works" and benefits sections
 - Tools section highlighting the Calculator, Directory, and Comparison as free resources
 - Social proof and testimonials
-- Lead capture that feels helpful ("We'll match you with 3-5 verified movers")
+- Lead capture that feels helpful ("We'll match you with 2-3 verified movers")
 
 The directory, comparison tool, and moving calculator remain core features but are now framed as powerful free tools that help users make better decisions (and naturally lead to quote requests).
 
