@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     'moving reviews',
   ],
   authors: [{ name: 'Move Trust Hub' }],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'Move Trust Hub — Trusted Directory & Reviews for Interstate Movers',
     description: 'Research, compare, and choose reputable interstate moving companies with verified reviews, FMCSA data, and transparent pricing. Your hub for trusted movers.',
