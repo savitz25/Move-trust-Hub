@@ -61,20 +61,21 @@ export function Chatbot() {
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to get response');
+        throw new Error(data.error || 'Failed to get response from AI');
       }
 
-      const data = await response.json();
       const assistantMessage: Message = { role: 'assistant', content: data.reply };
       setMessages((prev) => [...prev, assistantMessage]);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Chat error:', error);
       setMessages((prev) => [
         ...prev,
         {
           role: 'assistant',
-          content: "Sorry, I'm having trouble connecting right now. Please try the quote form or contact us directly!",
+          content: error.message || "Sorry, I'm having trouble connecting right now. Please try the quote form or contact us directly!",
         },
       ]);
     } finally {

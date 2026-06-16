@@ -58,7 +58,10 @@ export async function POST(req: NextRequest) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('xAI API error:', response.status, errorText);
-      throw new Error(`API request failed: ${response.status}`);
+      return NextResponse.json(
+        { error: `Grok API error (${response.status}): ${errorText}` },
+        { status: response.status }
+      );
     }
 
     const data = await response.json();
