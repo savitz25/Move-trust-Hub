@@ -149,6 +149,13 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         timestamp: new Date().toISOString(),
       });
 
+      // Send email notification to the team (non-blocking)
+      fetch('/api/send-quote-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).catch((err) => console.warn('Email notification failed (non-fatal):', err));
+
       setIsSubmitting(false);
       setSubmitted(true);
 
@@ -158,6 +165,13 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       });
     } catch (err) {
       console.error('Quote submission error:', err);
+      // Still attempt to send the email notification even if DB insert failed
+      fetch('/api/send-quote-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).catch((err) => console.warn('Email notification failed (non-fatal):', err));
+
       // Still succeed for the user experience (demo-friendly)
       setIsSubmitting(false);
       setSubmitted(true);
