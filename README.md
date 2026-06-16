@@ -130,8 +130,36 @@ Visit http://localhost:3000
 | NEXT_PUBLIC_SUPABASE_URL       | No*      | Live data source                     |
 | NEXT_PUBLIC_SUPABASE_ANON_KEY  | No*      | Public client access                 |
 | SUPABASE_SERVICE_ROLE_KEY      | Only for seed | Admin seeding script          |
+| RESEND_API_KEY                 | For email leads | Powers quote request notifications via Resend |
+| RESEND_FROM                    | Recommended for prod | Sender address e.g. `Move Trust Hub <quotes@movetrusthub.com>` (requires verified domain in Resend) |
+| QUOTE_TEAM_EMAIL               | No       | Recipient for new quote leads (defaults to mhenry@amerisafemoving.com) |
 
 *Without Supabase the site uses realistic local seed data.
+
+### Lead Emails via Resend
+
+Quote requests from the "Get Free Quotes" modal are:
+
+- Always logged to the browser console (`[Quote Lead Captured]`) — 100% reliable for visibility
+- Inserted into the `quote_requests` table in Supabase (when the two NEXT_PUBLIC_ keys are set)
+- Sent as a nicely formatted email + confirmation receipt to the submitter (when `RESEND_API_KEY` is present)
+
+**To deliver emails to the team (and confirmation to leads):**
+
+1. In the [Resend dashboard](https://resend.com), add and **verify** your domain (e.g. `movetrusthub.com`). Follow the DNS instructions (TXT, MX or CNAME records).
+2. On Vercel, set these environment variables (Production + Preview):
+   - `RESEND_API_KEY` (the one you created in Resend)
+   - `RESEND_FROM="Move Trust Hub <quotes@movetrusthub.com>"` (or `hello@...` — must match the verified domain)
+   - Optionally `QUOTE_TEAM_EMAIL` if you want a different internal inbox
+3. Redeploy.
+
+Until the domain is verified, Resend's test sender (`onboarding@resend.dev`) only allows sending to the address associated with your Resend account. External addresses (e.g. mhenry@amerisafemoving.com) will get a 403.
+
+Once verified + envs set, the next form submission will:
+- Email the full lead details to the team address
+- Email a friendly confirmation + summary to the person who filled out the form (using their submitted email)
+
+The modal always shows success to the user immediately (non-blocking). Check the Network tab or browser console for `[Quote Email Sent]` logs containing `messageIds` from Resend for tracking.
 
 ## Adding / Updating Companies (Extensibility)
 
@@ -167,7 +195,8 @@ The `lib/data.ts` file is the single source of truth — extend the functions th
 1. Push to GitHub
 2. Import project on Vercel
 3. Add your Supabase environment variables (or skip for seed-only)
-4. Deploy — automatic sitemap and everything works
+4. Add Resend variables (RESEND_API_KEY + RESEND_FROM after domain verification) to enable real quote lead emails
+5. Deploy — automatic sitemap and everything works
 
 The project is already optimized for Vercel (edge functions not required, but easy to add).
 

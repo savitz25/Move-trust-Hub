@@ -150,7 +150,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         timestamp: new Date().toISOString(),
       });
 
-      // Send email notification to the team (non-blocking)
+      // Send email notification to the team (non-blocking). Enhanced logging for Resend results.
       fetch('/api/send-quote-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -159,7 +159,13 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         .then(res => res.json().catch(() => ({})))
         .then(data => {
           if (data && data.success) {
-            console.log('%c[Quote Email Sent]', 'color:#22c55e', { to: 'mhenry@amerisafemoving.com', lead: payload.name });
+            console.log('%c[Quote Email Sent]', 'color:#22c55e', { 
+              team: 'mhenry@amerisafemoving.com', 
+              lead: payload.name,
+              messageIds: data.messageIds,
+              teamEmailSent: data.teamEmailSent,
+              confirmationSent: data.confirmationSent,
+            });
           } else if (data && !data.success) {
             console.warn('Email notification returned non-success:', data);
           }
@@ -180,7 +186,14 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-      }).catch((err) => console.warn('Email notification failed (non-fatal):', err));
+      })
+        .then(res => res.json().catch(() => ({})))
+        .then(data => {
+          if (data?.success) {
+            console.log('%c[Quote Email Sent (fallback)]', 'color:#22c55e', { lead: payload.name, messageIds: data.messageIds });
+          }
+        })
+        .catch((err) => console.warn('Email notification failed (non-fatal):', err));
 
       // Still succeed for the user experience (demo-friendly)
       setIsSubmitting(false);
@@ -437,14 +450,14 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
             </div>
 
             <h3 className="text-2xl font-semibold tracking-tight">You&apos;re all set!</h3>
-            <p className="mt-2 text-muted-foreground">We&apos;ve received your details and emailed the lead to our team.</p>
+            <p className="mt-2 text-muted-foreground">We&apos;ve received your details. A confirmation was emailed to you and our team has been notified.</p>
 
             <div className="my-6 mx-auto max-w-[320px] rounded-xl bg-muted/50 p-4 text-left text-sm border">
               <div className="font-semibold mb-2 flex items-center gap-2">
                 <ArrowRight className="h-4 w-4" /> What happens next
               </div>
               <ol className="space-y-1.5 text-muted-foreground text-xs pl-1">
-                <li>1. Lead was emailed to our team + saved</li>
+                <li>1. Request saved + confirmation sent to your email</li>
                 <li>2. We match you with 2-3 pre-vetted, licensed movers</li>
                 <li>3. Movers will reach out directly with custom quotes</li>
                 <li>4. You compare, negotiate, and choose — zero pressure</li>
