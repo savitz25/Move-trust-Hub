@@ -155,7 +155,16 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-      }).catch((err) => console.warn('Email notification failed (non-fatal):', err));
+      })
+        .then(res => res.json().catch(() => ({})))
+        .then(data => {
+          if (data && data.success) {
+            console.log('%c[Quote Email Sent]', 'color:#22c55e', { to: 'mhenry@amerisafemoving.com', lead: payload.name });
+          } else if (data && !data.success) {
+            console.warn('Email notification returned non-success:', data);
+          }
+        })
+        .catch((err) => console.warn('Email notification failed (non-fatal):', err));
 
       setIsSubmitting(false);
       setSubmitted(true);
@@ -428,16 +437,17 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
             </div>
 
             <h3 className="text-2xl font-semibold tracking-tight">You&apos;re all set!</h3>
-            <p className="mt-2 text-muted-foreground">We&apos;ve received your details and are matching you right now.</p>
+            <p className="mt-2 text-muted-foreground">We&apos;ve received your details and emailed the lead to our team.</p>
 
             <div className="my-6 mx-auto max-w-[320px] rounded-xl bg-muted/50 p-4 text-left text-sm border">
               <div className="font-semibold mb-2 flex items-center gap-2">
                 <ArrowRight className="h-4 w-4" /> What happens next
               </div>
               <ol className="space-y-1.5 text-muted-foreground text-xs pl-1">
-                <li>1. We match you with 2-3 pre-vetted, licensed movers</li>
-                <li>2. Movers will reach out directly with custom quotes</li>
-                <li>3. You compare, negotiate, and choose — zero pressure</li>
+                <li>1. Lead was emailed to our team + saved</li>
+                <li>2. We match you with 2-3 pre-vetted, licensed movers</li>
+                <li>3. Movers will reach out directly with custom quotes</li>
+                <li>4. You compare, negotiate, and choose — zero pressure</li>
               </ol>
             </div>
 
