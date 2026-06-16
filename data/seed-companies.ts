@@ -705,7 +705,7 @@ export const seedCompanies: Company[] = [
     shortDescription: 'Full-service interstate mover known for reliable long-distance relocations and attentive crews.',
     description: 'Amerisafe Van Lines offers professional household and small business moving services across the continental United States. They emphasize transparent pricing, careful packing, and strong communication throughout the move process.',
     foundedYear: 2008,
-    headquarters: 'Dallas, TX',
+    headquarters: 'Boynton Beach, FL',
     website: 'https://www.amerisafevanlines.com',
     usdotNumber: '2345678',
     mcNumber: 'MC-812345',

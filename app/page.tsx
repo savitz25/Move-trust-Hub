@@ -17,7 +17,7 @@ export default function Home() {
   const topRated = [
     { id: 'jk-moving', slug: 'jk-moving-services', name: 'JK Moving Services', reputationScore: 93, overallRating: 4.7, reviewCount: 3120, headquarters: 'Sterling, VA' },
     { id: 'pensey', slug: 'pensey-moving', name: 'Pensey Moving & Storage', reputationScore: 94, overallRating: 4.8, reviewCount: 940, headquarters: 'Phoenix, AZ' },
-    { id: 'amerisafe', slug: 'amerisafe-van-lines', name: 'Amerisafe Van Lines', reputationScore: 97, overallRating: 4.7, reviewCount: 1650, headquarters: 'Dallas, TX' },
+    { id: 'amerisafe', slug: 'amerisafe-van-lines', name: 'Amerisafe Van Lines', reputationScore: 97, overallRating: 4.7, reviewCount: 1650, headquarters: 'Boynton Beach, FL' },
   ];
 
   const stats = {
