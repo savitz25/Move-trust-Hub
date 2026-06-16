@@ -58,6 +58,18 @@ export async function POST(req: NextRequest) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('xAI API error:', response.status, errorText);
+
+      // Handle common billing/credit errors gracefully
+      if (response.status === 403 && errorText.includes('credits') || errorText.includes('spending limit')) {
+        return NextResponse.json(
+          { 
+            error: "The AI assistant is temporarily unavailable because we've reached our usage limit for this month. Please use the 'Get Free Quotes' form or contact us directly in the meantime.",
+            isBillingError: true 
+          },
+          { status: 403 }
+        );
+      }
+
       return NextResponse.json(
         { error: `Grok API error (${response.status}): ${errorText}` },
         { status: response.status }
