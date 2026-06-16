@@ -30,7 +30,6 @@ export function Chatbot() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isApiAvailable, setIsApiAvailable] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -65,10 +64,6 @@ export function Chatbot() {
       const data = await response.json();
 
       if (!response.ok) {
-        if (data.error && (data.error.includes('credits') || data.error.includes('spending limit') || data.error.includes('permission-denied'))) {
-          setIsApiAvailable(false);
-          throw new Error("The AI assistant is temporarily unavailable due to usage limits. Please use the 'Get Free Quotes' form above or contact us directly.");
-        }
         throw new Error(data.error || 'Failed to get response from AI');
       }
 
@@ -196,13 +191,13 @@ export function Chatbot() {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyPress}
-                    placeholder={isApiAvailable ? "Ask about moves, shipping, quotes..." : "Chat temporarily unavailable"}
+                    placeholder="Ask about moves, shipping, quotes..."
                     className="flex-1 text-sm"
-                    disabled={isLoading || !isApiAvailable}
+                    disabled={isLoading}
                   />
                   <Button
                     onClick={() => sendMessage()}
-                    disabled={!input.trim() || isLoading || !isApiAvailable}
+                    disabled={!input.trim() || isLoading}
                     size="icon"
                     className="h-9 w-9"
                   >
@@ -210,9 +205,7 @@ export function Chatbot() {
                   </Button>
                 </div>
                 <p className="text-[10px] text-center text-muted-foreground mt-1.5">
-                  {isApiAvailable 
-                    ? "Powered by Grok • Answers may vary" 
-                    : "Temporarily unavailable due to usage limits"}
+                  Powered by Grok • Answers may vary
                 </p>
               </div>
             </Card>
