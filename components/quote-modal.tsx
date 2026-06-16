@@ -55,7 +55,8 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     ? Math.round(prefilledData.estimatedVolume * 7) 
     : null;
 
-  // Reset form when modal opens (support prefilled updates)
+  // Reset form only when the modal is opened (not on every prefilledData change)
+  // This prevents the form from resetting while the user is typing
   useEffect(() => {
     if (open) {
       setSubmitted(false);
@@ -72,7 +73,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         notes: '',
       });
     }
-  }, [open, prefilledData]);
+  }, [open]);  // Intentionally only depend on `open` to snapshot prefilledData at open time
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
