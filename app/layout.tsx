@@ -44,8 +44,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Move Trust Hub' }],
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
+    icon: '/logo.svg', // Quick win using your existing logo (supported in modern browsers for tab icon)
+    // For full cross-browser/device support (recommended):
+    // 1. Use a tool like https://realfavicongenerator.net/ with your logo to generate:
+    //    - favicon.ico (place in app/favicon.ico)
+    //    - apple-icon.png (180x180, place in app/apple-icon.png)
+    //    - icon.png etc. if wanted
+    // 2. Then change the icon line above to: icon: '/favicon.ico',
+    //    and add apple: '/apple-icon.png',
   },
   openGraph: {
     title: 'Move Trust Hub — Trusted Directory & Reviews for Interstate Movers',
