@@ -15,7 +15,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Broker', 'Container / Portable', 'Auto Transport', 'Storage'];
+const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Carrier', 'Container / Portable', 'Auto Transport', 'Storage'];
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
   { value: 'rating', label: 'Customer Rating' },

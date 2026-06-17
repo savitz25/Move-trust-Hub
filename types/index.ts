@@ -2,7 +2,7 @@
 
 export type ServiceType = 
   | 'Full Service'
-  | 'Broker'
+  | 'Carrier'
   | 'Container / Portable'
   | 'Auto Transport'
   | 'Storage';
