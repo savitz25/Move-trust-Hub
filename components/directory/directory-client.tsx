@@ -151,7 +151,7 @@ export function DirectoryClient({ initialCompanies }: Props) {
         {showFilters && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden mb-6">
             <Card className="p-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {/* Min Rating */}
                 <div>
                   <div className="text-xs font-medium mb-1.5 text-muted-foreground">MINIMUM RATING</div>
@@ -170,18 +170,22 @@ export function DirectoryClient({ initialCompanies }: Props) {
                 </div>
 
                 {/* Max Price */}
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs font-medium mb-1.5 text-muted-foreground">MAX AVG. PRICE</div>
-                  <input
-                    type="range"
-                    min={3000}
-                    max={12000}
-                    step={250}
-                    value={filters.maxPrice}
-                    onChange={(e) => updateFilter('maxPrice', Number(e.target.value))}
-                    className="w-full accent-primary"
-                  />
-                  <div className="text-sm font-medium tabular-nums mt-0.5">${(filters.maxPrice || 12000).toLocaleString()}</div>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="range"
+                      min={3000}
+                      max={12000}
+                      step={250}
+                      value={filters.maxPrice}
+                      onChange={(e) => updateFilter('maxPrice', Number(e.target.value))}
+                      className="flex-1 accent-primary min-w-0"
+                    />
+                    <div className="text-sm font-medium tabular-nums whitespace-nowrap w-16 text-right">
+                      ${(filters.maxPrice || 12000).toLocaleString()}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Coverage */}
