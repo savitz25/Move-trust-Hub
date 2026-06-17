@@ -42,8 +42,8 @@ export async function POST(req: NextRequest) {
       <p><strong>Phone:</strong> ${payload.phone || 'Not provided'}</p>
       
       <h3>Move Details</h3>
-      <p><strong>From:</strong> ${payload.from_city && payload.from_state ? `${payload.from_city}, ${payload.from_state} ` : ''}(${payload.from_zip})</p>
-      <p><strong>To:</strong> ${payload.to_city && payload.to_state ? `${payload.to_city}, ${payload.to_state} ` : ''}(${payload.to_zip})</p>
+      <p><strong>From ZIP:</strong> ${payload.from_zip}</p>
+      <p><strong>To ZIP:</strong> ${payload.to_zip}</p>
       <p><strong>Preferred Date:</strong> ${payload.move_date || 'Flexible'}</p>
       <p><strong>Home Size:</strong> ${homeSizeLabel}</p>
       <p><strong>Estimated Volume:</strong> ${payload.estimated_volume ? payload.estimated_volume + ' cu ft' : 'Not provided'}</p>
@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
         <p>Thank you for submitting your move details via Move Trust Hub.</p>
         
         <h3>Your Request Summary</h3>
-        <p><strong>From:</strong> ${payload.from_city && payload.from_state ? `${payload.from_city}, ${payload.from_state} ` : ''}(${payload.from_zip}) &rarr; <strong>To:</strong> ${payload.to_city && payload.to_state ? `${payload.to_city}, ${payload.to_state} ` : ''}(${payload.to_zip})</p>
+        <p><strong>From:</strong> ${payload.from_zip} &rarr; <strong>To:</strong> ${payload.to_zip}</p>
         <p><strong>Preferred Date:</strong> ${payload.move_date || 'Flexible'}</p>
         <p><strong>Home Size:</strong> ${homeSizeLabel}</p>
         ${payload.estimated_volume ? `<p><strong>Est. Volume:</strong> ${payload.estimated_volume} cu ft</p>` : ''}
