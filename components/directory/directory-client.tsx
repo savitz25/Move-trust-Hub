@@ -156,7 +156,7 @@ export function DirectoryClient({ initialCompanies }: Props) {
                 <div>
                   <div className="text-xs font-medium mb-1.5 text-muted-foreground">MINIMUM RATING</div>
                   <div className="flex gap-2 items-center">
-                    {[3, 3.5, 4, 4.5].map(r => (
+                    {[3.5, 4, 4.5].map(r => (
                       <Button
                         key={r}
                         size="sm"
