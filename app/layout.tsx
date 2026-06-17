@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/navbar';
@@ -109,6 +110,22 @@ export default function RootLayout({
           </div>
           <Toaster position="top-center" richColors closeButton />
           <Chatbot />
+
+          {/* Google Analytics */}
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-433BDVV8MJ');
+            `}
+          </Script>
         </ThemeProvider>
       </body>
     </html>
