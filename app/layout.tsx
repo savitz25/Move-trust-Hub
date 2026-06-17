@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/navbar';
@@ -126,6 +127,9 @@ export default function RootLayout({
               gtag('config', 'G-433BDVV8MJ');
             `}
           </Script>
+
+          {/* Vercel Speed Insights */}
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
