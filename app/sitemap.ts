@@ -1,12 +1,15 @@
 import { MetadataRoute } from 'next';
-import { getAllCompanies } from '@/lib/data';
+import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const companies = await getAllCompanies();
+  const autoTransportCompanies = await getAllAutoTransportCompanies();
 
   const staticPages = [
     '',
     '/companies',
+    '/auto-transport',
+    '/moving-calculator',
     '/compare',
     '/resources',
     '/about',
@@ -25,5 +28,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...companyPages];
+  const autoTransportPages = autoTransportCompanies.map((company) => ({
+    url: `https://www.movetrusthub.com/auto-transport/${company.slug}`,
+    lastModified: new Date(company.lastUpdated),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...companyPages, ...autoTransportPages];
 }
