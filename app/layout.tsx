@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.movetrusthub.com'),
+  metadataBase: new URL('https://movetrusthub.com'),
   title: {
     default: 'Move Trust Hub | Trusted Directory for Interstate & Long-Distance Movers',
     template: '%s | Move Trust Hub',
