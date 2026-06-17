@@ -17,6 +17,10 @@ interface QuoteModalProps {
     estimatedVolume?: number;
     fromZip?: string;
     toZip?: string;
+    fromCity?: string;
+    fromState?: string;
+    toCity?: string;
+    toState?: string;
   };
 }
 
@@ -26,6 +30,10 @@ type FormData = {
   phone: string;
   fromZip: string;
   toZip: string;
+  fromCity: string;
+  fromState: string;
+  toCity: string;
+  toState: string;
   moveDate: string;
   homeSize: string;
   estimatedVolume: string;
@@ -41,6 +49,10 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     phone: '',
     fromZip: prefilledData.fromZip || '',
     toZip: prefilledData.toZip || '',
+    fromCity: prefilledData.fromCity || '',
+    fromState: prefilledData.fromState || '',
+    toCity: prefilledData.toCity || '',
+    toState: prefilledData.toState || '',
     moveDate: '',
     homeSize: '2',
     estimatedVolume: prefilledData.estimatedVolume ? String(Math.round(prefilledData.estimatedVolume)) : '',
@@ -67,6 +79,10 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         phone: '',
         fromZip: prefilledData.fromZip || '',
         toZip: prefilledData.toZip || '',
+        fromCity: prefilledData.fromCity || '',
+        fromState: prefilledData.fromState || '',
+        toCity: prefilledData.toCity || '',
+        toState: prefilledData.toState || '',
         moveDate: '',
         homeSize: '2',
         estimatedVolume: prefilledData.estimatedVolume ? String(Math.round(prefilledData.estimatedVolume)) : '',
@@ -112,6 +128,49 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     return Object.keys(newErrors).length === 0;
   };
 
+  // Cutting-edge ZIP lookup: auto-fill city/state when valid ZIP entered
+  async function lookupZip(zip: string): Promise<{ city: string; state: string } | null> {
+    if (!/^\d{5}$/.test(zip)) return null;
+    try {
+      const res = await fetch(`/api/zip-lookup?zip=${zip}`);
+      if (!res.ok) return null;
+      return await res.json();
+    } catch {
+      return null;
+    }
+  }
+
+  // Watch ZIP changes and auto-resolve city/state for confirmation
+  useEffect(() => {
+    const zip = formData.fromZip.trim();
+    if (zip.length === 5 && /^\d{5}$/.test(zip)) {
+      lookupZip(zip).then((loc) => {
+        if (loc) {
+          setFormData((prev) => ({
+            ...prev,
+            fromCity: loc.city,
+            fromState: loc.state,
+          }));
+        }
+      });
+    }
+  }, [formData.fromZip]);
+
+  useEffect(() => {
+    const zip = formData.toZip.trim();
+    if (zip.length === 5 && /^\d{5}$/.test(zip)) {
+      lookupZip(zip).then((loc) => {
+        if (loc) {
+          setFormData((prev) => ({
+            ...prev,
+            toCity: loc.city,
+            toState: loc.state,
+          }));
+        }
+      });
+    }
+  }, [formData.toZip]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -128,6 +187,10 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       phone: formData.phone.trim() || null,
       from_zip: formData.fromZip.trim(),
       to_zip: formData.toZip.trim(),
+      from_city: formData.fromCity.trim() || null,
+      from_state: formData.fromState.trim() || null,
+      to_city: formData.toCity.trim() || null,
+      to_state: formData.toState.trim() || null,
       move_date: formData.moveDate || null,
       home_size: formData.homeSize,
       estimated_volume: formData.estimatedVolume ? parseFloat(formData.estimatedVolume) : null,
@@ -138,7 +201,20 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     try {
       // Real persistence when Supabase is configured
       if (isSupabaseConfigured()) {
-        const { error } = await supabase.from('quote_requests').insert(payload);
+        // Only include fields that match the Supabase schema
+        const dbPayload = {
+          name: payload.name,
+          email: payload.email,
+          phone: payload.phone,
+          from_zip: payload.from_zip,
+          to_zip: payload.to_zip,
+          move_date: payload.move_date,
+          home_size: payload.home_size,
+          estimated_volume: payload.estimated_volume,
+          notes: payload.notes,
+          source: payload.source,
+        };
+        const { error } = await supabase.from('quote_requests').insert(dbPayload);
         if (error) {
           console.warn('Supabase insert failed (non-fatal for user):', error.message);
         }
@@ -216,6 +292,10 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         phone: '',
         fromZip: '',
         toZip: '',
+        fromCity: '',
+        fromState: '',
+        toCity: '',
+        toState: '',
         moveDate: '',
         homeSize: '2',
         estimatedVolume: '',
@@ -348,6 +428,30 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
                     className={errors.fromZip ? 'border-destructive focus-visible:ring-destructive' : ''}
                   />
                   {errors.fromZip && <p className="text-xs text-destructive mt-1">{errors.fromZip}</p>}
+                  {/* Auto-confirmed city/state from ZIP lookup */}
+                  {formData.fromCity && formData.fromState && (
+                    <div className="text-[10px] text-emerald-600 mt-0.5 flex items-center gap-1">
+                      ✓ {formData.fromCity}, {formData.fromState}
+                    </div>
+                  )}
+                  <div className="grid grid-cols-2 gap-2 mt-1">
+                    <Input
+                      name="fromCity"
+                      value={formData.fromCity}
+                      onChange={handleChange}
+                      placeholder="City"
+                      className="text-xs h-8"
+                    />
+                    <Input
+                      name="fromState"
+                      value={formData.fromState}
+                      onChange={handleChange}
+                      placeholder="ST"
+                      maxLength={2}
+                      className="text-xs h-8"
+                    />
+                  </div>
+                  <p className="text-[9px] text-muted-foreground mt-0.5">ZIP auto-fills city/state • edit to override</p>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">To ZIP <span className="text-destructive">*</span></label>
@@ -361,6 +465,30 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
                     className={errors.toZip ? 'border-destructive focus-visible:ring-destructive' : ''}
                   />
                   {errors.toZip && <p className="text-xs text-destructive mt-1">{errors.toZip}</p>}
+                  {/* Auto-confirmed city/state from ZIP lookup */}
+                  {formData.toCity && formData.toState && (
+                    <div className="text-[10px] text-emerald-600 mt-0.5 flex items-center gap-1">
+                      ✓ {formData.toCity}, {formData.toState}
+                    </div>
+                  )}
+                  <div className="grid grid-cols-2 gap-2 mt-1">
+                    <Input
+                      name="toCity"
+                      value={formData.toCity}
+                      onChange={handleChange}
+                      placeholder="City"
+                      className="text-xs h-8"
+                    />
+                    <Input
+                      name="toState"
+                      value={formData.toState}
+                      onChange={handleChange}
+                      placeholder="ST"
+                      maxLength={2}
+                      className="text-xs h-8"
+                    />
+                  </div>
+                  <p className="text-[9px] text-muted-foreground mt-0.5">ZIP auto-fills city/state • edit to override</p>
                 </div>
               </div>
             </div>
