@@ -46,8 +46,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Move Trust Hub' }],
   icons: {
-    icon: '/logo.svg', // SVG for modern browsers
-    // For emails and better compatibility, use PNG: /logo.png (export your logo as PNG and add to public/logo.png)
+    icon: '/logo.svg', // SVG for modern browsers (keep for favicon)
     // For full cross-browser/device support (recommended):
     // 1. Use a tool like https://realfavicongenerator.net/ with your logo to generate:
     //    - favicon.ico (place in app/favicon.ico)
@@ -59,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Move Trust Hub — Trusted Directory & Reviews for Interstate Movers',
     description: 'Research, compare, and choose reputable interstate moving companies with verified reviews, FMCSA data, and transparent pricing. Your hub for trusted movers.',
-    images: [{ url: '/logo.png' }], // Use PNG for better email/social compatibility. Add public/logo.png with your logo exported as PNG.
+    images: [{ url: '/logo.jpg' }], // Use raster version for better compatibility in social shares and emails
     type: 'website',
   },
   twitter: {
