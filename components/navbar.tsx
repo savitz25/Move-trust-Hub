@@ -28,12 +28,12 @@ export function Navbar() {
             <img 
               src="/logo.png" 
               alt="Move Trust Hub" 
-              className="h-8 w-auto sm:h-10 md:h-12 transition-transform group-hover:scale-[1.02] max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-none object-contain dark:hidden" 
+              className="h-10 w-auto sm:h-12 md:h-14 transition-transform group-hover:scale-[1.02] max-w-[180px] sm:max-w-[240px] md:max-w-[320px] lg:max-w-none object-contain dark:hidden" 
             />
             <img 
               src="/logo-dark.png" 
               alt="Move Trust Hub" 
-              className="hidden dark:block h-8 w-auto sm:h-10 md:h-12 transition-transform group-hover:scale-[1.02] max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-none object-contain" 
+              className="hidden dark:block h-10 w-auto sm:h-12 md:h-14 transition-transform group-hover:scale-[1.02] max-w-[180px] sm:max-w-[240px] md:max-w-[320px] lg:max-w-none object-contain" 
             />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
