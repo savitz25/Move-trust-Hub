@@ -9,8 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-y-9">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-              <img src="/logo.png" alt="Move Trust Hub" className="h-16 w-auto dark:hidden" />
-              <img src="/logo-dark.png" alt="Move Trust Hub" className="h-16 w-auto hidden dark:block" />
+              <img src="/logo.png" alt="Move Trust Hub" className="h-12 w-auto" />
             </Link>
             <p className="mt-2.5 text-sm text-muted-foreground max-w-[210px] leading-snug">
               Independent directory for trusted interstate movers.

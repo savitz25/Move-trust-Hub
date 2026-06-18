@@ -22,19 +22,10 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-24 items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
-          <Link href="/" className="group flex-shrink-0">
-            <img 
-              src="/logo.png" 
-              alt="Move Trust Hub" 
-              className="h-14 w-auto sm:h-16 md:h-20 transition-transform group-hover:scale-[1.02] max-w-[220px] sm:max-w-[280px] md:max-w-[380px] lg:max-w-none object-contain dark:hidden" 
-            />
-            <img 
-              src="/logo-dark.png" 
-              alt="Move Trust Hub" 
-              className="hidden dark:block h-14 w-auto sm:h-16 md:h-20 transition-transform group-hover:scale-[1.02] max-w-[220px] sm:max-w-[280px] md:max-w-[380px] lg:max-w-none object-contain" 
-            />
+          <Link href="/" className="group">
+            <img src="/logo.png" alt="Move Trust Hub" className="h-12 w-auto transition-transform group-hover:scale-[1.02]" />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
             TRUSTED
