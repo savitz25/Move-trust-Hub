@@ -22,18 +22,18 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
           <Link href="/" className="group flex-shrink-0">
             <img 
               src="/logo.png" 
               alt="Move Trust Hub" 
-              className="h-10 w-auto sm:h-12 md:h-14 transition-transform group-hover:scale-[1.02] max-w-[180px] sm:max-w-[240px] md:max-w-[320px] lg:max-w-none object-contain dark:hidden" 
+              className="h-12 w-auto sm:h-14 md:h-16 transition-transform group-hover:scale-[1.02] max-w-[200px] sm:max-w-[260px] md:max-w-[340px] lg:max-w-none object-contain dark:hidden" 
             />
             <img 
               src="/logo-dark.png" 
               alt="Move Trust Hub" 
-              className="hidden dark:block h-10 w-auto sm:h-12 md:h-14 transition-transform group-hover:scale-[1.02] max-w-[180px] sm:max-w-[240px] md:max-w-[320px] lg:max-w-none object-contain" 
+              className="hidden dark:block h-12 w-auto sm:h-14 md:h-16 transition-transform group-hover:scale-[1.02] max-w-[200px] sm:max-w-[260px] md:max-w-[340px] lg:max-w-none object-contain" 
             />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
