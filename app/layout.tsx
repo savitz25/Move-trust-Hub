@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Move Trust Hub' }],
   icons: {
-    icon: '/logo.svg', // SVG for modern browsers (keep for favicon)
+    icon: '/logo.png',
     // For full cross-browser/device support (recommended):
     // 1. Use a tool like https://realfavicongenerator.net/ with your logo to generate:
     //    - favicon.ico (place in app/favicon.ico)
