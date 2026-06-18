@@ -12,8 +12,7 @@ export default function ContactPage() {
           <p>This is an informational directory. For questions about specific moves, please contact the moving company directly.</p>
           <div>
             <strong>General inquiries &amp; data corrections</strong><br />
-            <a href="mailto:hello@movetrusthub.com" className="text-primary">hello@movetrusthub.com</a><br />
-            <a href="tel:5088019549" className="text-primary">(508) 801-9549</a>
+            <a href="mailto:hello@movetrusthub.com" className="text-primary">hello@movetrusthub.com</a>
           </div>
           <div>
             <strong>Press / Partnerships</strong><br />

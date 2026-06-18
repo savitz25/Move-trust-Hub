@@ -42,7 +42,6 @@ export function Footer() {
               <div><Link href="/about" className="hover:text-foreground transition-colors">About Us</Link></div>
               <div><Link href="/about#disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></div>
               <div><Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link></div>
-              <div><a href="tel:5088019549" className="hover:text-foreground transition-colors">(508) 801-9549</a></div>
               <div><a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener" className="hover:text-foreground transition-colors">FMCSA.gov ↗</a></div>
             </div>
           </div>
