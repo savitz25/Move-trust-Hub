@@ -24,9 +24,8 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
-          <Link href="/" className="flex flex-col items-start group leading-none">
-            <img src="/logo.svg" alt="Move Trust Hub" className="h-7 w-auto transition-transform group-hover:scale-[1.02]" />
-            <span className="font-semibold text-[9px] sm:text-[10px] tracking-[-0.01em] mt-px">Move Trust Hub</span>
+          <Link href="/" className="group">
+            <img src="/logo.png" alt="Move Trust Hub" className="h-8 w-auto transition-transform group-hover:scale-[1.02]" />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
             TRUSTED
