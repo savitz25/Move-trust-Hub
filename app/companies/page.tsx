@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import { Suspense } from 'react';
 import { DirectoryClient } from '@/components/directory/directory-client';
+import { TrustBadges } from '@/components/trust/trust-badges';
+import { ReviewHighlights } from '@/components/trust/review-highlights';
 import { getAllCompanies } from '@/lib/data';
-import { Company } from '@/types';
 
 export const metadata = {
   title: 'Directory of Interstate Moving Companies 2026',
@@ -17,13 +19,23 @@ export default async function CompaniesDirectoryPage() {
         <div className="uppercase tracking-[2px] text-xs text-primary font-semibold">COMPREHENSIVE DIRECTORY</div>
         <h1 className="text-4xl font-semibold tracking-tight mt-1">Interstate Moving Companies</h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          All major national players. Filter by coverage, services, price, and reputation. Click any company for a full profile with licensing and recent reviews.
+          All major national players. Filter by coverage, services, price, and reputation. Click any company for a full profile with{' '}
+          <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">FMCSA licensing</Link> and recent reviews.
         </p>
       </div>
+
+      <TrustBadges variant="compact" className="mb-8" />
 
       <Suspense fallback={<div className="h-[600px] rounded-xl border bg-muted/30 animate-pulse" />}>
         <DirectoryClient initialCompanies={companies} />
       </Suspense>
+
+      <ReviewHighlights
+        className="py-16 mt-8 border-t"
+        compact
+        title="Featured Review Highlights"
+        subtitle="A quick look at highly rated interstate movers with verified review volume and reputation scores."
+      />
     </div>
   );
 }

@@ -16,6 +16,7 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { QuoteModal } from '@/components/quote-modal';
 import { MovingCalculatorSeoSections } from '@/components/moving-calculator-seo-sections';
+import { TrustBadges } from '@/components/trust/trust-badges';
 import { useCalculatorStore, type InventoryItem, type InputMode } from '@/store/calculator-store';
 import { furnitureItems, roomCategories, getItemsByCategory, searchItems, type FurnitureItem } from '@/data/furniture';
 import { toast } from 'sonner';
@@ -237,6 +238,8 @@ export default function MovingCalculatorPage() {
             .
           </p>
         </div>
+
+        <TrustBadges variant="grid" className="mb-8 max-w-5xl mx-auto" />
 
         <div className="grid lg:grid-cols-12 gap-6">
           {/* LEFT: Input Controls */}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { TrustBadges } from '@/components/trust/trust-badges';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -63,8 +64,17 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t py-3 text-center text-[10px] text-muted-foreground/70 tracking-wide">
-        Always verify licensing directly with FMCSA and state authorities.
+      <div className="border-t py-5">
+        <div className="container mx-auto px-4 mb-4">
+          <TrustBadges variant="compact" className="justify-center" />
+        </div>
+        <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
+          Always verify licensing directly with{' '}
+          <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
+            FMCSA
+          </a>{' '}
+          and state authorities.
+        </p>
       </div>
     </footer>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
@@ -274,16 +275,25 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
           </div>
 
           {/* Trust bar */}
-          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px]">
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> FMCSA Licensed
-            </div>
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground">
-              4.8★ from 12k+ moves
-            </div>
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground">
-              Customers save $1,200+ on avg
-            </div>
+          <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px]">
+            <Link
+              href="/resources/fmcsa"
+              className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+            >
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> FMCSA Verified
+            </Link>
+            <Link
+              href="/companies?sort=reputation"
+              className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+            >
+              52k+ Verified Reviews
+            </Link>
+            <Link
+              href="/about#disclaimer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+            >
+              Independent Directory
+            </Link>
           </div>
         </div>
 

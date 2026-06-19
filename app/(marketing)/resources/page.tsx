@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { TrustBadges } from '@/components/trust/trust-badges';
+import { TestimonialsSection } from '@/components/trust/testimonials-section';
 
 export const metadata = {
   title: 'Moving Resources & Guides | How to Choose an Interstate Mover',
@@ -43,7 +45,16 @@ export default function ResourcesPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-4xl">
       <h1 className="text-4xl font-semibold tracking-tight mb-2">Moving Resources</h1>
-      <p className="text-lg text-muted-foreground mb-8">Free, unbiased guides to help you make a confident interstate move.</p>
+      <p className="text-lg text-muted-foreground mb-6">
+        Free, unbiased guides to help you make a confident interstate move. Research movers with{' '}
+        <Link href="/companies" className="text-primary underline underline-offset-2">verified reviews</Link>
+        , then use our{' '}
+        <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
+        {' '}or{' '}
+        <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
+      </p>
+
+      <TrustBadges variant="grid" className="mb-10" />
 
       <div className="grid gap-4">
         {guides.map((guide, i) => (
@@ -82,6 +93,13 @@ export default function ResourcesPage() {
           <p>• Changes price dramatically on delivery day</p>
         </div>
       </div>
+
+      <TestimonialsSection
+        title="Trusted by Families Planning Interstate Moves"
+        subtitle="Real experiences from customers who used our guides, calculator, and directory before booking."
+        className="mt-12 border rounded-xl"
+        columns={2}
+      />
 
       <div id="checklist" className="mt-8">
         <h2 className="font-semibold mb-3">Interstate Moving Timeline (High Level)</h2>

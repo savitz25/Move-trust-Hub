@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { Suspense } from 'react';
 import { CompareClient } from '@/components/compare/compare-client';
+import { TrustBadges } from '@/components/trust/trust-badges';
 import { getAllCompanies } from '@/lib/data';
 
 export const metadata = {
@@ -13,7 +15,13 @@ export default async function ComparePage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-semibold tracking-tight mb-1">Compare Movers</h1>
-      <p className="text-muted-foreground mb-6 max-w-2xl">Select up to four companies from the directory. The comparison updates live. Great for narrowing down finalists.</p>
+      <p className="text-muted-foreground mb-4 max-w-2xl">
+        Select up to four companies from the{' '}
+        <Link href="/companies" className="text-primary underline underline-offset-2">mover directory</Link>.
+        Compare <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">FMCSA ratings</Link>, reputation scores, and verified reviews side-by-side.
+      </p>
+
+      <TrustBadges variant="compact" className="mb-6" />
 
       <Suspense fallback={<div className="h-96 border rounded-xl bg-muted/30" />}>
         <CompareClient allCompanies={companies} />

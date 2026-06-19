@@ -3,31 +3,18 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { StarRating } from '@/components/ui/star-rating';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Award, Users, TrendingUp, CheckCircle, ArrowRight, Clock, DollarSign, Star, Truck, Headphones } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Shield, ArrowRight, Clock, DollarSign, Star, Truck, Headphones } from 'lucide-react';
 import { QuoteModal } from '@/components/quote-modal';
 import { FaqSection } from '@/components/seo/faq-section';
 import { homepageFaqItems } from '@/lib/seo/schemas';
+import { TrustBadges } from '@/components/trust/trust-badges';
+import { ReviewHighlights } from '@/components/trust/review-highlights';
+import { TestimonialsSection } from '@/components/trust/testimonials-section';
 
 export function HomePage() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
-
-  // Demo featured movers pulled from our directory data
-  const topRated = [
-    { id: 'jk-moving', slug: 'jk-moving-services', name: 'JK Moving Services', reputationScore: 93, overallRating: 4.7, reviewCount: 3120, headquarters: 'Sterling, VA' },
-    { id: 'pensey', slug: 'pensey-moving', name: 'Pensey Moving & Storage', reputationScore: 94, overallRating: 4.8, reviewCount: 940, headquarters: 'Phoenix, AZ' },
-    { id: 'amerisafe', slug: 'amerisafe-van-lines', name: 'Amerisafe Van Lines', reputationScore: 97, overallRating: 4.7, reviewCount: 1650, headquarters: 'Boynton Beach, FL' },
-  ];
-
-  const stats = {
-    companies: 25,
-    avgRating: '4.3',
-    totalReviews: '52,400',
-    verified: 22,
-  };
 
   return (
     <div className="flex flex-col">
@@ -77,27 +64,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* TRUST / SOCIAL PROOF BAR - cleaner & sharper */}
-      <div className="trust-proof py-4">
-        <div className="container mx-auto px-4 flex flex-wrap items-center justify-center gap-x-10 gap-y-2 text-sm font-medium text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <CheckCircle className="h-4 w-4 text-emerald-600" /> 
-            <span>25+ Verified Movers</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle className="h-4 w-4 text-emerald-600" /> 
-            <span>52k+ Real Reviews</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle className="h-4 w-4 text-emerald-600" /> 
-            <span>FMCSA Licensed</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Star className="h-4 w-4 text-amber-500" /> 
-            <span>4.3 Avg Rating</span>
-          </div>
-        </div>
-      </div>
+      <TrustBadges />
 
       {/* HOW IT WORKS - Classic marketing section */}
       <section className="container mx-auto px-4 py-16">
@@ -230,82 +197,9 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED MOVERS / SOCIAL PROOF */}
-      <section className="container mx-auto px-4 pb-16">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <div className="uppercase text-xs tracking-[2px] text-primary font-semibold mb-1">TOP RATED</div>
-            <h2 className="text-4xl font-semibold tracking-tight">Highly Recommended Interstate Movers</h2>
-          </div>
-          <Link href="/companies" className="hidden md:flex items-center gap-1 text-primary font-medium hover:underline">
-            View full directory <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+      <ReviewHighlights className="py-16" />
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {topRated.map((mover, index) => (
-            <Link key={index} href={`/companies/${mover.slug}`} className="group">
-              <Card className="company-card p-6 h-full flex flex-col">
-                <div className="flex justify-between mb-4">
-                  <div>
-                    <div className="font-semibold text-2xl group-hover:text-primary transition-colors">{mover.name}</div>
-                    <div className="text-muted-foreground">{mover.headquarters}</div>
-                  </div>
-                  <Badge className="h-fit">#{index + 1}</Badge>
-                </div>
-
-                <div className="mt-auto">
-                  <div className="flex items-center gap-2 mb-1">
-                    <StarRating rating={mover.overallRating} />
-                    <span className="text-sm text-muted-foreground">({mover.reviewCount.toLocaleString()} reviews)</span>
-                  </div>
-                  <div className="text-sm">
-                    Reputation Score: <span className="font-semibold text-primary">{mover.reputationScore}</span>/100
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <Link href="/companies">
-            <Button variant="outline">Browse All 25+ Movers</Button>
-          </Link>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="bg-muted/30 py-16 border-y">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold">Real Families. Real Moves.</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                quote: "We used the calculator and comparison tool to choose between 4 movers. Saved over $2,800 and the move went perfectly.",
-                name: "Sarah & Michael T.",
-                location: "Moved from VA to TX",
-              },
-              {
-                quote: "Got quotes from 5 different companies in less than a day. The reviews and FMCSA data on this site gave us total peace of mind.",
-                name: "The Ramirez Family",
-                location: "Moved from CA to FL",
-              },
-            ].map((testimonial, i) => (
-              <Card key={i} className="p-8">
-                <div className="text-lg italic mb-6">“{testimonial.quote}”</div>
-                <div>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.location}</div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection columns={4} />
 
       {/* SEO / INTERNAL LINKS */}
       <section className="container mx-auto px-4 py-14 max-w-3xl text-center border-t">

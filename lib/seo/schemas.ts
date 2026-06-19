@@ -1,3 +1,5 @@
+import { testimonials, trustStats } from '@/lib/trust/trust-data';
+
 const SITE_URL = 'https://www.movetrusthub.com';
 
 export const organizationSchema = {
@@ -8,7 +10,34 @@ export const organizationSchema = {
   logo: `${SITE_URL}/logo.png`,
   description:
     'Independent directory and quote-matching service for FMCSA-licensed interstate and long-distance moving companies in the United States.',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: String(trustStats.averageRating),
+    reviewCount: String(trustStats.totalReviews),
+    bestRating: '5',
+    worstRating: '1',
+  },
 };
+
+function buildTestimonialReviewSchemas() {
+  return testimonials.map((testimonial, index) => ({
+    '@type': 'Review',
+    '@id': `${SITE_URL}/#testimonial-${index + 1}`,
+    author: {
+      '@type': 'Person',
+      name: testimonial.name,
+    },
+    reviewBody: testimonial.quote,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(testimonial.rating),
+      bestRating: '5',
+    },
+    itemReviewed: {
+      '@id': `${SITE_URL}/#organization`,
+    },
+  }));
+}
 
 export const websiteSchema = {
   '@type': 'WebSite',
@@ -109,6 +138,7 @@ export function buildHomepageSchemaGraph() {
       websiteSchema,
       homepageServiceSchema,
       buildFaqSchema(homepageFaqItems, `${SITE_URL}/#homepage-faq`),
+      ...buildTestimonialReviewSchemas(),
     ],
   };
 }
