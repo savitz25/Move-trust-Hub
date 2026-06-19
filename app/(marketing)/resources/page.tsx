@@ -8,6 +8,12 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'move-size-weight',
+    title: 'Why Knowing the Size and Weight of Your Move Is the Most Important First Step',
+    excerpt: 'Stop guessing your move size. Learn why accurate cubic footage protects you from lowball quotes and inflated prices.',
+    category: 'Planning',
+  },
+  {
     slug: 'how-to-choose',
     title: 'How to Choose an Interstate Mover in 2026',
     excerpt: 'A step-by-step framework using reputation scores, licensing verification, and quote evaluation.',
