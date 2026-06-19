@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { ArticleSchema } from '@/components/resources/article-schema';
+import { GuideFooter } from '@/components/resources/guide-footer';
 
 export const metadata = {
   title: 'Complete Interstate Moving Checklist',
@@ -7,6 +9,12 @@ export const metadata = {
 
 export default function Checklist() {
   return (
+    <>
+    <ArticleSchema
+      title="Complete Interstate Moving Checklist"
+      description="Interstate moving timeline from 8 weeks out through delivery day and post-move tasks."
+      path="/resources/checklist"
+    />
     <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral dark:prose-invert">
       <Link href="/resources" className="text-sm hover:underline">← Back to all resources</Link>
 
@@ -105,28 +113,12 @@ export default function Checklist() {
         <li>Explore your new neighborhood and locate emergency services</li>
       </ul>
 
-      <div className="not-prose mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
-        <h3 className="font-semibold mb-2">Make planning easier</h3>
-        <p className="text-sm mb-4">Get an accurate volume estimate before you start contacting movers.</p>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/moving-calculator"
-            className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-          >
-            Use the Moving Calculator →
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-          >
-            Get Free Quotes
-          </Link>
-        </div>
-      </div>
+      <GuideFooter relatedSlugs={['packing-checklist', 'how-to-choose', 'move-size-weight', 'routes', 'scams']} />
 
       <p className="text-xs text-muted-foreground mt-12">
         This checklist is a general guide. Always follow the specific terms in your moving contract and consult professionals for legal or financial advice.
       </p>
     </div>
+    </>
   );
 }

@@ -11,6 +11,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources/fmcsa',
     '/resources/scams',
     '/resources/checklist',
+    '/resources/packing-checklist',
+    '/resources/routes',
+    '/resources/routes/california-to-texas',
+    '/resources/routes/new-york-to-florida',
+    '/resources/routes/california-to-new-york',
+    '/resources/routes/florida-to-new-york',
+    '/resources/routes/texas-to-california',
+    '/resources/routes/east-coast-to-west-coast',
   ];
 
   const staticPages = [

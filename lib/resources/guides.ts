@@ -1,0 +1,91 @@
+export type GuideCategory =
+  | 'Planning'
+  | 'Buying Guide'
+  | 'Safety'
+  | 'Checklist'
+  | 'Regulation'
+  | 'Routes';
+
+export type GuideEntry = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: GuideCategory;
+  href: string;
+  related: string[];
+};
+
+export const guides: GuideEntry[] = [
+  {
+    slug: 'move-size-weight',
+    title: 'Why Knowing the Size and Weight of Your Move Matters',
+    excerpt: 'Stop guessing your move size. Learn why accurate cubic footage protects you from lowball quotes and inflated prices.',
+    category: 'Planning',
+    href: '/resources/move-size-weight',
+    related: ['how-to-choose', 'packing-checklist', 'routes'],
+  },
+  {
+    slug: 'how-to-choose',
+    title: 'How to Choose an Interstate Mover in 2026',
+    excerpt: 'A step-by-step framework using reputation scores, licensing verification, and quote evaluation.',
+    category: 'Buying Guide',
+    href: '/resources/how-to-choose',
+    related: ['fmcsa', 'scams', 'move-size-weight', 'routes'],
+  },
+  {
+    slug: 'scams',
+    title: '8 Red Flags of Interstate Moving Scams',
+    excerpt: 'Protect yourself from rogue brokers, bait-and-switch operators, and hostage-load tactics.',
+    category: 'Safety',
+    href: '/resources/scams',
+    related: ['fmcsa', 'how-to-choose', 'checklist'],
+  },
+  {
+    slug: 'fmcsa',
+    title: 'Understanding FMCSA Safety Ratings & Complaint Data',
+    excerpt: 'What USDOT numbers, safety ratings, and complaint ratios mean when choosing a long-distance mover.',
+    category: 'Regulation',
+    href: '/resources/fmcsa',
+    related: ['how-to-choose', 'scams', 'routes'],
+  },
+  {
+    slug: 'checklist',
+    title: 'Complete Interstate Moving Checklist',
+    excerpt: 'Timeline from 8 weeks out through delivery day and post-move tasks.',
+    category: 'Checklist',
+    href: '/resources/checklist',
+    related: ['packing-checklist', 'how-to-choose', 'move-size-weight'],
+  },
+  {
+    slug: 'packing-checklist',
+    title: 'Room-by-Room Packing Checklist for Long-Distance Moves',
+    excerpt: 'What to pack first, supplies you need, fragile-item tips, and how to label boxes for interstate delivery.',
+    category: 'Checklist',
+    href: '/resources/packing-checklist',
+    related: ['checklist', 'move-size-weight', 'how-to-choose'],
+  },
+  {
+    slug: 'routes',
+    title: 'Popular Interstate Moving Routes & Planning Guides',
+    excerpt: 'Distance, timing, pricing factors, and mover research tips for the most common long-distance corridors.',
+    category: 'Routes',
+    href: '/resources/routes',
+    related: ['how-to-choose', 'move-size-weight', 'fmcsa'],
+  },
+];
+
+export function getGuide(slug: string) {
+  return guides.find((g) => g.slug === slug);
+}
+
+export function getRelatedGuides(slugs: string[]) {
+  return slugs
+    .map((slug) => guides.find((g) => g.slug === slug))
+    .filter((g): g is GuideEntry => Boolean(g));
+}
+
+export const guidesByCategory = guides.reduce<Record<string, GuideEntry[]>>((acc, guide) => {
+  if (!acc[guide.category]) acc[guide.category] = [];
+  acc[guide.category].push(guide);
+  return acc;
+}, {});

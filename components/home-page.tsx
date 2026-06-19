@@ -189,7 +189,7 @@ export function HomePage() {
               <div className="text-3xl mb-4">📚</div>
               <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">Moving Guides &amp; Resources</h3>
               <p className="text-muted-foreground">
-                Learn <Link href="/resources/move-size-weight" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>why move size matters</Link>, how to spot scams, verify FMCSA ratings, and follow our interstate moving checklist.
+                Learn <Link href="/resources/move-size-weight" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>why move size matters</Link>, <Link href="/resources/how-to-choose" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>how to choose a mover</Link>, <Link href="/resources/routes" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>route guides</Link>, and <Link href="/resources/packing-checklist" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>packing checklists</Link>.
               </p>
               <div className="mt-4 text-primary font-medium flex items-center gap-1">Read free guides →</div>
             </Card>

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { ArticleSchema } from '@/components/resources/article-schema';
+import { GuideFooter } from '@/components/resources/guide-footer';
 
 export const metadata = {
   title: '8 Red Flags of Interstate Moving Scams',
@@ -7,6 +9,12 @@ export const metadata = {
 
 export default function Scams() {
   return (
+    <>
+    <ArticleSchema
+      title="8 Red Flags of Interstate Moving Scams"
+      description="Learn how to spot and avoid rogue brokers, lowball quotes, and bait-and-switch interstate moving scams."
+      path="/resources/scams"
+    />
     <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral dark:prose-invert">
       <Link href="/resources" className="text-sm hover:underline">← Back to all resources</Link>
 
@@ -82,36 +90,12 @@ export default function Scams() {
         <li>Read the contract carefully before signing.</li>
       </ul>
 
-      <div className="not-prose mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
-        <h3 className="font-semibold mb-2">Want to compare real, licensed movers?</h3>
-        <p className="text-sm mb-4">
-          Use our free tools to research movers with verified FMCSA data before you request quotes.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/moving-calculator"
-            className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-          >
-            Estimate Your Move →
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-          >
-            Get Free Quotes
-          </Link>
-          <Link
-            href="/companies"
-            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-          >
-            Browse Trusted Movers
-          </Link>
-        </div>
-      </div>
+      <GuideFooter relatedSlugs={['how-to-choose', 'fmcsa', 'checklist', 'packing-checklist', 'routes']} />
 
       <p className="text-xs text-muted-foreground mt-12">
         This guide is for educational purposes. Always perform your own due diligence and report suspected scams to the FMCSA and your state consumer protection agency.
       </p>
     </div>
+    </>
   );
 }

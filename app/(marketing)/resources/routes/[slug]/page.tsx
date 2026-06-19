@@ -1,0 +1,157 @@
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { ArrowLeft, ArrowRight, MapPin, Truck } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { ArticleSchema } from '@/components/resources/article-schema';
+import { GuideFooter } from '@/components/resources/guide-footer';
+import { getRouteGuide, routeGuides } from '@/lib/resources/routes';
+
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateStaticParams() {
+  return routeGuides.map((route) => ({ slug: route.slug }));
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const route = getRouteGuide(slug);
+  if (!route) return {};
+
+  return {
+    title: `${route.title} — Interstate Moving Route Guide`,
+    description: `Plan your ${route.from} to ${route.to} move: ${route.distance}, ${route.deliveryWindow}, cost factors, and how to compare licensed long-distance movers.`,
+    openGraph: {
+      title: `${route.title} | Move Trust Hub`,
+      description: route.description,
+    },
+    alternates: {
+      canonical: `https://www.movetrusthub.com/resources/routes/${route.slug}`,
+    },
+  };
+}
+
+export default async function RouteGuidePage({ params }: Props) {
+  const { slug } = await params;
+  const route = getRouteGuide(slug);
+  if (!route) notFound();
+
+  const related = route.relatedRoutes
+    .map((s) => getRouteGuide(s))
+    .filter((r): r is NonNullable<typeof r> => Boolean(r));
+
+  return (
+    <>
+      <ArticleSchema
+        title={route.title}
+        description={route.description}
+        path={`/resources/routes/${route.slug}`}
+      />
+
+      <div className="container mx-auto px-4 py-10 max-w-3xl">
+        <Link
+          href="/resources/routes"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          All route guides
+        </Link>
+
+        <Badge variant="secondary" className="mb-4">
+          {route.fromState} → {route.toState}
+        </Badge>
+
+        <h1 className="text-4xl font-semibold tracking-tight mb-4">{route.title}</h1>
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">{route.description}</p>
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-10">
+          {[
+            { label: 'Typical Distance', value: route.distance },
+            { label: 'Transit Time', value: route.driveTime },
+            { label: 'Cost Range', value: route.avgCostRange },
+            { label: 'Peak Season', value: route.peakSeason },
+            { label: 'Delivery Window', value: route.deliveryWindow },
+          ].map((item) => (
+            <div key={item.label} className="rounded-xl border bg-card p-4">
+              <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
+                {item.label}
+              </div>
+              <div className="text-sm font-medium leading-snug">{item.value}</div>
+            </div>
+          ))}
+        </div>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">Planning Tips for This Route</h2>
+          <ul className="space-y-2 text-muted-foreground">
+            {route.planningTips.map((tip) => (
+              <li key={tip} className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="leading-relaxed">{tip}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold tracking-tight mb-3">What Affects Your Price</h2>
+          <ul className="list-disc pl-5 space-y-1.5 text-muted-foreground">
+            {route.costFactors.map((factor) => (
+              <li key={factor}>{factor}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mb-10 rounded-xl border bg-muted/30 p-6">
+          <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-2">
+            <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
+            Popular City Pairs on This Corridor
+          </h2>
+          <ul className="space-y-1.5 text-sm text-muted-foreground">
+            {route.popularCorridors.map((corridor) => (
+              <li key={corridor}>{corridor}</li>
+            ))}
+          </ul>
+        </section>
+
+        {related.length > 0 && (
+          <section className="mb-10">
+            <h2 className="text-xl font-semibold tracking-tight mb-3">Related Route Guides</h2>
+            <div className="flex flex-wrap gap-3">
+              {related.map((r) => (
+                <Link
+                  key={r.slug}
+                  href={`/resources/routes/${r.slug}`}
+                  className="inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-sm hover:border-primary/40 hover:text-primary transition-colors"
+                >
+                  {r.from} → {r.to}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 mb-10">
+          <div className="flex items-start gap-3">
+            <Truck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+            <div>
+              <h2 className="font-semibold mb-2">Compare movers for {route.from} → {route.to}</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                Build your inventory in our{' '}
+                <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
+                , then browse{' '}
+                <Link href="/companies" className="text-primary underline underline-offset-2">licensed interstate carriers</Link>
+                {' '}or{' '}
+                <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <GuideFooter
+          relatedSlugs={['how-to-choose', 'move-size-weight', 'scams', 'packing-checklist', 'checklist']}
+        />
+      </div>
+    </>
+  );
+}

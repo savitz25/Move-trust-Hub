@@ -756,6 +756,12 @@ export default function MovingCalculatorPage() {
             <Link href="/resources/scams" className="text-primary hover:underline">
               Avoid moving scams
             </Link>
+            <Link href="/resources/packing-checklist" className="text-primary hover:underline">
+              Packing checklist
+            </Link>
+            <Link href="/resources/routes" className="text-primary hover:underline">
+              Route guides
+            </Link>
             <Link href="/resources" className="text-primary hover:underline">
               All moving guides
             </Link>

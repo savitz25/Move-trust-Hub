@@ -2,79 +2,100 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { TestimonialsSection } from '@/components/trust/testimonials-section';
+import { guidesByCategory } from '@/lib/resources/guides';
+import { routeGuides } from '@/lib/resources/routes';
 
 export const metadata = {
   title: 'Moving Resources & Guides | How to Choose an Interstate Mover',
-  description: 'Free educational resources: FMCSA explained, how to avoid moving scams, interstate moving checklist, pricing guides, and more.',
+  description:
+    'Free moving guides: route planning, how to choose a mover, scam avoidance, FMCSA licensing, packing checklists, and interstate moving timelines.',
+  alternates: {
+    canonical: 'https://www.movetrusthub.com/resources',
+  },
 };
 
-const guides = [
-  {
-    slug: 'move-size-weight',
-    title: 'Why Knowing the Size and Weight of Your Move Is the Most Important First Step',
-    excerpt: 'Stop guessing your move size. Learn why accurate cubic footage protects you from lowball quotes and inflated prices.',
-    category: 'Planning',
-  },
-  {
-    slug: 'how-to-choose',
-    title: 'How to Choose an Interstate Mover in 2026',
-    excerpt: 'A step-by-step framework using reputation scores, licensing verification, and quote evaluation.',
-    category: 'Buying Guide',
-  },
-  {
-    slug: 'fmcsa',
-    title: 'Understanding FMCSA Safety Ratings & Complaint Data',
-    excerpt: 'What the USDOT numbers, safety ratings, and complaint ratios actually mean for your move.',
-    category: 'Regulation',
-  },
-  {
-    slug: 'scams',
-    title: '8 Red Flags of Interstate Moving Scams',
-    excerpt: 'Protect yourself from rogue brokers and bait-and-switch operators.',
-    category: 'Safety',
-  },
-  {
-    slug: 'checklist',
-    title: 'Complete Interstate Moving Checklist',
-    excerpt: 'Timeline from 8 weeks out through delivery day + post-move tasks.',
-    category: 'Checklist',
-  },
-];
+const categoryOrder = ['Planning', 'Buying Guide', 'Routes', 'Safety', 'Regulation', 'Checklist'];
 
 export default function ResourcesPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-4xl">
-      <h1 className="text-4xl font-semibold tracking-tight mb-2">Moving Resources</h1>
+      <h1 className="text-4xl font-semibold tracking-tight mb-2">Moving Resources &amp; Guides</h1>
       <p className="text-lg text-muted-foreground mb-6">
-        Free, unbiased guides to help you make a confident interstate move. Research movers with{' '}
+        Free, unbiased guides for interstate moves. Research movers with{' '}
         <Link href="/companies" className="text-primary underline underline-offset-2">verified reviews</Link>
-        , then use our{' '}
+        , estimate volume in our{' '}
         <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
-        {' '}or{' '}
+        , explore{' '}
+        <Link href="/resources/routes" className="text-primary underline underline-offset-2">popular route guides</Link>
+        , or{' '}
         <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
       </p>
 
       <TrustBadges variant="grid" className="mb-10" />
 
-      <div className="grid gap-4">
-        {guides.map((guide, i) => (
-          <Card key={i} className="hover:border-primary/50 transition-colors">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-xl"><Link href={`/resources/${guide.slug}`}>{guide.title}</Link></CardTitle>
-                <span className="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground">{guide.category}</span>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">{guide.excerpt}</p>
-              <Link href={`/resources/${guide.slug}`} className="text-primary text-sm font-medium mt-3 inline-block">Read full guide →</Link>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      {categoryOrder.map((category) => {
+        const items = guidesByCategory[category];
+        if (!items?.length) return null;
+
+        return (
+          <section key={category} className="mb-10">
+            <h2 className="text-xl font-semibold tracking-tight mb-4">{category}</h2>
+            <div className="grid gap-4">
+              {items.map((guide) => (
+                <Card key={guide.slug} className="hover:border-primary/50 transition-colors">
+                  <CardHeader>
+                    <div className="flex items-center justify-between gap-3">
+                      <CardTitle className="text-xl">
+                        <Link href={guide.href}>{guide.title}</Link>
+                      </CardTitle>
+                      <span className="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground shrink-0">
+                        {guide.category}
+                      </span>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{guide.excerpt}</p>
+                    <Link href={guide.href} className="text-primary text-sm font-medium mt-3 inline-block">
+                      Read full guide →
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+
+      <section className="mb-10 border-t pt-10">
+        <h2 className="text-xl font-semibold tracking-tight mb-2">
+          <Link href="/resources/routes" className="hover:text-primary transition-colors">
+            Popular Interstate Route Guides
+          </Link>
+        </h2>
+        <p className="text-sm text-muted-foreground mb-4">
+          Corridor-specific planning for the most common long-distance moves.
+        </p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {routeGuides.map((route) => (
+            <Link
+              key={route.slug}
+              href={`/resources/routes/${route.slug}`}
+              className="rounded-lg border px-4 py-3 text-sm hover:border-primary/40 hover:text-primary transition-colors"
+            >
+              <span className="font-medium">{route.from} → {route.to}</span>
+              <span className="block text-xs text-muted-foreground mt-0.5">{route.distance}</span>
+            </Link>
+          ))}
+        </div>
+        <Link href="/resources/routes" className="text-primary text-sm font-medium mt-4 inline-block">
+          View all route guides →
+        </Link>
+      </section>
 
       <div id="fmcsa" className="mt-12 border-t pt-8">
-        <h2 className="font-semibold mb-3">Quick FMCSA Tips</h2>
+        <h2 className="font-semibold mb-3">
+          <Link href="/resources/fmcsa" className="hover:text-primary">Quick FMCSA Tips</Link>
+        </h2>
         <ul className="list-disc pl-5 text-sm space-y-1 text-muted-foreground">
           <li>Always ask for the mover&apos;s USDOT and MC numbers and look them up yourself on fmcsa.dot.gov.</li>
           <li>Prefer companies with “Satisfactory” safety rating and low complaint-to-shipment ratios.</li>
@@ -84,7 +105,9 @@ export default function ResourcesPage() {
       </div>
 
       <div id="scams" className="mt-8">
-        <h2 className="font-semibold mb-3">Common Scam Warnings</h2>
+        <h2 className="font-semibold mb-3">
+          <Link href="/resources/scams" className="hover:text-primary">Common Scam Warnings</Link>
+        </h2>
         <div className="text-sm text-muted-foreground space-y-1.5">
           <p>• Extremely lowball quotes (30-50% under everyone else)</p>
           <p>• No physical address or only a P.O. Box</p>
@@ -102,7 +125,11 @@ export default function ResourcesPage() {
       />
 
       <div id="checklist" className="mt-8">
-        <h2 className="font-semibold mb-3">Interstate Moving Timeline (High Level)</h2>
+        <h2 className="font-semibold mb-3">
+          <Link href="/resources/checklist" className="hover:text-primary">Interstate Moving Timeline</Link>
+          {' · '}
+          <Link href="/resources/packing-checklist" className="hover:text-primary">Packing Checklist</Link>
+        </h2>
         <div className="text-sm grid sm:grid-cols-2 gap-x-8 text-muted-foreground">
           <ul className="list-disc pl-5 space-y-0.5">
             <li>8 weeks: Research &amp; get 3+ written estimates</li>

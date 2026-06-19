@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { ArticleSchema } from '@/components/resources/article-schema';
+import { GuideFooter } from '@/components/resources/guide-footer';
 
 export const metadata = {
   title: 'Understanding FMCSA Safety Ratings & Complaint Data',
@@ -7,6 +9,12 @@ export const metadata = {
 
 export default function FmcsaPage() {
   return (
+    <>
+    <ArticleSchema
+      title="Understanding FMCSA Safety Ratings & Complaint Data"
+      description="What USDOT numbers, safety ratings, and complaint ratios mean when choosing an interstate mover."
+      path="/resources/fmcsa"
+    />
     <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral dark:prose-invert">
       <Link href="/resources" className="text-sm hover:underline">← Back to all resources</Link>
 
@@ -108,36 +116,12 @@ export default function FmcsaPage() {
         <li>Cross-reference with our Reputation Score on the directory</li>
       </ul>
 
-      <div className="not-prose mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
-        <h3 className="font-semibold mb-2">Ready to compare real movers?</h3>
-        <p className="text-sm mb-4">
-          Estimate your move size first, then browse companies with transparent FMCSA data and reputation scores.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/moving-calculator"
-            className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-          >
-            Use the Moving Calculator →
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-          >
-            Get Free Quotes
-          </Link>
-          <Link
-            href="/companies"
-            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-          >
-            Browse the Directory
-          </Link>
-        </div>
-      </div>
+      <GuideFooter relatedSlugs={['how-to-choose', 'scams', 'routes', 'move-size-weight', 'checklist']} />
 
       <p className="text-xs text-muted-foreground mt-12">
         This information is for educational purposes. Always verify licensing and safety data directly on fmcsa.dot.gov.
       </p>
     </div>
+    </>
   );
 }

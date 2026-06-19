@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { ArticleSchema } from '@/components/resources/article-schema';
+import { RelatedGuides } from '@/components/resources/guide-footer';
 
 export const metadata = {
   title: 'Why Knowing the Size and Weight of Your Move Is the Most Important First Step',
@@ -38,6 +40,12 @@ const calculatorOutputs = [
 
 export default function MoveSizeWeightGuide() {
   return (
+    <>
+    <ArticleSchema
+      title="Why Knowing the Size and Weight of Your Move Is the Most Important First Step"
+      description="Learn why accurate cubic footage and weight estimates protect you from lowball quotes and inflated prices."
+      path="/resources/move-size-weight"
+    />
     <div className="min-h-screen">
       {/* Hero */}
       <section className="border-b bg-gradient-to-b from-primary/5 via-background to-background">
@@ -223,10 +231,13 @@ export default function MoveSizeWeightGuide() {
           </div>
         </section>
 
+        <RelatedGuides slugs={['how-to-choose', 'packing-checklist', 'routes', 'scams', 'checklist']} />
+
         <p className="text-xs text-muted-foreground text-center pb-4">
           Move Trust Hub — Trusted Directory &amp; Reviews for Interstate Movers
         </p>
       </div>
     </div>
+    </>
   );
 }

@@ -36,10 +36,12 @@ export function Footer() {
           <div>
             <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">RESOURCES</div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
-              <div><Link href="/resources" className="hover:text-foreground transition-colors">Moving Guides</Link></div>
-              <div><Link href="/resources#fmcsa" className="hover:text-foreground transition-colors">FMCSA Tips</Link></div>
-              <div><Link href="/resources#checklist" className="hover:text-foreground transition-colors">Checklist</Link></div>
-              <div><Link href="/resources#scams" className="hover:text-foreground transition-colors">Avoid Scams</Link></div>
+              <div><Link href="/resources" className="hover:text-foreground transition-colors">All Guides</Link></div>
+              <div><Link href="/resources/how-to-choose" className="hover:text-foreground transition-colors">How to Choose a Mover</Link></div>
+              <div><Link href="/resources/routes" className="hover:text-foreground transition-colors">Route Guides</Link></div>
+              <div><Link href="/resources/scams" className="hover:text-foreground transition-colors">Avoid Scams</Link></div>
+              <div><Link href="/resources/packing-checklist" className="hover:text-foreground transition-colors">Packing Checklist</Link></div>
+              <div><Link href="/resources/fmcsa" className="hover:text-foreground transition-colors">FMCSA Guide</Link></div>
             </div>
           </div>
 
