@@ -215,6 +215,9 @@ export default function MoveSizeWeightGuide() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
+              <Link href="/">Get Free Moving Quotes</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
               <Link href="/companies">Browse Trusted Movers</Link>
             </Button>
           </div>

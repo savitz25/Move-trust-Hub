@@ -5,6 +5,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const companies = await getAllCompanies();
   const autoTransportCompanies = await getAllAutoTransportCompanies();
 
+  const resourcePages = [
+    '/resources/move-size-weight',
+    '/resources/how-to-choose',
+    '/resources/fmcsa',
+    '/resources/scams',
+    '/resources/checklist',
+  ];
+
   const staticPages = [
     '',
     '/companies',
@@ -14,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources',
     '/about',
     '/contact',
+    ...resourcePages,
   ].map((route) => ({
     url: `https://www.movetrusthub.com${route}`,
     lastModified: new Date(),

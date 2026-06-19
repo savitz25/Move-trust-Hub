@@ -84,13 +84,29 @@ export default function Scams() {
 
       <div className="not-prose mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
         <h3 className="font-semibold mb-2">Want to compare real, licensed movers?</h3>
-        <p className="text-sm mb-4">Browse companies with verified FMCSA data and transparent pricing.</p>
-        <Link 
-          href="/companies" 
-          className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-        >
-          Browse Trusted Movers →
-        </Link>
+        <p className="text-sm mb-4">
+          Use our free tools to research movers with verified FMCSA data before you request quotes.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/moving-calculator"
+            className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
+          >
+            Estimate Your Move →
+          </Link>
+          <Link
+            href="/"
+            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
+          >
+            Get Free Quotes
+          </Link>
+          <Link
+            href="/companies"
+            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
+          >
+            Browse Trusted Movers
+          </Link>
+        </div>
       </div>
 
       <p className="text-xs text-muted-foreground mt-12">

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildCalculatorSchemaGraph } from '@/lib/seo/schemas';
 
 export const metadata: Metadata = {
   title: 'Free Moving Calculator | Estimate Cubic Feet, Weight & Truck Size',
@@ -30,5 +32,10 @@ export default function MovingCalculatorLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={buildCalculatorSchemaGraph()} />
+      {children}
+    </>
+  );
 }

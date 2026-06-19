@@ -15,6 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { QuoteModal } from '@/components/quote-modal';
+import { MovingCalculatorSeoSections } from '@/components/moving-calculator-seo-sections';
 import { useCalculatorStore, type InventoryItem, type InputMode } from '@/store/calculator-store';
 import { furnitureItems, roomCategories, getItemsByCategory, searchItems, type FurnitureItem } from '@/data/furniture';
 import { toast } from 'sonner';
@@ -727,7 +728,9 @@ export default function MovingCalculatorPage() {
           </DialogContent>
         </Dialog>
 
-        <section className="mt-12 max-w-3xl mx-auto rounded-xl border bg-muted/30 p-6 sm:p-8">
+        <MovingCalculatorSeoSections />
+
+        <section className="max-w-3xl mx-auto rounded-xl border bg-muted/30 p-6 sm:p-8">
           <h2 className="text-xl font-semibold tracking-tight mb-3">
             Next Steps After You Estimate Your Move
           </h2>

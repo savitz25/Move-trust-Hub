@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,7 +26,14 @@ export function Navbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
           <Link href="/" className="group">
-            <img src="/logo.png" alt="Move Trust Hub" className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]" />
+            <Image
+              src="/logo.png"
+              alt="Move Trust Hub — trusted interstate moving directory and free quote matching"
+              width={300}
+              height={75}
+              priority
+              className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]"
+            />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
             TRUSTED

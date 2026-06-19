@@ -110,13 +110,29 @@ export default function FmcsaPage() {
 
       <div className="not-prose mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
         <h3 className="font-semibold mb-2">Ready to compare real movers?</h3>
-        <p className="text-sm mb-4">Browse companies with transparent FMCSA data and reputation scores.</p>
-        <Link 
-          href="/companies" 
-          className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-        >
-          Browse the Directory →
-        </Link>
+        <p className="text-sm mb-4">
+          Estimate your move size first, then browse companies with transparent FMCSA data and reputation scores.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/moving-calculator"
+            className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
+          >
+            Use the Moving Calculator →
+          </Link>
+          <Link
+            href="/"
+            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
+          >
+            Get Free Quotes
+          </Link>
+          <Link
+            href="/companies"
+            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
+          >
+            Browse the Directory
+          </Link>
+        </div>
       </div>
 
       <p className="text-xs text-muted-foreground mt-12">

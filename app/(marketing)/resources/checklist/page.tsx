@@ -108,12 +108,20 @@ export default function Checklist() {
       <div className="not-prose mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
         <h3 className="font-semibold mb-2">Make planning easier</h3>
         <p className="text-sm mb-4">Get an accurate volume estimate before you start contacting movers.</p>
-        <Link 
-          href="/moving-calculator" 
-          className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-        >
-          Use the Moving Calculator →
-        </Link>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/moving-calculator"
+            className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
+          >
+            Use the Moving Calculator →
+          </Link>
+          <Link
+            href="/"
+            className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
+          >
+            Get Free Quotes
+          </Link>
+        </div>
       </div>
 
       <p className="text-xs text-muted-foreground mt-12">

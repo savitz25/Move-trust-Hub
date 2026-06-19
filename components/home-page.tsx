@@ -9,6 +9,8 @@ import { Badge } from '@/components/ui/badge';
 import { Shield, Award, Users, TrendingUp, CheckCircle, ArrowRight, Clock, DollarSign, Star, Truck, Headphones } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { QuoteModal } from '@/components/quote-modal';
+import { FaqSection } from '@/components/seo/faq-section';
+import { homepageFaqItems } from '@/lib/seo/schemas';
 
 export function HomePage() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
@@ -334,6 +336,8 @@ export function HomePage() {
           on scams, FMCSA checks, and checklists.
         </p>
       </section>
+
+      <FaqSection title="Frequently Asked Questions" items={homepageFaqItems} />
 
       {/* FINAL CTA */}
       <section className="container mx-auto px-4 py-20 text-center">

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { HomePage } from '@/components/home-page';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildHomepageSchemaGraph } from '@/lib/seo/schemas';
 
 export const metadata: Metadata = {
   title: 'Free Interstate Moving Quotes | Compare Licensed Long-Distance Movers',
@@ -27,5 +29,10 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <HomePage />;
+  return (
+    <>
+      <JsonLd data={buildHomepageSchemaGraph()} />
+      <HomePage />
+    </>
+  );
 }
