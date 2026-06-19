@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Plus, Minus, Trash2, Calculator, Truck, Users, Clock, 
@@ -218,16 +219,30 @@ export default function MovingCalculatorPage() {
             <Calculator className="h-4 w-4" /> FREE • INSTANT • ACCURATE
           </div>
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-3">
-            Smart Move Estimator
+            Free Moving Inventory Calculator
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Build your inventory and instantly see your total volume, recommended truck size, and mover requirements.
+            Build a room-by-room inventory and instantly calculate total cubic feet, estimated weight, and recommended truck size for your interstate move.
+          </p>
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto mt-3">
+            New to move sizing? Read{' '}
+            <Link href="/resources/move-size-weight" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              why knowing your move size matters
+            </Link>{' '}
+            before requesting quotes from our{' '}
+            <Link href="/companies" className="text-primary underline underline-offset-2 hover:text-primary/80">
+              licensed mover directory
+            </Link>
+            .
           </p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-6">
           {/* LEFT: Input Controls */}
-          <div className="lg:col-span-7 space-y-6">
+          <section className="lg:col-span-7 space-y-6" aria-labelledby="inventory-heading">
+            <h2 id="inventory-heading" className="sr-only">
+              Build Your Room-by-Room Moving Inventory
+            </h2>
             {/* Mode Switch */}
             <Card>
               <CardHeader className="pb-3">
@@ -443,10 +458,13 @@ export default function MovingCalculatorPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </section>
 
           {/* RIGHT: Live Summary + Results */}
-          <div className="lg:col-span-5 space-y-6">
+          <section className="lg:col-span-5 space-y-6" aria-labelledby="estimate-heading">
+            <h2 id="estimate-heading" className="text-lg font-semibold tracking-tight px-1">
+              Your Move Estimate Results
+            </h2>
             {/* Prominent Total */}
             <Card className="bg-primary text-primary-foreground border-0 shadow-trust-lg">
               <CardContent className="pt-6 pb-5">
@@ -602,7 +620,7 @@ export default function MovingCalculatorPage() {
                 )}
               </CardContent>
             </Card>
-          </div>
+          </section>
         </div>
 
         {/* Shared clean Quote Modal (prefills the calculator volume) */}
@@ -709,10 +727,37 @@ export default function MovingCalculatorPage() {
           </DialogContent>
         </Dialog>
 
-        <div className="mt-10 text-center text-xs text-muted-foreground max-w-md mx-auto">
-          Volumes are industry-standard averages (7 lbs per cu ft for weight estimate). Actual space and weight may vary based on packing style and item sizes. 
-          This tool is for estimation only.
-        </div>
+        <section className="mt-12 max-w-3xl mx-auto rounded-xl border bg-muted/30 p-6 sm:p-8">
+          <h2 className="text-xl font-semibold tracking-tight mb-3">
+            Next Steps After You Estimate Your Move
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            Volumes use industry-standard averages (7 lbs per cu ft for weight). Once you know your cubic footage, request quotes with confidence and compare licensed interstate movers on equal footing.
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium">
+            <Link href="/resources/move-size-weight" className="text-primary hover:underline">
+              Why move size matters
+            </Link>
+            <Link href="/companies" className="text-primary hover:underline">
+              Browse interstate movers
+            </Link>
+            <Link href="/compare" className="text-primary hover:underline">
+              Compare movers
+            </Link>
+            <Link href="/resources/how-to-choose" className="text-primary hover:underline">
+              How to choose a mover
+            </Link>
+            <Link href="/resources/scams" className="text-primary hover:underline">
+              Avoid moving scams
+            </Link>
+            <Link href="/resources" className="text-primary hover:underline">
+              All moving guides
+            </Link>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            This calculator is for estimation only. Actual space and weight may vary based on packing style and item sizes.
+          </p>
+        </section>
       </div>
     </div>
   );
