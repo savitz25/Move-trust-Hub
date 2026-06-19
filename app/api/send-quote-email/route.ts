@@ -6,6 +6,21 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const FROM_ADDRESS = process.env.RESEND_FROM || 'Move Trust Hub <onboarding@resend.dev>';
 const TEAM_EMAIL = process.env.QUOTE_TEAM_EMAIL || 'mhenry@amerisafemoving.com';
 
+type InventoryItem = {
+  name: string;
+  quantity: number;
+  volume: number;
+  room?: string;
+};
+
+function escapeHtml(text: string): string {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 function getHomeSizeLabel(size: string | number | null | undefined): string {
   if (!size) return 'Not provided';
   const s = String(size).trim().toLowerCase();
@@ -17,6 +32,41 @@ function getHomeSizeLabel(size: string | number | null | undefined): string {
     '4+': '4+ Bedrooms / Large',
   };
   return map[s] || String(size);
+}
+
+function formatInventoryHtml(inventory: InventoryItem[]): string {
+  if (!inventory?.length) return '';
+
+  const rows = inventory.map((item) => {
+    const lineVolume = item.volume * item.quantity;
+    const room = item.room ? escapeHtml(item.room) : '—';
+    return `<tr>
+      <td style="padding:6px 10px;border:1px solid #ddd;">${escapeHtml(item.name)}</td>
+      <td style="padding:6px 10px;border:1px solid #ddd;text-align:center;">${room}</td>
+      <td style="padding:6px 10px;border:1px solid #ddd;text-align:center;">${item.quantity}</td>
+      <td style="padding:6px 10px;border:1px solid #ddd;text-align:right;">${item.volume} cf</td>
+      <td style="padding:6px 10px;border:1px solid #ddd;text-align:right;">${lineVolume} cf</td>
+    </tr>`;
+  }).join('');
+
+  const totalCf = inventory.reduce((sum, item) => sum + item.volume * item.quantity, 0);
+  const totalItems = inventory.reduce((sum, item) => sum + item.quantity, 0);
+
+  return `
+      <h3>Inventory (${totalItems} items, ${totalCf.toLocaleString()} cu ft total)</h3>
+      <table style="border-collapse:collapse;width:100%;max-width:640px;font-size:13px;">
+        <thead>
+          <tr style="background:#f5f5f5;">
+            <th style="padding:6px 10px;border:1px solid #ddd;text-align:left;">Item</th>
+            <th style="padding:6px 10px;border:1px solid #ddd;">Room</th>
+            <th style="padding:6px 10px;border:1px solid #ddd;">Qty</th>
+            <th style="padding:6px 10px;border:1px solid #ddd;text-align:right;">Unit Vol</th>
+            <th style="padding:6px 10px;border:1px solid #ddd;text-align:right;">Line Vol</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
 }
 
 export async function POST(req: NextRequest) {
@@ -31,28 +81,37 @@ export async function POST(req: NextRequest) {
     const subject = `New Quote Request from ${payload.name || 'Unknown'}`;
     
     const homeSizeLabel = getHomeSizeLabel(payload.home_size);
+    const inventory = Array.isArray(payload.inventory) ? payload.inventory as InventoryItem[] : [];
+    const inventoryHtml = formatInventoryHtml(inventory);
+    const safeName = escapeHtml(payload.name || 'N/A');
+    const safeEmail = escapeHtml(payload.email || '');
+    const safePhone = escapeHtml(payload.phone || 'Not provided');
+    const safeNotes = payload.notes ? escapeHtml(payload.notes) : '';
+    const safeSource = escapeHtml(payload.source || 'quote-modal');
 
     const leadHtml = `
       <h2>New Move Quote Request</h2>
       <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       
       <h3>Contact Information</h3>
-      <p><strong>Name:</strong> ${payload.name || 'N/A'}</p>
-      <p><strong>Email:</strong> <a href="mailto:${payload.email}">${payload.email}</a></p>
-      <p><strong>Phone:</strong> ${payload.phone || 'Not provided'}</p>
+      <p><strong>Name:</strong> ${safeName}</p>
+      <p><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
+      <p><strong>Phone:</strong> ${safePhone}</p>
       
       <h3>Move Details</h3>
-      <p><strong>From ZIP:</strong> ${payload.from_zip}</p>
-      <p><strong>To ZIP:</strong> ${payload.to_zip}</p>
-      <p><strong>Preferred Date:</strong> ${payload.move_date || 'Flexible'}</p>
-      <p><strong>Home Size:</strong> ${homeSizeLabel}</p>
-      <p><strong>Estimated Volume:</strong> ${payload.estimated_volume ? payload.estimated_volume + ' cu ft' : 'Not provided'}</p>
+      <p><strong>From ZIP:</strong> ${escapeHtml(payload.from_zip || '')}</p>
+      <p><strong>To ZIP:</strong> ${escapeHtml(payload.to_zip || '')}</p>
+      <p><strong>Preferred Date:</strong> ${payload.move_date ? escapeHtml(payload.move_date) : 'Flexible'}</p>
+      <p><strong>Home Size:</strong> ${escapeHtml(homeSizeLabel)}</p>
+      <p><strong>Estimated Volume:</strong> ${payload.estimated_volume ? `${payload.estimated_volume} cu ft` : 'Not provided'}</p>
+      <p><strong>Estimated Weight:</strong> ${payload.estimated_weight ? `${payload.estimated_weight} lbs` : 'Not provided'}</p>
       
-      ${payload.notes ? `<h3>Additional Notes</h3><p>${payload.notes}</p>` : ''}
+      ${inventoryHtml}
+      ${safeNotes ? `<h3>Additional Notes</h3><p>${safeNotes}</p>` : ''}
       
       <p style="margin-top: 30px; font-size: 12px; color: #666;">
         This lead was captured via the Move Trust Hub quote form.<br>
-        Source: ${payload.source || 'quote-modal'}
+        Source: ${safeSource}
       </p>
     `;
 

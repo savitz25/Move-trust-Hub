@@ -10,13 +10,22 @@ import { X, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
 
+export type QuoteInventoryItem = {
+  name: string;
+  quantity: number;
+  volume: number;
+  room?: string;
+};
+
 interface QuoteModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   prefilledData?: {
     estimatedVolume?: number;
+    estimatedWeight?: number;
     fromZip?: string;
     toZip?: string;
+    inventory?: QuoteInventoryItem[];
   };
 }
 
@@ -122,6 +131,8 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
 
     setIsSubmitting(true);
 
+    const hasInventory = (prefilledData.inventory?.length ?? 0) > 0;
+
     const payload = {
       name: formData.name.trim(),
       email: formData.email.trim().toLowerCase(),
@@ -131,14 +142,18 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       move_date: formData.moveDate || null,
       home_size: formData.homeSize,
       estimated_volume: formData.estimatedVolume ? parseFloat(formData.estimatedVolume) : null,
+      estimated_weight: prefilledData.estimatedWeight
+        ?? (formData.estimatedVolume ? Math.round(parseFloat(formData.estimatedVolume) * 7) : null),
+      inventory: hasInventory ? prefilledData.inventory : null,
       notes: formData.notes.trim() || null,
-      source: 'quote-modal',
+      source: hasInventory ? 'moving-calculator' : 'quote-modal',
     };
 
     try {
       // Real persistence when Supabase is configured
       if (isSupabaseConfigured()) {
-        const { error } = await supabase.from('quote_requests').insert(payload);
+        const { inventory: _inventory, estimated_weight: _weight, ...dbPayload } = payload;
+        const { error } = await supabase.from('quote_requests').insert(dbPayload);
         if (error) {
           console.warn('Supabase insert failed (non-fatal for user):', error.message);
         }

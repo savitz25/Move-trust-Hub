@@ -609,7 +609,16 @@ export default function MovingCalculatorPage() {
         <QuoteModal
           open={showQuoteModal}
           onOpenChange={setShowQuoteModal}
-          prefilledData={{ estimatedVolume: totalVolume, estimatedWeight: totalWeight }}
+          prefilledData={{
+            estimatedVolume: totalVolume,
+            estimatedWeight: totalWeight,
+            inventory: inventory.map(({ name, quantity, volume, room }) => ({
+              name,
+              quantity,
+              volume,
+              room,
+            })),
+          }}
         />
 
         {/* Full catalog browser for accessing items from the large xlsx source */}
