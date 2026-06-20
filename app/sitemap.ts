@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data';
+import { getAllCountyParams } from '@/lib/local-movers/geography/index';
+import { localStates } from '@/lib/local-movers/states';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const companies = await getAllCompanies();
@@ -21,9 +23,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources/routes/east-coast-to-west-coast',
   ];
 
+  const localMoverPages = [
+    '/local-movers',
+    ...localStates.map((state) => `/local-movers/${state.slug}`),
+    ...getAllCountyParams().map(
+      ({ stateSlug, countySlug }) => `/local-movers/${stateSlug}/${countySlug}`
+    ),
+  ];
+
   const staticPages = [
     '',
     '/companies',
+    ...localMoverPages,
     '/auto-transport',
     '/moving-calculator',
     '/compare',

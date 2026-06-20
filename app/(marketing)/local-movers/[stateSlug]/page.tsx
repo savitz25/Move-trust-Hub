@@ -1,0 +1,134 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { MapPin } from 'lucide-react';
+import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
+import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
+import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
+import { getLocalState, localStates } from '@/lib/local-movers/states';
+import {
+  buildStateDescription,
+  buildStateTitle,
+  getCountyPath,
+} from '@/lib/local-movers/index';
+import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
+
+type Props = { params: Promise<{ stateSlug: string }> };
+
+export async function generateStaticParams() {
+  return localStates.map((state) => ({ stateSlug: state.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { stateSlug } = await params;
+  const state = getLocalState(stateSlug);
+  if (!state) return {};
+
+  const counties = getCountiesForState(stateSlug);
+  const title = buildStateTitle(state.name, counties.length);
+  const description = buildStateDescription(state.name, counties.length);
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.movetrusthub.com/local-movers/${state.slug}`,
+    },
+    openGraph: { title, description },
+  };
+}
+
+export default async function LocalMoversStatePage({ params }: Props) {
+  const { stateSlug } = await params;
+  const state = getLocalState(stateSlug);
+  if (!state) notFound();
+
+  const counties = getCountiesForState(stateSlug);
+  const hasCounties = stateHasCounties(stateSlug);
+  const title = buildStateTitle(state.name, counties.length);
+  const description = buildStateDescription(state.name, counties.length);
+  const path = `/local-movers/${state.slug}`;
+
+  return (
+    <>
+      <LocalMoversSchema
+        title={title}
+        description={description}
+        path={path}
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Local Movers', path: '/local-movers' },
+          { name: state.name, path },
+        ]}
+        stateName={state.name}
+      />
+
+      <div className="container mx-auto px-4 py-10 max-w-5xl">
+        <LocalMoversBreadcrumbs
+          crumbs={[
+            { label: 'Home', href: '/' },
+            { label: 'Local Movers', href: '/local-movers' },
+            { label: state.name },
+          ]}
+        />
+
+        <div className="mb-8">
+          <div className="inline-flex items-center gap-2 rounded-full border bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
+            {state.code}
+          </div>
+          <h1 className="text-4xl font-semibold tracking-tight mb-3">
+            Local Movers in {state.name}
+          </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+            {hasCounties
+              ? `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
+              : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
+          </p>
+        </div>
+
+        {hasCounties ? (
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Counties in {state.name}
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {counties.map((county) => (
+                <Link
+                  key={county.slug}
+                  href={getCountyPath(state.slug, county.slug)}
+                  className="group rounded-xl border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+                >
+                  <div className="font-semibold text-sm group-hover:text-primary transition-colors">
+                    {county.name}
+                  </div>
+                  {county.seat && (
+                    <div className="text-[11px] text-muted-foreground mt-1 flex items-center gap-1">
+                      <MapPin className="h-3 w-3" aria-hidden="true" />
+                      {county.seat}
+                    </div>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <section className="mb-12 rounded-2xl border bg-muted/30 p-6 sm:p-8">
+            <h2 className="text-xl font-semibold mb-2">County guides coming soon</h2>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              We&apos;re expanding local mover coverage state by state. Add county
+              geography data and mover assignments to scale — no new page templates needed.
+            </p>
+            <Link
+              href="/companies"
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              Browse interstate movers →
+            </Link>
+          </section>
+        )}
+
+        <LocalMoversCta />
+      </div>
+    </>
+  );
+}
