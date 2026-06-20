@@ -35,6 +35,7 @@ import { north_dakotaCounties, north_dakotaMovers, north_dakotaMetroPools, north
 import { ohioCounties, ohioMovers, ohioMetroPools, ohioAssignments } from './states/ohio';
 import { oklahomaCounties, oklahomaMovers, oklahomaMetroPools, oklahomaAssignments } from './states/oklahoma';
 import { oregonCounties, oregonMovers, oregonMetroPools, oregonAssignments } from './states/oregon';
+import { pennsylvaniaCounties, pennsylvaniaMovers, pennsylvaniaMetroPools, pennsylvaniaAssignments } from './states/pennsylvania';
 import { south_carolinaCounties, south_carolinaMovers, south_carolinaMetroPools, south_carolinaAssignments } from './states/south-carolina';
 import { tennesseeCounties, tennesseeMovers, tennesseeMetroPools, tennesseeAssignments } from './states/tennessee';
 
@@ -75,6 +76,7 @@ export const generatedCounties = [
   ...ohioCounties,
   ...oklahomaCounties,
   ...oregonCounties,
+  ...pennsylvaniaCounties,
   ...south_carolinaCounties,
   ...tennesseeCounties,
 ];
@@ -116,6 +118,7 @@ export const generatedMoversCatalog = {
   ...ohioMovers,
   ...oklahomaMovers,
   ...oregonMovers,
+  ...pennsylvaniaMovers,
   ...south_carolinaMovers,
   ...tennesseeMovers,
 };
@@ -157,6 +160,7 @@ export const generatedMetroPools = {
   ...ohioMetroPools,
   ...oklahomaMetroPools,
   ...oregonMetroPools,
+  ...pennsylvaniaMetroPools,
   ...south_carolinaMetroPools,
   ...tennesseeMetroPools,
 };
@@ -198,6 +202,7 @@ export const generatedCountyAssignments = [
   ...ohioAssignments,
   ...oklahomaAssignments,
   ...oregonAssignments,
+  ...pennsylvaniaAssignments,
   ...south_carolinaAssignments,
   ...tennesseeAssignments,
 ];
