@@ -7,6 +7,7 @@ import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { QuoteModal } from '@/components/quote-modal';
+import { ClickToCallButton } from '@/components/click-to-call-button';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,6 +52,7 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <ClickToCallButton variant="navbar" />
           <Button 
             size="sm" 
             onClick={() => setShowQuoteModal(true)}
@@ -63,6 +65,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center gap-2">
+          <ClickToCallButton variant="icon" />
           <ThemeToggle />
           <Button
             variant="ghost"
@@ -89,6 +92,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <ClickToCallButton variant="footer" className="w-full" />
             <Button 
               className="w-full mt-2" 
               onClick={() => { setIsOpen(false); setShowQuoteModal(true); }}
