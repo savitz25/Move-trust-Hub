@@ -30,7 +30,7 @@ export function Footer() {
               </p>
               <ClickToCallButton variant="footer" showLabel={false} />
               <p className="mt-2 text-[11px] text-muted-foreground/70">
-                Toll-free · Mon–Fri, 9am–6pm ET
+                Toll-free
               </p>
             </div>
           </div>
