@@ -42,6 +42,7 @@ import { south_dakotaCounties, south_dakotaMovers, south_dakotaMetroPools, south
 import { tennesseeCounties, tennesseeMovers, tennesseeMetroPools, tennesseeAssignments } from './states/tennessee';
 import { texasCounties, texasMovers, texasMetroPools, texasAssignments } from './states/texas';
 import { utahCounties, utahMovers, utahMetroPools, utahAssignments } from './states/utah';
+import { vermontCounties, vermontMovers, vermontMetroPools, vermontAssignments } from './states/vermont';
 
 export const generatedCounties = [
   ...alabamaCounties,
@@ -87,6 +88,7 @@ export const generatedCounties = [
   ...tennesseeCounties,
   ...texasCounties,
   ...utahCounties,
+  ...vermontCounties,
 ];
 
 export const generatedMoversCatalog = {
@@ -133,6 +135,7 @@ export const generatedMoversCatalog = {
   ...tennesseeMovers,
   ...texasMovers,
   ...utahMovers,
+  ...vermontMovers,
 };
 
 export const generatedMetroPools = {
@@ -179,6 +182,7 @@ export const generatedMetroPools = {
   ...tennesseeMetroPools,
   ...texasMetroPools,
   ...utahMetroPools,
+  ...vermontMetroPools,
 };
 
 export const generatedCountyAssignments = [
@@ -225,4 +229,5 @@ export const generatedCountyAssignments = [
   ...tennesseeAssignments,
   ...texasAssignments,
   ...utahAssignments,
+  ...vermontAssignments,
 ];
