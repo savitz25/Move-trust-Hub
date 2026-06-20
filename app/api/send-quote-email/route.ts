@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { syncLeadToBrevo } from '@/lib/brevo/sync-lead';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -71,12 +72,20 @@ function formatInventoryHtml(inventory: InventoryItem[]): string {
 
 export async function POST(req: NextRequest) {
   try {
+    const payload = await req.json();
+
+    const brevoSync = syncLeadToBrevo(payload);
+
     if (!process.env.RESEND_API_KEY) {
       console.warn('RESEND_API_KEY not configured - skipping email');
-      return NextResponse.json({ success: false, reason: 'email not configured' });
+      const brevoResult = await brevoSync;
+      return NextResponse.json({
+        success: false,
+        reason: 'email not configured',
+        brevoSynced: brevoResult.synced,
+        brevoError: brevoResult.error || brevoResult.skippedReason,
+      });
     }
-
-    const payload = await req.json();
 
     const subject = `New Quote Request from ${payload.name || 'Unknown'}`;
     
@@ -172,6 +181,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    const brevoResult = await brevoSync;
     const messageIds = [teamSend.data?.id, confirmationId].filter(Boolean);
 
     return NextResponse.json({ 
@@ -179,6 +189,9 @@ export async function POST(req: NextRequest) {
       messageIds,
       teamEmailSent: !teamSend.error,
       confirmationSent,
+      brevoSynced: brevoResult.synced,
+      brevoContactId: brevoResult.contactId,
+      brevoError: brevoResult.error || brevoResult.skippedReason,
     });
   } catch (err: any) {
     console.error('Email notification error:', err);
