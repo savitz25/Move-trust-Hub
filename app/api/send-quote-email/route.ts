@@ -2,10 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { syncLeadToBrevo } from '@/lib/brevo/sync-lead';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const FROM_ADDRESS = process.env.RESEND_FROM || 'Move Trust Hub <onboarding@resend.dev>';
-const TEAM_EMAIL = process.env.QUOTE_TEAM_EMAIL || 'mhenry@amerisafemoving.com';
+const VERIFIED_FROM_FALLBACK =
+  'Move Trust Hub <notifications@movetrusthub.com>';
+const FROM_ADDRESS =
+  process.env.RESEND_FROM?.trim() || VERIFIED_FROM_FALLBACK;
+const TEAM_EMAIL =
+  process.env.QUOTE_TEAM_EMAIL?.trim() || 'mhenry@amerisafemoving.com';
 
 type InventoryItem = {
   name: string;
@@ -13,6 +15,24 @@ type InventoryItem = {
   volume: number;
   room?: string;
 };
+
+function logRoute(message: string, data?: Record<string, unknown>) {
+  if (data) {
+    console.log(`[send-quote-email] ${message}`, data);
+  } else {
+    console.log(`[send-quote-email] ${message}`);
+  }
+}
+
+function getEnvDiagnostics() {
+  return {
+    resendApiKeyConfigured: Boolean(process.env.RESEND_API_KEY?.trim()),
+    resendFrom: FROM_ADDRESS,
+    teamEmail: TEAM_EMAIL,
+    brevoApiKeyConfigured: Boolean(process.env.BREVO_API_KEY?.trim()),
+    brevoListId: process.env.BREVO_LIST_ID?.trim() || '7',
+  };
+}
 
 function escapeHtml(text: string): string {
   return String(text)
@@ -26,7 +46,7 @@ function getHomeSizeLabel(size: string | number | null | undefined): string {
   if (!size) return 'Not provided';
   const s = String(size).trim().toLowerCase();
   const map: Record<string, string> = {
-    'studio': 'Studio / Small apartment',
+    studio: 'Studio / Small apartment',
     '1': '1 Bedroom',
     '2': '2 Bedrooms',
     '3': '3 Bedrooms',
@@ -38,19 +58,24 @@ function getHomeSizeLabel(size: string | number | null | undefined): string {
 function formatInventoryHtml(inventory: InventoryItem[]): string {
   if (!inventory?.length) return '';
 
-  const rows = inventory.map((item) => {
-    const lineVolume = item.volume * item.quantity;
-    const room = item.room ? escapeHtml(item.room) : '—';
-    return `<tr>
+  const rows = inventory
+    .map((item) => {
+      const lineVolume = item.volume * item.quantity;
+      const room = item.room ? escapeHtml(item.room) : '—';
+      return `<tr>
       <td style="padding:6px 10px;border:1px solid #ddd;">${escapeHtml(item.name)}</td>
       <td style="padding:6px 10px;border:1px solid #ddd;text-align:center;">${room}</td>
       <td style="padding:6px 10px;border:1px solid #ddd;text-align:center;">${item.quantity}</td>
       <td style="padding:6px 10px;border:1px solid #ddd;text-align:right;">${item.volume} cf</td>
       <td style="padding:6px 10px;border:1px solid #ddd;text-align:right;">${lineVolume} cf</td>
     </tr>`;
-  }).join('');
+    })
+    .join('');
 
-  const totalCf = inventory.reduce((sum, item) => sum + item.volume * item.quantity, 0);
+  const totalCf = inventory.reduce(
+    (sum, item) => sum + item.volume * item.quantity,
+    0
+  );
   const totalItems = inventory.reduce((sum, item) => sum + item.quantity, 0);
 
   return `
@@ -71,26 +96,57 @@ function formatInventoryHtml(inventory: InventoryItem[]): string {
 }
 
 export async function POST(req: NextRequest) {
+  const startedAt = Date.now();
+  const env = getEnvDiagnostics();
+
   try {
     const payload = await req.json();
 
+    logRoute('Received quote submission', {
+      env,
+      payload: {
+        name: payload.name || null,
+        email: payload.email || null,
+        phone: payload.phone || null,
+        from_zip: payload.from_zip || null,
+        to_zip: payload.to_zip || null,
+        move_date: payload.move_date || null,
+        home_size: payload.home_size || null,
+        estimated_volume: payload.estimated_volume ?? null,
+        estimated_weight: payload.estimated_weight ?? null,
+        inventoryCount: Array.isArray(payload.inventory)
+          ? payload.inventory.length
+          : 0,
+        notes: payload.notes ? '[provided]' : null,
+        source: payload.source || 'quote-modal',
+      },
+    });
+
     const brevoSync = syncLeadToBrevo(payload);
 
-    if (!process.env.RESEND_API_KEY) {
-      console.warn('RESEND_API_KEY not configured - skipping email');
+    if (!env.resendApiKeyConfigured) {
+      logRoute('RESEND_API_KEY missing — skipping email delivery');
       const brevoResult = await brevoSync;
       return NextResponse.json({
         success: false,
         reason: 'email not configured',
+        env,
         brevoSynced: brevoResult.synced,
+        brevoContactId: brevoResult.contactId,
+        brevoListId: brevoResult.listId,
         brevoError: brevoResult.error || brevoResult.skippedReason,
+        brevoAttempts: brevoResult.attempts,
+        durationMs: Date.now() - startedAt,
       });
     }
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const subject = `New Quote Request from ${payload.name || 'Unknown'}`;
-    
+
     const homeSizeLabel = getHomeSizeLabel(payload.home_size);
-    const inventory = Array.isArray(payload.inventory) ? payload.inventory as InventoryItem[] : [];
+    const inventory = Array.isArray(payload.inventory)
+      ? (payload.inventory as InventoryItem[])
+      : [];
     const inventoryHtml = formatInventoryHtml(inventory);
     const safeName = escapeHtml(payload.name || 'N/A');
     const safeEmail = escapeHtml(payload.email || '');
@@ -124,7 +180,12 @@ export async function POST(req: NextRequest) {
       </p>
     `;
 
-    // 1. Notify the team (primary recipient)
+    logRoute('Sending team notification email', {
+      from: FROM_ADDRESS,
+      to: TEAM_EMAIL,
+      subject,
+    });
+
     const teamSend = await resend.emails.send({
       from: FROM_ADDRESS,
       to: TEAM_EMAIL,
@@ -134,14 +195,22 @@ export async function POST(req: NextRequest) {
     });
 
     if (teamSend.error) {
-      console.error('Resend team email error:', teamSend.error);
-    } else if (teamSend.data?.id) {
-      console.log(`[Resend] Team lead notification sent. Message ID: ${teamSend.data.id}`);
+      logRoute('Team email failed', {
+        error: teamSend.error,
+        from: FROM_ADDRESS,
+        to: TEAM_EMAIL,
+      });
+    } else {
+      logRoute('Team email sent', {
+        messageId: teamSend.data?.id,
+        to: TEAM_EMAIL,
+      });
     }
 
-    // 2. Send confirmation receipt to the submitter (so they know it was received)
     let confirmationSent = false;
     let confirmationId: string | null = null;
+    let confirmationError: unknown = null;
+
     if (payload.email) {
       const confirmationSubject = `Quote request received — Move from ${payload.from_zip} to ${payload.to_zip}`;
       const confirmationHtml = `
@@ -164,6 +233,11 @@ export async function POST(req: NextRequest) {
         </p>
       `;
 
+      logRoute('Sending lead confirmation email', {
+        from: FROM_ADDRESS,
+        to: payload.email,
+      });
+
       const confirmSend = await resend.emails.send({
         from: FROM_ADDRESS,
         to: payload.email,
@@ -173,29 +247,63 @@ export async function POST(req: NextRequest) {
       });
 
       if (confirmSend.error) {
-        console.error('Resend confirmation email error:', confirmSend.error);
-      } else if (confirmSend.data?.id) {
-        confirmationId = confirmSend.data.id;
+        confirmationError = confirmSend.error;
+        logRoute('Confirmation email failed', {
+          error: confirmSend.error,
+          to: payload.email,
+        });
+      } else {
+        confirmationId = confirmSend.data?.id ?? null;
         confirmationSent = true;
-        console.log(`[Resend] Confirmation sent to lead (${payload.email}). Message ID: ${confirmationId}`);
+        logRoute('Confirmation email sent', {
+          messageId: confirmationId,
+          to: payload.email,
+        });
       }
     }
 
     const brevoResult = await brevoSync;
     const messageIds = [teamSend.data?.id, confirmationId].filter(Boolean);
+    const teamEmailSent = !teamSend.error;
+    const overallSuccess = teamEmailSent || brevoResult.synced;
 
-    return NextResponse.json({ 
-      success: true, 
-      messageIds,
-      teamEmailSent: !teamSend.error,
+    logRoute('Quote submission processed', {
+      overallSuccess,
+      teamEmailSent,
       confirmationSent,
       brevoSynced: brevoResult.synced,
       brevoContactId: brevoResult.contactId,
+      brevoListId: brevoResult.listId,
       brevoError: brevoResult.error || brevoResult.skippedReason,
+      durationMs: Date.now() - startedAt,
     });
-  } catch (err: any) {
-    console.error('Email notification error:', err);
-    // Return success so user experience is never blocked (the lead is already saved to console + Supabase)
-    return NextResponse.json({ success: true, emailError: err.message || 'email delivery issue (lead captured)' });
+
+    return NextResponse.json({
+      success: overallSuccess,
+      messageIds,
+      teamEmailSent,
+      teamEmailError: teamSend.error ?? null,
+      confirmationSent,
+      confirmationError,
+      brevoSynced: brevoResult.synced,
+      brevoContactId: brevoResult.contactId,
+      brevoListId: brevoResult.listId,
+      brevoError: brevoResult.error || brevoResult.skippedReason,
+      brevoAttempts: brevoResult.attempts,
+      env,
+      durationMs: Date.now() - startedAt,
+    });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    logRoute('Unhandled route error', { message, env });
+    return NextResponse.json(
+      {
+        success: false,
+        error: message,
+        env,
+        durationMs: Date.now() - startedAt,
+      },
+      { status: 500 }
+    );
   }
 }

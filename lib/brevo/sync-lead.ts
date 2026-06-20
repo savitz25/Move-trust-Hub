@@ -1,3 +1,5 @@
+import { normalizePhoneForBrevo } from '@/lib/brevo/phone';
+
 const BREVO_API_URL = 'https://api.brevo.com/v3/contacts';
 
 export type QuoteLeadPayload = {
@@ -23,9 +25,25 @@ export type QuoteLeadPayload = {
 export type BrevoSyncResult = {
   synced: boolean;
   contactId?: number;
+  listId?: number;
   error?: string;
   skippedReason?: string;
+  attempts?: Array<{
+    label: string;
+    status: number;
+    ok: boolean;
+    message?: string;
+    contactId?: number;
+  }>;
 };
+
+function logBrevo(message: string, data?: Record<string, unknown>) {
+  if (data) {
+    console.log(`[Brevo] ${message}`, data);
+  } else {
+    console.log(`[Brevo] ${message}`);
+  }
+}
 
 function splitName(name: string): { firstName: string; lastName: string } {
   const trimmed = name.trim();
@@ -110,106 +128,186 @@ function parseListId(): number {
   return Number.isFinite(parsed) ? parsed : 7;
 }
 
+type BrevoAttempt = NonNullable<BrevoSyncResult['attempts']>[number];
+
+async function postBrevoContact(params: {
+  apiKey: string;
+  email: string;
+  listId: number;
+  attributes: Record<string, string>;
+  label: string;
+}): Promise<BrevoAttempt> {
+  const requestBody = {
+    email: params.email,
+    listIds: [params.listId],
+    updateEnabled: true,
+    attributes: params.attributes,
+  };
+
+  logBrevo(`Attempt: ${params.label}`, {
+    email: params.email,
+    listId: params.listId,
+    attributeKeys: Object.keys(params.attributes),
+  });
+
+  const response = await fetch(BREVO_API_URL, {
+    method: 'POST',
+    headers: {
+      'api-key': params.apiKey,
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(requestBody),
+  });
+
+  const responseText = await response.text();
+  let data: { id?: number; message?: string; code?: string } = {};
+  if (responseText) {
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      data = { message: responseText };
+    }
+  }
+
+  const attempt: BrevoAttempt = {
+    label: params.label,
+    status: response.status,
+    ok: response.ok,
+    message: data.message,
+    contactId: data.id,
+  };
+
+  logBrevo(`Response: ${params.label}`, {
+    status: response.status,
+    ok: response.ok,
+    message: data.message,
+    code: data.code,
+    contactId: data.id,
+    raw: responseText.slice(0, 500),
+  });
+
+  return attempt;
+}
+
+function isRetriableBrevoError(message: string | undefined): boolean {
+  if (!message) return false;
+  return /attribute/i.test(message) || /invalid phone number/i.test(message);
+}
+
 export async function syncLeadToBrevo(
   payload: QuoteLeadPayload
 ): Promise<BrevoSyncResult> {
-  const apiKey = process.env.BREVO_API_KEY;
+  const apiKey = process.env.BREVO_API_KEY?.trim();
+  const listId = parseListId();
+
+  logBrevo('Starting lead sync', {
+    hasApiKey: Boolean(apiKey),
+    listId,
+    email: payload.email || null,
+    source: payload.source || 'quote-modal',
+    rawPhone: payload.phone || null,
+  });
+
   if (!apiKey) {
-    return { synced: false, skippedReason: 'BREVO_API_KEY not configured' };
+    logBrevo('Skipped — BREVO_API_KEY not configured');
+    return { synced: false, skippedReason: 'BREVO_API_KEY not configured', listId };
   }
 
   const email = payload.email?.trim().toLowerCase();
   if (!email) {
-    return { synced: false, skippedReason: 'Lead email is required' };
+    logBrevo('Skipped — lead email missing');
+    return { synced: false, skippedReason: 'Lead email is required', listId };
   }
 
   const { firstName, lastName } = splitName(payload.name || '');
-  const listId = parseListId();
+  const normalizedPhone = normalizePhoneForBrevo(payload.phone);
 
-  const attributes: Record<string, string> = {
-    MOVE_DETAILS: formatMoveDetails(payload),
-    LEAD_SOURCE: payload.source || 'quote-modal',
-  };
-
-  if (firstName) attributes.FIRSTNAME = firstName;
-  if (lastName) attributes.LASTNAME = lastName;
-
-  const phone = payload.phone?.trim();
-  if (phone) attributes.SMS = phone;
+  if (payload.phone?.trim() && !normalizedPhone) {
+    logBrevo('Phone provided but could not normalize — syncing without SMS', {
+      rawPhone: payload.phone,
+    });
+  } else if (normalizedPhone) {
+    logBrevo('Phone normalized for Brevo SMS', {
+      rawPhone: payload.phone,
+      normalizedPhone,
+    });
+  }
 
   const standardAttributes: Record<string, string> = {};
   if (firstName) standardAttributes.FIRSTNAME = firstName;
   if (lastName) standardAttributes.LASTNAME = lastName;
-  if (phone) standardAttributes.SMS = phone;
+  if (normalizedPhone) standardAttributes.SMS = normalizedPhone;
 
-  const attributeSets = [
-    attributes,
-    standardAttributes,
-  ].filter((set) => Object.keys(set).length > 0);
+  const fullAttributes: Record<string, string> = {
+    ...standardAttributes,
+    MOVE_DETAILS: formatMoveDetails(payload),
+    LEAD_SOURCE: payload.source || 'quote-modal',
+  };
+
+  const attempts: BrevoAttempt[] = [];
+  const attemptPlans: Array<{ label: string; attributes: Record<string, string> }> = [
+    { label: 'full-with-move-details', attributes: fullAttributes },
+    { label: 'standard-name-phone', attributes: standardAttributes },
+    { label: 'email-only', attributes: {} },
+  ];
+
+  let lastError = 'Brevo contact sync failed';
 
   try {
-    let lastError = 'Brevo contact sync failed';
-
-    for (const attributeSet of attributeSets) {
-      const response = await fetch(BREVO_API_URL, {
-        method: 'POST',
-        headers: {
-          'api-key': apiKey,
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          listIds: [listId],
-          updateEnabled: true,
-          attributes: attributeSet,
-        }),
-      });
-
-      const responseText = await response.text();
-      let data: { id?: number; message?: string; code?: string } = {};
-      if (responseText) {
-        try {
-          data = JSON.parse(responseText);
-        } catch {
-          data = { message: responseText };
-        }
+    for (const plan of attemptPlans) {
+      if (
+        plan.label === 'standard-name-phone' &&
+        Object.keys(standardAttributes).length === 0
+      ) {
+        continue;
       }
 
-      if (response.ok) {
-        console.log(
-          `[Brevo] Contact synced to list #${listId}. Contact ID: ${data.id ?? 'updated'}`
-        );
+      const attempt = await postBrevoContact({
+        apiKey,
+        email,
+        listId,
+        attributes: plan.attributes,
+        label: plan.label,
+      });
+      attempts.push(attempt);
+
+      if (attempt.ok) {
+        logBrevo(`Contact synced to list #${listId}`, {
+          contactId: attempt.contactId ?? 'updated',
+          strategy: plan.label,
+        });
         return {
           synced: true,
-          contactId: data.id,
+          contactId: attempt.contactId,
+          listId,
+          attempts,
         };
       }
 
       lastError =
-        data.message ||
-        `Brevo API error (${response.status} ${response.statusText})`;
+        attempt.message ||
+        `Brevo API error (${attempt.status})`;
 
-      const invalidAttribute =
-        response.status === 400 &&
-        /attribute/i.test(lastError) &&
-        attributeSet !== standardAttributes;
-
-      if (!invalidAttribute) {
-        console.error('[Brevo] Contact sync failed:', lastError, data);
-        return { synced: false, error: lastError };
+      if (!isRetriableBrevoError(attempt.message)) {
+        logBrevo('Non-retriable Brevo error — stopping retries', {
+          message: lastError,
+          strategy: plan.label,
+        });
+        break;
       }
 
-      console.warn(
-        '[Brevo] Custom attributes missing — retrying with standard fields only'
-      );
+      logBrevo('Retriable Brevo error — trying fallback strategy', {
+        message: lastError,
+        strategy: plan.label,
+      });
     }
 
-    console.error('[Brevo] Contact sync failed:', lastError);
-    return { synced: false, error: lastError };
+    logBrevo('All Brevo sync attempts failed', { lastError, attempts });
+    return { synced: false, error: lastError, listId, attempts };
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown Brevo error';
-    console.error('[Brevo] Contact sync error:', message);
-    return { synced: false, error: message };
+    logBrevo('Unexpected sync error', { message });
+    return { synced: false, error: message, listId, attempts };
   }
 }

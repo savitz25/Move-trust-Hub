@@ -166,27 +166,34 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         timestamp: new Date().toISOString(),
       });
 
-      // Send email notification to the team (non-blocking). Enhanced logging for Resend results.
-      fetch('/api/send-quote-email', {
+      const notifyResponse = await fetch('/api/send-quote-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-      })
-        .then(res => res.json().catch(() => ({})))
-        .then(data => {
-          if (data && data.success) {
-            console.log('%c[Quote Email Sent]', 'color:#22c55e', { 
-              team: 'mhenry@amerisafemoving.com', 
-              lead: payload.name,
-              messageIds: data.messageIds,
-              teamEmailSent: data.teamEmailSent,
-              confirmationSent: data.confirmationSent,
-            });
-          } else if (data && !data.success) {
-            console.warn('Email notification returned non-success:', data);
-          }
-        })
-        .catch((err) => console.warn('Email notification failed (non-fatal):', err));
+      });
+      const notifyData = await notifyResponse.json().catch(() => ({}));
+
+      if (notifyData?.success) {
+        console.log('%c[Quote Lead Synced]', 'color:#22c55e', {
+          lead: payload.name,
+          teamEmailSent: notifyData.teamEmailSent,
+          confirmationSent: notifyData.confirmationSent,
+          brevoSynced: notifyData.brevoSynced,
+          brevoContactId: notifyData.brevoContactId,
+          messageIds: notifyData.messageIds,
+        });
+      } else {
+        console.warn('[Quote Lead Sync Issue]', {
+          status: notifyResponse.status,
+          teamEmailSent: notifyData?.teamEmailSent,
+          teamEmailError: notifyData?.teamEmailError,
+          brevoSynced: notifyData?.brevoSynced,
+          brevoError: notifyData?.brevoError,
+          brevoAttempts: notifyData?.brevoAttempts,
+          env: notifyData?.env,
+          error: notifyData?.error || notifyData?.reason,
+        });
+      }
 
       setIsSubmitting(false);
       setSubmitted(true);
@@ -197,19 +204,17 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       });
     } catch (err) {
       console.error('Quote submission error:', err);
-      // Still attempt to send the email notification even if DB insert failed
-      fetch('/api/send-quote-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-        .then(res => res.json().catch(() => ({})))
-        .then(data => {
-          if (data?.success) {
-            console.log('%c[Quote Email Sent (fallback)]', 'color:#22c55e', { lead: payload.name, messageIds: data.messageIds });
-          }
-        })
-        .catch((err) => console.warn('Email notification failed (non-fatal):', err));
+      try {
+        const notifyResponse = await fetch('/api/send-quote-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const notifyData = await notifyResponse.json().catch(() => ({}));
+        console.warn('[Quote Lead Sync Fallback]', notifyData);
+      } catch (notifyErr) {
+        console.warn('Lead notification failed (fallback):', notifyErr);
+      }
 
       // Still succeed for the user experience (demo-friendly)
       setIsSubmitting(false);
