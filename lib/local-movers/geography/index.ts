@@ -1,8 +1,8 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
+import { generatedCounties } from '@/data/generated/index';
 import { floridaCounties } from '@/lib/local-movers/geography/florida';
-import { expansionCounties } from '@/lib/local-movers/geography/expansion';
 
-const allCounties: LocalCounty[] = [...floridaCounties, ...expansionCounties];
+const allCounties: LocalCounty[] = [...floridaCounties, ...generatedCounties];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {
   return allCounties

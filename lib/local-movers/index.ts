@@ -1,39 +1,31 @@
+import { generatedCountyAssignments } from '@/data/generated/index';
 import { floridaCountyMoverAssignments } from '@/data/florida-county-assignments';
-import {
-  countyMoverAssignments,
-  localMoversCatalog,
-  metroMoverPools,
-} from '@/data/local-movers-seed';
+import { countyMoverAssignments } from '@/data/local-movers-seed';
+import { fullMetroPools, fullMoversCatalog } from '@/lib/local-movers/catalog';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { getCounty } from '@/lib/local-movers/geography/index';
 import { getLocalState } from '@/lib/local-movers/states';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 
+const allCountyAssignments = [
+  ...floridaCountyMoverAssignments,
+  ...generatedCountyAssignments,
+  ...countyMoverAssignments,
+];
+
 function resolveMoverIds(county: LocalCounty): string[] {
-  const floridaAssignment =
-    county.stateSlug === 'florida'
-      ? floridaCountyMoverAssignments.find(
-          (assignment) => assignment.countySlug === county.slug
-        )
-      : undefined;
-
-  if (floridaAssignment?.moverIds.length) {
-    return floridaAssignment.moverIds;
-  }
-
-  const countyOverride = countyMoverAssignments.find(
-    (assignment) =>
-      assignment.stateSlug === county.stateSlug &&
-      assignment.countySlug === county.slug
+  const assignment = allCountyAssignments.find(
+    (entry) =>
+      entry.stateSlug === county.stateSlug && entry.countySlug === county.slug
   );
 
-  if (countyOverride) {
-    return countyOverride.moverIds;
+  if (assignment?.moverIds.length) {
+    return assignment.moverIds;
   }
 
-  if (county.metro && metroMoverPools[county.metro]) {
-    return metroMoverPools[county.metro].moverIds;
+  if (county.metro && fullMetroPools[county.metro]) {
+    return fullMetroPools[county.metro];
   }
 
   return [];
@@ -47,16 +39,13 @@ export function getMoversForCounty(
   if (!county) return null;
 
   const moverIds = resolveMoverIds(county);
-  const countyOverride =
-    county.stateSlug === 'florida' ||
-    countyMoverAssignments.some(
-      (assignment) =>
-        assignment.stateSlug === county.stateSlug &&
-        assignment.countySlug === county.slug
-    );
+  const hasExplicitAssignment = allCountyAssignments.some(
+    (entry) =>
+      entry.stateSlug === county.stateSlug && entry.countySlug === county.slug
+  );
 
   const movers = moverIds
-    .map((id) => localMoversCatalog[id])
+    .map((id) => fullMoversCatalog[id])
     .filter((mover): mover is LocalMover => Boolean(mover))
     .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
     .slice(0, MAX_MOVERS_PER_COUNTY);
@@ -64,12 +53,12 @@ export function getMoversForCounty(
   return {
     county,
     movers,
-    isRegionalFallback: !countyOverride && Boolean(county.metro),
+    isRegionalFallback: !hasExplicitAssignment && Boolean(county.metro),
   };
 }
 
 export function getLocalMoverById(id: string): LocalMover | undefined {
-  return localMoversCatalog[id];
+  return fullMoversCatalog[id];
 }
 
 export function buildCountyTitle(county: LocalCounty, stateName: string): string {
