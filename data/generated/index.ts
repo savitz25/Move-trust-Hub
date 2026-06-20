@@ -18,6 +18,7 @@ import { kentuckyCounties, kentuckyMovers, kentuckyMetroPools, kentuckyAssignmen
 import { louisianaCounties, louisianaMovers, louisianaMetroPools, louisianaAssignments } from './states/louisiana';
 import { maineCounties, maineMovers, maineMetroPools, maineAssignments } from './states/maine';
 import { marylandCounties, marylandMovers, marylandMetroPools, marylandAssignments } from './states/maryland';
+import { massachusettsCounties, massachusettsMovers, massachusettsMetroPools, massachusettsAssignments } from './states/massachusetts';
 import { north_carolinaCounties, north_carolinaMovers, north_carolinaMetroPools, north_carolinaAssignments } from './states/north-carolina';
 import { south_carolinaCounties, south_carolinaMovers, south_carolinaMetroPools, south_carolinaAssignments } from './states/south-carolina';
 import { tennesseeCounties, tennesseeMovers, tennesseeMetroPools, tennesseeAssignments } from './states/tennessee';
@@ -42,6 +43,7 @@ export const generatedCounties = [
   ...louisianaCounties,
   ...maineCounties,
   ...marylandCounties,
+  ...massachusettsCounties,
   ...north_carolinaCounties,
   ...south_carolinaCounties,
   ...tennesseeCounties,
@@ -67,6 +69,7 @@ export const generatedMoversCatalog = {
   ...louisianaMovers,
   ...maineMovers,
   ...marylandMovers,
+  ...massachusettsMovers,
   ...north_carolinaMovers,
   ...south_carolinaMovers,
   ...tennesseeMovers,
@@ -92,6 +95,7 @@ export const generatedMetroPools = {
   ...louisianaMetroPools,
   ...maineMetroPools,
   ...marylandMetroPools,
+  ...massachusettsMetroPools,
   ...north_carolinaMetroPools,
   ...south_carolinaMetroPools,
   ...tennesseeMetroPools,
@@ -117,6 +121,7 @@ export const generatedCountyAssignments = [
   ...louisianaAssignments,
   ...maineAssignments,
   ...marylandAssignments,
+  ...massachusettsAssignments,
   ...north_carolinaAssignments,
   ...south_carolinaAssignments,
   ...tennesseeAssignments,
