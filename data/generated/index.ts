@@ -5,6 +5,7 @@ import { arizonaCounties, arizonaMovers, arizonaMetroPools, arizonaAssignments }
 import { arkansasCounties, arkansasMovers, arkansasMetroPools, arkansasAssignments } from './states/arkansas';
 import { californiaCounties, californiaMovers, californiaMetroPools, californiaAssignments } from './states/california';
 import { coloradoCounties, coloradoMovers, coloradoMetroPools, coloradoAssignments } from './states/colorado';
+import { connecticutCounties, connecticutMovers, connecticutMetroPools, connecticutAssignments } from './states/connecticut';
 import { georgiaCounties, georgiaMovers, georgiaMetroPools, georgiaAssignments } from './states/georgia';
 import { north_carolinaCounties, north_carolinaMovers, north_carolinaMetroPools, north_carolinaAssignments } from './states/north-carolina';
 import { south_carolinaCounties, south_carolinaMovers, south_carolinaMetroPools, south_carolinaAssignments } from './states/south-carolina';
@@ -17,6 +18,7 @@ export const generatedCounties = [
   ...arkansasCounties,
   ...californiaCounties,
   ...coloradoCounties,
+  ...connecticutCounties,
   ...georgiaCounties,
   ...north_carolinaCounties,
   ...south_carolinaCounties,
@@ -30,6 +32,7 @@ export const generatedMoversCatalog = {
   ...arkansasMovers,
   ...californiaMovers,
   ...coloradoMovers,
+  ...connecticutMovers,
   ...georgiaMovers,
   ...north_carolinaMovers,
   ...south_carolinaMovers,
@@ -43,6 +46,7 @@ export const generatedMetroPools = {
   ...arkansasMetroPools,
   ...californiaMetroPools,
   ...coloradoMetroPools,
+  ...connecticutMetroPools,
   ...georgiaMetroPools,
   ...north_carolinaMetroPools,
   ...south_carolinaMetroPools,
@@ -56,6 +60,7 @@ export const generatedCountyAssignments = [
   ...arkansasAssignments,
   ...californiaAssignments,
   ...coloradoAssignments,
+  ...connecticutAssignments,
   ...georgiaAssignments,
   ...north_carolinaAssignments,
   ...south_carolinaAssignments,
