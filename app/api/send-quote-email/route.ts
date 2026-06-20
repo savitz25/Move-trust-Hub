@@ -4,10 +4,33 @@ import { syncLeadToBrevo } from '@/lib/brevo/sync-lead';
 
 const VERIFIED_FROM_FALLBACK =
   'Move Trust Hub <notifications@movetrusthub.com>';
-const FROM_ADDRESS =
-  process.env.RESEND_FROM?.trim() || VERIFIED_FROM_FALLBACK;
-const TEAM_EMAIL =
-  process.env.QUOTE_TEAM_EMAIL?.trim() || 'mhenry@amerisafemoving.com';
+const DEFAULT_TEAM_EMAIL = 'mhenry@amerisafemoving.com';
+
+function isValidEmailAddress(value: string | undefined | null): boolean {
+  if (!value?.trim()) return false;
+  return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(value.trim());
+}
+
+function resolveTeamEmail(): string {
+  const configured = process.env.QUOTE_TEAM_EMAIL?.trim();
+  if (configured && isValidEmailAddress(configured)) {
+    return configured;
+  }
+  if (configured) {
+    console.warn(
+      `[send-quote-email] Invalid QUOTE_TEAM_EMAIL "${configured}" — using ${DEFAULT_TEAM_EMAIL}`
+    );
+  }
+  return DEFAULT_TEAM_EMAIL;
+}
+
+function resolveFromAddress(): string {
+  const configured = process.env.RESEND_FROM?.trim();
+  if (configured && /@/.test(configured)) {
+    return configured;
+  }
+  return VERIFIED_FROM_FALLBACK;
+}
 
 type InventoryItem = {
   name: string;
@@ -25,10 +48,13 @@ function logRoute(message: string, data?: Record<string, unknown>) {
 }
 
 function getEnvDiagnostics() {
+  const configuredTeamEmail = process.env.QUOTE_TEAM_EMAIL?.trim() || null;
   return {
     resendApiKeyConfigured: Boolean(process.env.RESEND_API_KEY?.trim()),
-    resendFrom: FROM_ADDRESS,
-    teamEmail: TEAM_EMAIL,
+    resendFrom: resolveFromAddress(),
+    teamEmail: resolveTeamEmail(),
+    teamEmailEnvValid: isValidEmailAddress(configuredTeamEmail),
+    configuredTeamEmail,
     brevoApiKeyConfigured: Boolean(process.env.BREVO_API_KEY?.trim()),
     brevoListId: process.env.BREVO_LIST_ID?.trim() || '7',
   };
@@ -98,6 +124,8 @@ function formatInventoryHtml(inventory: InventoryItem[]): string {
 export async function POST(req: NextRequest) {
   const startedAt = Date.now();
   const env = getEnvDiagnostics();
+  const fromAddress = env.resendFrom;
+  const teamEmail = env.teamEmail;
 
   try {
     const payload = await req.json();
@@ -181,15 +209,15 @@ export async function POST(req: NextRequest) {
     `;
 
     logRoute('Sending team notification email', {
-      from: FROM_ADDRESS,
-      to: TEAM_EMAIL,
+      from: fromAddress,
+      to: teamEmail,
       subject,
     });
 
     const teamSend = await resend.emails.send({
-      from: FROM_ADDRESS,
-      to: TEAM_EMAIL,
-      replyTo: payload.email || undefined,
+      from: fromAddress,
+      to: teamEmail,
+      replyTo: isValidEmailAddress(payload.email) ? payload.email : undefined,
       subject,
       html: leadHtml,
     });
@@ -197,13 +225,13 @@ export async function POST(req: NextRequest) {
     if (teamSend.error) {
       logRoute('Team email failed', {
         error: teamSend.error,
-        from: FROM_ADDRESS,
-        to: TEAM_EMAIL,
+        from: fromAddress,
+        to: teamEmail,
       });
     } else {
       logRoute('Team email sent', {
         messageId: teamSend.data?.id,
-        to: TEAM_EMAIL,
+        to: teamEmail,
       });
     }
 
@@ -234,14 +262,14 @@ export async function POST(req: NextRequest) {
       `;
 
       logRoute('Sending lead confirmation email', {
-        from: FROM_ADDRESS,
+        from: fromAddress,
         to: payload.email,
       });
 
       const confirmSend = await resend.emails.send({
-        from: FROM_ADDRESS,
+        from: fromAddress,
         to: payload.email,
-        replyTo: TEAM_EMAIL,
+        replyTo: teamEmail,
         subject: confirmationSubject,
         html: confirmationHtml,
       });

@@ -192,7 +192,11 @@ async function postBrevoContact(params: {
 
 function isRetriableBrevoError(message: string | undefined): boolean {
   if (!message) return false;
-  return /attribute/i.test(message) || /invalid phone number/i.test(message);
+  return (
+    /attribute/i.test(message) ||
+    /invalid phone number/i.test(message) ||
+    /sms is already associated/i.test(message)
+  );
 }
 
 export async function syncLeadToBrevo(
@@ -245,10 +249,23 @@ export async function syncLeadToBrevo(
     LEAD_SOURCE: payload.source || 'quote-modal',
   };
 
+  const fullWithoutSms: Record<string, string> = {
+    MOVE_DETAILS: formatMoveDetails(payload),
+    LEAD_SOURCE: payload.source || 'quote-modal',
+  };
+  if (firstName) fullWithoutSms.FIRSTNAME = firstName;
+  if (lastName) fullWithoutSms.LASTNAME = lastName;
+
+  const nameOnly: Record<string, string> = {};
+  if (firstName) nameOnly.FIRSTNAME = firstName;
+  if (lastName) nameOnly.LASTNAME = lastName;
+
   const attempts: BrevoAttempt[] = [];
   const attemptPlans: Array<{ label: string; attributes: Record<string, string> }> = [
     { label: 'full-with-move-details', attributes: fullAttributes },
+    { label: 'full-without-sms', attributes: fullWithoutSms },
     { label: 'standard-name-phone', attributes: standardAttributes },
+    { label: 'name-only', attributes: nameOnly },
     { label: 'email-only', attributes: {} },
   ];
 
@@ -257,8 +274,9 @@ export async function syncLeadToBrevo(
   try {
     for (const plan of attemptPlans) {
       if (
-        plan.label === 'standard-name-phone' &&
-        Object.keys(standardAttributes).length === 0
+        (plan.label === 'standard-name-phone' ||
+          plan.label === 'name-only') &&
+        Object.keys(plan.attributes).length === 0
       ) {
         continue;
       }
