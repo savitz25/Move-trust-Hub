@@ -3,12 +3,14 @@ import { alabamaCounties, alabamaMovers, alabamaMetroPools, alabamaAssignments }
 import { georgiaCounties, georgiaMovers, georgiaMetroPools, georgiaAssignments } from './states/georgia';
 import { north_carolinaCounties, north_carolinaMovers, north_carolinaMetroPools, north_carolinaAssignments } from './states/north-carolina';
 import { south_carolinaCounties, south_carolinaMovers, south_carolinaMetroPools, south_carolinaAssignments } from './states/south-carolina';
+import { tennesseeCounties, tennesseeMovers, tennesseeMetroPools, tennesseeAssignments } from './states/tennessee';
 
 export const generatedCounties = [
   ...alabamaCounties,
   ...georgiaCounties,
   ...north_carolinaCounties,
   ...south_carolinaCounties,
+  ...tennesseeCounties,
 ];
 
 export const generatedMoversCatalog = {
@@ -16,6 +18,7 @@ export const generatedMoversCatalog = {
   ...georgiaMovers,
   ...north_carolinaMovers,
   ...south_carolinaMovers,
+  ...tennesseeMovers,
 };
 
 export const generatedMetroPools = {
@@ -23,6 +26,7 @@ export const generatedMetroPools = {
   ...georgiaMetroPools,
   ...north_carolinaMetroPools,
   ...south_carolinaMetroPools,
+  ...tennesseeMetroPools,
 };
 
 export const generatedCountyAssignments = [
@@ -30,4 +34,5 @@ export const generatedCountyAssignments = [
   ...georgiaAssignments,
   ...north_carolinaAssignments,
   ...south_carolinaAssignments,
+  ...tennesseeAssignments,
 ];
