@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { syncLeadToBrevo } from '@/lib/brevo/sync-lead';
+import { buildQuoteConfirmationEmail } from '@/lib/emails/quote-confirmation';
 
 const VERIFIED_FROM_FALLBACK =
   'Move Trust Hub <notifications@movetrusthub.com>';
@@ -240,26 +241,15 @@ export async function POST(req: NextRequest) {
     let confirmationError: unknown = null;
 
     if (payload.email) {
-      const confirmationSubject = `Quote request received — Move from ${payload.from_zip} to ${payload.to_zip}`;
-      const confirmationHtml = `
-        <h2>We've received your quote request${payload.name ? ', ' + payload.name : ''}!</h2>
-        <p>Thank you for submitting your move details via Move Trust Hub.</p>
-        
-        <h3>Your Request Summary</h3>
-        <p><strong>From:</strong> ${payload.from_zip} &rarr; <strong>To:</strong> ${payload.to_zip}</p>
-        <p><strong>Preferred Date:</strong> ${payload.move_date || 'Flexible'}</p>
-        <p><strong>Home Size:</strong> ${homeSizeLabel}</p>
-        ${payload.estimated_volume ? `<p><strong>Est. Volume:</strong> ${payload.estimated_volume} cu ft</p>` : ''}
-        
-        <p>Our team will review your request and match you with 2-3 highly-rated, licensed interstate movers within 24 hours. The movers will reach out to you directly with custom quotes.</p>
-        
-        <p style="margin-top: 20px;">If you have any questions in the meantime, just reply to this email.</p>
-        
-        <p style="margin-top: 30px; font-size: 12px; color: #666;">
-          Move Trust Hub — Connecting you with trusted movers.<br>
-          This is an automated confirmation of your quote request.
-        </p>
-      `;
+      const confirmationSubject = `Your move quote is confirmed — ${payload.from_zip} to ${payload.to_zip}`;
+      const confirmationHtml = buildQuoteConfirmationEmail({
+        name: payload.name,
+        fromZip: payload.from_zip,
+        toZip: payload.to_zip,
+        moveDate: payload.move_date,
+        homeSizeLabel,
+        estimatedVolume: payload.estimated_volume,
+      });
 
       logRoute('Sending lead confirmation email', {
         from: fromAddress,
