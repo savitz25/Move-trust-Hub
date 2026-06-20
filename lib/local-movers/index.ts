@@ -1,3 +1,4 @@
+import { floridaCountyMoverAssignments } from '@/data/florida-county-assignments';
 import {
   countyMoverAssignments,
   localMoversCatalog,
@@ -10,6 +11,17 @@ import { getLocalState } from '@/lib/local-movers/states';
 const MAX_MOVERS_PER_COUNTY = 10;
 
 function resolveMoverIds(county: LocalCounty): string[] {
+  const floridaAssignment =
+    county.stateSlug === 'florida'
+      ? floridaCountyMoverAssignments.find(
+          (assignment) => assignment.countySlug === county.slug
+        )
+      : undefined;
+
+  if (floridaAssignment?.moverIds.length) {
+    return floridaAssignment.moverIds;
+  }
+
   const countyOverride = countyMoverAssignments.find(
     (assignment) =>
       assignment.stateSlug === county.stateSlug &&
@@ -35,11 +47,13 @@ export function getMoversForCounty(
   if (!county) return null;
 
   const moverIds = resolveMoverIds(county);
-  const countyOverride = countyMoverAssignments.some(
-    (assignment) =>
-      assignment.stateSlug === county.stateSlug &&
-      assignment.countySlug === county.slug
-  );
+  const countyOverride =
+    county.stateSlug === 'florida' ||
+    countyMoverAssignments.some(
+      (assignment) =>
+        assignment.stateSlug === county.stateSlug &&
+        assignment.countySlug === county.slug
+    );
 
   const movers = moverIds
     .map((id) => localMoversCatalog[id])
