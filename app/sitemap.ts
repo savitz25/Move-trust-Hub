@@ -1,8 +1,5 @@
 import { MetadataRoute } from 'next';
 import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data';
-import { getAllCountyParams } from '@/lib/local-movers/geography/index';
-import { localStates } from '@/lib/local-movers/states';
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const companies = await getAllCompanies();
   const autoTransportCompanies = await getAllAutoTransportCompanies();
@@ -23,18 +20,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources/routes/east-coast-to-west-coast',
   ];
 
-  const localMoverPages = [
-    '/local-movers',
-    ...localStates.map((state) => `/local-movers/${state.slug}`),
-    ...getAllCountyParams().map(
-      ({ stateSlug, countySlug }) => `/local-movers/${stateSlug}/${countySlug}`
-    ),
-  ];
-
   const staticPages = [
     '',
     '/companies',
-    ...localMoverPages,
+    '/local-movers',
     '/auto-transport',
     '/moving-calculator',
     '/compare',
@@ -46,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `https://www.movetrusthub.com${route}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route === '/local-movers' ? 0.9 : 0.8,
   }));
 
   const companyPages = companies.map((company) => ({

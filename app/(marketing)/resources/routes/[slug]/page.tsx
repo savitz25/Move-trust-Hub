@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, MapPin, Truck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { getStateSlugFromCode } from '@/lib/local-movers/index';
 import { getRouteGuide, routeGuides } from '@/lib/resources/routes';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -38,6 +39,9 @@ export default async function RouteGuidePage({ params }: Props) {
   const related = route.relatedRoutes
     .map((s) => getRouteGuide(s))
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
+
+  const fromStateSlug = getStateSlugFromCode(route.fromState);
+  const toStateSlug = getStateSlugFromCode(route.toState);
 
   return (
     <>
@@ -127,6 +131,46 @@ export default async function RouteGuidePage({ params }: Props) {
                   <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </Link>
               ))}
+            </div>
+          </section>
+        )}
+
+        {(fromStateSlug || toStateSlug) && (
+          <section className="mb-10 rounded-xl border bg-muted/30 p-6">
+            <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-2">
+              <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
+              Local movers on this route
+            </h2>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+              Need help packing or loading before your interstate move? Browse county-level
+              local mover guides at your origin or destination:
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {fromStateSlug && (
+                <Link
+                  href={`/local-movers/${fromStateSlug}`}
+                  className="inline-flex items-center gap-1 rounded-full border bg-background px-3 py-1.5 text-sm font-medium hover:border-primary/40 hover:text-primary transition-colors"
+                >
+                  Local movers in {route.from}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              )}
+              {toStateSlug && (
+                <Link
+                  href={`/local-movers/${toStateSlug}`}
+                  className="inline-flex items-center gap-1 rounded-full border bg-background px-3 py-1.5 text-sm font-medium hover:border-primary/40 hover:text-primary transition-colors"
+                >
+                  Local movers in {route.to}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              )}
+              <Link
+                href="/local-movers"
+                className="inline-flex items-center gap-1 rounded-full border bg-background px-3 py-1.5 text-sm font-medium hover:border-primary/40 hover:text-primary transition-colors"
+              >
+                All 50 states
+                <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </Link>
             </div>
           </section>
         )}

@@ -27,6 +27,8 @@ export default function ResourcesPage() {
         <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
         , explore{' '}
         <Link href="/resources/routes" className="text-primary underline underline-offset-2">popular route guides</Link>
+        , find{' '}
+        <Link href="/local-movers" className="text-primary underline underline-offset-2">local movers by county</Link>
         , or{' '}
         <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
       </p>
@@ -65,6 +67,24 @@ export default function ResourcesPage() {
           </section>
         );
       })}
+
+      <section className="mb-10 border-t pt-10">
+        <h2 className="text-xl font-semibold tracking-tight mb-2">
+          <Link href="/local-movers" className="hover:text-primary transition-colors">
+            Local Movers by County
+          </Link>
+        </h2>
+        <p className="text-sm text-muted-foreground mb-4">
+          County-level guides across all 50 states with 3–5 vetted local movers, cost
+          estimates, and moving tips for your area.
+        </p>
+        <Link
+          href="/local-movers"
+          className="inline-flex items-center rounded-lg border px-4 py-3 text-sm font-medium hover:border-primary/40 hover:text-primary transition-colors"
+        >
+          Browse local movers near you →
+        </Link>
+      </section>
 
       <section className="mb-10 border-t pt-10">
         <h2 className="text-xl font-semibold tracking-tight mb-2">

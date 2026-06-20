@@ -128,6 +128,7 @@ export default function HowToChoose() {
       <ul>
         <li><Link href="/moving-calculator">Our moving calculator</Link> helps you estimate volume and weight accurately</li>
         <li>Our <Link href="/companies">directory</Link> lets you filter by reputation score, price range, and services</li>
+        <li><Link href="/local-movers">Local mover guides by county</Link> help you find vetted companies for in-state and short-distance moves</li>
         <li>Request free quotes from 2–3 pre-screened companies directly through our site</li>
       </ul>
 

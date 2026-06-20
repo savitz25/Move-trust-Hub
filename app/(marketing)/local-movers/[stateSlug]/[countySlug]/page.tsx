@@ -1,13 +1,24 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
+import {
+  CountyCostSection,
+  CountyFaqSection,
+  CountyTestimonialSection,
+  CountyTipsSection,
+} from '@/components/local-movers/county-seo-sections';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState } from '@/lib/local-movers/states';
 import {
+  buildCountyCostGuide,
   buildCountyDescription,
+  buildCountyFaqItems,
+  buildCountyTestimonial,
+  buildCountyTips,
   buildCountyTitle,
   getAllCountyParams,
   getCountyPath,
@@ -39,9 +50,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     result.movers.length
   );
 
+  const seat = result.county.seat;
+  const keywords = [
+    `local movers ${result.county.name} County`,
+    seat ? `movers ${seat}` : null,
+    `moving companies ${state.name}`,
+    `${result.county.name} County movers 2026`,
+    `best movers near ${seat ?? result.county.name}`,
+  ].filter(Boolean) as string[];
+
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: `https://www.movetrusthub.com${getCountyPath(stateSlug, countySlug)}`,
     },
@@ -61,6 +82,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const description = buildCountyDescription(county, state.name, movers.length);
   const path = getCountyPath(stateSlug, countySlug);
   const countyLabel = `${county.name} County`;
+  const faqItems = buildCountyFaqItems(county, state.name, movers);
+  const costs = buildCountyCostGuide(county, state.name);
+  const tips = buildCountyTips(county, state.name);
+  const testimonial = buildCountyTestimonial(county, state.name);
 
   return (
     <>
@@ -77,6 +102,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         movers={movers}
         county={county}
         stateName={state.name}
+        faqItems={faqItems}
       />
 
       <div className="container mx-auto px-4 py-10 max-w-3xl">
@@ -94,7 +120,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             {state.name} · {county.stateCode}
           </p>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
-            Best Local Movers in {countyLabel}
+            Top Local Movers in {countyLabel}
+            {county.seat ? ` (${county.seat})` : ''}
           </h1>
           {county.seat && (
             <p className="text-muted-foreground mb-3">
@@ -142,6 +169,20 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             </div>
           )}
         </section>
+
+        <CountyCostSection countyLabel={countyLabel} stateName={state.name} costs={costs} />
+
+        <CountyTipsSection countyLabel={countyLabel} tips={tips} />
+
+        <CountyTestimonialSection testimonial={testimonial} />
+
+        <CountyFaqSection countyLabel={countyLabel} faqItems={faqItems} />
+
+        <CountyInternalLinks
+          stateName={state.name}
+          stateSlug={state.slug}
+          countyLabel={countyLabel}
+        />
 
         <section className="mb-10 rounded-2xl border bg-card p-6">
           <h2 className="text-lg font-semibold mb-2">How we rank local movers</h2>

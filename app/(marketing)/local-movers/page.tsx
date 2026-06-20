@@ -10,30 +10,33 @@ import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { getCountyPath } from '@/lib/local-movers/index';
 
 export const metadata: Metadata = {
-  title: 'Local Movers by State & County — Find Trusted Movers Near You',
+  title: 'Local Movers by State & County — Find Trusted Movers Near You 2026',
   description:
-    'Browse local moving companies by state and county. FMCSA licensing, ratings, services, and links to our interstate directory and free moving calculator.',
+    'Browse 3,100+ county-level local mover guides across all 50 states. FMCSA licensing, ratings, cost estimates, and moving tips. Compare movers and get free quotes today.',
   alternates: {
     canonical: 'https://www.movetrusthub.com/local-movers',
   },
   openGraph: {
     title: 'Local Movers Directory | Move Trust Hub',
     description:
-      'Find trusted local movers in your county. Starting with full Florida coverage and expanding nationwide.',
+      'Find trusted local movers in your county. Full coverage across all 50 U.S. states with 3–5 vetted companies per county.',
   },
 };
 
 const featuredCounties = [
   { stateSlug: 'florida', countySlug: 'miami-dade', label: 'Miami-Dade, FL' },
-  { stateSlug: 'florida', countySlug: 'broward', label: 'Broward, FL' },
-  { stateSlug: 'florida', countySlug: 'orange', label: 'Orange, FL' },
-  { stateSlug: 'florida', countySlug: 'hillsborough', label: 'Hillsborough, FL' },
-  { stateSlug: 'florida', countySlug: 'duval', label: 'Duval, FL' },
+  { stateSlug: 'georgia', countySlug: 'fulton', label: 'Fulton, GA' },
+  { stateSlug: 'texas', countySlug: 'harris', label: 'Harris, TX' },
   { stateSlug: 'california', countySlug: 'los-angeles', label: 'Los Angeles, CA' },
+  { stateSlug: 'new-york', countySlug: 'kings', label: 'Kings, NY' },
+  { stateSlug: 'north-carolina', countySlug: 'mecklenburg', label: 'Mecklenburg, NC' },
 ];
 
 export default function LocalMoversHubPage() {
-  const floridaCount = getCountiesForState('florida').length;
+  const totalCounties = localStates.reduce(
+    (sum, state) => sum + getCountiesForState(state.slug).length,
+    0
+  );
 
   return (
     <>
@@ -98,8 +101,8 @@ export default function LocalMoversHubPage() {
             Select your state
           </h2>
           <p className="text-sm text-muted-foreground mb-6">
-            Florida includes all {floridaCount} counties. Additional states roll out
-            county-by-county — no manual page creation required.
+            All 50 states covered — {totalCounties.toLocaleString()} county guides with
+            3–5 vetted local movers each.
           </p>
           <StateSelector states={localStates} />
         </section>

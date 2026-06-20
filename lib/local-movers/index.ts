@@ -61,29 +61,17 @@ export function getLocalMoverById(id: string): LocalMover | undefined {
   return fullMoversCatalog[id];
 }
 
-export function buildCountyTitle(county: LocalCounty, stateName: string): string {
-  return `Best Local Movers in ${county.name} County, ${stateName}`;
-}
-
-export function buildCountyDescription(
-  county: LocalCounty,
-  stateName: string,
-  moverCount: number
-): string {
-  const seat = county.seat ? ` (${county.seat})` : '';
-  return `Compare ${moverCount} top-rated local movers in ${county.name} County, ${stateName}${seat}. FMCSA licensing, ratings, services, and links to full profiles. Free quote tools.`;
-}
-
-export function buildStateTitle(stateName: string, countyCount: number): string {
-  return `Local Movers in ${stateName} — ${countyCount} County Guides`;
-}
-
-export function buildStateDescription(
-  stateName: string,
-  countyCount: number
-): string {
-  return `Find trusted local movers by county in ${stateName}. Browse ${countyCount} county guides with ratings, FMCSA info, and links to our interstate directory and moving calculator.`;
-}
+export {
+  buildCountyTitle,
+  buildCountyDescription,
+  buildStateTitle,
+  buildStateDescription,
+  buildCountyFaqItems,
+  buildCountyCostGuide,
+  buildCountyTips,
+  buildCountyTestimonial,
+  getStateSlugFromCode,
+} from '@/lib/local-movers/county-seo';
 
 export function getCountyPath(stateSlug: string, countySlug: string): string {
   return `/local-movers/${stateSlug}/${countySlug}`;

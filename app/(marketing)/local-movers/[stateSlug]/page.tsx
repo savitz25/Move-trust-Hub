@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MapPin } from 'lucide-react';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
+import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState, localStates } from '@/lib/local-movers/states';
@@ -126,6 +127,12 @@ export default async function LocalMoversStatePage({ params }: Props) {
             </Link>
           </section>
         )}
+
+        <CountyInternalLinks
+          stateName={state.name}
+          stateSlug={state.slug}
+          countyLabel={state.name}
+        />
 
         <LocalMoversCta />
       </div>

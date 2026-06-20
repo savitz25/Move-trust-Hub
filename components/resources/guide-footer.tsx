@@ -34,6 +34,12 @@ export function GuideCta() {
         >
           Compare Movers
         </Link>
+        <Link
+          href="/local-movers"
+          className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
+        >
+          Local Movers by County
+        </Link>
       </div>
     </div>
   );
