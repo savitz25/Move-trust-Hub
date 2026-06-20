@@ -77,10 +77,9 @@ export function StateSelector({ states }: { states: LocalState[] }) {
       <div className="mt-8 rounded-xl border bg-muted/30 p-4 flex items-start gap-3">
         <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
         <p className="text-sm text-muted-foreground leading-relaxed">
-          <strong className="text-foreground">Florida</strong> has full county coverage
-          (67 counties). California, Texas, and New York include sample counties —
-          expand by adding entries to{' '}
-          <code className="text-xs bg-muted px-1 py-0.5 rounded">data/local-movers-seed.ts</code>.
+          All <strong className="text-foreground">50 states</strong> include county-level
+          local mover guides with 3–5 vetted companies per county. Select a state above
+          to browse counties in your area.
         </p>
       </div>
     </div>
