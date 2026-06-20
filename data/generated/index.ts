@@ -12,6 +12,7 @@ import { hawaiiCounties, hawaiiMovers, hawaiiMetroPools, hawaiiAssignments } fro
 import { idahoCounties, idahoMovers, idahoMetroPools, idahoAssignments } from './states/idaho';
 import { illinoisCounties, illinoisMovers, illinoisMetroPools, illinoisAssignments } from './states/illinois';
 import { indianaCounties, indianaMovers, indianaMetroPools, indianaAssignments } from './states/indiana';
+import { iowaCounties, iowaMovers, iowaMetroPools, iowaAssignments } from './states/iowa';
 import { north_carolinaCounties, north_carolinaMovers, north_carolinaMetroPools, north_carolinaAssignments } from './states/north-carolina';
 import { south_carolinaCounties, south_carolinaMovers, south_carolinaMetroPools, south_carolinaAssignments } from './states/south-carolina';
 import { tennesseeCounties, tennesseeMovers, tennesseeMetroPools, tennesseeAssignments } from './states/tennessee';
@@ -30,6 +31,7 @@ export const generatedCounties = [
   ...idahoCounties,
   ...illinoisCounties,
   ...indianaCounties,
+  ...iowaCounties,
   ...north_carolinaCounties,
   ...south_carolinaCounties,
   ...tennesseeCounties,
@@ -49,6 +51,7 @@ export const generatedMoversCatalog = {
   ...idahoMovers,
   ...illinoisMovers,
   ...indianaMovers,
+  ...iowaMovers,
   ...north_carolinaMovers,
   ...south_carolinaMovers,
   ...tennesseeMovers,
@@ -68,6 +71,7 @@ export const generatedMetroPools = {
   ...idahoMetroPools,
   ...illinoisMetroPools,
   ...indianaMetroPools,
+  ...iowaMetroPools,
   ...north_carolinaMetroPools,
   ...south_carolinaMetroPools,
   ...tennesseeMetroPools,
@@ -87,6 +91,7 @@ export const generatedCountyAssignments = [
   ...idahoAssignments,
   ...illinoisAssignments,
   ...indianaAssignments,
+  ...iowaAssignments,
   ...north_carolinaAssignments,
   ...south_carolinaAssignments,
   ...tennesseeAssignments,
