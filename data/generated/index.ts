@@ -46,6 +46,7 @@ import { vermontCounties, vermontMovers, vermontMetroPools, vermontAssignments }
 import { virginiaCounties, virginiaMovers, virginiaMetroPools, virginiaAssignments } from './states/virginia';
 import { washingtonCounties, washingtonMovers, washingtonMetroPools, washingtonAssignments } from './states/washington';
 import { west_virginiaCounties, west_virginiaMovers, west_virginiaMetroPools, west_virginiaAssignments } from './states/west-virginia';
+import { wisconsinCounties, wisconsinMovers, wisconsinMetroPools, wisconsinAssignments } from './states/wisconsin';
 
 export const generatedCounties = [
   ...alabamaCounties,
@@ -95,6 +96,7 @@ export const generatedCounties = [
   ...virginiaCounties,
   ...washingtonCounties,
   ...west_virginiaCounties,
+  ...wisconsinCounties,
 ];
 
 export const generatedMoversCatalog = {
@@ -145,6 +147,7 @@ export const generatedMoversCatalog = {
   ...virginiaMovers,
   ...washingtonMovers,
   ...west_virginiaMovers,
+  ...wisconsinMovers,
 };
 
 export const generatedMetroPools = {
@@ -195,6 +198,7 @@ export const generatedMetroPools = {
   ...virginiaMetroPools,
   ...washingtonMetroPools,
   ...west_virginiaMetroPools,
+  ...wisconsinMetroPools,
 };
 
 export const generatedCountyAssignments = [
@@ -245,4 +249,5 @@ export const generatedCountyAssignments = [
   ...virginiaAssignments,
   ...washingtonAssignments,
   ...west_virginiaAssignments,
+  ...wisconsinAssignments,
 ];
