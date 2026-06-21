@@ -73,27 +73,39 @@ export function LocalMoverCard({
         )}
       </div>
 
-      {profileHref ? (
-        <Link
-          href={profileHref}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-        >
-          View full profile
-          <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-        </Link>
-      ) : (
-        <p className="text-xs text-muted-foreground">
-          Profile coming soon — verify licensing on{' '}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        {profileHref ? (
+          <Link
+            href={profileHref}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+          >
+            View full profile
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
+        ) : mover.website ? (
           <a
-            href="https://www.fmcsa.dot.gov/"
+            href={mover.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:underline"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
           >
-            FMCSA.gov
+            Visit website
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
-        </p>
-      )}
+        ) : (
+          <p className="text-xs text-muted-foreground">
+            Verify licensing on{' '}
+            <a
+              href="https://www.fmcsa.dot.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              FMCSA.gov
+            </a>
+          </p>
+        )}
+      </div>
     </article>
   );
 }

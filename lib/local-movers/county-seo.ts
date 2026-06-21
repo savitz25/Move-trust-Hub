@@ -1,3 +1,4 @@
+import { getFloridaCountyResearch } from '@/data/florida-county-research';
 import { testimonials } from '@/lib/trust/trust-data';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -120,10 +121,22 @@ export type CountyCostGuide = {
   note: string;
 };
 
+export function buildCountyMarketNotes(county: LocalCounty): string | undefined {
+  if (county.stateSlug === 'florida') {
+    return getFloridaCountyResearch(county.slug)?.marketNotes;
+  }
+  return undefined;
+}
+
 export function buildCountyCostGuide(
   county: LocalCounty,
   stateName: string
 ): CountyCostGuide {
+  if (county.stateSlug === 'florida') {
+    const curated = getFloridaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+
   const isMetro = Boolean(county.metro);
   const key = `${county.stateSlug}-${county.slug}`;
 
@@ -162,7 +175,12 @@ export function buildCountyCostGuide(
   return pickByHash(tiers, key);
 }
 
-export function buildCountyTips(county: LocalCounty, stateName: string): string[] {
+export function buildCountyTips(county: LocalCounty, _stateName: string): string[] {
+  if (county.stateSlug === 'florida') {
+    const curated = getFloridaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
+
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
   const extra = county.metro

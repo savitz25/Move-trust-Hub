@@ -17,6 +17,7 @@ import {
   buildCountyCostGuide,
   buildCountyDescription,
   buildCountyFaqItems,
+  buildCountyMarketNotes,
   buildCountyTestimonial,
   buildCountyTips,
   buildCountyTitle,
@@ -86,6 +87,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
   const testimonial = buildCountyTestimonial(county, state.name);
+  const marketNotes = buildCountyMarketNotes(county);
 
   return (
     <>
@@ -137,6 +139,11 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             </Link>
             .
           </p>
+          {marketNotes && (
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed rounded-xl border bg-muted/20 px-4 py-3">
+              {marketNotes}
+            </p>
+          )}
           {isRegionalFallback && (
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border bg-muted/30 px-3 py-2">
               Movers listed serve the greater {county.metro?.replace(/-/g, ' ')} region

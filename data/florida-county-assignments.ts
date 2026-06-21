@@ -2,8 +2,26 @@ import { floridaCounties } from '@/lib/local-movers/geography/florida';
 import { metroMoverPools } from '@/data/local-movers-seed';
 import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated lists for high-traffic Florida counties */
+/** Hand-curated lists — Grok-researched counties + high-traffic metros */
 const CURATED_FL_COUNTIES: Record<string, string[]> = {
+  alachua: [
+    'uf-mover-guys-storage',
+    '2-college-brothers-moving-storage',
+    'sunbelt-moving-delivery',
+    'two-men-and-a-truck-gainesville',
+    'later-gator-moving',
+  ],
+  baker: [
+    'baymeadows-moving-storage',
+    'helping-hands-express-moving',
+    'pro-touch-movers',
+  ],
+  bay: [
+    'motivated-movers-panama-city',
+    'two-men-and-a-truck-panama-city',
+    'affordable-movers-bay-county',
+    'allied-van-lines-panama-city',
+  ],
   'miami-dade': [
     'miami-pro-movers',
     'coral-gables-moving-co',

@@ -44,11 +44,14 @@ export function getMoversForCounty(
       entry.stateSlug === county.stateSlug && entry.countySlug === county.slug
   );
 
-  const movers = moverIds
+  const resolved = moverIds
     .map((id) => fullMoversCatalog[id])
-    .filter((mover): mover is LocalMover => Boolean(mover))
-    .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
-    .slice(0, MAX_MOVERS_PER_COUNTY);
+    .filter((mover): mover is LocalMover => Boolean(mover));
+
+  const movers = (hasExplicitAssignment
+    ? resolved
+    : resolved.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
+  ).slice(0, MAX_MOVERS_PER_COUNTY);
 
   return {
     county,
@@ -70,6 +73,7 @@ export {
   buildCountyCostGuide,
   buildCountyTips,
   buildCountyTestimonial,
+  buildCountyMarketNotes,
   getStateSlugFromCode,
 } from '@/lib/local-movers/county-seo';
 
