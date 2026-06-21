@@ -1,8 +1,11 @@
 import { JsonLd } from '@/lib/seo/json-ld';
+import { FLORIDA_COUNTY_CONTENT_UPDATED } from '@/components/local-movers/county-editorial-trust';
 import type { CountyFaqItem } from '@/lib/local-movers/county-seo';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
 const SITE_URL = 'https://www.movetrusthub.com';
+const ORG_ID = `${SITE_URL}/#organization`;
+const CONTENT_PUBLISHED = '2026-01-15';
 
 type BreadcrumbItem = {
   name: string;
@@ -52,8 +55,12 @@ export function LocalMoversSchema({
   const url = `${SITE_URL}${path}`;
   const placeId = `${url}#place`;
 
+  const contentModified = county?.stateSlug === 'florida'
+    ? FLORIDA_COUNTY_CONTENT_UPDATED
+    : new Date().toISOString().slice(0, 10);
+
   const movingCompanies = (movers ?? []).map((mover, index) => ({
-    '@type': 'MovingCompany',
+    '@type': ['MovingCompany', 'LocalBusiness'],
     '@id': `${url}#mover-${mover.id}`,
     name: mover.name,
     description: mover.shortDescription,
@@ -72,6 +79,11 @@ export function LocalMoversSchema({
       bestRating: '5',
       worstRating: '1',
     },
+    ...(mover.bbbRating
+      ? {
+          award: `BBB ${mover.bbbRating}`,
+        }
+      : {}),
     ...(mover.usdotNumber
       ? {
           identifier: {
@@ -118,6 +130,14 @@ export function LocalMoversSchema({
 
   const graph: Record<string, unknown>[] = [
     {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: 'Move Trust Hub',
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      sameAs: ['https://www.fmcsa.dot.gov/'],
+    },
+    {
       '@type': 'BreadcrumbList',
       '@id': `${url}#breadcrumbs`,
       itemListElement: breadcrumbs.map((crumb, index) => ({
@@ -134,10 +154,19 @@ export function LocalMoversSchema({
       description,
       url,
       inLanguage: 'en-US',
+      datePublished: CONTENT_PUBLISHED,
+      dateModified: contentModified,
+      author: {
+        '@type': 'Organization',
+        '@id': ORG_ID,
+        name: 'Move Trust Hub Editorial Team',
+      },
+      publisher: { '@id': ORG_ID },
       isPartOf: {
         '@type': 'WebSite',
         name: 'Move Trust Hub',
         url: SITE_URL,
+        publisher: { '@id': ORG_ID },
       },
       breadcrumb: { '@id': `${url}#breadcrumbs` },
       ...(county && stateName

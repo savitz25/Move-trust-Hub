@@ -90,7 +90,7 @@ export default function LocalMoversHubPage() {
           </h2>
           <p className="text-sm text-muted-foreground mb-6">
             All 50 states covered — {totalCounties.toLocaleString()} county guides with
-            3–5 vetted local movers each.
+            5–10 vetted local movers each (major metros up to 10).
           </p>
           <StateSelector states={localStates} />
         </section>

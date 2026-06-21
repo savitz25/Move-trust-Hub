@@ -78,7 +78,7 @@ export function StateSelector({ states }: { states: LocalState[] }) {
         <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
         <p className="text-sm text-muted-foreground leading-relaxed">
           All <strong className="text-foreground">50 states</strong> include county-level
-          local mover guides with 3–5 vetted companies per county. Select a state above
+          local mover guides with 5–10 vetted companies per county. Select a state above
           to browse counties in your area.
         </p>
       </div>

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { CountyEditorialTrust } from '@/components/local-movers/county-editorial-trust';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
+import { getFloridaNearbyCounties } from '@/lib/local-movers/florida-nearby';
 import {
   CountyCostSection,
   CountyFaqSection,
@@ -71,6 +73,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const tips = buildCountyTips(county, state.name);
   const testimonial = buildCountyTestimonial(county, state.name);
   const marketNotes = buildCountyMarketNotes(county);
+  const nearbyCounties =
+    stateSlug === 'florida' ? getFloridaNearbyCounties(countySlug) : [];
 
   return (
     <>
@@ -178,7 +182,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           stateName={state.name}
           stateSlug={state.slug}
           countyLabel={countyLabel}
+          nearbyCounties={nearbyCounties}
         />
+
+        <CountyEditorialTrust countyLabel={countyLabel} stateName={state.name} />
 
         <section className="mb-10 rounded-2xl border bg-card p-6">
           <h2 className="text-lg font-semibold mb-2">How we rank local movers</h2>

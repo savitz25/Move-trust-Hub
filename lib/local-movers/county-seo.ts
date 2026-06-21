@@ -54,8 +54,15 @@ export function buildCountyDescription(
   moverCount: number
 ): string {
   const seat = county.seat ? ` near ${county.seat}` : '';
-  const topMover = moverCount > 0 ? `Compare ${moverCount} top-rated companies` : 'Find vetted companies';
-  return `${topMover} in ${county.name} County, ${county.stateCode}${seat}. FMCSA licensing, Google ratings, local cost estimates, and moving tips. Get free quotes today.`;
+  const countyLabel = `${county.name} County`;
+  const topMover =
+    moverCount > 0 ? `Compare ${moverCount} top-rated local movers` : 'Find vetted local movers';
+  const marketSnippet = buildCountyMarketNotes(county);
+  const localContext = marketSnippet
+    ? `${marketSnippet.split('.')[0]}. `
+    : '';
+
+  return `${topMover} in ${countyLabel}, ${county.stateCode}${seat}. ${localContext}FMCSA licensing, Google ratings, ${countyLabel} cost estimates, and expert moving tips for ${SEO_YEAR}. Free quotes.`;
 }
 
 export function buildStateTitle(stateName: string, countyCount: number): string {
@@ -66,7 +73,11 @@ export function buildStateDescription(
   stateName: string,
   countyCount: number
 ): string {
-  return `Find trusted local movers in all ${countyCount} ${stateName} counties. Ratings, FMCSA licensing, cost guides, and links to our free moving calculator and interstate directory. Compare movers and get quotes.`;
+  const moverRange =
+    stateName === 'Florida'
+      ? '5–10 curated movers per county'
+      : 'vetted local movers per county';
+  return `Find trusted local movers in all ${countyCount} ${stateName} counties — ${moverRange}, FMCSA licensing, county cost guides, and local moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
 }
 
 export type CountyFaqItem = {
