@@ -280,6 +280,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify service coverage explicitly due to remote locations.',
     ],
   },
+  gadsden: {
+    marketNotes:
+      'Gadsden County is a small, rural county with Quincy as its seat, featuring agricultural properties and residential areas near the Tallahassee metro. Moves are primarily local or short regional, with limited dedicated full-service companies.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,700',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Most full-service providers operate from Tallahassee; confirm travel fees and Quincy service-area coverage before booking.',
+    },
+    tips: [
+      'Rural and agricultural properties often have long driveways or limited access; confirm truck and equipment suitability.',
+      'Proximity to Tallahassee provides regional options; explicitly verify service to Quincy and outlying areas, including any travel fees.',
+      'Storage is limited locally; coordinate with providers offering facilities in Tallahassee or nearby.',
+      'Obtain multiple written estimates due to thinner local competition.',
+      'Verify licensing, insurance, and FMCSA status carefully in smaller markets.',
+    ],
+  },
+  gilchrist: {
+    marketNotes:
+      'Gilchrist County is small and rural with Trenton as its seat. The moving market is very limited, with most service provided regionally from Gainesville or nearby areas. Moves typically involve single-family homes or larger rural properties.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Gainesville-based regional providers may add travel fees for Trenton and rural Gilchrist County routes.',
+    },
+    tips: [
+      'Rural properties frequently feature unpaved roads or long driveways; discuss access and shuttle needs upfront.',
+      'Confirm explicit coverage for Trenton and outlying areas, as options are sparse.',
+      'Local storage is minimal; use providers with facilities in Gainesville or Alachua County.',
+      'Obtain multiple estimates and verify credentials due to low volume.',
+      'Agricultural or seasonal timing may affect availability.',
+    ],
+  },
+  glades: {
+    marketNotes:
+      'Glades County is one of Florida’s smallest and most rural counties, centered on Moore Haven near Lake Okeechobee. The moving market is very limited, with agricultural and residential focus and reliance on regional providers from larger nearby areas (e.g., Clewiston or Okeechobee).',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Lake Okeechobee region providers from Okeechobee or Clewiston may add travel fees for Moore Haven and rural Glades County access.',
+    },
+    tips: [
+      'Lake-adjacent or agricultural properties may involve flood considerations, boat ramps, or limited road access; confirm specialized handling.',
+      'Service is mostly regional; explicitly verify coverage for Moore Haven and travel fees.',
+      'Storage options are scarce locally; coordinate with providers in larger neighboring counties.',
+      'Obtain multiple estimates and verify credentials in this low-volume area.',
+      'Seasonal or agricultural timing can affect availability.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

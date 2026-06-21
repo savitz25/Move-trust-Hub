@@ -195,6 +195,21 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'tallahassee-capital-movers',
     'panhandle-moving-group',
   ],
+  gadsden: [
+    'tallahassee-capital-movers',
+    'panhandle-moving-group',
+    '2-college-brothers-moving-storage',
+  ],
+  gilchrist: [
+    'uf-mover-guys-storage',
+    '2-college-brothers-moving-storage',
+    'two-men-and-a-truck-gainesville',
+  ],
+  glades: [
+    'okeechobee-moving',
+    'hardee-local-movers',
+    'highlands-moving',
+  ],
   leon: [
     'tallahassee-capital-movers',
     'panhandle-moving-group',
