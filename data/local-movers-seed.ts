@@ -2233,6 +2233,23 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.allmysons.com/florida/sarasota/',
   },
 
+  // Volusia County (Grok-researched)
+  'two-men-and-a-truck-volusia': {
+    id: 'two-men-and-a-truck-volusia',
+    name: 'Two Men and a Truck Daytona Beach',
+    rating: 4.6,
+    reviewCount: 510,
+    shortDescription:
+      'Professional local franchise serving Volusia County with reliable coastal and residential moves in Daytona Beach, DeLand, and Ormond Beach.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Coastal', 'Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Daytona Beach',
+    website: 'https://twomenandatruck.com/movers/fl/daytona',
+  },
+
   // St. Johns County (Grok-researched)
   'two-men-and-a-truck-st-johns': {
     id: 'two-men-and-a-truck-st-johns',

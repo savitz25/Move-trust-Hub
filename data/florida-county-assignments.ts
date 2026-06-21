@@ -206,11 +206,11 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'all-my-sons-orlando',
   ],
   volusia: [
+    'two-men-and-a-truck-volusia',
     'volusia-local-lines',
-    'first-coast-movers',
     'space-coast-movers',
-    'jax-local-moving',
-    'flagler-coast-movers',
+    'two-men-and-a-truck-melbourne',
+    'two-men-and-a-truck-palm-coast',
   ],
   escambia: [
     'two-men-and-a-truck-pensacola',
@@ -400,6 +400,23 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     '2-college-brothers-moving-storage',
     'two-men-and-a-truck-gainesville',
     '1st-coast-express-moving',
+  ],
+  wakulla: [
+    'tallahassee-capital-movers',
+    'panhandle-moving-group',
+    '2-college-brothers-moving-storage',
+  ],
+  walton: [
+    'walton-coast-movers',
+    'emerald-coast-moving',
+    'two-men-and-a-truck-okaloosa',
+    'okaloosa-local-lines',
+    'motivated-movers-panama-city',
+  ],
+  washington: [
+    'motivated-movers-panama-city',
+    'two-men-and-a-truck-panama-city',
+    'panhandle-moving-group',
   ],
 };
 

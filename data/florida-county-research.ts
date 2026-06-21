@@ -994,6 +994,74 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials.',
     ],
   },
+  volusia: {
+    marketNotes:
+      'Volusia County features beach communities (Daytona Beach, New Smyrna Beach), suburban growth, and historic areas. Moves often involve coastal condos, retiree communities, and tourism-related residential properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Daytona Beach and New Smyrna coastal condos often require sand protection, HOA move windows, and scheduling around tourism events.',
+    },
+    tips: [
+      'Beach and coastal properties require sand protection and access planning.',
+      'Daytona tourism events increase seasonal demand.',
+      'Many communities have HOA rules for moves.',
+      'I-95 and SR-44 traffic can delay timing.',
+      'Verify coverage for Daytona, DeLand, and Ormond Beach.',
+    ],
+  },
+  wakulla: {
+    marketNotes:
+      'Wakulla County is rural and coastal with Crawfordville as its seat and the St. Marks area. Moves are primarily residential with limited local infrastructure. Regional service from Tallahassee is common.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,600',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Crawfordville and St. Marks coastal routes often rely on Tallahassee regional providers; confirm river-area access and travel fees.',
+    },
+    tips: [
+      'Coastal or river properties may involve limited access.',
+      'Confirm explicit regional service to Crawfordville.',
+      'Storage is limited; use Tallahassee facilities.',
+      'Obtain multiple estimates.',
+      'Verify credentials.',
+    ],
+  },
+  walton: {
+    marketNotes:
+      'Walton County includes Destin and South Walton beaches and inland rural areas. Moves often involve luxury coastal properties, vacation homes, and suburban growth.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,200',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'South Walton and 30A luxury beach properties often require sand protection, strict HOA move windows, and summer tourism scheduling.',
+    },
+    tips: [
+      'South Walton beach properties require sand protection and access planning.',
+      'Luxury communities have strict HOA rules.',
+      'Tourism peaks affect summer availability.',
+      'Confirm coverage for Destin, Miramar Beach, and DeFuniak Springs.',
+      'Verify coastal experience.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is rural with Chipley as its seat. Moves are primarily residential and agricultural with limited local options. Regional service from Panama City or Dothan (AL) is common.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Chipley and rural Washington County routes often rely on Panama City regional providers; confirm long-driveway access and cross-border logistics where applicable.',
+    },
+    tips: [
+      'Rural properties often have long driveways; confirm access.',
+      'Verify explicit regional service to Chipley.',
+      'Storage is limited; use nearby facilities.',
+      'Obtain multiple estimates.',
+      'Verify credentials.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
