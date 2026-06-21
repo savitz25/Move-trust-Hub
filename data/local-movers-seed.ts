@@ -1598,6 +1598,118 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Jacksonville',
   },
+
+  // Escambia County (Grok-researched)
+  'two-men-and-a-truck-pensacola': {
+    id: 'two-men-and-a-truck-pensacola',
+    name: 'Two Men and a Truck Pensacola',
+    rating: 4.7,
+    reviewCount: 620,
+    shortDescription:
+      'Award-winning local franchise serving Escambia County with professional residential, commercial, and military moves throughout Pensacola.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Military'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Pensacola',
+    website: 'https://twomenandatruck.com/movers/fl/pensacola',
+  },
+  'rowes-moving': {
+    id: 'rowes-moving',
+    name: "Rowe's Moving",
+    rating: 4.8,
+    reviewCount: 185,
+    shortDescription:
+      'Locally owned Pensacola mover with a decade+ of service, noted for quality crews and reliable residential moves in Escambia County.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Pensacola',
+    website: 'https://rowesmoving.com/',
+  },
+  'all-my-sons-pensacola': {
+    id: 'all-my-sons-pensacola',
+    name: 'All My Sons Moving & Storage Pensacola',
+    rating: 4.5,
+    reviewCount: 540,
+    shortDescription:
+      'Established provider with 30+ years offering full-service residential and commercial moves throughout Escambia County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Pensacola',
+    website: 'https://www.allmysons.com/florida/pensacola/',
+  },
+  'stewart-moving-storage-pensacola': {
+    id: 'stewart-moving-storage-pensacola',
+    name: 'Stewart Moving & Storage',
+    rating: 4.8,
+    reviewCount: 290,
+    shortDescription:
+      'Top-listed mover for Pensacola and Escambia County with reliable local and long-distance services.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Pensacola',
+  },
+  'suddath-pensacola': {
+    id: 'suddath-pensacola',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 420,
+    shortDescription:
+      'Established Pensacola-area agent providing full-service local, long-distance, and military moves across Escambia County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Military'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Pensacola',
+    website: 'https://suddath.com/moving-company/pensacola/',
+  },
+
+  // Flagler County (Grok-researched)
+  'two-men-and-a-truck-palm-coast': {
+    id: 'two-men-and-a-truck-palm-coast',
+    name: 'Two Men and a Truck Palm Coast',
+    rating: 4.6,
+    reviewCount: 380,
+    shortDescription:
+      'Family-owned franchise serving Flagler County with reliable residential and commercial moves in Palm Coast and surrounding areas.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Condo'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Palm Coast',
+    website: 'https://twomenandatruck.com/movers/fl/palm-coast',
+  },
+  'south-bound-moving-flagler': {
+    id: 'south-bound-moving-flagler',
+    name: 'South Bound Moving',
+    rating: 4.8,
+    reviewCount: 210,
+    shortDescription:
+      'Vetted local mover with strong performance in Flagler County residential services across Palm Coast and Bunnell.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Palm Coast',
+  },
+  'moving-with-prince-flagler': {
+    id: 'moving-with-prince-flagler',
+    name: 'Moving With Prince',
+    rating: 4.7,
+    reviewCount: 165,
+    shortDescription:
+      'Veteran-owned mover serving Flagler County with dependable residential relocations in Palm Coast and Northeast Florida communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Palm Coast',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

@@ -229,6 +229,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for peak seasons; confirm insurance for high-value items.',
     ],
   },
+  escambia: {
+    marketNotes:
+      'Escambia County, anchored by Pensacola, features a mix of urban, suburban, military (NAS Pensacola), and beach communities. Moves often include residential, condo, and military relocations with coastal considerations and seasonal snowbird activity.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Pensacola beach condos and NAS Pensacola PCS moves often require military documentation expertise and coastal logistics planning.',
+    },
+    tips: [
+      'Military PCS moves are frequent; select providers experienced with DoD requirements and timelines.',
+      'Beach and condo properties require elevator reservations, sand protection, and parking coordination.',
+      'I-10 and bridge traffic can impact scheduling; choose logistics-familiar teams.',
+      'Snowbird season increases demand; book early for winter peaks.',
+      'Confirm hurricane-season storage and protective services for waterfront areas.',
+    ],
+  },
+  flagler: {
+    marketNotes:
+      'Flagler County features growing suburban and coastal communities like Palm Coast with golf courses, Intracoastal Waterway properties, and retiree appeal. Moves often involve condos, single-family homes, and seasonal transitions.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,500',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Palm Coast gated communities and Intracoastal properties often require HOA move windows and specialized access coordination.',
+    },
+    tips: [
+      'Gated and golf communities have strict move-in rules and access requirements; confirm in advance.',
+      'Waterfront/Intracoastal properties may need special handling for docks or elevation.',
+      'Growing area traffic on US-1 and I-95 can affect timing.',
+      'HOA and condo associations are common; obtain building details early.',
+      'Seasonal retiree moves peak in winter; plan accordingly.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is rural and coastal with Apalachicola, Carrabelle, and St. George Island. Moves are primarily residential or seasonal with waterfront considerations and limited local infrastructure. Regional providers from Panama City or Tallahassee are common.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$90–$135/hr for a 2-person crew',
+      note: 'Forgotten Coast and island properties may involve bridge access, ferries, or travel fees from Panama City or Tallahassee regional providers.',
+    },
+    tips: [
+      'Coastal/island properties (e.g., St. George Island) involve bridges, ferries, or limited access; confirm logistics.',
+      'Rural areas may have unpaved roads or long driveways; discuss equipment.',
+      'Tourism/seasonal moves are common; plan around peak periods.',
+      'Storage is limited; use providers with nearby facilities.',
+      'Verify service coverage explicitly due to remote locations.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
