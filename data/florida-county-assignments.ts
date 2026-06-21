@@ -53,6 +53,21 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'suddath-fort-lauderdale',
     'alberts-relocation-services',
   ],
+  calhoun: [
+    'lambert-moving-systems',
+    'smart-moves-calhoun',
+    'motivated-movers-panama-city',
+  ],
+  charlotte: [
+    'curry-moving-storage',
+    'master-movers-llc-charlotte',
+    'm-and-b-movers',
+  ],
+  citrus: [
+    'browns-moving-services',
+    'elite-moving-hauling-crystal-river',
+    'a-and-l-family-movers',
+  ],
   'palm-beach': [
     'palm-beach-local-lines',
     'amerisafe-van-lines',

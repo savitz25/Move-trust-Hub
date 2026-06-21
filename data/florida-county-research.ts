@@ -93,6 +93,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'For interstate or long-distance portions, prioritize carriers with strong FMCSA standing and transparent quoting.',
     ],
   },
+  calhoun: {
+    marketNotes:
+      'Calhoun County is a small, rural county with limited dedicated moving companies. Moves are primarily residential or agricultural on larger properties. Residents typically rely on regional providers from nearby Panama City or other Panhandle areas. The market is thin, with emphasis on reliable local or short-haul service.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$85–$125/hr for a 2-person crew',
+      note: 'Most full-service crews operate regionally from Panama City or adjacent Panhandle metros; confirm travel fees for Blountstown routes.',
+    },
+    tips: [
+      'Confirm service area and travel fees, as most providers operate regionally from larger nearby cities like Panama City.',
+      'Rural properties often feature long driveways or limited access; discuss truck size and equipment needs in advance.',
+      'Storage options are scarce locally; coordinate with providers offering facilities in adjacent counties if required.',
+      'Obtain multiple written estimates due to limited local competition.',
+      'Verify licensing and insurance thoroughly, as smaller markets may have more variable operator quality.',
+    ],
+  },
+  charlotte: {
+    marketNotes:
+      'Charlotte County features retiree-heavy communities in Punta Gorda and Port Charlotte, with coastal properties, condos, and single-family homes. Moves often involve downsizing or seasonal snowbird transitions. Hurricane preparedness and waterfront logistics are relevant factors.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Coastal and canal-front moves in Punta Gorda and Port Charlotte may include HOA coordination and seasonal snowbird demand.',
+    },
+    tips: [
+      'Coastal and canal-front properties may require special handling for access, stairs, or elevators; confirm crew experience.',
+      'Retiree and snowbird moves are common; inquire about flexible scheduling and storage for seasonal residents.',
+      'Many communities have HOA rules for move timing and parking; obtain building-specific details early.',
+      'Hurricane season considerations may affect storage or timing; ask about weather contingency plans.',
+      'Verify flood zone awareness and protective measures for belongings near waterways.',
+    ],
+  },
+  citrus: {
+    marketNotes:
+      'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Waterfront and Crystal River area properties may require dock access planning and crews familiar with Nature Coast roads.',
+    },
+    tips: [
+      'Waterfront or Crystal River area properties may have dock or limited access challenges; confirm specialized handling.',
+      'Many retiree communities have specific move-in rules or age-restricted considerations; verify HOA details.',
+      'Nature Coast roads can be narrow or scenic; plan for timing to avoid peak tourist periods.',
+      'Storage may be useful for seasonal residents; ask about climate-controlled options.',
+      'Obtain detailed estimates accounting for potential stairs or outdoor item handling in rural settings.',
+    ],
+  },
   bay: {
     marketNotes:
       'Bay County encompasses Panama City and the popular Panama City Beach tourist corridor, featuring a mix of single-family homes, beach condos, and some commercial/military-related relocations near Tyndall AFB. Seasonal tourism, potential hurricane recovery activity, and condo association rules influence move logistics. Demand spikes in summer; beach access, stairs, and sand protection are common considerations.',

@@ -1263,6 +1263,111 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Fort Lauderdale',
     website: 'https://albertsrelocation.com/',
   },
+
+  // Calhoun County (Grok-researched)
+  'lambert-moving-systems': {
+    id: 'lambert-moving-systems',
+    name: 'Lambert Moving Systems',
+    rating: 4.5,
+    reviewCount: 95,
+    shortDescription:
+      'Regional Panhandle mover providing full-service residential options to Calhoun County and Blountstown from the Panama City service area.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Panama City',
+  },
+  'smart-moves-calhoun': {
+    id: 'smart-moves-calhoun',
+    name: 'Smart Moves',
+    rating: 4.6,
+    reviewCount: 120,
+    shortDescription:
+      'Vetted provider offering reliable moving labor and local services to rural Calhoun County areas including Blountstown.',
+    services: ['Local Moving', 'Labor Only'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Blountstown',
+  },
+
+  // Charlotte County (Grok-researched)
+  'curry-moving-storage': {
+    id: 'curry-moving-storage',
+    name: 'Curry Moving & Storage',
+    rating: 4.6,
+    reviewCount: 310,
+    shortDescription:
+      'Leading Charlotte County mover known for strong customer satisfaction in residential and local moves across Punta Gorda and Port Charlotte.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Port Charlotte',
+  },
+  'master-movers-llc-charlotte': {
+    id: 'master-movers-llc-charlotte',
+    name: 'Master Movers LLC',
+    rating: 4.8,
+    reviewCount: 220,
+    shortDescription:
+      'Highly rated Port Charlotte and Punta Gorda mover excelling in residential relocations with positive feedback on reliability and care.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Port Charlotte',
+  },
+  'm-and-b-movers': {
+    id: 'm-and-b-movers',
+    name: 'M & B Movers',
+    rating: 4.5,
+    reviewCount: 145,
+    shortDescription:
+      'Professional local mover serving Port Charlotte and Charlotte County with full-service options for residential relocations.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Port Charlotte',
+    website: 'https://mandbmoversfl.com/',
+  },
+
+  // Citrus County (Grok-researched)
+  'browns-moving-services': {
+    id: 'browns-moving-services',
+    name: 'Browns Moving Services LLC',
+    rating: 4.6,
+    reviewCount: 130,
+    shortDescription:
+      'Local Citrus County mover providing full-service and labor-only options across Crystal River, Inverness, Homosassa, and surrounding communities.',
+    services: ['Local Moving', 'Labor Only', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Inverness',
+    website: 'https://brownsmovingservicesllc.com/',
+  },
+  'elite-moving-hauling-crystal-river': {
+    id: 'elite-moving-hauling-crystal-river',
+    name: 'Elite Moving & Hauling LLC',
+    rating: 4.7,
+    reviewCount: 85,
+    shortDescription:
+      'Trusted Crystal River and Citrus County provider focusing on dependable residential and local moves with professional service.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Crystal River',
+    website: 'https://www.elitemovingandhaulingfl.com/',
+  },
+  'a-and-l-family-movers': {
+    id: 'a-and-l-family-movers',
+    name: 'A & L Family Movers',
+    rating: 4.5,
+    reviewCount: 110,
+    shortDescription:
+      'Family-oriented mover serving Citrus County with reliable residential services in Inverness, Crystal River, and surrounding Nature Coast communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Inverness',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
