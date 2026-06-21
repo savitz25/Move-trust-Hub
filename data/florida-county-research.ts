@@ -943,6 +943,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Bushnell and The Villages.',
     ],
   },
+  suwannee: {
+    marketNotes:
+      'Suwannee County is rural with Live Oak as its seat, featuring agriculture, the Suwannee River, and residential properties. The moving market is thin; service is primarily regional from Jacksonville, Gainesville, or Lake City.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,600',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Live Oak and rural Suwannee County routes often rely on Lake City or Gainesville regional providers; confirm I-10 corridor travel fees and river-area access.',
+    },
+    tips: [
+      'River or rural properties may involve water access or longer driveways.',
+      'Confirm explicit regional service to Live Oak.',
+      'Storage is limited locally; use nearby facilities.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify FMCSA authority and insurance.',
+    ],
+  },
+  taylor: {
+    marketNotes:
+      'Taylor County is rural and coastal with Perry as its seat. Moves focus on residential and agricultural properties with limited local options. Regional service from Tallahassee or Gainesville is typical.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Perry and Big Bend coastal routes often rely on Tallahassee or Gainesville regional providers; confirm unpaved access and limited coastal infrastructure.',
+    },
+    tips: [
+      'Rural properties often have unpaved access; confirm truck suitability.',
+      'Coastal areas may involve limited infrastructure.',
+      'Verify explicit service to Perry.',
+      'Storage is scarce; use regional facilities.',
+      'Obtain multiple estimates and verify credentials.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is small and rural with Lake Butler as its seat. The moving market is very limited; service is regional from Gainesville, Starke, or Jacksonville.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,400',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Lake Butler and rural Union County routes often rely on Gainesville or Jacksonville regional providers; confirm long-driveway access and travel fees.',
+    },
+    tips: [
+      'Rural properties may have long driveways; discuss access.',
+      'Confirm explicit regional coverage for Lake Butler.',
+      'Storage is limited; use nearby facilities.',
+      'Obtain multiple estimates.',
+      'Verify credentials.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

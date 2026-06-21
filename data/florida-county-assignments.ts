@@ -382,6 +382,25 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'orlando-city-movers',
     'lakeland-local-movers',
   ],
+  suwannee: [
+    'suwannee-county-movers',
+    'the-move-connection-lake-city',
+    'gainesville-local-movers',
+    '2-college-brothers-moving-storage',
+    'two-men-and-a-truck-gainesville',
+  ],
+  taylor: [
+    'tallahassee-capital-movers',
+    'gainesville-local-movers',
+    'panhandle-moving-group',
+    'levy-local-moving',
+  ],
+  union: [
+    'gainesville-local-movers',
+    '2-college-brothers-moving-storage',
+    'two-men-and-a-truck-gainesville',
+    '1st-coast-express-moving',
+  ],
 };
 
 function hashSlug(slug: string): number {
