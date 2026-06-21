@@ -239,10 +239,29 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'panhandle-moving-group',
     '2-college-brothers-moving-storage',
   ],
+  hamilton: [
+    'suwannee-county-movers',
+    'the-move-connection-lake-city',
+    '2-college-brothers-moving-storage',
+    'gainesville-local-movers',
+  ],
+  hardee: [
+    'hardee-local-movers',
+    'lakeland-local-movers',
+    'polk-county-moving',
+    'highlands-moving',
+    'gardiner-and-sons-moving',
+  ],
   gilchrist: [
     'uf-mover-guys-storage',
     '2-college-brothers-moving-storage',
     'two-men-and-a-truck-gainesville',
+  ],
+  gulf: [
+    'motivated-movers-panama-city',
+    'two-men-and-a-truck-panama-city',
+    'panhandle-moving-group',
+    'emerald-coast-moving',
   ],
   glades: [
     'okeechobee-moving',

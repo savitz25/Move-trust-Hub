@@ -1062,6 +1062,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials.',
     ],
   },
+  gulf: {
+    marketNotes:
+      'Gulf County is small and coastal with Port St. Joe as its seat. Moves focus on residential, beach, and seasonal properties with thin local infrastructure. Regional service from Panama City is common.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Port St. Joe beach and coastal properties often rely on Panama City regional crews; confirm sand protection, seasonal tourism scheduling, and travel fees.',
+    },
+    tips: [
+      'Beach properties require sand protection and access planning.',
+      'Seasonal tourism affects availability; book early.',
+      'Rural and coastal roads may have limited access.',
+      'Storage is scarce; use Panama City facilities.',
+      'Verify regional coverage explicitly.',
+    ],
+  },
+  hamilton: {
+    marketNotes:
+      'Hamilton County is small and rural with Jasper as its seat. Moves are primarily residential with limited local options. Regional service from Live Oak, Lake City, or Valdosta (GA) is typical.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Jasper and rural Hamilton County routes often rely on Live Oak or Lake City regional providers; confirm unpaved access and cross-border logistics where applicable.',
+    },
+    tips: [
+      'Rural properties often have unpaved access; confirm truck suitability.',
+      'Verify explicit service to Jasper.',
+      'Storage is limited; use regional facilities.',
+      'Obtain multiple estimates.',
+      'Verify credentials.',
+    ],
+  },
+  hardee: {
+    marketNotes:
+      'Hardee County is rural and agricultural with Wauchula as its seat. Moves focus on residential and farm properties with limited local options. Regional service from Lakeland, Arcadia, or Sebring is common.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,700',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Wauchula farm and ranch properties often require specialized equipment handling and travel fees from Lakeland or Arcadia regional providers.',
+    },
+    tips: [
+      'Agricultural properties may involve equipment or outbuildings; provide detailed inventory.',
+      'Confirm regional service to Wauchula.',
+      'Storage is limited; use nearby facilities.',
+      'Obtain multiple estimates.',
+      'Verify credentials.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
