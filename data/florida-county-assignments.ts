@@ -361,6 +361,27 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'emerald-coast-moving',
     'panhandle-moving-group',
   ],
+  'st-johns': [
+    'two-men-and-a-truck-st-johns',
+    'first-coast-movers',
+    'two-men-and-a-truck-jacksonville',
+    'suddath-jacksonville',
+    'helping-hands-movers-jax',
+  ],
+  'st-lucie': [
+    'treasure-coast-moving',
+    'two-men-and-a-truck-indian-river',
+    'indian-river-moving',
+    'two-men-and-a-truck-melbourne',
+    'brevard-local-movers',
+  ],
+  sumter: [
+    'central-fl-moving',
+    'later-gator-moving',
+    'two-men-and-a-truck-orange',
+    'orlando-city-movers',
+    'lakeland-local-movers',
+  ],
 };
 
 function hashSlug(slug: string): number {

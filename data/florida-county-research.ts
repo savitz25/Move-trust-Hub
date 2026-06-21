@@ -892,6 +892,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Sanford, Lake Mary, and Oviedo.',
     ],
   },
+  'st-johns': {
+    marketNotes:
+      'St. Johns County features historic St. Augustine, beach communities (Ponte Vedra, Vilano Beach), and growing suburbs. Moves often involve luxury residential, historic homes, and retiree relocations with coastal considerations.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Historic St. Augustine and Ponte Vedra coastal properties often require preservation-sensitive handling, sand protection, and HOA move windows.',
+    },
+    tips: [
+      'Historic district properties require preservation-sensitive handling.',
+      'Beach and Ponte Vedra areas need sand protection and access planning.',
+      'Gated communities have strict HOA rules.',
+      'I-95 traffic influences regional moves from Jacksonville.',
+      'Verify coverage for St. Augustine, Ponte Vedra, and Nocatee.',
+    ],
+  },
+  'st-lucie': {
+    marketNotes:
+      'St. Lucie County includes Fort Pierce and Port St. Lucie with growing suburban, retiree, and coastal communities. Moves often involve residential, golf communities, and waterfront properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Fort Pierce and Port St. Lucie waterfront and golf-community moves often require HOA coordination, snowbird-season scheduling, and Treasure Coast traffic planning.',
+    },
+    tips: [
+      'Waterfront and golf communities have HOA rules and access needs.',
+      'Treasure Coast traffic on I-95 affects timing.',
+      'Snowbird season increases demand.',
+      'Verify coastal experience for Fort Pierce and Port St. Lucie.',
+      'Confirm insurance for high-value properties.',
+    ],
+  },
+  sumter: {
+    marketNotes:
+      'Sumter County is known for The Villages retirement community with extensive golf cart and age-restricted living. Moves often involve downsizing and retiree relocations with community-specific rules.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'The Villages and Bushnell retiree moves often share Ocala-to-Orlando corridor crews; confirm Villages move-in regulations and downsizing expertise.',
+    },
+    tips: [
+      'The Villages has strict golf cart and community move-in regulations; confirm compliance.',
+      'Retiree-focused services and downsizing expertise are key.',
+      'Growing areas around The Villages have HOA rules.',
+      'Proximity to I-75 and Orlando influences traffic.',
+      'Verify coverage for Bushnell and The Villages.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

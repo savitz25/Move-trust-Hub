@@ -2232,6 +2232,23 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Sarasota',
     website: 'https://www.allmysons.com/florida/sarasota/',
   },
+
+  // St. Johns County (Grok-researched)
+  'two-men-and-a-truck-st-johns': {
+    id: 'two-men-and-a-truck-st-johns',
+    name: 'Two Men and a Truck St. Augustine',
+    rating: 4.6,
+    reviewCount: 420,
+    shortDescription:
+      'Professional local franchise serving St. Johns County with reliable coastal and residential moves in St. Augustine, Ponte Vedra, and Nocatee.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Coastal', 'Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'St. Augustine',
+    website: 'https://twomenandatruck.com/movers/fl/st-augustine',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
