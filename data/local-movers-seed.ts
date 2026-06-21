@@ -2017,6 +2017,67 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     bbbRating: 'A+',
     city: 'Orlando',
   },
+
+  // Palm Beach County (Grok-researched)
+  'two-men-and-a-truck-palm-beach': {
+    id: 'two-men-and-a-truck-palm-beach',
+    name: 'Two Men and a Truck West Palm Beach',
+    rating: 4.6,
+    reviewCount: 740,
+    shortDescription:
+      'Professional franchise serving Palm Beach County with expertise in luxury, condo, and high-rise moves throughout West Palm Beach and Boca Raton.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Luxury Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'West Palm Beach',
+    website: 'https://twomenandatruck.com/movers/fl/west-palm-beach',
+  },
+  'gentle-giant-palm-beach': {
+    id: 'gentle-giant-palm-beach',
+    name: 'Gentle Giant Moving Company',
+    profileSlug: 'gentle-giant-moving',
+    rating: 4.8,
+    reviewCount: 510,
+    shortDescription:
+      'Award-winning mover excelling in complex high-end and condo moves throughout Palm Beach County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Luxury'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'West Palm Beach',
+    website: 'https://www.gentlegiant.com/',
+  },
+  'all-my-sons-palm-beach': {
+    id: 'all-my-sons-palm-beach',
+    name: 'All My Sons Moving & Storage Palm Beach',
+    rating: 4.5,
+    reviewCount: 620,
+    shortDescription:
+      'Experienced full-service provider for Palm Beach County residential and commercial relocations with 30+ years of experience.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Luxury Residential', 'Commercial'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'West Palm Beach',
+    website: 'https://www.allmysons.com/florida/west-palm-beach/',
+  },
+  'suddath-palm-beach': {
+    id: 'suddath-palm-beach',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 480,
+    shortDescription:
+      'Established Palm Beach-area provider offering full-service local, long-distance, and luxury residential relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial', 'Luxury'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'West Palm Beach',
+    website: 'https://suddath.com/moving-company/west-palm-beach/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

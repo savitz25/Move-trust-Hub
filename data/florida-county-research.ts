@@ -739,6 +739,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify multilingual or international moving capabilities where needed.',
     ],
   },
+  osceola: {
+    marketNotes:
+      'Osceola County features tourism (Disney proximity), suburban growth, and rural areas around Kissimmee and St. Cloud. Moves often involve family residential, theme park employee relocations, and lakefront properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Kissimmee and St. Cloud suburban moves near theme park corridors often share Orlando metro crews; confirm Osceola-specific experience and US-192 traffic planning.',
+    },
+    tips: [
+      'Tourism-driven areas have seasonal demand peaks; book early.',
+      'Lake Tohopekaliga and rural properties may require water access or longer driveways.',
+      'HOA communities around Kissimmee have move-in rules.',
+      'I-4 and US-192 traffic can delay moves.',
+      'Verify coverage for Kissimmee and St. Cloud.',
+    ],
+  },
+  'palm-beach': {
+    marketNotes:
+      'Palm Beach County is affluent with luxury coastal communities (Palm Beach, Boca Raton, Jupiter), high-rises, and retiree populations. Moves frequently involve high-end residential, condos, and seasonal snowbirds.',
+    costs: {
+      studioRange: '$550–$1,300',
+      familyRange: '$2,500–$5,500+',
+      avgHourly: '$125–$190/hr for a 2-person crew',
+      note: 'Palm Beach and Boca Raton luxury high-rises often require strict building approvals, white-glove handling, and snowbird-season scheduling.',
+    },
+    tips: [
+      'Luxury high-rises and gated communities require strict scheduling and building approvals.',
+      'Snowbird season (winter) drives high demand; plan ahead.',
+      'Waterfront and Intracoastal properties need specialized handling.',
+      'Traffic on I-95 and US-1 is heavy; select experienced teams.',
+      'Confirm insurance for high-value luxury items.',
+    ],
+  },
+  pasco: {
+    marketNotes:
+      'Pasco County is a growing suburban and rural area with New Port Richey, Wesley Chapel, and Dade City. Moves often involve family residential, retiree communities, and commuter properties near Tampa.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Wesley Chapel suburban developments and New Port Richey retiree communities often share Tampa Bay regional crews; confirm Pasco-specific coverage.',
+    },
+    tips: [
+      'Growing suburban areas have HOA rules for new developments.',
+      'Rural eastern parts may involve longer access roads.',
+      'I-75 and SR-54 traffic affects timing.',
+      'Proximity to Tampa provides regional options.',
+      'Verify coverage for Wesley Chapel and New Port Richey.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

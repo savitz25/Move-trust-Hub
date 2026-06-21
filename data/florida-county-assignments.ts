@@ -95,10 +95,13 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-gainesville',
   ],
   'palm-beach': [
+    'two-men-and-a-truck-palm-beach',
+    'gentle-giant-palm-beach',
+    'all-my-sons-palm-beach',
     'palm-beach-local-lines',
+    'suddath-palm-beach',
     'amerisafe-van-lines',
-    'treasure-coast-moving',
-    'colonial-van-lines',
+    'joe-bonnie-son-moving-storage',
     'broward-express-moving',
   ],
   orange: [
@@ -325,6 +328,19 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'okeechobee-moving',
     'highlands-moving',
     'treasure-coast-moving',
+  ],
+  osceola: [
+    'kissimmee-relocation',
+    'two-men-and-a-truck-orange',
+    'orlando-city-movers',
+    'all-my-sons-orlando',
+    'college-hunks-orange',
+  ],
+  pasco: [
+    'pasco-local-movers',
+    'tampa-bay-movers',
+    'two-men-and-a-truck-hillsborough',
+    'clearwater-bay-movers',
   ],
 };
 
