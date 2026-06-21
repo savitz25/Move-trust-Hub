@@ -484,6 +484,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Agricultural timing may affect availability.',
     ],
   },
+  lake: {
+    marketNotes:
+      'Lake County features lakes, suburban growth (e.g., Clermont, Eustis), and retiree communities. Moves often involve residential, senior, and lakefront properties with growing development. Regional Orlando support is strong.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,500',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Clermont and Tavares lakefront properties often require HOA coordination and crews familiar with US-27 and SR-19 corridor traffic.',
+    },
+    tips: [
+      'Lakefront properties may require special handling for docks, elevation, or water access.',
+      'Growing suburban areas have HOA rules for move timing and parking.',
+      'Proximity to Orlando influences traffic on US-27 and SR-19; plan accordingly.',
+      'Retiree and senior moves are common; inquire about specialized services.',
+      'Verify regional coverage for Tavares and outlying communities.',
+    ],
+  },
+  lee: {
+    marketNotes:
+      'Lee County is a major Southwest Florida area with Fort Myers, Cape Coral, and beach communities. It features a high retiree and snowbird population, condos, and waterfront properties. Seasonal demand and coastal logistics are key.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Fort Myers and Cape Coral condo moves often require elevator reservations, sand protection, and snowbird-season scheduling.',
+    },
+    tips: [
+      'Condo and beachfront properties require elevator reservations, sand protection, and HOA coordination.',
+      'Snowbird season (winter) increases demand; book early.',
+      'Waterfront and canal access may involve bridges or special equipment.',
+      'Hurricane preparedness affects storage and timing; confirm contingencies.',
+      'Traffic on US-41 and I-75 can delay moves.',
+    ],
+  },
+  leon: {
+    marketNotes:
+      'Leon County centers on Tallahassee with government, university (FSU/FAMU), and suburban residential moves. It features a mix of urban, campus-adjacent, and rural properties with significant student and state worker relocations.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'FSU and FAMU student housing peaks (August and May) and downtown Tallahassee access restrictions can affect pricing and availability.',
+    },
+    tips: [
+      'FSU/FAMU academic calendar drives seasonal student apartment moves (peak August and May).',
+      'Government and downtown areas have parking and access restrictions.',
+      'Suburban neighborhoods have HOA rules; confirm details.',
+      'Traffic on major roads (I-10, US-27) can impact timing.',
+      'Verify coverage for Tallahassee and outlying Leon areas.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

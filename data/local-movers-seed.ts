@@ -1823,6 +1823,50 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Vero Beach',
     website: 'https://twomenandatruck.com/movers/fl/vero-beach',
   },
+
+  // Lee County (Grok-researched)
+  'two-men-and-a-truck-lee': {
+    id: 'two-men-and-a-truck-lee',
+    name: 'Two Men and a Truck Fort Myers',
+    rating: 4.6,
+    reviewCount: 780,
+    shortDescription:
+      'Professional local franchise serving Lee County with reliable condo, residential, and commercial moves throughout Fort Myers and Cape Coral.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Condo', 'Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Fort Myers',
+    website: 'https://twomenandatruck.com/movers/fl/fort-myers',
+  },
+  'all-my-sons-fort-myers': {
+    id: 'all-my-sons-fort-myers',
+    name: 'All My Sons Moving & Storage Fort Myers',
+    rating: 4.5,
+    reviewCount: 490,
+    shortDescription:
+      'Established full-service provider offering residential and commercial moves throughout Lee County with decades of Southwest Florida experience.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Fort Myers',
+    website: 'https://www.allmysons.com/florida/fort-myers/',
+  },
+  'college-hunks-lee': {
+    id: 'college-hunks-lee',
+    name: 'College Hunks Hauling Junk & Moving',
+    rating: 4.7,
+    reviewCount: 380,
+    shortDescription:
+      'Popular Southwest Florida choice for efficient residential and labor-only moves across Lee County, including Fort Myers and Cape Coral.',
+    services: ['Local Moving', 'Labor Only', 'Junk Removal'],
+    specialties: ['Residential', 'Senior Moves'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Fort Myers',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

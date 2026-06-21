@@ -146,11 +146,14 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'flex-moving-storage-jax',
   ],
   lee: [
+    'two-men-and-a-truck-lee',
+    'helping-hand-movers-naples',
+    'ray-the-mover-naples',
     'gulf-coast-local',
-    'naples-premier-moving',
+    'all-my-sons-fort-myers',
+    'college-hunks-lee',
     'charlotte-harbor-moving',
-    'amerisafe-van-lines',
-    'collier-local-lines',
+    'naples-premier-moving',
   ],
   monroe: [
     'keys-island-moving',
@@ -254,12 +257,19 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'gainesville-local-movers',
     '2-college-brothers-moving-storage',
   ],
+  lake: [
+    'lake-county-movers',
+    'orlando-city-movers',
+    'kissimmee-relocation',
+    'central-fl-moving',
+    'winter-park-moving',
+  ],
   leon: [
+    '2-college-brothers-moving-storage',
     'tallahassee-capital-movers',
     'panhandle-moving-group',
+    'two-men-and-a-truck-gainesville',
     'gainesville-local-movers',
-    'amerisafe-van-lines',
-    'emerald-coast-moving',
   ],
 };
 
