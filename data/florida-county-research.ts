@@ -331,6 +331,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Seasonal or agricultural timing can affect availability.',
     ],
   },
+  hendry: {
+    marketNotes:
+      'Hendry County is rural and agricultural with LaBelle as its seat, featuring farmland, residential properties, and proximity to Lake Okeechobee. The moving market is thin; most service is regional from Fort Myers, Clewiston, or Moore Haven.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,700',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'LaBelle and Clewiston routes often rely on Fort Myers or Lake Okeechobee regional providers; confirm travel fees and agricultural-property access.',
+    },
+    tips: [
+      'Agricultural or large-lot properties often require handling of equipment or outbuildings; provide detailed inventory.',
+      'Rural roads and access can be limited; confirm truck size and shuttle options.',
+      'Lake Okeechobee-area moves may involve flood or waterfront considerations.',
+      'Storage is limited locally; coordinate with regional facilities.',
+      'Verify service coverage and credentials explicitly due to sparse options.',
+    ],
+  },
+  hernando: {
+    marketNotes:
+      'Hernando County features a mix of suburban (Spring Hill) and rural areas with Brooksville as the seat. It serves retirees and families with growing residential development. Regional providers from Tampa or nearby support the market.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Spring Hill suburban moves and Brooksville rural routes often share Tampa Bay regional crews; confirm Hernando-specific experience.',
+    },
+    tips: [
+      'Suburban neighborhoods and new developments often have HOA rules for parking and move timing.',
+      'Rural or Nature Coast properties may involve longer access or elevation considerations.',
+      'Proximity to Tampa Bay area provides good regional options; confirm specific Hernando service.',
+      'Retiree moves are common; inquire about senior-friendly services.',
+      'Verify credentials and obtain multiple estimates.',
+    ],
+  },
+  highlands: {
+    marketNotes:
+      'Highlands County features lakes, golf communities, and retiree populations in Sebring and Avon Park. Moves often involve residential downsizing and seasonal snowbirds. Regional providers from Lakeland or Orlando supplement local options.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Golf and lake communities in Sebring and Avon Park often require HOA move windows and crews experienced with seasonal retiree relocations.',
+    },
+    tips: [
+      'Lake and golf communities have HOA rules, cart paths, or restricted access; confirm early.',
+      'Snowbird seasonality increases demand in winter; book ahead.',
+      'Many properties include lakeside or elevated access; discuss specialized handling.',
+      'Storage for seasonal residents is useful; inquire about climate-controlled options.',
+      'Verify regional coverage for Sebring and Avon Park.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

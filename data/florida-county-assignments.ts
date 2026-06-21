@@ -210,6 +210,21 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'hardee-local-movers',
     'highlands-moving',
   ],
+  hendry: [
+    'gulf-coast-local',
+    'okeechobee-moving',
+    'hardee-local-movers',
+  ],
+  hernando: [
+    'hernando-moving',
+    'tampa-bay-movers',
+    'pasco-local-movers',
+  ],
+  highlands: [
+    'highlands-moving',
+    'lakeland-local-movers',
+    'polk-county-moving',
+  ],
   leon: [
     'tallahassee-capital-movers',
     'panhandle-moving-group',
