@@ -1710,6 +1710,119 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Palm Coast',
   },
+
+  // Hillsborough County (Grok-researched)
+  'two-men-and-a-truck-hillsborough': {
+    id: 'two-men-and-a-truck-hillsborough',
+    name: 'Two Men and a Truck Tampa',
+    rating: 4.6,
+    reviewCount: 920,
+    shortDescription:
+      'Established local franchise with strong presence serving Hillsborough County residential, commercial, and high-rise moves throughout Tampa.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Residential', 'Office Moving'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Tampa',
+    website: 'https://twomenandatruck.com/movers/fl/tampa',
+  },
+  'suddath-tampa': {
+    id: 'suddath-tampa',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 580,
+    shortDescription:
+      'Award-winning provider with extensive experience in Hillsborough County full-service residential and commercial relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Tampa',
+    website: 'https://suddath.com/moving-company/tampa/',
+  },
+  'college-hunks-hillsborough': {
+    id: 'college-hunks-hillsborough',
+    name: 'College Hunks Hauling Junk & Moving',
+    rating: 4.7,
+    reviewCount: 640,
+    shortDescription:
+      'Popular Tampa-area choice for efficient residential and junk removal moves across Hillsborough County.',
+    services: ['Local Moving', 'Labor Only', 'Junk Removal'],
+    specialties: ['Residential', 'Student Moves'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Tampa',
+  },
+  'stewart-moving-storage-tampa': {
+    id: 'stewart-moving-storage-tampa',
+    name: 'Stewart Moving & Storage',
+    rating: 4.8,
+    reviewCount: 310,
+    shortDescription:
+      'Highly rated Tampa mover providing professional local and long-distance service across Hillsborough County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Tampa',
+  },
+  'movebright-moving-storage-tampa': {
+    id: 'movebright-moving-storage-tampa',
+    name: 'MoveBright Moving and Storage',
+    rating: 4.8,
+    reviewCount: 275,
+    shortDescription:
+      'Top performer in Tampa reviews for efficient, customer-focused moves throughout Hillsborough County.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Tampa',
+  },
+  'all-my-sons-tampa': {
+    id: 'all-my-sons-tampa',
+    name: 'All My Sons Moving & Storage Tampa',
+    rating: 4.5,
+    reviewCount: 720,
+    shortDescription:
+      'Established full-service provider offering residential and commercial moves throughout Hillsborough County with 30+ years of experience.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Tampa',
+    website: 'https://www.allmysons.com/florida/tampa/',
+  },
+  'gentle-giant-moving-tampa': {
+    id: 'gentle-giant-moving-tampa',
+    name: 'Gentle Giant Moving Company',
+    profileSlug: 'gentle-giant-moving',
+    rating: 4.8,
+    reviewCount: 450,
+    shortDescription:
+      'Premium regional mover serving Hillsborough County with white-glove residential and commercial relocations in the Tampa area.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial', 'Piano'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Tampa',
+  },
+
+  // Indian River County (Grok-researched)
+  'two-men-and-a-truck-indian-river': {
+    id: 'two-men-and-a-truck-indian-river',
+    name: 'Two Men and a Truck Vero Beach',
+    rating: 4.6,
+    reviewCount: 340,
+    shortDescription:
+      'Professional local team serving Indian River County with reliable residential and condo moves in Vero Beach and surrounding communities.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Condo', 'Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Vero Beach',
+    website: 'https://twomenandatruck.com/movers/fl/vero-beach',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

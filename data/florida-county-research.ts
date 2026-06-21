@@ -382,6 +382,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify regional coverage for Sebring and Avon Park.',
     ],
   },
+  hillsborough: {
+    marketNotes:
+      'Hillsborough County is a major urban and suburban area centered on Tampa with diverse residential, commercial, port, and military-related moves. High-rises, suburbs, and growing developments create complex logistics with significant traffic on I-4, I-75, and local roads.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Downtown Tampa high-rises, Ybor City, and Brandon suburban moves often require elevator reservations, HOA coordination, and crews experienced with I-4 and I-75 corridor traffic.',
+    },
+    tips: [
+      'Downtown/high-rise and Ybor City areas require elevator reservations and tight scheduling.',
+      'Major interstate traffic (I-4, I-75) can delay moves; select experienced local teams.',
+      'Port and airport proximity influences commercial and military moves; confirm specialized capabilities.',
+      'Suburban neighborhoods (e.g., Brandon, Riverview) have HOA rules; obtain building details early.',
+      'Book well in advance for peak seasons; verify insurance for high-value urban moves.',
+    ],
+  },
+  holmes: {
+    marketNotes:
+      'Holmes County is small and rural with Bonifay as its seat, featuring agricultural and residential properties. The moving market is very thin; service is primarily regional from Dothan (AL), Panama City, or Chipley.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Bonifay and rural Holmes County routes often rely on Panama City or cross-border regional providers; confirm travel fees and service-area coverage.',
+    },
+    tips: [
+      'Rural properties often have long driveways or farm access; confirm equipment needs.',
+      'Verify explicit service to Bonifay and potential cross-border (AL) logistics.',
+      'Storage is limited; use regional facilities.',
+      'Obtain multiple estimates due to low local options.',
+      'Check credentials carefully in smaller markets.',
+    ],
+  },
+  'indian-river': {
+    marketNotes:
+      'Indian River County centers on Vero Beach with beach communities, retirees, and agricultural areas. Moves often involve coastal condos, single-family homes, and seasonal snowbirds. Regional support from Melbourne or Stuart is available.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,800–$3,800',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Vero Beach coastal condos and barrier-island properties often require sand protection, elevator reservations, and snowbird-season scheduling.',
+    },
+    tips: [
+      'Beach and condo properties require sand protection, elevators, and HOA coordination.',
+      'Snowbird season drives winter demand; book early.',
+      'Waterfront or barrier island access (e.g., bridges) needs planning.',
+      'Retiree-focused services are common; inquire about senior moves.',
+      'Verify insurance for coastal and high-value properties.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
