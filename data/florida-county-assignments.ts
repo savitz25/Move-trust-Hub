@@ -286,6 +286,24 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'tallahassee-capital-movers',
     'panhandle-moving-group',
   ],
+  manatee: [
+    'manatee-local-movers',
+    'sarasota-coast-moving',
+    'st-pete-local-lines',
+    'tampa-bay-movers',
+  ],
+  marion: [
+    'later-gator-moving',
+    'central-fl-moving',
+    'gainesville-local-movers',
+    'two-men-and-a-truck-gainesville',
+  ],
+  martin: [
+    'treasure-coast-moving',
+    'indian-river-moving',
+    'two-men-and-a-truck-indian-river',
+    'two-men-and-a-truck-melbourne',
+  ],
 };
 
 function hashSlug(slug: string): number {

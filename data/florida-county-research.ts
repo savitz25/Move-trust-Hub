@@ -586,6 +586,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify all credentials carefully.',
     ],
   },
+  manatee: {
+    marketNotes:
+      'Manatee County features coastal communities (Bradenton, Palmetto, Anna Maria Island) with retirees, beach properties, and suburban growth. Moves often involve condos, waterfront homes, and seasonal snowbirds.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,800–$3,800',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Anna Maria Island and Bradenton beach condos often require bridge access planning, sand protection, and snowbird-season scheduling.',
+    },
+    tips: [
+      'Beach and island properties require sand protection, elevators, and bridge access planning.',
+      'Snowbird season increases winter demand; book early.',
+      'Many communities have HOA and condo rules for move timing and parking.',
+      'Traffic on I-75 and US-41 can affect scheduling.',
+      'Confirm coastal experience and insurance for waterfront moves.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County centers on Ocala with horse farms, retiree communities, and suburban growth. Moves often involve equestrian properties, single-family homes, and transitional residential relocations.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Ocala equestrian and farm properties often require specialized equipment handling and crews familiar with I-75 and SR-200 corridor traffic.',
+    },
+    tips: [
+      'Equestrian or farm properties require specialized handling of equipment or outbuildings.',
+      'Retirement communities have specific move-in rules.',
+      'Traffic on I-75 and SR-200 can impact timing.',
+      'Seasonal snowbird activity affects availability.',
+      'Verify coverage for Ocala and rural areas.',
+    ],
+  },
+  martin: {
+    marketNotes:
+      'Martin County features affluent coastal communities (Stuart, Jensen Beach, Hutchinson Island) with retirees, waterfront homes, and marinas. Moves often involve high-end residential, condos, and seasonal snowbirds.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$2,000–$4,200',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Stuart and Hutchinson Island waterfront properties often require dock coordination, bridge access, and HOA move windows for luxury communities.',
+    },
+    tips: [
+      'Waterfront and island properties require dock, bridge, or elevator coordination.',
+      'Gated and luxury communities have strict HOA rules.',
+      'Snowbird season boosts demand; plan ahead.',
+      'Treasure Coast traffic on US-1 can delay moves.',
+      'Confirm insurance for high-value coastal items.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
