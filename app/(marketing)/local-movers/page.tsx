@@ -7,21 +7,9 @@ import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { localStates } from '@/lib/local-movers/states';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
-import { getCountyPath } from '@/lib/local-movers/index';
+import { buildHubPageMetadata, getCountyPath } from '@/lib/local-movers/index';
 
-export const metadata: Metadata = {
-  title: 'Local Movers by State & County — Find Trusted Movers Near You 2026',
-  description:
-    'Browse 3,100+ county-level local mover guides across all 50 states. FMCSA licensing, ratings, cost estimates, and moving tips. Compare movers and get free quotes today.',
-  alternates: {
-    canonical: 'https://www.movetrusthub.com/local-movers',
-  },
-  openGraph: {
-    title: 'Local Movers Directory | Move Trust Hub',
-    description:
-      'Find trusted local movers in your county. Full coverage across all 50 U.S. states with 3–5 vetted companies per county.',
-  },
-};
+export const metadata: Metadata = buildHubPageMetadata();
 
 const featuredCounties = [
   { stateSlug: 'florida', countySlug: 'miami-dade', label: 'Miami-Dade, FL' },
@@ -41,8 +29,8 @@ export default function LocalMoversHubPage() {
   return (
     <>
       <LocalMoversSchema
-        title="Local Movers by State & County"
-        description={metadata.description as string}
+        title="Local Movers by State & County — Find Trusted Movers Near You 2026"
+        description="Browse 3,100+ county-level local mover guides across all 50 states. FMCSA licensing, ratings, cost estimates, and moving tips."
         path="/local-movers"
         breadcrumbs={[
           { name: 'Home', path: '/' },

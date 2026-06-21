@@ -9,8 +9,10 @@ import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema
 import { getLocalState, localStates } from '@/lib/local-movers/states';
 import {
   buildStateDescription,
+  buildStatePageMetadata,
   buildStateTitle,
   getCountyPath,
+  getStatePath,
 } from '@/lib/local-movers/index';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
 
@@ -26,17 +28,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!state) return {};
 
   const counties = getCountiesForState(stateSlug);
-  const title = buildStateTitle(state.name, counties.length);
-  const description = buildStateDescription(state.name, counties.length);
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `https://www.movetrusthub.com/local-movers/${state.slug}`,
-    },
-    openGraph: { title, description },
-  };
+  return buildStatePageMetadata(
+    state.name,
+    state.code,
+    counties.length,
+    getStatePath(state.slug)
+  );
 }
 
 export default async function LocalMoversStatePage({ params }: Props) {

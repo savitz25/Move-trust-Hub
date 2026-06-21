@@ -6,52 +6,88 @@ import type { LocalMover } from '@/lib/local-movers/types';
 export function LocalMoverCard({
   mover,
   rank,
+  countyLabel,
+  stateCode,
 }: {
   mover: LocalMover;
   rank: number;
+  countyLabel?: string;
+  stateCode?: string;
 }) {
   const profileHref = mover.profileSlug
     ? `/companies/${mover.profileSlug}`
     : null;
 
+  const locationLine = [
+    mover.city,
+    stateCode ?? undefined,
+    countyLabel ? `Serves ${countyLabel}` : undefined,
+  ]
+    .filter(Boolean)
+    .join(' · ');
+
   return (
-    <article className="rounded-2xl border bg-card p-5 sm:p-6 shadow-sm hover:border-primary/30 transition-colors">
+    <article
+      id={`mover-${mover.id}`}
+      aria-label={`#${rank} ${mover.name} — local mover${countyLabel ? ` in ${countyLabel}` : ''}`}
+      className="rounded-2xl border bg-card p-5 sm:p-6 shadow-sm hover:border-primary/30 transition-colors"
+      itemScope
+      itemType="https://schema.org/MovingCompany"
+    >
       <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
         <div className="flex items-start gap-3 min-w-0">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+          <div
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary"
+            aria-hidden="true"
+          >
             {rank}
           </div>
           <div className="min-w-0">
-            <h3 className="text-lg font-semibold tracking-tight leading-tight">
+            <h3 className="text-lg font-semibold tracking-tight leading-tight" itemProp="name">
               {mover.name}
             </h3>
-            <p className="text-xs text-muted-foreground mt-0.5">{mover.city}</p>
+            <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700 dark:text-amber-400">
+        <div
+          className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700 dark:text-amber-400"
+          itemProp="aggregateRating"
+          itemScope
+          itemType="https://schema.org/AggregateRating"
+        >
+          <meta itemProp="ratingValue" content={String(mover.rating)} />
+          <meta itemProp="reviewCount" content={String(mover.reviewCount)} />
+          <meta itemProp="bestRating" content="5" />
           <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
           {mover.rating.toFixed(1)}
           <span className="text-xs font-normal text-muted-foreground">
-            ({mover.reviewCount.toLocaleString()})
+            ({mover.reviewCount.toLocaleString()} reviews)
           </span>
         </div>
       </div>
 
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+      <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
         {mover.shortDescription}
       </p>
 
-      <div className="flex flex-wrap gap-1.5 mb-4">
-        {mover.services.slice(0, 4).map((service) => (
+      <div className="flex flex-wrap gap-1.5 mb-4" aria-label="Services offered">
+        {mover.services.slice(0, 5).map((service) => (
           <Badge key={service} variant="secondary" className="text-[10px] font-medium">
             {service}
+          </Badge>
+        ))}
+        {mover.specialties?.slice(0, 2).map((specialty) => (
+          <Badge key={specialty} variant="outline" className="text-[10px] font-medium">
+            {specialty}
           </Badge>
         ))}
       </div>
 
       <div className="grid sm:grid-cols-2 gap-2 text-xs text-muted-foreground mb-4">
         {mover.usdotNumber && (
-          <div>
+          <div itemProp="identifier" itemScope itemType="https://schema.org/PropertyValue">
+            <meta itemProp="name" content="USDOT" />
+            <meta itemProp="value" content={mover.usdotNumber} />
             <span className="font-medium text-foreground">USDOT:</span> {mover.usdotNumber}
           </div>
         )}
@@ -78,6 +114,7 @@ export function LocalMoverCard({
           <Link
             href={profileHref}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+            itemProp="url"
           >
             View full profile
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -88,6 +125,7 @@ export function LocalMoverCard({
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+            itemProp="url"
           >
             Visit website
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />

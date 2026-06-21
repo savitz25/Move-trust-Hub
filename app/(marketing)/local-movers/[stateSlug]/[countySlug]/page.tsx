@@ -17,7 +17,9 @@ import {
   buildCountyCostGuide,
   buildCountyDescription,
   buildCountyFaqItems,
+  buildCountyH1,
   buildCountyMarketNotes,
+  buildCountyPageMetadata,
   buildCountyTestimonial,
   buildCountyTips,
   buildCountyTitle,
@@ -44,31 +46,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const result = getMoversForCounty(stateSlug, countySlug);
   if (!state || !result) return {};
 
-  const title = buildCountyTitle(result.county, state.name);
-  const description = buildCountyDescription(
+  return buildCountyPageMetadata(
     result.county,
     state.name,
-    result.movers.length
+    result.movers,
+    getCountyPath(stateSlug, countySlug)
   );
-
-  const seat = result.county.seat;
-  const keywords = [
-    `local movers ${result.county.name} County`,
-    seat ? `movers ${seat}` : null,
-    `moving companies ${state.name}`,
-    `${result.county.name} County movers 2026`,
-    `best movers near ${seat ?? result.county.name}`,
-  ].filter(Boolean) as string[];
-
-  return {
-    title,
-    description,
-    keywords,
-    alternates: {
-      canonical: `https://www.movetrusthub.com${getCountyPath(stateSlug, countySlug)}`,
-    },
-    openGraph: { title, description },
-  };
 }
 
 export default async function LocalMoversCountyPage({ params }: Props) {
@@ -107,7 +90,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         faqItems={faqItems}
       />
 
-      <div className="container mx-auto px-4 py-10 max-w-3xl">
+      <main className="container mx-auto px-4 py-10 max-w-3xl">
         <LocalMoversBreadcrumbs
           crumbs={[
             { label: 'Home', href: '/' },
@@ -122,8 +105,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             {state.name} · {county.stateCode}
           </p>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
-            Top Local Movers in {countyLabel}
-            {county.seat ? ` (${county.seat})` : ''}
+            {buildCountyH1(county)}
           </h1>
           {county.seat && (
             <p className="text-muted-foreground mb-3">
@@ -152,16 +134,23 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           )}
         </header>
 
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold tracking-tight mb-4">
-            Top local movers in {county.name} County
+        <section className="mb-10" id="movers" aria-labelledby="movers-heading">
+          <h2 id="movers-heading" className="text-2xl font-semibold tracking-tight mb-4">
+            Best moving companies in {countyLabel}, {county.stateCode}
           </h2>
           {movers.length > 0 ? (
-            <div className="space-y-4">
+            <ol className="space-y-4 list-none p-0 m-0">
               {movers.map((mover, index) => (
-                <LocalMoverCard key={mover.id} mover={mover} rank={index + 1} />
+                <li key={mover.id}>
+                  <LocalMoverCard
+                    mover={mover}
+                    rank={index + 1}
+                    countyLabel={countyLabel}
+                    stateCode={county.stateCode}
+                  />
+                </li>
               ))}
-            </div>
+            </ol>
           ) : (
             <div className="rounded-2xl border bg-muted/30 p-6 text-sm text-muted-foreground">
               Mover listings for this county are being added. Browse{' '}
@@ -214,7 +203,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         </section>
 
         <LocalMoversCta countyName={countyLabel} />
-      </div>
+      </main>
     </>
   );
 }

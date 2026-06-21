@@ -74,8 +74,18 @@ export {
   buildCountyTips,
   buildCountyTestimonial,
   buildCountyMarketNotes,
+  getSeoYear,
   getStateSlugFromCode,
 } from '@/lib/local-movers/county-seo';
+export {
+  buildCountyPageMetadata,
+  buildCountyKeywords,
+  buildCountyH1,
+  buildStatePageMetadata,
+  buildStateKeywords,
+  buildHubPageMetadata,
+  buildHubKeywords,
+} from '@/lib/local-movers/seo-metadata';
 
 export function getCountyPath(stateSlug: string, countySlug: string): string {
   return `/local-movers/${stateSlug}/${countySlug}`;

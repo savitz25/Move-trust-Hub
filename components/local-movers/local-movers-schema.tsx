@@ -24,6 +24,12 @@ function buildFaqSchema(items: CountyFaqItem[], id: string) {
   };
 }
 
+function buildMoverUrl(mover: LocalMover, pageUrl: string): string {
+  if (mover.profileSlug) return `${SITE_URL}/companies/${mover.profileSlug}`;
+  if (mover.website) return mover.website;
+  return pageUrl;
+}
+
 export function LocalMoversSchema({
   title,
   description,
@@ -44,15 +50,15 @@ export function LocalMoversSchema({
   faqItems?: CountyFaqItem[];
 }) {
   const url = `${SITE_URL}${path}`;
+  const placeId = `${url}#place`;
 
   const movingCompanies = (movers ?? []).map((mover, index) => ({
     '@type': 'MovingCompany',
     '@id': `${url}#mover-${mover.id}`,
     name: mover.name,
     description: mover.shortDescription,
-    url: mover.profileSlug
-      ? `${SITE_URL}/companies/${mover.profileSlug}`
-      : url,
+    url: buildMoverUrl(mover, url),
+    ...(mover.website ? { sameAs: mover.website } : {}),
     address: {
       '@type': 'PostalAddress',
       addressLocality: mover.city,
@@ -75,14 +81,32 @@ export function LocalMoversSchema({
           },
         }
       : {}),
+    ...(mover.mcNumber
+      ? {
+          additionalProperty: {
+            '@type': 'PropertyValue',
+            name: 'MC Number',
+            value: mover.mcNumber,
+          },
+        }
+      : {}),
     ...(mover.services.length
-      ? { makesOffer: mover.services.map((service) => ({ '@type': 'Offer', itemOffered: service })) }
+      ? {
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: `${mover.name} Services`,
+            itemListElement: mover.services.map((service) => ({
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: service,
+              },
+            })),
+          },
+        }
       : {}),
     areaServed: county
-      ? {
-          '@type': 'AdministrativeArea',
-          name: `${county.name} County, ${stateName}`,
-        }
+      ? { '@id': placeId }
       : stateName
         ? {
             '@type': 'State',
@@ -95,6 +119,7 @@ export function LocalMoversSchema({
   const graph: Record<string, unknown>[] = [
     {
       '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumbs`,
       itemListElement: breadcrumbs.map((crumb, index) => ({
         '@type': 'ListItem',
         position: index + 1,
@@ -103,18 +128,68 @@ export function LocalMoversSchema({
       })),
     },
     {
-      '@type': 'CollectionPage',
+      '@type': 'WebPage',
+      '@id': url,
       name: title,
       description,
       url,
+      inLanguage: 'en-US',
       isPartOf: {
         '@type': 'WebSite',
         name: 'Move Trust Hub',
         url: SITE_URL,
       },
+      breadcrumb: { '@id': `${url}#breadcrumbs` },
+      ...(county && stateName
+        ? { about: { '@id': placeId } }
+        : {}),
+      ...(faqItems?.length ? { mainEntity: { '@id': `${url}#faq` } } : {}),
     },
-    ...movingCompanies,
   ];
+
+  if (county && stateName) {
+    graph.push({
+      '@type': 'AdministrativeArea',
+      '@id': placeId,
+      name: `${county.name} County, ${stateName}`,
+      ...(county.seat
+        ? {
+            containsPlace: {
+              '@type': 'City',
+              name: county.seat,
+              containedInPlace: {
+                '@type': 'State',
+                name: stateName,
+                addressRegion: county.stateCode,
+              },
+            },
+          }
+        : {}),
+      containedInPlace: {
+        '@type': 'State',
+        name: stateName,
+        addressRegion: county.stateCode,
+      },
+    });
+  }
+
+  if (movingCompanies.length > 0) {
+    graph.push({
+      '@type': 'ItemList',
+      '@id': `${url}#movers`,
+      name: county
+        ? `Top Local Movers in ${county.name} County`
+        : `Local Movers in ${stateName ?? 'the United States'}`,
+      numberOfItems: movingCompanies.length,
+      itemListOrder: 'https://schema.org/ItemListOrderDescending',
+      itemListElement: movingCompanies.map((company, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: { '@id': company['@id'] },
+      })),
+    });
+    graph.push(...movingCompanies);
+  }
 
   if (faqItems?.length) {
     graph.push(buildFaqSchema(faqItems, `${url}#faq`));

@@ -45,7 +45,7 @@ export function getSeoYear(): string {
 
 export function buildCountyTitle(county: LocalCounty, stateName: string): string {
   const seat = county.seat ? ` (${county.seat})` : '';
-  return `Top Local Movers in ${county.name} County${seat}, ${stateName} ${SEO_YEAR}`;
+  return `Top Local Movers in ${county.name} County${seat}, ${county.stateCode} ${SEO_YEAR}`;
 }
 
 export function buildCountyDescription(
@@ -54,8 +54,8 @@ export function buildCountyDescription(
   moverCount: number
 ): string {
   const seat = county.seat ? ` near ${county.seat}` : '';
-  const topMover = moverCount > 0 ? ` Compare ${moverCount} rated companies` : ' Find vetted companies';
-  return `${topMover} in ${county.name} County, ${stateName}${seat}. FMCSA licensing, customer ratings, local cost estimates, and moving tips. Get free quotes today.`;
+  const topMover = moverCount > 0 ? `Compare ${moverCount} top-rated companies` : 'Find vetted companies';
+  return `${topMover} in ${county.name} County, ${county.stateCode}${seat}. FMCSA licensing, Google ratings, local cost estimates, and moving tips. Get free quotes today.`;
 }
 
 export function buildStateTitle(stateName: string, countyCount: number): string {
@@ -82,7 +82,9 @@ export function buildCountyFaqItems(
   const countyLabel = `${county.name} County`;
   const location = county.seat ?? countyLabel;
   const costs = buildCountyCostGuide(county, stateName);
+  const topMovers = movers.slice(0, 3);
   const topMover = movers[0];
+  const topMoverList = topMovers.map((m) => `${m.name} (${m.rating}★)`).join(', ');
 
   return [
     {
@@ -91,9 +93,11 @@ export function buildCountyFaqItems(
     },
     {
       question: `What are the best local movers in ${countyLabel}?`,
-      answer: topMover
-        ? `Top-rated options serving ${location} include ${topMover.name} (${topMover.rating}★ from ${topMover.reviewCount.toLocaleString()} reviews). We rank movers by customer ratings, FMCSA licensing, review volume, and service fit for ${countyLabel}.`
-        : `We rank local movers in ${countyLabel} by customer ratings, FMCSA USDOT/MC licensing, review volume, and BBB standing. Compare companies on this page and verify current licensing on FMCSA.gov before booking.`,
+      answer: topMovers.length > 1
+        ? `Top-rated movers serving ${location} include ${topMoverList}. We rank companies by Google ratings, FMCSA licensing, review volume, and service fit for ${countyLabel}, ${county.stateCode}.`
+        : topMover
+          ? `Top-rated options serving ${location} include ${topMover.name} (${topMover.rating}★ from ${topMover.reviewCount.toLocaleString()} reviews). We rank movers by customer ratings, FMCSA licensing, review volume, and service fit for ${countyLabel}.`
+          : `We rank local movers in ${countyLabel} by customer ratings, FMCSA USDOT/MC licensing, review volume, and BBB standing. Compare companies on this page and verify current licensing on FMCSA.gov before booking.`,
     },
     {
       question: `Do local movers in ${stateName} need an FMCSA license?`,
