@@ -239,6 +239,21 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'lakeland-local-movers',
     'polk-county-moving',
   ],
+  jackson: [
+    'motivated-movers-panama-city',
+    'two-men-and-a-truck-panama-city',
+    'panhandle-moving-group',
+  ],
+  jefferson: [
+    'tallahassee-capital-movers',
+    'panhandle-moving-group',
+    'gainesville-local-movers',
+  ],
+  lafayette: [
+    'suwannee-county-movers',
+    'gainesville-local-movers',
+    '2-college-brothers-moving-storage',
+  ],
   leon: [
     'tallahassee-capital-movers',
     'panhandle-moving-group',

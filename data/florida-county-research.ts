@@ -433,6 +433,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify insurance for coastal and high-value properties.',
     ],
   },
+  jackson: {
+    marketNotes:
+      'Jackson County is rural with Marianna as its seat, featuring agricultural lands, residential properties, and proximity to military installations. The moving market is thin; service is primarily regional from Dothan (AL), Panama City, or Tallahassee.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,700',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Marianna and rural Jackson County routes often rely on Panama City regional providers; confirm travel fees and cross-border logistics where applicable.',
+    },
+    tips: [
+      'Rural and agricultural properties often require handling of outbuildings or equipment; provide detailed inventory.',
+      'Confirm explicit service coverage for Marianna and potential cross-state logistics.',
+      'Storage options are limited locally; coordinate with regional facilities.',
+      'Obtain multiple estimates due to low local competition.',
+      'Verify FMCSA authority and insurance thoroughly.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is small and rural with Monticello as its seat, known for historic properties and agriculture. Moves are mostly residential; service draws from Tallahassee or regional providers.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Monticello and Jefferson County moves typically use Tallahassee-based regional providers; confirm Jefferson-specific service and travel fees.',
+    },
+    tips: [
+      'Historic or rural properties may need special care for older structures or long access roads.',
+      'Proximity to Tallahassee provides regional support; confirm specific Jefferson service.',
+      'Limited local storage; use Tallahassee-area facilities if needed.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify all credentials carefully.',
+    ],
+  },
+  lafayette: {
+    marketNotes:
+      'Lafayette County is one of Florida’s smallest and most rural counties with Mayo as its seat. The moving market is very limited, with agricultural and residential focus and heavy reliance on regional providers from Live Oak or Gainesville.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,400',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Mayo and rural Lafayette County routes often rely on Live Oak or Gainesville regional providers; confirm remote-location coverage and travel fees.',
+    },
+    tips: [
+      'Rural properties frequently feature unpaved roads or farm access; discuss logistics in advance.',
+      'Confirm explicit service to Mayo due to remote location.',
+      'Storage is scarce; use regional facilities in nearby counties.',
+      'Obtain multiple estimates and verify credentials.',
+      'Agricultural timing may affect availability.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
