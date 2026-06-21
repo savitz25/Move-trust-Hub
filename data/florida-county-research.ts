@@ -637,6 +637,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value coastal items.',
     ],
   },
+  'miami-dade': {
+    marketNotes:
+      'Miami-Dade is a major urban and coastal county with dense high-rises, diverse neighborhoods, port activity, and international relocations. Moves frequently involve condos, luxury homes, and commercial properties with significant traffic and multilingual needs.',
+    costs: {
+      studioRange: '$550–$1,300',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Miami Beach and Downtown high-rise moves often require elevator reservations, building approvals, and crews experienced with causeway and I-95 corridor traffic.',
+    },
+    tips: [
+      'High-rise condos in Miami Beach and Downtown require elevator reservations, strict scheduling, and building approvals.',
+      'Port and airport proximity influences international and commercial moves; confirm customs experience.',
+      'Traffic on I-95, US-1, and causeways is heavy; select logistics-savvy teams.',
+      'Diverse communities benefit from multilingual crews.',
+      'Hurricane season affects storage and timing; verify contingencies.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County spans the Florida Keys with unique island logistics, tourism, and waterfront properties. Moves involve bridges, ferries (to some islands), and hurricane considerations. Regional service from mainland Miami-Dade is common.',
+    costs: {
+      studioRange: '$600–$1,400',
+      familyRange: '$2,500–$6,000+',
+      avgHourly: '$130–$200/hr for a 2-person crew',
+      note: 'Keys island logistics often add bridge tolls, ferry coordination, and premium pricing for Key West and Marathon routes.',
+    },
+    tips: [
+      'Island access via bridges or ferries requires advance planning and potential extra fees.',
+      'Hurricane season impacts storage and timing; confirm contingencies.',
+      'Many properties are elevated or waterfront; discuss specialized handling.',
+      'Tourism and seasonal demand peaks; book early.',
+      'Verify insurance for Keys-specific risks and building rules.',
+    ],
+  },
+  nassau: {
+    marketNotes:
+      'Nassau County is a growing suburban and coastal area with Fernandina Beach and Amelia Island. Moves involve beach communities, historic homes, and suburban growth near Jacksonville.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Amelia Island and Fernandina Beach coastal properties often require bridge access planning and crews familiar with historic-district considerations.',
+    },
+    tips: [
+      'Beach and island properties (Amelia Island) require bridge access and sand protection.',
+      'Historic districts have preservation considerations for older homes.',
+      'Growing areas have HOA rules; confirm details.',
+      'Jacksonville traffic influences regional moves.',
+      'Seasonal tourism affects timing.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

@@ -1867,6 +1867,67 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Fort Myers',
   },
+
+  // Miami-Dade County (Grok-researched)
+  'two-men-and-a-truck-miami-dade': {
+    id: 'two-men-and-a-truck-miami-dade',
+    name: 'Two Men and a Truck Miami',
+    rating: 4.6,
+    reviewCount: 1100,
+    shortDescription:
+      'Established franchise with strong local teams for high-rise, condo, and residential moves across Miami-Dade County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Condo', 'Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Miami',
+    website: 'https://twomenandatruck.com/movers/fl/miami',
+  },
+  'all-my-sons-miami-dade': {
+    id: 'all-my-sons-miami-dade',
+    name: 'All My Sons Moving & Storage Miami',
+    rating: 4.5,
+    reviewCount: 860,
+    shortDescription:
+      'Experienced full-service provider handling Miami-Dade residential, commercial, and high-rise relocations with 30+ years of experience.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Residential', 'Commercial'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Miami',
+    website: 'https://www.allmysons.com/florida/miami/',
+  },
+  'gentle-giant-miami-dade': {
+    id: 'gentle-giant-miami-dade',
+    name: 'Gentle Giant Moving Company',
+    profileSlug: 'gentle-giant-moving',
+    rating: 4.8,
+    reviewCount: 620,
+    shortDescription:
+      'Award-winning, eco-friendly mover excelling in complex high-rise and residential moves throughout Miami-Dade County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Condo'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Miami',
+    website: 'https://www.gentlegiant.com/',
+  },
+  'suddath-miami-dade': {
+    id: 'suddath-miami-dade',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 540,
+    shortDescription:
+      'Established Miami-area provider offering full-service local, long-distance, and commercial relocations across Miami-Dade County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Miami',
+    website: 'https://suddath.com/moving-company/miami/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

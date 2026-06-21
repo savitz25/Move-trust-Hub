@@ -35,11 +35,14 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'green-team-logistics-brevard',
   ],
   'miami-dade': [
+    'two-men-and-a-truck-miami-dade',
+    'all-my-sons-miami-dade',
+    'gentle-giant-miami-dade',
     'miami-pro-movers',
     'coral-gables-moving-co',
-    'moving-apt',
+    'pure-moving-company-fort-lauderdale',
+    'suddath-miami-dade',
     'international-van-lines',
-    'american-van-lines',
   ],
   broward: [
     'two-men-and-a-truck-fort-lauderdale',
@@ -160,7 +163,12 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'marathon-keys-moving',
     'key-largo-local',
     'miami-pro-movers',
-    'international-van-lines',
+  ],
+  nassau: [
+    'nassau-county-movers',
+    'two-men-and-a-truck-jacksonville',
+    'helping-hands-movers-jax',
+    'baymeadows-moving-storage',
   ],
   polk: [
     'polk-county-moving',
