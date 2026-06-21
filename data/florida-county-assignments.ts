@@ -189,18 +189,21 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'orlando-city-movers',
   ],
   sarasota: [
+    'two-men-and-a-truck-sarasota',
+    'suddath-sarasota',
+    'ray-the-mover-sarasota',
     'sarasota-coast-moving',
-    'tampa-bay-movers',
-    'gulf-coast-local',
+    'all-my-sons-sarasota',
+    'gentle-giant-moving-tampa',
     'manatee-local-movers',
-    'st-pete-local-lines',
+    'gulf-coast-local',
   ],
   seminole: [
     'seminole-local-movers',
+    'two-men-and-a-truck-orange',
     'orlando-city-movers',
     'winter-park-moving',
-    'lake-county-movers',
-    'central-fl-moving',
+    'all-my-sons-orlando',
   ],
   volusia: [
     'volusia-local-lines',
@@ -351,6 +354,12 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'putnam-county-movers',
     'two-men-and-a-truck-jacksonville',
     'gainesville-local-movers',
+  ],
+  'santa-rosa': [
+    'two-men-and-a-truck-pensacola',
+    'pensacola-bay-movers',
+    'emerald-coast-moving',
+    'panhandle-moving-group',
   ],
 };
 

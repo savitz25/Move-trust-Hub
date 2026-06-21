@@ -841,6 +841,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials.',
     ],
   },
+  'santa-rosa': {
+    marketNotes:
+      'Santa Rosa County features suburban growth (Milton, Navarre), beaches, and military influence. Moves often involve residential, family, and coastal properties with some seasonal demand.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Navarre Beach and Milton suburban routes often share Pensacola regional crews; confirm Santa Rosa-specific coverage and bridge access planning.',
+    },
+    tips: [
+      'Navarre Beach and coastal areas require sand protection and bridge access planning.',
+      'Military-related moves are relatively common; seek experienced providers.',
+      'Growing suburban neighborhoods have HOA rules.',
+      'Traffic on US-98 and I-10 can affect timing.',
+      'Verify coverage for Milton, Navarre, and Gulf Breeze.',
+    ],
+  },
+  sarasota: {
+    marketNotes:
+      'Sarasota County is affluent with cultural hubs, beaches (Siesta Key), and retiree communities. Moves frequently involve luxury homes, condos, and waterfront properties with high seasonal demand.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Siesta Key and Sarasota waterfront properties often require sand protection, HOA move windows, and snowbird-season scheduling.',
+    },
+    tips: [
+      'Beach and barrier island properties require sand protection and access planning.',
+      'Luxury and gated communities have strict HOA rules.',
+      'Snowbird season boosts winter demand.',
+      'Traffic on US-41 and I-75 is heavy.',
+      'Confirm experience with high-value and coastal items.',
+    ],
+  },
+  seminole: {
+    marketNotes:
+      'Seminole County includes suburban communities (Lake Mary, Sanford, Oviedo) with lakes, growing tech and commuter areas, and residential development. Moves often involve family relocations near Orlando.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,500',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lake Mary and Sanford suburban moves often share Orlando metro crews; confirm Seminole-specific experience and I-4 corridor traffic planning.',
+    },
+    tips: [
+      'Suburban HOAs and new developments have move-in regulations.',
+      'Lakefront properties may require special access.',
+      'I-4 corridor traffic affects timing.',
+      'Proximity to Orlando provides strong regional support.',
+      'Verify coverage for Sanford, Lake Mary, and Oviedo.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

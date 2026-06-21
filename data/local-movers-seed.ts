@@ -2173,6 +2173,65 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Clearwater',
     website: 'https://www.allmysons.com/florida/clearwater/',
   },
+
+  // Sarasota County (Grok-researched)
+  'two-men-and-a-truck-sarasota': {
+    id: 'two-men-and-a-truck-sarasota',
+    name: 'Two Men and a Truck Sarasota',
+    rating: 4.6,
+    reviewCount: 680,
+    shortDescription:
+      'Professional franchise with strong local expertise for Sarasota County condo, beach, and luxury residential moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Coastal', 'Luxury Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Sarasota',
+    website: 'https://twomenandatruck.com/movers/fl/sarasota',
+  },
+  'suddath-sarasota': {
+    id: 'suddath-sarasota',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 450,
+    shortDescription:
+      'Award-winning provider for Sarasota County full-service and luxury residential relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Luxury Residential', 'Coastal'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Sarasota',
+    website: 'https://suddath.com/moving-company/sarasota/',
+  },
+  'ray-the-mover-sarasota': {
+    id: 'ray-the-mover-sarasota',
+    name: 'Ray The Mover',
+    rating: 4.8,
+    reviewCount: 310,
+    shortDescription:
+      'Experienced mover for Sarasota County residential and waterfront properties along the Gulf Coast.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Coastal', 'Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Sarasota',
+    website: 'https://www.raythemover.com/',
+  },
+  'all-my-sons-sarasota': {
+    id: 'all-my-sons-sarasota',
+    name: 'All My Sons Moving & Storage Sarasota',
+    rating: 4.5,
+    reviewCount: 470,
+    shortDescription:
+      'Established full-service provider offering residential and coastal moves throughout Sarasota County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Coastal'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Sarasota',
+    website: 'https://www.allmysons.com/florida/sarasota/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
