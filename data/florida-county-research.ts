@@ -178,6 +178,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates in this moderate market for best value and availability.',
     ],
   },
+  desoto: {
+    marketNotes:
+      'DeSoto County is a small, rural county centered on Arcadia with agricultural and residential properties. The moving market is thin; most full-service options are regional from larger nearby areas like Sarasota or Fort Myers. Moves often involve single-family homes or farm-related logistics.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,700',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Most full-service providers serve Arcadia regionally from Sarasota or Fort Myers; confirm travel fees and agricultural-property access.',
+    },
+    tips: [
+      'Rural or agricultural properties may have long driveways or limited access; confirm truck size and equipment needs.',
+      'Limited local storage; coordinate with providers offering facilities in adjacent counties.',
+      'Obtain multiple written estimates due to fewer local operators.',
+      'Verify licensing and insurance thoroughly in smaller markets.',
+      'Agricultural timing (harvest seasons) may affect availability; plan accordingly.',
+    ],
+  },
+  dixie: {
+    marketNotes:
+      'Dixie County is rural and sparsely populated with Cross City as its seat. Moves are primarily residential on larger lots or coastal properties. Options are limited; most service comes from regional providers in nearby counties.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Regional providers from Gainesville or Jacksonville may add travel fees for Cross City and rural Dixie County routes.',
+    },
+    tips: [
+      'Confirm explicit service to Cross City and rural areas, including potential travel fees.',
+      'Properties may involve unpaved roads or limited access; discuss logistics in advance.',
+      'Storage is limited locally; use providers with facilities in larger nearby towns.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify credentials carefully due to fewer established local operators.',
+    ],
+  },
+  duval: {
+    marketNotes:
+      'Duval County (primarily Jacksonville) is a major urban area with diverse residential, military (NAS Jax), commercial, and port-related moves. High-rises, suburbs, and beach communities (e.g., Jax Beach) create varied logistics needs. Traffic on I-95 and bridges is a key factor.',
+    costs: {
+      studioRange: '$450–$1,000',
+      familyRange: '$1,800–$4,000+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Downtown high-rises, beach communities, and military PCS moves in Jacksonville often require elevator reservations, parking permits, and experienced crews.',
+    },
+    tips: [
+      'Military PCS moves are common; prioritize experienced providers for documentation and timelines.',
+      'Downtown/high-rise and beach areas require elevator reservations and parking plans.',
+      'Bridge and I-95 traffic can delay moves; select logistics-savvy teams.',
+      'Diverse neighborhoods (suburban vs. urban) affect access and equipment needs.',
+      'Book early for peak seasons; confirm insurance for high-value items.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

@@ -1440,6 +1440,164 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Lake City',
     website: 'https://www.themoveconnection.com/',
   },
+
+  // DeSoto County (Grok-researched)
+  'gardiner-and-sons-moving': {
+    id: 'gardiner-and-sons-moving',
+    name: 'Gardiner & Sons Moving',
+    rating: 4.7,
+    reviewCount: 85,
+    shortDescription:
+      'Family-operated mover providing trusted local and regional service to DeSoto County and Arcadia for residential relocations.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Arcadia',
+    website: 'https://www.gardinerandsonsmoving.com/',
+  },
+  'c-and-f-movers': {
+    id: 'c-and-f-movers',
+    name: 'C & F Movers, Inc.',
+    rating: 4.5,
+    reviewCount: 65,
+    shortDescription:
+      'Provider offering residential, commercial, local, and long-distance services to Arcadia and DeSoto County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Arcadia',
+  },
+
+  // Dixie County (Grok-researched)
+  'a-move-ahead-movers': {
+    id: 'a-move-ahead-movers',
+    name: 'A Move Ahead Movers',
+    rating: 4.7,
+    reviewCount: 420,
+    shortDescription:
+      'Vetted regional mover serving rural Dixie County and Cross City for residential local moves from nearby North Florida areas.',
+    services: ['Local Moving', 'Labor Only'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+  },
+
+  // Duval County (Grok-researched)
+  'suddath-jacksonville': {
+    id: 'suddath-jacksonville',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 1900,
+    shortDescription:
+      'Multiple-time Best Moving Company winner in Jacksonville with extensive experience in local, long-distance, and commercial moves across Duval County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial', 'Military'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Jacksonville',
+    website: 'https://suddath.com/moving-company/jacksonville/',
+  },
+  'two-men-and-a-truck-jacksonville': {
+    id: 'two-men-and-a-truck-jacksonville',
+    name: 'Two Men and a Truck Jacksonville',
+    rating: 4.6,
+    reviewCount: 850,
+    shortDescription:
+      'Trusted local franchise with 28+ years serving Duval County, known for community focus and reliable residential and commercial service.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Office Moving'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Jacksonville',
+    website: 'https://twomenandatruck.com/movers/fl/jacksonville',
+  },
+  'helping-hands-movers-jax': {
+    id: 'helping-hands-movers-jax',
+    name: 'Helping Hands Movers',
+    rating: 4.8,
+    reviewCount: 310,
+    shortDescription:
+      'Veteran-owned Jacksonville mover offering reliable residential and commercial services across Duval County with 23+ years of experience.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential', 'Military'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+    website: 'https://helpinghandsmoversjaxfl.com/',
+  },
+  'stewart-moving-storage': {
+    id: 'stewart-moving-storage',
+    name: 'Stewart Moving & Storage',
+    rating: 4.9,
+    reviewCount: 520,
+    shortDescription:
+      'Highly rated Duval County mover recognized in top lists for professional local and long-distance service.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+  },
+  'movebright-moving-storage': {
+    id: 'movebright-moving-storage',
+    name: 'MoveBright Moving and Storage',
+    rating: 4.8,
+    reviewCount: 380,
+    shortDescription:
+      'Top performer in Jacksonville reviews for efficient, customer-focused moves in Duval County.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+  },
+  'gate-parkway-movers': {
+    id: 'gate-parkway-movers',
+    name: 'Gate Parkway Movers',
+    rating: 4.8,
+    reviewCount: 245,
+    shortDescription:
+      'Local favorite in Jacksonville for personalized service and reasonable rates in Duval County.',
+    services: ['Local Moving'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+  },
+  'jaguar-moving-jacksonville': {
+    id: 'jaguar-moving-jacksonville',
+    name: 'Jaguar Moving',
+    rating: 4.9,
+    reviewCount: 1000,
+    shortDescription:
+      'Highly reviewed Jacksonville mover emphasizing stress-free, expert service across Duval County.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+    website: 'https://jaguarmoving.com/',
+  },
+  'on-time-moving-storage-jax': {
+    id: 'on-time-moving-storage-jax',
+    name: 'On Time Moving & Storage',
+    rating: 4.7,
+    reviewCount: 170,
+    shortDescription:
+      'Strong performer in local rankings for reliable service in Duval County.',
+    services: ['Local Moving', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+  },
+  'flex-moving-storage-jax': {
+    id: 'flex-moving-storage-jax',
+    name: 'Flex Moving & Storage',
+    rating: 4.5,
+    reviewCount: 195,
+    shortDescription:
+      'Competitive Jacksonville-area option with good feedback for local and long-distance moves across Duval County.',
+    services: ['Local Moving', 'Long Distance'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

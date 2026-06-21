@@ -82,6 +82,15 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'the-move-connection-lake-city',
     '2-college-brothers-moving-storage',
   ],
+  desoto: [
+    'gardiner-and-sons-moving',
+    'c-and-f-movers',
+  ],
+  dixie: [
+    'pro-touch-movers',
+    'a-move-ahead-movers',
+    'two-men-and-a-truck-gainesville',
+  ],
   'palm-beach': [
     'palm-beach-local-lines',
     'amerisafe-van-lines',
@@ -111,11 +120,16 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'pasco-local-movers',
   ],
   duval: [
-    'jax-local-moving',
-    'first-coast-movers',
-    'clay-county-moving',
-    'nassau-county-movers',
-    'colonial-van-lines',
+    'suddath-jacksonville',
+    'two-men-and-a-truck-jacksonville',
+    'helping-hands-movers-jax',
+    'stewart-moving-storage',
+    'movebright-moving-storage',
+    'baymeadows-moving-storage',
+    'gate-parkway-movers',
+    'jaguar-moving-jacksonville',
+    'on-time-moving-storage-jax',
+    'flex-moving-storage-jax',
   ],
   lee: [
     'gulf-coast-local',
