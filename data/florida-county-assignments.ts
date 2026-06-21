@@ -271,6 +271,21 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-gainesville',
     'gainesville-local-movers',
   ],
+  levy: [
+    'levy-local-moving',
+    'gainesville-local-movers',
+    'central-fl-moving',
+  ],
+  liberty: [
+    'motivated-movers-panama-city',
+    'panhandle-moving-group',
+    'tallahassee-capital-movers',
+  ],
+  madison: [
+    'suwannee-county-movers',
+    'tallahassee-capital-movers',
+    'panhandle-moving-group',
+  ],
 };
 
 function hashSlug(slug: string): number {

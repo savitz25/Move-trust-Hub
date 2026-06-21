@@ -535,6 +535,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Tallahassee and outlying Leon areas.',
     ],
   },
+  levy: {
+    marketNotes:
+      'Levy County is rural and coastal with Bronson as its seat and communities like Williston and Cedar Key. Moves focus on residential and agricultural properties with limited local infrastructure. Regional service from Gainesville or Ocala is common.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,600',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Cedar Key coastal and Bronson rural routes often rely on Gainesville or Ocala regional providers; confirm travel fees and access logistics.',
+    },
+    tips: [
+      'Coastal (Cedar Key) or rural properties may involve bridges, limited access, or flood considerations.',
+      'Agricultural lands often require equipment or outbuilding handling; provide detailed inventory.',
+      'Confirm explicit regional service coverage for Bronson and outlying areas.',
+      'Storage is limited; use Gainesville-area facilities if needed.',
+      'Verify credentials and obtain multiple estimates in this low-volume market.',
+    ],
+  },
+  liberty: {
+    marketNotes:
+      'Liberty County is one of Florida’s smallest and most rural counties with Bristol as its seat. Moves are primarily residential or agricultural. The market is very thin; service comes mainly from regional providers in Panama City, Tallahassee, or Quincy.',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,400',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Bristol and rural Liberty County routes often rely on Panama City or Tallahassee regional providers; confirm remote-location coverage and travel fees.',
+    },
+    tips: [
+      'Rural properties frequently feature long driveways or limited access; confirm equipment.',
+      'Verify explicit service to Bristol due to remote location.',
+      'Storage is scarce; coordinate with nearby larger towns.',
+      'Obtain multiple estimates and verify credentials.',
+      'Agricultural timing may affect scheduling.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison County is rural with Madison as its seat, featuring agricultural lands and residential properties. The moving market is limited; service is regional from Tallahassee, Live Oak, or Valdosta (GA).',
+    costs: {
+      studioRange: '$350–$700',
+      familyRange: '$1,100–$2,500',
+      avgHourly: '$90–$125/hr for a 2-person crew',
+      note: 'Madison and I-10 corridor routes often use Tallahassee or Live Oak regional providers; confirm cross-border logistics where applicable.',
+    },
+    tips: [
+      'Agricultural properties may involve outbuildings or equipment; detail inventory.',
+      'I-10 corridor allows regional access; confirm specific Madison service.',
+      'Storage is limited; use nearby facilities.',
+      'Obtain multiple estimates in this low-volume area.',
+      'Verify all credentials carefully.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
