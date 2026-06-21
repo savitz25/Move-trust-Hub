@@ -68,6 +68,20 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'elite-moving-hauling-crystal-river',
     'a-and-l-family-movers',
   ],
+  clay: [
+    '2-college-brothers-moving-storage',
+    '1st-coast-express-moving',
+    '904-movers',
+  ],
+  collier: [
+    'helping-hand-movers-naples',
+    'ray-the-mover-naples',
+    'two-men-and-a-truck-naples',
+  ],
+  columbia: [
+    'the-move-connection-lake-city',
+    '2-college-brothers-moving-storage',
+  ],
   'palm-beach': [
     'palm-beach-local-lines',
     'amerisafe-van-lines',
@@ -116,13 +130,6 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'key-largo-local',
     'miami-pro-movers',
     'international-van-lines',
-  ],
-  collier: [
-    'naples-premier-moving',
-    'collier-local-lines',
-    'gulf-coast-local',
-    'charlotte-harbor-moving',
-    'amerisafe-van-lines',
   ],
   polk: [
     'polk-county-moving',

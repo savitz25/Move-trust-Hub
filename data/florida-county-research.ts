@@ -127,6 +127,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify flood zone awareness and protective measures for belongings near waterways.',
     ],
   },
+  clay: {
+    marketNotes:
+      'Clay County is a growing suburban area near Jacksonville, including Orange Park, Middleburg, and Green Cove Springs. It features family-oriented residential neighborhoods, some military-related moves near NAS Jacksonville influence, and suburban logistics. Traffic on major corridors and new developments are common considerations.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,600–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Suburban Clay County moves near Orange Park and Green Cove Springs often share Jacksonville-area crews; confirm Clay-specific experience and travel fees.',
+    },
+    tips: [
+      'Suburban neighborhoods and new developments often have HOA rules for move timing, parking, and access; confirm early.',
+      'Proximity to Jacksonville can mean shared regional providers; verify specific Clay County experience and travel fees.',
+      'Military or PCS-related moves are relatively common; seek providers familiar with associated documentation.',
+      'Growing areas may have construction-related traffic or restrictions; plan routes accordingly.',
+      'Many homes are single-family with garages; discuss truck access and protective measures for driveways and sidewalks.',
+    ],
+  },
+  collier: {
+    marketNotes:
+      'Collier County is affluent with luxury homes, high-rise condos, and beach communities in Naples and Marco Island. It serves retirees, snowbirds, and high-end residential and commercial clients. Waterfront logistics, HOA rules, and seasonal demand are prominent.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Naples and Marco Island condo and gated-community moves often require elevator reservations, move windows, and white-glove handling for luxury items.',
+    },
+    tips: [
+      'High-rise condos and gated communities in Naples and Marco Island require elevator reservations, move windows, and insurance proof; provide details early.',
+      'Snowbird season (winter) drives high demand; book in advance for peak periods.',
+      'Waterfront or golf community properties may involve special access, stairs, or golf cart considerations.',
+      'Luxury items such as art and pianos are common; confirm white-glove or specialty services.',
+      'Hurricane preparedness influences storage and timing; inquire about climate-controlled options and contingencies.',
+    ],
+  },
+  columbia: {
+    marketNotes:
+      'Columbia County is a mix of rural and small-city Lake City with I-10 access, some military influence, and residential and agricultural properties. Moves are often local or regional, with emphasis on practical logistics in a North Florida setting.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,800',
+      avgHourly: '$90–$135/hr for a 2-person crew',
+      note: 'Lake City and rural Columbia County routes may involve longer driveways or I-10 corridor timing considerations.',
+    },
+    tips: [
+      'Rural or larger-lot properties may involve long driveways or farm access; confirm truck and equipment suitability.',
+      'I-10 corridor traffic can affect timing; select providers familiar with regional routes.',
+      'Limited local storage; coordinate with Jacksonville or Gainesville facilities if needed.',
+      'Military or government-related moves may occur; inquire about relevant experience.',
+      'Obtain multiple estimates in this moderate market for best value and availability.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

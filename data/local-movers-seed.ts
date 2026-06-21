@@ -1368,6 +1368,78 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Inverness',
   },
+
+  // Clay County (Grok-researched)
+  '904-movers': {
+    id: '904-movers',
+    name: '904 Movers',
+    rating: 4.6,
+    reviewCount: 240,
+    shortDescription:
+      'Trusted Northeast Florida mover serving Clay County communities like Green Cove Springs and Orange Park with local packing and secure storage options.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Jacksonville',
+    website: 'https://904movers.com/',
+  },
+
+  // Collier County (Grok-researched)
+  'helping-hand-movers-naples': {
+    id: 'helping-hand-movers-naples',
+    name: 'Helping Hand Movers Naples, LLC',
+    rating: 4.9,
+    reviewCount: 500,
+    shortDescription:
+      'Top-rated Collier County mover excelling in residential, condo, and high-end moves throughout Naples and Marco Island.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Condo', 'Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Naples',
+  },
+  'ray-the-mover-naples': {
+    id: 'ray-the-mover-naples',
+    name: 'Ray The Mover',
+    rating: 4.8,
+    reviewCount: 420,
+    shortDescription:
+      'Experienced Southwest Florida mover serving Collier County with full-service residential and commercial options, including Marco Island.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Naples',
+    website: 'https://www.raythemover.com/',
+  },
+  'two-men-and-a-truck-naples': {
+    id: 'two-men-and-a-truck-naples',
+    name: 'Two Men and a Truck Naples',
+    rating: 4.6,
+    reviewCount: 680,
+    shortDescription:
+      'Professional franchise team with extensive local experience serving Collier County condos, homes, and businesses in Naples and Marco Island.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Condo', 'Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Naples',
+    website: 'https://twomenandatruck.com/movers/fl/naples',
+  },
+
+  // Columbia County (Grok-researched)
+  'the-move-connection-lake-city': {
+    id: 'the-move-connection-lake-city',
+    name: 'The Move Connection',
+    rating: 5.0,
+    reviewCount: 175,
+    shortDescription:
+      'Local Lake City mover with 40+ years of expertise serving Columbia County for professional residential and commercial relocations.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Lake City',
+    website: 'https://www.themoveconnection.com/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
