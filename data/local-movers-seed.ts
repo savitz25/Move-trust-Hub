@@ -1928,6 +1928,95 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Miami',
     website: 'https://suddath.com/moving-company/miami/',
   },
+
+  // Okaloosa County (Grok-researched)
+  'two-men-and-a-truck-okaloosa': {
+    id: 'two-men-and-a-truck-okaloosa',
+    name: 'Two Men and a Truck Fort Walton Beach',
+    rating: 4.6,
+    reviewCount: 420,
+    shortDescription:
+      'Professional local franchise serving Okaloosa County with reliable military, coastal, and residential moves throughout Fort Walton Beach, Destin, and Crestview.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Military', 'Coastal', 'Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Fort Walton Beach',
+    website: 'https://twomenandatruck.com/movers/fl/fort-walton-beach',
+  },
+
+  // Orange County (Grok-researched)
+  'two-men-and-a-truck-orange': {
+    id: 'two-men-and-a-truck-orange',
+    name: 'Two Men and a Truck Orlando',
+    rating: 4.6,
+    reviewCount: 1050,
+    shortDescription:
+      'Established franchise with strong local teams for residential, high-rise, and commercial moves throughout Orange County and Orlando.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Office Moving'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Orlando',
+    website: 'https://twomenandatruck.com/movers/fl/orlando',
+  },
+  'suddath-orange': {
+    id: 'suddath-orange',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 610,
+    shortDescription:
+      'Award-winning provider with extensive experience in Orange County full-service residential and commercial relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Orlando',
+    website: 'https://suddath.com/moving-company/orlando/',
+  },
+  'college-hunks-orange': {
+    id: 'college-hunks-orange',
+    name: 'College Hunks Hauling Junk & Moving',
+    rating: 4.7,
+    reviewCount: 720,
+    shortDescription:
+      'Popular Orlando-area choice for efficient residential and student moves across Orange County.',
+    services: ['Local Moving', 'Labor Only', 'Junk Removal'],
+    specialties: ['Student Moves', 'Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Orlando',
+  },
+  'all-my-sons-orlando': {
+    id: 'all-my-sons-orlando',
+    name: 'All My Sons Moving & Storage Orlando',
+    rating: 4.5,
+    reviewCount: 680,
+    shortDescription:
+      'Established full-service provider offering residential and commercial moves throughout Orange County with decades of Orlando-area experience.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Orlando',
+    website: 'https://www.allmysons.com/florida/orlando/',
+  },
+  'gentle-giant-orange': {
+    id: 'gentle-giant-orange',
+    name: 'Gentle Giant Moving Company',
+    profileSlug: 'gentle-giant-moving',
+    rating: 4.8,
+    reviewCount: 390,
+    shortDescription:
+      'Premium regional mover serving Orange County with white-glove residential and commercial relocations in the Orlando area.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial', 'Piano'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Orlando',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

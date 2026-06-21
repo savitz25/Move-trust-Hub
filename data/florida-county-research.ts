@@ -688,6 +688,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Seasonal tourism affects timing.',
     ],
   },
+  okaloosa: {
+    marketNotes:
+      'Okaloosa County features military (Eglin AFB), beach communities (Destin, Fort Walton Beach), and growing suburbs. Moves often involve military PCS, coastal properties, and retiree relocations with seasonal tourism.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Destin and Fort Walton Beach coastal moves and Eglin AFB PCS relocations often require military documentation expertise and sand-protection logistics.',
+    },
+    tips: [
+      'Military PCS moves are common; prioritize providers experienced with DoD processes.',
+      'Beach and Destin-area properties require sand protection and bridge access planning.',
+      'Eglin AFB and base housing have specific regulations.',
+      'Tourism peaks affect summer availability; book early.',
+      'Verify coverage for Crestview, Fort Walton, and Destin.',
+    ],
+  },
+  okeechobee: {
+    marketNotes:
+      'Okeechobee County is rural with agriculture, cattle ranching, and Lake Okeechobee influence. Moves are primarily residential or farm-related with limited local infrastructure. Regional service from Fort Pierce or Sebring is common.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,700',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Lake Okeechobee ranch and rural properties often require specialized equipment handling and travel fees from Sebring or Treasure Coast regional providers.',
+    },
+    tips: [
+      'Lake or ranch properties may involve special access, equipment, or flood considerations.',
+      'Rural roads require confirmation of truck suitability.',
+      'Storage is limited; use regional facilities.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify credentials carefully.',
+    ],
+  },
+  orange: {
+    marketNotes:
+      'Orange County is a major tourism, theme park, and suburban hub centered on Orlando with diverse residential, international, and commercial moves. High-rises, suburbs, and airport and port activity are prominent.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Orlando International Drive, Lake Nona, and Winter Park suburban moves often require HOA coordination and crews experienced with I-4 corridor traffic.',
+    },
+    tips: [
+      'Tourist and International Drive areas have heavy seasonal demand and traffic.',
+      'Theme park employee and relocation moves are common.',
+      'Suburban neighborhoods (e.g., Winter Park, Lake Nona) have HOA rules.',
+      'I-4 and airport traffic impacts scheduling.',
+      'Verify multilingual or international moving capabilities where needed.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',
