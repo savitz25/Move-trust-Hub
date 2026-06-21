@@ -138,11 +138,14 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-melbourne',
   ],
   pinellas: [
-    'st-pete-local-lines',
+    'two-men-and-a-truck-pinellas',
+    'suddath-pinellas',
+    'college-hunks-pinellas',
     'clearwater-bay-movers',
-    'tampa-bay-movers',
-    'sarasota-coast-moving',
-    'pasco-local-movers',
+    'st-pete-local-lines',
+    'all-my-sons-pinellas',
+    'gentle-giant-moving-tampa',
+    'movebright-moving-storage-tampa',
   ],
   duval: [
     'suddath-jacksonville',
@@ -180,10 +183,10 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
   ],
   polk: [
     'polk-county-moving',
-    'central-fl-moving',
-    'kissimmee-relocation',
-    'orlando-city-movers',
     'lakeland-local-movers',
+    'central-fl-moving',
+    'two-men-and-a-truck-orange',
+    'orlando-city-movers',
   ],
   sarasota: [
     'sarasota-coast-moving',
@@ -343,6 +346,11 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'tampa-bay-movers',
     'two-men-and-a-truck-hillsborough',
     'clearwater-bay-movers',
+  ],
+  putnam: [
+    'putnam-county-movers',
+    'two-men-and-a-truck-jacksonville',
+    'gainesville-local-movers',
   ],
 };
 

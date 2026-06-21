@@ -790,6 +790,57 @@ export const floridaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Wesley Chapel and New Port Richey.',
     ],
   },
+  pinellas: {
+    marketNotes:
+      'Pinellas County is densely populated with beach communities (St. Pete Beach, Clearwater), urban St. Petersburg, and retirees. Moves frequently involve condos, waterfront properties, and seasonal snowbirds with bridge and coastal logistics.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Clearwater and St. Pete Beach condo moves often require causeway planning, elevator reservations, and snowbird-season scheduling.',
+    },
+    tips: [
+      'Beach and barrier island properties require sand protection, elevators, and bridge access planning.',
+      'Snowbird season increases winter demand; book early.',
+      'Many condos and HOAs have strict move-in rules and parking restrictions.',
+      'Traffic on I-275, US-19, and causeways can delay moves.',
+      'Confirm coastal and high-rise experience.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County is growing with suburban (Lakeland, Winter Haven) and rural and agricultural areas. Moves often involve family residential, retiree communities, and logistics near the I-4 corridor.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,300',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Lakeland and Winter Haven suburban moves along the I-4 corridor often share Tampa or Orlando regional crews; confirm Polk-specific coverage.',
+    },
+    tips: [
+      'Suburban developments have HOA rules for move timing.',
+      'Agricultural or lake properties may require special access.',
+      'I-4 corridor traffic can impact scheduling.',
+      'Growing retiree population; inquire about senior services.',
+      'Verify coverage for Lakeland, Winter Haven, and Bartow.',
+    ],
+  },
+  putnam: {
+    marketNotes:
+      'Putnam County is rural with Palatka as its seat, featuring the St. Johns River, agriculture, and residential properties. The moving market is thin; service is regional from Jacksonville or Gainesville.',
+    costs: {
+      studioRange: '$350–$750',
+      familyRange: '$1,200–$2,600',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Palatka and rural Putnam County routes often rely on Jacksonville or Gainesville regional providers; confirm travel fees and river-area access.',
+    },
+    tips: [
+      'River or rural properties may involve water access or long driveways.',
+      'Confirm explicit regional service to Palatka.',
+      'Storage is limited; use nearby facilities.',
+      'Obtain multiple estimates.',
+      'Verify credentials.',
+    ],
+  },
   citrus: {
     marketNotes:
       'Citrus County offers a mix of coastal (Crystal River), rural, and retiree communities with nature and tourism appeal. Moves often involve single-family homes, waterfront properties, and downsizing. Seasonal and eco-sensitive logistics are common along the Nature Coast.',

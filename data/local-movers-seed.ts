@@ -2115,6 +2115,64 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'West Palm Beach',
   },
+
+  // Pinellas County (Grok-researched)
+  'two-men-and-a-truck-pinellas': {
+    id: 'two-men-and-a-truck-pinellas',
+    name: 'Two Men and a Truck Clearwater',
+    rating: 4.6,
+    reviewCount: 890,
+    shortDescription:
+      'Established local franchise excelling in Pinellas County condo, beach, and residential moves throughout Clearwater and St. Petersburg.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['High-Rise', 'Condo', 'Coastal'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Clearwater',
+    website: 'https://twomenandatruck.com/movers/fl/clearwater',
+  },
+  'suddath-pinellas': {
+    id: 'suddath-pinellas',
+    name: 'Suddath Moving & Storage',
+    rating: 4.7,
+    reviewCount: 560,
+    shortDescription:
+      'Award-winning provider with strong local expertise for Pinellas coastal and residential relocations in Clearwater and St. Petersburg.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Coastal', 'Residential'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Clearwater',
+    website: 'https://suddath.com/moving-company/clearwater/',
+  },
+  'college-hunks-pinellas': {
+    id: 'college-hunks-pinellas',
+    name: 'College Hunks Hauling Junk & Moving',
+    rating: 4.7,
+    reviewCount: 540,
+    shortDescription:
+      'Efficient mover popular for residential, condo, and student moves across Pinellas County.',
+    services: ['Local Moving', 'Labor Only', 'Junk Removal'],
+    specialties: ['Residential', 'Condo'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Clearwater',
+  },
+  'all-my-sons-pinellas': {
+    id: 'all-my-sons-pinellas',
+    name: 'All My Sons Moving & Storage Pinellas',
+    rating: 4.5,
+    reviewCount: 510,
+    shortDescription:
+      'Experienced full-service provider for Pinellas County residential and coastal relocations in Clearwater and St. Petersburg.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Coastal'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Clearwater',
+    website: 'https://www.allmysons.com/florida/clearwater/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
