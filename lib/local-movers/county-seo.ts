@@ -1,4 +1,5 @@
 import { getFloridaCountyResearch } from '@/data/florida-county-research';
+import { getFloridaCountyTestimonials } from '@/data/florida-county-testimonials';
 import { testimonials } from '@/lib/trust/trust-data';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -215,24 +216,40 @@ export type CountyTestimonial = {
   name: string;
   location: string;
   rating: number;
+  moveType?: string;
 };
 
+export function buildCountyTestimonials(
+  county: LocalCounty,
+  _stateName: string
+): CountyTestimonial[] {
+  if (county.stateSlug === 'florida') {
+    const curated = getFloridaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+
+  const key = `${county.stateSlug}-${county.slug}`;
+  const base = pickByHash(testimonials, key);
+  const location = county.seat
+    ? `${county.seat}, ${county.stateCode}`
+    : `${county.name} County, ${county.stateCode}`;
+
+  return [
+    {
+      quote: base.quote,
+      name: base.name,
+      location,
+      rating: base.rating,
+    },
+  ];
+}
+
+/** @deprecated Use buildCountyTestimonials */
 export function buildCountyTestimonial(
   county: LocalCounty,
   stateName: string
 ): CountyTestimonial {
-  const key = `${county.stateSlug}-${county.slug}`;
-  const base = pickByHash(testimonials, key);
-  const location = county.seat
-    ? `Moved within ${county.seat}, ${stateName}`
-    : `Moved within ${county.name} County, ${stateName}`;
-
-  return {
-    quote: base.quote,
-    name: base.name,
-    location,
-    rating: base.rating,
-  };
+  return buildCountyTestimonials(county, stateName)[0];
 }
 
 export const STATE_CODE_TO_SLUG: Record<string, string> = {

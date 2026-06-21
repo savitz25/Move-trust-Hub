@@ -91,26 +91,72 @@ export function CountyTipsSection({
 }
 
 export function CountyTestimonialSection({
-  testimonial,
+  testimonials,
+  countyLabel,
 }: {
-  testimonial: CountyTestimonial;
+  testimonials: CountyTestimonial[];
+  countyLabel: string;
 }) {
+  if (!testimonials.length) return null;
+
   return (
-    <section className="mb-10 rounded-2xl border border-primary/15 bg-primary/5 p-6">
-      <h2 className="text-lg font-semibold tracking-tight mb-3 flex items-center gap-2">
+    <section
+      className="mb-10 rounded-2xl border border-primary/15 bg-primary/5 p-6"
+      aria-labelledby="county-testimonials-heading"
+    >
+      <h2
+        id="county-testimonials-heading"
+        className="text-lg font-semibold tracking-tight mb-2 flex items-center gap-2"
+      >
         <MessageSquareQuote className="h-5 w-5 text-primary" aria-hidden="true" />
-        What movers say about planning ahead
+        Local move experiences in {countyLabel}
       </h2>
-      <blockquote className="text-sm text-muted-foreground leading-relaxed italic">
-        &ldquo;{testimonial.quote}&rdquo;
-      </blockquote>
-      <footer className="mt-3 text-xs text-muted-foreground">
-        <span className="font-semibold text-foreground">{testimonial.name}</span>
-        {' · '}
-        {testimonial.location}
-        {' · '}
-        {testimonial.rating}★
-      </footer>
+      <p className="text-xs text-muted-foreground mb-4">
+        Representative customer feedback from recent moves in this county. Always
+        verify current reviews and licensing before booking.
+      </p>
+      <div className="space-y-5">
+        {testimonials.map((testimonial) => (
+          <figure
+            key={`${testimonial.name}-${testimonial.location}`}
+            className="rounded-xl border bg-background/60 p-4"
+            itemScope
+            itemType="https://schema.org/Review"
+          >
+            <blockquote
+              className="text-sm text-muted-foreground leading-relaxed italic"
+              itemProp="reviewBody"
+            >
+              &ldquo;{testimonial.quote}&rdquo;
+            </blockquote>
+            <figcaption className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+              <span className="font-semibold text-foreground" itemProp="author">
+                {testimonial.name}
+              </span>
+              <span aria-hidden="true">·</span>
+              <span itemProp="name">{testimonial.location}</span>
+              {testimonial.moveType && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span className="rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide">
+                    {testimonial.moveType}
+                  </span>
+                </>
+              )}
+              <span
+                className="ml-auto font-medium text-foreground"
+                itemProp="reviewRating"
+                itemScope
+                itemType="https://schema.org/Rating"
+              >
+                <meta itemProp="ratingValue" content={String(testimonial.rating)} />
+                <meta itemProp="bestRating" content="5" />
+                {testimonial.rating}★
+              </span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
     </section>
   );
 }

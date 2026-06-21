@@ -73,6 +73,7 @@ export {
   buildCountyCostGuide,
   buildCountyTips,
   buildCountyTestimonial,
+  buildCountyTestimonials,
   buildCountyMarketNotes,
   getSeoYear,
   getStateSlugFromCode,

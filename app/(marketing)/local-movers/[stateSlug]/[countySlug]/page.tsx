@@ -22,7 +22,7 @@ import {
   buildCountyH1,
   buildCountyMarketNotes,
   buildCountyPageMetadata,
-  buildCountyTestimonial,
+  buildCountyTestimonials,
   buildCountyTips,
   buildCountyTitle,
   getAllCountyParams,
@@ -71,7 +71,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const faqItems = buildCountyFaqItems(county, state.name, movers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
-  const testimonial = buildCountyTestimonial(county, state.name);
+  const testimonials = buildCountyTestimonials(county, state.name);
   const marketNotes = buildCountyMarketNotes(county);
   const nearbyCounties =
     stateSlug === 'florida' ? getFloridaNearbyCounties(countySlug) : [];
@@ -92,6 +92,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         county={county}
         stateName={state.name}
         faqItems={faqItems}
+        testimonials={testimonials}
       />
 
       <main className="container mx-auto px-4 py-10 max-w-3xl">
@@ -174,7 +175,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
 
         <CountyTipsSection countyLabel={countyLabel} tips={tips} />
 
-        <CountyTestimonialSection testimonial={testimonial} />
+        <CountyTestimonialSection
+          testimonials={testimonials}
+          countyLabel={countyLabel}
+        />
 
         <CountyFaqSection countyLabel={countyLabel} faqItems={faqItems} />
 

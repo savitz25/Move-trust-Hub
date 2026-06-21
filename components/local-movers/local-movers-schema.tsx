@@ -1,6 +1,6 @@
 import { JsonLd } from '@/lib/seo/json-ld';
 import { FLORIDA_COUNTY_CONTENT_UPDATED } from '@/components/local-movers/county-editorial-trust';
-import type { CountyFaqItem } from '@/lib/local-movers/county-seo';
+import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
 const SITE_URL = 'https://www.movetrusthub.com';
@@ -42,6 +42,7 @@ export function LocalMoversSchema({
   county,
   stateName,
   faqItems,
+  testimonials,
 }: {
   title: string;
   description: string;
@@ -51,6 +52,7 @@ export function LocalMoversSchema({
   county?: LocalCounty;
   stateName?: string;
   faqItems?: CountyFaqItem[];
+  testimonials?: CountyTestimonial[];
 }) {
   const url = `${SITE_URL}${path}`;
   const placeId = `${url}#place`;
@@ -222,6 +224,32 @@ export function LocalMoversSchema({
 
   if (faqItems?.length) {
     graph.push(buildFaqSchema(faqItems, `${url}#faq`));
+  }
+
+  if (testimonials?.length) {
+    graph.push(
+      ...testimonials.map((testimonial, index) => ({
+        '@type': 'Review',
+        '@id': `${url}#review-${index + 1}`,
+        reviewBody: testimonial.quote,
+        author: {
+          '@type': 'Person',
+          name: testimonial.name,
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: String(testimonial.rating),
+          bestRating: '5',
+          worstRating: '1',
+        },
+        itemReviewed: county
+          ? { '@id': placeId }
+          : { '@type': 'WebPage', '@id': url },
+        ...(testimonial.moveType
+          ? { name: `${testimonial.moveType} move — ${testimonial.location}` }
+          : {}),
+      }))
+    );
   }
 
   return (
