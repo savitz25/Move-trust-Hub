@@ -527,6 +527,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  warren: [
+    {
+      quote:
+        'Piece of Cake handled our Belvidere farmhouse move with flat-fee pricing that stayed predictable. The crew navigated a long rural driveway and extra barn equipment without stress.',
+      name: 'Raymond K.',
+      location: 'Belvidere, NJ',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Phillipsburg family relocation — professional, careful, and on time near the Delaware River with limited local parking.',
+      name: 'Donna S.',
+      location: 'Phillipsburg, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price for our Warren County move and stuck to it — no funny business. Courteous, fast crew despite the low-volume rural market.',
+      name: 'Paul M.',
+      location: 'Hackettstown, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

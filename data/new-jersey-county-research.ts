@@ -348,6 +348,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Elizabeth, Westfield, and Union Township.',
     ],
   },
+  warren: {
+    marketNotes:
+      'Warren County is rural and scenic with small towns (Phillipsburg, Belvidere) and Delaware River frontage. Moves often involve residential, farm, and commuter properties with limited local infrastructure.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Belvidere and Phillipsburg moves may reflect rural driveways, riverfront access, and travel from regional North Jersey crews.',
+    },
+    tips: [
+      'Rural properties may involve long driveways or specialized access.',
+      'Confirm explicit regional service to Belvidere and Phillipsburg.',
+      'Storage is limited locally; use nearby facilities.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify credentials for farm or riverfront properties.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

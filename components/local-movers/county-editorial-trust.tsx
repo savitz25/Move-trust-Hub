@@ -3,7 +3,7 @@ import { BadgeCheck, Calendar, Shield, User } from 'lucide-react';
 import { getSeoYear } from '@/lib/local-movers/index';
 
 export const FLORIDA_COUNTY_CONTENT_UPDATED = '2026-06-21';
-export const NEW_JERSEY_COUNTY_CONTENT_UPDATED = '2026-07-12';
+export const NEW_JERSEY_COUNTY_CONTENT_UPDATED = '2026-07-13';
 
 type Props = {
   countyLabel: string;
