@@ -192,6 +192,15 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'clark-moving-storage-albany',
     'busy-bee-movers-albany',
   ],
+  kings: [
+    'piece-of-cake-moving-kings',
+    'booth-movers-kings',
+    'white-glove-moving-kings',
+    'zip-to-zip-moving-kings',
+    'optimum-moving-kings',
+    'all-my-sons-kings',
+    'gentle-giant-kings',
+  ],
 };
 
 function hashSlug(slug: string): number {

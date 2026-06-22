@@ -605,6 +605,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  kings: [
+    {
+      quote:
+        'Piece of Cake navigated our Park Slope brownstone move flawlessly — professional crew, transparent pricing, and careful handling on a tight stair carry.',
+      name: 'Rachel M.',
+      location: 'Park Slope, NY',
+      rating: 5,
+      moveType: 'Brownstone',
+    },
+    {
+      quote:
+        'Booth Movers handled our Williamsburg high-rise with outstanding care — building COI, elevator reservation, and freight timing all coordinated perfectly.',
+      name: 'David L.',
+      location: 'Williamsburg, NY',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        'Gentle Giant exceeded expectations on our Bay Ridge apartment move — careful in tight urban spaces and efficient from quote through completion.',
+      name: 'Priya S.',
+      location: 'Bay Ridge, NY',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

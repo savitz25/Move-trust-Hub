@@ -399,6 +399,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value items.',
     ],
   },
+  kings: {
+    marketNotes:
+      'Kings County (Brooklyn) is one of the most densely populated urban areas in the United States with diverse neighborhoods, brownstones, high-rises, and waterfront communities. Moves frequently involve apartments, multi-family buildings, and complex logistics with strict building regulations.',
+    costs: {
+      studioRange: '$600–$1,400',
+      familyRange: '$2,500–$6,000+',
+      avgHourly: '$140–$210/hr for a 2-person crew',
+      note: 'Williamsburg, Park Slope, and Bay Ridge moves often reflect brownstone stair carries, co-op move-in fees, and BQE / bridge traffic windows.',
+    },
+    tips: [
+      'Most buildings require elevator reservations, move-in fees, and certificates of insurance.',
+      'Narrow streets and parking in brownstone neighborhoods create significant challenges.',
+      'Heavy traffic on major bridges and expressways; plan for peak avoidance.',
+      'Diverse neighborhoods benefit from multilingual crews.',
+      'Verify coverage for specific neighborhoods (Williamsburg, Park Slope, Bay Ridge, etc.).',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(
