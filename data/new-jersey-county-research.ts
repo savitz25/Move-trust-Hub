@@ -280,6 +280,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Paterson, Wayne, and Clifton.',
     ],
   },
+  salem: {
+    marketNotes:
+      'Salem County is rural/agricultural with small towns (Salem, Pennsville) and riverfront areas. Moves are primarily residential and farm-related with limited local infrastructure. Regional South Jersey support is common.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Salem and Pennsville moves may reflect rural driveways, farm equipment handling, and travel from regional South Jersey crews.',
+    },
+    tips: [
+      'Rural or agricultural properties may involve long driveways or equipment handling.',
+      'Confirm explicit regional service to Salem and Pennsville.',
+      'Storage is limited locally; use South Jersey facilities.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify credentials and insurance for farm or riverfront properties.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

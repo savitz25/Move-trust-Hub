@@ -423,6 +423,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  salem: [
+    {
+      quote:
+        'Piece of Cake handled our Salem farmhouse move with flat-fee pricing that stayed predictable. The crew navigated a long gravel driveway and extra barn equipment without stress.',
+      name: 'Howard B.',
+      location: 'Salem, NJ',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'SeaCure drove out to Pennsville and finished ahead of schedule — careful, polite crew that worked quickly through our riverfront property relocation.',
+      name: 'Carol J.',
+      location: 'Pennsville, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our family move in rural Salem County — professional, on time, and careful with both house furniture and workshop tools.',
+      name: 'Edward N.',
+      location: 'Woodstown, NJ',
+      rating: 5,
+      moveType: 'Rural',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
