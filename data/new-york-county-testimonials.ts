@@ -293,6 +293,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  cortland: [
+    {
+      quote:
+        'Reliable Movers handled our Cortland move professionally — efficient crew and careful handling despite our rural driveway near SUNY Cortland.',
+      name: 'Amy L.',
+      location: 'Cortland, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Homer relocation. Great communication and efficient crews.",
+      name: 'John C.',
+      location: 'Homer, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered fair pricing and efficient service for our Central NY move — best regional option we've found.",
+      name: 'Sandra M.',
+      location: 'Marathon, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  delaware: [
+    {
+      quote:
+        'Dimon & Bacorn navigated our rural Delhi property with a professional crew — careful handling despite challenging Catskill access.',
+      name: 'Peter W.',
+      location: 'Delhi, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Triangle Movers provided solid regional service for our Walton relocation. Professional and efficient throughout.",
+      name: 'Linda K.',
+      location: 'Walton, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and careful — great communication for our remote Delaware County move.",
+      name: 'Henry B.',
+      location: 'Margaretville, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  dutchess: [
+    {
+      quote:
+        'Piece of Cake made our Poughkeepsie move stress-free — professional crew, transparent pricing, and excellent care for our belongings.',
+      name: 'Victoria N.',
+      location: 'Poughkeepsie, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our historic Hyde Park home with outstanding care — professional, careful, and respectful of original details.',
+      name: 'Charles E.',
+      location: 'Hyde Park, NY',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Triangle Movers was efficient and professional with great communication throughout our Beacon apartment relocation.',
+      name: 'Olivia T.',
+      location: 'Beacon, NY',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

@@ -195,6 +195,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials.',
     ],
   },
+  cortland: {
+    marketNotes:
+      'Cortland County is rural with Cortland as its hub and university influence (SUNY Cortland). Moves are primarily residential with regional support from Syracuse or Binghamton.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Cortland and rural moves often reflect SUNY Cortland semester timing and travel from Syracuse or Binghamton crews.',
+    },
+    tips: [
+      'University calendar affects seasonal demand.',
+      'Rural properties may have access challenges.',
+      'Verify explicit regional service to Cortland.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  delaware: {
+    marketNotes:
+      'Delaware County is very rural with small towns (Delhi, Walton). Moves are residential with very limited local options. Regional service from Oneonta, Binghamton, or Albany is primary.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$90–$140/hr for a 2-person crew',
+      note: 'Delhi and Walton moves often reflect Catskill access roads, scarce local storage, and travel from Oneonta or Binghamton crews.',
+    },
+    tips: [
+      'Rural and Catskill properties often have challenging access.',
+      'Confirm explicit service to Delhi and Walton.',
+      'Storage is scarce; use regional facilities.',
+      'Obtain multiple estimates.',
+      'Verify credentials.',
+    ],
+  },
+  dutchess: {
+    marketNotes:
+      'Dutchess County includes Poughkeepsie, Beacon, and Hudson Valley estates. Moves often involve residential, historic homes, and IBM/Vassar-related relocations.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Poughkeepsie, Beacon, and Hyde Park moves often reflect historic-home handling, Taconic Parkway traffic, and Hudson River logistics.',
+    },
+    tips: [
+      'Historic homes require preservation-sensitive handling.',
+      'Hudson River properties need specialized logistics.',
+      'Traffic on Taconic State Parkway and I-84.',
+      'Verify coverage for Poughkeepsie, Beacon, and Hyde Park.',
+      'Confirm insurance for high-value properties.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

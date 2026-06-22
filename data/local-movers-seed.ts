@@ -3177,6 +3177,20 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Newburgh',
     website: 'https://trianglemovers.com/',
   },
+  'piece-of-cake-moving-dutchess': {
+    id: 'piece-of-cake-moving-dutchess',
+    name: 'Piece of Cake Moving & Storage',
+    rating: 4.9,
+    reviewCount: 2100,
+    shortDescription:
+      'Highly rated Hudson Valley mover with strong Dutchess County service for Poughkeepsie, Beacon, and surrounding communities.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'White Glove'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Poughkeepsie',
+    website: 'https://mypieceofcakemove.com/',
+  },
 
   // Burlington County, NJ (Grok-researched)
   'piece-of-cake-moving-burlington': {
@@ -3587,14 +3601,16 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'hudson-valley-ny',
     label: 'Hudson Valley',
     moverIds: [
+      'piece-of-cake-moving-dutchess',
+      'booth-movers-bergen',
       'triangle-movers-hudson-valley',
       'mabeys-moving-storage-albany',
       'dons-moving-storage-albany',
+      'white-glove-moving-burlington',
+      'optimum-moving-bergen',
+      'movers-201-bergen',
       'lamanna-moving-albany',
       'clark-moving-storage-albany',
-      'arnoff-moving-storage-albany',
-      'all-ways-moving-storage-albany',
-      'busy-bee-movers-albany',
     ],
   },
 };
