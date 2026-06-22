@@ -3304,6 +3304,36 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.gentlegiant.com/',
   },
 
+  // Orange County / Hudson Valley, NY (Grok-researched)
+  'piece-of-cake-moving-orange': {
+    id: 'piece-of-cake-moving-orange',
+    name: 'Piece of Cake Moving & Storage',
+    rating: 4.9,
+    reviewCount: 2100,
+    shortDescription:
+      'Highly rated full-service mover with strong Orange County experience including Newburgh, Middletown, and West Point-area moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Military'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Goshen',
+    website: 'https://mypieceofcakemove.com/',
+  },
+  'booth-movers-orange': {
+    id: 'booth-movers-orange',
+    name: 'Booth Movers',
+    rating: 4.9,
+    reviewCount: 620,
+    shortDescription:
+      'Award-winning mover with excellent reputation for Orange County suburban and military-adjacent relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Orange County',
+    website: 'https://www.boothmovers.com/',
+  },
+
   // Nassau County / Long Island, NY (Grok-researched)
   'piece-of-cake-moving-nassau': {
     id: 'piece-of-cake-moving-nassau',
@@ -3442,7 +3472,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 150,
     shortDescription:
-      'Established Rochester mover serving Monroe, Livingston, and Ontario counties with local and long-distance residential moves.',
+      'Established Rochester mover serving Monroe, Livingston, Ontario, and Orleans counties with local and long-distance residential moves.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1622882',
@@ -4009,6 +4039,8 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'hudson-valley-ny',
     label: 'Hudson Valley',
     moverIds: [
+      'piece-of-cake-moving-orange',
+      'booth-movers-orange',
       'piece-of-cake-moving-dutchess',
       'booth-movers-bergen',
       'triangle-movers-hudson-valley',

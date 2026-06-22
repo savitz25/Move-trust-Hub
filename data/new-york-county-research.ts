@@ -603,6 +603,74 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for historic homes.',
     ],
   },
+  orange: {
+    marketNotes:
+      'Orange County is a growing suburban/rural county with Newburgh, Middletown, and West Point. Moves often involve military (West Point), family residential, and commuter properties.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Newburgh, Middletown, and New Windsor moves often reflect West Point PCS logistics, HOA rules, and I-87 / Route 17 traffic.',
+    },
+    tips: [
+      'Military (West Point) moves require PCS experience.',
+      'Suburban HOAs have strict rules.',
+      'I-87 and Route 17 traffic is heavy.',
+      'Verify coverage for Newburgh, Middletown, and New Windsor.',
+      'Confirm insurance for high-value homes.',
+    ],
+  },
+  orleans: {
+    marketNotes:
+      'Orleans County is rural/agricultural with Albion and Medina. Moves are primarily residential with regional support from Rochester or Buffalo.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Albion and Medina moves often reflect agricultural-property access and travel from Rochester or Buffalo crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Albion.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  oswego: {
+    marketNotes:
+      'Oswego County is rural with Oswego (port city) and Lake Ontario. Moves often involve residential and lakeside properties with regional support from Syracuse.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Oswego and Fulton moves often reflect Lake Ontario access, port-area logistics, and harsh winter scheduling.',
+    },
+    tips: [
+      'Lake Ontario properties require water-adjacent planning.',
+      'Winter weather significantly affects scheduling.',
+      'Verify coverage for Oswego and Fulton.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  otsego: {
+    marketNotes:
+      'Otsego County is rural with Cooperstown (Baseball Hall of Fame) and Oneonta influence. Moves often involve residential, tourist, and historic properties with regional support from Albany or Syracuse.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Cooperstown and Oneonta moves often reflect historic-home handling, tourist-season timing, and rural access roads.',
+    },
+    tips: [
+      'Historic Cooperstown properties require preservation-sensitive handling.',
+      'Rural areas have access challenges.',
+      'Verify regional service to Cooperstown.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

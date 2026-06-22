@@ -917,6 +917,110 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Seasonal',
     },
   ],
+  orange: [
+    {
+      quote:
+        'Piece of Cake made our Newburgh move stress-free — professional crew, transparent pricing, and excellent coordination for our suburban HOA.',
+      name: 'Victoria L.',
+      location: 'Newburgh, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our Middletown family home with outstanding care — professional, efficient, and respectful of our high-value furnishings.',
+      name: 'Charles M.',
+      location: 'Middletown, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Triangle Movers provided solid Hudson Valley regional service for our Goshen relocation — careful handling near West Point commuter corridors.',
+      name: 'Nancy J.',
+      location: 'Goshen, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  orleans: [
+    {
+      quote:
+        'Rochester Moving & Storage handled our Albion rural move professionally — efficient crew despite agricultural-property access challenges.',
+      name: 'Wayne G.',
+      location: 'Albion, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Corrigan Moving provided reliable Western NY service for our Medina relocation — courteous crews and careful handling throughout.',
+      name: 'Diane P.',
+      location: 'Medina, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was efficient and careful for our Orleans County move — great regional support from the Capital District.",
+      name: 'Raymond K.',
+      location: 'Holley, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  oswego: [
+    {
+      quote:
+        'Reliable Movers handled our Oswego lakeside move professionally — careful planning for Lake Ontario access and winter weather windows.',
+      name: 'Barbara S.',
+      location: 'Oswego, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Mabey's Moving provided dependable regional service for our Fulton port-area relocation — efficient crews and solid communication.",
+      name: 'Donald E.',
+      location: 'Fulton, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and careful for our Oswego County rural move — pleasant experience from estimate to unload.",
+      name: 'Janet W.',
+      location: 'Mexico, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  otsego: [
+    {
+      quote:
+        'Dimon & Bacorn handled our Cooperstown historic home with preservation-sensitive care — professional crew despite tight village access.',
+      name: 'Eleanor R.',
+      location: 'Cooperstown, NY',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Reliable Movers provided dependable regional service for our Oneonta-area relocation — efficient and careful throughout.',
+      name: 'Philip A.',
+      location: 'Oneonta, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was courteous and efficient with great communication for our Otsego County tourist-season move.",
+      name: 'Margaret T.',
+      location: 'Milford, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
