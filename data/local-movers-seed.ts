@@ -2969,6 +2969,36 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Albany',
   },
 
+  // Western NY / Southern Tier (Grok-researched — serves Allegany County)
+  'ck-local-movers-olean': {
+    id: 'ck-local-movers-olean',
+    name: 'C K Local Movers',
+    rating: 4.7,
+    reviewCount: 85,
+    shortDescription:
+      'Olean-based mover serving rural Allegany County with careful handling for residential moves and long-driveway access.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    usdotNumber: '1646232',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Olean',
+  },
+  'dans-moving-storage-wny': {
+    id: 'dans-moving-storage-wny',
+    name: "Dan's Moving & Storage",
+    rating: 4.8,
+    reviewCount: 120,
+    shortDescription:
+      'Established Western New York mover serving Olean, Chautauqua, and rural counties including Allegany with local, long-distance, and storage options.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Dunkirk',
+    website: 'https://www.dansmovingandstorage.com/',
+  },
+
   // Burlington County, NJ (Grok-researched)
   'piece-of-cake-moving-burlington': {
     id: 'piece-of-cake-moving-burlington',
@@ -3286,6 +3316,19 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'clark-moving-storage-albany',
       'arnoff-moving-storage-albany',
       'all-ways-moving-storage-albany',
+      'busy-bee-movers-albany',
+    ],
+  },
+  'buffalo-niagara-ny': {
+    id: 'buffalo-niagara-ny',
+    label: 'Western New York / Buffalo–Niagara',
+    moverIds: [
+      'ck-local-movers-olean',
+      'dans-moving-storage-wny',
+      'mabeys-moving-storage-albany',
+      'dons-moving-storage-albany',
+      'clark-moving-storage-albany',
+      'arnoff-moving-storage-albany',
       'busy-bee-movers-albany',
     ],
   },

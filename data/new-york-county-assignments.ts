@@ -13,6 +13,15 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'all-ways-moving-storage-albany',
     'busy-bee-movers-albany',
   ],
+  allegany: [
+    'ck-local-movers-olean',
+    'mabeys-moving-storage-albany',
+    'dans-moving-storage-wny',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
 };
 
 function hashSlug(slug: string): number {

@@ -25,6 +25,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Albany, Guilderland, and Colonie.',
     ],
   },
+  allegany: {
+    marketNotes:
+      'Allegany County is one of New York’s most rural counties with small towns and agricultural properties. The moving market is thin; most service is regional from nearby areas like Olean, Hornell, or larger hubs such as Rochester or Buffalo.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Belmont and outlying rural moves often reflect long driveways, travel from Olean or Dunkirk crews, and limited local storage options.',
+    },
+    tips: [
+      'Rural properties often have long or unpaved driveways; confirm truck and equipment needs.',
+      'Verify explicit regional service coverage for Belmont and outlying areas.',
+      'Storage is limited locally; coordinate with providers in larger nearby towns.',
+      'Obtain multiple written estimates due to fewer local operators.',
+      'Agricultural timing (harvest seasons) may affect availability; plan accordingly.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(
