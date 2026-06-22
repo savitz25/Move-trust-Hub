@@ -297,6 +297,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  fulton: {
+    marketNotes:
+      'Fulton County is rural with Johnstown and Gloversville as hubs. Moves are primarily residential with limited local options. Regional service from Albany or Utica is common.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Johnstown and Gloversville moves often reflect Mohawk Valley rural driveways and travel from Albany or Utica crews.',
+    },
+    tips: [
+      'Rural properties often have long driveways.',
+      'Verify explicit regional service to Johnstown and Gloversville.',
+      'Storage is limited; use nearby facilities.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  genesee: {
+    marketNotes:
+      'Genesee County is rural/agricultural with Batavia as its hub. Moves are residential with regional service from Buffalo or Rochester.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Batavia and agricultural-property moves often reflect equipment handling needs and travel from Buffalo or Rochester crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Batavia.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  greene: {
+    marketNotes:
+      'Greene County is rural/Catskills with Catskill and Hunter Mountain. Moves involve residential, second homes, and seasonal properties with regional support from Albany.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Catskill and mountain moves often reflect seasonal access, steep roads, and travel from Albany or Hudson Valley crews.',
+    },
+    tips: [
+      'Mountain and Catskill properties have access and seasonal challenges.',
+      'Verify regional service to Catskill.',
+      'Storage is limited.',
+      'Obtain multiple estimates.',
+      'Confirm winter contingencies.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

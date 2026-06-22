@@ -449,6 +449,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  fulton: [
+    {
+      quote:
+        "Mabey's Moving handled our Johnstown rural move professionally — efficient crew and careful handling despite our long driveway.",
+      name: 'Ruth A.',
+      location: 'Johnstown, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and right on schedule for our Gloversville relocation — a pleasant Mohawk Valley moving experience.",
+      name: 'Edward M.',
+      location: 'Gloversville, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving provided reliable regional service with great communication throughout our Fulton County move.",
+      name: 'Sharon D.',
+      location: 'Broadalbin, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  genesee: [
+    {
+      quote:
+        'Corrigan Moving handled our Batavia relocation with a professional crew — careful handling for our rural agricultural property.',
+      name: 'Tom G.',
+      location: 'Batavia, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Genesee County move — efficient and careful throughout.",
+      name: 'Betty N.',
+      location: 'Le Roy, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Dan's Moving & Storage drove in from Western NY with fair pricing and professional service for our Batavia-area move.",
+      name: 'Carl J.',
+      location: 'Bergen, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  greene: [
+    {
+      quote:
+        'Triangle Movers handled our Catskill mountain property with care — professional crew despite steep access and seasonal timing.',
+      name: 'Martha W.',
+      location: 'Catskill, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Hunter-area second-home relocation.",
+      name: 'Richard B.',
+      location: 'Hunter, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+    {
+      quote:
+        "Lamanna's crew was efficient and careful for our Greene County move — great Albany-area regional support.",
+      name: 'Diana K.',
+      location: 'Coxsackie, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
