@@ -550,6 +550,56 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for high-altitude moves.',
     ],
   },
+  riverside: {
+    marketNotes:
+      'Riverside County is one of California\'s largest and fastest-growing counties with urban Riverside, desert communities, and Coachella Valley influence. Moves often involve residential, desert, and suburban properties.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Riverside, Moreno Valley, and Temecula moves often reflect desert heat planning, Coachella Valley seasonal peaks, and I-10/I-15 freeway traffic.',
+    },
+    tips: [
+      'Desert areas (Palm Springs, Coachella) require heat and seasonal planning.',
+      'Verify coverage for Riverside, Moreno Valley, and Temecula.',
+      'Heavy traffic on I-10, I-15, and 91 Freeway.',
+      'Obtain multiple estimates.',
+      'Confirm insurance for high-value homes.',
+    ],
+  },
+  sacramento: {
+    marketNotes:
+      'Sacramento County is the state capital with strong government, medical, and suburban communities. Moves often involve residential and corporate relocations.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Sacramento, Elk Grove, and Citrus Heights moves often reflect government and university calendar timing, I-5/Highway 50 traffic, and suburban HOA requirements.',
+    },
+    tips: [
+      'Government and university moves may require specific timing.',
+      'Verify coverage for Sacramento, Elk Grove, and Citrus Heights.',
+      'Heavy traffic on I-5 and Highway 50.',
+      'Obtain multiple estimates.',
+      'Confirm insurance for high-value homes.',
+    ],
+  },
+  'san-benito': {
+    marketNotes:
+      'San Benito County is rural with Hollister and Pinnacles National Park influence. Moves are primarily residential with regional support from San Jose or Salinas.',
+    costs: {
+      studioRange: '$500–$950',
+      familyRange: '$1,800–$3,800',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Hollister moves often reflect rural property access, Pinnacles-adjacent logistics, and travel from San Jose or Salinas regional crews.',
+    },
+    tips: [
+      'Rural properties have access challenges.',
+      'Verify regional service to Hollister.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

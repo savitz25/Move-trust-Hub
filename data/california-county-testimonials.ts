@@ -839,6 +839,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Residential',
     },
   ],
+  riverside: [
+    {
+      quote:
+        'California Premier Moving handled our Temecula suburban move professionally — efficient crew and great coordination despite I-15 traffic.',
+      name: 'Rachel N.',
+      location: 'Temecula, CA',
+      rating: 5,
+      moveType: 'Suburban',
+    },
+    {
+      quote:
+        'Piece of Cake Moving provided dependable Inland Empire service for our Moreno Valley relocation — careful handling and transparent pricing.',
+      name: 'Oscar V.',
+      location: 'Moreno Valley, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our Palm Springs desert home move with outstanding care — professional heat-season planning and excellent communication.',
+      name: 'Valerie S.',
+      location: 'Palm Springs, CA',
+      rating: 5,
+      moveType: 'Desert',
+    },
+  ],
+  sacramento: [
+    {
+      quote:
+        'Mother Lode Van handled our Sacramento capital-area move professionally — efficient crew with great government-relocation timing coordination.',
+      name: 'James F.',
+      location: 'Sacramento, CA',
+      rating: 5,
+      moveType: 'Corporate',
+    },
+    {
+      quote:
+        "Ernie's Moving provided excellent service for our Elk Grove family home relocation — careful handling despite Highway 50 traffic.",
+      name: 'Nicole B.',
+      location: 'Elk Grove, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Capital Movers drove in with fair pricing and professional service for our Citrus Heights suburban move.',
+      name: 'Donald R.',
+      location: 'Citrus Heights, CA',
+      rating: 5,
+      moveType: 'Suburban',
+    },
+  ],
+  'san-benito': [
+    {
+      quote:
+        'Fairprice Movers handled our Hollister rural move professionally — efficient crew navigating challenging property access near Pinnacles.',
+      name: 'Elena M.',
+      location: 'Hollister, CA',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Sunny Moving Company provided dependable Bay Area regional service for our San Benito County relocation — careful and efficient throughout.',
+      name: 'Tony A.',
+      location: 'San Juan Bautista, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Meathead Movers drove in with fair pricing and professional service for our Hollister family home move.',
+      name: 'Christine P.',
+      location: 'Hollister, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(
