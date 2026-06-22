@@ -212,6 +212,33 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'tahoe-moving-storage-truckee',
     'mother-lode-van-storage-sacramento',
   ],
+  monterey: [
+    'meathead-movers-california',
+    'california-premier-moving',
+    'california-pro-movers',
+    'california-local-lines',
+    'california-regional-moving',
+    'meathead-movers-fresno',
+    'two-men-and-a-truck-fresno',
+    'california-express-movers',
+  ],
+  napa: [
+    'piece-of-cake-moving-marin',
+    'booth-movers-marin',
+    'morningstar-moving-marin',
+    'roadway-moving-bay-area',
+    'prodigy-moving-storage-bay-area',
+    'meathead-movers-california',
+    'california-regional-moving',
+  ],
+  nevada: [
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+    'california-regional-moving',
+  ],
 };
 
 function hashSlug(slug: string): number {

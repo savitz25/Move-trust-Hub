@@ -448,6 +448,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for high-altitude moves.',
     ],
   },
+  monterey: {
+    marketNotes:
+      'Monterey County includes Monterey, Carmel, and Salinas with tourism, agriculture, and military influence. Moves often involve coastal, residential, and seasonal properties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Monterey, Carmel, and Salinas moves often reflect coastal sand protection, tourism-season peaks, and Presidio military relocation timing.',
+    },
+    tips: [
+      'Coastal and Carmel properties require sand protection and access planning.',
+      'Tourism season increases demand; book early.',
+      'Verify coverage for Monterey, Salinas, and Carmel.',
+      'Confirm insurance for high-value coastal homes.',
+      'Military (Presidio) experience is beneficial.',
+    ],
+  },
+  napa: {
+    marketNotes:
+      'Napa County is famous for wine country with Napa and Calistoga. Moves often involve residential, winery, and high-value properties with regional support from the Bay Area.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$130–$190/hr for a 2-person crew',
+      note: 'Napa and Calistoga moves often reflect winery-property handling, HOA restrictions, and travel from North Bay or Marin regional crews.',
+    },
+    tips: [
+      'Winery and vineyard properties require specialized handling.',
+      'Many areas have HOA and tourism-related rules.',
+      'Verify coverage for Napa and Calistoga.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for high-value homes.',
+    ],
+  },
+  nevada: {
+    marketNotes:
+      'Nevada County is rural with Nevada City and Grass Valley. Moves often involve residential and historic properties with regional support from Sacramento.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Nevada City and Grass Valley moves often reflect Gold Country historic-property handling, foothill terrain access, and travel from Sacramento regional crews.',
+    },
+    tips: [
+      'Historic Gold Country properties require preservation-sensitive handling.',
+      'Foothill terrain creates access challenges.',
+      'Verify coverage for Nevada City and Grass Valley.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

@@ -683,6 +683,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Seasonal',
     },
   ],
+  monterey: [
+    {
+      quote:
+        'Meathead Movers handled our Carmel coastal move professionally — careful sand protection and great tourism-season coordination.',
+      name: 'Rebecca F.',
+      location: 'Carmel-by-the-Sea, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'California Premier Moving provided dependable service for our Monterey Presidio-area relocation — efficient and military-move experienced.',
+      name: 'James H.',
+      location: 'Monterey, CA',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Meathead Movers Fresno drove in with fair pricing and professional service for our Salinas agricultural-property move.',
+      name: 'Maria S.',
+      location: 'Salinas, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+  ],
+  napa: [
+    {
+      quote:
+        'Piece of Cake Moving made our Napa winery-area relocation stress-free — careful handling for our high-value home and vineyard equipment.',
+      name: 'Thomas W.',
+      location: 'Napa, CA',
+      rating: 5,
+      moveType: 'Winery',
+    },
+    {
+      quote:
+        'Booth Movers handled our Calistoga move with outstanding care — professional crew navigating HOA rules and tourism-season timing.',
+      name: 'Catherine D.',
+      location: 'Calistoga, CA',
+      rating: 5,
+      moveType: 'High-Value',
+    },
+    {
+      quote:
+        'Roadway Moving provided excellent Bay Area regional service for our St. Helena relocation — transparent pricing and efficient throughout.',
+      name: 'Andrew L.',
+      location: 'St. Helena, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  nevada: [
+    {
+      quote:
+        'Mother Lode Van handled our Nevada City Gold Country move professionally — preservation-sensitive handling for our historic home.',
+      name: 'Margaret E.',
+      location: 'Nevada City, CA',
+      rating: 5,
+      moveType: 'Historic',
+    },
+    {
+      quote:
+        "Ernie's Moving provided dependable Sacramento regional service for our Grass Valley relocation — careful on challenging foothill terrain.",
+      name: 'Robert K.',
+      location: 'Grass Valley, CA',
+      rating: 5,
+      moveType: 'Foothill',
+    },
+    {
+      quote:
+        'California Capital Movers drove in with fair pricing and professional service for our rural Nevada County family home move.',
+      name: 'Susan T.',
+      location: 'Penn Valley, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(
