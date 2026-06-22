@@ -416,6 +416,108 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for specific neighborhoods (Williamsburg, Park Slope, Bay Ridge, etc.).',
     ],
   },
+  lewis: {
+    marketNotes:
+      'Lewis County is very rural with Lowville as its hub in the Black River Valley. Moves are primarily residential with extremely limited local options. Service is regional from Watertown or Utica.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Lowville and Black River Valley moves often reflect agricultural access roads, harsh winter timing, and travel from Watertown or Utica crews.',
+    },
+    tips: [
+      'Rural and agricultural properties often have challenging access.',
+      'Harsh winters significantly affect scheduling.',
+      'Verify explicit regional service to Lowville.',
+      'Storage is scarce; plan regionally.',
+      'Obtain multiple estimates.',
+    ],
+  },
+  livingston: {
+    marketNotes:
+      'Livingston County is rural with Geneseo (SUNY Geneseo) and agricultural focus. Moves are residential and university-related with regional support from Rochester.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Geneseo and rural Livingston moves often reflect SUNY semester timing, farm-property access, and travel from Rochester crews.',
+    },
+    tips: [
+      'University calendar affects seasonal demand.',
+      'Rural and farm properties may require specialized handling.',
+      'Verify regional service to Geneseo.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison County is rural with Oneida Lake influence and Hamilton (Colgate University). Moves are residential and university-related with regional support from Syracuse.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Hamilton, Oneida, and Wampsville moves often reflect Colgate semester timing, Oneida Lake access, and travel from Syracuse crews.',
+    },
+    tips: [
+      'University calendar (Colgate) affects seasonal demand.',
+      'Rural properties have access challenges.',
+      'Verify regional service to Hamilton and Oneida.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is a major urban/suburban county centered on Rochester with strong medical, educational, and lakeside communities. Moves often involve high-rises, family homes, and corporate relocations.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Rochester, Greece, and Irondequoit moves often reflect lakefront access, UR/RIT semester timing, and I-90 / I-490 traffic windows.',
+    },
+    tips: [
+      'Lake Ontario properties require weather and access planning.',
+      'University and medical center moves have seasonal peaks.',
+      'Heavy traffic on I-90, I-490, and Lake Ontario State Parkway.',
+      'Verify coverage for Rochester, Greece, Irondequoit, and Henrietta.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County is rural with Amsterdam and Canajoharie. Moves are primarily residential with regional support from Albany or Utica.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Amsterdam, Fonda, and Canajoharie moves often reflect Mohawk Valley rural access and travel from Albany or Utica crews.',
+    },
+    tips: [
+      'Rural properties may have access challenges.',
+      'Verify regional service to Amsterdam and Fonda.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  nassau: {
+    marketNotes:
+      'Nassau County is densely suburban on Long Island with strong residential and commuter communities. Moves often involve single-family homes, condos, and high-value properties.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$135–$200/hr for a 2-person crew',
+      note: 'Mineola, Hempstead, and North Shore moves often reflect HOA move-in rules, parkway traffic, and summer peak-season demand.',
+    },
+    tips: [
+      'Many HOAs and villages have strict move-in rules.',
+      'Long Island Expressway and Northern/Southern State Parkways have heavy traffic.',
+      'Verify coverage for specific towns (Hempstead, Oyster Bay, North Hempstead).',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for summer peak season.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

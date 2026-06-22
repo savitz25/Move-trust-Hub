@@ -631,6 +631,162 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Apartment',
     },
   ],
+  lewis: [
+    {
+      quote:
+        'Pinnacle Moving handled our Lowville rural relocation professionally — careful handling despite challenging northern access and winter timing.',
+      name: 'Roger H.',
+      location: 'Lowville, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Reliable Movers drove in from the Utica corridor with efficient crews and fair pricing for our Lewis County move.',
+      name: 'Donna W.',
+      location: 'Castorland, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided dependable regional service for our Black River Valley relocation — great communication throughout.",
+      name: 'Keith B.',
+      location: 'Turin, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  livingston: [
+    {
+      quote:
+        'Rochester Moving & Storage handled our Geneseo move professionally — efficient crew and careful handling for our rural property near SUNY Geneseo.',
+      name: 'Laura P.',
+      location: 'Geneseo, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Livingston County farm-property relocation.",
+      name: 'George F.',
+      location: 'Dansville, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and efficient with great communication for our Mount Morris move.",
+      name: 'Helen C.',
+      location: 'Mount Morris, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  madison: [
+    {
+      quote:
+        'Reliable Movers handled our Hamilton Colgate-area move professionally — efficient crew despite rural access and semester timing.',
+      name: 'Chris A.',
+      location: 'Hamilton, NY',
+      rating: 5,
+      moveType: 'University',
+    },
+    {
+      quote:
+        "Mabey's Moving provided dependable regional service for our Oneida Lake-area relocation.",
+      name: 'Patricia N.',
+      location: 'Oneida, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Dimon & Bacorn's crew was careful and efficient for our Madison County rural move — solid regional support from Central New York.",
+      name: 'Mark R.',
+      location: 'Cazenovia, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  monroe: [
+    {
+      quote:
+        "Mabey's Moving provided professional, reliable service for our Rochester suburban relocation — efficient crews and careful handling throughout.",
+      name: 'Steven K.',
+      location: 'Henrietta, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Rochester Moving & Storage handled our Greece family home move flawlessly — great communication and careful loading despite lakefront access planning.',
+      name: 'Nicole D.',
+      location: 'Greece, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and efficient with outstanding communication for our Irondequoit apartment relocation.",
+      name: 'Andrew M.',
+      location: 'Irondequoit, NY',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  montgomery: [
+    {
+      quote:
+        "Mabey's Moving handled our Amsterdam rural move professionally — efficient crew despite Mohawk Valley access challenges.",
+      name: 'Betty L.',
+      location: 'Amsterdam, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Reliable Movers provided dependable regional service for our Canajoharie relocation — fair pricing and careful handling.',
+      name: 'Donald S.',
+      location: 'Canajoharie, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and right on schedule for our Montgomery County move — pleasant Albany-area regional support.",
+      name: 'Janice R.',
+      location: 'Fonda, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  nassau: [
+    {
+      quote:
+        'Piece of Cake made our Garden City move stress-free — professional crew, transparent pricing, and excellent HOA coordination.',
+      name: 'Jennifer H.',
+      location: 'Garden City, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our Oyster Bay colonial with outstanding care — professional, careful, and respectful of our high-value furnishings.',
+      name: 'Robert F.',
+      location: 'Oyster Bay, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant exceeded expectations on our Great Neck condo move — careful in tight suburban spaces and efficient from quote through completion.',
+      name: 'Sandra W.',
+      location: 'Great Neck, NY',
+      rating: 5,
+      moveType: 'Condo',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

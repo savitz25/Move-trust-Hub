@@ -201,6 +201,53 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'all-my-sons-kings',
     'gentle-giant-kings',
   ],
+  lewis: [
+    'pinnacle-moving-watertown',
+    'reliable-movers-syracuse',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+  ],
+  livingston: [
+    'rochester-moving-storage-rochester',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  madison: [
+    'reliable-movers-syracuse',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'dimon-bacorn-binghamton',
+    'busy-bee-movers-albany',
+  ],
+  monroe: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'rochester-moving-storage-rochester',
+    'corrigan-moving-buffalo',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  montgomery: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'reliable-movers-syracuse',
+    'lamanna-moving-albany',
+    'busy-bee-movers-albany',
+  ],
+  nassau: [
+    'piece-of-cake-moving-nassau',
+    'booth-movers-nassau',
+    'white-glove-moving-nassau',
+    'zip-to-zip-moving-nassau',
+    'optimum-moving-nassau',
+    'all-my-sons-nassau',
+    'gentle-giant-nassau',
+    'college-hunks-nassau',
+  ],
 };
 
 function hashSlug(slug: string): number {
