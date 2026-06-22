@@ -917,6 +917,32 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Single-family',
     },
   ],
+  'san-bernardino': [
+    {
+      quote:
+        'Piece of Cake Moving made our Rancho Cucamonga suburban move stress-free — professional crew and transparent pricing throughout the Inland Empire.',
+      name: 'Marcus D.',
+      location: 'Rancho Cucamonga, CA',
+      rating: 5,
+      moveType: 'Suburban',
+    },
+    {
+      quote:
+        'Booth Movers handled our Ontario family home relocation with outstanding care — efficient despite heavy 210 Freeway traffic.',
+      name: 'Sandra W.',
+      location: 'Ontario, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Premier Moving provided dependable service for our Victorville high-desert move — professional heat-season planning and careful handling.',
+      name: 'Raymond H.',
+      location: 'Victorville, CA',
+      rating: 5,
+      moveType: 'Desert',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

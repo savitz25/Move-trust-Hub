@@ -600,6 +600,23 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  'san-bernardino': {
+    marketNotes:
+      'San Bernardino County is one of the largest counties in the U.S. with urban San Bernardino, suburban areas, high desert, and mountain communities. Moves often involve residential, military, and desert properties.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'San Bernardino, Rancho Cucamonga, and Ontario moves often reflect high-desert heat planning, Big Bear seasonal access, and I-10/I-15 freeway traffic.',
+    },
+    tips: [
+      'High desert (Victorville, Barstow) requires heat and distance planning.',
+      'Mountain areas (Big Bear, Lake Arrowhead) have seasonal and access challenges.',
+      'Heavy traffic on I-10, I-15, and 210 Freeway.',
+      'Verify coverage for San Bernardino, Rancho Cucamonga, and Ontario.',
+      'Confirm insurance for high-value properties.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

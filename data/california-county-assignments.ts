@@ -293,6 +293,18 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-premier-moving',
     'california-regional-moving',
   ],
+  'san-bernardino': [
+    'piece-of-cake-moving-sanbernardino',
+    'booth-movers-sanbernardino',
+    'white-glove-moving-sanbernardino',
+    'zip-to-zip-moving-sanbernardino',
+    'optimum-moving-sanbernardino',
+    'all-my-sons-sanbernardino',
+    'california-premier-moving',
+    'california-pro-movers',
+    'meathead-movers-california',
+    'california-express-movers',
+  ],
 };
 
 function hashSlug(slug: string): number {
