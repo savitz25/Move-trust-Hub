@@ -257,6 +257,43 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'all-my-sons-manhattan',
     'gentle-giant-manhattan',
   ],
+  niagara: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'corrigan-moving-buffalo',
+    'two-men-and-a-truck-buffalo',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  oneida: [
+    'reliable-movers-syracuse',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  onondaga: [
+    'reliable-movers-syracuse',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+    'lamanna-moving-albany',
+  ],
+  ontario: [
+    'rochester-moving-storage-rochester',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
 };
 
 function hashSlug(slug: string): number {

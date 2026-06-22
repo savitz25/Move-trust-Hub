@@ -535,6 +535,74 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm high-value insurance coverage.',
     ],
   },
+  niagara: {
+    marketNotes:
+      'Niagara County includes Niagara Falls and Lockport with tourism, industrial, and suburban communities. Moves often involve residential, cross-border, and tourist-related properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Niagara Falls, Lockport, and North Tonawanda moves often reflect tourist-season peaks, border proximity, and I-190 / Rainbow Bridge traffic.',
+    },
+    tips: [
+      'Niagara Falls tourist areas have seasonal demand peaks.',
+      'Border and waterfront properties require specialized planning.',
+      'Heavy traffic on I-190 and Rainbow Bridge approaches.',
+      'Verify coverage for Niagara Falls, Lockport, and North Tonawanda.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
+  oneida: {
+    marketNotes:
+      'Oneida County centers on Utica and Rome with suburban and rural areas. Moves often involve residential and historic properties with regional Mohawk Valley support.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Utica and Rome moves often reflect historic-district handling needs, rural access roads, and Mohawk Valley regional crew travel.',
+    },
+    tips: [
+      'Historic districts require preservation-sensitive handling.',
+      'Rural areas have access challenges.',
+      'Verify coverage for Utica and Rome.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  onondaga: {
+    marketNotes:
+      'Onondaga County is a major Central New York hub centered on Syracuse with strong educational, medical, and suburban communities.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Syracuse, Cicero, and Clay moves often reflect SU semester timing, suburban HOA rules, and I-81 / I-690 traffic windows.',
+    },
+    tips: [
+      'University calendar affects seasonal demand.',
+      'Suburban HOAs have move-in rules.',
+      'Heavy traffic on I-81 and I-690.',
+      'Verify coverage for Syracuse, Cicero, and Clay.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
+  ontario: {
+    marketNotes:
+      'Ontario County is Finger Lakes wine country with Canandaigua and Geneva. Moves often involve residential, second homes, and winery-related properties with regional support from Rochester.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Canandaigua and Geneva moves often reflect lakeside access, seasonal tourism, and travel from Rochester crews.',
+    },
+    tips: [
+      'Lakeside properties require water-adjacent planning.',
+      'Seasonal tourism and winery activity affect demand.',
+      'Verify coverage for Canandaigua and Geneva.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for historic homes.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

@@ -813,6 +813,110 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'High-rise',
     },
   ],
+  niagara: [
+    {
+      quote:
+        "Mabey's Moving provided professional, reliable service for our Lockport suburban relocation — efficient crews and careful handling throughout.",
+      name: 'Gary P.',
+      location: 'Lockport, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Corrigan Moving handled our Niagara Falls move flawlessly — great communication and careful loading despite tourist-area traffic and seasonal timing.',
+      name: 'Linda M.',
+      location: 'Niagara Falls, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Two Men and a Truck navigated our North Tonawanda family home move with an efficient, courteous crew — easily our best Western NY experience.",
+      name: 'Kevin R.',
+      location: 'North Tonawanda, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  oneida: [
+    {
+      quote:
+        'Reliable Movers handled our Utica historic-district move professionally — careful handling of original woodwork and efficient loading throughout.',
+      name: 'Maria S.',
+      location: 'Utica, NY',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        "Mabey's Moving provided dependable regional service for our Rome relocation — courteous crews and solid communication.",
+      name: 'James W.',
+      location: 'Rome, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was efficient and careful for our Oneida County rural move — pleasant Mohawk Valley experience from estimate to unload.",
+      name: 'Susan T.',
+      location: 'New Hartford, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  onondaga: [
+    {
+      quote:
+        'Reliable Movers handled our Syracuse suburban move flawlessly — professional crew, fair pricing, and careful handling near the university area.',
+      name: 'Daniel F.',
+      location: 'Syracuse, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Cicero relocation — efficient crews and great communication throughout.",
+      name: 'Amy B.',
+      location: 'Cicero, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and right on schedule for our Clay family home move — solid Capital District regional support.",
+      name: 'Robert H.',
+      location: 'Clay, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  ontario: [
+    {
+      quote:
+        'Rochester Moving & Storage handled our Canandaigua lakeside property with care — professional crew despite water-adjacent access and seasonal timing.',
+      name: 'Elizabeth C.',
+      location: 'Canandaigua, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Geneva winery-area relocation — careful handling throughout.",
+      name: 'Thomas N.',
+      location: 'Geneva, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and efficient with great communication for our Ontario County second-home move.",
+      name: 'Carol D.',
+      location: 'Victor, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
