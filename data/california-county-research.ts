@@ -499,6 +499,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  orange: {
+    marketNotes:
+      'Orange County is a major affluent suburban county with diverse cities (Anaheim, Irvine, Huntington Beach). Moves often involve high-value homes, theme park logistics, and beach properties.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$125–$190/hr for a 2-person crew',
+      note: 'Irvine, Anaheim, and Huntington Beach moves often reflect HOA move-in rules, I-5/I-405 traffic, and high-value coastal suburban home handling.',
+    },
+    tips: [
+      'Many HOAs and gated communities have strict move-in rules.',
+      'Heavy traffic on I-5, I-405, and 91 Freeway.',
+      'Verify coverage for Irvine, Anaheim, Santa Ana, and Huntington Beach.',
+      'Confirm insurance for high-value coastal/suburban homes.',
+      'Book early for summer peak season.',
+    ],
+  },
+  placer: {
+    marketNotes:
+      'Placer County is growing suburban/rural with Roseville and Lake Tahoe influence. Moves often involve family homes and commuter properties.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Roseville, Rocklin, and Auburn moves often reflect I-80 commuter traffic, Tahoe-seasonal access, and travel from Sacramento regional crews.',
+    },
+    tips: [
+      'Tahoe-area properties require seasonal planning.',
+      'Verify coverage for Roseville, Rocklin, and Auburn.',
+      'I-80 traffic can impact timing.',
+      'Obtain multiple estimates.',
+      'Confirm insurance for high-value homes.',
+    ],
+  },
+  plumas: {
+    marketNotes:
+      'Plumas County is remote Sierra with Quincy. Moves are limited and primarily residential with regional support from Reno or Chico.',
+    costs: {
+      studioRange: '$500–$1,000+',
+      familyRange: '$1,800–$4,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Quincy moves often reflect mountain remote access, limited local crews, and travel from Chico or Reno regional providers.',
+    },
+    tips: [
+      'Mountain and remote properties have severe access challenges.',
+      'Verify explicit regional service to Quincy.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for high-altitude moves.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

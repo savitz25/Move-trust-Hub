@@ -761,6 +761,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Residential',
     },
   ],
+  orange: [
+    {
+      quote:
+        'Piece of Cake Moving made our Irvine HOA-gated community move stress-free — professional coordination and transparent pricing throughout.',
+      name: 'Amanda R.',
+      location: 'Irvine, CA',
+      rating: 5,
+      moveType: 'HOA',
+    },
+    {
+      quote:
+        'Booth Movers handled our Huntington Beach coastal home relocation with outstanding care — careful handling and excellent summer-season timing.',
+      name: 'Kevin T.',
+      location: 'Huntington Beach, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Gentle Giant provided white-glove service for our Anaheim family home move — professional crew navigating I-5 traffic and tight suburban streets.',
+      name: 'Lisa M.',
+      location: 'Anaheim, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  placer: [
+    {
+      quote:
+        'Mother Lode Van handled our Roseville family home move professionally — efficient crew and great I-80 commuter-area coordination.',
+      name: 'Brian C.',
+      location: 'Roseville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Mountain Lake Mover provided reliable Tahoe regional service for our Auburn relocation — careful seasonal planning for our foothill property.',
+      name: 'Diane H.',
+      location: 'Auburn, CA',
+      rating: 5,
+      moveType: 'Foothill',
+    },
+    {
+      quote:
+        "Ernie's Moving drove in from Sacramento with fair pricing and professional service for our Rocklin suburban move.",
+      name: 'Greg P.',
+      location: 'Rocklin, CA',
+      rating: 5,
+      moveType: 'Suburban',
+    },
+  ],
+  plumas: [
+    {
+      quote:
+        'Two Men and a Truck drove in from Chico for our Quincy mountain move — professional crew and careful handling in challenging Sierra terrain.',
+      name: 'Janet W.',
+      location: 'Quincy, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our remote Plumas County relocation — efficient despite extremely limited local options.',
+      name: 'Frank L.',
+      location: 'Portola, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+    {
+      quote:
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our rural Plumas County family home move.',
+      name: 'Helen G.',
+      location: 'Chester, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

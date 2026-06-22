@@ -239,6 +239,33 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'ernies-moving-sacramento',
     'california-regional-moving',
   ],
+  orange: [
+    'piece-of-cake-moving-orange-ca',
+    'booth-movers-orange-ca',
+    'white-glove-moving-orange-ca',
+    'zip-to-zip-moving-orange-ca',
+    'optimum-moving-orange-ca',
+    'all-my-sons-orange-ca',
+    'gentle-giant-orange-ca',
+    'pure-moving-orange-ca',
+    'meathead-movers-california',
+    'california-premier-moving',
+  ],
+  placer: [
+    'mother-lode-van-storage-sacramento',
+    'mountain-lake-mover-tahoe',
+    'tahoe-moving-storage-truckee',
+    'california-capital-movers',
+    'california-family-movers',
+    'ernies-moving-sacramento',
+    'california-county-moving-co',
+  ],
+  plumas: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+  ],
 };
 
 function hashSlug(slug: string): number {
