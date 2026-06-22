@@ -738,6 +738,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for oilfield and ranch moves in remote West Texas.',
     ],
   },
+  carson: {
+    marketNotes:
+      'Carson County is one of Texas\'s least populous counties with Panhandle as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Panhandle and northern Texas Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Panhandle before booking.',
+      'Storage is very limited locally; plan on Amarillo-area warehouses.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves in the northern Texas Panhandle.',
+    ],
+  },
+  crosby: {
+    marketNotes:
+      'Crosby County is one of Texas\'s least populous counties with Crosbyton as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock regional providers typically cover Crosbyton; confirm travel fees for South Plains ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss driveway length and surface type.',
+      'Verify explicit regional service to Crosbyton; no dedicated in-county movers exist.',
+      'Storage is very limited locally; use Lubbock-area facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch moves across the South Plains.',
+    ],
+  },
+  delta: {
+    marketNotes:
+      'Delta County is one of Texas\'s least populous counties with Cooper as its seat. Moves are rare and rely on regional service from Dallas or Paris.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Dallas and Paris regional providers may add travel fees for Cooper and Northeast Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Cooper before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse Northeast Texas competition.',
+      'Confirm credentials for ranch moves across remote Delta County farmland.',
+    ],
+  },
+  floyd: {
+    marketNotes:
+      'Floyd County is one of Texas\'s least populous counties with Floydada as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Amarillo regional providers may add travel fees for Floydada and High Plains ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Floydada before booking.',
+      'Storage is very limited locally; use Lubbock-area facilities.',
+      'Obtain multiple written estimates before choosing a mover.',
+      'Confirm credentials for ranch moves on the Texas High Plains.',
+    ],
+  },
+  hansford: {
+    marketNotes:
+      'Hansford County is one of Texas\'s least populous counties with Spearman as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Spearman and northern Panhandle ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss truck size for rural roads.',
+      'Verify explicit regional service to Spearman; dedicated local crews are unavailable.',
+      'Storage is very limited; use Amarillo-area facilities.',
+      'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch moves in the northern Texas Panhandle.',
+    ],
+  },
+  hudspeth: {
+    marketNotes:
+      'Hudspeth County is remote with Sierra Blanca as its seat. Moves are rare and rely on regional service from El Paso.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'El Paso and Carlsbad, NM regional providers may add travel fees for Sierra Blanca desert ranch properties.',
+    },
+    tips: [
+      'Extremely remote desert properties have severe access challenges — discuss terrain and road conditions early.',
+      'Verify explicit regional service to Sierra Blanca before booking.',
+      'Storage is very limited locally; plan on El Paso-area warehouses.',
+      'Obtain multiple written estimates due to sparse West Texas competition.',
+      'Confirm credentials for remote desert and ranch relocations.',
+    ],
+  },
+  lynn: {
+    marketNotes:
+      'Lynn County is one of Texas\'s least populous counties with Tahoka as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Midland regional providers may add travel fees for Tahoka South Plains ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm access roads and truck size.',
+      'Verify explicit regional service to Tahoka; no in-county full-service movers exist.',
+      'Storage is very limited locally; use Lubbock-area warehouses.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves across the South Plains.',
+    ],
+  },
+  martin: {
+    marketNotes:
+      'Martin County is one of Texas\'s least populous counties with Stanton as its seat. Moves are rare and rely on regional service from Midland/Odessa.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Midland/Odessa and Lubbock regional providers may add travel fees for Stanton oilfield and ranch properties.',
+    },
+    tips: [
+      'Extremely remote oilfield/ranch properties have severe access challenges — discuss Permian Basin access roads.',
+      'Verify explicit regional service to Stanton before booking.',
+      'Storage is very limited in-county; plan on Midland or Lubbock facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for oilfield and ranch moves in remote West Texas.',
+    ],
+  },
+  mills: {
+    marketNotes:
+      'Mills County is one of Texas\'s least populous counties with Goldthwaite as its seat. Moves are rare and rely on regional service from Waco or Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Waco and Abilene regional providers may add travel fees for Goldthwaite Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Goldthwaite before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse Central Texas competition.',
+      'Confirm credentials for ranch moves across remote Hill Country fringe ranchland.',
+    ],
+  },
+  wheeler: {
+    marketNotes:
+      'Wheeler County is one of Texas\'s least populous counties with Wheeler as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Wheeler and northeastern Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Wheeler before booking.',
+      'Storage is very limited locally; plan on Amarillo-area warehouses.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves in the northeastern Texas Panhandle.',
+    ],
+  },
   loving: {
     marketNotes:
       'Loving County is the least populous county in Texas with Mentone as its seat. Moves are extremely rare and rely on regional service from Odessa or Hobbs, NM.',

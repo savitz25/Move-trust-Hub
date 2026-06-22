@@ -1062,6 +1062,42 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Laredo area',
   },
+  'waco-area-moving': {
+    id: 'waco-area-moving',
+    name: 'Regional Waco Providers',
+    rating: 4.6,
+    reviewCount: 112,
+    shortDescription:
+      'Reliable regional mover serving remote Mills County and Central Texas ranch properties.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Waco area',
+  },
+  'dallas-area-moving': {
+    id: 'dallas-area-moving',
+    name: 'Regional Dallas Providers',
+    rating: 4.6,
+    reviewCount: 198,
+    shortDescription:
+      'Reliable regional mover serving remote Delta County and Northeast Texas ranch country.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Dallas area',
+  },
+  'paris-area-moving': {
+    id: 'paris-area-moving',
+    name: 'Regional Paris Providers',
+    rating: 4.5,
+    reviewCount: 76,
+    shortDescription:
+      'Regional mover with capability for Delta County and rural Northeast Texas relocations.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Paris area',
+  },
   'nyc-neighborhood-movers': {
     id: 'nyc-neighborhood-movers',
     name: 'NYC Neighborhood Movers',
@@ -6281,6 +6317,16 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'rural-panhandle-tx',
     label: 'Rural Texas Panhandle',
     moverIds: ['amarillo-area-moving', 'lubbock-area-moving'],
+  },
+  'rural-central-tx': {
+    id: 'rural-central-tx',
+    label: 'Rural Central Texas',
+    moverIds: ['waco-area-moving', 'abilene-area-moving'],
+  },
+  'rural-northeast-tx': {
+    id: 'rural-northeast-tx',
+    label: 'Rural Northeast Texas',
+    moverIds: ['dallas-area-moving', 'paris-area-moving'],
   },
 };
 

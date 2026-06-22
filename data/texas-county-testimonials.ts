@@ -1125,6 +1125,266 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Rural',
     },
   ],
+  carson: [
+    {
+      quote:
+        'Panhandle is quiet Carson County ranch country north of Amarillo. A regional crew confirmed coverage and handled our move professionally on long gravel driveways.',
+      name: 'Harold W.',
+      location: 'Panhandle, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Carson County has no local full-service movers. A Lubbock provider made the trip and was reliable in remote Panhandle ranchland.',
+      name: 'Martha J.',
+      location: 'Carson County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Panhandle relocation had limited storage nearby. The Amarillo team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Clifford R.',
+      location: 'Panhandle, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  crosby: [
+    {
+      quote:
+        'Crosbyton sits on the South Plains with sparse mover options. A Lubbock regional crew confirmed service to Crosby County and handled our ranch move with professional care.',
+      name: 'Dean H.',
+      location: 'Crosbyton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Crosby County movers are hard to find locally. An Amarillo provider agreed to the long drive and was reliable on remote High Plains ranch roads.',
+      name: 'Wanda S.',
+      location: 'Crosby County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Crosbyton move needed flexible scheduling around harvest season. The Lubbock team was upfront about travel fees and efficient on site.',
+      name: 'Roy K.',
+      location: 'Crosbyton, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  delta: [
+    {
+      quote:
+        'Cooper is remote Northeast Texas ranch country. A Dallas regional crew confirmed coverage and handled our Delta County move professionally despite the long drive.',
+      name: 'Patricia M.',
+      location: 'Cooper, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Delta County has almost no local movers. A Paris provider made the trip and was reliable in remote Northeast Texas farmland.',
+      name: 'Gerald T.',
+      location: 'Delta County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Cooper relocation had limited local storage. The Dallas team coordinated regional warehouse space and delivered careful handling throughout.',
+      name: 'Sharon L.',
+      location: 'Cooper, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  floyd: [
+    {
+      quote:
+        'Floydada is classic High Plains ranch country. A Lubbock regional crew handled our Floyd County move professionally on long caliche driveways.',
+      name: 'Leroy B.',
+      location: 'Floydada, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Floyd County has no dedicated local movers. An Amarillo provider confirmed service area and was reliable in a very sparse Panhandle market.',
+      name: 'Irene C.',
+      location: 'Floyd County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Floydada ranch move involved outbuildings and limited cell service. The Lubbock team coordinated arrival windows well and finished on time.',
+      name: 'Norman P.',
+      location: 'Floydada, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  hansford: [
+    {
+      quote:
+        'Spearman is deep northern Panhandle ranchland. An Amarillo crew handled our Hansford County move professionally with careful handling on gravel access roads.',
+      name: 'Vernon D.',
+      location: 'Spearman, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Hansford County has no local full-service movers. A Lubbock provider confirmed coverage and was reliable in remote Panhandle country.',
+      name: 'Bonnie F.',
+      location: 'Hansford County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Spearman relocation required planning around weather and long driveways. The Amarillo team was upfront about travel fees and efficient on site.',
+      name: 'Calvin G.',
+      location: 'Spearman, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  hudspeth: [
+    {
+      quote:
+        'Sierra Blanca is remote West Texas desert country. An El Paso regional crew confirmed coverage and handled our Hudspeth County move with professional care on challenging terrain.',
+      name: 'Rosa V.',
+      location: 'Sierra Blanca, TX',
+      rating: 5,
+      moveType: 'Desert ranch',
+    },
+    {
+      quote:
+        'Hudspeth County movers are scarce. A Carlsbad, NM provider verified cross-border licensing and was reliable on our remote desert property move.',
+      name: 'Miguel A.',
+      location: 'Hudspeth County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Sierra Blanca move had very limited storage options. The El Paso team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Janet W.',
+      location: 'Sierra Blanca, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  lynn: [
+    {
+      quote:
+        'Tahoka is South Plains ranch country south of Lubbock. A Lubbock regional crew confirmed coverage and handled our Lynn County move professionally on long gravel driveways.',
+      name: 'Earl N.',
+      location: 'Tahoka, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Lynn County has no local full-service movers. A Midland provider made the trip and was reliable in remote South Plains ranchland.',
+      name: 'Doris K.',
+      location: 'Lynn County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Tahoka ranch move needed flexible scheduling around cattle work. The Lubbock team was careful with antiques and upfront about travel fees.',
+      name: 'Floyd J.',
+      location: 'Tahoka, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  martin: [
+    {
+      quote:
+        'Stanton sits in Martin County oilfield country. A Midland regional crew handled our Permian Basin move professionally across challenging ranch terrain.',
+      name: 'Travis H.',
+      location: 'Stanton, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Martin County has no dedicated local movers. A Lubbock provider agreed to the long drive and gave careful handling on our remote West Texas ranch property.',
+      name: 'Pamela R.',
+      location: 'Martin County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Stanton move required planning around field traffic and limited storage. The Midland team was upfront about travel fees and delivered efficiently.',
+      name: 'Cody M.',
+      location: 'Stanton, TX',
+      rating: 4,
+      moveType: 'Rural',
+    },
+  ],
+  mills: [
+    {
+      quote:
+        'Goldthwaite is remote Central Texas ranch country. A Waco regional crew confirmed coverage and handled our Mills County move with professional care on narrow ranch roads.',
+      name: 'Barbara E.',
+      location: 'Goldthwaite, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Mills County has almost no local movers. An Abilene provider made the trip and was reliable in remote Central Texas Hill Country fringe.',
+      name: 'Howard S.',
+      location: 'Mills County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Goldthwaite ranch move involved outbuildings and limited storage. The Waco team coordinated regional warehouse space and finished on schedule.',
+      name: 'Carolyn D.',
+      location: 'Goldthwaite, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  wheeler: [
+    {
+      quote:
+        'Wheeler is northeastern Panhandle ranch country. An Amarillo crew handled our Wheeler County move professionally on gravel ranch roads.',
+      name: 'Glenn T.',
+      location: 'Wheeler, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Wheeler County has no local full-service movers. A Lubbock regional provider confirmed service and was reliable in remote Panhandle country.',
+      name: 'Nellie P.',
+      location: 'Wheeler County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Wheeler relocation required planning around weather and long driveways. The Amarillo team was upfront about travel fees and efficient on site.',
+      name: 'Harvey L.',
+      location: 'Wheeler, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
   loving: [
     {
       quote:
