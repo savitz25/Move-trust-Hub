@@ -6,6 +6,8 @@ import { getNewJerseyCountyResearch } from '@/data/new-jersey-county-research';
 import { getNewJerseyCountyTestimonials } from '@/data/new-jersey-county-testimonials';
 import { getNewYorkCountyResearch } from '@/data/new-york-county-research';
 import { getNewYorkCountyTestimonials } from '@/data/new-york-county-testimonials';
+import { getTexasCountyResearch } from '@/data/texas-county-research';
+import { getTexasCountyTestimonials } from '@/data/texas-county-testimonials';
 import { testimonials } from '@/lib/trust/trust-data';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -159,6 +161,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'new-york') {
     return getNewYorkCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'texas') {
+    return getTexasCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -180,6 +185,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'new-york') {
     const curated = getNewYorkCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'texas') {
+    const curated = getTexasCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -238,6 +247,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getNewYorkCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'texas') {
+    const curated = getTexasCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -279,6 +292,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'new-york') {
     const curated = getNewYorkCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'texas') {
+    const curated = getTexasCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 
