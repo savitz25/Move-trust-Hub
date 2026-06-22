@@ -331,6 +331,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials for farm or high-value rural properties.',
     ],
   },
+  union: {
+    marketNotes:
+      'Union County is densely populated with urban Elizabeth, suburban towns (Westfield, Cranford), and diverse communities. Moves often involve family residential, high-density urban, and commuter properties.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Elizabeth, Westfield, and Union Township moves may reflect urban parking limits, HOA rules, and Parkway or I-78 traffic windows.',
+    },
+    tips: [
+      'Urban Elizabeth areas have tight parking and building restrictions.',
+      'Suburban towns have HOA rules for new developments.',
+      'Heavy traffic on Garden State Parkway, I-78, and Route 22.',
+      'Diverse neighborhoods benefit from multilingual crews.',
+      'Verify coverage for Elizabeth, Westfield, and Union Township.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

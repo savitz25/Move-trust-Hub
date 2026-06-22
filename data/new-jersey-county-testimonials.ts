@@ -501,6 +501,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  union: [
+    {
+      quote:
+        'Piece of Cake handled our Westfield suburban move with flat-fee pricing that stayed predictable. Professional crew navigated HOA rules and Parkway traffic without stress.',
+      name: 'Melissa C.',
+      location: 'Westfield, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Elizabeth apartment relocation — careful, on time, and professional through tight urban streets and limited parking.',
+      name: 'Roberto V.',
+      location: 'Elizabeth, NJ',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price for our Cranford move and stuck to it — no funny business. Courteous, fast, and the smoothest Union County relocation we have had.',
+      name: 'Hannah T.',
+      location: 'Cranford, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
