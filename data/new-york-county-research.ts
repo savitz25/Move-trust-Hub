@@ -1028,6 +1028,40 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for peak seasons.',
     ],
   },
+  wyoming: {
+    marketNotes:
+      'Wyoming County is rural/agricultural with Warsaw as its hub. Moves are primarily residential with regional support from Buffalo or Rochester.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Warsaw and rural Wyoming County moves often reflect agricultural-property handling and limited local crew availability from Buffalo or Rochester.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Rural areas have access challenges.',
+      'Verify regional service to Warsaw.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  yates: {
+    marketNotes:
+      'Yates County is small and rural with Penn Yan and Finger Lakes wineries. Moves are primarily residential and lakeside with regional support from Rochester or Syracuse.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Penn Yan and Keuka Lake moves often reflect lakeside access, winery-area seasonal demand, and travel from Rochester or Syracuse crews.',
+    },
+    tips: [
+      'Lakeside properties require water-adjacent planning.',
+      'Winery and tourism areas have seasonal demand.',
+      'Verify regional service to Penn Yan.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

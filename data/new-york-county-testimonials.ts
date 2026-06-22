@@ -1567,6 +1567,58 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Condo',
     },
   ],
+  wyoming: [
+    {
+      quote:
+        'Corrigan Moving handled our Warsaw agricultural-property move professionally — efficient crew despite rural access challenges.',
+      name: 'Greg M.',
+      location: 'Warsaw, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Dan's Moving & Storage provided reliable Western NY regional service for our Wyoming County relocation — careful and efficient throughout.",
+      name: 'Susan K.',
+      location: 'Perry, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Rochester Moving & Storage drove in with fair pricing and professional service for our rural Wyoming County family home move.',
+      name: 'Mark D.',
+      location: 'Attica, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  yates: [
+    {
+      quote:
+        'Rochester Moving & Storage handled our Penn Yan lakeside move professionally — careful handling for our Keuka Lake relocation.',
+      name: 'Rachel W.',
+      location: 'Penn Yan, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        'Reliable Movers provided dependable regional service for our winery-area move — efficient crews despite seasonal tourism timing.',
+      name: 'James H.',
+      location: 'Hammondsport, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was courteous and efficient with great communication for our Yates County rural home move.",
+      name: 'Diane L.',
+      location: 'Dundee, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

@@ -499,6 +499,19 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'gentle-giant-westchester',
     'college-hunks-westchester',
   ],
+  wyoming: [
+    'corrigan-moving-buffalo',
+    'dans-moving-storage-wny',
+    'rochester-moving-storage-rochester',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+  ],
+  yates: [
+    'rochester-moving-storage-rochester',
+    'reliable-movers-syracuse',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+  ],
 };
 
 function hashSlug(slug: string): number {
