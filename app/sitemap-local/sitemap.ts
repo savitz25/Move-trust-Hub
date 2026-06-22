@@ -57,7 +57,9 @@ export default async function sitemap({
             county.slug === 'new-york' ||
             county.slug === 'richmond' ||
             county.slug === 'nassau' ||
-            county.slug === 'westchester'))
+            county.slug === 'westchester' ||
+            county.slug === 'erie' ||
+            county.slug === 'dutchess'))
           ? 0.85
           : 0.8,
     })),

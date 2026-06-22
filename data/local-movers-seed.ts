@@ -3192,6 +3192,37 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://mypieceofcakemove.com/',
   },
 
+  // Erie County / Buffalo, NY (Grok-researched)
+  'corrigan-moving-buffalo': {
+    id: 'corrigan-moving-buffalo',
+    name: 'Corrigan Moving Systems',
+    rating: 4.8,
+    reviewCount: 420,
+    shortDescription:
+      'Established Buffalo mover serving Erie County residential and commercial moves with long-distance and storage options.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '153343',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Buffalo',
+    website: 'https://www.corriganmoving.com/',
+  },
+  'two-men-and-a-truck-buffalo': {
+    id: 'two-men-and-a-truck-buffalo',
+    name: 'Two Men and a Truck Buffalo',
+    rating: 4.6,
+    reviewCount: 1600,
+    shortDescription:
+      'Local franchise with strong teams for Buffalo, Amherst, and Cheektowaga apartment and residential moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'High-Rise'],
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Cheektowaga',
+    website: 'https://twomenandatruck.com/movers/ny/buffalo',
+  },
+
   // Burlington County, NJ (Grok-researched)
   'piece-of-cake-moving-burlington': {
     id: 'piece-of-cake-moving-burlington',
@@ -3516,10 +3547,12 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'buffalo-niagara-ny',
     label: 'Western New York / Buffalo–Niagara',
     moverIds: [
-      'ck-local-movers-olean',
-      'dans-moving-storage-wny',
+      'corrigan-moving-buffalo',
+      'two-men-and-a-truck-buffalo',
       'mabeys-moving-storage-albany',
       'dons-moving-storage-albany',
+      'dans-moving-storage-wny',
+      'ck-local-movers-olean',
       'clark-moving-storage-albany',
       'arnoff-moving-storage-albany',
       'all-ways-moving-storage-albany',

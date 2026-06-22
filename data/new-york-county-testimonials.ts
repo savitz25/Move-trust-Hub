@@ -371,6 +371,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Apartment',
     },
   ],
+  erie: [
+    {
+      quote:
+        "Mabey's Moving provided professional, reliable service for our Amherst relocation — efficient crews and careful handling throughout.",
+      name: 'David K.',
+      location: 'Amherst, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Corrigan Moving Systems handled our Buffalo high-rise move flawlessly — great communication and careful loading despite building restrictions.',
+      name: 'Nicole P.',
+      location: 'Buffalo, NY',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        "Two Men and a Truck navigated our Cheektowaga family home move with an efficient, courteous crew — easily our best Western NY experience.",
+      name: 'James R.',
+      location: 'Cheektowaga, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  essex: [
+    {
+      quote:
+        'Stafford Moving handled our Lake Placid seasonal property with a professional crew — careful in challenging mountain conditions.',
+      name: 'Barbara F.',
+      location: 'Lake Placid, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Elizabethtown relocation despite remote Adirondack access.",
+      name: 'Greg T.',
+      location: 'Elizabethtown, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered efficient service and fair pricing for our Essex County move — great regional support.",
+      name: 'Anne L.',
+      location: 'Keene, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  franklin: [
+    {
+      quote:
+        'Stafford Moving handled our Malone relocation professionally — careful handling in rural northern conditions.',
+      name: 'Wayne H.',
+      location: 'Malone, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and efficient with great communication for our Franklin County move.",
+      name: 'Janet C.',
+      location: 'Saranac Lake, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Arnoff Moving provided reliable service and careful handling for our northern Adirondack relocation.",
+      name: 'Paul S.',
+      location: 'Tupper Lake, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

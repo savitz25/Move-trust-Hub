@@ -126,6 +126,29 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'optimum-moving-bergen',
     'movers-201-bergen',
   ],
+  erie: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'corrigan-moving-buffalo',
+    'two-men-and-a-truck-buffalo',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  essex: [
+    'stafford-moving-plattsburgh',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  franklin: [
+    'stafford-moving-plattsburgh',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+  ],
 };
 
 function hashSlug(slug: string): number {

@@ -246,6 +246,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value properties.',
     ],
   },
+  erie: {
+    marketNotes:
+      'Erie County is a major urban/suburban county centered on Buffalo with strong industrial, medical, and lakeside communities. Moves frequently involve high-rises, family homes, and cross-border logistics.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Buffalo, Amherst, and Cheektowaga moves often reflect lakefront access, winter weather windows, and I-90 / Kensington Expressway traffic.',
+    },
+    tips: [
+      'Lake Erie and waterfront properties require weather and access planning.',
+      'Snowy winters impact scheduling; confirm contingencies.',
+      'Heavy traffic on I-90, I-290, and Kensington Expressway.',
+      'Verify coverage for Buffalo, Amherst, Cheektowaga, and Tonawanda.',
+      'Confirm insurance for high-value urban items.',
+    ],
+  },
+  essex: {
+    marketNotes:
+      'Essex County is very rural with the Adirondack Park and Lake Placid. Moves are residential and seasonal with very limited local options. Regional service from Plattsburgh or Albany is primary.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lake Placid and Adirondack moves often reflect mountain access roads, winter weather, and travel from Plattsburgh crews.',
+    },
+    tips: [
+      'Adirondack and lake properties require specialized access planning.',
+      'Winter weather significantly affects timing.',
+      'Verify explicit regional service to Lake Placid and outlying areas.',
+      'Storage is limited; use regional facilities.',
+      'Obtain multiple estimates.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is rural with Malone as its seat and Adirondack influence. Moves are residential with very limited local options. Regional service from Plattsburgh or Massena is common.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Malone and northern Adirondack moves often reflect harsh winter timing and long rural access roads.',
+    },
+    tips: [
+      'Rural and Adirondack properties have access challenges.',
+      'Harsh winters affect scheduling.',
+      'Verify explicit regional service to Malone.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(
