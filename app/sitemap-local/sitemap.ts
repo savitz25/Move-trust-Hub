@@ -21,10 +21,12 @@ const CA_HIGH_TRAFFIC_COUNTIES = new Set([
   'orange',
   'riverside',
   'sacramento',
+  'san-bernardino',
   'san-diego',
   'san-francisco',
   'san-mateo',
   'santa-clara',
+  'ventura',
 ]);
 
 /** High-traffic NY counties — sitemap priority 0.85 */

@@ -6,10 +6,32 @@ Replicate the Florida / New Jersey / New York / California model for any new sta
 
 | State | Counties | Rural min | Major target | Sitemap 0.85 | Audit scripts |
 |-------|----------|-----------|--------------|--------------|---------------|
-| California | 58/58 | 5 | 10 | 13 counties | TBD |
+| California | 58/58 | 5 | 10 | 15 counties | `count-california-movers.ts`, `apply-california-mover-expansion.ts` |
 | Florida | 67/67 | 5 | 8 (cap 10) | 2 counties | `count-fl-movers.ts`, `apply-fl-mover-expansion.ts` |
 | New Jersey | 21/21 | 7 | 10 | 8 counties | `count-nj-movers.ts`, `apply-nj-mover-expansion.ts` |
 | New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
+
+### California metro pools (`data/local-movers-seed.ts`)
+
+- `bay-area-ca` — SF, Peninsula, South Bay, North Bay franchise slugs
+- `greater-la-ca` — LA, Orange, Inland Empire, Ventura franchise slugs
+- `sacramento-metro-ca` — Sacramento, Gold Country, Tahoe corridor
+- `san-diego-ca` — San Diego / Imperial Valley
+- `central-valley-ca` — Fresno, Stockton, Modesto corridor
+- `bakersfield-metro-ca` — Kern County cluster
+- `chico-metro-ca` — Butte / Chico regional
+- `north-coast-ca` — Humboldt, Mendocino, Del Norte
+- `northern-valley-ca` — Shasta, Tehama, Glenn, Colusa
+- `sierra-rural-ca` — Alpine, Mono, Inyo, Sierra
+- `central-coast-ca` — Monterey, SLO, Santa Barbara
+
+### California major counties (10 movers each)
+
+`alameda`, `contra-costa`, `los-angeles`, `orange`, `riverside`, `sacramento`, `san-bernardino`, `san-diego`, `san-francisco`, `san-mateo`, `santa-clara`, `ventura`
+
+### California sitemap priority 0.85 (15 counties)
+
+All major counties above plus `fresno`, `kern`, `marin` (Central Valley ag hub + affluent North Bay commuter market).
 
 ### New York metro pools (`data/local-movers-seed.ts`)
 
@@ -111,6 +133,7 @@ harris: [
 ## Verification commands
 
 ```bash
+npx tsx scripts/count-california-movers.ts
 npx tsx scripts/count-fl-movers.ts
 npx tsx scripts/count-nj-movers.ts
 npx tsx scripts/count-ny-movers.ts

@@ -13,6 +13,8 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'sunny-moving-company-bay-area',
     'fairprice-movers-bay-area',
     'california-regional-moving',
+    'piece-of-cake-moving-sanfrancisco',
+    'booth-movers-sanfrancisco',
   ],
   alpine: [
     'mountain-lake-mover-tahoe',
@@ -60,6 +62,8 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'sunny-moving-company-bay-area',
     'fairprice-movers-bay-area',
     'california-regional-moving',
+    'morningstar-moving-alameda',
+    'got2move-alameda',
   ],
   'del-norte': [
     'humboldt-moving-storage-eureka',
@@ -146,6 +150,7 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'dj-professional-movers-chico',
     'mother-lode-van-storage-sacramento',
     'california-capital-movers',
+    'california-county-moving-co',
   ],
   'los-angeles': [
     'piece-of-cake-moving-losangeles',
@@ -182,6 +187,7 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-fresno',
     'california-express-movers',
     'california-family-movers',
+    'california-capital-movers',
   ],
   mendocino: [
     'humboldt-moving-storage-eureka',
@@ -205,12 +211,14 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'dj-professional-movers-chico',
     'mother-lode-van-storage-sacramento',
     'california-capital-movers',
+    'california-county-moving-co',
   ],
   mono: [
     'on-track-moving-bishop',
     'mountain-lake-mover-tahoe',
     'tahoe-moving-storage-truckee',
     'mother-lode-van-storage-sacramento',
+    'california-family-movers',
   ],
   monterey: [
     'meathead-movers-california',
@@ -265,6 +273,7 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'dj-professional-movers-chico',
     'mother-lode-van-storage-sacramento',
     'california-capital-movers',
+    'california-county-moving-co',
   ],
   riverside: [
     'california-premier-moving',
@@ -275,6 +284,8 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'piece-of-cake-moving-orange-ca',
     'booth-movers-orange-ca',
     'all-my-sons-orange-ca',
+    'piece-of-cake-moving-sanbernardino',
+    'booth-movers-sanbernardino',
   ],
   sacramento: [
     'mother-lode-van-storage-sacramento',
@@ -285,6 +296,8 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-regional-moving',
     'california-express-movers',
     'california-local-lines',
+    'mountain-lake-mover-tahoe',
+    'tahoe-moving-storage-truckee',
   ],
   'san-benito': [
     'fairprice-movers-bay-area',
@@ -357,6 +370,8 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'all-my-sons-sanmateo',
     'sunny-moving-company-bay-area',
     'prodigy-moving-storage-bay-area',
+    'roadway-moving-bay-area',
+    'fairprice-movers-bay-area',
   ],
   'santa-barbara': [
     'meathead-movers-california',
@@ -402,6 +417,7 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'tahoe-moving-storage-truckee',
     'mother-lode-van-storage-sacramento',
     'california-capital-movers',
+    'california-family-movers',
   ],
   siskiyou: [
     'two-men-and-a-truck-chico',
@@ -459,6 +475,7 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'dj-professional-movers-chico',
     'mother-lode-van-storage-sacramento',
     'california-capital-movers',
+    'humboldt-moving-storage-eureka',
   ],
   tulare: [
     'hills-moving-storage-bakersfield',
@@ -486,6 +503,8 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'meathead-movers-california',
     'california-premier-moving',
     'all-my-sons-losangeles',
+    'zip-to-zip-moving-losangeles',
+    'optimum-moving-losangeles',
   ],
   yolo: [
     'mother-lode-van-storage-sacramento',
