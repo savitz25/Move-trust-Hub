@@ -3732,7 +3732,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 150,
     shortDescription:
-      'Established Rochester mover serving Monroe, Livingston, Ontario, and Orleans counties with local and long-distance residential moves.',
+      'Established Rochester mover serving Monroe, Livingston, Ontario, Orleans, Seneca, and Steuben counties with local and long-distance residential moves.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1622882',

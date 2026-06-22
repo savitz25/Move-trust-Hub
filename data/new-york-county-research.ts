@@ -824,6 +824,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  seneca: {
+    marketNotes:
+      'Seneca County is rural with Finger Lakes influence and Seneca Falls. Moves are primarily residential and lakeside with regional support from Syracuse or Rochester.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Seneca Falls and Waterloo moves often reflect lakeside access, Finger Lakes seasonal timing, and travel from Syracuse or Rochester crews.',
+    },
+    tips: [
+      'Lakeside properties require water-adjacent planning.',
+      'Verify regional service to Seneca Falls and Waterloo.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  'st-lawrence': {
+    marketNotes:
+      'St. Lawrence County is large and rural with Canton, Potsdam, and Ogdensburg. Moves often involve residential, university (SUNY Potsdam, Clarkson), and riverfront properties with regional support from Watertown or Syracuse.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Canton, Potsdam, and Ogdensburg moves often reflect university semester timing, St. Lawrence River access, and harsh North Country winters.',
+    },
+    tips: [
+      'University calendar affects seasonal demand.',
+      'Rural and river properties have access challenges.',
+      'Harsh winters affect scheduling.',
+      'Verify coverage for Canton, Potsdam, and Ogdensburg.',
+      'Confirm credentials.',
+    ],
+  },
+  steuben: {
+    marketNotes:
+      'Steuben County is rural with Corning (glass industry) and Bath. Moves often involve residential and industrial properties with regional support from Elmira or Rochester.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Corning and Bath moves often reflect rural access roads, industrial-property logistics, and travel from Elmira or Rochester crews.',
+    },
+    tips: [
+      'Rural properties have access challenges.',
+      'Verify regional service to Corning and Bath.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

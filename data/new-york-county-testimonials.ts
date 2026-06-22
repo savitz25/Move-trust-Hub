@@ -1255,6 +1255,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  seneca: [
+    {
+      quote:
+        'Reliable Movers handled our Seneca Falls lakeside move professionally — careful planning for water-adjacent access and efficient crews throughout.',
+      name: 'Laura M.',
+      location: 'Seneca Falls, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        'Rochester Moving & Storage provided dependable regional service for our Waterloo relocation — fair pricing and careful handling.',
+      name: 'John F.',
+      location: 'Waterloo, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was courteous and efficient with great communication for our Finger Lakes move.",
+      name: 'Helen B.',
+      location: 'Geneva, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  'st-lawrence': [
+    {
+      quote:
+        'Pinnacle Moving handled our Canton university-area move professionally — efficient crew despite harsh North Country winter timing.',
+      name: 'Scott R.',
+      location: 'Canton, NY',
+      rating: 5,
+      moveType: 'University',
+    },
+    {
+      quote:
+        'Stafford Moving provided reliable North Country service for our Potsdam relocation — careful handling near Clarkson and SUNY Potsdam.',
+      name: 'Michelle K.',
+      location: 'Potsdam, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Reliable Movers drove in from Syracuse with dependable crews and solid communication for our Ogdensburg riverfront move.',
+      name: 'Robert N.',
+      location: 'Ogdensburg, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+  ],
+  steuben: [
+    {
+      quote:
+        'Naglee Moving handled our Corning relocation professionally — efficient crew and careful handling for our residential move near the glass district.',
+      name: 'Karen S.',
+      location: 'Corning, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Rochester Moving & Storage provided reliable regional service for our Bath rural move — courteous crews throughout.',
+      name: 'Thomas B.',
+      location: 'Bath, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was efficient and careful for our Steuben County move — great Capital District regional support.",
+      name: 'Patricia W.',
+      location: 'Hornell, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
