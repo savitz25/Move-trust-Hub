@@ -756,6 +756,74 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value suburban properties.',
     ],
   },
+  saratoga: {
+    marketNotes:
+      'Saratoga County is growing suburban/rural with Saratoga Springs as its hub. Moves often involve residential, tourist/seasonal, and historic properties with strong Capital District support.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Saratoga Springs, Clifton Park, and Ballston Spa moves often reflect racing-season demand, historic-home handling, and I-87 traffic windows.',
+    },
+    tips: [
+      'Seasonal tourism and racing season increase demand in Saratoga Springs.',
+      'Historic properties require preservation-sensitive handling.',
+      'I-87 traffic can impact timing.',
+      'Verify coverage for Saratoga Springs, Clifton Park, and Ballston Spa.',
+      'Confirm insurance for high-value homes.',
+    ],
+  },
+  schenectady: {
+    marketNotes:
+      'Schenectady County centers on Schenectady with suburban and historic areas. Moves often involve residential and historic properties with strong Capital District support.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Schenectady and Niskayuna moves often reflect historic-district handling, I-890 / I-87 traffic, and Capital District crew availability.',
+    },
+    tips: [
+      'Historic districts require preservation-sensitive handling.',
+      'Verify coverage for Schenectady and Niskayuna.',
+      'I-890 and I-87 traffic can impact timing.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  schoharie: {
+    marketNotes:
+      'Schoharie County is rural with Schoharie and Cobleskill. Moves are primarily residential with regional support from Albany.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Schoharie and Cobleskill moves often reflect rural access roads and travel from Albany Capital District crews.',
+    },
+    tips: [
+      'Rural properties have access challenges.',
+      'Verify regional service to Schoharie.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  schuyler: {
+    marketNotes:
+      'Schuyler County is rural with Watkins Glen (racetrack/tourism). Moves often involve residential and seasonal lake properties with regional support from Ithaca or Elmira.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Watkins Glen and lakeside moves often reflect Seneca Lake access, racing-season timing, and travel from Elmira or Ithaca crews.',
+    },
+    tips: [
+      'Lakeside properties require water-adjacent planning.',
+      'Tourism and racing events affect seasonal demand.',
+      'Verify regional service to Watkins Glen.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

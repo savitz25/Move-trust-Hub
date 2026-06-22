@@ -371,6 +371,38 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'all-my-sons-burlington',
     'mabeys-moving-storage-albany',
   ],
+  saratoga: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'lamanna-moving-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+    'booth-movers-bergen',
+  ],
+  schenectady: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'lamanna-moving-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  schoharie: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'lamanna-moving-albany',
+    'clark-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  schuyler: [
+    'naglee-moving-elmira',
+    'reliable-movers-syracuse',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+  ],
 };
 
 function hashSlug(slug: string): number {

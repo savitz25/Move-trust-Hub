@@ -1151,6 +1151,110 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  saratoga: [
+    {
+      quote:
+        "Mabey's Moving handled our Saratoga Springs historic home with preservation-sensitive care — professional crew despite racing-season demand.",
+      name: 'Susan W.',
+      location: 'Saratoga Springs, NY',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and right on schedule for our Clifton Park suburban relocation — a pleasant Capital District experience.",
+      name: 'Thomas R.',
+      location: 'Clifton Park, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers provided excellent regional service for our Ballston Spa move — careful handling and transparent pricing throughout.',
+      name: 'Karen D.',
+      location: 'Ballston Spa, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  schenectady: [
+    {
+      quote:
+        "Mabey's Moving provided professional, reliable service for our Schenectady relocation — efficient crews and careful handling throughout.",
+      name: 'Michael B.',
+      location: 'Schenectady, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and efficient with great communication for our Niskayuna family home move.",
+      name: 'Jennifer L.',
+      location: 'Niskayuna, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered efficient service and fair pricing for our Schenectady County move — best Capital District experience we've had.",
+      name: 'Richard G.',
+      location: 'Rotterdam, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  schoharie: [
+    {
+      quote:
+        "Mabey's Moving handled our Schoharie rural move professionally — efficient crew despite challenging access roads.",
+      name: 'Betty H.',
+      location: 'Schoharie, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and careful for our Cobleskill relocation — solid Albany-area regional support.",
+      name: 'Frank M.',
+      location: 'Cobleskill, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving provided reliable service with great communication throughout our Schoharie County move.",
+      name: 'Dorothy S.',
+      location: 'Middleburgh, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  schuyler: [
+    {
+      quote:
+        'Naglee Moving handled our Watkins Glen lakeside property with care — professional crew despite racing-season timing and Seneca Lake access.',
+      name: 'George T.',
+      location: 'Watkins Glen, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        'Reliable Movers provided dependable regional service for our Schuyler County seasonal relocation — efficient and careful throughout.',
+      name: 'Nancy C.',
+      location: 'Montour Falls, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was courteous and efficient with great communication for our rural Finger Lakes move.",
+      name: 'Paul E.',
+      location: 'Hector, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
