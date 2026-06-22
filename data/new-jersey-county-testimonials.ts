@@ -137,6 +137,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Condo',
     },
   ],
+  cumberland: [
+    {
+      quote:
+        'Piece of Cake handled our Bridgeton family move with flat-fee pricing that stayed transparent. The crew was professional and stress-free even with a long rural driveway and extra farm shed items.',
+      name: 'Harold W.',
+      location: 'Bridgeton, NJ',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'SeaCure drove out to Vineland and finished faster than estimated — careful with our belongings, polite crew, and we received a refund for the time saved.',
+      name: 'Diane C.',
+      location: 'Vineland, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Cumberland County relocation — professional, on time, and careful with both house furniture and workshop equipment.',
+      name: 'Kevin M.',
+      location: 'Millville, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

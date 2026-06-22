@@ -93,6 +93,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify explicit service to Cape May, Wildwood, and outlying areas.',
     ],
   },
+  cumberland: {
+    marketNotes:
+      'Cumberland County is rural/agricultural with Bridgeton and Vineland as key hubs. Moves often involve residential, farm-related, and family relocations with some industrial/commercial activity. Regional South Jersey support is common.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Bridgeton and Vineland moves may reflect rural driveways, farm equipment handling, and travel from regional South Jersey crews.',
+    },
+    tips: [
+      'Agricultural or rural properties may involve long driveways or equipment handling; provide detailed inventory.',
+      'Confirm explicit regional service to Bridgeton and Vineland.',
+      'Storage is limited locally; use South Jersey facilities if needed.',
+      'Obtain multiple estimates in this moderate-volume market.',
+      'Verify credentials and insurance for farm or high-value items.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(
