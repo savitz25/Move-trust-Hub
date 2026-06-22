@@ -8,7 +8,7 @@ export const californiaCounties: LocalCounty[] = [
   { slug: 'alameda', name: 'Alameda', stateCode: CODE, stateSlug: CA, metro: 'bay-area-ca', seat: 'Oakland' },
   { slug: 'alpine', name: 'Alpine', stateCode: CODE, stateSlug: CA, metro: 'sierra-rural-ca', seat: 'Markleeville' },
   { slug: 'amador', name: 'Amador', stateCode: CODE, stateSlug: CA, metro: 'sacramento-metro-ca', seat: 'Jackson' },
-  { slug: 'butte', name: 'Butte', stateCode: CODE, stateSlug: CA, metro: 'northern-valley-ca', seat: 'Oroville' },
+  { slug: 'butte', name: 'Butte', stateCode: CODE, stateSlug: CA, metro: 'chico-metro-ca', seat: 'Oroville' },
   { slug: 'calaveras', name: 'Calaveras', stateCode: CODE, stateSlug: CA, metro: 'sacramento-metro-ca', seat: 'San Andreas' },
   { slug: 'colusa', name: 'Colusa', stateCode: CODE, stateSlug: CA, metro: 'northern-valley-ca', seat: 'Colusa' },
   { slug: 'contra-costa', name: 'Contra Costa', stateCode: CODE, stateSlug: CA, metro: 'bay-area-ca', seat: 'Martinez' },

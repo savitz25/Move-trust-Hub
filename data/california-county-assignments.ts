@@ -28,6 +28,46 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-county-moving-co',
     'ernies-moving-sacramento',
   ],
+  butte: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'california-capital-movers',
+    'mother-lode-van-storage-sacramento',
+    'california-family-movers',
+    'ernies-moving-sacramento',
+    'california-county-moving-co',
+  ],
+  calaveras: [
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+  ],
+  colusa: [
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+    'mother-lode-van-storage-sacramento',
+    'two-men-and-a-truck-chico',
+  ],
+  'contra-costa': [
+    'morningstar-moving-contracosta',
+    'got2move-contracosta',
+    'roadway-moving-bay-area',
+    'prodigy-moving-storage-bay-area',
+    'meathead-movers-california',
+    'sunny-moving-company-bay-area',
+    'fairprice-movers-bay-area',
+    'california-regional-moving',
+  ],
+  'del-norte': [
+    'humboldt-moving-storage-eureka',
+    'meathead-movers-california',
+    'california-regional-moving',
+    'california-capital-movers',
+    'california-family-movers',
+  ],
 };
 
 function hashSlug(slug: string): number {

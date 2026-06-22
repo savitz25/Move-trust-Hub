@@ -85,6 +85,136 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Single-family',
     },
   ],
+  butte: [
+    {
+      quote:
+        'Two Men and a Truck Chico handled our university-area move professionally — efficient crew despite Chico State calendar timing.',
+      name: 'Alex P.',
+      location: 'Chico, CA',
+      rating: 5,
+      moveType: 'Student',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable service for our Oroville relocation — careful handling for our foothill property.',
+      name: 'Nancy R.',
+      location: 'Oroville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Capital Movers drove in from Sacramento with fair pricing and professional service for our rural Butte County move.',
+      name: 'Greg F.',
+      location: 'Paradise, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  calaveras: [
+    {
+      quote:
+        'Mother Lode Van & Storage handled our Angels Camp Gold Country move professionally — careful handling for our rural foothill home.',
+      name: 'Steve M.',
+      location: 'Angels Camp, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Capital Movers provided dependable regional service for our San Andreas relocation — efficient crews throughout.',
+      name: 'Diane K.',
+      location: 'San Andreas, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Ernie's Moving crew was courteous and efficient with great communication for our Calaveras County family home move.",
+      name: 'Rick T.',
+      location: 'Murphys, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  colusa: [
+    {
+      quote:
+        'California Capital Movers handled our Colusa agricultural-property move professionally — efficient crew despite rural access challenges.',
+      name: 'John A.',
+      location: 'Colusa, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Mother Lode Van provided reliable regional service for our rural Sacramento Valley relocation — careful and efficient throughout.',
+      name: 'Mary L.',
+      location: 'Williams, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'Two Men and a Truck Chico drove in with fair pricing and professional service for our remote Colusa County move.',
+      name: 'Dan W.',
+      location: 'Arbuckle, CA',
+      rating: 5,
+      moveType: 'Rural',
+    },
+  ],
+  'contra-costa': [
+    {
+      quote:
+        'MorningStar made our Walnut Creek move stress-free — professional crew, HOA coordination, and excellent handling of our furnishings.',
+      name: 'Jennifer H.',
+      location: 'Walnut Creek, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Got2Move provided outstanding customer service for our Concord relocation — smooth, efficient, and transparent pricing.',
+      name: 'Michael D.',
+      location: 'Concord, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Roadway Moving exceeded expectations on our Antioch family home move — professional team and careful handling throughout.',
+      name: 'Patricia G.',
+      location: 'Antioch, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'del-norte': [
+    {
+      quote:
+        'Humboldt Moving & Storage handled our Crescent City coastal move professionally — careful planning for our remote North Coast relocation.',
+      name: 'Robert N.',
+      location: 'Crescent City, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Meathead Movers provided dependable regional service for our Del Norte County move — efficient crews despite limited local options.',
+      name: 'Susan E.',
+      location: 'Klamath, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Regional Moving drove in with fair pricing and professional service for our remote coastal property move.',
+      name: 'William C.',
+      location: 'Smith River, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

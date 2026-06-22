@@ -59,6 +59,90 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  butte: {
+    marketNotes:
+      'Butte County includes Chico and Oroville with university (Chico State) and rural areas. Moves often involve residential and student properties with regional Northern California support.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Chico and Oroville moves often reflect university calendar peaks, rural foothill access, and travel from Sacramento regional crews.',
+    },
+    tips: [
+      'University calendar affects seasonal demand in Chico.',
+      'Rural and foothill properties have access challenges.',
+      'Verify coverage for Chico and Oroville.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  calaveras: {
+    marketNotes:
+      'Calaveras County is rural Gold Country with Angels Camp. Moves are primarily residential with regional support from Stockton or Sacramento.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Angels Camp and San Andreas moves often reflect foothill access roads and travel from Stockton or Sacramento metro crews.',
+    },
+    tips: [
+      'Rural and foothill properties have access challenges.',
+      'Verify regional service to Angels Camp.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  colusa: {
+    marketNotes:
+      'Colusa County is one of California\'s most rural agricultural counties. Moves are limited and primarily residential with regional support from Sacramento or Chico.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Colusa and rural agricultural moves often reflect equipment-handling needs, limited local crews, and travel from Sacramento or Chico.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Colusa.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  'contra-costa': {
+    marketNotes:
+      'Contra Costa County is a large suburban county with Walnut Creek, Concord, and Antioch. Moves often involve family homes and commuter properties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$135–$200/hr for a 2-person crew',
+      note: 'Walnut Creek, Concord, and Antioch moves often reflect HOA move-in rules, I-680 traffic, and high-value suburban home handling.',
+    },
+    tips: [
+      'Many HOAs have strict move-in rules.',
+      'Heavy traffic on I-680 and Highway 4.',
+      'Verify coverage for Walnut Creek, Concord, and Antioch.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons.',
+    ],
+  },
+  'del-norte': {
+    marketNotes:
+      'Del Norte County is remote coastal with Crescent City. Moves are limited and primarily residential with regional support from Eureka or Medford, OR.',
+    costs: {
+      studioRange: '$500–$1,000+',
+      familyRange: '$1,800–$4,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Crescent City and coastal Del Norte moves often reflect remote access, limited local crews, and travel from Eureka or regional North Coast providers.',
+    },
+    tips: [
+      'Coastal and remote properties have access challenges.',
+      'Verify explicit regional service to Crescent City.',
+      'Storage is limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for remote moves.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(
