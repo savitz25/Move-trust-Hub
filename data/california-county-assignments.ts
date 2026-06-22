@@ -339,6 +339,35 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-county-moving-co',
     'ernies-moving-sacramento',
   ],
+  'san-luis-obispo': [
+    'meathead-movers-california',
+    'california-premier-moving',
+    'california-pro-movers',
+    'california-local-lines',
+    'california-regional-moving',
+    'california-express-movers',
+    'meathead-movers-fresno',
+  ],
+  'san-mateo': [
+    'piece-of-cake-moving-sanmateo',
+    'booth-movers-sanmateo',
+    'white-glove-moving-sanmateo',
+    'zip-to-zip-moving-sanmateo',
+    'optimum-moving-sanmateo',
+    'all-my-sons-sanmateo',
+    'sunny-moving-company-bay-area',
+    'prodigy-moving-storage-bay-area',
+  ],
+  'santa-barbara': [
+    'meathead-movers-california',
+    'california-premier-moving',
+    'california-pro-movers',
+    'california-local-lines',
+    'california-regional-moving',
+    'california-express-movers',
+    'california-family-movers',
+    'california-capital-movers',
+  ],
 };
 
 function hashSlug(slug: string): number {

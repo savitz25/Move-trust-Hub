@@ -1021,6 +1021,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Agricultural',
     },
   ],
+  'san-luis-obispo': [
+    {
+      quote:
+        'Meathead Movers handled our Pismo Beach coastal move professionally — careful sand protection and great tourism-season coordination.',
+      name: 'Laura G.',
+      location: 'Pismo Beach, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'California Premier Moving provided dependable service for our Paso Robles winery-property relocation — efficient and careful throughout.',
+      name: 'Robert N.',
+      location: 'Paso Robles, CA',
+      rating: 5,
+      moveType: 'Winery',
+    },
+    {
+      quote:
+        'California Regional Moving drove in with fair pricing and professional service for our San Luis Obispo family home move.',
+      name: 'Janice P.',
+      location: 'San Luis Obispo, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  'san-mateo': [
+    {
+      quote:
+        'Piece of Cake Moving made our Redwood City tech-commuter home move stress-free — professional HOA coordination and transparent pricing.',
+      name: 'Michael T.',
+      location: 'Redwood City, CA',
+      rating: 5,
+      moveType: 'High-Value',
+    },
+    {
+      quote:
+        'Booth Movers handled our San Mateo suburban relocation with outstanding care — efficient despite heavy Highway 101 Peninsula traffic.',
+      name: 'Jennifer A.',
+      location: 'San Mateo, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Sunny Moving Company provided excellent Daly City local service for our Peninsula move — careful handling and great communication.',
+      name: 'Eric W.',
+      location: 'Daly City, CA',
+      rating: 5,
+      moveType: 'Suburban',
+    },
+  ],
+  'santa-barbara': [
+    {
+      quote:
+        'Meathead Movers handled our Santa Barbara coastal move professionally — careful beach-property planning and excellent seasonal timing.',
+      name: 'Christina M.',
+      location: 'Santa Barbara, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'California Premier Moving provided dependable service for our Santa Maria relocation — efficient crew and careful wine-country property handling.',
+      name: 'Daniel F.',
+      location: 'Santa Maria, CA',
+      rating: 5,
+      moveType: 'Winery',
+    },
+    {
+      quote:
+        'California Express Movers drove in with fair pricing and professional service for our Goleta beach-adjacent family home move.',
+      name: 'Rachel K.',
+      location: 'Goleta, CA',
+      rating: 5,
+      moveType: 'Beach',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

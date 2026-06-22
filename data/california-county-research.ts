@@ -668,6 +668,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value items.',
     ],
   },
+  'san-luis-obispo': {
+    marketNotes:
+      'San Luis Obispo County is coastal/Central Coast with San Luis Obispo, Paso Robles, and Pismo Beach. Moves often involve residential, winery, and beach properties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'San Luis Obispo and Paso Robles moves often reflect coastal sand protection, winery-property handling, and seasonal tourism peaks.',
+    },
+    tips: [
+      'Coastal and winery properties require specialized planning.',
+      'Verify coverage for San Luis Obispo and Paso Robles.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for coastal moves.',
+      'Seasonal tourism affects demand.',
+    ],
+  },
+  'san-mateo': {
+    marketNotes:
+      'San Mateo County is affluent Peninsula suburban with Redwood City, Palo Alto influence, and coastal areas. Moves often involve high-value homes and tech commuter properties.',
+    costs: {
+      studioRange: '$650–$1,400',
+      familyRange: '$2,800–$6,000+',
+      avgHourly: '$140–$200/hr for a 2-person crew',
+      note: 'Redwood City, San Mateo, and Daly City moves often reflect HOA move-in rules, I-280/101 Peninsula traffic, and high-value tech-commuter home handling.',
+    },
+    tips: [
+      'Many HOAs and gated communities have strict rules.',
+      'Coastal and Peninsula traffic on I-280 and Highway 101 is heavy.',
+      'Verify coverage for Redwood City, San Mateo, and Daly City.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons.',
+    ],
+  },
+  'santa-barbara': {
+    marketNotes:
+      'Santa Barbara County is coastal with Santa Barbara, Santa Maria, and wine country. Moves often involve residential, beach, and winery properties.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Santa Barbara and Santa Maria moves often reflect coastal beach-property handling, wine-country access, and seasonal tourism peaks.',
+    },
+    tips: [
+      'Coastal and wine country properties require specialized planning.',
+      'Verify coverage for Santa Barbara and Santa Maria.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for beach moves.',
+      'Seasonal tourism affects demand.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(
