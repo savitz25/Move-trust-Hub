@@ -1,6 +1,33 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey model for any new state. Florida and New Jersey are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York model for any new state. Florida, New Jersey, and New York are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+
+## Reference states (audit-complete)
+
+| State | Counties | Rural min | Major target | Sitemap 0.85 | Audit scripts |
+|-------|----------|-----------|--------------|--------------|---------------|
+| Florida | 67/67 | 5 | 8 (cap 10) | 2 counties | `count-fl-movers.ts`, `apply-fl-mover-expansion.ts` |
+| New Jersey | 21/21 | 7 | 10 | 8 counties | `count-nj-movers.ts`, `apply-nj-mover-expansion.ts` |
+| New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
+
+### New York metro pools (`data/local-movers-seed.ts`)
+
+- `nyc-metro-ny` — NYC boroughs, Long Island, Westchester franchise slugs
+- `capital-district-ny` — Albany cluster (Mabey's, Don's, Lamanna, etc.)
+- `buffalo-niagara-ny` — Corrigan, Two Men Buffalo, Dan's WNY
+- `rochester-finger-lakes-ny` — Rochester Moving, Hired Hands, Naglee
+- `syracuse-central-ny` — Reliable Movers Syracuse, Dimon & Bacorn
+- `hudson-valley-ny` — Piece of Cake/Booth per county, Triangle
+- `southern-tier-ny` — Binghamton / Elmira regional
+- `north-country-ny` — Watertown / Plattsburgh regional
+
+### New York major counties (10 movers each)
+
+`albany`, `bronx`, `erie`, `kings`, `monroe`, `nassau`, `new-york`, `niagara`, `onondaga`, `queens`, `richmond`, `suffolk`, `westchester`
+
+### New York sitemap priority 0.85 (16 counties)
+
+All major counties above plus `dutchess`, `orange`, `rockland` (affluent Hudson Valley commuter markets).
 
 ## File checklist (create or update per state)
 
@@ -83,7 +110,9 @@ harris: [
 ## Verification commands
 
 ```bash
-npx tsx scripts/count-{state}-movers.ts
+npx tsx scripts/count-fl-movers.ts
+npx tsx scripts/count-nj-movers.ts
+npx tsx scripts/count-ny-movers.ts
 npx tsx scripts/apply-{state}-mover-expansion.ts   # if needed
 ```
 

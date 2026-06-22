@@ -9,6 +9,26 @@ import { localStates } from '@/lib/local-movers/states';
 
 const SITE_URL = 'https://www.movetrusthub.com';
 
+/** High-traffic NY counties — sitemap priority 0.85 */
+const NY_HIGH_TRAFFIC_COUNTIES = new Set([
+  'albany',
+  'bronx',
+  'dutchess',
+  'erie',
+  'kings',
+  'monroe',
+  'nassau',
+  'new-york',
+  'niagara',
+  'onondaga',
+  'orange',
+  'queens',
+  'richmond',
+  'rockland',
+  'suffolk',
+  'westchester',
+]);
+
 export async function generateSitemaps() {
   return localStates.map((state) => ({ id: state.slug }));
 }
@@ -50,16 +70,7 @@ export default async function sitemap({
         county.slug === 'ocean' ||
         county.slug === 'union' ||
         county.slug === 'passaic' ||
-        (id === 'new-york' &&
-          (county.slug === 'bronx' ||
-            county.slug === 'kings' ||
-            county.slug === 'queens' ||
-            county.slug === 'new-york' ||
-            county.slug === 'richmond' ||
-            county.slug === 'nassau' ||
-            county.slug === 'westchester' ||
-            county.slug === 'erie' ||
-            county.slug === 'dutchess'))
+        id === 'new-york' && NY_HIGH_TRAFFIC_COUNTIES.has(county.slug)
           ? 0.85
           : 0.8,
     })),
