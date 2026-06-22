@@ -1,3 +1,5 @@
+import { getCaliforniaCountyResearch } from '@/data/california-county-research';
+import { getCaliforniaCountyTestimonials } from '@/data/california-county-testimonials';
 import { getFloridaCountyResearch } from '@/data/florida-county-research';
 import { getFloridaCountyTestimonials } from '@/data/florida-county-testimonials';
 import { getNewJerseyCountyResearch } from '@/data/new-jersey-county-research';
@@ -79,7 +81,10 @@ export function buildStateDescription(
   countyCount: number
 ): string {
   const moverRange =
-    stateName === 'Florida' || stateName === 'New Jersey' || stateName === 'New York'
+    stateName === 'California' ||
+    stateName === 'Florida' ||
+    stateName === 'New Jersey' ||
+    stateName === 'New York'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';
   return `Find trusted local movers in all ${countyCount} ${stateName} counties — ${moverRange}, FMCSA licensing, county cost guides, and local moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
@@ -142,6 +147,9 @@ export type CountyCostGuide = {
 };
 
 export function buildCountyMarketNotes(county: LocalCounty): string | undefined {
+  if (county.stateSlug === 'california') {
+    return getCaliforniaCountyResearch(county.slug)?.marketNotes;
+  }
   if (county.stateSlug === 'florida') {
     return getFloridaCountyResearch(county.slug)?.marketNotes;
   }
@@ -158,6 +166,10 @@ export function buildCountyCostGuide(
   county: LocalCounty,
   stateName: string
 ): CountyCostGuide {
+  if (county.stateSlug === 'california') {
+    const curated = getCaliforniaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
   if (county.stateSlug === 'florida') {
     const curated = getFloridaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
@@ -210,6 +222,10 @@ export function buildCountyCostGuide(
 }
 
 export function buildCountyTips(county: LocalCounty, _stateName: string): string[] {
+  if (county.stateSlug === 'california') {
+    const curated = getCaliforniaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
   if (county.stateSlug === 'florida') {
     const curated = getFloridaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
@@ -249,6 +265,10 @@ export function buildCountyTestimonials(
   county: LocalCounty,
   _stateName: string
 ): CountyTestimonial[] {
+  if (county.stateSlug === 'california') {
+    const curated = getCaliforniaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
   if (county.stateSlug === 'florida') {
     const curated = getFloridaCountyTestimonials(county.slug);
     if (curated.length) return curated;

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { BadgeCheck, Calendar, Shield, User } from 'lucide-react';
 import { getSeoYear } from '@/lib/local-movers/index';
 
+export const CALIFORNIA_COUNTY_CONTENT_UPDATED = '2026-06-22';
 export const FLORIDA_COUNTY_CONTENT_UPDATED = '2026-06-21';
 export const NEW_JERSEY_COUNTY_CONTENT_UPDATED = '2026-06-22';
 export const NEW_YORK_COUNTY_CONTENT_UPDATED = '2026-06-22';

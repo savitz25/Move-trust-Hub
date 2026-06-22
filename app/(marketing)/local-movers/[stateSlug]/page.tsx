@@ -79,7 +79,10 @@ export default async function LocalMoversStatePage({ params }: Props) {
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
             {hasCounties
-              ? state.slug === 'florida' || state.slug === 'new-jersey' || state.slug === 'new-york'
+              ? state.slug === 'california' ||
+                state.slug === 'florida' ||
+                state.slug === 'new-jersey' ||
+                state.slug === 'new-york'
                 ? `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}

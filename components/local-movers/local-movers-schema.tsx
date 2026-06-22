@@ -1,5 +1,6 @@
 import { JsonLd } from '@/lib/seo/json-ld';
 import {
+  CALIFORNIA_COUNTY_CONTENT_UPDATED,
   FLORIDA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
@@ -62,13 +63,15 @@ export function LocalMoversSchema({
   const placeId = `${url}#place`;
 
   const contentModified =
-    county?.stateSlug === 'florida'
-      ? FLORIDA_COUNTY_CONTENT_UPDATED
-      : county?.stateSlug === 'new-jersey'
-        ? NEW_JERSEY_COUNTY_CONTENT_UPDATED
-        : county?.stateSlug === 'new-york'
-          ? NEW_YORK_COUNTY_CONTENT_UPDATED
-          : new Date().toISOString().slice(0, 10);
+    county?.stateSlug === 'california'
+      ? CALIFORNIA_COUNTY_CONTENT_UPDATED
+      : county?.stateSlug === 'florida'
+        ? FLORIDA_COUNTY_CONTENT_UPDATED
+        : county?.stateSlug === 'new-jersey'
+          ? NEW_JERSEY_COUNTY_CONTENT_UPDATED
+          : county?.stateSlug === 'new-york'
+            ? NEW_YORK_COUNTY_CONTENT_UPDATED
+            : new Date().toISOString().slice(0, 10);
 
   const movingCompanies = (movers ?? []).map((mover, index) => ({
     '@type': ['MovingCompany', 'LocalBusiness'],

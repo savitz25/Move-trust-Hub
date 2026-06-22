@@ -1,4 +1,5 @@
 import { generatedCountyAssignments } from '@/data/generated/index';
+import { californiaCountyMoverAssignments } from '@/data/california-county-assignments';
 import { floridaCountyMoverAssignments } from '@/data/florida-county-assignments';
 import { newJerseyCountyMoverAssignments } from '@/data/new-jersey-county-assignments';
 import { newYorkCountyMoverAssignments } from '@/data/new-york-county-assignments';
@@ -10,12 +11,18 @@ import { getLocalState } from '@/lib/local-movers/states';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 
-const curatedAssignmentStateSlugs = new Set(['florida', 'new-jersey', 'new-york']);
+const curatedAssignmentStateSlugs = new Set([
+  'california',
+  'florida',
+  'new-jersey',
+  'new-york',
+]);
 const generatedAssignmentsWithoutCurated = generatedCountyAssignments.filter(
   (entry) => !curatedAssignmentStateSlugs.has(entry.stateSlug)
 );
 
 const allCountyAssignments = [
+  ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,
   ...newYorkCountyMoverAssignments,

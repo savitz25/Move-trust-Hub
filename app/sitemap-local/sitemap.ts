@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import {
+  CALIFORNIA_COUNTY_CONTENT_UPDATED,
   FLORIDA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
@@ -8,6 +9,20 @@ import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { localStates } from '@/lib/local-movers/states';
 
 const SITE_URL = 'https://www.movetrusthub.com';
+
+/** High-traffic CA counties — sitemap priority 0.85 */
+const CA_HIGH_TRAFFIC_COUNTIES = new Set([
+  'alameda',
+  'contra-costa',
+  'los-angeles',
+  'orange',
+  'riverside',
+  'sacramento',
+  'san-diego',
+  'san-francisco',
+  'san-mateo',
+  'santa-clara',
+]);
 
 /** High-traffic NY counties — sitemap priority 0.85 */
 const NY_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -40,13 +55,15 @@ export default async function sitemap({
 }): Promise<MetadataRoute.Sitemap> {
   const counties = getCountiesForState(id);
   const lastModified =
-    id === 'florida'
-      ? new Date(FLORIDA_COUNTY_CONTENT_UPDATED)
-      : id === 'new-jersey'
-        ? new Date(NEW_JERSEY_COUNTY_CONTENT_UPDATED)
-        : id === 'new-york'
-          ? new Date(NEW_YORK_COUNTY_CONTENT_UPDATED)
-          : new Date();
+    id === 'california'
+      ? new Date(CALIFORNIA_COUNTY_CONTENT_UPDATED)
+      : id === 'florida'
+        ? new Date(FLORIDA_COUNTY_CONTENT_UPDATED)
+        : id === 'new-jersey'
+          ? new Date(NEW_JERSEY_COUNTY_CONTENT_UPDATED)
+          : id === 'new-york'
+            ? new Date(NEW_YORK_COUNTY_CONTENT_UPDATED)
+            : new Date();
 
   return [
     {
@@ -70,7 +87,8 @@ export default async function sitemap({
         county.slug === 'ocean' ||
         county.slug === 'union' ||
         county.slug === 'passaic' ||
-        id === 'new-york' && NY_HIGH_TRAFFIC_COUNTIES.has(county.slug)
+        (id === 'california' && CA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'new-york' && NY_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
