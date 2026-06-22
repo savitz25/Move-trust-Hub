@@ -1489,6 +1489,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  washington: [
+    {
+      quote:
+        "Mabey's Moving handled our Hudson Falls rural move professionally — efficient crew despite challenging access roads.",
+      name: 'Wayne H.',
+      location: 'Hudson Falls, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and careful for our Granville relocation — solid Capital District regional support.",
+      name: 'Janet C.',
+      location: 'Granville, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving provided reliable service with great communication throughout our Washington County move.",
+      name: 'Paul S.',
+      location: 'Fort Edward, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  wayne: [
+    {
+      quote:
+        'Rochester Moving & Storage handled our Lyons agricultural-property move professionally — careful handling for our rural Lake Ontario relocation.',
+      name: 'Tom G.',
+      location: 'Lyons, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided dependable regional service for our Newark lakeside move — efficient crews throughout.",
+      name: 'Betty N.',
+      location: 'Newark, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and efficient with great communication for our Wayne County family home move.",
+      name: 'Carl J.',
+      location: 'Palmyra, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  westchester: [
+    {
+      quote:
+        'Piece of Cake made our White Plains move stress-free — professional crew, transparent pricing, and excellent HOA coordination.',
+      name: 'Victoria N.',
+      location: 'White Plains, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our Scarsdale home with outstanding care — professional, careful, and respectful of our high-value furnishings.',
+      name: 'Charles E.',
+      location: 'Scarsdale, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant exceeded expectations on our Yonkers condo move — careful handling and efficient from quote through completion.',
+      name: 'Olivia T.',
+      location: 'Yonkers, NY',
+      rating: 5,
+      moveType: 'Condo',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

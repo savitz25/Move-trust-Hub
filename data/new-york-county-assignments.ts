@@ -475,6 +475,30 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'clark-moving-storage-albany',
     'busy-bee-movers-albany',
   ],
+  washington: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'lamanna-moving-albany',
+    'clark-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  wayne: [
+    'rochester-moving-storage-rochester',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  westchester: [
+    'piece-of-cake-moving-westchester',
+    'booth-movers-westchester',
+    'white-glove-moving-westchester',
+    'zip-to-zip-moving-westchester',
+    'optimum-moving-westchester',
+    'all-my-sons-westchester',
+    'gentle-giant-westchester',
+    'college-hunks-westchester',
+  ],
 };
 
 function hashSlug(slug: string): number {

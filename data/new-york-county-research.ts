@@ -977,6 +977,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  washington: {
+    marketNotes:
+      'Washington County is rural with Hudson Falls and Granville. Moves are primarily residential with regional support from Albany or Glens Falls.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Hudson Falls and Granville moves often reflect rural access roads and travel from Albany or Glens Falls crews.',
+    },
+    tips: [
+      'Rural properties have access challenges.',
+      'Verify regional service to Hudson Falls.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  wayne: {
+    marketNotes:
+      'Wayne County is rural/agricultural along Lake Ontario with Lyons and Newark. Moves are primarily residential with regional support from Rochester.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Lyons and Newark moves often reflect agricultural-property handling and Lake Ontario lakeside access.',
+    },
+    tips: [
+      'Agricultural and lakeside properties may require specialized handling.',
+      'Verify regional service to Lyons.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  westchester: {
+    marketNotes:
+      'Westchester County is affluent suburban with strong NYC commuter ties. Moves often involve high-value homes, condos, and corporate relocations.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$140–$210/hr for a 2-person crew',
+      note: 'White Plains, Scarsdale, and Yonkers moves often reflect HOA move-in rules, Saw Mill Parkway traffic, and high-value property handling.',
+    },
+    tips: [
+      'Many towns and HOAs have strict move-in rules.',
+      'Saw Mill River Parkway and I-95 traffic is heavy.',
+      'Verify coverage for White Plains, Yonkers, New Rochelle, and Scarsdale.',
+      'Confirm insurance for high-value properties.',
+      'Book early for peak seasons.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(
