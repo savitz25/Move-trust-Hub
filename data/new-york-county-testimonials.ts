@@ -787,6 +787,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Condo',
     },
   ],
+  'new-york': [
+    {
+      quote:
+        'Piece of Cake navigated our Upper East Side co-op flawlessly — COI, elevator reservation, and freight timing all handled professionally.',
+      name: 'Catherine B.',
+      location: 'Upper East Side, NY',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        'Booth Movers handled our West Village brownstone with outstanding care — professional crew in tight urban spaces and transparent pricing throughout.',
+      name: 'Michael T.',
+      location: 'West Village, NY',
+      rating: 5,
+      moveType: 'Brownstone',
+    },
+    {
+      quote:
+        'Gentle Giant exceeded expectations on our Midtown high-rise move — careful handling and efficient from quote through completion despite building restrictions.',
+      name: 'Aisha K.',
+      location: 'Midtown, NY',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

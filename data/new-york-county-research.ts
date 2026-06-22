@@ -518,6 +518,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for summer peak season.',
     ],
   },
+  'new-york': {
+    marketNotes:
+      'Manhattan is one of the densest urban environments in the world with iconic high-rises, brownstones, and diverse neighborhoods. Moves are highly complex due to building regulations, narrow streets, and elevator requirements.',
+    costs: {
+      studioRange: '$700–$1,600+',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$150–$225/hr for a 2-person crew',
+      note: 'Upper East Side, West Village, and Midtown moves often reflect co-op move-in fees, freight elevator windows, and bridge/tunnel traffic planning.',
+    },
+    tips: [
+      'Almost all buildings require elevator reservations, move-in fees, certificates of insurance, and building-specific rules.',
+      'Narrow streets and limited parking create significant logistical challenges.',
+      'Heavy traffic on major avenues and bridges/tunnels.',
+      'Verify coverage for specific neighborhoods (Upper East Side, West Village, Midtown, Harlem, etc.).',
+      'Confirm high-value insurance coverage.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

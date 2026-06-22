@@ -248,6 +248,15 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'gentle-giant-nassau',
     'college-hunks-nassau',
   ],
+  'new-york': [
+    'piece-of-cake-moving-manhattan',
+    'booth-movers-manhattan',
+    'white-glove-moving-manhattan',
+    'zip-to-zip-moving-manhattan',
+    'optimum-moving-manhattan',
+    'all-my-sons-manhattan',
+    'gentle-giant-manhattan',
+  ],
 };
 
 function hashSlug(slug: string): number {
