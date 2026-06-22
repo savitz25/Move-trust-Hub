@@ -875,6 +875,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  suffolk: {
+    marketNotes:
+      'Suffolk County is the eastern portion of Long Island with suburban, rural, and beach communities. Moves often involve single-family homes, beach properties, and commuter relocations.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$135–$200/hr for a 2-person crew',
+      note: 'Huntington, Brookhaven, and Southampton moves often reflect beach-property sand protection, HOA rules, and LIE / Sunrise Highway traffic.',
+    },
+    tips: [
+      'Beach and Hamptons properties require seasonal and sand protection planning.',
+      'Many villages and HOAs have strict move-in rules.',
+      'Long Island Expressway and Sunrise Highway traffic is heavy.',
+      'Verify coverage for specific towns (Huntington, Islip, Brookhaven, Southampton, etc.).',
+      'Confirm insurance for high-value waterfront homes.',
+    ],
+  },
+  sullivan: {
+    marketNotes:
+      'Sullivan County is rural/Catskills with Monticello and resort areas. Moves often involve residential, second homes, and seasonal properties with regional support from Albany or NYC.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Monticello and resort-area moves often reflect seasonal demand, mountain access roads, and travel from Albany or Hudson Valley crews.',
+    },
+    tips: [
+      'Resort and lake properties have seasonal demand.',
+      'Rural and mountain areas have access challenges.',
+      'Verify regional service to Monticello.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  tioga: {
+    marketNotes:
+      'Tioga County is rural with Owego and Waverly. Moves are primarily residential with regional support from Binghamton.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Owego and Waverly moves often reflect rural access roads and travel from Binghamton Southern Tier crews.',
+    },
+    tips: [
+      'Rural properties have access challenges.',
+      'Verify regional service to Owego.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

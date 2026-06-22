@@ -1333,6 +1333,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  suffolk: [
+    {
+      quote:
+        'Piece of Cake made our Huntington move stress-free — professional crew, transparent pricing, and excellent HOA coordination on Long Island.',
+      name: 'Jennifer H.',
+      location: 'Huntington, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our Brookhaven family home with outstanding care — professional, efficient, and respectful of our high-value furnishings.',
+      name: 'Robert F.',
+      location: 'Brookhaven, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant exceeded expectations on our Southampton beach-property move — careful sand protection and efficient from quote through completion.',
+      name: 'Sandra W.',
+      location: 'Southampton, NY',
+      rating: 5,
+      moveType: 'Beach property',
+    },
+  ],
+  sullivan: [
+    {
+      quote:
+        'Triangle Movers handled our Monticello Catskills property with care — professional crew despite mountain access and seasonal resort timing.',
+      name: 'Martha K.',
+      location: 'Monticello, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Sullivan County second-home relocation.",
+      name: 'Richard B.',
+      location: 'Liberty, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was efficient and careful for our lake-area move — great Albany-area regional support.",
+      name: 'Diana P.',
+      location: 'Narrowsburg, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+  ],
+  tioga: [
+    {
+      quote:
+        'Dimon & Bacorn handled our Owego rural move professionally — efficient crew despite challenging Southern Tier access roads.',
+      name: 'Amy L.',
+      location: 'Owego, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Naglee Moving provided dependable regional service for our Waverly relocation — courteous crews and solid communication.',
+      name: 'John C.',
+      location: 'Waverly, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was courteous and efficient with great communication for our Tioga County move.",
+      name: 'Sharon D.',
+      location: 'Nichols, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
