@@ -110,6 +110,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials for agricultural or historic home moves.',
     ],
   },
+  chautauqua: {
+    marketNotes:
+      'Chautauqua County is rural with Jamestown as its primary hub and Chautauqua Lake influence. Moves are primarily residential, seasonal lake properties, and agricultural with limited local movers. Service is regional from Jamestown, Buffalo, or Erie, PA.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Jamestown and Chautauqua Lake moves often reflect seasonal lakefront access, rural driveways, and travel from Dunkirk or Buffalo crews.',
+    },
+    tips: [
+      'Lakefront properties require specialized handling and seasonal timing.',
+      'Rural areas may have long driveways or limited access.',
+      'Confirm explicit regional service to Jamestown and outlying towns.',
+      'Storage is limited locally; use Jamestown or Buffalo facilities.',
+      'Verify credentials in this low-volume market.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

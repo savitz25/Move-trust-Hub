@@ -163,6 +163,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  chautauqua: [
+    {
+      quote:
+        "Dan's Moving & Storage handled our Chautauqua Lake property with a professional crew — careful with lakefront access and efficient from load to unload.",
+      name: 'Richard K.',
+      location: 'Bemus Point, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable, efficient service for our Jamestown relocation. The crew navigated our rural driveway without issues.",
+      name: 'Laura S.',
+      location: 'Jamestown, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered fair pricing and the most efficient crew we've used in Western NY — a great experience for our Mayville-area move.",
+      name: 'Steven C.',
+      location: 'Mayville, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
