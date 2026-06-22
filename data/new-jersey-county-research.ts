@@ -127,6 +127,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify insurance for high-value urban/suburban properties.',
     ],
   },
+  gloucester: {
+    marketNotes:
+      'Gloucester County is suburban/rural with growing communities (Mullica Hill, Glassboro, Deptford). Moves often involve family residential, agricultural properties, and commuter relocations to Philadelphia/Camden.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,500',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Woodbury, Glassboro, and Deptford moves may reflect HOA rules, I-295 traffic, and rural driveway access for agricultural properties.',
+    },
+    tips: [
+      'Suburban developments and HOAs have move-in rules and parking restrictions.',
+      'Rural/agricultural areas may require longer driveways or equipment handling.',
+      'Proximity to I-295 and Philadelphia influences traffic.',
+      'Obtain multiple estimates in this moderate South Jersey market.',
+      'Verify coverage for Woodbury, Glassboro, and outlying towns.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

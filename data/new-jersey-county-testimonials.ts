@@ -189,6 +189,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  gloucester: [
+    {
+      quote:
+        'Piece of Cake handled our Mullica Hill townhome with flat-fee pricing that never changed. Professional, stress-free crew through a new development with strict HOA move-in rules.',
+      name: 'Brian T.',
+      location: 'Mullica Hill, NJ',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'SeaCure drove out to Glassboro and finished ahead of schedule — careful with our belongings, polite crew, and we received a refund for finishing early.',
+      name: 'Lisa P.',
+      location: 'Glassboro, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job near Woodbury — professional, on time, and careful with both house furniture and items from our longer rural driveway.',
+      name: 'Mark S.',
+      location: 'Deptford, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
