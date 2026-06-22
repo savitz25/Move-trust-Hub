@@ -397,6 +397,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  passaic: [
+    {
+      quote:
+        'Top Notch handled our Wayne suburban move with transparent pricing and a careful crew. Professional, efficient, and the best moving experience we have had in North Jersey.',
+      name: 'Steven K.',
+      location: 'Wayne, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Unwind Moving earned every five-star review for our Garfield apartment relocation — Sebastian and the team made a stressful Passaic County move genuinely stress-free.',
+      name: 'Diana R.',
+      location: 'Garfield, NJ',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price for our Paterson move and stuck to it — no funny business. Professional, courteous, and fast through tight urban streets and limited parking.',
+      name: 'Jorge M.',
+      location: 'Paterson, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

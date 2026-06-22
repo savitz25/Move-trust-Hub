@@ -139,6 +139,15 @@ const CURATED_NJ_COUNTIES: Record<string, string[]> = {
     'all-my-sons-burlington',
     'white-glove-moving-burlington',
   ],
+  passaic: [
+    'top-notch-moving-bergen',
+    'unwind-moving-bergen',
+    'movers-201-bergen',
+    'optimum-moving-bergen',
+    'all-my-sons-burlington',
+    'cardinal-moving-bergen',
+    'aceline-movers-bergen',
+  ],
 };
 
 function hashSlug(slug: string): number {

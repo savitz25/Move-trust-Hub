@@ -263,6 +263,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Toms River, Lakewood, and coastal towns.',
     ],
   },
+  passaic: {
+    marketNotes:
+      'Passaic County includes urban Paterson, suburban Wayne, and diverse communities. Moves often involve family residential, high-density urban, and suburban properties with strong local and regional options.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Paterson, Wayne, and Clifton moves may reflect urban parking limits, HOA rules, and Route 46 or I-80 traffic windows.',
+    },
+    tips: [
+      'Urban Paterson areas have tight parking and building restrictions.',
+      'Suburban towns have HOA rules for new developments.',
+      'Heavy traffic on Route 46, I-80, and Garden State Parkway.',
+      'Diverse communities benefit from multilingual crews.',
+      'Verify coverage for Paterson, Wayne, and Clifton.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(
