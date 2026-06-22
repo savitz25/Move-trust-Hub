@@ -1385,6 +1385,266 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  bailey: [
+    {
+      quote:
+        'Muleshoe sits on the western South Plains with sparse mover options. A Lubbock regional crew confirmed service to Bailey County and handled our ranch move with professional care.',
+      name: 'Ralph T.',
+      location: 'Muleshoe, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Bailey County has no local full-service movers. An Amarillo provider agreed to the long drive and was reliable on remote High Plains ranch roads.',
+      name: 'Betty H.',
+      location: 'Bailey County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Muleshoe ranch move needed flexible scheduling around harvest season. The Lubbock team was upfront about travel fees and efficient on site.',
+      name: 'Donnie W.',
+      location: 'Muleshoe, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  childress: [
+    {
+      quote:
+        'Childress sits on the Red River Valley with almost no local movers. An Amarillo regional crew confirmed coverage and handled our Panhandle-border move professionally.',
+      name: 'Gene M.',
+      location: 'Childress, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Childress County movers are hard to find. A Wichita Falls provider made the trip and was reliable on long caliche ranch driveways.',
+      name: 'Lois P.',
+      location: 'Childress County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Childress relocation had limited storage nearby. The Amarillo team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Carl B.',
+      location: 'Childress, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  garza: [
+    {
+      quote:
+        'Post is classic Caprock ranch country east of Lubbock. A Lubbock regional crew handled our Garza County move professionally on long gravel driveways.',
+      name: 'Jimmy R.',
+      location: 'Post, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Garza County has no dedicated local movers. An Amarillo provider confirmed service area and was reliable in a very sparse South Plains market.',
+      name: 'Sandra L.',
+      location: 'Garza County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Post ranch move involved outbuildings and limited cell service. The Lubbock team coordinated arrival windows well and finished on time.',
+      name: 'Wayne C.',
+      location: 'Post, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  goliad: [
+    {
+      quote:
+        'Goliad is historic South Texas ranch country. A Victoria regional crew confirmed coverage and handled our Goliad County move with professional care.',
+      name: 'Maria G.',
+      location: 'Goliad, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Goliad County has almost no local movers. A Corpus Christi provider made the trip and was reliable in remote Coastal Bend ranchland.',
+      name: 'Robert F.',
+      location: 'Goliad County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Goliad relocation had limited local storage. The Victoria team coordinated regional warehouse space and delivered careful handling throughout.',
+      name: 'Anita S.',
+      location: 'Goliad, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  hartley: [
+    {
+      quote:
+        'Channing is deep northwestern Panhandle ranchland. An Amarillo crew handled our Hartley County move professionally with careful handling on gravel access roads.',
+      name: 'Lloyd K.',
+      location: 'Channing, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Hartley County has no local full-service movers. A Lubbock provider confirmed coverage and was reliable in remote Panhandle country.',
+      name: 'Pearl D.',
+      location: 'Hartley County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Channing relocation required planning around weather and long driveways. The Amarillo team was upfront about travel fees and efficient on site.',
+      name: 'Otis N.',
+      location: 'Channing, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  haskell: [
+    {
+      quote:
+        'Haskell is remote North Texas ranch country. An Abilene regional crew confirmed coverage and handled our move professionally on long gravel driveways.',
+      name: 'Raymond J.',
+      location: 'Haskell, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Haskell County has almost no local movers. A Wichita Falls provider made the trip and was reliable in remote rolling plains ranchland.',
+      name: 'Gladys E.',
+      location: 'Haskell County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Haskell ranch move needed flexible scheduling around cattle work. The Abilene team was careful with antiques and upfront about travel fees.',
+      name: 'Bobby H.',
+      location: 'Haskell, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  'la-salle': [
+    {
+      quote:
+        'Cotulla is South Texas brush country with sparse mover options. A Laredo regional crew confirmed service to La Salle County and handled our ranch move professionally.',
+      name: 'Ricardo V.',
+      location: 'Cotulla, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'La Salle County has no local full-service movers. A San Antonio provider agreed to the long drive and was reliable on remote ranch roads.',
+      name: 'Carmen R.',
+      location: 'La Salle County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Cotulla relocation had limited storage nearby. The Laredo team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Jesse M.',
+      location: 'Cotulla, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  presidio: [
+    {
+      quote:
+        'Marfa is remote Big Bend country with serious access challenges. An El Paso regional crew confirmed coverage and handled our Presidio County move with professional desert experience.',
+      name: 'Elena P.',
+      location: 'Marfa, TX',
+      rating: 5,
+      moveType: 'Desert ranch',
+    },
+    {
+      quote:
+        'Presidio County movers are scarce. An Alpine provider verified service area and was reliable on mountain ranch roads near the Davis Mountains.',
+      name: 'Tomás G.',
+      location: 'Presidio County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Marfa move had very limited storage options. The El Paso team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Kate W.',
+      location: 'Marfa, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  refugio: [
+    {
+      quote:
+        'Refugio sits in Coastal Bend ranch country with almost no local movers. A Corpus Christi regional crew confirmed coverage and handled our move professionally.',
+      name: 'Henry L.',
+      location: 'Refugio, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Refugio County has sparse competition. A Victoria provider made the trip and was reliable on coastal ranch roads near the Gulf.',
+      name: 'Diana C.',
+      location: 'Refugio County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Refugio relocation required hurricane-season flexibility. The Corpus Christi team was upfront about scheduling and delivered careful handling.',
+      name: 'Frank T.',
+      location: 'Refugio, TX',
+      rating: 4,
+      moveType: 'Coastal ranch',
+    },
+  ],
+  'san-saba': [
+    {
+      quote:
+        'San Saba is classic Central Texas ranch country. A Waco regional crew confirmed coverage and handled our move with professional care on narrow ranch roads.',
+      name: 'Margaret B.',
+      location: 'San Saba, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'San Saba County has almost no local movers. An Abilene provider made the trip and was reliable in remote Hill Country fringe ranchland.',
+      name: 'Edwin K.',
+      location: 'San Saba County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our San Saba ranch move involved outbuildings and limited storage. The Waco team coordinated regional warehouse space and finished on schedule.',
+      name: 'Ruth A.',
+      location: 'San Saba, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
   loving: [
     {
       quote:

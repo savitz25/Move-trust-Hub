@@ -908,6 +908,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves in the northeastern Texas Panhandle.',
     ],
   },
+  bailey: {
+    marketNotes:
+      'Bailey County is one of Texas\'s least populous counties with Muleshoe as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Amarillo regional providers may add travel fees for Muleshoe South Plains ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Muleshoe before booking.',
+      'Storage is very limited locally; use Lubbock-area facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch moves across the western South Plains.',
+    ],
+  },
+  childress: {
+    marketNotes:
+      'Childress County is one of Texas\'s least populous counties with Childress as its seat. Moves are rare and rely on regional service from Amarillo or Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Wichita Falls regional providers may add travel fees for Childress and Red River Valley ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss driveway length and surface type.',
+      'Verify explicit regional service to Childress; no dedicated in-county movers exist.',
+      'Storage is very limited locally; plan on Amarillo or Wichita Falls facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves along the Texas-Oklahoma border.',
+    ],
+  },
+  garza: {
+    marketNotes:
+      'Garza County is one of Texas\'s least populous counties with Post as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Amarillo regional providers may add travel fees for Post South Plains ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm access roads and truck size.',
+      'Verify explicit regional service to Post before booking.',
+      'Storage is very limited locally; use Lubbock-area warehouses.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch moves across the Caprock Escarpment region.',
+    ],
+  },
+  goliad: {
+    marketNotes:
+      'Goliad County is one of Texas\'s least populous counties with Goliad as its seat. Moves are rare and rely on regional service from Victoria or Corpus Christi.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Victoria and Corpus Christi regional providers may add travel fees for Goliad ranch and historic-town properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Goliad before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse South Texas competition.',
+      'Confirm credentials for ranch moves across the Coastal Bend interior.',
+    ],
+  },
+  hartley: {
+    marketNotes:
+      'Hartley County is one of Texas\'s least populous counties with Channing as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Channing and northwestern Panhandle ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Channing; dedicated local crews are unavailable.',
+      'Storage is very limited; use Amarillo-area facilities.',
+      'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch moves in the northwestern Texas Panhandle.',
+    ],
+  },
+  haskell: {
+    marketNotes:
+      'Haskell County is one of Texas\'s least populous counties with Haskell as its seat. Moves are rare and rely on regional service from Abilene or Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Abilene and Wichita Falls regional providers may add travel fees for Haskell North Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Haskell before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse North Texas competition.',
+      'Confirm credentials for ranch moves across remote rolling plains.',
+    ],
+  },
+  'la-salle': {
+    marketNotes:
+      'La Salle County is one of Texas\'s least populous counties with Cotulla as its seat. Moves are rare and rely on regional service from Laredo or San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Laredo and San Antonio regional providers may add travel fees for Cotulla South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss road width and parking for larger trucks.',
+      'Verify explicit regional service to Cotulla before booking.',
+      'Storage is very limited locally; coordinate Laredo or San Antonio facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves across the South Texas brush country.',
+    ],
+  },
+  presidio: {
+    marketNotes:
+      'Presidio County is remote with Marfa and the Big Bend area. Moves are rare and rely on regional service from El Paso or Alpine.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'El Paso and Alpine regional providers may add travel fees for Marfa desert and mountain ranch properties.',
+    },
+    tips: [
+      'Extremely remote desert/mountain properties have severe access challenges — discuss terrain and elevation early.',
+      'Verify explicit regional service to Marfa before booking.',
+      'Storage is very limited locally; plan on El Paso or Alpine-area warehouses.',
+      'Obtain multiple written estimates due to sparse Big Bend competition.',
+      'Confirm credentials for remote desert and ranch relocations.',
+    ],
+  },
+  refugio: {
+    marketNotes:
+      'Refugio County is one of Texas\'s least populous counties with Refugio as its seat. Moves are rare and rely on regional service from Corpus Christi or Victoria.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Corpus Christi and Victoria regional providers may add travel fees for Refugio coastal ranch properties.',
+    },
+    tips: [
+      'Extremely remote coastal/ranch properties have severe access challenges — confirm hurricane-season scheduling flexibility.',
+      'Verify explicit regional service to Refugio before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse Coastal Bend competition.',
+      'Confirm credentials for coastal and ranch moves near the Gulf.',
+    ],
+  },
+  'san-saba': {
+    marketNotes:
+      'San Saba County is rural with San Saba as its seat. Moves are rare and rely on regional service from Waco or Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Waco and Abilene regional providers may add travel fees for San Saba Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to San Saba before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse Central Texas competition.',
+      'Confirm credentials for ranch moves across the Colorado River Hill Country fringe.',
+    ],
+  },
   loving: {
     marketNotes:
       'Loving County is the least populous county in Texas with Mentone as its seat. Moves are extremely rare and rely on regional service from Odessa or Hobbs, NM.',

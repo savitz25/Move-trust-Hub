@@ -1098,6 +1098,18 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Paris area',
   },
+  'victoria-area-moving': {
+    id: 'victoria-area-moving',
+    name: 'Regional Victoria Providers',
+    rating: 4.5,
+    reviewCount: 88,
+    shortDescription:
+      'Regional mover with capability for Refugio and Goliad County coastal ranch relocations.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Victoria area',
+  },
   'nyc-neighborhood-movers': {
     id: 'nyc-neighborhood-movers',
     name: 'NYC Neighborhood Movers',
@@ -6292,6 +6304,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'san-antonio-area-moving',
       'kerrville-area-moving',
       'laredo-area-moving',
+      'victoria-area-moving',
     ],
   },
   'rural-hill-country-tx': {
