@@ -59,6 +59,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  bronx: [
+    {
+      quote:
+        'Two Men and a Truck navigated our co-op building rules perfectly — professional crew, efficient loading, and careful handling of everything in our high-rise.',
+      name: 'Maria G.',
+      location: 'Riverdale, NY',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        'Gentle Giant handled our Bronx apartment move with outstanding care in tight urban spaces. Easily the smoothest borough relocation we have had.',
+      name: 'James T.',
+      location: 'Morris Park, NY',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Pure Moving was efficient and professional with great communication from estimate through move day. Highly recommend for Bronx residential moves.',
+      name: 'Angela R.',
+      location: 'Pelham Bay, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

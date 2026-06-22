@@ -49,7 +49,15 @@ export default async function sitemap({
         county.slug === 'monmouth' ||
         county.slug === 'ocean' ||
         county.slug === 'union' ||
-        county.slug === 'passaic'
+        county.slug === 'passaic' ||
+        (id === 'new-york' &&
+          (county.slug === 'bronx' ||
+            county.slug === 'kings' ||
+            county.slug === 'queens' ||
+            county.slug === 'new-york' ||
+            county.slug === 'richmond' ||
+            county.slug === 'nassau' ||
+            county.slug === 'westchester'))
           ? 0.85
           : 0.8,
     })),

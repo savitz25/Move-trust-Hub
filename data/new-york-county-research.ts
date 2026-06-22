@@ -42,6 +42,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Agricultural timing (harvest seasons) may affect availability; plan accordingly.',
     ],
   },
+  bronx: {
+    marketNotes:
+      'The Bronx is a dense urban borough with high-rises, row houses, and diverse neighborhoods. Moves often involve apartment buildings, family homes, and cross-borough logistics with strict building rules and heavy traffic.',
+    costs: {
+      studioRange: '$550–$1,300',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$130–$195/hr for a 2-person crew',
+      note: 'Riverdale, Pelham, and Morris Park moves often reflect co-op move-in fees, elevator reservations, and I-95 / Bronx River Parkway traffic windows.',
+    },
+    tips: [
+      'Many buildings require elevator reservations, certificates of insurance, and move-in fees.',
+      'Traffic on major bridges and I-95 / Bronx River Parkway is heavy; select logistics-savvy teams.',
+      'Diverse communities benefit from multilingual crews.',
+      'Verify coverage for specific neighborhoods (e.g., Riverdale, Pelham, Morris Park).',
+      'Confirm insurance for high-value urban items.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

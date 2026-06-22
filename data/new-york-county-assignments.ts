@@ -22,6 +22,15 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'arnoff-moving-storage-albany',
     'busy-bee-movers-albany',
   ],
+  bronx: [
+    'two-men-and-a-truck-bronx',
+    'all-my-sons-bronx',
+    'gentle-giant-bronx',
+    'helping-hand-movers-bronx',
+    'pure-moving-bronx',
+    'college-hunks-bronx',
+    'five-boro-moving-bronx',
+  ],
 };
 
 function hashSlug(slug: string): number {
