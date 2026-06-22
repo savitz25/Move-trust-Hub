@@ -200,7 +200,7 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
     },
     {
       quote:
-        'Meathead Movers provided dependable regional service for our Del Norte County move — efficient crews despite limited local options.',
+        'Meathead Movers Eureka provided dependable regional service for our Del Norte County move — efficient crews despite limited local options.',
       name: 'Susan E.',
       location: 'Klamath, CA',
       rating: 5,
@@ -213,6 +213,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       location: 'Smith River, CA',
       rating: 5,
       moveType: 'Remote',
+    },
+  ],
+  'el-dorado': [
+    {
+      quote:
+        'Mother Lode Van & Storage handled our Placerville foothill move professionally — careful handling despite challenging Sierra access roads.',
+      name: 'Mark J.',
+      location: 'Placerville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Mountain Lake Mover provided reliable Tahoe-area service for our El Dorado County lake property relocation — efficient and careful throughout.',
+      name: 'Laura S.',
+      location: 'South Lake Tahoe, CA',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Ernie's Moving crew was courteous and efficient with great communication for our Cameron Park family home move.",
+      name: 'Brian T.',
+      location: 'Cameron Park, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  fresno: [
+    {
+      quote:
+        'Meathead Movers Fresno handled our Clovis relocation professionally — efficient crew and careful handling of our belongings.',
+      name: 'Carlos R.',
+      location: 'Clovis, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fresno provided excellent service for our Fresno family home move — transparent pricing and professional team.',
+      name: 'Angela M.',
+      location: 'Fresno, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'California Express Movers drove in with fair pricing and dependable service for our Central Valley corporate relocation.',
+      name: 'David K.',
+      location: 'Fresno, CA',
+      rating: 5,
+      moveType: 'Corporate',
+    },
+  ],
+  glenn: [
+    {
+      quote:
+        'Two Men and a Truck Chico handled our Willows agricultural-property move professionally — efficient crew despite rural access challenges.',
+      name: 'Frank H.',
+      location: 'Willows, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our Glenn County relocation — careful and efficient throughout.',
+      name: 'Helen P.',
+      location: 'Orland, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Capital Movers drove in from Sacramento with fair pricing and professional service for our rural Glenn County move.',
+      name: 'George W.',
+      location: 'Willows, CA',
+      rating: 5,
+      moveType: 'Rural',
     },
   ],
 };

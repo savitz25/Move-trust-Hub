@@ -63,10 +63,35 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
   ],
   'del-norte': [
     'humboldt-moving-storage-eureka',
-    'meathead-movers-california',
+    'meathead-movers-eureka',
     'california-regional-moving',
     'california-capital-movers',
     'california-family-movers',
+  ],
+  'el-dorado': [
+    'mother-lode-van-storage-sacramento',
+    'mountain-lake-mover-tahoe',
+    'tahoe-moving-storage-truckee',
+    'california-capital-movers',
+    'california-family-movers',
+    'ernies-moving-sacramento',
+  ],
+  fresno: [
+    'meathead-movers-fresno',
+    'two-men-and-a-truck-fresno',
+    'meathead-movers-california',
+    'california-express-movers',
+    'california-family-movers',
+    'california-capital-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+  ],
+  glenn: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
   ],
 };
 

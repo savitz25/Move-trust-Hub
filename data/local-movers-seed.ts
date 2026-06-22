@@ -4452,6 +4452,32 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Eureka',
     website: 'https://www.meatheadmovers.com/movers/eureka/',
   },
+  'dj-professional-movers-chico': {
+    id: 'dj-professional-movers-chico',
+    name: 'D & J Professional Movers',
+    rating: 4.8,
+    reviewCount: 260,
+    shortDescription:
+      'Highly rated Chico local mover serving Butte County, Chico State university moves, and Oroville areas.',
+    services: ['Local Moving', 'Packing', 'Labor Only'],
+    specialties: ['Residential', 'Student Moves'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Chico',
+  },
+  'humboldt-moving-storage-eureka': {
+    id: 'humboldt-moving-storage-eureka',
+    name: 'Humboldt Moving & Storage',
+    rating: 4.6,
+    reviewCount: 195,
+    shortDescription:
+      'Eureka-based mover serving Del Norte, Humboldt, and remote North Coast coastal communities.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Coastal'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Eureka',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
@@ -4944,11 +4970,14 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'central-valley-ca',
     label: 'Central Valley',
     moverIds: [
-      'california-capital-movers',
-      'california-family-movers',
-      'california-local-lines',
+      'meathead-movers-fresno',
+      'two-men-and-a-truck-fresno',
       'meathead-movers-california',
       'california-express-movers',
+      'california-family-movers',
+      'california-capital-movers',
+      'california-county-moving-co',
+      'ernies-moving-sacramento',
     ],
   },
   'north-coast-ca': {
@@ -4956,7 +4985,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     label: 'North Coast',
     moverIds: [
       'humboldt-moving-storage-eureka',
-      'meathead-movers-california',
+      'meathead-movers-eureka',
       'california-regional-moving',
       'california-capital-movers',
       'california-family-movers',

@@ -143,6 +143,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for remote moves.',
     ],
   },
+  'el-dorado': {
+    marketNotes:
+      'El Dorado County is suburban/rural in the Sierra foothills with Placerville and South Lake Tahoe influence. Moves often involve residential and lake properties with regional Sacramento support.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Placerville and Tahoe-area moves often reflect foothill access, lake-property handling, and travel from Sacramento or Tahoe regional crews.',
+    },
+    tips: [
+      'Foothill and lake properties have access challenges.',
+      'Verify regional service to Placerville and South Lake Tahoe areas.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for rural moves.',
+      'Book early for seasonal Tahoe demand.',
+    ],
+  },
+  fresno: {
+    marketNotes:
+      'Fresno County is a major Central Valley county with urban Fresno and agricultural areas. Moves often involve residential, farm, and corporate relocations.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Fresno and Clovis moves often reflect agricultural-property handling, Highway 99 traffic, and strong local mover competition.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify coverage for Fresno, Clovis, and surrounding areas.',
+      'Heavy traffic on Highway 99 and 41.',
+      'Obtain multiple estimates.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
+  glenn: {
+    marketNotes:
+      'Glenn County is one of California\'s most rural agricultural counties with Willows. Moves are limited and primarily residential with regional support from Chico or Sacramento.',
+    costs: {
+      studioRange: '$400–$800',
+      familyRange: '$1,400–$3,000',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Willows and rural Glenn County moves often reflect agricultural access roads and travel from Chico or Sacramento crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Willows.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(
