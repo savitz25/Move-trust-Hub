@@ -930,6 +930,54 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Kingsville area',
   },
+  'san-angelo-area-moving': {
+    id: 'san-angelo-area-moving',
+    name: 'Regional San Angelo Providers',
+    rating: 4.6,
+    reviewCount: 118,
+    shortDescription:
+      'Reliable regional mover serving remote West and South Texas ranch and oilfield counties.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'San Angelo area',
+  },
+  'abilene-area-moving': {
+    id: 'abilene-area-moving',
+    name: 'Regional Abilene Providers',
+    rating: 4.5,
+    reviewCount: 92,
+    shortDescription:
+      'Regional mover with capability for North Texas ranch counties including Stonewall and Throckmorton.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Abilene area',
+  },
+  'del-rio-area-moving': {
+    id: 'del-rio-area-moving',
+    name: 'Regional Del Rio Providers',
+    rating: 4.5,
+    reviewCount: 68,
+    shortDescription:
+      'Regional mover serving remote Edwards County and South Texas Hill Country ranch properties.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Del Rio area',
+  },
+  'amarillo-area-moving': {
+    id: 'amarillo-area-moving',
+    name: 'Regional Amarillo Providers',
+    rating: 4.6,
+    reviewCount: 134,
+    shortDescription:
+      'Reliable regional mover serving remote Panhandle counties including Armstrong and Briscoe.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Amarillo area',
+  },
   'nyc-neighborhood-movers': {
     id: 'nyc-neighborhood-movers',
     name: 'NYC Neighborhood Movers',
@@ -6107,12 +6155,32 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'lubbock-area-moving',
       'wichita-falls-area-moving',
       'midland-area-moving',
+      'san-angelo-area-moving',
     ],
   },
   'rural-south-tx': {
     id: 'rural-south-tx',
     label: 'Rural South Texas',
-    moverIds: ['corpus-christi-area-moving', 'kingsville-area-moving'],
+    moverIds: [
+      'corpus-christi-area-moving',
+      'kingsville-area-moving',
+      'san-angelo-area-moving',
+      'del-rio-area-moving',
+    ],
+  },
+  'rural-north-tx': {
+    id: 'rural-north-tx',
+    label: 'Rural North Texas',
+    moverIds: [
+      'wichita-falls-area-moving',
+      'abilene-area-moving',
+      'lubbock-area-moving',
+    ],
+  },
+  'rural-panhandle-tx': {
+    id: 'rural-panhandle-tx',
+    label: 'Rural Texas Panhandle',
+    moverIds: ['amarillo-area-moving', 'lubbock-area-moving'],
   },
 };
 
