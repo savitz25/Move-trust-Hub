@@ -477,6 +477,31 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-county-moving-co',
     'ernies-moving-sacramento',
   ],
+  ventura: [
+    'piece-of-cake-moving-losangeles',
+    'booth-movers-losangeles',
+    'white-glove-moving-losangeles',
+    'pure-moving-losangeles',
+    'gentle-giant-losangeles',
+    'meathead-movers-california',
+    'california-premier-moving',
+    'all-my-sons-losangeles',
+  ],
+  yolo: [
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+    'california-regional-moving',
+  ],
+  yuba: [
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+  ],
 };
 
 function hashSlug(slug: string): number {

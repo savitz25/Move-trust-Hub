@@ -936,6 +936,56 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  ventura: {
+    marketNotes:
+      'Ventura County is coastal with Ventura, Oxnard, and Thousand Oaks. Moves often involve beach properties, suburban homes, and commuter communities between Los Angeles and Santa Barbara.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$125–$190/hr for a 2-person crew',
+      note: 'Ventura, Oxnard, and Thousand Oaks moves often reflect coastal sand protection, US 101 traffic, and travel from Greater Los Angeles regional crews.',
+    },
+    tips: [
+      'Coastal and beach properties require sand protection and access planning.',
+      'Heavy traffic on US 101 and Highway 118.',
+      'Verify coverage for Ventura, Oxnard, and Thousand Oaks.',
+      'Confirm insurance for high-value suburban and coastal homes.',
+      'Book early for peak seasons.',
+    ],
+  },
+  yolo: {
+    marketNotes:
+      'Yolo County is agricultural with Woodland, Davis, and UC Davis. Moves often involve residential, university, and farm properties with regional support from Sacramento.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Davis and Woodland moves often reflect university calendar peaks, agricultural-property handling, and travel from Sacramento regional crews.',
+    },
+    tips: [
+      'University (UC Davis) calendar affects seasonal demand.',
+      'Agricultural properties may require equipment handling.',
+      'Verify coverage for Davis and Woodland.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  yuba: {
+    marketNotes:
+      'Yuba County is rural/agricultural with Marysville and Wheatland. Moves are primarily residential with regional support from Sacramento or Yuba City area providers.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Marysville and Wheatland moves often reflect agricultural-property handling and travel from Sacramento or Marysville-Yuba City regional crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Marysville.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

@@ -1437,6 +1437,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Residential',
     },
   ],
+  ventura: [
+    {
+      quote:
+        'Piece of Cake Moving handled our Thousand Oaks suburban move professionally — efficient crew and transparent pricing despite heavy 101 traffic.',
+      name: 'Amanda R.',
+      location: 'Thousand Oaks, CA',
+      rating: 5,
+      moveType: 'Suburban',
+    },
+    {
+      quote:
+        'Booth Movers provided excellent service for our Ventura coastal home relocation — careful sand protection and great communication throughout.',
+      name: 'Kevin T.',
+      location: 'Ventura, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Pure Moving Company drove in from Los Angeles with fair pricing and professional service for our Oxnard family home move.',
+      name: 'Lisa M.',
+      location: 'Oxnard, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  yolo: [
+    {
+      quote:
+        'Mother Lode Van handled our Davis UC-area move professionally — great university-calendar coordination and careful handling throughout.',
+      name: 'Brian F.',
+      location: 'Davis, CA',
+      rating: 5,
+      moveType: 'Student',
+    },
+    {
+      quote:
+        'California Capital Movers provided dependable Sacramento regional service for our Woodland agricultural-property relocation.',
+      name: 'Nicole B.',
+      location: 'Woodland, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        "Ernie's Moving drove in with fair pricing and professional service for our rural Yolo County family home move.",
+      name: 'Donald R.',
+      location: 'West Sacramento, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  yuba: [
+    {
+      quote:
+        'Mother Lode Van handled our Marysville agricultural-property move professionally — efficient crew and careful equipment handling.',
+      name: 'Elena M.',
+      location: 'Marysville, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'California Capital Movers provided dependable Sacramento regional service for our Wheatland relocation — smooth and efficient throughout.',
+      name: 'Tony A.',
+      location: 'Wheatland, CA',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        "Ernie's Moving drove in with fair pricing and professional service for our Yuba County family home move.",
+      name: 'Christine P.',
+      location: 'Marysville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(
