@@ -137,6 +137,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  cayuga: [
+    {
+      quote:
+        'Reliable Movers handled our rural Auburn property with a professional crew — careful packing, efficient loading, and great communication throughout.',
+      name: 'Christine H.',
+      location: 'Auburn, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable, efficient service for our Finger Lakes-area relocation. The crew was careful with everything despite our long lakeside driveway.",
+      name: 'George F.',
+      location: 'Union Springs, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered fair pricing and the most efficient crew we've hired in Central NY — a great experience from estimate through unload.",
+      name: 'Nancy W.',
+      location: 'Moravia, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

@@ -93,6 +93,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials for agricultural or culturally sensitive moves.',
     ],
   },
+  cayuga: {
+    marketNotes:
+      'Cayuga County is rural with Auburn as its hub and Finger Lakes influence. Moves are primarily residential and agricultural with limited local movers. Service is regional from Syracuse, Rochester, or Ithaca.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Auburn and lakeside moves often reflect long driveways, Finger Lakes access roads, and travel from Syracuse or Rochester crews.',
+    },
+    tips: [
+      'Rural and lakeside properties may involve long driveways or water-adjacent access.',
+      'Confirm explicit regional service to Auburn and outlying areas.',
+      'Storage is limited locally; coordinate with Syracuse or Rochester facilities.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify credentials for agricultural or historic home moves.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

@@ -3100,6 +3100,23 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Bronx',
   },
 
+  // Central NY / Finger Lakes (Grok-researched — serves Cayuga County)
+  'reliable-movers-syracuse': {
+    id: 'reliable-movers-syracuse',
+    name: 'Reliable Movers',
+    rating: 4.7,
+    reviewCount: 280,
+    shortDescription:
+      'Licensed Syracuse-area mover serving Cayuga County and Auburn with local and long-distance residential moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1605981',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Syracuse',
+    website: 'https://reliablemoversllc.com/',
+  },
+
   // Burlington County, NJ (Grok-researched)
   'piece-of-cake-moving-burlington': {
     id: 'piece-of-cake-moving-burlington',
@@ -3459,6 +3476,19 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'all-ways-moving-storage-albany',
       'busy-bee-movers-albany',
       'lamanna-moving-albany',
+    ],
+  },
+  'rochester-finger-lakes-ny': {
+    id: 'rochester-finger-lakes-ny',
+    label: 'Rochester & Finger Lakes',
+    moverIds: [
+      'reliable-movers-syracuse',
+      'mabeys-moving-storage-albany',
+      'dons-moving-storage-albany',
+      'clark-moving-storage-albany',
+      'arnoff-moving-storage-albany',
+      'all-ways-moving-storage-albany',
+      'busy-bee-movers-albany',
     ],
   },
 };
