@@ -296,6 +296,107 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for remote/high-altitude moves.',
     ],
   },
+  lassen: {
+    marketNotes:
+      'Lassen County is very remote with Susanville and significant federal land (Lassen Volcanic National Park). Moves are limited and primarily residential with regional support from Reno or Redding.',
+    costs: {
+      studioRange: '$500–$1,000+',
+      familyRange: '$1,800–$4,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Susanville moves often reflect high-desert access challenges, limited local crews, and travel from Chico, Redding, or Reno regional providers.',
+    },
+    tips: [
+      'Extremely remote properties have severe access challenges.',
+      'Verify explicit regional service to Susanville.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for high-desert/remote moves.',
+    ],
+  },
+  'los-angeles': {
+    marketNotes:
+      'Los Angeles County is the most populous county in the U.S. with extreme urban density, diverse neighborhoods, and world-class logistics challenges. Moves often involve high-rises, apartments, and sprawling residential areas.',
+    costs: {
+      studioRange: '$650–$1,600+',
+      familyRange: '$2,800–$7,000+',
+      avgHourly: '$130–$200/hr for a 2-person crew',
+      note: 'LA moves often reflect high-rise elevator fees, freeway traffic, and neighborhood-specific building requirements across Downtown, Santa Monica, Pasadena, and Long Beach.',
+    },
+    tips: [
+      'Most buildings require elevator reservations, move-in fees, and certificates of insurance.',
+      'Traffic is extreme on all freeways; plan for peak avoidance.',
+      'Verify coverage for specific areas (Downtown LA, Santa Monica, Pasadena, Long Beach, etc.).',
+      'Confirm high-value insurance and building-specific expertise.',
+      'Book well in advance for peak seasons.',
+    ],
+  },
+  madera: {
+    marketNotes:
+      'Madera County is rural/agricultural with Madera and Yosemite influence. Moves often involve residential and farm properties with regional support from Fresno.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Madera and Chowchilla moves often reflect agricultural-property handling, Highway 99 traffic, and travel from Fresno regional crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Madera.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  marin: {
+    marketNotes:
+      'Marin County is affluent suburban with San Rafael, Mill Valley, and Sausalito. Moves often involve high-value homes and bridge/ferry logistics to San Francisco.',
+    costs: {
+      studioRange: '$600–$1,300',
+      familyRange: '$2,500–$5,500+',
+      avgHourly: '$140–$200/hr for a 2-person crew',
+      note: 'San Rafael, Novato, and Mill Valley moves often reflect Golden Gate Bridge traffic, HOA parking restrictions, and high-value home handling.',
+    },
+    tips: [
+      'Golden Gate Bridge and ferry access require coordination.',
+      'Many communities have HOA and parking restrictions.',
+      'Heavy traffic on US 101 and Sir Francis Drake Boulevard.',
+      'Verify coverage for San Rafael, Novato, and Mill Valley.',
+      'Confirm high-value insurance coverage.',
+    ],
+  },
+  mariposa: {
+    marketNotes:
+      'Mariposa County is small and rural with Yosemite National Park influence. Moves are limited and primarily residential/seasonal with regional support from Merced or Fresno.',
+    costs: {
+      studioRange: '$500–$1,000+',
+      familyRange: '$1,800–$4,000+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Mariposa and Yosemite-adjacent moves often reflect seasonal access challenges, limited local crews, and travel from Merced or Fresno regional providers.',
+    },
+    tips: [
+      'Yosemite-adjacent properties have seasonal and access challenges.',
+      'Verify explicit regional service to Mariposa.',
+      'Storage is limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for park/rural moves.',
+    ],
+  },
+  mendocino: {
+    marketNotes:
+      'Mendocino County is coastal/rural with Ukiah and the Mendocino coast. Moves often involve residential, winery, and coastal properties with regional support from Santa Rosa.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,800–$4,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Ukiah and Mendocino coast moves often reflect coastal access, winery-property handling, and travel from Santa Rosa or North Coast regional crews.',
+    },
+    tips: [
+      'Coastal and winery properties require specialized planning.',
+      'Verify regional service to Ukiah and Mendocino.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for remote coastal moves.',
+      'Seasonal tourism affects demand.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

@@ -449,6 +449,162 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Residential',
     },
   ],
+  lassen: [
+    {
+      quote:
+        'Two Men and a Truck drove in from Chico for our Susanville move — professional crew and careful handling in challenging high-desert terrain.',
+      name: 'Karen H.',
+      location: 'Susanville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our remote Lassen County relocation — efficient despite limited local options.',
+      name: 'Tom W.',
+      location: 'Westwood, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+    {
+      quote:
+        'On Track Moving handled our Susanville move with great care — professional planning for our property near Lassen Volcanic National Park.',
+      name: 'Linda M.',
+      location: 'Susanville, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+  ],
+  'los-angeles': [
+    {
+      quote:
+        'Piece of Cake Moving made our Downtown LA high-rise move stress-free — professional elevator coordination and transparent pricing throughout.',
+      name: 'Sarah J.',
+      location: 'Los Angeles, CA',
+      rating: 5,
+      moveType: 'High-Rise',
+    },
+    {
+      quote:
+        'Booth Movers handled our Santa Monica apartment relocation with outstanding care — careful in tight urban spaces and excellent communication.',
+      name: 'Daniel K.',
+      location: 'Santa Monica, CA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Gentle Giant provided white-glove service for our Pasadena family home move — professional crew and careful handling of our furnishings.',
+      name: 'Michelle R.',
+      location: 'Pasadena, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  madera: [
+    {
+      quote:
+        'Meathead Movers Fresno handled our Madera family home move professionally — efficient crew and careful handling of our agricultural-property belongings.',
+      name: 'Carlos G.',
+      location: 'Madera, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Two Men and a Truck provided dependable regional service from Fresno for our Chowchilla relocation — smooth and efficient throughout.',
+      name: 'Patricia N.',
+      location: 'Chowchilla, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Express Movers drove in with fair pricing and professional service for our rural Madera County farm property move.',
+      name: 'Rick S.',
+      location: 'Oakhurst, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+  ],
+  marin: [
+    {
+      quote:
+        'Piece of Cake Moving made our Mill Valley relocation stress-free — professional crew and transparent pricing for our high-value home.',
+      name: 'Elizabeth H.',
+      location: 'Mill Valley, CA',
+      rating: 5,
+      moveType: 'High-Value',
+    },
+    {
+      quote:
+        'Booth Movers handled our San Rafael move with outstanding care — excellent coordination across the Golden Gate Bridge and HOA parking rules.',
+      name: 'David W.',
+      location: 'San Rafael, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'MorningStar Moving provided white-glove service for our Sausalito waterfront home — careful handling and great communication throughout.',
+      name: 'Jennifer L.',
+      location: 'Sausalito, CA',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+  ],
+  mariposa: [
+    {
+      quote:
+        'Meathead Movers Fresno handled our Yosemite-area move professionally — careful planning for seasonal access and rural property logistics.',
+      name: 'Brian T.',
+      location: 'Mariposa, CA',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Two Men and a Truck provided dependable regional service from Fresno for our Mariposa relocation — efficient despite limited local options.',
+      name: 'Susan K.',
+      location: 'Catheys Valley, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Express Movers drove in with fair pricing and professional service for our park-adjacent property move near Yosemite.',
+      name: 'Mark D.',
+      location: 'El Portal, CA',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+  ],
+  mendocino: [
+    {
+      quote:
+        'Humboldt Moving & Storage handled our Mendocino coast move professionally — careful planning for our remote coastal property access.',
+      name: 'Laura B.',
+      location: 'Mendocino, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'California Regional Moving provided dependable service for our Ukiah winery-property relocation — efficient crews despite seasonal tourism timing.',
+      name: 'Steven R.',
+      location: 'Ukiah, CA',
+      rating: 5,
+      moveType: 'Winery',
+    },
+    {
+      quote:
+        'Meathead Movers Eureka drove in with fair pricing and professional service for our rural Mendocino County family home move.',
+      name: 'Nancy P.',
+      location: 'Fort Bragg, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

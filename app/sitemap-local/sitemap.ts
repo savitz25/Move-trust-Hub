@@ -17,6 +17,7 @@ const CA_HIGH_TRAFFIC_COUNTIES = new Set([
   'fresno',
   'kern',
   'los-angeles',
+  'marin',
   'orange',
   'riverside',
   'sacramento',
