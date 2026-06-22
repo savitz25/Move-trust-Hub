@@ -722,6 +722,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for summer peak season.',
     ],
   },
+  queens: {
+    marketNotes:
+      'Queens is one of the most diverse and expansive boroughs with residential neighborhoods, airports (JFK/LGA), and suburban pockets. Moves often involve apartments, single-family homes, and multi-family buildings with complex logistics.',
+    costs: {
+      studioRange: '$600–$1,400',
+      familyRange: '$2,500–$5,500+',
+      avgHourly: '$140–$210/hr for a 2-person crew',
+      note: 'Long Island City, Forest Hills, and Bayside moves often reflect co-op move-in fees, airport-corridor traffic, and neighborhood-specific parking limits.',
+    },
+    tips: [
+      'Many buildings require elevator reservations, move-in fees, and certificates of insurance.',
+      'Neighborhood-specific parking and access challenges (e.g., Astoria, Flushing, Jamaica).',
+      'Heavy traffic near airports and expressways (LIE, Van Wyck, Grand Central).',
+      'Verify coverage for specific neighborhoods (Long Island City, Forest Hills, Bayside, etc.).',
+      'Confirm high-value insurance coverage.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

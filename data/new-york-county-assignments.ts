@@ -334,6 +334,15 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'zip-to-zip-moving-atlantic',
     'optimum-moving-bergen',
   ],
+  queens: [
+    'piece-of-cake-moving-queens',
+    'booth-movers-queens',
+    'white-glove-moving-queens',
+    'zip-to-zip-moving-queens',
+    'optimum-moving-queens',
+    'all-my-sons-queens',
+    'gentle-giant-queens',
+  ],
   rensselaer: [
     'mabeys-moving-storage-albany',
     'dons-moving-storage-albany',

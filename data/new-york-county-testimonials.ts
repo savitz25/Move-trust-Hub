@@ -1099,6 +1099,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Condo',
     },
   ],
+  queens: [
+    {
+      quote:
+        'Piece of Cake navigated our Long Island City high-rise flawlessly — COI, elevator reservation, and freight timing all handled professionally.',
+      name: 'Maria G.',
+      location: 'Long Island City, NY',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        'Booth Movers handled our Forest Hills single-family home with outstanding care — professional crew despite tight street parking and building access rules.',
+      name: 'James L.',
+      location: 'Forest Hills, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant exceeded expectations on our Bayside apartment move — careful in tight urban spaces and efficient from quote through completion.',
+      name: 'Priya N.',
+      location: 'Bayside, NY',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
