@@ -267,6 +267,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  mercer: [
+    {
+      quote:
+        'Piece of Cake handled our Princeton faculty housing move with flat-fee pricing that stayed predictable. Professional crew coordinated HOA rules and parking near campus without stress.',
+      name: 'Dr. Alan W.',
+      location: 'Princeton, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Trenton family relocation — careful, on time, and professional through a busy capital-city street with limited loading space.',
+      name: 'Michelle H.',
+      location: 'Trenton, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price and delivered — no funny business. Courteous, fast crew through our Hamilton townhome move despite Route 1 traffic.',
+      name: 'Jason C.',
+      location: 'Hamilton, NJ',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

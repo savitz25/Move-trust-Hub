@@ -178,6 +178,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Flemington, Clinton, and outlying towns.',
     ],
   },
+  mercer: {
+    marketNotes:
+      'Mercer County includes Trenton (capital), affluent Princeton, and suburban/rural areas. Moves often involve government, university (Princeton), family residential, and commuter properties with strong regional support.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Trenton, Princeton, and Hamilton moves may reflect university timing, Route 1 traffic, and suburban HOA move-in rules.',
+    },
+    tips: [
+      'Princeton and suburban HOAs have move-in rules and parking restrictions.',
+      'Government and university moves may require specific timing.',
+      'I-95 and Route 1 traffic can affect scheduling.',
+      'Rural western areas may involve longer driveways.',
+      'Verify coverage for Trenton, Princeton, and Hamilton.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(
