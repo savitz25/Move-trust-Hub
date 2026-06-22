@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Calculator, Truck, BookOpen, MapPin } from 'lucide-react';
 import { getCountyPath, getStatePath } from '@/lib/local-movers/index';
-import type { NearbyCountyLink } from '@/lib/local-movers/florida-nearby';
+import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export function CountyInternalLinks({
   stateName,

@@ -1,4 +1,7 @@
 import { floridaCounties } from '@/lib/local-movers/geography/florida';
+import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
+
+export type { NearbyCountyLink };
 
 /** Geographic / metro adjacency for internal linking on FL county pages */
 const FL_COUNTY_NEIGHBORS: Record<string, string[]> = {
@@ -72,12 +75,6 @@ const FL_COUNTY_NEIGHBORS: Record<string, string[]> = {
 };
 
 const countyNameBySlug = new Map(floridaCounties.map((c) => [c.slug, c.name]));
-
-export type NearbyCountyLink = {
-  slug: string;
-  name: string;
-  seat?: string;
-};
 
 export function getFloridaNearbyCounties(
   countySlug: string,

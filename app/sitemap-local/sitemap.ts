@@ -42,7 +42,11 @@ export default async function sitemap({
         county.slug === 'bergen' ||
         county.slug === 'hudson' ||
         county.slug === 'essex' ||
-        county.slug === 'middlesex'
+        county.slug === 'middlesex' ||
+        county.slug === 'monmouth' ||
+        county.slug === 'ocean' ||
+        county.slug === 'union' ||
+        county.slug === 'passaic'
           ? 0.85
           : 0.8,
     })),

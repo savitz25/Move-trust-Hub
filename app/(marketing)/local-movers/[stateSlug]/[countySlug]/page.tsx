@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { CountyEditorialTrust } from '@/components/local-movers/county-editorial-trust';
+import {
+  CountyEditorialTrust,
+  FLORIDA_COUNTY_CONTENT_UPDATED,
+  NEW_JERSEY_COUNTY_CONTENT_UPDATED,
+} from '@/components/local-movers/county-editorial-trust';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { getFloridaNearbyCounties } from '@/lib/local-movers/florida-nearby';
 import { getNewJerseyNearbyCounties } from '@/lib/local-movers/new-jersey-nearby';
@@ -194,7 +198,17 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           nearbyCounties={nearbyCounties}
         />
 
-        <CountyEditorialTrust countyLabel={countyLabel} stateName={state.name} />
+        <CountyEditorialTrust
+          countyLabel={countyLabel}
+          stateName={state.name}
+          lastUpdated={
+            stateSlug === 'new-jersey'
+              ? NEW_JERSEY_COUNTY_CONTENT_UPDATED
+              : stateSlug === 'florida'
+                ? FLORIDA_COUNTY_CONTENT_UPDATED
+                : undefined
+          }
+        />
 
         <section className="mb-10 rounded-2xl border bg-card p-6">
           <h2 className="text-lg font-semibold mb-2">How we rank local movers</h2>

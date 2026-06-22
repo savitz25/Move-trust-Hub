@@ -1,4 +1,7 @@
 import { newJerseyCounties } from '@/lib/local-movers/geography/new-jersey';
+import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
+
+export type { NearbyCountyLink };
 
 /** Geographic adjacency for internal linking on NJ county pages */
 const NJ_COUNTY_NEIGHBORS: Record<string, string[]> = {
@@ -26,12 +29,6 @@ const NJ_COUNTY_NEIGHBORS: Record<string, string[]> = {
 };
 
 const countyNameBySlug = new Map(newJerseyCounties.map((c) => [c.slug, c.name]));
-
-export type NearbyCountyLink = {
-  slug: string;
-  name: string;
-  seat?: string;
-};
 
 export function getNewJerseyNearbyCounties(
   countySlug: string,
