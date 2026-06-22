@@ -5,10 +5,12 @@ import {
   CountyEditorialTrust,
   FLORIDA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
+  NEW_YORK_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { getFloridaNearbyCounties } from '@/lib/local-movers/florida-nearby';
 import { getNewJerseyNearbyCounties } from '@/lib/local-movers/new-jersey-nearby';
+import { getNewYorkNearbyCounties } from '@/lib/local-movers/new-york-nearby';
 import {
   CountyCostSection,
   CountyFaqSection,
@@ -83,7 +85,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
       ? getFloridaNearbyCounties(countySlug)
       : stateSlug === 'new-jersey'
         ? getNewJerseyNearbyCounties(countySlug)
-        : [];
+        : stateSlug === 'new-york'
+          ? getNewYorkNearbyCounties(countySlug)
+          : [];
 
   return (
     <>
@@ -204,9 +208,11 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           lastUpdated={
             stateSlug === 'new-jersey'
               ? NEW_JERSEY_COUNTY_CONTENT_UPDATED
-              : stateSlug === 'florida'
-                ? FLORIDA_COUNTY_CONTENT_UPDATED
-                : undefined
+              : stateSlug === 'new-york'
+                ? NEW_YORK_COUNTY_CONTENT_UPDATED
+                : stateSlug === 'florida'
+                  ? FLORIDA_COUNTY_CONTENT_UPDATED
+                  : undefined
           }
         />
 

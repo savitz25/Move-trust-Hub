@@ -4,6 +4,7 @@ import { getSeoYear } from '@/lib/local-movers/index';
 
 export const FLORIDA_COUNTY_CONTENT_UPDATED = '2026-06-21';
 export const NEW_JERSEY_COUNTY_CONTENT_UPDATED = '2026-06-22';
+export const NEW_YORK_COUNTY_CONTENT_UPDATED = '2026-06-22';
 
 type Props = {
   countyLabel: string;

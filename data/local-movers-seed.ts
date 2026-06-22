@@ -2874,6 +2874,101 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Englewood',
   },
 
+  // Albany County, NY (Grok-researched)
+  'mabeys-moving-storage-albany': {
+    id: 'mabeys-moving-storage-albany',
+    name: "Mabey's Moving & Storage",
+    rating: 4.7,
+    reviewCount: 250,
+    shortDescription:
+      'Top-ranked local mover with high positive review percentage for Albany County residential and commercial moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Rensselaer',
+    website: 'https://www.mabeys.com/',
+  },
+  'dons-moving-storage-albany': {
+    id: 'dons-moving-storage-albany',
+    name: "Don's Moving & Storage",
+    rating: 4.8,
+    reviewCount: 650,
+    shortDescription:
+      'Established Albany mover specializing in residential, corporate, and international moves with storage options.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Corporate'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Albany',
+    website: 'https://www.donsmovers.com/',
+  },
+  'lamanna-moving-albany': {
+    id: 'lamanna-moving-albany',
+    name: 'Lamanna Moving & Storage, LLC',
+    rating: 4.9,
+    reviewCount: 400,
+    shortDescription:
+      'Trusted local mover serving the greater Albany area with strong community reviews since 1928.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Albany',
+    website: 'https://www.lamannamoving.com/',
+  },
+  'clark-moving-storage-albany': {
+    id: 'clark-moving-storage-albany',
+    name: 'Clark Moving & Storage',
+    rating: 4.5,
+    reviewCount: 80,
+    shortDescription:
+      'Reliable mover with positive feedback for Albany County residential and storage moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Albany',
+  },
+  'arnoff-moving-storage-albany': {
+    id: 'arnoff-moving-storage-albany',
+    name: 'Arnoff Moving & Storage',
+    rating: 4.5,
+    reviewCount: 200,
+    shortDescription:
+      'Established mover serving the Capital District with solid local performance for residential and commercial moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Albany',
+  },
+  'all-ways-moving-storage-albany': {
+    id: 'all-ways-moving-storage-albany',
+    name: 'All-Ways Moving & Storage Co.',
+    rating: 4.8,
+    reviewCount: 60,
+    shortDescription:
+      'Well-reviewed local mover for Albany County residential moves with packing and storage options.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Albany',
+  },
+  'busy-bee-movers-albany': {
+    id: 'busy-bee-movers-albany',
+    name: 'Busy Bee Movers',
+    rating: 4.8,
+    reviewCount: 45,
+    shortDescription:
+      'Local favorite noted for fair pricing and efficient service in Albany County.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Albany',
+  },
+
   // Burlington County, NJ (Grok-researched)
   'piece-of-cake-moving-burlington': {
     id: 'piece-of-cake-moving-burlington',
@@ -3181,6 +3276,19 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'all-my-sons-burlington',
     ],
   },
+  'capital-district-ny': {
+    id: 'capital-district-ny',
+    label: 'Capital District (Albany–Schenectady–Troy)',
+    moverIds: [
+      'mabeys-moving-storage-albany',
+      'dons-moving-storage-albany',
+      'lamanna-moving-albany',
+      'clark-moving-storage-albany',
+      'arnoff-moving-storage-albany',
+      'all-ways-moving-storage-albany',
+      'busy-bee-movers-albany',
+    ],
+  },
 };
 
 /** Non-Florida county overrides — Florida uses florida-county-assignments.ts */
@@ -3194,10 +3302,5 @@ export const countyMoverAssignments: CountyMoverAssignment[] = [
     stateSlug: 'texas',
     countySlug: 'harris',
     moverIds: ['houston-local-lines'],
-  },
-  {
-    stateSlug: 'new-york',
-    countySlug: 'new-york',
-    moverIds: ['nyc-neighborhood-movers'],
   },
 ];

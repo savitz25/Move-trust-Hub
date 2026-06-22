@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import {
   FLORIDA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
+  NEW_YORK_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { localStates } from '@/lib/local-movers/states';
@@ -23,7 +24,9 @@ export default async function sitemap({
       ? new Date(FLORIDA_COUNTY_CONTENT_UPDATED)
       : id === 'new-jersey'
         ? new Date(NEW_JERSEY_COUNTY_CONTENT_UPDATED)
-        : new Date();
+        : id === 'new-york'
+          ? new Date(NEW_YORK_COUNTY_CONTENT_UPDATED)
+          : new Date();
 
   return [
     {
