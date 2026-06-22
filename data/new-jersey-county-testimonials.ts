@@ -475,6 +475,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  sussex: [
+    {
+      quote:
+        'Piece of Cake handled our Sparta lake house move with flat-fee pricing that stayed predictable. The crew navigated a steep driveway and seasonal property access without a hitch.',
+      name: 'George L.',
+      location: 'Sparta, NJ',
+      rating: 5,
+      moveType: 'Lake property',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Newton family relocation — professional, careful, and on time through rural roads and a long farm driveway.',
+      name: 'Patricia A.',
+      location: 'Newton, NJ',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price for our Sussex County move and stuck to it — no funny business. Courteous, fast crew despite limited local infrastructure.',
+      name: 'Tim R.',
+      location: 'Hopatcong, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

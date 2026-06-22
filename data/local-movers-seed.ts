@@ -3166,11 +3166,12 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'northwest-nj',
     label: 'Northwest New Jersey',
     moverIds: [
-      'new-jersey-county-moving-co',
-      'new-jersey-regional-moving',
-      'new-jersey-local-lines',
-      'new-jersey-family-movers',
-      'new-jersey-pro-movers',
+      'piece-of-cake-moving-burlington',
+      'booth-movers-bergen',
+      'optimum-moving-bergen',
+      'movers-201-bergen',
+      'white-glove-moving-burlington',
+      'all-my-sons-burlington',
     ],
   },
 };

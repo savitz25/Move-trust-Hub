@@ -314,6 +314,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Somerville, Bridgewater, and outlying towns.',
     ],
   },
+  sussex: {
+    marketNotes:
+      'Sussex County is rural and scenic with lakes, mountains, and small towns (Newton, Sparta). Moves often involve residential, farm/equestrian, and seasonal properties with limited local infrastructure.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Newton and Sparta moves may reflect lake-property access, long rural driveways, and travel from regional North Jersey crews.',
+    },
+    tips: [
+      'Rural or lake properties may involve long driveways or specialized access.',
+      'Confirm explicit regional service to Newton and outlying areas.',
+      'Storage is limited locally; use nearby facilities.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify credentials for farm or high-value rural properties.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(
