@@ -1645,6 +1645,266 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Ranch outbuilding',
     },
   ],
+  archer: [
+    {
+      quote:
+        'Archer City is quiet North Texas ranch country. A Wichita Falls regional crew confirmed coverage and handled our Archer County move with professional care on long gravel driveways.',
+      name: 'Dale M.',
+      location: 'Archer City, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Archer County has almost no local movers. An Abilene provider made the trip and was reliable in remote rolling plains ranchland.',
+      name: 'Nora T.',
+      location: 'Archer County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Archer City ranch move needed flexible scheduling around cattle work. The Wichita Falls team was careful with antiques and upfront about travel fees.',
+      name: 'Curtis B.',
+      location: 'Archer City, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  brewster: [
+    {
+      quote:
+        'Alpine sits in Big Bend country with serious mountain access challenges. An Alpine regional crew handled our Brewster County move with professional desert and mountain experience.',
+      name: 'Linda K.',
+      location: 'Alpine, TX',
+      rating: 5,
+      moveType: 'Mountain ranch',
+    },
+    {
+      quote:
+        'Brewster County movers are scarce outside Alpine. An El Paso provider verified service area and was reliable on remote Big Bend ranch roads.',
+      name: 'Carlos R.',
+      location: 'Brewster County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Alpine relocation had very limited storage options. The regional team coordinated El Paso facilities and delivered careful handling throughout.',
+      name: 'Susan H.',
+      location: 'Alpine, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  marion: [
+    {
+      quote:
+        'Jefferson is historic East Texas piney woods country. A Marshall regional crew confirmed coverage and handled our Marion County move professionally despite tree-lined ranch access.',
+      name: 'Willie J.',
+      location: 'Jefferson, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Marion County has no local full-service movers. A Shreveport, LA provider verified cross-border licensing and was reliable on our remote East Texas property.',
+      name: 'Betty N.',
+      location: 'Marion County, TX',
+      rating: 5,
+      moveType: 'Piney woods',
+    },
+    {
+      quote:
+        'Our Jefferson move had limited local storage. The Marshall team coordinated regional warehouse space and delivered careful handling throughout.',
+      name: 'James P.',
+      location: 'Jefferson, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  mitchell: [
+    {
+      quote:
+        'Colorado City sits in West Texas ranch and oilfield country. An Abilene regional crew handled our Mitchell County move professionally on long caliche driveways.',
+      name: 'Rodney S.',
+      location: 'Colorado City, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Mitchell County has no dedicated local movers. A San Angelo provider confirmed service area and was reliable in a sparse West Texas market.',
+      name: 'Connie L.',
+      location: 'Mitchell County, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Our Colorado City ranch move involved outbuildings and limited cell service. The Abilene team coordinated arrival windows well and finished on time.',
+      name: 'Keith D.',
+      location: 'Colorado City, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  ochiltree: [
+    {
+      quote:
+        'Perryton is northern Panhandle ranchland with sparse mover options. An Amarillo crew handled our Ochiltree County move professionally on gravel ranch roads.',
+      name: 'Wade G.',
+      location: 'Perryton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Ochiltree County has no local full-service movers. A Lubbock provider confirmed coverage and was reliable in remote Panhandle country.',
+      name: 'Iva F.',
+      location: 'Ochiltree County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Perryton relocation required planning around weather and long driveways. The Amarillo team was upfront about travel fees and efficient on site.',
+      name: 'Dean R.',
+      location: 'Perryton, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  parmer: [
+    {
+      quote:
+        'Farwell sits on the Texas-New Mexico border with almost no local movers. An Amarillo regional crew confirmed coverage and handled our Parmer County move professionally.',
+      name: 'Lester W.',
+      location: 'Farwell, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Parmer County movers are hard to find. A Lubbock provider made the long drive and was reliable on remote High Plains ranch roads.',
+      name: 'Opal C.',
+      location: 'Parmer County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Farwell ranch move needed flexible scheduling around harvest season. The Amarillo team was upfront about travel fees and efficient on site.',
+      name: 'Virgil H.',
+      location: 'Farwell, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  runnels: [
+    {
+      quote:
+        'Ballinger is Central Texas ranch country between Abilene and San Angelo. A San Angelo regional crew confirmed coverage and handled our Runnels County move with professional care.',
+      name: 'Helen M.',
+      location: 'Ballinger, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Runnels County has almost no local movers. An Abilene provider made the trip and was reliable on remote ranch roads near the Colorado River.',
+      name: 'George T.',
+      location: 'Runnels County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Ballinger relocation had limited local storage. The San Angelo team coordinated regional warehouse space and delivered careful handling throughout.',
+      name: 'Ruth K.',
+      location: 'Ballinger, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  somervell: [
+    {
+      quote:
+        'Glen Rose is Paluxy River ranch country south of Fort Worth. A Waco regional crew confirmed coverage and handled our Somervell County move with professional Hill Country fringe experience.',
+      name: 'Janice B.',
+      location: 'Glen Rose, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Somervell County has sparse competition. A Fort Worth provider agreed to the drive and was reliable on narrow ranch roads near Dinosaur Valley.',
+      name: 'Larry E.',
+      location: 'Somervell County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Glen Rose ranch move involved outbuildings and limited storage. The Waco team coordinated regional facilities and finished on schedule.',
+      name: 'Diane S.',
+      location: 'Glen Rose, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  stephens: [
+    {
+      quote:
+        'Breckenridge sits in North Texas oilfield and ranch country. An Abilene regional crew handled our Stephens County move professionally on long gravel driveways.',
+      name: 'Harold F.',
+      location: 'Breckenridge, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Stephens County has no local full-service movers. A Wichita Falls provider confirmed coverage and was reliable in remote North Texas ranchland.',
+      name: 'Mildred A.',
+      location: 'Stephens County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Breckenridge move required planning around field traffic and limited storage. The Abilene team was upfront about travel fees and delivered efficiently.',
+      name: 'Ronnie C.',
+      location: 'Breckenridge, TX',
+      rating: 4,
+      moveType: 'Rural',
+    },
+  ],
+  zavala: [
+    {
+      quote:
+        'Crystal City is South Texas Winter Garden ranch country. A Laredo regional crew confirmed service to Zavala County and handled our move professionally.',
+      name: 'Arturo V.',
+      location: 'Crystal City, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Zavala County has no local full-service movers. A San Antonio provider agreed to the long drive and was reliable on remote brush-country ranch roads.',
+      name: 'Elena M.',
+      location: 'Zavala County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Crystal City relocation had limited storage nearby. The Laredo team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Hector R.',
+      location: 'Crystal City, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
   loving: [
     {
       quote:

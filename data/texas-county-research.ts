@@ -1078,6 +1078,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves across the Colorado River Hill Country fringe.',
     ],
   },
+  archer: {
+    marketNotes:
+      'Archer County is one of Texas\'s least populous counties with Archer City as its seat. Moves are rare and rely on regional service from Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wichita Falls and Abilene regional providers may add travel fees for Archer City North Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Archer City before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse North Texas competition.',
+      'Confirm credentials for ranch moves across remote rolling plains.',
+    ],
+  },
+  brewster: {
+    marketNotes:
+      'Brewster County is one of Texas\'s largest but least populous counties with Alpine and Big Bend National Park. Moves are rare and rely on regional service from El Paso or Alpine.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Alpine and El Paso regional providers may add travel fees for Big Bend desert and mountain ranch properties.',
+    },
+    tips: [
+      'Extremely remote desert/mountain properties have severe access challenges — discuss terrain and elevation early.',
+      'Verify explicit regional service to Alpine before booking.',
+      'Storage is very limited locally; plan on Alpine or El Paso-area warehouses.',
+      'Obtain multiple written estimates due to sparse Big Bend competition.',
+      'Confirm credentials for remote desert and ranch relocations.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is one of Texas\'s least populous counties with Jefferson as its seat. Moves are rare and rely on regional service from Marshall or Shreveport, LA.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Marshall and Shreveport, LA regional providers may add travel fees for Jefferson East Texas piney woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm truck size for rural roads and tree cover.',
+      'Verify explicit regional service to Jefferson before booking.',
+      'Storage is very limited locally; coordinate Marshall or Shreveport facilities.',
+      'Obtain multiple written estimates due to sparse East Texas competition.',
+      'Confirm credentials for rural moves across the Texas-Louisiana border region.',
+    ],
+  },
+  mitchell: {
+    marketNotes:
+      'Mitchell County is one of Texas\'s least populous counties with Colorado City as its seat. Moves are rare and rely on regional service from Abilene or San Angelo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Abilene and San Angelo regional providers may add travel fees for Colorado City ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch/oilfield properties have severe access challenges — discuss Permian Basin fringe access roads.',
+      'Verify explicit regional service to Colorado City before booking.',
+      'Storage is very limited locally; use regional facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch and oilfield moves in West Texas.',
+    ],
+  },
+  ochiltree: {
+    marketNotes:
+      'Ochiltree County is one of Texas\'s least populous counties with Perryton as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Perryton and northern Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Perryton before booking.',
+      'Storage is very limited locally; plan on Amarillo-area warehouses.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves in the northern Texas Panhandle.',
+    ],
+  },
+  parmer: {
+    marketNotes:
+      'Parmer County is one of Texas\'s least populous counties with Farwell as its seat. Moves are rare and rely on regional service from Amarillo or Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Farwell and northwestern Panhandle ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss driveway length and surface type.',
+      'Verify explicit regional service to Farwell; dedicated local crews are unavailable.',
+      'Storage is very limited; use Amarillo or Lubbock-area facilities.',
+      'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch moves along the Texas-New Mexico border.',
+    ],
+  },
+  runnels: {
+    marketNotes:
+      'Runnels County is one of Texas\'s least populous counties with Ballinger as its seat. Moves are rare and rely on regional service from San Angelo or Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Abilene regional providers may add travel fees for Ballinger Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Ballinger before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse Central Texas competition.',
+      'Confirm credentials for ranch moves across the Colorado River region.',
+    ],
+  },
+  somervell: {
+    marketNotes:
+      'Somervell County is one of Texas\'s least populous counties with Glen Rose as its seat. Moves are rare and rely on regional service from Waco or Fort Worth.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Waco and Fort Worth regional providers may add travel fees for Glen Rose Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss road width and parking for larger trucks.',
+      'Verify explicit regional service to Glen Rose before booking.',
+      'Storage is very limited locally; coordinate Waco or Fort Worth facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves in the Paluxy River Hill Country fringe.',
+    ],
+  },
+  stephens: {
+    marketNotes:
+      'Stephens County is one of Texas\'s least populous counties with Breckenridge as its seat. Moves are rare and rely on regional service from Abilene or Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Abilene and Wichita Falls regional providers may add travel fees for Breckenridge North Texas ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch/oilfield properties have severe access challenges — confirm access roads and truck size.',
+      'Verify explicit regional service to Breckenridge before booking.',
+      'Storage is very limited locally; use regional facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch and oilfield moves across North Texas.',
+    ],
+  },
+  zavala: {
+    marketNotes:
+      'Zavala County is one of Texas\'s least populous counties with Crystal City as its seat. Moves are rare and rely on regional service from Laredo or San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Laredo and San Antonio regional providers may add travel fees for Crystal City South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss road width and parking for larger trucks.',
+      'Verify explicit regional service to Crystal City before booking.',
+      'Storage is very limited locally; coordinate Laredo or San Antonio facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves across the South Texas Winter Garden region.',
+    ],
+  },
   loving: {
     marketNotes:
       'Loving County is the least populous county in Texas with Mentone as its seat. Moves are extremely rare and rely on regional service from Odessa or Hobbs, NM.',

@@ -2,10 +2,12 @@ import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
 /** Hand-curated Texas county mover lists — grows incrementally as counties are researched */
 const CURATED_TX_COUNTIES: Record<string, string[]> = {
+  archer: ['wichita-falls-area-moving', 'abilene-area-moving'],
   armstrong: ['amarillo-area-moving', 'lubbock-area-moving'],
   bailey: ['lubbock-area-moving', 'amarillo-area-moving'],
   baylor: ['wichita-falls-area-moving', 'abilene-area-moving'],
   borden: ['lubbock-area-moving', 'midland-area-moving'],
+  brewster: ['alpine-area-moving', 'el-paso-area-moving'],
   briscoe: ['amarillo-area-moving', 'lubbock-area-moving'],
   carson: ['amarillo-area-moving', 'lubbock-area-moving'],
   cochran: ['lubbock-area-moving', 'midland-area-moving'],
@@ -48,17 +50,24 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   loving: ['odessa-area-moving', 'hobbs-nm-area-moving'],
   lynn: ['lubbock-area-moving', 'midland-area-moving'],
   martin: ['midland-area-moving', 'lubbock-area-moving'],
+  marion: ['marshall-area-moving', 'shreveport-la-area-moving'],
   mason: ['san-angelo-area-moving', 'fredericksburg-area-moving'],
+  mitchell: ['abilene-area-moving', 'san-angelo-area-moving'],
   mills: ['waco-area-moving', 'abilene-area-moving'],
   menard: ['san-angelo-area-moving', 'abilene-area-moving'],
+  ochiltree: ['amarillo-area-moving', 'lubbock-area-moving'],
   oldham: ['amarillo-area-moving', 'lubbock-area-moving'],
+  parmer: ['amarillo-area-moving', 'lubbock-area-moving'],
   presidio: ['el-paso-area-moving', 'alpine-area-moving'],
   real: ['san-antonio-area-moving', 'kerrville-area-moving'],
   reagan: ['san-angelo-area-moving', 'midland-area-moving'],
   refugio: ['corpus-christi-area-moving', 'victoria-area-moving'],
+  runnels: ['san-angelo-area-moving', 'abilene-area-moving'],
   schleicher: ['san-angelo-area-moving', 'midland-area-moving'],
   shackelford: ['abilene-area-moving', 'wichita-falls-area-moving'],
   sherman: ['amarillo-area-moving', 'lubbock-area-moving'],
+  somervell: ['waco-area-moving', 'fort-worth-area-moving'],
+  stephens: ['abilene-area-moving', 'wichita-falls-area-moving'],
   'san-saba': ['waco-area-moving', 'abilene-area-moving'],
   sutton: ['san-angelo-area-moving', 'midland-area-moving'],
   sterling: ['san-angelo-area-moving', 'midland-area-moving'],
@@ -66,6 +75,7 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   throckmorton: ['abilene-area-moving', 'wichita-falls-area-moving'],
   upton: ['midland-area-moving', 'san-angelo-area-moving'],
   wheeler: ['amarillo-area-moving', 'lubbock-area-moving'],
+  zavala: ['laredo-area-moving', 'san-antonio-area-moving'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

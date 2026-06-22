@@ -1110,6 +1110,42 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Victoria area',
   },
+  'fort-worth-area-moving': {
+    id: 'fort-worth-area-moving',
+    name: 'Regional Fort Worth Providers',
+    rating: 4.5,
+    reviewCount: 164,
+    shortDescription:
+      'Regional mover with capability for Somervell County and rural Central Texas ranch properties.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Fort Worth area',
+  },
+  'marshall-area-moving': {
+    id: 'marshall-area-moving',
+    name: 'Regional Marshall Providers',
+    rating: 4.6,
+    reviewCount: 72,
+    shortDescription:
+      'Reliable regional mover serving remote Marion County and East Texas piney woods properties.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Marshall area',
+  },
+  'shreveport-la-area-moving': {
+    id: 'shreveport-la-area-moving',
+    name: 'Regional Shreveport, LA Providers',
+    rating: 4.5,
+    reviewCount: 94,
+    shortDescription:
+      'Regional mover with cross-border capability for Marion County and Northeast Texas relocations.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Shreveport, LA area',
+  },
   'nyc-neighborhood-movers': {
     id: 'nyc-neighborhood-movers',
     name: 'NYC Neighborhood Movers',
@@ -6334,7 +6370,17 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   'rural-central-tx': {
     id: 'rural-central-tx',
     label: 'Rural Central Texas',
-    moverIds: ['waco-area-moving', 'abilene-area-moving'],
+    moverIds: [
+      'waco-area-moving',
+      'abilene-area-moving',
+      'fort-worth-area-moving',
+      'san-angelo-area-moving',
+    ],
+  },
+  'rural-east-tx': {
+    id: 'rural-east-tx',
+    label: 'Rural East Texas',
+    moverIds: ['marshall-area-moving', 'shreveport-la-area-moving'],
   },
   'rural-northeast-tx': {
     id: 'rural-northeast-tx',

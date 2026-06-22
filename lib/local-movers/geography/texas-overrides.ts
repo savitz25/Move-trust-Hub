@@ -4,10 +4,12 @@ import type { LocalCounty } from '@/lib/local-movers/types';
 export const texasCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
+  archer: { seat: 'Archer City', metro: 'rural-north-tx' },
   armstrong: { seat: 'Claude', metro: 'rural-panhandle-tx' },
   bailey: { seat: 'Muleshoe', metro: 'rural-west-tx' },
   baylor: { seat: 'Seymour', metro: 'rural-north-tx' },
   borden: { seat: 'Gail', metro: 'rural-west-tx' },
+  brewster: { seat: 'Alpine', metro: 'rural-west-tx' },
   briscoe: { seat: 'Silverton', metro: 'rural-panhandle-tx' },
   carson: { seat: 'Panhandle', metro: 'rural-panhandle-tx' },
   cochran: { seat: 'Morton', metro: 'rural-west-tx' },
@@ -47,20 +49,27 @@ export const texasCountyOverrides: Partial<
   'la-salle': { seat: 'Cotulla', metro: 'rural-south-tx' },
   knox: { seat: 'Benjamin', metro: 'rural-north-tx' },
   lipscomb: { seat: 'Lipscomb', metro: 'rural-panhandle-tx' },
+  marion: { seat: 'Jefferson', metro: 'rural-east-tx' },
   mason: { seat: 'Mason', metro: 'rural-hill-country-tx' },
+  mitchell: { seat: 'Colorado City', metro: 'rural-west-tx' },
   loving: { seat: 'Mentone', metro: 'rural-west-tx' },
   lynn: { seat: 'Tahoka', metro: 'rural-west-tx' },
   martin: { seat: 'Stanton', metro: 'rural-west-tx' },
   menard: { seat: 'Menard', metro: 'rural-west-tx' },
   mills: { seat: 'Goldthwaite', metro: 'rural-central-tx' },
+  ochiltree: { seat: 'Perryton', metro: 'rural-panhandle-tx' },
   oldham: { seat: 'Vega', metro: 'rural-panhandle-tx' },
+  parmer: { seat: 'Farwell', metro: 'rural-panhandle-tx' },
   presidio: { seat: 'Marfa', metro: 'rural-west-tx' },
   real: { seat: 'Leakey', metro: 'rural-south-tx' },
   reagan: { seat: 'Big Lake', metro: 'rural-west-tx' },
   refugio: { seat: 'Refugio', metro: 'rural-south-tx' },
+  runnels: { seat: 'Ballinger', metro: 'rural-central-tx' },
   schleicher: { seat: 'Eldorado', metro: 'rural-west-tx' },
   shackelford: { seat: 'Albany', metro: 'rural-north-tx' },
   sherman: { seat: 'Stratford', metro: 'rural-panhandle-tx' },
+  somervell: { seat: 'Glen Rose', metro: 'rural-central-tx' },
+  stephens: { seat: 'Breckenridge', metro: 'rural-north-tx' },
   'san-saba': { seat: 'San Saba', metro: 'rural-central-tx' },
   sutton: { seat: 'Sonora', metro: 'rural-west-tx' },
   sterling: { seat: 'Sterling City', metro: 'rural-west-tx' },
@@ -68,6 +77,7 @@ export const texasCountyOverrides: Partial<
   throckmorton: { seat: 'Throckmorton', metro: 'rural-north-tx' },
   upton: { seat: 'Rankin', metro: 'rural-west-tx' },
   wheeler: { seat: 'Wheeler', metro: 'rural-panhandle-tx' },
+  zavala: { seat: 'Crystal City', metro: 'rural-south-tx' },
 };
 
 export function applyTexasCountyOverrides(county: LocalCounty): LocalCounty {
