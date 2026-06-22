@@ -297,6 +297,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials and insurance for farm or riverfront properties.',
     ],
   },
+  somerset: {
+    marketNotes:
+      'Somerset County is affluent suburban with Bridgewater, Somerville, and historic towns. Moves often involve family residential, corporate, and upscale properties with strong commuter ties to NYC.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Somerville and Bridgewater moves may reflect upscale HOA rules, historic home handling, and I-287 commuter traffic.',
+    },
+    tips: [
+      'Suburban HOAs and new developments have strict move-in rules.',
+      'Historic districts require preservation-sensitive handling.',
+      'Heavy commuter traffic on I-287 and Route 22.',
+      'Obtain multiple estimates in this competitive market.',
+      'Verify coverage for Somerville, Bridgewater, and outlying towns.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

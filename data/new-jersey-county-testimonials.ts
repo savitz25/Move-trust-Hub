@@ -449,6 +449,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Rural',
     },
   ],
+  somerset: [
+    {
+      quote:
+        'Piece of Cake handled our Bridgewater townhome move with flat-fee pricing that never changed. Professional crew navigated strict HOA rules and I-287 traffic without stress.',
+      name: 'Amanda F.',
+      location: 'Bridgewater, NJ',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Somerville family relocation — careful with historic trim work, on time, and professional from start to finish.',
+      name: 'Peter W.',
+      location: 'Somerville, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price for our Bernardsville-area move and stuck to it — no funny business. Courteous, fast, and the smoothest upscale suburban relocation we have had.',
+      name: 'Claire H.',
+      location: 'Bernardsville, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
