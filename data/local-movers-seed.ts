@@ -3162,6 +3162,21 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Plattsburgh',
     website: 'https://www.staffordmoving.com/',
   },
+  'pinnacle-moving-watertown': {
+    id: 'pinnacle-moving-watertown',
+    name: 'Pinnacle Moving & Storage',
+    rating: 4.7,
+    reviewCount: 85,
+    shortDescription:
+      'Veteran-owned Watertown mover serving Jefferson County, Fort Drum PCS relocations, and North Country residential moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Military'],
+    usdotNumber: '1541170',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Watertown',
+    website: 'https://pinnaclemovingandstorage.com/',
+  },
   'triangle-movers-hudson-valley': {
     id: 'triangle-movers-hudson-valley',
     name: 'Triangle Movers',
@@ -3620,6 +3635,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'north-country-ny',
     label: 'North Country / Adirondacks',
     moverIds: [
+      'pinnacle-moving-watertown',
       'stafford-moving-plattsburgh',
       'mabeys-moving-storage-albany',
       'dons-moving-storage-albany',

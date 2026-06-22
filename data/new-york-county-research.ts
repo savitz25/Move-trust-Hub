@@ -348,6 +348,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm winter contingencies.',
     ],
   },
+  hamilton: {
+    marketNotes:
+      'Hamilton County is one of New York’s least populous and most rural counties in the Adirondack Park. Moves are limited and primarily residential/seasonal with very sparse local infrastructure. Service is regional from Utica, Albany, or Glens Falls.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lake Pleasant and Indian Lake moves often reflect remote Adirondack access, seasonal roads, and travel from Utica or Albany crews.',
+    },
+    tips: [
+      'Remote Adirondack properties often have challenging access and seasonal road conditions.',
+      'Confirm explicit regional service to Lake Pleasant and Indian Lake.',
+      'Storage is extremely limited; plan with regional providers.',
+      'Book well in advance due to low availability.',
+      'Verify credentials for remote/rural moves.',
+    ],
+  },
+  herkimer: {
+    marketNotes:
+      'Herkimer County is rural with Herkimer and Little Falls as hubs. Moves are residential with regional support from Utica or Syracuse.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Herkimer and Little Falls moves often reflect Mohawk Valley rural access and travel from Utica or Syracuse crews.',
+    },
+    tips: [
+      'Rural properties may have access challenges.',
+      'Verify regional service to Herkimer.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County includes Watertown and Fort Drum (military). Moves often involve military families, residential, and lakeside properties with regional support from Syracuse or Canada border areas.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Watertown and Fort Drum moves often reflect PCS logistics, lakefront access, and harsh North Country winter scheduling.',
+    },
+    tips: [
+      'Military (Fort Drum) moves require experience with PCS logistics.',
+      'Lake Ontario and Thousand Islands properties need water-adjacent planning.',
+      'Harsh winters affect scheduling.',
+      'Verify coverage for Watertown and Fort Drum.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

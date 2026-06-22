@@ -527,6 +527,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  hamilton: [
+    {
+      quote:
+        'Stafford Moving handled our remote Indian Lake property professionally — careful service despite challenging Adirondack access and winter timing.',
+      name: 'Glen M.',
+      location: 'Indian Lake, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+    {
+      quote:
+        'Reliable Movers drove in from the Utica corridor with efficient crews and fair pricing for our Lake Pleasant relocation.',
+      name: 'Nancy F.',
+      location: 'Lake Pleasant, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided dependable regional support for our Hamilton County move — great communication throughout.",
+      name: 'Harold J.',
+      location: 'Long Lake, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  herkimer: [
+    {
+      quote:
+        'Reliable Movers handled our Herkimer rural move professionally — efficient crew and careful handling despite our long driveway.',
+      name: 'Karen S.',
+      location: 'Herkimer, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our Little Falls relocation — courteous crews and solid communication.",
+      name: 'Frank D.',
+      location: 'Little Falls, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was efficient and careful for our Mohawk Valley move — a pleasant experience from estimate to unload.",
+      name: 'Sandra P.',
+      location: 'Mohawk, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  jefferson: [
+    {
+      quote:
+        'Pinnacle Moving handled our Fort Drum PCS move flawlessly — professional military logistics and careful handling throughout.',
+      name: 'Jason W.',
+      location: 'Fort Drum, NY',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Reliable Movers provided dependable regional service for our Watertown lakeside relocation despite harsh winter conditions.',
+      name: 'Melissa R.',
+      location: 'Watertown, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was courteous and efficient with great communication for our Jefferson County family home move.",
+      name: 'Brian T.',
+      location: 'Carthage, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
