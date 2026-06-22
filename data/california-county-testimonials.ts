@@ -943,6 +943,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Desert',
     },
   ],
+  'san-diego': [
+    {
+      quote:
+        'Piece of Cake Moving made our San Diego military PCS move stress-free — professional crew with great base-access coordination.',
+      name: 'Lt. James P.',
+      location: 'San Diego, CA',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Booth Movers handled our Oceanside coastal home relocation with outstanding care — careful sand protection and excellent communication.',
+      name: 'Melissa R.',
+      location: 'Oceanside, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'California Premier Moving provided dependable service for our Chula Vista suburban move — efficient despite heavy I-805 traffic.',
+      name: 'Carlos M.',
+      location: 'Chula Vista, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  'san-francisco': [
+    {
+      quote:
+        'Piece of Cake Moving made our Nob Hill high-rise move stress-free — flawless elevator coordination and transparent pricing throughout.',
+      name: 'Emily K.',
+      location: 'San Francisco, CA',
+      rating: 5,
+      moveType: 'High-Rise',
+    },
+    {
+      quote:
+        'Booth Movers handled our Marina District relocation with outstanding care — expert navigation of steep hills and narrow streets.',
+      name: 'David L.',
+      location: 'San Francisco, CA',
+      rating: 5,
+      moveType: 'Hill',
+    },
+    {
+      quote:
+        'Gentle Giant provided white-glove service for our Mission District apartment move — professional building-insurance coordination and careful handling.',
+      name: 'Priya S.',
+      location: 'San Francisco, CA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'san-joaquin': [
+    {
+      quote:
+        'Meathead Movers Fresno handled our Stockton family home move professionally — efficient crew and careful port-area logistics.',
+      name: 'Frank B.',
+      location: 'Stockton, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Two Men and a Truck provided dependable regional service for our Lodi relocation — smooth and efficient throughout.',
+      name: 'Gloria H.',
+      location: 'Lodi, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Ernie's Moving drove in from Sacramento with fair pricing and professional service for our San Joaquin County agricultural-property move.",
+      name: 'Henry T.',
+      location: 'Tracy, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

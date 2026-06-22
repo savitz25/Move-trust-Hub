@@ -617,6 +617,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value properties.',
     ],
   },
+  'san-diego': {
+    marketNotes:
+      'San Diego County is a major coastal county with dense urban, suburban, and beach communities. Moves often involve military (many bases), residential, and beach properties.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$125–$190/hr for a 2-person crew',
+      note: 'San Diego, Chula Vista, and Oceanside moves often reflect military PCS timing, coastal sand protection, and I-5/I-805 freeway traffic.',
+    },
+    tips: [
+      'Military PCS moves require specialized experience.',
+      'Beach and coastal properties require sand protection.',
+      'Heavy traffic on I-5, I-8, and 805 Freeway.',
+      'Verify coverage for San Diego, Chula Vista, Oceanside, and Escondido.',
+      'Confirm high-value insurance.',
+    ],
+  },
+  'san-francisco': {
+    marketNotes:
+      'San Francisco County is the dense urban core with iconic hills and high-rises. Moves are highly complex due to steep streets, building regulations, and limited parking.',
+    costs: {
+      studioRange: '$700–$1,700+',
+      familyRange: '$3,000–$7,500+',
+      avgHourly: '$150–$220/hr for a 2-person crew',
+      note: 'Mission, Marina, and Nob Hill moves often reflect steep-hill logistics, elevator reservations, and certificate-of-insurance requirements.',
+    },
+    tips: [
+      'Almost all buildings require elevator reservations, move-in fees, and certificates of insurance.',
+      'Steep hills and narrow streets create significant logistical challenges.',
+      'Heavy traffic on all major arteries.',
+      'Verify coverage for specific neighborhoods (Mission, Marina, Nob Hill, etc.).',
+      'Confirm high-value insurance and building expertise.',
+    ],
+  },
+  'san-joaquin': {
+    marketNotes:
+      'San Joaquin County is Central Valley with Stockton and Lodi. Moves often involve residential, port, and agricultural properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Stockton and Lodi moves often reflect port-adjacent logistics, agricultural-property handling, and I-5/Highway 99 traffic.',
+    },
+    tips: [
+      'Port and agricultural properties may require specialized handling.',
+      'Verify coverage for Stockton and Lodi.',
+      'Heavy traffic on I-5 and Highway 99.',
+      'Obtain multiple estimates.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(
