@@ -3117,6 +3117,23 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://reliablemoversllc.com/',
   },
 
+  // Southern Tier (Grok-researched — serves Chemung County)
+  'naglee-moving-elmira': {
+    id: 'naglee-moving-elmira',
+    name: 'Naglee Moving & Storage',
+    rating: 4.7,
+    reviewCount: 150,
+    shortDescription:
+      'Established Elmira mover serving Chemung County residential moves with packing and storage options.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '15251',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Elmira',
+    website: 'https://www.nagleegroup.com/',
+  },
+
   // Burlington County, NJ (Grok-researched)
   'piece-of-cake-moving-burlington': {
     id: 'piece-of-cake-moving-burlington',
@@ -3469,6 +3486,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'southern-tier-ny',
     label: 'Southern Tier (Binghamton area)',
     moverIds: [
+      'naglee-moving-elmira',
       'mabeys-moving-storage-albany',
       'dons-moving-storage-albany',
       'clark-moving-storage-albany',
@@ -3483,6 +3501,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     label: 'Rochester & Finger Lakes',
     moverIds: [
       'reliable-movers-syracuse',
+      'naglee-moving-elmira',
       'mabeys-moving-storage-albany',
       'dons-moving-storage-albany',
       'clark-moving-storage-albany',

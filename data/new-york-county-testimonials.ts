@@ -189,6 +189,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  chemung: [
+    {
+      quote:
+        'Naglee Moving handled our Elmira family relocation efficiently — professional crew, careful handling, and great communication from start to finish.',
+      name: 'Brian T.',
+      location: 'Elmira, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable service for our Horseheads move. The crew was efficient and careful with everything despite our tight timeline.",
+      name: 'Diane R.',
+      location: 'Horseheads, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered the best prices and most efficient crew we've used in the Southern Tier — a great experience for our Big Flats relocation.",
+      name: 'Kevin M.',
+      location: 'Big Flats, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

@@ -127,6 +127,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials in this low-volume market.',
     ],
   },
+  chemung: {
+    marketNotes:
+      'Chemung County centers on Elmira with suburban and rural areas. Moves often involve residential, university-related (Elmira College), and family relocations with regional Southern Tier support.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,300',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Elmira, Horseheads, and Big Flats moves often reflect Elmira College semester timing, I-86 traffic, and suburban driveway access.',
+    },
+    tips: [
+      'University calendar affects seasonal demand around Elmira College.',
+      'Rural properties may have access challenges.',
+      'I-86 traffic can impact timing.',
+      'Obtain multiple estimates in this moderate market.',
+      'Verify coverage for Elmira, Horseheads, and Big Flats.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(
