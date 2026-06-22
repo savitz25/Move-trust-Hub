@@ -241,6 +241,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Apartment',
     },
   ],
+  hunterdon: [
+    {
+      quote:
+        'Piece of Cake handled our Flemington historic home move with flat-fee pricing that stayed predictable. The crew was careful with original hardwood floors and a long gravel driveway.',
+      name: 'Catherine B.',
+      location: 'Flemington, NJ',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Clinton family relocation — professional, on time, and careful with both house furniture and barn equipment.',
+      name: 'William D.',
+      location: 'Clinton, NJ',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price and stuck to it through our Lambertville-area move. Professional, courteous, and fast despite I-78 commuter traffic.',
+      name: 'Helen R.',
+      location: 'Lambertville, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

@@ -161,6 +161,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify insurance for high-value urban properties.',
     ],
   },
+  hunterdon: {
+    marketNotes:
+      'Hunterdon County is suburban/rural with historic towns (Flemington, Clinton) and affluent residential areas. Moves often involve family homes, equestrian/farm properties, and commuter relocations to NYC/Philadelphia.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Flemington and Clinton moves may reflect historic home preservation, long rural driveways, and I-78 commuter traffic windows.',
+    },
+    tips: [
+      'Rural or equestrian properties may require long driveways or specialized equipment handling.',
+      'Historic districts have preservation considerations for older homes.',
+      'Commuter traffic on I-78 and US-22 can affect timing.',
+      'Obtain multiple estimates in this moderate-volume market.',
+      'Verify coverage for Flemington, Clinton, and outlying towns.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

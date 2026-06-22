@@ -3141,11 +3141,12 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'suburban-nj',
     label: 'Central New Jersey Suburbs',
     moverIds: [
-      'new-jersey-capital-movers',
-      'new-jersey-premier-moving',
-      'new-jersey-local-lines',
-      'new-jersey-family-movers',
-      'new-jersey-pro-movers',
+      'piece-of-cake-moving-burlington',
+      'booth-movers-bergen',
+      'optimum-moving-bergen',
+      'movers-201-bergen',
+      'white-glove-moving-burlington',
+      'all-my-sons-burlington',
     ],
   },
   'south-jersey-nj': {
