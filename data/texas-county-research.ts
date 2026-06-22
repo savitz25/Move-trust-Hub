@@ -58,6 +58,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch and oilfield moves in remote West Texas.',
     ],
   },
+  coke: {
+    marketNotes:
+      'Coke County is one of Texas\'s least populous counties with Robert Lee as its seat. Moves are rare and rely on regional service from San Angelo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Abilene regional providers typically serve Robert Lee; confirm travel fees for ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size and shuttle needs.',
+      'Verify explicit regional service to Robert Lee before booking.',
+      'Storage is very limited locally; use San Angelo-area facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch moves across West Texas brush country.',
+    ],
+  },
   collingsworth: {
     marketNotes:
       'Collingsworth County is one of Texas\'s least populous counties with Wellington as its seat. Moves are rare and rely on regional service from Amarillo.',
@@ -73,6 +90,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited; plan on Amarillo-area warehouses.',
       'Obtain multiple written estimates before committing.',
       'Confirm credentials for ranch moves across the eastern Panhandle.',
+    ],
+  },
+  crockett: {
+    marketNotes:
+      'Crockett County is one of Texas\'s least populous counties with Ozona as its seat. Moves are rare and rely on regional service from San Angelo or Midland.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Midland regional crews may add travel fees for Ozona ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch/oilfield properties have severe access challenges — discuss terrain and road conditions.',
+      'Verify explicit regional service to Ozona before committing.',
+      'Storage is very limited in-county; plan on San Angelo or Midland facilities.',
+      'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch and oilfield moves in remote West Texas.',
     ],
   },
   culberson: {
@@ -126,6 +160,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves across North Texas rolling plains.',
     ],
   },
+  donley: {
+    marketNotes:
+      'Donley County is one of Texas\'s least populous counties with Clarendon as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Clarendon and eastern Panhandle ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways upfront.',
+      'Verify explicit regional service to Clarendon; no in-county movers exist.',
+      'Storage is very limited locally; use Amarillo-area warehouses.',
+      'Obtain multiple written estimates due to thin Panhandle competition.',
+      'Confirm credentials for ranch moves along the eastern Panhandle.',
+    ],
+  },
   dickens: {
     marketNotes:
       'Dickens County is one of Texas\'s least populous counties with Dickens as its seat. Moves are rare and rely on regional service from Lubbock or Abilene.',
@@ -177,6 +228,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves and travel surcharges.',
     ],
   },
+  hall: {
+    marketNotes:
+      'Hall County is one of Texas\'s least populous counties with Memphis as its seat. Moves are rare and rely on regional service from Amarillo or Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers typically serve Memphis; confirm travel fees for ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — request photos or a virtual survey.',
+      'Verify explicit regional service to Memphis before booking.',
+      'Storage is very limited in-county; coordinate regional warehouse options.',
+      'Obtain multiple written estimates before choosing a provider.',
+      'Confirm credentials for ranch moves across the eastern Panhandle.',
+    ],
+  },
   glasscock: {
     marketNotes:
       'Glasscock County is one of Texas\'s least populous counties with Garden City as its seat. Moves are rare and rely on regional service from Midland/Odessa.',
@@ -226,6 +294,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited in-county; plan on San Angelo-area facilities.',
       'Obtain multiple written estimates before booking.',
       'Confirm credentials for ranch moves across West Texas brush country.',
+    ],
+  },
+  kinney: {
+    marketNotes:
+      'Kinney County is one of Texas\'s least populous counties with Brackettville as its seat. Moves are rare and rely on regional service from Del Rio or San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Del Rio and San Antonio regional providers may add travel fees for Brackettville ranch and border-country properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm gate access and road surface.',
+      'Verify explicit regional service to Brackettville before booking.',
+      'Storage is very limited locally; plan on Del Rio or San Antonio facilities.',
+      'Obtain multiple written estimates due to sparse South Texas competition.',
+      'Confirm credentials for ranch moves near the Rio Grande corridor.',
     ],
   },
   kenedy: {
@@ -396,6 +481,91 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited locally; use Amarillo facilities.',
       'Obtain multiple written estimates due to sparse competition.',
       'Confirm credentials for ranch moves in the northern Texas Panhandle.',
+    ],
+  },
+  lipscomb: {
+    marketNotes:
+      'Lipscomb County is one of Texas\'s least populous counties with Lipscomb as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Lipscomb and northeastern Panhandle ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss truck size for rural roads.',
+      'Verify explicit regional service to Lipscomb; dedicated local crews are unavailable.',
+      'Storage is very limited; use Amarillo-area facilities.',
+      'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch moves in the northeastern Panhandle.',
+    ],
+  },
+  reagan: {
+    marketNotes:
+      'Reagan County is one of Texas\'s least populous counties with Big Lake as its seat. Moves are rare and rely on regional service from San Angelo or Midland.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Midland regional crews typically cover Big Lake; confirm travel fees for oilfield and ranch properties.',
+    },
+    tips: [
+      'Extremely remote oilfield/ranch properties have severe access challenges — confirm equipment and terrain needs.',
+      'Verify explicit regional service to Big Lake before committing.',
+      'Storage is very limited locally; plan on San Angelo or Midland warehouses.',
+      'Obtain multiple written estimates due to sparse Permian Basin fringe competition.',
+      'Confirm credentials for oilfield and ranch relocations.',
+    ],
+  },
+  shackelford: {
+    marketNotes:
+      'Shackelford County is one of Texas\'s least populous counties with Albany as its seat. Moves are rare and rely on regional service from Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Abilene and Wichita Falls regional providers may add travel fees for Albany and North Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss shuttle and parking upfront.',
+      'Verify explicit regional service to Albany before booking.',
+      'Storage is very limited in-county; coordinate regional facilities.',
+      'Obtain multiple written estimates before choosing a mover.',
+      'Confirm credentials for ranch moves across North Texas rolling plains.',
+    ],
+  },
+  sutton: {
+    marketNotes:
+      'Sutton County is one of Texas\'s least populous counties with Sonora as its seat. Moves are rare and rely on regional service from San Angelo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Midland regional providers typically serve Sonora; confirm travel fees for ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm access roads and truck size.',
+      'Verify explicit regional service to Sonora; no in-county full-service movers exist.',
+      'Storage is very limited locally; use San Angelo-area warehouses.',
+      'Obtain multiple written estimates due to thin local competition.',
+      'Confirm credentials for ranch moves in West Texas Hill Country fringe.',
+    ],
+  },
+  upton: {
+    marketNotes:
+      'Upton County is one of Texas\'s least populous counties with Rankin as its seat. Moves are rare and rely on regional service from Midland/Odessa.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Midland/Odessa and San Angelo regional crews may add travel fees for Rankin oilfield and ranch properties.',
+    },
+    tips: [
+      'Extremely remote oilfield/ranch properties have severe access challenges — discuss Permian Basin access roads.',
+      'Verify explicit regional service to Rankin before booking.',
+      'Storage is very limited in-county; plan on Midland or Odessa facilities.',
+      'Obtain multiple written estimates — sparse competition increases price variability.',
+      'Confirm credentials for oilfield and ranch moves in remote West Texas.',
     ],
   },
   loving: {
