@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { CountyEditorialTrust } from '@/components/local-movers/county-editorial-trust';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { getFloridaNearbyCounties } from '@/lib/local-movers/florida-nearby';
+import { getNewJerseyNearbyCounties } from '@/lib/local-movers/new-jersey-nearby';
 import {
   CountyCostSection,
   CountyFaqSection,
@@ -74,7 +75,11 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const testimonials = buildCountyTestimonials(county, state.name);
   const marketNotes = buildCountyMarketNotes(county);
   const nearbyCounties =
-    stateSlug === 'florida' ? getFloridaNearbyCounties(countySlug) : [];
+    stateSlug === 'florida'
+      ? getFloridaNearbyCounties(countySlug)
+      : stateSlug === 'new-jersey'
+        ? getNewJerseyNearbyCounties(countySlug)
+        : [];
 
   return (
     <>

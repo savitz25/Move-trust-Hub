@@ -2872,6 +2872,61 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     label: 'Long Island',
     moverIds: ['nyc-neighborhood-movers'],
   },
+  'nyc-metro-nj': {
+    id: 'nyc-metro-nj',
+    label: 'Northern New Jersey (NYC Metro)',
+    moverIds: [
+      'new-jersey-premier-moving',
+      'new-jersey-express-movers',
+      'new-jersey-local-lines',
+      'new-jersey-family-movers',
+      'new-jersey-pro-movers',
+    ],
+  },
+  'jersey-shore-nj': {
+    id: 'jersey-shore-nj',
+    label: 'Jersey Shore',
+    moverIds: [
+      'new-jersey-express-movers',
+      'new-jersey-family-movers',
+      'new-jersey-regional-moving',
+      'new-jersey-local-lines',
+      'new-jersey-premier-moving',
+    ],
+  },
+  'suburban-nj': {
+    id: 'suburban-nj',
+    label: 'Central New Jersey Suburbs',
+    moverIds: [
+      'new-jersey-capital-movers',
+      'new-jersey-premier-moving',
+      'new-jersey-local-lines',
+      'new-jersey-family-movers',
+      'new-jersey-pro-movers',
+    ],
+  },
+  'south-jersey-nj': {
+    id: 'south-jersey-nj',
+    label: 'South Jersey',
+    moverIds: [
+      'new-jersey-regional-moving',
+      'new-jersey-express-movers',
+      'new-jersey-family-movers',
+      'new-jersey-county-moving-co',
+      'new-jersey-local-lines',
+    ],
+  },
+  'northwest-nj': {
+    id: 'northwest-nj',
+    label: 'Northwest New Jersey',
+    moverIds: [
+      'new-jersey-county-moving-co',
+      'new-jersey-regional-moving',
+      'new-jersey-local-lines',
+      'new-jersey-family-movers',
+      'new-jersey-pro-movers',
+    ],
+  },
 };
 
 /** Non-Florida county overrides — Florida uses florida-county-assignments.ts */

@@ -1,5 +1,8 @@
 import type { MetadataRoute } from 'next';
-import { FLORIDA_COUNTY_CONTENT_UPDATED } from '@/components/local-movers/county-editorial-trust';
+import {
+  FLORIDA_COUNTY_CONTENT_UPDATED,
+  NEW_JERSEY_COUNTY_CONTENT_UPDATED,
+} from '@/components/local-movers/county-editorial-trust';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { localStates } from '@/lib/local-movers/states';
 
@@ -18,7 +21,9 @@ export default async function sitemap({
   const lastModified =
     id === 'florida'
       ? new Date(FLORIDA_COUNTY_CONTENT_UPDATED)
-      : new Date();
+      : id === 'new-jersey'
+        ? new Date(NEW_JERSEY_COUNTY_CONTENT_UPDATED)
+        : new Date();
 
   return [
     {
@@ -31,7 +36,15 @@ export default async function sitemap({
       url: `${SITE_URL}/local-movers/${id}/${county.slug}`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: county.slug === 'miami-dade' || county.slug === 'broward' ? 0.85 : 0.8,
+      priority:
+        county.slug === 'miami-dade' ||
+        county.slug === 'broward' ||
+        county.slug === 'bergen' ||
+        county.slug === 'hudson' ||
+        county.slug === 'essex' ||
+        county.slug === 'middlesex'
+          ? 0.85
+          : 0.8,
     })),
   ];
 }

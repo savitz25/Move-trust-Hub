@@ -1,8 +1,18 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 import { generatedCounties } from '@/data/generated/index';
 import { floridaCounties } from '@/lib/local-movers/geography/florida';
+import { newJerseyCounties } from '@/lib/local-movers/geography/new-jersey';
 
-const allCounties: LocalCounty[] = [...floridaCounties, ...generatedCounties];
+const curatedStateSlugs = new Set(['florida', 'new-jersey']);
+const generatedWithoutCurated = generatedCounties.filter(
+  (county) => !curatedStateSlugs.has(county.stateSlug)
+);
+
+const allCounties: LocalCounty[] = [
+  ...floridaCounties,
+  ...newJerseyCounties,
+  ...generatedWithoutCurated,
+];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {
   return allCounties

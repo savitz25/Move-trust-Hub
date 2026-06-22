@@ -1,5 +1,7 @@
 import { getFloridaCountyResearch } from '@/data/florida-county-research';
 import { getFloridaCountyTestimonials } from '@/data/florida-county-testimonials';
+import { getNewJerseyCountyResearch } from '@/data/new-jersey-county-research';
+import { getNewJerseyCountyTestimonials } from '@/data/new-jersey-county-testimonials';
 import { testimonials } from '@/lib/trust/trust-data';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -75,7 +77,7 @@ export function buildStateDescription(
   countyCount: number
 ): string {
   const moverRange =
-    stateName === 'Florida'
+    stateName === 'Florida' || stateName === 'New Jersey'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';
   return `Find trusted local movers in all ${countyCount} ${stateName} counties — ${moverRange}, FMCSA licensing, county cost guides, and local moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
@@ -141,6 +143,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'florida') {
     return getFloridaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'new-jersey') {
+    return getNewJerseyCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -150,6 +155,10 @@ export function buildCountyCostGuide(
 ): CountyCostGuide {
   if (county.stateSlug === 'florida') {
     const curated = getFloridaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'new-jersey') {
+    const curated = getNewJerseyCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -196,6 +205,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getFloridaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'new-jersey') {
+    const curated = getNewJerseyCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -225,6 +238,10 @@ export function buildCountyTestimonials(
 ): CountyTestimonial[] {
   if (county.stateSlug === 'florida') {
     const curated = getFloridaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'new-jersey') {
+    const curated = getNewJerseyCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 
