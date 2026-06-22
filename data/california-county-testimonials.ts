@@ -1255,6 +1255,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Suburban',
     },
   ],
+  sonoma: [
+    {
+      quote:
+        'Piece of Cake Moving handled our Healdsburg winery-area relocation professionally — careful vineyard-equipment handling and great seasonal timing.',
+      name: 'Thomas W.',
+      location: 'Healdsburg, CA',
+      rating: 5,
+      moveType: 'Winery',
+    },
+    {
+      quote:
+        'Booth Movers provided excellent service for our Santa Rosa family home move — efficient crews despite wine-country tourism season demand.',
+      name: 'Catherine D.',
+      location: 'Santa Rosa, CA',
+      rating: 5,
+      moveType: 'High-Value',
+    },
+    {
+      quote:
+        'Humboldt Moving & Storage drove in with fair pricing and professional service for our rural Sonoma County move near the coast.',
+      name: 'Andrew L.',
+      location: 'Sonoma, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  stanislaus: [
+    {
+      quote:
+        'Meathead Movers Fresno handled our Modesto family home move professionally — efficient crew and careful agricultural-property handling.',
+      name: 'Ricardo G.',
+      location: 'Modesto, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'Two Men and a Truck provided dependable regional service for our Turlock relocation — smooth and efficient throughout.',
+      name: 'Patricia N.',
+      location: 'Turlock, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Ernie's Moving drove in from Sacramento with fair pricing and professional service for our Stanislaus County farm property move.",
+      name: 'Rick S.',
+      location: 'Ceres, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+  ],
+  sutter: [
+    {
+      quote:
+        'Mother Lode Van handled our Yuba City agricultural-property move professionally — efficient crew and careful equipment handling.',
+      name: 'Carlos M.',
+      location: 'Yuba City, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'California Capital Movers provided dependable Sacramento regional service for our rural Sutter County relocation.',
+      name: 'Diana K.',
+      location: 'Live Oak, CA',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        "Ernie's Moving drove in with fair pricing and professional service for our Yuba City family home move.",
+      name: 'Frank B.',
+      location: 'Yuba City, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

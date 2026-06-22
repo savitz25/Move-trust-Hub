@@ -821,6 +821,56 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for peak seasons.',
     ],
   },
+  sonoma: {
+    marketNotes:
+      'Sonoma County is famous for wine country with Santa Rosa, Sonoma, and Healdsburg. Moves often involve residential, winery, and high-value properties with regional Bay Area support.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$130–$190/hr for a 2-person crew',
+      note: 'Santa Rosa, Sonoma, and Healdsburg moves often reflect winery-property handling, seasonal tourism peaks, and travel from North Bay or Marin regional crews.',
+    },
+    tips: [
+      'Winery and vineyard properties require specialized handling.',
+      'Verify coverage for Santa Rosa, Sonoma, and Healdsburg.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for high-value homes.',
+      'Seasonal tourism affects demand.',
+    ],
+  },
+  stanislaus: {
+    marketNotes:
+      'Stanislaus County is Central Valley with Modesto and agricultural focus. Moves often involve residential and farm properties with regional support from the Valley.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Modesto and Turlock moves often reflect agricultural-property handling, Highway 99 traffic, and travel from Fresno or Sacramento regional crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify coverage for Modesto and Turlock.',
+      'Heavy traffic on Highway 99.',
+      'Obtain multiple estimates.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
+  sutter: {
+    marketNotes:
+      'Sutter County is rural/agricultural with Yuba City. Moves are primarily residential with regional support from Sacramento.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Yuba City moves often reflect agricultural-property handling, Marysville-Yuba City metro access, and travel from Sacramento regional crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Yuba City.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

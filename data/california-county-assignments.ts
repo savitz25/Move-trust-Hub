@@ -420,6 +420,33 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'got2move-contracosta',
     'roadway-moving-bay-area',
   ],
+  sonoma: [
+    'piece-of-cake-moving-marin',
+    'booth-movers-marin',
+    'morningstar-moving-marin',
+    'roadway-moving-bay-area',
+    'prodigy-moving-storage-bay-area',
+    'meathead-movers-california',
+    'california-regional-moving',
+    'humboldt-moving-storage-eureka',
+  ],
+  stanislaus: [
+    'meathead-movers-fresno',
+    'two-men-and-a-truck-fresno',
+    'meathead-movers-california',
+    'california-express-movers',
+    'california-family-movers',
+    'california-capital-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+  ],
+  sutter: [
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+  ],
 };
 
 function hashSlug(slug: string): number {

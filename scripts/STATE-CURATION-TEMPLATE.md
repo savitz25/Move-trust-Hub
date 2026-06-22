@@ -6,7 +6,7 @@ Replicate the Florida / New Jersey / New York / California model for any new sta
 
 | State | Counties | Rural min | Major target | Sitemap 0.85 | Audit scripts |
 |-------|----------|-----------|--------------|--------------|---------------|
-| California | 48/58 (in progress) | 5 | 10 | 13 counties | TBD |
+| California | 51/58 (in progress) | 5 | 10 | 13 counties | TBD |
 | Florida | 67/67 | 5 | 8 (cap 10) | 2 counties | `count-fl-movers.ts`, `apply-fl-mover-expansion.ts` |
 | New Jersey | 21/21 | 7 | 10 | 8 counties | `count-nj-movers.ts`, `apply-nj-mover-expansion.ts` |
 | New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
