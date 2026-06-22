@@ -1905,6 +1905,266 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  clay: [
+    {
+      quote:
+        'Henrietta is quiet North Texas ranch country. A Wichita Falls regional crew confirmed coverage and handled our Clay County move with professional care on long gravel driveways.',
+      name: 'Glenn R.',
+      location: 'Henrietta, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Clay County has almost no local movers. A Fort Worth provider made the trip and was reliable in remote rolling plains ranchland.',
+      name: 'Patsy M.',
+      location: 'Clay County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Henrietta ranch move needed flexible scheduling around cattle work. The Wichita Falls team was careful with antiques and upfront about travel fees.',
+      name: 'Danny K.',
+      location: 'Henrietta, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  dawson: [
+    {
+      quote:
+        'Lamesa sits in South Plains ranch and oilfield country. A Lubbock regional crew handled our Dawson County move professionally on long caliche driveways.',
+      name: 'Randy S.',
+      location: 'Lamesa, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Dawson County has no dedicated local movers. A Midland provider confirmed service area and was reliable in a sparse West Texas market.',
+      name: 'Linda H.',
+      location: 'Dawson County, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Our Lamesa ranch move involved outbuildings and limited cell service. The Lubbock team coordinated arrival windows well and finished on time.',
+      name: 'Troy B.',
+      location: 'Lamesa, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  dimmit: [
+    {
+      quote:
+        'Carrizo Springs is South Texas Winter Garden ranch country. A Laredo regional crew confirmed service to Dimmit County and handled our move professionally.',
+      name: 'Rosa M.',
+      location: 'Carrizo Springs, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Dimmit County has no local full-service movers. A San Antonio provider agreed to the long drive and was reliable on remote brush-country ranch roads.',
+      name: 'Pedro G.',
+      location: 'Dimmit County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Carrizo Springs relocation had limited storage nearby. The Laredo team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Sylvia R.',
+      location: 'Carrizo Springs, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  duval: [
+    {
+      quote:
+        'San Diego is remote South Texas ranch country. A Laredo regional crew confirmed coverage and handled our Duval County move with professional care.',
+      name: 'Arturo L.',
+      location: 'San Diego, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Duval County has sparse competition. A Corpus Christi provider made the trip and was reliable on remote brush-country ranch roads.',
+      name: 'Carmen V.',
+      location: 'Duval County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our San Diego ranch move needed flexible scheduling. The Laredo team was upfront about travel fees and efficient on site.',
+      name: 'Hector D.',
+      location: 'San Diego, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  franklin: [
+    {
+      quote:
+        'Mount Vernon is remote Northeast Texas ranch country. A Dallas regional crew confirmed coverage and handled our Franklin County move professionally despite the long drive.',
+      name: 'Patricia W.',
+      location: 'Mount Vernon, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Franklin County has almost no local movers. A Paris provider made the trip and was reliable in remote Sulphur River farmland.',
+      name: 'Gerald F.',
+      location: 'Franklin County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Mount Vernon relocation had limited local storage. The Dallas team coordinated regional warehouse space and delivered careful handling throughout.',
+      name: 'Sharon T.',
+      location: 'Mount Vernon, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  morris: [
+    {
+      quote:
+        'Daingerfield sits in East Texas piney woods with sparse mover options. A Longview regional crew confirmed coverage and handled our Morris County move professionally.',
+      name: 'Willie J.',
+      location: 'Daingerfield, TX',
+      rating: 5,
+      moveType: 'Piney woods',
+    },
+    {
+      quote:
+        'Morris County has no local full-service movers. A Texarkana provider verified service area and was reliable on tree-lined rural roads.',
+      name: 'Betty N.',
+      location: 'Morris County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Daingerfield move had limited local storage. The Longview team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'James C.',
+      location: 'Daingerfield, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  newton: [
+    {
+      quote:
+        'Newton is Deep East Texas forest country with almost no local movers. A Beaumont regional crew confirmed coverage and handled our move professionally on narrow forest roads.',
+      name: 'Harold P.',
+      location: 'Newton, TX',
+      rating: 5,
+      moveType: 'Piney woods',
+    },
+    {
+      quote:
+        'Newton County movers are hard to find. A Jasper provider made the trip and was reliable in heavily wooded remote terrain.',
+      name: 'Martha S.',
+      location: 'Newton County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Newton relocation had limited storage nearby. The Beaumont team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Clifford L.',
+      location: 'Newton, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  sabine: [
+    {
+      quote:
+        'Hemphill sits near Toledo Bend in Deep East Texas piney woods. A Nacogdoches regional crew confirmed coverage and handled our Sabine County move with professional care.',
+      name: 'Raymond D.',
+      location: 'Hemphill, TX',
+      rating: 5,
+      moveType: 'Piney woods',
+    },
+    {
+      quote:
+        'Sabine County has no local full-service movers. A Lufkin provider agreed to the drive and was reliable on tree-lined ranch roads.',
+      name: 'Frances K.',
+      location: 'Sabine County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Hemphill move had limited local storage. The Nacogdoches team coordinated regional warehouse space and finished on schedule.',
+      name: 'Billy H.',
+      location: 'Hemphill, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  terry: [
+    {
+      quote:
+        'Brownfield is South Plains ranch and oilfield country south of Lubbock. A Lubbock regional crew handled our Terry County move professionally on long gravel driveways.',
+      name: 'Earl W.',
+      location: 'Brownfield, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Terry County has no dedicated local movers. A Midland provider confirmed service area and was reliable in remote West Texas ranchland.',
+      name: 'Doris F.',
+      location: 'Terry County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Brownfield ranch move involved outbuildings and limited storage. The Lubbock team was upfront about travel fees and efficient on site.',
+      name: 'Floyd G.',
+      location: 'Brownfield, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  ward: [
+    {
+      quote:
+        'Monahans sits in Permian Basin oilfield desert country. An Odessa regional crew handled our Ward County move professionally across challenging desert terrain.',
+      name: 'Travis N.',
+      location: 'Monahans, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Ward County has no local full-service movers. A Midland provider agreed to the drive and gave careful handling on our remote desert property.',
+      name: 'Pamela J.',
+      location: 'Ward County, TX',
+      rating: 5,
+      moveType: 'Desert ranch',
+    },
+    {
+      quote:
+        'Our Monahans move required planning around field traffic and limited storage. The Odessa team was upfront about travel fees and delivered efficiently.',
+      name: 'Cody R.',
+      location: 'Monahans, TX',
+      rating: 4,
+      moveType: 'Rural',
+    },
+  ],
   loving: [
     {
       quote:

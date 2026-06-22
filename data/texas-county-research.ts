@@ -1248,6 +1248,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves across the South Texas Winter Garden region.',
     ],
   },
+  clay: {
+    marketNotes:
+      'Clay County is one of Texas\'s least populous counties with Henrietta as its seat. Moves are rare and rely on regional service from Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wichita Falls and Fort Worth regional providers may add travel fees for Henrietta North Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Henrietta before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse North Texas competition.',
+      'Confirm credentials for ranch moves across remote rolling plains.',
+    ],
+  },
+  dawson: {
+    marketNotes:
+      'Dawson County is one of Texas\'s least populous counties with Lamesa as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Midland regional providers may add travel fees for Lamesa South Plains ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch/oilfield properties have severe access challenges — discuss Permian Basin fringe access roads.',
+      'Verify explicit regional service to Lamesa before booking.',
+      'Storage is very limited locally; use Lubbock-area facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch and oilfield moves in West Texas.',
+    ],
+  },
+  dimmit: {
+    marketNotes:
+      'Dimmit County is one of Texas\'s least populous counties with Carrizo Springs as its seat. Moves are rare and rely on regional service from Laredo or San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Laredo and San Antonio regional providers may add travel fees for Carrizo Springs South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss road width and parking for larger trucks.',
+      'Verify explicit regional service to Carrizo Springs before booking.',
+      'Storage is very limited locally; coordinate Laredo or San Antonio facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves across the South Texas Winter Garden region.',
+    ],
+  },
+  duval: {
+    marketNotes:
+      'Duval County is one of Texas\'s least populous counties with San Diego as its seat. Moves are rare and rely on regional service from Laredo or Corpus Christi.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Laredo and Corpus Christi regional providers may add travel fees for San Diego South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm access roads and truck size.',
+      'Verify explicit regional service to San Diego before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse South Texas competition.',
+      'Confirm credentials for ranch moves across remote brush country.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is one of Texas\'s least populous counties with Mount Vernon as its seat. Moves are rare and rely on regional service from Dallas or Paris.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Dallas and Paris regional providers may add travel fees for Mount Vernon Northeast Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm truck size for rural roads and tree cover.',
+      'Verify explicit regional service to Mount Vernon before booking.',
+      'Storage is very limited locally; coordinate Dallas or Paris facilities.',
+      'Obtain multiple written estimates due to sparse Northeast Texas competition.',
+      'Confirm credentials for rural moves across the Sulphur River region.',
+    ],
+  },
+  morris: {
+    marketNotes:
+      'Morris County is one of Texas\'s least populous counties with Daingerfield as its seat. Moves are rare and rely on regional service from Longview or Texarkana.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Longview and Texarkana regional providers may add travel fees for Daingerfield East Texas piney woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — discuss tree cover and narrow rural roads.',
+      'Verify explicit regional service to Daingerfield before booking.',
+      'Storage is very limited locally; coordinate Longview or Texarkana facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for rural moves in the Texas-Arkansas border piney woods.',
+    ],
+  },
+  newton: {
+    marketNotes:
+      'Newton County is one of Texas\'s least populous counties with Newton as its seat. Moves are rare and rely on regional service from Beaumont or Jasper.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Beaumont and Jasper regional providers may add travel fees for Newton Deep East Texas forest properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm truck size for forest roads.',
+      'Verify explicit regional service to Newton before booking.',
+      'Storage is very limited locally; coordinate Beaumont or Jasper facilities.',
+      'Obtain multiple written estimates due to sparse Deep East Texas competition.',
+      'Confirm credentials for rural moves in heavily wooded terrain.',
+    ],
+  },
+  sabine: {
+    marketNotes:
+      'Sabine County is one of Texas\'s least populous counties with Hemphill as its seat. Moves are rare and rely on regional service from Nacogdoches or Lufkin.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Nacogdoches and Lufkin regional providers may add travel fees for Hemphill Deep East Texas piney woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — discuss tree cover and narrow rural roads.',
+      'Verify explicit regional service to Hemphill before booking.',
+      'Storage is very limited locally; coordinate Nacogdoches or Lufkin facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for rural moves near Toledo Bend reservoir country.',
+    ],
+  },
+  terry: {
+    marketNotes:
+      'Terry County is one of Texas\'s least populous counties with Brownfield as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Midland regional providers may add travel fees for Brownfield South Plains ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch/oilfield properties have severe access challenges — discuss Permian Basin fringe access roads.',
+      'Verify explicit regional service to Brownfield before booking.',
+      'Storage is very limited locally; use Lubbock-area warehouses.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch and oilfield moves in West Texas.',
+    ],
+  },
+  ward: {
+    marketNotes:
+      'Ward County is one of Texas\'s least populous counties with Monahans as its seat. Moves are rare and rely on regional service from Odessa or Midland.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Odessa and Midland regional providers may add travel fees for Monahans Permian Basin oilfield and desert properties.',
+    },
+    tips: [
+      'Extremely remote oilfield/desert properties have severe access challenges — discuss terrain and road conditions early.',
+      'Verify explicit regional service to Monahans before booking.',
+      'Storage is very limited in-county; plan on Odessa or Midland facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for oilfield moves in remote West Texas desert country.',
+    ],
+  },
   loving: {
     marketNotes:
       'Loving County is the least populous county in Texas with Mentone as its seat. Moves are extremely rare and rely on regional service from Odessa or Hobbs, NM.',
