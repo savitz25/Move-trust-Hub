@@ -352,6 +352,15 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'all-ways-moving-storage-albany',
     'busy-bee-movers-albany',
   ],
+  richmond: [
+    'piece-of-cake-moving-richmond',
+    'booth-movers-richmond',
+    'white-glove-moving-richmond',
+    'zip-to-zip-moving-richmond',
+    'optimum-moving-richmond',
+    'all-my-sons-richmond',
+    'gentle-giant-richmond',
+  ],
   rockland: [
     'piece-of-cake-moving-rockland',
     'booth-movers-rockland',

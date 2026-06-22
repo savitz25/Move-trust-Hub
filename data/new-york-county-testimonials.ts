@@ -1125,6 +1125,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Apartment',
     },
   ],
+  richmond: [
+    {
+      quote:
+        'Piece of Cake made our New Dorp single-family move stress-free — professional crew, transparent pricing, and excellent coordination around Verrazzano bridge timing.',
+      name: 'Robert M.',
+      location: 'New Dorp, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Booth Movers handled our Tottenville home with outstanding care — professional, efficient, and respectful of our HOA move-in rules.',
+      name: 'Lisa K.',
+      location: 'Tottenville, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Gentle Giant exceeded expectations on our St. George relocation — careful handling and great communication despite ferry-corridor logistics.',
+      name: 'David P.',
+      location: 'St. George, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

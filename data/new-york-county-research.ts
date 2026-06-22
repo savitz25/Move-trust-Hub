@@ -739,6 +739,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm high-value insurance coverage.',
     ],
   },
+  richmond: {
+    marketNotes:
+      'Richmond County (Staten Island) is the most suburban borough with single-family homes, large properties, and ferry/bridge logistics to Manhattan and New Jersey. Moves often involve residential homes and family relocations.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$130–$195/hr for a 2-person crew',
+      note: 'St. George, New Dorp, and Tottenville moves often reflect Verrazzano bridge timing, HOA rules, and suburban driveway access.',
+    },
+    tips: [
+      'Ferry and bridge access (Verrazzano-Narrows) can add time and coordination.',
+      'Many neighborhoods have HOA or community rules for moves.',
+      'Traffic on major arteries and bridges is heavy; plan accordingly.',
+      'Verify coverage for specific neighborhoods (St. George, New Dorp, Tottenville, etc.).',
+      'Confirm insurance for high-value suburban properties.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(
