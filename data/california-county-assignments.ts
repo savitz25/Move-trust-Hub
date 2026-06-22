@@ -144,7 +144,6 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
   lassen: [
     'two-men-and-a-truck-chico',
     'dj-professional-movers-chico',
-    'on-track-moving-bishop',
     'mother-lode-van-storage-sacramento',
     'california-capital-movers',
   ],

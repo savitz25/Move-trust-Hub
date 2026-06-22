@@ -468,7 +468,7 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
     },
     {
       quote:
-        'On Track Moving handled our Susanville move with great care — professional planning for our property near Lassen Volcanic National Park.',
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our property near Lassen Volcanic National Park.',
       name: 'Linda M.',
       location: 'Susanville, CA',
       rating: 5,
