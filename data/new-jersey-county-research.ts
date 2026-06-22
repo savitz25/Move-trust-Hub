@@ -76,6 +76,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value suburban homes.',
     ],
   },
+  'cape-may': {
+    marketNotes:
+      'Cape May County is a coastal/tourism county with beach communities (Cape May, Wildwood, Ocean City). Moves often involve seasonal properties, vacation homes, and residential relocations with hurricane and coastal logistics.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,800–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cape May, Wildwood, and Ocean City moves often reflect summer tourism demand, bridge access, and elevated or waterfront property handling.',
+    },
+    tips: [
+      'Beach and barrier island properties require sand protection, elevators, and bridge access planning.',
+      'Tourism season (summer) increases demand; book early.',
+      'Many properties are elevated or waterfront; discuss specialized handling.',
+      'Hurricane season affects storage and timing; confirm contingencies.',
+      'Verify explicit service to Cape May, Wildwood, and outlying areas.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

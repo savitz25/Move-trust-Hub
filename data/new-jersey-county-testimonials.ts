@@ -111,6 +111,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Apartment',
     },
   ],
+  'cape-may': [
+    {
+      quote:
+        'SeaCure handled our Cape May beach house move with real coastal know-how — on time, careful with elevated porch furniture, and they finished early enough to issue a refund on the estimate.',
+      name: 'Linda K.',
+      location: 'Cape May, NJ',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Piece of Cake made our Wildwood seasonal property relocation predictable with flat-fee pricing. The crew protected floors from sand tracked in and coordinated bridge traffic timing perfectly.',
+      name: 'Chris D.',
+      location: 'Wildwood, NJ',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+    {
+      quote:
+        'White Glove Moving treated our Ocean City waterfront condo like a premium job — elevator mats, careful wrapping, and everything arrived perfectly despite a busy summer weekend.',
+      name: 'Janet R.',
+      location: 'Ocean City, NJ',
+      rating: 5,
+      moveType: 'Condo',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

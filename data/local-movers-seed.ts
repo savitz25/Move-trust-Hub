@@ -3128,12 +3128,13 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'jersey-shore-nj',
     label: 'Jersey Shore',
     moverIds: [
-      'zip-to-zip-moving-atlantic',
       'seacure-moving-atlantic',
-      'safekeep-movers-atlantic',
-      'all-my-sons-atlantic',
-      'college-hunks-atlantic',
-      'american-dream-movers-atlantic',
+      'piece-of-cake-moving-burlington',
+      'zip-to-zip-moving-atlantic',
+      'all-my-sons-burlington',
+      'white-glove-moving-burlington',
+      'booth-movers-bergen',
+      'optimum-moving-bergen',
     ],
   },
   'suburban-nj': {
