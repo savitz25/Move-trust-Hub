@@ -7,6 +7,23 @@ export type CuratedCountyResearch = {
 };
 
 export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
+  baylor: {
+    marketNotes:
+      'Baylor County is one of Texas\'s least populous counties with Seymour as its seat. Moves are rare and rely on regional service from Wichita Falls or Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wichita Falls and Abilene regional providers may add travel fees for Seymour and North Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size and shuttle needs.',
+      'Verify explicit regional service to Seymour before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch moves across North Texas rolling plains.',
+    ],
+  },
   armstrong: {
     marketNotes:
       'Armstrong County is one of Texas\'s least populous counties with Claude as its seat. Moves are rare and rely on regional service from Amarillo.',
@@ -56,6 +73,40 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited locally; use Lubbock or Midland facilities.',
       'Obtain multiple written estimates due to sparse competition.',
       'Confirm credentials for ranch and oilfield moves in remote West Texas.',
+    ],
+  },
+  concho: {
+    marketNotes:
+      'Concho County is one of Texas\'s least populous counties with Paint Rock as its seat. Moves are rare and rely on regional service from San Angelo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Abilene regional crews typically serve Paint Rock; confirm travel fees for ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss access roads and parking.',
+      'Verify explicit regional service to Paint Rock; no in-county movers exist.',
+      'Storage is very limited; plan on San Angelo-area facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves in West Texas brush country.',
+    ],
+  },
+  crane: {
+    marketNotes:
+      'Crane County is one of Texas\'s least populous counties with Crane as its seat. Moves are rare and rely on regional service from Midland/Odessa.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Midland/Odessa and San Angelo regional providers may add travel fees for Crane oilfield and ranch properties.',
+    },
+    tips: [
+      'Extremely remote oilfield/ranch properties have severe access challenges — confirm terrain and equipment needs.',
+      'Verify explicit regional service to Crane before booking.',
+      'Storage is very limited in-county; use Midland or Odessa facilities.',
+      'Obtain multiple written estimates due to sparse Permian Basin competition.',
+      'Confirm credentials for oilfield and ranch relocations.',
     ],
   },
   coke: {
@@ -211,6 +262,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves in rugged South Texas terrain.',
     ],
   },
+  fisher: {
+    marketNotes:
+      'Fisher County is one of Texas\'s least populous counties with Roby as its seat. Moves are rare and rely on regional service from Abilene or San Angelo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Abilene and San Angelo regional providers may add travel fees for Roby and West Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — request photos or a virtual survey.',
+      'Verify explicit regional service to Roby before booking.',
+      'Storage is very limited locally; use Abilene or San Angelo warehouses.',
+      'Obtain multiple written estimates before choosing a provider.',
+      'Confirm credentials for ranch moves across rolling West Texas plains.',
+    ],
+  },
   foard: {
     marketNotes:
       'Foard County is one of Texas\'s least populous counties with Crowell as its seat. Moves are rare and rely on regional service from Wichita Falls or Abilene.',
@@ -243,6 +311,40 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited in-county; coordinate regional warehouse options.',
       'Obtain multiple written estimates before choosing a provider.',
       'Confirm credentials for ranch moves across the eastern Panhandle.',
+    ],
+  },
+  hardeman: {
+    marketNotes:
+      'Hardeman County is one of Texas\'s least populous counties with Quanah as its seat. Moves are rare and rely on regional service from Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wichita Falls and Abilene regional providers typically serve Quanah; confirm travel fees for ranch routes along the Red River corridor.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways upfront.',
+      'Verify explicit regional service to Quanah; dedicated local crews are unavailable.',
+      'Storage is very limited in-county; coordinate regional facilities.',
+      'Obtain multiple written estimates due to thin local competition.',
+      'Confirm credentials for ranch moves in North Texas border country.',
+    ],
+  },
+  hemphill: {
+    marketNotes:
+      'Hemphill County is one of Texas\'s least populous counties with Canadian as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Canadian and northeastern Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Canadian before booking.',
+      'Storage is very limited locally; plan on Amarillo-area warehouses.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves in the northeastern Panhandle.',
     ],
   },
   glasscock: {
@@ -294,6 +396,40 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited in-county; plan on San Angelo-area facilities.',
       'Obtain multiple written estimates before booking.',
       'Confirm credentials for ranch moves across West Texas brush country.',
+    ],
+  },
+  'jim-hogg': {
+    marketNotes:
+      'Jim Hogg County is one of Texas\'s least populous counties with Hebbronville as its seat. Moves are rare and rely on regional service from Laredo or Corpus Christi.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Laredo and Corpus Christi regional providers may add travel fees for Hebbronville ranch and South Texas brush country properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm gate access and road surface.',
+      'Verify explicit regional service to Hebbronville before booking.',
+      'Storage is very limited in-county; use Laredo or Corpus Christi facilities.',
+      'Obtain multiple written estimates due to sparse South Texas competition.',
+      'Confirm credentials for ranch moves in remote brush country.',
+    ],
+  },
+  kimble: {
+    marketNotes:
+      'Kimble County is rural Hill Country with Junction as its seat. Moves are rare and rely on regional service from San Angelo or Kerrville.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Kerrville regional providers may add travel fees for Junction and Hill Country ranch properties.',
+    },
+    tips: [
+      'Remote Hill Country properties have access challenges — discuss steep grades and narrow ranch roads.',
+      'Verify explicit regional service to Junction before booking.',
+      'Storage is very limited locally; plan on San Angelo or Kerrville warehouses.',
+      'Obtain multiple written estimates before choosing a mover.',
+      'Confirm credentials for ranch moves in rugged Hill Country terrain.',
     ],
   },
   kinney: {
@@ -481,6 +617,40 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited locally; use Amarillo facilities.',
       'Obtain multiple written estimates due to sparse competition.',
       'Confirm credentials for ranch moves in the northern Texas Panhandle.',
+    ],
+  },
+  knox: {
+    marketNotes:
+      'Knox County is one of Texas\'s least populous counties with Benjamin as its seat. Moves are rare and rely on regional service from Wichita Falls or Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wichita Falls and Abilene regional crews typically cover Benjamin; confirm travel fees for ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm shuttle and parking needs.',
+      'Verify explicit regional service to Benjamin; no in-county full-service movers exist.',
+      'Storage is very limited; use regional facilities.',
+      'Obtain multiple written estimates due to sparse North Texas competition.',
+      'Confirm credentials for ranch moves across remote ranchland.',
+    ],
+  },
+  mason: {
+    marketNotes:
+      'Mason County is rural Hill Country with Mason as its seat. Moves are rare and rely on regional service from San Angelo or Fredericksburg.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Fredericksburg regional providers may add travel fees for Mason Hill Country ranch and historic-town properties.',
+    },
+    tips: [
+      'Remote Hill Country properties have access challenges — discuss road width and parking for larger trucks.',
+      'Verify explicit regional service to Mason before booking.',
+      'Storage is very limited locally; coordinate San Angelo or Fredericksburg facilities.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves in the Llano River Hill Country.',
     ],
   },
   lipscomb: {

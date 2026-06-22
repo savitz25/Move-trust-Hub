@@ -1038,6 +1038,30 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Kerrville area',
   },
+  'fredericksburg-area-moving': {
+    id: 'fredericksburg-area-moving',
+    name: 'Regional Fredericksburg Providers',
+    rating: 4.5,
+    reviewCount: 94,
+    shortDescription:
+      'Regional mover with capability for Mason County and Texas Hill Country ranch properties.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Fredericksburg area',
+  },
+  'laredo-area-moving': {
+    id: 'laredo-area-moving',
+    name: 'Regional Laredo Providers',
+    rating: 4.6,
+    reviewCount: 145,
+    shortDescription:
+      'Reliable regional mover serving remote Jim Hogg County and South Texas ranch country.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Laredo area',
+  },
   'nyc-neighborhood-movers': {
     id: 'nyc-neighborhood-movers',
     name: 'NYC Neighborhood Movers',
@@ -6231,6 +6255,17 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'del-rio-area-moving',
       'san-antonio-area-moving',
       'kerrville-area-moving',
+      'laredo-area-moving',
+    ],
+  },
+  'rural-hill-country-tx': {
+    id: 'rural-hill-country-tx',
+    label: 'Rural Texas Hill Country',
+    moverIds: [
+      'san-angelo-area-moving',
+      'kerrville-area-moving',
+      'fredericksburg-area-moving',
+      'san-antonio-area-moving',
     ],
   },
   'rural-north-tx': {

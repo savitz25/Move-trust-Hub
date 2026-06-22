@@ -7,6 +7,32 @@ export type CountyTestimonialEntry = {
 };
 
 export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
+  baylor: [
+    {
+      quote:
+        'Seymour is remote North Texas ranch country. A Wichita Falls regional crew confirmed coverage and handled our Baylor County move with professional care on long gravel driveways.',
+      name: 'Wayne D.',
+      location: 'Seymour, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Baylor County has almost no local movers. An Abilene provider made the trip and was reliable in remote areas despite the sparse market.',
+      name: 'Frances K.',
+      location: 'Baylor County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Seymour ranch move needed flexible scheduling around cattle work. The Wichita Falls team was careful with antiques and upfront about travel fees.',
+      name: 'Billy R.',
+      location: 'Seymour, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
   armstrong: [
     {
       quote:
@@ -81,6 +107,58 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
         'Our Morton relocation needed flexible scheduling around harvest. The Lubbock team was upfront about travel fees and finished faster than we expected.',
       name: 'Keith S.',
       location: 'Morton, TX',
+      rating: 4,
+      moveType: 'Rural',
+    },
+  ],
+  concho: [
+    {
+      quote:
+        'Paint Rock sits in remote Concho County ranchland. A San Angelo regional crew handled our West Texas move professionally with careful handling on caliche roads.',
+      name: 'Leroy H.',
+      location: 'Paint Rock, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Concho County movers are scarce. An Abilene provider confirmed service area and was reliable despite the long brush-country haul.',
+      name: 'Wanda S.',
+      location: 'Concho County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Paint Rock relocation had limited storage nearby. The San Angelo team coordinated regional warehouse space and delivered on schedule.',
+      name: 'Curtis M.',
+      location: 'Paint Rock, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  crane: [
+    {
+      quote:
+        'Crane sits in Permian Basin oilfield country. A Midland regional crew handled our remote West Texas move across challenging ranch and field roads.',
+      name: 'Danny L.',
+      location: 'Crane, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Crane County has no dedicated local movers. A San Angelo provider drove in and was professional despite the long West Texas distance.',
+      name: 'Rhonda P.',
+      location: 'Crane County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Crane move required planning around field operations. The Midland team was reliable and upfront about storage limitations.',
+      name: 'Todd W.',
+      location: 'Crane, TX',
       rating: 4,
       moveType: 'Rural',
     },
@@ -319,6 +397,32 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  fisher: [
+    {
+      quote:
+        'Roby is quiet Fisher County ranchland. An Abilene regional crew confirmed service and handled our move with careful handling on rough ranch roads.',
+      name: 'Glenn A.',
+      location: 'Roby, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Fisher County has almost no moving options. A San Angelo provider made the long drive and was reliable in remote West Texas.',
+      name: 'Peggy N.',
+      location: 'Fisher County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Roby relocation needed flexible timing around harvest. The Abilene team was professional and finished faster than expected.',
+      name: 'Harold C.',
+      location: 'Roby, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
   foard: [
     {
       quote:
@@ -369,6 +473,58 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       location: 'Memphis, TX',
       rating: 4,
       moveType: 'Ranch outbuilding',
+    },
+  ],
+  hardeman: [
+    {
+      quote:
+        'Quanah is remote North Texas border ranch country. A Wichita Falls regional crew handled our Hardeman County move with professional care and clear travel estimates.',
+      name: 'Virgil T.',
+      location: 'Quanah, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Hardeman County movers are hard to find. An Abilene provider confirmed coverage and was reliable on long rural ranch driveways.',
+      name: 'Irene J.',
+      location: 'Hardeman County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Quanah move had limited storage options. The Wichita Falls team coordinated regional facilities and delivered careful handling throughout.',
+      name: 'Melvin B.',
+      location: 'Quanah, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  hemphill: [
+    {
+      quote:
+        'Canadian sits in the northeastern Panhandle with rugged ranch access. An Amarillo crew handled our Hemphill County move professionally on gravel ranch roads.',
+      name: 'Stuart G.',
+      location: 'Canadian, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Hemphill County has no local full-service movers. A Lubbock regional provider confirmed service and was reliable in remote Panhandle country.',
+      name: 'Darlene F.',
+      location: 'Hemphill County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Canadian relocation required planning around weather and long driveways. The Amarillo team was upfront about travel fees and efficient on site.',
+      name: 'Rex M.',
+      location: 'Canadian, TX',
+      rating: 4,
+      moveType: 'Single-family',
     },
   ],
   glasscock: [
@@ -447,6 +603,58 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       location: 'Mertzon, TX',
       rating: 4,
       moveType: 'Single-family',
+    },
+  ],
+  'jim-hogg': [
+    {
+      quote:
+        'Hebbronville is deep South Texas ranch country. A Laredo regional crew confirmed coverage and handled our Jim Hogg County move with professional care.',
+      name: 'Raul V.',
+      location: 'Hebbronville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Jim Hogg County has almost no dedicated movers. A Corpus Christi provider made the long haul and was reliable in remote brush country.',
+      name: 'Carmen S.',
+      location: 'Jim Hogg County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Hebbronville relocation had severe storage limitations. The Laredo team coordinated regional facilities and kept us updated throughout.',
+      name: 'Arturo M.',
+      location: 'Hebbronville, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  kimble: [
+    {
+      quote:
+        'Junction is rugged Hill Country at the Llano River. A San Angelo regional crew handled our Kimble County ranch move with careful handling on steep access roads.',
+      name: 'Nora W.',
+      location: 'Junction, TX',
+      rating: 5,
+      moveType: 'Hill Country',
+    },
+    {
+      quote:
+        'Kimble County movers are scarce. A Kerrville provider drove in and was professional despite narrow ranch roads and limited parking.',
+      name: 'Clay R.',
+      location: 'Kimble County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Junction move needed flexible scheduling around river property access. The San Angelo team was reliable and careful with fragile heirlooms.',
+      name: 'Becky H.',
+      location: 'Junction, TX',
+      rating: 4,
+      moveType: 'Rural',
     },
   ],
   kinney: [
@@ -731,6 +939,58 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
         'We relocated near Stratford with very limited storage. The Amarillo team coordinated regional facilities and kept us updated throughout.',
       name: 'Terry S.',
       location: 'Stratford, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  knox: [
+    {
+      quote:
+        'Benjamin is remote Knox County ranchland. A Wichita Falls regional crew confirmed service area and handled our North Texas move professionally.',
+      name: 'Jerry P.',
+      location: 'Benjamin, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Knox County has almost no local movers. An Abilene provider made the trip and was reliable on long caliche ranch driveways.',
+      name: 'Louise D.',
+      location: 'Knox County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Benjamin ranch move involved outbuildings and limited cell service. The Wichita Falls team coordinated arrival windows well and finished on time.',
+      name: 'Kenny L.',
+      location: 'Benjamin, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
+    },
+  ],
+  mason: [
+    {
+      quote:
+        'Mason is classic Texas Hill Country with historic charm and ranch access challenges. A San Angelo crew handled our move with professional Hill Country experience.',
+      name: 'Elaine K.',
+      location: 'Mason, TX',
+      rating: 5,
+      moveType: 'Hill Country',
+    },
+    {
+      quote:
+        'Mason County movers are limited. A Fredericksburg regional provider confirmed coverage and was reliable on narrow ranch roads near the Llano River.',
+      name: 'Grant B.',
+      location: 'Mason County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Mason relocation had limited local storage. The San Angelo team coordinated regional warehouse space and delivered careful handling throughout.',
+      name: 'Holly T.',
+      location: 'Mason, TX',
       rating: 4,
       moveType: 'Single-family',
     },
