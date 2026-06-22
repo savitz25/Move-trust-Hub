@@ -144,6 +144,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Woodbury, Glassboro, and outlying towns.',
     ],
   },
+  hudson: {
+    marketNotes:
+      'Hudson County is densely urban with Jersey City, Hoboken, and waterfront high-rises. Moves often involve condos, high-rises, and cross-Hudson logistics to NYC with heavy traffic and building restrictions.',
+    costs: {
+      studioRange: '$550–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$130–$195/hr for a 2-person crew',
+      note: 'Jersey City and Hoboken high-rise moves often reflect elevator reservations, parking permits, and Holland/Lincoln Tunnel traffic windows.',
+    },
+    tips: [
+      'High-rises and Jersey City/Hoboken buildings require elevator reservations and strict scheduling.',
+      'Waterfront and PATH-adjacent areas have parking and access challenges.',
+      'Heavy traffic on I-78, NJ Turnpike, and bridges/tunnels to NYC.',
+      'Diverse neighborhoods benefit from multilingual crews.',
+      'Verify insurance for high-value urban properties.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

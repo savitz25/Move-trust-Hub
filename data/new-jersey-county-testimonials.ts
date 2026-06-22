@@ -215,6 +215,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Single-family',
     },
   ],
+  hudson: [
+    {
+      quote:
+        'Piece of Cake made our Jersey City high-rise move stress-free with flat-fee pricing. The crew coordinated elevator reservations and building approvals without delays near the waterfront.',
+      name: 'Carlos M.',
+      location: 'Jersey City, NJ',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        'Booth Movers handled our Hoboken condo relocation with outstanding care — professional, on time, and careful through tight PATH-adjacent streets and limited parking.',
+      name: 'Emily F.',
+      location: 'Hoboken, NJ',
+      rating: 5,
+      moveType: 'Condo',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price and delivered — no funny business. Professional, courteous, and fast through our Union City apartment move despite heavy Turnpike traffic.',
+      name: 'Raj K.',
+      location: 'Union City, NJ',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
