@@ -450,6 +450,31 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'dons-moving-storage-albany',
     'busy-bee-movers-albany',
   ],
+  tompkins: [
+    'hired-hands-moving-ithaca',
+    'reliable-movers-syracuse',
+    'dimon-bacorn-binghamton',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  ulster: [
+    'triangle-movers-hudson-valley',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'lamanna-moving-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
+  warren: [
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'lamanna-moving-albany',
+    'clark-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
 };
 
 function hashSlug(slug: string): number {

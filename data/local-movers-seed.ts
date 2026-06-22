@@ -3826,6 +3826,23 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.collegehunkshaulingjunk.com/',
   },
 
+  // Tompkins County / Ithaca, NY (Grok-researched)
+  'hired-hands-moving-ithaca': {
+    id: 'hired-hands-moving-ithaca',
+    name: 'Hired Hands Moving Company',
+    rating: 4.7,
+    reviewCount: 180,
+    shortDescription:
+      'Established Ithaca mover serving Tompkins County with Cornell and Ithaca College student and residential relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Student Moves'],
+    usdotNumber: '967169',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Ithaca',
+    website: 'https://hiredhandsmoving.com/',
+  },
+
   // Central NY / Finger Lakes (Grok-researched — serves Cayuga County)
   'reliable-movers-syracuse': {
     id: 'reliable-movers-syracuse',
@@ -4392,6 +4409,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'rochester-finger-lakes-ny',
     label: 'Rochester & Finger Lakes',
     moverIds: [
+      'hired-hands-moving-ithaca',
       'rochester-moving-storage-rochester',
       'corrigan-moving-buffalo',
       'reliable-movers-syracuse',

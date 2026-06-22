@@ -926,6 +926,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  tompkins: {
+    marketNotes:
+      'Tompkins County centers on Ithaca with Cornell University and Ithaca College. Moves often involve student, residential, and academic-related properties with strong regional support.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Ithaca moves often reflect Cornell/IC semester peaks (August/May), hilly gorge terrain, and student housing logistics.',
+    },
+    tips: [
+      'University calendar drives seasonal peaks (Aug/May).',
+      'Hilly terrain and gorges create access challenges.',
+      'Verify coverage for Ithaca and surrounding towns.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for student and high-rise moves.',
+    ],
+  },
+  ulster: {
+    marketNotes:
+      'Ulster County is Hudson Valley with Kingston, New Paltz, and Catskill Mountains. Moves often involve historic homes, second homes, and artistic communities with regional support from Albany or NYC.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Kingston, New Paltz, and Woodstock moves often reflect historic-home handling, mountain access, and Catskill seasonal timing.',
+    },
+    tips: [
+      'Historic Kingston properties require preservation-sensitive handling.',
+      'Mountain and rural areas have access challenges.',
+      'Verify coverage for Kingston, New Paltz, and Woodstock.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for Catskill moves.',
+    ],
+  },
+  warren: {
+    marketNotes:
+      'Warren County is Adirondack with Lake George tourism. Moves often involve residential, seasonal, and tourist properties with regional support from Albany or Glens Falls.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lake George and Queensbury moves often reflect seasonal tourism peaks, lakeside access, and mountain terrain challenges.',
+    },
+    tips: [
+      'Lake George properties have seasonal demand and water-adjacent needs.',
+      'Mountain terrain creates access challenges.',
+      'Verify regional service to Lake George.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

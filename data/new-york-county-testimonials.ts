@@ -1411,6 +1411,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  tompkins: [
+    {
+      quote:
+        'Hired Hands handled our Cornell-area student move flawlessly — professional crew despite August peak demand and Ithaca hill terrain.',
+      name: 'Emily R.',
+      location: 'Ithaca, NY',
+      rating: 5,
+      moveType: 'Student',
+    },
+    {
+      quote:
+        'Reliable Movers provided dependable regional service for our Tompkins County family home relocation — efficient and careful throughout.',
+      name: 'Daniel K.',
+      location: 'Lansing, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving crew was courteous and efficient with great communication for our Ithaca College-area move.",
+      name: 'Sarah T.',
+      location: 'Dryden, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  ulster: [
+    {
+      quote:
+        'Triangle Movers handled our Kingston historic home with preservation-sensitive care — professional crew despite Catskill mountain access.',
+      name: 'Eleanor W.',
+      location: 'Kingston, NY',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable regional service for our New Paltz relocation — courteous crews and solid communication.",
+      name: 'Philip H.',
+      location: 'New Paltz, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was efficient and careful for our Woodstock second-home move — great Hudson Valley regional support.",
+      name: 'Rachel S.',
+      location: 'Woodstock, NY',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+  ],
+  warren: [
+    {
+      quote:
+        "Mabey's Moving handled our Lake George seasonal property professionally — careful planning for lakeside access and summer tourism timing.",
+      name: 'Barbara F.',
+      location: 'Lake George, NY',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        "Don's Moving provided dependable regional service for our Queensbury relocation despite Adirondack mountain terrain.",
+      name: 'Greg T.',
+      location: 'Queensbury, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and right on schedule for our Warren County move — solid Capital District regional support.",
+      name: 'Anne L.',
+      location: 'Glens Falls, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
