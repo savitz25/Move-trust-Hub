@@ -195,6 +195,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Trenton, Princeton, and Hamilton.',
     ],
   },
+  middlesex: {
+    marketNotes:
+      'Middlesex County is densely populated with university towns (New Brunswick/Rutgers), suburban areas (Edison, Woodbridge), and industrial/commercial hubs. Moves often involve student, family, and corporate relocations with strong regional support.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'New Brunswick, Edison, and Woodbridge moves may reflect Rutgers student peaks, Turnpike traffic, and suburban HOA move-in rules.',
+    },
+    tips: [
+      'University areas (Rutgers) have seasonal student move peaks (Aug/May).',
+      'Suburban HOAs and new developments have move-in rules.',
+      'Heavy traffic on NJ Turnpike, Garden State Parkway, and Route 1.',
+      'Diverse communities benefit from multilingual crews.',
+      'Verify coverage for New Brunswick, Edison, and Woodbridge.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

@@ -293,6 +293,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Townhome',
     },
   ],
+  middlesex: [
+    {
+      quote:
+        'Piece of Cake handled our Rutgers-area apartment move during August peak with flat-fee pricing that never changed. Professional, stress-free crew through tight New Brunswick streets.',
+      name: 'Tyler S.',
+      location: 'New Brunswick, NJ',
+      rating: 5,
+      moveType: 'Student',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Edison family relocation — careful, on time, and professional despite heavy Turnpike traffic and a strict HOA move-in window.',
+      name: 'Anita G.',
+      location: 'Edison, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price and stuck to it through our Woodbridge townhome move. No funny business — courteous, fast, and the smoothest relocation we have had.',
+      name: 'Omar N.',
+      location: 'Woodbridge, NJ',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
