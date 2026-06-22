@@ -163,6 +163,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Single-family',
     },
   ],
+  essex: [
+    {
+      quote:
+        'Booth Movers handled our Montclair colonial with outstanding care — professional, on time, and no damage through a tight suburban street with limited parking near the Parkway.',
+      name: 'Priya N.',
+      location: 'Montclair, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Piece of Cake made our Newark high-rise move stress-free with transparent flat-fee pricing. The crew coordinated elevator reservations and building approvals without a hitch.',
+      name: 'Andre J.',
+      location: 'Newark, NJ',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price and stuck to it — no funny business. Professional, courteous, and fast through our Millburn relocation despite heavy I-280 traffic.',
+      name: 'Susan L.',
+      location: 'Millburn, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

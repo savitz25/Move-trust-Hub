@@ -110,6 +110,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify credentials and insurance for farm or high-value items.',
     ],
   },
+  essex: {
+    marketNotes:
+      'Essex County is densely populated with urban Newark, affluent suburbs (Millburn, Montclair), and diverse communities. Moves often involve high-rises, family homes, and cross-river logistics to NYC with significant traffic considerations.',
+    costs: {
+      studioRange: '$500–$1,100',
+      familyRange: '$2,000–$4,500+',
+      avgHourly: '$125–$185/hr for a 2-person crew',
+      note: 'Newark high-rises and Millburn/Montclair suburban moves often reflect elevator fees, parking permits, and Garden State Parkway or I-280 traffic windows.',
+    },
+    tips: [
+      'Urban high-rises and Newark areas require elevator reservations and building approvals.',
+      'Suburban towns have HOA rules and parking restrictions.',
+      'Heavy traffic on I-280, Garden State Parkway, and bridges to NYC.',
+      'Diverse neighborhoods benefit from multilingual crews.',
+      'Verify insurance for high-value urban/suburban properties.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(
