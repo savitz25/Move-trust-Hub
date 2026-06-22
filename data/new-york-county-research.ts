@@ -76,6 +76,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Binghamton, Endicott, and Vestal.',
     ],
   },
+  cattaraugus: {
+    marketNotes:
+      'Cattaraugus County is rural with Olean as the primary hub and significant Seneca Nation territory. Moves are primarily residential and agricultural with limited local movers. Service is predominantly regional from Olean, Jamestown, or Buffalo.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Olean and outlying rural moves often reflect long driveways, reservation-area access, and travel from regional Western NY crews.',
+    },
+    tips: [
+      'Rural and reservation-area properties often have long driveways or restricted access.',
+      'Confirm explicit regional service to Olean and outlying towns.',
+      'Storage is limited locally; use Olean or nearby facilities.',
+      'Obtain multiple estimates in this thin market.',
+      'Verify credentials for agricultural or culturally sensitive moves.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

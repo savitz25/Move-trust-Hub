@@ -111,6 +111,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  cattaraugus: [
+    {
+      quote:
+        'C K Local Movers navigated our rural Olean-area driveway with ease — professional crew, careful handling, and fair pricing for our Cattaraugus County move.',
+      name: 'William J.',
+      location: 'Olean, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable, efficient service for our relocation from Little Valley. The crew was careful with everything despite the long access road.",
+      name: 'Sandra P.',
+      location: 'Little Valley, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered the best prices and most efficient crew we've used in rural Western NY — a great experience from estimate to unload.",
+      name: 'Mark D.',
+      location: 'Salamanca, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

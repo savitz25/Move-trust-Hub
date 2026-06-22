@@ -40,6 +40,15 @@ const CURATED_NY_COUNTIES: Record<string, string[]> = {
     'busy-bee-movers-albany',
     'lamanna-moving-albany',
   ],
+  cattaraugus: [
+    'ck-local-movers-olean',
+    'mabeys-moving-storage-albany',
+    'dons-moving-storage-albany',
+    'clark-moving-storage-albany',
+    'arnoff-moving-storage-albany',
+    'all-ways-moving-storage-albany',
+    'busy-bee-movers-albany',
+  ],
 };
 
 function hashSlug(slug: string): number {

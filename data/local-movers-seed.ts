@@ -3430,6 +3430,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'dons-moving-storage-albany',
       'clark-moving-storage-albany',
       'arnoff-moving-storage-albany',
+      'all-ways-moving-storage-albany',
       'busy-bee-movers-albany',
     ],
   },
