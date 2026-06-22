@@ -345,6 +345,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Condo',
     },
   ],
+  morris: [
+    {
+      quote:
+        'Piece of Cake handled our Morristown historic home move with flat-fee pricing that never changed. The crew was preservation-sensitive with original moldings and careful through tight downtown streets.',
+      name: 'Victoria L.',
+      location: 'Morristown, NJ',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Parsippany family relocation — professional, on time, and careful with high-value furniture through a strict HOA move-in window.',
+      name: 'Richard T.',
+      location: 'Parsippany, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price and stuck to it through our Madison-area move. No funny business — courteous, fast, and smooth despite heavy I-287 traffic.',
+      name: 'Nina S.',
+      location: 'Madison, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
