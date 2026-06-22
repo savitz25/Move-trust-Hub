@@ -2874,6 +2874,50 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Englewood',
   },
 
+  // Burlington County, NJ (Grok-researched)
+  'piece-of-cake-moving-burlington': {
+    id: 'piece-of-cake-moving-burlington',
+    name: 'Piece of Cake Moving & Storage',
+    rating: 4.9,
+    reviewCount: 1850,
+    shortDescription:
+      'Highly rated full-service mover with flat-fee options and strong South Jersey presence including Burlington County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'White Glove'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Mount Laurel',
+    website: 'https://mypieceofcakemove.com/',
+  },
+  'white-glove-moving-burlington': {
+    id: 'white-glove-moving-burlington',
+    name: 'White Glove Moving & Storage',
+    rating: 4.8,
+    reviewCount: 240,
+    shortDescription:
+      'Premium South Jersey mover with top ratings for careful Burlington County residential relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Burlington County',
+  },
+  'all-my-sons-burlington': {
+    id: 'all-my-sons-burlington',
+    name: 'All My Sons Moving & Storage',
+    rating: 4.5,
+    reviewCount: 280,
+    shortDescription:
+      'National franchise with reliable South Jersey teams for full-service moves throughout Burlington County.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '2139129',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Mount Laurel',
+    website: 'https://www.allmysons.com/',
+  },
+
   // St. Johns County (Grok-researched)
   'two-men-and-a-truck-st-johns': {
     id: 'two-men-and-a-truck-st-johns',
@@ -3107,11 +3151,13 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'south-jersey-nj',
     label: 'South Jersey',
     moverIds: [
-      'new-jersey-regional-moving',
-      'new-jersey-express-movers',
-      'new-jersey-family-movers',
-      'new-jersey-county-moving-co',
-      'new-jersey-local-lines',
+      'piece-of-cake-moving-burlington',
+      'booth-movers-bergen',
+      'white-glove-moving-burlington',
+      'zip-to-zip-moving-atlantic',
+      'seacure-moving-atlantic',
+      'all-my-sons-burlington',
+      'optimum-moving-bergen',
     ],
   },
   'northwest-nj': {

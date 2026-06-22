@@ -42,6 +42,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm service for specific towns (Hackensack, Paramus, Ridgewood, etc.).',
     ],
   },
+  burlington: {
+    marketNotes:
+      'Burlington County features suburban growth (Mount Laurel, Marlton), historic towns, and proximity to Philadelphia. Moves often involve family residential, military (near Joint Base McGuire-Dix-Lakehurst), and commuter properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Mount Holly, Mount Laurel, and Burlington City moves may reflect HOA move-in rules, I-295 traffic windows, and Philadelphia commuter timing.',
+    },
+    tips: [
+      'Suburban HOAs and new developments often have move-in rules and parking restrictions.',
+      'Proximity to Philadelphia and I-295/I-95 can affect traffic and timing.',
+      'Military-related moves are common; confirm experience with base logistics.',
+      'Rural/eastern areas may involve longer access roads.',
+      'Verify coverage for Mount Holly, Mount Laurel, and Burlington City.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

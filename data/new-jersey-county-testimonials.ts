@@ -59,6 +59,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Apartment',
     },
   ],
+  burlington: [
+    {
+      quote:
+        'Piece of Cake handled our Mount Laurel townhome with flat-fee pricing that stayed predictable. The crew was professional, stress-free, and careful through a tight HOA move-in window off I-295.',
+      name: 'Nicole W.',
+      location: 'Mount Laurel, NJ',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our family move near Mount Holly — careful with antiques, on time, and professional from start to finish. Exactly what we needed in South Jersey.',
+      name: 'Greg F.',
+      location: 'Mount Holly, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'White Glove Moving treated our Marlton relocation like a premium job — everything arrived perfectly wrapped and the crew exceeded expectations despite Philadelphia commuter traffic.',
+      name: 'Angela S.',
+      location: 'Marlton, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
