@@ -41,6 +41,57 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials and insurance for ranch moves, including outbuildings and equipment.',
     ],
   },
+  cochran: {
+    marketNotes:
+      'Cochran County is one of Texas\'s least populous counties with Morton as its seat. Moves are rare and rely on regional service from Lubbock.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Midland regional providers typically serve Morton; confirm travel fees for ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch/oilfield properties have severe access challenges — confirm truck size and terrain.',
+      'Verify explicit regional service to Morton before booking.',
+      'Storage is very limited locally; use Lubbock or Midland facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch and oilfield moves in remote West Texas.',
+    ],
+  },
+  collingsworth: {
+    marketNotes:
+      'Collingsworth County is one of Texas\'s least populous counties with Wellington as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Panhandle providers from Amarillo or Lubbock may add travel fees for Wellington ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss driveway and gate access.',
+      'Verify explicit regional service to Wellington; no in-county movers exist.',
+      'Storage is very limited; plan on Amarillo-area warehouses.',
+      'Obtain multiple written estimates before committing.',
+      'Confirm credentials for ranch moves across the eastern Panhandle.',
+    ],
+  },
+  culberson: {
+    marketNotes:
+      'Culberson County is remote with Van Horn as its seat. Moves are rare and rely on regional service from El Paso or Carlsbad, NM.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'El Paso and Carlsbad regional crews may add travel fees for Van Horn desert properties; confirm cross-border licensing.',
+    },
+    tips: [
+      'Extremely remote desert properties have severe access challenges — discuss road conditions early.',
+      'Verify explicit regional service to Van Horn before booking.',
+      'Storage is very limited in-county; use El Paso or Carlsbad facilities.',
+      'Obtain multiple written estimates — sparse market increases price variability.',
+      'Confirm credentials for remote desert relocations along I-10 corridor.',
+    ],
+  },
   briscoe: {
     marketNotes:
       'Briscoe County is one of Texas\'s least populous counties with Silverton as its seat. Moves are rare and rely on regional service from Amarillo or Lubbock.',
@@ -72,6 +123,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify explicit regional service to Paducah; dedicated local movers are unavailable.',
       'Storage is very limited locally; use regional facilities.',
       'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch moves across North Texas rolling plains.',
+    ],
+  },
+  dickens: {
+    marketNotes:
+      'Dickens County is one of Texas\'s least populous counties with Dickens as its seat. Moves are rare and rely on regional service from Lubbock or Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Abilene regional providers typically cover Dickens; confirm travel fees for ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — request photos or a virtual survey.',
+      'Verify explicit regional service to Dickens before booking.',
+      'Storage is very limited locally; coordinate regional warehouse options.',
+      'Obtain multiple written estimates before choosing a provider.',
       'Confirm credentials for ranch moves across North Texas rolling plains.',
     ],
   },
@@ -124,6 +192,23 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited; use regional facilities in Midland or Odessa.',
       'Obtain multiple written estimates due to sparse competition.',
       'Confirm credentials for remote oilfield and ranch relocations.',
+    ],
+  },
+  'jeff-davis': {
+    marketNotes:
+      'Jeff Davis County is remote with Fort Davis and the Davis Mountains. Moves are rare and rely on regional service from Alpine or El Paso.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Alpine and El Paso regional providers may add travel fees for Fort Davis mountain and ranch properties.',
+    },
+    tips: [
+      'Extremely remote mountain properties have severe access challenges — discuss elevation, grades, and road width.',
+      'Verify explicit regional service to Fort Davis before booking.',
+      'Storage is very limited in-county; plan on Alpine or El Paso facilities.',
+      'Obtain multiple written estimates due to thin local competition.',
+      'Confirm credentials for ranch and mountain relocations in the Davis Mountains.',
     ],
   },
   irion: {
@@ -226,6 +311,91 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited locally; use regional facilities.',
       'Obtain multiple written estimates due to thin local competition.',
       'Confirm credentials for ranch moves and long rural drive times.',
+    ],
+  },
+  menard: {
+    marketNotes:
+      'Menard County is one of Texas\'s least populous counties with Menard as its seat. Moves are rare and rely on regional service from San Angelo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Abilene regional crews typically serve Menard; confirm travel fees for ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck and shuttle needs.',
+      'Verify explicit regional service to Menard; dedicated local movers are unavailable.',
+      'Storage is very limited locally; use San Angelo-area facilities.',
+      'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch moves across West Texas Hill Country fringe.',
+    ],
+  },
+  oldham: {
+    marketNotes:
+      'Oldham County is one of Texas\'s least populous counties with Vega as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Vega and Route 66 corridor ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways upfront.',
+      'Verify explicit regional service to Vega before committing.',
+      'Storage is very limited in-county; plan on Amarillo warehouses.',
+      'Obtain multiple written estimates due to sparse Panhandle competition.',
+      'Confirm credentials for ranch moves along the western Panhandle.',
+    ],
+  },
+  real: {
+    marketNotes:
+      'Real County is one of Texas\'s least populous counties with Leakey as its seat. Moves are rare and rely on regional service from San Antonio or Kerrville.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio and Kerrville regional providers may add travel fees for Leakey Hill Country and Frio River ranch properties.',
+    },
+    tips: [
+      'Extremely remote Hill Country/ranch properties have severe access challenges — confirm access roads and parking.',
+      'Verify explicit regional service to Leakey before booking.',
+      'Storage is very limited locally; use San Antonio or Kerrville facilities.',
+      'Obtain multiple written estimates — thin market means variable pricing.',
+      'Confirm credentials for ranch moves in rugged Hill Country terrain.',
+    ],
+  },
+  schleicher: {
+    marketNotes:
+      'Schleicher County is one of Texas\'s least populous counties with Eldorado as its seat. Moves are rare and rely on regional service from San Angelo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Midland regional crews typically cover Eldorado; confirm travel fees for ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss shuttle and equipment needs.',
+      'Verify explicit regional service to Eldorado; no in-county full-service movers exist.',
+      'Storage is very limited; plan on San Angelo-area warehouses.',
+      'Obtain multiple written estimates before booking.',
+      'Confirm credentials for ranch moves across West Texas brush country.',
+    ],
+  },
+  sherman: {
+    marketNotes:
+      'Sherman County is one of Texas\'s least populous counties with Stratford as its seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Stratford and northern Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for rural roads.',
+      'Verify explicit regional service to Stratford before booking.',
+      'Storage is very limited locally; use Amarillo facilities.',
+      'Obtain multiple written estimates due to sparse competition.',
+      'Confirm credentials for ranch moves in the northern Texas Panhandle.',
     ],
   },
   loving: {

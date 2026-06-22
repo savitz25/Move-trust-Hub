@@ -59,6 +59,84 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  cochran: [
+    {
+      quote:
+        'Morton is remote West Texas ranch and oilfield country. A Lubbock regional crew confirmed coverage and handled our move professionally across challenging terrain.',
+      name: 'Ray T.',
+      location: 'Morton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Cochran County has almost no local movers. A Midland provider made the long haul, gave careful handling, and was reliable despite sparse cell service.',
+      name: 'Donna M.',
+      location: 'Cochran County, TX',
+      rating: 5,
+      moveType: 'Oilfield area',
+    },
+    {
+      quote:
+        'Our Morton relocation needed flexible scheduling around harvest. The Lubbock team was upfront about travel fees and finished faster than we expected.',
+      name: 'Keith S.',
+      location: 'Morton, TX',
+      rating: 4,
+      moveType: 'Rural',
+    },
+  ],
+  collingsworth: [
+    {
+      quote:
+        'Wellington is deep eastern Panhandle ranchland. An Amarillo crew drove in, verified our long driveway, and handled our remote move with professional care.',
+      name: 'Betty L.',
+      location: 'Wellington, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Collingsworth County movers are scarce. A Lubbock regional provider confirmed service area and was reliable in a very remote Panhandle market.',
+      name: 'Harold J.',
+      location: 'Collingsworth County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'We moved near Wellington with no local storage. The Amarillo team coordinated regional warehouse space and kept communication clear throughout.',
+      name: 'Sharon W.',
+      location: 'Wellington, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  culberson: [
+    {
+      quote:
+        'Van Horn sits in remote desert country along I-10. An El Paso regional crew handled our move professionally with careful handling on rough access roads.',
+      name: 'Miguel R.',
+      location: 'Van Horn, TX',
+      rating: 5,
+      moveType: 'Desert',
+    },
+    {
+      quote:
+        'Culberson County required cross-border coordination from Carlsbad, NM. The regional provider verified licensing and was reliable in remote West Texas.',
+      name: 'Janet C.',
+      location: 'Culberson County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Van Horn relocation had severe storage limitations. The El Paso team was upfront about regional facilities and delivered efficiently.',
+      name: 'Frank D.',
+      location: 'Van Horn, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
   briscoe: [
     {
       quote:
@@ -109,6 +187,32 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       location: 'Paducah, TX',
       rating: 4,
       moveType: 'Single-family',
+    },
+  ],
+  dickens: [
+    {
+      quote:
+        'Dickens is remote North Texas ranch country. A Lubbock regional crew confirmed service to Dickens County and handled our move with careful packing.',
+      name: 'Walter H.',
+      location: 'Dickens, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Finding movers for Dickens County was tough until an Abilene provider agreed. Professional service and reliable communication throughout the long rural haul.',
+      name: 'Gloria P.',
+      location: 'Dickens County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Dickens ranch move involved a gravel driveway and limited storage. The Lubbock team coordinated regional options and finished on schedule.',
+      name: 'Earl B.',
+      location: 'Dickens, TX',
+      rating: 4,
+      moveType: 'Ranch outbuilding',
     },
   ],
   edwards: [
@@ -185,6 +289,32 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
         'We relocated near Garden City with limited storage nearby. The regional provider was upfront about Midland warehouse options and delivered efficiently.',
       name: 'Steve M.',
       location: 'Garden City, TX',
+      rating: 4,
+      moveType: 'Rural',
+    },
+  ],
+  'jeff-davis': [
+    {
+      quote:
+        'Fort Davis mountain properties are uniquely challenging. An Alpine regional crew verified access roads, handled elevation carefully, and made our remote Davis Mountains move work.',
+      name: 'Helen K.',
+      location: 'Fort Davis, TX',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'Jeff Davis County has no local movers. An El Paso provider drove in for our ranch relocation and was professional despite the long West Texas distance.',
+      name: 'Robert N.',
+      location: 'Jeff Davis County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Fort Davis move required planning around narrow mountain roads. The Alpine team was careful with antiques and upfront about storage limitations.',
+      name: 'Diana S.',
+      location: 'Fort Davis, TX',
       rating: 4,
       moveType: 'Rural',
     },
@@ -341,6 +471,136 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
         'We relocated within Throckmorton with limited storage nearby. The Abilene regional movers coordinated warehouse space and delivered on schedule.',
       name: 'Janet M.',
       location: 'Throckmorton, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  menard: [
+    {
+      quote:
+        'Menard ranch moves are uncommon. A San Angelo regional crew confirmed coverage, navigated our long driveway, and handled the job professionally.',
+      name: 'Claude F.',
+      location: 'Menard, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Menard County has almost no moving options. An Abilene provider made the trip and was reliable in remote West Texas brush country.',
+      name: 'Ruth A.',
+      location: 'Menard County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Menard relocation needed careful scheduling around ranch operations. The San Angelo team was efficient and careful with fragile items.',
+      name: 'Gene M.',
+      location: 'Menard, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  oldham: [
+    {
+      quote:
+        'Vega sits on the western Panhandle with long ranch driveways. An Amarillo crew handled our remote move professionally with clear travel-fee estimates.',
+      name: 'Norman G.',
+      location: 'Vega, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Oldham County movers are essentially nonexistent locally. A Lubbock regional provider confirmed service and was reliable on Route 66 corridor ranch roads.',
+      name: 'Irene C.',
+      location: 'Oldham County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'We relocated near Vega with limited storage nearby. The Amarillo team coordinated warehouse space and delivered careful handling throughout.',
+      name: 'Roy T.',
+      location: 'Vega, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  real: [
+    {
+      quote:
+        'Leakey is rugged Hill Country along the Frio River. A San Antonio regional crew handled our remote Real County move with professional care on narrow ranch roads.',
+      name: 'Pamela J.',
+      location: 'Leakey, TX',
+      rating: 5,
+      moveType: 'Hill Country',
+    },
+    {
+      quote:
+        'Real County has almost no dedicated movers. A Kerrville provider drove in, gave careful handling, and was reliable despite the long Hill Country haul.',
+      name: 'Doug R.',
+      location: 'Real County, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Our Leakey relocation involved steep access and limited cell service. The Kerrville team coordinated arrival windows well and finished on time.',
+      name: 'Vicki L.',
+      location: 'Leakey, TX',
+      rating: 4,
+      moveType: 'Rural',
+    },
+  ],
+  schleicher: [
+    {
+      quote:
+        'Eldorado is remote Schleicher County ranchland. A San Angelo regional crew confirmed service area and handled our West Texas move professionally.',
+      name: 'Larry W.',
+      location: 'Eldorado, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Schleicher County movers are hard to find. A Midland provider made the long drive and was reliable in remote brush country.',
+      name: 'Connie H.',
+      location: 'Schleicher County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Our Eldorado move needed flexible timing around cattle work. The San Angelo team was careful with furniture and upfront about storage limits.',
+      name: 'Bobby E.',
+      location: 'Eldorado, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  sherman: [
+    {
+      quote:
+        'Stratford is northern Panhandle ranch country. An Amarillo regional crew handled our remote Sherman County move with careful handling on gravel roads.',
+      name: 'Dean P.',
+      location: 'Stratford, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Sherman County has no local full-service movers. A Lubbock provider confirmed coverage and was professional despite the long Panhandle distance.',
+      name: 'Joyce K.',
+      location: 'Sherman County, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'We relocated near Stratford with very limited storage. The Amarillo team coordinated regional facilities and kept us updated throughout.',
+      name: 'Terry S.',
+      location: 'Stratford, TX',
       rating: 4,
       moveType: 'Single-family',
     },
