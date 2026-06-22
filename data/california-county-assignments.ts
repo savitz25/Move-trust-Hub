@@ -397,6 +397,29 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-family-movers',
     'california-county-moving-co',
   ],
+  sierra: [
+    'mountain-lake-mover-tahoe',
+    'tahoe-moving-storage-truckee',
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+  ],
+  siskiyou: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+  ],
+  solano: [
+    'piece-of-cake-moving-solano',
+    'booth-movers-solano',
+    'white-glove-moving-solano',
+    'zip-to-zip-moving-solano',
+    'optimum-moving-solano',
+    'all-my-sons-solano',
+    'got2move-contracosta',
+    'roadway-moving-bay-area',
+  ],
 };
 
 function hashSlug(slug: string): number {

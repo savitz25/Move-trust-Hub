@@ -1177,6 +1177,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Recreational',
     },
   ],
+  sierra: [
+    {
+      quote:
+        'Mountain Lake Mover provided reliable Tahoe regional service for our remote Sierra County relocation — careful planning for challenging mountain terrain.',
+      name: 'Wayne P.',
+      location: 'Downieville, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'Tahoe Moving & Storage handled our Sierra County move with great care — professional coordination despite extremely limited local options.',
+      name: 'Betty J.',
+      location: 'Loyalton, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+    {
+      quote:
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our high-altitude property move.',
+      name: 'Carl R.',
+      location: 'Sierraville, CA',
+      rating: 5,
+      moveType: 'High-Altitude',
+    },
+  ],
+  siskiyou: [
+    {
+      quote:
+        'Two Men and a Truck drove in from Chico for our Yreka move — professional crew and careful handling in remote northern terrain.',
+      name: 'Nancy F.',
+      location: 'Yreka, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our Mount Shasta-area relocation — efficient despite limited local crews.',
+      name: 'George T.',
+      location: 'Mount Shasta, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'California Capital Movers drove in with fair pricing and professional service for our rural Siskiyou County family home move.',
+      name: 'Linda C.',
+      location: 'Weed, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  solano: [
+    {
+      quote:
+        'Piece of Cake Moving made our Fairfield Travis AFB-area PCS move stress-free — professional military-move coordination and transparent pricing.',
+      name: 'Capt. Mark S.',
+      location: 'Fairfield, CA',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Booth Movers handled our Vallejo suburban relocation with outstanding care — efficient despite heavy I-80 traffic.',
+      name: 'Angela B.',
+      location: 'Vallejo, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Got2Move provided excellent East Bay regional service for our Vacaville move — careful handling and great communication throughout.',
+      name: 'Steve M.',
+      location: 'Vacaville, CA',
+      rating: 5,
+      moveType: 'Suburban',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

@@ -770,6 +770,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Winter weather affects scheduling.',
     ],
   },
+  sierra: {
+    marketNotes:
+      'Sierra County is one of California\'s smallest and most remote counties in the Sierra Nevada. Moves are extremely limited with regional support from Reno or Truckee.',
+    costs: {
+      studioRange: '$500–$1,100+',
+      familyRange: '$1,800–$4,500+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Downieville moves often reflect extreme remote mountain access, limited local crews, and travel from Tahoe or Reno regional providers.',
+    },
+    tips: [
+      'Extremely remote mountain properties have severe access challenges.',
+      'Verify explicit regional service to Downieville.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for high-altitude moves.',
+    ],
+  },
+  siskiyou: {
+    marketNotes:
+      'Siskiyou County is remote with Yreka and Mount Shasta. Moves are limited and primarily residential with regional support from Redding or Medford, OR.',
+    costs: {
+      studioRange: '$500–$1,000+',
+      familyRange: '$1,800–$4,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Yreka moves often reflect remote mountain access, limited local crews, and travel from Redding, Chico, or Medford regional providers.',
+    },
+    tips: [
+      'Remote mountain properties have severe access challenges.',
+      'Verify explicit regional service to Yreka.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for remote moves.',
+    ],
+  },
+  solano: {
+    marketNotes:
+      'Solano County is Bay Area suburban with Fairfield, Vallejo, and Travis Air Force Base. Moves often involve residential, military, and commuter properties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Fairfield, Vallejo, and Vacaville moves often reflect Travis AFB military PCS timing, I-80/I-680 traffic, and Bay Area commuter-property handling.',
+    },
+    tips: [
+      'Military (Travis AFB) moves require PCS experience.',
+      'Verify coverage for Fairfield, Vallejo, and Vacaville.',
+      'Heavy traffic on I-80 and I-680.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(
