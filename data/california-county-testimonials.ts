@@ -1099,6 +1099,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Beach',
     },
   ],
+  'santa-clara': [
+    {
+      quote:
+        'Piece of Cake Moving made our Sunnyvale tech-campus area move stress-free — professional HOA coordination and transparent pricing throughout.',
+      name: 'Alex C.',
+      location: 'Sunnyvale, CA',
+      rating: 5,
+      moveType: 'Corporate',
+    },
+    {
+      quote:
+        'Booth Movers handled our San Jose high-value home relocation with outstanding care — efficient despite heavy I-880 traffic.',
+      name: 'Priya N.',
+      location: 'San Jose, CA',
+      rating: 5,
+      moveType: 'High-Value',
+    },
+    {
+      quote:
+        'Fairprice Movers provided excellent local Silicon Valley service for our Mountain View apartment move — careful and efficient throughout.',
+      name: 'Jason L.',
+      location: 'Mountain View, CA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'santa-cruz': [
+    {
+      quote:
+        'Meathead Movers handled our Santa Cruz beach-property move professionally — careful sand protection and great UC calendar coordination.',
+      name: 'Megan S.',
+      location: 'Santa Cruz, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Got2Move provided dependable Bay Area regional service for our Watsonville relocation — efficient crews despite coastal access challenges.',
+      name: 'Luis R.',
+      location: 'Watsonville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Sunny Moving Company drove in with fair pricing and professional service for our Aptos family home move near the coast.',
+      name: 'Karen D.',
+      location: 'Aptos, CA',
+      rating: 5,
+      moveType: 'Beach',
+    },
+  ],
+  shasta: [
+    {
+      quote:
+        'Two Men and a Truck drove in from Chico for our Redding move — professional crew and careful handling despite winter weather challenges.',
+      name: 'Bill H.',
+      location: 'Redding, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our Mount Shasta-area relocation — efficient on challenging mountain terrain.',
+      name: 'Sandy M.',
+      location: 'Mount Shasta, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our Shasta County lake-property move.',
+      name: 'Don K.',
+      location: 'Shasta Lake, CA',
+      rating: 5,
+      moveType: 'Recreational',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

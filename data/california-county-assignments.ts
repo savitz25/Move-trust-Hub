@@ -368,6 +368,35 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-family-movers',
     'california-capital-movers',
   ],
+  'santa-clara': [
+    'piece-of-cake-moving-santaclara',
+    'booth-movers-santaclara',
+    'white-glove-moving-santaclara',
+    'zip-to-zip-moving-santaclara',
+    'optimum-moving-santaclara',
+    'all-my-sons-santaclara',
+    'fairprice-movers-bay-area',
+    'roadway-moving-bay-area',
+    'prodigy-moving-storage-bay-area',
+    'got2move-alameda',
+  ],
+  'santa-cruz': [
+    'meathead-movers-california',
+    'california-premier-moving',
+    'california-regional-moving',
+    'fairprice-movers-bay-area',
+    'sunny-moving-company-bay-area',
+    'got2move-alameda',
+    'california-express-movers',
+  ],
+  shasta: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+  ],
 };
 
 function hashSlug(slug: string): number {

@@ -719,6 +719,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Seasonal tourism affects demand.',
     ],
   },
+  'santa-clara': {
+    marketNotes:
+      'Santa Clara County is the heart of Silicon Valley with San Jose, Palo Alto, and Sunnyvale. Moves often involve high-tech corporate, high-value residential, and apartment relocations.',
+    costs: {
+      studioRange: '$650–$1,500',
+      familyRange: '$2,800–$6,500+',
+      avgHourly: '$145–$210/hr for a 2-person crew',
+      note: 'San Jose, Sunnyvale, and Mountain View moves often reflect tech-campus HOA rules, US 101/I-880 traffic, and high-value executive home handling.',
+    },
+    tips: [
+      'Many tech campuses and HOAs have strict move-in rules.',
+      'Heavy traffic on US 101, I-280, and I-880.',
+      'Verify coverage for San Jose, Sunnyvale, and Mountain View.',
+      'Confirm high-value insurance for tech executive homes.',
+      'Book early for peak seasons.',
+    ],
+  },
+  'santa-cruz': {
+    marketNotes:
+      'Santa Cruz County is coastal with Santa Cruz and Watsonville. Moves often involve beach, university (UC Santa Cruz), and residential properties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Santa Cruz and Watsonville moves often reflect beach sand protection, UC Santa Cruz calendar peaks, and coastal access challenges.',
+    },
+    tips: [
+      'Beach properties require sand protection.',
+      'University calendar affects seasonal demand.',
+      'Verify coverage for Santa Cruz and Watsonville.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for coastal moves.',
+    ],
+  },
+  shasta: {
+    marketNotes:
+      'Shasta County is rural/northern with Redding and Mount Shasta. Moves often involve residential and recreational properties with regional support from Chico or Redding.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Redding moves often reflect mountain and lake-property access, winter weather scheduling, and travel from Chico or Sacramento regional crews.',
+    },
+    tips: [
+      'Mountain and lake properties have access challenges.',
+      'Verify coverage for Redding.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for northern moves.',
+      'Winter weather affects scheduling.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(
