@@ -13,6 +13,15 @@ const CURATED_NJ_COUNTIES: Record<string, string[]> = {
     'college-hunks-atlantic',
     'rush-hour-moving-atlantic',
   ],
+  bergen: [
+    'booth-movers-bergen',
+    'top-notch-moving-bergen',
+    'movers-201-bergen',
+    'unwind-moving-bergen',
+    'optimum-moving-bergen',
+    'cardinal-moving-bergen',
+    'aceline-movers-bergen',
+  ],
 };
 
 function hashSlug(slug: string): number {
