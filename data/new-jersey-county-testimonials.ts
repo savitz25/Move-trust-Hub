@@ -371,6 +371,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  ocean: [
+    {
+      quote:
+        'Piece of Cake handled our Toms River family move with flat-fee pricing that stayed predictable. Professional crew navigated Parkway traffic and HOA rules without stress.',
+      name: 'Barbara M.',
+      location: 'Toms River, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'SeaCure drove out from Tuckerton for our Lavallette shore house move — on time, careful with sand near the beach, and we received a refund for finishing ahead of schedule.',
+      name: 'Frank P.',
+      location: 'Lavallette, NJ',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Lakewood relocation — professional, careful, and on time through a retiree community with strict move-in windows.',
+      name: 'Ruth E.',
+      location: 'Lakewood, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(

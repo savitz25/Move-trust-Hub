@@ -246,6 +246,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Morristown, Parsippany, and outlying towns.',
     ],
   },
+  ocean: {
+    marketNotes:
+      'Ocean County is a major shore county with Toms River, Lakewood, and coastal communities. Moves often involve retiree communities, seasonal beach properties, and family residential with tourism considerations.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Toms River, Lakewood, and barrier-island moves often reflect summer tourism demand, retiree community rules, and Garden State Parkway traffic.',
+    },
+    tips: [
+      'Beach and barrier island properties require sand protection and access planning.',
+      'Summer tourism increases demand; book early.',
+      'Many retiree communities have specific move-in rules.',
+      'Garden State Parkway traffic can delay moves.',
+      'Verify coverage for Toms River, Lakewood, and coastal towns.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(
