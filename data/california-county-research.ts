@@ -397,6 +397,57 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Seasonal tourism affects demand.',
     ],
   },
+  merced: {
+    marketNotes:
+      'Merced County is Central Valley agricultural with Merced and University of California, Merced. Moves often involve residential, university, and farm properties.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Merced and Los Banos moves often reflect university calendar peaks, agricultural-property handling, and travel from Fresno or Merced regional crews.',
+    },
+    tips: [
+      'University calendar affects seasonal demand.',
+      'Agricultural properties may require equipment handling.',
+      'Verify coverage for Merced and Los Banos.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  modoc: {
+    marketNotes:
+      'Modoc County is one of California\'s most remote and least populated counties. Moves are extremely limited with regional support from Klamath Falls, OR or Redding.',
+    costs: {
+      studioRange: '$500–$1,100+',
+      familyRange: '$1,800–$4,500+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Alturas moves often reflect extreme remote access, high-desert terrain, and travel from Redding, Chico, or Klamath Falls regional providers.',
+    },
+    tips: [
+      'Extremely remote properties have severe access challenges.',
+      'Verify explicit regional service to Alturas.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for high-desert/remote moves.',
+    ],
+  },
+  mono: {
+    marketNotes:
+      'Mono County is remote Eastern Sierra with Mammoth Lakes and Bridgeport. Moves are limited and primarily residential/seasonal with regional support from Bishop or Reno.',
+    costs: {
+      studioRange: '$500–$1,100+',
+      familyRange: '$1,800–$4,500+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Mammoth Lakes and Bridgeport moves often reflect high-altitude ski-resort access, seasonal peaks, and travel from Bishop or Reno regional crews.',
+    },
+    tips: [
+      'High-altitude and ski resort properties have seasonal and access challenges.',
+      'Verify explicit regional service to Mammoth Lakes.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for high-altitude moves.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

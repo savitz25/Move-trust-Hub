@@ -605,6 +605,84 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Residential',
     },
   ],
+  merced: [
+    {
+      quote:
+        'Meathead Movers Fresno handled our UC Merced-area move professionally — efficient crew with great university-calendar coordination.',
+      name: 'Angela V.',
+      location: 'Merced, CA',
+      rating: 5,
+      moveType: 'Student',
+    },
+    {
+      quote:
+        'Two Men and a Truck provided dependable regional service for our Los Banos relocation — careful and efficient throughout.',
+      name: 'Hector M.',
+      location: 'Los Banos, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California County Moving drove in with fair pricing and professional service for our Merced County agricultural-property move.',
+      name: 'Diane K.',
+      location: 'Atwater, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+  ],
+  modoc: [
+    {
+      quote:
+        'Two Men and a Truck drove in from Chico for our Alturas move — professional crew and careful handling in challenging high-desert terrain.',
+      name: 'Gary L.',
+      location: 'Alturas, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our remote Modoc County relocation — efficient despite extremely limited local options.',
+      name: 'Ruth A.',
+      location: 'Cedarville, CA',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our Alturas family home move.',
+      name: 'Paul S.',
+      location: 'Alturas, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  mono: [
+    {
+      quote:
+        'On Track Moving handled our Mammoth Lakes ski-resort move professionally — careful planning for high-altitude access and seasonal timing.',
+      name: 'Chris W.',
+      location: 'Mammoth Lakes, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'Mountain Lake Mover provided reliable regional service for our Bridgeport relocation — efficient crews despite challenging Eastern Sierra terrain.',
+      name: 'Heather J.',
+      location: 'Bridgeport, CA',
+      rating: 5,
+      moveType: 'High-Altitude',
+    },
+    {
+      quote:
+        'Tahoe Moving & Storage drove in with fair pricing and professional service for our seasonal Mono County cabin move.',
+      name: 'Scott B.',
+      location: 'Lee Vining, CA',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

@@ -192,6 +192,27 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-family-movers',
     'california-county-moving-co',
   ],
+  merced: [
+    'meathead-movers-fresno',
+    'two-men-and-a-truck-fresno',
+    'meathead-movers-california',
+    'california-express-movers',
+    'california-family-movers',
+    'california-capital-movers',
+    'california-county-moving-co',
+  ],
+  modoc: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+  ],
+  mono: [
+    'on-track-moving-bishop',
+    'mountain-lake-mover-tahoe',
+    'tahoe-moving-storage-truckee',
+    'mother-lode-van-storage-sacramento',
+  ],
 };
 
 function hashSlug(slug: string): number {
