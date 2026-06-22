@@ -12,7 +12,6 @@ const CURATED_NJ_COUNTIES: Record<string, string[]> = {
     'all-my-sons-atlantic',
     'college-hunks-atlantic',
     'rush-hour-moving-atlantic',
-    'white-glove-moving-atlantic',
   ],
 };
 
