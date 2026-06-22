@@ -3447,6 +3447,19 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'nyc-neighborhood-movers',
     ],
   },
+  'southern-tier-ny': {
+    id: 'southern-tier-ny',
+    label: 'Southern Tier (Binghamton area)',
+    moverIds: [
+      'mabeys-moving-storage-albany',
+      'dons-moving-storage-albany',
+      'clark-moving-storage-albany',
+      'arnoff-moving-storage-albany',
+      'all-ways-moving-storage-albany',
+      'busy-bee-movers-albany',
+      'lamanna-moving-albany',
+    ],
+  },
 };
 
 /** Non-Florida county overrides — Florida uses florida-county-assignments.ts */

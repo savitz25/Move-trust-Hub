@@ -59,6 +59,23 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance for high-value urban items.',
     ],
   },
+  broome: {
+    marketNotes:
+      'Broome County centers on Binghamton with suburban and rural areas. Moves often involve residential, university-related (Binghamton University), and family relocations with regional support from the Southern Tier.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,500',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Binghamton, Endicott, and Vestal moves often reflect BU semester timing, I-86 / Route 17 traffic, and suburban driveway access.',
+    },
+    tips: [
+      'University calendar affects seasonal demand around Binghamton University.',
+      'Suburban and rural properties may have driveway or access challenges.',
+      'I-86 and Route 17 traffic can impact timing.',
+      'Obtain multiple estimates in this moderate market.',
+      'Verify coverage for Binghamton, Endicott, and Vestal.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

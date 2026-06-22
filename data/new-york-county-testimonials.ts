@@ -85,6 +85,32 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  broome: [
+    {
+      quote:
+        "Mabey's Moving handled our Vestal suburban move with a professional, reliable crew — careful handling and efficient loading from start to finish.",
+      name: 'Karen S.',
+      location: 'Vestal, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving was courteous and efficient with great communication throughout our Binghamton relocation. They worked around our building's access rules without a hitch.",
+      name: 'Thomas B.',
+      location: 'Binghamton, NY',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        "Lamanna gave us a pleasant moving experience — courteous, professional, and right on schedule for our Endicott family home move.",
+      name: 'Lisa M.',
+      location: 'Endicott, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
