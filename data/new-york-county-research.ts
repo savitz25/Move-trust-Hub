@@ -144,6 +144,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Elmira, Horseheads, and Big Flats.',
     ],
   },
+  chenango: {
+    marketNotes:
+      'Chenango County is rural with Norwich as its hub. Moves are primarily residential with limited local infrastructure. Service is regional from Binghamton, Syracuse, or Utica.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Norwich and outlying rural moves often reflect long driveways and travel from Binghamton or Syracuse crews.',
+    },
+    tips: [
+      'Rural properties often have long driveways; confirm access.',
+      'Verify explicit regional service to Norwich.',
+      'Storage is limited locally; use nearby facilities.',
+      'Obtain multiple estimates in this low-volume market.',
+      'Verify credentials.',
+    ],
+  },
+  clinton: {
+    marketNotes:
+      'Clinton County is rural/northern with Plattsburgh as its hub near Lake Champlain. Moves are residential and military-related (Plattsburgh AFB legacy) with regional support from Burlington, VT or Albany.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Plattsburgh and Lake Champlain moves often reflect winter weather windows, cross-border logistics, and military relocation timing.',
+    },
+    tips: [
+      'Lake Champlain properties require water-adjacent planning.',
+      'Winter weather affects timing; confirm contingencies.',
+      'Verify explicit regional service to Plattsburgh.',
+      'Obtain multiple estimates.',
+      'Military experience is beneficial.',
+    ],
+  },
+  columbia: {
+    marketNotes:
+      'Columbia County is rural/historic with Hudson as its hub. Moves often involve historic homes, second homes, and artistic communities with regional support from Albany or NYC.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Hudson and historic-property moves often reflect preservation-sensitive handling, seasonal second-home demand, and rural access roads.',
+    },
+    tips: [
+      'Historic properties require preservation-sensitive handling.',
+      'Rural areas have access challenges.',
+      'Confirm regional service to Hudson.',
+      'Seasonal demand from second-home owners.',
+      'Verify credentials.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(

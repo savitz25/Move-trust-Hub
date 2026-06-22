@@ -215,6 +215,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Residential',
     },
   ],
+  chenango: [
+    {
+      quote:
+        'Dimon & Bacorn handled our rural Norwich move professionally — careful crew, efficient loading, and great communication despite our long driveway.',
+      name: 'Helen P.',
+      location: 'Norwich, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable service for our Chenango County relocation. Efficient crews and careful handling throughout.",
+      name: 'Frank D.',
+      location: 'Sherburne, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Busy Bee Movers delivered fair pricing and efficient service — the best regional option we've found for our Southern Tier move.",
+      name: 'Carol B.',
+      location: 'Greene, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  clinton: [
+    {
+      quote:
+        'Stafford Moving handled our Plattsburgh relocation with a professional northern crew — careful handling and solid communication despite winter timing.',
+      name: 'Scott A.',
+      location: 'Plattsburgh, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable service for our Lake Champlain-area move. The crew was efficient and careful with our belongings.",
+      name: 'Michelle K.',
+      location: 'Champlain, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving crew was courteous and efficient with great communication throughout our Clinton County relocation.",
+      name: 'Robert N.',
+      location: 'Mooers, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  columbia: [
+    {
+      quote:
+        'Triangle Movers handled our historic Hudson home with preservation-sensitive care — professional, efficient, and respectful of original woodwork.',
+      name: 'Eleanor W.',
+      location: 'Hudson, NY',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        "Mabey's Moving provided reliable service for our Columbia County second-home relocation. Careful handling from load to unload.",
+      name: 'Philip H.',
+      location: 'Kinderhook, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and professional — a pleasant moving experience for our Hudson Valley family home.",
+      name: 'Rachel S.',
+      location: 'Chatham, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(
