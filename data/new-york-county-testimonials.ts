@@ -1021,6 +1021,84 @@ export const newYorkCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Seasonal',
     },
   ],
+  putnam: [
+    {
+      quote:
+        'Piece of Cake made our Carmel move stress-free — professional crew, transparent pricing, and excellent HOA coordination in the Hudson Highlands.',
+      name: 'Laura B.',
+      location: 'Carmel, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our Mahopac family home with outstanding care — professional, careful, and respectful of our upscale suburban property.',
+      name: 'Richard G.',
+      location: 'Mahopac, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Triangle Movers provided solid Hudson Valley regional service for our Brewster relocation despite Taconic Parkway traffic windows.',
+      name: 'Karen M.',
+      location: 'Brewster, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  rensselaer: [
+    {
+      quote:
+        "Mabey's Moving handled our Troy historic neighborhood move with preservation-sensitive care — professional crew and efficient loading throughout.",
+      name: 'William S.',
+      location: 'Troy, NY',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        "Lamanna's crew was courteous and right on schedule for our East Greenbush relocation — a pleasant Capital District moving experience.",
+      name: 'Diane H.',
+      location: 'East Greenbush, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        "Don's Moving provided reliable service with great communication for our Rensselaer County family home move.",
+      name: 'Paul J.',
+      location: 'Brunswick, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  rockland: [
+    {
+      quote:
+        'Piece of Cake made our New City move stress-free — professional crew, transparent pricing, and excellent village move-in coordination.',
+      name: 'Michelle A.',
+      location: 'New City, NY',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Booth Movers handled our Nyack home with outstanding care — professional, efficient, and respectful of our high-value furnishings.',
+      name: 'Steven C.',
+      location: 'Nyack, NY',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Optimum Moving exceeded expectations on our Spring Valley condo move — five-star service from quote through completion.',
+      name: 'Angela R.',
+      location: 'Spring Valley, NY',
+      rating: 5,
+      moveType: 'Condo',
+    },
+  ],
 };
 
 export function getNewYorkCountyTestimonials(

@@ -671,6 +671,57 @@ export const newYorkCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  putnam: {
+    marketNotes:
+      'Putnam County is suburban/rural in the Hudson Highlands with strong commuter ties to NYC. Moves often involve family homes and upscale properties.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Carmel, Brewster, and Mahopac moves often reflect HOA move-in rules, Hudson Highlands terrain, and Taconic / I-84 traffic.',
+    },
+    tips: [
+      'Many HOAs and gated communities have strict move-in rules.',
+      'Hudson Highlands terrain can create access challenges.',
+      'Taconic State Parkway and I-84 traffic is heavy.',
+      'Verify coverage for Carmel, Brewster, and Mahopac.',
+      'Confirm insurance for high-value suburban homes.',
+    ],
+  },
+  rensselaer: {
+    marketNotes:
+      'Rensselaer County includes Troy and suburban/rural areas with strong Capital District ties. Moves often involve residential and historic properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Troy, East Greenbush, and Rensselaer moves often reflect historic-district handling, I-90 traffic, and Capital District crew availability.',
+    },
+    tips: [
+      'Historic Troy neighborhoods require preservation-sensitive handling.',
+      'Verify coverage for Troy, East Greenbush, and Rensselaer.',
+      'I-90 traffic can impact timing.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  rockland: {
+    marketNotes:
+      'Rockland County is densely suburban with strong NYC commuter ties and diverse communities. Moves often involve family homes and high-value properties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'New City, Spring Valley, and Nyack moves often reflect village move-in rules, Palisades Parkway traffic, and summer peak-season demand.',
+    },
+    tips: [
+      'Many HOAs and villages have strict move-in rules.',
+      'Palisades Interstate Parkway and I-87 traffic is heavy.',
+      'Verify coverage for New City, Spring Valley, and Nyack.',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for summer peak season.',
+    ],
+  },
 };
 
 export function getNewYorkCountyResearch(
