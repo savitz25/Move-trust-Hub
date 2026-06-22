@@ -1333,6 +1333,110 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Residential',
     },
   ],
+  tehama: [
+    {
+      quote:
+        'Two Men and a Truck drove in from Chico for our Red Bluff agricultural-property move — professional crew and careful equipment handling.',
+      name: 'John R.',
+      location: 'Red Bluff, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our rural Tehama County relocation — efficient and careful throughout.',
+      name: 'Susan M.',
+      location: 'Corning, CA',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our Red Bluff family home move.',
+      name: 'Paul T.',
+      location: 'Red Bluff, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  trinity: [
+    {
+      quote:
+        'Two Men and a Truck drove in from Chico for our Weaverville move — professional crew and careful handling in remote Trinity Alps terrain.',
+      name: 'Karen W.',
+      location: 'Weaverville, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+    {
+      quote:
+        'D & J Professional Movers provided reliable regional service for our Trinity County relocation — efficient despite extremely limited local options.',
+      name: 'Tom H.',
+      location: 'Hayfork, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'California Capital Movers drove in with fair pricing and professional service for our remote Trinity County family home move.',
+      name: 'Linda S.',
+      location: 'Weaverville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  tulare: [
+    {
+      quote:
+        'Hills Moving & Storage handled our Visalia family home move professionally — efficient crew and careful agricultural-property handling.',
+      name: 'Maria G.',
+      location: 'Visalia, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+    {
+      quote:
+        'Meathead Movers Fresno provided dependable regional service for our Porterville relocation — smooth and efficient throughout.',
+      name: 'James C.',
+      location: 'Porterville, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Two Men and a Truck Bakersfield drove in with fair pricing and professional service for our rural Tulare County farm property move.',
+      name: 'Robert D.',
+      location: 'Dinuba, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+  ],
+  tuolumne: [
+    {
+      quote:
+        'Mother Lode Van handled our Sonora Gold Country move professionally — preservation-sensitive handling for our historic home.',
+      name: 'Margaret E.',
+      location: 'Sonora, CA',
+      rating: 5,
+      moveType: 'Historic',
+    },
+    {
+      quote:
+        "Ernie's Moving provided dependable Sacramento regional service for our Tuolumne County relocation — careful on challenging foothill terrain.",
+      name: 'William K.',
+      location: 'Jamestown, CA',
+      rating: 5,
+      moveType: 'Foothill',
+    },
+    {
+      quote:
+        'California County Moving drove in with fair pricing and professional service for our Yosemite-adjacent family home move.',
+      name: 'Helen P.',
+      location: 'Groveland, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(

@@ -447,6 +447,36 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-county-moving-co',
     'ernies-moving-sacramento',
   ],
+  tehama: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+  ],
+  trinity: [
+    'two-men-and-a-truck-chico',
+    'dj-professional-movers-chico',
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+  ],
+  tulare: [
+    'hills-moving-storage-bakersfield',
+    'two-men-and-a-truck-bakersfield',
+    'meathead-movers-fresno',
+    'two-men-and-a-truck-fresno',
+    'meathead-movers-california',
+    'california-express-movers',
+    'california-family-movers',
+    'california-capital-movers',
+  ],
+  tuolumne: [
+    'mother-lode-van-storage-sacramento',
+    'california-capital-movers',
+    'california-family-movers',
+    'california-county-moving-co',
+    'ernies-moving-sacramento',
+  ],
 };
 
 function hashSlug(slug: string): number {

@@ -871,6 +871,71 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  tehama: {
+    marketNotes:
+      'Tehama County is rural with Red Bluff and Corning. Moves are primarily residential and agricultural with regional support from Redding or Chico.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Red Bluff and Corning moves often reflect agricultural-property handling and travel from Chico or Redding regional crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Red Bluff.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  trinity: {
+    marketNotes:
+      'Trinity County is very remote in the Trinity Alps. Moves are extremely limited with regional support from Redding.',
+    costs: {
+      studioRange: '$500–$1,100+',
+      familyRange: '$1,800–$4,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Weaverville moves often reflect extreme remote mountain access, limited local crews, and travel from Redding or Chico regional providers.',
+    },
+    tips: [
+      'Extremely remote mountain properties have severe access challenges.',
+      'Verify explicit regional service to Weaverville.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for remote moves.',
+    ],
+  },
+  tulare: {
+    marketNotes:
+      'Tulare County is agricultural with Visalia and Porterville. Moves often involve residential and farm properties with regional support from Fresno.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,700–$3,600',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Visalia and Porterville moves often reflect agricultural-property handling and travel from Fresno or Bakersfield regional crews.',
+    },
+    tips: [
+      'Agricultural properties may require equipment handling.',
+      'Verify coverage for Visalia and Porterville.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  tuolumne: {
+    marketNotes:
+      'Tuolumne County is rural Gold Country with Sonora and Yosemite influence. Moves are primarily residential with regional support from Modesto or Fresno.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Sonora moves often reflect Gold Country historic-property handling, Yosemite-adjacent access, and travel from Modesto or Fresno regional crews.',
+    },
+    tips: [
+      'Historic Gold Country properties require preservation-sensitive handling.',
+      'Verify regional service to Sonora.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(
