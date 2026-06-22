@@ -19,7 +19,7 @@ export const californiaCounties: LocalCounty[] = [
   { slug: 'humboldt', name: 'Humboldt', stateCode: CODE, stateSlug: CA, metro: 'north-coast-ca', seat: 'Eureka' },
   { slug: 'imperial', name: 'Imperial', stateCode: CODE, stateSlug: CA, metro: 'san-diego-ca', seat: 'El Centro' },
   { slug: 'inyo', name: 'Inyo', stateCode: CODE, stateSlug: CA, metro: 'sierra-rural-ca', seat: 'Independence' },
-  { slug: 'kern', name: 'Kern', stateCode: CODE, stateSlug: CA, metro: 'central-valley-ca', seat: 'Bakersfield' },
+  { slug: 'kern', name: 'Kern', stateCode: CODE, stateSlug: CA, metro: 'bakersfield-metro-ca', seat: 'Bakersfield' },
   { slug: 'kings', name: 'Kings', stateCode: CODE, stateSlug: CA, metro: 'central-valley-ca', seat: 'Hanford' },
   { slug: 'lake', name: 'Lake', stateCode: CODE, stateSlug: CA, metro: 'north-coast-ca', seat: 'Lakeport' },
   { slug: 'lassen', name: 'Lassen', stateCode: CODE, stateSlug: CA, metro: 'northern-valley-ca', seat: 'Susanville' },

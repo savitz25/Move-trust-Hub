@@ -194,6 +194,108 @@ export const californiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials.',
     ],
   },
+  kern: {
+    marketNotes:
+      'Kern County is a major Central Valley county with Bakersfield and significant oil/agricultural activity. Moves often involve residential, farm, and industrial properties.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Bakersfield, Delano, and Taft moves often reflect agricultural and oil-field property handling, Highway 99 traffic, and strong local mover competition.',
+    },
+    tips: [
+      'Agricultural and oil-related properties may require specialized equipment handling.',
+      'Verify coverage for Bakersfield, Delano, and Taft.',
+      'Heavy traffic on Highway 99 and I-5.',
+      'Obtain multiple estimates.',
+      'Confirm insurance for high-value items.',
+    ],
+  },
+  kings: {
+    marketNotes:
+      'Kings County is rural/agricultural with Hanford and Lemoore (Naval Air Station). Moves often involve residential and military properties with regional support from Fresno.',
+    costs: {
+      studioRange: '$400–$850',
+      familyRange: '$1,500–$3,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hanford and Lemoore moves often reflect military PCS timing, agricultural-property access, and travel from Fresno metro crews.',
+    },
+    tips: [
+      'Military (Lemoore) moves require PCS experience.',
+      'Agricultural properties may require equipment handling.',
+      'Verify regional service to Hanford.',
+      'Obtain multiple estimates.',
+      'Confirm credentials.',
+    ],
+  },
+  lake: {
+    marketNotes:
+      'Lake County is rural with Clear Lake and Lakeport. Moves often involve residential and lakeside properties with regional support from Santa Rosa or Sacramento.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,400',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Lakeport and Clear Lake moves often reflect lakeside access, seasonal tourism peaks, and travel from Santa Rosa or Sacramento crews.',
+    },
+    tips: [
+      'Lakeside properties require water-adjacent planning.',
+      'Verify regional service to Lakeport.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for lake moves.',
+      'Seasonal tourism affects demand.',
+    ],
+  },
+  humboldt: {
+    marketNotes:
+      'Humboldt County is remote coastal with Eureka and Arcata. Moves often involve residential, university (Cal Poly Humboldt), and forested properties with regional support from the North Coast.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,800–$4,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Eureka and Arcata moves often reflect coastal access, university calendar peaks, and limited local crew availability on the North Coast.',
+    },
+    tips: [
+      'Coastal and forested properties have access challenges.',
+      'Verify regional service to Eureka and Arcata.',
+      'Storage is limited locally.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for remote moves.',
+    ],
+  },
+  imperial: {
+    marketNotes:
+      'Imperial County is desert/agricultural with El Centro and Calexico. Moves are primarily residential with regional support from San Diego or Yuma, AZ.',
+    costs: {
+      studioRange: '$450–$900',
+      familyRange: '$1,600–$3,500',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'El Centro and Calexico moves often reflect desert heat planning, agricultural-property handling, and travel from San Diego regional crews.',
+    },
+    tips: [
+      'Desert heat requires planning for crew safety and equipment.',
+      'Verify regional service to El Centro.',
+      'Obtain multiple estimates.',
+      'Confirm credentials for agricultural moves.',
+      'Border areas may have additional logistics.',
+    ],
+  },
+  inyo: {
+    marketNotes:
+      'Inyo County is one of California\'s most remote counties in the Eastern Sierra with Bishop and Death Valley. Moves are extremely limited and primarily residential with regional support from Reno or Bishop.',
+    costs: {
+      studioRange: '$500–$1,100+',
+      familyRange: '$1,800–$4,500+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Bishop and Independence moves often reflect extreme remote access, high-desert terrain, and travel from Bishop or Reno regional crews.',
+    },
+    tips: [
+      'Extremely remote and high-desert/mountain properties have severe access challenges.',
+      'Verify explicit regional service to Bishop and Independence.',
+      'Storage is very limited; use regional facilities.',
+      'Book well in advance.',
+      'Confirm credentials for remote/high-altitude moves.',
+    ],
+  },
 };
 
 export function getCaliforniaCountyResearch(

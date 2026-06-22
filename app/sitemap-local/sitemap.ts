@@ -14,6 +14,8 @@ const SITE_URL = 'https://www.movetrusthub.com';
 const CA_HIGH_TRAFFIC_COUNTIES = new Set([
   'alameda',
   'contra-costa',
+  'fresno',
+  'kern',
   'los-angeles',
   'orange',
   'riverside',

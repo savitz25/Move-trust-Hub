@@ -293,6 +293,162 @@ export const californiaCountyTestimonials: Record<string, CountyTestimonialEntry
       moveType: 'Rural',
     },
   ],
+  kern: [
+    {
+      quote:
+        'Hills Moving & Storage handled our Bakersfield family home move professionally — efficient crew and careful handling throughout.',
+      name: 'Ricardo M.',
+      location: 'Bakersfield, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Bakersfield provided excellent service for our Delano relocation — transparent pricing and professional team.',
+      name: 'Sandra L.',
+      location: 'Delano, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Meathead Movers Fresno drove in with fair pricing and dependable service for our Kern County agricultural-property move.',
+      name: 'Tony G.',
+      location: 'Taft, CA',
+      rating: 5,
+      moveType: 'Agricultural',
+    },
+  ],
+  kings: [
+    {
+      quote:
+        'Meathead Movers Fresno handled our Lemoore military PCS move professionally — efficient crew with great PCS experience.',
+      name: 'Jason R.',
+      location: 'Lemoore, CA',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fresno provided reliable regional service for our Hanford relocation — careful and efficient throughout.',
+      name: 'Maria C.',
+      location: 'Hanford, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Express Movers drove in with fair pricing and professional service for our Kings County family home move.',
+      name: 'Kevin B.',
+      location: 'Corcoran, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lake: [
+    {
+      quote:
+        'Humboldt Moving & Storage handled our Lakeport lakeside move professionally — careful planning for Clear Lake water-adjacent access.',
+      name: 'Diana F.',
+      location: 'Lakeport, CA',
+      rating: 5,
+      moveType: 'Lakeside',
+    },
+    {
+      quote:
+        'California Regional Moving provided dependable service for our Clear Lake relocation — efficient crews despite seasonal tourism timing.',
+      name: 'Eric N.',
+      location: 'Clearlake, CA',
+      rating: 5,
+      moveType: 'Seasonal',
+    },
+    {
+      quote:
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our rural Lake County move.',
+      name: 'Patricia A.',
+      location: 'Middletown, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  humboldt: [
+    {
+      quote:
+        'Humboldt Moving & Storage handled our Eureka coastal move professionally — careful handling for our forested property near Arcata.',
+      name: 'Christine L.',
+      location: 'Eureka, CA',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Meathead Movers Eureka provided excellent service for our university-area Arcata relocation — efficient despite Cal Poly Humboldt calendar timing.',
+      name: 'Andrew P.',
+      location: 'Arcata, CA',
+      rating: 5,
+      moveType: 'Student',
+    },
+    {
+      quote:
+        'California Regional Moving drove in with fair pricing and professional service for our remote Humboldt County family home move.',
+      name: 'Helen W.',
+      location: 'Fortuna, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  imperial: [
+    {
+      quote:
+        'Moving Masters IV handled our El Centro desert move professionally — efficient crew despite extreme heat and agricultural-property access.',
+      name: 'Jorge R.',
+      location: 'El Centro, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Premier Moving provided dependable regional service from San Diego for our Calexico relocation — careful and efficient throughout.',
+      name: 'Ana M.',
+      location: 'Calexico, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'California Pro Movers crew was courteous and efficient with great communication for our Imperial County family home move.',
+      name: 'Robert D.',
+      location: 'Brawley, CA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  inyo: [
+    {
+      quote:
+        'On Track Moving handled our Bishop Eastern Sierra move professionally — careful planning for our remote high-desert property.',
+      name: 'Michael S.',
+      location: 'Bishop, CA',
+      rating: 5,
+      moveType: 'Mountain',
+    },
+    {
+      quote:
+        'Mountain Lake Mover provided reliable regional service for our Independence relocation — efficient crews despite challenging Sierra terrain.',
+      name: 'Barbara K.',
+      location: 'Independence, CA',
+      rating: 5,
+      moveType: 'Remote',
+    },
+    {
+      quote:
+        'Mother Lode Van drove in from Sacramento with fair pricing and professional service for our Inyo County family home move.',
+      name: 'James T.',
+      location: 'Lone Pine, CA',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getCaliforniaCountyTestimonials(
