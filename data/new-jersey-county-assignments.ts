@@ -3,7 +3,18 @@ import { metroMoverPools } from '@/data/local-movers-seed';
 import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
 /** Hand-curated lists — Grok-researched counties + high-traffic metros */
-const CURATED_NJ_COUNTIES: Record<string, string[]> = {};
+const CURATED_NJ_COUNTIES: Record<string, string[]> = {
+  atlantic: [
+    'zip-to-zip-moving-atlantic',
+    'seacure-moving-atlantic',
+    'safekeep-movers-atlantic',
+    'american-dream-movers-atlantic',
+    'all-my-sons-atlantic',
+    'college-hunks-atlantic',
+    'rush-hour-moving-atlantic',
+    'white-glove-moving-atlantic',
+  ],
+};
 
 function hashSlug(slug: string): number {
   let hash = 0;
