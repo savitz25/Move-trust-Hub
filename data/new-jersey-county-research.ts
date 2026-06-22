@@ -59,6 +59,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Mount Holly, Mount Laurel, and Burlington City.',
     ],
   },
+  camden: {
+    marketNotes:
+      'Camden County includes urban Camden, suburban areas (Cherry Hill, Voorhees), and growing residential communities. Moves often involve family relocations, cross-river to Philadelphia, and suburban properties with good regional support.',
+    costs: {
+      studioRange: '$450–$950',
+      familyRange: '$1,700–$3,800',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Cherry Hill, Voorhees, and Camden City moves may reflect HOA rules, Benjamin Franklin Bridge traffic, and Philadelphia cross-river timing.',
+    },
+    tips: [
+      'Suburban HOAs and new developments have move-in rules and parking restrictions.',
+      'Proximity to Philadelphia and bridges (e.g., Benjamin Franklin) affects traffic and timing.',
+      'Verify coverage for Cherry Hill, Voorhees, and Camden City.',
+      'Obtain multiple estimates in this competitive South Jersey market.',
+      'Confirm insurance for high-value suburban homes.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

@@ -85,6 +85,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Residential',
     },
   ],
+  camden: [
+    {
+      quote:
+        'Piece of Cake made our Cherry Hill move stress-free with flat-fee pricing that never changed. The crew was professional, communicative, and careful through a busy suburban HOA move-in day.',
+      name: 'Rachel B.',
+      location: 'Cherry Hill, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Booth Movers handled our Voorhees relocation with outstanding care — on time, professional, and no damage to furniture or floors. Highly recommend for Camden County family moves.',
+      name: 'Tom H.',
+      location: 'Voorhees, NJ',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'SeaCure relieved a lot of moving stress for our Camden City apartment transfer. The crew was polite, efficient, and finished early enough that we received a refund on the estimate.',
+      name: 'Maria G.',
+      location: 'Camden, NJ',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
