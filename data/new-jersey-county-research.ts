@@ -212,6 +212,23 @@ export const newJerseyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for New Brunswick, Edison, and Woodbridge.',
     ],
   },
+  monmouth: {
+    marketNotes:
+      'Monmouth County features shore communities (Asbury Park, Long Branch), suburban areas, and historic towns. Moves often involve coastal properties, family residential, and seasonal shore relocations with tourism considerations.',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,900–$4,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Freehold, Asbury Park, and coastal moves may reflect summer tourism demand, Route 35 traffic, and HOA move-in timing.',
+    },
+    tips: [
+      'Shore and beach properties require sand protection and access planning.',
+      'Summer tourism increases demand; book early.',
+      'Many communities have HOA rules for move timing.',
+      'Traffic on Garden State Parkway and Route 35 can delay moves.',
+      'Verify coverage for Freehold, Asbury Park, and coastal towns.',
+    ],
+  },
 };
 
 export function getNewJerseyCountyResearch(

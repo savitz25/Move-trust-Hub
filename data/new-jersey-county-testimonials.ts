@@ -319,6 +319,32 @@ export const newJerseyCountyTestimonials: Record<string, CountyTestimonialEntry[
       moveType: 'Townhome',
     },
   ],
+  monmouth: [
+    {
+      quote:
+        'Piece of Cake handled our Freehold suburban move with flat-fee pricing that stayed predictable. Professional crew navigated HOA rules and Parkway traffic without a hitch.',
+      name: 'Laura K.',
+      location: 'Freehold, NJ',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Booth Movers did an outstanding job on our Asbury Park shore-area relocation — careful with sand near the boardwalk, on time, and professional through a busy summer weekend.',
+      name: 'Mike D.',
+      location: 'Asbury Park, NJ',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Movers 201 quoted one price and delivered through our Long Branch condo move. No funny business — courteous, fast, and the smoothest shore relocation we have had.',
+      name: 'Jennifer A.',
+      location: 'Long Branch, NJ',
+      rating: 5,
+      moveType: 'Condo',
+    },
+  ],
 };
 
 export function getNewJerseyCountyTestimonials(
