@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 ## Reference states (audit-complete)
 
@@ -16,6 +16,33 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Texas | 254/254 | 5 | 10 (cap 10) | 16 counties | `count-texas-movers.ts`, `apply-texas-mover-expansion.ts` |
 | Tennessee | 95/95 | 5 | 10 (cap 10) | 20 counties | `count-tennessee-movers.ts`, `apply-tennessee-mover-expansion.ts` |
 | Alabama | 67/67 | 5 | 10 (cap 10) | 15 counties | `count-alabama-movers.ts`, `apply-alabama-mover-expansion.ts` |
+| Mississippi | 82/82 | 5 | 10 (cap 10) | 15 counties | `count-mississippi-movers.ts`, `apply-mississippi-mover-expansion.ts` |
+
+### Mississippi metro pools (`data/local-movers-seed.ts`)
+
+- `jackson-ms-metro-ms` — Jackson MSA / Hinds–Rankin–Madison corridor
+- `gulfport-biloxi-metro-ms` — Gulfport–Biloxi / Harrison County coastal corridor
+- `desoto-metro-ms` — DeSoto County / Memphis South suburban corridor
+- `pascagoula-metro-ms` — Pascagoula / Jackson County shipbuilding corridor
+- `tupelo-metro-ms` — Tupelo / Lee County manufacturing hub
+- `hattiesburg-metro-ms` — Hattiesburg / Forrest–Lamar university corridor
+- `meridian-metro-ms` — Meridian / Lauderdale East Mississippi hub
+- `oxford-metro-ms` — Oxford / Lafayette Ole Miss corridor
+- `columbus-ms-metro-ms` — Columbus / Lowndes military and manufacturing corridor
+- `starkville-metro-ms` — Starkville / Oktibbeha Mississippi State corridor
+- `hancock-coastal-ms` — Bay St. Louis / Hancock Gulf Coast
+- `picayune-metro-ms` — Picayune / Pearl River growth corridor
+- Rural pools: `mayersville-metro-ms`, `marks-metro-ms`, `belzoni-metro-ms`, etc. (one per remote county seat)
+
+### Mississippi major counties (10 movers each)
+
+`hinds`, `harrison`, `desoto`, `rankin`, `madison`, `lee`, `forrest`, `lauderdale`, `jones`, `lamar`, `oktibbeha`, `lowndes`, `pearl-river`, `hancock`, `monroe`
+
+### Mississippi sitemap priority 0.85 (15 counties)
+
+`hinds`, `harrison`, `desoto`, `rankin`, `madison`, `jackson`, `lee`, `forrest`, `lauderdale`, `lafayette`, `lowndes`, `oktibbeha`, `jones`, `lamar`, `pearl-river`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/mississippi.xml` (83 URLs: hub + 82 counties). Do **not** use `/sitemap-local/mississippi.xml` (legacy path redirects to canonical).
 
 ### Alabama metro pools (`data/local-movers-seed.ts`)
 

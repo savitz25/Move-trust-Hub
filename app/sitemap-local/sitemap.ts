@@ -116,18 +116,21 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
 
 /** High-traffic MS counties — sitemap priority 0.85 */
 const MS_HIGH_TRAFFIC_COUNTIES = new Set([
-  'harrison',
   'hinds',
+  'harrison',
   'desoto',
   'rankin',
-  'jackson',
   'madison',
+  'jackson',
   'lee',
   'forrest',
   'lauderdale',
   'lafayette',
   'lowndes',
   'oktibbeha',
+  'jones',
+  'lamar',
+  'pearl-river',
 ]);
 
 /** High-traffic AL counties — sitemap priority 0.85 */
