@@ -42,6 +42,40 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  knox: {
+    marketNotes:
+      'Knox County is a major East Tennessee hub with strong educational (University of Tennessee), corporate, and residential demand centered on Knoxville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,700',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Knox County pricing reflects UT student turnover, Farragut suburban demand, downtown Knoxville access, and I-40 and I-75 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Knoxville, Farragut, and surrounding areas before booking.',
+      'University and urban traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and corporate relocations before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hamilton: {
+    marketNotes:
+      'Hamilton County is a major southeastern Tennessee hub with strong industrial, tourism, and residential demand centered on Chattanooga.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Hamilton County pricing reflects Chattanooga river-valley access, Signal Mountain and East Ridge suburban demand, and I-24 and I-75 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Chattanooga, East Ridge, and Signal Mountain areas before booking.',
+      'River valley and urban traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and commercial properties before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

@@ -11,6 +11,8 @@ const countyNameBySlug = new Map(tnCounties.map((c) => [c.slug, c.name]));
 const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   shelby: ['fayette', 'tipton', 'haywood', 'hardeman', 'lauderdale', 'crockett'],
   davidson: ['williamson', 'sumner', 'wilson', 'rutherford', 'robertson', 'cheatham'],
+  knox: ['anderson', 'blount', 'loudon', 'union', 'grainger', 'sevier'],
+  hamilton: ['bradley', 'marion', 'sequatchie', 'bledsoe', 'rhea', 'meigs'],
 };
 
 export function getTennesseeNearbyCounties(

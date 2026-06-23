@@ -111,7 +111,7 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */
-const TN_HIGH_TRAFFIC_COUNTIES = new Set(['shelby', 'davidson']);
+const TN_HIGH_TRAFFIC_COUNTIES = new Set(['shelby', 'davidson', 'knox', 'hamilton']);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([
   'aiken',

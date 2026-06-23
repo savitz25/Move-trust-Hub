@@ -26,6 +26,30 @@ const CURATED_TN_COUNTIES: Record<string, string[]> = {
     'alexanders-mobility-nashville',
     'spyder-moving-nashville',
   ],
+  knox: [
+    'two-men-and-a-truck-knoxville',
+    'college-hunks-moving-knoxville',
+    'all-my-sons-knoxville',
+    'gouffon-moving-knoxville',
+    'knoxville-moving-company-knoxville',
+    'mighty-moving-knoxville',
+    'brooks-transfer-knoxville',
+    'hilldrup-moving-knoxville',
+    'bellhop-knoxville',
+    'spyder-moving-knoxville',
+  ],
+  hamilton: [
+    'two-men-and-a-truck-chattanooga',
+    'college-hunks-moving-chattanooga',
+    'all-my-sons-chattanooga',
+    'good-guys-moving-chattanooga',
+    'elizabeth-moving-chattanooga',
+    'bellhop-chattanooga',
+    'river-city-moving-chattanooga',
+    'armstrong-relocation-chattanooga',
+    'fox-moving-chattanooga',
+    'spyder-moving-chattanooga',
+  ],
 };
 
 export const tennesseeCountyMoverAssignments: CountyMoverAssignment[] =
