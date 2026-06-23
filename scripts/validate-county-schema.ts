@@ -92,6 +92,22 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'pettis', expectedCity: 'Sedalia' },
   { stateSlug: 'missouri', countySlug: 'webster', expectedCity: 'Marshfield' },
   { stateSlug: 'missouri', countySlug: 'camden', expectedCity: 'Camdenton' },
+  { stateSlug: 'missouri', countySlug: 'butler', expectedCity: 'Poplar Bluff' },
+  { stateSlug: 'missouri', countySlug: 'howell', expectedCity: 'West Plains' },
+  { stateSlug: 'missouri', countySlug: 'lawrence', expectedCity: 'Mount Vernon' },
+  { stateSlug: 'missouri', countySlug: 'warren', expectedCity: 'Warrenton' },
+  { stateSlug: 'missouri', countySlug: 'scott', expectedCity: 'Benton' },
+  { stateSlug: 'missouri', countySlug: 'laclede', expectedCity: 'Lebanon' },
+  { stateSlug: 'missouri', countySlug: 'barry', expectedCity: 'Cassville' },
+  { stateSlug: 'missouri', countySlug: 'polk', expectedCity: 'Bolivar' },
+  { stateSlug: 'missouri', countySlug: 'lafayette', expectedCity: 'Lexington' },
+  { stateSlug: 'missouri', countySlug: 'stone', expectedCity: 'Galena' },
+  { stateSlug: 'missouri', countySlug: 'marion', expectedCity: 'Palmyra' },
+  { stateSlug: 'missouri', countySlug: 'stoddard', expectedCity: 'Bloomfield' },
+  { stateSlug: 'missouri', countySlug: 'dunklin', expectedCity: 'Kennett' },
+  { stateSlug: 'missouri', countySlug: 'texas', expectedCity: 'Houston' },
+  { stateSlug: 'missouri', countySlug: 'miller', expectedCity: 'Tuscumbia' },
+  { stateSlug: 'missouri', countySlug: 'adair', expectedCity: 'Kirksville' },
 ];
 
 let totalIssues = 0;

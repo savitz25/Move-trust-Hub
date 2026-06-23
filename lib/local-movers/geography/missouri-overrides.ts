@@ -31,6 +31,22 @@ export const missouriCountyOverrides: Partial<
   pettis: { seat: 'Sedalia', metro: 'sedalia-metro-mo' },
   webster: { seat: 'Marshfield', metro: 'springfield-metro-east-mo' },
   camden: { seat: 'Camdenton', metro: 'camdenton-metro-mo' },
+  butler: { seat: 'Poplar Bluff', metro: 'poplar-bluff-metro-mo' },
+  howell: { seat: 'West Plains', metro: 'west-plains-metro-mo' },
+  lawrence: { seat: 'Mount Vernon', metro: 'mount-vernon-metro-mo' },
+  warren: { seat: 'Warrenton', metro: 'st-louis-metro-west-mo' },
+  scott: { seat: 'Benton', metro: 'sikeston-metro-mo' },
+  laclede: { seat: 'Lebanon', metro: 'lebanon-metro-mo' },
+  barry: { seat: 'Cassville', metro: 'cassville-metro-mo' },
+  polk: { seat: 'Bolivar', metro: 'bolivar-metro-mo' },
+  lafayette: { seat: 'Lexington', metro: 'kansas-city-metro-east-mo' },
+  stone: { seat: 'Galena', metro: 'branson-metro-mo' },
+  marion: { seat: 'Palmyra', metro: 'hannibal-metro-mo' },
+  stoddard: { seat: 'Bloomfield', metro: 'dexter-metro-mo' },
+  dunklin: { seat: 'Kennett', metro: 'kennett-metro-mo' },
+  texas: { seat: 'Houston', metro: 'houston-metro-mo' },
+  miller: { seat: 'Tuscumbia', metro: 'lake-ozarks-metro-mo' },
+  adair: { seat: 'Kirksville', metro: 'kirksville-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {

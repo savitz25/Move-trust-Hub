@@ -164,6 +164,22 @@ const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'pettis',
   'webster',
   'camden',
+  'butler',
+  'howell',
+  'lawrence',
+  'warren',
+  'scott',
+  'laclede',
+  'barry',
+  'polk',
+  'lafayette',
+  'stone',
+  'marion',
+  'stoddard',
+  'dunklin',
+  'texas',
+  'miller',
+  'adair',
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */

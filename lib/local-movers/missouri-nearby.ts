@@ -38,6 +38,22 @@ const MO_COUNTY_NEIGHBORS: Record<string, string[]> = {
   pettis: ['johnson', 'saline', 'benton', 'henry', 'phelps'],
   webster: ['greene', 'christian', 'laclede', 'wright', 'douglas'],
   camden: ['miller', 'morgan', 'pulaski', 'laclede', 'benton'],
+  butler: ['wayne', 'ripley', 'carter', 'stoddard', 'oregon'],
+  howell: ['texas', 'oregon', 'shannon', 'douglas', 'wright'],
+  lawrence: ['jasper', 'newton', 'barry', 'christian', 'greene'],
+  warren: ['st-charles', 'lincoln', 'montgomery', 'franklin', 'audrain'],
+  scott: ['mississippi', 'new-madrid', 'stoddard', 'cape-girardeau', 'butler'],
+  laclede: ['pulaski', 'camden', 'webster', 'dallas', 'miller'],
+  barry: ['newton', 'mcdonald', 'stone', 'lawrence', 'jasper'],
+  polk: ['dallas', 'greene', 'cedar', 'hickory', 'morgan'],
+  lafayette: ['jackson', 'ray', 'carroll', 'saline', 'johnson'],
+  stone: ['taney', 'christian', 'barry', 'lawrence'],
+  marion: ['shelby', 'lewis', 'ralls', 'monroe', 'pike'],
+  stoddard: ['scott', 'butler', 'dunklin', 'wayne', 'new-madrid'],
+  dunklin: ['stoddard', 'butler', 'pemiscot', 'new-madrid'],
+  texas: ['pulaski', 'laclede', 'wright', 'douglas', 'howell'],
+  miller: ['camden', 'morgan', 'cole', 'osage', 'pulaski'],
+  adair: ['putnam', 'sullivan', 'macon', 'schuyler', 'knox'],
 };
 
 export function getMissouriNearbyCounties(

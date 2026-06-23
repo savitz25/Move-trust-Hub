@@ -467,6 +467,278 @@ export const missouriCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  butler: {
+    marketNotes:
+      'Butler County is a key Southeast Missouri county with strong healthcare and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Butler County pricing reflects Poplar Bluff healthcare corridor demand, southeast Missouri regional traffic patterns, and competition among local and regional agents serving the greater Poplar Bluff area.',
+    },
+    tips: [
+      'Verify coverage for Poplar Bluff and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  howell: {
+    marketNotes:
+      'Howell County is a major hub in South Central Missouri with strong healthcare and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Howell County pricing reflects West Plains regional demand, south central Missouri traffic patterns, and competition among local and regional agents serving the greater West Plains area.',
+    },
+    tips: [
+      'Verify coverage for West Plains and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lawrence: {
+    marketNotes:
+      'Lawrence County is a growing county in Southwest Missouri with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Lawrence County pricing reflects Mount Vernon regional demand, southwest Missouri traffic patterns, and competition among local and regional agents serving the greater Mount Vernon and Joplin spillover area.',
+    },
+    tips: [
+      'Verify coverage for Mount Vernon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  warren: {
+    marketNotes:
+      'Warren County is a growing suburban county west of St. Louis with strong residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Warren County pricing reflects west St. Louis metro suburban growth, Highway 47 corridor traffic, and competition among full-service local and regional agents serving Warrenton and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Warrenton and surrounding areas before booking.',
+      'St. Louis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood/tornado coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  scott: {
+    marketNotes:
+      'Scott County is a key Southeast Missouri county with strong logistics and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Scott County pricing reflects Sikeston logistics corridor demand, southeast Missouri regional traffic patterns, and competition among local and regional agents serving the greater Sikeston area.',
+    },
+    tips: [
+      'Verify coverage for Sikeston and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  laclede: {
+    marketNotes:
+      'Laclede County is a growing county in South Central Missouri with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Laclede County pricing reflects Lebanon regional demand, south central Missouri traffic patterns, and competition among local and regional agents serving the greater Lebanon area.',
+    },
+    tips: [
+      'Verify coverage for Lebanon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  barry: {
+    marketNotes:
+      'Barry County is a rural Southwest Missouri county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Barry County pricing reflects Cassville regional demand, southwest Missouri rural access patterns, and competition among local and regional agents serving the greater Cassville and Joplin spillover area.',
+    },
+    tips: [
+      'Verify coverage for Cassville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County is anchored by Southwest Baptist University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Polk County pricing reflects Bolivar university-town turnover, south central Missouri traffic patterns, student move seasons, and competition among local and regional agents serving the greater Bolivar area.',
+    },
+    tips: [
+      'Verify coverage for Bolivar and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lafayette: {
+    marketNotes:
+      'Lafayette County is a suburban county east of Kansas City with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Lafayette County pricing reflects east Kansas City metro suburban growth, I-70 corridor traffic, and competition among full-service local and regional agents serving Lexington and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Lexington and surrounding areas before booking.',
+      'Kansas City-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stone: {
+    marketNotes:
+      'Stone County is a scenic county near Branson with strong tourism and lakeside residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Stone County pricing reflects Branson-area tourism-season demand, lake and tourist traffic patterns, and competition among local and regional agents serving Galena, Crane, and Kimberling City.',
+    },
+    tips: [
+      'Verify coverage for Galena, Crane, and Kimberling City areas before booking.',
+      'Lake and tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is a key Northeast Missouri county with strong historical and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Marion County pricing reflects Hannibal historical corridor demand, northeast Missouri regional traffic patterns, and competition among local and regional agents serving the greater Hannibal area.',
+    },
+    tips: [
+      'Verify coverage for Hannibal and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stoddard: {
+    marketNotes:
+      'Stoddard County is a key Southeast Missouri county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Stoddard County pricing reflects Dexter agricultural corridor demand, southeast Missouri regional traffic patterns, and competition among local and regional agents serving the greater Dexter area.',
+    },
+    tips: [
+      'Verify coverage for Dexter and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dunklin: {
+    marketNotes:
+      'Dunklin County is a key Southeast Missouri county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Dunklin County pricing reflects Kennett agricultural corridor demand, southeast Missouri regional traffic patterns, and competition among local and regional agents serving the greater Kennett area.',
+    },
+    tips: [
+      'Verify coverage for Kennett and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  texas: {
+    marketNotes:
+      'Texas County is a large rural county in South Central Missouri with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Texas County pricing reflects Houston regional demand, rural south central Missouri access patterns, and competition among local and regional agents serving the greater Houston area.',
+    },
+    tips: [
+      'Verify coverage for Houston and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  miller: {
+    marketNotes:
+      'Miller County is a scenic county with strong lake-area residential and tourism demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Miller County pricing reflects Lake of the Ozarks seasonal demand, lake-area access challenges, tourist traffic patterns, and competition among local and regional agents serving Tuscumbia and Eldon.',
+    },
+    tips: [
+      'Verify coverage for Lake of the Ozarks areas before booking.',
+      'Lake and tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  adair: {
+    marketNotes:
+      'Adair County is anchored by Truman State University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Adair County pricing reflects Kirksville university-town turnover, northeast Missouri regional traffic patterns, student move seasons, and competition among local and regional agents serving the greater Kirksville area.',
+    },
+    tips: [
+      'Verify coverage for Kirksville and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getMissouriCountyResearch(
