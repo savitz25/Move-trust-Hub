@@ -154,6 +154,20 @@ const AR_HIGH_TRAFFIC_COUNTIES = new Set([
   'independence',
   'boone',
   'mississippi',
+  'union',
+  'hot-spring',
+  'carroll',
+  'johnson',
+  'cleburne',
+  'poinsett',
+  'columbia',
+  'logan',
+  'st-francis',
+  'ouachita',
+  'conway',
+  'clark',
+  'yell',
+  'polk',
 ]);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */

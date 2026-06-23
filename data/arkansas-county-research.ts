@@ -348,6 +348,244 @@ export const arkansasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  union: {
+    marketNotes:
+      'Union County is a key South Arkansas county with strong energy-industry and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Union County pricing reflects El Dorado energy-sector relocation demand, south Arkansas regional traffic, and cross-county crews from Pine Bluff and Little Rock providers.',
+    },
+    tips: [
+      'Verify coverage for El Dorado and surrounding areas before booking.',
+      'Industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'hot-spring': {
+    marketNotes:
+      'Hot Spring County is a growing county southwest of Little Rock with strong residential and industrial demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Hot Spring County pricing reflects Malvern suburban growth, Little Rock metro traffic, and cross-county crews from Hot Springs and central Arkansas providers.',
+    },
+    tips: [
+      'Verify coverage for Malvern and surrounding areas before booking.',
+      'Little Rock-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County is a scenic county in Northwest Arkansas with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects Eureka Springs and Berryville tourism demand, Ozark-area traffic, and cross-county crews from Northwest Arkansas providers.',
+    },
+    tips: [
+      'Verify coverage for Eureka Springs, Berryville, and Green Forest areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  johnson: {
+    marketNotes:
+      'Johnson County is a growing county in Northwest Arkansas with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Johnson County pricing reflects Clarksville regional demand, Ozark foothills traffic, and cross-county crews from Russellville and Little Rock providers.',
+    },
+    tips: [
+      'Verify coverage for Clarksville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  cleburne: {
+    marketNotes:
+      'Cleburne County is a scenic county with strong lake-area residential and retirement demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cleburne County pricing reflects Heber Springs lake-area and retirement demand, seasonal tourist traffic, and cross-county crews from Searcy and Conway providers.',
+    },
+    tips: [
+      'Verify coverage for Heber Springs and surrounding areas before booking.',
+      'Lake access and seasonal traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  poinsett: {
+    marketNotes:
+      'Poinsett County is a rural Northeast Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Poinsett County pricing reflects Harrisburg rural market rates, northeast Arkansas regional traffic, and cross-county crews from Jonesboro providers.',
+    },
+    tips: [
+      'Verify coverage for Harrisburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  columbia: {
+    marketNotes:
+      'Columbia County is a key South Arkansas county with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Columbia County pricing reflects Magnolia university-area demand, south Arkansas regional traffic, and cross-county crews from El Dorado and Texarkana providers.',
+    },
+    tips: [
+      'Verify coverage for Magnolia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County is a rural county in West Arkansas with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Logan County pricing reflects Paris rural market rates, west Arkansas regional traffic, and cross-county crews from Fort Smith and Russellville providers.',
+    },
+    tips: [
+      'Verify coverage for Paris and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  'st-francis': {
+    marketNotes:
+      'St. Francis County is a key East Arkansas county with strong logistics and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'St. Francis County pricing reflects Forrest City logistics and interstate demand, east Arkansas regional traffic, and cross-county crews from Memphis and Jonesboro providers.',
+    },
+    tips: [
+      'Verify coverage for Forrest City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  ouachita: {
+    marketNotes:
+      'Ouachita County is a key South Arkansas county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Ouachita County pricing reflects Camden industrial and residential demand, south Arkansas regional traffic, and cross-county crews from El Dorado and Pine Bluff providers.',
+    },
+    tips: [
+      'Verify coverage for Camden and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  conway: {
+    marketNotes:
+      'Conway County is a rural Central Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Conway County pricing reflects Morrilton rural market rates, Arkansas River valley traffic, and cross-county crews from Conway and Little Rock providers.',
+    },
+    tips: [
+      'Verify coverage for Morrilton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  clark: {
+    marketNotes:
+      'Clark County is anchored by Ouachita Baptist University and Henderson State University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Clark County pricing reflects Arkadelphia university-area demand, south central Arkansas regional traffic, and cross-county crews from Little Rock and Hot Springs providers.',
+    },
+    tips: [
+      'Verify coverage for Arkadelphia and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  yell: {
+    marketNotes:
+      'Yell County is a rural Central Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Yell County pricing reflects Danville and Dardanelle rural market rates, Arkansas River valley traffic, and cross-county crews from Russellville and Little Rock providers.',
+    },
+    tips: [
+      'Verify coverage for Danville and Dardanelle areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County is a rural West Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Polk County pricing reflects Mena rural market rates, Ouachita Mountain access challenges, and cross-county crews from Fort Smith and Texarkana providers.',
+    },
+    tips: [
+      'Verify coverage for Mena and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
 };
 
 export function getArkansasCountyResearch(

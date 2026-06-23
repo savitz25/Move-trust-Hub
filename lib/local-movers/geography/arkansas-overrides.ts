@@ -24,6 +24,20 @@ export const arkansasCountyOverrides: Partial<
   independence: { seat: 'Batesville', metro: 'batesville-metro-ar' },
   boone: { seat: 'Harrison', metro: 'harrison-metro-ar' },
   mississippi: { seat: 'Blytheville', metro: 'blytheville-metro-ar' },
+  union: { seat: 'El Dorado', metro: 'el-dorado-metro-ar' },
+  'hot-spring': { seat: 'Malvern', metro: 'malvern-metro-ar' },
+  carroll: { seat: 'Berryville', metro: 'berryville-metro-ar' },
+  johnson: { seat: 'Clarksville', metro: 'clarksville-metro-ar' },
+  cleburne: { seat: 'Heber Springs', metro: 'heber-springs-metro-ar' },
+  poinsett: { seat: 'Harrisburg', metro: 'harrisburg-metro-ar' },
+  columbia: { seat: 'Magnolia', metro: 'magnolia-metro-ar' },
+  logan: { seat: 'Paris', metro: 'paris-metro-ar' },
+  'st-francis': { seat: 'Forrest City', metro: 'forrest-city-metro-ar' },
+  ouachita: { seat: 'Camden', metro: 'camden-metro-ar' },
+  conway: { seat: 'Morrilton', metro: 'morrilton-metro-ar' },
+  clark: { seat: 'Arkadelphia', metro: 'arkadelphia-metro-ar' },
+  yell: { seat: 'Danville', metro: 'danville-metro-ar' },
+  polk: { seat: 'Mena', metro: 'mena-metro-ar' },
 };
 
 export function applyArkansasCountyOverrides(county: LocalCounty): LocalCounty {
