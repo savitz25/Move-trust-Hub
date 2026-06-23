@@ -26,6 +26,23 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    mecklenburg: {
+      marketNotes:
+        'Mecklenburg County is the most populous county in North Carolina and a major economic hub with rapid suburban and urban growth centered on Charlotte, Matthews, and Huntersville.',
+      costs: {
+        studioRange: '$800–$1,600',
+        familyRange: '$2,800–$6,200',
+        avgHourly: '$120–$175/hr for a 2-person crew',
+        note: 'Mecklenburg County pricing reflects Charlotte metro growth, Uptown and South End turnover, Matthews and Huntersville suburban demand, and heavy I-77 and I-485 traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Charlotte, Matthews, Huntersville, and Cornelius areas before booking.',
+        'Heavy Charlotte metro traffic on I-77, I-485, and US-74 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value urban and suburban homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

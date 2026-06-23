@@ -5,6 +5,7 @@ export const northCarolinaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
   wake: { seat: 'Raleigh', metro: 'raleigh-triangle-metro-nc' },
+  mecklenburg: { seat: 'Charlotte', metro: 'charlotte-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(

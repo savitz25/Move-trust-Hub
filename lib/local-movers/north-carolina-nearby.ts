@@ -10,6 +10,7 @@ const countyNameBySlug = new Map(ncCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for internal linking on NC county pages */
 const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   wake: ['durham', 'johnston', 'franklin', 'chatham', 'harnett', 'nash'],
+  mecklenburg: ['union', 'gaston', 'cabarrus', 'iredell', 'lincoln', 'rowan'],
 };
 
 export function getNorthCarolinaNearbyCounties(

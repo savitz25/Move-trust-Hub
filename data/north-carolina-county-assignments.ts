@@ -14,6 +14,18 @@ const CURATED_NC_COUNTIES: Record<string, string[]> = {
     'raleigh-moving-company-raleigh',
     'next-stop-movers-raleigh',
   ],
+  mecklenburg: [
+    'two-men-and-a-truck-charlotte-nc',
+    'college-hunks-moving-charlotte',
+    'gentle-giants-moving-charlotte',
+    'you-move-me-charlotte',
+    'suddath-charlotte',
+    'road-haugs-moving-charlotte',
+    'flex-moving-storage-charlotte',
+    'all-my-sons-charlotte-nc',
+    'move-and-go-charlotte',
+    'make-a-move-charlotte',
+  ],
 };
 
 export const northCarolinaCountyMoverAssignments: CountyMoverAssignment[] =
