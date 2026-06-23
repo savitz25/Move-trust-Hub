@@ -14,9 +14,11 @@ import {
   TENNESSEE_COUNTY_CONTENT_UPDATED,
   ALABAMA_COUNTY_CONTENT_UPDATED,
   MISSISSIPPI_COUNTY_CONTENT_UPDATED,
+  LOUISIANA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
+import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -32,6 +34,7 @@ import { getNorthCarolinaNearbyCounties } from '@/lib/local-movers/north-carolin
 import { getTennesseeNearbyCounties } from '@/lib/local-movers/tennessee-nearby';
 import { getAlabamaNearbyCounties } from '@/lib/local-movers/alabama-nearby';
 import { getMississippiNearbyCounties } from '@/lib/local-movers/mississippi-nearby';
+import { getLouisianaNearbyCounties } from '@/lib/local-movers/louisiana-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -131,7 +134,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                         : stateSlug === 'mississippi' &&
                             getMississippiCountyResearch(countySlug)
                           ? getMississippiNearbyCounties(countySlug)
-                          : [];
+                          : stateSlug === 'louisiana' &&
+                              getLouisianaCountyResearch(countySlug)
+                            ? getLouisianaNearbyCounties(countySlug)
+                            : [];
 
   return (
     <>
@@ -171,12 +177,13 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           </h1>
           {county.seat && (
             <p className="text-muted-foreground mb-3">
-              County seat: {county.seat}
+              {stateSlug === 'louisiana' ? 'Parish seat' : 'County seat'}:{' '}
+              {county.seat}
             </p>
           )}
           <p className="text-muted-foreground leading-relaxed">
-            Compare {movers.length} local moving companies serving {county.name}{' '}
-            County. Ratings, services, and FMCSA licensing — plus links to full
+            Compare {movers.length} local moving companies serving {countyLabel}.
+            Ratings, services, and FMCSA licensing — plus links to full
             profiles in our{' '}
             <Link href="/companies" className="text-primary font-medium hover:underline">
               interstate directory
@@ -191,7 +198,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           {isRegionalFallback && (
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border bg-muted/30 px-3 py-2">
               Movers listed serve the greater {county.metro?.replace(/-/g, ' ')} region
-              including {county.name} County.
+              including {countyLabel}.
             </p>
           )}
         </header>
@@ -277,7 +284,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                 : stateSlug === 'mississippi' &&
                                     getMississippiCountyResearch(countySlug)
                                   ? MISSISSIPPI_COUNTY_CONTENT_UPDATED
-                                  : undefined
+                                  : stateSlug === 'louisiana' &&
+                                      getLouisianaCountyResearch(countySlug)
+                                    ? LOUISIANA_COUNTY_CONTENT_UPDATED
+                                    : undefined
           }
         />
 

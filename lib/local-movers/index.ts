@@ -8,6 +8,7 @@ import { southCarolinaCountyMoverAssignments } from '@/data/south-carolina-count
 import { northCarolinaCountyMoverAssignments } from '@/data/north-carolina-county-assignments';
 import { alabamaCountyMoverAssignments } from '@/data/alabama-county-assignments';
 import { mississippiCountyMoverAssignments } from '@/data/mississippi-county-assignments';
+import { louisianaCountyMoverAssignments } from '@/data/louisiana-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -21,6 +22,7 @@ const MAX_MOVERS_PER_COUNTY = 10;
 const curatedAssignmentStateSlugs = new Set([
   'alabama',
   'mississippi',
+  'louisiana',
   'california',
   'florida',
   'new-jersey',
@@ -38,6 +40,7 @@ const generatedAssignmentsWithoutCurated = generatedCountyAssignments.filter(
 const allCountyAssignments = [
   ...alabamaCountyMoverAssignments,
   ...mississippiCountyMoverAssignments,
+  ...louisianaCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,

@@ -11,6 +11,9 @@ export function buildCountyLabel(county: LocalCounty): string {
   if (COUNTY_SUFFIX_PATTERN.test(county.name)) {
     return county.name;
   }
+  if (county.stateSlug === 'louisiana') {
+    return `${county.name} Parish`;
+  }
   return `${county.name} County`;
 }
 
