@@ -5,6 +5,10 @@ export const alabamaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
   jefferson: { seat: 'Birmingham', metro: 'birmingham-metro-al' },
+  baldwin: { seat: 'Bay Minette', metro: 'baldwin-coastal-al' },
+  tuscaloosa: { seat: 'Tuscaloosa', metro: 'tuscaloosa-metro-al' },
+  shelby: { seat: 'Columbiana', metro: 'birmingham-metro-al' },
+  montgomery: { seat: 'Montgomery', metro: 'montgomery-metro-al' },
 };
 
 export function applyAlabamaCountyOverrides(county: LocalCounty): LocalCounty {

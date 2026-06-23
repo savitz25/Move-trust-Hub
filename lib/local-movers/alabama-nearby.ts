@@ -12,6 +12,10 @@ const countyNameBySlug = new Map(alabamaCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated AL county pages — expands as counties are researched */
 const AL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   jefferson: ['shelby', 'blount', 'walker', 'tuscaloosa', 'bibb', 'st-clair'],
+  baldwin: ['mobile', 'escambia', 'conecuh', 'monroe', 'clarke', 'washington'],
+  tuscaloosa: ['jefferson', 'bibb', 'hale', 'greene', 'pickens', 'fayette'],
+  shelby: ['jefferson', 'chilton', 'coosa', 'talladega', 'st-clair', 'bibb'],
+  montgomery: ['elmore', 'autauga', 'lowndes', 'macon', 'bullock', 'crenshaw'],
 };
 
 export function getAlabamaNearbyCounties(

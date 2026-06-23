@@ -114,7 +114,13 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic AL counties — sitemap priority 0.85 */
-const AL_HIGH_TRAFFIC_COUNTIES = new Set(['jefferson']);
+const AL_HIGH_TRAFFIC_COUNTIES = new Set([
+  'jefferson',
+  'baldwin',
+  'tuscaloosa',
+  'shelby',
+  'montgomery',
+]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */
 const TN_HIGH_TRAFFIC_COUNTIES = new Set([
