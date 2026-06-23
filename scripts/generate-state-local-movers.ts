@@ -17,6 +17,7 @@ const OUT_DIR = path.join(ROOT, 'data/generated/states');
 
 const SKIP_STATES = new Set([
   'alabama',
+  'mississippi',
   'california',
   'florida',
   'new-jersey',

@@ -13,8 +13,10 @@ import {
   NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   TENNESSEE_COUNTY_CONTENT_UPDATED,
   ALABAMA_COUNTY_CONTENT_UPDATED,
+  MISSISSIPPI_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
+import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -29,6 +31,7 @@ import { getSouthCarolinaNearbyCounties } from '@/lib/local-movers/south-carolin
 import { getNorthCarolinaNearbyCounties } from '@/lib/local-movers/north-carolina-nearby';
 import { getTennesseeNearbyCounties } from '@/lib/local-movers/tennessee-nearby';
 import { getAlabamaNearbyCounties } from '@/lib/local-movers/alabama-nearby';
+import { getMississippiNearbyCounties } from '@/lib/local-movers/mississippi-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -125,7 +128,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                       : stateSlug === 'alabama' &&
                           getAlabamaCountyResearch(countySlug)
                         ? getAlabamaNearbyCounties(countySlug)
-                        : [];
+                        : stateSlug === 'mississippi' &&
+                            getMississippiCountyResearch(countySlug)
+                          ? getMississippiNearbyCounties(countySlug)
+                          : [];
 
   return (
     <>
@@ -268,7 +274,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                               : stateSlug === 'alabama' &&
                                   getAlabamaCountyResearch(countySlug)
                                 ? ALABAMA_COUNTY_CONTENT_UPDATED
-                                : undefined
+                                : stateSlug === 'mississippi' &&
+                                    getMississippiCountyResearch(countySlug)
+                                  ? MISSISSIPPI_COUNTY_CONTENT_UPDATED
+                                  : undefined
           }
         />
 

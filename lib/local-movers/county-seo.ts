@@ -14,6 +14,8 @@ import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-res
 import { getNorthCarolinaCountyTestimonials } from '@/data/north-carolina-county-testimonials';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getAlabamaCountyTestimonials } from '@/data/alabama-county-testimonials';
+import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
+import { getMississippiCountyTestimonials } from '@/data/mississippi-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -105,6 +107,7 @@ export function buildStateDescription(
     stateName === 'North Carolina' ||
     stateName === 'Tennessee' ||
     stateName === 'Alabama' ||
+    stateName === 'Mississippi' ||
     stateName === 'Texas'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';
@@ -198,6 +201,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'alabama') {
     return getAlabamaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'mississippi') {
+    return getMississippiCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -243,6 +249,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'alabama') {
     const curated = getAlabamaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'mississippi') {
+    const curated = getMississippiCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -325,6 +335,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getAlabamaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'mississippi') {
+    const curated = getMississippiCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -390,6 +404,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'alabama') {
     const curated = getAlabamaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'mississippi') {
+    const curated = getMississippiCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

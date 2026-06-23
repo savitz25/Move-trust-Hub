@@ -7,6 +7,7 @@ import {
   NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   TENNESSEE_COUNTY_CONTENT_UPDATED,
   ALABAMA_COUNTY_CONTENT_UPDATED,
+  MISSISSIPPI_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -111,6 +112,15 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
   'union',
   'wake',
   'wayne',
+]);
+
+/** High-traffic MS counties — sitemap priority 0.85 */
+const MS_HIGH_TRAFFIC_COUNTIES = new Set([
+  'harrison',
+  'hinds',
+  'desoto',
+  'rankin',
+  'jackson',
 ]);
 
 /** High-traffic AL counties — sitemap priority 0.85 */
@@ -224,7 +234,9 @@ export default async function sitemap({
                       ? new Date(TENNESSEE_COUNTY_CONTENT_UPDATED)
                       : id === 'alabama'
                         ? new Date(ALABAMA_COUNTY_CONTENT_UPDATED)
-                        : new Date();
+                        : id === 'mississippi'
+                          ? new Date(MISSISSIPPI_COUNTY_CONTENT_UPDATED)
+                          : new Date();
 
   return [
     {
@@ -255,7 +267,8 @@ export default async function sitemap({
         (id === 'south-carolina' && SC_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'north-carolina' && NC_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'tennessee' && TN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'alabama' && AL_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'alabama' && AL_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'mississippi' && MS_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
