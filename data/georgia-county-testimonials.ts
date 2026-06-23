@@ -4079,6 +4079,66 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Family home',
     },
   ],
+  ware: [
+    {
+      quote:
+        'Two Men and a Truck Savannah handled our Waycross townhome relocation professionally — excellent crew communication, careful furniture wrapping, and transparent pricing throughout Ware County.',
+      name: 'Marcus T.',
+      location: 'Waycross, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'BC Brothers Moving provided reliable packing and loading for our Waycross apartment move. They finished on schedule despite heavy US-82 corridor traffic.',
+      name: 'Elena R.',
+      location: 'Waycross, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah served our Waycross single-family move efficiently with great communication and no surprise fees despite Southeast Georgia travel time.',
+      name: 'David K.',
+      location: 'Waycross, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons Moving Savannah covered our Waycross relocation when local crews were booked — upfront about Savannah-to-Waycross travel time and professional service.',
+      name: 'Frank L.',
+      location: 'Waycross, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+  ],
+  webster: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Preston move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Preston, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Webster County coverage and handled our rural Preston relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Preston, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Preston move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Preston, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

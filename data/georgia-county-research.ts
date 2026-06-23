@@ -2668,6 +2668,40 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Valdosta and Albany-area crews.',
     ],
   },
+  ware: {
+    marketNotes:
+      'Ware County centers on Waycross in Southeast Georgia with steady residential turnover across the coastal-plain corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Ware County pricing reflects Waycross suburban demand, Southeast Georgia crew travel from Savannah bases, and US-82 corridor scheduling.',
+    },
+    tips: [
+      'Verify explicit coverage for Waycross and surrounding Ware County addresses before booking.',
+      'Local traffic on US-82 and Waycross thoroughfares impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Savannah and Southeast Georgia crews.',
+    ],
+  },
+  webster: {
+    marketNotes:
+      'Webster County is one of the smallest and most rural counties in Southwest Georgia with Preston as the seat.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Webster County pricing reflects extremely remote rural access and travel from Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Preston and outer Webster properties.',
+      'Verify explicit regional service to Preston before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

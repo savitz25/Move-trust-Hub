@@ -160,6 +160,8 @@ export const georgiaCountyOverrides: Partial<
   taylor: { seat: 'Butler', metro: 'macon-metro-ga' },
   terrell: { seat: 'Dawson', metro: 'albany-metro-ga' },
   tift: { seat: 'Tifton', metro: 'valdosta-metro-ga' },
+  ware: { seat: 'Waycross', metro: 'savannah-metro-ga' },
+  webster: { seat: 'Preston', metro: 'albany-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {
