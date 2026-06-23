@@ -186,7 +186,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   rockdale: {
     marketNotes:
-      'Rockdale County is an east-metro suburb with Conyers serving I-20 corridor families and commuters between Atlanta and Covington.',
+      'Rockdale County is a suburban county east of Atlanta with Conyers as the seat and steady I-20 corridor family relocations.',
     costs: {
       studioRange: '$600–$1,200',
       familyRange: '$2,000–$4,500',
@@ -237,7 +237,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   barrow: {
     marketNotes:
-      'Barrow County is a northeast Atlanta suburb with Winder and Auburn serving commuters between Gwinnett and Athens with steady residential moving demand.',
+      'Barrow County is a suburban county northeast of Atlanta with Winder as the seat and commuter demand from Gwinnett and Athens corridors.',
     costs: {
       studioRange: '$600–$1,200',
       familyRange: '$2,000–$4,500',
@@ -528,7 +528,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   jackson: {
     marketNotes:
-      'Jackson County is a rural and suburban northeast-metro county with Jefferson as the seat and I-85 corridor growth.',
+      'Jackson County is a rural and suburban county northeast of Atlanta with Jefferson as the seat and I-85 corridor growth.',
     costs: {
       studioRange: '$600–$1,200+',
       familyRange: '$2,000–$4,800',
@@ -681,7 +681,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   whitfield: {
     marketNotes:
-      'Whitfield County centers on Dalton, known as the Carpet Capital of the World, with industrial and residential moving demand.',
+      'Whitfield County centers on Dalton, known as the Carpet Capital of the World, with significant industrial and residential activity.',
     costs: {
       studioRange: '$550–$1,100',
       familyRange: '$1,900–$4,200',
