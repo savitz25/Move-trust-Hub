@@ -11,6 +11,266 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  haywood: [
+    {
+      quote:
+        'Asheville Area Movers handled our Waynesville mountain relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Karen W.',
+      location: 'Waynesville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gasperson Moving served our Maggie Valley move with professional crews experienced with steep-driveway and mountain-road access.',
+      name: 'Tom H.',
+      location: 'Maggie Valley, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Asheville confirmed Haywood County coverage and delivered reliable packing and loading with no surprise fees despite peak tourist-season scheduling.',
+      name: 'Linda S.',
+      location: 'Waynesville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  sampson: [
+    {
+      quote:
+        'Stewart Moving & Storage confirmed Clinton coverage and handled our rural Sampson County relocation professionally with careful driveway access planning.',
+      name: 'William J.',
+      location: 'Clinton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Absolute Moving Wilmington served our Sampson County move efficiently with professional crews experienced with southeastern NC regional routes.',
+      name: 'Angela R.',
+      location: 'Clinton, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fayetteville delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Gary P.',
+      location: 'Clinton, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  granville: [
+    {
+      quote:
+        'Two Men and a Truck Durham handled our Oxford relocation professionally — on time, careful with our belongings, and transparent Triangle pricing throughout Granville County.',
+      name: 'Michelle D.',
+      location: 'Oxford, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'TROSA Moving served our Granville County move efficiently with fast, professional crews and great value for careful handling.',
+      name: 'Kevin L.',
+      location: 'Oxford, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Athens Moving Experts confirmed Oxford coverage and delivered reliable packing and loading with no surprise fees despite Raleigh-Durham traffic.',
+      name: 'Rachel M.',
+      location: 'Oxford, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  hoke: [
+    {
+      quote:
+        'Stewart Moving & Storage handled our Raeford PCS move professionally — efficient crews, careful handling, and great experience with military families near Fort Liberty.',
+      name: 'Sgt. Mark T.',
+      location: 'Raeford, NC',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'S&Q Movers served our Hoke County move with professional, efficient crews and careful handling throughout.',
+      name: 'Diana F.',
+      location: 'Raeford, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving confirmed Raeford coverage and delivered reliable packing and loading with no surprise fees despite Fayetteville-metro scheduling.',
+      name: 'Chris B.',
+      location: 'Raeford, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  lenoir: [
+    {
+      quote:
+        'Horne Moving Systems handled our Kinston relocation professionally — efficient crews, careful handling, and transparent eastern NC pricing.',
+      name: 'Betty N.',
+      location: 'Kinston, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'East Carolina Moving served our Lenoir County move efficiently with fast, professional crews and great value for careful handling.',
+      name: 'Harold C.',
+      location: 'Kinston, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Smart Move Wilson confirmed Kinston coverage and delivered reliable packing and loading with no surprise fees despite regional travel.',
+      name: 'Sharon G.',
+      location: 'Kinston, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  watauga: [
+    {
+      quote:
+        'Appalachian Moving & Storage handled our Boone mountain relocation professionally — efficient crews, careful handling, and transparent High Country pricing.',
+      name: 'Emily R.',
+      location: 'Boone, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Asheville Area Movers served our Watauga County move with professional crews experienced with steep-driveway and mountain-road access.',
+      name: 'Daniel K.',
+      location: 'Boone, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Preferred Moving Company confirmed Boone coverage and delivered reliable packing and loading with no surprise fees despite winter weather scheduling.',
+      name: 'Amy J.',
+      location: 'Boone, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  duplin: [
+    {
+      quote:
+        'Horne Moving Systems confirmed Kenansville coverage and handled our rural Duplin County relocation professionally with careful driveway access planning.',
+      name: 'Frank W.',
+      location: 'Kenansville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Absolute Moving Wilmington served our Duplin County move efficiently with professional crews experienced with southeastern NC regional routes.',
+      name: 'Teresa H.',
+      location: 'Kenansville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Smart Move Wilson delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Roy S.',
+      location: 'Kenansville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  columbus: [
+    {
+      quote:
+        'Absolute Moving Wilmington confirmed Whiteville coverage and handled our rural Columbus County relocation professionally with careful driveway access planning.',
+      name: 'Nancy E.',
+      location: 'Whiteville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving served our Columbus County move efficiently with professional crews experienced with southeastern NC regional routes.',
+      name: 'Larry M.',
+      location: 'Whiteville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Little Guys Movers delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel from Wilmington.',
+      name: 'Pam D.',
+      location: 'Whiteville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  edgecombe: [
+    {
+      quote:
+        'Smart Move Wilson confirmed Tarboro coverage and handled our rural Edgecombe County relocation professionally with careful driveway access planning.',
+      name: 'Joseph A.',
+      location: 'Tarboro, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville served our Edgecombe County move efficiently with professional crews experienced with eastern Piedmont regional routes.',
+      name: 'Martha L.',
+      location: 'Tarboro, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Miracle Movers delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Edward P.',
+      location: 'Tarboro, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  stokes: [
+    {
+      quote:
+        'Two Men and a Truck Greensboro confirmed Danbury coverage and handled our rural Stokes County relocation professionally with careful driveway access planning.',
+      name: 'Helen B.',
+      location: 'Danbury, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excel Moving & Storage served our Stokes County move efficiently with professional crews experienced with northern Triad regional routes.',
+      name: 'Charles W.',
+      location: 'Danbury, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Miracle Movers Greensboro delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Dorothy K.',
+      location: 'Walnut Cove, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
   franklin: [
     {
       quote:

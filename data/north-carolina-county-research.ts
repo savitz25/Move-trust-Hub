@@ -757,6 +757,176 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    haywood: {
+      marketNotes:
+        'Haywood County is a scenic mountain county with strong tourism, retirement, and residential demand centered on Waynesville and Maggie Valley.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Haywood County pricing reflects Asheville-metro mountain spillover, tourism-season volume, steep-driveway access, and US-74 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Waynesville and Maggie Valley areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    sampson: {
+      marketNotes:
+        'Sampson County is a rural agricultural county with growing residential demand centered on Clinton between Fayetteville and Wilmington.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,300',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Sampson County pricing reflects rural access logistics, limited local carrier availability, and Fayetteville- and Wilmington-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Sampson County roads and longer regional routes.',
+        'Verify explicit regional service to Clinton and surrounding Sampson County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    granville: {
+      marketNotes:
+        'Granville County is a growing county north of Durham with strong residential and industrial demand centered on Oxford.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Granville County pricing reflects Raleigh-Durham northward suburban growth, Oxford industrial corridor demand, and US-15 and I-85 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Oxford and surrounding Granville County areas before booking.',
+        'Raleigh-Durham traffic on I-85, US-15, and US-1 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    hoke: {
+      marketNotes:
+        'Hoke County is a growing county near Fort Liberty with strong military and residential demand centered on Raeford.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Hoke County pricing reflects Fort Liberty military relocation volume, Raeford suburban growth, and Fayetteville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Raeford and surrounding Hoke County areas before booking.',
+        'Military moves require specific experience — confirm PCS handling, storage, and scheduling flexibility.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    lenoir: {
+      marketNotes:
+        'Lenoir County is an eastern North Carolina county with agricultural and residential demand centered on Kinston.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Lenoir County pricing reflects eastern NC rural access, Kinston suburban turnover, and Goldsboro- and Greenville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Kinston and surrounding Lenoir County areas before booking.',
+        'Rural access challenges are common — confirm crew familiarity with Lenoir County roads and longer regional routes.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    watauga: {
+      marketNotes:
+        'Watauga County is a mountain county with strong tourism, university (Appalachian State), and retirement demand centered on Boone.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,800',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Watauga County pricing reflects High Country mountain-road access, Appalachian State student turnover, peak tourist-season volume, and winter weather scheduling.',
+      },
+      tips: [
+        'Verify explicit coverage for Boone and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and university move-in/move-out windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    duplin: {
+      marketNotes:
+        'Duplin County is a rural agricultural county with growing residential demand centered on Kenansville between Wilmington and Goldsboro.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Duplin County pricing reflects rural access logistics, limited local carrier availability, and Wilmington- and Goldsboro-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Duplin County roads and longer regional routes.',
+        'Verify explicit regional service to Kenansville and surrounding Duplin County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    columbus: {
+      marketNotes:
+        'Columbus County is a rural southeastern county with agricultural and residential demand centered on Whiteville near the Wilmington metro.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Columbus County pricing reflects rural access logistics, limited local carrier availability, and Wilmington-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Columbus County roads and longer regional routes.',
+        'Verify explicit regional service to Whiteville and surrounding Columbus County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    edgecombe: {
+      marketNotes:
+        'Edgecombe County is a rural county with residential and agricultural demand centered on Tarboro near Rocky Mount.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Edgecombe County pricing reflects eastern Piedmont rural access, Tarboro suburban turnover, and Rocky Mount-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Edgecombe County roads and longer regional routes.',
+        'Verify explicit regional service to Tarboro and surrounding Edgecombe County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    stokes: {
+      marketNotes:
+        'Stokes County is a rural county in the northern Piedmont Triad with scenic residential demand centered on Danbury and Walnut Cove.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Stokes County pricing reflects northern Triad rural access, scenic residential turnover, and Greensboro-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Stokes County roads and longer regional routes.',
+        'Verify explicit regional service to Danbury and surrounding Stokes County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

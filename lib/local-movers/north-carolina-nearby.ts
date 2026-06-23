@@ -53,6 +53,16 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   stanly: ['cabarrus', 'union', 'davidson', 'montgomery', 'anson', 'rowan'],
   wilkes: ['surry', 'alexander', 'iredell', 'caldwell', 'watauga', 'alleghany'],
   rutherford: ['buncombe', 'mcdowell', 'cleveland', 'henderson', 'polk', 'burke'],
+  haywood: ['buncombe', 'jackson', 'macon', 'swain', 'transylvania', 'madison'],
+  sampson: ['cumberland', 'hoke', 'johnston', 'duplin', 'bladen', 'columbus'],
+  granville: ['durham', 'vance', 'franklin', 'wake', 'person', 'orange'],
+  hoke: ['cumberland', 'robeson', 'scotland', 'moore', 'lee', 'sampson'],
+  lenoir: ['wayne', 'greene', 'pitt', 'jones', 'craven', 'duplin'],
+  watauga: ['avery', 'caldwell', 'wilkes', 'ashe', 'surry'],
+  duplin: ['sampson', 'onslow', 'pender', 'lenoir', 'wayne', 'new-hanover'],
+  columbus: ['bladen', 'brunswick', 'robeson', 'pender', 'new-hanover', 'sampson'],
+  edgecombe: ['nash', 'wilson', 'pitt', 'halifax', 'martin', 'bertie'],
+  stokes: ['surry', 'forsyth', 'rockingham', 'guilford', 'davie', 'davidson'],
 };
 
 export function getNorthCarolinaNearbyCounties(

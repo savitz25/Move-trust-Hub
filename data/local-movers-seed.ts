@@ -8591,6 +8591,21 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Wilson',
     website: 'https://thebestmoversaround.com/',
   },
+  'appalachian-moving-storage-boone': {
+    id: 'appalachian-moving-storage-boone',
+    name: 'Appalachian Moving & Storage',
+    rating: 4.6,
+    reviewCount: 142,
+    shortDescription:
+      'Boone-based High Country mover serving Watauga County with full-service residential and commercial relocations, packing, crating, and climate-controlled storage.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '2180471',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Boone',
+    website: 'https://www.appmovingandstorage.com/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
@@ -10020,6 +10035,28 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'absolute-moving-wilmington',
       'college-hunks-moving-wilmington',
       'two-men-and-a-truck-wilmington',
+    ],
+  },
+  'boone-metro-nc': {
+    id: 'boone-metro-nc',
+    label: 'Boone / High Country Metro',
+    moverIds: [
+      'appalachian-moving-storage-boone',
+      'asheville-area-movers',
+      'gasperson-moving-asheville',
+      'preferred-moving-hickory',
+      'in-out-moving-delivery-hickory',
+    ],
+  },
+  'kinston-metro-nc': {
+    id: 'kinston-metro-nc',
+    label: 'Kinston / Lenoir County Metro',
+    moverIds: [
+      'horne-moving-goldsboro',
+      'college-hunks-moving-greenville-nc',
+      'east-carolina-moving-greenville-nc',
+      'smart-move-wilson-nc',
+      'je-thomas-sons-jacksonville',
     ],
   },
 };

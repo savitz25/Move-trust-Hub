@@ -48,6 +48,16 @@ export const northCarolinaCountyOverrides: Partial<
   stanly: { seat: 'Albemarle', metro: 'charlotte-metro-nc' },
   wilkes: { seat: 'Wilkesboro', metro: 'hickory-lenoir-metro-nc' },
   rutherford: { seat: 'Rutherfordton', metro: 'hickory-lenoir-metro-nc' },
+  haywood: { seat: 'Waynesville', metro: 'asheville-metro-nc' },
+  sampson: { seat: 'Clinton', metro: 'fayetteville-metro-nc' },
+  granville: { seat: 'Oxford', metro: 'durham-chapel-hill-metro-nc' },
+  hoke: { seat: 'Raeford', metro: 'fayetteville-metro-nc' },
+  lenoir: { seat: 'Kinston', metro: 'kinston-metro-nc' },
+  watauga: { seat: 'Boone', metro: 'boone-metro-nc' },
+  duplin: { seat: 'Kenansville', metro: 'goldsboro-metro-nc' },
+  columbus: { seat: 'Whiteville', metro: 'wilmington-metro-nc' },
+  edgecombe: { seat: 'Tarboro', metro: 'rocky-mount-metro-nc' },
+  stokes: { seat: 'Danbury', metro: 'greensboro-high-point-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(
