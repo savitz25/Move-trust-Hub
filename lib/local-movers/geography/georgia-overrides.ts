@@ -21,6 +21,9 @@ export const georgiaCountyOverrides: Partial<
   newton: { seat: 'Covington', metro: 'atlanta-metro-ga' },
   hall: { seat: 'Gainesville', metro: 'atlanta-metro-ga' },
   walton: { seat: 'Monroe', metro: 'atlanta-metro-ga' },
+  chatham: { seat: 'Savannah', metro: 'savannah-metro-ga' },
+  richmond: { seat: 'Augusta', metro: 'augusta-metro-ga' },
+  muscogee: { seat: 'Columbus', metro: 'columbus-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

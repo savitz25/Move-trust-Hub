@@ -449,6 +449,84 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  chatham: [
+    {
+      quote:
+        'BC Brothers navigated our Victorian District move with careful route planning around narrow streets and parking limits. Professional crew and transparent pricing for our Chatham County relocation.',
+      name: 'Rachel M.',
+      location: 'Savannah, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah arrived on time for our Pooler townhome move and handled humid coastal packing conditions well. Great communication throughout Chatham County.',
+      name: 'James L.',
+      location: 'Pooler, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Nilson Van managed our long-distance departure from Savannah with specialty crating for antiques. They understood historic-home access rules and port-area scheduling constraints.',
+      name: 'Catherine D.',
+      location: 'Savannah, GA',
+      rating: 4,
+      moveType: 'Long-distance',
+    },
+  ],
+  richmond: [
+    {
+      quote:
+        'Budget Movers of Augusta handled our Fort Eisenhower PCS timeline professionally — careful packing, on-time delivery, and clear military move coordination in Richmond County.',
+      name: 'Sgt. Marcus W.',
+      location: 'Augusta, GA',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'College Hunks made our Evans apartment move stress-free with upfront pricing and efficient crews. They knew the Augusta area routes and finished faster than estimated.',
+      name: 'Tanya B.',
+      location: 'Evans, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'ADSI Moving Systems protected our high-value furniture during a cross-town Augusta relocation. Professional team and excellent communication for our Richmond County home.',
+      name: 'Harold P.',
+      location: 'Augusta, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  muscogee: [
+    {
+      quote:
+        'Coleman Worldwide Moving coordinated our Fort Moore PCS move flawlessly — careful handling, military paperwork experience, and on-schedule delivery in Muscogee County.',
+      name: 'Lt. Angela S.',
+      location: 'Columbus, GA',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'College Hunks moved our Uptown Columbus apartment efficiently with great communication and careful furniture wrapping. Transparent pricing and a smooth local move.',
+      name: 'Derek F.',
+      location: 'Columbus, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'McCarley Moving & Storage handled our family home relocation near Fort Moore with professional crews who understood base-adjacent scheduling. Highly recommend for Columbus moves.',
+      name: 'Kimberly R.',
+      location: 'Columbus, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

@@ -28,6 +28,9 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   newton: ['rockdale', 'walton', 'morgan', 'jasper', 'henry', 'butts'],
   hall: ['gwinnett', 'forsyth', 'banks', 'lumpkin', 'white', 'jackson'],
   walton: ['gwinnett', 'rockdale', 'newton', 'morgan', 'oconee', 'barrow'],
+  chatham: ['bryan', 'effingham', 'liberty', 'bulloch', 'screven', 'jasper'],
+  richmond: ['columbia', 'mcduffie', 'jefferson', 'burke', 'glascock', 'warren'],
+  muscogee: ['harris', 'talbot', 'chattahoochee', 'stewart', 'marion', 'schley'],
 };
 
 export function getGeorgiaNearbyCounties(

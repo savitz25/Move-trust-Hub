@@ -303,6 +303,59 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple written estimates and confirm HOA move paperwork.',
     ],
   },
+  chatham: {
+    marketNotes:
+      'Chatham County centers on Savannah with historic districts, port activity, and coastal residential moves across Pooler, Richmond Hill, and Tybee-adjacent communities.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Chatham County pricing reflects historic-district access limits, tourist-season demand, and coastal humidity considerations for sensitive items.',
+    },
+    tips: [
+      'Historic district parking and access restrictions apply — confirm truck routes and loading zones before move day.',
+      'Verify coverage for Savannah, Pooler, Port Wentworth, and surrounding Chatham communities.',
+      'Confirm insurance and valuation for high-value historic homes and antiques.',
+      'Book early for peak tourist seasons (spring and fall) and SCAD move-in windows.',
+      'Obtain multiple written estimates and compare flat-rate vs. hourly pricing.',
+      'Consider coastal humidity when packing artwork, documents, and wood furniture.',
+      'Check flood zone requirements and ground-floor moisture risks for storage and loading.',
+    ],
+  },
+  richmond: {
+    marketNotes:
+      'Richmond County centers on Augusta with military demand from Fort Eisenhower, historic residential moves, and CSRA spillover into Evans and Grovetown.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Richmond County pricing reflects military PCS timelines, I-20 corridor traffic, and mixed suburban and historic Augusta neighborhoods.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm PCS paperwork familiarity and delivery windows.',
+      'Verify coverage for Augusta, Evans, Grovetown, and surrounding Richmond County addresses.',
+      'Confirm insurance for high-value homes and specialty items before booking.',
+      'Book early for peak seasons and month-end lease turnover near Fort Eisenhower.',
+      'Obtain multiple written estimates and ask about travel fees for outer Richmond addresses.',
+    ],
+  },
+  muscogee: {
+    marketNotes:
+      'Muscogee County centers on Columbus with significant military activity from Fort Moore, suburban growth along I-185, and steady residential turnover.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Muscogee moves often involve military household goods coordination, Uptown Columbus access, and I-185 corridor scheduling.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm familiarity with Fort Moore timelines and base access rules.',
+      'Verify coverage for Columbus, Fort Moore-adjacent housing, and surrounding Muscogee communities.',
+      'Confirm insurance for high-value homes and ask about specialty handling for antiques.',
+      'Book early for peak seasons and PCS-driven demand windows.',
+      'Obtain multiple written estimates and compare hourly vs. flat-rate pricing.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(
