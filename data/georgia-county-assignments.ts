@@ -150,6 +150,80 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'allied-van-lines-columbus',
     'all-my-sons-columbus',
   ],
+  pickens: [
+    'atlanta-home-movers',
+    'two-men-and-a-truck-atlanta',
+    'bulldog-movers-atlanta',
+  ],
+  bartow: [
+    'atlanta-home-movers',
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'zip-moving-atlanta',
+  ],
+  spalding: [
+    'wirks-moving-atlanta',
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'mark-the-mover-atlanta',
+  ],
+  butts: [
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'wirks-moving-atlanta',
+  ],
+  carroll: [
+    'wirks-moving-atlanta',
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'zip-moving-atlanta',
+  ],
+  dawson: [
+    'atlanta-home-movers',
+    'two-men-and-a-truck-atlanta',
+    'bulldog-movers-atlanta',
+  ],
+  lumpkin: [
+    'bulldog-movers-atlanta',
+    'two-men-and-a-truck-atlanta',
+    'atlanta-home-movers',
+  ],
+  morgan: [
+    'university-moving-athens',
+    'two-men-and-a-truck-athens',
+    'two-men-and-a-truck-atlanta',
+  ],
+  oconee: [
+    'university-moving-athens',
+    'two-men-and-a-truck-athens',
+    'two-men-and-a-truck-atlanta',
+    'zip-moving-atlanta',
+  ],
+  jackson: [
+    'two-men-and-a-truck-atlanta',
+    'bulldog-movers-atlanta',
+    'zip-moving-atlanta',
+  ],
+  haralson: [
+    'wirks-moving-atlanta',
+    'zip-moving-atlanta',
+    'two-men-and-a-truck-atlanta',
+  ],
+  polk: [
+    'atlanta-home-movers',
+    'two-men-and-a-truck-atlanta',
+    'zip-moving-atlanta',
+  ],
+  heard: [
+    'wirks-moving-atlanta',
+    'mark-the-mover-atlanta',
+    'two-men-and-a-truck-atlanta',
+  ],
+  meriwether: [
+    'mark-the-mover-atlanta',
+    'two-men-and-a-truck-columbus',
+    'all-my-sons-atlanta',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

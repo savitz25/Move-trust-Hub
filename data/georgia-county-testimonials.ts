@@ -527,6 +527,370 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  pickens: [
+    {
+      quote:
+        'Atlanta Home Movers confirmed mountain-road access for our Jasper relocation before move day. Careful crew and transparent travel pricing for our Pickens County home.',
+      name: 'Brian S.',
+      location: 'Jasper, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta navigated narrow driveway access and finished our north Georgia move ahead of schedule. Professional handling throughout.',
+      name: 'Linda K.',
+      location: 'Talking Rock, GA',
+      rating: 5,
+      moveType: 'Mountain home',
+    },
+    {
+      quote:
+        'Bulldog Movers served our Pickens County move from their north-metro base with upfront communication about rural travel time. Great experience.',
+      name: 'Scott M.',
+      location: 'Jasper, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  bartow: [
+    {
+      quote:
+        'Atlanta Home Movers handled our Cartersville lake-area move efficiently — careful with large furniture and clear I-75 corridor scheduling.',
+      name: 'Amanda R.',
+      location: 'Cartersville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons moved our Bartow County townhome without surprise fees. Professional crew and good communication despite Atlanta traffic delays.',
+      name: 'Chris D.',
+      location: 'Cartersville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Zip Moving gave us a flat-rate quote for our Emerson relocation and delivered on time. Solid option for northwest Atlanta ring moves.',
+      name: 'Heather W.',
+      location: 'Emerson, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  spalding: [
+    {
+      quote:
+        'Wirks Moving made our Griffin relocation seamless — professional packing, on-time arrival, and careful handling through our historic neighborhood.',
+      name: 'Daniel P.',
+      location: 'Griffin, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mark the Mover handled our Spalding County apartment move with excellent communication and no hidden fees despite I-75 traffic.',
+      name: 'Jasmine L.',
+      location: 'Griffin, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta served our south-metro Griffin move efficiently. Upfront about travel time and great crew professionalism.',
+      name: 'Robert G.',
+      location: 'Griffin, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  butts: [
+    {
+      quote:
+        'Two Men and a Truck Atlanta traveled to our Jackson home and handled rural driveway access without issues. Careful crew and clear pricing.',
+      name: 'Nancy H.',
+      location: 'Jackson, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Wirks Moving confirmed service to our Butts County address upfront and delivered a stress-free rural relocation from their Atlanta base.',
+      name: 'Tim C.',
+      location: 'Jackson, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'All My Sons provided reliable service for our south-metro move into Butts County. Professional handling and good communication throughout.',
+      name: 'Karen B.',
+      location: 'Flovilla, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  carroll: [
+    {
+      quote:
+        'Wirks Moving handled our Carrollton university-area move with professional crews and careful furniture wrapping. Transparent pricing throughout.',
+      name: 'Megan T.',
+      location: 'Carrollton, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Zip Moving gave us a clear flat-rate quote for our Villa Rica relocation and finished on schedule despite I-20 west traffic.',
+      name: 'Jason N.',
+      location: 'Villa Rica, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons moved our Carroll County family home efficiently — HOA rules followed and no surprise travel fees from the Atlanta base.',
+      name: 'Sandra E.',
+      location: 'Carrollton, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  dawson: [
+    {
+      quote:
+        'Atlanta Home Movers confirmed mountain-road feasibility for our Dawsonville move before booking. Careful crew and excellent communication.',
+      name: 'Paul J.',
+      location: 'Dawsonville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bulldog Movers served our Dawson County relocation from their north-metro base with upfront travel-time estimates and professional handling.',
+      name: 'Rita F.',
+      location: 'Dawsonville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta navigated GA-400 north traffic smartly and finished our mountain-area move on time. Highly recommend.',
+      name: 'Greg A.',
+      location: 'Dawsonville, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  lumpkin: [
+    {
+      quote:
+        'Bulldog Movers handled our Dahlonega relocation with careful attention to mountain-road logistics. Professional crew and clear pricing.',
+      name: 'Emily C.',
+      location: 'Dahlonega, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Atlanta Home Movers served our Lumpkin County move from their north-metro base — upfront about travel fees and excellent furniture protection.',
+      name: 'William O.',
+      location: 'Dahlonega, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta made our gold-country move manageable despite narrow access roads. Great communication throughout.',
+      name: 'Laura V.',
+      location: 'Dahlonega, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  morgan: [
+    {
+      quote:
+        'University Moving and Storage handled our Madison historic-home relocation with specialty care for antiques. Excellent Athens-area expertise.',
+      name: 'Charles M.',
+      location: 'Madison, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Morgan County move efficiently with clear communication and careful handling of rural property access.',
+      name: 'Diana S.',
+      location: 'Madison, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta covered our east-metro Morgan move when Athens crews were booked — upfront about travel time and professional service.',
+      name: 'Frank L.',
+      location: 'Madison, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  oconee: [
+    {
+      quote:
+        'University Moving and Storage made our Watkinsville relocation stress-free — careful with high-value furniture and excellent Athens-corridor knowledge.',
+      name: 'Olivia R.',
+      location: 'Watkinsville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens handled our Oconee County townhome move on schedule despite university-area traffic. Transparent pricing throughout.',
+      name: 'Nathan B.',
+      location: 'Watkinsville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Zip Moving provided a flat-rate quote for our Bishop-area move and delivered professional service from their Atlanta base.',
+      name: 'Grace H.',
+      location: 'Bishop, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  jackson: [
+    {
+      quote:
+        'Bulldog Movers served our Jefferson relocation efficiently — confirmed I-85 northeast corridor timing upfront and careful furniture handling.',
+      name: 'Kevin D.',
+      location: 'Jefferson, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Zip Moving gave us clear pricing for our Jackson County townhome move and finished ahead of the written estimate.',
+      name: 'Ashley P.',
+      location: 'Jefferson, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta handled our Commerce-adjacent move with professional crews and good communication about rural travel time.',
+      name: 'Mike T.',
+      location: 'Jefferson, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  haralson: [
+    {
+      quote:
+        'Wirks Moving confirmed rural access for our Buchanan relocation before move day. Careful crew and transparent travel pricing from Carrollton base.',
+      name: 'Betty J.',
+      location: 'Buchanan, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Zip Moving served our Haralson County move with upfront travel-fee disclosure and professional furniture wrapping throughout.',
+      name: 'Roy K.',
+      location: 'Buchanan, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta handled our west-metro rural move efficiently despite long travel from the core metro.',
+      name: 'Janet W.',
+      location: 'Tallapoosa, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  polk: [
+    {
+      quote:
+        'Atlanta Home Movers served our Cedartown relocation from their Rome-area coverage with careful handling and clear rural travel pricing.',
+      name: 'Henry C.',
+      location: 'Cedartown, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta traveled to Polk County and finished our move on schedule. Professional crew and good communication.',
+      name: 'Martha G.',
+      location: 'Cedartown, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Zip Moving provided reliable west-metro service for our Rockmart-adjacent Polk County move with transparent flat-rate pricing.',
+      name: 'Edward N.',
+      location: 'Rockmart, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  heard: [
+    {
+      quote:
+        'Wirks Moving confirmed remote property access for our Franklin relocation and delivered careful, professional service despite the rural distance.',
+      name: 'Ruth A.',
+      location: 'Franklin, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mark the Mover handled our Heard County move with excellent communication about travel time from Atlanta and careful antique handling.',
+      name: 'George P.',
+      location: 'Franklin, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta served our very rural Heard County address — upfront about fees and professional throughout.',
+      name: 'Alice D.',
+      location: 'Franklin, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  meriwether: [
+    {
+      quote:
+        'Mark the Mover traveled to our Greenville home and handled remote rural access without issues. Careful crew and transparent southwest-metro pricing.',
+      name: 'Tom R.',
+      location: 'Greenville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbus served our Meriwether County move from the Columbus corridor with professional handling and clear travel estimates.',
+      name: 'Brenda L.',
+      location: 'Greenville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'All My Sons Atlanta provided reliable backup coverage for our rural southwest move when local options were limited. Great communication.',
+      name: 'Carl M.',
+      location: 'Manchester, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

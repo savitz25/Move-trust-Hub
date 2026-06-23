@@ -24,6 +24,20 @@ export const georgiaCountyOverrides: Partial<
   chatham: { seat: 'Savannah', metro: 'savannah-metro-ga' },
   richmond: { seat: 'Augusta', metro: 'augusta-metro-ga' },
   muscogee: { seat: 'Columbus', metro: 'columbus-metro-ga' },
+  pickens: { seat: 'Jasper', metro: 'atlanta-metro-ga' },
+  bartow: { seat: 'Cartersville', metro: 'atlanta-metro-ga' },
+  spalding: { seat: 'Griffin', metro: 'atlanta-metro-ga' },
+  butts: { seat: 'Jackson', metro: 'atlanta-metro-ga' },
+  carroll: { seat: 'Carrollton', metro: 'atlanta-metro-ga' },
+  dawson: { seat: 'Dawsonville', metro: 'atlanta-metro-ga' },
+  lumpkin: { seat: 'Dahlonega', metro: 'atlanta-metro-ga' },
+  morgan: { seat: 'Madison', metro: 'atlanta-metro-ga' },
+  oconee: { seat: 'Watkinsville', metro: 'atlanta-metro-ga' },
+  jackson: { seat: 'Jefferson', metro: 'atlanta-metro-ga' },
+  haralson: { seat: 'Buchanan', metro: 'atlanta-metro-ga' },
+  polk: { seat: 'Cedartown', metro: 'atlanta-metro-ga' },
+  heard: { seat: 'Franklin', metro: 'atlanta-metro-ga' },
+  meriwether: { seat: 'Greenville', metro: 'atlanta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

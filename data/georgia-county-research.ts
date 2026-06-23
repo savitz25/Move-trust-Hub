@@ -356,6 +356,244 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple written estimates and compare hourly vs. flat-rate pricing.',
     ],
   },
+  pickens: {
+    marketNotes:
+      'Pickens County is a rural mountainous county north of Atlanta with Jasper as the seat and limited dedicated local mover presence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Pickens moves reflect mountain-road access, limited storage options, and travel time from Atlanta or Canton-area crews.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm truck size and route feasibility before booking.',
+      'Verify explicit regional service to Jasper and outer Pickens addresses.',
+      'Storage is very limited locally — plan interim storage with Atlanta or Canton providers if needed.',
+      'Obtain multiple written estimates and compare travel fees from north-metro bases.',
+      'Confirm credentials and insurance for rural and mountain relocations.',
+    ],
+  },
+  bartow: {
+    marketNotes:
+      'Bartow County includes Cartersville with industrial and residential growth along the I-75 northwest corridor between Atlanta and Chattanooga.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Bartow County pricing reflects I-75 corridor traffic, Lake Allatoona-area properties, and suburban growth in Cartersville.',
+    },
+    tips: [
+      'Verify coverage for Cartersville, Emerson, Euharlee, and surrounding Bartow communities.',
+      'Atlanta metro traffic on I-75 impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and lake-area properties.',
+      'Book early for peak seasons and month-end closings.',
+      'Obtain multiple written estimates and compare flat-rate vs. hourly pricing.',
+    ],
+  },
+  spalding: {
+    marketNotes:
+      'Spalding County centers on Griffin south of Atlanta along the I-75 corridor with steady residential and commuter demand.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Spalding moves often involve Griffin historic neighborhoods and I-75 south-metro traffic windows.',
+    },
+    tips: [
+      'Verify coverage for Griffin and surrounding Spalding County addresses.',
+      'Atlanta metro traffic on I-75 impacts scheduling for crews traveling from the core metro.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and school-calendar move windows.',
+      'Obtain multiple written estimates and ask about travel-time fees.',
+    ],
+  },
+  butts: {
+    marketNotes:
+      'Butts County is a rural south-metro county with Jackson as the seat and limited on-the-ground mover presence.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Butts County pricing reflects rural driveway access, limited storage, and travel from Atlanta or Griffin bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes and property access in advance.',
+      'Verify explicit regional service to Jackson and outer Butts addresses.',
+      'Storage is very limited locally — plan with Atlanta or Griffin providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural relocations.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County includes Carrollton west of Atlanta with university-town and suburban residential demand along the I-20 west corridor.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Carroll moves reflect I-20 west corridor traffic and mixed suburban and rural property access west of the metro.',
+    },
+    tips: [
+      'Verify coverage for Carrollton, Villa Rica, and surrounding Carroll County communities.',
+      'Atlanta metro traffic on I-20 west impacts scheduling — confirm crew routes.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and university-area turnover.',
+      'Obtain multiple written estimates and compare pricing models.',
+    ],
+  },
+  dawson: {
+    marketNotes:
+      'Dawson County is a rural and mountainous north-metro county with Dawsonville as the seat and growing spillover from Forsyth and Hall.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Dawson moves reflect mountain-road access, GA-400 north spillover traffic, and limited local storage.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm truck feasibility for rural Dawsonville-area properties.',
+      'Verify explicit regional service to Dawsonville and outer Dawson addresses.',
+      'Storage is very limited locally — coordinate with Gainesville or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees from north-metro crews.',
+      'Confirm credentials for rural and mountain relocations.',
+    ],
+  },
+  lumpkin: {
+    marketNotes:
+      'Lumpkin County is mountainous with Dahlonega as the seat, gold-country tourism, and steady north-metro spillover demand.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Lumpkin moves reflect mountain-road access, tourist-season demand, and travel from Gainesville or Atlanta bases.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm routes for Dahlonega and outer Lumpkin addresses.',
+      'Verify explicit regional service to Dahlonega before booking.',
+      'Storage is very limited locally — plan interim storage with Gainesville or Atlanta providers.',
+      'Obtain multiple written estimates and compare travel fees.',
+      'Confirm credentials for rural and mountain relocations.',
+    ],
+  },
+  morgan: {
+    marketNotes:
+      'Morgan County is a rural east-metro county with Madison as the seat and historic-home relocation demand between Athens and Atlanta.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Morgan moves reflect rural access constraints, Madison historic-square logistics, and travel from Athens or Atlanta crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck access for Madison and outer Morgan properties.',
+      'Verify explicit regional service to Madison before booking.',
+      'Storage is very limited locally — coordinate with Athens or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural and historic-home moves.',
+    ],
+  },
+  oconee: {
+    marketNotes:
+      'Oconee County is an affluent suburban and rural county near Athens with Watkinsville serving UGA-adjacent and east-metro relocations.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Oconee pricing reflects Athens-adjacent suburban demand, high-value homes, and GA-316/US-78 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Watkinsville, Bishop, and surrounding Oconee communities.',
+      'Athens and Atlanta traffic impacts scheduling — confirm crew routes and arrival windows.',
+      'Confirm insurance for high-value homes and specialty items.',
+      'Book early for peak seasons and university-adjacent turnover.',
+      'Obtain multiple written estimates and compare flat-rate vs. hourly pricing.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is a rural and suburban northeast-metro county with Jefferson as the seat and I-85 corridor growth.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Jackson moves reflect I-85 northeast corridor traffic and mixed suburban-rural property access near Jefferson.',
+    },
+    tips: [
+      'Rural access challenges are common in outer Jackson County — confirm property access in advance.',
+      'Verify explicit regional service to Jefferson, Commerce, and Braselton-adjacent addresses.',
+      'Storage is very limited locally — plan with Gainesville or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural relocations.',
+    ],
+  },
+  haralson: {
+    marketNotes:
+      'Haralson County is a rural west-metro county with Buchanan as the seat and limited dedicated local mover presence.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Haralson moves reflect rural west-metro access, limited storage, and travel from Carrollton or Atlanta bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Buchanan and outer Haralson addresses.',
+      'Verify explicit regional service to Buchanan before booking.',
+      'Storage is very limited locally — coordinate with Carrollton or Atlanta providers.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural relocations.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County is a rural west-metro county with Cedartown as the seat between Paulding, Bartow, and Floyd counties.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Polk moves reflect rural I-20 west access constraints and travel from Rome or Atlanta west-metro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck feasibility for Cedartown and outer Polk properties.',
+      'Verify explicit regional service to Cedartown and Rockmart-adjacent addresses.',
+      'Storage is very limited locally — plan with Rome or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural relocations.',
+    ],
+  },
+  heard: {
+    marketNotes:
+      'Heard County is a very rural west-metro county with Franklin as the seat and extremely limited on-the-ground mover presence.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Heard moves reflect remote rural access, long travel times from Carrollton or Atlanta, and limited storage.',
+    },
+    tips: [
+      'Extremely remote rural access challenges — confirm truck size, route, and property access before booking.',
+      'Verify explicit regional service to Franklin and outer Heard addresses.',
+      'Storage is very limited locally — coordinate with Carrollton or Atlanta providers.',
+      'Obtain multiple written estimates and expect higher travel fees.',
+      'Confirm credentials for remote rural relocations.',
+    ],
+  },
+  meriwether: {
+    marketNotes:
+      'Meriwether County is a rural southwest-metro county with Greenville as the seat between Atlanta and Columbus corridors.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$4,800',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Meriwether moves reflect remote rural access and travel from Atlanta, Newnan, or Columbus bases.',
+    },
+    tips: [
+      'Extremely remote rural access challenges — confirm routes and property access for Greenville-area moves.',
+      'Verify explicit regional service to Greenville before booking.',
+      'Storage is very limited locally — plan with Atlanta or Columbus providers if needed.',
+      'Obtain multiple written estimates and compare Atlanta vs. Columbus crew travel fees.',
+      'Confirm credentials for remote rural relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

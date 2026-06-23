@@ -31,6 +31,20 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   chatham: ['bryan', 'effingham', 'liberty', 'bulloch', 'screven', 'jasper'],
   richmond: ['columbia', 'mcduffie', 'jefferson', 'burke', 'glascock', 'warren'],
   muscogee: ['harris', 'talbot', 'chattahoochee', 'stewart', 'marion', 'schley'],
+  pickens: ['cherokee', 'dawson', 'gilmer', 'gordon', 'forsyth', 'bartow'],
+  bartow: ['cherokee', 'paulding', 'polk', 'cobb', 'gordon', 'pickens'],
+  spalding: ['fayette', 'henry', 'clayton', 'butts', 'coweta', 'pike'],
+  butts: ['henry', 'spalding', 'jasper', 'newton', 'lamar', 'monroe'],
+  carroll: ['douglas', 'haralson', 'heard', 'coweta', 'fayette', 'paulding'],
+  dawson: ['forsyth', 'hall', 'lumpkin', 'pickens', 'gwinnett', 'cherokee'],
+  lumpkin: ['dawson', 'hall', 'white', 'banks', 'forsyth', 'union'],
+  morgan: ['newton', 'walton', 'oconee', 'jasper', 'greene', 'putnam'],
+  oconee: ['clarke', 'barrow', 'walton', 'morgan', 'greene', 'madison'],
+  jackson: ['gwinnett', 'barrow', 'hall', 'banks', 'clarke', 'madison'],
+  haralson: ['paulding', 'carroll', 'douglas', 'polk', 'coweta', 'heard'],
+  polk: ['paulding', 'bartow', 'floyd', 'haralson', 'gordon', 'catoosa'],
+  heard: ['carroll', 'coweta', 'fayette', 'troup', 'haralson', 'meriwether'],
+  meriwether: ['coweta', 'fayette', 'heard', 'troup', 'pike', 'upson'],
 };
 
 export function getGeorgiaNearbyCounties(
