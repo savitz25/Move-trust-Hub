@@ -535,6 +535,70 @@ const CURATED_NC_COUNTIES: Record<string, string[]> = {
     'appalachian-moving-storage-boone',
     'carey-moving-storage-asheville',
   ],
+  madison: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'two-men-and-a-truck-asheville',
+    'carey-moving-storage-asheville',
+  ],
+  anson: [
+    'two-men-and-a-truck-charlotte-nc',
+    'gentle-giants-moving-charlotte',
+    'you-move-me-charlotte',
+    'make-a-move-charlotte',
+  ],
+  martin: [
+    'college-hunks-moving-greenville-nc',
+    'east-carolina-moving-greenville-nc',
+    'smart-move-wilson-nc',
+    'horne-moving-goldsboro',
+  ],
+  greene: [
+    'college-hunks-moving-greenville-nc',
+    'east-carolina-moving-greenville-nc',
+    'smart-move-wilson-nc',
+  ],
+  polk: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'two-men-and-a-truck-asheville',
+    'easy-movers-gastonia',
+  ],
+  yancey: [
+    'asheville-area-movers',
+    'appalachian-moving-storage-boone',
+    'gasperson-moving-asheville',
+  ],
+  hertford: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'crabtree-family-moving-raleigh',
+  ],
+  warren: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'little-guys-movers-raleigh',
+  ],
+  avery: [
+    'appalachian-moving-storage-boone',
+    'asheville-area-movers',
+    'preferred-moving-hickory',
+  ],
+  bertie: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'east-carolina-moving-greenville-nc',
+  ],
+  northampton: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'crabtree-family-moving-raleigh',
+  ],
+  mitchell: [
+    'appalachian-moving-storage-boone',
+    'asheville-area-movers',
+    'in-out-moving-delivery-hickory',
+  ],
 };
 
 export const northCarolinaCountyMoverAssignments: CountyMoverAssignment[] =

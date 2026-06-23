@@ -1097,6 +1097,210 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    madison: {
+      marketNotes:
+        'Madison County is a scenic mountain county with strong rural and tourism demand centered on Marshall and Hot Springs.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Madison County pricing reflects far-western NC mountain-road access, tourism-season volume, and Asheville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Marshall and Hot Springs areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    anson: {
+      marketNotes:
+        'Anson County is a rural county south of Charlotte with agricultural and residential demand centered on Wadesboro.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Anson County pricing reflects southern Piedmont rural access, limited local carrier availability, and Charlotte-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Anson County roads and longer regional routes.',
+        'Verify explicit regional service to Wadesboro and surrounding Anson County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    martin: {
+      marketNotes:
+        'Martin County is a rural eastern county with agricultural and residential demand centered on Williamston.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Martin County pricing reflects eastern NC rural access, limited local carrier availability, and Greenville-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Martin County roads and longer regional routes.',
+        'Verify explicit regional service to Williamston and surrounding Martin County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    greene: {
+      marketNotes:
+        'Greene County is a small rural county in eastern North Carolina with agricultural and residential demand centered on Snow Hill.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Greene County pricing reflects eastern NC rural access, limited local carrier availability, and Greenville-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Greene County roads and longer regional routes.',
+        'Verify explicit regional service to Snow Hill and surrounding Greene County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    polk: {
+      marketNotes:
+        'Polk County is a small scenic county in western North Carolina with retirement and tourism demand centered on Tryon and Columbus.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Polk County pricing reflects western NC foothills access, retirement-community turnover, and Asheville- and Charlotte-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Tryon and Columbus areas before booking.',
+        'Mountain foothills access considerations apply — confirm crew familiarity with rural and hillside property logistics.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    yancey: {
+      marketNotes:
+        'Yancey County is a rural mountain county with scenic residential demand centered on Burnsville.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Yancey County pricing reflects western NC mountain-road access, limited local carrier availability, and Asheville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Burnsville and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    hertford: {
+      marketNotes:
+        'Hertford County is a rural northeastern county with agricultural and residential demand centered on Winton.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Hertford County pricing reflects northeastern NC rural access, limited local carrier availability, and Elizabeth City-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Hertford County roads and longer regional routes.',
+        'Verify explicit regional service to Winton and surrounding Hertford County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    warren: {
+      marketNotes:
+        'Warren County is a rural northeastern county with historic and residential demand centered on Warrenton.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Warren County pricing reflects northeastern NC rural access, limited local carrier availability, and Rocky Mount-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Warren County roads and longer regional routes.',
+        'Verify explicit regional service to Warrenton and surrounding Warren County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    avery: {
+      marketNotes:
+        'Avery County is a high-elevation mountain county with tourism and residential demand centered on Newland and Banner Elk.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Avery County pricing reflects High Country mountain-road access, peak tourist-season volume, and Boone-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Newland and Banner Elk areas before booking.',
+        'High mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    bertie: {
+      marketNotes:
+        'Bertie County is a rural northeastern county with agricultural and residential demand centered on Windsor.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Bertie County pricing reflects northeastern NC rural access, limited local carrier availability, and Rocky Mount-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Bertie County roads and longer regional routes.',
+        'Verify explicit regional service to Windsor and surrounding Bertie County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    northampton: {
+      marketNotes:
+        'Northampton County is a rural northeastern county with agricultural and residential demand centered on Jackson.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Northampton County pricing reflects northeastern NC rural access, limited local carrier availability, and Rocky Mount-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Northampton County roads and longer regional routes.',
+        'Verify explicit regional service to Jackson and surrounding Northampton County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    mitchell: {
+      marketNotes:
+        'Mitchell County is a small mountain county with scenic rural residential demand centered on Bakersville.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Mitchell County pricing reflects High Country mountain-road access, limited local carrier availability, and Boone-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Bakersville and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

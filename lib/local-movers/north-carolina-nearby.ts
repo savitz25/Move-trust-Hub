@@ -73,6 +73,18 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   richmond: ['robeson', 'scotland', 'montgomery', 'anson', 'moore', 'cumberland'],
   person: ['granville', 'durham', 'orange', 'caswell', 'vance', 'franklin'],
   macon: ['jackson', 'swain', 'clay', 'graham', 'haywood', 'transylvania'],
+  madison: ['buncombe', 'yancey', 'haywood', 'mitchell', 'avery', 'henderson'],
+  anson: ['union', 'richmond', 'montgomery', 'stanly', 'cabarrus', 'mecklenburg'],
+  martin: ['pitt', 'beaufort', 'bertie', 'edgecombe', 'halifax', 'nash'],
+  greene: ['lenoir', 'wayne', 'pitt', 'wilson', 'edgecombe', 'duplin'],
+  polk: ['rutherford', 'henderson', 'buncombe', 'cleveland', 'mcdowell', 'transylvania'],
+  yancey: ['madison', 'mitchell', 'avery', 'buncombe', 'mcdowell', 'burke'],
+  hertford: ['bertie', 'northampton', 'gates', 'chowan', 'pasquotank', 'halifax'],
+  warren: ['vance', 'franklin', 'halifax', 'northampton', 'granville', 'person'],
+  avery: ['watauga', 'caldwell', 'mitchell', 'burke', 'mcdowell', 'wilkes'],
+  bertie: ['martin', 'pitt', 'chowan', 'northampton', 'hertford', 'edgecombe'],
+  northampton: ['halifax', 'bertie', 'warren', 'hertford', 'edgecombe', 'nash'],
+  mitchell: ['yancey', 'avery', 'mcdowell', 'buncombe', 'burke', 'madison'],
 };
 
 export function getNorthCarolinaNearbyCounties(

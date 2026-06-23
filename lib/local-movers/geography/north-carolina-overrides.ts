@@ -68,6 +68,18 @@ export const northCarolinaCountyOverrides: Partial<
   richmond: { seat: 'Rockingham', metro: 'fayetteville-metro-nc' },
   person: { seat: 'Roxboro', metro: 'durham-chapel-hill-metro-nc' },
   macon: { seat: 'Franklin', metro: 'asheville-metro-nc' },
+  madison: { seat: 'Marshall', metro: 'asheville-metro-nc' },
+  anson: { seat: 'Wadesboro', metro: 'charlotte-metro-nc' },
+  martin: { seat: 'Williamston', metro: 'greenville-metro-nc' },
+  greene: { seat: 'Snow Hill', metro: 'greenville-metro-nc' },
+  polk: { seat: 'Columbus', metro: 'asheville-metro-nc' },
+  yancey: { seat: 'Burnsville', metro: 'asheville-metro-nc' },
+  hertford: { seat: 'Winton', metro: 'elizabeth-city-metro-nc' },
+  warren: { seat: 'Warrenton', metro: 'rocky-mount-metro-nc' },
+  avery: { seat: 'Newland', metro: 'boone-metro-nc' },
+  bertie: { seat: 'Windsor', metro: 'rocky-mount-metro-nc' },
+  northampton: { seat: 'Jackson', metro: 'rocky-mount-metro-nc' },
+  mitchell: { seat: 'Bakersville', metro: 'boone-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(

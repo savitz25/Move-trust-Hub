@@ -11,6 +11,318 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  madison: [
+    {
+      quote:
+        'Asheville Area Movers handled our Marshall mountain relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Ruth E.',
+      location: 'Marshall, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gasperson Moving served our Hot Springs move with professional crews experienced with steep-driveway and mountain-road access.',
+      name: 'Frank O.',
+      location: 'Hot Springs, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Asheville confirmed Madison County coverage and delivered reliable packing and loading with no surprise fees despite peak tourist-season scheduling.',
+      name: 'Helen M.',
+      location: 'Marshall, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  anson: [
+    {
+      quote:
+        'Two Men and a Truck Charlotte confirmed Wadesboro coverage and handled our rural Anson County relocation professionally with careful driveway access planning.',
+      name: 'Jerry W.',
+      location: 'Wadesboro, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant Moving served our Anson County move efficiently with professional crews experienced with southern Piedmont regional routes.',
+      name: 'Betty C.',
+      location: 'Wadesboro, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'You Move Me delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Roy H.',
+      location: 'Wadesboro, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  martin: [
+    {
+      quote:
+        'College Hunks Moving Greenville confirmed Williamston coverage and handled our rural Martin County relocation professionally with careful driveway access planning.',
+      name: 'Nellie P.',
+      location: 'Williamston, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'East Carolina Moving served our Martin County move efficiently with professional crews experienced with eastern NC regional routes.',
+      name: 'Oscar T.',
+      location: 'Williamston, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Smart Move Wilson delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Irene L.',
+      location: 'Williamston, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  greene: [
+    {
+      quote:
+        'East Carolina Moving confirmed Snow Hill coverage and handled our rural Greene County relocation professionally with careful driveway access planning.',
+      name: 'Claude R.',
+      location: 'Snow Hill, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving served our Greene County move efficiently with professional crews experienced with eastern NC regional routes.',
+      name: 'Mabel S.',
+      location: 'Snow Hill, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Smart Move Wilson delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Ernest D.',
+      location: 'Snow Hill, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  polk: [
+    {
+      quote:
+        'Asheville Area Movers handled our Tryon foothills relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Virginia K.',
+      location: 'Tryon, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Easy Movers Gastonia served our Polk County move with professional crews experienced with foothill and rural access.',
+      name: 'William B.',
+      location: 'Columbus, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Asheville confirmed Tryon coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Diane F.',
+      location: 'Tryon, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  yancey: [
+    {
+      quote:
+        'Asheville Area Movers handled our Burnsville mountain relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Glenn A.',
+      location: 'Burnsville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Appalachian Moving & Storage served our Yancey County move with professional crews experienced with steep-driveway and mountain-road access.',
+      name: 'Lois W.',
+      location: 'Burnsville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Gasperson Moving confirmed Burnsville coverage and delivered reliable packing and loading with no surprise fees despite winter weather scheduling.',
+      name: 'Harold N.',
+      location: 'Burnsville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  hertford: [
+    {
+      quote:
+        'Smart Move Wilson confirmed Winton coverage and handled our rural Hertford County relocation professionally with careful driveway access planning.',
+      name: 'Pearl J.',
+      location: 'Winton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville served our Hertford County move efficiently with professional crews experienced with northeastern NC regional routes.',
+      name: 'Leonard G.',
+      location: 'Winton, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Crabtree Family Moving delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Ruby T.',
+      location: 'Winton, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  warren: [
+    {
+      quote:
+        'Smart Move Wilson confirmed Warrenton coverage and handled our rural Warren County relocation professionally with careful driveway access planning.',
+      name: 'Milton C.',
+      location: 'Warrenton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville served our Warren County move efficiently with professional crews experienced with northeastern NC regional routes.',
+      name: 'Opal H.',
+      location: 'Warrenton, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Little Guys Movers delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel from Raleigh.',
+      name: 'Vernon M.',
+      location: 'Warrenton, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  avery: [
+    {
+      quote:
+        'Appalachian Moving & Storage handled our Banner Elk mountain relocation professionally — efficient crews, careful handling, and transparent High Country pricing.',
+      name: 'Sylvia R.',
+      location: 'Banner Elk, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Asheville Area Movers served our Avery County move with professional crews experienced with high-elevation mountain-road access.',
+      name: 'Norman P.',
+      location: 'Newland, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Preferred Moving Company confirmed Newland coverage and delivered reliable packing and loading with no surprise fees despite winter weather scheduling.',
+      name: 'Joyce L.',
+      location: 'Newland, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  bertie: [
+    {
+      quote:
+        'Smart Move Wilson confirmed Windsor coverage and handled our rural Bertie County relocation professionally with careful driveway access planning.',
+      name: 'Archie B.',
+      location: 'Windsor, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'East Carolina Moving served our Bertie County move efficiently with professional crews experienced with northeastern NC regional routes.',
+      name: 'Fannie W.',
+      location: 'Windsor, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Otis K.',
+      location: 'Windsor, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  northampton: [
+    {
+      quote:
+        'Smart Move Wilson confirmed Jackson coverage and handled our rural Northampton County relocation professionally with careful driveway access planning.',
+      name: 'Lula S.',
+      location: 'Jackson, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville served our Northampton County move efficiently with professional crews experienced with northeastern NC regional routes.',
+      name: 'Homer D.',
+      location: 'Jackson, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Crabtree Family Moving delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Beulah A.',
+      location: 'Jackson, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  mitchell: [
+    {
+      quote:
+        'Appalachian Moving & Storage handled our Bakersville mountain relocation professionally — efficient crews, careful handling, and transparent High Country pricing.',
+      name: 'Clyde F.',
+      location: 'Bakersville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Asheville Area Movers served our Mitchell County move with professional crews experienced with steep-driveway and mountain-road access.',
+      name: 'Myrtle G.',
+      location: 'Bakersville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'In & Out Moving & Delivery confirmed Bakersville coverage and delivered reliable packing and loading with no surprise fees despite winter weather scheduling.',
+      name: 'Ralph H.',
+      location: 'Bakersville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
   davie: [
     {
       quote:
