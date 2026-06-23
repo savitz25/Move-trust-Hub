@@ -123,6 +123,12 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'wilson',
   'sullivan',
   'blount',
+  'washington',
+  'maury',
+  'bradley',
+  'sevier',
+  'madison',
+  'putnam',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

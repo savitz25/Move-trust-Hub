@@ -195,6 +195,108 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  washington: {
+    marketNotes:
+      'Washington County is a key Tri-Cities county with strong educational (East Tennessee State University), healthcare, and residential demand centered on Johnson City.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Johnson City and Jonesborough demand, ETSU student turnover, and regional Tri-Cities corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Johnson City, Jonesborough, and Gray areas before booking.',
+      'Tri-Cities traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  maury: {
+    marketNotes:
+      'Maury County is a fast-growing county south of Nashville with strong residential and historic demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Maury County pricing reflects Columbia and Spring Hill suburban growth, Mount Pleasant rural access, and Nashville-metro I-65 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Columbia, Spring Hill, and Mount Pleasant areas before booking.',
+      'Nashville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bradley: {
+    marketNotes:
+      'Bradley County is a growing county in southeastern Tennessee with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Bradley County pricing reflects Cleveland industrial corridor demand, Chattanooga-metro crew travel, and regional I-75 traffic.',
+    },
+    tips: [
+      'Verify coverage for Cleveland and surrounding Bradley County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sevier: {
+    marketNotes:
+      'Sevier County is a premier tourism county with heavy demand from the Great Smoky Mountains and resort areas.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Sevier County pricing reflects Sevierville, Pigeon Forge, and Gatlinburg tourism seasonality, mountain driveway access, and peak vacation-property turnover.',
+    },
+    tips: [
+      'Verify coverage for Sevierville, Pigeon Forge, and Gatlinburg areas before booking.',
+      'Tourist traffic and mountain access require advance planning — confirm crew arrival windows.',
+      'Confirm insurance for high-value vacation and mountain properties before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison County is a key West Tennessee hub with strong educational, healthcare, and industrial demand centered on Jackson.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Madison County pricing reflects Jackson hub demand, healthcare-sector relocations, and West Tennessee crew travel distances.',
+    },
+    tips: [
+      'Verify coverage for Jackson and surrounding Madison County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  putnam: {
+    marketNotes:
+      'Putnam County is a growing Upper Cumberland hub with strong educational (Tennessee Tech) and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Putnam County pricing reflects Cookeville and Tennessee Tech student turnover, Upper Cumberland rural access, and regional I-40 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Cookeville and surrounding Putnam County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

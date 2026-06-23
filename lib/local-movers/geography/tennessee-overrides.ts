@@ -15,6 +15,12 @@ export const tennesseeCountyOverrides: Partial<
   wilson: { seat: 'Lebanon', metro: 'nashville-metro-tn' },
   sullivan: { seat: 'Blountville', metro: 'kingsport-bristol-metro-tn' },
   blount: { seat: 'Maryville', metro: 'knoxville-metro-tn' },
+  washington: { seat: 'Jonesborough', metro: 'kingsport-bristol-metro-tn' },
+  maury: { seat: 'Columbia', metro: 'nashville-metro-tn' },
+  bradley: { seat: 'Cleveland', metro: 'cleveland-metro-tn' },
+  sevier: { seat: 'Sevierville', metro: 'sevierville-metro-tn' },
+  madison: { seat: 'Jackson', metro: 'jackson-metro-tn' },
+  putnam: { seat: 'Cookeville', metro: 'cookeville-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {
