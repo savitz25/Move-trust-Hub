@@ -1,4 +1,4 @@
-import { generatedCounties } from '@/data/generated/index';
+﻿import { generatedCounties } from '@/data/generated/index';
 import { applyKansasCountyOverrides } from '@/lib/local-movers/geography/kansas-overrides';
 import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
@@ -79,6 +79,43 @@ const KS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   gray: ['finney', 'ford', 'seward', 'haskell', 'meade', 'scott'],
   stevens: ['seward', 'grant', 'haskell', 'meade', 'morton', 'stanton'],
   scott: ['finney', 'gray', 'lane', 'greeley', 'wallace', 'logan'],
+republic: ['cloud', 'washington', 'marshall', 'jewell', 'smith', 'norton'],
+  rooks: ['phillips', 'smith', 'osborne', 'ellis', 'graham', 'jewell'],
+  stafford: ['rice', 'barton', 'reno', 'pratt', 'kingman', 'edwards'],
+  barber: ['harper', 'kingman', 'pratt', 'kiowa', 'comanche', 'sumner'],
+  smith: ['jewell', 'phillips', 'norton', 'republic', 'mitchell', 'osborne'],
+  osborne: ['smith', 'mitchell', 'lincoln', 'russell', 'rooks', 'ellis'],
+  woodson: ['wilson', 'allen', 'neosho', 'coffey', 'greenwood', 'elk'],
+  graham: ['norton', 'decatur', 'rawlins', 'rooks', 'trego', 'ellis'],
+  rawlins: ['thomas', 'sherman', 'cheyenne', 'decatur', 'graham', 'norton'],
+  sheridan: ['thomas', 'sherman', 'decatur', 'rawlins', 'logan', 'graham'],
+  kearny: ['finney', 'grant', 'hamilton', 'wichita', 'haskell', 'lane'],
+  meade: ['gray', 'ford', 'clark', 'seward', 'haskell', 'finney'],
+  haskell: ['finney', 'seward', 'grant', 'kearny', 'meade', 'gray'],
+  chautauqua: ['elk', 'cowley', 'wilson', 'montgomery', 'labette', 'greenwood'],
+  rush: ['ellis', 'norton', 'trego', 'pawnee', 'barton', 'ness'],
+  lincoln: ['saline', 'ottawa', 'mitchell', 'ellsworth', 'russell', 'osborne'],
+  jewell: ['republic', 'cloud', 'mitchell', 'smith', 'phillips', 'washington'],
+  trego: ['ellis', 'rush', 'gove', 'ness', 'lane', 'graham'],
+  decatur: ['sheridan', 'rawlins', 'norton', 'graham', 'thomas', 'sherman'],
+  logan: ['sherman', 'wallace', 'greeley', 'scott', 'thomas', 'rawlins'],
+  ness: ['rush', 'trego', 'lane', 'pawnee', 'gove', 'hodgeman'],
+  gove: ['trego', 'ness', 'lane', 'scott', 'logan', 'graham'],
+  edwards: ['pawnee', 'pratt', 'kiowa', 'barber', 'stafford', 'ness'],
+  chase: ['lyon', 'greenwood', 'butler', 'marion', 'morris', 'wabaunsee'],
+  clark: ['ford', 'meade', 'gray', 'comanche', 'kiowa', 'edwards'],
+  comanche: ['barber', 'kiowa', 'clark', 'edwards', 'pratt', 'harper'],
+  elk: ['wilson', 'chautauqua', 'greenwood', 'montgomery', 'cowley', 'woodson'],
+  hodgeman: ['pawnee', 'edwards', 'ford', 'gray', 'ness', 'finney'],
+  kiowa: ['barber', 'pratt', 'edwards', 'comanche', 'clark', 'kingman'],
+  lane: ['finney', 'scott', 'gove', 'ness', 'trego', 'greeley'],
+  morton: ['stevens', 'grant', 'stanton', 'seward', 'hamilton', 'haskell'],
+  stanton: ['grant', 'stevens', 'morton', 'hamilton', 'seward', 'haskell'],
+  cheyenne: ['rawlins', 'sherman', 'wallace', 'logan', 'decatur', 'thomas'],
+  greeley: ['wallace', 'logan', 'scott', 'lane', 'wichita', 'hamilton'],
+  hamilton: ['kearny', 'grant', 'stanton', 'morton', 'greeley', 'wichita'],
+  wallace: ['sherman', 'logan', 'greeley', 'scott', 'thomas', 'cheyenne'],
+  wichita: ['hamilton', 'greeley', 'scott', 'kearny', 'lane', 'wallace'],
 };
 
 export function getKansasNearbyCounties(

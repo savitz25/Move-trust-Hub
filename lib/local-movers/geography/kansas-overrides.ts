@@ -1,4 +1,4 @@
-import type { LocalCounty } from '@/lib/local-movers/types';
+﻿import type { LocalCounty } from '@/lib/local-movers/types';
 
 /** Seat and metro overrides for hand-curated Kansas counties */
 export const kansasCountyOverrides: Partial<
@@ -72,6 +72,43 @@ export const kansasCountyOverrides: Partial<
   gray: { seat: 'Cimarron', metro: 'cimarron-metro-ks' },
   stevens: { seat: 'Hugoton', metro: 'hugoton-metro-ks' },
   scott: { seat: 'Scott City', metro: 'scott-city-metro-ks' },
+  republic: { seat: 'Belleville', metro: 'belleville-metro-ks' },
+  rooks: { seat: 'Stockton', metro: 'stockton-metro-ks' },
+  stafford: { seat: 'St. John', metro: 'st-john-metro-ks' },
+  barber: { seat: 'Medicine Lodge', metro: 'medicine-lodge-metro-ks' },
+  smith: { seat: 'Smith Center', metro: 'smith-center-metro-ks' },
+  osborne: { seat: 'Osborne', metro: 'osborne-metro-ks' },
+  woodson: { seat: 'Yates Center', metro: 'yates-center-metro-ks' },
+  graham: { seat: 'Hill City', metro: 'hill-city-metro-ks' },
+  rawlins: { seat: 'Atwood', metro: 'atwood-metro-ks' },
+  sheridan: { seat: 'Hoxie', metro: 'hoxie-metro-ks' },
+  kearny: { seat: 'Lakin', metro: 'lakin-metro-ks' },
+  meade: { seat: 'Meade', metro: 'meade-metro-ks' },
+  haskell: { seat: 'Sublette', metro: 'sublette-metro-ks' },
+  chautauqua: { seat: 'Sedan', metro: 'sedan-metro-ks' },
+  rush: { seat: 'La Crosse', metro: 'la-crosse-metro-ks' },
+  lincoln: { seat: 'Lincoln', metro: 'lincoln-metro-ks' },
+  jewell: { seat: 'Mankato', metro: 'mankato-metro-ks' },
+  trego: { seat: 'WaKeeney', metro: 'wakeeney-metro-ks' },
+  decatur: { seat: 'Oberlin', metro: 'oberlin-metro-ks' },
+  logan: { seat: 'Oakley', metro: 'oakley-metro-ks' },
+  ness: { seat: 'Ness City', metro: 'ness-city-metro-ks' },
+  gove: { seat: 'Gove City', metro: 'gove-city-metro-ks' },
+  edwards: { seat: 'Kinsley', metro: 'kinsley-metro-ks' },
+  chase: { seat: 'Cottonwood Falls', metro: 'cottonwood-falls-metro-ks' },
+  clark: { seat: 'Ashland', metro: 'ashland-metro-ks' },
+  comanche: { seat: 'Coldwater', metro: 'coldwater-metro-ks' },
+  elk: { seat: 'Howard', metro: 'howard-metro-ks' },
+  hodgeman: { seat: 'Jetmore', metro: 'jetmore-metro-ks' },
+  kiowa: { seat: 'Greensburg', metro: 'greensburg-metro-ks' },
+  lane: { seat: 'Dighton', metro: 'dighton-metro-ks' },
+  morton: { seat: 'Elkhart', metro: 'elkhart-metro-ks' },
+  stanton: { seat: 'Johnson City', metro: 'johnson-city-metro-ks' },
+  cheyenne: { seat: 'St. Francis', metro: 'st-francis-metro-ks' },
+  greeley: { seat: 'Tribune', metro: 'tribune-metro-ks' },
+  hamilton: { seat: 'Syracuse', metro: 'syracuse-metro-ks' },
+  wallace: { seat: 'Sharon Springs', metro: 'sharon-springs-metro-ks' },
+  wichita: { seat: 'Leoti', metro: 'leoti-metro-ks' },
 };
 
 export function applyKansasCountyOverrides(county: LocalCounty): LocalCounty {
