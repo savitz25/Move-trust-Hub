@@ -2515,6 +2515,91 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural CSRA relocations.',
     ],
   },
+  harris: {
+    marketNotes:
+      'Harris County is rural West Georgia with Hamilton as the seat and Columbus / Fort Moore military influence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Harris County pricing reflects military PCS seasonality, rural property access, and travel from Columbus-area crews.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm PCS and government billing familiarity for Fort Moore relocations.',
+      'Verify explicit regional service to Hamilton before booking.',
+      'Storage is very limited locally — coordinate with Columbus providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural and military relocations.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County is rural in the CSRA with Lincolnton as the seat and lake-influenced residential demand along Clarks Hill.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects lake-property access, rural driveways, and travel from Augusta-area crews.',
+    },
+    tips: [
+      'Lake properties have access challenges — confirm dock, driveway, and steep-grade feasibility before booking.',
+      'Verify explicit regional service to Lincolnton before booking.',
+      'Storage is very limited locally — coordinate with Augusta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural and lake-area relocations.',
+    ],
+  },
+  quitman: {
+    marketNotes:
+      'Quitman County is one of the smallest and most rural counties in Southwest Georgia with Georgetown as the seat — distinct from the city of Quitman in Brooks County.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Quitman County pricing reflects extremely remote rural access and travel from Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Georgetown and outer Quitman properties.',
+      'Verify explicit regional service to Georgetown before booking — not Brooks County Quitman.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  schley: {
+    marketNotes:
+      'Schley County is rural in the Columbus corridor with Ellaville as the seat.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Schley County pricing reflects rural property access and travel from Columbus-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Ellaville and outer Schley properties.',
+      'Verify explicit regional service to Ellaville before booking.',
+      'Storage is very limited locally — coordinate with Columbus providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural West Georgia relocations.',
+    ],
+  },
+  stewart: {
+    marketNotes:
+      'Stewart County is rural in the Columbus corridor with Lumpkin as the seat — distinct from Lumpkin County (Dahlonega).',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Stewart County pricing reflects rural property access and travel from Columbus-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Lumpkin and outer Stewart properties.',
+      'Verify explicit regional service to Lumpkin before booking — not Lumpkin County (Dahlonega).',
+      'Storage is very limited locally — coordinate with Columbus providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural West Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

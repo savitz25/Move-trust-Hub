@@ -3837,6 +3837,136 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  harris: [
+    {
+      quote:
+        'Coleman Worldwide Columbus confirmed Hamilton coverage and handled our Fort Moore corridor move with careful military PCS documentation support.',
+      name: 'Tom R.',
+      location: 'Hamilton, GA',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbus served our Harris County relocation efficiently with clear communication about Columbus-area travel time.',
+      name: 'Brenda L.',
+      location: 'Hamilton, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbus traveled to Hamilton and finished our rural move on schedule with transparent West Georgia pricing.',
+      name: 'Carl M.',
+      location: 'Hamilton, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  lincoln: [
+    {
+      quote:
+        'Budget Movers Augusta confirmed Lincolnton coverage and handled our Clarks Hill lake home relocation with careful driveway access planning.',
+      name: 'Patricia H.',
+      location: 'Lincolnton, GA',
+      rating: 5,
+      moveType: 'Lake home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta served our Lincoln County move efficiently with clear communication about rural CSRA travel time.',
+      name: 'James R.',
+      location: 'Lincolnton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'ADSI Moving Augusta handled our lake-property relocation with upfront pricing and careful navigation of steep driveway access.',
+      name: 'Susan T.',
+      location: 'Lincolnton, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  quitman: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Georgetown move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Georgetown, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Quitman County coverage and handled our rural Georgetown relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Georgetown, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Georgetown move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Georgetown, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  schley: [
+    {
+      quote:
+        'Coleman Worldwide Columbus confirmed Ellaville coverage and delivered careful handling for our rural Schley County relocation.',
+      name: 'Tom R.',
+      location: 'Ellaville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbus handled our Ellaville move with great communication and no surprise fees despite rural West Georgia access challenges.',
+      name: 'Brenda L.',
+      location: 'Ellaville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbus traveled to Ellaville and finished our move on schedule with transparent Columbus-area pricing.',
+      name: 'Carl M.',
+      location: 'Ellaville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  stewart: [
+    {
+      quote:
+        'Coleman Worldwide Columbus confirmed Lumpkin coverage and delivered careful handling for our rural Stewart County relocation.',
+      name: 'Tom R.',
+      location: 'Lumpkin, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbus served our Stewart County move efficiently with clear communication about Columbus-area travel time.',
+      name: 'Brenda L.',
+      location: 'Lumpkin, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbus handled our Lumpkin move with upfront pricing and reliable packing despite remote rural access.',
+      name: 'Carl M.',
+      location: 'Lumpkin, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

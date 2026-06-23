@@ -811,6 +811,31 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-augusta',
     'adsi-moving-augusta',
   ],
+  harris: [
+    'coleman-worldwide-columbus',
+    'two-men-and-a-truck-columbus',
+    'college-hunks-moving-columbus',
+  ],
+  lincoln: [
+    'budget-movers-augusta',
+    'two-men-and-a-truck-augusta',
+    'adsi-moving-augusta',
+  ],
+  quitman: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  schley: [
+    'coleman-worldwide-columbus',
+    'two-men-and-a-truck-columbus',
+    'college-hunks-moving-columbus',
+  ],
+  stewart: [
+    'coleman-worldwide-columbus',
+    'two-men-and-a-truck-columbus',
+    'college-hunks-moving-columbus',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

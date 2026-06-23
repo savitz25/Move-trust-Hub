@@ -151,6 +151,11 @@ export const georgiaCountyOverrides: Partial<
   clay: { seat: 'Fort Gaines', metro: 'albany-metro-ga' },
   echols: { seat: 'Statenville', metro: 'valdosta-metro-ga' },
   glascock: { seat: 'Gibson', metro: 'augusta-metro-ga' },
+  harris: { seat: 'Hamilton', metro: 'columbus-metro-ga' },
+  lincoln: { seat: 'Lincolnton', metro: 'augusta-metro-ga' },
+  quitman: { seat: 'Georgetown', metro: 'albany-metro-ga' },
+  schley: { seat: 'Ellaville', metro: 'columbus-metro-ga' },
+  stewart: { seat: 'Lumpkin', metro: 'columbus-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

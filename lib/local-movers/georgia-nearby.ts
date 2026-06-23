@@ -158,6 +158,11 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   clay: ['randolph', 'quitman', 'early', 'calhoun', 'stewart', 'terrell'],
   echols: ['clinch', 'lowndes', 'lanier', 'atkinson', 'ware', 'charlton'],
   glascock: ['warren', 'jefferson', 'mcduffie', 'hancock', 'washington', 'wilkes'],
+  harris: ['muscogee', 'talbot', 'marion', 'upson', 'meriwether', 'chattahoochee'],
+  lincoln: ['mcduffie', 'wilkes', 'elbert', 'columbia', 'warren', 'clarke'],
+  quitman: ['randolph', 'clay', 'stewart', 'terrell', 'webster', 'calhoun'],
+  schley: ['sumter', 'macon', 'marion', 'webster', 'stewart', 'chattahoochee'],
+  stewart: ['chattahoochee', 'webster', 'randolph', 'quitman', 'clay', 'schley'],
 };
 
 export function getGeorgiaNearbyCounties(
