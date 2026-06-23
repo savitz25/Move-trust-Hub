@@ -129,6 +129,16 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'sevier',
   'madison',
   'putnam',
+  'anderson',
+  'robertson',
+  'greene',
+  'hamblen',
+  'cumberland',
+  'loudon',
+  'coffee',
+  'tipton',
+  'jefferson',
+  'hawkins',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

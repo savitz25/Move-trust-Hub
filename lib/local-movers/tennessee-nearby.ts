@@ -26,6 +26,16 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   sevier: ['knox', 'blount', 'jefferson', 'cocke', 'hamblen', 'grainger'],
   madison: ['chester', 'henderson', 'carroll', 'gibson', 'crockett', 'hardeman'],
   putnam: ['jackson', 'smith', 'overton', 'white', 'cumberland', 'dekalb'],
+  anderson: ['knox', 'roane', 'morgan', 'scott', 'campbell', 'blount'],
+  robertson: ['davidson', 'sumner', 'montgomery', 'cheatham', 'wilson', 'macon'],
+  greene: ['washington', 'hawkins', 'unicoi', 'cocke', 'hamblen', 'sullivan'],
+  hamblen: ['jefferson', 'grainger', 'hawkins', 'greene', 'cocke', 'sevier'],
+  cumberland: ['putnam', 'fentress', 'morgan', 'roane', 'white', 'van-buren'],
+  loudon: ['knox', 'blount', 'roane', 'monroe', 'mcminn', 'anderson'],
+  coffee: ['bedford', 'franklin', 'grundy', 'warren', 'cannon', 'rutherford'],
+  tipton: ['shelby', 'fayette', 'crockett', 'lauderdale', 'haywood', 'benton'],
+  jefferson: ['sevier', 'hamblen', 'grainger', 'cocke', 'knox', 'douglas'],
+  hawkins: ['sullivan', 'washington', 'greene', 'hancock', 'claiborne', 'grainger'],
 };
 
 export function getTennesseeNearbyCounties(

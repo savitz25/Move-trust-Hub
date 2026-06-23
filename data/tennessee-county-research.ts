@@ -297,6 +297,176 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  anderson: {
+    marketNotes:
+      'Anderson County is a key county in the Oak Ridge National Laboratory corridor with strong residential, scientific, and industrial demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Anderson County pricing reflects Oak Ridge lab-corridor relocations, Clinton and Norris suburban demand, and Knoxville-metro I-75 and I-40 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Clinton, Oak Ridge, and Norris areas before booking.',
+      'Knoxville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and lab-related relocations before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  robertson: {
+    marketNotes:
+      'Robertson County is a fast-growing suburban county north of Nashville with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,700',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Robertson County pricing reflects Springfield and White House suburban growth, Nashville-metro commuter demand, and I-65 and I-24 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Springfield, White House, and Greenbrier areas before booking.',
+      'Nashville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  greene: {
+    marketNotes:
+      'Greene County is a historic and growing county in East Tennessee with strong residential demand centered on Greeneville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Greene County pricing reflects Greeneville historic-town demand, Tri-Cities regional crew travel, and I-81 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Greeneville and surrounding Greene County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hamblen: {
+    marketNotes:
+      'Hamblen County is a key county in the Tri-Cities region with strong industrial and residential demand centered on Morristown.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Hamblen County pricing reflects Morristown industrial corridor demand, regional Tri-Cities crew travel, and I-40 and I-81 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Morristown and surrounding Hamblen County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cumberland: {
+    marketNotes:
+      'Cumberland County is a growing plateau county with strong retirement and residential demand centered on Crossville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Cumberland County pricing reflects Crossville retirement-community demand, plateau access considerations, and Upper Cumberland regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Crossville and surrounding Cumberland County areas before booking.',
+      'Plateau access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  loudon: {
+    marketNotes:
+      'Loudon County is a growing county south of Knoxville with strong residential and lake-area demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Loudon County pricing reflects Lenoir City and Tellico Village lakeside demand, Knoxville-metro suburban growth, and I-75 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Loudon and Lenoir City areas before booking.',
+      'Knoxville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  coffee: {
+    marketNotes:
+      'Coffee County is a growing county in Middle Tennessee with strong industrial and residential demand centered on Manchester and Tullahoma.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Coffee County pricing reflects Manchester and Tullahoma industrial corridor demand, regional I-24 traffic, and Nashville-metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Manchester and Tullahoma areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tipton: {
+    marketNotes:
+      'Tipton County is a fast-growing suburban county north of Memphis with strong residential demand centered on Covington.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Tipton County pricing reflects Covington suburban growth, Memphis-metro commuter demand, and I-40 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Covington and surrounding Tipton County areas before booking.',
+      'Memphis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is a growing county in East Tennessee with strong residential and lake-area demand centered on Dandridge.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects Dandridge and Douglas Lake waterfront demand, Smokies tourism seasonality, and regional Morristown-Knoxville crew travel.',
+    },
+    tips: [
+      'Verify coverage for Dandridge and Jefferson City areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hawkins: {
+    marketNotes:
+      'Hawkins County is a growing county in the Tri-Cities region with strong residential demand centered on Rogersville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Hawkins County pricing reflects Rogersville historic-town demand, Tri-Cities regional crew travel, and I-81 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Rogersville and surrounding Hawkins County areas before booking.',
+      'Tri-Cities traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

@@ -21,6 +21,16 @@ export const tennesseeCountyOverrides: Partial<
   sevier: { seat: 'Sevierville', metro: 'sevierville-metro-tn' },
   madison: { seat: 'Jackson', metro: 'jackson-metro-tn' },
   putnam: { seat: 'Cookeville', metro: 'cookeville-metro-tn' },
+  anderson: { seat: 'Clinton', metro: 'knoxville-metro-tn' },
+  robertson: { seat: 'Springfield', metro: 'nashville-metro-tn' },
+  greene: { seat: 'Greeneville', metro: 'greeneville-metro-tn' },
+  hamblen: { seat: 'Morristown', metro: 'morristown-metro-tn' },
+  cumberland: { seat: 'Crossville', metro: 'crossville-metro-tn' },
+  loudon: { seat: 'Loudon', metro: 'knoxville-metro-tn' },
+  coffee: { seat: 'Manchester', metro: 'manchester-metro-tn' },
+  tipton: { seat: 'Covington', metro: 'memphis-metro-tn' },
+  jefferson: { seat: 'Dandridge', metro: 'morristown-metro-tn' },
+  hawkins: { seat: 'Rogersville', metro: 'kingsport-bristol-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {
