@@ -246,6 +246,261 @@ export const oklahomaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  washington: {
+    marketNotes:
+      'Washington County is a key Northeast Oklahoma county with strong energy-industry and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Bartlesville energy-sector relocation demand, northeast Tulsa metro cross-county crews, and regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Bartlesville and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bryan: {
+    marketNotes:
+      'Bryan County is a growing county in Southeast Oklahoma with strong educational (Southeastern Oklahoma State University) and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Bryan County pricing reflects Durant university relocation volume, southeast Oklahoma regional traffic, and cross-state crews from Oklahoma City and Tulsa providers.',
+    },
+    tips: [
+      'Verify coverage for Durant and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcclain: {
+    marketNotes:
+      'McClain County is a rapidly growing suburban county south of Oklahoma City with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'McClain County pricing reflects Purcell and Newcastle suburban demand, south Oklahoma City metro traffic, and cross-county crews from Norman and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Purcell, Newcastle, and Blanchard areas before booking.',
+      'Oklahoma City-area traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'le-flore': {
+    marketNotes:
+      'Le Flore County is a growing county in Southeast Oklahoma with strong residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Le Flore County pricing reflects Poteau regional demand, southeast Oklahoma access constraints, and Tulsa metro cross-county providers.',
+    },
+    tips: [
+      'Verify coverage for Poteau and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cherokee: {
+    marketNotes:
+      'Cherokee County is anchored by Northeastern State University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cherokee County pricing reflects Tahlequah university relocation demand, northeast Oklahoma regional traffic, and Tulsa metro cross-county crews.',
+    },
+    tips: [
+      'Verify coverage for Tahlequah and surrounding areas before booking.',
+      'University traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carter: {
+    marketNotes:
+      'Carter County is a key South Oklahoma county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Carter County pricing reflects Ardmore energy-sector relocation demand, south Oklahoma regional traffic, and cross-county crews from Lawton and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Ardmore and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  osage: {
+    marketNotes:
+      'Osage County is the largest county in Oklahoma with strong residential and tribal economic demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Osage County pricing reflects Pawhuska and Skiatook regional demand, north Tulsa metro traffic, and cross-county crews from Tulsa providers.',
+    },
+    tips: [
+      'Verify coverage for Pawhuska, Skiatook, and Hominy areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stephens: {
+    marketNotes:
+      'Stephens County is a key South Oklahoma county with strong energy-industry and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Stephens County pricing reflects Duncan energy-sector relocation demand, south Oklahoma regional traffic, and cross-county crews from Lawton and Chickasha providers.',
+    },
+    tips: [
+      'Verify coverage for Duncan and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kay: {
+    marketNotes:
+      'Kay County is a key North Oklahoma county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Kay County pricing reflects Ponca City and Newkirk energy-sector demand, northwest Oklahoma regional traffic, and Enid and OKC van-line agents.',
+    },
+    tips: [
+      'Verify coverage for Ponca City and Newkirk areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pittsburg: {
+    marketNotes:
+      'Pittsburg County is a key Southeast Oklahoma county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Pittsburg County pricing reflects McAlester energy-sector relocation demand, southeast Oklahoma regional traffic, and cross-county crews from OKC and Tulsa providers.',
+    },
+    tips: [
+      'Verify coverage for McAlester and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  delaware: {
+    marketNotes:
+      'Delaware County is a scenic county in Northeast Oklahoma with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Delaware County pricing reflects Grove and Jay lakeside relocation demand, northeast Oklahoma tourism-season volume, and Tulsa metro cross-county crews.',
+    },
+    tips: [
+      'Verify coverage for Grove, Jay, and surrounding areas before booking.',
+      'Lake access and seasonal tourism traffic require advance planning — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak tourist seasons and summer relocation windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sequoyah: {
+    marketNotes:
+      'Sequoyah County is a growing county in East Oklahoma with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Sequoyah County pricing reflects Sallisaw regional demand, east Oklahoma traffic constraints, and Tulsa metro cross-county providers.',
+    },
+    tips: [
+      'Verify coverage for Sallisaw and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mayes: {
+    marketNotes:
+      'Mayes County is a growing county in Northeast Oklahoma with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Mayes County pricing reflects Pryor industrial relocation demand, northeast Oklahoma regional traffic, and Tulsa metro cross-county crews.',
+    },
+    tips: [
+      'Verify coverage for Pryor and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pontotoc: {
+    marketNotes:
+      'Pontotoc County is anchored by East Central University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Pontotoc County pricing reflects Ada university relocation demand, south-central Oklahoma regional traffic, and cross-county crews from Shawnee and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Ada and surrounding areas before booking.',
+      'University traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  okmulgee: {
+    marketNotes:
+      'Okmulgee County is a key East Oklahoma county with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Okmulgee County pricing reflects east Oklahoma regional demand, Tulsa metro cross-county traffic, and competition among Tulsa and Muskogee-area providers.',
+    },
+    tips: [
+      'Verify coverage for Okmulgee and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getOklahomaCountyResearch(

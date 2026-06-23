@@ -25,6 +25,21 @@ const OK_COUNTY_NEIGHBORS: Record<string, string[]> = {
   garfield: ['alfalfa', 'grant', 'major', 'kay', 'noble', 'kingfisher'],
   grady: ['mcclain', 'caddo', 'comanche', 'stephens', 'garvin', 'oklahoma'],
   logan: ['oklahoma', 'kingfisher', 'payne', 'noble', 'lincoln', 'pawnee'],
+  washington: ['osage', 'nowata', 'craig', 'kay', 'tulsa', 'rogers'],
+  bryan: ['atoka', 'marshall', 'johnston', 'love', 'carter', 'coal'],
+  mcclain: ['grady', 'garvin', 'cleveland', 'pottawatomie', 'oklahoma', 'stephens'],
+  'le-flore': ['latimer', 'haskell', 'sequoyah', 'pushmataha', 'mccurtain', 'pittsburg'],
+  cherokee: ['adair', 'wagoner', 'mayes', 'delaware', 'sequoyah', 'muskogee'],
+  carter: ['love', 'marshall', 'johnston', 'garvin', 'stephens', 'bryan'],
+  osage: ['washington', 'pawnee', 'creek', 'tulsa', 'kay', 'noble'],
+  stephens: ['carter', 'jefferson', 'grady', 'comanche', 'cotton', 'mcclain'],
+  kay: ['osage', 'noble', 'grant', 'garfield', 'pawnee', 'washington'],
+  pittsburg: ['hughes', 'coal', 'latimer', 'mccurtain', 'atoka', 'pushmataha'],
+  delaware: ['cherokee', 'mayes', 'craig', 'adair', 'wagoner', 'ottawa'],
+  sequoyah: ['muskogee', 'haskell', 'le-flore', 'adair', 'cherokee', 'wagoner'],
+  mayes: ['rogers', 'craig', 'delaware', 'cherokee', 'wagoner', 'tulsa'],
+  pontotoc: ['johnston', 'coal', 'hughes', 'mcclain', 'pottawatomie', 'seminole'],
+  okmulgee: ['muskogee', 'okfuskee', 'mcintosh', 'tulsa', 'creek', 'wagoner'],
 };
 
 export function getOklahomaNearbyCounties(

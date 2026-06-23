@@ -18,6 +18,21 @@ export const oklahomaCountyOverrides: Partial<
   garfield: { seat: 'Enid', metro: 'enid-metro-ok' },
   grady: { seat: 'Chickasha', metro: 'chickasha-metro-ok' },
   logan: { seat: 'Guthrie', metro: 'oklahoma-city-metro-ok' },
+  washington: { seat: 'Bartlesville', metro: 'bartlesville-metro-ok' },
+  bryan: { seat: 'Durant', metro: 'durant-metro-ok' },
+  mcclain: { seat: 'Purcell', metro: 'oklahoma-city-metro-ok' },
+  'le-flore': { seat: 'Poteau', metro: 'poteau-metro-ok' },
+  cherokee: { seat: 'Tahlequah', metro: 'tahlequah-metro-ok' },
+  carter: { seat: 'Ardmore', metro: 'ardmore-metro-ok' },
+  osage: { seat: 'Pawhuska', metro: 'tulsa-metro-ok' },
+  stephens: { seat: 'Duncan', metro: 'duncan-metro-ok' },
+  kay: { seat: 'Newkirk', metro: 'ponca-city-metro-ok' },
+  pittsburg: { seat: 'McAlester', metro: 'mcalester-metro-ok' },
+  delaware: { seat: 'Jay', metro: 'jay-metro-ok' },
+  sequoyah: { seat: 'Sallisaw', metro: 'sallisaw-metro-ok' },
+  mayes: { seat: 'Pryor', metro: 'pryor-metro-ok' },
+  pontotoc: { seat: 'Ada', metro: 'ada-metro-ok' },
+  okmulgee: { seat: 'Okmulgee', metro: 'okmulgee-metro-ok' },
 };
 
 export function applyOklahomaCountyOverrides(county: LocalCounty): LocalCounty {

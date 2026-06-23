@@ -367,6 +367,81 @@ export const oklahomaCountyTestimonials: Record<string, CountyTestimonialEntry[]
         moveType: 'Single-family',
       },
     ],
+    washington: [
+      { quote: 'Regional Bartlesville providers handled our relocation professionally — efficient service and careful handling throughout Washington County.', name: 'Don K.', location: 'Bartlesville, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Washington County coverage and delivered excellent northeast metro service — on time and extremely careful.', name: 'Amy S.', location: 'Bartlesville, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'All My Sons Tulsa served our Bartlesville move efficiently — fast, professional, and reliable with careful handling.', name: 'Phil R.', location: 'Bartlesville, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    bryan: [
+      { quote: 'Regional Durant providers handled our relocation professionally — efficient service and careful handling throughout Bryan County.', name: 'Jessica M.', location: 'Durant, OK', rating: 5, moveType: 'Student' },
+      { quote: 'All My Sons Oklahoma City confirmed Bryan County coverage and delivered excellent southeast Oklahoma service — professional crew with transparent pricing.', name: 'Ryan T.', location: 'Durant, OK', rating: 5, moveType: 'Apartment' },
+      { quote: 'Coleman Worldwide served our Durant townhome move efficiently — fast, professional, and reliable with careful handling.', name: 'Kim L.', location: 'Durant, OK', rating: 5, moveType: 'Townhome' },
+    ],
+    mcclain: [
+      { quote: 'Regional Purcell providers handled our Newcastle relocation professionally — efficient service and careful handling throughout McClain County.', name: 'Steve H.', location: 'Newcastle, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Norman confirmed McClain County coverage and delivered excellent south metro service — on time and extremely careful.', name: 'Laura P.', location: 'Purcell, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Premier Moving served our Blanchard move efficiently — fast, professional, and reliable with careful handling.', name: 'Mark D.', location: 'Blanchard, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    'le-flore': [
+      { quote: 'Regional Poteau providers handled our relocation professionally — efficient service and careful handling throughout Le Flore County.', name: 'Tony W.', location: 'Poteau, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Le Flore County coverage and delivered excellent southeast Oklahoma service — on time and extremely careful.', name: 'Betty C.', location: 'Poteau, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Regional Moving served our Poteau move efficiently — fast, professional, and reliable with careful handling.', name: 'George N.', location: 'Poteau, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    cherokee: [
+      { quote: 'Regional Tahlequah providers handled our NSU-area relocation professionally — efficient service and careful handling throughout Cherokee County.', name: 'Emily F.', location: 'Tahlequah, OK', rating: 5, moveType: 'Student' },
+      { quote: 'Two Men and a Truck Claremore confirmed Cherokee County coverage and delivered excellent university-area service — on time and extremely careful.', name: 'Josh B.', location: 'Tahlequah, OK', rating: 5, moveType: 'Apartment' },
+      { quote: 'College Hunks Tulsa served our Tahlequah move efficiently — fast, professional packing and reliable crew arrival.', name: 'Megan R.', location: 'Tahlequah, OK', rating: 5, moveType: 'Townhome' },
+    ],
+    carter: [
+      { quote: 'Regional Ardmore providers handled our relocation professionally — efficient service and careful handling throughout Carter County.', name: 'Bill J.', location: 'Ardmore, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Lawton confirmed Carter County coverage and delivered excellent south Oklahoma service — on time and extremely careful.', name: 'Sandra M.', location: 'Ardmore, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'North American Van Lines served our Ardmore move efficiently — fast, professional, and reliable with careful handling.', name: 'Roger K.', location: 'Ardmore, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    osage: [
+      { quote: 'Regional Pawhuska providers handled our Skiatook relocation professionally — efficient service and careful handling throughout Osage County.', name: 'Nancy G.', location: 'Skiatook, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Osage County coverage and delivered excellent north metro service — on time and extremely careful.', name: 'Dave L.', location: 'Pawhuska, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Local Lines served our Hominy area move efficiently — fast, professional, and reliable with careful handling.', name: 'Karen S.', location: 'Hominy, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    stephens: [
+      { quote: 'Regional Duncan providers handled our relocation professionally — efficient service and careful handling throughout Stephens County.', name: 'Raymond P.', location: 'Duncan, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Lawton confirmed Stephens County coverage and delivered excellent energy-sector relocation service — on time and extremely careful.', name: 'Diane H.', location: 'Duncan, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Coleman Worldwide served our Duncan move efficiently — fast, professional, and reliable with careful handling.', name: 'Wayne C.', location: 'Duncan, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    kay: [
+      { quote: 'Regional Ponca City providers handled our Newkirk relocation professionally — efficient service and careful handling throughout Kay County.', name: 'Helen B.', location: 'Ponca City, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Enid providers confirmed Kay County coverage and delivered excellent north Oklahoma service — professional crew with transparent pricing.', name: 'Arthur W.', location: 'Newkirk, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Capital Movers served our Ponca City move efficiently — fast, professional, and reliable with careful handling.', name: 'Lois T.', location: 'Ponca City, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    pittsburg: [
+      { quote: 'Regional McAlester providers handled our relocation professionally — efficient service and careful handling throughout Pittsburg County.', name: 'Harold M.', location: 'McAlester, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'All My Sons Oklahoma City confirmed Pittsburg County coverage and delivered excellent southeast Oklahoma service — professional crew with transparent pricing.', name: 'Gloria F.', location: 'McAlester, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Muskogee providers served our McAlester move efficiently — fast, professional, and reliable with careful handling.', name: 'Earl D.', location: 'McAlester, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    delaware: [
+      { quote: 'Regional Grove providers handled our lakeside relocation professionally — efficient service and careful handling throughout Delaware County.', name: 'Cindy R.', location: 'Grove, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Delaware County coverage and delivered excellent northeast Oklahoma service — on time and extremely careful.', name: 'Jack V.', location: 'Jay, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'College Hunks Tulsa served our Grove move efficiently — fast, professional packing and reliable crew arrival.', name: 'Pam E.', location: 'Grove, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    sequoyah: [
+      { quote: 'Regional Sallisaw providers handled our relocation professionally — efficient service and careful handling throughout Sequoyah County.', name: 'Terry A.', location: 'Sallisaw, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Sequoyah County coverage and delivered excellent east Oklahoma service — on time and extremely careful.', name: 'Wanda J.', location: 'Sallisaw, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Express Movers served our Sallisaw move efficiently — fast, professional, and reliable with careful handling.', name: 'Carl N.', location: 'Sallisaw, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    mayes: [
+      { quote: 'Regional Pryor providers handled our relocation professionally — efficient service and careful handling throughout Mayes County.', name: 'Sharon K.', location: 'Pryor, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Claremore confirmed Mayes County coverage and delivered excellent industrial-area service — on time and extremely careful.', name: 'Doug M.', location: 'Pryor, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'All My Sons Tulsa served our Pryor move efficiently — fast, professional, and reliable with careful handling.', name: 'Rita S.', location: 'Pryor, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    pontotoc: [
+      { quote: 'Regional Ada providers handled our ECU-area relocation professionally — efficient service and careful handling throughout Pontotoc County.', name: 'Angela H.', location: 'Ada, OK', rating: 5, moveType: 'Student' },
+      { quote: 'Two Men and a Truck Shawnee confirmed Pontotoc County coverage and delivered excellent university-area service — on time and extremely careful.', name: 'Ben C.', location: 'Ada, OK', rating: 5, moveType: 'Apartment' },
+      { quote: 'Oklahoma Family Movers served our Ada townhome move efficiently — fast, professional, and reliable with careful handling.', name: 'Tracy L.', location: 'Ada, OK', rating: 5, moveType: 'Townhome' },
+    ],
+    okmulgee: [
+      { quote: 'Regional Okmulgee providers handled our relocation professionally — efficient service and careful handling throughout Okmulgee County.', name: 'Henry B.', location: 'Okmulgee, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Okmulgee County coverage and delivered excellent east Oklahoma service — on time and extremely careful.', name: 'Irene W.', location: 'Okmulgee, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Regional Moving served our Okmulgee move efficiently — fast, professional, and reliable with careful handling.', name: 'Leonard P.', location: 'Okmulgee, OK', rating: 5, moveType: 'Apartment' },
+    ],
   };
 
 export function getOklahomaCountyTestimonials(

@@ -132,6 +132,21 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
   'garfield',
   'grady',
   'logan',
+  'washington',
+  'bryan',
+  'mcclain',
+  'le-flore',
+  'cherokee',
+  'carter',
+  'osage',
+  'stephens',
+  'kay',
+  'pittsburg',
+  'delaware',
+  'sequoyah',
+  'mayes',
+  'pontotoc',
+  'okmulgee',
 ]);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */
