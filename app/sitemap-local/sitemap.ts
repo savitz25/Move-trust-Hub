@@ -117,7 +117,7 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic OK counties — sitemap priority 0.85 */
-const OK_HIGH_TRAFFIC_COUNTIES = new Set(['oklahoma']);
+const OK_HIGH_TRAFFIC_COUNTIES = new Set(['oklahoma', 'tulsa', 'cleveland']);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */
 const LA_HIGH_TRAFFIC_PARISHES = new Set([

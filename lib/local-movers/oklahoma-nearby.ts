@@ -12,6 +12,8 @@ const countyNameBySlug = new Map(oklahomaCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated OK county pages — expands as counties are researched */
 const OK_COUNTY_NEIGHBORS: Record<string, string[]> = {
   oklahoma: ['canadian', 'cleveland', 'pottawatomie', 'mcclain', 'grady', 'logan'],
+  tulsa: ['wagoner', 'rogers', 'creek', 'osage', 'pawnee', 'okmulgee'],
+  cleveland: ['mcclain', 'pottawatomie', 'oklahoma', 'canadian', 'grady', 'garvin'],
 };
 
 export function getOklahomaNearbyCounties(
