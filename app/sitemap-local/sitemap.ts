@@ -135,7 +135,13 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */
-const KS_HIGH_TRAFFIC_COUNTIES = new Set(['johnson']);
+const KS_HIGH_TRAFFIC_COUNTIES = new Set([
+  'johnson',
+  'sedgwick',
+  'shawnee',
+  'wyandotte',
+  'douglas',
+]);
 
 /** High-traffic AR counties — sitemap priority 0.85 */
 const AR_HIGH_TRAFFIC_COUNTIES = new Set([

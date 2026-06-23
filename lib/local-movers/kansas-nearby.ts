@@ -12,6 +12,10 @@ const countyNameBySlug = new Map(kansasCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated KS county pages — expands as counties are researched */
 const KS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   johnson: ['wyandotte', 'leavenworth', 'miami', 'douglas', 'franklin', 'anderson'],
+  sedgwick: ['harvey', 'butler', 'sumner', 'reno', 'kingman', 'cowley'],
+  shawnee: ['jackson', 'jefferson', 'douglas', 'osage', 'wabaunsee', 'pottawatomie'],
+  wyandotte: ['johnson', 'leavenworth', 'douglas', 'miami', 'franklin', 'jefferson'],
+  douglas: ['shawnee', 'jefferson', 'johnson', 'franklin', 'osage', 'leavenworth'],
 };
 
 export function getKansasNearbyCounties(
