@@ -143,6 +143,16 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   montgomery: ['telfair', 'jeff-davis', 'toombs', 'wheeler', 'appling', 'coffee'],
   hancock: ['washington', 'greene', 'taliferro', 'warren', 'baldwin', 'glascock'],
   wilkinson: ['washington', 'laurens', 'johnson', 'twiggs', 'bleckley', 'hancock'],
+  wheeler: ['montgomery', 'telfair', 'jeff-davis', 'appling', 'coffee', 'laurens'],
+  marion: ['muscogee', 'talbot', 'schley', 'stewart', 'webster', 'chattahoochee'],
+  twiggs: ['wilkinson', 'bleckley', 'jones', 'bibb', 'hancock', 'washington'],
+  clinch: ['lowndes', 'echols', 'ware', 'atkinson', 'lanier', 'charlton'],
+  treutlen: ['emanuel', 'laurens', 'johnson', 'montgomery', 'wheeler', 'jenkins'],
+  randolph: ['terrell', 'calhoun', 'stewart', 'quitman', 'clay', 'webster'],
+  miller: ['seminole', 'decatur', 'baker', 'early', 'mitchell', 'grady'],
+  talbot: ['marion', 'taylor', 'upson', 'meriwether', 'harris', 'muscogee'],
+  calhoun: ['early', 'baker', 'miller', 'terrell', 'randolph', 'dougherty'],
+  warren: ['mcduffie', 'wilkes', 'hancock', 'glascock', 'jefferson', 'columbia'],
 };
 
 export function getGeorgiaNearbyCounties(

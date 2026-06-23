@@ -136,6 +136,16 @@ export const georgiaCountyOverrides: Partial<
   montgomery: { seat: 'Mount Vernon', metro: 'savannah-metro-ga' },
   hancock: { seat: 'Sparta', metro: 'macon-metro-ga' },
   wilkinson: { seat: 'Irwinton', metro: 'macon-metro-ga' },
+  wheeler: { seat: 'Alamo', metro: 'savannah-metro-ga' },
+  marion: { seat: 'Buena Vista', metro: 'columbus-metro-ga' },
+  twiggs: { seat: 'Jeffersonville', metro: 'macon-metro-ga' },
+  clinch: { seat: 'Homerville', metro: 'valdosta-metro-ga' },
+  treutlen: { seat: 'Soperton', metro: 'savannah-metro-ga' },
+  randolph: { seat: 'Cuthbert', metro: 'albany-metro-ga' },
+  miller: { seat: 'Colquitt', metro: 'albany-metro-ga' },
+  talbot: { seat: 'Talbotton', metro: 'columbus-metro-ga' },
+  calhoun: { seat: 'Morgan', metro: 'albany-metro-ga' },
+  warren: { seat: 'Warrenton', metro: 'augusta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

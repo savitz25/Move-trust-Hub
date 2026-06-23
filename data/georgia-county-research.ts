@@ -2260,6 +2260,176 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural Central Georgia relocations.',
     ],
   },
+  wheeler: {
+    marketNotes:
+      'Wheeler County is rural Southeast Georgia with Alamo as the seat along the Vidalia and Soperton corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Wheeler County pricing reflects rural property access and travel from Savannah or Statesboro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Alamo and outer Wheeler properties.',
+      'Verify explicit regional service to Alamo before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is rural in the Columbus area with Buena Vista as the seat southwest of Fort Moore.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Marion County pricing reflects rural property access and travel from Columbus-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Buena Vista and outer Marion properties.',
+      'Verify explicit regional service to Buena Vista before booking.',
+      'Storage is very limited locally — coordinate with Columbus providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural West Georgia relocations.',
+    ],
+  },
+  twiggs: {
+    marketNotes:
+      'Twiggs County is rural Central Georgia with Jeffersonville as the seat between Macon and Sandersville.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Twiggs County pricing reflects rural property access and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Jeffersonville and outer Twiggs addresses.',
+      'Verify explicit regional service to Jeffersonville before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  clinch: {
+    marketNotes:
+      'Clinch County is rural Southeast Georgia with Homerville as the seat along the Valdosta and Waycross corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Clinch County pricing reflects rural property access and travel from Valdosta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Homerville and outer Clinch properties.',
+      'Verify explicit regional service to Homerville before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  treutlen: {
+    marketNotes:
+      'Treutlen County is rural Southeast Georgia with Soperton as the seat between Dublin and Vidalia.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Treutlen County pricing reflects rural property access and travel from Savannah or Statesboro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Soperton and outer Treutlen properties.',
+      'Verify explicit regional service to Soperton before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  randolph: {
+    marketNotes:
+      'Randolph County is rural Southwest Georgia with Cuthbert as the seat along the Alabama border corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Randolph County pricing reflects remote rural access and travel from Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Cuthbert and outer Randolph properties.',
+      'Verify explicit regional service to Cuthbert before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  miller: {
+    marketNotes:
+      'Miller County is rural Southwest Georgia with Colquitt as the seat — distinct from Colquitt County (Moultrie).',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Miller County pricing reflects rural property access and travel from Albany or Dothan-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Colquitt and outer Miller properties.',
+      'Verify explicit regional service to Colquitt before booking — not Colquitt County (Moultrie).',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  talbot: {
+    marketNotes:
+      'Talbot County is rural in the Columbus area with Talbotton as the seat between Columbus and Macon.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Talbot County pricing reflects rural property access and travel from Columbus-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Talbotton and outer Talbot properties.',
+      'Verify explicit regional service to Talbotton before booking.',
+      'Storage is very limited locally — coordinate with Columbus providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural West Georgia relocations.',
+    ],
+  },
+  calhoun: {
+    marketNotes:
+      'Calhoun County is rural Southwest Georgia with Morgan as the seat — distinct from Morgan County (Madison).',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Calhoun County pricing reflects remote rural access and travel from Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Morgan and outer Calhoun properties.',
+      'Verify explicit regional service to Morgan before booking — not Morgan County (Madison).',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  warren: {
+    marketNotes:
+      'Warren County is rural in the CSRA with Warrenton as the seat between Augusta and Sandersville.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Warren County pricing reflects rural property access and travel from Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Warrenton and outer Warren addresses.',
+      'Verify explicit regional service to Warrenton before booking.',
+      'Storage is very limited locally — coordinate with Augusta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural CSRA relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

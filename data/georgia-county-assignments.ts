@@ -735,6 +735,56 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-macon',
     'cicero-moving-macon',
   ],
+  wheeler: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  marion: [
+    'coleman-worldwide-columbus',
+    'two-men-and-a-truck-columbus',
+    'college-hunks-moving-columbus',
+  ],
+  twiggs: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'simple-moving-solutions-macon',
+  ],
+  clinch: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  treutlen: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  randolph: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  miller: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  talbot: [
+    'coleman-worldwide-columbus',
+    'two-men-and-a-truck-columbus',
+    'college-hunks-moving-columbus',
+  ],
+  calhoun: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  warren: [
+    'budget-movers-augusta',
+    'two-men-and-a-truck-augusta',
+    'adsi-moving-augusta',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

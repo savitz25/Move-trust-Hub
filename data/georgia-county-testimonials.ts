@@ -3439,6 +3439,266 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  wheeler: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Alamo and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Alamo, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Wheeler County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Alamo, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Alamo home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Alamo, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  marion: [
+    {
+      quote:
+        'Coleman Worldwide Columbus confirmed Buena Vista coverage and handled our rural Marion County move with careful driveway access planning.',
+      name: 'Tom R.',
+      location: 'Buena Vista, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbus served our Marion County relocation efficiently with clear communication about Fort Moore corridor travel time.',
+      name: 'Brenda L.',
+      location: 'Buena Vista, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbus traveled to Buena Vista and finished our move on schedule with transparent Columbus-area pricing.',
+      name: 'Carl M.',
+      location: 'Buena Vista, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  twiggs: [
+    {
+      quote:
+        'Good Guys Moving confirmed Jeffersonville coverage and handled our rural Twiggs County move with careful driveway access planning.',
+      name: 'Patricia H.',
+      location: 'Jeffersonville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Twiggs County relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'James R.',
+      location: 'Jeffersonville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Simple Moving Solutions Macon traveled to Jeffersonville and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Susan T.',
+      location: 'Jeffersonville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  clinch: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Homerville move with professional crews and clear rural travel pricing.',
+      name: 'Tom R.',
+      location: 'Homerville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Homerville coverage and delivered careful handling for our rural Clinch County relocation.',
+      name: 'Brenda L.',
+      location: 'Homerville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Clinch County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Carl M.',
+      location: 'Homerville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  treutlen: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Soperton and delivered on schedule. Upfront about rural travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Soperton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Treutlen County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Soperton, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Soperton home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Soperton, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  randolph: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Cuthbert move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Cuthbert, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Randolph County coverage and handled our rural Cuthbert relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Cuthbert, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Cuthbert move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Cuthbert, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  miller: [
+    {
+      quote:
+        'HHG Movers confirmed explicit Miller County service to Colquitt before move day — not Colquitt County Moultrie. Careful rural handling.',
+      name: 'Wanda G.',
+      location: 'Colquitt, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany handled our Miller County relocation with professional packing and clear Southwest Georgia travel pricing.',
+      name: 'Johnny R.',
+      location: 'Colquitt, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Colquitt move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Colquitt, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  talbot: [
+    {
+      quote:
+        'Coleman Worldwide Columbus confirmed Talbotton coverage and handled our rural Talbot County move with careful driveway access planning.',
+      name: 'Tom R.',
+      location: 'Talbotton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbus served our Talbot County relocation efficiently with clear communication about Columbus-area travel time.',
+      name: 'Brenda L.',
+      location: 'Talbotton, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbus traveled to Talbotton and finished our move on schedule with transparent West Georgia pricing.',
+      name: 'Carl M.',
+      location: 'Talbotton, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  calhoun: [
+    {
+      quote:
+        'HHG Movers confirmed explicit Calhoun County service to Morgan before move day — not Morgan County Madison. Professional rural handling.',
+      name: 'Wanda G.',
+      location: 'Morgan, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany handled our Calhoun County relocation with careful driveway access planning and clear Southwest Georgia pricing.',
+      name: 'Johnny R.',
+      location: 'Morgan, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Morgan move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Morgan, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  warren: [
+    {
+      quote:
+        'Budget Movers Augusta confirmed Warrenton coverage and delivered careful handling for our rural Warren County relocation.',
+      name: 'Johnny R.',
+      location: 'Warrenton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta handled our Warrenton move with great communication and no surprise fees despite rural CSRA access challenges.',
+      name: 'Wanda G.',
+      location: 'Warrenton, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'ADSI Moving Augusta provided reliable packing and loading for our Warren County home. Finished on schedule with transparent Augusta-area pricing.',
+      name: 'Donald P.',
+      location: 'Warrenton, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(
