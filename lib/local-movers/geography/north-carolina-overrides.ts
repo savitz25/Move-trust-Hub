@@ -8,6 +8,9 @@ export const northCarolinaCountyOverrides: Partial<
   mecklenburg: { seat: 'Charlotte', metro: 'charlotte-metro-nc' },
   guilford: { seat: 'Greensboro', metro: 'greensboro-high-point-metro-nc' },
   forsyth: { seat: 'Winston-Salem', metro: 'winston-salem-triad-metro-nc' },
+  durham: { seat: 'Durham', metro: 'durham-chapel-hill-metro-nc' },
+  cumberland: { seat: 'Fayetteville', metro: 'fayetteville-metro-nc' },
+  buncombe: { seat: 'Asheville', metro: 'asheville-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(

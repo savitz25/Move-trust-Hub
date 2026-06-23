@@ -46,6 +46,36 @@ const CURATED_NC_COUNTIES: Record<string, string[]> = {
     'excel-moving-storage-greensboro',
     'miracle-movers-greensboro',
   ],
+  durham: [
+    'two-men-and-a-truck-durham',
+    'trosa-moving-durham',
+    'miracle-movers-durham',
+    'armstrong-relocation-durham',
+    'truckin-movers-durham',
+    'athens-moving-experts-raleigh',
+    'little-guys-movers-raleigh',
+    'college-hunks-moving-raleigh',
+  ],
+  cumberland: [
+    'stewart-moving-storage-fayetteville',
+    'two-men-and-a-truck-fayetteville',
+    'sq-movers-fayetteville',
+    'andy-anderson-moving-fayetteville',
+    'college-hunks-moving-fayetteville',
+    'move-fidelity-fayetteville',
+    'miracle-movers-raleigh',
+    'armstrong-relocation-durham',
+  ],
+  buncombe: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'two-men-and-a-truck-asheville',
+    'carey-moving-storage-asheville',
+    'union-transfer-storage-asheville',
+    'college-hunks-moving-asheville',
+    'kelly-moving-asheville',
+    'hilldrup-asheville',
+  ],
 };
 
 export const northCarolinaCountyMoverAssignments: CountyMoverAssignment[] =

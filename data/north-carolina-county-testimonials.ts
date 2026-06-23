@@ -11,6 +11,84 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  durham: [
+    {
+      quote:
+        'Two Men and a Truck Durham handled our relocation professionally — on time, extremely careful with our belongings, and transparent Triangle pricing throughout Durham County.',
+      name: 'Eric N.',
+      location: 'Durham, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'TROSA Moving served our Durham apartment move efficiently with fast, professional crews and great value for careful handling near RTP.',
+      name: 'Michelle T.',
+      location: 'Durham, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Miracle Movers Durham confirmed coverage and delivered reliable packing and loading with no surprise fees despite Research Triangle traffic.',
+      name: 'Patrick L.',
+      location: 'Durham, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  cumberland: [
+    {
+      quote:
+        'Stewart Moving & Storage handled our Fayetteville PCS move professionally — efficient crews, careful handling, and great experience with military families.',
+      name: 'Sgt. James R.',
+      location: 'Fayetteville, NC',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fayetteville served our Cumberland County move with professional, efficient crews and careful handling throughout.',
+      name: 'Angela M.',
+      location: 'Fayetteville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Move Fidelity confirmed Fort Liberty area coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'David K.',
+      location: 'Fayetteville, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  buncombe: [
+    {
+      quote:
+        'Asheville Area Movers handled our mountain relocation professionally — efficient crews, careful handling, and transparent Buncombe County pricing.',
+      name: 'Laura B.',
+      location: 'Asheville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gasperson Moving & Storage served our Asheville move with professional crews experienced with steep driveways and historic-home handling.',
+      name: 'Mark H.',
+      location: 'Asheville, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Two Men and a Truck Asheville confirmed coverage and delivered reliable packing and loading with no surprise fees despite mountain road access.',
+      name: 'Rachel S.',
+      location: 'Asheville, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
   guilford: [
     {
       quote:

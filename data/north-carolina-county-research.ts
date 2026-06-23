@@ -77,6 +77,57 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    durham: {
+      marketNotes:
+        'Durham County is a core part of the Research Triangle with strong demand from technology, education (Duke University), and healthcare sectors.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,700',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Durham County pricing reflects Research Triangle growth, RTP corporate relocation volume, Duke and medical-sector turnover, and I-40 and US-15-501 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Durham, RTP, and surrounding Durham County areas before booking.',
+        'Research Triangle traffic on I-40, NC-147, and US-15-501 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value tech, university, and medical relocations before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    cumberland: {
+      marketNotes:
+        'Cumberland County is a major military hub (Fort Liberty) with significant residential and relocation demand centered on Fayetteville.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Cumberland County pricing reflects Fort Liberty PCS volume, Fayetteville suburban turnover, and seasonal military relocation surges.',
+      },
+      tips: [
+        'Verify explicit coverage for Fayetteville and Fort Liberty area addresses before booking.',
+        'Military moves require specific PCS experience and documentation — confirm mover familiarity with Fort Liberty relocations.',
+        'Confirm insurance and valuation for high-value and military household goods before booking.',
+        'Book early for peak moving seasons and military transfer windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    buncombe: {
+      marketNotes:
+        'Buncombe County is a premier mountain and tourism destination with strong residential, retirement, and arts-related moving demand centered on Asheville.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Buncombe County pricing reflects Asheville metro demand, mountain-access logistics, historic-home handling, and peak tourist-season scheduling.',
+      },
+      tips: [
+        'Verify explicit coverage for Asheville and surrounding Buncombe County mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep driveways and narrow access.',
+        'Confirm insurance and valuation for high-value mountain and historic homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

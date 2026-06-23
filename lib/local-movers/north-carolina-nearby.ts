@@ -13,6 +13,9 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   mecklenburg: ['union', 'gaston', 'cabarrus', 'iredell', 'lincoln', 'rowan'],
   guilford: ['forsyth', 'alamance', 'randolph', 'rockingham', 'davidson'],
   forsyth: ['guilford', 'davidson', 'davie', 'yadkin', 'surry', 'stokes'],
+  durham: ['wake', 'orange', 'granville', 'person', 'chatham', 'alamance'],
+  cumberland: ['hoke', 'harnett', 'sampson', 'bladen', 'robeson', 'moore'],
+  buncombe: ['henderson', 'madison', 'yancey', 'mcdowell', 'rutherford', 'haywood'],
 };
 
 export function getNorthCarolinaNearbyCounties(
