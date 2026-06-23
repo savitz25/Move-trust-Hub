@@ -715,18 +715,18 @@ export const kansasCountyTestimonials: Record<string, CountyTestimonialEntry[]> 
   ],
   graham: [
     { quote: 'Regional Hill City providers handled our Graham County move professionally — efficient and careful throughout.', name: 'Hal R.', location: 'Hill City, KS', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Wichita confirmed Graham County coverage and delivered excellent Northwest Kansas service.', name: 'Ann K.', location: 'Hill City, KS', rating: 5, moveType: 'Townhome' },
-    { quote: 'Kansas Express Movers served our Hill City relocation efficiently — professional crew with careful handling.', name: 'Ben L.', location: 'Hill City, KS', rating: 5, moveType: 'Apartment' },
+    { quote: 'Two Men and a Truck Wichita confirmed Graham County coverage and delivered excellent Northwest Kansas service.', name: 'Ann K.', location: 'Hill City, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Local Lines served our Hill City relocation efficiently — fast, professional, and reliable with careful handling.', name: 'Ben L.', location: 'Hill City, KS', rating: 5, moveType: 'Apartment' },
   ],
   rawlins: [
     { quote: 'Regional Atwood providers handled our Rawlins County move professionally — efficient and careful throughout.', name: 'Ann K.', location: 'Atwood, KS', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Wichita confirmed Rawlins County coverage and delivered excellent Northwest Kansas service.', name: 'Ben L.', location: 'Atwood, KS', rating: 5, moveType: 'Townhome' },
-    { quote: 'Kansas Express Movers served our Atwood relocation efficiently — professional crew with careful handling.', name: 'Cal M.', location: 'Atwood, KS', rating: 5, moveType: 'Apartment' },
+    { quote: 'Two Men and a Truck Wichita confirmed Rawlins County coverage and delivered excellent Northwest Kansas service.', name: 'Ben L.', location: 'Atwood, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Local Lines served our Atwood relocation efficiently — fast, professional, and reliable with careful handling.', name: 'Cal M.', location: 'Atwood, KS', rating: 5, moveType: 'Apartment' },
   ],
   sheridan: [
     { quote: 'Regional Hoxie providers handled our Sheridan County move professionally — efficient and careful throughout.', name: 'Ben L.', location: 'Hoxie, KS', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Wichita confirmed Sheridan County coverage and delivered excellent Northwest Kansas service.', name: 'Cal M.', location: 'Hoxie, KS', rating: 5, moveType: 'Townhome' },
-    { quote: 'Kansas Express Movers served our Hoxie relocation efficiently — professional crew with careful handling.', name: 'Dee N.', location: 'Hoxie, KS', rating: 5, moveType: 'Apartment' },
+    { quote: 'Two Men and a Truck Wichita confirmed Sheridan County coverage and delivered excellent Northwest Kansas service.', name: 'Cal M.', location: 'Hoxie, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Local Lines served our Hoxie relocation efficiently — fast, professional, and reliable with careful handling.', name: 'Dee N.', location: 'Hoxie, KS', rating: 5, moveType: 'Apartment' },
   ],
   kearny: [
     { quote: 'Regional Lakin providers handled our Kearny County move professionally — efficient and careful throughout.', name: 'Cal M.', location: 'Lakin, KS', rating: 5, moveType: 'Single-family' },
@@ -835,8 +835,8 @@ export const kansasCountyTestimonials: Record<string, CountyTestimonialEntry[]> 
   ],
   stanton: [
     { quote: 'Regional Johnson City providers handled our Stanton County move professionally — efficient and careful throughout.', name: 'Hal R.', location: 'Johnson City, KS', rating: 5, moveType: 'Single-family' },
-    { quote: 'Two Men and a Truck Wichita confirmed Stanton County coverage and delivered excellent Southwest Kansas service.', name: 'Ann K.', location: 'Johnson City, KS', rating: 5, moveType: 'Townhome' },
-    { quote: 'Kansas Local Lines served our Johnson City relocation efficiently — fast, professional, and reliable with careful handling.', name: 'Ben L.', location: 'Johnson City, KS', rating: 5, moveType: 'Apartment' },
+    { quote: 'Regional Johnson City providers confirmed Stanton County coverage and delivered reliable remote-area service.', name: 'Ann K.', location: 'Johnson City, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Regional Johnson City area providers served our Johnson City relocation efficiently — timely and professional.', name: 'Ben L.', location: 'Johnson City, KS', rating: 5, moveType: 'Apartment' },
   ],
   cheyenne: [
     { quote: 'Regional St. Francis providers handled our Cheyenne County move professionally — efficient and careful throughout.', name: 'Ann K.', location: 'St. Francis, KS', rating: 5, moveType: 'Single-family' },
@@ -860,8 +860,8 @@ export const kansasCountyTestimonials: Record<string, CountyTestimonialEntry[]> 
   ],
   wichita: [
     { quote: 'Regional Leoti providers handled our Wichita County move professionally — efficient and careful throughout.', name: 'Eli O.', location: 'Leoti, KS', rating: 5, moveType: 'Single-family' },
-    { quote: 'Regional Leoti providers confirmed Wichita County coverage and delivered reliable remote-area service.', name: 'Fay P.', location: 'Leoti, KS', rating: 5, moveType: 'Townhome' },
-    { quote: 'Regional Leoti area providers served our Leoti relocation efficiently — timely and professional.', name: 'Gia Q.', location: 'Leoti, KS', rating: 5, moveType: 'Apartment' },
+    { quote: 'Two Men and a Truck Wichita confirmed Wichita County coverage and delivered excellent Southwest Kansas service.', name: 'Fay P.', location: 'Leoti, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Local Lines served our Leoti relocation efficiently — fast, professional, and reliable with careful handling.', name: 'Gia Q.', location: 'Leoti, KS', rating: 5, moveType: 'Apartment' },
   ],
 };
 

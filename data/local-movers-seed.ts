@@ -16208,7 +16208,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     id: 'regional-graham-ks-movers',
     name: 'Regional Hill City / Graham Providers',
     rating: 4.7,
-    reviewCount: 26,
+    reviewCount: 8,
     shortDescription:
       'Reliable movers serving Graham County residential needs across Hill City and surrounding northwest Kansas communities.',
     services: ['Local Moving', 'Packing'],
@@ -16220,7 +16220,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     id: 'regional-rawlins-ks-movers',
     name: 'Regional Atwood / Rawlins Providers',
     rating: 4.7,
-    reviewCount: 26,
+    reviewCount: 8,
     shortDescription:
       'Reliable movers serving Rawlins County residential needs across Atwood and surrounding northwest Kansas communities.',
     services: ['Local Moving', 'Packing'],
@@ -16232,7 +16232,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     id: 'regional-sheridan-ks-movers',
     name: 'Regional Hoxie / Sheridan Providers',
     rating: 4.7,
-    reviewCount: 26,
+    reviewCount: 8,
     shortDescription:
       'Reliable movers serving Sheridan County residential needs across Hoxie and surrounding northwest Kansas communities.',
     services: ['Local Moving', 'Packing'],
@@ -16495,10 +16495,34 @@ export const localMoversCatalog: Record<string, LocalMover> = {
   'regional-stanton-ks-movers': {
     id: 'regional-stanton-ks-movers',
     name: 'Regional Johnson City / Stanton Providers',
-    rating: 4.7,
-    reviewCount: 8,
+    rating: 4.6,
+    reviewCount: 6,
     shortDescription:
-      'Reliable movers serving Stanton County residential needs across Johnson City and surrounding southwest Kansas communities.',
+      'Reliable regional mover serving Stanton County residential needs across Johnson City and surrounding southwest Kansas communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Johnson City area',
+  },
+  'regional-stanton-ks-movers-2': {
+    id: 'regional-stanton-ks-movers-2',
+    name: 'Regional Johnson City / Stanton Providers',
+    rating: 4.5,
+    reviewCount: 5,
+    shortDescription:
+      'Regional mover with capability for Stanton County relocations across Johnson City and remote rural properties.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Johnson City area',
+  },
+  'regional-stanton-ks-movers-3': {
+    id: 'regional-stanton-ks-movers-3',
+    name: 'Regional Johnson City Area Providers',
+    rating: 4.5,
+    reviewCount: 4,
+    shortDescription:
+      'Local support for Stanton County residential moves across Johnson City and surrounding rural communities.',
     services: ['Local Moving', 'Packing'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -16651,34 +16675,10 @@ export const localMoversCatalog: Record<string, LocalMover> = {
   'regional-wichita-ks-movers': {
     id: 'regional-wichita-ks-movers',
     name: 'Regional Leoti / Wichita Providers',
-    rating: 4.6,
-    reviewCount: 6,
+    rating: 4.7,
+    reviewCount: 8,
     shortDescription:
-      'Reliable regional mover serving Wichita County residential needs across Leoti and surrounding west Kansas communities.',
-    services: ['Local Moving', 'Packing'],
-    specialties: ['Residential'],
-    fmcsaSafetyRating: 'Not Rated',
-    city: 'Leoti area',
-  },
-  'regional-wichita-ks-movers-2': {
-    id: 'regional-wichita-ks-movers-2',
-    name: 'Regional Leoti / Wichita Providers',
-    rating: 4.5,
-    reviewCount: 5,
-    shortDescription:
-      'Regional mover with capability for Wichita County relocations across Leoti and remote rural properties.',
-    services: ['Local Moving', 'Packing'],
-    specialties: ['Residential'],
-    fmcsaSafetyRating: 'Not Rated',
-    city: 'Leoti area',
-  },
-  'regional-wichita-ks-movers-3': {
-    id: 'regional-wichita-ks-movers-3',
-    name: 'Regional Leoti Area Providers',
-    rating: 4.5,
-    reviewCount: 4,
-    shortDescription:
-      'Local support for Wichita County residential moves across Leoti and surrounding rural communities.',
+      'Reliable movers serving Wichita County residential needs across Leoti and surrounding southwest Kansas communities.',
     services: ['Local Moving', 'Packing'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -24028,10 +24028,6 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'two-men-and-a-truck-sedgwick-ks',
       'all-my-sons-wichita-ks',
       'kansas-local-lines',
-      'kansas-express-movers',
-      'kansas-regional-moving',
-      'kansas-pro-movers',
-      'kansas-family-movers',
     ],
   },
   'atwood-metro-ks': {
@@ -24042,10 +24038,6 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'two-men-and-a-truck-sedgwick-ks',
       'all-my-sons-wichita-ks',
       'kansas-local-lines',
-      'kansas-express-movers',
-      'kansas-regional-moving',
-      'kansas-pro-movers',
-      'kansas-family-movers',
     ],
   },
   'hoxie-metro-ks': {
@@ -24056,10 +24048,6 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'two-men-and-a-truck-sedgwick-ks',
       'all-my-sons-wichita-ks',
       'kansas-local-lines',
-      'kansas-express-movers',
-      'kansas-regional-moving',
-      'kansas-pro-movers',
-      'kansas-family-movers',
     ],
   },
   'lakin-metro-ks': {
@@ -24277,9 +24265,8 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     label: 'Johnson City Metro',
     moverIds: [
       'regional-stanton-ks-movers',
-      'two-men-and-a-truck-sedgwick-ks',
-      'all-my-sons-wichita-ks',
-      'kansas-local-lines',
+      'regional-stanton-ks-movers-2',
+      'regional-stanton-ks-movers-3',
     ],
   },
   'st-francis-metro-ks': {
@@ -24323,8 +24310,9 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     label: 'Leoti Metro',
     moverIds: [
       'regional-wichita-ks-movers',
-      'regional-wichita-ks-movers-2',
-      'regional-wichita-ks-movers-3',
+      'two-men-and-a-truck-sedgwick-ks',
+      'all-my-sons-wichita-ks',
+      'kansas-local-lines',
     ],
   },
   'morgan-city-metro-la': {

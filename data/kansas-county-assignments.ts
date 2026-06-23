@@ -759,30 +759,18 @@ const CURATED_KS_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-sedgwick-ks',
     'all-my-sons-wichita-ks',
     'kansas-local-lines',
-    'kansas-express-movers',
-    'kansas-regional-moving',
-    'kansas-pro-movers',
-    'kansas-family-movers',
   ],
   rawlins: [
     'regional-rawlins-ks-movers',
     'two-men-and-a-truck-sedgwick-ks',
     'all-my-sons-wichita-ks',
     'kansas-local-lines',
-    'kansas-express-movers',
-    'kansas-regional-moving',
-    'kansas-pro-movers',
-    'kansas-family-movers',
   ],
   sheridan: [
     'regional-sheridan-ks-movers',
     'two-men-and-a-truck-sedgwick-ks',
     'all-my-sons-wichita-ks',
     'kansas-local-lines',
-    'kansas-express-movers',
-    'kansas-regional-moving',
-    'kansas-pro-movers',
-    'kansas-family-movers',
   ],
   kearny: [
     'regional-kearny-ks-movers',
@@ -912,9 +900,8 @@ const CURATED_KS_COUNTIES: Record<string, string[]> = {
   ],
   stanton: [
     'regional-stanton-ks-movers',
-    'two-men-and-a-truck-sedgwick-ks',
-    'all-my-sons-wichita-ks',
-    'kansas-local-lines',
+    'regional-stanton-ks-movers-2',
+    'regional-stanton-ks-movers-3',
   ],
   cheyenne: [
     'regional-cheyenne-ks-movers',
@@ -938,8 +925,9 @@ const CURATED_KS_COUNTIES: Record<string, string[]> = {
   ],
   wichita: [
     'regional-wichita-ks-movers',
-    'regional-wichita-ks-movers-2',
-    'regional-wichita-ks-movers-3',
+    'two-men-and-a-truck-sedgwick-ks',
+    'all-my-sons-wichita-ks',
+    'kansas-local-lines',
   ],
 };
 
