@@ -9,7 +9,6 @@ import {
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
-import { getTexasCountyResearch } from '@/data/texas-county-research';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { getCaliforniaNearbyCounties } from '@/lib/local-movers/california-nearby';
 import { getFloridaNearbyCounties } from '@/lib/local-movers/florida-nearby';
@@ -94,7 +93,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           ? getNewJerseyNearbyCounties(countySlug)
           : stateSlug === 'new-york'
             ? getNewYorkNearbyCounties(countySlug)
-            : stateSlug === 'texas' && getTexasCountyResearch(countySlug)
+            : stateSlug === 'texas'
               ? getTexasNearbyCounties(countySlug)
               : [];
 
@@ -223,7 +222,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                   ? NEW_YORK_COUNTY_CONTENT_UPDATED
                   : stateSlug === 'florida'
                     ? FLORIDA_COUNTY_CONTENT_UPDATED
-                    : stateSlug === 'texas' && getTexasCountyResearch(countySlug)
+                    : stateSlug === 'texas'
                       ? TEXAS_COUNTY_CONTENT_UPDATED
                       : undefined
           }

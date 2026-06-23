@@ -6,7 +6,6 @@ import {
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
-import { getTexasCountyResearch } from '@/data/texas-county-research';
 import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -73,7 +72,7 @@ export function LocalMoversSchema({
           ? NEW_JERSEY_COUNTY_CONTENT_UPDATED
           : county?.stateSlug === 'new-york'
             ? NEW_YORK_COUNTY_CONTENT_UPDATED
-            : county?.stateSlug === 'texas' && getTexasCountyResearch(county.slug)
+            : county?.stateSlug === 'texas'
               ? TEXAS_COUNTY_CONTENT_UPDATED
               : new Date().toISOString().slice(0, 10);
 

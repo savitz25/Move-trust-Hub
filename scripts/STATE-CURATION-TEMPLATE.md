@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California model for any new state. Florida, New Jersey, New York, and California are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas model for any new state. California, Florida, New Jersey, New York, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 ## Reference states (audit-complete)
 
@@ -10,6 +10,7 @@ Replicate the Florida / New Jersey / New York / California model for any new sta
 | Florida | 67/67 | 5 | 8 (cap 10) | 2 counties | `count-fl-movers.ts`, `apply-fl-mover-expansion.ts` |
 | New Jersey | 21/21 | 7 | 10 | 8 counties | `count-nj-movers.ts`, `apply-nj-mover-expansion.ts` |
 | New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
+| Texas | 254/254 | 5 | 10 (cap 10) | 16 counties | `count-texas-movers.ts`, `apply-texas-mover-expansion.ts` |
 
 ### California metro pools (`data/local-movers-seed.ts`)
 
@@ -57,7 +58,7 @@ All major counties above plus `dutchess`, `orange`, `rockland` (affluent Hudson 
 | Step | File | Purpose |
 |------|------|---------|
 | 1 | `lib/local-movers/geography/{state}.ts` | All counties with `slug`, `seat`, `metro` region |
-| 2 | `lib/local-movers/geography/index.ts` | Import counties; add slug to `curatedStateSlugs` |
+| 2 | `lib/local-movers/geography/index.ts` | Import counties (or overrides on generated geography for large states like TX) |
 | 3 | `data/local-movers-seed.ts` | Metro pools (`{metro-id}`) + catalog mover entries |
 | 4 | `data/{state}-county-research.ts` | `marketNotes`, `costs`, `tips` per county |
 | 5 | `data/{state}-county-assignments.ts` | `CURATED_{STATE}_COUNTIES` ranked mover ID arrays |
@@ -73,18 +74,36 @@ All major counties above plus `dutchess`, `orange`, `rockland` (affluent Hudson 
 | 15 | `scripts/apply-{state}-mover-expansion.ts` | Optional one-shot expansion script |
 | 16 | `scripts/count-{state}-movers.ts` | Verification script |
 
-## Texas-specific starting points
+### Texas metro pools (`data/local-movers-seed.ts`)
 
-1. **Geography**: 254 counties — prioritize top metros first (Harris, Dallas, Tarrant, Bexar, Travis, Collin, Denton, Fort Bend, Hidalgo, El Paso).
-2. **Metro pools** (suggested IDs):
-   - `dfw-tx` — Dallas–Fort Worth
-   - `houston-tx` — Greater Houston
-   - `austin-sa-tx` — Austin / San Antonio corridor
-   - `rio-grande-tx` — South Texas / Valley
-   - `west-tx` — El Paso / Permian
-3. **Major county target**: 8–10 curated movers (mirror FL `MAJOR_TARGET = 8`, cap 10).
-4. **Rural county target**: 5–7 movers minimum from metro pool fallbacks.
-5. **Catalog conventions**:
+- `houston-tx` — Greater Houston / Gulf Coast
+- `dfw-tx` — Dallas–Fort Worth
+- `austin-sa-tx` — Austin / San Antonio corridor
+- `rio-grande-tx` — Rio Grande Valley / Coastal Bend
+- `el-paso-tx` — El Paso / Far West Texas
+- `permian-tx` — Permian Basin (Midland–Odessa)
+- `panhandle-tx` — Panhandle / South Plains
+- `east-tx` — East Texas / Piney Woods
+- `rural-west-tx`, `rural-south-tx`, `rural-hill-country-tx`, `rural-north-tx`, `rural-panhandle-tx`, `rural-central-tx`, `rural-east-tx`, `rural-northeast-tx` — rural fallbacks
+
+### Texas major counties (10 movers each)
+
+`harris`, `dallas`, `tarrant`, `bexar`, `travis`, `collin`, `denton`, `fort-bend`, `el-paso`, `hidalgo`, `cameron`, `nueces`, `lubbock`, `brazoria`, `williamson`, `montgomery`, `galveston`, `bell`, `hays`, `webb`, `mclennan`, `jefferson`, `smith`, `comal`, `kaufman`, `johnson`, `ellis`, `brazos`
+
+### Texas sitemap priority 0.85 (16 counties)
+
+`harris`, `dallas`, `tarrant`, `bexar`, `travis`, `collin`, `denton`, `fort-bend`, `el-paso`, `hidalgo`, `cameron`, `nueces`, `lubbock`, `brazoria`, `williamson`, `montgomery`
+
+### Texas nearby counties
+
+Run `npx tsx scripts/generate-texas-nearby.ts` to refresh `lib/local-movers/texas-nearby.generated.ts` from Census GeoJSON adjacency.
+
+## Texas-specific notes (reference)
+
+1. **Geography**: 254 counties — `texas-overrides.ts` supplies seat/metro for rural counties; metro counties use `COUNTY_PRIMARY_POOL` in `apply-texas-mover-expansion.ts`.
+2. **Major county target**: 10 curated movers (`MAJOR_TARGET = 10`, cap 10).
+3. **Rural county target**: 5 movers minimum from metro pool fallbacks.
+4. **Catalog conventions**:
    - Reuse catalog IDs for regional companies across counties
    - Location-specific slugs only for franchises (`two-men-and-a-truck-houston`)
    - Never use `regional-*` or `{state}-region-*` placeholder slugs

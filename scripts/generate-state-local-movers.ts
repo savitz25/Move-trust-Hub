@@ -15,7 +15,13 @@ const ROOT = path.join(__dirname, '..');
 const FIPS_PATH = path.join(ROOT, 'data/us-counties-fips.json');
 const OUT_DIR = path.join(ROOT, 'data/generated/states');
 
-const SKIP_STATES = new Set(['california', 'florida', 'new-jersey', 'new-york']);
+const SKIP_STATES = new Set([
+  'california',
+  'florida',
+  'new-jersey',
+  'new-york',
+  'texas',
+]);
 
 const STATE_BY_FIPS: Record<
   string,
