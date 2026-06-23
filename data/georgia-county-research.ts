@@ -220,7 +220,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   coweta: {
     marketNotes:
-      'Coweta County is a growing south-metro suburb centered on Newnan with Senoia and Sharpsburg communities driving family relocations along the Fayette and Fulton county lines.',
+      'Coweta County is a growing suburban county south of Atlanta with Newnan as the seat and steady family relocations in Senoia and Sharpsburg.',
     costs: {
       studioRange: '$600–$1,200',
       familyRange: '$2,000–$4,500',
@@ -337,6 +337,23 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance and valuation for high-value homes in historic districts.',
       'Book early for peak summer PCS and Masters Tournament season demand.',
       'Obtain multiple written estimates; compare hourly vs flat-rate quotes for Fort Eisenhower-area relocations.',
+    ],
+  },
+  columbia: {
+    marketNotes:
+      'Columbia County is one of the fastest-growing counties in the Augusta metro with strong suburban residential demand in Evans, Grovetown, and Appling.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,100–$4,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Columbia County pricing reflects CSRA suburban growth, new-construction HOA communities, and Augusta-metro traffic on I-20 and Washington Road.',
+    },
+    tips: [
+      'Verify explicit coverage for Appling, Evans, Grovetown, and surrounding Columbia County addresses before booking.',
+      'Augusta-area traffic on I-20 and Washington Road impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value suburban homes in newer Evans subdivisions.',
+      'Book early for peak seasons and month-end lease turnover in fast-growing CSRA communities.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Augusta-area crews.',
     ],
   },
   muscogee: {
@@ -851,7 +868,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   bibb: {
     marketNotes:
-      'Bibb County centers on Macon, a major Central Georgia hub with historic neighborhoods, apartments, and steady residential demand.',
+      'Bibb County centers on Macon with historic districts and strong residential and commercial activity across Central Georgia.',
     costs: {
       studioRange: '$550–$1,100',
       familyRange: '$1,900–$4,300',

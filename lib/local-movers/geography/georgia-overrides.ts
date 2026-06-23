@@ -23,6 +23,7 @@ export const georgiaCountyOverrides: Partial<
   walton: { seat: 'Monroe', metro: 'atlanta-metro-ga' },
   chatham: { seat: 'Savannah', metro: 'savannah-metro-ga' },
   richmond: { seat: 'Augusta', metro: 'augusta-metro-ga' },
+  columbia: { seat: 'Appling', metro: 'augusta-metro-ga' },
   muscogee: { seat: 'Columbus', metro: 'columbus-metro-ga' },
   pickens: { seat: 'Jasper', metro: 'atlanta-metro-ga' },
   bartow: { seat: 'Cartersville', metro: 'atlanta-metro-ga' },

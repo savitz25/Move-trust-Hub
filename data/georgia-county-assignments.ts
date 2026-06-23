@@ -140,6 +140,14 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'monro-moving-augusta',
     'all-my-sons-augusta',
   ],
+  columbia: [
+    'budget-movers-augusta',
+    'college-hunks-moving-augusta',
+    'two-men-and-a-truck-augusta',
+    'apple-moving-augusta',
+    'adsi-moving-augusta',
+    'all-my-sons-augusta',
+  ],
   muscogee: [
     'coleman-worldwide-columbus',
     'college-hunks-moving-columbus',

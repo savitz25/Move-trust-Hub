@@ -501,6 +501,32 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  columbia: [
+    {
+      quote:
+        'College Hunks made our Evans townhome move stress-free with upfront pricing and efficient crews. They knew the Columbia County routes and finished faster than estimated.',
+      name: 'Tanya B.',
+      location: 'Evans, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Budget Movers of Augusta handled our Grovetown subdivision relocation professionally — HOA gate passes submitted early and careful handling throughout Columbia County.',
+      name: 'Marcus T.',
+      location: 'Grovetown, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta navigated Washington Road traffic smartly and moved our Appling-area home on schedule. Transparent pricing and excellent crew communication.',
+      name: 'Eleanor W.',
+      location: 'Appling, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
   muscogee: [
     {
       quote:

@@ -30,6 +30,7 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   walton: ['gwinnett', 'rockdale', 'newton', 'morgan', 'oconee', 'barrow'],
   chatham: ['bryan', 'effingham', 'liberty', 'bulloch', 'screven', 'jasper'],
   richmond: ['columbia', 'mcduffie', 'jefferson', 'burke', 'glascock', 'warren'],
+  columbia: ['richmond', 'mcduffie', 'jefferson', 'lincoln', 'wilkes', 'burke'],
   muscogee: ['harris', 'talbot', 'chattahoochee', 'stewart', 'marion', 'schley'],
   pickens: ['cherokee', 'dawson', 'gilmer', 'gordon', 'forsyth', 'bartow'],
   bartow: ['cherokee', 'paulding', 'polk', 'cobb', 'gordon', 'pickens'],
