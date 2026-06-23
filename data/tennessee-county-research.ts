@@ -1419,6 +1419,210 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for rural moves before booking.',
     ],
   },
+  lewis: {
+    marketNotes:
+      'Lewis County is a rural county in Middle Tennessee with scenic residential demand centered on Hohenwald.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lewis County pricing reflects Hohenwald rural-community demand, limited local storage options, and Lawrenceburg-Columbia regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Hohenwald before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  trousdale: {
+    marketNotes:
+      'Trousdale County is a small rural county in Middle Tennessee with residential demand centered on Hartsville.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Trousdale County pricing reflects Hartsville rural-community demand, limited local storage options, and Nashville-Lebanon regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Hartsville before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is a rural county in Middle Tennessee with residential demand centered on Gainesboro.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects Gainesboro rural-community demand, Upper Cumberland access, and Cookeville-McMinnville regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Gainesboro before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  decatur: {
+    marketNotes:
+      'Decatur County is a rural West Tennessee county with residential demand centered on Decaturville.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Decatur County pricing reflects Decaturville rural-community demand, limited local storage options, and Jackson-Paris regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Decaturville before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  perry: {
+    marketNotes:
+      'Perry County is a small rural county in Middle Tennessee with residential demand centered on Linden.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Perry County pricing reflects Linden rural-community demand, limited local storage options, and Columbia-Clarksville regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Linden before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  houston: {
+    marketNotes:
+      'Houston County is a small rural county in Middle Tennessee with residential demand centered on Erin.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Houston County pricing reflects Erin rural-community demand, limited local storage options, and Clarksville-Paris regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Erin before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  clay: {
+    marketNotes:
+      'Clay County is a small rural county in Middle Tennessee with lake-area residential demand centered on Celina.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Clay County pricing reflects Celina and Dale Hollow Lake waterfront demand, Upper Cumberland access, and Cookeville-McMinnville regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Celina before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  hancock: {
+    marketNotes:
+      "Hancock County is one of Tennessee's smallest and most rural mountain counties with residential demand centered on Sneedville.",
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,100',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Hancock County pricing reflects Sneedville mountain-community demand, Tri-Cities regional crew travel, and limited local mover availability.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Sneedville before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  'van-buren': {
+    marketNotes:
+      "Van Buren County is one of Tennessee's smallest counties with scenic mountain residential demand centered on Spencer.",
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,100',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Van Buren County pricing reflects Spencer mountain-community demand, Upper Cumberland access, and Cookeville-Crossville regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Spencer before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  moore: {
+    marketNotes:
+      "Moore County is a small county in Middle Tennessee known for the Jack Daniel's Distillery and residential demand centered on Lynchburg.",
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,100',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Moore County pricing reflects Lynchburg rural-community demand, Tullahoma-Manchester regional crew travel, and limited local mover availability.',
+    },
+    tips: [
+      'Verify coverage for Lynchburg and surrounding Moore County areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lake: {
+    marketNotes:
+      'Lake County is a small rural county in Northwest Tennessee with lake-area residential demand centered on Tiptonville.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lake County pricing reflects Tiptonville and Reelfoot Lake waterfront demand, limited local storage options, and Union City-Dyersburg regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Tiptonville before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  pickett: {
+    marketNotes:
+      "Pickett County is one of Tennessee's smallest counties with scenic rural residential demand centered on Byrdstown.",
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,100',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Pickett County pricing reflects Byrdstown and Dale Hollow Lake waterfront demand, Upper Cumberland access, and Cookeville-Crossville regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Byrdstown before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

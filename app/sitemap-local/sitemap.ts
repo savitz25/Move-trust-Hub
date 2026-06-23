@@ -195,6 +195,18 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'meigs',
   'grundy',
   'crockett',
+  'lewis',
+  'trousdale',
+  'jackson',
+  'decatur',
+  'perry',
+  'houston',
+  'clay',
+  'hancock',
+  'van-buren',
+  'moore',
+  'lake',
+  'pickett',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

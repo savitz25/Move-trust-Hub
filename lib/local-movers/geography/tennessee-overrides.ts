@@ -87,6 +87,18 @@ export const tennesseeCountyOverrides: Partial<
   meigs: { seat: 'Decatur', metro: 'meigs-metro-tn' },
   grundy: { seat: 'Altamont', metro: 'grundy-metro-tn' },
   crockett: { seat: 'Alamo', metro: 'alamo-metro-tn' },
+  lewis: { seat: 'Hohenwald', metro: 'hohenwald-metro-tn' },
+  trousdale: { seat: 'Hartsville', metro: 'hartsville-metro-tn' },
+  jackson: { seat: 'Gainesboro', metro: 'gainesboro-metro-tn' },
+  decatur: { seat: 'Decaturville', metro: 'decaturville-metro-tn' },
+  perry: { seat: 'Linden', metro: 'linden-metro-tn' },
+  houston: { seat: 'Erin', metro: 'erin-metro-tn' },
+  clay: { seat: 'Celina', metro: 'celina-metro-tn' },
+  hancock: { seat: 'Sneedville', metro: 'sneedville-metro-tn' },
+  'van-buren': { seat: 'Spencer', metro: 'spencer-metro-tn' },
+  moore: { seat: 'Lynchburg', metro: 'lynchburg-metro-tn' },
+  lake: { seat: 'Tiptonville', metro: 'tiptonville-metro-tn' },
+  pickett: { seat: 'Byrdstown', metro: 'byrdstown-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

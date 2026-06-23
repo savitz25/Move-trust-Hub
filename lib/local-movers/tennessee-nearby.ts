@@ -92,6 +92,18 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   meigs: ['rhea', 'mcminn', 'bradley', 'hamilton', 'polk', 'monroe'],
   grundy: ['sequatchie', 'marion', 'franklin', 'coffee', 'warren', 'van-buren'],
   crockett: ['lauderdale', 'dyer', 'gibson', 'haywood', 'madison', 'weakley'],
+  lewis: ['wayne', 'hickman', 'lawrence', 'maury', 'perry', 'giles'],
+  trousdale: ['sumner', 'wilson', 'smith', 'macon', 'davidson', 'cannon'],
+  jackson: ['clay', 'overton', 'putnam', 'smith', 'macon', 'pickett'],
+  decatur: ['benton', 'carroll', 'henderson', 'hardin', 'perry', 'henry'],
+  perry: ['hickman', 'humphreys', 'houston', 'lewis', 'wayne', 'decatur'],
+  houston: ['stewart', 'montgomery', 'humphreys', 'perry', 'dickson', 'benton'],
+  clay: ['jackson', 'overton', 'pickett', 'macon', 'smith', 'trousdale'],
+  hancock: ['hawkins', 'claiborne', 'grainger', 'johnson', 'greene', 'hamblen'],
+  'van-buren': ['warren', 'white', 'sequatchie', 'bledsoe', 'cumberland', 'grundy'],
+  moore: ['lincoln', 'franklin', 'coffee', 'bedford', 'marshall', 'giles'],
+  lake: ['obion', 'dyer', 'weakley', 'gibson', 'henry', 'crockett'],
+  pickett: ['clay', 'overton', 'fentress', 'wayne', 'jackson', 'scott'],
 };
 
 export function getTennesseeNearbyCounties(

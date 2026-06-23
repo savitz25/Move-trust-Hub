@@ -828,6 +828,69 @@ const CURATED_TN_COUNTIES: Record<string, string[]> = {
     'all-my-sons-jackson',
     'volunteer-moving-jackson',
   ],
+  lewis: [
+    'two-men-and-a-truck-lawrenceburg',
+    'two-men-and-a-truck-columbia',
+    'two-men-and-a-truck-pulaski',
+    'two-men-and-a-truck-murfreesboro',
+  ],
+  trousdale: [
+    'two-men-and-a-truck-lebanon',
+    'two-men-and-a-truck-nashville',
+    'two-men-and-a-truck-murfreesboro',
+  ],
+  jackson: [
+    'two-men-and-a-truck-cookeville',
+    'two-men-and-a-truck-mcminnville',
+    'two-men-and-a-truck-sparta',
+    'upper-cumberland-moving-cookeville',
+  ],
+  decatur: [
+    'two-men-and-a-truck-jackson',
+    'two-men-and-a-truck-paris',
+    'two-men-and-a-truck-dyersburg',
+    'volunteer-moving-jackson',
+  ],
+  perry: [
+    'two-men-and-a-truck-columbia',
+    'two-men-and-a-truck-clarksville',
+    'two-men-and-a-truck-nashville',
+  ],
+  houston: [
+    'two-men-and-a-truck-clarksville',
+    'two-men-and-a-truck-paris',
+    'two-men-and-a-truck-nashville',
+  ],
+  clay: [
+    'two-men-and-a-truck-cookeville',
+    'two-men-and-a-truck-mcminnville',
+    'two-men-and-a-truck-sparta',
+  ],
+  hancock: [
+    'two-men-and-a-truck-johnson-city',
+    'two-men-and-a-truck-kingsport',
+    'two-men-and-a-truck-greeneville',
+  ],
+  'van-buren': [
+    'two-men-and-a-truck-cookeville',
+    'two-men-and-a-truck-sparta',
+    'two-men-and-a-truck-crossville',
+  ],
+  moore: [
+    'two-men-and-a-truck-tullahoma',
+    'two-men-and-a-truck-manchester',
+    'two-men-and-a-truck-shelbyville',
+  ],
+  lake: [
+    'two-men-and-a-truck-union-city',
+    'two-men-and-a-truck-dyersburg',
+    'two-men-and-a-truck-jackson',
+  ],
+  pickett: [
+    'two-men-and-a-truck-cookeville',
+    'two-men-and-a-truck-crossville',
+    'two-men-and-a-truck-sparta',
+  ],
 };
 
 export const tennesseeCountyMoverAssignments: CountyMoverAssignment[] =
