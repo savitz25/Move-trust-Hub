@@ -193,6 +193,14 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   liberty: ['houston-local-lines', 'two-men-and-a-truck-houston'],
   hunt: ['two-men-and-a-truck-dallas', 'dallas-area-moving'],
   wichita: ['affordable-texas-movers-wichita-falls', 'a-and-l-moving-wichita-falls', 'wichita-falls-area-moving'],
+  rockwall: ['two-men-and-a-truck-dallas', 'two-men-and-a-truck-fort-worth', 'dallas-area-moving'],
+  taylor: ['big-country-movers-abilene', 'we-move-abilene', 'abilene-area-moving'],
+  randall: ['two-men-and-a-truck-amarillo', 'aardvark-movers-amarillo', 'amarillo-area-moving'],
+  grayson: ['two-men-and-a-truck-denison', 'two-men-and-a-truck-dallas', 'bills-movers-texarkana'],
+  ector: ['brothers-moving-odessa', 'odessa-area-moving', 'texas-moving-company-midland'],
+  parker: ['two-men-and-a-truck-fort-worth', 'fort-worth-area-moving', 'two-men-and-a-truck-dallas'],
+  midland: ['texas-moving-company-midland', 'brothers-moving-odessa', 'midland-area-moving'],
+  guadalupe: ['two-men-and-a-truck-san-antonio', 'college-hunks-moving-san-antonio', 'two-men-and-a-truck-austin'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

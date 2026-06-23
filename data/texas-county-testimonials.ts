@@ -4157,6 +4157,214 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Residential',
     },
   ],
+  rockwall: [
+    {
+      quote:
+        'Professional and efficient for our Rockwall move. The Dallas crew navigated I-30 traffic and finished with careful handling throughout.',
+      name: 'Tina X.',
+      location: 'Rockwall, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Fort Worth — transparent pricing on a lake-community route.',
+      name: 'Uma Y.',
+      location: 'Rockwall, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from a third Dallas metro estimate we compared. Great experience with organized loading.',
+      name: 'Vic Z.',
+      location: 'Rockwall, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  taylor: [
+    {
+      quote:
+        'Professional and efficient for our Abilene move in Taylor County. Big Country Movers confirmed Dyess AFB-area experience and careful handling.',
+      name: 'Wade A.',
+      location: 'Abilene, TX',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Excellent crew from We Move Abilene — transparent pricing and steady communication throughout.',
+      name: 'Xena B.',
+      location: 'Abilene, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Professional and timely from a third Abilene provider we compared. Great experience with organized loading and clear estimates.',
+      name: 'Yuri C.',
+      location: 'Abilene, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  randall: [
+    {
+      quote:
+        'Professional and efficient for our Canyon move in Randall County. The Amarillo crew handled wind delays gracefully and protected our furniture.',
+      name: 'Zoe D.',
+      location: 'Canyon, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Careful handling from Aardvark on a Randall County route. Excellent crew with transparent pricing.',
+      name: 'Adam E.',
+      location: 'Canyon, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from a third Amarillo estimate we compared. Great experience confirming Potter–Randall metro coverage.',
+      name: 'Beth F.',
+      location: 'Canyon, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  grayson: [
+    {
+      quote:
+        'Professional and efficient for our Sherman move in Grayson County. The Denison TMATH crew navigated US-75 traffic without delay.',
+      name: 'Carl G.',
+      location: 'Sherman, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Dallas — transparent pricing on a Texoma corridor route.',
+      name: 'Dana H.',
+      location: 'Denison, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from Bills Movers Texarkana. Great experience with careful handling throughout Grayson County.',
+      name: 'Evan I.',
+      location: 'Sherman, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  ector: [
+    {
+      quote:
+        'Professional and efficient for our Odessa move in Ector County. Brothers Moving handled oilfield-schedule flexibility and careful wrapping.',
+      name: 'Faye J.',
+      location: 'Odessa, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from a second Odessa estimate — transparent pricing and steady communication throughout.',
+      name: 'Greg K.',
+      location: 'Odessa, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Midland team we compared. Great experience with organized loading on a Permian Basin route.',
+      name: 'Holly L.',
+      location: 'Odessa, TX',
+      rating: 5,
+      moveType: 'Oilfield',
+    },
+  ],
+  parker: [
+    {
+      quote:
+        'Professional and efficient for our Weatherford move in Parker County. The Fort Worth crew confirmed coverage and finished on schedule.',
+      name: 'Ivan M.',
+      location: 'Weatherford, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Careful handling from a second Fort Worth estimate. Excellent crew with transparent pricing on a ranch-road route.',
+      name: 'Jill N.',
+      location: 'Weatherford, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional and timely from the Dallas team we compared. Great experience with organized loading throughout Parker County.',
+      name: 'Kyle O.',
+      location: 'Weatherford, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  midland: [
+    {
+      quote:
+        'Professional and efficient for our Midland move. Texas Moving Company confirmed county coverage and handled our load without rushing.',
+      name: 'Lara P.',
+      location: 'Midland, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Brothers Moving Odessa — transparent pricing on a Permian Basin route with oilfield-schedule flexibility.',
+      name: 'Miles Q.',
+      location: 'Midland, TX',
+      rating: 5,
+      moveType: 'Oilfield',
+    },
+    {
+      quote:
+        'Professional and timely from a third Midland provider we compared. Great experience with careful handling throughout.',
+      name: 'Nora R.',
+      location: 'Midland, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  guadalupe: [
+    {
+      quote:
+        'Professional and efficient for our Seguin move in Guadalupe County. The San Antonio crew navigated I-35 traffic and finished with careful handling.',
+      name: 'Omar S.',
+      location: 'Seguin, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks San Antonio — transparent pricing and steady communication throughout.',
+      name: 'Pam T.',
+      location: 'Seguin, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from the Austin team we compared. Great experience with organized loading on a Guadalupe County route.',
+      name: 'Quinn U.',
+      location: 'Seguin, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

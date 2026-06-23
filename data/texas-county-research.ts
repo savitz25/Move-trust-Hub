@@ -3254,6 +3254,142 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for peak seasons — summer PCS cycles can tighten Wichita Falls crew availability.',
     ],
   },
+  rockwall: {
+    marketNotes:
+      'Rockwall County is part of the Dallas–Fort Worth metro with growing suburban residential development along Lake Ray Hubbard.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dallas and Fort Worth metro crews typically cover Rockwall County; confirm service for lakefront and suburban addresses.',
+    },
+    tips: [
+      'Verify coverage for Rockwall, Fate, Heath, and surrounding Dallas metro communities.',
+      'Heavy traffic on I-30 and local roads impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in Rockwall County lake communities.',
+      'Book early for peak seasons — summer moves can tighten Dallas-area crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between metro providers.',
+    ],
+  },
+  taylor: {
+    marketNotes:
+      'Taylor County centers on Abilene with residential and military-related moves tied to Dyess AFB. (Not Tyler County — seat Woodville.)',
+    costs: {
+      studioRange: '$500–$1,000',
+      familyRange: '$1,800–$4,000',
+      avgHourly: '$90–$130/hr for a 2-person crew',
+      note: 'Abilene local providers typically cover Taylor County; confirm service for rural county parcels outside city limits.',
+    },
+    tips: [
+      'Verify coverage for Abilene, Tuscola, and surrounding Taylor County communities.',
+      'Military (Dyess AFB) moves require specific experience — confirm base access and PCS scheduling familiarity.',
+      'Heavy traffic on I-20 and US-83 can affect timing; plan around peak commute windows.',
+      'Confirm insurance for high-value homes and specialty items before booking.',
+      'Book early for peak seasons — summer PCS cycles can tighten Abilene crew availability.',
+    ],
+  },
+  randall: {
+    marketNotes:
+      'Randall County includes Canyon and growing suburban areas west of Amarillo, with moves often spanning the Potter–Randall metro.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Amarillo metro crews typically cover Randall and Potter counties; confirm service for Canyon and WTAMU-area addresses.',
+    },
+    tips: [
+      'Verify coverage for both Randall and Potter counties if your move spans the Amarillo metro.',
+      'Amarillo traffic and High Plains wind conditions affect scheduling — discuss weather holds upfront.',
+      'Confirm insurance for high-value items and student housing moves near West Texas A&M.',
+      'Book early for peak seasons — summer and university turnover can tighten Amarillo crew availability.',
+      'Obtain multiple estimates — flat-rate and hourly quotes can vary between established Amarillo providers.',
+    ],
+  },
+  grayson: {
+    marketNotes:
+      'Grayson County includes Sherman and Denison with residential and commercial moves along the US-75 corridor.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Sherman–Denison and Dallas regional crews typically cover Grayson County; confirm service for your address.',
+    },
+    tips: [
+      'Verify coverage for Sherman, Denison, and surrounding Grayson County communities.',
+      'Traffic on US-75 impacts scheduling — plan around peak commute windows through the Texoma corridor.',
+      'Confirm insurance for high-value homes and lake properties near Lake Texoma.',
+      'Book early for peak seasons — summer moves can tighten North Texas crew availability.',
+      'Obtain multiple estimates — travel distance from Dallas or Texarkana can affect final pricing.',
+    ],
+  },
+  ector: {
+    marketNotes:
+      'Ector County centers on Odessa with significant oilfield-related residential and workforce housing moves.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Odessa and Midland Permian Basin crews typically cover Ector County; confirm service for rural county parcels.',
+    },
+    tips: [
+      'Oilfield traffic and activity impact scheduling — discuss crew availability around shift changes and rig traffic.',
+      'Verify coverage for Odessa, West Odessa, and surrounding Ector County communities.',
+      'Confirm insurance for high-value items and oilfield equipment stored at home.',
+      'Book early for peak seasons — Permian Basin workforce turnover can tighten crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Odessa and Midland providers.',
+    ],
+  },
+  parker: {
+    marketNotes:
+      'Parker County is part of the Dallas–Fort Worth metro with Weatherford as the hub for growing suburban and ranch properties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Fort Worth and Dallas metro crews typically cover Parker County; confirm service for Weatherford and rural ranch addresses.',
+    },
+    tips: [
+      'Verify coverage for Weatherford, Willow Park, and surrounding Parker County communities.',
+      'Dallas-area traffic on I-20 and FM roads impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes and ranch properties common in Parker County.',
+      'Book early for peak seasons — summer moves can tighten Fort Worth-area crew availability.',
+      'Obtain multiple estimates — travel distance from Fort Worth or Dallas can affect final pricing.',
+    ],
+  },
+  midland: {
+    marketNotes:
+      'Midland County centers on Midland with significant oilfield-related activity and workforce housing moves.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Midland local providers typically cover Midland County; confirm service for rural county parcels and oilfield housing.',
+    },
+    tips: [
+      'Oilfield traffic and activity impact scheduling — discuss crew availability around shift changes and industrial routes.',
+      'Verify coverage for Midland and surrounding Midland County communities.',
+      'Confirm insurance for high-value items and specialty equipment before booking.',
+      'Book early for peak seasons — Permian Basin workforce turnover can tighten Midland crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Midland and Odessa providers.',
+    ],
+  },
+  guadalupe: {
+    marketNotes:
+      'Guadalupe County is part of the San Antonio–New Braunfels metro with growing residential development in Seguin and Schertz-area communities.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'San Antonio metro crews typically cover Guadalupe County; confirm service for Seguin and I-35 corridor addresses.',
+    },
+    tips: [
+      'Verify coverage for Seguin, Schertz, and surrounding Guadalupe County communities.',
+      'San Antonio-area traffic on I-35 and US-90 impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in newer Guadalupe County subdivisions.',
+      'Book early for peak seasons — summer moves can tighten San Antonio-area crew availability.',
+      'Obtain multiple estimates — travel distance from San Antonio or Austin can affect final pricing.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(
