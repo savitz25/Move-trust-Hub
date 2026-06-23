@@ -133,7 +133,15 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic AR counties — sitemap priority 0.85 */
-const AR_HIGH_TRAFFIC_COUNTIES = new Set(['pulaski']);
+const AR_HIGH_TRAFFIC_COUNTIES = new Set([
+  'pulaski',
+  'benton',
+  'washington',
+  'faulkner',
+  'saline',
+  'sebastian',
+  'craighead',
+]);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */
 const LA_HIGH_TRAFFIC_PARISHES = new Set([

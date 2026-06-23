@@ -12,6 +12,12 @@ const countyNameBySlug = new Map(arkansasCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated AR county pages — expands as counties are researched */
 const AR_COUNTY_NEIGHBORS: Record<string, string[]> = {
   pulaski: ['saline', 'lonoke', 'faulkner', 'jefferson', 'grant', 'perry'],
+  benton: ['washington', 'carroll', 'madison', 'crawford', 'sebastian', 'newton'],
+  washington: ['benton', 'madison', 'crawford', 'franklin', 'johnson', 'newton'],
+  faulkner: ['pulaski', 'white', 'van-buren', 'cleburne', 'perry', 'lonoke'],
+  saline: ['pulaski', 'grant', 'garland', 'hot-spring', 'perry', 'jefferson'],
+  sebastian: ['crawford', 'franklin', 'scott', 'logan', 'benton', 'washington'],
+  craighead: ['greene', 'poinsett', 'jackson', 'cross', 'lawrence', 'randolph'],
 };
 
 export function getArkansasNearbyCounties(
