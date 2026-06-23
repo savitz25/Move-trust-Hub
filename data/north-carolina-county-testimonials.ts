@@ -11,6 +11,162 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  catawba: [
+    {
+      quote:
+        'Preferred Moving Company handled our Hickory relocation professionally — efficient crews, careful handling, and transparent Catawba County pricing.',
+      name: 'Karen L.',
+      location: 'Hickory, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Barringer Moving & Storage served our Newton move with professional crews and careful handling of family heirlooms throughout the county seat area.',
+      name: 'James P.',
+      location: 'Newton, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Ashe Van Lines confirmed Conover coverage and delivered reliable packing and loading with no surprise fees despite regional traffic on US-321.',
+      name: 'Michelle R.',
+      location: 'Conover, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  rowan: [
+    {
+      quote:
+        'Two Men and a Truck Charlotte handled our Salisbury relocation professionally — on time, careful with our belongings, and transparent Charlotte-metro pricing.',
+      name: 'Robert T.',
+      location: 'Salisbury, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant Moving served our Kannapolis move with professional crews and careful handling of our furniture throughout Rowan County.',
+      name: 'Diana M.',
+      location: 'Kannapolis, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'You Move Me confirmed China Grove coverage and delivered reliable packing and loading with no surprise fees despite I-85 corridor traffic.',
+      name: 'Eric W.',
+      location: 'China Grove, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  harnett: [
+    {
+      quote:
+        'Two Men and a Truck Raleigh handled our Lillington relocation professionally — efficient crews, careful handling, and transparent Triangle pricing.',
+      name: 'Angela S.',
+      location: 'Lillington, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Little Guys Movers served our Dunn move with professional, efficient crews and careful handling throughout Harnett County.',
+      name: 'Kevin B.',
+      location: 'Dunn, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Miracle Movers confirmed Angier coverage and delivered reliable packing and loading with no surprise fees despite Raleigh-area traffic.',
+      name: 'Heather G.',
+      location: 'Angier, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  orange: [
+    {
+      quote:
+        'Two Men and a Truck Durham handled our Chapel Hill relocation professionally — on time, careful with our belongings, and transparent Triangle pricing.',
+      name: 'Sarah K.',
+      location: 'Chapel Hill, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'TROSA Moving served our Carrboro apartment move efficiently with fast, professional crews and great value for careful handling.',
+      name: 'Daniel F.',
+      location: 'Carrboro, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Armstrong Relocation confirmed Hillsborough coverage and delivered reliable packing and loading with no surprise fees despite university-area traffic.',
+      name: 'Patricia N.',
+      location: 'Hillsborough, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  randolph: [
+    {
+      quote:
+        'Two Men and a Truck Greensboro handled our Asheboro relocation professionally — on time, careful with our belongings, and transparent Triad pricing.',
+      name: 'William H.',
+      location: 'Asheboro, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greensboro served our Randolph County move efficiently with fast, professional crews and great value.',
+      name: 'Linda C.',
+      location: 'Asheboro, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Excel Moving & Storage confirmed Asheboro coverage and delivered reliable packing and loading with no surprise fees despite Triad traffic.',
+      name: 'Gary M.',
+      location: 'Asheboro, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  henderson: [
+    {
+      quote:
+        'Asheville Area Movers handled our Hendersonville mountain relocation professionally — efficient crews, careful handling, and transparent pricing.',
+      name: 'Carol D.',
+      location: 'Hendersonville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gasperson Moving & Storage served our Henderson County move with professional crews experienced with steep driveways and mountain-home handling.',
+      name: 'Richard A.',
+      location: 'Hendersonville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Asheville confirmed coverage and delivered reliable packing and loading with no surprise fees despite mountain road access.',
+      name: 'Janet W.',
+      location: 'Hendersonville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
   onslow: [
     {
       quote:

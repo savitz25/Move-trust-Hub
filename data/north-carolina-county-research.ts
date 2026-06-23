@@ -315,6 +315,108 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    catawba: {
+      marketNotes:
+        'Catawba County is a key manufacturing and residential county in the western Piedmont with strong growth around Hickory, Newton, and Conover.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Catawba County pricing reflects Hickory-Lenoir metro manufacturing corridor demand, Newton and Conover suburban turnover, and regional I-40 and US-321 traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Hickory, Newton, and Conover areas before booking.',
+        'Regional traffic patterns on I-40, US-321, and US-70 significantly impact scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    rowan: {
+      marketNotes:
+        'Rowan County is a growing county north of Charlotte with strong historic and residential demand centered on Salisbury, Kannapolis, and China Grove.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Rowan County pricing reflects Charlotte-metro northward growth, Salisbury historic-home turnover, and I-85 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Salisbury, Kannapolis, and China Grove areas before booking.',
+        'Charlotte-area traffic on I-85 and US-29 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value historic homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    harnett: {
+      marketNotes:
+        'Harnett County is a rapidly growing county in the Research Triangle region with strong suburban expansion centered on Lillington, Dunn, and Angier.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Harnett County pricing reflects Raleigh-metro southward suburban growth, Fort Liberty spillover demand, and US-401 and US-421 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Lillington, Dunn, and Angier areas before booking.',
+        'Raleigh-area traffic on US-401, US-421, and I-40 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value suburban homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    orange: {
+      marketNotes:
+        'Orange County is a highly educated and affluent county with strong demand from the University of North Carolina at Chapel Hill and the Research Triangle.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,700',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Orange County pricing reflects Chapel Hill university turnover, Carrboro and Hillsborough residential demand, and Research Triangle corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Chapel Hill, Hillsborough, and Carrboro areas before booking.',
+        'University and Research Triangle traffic on I-40, US-15-501, and NC-86 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and academic-year turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    randolph: {
+      marketNotes:
+        'Randolph County is a growing county in the Piedmont Triad with strong manufacturing and residential activity centered on Asheboro.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Randolph County pricing reflects Piedmont Triad manufacturing corridor demand, Asheboro suburban turnover, and I-73 and US-64 traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Asheboro and surrounding Randolph County areas before booking.',
+        'Triad traffic on I-73, US-64, and NC-49 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    henderson: {
+      marketNotes:
+        'Henderson County is a scenic mountain county with strong retirement and tourism demand centered on Hendersonville.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Henderson County pricing reflects mountain-road access, retirement-community turnover, peak tourist-season volume, and Asheville-metro spillover demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Hendersonville and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

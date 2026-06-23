@@ -22,6 +22,12 @@ export const northCarolinaCountyOverrides: Partial<
   pitt: { seat: 'Greenville', metro: 'greenville-metro-nc' },
   brunswick: { seat: 'Bolivia', metro: 'wilmington-metro-nc' },
   davidson: { seat: 'Lexington', metro: 'winston-salem-triad-metro-nc' },
+  catawba: { seat: 'Newton', metro: 'hickory-lenoir-metro-nc' },
+  rowan: { seat: 'Salisbury', metro: 'charlotte-metro-nc' },
+  harnett: { seat: 'Lillington', metro: 'raleigh-triangle-metro-nc' },
+  orange: { seat: 'Hillsborough', metro: 'durham-chapel-hill-metro-nc' },
+  randolph: { seat: 'Asheboro', metro: 'greensboro-high-point-metro-nc' },
+  henderson: { seat: 'Hendersonville', metro: 'asheville-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(
