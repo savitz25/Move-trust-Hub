@@ -8,6 +8,9 @@ export const tennesseeCountyOverrides: Partial<
   davidson: { seat: 'Nashville', metro: 'nashville-metro-tn' },
   knox: { seat: 'Knoxville', metro: 'knoxville-metro-tn' },
   hamilton: { seat: 'Chattanooga', metro: 'chattanooga-metro-tn' },
+  rutherford: { seat: 'Murfreesboro', metro: 'nashville-metro-tn' },
+  williamson: { seat: 'Franklin', metro: 'nashville-metro-tn' },
+  montgomery: { seat: 'Clarksville', metro: 'clarksville-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

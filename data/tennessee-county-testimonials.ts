@@ -113,6 +113,84 @@ export const tennesseeCountyTestimonials: Record<string, CountyTestimonialEntry[
         moveType: 'Townhome',
       },
     ],
+    rutherford: [
+      {
+        quote:
+          'Two Men and a Truck Murfreesboro handled our Smyrna relocation professionally — on time, extremely careful with our belongings, and transparent Rutherford County pricing throughout.',
+        name: 'Kevin J.',
+        location: 'Smyrna, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'College Hunks Moving Nashville served our MTSU-area apartment move efficiently — fast, professional, and reliable with great value for careful handling.',
+        name: 'Rachel M.',
+        location: 'Murfreesboro, TN',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'Armstrong Relocation confirmed La Vergne coverage and delivered reliable packing and loading with no surprise fees despite Nashville-metro traffic.',
+        name: 'Daniel F.',
+        location: 'La Vergne, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    williamson: [
+      {
+        quote:
+          'Two Men and a Truck Franklin handled our Brentwood relocation with exceptional professionalism and care — transparent Williamson County pricing throughout.',
+        name: 'Patricia N.',
+        location: 'Brentwood, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Black Tie Moving Nashville served our Franklin luxury home move efficiently — outstanding care with high-end furnishings and no damage.',
+        name: 'Andrew C.',
+        location: 'Franklin, TN',
+        rating: 5,
+        moveType: 'Luxury home',
+      },
+      {
+        quote:
+          'College Hunks Moving Nashville confirmed Nolensville coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Lisa H.',
+        location: 'Nolensville, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    montgomery: [
+      {
+        quote:
+          'Two Men and a Truck Clarksville handled our Fort Campbell PCS move professionally — on time, efficient, and careful with military-family belongings.',
+        name: 'Sgt. James R.',
+        location: 'Clarksville, TN',
+        rating: 5,
+        moveType: 'Military PCS',
+      },
+      {
+        quote:
+          'All My Sons Clarksville served our local move efficiently — professional crew with strong military-move experience and transparent pricing.',
+        name: 'Maria G.',
+        location: 'Clarksville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Maxwell Moving confirmed Clarksville coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Tom B.',
+        location: 'Clarksville, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
   };
 
 export function getTennesseeCountyTestimonials(
