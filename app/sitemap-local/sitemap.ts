@@ -139,6 +139,16 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'tipton',
   'jefferson',
   'hawkins',
+  'dickson',
+  'mcminn',
+  'roane',
+  'carter',
+  'bedford',
+  'gibson',
+  'monroe',
+  'lawrence',
+  'franklin',
+  'fayette',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

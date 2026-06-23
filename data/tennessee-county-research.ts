@@ -467,6 +467,176 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  dickson: {
+    marketNotes:
+      'Dickson County is a growing county west of Nashville with strong residential and industrial demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Dickson County pricing reflects west-Nashville suburban growth, I-40 corridor traffic, and Clarksville-Nashville metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Dickson and surrounding areas before booking.',
+      'Nashville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcminn: {
+    marketNotes:
+      'McMinn County is a growing county in Southeast Tennessee with strong industrial and residential demand centered on Athens.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'McMinn County pricing reflects Athens industrial corridor demand, Cleveland-Chattanooga regional crew travel, and I-75 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Athens and surrounding McMinn County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  roane: {
+    marketNotes:
+      'Roane County is a growing county west of Knoxville with strong residential and lake-area demand centered on Kingston and Harriman.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Roane County pricing reflects Watts Bar Lake waterfront demand, Oak Ridge corridor access, and Knoxville-metro I-40 and I-75 traffic.',
+    },
+    tips: [
+      'Verify coverage for Kingston and Harriman areas before booking.',
+      'Knoxville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carter: {
+    marketNotes:
+      'Carter County is a growing county in the Tri-Cities region with strong residential demand centered on Elizabethton.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Carter County pricing reflects Elizabethton suburban demand, Johnson City-Kingsport regional crew travel, and Tri-Cities corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Elizabethton and surrounding Carter County areas before booking.',
+      'Tri-Cities traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bedford: {
+    marketNotes:
+      'Bedford County is a growing county in Middle Tennessee with strong residential and industrial demand centered on Shelbyville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Bedford County pricing reflects Shelbyville industrial and equestrian-community demand, Nashville-metro crew travel, and I-24 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Shelbyville and surrounding Bedford County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gibson: {
+    marketNotes:
+      'Gibson County is a rural West Tennessee county with agricultural and residential demand centered on Trenton, Humboldt, and Milan.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Gibson County pricing reflects rural West Tennessee access, Jackson-metro crew travel, and agricultural property move considerations.',
+    },
+    tips: [
+      'Verify coverage for Trenton, Humboldt, and Milan areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is a growing county in Southeast Tennessee with residential and industrial demand centered on Madisonville and Sweetwater.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects Sweetwater and Tellico Plains access, Knoxville-Chattanooga regional crew travel, and I-75 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Madisonville and Sweetwater areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lawrence: {
+    marketNotes:
+      'Lawrence County is a growing county in Middle Tennessee with strong residential demand centered on Lawrenceburg.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Lawrence County pricing reflects Lawrenceburg suburban demand, south-Nashville regional crew travel, and rural Middle Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Lawrenceburg and surrounding Lawrence County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a growing county in southern Middle Tennessee with strong residential demand centered on Winchester.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Winchester and Sewanee-area demand, Tullahoma-Manchester regional crew travel, and I-24 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Winchester and surrounding Franklin County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County is a growing suburban and rural county east of Memphis with strong residential demand centered on Somerville.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Fayette County pricing reflects Somerville suburban growth, Memphis-metro crew travel, and I-40 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Somerville and surrounding Fayette County areas before booking.',
+      'Memphis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

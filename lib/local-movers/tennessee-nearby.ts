@@ -36,6 +36,16 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   tipton: ['shelby', 'fayette', 'crockett', 'lauderdale', 'haywood', 'benton'],
   jefferson: ['sevier', 'hamblen', 'grainger', 'cocke', 'knox', 'douglas'],
   hawkins: ['sullivan', 'washington', 'greene', 'hancock', 'claiborne', 'grainger'],
+  dickson: ['montgomery', 'houston', 'hickman', 'williamson', 'cheatham', 'humphreys'],
+  mcminn: ['bradley', 'monroe', 'meigs', 'rhea', 'polk', 'loudon'],
+  roane: ['knox', 'loudon', 'morgan', 'cumberland', 'rhea', 'meigs'],
+  carter: ['sullivan', 'washington', 'unicoi', 'johnson', 'greene', 'hawkins'],
+  bedford: ['rutherford', 'coffee', 'lincoln', 'marshall', 'moore', 'franklin'],
+  gibson: ['crockett', 'dyer', 'lake', 'obion', 'carroll', 'madison'],
+  monroe: ['mcminn', 'loudon', 'polk', 'bradley', 'meigs', 'rhea'],
+  lawrence: ['wayne', 'lewis', 'giles', 'maury', 'marshall', 'bedford'],
+  franklin: ['coffee', 'bedford', 'marion', 'grundy', 'moore', 'lincoln'],
+  fayette: ['shelby', 'tipton', 'hardeman', 'haywood', 'benton', 'marshall'],
 };
 
 export function getTennesseeNearbyCounties(

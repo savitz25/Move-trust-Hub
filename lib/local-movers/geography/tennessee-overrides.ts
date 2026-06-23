@@ -31,6 +31,16 @@ export const tennesseeCountyOverrides: Partial<
   tipton: { seat: 'Covington', metro: 'memphis-metro-tn' },
   jefferson: { seat: 'Dandridge', metro: 'morristown-metro-tn' },
   hawkins: { seat: 'Rogersville', metro: 'kingsport-bristol-metro-tn' },
+  dickson: { seat: 'Dickson', metro: 'nashville-metro-tn' },
+  mcminn: { seat: 'Athens', metro: 'athens-metro-tn' },
+  roane: { seat: 'Kingston', metro: 'knoxville-metro-tn' },
+  carter: { seat: 'Elizabethton', metro: 'kingsport-bristol-metro-tn' },
+  bedford: { seat: 'Shelbyville', metro: 'shelbyville-metro-tn' },
+  gibson: { seat: 'Trenton', metro: 'jackson-metro-tn' },
+  monroe: { seat: 'Madisonville', metro: 'monroe-metro-tn' },
+  lawrence: { seat: 'Lawrenceburg', metro: 'lawrenceburg-metro-tn' },
+  franklin: { seat: 'Winchester', metro: 'manchester-metro-tn' },
+  fayette: { seat: 'Somerville', metro: 'memphis-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

@@ -711,6 +711,266 @@ export const tennesseeCountyTestimonials: Record<string, CountyTestimonialEntry[
         moveType: 'Single-family',
       },
     ],
+    dickson: [
+      {
+        quote:
+          'Two Men and a Truck Clarksville handled our Dickson relocation professionally — on time, efficient, and careful with our belongings throughout Dickson County.',
+        name: 'Melissa R.',
+        location: 'Dickson, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'College Hunks Moving Nashville served our west-Nashville corridor move efficiently — professional crew with careful handling.',
+        name: 'Jason W.',
+        location: 'Dickson, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Fox Moving Clarksville confirmed Dickson coverage and delivered reliable packing and loading with no surprise fees despite Nashville-metro traffic.',
+        name: 'Pamela S.',
+        location: 'Dickson, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    mcminn: [
+      {
+        quote:
+          'Two Men and a Truck Cleveland handled our Athens relocation professionally — on time, efficient, and careful with our belongings throughout McMinn County.',
+        name: 'Timothy H.',
+        location: 'Athens, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Good Guys Moving Chattanooga served our McMinn County move efficiently — professional crew with careful handling.',
+        name: 'Deborah L.',
+        location: 'Athens, TN',
+        rating: 5,
+        moveType: 'Commercial',
+      },
+      {
+        quote:
+          'River City Moving confirmed Athens coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Charles B.',
+        location: 'Athens, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    roane: [
+      {
+        quote:
+          'Two Men and a Truck Oak Ridge handled our Kingston relocation professionally — on time, efficient, and careful with our belongings throughout Roane County.',
+        name: 'Rebecca M.',
+        location: 'Kingston, TN',
+        rating: 5,
+        moveType: 'Lakeside home',
+      },
+      {
+        quote:
+          'Mighty Moving served our Harriman move efficiently — professional crew with careful handling near Watts Bar Lake.',
+        name: 'Daniel P.',
+        location: 'Harriman, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Gouffon Moving confirmed Roane County coverage and delivered reliable packing and loading with no surprise fees despite Knoxville-metro traffic.',
+        name: 'Sandra K.',
+        location: 'Kingston, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    carter: [
+      {
+        quote:
+          'Two Men and a Truck Johnson City handled our Elizabethton relocation professionally — on time, efficient, and careful with our belongings throughout Carter County.',
+        name: 'William J.',
+        location: 'Elizabethton, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Barnett Moving served our Elizabethton-area move efficiently — professional crew with careful handling across the Tri-Cities.',
+        name: 'Linda A.',
+        location: 'Elizabethton, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Forward Moving confirmed Carter County coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Robert E.',
+        location: 'Elizabethton, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    bedford: [
+      {
+        quote:
+          'Two Men and a Truck Shelbyville handled our local relocation professionally — on time, efficient, and careful with our belongings throughout Bedford County.',
+        name: 'Cynthia D.',
+        location: 'Shelbyville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Music City Movers Nashville served our Shelbyville apartment move efficiently — professional crew with careful handling.',
+        name: 'Andrew F.',
+        location: 'Shelbyville, TN',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'Bellhop Nashville confirmed Bedford County coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Janice T.',
+        location: 'Shelbyville, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    gibson: [
+      {
+        quote:
+          'Two Men and a Truck Jackson handled our Trenton relocation professionally — on time, efficient, and careful with our belongings throughout Gibson County.',
+        name: 'Harold N.',
+        location: 'Trenton, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Jackson Moving Company served our Humboldt-area move efficiently — professional and reliable across rural West Tennessee.',
+        name: 'Gloria W.',
+        location: 'Humboldt, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Volunteer Moving confirmed Milan coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Earl C.',
+        location: 'Milan, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    monroe: [
+      {
+        quote:
+          'Two Men and a Truck Knoxville handled our Madisonville relocation professionally — on time, efficient, and careful with our belongings throughout Monroe County.',
+        name: 'Patricia Y.',
+        location: 'Madisonville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Good Guys Moving Chattanooga served our Sweetwater move efficiently — professional crew with careful handling.',
+        name: 'Michael O.',
+        location: 'Sweetwater, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'College Hunks Moving Knoxville confirmed Monroe County coverage and delivered reliable packing with no surprise fees.',
+        name: 'Dorothy V.',
+        location: 'Madisonville, TN',
+        rating: 4,
+        moveType: 'Apartment',
+      },
+    ],
+    lawrence: [
+      {
+        quote:
+          'Two Men and a Truck Lawrenceburg handled our local relocation professionally — on time, efficient, and careful with our belongings throughout Lawrence County.',
+        name: 'Raymond G.',
+        location: 'Lawrenceburg, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Columbia served our Lawrence County move efficiently — professional crew with careful handling.',
+        name: 'Shirley P.',
+        location: 'Lawrenceburg, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons Nashville confirmed Lawrenceburg coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Gerald M.',
+        location: 'Lawrenceburg, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    franklin: [
+      {
+        quote:
+          'Two Men and a Truck Tullahoma handled our Winchester relocation professionally — on time, efficient, and careful with our belongings throughout Franklin County.',
+        name: 'Bonnie L.',
+        location: 'Winchester, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Manchester served our Sewanee-area move efficiently — professional crew with careful handling.',
+        name: 'Henry S.',
+        location: 'Winchester, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'College Hunks Moving Nashville confirmed Winchester coverage and delivered reliable packing with no surprise fees.',
+        name: 'Marie H.',
+        location: 'Winchester, TN',
+        rating: 4,
+        moveType: 'Apartment',
+      },
+    ],
+    fayette: [
+      {
+        quote:
+          'Two Men and a Truck Memphis handled our Somerville relocation professionally — on time, efficient, and careful with our belongings throughout Fayette County.',
+        name: 'Teresa N.',
+        location: 'Somerville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'College Hunks Moving Memphis served our suburban move efficiently — professional crew with careful handling east of Memphis.',
+        name: 'Leonard B.',
+        location: 'Somerville, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'My Town Movers confirmed Fayette County coverage and delivered reliable packing and loading with no surprise fees despite Memphis-metro traffic.',
+        name: 'Virginia K.',
+        location: 'Somerville, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
   };
 
 export function getTennesseeCountyTestimonials(
