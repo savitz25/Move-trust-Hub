@@ -114,6 +114,18 @@ export const georgiaCountyOverrides: Partial<
   'jeff-davis': { seat: 'Hazlehurst', metro: 'savannah-metro-ga' },
   jefferson: { seat: 'Louisville', metro: 'augusta-metro-ga' },
   screven: { seat: 'Sylvania', metro: 'savannah-metro-ga' },
+  towns: { seat: 'Hiawassee', metro: 'atlanta-metro-ga' },
+  charlton: { seat: 'Folkston', metro: 'brunswick-metro-ga' },
+  mcintosh: { seat: 'Darien', metro: 'brunswick-metro-ga' },
+  crawford: { seat: 'Knoxville', metro: 'macon-metro-ga' },
+  macon: { seat: 'Oglethorpe', metro: 'macon-metro-ga' },
+  candler: { seat: 'Metter', metro: 'savannah-metro-ga' },
+  telfair: { seat: 'McRae-Helena', metro: 'savannah-metro-ga' },
+  dooly: { seat: 'Vienna', metro: 'macon-metro-ga' },
+  evans: { seat: 'Claxton', metro: 'savannah-metro-ga' },
+  lanier: { seat: 'Lakeland', metro: 'valdosta-metro-ga' },
+  early: { seat: 'Blakely', metro: 'albany-metro-ga' },
+  pulaski: { seat: 'Hawkinsville', metro: 'macon-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

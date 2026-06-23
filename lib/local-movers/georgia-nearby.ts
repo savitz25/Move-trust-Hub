@@ -121,6 +121,18 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   'jeff-davis': ['appling', 'coffee', 'toombs', 'tattnall', 'montgomery', 'ware'],
   jefferson: ['richmond', 'burke', 'mcduffie', 'washington', 'glascock', 'warren'],
   screven: ['burke', 'jenkins', 'bulloch', 'effingham', 'chatham', 'emanuel'],
+  towns: ['rabun', 'habersham', 'white', 'fannin', 'gilmer', 'union'],
+  charlton: ['camden', 'brantley', 'ware', 'bacon', 'glynn', 'pierce'],
+  mcintosh: ['liberty', 'glynn', 'wayne', 'long', 'bryan', 'chatham'],
+  crawford: ['peach', 'monroe', 'bibb', 'upson', 'jones', 'houston'],
+  macon: ['sumter', 'dooly', 'crisp', 'pulaski', 'webster', 'schley'],
+  candler: ['bulloch', 'evans', 'tattnall', 'emanuel', 'screven', 'jenkins'],
+  telfair: ['wheeler', 'jeff-davis', 'coffee', 'montgomery', 'dodge', 'laurens'],
+  dooly: ['crisp', 'worth', 'sumter', 'macon', 'wilcox', 'pulaski'],
+  evans: ['bulloch', 'candler', 'tattnall', 'effingham', 'bryan', 'screven'],
+  lanier: ['lowndes', 'brooks', 'atkinson', 'berrien', 'echols', 'cook'],
+  early: ['baker', 'miller', 'seminole', 'decatur', 'grady', 'mitchell'],
+  pulaski: ['bleckley', 'dodge', 'houston', 'dooly', 'wilcox', 'laurens'],
 };
 
 export function getGeorgiaNearbyCounties(

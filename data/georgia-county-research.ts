@@ -1886,6 +1886,210 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
     ],
   },
+  towns: {
+    marketNotes:
+      'Towns County is rural and mountainous in Northeast Georgia with Hiawassee as the seat and Lake Chatuge influence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Towns County pricing reflects mountain-road and lake-property access and travel from Atlanta northeast-metro crews.',
+    },
+    tips: [
+      'Mountain roads and lake access challenges are common — confirm truck size and route feasibility for Hiawassee.',
+      'Verify explicit regional service to Hiawassee before booking.',
+      'Storage is very limited locally — plan with Atlanta northeast-metro providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural and mountain relocations.',
+    ],
+  },
+  charlton: {
+    marketNotes:
+      'Charlton County is rural Southeast Georgia with Folkston as the seat along the Florida border and Okefenokee corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Charlton County pricing reflects rural coastal-plain access and travel from Brunswick or Savannah crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Folkston and outer Charlton properties.',
+      'Verify explicit regional service to Folkston before booking.',
+      'Storage is very limited locally — coordinate with Brunswick or Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  mcintosh: {
+    marketNotes:
+      'McIntosh County is coastal with Darien as the seat between Savannah and the Golden Isles.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'McIntosh County pricing reflects coastal marsh access, limited storage, and travel from Brunswick or Savannah crews.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm experience with marsh-adjacent and rural coastal driveways.',
+      'Verify explicit regional service to Darien before booking.',
+      'Storage is very limited locally — coordinate with Brunswick or Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for coastal and rural Southeast Georgia relocations.',
+    ],
+  },
+  crawford: {
+    marketNotes:
+      'Crawford County is rural Central Georgia with Knoxville as the seat southwest of Macon.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Crawford County pricing reflects rural property access and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Knoxville and outer Crawford addresses.',
+      'Verify explicit regional service to Knoxville before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  macon: {
+    marketNotes:
+      'Macon County is rural Central Georgia with Oglethorpe as the seat — distinct from Bibb County and the city of Macon.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Macon County pricing reflects rural southwest Georgia access and travel from Macon or Americus-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Oglethorpe and outer Macon County properties.',
+      'Verify explicit regional service to Oglethorpe before booking — do not assume Bibb County Macon city coverage.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  candler: {
+    marketNotes:
+      'Candler County is rural Southeast Georgia with Metter as the seat between Statesboro and Savannah.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Candler County pricing reflects rural coastal-plain access and travel from Savannah or Statesboro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Metter and outer Candler properties.',
+      'Verify explicit regional service to Metter before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  telfair: {
+    marketNotes:
+      'Telfair County is rural Southeast Georgia with McRae-Helena as the seat along the Vidalia and Macon corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Telfair County pricing reflects rural property access and travel from Savannah or Statesboro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for McRae-Helena and outer Telfair properties.',
+      'Verify explicit regional service to McRae-Helena before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  dooly: {
+    marketNotes:
+      'Dooly County is rural Central Georgia with Vienna as the seat along the I-75 and Americus corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dooly County pricing reflects rural property access and travel from Macon or Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Vienna and outer Dooly addresses.',
+      'Verify explicit regional service to Vienna before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  evans: {
+    marketNotes:
+      'Evans County is rural Southeast Georgia with Claxton as the seat and fruit-belt agricultural influence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Evans County pricing reflects rural coastal-plain access and travel from Savannah or Statesboro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Claxton and outer Evans properties.',
+      'Verify explicit regional service to Claxton before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  lanier: {
+    marketNotes:
+      'Lanier County is rural South Georgia with Lakeland as the seat along the Valdosta and Moody Air Force corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lanier County pricing reflects rural property access and travel from Valdosta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Lakeland and outer Lanier properties.',
+      'Verify explicit regional service to Lakeland before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  early: {
+    marketNotes:
+      'Early County is rural Southwest Georgia with Blakely as the seat along the Alabama border and Albany corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Early County pricing reflects remote rural access and travel from Albany or Dothan-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Blakely and outer Early properties.',
+      'Verify explicit regional service to Blakely before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  pulaski: {
+    marketNotes:
+      'Pulaski County is rural Central Georgia with Hawkinsville as the seat along the Macon and Perry corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Pulaski County pricing reflects rural property access and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Hawkinsville and outer Pulaski addresses.',
+      'Verify explicit regional service to Hawkinsville before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

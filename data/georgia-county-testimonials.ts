@@ -2867,6 +2867,318 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  towns: [
+    {
+      quote:
+        'Atlanta Home Movers confirmed Hiawassee coverage and handled our lake Towns County move with careful mountain-road route planning.',
+      name: 'Laura V.',
+      location: 'Hiawassee, GA',
+      rating: 5,
+      moveType: 'Lake home',
+    },
+    {
+      quote:
+        'Bulldog Movers served our Hiawassee relocation with professional packing and transparent northeast-metro travel pricing.',
+      name: 'Frank L.',
+      location: 'Hiawassee, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta traveled to Towns County and finished our mountain move on schedule despite narrow lake-access roads.',
+      name: 'Diana S.',
+      location: 'Young Harris, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  charlton: [
+    {
+      quote:
+        'Driftwood Moving Brunswick confirmed Folkston coverage and handled our rural Charlton County move with careful Okefenokee corridor planning.',
+      name: 'Kim L.',
+      location: 'Folkston, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah served our Folkston relocation with transparent travel pricing and professional packing.',
+      name: 'Scott D.',
+      location: 'Folkston, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'BC Brothers Moving traveled to Charlton County and finished our move on schedule despite the long drive from the Savannah coast.',
+      name: 'Angela V.',
+      location: 'Folkston, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  mcintosh: [
+    {
+      quote:
+        'Driftwood Moving Brunswick confirmed Darien coverage and handled our coastal McIntosh County move with careful marsh-adjacent access planning.',
+      name: 'Patricia H.',
+      location: 'Darien, GA',
+      rating: 5,
+      moveType: 'Coastal home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah served our Darien relocation with transparent coastal travel pricing and professional packing.',
+      name: 'James R.',
+      location: 'Darien, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'BC Brothers Moving traveled to McIntosh County and finished our coastal move on schedule despite rural marsh-road access challenges.',
+      name: 'Susan T.',
+      location: 'Darien, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  crawford: [
+    {
+      quote:
+        'Good Guys Moving confirmed Knoxville coverage and handled our rural Crawford County move with careful driveway access planning.',
+      name: 'Robert E.',
+      location: 'Knoxville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Crawford County relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'Laura V.',
+      location: 'Knoxville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Apple Moving Macon traveled to Crawford County and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Charles M.',
+      location: 'Knoxville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  macon: [
+    {
+      quote:
+        'Good Guys Moving confirmed explicit Macon County service to Oglethorpe before move day. Careful crew despite the rural southwest Georgia drive.',
+      name: 'Patricia H.',
+      location: 'Oglethorpe, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Macon County relocation efficiently with clear communication — not to be confused with Bibb County city moves.',
+      name: 'James R.',
+      location: 'Oglethorpe, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Simple Moving Solutions Macon handled our rural Oglethorpe move with upfront pricing and reliable packing from their Middle Georgia base.',
+      name: 'Susan T.',
+      location: 'Oglethorpe, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  candler: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Metter and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Metter, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Candler County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Metter, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Metter home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Metter, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  telfair: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to McRae-Helena and delivered on schedule. Upfront about rural travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'McRae-Helena, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Telfair County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'McRae-Helena, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Telfair County home. Finished on schedule with no surprise fees.',
+      name: 'Dennis K.',
+      location: 'McRae-Helena, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  dooly: [
+    {
+      quote:
+        'Good Guys Moving confirmed Vienna coverage and handled our rural Dooly County move with careful driveway access planning.',
+      name: 'Robert E.',
+      location: 'Vienna, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Dooly County relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'Laura V.',
+      location: 'Vienna, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Simple Moving Solutions Macon traveled to Dooly County and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Charles M.',
+      location: 'Vienna, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  evans: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Claxton and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Claxton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Evans County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Claxton, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Claxton home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Claxton, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  lanier: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Lakeland move with professional crews and clear rural travel pricing.',
+      name: 'Tom R.',
+      location: 'Lakeland, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Lakeland coverage and delivered careful handling for our rural Lanier County relocation.',
+      name: 'Brenda L.',
+      location: 'Lakeland, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Lanier County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Carl M.',
+      location: 'Lakeland, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  early: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Blakely move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Blakely, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Early County coverage and handled our rural Blakely relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Blakely, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Blakely move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Blakely, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  pulaski: [
+    {
+      quote:
+        'Good Guys Moving confirmed Hawkinsville coverage and handled our rural Pulaski County move with careful driveway access planning.',
+      name: 'Patricia H.',
+      location: 'Hawkinsville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Pulaski County relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'James R.',
+      location: 'Hawkinsville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Simple Moving Solutions Macon traveled to Hawkinsville and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Susan T.',
+      location: 'Hawkinsville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

@@ -625,6 +625,66 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'bc-brothers-moving-savannah',
     'college-hunks-moving-savannah',
   ],
+  towns: [
+    'atlanta-home-movers',
+    'bulldog-movers-atlanta',
+    'two-men-and-a-truck-atlanta',
+  ],
+  charlton: [
+    'driftwood-moving-brunswick',
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+  ],
+  mcintosh: [
+    'driftwood-moving-brunswick',
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+  ],
+  crawford: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'apple-moving-macon',
+  ],
+  macon: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'simple-moving-solutions-macon',
+  ],
+  candler: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  telfair: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  dooly: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'simple-moving-solutions-macon',
+  ],
+  evans: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  lanier: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  early: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  pulaski: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'simple-moving-solutions-macon',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(
