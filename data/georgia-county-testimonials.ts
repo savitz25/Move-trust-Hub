@@ -3699,6 +3699,144 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  chattahoochee: [
+    {
+      quote:
+        'Coleman Worldwide Columbus confirmed Cusseta coverage and handled our Fort Moore corridor move with careful military PCS documentation support.',
+      name: 'Tom R.',
+      location: 'Cusseta, GA',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbus served our Chattahoochee County relocation efficiently with clear communication about Columbus-area travel time.',
+      name: 'Brenda L.',
+      location: 'Cusseta, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbus traveled to Cusseta and finished our move on schedule with transparent West Georgia pricing.',
+      name: 'Carl M.',
+      location: 'Cusseta, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  clarke: [
+    {
+      quote:
+        'University Moving and Storage made our Athens relocation stress-free — excellent UGA move-in experience and careful handling of our faculty housing belongings.',
+      name: 'Olivia R.',
+      location: 'Athens, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens handled our Clarke County apartment move on schedule despite university-area traffic. Transparent pricing throughout.',
+      name: 'Nathan B.',
+      location: 'Athens, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Zip Moving Atlanta served our Athens relocation with professional packing and clear northeast-metro travel estimates when local crews were booked.',
+      name: 'Frank L.',
+      location: 'Athens, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Atlanta Home Movers traveled to Athens and finished our Clarke County move efficiently with great communication and no surprise fees.',
+      name: 'Diana S.',
+      location: 'Athens, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+  ],
+  clay: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Fort Gaines move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Fort Gaines, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Clay County coverage and handled our rural Fort Gaines relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Fort Gaines, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Fort Gaines move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Fort Gaines, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  echols: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Statenville move with professional crews and clear remote rural travel pricing.',
+      name: 'Tom R.',
+      location: 'Statenville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Statenville coverage and delivered careful handling for our rural Echols County relocation.',
+      name: 'Brenda L.',
+      location: 'Statenville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Echols County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Carl M.',
+      location: 'Statenville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  glascock: [
+    {
+      quote:
+        'Budget Movers Augusta confirmed Gibson coverage and delivered careful handling for our rural Glascock County relocation.',
+      name: 'Johnny R.',
+      location: 'Gibson, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta handled our Gibson move with great communication and no surprise fees despite extremely rural CSRA access challenges.',
+      name: 'Wanda G.',
+      location: 'Gibson, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'ADSI Moving Augusta provided reliable packing and loading for our Glascock County home. Finished on schedule with transparent Augusta-area pricing.',
+      name: 'Donald P.',
+      location: 'Gibson, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

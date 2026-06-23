@@ -146,6 +146,11 @@ export const georgiaCountyOverrides: Partial<
   talbot: { seat: 'Talbotton', metro: 'columbus-metro-ga' },
   calhoun: { seat: 'Morgan', metro: 'albany-metro-ga' },
   warren: { seat: 'Warrenton', metro: 'augusta-metro-ga' },
+  chattahoochee: { seat: 'Cusseta', metro: 'columbus-metro-ga' },
+  clarke: { seat: 'Athens', metro: 'athens-metro-ga' },
+  clay: { seat: 'Fort Gaines', metro: 'albany-metro-ga' },
+  echols: { seat: 'Statenville', metro: 'valdosta-metro-ga' },
+  glascock: { seat: 'Gibson', metro: 'augusta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

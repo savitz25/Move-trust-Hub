@@ -153,6 +153,11 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   talbot: ['marion', 'taylor', 'upson', 'meriwether', 'harris', 'muscogee'],
   calhoun: ['early', 'baker', 'miller', 'terrell', 'randolph', 'dougherty'],
   warren: ['mcduffie', 'wilkes', 'hancock', 'glascock', 'jefferson', 'columbia'],
+  chattahoochee: ['muscogee', 'marion', 'stewart', 'schley', 'talbot', 'webster'],
+  clarke: ['oconee', 'madison', 'oglethorpe', 'jackson', 'barrow', 'elbert'],
+  clay: ['randolph', 'quitman', 'early', 'calhoun', 'stewart', 'terrell'],
+  echols: ['clinch', 'lowndes', 'lanier', 'atkinson', 'ware', 'charlton'],
+  glascock: ['warren', 'jefferson', 'mcduffie', 'hancock', 'washington', 'wilkes'],
 };
 
 export function getGeorgiaNearbyCounties(

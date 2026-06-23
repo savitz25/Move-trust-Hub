@@ -2430,6 +2430,91 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural CSRA relocations.',
     ],
   },
+  chattahoochee: {
+    marketNotes:
+      'Chattahoochee County is rural with Cusseta as the seat and strong military influence from Fort Moore.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Chattahoochee County pricing reflects military PCS seasonality, rural property access, and travel from Columbus-area crews.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm PCS and government billing familiarity for Fort Moore relocations.',
+      'Verify explicit regional service to Cusseta before booking.',
+      'Storage is very limited locally — coordinate with Columbus providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural and military relocations.',
+    ],
+  },
+  clarke: {
+    marketNotes:
+      'Clarke County centers on Athens with significant University of Georgia influence and steady student and faculty turnover.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Clarke County pricing reflects university-area apartment demand, historic neighborhoods, and Athens corridor traffic.',
+    },
+    tips: [
+      'University-related moves are common — confirm experience with UGA dorms, apartments, and August move-in windows.',
+      'Verify coverage for Athens and surrounding Clarke County addresses before booking.',
+      'Confirm insurance and valuation for high-value homes and antiques in historic districts.',
+      'Book early for peak seasons and UGA academic-calendar move windows.',
+      'Obtain multiple written estimates and compare flat-rate vs. hourly pricing.',
+    ],
+  },
+  clay: {
+    marketNotes:
+      'Clay County is rural Southwest Georgia with Fort Gaines as the seat along the Alabama border — distinct from Clayton County (Atlanta metro).',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Clay County pricing reflects remote rural access and travel from Albany or Dothan-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Fort Gaines and outer Clay properties.',
+      'Verify explicit regional service to Fort Gaines before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  echols: {
+    marketNotes:
+      'Echols County is very rural in South Georgia with Statenville as the seat along the Florida border.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Echols County pricing reflects extremely remote rural access and travel from Valdosta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Statenville and outer Echols properties.',
+      'Verify explicit regional service to Statenville before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for remote rural South Georgia relocations.',
+    ],
+  },
+  glascock: {
+    marketNotes:
+      'Glascock County is one of the smallest and most rural counties in the CSRA with Gibson as the seat.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Glascock County pricing reflects extremely remote rural access and travel from Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Gibson and outer Glascock addresses.',
+      'Verify explicit regional service to Gibson before booking.',
+      'Storage is very limited locally — coordinate with Augusta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural CSRA relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(
