@@ -21,6 +21,12 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   cabarrus: ['mecklenburg', 'union', 'rowan', 'stanly', 'iredell'],
   gaston: ['mecklenburg', 'lincoln', 'cleveland', 'burke'],
   'new-hanover': ['brunswick', 'pender', 'columbus', 'duplin'],
+  onslow: ['new-hanover', 'pender', 'jones', 'carteret', 'duplin'],
+  iredell: ['mecklenburg', 'cabarrus', 'rowan', 'alexander', 'catawba', 'lincoln'],
+  alamance: ['guilford', 'orange', 'durham', 'chatham', 'caswell', 'randolph'],
+  pitt: ['greene', 'lenoir', 'wilson', 'beaufort', 'edgecombe', 'martin'],
+  brunswick: ['new-hanover', 'pender', 'columbus', 'bladen'],
+  davidson: ['forsyth', 'guilford', 'davie', 'rowan', 'stanly', 'randolph'],
 };
 
 export function getNorthCarolinaNearbyCounties(

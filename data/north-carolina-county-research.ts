@@ -213,6 +213,108 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    onslow: {
+      marketNotes:
+        'Onslow County is a major military hub (Camp Lejeune and MCAS New River) with significant residential and relocation demand centered on Jacksonville.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,200',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Onslow County pricing reflects Camp Lejeune PCS volume, Jacksonville suburban turnover, and seasonal military relocation surges.',
+      },
+      tips: [
+        'Verify explicit coverage for Jacksonville and surrounding Onslow County areas before booking.',
+        'Military moves require specific PCS experience and documentation — confirm mover familiarity with Camp Lejeune relocations.',
+        'Confirm insurance and valuation for high-value and military household goods before booking.',
+        'Book early for peak moving seasons and military transfer windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    iredell: {
+      marketNotes:
+        'Iredell County is a growing county north of Charlotte with strong residential and lake-area demand centered on Statesville and Mooresville along Lake Norman.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,400',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Iredell County pricing reflects Charlotte metro north-side growth, Lake Norman waterfront demand, and I-77 and I-40 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Statesville, Mooresville, and Lake Norman areas before booking.',
+        'Charlotte-area traffic on I-77, I-40, and NC-150 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value lake and suburban homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    alamance: {
+      marketNotes:
+        'Alamance County is a growing county in the Piedmont Triad with strong residential and industrial demand centered on Burlington, Graham, and Mebane.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Alamance County pricing reflects Piedmont Triad growth, Burlington and Mebane suburban turnover, and I-40 and I-85 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Burlington, Graham, and Mebane areas before booking.',
+        'Triad traffic on I-40, I-85, and US-70 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    pitt: {
+      marketNotes:
+        'Pitt County is a major eastern North Carolina hub with strong educational (East Carolina University) and medical demand centered on Greenville.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,200',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Pitt County pricing reflects ECU student and faculty turnover, Greenville suburban growth, and eastern NC regional travel logistics.',
+      },
+      tips: [
+        'Verify explicit coverage for Greenville and surrounding Pitt County areas before booking.',
+        'University and medical-sector traffic on Memorial Drive and Greenville Boulevard impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and academic-year turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    brunswick: {
+      marketNotes:
+        'Brunswick County is a rapidly growing coastal county with strong retirement and beach community demand centered on Leland, Shallotte, and Southport.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,800',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Brunswick County pricing reflects coastal island and mainland access, retirement-community turnover, hurricane-season scheduling, and peak tourist-season volume.',
+      },
+      tips: [
+        'Verify explicit coverage for Leland, Shallotte, and Southport areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    davidson: {
+      marketNotes:
+        'Davidson County is a growing county in the Piedmont Triad with strong industrial and residential activity centered on Lexington and Thomasville.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Davidson County pricing reflects Triad industrial corridor demand, Lexington and Thomasville suburban turnover, and I-85 and US-64 traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Lexington, Thomasville, and surrounding Davidson County areas before booking.',
+        'Triad traffic on I-85, US-64, and NC-109 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

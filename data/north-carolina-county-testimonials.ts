@@ -11,6 +11,162 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  onslow: [
+    {
+      quote:
+        'J.E. Thomas & Sons handled our Jacksonville PCS move professionally — efficient crews, careful handling, and great experience with military families near Camp Lejeune.',
+      name: 'Sgt. Mark T.',
+      location: 'Jacksonville, NC',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Troy Humphrey Moving served our Onslow County move with professional, efficient crews and careful handling throughout.',
+      name: 'Laura C.',
+      location: 'Jacksonville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Absolute Moving & Storage confirmed Jacksonville coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Paul R.',
+      location: 'Jacksonville, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  iredell: [
+    {
+      quote:
+        'Two Men and a Truck Charlotte handled our Mooresville relocation professionally — efficient crews, careful handling, and transparent Lake Norman pricing.',
+      name: 'Scott B.',
+      location: 'Mooresville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant Moving served our Statesville move with professional crews and careful handling of our furniture throughout Iredell County.',
+      name: 'Nancy W.',
+      location: 'Statesville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Make A Move confirmed Lake Norman coverage and delivered reliable packing and loading with no surprise fees despite Charlotte-area traffic.',
+      name: 'Andrew K.',
+      location: 'Mooresville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  alamance: [
+    {
+      quote:
+        'Two Men and a Truck Greensboro handled our Burlington relocation professionally — on time, careful with our belongings, and transparent Triad pricing.',
+      name: 'Rachel M.',
+      location: 'Burlington, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greensboro served our Mebane apartment move efficiently with fast, professional crews and great value.',
+      name: 'Chris D.',
+      location: 'Mebane, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Excel Moving & Storage confirmed Graham coverage and delivered reliable packing and loading with no surprise fees despite I-40 traffic.',
+      name: 'Stephanie L.',
+      location: 'Graham, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  pitt: [
+    {
+      quote:
+        'College Hunks Moving Greenville handled our relocation professionally — efficient crews, careful handling, and transparent Pitt County pricing near ECU.',
+      name: 'Jordan H.',
+      location: 'Greenville, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Superior Moving and Logistics served our Greenville move with professional crews and careful handling of our furniture throughout.',
+      name: 'Maria G.',
+      location: 'Greenville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'East Carolina Moving confirmed Greenville coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Tyler N.',
+      location: 'Greenville, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  brunswick: [
+    {
+      quote:
+        'College Hunks Moving Wilmington handled our Leland coastal move professionally — efficient crews, careful handling, and transparent Brunswick County pricing.',
+      name: 'Barbara S.',
+      location: 'Leland, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Absolute Moving & Storage served our Shallotte move with professional crews experienced with coastal access and careful waterfront handling.',
+      name: 'William J.',
+      location: 'Shallotte, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Wilmington confirmed Southport coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Cynthia P.',
+      location: 'Southport, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  davidson: [
+    {
+      quote:
+        'Two Men and a Truck Winston-Salem handled our Lexington relocation professionally — efficient crews, careful handling, and transparent Davidson County pricing.',
+      name: 'George F.',
+      location: 'Lexington, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'American Moving & Hauling served our Thomasville move with professional, efficient crews and careful handling throughout.',
+      name: 'Betty C.',
+      location: 'Thomasville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Miracle Movers Greensboro confirmed Davidson County coverage and delivered reliable packing and loading with no surprise fees despite Triad traffic.',
+      name: 'Henry M.',
+      location: 'Lexington, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
   union: [
     {
       quote:

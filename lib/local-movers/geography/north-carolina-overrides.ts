@@ -16,6 +16,12 @@ export const northCarolinaCountyOverrides: Partial<
   cabarrus: { seat: 'Concord', metro: 'charlotte-metro-nc' },
   gaston: { seat: 'Gastonia', metro: 'charlotte-metro-nc' },
   'new-hanover': { seat: 'Wilmington', metro: 'wilmington-metro-nc' },
+  onslow: { seat: 'Jacksonville', metro: 'jacksonville-metro-nc' },
+  iredell: { seat: 'Statesville', metro: 'charlotte-metro-nc' },
+  alamance: { seat: 'Graham', metro: 'greensboro-high-point-metro-nc' },
+  pitt: { seat: 'Greenville', metro: 'greenville-metro-nc' },
+  brunswick: { seat: 'Bolivia', metro: 'wilmington-metro-nc' },
+  davidson: { seat: 'Lexington', metro: 'winston-salem-triad-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(
