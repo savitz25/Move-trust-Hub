@@ -1485,6 +1485,214 @@ export const alabamaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
         moveType: 'Apartment',
       },
     ],
+    sumter: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Livingston relocation professionally — on time, efficient, and extremely careful throughout Sumter County.',
+        name: 'Ira B.',
+        location: 'Livingston, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Motivated Movers served our rural West Alabama move efficiently — fast, professional, and reliable with careful remote-area handling.',
+        name: 'Nora W.',
+        location: 'Livingston, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'New Latitude Movers confirmed Sumter County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Cleo H.',
+        location: 'Livingston, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    conecuh: [
+      {
+        quote:
+          'True America Moving handled our Evergreen relocation professionally — on time, efficient, and extremely careful throughout Conecuh County.',
+        name: 'Jesse M.',
+        location: 'Evergreen, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving served our rural South Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Birdie S.',
+        location: 'Evergreen, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers Daphne confirmed Conecuh County coverage and delivered excellent Gulf Coast regional service — professional crew with no surprise fees.',
+        name: 'Lonnie P.',
+        location: 'Evergreen, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    coosa: [
+      {
+        quote:
+          'Two Men and a Truck Montgomery handled our Rockford relocation professionally — on time, efficient, and extremely careful throughout Coosa County.',
+        name: 'Mae T.',
+        location: 'Rockford, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Admiral Movers served our rural central Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Ollie R.',
+        location: 'Rockford, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Coosa County coverage and delivered excellent Birmingham–Montgomery corridor service — professional crew with transparent pricing.',
+        name: 'Rufus K.',
+        location: 'Rockford, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    bullock: [
+      {
+        quote:
+          'Two Men and a Truck Montgomery handled our Union Springs relocation professionally — on time, efficient, and extremely careful throughout Bullock County.',
+        name: 'Ada F.',
+        location: 'Union Springs, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Admiral Movers served our rural East Alabama move efficiently — fast, professional, and reliable with careful remote-area handling.',
+        name: 'Clyde J.',
+        location: 'Union Springs, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Bullock County coverage and delivered excellent Montgomery-metro regional service — professional crew with no surprise fees.',
+        name: 'Dora L.',
+        location: 'Union Springs, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    wilcox: [
+      {
+        quote:
+          'Two Men and a Truck Montgomery handled our Camden relocation professionally — on time, efficient, and extremely careful throughout Wilcox County.',
+        name: 'Hattie G.',
+        location: 'Camden, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Admiral Movers served our rural Black Belt move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Ike N.',
+        location: 'Camden, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving confirmed Wilcox County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Jewel C.',
+        location: 'Camden, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lowndes: [
+      {
+        quote:
+          'Two Men and a Truck Montgomery handled our Hayneville relocation professionally — on time, efficient, and extremely careful throughout Lowndes County.',
+        name: 'Knox D.',
+        location: 'Hayneville, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Admiral Movers served our rural central Alabama move efficiently — fast, professional, and reliable with careful remote-area handling.',
+        name: 'Lena V.',
+        location: 'Hayneville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Lowndes County coverage and delivered excellent Montgomery-metro service — professional crew with no surprise fees.',
+        name: 'Mack E.',
+        location: 'Hayneville, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    perry: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Marion relocation professionally — on time, efficient, and extremely careful throughout Perry County.',
+        name: 'Nell A.',
+        location: 'Marion, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Montgomery served our rural Black Belt move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Odis B.',
+        location: 'Marion, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Admiral Movers confirmed Perry County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Pearl W.',
+        location: 'Marion, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    greene: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Eutaw relocation professionally — on time, efficient, and extremely careful throughout Greene County.',
+        name: 'Quincy H.',
+        location: 'Eutaw, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Motivated Movers served our rural West Alabama move efficiently — fast, professional, and reliable with careful remote-area handling.',
+        name: 'Rena M.',
+        location: 'Eutaw, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'New Latitude Movers confirmed Greene County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Silas T.',
+        location: 'Eutaw, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getAlabamaCountyTestimonials(

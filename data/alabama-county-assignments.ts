@@ -566,6 +566,48 @@ const CURATED_AL_COUNTIES: Record<string, string[]> = {
     'true-america-moving-dothan',
     'griner-moving-services-mobile',
   ],
+  sumter: [
+    'two-men-and-a-truck-tuscaloosa',
+    'motivated-movers-tuscaloosa',
+    'new-latitude-movers-birmingham',
+  ],
+  conecuh: [
+    'true-america-moving-dothan',
+    'coleman-worldwide-moving-mobile',
+    'motivated-movers-baldwin',
+    'the-moving-truck-dothan',
+  ],
+  coosa: [
+    'two-men-and-a-truck-montgomery',
+    'admiral-movers-montgomery',
+    'two-men-and-a-truck-shelby',
+    'motivated-movers-birmingham',
+  ],
+  bullock: [
+    'two-men-and-a-truck-montgomery',
+    'admiral-movers-montgomery',
+    'motivated-movers-montgomery',
+  ],
+  wilcox: [
+    'two-men-and-a-truck-montgomery',
+    'admiral-movers-montgomery',
+    'coleman-worldwide-moving-mobile',
+  ],
+  lowndes: [
+    'two-men-and-a-truck-montgomery',
+    'admiral-movers-montgomery',
+    'motivated-movers-montgomery',
+  ],
+  perry: [
+    'two-men-and-a-truck-tuscaloosa',
+    'two-men-and-a-truck-montgomery',
+    'admiral-movers-montgomery',
+  ],
+  greene: [
+    'two-men-and-a-truck-tuscaloosa',
+    'motivated-movers-tuscaloosa',
+    'new-latitude-movers-birmingham',
+  ],
 };
 
 export const alabamaCountyMoverAssignments: CountyMoverAssignment[] =

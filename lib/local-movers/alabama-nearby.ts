@@ -68,6 +68,14 @@ const AL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lamar: ['fayette', 'marion', 'pickens', 'monroe', 'sumter', 'greene'],
   crenshaw: ['butler', 'covington', 'pike', 'coffee', 'montgomery', 'lowndes'],
   choctaw: ['washington', 'clarke', 'marengo', 'sumter', 'wilcox', 'mobile'],
+  sumter: ['marengo', 'choctaw', 'greene', 'pickens', 'lamar', 'hale'],
+  conecuh: ['escambia', 'covington', 'monroe', 'butler', 'coffee', 'crenshaw'],
+  coosa: ['talladega', 'clay', 'tallapoosa', 'elmore', 'chilton', 'shelby'],
+  bullock: ['macon', 'montgomery', 'pike', 'russell', 'barbour', 'lee'],
+  wilcox: ['monroe', 'clarke', 'marengo', 'butler', 'dallas', 'conecuh'],
+  lowndes: ['montgomery', 'autauga', 'elmore', 'dallas', 'wilcox', 'crenshaw'],
+  perry: ['hale', 'marengo', 'dallas', 'bibb', 'chilton', 'greene'],
+  greene: ['hale', 'marengo', 'sumter', 'pickens', 'tuscaloosa', 'bibb'],
 };
 
 export function getAlabamaNearbyCounties(

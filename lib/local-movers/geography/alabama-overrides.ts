@@ -61,6 +61,14 @@ export const alabamaCountyOverrides: Partial<
   lamar: { seat: 'Vernon', metro: 'vernon-metro-al' },
   crenshaw: { seat: 'Luverne', metro: 'luverne-metro-al' },
   choctaw: { seat: 'Butler', metro: 'choctaw-metro-al' },
+  sumter: { seat: 'Livingston', metro: 'livingston-metro-al' },
+  conecuh: { seat: 'Evergreen', metro: 'evergreen-metro-al' },
+  coosa: { seat: 'Rockford', metro: 'rockford-metro-al' },
+  bullock: { seat: 'Union Springs', metro: 'union-springs-metro-al' },
+  wilcox: { seat: 'Camden', metro: 'camden-metro-al' },
+  lowndes: { seat: 'Hayneville', metro: 'hayneville-metro-al' },
+  perry: { seat: 'Marion', metro: 'perry-metro-al' },
+  greene: { seat: 'Eutaw', metro: 'eutaw-metro-al' },
 };
 
 export function applyAlabamaCountyOverrides(county: LocalCounty): LocalCounty {

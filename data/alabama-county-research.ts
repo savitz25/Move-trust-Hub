@@ -977,6 +977,142 @@ export const alabamaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for rural moves before booking.',
     ],
   },
+  sumter: {
+    marketNotes:
+      'Sumter County is a rural county in West Alabama with residential demand centered on Livingston.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Sumter County pricing reflects remote West Alabama access, very limited local competition, and Tuscaloosa–Birmingham regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Livingston before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  conecuh: {
+    marketNotes:
+      'Conecuh County is a rural county in South Alabama with residential demand centered on Evergreen.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Conecuh County pricing reflects rural South Alabama access and Mobile–Dothan regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Evergreen before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  coosa: {
+    marketNotes:
+      'Coosa County is a rural county in Central Alabama with residential demand centered on Rockford.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Coosa County pricing reflects rural central Alabama access and Birmingham–Montgomery regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Rockford before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  bullock: {
+    marketNotes:
+      'Bullock County is a rural county in East Alabama with residential demand centered on Union Springs.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Bullock County pricing reflects remote East Alabama access and Montgomery–Auburn regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Union Springs before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  wilcox: {
+    marketNotes:
+      'Wilcox County is a rural county in West Alabama with residential demand centered on Camden.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Wilcox County pricing reflects remote Black Belt access and Montgomery–Mobile regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Camden before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  lowndes: {
+    marketNotes:
+      'Lowndes County is a rural county in Central Alabama with residential demand centered on Hayneville.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Lowndes County pricing reflects remote Black Belt access and Montgomery-metro regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Hayneville before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  perry: {
+    marketNotes:
+      'Perry County is a rural county in Central Alabama with residential demand centered on Marion.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Perry County pricing reflects remote Black Belt access and Tuscaloosa–Montgomery regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Marion before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  greene: {
+    marketNotes:
+      'Greene County is a rural county in West Alabama with residential demand centered on Eutaw.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Greene County pricing reflects remote West Alabama access and Tuscaloosa–Birmingham regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Eutaw before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
 };
 
 export function getAlabamaCountyResearch(

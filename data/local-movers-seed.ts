@@ -14043,6 +14043,80 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'griner-moving-services-mobile',
     ],
   },
+  'livingston-metro-al': {
+    id: 'livingston-metro-al',
+    label: 'Livingston Metro',
+    moverIds: [
+      'two-men-and-a-truck-tuscaloosa',
+      'motivated-movers-tuscaloosa',
+      'new-latitude-movers-birmingham',
+    ],
+  },
+  'evergreen-metro-al': {
+    id: 'evergreen-metro-al',
+    label: 'Evergreen Metro',
+    moverIds: [
+      'true-america-moving-dothan',
+      'coleman-worldwide-moving-mobile',
+      'motivated-movers-baldwin',
+      'the-moving-truck-dothan',
+    ],
+  },
+  'rockford-metro-al': {
+    id: 'rockford-metro-al',
+    label: 'Rockford Metro',
+    moverIds: [
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+      'two-men-and-a-truck-shelby',
+      'motivated-movers-birmingham',
+    ],
+  },
+  'union-springs-metro-al': {
+    id: 'union-springs-metro-al',
+    label: 'Union Springs Metro',
+    moverIds: [
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+      'motivated-movers-montgomery',
+    ],
+  },
+  'camden-metro-al': {
+    id: 'camden-metro-al',
+    label: 'Camden Metro',
+    moverIds: [
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+      'coleman-worldwide-moving-mobile',
+    ],
+  },
+  'hayneville-metro-al': {
+    id: 'hayneville-metro-al',
+    label: 'Hayneville Metro',
+    moverIds: [
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+      'motivated-movers-montgomery',
+    ],
+  },
+  'perry-metro-al': {
+    id: 'perry-metro-al',
+    label: 'Perry County Metro',
+    moverIds: [
+      'two-men-and-a-truck-tuscaloosa',
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+    ],
+  },
+  'eutaw-metro-al': {
+    id: 'eutaw-metro-al',
+    label: 'Eutaw Metro',
+    moverIds: [
+      'two-men-and-a-truck-tuscaloosa',
+      'motivated-movers-tuscaloosa',
+      'new-latitude-movers-birmingham',
+    ],
+  },
 };
 
 /** Non-curated state overrides — FL/NJ/NY/CA use dedicated assignment files */

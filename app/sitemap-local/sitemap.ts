@@ -172,6 +172,14 @@ const AL_HIGH_TRAFFIC_COUNTIES = new Set([
   'lamar',
   'crenshaw',
   'choctaw',
+  'sumter',
+  'conecuh',
+  'coosa',
+  'bullock',
+  'wilcox',
+  'lowndes',
+  'perry',
+  'greene',
 ]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */
