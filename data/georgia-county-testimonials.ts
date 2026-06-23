@@ -486,11 +486,11 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
     },
     {
       quote:
-        'College Hunks made our Evans apartment move stress-free with upfront pricing and efficient crews. They knew the Augusta area routes and finished faster than estimated.',
-      name: 'Tanya B.',
-      location: 'Evans, GA',
+        'We moved a historic Summerville home with narrow streets and antique furniture. Two Men and a Truck Augusta confirmed truck size, protected hardwood floors, and communicated clearly on pricing from start to finish.',
+      name: 'Eleanor W.',
+      location: 'Augusta, GA',
       rating: 5,
-      moveType: 'Apartment',
+      moveType: 'Historic district',
     },
     {
       quote:

@@ -324,19 +324,19 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   richmond: {
     marketNotes:
-      'Richmond County centers on Augusta with military demand from Fort Eisenhower, historic residential moves, and CSRA spillover into Evans and Grovetown.',
+      'Richmond County centers on Augusta with significant military (Fort Eisenhower) presence and historic residential activity across the CSRA.',
     costs: {
       studioRange: '$550–$1,050',
       familyRange: '$1,900–$4,100',
       avgHourly: '$105–$155/hr for a 2-person crew',
-      note: 'Richmond County pricing reflects military PCS timelines, I-20 corridor traffic, and mixed suburban and historic Augusta neighborhoods.',
+      note: 'Augusta metro pricing reflects military PCS seasonality, historic-district access, and CSRA suburban demand.',
     },
     tips: [
-      'Military moves require specific experience — confirm PCS paperwork familiarity and delivery windows.',
-      'Verify coverage for Augusta, Evans, Grovetown, and surrounding Richmond County addresses.',
-      'Confirm insurance for high-value homes and specialty items before booking.',
-      'Book early for peak seasons and month-end lease turnover near Fort Eisenhower.',
-      'Obtain multiple written estimates and ask about travel fees for outer Richmond addresses.',
+      'Military moves require specific experience and documentation — confirm PCS and government billing familiarity.',
+      'Verify explicit coverage for Augusta, Evans, Grovetown, and surrounding CSRA areas before booking.',
+      'Confirm insurance and valuation for high-value homes in historic districts.',
+      'Book early for peak summer PCS and Masters Tournament season demand.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes for Fort Eisenhower-area relocations.',
     ],
   },
   muscogee: {
