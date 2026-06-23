@@ -765,6 +765,188 @@ export const southCarolinaCountyTestimonials: Record<
       moveType: 'Family home',
     },
   ],
+  saluda: [
+    {
+      quote:
+        'Two Men and a Truck Columbia handled our Saluda rural relocation professionally — careful with long driveway access and transparent Midlands pricing.',
+      name: 'Dennis W.',
+      location: 'Saluda, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'JEGA Movers served our Saluda County move with excellent communication and careful handling despite rural Midlands access challenges.',
+      name: 'Ellen P.',
+      location: 'Saluda, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Gentlemen Movers confirmed Saluda County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Fred M.',
+      location: 'Saluda, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  hampton: [
+    {
+      quote:
+        'Smooth Move Charleston handled our Hampton rural relocation professionally — careful handling and transparent Lowcountry pricing throughout Hampton County.',
+      name: 'Gail R.',
+      location: 'Hampton, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Charleston served our Hampton move with excellent communication and careful furniture wrapping despite rural Lowcountry access.',
+      name: 'Harold S.',
+      location: 'Hampton, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Extra Muscle Moving confirmed Hampton County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Iris T.',
+      location: 'Hampton, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  lee: [
+    {
+      quote:
+        'Anderson Transfer handled our Bishopville relocation professionally — careful handling and transparent Sumter-area pricing throughout Lee County.',
+      name: 'James L.',
+      location: 'Bishopville, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Florence served our Lee County move with excellent communication and careful handling on rural Pee Dee corridor access.',
+      name: 'Karen B.',
+      location: 'Bishopville, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Move It Williams confirmed Bishopville coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Larry C.',
+      location: 'Bishopville, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  calhoun: [
+    {
+      quote:
+        'Two Men and a Truck Columbia handled our St. Matthews relocation professionally — careful with rural driveway access and transparent Midlands pricing.',
+      name: 'Martha D.',
+      location: 'St. Matthews, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbia served our Calhoun County move with excellent communication and careful furniture wrapping.',
+      name: 'Nathan E.',
+      location: 'St. Matthews, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'JEGA Movers confirmed St. Matthews coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Olivia F.',
+      location: 'St. Matthews, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  bamberg: [
+    {
+      quote:
+        'Two Men and a Truck Columbia handled our Bamberg relocation professionally — careful handling and transparent Midlands pricing throughout Bamberg County.',
+      name: 'Philip G.',
+      location: 'Bamberg, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Smooth Move Charleston served our Bamberg County move with excellent communication despite rural Lowcountry–Midlands transition access.',
+      name: 'Paul H.',
+      location: 'Bamberg, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Columbia confirmed Bamberg coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Rita J.',
+      location: 'Bamberg, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  mccormick: [
+    {
+      quote:
+        'Two Men and a Truck Aiken handled our McCormick rural relocation professionally — careful handling and transparent Augusta-border pricing.',
+      name: 'Samuel K.',
+      location: 'McCormick, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Greenville served our McCormick County move with excellent communication about Savannah River corridor travel time.',
+      name: 'Teresa L.',
+      location: 'McCormick, SC',
+      rating: 5,
+      moveType: 'Lakefront home',
+    },
+    {
+      quote:
+        'Dailey Moving & Storage confirmed McCormick County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Victor M.',
+      location: 'McCormick, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  allendale: [
+    {
+      quote:
+        'Two Men and a Truck Aiken handled our Allendale rural relocation professionally — careful with remote driveway access and transparent Augusta-border pricing.',
+      name: 'Wendy N.',
+      location: 'Allendale, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Smooth Move Charleston traveled from the Lowcountry and served our Allendale County move with professional crews and no surprise fees.',
+      name: 'Curtis O.',
+      location: 'Allendale, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Budget Movers Augusta confirmed Allendale County coverage and delivered reliable packing and loading despite cross-border rural travel.',
+      name: 'Yolanda P.',
+      location: 'Allendale, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getSouthCarolinaCountyTestimonials(

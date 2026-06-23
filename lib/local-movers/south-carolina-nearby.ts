@@ -45,6 +45,13 @@ const SC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   abbeville: ['greenwood', 'laurens', 'anderson', 'mccormick', 'greenville', 'pickens'],
   barnwell: ['aiken', 'bamberg', 'orangeburg', 'hampton', 'allendale', 'colleton'],
   fairfield: ['richland', 'lexington', 'newberry', 'union', 'chester', 'kershaw'],
+  saluda: ['edgefield', 'newberry', 'lexington', 'greenwood', 'fairfield', 'aiken'],
+  hampton: ['barnwell', 'allendale', 'jasper', 'beaufort', 'colleton', 'orangeburg'],
+  lee: ['sumter', 'florence', 'darlington', 'clarendon', 'kershaw', 'richland'],
+  calhoun: ['orangeburg', 'lexington', 'richland', 'clarendon', 'sumter', 'dorchester'],
+  bamberg: ['barnwell', 'orangeburg', 'hampton', 'allendale', 'dorchester', 'colleton'],
+  mccormick: ['greenwood', 'abbeville', 'edgefield', 'aiken', 'saluda', 'barnwell'],
+  allendale: ['hampton', 'barnwell', 'colleton', 'jasper', 'orangeburg', 'aiken'],
 };
 
 export function getSouthCarolinaNearbyCounties(

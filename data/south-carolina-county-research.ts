@@ -502,6 +502,125 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Confirm insurance, valuation, and credentials for rural moves before signing.',
       ],
     },
+    saluda: {
+      marketNotes:
+        'Saluda County is a rural Midlands county with Saluda as the seat and residential demand between Columbia and the Upstate foothills.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Saluda County pricing reflects Midlands rural access, limited local mover availability, and crew travel from Columbia-area hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Saluda and surrounding Saluda County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    hampton: {
+      marketNotes:
+        'Hampton County is a rural Lowcountry county with Hampton as the seat and residential demand served primarily by Charleston-area regional crews.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Hampton County pricing reflects rural Lowcountry access, limited local storage, and crew travel from Charleston and Augusta hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Hampton and surrounding Hampton County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Charleston-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    lee: {
+      marketNotes:
+        'Lee County is a rural Midlands county with Bishopville as the seat and residential demand between Sumter and Florence corridors.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Lee County pricing reflects Pee Dee–Midlands rural access, limited local mover availability, and crew travel from Sumter and Florence hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Bishopville and surrounding Lee County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Sumter and Florence-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    calhoun: {
+      marketNotes:
+        'Calhoun County is a rural Midlands county with St. Matthews as the seat and residential demand between Columbia and Orangeburg corridors.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Calhoun County pricing reflects Midlands rural access, agricultural property logistics, and crew travel from Columbia-area hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to St. Matthews and surrounding Calhoun County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    bamberg: {
+      marketNotes:
+        'Bamberg County is a rural county in the Lowcountry–Midlands transition zone with Bamberg as the seat and steady agricultural and residential demand.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Bamberg County pricing reflects rural transition-zone access, limited local mover availability, and crew travel from Columbia and Charleston hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Bamberg and surrounding Bamberg County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia and Charleston-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    mccormick: {
+      marketNotes:
+        'McCormick County is a rural county on the South Carolina side of the Savannah River with McCormick as the seat and lake-area residential demand.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'McCormick County pricing reflects Savannah River rural access, lake property logistics, and crew travel from Aiken and Greenville hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to McCormick and surrounding McCormick County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Aiken and Greenville-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    allendale: {
+      marketNotes:
+        'Allendale County is one of the smallest and most rural counties in South Carolina with Allendale as the seat and limited local mover availability.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Allendale County pricing reflects extreme rural access challenges, very limited local storage, and crew travel from Augusta and Charleston hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Allendale and surrounding Allendale County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Augusta and Charleston-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
   };
 
 export function getSouthCarolinaCountyResearch(

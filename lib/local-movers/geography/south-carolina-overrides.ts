@@ -33,6 +33,13 @@ export const southCarolinaCountyOverrides: Partial<
   abbeville: { seat: 'Abbeville', metro: 'greenville-metro-sc' },
   barnwell: { seat: 'Barnwell', metro: 'augusta-aiken-metro-sc' },
   fairfield: { seat: 'Winnsboro', metro: 'sumter-metro-sc' },
+  saluda: { seat: 'Saluda', metro: 'sumter-metro-sc' },
+  hampton: { seat: 'Hampton', metro: 'charleston-metro-sc' },
+  lee: { seat: 'Bishopville', metro: 'sumter-metro-sc' },
+  calhoun: { seat: 'St. Matthews', metro: 'sumter-metro-sc' },
+  bamberg: { seat: 'Bamberg', metro: 'sumter-metro-sc' },
+  mccormick: { seat: 'McCormick', metro: 'augusta-aiken-metro-sc' },
+  allendale: { seat: 'Allendale', metro: 'augusta-aiken-metro-sc' },
 };
 
 export function applySouthCarolinaCountyOverrides(
