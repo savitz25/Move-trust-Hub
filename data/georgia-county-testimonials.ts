@@ -3967,6 +3967,118 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  taliaferro: [
+    {
+      quote:
+        'University Moving and Storage traveled from Athens to handle our Crawfordville move with specialty care for antiques and excellent rural Northeast Georgia corridor knowledge.',
+      name: 'Charles M.',
+      location: 'Crawfordville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Taliaferro County move efficiently with clear communication and careful handling of remote rural property access.',
+      name: 'Diana S.',
+      location: 'Crawfordville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Good Guys Moving Macon confirmed Crawfordville coverage and delivered careful handling for our rural Taliaferro County relocation.',
+      name: 'Robert E.',
+      location: 'Crawfordville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  taylor: [
+    {
+      quote:
+        'Good Guys Moving confirmed Butler coverage and handled our rural Taylor County move with careful driveway access planning.',
+      name: 'Patricia H.',
+      location: 'Butler, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Taylor County relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'James R.',
+      location: 'Butler, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Simple Moving Solutions Macon traveled to Butler and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Susan T.',
+      location: 'Butler, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  terrell: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Dawson move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Dawson, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Terrell County coverage and handled our rural Dawson relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Dawson, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Dawson move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Dawson, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  tift: [
+    {
+      quote:
+        'Perez Moving Co handled our Tifton townhome relocation professionally — excellent crew communication, careful furniture wrapping, and transparent pricing throughout Tift County.',
+      name: 'Marcus T.',
+      location: 'Tifton, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Mudanza Moving provided reliable packing and labor for our Tifton apartment move. They finished on schedule despite heavy I-75 corridor traffic.',
+      name: 'Elena R.',
+      location: 'Tifton, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'HHG Movers traveled from Albany and served our rural Tift County home move with upfront travel-fee disclosure and careful handling.',
+      name: 'David K.',
+      location: 'Tifton, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany covered our Tifton relocation when Valdosta crews were booked — upfront about South Georgia travel time and professional service.',
+      name: 'Frank L.',
+      location: 'Tifton, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

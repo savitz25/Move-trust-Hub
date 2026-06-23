@@ -156,6 +156,10 @@ export const georgiaCountyOverrides: Partial<
   quitman: { seat: 'Georgetown', metro: 'albany-metro-ga' },
   schley: { seat: 'Ellaville', metro: 'columbus-metro-ga' },
   stewart: { seat: 'Lumpkin', metro: 'columbus-metro-ga' },
+  taliaferro: { seat: 'Crawfordville', metro: 'athens-metro-ga' },
+  taylor: { seat: 'Butler', metro: 'macon-metro-ga' },
+  terrell: { seat: 'Dawson', metro: 'albany-metro-ga' },
+  tift: { seat: 'Tifton', metro: 'valdosta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

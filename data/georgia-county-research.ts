@@ -2600,6 +2600,74 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural West Georgia relocations.',
     ],
   },
+  taliaferro: {
+    marketNotes:
+      'Taliaferro County is one of the smallest and most rural counties in Georgia with Crawfordville as the seat.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Taliaferro County pricing reflects extremely remote rural access and travel from Athens and Central Georgia crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Crawfordville and outer Taliaferro addresses.',
+      'Verify explicit regional service to Crawfordville before booking.',
+      'Storage is very limited locally — coordinate with Athens or Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  taylor: {
+    marketNotes:
+      'Taylor County is rural Central Georgia with Butler as the seat.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Taylor County pricing reflects rural property access and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Butler and outer Taylor properties.',
+      'Verify explicit regional service to Butler before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  terrell: {
+    marketNotes:
+      'Terrell County is rural Southwest Georgia with Dawson as the seat.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Terrell County pricing reflects rural property access and travel from Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Dawson and outer Terrell properties.',
+      'Verify explicit regional service to Dawson before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  tift: {
+    marketNotes:
+      'Tift County centers on Tifton in South Georgia with steady residential turnover across the I-75 corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Tift County pricing reflects Tifton suburban demand, South Georgia crew travel, and I-75 corridor scheduling.',
+    },
+    tips: [
+      'Verify explicit coverage for Tifton and surrounding Tift County addresses before booking.',
+      'Local traffic on I-75 and Tifton thoroughfares impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Valdosta and Albany-area crews.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(
