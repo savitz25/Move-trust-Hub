@@ -426,7 +426,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   butts: {
     marketNotes:
-      'Butts County is a rural south-metro county with Jackson as the seat and limited on-the-ground mover presence.',
+      'Butts County is rural with Jackson as the seat and limited on-the-ground mover presence south of the Atlanta metro.',
     costs: {
       studioRange: '$600–$1,200+',
       familyRange: '$2,000–$4,800',
@@ -1323,6 +1323,176 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited locally — plan with Athens or Atlanta providers if needed.',
       'Obtain multiple written estimates and confirm travel fees.',
       'Confirm FMCSA credentials for rural and lake-area relocations.',
+    ],
+  },
+  upson: {
+    marketNotes:
+      'Upson County is rural Central Georgia with Thomaston as the seat between Macon and the west-metro fringe.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Upson County pricing reflects rural property access, limited storage, and travel from Macon and Middle Georgia bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Thomaston and outer Upson addresses.',
+      'Verify explicit regional service to Thomaston before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  sumter: {
+    marketNotes:
+      'Sumter County includes Americus in Southwest Georgia with rural residential demand and Georgia Southwestern State University influence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Sumter County pricing reflects Americus suburban demand, university turnover, and travel from Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm property access for Americus and outer Sumter addresses.',
+      'Verify explicit regional service to Americus before booking.',
+      'Storage is very limited locally — plan with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  stephens: {
+    marketNotes:
+      'Stephens County includes Toccoa in Northeast Georgia with rural residential demand near Lake Hartwell and the South Carolina border.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Stephens County pricing reflects rural driveway access, limited storage, and travel from Athens or Atlanta northeast-ring crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Toccoa and outer Stephens properties.',
+      'Verify explicit regional service to Toccoa before booking.',
+      'Storage is very limited locally — coordinate with Athens or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Northeast Georgia relocations.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is rural and mountainous in Northeast Georgia with Blairsville as the seat near Vogel State Park and the North Georgia mountains.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Union County pricing reflects mountain-road access, tourist-season demand, and travel from Gainesville or Atlanta north-metro bases.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm truck size and route feasibility before booking.',
+      'Verify explicit regional service to Blairsville and outer Union addresses.',
+      'Storage is very limited locally — plan with Gainesville or Atlanta providers if needed.',
+      'Obtain multiple written estimates and compare travel fees.',
+      'Confirm credentials and insurance for rural and mountain relocations.',
+    ],
+  },
+  toombs: {
+    marketNotes:
+      'Toombs County is rural Southeast Georgia with Lyons as the seat and Vidalia onion-country residential demand along US-1.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Toombs County pricing reflects rural coastal-plain access and travel from Savannah or Statesboro bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Lyons and outer Toombs properties.',
+      'Verify explicit regional service to Lyons and Vidalia before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  grady: {
+    marketNotes:
+      'Grady County is rural South Georgia with Cairo as the seat along the Florida border and agricultural corridor demand.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Grady County pricing reflects rural South Georgia access, limited mover competition, and travel from Valdosta or Thomasville bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Cairo and outer Grady properties.',
+      'Verify explicit regional service to Cairo before booking.',
+      'Storage is very limited locally — plan with Valdosta or Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is rural Northeast Georgia with Carnesville as the seat between Athens and the South Carolina border.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects rural driveway access, limited storage, and travel from Athens or Atlanta northeast-ring crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Carnesville and outer Franklin addresses.',
+      'Verify explicit regional service to Carnesville before booking.',
+      'Storage is very limited locally — coordinate with Athens or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Northeast Georgia relocations.',
+    ],
+  },
+  fannin: {
+    marketNotes:
+      'Fannin County is rural and mountainous in Northeast Georgia with Blue Ridge as the seat and strong tourist and lake-home demand.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Fannin County pricing reflects mountain-road access, seasonal cabin turnover, and travel from Chattanooga or Atlanta north-metro bases.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm truck size and route feasibility before booking.',
+      'Verify explicit regional service to Blue Ridge and outer Fannin addresses.',
+      'Storage is very limited locally — plan with Gainesville, Dalton, or Atlanta providers if needed.',
+      'Obtain multiple written estimates and compare travel fees from north Georgia bases.',
+      'Confirm credentials and insurance for rural and mountain relocations.',
+    ],
+  },
+  burke: {
+    marketNotes:
+      'Burke County is rural east Georgia with Waynesboro as the seat between Augusta and the coastal plain.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Burke County pricing reflects rural property access, limited storage, and travel from Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Waynesboro and outer Burke properties.',
+      'Verify explicit regional service to Waynesboro before booking.',
+      'Storage is very limited locally — coordinate with Augusta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural east Georgia relocations.',
+    ],
+  },
+  tattnall: {
+    marketNotes:
+      'Tattnall County is rural Southeast Georgia with Reidsville as the seat and agricultural corridor demand along US-280.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Tattnall County pricing reflects rural coastal-plain access and travel from Savannah or Statesboro bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Reidsville and outer Tattnall properties.',
+      'Verify explicit regional service to Reidsville before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
     ],
   },
 };

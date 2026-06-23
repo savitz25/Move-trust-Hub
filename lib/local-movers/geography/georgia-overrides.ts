@@ -81,6 +81,16 @@ export const georgiaCountyOverrides: Partial<
   decatur: { seat: 'Bainbridge', metro: 'albany-metro-ga' },
   jones: { seat: 'Gray', metro: 'macon-metro-ga' },
   hart: { seat: 'Hartwell', metro: 'athens-metro-ga' },
+  upson: { seat: 'Thomaston', metro: 'macon-metro-ga' },
+  sumter: { seat: 'Americus', metro: 'albany-metro-ga' },
+  stephens: { seat: 'Toccoa', metro: 'athens-metro-ga' },
+  union: { seat: 'Blairsville', metro: 'atlanta-metro-ga' },
+  toombs: { seat: 'Lyons', metro: 'savannah-metro-ga' },
+  grady: { seat: 'Cairo', metro: 'valdosta-metro-ga' },
+  franklin: { seat: 'Carnesville', metro: 'athens-metro-ga' },
+  fannin: { seat: 'Blue Ridge', metro: 'chattanooga-metro-ga' },
+  burke: { seat: 'Waynesboro', metro: 'augusta-metro-ga' },
+  tattnall: { seat: 'Reidsville', metro: 'savannah-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -88,6 +88,16 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   decatur: ['grady', 'seminole', 'miller', 'mitchell', 'thomas', 'early'],
   jones: ['bibb', 'monroe', 'putnam', 'jasper', 'twiggs', 'crawford'],
   hart: ['franklin', 'madison', 'elbert', 'banks', 'oconee', 'stephens'],
+  upson: ['monroe', 'lamar', 'pike', 'meriwether', 'talbot', 'crawford'],
+  sumter: ['lee', 'dougherty', 'terrell', 'webster', 'macon', 'crisp'],
+  stephens: ['franklin', 'habersham', 'banks', 'hart', 'oconee', 'rabun'],
+  union: ['fannin', 'towns', 'white', 'lumpkin', 'gilmer', 'cherokee'],
+  toombs: ['appling', 'coffee', 'jeff-davis', 'tattnall', 'emanuel', 'montgomery'],
+  grady: ['thomas', 'decatur', 'mitchell', 'brooks', 'colquitt', 'seminole'],
+  franklin: ['hart', 'madison', 'banks', 'stephens', 'oconee', 'elbert'],
+  fannin: ['gilmer', 'union', 'murray', 'pickens', 'dawson', 'lumpkin'],
+  burke: ['richmond', 'jefferson', 'emanuel', 'jenkins', 'screven', 'mcduffie'],
+  tattnall: ['toombs', 'evans', 'candler', 'bulloch', 'montgomery', 'appling'],
 };
 
 export function getGeorgiaNearbyCounties(

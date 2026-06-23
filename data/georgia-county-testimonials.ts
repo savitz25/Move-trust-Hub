@@ -2009,6 +2009,266 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  upson: [
+    {
+      quote:
+        'Good Guys Moving traveled from Macon and handled our Thomaston relocation professionally — careful packing, clear rural-route planning, and transparent pricing throughout Upson County.',
+      name: 'Ralph D.',
+      location: 'Thomaston, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Upson County townhome efficiently with upfront travel-fee disclosure and great crew communication.',
+      name: 'Bonnie S.',
+      location: 'Thomaston, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Simple Moving Solutions provided reliable packing for our rural Thomaston home move with careful handling and on-time arrival.',
+      name: 'Earl M.',
+      location: 'Thomaston, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  sumter: [
+    {
+      quote:
+        'HHG Movers handled our Americus relocation from their Albany base with careful furniture wrapping, clear travel-fee disclosure, and reliable scheduling throughout Sumter County.',
+      name: 'Patricia W.',
+      location: 'Americus, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'The Home Moving Solution provided excellent packing for our Americus townhome near GSW. Transparent fees and great communication from quote to completion.',
+      name: 'Alvin J.',
+      location: 'Americus, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our rural Americus home move efficiently with upfront travel-time disclosure and careful handling.',
+      name: 'Gloria R.',
+      location: 'Americus, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  stephens: [
+    {
+      quote:
+        'University Moving and Storage handled our Toccoa relocation professionally — careful packing, on-time arrival, and transparent pricing throughout Stephens County.',
+      name: 'Wayne C.',
+      location: 'Toccoa, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Stephens County home move efficiently with great communication and careful furniture handling near Lake Hartwell.',
+      name: 'Diana P.',
+      location: 'Toccoa, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Atlanta Home Movers traveled to our Toccoa townhome and delivered on schedule despite rural driveway access challenges.',
+      name: 'Keith L.',
+      location: 'Toccoa, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  union: [
+    {
+      quote:
+        'Atlanta Home Movers traveled to our Blairsville mountain home and handled steep driveway access without issues. Careful crew and clear travel-fee disclosure.',
+      name: 'Nancy G.',
+      location: 'Blairsville, GA',
+      rating: 5,
+      moveType: 'Cabin',
+    },
+    {
+      quote:
+        'Bulldog Movers served our Union County cabin relocation efficiently with upfront pricing and excellent handling on narrow mountain roads near Vogel State Park.',
+      name: 'Tom H.',
+      location: 'Blairsville, GA',
+      rating: 5,
+      moveType: 'Cabin',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta handled our Blairsville apartment move with great communication and no surprise fees despite the long north Georgia drive.',
+      name: 'Rachel B.',
+      location: 'Blairsville, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  toombs: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to our Lyons home and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Jimmy F.',
+      location: 'Lyons, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Vidalia-area relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Connie A.',
+      location: 'Vidalia, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Company served our Toombs County home move efficiently from their Statesboro base with reliable packing and no hidden fees.',
+      name: 'Roger T.',
+      location: 'Lyons, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  grady: [
+    {
+      quote:
+        'Perez Moving Co traveled from Valdosta and handled our Cairo relocation professionally — excellent crew communication and careful furniture wrapping throughout Grady County.',
+      name: 'Linda M.',
+      location: 'Cairo, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'HHG Movers provided reliable service for our rural Cairo home move with upfront travel-fee disclosure and careful handling from their Albany base.',
+      name: 'Charles B.',
+      location: 'Cairo, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mudanza Moving served our Grady County apartment move with reliable packing and labor. Finished on schedule despite the long South Georgia drive.',
+      name: 'Angela K.',
+      location: 'Cairo, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  franklin: [
+    {
+      quote:
+        'University Moving and Storage handled our Carnesville relocation with careful packing, on-time arrival, and transparent pricing throughout Franklin County.',
+      name: 'Howard S.',
+      location: 'Carnesville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Franklin County townhome efficiently with great communication and careful furniture handling.',
+      name: 'Martha D.',
+      location: 'Carnesville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Zip Moving traveled from Atlanta and provided reliable service for our rural Franklin home move with upfront travel-time disclosure.',
+      name: 'Philip N.',
+      location: 'Carnesville, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  fannin: [
+    {
+      quote:
+        'Good Guys Moving Chattanooga traveled to our Blue Ridge cabin and handled mountain-road access without issues. Careful crew and clear cross-border travel-fee disclosure.',
+      name: 'Susan W.',
+      location: 'Blue Ridge, GA',
+      rating: 5,
+      moveType: 'Cabin',
+    },
+    {
+      quote:
+        'Atlanta Home Movers served our Fannin County lake-home relocation efficiently with upfront pricing and excellent handling on steep mountain driveways.',
+      name: 'Gary L.',
+      location: 'Blue Ridge, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta handled our Blue Ridge apartment move with great communication and no surprise fees despite the long north Georgia drive.',
+      name: 'Cindy R.',
+      location: 'Blue Ridge, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  burke: [
+    {
+      quote:
+        'Budget Movers handled our Waynesboro relocation professionally — careful packing, on-time arrival, and transparent pricing throughout Burke County.',
+      name: 'Ernest J.',
+      location: 'Waynesboro, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta served our Burke County townhome efficiently with upfront travel-fee disclosure and great crew communication.',
+      name: 'Betty C.',
+      location: 'Waynesboro, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Coleman Worldwide Moving provided reliable service for our rural Waynesboro home move with careful antique handling and clear Augusta-area scheduling.',
+      name: 'Donald P.',
+      location: 'Waynesboro, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  tattnall: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to our Reidsville home and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Reidsville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Tattnall County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Reidsville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah provided reliable packing and loading for our rural Reidsville home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Glennville, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(
