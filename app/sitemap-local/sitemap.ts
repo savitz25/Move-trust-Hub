@@ -211,6 +211,23 @@ const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'pemiscot',
   'osage',
   'madison',
+  'douglas',
+  'mississippi',
+  'barton',
+  'linn',
+  'montgomery',
+  'bollinger',
+  'ripley',
+  'wayne',
+  'ralls',
+  'howard',
+  'st-clair',
+  'lewis',
+  'grundy',
+  'dekalb',
+  'ozark',
+  'iron',
+  'hickory',
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */

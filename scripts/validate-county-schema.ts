@@ -139,6 +139,23 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'pemiscot', expectedCity: 'Caruthersville' },
   { stateSlug: 'missouri', countySlug: 'osage', expectedCity: 'Linn' },
   { stateSlug: 'missouri', countySlug: 'madison', expectedCity: 'Fredericktown' },
+  { stateSlug: 'missouri', countySlug: 'douglas', expectedCity: 'Ava' },
+  { stateSlug: 'missouri', countySlug: 'mississippi', expectedCity: 'Charleston' },
+  { stateSlug: 'missouri', countySlug: 'barton', expectedCity: 'Lamar' },
+  { stateSlug: 'missouri', countySlug: 'linn', expectedCity: 'Linneus' },
+  { stateSlug: 'missouri', countySlug: 'montgomery', expectedCity: 'Montgomery City' },
+  { stateSlug: 'missouri', countySlug: 'bollinger', expectedCity: 'Marble Hill' },
+  { stateSlug: 'missouri', countySlug: 'ripley', expectedCity: 'Doniphan' },
+  { stateSlug: 'missouri', countySlug: 'wayne', expectedCity: 'Greenville' },
+  { stateSlug: 'missouri', countySlug: 'ralls', expectedCity: 'New London' },
+  { stateSlug: 'missouri', countySlug: 'howard', expectedCity: 'Fayette' },
+  { stateSlug: 'missouri', countySlug: 'st-clair', expectedCity: 'Osceola' },
+  { stateSlug: 'missouri', countySlug: 'lewis', expectedCity: 'Monticello' },
+  { stateSlug: 'missouri', countySlug: 'grundy', expectedCity: 'Trenton' },
+  { stateSlug: 'missouri', countySlug: 'dekalb', expectedCity: 'Maysville' },
+  { stateSlug: 'missouri', countySlug: 'ozark', expectedCity: 'Gainesville' },
+  { stateSlug: 'missouri', countySlug: 'iron', expectedCity: 'Ironton' },
+  { stateSlug: 'missouri', countySlug: 'hickory', expectedCity: 'Hermitage' },
 ];
 
 let totalIssues = 0;

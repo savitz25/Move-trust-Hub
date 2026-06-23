@@ -78,6 +78,23 @@ export const missouriCountyOverrides: Partial<
   pemiscot: { seat: 'Caruthersville', metro: 'caruthersville-metro-mo' },
   osage: { seat: 'Linn', metro: 'linn-metro-mo' },
   madison: { seat: 'Fredericktown', metro: 'fredericktown-metro-mo' },
+  douglas: { seat: 'Ava', metro: 'ava-metro-mo' },
+  mississippi: { seat: 'Charleston', metro: 'charleston-metro-mo' },
+  barton: { seat: 'Lamar', metro: 'lamar-metro-mo' },
+  linn: { seat: 'Linneus', metro: 'linneus-metro-mo' },
+  montgomery: { seat: 'Montgomery City', metro: 'montgomery-city-metro-mo' },
+  bollinger: { seat: 'Marble Hill', metro: 'marble-hill-metro-mo' },
+  ripley: { seat: 'Doniphan', metro: 'doniphan-metro-mo' },
+  wayne: { seat: 'Greenville', metro: 'greenville-metro-mo' },
+  ralls: { seat: 'New London', metro: 'new-london-metro-mo' },
+  howard: { seat: 'Fayette', metro: 'fayette-metro-mo' },
+  'st-clair': { seat: 'Osceola', metro: 'osceola-metro-mo' },
+  lewis: { seat: 'Monticello', metro: 'monticello-metro-mo' },
+  grundy: { seat: 'Trenton', metro: 'trenton-metro-mo' },
+  dekalb: { seat: 'Maysville', metro: 'maysville-metro-mo' },
+  ozark: { seat: 'Gainesville', metro: 'gainesville-metro-mo' },
+  iron: { seat: 'Ironton', metro: 'ironton-metro-mo' },
+  hickory: { seat: 'Hermitage', metro: 'hermitage-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {
