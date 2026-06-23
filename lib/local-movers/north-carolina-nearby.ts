@@ -33,6 +33,16 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   orange: ['durham', 'wake', 'alamance', 'chatham', 'caswell', 'person'],
   randolph: ['guilford', 'alamance', 'davidson', 'montgomery', 'moore', 'chatham'],
   henderson: ['buncombe', 'transylvania', 'polk', 'rutherford', 'haywood', 'madison'],
+  wayne: ['johnston', 'wilson', 'greene', 'lenoir', 'duplin', 'sampson'],
+  robeson: ['cumberland', 'scotland', 'hoke', 'columbus', 'bladen', 'richmond'],
+  moore: ['cumberland', 'hoke', 'harnett', 'lee', 'richmond', 'montgomery'],
+  craven: ['carteret', 'jones', 'pamlico', 'lenoir', 'pitt', 'onslow'],
+  cleveland: ['gaston', 'rutherford', 'mcdowell', 'burke', 'lincoln', 'mecklenburg'],
+  nash: ['wilson', 'edgecombe', 'halifax', 'franklin', 'johnston', 'wake'],
+  lincoln: ['catawba', 'iredell', 'gaston', 'mecklenburg', 'burke', 'alexander'],
+  rockingham: ['guilford', 'caswell', 'person', 'stokes', 'forsyth', 'alamance'],
+  burke: ['catawba', 'mcdowell', 'rutherford', 'caldwell', 'alexander', 'lincoln'],
+  chatham: ['wake', 'orange', 'durham', 'alamance', 'lee', 'moore'],
 };
 
 export function getNorthCarolinaNearbyCounties(

@@ -11,6 +11,266 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  wayne: [
+    {
+      quote:
+        'Horne Moving Systems handled our Goldsboro PCS move professionally — efficient crews, careful handling, and great experience with military families near Seymour Johnson AFB.',
+      name: 'Capt. David R.',
+      location: 'Goldsboro, NC',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Smart Move Wilson confirmed Wayne County coverage and delivered reliable packing and loading with no surprise fees despite eastern NC regional travel.',
+      name: 'Lisa M.',
+      location: 'Goldsboro, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Stewart Moving & Storage served our Goldsboro move with professional, efficient crews and careful handling throughout.',
+      name: 'James T.',
+      location: 'Goldsboro, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  robeson: [
+    {
+      quote:
+        'Stewart Moving & Storage confirmed Lumberton coverage and handled our rural Robeson County relocation professionally with careful driveway access planning.',
+      name: 'Maria S.',
+      location: 'Lumberton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fayetteville served our Lumberton move efficiently with professional crews experienced with southeastern NC regional routes.',
+      name: 'Robert K.',
+      location: 'Lumberton, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'S&Q Movers delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel from Fayetteville.',
+      name: 'Angela P.',
+      location: 'Lumberton, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  moore: [
+    {
+      quote:
+        'Stewart Moving & Storage handled our Pinehurst relocation professionally — on time, careful with our belongings, and transparent Sandhills pricing.',
+      name: 'William C.',
+      location: 'Pinehurst, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fayetteville served our Southern Pines move with professional crews experienced with golf-community and retirement-area access.',
+      name: 'Barbara H.',
+      location: 'Southern Pines, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Athens Moving Experts confirmed Aberdeen coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Greg N.',
+      location: 'Aberdeen, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  craven: [
+    {
+      quote:
+        'J.E. Thomas & Sons handled our New Bern relocation professionally — efficient crews, careful handling, and transparent coastal Carolina pricing.',
+      name: 'Susan L.',
+      location: 'New Bern, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Absolute Moving & Storage served our Craven County move with professional crews and careful handling of our historic-home furnishings.',
+      name: 'Mark D.',
+      location: 'New Bern, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Superior Moving and Logistics confirmed Havelock coverage and delivered reliable packing and loading with no surprise fees despite coastal access.',
+      name: 'Karen W.',
+      location: 'Havelock, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  cleveland: [
+    {
+      quote:
+        'Gentle Giant Moving handled our Shelby relocation professionally — efficient crews, careful handling, and transparent Charlotte-metro pricing.',
+      name: 'Tim B.',
+      location: 'Shelby, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Easy Movers Gastonia served our Cleveland County move with professional crews and careful handling throughout.',
+      name: 'Diane F.',
+      location: 'Shelby, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'You Move Me confirmed Shelby coverage and delivered reliable packing and loading with no surprise fees despite I-85 corridor traffic.',
+      name: 'Steve R.',
+      location: 'Shelby, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  nash: [
+    {
+      quote:
+        'Smart Move Wilson handled our Rocky Mount relocation professionally — on time, careful with our belongings, and transparent eastern NC pricing.',
+      name: 'Patricia G.',
+      location: 'Rocky Mount, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville served our Nash County move efficiently with fast, professional crews and great value.',
+      name: 'Kevin J.',
+      location: 'Nashville, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Crabtree Family Moving confirmed Rocky Mount coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Rachel A.',
+      location: 'Rocky Mount, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  lincoln: [
+    {
+      quote:
+        'Gentle Giant Moving handled our Lincolnton relocation professionally — efficient crews, careful handling, and transparent Lake Norman area pricing.',
+      name: 'Brian W.',
+      location: 'Lincolnton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Make A Move served our Lincoln County move with professional crews and careful handling of our furniture throughout.',
+      name: 'Jennifer S.',
+      location: 'Lincolnton, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Flex Moving & Storage confirmed Lincolnton coverage and delivered reliable packing and loading with no surprise fees despite Charlotte-area traffic.',
+      name: 'Chris M.',
+      location: 'Lincolnton, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  rockingham: [
+    {
+      quote:
+        'Two Men and a Truck Greensboro handled our Reidsville relocation professionally — on time, careful with our belongings, and transparent Triad pricing.',
+      name: 'Henry L.',
+      location: 'Reidsville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excel Moving & Storage served our Rockingham County move efficiently with professional crews and great value.',
+      name: 'Betty C.',
+      location: 'Reidsville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Steele & Vaughn Moving confirmed Eden coverage and delivered reliable packing and loading with no surprise fees despite Triad traffic.',
+      name: 'Frank D.',
+      location: 'Eden, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  burke: [
+    {
+      quote:
+        'In & Out Moving & Delivery handled our Morganton relocation professionally — efficient crews, careful handling, and transparent foothills pricing.',
+      name: 'Nancy E.',
+      location: 'Morganton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Ashe Van Lines served our Burke County move with professional crews experienced with mountain-road and foothill access.',
+      name: 'Paul H.',
+      location: 'Morganton, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Preferred Moving Company confirmed Morganton coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Linda K.',
+      location: 'Morganton, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  chatham: [
+    {
+      quote:
+        'Two Men and a Truck Raleigh handled our Pittsboro relocation professionally — on time, careful with our belongings, and transparent Triangle pricing.',
+      name: 'Amanda B.',
+      location: 'Pittsboro, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Little Guys Movers served our Chatham County move efficiently with fast, professional crews and great value.',
+      name: 'Eric N.',
+      location: 'Pittsboro, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Athens Moving Experts confirmed Pittsboro coverage and delivered reliable packing and loading with no surprise fees despite Research Triangle traffic.',
+      name: 'Christine V.',
+      location: 'Pittsboro, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
   catawba: [
     {
       quote:

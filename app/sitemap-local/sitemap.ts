@@ -84,6 +84,8 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
   'buncombe',
   'cabarrus',
   'catawba',
+  'chatham',
+  'craven',
   'cumberland',
   'davidson',
   'durham',
@@ -95,6 +97,7 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
   'iredell',
   'johnston',
   'mecklenburg',
+  'moore',
   'new-hanover',
   'onslow',
   'orange',
@@ -103,6 +106,7 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
   'rowan',
   'union',
   'wake',
+  'wayne',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

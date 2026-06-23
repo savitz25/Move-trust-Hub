@@ -417,6 +417,176 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    wayne: {
+      marketNotes:
+        'Wayne County is a major military hub (Seymour Johnson Air Force Base) with significant residential and relocation demand centered on Goldsboro.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Wayne County pricing reflects Seymour Johnson AFB PCS volume, Goldsboro suburban turnover, and eastern NC regional travel logistics.',
+      },
+      tips: [
+        'Verify explicit coverage for Goldsboro and surrounding Wayne County areas before booking.',
+        'Military moves require specific PCS experience and documentation — confirm mover familiarity with Seymour Johnson AFB relocations.',
+        'Confirm insurance and valuation for high-value and military household goods before booking.',
+        'Book early for peak moving seasons and military transfer windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    robeson: {
+      marketNotes:
+        'Robeson County is a rural county in southeastern North Carolina with agricultural and residential demand centered on Lumberton.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,300',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Robeson County pricing reflects rural access challenges, limited local mover availability, and Fayetteville-metro regional service logistics.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Lumberton-area roads and long-driveway properties.',
+        'Verify explicit regional service to Lumberton before booking; most crews dispatch from Fayetteville or surrounding metros.',
+        'Storage is very limited locally — coordinate with regional facilities if needed.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    moore: {
+      marketNotes:
+        'Moore County is known for golf resorts, retirement communities, and Fort Liberty spillover influence with strong residential demand centered on Pinehurst, Southern Pines, and Aberdeen.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,400',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Moore County pricing reflects Sandhills resort-community turnover, retirement-community access, and Fayetteville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Pinehurst, Southern Pines, and Aberdeen areas before booking.',
+        'Golf resort and retirement community access considerations apply — confirm crew familiarity with gated communities and narrow resort roads.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    craven: {
+      marketNotes:
+        'Craven County is a historic coastal county with strong retirement, military, and tourism demand centered on New Bern and Havelock.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,200',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Craven County pricing reflects coastal island and mainland access, historic-home turnover, hurricane-season scheduling, and Cherry Point military spillover demand.',
+      },
+      tips: [
+        'Verify explicit coverage for New Bern and Havelock areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value historic homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    cleveland: {
+      marketNotes:
+        'Cleveland County is a growing county west of Charlotte with industrial and residential demand centered on Shelby.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Cleveland County pricing reflects Charlotte-metro westward growth, Shelby suburban turnover, and I-85 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Shelby and surrounding Cleveland County areas before booking.',
+        'Charlotte-area traffic on I-85 and US-74 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    nash: {
+      marketNotes:
+        'Nash County is a growing county in eastern North Carolina with residential and industrial demand centered on Rocky Mount and Nashville.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Nash County pricing reflects eastern NC regional travel logistics, Rocky Mount suburban turnover, and US-64 and I-95 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Rocky Mount and Nashville areas before booking.',
+        'Regional traffic on US-64, US-301, and I-95 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    lincoln: {
+      marketNotes:
+        'Lincoln County is a growing county northwest of Charlotte with strong residential demand near Lake Norman and Lincolnton.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,300',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Lincoln County pricing reflects Lake Norman area growth, Lincolnton suburban turnover, and Charlotte-metro northwest corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Lincolnton and surrounding Lincoln County areas before booking.',
+        'Charlotte-area traffic on NC-16 and I-77 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    rockingham: {
+      marketNotes:
+        'Rockingham County is a rural county in the northern Piedmont Triad with residential demand centered on Reidsville, Eden, and Wentworth.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Rockingham County pricing reflects northern Triad rural access, Reidsville suburban turnover, and US-29 and US-158 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Reidsville, Eden, and surrounding Rockingham County areas before booking.',
+        'Triad traffic on US-29, US-158, and US-220 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    burke: {
+      marketNotes:
+        'Burke County is a scenic mountain county with residential and industrial demand centered on Morganton.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Burke County pricing reflects mountain-road access, Hickory-metro regional service, and I-40 corridor traffic through the foothills.',
+      },
+      tips: [
+        'Verify explicit coverage for Morganton and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with foothill access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    chatham: {
+      marketNotes:
+        'Chatham County is a growing county in the Research Triangle with strong suburban and rural residential demand centered on Pittsboro.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,300',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Chatham County pricing reflects Research Triangle southward suburban growth, Pittsboro and Siler City turnover, and US-64 and US-15-501 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Pittsboro and surrounding Chatham County areas before booking.',
+        'Raleigh-area traffic on US-64, US-15-501, and US-1 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

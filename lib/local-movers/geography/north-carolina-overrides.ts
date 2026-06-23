@@ -28,6 +28,16 @@ export const northCarolinaCountyOverrides: Partial<
   orange: { seat: 'Hillsborough', metro: 'durham-chapel-hill-metro-nc' },
   randolph: { seat: 'Asheboro', metro: 'greensboro-high-point-metro-nc' },
   henderson: { seat: 'Hendersonville', metro: 'asheville-metro-nc' },
+  wayne: { seat: 'Goldsboro', metro: 'goldsboro-metro-nc' },
+  robeson: { seat: 'Lumberton', metro: 'fayetteville-metro-nc' },
+  moore: { seat: 'Carthage', metro: 'pinehurst-metro-nc' },
+  craven: { seat: 'New Bern', metro: 'new-bern-metro-nc' },
+  cleveland: { seat: 'Shelby', metro: 'charlotte-metro-nc' },
+  nash: { seat: 'Nashville', metro: 'rocky-mount-metro-nc' },
+  lincoln: { seat: 'Lincolnton', metro: 'charlotte-metro-nc' },
+  rockingham: { seat: 'Wentworth', metro: 'greensboro-high-point-metro-nc' },
+  burke: { seat: 'Morganton', metro: 'hickory-lenoir-metro-nc' },
+  chatham: { seat: 'Pittsboro', metro: 'raleigh-triangle-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(
