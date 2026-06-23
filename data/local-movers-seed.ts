@@ -6984,7 +6984,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.3,
     reviewCount: 337,
     shortDescription:
-      'Central Georgia mover serving Macon, Cochran, and rural counties with full-service and military discounts.',
+      'Central Georgia mover serving Warner Robins, Houston County, Macon, and rural counties with full-service moves and military discounts.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Military'],
     usdotNumber: '3286446',
@@ -7012,7 +7012,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.9,
     reviewCount: 280,
     shortDescription:
-      'Byron-based College Hunks crews serving Macon and Middle Georgia with moving, packing, and labor-only help.',
+      'Byron-based College Hunks crews serving Warner Robins, Houston County, Macon, and Middle Georgia with moving, packing, and labor-only help.',
     services: ['Local Moving', 'Packing', 'Labor Only'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',

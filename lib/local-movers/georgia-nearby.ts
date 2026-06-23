@@ -63,6 +63,7 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   bibb: ['baldwin', 'jones', 'monroe', 'crawford', 'peach', 'twiggs'],
   bleckley: ['bibb', 'dodge', 'pulaski', 'wilcox', 'laurens', 'twiggs'],
   brantley: ['charlton', 'camden', 'pierce', 'ware', 'glynn', 'bacon'],
+  houston: ['peach', 'bibb', 'bleckley', 'pulaski', 'taylor', 'crawford'],
 };
 
 export function getGeorgiaNearbyCounties(

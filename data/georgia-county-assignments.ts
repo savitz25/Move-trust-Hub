@@ -323,6 +323,12 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'bc-brothers-moving-savannah',
     'college-hunks-moving-savannah',
   ],
+  houston: [
+    'college-hunks-moving-macon',
+    'simple-moving-solutions-macon',
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

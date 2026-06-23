@@ -1359,6 +1359,32 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  houston: [
+    {
+      quote:
+        'Simple Moving Solutions handled our Robins AFB PCS timeline professionally — careful packing, military paperwork experience, and on-schedule delivery in Houston County.',
+      name: 'Sgt. James R.',
+      location: 'Warner Robins, GA',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'College Hunks moved our Warner Robins townhome efficiently with upfront pricing and great communication. They knew the Middle Georgia routes and finished faster than estimated.',
+      name: 'Tanya B.',
+      location: 'Warner Robins, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Good Guys Moving served our Perry relocation from their Macon base with transparent fees and careful handling throughout Houston County.',
+      name: 'Harold P.',
+      location: 'Perry, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

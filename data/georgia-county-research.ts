@@ -341,19 +341,19 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   muscogee: {
     marketNotes:
-      'Muscogee County centers on Columbus with significant military activity from Fort Moore, suburban growth along I-185, and steady residential turnover.',
+      'Muscogee County centers on Columbus with significant military presence at Fort Moore and strong residential demand along the I-185 corridor.',
     costs: {
       studioRange: '$550–$1,050',
       familyRange: '$1,900–$4,100',
       avgHourly: '$105–$155/hr for a 2-person crew',
-      note: 'Muscogee moves often involve military household goods coordination, Uptown Columbus access, and I-185 corridor scheduling.',
+      note: 'Columbus metro pricing reflects military PCS seasonality, Uptown access limits, and I-185 suburban growth.',
     },
     tips: [
-      'Military moves require specific experience — confirm familiarity with Fort Moore timelines and base access rules.',
-      'Verify coverage for Columbus, Fort Moore-adjacent housing, and surrounding Muscogee communities.',
-      'Confirm insurance for high-value homes and ask about specialty handling for antiques.',
-      'Book early for peak seasons and PCS-driven demand windows.',
-      'Obtain multiple written estimates and compare hourly vs. flat-rate pricing.',
+      'Military moves require specific experience and documentation — confirm PCS and government billing familiarity.',
+      'Verify explicit coverage for Columbus, Fort Moore-adjacent housing, and surrounding Muscogee communities.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak summer PCS and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes for Fort Moore-area relocations.',
     ],
   },
   pickens: {
@@ -898,6 +898,23 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited locally — coordinate with Savannah providers if needed.',
       'Obtain multiple written estimates and confirm travel fees.',
       'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  houston: {
+    marketNotes:
+      'Houston County is a growing Central Georgia market anchored by Warner Robins with Perry as the county seat and strong military influence from Robins Air Force Base.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Houston County pricing reflects Robins AFB PCS seasonality, Warner Robins suburban demand, and Macon-metro crew travel.',
+    },
+    tips: [
+      'Military moves require specific experience and documentation — confirm familiarity with Robins AFB timelines and base housing rules.',
+      'Verify explicit coverage for Warner Robins, Perry, and surrounding Houston County communities before booking.',
+      'Confirm insurance and valuation for high-value homes in newer Warner Robins subdivisions.',
+      'Book early for peak summer PCS and month-end lease turnover near Robins AFB.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Macon and Middle Georgia crews.',
     ],
   },
 };
