@@ -1113,6 +1113,295 @@ export const mississippiCountyResearch: Record<string, CuratedCountyResearch> = 
       'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
     ],
   },
+  tallahatchie: {
+    marketNotes:
+      'Tallahatchie County is a rural Delta county with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Tallahatchie County pricing reflects rural Delta demand in Charleston and Jackson metro crews serving long-distance local routes with limited local competition.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Charleston and surrounding areas.',
+      'Verify explicit regional service to Charleston before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  webster: {
+    marketNotes:
+      'Webster County is a rural county in Central Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Webster County pricing reflects rural Central Mississippi demand in Walthall and regional crews from Columbus, Meridian, and Tupelo providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Walthall and surrounding areas.',
+      'Verify explicit regional service to Walthall before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  noxubee: {
+    marketNotes:
+      'Noxubee County is a rural county in East Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Noxubee County pricing reflects rural East Mississippi demand in Macon and regional crews from Columbus and Meridian providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Macon and surrounding areas.',
+      'Verify explicit regional service to Macon before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County is a rural county in Central Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Montgomery County pricing reflects rural Central Mississippi demand in Winona and regional crews from Jackson metro and Meridian providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Winona and surrounding areas.',
+      'Verify explicit regional service to Winona before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County is a rural county in Central Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects rural Central Mississippi demand in Carrollton and Jackson metro regional crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Carrollton and surrounding areas.',
+      'Verify explicit regional service to Carrollton before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  kemper: {
+    marketNotes:
+      'Kemper County is a rural county in East Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Kemper County pricing reflects rural East Mississippi demand in De Kalb and regional crews from Meridian and Tupelo providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach De Kalb and surrounding areas.',
+      'Verify explicit regional service to De Kalb before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  tunica: {
+    marketNotes:
+      'Tunica County is a Delta county known for casino tourism with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Tunica County pricing reflects casino-corridor residential demand and Memphis metro crews from DeSoto and Tate County providers.',
+    },
+    tips: [
+      'Verify coverage for Tunica and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  claiborne: {
+    marketNotes:
+      'Claiborne County is a rural county in Southwest Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Claiborne County pricing reflects rural Southwest Mississippi demand in Port Gibson and Jackson metro regional crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Port Gibson and surrounding areas.',
+      'Verify explicit regional service to Port Gibson before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  choctaw: {
+    marketNotes:
+      'Choctaw County is a rural county in Central Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Choctaw County pricing reflects rural Central Mississippi demand in Ackerman and Jackson metro regional crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Ackerman and surrounding areas.',
+      'Verify explicit regional service to Ackerman before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a rural county in Southwest Mississippi with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects rural Southwest Mississippi demand in Meadville and regional crews from Hattiesburg and Central Mississippi providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Meadville and surrounding areas.',
+      'Verify explicit regional service to Meadville before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  humphreys: {
+    marketNotes:
+      'Humphreys County is a rural Delta county with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Humphreys County pricing reflects rural Delta demand in Belzoni and Jackson metro crews serving long-distance local routes with limited local competition.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Belzoni and surrounding areas.',
+      'Verify explicit regional service to Belzoni before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  benton: {
+    marketNotes:
+      'Benton County is a small rural county in North Mississippi with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Benton County pricing reflects limited local competition in Ashland and regional crews from Memphis and Tupelo metro providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Ashland and surrounding areas.',
+      'Verify explicit regional service to Ashland before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  wilkinson: {
+    marketNotes:
+      'Wilkinson County is a rural county in Southwest Mississippi with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Wilkinson County pricing reflects limited local competition in Woodville and regional crews from Hattiesburg and Central Mississippi providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Woodville and surrounding areas.',
+      'Verify explicit regional service to Woodville before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is a rural county in Southwest Mississippi with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects limited local competition in Fayette and Jackson metro regional crews serving Southwest Mississippi routes.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Fayette and surrounding areas.',
+      'Verify explicit regional service to Fayette before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  quitman: {
+    marketNotes:
+      'Quitman County is a rural Delta county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Quitman County pricing reflects limited local competition in Marks and regional crews from Memphis and Jackson metro providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Marks and surrounding areas.',
+      'Verify explicit regional service to Marks before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  sharkey: {
+    marketNotes:
+      'Sharkey County is one of Mississippi’s smallest counties with rural residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Sharkey County pricing reflects limited local competition in Rolling Fork and Jackson metro Delta crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Rolling Fork and surrounding areas.',
+      'Verify explicit regional service to Rolling Fork before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
+  issaquena: {
+    marketNotes:
+      'Issaquena County is Mississippi’s smallest county with rural residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Issaquena County pricing reflects Mississippi’s smallest county footprint in Mayersville and Jackson metro Delta crews with very limited local competition.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew can reach Mayersville and surrounding areas.',
+      'Verify explicit regional service to Mayersville before booking.',
+      'Storage options are very limited — plan ahead for timing and overflow.',
+      'Obtain multiple estimates and confirm credentials for rural moves.',
+      'Re-verify FMCSA authority, BBB rating, and current reviews before booking.',
+    ],
+  },
 };
 
 export function getMississippiCountyResearch(

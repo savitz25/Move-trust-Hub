@@ -15387,6 +15387,170 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'moving-u-ent-meridian-ms',
     ],
   },
+  'charleston-metro-ms': {
+    id: 'charleston-metro-ms',
+    label: 'Charleston Metro',
+    moverIds: [
+      'armstrong-relocation-jackson-ms',
+      'two-men-and-a-truck-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+      'central-mississippi-movers-jackson-ms',
+    ],
+  },
+  'webster-ms-metro-ms': {
+    id: 'webster-ms-metro-ms',
+    label: 'Walthall Metro',
+    moverIds: [
+      'moving-u-ent-meridian-ms',
+      'affordable-help-hamilton-al',
+      'two-men-and-a-truck-tupelo-ms',
+      'helping-hands-moving-jackson-ms',
+    ],
+  },
+  'macon-metro-ms': {
+    id: 'macon-metro-ms',
+    label: 'Macon Metro',
+    moverIds: [
+      'moving-u-ent-meridian-ms',
+      'affordable-help-hamilton-al',
+      'tmakit-moving-meridian-ms',
+      'two-men-and-a-truck-tupelo-ms',
+    ],
+  },
+  'winona-metro-ms': {
+    id: 'winona-metro-ms',
+    label: 'Winona Metro',
+    moverIds: [
+      'helping-hands-moving-jackson-ms',
+      'moving-u-ent-meridian-ms',
+      'jermaines-handy-service-jackson-ms',
+      'two-men-and-a-truck-jackson-ms',
+    ],
+  },
+  'carrollton-metro-ms': {
+    id: 'carrollton-metro-ms',
+    label: 'Carrollton Metro',
+    moverIds: [
+      'armstrong-relocation-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+      'moving-u-ent-meridian-ms',
+      'two-men-and-a-truck-jackson-ms',
+    ],
+  },
+  'de-kalb-metro-ms': {
+    id: 'de-kalb-metro-ms',
+    label: 'De Kalb Metro',
+    moverIds: [
+      'moving-u-ent-meridian-ms',
+      'tmakit-moving-meridian-ms',
+      'on-the-go-meridian-ms',
+      'two-men-and-a-truck-tupelo-ms',
+    ],
+  },
+  'tunica-metro-ms': {
+    id: 'tunica-metro-ms',
+    label: 'Tunica Metro',
+    moverIds: [
+      'two-men-and-a-truck-memphis',
+      'memphis-mighty-movers-ms',
+      'spyder-moving-memphis',
+      'two-men-and-a-truck-jackson-ms',
+    ],
+  },
+  'port-gibson-metro-ms': {
+    id: 'port-gibson-metro-ms',
+    label: 'Port Gibson Metro',
+    moverIds: [
+      'armstrong-relocation-jackson-ms',
+      'two-men-and-a-truck-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+      'jermaines-handy-service-jackson-ms',
+    ],
+  },
+  'ackerman-metro-ms': {
+    id: 'ackerman-metro-ms',
+    label: 'Ackerman Metro',
+    moverIds: [
+      'helping-hands-moving-jackson-ms',
+      'moving-u-ent-meridian-ms',
+      'jermaines-handy-service-jackson-ms',
+      'two-men-and-a-truck-jackson-ms',
+    ],
+  },
+  'meadville-metro-ms': {
+    id: 'meadville-metro-ms',
+    label: 'Meadville Metro',
+    moverIds: [
+      'two-men-and-a-truck-hattiesburg-ms',
+      'jermaines-handy-service-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+      'allsouth-moving-mobile',
+    ],
+  },
+  'belzoni-metro-ms': {
+    id: 'belzoni-metro-ms',
+    label: 'Belzoni Metro',
+    moverIds: [
+      'armstrong-relocation-jackson-ms',
+      'two-men-and-a-truck-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+      'central-mississippi-movers-jackson-ms',
+    ],
+  },
+  'ashland-metro-ms': {
+    id: 'ashland-metro-ms',
+    label: 'Ashland Metro',
+    moverIds: [
+      'two-men-and-a-truck-memphis',
+      'two-men-and-a-truck-tupelo-ms',
+      'all-star-movers-northeast-ms',
+    ],
+  },
+  'woodville-metro-ms': {
+    id: 'woodville-metro-ms',
+    label: 'Woodville Metro',
+    moverIds: [
+      'two-men-and-a-truck-hattiesburg-ms',
+      'jermaines-handy-service-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+    ],
+  },
+  'fayette-ms-metro-ms': {
+    id: 'fayette-ms-metro-ms',
+    label: 'Fayette Metro',
+    moverIds: [
+      'armstrong-relocation-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+      'jermaines-handy-service-jackson-ms',
+    ],
+  },
+  'marks-metro-ms': {
+    id: 'marks-metro-ms',
+    label: 'Marks Metro',
+    moverIds: [
+      'two-men-and-a-truck-memphis',
+      'armstrong-relocation-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+    ],
+  },
+  'rolling-fork-metro-ms': {
+    id: 'rolling-fork-metro-ms',
+    label: 'Rolling Fork Metro',
+    moverIds: [
+      'armstrong-relocation-jackson-ms',
+      'two-men-and-a-truck-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+    ],
+  },
+  'mayersville-metro-ms': {
+    id: 'mayersville-metro-ms',
+    label: 'Mayersville Metro',
+    moverIds: [
+      'armstrong-relocation-jackson-ms',
+      'two-men-and-a-truck-jackson-ms',
+      'helping-hands-moving-jackson-ms',
+    ],
+  },
 };
 
 /** Non-curated state overrides — FL/NJ/NY/CA use dedicated assignment files */

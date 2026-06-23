@@ -69,6 +69,23 @@ export const mississippiCountyOverrides: Partial<
   lawrence: { seat: 'Monticello', metro: 'monticello-ms-metro-ms' },
   perry: { seat: 'New Augusta', metro: 'new-augusta-metro-ms' },
   'jefferson-davis': { seat: 'Prentiss', metro: 'jefferson-davis-metro-ms' },
+  tallahatchie: { seat: 'Charleston', metro: 'charleston-metro-ms' },
+  webster: { seat: 'Walthall', metro: 'webster-ms-metro-ms' },
+  noxubee: { seat: 'Macon', metro: 'macon-metro-ms' },
+  montgomery: { seat: 'Winona', metro: 'winona-metro-ms' },
+  carroll: { seat: 'Carrollton', metro: 'carrollton-metro-ms' },
+  kemper: { seat: 'De Kalb', metro: 'de-kalb-metro-ms' },
+  tunica: { seat: 'Tunica', metro: 'tunica-metro-ms' },
+  claiborne: { seat: 'Port Gibson', metro: 'port-gibson-metro-ms' },
+  choctaw: { seat: 'Ackerman', metro: 'ackerman-metro-ms' },
+  franklin: { seat: 'Meadville', metro: 'meadville-metro-ms' },
+  humphreys: { seat: 'Belzoni', metro: 'belzoni-metro-ms' },
+  benton: { seat: 'Ashland', metro: 'ashland-metro-ms' },
+  wilkinson: { seat: 'Woodville', metro: 'woodville-metro-ms' },
+  jefferson: { seat: 'Fayette', metro: 'fayette-ms-metro-ms' },
+  quitman: { seat: 'Marks', metro: 'marks-metro-ms' },
+  sharkey: { seat: 'Rolling Fork', metro: 'rolling-fork-metro-ms' },
+  issaquena: { seat: 'Mayersville', metro: 'mayersville-metro-ms' },
 };
 
 export function applyMississippiCountyOverrides(county: LocalCounty): LocalCounty {

@@ -634,6 +634,102 @@ const CURATED_MS_COUNTIES: Record<string, string[]> = {
     'jermaines-handy-service-jackson-ms',
     'moving-u-ent-meridian-ms',
   ],
+  tallahatchie: [
+    'armstrong-relocation-jackson-ms',
+    'two-men-and-a-truck-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+    'central-mississippi-movers-jackson-ms',
+  ],
+  webster: [
+    'moving-u-ent-meridian-ms',
+    'affordable-help-hamilton-al',
+    'two-men-and-a-truck-tupelo-ms',
+    'helping-hands-moving-jackson-ms',
+  ],
+  noxubee: [
+    'moving-u-ent-meridian-ms',
+    'affordable-help-hamilton-al',
+    'tmakit-moving-meridian-ms',
+    'two-men-and-a-truck-tupelo-ms',
+  ],
+  montgomery: [
+    'helping-hands-moving-jackson-ms',
+    'moving-u-ent-meridian-ms',
+    'jermaines-handy-service-jackson-ms',
+    'two-men-and-a-truck-jackson-ms',
+  ],
+  carroll: [
+    'armstrong-relocation-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+    'moving-u-ent-meridian-ms',
+    'two-men-and-a-truck-jackson-ms',
+  ],
+  kemper: [
+    'moving-u-ent-meridian-ms',
+    'tmakit-moving-meridian-ms',
+    'on-the-go-meridian-ms',
+    'two-men-and-a-truck-tupelo-ms',
+  ],
+  tunica: [
+    'two-men-and-a-truck-memphis',
+    'memphis-mighty-movers-ms',
+    'spyder-moving-memphis',
+    'two-men-and-a-truck-jackson-ms',
+  ],
+  claiborne: [
+    'armstrong-relocation-jackson-ms',
+    'two-men-and-a-truck-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+    'jermaines-handy-service-jackson-ms',
+  ],
+  choctaw: [
+    'helping-hands-moving-jackson-ms',
+    'moving-u-ent-meridian-ms',
+    'jermaines-handy-service-jackson-ms',
+    'two-men-and-a-truck-jackson-ms',
+  ],
+  franklin: [
+    'two-men-and-a-truck-hattiesburg-ms',
+    'jermaines-handy-service-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+    'allsouth-moving-mobile',
+  ],
+  humphreys: [
+    'armstrong-relocation-jackson-ms',
+    'two-men-and-a-truck-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+    'central-mississippi-movers-jackson-ms',
+  ],
+  benton: [
+    'two-men-and-a-truck-memphis',
+    'two-men-and-a-truck-tupelo-ms',
+    'all-star-movers-northeast-ms',
+  ],
+  wilkinson: [
+    'two-men-and-a-truck-hattiesburg-ms',
+    'jermaines-handy-service-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+  ],
+  jefferson: [
+    'armstrong-relocation-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+    'jermaines-handy-service-jackson-ms',
+  ],
+  quitman: [
+    'two-men-and-a-truck-memphis',
+    'armstrong-relocation-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+  ],
+  sharkey: [
+    'armstrong-relocation-jackson-ms',
+    'two-men-and-a-truck-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+  ],
+  issaquena: [
+    'armstrong-relocation-jackson-ms',
+    'two-men-and-a-truck-jackson-ms',
+    'helping-hands-moving-jackson-ms',
+  ],
 };
 
 export const mississippiCountyMoverAssignments: CountyMoverAssignment[] =

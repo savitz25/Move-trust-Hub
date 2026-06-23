@@ -76,6 +76,23 @@ const MS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lawrence: ['marion', 'jefferson-davis', 'simpson', 'lamar', 'walthall', 'pike'],
   perry: ['greene', 'wayne', 'stone', 'forrest', 'george', 'jones'],
   'jefferson-davis': ['marion', 'lawrence', 'simpson', 'covington', 'lamar', 'walthall'],
+  tallahatchie: ['panola', 'quitman', 'coahoma', 'sunflower', 'leflore', 'yalobusha'],
+  webster: ['oktibbeha', 'clay', 'chickasaw', 'calhoun', 'grenada', 'montgomery'],
+  noxubee: ['lowndes', 'oktibbeha', 'clay', 'kemper', 'winston', 'choctaw'],
+  montgomery: ['attala', 'leflore', 'grenada', 'carroll', 'holmes', 'choctaw'],
+  carroll: ['leflore', 'montgomery', 'holmes', 'attala', 'grenada', 'tallahatchie'],
+  kemper: ['neshoba', 'lauderdale', 'newton', 'clarke', 'wayne', 'noxubee'],
+  tunica: ['desoto', 'tate', 'panola', 'coahoma', 'quitman', 'tallahatchie'],
+  claiborne: ['jefferson', 'copiah', 'hinds', 'warren', 'adams', 'wilkinson'],
+  choctaw: ['oktibbeha', 'webster', 'montgomery', 'winston', 'attala', 'grenada'],
+  franklin: ['adams', 'amite', 'lincoln', 'jefferson', 'wilkinson', 'claiborne'],
+  humphreys: ['yazoo', 'holmes', 'leflore', 'sunflower', 'sharkey', 'washington'],
+  benton: ['marshall', 'tippah', 'union', 'tate', 'desoto', 'prentiss'],
+  wilkinson: ['amite', 'franklin', 'adams', 'claiborne', 'jefferson', 'pike'],
+  jefferson: ['adams', 'claiborne', 'copiah', 'franklin', 'wilkinson', 'lincoln'],
+  quitman: ['panola', 'coahoma', 'tunica', 'tallahatchie', 'yalobusha', 'desoto'],
+  sharkey: ['washington', 'issaquena', 'humphreys', 'yazoo', 'warren', 'bolivar'],
+  issaquena: ['sharkey', 'washington', 'warren', 'claiborne', 'bolivar', 'humphreys'],
 };
 
 export function getMississippiNearbyCounties(
