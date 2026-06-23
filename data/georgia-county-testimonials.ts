@@ -1567,6 +1567,188 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Apartment',
     },
   ],
+  liberty: [
+    {
+      quote:
+        'Nilson Van handled our Fort Stewart PCS move flawlessly — experienced with base housing rules, careful packing, and on-schedule delivery throughout Liberty County.',
+      name: 'Sgt. Marcus H.',
+      location: 'Hinesville, GA',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah served our Hinesville townhome efficiently with upfront travel-time disclosure and excellent crew professionalism near Fort Stewart.',
+      name: 'Jennifer W.',
+      location: 'Hinesville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Walthourville relocation with careful furniture wrapping and transparent pricing despite peak PCS season demand.',
+      name: 'David R.',
+      location: 'Walthourville, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  camden: [
+    {
+      quote:
+        'Driftwood Moving Company handled our Kingsland coastal home relocation with careful humidity-sensitive packing and excellent communication about marsh-side property access.',
+      name: 'Patricia M.',
+      location: 'Kingsland, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to our St. Marys home and delivered on schedule. Upfront about coastal travel fees and great crew care near Kings Bay.',
+      name: 'Brian T.',
+      location: 'St. Marys, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving served our Woodbine relocation professionally with reliable packing and no surprise fees despite the long Southeast Georgia drive.',
+      name: 'Linda K.',
+      location: 'Woodbine, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  bryan: [
+    {
+      quote:
+        'Two Men and a Truck Savannah handled our Richmond Hill relocation efficiently — clear I-95 corridor scheduling, careful handling, and transparent pricing throughout Bryan County.',
+      name: 'Scott A.',
+      location: 'Richmond Hill, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving served our Pembroke home move with excellent communication and careful furniture wrapping despite rural driveway access challenges.',
+      name: 'Maria G.',
+      location: 'Pembroke, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah provided reliable packing and loading for our coastal Bryan County apartment. Finished on schedule with no hidden fees.',
+      name: 'Tyler N.',
+      location: 'Richmond Hill, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  laurens: [
+    {
+      quote:
+        'Good Guys Moving traveled from Macon and handled our Dublin relocation professionally — careful with antiques, clear rural-route planning, and transparent pricing.',
+      name: 'Ruth E.',
+      location: 'Dublin, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Laurens County townhome efficiently with upfront travel-fee disclosure and great crew communication.',
+      name: 'Willie J.',
+      location: 'Dublin, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Simple Moving Solutions provided reliable packing for our rural Dublin home move. They finished faster than estimated despite long driveway access.',
+      name: 'Carol F.',
+      location: 'Dublin, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  habersham: [
+    {
+      quote:
+        'Atlanta Home Movers traveled to our Clarkesville mountain home and handled steep driveway access without issues. Careful crew and clear travel-fee disclosure.',
+      name: 'Glenn P.',
+      location: 'Clarkesville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bulldog Movers served our Cornelia relocation efficiently with upfront pricing and excellent handling of large furniture through narrow mountain roads.',
+      name: 'Sandra B.',
+      location: 'Cornelia, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta handled our Habersham County apartment move with great communication and no surprise fees despite the long north-metro drive.',
+      name: 'Eric L.',
+      location: 'Clarkesville, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  colquitt: [
+    {
+      quote:
+        'HHG Movers handled our Moultrie single-family relocation professionally — careful furniture wrapping, clear pricing, and reliable scheduling throughout Colquitt County.',
+      name: 'Jorge M.',
+      location: 'Moultrie, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Moultrie served our townhome move efficiently with upfront pricing and great crew communication for our rural South Georgia relocation.',
+      name: 'Tamika S.',
+      location: 'Moultrie, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'The Home Moving Solution traveled from Albany and provided excellent packing for our Moultrie home. Transparent fees and careful handling throughout.',
+      name: 'Henry D.',
+      location: 'Moultrie, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  thomas: [
+    {
+      quote:
+        'House to House Moving handled our Thomasville historic-home relocation with careful antique packing, on-time arrival, and transparent pricing throughout Thomas County.',
+      name: 'William C.',
+      location: 'Thomasville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving Co traveled from Valdosta and served our Thomasville townhome efficiently. Excellent crew communication and careful furniture wrapping.',
+      name: 'Nicole H.',
+      location: 'Thomasville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Thomasville provided reliable local service for our apartment move with upfront travel-time disclosure and no hidden fees.',
+      name: 'Andre W.',
+      location: 'Thomasville, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

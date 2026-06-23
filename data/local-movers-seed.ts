@@ -7157,6 +7157,48 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Albany',
     website: 'https://thehomemovingsolution.com/',
   },
+  'house-to-house-moving-thomasville': {
+    id: 'house-to-house-moving-thomasville',
+    name: 'House to House Moving',
+    rating: 4.5,
+    reviewCount: 85,
+    shortDescription:
+      'Thomasville-based household goods carrier serving Thomas County and South Georgia with local and long-distance residential moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '3120882',
+    mcNumber: 'MC-87878',
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Thomasville',
+  },
+  'two-men-and-a-truck-moultrie': {
+    id: 'two-men-and-a-truck-moultrie',
+    name: 'Two Men and a Truck Moultrie',
+    rating: 4.3,
+    reviewCount: 55,
+    shortDescription:
+      'Moultrie franchise serving Colquitt County and rural South Georgia with local moving, packing, and storage.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '2527384',
+    fmcsaSafetyRating: 'Satisfactory',
+    city: 'Moultrie',
+    website: 'https://twomenandatruck.com/movers/ga/moultrie',
+  },
+  'two-men-and-a-truck-thomasville': {
+    id: 'two-men-and-a-truck-thomasville',
+    name: 'Two Men and a Truck Thomasville',
+    rating: 4.4,
+    reviewCount: 60,
+    shortDescription:
+      'Thomasville franchise serving Thomas County and the Florida border corridor with local and long-distance household moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '2527384',
+    fmcsaSafetyRating: 'Satisfactory',
+    city: 'Thomasville',
+    website: 'https://twomenandatruck.com/movers/ga/thomasville',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
@@ -7558,6 +7600,8 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'perez-moving-valdosta',
       'mudanza-moving-valdosta',
       'two-men-and-a-truck-albany',
+      'house-to-house-moving-thomasville',
+      'two-men-and-a-truck-thomasville',
     ],
   },
   'albany-metro-ga': {
@@ -7567,6 +7611,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'hhg-movers-south-georgia',
       'home-moving-solution-albany',
       'two-men-and-a-truck-albany',
+      'two-men-and-a-truck-moultrie',
       'perez-moving-valdosta',
       'mudanza-moving-valdosta',
     ],

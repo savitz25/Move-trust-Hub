@@ -64,6 +64,13 @@ export const georgiaCountyOverrides: Partial<
   glynn: { seat: 'Brunswick', metro: 'brunswick-metro-ga' },
   dougherty: { seat: 'Albany', metro: 'albany-metro-ga' },
   troup: { seat: 'LaGrange', metro: 'lagrange-metro-ga' },
+  liberty: { seat: 'Hinesville', metro: 'savannah-metro-ga' },
+  camden: { seat: 'Woodbine', metro: 'brunswick-metro-ga' },
+  bryan: { seat: 'Pembroke', metro: 'savannah-metro-ga' },
+  laurens: { seat: 'Dublin', metro: 'macon-metro-ga' },
+  habersham: { seat: 'Clarkesville', metro: 'atlanta-metro-ga' },
+  colquitt: { seat: 'Moultrie', metro: 'albany-metro-ga' },
+  thomas: { seat: 'Thomasville', metro: 'valdosta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

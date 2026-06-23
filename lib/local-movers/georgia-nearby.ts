@@ -71,6 +71,13 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   glynn: ['camden', 'mcintosh', 'wayne', 'brantley', 'pierce', 'ware'],
   dougherty: ['lee', 'worth', 'mitchell', 'baker', 'terrell', 'sumter'],
   troup: ['meriwether', 'coweta', 'heard', 'harris', 'muscogee', 'chattahoochee'],
+  liberty: ['chatham', 'bryan', 'effingham', 'mcintosh', 'long', 'evans'],
+  camden: ['glynn', 'charlton', 'ware', 'pierce', 'brantley', 'bryan'],
+  bryan: ['chatham', 'effingham', 'liberty', 'bulloch', 'evans', 'mcintosh'],
+  laurens: ['wilkinson', 'johnson', 'treutlen', 'wheeler', 'dodge', 'bleckley'],
+  habersham: ['hall', 'banks', 'white', 'rabun', 'stephens', 'lumpkin'],
+  colquitt: ['thomas', 'brooks', 'cook', 'tift', 'mitchell', 'worth'],
+  thomas: ['brooks', 'colquitt', 'grady', 'mitchell', 'decatur', 'lowndes'],
 };
 
 export function getGeorgiaNearbyCounties(

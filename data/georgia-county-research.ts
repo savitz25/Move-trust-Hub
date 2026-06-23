@@ -630,7 +630,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   gordon: {
     marketNotes:
-      'Gordon County includes Calhoun in Northwest Georgia with steady residential demand between Rome and Dalton corridors.',
+      'Gordon County includes Calhoun in Northwest Georgia with steady residential demand along the Rome–Dalton corridor.',
     costs: {
       studioRange: '$550–$1,100',
       familyRange: '$1,900–$4,200',
@@ -1034,6 +1034,125 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance and valuation for high-value homes before booking.',
       'Book early for peak seasons and month-end lease turnover.',
       'Obtain multiple written estimates; compare hourly vs flat-rate quotes from LaGrange, Columbus, and Atlanta-area crews.',
+    ],
+  },
+  liberty: {
+    marketNotes:
+      'Liberty County includes Hinesville with strong military (Fort Stewart) influence and steady PCS and residential turnover along the Savannah coast.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Liberty County pricing reflects Fort Stewart PCS seasonality, on-base housing rules, and travel from Pooler and Savannah-area crews.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm familiarity with Fort Stewart timelines, base housing access, and PCS documentation.',
+      'Verify explicit coverage for Hinesville, Walthourville, and surrounding Liberty County addresses before booking.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak PCS seasons and month-end lease turnover near Fort Stewart.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Savannah and coastal Georgia crews.',
+    ],
+  },
+  camden: {
+    marketNotes:
+      'Camden County is coastal Southeast Georgia with Woodbine as the seat and Kings Bay submarine base driving military and residential demand.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Camden County pricing reflects coastal property access, Kings Bay PCS seasonality, and travel from Brunswick and Savannah bases.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm experience with marsh-side homes, St. Marys access, and humidity-sensitive packing.',
+      'Verify explicit regional service to Woodbine, Kingsland, and St. Marys before booking.',
+      'Storage is very limited locally — coordinate with Brunswick or Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees from coastal crews.',
+      'Confirm FMCSA credentials and military-move experience for Kings Bay relocations.',
+    ],
+  },
+  bryan: {
+    marketNotes:
+      'Bryan County is coastal and rural near Savannah with Pembroke as the seat and growing suburban demand around Richmond Hill.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Bryan County pricing reflects coastal rural access, I-95 corridor traffic, and travel from Pooler and Savannah-area crews.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm truck routes for Pembroke and outer Bryan County addresses.',
+      'Verify explicit regional service to Pembroke and Richmond Hill before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for coastal and rural Southeast Georgia relocations.',
+    ],
+  },
+  laurens: {
+    marketNotes:
+      'Laurens County includes Dublin in Central Georgia with rural residential demand between Macon and the South Carolina border.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Laurens County pricing reflects rural driveway access, limited storage, and travel from Macon and Middle Georgia bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes and property access for Dublin and outer Laurens addresses.',
+      'Verify explicit regional service to Dublin before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  habersham: {
+    marketNotes:
+      'Habersham County is rural Northeast Georgia with Clarkesville as the seat and mountain-access residential demand near Lake Burton.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Habersham County pricing reflects mountainous rural access, limited storage, and travel from Gainesville or Atlanta north-metro bases.',
+    },
+    tips: [
+      'Mountainous rural access challenges are common — confirm truck size and route feasibility before booking.',
+      'Verify explicit regional service to Clarkesville, Cornelia, and surrounding Habersham addresses.',
+      'Storage is very limited locally — coordinate with Gainesville or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural mountain relocations.',
+    ],
+  },
+  colquitt: {
+    marketNotes:
+      'Colquitt County includes Moultrie in South Georgia with agricultural and rural residential demand across the I-75 southwest corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Colquitt County pricing reflects rural South Georgia access, limited mover competition, and travel from Albany or Valdosta bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Moultrie and outer Colquitt properties.',
+      'Verify explicit regional service to Moultrie before booking.',
+      'Storage is very limited locally — plan with Albany or Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  thomas: {
+    marketNotes:
+      'Thomas County includes Thomasville in South Georgia with historic-home and rural residential demand near the Florida border.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Thomas County pricing reflects Thomasville suburban demand, rural property access, and travel from Valdosta and Tallahassee-area crews.',
+    },
+    tips: [
+      'Verify explicit coverage for Thomasville and surrounding Thomas County addresses before booking.',
+      'Local traffic on US-319 and the Florida border corridor impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value historic homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Thomasville and Valdosta-area crews.',
     ],
   },
 };
