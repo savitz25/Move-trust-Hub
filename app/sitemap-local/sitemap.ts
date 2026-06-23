@@ -141,6 +141,17 @@ const KS_HIGH_TRAFFIC_COUNTIES = new Set([
   'shawnee',
   'wyandotte',
   'douglas',
+  'leavenworth',
+  'riley',
+  'butler',
+  'reno',
+  'saline',
+  'crawford',
+  'finney',
+  'geary',
+  'miami',
+  'cowley',
+  'ford',
 ]);
 
 /** High-traffic AR counties — sitemap priority 0.85 */

@@ -9,6 +9,17 @@ export const kansasCountyOverrides: Partial<
   shawnee: { seat: 'Topeka', metro: 'topeka-metro-ks' },
   wyandotte: { seat: 'Kansas City', metro: 'kansas-city-metro-ks' },
   douglas: { seat: 'Lawrence', metro: 'lawrence-metro-ks' },
+  leavenworth: { seat: 'Leavenworth', metro: 'kansas-city-metro-ks' },
+  riley: { seat: 'Manhattan', metro: 'manhattan-metro-ks' },
+  butler: { seat: 'El Dorado', metro: 'wichita-metro-east-ks' },
+  reno: { seat: 'Hutchinson', metro: 'hutchinson-metro-ks' },
+  saline: { seat: 'Salina', metro: 'salina-metro-ks' },
+  crawford: { seat: 'Girard', metro: 'pittsburg-metro-ks' },
+  finney: { seat: 'Garden City', metro: 'garden-city-metro-ks' },
+  geary: { seat: 'Junction City', metro: 'junction-city-metro-ks' },
+  miami: { seat: 'Paola', metro: 'kansas-city-metro-south-ks' },
+  cowley: { seat: 'Winfield', metro: 'winfield-metro-ks' },
+  ford: { seat: 'Dodge City', metro: 'dodge-city-metro-ks' },
 };
 
 export function applyKansasCountyOverrides(county: LocalCounty): LocalCounty {

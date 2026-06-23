@@ -16,6 +16,17 @@ const KS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   shawnee: ['jackson', 'jefferson', 'douglas', 'osage', 'wabaunsee', 'pottawatomie'],
   wyandotte: ['johnson', 'leavenworth', 'douglas', 'miami', 'franklin', 'jefferson'],
   douglas: ['shawnee', 'jefferson', 'johnson', 'franklin', 'osage', 'leavenworth'],
+  leavenworth: ['johnson', 'wyandotte', 'jefferson', 'douglas', 'atchison', 'miami'],
+  riley: ['geary', 'pottawatomie', 'clay', 'washington', 'marshall', 'wabaunsee'],
+  butler: ['sedgwick', 'cowley', 'greenwood', 'chase', 'marion', 'harvey'],
+  reno: ['sedgwick', 'rice', 'mcpherson', 'harvey', 'kingman', 'stafford'],
+  saline: ['ottawa', 'lincoln', 'ellsworth', 'mcpherson', 'dickinson', 'cloud'],
+  crawford: ['cherokee', 'labette', 'bourbon', 'neosho', 'allen', 'wilson'],
+  finney: ['gray', 'scott', 'seward', 'haskell', 'lane', 'grant'],
+  geary: ['riley', 'morris', 'wabaunsee', 'dickinson', 'clay', 'pottawatomie'],
+  miami: ['johnson', 'wyandotte', 'linn', 'anderson', 'franklin', 'douglas'],
+  cowley: ['butler', 'sumner', 'chautauqua', 'elk', 'sedgwick', 'harvey'],
+  ford: ['hodgeman', 'gray', 'meade', 'clark', 'edwards', 'kiowa'],
 };
 
 export function getKansasNearbyCounties(
