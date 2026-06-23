@@ -24,6 +24,8 @@ import { getArkansasCountyResearch } from '@/data/arkansas-county-research';
 import { getArkansasCountyTestimonials } from '@/data/arkansas-county-testimonials';
 import { getKansasCountyResearch } from '@/data/kansas-county-research';
 import { getKansasCountyTestimonials } from '@/data/kansas-county-testimonials';
+import { getMissouriCountyResearch } from '@/data/missouri-county-research';
+import { getMissouriCountyTestimonials } from '@/data/missouri-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -120,6 +122,7 @@ export function buildStateDescription(
     stateName === 'Oklahoma' ||
     stateName === 'Arkansas' ||
     stateName === 'Kansas' ||
+    stateName === 'Missouri' ||
     stateName === 'Texas'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';
@@ -228,6 +231,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'kansas') {
     return getKansasCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'missouri') {
+    return getMissouriCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -293,6 +299,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'kansas') {
     const curated = getKansasCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'missouri') {
+    const curated = getMissouriCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -395,6 +405,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getKansasCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'missouri') {
+    const curated = getMissouriCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -480,6 +494,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'kansas') {
     const curated = getKansasCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'missouri') {
+    const curated = getMissouriCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 
