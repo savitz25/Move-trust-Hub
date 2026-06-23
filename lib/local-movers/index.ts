@@ -17,6 +17,7 @@ const curatedAssignmentStateSlugs = new Set([
   'florida',
   'new-jersey',
   'new-york',
+  'texas',
 ]);
 const generatedAssignmentsWithoutCurated = generatedCountyAssignments.filter(
   (entry) => !curatedAssignmentStateSlugs.has(entry.stateSlug)

@@ -2191,6 +2191,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Rural',
     },
   ],
+  'red-river': [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move into Clarksville. The Paris crew confirmed county coverage upfront and handled our long driveway without damaging landscaping.',
+      name: 'Karen M.',
+      location: 'Clarksville, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Careful handling on a Texarkana-to-Red River County route. They wrapped furniture well and navigated narrow rural roads better than we expected.',
+      name: 'James R.',
+      location: 'Clarksville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  rains: [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move near Emory. The Dallas crew explained travel fees clearly and finished our farmhouse move in one organized day.',
+      name: 'Linda P.',
+      location: 'Emory, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Careful handling from the Tyler team on a Rains County lake property. They planned truck access ahead of time and protected our floors through tight doorways.',
+      name: 'Robert T.',
+      location: 'Emory, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wilbarger: [
+    {
+      quote:
+        'Professional for our remote North Texas move outside Vernon. The Wichita Falls crew confirmed ranch-road access and handled our outbuilding tools plus house furniture together.',
+      name: 'Susan H.',
+      location: 'Vernon, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling on an Abilene-to-Wilbarger County route. They were patient with our gravel driveway and kept communication clear on arrival timing.',
+      name: 'Mike D.',
+      location: 'Vernon, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  camp: [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move in Pittsburg. The Longview crew verified Camp County service and managed our pine-country driveway without issues.',
+      name: 'Angela W.',
+      location: 'Pittsburg, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Careful handling from a Dallas regional crew on a longer travel route. They wrapped everything thoroughly and stayed organized despite the early start.',
+      name: 'David L.',
+      location: 'Pittsburg, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  blanco: [
+    {
+      quote:
+        'Professional for our remote Hill Country move near Johnson City. The Austin team understood narrow ranch roads and protected our antique furniture through the whole load.',
+      name: 'Carol F.',
+      location: 'Johnson City, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the San Antonio crew on a Blanco County relocation. They confirmed Hill Country coverage in writing and finished faster than our closing window required.',
+      name: 'Eric N.',
+      location: 'Johnson City, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  zapata: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Zapata County. The Laredo crew handled ranch access challenges and kept our household goods organized from start to finish.',
+      name: 'Maria G.',
+      location: 'Zapata, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling on a longer South Texas route. They communicated clearly about travel time and delivered without damage.',
+      name: 'Jorge V.',
+      location: 'Zapata, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  callahan: [
+    {
+      quote:
+        'Professional for our remote Central Texas move into Baird. The Abilene crew confirmed Callahan County coverage and managed our ranch driveway with the right truck setup.',
+      name: 'Patricia S.',
+      location: 'Baird, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas around Baird. Careful handling on outbuilding contents and straightforward pricing from a second Abilene estimate we compared.',
+      name: 'Tom B.',
+      location: 'Baird, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  comanche: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Comanche County. The Abilene team planned ranch access ahead of time and treated our older home carefully around tight halls.',
+      name: 'Rachel K.',
+      location: 'Comanche, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from the Waco crew. Reliable in remote areas with clear travel-fee explanations and careful handling of wrapped furniture.',
+      name: 'Steve J.',
+      location: 'Comanche, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  trinity: [
+    {
+      quote:
+        'Professional for our remote East Texas move near Groveton. The Lufkin crew understood Piney Woods access and finished our modest home move on a tight one-day timeline.',
+      name: 'Nancy C.',
+      location: 'Groveton, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Huntsville. Reliable in remote Trinity County with careful handling and steady communication on a longer regional route.',
+      name: 'William A.',
+      location: 'Groveton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  falls: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Marlin. The Waco crew confirmed Falls County service and handled our ranch property access without tearing up the driveway.',
+      name: 'Diane E.',
+      location: 'Marlin, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from a second Waco provider we compared. They wrapped furniture well and stayed organized despite a small-market schedule.',
+      name: 'Greg M.',
+      location: 'Marlin, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

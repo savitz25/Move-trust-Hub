@@ -86,6 +86,16 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   ward: ['odessa-area-moving', 'midland-area-moving'],
   wheeler: ['amarillo-area-moving', 'lubbock-area-moving'],
   zavala: ['laredo-area-moving', 'san-antonio-area-moving'],
+  'red-river': ['rocking-e-moving-paris', 'bills-movers-texarkana'],
+  rains: ['two-men-and-a-truck-dallas', 'tyler-moving-storage'],
+  wilbarger: ['affordable-texas-movers-wichita-falls', 'big-country-movers-abilene'],
+  camp: ['higgs-moving-longview', 'two-men-and-a-truck-dallas'],
+  blanco: ['two-men-and-a-truck-austin', 'two-men-and-a-truck-san-antonio'],
+  zapata: ['south-texas-moving-laredo', 'allied-van-lines-laredo'],
+  callahan: ['big-country-movers-abilene', 'we-move-abilene'],
+  comanche: ['big-country-movers-abilene', 'two-men-and-a-truck-waco'],
+  trinity: ['crossin-moving-lufkin', 'huntsville-moving-inc'],
+  falls: ['two-men-and-a-truck-waco', 'college-hunks-moving-waco'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(
