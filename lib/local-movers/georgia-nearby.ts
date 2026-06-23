@@ -98,6 +98,13 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   fannin: ['gilmer', 'union', 'murray', 'pickens', 'dawson', 'lumpkin'],
   burke: ['richmond', 'jefferson', 'emanuel', 'jenkins', 'screven', 'mcduffie'],
   tattnall: ['toombs', 'evans', 'candler', 'bulloch', 'montgomery', 'appling'],
+  putnam: ['morgan', 'jones', 'greene', 'newton', 'jasper', 'monroe'],
+  emanuel: ['candler', 'bulloch', 'jenkins', 'burke', 'tattnall', 'montgomery'],
+  long: ['liberty', 'mcintosh', 'wayne', 'bryan', 'effingham', 'chatham'],
+  greene: ['putnam', 'morgan', 'taliferro', 'wilkes', 'oconee', 'hancock'],
+  mcduffie: ['richmond', 'columbia', 'wilkes', 'lincoln', 'warren', 'burke'],
+  lamar: ['monroe', 'upson', 'pike', 'butts', 'spalding', 'fayette'],
+  pike: ['lamar', 'upson', 'spalding', 'meriwether', 'henry', 'fayette'],
 };
 
 export function getGeorgiaNearbyCounties(

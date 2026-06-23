@@ -494,7 +494,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   morgan: {
     marketNotes:
-      'Morgan County is a rural east-metro county with Madison as the seat and historic-home relocation demand between Athens and Atlanta.',
+      'Morgan County is rural with Madison as the seat and historic-home relocation demand between Athens and Atlanta.',
     costs: {
       studioRange: '$600–$1,200+',
       familyRange: '$2,000–$4,800',
@@ -596,7 +596,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   meriwether: {
     marketNotes:
-      'Meriwether County is a rural southwest-metro county with Greenville as the seat between Atlanta and Columbus corridors.',
+      'Meriwether County is rural West Georgia with Greenville as the seat along the LaGrange and Columbus corridor.',
     costs: {
       studioRange: '$600–$1,200+',
       familyRange: '$2,000–$4,800',
@@ -1493,6 +1493,125 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Storage is very limited locally — coordinate with Savannah providers if needed.',
       'Obtain multiple written estimates and confirm travel fees.',
       'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  putnam: {
+    marketNotes:
+      'Putnam County is rural Central Georgia with Eatonton as the seat and lake-influenced residential demand along Lake Oconee.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Putnam County pricing reflects lake-property access, rural driveways, and travel from Macon and Middle Georgia bases.',
+    },
+    tips: [
+      'Lake properties have access challenges — confirm dock, driveway, and steep-grade feasibility before booking.',
+      'Verify explicit regional service to Eatonton and Lake Oconee communities before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural and lake-area relocations.',
+    ],
+  },
+  emanuel: {
+    marketNotes:
+      'Emanuel County is rural Southeast Georgia with Swainsboro as the seat and East Georgia State College influence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Emanuel County pricing reflects rural coastal-plain access and travel from Savannah or Statesboro bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Swainsboro and outer Emanuel properties.',
+      'Verify explicit regional service to Swainsboro before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  long: {
+    marketNotes:
+      'Long County is rural coastal Southeast Georgia with Ludowici as the seat between Savannah and Fort Stewart.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Long County pricing reflects coastal rural access, I-95 corridor traffic, and travel from Pooler and Savannah bases.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm experience with rural coastal driveways and marsh-adjacent access.',
+      'Verify explicit regional service to Ludowici before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for coastal and rural Southeast Georgia relocations.',
+    ],
+  },
+  greene: {
+    marketNotes:
+      'Greene County is rural Central Georgia with Greensboro as the seat between Macon and the Lake Oconee corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Greene County pricing reflects rural property access, limited storage, and travel from Macon or Athens-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Greensboro and outer Greene addresses.',
+      'Verify explicit regional service to Greensboro before booking.',
+      'Storage is very limited locally — plan with Macon or Athens providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  mcduffie: {
+    marketNotes:
+      'McDuffie County is rural in the CSRA with Thomson as the seat between Augusta and the Central Savannah River corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'McDuffie County pricing reflects rural property access, limited storage, and travel from Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Thomson and outer McDuffie properties.',
+      'Verify explicit regional service to Thomson before booking.',
+      'Storage is very limited locally — coordinate with Augusta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural CSRA relocations.',
+    ],
+  },
+  lamar: {
+    marketNotes:
+      'Lamar County is rural south of Atlanta with Barnesville as the seat along the Griffin and Macon corridor.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Lamar County pricing reflects rural driveway access, limited storage, and travel from Atlanta or Griffin south-metro bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Barnesville and outer Lamar addresses.',
+      'Verify explicit regional service to Barnesville before booking.',
+      'Storage is very limited locally — plan with Atlanta or Griffin providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural south-metro relocations.',
+    ],
+  },
+  pike: {
+    marketNotes:
+      'Pike County is rural south of Atlanta with Zebulon as the seat between Griffin and the west-metro fringe.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Pike County pricing reflects rural property access, I-75 south corridor traffic, and travel from Atlanta metro bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Zebulon and outer Pike properties.',
+      'Verify explicit regional service to Zebulon before booking.',
+      'Storage is very limited locally — coordinate with Atlanta or Griffin providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural south-metro relocations.',
     ],
   },
 };

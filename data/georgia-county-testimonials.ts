@@ -894,7 +894,7 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
   meriwether: [
     {
       quote:
-        'Mark the Mover traveled to our Greenville home and handled remote rural access without issues. Careful crew and transparent southwest-metro pricing.',
+        'Coleman Worldwide Columbus confirmed Greenville coverage and handled remote rural access without issues. Careful crew and transparent West Georgia pricing.',
       name: 'Tom R.',
       location: 'Greenville, GA',
       rating: 5,
@@ -902,7 +902,7 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
     },
     {
       quote:
-        'Two Men and a Truck Columbus served our Meriwether County move from the Columbus corridor with professional handling and clear travel estimates.',
+        'Wirks Moving Atlanta traveled to our Meriwether County home with professional handling and clear travel estimates from their Atlanta base.',
       name: 'Brenda L.',
       location: 'Greenville, GA',
       rating: 5,
@@ -910,7 +910,7 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
     },
     {
       quote:
-        'All My Sons Atlanta provided reliable backup coverage for our rural southwest move when local options were limited. Great communication.',
+        'Two Men and a Truck Columbus served our rural southwest move from the Columbus corridor with reliable packing and great communication.',
       name: 'Carl M.',
       location: 'Manchester, GA',
       rating: 4,
@@ -2267,6 +2267,188 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       location: 'Glennville, GA',
       rating: 4,
       moveType: 'Single-family',
+    },
+  ],
+  putnam: [
+    {
+      quote:
+        'Good Guys Moving confirmed Lake Oconee driveway access before our Eatonton move. Professional crew handled our lake home relocation with careful furniture wrapping.',
+      name: 'Patricia H.',
+      location: 'Eatonton, GA',
+      rating: 5,
+      moveType: 'Lake home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Putnam County move efficiently with clear communication about rural travel time from Middle Georgia.',
+      name: 'James R.',
+      location: 'Eatonton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Apple Moving Macon handled our lake-property relocation with upfront pricing and careful navigation of steep driveway access.',
+      name: 'Susan T.',
+      location: 'Madison, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  emanuel: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Swainsboro and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Swainsboro, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Emanuel County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Swainsboro, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Swainsboro home. Finished on schedule with no hidden fees despite the coastal-plain drive.',
+      name: 'Dennis K.',
+      location: 'Twin City, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  long: [
+    {
+      quote:
+        'Two Men and a Truck Savannah confirmed Ludowici coverage and handled our coastal rural move with careful driveway access planning.',
+      name: 'Kim L.',
+      location: 'Ludowici, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving served our Long County relocation from their Savannah base with transparent travel pricing and professional packing.',
+      name: 'Scott D.',
+      location: 'Ludowici, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah traveled to Ludowici and finished our coastal move on schedule despite rural marsh-adjacent access challenges.',
+      name: 'Angela V.',
+      location: 'Ludowici, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  greene: [
+    {
+      quote:
+        'Good Guys Moving confirmed Greensboro coverage and handled our rural Greene County move with careful driveway access planning.',
+      name: 'Robert E.',
+      location: 'Greensboro, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Greensboro relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'Laura V.',
+      location: 'Greensboro, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'University Moving and Storage traveled from Athens to handle our Greene County move with specialty care for antiques and rural property access.',
+      name: 'Charles M.',
+      location: 'Greensboro, GA',
+      rating: 4,
+      moveType: 'Historic home',
+    },
+  ],
+  mcduffie: [
+    {
+      quote:
+        'Budget Movers Augusta confirmed Thomson coverage and delivered careful handling for our rural McDuffie County relocation.',
+      name: 'Johnny R.',
+      location: 'Thomson, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta handled our Thomson move with great communication and no surprise fees despite rural CSRA access challenges.',
+      name: 'Wanda G.',
+      location: 'Thomson, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'ADSI Moving Augusta provided reliable packing and loading for our McDuffie County home. Finished on schedule with transparent Augusta-area pricing.',
+      name: 'Donald P.',
+      location: 'Thomson, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  lamar: [
+    {
+      quote:
+        'Wirks Moving Atlanta confirmed Barnesville coverage and handled our rural Lamar County move with careful driveway access planning.',
+      name: 'Kim L.',
+      location: 'Barnesville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta traveled to Barnesville and finished our south-metro move on schedule despite rural access challenges.',
+      name: 'Scott D.',
+      location: 'Barnesville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'All My Sons Atlanta served our Lamar County relocation with transparent travel pricing and professional packing from their Atlanta base.',
+      name: 'Angela V.',
+      location: 'Barnesville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  pike: [
+    {
+      quote:
+        'Two Men and a Truck Atlanta confirmed Zebulon coverage and handled our rural Pike County move with great communication throughout.',
+      name: 'Laura V.',
+      location: 'Zebulon, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mark the Mover Atlanta served our Pike County relocation with careful furniture wrapping and transparent south-metro travel pricing.',
+      name: 'Frank L.',
+      location: 'Zebulon, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Zip Moving Atlanta traveled to Zebulon and finished our move on schedule despite rural I-75 corridor access challenges.',
+      name: 'Diana S.',
+      location: 'Zebulon, GA',
+      rating: 4,
+      moveType: 'Townhome',
     },
   ],
 };

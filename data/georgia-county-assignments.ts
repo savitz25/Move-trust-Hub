@@ -228,9 +228,9 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-atlanta',
   ],
   meriwether: [
-    'mark-the-mover-atlanta',
+    'coleman-worldwide-columbus',
+    'wirks-moving-atlanta',
     'two-men-and-a-truck-columbus',
-    'all-my-sons-atlanta',
   ],
   floyd: [
     'atlanta-home-movers',
@@ -509,6 +509,41 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-savannah',
     'bc-brothers-moving-savannah',
     'college-hunks-moving-savannah',
+  ],
+  putnam: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'apple-moving-macon',
+  ],
+  emanuel: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  long: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'college-hunks-moving-savannah',
+  ],
+  greene: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'university-moving-athens',
+  ],
+  mcduffie: [
+    'budget-movers-augusta',
+    'two-men-and-a-truck-augusta',
+    'adsi-moving-augusta',
+  ],
+  lamar: [
+    'wirks-moving-atlanta',
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+  ],
+  pike: [
+    'two-men-and-a-truck-atlanta',
+    'mark-the-mover-atlanta',
+    'zip-moving-atlanta',
   ],
 };
 
