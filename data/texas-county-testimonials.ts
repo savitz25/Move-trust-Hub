@@ -5173,6 +5173,492 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  atascosa: [
+    {
+      quote:
+        'Professional for our remote South Texas move near Jourdanton. The San Antonio crew confirmed Atascosa County service and handled our ranch driveway without damage.',
+      name: 'Rita V.',
+      location: 'Jourdanton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from College Hunks San Antonio — reliable in remote Atascosa County with careful handling.',
+      name: 'Sam W.',
+      location: 'Pleasanton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wilson: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Floresville. The San Antonio crew confirmed Wilson County coverage and finished with careful handling.',
+      name: 'Tina X.',
+      location: 'Floresville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — College Hunks San Antonio wrapped furniture well on our modest Wilson County relocation.',
+      name: 'Uma Y.',
+      location: 'Floresville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  kendall: [
+    {
+      quote:
+        'Professional for our remote Hill Country move in Boerne. Two Men and a Truck San Antonio navigated Kendall County ranch roads without delay.',
+      name: 'Vic Z.',
+      location: 'Boerne, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in the Hill Country from College Hunks San Antonio — reliable in remote Kendall County.',
+      name: 'Wade A.',
+      location: 'Boerne, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  kerr: [
+    {
+      quote:
+        'Professional for our remote Hill Country move in Kerrville. The San Antonio crew confirmed Kerr County service and careful handling.',
+      name: 'Xena B.',
+      location: 'Kerrville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in the Hill Country from Kerrville regional providers — reliable in remote areas with steady communication.',
+      name: 'Yuri C.',
+      location: 'Kerrville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  burnet: [
+    {
+      quote:
+        'Professional for our remote Hill Country move in Burnet. Two Men and a Truck Austin confirmed lake-country experience and careful handling.',
+      name: 'Zoe D.',
+      location: 'Burnet, TX',
+      rating: 5,
+      moveType: 'Lakefront',
+    },
+    {
+      quote:
+        'Reliable in remote areas — College Hunks Austin handled our Burnet County relocation with transparent pricing.',
+      name: 'Adam E.',
+      location: 'Burnet, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  caldwell: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Lockhart. The Austin crew confirmed Caldwell County service on the I-35 corridor route.',
+      name: 'Beth F.',
+      location: 'Lockhart, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from the San Antonio team — reliable in remote Caldwell County with careful handling.',
+      name: 'Carl G.',
+      location: 'Lockhart, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  navarro: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Corsicana. Two Men and a Truck Dallas confirmed Navarro County coverage.',
+      name: 'Dana H.',
+      location: 'Corsicana, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from Two Men and a Truck Waco — reliable in remote Navarro County.',
+      name: 'Evan I.',
+      location: 'Corsicana, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  cherokee: [
+    {
+      quote:
+        'Professional for our remote East Texas move near Rusk. Crossin Moving from Lufkin confirmed Cherokee County service.',
+      name: 'Faye J.',
+      location: 'Rusk, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Tyler Moving & Storage — reliable in remote Cherokee County.',
+      name: 'Greg K.',
+      location: 'Jacksonville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  rusk: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Henderson. Higgs Moving Longview confirmed Rusk County coverage.',
+      name: 'Holly L.',
+      location: 'Henderson, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Tyler Moving & Storage — careful handling throughout Rusk County.',
+      name: 'Ivan M.',
+      location: 'Henderson, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  polk: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Livingston. Crossin Moving from Lufkin confirmed Polk County lake-country service.',
+      name: 'Jill N.',
+      location: 'Livingston, TX',
+      rating: 5,
+      moveType: 'Lakefront',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Two Men and a Truck Beaumont — reliable in remote Polk County.',
+      name: 'Kyle O.',
+      location: 'Livingston, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'san-augustine': [
+    {
+      quote:
+        'Professional for our remote East Texas move in San Augustine. The Lufkin crew confirmed coverage for one of Texas\'s least populous counties.',
+      name: 'Lara P.',
+      location: 'San Augustine, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Nacogdoches regional providers — reliable in remote San Augustine County.',
+      name: 'Mara Q.',
+      location: 'San Augustine, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  castro: [
+    {
+      quote:
+        'Professional for our remote Panhandle move near Dimmitt. Two Men and a Truck Amarillo confirmed Castro County ranch coverage.',
+      name: 'Ned R.',
+      location: 'Dimmitt, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — Lubbock regional providers handled our modest Castro County relocation with careful handling.',
+      name: 'Opal S.',
+      location: 'Dimmitt, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  dallam: [
+    {
+      quote:
+        'Professional for our remote Panhandle move in Dalhart. Two Men and a Truck Amarillo confirmed Dallam County service.',
+      name: 'Paul T.',
+      location: 'Dalhart, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from Aardvark Movers Amarillo on a longer regional route into Dallam County.',
+      name: 'Quinn U.',
+      location: 'Dalhart, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lamb: [
+    {
+      quote:
+        'Professional for our remote Panhandle move near Littlefield. Two Men and a Truck Lubbock confirmed Lamb County coverage.',
+      name: 'Rosa V.',
+      location: 'Littlefield, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in the Panhandle from Two Men and a Truck Amarillo — reliable in remote Lamb County.',
+      name: 'Seth W.',
+      location: 'Littlefield, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  motley: [
+    {
+      quote:
+        'Professional for our remote Panhandle move near Matador. The Lubbock crew confirmed Motley County service for a very thin market.',
+      name: 'Tara X.',
+      location: 'Matador, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — Amarillo regional providers handled our modest Motley County relocation.',
+      name: 'Uma Y.',
+      location: 'Matador, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  swisher: [
+    {
+      quote:
+        'Professional for our remote Panhandle move in Tulia. Two Men and a Truck Amarillo confirmed Swisher County ranch coverage.',
+      name: 'Vic Z.',
+      location: 'Tulia, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in the Panhandle from Two Men and a Truck Lubbock — careful handling throughout Swisher County.',
+      name: 'Wade A.',
+      location: 'Tulia, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  roberts: [
+    {
+      quote:
+        'Professional for our remote Panhandle move near Miami. Two Men and a Truck Amarillo confirmed Roberts County coverage.',
+      name: 'Xena B.',
+      location: 'Miami, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from Aardvark Movers Amarillo on a longer regional route into Roberts County.',
+      name: 'Yuri C.',
+      location: 'Miami, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  winkler: [
+    {
+      quote:
+        'Professional for our remote Permian Basin move in Kermit. Brothers Moving Odessa confirmed Winkler County oilfield-area service.',
+      name: 'Zoe D.',
+      location: 'Kermit, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in West Texas from Texas Moving Company Midland — reliable in remote Winkler County.',
+      name: 'Adam E.',
+      location: 'Kermit, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  terrell: [
+    {
+      quote:
+        'Professional for our remote Far West Texas move near Sanderson. Del Rio regional providers confirmed Terrell County coverage.',
+      name: 'Beth F.',
+      location: 'Sanderson, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — Alpine regional providers handled our modest Terrell County relocation with careful handling.',
+      name: 'Carl G.',
+      location: 'Sanderson, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  yoakum: [
+    {
+      quote:
+        'Professional for our remote South Plains move near Plains. Two Men and a Truck Lubbock confirmed Yoakum County ranch coverage.',
+      name: 'Dana H.',
+      location: 'Plains, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — Lubbock regional providers handled our Yoakum County relocation with steady communication.',
+      name: 'Evan I.',
+      location: 'Plains, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  coleman: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Coleman. Big Country Movers Abilene confirmed Coleman County service.',
+      name: 'Faye J.',
+      location: 'Coleman, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from West Texas Moving San Angelo — reliable in remote Coleman County.',
+      name: 'Greg K.',
+      location: 'Coleman, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  hamilton: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Hamilton. Two Men and a Truck Waco confirmed Hamilton County coverage.',
+      name: 'Holly L.',
+      location: 'Hamilton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from Big Country Movers Abilene — careful handling throughout Hamilton County.',
+      name: 'Ivan M.',
+      location: 'Hamilton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  mcculloch: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Brady. West Texas Moving San Angelo confirmed McCulloch County service.',
+      name: 'Jill N.',
+      location: 'Brady, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from Big Country Movers Abilene — reliable in remote McCulloch County.',
+      name: 'Kyle O.',
+      location: 'Brady, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jack: [
+    {
+      quote:
+        'Professional for our remote North Central Texas move in Jacksboro. Affordable Texas Movers Wichita Falls confirmed Jack County coverage.',
+      name: 'Lara P.',
+      location: 'Jacksboro, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in North Texas from Two Men and a Truck Fort Worth — reliable in remote Jack County.',
+      name: 'Mara Q.',
+      location: 'Jacksboro, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  kent: [
+    {
+      quote:
+        'Professional for our remote West Texas move near Jayton. Two Men and a Truck Lubbock confirmed Kent County service.',
+      name: 'Ned R.',
+      location: 'Jayton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in West Texas from Big Country Movers Abilene — reliable in remote Kent County.',
+      name: 'Opal S.',
+      location: 'Jayton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'live-oak': [
+    {
+      quote:
+        'Professional for our remote South Texas move near George West. Two Men and a Truck Corpus Christi confirmed Live Oak County coverage.',
+      name: 'Paul T.',
+      location: 'George West, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Two Men and a Truck San Antonio — reliable in remote Live Oak County.',
+      name: 'Quinn U.',
+      location: 'George West, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  mcmullen: [
+    {
+      quote:
+        'Professional for our remote South Texas move near Tilden. Two Men and a Truck San Antonio confirmed McMullen County service.',
+      name: 'Rosa V.',
+      location: 'Tilden, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Two Men and a Truck Corpus Christi — careful handling throughout McMullen County.',
+      name: 'Seth W.',
+      location: 'Tilden, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

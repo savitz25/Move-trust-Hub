@@ -3866,6 +3866,465 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates — hourly and flat-rate quotes can vary significantly between Houston providers.',
     ],
   },
+  atascosa: {
+    marketNotes:
+      'Atascosa County is rural south of San Antonio with ranch properties around Jourdanton and Pleasanton.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio regional providers may add travel fees for Jourdanton, Pleasanton, and remote Atascosa County ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size and shuttle plans for long gravel driveways.',
+      'Verify explicit regional service to Jourdanton and Pleasanton before booking.',
+      'Storage is very limited locally; San Antonio warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates from San Antonio providers — ranch moves often need supplemental labor.',
+      'Confirm credentials for ranch moves and discuss handling for barn tools and detached outbuildings.',
+    ],
+  },
+  wilson: {
+    marketNotes:
+      'Wilson County is rural south of San Antonio with Floresville as the hub.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio regional providers may add travel fees for Floresville and remote Wilson County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss unpaved driveways before move day.',
+      'Verify explicit regional service to Floresville before booking.',
+      'Storage is very limited in Wilson County; San Antonio facilities are the practical option.',
+      'Obtain multiple estimates — ranch and outbuilding contents can change crew requirements.',
+      'Confirm credentials for ranch moves and verify insurance for farm equipment.',
+    ],
+  },
+  kendall: {
+    marketNotes:
+      'Kendall County is Hill Country with Boerne as the hub.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio regional crews may add travel fees for Boerne and remote Kendall County Hill Country properties.',
+    },
+    tips: [
+      'Remote Hill Country properties have access challenges — confirm truck access on winding ranch roads.',
+      'Verify explicit regional service to Boerne before booking.',
+      'Storage is very limited locally; San Antonio warehouse options are typical.',
+      'Obtain multiple estimates — Hill Country moves can require supplemental labor.',
+      'Confirm credentials for ranch moves and discuss handling for lake and ranch properties.',
+    ],
+  },
+  kerr: {
+    marketNotes:
+      'Kerr County is Hill Country with Kerrville as the hub.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio and Kerrville regional providers may add travel fees for remote Kerr County ranch and lake properties.',
+    },
+    tips: [
+      'Remote Hill Country properties have access challenges — confirm access for Guadalupe River and ranch-country homes.',
+      'Verify explicit regional service to Kerrville before booking.',
+      'Storage is very limited in Kerr County; San Antonio or Kerrville-area facilities are typical.',
+      'Obtain multiple estimates — regional travel time can affect hourly pricing.',
+      'Confirm credentials for ranch moves and ask about experience with Hill Country access roads.',
+    ],
+  },
+  burnet: {
+    marketNotes:
+      'Burnet County is Austin Hill Country with lakes and ranch properties.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Austin regional providers may add travel fees for Burnet and remote Highland Lakes ranch properties.',
+    },
+    tips: [
+      'Lake and Hill Country properties have access challenges — confirm dock and lakefront logistics if applicable.',
+      'Verify explicit regional service to Burnet before booking.',
+      'Storage is very limited locally; Austin warehouse options are typical.',
+      'Obtain multiple estimates — lake and ranch moves can require supplemental labor.',
+      'Confirm credentials for lake and ranch moves and discuss humidity protection for waterfront homes.',
+    ],
+  },
+  caldwell: {
+    marketNotes:
+      'Caldwell County lies on the Austin–San Antonio corridor with Lockhart as the seat.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Austin and San Antonio regional crews may add travel fees for Lockhart and rural Caldwell County ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss equipment needs early.',
+      'Verify explicit regional service to Lockhart before booking.',
+      'Storage is very limited in Caldwell County; Austin or San Antonio facilities are typical.',
+      'Obtain multiple estimates from both Austin and San Antonio providers.',
+      'Confirm credentials for ranch moves and verify insurance for detached structures.',
+    ],
+  },
+  navarro: {
+    marketNotes:
+      'Navarro County is on the DFW fringe with Corsicana as the hub.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Dallas and Waco regional providers may add travel fees for Corsicana and rural Navarro County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck access on county roads.',
+      'Verify explicit regional service to Corsicana before booking.',
+      'Storage is very limited locally; Dallas or Waco warehouse options are typical.',
+      'Obtain multiple estimates — Dallas and Waco crews may price Navarro routes differently.',
+      'Confirm credentials for ranch moves and discuss handling for agricultural outbuildings.',
+    ],
+  },
+  cherokee: {
+    marketNotes:
+      'Cherokee County is rural East Texas with Jacksonville influence.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lufkin and Tyler regional providers may add travel fees for Rusk, Jacksonville, and deep Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads.',
+      'Verify explicit regional service to Rusk and Jacksonville before booking.',
+      'Storage is very limited in Cherokee County; Lufkin or Tyler facilities are typical.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing.',
+      'Confirm credentials for rural moves and ask about Piney Woods access experience.',
+    ],
+  },
+  rusk: {
+    marketNotes:
+      'Rusk County is rural East Texas with Henderson as the seat.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Longview and Tyler regional providers may add travel fees for Henderson and rural Rusk County properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm truck access for timber-country homes.',
+      'Verify explicit regional service to Henderson before booking.',
+      'Storage is very limited in Rusk County; Longview or Tyler facilities are typical.',
+      'Obtain multiple estimates — regional travel time can affect hourly pricing in thin markets.',
+      'Confirm credentials for rural moves and verify insurance limits for lake properties.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County is rural East Texas with Livingston as the seat.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lufkin and Beaumont regional providers may add travel fees for Livingston and deep East Texas lake properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for lake-country homes.',
+      'Verify explicit regional service to Livingston before booking.',
+      'Storage is very limited in Polk County; Lufkin or Beaumont facilities are typical.',
+      'Obtain multiple estimates — lake and ranch moves can require supplemental labor.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads.',
+    ],
+  },
+  'san-augustine': {
+    marketNotes:
+      'San Augustine County is one of Texas\'s least populous in Deep East Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lufkin and Nacogdoches regional providers may add travel fees for San Augustine and deep Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and lake homes.',
+      'Verify explicit regional service to San Augustine before booking.',
+      'Storage is very limited in San Augustine County; Lufkin or Nacogdoches facilities are typical.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing.',
+      'Confirm credentials for rural moves, including USDOT/MC verification on FMCSA.gov.',
+    ],
+  },
+  castro: {
+    marketNotes:
+      'Castro County is rural Panhandle.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Dimmitt and remote Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for Panhandle wind and dust exposure.',
+      'Verify explicit regional service to Dimmitt before booking.',
+      'Storage is very limited in Castro County; Amarillo or Lubbock facilities are typical.',
+      'Obtain multiple estimates — ranch moves often need supplemental labor beyond standard quotes.',
+      'Confirm credentials for ranch moves and discuss handling for agricultural outbuildings.',
+    ],
+  },
+  dallam: {
+    marketNotes:
+      'Dallam County is rural Panhandle with Dalhart as the hub.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo regional providers may add travel fees for Dalhart and remote northwest Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss wind, dust, and long gravel driveways.',
+      'Verify explicit regional service to Dalhart before booking.',
+      'Storage is very limited in Dallam County; Amarillo warehouse options are typical.',
+      'Obtain multiple estimates from Amarillo providers — ranch moves can change crew size requirements.',
+      'Confirm credentials for ranch moves and verify insurance for farm equipment.',
+    ],
+  },
+  lamb: {
+    marketNotes:
+      'Lamb County is rural Panhandle.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Amarillo regional providers may add travel fees for Littlefield and remote Panhandle ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck access on county roads.',
+      'Verify explicit regional service to Littlefield before booking.',
+      'Storage is very limited in Lamb County; Lubbock or Amarillo facilities are typical.',
+      'Obtain multiple estimates — Lubbock and Amarillo crews may price Lamb County routes differently.',
+      'Confirm credentials for ranch moves and discuss handling for agricultural outbuildings.',
+    ],
+  },
+  motley: {
+    marketNotes:
+      'Motley County is one of Texas\'s least populous in the Panhandle.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Amarillo regional providers may add travel fees for Matador and remote Motley County ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss equipment needs for thin-market counties.',
+      'Verify explicit regional service to Matador before booking.',
+      'Storage is very limited in Motley County; Lubbock or Amarillo facilities are typical.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing.',
+      'Confirm credentials for ranch moves, including USDOT/MC verification on FMCSA.gov.',
+    ],
+  },
+  swisher: {
+    marketNotes:
+      'Swisher County is rural Panhandle with Tulia as the seat.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo and Lubbock regional providers may add travel fees for Tulia and remote Swisher County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size and shuttle plans.',
+      'Verify explicit regional service to Tulia before booking.',
+      'Storage is very limited in Swisher County; Amarillo or Lubbock facilities are typical.',
+      'Obtain multiple estimates from Amarillo and Lubbock providers.',
+      'Confirm credentials for ranch moves and verify insurance for detached structures.',
+    ],
+  },
+  roberts: {
+    marketNotes:
+      'Roberts County is one of Texas\'s least populous in the Panhandle.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo regional providers may add travel fees for Miami and remote Roberts County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm access for one of Texas\'s least populous counties.',
+      'Verify explicit regional service to Miami before booking.',
+      'Storage is very limited in Roberts County; Amarillo warehouse options are typical.',
+      'Obtain multiple estimates — thin-market travel time can materially affect hourly pricing.',
+      'Confirm credentials for ranch moves, including USDOT/MC verification on FMCSA.gov.',
+    ],
+  },
+  winkler: {
+    marketNotes:
+      'Winkler County is Permian Basin oilfield area.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Odessa and Midland regional providers may add travel fees for Kermit and remote Permian Basin ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch and oilfield properties have severe access challenges — discuss equipment and road conditions.',
+      'Verify explicit regional service to Kermit before booking.',
+      'Storage is very limited in Winkler County; Odessa or Midland facilities are typical.',
+      'Obtain multiple estimates — Permian Basin crews may price Winkler routes differently.',
+      'Confirm credentials for ranch moves and verify insurance for oilfield-area relocations.',
+    ],
+  },
+  terrell: {
+    marketNotes:
+      'Terrell County is one of Texas\'s least populous in Far West Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Del Rio and Alpine regional providers may add travel fees for Sanderson and remote Big Bend fringe properties.',
+    },
+    tips: [
+      'Extremely remote Far West Texas properties have severe access challenges — confirm truck access on desert ranch roads.',
+      'Verify explicit regional service to Sanderson before booking.',
+      'Storage is very limited in Terrell County; Del Rio or Alpine facilities are typical.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing.',
+      'Confirm credentials for ranch moves and discuss desert heat and access logistics.',
+    ],
+  },
+  yoakum: {
+    marketNotes:
+      'Yoakum County is rural South Plains.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock regional providers may add travel fees for Plains and remote Yoakum County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck size for South Plains wind exposure.',
+      'Verify explicit regional service to Plains before booking.',
+      'Storage is very limited in Yoakum County; Lubbock warehouse options are typical.',
+      'Obtain multiple estimates from Lubbock providers — ranch moves can change labor requirements.',
+      'Confirm credentials for ranch moves and verify insurance for agricultural outbuildings.',
+    ],
+  },
+  coleman: {
+    marketNotes:
+      'Coleman County is rural Central Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Abilene and San Angelo regional providers may add travel fees for Coleman and remote Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss unpaved driveways before move day.',
+      'Verify explicit regional service to Coleman before booking.',
+      'Storage is very limited in Coleman County; Abilene or San Angelo facilities are typical.',
+      'Obtain multiple estimates — Abilene and San Angelo crews may price Coleman routes differently.',
+      'Confirm credentials for ranch moves and verify insurance for farm equipment.',
+    ],
+  },
+  hamilton: {
+    marketNotes:
+      'Hamilton County is rural Central Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Waco and Abilene regional providers may add travel fees for Hamilton and remote Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck access on county roads.',
+      'Verify explicit regional service to Hamilton before booking.',
+      'Storage is very limited in Hamilton County; Waco or Abilene facilities are typical.',
+      'Obtain multiple estimates — Waco and Abilene crews may price Hamilton routes differently.',
+      'Confirm credentials for ranch moves and discuss handling for agricultural outbuildings.',
+    ],
+  },
+  mcculloch: {
+    marketNotes:
+      'McCulloch County is rural Central Texas with Brady as the seat.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Angelo and Abilene regional providers may add travel fees for Brady and remote McCulloch County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss equipment needs for Heart of Texas ranch country.',
+      'Verify explicit regional service to Brady before booking.',
+      'Storage is very limited in McCulloch County; San Angelo or Abilene facilities are typical.',
+      'Obtain multiple estimates — regional travel time can affect hourly pricing.',
+      'Confirm credentials for ranch moves and verify insurance for detached structures.',
+    ],
+  },
+  jack: {
+    marketNotes:
+      'Jack County is rural North Central Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wichita Falls and Fort Worth regional providers may add travel fees for Jacksboro and remote Jack County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck access on county roads.',
+      'Verify explicit regional service to Jacksboro before booking.',
+      'Storage is very limited in Jack County; Wichita Falls or Fort Worth facilities are typical.',
+      'Obtain multiple estimates — Wichita Falls and Fort Worth crews may price Jack routes differently.',
+      'Confirm credentials for ranch moves and verify insurance for farm equipment.',
+    ],
+  },
+  kent: {
+    marketNotes:
+      'Kent County is one of Texas\'s least populous in West Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Abilene regional providers may add travel fees for Jayton and remote Kent County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm access for one of Texas\'s least populous counties.',
+      'Verify explicit regional service to Jayton before booking.',
+      'Storage is very limited in Kent County; Lubbock or Abilene facilities are typical.',
+      'Obtain multiple estimates — thin-market travel time can materially affect hourly pricing.',
+      'Confirm credentials for ranch moves, including USDOT/MC verification on FMCSA.gov.',
+    ],
+  },
+  'live-oak': {
+    marketNotes:
+      'Live Oak County is rural South Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Corpus Christi and San Antonio regional providers may add travel fees for George West and remote Live Oak County ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss unpaved driveways before move day.',
+      'Verify explicit regional service to George West before booking.',
+      'Storage is very limited in Live Oak County; Corpus Christi or San Antonio facilities are typical.',
+      'Obtain multiple estimates — Coastal Bend and San Antonio crews may price Live Oak routes differently.',
+      'Confirm credentials for ranch moves and verify insurance for detached structures.',
+    ],
+  },
+  mcmullen: {
+    marketNotes:
+      'McMullen County is one of Texas\'s least populous in South Texas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio and Corpus Christi regional providers may add travel fees for Tilden and remote McMullen County ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm access for one of Texas\'s least populous counties.',
+      'Verify explicit regional service to Tilden before booking.',
+      'Storage is very limited in McMullen County; San Antonio or Corpus Christi facilities are typical.',
+      'Obtain multiple estimates — thin-market travel time can materially affect hourly pricing.',
+      'Confirm credentials for ranch moves, including USDOT/MC verification on FMCSA.gov.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(
