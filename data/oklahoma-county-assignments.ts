@@ -71,6 +71,8 @@ const CURATED_OK_COUNTIES: Record<string, string[]> = {
     'college-hunks-tulsa-ok',
     'coleman-worldwide-tulsa-ok',
     'north-american-van-lines-tulsa-ok',
+    'oklahoma-premier-moving',
+    'oklahoma-pro-movers',
   ],
   wagoner: [
     'regional-wagoner-ok-movers',

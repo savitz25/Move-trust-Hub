@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -20,6 +20,31 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Alabama | 67/67 | 5 | 10 (cap 10) | 15 counties | `count-alabama-movers.ts`, `apply-alabama-mover-expansion.ts` |
 | Mississippi | 82/82 | 5 | 10 (cap 10) | 15 counties | `count-mississippi-movers.ts`, `apply-mississippi-mover-expansion.ts` |
 | Louisiana | 64/64 parishes | 5 | 10 (cap 10) | 15 parishes | `count-louisiana-movers.ts`, `apply-louisiana-mover-expansion.ts` |
+| Oklahoma | 77/77 | 3 (rural) | 8 (medium) / 10 (top 5) | 12 counties | `count-oklahoma-movers.ts` |
+
+### Oklahoma metro pools (`data/local-movers-seed.ts`)
+
+- `oklahoma-city-metro-ok` — Oklahoma City MSA (Oklahoma, Cleveland, Canadian, Pottawatomie, Logan, Grady, McClain)
+- `tulsa-metro-ok` — Tulsa MSA (Tulsa, Rogers, Wagoner, Creek, Osage, Washington, Mayes)
+- `lawton-metro-ok` — Lawton / Fort Sill military corridor (Comanche)
+- `stillwater-metro-ok` — Stillwater / Payne County (OSU)
+- `shawnee-metro-ok` — Shawnee / Pottawatomie
+- `muskogee-metro-ok`, `enid-metro-ok` — East/Northwest regional hubs
+- Rural pools: `regional-*-ok-movers` per remote county seat (Panhandle tier: min 3 movers)
+
+### Oklahoma tiered mover targets
+
+**Top 5 (10 movers):** `oklahoma`, `tulsa`, `cleveland`, `canadian`, `rogers`
+
+**Medium counties (8 movers):** all remaining non-rural counties
+
+**Rural tier (3 movers min):** `alfalfa`, `jefferson`, `coal`, `cotton`, `greer`, `beaver`, `dewey`, `grant`, `ellis`, `roger-mills`, `harper`, `harmon`, `cimarron`
+
+### Oklahoma sitemap priority 0.85 (12 counties)
+
+`oklahoma`, `tulsa`, `cleveland`, `canadian`, `rogers`, `comanche`, `payne`, `pottawatomie`, `muskogee`, `garfield`, `grady`, `wagoner`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/oklahoma.xml` (78 URLs: hub + 77 counties). Do **not** use `/sitemap-local/oklahoma.xml` (legacy path redirects to canonical).
 
 ### Louisiana metro pools (`data/local-movers-seed.ts`)
 
