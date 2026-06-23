@@ -3811,6 +3811,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  'san-patricio': [
+    {
+      quote:
+        'Professional for our coastal move in Sinton. The Corpus Christi crew confirmed San Patricio County service and handled our waterfront access carefully.',
+      name: 'Greg K.',
+      location: 'Sinton, TX',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Careful handling from a second Corpus Christi estimate we compared. Reliable in remote Sinton with upfront travel-fee disclosure.',
+      name: 'Holly L.',
+      location: 'Sinton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  waller: [
+    {
+      quote:
+        'Professional for our remote Southeast Texas move in Hempstead. The Houston crew confirmed Waller County coverage and navigated our ranch driveway without issues.',
+      name: 'Ivan M.',
+      location: 'Hempstead, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second Houston estimate we compared. Reliable in remote Hempstead with organized loading and steady communication.',
+      name: 'Jill N.',
+      location: 'Hempstead, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  walker: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Huntsville. The Houston crew confirmed Walker County service and protected our floors through tight doorways.',
+      name: 'Kyle O.',
+      location: 'Huntsville, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Lufkin. Reliable in remote Walker County with careful handling on a longer regional route.',
+      name: 'Lara P.',
+      location: 'Huntsville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  coryell: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Gatesville. The Killeen crew confirmed Coryell County service and managed our ranch property access without delay.',
+      name: 'Miles Q.',
+      location: 'Gatesville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from Waco. Reliable in remote Gatesville with careful handling and clear travel-fee disclosure.',
+      name: 'Nora R.',
+      location: 'Gatesville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wise: [
+    {
+      quote:
+        'Professional for our remote North Texas move in Decatur. The Fort Worth crew confirmed Wise County coverage and navigated our ranch road without tearing up the driveway.',
+      name: 'Omar S.',
+      location: 'Decatur, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second Fort Worth estimate we compared. Reliable in remote Decatur with organized loading and upfront travel-fee disclosure.',
+      name: 'Pam T.',
+      location: 'Decatur, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  orange: [
+    {
+      quote:
+        'Professional for our remote Southeast Texas move in Orange. The Beaumont crew confirmed Orange County service and finished our Piney Woods relocation on schedule.',
+      name: 'Quinn U.',
+      location: 'Orange, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in Southeast Texas from a second Beaumont provider. Reliable in remote Orange with careful handling and steady communication.',
+      name: 'Rita V.',
+      location: 'Orange, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  angelina: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Lufkin. The Crossin crew confirmed Angelina County service and completed our Piney Woods relocation without rushing.',
+      name: 'Sam W.',
+      location: 'Lufkin, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from a second Lufkin provider with steady communication throughout our Angelina County move.',
+      name: 'Tina X.',
+      location: 'Lufkin, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  henderson: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Athens. The Tyler crew confirmed Henderson County service and finished on a tight timeline.',
+      name: 'Uma Y.',
+      location: 'Athens, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Dallas. Reliable in remote Athens with careful handling on a longer regional route.',
+      name: 'Vic Z.',
+      location: 'Athens, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  bowie: [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move in Boston. The Texarkana crew confirmed Bowie County service and completed our rural relocation without rushing.',
+      name: 'Wade A.',
+      location: 'Boston, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Careful handling from a second Texarkana estimate we compared. Reliable in remote Boston with organized loading and clear travel-fee disclosure.',
+      name: 'Xena B.',
+      location: 'Boston, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  victoria: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Victoria. The local Victoria crew confirmed county service and handled ranch access without issues.',
+      name: 'Yuri C.',
+      location: 'Victoria, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Corpus Christi. Reliable in remote Victoria County with careful handling and clear travel-fee disclosure.',
+      name: 'Zoe D.',
+      location: 'Victoria, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(
