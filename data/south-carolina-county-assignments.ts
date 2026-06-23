@@ -24,6 +24,29 @@ const CURATED_SC_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-greenville',
     'college-hunks-moving-greenville',
   ],
+  florence: [
+    'two-men-and-a-truck-florence',
+    'coleman-worldwide-columbia',
+    'move-it-williams-florence',
+    'all-my-sons-myrtle-beach',
+    'smooth-move-charleston',
+    'college-hunks-moving-columbia',
+    'two-men-and-a-truck-columbia',
+  ],
+  lancaster: [
+    'two-men-and-a-truck-rock-hill',
+    'college-hunks-moving-charlotte',
+    'all-my-sons-rock-hill',
+    'two-men-and-a-truck-charlotte-nc',
+    'gentle-giants-moving-charlotte',
+  ],
+  sumter: [
+    'anderson-transfer-sumter',
+    'two-men-and-a-truck-columbia',
+    'jega-movers-columbia',
+    'gentlemen-movers-columbia',
+    'college-hunks-moving-columbia',
+  ],
 };
 
 export const southCarolinaCountyMoverAssignments: CountyMoverAssignment[] =

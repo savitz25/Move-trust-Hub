@@ -19,6 +19,9 @@ const SC_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'lexington',
   ],
   pickens: ['greenville', 'anderson', 'oconee', 'abbeville', 'laurens', 'greenwood'],
+  florence: ['darlington', 'marlboro', 'dillon', 'marion', 'sumter', 'williamsburg'],
+  lancaster: ['chester', 'york', 'union', 'kershaw', 'fairfield', 'richland'],
+  sumter: ['florence', 'darlington', 'lee', 'clarendon', 'calhoun', 'richland'],
 };
 
 export function getSouthCarolinaNearbyCounties(

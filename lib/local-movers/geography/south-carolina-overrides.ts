@@ -7,6 +7,9 @@ export const southCarolinaCountyOverrides: Partial<
   aiken: { seat: 'Aiken', metro: 'augusta-aiken-metro-sc' },
   dorchester: { seat: 'St. George', metro: 'charleston-metro-sc' },
   pickens: { seat: 'Pickens', metro: 'greenville-metro-sc' },
+  florence: { seat: 'Florence', metro: 'florence-metro-sc' },
+  lancaster: { seat: 'Lancaster', metro: 'charlotte-metro-sc' },
+  sumter: { seat: 'Sumter', metro: 'sumter-metro-sc' },
 };
 
 export function applySouthCarolinaCountyOverrides(

@@ -60,6 +60,57 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Greenville-area crews.',
       ],
     },
+    florence: {
+      marketNotes:
+        'Florence County is a major hub in the Pee Dee region with strong residential, commercial, and medical-related moving demand.',
+      costs: {
+        studioRange: '$600–$1,200',
+        familyRange: '$2,000–$4,600',
+        avgHourly: '$105–$155/hr for a 2-person crew',
+        note: 'Florence County pricing reflects Pee Dee hub demand, medical corridor access, and crew travel from Myrtle Beach and Columbia bases.',
+      },
+      tips: [
+        'Verify explicit coverage for Florence, Timmonsville, Lake City, and surrounding Pee Dee addresses before booking.',
+        'Local traffic and medical facility access impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes and medical equipment before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    lancaster: {
+      marketNotes:
+        'Lancaster County is a fast-growing suburban county in the Charlotte metro area with strong demand in Lancaster and Indian Land.',
+      costs: {
+        studioRange: '$650–$1,250',
+        familyRange: '$2,200–$4,800',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Lancaster County pricing reflects Charlotte-metro suburban growth, Indian Land new construction, and cross-border crew travel.',
+      },
+      tips: [
+        'Verify explicit coverage for Lancaster, Indian Land, and surrounding Lancaster County addresses before booking.',
+        'Charlotte-area traffic on I-77 and US-521 impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value suburban homes before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify credentials before signing.',
+      ],
+    },
+    sumter: {
+      marketNotes:
+        'Sumter County centers on Sumter with significant military influence from Shaw Air Force Base and steady residential turnover.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,300',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Sumter County pricing reflects military PCS seasonality, Shaw AFB corridor demand, and Midlands crew travel from Columbia.',
+      },
+      tips: [
+        'Military moves require specific experience — confirm PCS documentation and government billing familiarity for Shaw AFB relocations.',
+        'Verify explicit coverage for Sumter and surrounding Sumter County addresses before booking.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak seasons and military PCS windows.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Sumter and Columbia-area crews.',
+      ],
+    },
   };
 
 export function getSouthCarolinaCountyResearch(

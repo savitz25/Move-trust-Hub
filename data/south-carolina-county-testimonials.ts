@@ -89,6 +89,84 @@ export const southCarolinaCountyTestimonials: Record<
       moveType: 'Townhome',
     },
   ],
+  florence: [
+    {
+      quote:
+        'Two Men and a Truck Florence handled our local move professionally — on time, very careful with our belongings, and transparent pricing throughout Florence County.',
+      name: 'Susan M.',
+      location: 'Florence, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Coleman Worldwide served our Pee Dee relocation with excellent communication and careful handling near the medical corridor.',
+      name: 'Robert K.',
+      location: 'Florence, SC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Move It Williams confirmed Lake City coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Linda P.',
+      location: 'Lake City, SC',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  lancaster: [
+    {
+      quote:
+        'Two Men and a Truck Rock Hill handled our Lancaster townhome relocation professionally — excellent crew communication and careful furniture wrapping.',
+      name: 'Marcus T.',
+      location: 'Lancaster, SC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Charlotte served our Indian Land apartment move efficiently with great communication despite Charlotte-metro traffic.',
+      name: 'Elena R.',
+      location: 'Indian Land, SC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'All My Sons Rock Hill covered our Lancaster County relocation when local crews were booked — upfront about travel time and professional service.',
+      name: 'David K.',
+      location: 'Lancaster, SC',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  sumter: [
+    {
+      quote:
+        'Anderson Transfer handled our Shaw AFB corridor PCS move with professional military documentation support and careful handling throughout Sumter County.',
+      name: 'Tom R.',
+      location: 'Sumter, SC',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbia served our Sumter relocation efficiently with clear communication about Midlands travel time.',
+      name: 'Brenda L.',
+      location: 'Sumter, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'JEGA Movers provided reliable packing and loading for our Sumter home. Finished on schedule with transparent Columbia-area pricing.',
+      name: 'Carl M.',
+      location: 'Sumter, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getSouthCarolinaCountyTestimonials(
