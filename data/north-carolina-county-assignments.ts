@@ -26,6 +26,26 @@ const CURATED_NC_COUNTIES: Record<string, string[]> = {
     'move-and-go-charlotte',
     'make-a-move-charlotte',
   ],
+  guilford: [
+    'two-men-and-a-truck-greensboro',
+    'college-hunks-moving-greensboro',
+    'excel-moving-storage-greensboro',
+    'all-my-sons-greensboro',
+    'steele-vaughn-moving-greensboro',
+    'little-guys-movers-greensboro',
+    'miracle-movers-greensboro',
+    'marathon-moving-greensboro',
+  ],
+  forsyth: [
+    'two-men-and-a-truck-winston-salem',
+    'american-moving-hauling-winston-salem',
+    'todds-easy-moves-winston-salem',
+    'city-transfer-storage-winston-salem',
+    'college-hunks-moving-greensboro',
+    'all-my-sons-greensboro',
+    'excel-moving-storage-greensboro',
+    'miracle-movers-greensboro',
+  ],
 };
 
 export const northCarolinaCountyMoverAssignments: CountyMoverAssignment[] =

@@ -43,6 +43,40 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    guilford: {
+      marketNotes:
+        'Guilford County is a major Piedmont Triad hub with strong corporate, educational, and residential moving demand centered on Greensboro and High Point.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,300',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Guilford County pricing reflects Piedmont Triad growth, Greensboro and High Point suburban turnover, and I-40 and I-85 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Greensboro, High Point, and surrounding Guilford County areas before booking.',
+        'Triad highway traffic on I-40, I-85, and US-29 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes and corporate relocations before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    forsyth: {
+      marketNotes:
+        'Forsyth County is a key Piedmont Triad county with significant corporate, medical, and residential activity centered on Winston-Salem.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,300',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Forsyth County pricing reflects Winston-Salem metro demand, medical and corporate relocation volume, and Triad highway traffic on I-40 and US-52.',
+      },
+      tips: [
+        'Verify explicit coverage for Winston-Salem and surrounding Forsyth County areas before booking.',
+        'Triad traffic on I-40, US-52, and Business 40 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

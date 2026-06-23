@@ -6,6 +6,8 @@ export const northCarolinaCountyOverrides: Partial<
 > = {
   wake: { seat: 'Raleigh', metro: 'raleigh-triangle-metro-nc' },
   mecklenburg: { seat: 'Charlotte', metro: 'charlotte-metro-nc' },
+  guilford: { seat: 'Greensboro', metro: 'greensboro-high-point-metro-nc' },
+  forsyth: { seat: 'Winston-Salem', metro: 'winston-salem-triad-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(

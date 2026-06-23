@@ -11,6 +11,8 @@ const countyNameBySlug = new Map(ncCounties.map((c) => [c.slug, c.name]));
 const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   wake: ['durham', 'johnston', 'franklin', 'chatham', 'harnett', 'nash'],
   mecklenburg: ['union', 'gaston', 'cabarrus', 'iredell', 'lincoln', 'rowan'],
+  guilford: ['forsyth', 'alamance', 'randolph', 'rockingham', 'davidson'],
+  forsyth: ['guilford', 'davidson', 'davie', 'yadkin', 'surry', 'stokes'],
 };
 
 export function getNorthCarolinaNearbyCounties(

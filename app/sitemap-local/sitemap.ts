@@ -79,6 +79,8 @@ const GA_HIGH_TRAFFIC_COUNTIES = new Set([
 /** High-traffic SC counties — sitemap priority 0.85 */
 /** High-traffic NC counties — sitemap priority 0.85 */
 const NC_HIGH_TRAFFIC_COUNTIES = new Set([
+  'forsyth',
+  'guilford',
   'mecklenburg',
   'wake',
 ]);
