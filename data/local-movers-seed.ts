@@ -7065,7 +7065,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 90,
     shortDescription:
-      'Family-owned Valdosta mover serving Atkinson, Berrien, and South Georgia with local and long-distance service.',
+      'Family-owned Valdosta mover serving Lowndes County, Atkinson, Berrien, and South Georgia with local and long-distance service.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '4270090',

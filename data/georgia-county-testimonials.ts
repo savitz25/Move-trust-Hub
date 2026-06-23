@@ -1411,6 +1411,32 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  lowndes: [
+    {
+      quote:
+        'Perez Moving Co handled our Valdosta townhome relocation professionally — excellent crew communication, careful furniture wrapping, and transparent pricing throughout Lowndes County.',
+      name: 'Marcus T.',
+      location: 'Valdosta, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Mudanza Moving provided reliable packing and labor for our VSU-area apartment move. They finished on schedule despite heavy Bemiss Road traffic.',
+      name: 'Elena R.',
+      location: 'Valdosta, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'HHG Movers traveled from Albany and served our Lake Park home move with upfront travel-fee disclosure and careful handling. Solid option for South Georgia relocations.',
+      name: 'David K.',
+      location: 'Lake Park, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

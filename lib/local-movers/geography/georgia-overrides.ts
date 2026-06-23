@@ -58,6 +58,7 @@ export const georgiaCountyOverrides: Partial<
   bleckley: { seat: 'Cochran', metro: 'macon-metro-ga' },
   brantley: { seat: 'Nahunta', metro: 'savannah-metro-ga' },
   houston: { seat: 'Perry', metro: 'macon-metro-ga' },
+  lowndes: { seat: 'Valdosta', metro: 'valdosta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -152,7 +152,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   fayette: {
     marketNotes:
-      'Fayette County is an affluent south-metro suburb centered on Fayetteville and Peachtree City with golf-cart communities, executive homes, and steady residential moving demand.',
+      'Fayette County is an affluent suburban county south of Atlanta with Fayetteville as the seat, plus Peachtree City golf-cart communities and executive-home demand.',
     costs: {
       studioRange: '$600–$1,200',
       familyRange: '$2,000–$4,500',
@@ -288,7 +288,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   walton: {
     marketNotes:
-      'Walton County is an east-metro suburb with Monroe and Loganville serving growing families between Gwinnett, Rockdale, and Oconee counties.',
+      'Walton County is a suburban and rural county east of Atlanta with Monroe as the seat and growing family demand in Loganville and Social Circle.',
     costs: {
       studioRange: '$600–$1,200',
       familyRange: '$2,000–$4,500',
@@ -392,7 +392,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   bartow: {
     marketNotes:
-      'Bartow County includes Cartersville with industrial and residential growth along the I-75 northwest corridor between Atlanta and Chattanooga.',
+      'Bartow County includes Cartersville with industrial and suburban growth along the I-75 northwest corridor between Atlanta and Chattanooga.',
     costs: {
       studioRange: '$600–$1,200',
       familyRange: '$2,000–$4,500',
@@ -932,6 +932,23 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance and valuation for high-value homes in newer Warner Robins subdivisions.',
       'Book early for peak summer PCS and month-end lease turnover near Robins AFB.',
       'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Macon and Middle Georgia crews.',
+    ],
+  },
+  lowndes: {
+    marketNotes:
+      'Lowndes County centers on Valdosta in South Georgia with university, Moody AFB, and steady residential turnover across the I-75 corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lowndes County pricing reflects Valdosta suburban demand, VSU move-in seasonality, and South Georgia crew travel from Albany bases.',
+    },
+    tips: [
+      'Verify explicit coverage for Valdosta, Lake Park, and surrounding Lowndes County addresses before booking.',
+      'Local traffic on I-75 and Bemiss Road impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons, university move-in windows, and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Valdosta and Albany-area crews.',
     ],
   },
 };
