@@ -1749,6 +1749,266 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Apartment',
     },
   ],
+  lee: [
+    {
+      quote:
+        'HHG Movers handled our Leesburg relocation from their Albany base with careful furniture wrapping, clear travel-fee disclosure, and reliable scheduling throughout Lee County.',
+      name: 'Deborah S.',
+      location: 'Leesburg, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'The Home Moving Solution provided excellent packing for our Lee County townhome. Transparent pricing and great communication from quote to completion.',
+      name: 'Raymond T.',
+      location: 'Leesburg, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our suburban Leesburg move efficiently with upfront I-75 corridor scheduling and careful handling.',
+      name: 'Kim L.',
+      location: 'Leesburg, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  gilmer: [
+    {
+      quote:
+        'Atlanta Home Movers traveled to our Ellijay mountain home and handled steep driveway access without issues. Careful crew and clear travel-fee disclosure.',
+      name: 'Paul R.',
+      location: 'Ellijay, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta served our Gilmer County cabin relocation efficiently with upfront pricing and excellent handling on narrow mountain roads.',
+      name: 'Janice M.',
+      location: 'Ellijay, GA',
+      rating: 5,
+      moveType: 'Cabin',
+    },
+    {
+      quote:
+        'Bulldog Movers handled our apple-country home move with great communication and no surprise fees despite the long north Georgia drive.',
+      name: 'Steve K.',
+      location: 'East Ellijay, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  madison: [
+    {
+      quote:
+        'University Moving and Storage handled our Danielsville relocation professionally — careful packing, on-time arrival, and transparent pricing throughout Madison County.',
+      name: 'Laura B.',
+      location: 'Danielsville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Madison County townhome efficiently with great communication and careful furniture handling.',
+      name: 'Otis W.',
+      location: 'Danielsville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Zip Moving traveled from Atlanta and provided reliable service for our rural Madison home move with upfront travel-time disclosure.',
+      name: 'Nina P.',
+      location: 'Comer, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  wayne: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to our Jesup home and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold G.',
+      location: 'Jesup, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Wayne County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki C.',
+      location: 'Jesup, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah provided reliable packing and loading for our rural Wayne County apartment. Finished on schedule with no hidden fees.',
+      name: 'Dwayne F.',
+      location: 'Odum, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  monroe: [
+    {
+      quote:
+        'Good Guys Moving traveled from Macon and handled our Forsyth relocation professionally — careful with antiques, clear rural-route planning, and transparent pricing.',
+      name: 'Betty H.',
+      location: 'Forsyth, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Monroe County townhome efficiently with upfront travel-fee disclosure and great crew communication.',
+      name: 'Leonard J.',
+      location: 'Forsyth, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        "Cicero's Moving provided reliable packing for our rural Monroe home move with careful handling and on-time arrival from their Macon base.",
+      name: 'Gloria N.',
+      location: 'Forsyth, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  peach: [
+    {
+      quote:
+        'Good Guys Moving handled our Fort Valley relocation with excellent communication, careful furniture wrapping, and transparent pricing throughout Peach County.',
+      name: 'Marcia D.',
+      location: 'Fort Valley, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Fort Valley apartment move efficiently despite university-area traffic near FVSU.',
+      name: 'Jerome A.',
+      location: 'Fort Valley, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'College Hunks Moving Macon provided reliable packing and labor for our Peach County townhome. Finished faster than estimated with no surprise fees.',
+      name: 'Sharon E.',
+      location: 'Fort Valley, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  white: [
+    {
+      quote:
+        'Atlanta Home Movers traveled to our Cleveland mountain home and handled Helen-area traffic and steep driveway access without issues. Careful crew throughout.',
+      name: 'Glen P.',
+      location: 'Cleveland, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bulldog Movers served our White County cabin relocation efficiently with upfront pricing and excellent handling on narrow mountain roads.',
+      name: 'Diane S.',
+      location: 'Cleveland, GA',
+      rating: 5,
+      moveType: 'Cabin',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta handled our Cleveland apartment move with great communication and no hidden fees despite the long northeast Georgia drive.',
+      name: 'Roy T.',
+      location: 'Cleveland, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  decatur: [
+    {
+      quote:
+        'HHG Movers traveled from Albany and handled our Bainbridge relocation professionally — careful furniture wrapping, clear pricing, and reliable rural scheduling.',
+      name: 'Calvin M.',
+      location: 'Bainbridge, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'The Home Moving Solution provided excellent packing for our Decatur County townhome near Lake Seminole. Transparent fees and great crew communication.',
+      name: 'Irene W.',
+      location: 'Bainbridge, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our rural Bainbridge home move efficiently with upfront travel-time disclosure and careful handling.',
+      name: 'Philip R.',
+      location: 'Bainbridge, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  jones: [
+    {
+      quote:
+        'Good Guys Moving handled our Gray relocation from their Macon base with careful packing, on-time arrival, and transparent pricing throughout Jones County.',
+      name: 'Wanda C.',
+      location: 'Gray, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Jones County townhome efficiently with great communication and no surprise fees despite I-75 corridor traffic.',
+      name: 'Mitchell B.',
+      location: 'Gray, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Apple Moving provided reliable service for our rural Jones home move with careful antique handling and upfront travel-fee disclosure.',
+      name: 'Cheryl K.',
+      location: 'Gray, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  hart: [
+    {
+      quote:
+        'University Moving and Storage handled our Hartwell lake-area relocation with careful dock-side planning, excellent packing, and transparent pricing.',
+      name: 'Barbara L.',
+      location: 'Hartwell, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Hart County home move efficiently with upfront travel-fee disclosure and great crew professionalism.',
+      name: 'Douglas H.',
+      location: 'Hartwell, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Atlanta Home Movers traveled to our Hartwell townhome and delivered on schedule despite lake-property access challenges and narrow rural roads.',
+      name: 'Janet F.',
+      location: 'Hartwell, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

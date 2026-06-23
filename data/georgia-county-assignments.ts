@@ -410,6 +410,56 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'hhg-movers-south-georgia',
     'two-men-and-a-truck-thomasville',
   ],
+  lee: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  gilmer: [
+    'atlanta-home-movers',
+    'two-men-and-a-truck-atlanta',
+    'bulldog-movers-atlanta',
+  ],
+  madison: [
+    'university-moving-athens',
+    'two-men-and-a-truck-athens',
+    'zip-moving-atlanta',
+  ],
+  wayne: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'college-hunks-moving-savannah',
+  ],
+  monroe: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'cicero-moving-macon',
+  ],
+  peach: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'college-hunks-moving-macon',
+  ],
+  white: [
+    'atlanta-home-movers',
+    'bulldog-movers-atlanta',
+    'two-men-and-a-truck-atlanta',
+  ],
+  decatur: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  jones: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'apple-moving-macon',
+  ],
+  hart: [
+    'university-moving-athens',
+    'two-men-and-a-truck-athens',
+    'atlanta-home-movers',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

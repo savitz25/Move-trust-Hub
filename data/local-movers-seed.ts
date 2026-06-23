@@ -7592,6 +7592,17 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'spirit-moves-us-macon',
     ],
   },
+  'athens-metro-ga': {
+    id: 'athens-metro-ga',
+    label: 'Athens / Northeast Georgia',
+    moverIds: [
+      'university-moving-athens',
+      'two-men-and-a-truck-athens',
+      'zip-moving-atlanta',
+      'atlanta-home-movers',
+      'bulldog-movers-atlanta',
+    ],
+  },
   'valdosta-metro-ga': {
     id: 'valdosta-metro-ga',
     label: 'Valdosta / South Georgia',

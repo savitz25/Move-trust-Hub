@@ -545,7 +545,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   haralson: {
     marketNotes:
-      'Haralson County is a rural west-metro county with Buchanan as the seat and limited dedicated local mover presence.',
+      'Haralson County is rural west of Atlanta with Buchanan as the seat and limited dedicated local mover presence.',
     costs: {
       studioRange: '$600–$1,200+',
       familyRange: '$2,000–$4,800',
@@ -1153,6 +1153,176 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance and valuation for high-value historic homes before booking.',
       'Book early for peak seasons and month-end lease turnover.',
       'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Thomasville and Valdosta-area crews.',
+    ],
+  },
+  lee: {
+    marketNotes:
+      'Lee County is suburban and rural near Albany with Leesburg as the seat and steady residential growth along the I-75 southwest corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lee County pricing reflects Albany-metro crew travel, suburban Leesburg growth, and rural property access south of Dougherty County.',
+    },
+    tips: [
+      'Verify explicit coverage for Leesburg and surrounding Lee County addresses before booking.',
+      'Local traffic on US-19 and the I-75 corridor impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Albany-area crews.',
+    ],
+  },
+  gilmer: {
+    marketNotes:
+      'Gilmer County is rural and mountainous in North Georgia with Ellijay as the seat and apple-country residential demand.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Gilmer moves reflect mountain-road access, limited storage, and travel from Atlanta or Dalton north-metro bases.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm truck size and route feasibility before booking.',
+      'Verify explicit regional service to Ellijay and outer Gilmer addresses.',
+      'Storage is very limited locally — plan interim storage with Atlanta or Gainesville providers if needed.',
+      'Obtain multiple written estimates and compare travel fees from north-metro bases.',
+      'Confirm credentials and insurance for rural and mountain relocations.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison County is rural Northeast Georgia with Danielsville as the seat between Athens and the South Carolina border.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Madison County pricing reflects rural driveway access, limited storage, and travel from Athens or Atlanta northeast-ring crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Danielsville and outer Madison properties.',
+      'Verify explicit regional service to Danielsville before booking.',
+      'Storage is very limited locally — coordinate with Athens or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Northeast Georgia relocations.',
+    ],
+  },
+  wayne: {
+    marketNotes:
+      'Wayne County includes Jesup in Southeast Georgia with rural residential and industrial corridor demand along US-301.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Wayne County pricing reflects rural coastal-plain access and travel from Savannah or Brunswick bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Jesup and outer Wayne properties.',
+      'Verify explicit regional service to Jesup before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is rural Central Georgia with Forsyth as the seat between Macon and the Fall Line communities.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects rural property access, limited storage, and travel from Macon and Middle Georgia bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Forsyth and outer Monroe addresses.',
+      'Verify explicit regional service to Forsyth before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  peach: {
+    marketNotes:
+      'Peach County includes Fort Valley in Central Georgia with rural residential demand and Fort Valley State University influence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Peach County pricing reflects Fort Valley suburban demand, university turnover, and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm property access for Fort Valley and outer Peach addresses.',
+      'Verify explicit regional service to Fort Valley before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  white: {
+    marketNotes:
+      'White County is rural and mountainous in Northeast Georgia with Cleveland as the seat near Helen and the North Georgia mountains.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'White County pricing reflects mountain-road access, tourist-season demand, and travel from Gainesville or Atlanta north-metro bases.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm truck size and route feasibility before booking.',
+      'Verify explicit regional service to Cleveland and outer White County addresses.',
+      'Storage is very limited locally — plan with Gainesville or Atlanta providers if needed.',
+      'Obtain multiple written estimates and compare travel fees.',
+      'Confirm credentials and insurance for rural and mountain relocations.',
+    ],
+  },
+  decatur: {
+    marketNotes:
+      'Decatur County includes Bainbridge in Southwest Georgia with rural residential demand along the Florida border and Lake Seminole corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Decatur County pricing reflects rural South Georgia access, limited mover competition, and travel from Albany or Tallahassee-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Bainbridge and outer Decatur properties.',
+      'Verify explicit regional service to Bainbridge before booking.',
+      'Storage is very limited locally — plan with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  jones: {
+    marketNotes:
+      'Jones County is rural Central Georgia with Gray as the seat between Macon and the northeast metro fringe.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jones County pricing reflects rural property access, I-75 corridor traffic, and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Gray and outer Jones addresses.',
+      'Verify explicit regional service to Gray before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  hart: {
+    marketNotes:
+      'Hart County is rural Northeast Georgia with Hartwell as the seat and lake-influenced residential demand along Lake Hartwell.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Hart County pricing reflects lake-property access, rural driveways, and travel from Athens or Atlanta northeast-ring crews.',
+    },
+    tips: [
+      'Lake properties have access challenges — confirm dock, driveway, and steep-grade feasibility before booking.',
+      'Verify explicit regional service to Hartwell and surrounding Hart County addresses.',
+      'Storage is very limited locally — plan with Athens or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural and lake-area relocations.',
     ],
   },
 };

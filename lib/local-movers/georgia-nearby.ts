@@ -78,6 +78,16 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   habersham: ['hall', 'banks', 'white', 'rabun', 'stephens', 'lumpkin'],
   colquitt: ['thomas', 'brooks', 'cook', 'tift', 'mitchell', 'worth'],
   thomas: ['brooks', 'colquitt', 'grady', 'mitchell', 'decatur', 'lowndes'],
+  lee: ['dougherty', 'worth', 'terrell', 'mitchell', 'sumter', 'crisp'],
+  gilmer: ['fannin', 'pickens', 'dawson', 'murray', 'gordon', 'lumpkin'],
+  madison: ['clarke', 'oglethorpe', 'elbert', 'jackson', 'franklin', 'banks'],
+  wayne: ['pierce', 'appling', 'brantley', 'ware', 'glynn', 'mcintosh'],
+  monroe: ['bibb', 'jones', 'peach', 'crawford', 'lamar', 'upson'],
+  peach: ['houston', 'bibb', 'crawford', 'taylor', 'upson', 'monroe'],
+  white: ['habersham', 'hall', 'lumpkin', 'towns', 'union', 'banks'],
+  decatur: ['grady', 'seminole', 'miller', 'mitchell', 'thomas', 'early'],
+  jones: ['bibb', 'monroe', 'putnam', 'jasper', 'twiggs', 'crawford'],
+  hart: ['franklin', 'madison', 'elbert', 'banks', 'oconee', 'stephens'],
 };
 
 export function getGeorgiaNearbyCounties(

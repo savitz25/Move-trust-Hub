@@ -71,6 +71,16 @@ export const georgiaCountyOverrides: Partial<
   habersham: { seat: 'Clarkesville', metro: 'atlanta-metro-ga' },
   colquitt: { seat: 'Moultrie', metro: 'albany-metro-ga' },
   thomas: { seat: 'Thomasville', metro: 'valdosta-metro-ga' },
+  lee: { seat: 'Leesburg', metro: 'albany-metro-ga' },
+  gilmer: { seat: 'Ellijay', metro: 'atlanta-metro-ga' },
+  madison: { seat: 'Danielsville', metro: 'athens-metro-ga' },
+  wayne: { seat: 'Jesup', metro: 'savannah-metro-ga' },
+  monroe: { seat: 'Forsyth', metro: 'macon-metro-ga' },
+  peach: { seat: 'Fort Valley', metro: 'macon-metro-ga' },
+  white: { seat: 'Cleveland', metro: 'atlanta-metro-ga' },
+  decatur: { seat: 'Bainbridge', metro: 'albany-metro-ga' },
+  jones: { seat: 'Gray', metro: 'macon-metro-ga' },
+  hart: { seat: 'Hartwell', metro: 'athens-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {
