@@ -315,6 +315,292 @@ export const louisianaCountyTestimonials: Record<string, CountyTestimonialEntry[
         moveType: 'Apartment',
       },
     ],
+    rapides: [
+      {
+        quote:
+          'Two Men and a Truck Alexandria handled our Pineville relocation professionally — on time, efficient, and extremely careful throughout Rapides Parish.',
+        name: 'Oscar P.',
+        location: 'Pineville, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Louisiana Premier Moving served our Central Louisiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Patricia Q.',
+        location: 'Alexandria, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons confirmed Rapides Parish coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Quinn R.',
+        location: 'Alexandria, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    terrebonne: [
+      {
+        quote:
+          'Two Men and a Truck Houma handled our bayou-area relocation professionally — on time, efficient, and extremely careful throughout Terrebonne Parish.',
+        name: 'Rachel S.',
+        location: 'Houma, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Thibodaux served our coastal move efficiently — fast, professional, and reliable with careful bayou-property handling.',
+        name: 'Steve T.',
+        location: 'Houma, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Atmosphere Movers confirmed Terrebonne Parish coverage and delivered excellent Baton Rouge metro service — professional crew with no surprise fees.',
+        name: 'Teresa U.',
+        location: 'Bayou Cane, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lafourche: [
+      {
+        quote:
+          'Two Men and a Truck Thibodaux handled our Raceland relocation professionally — on time, efficient, and extremely careful throughout Lafourche Parish.',
+        name: 'Ulysses V.',
+        location: 'Raceland, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Houma served our bayou move efficiently — fast, professional, and reliable with careful coastal-property handling.',
+        name: 'Vera W.',
+        location: 'Thibodaux, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide confirmed Lafourche Parish coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Walter X.',
+        location: 'Lockport, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    'st-landry': [
+      {
+        quote:
+          'Regional Opelousas providers handled our Eunice relocation professionally — on time, efficient, and extremely careful throughout St. Landry Parish.',
+        name: 'Xavier Y.',
+        location: 'Eunice, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Lafayette served our Acadiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Yvonne Z.',
+        location: 'Opelousas, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Acadiana Moving confirmed St. Landry Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Zach A.',
+        location: 'Opelousas, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    iberia: [
+      {
+        quote:
+          'Regional New Iberia providers handled our relocation professionally — on time, efficient, and extremely careful throughout Iberia Parish.',
+        name: 'Amy B.',
+        location: 'New Iberia, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Lafayette served our port-area move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Brian C.',
+        location: 'New Iberia, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons confirmed Iberia Parish coverage and delivered excellent Acadiana service — professional crew with transparent pricing.',
+        name: 'Cindy D.',
+        location: 'Jeanerette, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    vermilion: [
+      {
+        quote:
+          'Regional Abbeville providers handled our coastal relocation professionally — on time, efficient, and extremely careful throughout Vermilion Parish.',
+        name: 'Derek E.',
+        location: 'Abbeville, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Lafayette served our Acadiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Ella F.',
+        location: 'Abbeville, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Acadiana Moving confirmed Vermilion Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Frank G.',
+        location: 'Kaplan, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    acadia: [
+      {
+        quote:
+          'Regional Crowley providers handled our relocation professionally — on time, efficient, and extremely careful throughout Acadia Parish.',
+        name: 'Grace H.',
+        location: 'Crowley, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Lafayette served our Acadiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Harold I.',
+        location: 'Crowley, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'College Hunks confirmed Acadia Parish coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Iris J.',
+        location: 'Rayne, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    'st-martin': [
+      {
+        quote:
+          'Regional Breaux Bridge providers handled our relocation professionally — on time, efficient, and extremely careful throughout St. Martin Parish.',
+        name: 'Jack K.',
+        location: 'Breaux Bridge, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Lafayette served our Acadiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Kelly L.',
+        location: 'St. Martinville, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide confirmed St. Martin Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Leo M.',
+        location: 'Breaux Bridge, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    'st-charles': [
+      {
+        quote:
+          'Regional Luling providers handled our Destrehan relocation professionally — on time, efficient, and extremely careful throughout St. Charles Parish.',
+        name: 'Mia N.',
+        location: 'Destrehan, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Metairie served our river-corridor move efficiently — fast, professional, and reliable with careful suburban-home handling.',
+        name: 'Noah O.',
+        location: 'Luling, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons confirmed St. Charles Parish coverage and delivered excellent Greater New Orleans service — professional crew with transparent pricing.',
+        name: 'Olivia P.',
+        location: 'Norco, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lincoln: [
+      {
+        quote:
+          'Regional Ruston providers handled our Louisiana Tech area relocation professionally — on time, efficient, and extremely careful throughout Lincoln Parish.',
+        name: 'Paul Q.',
+        location: 'Ruston, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Monroe served our Northeast Louisiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Quinn R.',
+        location: 'Ruston, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons confirmed Lincoln Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Rita S.',
+        location: 'Ruston, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    'st-mary': [
+      {
+        quote:
+          'Regional Morgan City providers handled our Patterson relocation professionally — on time, efficient, and extremely careful throughout St. Mary Parish.',
+        name: 'Sam T.',
+        location: 'Patterson, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Houma served our coastal move efficiently — fast, professional, and reliable with careful energy-sector property handling.',
+        name: 'Tina U.',
+        location: 'Morgan City, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Acadiana Moving confirmed St. Mary Parish coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Victor V.',
+        location: 'Franklin, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getLouisianaCountyTestimonials(

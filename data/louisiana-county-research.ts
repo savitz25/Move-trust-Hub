@@ -212,6 +212,193 @@ export const louisianaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  rapides: {
+    marketNotes:
+      'Rapides Parish is the economic center of Central Louisiana with strong military (Fort Johnson), healthcare, and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Rapides Parish pricing reflects Alexandria metro demand, Fort Johnson relocation volume, and regional crews from Shreveport and Monroe providers.',
+    },
+    tips: [
+      'Verify coverage for Alexandria, Pineville, and surrounding areas before booking.',
+      'Military and regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  terrebonne: {
+    marketNotes:
+      'Terrebonne Parish is a major coastal and energy-industry parish with strong residential and commercial demand.',
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Terrebonne Parish pricing reflects Houma bayou and coastal demand, energy-sector relocation volume, and regional crews from Baton Rouge and Lafourche providers.',
+    },
+    tips: [
+      'Verify coverage for Houma and surrounding bayou areas before booking.',
+      'Coastal and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lafourche: {
+    marketNotes:
+      'Lafourche Parish is a key bayou parish with strong energy, fishing, and residential demand.',
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Lafourche Parish pricing reflects Thibodaux bayou demand, energy and fishing-industry relocation volume, and shared Houma–Thibodaux metro crews.',
+    },
+    tips: [
+      'Verify coverage for Thibodaux, Raceland, and Lockport areas before booking.',
+      'Bayou and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-landry': {
+    marketNotes:
+      'St. Landry Parish is a culturally rich parish in Acadiana with strong residential, agricultural, and tourism demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'St. Landry Parish pricing reflects Opelousas and Eunice regional demand and cross-coverage from Lafayette and Baton Rouge Acadiana providers.',
+    },
+    tips: [
+      'Verify coverage for Opelousas, Eunice, and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  iberia: {
+    marketNotes:
+      'Iberia Parish is a key Acadiana parish with strong energy, port, and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Iberia Parish pricing reflects New Iberia port and energy demand, coastal scheduling constraints, and Lafayette metro cross-coverage.',
+    },
+    tips: [
+      'Verify coverage for New Iberia and surrounding areas before booking.',
+      'Industrial and port traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  vermilion: {
+    marketNotes:
+      'Vermilion Parish is a coastal parish in Acadiana with strong fishing, energy, and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Vermilion Parish pricing reflects Abbeville coastal demand, fishing and energy-sector relocation volume, and Lafayette metro cross-coverage.',
+    },
+    tips: [
+      'Verify coverage for Abbeville and surrounding areas before booking.',
+      'Coastal and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  acadia: {
+    marketNotes:
+      'Acadia Parish is a key Acadiana parish with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Acadia Parish pricing reflects Crowley agricultural-community demand and Lafayette metro cross-coverage from regional Acadiana providers.',
+    },
+    tips: [
+      'Verify coverage for Crowley and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-martin': {
+    marketNotes:
+      'St. Martin Parish is a growing parish in Acadiana with strong residential and cultural demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'St. Martin Parish pricing reflects Breaux Bridge and St. Martinville demand and Lafayette metro cross-coverage from regional Acadiana providers.',
+    },
+    tips: [
+      'Verify coverage for St. Martinville, Breaux Bridge, and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-charles': {
+    marketNotes:
+      'St. Charles Parish is a growing suburban parish along the Mississippi River with strong petrochemical and residential demand.',
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'St. Charles Parish pricing reflects Luling and Destrehan river-corridor demand, petrochemical-industry relocation volume, and Greater New Orleans metro cross-coverage.',
+    },
+    tips: [
+      'Verify coverage for Luling, Destrehan, and Norco areas before booking.',
+      'River road and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln Parish is anchored by Louisiana Tech University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lincoln Parish pricing reflects Ruston university demand, student and faculty relocation volume, and regional crews from Monroe and Shreveport providers.',
+    },
+    tips: [
+      'Verify coverage for Ruston and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-mary': {
+    marketNotes:
+      'St. Mary Parish is a key coastal and energy-industry parish with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'St. Mary Parish pricing reflects Morgan City and Franklin coastal demand, energy-sector relocation volume, and cross-coverage from Houma, Thibodaux, and Lafayette providers.',
+    },
+    tips: [
+      'Verify coverage for Morgan City, Franklin, and Patterson areas before booking.',
+      'Coastal and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getLouisianaCountyResearch(

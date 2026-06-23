@@ -129,6 +129,17 @@ const LA_HIGH_TRAFFIC_PARISHES = new Set([
   'tangipahoa',
   'ascension',
   'bossier',
+  'rapides',
+  'terrebonne',
+  'lafourche',
+  'st-landry',
+  'iberia',
+  'vermilion',
+  'acadia',
+  'st-martin',
+  'st-charles',
+  'lincoln',
+  'st-mary',
 ]);
 
 /** High-traffic MS counties — sitemap priority 0.85 */

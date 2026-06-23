@@ -16,6 +16,17 @@ export const louisianaCountyOverrides: Partial<
   tangipahoa: { seat: 'Amite City', metro: 'hammond-metro-la' },
   ascension: { seat: 'Donaldsonville', metro: 'baton-rouge-metro-la' },
   bossier: { seat: 'Benton', metro: 'shreveport-bossier-metro-la' },
+  rapides: { seat: 'Alexandria', metro: 'alexandria-metro-la' },
+  terrebonne: { seat: 'Houma', metro: 'houma-bayou-metro-la' },
+  lafourche: { seat: 'Thibodaux', metro: 'houma-bayou-metro-la' },
+  'st-landry': { seat: 'Opelousas', metro: 'lafayette-metro-la' },
+  iberia: { seat: 'New Iberia', metro: 'lafayette-metro-la' },
+  vermilion: { seat: 'Abbeville', metro: 'lafayette-metro-la' },
+  acadia: { seat: 'Crowley', metro: 'lafayette-metro-la' },
+  'st-martin': { seat: 'St. Martinville', metro: 'lafayette-metro-la' },
+  'st-charles': { seat: 'Hahnville', metro: 'new-orleans-metro-la' },
+  lincoln: { seat: 'Ruston', metro: 'ruston-metro-la' },
+  'st-mary': { seat: 'Franklin', metro: 'morgan-city-metro-la' },
 };
 
 export function applyLouisianaCountyOverrides(county: LocalCounty): LocalCounty {
