@@ -7,10 +7,12 @@ import {
   GEORGIA_COUNTY_CONTENT_UPDATED,
   SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
+  TENNESSEE_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
+import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
 import {
   buildCountyLabel,
@@ -57,6 +59,12 @@ function resolveContentModified(county: LocalCounty): string {
     getNorthCarolinaCountyResearch(county.slug)
   ) {
     return NORTH_CAROLINA_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'tennessee' &&
+    getTennesseeCountyResearch(county.slug)
+  ) {
+    return TENNESSEE_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

@@ -12,6 +12,8 @@ import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-res
 import { getSouthCarolinaCountyTestimonials } from '@/data/south-carolina-county-testimonials';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
 import { getNorthCarolinaCountyTestimonials } from '@/data/north-carolina-county-testimonials';
+import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
+import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
 import { getTexasCountyTestimonials } from '@/data/texas-county-testimonials';
 import { testimonials } from '@/lib/trust/trust-data';
@@ -186,6 +188,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'north-carolina') {
     return getNorthCarolinaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'tennessee') {
+    return getTennesseeCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -223,6 +228,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'north-carolina') {
     const curated = getNorthCarolinaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'tennessee') {
+    const curated = getTennesseeCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -297,6 +306,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getNorthCarolinaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'tennessee') {
+    const curated = getTennesseeCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -354,6 +367,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'north-carolina') {
     const curated = getNorthCarolinaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'tennessee') {
+    const curated = getTennesseeCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

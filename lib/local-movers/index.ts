@@ -6,6 +6,7 @@ import { newYorkCountyMoverAssignments } from '@/data/new-york-county-assignment
 import { georgiaCountyMoverAssignments } from '@/data/georgia-county-assignments';
 import { southCarolinaCountyMoverAssignments } from '@/data/south-carolina-county-assignments';
 import { northCarolinaCountyMoverAssignments } from '@/data/north-carolina-county-assignments';
+import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
 import { fullMetroPools, fullMoversCatalog } from '@/lib/local-movers/catalog';
@@ -24,6 +25,7 @@ const curatedAssignmentStateSlugs = new Set([
   'georgia',
   'south-carolina',
   'north-carolina',
+  'tennessee',
 ]);
 const generatedAssignmentsWithoutCurated = generatedCountyAssignments.filter(
   (entry) => !curatedAssignmentStateSlugs.has(entry.stateSlug)
@@ -38,6 +40,7 @@ const allCountyAssignments = [
   ...georgiaCountyMoverAssignments,
   ...southCarolinaCountyMoverAssignments,
   ...northCarolinaCountyMoverAssignments,
+  ...tennesseeCountyMoverAssignments,
   ...generatedAssignmentsWithoutCurated,
   ...countyMoverAssignments,
 ];

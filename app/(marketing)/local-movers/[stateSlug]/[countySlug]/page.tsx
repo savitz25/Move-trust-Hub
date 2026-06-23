@@ -11,10 +11,12 @@ import {
   GEORGIA_COUNTY_CONTENT_UPDATED,
   SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
+  TENNESSEE_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
+import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { getCaliforniaNearbyCounties } from '@/lib/local-movers/california-nearby';
 import { getFloridaNearbyCounties } from '@/lib/local-movers/florida-nearby';
@@ -23,6 +25,7 @@ import { getNewYorkNearbyCounties } from '@/lib/local-movers/new-york-nearby';
 import { getGeorgiaNearbyCounties } from '@/lib/local-movers/georgia-nearby';
 import { getSouthCarolinaNearbyCounties } from '@/lib/local-movers/south-carolina-nearby';
 import { getNorthCarolinaNearbyCounties } from '@/lib/local-movers/north-carolina-nearby';
+import { getTennesseeNearbyCounties } from '@/lib/local-movers/tennessee-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -113,7 +116,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                   : stateSlug === 'north-carolina' &&
                       getNorthCarolinaCountyResearch(countySlug)
                     ? getNorthCarolinaNearbyCounties(countySlug)
-                    : [];
+                    : stateSlug === 'tennessee' &&
+                        getTennesseeCountyResearch(countySlug)
+                      ? getTennesseeNearbyCounties(countySlug)
+                      : [];
 
   return (
     <>
@@ -250,7 +256,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                           : stateSlug === 'north-carolina' &&
                               getNorthCarolinaCountyResearch(countySlug)
                             ? NORTH_CAROLINA_COUNTY_CONTENT_UPDATED
-                            : undefined
+                            : stateSlug === 'tennessee' &&
+                                getTennesseeCountyResearch(countySlug)
+                              ? TENNESSEE_COUNTY_CONTENT_UPDATED
+                              : undefined
           }
         />
 
