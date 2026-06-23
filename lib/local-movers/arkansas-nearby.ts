@@ -45,6 +45,20 @@ const AR_COUNTY_NEIGHBORS: Record<string, string[]> = {
   clark: ['hot-spring', 'garland', 'pike', 'hempstead', 'nevada', 'dallas'],
   yell: ['pope', 'logan', 'johnson', 'perry', 'garland', 'montgomery'],
   polk: ['scott', 'sebastian', 'howard', 'montgomery', 'crawford', 'logan'],
+  grant: ['saline', 'jefferson', 'hot-spring', 'pulaski', 'dallas', 'clark'],
+  hempstead: ['nevada', 'lafayette', 'columbia', 'little-river', 'miller', 'pike'],
+  randolph: ['clay', 'greene', 'lawrence', 'sharp', 'independence', 'fulton'],
+  madison: ['washington', 'benton', 'newton', 'carroll', 'johnson', 'franklin'],
+  sharp: ['independence', 'izard', 'stone', 'randolph', 'fulton', 'cleburne'],
+  franklin: ['johnson', 'logan', 'crawford', 'sebastian', 'madison', 'pope'],
+  ashley: ['union', 'chicot', 'bradley', 'drew', 'grant', 'desha'],
+  marion: ['baxter', 'boone', 'newton', 'searcy', 'stone', 'fulton'],
+  drew: ['ashley', 'bradley', 'chicot', 'lincoln', 'jefferson', 'desha'],
+  jackson: ['independence', 'woodruff', 'poinsett', 'cross', 'sharp', 'lawrence'],
+  lawrence: ['randolph', 'sharp', 'greene', 'craighead', 'independence', 'jackson'],
+  'van-buren': ['cleburne', 'faulkner', 'stone', 'pope', 'conway', 'independence'],
+  cross: ['craighead', 'poinsett', 'mississippi', 'st-francis', 'jackson', 'woodruff'],
+  sevier: ['polk', 'howard', 'little-river', 'hempstead', 'pike', 'miller'],
 };
 
 export function getArkansasNearbyCounties(

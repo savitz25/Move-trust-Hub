@@ -168,6 +168,20 @@ const AR_HIGH_TRAFFIC_COUNTIES = new Set([
   'clark',
   'yell',
   'polk',
+  'grant',
+  'hempstead',
+  'randolph',
+  'madison',
+  'sharp',
+  'franklin',
+  'ashley',
+  'marion',
+  'drew',
+  'jackson',
+  'lawrence',
+  'van-buren',
+  'cross',
+  'sevier',
 ]);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */

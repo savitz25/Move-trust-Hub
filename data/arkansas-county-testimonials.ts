@@ -886,6 +886,370 @@ export const arkansasCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  grant: [
+    {
+      quote:
+        'Regional Sheridan providers handled our Grant County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Sue U.',
+      location: 'Sheridan, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Benton / Bryant confirmed Grant County coverage and delivered excellent southwest metro service — on time and extremely careful.',
+      name: 'Tom V.',
+      location: 'Sheridan, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Family Movers served our Sheridan move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Uma W.',
+      location: 'Sheridan, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  hempstead: [
+    {
+      quote:
+        'Regional Hope providers handled our Hempstead County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Vic X.',
+      location: 'Hope, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Texarkana providers confirmed Hempstead County coverage and delivered excellent southwest Arkansas service — professional crew with transparent pricing.',
+      name: 'Wade Y.',
+      location: 'Hope, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Regional Moving served our Hope move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Xena Z.',
+      location: 'Hope, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  randolph: [
+    {
+      quote:
+        'Regional Pocahontas providers handled our Randolph County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Yuri A.',
+      location: 'Pocahontas, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Jonesboro confirmed Randolph County coverage and delivered excellent northeast Arkansas service — on time and extremely careful.',
+      name: 'Zoe B.',
+      location: 'Pocahontas, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Regional Moving served our Pocahontas move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Adam C.',
+      location: 'Pocahontas, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  madison: [
+    {
+      quote:
+        'Regional Huntsville providers handled our Madison County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Beth D.',
+      location: 'Huntsville, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Bentonville confirmed Madison County coverage and delivered excellent Northwest Arkansas service — professional crew with careful handling.',
+      name: 'Carl E.',
+      location: 'Huntsville, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Local Lines served our Huntsville move efficiently — fast, professional, and reliable with transparent pricing.',
+      name: 'Dana F.',
+      location: 'Huntsville, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  sharp: [
+    {
+      quote:
+        'Regional Ash Flat providers handled our Sharp County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Evan G.',
+      location: 'Ash Flat, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Batesville providers confirmed Sharp County coverage and delivered excellent north Arkansas service — professional crew with transparent pricing.',
+      name: 'Faith H.',
+      location: 'Ash Flat, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Family Movers served our Ash Flat move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Glen I.',
+      location: 'Ash Flat, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  franklin: [
+    {
+      quote:
+        'Regional Ozark providers handled our Franklin County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Hope J.',
+      location: 'Ozark, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fort Smith confirmed Franklin County coverage and delivered excellent west Arkansas service — on time and extremely careful.',
+      name: 'Ivan K.',
+      location: 'Ozark, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Regional Moving served our Ozark move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Jane L.',
+      location: 'Ozark, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  ashley: [
+    {
+      quote:
+        'Regional Hamburg providers handled our Ashley County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Kyle M.',
+      location: 'Hamburg, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Pine Bluff providers confirmed Ashley County coverage and delivered excellent southeast Arkansas service — professional crew with transparent pricing.',
+      name: 'Lynn N.',
+      location: 'Hamburg, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Capital Movers served our Hamburg move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Mark O.',
+      location: 'Hamburg, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  marion: [
+    {
+      quote:
+        'Regional Yellville providers handled our Marion County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Nora P.',
+      location: 'Yellville, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Mountain Home providers confirmed Marion County coverage and delivered excellent north Arkansas service — on time and extremely careful.',
+      name: 'Owen Q.',
+      location: 'Yellville, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Regional Moving served our Yellville move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Pam R.',
+      location: 'Yellville, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  drew: [
+    {
+      quote:
+        'Regional Monticello providers handled our Drew County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Quinn S.',
+      location: 'Monticello, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons Little Rock confirmed Drew County coverage and delivered excellent southeast Arkansas service — professional crew with careful handling.',
+      name: 'Rex T.',
+      location: 'Monticello, AR',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Arkansas Regional Moving served our Monticello move efficiently — fast, professional, and reliable with transparent pricing.',
+      name: 'Sue U.',
+      location: 'Monticello, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  jackson: [
+    {
+      quote:
+        'Regional Newport providers handled our Jackson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Tom V.',
+      location: 'Newport, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Jonesboro confirmed Jackson County coverage and delivered excellent northeast Arkansas service — on time and extremely careful.',
+      name: 'Uma W.',
+      location: 'Newport, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Family Movers served our Newport move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Vic X.',
+      location: 'Newport, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lawrence: [
+    {
+      quote:
+        'Regional Walnut Ridge providers handled our Lawrence County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Wade Y.',
+      location: 'Walnut Ridge, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Jonesboro confirmed Lawrence County coverage and delivered excellent northeast Arkansas service — professional crew with transparent pricing.',
+      name: 'Xena Z.',
+      location: 'Walnut Ridge, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Regional Moving served our Walnut Ridge move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Yuri A.',
+      location: 'Walnut Ridge, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'van-buren': [
+    {
+      quote:
+        'Regional Clinton providers handled our Van Buren County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Zoe B.',
+      location: 'Clinton, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Conway confirmed Van Buren County coverage and delivered excellent north central Arkansas service — on time and extremely careful.',
+      name: 'Adam C.',
+      location: 'Clinton, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Family Movers served our Clinton move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Beth D.',
+      location: 'Clinton, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  cross: [
+    {
+      quote:
+        'Regional Wynne providers handled our Cross County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Carl E.',
+      location: 'Wynne, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Jonesboro confirmed Cross County coverage and delivered excellent east Arkansas service — professional crew with transparent pricing.',
+      name: 'Dana F.',
+      location: 'Wynne, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Regional Moving served our Wynne move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Evan G.',
+      location: 'Wynne, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  sevier: [
+    {
+      quote:
+        'Regional De Queen providers handled our Sevier County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Faith H.',
+      location: 'De Queen, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Texarkana providers confirmed Sevier County coverage and delivered excellent southwest Arkansas service — on time and extremely careful.',
+      name: 'Glen I.',
+      location: 'De Queen, AR',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Arkansas Premier Moving served our De Queen move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Hope J.',
+      location: 'De Queen, AR',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getArkansasCountyTestimonials(

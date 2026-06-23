@@ -38,6 +38,20 @@ export const arkansasCountyOverrides: Partial<
   clark: { seat: 'Arkadelphia', metro: 'arkadelphia-metro-ar' },
   yell: { seat: 'Danville', metro: 'danville-metro-ar' },
   polk: { seat: 'Mena', metro: 'mena-metro-ar' },
+  grant: { seat: 'Sheridan', metro: 'little-rock-metro-ar' },
+  hempstead: { seat: 'Hope', metro: 'hope-metro-ar' },
+  randolph: { seat: 'Pocahontas', metro: 'pocahontas-metro-ar' },
+  madison: { seat: 'Huntsville', metro: 'huntsville-metro-ar' },
+  sharp: { seat: 'Ash Flat', metro: 'ash-flat-metro-ar' },
+  franklin: { seat: 'Ozark', metro: 'ozark-metro-ar' },
+  ashley: { seat: 'Hamburg', metro: 'hamburg-metro-ar' },
+  marion: { seat: 'Yellville', metro: 'yellville-metro-ar' },
+  drew: { seat: 'Monticello', metro: 'monticello-metro-ar' },
+  jackson: { seat: 'Newport', metro: 'newport-metro-ar' },
+  lawrence: { seat: 'Walnut Ridge', metro: 'walnut-ridge-metro-ar' },
+  'van-buren': { seat: 'Clinton', metro: 'clinton-metro-ar' },
+  cross: { seat: 'Wynne', metro: 'wynne-metro-ar' },
+  sevier: { seat: 'De Queen', metro: 'de-queen-metro-ar' },
 };
 
 export function applyArkansasCountyOverrides(county: LocalCounty): LocalCounty {

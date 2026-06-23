@@ -586,6 +586,244 @@ export const arkansasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates before booking.',
     ],
   },
+  grant: {
+    marketNotes:
+      'Grant County is a growing suburban county southwest of Little Rock with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Sheridan suburban growth, Little Rock metro traffic, and cross-county crews from Saline and central Arkansas providers.',
+    },
+    tips: [
+      'Verify coverage for Sheridan and surrounding areas before booking.',
+      'Little Rock-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hempstead: {
+    marketNotes:
+      'Hempstead County is a key Southwest Arkansas county with strong residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Hempstead County pricing reflects Hope rural market rates, southwest Arkansas regional traffic, and cross-county crews from Texarkana and El Dorado providers.',
+    },
+    tips: [
+      'Verify coverage for Hope and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  randolph: {
+    marketNotes:
+      'Randolph County is a rural Northeast Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Randolph County pricing reflects Pocahontas rural market rates, northeast Arkansas regional traffic, and cross-county crews from Jonesboro providers.',
+    },
+    tips: [
+      'Verify coverage for Pocahontas and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison County is a scenic rural county in Northwest Arkansas with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Madison County pricing reflects Huntsville rural market rates, Ozark foothills access, and cross-county crews from Northwest Arkansas providers.',
+    },
+    tips: [
+      'Verify coverage for Huntsville and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  sharp: {
+    marketNotes:
+      'Sharp County is a rural North Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Sharp County pricing reflects Ash Flat rural market rates, north Arkansas regional traffic, and cross-county crews from Batesville and Mountain Home providers.',
+    },
+    tips: [
+      'Verify coverage for Ash Flat and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a rural Northwest Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Ozark rural market rates, Arkansas River valley traffic, and cross-county crews from Fort Smith and Russellville providers.',
+    },
+    tips: [
+      'Verify coverage for Ozark and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  ashley: {
+    marketNotes:
+      'Ashley County is a rural Southeast Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Ashley County pricing reflects Hamburg rural market rates, southeast Arkansas regional traffic, and cross-county crews from Pine Bluff and El Dorado providers.',
+    },
+    tips: [
+      'Verify coverage for Hamburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is a scenic rural county in North Arkansas with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Marion County pricing reflects Yellville rural market rates, Buffalo River area access, and cross-county crews from Mountain Home and Harrison providers.',
+    },
+    tips: [
+      'Verify coverage for Yellville and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  drew: {
+    marketNotes:
+      'Drew County is a rural Southeast Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Drew County pricing reflects Monticello rural market rates, southeast Arkansas regional traffic, and cross-county crews from Pine Bluff and Little Rock providers.',
+    },
+    tips: [
+      'Verify coverage for Monticello and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is a rural Northeast Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects Newport rural market rates, White River valley traffic, and cross-county crews from Jonesboro providers.',
+    },
+    tips: [
+      'Verify coverage for Newport and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  lawrence: {
+    marketNotes:
+      'Lawrence County is a rural Northeast Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Lawrence County pricing reflects Walnut Ridge rural market rates, northeast Arkansas regional traffic, and cross-county crews from Jonesboro and Paragould providers.',
+    },
+    tips: [
+      'Verify coverage for Walnut Ridge and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  'van-buren': {
+    marketNotes:
+      'Van Buren County is a scenic rural county in North Central Arkansas with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Van Buren County pricing reflects Clinton rural market rates, Greers Ferry lake-area access, and cross-county crews from Conway and Heber Springs providers.',
+    },
+    tips: [
+      'Verify coverage for Clinton and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  cross: {
+    marketNotes:
+      'Cross County is a rural East Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Cross County pricing reflects Wynne rural market rates, east Arkansas regional traffic, and cross-county crews from Jonesboro and Forrest City providers.',
+    },
+    tips: [
+      'Verify coverage for Wynne and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  sevier: {
+    marketNotes:
+      'Sevier County is a rural Southwest Arkansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Sevier County pricing reflects De Queen rural market rates, southwest Arkansas regional traffic, and cross-county crews from Texarkana and Hope providers.',
+    },
+    tips: [
+      'Verify coverage for De Queen and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
 };
 
 export function getArkansasCountyResearch(
