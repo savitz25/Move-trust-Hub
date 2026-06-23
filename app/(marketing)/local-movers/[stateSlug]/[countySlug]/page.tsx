@@ -44,6 +44,7 @@ import {
   buildCountyPageMetadata,
   buildCountyTestimonials,
   buildCountyTips,
+  buildCountyLabel,
   buildCountyTitle,
   getAllCountyParams,
   getCountyPath,
@@ -87,7 +88,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const title = buildCountyTitle(county, state.name);
   const description = buildCountyDescription(county, state.name, movers.length);
   const path = getCountyPath(stateSlug, countySlug);
-  const countyLabel = `${county.name} County`;
+  const countyLabel = buildCountyLabel(county);
   const faqItems = buildCountyFaqItems(county, state.name, movers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);

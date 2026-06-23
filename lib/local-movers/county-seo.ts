@@ -15,7 +15,10 @@ import { getNorthCarolinaCountyTestimonials } from '@/data/north-carolina-county
 import { getTexasCountyResearch } from '@/data/texas-county-research';
 import { getTexasCountyTestimonials } from '@/data/texas-county-testimonials';
 import { testimonials } from '@/lib/trust/trust-data';
+import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
+
+export { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 
 const SEO_YEAR = '2026';
 
@@ -60,7 +63,7 @@ export function getSeoYear(): string {
 
 export function buildCountyTitle(county: LocalCounty, stateName: string): string {
   const seat = county.seat ? ` (${county.seat})` : '';
-  return `Top Local Movers in ${county.name} County${seat}, ${county.stateCode} ${SEO_YEAR}`;
+  return `Top Local Movers in ${buildCountyLabel(county)}${seat}, ${county.stateCode} ${SEO_YEAR}`;
 }
 
 export function buildCountyDescription(
@@ -69,7 +72,7 @@ export function buildCountyDescription(
   moverCount: number
 ): string {
   const seat = county.seat ? ` near ${county.seat}` : '';
-  const countyLabel = `${county.name} County`;
+  const countyLabel = buildCountyLabel(county);
   const topMover =
     moverCount > 0 ? `Compare ${moverCount} top-rated local movers` : 'Find vetted local movers';
   const marketSnippet = buildCountyMarketNotes(county);
@@ -112,7 +115,7 @@ export function buildCountyFaqItems(
   stateName: string,
   movers: LocalMover[]
 ): CountyFaqItem[] {
-  const countyLabel = `${county.name} County`;
+  const countyLabel = buildCountyLabel(county);
   const location = county.seat ?? countyLabel;
   const costs = buildCountyCostGuide(county, stateName);
   const topMovers = movers.slice(0, 3);

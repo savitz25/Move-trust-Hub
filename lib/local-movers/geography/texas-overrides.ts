@@ -4,6 +4,24 @@ import type { LocalCounty } from '@/lib/local-movers/types';
 export const texasCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
+  // High-traffic metros — seats power schema containsPlace and on-page locality context
+  austin: { seat: 'Bellville', metro: 'rural-south-tx' },
+  bexar: { seat: 'San Antonio', metro: 'austin-sa-tx' },
+  brazoria: { seat: 'Angleton', metro: 'houston-tx' },
+  cameron: { seat: 'Brownsville', metro: 'rio-grande-tx' },
+  collin: { seat: 'McKinney', metro: 'dfw-tx' },
+  dallas: { seat: 'Dallas', metro: 'dfw-tx' },
+  denton: { seat: 'Denton', metro: 'dfw-tx' },
+  'el-paso': { seat: 'El Paso', metro: 'el-paso-tx' },
+  'fort-bend': { seat: 'Richmond', metro: 'houston-tx' },
+  harris: { seat: 'Houston', metro: 'houston-tx' },
+  hidalgo: { seat: 'Edinburg', metro: 'rio-grande-tx' },
+  lubbock: { seat: 'Lubbock', metro: 'panhandle-tx' },
+  montgomery: { seat: 'Conroe', metro: 'houston-tx' },
+  nueces: { seat: 'Corpus Christi', metro: 'rio-grande-tx' },
+  tarrant: { seat: 'Fort Worth', metro: 'dfw-tx' },
+  travis: { seat: 'Austin', metro: 'austin-sa-tx' },
+  williamson: { seat: 'Georgetown', metro: 'austin-sa-tx' },
   archer: { seat: 'Archer City', metro: 'rural-north-tx' },
   armstrong: { seat: 'Claude', metro: 'rural-panhandle-tx' },
   bailey: { seat: 'Muleshoe', metro: 'rural-west-tx' },

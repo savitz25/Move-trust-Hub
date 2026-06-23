@@ -18,7 +18,8 @@
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
     "seed": "tsx scripts/seed.ts",
-    "generate:sitemap": "next build"
+    "generate:sitemap": "next build",
+    "validate:county-schema": "tsx scripts/validate-county-schema.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",

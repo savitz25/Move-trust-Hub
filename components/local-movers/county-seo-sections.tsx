@@ -120,21 +120,14 @@ export function CountyTestimonialSection({
           <figure
             key={`${testimonial.name}-${testimonial.location}`}
             className="rounded-xl border bg-background/60 p-4"
-            itemScope
-            itemType="https://schema.org/Review"
           >
-            <blockquote
-              className="text-sm text-muted-foreground leading-relaxed italic"
-              itemProp="reviewBody"
-            >
+            <blockquote className="text-sm text-muted-foreground leading-relaxed italic">
               &ldquo;{testimonial.quote}&rdquo;
             </blockquote>
             <figcaption className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-              <span className="font-semibold text-foreground" itemProp="author">
-                {testimonial.name}
-              </span>
+              <span className="font-semibold text-foreground">{testimonial.name}</span>
               <span aria-hidden="true">·</span>
-              <span itemProp="name">{testimonial.location}</span>
+              <span>{testimonial.location}</span>
               {testimonial.moveType && (
                 <>
                   <span aria-hidden="true">·</span>
@@ -143,14 +136,7 @@ export function CountyTestimonialSection({
                   </span>
                 </>
               )}
-              <span
-                className="ml-auto font-medium text-foreground"
-                itemProp="reviewRating"
-                itemScope
-                itemType="https://schema.org/Rating"
-              >
-                <meta itemProp="ratingValue" content={String(testimonial.rating)} />
-                <meta itemProp="bestRating" content="5" />
+              <span className="ml-auto font-medium text-foreground">
                 {testimonial.rating}★
               </span>
             </figcaption>

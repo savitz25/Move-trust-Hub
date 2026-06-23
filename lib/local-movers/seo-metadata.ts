@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import {
   buildCountyDescription,
@@ -44,7 +45,7 @@ export function buildCountyKeywords(
   stateName: string,
   movers: LocalMover[]
 ): string[] {
-  const countyLabel = `${county.name} County`;
+  const countyLabel = buildCountyLabel(county);
   const seat = county.seat;
   const code = county.stateCode;
   const topNames = movers.slice(0, 3).map((m) => m.name);
@@ -176,7 +177,7 @@ export function buildHubPageMetadata(): Metadata {
 }
 
 export function buildCountyH1(county: LocalCounty): string {
-  const countyLabel = `${county.name} County`;
+  const countyLabel = buildCountyLabel(county);
   const seat = county.seat ? ` (${county.seat})` : '';
   return `Top Local Movers in ${countyLabel}${seat}, ${county.stateCode}`;
 }

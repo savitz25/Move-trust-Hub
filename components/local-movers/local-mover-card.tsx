@@ -31,8 +31,6 @@ export function LocalMoverCard({
       id={`mover-${mover.id}`}
       aria-label={`#${rank} ${mover.name} — local mover${countyLabel ? ` in ${countyLabel}` : ''}`}
       className="rounded-2xl border bg-card p-5 sm:p-6 shadow-sm hover:border-primary/30 transition-colors"
-      itemScope
-      itemType="https://schema.org/MovingCompany"
     >
       <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
         <div className="flex items-start gap-3 min-w-0">
@@ -43,21 +41,13 @@ export function LocalMoverCard({
             {rank}
           </div>
           <div className="min-w-0">
-            <h3 className="text-lg font-semibold tracking-tight leading-tight" itemProp="name">
+            <h3 className="text-lg font-semibold tracking-tight leading-tight">
               {mover.name}
             </h3>
             <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
           </div>
         </div>
-        <div
-          className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700 dark:text-amber-400"
-          itemProp="aggregateRating"
-          itemScope
-          itemType="https://schema.org/AggregateRating"
-        >
-          <meta itemProp="ratingValue" content={String(mover.rating)} />
-          <meta itemProp="reviewCount" content={String(mover.reviewCount)} />
-          <meta itemProp="bestRating" content="5" />
+        <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700 dark:text-amber-400">
           <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
           {mover.rating.toFixed(1)}
           <span className="text-xs font-normal text-muted-foreground">
@@ -66,7 +56,7 @@ export function LocalMoverCard({
         </div>
       </div>
 
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4" itemProp="description">
+      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
         {mover.shortDescription}
       </p>
 
@@ -85,9 +75,7 @@ export function LocalMoverCard({
 
       <div className="grid sm:grid-cols-2 gap-2 text-xs text-muted-foreground mb-4">
         {mover.usdotNumber && (
-          <div itemProp="identifier" itemScope itemType="https://schema.org/PropertyValue">
-            <meta itemProp="name" content="USDOT" />
-            <meta itemProp="value" content={mover.usdotNumber} />
+          <div>
             <span className="font-medium text-foreground">USDOT:</span> {mover.usdotNumber}
           </div>
         )}
@@ -114,7 +102,6 @@ export function LocalMoverCard({
           <Link
             href={profileHref}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-            itemProp="url"
           >
             View full profile
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -125,7 +112,6 @@ export function LocalMoverCard({
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-            itemProp="url"
           >
             Visit website
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />

@@ -92,6 +92,7 @@ export function getLocalMoverById(id: string): LocalMover | undefined {
   return fullMoversCatalog[id];
 }
 
+export { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 export {
   buildCountyTitle,
   buildCountyDescription,
