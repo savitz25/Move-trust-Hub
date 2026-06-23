@@ -93,6 +93,125 @@ export const alabamaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  lee: {
+    marketNotes:
+      'Lee County is a fast-growing county with strong educational (Auburn University) and residential demand across the Auburn–Opelika corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Lee County pricing reflects university-season demand, Auburn–Opelika suburban growth, and crews traveling from Montgomery and Columbus metro providers.',
+    },
+    tips: [
+      'Verify coverage for Auburn, Opelika, and surrounding areas before booking.',
+      'University and regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  limestone: {
+    marketNotes:
+      "Limestone County is one of Alabama's fastest-growing counties with strong suburban residential demand south of Huntsville.",
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Limestone County pricing reflects Huntsville-metro crew travel, I-65 corridor traffic, and strong competition among North Alabama full-service providers.',
+    },
+    tips: [
+      'Verify coverage for Athens and surrounding areas before booking.',
+      'Huntsville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morgan: {
+    marketNotes:
+      'Morgan County is a key North Alabama county with strong industrial, aerospace, and residential demand centered on Decatur.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Morgan County pricing reflects Tennessee River industrial corridor demand, Hartselle and Priceville suburban growth, and Huntsville-metro regional crews.',
+    },
+    tips: [
+      'Verify coverage for Decatur, Hartselle, and Priceville areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  calhoun: {
+    marketNotes:
+      'Calhoun County is a major East Alabama hub with strong military, industrial, and residential demand in Anniston and Oxford.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,300',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Calhoun County pricing reflects Anniston-Oxford metro demand, Fort McClellan corridor relocations, and Birmingham-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Anniston, Oxford, and Jacksonville areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  houston: {
+    marketNotes:
+      'Houston County is the economic center of the Wiregrass region with strong residential and commercial demand centered on Dothan.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Houston County pricing reflects Wiregrass regional demand, limited local provider competition, and travel from Panama City and Montgomery metro crews.',
+    },
+    tips: [
+      'Verify coverage for Dothan and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  etowah: {
+    marketNotes:
+      'Etowah County is a key Northeast Alabama county with strong industrial and residential demand in Gadsden and Rainbow City.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Etowah County pricing reflects Gadsden industrial corridor demand and crews traveling from Huntsville and Birmingham metro providers.',
+    },
+    tips: [
+      'Verify coverage for Gadsden and Rainbow City areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marshall: {
+    marketNotes:
+      'Marshall County is a growing North Alabama county with strong residential and lake-area demand in Albertville, Guntersville, and Boaz.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Marshall County pricing reflects Guntersville lake-area access, Albertville suburban growth, and Huntsville-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Albertville, Guntersville, and Boaz areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getAlabamaCountyResearch(

@@ -9,6 +9,13 @@ export const alabamaCountyOverrides: Partial<
   tuscaloosa: { seat: 'Tuscaloosa', metro: 'tuscaloosa-metro-al' },
   shelby: { seat: 'Columbiana', metro: 'birmingham-metro-al' },
   montgomery: { seat: 'Montgomery', metro: 'montgomery-metro-al' },
+  lee: { seat: 'Opelika', metro: 'auburn-opelika-metro-al' },
+  limestone: { seat: 'Athens', metro: 'huntsville-metro-al' },
+  morgan: { seat: 'Decatur', metro: 'decatur-metro-al' },
+  calhoun: { seat: 'Anniston', metro: 'anniston-metro-al' },
+  houston: { seat: 'Dothan', metro: 'dothan-metro-al' },
+  etowah: { seat: 'Gadsden', metro: 'gadsden-metro-al' },
+  marshall: { seat: 'Guntersville', metro: 'marshall-lakes-al' },
 };
 
 export function applyAlabamaCountyOverrides(county: LocalCounty): LocalCounty {

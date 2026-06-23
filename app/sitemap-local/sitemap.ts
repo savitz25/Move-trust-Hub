@@ -120,6 +120,13 @@ const AL_HIGH_TRAFFIC_COUNTIES = new Set([
   'tuscaloosa',
   'shelby',
   'montgomery',
+  'lee',
+  'limestone',
+  'morgan',
+  'calhoun',
+  'houston',
+  'etowah',
+  'marshall',
 ]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */

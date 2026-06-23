@@ -16,6 +16,13 @@ const AL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   tuscaloosa: ['jefferson', 'bibb', 'hale', 'greene', 'pickens', 'fayette'],
   shelby: ['jefferson', 'chilton', 'coosa', 'talladega', 'st-clair', 'bibb'],
   montgomery: ['elmore', 'autauga', 'lowndes', 'macon', 'bullock', 'crenshaw'],
+  lee: ['russell', 'macon', 'chambers', 'tallapoosa', 'elmore', 'bullock'],
+  limestone: ['madison', 'morgan', 'lawrence', 'lauderdale', 'jackson', 'cullman'],
+  morgan: ['limestone', 'madison', 'marshall', 'cullman', 'blount', 'etowah'],
+  calhoun: ['etowah', 'cherokee', 'cleburne', 'talladega', 'st-clair', 'jefferson'],
+  houston: ['henry', 'dale', 'coffee', 'geneva', 'barbour', 'covington'],
+  etowah: ['calhoun', 'cherokee', 'dekalb', 'marshall', 'blount', 'jefferson'],
+  marshall: ['morgan', 'jackson', 'dekalb', 'etowah', 'cullman', 'blount'],
 };
 
 export function getAlabamaNearbyCounties(
