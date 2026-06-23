@@ -575,6 +575,344 @@ export const alabamaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
         moveType: 'Apartment',
       },
     ],
+    russell: [
+      {
+        quote:
+          'Coleman Worldwide Moving handled our Phenix City military relocation professionally — on time, efficient, and extremely careful throughout Russell County.',
+        name: 'Marcus T.',
+        location: 'Phenix City, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Columbus served our Fort Moore corridor move efficiently — fast, professional, and reliable with careful military-family handling.',
+        name: 'Jennifer A.',
+        location: 'Phenix City, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Admiral Movers confirmed Russell County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Robert C.',
+        location: 'Phenix City, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    coffee: [
+      {
+        quote:
+          'True America Moving handled our Enterprise relocation professionally — on time, efficient, and extremely careful throughout Coffee County.',
+        name: 'Daniel M.',
+        location: 'Enterprise, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'The Moving Truck Inc served our Fort Rucker-area move efficiently — fast, professional, and reliable with careful military-family handling.',
+        name: 'Lisa H.',
+        location: 'Enterprise, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'ASAP Moving confirmed Coffee County coverage and delivered excellent Wiregrass service — professional crew with no surprise fees.',
+        name: 'Kevin B.',
+        location: 'Enterprise, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    jackson: [
+      {
+        quote:
+          'Two Men and a Truck Huntsville handled our Scottsboro relocation professionally — on time, efficient, and extremely careful throughout Jackson County.',
+        name: 'Pamela S.',
+        location: 'Scottsboro, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Black Tie Moving served our lake-area move efficiently — fast, professional, and reliable with careful waterfront handling.',
+        name: 'Gary N.',
+        location: 'Scottsboro, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Jackson County coverage and delivered excellent Huntsville-metro regional service — professional crew with transparent pricing.',
+        name: 'Donna F.',
+        location: 'Scottsboro, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    dale: [
+      {
+        quote:
+          'True America Moving handled our Ozark relocation professionally — on time, efficient, and extremely careful throughout Dale County.',
+        name: 'Steven R.',
+        location: 'Ozark, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'HHG Movers served our military-family move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Angela W.',
+        location: 'Ozark, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving confirmed Dale County coverage and delivered excellent Wiregrass regional service — professional crew with no surprise fees.',
+        name: 'Charles L.',
+        location: 'Ozark, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    chilton: [
+      {
+        quote:
+          'Two Men and a Truck Alabaster handled our Clanton relocation professionally — on time, efficient, and extremely careful throughout Chilton County.',
+        name: 'Ruth E.',
+        location: 'Clanton, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Admiral Movers served our central Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Joseph P.',
+        location: 'Clanton, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Chilton County coverage and delivered excellent Birmingham–Montgomery corridor service — professional crew with transparent pricing.',
+        name: 'Nancy G.',
+        location: 'Clanton, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    tallapoosa: [
+      {
+        quote:
+          'Two Men and a Truck Montgomery handled our Alexander City relocation professionally — on time, efficient, and extremely careful throughout Tallapoosa County.',
+        name: 'Barbara J.',
+        location: 'Alexander City, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Auburn served our Dadeville lake-area move efficiently — fast, professional, and reliable with careful waterfront handling.',
+        name: 'Thomas K.',
+        location: 'Dadeville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Admiral Movers confirmed Tallapoosa County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Christine M.',
+        location: 'Alexander City, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    covington: [
+      {
+        quote:
+          'True America Moving handled our Andalusia relocation professionally — on time, efficient, and extremely careful throughout Covington County.',
+        name: 'Raymond D.',
+        location: 'Andalusia, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving served our South Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Shirley T.',
+        location: 'Andalusia, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Handy Guys Moving confirmed Covington County coverage and delivered excellent Gulf Coast regional service — professional crew with transparent pricing.',
+        name: 'Edward V.',
+        location: 'Andalusia, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    escambia: [
+      {
+        quote:
+          'Coleman Worldwide Moving handled our Brewton relocation professionally — on time, efficient, and extremely careful throughout Escambia County.',
+        name: 'Dorothy B.',
+        location: 'Brewton, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Motivated Movers Daphne served our South Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Harold S.',
+        location: 'Brewton, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'True America Moving confirmed Escambia County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Betty C.',
+        location: 'Brewton, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    dallas: [
+      {
+        quote:
+          'Two Men and a Truck Montgomery handled our Selma relocation professionally — on time, efficient, and extremely careful throughout Dallas County.',
+        name: 'Willie J.',
+        location: 'Selma, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'McCorquodale Transfer served our central Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Gloria H.',
+        location: 'Selma, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Dallas County coverage and delivered excellent Montgomery-metro service — professional crew with transparent pricing.',
+        name: 'Albert R.',
+        location: 'Selma, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    chambers: [
+      {
+        quote:
+          'Two Men and a Truck Auburn handled our Valley relocation professionally — on time, efficient, and extremely careful throughout Chambers County.',
+        name: 'Teresa L.',
+        location: 'Valley, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving served our LaFayette move efficiently — fast, professional, and reliable with careful industrial-corridor handling.',
+        name: 'Philip G.',
+        location: 'LaFayette, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Peachtree Movers confirmed Chambers County coverage and delivered excellent East Alabama regional service — professional crew with no surprise fees.',
+        name: 'Janice W.',
+        location: 'Valley, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    pike: [
+      {
+        quote:
+          'True America Moving handled our Troy relocation professionally — on time, efficient, and extremely careful throughout Pike County.',
+        name: 'Scott A.',
+        location: 'Troy, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Montgomery served our university-area move efficiently — fast, professional, and reliable with careful student-housing handling.',
+        name: 'Megan F.',
+        location: 'Troy, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'Admiral Movers confirmed Pike County coverage and delivered excellent Wiregrass regional service — professional crew with transparent pricing.',
+        name: 'Brandon C.',
+        location: 'Troy, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+    ],
+    lawrence: [
+      {
+        quote:
+          "Christopher's Moving & Storage handled our Moulton relocation professionally — on time, efficient, and extremely careful throughout Lawrence County.",
+        name: 'Linda M.',
+        location: 'Moulton, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Armstrong Relocation served our North Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Roger P.',
+        location: 'Moulton, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Black Tie Moving confirmed Lawrence County coverage and delivered excellent Huntsville-metro regional service — professional crew with no surprise fees.',
+        name: 'Carolyn D.',
+        location: 'Moulton, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    franklin: [
+      {
+        quote:
+          "Christopher's Moving & Storage handled our Russellville relocation professionally — on time, efficient, and extremely careful throughout Franklin County.",
+        name: 'Jackie N.',
+        location: 'Russellville, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Brothers EZ Moving served our northwest Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Billy T.',
+        location: 'Russellville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'This Side Up Moving confirmed Franklin County coverage and delivered excellent Shoals-area regional service — professional crew with transparent pricing.',
+        name: 'Vicki S.',
+        location: 'Russellville, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getAlabamaCountyTestimonials(

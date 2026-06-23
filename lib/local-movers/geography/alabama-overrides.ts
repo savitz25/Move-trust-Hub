@@ -26,6 +26,19 @@ export const alabamaCountyOverrides: Partial<
   autauga: { seat: 'Prattville', metro: 'montgomery-metro-al' },
   blount: { seat: 'Oneonta', metro: 'birmingham-metro-al' },
   colbert: { seat: 'Tuscumbia', metro: 'florence-shoals-metro-al' },
+  russell: { seat: 'Phenix City', metro: 'phenix-city-metro-al' },
+  coffee: { seat: 'Elba', metro: 'wiregrass-metro-al' },
+  jackson: { seat: 'Scottsboro', metro: 'scottsboro-metro-al' },
+  dale: { seat: 'Ozark', metro: 'wiregrass-metro-al' },
+  chilton: { seat: 'Clanton', metro: 'clanton-metro-al' },
+  tallapoosa: { seat: 'Dadeville', metro: 'alexander-city-metro-al' },
+  covington: { seat: 'Andalusia', metro: 'andalusia-metro-al' },
+  escambia: { seat: 'Brewton', metro: 'brewton-metro-al' },
+  dallas: { seat: 'Selma', metro: 'selma-metro-al' },
+  chambers: { seat: 'LaFayette', metro: 'valley-metro-al' },
+  pike: { seat: 'Troy', metro: 'wiregrass-metro-al' },
+  lawrence: { seat: 'Moulton', metro: 'moulton-metro-al' },
+  franklin: { seat: 'Russellville', metro: 'russellville-metro-al' },
 };
 
 export function applyAlabamaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -33,6 +33,19 @@ const AL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   autauga: ['montgomery', 'elmore', 'chilton', 'lowndes', 'dallas', 'coosa'],
   blount: ['jefferson', 'cullman', 'marshall', 'etowah', 'st-clair', 'walker'],
   colbert: ['lauderdale', 'franklin', 'lawrence', 'morgan', 'winston', 'marion'],
+  russell: ['lee', 'chambers', 'tallapoosa', 'elmore', 'macon', 'barbour'],
+  coffee: ['dale', 'geneva', 'houston', 'pike', 'covington', 'crenshaw'],
+  jackson: ['marshall', 'dekalb', 'madison', 'limestone', 'franklin', 'marion'],
+  dale: ['coffee', 'geneva', 'houston', 'henry', 'barbour', 'pike'],
+  chilton: ['autauga', 'elmore', 'coosa', 'talladega', 'shelby', 'bibb'],
+  tallapoosa: ['lee', 'elmore', 'chambers', 'coosa', 'clay', 'macon'],
+  covington: ['coffee', 'crenshaw', 'escambia', 'geneva', 'butler', 'pike'],
+  escambia: ['baldwin', 'conecuh', 'covington', 'monroe', 'clarke', 'washington'],
+  dallas: ['autauga', 'chilton', 'lowndes', 'marengo', 'perry', 'wilcox'],
+  chambers: ['lee', 'tallapoosa', 'randolph', 'clay', 'cleburne', 'coosa'],
+  pike: ['coffee', 'bullock', 'crenshaw', 'covington', 'montgomery', 'barbour'],
+  lawrence: ['limestone', 'morgan', 'lauderdale', 'colbert', 'franklin', 'winston'],
+  franklin: ['colbert', 'lauderdale', 'lawrence', 'marion', 'winston', 'jackson'],
 };
 
 export function getAlabamaNearbyCounties(

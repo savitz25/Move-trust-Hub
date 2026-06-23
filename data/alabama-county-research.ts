@@ -382,6 +382,227 @@ export const alabamaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  russell: {
+    marketNotes:
+      'Russell County is a growing county in East Alabama with strong military and residential demand adjacent to Fort Moore in Phenix City.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,300',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Russell County pricing reflects Columbus–Phenix City cross-border metro demand, Fort Moore military relocations, and Auburn–Montgomery regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Phenix City and surrounding areas before booking.',
+      'Military-related traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  coffee: {
+    marketNotes:
+      'Coffee County is a key Wiregrass county with strong military (Fort Rucker) and residential demand centered on Enterprise.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Coffee County pricing reflects Fort Rucker military demand, Wiregrass regional competition, and Dothan-metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Enterprise and surrounding areas before booking.',
+      'Military moves require specific experience — confirm PCS and on-base access credentials.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is a scenic county in Northeast Alabama with strong residential and lake-area demand centered on Scottsboro.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects Guntersville lake-area access, Scottsboro suburban growth, and Huntsville-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Scottsboro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dale: {
+    marketNotes:
+      'Dale County is a key Wiregrass county with strong military and residential demand centered on Ozark.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dale County pricing reflects Fort Rucker corridor military demand, Wiregrass regional access, and Dothan-metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Ozark and surrounding areas before booking.',
+      'Military moves require specific experience — confirm PCS and on-base access credentials.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  chilton: {
+    marketNotes:
+      'Chilton County is a growing county in Central Alabama with strong residential demand centered on Clanton.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Chilton County pricing reflects I-65 corridor central Alabama demand and regional crew travel from Birmingham and Montgomery metro providers.',
+    },
+    tips: [
+      'Verify coverage for Clanton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tallapoosa: {
+    marketNotes:
+      'Tallapoosa County is a growing county in East Alabama with strong lake-area residential demand in Alexander City and Dadeville.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Tallapoosa County pricing reflects Lake Martin waterfront access, Alexander City suburban growth, and Montgomery–Auburn regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Alexander City and Dadeville areas before booking.',
+      'Lake access and seasonal traffic considerations apply — confirm scheduling buffers.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  covington: {
+    marketNotes:
+      'Covington County is a key South Alabama county with strong residential and industrial demand centered on Andalusia.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Covington County pricing reflects South Alabama regional demand, limited local provider competition, and Wiregrass–Gulf Coast crew travel.',
+    },
+    tips: [
+      'Verify coverage for Andalusia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  escambia: {
+    marketNotes:
+      'Escambia County is a county in South Alabama with strong residential and industrial demand centered on Brewton.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Escambia County pricing reflects South Alabama regional demand and crew travel from Baldwin County coastal and Dothan Wiregrass providers.',
+    },
+    tips: [
+      'Verify coverage for Brewton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dallas: {
+    marketNotes:
+      'Dallas County is a historic county in Central Alabama with strong residential demand centered on Selma.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Dallas County pricing reflects central Alabama Black Belt regional demand and Montgomery-metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Selma and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  chambers: {
+    marketNotes:
+      'Chambers County is a growing county in East Alabama with strong industrial and residential demand in Valley and LaFayette.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Chambers County pricing reflects West Georgia border industrial corridor demand and Auburn–Columbus regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Valley and LaFayette areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pike: {
+    marketNotes:
+      'Pike County is a key Wiregrass county with strong educational (Troy University) and residential demand centered on Troy.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Pike County pricing reflects university-season demand, Wiregrass regional access, and Dothan–Montgomery crew travel.',
+    },
+    tips: [
+      'Verify coverage for Troy and surrounding areas before booking.',
+      'University and regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lawrence: {
+    marketNotes:
+      'Lawrence County is a rural North Alabama county with strong residential demand centered on Moulton.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Lawrence County pricing reflects rural North Alabama demand and Huntsville–Florence regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Moulton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a growing county in Northwest Alabama with strong residential demand centered on Russellville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects northwest Alabama regional demand and Florence–Huntsville metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Russellville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getAlabamaCountyResearch(

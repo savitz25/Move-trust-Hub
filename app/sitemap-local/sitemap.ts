@@ -137,6 +137,19 @@ const AL_HIGH_TRAFFIC_COUNTIES = new Set([
   'autauga',
   'blount',
   'colbert',
+  'russell',
+  'coffee',
+  'jackson',
+  'dale',
+  'chilton',
+  'tallapoosa',
+  'covington',
+  'escambia',
+  'dallas',
+  'chambers',
+  'pike',
+  'lawrence',
+  'franklin',
 ]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */
