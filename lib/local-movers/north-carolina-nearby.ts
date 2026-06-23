@@ -43,6 +43,16 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   rockingham: ['guilford', 'caswell', 'person', 'stokes', 'forsyth', 'alamance'],
   burke: ['catawba', 'mcdowell', 'rutherford', 'caldwell', 'alexander', 'lincoln'],
   chatham: ['wake', 'orange', 'durham', 'alamance', 'lee', 'moore'],
+  franklin: ['wake', 'nash', 'johnston', 'warren', 'vance', 'granville'],
+  wilson: ['nash', 'edgecombe', 'pitt', 'wayne', 'johnston', 'greene'],
+  caldwell: ['burke', 'alexander', 'catawba', 'watauga', 'wilkes', 'avery'],
+  pender: ['new-hanover', 'brunswick', 'onslow', 'duplin', 'sampson', 'bladen'],
+  surry: ['stokes', 'forsyth', 'yadkin', 'wilkes', 'alleghany', 'rockingham'],
+  lee: ['chatham', 'harnett', 'cumberland', 'moore', 'hoke', 'randolph'],
+  carteret: ['onslow', 'craven', 'jones', 'pamlico', 'hyde', 'pitt'],
+  stanly: ['cabarrus', 'union', 'davidson', 'montgomery', 'anson', 'rowan'],
+  wilkes: ['surry', 'alexander', 'iredell', 'caldwell', 'watauga', 'alleghany'],
+  rutherford: ['buncombe', 'mcdowell', 'cleveland', 'henderson', 'polk', 'burke'],
 };
 
 export function getNorthCarolinaNearbyCounties(

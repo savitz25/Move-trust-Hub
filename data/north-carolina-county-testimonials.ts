@@ -11,6 +11,266 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  franklin: [
+    {
+      quote:
+        'Two Men and a Truck Raleigh handled our Louisburg relocation professionally — on time, careful with our belongings, and transparent Triangle pricing throughout Franklin County.',
+      name: 'Robert M.',
+      location: 'Louisburg, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Little Guys Movers served our Franklin County move efficiently with fast, professional crews and great value for careful handling.',
+      name: 'Susan T.',
+      location: 'Louisburg, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Athens Moving Experts confirmed Louisburg coverage and delivered reliable packing and loading with no surprise fees despite Raleigh-area traffic.',
+      name: 'David K.',
+      location: 'Louisburg, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  wilson: [
+    {
+      quote:
+        'Smart Move Wilson handled our Wilson relocation professionally — efficient crews, careful handling, and transparent eastern NC pricing.',
+      name: 'Patricia H.',
+      location: 'Wilson, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville served our Wilson County move efficiently with fast, professional crews and great value.',
+      name: 'Michael B.',
+      location: 'Wilson, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Miracle Movers confirmed Wilson coverage and delivered reliable packing and loading with no surprise fees despite regional travel.',
+      name: 'Linda R.',
+      location: 'Wilson, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  caldwell: [
+    {
+      quote:
+        'In & Out Moving & Delivery handled our Lenoir relocation professionally — efficient crews, careful handling, and transparent foothills pricing.',
+      name: 'James W.',
+      location: 'Lenoir, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Ashe Van Lines served our Caldwell County move with professional crews experienced with mountain-road and foothill access.',
+      name: 'Nancy P.',
+      location: 'Lenoir, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Preferred Moving Company confirmed Lenoir coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Gary S.',
+      location: 'Lenoir, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  pender: [
+    {
+      quote:
+        'College Hunks Moving Wilmington handled our Burgaw relocation professionally — efficient crews, careful handling, and transparent coastal pricing.',
+      name: 'Karen D.',
+      location: 'Burgaw, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Absolute Moving & Storage served our Pender County move with professional crews and careful handling of our waterfront-area furnishings.',
+      name: 'Mark L.',
+      location: 'Hampstead, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Wilmington confirmed coastal coverage and delivered reliable packing and loading with no surprise fees despite hurricane-season scheduling.',
+      name: 'Rachel G.',
+      location: 'Burgaw, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  surry: [
+    {
+      quote:
+        'Two Men and a Truck Greensboro handled our Mount Airy relocation professionally — on time, careful with our belongings, and transparent Triad pricing.',
+      name: 'William F.',
+      location: 'Mount Airy, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excel Moving & Storage served our Surry County move efficiently with professional crews and great value.',
+      name: 'Betty J.',
+      location: 'Mount Airy, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Miracle Movers Greensboro confirmed Dobson coverage and delivered reliable packing and loading with no surprise fees despite rural access.',
+      name: 'Charles N.',
+      location: 'Dobson, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  lee: [
+    {
+      quote:
+        'Athens Moving Experts handled our Sanford relocation professionally — efficient crews, careful handling, and transparent Triangle pricing throughout Lee County.',
+      name: 'Angela C.',
+      location: 'Sanford, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Stewart Moving & Storage served our Sanford move with professional crews experienced with regional Fayetteville-to-Triangle routes.',
+      name: 'Thomas E.',
+      location: 'Sanford, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Miracle Movers confirmed Sanford coverage and delivered reliable packing and loading with no surprise fees despite US-1 corridor traffic.',
+      name: 'Heather M.',
+      location: 'Sanford, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  carteret: [
+    {
+      quote:
+        'J.E. Thomas & Sons handled our Morehead City coastal relocation professionally — efficient crews, careful handling, and transparent Crystal Coast pricing.',
+      name: 'Laura S.',
+      location: 'Morehead City, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Absolute Moving & Storage served our Beaufort move with professional crews and careful handling of our waterfront-area furnishings.',
+      name: 'John H.',
+      location: 'Beaufort, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Wilmington confirmed Emerald Isle coverage and delivered reliable packing and loading with no surprise fees despite coastal access.',
+      name: 'Diane W.',
+      location: 'Emerald Isle, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  stanly: [
+    {
+      quote:
+        'Gentle Giant Moving handled our Albemarle relocation professionally — efficient crews, careful handling, and transparent Charlotte-metro pricing.',
+      name: 'Scott P.',
+      location: 'Albemarle, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'You Move Me served our Stanly County move with professional crews and careful handling throughout.',
+      name: 'Jennifer L.',
+      location: 'Albemarle, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Make A Move confirmed Albemarle coverage and delivered reliable packing and loading with no surprise fees despite regional traffic.',
+      name: 'Brian K.',
+      location: 'Albemarle, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  wilkes: [
+    {
+      quote:
+        'Preferred Moving Company handled our Wilkesboro mountain relocation professionally — efficient crews, careful handling, and transparent pricing.',
+      name: 'Carol B.',
+      location: 'Wilkesboro, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Asheville Area Movers served our Wilkes County move with professional crews experienced with mountain-road access.',
+      name: 'Richard T.',
+      location: 'Wilkesboro, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'In & Out Moving & Delivery confirmed North Wilkesboro coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Janet A.',
+      location: 'North Wilkesboro, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  rutherford: [
+    {
+      quote:
+        'Easy Movers Gastonia handled our Rutherfordton relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Paul M.',
+      location: 'Rutherfordton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Asheville Area Movers served our Forest City move with professional crews experienced with foothill and rural access.',
+      name: 'Mary C.',
+      location: 'Forest City, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Gentle Giant Moving confirmed Rutherford County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Steve D.',
+      location: 'Rutherfordton, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
   wayne: [
     {
       quote:

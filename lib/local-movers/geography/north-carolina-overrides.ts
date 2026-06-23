@@ -38,6 +38,16 @@ export const northCarolinaCountyOverrides: Partial<
   rockingham: { seat: 'Wentworth', metro: 'greensboro-high-point-metro-nc' },
   burke: { seat: 'Morganton', metro: 'hickory-lenoir-metro-nc' },
   chatham: { seat: 'Pittsboro', metro: 'raleigh-triangle-metro-nc' },
+  franklin: { seat: 'Louisburg', metro: 'raleigh-triangle-metro-nc' },
+  wilson: { seat: 'Wilson', metro: 'wilson-metro-nc' },
+  caldwell: { seat: 'Lenoir', metro: 'hickory-lenoir-metro-nc' },
+  pender: { seat: 'Burgaw', metro: 'wilmington-metro-nc' },
+  surry: { seat: 'Dobson', metro: 'greensboro-high-point-metro-nc' },
+  lee: { seat: 'Sanford', metro: 'sanford-metro-nc' },
+  carteret: { seat: 'Beaufort', metro: 'crystal-coast-metro-nc' },
+  stanly: { seat: 'Albemarle', metro: 'charlotte-metro-nc' },
+  wilkes: { seat: 'Wilkesboro', metro: 'hickory-lenoir-metro-nc' },
+  rutherford: { seat: 'Rutherfordton', metro: 'hickory-lenoir-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(

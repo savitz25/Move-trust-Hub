@@ -587,6 +587,176 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    franklin: {
+      marketNotes:
+        'Franklin County is a growing rural-suburban county north of Raleigh with increasing residential demand centered on Louisburg.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Franklin County pricing reflects Raleigh-metro northward growth, Louisburg suburban turnover, and US-1 and US-401 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Louisburg and surrounding Franklin County areas before booking.',
+        'Raleigh-area traffic on US-1 and US-401 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    wilson: {
+      marketNotes:
+        'Wilson County is a growing county in eastern North Carolina with strong agricultural and residential activity centered on Wilson.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Wilson County pricing reflects eastern NC regional travel logistics, Wilson suburban turnover, and US-264 and I-95 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Wilson and surrounding Wilson County areas before booking.',
+        'Regional traffic on US-264, US-301, and I-95 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    caldwell: {
+      marketNotes:
+        'Caldwell County is a mountain-adjacent county in western North Carolina with industrial and residential demand centered on Lenoir.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Caldwell County pricing reflects foothills mountain-road access, Hickory-metro regional service, and US-321 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Lenoir and surrounding Caldwell County areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with foothill access challenges.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    pender: {
+      marketNotes:
+        'Pender County is a growing coastal county with strong residential and retirement demand near Wilmington centered on Burgaw and Hampstead.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,400',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Pender County pricing reflects coastal mainland and island access, retirement-community turnover, hurricane-season scheduling, and Wilmington-metro spillover demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Burgaw and coastal Pender County areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    surry: {
+      marketNotes:
+        'Surry County is a rural county in the northern Piedmont with strong agricultural and residential demand centered on Mount Airy and Dobson.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Surry County pricing reflects northern Triad rural access, Mount Airy suburban turnover, and US-52 and US-601 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Mount Airy and surrounding Surry County areas before booking.',
+        'Rural access challenges are common — confirm crew familiarity with Surry County roads and longer regional routes.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    lee: {
+      marketNotes:
+        'Lee County is a growing county with industrial and residential demand between Raleigh and Fayetteville centered on Sanford.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Lee County pricing reflects Research Triangle southward suburban growth, Sanford industrial corridor demand, and US-1 and US-421 traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Sanford and surrounding Lee County areas before booking.',
+        'Regional traffic on US-1, US-421, and US-87 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    carteret: {
+      marketNotes:
+        'Carteret County is a coastal county with strong tourism, retirement, and waterfront residential demand centered on Morehead City, Beaufort, and Emerald Isle.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,800',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Carteret County pricing reflects Crystal Coast island and mainland access, peak tourist-season volume, hurricane-season scheduling, and waterfront-property handling.',
+      },
+      tips: [
+        'Verify explicit coverage for Morehead City, Beaufort, and Emerald Isle areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    stanly: {
+      marketNotes:
+        'Stanly County is a growing county east of Charlotte with residential and industrial demand centered on Albemarle.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Stanly County pricing reflects Charlotte-metro eastward growth, Albemarle suburban turnover, and US-52 and NC-24 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Albemarle and surrounding Stanly County areas before booking.',
+        'Regional traffic on US-52 and NC-24 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    wilkes: {
+      marketNotes:
+        'Wilkes County is a scenic mountain county with strong rural and residential demand centered on Wilkesboro and North Wilkesboro.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Wilkes County pricing reflects mountain-road access, rural property logistics, and Hickory-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Wilkesboro and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    rutherford: {
+      marketNotes:
+        'Rutherford County is a rural mountain county with residential and agricultural demand centered on Rutherfordton and Forest City.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Rutherford County pricing reflects western NC foothills access, rural property logistics, and Charlotte- and Hickory-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Rutherfordton and Forest City areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with foothill and rural access challenges.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

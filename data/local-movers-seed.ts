@@ -8583,7 +8583,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 245,
     shortDescription:
-      'Wilson-area mover serving Pitt County with full-service residential relocations, packing, and military discount options.',
+      'Wilson-based mover serving Wilson County and eastern North Carolina with full-service residential relocations, packing, and military discount options.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Military'],
     usdotNumber: '2500357',
@@ -9987,6 +9987,39 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'superior-moving-logistics-greenville-nc',
       'east-carolina-moving-greenville-nc',
       'two-men-and-a-truck-raleigh',
+    ],
+  },
+  'wilson-metro-nc': {
+    id: 'wilson-metro-nc',
+    label: 'Wilson Metro',
+    moverIds: [
+      'smart-move-wilson-nc',
+      'college-hunks-moving-greenville-nc',
+      'little-guys-movers-raleigh',
+      'crabtree-family-moving-raleigh',
+      'miracle-movers-raleigh',
+    ],
+  },
+  'sanford-metro-nc': {
+    id: 'sanford-metro-nc',
+    label: 'Sanford / Lee County Metro',
+    moverIds: [
+      'athens-moving-experts-raleigh',
+      'miracle-movers-raleigh',
+      'little-guys-movers-raleigh',
+      'stewart-moving-storage-fayetteville',
+      'two-men-and-a-truck-raleigh',
+    ],
+  },
+  'crystal-coast-metro-nc': {
+    id: 'crystal-coast-metro-nc',
+    label: 'Morehead City / Crystal Coast Metro',
+    moverIds: [
+      'je-thomas-sons-jacksonville',
+      'troy-humphrey-moving-jacksonville',
+      'absolute-moving-wilmington',
+      'college-hunks-moving-wilmington',
+      'two-men-and-a-truck-wilmington',
     ],
   },
 };
