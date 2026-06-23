@@ -2795,6 +2795,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
     ],
   },
+  medina: {
+    marketNotes:
+      'Medina County is one of Texas\'s least populous counties with Hondo as the seat. Moves are rare and rely on regional service from San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio regional crews may add travel fees for Hondo and remote South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways, cattle guards, and truck size upfront.',
+      'Verify explicit regional service to Hondo; confirm San Antonio crews cover Medina County before booking.',
+      'Storage is very limited locally; San Antonio warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — ranch moves may need extra packing time not reflected in basic online quotes.',
+      'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
+  hardin: {
+    marketNotes:
+      'Hardin County is one of Texas\'s least populous counties with Kountze as the seat. Moves are rare and rely on regional service from Beaumont.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Beaumont regional providers may add travel fees for Kountze and remote Southeast Texas Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and rural homesteads.',
+      'Verify explicit regional service to Kountze; confirm Beaumont crews cover Hardin County before booking.',
+      'Storage is very limited in Hardin County; Beaumont warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — obtain multiple Beaumont quotes since the market is thin and travel fees vary.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  maverick: {
+    marketNotes:
+      'Maverick County is one of Texas\'s least populous counties with Eagle Pass as the seat. Moves are rare and rely on regional service from San Antonio or Laredo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio and Laredo regional crews may add travel fees for Eagle Pass and remote South Texas border-region ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss border-region access roads and long driveways upfront.',
+      'Verify explicit regional service to Eagle Pass; San Antonio and Laredo movers vary in Maverick County coverage.',
+      'Storage is very limited locally; San Antonio or Laredo warehouse options are typical between closings.',
+      'Obtain multiple estimates — ranch moves may need extra packing time not reflected in basic online quotes.',
+      'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
+  chambers: {
+    marketNotes:
+      'Chambers County is one of Texas\'s least populous counties with Anahuac as the seat. Moves are rare and rely on regional service from Houston.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Houston regional crews may add travel fees for Anahuac and remote Southeast Texas coastal and ranch properties.',
+    },
+    tips: [
+      'Extremely remote coastal and ranch properties have severe access challenges — discuss bay-country access, flood zones, and marsh routes upfront.',
+      'Verify explicit regional service to Anahuac; confirm Houston crews cover Chambers County before booking.',
+      'Storage is very limited locally; Houston warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — coastal moves may need supplemental labor for elevated homes and rural bay routes.',
+      'Confirm credentials for coastal moves, including experience with waterfront access and flood-zone constraints.',
+    ],
+  },
+  anderson: {
+    marketNotes:
+      'Anderson County is one of Texas\'s least populous counties with Palestine as the seat. Moves are rare and rely on regional service from Tyler or Lufkin.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Tyler and Lufkin regional providers may add travel fees for Palestine and remote East Texas Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and rural homesteads.',
+      'Verify explicit regional service to Palestine; Tyler and Lufkin crews are the practical regional options.',
+      'Storage is very limited in Anderson County; coordinate with Tyler or Lufkin-area facilities if needed.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing in thin markets.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  nacogdoches: {
+    marketNotes:
+      'Nacogdoches County is one of Texas\'s least populous counties with Nacogdoches as the seat. Moves are rare and rely on regional service from Lufkin.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lufkin regional providers may add travel fees for Nacogdoches and remote East Texas Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and rural homesteads.',
+      'Verify explicit regional service to Nacogdoches; confirm Lufkin crews cover the county before booking.',
+      'Storage is very limited locally; Lufkin warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — obtain multiple Lufkin quotes since the market is thin and travel fees vary.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  starr: {
+    marketNotes:
+      'Starr County is one of Texas\'s least populous counties with Rio Grande City as the seat. Moves are rare and rely on regional service from Laredo or McAllen.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Laredo and McAllen regional crews may add travel fees for Rio Grande City and remote South Texas border-region ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss border-region access roads and long driveways upfront.',
+      'Verify explicit regional service to Rio Grande City; Laredo and McAllen movers vary in Starr County coverage.',
+      'Storage is very limited locally; Laredo or McAllen warehouse options are typical between closings.',
+      'Obtain multiple estimates — ranch moves may need extra packing time not reflected in basic online quotes.',
+      'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
+  'van-zandt': {
+    marketNotes:
+      'Van Zandt County is one of Texas\'s least populous counties with Canton as the seat. Moves are rare and rely on regional service from Tyler or Dallas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Tyler and Dallas regional crews may add travel fees for Canton and remote East Texas properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and rural homesteads.',
+      'Verify explicit regional service to Canton; Tyler is often the closer practical option for Van Zandt County.',
+      'Storage is very limited locally; Tyler or Dallas warehouse options are typical for gap periods.',
+      'Obtain multiple estimates — travel distance from Tyler or Dallas can materially affect final pricing.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  hood: {
+    marketNotes:
+      'Hood County is one of Texas\'s least populous counties with Granbury as the seat. Moves are rare and rely on regional service from Fort Worth.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Fort Worth regional crews may add travel fees for Granbury and remote North Texas ranch and lake properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss lake-country access, ranch roads, and truck size upfront.',
+      'Verify explicit regional service to Granbury; confirm Fort Worth crews cover Hood County before booking.',
+      'Storage is very limited locally; Fort Worth warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — obtain multiple Fort Worth quotes since the market is thin and travel fees vary.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  harrison: {
+    marketNotes:
+      'Harrison County is one of Texas\'s least populous counties with Marshall as the seat. Moves are rare and rely on regional service from Longview or Shreveport, LA.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Longview and Shreveport regional crews may add travel fees for Marshall and remote East Texas border properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — discuss timber roads and lake-country access upfront.',
+      'Verify explicit regional service to Marshall; Longview is often the closer Texas option, with Shreveport crews covering some border routes.',
+      'Storage is very limited in Harrison County; Longview or Shreveport facilities are typical when closing dates do not align.',
+      'Obtain multiple estimates — cross-state crews may have different licensing and travel-fee structures.',
+      'Confirm credentials for rural moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(

@@ -6237,6 +6237,36 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Denison',
     website: 'https://twomenandatruck.com/movers/tx/denison',
   },
+  'two-men-and-a-truck-houston': {
+    id: 'two-men-and-a-truck-houston',
+    name: 'Two Men and a Truck Houston',
+    rating: 4.6,
+    reviewCount: 890,
+    shortDescription:
+      'Houston franchise serving Chambers County, Anahuac, and rural Southeast Texas coastal and ranch relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Houston',
+    website: 'https://twomenandatruck.com/movers/tx/houston',
+  },
+  'two-men-and-a-truck-mcallen': {
+    id: 'two-men-and-a-truck-mcallen',
+    name: 'Two Men and a Truck McAllen',
+    rating: 4.5,
+    reviewCount: 245,
+    shortDescription:
+      'McAllen–Rio Grande Valley franchise covering Starr County, Rio Grande City, and remote South Texas ranch moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'McAllen',
+    website: 'https://twomenandatruck.com/movers/tx/mcallen',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

@@ -3631,6 +3631,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  medina: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Hondo. The San Antonio crew confirmed Medina County coverage and navigated our ranch driveway without issues.',
+      name: 'Miles Q.',
+      location: 'Hondo, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second San Antonio estimate we compared. Reliable in remote Hondo with organized loading and clear travel-fee disclosure.',
+      name: 'Nora R.',
+      location: 'Hondo, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  hardin: [
+    {
+      quote:
+        'Professional for our remote Southeast Texas move in Kountze. The Beaumont crew confirmed Hardin County service and finished our Piney Woods relocation on schedule.',
+      name: 'Omar S.',
+      location: 'Kountze, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in Southeast Texas from a second Beaumont provider. Reliable in remote Kountze with careful handling and steady communication.',
+      name: 'Pam T.',
+      location: 'Kountze, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  maverick: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Eagle Pass. The San Antonio crew confirmed Maverick County coverage and handled ranch access without delay.',
+      name: 'Quinn U.',
+      location: 'Eagle Pass, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Laredo. Reliable in remote Eagle Pass with careful handling and clear travel-fee disclosure.',
+      name: 'Rita V.',
+      location: 'Eagle Pass, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  chambers: [
+    {
+      quote:
+        'Professional for our remote Southeast Texas move in Anahuac. The Houston crew confirmed Chambers County service and managed our coastal property access professionally.',
+      name: 'Sam W.',
+      location: 'Anahuac, TX',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Careful handling from a second Houston estimate we compared. Reliable in remote Anahuac with organized loading and upfront travel-fee disclosure.',
+      name: 'Tina X.',
+      location: 'Anahuac, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  anderson: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Palestine. The Tyler crew understood Piney Woods access and protected our floors through tight doorways.',
+      name: 'Uma Y.',
+      location: 'Palestine, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Lufkin. Reliable in remote Anderson County with careful handling on a longer regional route.',
+      name: 'Vic Z.',
+      location: 'Palestine, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  nacogdoches: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Nacogdoches. The Lufkin crew confirmed county service and completed our Piney Woods relocation without rushing.',
+      name: 'Wade A.',
+      location: 'Nacogdoches, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from a second Lufkin provider with steady communication throughout our Nacogdoches County move.',
+      name: 'Xena B.',
+      location: 'Nacogdoches, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  starr: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Rio Grande City. The Laredo crew confirmed Starr County coverage and handled ranch access without issues.',
+      name: 'Yuri C.',
+      location: 'Rio Grande City, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from McAllen. Reliable in remote Rio Grande City with careful handling and clear travel-fee disclosure.',
+      name: 'Zoe D.',
+      location: 'Rio Grande City, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'van-zandt': [
+    {
+      quote:
+        'Professional for our remote East Texas move in Canton. The Tyler crew confirmed Van Zandt County service and finished on a tight timeline.',
+      name: 'Adam E.',
+      location: 'Canton, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Dallas. Reliable in remote Canton with careful handling on a longer regional route.',
+      name: 'Beth F.',
+      location: 'Canton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  hood: [
+    {
+      quote:
+        'Professional for our remote North Texas move in Granbury. The Fort Worth crew confirmed Hood County coverage and navigated our ranch road without tearing up the driveway.',
+      name: 'Carl G.',
+      location: 'Granbury, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second Fort Worth estimate we compared. Reliable in remote Granbury with organized loading and clear travel-fee disclosure.',
+      name: 'Dana H.',
+      location: 'Granbury, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  harrison: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Marshall. The Longview crew confirmed Harrison County service and completed our relocation without rushing.',
+      name: 'Evan I.',
+      location: 'Marshall, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from a Shreveport provider. Reliable in remote Marshall with careful handling on a cross-border regional route.',
+      name: 'Faye J.',
+      location: 'Marshall, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(
