@@ -12,6 +12,14 @@ export const missouriCountyOverrides: Partial<
   clay: { seat: 'Liberty', metro: 'kansas-city-metro-north-mo' },
   jefferson: { seat: 'Hillsboro', metro: 'st-louis-metro-south-mo' },
   boone: { seat: 'Columbia', metro: 'columbia-metro-mo' },
+  jasper: { seat: 'Carthage', metro: 'joplin-metro-mo' },
+  cass: { seat: 'Harrisonville', metro: 'kansas-city-metro-south-mo' },
+  platte: { seat: 'Platte City', metro: 'kansas-city-metro-northwest-mo' },
+  franklin: { seat: 'Union', metro: 'st-louis-metro-west-mo' },
+  christian: { seat: 'Ozark', metro: 'springfield-metro-south-mo' },
+  'cape-girardeau': { seat: 'Jackson', metro: 'cape-girardeau-metro-mo' },
+  buchanan: { seat: 'St. Joseph', metro: 'st-joseph-metro-mo' },
+  cole: { seat: 'Jefferson City', metro: 'jefferson-city-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {

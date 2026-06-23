@@ -18,7 +18,15 @@ const MO_COUNTY_NEIGHBORS: Record<string, string[]> = {
   'st-louis-city': ['st-louis', 'st-charles', 'jefferson'],
   clay: ['jackson', 'platte', 'ray', 'clinton', 'lafayette'],
   jefferson: ['st-louis', 'st-louis-city', 'franklin', 'ste-genevieve', 'st-francois', 'washington'],
-  boone: ['callaway', 'audrain', 'randolph', 'moniteau', 'cooper', 'howard'],
+  boone: ['callaway', 'audrain', 'randolph', 'moniteau', 'cooper', 'howard', 'cole'],
+  jasper: ['newton', 'barton', 'cedar', 'dade', 'lawrence'],
+  cass: ['jackson', 'johnson', 'bates', 'henry', 'lafayette', 'ray'],
+  platte: ['clay', 'jackson', 'buchanan', 'clinton', 'ray'],
+  franklin: ['jefferson', 'warren', 'washington', 'gasconade', 'crawford'],
+  christian: ['greene', 'webster', 'stone', 'taney', 'lawrence'],
+  'cape-girardeau': ['bollinger', 'perry', 'scott', 'stoddard', 'madison'],
+  buchanan: ['platte', 'clinton', 'andrew', 'dekalb'],
+  cole: ['boone', 'miller', 'callaway', 'moniteau', 'osage'],
 };
 
 export function getMissouriNearbyCounties(

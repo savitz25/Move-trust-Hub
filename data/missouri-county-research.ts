@@ -144,6 +144,142 @@ export const missouriCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  jasper: {
+    marketNotes:
+      'Jasper County is the core of the Joplin metropolitan area with strong industrial, healthcare, and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Jasper County pricing reflects Joplin metro Ozarks regional demand, I-44 corridor traffic, and competition among full-service local and regional agents serving Carthage and the greater Joplin area.',
+    },
+    tips: [
+      'Verify coverage for Joplin and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cass: {
+    marketNotes:
+      'Cass County is a rapidly growing suburban county south of Kansas City with strong residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Cass County pricing reflects south Kansas City metro suburban growth, I-49 corridor traffic, and competition among full-service local and regional agents serving Harrisonville, Raymore, and Belton.',
+    },
+    tips: [
+      'Verify coverage for Harrisonville, Raymore, and Belton areas before booking.',
+      'Kansas City-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  platte: {
+    marketNotes:
+      'Platte County is a growing suburban county northwest of Kansas City with strong residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Platte County pricing reflects northwest Kansas City metro suburban growth, I-29 and Highway 152 corridor traffic, and competition among full-service local and regional agents serving Platte City, Parkville, and Riverside.',
+    },
+    tips: [
+      'Verify coverage for Platte City, Parkville, and Riverside areas before booking.',
+      'Kansas City-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a growing suburban county west of St. Louis with strong residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects west St. Louis metro suburban growth, I-44 corridor traffic, and competition among full-service local and regional agents serving Union, Washington, and Pacific.',
+    },
+    tips: [
+      'Verify coverage for Union, Washington, and Pacific areas before booking.',
+      'St. Louis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood/tornado coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  christian: {
+    marketNotes:
+      'Christian County is one of Missouri’s fastest-growing counties south of Springfield with strong suburban residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Christian County pricing reflects south Springfield metro suburban growth, Highway 65 corridor traffic, and competition among full-service local and regional agents serving Ozark, Nixa, and Clever.',
+    },
+    tips: [
+      'Verify coverage for Ozark, Nixa, and Clever areas before booking.',
+      'Springfield-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'cape-girardeau': {
+    marketNotes:
+      'Cape Girardeau County is the economic center of Southeast Missouri with strong healthcare, education, and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Cape Girardeau County pricing reflects southeast Missouri regional demand, Mississippi River corridor access, and competition among full-service local and regional agents serving Cape Girardeau and Jackson.',
+    },
+    tips: [
+      'Verify coverage for Cape Girardeau and Jackson areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and flood/tornado coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  buchanan: {
+    marketNotes:
+      'Buchanan County is the core of the St. Joseph metropolitan area with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Buchanan County pricing reflects northwest Missouri regional demand, I-29 corridor traffic, and competition among full-service local and regional agents serving the greater St. Joseph area.',
+    },
+    tips: [
+      'Verify coverage for St. Joseph and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cole: {
+    marketNotes:
+      'Cole County is the core of the Jefferson City metropolitan area with strong governmental and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Cole County pricing reflects state-government relocation cycles, Jefferson City urban traffic patterns, and competition among full-service local and regional agents serving the capital metro.',
+    },
+    tips: [
+      'Verify coverage for Jefferson City and surrounding areas before booking.',
+      'Governmental traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getMissouriCountyResearch(

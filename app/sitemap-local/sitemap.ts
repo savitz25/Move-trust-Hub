@@ -145,6 +145,14 @@ const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'clay',
   'jefferson',
   'boone',
+  'jasper',
+  'cass',
+  'platte',
+  'franklin',
+  'christian',
+  'cape-girardeau',
+  'buchanan',
+  'cole',
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */

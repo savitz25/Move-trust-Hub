@@ -73,6 +73,14 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'clay', expectedCity: 'Liberty' },
   { stateSlug: 'missouri', countySlug: 'jefferson', expectedCity: 'Hillsboro' },
   { stateSlug: 'missouri', countySlug: 'boone', expectedCity: 'Columbia' },
+  { stateSlug: 'missouri', countySlug: 'jasper', expectedCity: 'Carthage' },
+  { stateSlug: 'missouri', countySlug: 'cass', expectedCity: 'Harrisonville' },
+  { stateSlug: 'missouri', countySlug: 'platte', expectedCity: 'Platte City' },
+  { stateSlug: 'missouri', countySlug: 'franklin', expectedCity: 'Union' },
+  { stateSlug: 'missouri', countySlug: 'christian', expectedCity: 'Ozark' },
+  { stateSlug: 'missouri', countySlug: 'cape-girardeau', expectedCity: 'Jackson' },
+  { stateSlug: 'missouri', countySlug: 'buchanan', expectedCity: 'St. Joseph' },
+  { stateSlug: 'missouri', countySlug: 'cole', expectedCity: 'Jefferson City' },
 ];
 
 let totalIssues = 0;
