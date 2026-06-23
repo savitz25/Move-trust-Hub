@@ -18,6 +18,8 @@ import { getMississippiCountyResearch } from '@/data/mississippi-county-research
 import { getMississippiCountyTestimonials } from '@/data/mississippi-county-testimonials';
 import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
 import { getLouisianaCountyTestimonials } from '@/data/louisiana-county-testimonials';
+import { getOklahomaCountyResearch } from '@/data/oklahoma-county-research';
+import { getOklahomaCountyTestimonials } from '@/data/oklahoma-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -210,6 +212,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'louisiana') {
     return getLouisianaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'oklahoma') {
+    return getOklahomaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -263,6 +268,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'louisiana') {
     const curated = getLouisianaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'oklahoma') {
+    const curated = getOklahomaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -353,6 +362,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getLouisianaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'oklahoma') {
+    const curated = getOklahomaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -426,6 +439,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'louisiana') {
     const curated = getLouisianaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'oklahoma') {
+    const curated = getOklahomaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

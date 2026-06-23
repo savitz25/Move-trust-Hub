@@ -9,6 +9,7 @@ import {
   ALABAMA_COUNTY_CONTENT_UPDATED,
   MISSISSIPPI_COUNTY_CONTENT_UPDATED,
   LOUISIANA_COUNTY_CONTENT_UPDATED,
+  OKLAHOMA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -114,6 +115,9 @@ const NC_HIGH_TRAFFIC_COUNTIES = new Set([
   'wake',
   'wayne',
 ]);
+
+/** High-traffic OK counties — sitemap priority 0.85 */
+const OK_HIGH_TRAFFIC_COUNTIES = new Set(['oklahoma']);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */
 const LA_HIGH_TRAFFIC_PARISHES = new Set([
@@ -268,7 +272,9 @@ export default async function sitemap({
                           ? new Date(MISSISSIPPI_COUNTY_CONTENT_UPDATED)
                           : id === 'louisiana'
                             ? new Date(LOUISIANA_COUNTY_CONTENT_UPDATED)
-                            : new Date();
+                            : id === 'oklahoma'
+                              ? new Date(OKLAHOMA_COUNTY_CONTENT_UPDATED)
+                              : new Date();
 
   return [
     {
@@ -301,7 +307,8 @@ export default async function sitemap({
         (id === 'tennessee' && TN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'alabama' && AL_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'mississippi' && MS_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'louisiana' && LA_HIGH_TRAFFIC_PARISHES.has(county.slug))
+        (id === 'louisiana' && LA_HIGH_TRAFFIC_PARISHES.has(county.slug)) ||
+        (id === 'oklahoma' && OK_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
