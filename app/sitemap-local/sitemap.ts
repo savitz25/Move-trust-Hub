@@ -140,6 +140,19 @@ const LA_HIGH_TRAFFIC_PARISHES = new Set([
   'st-charles',
   'lincoln',
   'st-mary',
+  'st-bernard',
+  'washington',
+  'vernon',
+  'st-john-the-baptist',
+  'avoyelles',
+  'beauregard',
+  'natchitoches',
+  'webster',
+  'evangeline',
+  'jefferson-davis',
+  'iberville',
+  'west-baton-rouge',
+  'de-soto',
 ]);
 
 /** High-traffic MS counties — sitemap priority 0.85 */

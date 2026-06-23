@@ -27,6 +27,19 @@ export const louisianaCountyOverrides: Partial<
   'st-charles': { seat: 'Hahnville', metro: 'new-orleans-metro-la' },
   lincoln: { seat: 'Ruston', metro: 'ruston-metro-la' },
   'st-mary': { seat: 'Franklin', metro: 'morgan-city-metro-la' },
+  'st-bernard': { seat: 'Chalmette', metro: 'new-orleans-metro-la' },
+  washington: { seat: 'Franklinton', metro: 'bogalusa-franklinton-metro-la' },
+  vernon: { seat: 'Leesville', metro: 'leesville-metro-la' },
+  'st-john-the-baptist': { seat: 'Edgard', metro: 'new-orleans-metro-la' },
+  avoyelles: { seat: 'Marksville', metro: 'alexandria-metro-la' },
+  beauregard: { seat: 'DeRidder', metro: 'leesville-metro-la' },
+  natchitoches: { seat: 'Natchitoches', metro: 'natchitoches-metro-la' },
+  webster: { seat: 'Minden', metro: 'shreveport-bossier-metro-la' },
+  evangeline: { seat: 'Ville Platte', metro: 'lafayette-metro-la' },
+  'jefferson-davis': { seat: 'Jennings', metro: 'lafayette-metro-la' },
+  iberville: { seat: 'Plaquemine', metro: 'baton-rouge-metro-la' },
+  'west-baton-rouge': { seat: 'Port Allen', metro: 'baton-rouge-metro-la' },
+  'de-soto': { seat: 'Mansfield', metro: 'shreveport-bossier-metro-la' },
 };
 
 export function applyLouisianaCountyOverrides(county: LocalCounty): LocalCounty {

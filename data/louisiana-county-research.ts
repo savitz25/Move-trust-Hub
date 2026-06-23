@@ -399,6 +399,227 @@ export const louisianaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  'st-bernard': {
+    marketNotes:
+      'St. Bernard Parish is a resilient coastal parish with strong residential and industrial demand in the Greater New Orleans area.',
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'St. Bernard Parish pricing reflects Chalmette coastal demand, industrial-area relocation volume, and Greater New Orleans metro cross-coverage from Jefferson and Orleans providers.',
+    },
+    tips: [
+      'Verify coverage for Chalmette, Arabi, and Meraux areas before booking.',
+      'Heavy industrial and coastal traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington Parish is a growing North Shore parish with strong rural-suburban residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Washington Parish pricing reflects Bogalusa and Franklinton rural-suburban demand and cross-coverage from St. Tammany and Tangipahoa North Shore providers.',
+    },
+    tips: [
+      'Verify coverage for Bogalusa, Franklinton, and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  vernon: {
+    marketNotes:
+      'Vernon Parish is anchored by Fort Johnson with strong military and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Vernon Parish pricing reflects Leesville military demand, Fort Johnson relocation volume, and regional crews from Alexandria and Shreveport providers.',
+    },
+    tips: [
+      'Verify coverage for Leesville and surrounding areas before booking.',
+      'Military base traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-john-the-baptist': {
+    marketNotes:
+      'St. John the Baptist Parish is a key River Parish with strong industrial and suburban residential demand.',
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'St. John the Baptist Parish pricing reflects LaPlace and Reserve river-corridor demand, petrochemical-industry relocation volume, and Greater New Orleans metro cross-coverage.',
+    },
+    tips: [
+      'Verify coverage for LaPlace, Reserve, and Edgard areas before booking.',
+      'River road and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  avoyelles: {
+    marketNotes:
+      'Avoyelles Parish is a rural Central Louisiana parish with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Avoyelles Parish pricing reflects Marksville rural demand and regional crews from Alexandria, Lafayette, and Monroe providers.',
+    },
+    tips: [
+      'Verify coverage for Marksville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  beauregard: {
+    marketNotes:
+      'Beauregard Parish is a growing parish in Southwest Louisiana with strong military and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Beauregard Parish pricing reflects DeRidder regional demand and cross-coverage from Lake Charles, Vernon, and Alexandria providers.',
+    },
+    tips: [
+      'Verify coverage for DeRidder and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  natchitoches: {
+    marketNotes:
+      'Natchitoches Parish is a historic parish in Northwest Louisiana with strong tourism and educational demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Natchitoches Parish pricing reflects historic-district and university demand, tourist-season volume, and regional crews from Shreveport providers.',
+    },
+    tips: [
+      'Verify coverage for Natchitoches and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value historic homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  webster: {
+    marketNotes:
+      'Webster Parish is a key North Louisiana parish with strong residential and industrial demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Webster Parish pricing reflects Minden and Springhill regional demand and shared Shreveport–Bossier metro crews.',
+    },
+    tips: [
+      'Verify coverage for Minden and Springhill areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  evangeline: {
+    marketNotes:
+      'Evangeline Parish is a rural Acadiana parish with strong cultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Evangeline Parish pricing reflects Ville Platte rural demand and Lafayette metro cross-coverage from regional Acadiana providers.',
+    },
+    tips: [
+      'Verify coverage for Ville Platte and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'jefferson-davis': {
+    marketNotes:
+      'Jefferson Davis Parish is a key Acadiana parish with strong agricultural and energy demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jefferson Davis Parish pricing reflects Jennings agricultural-community demand and cross-coverage from Lake Charles and Lafayette providers.',
+    },
+    tips: [
+      'Verify coverage for Jennings and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  iberville: {
+    marketNotes:
+      'Iberville Parish is a River Parish with strong petrochemical and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Iberville Parish pricing reflects Plaquemine river-corridor demand, petrochemical-industry relocation volume, and Baton Rouge metro cross-coverage.',
+    },
+    tips: [
+      'Verify coverage for Plaquemine and surrounding areas before booking.',
+      'River road and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'west-baton-rouge': {
+    marketNotes:
+      'West Baton Rouge Parish is a key River Parish with strong industrial and suburban residential demand.',
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'West Baton Rouge Parish pricing reflects Port Allen west-bank demand, industrial relocation volume, and shared Baton Rouge metro crews.',
+    },
+    tips: [
+      'Verify coverage for Port Allen and surrounding areas before booking.',
+      'River road and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'de-soto': {
+    marketNotes:
+      'De Soto Parish is a growing parish in Northwest Louisiana with strong residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'De Soto Parish pricing reflects Mansfield regional demand and cross-coverage from Shreveport–Bossier and Natchitoches providers.',
+    },
+    tips: [
+      'Verify coverage for Mansfield and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getLouisianaCountyResearch(
