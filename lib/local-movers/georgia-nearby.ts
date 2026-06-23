@@ -13,6 +13,16 @@ const countyNameBySlug = new Map(georgiaCounties.map((c) => [c.slug, c.name]));
 const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   fulton: ['cobb', 'dekalb', 'forsyth', 'gwinnett', 'cherokee', 'clayton'],
   gwinnett: ['fulton', 'barrow', 'forsyth', 'hall', 'jackson', 'walton'],
+  cobb: ['fulton', 'cherokee', 'paulding', 'douglas', 'fayette', 'bartow'],
+  dekalb: ['fulton', 'gwinnett', 'rockdale', 'henry', 'clayton', 'walton'],
+  clayton: ['fulton', 'dekalb', 'henry', 'fayette', 'rockdale', 'spalding'],
+  cherokee: ['cobb', 'fulton', 'forsyth', 'pickens', 'bartow', 'paulding'],
+  forsyth: ['gwinnett', 'fulton', 'cherokee', 'hall', 'dawson', 'lumpkin'],
+  henry: ['clayton', 'fayette', 'rockdale', 'newton', 'butts', 'spalding'],
+  fayette: ['clayton', 'fulton', 'henry', 'coweta', 'spalding', 'heard'],
+  douglas: ['cobb', 'paulding', 'fulton', 'carroll', 'fayette', 'haralson'],
+  rockdale: ['dekalb', 'gwinnett', 'newton', 'henry', 'walton', 'morgan'],
+  paulding: ['cobb', 'douglas', 'bartow', 'polk', 'cherokee', 'haralson'],
 };
 
 export function getGeorgiaNearbyCounties(

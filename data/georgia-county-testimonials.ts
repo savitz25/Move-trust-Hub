@@ -59,6 +59,266 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Family home',
     },
   ],
+  cobb: [
+    {
+      quote:
+        'Our Marietta home near the Big Chicken needed careful timing around I-75 construction. Two Men and a Truck showed up early, protected our hardwood floors, and finished our Cobb County move ahead of schedule.',
+      name: 'Brian L.',
+      location: 'Marietta, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mark the Mover handled our Kennesaw relocation with professional crews who navigated a tight cul-de-sac and wrapped every piece of furniture. Transparent pricing throughout Cobb County.',
+      name: 'Angela M.',
+      location: 'Kennesaw, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Bulldog Movers made our East Cobb move stress-free — great communication about I-285 traffic and careful handling of our home office equipment.',
+      name: 'Chris P.',
+      location: 'Smyrna, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  dekalb: [
+    {
+      quote:
+        'Our Decatur bungalow has narrow halls and original floors. Mark the Mover padded everything, managed street parking on a busy Saturday, and completed our DeKalb County move without a single scuff.',
+      name: 'Rachel F.',
+      location: 'Decatur, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'College Hunks handled our Brookhaven apartment move efficiently — elevator reserved, building rules followed, and everything upstairs before the management deadline.',
+      name: 'Kevin J.',
+      location: 'Brookhaven, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Two Men and a Truck navigated Tucker traffic smartly and moved our family home on time. Upfront about Atlanta metro delays and careful with our kids\' rooms.',
+      name: 'Simone A.',
+      location: 'Tucker, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  clayton: [
+    {
+      quote:
+        'Our Jonesboro townhome HOA had strict move windows. All My Sons submitted paperwork early and finished our Clayton County relocation without disturbing neighbors.',
+      name: 'Derrick H.',
+      location: 'Jonesboro, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck handled our Riverdale move professionally despite heavy I-75 traffic. Clear pricing and careful furniture wrapping throughout.',
+      name: 'Latoya B.',
+      location: 'Riverdale, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks made our south-metro apartment move manageable — fast crew, good communication, and no surprise fees for our Clayton County relocation.',
+      name: 'Jason W.',
+      location: 'Morrow, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  cherokee: [
+    {
+      quote:
+        'Bulldog Movers served our Woodstock new-build perfectly — HOA gate passes handled early and the crew was careful with our driveway landscaping in Cherokee County.',
+      name: 'Heather C.',
+      location: 'Woodstock, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck confirmed Canton coverage upfront and navigated I-575 traffic without missing our closing-day window. Excellent crew communication.',
+      name: 'Mike S.',
+      location: 'Canton, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Zip Moving gave us a flat-rate quote for our Holly Springs relocation that matched the final bill. Great experience in a fast-growing Cherokee County neighborhood.',
+      name: 'Amanda R.',
+      location: 'Holly Springs, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  forsyth: [
+    {
+      quote:
+        'Our Cumming estate home needed white-glove care for antiques. Bulldog Movers wrapped everything carefully and coordinated GA-400 traffic timing so we hit our move-in date.',
+      name: 'Greg T.',
+      location: 'Cumming, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons handled our Forsyth County townhome efficiently — HOA rules followed, furniture protected, and finished faster than quoted despite heavy commuter traffic.',
+      name: 'Linda K.',
+      location: 'Suwanee, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck moved our growing family from south Forsyth without stress. Upfront about crew arrival and transparent about pricing for a four-bedroom home.',
+      name: 'Ryan D.',
+      location: 'Cumming, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  henry: [
+    {
+      quote:
+        'Our McDonough subdivision required gate coordination and driveway protection. Two Men and a Truck handled both and finished our Henry County move on the quoted timeline.',
+      name: 'Tasha N.',
+      location: 'McDonough, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons moved our Stockbridge home efficiently despite I-75 south congestion. Professional crew and clear communication from estimate to completion.',
+      name: 'Eric V.',
+      location: 'Stockbridge, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks helped with our Locust Grove relocation — careful with heavy furniture and upfront about travel time from the Atlanta metro base.',
+      name: 'Maria G.',
+      location: 'Locust Grove, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  fayette: [
+    {
+      quote:
+        'Peachtree City path-system neighborhoods have unique access rules. Mark the Mover confirmed logistics ahead of time and handled our Fayette County move without damaging landscaping.',
+      name: 'Scott B.',
+      location: 'Peachtree City, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck moved our Fayetteville home on closing day despite tight scheduling. Careful crews and transparent pricing throughout.',
+      name: 'Jennifer L.',
+      location: 'Fayetteville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'All My Sons provided reliable service for our Tyrone relocation — wrapped furniture well and navigated south-metro traffic without delays.',
+      name: 'Paul E.',
+      location: 'Tyrone, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  douglas: [
+    {
+      quote:
+        'Our Douglasville home near I-20 needed a crew comfortable with west-metro traffic. Zip Moving gave a clear flat-rate quote and delivered on time.',
+      name: 'Nina O.',
+      location: 'Douglasville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck handled our Lithia Springs apartment move professionally — building elevator reserved and no hallway damage in our Douglas County relocation.',
+      name: 'Andre C.',
+      location: 'Lithia Springs, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Atlanta Peach Movers wrapped our furniture carefully and finished our Douglasville move faster than expected despite I-20 corridor congestion.',
+      name: 'Kelly H.',
+      location: 'Douglasville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  rockdale: [
+    {
+      quote:
+        'Our Conyers home move lined up with a tight closing schedule. Two Men and a Truck arrived early, followed HOA rules, and finished our Rockdale County relocation ahead of plan.',
+      name: 'William J.',
+      location: 'Conyers, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons navigated I-20 east traffic smartly and moved our family home without damaging the new hardwood floors. Great communication throughout.',
+      name: 'Diana S.',
+      location: 'Conyers, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks made our east-metro apartment move easy — fast packing help, careful loading, and no surprise fees for our Rockdale County relocation.',
+      name: 'Omar R.',
+      location: 'Conyers, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  paulding: [
+    {
+      quote:
+        'Our Dallas-area home has a long gravel driveway. Bulldog Movers confirmed truck access upfront and handled our Paulding County move without yard damage.',
+      name: 'Tracy M.',
+      location: 'Dallas, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck served our Hiram relocation efficiently — upfront about travel from the metro base and careful with our garage workshop equipment.',
+      name: 'Ben K.',
+      location: 'Hiram, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Zip Moving provided a transparent flat-rate quote for our northwest metro move. Professional crew and on-time delivery in Paulding County.',
+      name: 'Sandra P.',
+      location: 'Dallas, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

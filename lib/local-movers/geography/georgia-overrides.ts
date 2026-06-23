@@ -6,6 +6,16 @@ export const georgiaCountyOverrides: Partial<
 > = {
   fulton: { seat: 'Atlanta', metro: 'atlanta-metro-ga' },
   gwinnett: { seat: 'Lawrenceville', metro: 'atlanta-metro-ga' },
+  cobb: { seat: 'Marietta', metro: 'atlanta-metro-ga' },
+  dekalb: { seat: 'Decatur', metro: 'atlanta-metro-ga' },
+  clayton: { seat: 'Jonesboro', metro: 'atlanta-metro-ga' },
+  cherokee: { seat: 'Canton', metro: 'atlanta-metro-ga' },
+  forsyth: { seat: 'Cumming', metro: 'atlanta-metro-ga' },
+  henry: { seat: 'McDonough', metro: 'atlanta-metro-ga' },
+  fayette: { seat: 'Fayetteville', metro: 'atlanta-metro-ga' },
+  douglas: { seat: 'Douglasville', metro: 'atlanta-metro-ga' },
+  rockdale: { seat: 'Conyers', metro: 'atlanta-metro-ga' },
+  paulding: { seat: 'Dallas', metro: 'atlanta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

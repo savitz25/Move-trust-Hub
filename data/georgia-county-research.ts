@@ -46,6 +46,178 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Ask whether a smaller truck is needed for townhome courts or narrow community streets.',
     ],
   },
+  cobb: {
+    marketNotes:
+      'Cobb County is a major suburban Atlanta market anchored by Marietta, Smyrna, Kennesaw, and Acworth with strong residential and commercial moving demand along I-75 and I-285.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Cobb County pricing reflects Marietta corridor traffic, suburban HOA communities, and mixed apartment and single-family demand.',
+    },
+    tips: [
+      'Heavy Atlanta metro traffic on I-75 and I-285 impacts scheduling — confirm crew arrival windows for Marietta and Kennesaw routes.',
+      'Verify coverage for Marietta, Smyrna, Mableton, Kennesaw, and Acworth before booking.',
+      'Confirm insurance and valuation for high-value homes in East Cobb and Vinings-adjacent neighborhoods.',
+      'Book early for peak seasons and Cobb County school-calendar move windows.',
+      'Obtain multiple written estimates and compare flat-rate vs. hourly pricing.',
+      'Check HOA move rules and gate access in newer Cobb subdivisions.',
+    ],
+  },
+  dekalb: {
+    marketNotes:
+      'DeKalb County includes Decatur, Brookhaven, Dunwoody, Stone Mountain, and portions of Atlanta with diverse urban apartments, historic bungalows, and suburban single-family moves.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'DeKalb moves often involve Decatur historic streets, MARTA-adjacent apartments, and I-285/I-20 traffic congestion.',
+    },
+    tips: [
+      'Heavy Atlanta metro traffic on I-285, I-20, and surface arterials impacts scheduling — book morning slots when possible.',
+      'Verify coverage for Decatur, Tucker, Chamblee, Brookhaven, and Stone Mountain addresses.',
+      'Confirm insurance for high-value homes and ask about specialty handling for antiques in older Decatur neighborhoods.',
+      'Book early for peak seasons and Emory/CDC-adjacent apartment turnover periods.',
+      'Obtain multiple written estimates before signing.',
+      'Check building elevator reservations and street-parking rules for in-town DeKalb moves.',
+    ],
+  },
+  clayton: {
+    marketNotes:
+      'Clayton County is part of the south Atlanta metro with Jonesboro as the county seat, serving growing suburban communities and Hartsfield-Jackson airport-adjacent relocations.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Clayton County pricing reflects I-75 south corridor traffic and suburban Jonesboro and Riverdale communities.',
+    },
+    tips: [
+      'Heavy Atlanta metro traffic on I-75 impacts scheduling — confirm routes for Jonesboro and Forest Park.',
+      'Verify coverage for Jonesboro, Riverdale, Morrow, and Lake City before booking.',
+      'Confirm insurance for high-value homes and multi-bedroom suburban properties.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates and ask about travel fees for outer Clayton addresses.',
+    ],
+  },
+  cherokee: {
+    marketNotes:
+      'Cherokee County is a fast-growing suburban market north of Atlanta with Canton, Woodstock, and Holly Springs driving steady residential moving demand along I-575.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cherokee moves often reflect I-575 commuter traffic and new-construction HOA communities around Canton and Woodstock.',
+    },
+    tips: [
+      'Verify coverage for Canton, Woodstock, Holly Springs, and Ball Ground before booking.',
+      'Atlanta metro traffic on I-575 and GA-400 connectors impacts crew scheduling.',
+      'Confirm insurance for high-value homes in newer Cherokee subdivisions.',
+      'Book early for peak seasons and school-district move windows.',
+      'Obtain multiple written estimates and confirm gate/HOA move paperwork.',
+    ],
+  },
+  forsyth: {
+    marketNotes:
+      'Forsyth County is one of the fastest-growing counties in the Atlanta metro, centered on Cumming with high demand in Alpharetta-adjacent suburbs and GA-400 corridor communities.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Forsyth pricing reflects GA-400 traffic, affluent suburban homes, and strong new-construction move volume around Cumming.',
+    },
+    tips: [
+      'Verify coverage for Cumming, Suwanee-adjacent areas, and south Forsyth communities.',
+      'Atlanta metro traffic on GA-400 significantly impacts scheduling — confirm arrival windows.',
+      'Confirm insurance for high-value homes and large suburban estates.',
+      'Book early for peak seasons and end-of-month closings.',
+      'Obtain multiple written estimates and check HOA move-day requirements.',
+    ],
+  },
+  henry: {
+    marketNotes:
+      'Henry County is a growing south-metro market with McDonough, Stockbridge, and Locust Grove serving family-oriented suburban relocations along I-75 south of Atlanta.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Henry County moves reflect I-75 south corridor congestion and expanding McDonough suburban developments.',
+    },
+    tips: [
+      'Verify coverage for McDonough, Stockbridge, Hampton, and Locust Grove.',
+      'Atlanta metro traffic on I-75 south impacts scheduling — book off-peak when possible.',
+      'Confirm insurance for high-value homes in newer Henry subdivisions.',
+      'Book early for peak seasons and school-calendar relocations.',
+      'Obtain multiple written estimates before booking.',
+    ],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County is an affluent south-metro suburb centered on Fayetteville and Peachtree City with golf-cart communities, executive homes, and steady residential moving demand.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Fayette moves often involve Peachtree City path-system access limits and premium homes in Tyrone and Fayetteville.',
+    },
+    tips: [
+      'Verify coverage for Fayetteville, Peachtree City, Tyrone, and Brooks.',
+      'Atlanta metro traffic on I-85 and GA-74 impacts scheduling for south-metro crews.',
+      'Confirm insurance for high-value homes and specialty items.',
+      'Book early for peak seasons — Fayette County has limited local mover density.',
+      'Obtain multiple written estimates and ask about Peachtree City access logistics.',
+    ],
+  },
+  douglas: {
+    marketNotes:
+      'Douglas County sits west of Atlanta with Douglasville as the seat, blending suburban growth along I-20 with commercial corridor demand near the Fulton County line.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Douglas County pricing reflects I-20 west corridor traffic and suburban Douglasville and Lithia Springs communities.',
+    },
+    tips: [
+      'Verify coverage for Douglasville, Lithia Springs, and Villa Rica before booking.',
+      'Atlanta metro traffic on I-20 impacts scheduling for west-metro routes.',
+      'Confirm insurance for high-value homes and multi-bedroom suburban properties.',
+      'Book early for peak seasons and month-end apartment turnover.',
+      'Obtain multiple written estimates and compare travel-time fees.',
+    ],
+  },
+  rockdale: {
+    marketNotes:
+      'Rockdale County is an east-metro suburb with Conyers serving I-20 corridor families and commuters between Atlanta and Covington.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Rockdale moves reflect I-20 east corridor traffic and Conyers suburban HOA communities.',
+    },
+    tips: [
+      'Verify coverage for Conyers, Olde Town, and north Rockdale communities.',
+      'Atlanta metro traffic on I-20 east impacts crew scheduling.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and school-district move periods.',
+      'Obtain multiple written estimates and confirm HOA paperwork.',
+    ],
+  },
+  paulding: {
+    marketNotes:
+      'Paulding County is a fast-growing northwest Atlanta suburb with Dallas, Hiram, and Braswell communities driving residential demand along the Cobb and Douglas county lines.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Paulding pricing reflects west-northwest metro growth, rural-leaning lots, and I-20/GA-278 corridor access.',
+    },
+    tips: [
+      'Verify coverage for Dallas, Hiram, and Paulding County rural addresses.',
+      'Atlanta metro traffic impacts scheduling for crews coming from Cobb or Fulton bases.',
+      'Confirm insurance for high-value homes and properties with long driveways.',
+      'Book early for peak seasons — fewer dedicated local movers serve outer Paulding.',
+      'Obtain multiple written estimates and ask about truck size for narrow rural roads.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(
