@@ -42,6 +42,19 @@ export const mississippiCountyOverrides: Partial<
   leflore: { seat: 'Greenwood', metro: 'greenwood-metro-ms' },
   itawamba: { seat: 'Fulton', metro: 'fulton-metro-ms' },
   marion: { seat: 'Columbia', metro: 'columbia-metro-ms' },
+  yazoo: { seat: 'Yazoo City', metro: 'yazoo-city-metro-ms' },
+  sunflower: { seat: 'Indianola', metro: 'indianola-metro-ms' },
+  leake: { seat: 'Carthage', metro: 'carthage-metro-ms' },
+  tippah: { seat: 'Ripley', metro: 'ripley-metro-ms' },
+  newton: { seat: 'Newton', metro: 'newton-metro-ms' },
+  grenada: { seat: 'Grenada', metro: 'grenada-metro-ms' },
+  stone: { seat: 'Wiggins', metro: 'wiggins-metro-ms' },
+  wayne: { seat: 'Waynesboro', metro: 'waynesboro-metro-ms' },
+  coahoma: { seat: 'Clarksdale', metro: 'clarksdale-metro-ms' },
+  tishomingo: { seat: 'Iuka', metro: 'iuka-metro-ms' },
+  clay: { seat: 'West Point', metro: 'west-point-metro-ms' },
+  covington: { seat: 'Collins', metro: 'collins-metro-ms' },
+  winston: { seat: 'Louisville', metro: 'louisville-metro-ms' },
 };
 
 export function applyMississippiCountyOverrides(county: LocalCounty): LocalCounty {
