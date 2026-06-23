@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 ## Reference states (audit-complete)
 
@@ -14,6 +14,31 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | New Jersey | 21/21 | 7 | 10 | 8 counties | `count-nj-movers.ts`, `apply-nj-mover-expansion.ts` |
 | New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
 | Texas | 254/254 | 5 | 10 (cap 10) | 16 counties | `count-texas-movers.ts`, `apply-texas-mover-expansion.ts` |
+| Tennessee | 95/95 | 5 | 10 (cap 10) | 20 counties | `count-tennessee-movers.ts`, `apply-tennessee-mover-expansion.ts` |
+
+### Tennessee metro pools (`data/local-movers-seed.ts`)
+
+- `memphis-metro-tn` — Memphis / West TN / Tipton corridor
+- `nashville-metro-tn` — Nashville, Murfreesboro, Franklin, Gallatin, Lebanon, Columbia
+- `clarksville-metro-tn` — Clarksville / Fort Campbell military corridor
+- `knoxville-metro-tn` — Knoxville, Maryville, Oak Ridge
+- `chattanooga-metro-tn` — Chattanooga metro
+- `kingsport-bristol-metro-tn` — Tri-Cities (Johnson City, Kingsport, Bristol, Greeneville)
+- `jackson-metro-tn` — Jackson / West TN regional
+- `cookeville-metro-tn` — Cookeville / Upper Cumberland
+- `crossville-metro-tn` — Crossville / Plateau
+- `cleveland-metro-tn` — Cleveland / Bradley
+- `sevierville-metro-tn` — Sevierville / Smokies tourism corridor
+- `morristown-metro-tn`, `greeneville-metro-tn` — East TN regional fallbacks
+- Rural pools: `byrdstown-metro-tn`, `celina-metro-tn`, `spencer-metro-tn`, etc. (one per remote county seat)
+
+### Tennessee major counties (10 movers each)
+
+`shelby`, `davidson`, `knox`, `hamilton`, `rutherford`, `williamson`, `montgomery`, `sumner`, `wilson`, `sullivan`, `blount`, `washington`, `maury`, `bradley`, `sevier`, `madison`, `putnam`, `anderson`, `robertson`, `greene`
+
+### Tennessee sitemap priority 0.85 (20 counties)
+
+Same as major counties above — Memphis, Nashville, Knoxville, Chattanooga, Clarksville, Murfreesboro/Williamson, Tri-Cities, Smokies, Cookeville, and surrounding high-growth corridors.
 
 ### California metro pools (`data/local-movers-seed.ts`)
 
@@ -245,6 +270,7 @@ npx tsx scripts/count-north-carolina-movers.ts
 npx tsx scripts/count-nj-movers.ts
 npx tsx scripts/count-ny-movers.ts
 npx tsx scripts/count-texas-movers.ts
+npx tsx scripts/count-tennessee-movers.ts
 npx tsx scripts/apply-{state}-mover-expansion.ts   # if needed
 ```
 

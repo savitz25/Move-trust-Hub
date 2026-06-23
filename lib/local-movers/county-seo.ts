@@ -101,6 +101,7 @@ export function buildStateDescription(
     stateName === 'New York' ||
     stateName === 'South Carolina' ||
     stateName === 'North Carolina' ||
+    stateName === 'Tennessee' ||
     stateName === 'Texas'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';
