@@ -1,6 +1,6 @@
 import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Kansas county mover lists — grows incrementally per batch */
+/** Hand-curated Kansas county mover lists - grows incrementally per batch */
 const CURATED_KS_COUNTIES: Record<string, string[]> = {
   johnson: [
     'two-men-and-a-truck-johnson-ks',

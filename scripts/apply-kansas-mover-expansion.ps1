@@ -137,5 +137,6 @@ foreach ($slug in $assignmentMap.Keys) {
   $content = [regex]::Replace($content, $pattern, "$block,", 1)
 }
 
-Set-Content -Path $assignmentsPath -Value $content -NoNewline
+$utf8NoBom = New-Object System.Text.UTF8Encoding $false
+[System.IO.File]::WriteAllText((Join-Path (Get-Location) $assignmentsPath), $content, $utf8NoBom)
 Write-Host "Updated $($assignmentMap.Count) Kansas county assignments."
