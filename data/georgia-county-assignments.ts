@@ -685,6 +685,56 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-macon',
     'simple-moving-solutions-macon',
   ],
+  wilkes: [
+    'university-moving-athens',
+    'two-men-and-a-truck-athens',
+    'two-men-and-a-truck-augusta',
+  ],
+  johnson: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'simple-moving-solutions-macon',
+  ],
+  seminole: [
+    'hhg-movers-south-georgia',
+    'home-moving-solution-albany',
+    'two-men-and-a-truck-albany',
+  ],
+  turner: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  irwin: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  jenkins: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'college-hunks-moving-savannah',
+  ],
+  wilcox: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  montgomery: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  hancock: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'cicero-moving-macon',
+  ],
+  wilkinson: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'cicero-moving-macon',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

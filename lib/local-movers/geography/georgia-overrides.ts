@@ -126,6 +126,16 @@ export const georgiaCountyOverrides: Partial<
   lanier: { seat: 'Lakeland', metro: 'valdosta-metro-ga' },
   early: { seat: 'Blakely', metro: 'albany-metro-ga' },
   pulaski: { seat: 'Hawkinsville', metro: 'macon-metro-ga' },
+  wilkes: { seat: 'Washington', metro: 'athens-metro-ga' },
+  johnson: { seat: 'Wrightsville', metro: 'macon-metro-ga' },
+  seminole: { seat: 'Donalsonville', metro: 'albany-metro-ga' },
+  turner: { seat: 'Ashburn', metro: 'valdosta-metro-ga' },
+  irwin: { seat: 'Ocilla', metro: 'valdosta-metro-ga' },
+  jenkins: { seat: 'Millen', metro: 'savannah-metro-ga' },
+  wilcox: { seat: 'Abbeville', metro: 'valdosta-metro-ga' },
+  montgomery: { seat: 'Mount Vernon', metro: 'savannah-metro-ga' },
+  hancock: { seat: 'Sparta', metro: 'macon-metro-ga' },
+  wilkinson: { seat: 'Irwinton', metro: 'macon-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

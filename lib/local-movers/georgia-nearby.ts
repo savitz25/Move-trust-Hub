@@ -133,6 +133,16 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lanier: ['lowndes', 'brooks', 'atkinson', 'berrien', 'echols', 'cook'],
   early: ['baker', 'miller', 'seminole', 'decatur', 'grady', 'mitchell'],
   pulaski: ['bleckley', 'dodge', 'houston', 'dooly', 'wilcox', 'laurens'],
+  wilkes: ['oglethorpe', 'greene', 'lincoln', 'mcduffie', 'warren', 'elbert'],
+  johnson: ['washington', 'jefferson', 'emanuel', 'treutlen', 'laurens', 'glascock'],
+  seminole: ['early', 'decatur', 'miller', 'grady', 'mitchell', 'baker'],
+  turner: ['crisp', 'ben-hill', 'wilcox', 'tift', 'irwin', 'dooly'],
+  irwin: ['ben-hill', 'coffee', 'tift', 'turner', 'berrien', 'colquitt'],
+  jenkins: ['burke', 'screven', 'emanuel', 'bulloch', 'candler', 'jefferson'],
+  wilcox: ['dooly', 'pulaski', 'turner', 'ben-hill', 'crisp', 'dodge'],
+  montgomery: ['telfair', 'jeff-davis', 'toombs', 'wheeler', 'appling', 'coffee'],
+  hancock: ['washington', 'greene', 'taliferro', 'warren', 'baldwin', 'glascock'],
+  wilkinson: ['washington', 'laurens', 'johnson', 'twiggs', 'bleckley', 'hancock'],
 };
 
 export function getGeorgiaNearbyCounties(

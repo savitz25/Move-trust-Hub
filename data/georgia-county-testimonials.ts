@@ -3179,6 +3179,266 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  wilkes: [
+    {
+      quote:
+        'University Moving and Storage handled our Washington historic-home relocation with specialty care for antiques and excellent Northeast Georgia corridor knowledge.',
+      name: 'Charles M.',
+      location: 'Washington, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Wilkes County move efficiently with clear communication and careful handling of rural property access.',
+      name: 'Diana S.',
+      location: 'Washington, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta covered our Wilkes County move when Athens crews were booked — upfront about CSRA travel time and professional service.',
+      name: 'Frank L.',
+      location: 'Washington, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  johnson: [
+    {
+      quote:
+        'Good Guys Moving confirmed Wrightsville coverage and handled our rural Johnson County move with careful driveway access planning.',
+      name: 'Robert E.',
+      location: 'Wrightsville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Johnson County relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'Laura V.',
+      location: 'Wrightsville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Simple Moving Solutions Macon traveled to Wrightsville and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Charles M.',
+      location: 'Wrightsville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  seminole: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Donalsonville move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Donalsonville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Seminole County coverage and handled our rural Donalsonville relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Donalsonville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Donalsonville move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Donalsonville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  turner: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Ashburn move with professional crews and clear I-75 corridor pricing.',
+      name: 'Tom R.',
+      location: 'Ashburn, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Ashburn coverage and delivered careful handling for our rural Turner County relocation.',
+      name: 'Brenda L.',
+      location: 'Ashburn, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Turner County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Carl M.',
+      location: 'Ashburn, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  irwin: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Ocilla move with professional crews and clear rural travel pricing.',
+      name: 'Johnny R.',
+      location: 'Ocilla, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Ocilla coverage and delivered careful handling for our rural Irwin County relocation.',
+      name: 'Wanda G.',
+      location: 'Ocilla, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Irwin County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Donald P.',
+      location: 'Ocilla, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  jenkins: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Millen and delivered on schedule. Upfront about rural travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Millen, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Jenkins County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Millen, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah provided reliable packing and loading for our rural Millen home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Millen, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  wilcox: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Abbeville move with professional crews and clear rural travel pricing.',
+      name: 'Tom R.',
+      location: 'Abbeville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Abbeville coverage and delivered careful handling for our rural Wilcox County relocation.',
+      name: 'Brenda L.',
+      location: 'Abbeville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Wilcox County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Carl M.',
+      location: 'Abbeville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  montgomery: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Mount Vernon and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Mount Vernon, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Montgomery County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Mount Vernon, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Mount Vernon home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Mount Vernon, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  hancock: [
+    {
+      quote:
+        'Good Guys Moving confirmed Sparta coverage and handled our rural Hancock County move with careful driveway access planning.',
+      name: 'Patricia H.',
+      location: 'Sparta, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Sparta relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'James R.',
+      location: 'Sparta, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Cicero\'s Moving handled specialty items in our Sparta move with careful crating and climate-controlled storage options.',
+      name: 'Charles M.',
+      location: 'Sparta, GA',
+      rating: 4,
+      moveType: 'Historic home',
+    },
+  ],
+  wilkinson: [
+    {
+      quote:
+        'Good Guys Moving confirmed Irwinton coverage and handled our rural Wilkinson County move with careful furniture wrapping.',
+      name: 'Robert E.',
+      location: 'Irwinton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Irwinton relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'Laura V.',
+      location: 'Irwinton, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Cicero\'s Moving traveled to Wilkinson County and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Susan T.',
+      location: 'Irwinton, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

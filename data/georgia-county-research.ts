@@ -2090,6 +2090,176 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural Central Georgia relocations.',
     ],
   },
+  wilkes: {
+    marketNotes:
+      'Wilkes County is rural Northeast Georgia with Washington as the seat and historic downtown significance along the Athens and CSRA corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Wilkes County pricing reflects rural property access and travel from Athens or Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Washington and outer Wilkes addresses.',
+      'Verify explicit regional service to Washington before booking — not Washington County (Sandersville).',
+      'Storage is very limited locally — plan with Athens or Augusta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Northeast Georgia relocations.',
+    ],
+  },
+  johnson: {
+    marketNotes:
+      'Johnson County is rural Central Georgia with Wrightsville as the seat between Macon and the CSRA inland corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Johnson County pricing reflects rural property access and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Wrightsville and outer Johnson properties.',
+      'Verify explicit regional service to Wrightsville before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  seminole: {
+    marketNotes:
+      'Seminole County is rural Southwest Georgia with Donalsonville as the seat along the Alabama border and Chattahoochee River corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Seminole County pricing reflects remote rural access and travel from Albany or Dothan-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Donalsonville and outer Seminole properties.',
+      'Verify explicit regional service to Donalsonville before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  turner: {
+    marketNotes:
+      'Turner County is rural South Georgia with Ashburn as the seat along the I-75 corridor between Cordele and Tifton.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Turner County pricing reflects rural property access and travel from Valdosta or Tifton-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Ashburn and outer Turner properties.',
+      'Verify explicit regional service to Ashburn before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  irwin: {
+    marketNotes:
+      'Irwin County is rural South Georgia with Ocilla as the seat along the Tifton and Valdosta corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Irwin County pricing reflects rural property access and travel from Valdosta or Tifton-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Ocilla and outer Irwin properties.',
+      'Verify explicit regional service to Ocilla before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  jenkins: {
+    marketNotes:
+      'Jenkins County is rural Southeast Georgia with Millen as the seat between Augusta and Savannah.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jenkins County pricing reflects rural property access and travel from Savannah-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Millen and outer Jenkins properties.',
+      'Verify explicit regional service to Millen before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  wilcox: {
+    marketNotes:
+      'Wilcox County is rural South Georgia with Abbeville as the seat along the I-75 and Hawkinsville corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Wilcox County pricing reflects rural property access and travel from Valdosta or Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Abbeville and outer Wilcox properties.',
+      'Verify explicit regional service to Abbeville before booking.',
+      'Storage is very limited locally — coordinate with Valdosta or Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County is rural Southeast Georgia with Mount Vernon as the seat — distinct from Montgomery County, Alabama.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Montgomery County pricing reflects rural coastal-plain access and travel from Savannah or Statesboro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Mount Vernon and outer Montgomery properties.',
+      'Verify explicit regional service to Mount Vernon before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  hancock: {
+    marketNotes:
+      'Hancock County is rural Central Georgia with Sparta as the seat between Milledgeville and the CSRA corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Hancock County pricing reflects rural property access and travel from Macon or Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Sparta and outer Hancock addresses.',
+      'Verify explicit regional service to Sparta before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  wilkinson: {
+    marketNotes:
+      'Wilkinson County is rural Central Georgia with Irwinton as the seat between Macon and Sandersville.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Wilkinson County pricing reflects rural property access and travel from Macon-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Irwinton and outer Wilkinson addresses.',
+      'Verify explicit regional service to Irwinton before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(
