@@ -20,6 +20,7 @@ const SKIP_STATES = new Set([
   'mississippi',
   'louisiana',
   'oklahoma',
+  'arkansas',
   'california',
   'florida',
   'new-jersey',

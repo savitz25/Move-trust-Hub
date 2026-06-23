@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -21,6 +21,30 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Mississippi | 82/82 | 5 | 10 (cap 10) | 15 counties | `count-mississippi-movers.ts`, `apply-mississippi-mover-expansion.ts` |
 | Louisiana | 64/64 parishes | 5 | 10 (cap 10) | 15 parishes | `count-louisiana-movers.ts`, `apply-louisiana-mover-expansion.ts` |
 | Oklahoma | 77/77 | 3 (rural) | 8 (medium) / 10 (top 5) | 12 counties | `count-oklahoma-movers.ts` |
+| Arkansas | 75/75 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-arkansas-movers.ts`, `apply-arkansas-mover-expansion.ts` |
+
+### Arkansas metro pools (`data/local-movers-seed.ts`)
+
+- `little-rock-metro-ar` — Little Rock MSA (Pulaski, Faulkner, Saline, Lonoke, Grant)
+- `northwest-arkansas-metro-ar` — Bentonville–Fayetteville NWA growth corridor (Benton, Washington)
+- `fort-smith-metro-ar` — Fort Smith / Sebastian–Crawford military corridor
+- `jonesboro-metro-ar` — Jonesboro / Craighead northeast Arkansas hub
+- `hot-springs-metro-ar` — Hot Springs / Garland tourism corridor
+- `searcy-metro-ar`, `russellville-metro-ar` — Central Arkansas regional hubs
+- `pine-bluff-metro-ar` — Pine Bluff / Jefferson Delta corridor
+- `paragould-metro-ar`, `west-memphis-metro-ar` — NE Arkansas / Memphis border corridor
+- `mountain-home-metro-ar`, `texarkana-metro-ar`, `batesville-metro-ar`, `harrison-metro-ar` — Ozark / border regional pools
+- Rural pools: `regional-*-ar-movers` per remote county seat
+
+### Arkansas major counties (10 movers each)
+
+`pulaski`, `benton`, `washington`, `faulkner`, `saline`, `sebastian`, `craighead`, `garland`, `lonoke`, `pope`, `white`, `jefferson`
+
+### Arkansas sitemap priority 0.85 (14 counties)
+
+`pulaski`, `benton`, `washington`, `faulkner`, `saline`, `sebastian`, `craighead`, `garland`, `lonoke`, `pope`, `white`, `jefferson`, `crittenden`, `crawford`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/arkansas.xml` (76 URLs: hub + 75 counties). Do **not** use `/sitemap-local/arkansas.xml` (legacy path redirects to canonical).
 
 ### Oklahoma metro pools (`data/local-movers-seed.ts`)
 
