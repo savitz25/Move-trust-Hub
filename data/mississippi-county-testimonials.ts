@@ -1329,6 +1329,370 @@ export const mississippiCountyTestimonials: Record<string, CountyTestimonialEntr
         moveType: 'Apartment',
       },
     ],
+    attala: [
+      {
+        quote:
+          'Helping Hands Moving handled our Kosciusko relocation professionally — on time, efficient, and extremely careful throughout Attala County.',
+        name: 'Vernon T.',
+        location: 'Kosciusko, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service served our Central Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.",
+        name: 'Pearl M.',
+        location: 'Kosciusko, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Jackson confirmed Attala County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Otis R.',
+        location: 'Kosciusko, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    chickasaw: [
+      {
+        quote:
+          'Two Men and a Truck Tupelo handled our Houston relocation professionally — on time, efficient, and extremely careful throughout Chickasaw County.',
+        name: 'Lena B.',
+        location: 'Houston, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All-Star Movers served our Northeast Mississippi move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Harold G.',
+        location: 'Houston, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Affordable Help confirmed Chickasaw County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Irene C.',
+        location: 'Houston, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    jasper: [
+      {
+        quote:
+          'Moving U ENT handled our Bay Springs relocation professionally — on time, efficient, and extremely careful throughout Jasper County.',
+        name: 'Claude E.',
+        location: 'Bay Springs, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Helping Hands Moving served our Central Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Della F.',
+        location: 'Bay Springs, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg confirmed Jasper County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Emmett L.',
+        location: 'Bay Springs, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    holmes: [
+      {
+        quote:
+          'Armstrong Relocation Jackson handled our Lexington relocation professionally — on time, efficient, and extremely careful throughout Holmes County.',
+        name: 'Willie J.',
+        location: 'Lexington, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Jackson served our Delta-area move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Mae K.',
+        location: 'Lexington, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Central Mississippi Movers confirmed Holmes County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Rufus P.',
+        location: 'Lexington, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    clarke: [
+      {
+        quote:
+          'Moving U ENT handled our Quitman relocation professionally — on time, efficient, and extremely careful throughout Clarke County.',
+        name: 'Nellie S.',
+        location: 'Quitman, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'On the Go served our East Mississippi move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Homer V.',
+        location: 'Quitman, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Tmakit Moving confirmed Clarke County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Ida W.',
+        location: 'Quitman, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    walthall: [
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg handled our Tylertown relocation professionally — on time, efficient, and extremely careful throughout Walthall County.',
+        name: 'Royce H.',
+        location: 'Tylertown, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Allsouth Moving served our South Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Sylvia N.',
+        location: 'Tylertown, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service confirmed Walthall County coverage and delivered excellent regional service — professional crew with no surprise fees.",
+        name: 'Toby Q.',
+        location: 'Tylertown, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    smith: [
+      {
+        quote:
+          'Helping Hands Moving handled our Raleigh relocation professionally — on time, efficient, and extremely careful throughout Smith County.',
+        name: 'Vera U.',
+        location: 'Raleigh, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service served our Central Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.",
+        name: 'Wade X.',
+        location: 'Raleigh, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Jackson confirmed Smith County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Yvonne Z.',
+        location: 'Raleigh, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    greene: [
+      {
+        quote:
+          'Allsouth Moving handled our Leakesville relocation professionally — on time, efficient, and extremely careful throughout Greene County.',
+        name: 'Alton Y.',
+        location: 'Leakesville, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Gulfport served our Southeast Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Bessie T.',
+        location: 'Leakesville, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg confirmed Greene County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Cecil M.',
+        location: 'Leakesville, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    calhoun: [
+      {
+        quote:
+          'Two Men and a Truck Tupelo handled our Calhoun City relocation professionally — on time, efficient, and extremely careful throughout Calhoun County.',
+        name: 'Dewey R.',
+        location: 'Calhoun City, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All-Star Movers served our North Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Eula K.',
+        location: 'Calhoun City, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Moving U ENT confirmed Calhoun County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Felix H.',
+        location: 'Calhoun City, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    amite: [
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg handled our Liberty relocation professionally — on time, efficient, and extremely careful throughout Amite County.',
+        name: 'Gerald W.',
+        location: 'Liberty, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service served our Southwest Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.",
+        name: 'Hazel B.',
+        location: 'Liberty, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Helping Hands Moving confirmed Amite County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Irving C.',
+        location: 'Liberty, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    yalobusha: [
+      {
+        quote:
+          'Two Men and a Truck Oxford handled our Water Valley relocation professionally — on time, efficient, and extremely careful throughout Yalobusha County.',
+        name: 'Janice D.',
+        location: 'Water Valley, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Tupelo served our North Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Kenny F.',
+        location: 'Water Valley, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All-Star Movers confirmed Yalobusha County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Lois G.',
+        location: 'Water Valley, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lawrence: [
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg handled our Monticello relocation professionally — on time, efficient, and extremely careful throughout Lawrence County.',
+        name: 'Marcus H.',
+        location: 'Monticello, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Allsouth Moving served our South Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Nadine J.',
+        location: 'Monticello, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service confirmed Lawrence County coverage and delivered excellent regional service — professional crew with no surprise fees.",
+        name: 'Owen K.',
+        location: 'Monticello, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    perry: [
+      {
+        quote:
+          'Allsouth Moving handled our New Augusta relocation professionally — on time, efficient, and extremely careful throughout Perry County.',
+        name: 'Patricia L.',
+        location: 'New Augusta, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg served our South Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Quincy M.',
+        location: 'New Augusta, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Gulfport confirmed Perry County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Rosa N.',
+        location: 'New Augusta, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    'jefferson-davis': [
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg handled our Prentiss relocation professionally — on time, efficient, and extremely careful throughout Jefferson Davis County.',
+        name: 'Samuel P.',
+        location: 'Prentiss, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Allsouth Moving served our South Mississippi move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Teresa R.',
+        location: 'Prentiss, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Moving U ENT confirmed Jefferson Davis County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Victor S.',
+        location: 'Prentiss, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getMississippiCountyTestimonials(

@@ -55,6 +55,20 @@ export const mississippiCountyOverrides: Partial<
   clay: { seat: 'West Point', metro: 'west-point-metro-ms' },
   covington: { seat: 'Collins', metro: 'collins-metro-ms' },
   winston: { seat: 'Louisville', metro: 'louisville-metro-ms' },
+  attala: { seat: 'Kosciusko', metro: 'kosciusko-metro-ms' },
+  chickasaw: { seat: 'Houston', metro: 'houston-ms-metro-ms' },
+  jasper: { seat: 'Bay Springs', metro: 'bay-springs-metro-ms' },
+  holmes: { seat: 'Lexington', metro: 'lexington-ms-metro-ms' },
+  clarke: { seat: 'Quitman', metro: 'quitman-ms-metro-ms' },
+  walthall: { seat: 'Tylertown', metro: 'tylertown-metro-ms' },
+  smith: { seat: 'Raleigh', metro: 'raleigh-ms-metro-ms' },
+  greene: { seat: 'Leakesville', metro: 'leakesville-metro-ms' },
+  calhoun: { seat: 'Pittsboro', metro: 'calhoun-city-metro-ms' },
+  amite: { seat: 'Liberty', metro: 'liberty-ms-metro-ms' },
+  yalobusha: { seat: 'Water Valley', metro: 'water-valley-metro-ms' },
+  lawrence: { seat: 'Monticello', metro: 'monticello-ms-metro-ms' },
+  perry: { seat: 'New Augusta', metro: 'new-augusta-metro-ms' },
+  'jefferson-davis': { seat: 'Prentiss', metro: 'jefferson-davis-metro-ms' },
 };
 
 export function applyMississippiCountyOverrides(county: LocalCounty): LocalCounty {
