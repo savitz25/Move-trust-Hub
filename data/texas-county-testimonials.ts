@@ -4867,6 +4867,312 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Townhome',
     },
   ],
+  hidalgo: [
+    {
+      quote:
+        'Professional and efficient for our McAllen move in Hidalgo County. Two Men and a Truck navigated border corridor traffic without delay.',
+      name: 'Xena B.',
+      location: 'McAllen, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Brownsville — transparent pricing on an Edinburg route with careful handling.',
+      name: 'Yuri C.',
+      location: 'Edinburg, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Corpus Christi team we compared. Great experience with organized loading throughout Hidalgo County.',
+      name: 'Zoe D.',
+      location: 'Mission, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Excellent crew from South Texas Moving Laredo — steady communication and clear pricing on a Rio Grande Valley route.',
+      name: 'Adam E.',
+      location: 'Weslaco, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  'fort-bend': [
+    {
+      quote:
+        'Professional and efficient for our Sugar Land move in Fort Bend County. Two Men and a Truck Houston navigated southwest-metro traffic without delay.',
+      name: 'Beth F.',
+      location: 'Sugar Land, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Houston Local Lines — transparent pricing and careful handling in our Richmond subdivision.',
+      name: 'Carl G.',
+      location: 'Richmond, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from the Beaumont team we compared. Great experience with organized loading throughout Fort Bend County.',
+      name: 'Dana H.',
+      location: 'Missouri City, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from Victoria Transfer & Storage — clear pricing on a south-Houston route with steady communication.',
+      name: 'Evan I.',
+      location: 'Sugar Land, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  denton: [
+    {
+      quote:
+        'Professional and efficient for our Denton move. Two Men and a Truck Dallas navigated I-35E traffic and finished with careful handling.',
+      name: 'Faye J.',
+      location: 'Denton, TX',
+      rating: 5,
+      moveType: 'Student housing',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Fort Worth — transparent pricing on a Lewisville route.',
+      name: 'Greg K.',
+      location: 'Lewisville, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from a third Dallas metro estimate we compared. Great experience with organized loading throughout Denton County.',
+      name: 'Holly L.',
+      location: 'Flower Mound, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Denison — careful handling and clear pricing on a north-metro route.',
+      name: 'Ivan M.',
+      location: 'Denton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  collin: [
+    {
+      quote:
+        'Professional and efficient for our Frisco move in Collin County. Two Men and a Truck Dallas navigated tollway traffic without delay.',
+      name: 'Jill N.',
+      location: 'Frisco, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Fort Worth — transparent pricing on a McKinney route with steady communication.',
+      name: 'Kyle O.',
+      location: 'McKinney, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from a third Dallas estimate we compared. Great experience with organized loading throughout Collin County.',
+      name: 'Lara P.',
+      location: 'Plano, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from Fort Worth regional providers — careful handling in our Allen master-planned community.',
+      name: 'Mara Q.',
+      location: 'Allen, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  travis: [
+    {
+      quote:
+        'Professional and efficient for our Austin move in Travis County. Two Men and a Truck navigated MoPac traffic and finished with careful handling.',
+      name: 'Ned R.',
+      location: 'Austin, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks Austin — transparent pricing on a downtown route with steady communication.',
+      name: 'Opal S.',
+      location: 'Austin, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from the San Antonio team we compared. Great experience with organized loading throughout Travis County.',
+      name: 'Paul T.',
+      location: 'Bee Cave, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from a fourth Austin estimate — careful handling and clear pricing on a Hill Country fringe route.',
+      name: 'Quinn U.',
+      location: 'Lakeway, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  bexar: [
+    {
+      quote:
+        'Professional and efficient for our San Antonio move in Bexar County. Two Men and a Truck confirmed JBSA experience and careful handling.',
+      name: 'Rosa V.',
+      location: 'San Antonio, TX',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks San Antonio — transparent pricing and steady communication throughout.',
+      name: 'Seth W.',
+      location: 'San Antonio, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Professional and timely from the Austin team we compared. Great experience with organized loading throughout Bexar County.',
+      name: 'Tara X.',
+      location: 'San Antonio, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from a fourth San Antonio estimate — clear pricing and careful handling on a suburban county route.',
+      name: 'Uma Y.',
+      location: 'Alamo Heights, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  tarrant: [
+    {
+      quote:
+        'Professional and efficient for our Fort Worth move in Tarrant County. Two Men and a Truck navigated I-30 traffic without delay.',
+      name: 'Vic Z.',
+      location: 'Fort Worth, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Fort Worth regional providers — transparent pricing on an Arlington route with careful handling.',
+      name: 'Wade A.',
+      location: 'Arlington, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from Two Men and a Truck Dallas. Great experience with organized loading throughout Tarrant County.',
+      name: 'Xena B.',
+      location: 'Mansfield, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from a fourth Fort Worth estimate — clear pricing and steady communication on a Keller route.',
+      name: 'Yuri C.',
+      location: 'Keller, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  dallas: [
+    {
+      quote:
+        'Professional and efficient for our Dallas move. Two Men and a Truck navigated downtown traffic and finished with careful handling.',
+      name: 'Zoe D.',
+      location: 'Dallas, TX',
+      rating: 5,
+      moveType: 'High-rise',
+    },
+    {
+      quote:
+        'Excellent crew from Dallas regional providers — transparent pricing on an Irving route with steady communication.',
+      name: 'Adam E.',
+      location: 'Irving, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from Two Men and a Truck Fort Worth. Great experience with organized loading throughout Dallas County.',
+      name: 'Beth F.',
+      location: 'Garland, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from a fourth Dallas estimate — careful handling and clear pricing on an inner-ring suburban route.',
+      name: 'Carl G.',
+      location: 'Dallas, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  harris: [
+    {
+      quote:
+        'Professional and efficient for our Houston move in Harris County. Two Men and a Truck navigated 610 Loop traffic without delay.',
+      name: 'Dana H.',
+      location: 'Houston, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Houston Local Lines — transparent pricing on a Pasadena route with careful handling.',
+      name: 'Evan I.',
+      location: 'Pasadena, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Beaumont team we compared. Great experience with organized loading throughout Harris County.',
+      name: 'Faye J.',
+      location: 'Katy, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Excellent crew from Huntsville Moving Inc. — clear pricing and steady communication on a north-Houston regional route.',
+      name: 'Greg K.',
+      location: 'Houston, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

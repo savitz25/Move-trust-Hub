@@ -225,6 +225,60 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
     'all-my-sons-el-paso',
     'el-paso-area-moving',
   ],
+  hidalgo: [
+    'two-men-and-a-truck-mcallen',
+    'two-men-and-a-truck-brownsville',
+    'two-men-and-a-truck-corpus-christi',
+    'south-texas-moving-laredo',
+  ],
+  'fort-bend': [
+    'two-men-and-a-truck-houston',
+    'houston-local-lines',
+    'beaumont-area-moving',
+    'victoria-transfer-storage',
+  ],
+  denton: [
+    'two-men-and-a-truck-dallas',
+    'two-men-and-a-truck-fort-worth',
+    'dallas-area-moving',
+    'two-men-and-a-truck-denison',
+  ],
+  collin: [
+    'two-men-and-a-truck-dallas',
+    'two-men-and-a-truck-fort-worth',
+    'dallas-area-moving',
+    'fort-worth-area-moving',
+  ],
+  travis: [
+    'two-men-and-a-truck-austin',
+    'college-hunks-moving-austin',
+    'two-men-and-a-truck-san-antonio',
+    'san-antonio-area-moving',
+  ],
+  bexar: [
+    'two-men-and-a-truck-san-antonio',
+    'college-hunks-moving-san-antonio',
+    'two-men-and-a-truck-austin',
+    'san-antonio-area-moving',
+  ],
+  tarrant: [
+    'two-men-and-a-truck-fort-worth',
+    'fort-worth-area-moving',
+    'two-men-and-a-truck-dallas',
+    'dallas-area-moving',
+  ],
+  dallas: [
+    'two-men-and-a-truck-dallas',
+    'dallas-area-moving',
+    'two-men-and-a-truck-fort-worth',
+    'fort-worth-area-moving',
+  ],
+  harris: [
+    'two-men-and-a-truck-houston',
+    'houston-local-lines',
+    'beaumont-area-moving',
+    'huntsville-moving-inc',
+  ],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

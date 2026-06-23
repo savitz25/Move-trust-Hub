@@ -3713,6 +3713,159 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for peak seasons — summer PCS season can tighten El Paso crew availability.',
     ],
   },
+  hidalgo: {
+    marketNotes:
+      'Hidalgo County is a major South Texas market centered on McAllen, Edinburg, and Mission with significant residential and cross-border activity.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'McAllen–Edinburg local providers typically cover Hidalgo County; confirm service for Mission, Weslaco, and rural Rio Grande Valley addresses.',
+    },
+    tips: [
+      'Border traffic on US-83 and international bridge corridors frequently impacts scheduling — plan around peak crossing windows.',
+      'Verify explicit service coverage across Hidalgo County including Edinburg, McAllen, and Mission.',
+      'Confirm insurance for high-value homes and cross-border relocation paperwork if applicable.',
+      'Book early for peak seasons — summer moves can tighten Rio Grande Valley crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between McAllen and Brownsville providers.',
+    ],
+  },
+  'fort-bend': {
+    marketNotes:
+      'Fort Bend County is a fast-growing suburban county with significant residential development in Sugar Land, Richmond, and Missouri City.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Houston metro crews typically cover Fort Bend County; confirm service for Sugar Land, Katy fringe, and master-planned community addresses.',
+    },
+    tips: [
+      'Verify coverage for Sugar Land, Richmond, Rosenberg, and surrounding Fort Bend County communities.',
+      'Houston-area traffic on US-59 and the Grand Parkway impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in Fort Bend County subdivisions.',
+      'Book early for peak seasons — summer moves can tighten southwest-Houston crew availability.',
+      'Obtain multiple estimates — Houston metro providers may price Fort Bend routes differently.',
+    ],
+  },
+  denton: {
+    marketNotes:
+      'Denton County includes Denton and Lewisville with strong suburban and university-related growth along the northern Dallas–Fort Worth corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dallas and Fort Worth metro crews typically cover Denton County; confirm service for UNT-area student housing and rural county parcels.',
+    },
+    tips: [
+      'Verify coverage for Denton, Lewisville, Flower Mound, and surrounding Denton County communities.',
+      'Dallas-area traffic on I-35E and the Sam Rayburn Tollway impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in newer Denton County subdivisions.',
+      'Book early for peak seasons — university turnover and summer growth can tighten north-metro crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Dallas and Fort Worth providers.',
+    ],
+  },
+  collin: {
+    marketNotes:
+      'Collin County is one of the fastest-growing counties in the U.S., with major suburban development in Plano, Frisco, and McKinney.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dallas metro crews typically cover Collin County; confirm service for Plano, Frisco, Allen, and high-growth master-planned communities.',
+    },
+    tips: [
+      'Verify coverage for McKinney, Plano, Frisco, Allen, and surrounding Collin County communities.',
+      'Dallas-area traffic on US-75 and the Dallas North Tollway impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in Collin County subdivisions.',
+      'Book early for peak seasons — rapid growth can tighten north-Dallas crew availability year-round.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Dallas and Fort Worth providers.',
+    ],
+  },
+  travis: {
+    marketNotes:
+      'Travis County centers on Austin with high residential growth, university influence, and tech-driven demand. (Not Austin County — seat Bellville.)',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Austin metro crews typically cover Travis County; confirm service for downtown high-rises, student housing, and Hill Country fringe addresses.',
+    },
+    tips: [
+      'Verify coverage for Austin, Lakeway, Bee Cave, and surrounding Travis County communities.',
+      'Heavy traffic on I-35, MoPac, and SH-130 impacts scheduling — plan around peak commute and event traffic.',
+      'Confirm insurance for high-value homes common in Travis County tech-corridor neighborhoods.',
+      'Book early for peak seasons — summer turnover and SXSW-era demand can tighten Austin crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary significantly between Austin providers.',
+    ],
+  },
+  bexar: {
+    marketNotes:
+      'Bexar County centers on San Antonio with major military demand tied to Joint Base San Antonio and steady residential growth.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'San Antonio local providers typically cover Bexar County; confirm service for JBSA base access, PCS timelines, and suburban county addresses.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm PCS paperwork, JBSA base access, and tight timeline handling.',
+      'Verify coverage for San Antonio, Alamo Heights, and surrounding Bexar County communities.',
+      'Confirm insurance for high-value homes and military household goods coverage requirements.',
+      'Book early for peak seasons — summer PCS season can tighten San Antonio crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between San Antonio and Austin providers.',
+    ],
+  },
+  tarrant: {
+    marketNotes:
+      'Tarrant County centers on Fort Worth with major residential and commercial activity across Arlington, Mansfield, and the western Dallas–Fort Worth metro.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Fort Worth and Dallas metro crews typically cover Tarrant County; confirm service for Arlington, Keller, and suburban county addresses.',
+    },
+    tips: [
+      'Verify coverage for Fort Worth, Arlington, Mansfield, and surrounding Tarrant County communities.',
+      'Heavy traffic on I-30, I-20, and the Chisholm Trail Parkway impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in Tarrant County subdivisions.',
+      'Book early for peak seasons — summer moves can tighten Fort Worth-area crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Fort Worth and Dallas providers.',
+    ],
+  },
+  dallas: {
+    marketNotes:
+      'Dallas County is a major urban center with extensive residential, commercial, and high-volume moving demand across Dallas and inner-ring suburbs.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Dallas metro crews typically cover Dallas County; confirm service for high-rise condos, historic neighborhoods, and urban parking logistics.',
+    },
+    tips: [
+      'Verify coverage for Dallas, Irving, Garland, and surrounding Dallas County communities.',
+      'Heavy traffic on I-35E, I-30, and the Dallas North Tollway impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes and condo building move-in/move-out requirements.',
+      'Book early for peak seasons — high-volume demand can tighten Dallas crew availability year-round.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary significantly between Dallas providers.',
+    ],
+  },
+  harris: {
+    marketNotes:
+      'Harris County is the most populous county in Texas, centered on Houston with extensive residential, commercial, and industrial moving demand. (Not Houston County — seat Crockett.)',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,200–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Houston metro crews typically cover Harris County; confirm service for high-rises, townhomes, and flood-zone logistics across the county.',
+    },
+    tips: [
+      'Verify coverage for Houston, Pasadena, Katy, and surrounding Harris County communities.',
+      'Heavy traffic on I-10, I-45, and the 610 Loop impacts scheduling — plan around peak commute and port-industrial corridor congestion.',
+      'Confirm insurance for high-value homes and high-rise building move requirements.',
+      'Book early for peak seasons — Harris County\'s volume can tighten Houston crew availability year-round.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary significantly between Houston providers.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(
