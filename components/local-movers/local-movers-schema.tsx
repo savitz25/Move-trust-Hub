@@ -5,7 +5,9 @@ import {
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
+  GEORGIA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
+import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -74,7 +76,10 @@ export function LocalMoversSchema({
             ? NEW_YORK_COUNTY_CONTENT_UPDATED
             : county?.stateSlug === 'texas'
               ? TEXAS_COUNTY_CONTENT_UPDATED
-              : new Date().toISOString().slice(0, 10);
+              : county?.stateSlug === 'georgia' &&
+                  getGeorgiaCountyResearch(county.slug)
+                ? GEORGIA_COUNTY_CONTENT_UPDATED
+                : new Date().toISOString().slice(0, 10);
 
   const movingCompanies = (movers ?? []).map((mover, index) => ({
     '@type': ['MovingCompany', 'LocalBusiness'],

@@ -3,6 +3,7 @@ import { californiaCountyMoverAssignments } from '@/data/california-county-assig
 import { floridaCountyMoverAssignments } from '@/data/florida-county-assignments';
 import { newJerseyCountyMoverAssignments } from '@/data/new-jersey-county-assignments';
 import { newYorkCountyMoverAssignments } from '@/data/new-york-county-assignments';
+import { georgiaCountyMoverAssignments } from '@/data/georgia-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
 import { fullMetroPools, fullMoversCatalog } from '@/lib/local-movers/catalog';
@@ -29,6 +30,7 @@ const allCountyAssignments = [
   ...newJerseyCountyMoverAssignments,
   ...newYorkCountyMoverAssignments,
   ...texasCountyMoverAssignments,
+  ...georgiaCountyMoverAssignments,
   ...generatedAssignmentsWithoutCurated,
   ...countyMoverAssignments,
 ];
