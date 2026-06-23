@@ -6129,6 +6129,60 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Palestine',
   },
+  'two-men-and-a-truck-beaumont': {
+    id: 'two-men-and-a-truck-beaumont',
+    name: 'Two Men and a Truck Beaumont',
+    rating: 4.6,
+    reviewCount: 290,
+    shortDescription:
+      'Beaumont franchise serving Tyler County, Woodville, and rural East Texas Piney Woods relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Beaumont',
+    website: 'https://twomenandatruck.com/movers/tx/beaumont',
+  },
+  'two-men-and-a-truck-brownsville': {
+    id: 'two-men-and-a-truck-brownsville',
+    name: 'Two Men and a Truck Brownsville',
+    rating: 4.5,
+    reviewCount: 220,
+    shortDescription:
+      'Brownsville franchise covering Willacy County, Raymondville, and rural Rio Grande Valley moves.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Brownsville',
+    website: 'https://twomenandatruck.com/movers/tx/brownsville',
+  },
+  'around-town-movers-gainesville-tx': {
+    id: 'around-town-movers-gainesville-tx',
+    name: 'Around Town Movers',
+    rating: 4.5,
+    reviewCount: 118,
+    shortDescription:
+      'Gainesville-based mover serving Montague County and rural North Texas ranch properties near the Red River.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Gainesville',
+  },
+  'aardvark-movers-amarillo': {
+    id: 'aardvark-movers-amarillo',
+    name: 'Aardvark Movers',
+    rating: 4.5,
+    reviewCount: 164,
+    shortDescription:
+      'Amarillo regional provider for Hutchinson, Gray, Moore, and remote Texas Panhandle ranch and oilfield counties.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Amarillo',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

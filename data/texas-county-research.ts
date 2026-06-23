@@ -1945,6 +1945,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves and discuss handling for barn tools and detached structures.',
     ],
   },
+  jones: {
+    marketNotes:
+      'Jones County is one of Texas\'s least populous counties with Anson as the seat. Moves are rare and rely on regional service from Abilene.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Abilene regional providers are the primary option for Anson and rural Jones County ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch and oilfield properties have severe access challenges — confirm truck size and shuttle plans for long gravel driveways.',
+      'Verify explicit regional service to Anson; Abilene movers should confirm Jones County coverage in writing.',
+      'Storage is very limited locally; Abilene warehouse or container options are typical for gap periods.',
+      'Obtain multiple estimates from Abilene providers — ranch moves often need supplemental labor beyond standard household quotes.',
+      'Confirm credentials for ranch and oilfield moves and discuss handling for barn tools and detached outbuildings.',
+    ],
+  },
+  dewitt: {
+    marketNotes:
+      'DeWitt County is one of Texas\'s least populous counties with Cuero as the seat. Moves are rare and rely on regional service from Victoria or San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Victoria and San Antonio regional crews may add travel fees for Cuero and rural South Texas ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways, cattle guards, and equipment needs early.',
+      'Verify explicit regional service to Cuero; Victoria is often the closer practical hub for DeWitt County.',
+      'Storage is very limited in DeWitt County; Victoria or San Antonio warehouse options are typical between closings.',
+      'Obtain multiple estimates — ranch and outbuilding contents can change crew size and hourly totals.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  tyler: {
+    marketNotes:
+      'Tyler County is one of Texas\'s least populous counties with Woodville as the seat. Moves are rare and rely on regional service from Beaumont or Lufkin.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Beaumont and Lufkin regional providers may add travel fees for Woodville and deep Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and lake-country homes.',
+      'Verify explicit regional service to Woodville; Beaumont and Lufkin crews are the practical regional options.',
+      'Storage is very limited in Tyler County; coordinate with Beaumont or Lufkin-area facilities if needed.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing in thin markets.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  willacy: {
+    marketNotes:
+      'Willacy County is one of Texas\'s least populous counties with Raymondville as the seat. Moves are rare and rely on regional service from Brownsville or Corpus Christi.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Brownsville and Corpus Christi regional crews may add travel fees for Raymondville and Rio Grande Valley ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss border-region access roads and long driveways upfront.',
+      'Verify explicit regional service to Raymondville; confirm the mover serves the county seat and outlying ranch parcels.',
+      'Storage is very limited in Willacy County; Brownsville or Corpus Christi facilities are the practical choice.',
+      'Obtain multiple estimates — Valley heat and ranch equipment can change crew size and scheduling needs.',
+      'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
+  montague: {
+    marketNotes:
+      'Montague County is one of Texas\'s least populous counties with Montague as the seat. Moves are rare and rely on regional service from Wichita Falls or Gainesville.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wichita Falls and Gainesville regional providers may add travel fees for Montague and North Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss Red River country access roads and truck size upfront.',
+      'Verify explicit regional service to Montague; Wichita Falls and Gainesville crews should confirm county coverage in writing.',
+      'Storage is very limited locally; Wichita Falls or Gainesville warehouse options are typical for gap periods.',
+      'Obtain multiple estimates — sparse North Texas competition can mean wider price swings between regional crews.',
+      'Confirm credentials for ranch moves, including insurance adequate for agricultural equipment and outbuildings.',
+    ],
+  },
+  hutchinson: {
+    marketNotes:
+      'Hutchinson County is one of Texas\'s least populous counties with Stinnett as the seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo regional providers are the primary option for Stinnett and Panhandle ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch and oilfield properties have severe access challenges — discuss terrain, wind exposure, and road conditions early.',
+      'Verify explicit regional service to Stinnett; confirm Amarillo crews cover Hutchinson County before booking.',
+      'Storage is very limited in-county; Amarillo facilities are the practical choice for most households.',
+      'Obtain multiple estimates from Amarillo providers — oilfield scheduling can affect availability and pricing.',
+      'Confirm credentials for ranch and oilfield moves, including adequate insurance for remote Panhandle routes.',
+    ],
+  },
+  lavaca: {
+    marketNotes:
+      'Lavaca County is one of Texas\'s least populous counties with Hallettsville as the seat. Moves are rare and rely on regional service from Victoria or San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Victoria and San Antonio regional crews may add travel fees for Hallettsville and rural South Texas ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways, cattle guards, and truck size upfront.',
+      'Verify explicit regional service to Hallettsville; Victoria is often the closer practical option for Lavaca County.',
+      'Storage is very limited locally; Victoria or San Antonio warehouse options are typical between closings.',
+      'Obtain multiple estimates — ranch moves may need extra packing time not reflected in basic online quotes.',
+      'Confirm credentials for ranch moves and discuss handling for barn tools and detached structures.',
+    ],
+  },
+  colorado: {
+    marketNotes:
+      'Colorado County is one of Texas\'s least populous counties with Columbus as the seat. Moves are rare and rely on regional service from Houston or Victoria.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Houston and Victoria regional crews may add travel fees for Columbus and rural South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck access for Colorado River bottomland and ranch-country homes.',
+      'Verify explicit regional service to Columbus; Houston and Victoria movers vary in rural county coverage.',
+      'Storage is very limited in Colorado County; Houston or Victoria facilities are typical for gap periods.',
+      'Obtain multiple estimates — travel distance from Houston or Victoria can materially affect final pricing.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  gray: {
+    marketNotes:
+      'Gray County is one of Texas\'s least populous counties with Pampa as the seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo regional providers are the primary option for Pampa and Panhandle ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch and oilfield properties have severe access challenges — discuss High Plains wind exposure and access roads early.',
+      'Verify explicit regional service to Pampa; confirm Amarillo crews cover Gray County before booking.',
+      'Storage is very limited locally; Amarillo warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates from Amarillo providers — ranch and oilfield moves often need supplemental labor.',
+      'Confirm credentials for ranch and oilfield moves, including insurance adequate for agricultural equipment.',
+    ],
+  },
+  moore: {
+    marketNotes:
+      'Moore County is one of Texas\'s least populous counties with Dumas as the seat. Moves are rare and rely on regional service from Amarillo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Amarillo regional providers are the primary option for Dumas and northern Panhandle ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch and oilfield properties have severe access challenges — discuss terrain and long Panhandle drive times upfront.',
+      'Verify explicit regional service to Dumas; confirm Amarillo crews cover Moore County and outlying parcels.',
+      'Storage is very limited in-county; Amarillo facilities are the practical choice for most households.',
+      'Obtain multiple estimates — northern Panhandle travel can significantly affect hourly and flat-rate quotes.',
+      'Confirm credentials for ranch and oilfield moves, including adequate cargo insurance for remote routes.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(

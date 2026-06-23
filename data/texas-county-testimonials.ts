@@ -2731,6 +2731,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  jones: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Anson. The Abilene crew confirmed Jones County coverage and managed our ranch driveway with careful handling throughout.',
+      name: 'Paul U.',
+      location: 'Anson, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from a second Abilene provider we compared. They wrapped furniture well and explained travel fees clearly.',
+      name: 'Rita V.',
+      location: 'Anson, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  dewitt: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Cuero. The Victoria crew confirmed DeWitt County service and finished our ranch move on a tight timeline.',
+      name: 'Sean W.',
+      location: 'Cuero, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from San Antonio. Reliable in remote DeWitt County with careful handling and steady communication on a longer route.',
+      name: 'Tara X.',
+      location: 'Cuero, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  tyler: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Woodville. The Beaumont crew understood Piney Woods access and protected our floors through tight doorways.',
+      name: 'Uma Y.',
+      location: 'Woodville, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Lufkin. Reliable in remote Tyler County with careful handling on a longer regional route into Woodville.',
+      name: 'Vic Z.',
+      location: 'Woodville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  willacy: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Raymondville. The Brownsville crew confirmed Willacy County coverage and handled ranch access without issues.',
+      name: 'Wade A.',
+      location: 'Raymondville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the Corpus Christi team on a Willacy County route with clear travel-fee disclosure.',
+      name: 'Xena B.',
+      location: 'Raymondville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  montague: [
+    {
+      quote:
+        'Professional for our remote North Texas move in Montague. The Wichita Falls crew confirmed county coverage and navigated our ranch road without tearing up the driveway.',
+      name: 'Yuri C.',
+      location: 'Montague, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in North Texas from Gainesville. Reliable in remote Montague County with careful wrapping and organized loading.',
+      name: 'Zoe D.',
+      location: 'Montague, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  hutchinson: [
+    {
+      quote:
+        'Professional for our remote Panhandle move in Stinnett. The Amarillo crew confirmed Hutchinson County service and handled oilfield-country access professionally.',
+      name: 'Adam E.',
+      location: 'Stinnett, TX',
+      rating: 5,
+      moveType: 'Oilfield',
+    },
+    {
+      quote:
+        'Professional service in the Panhandle from a second Amarillo provider. Reliable in remote Stinnett with careful handling on a longer High Plains route.',
+      name: 'Beth F.',
+      location: 'Stinnett, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lavaca: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Hallettsville. The Victoria crew confirmed Lavaca County coverage and treated our older home carefully around tight halls.',
+      name: 'Chris G.',
+      location: 'Hallettsville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the San Antonio team on a Lavaca County relocation. They verified service area in writing and finished faster than our closing window required.',
+      name: 'Dana H.',
+      location: 'Hallettsville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  colorado: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Columbus. The Houston crew explained regional travel fees clearly and handled our ranch property access without delay.',
+      name: 'Eric I.',
+      location: 'Columbus, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Victoria. Reliable in remote Colorado County with careful handling and steady communication throughout.',
+      name: 'Faith J.',
+      location: 'Columbus, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  gray: [
+    {
+      quote:
+        'Professional for our remote Panhandle move in Pampa. The Amarillo crew confirmed Gray County coverage and managed our ranch driveway with the right truck setup.',
+      name: 'Glen K.',
+      location: 'Pampa, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from a second Amarillo estimate we compared. They were upfront about Panhandle travel time and storage limitations.',
+      name: 'Hope L.',
+      location: 'Pampa, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  moore: [
+    {
+      quote:
+        'Professional for our remote Panhandle move in Dumas. The Amarillo crew confirmed Moore County service and handled our oilfield-area relocation without damage.',
+      name: 'Ian M.',
+      location: 'Dumas, TX',
+      rating: 5,
+      moveType: 'Oilfield',
+    },
+    {
+      quote:
+        'Professional service in the Panhandle from a second Amarillo provider. Reliable in remote Dumas with careful handling on a longer northern Panhandle route.',
+      name: 'Jane N.',
+      location: 'Dumas, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(
