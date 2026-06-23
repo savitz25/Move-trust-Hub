@@ -6209,6 +6209,19 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Killeen',
     website: 'https://www.centraltexasmovers.net/',
   },
+  'college-hunks-moving-san-antonio': {
+    id: 'college-hunks-moving-san-antonio',
+    name: 'College Hunks Moving San Antonio',
+    rating: 4.5,
+    reviewCount: 312,
+    shortDescription:
+      'San Antonio full-service and labor crews for Uvalde County and remote South Texas ranch relocations.',
+    services: ['Local Moving', 'Packing', 'Labor Only'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'San Antonio',
+    website: 'https://www.collegehunkshaulingjunk.com/san-antonio-tx/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

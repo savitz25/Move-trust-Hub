@@ -2285,6 +2285,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves and discuss handling for barn tools and detached structures.',
     ],
   },
+  uvalde: {
+    marketNotes:
+      'Uvalde County is one of Texas\'s least populous counties with Uvalde as the seat. Moves are rare and rely on regional service from San Antonio.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio regional crews may add travel fees for Uvalde and remote South Texas ranch and Hill Country fringe properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways, cattle guards, and truck size upfront.',
+      'Verify explicit regional service to Uvalde; confirm San Antonio crews cover Uvalde County before booking.',
+      'Storage is very limited locally; San Antonio warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — ranch moves may need extra packing time not reflected in basic online quotes.',
+      'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
+  milam: {
+    marketNotes:
+      'Milam County is one of Texas\'s least populous counties with Cameron as the seat. Moves are rare and rely on regional service from Waco or Bryan/College Station.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Waco and Bryan–College Station regional crews may add travel fees for Cameron and rural Central Texas ranch routes.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss multi-structure properties and ranch roads upfront.',
+      'Verify explicit regional service to Cameron; Waco and College Station movers vary in rural Milam County coverage.',
+      'Storage is very limited in Milam County; Waco or Bryan facilities are typical for gap periods.',
+      'Obtain multiple estimates — travel distance from Waco or Bryan can materially affect final pricing.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  aransas: {
+    marketNotes:
+      'Aransas County is one of Texas\'s least populous counties with Rockport and coastal areas. Moves are rare and rely on regional service from Corpus Christi.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Corpus Christi regional crews may add travel fees for Rockport, Fulton, and coastal Aransas County properties.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — discuss hurricane-season scheduling, salt-air exposure, and dock or pier access upfront.',
+      'Verify explicit regional service to Rockport; confirm Corpus Christi crews cover Aransas County coastal routes.',
+      'Storage is very limited locally; Corpus Christi warehouse or climate-controlled options are typical between closings.',
+      'Obtain multiple estimates — coastal moves may need supplemental labor for elevated homes and tight island roads.',
+      'Confirm credentials for coastal moves, including experience with waterfront stairs and flood-zone access constraints.',
+    ],
+  },
+  gaines: {
+    marketNotes:
+      'Gaines County is one of Texas\'s least populous counties with Seminole as the seat. Moves are rare and rely on regional service from Lubbock or Midland.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lubbock and Midland regional crews may add travel fees for Seminole and remote West Texas ranch and oilfield properties.',
+    },
+    tips: [
+      'Extremely remote ranch and oilfield properties have severe access challenges — discuss terrain, cattle guards, and truck size upfront.',
+      'Verify explicit regional service to Seminole; Lubbock and Midland movers should confirm Gaines County coverage in writing.',
+      'Storage is very limited in-county; Lubbock or Midland facilities are the practical choice for most households.',
+      'Obtain multiple estimates — Permian Basin travel distance can significantly affect hourly and flat-rate quotes.',
+      'Confirm credentials for ranch and oilfield moves, including adequate cargo insurance for remote West Texas routes.',
+    ],
+  },
+  gillespie: {
+    marketNotes:
+      'Gillespie County is rural Hill Country with Fredericksburg as the seat. Moves are rare and rely on regional service from San Antonio or Austin.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio and Austin regional crews may add travel fees for Fredericksburg and remote Hill Country ranch and winery properties.',
+    },
+    tips: [
+      'Remote Hill Country properties have access challenges — discuss steep driveways, ranch gates, and limited turnaround space upfront.',
+      'Verify explicit regional service to Fredericksburg; San Antonio is often the closer practical option for Gillespie County.',
+      'Storage is very limited locally; San Antonio or Austin warehouse options are typical between closings.',
+      'Obtain multiple estimates — Hill Country terrain can change crew size and scheduling needs.',
+      'Confirm credentials for ranch moves and verify insurance limits for detached structures and vineyard equipment.',
+    ],
+  },
+  'san-jacinto': {
+    marketNotes:
+      'San Jacinto County is one of Texas\'s least populous counties with Coldspring as the seat. Moves are rare and rely on regional service from Houston or Huntsville.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Houston and Huntsville regional providers may add travel fees for Coldspring and remote East Texas Piney Woods and lake properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads, lake homes, and rural homesteads.',
+      'Verify explicit regional service to Coldspring; Houston and Huntsville crews are the practical regional options.',
+      'Storage is very limited in San Jacinto County; coordinate with Houston or Huntsville-area facilities if needed.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing in thin markets.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  'palo-pinto': {
+    marketNotes:
+      'Palo Pinto County is one of Texas\'s least populous counties with Palo Pinto as the seat. Moves are rare and rely on regional service from Fort Worth or Wichita Falls.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Fort Worth and Wichita Falls regional crews may add travel fees for Palo Pinto, Mineral Wells, and rural North Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss ranch roads, gates, and truck size upfront.',
+      'Verify explicit regional service to Palo Pinto; Fort Worth and Wichita Falls movers vary in rural county coverage.',
+      'Storage is very limited locally; Fort Worth or Wichita Falls warehouse options are typical for gap periods.',
+      'Obtain multiple estimates — sparse North Texas competition can mean wider price swings between regional crews.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  cass: {
+    marketNotes:
+      'Cass County is one of Texas\'s least populous counties with Linden as the seat. Moves are rare and rely on regional service from Texarkana or Longview.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Texarkana and Longview regional providers may add travel fees for Linden and remote Northeast Texas Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and rural homesteads.',
+      'Verify explicit regional service to Linden; Texarkana and Longview crews should confirm Cass County coverage in writing.',
+      'Storage is very limited in Cass County; coordinate with Texarkana or Longview-area facilities if needed.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing in thin markets.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  kleberg: {
+    marketNotes:
+      'Kleberg County is one of Texas\'s least populous counties with Kingsville as the seat. Moves are rare and rely on regional service from Corpus Christi.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Corpus Christi regional crews may add travel fees for Kingsville and remote South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss long driveways, cattle guards, and truck size upfront.',
+      'Verify explicit regional service to Kingsville; confirm Corpus Christi crews cover Kleberg County before booking.',
+      'Storage is very limited locally; Corpus Christi warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — ranch moves may need extra packing time not reflected in basic online quotes.',
+      'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
+  titus: {
+    marketNotes:
+      'Titus County is one of Texas\'s least populous counties with Mount Pleasant as the seat. Moves are rare and rely on regional service from Texarkana or Longview.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Texarkana and Longview regional providers may add travel fees for Mount Pleasant and remote Northeast Texas properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and rural homesteads.',
+      'Verify explicit regional service to Mount Pleasant; Texarkana and Longview crews are the practical regional options.',
+      'Storage is very limited in Titus County; coordinate with Texarkana or Longview-area facilities if needed.',
+      'Obtain multiple estimates — Northeast Texas travel distance can materially affect final pricing.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(

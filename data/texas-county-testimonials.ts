@@ -3091,6 +3091,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  uvalde: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Uvalde. The San Antonio crew confirmed county coverage and navigated our ranch driveway without issues.',
+      name: 'Evan I.',
+      location: 'Uvalde, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second San Antonio estimate we compared. Reliable in remote Uvalde County with organized loading and clear travel-fee disclosure.',
+      name: 'Faye J.',
+      location: 'Uvalde, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  milam: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Cameron. The Waco crew confirmed Milam County service and managed our ranch property access without delay.',
+      name: 'Greg K.',
+      location: 'Cameron, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from College Station. Reliable in remote Milam County with careful handling on a longer regional route.',
+      name: 'Holly L.',
+      location: 'Cameron, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  aransas: [
+    {
+      quote:
+        'Professional for our coastal move in Rockport. The Corpus Christi crew confirmed Aransas County service and handled our waterfront stairs carefully.',
+      name: 'Ivan M.',
+      location: 'Rockport, TX',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Careful handling from a second Corpus Christi provider on a Rockport route. Reliable in remote coastal areas with upfront travel-fee disclosure.',
+      name: 'Jill N.',
+      location: 'Rockport, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  gaines: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Seminole. The Lubbock crew confirmed Gaines County coverage and handled our oilfield-area relocation without damage.',
+      name: 'Kyle O.',
+      location: 'Seminole, TX',
+      rating: 5,
+      moveType: 'Oilfield',
+    },
+    {
+      quote:
+        'Professional service in West Texas from Midland. Reliable in remote Seminole with careful handling on a longer Permian Basin route.',
+      name: 'Lara P.',
+      location: 'Seminole, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  gillespie: [
+    {
+      quote:
+        'Professional for our remote Hill Country move in Fredericksburg. The San Antonio crew confirmed Gillespie County service and navigated our ranch road without issues.',
+      name: 'Miles Q.',
+      location: 'Fredericksburg, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in the Hill Country from Austin. Reliable in remote Fredericksburg with careful handling and steady communication throughout.',
+      name: 'Nora R.',
+      location: 'Fredericksburg, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'san-jacinto': [
+    {
+      quote:
+        'Professional for our remote East Texas move in Coldspring. The Houston crew understood Piney Woods access and protected our floors through tight doorways.',
+      name: 'Omar S.',
+      location: 'Coldspring, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Huntsville. Reliable in remote San Jacinto County with careful handling on a longer regional route.',
+      name: 'Pam T.',
+      location: 'Coldspring, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'palo-pinto': [
+    {
+      quote:
+        'Professional for our remote North Texas move in Palo Pinto. The Fort Worth crew confirmed county coverage and managed our ranch driveway with the right truck setup.',
+      name: 'Quinn U.',
+      location: 'Palo Pinto, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the Wichita Falls team on a Palo Pinto County route. Reliable in remote areas with upfront travel-fee disclosure.',
+      name: 'Rita V.',
+      location: 'Palo Pinto, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  cass: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Linden. The Texarkana crew confirmed Cass County service and completed our rural relocation without rushing.',
+      name: 'Sam W.',
+      location: 'Linden, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Longview. Reliable in remote Cass County with careful handling on a longer Northeast Texas route.',
+      name: 'Tina X.',
+      location: 'Linden, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  kleberg: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Kingsville. The Corpus Christi crew confirmed Kleberg County coverage and handled ranch access without issues.',
+      name: 'Uma Y.',
+      location: 'Kingsville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second Corpus Christi estimate we compared. Reliable in remote Kingsville with organized loading and clear travel-fee disclosure.',
+      name: 'Vic Z.',
+      location: 'Kingsville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  titus: [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move in Mount Pleasant. The Texarkana crew confirmed Titus County service and finished on schedule.',
+      name: 'Wade A.',
+      location: 'Mount Pleasant, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the Longview team on a Mount Pleasant route with steady communication throughout.',
+      name: 'Xena B.',
+      location: 'Mount Pleasant, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(
