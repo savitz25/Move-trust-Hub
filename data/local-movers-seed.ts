@@ -1,10 +1,10 @@
-ï»¿import type {
+import type {
   CountyMoverAssignment,
   LocalMover,
   MetroMoverPool,
 } from '@/lib/local-movers/types';
 
-/** Central catalog â€” add movers once, assign to counties/metros by ID */
+/** Central catalog — add movers once, assign to counties/metros by ID */
 export const localMoversCatalog: Record<string, LocalMover> = {
   // Linked to interstate directory profiles (Florida HQ)
   'amerisafe-van-lines': {
@@ -848,7 +848,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Houston',
   },
 
-  // â€”â€” Grok-researched Texas rural county movers â€”â€”
+  // —— Grok-researched Texas rural county movers ——
   'odessa-area-moving': {
     id: 'odessa-area-moving',
     name: 'Regional Odessa Providers',
@@ -1680,7 +1680,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 89,
     shortDescription:
-      'Reliable movers serving Plaquemines Parish residential needs across Belle Chasse, Pointe Ã  la Hache, and surrounding coastal Greater New Orleans communities.',
+      'Reliable movers serving Plaquemines Parish residential needs across Belle Chasse, Pointe à la Hache, and surrounding coastal Greater New Orleans communities.',
     services: ['Local Moving', 'Packing'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -1929,7 +1929,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'New York',
   },
 
-  // â€”â€” Grok-researched Florida county movers â€”â€”
+  // —— Grok-researched Florida county movers ——
   'uf-mover-guys-storage': {
     id: 'uf-mover-guys-storage',
     name: 'UF Mover Guys & Storage',
@@ -4036,7 +4036,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Albany',
   },
 
-  // Western NY / Southern Tier (Grok-researched â€” serves Allegany County)
+  // Western NY / Southern Tier (Grok-researched — serves Allegany County)
   'ck-local-movers-olean': {
     id: 'ck-local-movers-olean',
     name: 'C K Local Movers',
@@ -5026,7 +5026,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://hiredhandsmoving.com/',
   },
 
-  // Central NY / Finger Lakes (Grok-researched â€” serves Cayuga County)
+  // Central NY / Finger Lakes (Grok-researched — serves Cayuga County)
   'reliable-movers-syracuse': {
     id: 'reliable-movers-syracuse',
     name: 'Reliable Movers',
@@ -5058,7 +5058,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://rocmovers.com/',
   },
 
-  // Southern Tier (Grok-researched â€” serves Chemung County)
+  // Southern Tier (Grok-researched — serves Chemung County)
   'naglee-moving-elmira': {
     id: 'naglee-moving-elmira',
     name: 'Naglee Moving & Storage',
@@ -5240,7 +5240,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://twomenandatruck.com/movers/fl/st-augustine',
   },
 
-  // â€”â€” California county movers (Grok-researched) â€”â€”
+  // —— California county movers (Grok-researched) ——
   'morningstar-moving-alameda': {
     id: 'morningstar-moving-alameda',
     name: 'MorningStar Moving & Storage',
@@ -5365,7 +5365,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 210,
     shortDescription:
-      'Regional Tahoeâ€“Truckee mover serving Alpine County and Eastern Sierra communities.',
+      'Regional Tahoe–Truckee mover serving Alpine County and Eastern Sierra communities.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential', 'Mountain'],
     fmcsaSafetyRating: 'Not Rated',
@@ -5538,7 +5538,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 175,
     shortDescription:
-      'El Centroâ€“based mover serving Imperial County, Calexico, and desert agricultural communities.',
+      'El Centro–based mover serving Imperial County, Calexico, and desert agricultural communities.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Agricultural'],
     usdotNumber: '3740431',
@@ -5808,7 +5808,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://morningstarmoving.com/',
   },
 
-  // Orange County, CA (Grok-researched â€” distinct from NY Orange County slugs)
+  // Orange County, CA (Grok-researched — distinct from NY Orange County slugs)
   'piece-of-cake-moving-orange-ca': {
     id: 'piece-of-cake-moving-orange-ca',
     name: 'Piece of Cake Moving & Storage',
@@ -5924,7 +5924,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.puremovers.com/',
   },
 
-  // San Bernardino County, CA (Grok-researched â€” Inland Empire)
+  // San Bernardino County, CA (Grok-researched — Inland Empire)
   'piece-of-cake-moving-sanbernardino': {
     id: 'piece-of-cake-moving-sanbernardino',
     name: 'Piece of Cake Moving & Storage',
@@ -6195,7 +6195,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.gentlegiant.com/',
   },
 
-  // San Mateo County, CA (Grok-researched â€” Peninsula)
+  // San Mateo County, CA (Grok-researched — Peninsula)
   'piece-of-cake-moving-sanmateo': {
     id: 'piece-of-cake-moving-sanmateo',
     name: 'Piece of Cake Moving & Storage',
@@ -6280,7 +6280,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.allmysons.com/',
   },
 
-  // Santa Clara County, CA (Grok-researched â€” Silicon Valley)
+  // Santa Clara County, CA (Grok-researched — Silicon Valley)
   'piece-of-cake-moving-santaclara': {
     id: 'piece-of-cake-moving-santaclara',
     name: 'Piece of Cake Moving & Storage',
@@ -6365,7 +6365,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.allmysons.com/',
   },
 
-  // Solano County, CA (Grok-researched â€” Bay Area / Travis AFB)
+  // Solano County, CA (Grok-researched — Bay Area / Travis AFB)
   'piece-of-cake-moving-solano': {
     id: 'piece-of-cake-moving-solano',
     name: 'Piece of Cake Moving & Storage',
@@ -6484,7 +6484,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 890,
     shortDescription:
-      'Dallasâ€“Fort Worth franchise serving regional routes into rural Northeast and North Central Texas counties.',
+      'Dallas–Fort Worth franchise serving regional routes into rural Northeast and North Central Texas counties.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -6678,7 +6678,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 257,
     shortDescription:
-      'Bryanâ€“College Station mover serving Madison, Leon, Robertson, and Lee County rural East and Central Texas routes.',
+      'Bryan–College Station mover serving Madison, Leon, Robertson, and Lee County rural East and Central Texas routes.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1931566',
@@ -6830,7 +6830,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 820,
     shortDescription:
-      'Fort Worthâ€“DFW franchise covering Eastland County and rural North Central Texas regional routes.',
+      'Fort Worth–DFW franchise covering Eastland County and rural North Central Texas regional routes.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -6950,7 +6950,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 198,
     shortDescription:
-      'Denisonâ€“Sherman franchise covering Fannin, Cooke County, Bonham, and rural North Texas ranch properties.',
+      'Denison–Sherman franchise covering Fannin, Cooke County, Bonham, and rural North Texas ranch properties.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -6980,7 +6980,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 245,
     shortDescription:
-      'McAllenâ€“Rio Grande Valley franchise covering Starr County, Rio Grande City, and remote South Texas ranch moves.',
+      'McAllen–Rio Grande Valley franchise covering Starr County, Rio Grande City, and remote South Texas ranch moves.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -7008,7 +7008,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 428,
     shortDescription:
-      'Austin full-service and labor crews for Bastrop County and Austinâ€“Round Rock metro residential relocations.',
+      'Austin full-service and labor crews for Bastrop County and Austin–Round Rock metro residential relocations.',
     services: ['Local Moving', 'Packing', 'Labor Only'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -7145,7 +7145,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 244,
     shortDescription:
-      'Savannahâ€“Pooler franchise serving Chatham County with local, long-distance, packing, and storage for historic and coastal moves.',
+      'Savannah–Pooler franchise serving Chatham County with local, long-distance, packing, and storage for historic and coastal moves.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Senior Moves'],
     usdotNumber: '2527384',
@@ -7594,7 +7594,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.4,
     reviewCount: 246,
     shortDescription:
-      'Chattanooga franchise serving Walker, Catoosa, and Dade counties on the Georgiaâ€“Tennessee border.',
+      'Chattanooga franchise serving Walker, Catoosa, and Dade counties on the Georgia–Tennessee border.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '2527384',
@@ -11199,7 +11199,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 175,
     shortDescription:
-      'Established Columbus-based mover serving the Auburnâ€“Opelika corridor with full-service local and long-distance relocations.',
+      'Established Columbus-based mover serving the Auburn–Opelika corridor with full-service local and long-distance relocations.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Commercial'],
     usdotNumber: '1934458',
@@ -11214,7 +11214,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.4,
     reviewCount: 145,
     shortDescription:
-      'Locally owned mover serving Lee County with residential packing, storage, and careful Auburnâ€“Opelika relocations.',
+      'Locally owned mover serving Lee County with residential packing, storage, and careful Auburn–Opelika relocations.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Satisfactory',
@@ -11925,7 +11925,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 59,
     shortDescription:
-      'Hamilton-based mover serving Columbus, Starkville, and the Alabamaâ€“Mississippi border with affordable loading and unloading help.',
+      'Hamilton-based mover serving Columbus, Starkville, and the Alabama–Mississippi border with affordable loading and unloading help.',
     services: ['Local Moving', 'Packing', 'Labor Only'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -12336,7 +12336,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.4,
     reviewCount: 175,
     shortDescription:
-      'Full-service Shreveportâ€“Bossier mover serving Caddo and Bossier parishes with packing and storage.',
+      'Full-service Shreveport–Bossier mover serving Caddo and Bossier parishes with packing and storage.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -12350,7 +12350,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 125,
     shortDescription:
-      'Allied Van Lines agent serving Shreveportâ€“Bossier metro with residential and military relocations.',
+      'Allied Van Lines agent serving Shreveport–Bossier metro with residential and military relocations.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Commercial'],
     fmcsaSafetyRating: 'Not Rated',
@@ -12476,7 +12476,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 210,
     shortDescription:
-      'Trusted Houma franchise serving Terrebonne Parish with bayou and coastal residential moves across the Houmaâ€“Bayou Cane area.',
+      'Trusted Houma franchise serving Terrebonne Parish with bayou and coastal residential moves across the Houma–Bayou Cane area.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential', 'Coastal'],
     fmcsaSafetyRating: 'Not Rated',
@@ -15829,6 +15829,270 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Hermitage area',
   },
+  'regional-monroe-mo-movers': {
+    id: 'regional-monroe-mo-movers',
+    name: 'Regional Paris / Monroe County Providers',
+    rating: 4.7,
+    reviewCount: 74,
+    shortDescription:
+      'Reliable movers serving Monroe County residential needs across Paris and northeast Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Paris area',
+  },
+  'regional-caldwell-mo-movers': {
+    id: 'regional-caldwell-mo-movers',
+    name: 'Regional Kingston / Caldwell County Providers',
+    rating: 4.7,
+    reviewCount: 70,
+    shortDescription:
+      'Reliable movers serving Caldwell County residential needs across Kingston and northwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Kingston area',
+  },
+  'regional-oregon-mo-movers': {
+    id: 'regional-oregon-mo-movers',
+    name: 'Regional Alton / Oregon County Providers',
+    rating: 4.7,
+    reviewCount: 68,
+    shortDescription:
+      'Reliable movers serving Oregon County residential needs across Alton and south central Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Alton area',
+  },
+  'regional-daviess-mo-movers': {
+    id: 'regional-daviess-mo-movers',
+    name: 'Regional Gallatin / Daviess County Providers',
+    rating: 4.7,
+    reviewCount: 71,
+    shortDescription:
+      'Reliable movers serving Daviess County residential needs across Gallatin and northwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Gallatin area',
+  },
+  'regional-carroll-mo-movers': {
+    id: 'regional-carroll-mo-movers',
+    name: 'Regional Carrollton / Carroll County Providers',
+    rating: 4.7,
+    reviewCount: 73,
+    shortDescription:
+      'Reliable movers serving Carroll County residential needs across Carrollton and north central Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Carrollton area',
+  },
+  'regional-harrison-mo-movers': {
+    id: 'regional-harrison-mo-movers',
+    name: 'Regional Bethany / Harrison County Providers',
+    rating: 4.7,
+    reviewCount: 69,
+    shortDescription:
+      'Reliable movers serving Harrison County residential needs across Bethany and northwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Bethany area',
+  },
+  'regional-maries-mo-movers': {
+    id: 'regional-maries-mo-movers',
+    name: 'Regional Vienna / Maries County Providers',
+    rating: 4.7,
+    reviewCount: 67,
+    shortDescription:
+      'Reliable movers serving Maries County residential needs across Vienna and central Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Vienna area',
+  },
+  'regional-dade-mo-movers': {
+    id: 'regional-dade-mo-movers',
+    name: 'Regional Greenfield / Dade County Providers',
+    rating: 4.7,
+    reviewCount: 72,
+    shortDescription:
+      'Reliable movers serving Dade County residential needs across Greenfield and southwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Greenfield area',
+  },
+  'regional-chariton-mo-movers': {
+    id: 'regional-chariton-mo-movers',
+    name: 'Regional Keytesville / Chariton County Providers',
+    rating: 4.7,
+    reviewCount: 65,
+    shortDescription:
+      'Reliable movers serving Chariton County residential needs across Keytesville and north central Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Keytesville area',
+  },
+  'regional-shannon-mo-movers': {
+    id: 'regional-shannon-mo-movers',
+    name: 'Regional Eminence / Shannon County Providers',
+    rating: 4.7,
+    reviewCount: 66,
+    shortDescription:
+      'Reliable movers serving Shannon County residential needs across Eminence and south central Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Eminence area',
+  },
+  'regional-gentry-mo-movers': {
+    id: 'regional-gentry-mo-movers',
+    name: 'Regional Albany / Gentry County Providers',
+    rating: 4.7,
+    reviewCount: 75,
+    shortDescription:
+      'Reliable movers serving Gentry County residential needs across Albany and northwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Albany area',
+  },
+  'regional-clark-mo-movers': {
+    id: 'regional-clark-mo-movers',
+    name: 'Regional Kahoka / Clark County Providers',
+    rating: 4.7,
+    reviewCount: 68,
+    shortDescription:
+      'Reliable movers serving Clark County residential needs across Kahoka and northeast Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Kahoka area',
+  },
+  'regional-reynolds-mo-movers': {
+    id: 'regional-reynolds-mo-movers',
+    name: 'Regional Centerville / Reynolds County Providers',
+    rating: 4.7,
+    reviewCount: 64,
+    shortDescription:
+      'Reliable movers serving Reynolds County residential needs across Centerville and southeast Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Centerville area',
+  },
+  'regional-shelby-mo-movers': {
+    id: 'regional-shelby-mo-movers',
+    name: 'Regional Shelbyville / Shelby County Providers',
+    rating: 4.7,
+    reviewCount: 70,
+    shortDescription:
+      'Reliable movers serving Shelby County residential needs across Shelbyville and northeast Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Shelbyville area',
+  },
+  'regional-sullivan-mo-movers': {
+    id: 'regional-sullivan-mo-movers',
+    name: 'Regional Milan / Sullivan County Providers',
+    rating: 4.7,
+    reviewCount: 71,
+    shortDescription:
+      'Reliable movers serving Sullivan County residential needs across Milan and north central Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Milan area',
+  },
+  'regional-carter-mo-movers': {
+    id: 'regional-carter-mo-movers',
+    name: 'Regional Van Buren / Carter County Providers',
+    rating: 4.7,
+    reviewCount: 63,
+    shortDescription:
+      'Reliable movers serving Carter County residential needs across Van Buren and south central Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Van Buren area',
+  },
+  'regional-atchison-mo-movers': {
+    id: 'regional-atchison-mo-movers',
+    name: 'Regional Rock Port / Atchison County Providers',
+    rating: 4.7,
+    reviewCount: 62,
+    shortDescription:
+      'Reliable movers serving Atchison County residential needs across Rock Port and northwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Rock Port area',
+  },
+  'regional-scotland-mo-movers': {
+    id: 'regional-scotland-mo-movers',
+    name: 'Regional Memphis / Scotland County Providers',
+    rating: 4.7,
+    reviewCount: 66,
+    shortDescription:
+      'Reliable movers serving Scotland County residential needs across Memphis and northeast Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Memphis area',
+  },
+  'regional-putnam-mo-movers': {
+    id: 'regional-putnam-mo-movers',
+    name: 'Regional Unionville / Putnam County Providers',
+    rating: 4.7,
+    reviewCount: 64,
+    shortDescription:
+      'Reliable movers serving Putnam County residential needs across Unionville and north Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Unionville area',
+  },
+  'regional-schuyler-mo-movers': {
+    id: 'regional-schuyler-mo-movers',
+    name: 'Regional Lancaster / Schuyler County Providers',
+    rating: 4.7,
+    reviewCount: 65,
+    shortDescription:
+      'Reliable movers serving Schuyler County residential needs across Lancaster and north Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Lancaster area',
+  },
+  'regional-mercer-mo-movers': {
+    id: 'regional-mercer-mo-movers',
+    name: 'Regional Princeton / Mercer County Providers',
+    rating: 4.7,
+    reviewCount: 67,
+    shortDescription:
+      'Reliable movers serving Mercer County residential needs across Princeton and north Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Princeton area',
+  },
+  'regional-worth-mo-movers': {
+    id: 'regional-worth-mo-movers',
+    name: 'Regional Grant City / Worth County Providers',
+    rating: 4.7,
+    reviewCount: 68,
+    shortDescription:
+      'Reliable movers serving Worth County residential needs across Grant City and northwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Grant City area',
+  },
   'regional-st-francois-mo-movers': {
     id: 'regional-st-francois-mo-movers',
     name: 'Regional Farmington / St. Francois County Providers',
@@ -16500,7 +16764,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
   },
   'two-men-and-a-truck-st-charles-mo': {
     id: 'two-men-and-a-truck-st-charles-mo',
-    name: 'Two Men and a Truck St. Charles / Oâ€™Fallon',
+    name: 'Two Men and a Truck St. Charles / O’Fallon',
     rating: 4.8,
     reviewCount: 410,
     shortDescription:
@@ -18372,7 +18636,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'dfw-tx': {
     id: 'dfw-tx',
-    label: 'Dallasâ€“Fort Worth',
+    label: 'Dallas–Fort Worth',
     moverIds: [
       'two-men-and-a-truck-dallas',
       'two-men-and-a-truck-fort-worth',
@@ -18675,7 +18939,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'dfw-metro': {
     id: 'dfw-metro',
-    label: 'Dallasâ€“Fort Worth (legacy)',
+    label: 'Dallas–Fort Worth (legacy)',
     moverIds: [
       'two-men-and-a-truck-dallas',
       'two-men-and-a-truck-fort-worth',
@@ -18784,7 +19048,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'capital-district-ny': {
     id: 'capital-district-ny',
-    label: 'Capital District (Albanyâ€“Schenectadyâ€“Troy)',
+    label: 'Capital District (Albany–Schenectady–Troy)',
     moverIds: [
       'mabeys-moving-storage-albany',
       'dons-moving-storage-albany',
@@ -18797,7 +19061,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'buffalo-niagara-ny': {
     id: 'buffalo-niagara-ny',
-    label: 'Western New York / Buffaloâ€“Niagara',
+    label: 'Western New York / Buffalo–Niagara',
     moverIds: [
       'corrigan-moving-buffalo',
       'two-men-and-a-truck-buffalo',
@@ -20780,7 +21044,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'auburn-opelika-metro-al': {
     id: 'auburn-opelika-metro-al',
-    label: 'Auburnâ€“Opelika Metro',
+    label: 'Auburn–Opelika Metro',
     moverIds: [
       'two-men-and-a-truck-lee',
       'motivated-movers-montgomery',
@@ -20828,7 +21092,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'anniston-metro-al': {
     id: 'anniston-metro-al',
-    label: 'Annistonâ€“Oxford Metro',
+    label: 'Anniston–Oxford Metro',
     moverIds: [
       'fortson-moving-birmingham',
       'changing-spaces-moving-birmingham',
@@ -20886,7 +21150,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'florence-shoals-metro-al': {
     id: 'florence-shoals-metro-al',
-    label: 'Florenceâ€“Muscle Shoals Metro',
+    label: 'Florence–Muscle Shoals Metro',
     moverIds: [
       'christophers-moving-florence',
       'brothers-ez-moving-shoals',
@@ -20971,7 +21235,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'wiregrass-metro-al': {
     id: 'wiregrass-metro-al',
-    label: 'Wiregrass / Enterpriseâ€“Ozark',
+    label: 'Wiregrass / Enterprise–Ozark',
     moverIds: [
       'true-america-moving-dothan',
       'the-moving-truck-dothan',
@@ -22548,7 +22812,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'shreveport-bossier-metro-la': {
     id: 'shreveport-bossier-metro-la',
-    label: 'Shreveportâ€“Bossier Metro',
+    label: 'Shreveport–Bossier Metro',
     moverIds: [
       'two-men-and-a-truck-caddo-la',
       'two-men-and-a-truck-bossier-la',
@@ -22628,7 +22892,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'houma-bayou-metro-la': {
     id: 'houma-bayou-metro-la',
-    label: 'Houmaâ€“Bayou Caneâ€“Thibodaux Metro',
+    label: 'Houma–Bayou Cane–Thibodaux Metro',
     moverIds: [
       'two-men-and-a-truck-terrebonne-la',
       'two-men-and-a-truck-lafourche-la',
@@ -23581,7 +23845,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'little-rock-metro-ar': {
     id: 'little-rock-metro-ar',
-    label: 'Little Rockâ€“North Little Rockâ€“Conway Metro',
+    label: 'Little Rock–North Little Rock–Conway Metro',
     moverIds: [
       'two-men-and-a-truck-pulaski-ar',
       'two-men-and-a-truck-faulkner-ar',
@@ -27075,10 +27339,318 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'missouri-regional-moving',
       'missouri-express-movers',
     ],
+  },,
+  'paris-metro-mo': {
+    id: 'paris-metro-mo',
+    label: 'Paris Metro',
+    moverIds: [
+      'regional-monroe-mo-movers',
+      'regional-ralls-mo-movers',
+      'regional-marion-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'kingston-metro-mo': {
+    id: 'kingston-metro-mo',
+    label: 'Kingston Metro',
+    moverIds: [
+      'regional-caldwell-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'regional-livingston-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'alton-metro-mo': {
+    id: 'alton-metro-mo',
+    label: 'Alton Metro',
+    moverIds: [
+      'regional-oregon-mo-movers',
+      'regional-howell-mo-movers',
+      'regional-ripley-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'gallatin-metro-mo': {
+    id: 'gallatin-metro-mo',
+    label: 'Gallatin Metro',
+    moverIds: [
+      'regional-daviess-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'regional-dekalb-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'carrollton-metro-mo': {
+    id: 'carrollton-metro-mo',
+    label: 'Carrollton Metro',
+    moverIds: [
+      'regional-carroll-mo-movers',
+      'regional-saline-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'bethany-metro-mo': {
+    id: 'bethany-metro-mo',
+    label: 'Bethany Metro',
+    moverIds: [
+      'regional-harrison-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'regional-grundy-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'vienna-metro-mo': {
+    id: 'vienna-metro-mo',
+    label: 'Vienna Metro',
+    moverIds: [
+      'regional-maries-mo-movers',
+      'regional-cole-mo-movers',
+      'missouri-capital-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'greenfield-metro-mo': {
+    id: 'greenfield-metro-mo',
+    label: 'Greenfield Metro',
+    moverIds: [
+      'regional-dade-mo-movers',
+      'two-men-and-a-truck-jasper-mo',
+      'regional-cedar-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'keytesville-metro-mo': {
+    id: 'keytesville-metro-mo',
+    label: 'Keytesville Metro',
+    moverIds: [
+      'regional-chariton-mo-movers',
+      'regional-saline-mo-movers',
+      'regional-linn-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'eminence-metro-mo': {
+    id: 'eminence-metro-mo',
+    label: 'Eminence Metro',
+    moverIds: [
+      'regional-shannon-mo-movers',
+      'regional-dent-mo-movers',
+      'regional-howell-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'albany-metro-mo': {
+    id: 'albany-metro-mo',
+    label: 'Albany Metro',
+    moverIds: [
+      'regional-gentry-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'regional-nodaway-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'kahoka-metro-mo': {
+    id: 'kahoka-metro-mo',
+    label: 'Kahoka Metro',
+    moverIds: [
+      'regional-clark-mo-movers',
+      'regional-lewis-mo-movers',
+      'regional-marion-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'centerville-metro-mo': {
+    id: 'centerville-metro-mo',
+    label: 'Centerville Metro',
+    moverIds: [
+      'regional-reynolds-mo-movers',
+      'regional-iron-mo-movers',
+      'regional-wayne-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'shelbyville-metro-mo': {
+    id: 'shelbyville-metro-mo',
+    label: 'Shelbyville Metro',
+    moverIds: [
+      'regional-shelby-mo-movers',
+      'regional-marion-mo-movers',
+      'regional-pike-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'milan-metro-mo': {
+    id: 'milan-metro-mo',
+    label: 'Milan Metro',
+    moverIds: [
+      'regional-sullivan-mo-movers',
+      'regional-putnam-mo-movers',
+      'regional-adair-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'van-buren-metro-mo': {
+    id: 'van-buren-metro-mo',
+    label: 'Van Buren Metro',
+    moverIds: [
+      'regional-carter-mo-movers',
+      'regional-oregon-mo-movers',
+      'regional-shannon-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'rock-port-metro-mo': {
+    id: 'rock-port-metro-mo',
+    label: 'Rock Port Metro',
+    moverIds: [
+      'regional-atchison-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'regional-worth-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'memphis-metro-mo': {
+    id: 'memphis-metro-mo',
+    label: 'Memphis Metro',
+    moverIds: [
+      'regional-scotland-mo-movers',
+      'regional-schuyler-mo-movers',
+      'regional-adair-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'unionville-metro-mo': {
+    id: 'unionville-metro-mo',
+    label: 'Unionville Metro',
+    moverIds: [
+      'regional-putnam-mo-movers',
+      'regional-adair-mo-movers',
+      'regional-sullivan-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'lancaster-metro-mo': {
+    id: 'lancaster-metro-mo',
+    label: 'Lancaster Metro',
+    moverIds: [
+      'regional-schuyler-mo-movers',
+      'regional-scotland-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'princeton-metro-mo': {
+    id: 'princeton-metro-mo',
+    label: 'Princeton Metro',
+    moverIds: [
+      'regional-mercer-mo-movers',
+      'regional-grundy-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'grant-city-metro-mo': {
+    id: 'grant-city-metro-mo',
+    label: 'Grant City Metro',
+    moverIds: [
+      'regional-worth-mo-movers',
+      'regional-gentry-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
   },
 };
 
-/** Non-curated state overrides â€” FL/NJ/NY/CA use dedicated assignment files */
+/** Non-curated state overrides — FL/NJ/NY/CA use dedicated assignment files */
 export const countyMoverAssignments: CountyMoverAssignment[] = [
   {
     stateSlug: 'texas',
