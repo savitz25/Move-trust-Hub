@@ -136,7 +136,16 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic MO counties — sitemap priority 0.85 */
-const MO_HIGH_TRAFFIC_COUNTIES = new Set(['st-louis', 'jackson', 'st-charles']);
+const MO_HIGH_TRAFFIC_COUNTIES = new Set([
+  'st-louis',
+  'st-louis-city',
+  'jackson',
+  'st-charles',
+  'greene',
+  'clay',
+  'jefferson',
+  'boone',
+]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */
 const KS_HIGH_TRAFFIC_COUNTIES = new Set([

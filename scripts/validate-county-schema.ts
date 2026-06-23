@@ -68,6 +68,11 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'st-louis', expectedCity: 'Clayton' },
   { stateSlug: 'missouri', countySlug: 'jackson', expectedCity: 'Independence' },
   { stateSlug: 'missouri', countySlug: 'st-charles', expectedCity: 'St. Charles' },
+  { stateSlug: 'missouri', countySlug: 'greene', expectedCity: 'Springfield' },
+  { stateSlug: 'missouri', countySlug: 'st-louis-city', expectedCity: 'St. Louis' },
+  { stateSlug: 'missouri', countySlug: 'clay', expectedCity: 'Liberty' },
+  { stateSlug: 'missouri', countySlug: 'jefferson', expectedCity: 'Hillsboro' },
+  { stateSlug: 'missouri', countySlug: 'boone', expectedCity: 'Columbia' },
 ];
 
 let totalIssues = 0;

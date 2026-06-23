@@ -710,8 +710,8 @@ export const missouriCounties: LocalCounty[] = [
     "metro": "missouri-region-1"
   },
   {
-    "slug": "st-louis",
-    "name": "St. Louis",
+    "slug": "st-louis-city",
+    "name": "St. Louis City",
     "stateCode": "MO",
     "stateSlug": "missouri",
     "metro": "missouri-region-2"
@@ -1994,7 +1994,7 @@ export const missouriAssignments: CountyMoverAssignment[] = [
   },
   {
     "stateSlug": "missouri",
-    "countySlug": "st-louis",
+    "countySlug": "st-louis-city",
     "moverIds": [
       "missouri-local-lines",
       "missouri-premier-moving",

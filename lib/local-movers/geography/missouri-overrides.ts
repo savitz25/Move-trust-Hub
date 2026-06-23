@@ -7,6 +7,11 @@ export const missouriCountyOverrides: Partial<
   'st-louis': { seat: 'Clayton', metro: 'st-louis-metro-mo' },
   jackson: { seat: 'Independence', metro: 'kansas-city-metro-mo' },
   'st-charles': { seat: 'St. Charles', metro: 'st-louis-metro-west-mo' },
+  greene: { seat: 'Springfield', metro: 'springfield-metro-mo' },
+  'st-louis-city': { seat: 'St. Louis', metro: 'st-louis-metro-mo' },
+  clay: { seat: 'Liberty', metro: 'kansas-city-metro-north-mo' },
+  jefferson: { seat: 'Hillsboro', metro: 'st-louis-metro-south-mo' },
+  boone: { seat: 'Columbia', metro: 'columbia-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {
