@@ -35,6 +35,22 @@ export const kansasCountyOverrides: Partial<
   dickinson: { seat: 'Abilene', metro: 'abilene-metro-ks' },
   jefferson: { seat: 'Oskaloosa', metro: 'topeka-metro-northeast-ks' },
   atchison: { seat: 'Atchison', metro: 'atchison-metro-ks' },
+  neosho: { seat: 'Erie', metro: 'chanute-metro-ks' },
+  osage: { seat: 'Lyndon', metro: 'lyndon-metro-ks' },
+  bourbon: { seat: 'Fort Scott', metro: 'fort-scott-metro-ks' },
+  jackson: { seat: 'Holton', metro: 'holton-metro-ks' },
+  allen: { seat: 'Iola', metro: 'iola-metro-ks' },
+  marion: { seat: 'Marion', metro: 'marion-metro-ks' },
+  linn: { seat: 'Mound City', metro: 'mound-city-metro-ks' },
+  nemaha: { seat: 'Seneca', metro: 'seneca-metro-ks' },
+  marshall: { seat: 'Marysville', metro: 'marysville-metro-ks' },
+  rice: { seat: 'Lyons', metro: 'lyons-metro-ks' },
+  pratt: { seat: 'Pratt', metro: 'pratt-metro-ks' },
+  brown: { seat: 'Hiawatha', metro: 'hiawatha-metro-ks' },
+  cloud: { seat: 'Concordia', metro: 'concordia-metro-ks' },
+  coffey: { seat: 'Burlington', metro: 'burlington-metro-ks' },
+  wilson: { seat: 'Fredonia', metro: 'fredonia-metro-ks' },
+  anderson: { seat: 'Garnett', metro: 'garnett-metro-ks' },
 };
 
 export function applyKansasCountyOverrides(county: LocalCounty): LocalCounty {

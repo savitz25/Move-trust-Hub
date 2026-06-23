@@ -42,6 +42,22 @@ const KS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   dickinson: ['geary', 'marion', 'morris', 'clay', 'ottawa', 'saline'],
   jefferson: ['douglas', 'shawnee', 'jackson', 'atchison', 'leavenworth', 'osage'],
   atchison: ['leavenworth', 'jefferson', 'doniphan', 'brown', 'jackson', 'nemaha'],
+  neosho: ['allen', 'woodson', 'wilson', 'crawford', 'labette', 'cherokee'],
+  osage: ['lyon', 'coffey', 'franklin', 'wabaunsee', 'shawnee', 'douglas'],
+  bourbon: ['crawford', 'cherokee', 'linn', 'allen', 'neosho', 'woodson'],
+  jackson: ['shawnee', 'jefferson', 'pottawatomie', 'atchison', 'brown', 'wabaunsee'],
+  allen: ['neosho', 'wilson', 'woodson', 'bourbon', 'anderson', 'coffey'],
+  marion: ['harvey', 'mcpherson', 'butler', 'chase', 'morris', 'dickinson'],
+  linn: ['miami', 'anderson', 'bourbon', 'allen', 'johnson', 'franklin'],
+  nemaha: ['marshall', 'brown', 'jackson', 'pottawatomie', 'doniphan', 'riley'],
+  marshall: ['nemaha', 'washington', 'pottawatomie', 'riley', 'clay', 'brown'],
+  rice: ['mcpherson', 'reno', 'ellsworth', 'barton', 'stafford', 'cloud'],
+  pratt: ['kingman', 'stafford', 'kiowa', 'edwards', 'barber', 'reno'],
+  brown: ['nemaha', 'jackson', 'doniphan', 'atchison', 'jefferson', 'marshall'],
+  cloud: ['clay', 'washington', 'republic', 'ottawa', 'mitchell', 'jewell'],
+  coffey: ['lyon', 'osage', 'woodson', 'anderson', 'allen', 'greenwood'],
+  wilson: ['neosho', 'montgomery', 'elk', 'chautauqua', 'allen', 'woodson'],
+  anderson: ['franklin', 'linn', 'allen', 'coffey', 'miami', 'woodson'],
 };
 
 export function getKansasNearbyCounties(

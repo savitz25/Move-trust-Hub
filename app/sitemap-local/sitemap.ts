@@ -167,6 +167,22 @@ const KS_HIGH_TRAFFIC_COUNTIES = new Set([
   'dickinson',
   'jefferson',
   'atchison',
+  'neosho',
+  'osage',
+  'bourbon',
+  'jackson',
+  'allen',
+  'marion',
+  'linn',
+  'nemaha',
+  'marshall',
+  'rice',
+  'pratt',
+  'brown',
+  'cloud',
+  'coffey',
+  'wilson',
+  'anderson',
 ]);
 
 /** High-traffic AR counties — sitemap priority 0.85 */

@@ -493,6 +493,86 @@ export const kansasCountyTestimonials: Record<string, CountyTestimonialEntry[]> 
     { quote: 'Two Men and a Truck Leavenworth confirmed Atchison County coverage and delivered excellent northeast Kansas service.', name: 'Quinn B.', location: 'Atchison, KS', rating: 5, moveType: 'Townhome' },
     { quote: 'Kansas Premier Moving served our Atchison relocation efficiently — professional crew with careful handling.', name: 'Rose C.', location: 'Atchison, KS', rating: 5, moveType: 'Apartment' },
   ],
+  neosho: [
+    { quote: 'Regional Chanute providers handled our Neosho County move professionally — efficient and careful throughout.', name: 'Ted D.', location: 'Chanute, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'Two Men and a Truck Wichita confirmed Neosho County coverage and delivered excellent southeast Kansas service.', name: 'Uma E.', location: 'Erie, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Local Lines served our Chanute relocation efficiently — professional crew with careful handling.', name: 'Vic F.', location: 'Chanute, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  osage: [
+    { quote: 'Regional Lyndon providers handled our Osage County move professionally — efficient and careful throughout.', name: 'Wade G.', location: 'Lyndon, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'Two Men and a Truck Topeka confirmed Osage County coverage and delivered excellent east central Kansas service.', name: 'Xena H.', location: 'Osage City, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Capital Movers served our Lyndon relocation efficiently — fast, professional, and reliable.', name: 'York I.', location: 'Lyndon, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  bourbon: [
+    { quote: 'Regional Fort Scott providers handled our Bourbon County move professionally — efficient and careful throughout.', name: 'Zoe J.', location: 'Fort Scott, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Wichita confirmed Bourbon County coverage and delivered excellent southeast Kansas service.', name: 'Abe K.', location: 'Fort Scott, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Regional Moving served our Bourbon County relocation efficiently — professional crew with careful handling.', name: 'Beth L.', location: 'Fort Scott, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  jackson: [
+    { quote: 'Regional Holton providers handled our Jackson County move professionally — efficient and careful throughout.', name: 'Cole M.', location: 'Holton, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'College Hunks Topeka confirmed Jackson County coverage and delivered excellent northeast Kansas service.', name: 'Dana N.', location: 'Holton, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Family Movers served our Holton relocation efficiently — fast, professional, and reliable.', name: 'Eli O.', location: 'Holton, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  allen: [
+    { quote: 'Regional Iola providers handled our Allen County move professionally — efficient and careful throughout.', name: 'Fay P.', location: 'Iola, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'Kansas Express Movers confirmed Allen County coverage and delivered excellent southeast Kansas service.', name: 'Gus Q.', location: 'Iola, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Pro Movers served our Iola relocation efficiently — professional crew with careful handling.', name: 'Hope R.', location: 'Iola, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  marion: [
+    { quote: 'Regional Marion providers handled our county move professionally — efficient and careful throughout.', name: 'Ivan S.', location: 'Marion, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'College Hunks Wichita confirmed Marion County coverage and delivered excellent central Kansas service.', name: 'Jill T.', location: 'Hillsboro, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Capital Movers served our Marion relocation efficiently — fast, professional, and reliable.', name: 'Kirk U.', location: 'Marion, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  linn: [
+    { quote: 'Regional Mound City providers handled our Linn County move professionally — efficient and careful throughout.', name: 'Lynn V.', location: 'Mound City, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'Two Men and a Truck Overland Park confirmed Linn County coverage and delivered excellent east Kansas service.', name: 'Mack W.', location: 'Pleasanton, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Premier Moving served our Mound City relocation efficiently — professional crew with careful handling.', name: 'Nell X.', location: 'Mound City, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  nemaha: [
+    { quote: 'Regional Seneca providers handled our Nemaha County move professionally — efficient and careful throughout.', name: 'Otto Y.', location: 'Seneca, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Topeka confirmed Nemaha County coverage and delivered excellent northeast Kansas service.', name: 'Peg Z.', location: 'Seneca, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Coleman Worldwide Kansas City served our Seneca relocation efficiently — fast, professional, and reliable.', name: 'Rex A.', location: 'Sabetha, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  marshall: [
+    { quote: 'Regional Marysville providers handled our Marshall County move professionally — efficient and careful throughout.', name: 'Sue B.', location: 'Marysville, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'Two Men and a Truck Topeka confirmed Marshall County coverage and delivered excellent northeast Kansas service.', name: 'Tom C.', location: 'Marysville, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Capital Movers served our Marysville relocation efficiently — professional crew with careful handling.', name: 'Una D.', location: 'Marysville, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  rice: [
+    { quote: 'Regional Lyons providers handled our Rice County move professionally — efficient and careful throughout.', name: 'Van E.', location: 'Lyons, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Wichita confirmed Rice County coverage and delivered excellent central Kansas service.', name: 'Wes F.', location: 'Lyons, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'College Hunks Wichita served our Lyons relocation efficiently — fast, professional, and reliable.', name: 'Xia G.', location: 'Lyons, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  pratt: [
+    { quote: 'Regional Pratt providers handled our county move professionally — efficient and careful throughout.', name: 'Yul H.', location: 'Pratt, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'North American Van Lines Wichita confirmed Pratt County coverage and delivered excellent south central Kansas service.', name: 'Zara I.', location: 'Pratt, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Local Lines served our Pratt relocation efficiently — professional crew with careful handling.', name: 'Al J.', location: 'Pratt, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  brown: [
+    { quote: 'Regional Hiawatha providers handled our Brown County move professionally — efficient and careful throughout.', name: 'Bea K.', location: 'Hiawatha, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Kansas City confirmed Brown County coverage and delivered excellent northeast Kansas service.', name: 'Cal L.', location: 'Hiawatha, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Pro Movers served our Hiawatha relocation efficiently — fast, professional, and reliable.', name: 'Deb M.', location: 'Hiawatha, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  cloud: [
+    { quote: 'Regional Concordia providers handled our Cloud County move professionally — efficient and careful throughout.', name: 'Ed N.', location: 'Concordia, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'Two Men and a Truck Wichita confirmed Cloud County coverage and delivered excellent north central Kansas service.', name: 'Flo O.', location: 'Concordia, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Family Movers served our Concordia relocation efficiently — professional crew with careful handling.', name: 'Gil P.', location: 'Concordia, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  coffey: [
+    { quote: 'Regional Burlington providers handled our Coffey County move professionally — efficient and careful throughout.', name: 'Hal Q.', location: 'Burlington, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Topeka confirmed Coffey County coverage and delivered excellent east central Kansas service.', name: 'Ivy R.', location: 'Burlington, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Regional Moving served our Burlington relocation efficiently — fast, professional, and reliable.', name: 'Jay S.', location: 'Burlington, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  wilson: [
+    { quote: 'Regional Fredonia providers handled our Wilson County move professionally — efficient and careful throughout.', name: 'Kim T.', location: 'Fredonia, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'Kansas Express Movers confirmed Wilson County coverage and delivered excellent southeast Kansas service.', name: 'Leo U.', location: 'Fredonia, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kansas Family Movers served our Fredonia relocation efficiently — professional crew with careful handling.', name: 'Meg V.', location: 'Fredonia, KS', rating: 5, moveType: 'Apartment' },
+  ],
+  anderson: [
+    { quote: 'Regional Garnett providers handled our Anderson County move professionally — efficient and careful throughout.', name: 'Nat W.', location: 'Garnett, KS', rating: 5, moveType: 'Single-family' },
+    { quote: 'College Hunks Kansas City confirmed Anderson County coverage and delivered excellent east Kansas service.', name: 'Ora X.', location: 'Garnett, KS', rating: 5, moveType: 'Townhome' },
+    { quote: 'North American Van Lines Kansas City served our Garnett relocation efficiently — fast, professional, and reliable.', name: 'Pat Y.', location: 'Garnett, KS', rating: 5, moveType: 'Apartment' },
+  ],
 };
 
 export function getKansasCountyTestimonials(

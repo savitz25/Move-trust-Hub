@@ -535,6 +535,278 @@ export const kansasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  neosho: {
+    marketNotes:
+      'Neosho County is a rural Southeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Neosho County pricing reflects southeast Kansas rural residential turnover, Chanute corridor traffic, and competition among full-service local and regional agents serving Neosho County.',
+    },
+    tips: [
+      'Verify coverage for Chanute and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  osage: {
+    marketNotes:
+      'Osage County is a rural East Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Osage County pricing reflects east central Kansas rural residential turnover, Lyndon corridor traffic, and competition among full-service local and regional agents serving Osage County.',
+    },
+    tips: [
+      'Verify coverage for Lyndon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  bourbon: {
+    marketNotes:
+      'Bourbon County is a rural Southeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Bourbon County pricing reflects southeast Kansas rural residential turnover, Fort Scott corridor traffic, and competition among full-service local and regional agents serving Bourbon County.',
+    },
+    tips: [
+      'Verify coverage for Fort Scott and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is a rural Northeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects northeast Kansas rural residential turnover, Holton corridor traffic, and competition among full-service local and regional agents serving Jackson County.',
+    },
+    tips: [
+      'Verify coverage for Holton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  allen: {
+    marketNotes:
+      'Allen County is a rural Southeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Allen County pricing reflects southeast Kansas rural residential turnover, Iola corridor traffic, and competition among full-service local and regional agents serving Allen County.',
+    },
+    tips: [
+      'Verify coverage for Iola and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is a rural Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Marion County pricing reflects central Kansas rural residential turnover, Marion corridor traffic, and competition among full-service local and regional agents serving Marion County.',
+    },
+    tips: [
+      'Verify coverage for Marion and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  linn: {
+    marketNotes:
+      'Linn County is a rural East Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Linn County pricing reflects east Kansas rural residential turnover, Mound City corridor traffic, and competition among full-service local and regional agents serving Linn County.',
+    },
+    tips: [
+      'Verify coverage for Mound City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  nemaha: {
+    marketNotes:
+      'Nemaha County is a rural Northeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Nemaha County pricing reflects northeast Kansas rural residential turnover, Seneca corridor traffic, and competition among full-service local and regional agents serving Nemaha County.',
+    },
+    tips: [
+      'Verify coverage for Seneca and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  marshall: {
+    marketNotes:
+      'Marshall County is a rural Northeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Marshall County pricing reflects northeast Kansas rural residential turnover, Marysville corridor traffic, and competition among full-service local and regional agents serving Marshall County.',
+    },
+    tips: [
+      'Verify coverage for Marysville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  rice: {
+    marketNotes:
+      'Rice County is a rural Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Rice County pricing reflects central Kansas rural residential turnover, Lyons corridor traffic, and competition among full-service local and regional agents serving Rice County.',
+    },
+    tips: [
+      'Verify coverage for Lyons and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  pratt: {
+    marketNotes:
+      'Pratt County is a rural South Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Pratt County pricing reflects south central Kansas rural residential turnover, Pratt corridor traffic, and competition among full-service local and regional agents serving Pratt County.',
+    },
+    tips: [
+      'Verify coverage for Pratt and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  brown: {
+    marketNotes:
+      'Brown County is a rural Northeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Brown County pricing reflects northeast Kansas rural residential turnover, Hiawatha corridor traffic, and competition among full-service local and regional agents serving Brown County.',
+    },
+    tips: [
+      'Verify coverage for Hiawatha and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  cloud: {
+    marketNotes:
+      'Cloud County is a rural North Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Cloud County pricing reflects north central Kansas rural residential turnover, Concordia corridor traffic, and competition among full-service local and regional agents serving Cloud County.',
+    },
+    tips: [
+      'Verify coverage for Concordia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  coffey: {
+    marketNotes:
+      'Coffey County is a rural East Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Coffey County pricing reflects east central Kansas rural residential turnover, Burlington corridor traffic, and competition among full-service local and regional agents serving Coffey County.',
+    },
+    tips: [
+      'Verify coverage for Burlington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  wilson: {
+    marketNotes:
+      'Wilson County is a rural Southeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Wilson County pricing reflects southeast Kansas rural residential turnover, Fredonia corridor traffic, and competition among full-service local and regional agents serving Wilson County.',
+    },
+    tips: [
+      'Verify coverage for Fredonia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  anderson: {
+    marketNotes:
+      'Anderson County is a rural East Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Anderson County pricing reflects east Kansas rural residential turnover, Garnett corridor traffic, and competition among full-service local and regional agents serving Anderson County.',
+    },
+    tips: [
+      'Verify coverage for Garnett and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
 };
 
 export function getKansasCountyResearch(
