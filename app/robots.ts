@@ -1,4 +1,7 @@
 import type { MetadataRoute } from 'next';
+import { localStates } from '@/lib/local-movers/states';
+
+const SITE_URL = 'https://www.movetrusthub.com';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,8 +11,10 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ['/admin', '/api/admin'],
     },
     sitemap: [
-      'https://www.movetrusthub.com/sitemap.xml',
-      'https://www.movetrusthub.com/sitemap-local.xml',
+      `${SITE_URL}/sitemap.xml`,
+      ...localStates.map(
+        (state) => `${SITE_URL}/sitemap-local/sitemap/${state.slug}.xml`
+      ),
     ],
   };
 }

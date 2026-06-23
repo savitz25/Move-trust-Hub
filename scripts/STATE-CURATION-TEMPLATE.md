@@ -70,7 +70,7 @@ All major counties above plus `dutchess`, `orange`, `rockland` (affluent Hudson 
 | 8 | `lib/local-movers/county-seo.ts` | Hook research + testimonials for `stateSlug` |
 | 9 | `lib/local-movers/index.ts` | Import assignments; add to `curatedAssignmentStateSlugs` |
 | 10 | `components/local-movers/county-editorial-trust.tsx` | `{STATE}_COUNTY_CONTENT_UPDATED` date constant |
-| 11 | `app/sitemap-local/sitemap.ts` | `lastModified` + priority counties for major metros |
+| 11 | `app/sitemap-local/sitemap.ts` | `lastModified` + priority counties for major metros. Live URLs: `/sitemap-local/sitemap/{state}.xml` (not `/sitemap-local/{state}.xml`) |
 | 12 | `app/(marketing)/local-movers/[stateSlug]/page.tsx` | State hub copy (5–10 movers messaging) |
 | 13 | `app/(marketing)/local-movers/[stateSlug]/[countySlug]/page.tsx` | Pass `lastUpdated` to `CountyEditorialTrust` |
 | 14 | `scripts/generate-state-local-movers.ts` | Add state slug to `SKIP_STATES` |
