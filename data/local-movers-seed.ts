@@ -27363,7 +27363,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'missouri-regional-moving',
       'missouri-express-movers',
     ],
-  },,
+  },
   'paris-metro-mo': {
     id: 'paris-metro-mo',
     label: 'Paris Metro',
