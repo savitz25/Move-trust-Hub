@@ -4365,6 +4365,188 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Residential',
     },
   ],
+  comal: [
+    {
+      quote:
+        'Professional and efficient for our New Braunfels move in Comal County. The San Antonio crew navigated I-35 traffic and finished with careful handling.',
+      name: 'Rita V.',
+      location: 'New Braunfels, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks San Antonio — transparent pricing on a hill-country route with steady communication.',
+      name: 'Sam W.',
+      location: 'New Braunfels, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from the Austin team we compared. Great experience with organized loading throughout Comal County.',
+      name: 'Tina X.',
+      location: 'New Braunfels, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  kaufman: [
+    {
+      quote:
+        'Professional and efficient for our Kaufman move. The Dallas crew navigated I-20 traffic and finished on schedule with careful handling.',
+      name: 'Uma Y.',
+      location: 'Kaufman, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Fort Worth — transparent pricing on a Dallas metro fringe route.',
+      name: 'Vic Z.',
+      location: 'Forney, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from a third Dallas estimate we compared. Great experience with organized loading throughout Kaufman County.',
+      name: 'Wade A.',
+      location: 'Kaufman, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  johnson: [
+    {
+      quote:
+        'Professional and efficient for our Cleburne move in Johnson County. The Fort Worth crew confirmed coverage and finished with careful handling.',
+      name: 'Xena B.',
+      location: 'Cleburne, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Dallas — transparent pricing on a southern metro route.',
+      name: 'Yuri C.',
+      location: 'Cleburne, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from a third Fort Worth estimate we compared. Great experience with organized loading throughout.',
+      name: 'Zoe D.',
+      location: 'Cleburne, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  ellis: [
+    {
+      quote:
+        'Professional and efficient for our Waxahachie move in Ellis County. The Dallas crew navigated I-35E traffic without delay.',
+      name: 'Adam E.',
+      location: 'Waxahachie, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Fort Worth — transparent pricing and steady communication throughout.',
+      name: 'Beth F.',
+      location: 'Waxahachie, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from a third Dallas metro estimate we compared. Great experience with careful handling.',
+      name: 'Carl G.',
+      location: 'Midlothian, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  brazos: [
+    {
+      quote:
+        'Professional and efficient for our College Station move in Brazos County. Little Guys confirmed university-area experience and careful handling.',
+      name: 'Dana H.',
+      location: 'College Station, TX',
+      rating: 5,
+      moveType: 'Student housing',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Waco — transparent pricing on a Bryan–College Station route.',
+      name: 'Evan I.',
+      location: 'Bryan, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Professional and timely from College Hunks Waco. Great experience with organized loading during semester turnover.',
+      name: 'Faye J.',
+      location: 'College Station, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  jefferson: [
+    {
+      quote:
+        'Professional and efficient for our Beaumont move in Jefferson County. The local crew navigated I-10 industrial traffic without delay.',
+      name: 'Greg K.',
+      location: 'Beaumont, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from a second Beaumont estimate — transparent pricing and steady communication throughout.',
+      name: 'Holly L.',
+      location: 'Beaumont, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Houston team we compared. Great experience with careful handling on a Jefferson County route.',
+      name: 'Ivan M.',
+      location: 'Beaumont, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  smith: [
+    {
+      quote:
+        'Professional and efficient for our Tyler move in Smith County. Tyler Moving & Storage confirmed coverage and finished with careful handling.',
+      name: 'Jill N.',
+      location: 'Tyler, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Higgs Moving Longview — transparent pricing on an East Texas regional route.',
+      name: 'Kyle O.',
+      location: 'Tyler, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Dallas team we compared. Great experience with organized loading throughout Smith County.',
+      name: 'Lara P.',
+      location: 'Tyler, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

@@ -201,6 +201,13 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   parker: ['two-men-and-a-truck-fort-worth', 'fort-worth-area-moving', 'two-men-and-a-truck-dallas'],
   midland: ['texas-moving-company-midland', 'brothers-moving-odessa', 'midland-area-moving'],
   guadalupe: ['two-men-and-a-truck-san-antonio', 'college-hunks-moving-san-antonio', 'two-men-and-a-truck-austin'],
+  comal: ['two-men-and-a-truck-san-antonio', 'college-hunks-moving-san-antonio', 'two-men-and-a-truck-austin'],
+  kaufman: ['two-men-and-a-truck-dallas', 'two-men-and-a-truck-fort-worth', 'dallas-area-moving'],
+  johnson: ['two-men-and-a-truck-fort-worth', 'two-men-and-a-truck-dallas', 'fort-worth-area-moving'],
+  ellis: ['two-men-and-a-truck-dallas', 'two-men-and-a-truck-fort-worth', 'dallas-area-moving'],
+  brazos: ['little-guys-movers-college-station', 'two-men-and-a-truck-waco', 'college-hunks-moving-waco'],
+  jefferson: ['two-men-and-a-truck-beaumont', 'beaumont-area-moving', 'two-men-and-a-truck-houston'],
+  smith: ['tyler-moving-storage', 'higgs-moving-longview', 'two-men-and-a-truck-dallas'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

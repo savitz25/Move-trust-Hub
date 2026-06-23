@@ -3390,6 +3390,125 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates — travel distance from San Antonio or Austin can affect final pricing.',
     ],
   },
+  comal: {
+    marketNotes:
+      'Comal County includes New Braunfels with significant residential growth, tourism influence, and Guadalupe River lake communities.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'San Antonio and New Braunfels-area crews typically cover Comal County; confirm service for lakefront and hill-country addresses.',
+    },
+    tips: [
+      'Verify coverage for New Braunfels, Bulverde, and surrounding Comal County communities.',
+      'San Antonio-area traffic on I-35 and SH-46 impacts scheduling — plan around peak commute and tourism seasons.',
+      'Confirm insurance for high-value homes common in Comal County lake and hill-country communities.',
+      'Book early for peak seasons — summer tourism and river-season moves can tighten crew availability.',
+      'Obtain multiple estimates — travel distance from San Antonio or Austin can affect final pricing.',
+    ],
+  },
+  kaufman: {
+    marketNotes:
+      'Kaufman County is part of the Dallas–Fort Worth metro with growing suburban residential development east of Dallas.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dallas metro crews typically cover Kaufman County; confirm service for Forney, Terrell, and rural county addresses.',
+    },
+    tips: [
+      'Verify coverage for Kaufman, Forney, Terrell, and surrounding Dallas metro communities.',
+      'Heavy traffic on I-20 and local roads impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in newer Kaufman County subdivisions.',
+      'Book early for peak seasons — summer moves can tighten Dallas-area crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between metro providers.',
+    ],
+  },
+  johnson: {
+    marketNotes:
+      'Johnson County includes Cleburne with suburban growth along the southern Dallas–Fort Worth metro corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Fort Worth and Dallas metro crews typically cover Johnson County; confirm service for Cleburne and rural ranch addresses.',
+    },
+    tips: [
+      'Verify coverage for Cleburne, Burleson-area fringe communities, and surrounding Johnson County.',
+      'Dallas-area traffic on US-67 and I-35W impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes and ranch properties common in Johnson County.',
+      'Book early for peak seasons — summer moves can tighten Fort Worth-area crew availability.',
+      'Obtain multiple estimates — travel distance from Fort Worth or Dallas can affect final pricing.',
+    ],
+  },
+  ellis: {
+    marketNotes:
+      'Ellis County includes Waxahachie with suburban growth along the I-35E corridor south of Dallas.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dallas metro crews typically cover Ellis County; confirm service for Waxahachie, Midlothian, and rural county addresses.',
+    },
+    tips: [
+      'Verify coverage for Waxahachie, Midlothian, and surrounding Ellis County communities.',
+      'Dallas-area traffic on I-35E and US-287 impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in newer Ellis County subdivisions.',
+      'Book early for peak seasons — summer moves can tighten Dallas-area crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between metro providers.',
+    ],
+  },
+  brazos: {
+    marketNotes:
+      'Brazos County includes Bryan and College Station with university-related moves tied to Texas A&M and growing residential demand.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Bryan–College Station local providers typically cover Brazos County; confirm service for student housing and rural parcels.',
+    },
+    tips: [
+      'Verify coverage for Bryan, College Station, and surrounding Brazos County communities.',
+      'University traffic and semester turnover impact scheduling — plan around move-in/move-out peaks.',
+      'Confirm insurance for high-value homes and student housing moves near campus.',
+      'Book early for peak seasons — August and May turnover can tighten College Station crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between local providers.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County includes Beaumont with industrial and residential moves across the Beaumont–Port Arthur metro.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Beaumont local providers typically cover Jefferson County; confirm service for Port Arthur fringe and rural county addresses.',
+    },
+    tips: [
+      'Verify coverage for Beaumont, Nederland, and surrounding Jefferson County communities.',
+      'Industrial traffic on I-10 and US-69 impacts scheduling — plan around shift-change and refinery corridor congestion.',
+      'Confirm insurance for high-value items and industrial-area relocations.',
+      'Book early for peak seasons — summer moves can tighten Beaumont crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Beaumont and Houston providers.',
+    ],
+  },
+  smith: {
+    marketNotes:
+      'Smith County centers on Tyler with residential and commercial moves across the East Texas metro. (Not Tyler County — seat Woodville.)',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Tyler local providers typically cover Smith County; confirm service for rural county parcels outside city limits.',
+    },
+    tips: [
+      'Verify coverage for Tyler, Whitehouse, and surrounding Smith County communities.',
+      'Local traffic on Loop 323 and US-69 impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes and lake properties near Tyler.',
+      'Book early for peak seasons — summer moves can tighten Tyler crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Tyler and Dallas providers.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(
