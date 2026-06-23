@@ -29,6 +29,292 @@ export const louisianaCountyTestimonials: Record<string, CountyTestimonialEntry[
         moveType: 'Townhome',
       },
     ],
+    jefferson: [
+      {
+        quote:
+          'Two Men and a Truck Metairie handled our Kenner relocation professionally — on time, efficient, and extremely careful throughout Jefferson Parish.',
+        name: 'Carla B.',
+        location: 'Kenner, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons served our Metairie move efficiently — fast, professional, and reliable with careful suburban-home handling.',
+        name: 'Derek H.',
+        location: 'Metairie, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Smooth Moves NOLA confirmed Jefferson Parish coverage and delivered excellent Greater New Orleans service — professional crew with no surprise fees.',
+        name: 'Elaine J.',
+        location: 'Gretna, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    orleans: [
+      {
+        quote:
+          'Two Men and a Truck New Orleans handled our Uptown relocation professionally — on time, efficient, and extremely careful throughout Orleans Parish.',
+        name: 'Frank K.',
+        location: 'New Orleans, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Louisiana Express Movers served our historic-district move efficiently — fast, professional, and reliable with careful urban-property handling.',
+        name: 'Gina L.',
+        location: 'New Orleans, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'College Hunks confirmed Orleans Parish coverage and delivered excellent local service — professional crew with transparent pricing.',
+        name: 'Henry M.',
+        location: 'New Orleans, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    'st-tammany': [
+      {
+        quote:
+          'Two Men and a Truck Covington handled our Mandeville relocation professionally — on time, efficient, and extremely careful throughout St. Tammany Parish.',
+        name: 'Irene N.',
+        location: 'Mandeville, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons served our North Shore move efficiently — fast, professional, and reliable with careful suburban-home handling.',
+        name: 'James O.',
+        location: 'Covington, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide confirmed St. Tammany Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Karen P.',
+        location: 'Slidell, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lafayette: [
+      {
+        quote:
+          'Two Men and a Truck Lafayette handled our Broussard relocation professionally — on time, efficient, and extremely careful throughout Lafayette Parish.',
+        name: 'Louis Q.',
+        location: 'Broussard, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Acadiana Moving served our Lafayette move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Marie R.',
+        location: 'Lafayette, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons confirmed Lafayette Parish coverage and delivered excellent Acadiana service — professional crew with transparent pricing.',
+        name: 'Nathan S.',
+        location: 'Youngsville, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    caddo: [
+      {
+        quote:
+          'Two Men and a Truck Shreveport handled our relocation professionally — on time, efficient, and extremely careful throughout Caddo Parish.',
+        name: 'Olivia T.',
+        location: 'Shreveport, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Louisiana Premier Moving served our Northwest Louisiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Paul U.',
+        location: 'Shreveport, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons confirmed Caddo Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Rita V.',
+        location: 'Shreveport, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    calcasieu: [
+      {
+        quote:
+          'Two Men and a Truck Lake Charles handled our Sulphur relocation professionally — on time, efficient, and extremely careful throughout Calcasieu Parish.',
+        name: 'Sam W.',
+        location: 'Sulphur, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons served our Lake Charles move efficiently — fast, professional, and reliable with careful industrial-area handling.',
+        name: 'Tina X.',
+        location: 'Lake Charles, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide confirmed Calcasieu Parish coverage and delivered excellent Southwest Louisiana service — professional crew with transparent pricing.',
+        name: 'Victor Y.',
+        location: 'Westlake, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    ouachita: [
+      {
+        quote:
+          'Two Men and a Truck Monroe handled our relocation professionally — on time, efficient, and extremely careful throughout Ouachita Parish.',
+        name: 'Wanda Z.',
+        location: 'Monroe, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons served our Northeast Louisiana move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Aaron A.',
+        location: 'West Monroe, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Louisiana Pro Movers confirmed Ouachita Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Beth B.',
+        location: 'Monroe, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    livingston: [
+      {
+        quote:
+          'Two Men and a Truck Denham Springs handled our Walker relocation professionally — on time, efficient, and extremely careful throughout Livingston Parish.',
+        name: 'Chris C.',
+        location: 'Walker, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Atmosphere Movers served our Livingston Parish move efficiently — fast, professional, and reliable with careful suburban-home handling.',
+        name: 'Diana D.',
+        location: 'Denham Springs, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Lee Moving & Storage confirmed Livingston Parish coverage and delivered excellent Baton Rouge metro service — professional crew with transparent pricing.',
+        name: 'Eric E.',
+        location: 'Livingston, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    tangipahoa: [
+      {
+        quote:
+          'Two Men and a Truck Hammond handled our Ponchatoula relocation professionally — on time, efficient, and extremely careful throughout Tangipahoa Parish.',
+        name: 'Faith F.',
+        location: 'Ponchatoula, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons served our I-12 corridor move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'George G.',
+        location: 'Hammond, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Covington confirmed Tangipahoa Parish coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Helen H.',
+        location: 'Hammond, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    ascension: [
+      {
+        quote:
+          'Two Men and a Truck Gonzales handled our Prairieville relocation professionally — on time, efficient, and extremely careful throughout Ascension Parish.',
+        name: 'Ian I.',
+        location: 'Prairieville, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons served our Ascension Parish move efficiently — fast, professional, and reliable with careful suburban-home handling.',
+        name: 'Julia J.',
+        location: 'Gonzales, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide confirmed Ascension Parish coverage and delivered excellent Baton Rouge metro service — professional crew with transparent pricing.',
+        name: 'Keith K.',
+        location: 'Donaldsonville, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    bossier: [
+      {
+        quote:
+          'Two Men and a Truck Bossier City handled our Benton relocation professionally — on time, efficient, and extremely careful throughout Bossier Parish.',
+        name: 'Laura L.',
+        location: 'Benton, LA',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Louisiana Premier Moving served our Bossier Parish move efficiently — fast, professional, and reliable with careful military-area handling.',
+        name: 'Mike M.',
+        location: 'Bossier City, LA',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons confirmed Bossier Parish coverage and delivered excellent Shreveport–Bossier service — professional crew with no surprise fees.',
+        name: 'Nancy N.',
+        location: 'Haughton, LA',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getLouisianaCountyTestimonials(

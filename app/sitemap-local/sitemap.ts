@@ -120,11 +120,13 @@ const LA_HIGH_TRAFFIC_PARISHES = new Set([
   'east-baton-rouge',
   'jefferson',
   'orleans',
+  'st-tammany',
   'caddo',
   'lafayette',
   'calcasieu',
   'ouachita',
   'livingston',
+  'tangipahoa',
   'ascension',
   'bossier',
 ]);
