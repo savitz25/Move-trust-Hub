@@ -16,11 +16,13 @@ import {
   MISSISSIPPI_COUNTY_CONTENT_UPDATED,
   LOUISIANA_PARISH_CONTENT_UPDATED,
   OKLAHOMA_COUNTY_CONTENT_UPDATED,
+  ARKANSAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
 import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
 import { getOklahomaCountyResearch } from '@/data/oklahoma-county-research';
+import { getArkansasCountyResearch } from '@/data/arkansas-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -38,6 +40,7 @@ import { getAlabamaNearbyCounties } from '@/lib/local-movers/alabama-nearby';
 import { getMississippiNearbyCounties } from '@/lib/local-movers/mississippi-nearby';
 import { getLouisianaNearbyCounties } from '@/lib/local-movers/louisiana-nearby';
 import { getOklahomaNearbyCounties } from '@/lib/local-movers/oklahoma-nearby';
+import { getArkansasNearbyCounties } from '@/lib/local-movers/arkansas-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -143,7 +146,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                             : stateSlug === 'oklahoma' &&
                                 getOklahomaCountyResearch(countySlug)
                               ? getOklahomaNearbyCounties(countySlug)
-                              : [];
+                              : stateSlug === 'arkansas' &&
+                                  getArkansasCountyResearch(countySlug)
+                                ? getArkansasNearbyCounties(countySlug)
+                                : [];
 
   return (
     <>
@@ -296,7 +302,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                     : stateSlug === 'oklahoma' &&
                                         getOklahomaCountyResearch(countySlug)
                                       ? OKLAHOMA_COUNTY_CONTENT_UPDATED
-                                      : undefined
+                                      : stateSlug === 'arkansas' &&
+                                          getArkansasCountyResearch(countySlug)
+                                        ? ARKANSAS_COUNTY_CONTENT_UPDATED
+                                        : undefined
           }
         />
 

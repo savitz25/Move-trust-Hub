@@ -132,6 +132,9 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
   'wagoner',
 ]);
 
+/** High-traffic AR counties — sitemap priority 0.85 */
+const AR_HIGH_TRAFFIC_COUNTIES = new Set(['pulaski']);
+
 /** High-traffic LA parishes — sitemap priority 0.85 */
 const LA_HIGH_TRAFFIC_PARISHES = new Set([
   'east-baton-rouge',
@@ -321,7 +324,8 @@ export default async function sitemap({
         (id === 'alabama' && AL_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'mississippi' && MS_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'louisiana' && LA_HIGH_TRAFFIC_PARISHES.has(county.slug)) ||
-        (id === 'oklahoma' && OK_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'oklahoma' && OK_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'arkansas' && AR_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
