@@ -40,6 +40,13 @@ export const southCarolinaCountyOverrides: Partial<
   bamberg: { seat: 'Bamberg', metro: 'sumter-metro-sc' },
   mccormick: { seat: 'McCormick', metro: 'augusta-aiken-metro-sc' },
   allendale: { seat: 'Allendale', metro: 'augusta-aiken-metro-sc' },
+  horry: { seat: 'Conway', metro: 'myrtle-beach-metro-sc' },
+  spartanburg: { seat: 'Spartanburg', metro: 'spartanburg-metro-sc' },
+  york: { seat: 'York', metro: 'charlotte-metro-sc' },
+  anderson: { seat: 'Anderson', metro: 'greenville-metro-sc' },
+  beaufort: { seat: 'Beaufort', metro: 'charleston-metro-sc' },
+  berkeley: { seat: 'Moncks Corner', metro: 'charleston-metro-sc' },
+  lexington: { seat: 'Lexington', metro: 'sumter-metro-sc' },
 };
 
 export function applySouthCarolinaCountyOverrides(

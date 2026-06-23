@@ -8693,6 +8693,9 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'two-men-and-a-truck-greenville',
       'college-hunks-moving-greenville',
       'two-men-and-a-truck-spartanburg',
+      'two-men-and-a-truck-aiken',
+      'dailey-moving-storage-aiken',
+      'two-men-and-a-truck-columbia',
     ],
   },
   'myrtle-beach-metro-sc': {
@@ -8704,6 +8707,9 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'labarbera-movers-myrtle-beach',
       'smooth-move-charleston',
       'college-hunks-moving-charleston',
+      'two-men-and-a-truck-florence',
+      'move-it-williams-florence',
+      'coleman-worldwide-columbia',
     ],
   },
   'spartanburg-metro-sc': {
@@ -8714,6 +8720,10 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'two-men-and-a-truck-greenville',
       'college-hunks-moving-greenville',
       'swamp-rabbit-moving-greenville',
+      'tiger-town-movers-pickens',
+      'two-men-and-a-truck-columbia',
+      'gentle-giants-moving-charlotte',
+      'coleman-worldwide-columbia',
     ],
   },
   'florence-metro-sc': {
@@ -8739,6 +8749,9 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'all-my-sons-rock-hill',
       'two-men-and-a-truck-charlotte-nc',
       'gentle-giants-moving-charlotte',
+      'two-men-and-a-truck-spartanburg',
+      'two-men-and-a-truck-greenville',
+      'swamp-rabbit-moving-greenville',
     ],
   },
   'sumter-metro-sc': {

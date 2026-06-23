@@ -947,6 +947,188 @@ export const southCarolinaCountyTestimonials: Record<
       moveType: 'Townhome',
     },
   ],
+  horry: [
+    {
+      quote:
+        'Two Men and a Truck Myrtle Beach handled our Conway relocation professionally — excellent with beach-area moves and transparent Grand Strand pricing throughout Horry County.',
+      name: 'Robert A.',
+      location: 'Myrtle Beach, SC',
+      rating: 5,
+      moveType: 'Beach condo',
+    },
+    {
+      quote:
+        'LaBarbera Movers served our North Myrtle Beach retirement relocation with careful handling and excellent coastal property planning.',
+      name: 'Susan B.',
+      location: 'North Myrtle Beach, SC',
+      rating: 5,
+      moveType: 'Retirement relocation',
+    },
+    {
+      quote:
+        'All My Sons Myrtle Beach confirmed Conway coverage and delivered reliable packing and loading despite peak tourist season traffic.',
+      name: 'Thomas C.',
+      location: 'Conway, SC',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  spartanburg: [
+    {
+      quote:
+        'Two Men and a Truck Spartanburg handled our local move professionally — on time, very careful with our belongings, and transparent Upstate pricing.',
+      name: 'Diana D.',
+      location: 'Spartanburg, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Swamp Rabbit Moving served our Greer relocation with excellent communication and careful furniture wrapping despite I-85 corridor traffic.',
+      name: 'Eric E.',
+      location: 'Greer, SC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville confirmed Spartanburg County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Frances F.',
+      location: 'Spartanburg, SC',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  york: [
+    {
+      quote:
+        'Two Men and a Truck Rock Hill handled our Fort Mill suburban relocation professionally — excellent crew communication and transparent Charlotte-metro pricing.',
+      name: 'George G.',
+      location: 'Fort Mill, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Charlotte served our Rock Hill apartment move efficiently with great communication despite I-77 corridor traffic.',
+      name: 'Helen H.',
+      location: 'Rock Hill, SC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'All My Sons Rock Hill confirmed York County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Ian I.',
+      location: 'York, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  anderson: [
+    {
+      quote:
+        'Two Men and a Truck Greenville handled our Anderson relocation professionally — careful handling and transparent Upstate pricing throughout Anderson County.',
+      name: 'Julia J.',
+      location: 'Anderson, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Swamp Rabbit Moving served our Anderson move with excellent communication and careful lake-area driveway planning.',
+      name: 'Kevin K.',
+      location: 'Anderson, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Spartanburg covered our Anderson County relocation when Greenville crews were booked — upfront about travel time and professional service.',
+      name: 'Laura L.',
+      location: 'Anderson, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  beaufort: [
+    {
+      quote:
+        'Smooth Move Charleston handled our Beaufort coastal relocation professionally — careful with waterfront property access and transparent Lowcountry pricing.',
+      name: 'Martin M.',
+      location: 'Beaufort, SC',
+      rating: 5,
+      moveType: 'Waterfront home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah served our Hilton Head move with excellent communication and careful handling despite cross-border Lowcountry travel.',
+      name: 'Nancy N.',
+      location: 'Hilton Head Island, SC',
+      rating: 5,
+      moveType: 'Retirement relocation',
+    },
+    {
+      quote:
+        'BC Brothers Moving confirmed Bluffton coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Oscar O.',
+      location: 'Bluffton, SC',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  berkeley: [
+    {
+      quote:
+        'Two Men and a Truck Charleston handled our Moncks Corner relocation professionally — excellent crew communication and careful furniture wrapping throughout Berkeley County.',
+      name: 'Patricia P.',
+      location: 'Moncks Corner, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Extra Muscle Moving served our Goose Creek move with reliable packing and loading despite Charleston-metro traffic on Clements Ferry Road.',
+      name: 'Peter Q.',
+      location: 'Goose Creek, SC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Burbage Transport confirmed Berkeley County coverage and delivered transparent Lowcountry pricing with no surprise fees.',
+      name: 'Rachel R.',
+      location: 'Moncks Corner, SC',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  lexington: [
+    {
+      quote:
+        'Two Men and a Truck Columbia handled our Lexington suburban relocation professionally — on time, careful with our belongings, and transparent Midlands pricing.',
+      name: 'Steven S.',
+      location: 'Lexington, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'JEGA Movers served our Irmo move with excellent communication and careful handling despite Columbia-area I-26 traffic.',
+      name: 'Tracy T.',
+      location: 'Irmo, SC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Gentlemen Movers confirmed Lexington County coverage and delivered reliable specialty handling for our piano move with no surprise fees.',
+      name: 'Una W.',
+      location: 'Lexington, SC',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
 };
 
 export function getSouthCarolinaCountyTestimonials(

@@ -621,6 +621,125 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Confirm insurance, valuation, and credentials for rural moves before signing.',
       ],
     },
+    horry: {
+      marketNotes:
+        'Horry County is one of the fastest-growing counties in South Carolina with heavy tourism, retirement, and residential demand centered on Myrtle Beach, Conway, and North Myrtle Beach.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,200',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Horry County pricing reflects Grand Strand coastal demand, peak tourist season scheduling, retirement relocation volume, and Myrtle Beach crew travel.',
+      },
+      tips: [
+        'Verify explicit coverage for Myrtle Beach, Conway, and North Myrtle Beach before booking.',
+        'Tourist season traffic and coastal access require advance planning — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value beach and retirement properties before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    spartanburg: {
+      marketNotes:
+        'Spartanburg County is a major Upstate industrial and residential hub with rapid growth in Spartanburg, Greer, and surrounding communities.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,000',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Spartanburg County pricing reflects Upstate industrial corridor demand, I-85 traffic, and Greenville-Spartanburg metro crew availability.',
+      },
+      tips: [
+        'Verify explicit coverage for Spartanburg, Greer, and surrounding Spartanburg County addresses before booking.',
+        'Upstate industrial and highway traffic impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Spartanburg and Greenville-area crews.',
+      ],
+    },
+    york: {
+      marketNotes:
+        'York County is one of the fastest-growing counties in the nation with strong suburban demand in Rock Hill, Fort Mill, and York.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,500–$5,500',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'York County pricing reflects Charlotte-metro suburban growth, Fort Mill new construction, and cross-border crew travel from Rock Hill and Charlotte.',
+      },
+      tips: [
+        'Verify explicit coverage for Rock Hill, Fort Mill, and York areas before booking.',
+        'Charlotte-area traffic on I-77 and US-21 impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value suburban homes before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Rock Hill and Charlotte-area crews.',
+      ],
+    },
+    anderson: {
+      marketNotes:
+        'Anderson County is a major Upstate county with strong industrial and residential growth centered on Anderson and the Greenville corridor.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,000',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Anderson County pricing reflects Greenville-Anderson metro demand, lake property access, and Upstate industrial corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Anderson and surrounding Anderson County addresses before booking.',
+        'Upstate traffic on I-85 and Clemson Boulevard impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Greenville and Spartanburg-area crews.',
+      ],
+    },
+    beaufort: {
+      marketNotes:
+        'Beaufort County is a premier coastal retirement and tourism county with significant military influence in Beaufort, Hilton Head, and Bluffton.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,800',
+        avgHourly: '$120–$175/hr for a 2-person crew',
+        note: 'Beaufort County pricing reflects Lowcountry coastal demand, waterfront property access, hurricane-season scheduling, and Charleston-Savannah crew travel.',
+      },
+      tips: [
+        'Verify explicit coverage for Beaufort, Hilton Head, and Bluffton before booking.',
+        'Coastal access and hurricane preparedness are critical — confirm weather contingency policies.',
+        'Confirm insurance and valuation for high-value waterfront and retirement properties before booking.',
+        'Book early for peak seasons and military PCS windows near Marine Corps Air Station Beaufort.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Charleston and Savannah-area crews.',
+      ],
+    },
+    berkeley: {
+      marketNotes:
+        'Berkeley County is one of the fastest-growing counties in South Carolina with strong suburban and industrial demand near Charleston in Moncks Corner, Goose Creek, and Summerville.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,300',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Berkeley County pricing reflects Charleston-metro suburban growth, port and industrial corridor traffic, and Summerville new-construction turnover.',
+      },
+      tips: [
+        'Verify explicit coverage for Moncks Corner, Goose Creek, and Summerville areas before booking.',
+        'Charleston-area traffic on I-26 and Clements Ferry Road impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value suburban homes before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Charleston-area crews.',
+      ],
+    },
+    lexington: {
+      marketNotes:
+        'Lexington County is a major suburban county west of Columbia with rapid growth and strong residential demand in Lexington, Irmo, and West Columbia.',
+      costs: {
+        studioRange: '$650–$1,300',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Lexington County pricing reflects Columbia-metro suburban growth, I-26 corridor traffic, and Midlands crew availability from Columbia and Sumter bases.',
+      },
+      tips: [
+        'Verify explicit coverage for Lexington, Irmo, and West Columbia areas before booking.',
+        'Columbia-area traffic on I-26 and US-1 impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value suburban homes before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
+      ],
+    },
   };
 
 export function getSouthCarolinaCountyResearch(
