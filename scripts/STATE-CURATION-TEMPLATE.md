@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -22,6 +22,30 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Louisiana | 64/64 parishes | 5 | 10 (cap 10) | 15 parishes | `count-louisiana-movers.ts`, `apply-louisiana-mover-expansion.ts` |
 | Oklahoma | 77/77 | 3 (rural) | 8 (medium) / 10 (top 5) | 12 counties | `count-oklahoma-movers.ts` |
 | Arkansas | 75/75 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-arkansas-movers.ts`, `apply-arkansas-mover-expansion.ts` |
+| Kansas | 105/105 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-kansas-movers.ts`, `apply-kansas-mover-expansion.ts` |
+
+### Kansas metro pools (`data/local-movers-seed.ts`)
+
+- `kansas-city-metro-ks` — Kansas City MSA (Johnson, Wyandotte, Leavenworth)
+- `kansas-city-metro-south-ks` — Miami County / southern KC commuter corridor
+- `wichita-metro-ks` — Wichita MSA (Sedgwick hub)
+- `wichita-metro-east-ks`, `wichita-metro-north-ks` — Butler, Harvey Wichita-adjacent counties
+- `topeka-metro-ks` — Topeka / Shawnee capital corridor
+- `lawrence-metro-ks` — Lawrence / Douglas (KU) university corridor
+- `manhattan-metro-ks` — Manhattan / Riley (K-State) military-university corridor
+- `hutchinson-metro-ks`, `salina-metro-ks` — Central Kansas regional hubs
+- `pittsburg-metro-ks`, `garden-city-metro-ks`, `dodge-city-metro-ks`, `hays-metro-ks` — SE/western Kansas agricultural and energy corridors
+- Rural pools: `regional-*-ks-movers` per remote county seat
+
+### Kansas major counties (10 movers each)
+
+`johnson`, `sedgwick`, `shawnee`, `wyandotte`, `douglas`, `butler`, `riley`, `reno`, `saline`, `crawford`, `ellis`, `ford`, `finney`
+
+### Kansas sitemap priority 0.85 (14 counties)
+
+`johnson`, `sedgwick`, `shawnee`, `wyandotte`, `douglas`, `leavenworth`, `riley`, `butler`, `reno`, `saline`, `crawford`, `finney`, `ford`, `ellis`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/kansas.xml` (106 URLs: hub + 105 counties). Do **not** use `/sitemap-local/kansas.xml` (legacy path redirects to canonical).
 
 ### Arkansas metro pools (`data/local-movers-seed.ts`)
 

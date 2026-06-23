@@ -1,0 +1,629 @@
+﻿  republic: {
+    marketNotes:
+      'Republic County is a rural north central Kansas county with residential demand centered on Belleville.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Republic County pricing reflects north central Kansas rural residential turnover, Belleville corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Belleville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  rooks: {
+    marketNotes:
+      'Rooks County is a rural northwest Kansas county with residential demand centered on Stockton.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Rooks County pricing reflects northwest Kansas rural residential turnover, Stockton corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Stockton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  stafford: {
+    marketNotes:
+      'Stafford County is a rural central Kansas county with residential demand centered on St. John.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Stafford County pricing reflects central Kansas rural residential turnover, St. John corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for St. John and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  barber: {
+    marketNotes:
+      'Barber County is a rural south central Kansas county with residential demand centered on Medicine Lodge.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Barber County pricing reflects south central Kansas rural residential turnover, Medicine Lodge corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Medicine Lodge and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  smith: {
+    marketNotes:
+      'Smith County is a rural north central Kansas county with residential demand centered on Smith Center.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Smith County pricing reflects north central Kansas rural residential turnover, Smith Center corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Smith Center and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  osborne: {
+    marketNotes:
+      'Osborne County is a rural north central Kansas county with residential demand centered on Osborne.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Osborne County pricing reflects north central Kansas rural residential turnover, Osborne corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Osborne and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  woodson: {
+    marketNotes:
+      'Woodson County is a rural southeast Kansas county with residential demand centered on Yates Center.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Woodson County pricing reflects southeast Kansas rural residential turnover, Yates Center corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Yates Center and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  graham: {
+    marketNotes:
+      'Graham County is a rural northwest Kansas county with residential demand centered on Hill City.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Graham County pricing reflects northwest Kansas rural residential turnover, Hill City corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Hill City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  rawlins: {
+    marketNotes:
+      'Rawlins County is a rural northwest Kansas county with residential demand centered on Atwood.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Rawlins County pricing reflects northwest Kansas rural residential turnover, Atwood corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Atwood and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  sheridan: {
+    marketNotes:
+      'Sheridan County is a rural northwest Kansas county with residential demand centered on Hoxie.',
+    costs: {
+      studioRange: '$650â€“$1,350',
+      familyRange: '$2,300â€“$5,200',
+      avgHourly: '$100â€“$145/hr for a 2-person crew',
+      note: 'Sheridan County pricing reflects northwest Kansas rural residential turnover, Hoxie corridor traffic, and cross-county crews from Wichita and Hays providers.',
+    },
+    tips: [
+      'Verify coverage for Hoxie and surrounding areas before booking.',
+      'Regional traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates before booking.',
+    ],
+  },
+  kearny: {
+    marketNotes:
+      'Kearny County is a rural southwest Kansas county with residential demand centered on Lakin.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Kearny County pricing reflects southwest Kansas rural residential turnover, Lakin corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Lakin before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  meade: {
+    marketNotes:
+      'Meade County is a rural southwest Kansas county with residential demand centered on Meade.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Meade County pricing reflects southwest Kansas rural residential turnover, Meade corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Meade before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  haskell: {
+    marketNotes:
+      'Haskell County is a rural southwest Kansas county with residential demand centered on Sublette.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Haskell County pricing reflects southwest Kansas rural residential turnover, Sublette corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Sublette before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  chautauqua: {
+    marketNotes:
+      'Chautauqua County is a rural southeast Kansas county with residential demand centered on Sedan.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Chautauqua County pricing reflects southeast Kansas rural residential turnover, Sedan corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Sedan before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  rush: {
+    marketNotes:
+      'Rush County is a rural central Kansas county with residential demand centered on La Crosse.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Rush County pricing reflects central Kansas rural residential turnover, La Crosse corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to La Crosse before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County is a rural central Kansas county with residential demand centered on Lincoln.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects central Kansas rural residential turnover, Lincoln corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Lincoln before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  jewell: {
+    marketNotes:
+      'Jewell County is a rural north central Kansas county with residential demand centered on Mankato.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Jewell County pricing reflects north central Kansas rural residential turnover, Mankato corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Mankato before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  trego: {
+    marketNotes:
+      'Trego County is a rural central Kansas county with residential demand centered on WaKeeney.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Trego County pricing reflects central Kansas rural residential turnover, WaKeeney corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to WaKeeney before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  decatur: {
+    marketNotes:
+      'Decatur County is a rural northwest Kansas county with residential demand centered on Oberlin.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Decatur County pricing reflects northwest Kansas rural residential turnover, Oberlin corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Oberlin before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County is a rural northwest Kansas county with residential demand centered on Oakley.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Logan County pricing reflects northwest Kansas rural residential turnover, Oakley corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Oakley before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  ness: {
+    marketNotes:
+      'Ness County is a rural central Kansas county with residential demand centered on Ness City.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Ness County pricing reflects central Kansas rural residential turnover, Ness City corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Ness City before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  gove: {
+    marketNotes:
+      'Gove County is a rural central Kansas county with residential demand centered on Gove City.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Gove County pricing reflects central Kansas rural residential turnover, Gove City corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Gove City before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  edwards: {
+    marketNotes:
+      'Edwards County is a rural central Kansas county with residential demand centered on Kinsley.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Edwards County pricing reflects central Kansas rural residential turnover, Kinsley corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Kinsley before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  chase: {
+    marketNotes:
+      'Chase County is a rural east central Kansas county with residential demand centered on Cottonwood Falls.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Chase County pricing reflects east central Kansas rural residential turnover, Cottonwood Falls corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Cottonwood Falls before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  clark: {
+    marketNotes:
+      'Clark County is a rural southwest Kansas county with residential demand centered on Ashland.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Clark County pricing reflects southwest Kansas rural residential turnover, Ashland corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Ashland before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  comanche: {
+    marketNotes:
+      'Comanche County is a rural south central Kansas county with residential demand centered on Coldwater.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Comanche County pricing reflects south central Kansas rural residential turnover, Coldwater corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Coldwater before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  elk: {
+    marketNotes:
+      'Elk County is a rural southeast Kansas county with residential demand centered on Howard.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Elk County pricing reflects southeast Kansas rural residential turnover, Howard corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Howard before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  hodgeman: {
+    marketNotes:
+      'Hodgeman County is a rural southwest Kansas county with residential demand centered on Jetmore.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Hodgeman County pricing reflects southwest Kansas rural residential turnover, Jetmore corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Jetmore before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  kiowa: {
+    marketNotes:
+      'Kiowa County is a rural south central Kansas county with residential demand centered on Greensburg.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Kiowa County pricing reflects south central Kansas rural residential turnover, Greensburg corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Greensburg before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  lane: {
+    marketNotes:
+      'Lane County is a rural southwest Kansas county with residential demand centered on Dighton.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Lane County pricing reflects southwest Kansas rural residential turnover, Dighton corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Dighton before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  morton: {
+    marketNotes:
+      'Morton County is a rural southwest Kansas county with residential demand centered on Elkhart.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Morton County pricing reflects southwest Kansas rural residential turnover, Elkhart corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Elkhart before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  stanton: {
+    marketNotes:
+      'Stanton County is a rural southwest Kansas county with residential demand centered on Johnson City.',
+    costs: {
+      studioRange: '$600â€“$1,250',
+      familyRange: '$2,200â€“$4,900',
+      avgHourly: '$100â€“$150/hr for a 2-person crew',
+      note: 'Stanton County pricing reflects southwest Kansas rural residential turnover, Johnson City corridor traffic, and cross-coverage from Wichita and Garden City providers.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Johnson City before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  cheyenne: {
+    marketNotes:
+      'Cheyenne County is a rural northwest Kansas county with residential demand centered on St. Francis.',
+    costs: {
+      studioRange: '$550â€“$1,150',
+      familyRange: '$1,900â€“$4,400',
+      avgHourly: '$95â€“$145/hr for a 2-person crew',
+      note: 'Cheyenne County pricing reflects northwest Kansas rural residential turnover, St. Francis corridor traffic, and very limited local crew availability, and regional providers serving remote rural properties.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to St. Francis before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  greeley: {
+    marketNotes:
+      'Greeley County is a rural west Kansas county with residential demand centered on Tribune.',
+    costs: {
+      studioRange: '$550â€“$1,150',
+      familyRange: '$1,900â€“$4,400',
+      avgHourly: '$95â€“$145/hr for a 2-person crew',
+      note: 'Greeley County pricing reflects west Kansas rural residential turnover, Tribune corridor traffic, and very limited local crew availability, and regional providers serving remote rural properties.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Tribune before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  hamilton: {
+    marketNotes:
+      'Hamilton County is a rural southwest Kansas county with residential demand centered on Syracuse.',
+    costs: {
+      studioRange: '$550â€“$1,150',
+      familyRange: '$1,900â€“$4,400',
+      avgHourly: '$95â€“$145/hr for a 2-person crew',
+      note: 'Hamilton County pricing reflects southwest Kansas rural residential turnover, Syracuse corridor traffic, and very limited local crew availability, and regional providers serving remote rural properties.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Syracuse before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  wallace: {
+    marketNotes:
+      'Wallace County is a rural northwest Kansas county with residential demand centered on Sharon Springs.',
+    costs: {
+      studioRange: '$550â€“$1,150',
+      familyRange: '$1,900â€“$4,400',
+      avgHourly: '$95â€“$145/hr for a 2-person crew',
+      note: 'Wallace County pricing reflects northwest Kansas rural residential turnover, Sharon Springs corridor traffic, and very limited local crew availability, and regional providers serving remote rural properties.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Sharon Springs before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  wichita: {
+    marketNotes:
+      'Wichita County is a rural west Kansas county with residential demand centered on Leoti.',
+    costs: {
+      studioRange: '$550â€“$1,150',
+      familyRange: '$1,900â€“$4,400',
+      avgHourly: '$95â€“$145/hr for a 2-person crew',
+      note: 'Wichita County pricing reflects west Kansas rural residential turnover, Leoti corridor traffic, and very limited local crew availability, and regional providers serving remote rural properties.',
+    },
+    tips: [
+      'Rural access challenges are common - confirm route feasibility before booking.',
+      'Verify explicit regional service to Leoti before booking.',
+      'Storage is very limited - confirm availability if needed.',
+      'Obtain multiple estimates before booking.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },

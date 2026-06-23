@@ -33,6 +33,7 @@ const CURATED_STATES = [
   'louisiana',
   'oklahoma',
   'arkansas',
+  'kansas',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -60,6 +61,9 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'arkansas', countySlug: 'pulaski', expectedCity: 'Little Rock' },
   { stateSlug: 'arkansas', countySlug: 'benton', expectedCity: 'Bentonville' },
   { stateSlug: 'arkansas', countySlug: 'washington', expectedCity: 'Fayetteville' },
+  { stateSlug: 'kansas', countySlug: 'johnson', expectedCity: 'Olathe' },
+  { stateSlug: 'kansas', countySlug: 'sedgwick', expectedCity: 'Wichita' },
+  { stateSlug: 'kansas', countySlug: 'shawnee', expectedCity: 'Topeka' },
 ];
 
 let totalIssues = 0;
