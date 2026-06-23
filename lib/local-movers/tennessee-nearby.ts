@@ -46,6 +46,16 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lawrence: ['wayne', 'lewis', 'giles', 'maury', 'marshall', 'bedford'],
   franklin: ['coffee', 'bedford', 'marion', 'grundy', 'moore', 'lincoln'],
   fayette: ['shelby', 'tipton', 'hardeman', 'haywood', 'benton', 'marshall'],
+  warren: ['coffee', 'cannon', 'dekalb', 'van-buren', 'white', 'grundy'],
+  cheatham: ['davidson', 'dickson', 'montgomery', 'robertson', 'williamson', 'houston'],
+  campbell: ['anderson', 'scott', 'union', 'claiborne', 'knox', 'morgan'],
+  marshall: ['rutherford', 'bedford', 'maury', 'lincoln', 'giles', 'williamson'],
+  cocke: ['sevier', 'hamblen', 'greene', 'jefferson', 'haywood', 'grainger'],
+  lincoln: ['bedford', 'franklin', 'marshall', 'moore', 'giles', 'maury'],
+  dyer: ['gibson', 'lake', 'obion', 'crockett', 'lauderdale', 'henry'],
+  rhea: ['meigs', 'bradley', 'hamilton', 'bledsoe', 'roane', 'mcminn'],
+  claiborne: ['campbell', 'union', 'grainger', 'hancock', 'hawkins', 'hamblen'],
+  weakley: ['gibson', 'carroll', 'henry', 'obion', 'crockett', 'madison'],
 };
 
 export function getTennesseeNearbyCounties(

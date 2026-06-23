@@ -637,6 +637,176 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  warren: {
+    marketNotes:
+      'Warren County is a growing county in Middle Tennessee with strong industrial and residential demand centered on McMinnville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Warren County pricing reflects McMinnville industrial corridor demand, Upper Cumberland regional crew travel, and I-24 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for McMinnville and surrounding Warren County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cheatham: {
+    marketNotes:
+      'Cheatham County is a growing suburban county northwest of Nashville with strong residential demand centered on Ashland City.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cheatham County pricing reflects Ashland City suburban growth, Nashville-metro crew travel, and Cumberland River corridor access.',
+    },
+    tips: [
+      'Verify coverage for Ashland City and surrounding Cheatham County areas before booking.',
+      'Nashville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  campbell: {
+    marketNotes:
+      'Campbell County is a growing county in East Tennessee with strong residential and industrial demand centered on Jacksboro and La Follette.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Campbell County pricing reflects La Follette industrial demand, Knoxville-metro regional crew travel, and mountain corridor access.',
+    },
+    tips: [
+      'Verify coverage for Jacksboro, La Follette, and surrounding Campbell County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marshall: {
+    marketNotes:
+      'Marshall County is a growing county in Middle Tennessee with strong residential demand centered on Lewisburg.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Marshall County pricing reflects Lewisburg suburban demand, Nashville-Murfreesboro regional crew travel, and I-65 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Lewisburg and surrounding Marshall County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cocke: {
+    marketNotes:
+      'Cocke County is a scenic mountain county with strong tourism and residential demand centered on Newport.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cocke County pricing reflects Newport mountain-community demand, Smokies tourism seasonality, and regional Morristown-Knoxville crew travel.',
+    },
+    tips: [
+      'Verify coverage for Newport and surrounding mountain areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County is a growing county in southern Middle Tennessee with strong residential demand centered on Fayetteville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects Fayetteville suburban demand, Shelbyville-Murfreesboro regional crew travel, and rural Middle Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Fayetteville and surrounding Lincoln County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dyer: {
+    marketNotes:
+      'Dyer County is a key West Tennessee county with strong industrial and residential demand centered on Dyersburg.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Dyer County pricing reflects Dyersburg industrial corridor demand, Jackson-metro regional crew travel, and I-155 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Dyersburg and surrounding Dyer County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  rhea: {
+    marketNotes:
+      'Rhea County is a growing county in Southeast Tennessee with strong residential demand centered on Dayton.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Rhea County pricing reflects Dayton suburban demand, Cleveland-Chattanooga regional crew travel, and I-75 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Dayton and surrounding Rhea County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  claiborne: {
+    marketNotes:
+      'Claiborne County is a mountain county in East Tennessee with strong residential demand centered on Tazewell.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Claiborne County pricing reflects Tazewell mountain-community demand, Knoxville-Tri-Cities regional crew travel, and rural East Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Tazewell and surrounding Claiborne County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  weakley: {
+    marketNotes:
+      'Weakley County is a rural West Tennessee county with strong educational (University of Tennessee at Martin) and residential demand centered on Dresden and Martin.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Weakley County pricing reflects UT Martin student turnover, rural West Tennessee access, and Jackson-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Martin and Dresden areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

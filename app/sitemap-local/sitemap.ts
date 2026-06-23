@@ -149,6 +149,16 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'lawrence',
   'franklin',
   'fayette',
+  'warren',
+  'cheatham',
+  'campbell',
+  'marshall',
+  'cocke',
+  'lincoln',
+  'dyer',
+  'rhea',
+  'claiborne',
+  'weakley',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

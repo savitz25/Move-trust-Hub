@@ -41,6 +41,16 @@ export const tennesseeCountyOverrides: Partial<
   lawrence: { seat: 'Lawrenceburg', metro: 'lawrenceburg-metro-tn' },
   franklin: { seat: 'Winchester', metro: 'manchester-metro-tn' },
   fayette: { seat: 'Somerville', metro: 'memphis-metro-tn' },
+  warren: { seat: 'McMinnville', metro: 'mcminnville-metro-tn' },
+  cheatham: { seat: 'Ashland City', metro: 'nashville-metro-tn' },
+  campbell: { seat: 'Jacksboro', metro: 'knoxville-metro-tn' },
+  marshall: { seat: 'Lewisburg', metro: 'lewisburg-metro-tn' },
+  cocke: { seat: 'Newport', metro: 'newport-metro-tn' },
+  lincoln: { seat: 'Fayetteville', metro: 'fayetteville-metro-tn' },
+  dyer: { seat: 'Dyersburg', metro: 'dyersburg-metro-tn' },
+  rhea: { seat: 'Dayton', metro: 'dayton-metro-tn' },
+  claiborne: { seat: 'Tazewell', metro: 'tazewell-metro-tn' },
+  weakley: { seat: 'Dresden', metro: 'weakley-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {
