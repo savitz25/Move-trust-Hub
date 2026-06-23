@@ -58,6 +58,16 @@ export const northCarolinaCountyOverrides: Partial<
   columbus: { seat: 'Whiteville', metro: 'wilmington-metro-nc' },
   edgecombe: { seat: 'Tarboro', metro: 'rocky-mount-metro-nc' },
   stokes: { seat: 'Danbury', metro: 'greensboro-high-point-metro-nc' },
+  davie: { seat: 'Mocksville', metro: 'winston-salem-triad-metro-nc' },
+  halifax: { seat: 'Halifax', metro: 'rocky-mount-metro-nc' },
+  mcdowell: { seat: 'Marion', metro: 'asheville-metro-nc' },
+  jackson: { seat: 'Sylva', metro: 'asheville-metro-nc' },
+  beaufort: { seat: 'Washington', metro: 'greenville-metro-nc' },
+  pasquotank: { seat: 'Elizabeth City', metro: 'elizabeth-city-metro-nc' },
+  vance: { seat: 'Henderson', metro: 'durham-chapel-hill-metro-nc' },
+  richmond: { seat: 'Rockingham', metro: 'fayetteville-metro-nc' },
+  person: { seat: 'Roxboro', metro: 'durham-chapel-hill-metro-nc' },
+  macon: { seat: 'Franklin', metro: 'asheville-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(

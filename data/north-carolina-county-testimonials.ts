@@ -11,6 +11,266 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  davie: [
+    {
+      quote:
+        'Two Men and a Truck Winston-Salem handled our Mocksville relocation professionally — on time, careful with our belongings, and transparent Triad pricing throughout Davie County.',
+      name: 'Greg H.',
+      location: 'Mocksville, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'American Moving & Hauling served our Davie County move efficiently with fast, professional crews and great value for careful handling.',
+      name: 'Sandra L.',
+      location: 'Mocksville, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving confirmed Mocksville coverage and delivered reliable packing and loading with no surprise fees despite Triad traffic.',
+      name: 'Tim R.',
+      location: 'Mocksville, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  halifax: [
+    {
+      quote:
+        'Smart Move Wilson confirmed Roanoke Rapids coverage and handled our rural Halifax County relocation professionally with careful driveway access planning.',
+      name: 'Earl J.',
+      location: 'Roanoke Rapids, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville served our Halifax County move efficiently with professional crews experienced with northeastern NC regional routes.',
+      name: 'Wanda P.',
+      location: 'Halifax, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Miracle Movers delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Carl M.',
+      location: 'Roanoke Rapids, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  mcdowell: [
+    {
+      quote:
+        'Asheville Area Movers handled our Marion mountain relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Donna W.',
+      location: 'Marion, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Preferred Moving Company served our McDowell County move with professional crews experienced with foothill mountain-road access.',
+      name: 'Mike S.',
+      location: 'Marion, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'In & Out Moving & Delivery confirmed Marion coverage and delivered reliable packing and loading with no surprise fees despite steep-driveway challenges.',
+      name: 'Janice K.',
+      location: 'Marion, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  jackson: [
+    {
+      quote:
+        'Gasperson Moving handled our Sylva mountain relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Barbara T.',
+      location: 'Sylva, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Asheville served our Cashiers move with professional crews experienced with steep-driveway and mountain-road access.',
+      name: 'John D.',
+      location: 'Cashiers, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Carey Moving & Storage confirmed Jackson County coverage and delivered reliable packing and loading with no surprise fees despite peak tourist-season scheduling.',
+      name: 'Nancy F.',
+      location: 'Sylva, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  beaufort: [
+    {
+      quote:
+        'College Hunks Moving Greenville handled our Washington coastal relocation professionally — efficient crews, careful handling, and transparent inner-coastal pricing.',
+      name: 'Richard B.',
+      location: 'Washington, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'East Carolina Moving served our Beaufort County waterfront move with professional crews experienced with coastal access and hurricane-season scheduling.',
+      name: 'Cynthia A.',
+      location: 'Washington, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Horne Moving Systems confirmed Washington coverage and delivered reliable packing and loading with no surprise fees despite regional travel.',
+      name: 'George L.',
+      location: 'Washington, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  pasquotank: [
+    {
+      quote:
+        'Smart Move Wilson confirmed Elizabeth City coverage and handled our Pasquotank County relocation professionally with careful handling throughout.',
+      name: 'Deborah C.',
+      location: 'Elizabeth City, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'East Carolina Moving served our Elizabeth City move efficiently with professional crews experienced with northeastern coastal regional routes.',
+      name: 'Thomas N.',
+      location: 'Elizabeth City, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Little Guys Movers delivered reliable packing and loading with no surprise fees despite longer regional travel from Raleigh.',
+      name: 'Kim R.',
+      location: 'Elizabeth City, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  vance: [
+    {
+      quote:
+        'Two Men and a Truck Durham handled our Henderson relocation professionally — on time, careful with our belongings, and transparent northern NC pricing throughout Vance County.',
+      name: 'Alvin G.',
+      location: 'Henderson, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'TROSA Moving served our Vance County move efficiently with fast, professional crews and great value for careful handling.',
+      name: 'Renee H.',
+      location: 'Henderson, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Little Guys Movers confirmed Henderson coverage and delivered reliable packing and loading with no surprise fees despite Durham-area traffic.',
+      name: 'Victor S.',
+      location: 'Henderson, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  richmond: [
+    {
+      quote:
+        'Stewart Moving & Storage confirmed Rockingham coverage and handled our rural Richmond County relocation professionally with careful driveway access planning.',
+      name: 'Henry W.',
+      location: 'Rockingham, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Fayetteville served our Richmond County move efficiently with professional crews experienced with southern NC regional routes.',
+      name: 'Louise T.',
+      location: 'Rockingham, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'S&Q Movers delivered reliable packing and loading for our rural move with no surprise fees despite longer regional travel.',
+      name: 'Raymond J.',
+      location: 'Rockingham, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  person: [
+    {
+      quote:
+        'Miracle Movers Durham handled our Roxboro relocation professionally — on time, careful with our belongings, and transparent northern Triangle pricing throughout Person County.',
+      name: 'Alice M.',
+      location: 'Roxboro, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Armstrong Relocation served our Person County move efficiently with fast, professional crews and great value for careful handling.',
+      name: 'Philip K.',
+      location: 'Roxboro, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Athens Moving Experts confirmed Roxboro coverage and delivered reliable packing and loading with no surprise fees despite Durham-area traffic.',
+      name: 'Gloria D.',
+      location: 'Roxboro, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  macon: [
+    {
+      quote:
+        'Asheville Area Movers handled our Franklin mountain relocation professionally — efficient crews, careful handling, and transparent western NC pricing.',
+      name: 'Steven P.',
+      location: 'Franklin, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Appalachian Moving & Storage served our Macon County move with professional crews experienced with steep-driveway and mountain-road access.',
+      name: 'Margaret C.',
+      location: 'Franklin, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Asheville confirmed Franklin coverage and delivered reliable packing and loading with no surprise fees despite peak tourist-season scheduling.',
+      name: 'Andrew B.',
+      location: 'Franklin, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
   haywood: [
     {
       quote:

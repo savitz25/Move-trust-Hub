@@ -10059,6 +10059,17 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'je-thomas-sons-jacksonville',
     ],
   },
+  'elizabeth-city-metro-nc': {
+    id: 'elizabeth-city-metro-nc',
+    label: 'Elizabeth City / Northeastern NC Metro',
+    moverIds: [
+      'smart-move-wilson-nc',
+      'college-hunks-moving-greenville-nc',
+      'east-carolina-moving-greenville-nc',
+      'crabtree-family-moving-raleigh',
+      'little-guys-movers-raleigh',
+    ],
+  },
 };
 
 /** Non-curated state overrides — FL/NJ/NY/CA use dedicated assignment files */

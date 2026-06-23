@@ -63,6 +63,16 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   columbus: ['bladen', 'brunswick', 'robeson', 'pender', 'new-hanover', 'sampson'],
   edgecombe: ['nash', 'wilson', 'pitt', 'halifax', 'martin', 'bertie'],
   stokes: ['surry', 'forsyth', 'rockingham', 'guilford', 'davie', 'davidson'],
+  davie: ['forsyth', 'davidson', 'rowan', 'iredell', 'yadkin', 'stokes'],
+  halifax: ['nash', 'edgecombe', 'martin', 'bertie', 'warren', 'vance'],
+  mcdowell: ['burke', 'avery', 'mitchell', 'buncombe', 'rutherford', 'yancey'],
+  jackson: ['haywood', 'macon', 'transylvania', 'swain', 'graham', 'buncombe'],
+  beaufort: ['pitt', 'martin', 'hyde', 'craven', 'edgecombe', 'lenoir'],
+  pasquotank: ['edgecombe', 'halifax', 'nash', 'pitt', 'craven', 'wilson'],
+  vance: ['granville', 'franklin', 'warren', 'halifax', 'person', 'durham'],
+  richmond: ['robeson', 'scotland', 'montgomery', 'anson', 'moore', 'cumberland'],
+  person: ['granville', 'durham', 'orange', 'caswell', 'vance', 'franklin'],
+  macon: ['jackson', 'swain', 'clay', 'graham', 'haywood', 'transylvania'],
 };
 
 export function getNorthCarolinaNearbyCounties(
