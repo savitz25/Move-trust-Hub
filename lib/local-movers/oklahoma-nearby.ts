@@ -40,6 +40,21 @@ const OK_COUNTY_NEIGHBORS: Record<string, string[]> = {
   mayes: ['rogers', 'craig', 'delaware', 'cherokee', 'wagoner', 'tulsa'],
   pontotoc: ['johnston', 'coal', 'hughes', 'mcclain', 'pottawatomie', 'seminole'],
   okmulgee: ['muskogee', 'okfuskee', 'mcintosh', 'tulsa', 'creek', 'wagoner'],
+  lincoln: ['pottawatomie', 'okfuskee', 'seminole', 'logan', 'payne', 'oklahoma'],
+  mccurtain: ['le-flore', 'pushmataha', 'choctaw', 'pittsburg', 'atoka', 'coal'],
+  ottawa: ['delaware', 'craig', 'mayes', 'cherokee', 'wagoner', 'washington'],
+  custer: ['washita', 'dewey', 'blaine', 'caddo', 'roger-mills', 'beckham'],
+  garvin: ['mcclain', 'grady', 'murray', 'carter', 'pontotoc', 'stephens'],
+  caddo: ['blaine', 'canadian', 'grady', 'comanche', 'washita', 'custer'],
+  jackson: ['greer', 'harmon', 'tillman', 'kiowa', 'cotton', 'beckham'],
+  seminole: ['pottawatomie', 'okfuskee', 'hughes', 'pontotoc', 'lincoln', 'creek'],
+  beckham: ['greer', 'roger-mills', 'custer', 'washita', 'harmon', 'ellis'],
+  texas: ['beaver', 'harper', 'ellis', 'cimarron', 'beckham', 'woodward'],
+  adair: ['cherokee', 'delaware', 'sequoyah', 'mayes', 'washington', 'ottawa'],
+  mcintosh: ['okmulgee', 'muskogee', 'haskell', 'pittsburg', 'hughes', 'okfuskee'],
+  woodward: ['ellis', 'dewey', 'major', 'woods', 'alfalfa', 'roger-mills'],
+  marshall: ['bryan', 'johnston', 'love', 'carter', 'atoka', 'coal'],
+  pawnee: ['osage', 'creek', 'payne', 'noble', 'kay', 'tulsa'],
 };
 
 export function getOklahomaNearbyCounties(

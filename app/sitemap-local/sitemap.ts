@@ -147,6 +147,21 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
   'mayes',
   'pontotoc',
   'okmulgee',
+  'lincoln',
+  'mccurtain',
+  'ottawa',
+  'custer',
+  'garvin',
+  'caddo',
+  'jackson',
+  'seminole',
+  'beckham',
+  'texas',
+  'adair',
+  'mcintosh',
+  'woodward',
+  'marshall',
+  'pawnee',
 ]);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */

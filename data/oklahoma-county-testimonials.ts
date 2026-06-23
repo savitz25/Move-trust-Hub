@@ -442,6 +442,81 @@ export const oklahomaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       { quote: 'Two Men and a Truck Tulsa confirmed Okmulgee County coverage and delivered excellent east Oklahoma service — on time and extremely careful.', name: 'Irene W.', location: 'Okmulgee, OK', rating: 5, moveType: 'Townhome' },
       { quote: 'Oklahoma Regional Moving served our Okmulgee move efficiently — fast, professional, and reliable with careful handling.', name: 'Leonard P.', location: 'Okmulgee, OK', rating: 5, moveType: 'Apartment' },
     ],
+    lincoln: [
+      { quote: 'Regional Chandler providers handled our Prague relocation professionally — efficient service and careful handling throughout Lincoln County.', name: 'Norma J.', location: 'Prague, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Shawnee confirmed Lincoln County coverage and delivered excellent east-metro service — on time and extremely careful.', name: 'Roy T.', location: 'Chandler, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'All My Sons Oklahoma City served our Stroud move efficiently — fast, professional, and reliable with careful handling.', name: 'Vera M.', location: 'Stroud, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    mccurtain: [
+      { quote: 'Regional Idabel providers handled our Broken Bow relocation professionally — efficient service and careful handling throughout McCurtain County.', name: 'Cliff S.', location: 'Broken Bow, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'All My Sons Tulsa confirmed McCurtain County coverage and delivered excellent southeast Oklahoma service — professional crew with transparent pricing.', name: 'Diana H.', location: 'Idabel, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Durant providers served our Hochatown area move efficiently — fast, professional, and reliable with careful handling.', name: 'Gene W.', location: 'Hochatown, OK', rating: 5, moveType: 'Cabin' },
+    ],
+    ottawa: [
+      { quote: 'Regional Miami providers handled our relocation professionally — efficient service and careful handling throughout Ottawa County.', name: 'Ivan K.', location: 'Miami, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Claremore confirmed Ottawa County coverage and delivered excellent northeast Oklahoma service — on time and extremely careful.', name: 'Joyce P.', location: 'Miami, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'College Hunks Tulsa served our Miami move efficiently — fast, professional packing and reliable crew arrival.', name: 'Leo B.', location: 'Miami, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    custer: [
+      { quote: 'Regional Weatherford providers handled our SWOSU-area relocation professionally — efficient service and careful handling throughout Custer County.', name: 'Megan C.', location: 'Weatherford, OK', rating: 5, moveType: 'Student' },
+      { quote: 'All My Sons Oklahoma City confirmed Custer County coverage and delivered excellent western Oklahoma service — professional crew with transparent pricing.', name: 'Neil R.', location: 'Weatherford, OK', rating: 5, moveType: 'Apartment' },
+      { quote: 'North American Van Lines served our Weatherford move efficiently — fast, professional, and reliable with careful handling.', name: 'Opal F.', location: 'Weatherford, OK', rating: 5, moveType: 'Townhome' },
+    ],
+    garvin: [
+      { quote: 'Regional Pauls Valley providers handled our relocation professionally — efficient service and careful handling throughout Garvin County.', name: 'Paul D.', location: 'Pauls Valley, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Oklahoma Premier Moving confirmed Garvin County coverage and delivered excellent central Oklahoma service — on time and extremely careful.', name: 'Quinn L.', location: 'Pauls Valley, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Chickasha providers served our Pauls Valley move efficiently — fast, professional, and reliable with careful handling.', name: 'Rita N.', location: 'Pauls Valley, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    caddo: [
+      { quote: 'Regional Anadarko providers handled our relocation professionally — efficient service and careful handling throughout Caddo County.', name: 'Sam O.', location: 'Anadarko, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Lawton confirmed Caddo County coverage and delivered excellent southwest Oklahoma service — on time and extremely careful.', name: 'Tina V.', location: 'Anadarko, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Coleman Worldwide served our Anadarko move efficiently — fast, professional, and reliable with careful handling.', name: 'Ulysses G.', location: 'Anadarko, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    jackson: [
+      { quote: 'Regional Altus providers handled our PCS move professionally — efficient military relocation service and careful handling throughout Jackson County.', name: 'Victor A.', location: 'Altus, OK', rating: 5, moveType: 'Military' },
+      { quote: 'Two Men and a Truck Lawton confirmed Jackson County coverage and delivered excellent Altus AFB-area service — on time and extremely careful.', name: 'Wendy S.', location: 'Altus, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'North American Van Lines served our Altus townhome move efficiently — fast, professional, and reliable with careful handling.', name: 'Xavier M.', location: 'Altus, OK', rating: 5, moveType: 'Townhome' },
+    ],
+    seminole: [
+      { quote: 'Regional Seminole providers handled our Wewoka relocation professionally — efficient service and careful handling throughout Seminole County.', name: 'Yvonne K.', location: 'Wewoka, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Shawnee confirmed Seminole County coverage and delivered excellent central Oklahoma service — on time and extremely careful.', name: 'Zack H.', location: 'Seminole, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Ada providers served our Seminole move efficiently — fast, professional, and reliable with careful handling.', name: 'Alice R.', location: 'Seminole, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    beckham: [
+      { quote: 'Regional Elk City providers handled our Sayre relocation professionally — efficient service and careful handling throughout Beckham County.', name: 'Bruce T.', location: 'Elk City, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Enid providers confirmed Beckham County coverage and delivered excellent western Oklahoma service — professional crew with transparent pricing.', name: 'Carol W.', location: 'Sayre, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Capital Movers served our Elk City move efficiently — fast, professional, and reliable with careful handling.', name: 'Dean F.', location: 'Elk City, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    texas: [
+      { quote: 'Regional Guymon providers handled our panhandle relocation professionally — efficient service and careful handling throughout Texas County.', name: 'Eva J.', location: 'Guymon, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Woodward providers confirmed Texas County coverage and delivered excellent northwest Oklahoma service — on time and extremely careful.', name: 'Frank L.', location: 'Guymon, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Coleman Worldwide served our Guymon move efficiently — fast, professional, and reliable with careful handling.', name: 'Gail P.', location: 'Guymon, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    adair: [
+      { quote: 'Regional Stilwell providers handled our relocation professionally — efficient service and careful handling throughout Adair County.', name: 'Hank B.', location: 'Stilwell, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Tahlequah providers confirmed Adair County coverage and delivered excellent northeast Oklahoma service — on time and extremely careful.', name: 'Iris M.', location: 'Stilwell, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'All My Sons Tulsa served our Stilwell move efficiently — fast, professional, and reliable with careful handling.', name: 'Jake C.', location: 'Stilwell, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    mcintosh: [
+      { quote: 'Regional Eufaula providers handled our lakeside relocation professionally — efficient service and careful handling throughout McIntosh County.', name: 'Kate D.', location: 'Eufaula, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed McIntosh County coverage and delivered excellent lake-area service — on time and extremely careful.', name: 'Lyle G.', location: 'Eufaula, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Muskogee providers served our Eufaula move efficiently — fast, professional, and reliable with careful handling.', name: 'Mae N.', location: 'Eufaula, OK', rating: 5, moveType: 'Cabin' },
+    ],
+    woodward: [
+      { quote: 'Regional Woodward providers handled our relocation professionally — efficient service and careful handling throughout Woodward County.', name: 'Nick S.', location: 'Woodward, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Enid providers confirmed Woodward County coverage and delivered excellent northwest Oklahoma service — professional crew with transparent pricing.', name: 'Olga H.', location: 'Woodward, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'North American Van Lines served our Woodward move efficiently — fast, professional, and reliable with careful handling.', name: 'Pete R.', location: 'Woodward, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    marshall: [
+      { quote: 'Regional Madill providers handled our lakeside relocation professionally — efficient service and careful handling throughout Marshall County.', name: 'Quincy A.', location: 'Madill, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Durant providers confirmed Marshall County coverage and delivered excellent south Oklahoma service — on time and extremely careful.', name: 'Rosa V.', location: 'Madill, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Ardmore providers served our Madill move efficiently — fast, professional, and reliable with careful handling.', name: 'Stan K.', location: 'Madill, OK', rating: 5, moveType: 'Cabin' },
+    ],
+    pawnee: [
+      { quote: 'Regional Pawnee providers handled our relocation professionally — efficient service and careful handling throughout Pawnee County.', name: 'Tess M.', location: 'Pawnee, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Stillwater confirmed Pawnee County coverage and delivered excellent north Oklahoma service — on time and extremely careful.', name: 'Ursula F.', location: 'Pawnee, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Capital Movers served our Pawnee move efficiently — fast, professional, and reliable with careful handling.', name: 'Vince L.', location: 'Pawnee, OK', rating: 5, moveType: 'Single-family' },
+    ],
   };
 
 export function getOklahomaCountyTestimonials(

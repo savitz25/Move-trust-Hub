@@ -33,6 +33,21 @@ export const oklahomaCountyOverrides: Partial<
   mayes: { seat: 'Pryor', metro: 'pryor-metro-ok' },
   pontotoc: { seat: 'Ada', metro: 'ada-metro-ok' },
   okmulgee: { seat: 'Okmulgee', metro: 'okmulgee-metro-ok' },
+  lincoln: { seat: 'Chandler', metro: 'chandler-metro-ok' },
+  mccurtain: { seat: 'Idabel', metro: 'idabel-metro-ok' },
+  ottawa: { seat: 'Miami', metro: 'miami-metro-ok' },
+  custer: { seat: 'Arapaho', metro: 'weatherford-metro-ok' },
+  garvin: { seat: 'Pauls Valley', metro: 'pauls-valley-metro-ok' },
+  caddo: { seat: 'Anadarko', metro: 'anadarko-metro-ok' },
+  jackson: { seat: 'Altus', metro: 'altus-metro-ok' },
+  seminole: { seat: 'Wewoka', metro: 'seminole-metro-ok' },
+  beckham: { seat: 'Sayre', metro: 'sayre-metro-ok' },
+  texas: { seat: 'Guymon', metro: 'guymon-metro-ok' },
+  adair: { seat: 'Stilwell', metro: 'stilwell-metro-ok' },
+  mcintosh: { seat: 'Eufaula', metro: 'eufaula-metro-ok' },
+  woodward: { seat: 'Woodward', metro: 'woodward-metro-ok' },
+  marshall: { seat: 'Madill', metro: 'madill-metro-ok' },
+  pawnee: { seat: 'Pawnee', metro: 'pawnee-metro-ok' },
 };
 
 export function applyOklahomaCountyOverrides(county: LocalCounty): LocalCounty {

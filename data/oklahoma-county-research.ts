@@ -501,6 +501,261 @@ export const oklahomaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  lincoln: {
+    marketNotes:
+      'Lincoln County is a growing county east of Oklahoma City with strong suburban residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects Chandler and Prague suburban demand, east Oklahoma City metro traffic, and cross-county crews from Shawnee and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Chandler, Prague, and Stroud areas before booking.',
+      'Oklahoma City-area traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mccurtain: {
+    marketNotes:
+      'McCurtain County is a large rural county in Southeast Oklahoma with strong timber, tourism, and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'McCurtain County pricing reflects Idabel and Broken Bow lake-area demand, rural access constraints, and cross-county crews from Tulsa and Durant providers.',
+    },
+    tips: [
+      'Verify coverage for Idabel, Broken Bow, and Hochatown areas before booking.',
+      'Rural and lake access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes and flood/tornado coverage before booking.',
+      'Book early for peak tourist seasons and summer relocation windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ottawa: {
+    marketNotes:
+      'Ottawa County is a key Northeast Oklahoma county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Ottawa County pricing reflects Miami industrial relocation demand, northeast Oklahoma regional traffic, and Tulsa metro cross-county crews.',
+    },
+    tips: [
+      'Verify coverage for Miami and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  custer: {
+    marketNotes:
+      'Custer County is a growing county in Western Oklahoma with strong educational (Southwestern Oklahoma State University) and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Custer County pricing reflects Weatherford university relocation demand, western Oklahoma regional traffic, and OKC van-line agents serving the area.',
+    },
+    tips: [
+      'Verify coverage for Weatherford and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  garvin: {
+    marketNotes:
+      'Garvin County is a rural Central Oklahoma county with strong residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Garvin County pricing reflects Pauls Valley regional demand, central Oklahoma rural access, and cross-county crews from Norman and Chickasha providers.',
+    },
+    tips: [
+      'Verify coverage for Pauls Valley and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  caddo: {
+    marketNotes:
+      'Caddo County is a rural Southwest Oklahoma county with strong tribal and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Caddo County pricing reflects Anadarko regional demand, southwest Oklahoma rural access, and cross-county crews from Lawton and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Anadarko and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is anchored by Altus Air Force Base with strong military and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects Altus military PCS volume, southwest Oklahoma regional traffic, and van-line agents serving military relocations.',
+    },
+    tips: [
+      'Verify coverage for Altus and surrounding areas before booking.',
+      'Military base traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak seasons and PCS windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  seminole: {
+    marketNotes:
+      'Seminole County is a rural Central Oklahoma county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Seminole County pricing reflects Wewoka regional demand, central Oklahoma energy-sector relocations, and cross-county crews from Shawnee and Ada providers.',
+    },
+    tips: [
+      'Verify coverage for Seminole and Wewoka areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  beckham: {
+    marketNotes:
+      'Beckham County is a key Western Oklahoma county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Beckham County pricing reflects Sayre and Elk City energy-sector demand, western Oklahoma regional traffic, and OKC van-line agents.',
+    },
+    tips: [
+      'Verify coverage for Sayre and Elk City areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  texas: {
+    marketNotes:
+      'Texas County is the westernmost county in the Oklahoma Panhandle with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Texas County pricing reflects Guymon panhandle regional demand, rural access constraints, and long-distance crews from Enid and OKC van-line agents.',
+    },
+    tips: [
+      'Verify coverage for Guymon and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and harvest-season windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  adair: {
+    marketNotes:
+      'Adair County is a rural Northeast Oklahoma county with strong residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Adair County pricing reflects Stilwell regional demand, rural northeast Oklahoma access, and Tulsa metro cross-county crews.',
+    },
+    tips: [
+      'Verify coverage for Stilwell and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcintosh: {
+    marketNotes:
+      'McIntosh County is a rural East Oklahoma county with lake-area residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'McIntosh County pricing reflects Eufaula lake-area demand, east Oklahoma regional traffic, and Tulsa metro cross-county providers.',
+    },
+    tips: [
+      'Verify coverage for Eufaula and surrounding areas before booking.',
+      'Lake access and seasonal tourism traffic require advance planning — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and summer relocation windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  woodward: {
+    marketNotes:
+      'Woodward County is a key Western Oklahoma county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Woodward County pricing reflects northwest Oklahoma energy-sector demand, regional traffic constraints, and Enid and OKC van-line agents.',
+    },
+    tips: [
+      'Verify coverage for Woodward and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marshall: {
+    marketNotes:
+      'Marshall County is a growing county in South Oklahoma with strong lake-area residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Marshall County pricing reflects Madill lake-area demand, south Oklahoma regional traffic, and cross-county crews from Durant and Ardmore providers.',
+    },
+    tips: [
+      'Verify coverage for Madill and surrounding areas before booking.',
+      'Lake access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and summer relocation windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pawnee: {
+    marketNotes:
+      'Pawnee County is a rural North Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Pawnee County pricing reflects north Oklahoma regional demand, rural access constraints, and cross-county crews from Stillwater and Enid providers.',
+    },
+    tips: [
+      'Verify coverage for Pawnee and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getOklahomaCountyResearch(
