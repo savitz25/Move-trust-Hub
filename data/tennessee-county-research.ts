@@ -807,6 +807,193 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  henry: {
+    marketNotes:
+      'Henry County is a growing county in Northwest Tennessee with strong residential and lake-area demand centered on Paris and Kentucky Lake.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Henry County pricing reflects Paris and Kentucky Lake waterfront demand, rural Northwest Tennessee access, and Jackson-Dyersburg regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Paris and surrounding Henry County areas before booking.',
+      'Lake-area access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  giles: {
+    marketNotes:
+      'Giles County is a growing county in southern Middle Tennessee with strong residential demand centered on Pulaski.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Giles County pricing reflects Pulaski suburban demand, Columbia-Murfreesboro regional crew travel, and rural Middle Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Pulaski and surrounding Giles County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  white: {
+    marketNotes:
+      'White County is a growing county in Middle Tennessee with strong residential and plateau demand centered on Sparta.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'White County pricing reflects Sparta plateau-community demand, Upper Cumberland regional crew travel, and rural access considerations.',
+    },
+    tips: [
+      'Verify coverage for Sparta and surrounding White County areas before booking.',
+      'Plateau access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  obion: {
+    marketNotes:
+      'Obion County is a key Northwest Tennessee county with strong industrial and residential demand centered on Union City.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Obion County pricing reflects Union City industrial corridor demand, rural Northwest Tennessee access, and Jackson-Dyersburg regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Union City and surrounding Obion County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is a growing county in Southeast Tennessee with strong residential demand centered on Jasper and South Pittsburg.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Marion County pricing reflects Jasper and South Pittsburg demand, Chattanooga-Cleveland regional crew travel, and I-24 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Jasper and South Pittsburg areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County is a rural West Tennessee county with strong agricultural and residential demand centered on Huntingdon.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects rural West Tennessee access, agricultural property move considerations, and Jackson-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Huntingdon and surrounding Carroll County areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  henderson: {
+    marketNotes:
+      'Henderson County is a growing county in West Tennessee with strong residential demand centered on Lexington.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Henderson County pricing reflects Lexington suburban demand, rural West Tennessee access, and Jackson-Paris regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Lexington and surrounding Henderson County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hardin: {
+    marketNotes:
+      'Hardin County is a growing county in West Tennessee with strong residential and tourism demand centered on Savannah along the Tennessee River.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Hardin County pricing reflects Savannah river-community demand, Pickwick Lake access, and Jackson-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Savannah and surrounding Hardin County areas before booking.',
+      'River access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  macon: {
+    marketNotes:
+      'Macon County is a growing county in northern Middle Tennessee with strong residential demand centered on Lafayette.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Macon County pricing reflects Lafayette suburban demand, Clarksville-Springfield regional crew travel, and rural northern Middle Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Lafayette and surrounding Macon County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hickman: {
+    marketNotes:
+      'Hickman County is a rural county in Middle Tennessee with strong residential demand centered on Centerville.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hickman County pricing reflects Centerville rural-community demand, Nashville-Columbia regional crew travel, and rural access considerations.',
+    },
+    tips: [
+      'Verify coverage for Centerville and surrounding Hickman County areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grainger: {
+    marketNotes:
+      'Grainger County is a rural mountain county in East Tennessee with strong residential demand centered on Rutledge.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Grainger County pricing reflects Rutledge mountain-community demand, Morristown-Knoxville regional crew travel, and rural East Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Rutledge and surrounding Grainger County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

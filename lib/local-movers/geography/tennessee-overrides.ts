@@ -51,6 +51,17 @@ export const tennesseeCountyOverrides: Partial<
   rhea: { seat: 'Dayton', metro: 'dayton-metro-tn' },
   claiborne: { seat: 'Tazewell', metro: 'tazewell-metro-tn' },
   weakley: { seat: 'Dresden', metro: 'weakley-metro-tn' },
+  henry: { seat: 'Paris', metro: 'paris-metro-tn' },
+  giles: { seat: 'Pulaski', metro: 'pulaski-metro-tn' },
+  white: { seat: 'Sparta', metro: 'sparta-metro-tn' },
+  obion: { seat: 'Union City', metro: 'union-city-metro-tn' },
+  marion: { seat: 'Jasper', metro: 'jasper-metro-tn' },
+  carroll: { seat: 'Huntingdon', metro: 'huntingdon-metro-tn' },
+  henderson: { seat: 'Lexington', metro: 'lexington-metro-tn' },
+  hardin: { seat: 'Savannah', metro: 'savannah-metro-tn' },
+  macon: { seat: 'Lafayette', metro: 'lafayette-metro-tn' },
+  hickman: { seat: 'Centerville', metro: 'centerville-metro-tn' },
+  grainger: { seat: 'Rutledge', metro: 'morristown-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

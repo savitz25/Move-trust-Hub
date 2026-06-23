@@ -159,6 +159,17 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'rhea',
   'claiborne',
   'weakley',
+  'henry',
+  'giles',
+  'white',
+  'obion',
+  'marion',
+  'carroll',
+  'henderson',
+  'hardin',
+  'macon',
+  'hickman',
+  'grainger',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

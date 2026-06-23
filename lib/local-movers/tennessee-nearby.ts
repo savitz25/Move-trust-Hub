@@ -56,6 +56,17 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   rhea: ['meigs', 'bradley', 'hamilton', 'bledsoe', 'roane', 'mcminn'],
   claiborne: ['campbell', 'union', 'grainger', 'hancock', 'hawkins', 'hamblen'],
   weakley: ['gibson', 'carroll', 'henry', 'obion', 'crockett', 'madison'],
+  henry: ['weakley', 'obion', 'carroll', 'benton', 'stewart', 'houston'],
+  giles: ['maury', 'marshall', 'lincoln', 'lawrence', 'wayne', 'lewis'],
+  white: ['warren', 'van-buren', 'putnam', 'cumberland', 'dekalb', 'cannon'],
+  obion: ['weakley', 'henry', 'dyer', 'gibson', 'lake', 'crockett'],
+  marion: ['hamilton', 'sequatchie', 'grundy', 'franklin', 'coffee', 'bradley'],
+  carroll: ['weakley', 'gibson', 'madison', 'henry', 'benton', 'decatur'],
+  henderson: ['chester', 'madison', 'carroll', 'decatur', 'hardin', 'mcnairy'],
+  hardin: ['mcnairy', 'chester', 'henderson', 'wayne', 'lawrence', 'decatur'],
+  macon: ['sumner', 'wilson', 'smith', 'trousdale', 'clay', 'jackson'],
+  hickman: ['dickson', 'houston', 'humphreys', 'lewis', 'perry', 'williamson'],
+  grainger: ['knox', 'hamblen', 'jefferson', 'cocke', 'union', 'claiborne'],
 };
 
 export function getTennesseeNearbyCounties(
