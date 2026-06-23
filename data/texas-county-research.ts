@@ -3509,6 +3509,142 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates — hourly and flat-rate quotes can vary between Tyler and Dallas providers.',
     ],
   },
+  mclennan: {
+    marketNotes:
+      'McLennan County centers on Waco with residential and university-related moves tied to Baylor and growing Central Texas demand.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Waco local providers typically cover McLennan County; confirm service for Hewitt, Woodway, and rural county addresses.',
+    },
+    tips: [
+      'Verify coverage for Waco, Hewitt, and surrounding McLennan County communities.',
+      'University traffic and semester turnover impact scheduling — plan around Baylor move-in/move-out peaks.',
+      'Confirm insurance for high-value homes and student housing moves near campus.',
+      'Book early for peak seasons — August and May turnover can tighten Waco crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between local providers.',
+    ],
+  },
+  webb: {
+    marketNotes:
+      'Webb County centers on Laredo with border-related residential moves and cross-border logistics considerations.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Laredo local providers typically cover Webb County; confirm service for rural ranch addresses and border-adjacent communities.',
+    },
+    tips: [
+      'Verify coverage for Laredo and surrounding Webb County communities.',
+      'Border traffic on I-35 and international bridge corridors impacts scheduling — plan around peak crossing windows.',
+      'Confirm insurance for high-value homes and cross-border relocation paperwork if applicable.',
+      'Book early for peak seasons — summer moves can tighten Laredo crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between local providers.',
+    ],
+  },
+  hays: {
+    marketNotes:
+      'Hays County includes San Marcos with university and suburban growth along the Austin–San Antonio I-35 corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Austin and San Antonio metro crews typically cover Hays County; confirm service for Kyle, Buda, and Dripping Springs addresses.',
+    },
+    tips: [
+      'Verify coverage for San Marcos, Kyle, Buda, and surrounding Hays County communities.',
+      'Austin-area traffic on I-35 and SH-45 impacts scheduling — plan around peak commute and university turnover.',
+      'Confirm insurance for high-value homes common in newer Hays County subdivisions.',
+      'Book early for peak seasons — Texas State semester turnover and summer growth can tighten crew availability.',
+      'Obtain multiple estimates — travel distance from Austin or San Antonio can affect final pricing.',
+    ],
+  },
+  lubbock: {
+    marketNotes:
+      'Lubbock County centers on Lubbock with university and residential moves tied to Texas Tech and South Plains growth.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Lubbock local providers typically cover Lubbock County; confirm service for rural county parcels and ranch properties.',
+    },
+    tips: [
+      'Verify coverage for Lubbock, Slaton, and surrounding Lubbock County communities.',
+      'University traffic and semester turnover impact scheduling — plan around Texas Tech move-in/move-out peaks.',
+      'Confirm insurance for high-value homes and ranch properties common in Lubbock County.',
+      'Book early for peak seasons — August turnover can tighten Lubbock crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between local providers.',
+    ],
+  },
+  nueces: {
+    marketNotes:
+      'Nueces County centers on Corpus Christi with coastal and residential moves across the Coastal Bend metro.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Corpus Christi local providers typically cover Nueces County; confirm service for Padre Island, Portland, and coastal addresses.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm bridge access, humidity protection, and parking for island moves.',
+      'Verify coverage for Corpus Christi, Portland, and surrounding Nueces County communities.',
+      'Confirm insurance for high-value homes and coastal property relocations.',
+      'Book early for peak seasons — summer coastal moves can tighten Corpus Christi crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Coastal Bend providers.',
+    ],
+  },
+  galveston: {
+    marketNotes:
+      'Galveston County includes Galveston Island with coastal residential moves and Houston metro spillover along the Gulf Coast.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Houston metro crews typically cover Galveston County; confirm service for island addresses, causeway timing, and mainland communities.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm causeway access, flood-zone logistics, and humidity protection for island moves.',
+      'Verify coverage for Galveston Island, League City, and mainland Galveston County communities.',
+      'Confirm insurance for high-value homes and historic district relocations on the island.',
+      'Book early for peak seasons — summer tourism and hurricane-season prep can tighten Gulf Coast crew availability.',
+      'Obtain multiple estimates — Houston and coastal providers may price island routes differently.',
+    ],
+  },
+  bell: {
+    marketNotes:
+      'Bell County includes Killeen with significant military-related moves tied to Fort Cavazos and Temple–Belton suburban growth.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Killeen–Temple local providers typically cover Bell County; confirm service for on-base access, PCS timelines, and rural addresses.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm PCS paperwork, base access, and tight timeline handling.',
+      'Verify coverage for Killeen, Temple, Belton, and surrounding Bell County communities.',
+      'Confirm insurance for high-value homes and military household goods coverage requirements.',
+      'Book early for peak seasons — summer PCS season can tighten Killeen-area crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Killeen and Waco providers.',
+    ],
+  },
+  brazoria: {
+    marketNotes:
+      'Brazoria County includes coastal and suburban areas with growing residential development south of Houston along the Gulf Coast.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Houston metro crews typically cover Brazoria County; confirm service for Pearland, Lake Jackson, and coastal fringe addresses.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm flood-zone logistics and humidity protection for waterfront moves.',
+      'Verify coverage for Angleton, Pearland, Lake Jackson, and surrounding Brazoria County communities.',
+      'Confirm insurance for high-value homes common in newer Brazoria County subdivisions.',
+      'Book early for peak seasons — summer moves and hurricane-season prep can tighten Houston-area crew availability.',
+      'Obtain multiple estimates — Houston metro providers may price south-county routes differently.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(

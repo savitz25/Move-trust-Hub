@@ -208,6 +208,14 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   brazos: ['little-guys-movers-college-station', 'two-men-and-a-truck-waco', 'college-hunks-moving-waco'],
   jefferson: ['two-men-and-a-truck-beaumont', 'beaumont-area-moving', 'two-men-and-a-truck-houston'],
   smith: ['tyler-moving-storage', 'higgs-moving-longview', 'two-men-and-a-truck-dallas'],
+  mclennan: ['two-men-and-a-truck-waco', 'college-hunks-moving-waco', 'waco-area-moving'],
+  webb: ['south-texas-moving-laredo', 'laredo-area-moving', 'allied-van-lines-laredo'],
+  hays: ['two-men-and-a-truck-austin', 'college-hunks-moving-austin', 'two-men-and-a-truck-san-antonio'],
+  lubbock: ['two-men-and-a-truck-lubbock', 'hart-moving-storage-lubbock', 'lubbock-area-moving'],
+  nueces: ['two-men-and-a-truck-corpus-christi', 'corpus-christi-area-moving', 'two-men-and-a-truck-san-antonio'],
+  galveston: ['two-men-and-a-truck-houston', 'houston-local-lines', 'beaumont-area-moving'],
+  bell: ['central-texas-movers-killeen', 'two-men-and-a-truck-waco', 'college-hunks-moving-waco'],
+  brazoria: ['two-men-and-a-truck-houston', 'houston-local-lines', 'victoria-transfer-storage'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

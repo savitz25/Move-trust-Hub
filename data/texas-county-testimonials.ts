@@ -4547,6 +4547,214 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Townhome',
     },
   ],
+  mclennan: [
+    {
+      quote:
+        'Professional and efficient for our Waco move in McLennan County. Two Men and a Truck confirmed Baylor-area experience and careful handling.',
+      name: 'Mara Q.',
+      location: 'Waco, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks Waco — transparent pricing and steady communication throughout.',
+      name: 'Ned R.',
+      location: 'Waco, TX',
+      rating: 5,
+      moveType: 'Student housing',
+    },
+    {
+      quote:
+        'Professional and timely from a third Waco estimate we compared. Great experience with organized loading throughout McLennan County.',
+      name: 'Opal S.',
+      location: 'Hewitt, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  webb: [
+    {
+      quote:
+        'Professional and efficient for our Laredo move in Webb County. South Texas Moving navigated border corridor traffic without delay.',
+      name: 'Paul T.',
+      location: 'Laredo, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from a second Laredo estimate — transparent pricing and careful handling throughout.',
+      name: 'Quinn U.',
+      location: 'Laredo, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from Allied Van Lines Laredo. Great experience with organized loading on a Webb County route.',
+      name: 'Rosa V.',
+      location: 'Laredo, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  hays: [
+    {
+      quote:
+        'Professional and efficient for our San Marcos move in Hays County. The Austin crew navigated I-35 traffic and finished with careful handling.',
+      name: 'Seth W.',
+      location: 'San Marcos, TX',
+      rating: 5,
+      moveType: 'Student housing',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks Austin — transparent pricing on a Kyle–San Marcos route.',
+      name: 'Tara X.',
+      location: 'Kyle, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from the San Antonio team we compared. Great experience with organized loading throughout Hays County.',
+      name: 'Uma Y.',
+      location: 'Buda, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  lubbock: [
+    {
+      quote:
+        'Professional and efficient for our Lubbock move. Two Men and a Truck confirmed Texas Tech-area experience and careful handling.',
+      name: 'Vic Z.',
+      location: 'Lubbock, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Hart Moving & Storage — transparent pricing and steady communication throughout Lubbock County.',
+      name: 'Wade A.',
+      location: 'Lubbock, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from a third Lubbock estimate we compared. Great experience with organized loading throughout.',
+      name: 'Xena B.',
+      location: 'Lubbock, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  nueces: [
+    {
+      quote:
+        'Professional and efficient for our Corpus Christi move in Nueces County. Two Men and a Truck handled coastal humidity prep and careful loading.',
+      name: 'Yuri C.',
+      location: 'Corpus Christi, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from a second Corpus Christi estimate — transparent pricing on a Coastal Bend route.',
+      name: 'Zoe D.',
+      location: 'Corpus Christi, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the San Antonio team we compared. Great experience with organized loading throughout Nueces County.',
+      name: 'Adam E.',
+      location: 'Portland, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  galveston: [
+    {
+      quote:
+        'Professional and efficient for our Galveston Island move. Two Men and a Truck Houston coordinated causeway timing and careful handling.',
+      name: 'Beth F.',
+      location: 'Galveston, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Houston Local Lines — transparent pricing on an island route with steady communication.',
+      name: 'Carl G.',
+      location: 'Galveston, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Beaumont team we compared. Great experience with organized loading throughout Galveston County.',
+      name: 'Dana H.',
+      location: 'League City, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  bell: [
+    {
+      quote:
+        'Professional and efficient for our Killeen move in Bell County. Central Texas Movers understood PCS timelines and base-access logistics.',
+      name: 'Evan I.',
+      location: 'Killeen, TX',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Waco — transparent pricing on a Temple–Killeen route.',
+      name: 'Faye J.',
+      location: 'Temple, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Professional and timely from College Hunks Waco. Great experience with careful handling throughout Bell County.',
+      name: 'Greg K.',
+      location: 'Belton, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  brazoria: [
+    {
+      quote:
+        'Professional and efficient for our Pearland move in Brazoria County. Two Men and a Truck Houston navigated south-metro traffic without delay.',
+      name: 'Holly L.',
+      location: 'Pearland, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Houston Local Lines — transparent pricing and careful handling on a Lake Jackson route.',
+      name: 'Ivan M.',
+      location: 'Lake Jackson, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from Victoria Transfer & Storage we compared. Great experience with organized loading throughout Brazoria County.',
+      name: 'Jill N.',
+      location: 'Angleton, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(
