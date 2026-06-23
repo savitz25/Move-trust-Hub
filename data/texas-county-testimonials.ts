@@ -2551,6 +2551,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  young: [
+    {
+      quote:
+        'Professional for our remote North Texas move in Graham. The Wichita Falls crew confirmed Young County coverage and handled our ranch driveway without damaging landscaping.',
+      name: 'Vince A.',
+      location: 'Graham, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in North Texas from the Abilene team. Reliable in remote Young County with careful handling and clear travel-fee explanations.',
+      name: 'Wanda B.',
+      location: 'Graham, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  frio: [
+    {
+      quote:
+        'Professional for our remote South Texas move near Pearsall. The San Antonio crew confirmed Frio County service and treated our ranch house carefully around tight halls.',
+      name: 'Xavier C.',
+      location: 'Pearsall, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the Laredo team on a longer South Texas route with steady communication throughout.',
+      name: 'Yolanda D.',
+      location: 'Pearsall, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'deaf-smith': [
+    {
+      quote:
+        'Professional for our remote Panhandle move in Hereford. The Amarillo crew confirmed Deaf Smith County coverage and navigated our ranch road without issues.',
+      name: 'Zack E.',
+      location: 'Hereford, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in the Panhandle from Lubbock. Reliable in remote Hereford with careful handling on a longer High Plains regional route.',
+      name: 'Amy F.',
+      location: 'Hereford, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  eastland: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Eastland. The Abilene team planned ranch access ahead of time and protected our floors through the whole load.',
+      name: 'Brian G.',
+      location: 'Eastland, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the Fort Worth crew on an Eastland County route with upfront travel-fee disclosure.',
+      name: 'Cathy H.',
+      location: 'Eastland, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  andrews: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Andrews. The Odessa crew handled oilfield-area access challenges and kept our household goods organized from start to finish.',
+      name: 'Derek I.',
+      location: 'Andrews, TX',
+      rating: 5,
+      moveType: 'Oilfield',
+    },
+    {
+      quote:
+        'Professional service in West Texas from Midland. Reliable in remote Andrews County with careful handling on a Permian Basin regional route.',
+      name: 'Eva J.',
+      location: 'Andrews, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  bosque: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Meridian. The Waco crew confirmed Bosque County service and managed our ranch driveway with careful handling throughout.',
+      name: 'Frank K.',
+      location: 'Meridian, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from a second Waco provider we compared. They wrapped furniture well and stayed organized on a small-market schedule.',
+      name: 'Gina L.',
+      location: 'Meridian, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  burleson: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Caldwell. The College Station crew confirmed Burleson County coverage and finished our farmhouse move in one organized day.',
+      name: 'Hank M.',
+      location: 'Caldwell, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from the Waco team. Reliable in remote Burleson County with careful handling and clear travel-fee explanations.',
+      name: 'Iris N.',
+      location: 'Caldwell, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  freestone: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Fairfield. The Waco crew understood rural Freestone County access and finished on a tight one-day timeline.',
+      name: 'Joel O.',
+      location: 'Fairfield, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Palestine. Reliable in remote Freestone County with careful handling and steady communication on a longer regional route.',
+      name: 'Kelly P.',
+      location: 'Fairfield, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  calhoun: [
+    {
+      quote:
+        'Professional for our coastal move in Port Lavaca. The Victoria crew confirmed Calhoun County service and used floor protection through our bayfront home.',
+      name: 'Luis Q.',
+      location: 'Port Lavaca, TX',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Careful handling from the Corpus Christi team on a Calhoun County route. They discussed hurricane-season scheduling upfront and delivered without damage.',
+      name: 'Megan R.',
+      location: 'Port Lavaca, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  gonzales: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Gonzales. The San Antonio crew confirmed county coverage and handled our ranch property access without tearing up the driveway.',
+      name: 'Nate S.',
+      location: 'Gonzales, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Victoria. Reliable in remote Gonzales County with careful wrapping and organized loading on a longer route.',
+      name: 'Olivia T.',
+      location: 'Gonzales, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

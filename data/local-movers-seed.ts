@@ -6087,6 +6087,48 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Lubbock',
     website: 'https://twomenandatruck.com/movers/tx/lubbock',
   },
+  'two-men-and-a-truck-amarillo': {
+    id: 'two-men-and-a-truck-amarillo',
+    name: 'Two Men and a Truck Amarillo',
+    rating: 4.6,
+    reviewCount: 310,
+    shortDescription:
+      'Amarillo franchise serving Deaf Smith County, Hereford, and rural Texas Panhandle ranch properties.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Amarillo',
+    website: 'https://twomenandatruck.com/movers/tx/amarillo',
+  },
+  'two-men-and-a-truck-fort-worth': {
+    id: 'two-men-and-a-truck-fort-worth',
+    name: 'Two Men and a Truck Fort Worth',
+    rating: 4.6,
+    reviewCount: 820,
+    shortDescription:
+      'Fort Worth–DFW franchise covering Eastland County and rural North Central Texas regional routes.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Fort Worth',
+    website: 'https://twomenandatruck.com/movers/tx/fort-worth',
+  },
+  'a-action-moving-palestine': {
+    id: 'a-action-moving-palestine',
+    name: 'A Action Moving & Storage',
+    rating: 4.5,
+    reviewCount: 142,
+    shortDescription:
+      'Palestine-based mover serving Freestone County, Fairfield, and rural East Texas relocations.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Palestine',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
