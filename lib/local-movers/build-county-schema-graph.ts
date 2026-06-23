@@ -8,7 +8,9 @@ import {
   SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   TENNESSEE_COUNTY_CONTENT_UPDATED,
+  ALABAMA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
+import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -65,6 +67,12 @@ function resolveContentModified(county: LocalCounty): string {
     getTennesseeCountyResearch(county.slug)
   ) {
     return TENNESSEE_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'alabama' &&
+    getAlabamaCountyResearch(county.slug)
+  ) {
+    return ALABAMA_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

@@ -1199,6 +1199,58 @@ export const alabamaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
         moveType: 'Apartment',
       },
     ],
+    madison: [
+      {
+        quote:
+          'Two Men and a Truck Huntsville handled our Madison relocation professionally — on time, efficient, and extremely careful with our belongings throughout Madison County.',
+        name: 'Jennifer L.',
+        location: 'Madison, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Black Tie Moving served our Research Park corridor move efficiently — fast, professional, and reliable with careful handling of high-value items.',
+        name: 'Marcus D.',
+        location: 'Huntsville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Madison County coverage and delivered excellent Huntsville-metro service — professional crew with no surprise fees.',
+        name: 'Priya S.',
+        location: 'Huntsville, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    mobile: [
+      {
+        quote:
+          'Coleman Worldwide Moving handled our Mobile relocation professionally — on time, efficient, and extremely careful with coastal-area furniture throughout Mobile County.',
+        name: 'Thomas W.',
+        location: 'Mobile, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Handy Guys Moving served our Saraland move efficiently — fast, professional, and reliable with careful military-relocation handling.',
+        name: 'Keisha B.',
+        location: 'Saraland, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Griner Moving Services confirmed Mobile County coverage and delivered excellent Gulf Coast service in Theodore — professional crew with transparent pricing.',
+        name: 'Robert C.',
+        location: 'Theodore, AL',
+        rating: 5,
+        moveType: 'Condo',
+      },
+    ],
     macon: [
       {
         quote:

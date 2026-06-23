@@ -28,6 +28,7 @@ const CURATED_STATES = [
   'florida',
   'north-carolina',
   'tennessee',
+  'alabama',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -40,6 +41,9 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'tennessee', countySlug: 'shelby', expectedCity: 'Memphis' },
   { stateSlug: 'tennessee', countySlug: 'davidson', expectedCity: 'Nashville' },
   { stateSlug: 'tennessee', countySlug: 'knox', expectedCity: 'Knoxville' },
+  { stateSlug: 'alabama', countySlug: 'jefferson', expectedCity: 'Birmingham' },
+  { stateSlug: 'alabama', countySlug: 'madison', expectedCity: 'Huntsville' },
+  { stateSlug: 'alabama', countySlug: 'mobile', expectedCity: 'Mobile' },
 ];
 
 let totalIssues = 0;

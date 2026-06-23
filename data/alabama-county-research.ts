@@ -790,6 +790,40 @@ export const alabamaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for rural moves before booking.',
     ],
   },
+  madison: {
+    marketNotes:
+      "Madison County is Alabama's third-largest county and the core of the Huntsville metropolitan area, with exceptional growth driven by aerospace, defense (Redstone Arsenal), tech, and suburban residential expansion across Madison and Huntsville.",
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Madison County pricing reflects Huntsville-metro crew demand, Research Park and Redstone Arsenal PCS relocations, and strong competition among North Alabama full-service providers.',
+    },
+    tips: [
+      'Verify coverage for Huntsville, Madison, and Research Park corridor areas before booking.',
+      'Defense and tech-corridor traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and military relocations before booking.',
+      'Book early for peak seasons, month-end lease turnover, and PCS windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mobile: {
+    marketNotes:
+      "Mobile County is Alabama's only major coastal port county with strong military, maritime, and residential demand across Mobile, Prichard, and Saraland, plus frequent cross-county moves to Baldwin's Eastern Shore.",
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,100',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Mobile County pricing reflects Gulf Coast humidity handling, port and military relocation demand, hurricane-season scheduling constraints, and competition among established coastal full-service providers.',
+    },
+    tips: [
+      'Verify coverage for Mobile, Prichard, Saraland, and Theodore areas before booking.',
+      'Coastal humidity and hurricane-season windows affect scheduling — confirm buffers.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak summer and PCS turnover windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
   macon: {
     marketNotes:
       'Macon County is a historic county in East Alabama with strong educational (Tuskegee University) and residential demand.',

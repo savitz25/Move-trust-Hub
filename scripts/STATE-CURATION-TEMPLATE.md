@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 ## Reference states (audit-complete)
 
@@ -15,6 +15,33 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
 | Texas | 254/254 | 5 | 10 (cap 10) | 16 counties | `count-texas-movers.ts`, `apply-texas-mover-expansion.ts` |
 | Tennessee | 95/95 | 5 | 10 (cap 10) | 20 counties | `count-tennessee-movers.ts`, `apply-tennessee-mover-expansion.ts` |
+| Alabama | 67/67 | 5 | 10 (cap 10) | 15 counties | `count-alabama-movers.ts`, `apply-alabama-mover-expansion.ts` |
+
+### Alabama metro pools (`data/local-movers-seed.ts`)
+
+- `birmingham-metro-al` — Birmingham MSA / Jefferson–Shelby corridor
+- `huntsville-metro-al` — Huntsville / Madison / Research Park growth corridor
+- `mobile-metro-al` — Mobile metro / Gulf Coast port and military corridor
+- `baldwin-coastal-al` — Baldwin County / Eastern Shore and Gulf Coast
+- `tuscaloosa-metro-al` — Tuscaloosa / Northport university corridor
+- `montgomery-metro-al` — Montgomery capital / Maxwell-Gunter military corridor
+- `auburn-opelika-metro-al` — Auburn–Opelika university corridor
+- `decatur-metro-al` — Decatur / Tennessee River industrial corridor
+- `anniston-metro-al` — Anniston–Oxford / Calhoun County
+- `dothan-metro-al` — Dothan / Wiregrass hub
+- `gadsden-metro-al` — Gadsden / Etowah County
+- `florence-shoals-metro-al` — Florence–Muscle Shoals / NW Alabama
+- Rural pools: `eutaw-metro-al`, `camden-metro-al`, `chatom-metro-al`, etc. (one per remote county seat)
+
+### Alabama major counties (10 movers each)
+
+`jefferson`, `madison`, `mobile`, `baldwin`, `tuscaloosa`, `shelby`, `montgomery`, `lee`, `morgan`, `calhoun`, `limestone`, `etowah`, `houston`
+
+### Alabama sitemap priority 0.85 (15 counties)
+
+`jefferson`, `madison`, `mobile`, `baldwin`, `tuscaloosa`, `shelby`, `montgomery`, `lee`, `limestone`, `morgan`, `calhoun`, `houston`, `etowah`, `marshall`, `st-clair`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/alabama.xml` (68 URLs: hub + 67 counties). Do **not** use `/sitemap-local/alabama.xml` (legacy path redirects to canonical).
 
 ### Tennessee metro pools (`data/local-movers-seed.ts`)
 

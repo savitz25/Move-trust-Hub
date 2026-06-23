@@ -13395,6 +13395,22 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'rs-moving-warehousing-mobile',
     ],
   },
+  'mobile-metro-al': {
+    id: 'mobile-metro-al',
+    label: 'Mobile Metro / Gulf Coast',
+    moverIds: [
+      'coleman-worldwide-moving-mobile',
+      'handy-guys-moving-mobile',
+      'griner-moving-services-mobile',
+      'all-my-sons-mobile',
+      'j-w-moving-storage-mobile',
+      'rs-moving-warehousing-mobile',
+      'two-men-and-a-truck-baldwin',
+      'motivated-movers-baldwin',
+      'college-hunks-moving-baldwin',
+      'chosen-one-movers-baldwin',
+    ],
+  },
   'tuscaloosa-metro-al': {
     id: 'tuscaloosa-metro-al',
     label: 'Tuscaloosa Metro',
