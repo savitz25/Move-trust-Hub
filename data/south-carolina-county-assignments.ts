@@ -149,6 +149,46 @@ const CURATED_SC_COUNTIES: Record<string, string[]> = {
     'adsi-moving-augusta',
     'dailey-moving-storage-aiken',
   ],
+  williamsburg: [
+    'two-men-and-a-truck-florence',
+    'move-it-williams-florence',
+    'smooth-move-charleston',
+  ],
+  marion: [
+    'two-men-and-a-truck-florence',
+    'move-it-williams-florence',
+    'all-my-sons-myrtle-beach',
+  ],
+  dillon: [
+    'two-men-and-a-truck-florence',
+    'move-it-williams-florence',
+    'two-men-and-a-truck-columbia',
+  ],
+  union: [
+    'two-men-and-a-truck-spartanburg',
+    'two-men-and-a-truck-greenville',
+    'college-hunks-moving-greenville',
+  ],
+  marlboro: [
+    'two-men-and-a-truck-florence',
+    'move-it-williams-florence',
+    'coleman-worldwide-columbia',
+  ],
+  abbeville: [
+    'two-men-and-a-truck-greenville',
+    'swamp-rabbit-moving-greenville',
+    'two-men-and-a-truck-columbia',
+  ],
+  barnwell: [
+    'two-men-and-a-truck-aiken',
+    'budget-movers-augusta',
+    'dailey-moving-storage-aiken',
+  ],
+  fairfield: [
+    'two-men-and-a-truck-columbia',
+    'jega-movers-columbia',
+    'gentlemen-movers-columbia',
+  ],
 };
 
 export const southCarolinaCountyMoverAssignments: CountyMoverAssignment[] =

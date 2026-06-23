@@ -25,6 +25,14 @@ export const southCarolinaCountyOverrides: Partial<
   chester: { seat: 'Chester', metro: 'charlotte-metro-sc' },
   clarendon: { seat: 'Manning', metro: 'sumter-metro-sc' },
   edgefield: { seat: 'Edgefield', metro: 'augusta-aiken-metro-sc' },
+  williamsburg: { seat: 'Kingstree', metro: 'florence-metro-sc' },
+  marion: { seat: 'Marion', metro: 'florence-metro-sc' },
+  dillon: { seat: 'Dillon', metro: 'florence-metro-sc' },
+  union: { seat: 'Union', metro: 'spartanburg-metro-sc' },
+  marlboro: { seat: 'Bennettsville', metro: 'florence-metro-sc' },
+  abbeville: { seat: 'Abbeville', metro: 'greenville-metro-sc' },
+  barnwell: { seat: 'Barnwell', metro: 'augusta-aiken-metro-sc' },
+  fairfield: { seat: 'Winnsboro', metro: 'sumter-metro-sc' },
 };
 
 export function applySouthCarolinaCountyOverrides(

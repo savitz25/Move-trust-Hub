@@ -557,6 +557,214 @@ export const southCarolinaCountyTestimonials: Record<
       moveType: 'Townhome',
     },
   ],
+  williamsburg: [
+    {
+      quote:
+        'Two Men and a Truck Florence handled our Kingstree rural relocation professionally — careful with long driveway access and transparent Pee Dee pricing.',
+      name: 'Earl W.',
+      location: 'Kingstree, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Move It Williams confirmed Williamsburg County coverage and delivered reliable packing and loading despite rural Lowcountry access challenges.',
+      name: 'Gloria P.',
+      location: 'Kingstree, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Smooth Move Charleston traveled from the Lowcountry and served our Kingstree move with professional crews and no surprise fees.',
+      name: 'Howard T.',
+      location: 'Kingstree, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  marion: [
+    {
+      quote:
+        'Two Men and a Truck Florence handled our Marion relocation professionally — on time, careful with our belongings, and transparent Pee Dee pricing.',
+      name: 'Irene S.',
+      location: 'Marion, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Move It Williams served our rural Marion County move with excellent communication and careful handling on unpaved driveway access.',
+      name: 'Jack R.',
+      location: 'Marion, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'All My Sons Myrtle Beach confirmed Marion County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Kathy L.',
+      location: 'Marion, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  dillon: [
+    {
+      quote:
+        'Two Men and a Truck Florence handled our Dillon relocation professionally — careful handling and transparent Pee Dee pricing throughout Dillon County.',
+      name: 'Leonard B.',
+      location: 'Dillon, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Move It Williams served our Dillon move with excellent communication and careful furniture wrapping despite rural I-95 corridor access.',
+      name: 'Mildred C.',
+      location: 'Dillon, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbia covered our Dillon County relocation when Florence crews were booked — upfront about Midlands travel time.',
+      name: 'Norman D.',
+      location: 'Dillon, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  union: [
+    {
+      quote:
+        'Two Men and a Truck Spartanburg handled our Union rural relocation professionally — excellent crew communication and careful furniture wrapping.',
+      name: 'Opal F.',
+      location: 'Union, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Greenville served our Union County move efficiently with clear communication about Upstate travel time.',
+      name: 'Perry G.',
+      location: 'Union, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville confirmed Union County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Paula H.',
+      location: 'Union, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  marlboro: [
+    {
+      quote:
+        'Two Men and a Truck Florence handled our Bennettsville relocation professionally — careful with rural driveway access and transparent Pee Dee pricing.',
+      name: 'Raymond J.',
+      location: 'Bennettsville, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Move It Williams served our Marlboro County move with excellent communication and careful handling near the North Carolina border.',
+      name: 'Sylvia K.',
+      location: 'Bennettsville, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Coleman Worldwide confirmed Bennettsville coverage and delivered reliable packing and loading with transparent Columbia-area pricing.',
+      name: 'Theodore M.',
+      location: 'Bennettsville, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  abbeville: [
+    {
+      quote:
+        'Two Men and a Truck Greenville handled our Abbeville relocation professionally — careful handling and transparent Upstate pricing throughout Abbeville County.',
+      name: 'Ruth N.',
+      location: 'Abbeville, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Swamp Rabbit Moving served our rural Abbeville County move with excellent communication and careful foothill driveway planning.',
+      name: 'Vernon O.',
+      location: 'Abbeville, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbia covered our Abbeville relocation when Greenville crews were booked — upfront about Midlands travel time.',
+      name: 'Wanda P.',
+      location: 'Abbeville, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  barnwell: [
+    {
+      quote:
+        'Two Men and a Truck Aiken handled our Barnwell rural relocation professionally — careful handling and transparent Augusta-border pricing.',
+      name: 'Curtis Q.',
+      location: 'Barnwell, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Budget Movers Augusta served our Barnwell County move with excellent communication and careful furniture wrapping despite cross-border travel.',
+      name: 'Yvonne R.',
+      location: 'Barnwell, SC',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Dailey Moving & Storage confirmed Barnwell County coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Zachary S.',
+      location: 'Barnwell, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  fairfield: [
+    {
+      quote:
+        'Two Men and a Truck Columbia handled our Winnsboro relocation professionally — careful with historic home access and transparent Midlands pricing.',
+      name: 'Ann T.',
+      location: 'Winnsboro, SC',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'JEGA Movers served our Fairfield County move with excellent communication and careful handling despite rural driveway challenges.',
+      name: 'Brian U.',
+      location: 'Winnsboro, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentlemen Movers confirmed Winnsboro coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Cora V.',
+      location: 'Winnsboro, SC',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
 };
 
 export function getSouthCarolinaCountyTestimonials(

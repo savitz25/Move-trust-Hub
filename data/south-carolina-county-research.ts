@@ -366,6 +366,142 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Aiken and Augusta-area crews.',
       ],
     },
+    williamsburg: {
+      marketNotes:
+        'Williamsburg County is a rural Lowcountry county with Kingstree as the seat and steady residential demand from Pee Dee and Grand Strand corridor relocations.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Williamsburg County pricing reflects rural Lowcountry access, limited local storage options, and crew travel from Florence and Charleston hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Kingstree and surrounding Williamsburg County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    marion: {
+      marketNotes:
+        'Marion County is a rural Pee Dee county with Marion as the seat and residential demand served primarily by Florence-area regional crews.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Marion County pricing reflects Pee Dee rural access, limited local mover availability, and crew travel from Florence and Myrtle Beach bases.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Marion and surrounding Marion County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Florence-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    dillon: {
+      marketNotes:
+        'Dillon County is a rural Pee Dee county with Dillon as the seat and residential demand along the I-95 and Florence corridors.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Dillon County pricing reflects Pee Dee rural access, I-95 corridor travel, and crew dispatch from Florence and Columbia hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Dillon and surrounding Dillon County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Florence and Columbia-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    union: {
+      marketNotes:
+        'Union County is a rural Upstate county with Union as the seat and residential demand served by Spartanburg and Greenville regional crews.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Union County pricing reflects Upstate rural access, limited local mover availability, and crew travel from Spartanburg and Greenville bases.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Union and surrounding Union County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Spartanburg and Greenville-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    marlboro: {
+      marketNotes:
+        'Marlboro County is a rural Pee Dee county with Bennettsville as the seat and residential demand near the North Carolina border.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Marlboro County pricing reflects Pee Dee rural access, border-county crew travel, and dispatch from Florence and Columbia hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Bennettsville and surrounding Marlboro County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Florence-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    abbeville: {
+      marketNotes:
+        'Abbeville County is a rural Upstate county with Abbeville as the seat and residential demand between Greenwood and Greenville corridors.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Abbeville County pricing reflects Upstate rural access, foothill driveway logistics, and crew travel from Greenville and Columbia bases.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Abbeville and surrounding Abbeville County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Greenville-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    barnwell: {
+      marketNotes:
+        'Barnwell County is a rural county on the South Carolina side of the Augusta metro with Barnwell as the seat and steady agricultural and residential demand.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Barnwell County pricing reflects Augusta-border rural access, agricultural property logistics, and cross-border Aiken-Augusta crew travel.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Barnwell and surrounding Barnwell County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Aiken and Augusta-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
+    fairfield: {
+      marketNotes:
+        'Fairfield County is a rural Midlands county with Winnsboro as the seat and residential demand between Columbia and Charlotte corridors.',
+      costs: {
+        studioRange: '$550–$1,100',
+        familyRange: '$1,900–$4,200',
+        avgHourly: '$100–$150/hr for a 2-person crew',
+        note: 'Fairfield County pricing reflects Midlands rural access, historic Winnsboro property logistics, and crew travel from Columbia-area hubs.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm truck size and driveway clearance before booking.',
+        'Verify explicit regional service to Winnsboro and surrounding Fairfield County addresses.',
+        'Local storage is very limited — plan move timing and confirm interim storage options early.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
+        'Confirm insurance, valuation, and credentials for rural moves before signing.',
+      ],
+    },
   };
 
 export function getSouthCarolinaCountyResearch(
