@@ -59,6 +59,9 @@ const SC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   beaufort: ['jasper', 'hampton', 'colleton', 'charleston', 'berkeley', 'dorchester'],
   berkeley: ['charleston', 'dorchester', 'georgetown', 'horry', 'williamsburg', 'orangeburg'],
   lexington: ['richland', 'saluda', 'newberry', 'fairfield', 'orangeburg', 'calhoun'],
+  charleston: ['berkeley', 'dorchester', 'beaufort', 'jasper', 'colleton', 'georgetown'],
+  richland: ['lexington', 'fairfield', 'kershaw', 'sumter', 'orangeburg', 'calhoun'],
+  greenville: ['anderson', 'spartanburg', 'pickens', 'laurens', 'abbeville', 'union'],
 };
 
 export function getSouthCarolinaNearbyCounties(

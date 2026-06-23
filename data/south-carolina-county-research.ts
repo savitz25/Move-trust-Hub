@@ -740,6 +740,57 @@ export const southCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
       ],
     },
+    charleston: {
+      marketNotes:
+        'Charleston County is a major coastal economic and tourism hub with high residential, historic, and military-related moving demand across Charleston, Mount Pleasant, and James Island.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,800',
+        avgHourly: '$120–$175/hr for a 2-person crew',
+        note: 'Charleston County pricing reflects Lowcountry coastal demand, historic-district access logistics, bridge traffic, and peak tourist season scheduling.',
+      },
+      tips: [
+        'Verify explicit coverage for Charleston, Mount Pleasant, and James Island before booking.',
+        'Coastal access, bridge traffic, and hurricane preparedness are critical — confirm weather contingency policies.',
+        'Confirm insurance and valuation for high-value historic and waterfront properties before booking.',
+        'Book early for peak tourist and moving seasons.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    richland: {
+      marketNotes:
+        'Richland County is the heart of the state capital region with strong government, military, and university-related moving activity centered on Columbia.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,200',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Richland County pricing reflects Columbia capital-region demand, Fort Jackson PCS seasonality, university corridor traffic, and Midlands crew availability.',
+      },
+      tips: [
+        'Verify explicit coverage for Columbia, Irmo, and Fort Jackson areas before booking.',
+        'Government and university traffic impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value and military relocations before booking.',
+        'Book early for peak seasons and military PCS windows.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Columbia-area crews.',
+      ],
+    },
+    greenville: {
+      marketNotes:
+        'Greenville County is the largest and one of the fastest-growing counties in the Upstate with vibrant urban and suburban demand in Greenville, Greer, and Mauldin.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,300',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Greenville County pricing reflects Upstate metro growth, downtown and suburban turnover, and Greenville-Spartanburg corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Greenville, Greer, and Mauldin areas before booking.',
+        'Upstate highway and urban traffic impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and compare hourly vs flat-rate quotes from Greenville and Spartanburg-area crews.',
+      ],
+    },
   };
 
 export function getSouthCarolinaCountyResearch(

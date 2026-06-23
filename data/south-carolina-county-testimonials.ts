@@ -1129,6 +1129,84 @@ export const southCarolinaCountyTestimonials: Record<
       moveType: 'Family home',
     },
   ],
+  charleston: [
+    {
+      quote:
+        'Smooth Move Charleston handled our downtown relocation with outstanding professionalism and care — best moving experience we have had in Charleston County.',
+      name: 'William A.',
+      location: 'Charleston, SC',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Charleston served our Mount Pleasant move with excellent bridge-traffic planning and careful furniture wrapping.',
+      name: 'Catherine B.',
+      location: 'Mount Pleasant, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Charleston confirmed James Island coverage and delivered reliable packing and loading with transparent Lowcountry pricing.',
+      name: 'Daniel C.',
+      location: 'James Island, SC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  richland: [
+    {
+      quote:
+        'Two Men and a Truck Columbia handled our Columbia relocation professionally — on time, careful with our belongings, and transparent Midlands pricing throughout Richland County.',
+      name: 'Emily D.',
+      location: 'Columbia, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Coleman Worldwide served our Fort Jackson corridor PCS move with excellent military documentation support and careful handling.',
+      name: 'Frank E.',
+      location: 'Columbia, SC',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'JEGA Movers confirmed Richland County coverage and delivered reliable packing and loading with no surprise fees despite university-area traffic.',
+      name: 'Grace F.',
+      location: 'Columbia, SC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  greenville: [
+    {
+      quote:
+        'Two Men and a Truck Greenville handled our downtown Greenville relocation professionally — excellent crew communication and transparent Upstate pricing.',
+      name: 'Henry G.',
+      location: 'Greenville, SC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Swamp Rabbit Moving served our Greer move with top-rated local service, careful handling, and excellent urban traffic planning.',
+      name: 'Isabel H.',
+      location: 'Greer, SC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Greenville confirmed Mauldin coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Jack I.',
+      location: 'Mauldin, SC',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
 };
 
 export function getSouthCarolinaCountyTestimonials(

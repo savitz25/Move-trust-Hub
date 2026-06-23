@@ -294,6 +294,36 @@ const CURATED_SC_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-aiken',
     'smooth-move-charleston',
   ],
+  charleston: [
+    'smooth-move-charleston',
+    'two-men-and-a-truck-charleston',
+    'college-hunks-moving-charleston',
+    'extra-muscle-moving-charleston',
+    'burbage-transport-charleston',
+    'nu-lyfe-moving-charleston',
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+  ],
+  richland: [
+    'two-men-and-a-truck-columbia',
+    'college-hunks-moving-columbia',
+    'jega-movers-columbia',
+    'gentlemen-movers-columbia',
+    'coleman-worldwide-columbia',
+    'anderson-transfer-sumter',
+    'smooth-move-charleston',
+    'two-men-and-a-truck-aiken',
+  ],
+  greenville: [
+    'two-men-and-a-truck-greenville',
+    'swamp-rabbit-moving-greenville',
+    'college-hunks-moving-greenville',
+    'two-men-and-a-truck-spartanburg',
+    'tiger-town-movers-pickens',
+    'two-men-and-a-truck-aiken',
+    'dailey-moving-storage-aiken',
+    'two-men-and-a-truck-columbia',
+  ],
 };
 
 export const southCarolinaCountyMoverAssignments: CountyMoverAssignment[] =

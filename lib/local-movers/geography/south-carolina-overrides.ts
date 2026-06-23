@@ -47,6 +47,9 @@ export const southCarolinaCountyOverrides: Partial<
   beaufort: { seat: 'Beaufort', metro: 'charleston-metro-sc' },
   berkeley: { seat: 'Moncks Corner', metro: 'charleston-metro-sc' },
   lexington: { seat: 'Lexington', metro: 'sumter-metro-sc' },
+  charleston: { seat: 'Charleston', metro: 'charleston-metro-sc' },
+  richland: { seat: 'Columbia', metro: 'sumter-metro-sc' },
+  greenville: { seat: 'Greenville', metro: 'greenville-metro-sc' },
 };
 
 export function applySouthCarolinaCountyOverrides(

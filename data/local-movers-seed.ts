@@ -8676,12 +8676,14 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'charleston-metro-sc',
     label: 'Charleston Metro',
     moverIds: [
-      'extra-muscle-moving-charleston',
       'smooth-move-charleston',
       'two-men-and-a-truck-charleston',
       'college-hunks-moving-charleston',
+      'extra-muscle-moving-charleston',
       'burbage-transport-charleston',
       'nu-lyfe-moving-charleston',
+      'two-men-and-a-truck-savannah',
+      'bc-brothers-moving-savannah',
     ],
   },
   'greenville-metro-sc': {
@@ -8758,12 +8760,14 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
     id: 'sumter-metro-sc',
     label: 'Sumter / Midlands',
     moverIds: [
-      'anderson-transfer-sumter',
       'two-men-and-a-truck-columbia',
+      'college-hunks-moving-columbia',
       'jega-movers-columbia',
       'gentlemen-movers-columbia',
-      'college-hunks-moving-columbia',
+      'coleman-worldwide-columbia',
+      'anderson-transfer-sumter',
       'smooth-move-charleston',
+      'two-men-and-a-truck-aiken',
     ],
   },
 };
