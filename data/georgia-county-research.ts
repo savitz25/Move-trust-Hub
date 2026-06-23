@@ -2702,6 +2702,23 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
     ],
   },
+  coffee: {
+    marketNotes:
+      'Coffee County centers on Douglas in Southeast Georgia — distinct from Douglas County (Douglasville) in the Atlanta metro.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Coffee County pricing reflects rural coastal-plain access, I-75 corridor travel, and crew dispatch from Savannah and Statesboro bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Douglas and outer Coffee County properties.',
+      'Verify explicit regional service to Douglas before booking — not Douglas County (Douglasville).',
+      'Storage is very limited locally — coordinate with Savannah or Statesboro providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

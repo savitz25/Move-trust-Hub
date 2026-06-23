@@ -162,6 +162,7 @@ export const georgiaCountyOverrides: Partial<
   tift: { seat: 'Tifton', metro: 'valdosta-metro-ga' },
   ware: { seat: 'Waycross', metro: 'savannah-metro-ga' },
   webster: { seat: 'Preston', metro: 'albany-metro-ga' },
+  coffee: { seat: 'Douglas', metro: 'savannah-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -169,6 +169,7 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   tift: ['berrien', 'irwin', 'turner', 'cook', 'colquitt', 'lowndes'],
   ware: ['pierce', 'appling', 'bacon', 'brantley', 'coffee', 'atkinson'],
   webster: ['sumter', 'macon', 'marion', 'schley', 'randolph', 'quitman'],
+  coffee: ['atkinson', 'ben-hill', 'irwin', 'ware', 'jeff-davis', 'appling'],
 };
 
 export function getGeorgiaNearbyCounties(

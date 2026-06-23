@@ -868,6 +868,11 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'home-moving-solution-albany',
     'two-men-and-a-truck-albany',
   ],
+  coffee: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

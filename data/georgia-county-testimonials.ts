@@ -4139,6 +4139,32 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  coffee: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Douglas and handled our Coffee County move with professional care, clear travel fees, and careful furniture wrapping.',
+      name: 'Rachel T.',
+      location: 'Douglas, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving served our Douglas relocation from Savannah with careful handling and transparent Southeast Georgia rural-route pricing.',
+      name: 'William A.',
+      location: 'Douglas, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Badie Moving Company traveled from Statesboro and finished our Coffee County move on schedule with upfront pricing and reliable packing.',
+      name: 'Patricia L.',
+      location: 'Douglas, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(
