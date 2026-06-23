@@ -52,6 +52,22 @@ export const louisianaCountyOverrides: Partial<
   'east-carroll': { seat: 'Lake Providence', metro: 'monroe-metro-la' },
   cameron: { seat: 'Cameron', metro: 'lake-charles-metro-la' },
   tensas: { seat: 'St. Joseph', metro: 'monroe-metro-la' },
+  morehouse: { seat: 'Bastrop', metro: 'monroe-metro-la' },
+  allen: { seat: 'Oberlin', metro: 'alexandria-metro-la' },
+  plaquemines: { seat: 'Pointe à la Hache', metro: 'new-orleans-metro-la' },
+  grant: { seat: 'Colfax', metro: 'alexandria-metro-la' },
+  sabine: { seat: 'Many', metro: 'natchitoches-metro-la' },
+  union: { seat: 'Farmerville', metro: 'monroe-metro-la' },
+  richland: { seat: 'Rayville', metro: 'monroe-metro-la' },
+  assumption: { seat: 'Napoleonville', metro: 'baton-rouge-metro-la' },
+  'pointe-coupee': { seat: 'New Roads', metro: 'baton-rouge-metro-la' },
+  franklin: { seat: 'Winnsboro', metro: 'monroe-metro-la' },
+  'east-feliciana': { seat: 'Clinton', metro: 'baton-rouge-metro-la' },
+  'st-james': { seat: 'Convent', metro: 'baton-rouge-metro-la' },
+  concordia: { seat: 'Vidalia', metro: 'monroe-metro-la' },
+  jackson: { seat: 'Jonesboro', metro: 'ruston-metro-la' },
+  winn: { seat: 'Winnfield', metro: 'alexandria-metro-la' },
+  'la-salle': { seat: 'Jena', metro: 'alexandria-metro-la' },
 };
 
 export function applyLouisianaCountyOverrides(county: LocalCounty): LocalCounty {

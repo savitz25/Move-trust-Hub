@@ -824,6 +824,278 @@ export const louisianaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for rural moves before booking.',
     ],
   },
+  morehouse: {
+    marketNotes:
+      'Morehouse Parish is a rural Northeast Louisiana parish with agricultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Morehouse Parish pricing reflects Bastrop rural demand and cross-coverage from Monroe, Ruston, and Alexandria providers.',
+    },
+    tips: [
+      'Verify coverage for Bastrop and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  allen: {
+    marketNotes:
+      'Allen Parish is a rural Central Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Allen Parish pricing reflects Oberlin rural demand and cross-coverage from Alexandria, Lake Charles, and Beauregard providers.',
+    },
+    tips: [
+      'Verify coverage for Oberlin and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  plaquemines: {
+    marketNotes:
+      'Plaquemines Parish is a coastal parish with strong energy, shipping, and residential demand.',
+    costs: {
+      studioRange: '$750–$1,550',
+      familyRange: '$2,700–$6,000',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Plaquemines Parish pricing reflects Belle Chasse coastal demand, industrial relocation volume, and Greater New Orleans metro cross-coverage.',
+    },
+    tips: [
+      'Verify coverage for Belle Chasse and surrounding areas before booking.',
+      'Coastal and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant Parish is a rural Central Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Grant Parish pricing reflects Colfax rural demand and cross-coverage from Alexandria and Natchitoches providers.',
+    },
+    tips: [
+      'Verify coverage for Colfax and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sabine: {
+    marketNotes:
+      'Sabine Parish is a rural Northwest Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Sabine Parish pricing reflects Many rural demand and cross-coverage from Shreveport–Bossier and Natchitoches providers.',
+    },
+    tips: [
+      'Verify coverage for Many and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union Parish is a rural Northeast Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Union Parish pricing reflects Farmerville rural demand and cross-coverage from Monroe and Ruston providers.',
+    },
+    tips: [
+      'Verify coverage for Farmerville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  richland: {
+    marketNotes:
+      'Richland Parish is a rural Northeast Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Richland Parish pricing reflects Rayville rural demand and cross-coverage from Monroe and Bastrop-area providers.',
+    },
+    tips: [
+      'Verify coverage for Rayville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  assumption: {
+    marketNotes:
+      'Assumption Parish is a rural River Parish with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Assumption Parish pricing reflects Napoleonville river-corridor demand and cross-coverage from Baton Rouge, Houma, and Thibodaux providers.',
+    },
+    tips: [
+      'Verify coverage for Napoleonville and surrounding areas before booking.',
+      'River road traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'pointe-coupee': {
+    marketNotes:
+      'Pointe Coupee Parish is a scenic River Parish with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Pointe Coupee Parish pricing reflects New Roads river-corridor demand and cross-coverage from Baton Rouge metro providers.',
+    },
+    tips: [
+      'Verify coverage for New Roads and surrounding areas before booking.',
+      'River road traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin Parish is a rural Northeast Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Franklin Parish pricing reflects Winnsboro rural demand and cross-coverage from Monroe and Bastrop-area providers.',
+    },
+    tips: [
+      'Verify coverage for Winnsboro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'east-feliciana': {
+    marketNotes:
+      'East Feliciana Parish is a rural parish in East Louisiana with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'East Feliciana Parish pricing reflects Clinton rural demand and cross-coverage from Baton Rouge, Livingston, and Hammond providers.',
+    },
+    tips: [
+      'Verify coverage for Clinton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-james': {
+    marketNotes:
+      'St. James Parish is a River Parish with strong petrochemical and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'St. James Parish pricing reflects Lutcher and Gramercy river-corridor demand, petrochemical-industry relocation volume, and Baton Rouge metro cross-coverage.',
+    },
+    tips: [
+      'Verify coverage for Lutcher, Gramercy, and Convent areas before booking.',
+      'River road and industrial traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and hurricane/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  concordia: {
+    marketNotes:
+      'Concordia Parish is a rural parish in Northeast Louisiana along the Mississippi River with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Concordia Parish pricing reflects Vidalia and Ferriday river-corridor demand and cross-coverage from Monroe and Alexandria providers.',
+    },
+    tips: [
+      'Verify coverage for Vidalia and Ferriday areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson Parish is a rural North Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jackson Parish pricing reflects Jonesboro rural demand and cross-coverage from Monroe and Ruston providers.',
+    },
+    tips: [
+      'Verify coverage for Jonesboro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  winn: {
+    marketNotes:
+      'Winn Parish is a rural Central Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Winn Parish pricing reflects Winnfield rural demand and cross-coverage from Alexandria and Natchitoches providers.',
+    },
+    tips: [
+      'Verify coverage for Winnfield and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'la-salle': {
+    marketNotes:
+      'LaSalle Parish is a rural Central Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'LaSalle Parish pricing reflects Jena rural demand and cross-coverage from Alexandria and Monroe providers.',
+    },
+    tips: [
+      'Verify coverage for Jena and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getLouisianaCountyResearch(

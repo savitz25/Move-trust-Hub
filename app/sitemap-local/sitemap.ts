@@ -165,6 +165,22 @@ const LA_HIGH_TRAFFIC_PARISHES = new Set([
   'east-carroll',
   'cameron',
   'tensas',
+  'morehouse',
+  'allen',
+  'plaquemines',
+  'grant',
+  'sabine',
+  'union',
+  'richland',
+  'assumption',
+  'pointe-coupee',
+  'franklin',
+  'east-feliciana',
+  'st-james',
+  'concordia',
+  'jackson',
+  'winn',
+  'la-salle',
 ]);
 
 /** High-traffic MS counties — sitemap priority 0.85 */
