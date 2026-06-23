@@ -2911,6 +2911,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  hockley: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Levelland. The Lubbock crew confirmed Hockley County coverage and navigated our ranch driveway without issues.',
+      name: 'Karl O.',
+      location: 'Levelland, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second Lubbock estimate we compared. Reliable in remote Hockley County with steady communication on a longer South Plains route.',
+      name: 'Lena P.',
+      location: 'Levelland, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lampasas: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Lampasas. The Killeen crew confirmed county service and handled our ranch property access without delay.',
+      name: 'Mark Q.',
+      location: 'Lampasas, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the Austin team on a Lampasas County route. They were upfront about Hill Country travel time and finished with organized loading.',
+      name: 'Nina R.',
+      location: 'Lampasas, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  limestone: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Groesbeck. The Waco crew confirmed Limestone County coverage and managed our ranch driveway with the right truck setup.',
+      name: 'Owen S.',
+      location: 'Groesbeck, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from College Station. Reliable in remote Limestone County with careful handling on a longer regional route.',
+      name: 'Paula T.',
+      location: 'Groesbeck, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  houston: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Crockett. The Lufkin crew understood Piney Woods access and protected our floors through tight doorways.',
+      name: 'Quinn U.',
+      location: 'Crockett, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Careful handling from the Palestine team on a Houston County route. Reliable in remote Crockett with clear travel-fee disclosure and steady communication.',
+      name: 'Rita V.',
+      location: 'Crockett, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  panola: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Carthage. The Longview crew confirmed Panola County service and completed our rural relocation without rushing.',
+      name: 'Sam W.',
+      location: 'Carthage, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from a Shreveport provider. Reliable in remote Panola County with careful handling on a cross-border regional route.',
+      name: 'Tina X.',
+      location: 'Carthage, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  llano: [
+    {
+      quote:
+        'Professional for our remote Hill Country move in Llano. The Austin crew confirmed lake-country access and handled our Lake LBJ property without damage.',
+      name: 'Uma Y.',
+      location: 'Llano, TX',
+      rating: 5,
+      moveType: 'Lake home',
+    },
+    {
+      quote:
+        'Professional service in the Hill Country from Fredericksburg. Reliable in remote Llano County with careful handling on a longer regional route.',
+      name: 'Vic Z.',
+      location: 'Llano, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  bandera: [
+    {
+      quote:
+        'Professional for our remote Hill Country move in Bandera. The San Antonio crew confirmed county coverage and navigated our ranch road without tearing up the driveway.',
+      name: 'Wade A.',
+      location: 'Bandera, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a Kerrville provider we compared. Reliable in remote Bandera County with organized loading and upfront travel-fee disclosure.',
+      name: 'Xena B.',
+      location: 'Bandera, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  shelby: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Center. The Lufkin crew confirmed Shelby County service and finished our Piney Woods relocation on schedule.',
+      name: 'Yuri C.',
+      location: 'Center, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Nacogdoches. Reliable in remote Shelby County with careful handling on a longer regional route into Center.',
+      name: 'Zoe D.',
+      location: 'Center, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  brooks: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Falfurrias. The Laredo crew confirmed Brooks County coverage and handled ranch access without issues.',
+      name: 'Adam E.',
+      location: 'Falfurrias, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Corpus Christi. Reliable in remote Brooks County with careful handling and clear travel-fee disclosure.',
+      name: 'Beth F.',
+      location: 'Falfurrias, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  fayette: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in La Grange. The Austin crew confirmed Fayette County service and handled our ranch property access professionally.',
+      name: 'Carl G.',
+      location: 'La Grange, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the San Antonio team on a Fayette County route with steady communication throughout.',
+      name: 'Dana H.',
+      location: 'La Grange, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

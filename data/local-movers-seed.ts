@@ -6183,6 +6183,32 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Amarillo',
   },
+  'hart-moving-storage-lubbock': {
+    id: 'hart-moving-storage-lubbock',
+    name: 'Hart Moving & Storage',
+    rating: 4.5,
+    reviewCount: 186,
+    shortDescription:
+      'Lubbock-based mover serving Hockley County, Levelland, and rural South Plains ranch and oilfield properties.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Lubbock',
+    website: 'https://www.hartmovingandstorage.com/',
+  },
+  'central-texas-movers-killeen': {
+    id: 'central-texas-movers-killeen',
+    name: 'Central Texas Movers',
+    rating: 4.6,
+    reviewCount: 142,
+    shortDescription:
+      'Killeen-area mover serving Lampasas County and remote Central Texas ranch and residential relocations.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Killeen',
+    website: 'https://www.centraltexasmovers.net/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

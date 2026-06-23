@@ -126,6 +126,16 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   colorado: ['houston-local-lines', 'victoria-transfer-storage'],
   gray: ['two-men-and-a-truck-amarillo', 'aardvark-movers-amarillo'],
   moore: ['two-men-and-a-truck-amarillo', 'aardvark-movers-amarillo'],
+  hockley: ['two-men-and-a-truck-lubbock', 'hart-moving-storage-lubbock'],
+  lampasas: ['central-texas-movers-killeen', 'two-men-and-a-truck-austin'],
+  limestone: ['two-men-and-a-truck-waco', 'little-guys-movers-college-station'],
+  houston: ['crossin-moving-lufkin', 'a-action-moving-palestine'],
+  panola: ['higgs-moving-longview', 'shreveport-la-area-moving'],
+  llano: ['two-men-and-a-truck-austin', 'fredericksburg-area-moving'],
+  bandera: ['two-men-and-a-truck-san-antonio', 'kerrville-area-moving'],
+  shelby: ['crossin-moving-lufkin', 'nacogdoches-area-moving'],
+  brooks: ['south-texas-moving-laredo', 'two-men-and-a-truck-corpus-christi'],
+  fayette: ['two-men-and-a-truck-austin', 'two-men-and-a-truck-san-antonio'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(
