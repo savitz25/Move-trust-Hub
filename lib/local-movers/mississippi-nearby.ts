@@ -16,6 +16,13 @@ const MS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   desoto: ['marshall', 'tate', 'tunica', 'benton', 'panola', 'quitman'],
   rankin: ['hinds', 'madison', 'scott', 'smith', 'simpson', 'copiah'],
   jackson: ['harrison', 'stone', 'george', 'greene', 'perry', 'wayne'],
+  madison: ['hinds', 'rankin', 'attala', 'holmes', 'yazoo', 'leake'],
+  lee: ['pontotoc', 'union', 'itawamba', 'prentiss', 'monroe', 'chickasaw'],
+  forrest: ['lamar', 'perry', 'stone', 'jones', 'covington', 'marion'],
+  lauderdale: ['kemper', 'newton', 'clarke', 'wayne', 'jasper', 'neshoba'],
+  lamar: ['forrest', 'pearl-river', 'marion', 'jefferson-davis', 'greene', 'hancock'],
+  jones: ['forrest', 'jasper', 'smith', 'covington', 'perry', 'wayne'],
+  'pearl-river': ['hancock', 'harrison', 'stone', 'lamar', 'marion', 'forrest'],
 };
 
 export function getMississippiNearbyCounties(

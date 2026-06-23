@@ -121,6 +121,10 @@ const MS_HIGH_TRAFFIC_COUNTIES = new Set([
   'desoto',
   'rankin',
   'jackson',
+  'madison',
+  'lee',
+  'forrest',
+  'lauderdale',
 ]);
 
 /** High-traffic AL counties — sitemap priority 0.85 */

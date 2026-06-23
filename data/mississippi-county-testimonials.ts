@@ -133,6 +133,188 @@ export const mississippiCountyTestimonials: Record<string, CountyTestimonialEntr
         moveType: 'Townhome',
       },
     ],
+    madison: [
+      {
+        quote:
+          'Two Men and a Truck Ridgeland handled our Madison relocation professionally — on time, efficient, and extremely careful with upscale furniture throughout Madison County.',
+        name: 'Catherine B.',
+        location: 'Madison, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Armstrong Relocation served our Ridgeland move efficiently — fast, professional, and reliable with careful handling of high-value suburban property.',
+        name: 'Steven H.',
+        location: 'Ridgeland, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Helping Hands Moving confirmed Canton coverage and delivered the best local moving service in Madison County — professional crew with transparent pricing.',
+        name: 'Rebecca F.',
+        location: 'Canton, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lee: [
+      {
+        quote:
+          'Two Men and a Truck Tupelo handled our Lee County relocation professionally — on time, efficient, and extremely careful throughout Tupelo.',
+        name: 'Gregory T.',
+        location: 'Tupelo, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'House To House served our Saltillo-area move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Nancy W.',
+        location: 'Saltillo, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All-Star Movers confirmed Northeast Mississippi coverage and delivered excellent service in Tupelo — professional crew with no surprise fees.',
+        name: 'Kevin J.',
+        location: 'Tupelo, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    forrest: [
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg handled our Forrest County relocation professionally — on time, efficient, and extremely careful throughout Hattiesburg.',
+        name: 'Laura M.',
+        location: 'Hattiesburg, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Allsouth Moving served our university-area move efficiently — fast, professional, and reliable with careful student-housing handling.',
+        name: 'Daniel S.',
+        location: 'Hattiesburg, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'Central Mississippi Movers confirmed Forrest County coverage and delivered excellent service in Petal — professional crew with transparent pricing.',
+        name: 'Amanda R.',
+        location: 'Petal, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+    ],
+    lauderdale: [
+      {
+        quote:
+          'Moving U ENT served our Meridian relocation professionally — on time, efficient, and extremely careful throughout Lauderdale County.',
+        name: 'Richard L.',
+        location: 'Meridian, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Tmakit Moving handled our Lauderdale County move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Diane P.',
+        location: 'Meridian, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'On the Go confirmed Meridian coverage and delivered excellent local service — professional crew with no surprise fees.',
+        name: 'Charles E.',
+        location: 'Meridian, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lamar: [
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg handled our Purvis relocation professionally — on time, efficient, and extremely careful throughout Lamar County.',
+        name: 'Melissa K.',
+        location: 'Purvis, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Allsouth Moving served our Lumberton-area move efficiently — fast, professional, and reliable with careful suburban handling.',
+        name: 'Brian N.',
+        location: 'Lumberton, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'My Two Movers confirmed Lamar County coverage and delivered excellent Hattiesburg-metro service — professional crew with transparent pricing.',
+        name: 'Heather D.',
+        location: 'Purvis, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    jones: [
+      {
+        quote:
+          'Allsouth Moving handled our Laurel relocation professionally — on time, efficient, and extremely careful throughout Jones County.',
+        name: 'Timothy G.',
+        location: 'Laurel, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Moving U ENT served our Jones County move efficiently — fast, professional, and reliable with careful industrial-area handling.',
+        name: 'Sandra V.',
+        location: 'Laurel, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg confirmed Laurel coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Paul A.',
+        location: 'Laurel, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    'pearl-river': [
+      {
+        quote:
+          'Mighty Men Movers handled our Picayune relocation professionally — on time, efficient, and extremely careful throughout Pearl River County.',
+        name: 'Janet C.',
+        location: 'Picayune, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Allsouth Moving served our Poplarville-area move efficiently — fast, professional, and reliable with careful suburban handling.',
+        name: 'Donald W.',
+        location: 'Poplarville, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Gulf Coast confirmed Pearl River County coverage and delivered excellent coastal service — professional crew with transparent pricing.',
+        name: 'Betty S.',
+        location: 'Picayune, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getMississippiCountyTestimonials(
