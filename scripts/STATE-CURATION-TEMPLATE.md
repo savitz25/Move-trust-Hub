@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas model for any new state. California, Florida, New Jersey, New York, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina model for any new state. California, Florida, Georgia, New Jersey, New York, South Carolina, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 ## Reference states (audit-complete)
 
@@ -8,6 +8,8 @@ Replicate the Florida / New Jersey / New York / California / Texas model for any
 |-------|----------|-----------|--------------|--------------|---------------|
 | California | 58/58 | 5 | 10 | 15 counties | `count-california-movers.ts`, `apply-california-mover-expansion.ts` |
 | Florida | 67/67 | 5 | 8 (cap 10) | 2 counties | `count-fl-movers.ts`, `apply-fl-mover-expansion.ts` |
+| Georgia | 159/159 | 5 | 10 (cap 10) | 19 counties | `count-georgia-movers.ts`, `apply-georgia-mover-expansion.ts` |
+| South Carolina | 46/46 | 5 | 10 (cap 10) | 14 counties | `count-south-carolina-movers.ts`, `apply-south-carolina-mover-expansion.ts` |
 | New Jersey | 21/21 | 7 | 10 | 8 counties | `count-nj-movers.ts`, `apply-nj-mover-expansion.ts` |
 | New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
 | Texas | 254/254 | 5 | 10 (cap 10) | 16 counties | `count-texas-movers.ts`, `apply-texas-mover-expansion.ts` |
@@ -98,6 +100,57 @@ All major counties above plus `dutchess`, `orange`, `rockland` (affluent Hudson 
 
 Run `npx tsx scripts/generate-texas-nearby.ts` to refresh `lib/local-movers/texas-nearby.generated.ts` from Census GeoJSON adjacency.
 
+### Georgia metro pools (`data/local-movers-seed.ts`)
+
+- `atlanta-metro-ga` — Atlanta MSA / North Georgia suburbs
+- `savannah-metro-ga` — Savannah / Coastal Empire
+- `brunswick-metro-ga` — Brunswick / Golden Isles
+- `augusta-metro-ga` — Augusta / CSRA
+- `columbus-metro-ga` — Columbus / Chattahoochee Valley
+- `macon-metro-ga` — Macon / Central Georgia
+- `athens-metro-ga` — Athens / Northeast Georgia
+- `valdosta-metro-ga` — Valdosta / South Georgia
+- `albany-metro-ga` — Albany / Southwest Georgia
+- `rome-metro-ga` — Rome / Northwest Georgia
+- `dalton-metro-ga` — Dalton / Carpet Capital
+- `chattanooga-metro-ga` — Northwest GA border / Chattanooga corridor
+- `lagrange-metro-ga` — LaGrange / West Georgia
+
+### Georgia major counties (10 movers each)
+
+`fulton`, `gwinnett`, `cobb`, `dekalb`, `chatham`, `cherokee`, `clayton`, `forsyth`, `henry`, `hall`, `richmond`, `muscogee`, `paulding`, `houston`, `columbia`, `coweta`, `bibb`, `douglas`, `carroll`, `clarke`, `fayette`, `rockdale`, `newton`, `barrow`, `walton`, `glynn`, `liberty`, `effingham`, `bulloch`, `lowndes`, `dougherty`, `troup`, `floyd`, `whitfield`, `bartow`, `pickens`
+
+### Georgia sitemap priority 0.85 (19 counties)
+
+`fulton`, `gwinnett`, `cobb`, `dekalb`, `chatham`, `cherokee`, `clayton`, `forsyth`, `henry`, `hall`, `richmond`, `muscogee`, `paulding`, `houston`, `columbia`, `coweta`, `bibb`, `douglas`, `carroll`
+
+### Georgia nearby counties
+
+Hand-maintained adjacency map in `lib/local-movers/georgia-nearby.ts` (159/159 counties).
+
+### South Carolina metro pools (`data/local-movers-seed.ts`)
+
+- `charleston-metro-sc` — Charleston / Lowcountry / coastal corridor
+- `greenville-metro-sc` — Greenville-Anderson / Upstate
+- `myrtle-beach-metro-sc` — Myrtle Beach / Grand Strand
+- `spartanburg-metro-sc` — Spartanburg / Upstate I-85 corridor
+- `sumter-metro-sc` — Columbia / Midlands (Richland, Lexington)
+- `florence-metro-sc` — Florence / Pee Dee
+- `augusta-aiken-metro-sc` — Aiken / CSRA border
+- `charlotte-metro-sc` — York / Lancaster / Charlotte metro SC side
+
+### South Carolina major counties (10 movers each)
+
+`charleston`, `greenville`, `richland`, `horry`, `spartanburg`, `york`, `lexington`, `berkeley`, `dorchester`, `aiken`, `anderson`, `pickens`, `sumter`, `beaufort`, `florence`, `georgetown`, `lancaster`, `oconee`, `cherokee`
+
+### South Carolina sitemap priority 0.85 (14 counties)
+
+`charleston`, `greenville`, `richland`, `horry`, `spartanburg`, `york`, `lexington`, `berkeley`, `dorchester`, `aiken`, `anderson`, `pickens`, `sumter`, `beaufort`
+
+### South Carolina nearby counties
+
+Hand-maintained adjacency map in `lib/local-movers/south-carolina-nearby.ts` (46/46 counties).
+
 ## Texas-specific notes (reference)
 
 1. **Geography**: 254 counties — `texas-overrides.ts` supplies seat/metro for rural counties; metro counties use `COUNTY_PRIMARY_POOL` in `apply-texas-mover-expansion.ts`.
@@ -154,8 +207,11 @@ harris: [
 ```bash
 npx tsx scripts/count-california-movers.ts
 npx tsx scripts/count-fl-movers.ts
+npx tsx scripts/count-georgia-movers.ts
+npx tsx scripts/count-south-carolina-movers.ts
 npx tsx scripts/count-nj-movers.ts
 npx tsx scripts/count-ny-movers.ts
+npx tsx scripts/count-texas-movers.ts
 npx tsx scripts/apply-{state}-mover-expansion.ts   # if needed
 ```
 

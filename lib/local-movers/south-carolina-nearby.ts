@@ -31,7 +31,7 @@ const SC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   darlington: ['florence', 'chesterfield', 'marlboro', 'lee', 'sumter', 'dillon'],
   cherokee: ['spartanburg', 'york', 'union', 'chester', 'laurens', 'greenville'],
   chesterfield: ['darlington', 'marlboro', 'richland', 'kershaw', 'florence', 'chester'],
-  jasper: ['beaufort', 'hampton', 'colleton', 'charleston', 'dorchester', 'effingham'],
+  jasper: ['beaufort', 'hampton', 'colleton', 'allendale', 'barnwell', 'charleston'],
   newberry: ['laurens', 'greenwood', 'fairfield', 'lexington', 'union', 'saluda'],
   colleton: ['dorchester', 'charleston', 'bamberg', 'orangeburg', 'beaufort', 'jasper'],
   chester: ['lancaster', 'york', 'union', 'chesterfield', 'fairfield', 'kershaw'],

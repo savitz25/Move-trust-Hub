@@ -75,6 +75,24 @@ const GA_HIGH_TRAFFIC_COUNTIES = new Set([
   'richmond',
 ]);
 
+/** High-traffic SC counties — sitemap priority 0.85 */
+const SC_HIGH_TRAFFIC_COUNTIES = new Set([
+  'aiken',
+  'anderson',
+  'beaufort',
+  'berkeley',
+  'charleston',
+  'dorchester',
+  'greenville',
+  'horry',
+  'lexington',
+  'pickens',
+  'richland',
+  'spartanburg',
+  'sumter',
+  'york',
+]);
+
 /** High-traffic NY counties — sitemap priority 0.85 */
 const NY_HIGH_TRAFFIC_COUNTIES = new Set([
   'albany',
@@ -147,7 +165,8 @@ export default async function sitemap({
         (id === 'california' && CA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'new-york' && NY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'texas' && TX_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'georgia' && GA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'georgia' && GA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'south-carolina' && SC_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

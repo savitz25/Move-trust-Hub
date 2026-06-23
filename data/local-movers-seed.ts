@@ -8684,6 +8684,8 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'nu-lyfe-moving-charleston',
       'two-men-and-a-truck-savannah',
       'bc-brothers-moving-savannah',
+      'all-my-sons-savannah',
+      'college-hunks-moving-savannah',
     ],
   },
   'greenville-metro-sc': {
@@ -8698,6 +8700,8 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'two-men-and-a-truck-aiken',
       'dailey-moving-storage-aiken',
       'two-men-and-a-truck-columbia',
+      'coleman-worldwide-columbia',
+      'jega-movers-columbia',
     ],
   },
   'myrtle-beach-metro-sc': {
