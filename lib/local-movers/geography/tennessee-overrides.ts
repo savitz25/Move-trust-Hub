@@ -62,6 +62,19 @@ export const tennesseeCountyOverrides: Partial<
   macon: { seat: 'Lafayette', metro: 'lafayette-metro-tn' },
   hickman: { seat: 'Centerville', metro: 'centerville-metro-tn' },
   grainger: { seat: 'Rutledge', metro: 'morristown-metro-tn' },
+  mcnairy: { seat: 'Selmer', metro: 'selmer-metro-tn' },
+  hardeman: { seat: 'Bolivar', metro: 'bolivar-metro-tn' },
+  lauderdale: { seat: 'Ripley', metro: 'ripley-metro-tn' },
+  overton: { seat: 'Livingston', metro: 'livingston-metro-tn' },
+  scott: { seat: 'Huntsville', metro: 'knoxville-metro-tn' },
+  morgan: { seat: 'Wartburg', metro: 'knoxville-metro-tn' },
+  dekalb: { seat: 'Smithville', metro: 'smithville-metro-tn' },
+  union: { seat: 'Maynardville', metro: 'knoxville-metro-tn' },
+  smith: { seat: 'Carthage', metro: 'carthage-metro-tn' },
+  fentress: { seat: 'Jamestown', metro: 'jamestown-metro-tn' },
+  humphreys: { seat: 'Waverly', metro: 'waverly-metro-tn' },
+  johnson: { seat: 'Mountain City', metro: 'kingsport-bristol-metro-tn' },
+  polk: { seat: 'Benton', metro: 'benton-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

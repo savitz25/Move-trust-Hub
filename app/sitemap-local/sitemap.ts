@@ -170,6 +170,19 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'macon',
   'hickman',
   'grainger',
+  'mcnairy',
+  'hardeman',
+  'lauderdale',
+  'overton',
+  'scott',
+  'morgan',
+  'dekalb',
+  'union',
+  'smith',
+  'fentress',
+  'humphreys',
+  'johnson',
+  'polk',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

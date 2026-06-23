@@ -994,6 +994,227 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  mcnairy: {
+    marketNotes:
+      'McNairy County is a rural West Tennessee county with strong residential demand centered on Selmer.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'McNairy County pricing reflects rural West Tennessee access, agricultural property considerations, and Jackson-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Selmer and surrounding McNairy County areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hardeman: {
+    marketNotes:
+      'Hardeman County is a rural West Tennessee county with agricultural and residential demand centered on Bolivar.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$150/hr for a 2-person crew',
+      note: 'Hardeman County pricing reflects Bolivar rural-community demand, limited local storage options, and Memphis-Jackson regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Bolivar before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  lauderdale: {
+    marketNotes:
+      'Lauderdale County is a rural West Tennessee county with agricultural and residential demand centered on Ripley.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lauderdale County pricing reflects Ripley rural-community demand, limited local storage options, and Memphis-Dyersburg regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Ripley before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  overton: {
+    marketNotes:
+      'Overton County is a rural Upper Cumberland county with strong residential demand centered on Livingston.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Overton County pricing reflects Livingston rural-community demand, Upper Cumberland access, and Cookeville regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Livingston before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  scott: {
+    marketNotes:
+      'Scott County is a rural mountain county in East Tennessee with strong residential demand centered on Huntsville and Oneida.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Scott County pricing reflects Huntsville and Oneida mountain-community demand, Knoxville-metro regional crew travel, and rural East Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Huntsville and Oneida areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morgan: {
+    marketNotes:
+      'Morgan County is a rural mountain county in East Tennessee with residential demand centered on Wartburg.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Morgan County pricing reflects Wartburg mountain-community demand, Knoxville-Oak Ridge regional crew travel, and rural East Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Wartburg and surrounding Morgan County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dekalb: {
+    marketNotes:
+      'DeKalb County is a growing county in Middle Tennessee with strong residential demand centered on Smithville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'DeKalb County pricing reflects Smithville suburban demand, Nashville-Lebanon regional crew travel, and rural Middle Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Smithville and surrounding DeKalb County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is a growing county in East Tennessee with strong residential demand centered on Maynardville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Union County pricing reflects Maynardville suburban demand, Knoxville-metro regional crew travel, and rural East Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Maynardville and surrounding Union County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  smith: {
+    marketNotes:
+      'Smith County is a rural county in Middle Tennessee with strong residential demand centered on Carthage.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Smith County pricing reflects Carthage rural-community demand, Nashville-Lebanon regional crew travel, and Cumberland River corridor access.',
+    },
+    tips: [
+      'Verify coverage for Carthage and surrounding Smith County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fentress: {
+    marketNotes:
+      'Fentress County is a rural mountain county with scenic residential demand centered on Jamestown.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Fentress County pricing reflects Jamestown mountain-community demand, Upper Cumberland regional crew travel, and limited local mover availability.',
+    },
+    tips: [
+      'Verify coverage for Jamestown and surrounding Fentress County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  humphreys: {
+    marketNotes:
+      'Humphreys County is a growing county in Middle Tennessee with strong residential demand centered on Waverly.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Humphreys County pricing reflects Waverly suburban demand, Clarksville-Nashville regional crew travel, and Tennessee River corridor access.',
+    },
+    tips: [
+      'Verify coverage for Waverly and surrounding Humphreys County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  johnson: {
+    marketNotes:
+      'Johnson County is a remote mountain county in Northeast Tennessee with scenic residential demand centered on Mountain City.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Johnson County pricing reflects Mountain City remote mountain-community demand, Tri-Cities regional crew travel, and limited local mover availability.',
+    },
+    tips: [
+      'Verify coverage for Mountain City and surrounding Johnson County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County is a scenic mountain county in Southeast Tennessee with strong residential demand centered on Benton.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Polk County pricing reflects Benton mountain-community demand, Chattanooga-Cleveland regional crew travel, and Ocoee River corridor access.',
+    },
+    tips: [
+      'Verify coverage for Benton and surrounding Polk County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

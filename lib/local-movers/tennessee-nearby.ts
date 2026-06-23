@@ -67,6 +67,19 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   macon: ['sumner', 'wilson', 'smith', 'trousdale', 'clay', 'jackson'],
   hickman: ['dickson', 'houston', 'humphreys', 'lewis', 'perry', 'williamson'],
   grainger: ['knox', 'hamblen', 'jefferson', 'cocke', 'union', 'claiborne'],
+  mcnairy: ['hardin', 'chester', 'henderson', 'hardeman', 'madison', 'mcminn'],
+  hardeman: ['fayette', 'shelby', 'mcnairy', 'madison', 'hardin', 'tipton'],
+  lauderdale: ['tipton', 'crockett', 'dyer', 'haywood', 'shelby', 'fayette'],
+  overton: ['putnam', 'fentress', 'pickett', 'clay', 'jackson', 'white'],
+  scott: ['campbell', 'anderson', 'morgan', 'fentress', 'pickett', 'mcminn'],
+  morgan: ['scott', 'anderson', 'roane', 'cumberland', 'fentress', 'van-buren'],
+  dekalb: ['smith', 'putnam', 'cannon', 'warren', 'white', 'wilson'],
+  union: ['knox', 'claiborne', 'grainger', 'campbell', 'anderson', 'jefferson'],
+  smith: ['sumner', 'wilson', 'trousdale', 'macon', 'dekalb', 'jackson'],
+  fentress: ['overton', 'pickett', 'scott', 'morgan', 'campbell', 'cumberland'],
+  humphreys: ['hickman', 'houston', 'benton', 'perry', 'dickson', 'cheatham'],
+  johnson: ['sullivan', 'washington', 'carter', 'unicoi', 'hawkins', 'greene'],
+  polk: ['bradley', 'mcminn', 'monroe', 'hamilton', 'meigs', 'rhea'],
 };
 
 export function getTennesseeNearbyCounties(

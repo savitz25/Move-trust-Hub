@@ -1517,6 +1517,344 @@ export const tennesseeCountyTestimonials: Record<string, CountyTestimonialEntry[
         moveType: 'Townhome',
       },
     ],
+    mcnairy: [
+      {
+        quote:
+          'Two Men and a Truck Jackson handled our Selmer relocation professionally — on time, efficient, and careful with our belongings throughout McNairy County.',
+        name: 'Roy B.',
+        location: 'Selmer, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Volunteer Moving served our rural McNairy County move efficiently — professional and reliable across West Tennessee.',
+        name: 'Betty H.',
+        location: 'Selmer, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Jackson Moving Company confirmed Selmer coverage and delivered reliable packing with no surprise fees.',
+        name: 'Earl M.',
+        location: 'Selmer, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    hardeman: [
+      {
+        quote:
+          'Big League Movers Memphis handled our Bolivar relocation professionally — excellent for our rural Hardeman County move.',
+        name: 'Nancy D.',
+        location: 'Bolivar, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Jackson served our Bolivar-area move efficiently — professional crew with careful handling.',
+        name: 'James W.',
+        location: 'Bolivar, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'My Town Movers confirmed Hardeman County coverage and delivered reliable packing with no surprise fees.',
+        name: 'Peggy L.',
+        location: 'Bolivar, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    lauderdale: [
+      {
+        quote:
+          'Two Men and a Truck Memphis handled our Ripley relocation professionally — on time, efficient, and careful with our belongings throughout Lauderdale County.',
+        name: 'Donald R.',
+        location: 'Ripley, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Red Carpet Moving served our rural Lauderdale County move efficiently — professional crew with careful handling.',
+        name: 'Shirley K.',
+        location: 'Ripley, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Dyersburg confirmed Ripley coverage and delivered reliable packing with no surprise fees.',
+        name: 'Gerald F.',
+        location: 'Ripley, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    overton: [
+      {
+        quote:
+          'Two Men and a Truck Cookeville handled our Livingston relocation professionally — on time, efficient, and careful with our belongings throughout Overton County.',
+        name: 'Janice P.',
+        location: 'Livingston, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Upper Cumberland Moving served our Overton County move efficiently — professional and reliable across the Upper Cumberland.',
+        name: 'Robert C.',
+        location: 'Livingston, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Cookeville Moving Company confirmed Livingston coverage and delivered reliable packing with no surprise fees.',
+        name: 'Martha S.',
+        location: 'Livingston, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    scott: [
+      {
+        quote:
+          'Two Men and a Truck Knoxville handled our Huntsville relocation professionally — excellent with mountain moves throughout Scott County.',
+        name: 'Timothy G.',
+        location: 'Huntsville, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'Mighty Moving served our Oneida-area move efficiently — professional crew with careful handling.',
+        name: 'Diana M.',
+        location: 'Oneida, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Gouffon Moving confirmed Scott County coverage and delivered reliable packing with no surprise fees.',
+        name: 'Larry B.',
+        location: 'Huntsville, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    morgan: [
+      {
+        quote:
+          'Two Men and a Truck Oak Ridge handled our Wartburg relocation professionally — excellent with mountain moves throughout Morgan County.',
+        name: 'Karen T.',
+        location: 'Wartburg, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'College Hunks Moving Knoxville served our Morgan County move efficiently — professional crew with careful handling.',
+        name: 'Steven H.',
+        location: 'Wartburg, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Crossville confirmed Wartburg coverage and delivered reliable packing with no surprise fees.',
+        name: 'Linda R.',
+        location: 'Wartburg, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    dekalb: [
+      {
+        quote:
+          'Two Men and a Truck Smithville handled our local relocation professionally — on time, efficient, and careful with our belongings throughout DeKalb County.',
+        name: 'Christine A.',
+        location: 'Smithville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Lebanon served our DeKalb County move efficiently — professional crew with careful handling.',
+        name: 'Mark D.',
+        location: 'Smithville, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'College Hunks Moving Nashville confirmed Smithville coverage and delivered reliable packing with no surprise fees.',
+        name: 'Susan E.',
+        location: 'Smithville, TN',
+        rating: 4,
+        moveType: 'Apartment',
+      },
+    ],
+    union: [
+      {
+        quote:
+          'Two Men and a Truck Knoxville handled our Maynardville relocation professionally — on time, efficient, and careful with our belongings throughout Union County.',
+        name: 'Paul J.',
+        location: 'Maynardville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Bellhop Knoxville served our Union County apartment move efficiently — professional crew with careful handling.',
+        name: 'Rachel N.',
+        location: 'Maynardville, TN',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'Mighty Moving confirmed Maynardville coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Henry C.',
+        location: 'Maynardville, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    smith: [
+      {
+        quote:
+          'Two Men and a Truck Lebanon handled our Carthage relocation professionally — on time, efficient, and careful with our belongings throughout Smith County.',
+        name: 'Donna W.',
+        location: 'Carthage, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Bellhop Nashville served our Smith County move efficiently — professional crew with careful handling.',
+        name: 'Richard Y.',
+        location: 'Carthage, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Fox Moving Nashville confirmed Carthage coverage and delivered reliable packing with no surprise fees.',
+        name: 'Jean M.',
+        location: 'Carthage, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    fentress: [
+      {
+        quote:
+          'Two Men and a Truck Cookeville handled our Jamestown relocation professionally — excellent with mountain moves throughout Fentress County.',
+        name: 'Albert K.',
+        location: 'Jamestown, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'Upper Cumberland Moving served our Fentress County move efficiently — professional and reliable across the plateau.',
+        name: 'Grace L.',
+        location: 'Jamestown, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Cookeville Moving Company confirmed Jamestown coverage and delivered reliable packing with no surprise fees.',
+        name: 'Howard P.',
+        location: 'Jamestown, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    humphreys: [
+      {
+        quote:
+          'Two Men and a Truck Clarksville handled our Waverly relocation professionally — on time, efficient, and careful with our belongings throughout Humphreys County.',
+        name: 'Melissa B.',
+        location: 'Waverly, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Fox Moving Clarksville served our Humphreys County move efficiently — professional crew with careful handling.',
+        name: 'Kevin S.',
+        location: 'Waverly, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Bellhop Nashville confirmed Waverly coverage and delivered reliable packing with no surprise fees.',
+        name: 'Pamela G.',
+        location: 'Waverly, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    johnson: [
+      {
+        quote:
+          'Two Men and a Truck Johnson City handled our Mountain City relocation professionally — excellent with remote mountain moves throughout Johnson County.',
+        name: 'Virginia H.',
+        location: 'Mountain City, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'Barnett Moving served our Johnson County move efficiently — professional crew with careful handling across Northeast Tennessee.',
+        name: 'Edward N.',
+        location: 'Mountain City, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Affordable Moving Tri-Cities confirmed Mountain City coverage and delivered reliable packing with no surprise fees.',
+        name: 'Irene T.',
+        location: 'Mountain City, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    polk: [
+      {
+        quote:
+          'Two Men and a Truck Cleveland handled our Benton relocation professionally — excellent with mountain moves throughout Polk County.',
+        name: 'Jackie F.',
+        location: 'Benton, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'Good Guys Moving Chattanooga served our Polk County move efficiently — professional crew with careful handling.',
+        name: 'Billy R.',
+        location: 'Benton, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'River City Moving confirmed Benton coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Connie L.',
+        location: 'Benton, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
   };
 
 export function getTennesseeCountyTestimonials(
