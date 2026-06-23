@@ -90,6 +90,36 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'zip-moving-atlanta',
     'all-my-sons-atlanta',
   ],
+  coweta: [
+    'two-men-and-a-truck-atlanta',
+    'mark-the-mover-atlanta',
+    'all-my-sons-atlanta',
+    'college-hunks-moving-atlanta',
+  ],
+  barrow: [
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'bulldog-movers-atlanta',
+    'zip-moving-atlanta',
+  ],
+  newton: [
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'college-hunks-moving-atlanta',
+    'zip-moving-atlanta',
+  ],
+  hall: [
+    'bulldog-movers-atlanta',
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'zip-moving-atlanta',
+  ],
+  walton: [
+    'two-men-and-a-truck-atlanta',
+    'all-my-sons-atlanta',
+    'college-hunks-moving-atlanta',
+    'atlanta-peach-movers',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

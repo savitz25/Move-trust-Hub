@@ -218,6 +218,91 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple written estimates and ask about truck size for narrow rural roads.',
     ],
   },
+  coweta: {
+    marketNotes:
+      'Coweta County is a growing south-metro suburb centered on Newnan with Senoia and Sharpsburg communities driving family relocations along the Fayette and Fulton county lines.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Coweta moves reflect I-85 south corridor access, Newnan historic downtown streets, and expanding suburban developments.',
+    },
+    tips: [
+      'Verify coverage for Newnan, Senoia, Sharpsburg, and rural Coweta addresses before booking.',
+      'Atlanta metro traffic on I-85 and US-27 impacts crew scheduling from metro bases.',
+      'Confirm insurance for high-value homes in newer Coweta subdivisions.',
+      'Book early for peak seasons and school-calendar move windows.',
+      'Obtain multiple written estimates and ask about travel fees for outer Coweta properties.',
+    ],
+  },
+  barrow: {
+    marketNotes:
+      'Barrow County is a northeast Atlanta suburb with Winder and Auburn serving commuters between Gwinnett and Athens with steady residential moving demand.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Barrow pricing reflects GA-316 corridor traffic and suburban Winder communities east of Gwinnett.',
+    },
+    tips: [
+      'Verify coverage for Winder, Auburn, and Bethlehem before booking.',
+      'Atlanta metro traffic on GA-316 and I-85 impacts scheduling for northeast-metro crews.',
+      'Confirm insurance for high-value homes and multi-bedroom suburban properties.',
+      'Book early for peak seasons — limited dedicated local movers serve Barrow County.',
+      'Obtain multiple written estimates and confirm travel-time fees from Atlanta bases.',
+    ],
+  },
+  newton: {
+    marketNotes:
+      'Newton County is an east-metro market centered on Covington with Oxford and Porterdale communities along the I-20 corridor between Atlanta and Madison.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Newton moves reflect I-20 east corridor congestion and film-industry-adjacent Covington neighborhoods.',
+    },
+    tips: [
+      'Verify coverage for Covington, Oxford, and Porterdale before booking.',
+      'Atlanta metro traffic on I-20 east impacts crew arrival windows.',
+      'Confirm insurance for high-value homes and historic Covington properties.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates and compare flat-rate vs. hourly pricing.',
+    ],
+  },
+  hall: {
+    marketNotes:
+      'Hall County centers on Gainesville with Lake Lanier waterfront homes, suburban growth along I-985, and Atlanta-metro spillover demand in Flowery Branch and Oakwood.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Hall County pricing reflects I-985/GA-400 connector traffic, lake-access properties, and Gainesville medical-corridor relocations.',
+    },
+    tips: [
+      'Verify coverage for Gainesville, Flowery Branch, Oakwood, and lake-area addresses.',
+      'Atlanta metro traffic on I-985 and GA-400 impacts scheduling for north-metro crews.',
+      'Confirm insurance for high-value homes and waterfront properties near Lake Lanier.',
+      'Book early for peak seasons and summer lake-home turnover.',
+      'Obtain multiple written estimates and ask about narrow lake-road access.',
+    ],
+  },
+  walton: {
+    marketNotes:
+      'Walton County is an east-metro suburb with Monroe and Loganville serving growing families between Gwinnett, Rockdale, and Oconee counties.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Walton moves reflect GA-11 corridor traffic and Monroe historic-square-area access constraints.',
+    },
+    tips: [
+      'Verify coverage for Monroe, Loganville, and Social Circle before booking.',
+      'Atlanta metro traffic impacts scheduling for crews traveling from Gwinnett or DeKalb bases.',
+      'Confirm insurance for high-value homes in newer Walton subdivisions.',
+      'Book early for peak seasons and school-district relocations.',
+      'Obtain multiple written estimates and confirm HOA move paperwork.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

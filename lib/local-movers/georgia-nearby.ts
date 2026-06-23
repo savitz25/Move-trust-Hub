@@ -23,6 +23,11 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   douglas: ['cobb', 'paulding', 'fulton', 'carroll', 'fayette', 'haralson'],
   rockdale: ['dekalb', 'gwinnett', 'newton', 'henry', 'walton', 'morgan'],
   paulding: ['cobb', 'douglas', 'bartow', 'polk', 'cherokee', 'haralson'],
+  coweta: ['fayette', 'fulton', 'spalding', 'heard', 'meriwether', 'carroll'],
+  barrow: ['gwinnett', 'walton', 'jackson', 'oconee', 'clarke', 'banks'],
+  newton: ['rockdale', 'walton', 'morgan', 'jasper', 'henry', 'butts'],
+  hall: ['gwinnett', 'forsyth', 'banks', 'lumpkin', 'white', 'jackson'],
+  walton: ['gwinnett', 'rockdale', 'newton', 'morgan', 'oconee', 'barrow'],
 };
 
 export function getGeorgiaNearbyCounties(

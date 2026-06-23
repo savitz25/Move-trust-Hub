@@ -16,6 +16,11 @@ export const georgiaCountyOverrides: Partial<
   douglas: { seat: 'Douglasville', metro: 'atlanta-metro-ga' },
   rockdale: { seat: 'Conyers', metro: 'atlanta-metro-ga' },
   paulding: { seat: 'Dallas', metro: 'atlanta-metro-ga' },
+  coweta: { seat: 'Newnan', metro: 'atlanta-metro-ga' },
+  barrow: { seat: 'Winder', metro: 'atlanta-metro-ga' },
+  newton: { seat: 'Covington', metro: 'atlanta-metro-ga' },
+  hall: { seat: 'Gainesville', metro: 'atlanta-metro-ga' },
+  walton: { seat: 'Monroe', metro: 'atlanta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

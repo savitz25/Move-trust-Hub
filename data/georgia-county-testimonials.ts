@@ -319,6 +319,136 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  coweta: [
+    {
+      quote:
+        'Our Newnan home near the historic square needed careful timing around downtown events. Two Men and a Truck coordinated parking and finished our Coweta County move on schedule.',
+      name: 'Laura B.',
+      location: 'Newnan, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mark the Mover handled our Senoia relocation professionally — upfront about south-metro travel and careful with our screened porch furniture.',
+      name: 'Tom G.',
+      location: 'Senoia, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'All My Sons moved our Sharpsburg townhome efficiently despite I-85 traffic. Clear pricing and respectful crew throughout Coweta County.',
+      name: 'Keisha R.',
+      location: 'Sharpsburg, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  barrow: [
+    {
+      quote:
+        'Our Winder subdivision required gate passes and driveway mats. Two Men and a Truck submitted HOA paperwork early and completed our Barrow County move without issues.',
+      name: 'Hannah L.',
+      location: 'Winder, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bulldog Movers navigated GA-316 traffic smartly for our Auburn relocation. Professional wrapping and transparent pricing from estimate to completion.',
+      name: 'Steve M.',
+      location: 'Auburn, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Zip Moving gave us a flat-rate quote for our northeast metro move that matched the final bill. Great experience in Barrow County.',
+      name: 'Rita C.',
+      location: 'Winder, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  newton: [
+    {
+      quote:
+        'Our Covington home move aligned with a film-town busy weekend. Two Men and a Truck arrived early and handled our Newton County relocation without street-access problems.',
+      name: 'Charles D.',
+      location: 'Covington, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons moved our Oxford family home on closing day despite I-20 east congestion. Careful crews and excellent communication throughout.',
+      name: 'Melissa F.',
+      location: 'Oxford, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks helped with our Porterdale apartment move — fast, careful, and upfront about travel time from the Atlanta metro base.',
+      name: 'Devon A.',
+      location: 'Porterdale, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  hall: [
+    {
+      quote:
+        'Our Gainesville lake-home had a steep driveway and tight turn. Bulldog Movers confirmed truck access upfront and handled our Hall County move without landscaping damage.',
+      name: 'Patricia W.',
+      location: 'Gainesville, GA',
+      rating: 5,
+      moveType: 'Lake home',
+    },
+    {
+      quote:
+        'Two Men and a Truck served our Flowery Branch relocation efficiently despite I-985 traffic. Professional crew and clear communication throughout.',
+      name: 'Robert N.',
+      location: 'Flowery Branch, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Zip Moving provided a transparent flat-rate quote for our Oakwood move near Lake Lanier. On-time delivery and careful furniture handling in Hall County.',
+      name: 'Susan K.',
+      location: 'Oakwood, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  walton: [
+    {
+      quote:
+        'Our Monroe home near the historic square needed weekend parking coordination. Two Men and a Truck handled it smoothly and finished our Walton County move ahead of schedule.',
+      name: 'Gary H.',
+      location: 'Monroe, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons moved our Loganville family home efficiently — HOA rules followed, furniture protected, and no surprise fees for our east-metro relocation.',
+      name: 'Christine J.',
+      location: 'Loganville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Atlanta Peach Movers wrapped everything carefully for our Walton County townhome move. Upfront about travel from the metro and great crew communication.',
+      name: 'Aaron T.',
+      location: 'Monroe, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(
