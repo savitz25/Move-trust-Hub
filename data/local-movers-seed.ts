@@ -8606,6 +8606,35 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Boone',
     website: 'https://www.appmovingandstorage.com/',
   },
+  'obx-movers-outer-banks': {
+    id: 'obx-movers-outer-banks',
+    name: 'OBX Movers',
+    rating: 4.7,
+    reviewCount: 168,
+    shortDescription:
+      'Outer Banks mover serving Dare and Currituck counties with local and long-distance residential relocations across Manteo, Kill Devil Hills, Nags Head, and Corolla.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Labor Only'],
+    specialties: ['Residential'],
+    usdotNumber: '2550206',
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Powells Point',
+    website: 'https://obxmovers.com/',
+  },
+  'hardy-moving-storage-outer-banks': {
+    id: 'hardy-moving-storage-outer-banks',
+    name: 'Hardy Moving & Storage',
+    rating: 4.8,
+    reviewCount: 312,
+    shortDescription:
+      'Established northeastern NC mover serving the Outer Banks and Albemarle Sound with full-service residential, commercial, and climate-controlled storage since 1992.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Commercial'],
+    usdotNumber: '4073065',
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Harbinger',
+    website: 'https://hardymovingandstorage.com/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
@@ -10068,6 +10097,17 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'east-carolina-moving-greenville-nc',
       'crabtree-family-moving-raleigh',
       'little-guys-movers-raleigh',
+    ],
+  },
+  'outer-banks-metro-nc': {
+    id: 'outer-banks-metro-nc',
+    label: 'Outer Banks / Northeastern Coastal Metro',
+    moverIds: [
+      'obx-movers-outer-banks',
+      'hardy-moving-storage-outer-banks',
+      'smart-move-wilson-nc',
+      'college-hunks-moving-greenville-nc',
+      'crabtree-family-moving-raleigh',
     ],
   },
 };

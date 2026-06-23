@@ -599,6 +599,139 @@ const CURATED_NC_COUNTIES: Record<string, string[]> = {
     'asheville-area-movers',
     'in-out-moving-delivery-hickory',
   ],
+  yadkin: [
+    'two-men-and-a-truck-winston-salem',
+    'american-moving-hauling-winston-salem',
+    'two-men-and-a-truck-greensboro',
+    'college-hunks-moving-greensboro',
+  ],
+  dare: [
+    'obx-movers-outer-banks',
+    'hardy-moving-storage-outer-banks',
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'crabtree-family-moving-raleigh',
+  ],
+  alexander: [
+    'in-out-moving-delivery-hickory',
+    'preferred-moving-hickory',
+    'ashe-van-lines-hickory',
+    'barringer-moving-newton',
+  ],
+  transylvania: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'two-men-and-a-truck-asheville',
+    'carey-moving-storage-asheville',
+    'college-hunks-moving-asheville',
+  ],
+  currituck: [
+    'obx-movers-outer-banks',
+    'hardy-moving-storage-outer-banks',
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'little-guys-movers-raleigh',
+  ],
+  scotland: [
+    'stewart-moving-storage-fayetteville',
+    'two-men-and-a-truck-fayetteville',
+    'college-hunks-moving-fayetteville',
+    'andy-anderson-moving-fayetteville',
+  ],
+  cherokee: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'preferred-moving-hickory',
+    'in-out-moving-delivery-hickory',
+  ],
+  bladen: [
+    'absolute-moving-wilmington',
+    'college-hunks-moving-wilmington',
+    'stewart-moving-storage-fayetteville',
+    'little-guys-movers-wilmington',
+  ],
+  ashe: [
+    'appalachian-moving-storage-boone',
+    'asheville-area-movers',
+    'preferred-moving-hickory',
+    'in-out-moving-delivery-hickory',
+  ],
+  montgomery: [
+    'stewart-moving-storage-fayetteville',
+    'two-men-and-a-truck-fayetteville',
+    'two-men-and-a-truck-charlotte-nc',
+    'gentle-giants-moving-charlotte',
+  ],
+  caswell: [
+    'two-men-and-a-truck-greensboro',
+    'college-hunks-moving-greensboro',
+    'miracle-movers-greensboro',
+  ],
+  chowan: [
+    'hardy-moving-storage-outer-banks',
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+  ],
+  swain: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'two-men-and-a-truck-asheville',
+  ],
+  perquimans: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'crabtree-family-moving-raleigh',
+  ],
+  pamlico: [
+    'je-thomas-sons-jacksonville',
+    'college-hunks-moving-greenville-nc',
+    'smart-move-wilson-nc',
+  ],
+  clay: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'appalachian-moving-storage-boone',
+  ],
+  alleghany: [
+    'appalachian-moving-storage-boone',
+    'asheville-area-movers',
+    'preferred-moving-hickory',
+  ],
+  camden: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'little-guys-movers-raleigh',
+  ],
+  washington: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'east-carolina-moving-greenville-nc',
+  ],
+  gates: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'crabtree-family-moving-raleigh',
+  ],
+  jones: [
+    'je-thomas-sons-jacksonville',
+    'college-hunks-moving-greenville-nc',
+    'smart-move-wilson-nc',
+  ],
+  graham: [
+    'asheville-area-movers',
+    'gasperson-moving-asheville',
+    'appalachian-moving-storage-boone',
+  ],
+  hyde: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'hardy-moving-storage-outer-banks',
+  ],
+  tyrrell: [
+    'smart-move-wilson-nc',
+    'college-hunks-moving-greenville-nc',
+    'east-carolina-moving-greenville-nc',
+  ],
 };
 
 export const northCarolinaCountyMoverAssignments: CountyMoverAssignment[] =

@@ -1301,6 +1301,414 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    yadkin: {
+      marketNotes:
+        'Yadkin County is a rural Piedmont Triad county with agricultural and residential demand centered on Yadkinville.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Yadkin County pricing reflects rural Triad access, Yadkinville suburban turnover, and Winston-Salem-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Yadkinville and surrounding Yadkin County areas before booking.',
+        'Rural access challenges are common — confirm crew familiarity with Yadkin County roads and longer regional routes.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    dare: {
+      marketNotes:
+        'Dare County encompasses the Outer Banks barrier islands with strong tourism, vacation-home, and coastal residential demand centered on Manteo, Kill Devil Hills, and Nags Head.',
+      costs: {
+        studioRange: '$800–$1,600',
+        familyRange: '$2,800–$6,200',
+        avgHourly: '$120–$175/hr for a 2-person crew',
+        note: 'Dare County pricing reflects Outer Banks island and bridge access, peak tourist-season volume, hurricane-season scheduling, and limited barrier-island logistics.',
+      },
+      tips: [
+        'Verify explicit coverage for Manteo, Kill Devil Hills, and Nags Head areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront and vacation properties before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    alexander: {
+      marketNotes:
+        'Alexander County is a rural western Piedmont county with residential and industrial demand centered on Taylorsville.',
+      costs: {
+        studioRange: '$600–$1,250',
+        familyRange: '$2,200–$4,900',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Alexander County pricing reflects western Piedmont rural access, Taylorsville suburban turnover, and Hickory-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Taylorsville and surrounding Alexander County areas before booking.',
+        'Rural access challenges are common — confirm crew familiarity with Alexander County roads and longer regional routes.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    transylvania: {
+      marketNotes:
+        'Transylvania County is known as the Land of Waterfalls with strong tourism, retirement, and mountain residential demand centered on Brevard.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Transylvania County pricing reflects mountain-road access, peak tourist-season volume, retirement-community turnover, and Asheville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Brevard and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    currituck: {
+      marketNotes:
+        'Currituck County is a coastal Outer Banks county with strong vacation-home and waterfront residential demand centered on Currituck and Corolla.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,800',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Currituck County pricing reflects Outer Banks mainland and barrier-island access, peak tourist-season volume, hurricane-season scheduling, and Norfolk-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Currituck and Corolla areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront and vacation properties before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    scotland: {
+      marketNotes:
+        'Scotland County is a rural southern Piedmont county with agricultural and residential demand centered on Laurinburg.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Scotland County pricing reflects southern NC rural access, limited local carrier availability, and Fayetteville-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Scotland County roads and longer regional routes.',
+        'Verify explicit regional service to Laurinburg and surrounding Scotland County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    cherokee: {
+      marketNotes:
+        'Cherokee County is the westernmost county in North Carolina with rural mountain and residential demand centered on Murphy.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Cherokee County pricing reflects far-western NC mountain-road access, limited local carrier availability, and Asheville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Murphy and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    bladen: {
+      marketNotes:
+        'Bladen County is a rural southeastern county with agricultural and residential demand centered on Elizabethtown.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Bladen County pricing reflects southeastern NC rural access, limited local carrier availability, and Fayetteville- and Wilmington-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Bladen County roads and longer regional routes.',
+        'Verify explicit regional service to Elizabethtown and surrounding Bladen County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    ashe: {
+      marketNotes:
+        'Ashe County is a High Country mountain county with scenic residential and tourism demand centered on Jefferson.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Ashe County pricing reflects High Country mountain-road access, peak tourist-season volume, and Boone-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Jefferson and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    montgomery: {
+      marketNotes:
+        'Montgomery County is a rural lake-country county with agricultural and residential demand centered on Troy.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Montgomery County pricing reflects rural lake-country access, limited local carrier availability, and Charlotte- and Fayetteville-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Montgomery County roads and longer regional routes.',
+        'Verify explicit regional service to Troy and surrounding Montgomery County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    caswell: {
+      marketNotes:
+        'Caswell County is a rural county north of the Piedmont Triad with historic and residential demand centered on Yanceyville.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Caswell County pricing reflects northern Triad rural access, limited local carrier availability, and Greensboro-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Caswell County roads and longer regional routes.',
+        'Verify explicit regional service to Yanceyville and surrounding Caswell County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    chowan: {
+      marketNotes:
+        'Chowan County is a historic coastal county with waterfront and residential demand centered on Edenton.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Chowan County pricing reflects inner-coastal waterfront access, historic-home turnover, hurricane-season scheduling, and Elizabeth City-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Edenton and surrounding coastal areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value historic and waterfront properties before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    swain: {
+      marketNotes:
+        'Swain County is a gateway to the Great Smoky Mountains with strong tourism and mountain residential demand centered on Bryson City.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Swain County pricing reflects Smokies mountain-road access, peak tourist-season volume, and Asheville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Bryson City and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    perquimans: {
+      marketNotes:
+        'Perquimans County is a rural coastal county with waterfront and residential demand centered on Hertford.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Perquimans County pricing reflects inner-coastal rural access, waterfront-property turnover, hurricane-season scheduling, and Elizabeth City-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Hertford and surrounding coastal areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    pamlico: {
+      marketNotes:
+        'Pamlico County is a coastal county with waterfront and rural residential demand centered on Bayboro.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Pamlico County pricing reflects inner-coastal waterfront access, hurricane-season scheduling, limited local carrier availability, and New Bern-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Bayboro and surrounding coastal areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    clay: {
+      marketNotes:
+        'Clay County is a rural mountain county on the Georgia border with scenic residential demand centered on Hayesville.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Clay County pricing reflects far-western NC mountain-road access, limited local carrier availability, and Asheville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Hayesville and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    alleghany: {
+      marketNotes:
+        'Alleghany County is the northwesternmost county in North Carolina with scenic mountain and rural residential demand centered on Sparta.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Alleghany County pricing reflects northwestern NC mountain-road access, limited local carrier availability, and Boone-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Sparta and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    camden: {
+      marketNotes:
+        'Camden County is a rural northeastern waterfront county with residential demand centered on Camden.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Camden County pricing reflects northeastern waterfront access, rural property logistics, hurricane-season scheduling, and Norfolk-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Camden and surrounding waterfront areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    washington: {
+      marketNotes:
+        'Washington County is a rural northeastern county with agricultural and residential demand centered on Plymouth — distinct from Beaufort County.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Washington County pricing reflects northeastern NC rural access, limited local carrier availability, and Greenville-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Washington County roads and longer regional routes.',
+        'Verify explicit regional service to Plymouth and surrounding Washington County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    gates: {
+      marketNotes:
+        'Gates County is a rural northeastern county with agricultural and residential demand centered on Gatesville.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Gates County pricing reflects northeastern NC rural access, limited local carrier availability, and Norfolk-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Gates County roads and longer regional routes.',
+        'Verify explicit regional service to Gatesville and surrounding Gates County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    jones: {
+      marketNotes:
+        'Jones County is a small rural eastern county with agricultural and residential demand centered on Trenton.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Jones County pricing reflects eastern NC rural access, limited local carrier availability, and Greenville-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Jones County roads and longer regional routes.',
+        'Verify explicit regional service to Trenton and surrounding Jones County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
+    graham: {
+      marketNotes:
+        'Graham County is a remote mountain county in western North Carolina with tourism and rural residential demand centered on Robbinsville.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Graham County pricing reflects remote western NC mountain-road access, limited local carrier availability, and Asheville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Robbinsville and surrounding mountain areas before booking.',
+        'Mountain roads and weather conditions require specialized experience — confirm crew familiarity with steep-driveway and seasonal access challenges.',
+        'Confirm insurance and valuation for high-value mountain homes before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    hyde: {
+      marketNotes:
+        'Hyde County is a remote coastal county with waterfront and rural residential demand centered on Swan Quarter.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,100',
+        avgHourly: '$100–$155/hr for a 2-person crew',
+        note: 'Hyde County pricing reflects remote coastal and ferry-dependent access, limited local carrier availability, hurricane-season scheduling, and Greenville-metro regional service demand.',
+      },
+      tips: [
+        'Verify explicit coverage for Swan Quarter and surrounding coastal areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    tyrrell: {
+      marketNotes:
+        'Tyrrell County is the smallest county in North Carolina by population with rural agricultural and waterfront demand centered on Columbia.',
+      costs: {
+        studioRange: '$550–$1,150',
+        familyRange: '$1,900–$4,400',
+        avgHourly: '$95–$145/hr for a 2-person crew',
+        note: 'Tyrrell County pricing reflects remote eastern NC rural access, limited local carrier availability, and Greenville-metro regional service demand.',
+      },
+      tips: [
+        'Rural access challenges are common — confirm crew familiarity with Tyrrell County roads and longer regional routes.',
+        'Verify explicit regional service to Columbia and surrounding Tyrrell County areas before booking.',
+        'Storage options are very limited locally — confirm availability if you need interim storage.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+        'Confirm credentials and insurance for rural moves before booking.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(
