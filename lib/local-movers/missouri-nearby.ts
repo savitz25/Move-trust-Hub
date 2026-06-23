@@ -70,6 +70,21 @@ const MO_COUNTY_NEIGHBORS: Record<string, string[]> = {
   wright: ['douglas', 'texas', 'laclede', 'webster', 'ozark', 'howell'],
   perry: ['cape-girardeau', 'bollinger', 'st-francois', 'madison', 'ste-genevieve'],
   'ste-genevieve': ['jefferson', 'st-francois', 'perry', 'washington', 'franklin'],
+  andrew: ['buchanan', 'dekalb', 'nodaway', 'gentry', 'harrison', 'clinton'],
+  dallas: ['polk', 'laclede', 'camden', 'webster', 'cedar', 'greene'],
+  pike: ['lincoln', 'montgomery', 'audrain', 'ralls', 'marion', 'shelby'],
+  cooper: ['boone', 'moniteau', 'morgan', 'osage', 'howard', 'chariton'],
+  bates: ['cass', 'henry', 'vernon', 'st-clair', 'cedar', 'johnson'],
+  moniteau: ['cole', 'boone', 'cooper', 'miller', 'morgan', 'osage'],
+  macon: ['adair', 'sullivan', 'chariton', 'randolph', 'knox', 'linn'],
+  'new-madrid': ['scott', 'mississippi', 'pemiscot', 'stoddard', 'dunklin'],
+  gasconade: ['franklin', 'crawford', 'phelps', 'osage', 'callaway', 'montgomery'],
+  cedar: ['polk', 'dade', 'barton', 'vernon', 'st-clair', 'henry'],
+  livingston: ['linn', 'chariton', 'carroll', 'caldwell', 'daviess', 'grundy'],
+  dent: ['phelps', 'crawford', 'texas', 'reynolds', 'iron', 'shannon'],
+  pemiscot: ['dunklin', 'new-madrid', 'mississippi', 'stoddard', 'butler'],
+  osage: ['cole', 'miller', 'morgan', 'gasconade', 'callaway', 'maries'],
+  madison: ['st-francois', 'bollinger', 'perry', 'wayne', 'iron', 'jefferson'],
 };
 
 export function getMissouriNearbyCounties(

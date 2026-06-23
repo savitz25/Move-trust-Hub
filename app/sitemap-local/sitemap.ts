@@ -196,6 +196,21 @@ const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'wright',
   'perry',
   'ste-genevieve',
+  'andrew',
+  'dallas',
+  'pike',
+  'cooper',
+  'bates',
+  'moniteau',
+  'macon',
+  'new-madrid',
+  'gasconade',
+  'cedar',
+  'livingston',
+  'dent',
+  'pemiscot',
+  'osage',
+  'madison',
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */

@@ -124,6 +124,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'wright', expectedCity: 'Hartville' },
   { stateSlug: 'missouri', countySlug: 'perry', expectedCity: 'Perryville' },
   { stateSlug: 'missouri', countySlug: 'ste-genevieve', expectedCity: 'Ste. Genevieve' },
+  { stateSlug: 'missouri', countySlug: 'andrew', expectedCity: 'Savannah' },
+  { stateSlug: 'missouri', countySlug: 'dallas', expectedCity: 'Buffalo' },
+  { stateSlug: 'missouri', countySlug: 'pike', expectedCity: 'Bowling Green' },
+  { stateSlug: 'missouri', countySlug: 'cooper', expectedCity: 'Boonville' },
+  { stateSlug: 'missouri', countySlug: 'bates', expectedCity: 'Butler' },
+  { stateSlug: 'missouri', countySlug: 'moniteau', expectedCity: 'California' },
+  { stateSlug: 'missouri', countySlug: 'macon', expectedCity: 'Macon' },
+  { stateSlug: 'missouri', countySlug: 'new-madrid', expectedCity: 'New Madrid' },
+  { stateSlug: 'missouri', countySlug: 'gasconade', expectedCity: 'Hermann' },
+  { stateSlug: 'missouri', countySlug: 'cedar', expectedCity: 'Stockton' },
+  { stateSlug: 'missouri', countySlug: 'livingston', expectedCity: 'Chillicothe' },
+  { stateSlug: 'missouri', countySlug: 'dent', expectedCity: 'Salem' },
+  { stateSlug: 'missouri', countySlug: 'pemiscot', expectedCity: 'Caruthersville' },
+  { stateSlug: 'missouri', countySlug: 'osage', expectedCity: 'Linn' },
+  { stateSlug: 'missouri', countySlug: 'madison', expectedCity: 'Fredericktown' },
 ];
 
 let totalIssues = 0;

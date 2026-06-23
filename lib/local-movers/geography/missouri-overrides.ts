@@ -63,6 +63,21 @@ export const missouriCountyOverrides: Partial<
   wright: { seat: 'Hartville', metro: 'hartville-metro-mo' },
   perry: { seat: 'Perryville', metro: 'perryville-metro-mo' },
   'ste-genevieve': { seat: 'Ste. Genevieve', metro: 'ste-genevieve-metro-mo' },
+  andrew: { seat: 'Savannah', metro: 'st-joseph-metro-mo' },
+  dallas: { seat: 'Buffalo', metro: 'buffalo-metro-mo' },
+  pike: { seat: 'Bowling Green', metro: 'bowling-green-metro-mo' },
+  cooper: { seat: 'Boonville', metro: 'boonville-metro-mo' },
+  bates: { seat: 'Butler', metro: 'butler-metro-mo' },
+  moniteau: { seat: 'California', metro: 'california-metro-mo' },
+  macon: { seat: 'Macon', metro: 'macon-metro-mo' },
+  'new-madrid': { seat: 'New Madrid', metro: 'new-madrid-metro-mo' },
+  gasconade: { seat: 'Hermann', metro: 'hermann-metro-mo' },
+  cedar: { seat: 'Stockton', metro: 'stockton-metro-mo' },
+  livingston: { seat: 'Chillicothe', metro: 'chillicothe-metro-mo' },
+  dent: { seat: 'Salem', metro: 'salem-metro-mo' },
+  pemiscot: { seat: 'Caruthersville', metro: 'caruthersville-metro-mo' },
+  osage: { seat: 'Linn', metro: 'linn-metro-mo' },
+  madison: { seat: 'Fredericktown', metro: 'fredericktown-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {
