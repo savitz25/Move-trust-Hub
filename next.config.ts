@@ -33,6 +33,16 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-*'],
   },
+  // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
+  async redirects() {
+    return [
+      {
+        source: '/sitemap-local/:state([^/]+)\\.xml',
+        destination: '/sitemap-local/sitemap/:state.xml',
+        permanent: true,
+      },
+    ];
+  },
   // Generate sitemap and robots via metadata in app dir
   // Headers for security / SEO
   async headers() {

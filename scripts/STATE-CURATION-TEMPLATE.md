@@ -40,6 +40,8 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 
 Same as major counties above — Memphis, Nashville, Knoxville, Chattanooga, Clarksville, Murfreesboro/Williamson, Tri-Cities, Smokies, Cookeville, and surrounding high-growth corridors.
 
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/tennessee.xml` (96 URLs: hub + 95 counties). Do **not** use `/sitemap-local/tennessee.xml` (404; legacy path redirects to canonical).
+
 ### California metro pools (`data/local-movers-seed.ts`)
 
 - `bay-area-ca` — SF, Peninsula, South Bay, North Bay franchise slugs
