@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina model for any new state. California, Florida, Georgia, New Jersey, New York, South Carolina, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 ## Reference states (audit-complete)
 
@@ -10,6 +10,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Florida | 67/67 | 5 | 8 (cap 10) | 2 counties | `count-fl-movers.ts`, `apply-fl-mover-expansion.ts` |
 | Georgia | 159/159 | 5 | 10 (cap 10) | 19 counties | `count-georgia-movers.ts`, `apply-georgia-mover-expansion.ts` |
 | South Carolina | 46/46 | 5 | 10 (cap 10) | 14 counties | `count-south-carolina-movers.ts`, `apply-south-carolina-mover-expansion.ts` |
+| North Carolina | 100/100 | 5 | 10 (cap 10) | 28 counties | `count-north-carolina-movers.ts`, `apply-north-carolina-mover-expansion.ts` |
 | New Jersey | 21/21 | 7 | 10 | 8 counties | `count-nj-movers.ts`, `apply-nj-mover-expansion.ts` |
 | New York | 62/62 | 5 | 10 | 16 counties | `count-ny-movers.ts`, `apply-ny-mover-expansion.ts` |
 | Texas | 254/254 | 5 | 10 (cap 10) | 16 counties | `count-texas-movers.ts`, `apply-texas-mover-expansion.ts` |
@@ -151,6 +152,37 @@ Hand-maintained adjacency map in `lib/local-movers/georgia-nearby.ts` (159/159 c
 
 Hand-maintained adjacency map in `lib/local-movers/south-carolina-nearby.ts` (46/46 counties).
 
+### North Carolina metro pools (`data/local-movers-seed.ts`)
+
+- `raleigh-triangle-metro-nc` — Raleigh-Cary / Research Triangle
+- `charlotte-metro-nc` — Charlotte Metro
+- `greensboro-high-point-metro-nc` — Greensboro-High Point / Piedmont Triad
+- `winston-salem-triad-metro-nc` — Winston-Salem / Triad
+- `durham-chapel-hill-metro-nc` — Durham-Chapel Hill / Research Triangle
+- `fayetteville-metro-nc` — Fayetteville / Fort Liberty corridor
+- `asheville-metro-nc` — Asheville / Western NC mountains
+- `wilmington-metro-nc` — Wilmington / Cape Fear coast
+- `jacksonville-metro-nc` — Jacksonville / Camp Lejeune
+- `greenville-metro-nc` — Greenville / Eastern NC
+- `hickory-lenoir-metro-nc` — Hickory-Lenoir / Western Piedmont
+- `goldsboro-metro-nc` — Goldsboro / Wayne County
+- `new-bern-metro-nc` — New Bern / Coastal Carolina
+- `pinehurst-metro-nc` — Pinehurst-Southern Pines / Sandhills
+- `rocky-mount-metro-nc` — Rocky Mount / Eastern Piedmont
+- `wilson-metro-nc`, `sanford-metro-nc`, `crystal-coast-metro-nc`, `boone-metro-nc`, `kinston-metro-nc`, `elizabeth-city-metro-nc`, `outer-banks-metro-nc` — regional fallbacks
+
+### North Carolina major counties (10 movers each)
+
+`wake`, `mecklenburg`, `guilford`, `forsyth`, `cumberland`, `durham`, `buncombe`, `new-hanover`, `onslow`, `cabarrus`, `union`, `iredell`, `johnston`, `henderson`, `gaston`, `catawba`, `robeson`, `pitt`, `wayne`, `alamance`, `brunswick`, `chatham`, `craven`, `davidson`, `harnett`, `moore`, `orange`, `randolph`, `rowan`
+
+### North Carolina sitemap priority 0.85 (28 counties)
+
+`wake`, `mecklenburg`, `guilford`, `forsyth`, `durham`, `cumberland`, `buncombe`, `new-hanover`, `onslow`, `cabarrus`, `union`, `iredell`, `johnston`, `henderson`, `gaston`, `catawba`, `pitt`, `wayne`, `alamance`, `brunswick`, `chatham`, `craven`, `davidson`, `harnett`, `moore`, `orange`, `randolph`, `rowan`
+
+### North Carolina nearby counties
+
+Hand-maintained adjacency map in `lib/local-movers/north-carolina-nearby.ts` (100/100 counties).
+
 ## Texas-specific notes (reference)
 
 1. **Geography**: 254 counties — `texas-overrides.ts` supplies seat/metro for rural counties; metro counties use `COUNTY_PRIMARY_POOL` in `apply-texas-mover-expansion.ts`.
@@ -209,6 +241,7 @@ npx tsx scripts/count-california-movers.ts
 npx tsx scripts/count-fl-movers.ts
 npx tsx scripts/count-georgia-movers.ts
 npx tsx scripts/count-south-carolina-movers.ts
+npx tsx scripts/count-north-carolina-movers.ts
 npx tsx scripts/count-nj-movers.ts
 npx tsx scripts/count-ny-movers.ts
 npx tsx scripts/count-texas-movers.ts
