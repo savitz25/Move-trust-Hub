@@ -16,6 +16,11 @@ const NC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   durham: ['wake', 'orange', 'granville', 'person', 'chatham', 'alamance'],
   cumberland: ['hoke', 'harnett', 'sampson', 'bladen', 'robeson', 'moore'],
   buncombe: ['henderson', 'madison', 'yancey', 'mcdowell', 'rutherford', 'haywood'],
+  union: ['mecklenburg', 'cabarrus', 'stanly', 'anson'],
+  johnston: ['wake', 'harnett', 'sampson', 'nash', 'wilson', 'wayne'],
+  cabarrus: ['mecklenburg', 'union', 'rowan', 'stanly', 'iredell'],
+  gaston: ['mecklenburg', 'lincoln', 'cleveland', 'burke'],
+  'new-hanover': ['brunswick', 'pender', 'columbus', 'duplin'],
 };
 
 export function getNorthCarolinaNearbyCounties(

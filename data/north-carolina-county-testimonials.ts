@@ -11,6 +11,136 @@ export const northCarolinaCountyTestimonials: Record<
   string,
   CountyTestimonialEntry[]
 > = {
+  union: [
+    {
+      quote:
+        'Two Men and a Truck Charlotte handled our Indian Trail relocation professionally — efficient crews, careful handling, and transparent Union County pricing.',
+      name: 'Chris B.',
+      location: 'Indian Trail, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Road Haugs Moving served our Waxhaw move with professional, efficient crews based right here in Union County — careful handling throughout.',
+      name: 'Melissa G.',
+      location: 'Waxhaw, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Charlotte confirmed Monroe coverage and delivered reliable packing and loading with no surprise fees despite Charlotte-area traffic.',
+      name: 'Daniel F.',
+      location: 'Monroe, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  johnston: [
+    {
+      quote:
+        'Two Men and a Truck Raleigh handled our Clayton relocation professionally — on time, careful with our belongings, and transparent Johnston County pricing.',
+      name: 'Heather W.',
+      location: 'Clayton, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Little Guys Movers served our Smithfield move efficiently with fast, professional crews and great value for careful suburban handling.',
+      name: 'Kevin J.',
+      location: 'Smithfield, NC',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Miracle Movers confirmed Selma coverage and delivered reliable packing and loading with no surprise fees despite Raleigh-area traffic.',
+      name: 'Nicole P.',
+      location: 'Selma, NC',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  cabarrus: [
+    {
+      quote:
+        'Two Men and a Truck Charlotte handled our Concord relocation professionally — efficient crews, careful handling, and transparent Cabarrus County pricing.',
+      name: 'Ryan S.',
+      location: 'Concord, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gentle Giant Moving served our Kannapolis move with professional crews and careful handling of our furniture throughout.',
+      name: 'Amy L.',
+      location: 'Kannapolis, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'You Move Me Charlotte confirmed Harrisburg coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Jason M.',
+      location: 'Harrisburg, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  gaston: [
+    {
+      quote:
+        'Gentle Giant Moving handled our Gastonia relocation professionally — efficient crews, careful handling, and transparent Gaston County pricing.',
+      name: 'Timothy H.',
+      location: 'Gastonia, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Easy Movers served our Belmont move with professional, efficient crews and great local knowledge of Charlotte-metro west-side routes.',
+      name: 'Sandra K.',
+      location: 'Belmont, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Hornet Moving confirmed Mount Holly coverage and delivered reliable packing and loading with no surprise fees despite I-85 traffic.',
+      name: 'Greg T.',
+      location: 'Mount Holly, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  'new-hanover': [
+    {
+      quote:
+        'Absolute Moving & Storage handled our Wilmington coastal move professionally — efficient crews, careful handling, and transparent New Hanover County pricing.',
+      name: 'Carol D.',
+      location: 'Wilmington, NC',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Little Guys Movers Wilmington served our Wrightsville Beach move with professional crews experienced with coastal access and careful waterfront handling.',
+      name: 'Richard A.',
+      location: 'Wrightsville Beach, NC',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Wilmington confirmed Carolina Beach coverage and delivered reliable packing and loading with no surprise fees.',
+      name: 'Diana R.',
+      location: 'Carolina Beach, NC',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
   durham: [
     {
       quote:

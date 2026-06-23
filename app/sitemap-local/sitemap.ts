@@ -80,11 +80,16 @@ const GA_HIGH_TRAFFIC_COUNTIES = new Set([
 /** High-traffic NC counties — sitemap priority 0.85 */
 const NC_HIGH_TRAFFIC_COUNTIES = new Set([
   'buncombe',
+  'cabarrus',
   'cumberland',
   'durham',
   'forsyth',
+  'gaston',
   'guilford',
+  'johnston',
   'mecklenburg',
+  'new-hanover',
+  'union',
   'wake',
 ]);
 

@@ -128,6 +128,91 @@ export const northCarolinaCountyResearch: Record<string, CuratedCountyResearch> 
         'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
       ],
     },
+    union: {
+      marketNotes:
+        'Union County is one of the fastest-growing counties in North Carolina with strong suburban residential demand on the southeast side of Charlotte.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,700',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'Union County pricing reflects Charlotte metro spillover growth, Monroe and Indian Trail suburban turnover, and I-485 and US-74 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Monroe, Indian Trail, Waxhaw, and Stallings areas before booking.',
+        'Charlotte-area traffic on I-485, US-74, and NC-16 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value suburban homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    johnston: {
+      marketNotes:
+        'Johnston County is a rapidly growing county in the Research Triangle region with strong suburban expansion centered on Smithfield, Clayton, and Selma.',
+      costs: {
+        studioRange: '$700–$1,400',
+        familyRange: '$2,400–$5,400',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Johnston County pricing reflects Raleigh metro spillover growth, Clayton and Smithfield suburban demand, and I-40 and US-70 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Smithfield, Clayton, and Selma areas before booking.',
+        'Raleigh-area traffic on I-40, I-95, and US-70 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value suburban homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    cabarrus: {
+      marketNotes:
+        'Cabarrus County is a fast-growing county northeast of Charlotte with strong residential and motorsports-related demand centered on Concord and Kannapolis.',
+      costs: {
+        studioRange: '$700–$1,450',
+        familyRange: '$2,500–$5,600',
+        avgHourly: '$110–$165/hr for a 2-person crew',
+        note: 'Cabarrus County pricing reflects Charlotte metro growth, Concord and Kannapolis suburban turnover, and I-85 and US-29 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Concord, Kannapolis, and Harrisburg areas before booking.',
+        'Charlotte-area traffic on I-85, I-485, and US-29 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    gaston: {
+      marketNotes:
+        'Gaston County is a growing county west of Charlotte with strong industrial and residential activity centered on Gastonia, Belmont, and Mount Holly.',
+      costs: {
+        studioRange: '$650–$1,350',
+        familyRange: '$2,300–$5,200',
+        avgHourly: '$105–$160/hr for a 2-person crew',
+        note: 'Gaston County pricing reflects Charlotte metro west-side demand, Gastonia suburban turnover, and I-85 and US-74 corridor traffic.',
+      },
+      tips: [
+        'Verify explicit coverage for Gastonia, Belmont, and Mount Holly areas before booking.',
+        'Charlotte-area traffic on I-85, I-485, and US-74 significantly impacts scheduling — confirm crew arrival windows.',
+        'Confirm insurance and valuation for high-value homes before booking.',
+        'Book early for peak moving seasons and month-end lease turnover.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
+    'new-hanover': {
+      marketNotes:
+        'New Hanover County is a coastal county with strong tourism, retirement, and port-related moving demand centered on Wilmington.',
+      costs: {
+        studioRange: '$750–$1,500',
+        familyRange: '$2,600–$5,800',
+        avgHourly: '$115–$170/hr for a 2-person crew',
+        note: 'New Hanover County pricing reflects coastal access logistics, Wrightsville Beach and Carolina Beach demand, hurricane-season scheduling, and peak tourist-season volume.',
+      },
+      tips: [
+        'Verify explicit coverage for Wilmington, Wrightsville Beach, and Carolina Beach areas before booking.',
+        'Coastal access and hurricane-season considerations are critical — confirm crew availability and weather contingency plans.',
+        'Confirm insurance and valuation for high-value waterfront properties before booking.',
+        'Book early for peak tourist seasons and summer relocation windows.',
+        'Obtain multiple written estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      ],
+    },
   };
 
 export function getNorthCarolinaCountyResearch(

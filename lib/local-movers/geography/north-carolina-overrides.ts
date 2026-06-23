@@ -11,6 +11,11 @@ export const northCarolinaCountyOverrides: Partial<
   durham: { seat: 'Durham', metro: 'durham-chapel-hill-metro-nc' },
   cumberland: { seat: 'Fayetteville', metro: 'fayetteville-metro-nc' },
   buncombe: { seat: 'Asheville', metro: 'asheville-metro-nc' },
+  union: { seat: 'Monroe', metro: 'charlotte-metro-nc' },
+  johnston: { seat: 'Smithfield', metro: 'raleigh-triangle-metro-nc' },
+  cabarrus: { seat: 'Concord', metro: 'charlotte-metro-nc' },
+  gaston: { seat: 'Gastonia', metro: 'charlotte-metro-nc' },
+  'new-hanover': { seat: 'Wilmington', metro: 'wilmington-metro-nc' },
 };
 
 export function applyNorthCarolinaCountyOverrides(
