@@ -224,6 +224,105 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-columbus',
     'all-my-sons-atlanta',
   ],
+  floyd: [
+    'atlanta-home-movers',
+    'page-relocation-rome',
+    'two-men-and-a-truck-rome',
+    'wirks-moving-atlanta',
+  ],
+  gordon: [
+    'atlanta-home-movers',
+    'wirks-moving-atlanta',
+    'zip-moving-atlanta',
+  ],
+  chattooga: [
+    'atlanta-home-movers',
+    'page-relocation-rome',
+    'two-men-and-a-truck-rome',
+  ],
+  walker: [
+    'good-guys-moving-chattanooga',
+    'two-men-and-a-truck-chattanooga',
+    'elizabeth-moving-chattanooga',
+    'wirks-moving-atlanta',
+  ],
+  whitfield: [
+    'good-guys-moving-chattanooga',
+    'two-men-and-a-truck-dalton',
+    'elizabeth-moving-chattanooga',
+    'atlanta-home-movers',
+  ],
+  murray: [
+    'good-guys-moving-chattanooga',
+    'two-men-and-a-truck-dalton',
+    'atlanta-home-movers',
+  ],
+  catoosa: [
+    'good-guys-moving-chattanooga',
+    'two-men-and-a-truck-chattanooga',
+    'elizabeth-moving-chattanooga',
+    'zip-moving-atlanta',
+  ],
+  dade: [
+    'two-men-and-a-truck-chattanooga',
+    'good-guys-moving-chattanooga',
+    'elizabeth-moving-chattanooga',
+  ],
+  appling: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'mover-dan-savannah',
+  ],
+  atkinson: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  bacon: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'all-my-sons-savannah',
+  ],
+  baker: [
+    'hhg-movers-south-georgia',
+    'two-men-and-a-truck-albany',
+    'perez-moving-valdosta',
+  ],
+  baldwin: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'cicero-moving-macon',
+  ],
+  banks: [
+    'bulldog-movers-atlanta',
+    'atlanta-home-movers',
+    'two-men-and-a-truck-atlanta',
+  ],
+  berrien: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  bibb: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'apple-moving-macon',
+    'cicero-moving-macon',
+    'simple-moving-solutions-macon',
+    'college-hunks-moving-macon',
+    'all-my-sons-macon',
+    'spirit-moves-us-macon',
+  ],
+  bleckley: [
+    'good-guys-moving-macon',
+    'two-men-and-a-truck-macon',
+    'simple-moving-solutions-macon',
+  ],
+  brantley: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'college-hunks-moving-savannah',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

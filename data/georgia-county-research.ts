@@ -594,6 +594,312 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for remote rural relocations.',
     ],
   },
+  floyd: {
+    marketNotes:
+      'Floyd County centers on Rome, a regional hub in Northwest Georgia with industrial and residential moves along the I-75 corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Floyd County pricing reflects Rome industrial traffic, suburban growth, and travel from Atlanta northwest-ring crews.',
+    },
+    tips: [
+      'Verify coverage for Rome and surrounding Floyd County communities before booking.',
+      'Local traffic on I-75 and major Rome routes impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes and historic downtown properties.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple written estimates and compare hourly vs. flat-rate pricing.',
+    ],
+  },
+  gordon: {
+    marketNotes:
+      'Gordon County includes Calhoun in Northwest Georgia with steady residential demand between Rome and Dalton corridors.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Gordon moves reflect I-75 corridor traffic between Rome and Dalton and suburban Calhoun communities.',
+    },
+    tips: [
+      'Verify coverage for Calhoun and surrounding Gordon County addresses.',
+      'Local traffic on I-75 impacts scheduling — confirm crew routes and arrival windows.',
+      'Confirm insurance for high-value homes in newer subdivisions.',
+      'Book early for peak seasons and industrial-corridor move windows.',
+      'Obtain multiple written estimates and ask about travel fees from Rome or Atlanta bases.',
+    ],
+  },
+  chattooga: {
+    marketNotes:
+      'Chattooga County is rural Northwest Georgia with Summerville as the seat and limited dedicated local mover presence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Chattooga moves reflect rural access constraints and travel from Rome or Atlanta northwest-ring crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Summerville and outer Chattooga properties.',
+      'Verify explicit regional service to Summerville before booking.',
+      'Storage is very limited locally — coordinate with Rome or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural relocations.',
+    ],
+  },
+  walker: {
+    marketNotes:
+      'Walker County is in Northwest Georgia near the Tennessee border with LaFayette as the seat and Chattanooga-area crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Walker moves reflect I-24/US-27 corridor traffic and cross-border Chattanooga crew scheduling.',
+    },
+    tips: [
+      'Verify coverage for LaFayette and surrounding Walker County communities.',
+      'Local traffic on major routes impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and mountain-access properties.',
+      'Book early for peak seasons and Chattanooga-metro crew availability.',
+      'Obtain multiple written estimates from Chattanooga and Rome-area providers.',
+    ],
+  },
+  whitfield: {
+    marketNotes:
+      'Whitfield County centers on Dalton, known as the Carpet Capital of the World, with industrial and residential moving demand.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Whitfield pricing reflects industrial corridor traffic, carpet-mill shift schedules, and Chattanooga-area crew demand.',
+    },
+    tips: [
+      'Verify coverage for Dalton and surrounding Whitfield communities.',
+      'Industrial traffic on I-75 impacts scheduling — book morning slots when possible.',
+      'Confirm insurance for high-value homes and specialty flooring or mill equipment moves.',
+      'Book early for peak seasons and month-end apartment turnover.',
+      'Obtain multiple written estimates and compare Dalton vs. Chattanooga crew travel fees.',
+    ],
+  },
+  murray: {
+    marketNotes:
+      'Murray County is rural Northwest Georgia with Chatsworth as the seat between Dalton and the North Georgia mountains.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Murray moves reflect rural mountain-road access and travel from Dalton or Chattanooga bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm property access for Chatsworth and outer Murray addresses.',
+      'Verify explicit regional service to Chatsworth before booking.',
+      'Storage is very limited locally — plan with Dalton or Rome providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural mountain relocations.',
+    ],
+  },
+  catoosa: {
+    marketNotes:
+      'Catoosa County is in Northwest Georgia near the Tennessee border with Ringgold as the seat along the I-75 Chattanooga corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Catoosa moves reflect I-75 border traffic and Chattanooga-metro crew scheduling for Ringgold communities.',
+    },
+    tips: [
+      'Verify coverage for Ringgold and surrounding Catoosa County addresses.',
+      'Local traffic on I-75 and US-41 impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes in newer Ringgold subdivisions.',
+      'Book early for peak seasons and cross-border crew availability.',
+      'Obtain multiple written estimates from Chattanooga-area providers.',
+    ],
+  },
+  dade: {
+    marketNotes:
+      'Dade County is rural in the extreme northwest corner of Georgia with Trenton as the seat and mountainous terrain.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dade moves reflect mountainous rural access, limited storage, and travel from Chattanooga bases.',
+    },
+    tips: [
+      'Mountainous rural access challenges are common — confirm truck size and route feasibility for Trenton.',
+      'Verify explicit regional service to Trenton before booking.',
+      'Storage is very limited locally — coordinate with Chattanooga providers if needed.',
+      'Obtain multiple written estimates and expect higher travel fees.',
+      'Confirm FMCSA credentials for remote mountain relocations.',
+    ],
+  },
+  appling: {
+    marketNotes:
+      'Appling County is rural Southeast Georgia with Baxley as the seat and Savannah-metro regional crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Appling moves reflect long travel from Savannah bases and limited rural storage options.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm property access for Baxley and outer Appling addresses.',
+      'Verify explicit regional service to Baxley before booking.',
+      'Storage is very limited locally — plan with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  atkinson: {
+    marketNotes:
+      'Atkinson County is rural South Georgia with Pearson as the seat and Valdosta-metro regional crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Atkinson moves reflect rural South Georgia access and travel from Valdosta or Albany bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Pearson and outer Atkinson properties.',
+      'Verify explicit regional service to Pearson before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural relocations.',
+    ],
+  },
+  bacon: {
+    marketNotes:
+      'Bacon County is rural Southeast Georgia with Alma as the seat and Savannah-metro regional crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Bacon moves reflect rural access constraints and travel from Savannah or Waycross-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm property access for Alma and outer Bacon addresses.',
+      'Verify explicit regional service to Alma before booking.',
+      'Storage is very limited locally — plan with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  baker: {
+    marketNotes:
+      'Baker County is very rural Southwest Georgia with Newton as the seat and extremely limited on-the-ground mover presence.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Baker moves reflect extremely remote rural access and long travel from Albany bases.',
+    },
+    tips: [
+      'Extremely remote rural access challenges — confirm truck routes and property access for Newton.',
+      'Verify explicit regional service to Newton before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and expect higher travel fees.',
+      'Confirm FMCSA credentials for remote rural relocations.',
+    ],
+  },
+  baldwin: {
+    marketNotes:
+      'Baldwin County centers on Milledgeville with historic homes, college-community turnover, and Macon-metro crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Baldwin moves reflect historic-home handling needs and Macon corridor traffic on US-441.',
+    },
+    tips: [
+      'Verify coverage for Milledgeville and surrounding Baldwin County communities.',
+      'Local traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value historic homes and antiques.',
+      'Book early for peak seasons and college-calendar move windows.',
+      'Obtain multiple written estimates from Macon-area providers.',
+    ],
+  },
+  banks: {
+    marketNotes:
+      'Banks County is rural Northeast Georgia with Homer as the seat between Gainesville and Athens corridors.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Banks moves reflect rural northeast-metro access and travel from Gainesville or Atlanta bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm property access for Homer and outer Banks addresses.',
+      'Verify explicit regional service to Homer before booking.',
+      'Storage is very limited locally — plan with Gainesville or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural relocations.',
+    ],
+  },
+  berrien: {
+    marketNotes:
+      'Berrien County is rural South Georgia with Nashville as the seat and Valdosta-metro regional crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Berrien moves reflect rural access and travel from Valdosta or Tifton-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Nashville and outer Berrien properties.',
+      'Verify explicit regional service to Nashville before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural relocations.',
+    ],
+  },
+  bibb: {
+    marketNotes:
+      'Bibb County centers on Macon, a major Central Georgia hub with historic neighborhoods, apartments, and steady residential demand.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,300',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Bibb County pricing reflects Macon urban traffic, historic-home handling, and strong local mover competition.',
+    },
+    tips: [
+      'Verify coverage for Macon and surrounding Bibb County communities.',
+      'Local traffic on I-75 and I-16 impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value historic homes and specialty items.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates and compare hourly vs. flat-rate pricing.',
+    ],
+  },
+  bleckley: {
+    marketNotes:
+      'Bleckley County is rural Central Georgia with Cochran as the seat and Macon-metro regional crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Bleckley moves reflect rural access and travel from Macon or Dublin-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm property access for Cochran and outer Bleckley addresses.',
+      'Verify explicit regional service to Cochran before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm credentials for rural Central Georgia relocations.',
+    ],
+  },
+  brantley: {
+    marketNotes:
+      'Brantley County is rural Southeast Georgia with Nahunta as the seat and Savannah-metro regional crew coverage.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Brantley moves reflect rural coastal-plain access and travel from Savannah bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Nahunta and outer Brantley properties.',
+      'Verify explicit regional service to Nahunta before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

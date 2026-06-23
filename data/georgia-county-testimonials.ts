@@ -891,6 +891,474 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  floyd: [
+    {
+      quote:
+        'Atlanta Home Movers served our Rome relocation with careful handling and upfront travel pricing from their northwest-ring coverage.',
+      name: 'Laura S.',
+      location: 'Rome, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Page Relocation handled our Floyd County move efficiently — professional crew, clear communication about I-75 corridor timing.',
+      name: 'Chris M.',
+      location: 'Rome, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Rome finished our apartment move on schedule with no hidden fees. Great local Rome-area service.',
+      name: 'Diana K.',
+      location: 'Rome, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  gordon: [
+    {
+      quote:
+        'Wirks Moving confirmed Calhoun coverage upfront and delivered careful furniture handling despite the Rome-to-Calhoun travel.',
+      name: 'Paul T.',
+      location: 'Calhoun, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Atlanta Home Movers served our Gordon County relocation with transparent pricing and professional crews throughout.',
+      name: 'Susan H.',
+      location: 'Calhoun, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Zip Moving provided a reliable flat-rate quote for our Calhoun move and finished ahead of the written estimate.',
+      name: 'Rick B.',
+      location: 'Resaca, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  chattooga: [
+    {
+      quote:
+        'Atlanta Home Movers traveled to our rural Summerville property and handled mountain-road access without issues. Careful crew throughout.',
+      name: 'Nancy W.',
+      location: 'Summerville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Page Relocation confirmed explicit Chattooga County service before move day. Professional handling and clear rural travel fees.',
+      name: 'Earl J.',
+      location: 'Summerville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Rome served our remote Chattooga move efficiently — upfront about travel time and careful with antiques.',
+      name: 'Betty C.',
+      location: 'Menlo, GA',
+      rating: 4,
+      moveType: 'Historic home',
+    },
+  ],
+  walker: [
+    {
+      quote:
+        'Good Guys Moving Chattanooga handled our LaFayette relocation with transparent pricing and careful furniture wrapping throughout.',
+      name: 'Jason P.',
+      location: 'LaFayette, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Elizabeth\'s Moving served our Walker County move from the Chattanooga corridor with professional crews and good communication.',
+      name: 'Melissa R.',
+      location: 'LaFayette, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Chattanooga navigated US-27 traffic smartly and finished our move on schedule. Highly recommend for Walker County.',
+      name: 'Donnie L.',
+      location: 'Rock Spring, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  whitfield: [
+    {
+      quote:
+        'Good Guys Moving delivered excellent service for our Dalton relocation — careful with carpet-mill shift scheduling and transparent fees.',
+      name: 'Karen D.',
+      location: 'Dalton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Dalton handled our Whitfield County move professionally despite heavy I-75 industrial traffic.',
+      name: 'Steve G.',
+      location: 'Dalton, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Elizabeth\'s Moving traveled from Chattanooga and finished our Dalton home move with careful handling and clear pricing.',
+      name: 'Amy F.',
+      location: 'Dalton, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  murray: [
+    {
+      quote:
+        'Good Guys Moving confirmed rural Chatsworth access before booking. Professional crew and reliable Dalton-corridor service.',
+      name: 'Wayne H.',
+      location: 'Chatsworth, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Dalton served our Murray County move with upfront travel-fee disclosure and careful furniture handling.',
+      name: 'Linda M.',
+      location: 'Chatsworth, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Atlanta Home Movers provided dependable backup coverage for our rural Murray relocation when local options were limited.',
+      name: 'Gary S.',
+      location: 'Eton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  catoosa: [
+    {
+      quote:
+        'Good Guys Moving handled our Ringgold relocation efficiently — confirmed I-75 border traffic timing and careful loading throughout.',
+      name: 'Tiffany B.',
+      location: 'Ringgold, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Chattanooga served our Catoosa County move with professional crews and transparent cross-border pricing.',
+      name: 'Robert N.',
+      location: 'Ringgold, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Elizabeth\'s Moving wrapped every piece of furniture and finished our Ringgold move ahead of schedule. Excellent communication.',
+      name: 'Heather W.',
+      location: 'Fort Oglethorpe, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  dade: [
+    {
+      quote:
+        'Two Men and a Truck Chattanooga traveled to our remote Trenton property and handled mountain-road access without issues.',
+      name: 'Frank D.',
+      location: 'Trenton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Good Guys Moving confirmed explicit Dade County service before move day. Careful crew despite the long rural drive.',
+      name: 'Sharon E.',
+      location: 'Trenton, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Elizabeth\'s Moving provided reliable Chattanooga-area coverage for our extreme northwest Georgia move with clear travel estimates.',
+      name: 'Jim C.',
+      location: 'Rising Fawn, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  appling: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Baxley and handled our rural Appling County move with professional care and clear travel fees.',
+      name: 'Rachel T.',
+      location: 'Baxley, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving served our Appling relocation from Savannah with careful handling and transparent rural-route pricing.',
+      name: 'William A.',
+      location: 'Baxley, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mover Dan Savannah provided white-glove service for our Baxley home despite the long coastal-plain drive from Chatham County.',
+      name: 'Patricia L.',
+      location: 'Surrency, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+  ],
+  atkinson: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to Pearson and handled our rural Atkinson County move with professional, timely service.',
+      name: 'Debbie R.',
+      location: 'Pearson, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Pearson coverage upfront. Careful crew and fair South Georgia pricing throughout.',
+      name: 'Tony M.',
+      location: 'Pearson, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving provided reliable labor and packing for our Atkinson County relocation with careful furniture wrapping.',
+      name: 'Cindy J.',
+      location: 'Pearson, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  bacon: [
+    {
+      quote:
+        'Two Men and a Truck Savannah served our Alma relocation with upfront rural travel-fee disclosure and professional crews.',
+      name: 'Harold K.',
+      location: 'Alma, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Bacon County move efficiently despite the long drive from the Savannah coast.',
+      name: 'Gloria P.',
+      location: 'Alma, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'All My Sons Savannah provided dependable Southeast Georgia coverage for our rural Alma move with good communication.',
+      name: 'Dennis W.',
+      location: 'Nicholls, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  baker: [
+    {
+      quote:
+        'HHG Movers confirmed remote Newton coverage before move day. Professional handling despite the extremely rural Baker County location.',
+      name: 'Louise B.',
+      location: 'Newton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany traveled to our Baker County property with clear travel estimates and careful furniture handling.',
+      name: 'Raymond F.',
+      location: 'Newton, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Perez Moving provided reliable South Georgia backup coverage for our remote Baker relocation when local options were scarce.',
+      name: 'Marie S.',
+      location: 'Newton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  baldwin: [
+    {
+      quote:
+        'Good Guys Moving handled our Milledgeville historic-home move with excellent antique care and transparent Macon-area pricing.',
+      name: 'Charles H.',
+      location: 'Milledgeville, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Baldwin County relocation efficiently with professional crews and good communication.',
+      name: 'Janet M.',
+      location: 'Milledgeville, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Cicero\'s Moving handled specialty items in our Milledgeville move with careful crating and climate-controlled storage options.',
+      name: 'Robert E.',
+      location: 'Milledgeville, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  banks: [
+    {
+      quote:
+        'Bulldog Movers confirmed Homer coverage and handled our rural Banks County move with careful driveway access planning.',
+      name: 'Kim L.',
+      location: 'Homer, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Atlanta Home Movers served our Banks County relocation from their northeast-ring coverage with transparent travel pricing.',
+      name: 'Scott D.',
+      location: 'Homer, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta traveled to Homer and finished our move on schedule despite rural northeast-metro access challenges.',
+      name: 'Angela V.',
+      location: 'Maysville, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  berrien: [
+    {
+      quote:
+        'Perez Moving confirmed explicit Nashville coverage and delivered careful handling for our rural Berrien County relocation.',
+      name: 'Johnny R.',
+      location: 'Nashville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Berrien County move with professional crews and clear South Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Nashville, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving provided reliable packing and labor for our Nashville-area move with careful furniture protection.',
+      name: 'Billy T.',
+      location: 'Alapaha, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  bibb: [
+    {
+      quote:
+        'Good Guys Moving was our best Macon experience — no hidden fees, arrived on time, and exceeded expectations from start to finish.',
+      name: 'Michelle A.',
+      location: 'Macon, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon made our apartment relocation seamless. Reasonably priced and careful with every item.',
+      name: 'Derek W.',
+      location: 'Macon, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Cicero\'s Moving handled our historic Ingleside home with expert antique care and seamless communication throughout Bibb County.',
+      name: 'Patricia N.',
+      location: 'Macon, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+  ],
+  bleckley: [
+    {
+      quote:
+        'Simple Moving Solutions traveled to Cochran and handled our rural Bleckley County move with professional, efficient service.',
+      name: 'Harold J.',
+      location: 'Cochran, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Good Guys Moving confirmed explicit Cochran coverage before booking. Careful crew despite the Macon-to-Bleckley travel.',
+      name: 'Sandra K.',
+      location: 'Cochran, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Bleckley County relocation with upfront travel fees and reliable Central Georgia crews.',
+      name: 'Timothy B.',
+      location: 'Cochran, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  brantley: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Nahunta and handled our rural Brantley County move with professional care.',
+      name: 'Evelyn C.',
+      location: 'Nahunta, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving served our Brantley relocation from Savannah with careful handling and transparent rural travel pricing.',
+      name: 'Jerry M.',
+      location: 'Nahunta, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Savannah provided reliable moving and packing for our Nahunta home despite the long Southeast Georgia drive.',
+      name: 'Donna H.',
+      location: 'Hoboken, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(
