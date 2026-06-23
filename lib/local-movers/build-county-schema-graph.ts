@@ -13,12 +13,14 @@ import {
   LOUISIANA_COUNTY_CONTENT_UPDATED,
   OKLAHOMA_COUNTY_CONTENT_UPDATED,
   ARKANSAS_COUNTY_CONTENT_UPDATED,
+  KANSAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
 import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
 import { getOklahomaCountyResearch } from '@/data/oklahoma-county-research';
 import { getArkansasCountyResearch } from '@/data/arkansas-county-research';
+import { getKansasCountyResearch } from '@/data/kansas-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -105,6 +107,12 @@ function resolveContentModified(county: LocalCounty): string {
     getArkansasCountyResearch(county.slug)
   ) {
     return ARKANSAS_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'kansas' &&
+    getKansasCountyResearch(county.slug)
+  ) {
+    return KANSAS_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

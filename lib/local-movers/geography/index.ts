@@ -12,6 +12,7 @@ import { applyMississippiCountyOverrides } from '@/lib/local-movers/geography/mi
 import { applyLouisianaCountyOverrides } from '@/lib/local-movers/geography/louisiana-overrides';
 import { applyOklahomaCountyOverrides } from '@/lib/local-movers/geography/oklahoma-overrides';
 import { applyArkansasCountyOverrides } from '@/lib/local-movers/geography/arkansas-overrides';
+import { applyKansasCountyOverrides } from '@/lib/local-movers/geography/kansas-overrides';
 import { applyTennesseeCountyOverrides } from '@/lib/local-movers/geography/tennessee-overrides';
 import { applyTexasCountyOverrides } from '@/lib/local-movers/geography/texas-overrides';
 
@@ -35,7 +36,8 @@ const allCounties: LocalCounty[] = [
     .map(applyMississippiCountyOverrides)
     .map(applyLouisianaCountyOverrides)
     .map(applyOklahomaCountyOverrides)
-    .map(applyArkansasCountyOverrides),
+    .map(applyArkansasCountyOverrides)
+    .map(applyKansasCountyOverrides),
 ];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {

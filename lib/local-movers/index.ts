@@ -11,6 +11,7 @@ import { mississippiCountyMoverAssignments } from '@/data/mississippi-county-ass
 import { louisianaCountyMoverAssignments } from '@/data/louisiana-county-assignments';
 import { oklahomaCountyMoverAssignments } from '@/data/oklahoma-county-assignments';
 import { arkansasCountyMoverAssignments } from '@/data/arkansas-county-assignments';
+import { kansasCountyMoverAssignments } from '@/data/kansas-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -27,6 +28,7 @@ const curatedAssignmentStateSlugs = new Set([
   'louisiana',
   'oklahoma',
   'arkansas',
+  'kansas',
   'california',
   'florida',
   'new-jersey',
@@ -47,6 +49,7 @@ const allCountyAssignments = [
   ...louisianaCountyMoverAssignments,
   ...oklahomaCountyMoverAssignments,
   ...arkansasCountyMoverAssignments,
+  ...kansasCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,
