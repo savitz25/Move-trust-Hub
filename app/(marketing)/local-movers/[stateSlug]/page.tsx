@@ -87,6 +87,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'south-carolina' ||
                 state.slug === 'north-carolina' ||
                 state.slug === 'tennessee' ||
+                state.slug === 'alabama' ||
                 state.slug === 'texas'
                 ? `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`

@@ -12,6 +12,8 @@ import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-res
 import { getSouthCarolinaCountyTestimonials } from '@/data/south-carolina-county-testimonials';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
 import { getNorthCarolinaCountyTestimonials } from '@/data/north-carolina-county-testimonials';
+import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
+import { getAlabamaCountyTestimonials } from '@/data/alabama-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -192,6 +194,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'tennessee') {
     return getTennesseeCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'alabama') {
+    return getAlabamaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -233,6 +238,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'tennessee') {
     const curated = getTennesseeCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'alabama') {
+    const curated = getAlabamaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -311,6 +320,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getTennesseeCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'alabama') {
+    const curated = getAlabamaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -372,6 +385,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'tennessee') {
     const curated = getTennesseeCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'alabama') {
+    const curated = getAlabamaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

@@ -12,7 +12,9 @@ import {
   SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   TENNESSEE_COUNTY_CONTENT_UPDATED,
+  ALABAMA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
+import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -26,6 +28,7 @@ import { getGeorgiaNearbyCounties } from '@/lib/local-movers/georgia-nearby';
 import { getSouthCarolinaNearbyCounties } from '@/lib/local-movers/south-carolina-nearby';
 import { getNorthCarolinaNearbyCounties } from '@/lib/local-movers/north-carolina-nearby';
 import { getTennesseeNearbyCounties } from '@/lib/local-movers/tennessee-nearby';
+import { getAlabamaNearbyCounties } from '@/lib/local-movers/alabama-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -119,7 +122,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                     : stateSlug === 'tennessee' &&
                         getTennesseeCountyResearch(countySlug)
                       ? getTennesseeNearbyCounties(countySlug)
-                      : [];
+                      : stateSlug === 'alabama' &&
+                          getAlabamaCountyResearch(countySlug)
+                        ? getAlabamaNearbyCounties(countySlug)
+                        : [];
 
   return (
     <>
@@ -259,7 +265,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                             : stateSlug === 'tennessee' &&
                                 getTennesseeCountyResearch(countySlug)
                               ? TENNESSEE_COUNTY_CONTENT_UPDATED
-                              : undefined
+                              : stateSlug === 'alabama' &&
+                                  getAlabamaCountyResearch(countySlug)
+                                ? ALABAMA_COUNTY_CONTENT_UPDATED
+                                : undefined
           }
         />
 
