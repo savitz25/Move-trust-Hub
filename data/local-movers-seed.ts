@@ -6222,6 +6222,21 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'San Antonio',
     website: 'https://www.collegehunkshaulingjunk.com/san-antonio-tx/',
   },
+  'two-men-and-a-truck-denison': {
+    id: 'two-men-and-a-truck-denison',
+    name: 'Two Men and a Truck Denison',
+    rating: 4.5,
+    reviewCount: 198,
+    shortDescription:
+      'Denison–Sherman franchise covering Fannin, Cooke County, Bonham, and rural North Texas ranch properties.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    usdotNumber: '1669783',
+    fmcsaSafetyRating: 'Satisfactory',
+    bbbRating: 'A+',
+    city: 'Denison',
+    website: 'https://twomenandatruck.com/movers/tx/denison',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

@@ -3451,6 +3451,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  hopkins: [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move in Sulphur Springs. The Dallas crew confirmed Hopkins County coverage and navigated our ranch driveway without issues.',
+      name: 'Sam W.',
+      location: 'Sulphur Springs, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the Texarkana team on a Sulphur Springs route. Reliable in remote areas with upfront travel-fee disclosure.',
+      name: 'Tina X.',
+      location: 'Sulphur Springs, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  fannin: [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move in Bonham. The Dallas crew confirmed Fannin County service and managed our ranch property access professionally.',
+      name: 'Uma Y.',
+      location: 'Bonham, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Northeast Texas from Sherman. Reliable in remote Bonham with careful handling on a longer regional route.',
+      name: 'Vic Z.',
+      location: 'Bonham, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  hill: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Hillsboro. The Waco crew confirmed Hill County coverage and finished on a tight timeline.',
+      name: 'Wade A.',
+      location: 'Hillsboro, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from Dallas. Reliable in remote Hillsboro with careful handling and clear travel-fee disclosure.',
+      name: 'Xena B.',
+      location: 'Hillsboro, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wharton: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Wharton. The Houston crew confirmed county service and handled our ranch property access without delay.',
+      name: 'Yuri C.',
+      location: 'Wharton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the Victoria team on a Wharton County route. Reliable in remote areas with organized loading and steady communication.',
+      name: 'Zoe D.',
+      location: 'Wharton, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  erath: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Stephenville. The Fort Worth crew confirmed Erath County service and navigated our ranch road without issues.',
+      name: 'Adam E.',
+      location: 'Stephenville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from Waco. Reliable in remote Stephenville with careful handling on a longer regional route.',
+      name: 'Beth F.',
+      location: 'Stephenville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  cooke: [
+    {
+      quote:
+        'Professional for our remote North Texas move in Gainesville. The Dallas crew confirmed Cooke County coverage and managed our ranch driveway with the right truck setup.',
+      name: 'Carl G.',
+      location: 'Gainesville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the Sherman team on a Gainesville route with clear travel-fee disclosure.',
+      name: 'Dana H.',
+      location: 'Gainesville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  upshur: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Gilmer. The Longview crew confirmed Upshur County service and completed our Piney Woods relocation without rushing.',
+      name: 'Evan I.',
+      location: 'Gilmer, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Careful handling from a second Longview estimate we compared. Reliable in remote Gilmer with organized loading and steady communication.',
+      name: 'Faye J.',
+      location: 'Gilmer, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'val-verde': [
+    {
+      quote:
+        'Professional for our remote South Texas move in Del Rio. The San Antonio crew confirmed Val Verde County coverage and handled ranch access without issues.',
+      name: 'Greg K.',
+      location: 'Del Rio, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Laredo. Reliable in remote Del Rio with careful handling and clear travel-fee disclosure.',
+      name: 'Holly L.',
+      location: 'Del Rio, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wood: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Quitman. The Tyler crew understood Piney Woods access and protected our floors through tight doorways.',
+      name: 'Ivan M.',
+      location: 'Quitman, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Longview. Reliable in remote Wood County with careful handling on a longer regional route.',
+      name: 'Jill N.',
+      location: 'Quitman, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lamar: [
+    {
+      quote:
+        'Professional for our remote Northeast Texas move in Paris. The Texarkana crew confirmed Lamar County service and finished our ranch move on schedule.',
+      name: 'Kyle O.',
+      location: 'Paris, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the Dallas team on a Paris route with steady communication throughout.',
+      name: 'Lara P.',
+      location: 'Paris, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

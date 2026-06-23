@@ -156,6 +156,16 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   brown: ['big-country-movers-abilene', 'two-men-and-a-truck-waco'],
   'jim-wells': ['two-men-and-a-truck-corpus-christi', 'south-texas-moving-laredo'],
   washington: ['houston-local-lines', 'two-men-and-a-truck-austin'],
+  hopkins: ['two-men-and-a-truck-dallas', 'bills-movers-texarkana'],
+  fannin: ['two-men-and-a-truck-dallas', 'two-men-and-a-truck-denison'],
+  hill: ['two-men-and-a-truck-waco', 'two-men-and-a-truck-dallas'],
+  wharton: ['houston-local-lines', 'victoria-transfer-storage'],
+  erath: ['two-men-and-a-truck-fort-worth', 'two-men-and-a-truck-waco'],
+  cooke: ['two-men-and-a-truck-dallas', 'two-men-and-a-truck-denison'],
+  upshur: ['higgs-moving-longview', 'longview-area-moving'],
+  'val-verde': ['two-men-and-a-truck-san-antonio', 'south-texas-moving-laredo'],
+  wood: ['tyler-moving-storage', 'higgs-moving-longview'],
+  lamar: ['bills-movers-texarkana', 'two-men-and-a-truck-dallas'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

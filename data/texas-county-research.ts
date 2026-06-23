@@ -2625,6 +2625,176 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves and discuss handling for barn tools and detached structures.',
     ],
   },
+  hopkins: {
+    marketNotes:
+      'Hopkins County is one of Texas\'s least populous counties with Sulphur Springs as the seat. Moves are rare and rely on regional service from Dallas or Texarkana.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Dallas and Texarkana regional providers may add travel fees for Sulphur Springs and remote Northeast Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss ranch roads, gates, and truck size upfront.',
+      'Verify explicit regional service to Sulphur Springs; Dallas and Texarkana crews should confirm Hopkins County coverage in writing.',
+      'Storage is very limited locally; Dallas or Texarkana warehouse options are typical for gap periods.',
+      'Obtain multiple estimates — Northeast Texas travel distance can materially affect final pricing.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  fannin: {
+    marketNotes:
+      'Fannin County is one of Texas\'s least populous counties with Bonham as the seat. Moves are rare and rely on regional service from Dallas or Sherman.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Dallas and Sherman–Denison regional crews may add travel fees for Bonham and remote Northeast Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss Red River country access roads and truck size upfront.',
+      'Verify explicit regional service to Bonham; Dallas and Sherman crews vary in rural Fannin County coverage.',
+      'Storage is very limited locally; Dallas or Sherman warehouse options are typical between closings.',
+      'Obtain multiple estimates — sparse Northeast Texas competition can mean wider price swings between regional crews.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  hill: {
+    marketNotes:
+      'Hill County is one of Texas\'s least populous counties with Hillsboro as the seat. Moves are rare and rely on regional service from Waco or Dallas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Waco and Dallas regional crews may add travel fees for Hillsboro and remote Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss multi-structure properties and ranch roads upfront.',
+      'Verify explicit regional service to Hillsboro; Waco is often the closer practical option for Hill County.',
+      'Storage is very limited locally; Waco or Dallas warehouse options are typical for gap periods.',
+      'Obtain multiple estimates — travel distance from Waco or Dallas can materially affect final pricing.',
+      'Confirm credentials for ranch moves and discuss handling for barn tools and detached structures.',
+    ],
+  },
+  wharton: {
+    marketNotes:
+      'Wharton County is one of Texas\'s least populous counties with Wharton as the seat. Moves are rare and rely on regional service from Houston or Victoria.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Houston and Victoria regional crews may add travel fees for Wharton and remote South Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — confirm truck access for ranch-country and river-bottom homes.',
+      'Verify explicit regional service to Wharton; Houston and Victoria movers vary in rural county coverage.',
+      'Storage is very limited locally; Houston or Victoria warehouse options are typical between closings.',
+      'Obtain multiple estimates — travel distance from Houston or Victoria can materially affect final pricing.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  erath: {
+    marketNotes:
+      'Erath County is one of Texas\'s least populous counties with Stephenville as the seat. Moves are rare and rely on regional service from Fort Worth or Waco.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Fort Worth and Waco regional crews may add travel fees for Stephenville and remote Central Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss ranch roads, gates, and truck size upfront.',
+      'Verify explicit regional service to Stephenville; Fort Worth and Waco movers should confirm Erath County coverage in writing.',
+      'Storage is very limited locally; Fort Worth or Waco warehouse options are typical for gap periods.',
+      'Obtain multiple estimates — Central Texas travel distance can materially affect hourly and flat-rate quotes.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  cooke: {
+    marketNotes:
+      'Cooke County is one of Texas\'s least populous counties with Gainesville as the seat. Moves are rare and rely on regional service from Dallas or Sherman.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Dallas and Sherman–Denison regional crews may add travel fees for Gainesville and rural North Texas ranch properties near the Red River.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss Red River country access roads and truck size upfront.',
+      'Verify explicit regional service to Gainesville; Dallas and Sherman crews should confirm Cooke County coverage in writing.',
+      'Storage is very limited locally; Dallas or Sherman warehouse options are typical between closings.',
+      'Obtain multiple estimates — North Texas travel distance can materially affect final pricing in thin markets.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
+  upshur: {
+    marketNotes:
+      'Upshur County is one of Texas\'s least populous counties with Gilmer as the seat. Moves are rare and rely on regional service from Longview.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Longview regional providers may add travel fees for Gilmer and remote East Texas Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and rural homesteads.',
+      'Verify explicit regional service to Gilmer; confirm Longview crews cover Upshur County before booking.',
+      'Storage is very limited in Upshur County; Longview warehouse options are typical when closing dates do not align.',
+      'Obtain multiple estimates — obtain multiple Longview quotes since the market is thin and travel fees vary.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  'val-verde': {
+    marketNotes:
+      'Val Verde County is one of Texas\'s least populous counties with Del Rio as the seat. Moves are rare and rely on regional service from San Antonio or Laredo.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'San Antonio and Laredo regional crews may add travel fees for Del Rio and remote South Texas ranch and border-region properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss border-region access roads and long driveways upfront.',
+      'Verify explicit regional service to Del Rio; San Antonio and Laredo movers vary in Val Verde County coverage.',
+      'Storage is very limited locally; San Antonio or Laredo warehouse options are typical between closings.',
+      'Obtain multiple estimates — ranch moves may need extra packing time not reflected in basic online quotes.',
+      'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
+    ],
+  },
+  wood: {
+    marketNotes:
+      'Wood County is one of Texas\'s least populous counties with Quitman as the seat. Moves are rare and rely on regional service from Tyler or Longview.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Tyler and Longview regional providers may add travel fees for Quitman and remote East Texas Piney Woods properties.',
+    },
+    tips: [
+      'Extremely remote East Texas properties have severe access challenges — confirm access for timber roads and lake-country homes.',
+      'Verify explicit regional service to Quitman; Tyler and Longview crews are the practical regional options.',
+      'Storage is very limited in Wood County; coordinate with Tyler or Longview-area facilities if needed.',
+      'Obtain multiple estimates — deep-county travel time can materially affect hourly pricing in thin markets.',
+      'Confirm credentials for rural moves and ask about experience with forest-access roads and limited turnaround space.',
+    ],
+  },
+  lamar: {
+    marketNotes:
+      'Lamar County is one of Texas\'s least populous counties with Paris as the seat. Moves are rare and rely on regional service from Texarkana or Dallas.',
+    costs: {
+      studioRange: '$600–$1,200+',
+      familyRange: '$2,000–$5,000+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Texarkana and Dallas regional providers may add travel fees for Paris and remote Northeast Texas ranch properties.',
+    },
+    tips: [
+      'Extremely remote ranch properties have severe access challenges — discuss ranch roads, gates, and truck size upfront.',
+      'Verify explicit regional service to Paris; Texarkana is often the closer practical option for Lamar County.',
+      'Storage is very limited locally; Texarkana or Dallas warehouse options are typical for gap periods.',
+      'Obtain multiple estimates — Northeast Texas travel distance can materially affect final pricing.',
+      'Confirm credentials for ranch moves and verify insurance limits for farm equipment and detached structures.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(
