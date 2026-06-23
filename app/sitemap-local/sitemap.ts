@@ -127,6 +127,16 @@ const AL_HIGH_TRAFFIC_COUNTIES = new Set([
   'houston',
   'etowah',
   'marshall',
+  'st-clair',
+  'lauderdale',
+  'cullman',
+  'elmore',
+  'talladega',
+  'dekalb',
+  'walker',
+  'autauga',
+  'blount',
+  'colbert',
 ]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */

@@ -212,6 +212,176 @@ export const alabamaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  'st-clair': {
+    marketNotes:
+      'St. Clair County is a growing suburban county east of Birmingham with strong residential demand in Pell City, Moody, and Springville.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'St. Clair County pricing reflects Birmingham-metro east suburban growth, I-20 corridor traffic, and Shelby County regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Pell City, Moody, and Springville areas before booking.',
+      'Birmingham-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lauderdale: {
+    marketNotes:
+      'Lauderdale County is a key North Alabama county with strong industrial, educational, and residential demand centered on Florence.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Lauderdale County pricing reflects Florence-Muscle Shoals metro demand, UNA student turnover, and Huntsville-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Florence and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cullman: {
+    marketNotes:
+      'Cullman County is a growing county in North Alabama with strong residential and industrial demand centered on Cullman.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cullman County pricing reflects regional industrial growth, I-65 corridor access, and Huntsville-metro crew travel for full-service moves.',
+    },
+    tips: [
+      'Verify coverage for Cullman and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  elmore: {
+    marketNotes:
+      'Elmore County is a growing suburban county north of Montgomery with strong residential demand in Wetumpka and Millbrook.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Elmore County pricing reflects Montgomery-metro north suburban growth, Coosa River corridor access, and regional crew travel from the capital.',
+    },
+    tips: [
+      'Verify coverage for Wetumpka and Millbrook areas before booking.',
+      'Montgomery-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  talladega: {
+    marketNotes:
+      'Talladega County is a growing county in East Alabama with strong industrial and residential demand in Talladega and Sylacauga.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,300',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Talladega County pricing reflects East Alabama industrial corridor demand and Birmingham-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Talladega and Sylacauga areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dekalb: {
+    marketNotes:
+      'DeKalb County is a growing county in Northeast Alabama with strong industrial and residential demand centered on Fort Payne.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'DeKalb County pricing reflects Lookout Mountain foothill access, regional industrial demand, and Huntsville-metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Fort Payne and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  walker: {
+    marketNotes:
+      'Walker County is a growing county northwest of Birmingham with strong residential demand centered on Jasper.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Walker County pricing reflects northwest Alabama regional demand and Birmingham-metro crew travel along the I-22 corridor.',
+    },
+    tips: [
+      'Verify coverage for Jasper and surrounding areas before booking.',
+      'Birmingham-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  autauga: {
+    marketNotes:
+      'Autauga County is a growing suburban county north of Montgomery with strong residential demand centered on Prattville.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Autauga County pricing reflects Prattville suburban growth, Maxwell-Gunter corridor proximity, and Montgomery-metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Prattville and surrounding areas before booking.',
+      'Montgomery-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  blount: {
+    marketNotes:
+      'Blount County is a growing county north of Birmingham with strong rural-suburban residential demand in Oneonta and surrounding communities.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Blount County pricing reflects rural-suburban access north of Birmingham and regional crew travel from Huntsville and Jefferson County providers.',
+    },
+    tips: [
+      'Verify coverage for Oneonta and surrounding areas before booking.',
+      'Birmingham-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  colbert: {
+    marketNotes:
+      'Colbert County is a key North Alabama county with strong industrial and residential demand in Tuscumbia, Muscle Shoals, and Sheffield.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Colbert County pricing reflects Florence-Muscle Shoals metro demand, Tennessee River corridor access, and Huntsville-metro regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Tuscumbia, Muscle Shoals, and Sheffield areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getAlabamaCountyResearch(

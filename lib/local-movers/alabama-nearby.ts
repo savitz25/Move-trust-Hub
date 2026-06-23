@@ -23,6 +23,16 @@ const AL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   houston: ['henry', 'dale', 'coffee', 'geneva', 'barbour', 'covington'],
   etowah: ['calhoun', 'cherokee', 'dekalb', 'marshall', 'blount', 'jefferson'],
   marshall: ['morgan', 'jackson', 'dekalb', 'etowah', 'cullman', 'blount'],
+  'st-clair': ['jefferson', 'shelby', 'talladega', 'calhoun', 'etowah', 'blount'],
+  lauderdale: ['colbert', 'lawrence', 'limestone', 'morgan', 'franklin', 'winston'],
+  cullman: ['morgan', 'marshall', 'blount', 'walker', 'winston', 'lawrence'],
+  elmore: ['montgomery', 'autauga', 'coosa', 'tallapoosa', 'lee', 'macon'],
+  talladega: ['st-clair', 'calhoun', 'clay', 'coosa', 'shelby', 'chilton'],
+  dekalb: ['marshall', 'jackson', 'cherokee', 'etowah', 'calhoun', 'blount'],
+  walker: ['jefferson', 'tuscaloosa', 'fayette', 'winston', 'marion', 'blount'],
+  autauga: ['montgomery', 'elmore', 'chilton', 'lowndes', 'dallas', 'coosa'],
+  blount: ['jefferson', 'cullman', 'marshall', 'etowah', 'st-clair', 'walker'],
+  colbert: ['lauderdale', 'franklin', 'lawrence', 'morgan', 'winston', 'marion'],
 };
 
 export function getAlabamaNearbyCounties(

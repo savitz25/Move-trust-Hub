@@ -16,6 +16,16 @@ export const alabamaCountyOverrides: Partial<
   houston: { seat: 'Dothan', metro: 'dothan-metro-al' },
   etowah: { seat: 'Gadsden', metro: 'gadsden-metro-al' },
   marshall: { seat: 'Guntersville', metro: 'marshall-lakes-al' },
+  'st-clair': { seat: 'Pell City', metro: 'birmingham-metro-al' },
+  lauderdale: { seat: 'Florence', metro: 'florence-shoals-metro-al' },
+  cullman: { seat: 'Cullman', metro: 'cullman-metro-al' },
+  elmore: { seat: 'Wetumpka', metro: 'montgomery-metro-al' },
+  talladega: { seat: 'Talladega', metro: 'talladega-metro-al' },
+  dekalb: { seat: 'Fort Payne', metro: 'fort-payne-metro-al' },
+  walker: { seat: 'Jasper', metro: 'jasper-metro-al' },
+  autauga: { seat: 'Prattville', metro: 'montgomery-metro-al' },
+  blount: { seat: 'Oneonta', metro: 'birmingham-metro-al' },
+  colbert: { seat: 'Tuscumbia', metro: 'florence-shoals-metro-al' },
 };
 
 export function applyAlabamaCountyOverrides(county: LocalCounty): LocalCounty {
