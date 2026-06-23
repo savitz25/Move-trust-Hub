@@ -1855,6 +1855,318 @@ export const tennesseeCountyTestimonials: Record<string, CountyTestimonialEntry[
         moveType: 'Townhome',
       },
     ],
+    chester: [
+      {
+        quote:
+          'Two Men and a Truck Jackson handled our Henderson relocation professionally — on time, efficient, and careful with our belongings throughout Chester County.',
+        name: 'Roger M.',
+        location: 'Henderson, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Paris served our Chester County move efficiently — professional crew with careful handling.',
+        name: 'Brenda K.',
+        location: 'Henderson, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Volunteer Moving confirmed Henderson coverage and delivered reliable packing with no surprise fees.',
+        name: 'Glenn P.',
+        location: 'Henderson, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    sequatchie: [
+      {
+        quote:
+          'Two Men and a Truck Chattanooga handled our Dunlap relocation professionally — excellent with mountain moves throughout Sequatchie County.',
+        name: 'Amanda S.',
+        location: 'Dunlap, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'Good Guys Moving served our Sequatchie Valley move efficiently — professional crew with careful handling.',
+        name: 'Keith H.',
+        location: 'Dunlap, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'River City Moving confirmed Dunlap coverage and delivered reliable packing and loading with no surprise fees.',
+        name: 'Tammy L.',
+        location: 'Dunlap, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    unicoi: [
+      {
+        quote:
+          'Two Men and a Truck Johnson City handled our Erwin relocation professionally — excellent with mountain moves throughout Unicoi County.',
+        name: 'Virginia C.',
+        location: 'Erwin, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'Barnett Moving served our Erwin-area move efficiently — professional crew with careful handling across the Tri-Cities.',
+        name: 'Robert D.',
+        location: 'Erwin, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Affordable Moving Tri-Cities confirmed Unicoi County coverage and delivered reliable packing with no surprise fees.',
+        name: 'Janet W.',
+        location: 'Erwin, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    haywood: [
+      {
+        quote:
+          'Two Men and a Truck Brownsville handled our local relocation professionally — on time, efficient, and careful with our belongings throughout Haywood County.',
+        name: 'Charles B.',
+        location: 'Brownsville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Memphis served our Haywood County move efficiently — professional crew with careful handling.',
+        name: 'Patricia G.',
+        location: 'Brownsville, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Big League Movers confirmed Brownsville coverage and delivered reliable packing with no surprise fees.',
+        name: 'Henry J.',
+        location: 'Brownsville, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    wayne: [
+      {
+        quote:
+          'Two Men and a Truck Pulaski handled our Waynesboro relocation professionally — on time, efficient, and careful with our belongings throughout Wayne County.',
+        name: 'Dorothy R.',
+        location: 'Waynesboro, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Lawrenceburg served our rural Wayne County move efficiently — professional and reliable.',
+        name: 'Frank T.',
+        location: 'Waynesboro, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Bellhop Nashville confirmed Waynesboro coverage and delivered reliable packing with no surprise fees.',
+        name: 'Ruth N.',
+        location: 'Waynesboro, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
+    bledsoe: [
+      {
+        quote:
+          'Two Men and a Truck Chattanooga handled our Pikeville relocation professionally — excellent with mountain moves throughout Bledsoe County.',
+        name: 'Larry F.',
+        location: 'Pikeville, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'College Hunks Moving Chattanooga served our Bledsoe County move efficiently — professional crew with careful handling.',
+        name: 'Sandra M.',
+        location: 'Pikeville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Fox Moving Chattanooga confirmed Pikeville coverage and delivered reliable packing with no surprise fees.',
+        name: 'Jerry C.',
+        location: 'Pikeville, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    benton: [
+      {
+        quote:
+          'Two Men and a Truck Paris handled our Camden relocation professionally — on time, efficient, and careful with our belongings throughout Benton County.',
+        name: 'Nancy H.',
+        location: 'Camden, TN',
+        rating: 5,
+        moveType: 'Lakeside home',
+      },
+      {
+        quote:
+          'Fox Moving Clarksville served our Kentucky Lake-area move efficiently — professional crew with careful handling.',
+        name: 'David L.',
+        location: 'Camden, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Volunteer Moving confirmed Camden coverage and delivered reliable packing with no surprise fees.',
+        name: 'Karen S.',
+        location: 'Camden, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    cannon: [
+      {
+        quote:
+          'Two Men and a Truck Woodbury handled our local relocation professionally — on time, efficient, and careful with our belongings throughout Cannon County.',
+        name: 'Melissa A.',
+        location: 'Woodbury, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Murfreesboro served our Cannon County move efficiently — professional crew with careful handling.',
+        name: 'Steven P.',
+        location: 'Woodbury, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'College Hunks Moving Nashville confirmed Woodbury coverage and delivered reliable packing with no surprise fees.',
+        name: 'Linda G.',
+        location: 'Woodbury, TN',
+        rating: 4,
+        moveType: 'Apartment',
+      },
+    ],
+    stewart: [
+      {
+        quote:
+          'Two Men and a Truck Clarksville handled our Dover relocation professionally — on time, efficient, and careful with our belongings throughout Stewart County.',
+        name: 'Philip W.',
+        location: 'Dover, TN',
+        rating: 5,
+        moveType: 'Lakeside home',
+      },
+      {
+        quote:
+          'Two Men and a Truck Paris served our Land Between the Lakes-area move efficiently — professional crew with careful handling.',
+        name: 'Margaret B.',
+        location: 'Dover, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons Clarksville confirmed Dover coverage and delivered reliable packing with no surprise fees.',
+        name: 'Raymond K.',
+        location: 'Dover, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    meigs: [
+      {
+        quote:
+          'Two Men and a Truck Chattanooga handled our Decatur relocation professionally — on time, efficient, and careful with our belongings throughout Meigs County.',
+        name: 'Bonnie E.',
+        location: 'Decatur, TN',
+        rating: 5,
+        moveType: 'Lakeside home',
+      },
+      {
+        quote:
+          'Good Guys Moving served our Meigs County move efficiently — professional crew with careful handling near Chickamauga Lake.',
+        name: 'Carl R.',
+        location: 'Decatur, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All My Sons Chattanooga confirmed Decatur coverage and delivered reliable packing with no surprise fees.',
+        name: 'Joyce M.',
+        location: 'Decatur, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    grundy: [
+      {
+        quote:
+          'Two Men and a Truck Chattanooga handled our Altamont relocation professionally — excellent with mountain moves throughout Grundy County.',
+        name: 'Walter N.',
+        location: 'Altamont, TN',
+        rating: 5,
+        moveType: 'Mountain home',
+      },
+      {
+        quote:
+          'Two Men and a Truck Cleveland served our Grundy County move efficiently — professional crew with careful handling.',
+        name: 'Evelyn T.',
+        location: 'Altamont, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Good Guys Moving confirmed Altamont coverage and delivered reliable packing with no surprise fees.',
+        name: 'Howard D.',
+        location: 'Altamont, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
+    crockett: [
+      {
+        quote:
+          'Two Men and a Truck Jackson handled our Alamo relocation professionally — excellent for our rural Crockett County move.',
+        name: 'Betty J.',
+        location: 'Alamo, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Dyersburg served our Crockett County move efficiently — professional and reliable across rural West Tennessee.',
+        name: 'Earl W.',
+        location: 'Alamo, TN',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Volunteer Moving confirmed Alamo coverage and delivered reliable packing with no surprise fees.',
+        name: 'Peggy C.',
+        location: 'Alamo, TN',
+        rating: 4,
+        moveType: 'Single-family',
+      },
+    ],
   };
 
 export function getTennesseeCountyTestimonials(

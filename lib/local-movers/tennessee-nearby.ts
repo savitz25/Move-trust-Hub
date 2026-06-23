@@ -80,6 +80,18 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   humphreys: ['hickman', 'houston', 'benton', 'perry', 'dickson', 'cheatham'],
   johnson: ['sullivan', 'washington', 'carter', 'unicoi', 'hawkins', 'greene'],
   polk: ['bradley', 'mcminn', 'monroe', 'hamilton', 'meigs', 'rhea'],
+  chester: ['madison', 'henderson', 'mcnairy', 'hardin', 'hardeman', 'decatur'],
+  sequatchie: ['hamilton', 'marion', 'grundy', 'van-buren', 'warren', 'bledsoe'],
+  unicoi: ['washington', 'carter', 'greene', 'cocke', 'johnson', 'hawkins'],
+  haywood: ['lauderdale', 'crockett', 'fayette', 'tipton', 'madison', 'hardeman'],
+  wayne: ['lawrence', 'lewis', 'perry', 'hickman', 'maury', 'giles'],
+  bledsoe: ['sequatchie', 'van-buren', 'rhea', 'cumberland', 'hamilton', 'white'],
+  benton: ['henry', 'stewart', 'houston', 'humphreys', 'carroll', 'decatur'],
+  cannon: ['rutherford', 'dekalb', 'wilson', 'warren', 'coffee', 'smith'],
+  stewart: ['montgomery', 'houston', 'henry', 'benton', 'humphreys', 'dickson'],
+  meigs: ['rhea', 'mcminn', 'bradley', 'hamilton', 'polk', 'monroe'],
+  grundy: ['sequatchie', 'marion', 'franklin', 'coffee', 'warren', 'van-buren'],
+  crockett: ['lauderdale', 'dyer', 'gibson', 'haywood', 'madison', 'weakley'],
 };
 
 export function getTennesseeNearbyCounties(

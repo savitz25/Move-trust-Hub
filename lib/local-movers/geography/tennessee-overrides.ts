@@ -75,6 +75,18 @@ export const tennesseeCountyOverrides: Partial<
   humphreys: { seat: 'Waverly', metro: 'waverly-metro-tn' },
   johnson: { seat: 'Mountain City', metro: 'kingsport-bristol-metro-tn' },
   polk: { seat: 'Benton', metro: 'benton-metro-tn' },
+  chester: { seat: 'Henderson', metro: 'chester-metro-tn' },
+  sequatchie: { seat: 'Dunlap', metro: 'dunlap-metro-tn' },
+  unicoi: { seat: 'Erwin', metro: 'erwin-metro-tn' },
+  haywood: { seat: 'Brownsville', metro: 'brownsville-metro-tn' },
+  wayne: { seat: 'Waynesboro', metro: 'waynesboro-metro-tn' },
+  bledsoe: { seat: 'Pikeville', metro: 'pikeville-metro-tn' },
+  benton: { seat: 'Camden', metro: 'camden-metro-tn' },
+  cannon: { seat: 'Woodbury', metro: 'woodbury-metro-tn' },
+  stewart: { seat: 'Dover', metro: 'dover-metro-tn' },
+  meigs: { seat: 'Decatur', metro: 'meigs-metro-tn' },
+  grundy: { seat: 'Altamont', metro: 'grundy-metro-tn' },
+  crockett: { seat: 'Alamo', metro: 'alamo-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

@@ -183,6 +183,18 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'humphreys',
   'johnson',
   'polk',
+  'chester',
+  'sequatchie',
+  'unicoi',
+  'haywood',
+  'wayne',
+  'bledsoe',
+  'benton',
+  'cannon',
+  'stewart',
+  'meigs',
+  'grundy',
+  'crockett',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

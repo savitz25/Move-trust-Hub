@@ -1215,6 +1215,210 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  chester: {
+    marketNotes:
+      'Chester County is a growing county in West Tennessee with strong residential demand centered on Henderson.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Chester County pricing reflects Henderson suburban demand, rural West Tennessee access, and Jackson-Paris regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Henderson and surrounding Chester County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sequatchie: {
+    marketNotes:
+      'Sequatchie County is a growing county in Southeast Tennessee with strong residential and mountain demand centered on Dunlap.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Sequatchie County pricing reflects Dunlap mountain-valley demand, Chattanooga-Cleveland regional crew travel, and Sequatchie Valley corridor access.',
+    },
+    tips: [
+      'Verify coverage for Dunlap and surrounding Sequatchie County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  unicoi: {
+    marketNotes:
+      'Unicoi County is a scenic mountain county in Northeast Tennessee with strong residential demand centered on Erwin.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Unicoi County pricing reflects Erwin mountain-community demand, Tri-Cities regional crew travel, and Appalachian corridor access.',
+    },
+    tips: [
+      'Verify coverage for Erwin and surrounding Unicoi County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  haywood: {
+    marketNotes:
+      'Haywood County is a rural West Tennessee county with agricultural and residential demand centered on Brownsville.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Haywood County pricing reflects Brownsville rural-community demand, agricultural property considerations, and Memphis-Jackson regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Brownsville and surrounding Haywood County areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wayne: {
+    marketNotes:
+      'Wayne County is a rural county in southern Middle Tennessee with residential demand centered on Waynesboro.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Wayne County pricing reflects Waynesboro rural-community demand, limited local storage options, and Columbia-Pulaski regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Waynesboro before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  bledsoe: {
+    marketNotes:
+      'Bledsoe County is a rural mountain county in Southeast Tennessee with residential demand centered on Pikeville.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Bledsoe County pricing reflects Pikeville mountain-community demand, Chattanooga-Cleveland regional crew travel, and rural Sequatchie Valley access.',
+    },
+    tips: [
+      'Verify coverage for Pikeville and surrounding Bledsoe County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  benton: {
+    marketNotes:
+      'Benton County is a rural county in West Tennessee with strong lake-area residential demand centered on Camden and Kentucky Lake.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Benton County pricing reflects Camden and Kentucky Lake waterfront demand, rural Northwest Tennessee access, and Paris-Clarksville regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Camden and surrounding Benton County areas before booking.',
+      'Lake access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cannon: {
+    marketNotes:
+      'Cannon County is a rural county in Middle Tennessee with residential demand centered on Woodbury.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Cannon County pricing reflects Woodbury rural-community demand, Nashville-Murfreesboro regional crew travel, and rural Middle Tennessee access.',
+    },
+    tips: [
+      'Verify coverage for Woodbury and surrounding Cannon County areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stewart: {
+    marketNotes:
+      'Stewart County is a rural county in Northwest Tennessee with strong lake-area residential demand centered on Dover and Land Between the Lakes.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Stewart County pricing reflects Dover and Land Between the Lakes waterfront demand, rural Northwest Tennessee access, and Clarksville-Paris regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Dover and surrounding Stewart County areas before booking.',
+      'Lake access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  meigs: {
+    marketNotes:
+      'Meigs County is a small rural county in Southeast Tennessee with lake-area residential demand centered on Decatur.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Meigs County pricing reflects Decatur and Chickamauga Lake waterfront demand, Chattanooga-Cleveland regional crew travel, and limited local mover availability.',
+    },
+    tips: [
+      'Verify coverage for Decatur and surrounding Meigs County areas before booking.',
+      'Lake access considerations apply — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grundy: {
+    marketNotes:
+      'Grundy County is a rural mountain county in Southeast Tennessee with scenic residential demand centered on Altamont.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Grundy County pricing reflects Altamont mountain-community demand, Chattanooga-Cleveland regional crew travel, and limited local mover availability.',
+    },
+    tips: [
+      'Verify coverage for Altamont and surrounding Grundy County areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew arrival windows.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  crockett: {
+    marketNotes:
+      'Crockett County is a rural West Tennessee county with agricultural and residential demand centered on Alamo.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Crockett County pricing reflects Alamo rural-community demand, limited local storage options, and Jackson-Dyersburg regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Verify explicit regional service to Alamo before booking.',
+      'Storage is very limited — confirm insurance for high-value homes before booking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(
