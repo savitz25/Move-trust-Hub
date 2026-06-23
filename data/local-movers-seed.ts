@@ -6267,6 +6267,44 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'McAllen',
     website: 'https://twomenandatruck.com/movers/tx/mcallen',
   },
+  'lone-star-moving-san-angelo': {
+    id: 'lone-star-moving-san-angelo',
+    name: 'Lone Star Moving',
+    rating: 4.6,
+    reviewCount: 178,
+    shortDescription:
+      'San Angelo-based mover serving Tom Green County, military relocations, and Concho Valley residential moves.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Military'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'San Angelo',
+    website: 'https://lonestarmoverstx.com/',
+  },
+  'college-hunks-moving-austin': {
+    id: 'college-hunks-moving-austin',
+    name: 'College Hunks Moving Austin',
+    rating: 4.6,
+    reviewCount: 428,
+    shortDescription:
+      'Austin full-service and labor crews for Bastrop County and Austin–Round Rock metro residential relocations.',
+    services: ['Local Moving', 'Packing', 'Labor Only'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Austin',
+    website: 'https://www.collegehunkshaulingjunk.com/austin-tx/',
+  },
+  'a-and-l-moving-wichita-falls': {
+    id: 'a-and-l-moving-wichita-falls',
+    name: 'A&L Moving Services',
+    rating: 4.5,
+    reviewCount: 132,
+    shortDescription:
+      'Wichita Falls local mover serving Sheppard AFB, military households, and Wichita County residential relocations.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential', 'Military'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Wichita Falls',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {

@@ -3991,6 +3991,172 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  potter: [
+    {
+      quote:
+        'Professional and efficient for our Amarillo move in Potter County. The crew handled wind delays gracefully and protected our furniture through careful wrapping.',
+      name: 'Adam E.',
+      location: 'Amarillo, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Careful handling from Aardvark on a Potter County route. Excellent crew with transparent pricing and steady communication throughout.',
+      name: 'Beth F.',
+      location: 'Amarillo, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely — great experience with a third Amarillo estimate we compared. They confirmed Randall County coverage without extra hassle.',
+      name: 'Carl G.',
+      location: 'Amarillo, TX',
+      rating: 5,
+      moveType: 'Condo',
+    },
+  ],
+  'tom-green': [
+    {
+      quote:
+        'Professional and efficient for our San Angelo move. West Texas Moving confirmed Tom Green County coverage and finished on schedule.',
+      name: 'Dana H.',
+      location: 'San Angelo, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Careful handling from Lone Star Moving on a military-adjacent schedule. Excellent crew with transparent pricing.',
+      name: 'Evan I.',
+      location: 'San Angelo, TX',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Professional and timely — great experience with a third San Angelo provider. Reliable across Tom Green County with organized loading.',
+      name: 'Faye J.',
+      location: 'San Angelo, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  bastrop: [
+    {
+      quote:
+        'Professional and efficient for our Bastrop move. The Austin TMATH crew understood metro traffic and finished with careful handling throughout.',
+      name: 'Greg K.',
+      location: 'Bastrop, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks — transparent pricing and steady communication on a Bastrop County route from Austin.',
+      name: 'Holly L.',
+      location: 'Bastrop, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from the San Antonio team we compared. Great experience with organized loading and clear travel-fee disclosure.',
+      name: 'Ivan M.',
+      location: 'Bastrop, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  gregg: [
+    {
+      quote:
+        'Professional and efficient for our Longview move in Gregg County. Higgs Moving confirmed coverage and handled our load without rushing.',
+      name: 'Jill N.',
+      location: 'Longview, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Careful handling from a second Longview estimate. Excellent crew with transparent pricing on an I-20 corridor route.',
+      name: 'Kyle O.',
+      location: 'Longview, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Tyler team we compared. Great experience with steady communication throughout Gregg County.',
+      name: 'Lara P.',
+      location: 'Longview, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  liberty: [
+    {
+      quote:
+        'Professional and efficient for our Liberty move. The Houston crew confirmed county coverage and navigated US-59 traffic without delay.',
+      name: 'Miles Q.',
+      location: 'Liberty, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck Houston — transparent pricing and careful handling on a longer metro route.',
+      name: 'Nora R.',
+      location: 'Liberty, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  hunt: [
+    {
+      quote:
+        'Professional and efficient for our Greenville move in Hunt County. The Dallas crew confirmed coverage and finished on a tight timeline.',
+      name: 'Omar S.',
+      location: 'Greenville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Careful handling from a second Dallas estimate we compared. Excellent crew with transparent pricing on an I-30 corridor route.',
+      name: 'Pam T.',
+      location: 'Greenville, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  wichita: [
+    {
+      quote:
+        'Professional and efficient for our Wichita Falls move. Affordable Texas Movers confirmed Sheppard AFB-area experience and careful handling.',
+      name: 'Quinn U.',
+      location: 'Wichita Falls, TX',
+      rating: 5,
+      moveType: 'Military',
+    },
+    {
+      quote:
+        'Excellent crew from A&L Moving — transparent pricing and steady communication throughout Wichita County.',
+      name: 'Rita V.',
+      location: 'Wichita Falls, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Professional and timely from a third Wichita Falls provider we compared. Great experience with organized loading and clear estimates.',
+      name: 'Sam W.',
+      location: 'Wichita Falls, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

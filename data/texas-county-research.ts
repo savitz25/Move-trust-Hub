@@ -3135,6 +3135,125 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for ranch moves, including Texas DMV registration and adequate cargo insurance.',
     ],
   },
+  potter: {
+    marketNotes:
+      'Potter County includes part of Amarillo with residential and commercial moves across the Panhandle metro. Service often spans both Potter and Randall counties.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Amarillo metro crews typically cover Potter and Randall counties; confirm cross-county coverage for addresses on the metro fringe.',
+    },
+    tips: [
+      'Amarillo traffic and High Plains wind conditions affect scheduling — discuss weather holds and loading timelines upfront.',
+      'Verify coverage for both Potter and Randall counties if your move spans the Amarillo metro.',
+      'Confirm insurance for high-value items and antiques common in established Amarillo neighborhoods.',
+      'Book early for peak seasons — summer PCS and university turnover can tighten Amarillo crew availability.',
+      'Obtain multiple estimates — flat-rate and hourly quotes can vary between established Amarillo providers.',
+    ],
+  },
+  'tom-green': {
+    marketNotes:
+      'Tom Green County centers on San Angelo with residential and military-related moves tied to Goodfellow AFB and Concho Valley growth.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,800–$4,000',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'San Angelo local providers typically cover Tom Green County; confirm service for rural county parcels outside city limits.',
+    },
+    tips: [
+      'Verify coverage across Tom Green County, including rural addresses beyond San Angelo city limits.',
+      'Military moves require specific experience — confirm Goodfellow AFB scheduling familiarity and base access procedures.',
+      'Heavy traffic on US-67 and Loop 306 can affect timing; plan around peak commute windows.',
+      'Confirm insurance for high-value homes and specialty items before booking.',
+      'Book early for peak seasons — summer PCS cycles can tighten San Angelo crew availability.',
+    ],
+  },
+  bastrop: {
+    marketNotes:
+      'Bastrop County is part of the Austin–Round Rock metro with growing residential development in Bastrop, Elgin, and surrounding communities.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Austin and Bastrop-area crews may add travel fees for rural county properties; confirm metro coverage for your address.',
+    },
+    tips: [
+      'Verify coverage for Bastrop, Elgin, and surrounding areas — some crews list Austin metro only.',
+      'Austin-area traffic on US-290 and SH-71 impacts scheduling; plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in newer Bastrop County subdivisions.',
+      'Book early for peak seasons — summer and university turnover can tighten Austin-area crew availability.',
+      'Obtain multiple estimates — travel distance from Austin can affect final pricing for rural Bastrop parcels.',
+    ],
+  },
+  gregg: {
+    marketNotes:
+      'Gregg County centers on Longview with industrial and residential moves across the East Texas metro.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Longview local providers typically cover Gregg County; confirm service for Kilgore and rural county addresses.',
+    },
+    tips: [
+      'Verify coverage for Longview, Kilgore, and surrounding Gregg County communities.',
+      'Industrial traffic on I-20 and US-259 can impact scheduling — discuss route timing with your crew.',
+      'Confirm insurance for high-value items and business equipment if relocating a home office.',
+      'Book early for peak seasons — summer moves can tighten Longview crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between established local providers.',
+    ],
+  },
+  liberty: {
+    marketNotes:
+      'Liberty County is part of the Houston–The Woodlands–Sugar Land metro with growing residential areas in Liberty, Cleveland, and Dayton.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Houston regional crews may add travel fees for Liberty County addresses east of the metro core.',
+    },
+    tips: [
+      'Verify coverage for Liberty, Cleveland, Dayton, and surrounding areas before booking.',
+      'Houston-area traffic on US-59 and I-10 impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes and ranch properties common in Liberty County.',
+      'Book early for peak seasons — summer and hurricane-season moves can tighten Houston crew availability.',
+      'Obtain multiple estimates — travel distance from Houston can materially affect final pricing.',
+    ],
+  },
+  hunt: {
+    marketNotes:
+      'Hunt County is part of the Dallas–Fort Worth metro with Greenville as the main hub for residential moves.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dallas regional crews may add travel fees for Greenville and rural Hunt County properties.',
+    },
+    tips: [
+      'Verify coverage for Greenville, Commerce, and surrounding Hunt County communities.',
+      'Dallas-area traffic on I-30 and US-380 impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes and ranch properties in Hunt County.',
+      'Book early for peak seasons — summer moves can tighten Dallas-area crew availability.',
+      'Obtain multiple estimates — travel distance from Dallas can affect final pricing for Greenville routes.',
+    ],
+  },
+  wichita: {
+    marketNotes:
+      'Wichita County centers on Wichita Falls with military and residential moves tied to Sheppard AFB and the North Texas metro.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Wichita Falls local providers typically cover Wichita County; confirm service for rural county parcels and base housing.',
+    },
+    tips: [
+      'Military (Sheppard AFB) moves require specific experience — confirm base access and PCS scheduling familiarity.',
+      'Verify coverage for Wichita Falls, Iowa Park, and surrounding Wichita County communities.',
+      'Heavy traffic on US-287 and Loop 11 can affect timing; plan around peak commute windows.',
+      'Confirm insurance for high-value homes and specialty items before booking.',
+      'Book early for peak seasons — summer PCS cycles can tighten Wichita Falls crew availability.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(

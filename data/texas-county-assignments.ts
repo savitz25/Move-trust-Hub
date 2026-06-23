@@ -186,6 +186,13 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   henderson: ['tyler-moving-storage', 'two-men-and-a-truck-dallas'],
   bowie: ['bills-movers-texarkana', 'texarkana-area-moving'],
   victoria: ['victoria-transfer-storage', 'two-men-and-a-truck-corpus-christi'],
+  potter: ['two-men-and-a-truck-amarillo', 'aardvark-movers-amarillo', 'amarillo-area-moving'],
+  'tom-green': ['west-texas-moving-san-angelo', 'lone-star-moving-san-angelo', 'san-angelo-area-moving'],
+  bastrop: ['two-men-and-a-truck-austin', 'college-hunks-moving-austin', 'two-men-and-a-truck-san-antonio'],
+  gregg: ['higgs-moving-longview', 'longview-area-moving', 'tyler-moving-storage'],
+  liberty: ['houston-local-lines', 'two-men-and-a-truck-houston'],
+  hunt: ['two-men-and-a-truck-dallas', 'dallas-area-moving'],
+  wichita: ['affordable-texas-movers-wichita-falls', 'a-and-l-moving-wichita-falls', 'wichita-falls-area-moving'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(
