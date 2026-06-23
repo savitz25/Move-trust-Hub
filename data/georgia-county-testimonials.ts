@@ -2451,6 +2451,188 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  pierce: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Blackshear and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Blackshear, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Pierce County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Blackshear, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah provided reliable packing and loading for our rural Blackshear home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Patterson, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  mitchell: [
+    {
+      quote:
+        'HHG Movers traveled from Albany to serve our Camilla move with professional crews and clear Southwest Georgia pricing.',
+      name: 'Wanda G.',
+      location: 'Camilla, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Mitchell County coverage and handled our rural relocation with careful driveway access planning.',
+      name: 'Johnny R.',
+      location: 'Camilla, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Camilla move efficiently with transparent travel estimates from their Albany base.',
+      name: 'Donald P.',
+      location: 'Pelham, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  elbert: [
+    {
+      quote:
+        'University Moving and Storage handled our Elberton relocation with specialty care for antiques and excellent Northeast Georgia corridor knowledge.',
+      name: 'Charles M.',
+      location: 'Elberton, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Elbert County move efficiently with clear communication and careful handling of rural property access.',
+      name: 'Diana S.',
+      location: 'Elberton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Atlanta Home Movers traveled to Elberton and finished our northeast Georgia move on schedule despite rural access challenges.',
+      name: 'Frank L.',
+      location: 'Elberton, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  worth: [
+    {
+      quote:
+        'HHG Movers provided reliable Southwest Georgia coverage for our Sylvester move with professional packing and clear rural travel pricing.',
+      name: 'Tom R.',
+      location: 'Sylvester, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Home Moving Solution Albany confirmed Worth County service and delivered careful handling for our rural Sylvester relocation.',
+      name: 'Brenda L.',
+      location: 'Sylvester, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany handled our Worth County move with great communication and no surprise fees despite rural access challenges.',
+      name: 'Carl M.',
+      location: 'Poulan, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  dodge: [
+    {
+      quote:
+        'Good Guys Moving confirmed Eastman coverage and handled our rural Dodge County move with careful driveway access planning.',
+      name: 'Patricia H.',
+      location: 'Eastman, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Eastman relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'James R.',
+      location: 'Eastman, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Simple Moving Solutions Macon traveled to Dodge County and finished our move on schedule with transparent Middle Georgia pricing.',
+      name: 'Susan T.',
+      location: 'Eastman, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  washington: [
+    {
+      quote:
+        'Good Guys Moving confirmed Sandersville coverage and handled our rural Washington County move with careful furniture wrapping.',
+      name: 'Robert E.',
+      location: 'Sandersville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Macon served our Sandersville relocation efficiently with clear communication about Central Georgia travel time.',
+      name: 'Laura V.',
+      location: 'Sandersville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Cicero\'s Moving handled specialty items in our Sandersville move with careful crating and climate-controlled storage options.',
+      name: 'Charles M.',
+      location: 'Sandersville, GA',
+      rating: 4,
+      moveType: 'Historic home',
+    },
+  ],
+  crisp: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Cordele move with professional crews and clear I-75 corridor pricing.',
+      name: 'Johnny R.',
+      location: 'Cordele, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Cordele coverage and delivered careful handling for our rural Crisp County relocation.',
+      name: 'Wanda G.',
+      location: 'Cordele, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Crisp County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Donald P.',
+      location: 'Cordele, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

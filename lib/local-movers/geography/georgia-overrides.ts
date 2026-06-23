@@ -98,6 +98,13 @@ export const georgiaCountyOverrides: Partial<
   mcduffie: { seat: 'Thomson', metro: 'augusta-metro-ga' },
   lamar: { seat: 'Barnesville', metro: 'atlanta-metro-ga' },
   pike: { seat: 'Zebulon', metro: 'atlanta-metro-ga' },
+  pierce: { seat: 'Blackshear', metro: 'savannah-metro-ga' },
+  mitchell: { seat: 'Camilla', metro: 'albany-metro-ga' },
+  elbert: { seat: 'Elberton', metro: 'athens-metro-ga' },
+  worth: { seat: 'Sylvester', metro: 'albany-metro-ga' },
+  dodge: { seat: 'Eastman', metro: 'macon-metro-ga' },
+  washington: { seat: 'Sandersville', metro: 'macon-metro-ga' },
+  crisp: { seat: 'Cordele', metro: 'valdosta-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -1614,6 +1614,125 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural south-metro relocations.',
     ],
   },
+  pierce: {
+    marketNotes:
+      'Pierce County is rural Southeast Georgia with Blackshear as the seat between Waycross and the coastal plain.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Pierce County pricing reflects rural coastal-plain access and travel from Savannah or Waycross-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Blackshear and outer Pierce properties.',
+      'Verify explicit regional service to Blackshear before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  mitchell: {
+    marketNotes:
+      'Mitchell County is rural Southwest Georgia with Camilla as the seat along the Albany and Moultrie corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Mitchell County pricing reflects rural property access and travel from Albany or Moultrie-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Camilla and outer Mitchell properties.',
+      'Verify explicit regional service to Camilla before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  elbert: {
+    marketNotes:
+      'Elbert County is rural Northeast Georgia with Elberton as the seat in the granite-belt corridor between Athens and South Carolina.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Elbert County pricing reflects rural northeast-metro access and travel from Athens or Atlanta crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Elberton and outer Elbert addresses.',
+      'Verify explicit regional service to Elberton before booking.',
+      'Storage is very limited locally — plan with Athens or Atlanta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Northeast Georgia relocations.',
+    ],
+  },
+  worth: {
+    marketNotes:
+      'Worth County is rural Southwest Georgia with Sylvester as the seat along the Albany and Tifton corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Worth County pricing reflects rural property access and travel from Albany or Tifton-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Sylvester and outer Worth properties.',
+      'Verify explicit regional service to Sylvester before booking.',
+      'Storage is very limited locally — coordinate with Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southwest Georgia relocations.',
+    ],
+  },
+  dodge: {
+    marketNotes:
+      'Dodge County is rural Central Georgia with Eastman as the seat along the Macon and I-16 corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dodge County pricing reflects rural property access and travel from Macon or Middle Georgia crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Eastman and outer Dodge addresses.',
+      'Verify explicit regional service to Eastman before booking.',
+      'Storage is very limited locally — plan with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is rural Central Georgia with Sandersville as the seat between Macon and Augusta.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Washington County pricing reflects rural property access and travel from Macon or Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Sandersville and outer Washington properties.',
+      'Verify explicit regional service to Sandersville before booking.',
+      'Storage is very limited locally — coordinate with Macon providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Central Georgia relocations.',
+    ],
+  },
+  crisp: {
+    marketNotes:
+      'Crisp County includes Cordele in South Georgia along the I-75 corridor between Macon and Albany.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Crisp County pricing reflects rural I-75 corridor access and travel from Valdosta or Albany-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Cordele and outer Crisp properties.',
+      'Verify explicit regional service to Cordele before booking.',
+      'Storage is very limited locally — coordinate with Valdosta or Albany providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

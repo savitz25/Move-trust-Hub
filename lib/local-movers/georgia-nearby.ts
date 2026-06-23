@@ -105,6 +105,13 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   mcduffie: ['richmond', 'columbia', 'wilkes', 'lincoln', 'warren', 'burke'],
   lamar: ['monroe', 'upson', 'pike', 'butts', 'spalding', 'fayette'],
   pike: ['lamar', 'upson', 'spalding', 'meriwether', 'henry', 'fayette'],
+  pierce: ['bacon', 'appling', 'ware', 'brantley', 'wayne', 'coffee'],
+  mitchell: ['baker', 'dougherty', 'worth', 'colquitt', 'decatur', 'grady'],
+  elbert: ['hart', 'madison', 'franklin', 'banks', 'wilkes', 'oglethorpe'],
+  worth: ['dougherty', 'lee', 'mitchell', 'colquitt', 'tift', 'crisp'],
+  dodge: ['bleckley', 'laurens', 'pulaski', 'wilcox', 'twiggs', 'emanuel'],
+  washington: ['baldwin', 'johnson', 'hancock', 'wilkinson', 'jefferson', 'glascock'],
+  crisp: ['dooly', 'lee', 'sumter', 'turner', 'wilcox', 'worth'],
 };
 
 export function getGeorgiaNearbyCounties(
