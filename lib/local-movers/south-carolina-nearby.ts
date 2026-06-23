@@ -22,6 +22,21 @@ const SC_COUNTY_NEIGHBORS: Record<string, string[]> = {
   florence: ['darlington', 'marlboro', 'dillon', 'marion', 'sumter', 'williamsburg'],
   lancaster: ['chester', 'york', 'union', 'kershaw', 'fairfield', 'richland'],
   sumter: ['florence', 'darlington', 'lee', 'clarendon', 'calhoun', 'richland'],
+  oconee: ['pickens', 'anderson', 'greenville', 'abbeville', 'laurens', 'greenwood'],
+  orangeburg: ['aiken', 'bamberg', 'dorchester', 'colleton', 'calhoun', 'lexington'],
+  kershaw: ['lancaster', 'richland', 'sumter', 'fairfield', 'chesterfield', 'lee'],
+  laurens: ['greenville', 'spartanburg', 'greenwood', 'newberry', 'union', 'abbeville'],
+  greenwood: ['laurens', 'abbeville', 'mccormick', 'edgefield', 'newberry', 'saluda'],
+  georgetown: ['horry', 'berkeley', 'charleston', 'williamsburg', 'marion', 'florence'],
+  darlington: ['florence', 'chesterfield', 'marlboro', 'lee', 'sumter', 'dillon'],
+  cherokee: ['spartanburg', 'york', 'union', 'chester', 'laurens', 'greenville'],
+  chesterfield: ['darlington', 'marlboro', 'richland', 'kershaw', 'florence', 'chester'],
+  jasper: ['beaufort', 'hampton', 'colleton', 'charleston', 'dorchester', 'effingham'],
+  newberry: ['laurens', 'greenwood', 'fairfield', 'lexington', 'union', 'saluda'],
+  colleton: ['dorchester', 'charleston', 'bamberg', 'orangeburg', 'beaufort', 'jasper'],
+  chester: ['lancaster', 'york', 'union', 'chesterfield', 'fairfield', 'kershaw'],
+  clarendon: ['sumter', 'florence', 'williamsburg', 'orangeburg', 'calhoun', 'richland'],
+  edgefield: ['aiken', 'greenwood', 'mccormick', 'saluda', 'lexington', 'richland'],
 };
 
 export function getSouthCarolinaNearbyCounties(

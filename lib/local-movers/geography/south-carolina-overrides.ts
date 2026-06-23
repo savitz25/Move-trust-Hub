@@ -10,6 +10,21 @@ export const southCarolinaCountyOverrides: Partial<
   florence: { seat: 'Florence', metro: 'florence-metro-sc' },
   lancaster: { seat: 'Lancaster', metro: 'charlotte-metro-sc' },
   sumter: { seat: 'Sumter', metro: 'sumter-metro-sc' },
+  oconee: { seat: 'Walhalla', metro: 'greenville-metro-sc' },
+  orangeburg: { seat: 'Orangeburg', metro: 'sumter-metro-sc' },
+  kershaw: { seat: 'Camden', metro: 'sumter-metro-sc' },
+  laurens: { seat: 'Laurens', metro: 'greenville-metro-sc' },
+  greenwood: { seat: 'Greenwood', metro: 'greenville-metro-sc' },
+  georgetown: { seat: 'Georgetown', metro: 'myrtle-beach-metro-sc' },
+  darlington: { seat: 'Darlington', metro: 'florence-metro-sc' },
+  cherokee: { seat: 'Gaffney', metro: 'spartanburg-metro-sc' },
+  chesterfield: { seat: 'Chesterfield', metro: 'florence-metro-sc' },
+  jasper: { seat: 'Ridgeland', metro: 'charleston-metro-sc' },
+  newberry: { seat: 'Newberry', metro: 'sumter-metro-sc' },
+  colleton: { seat: 'Walterboro', metro: 'charleston-metro-sc' },
+  chester: { seat: 'Chester', metro: 'charlotte-metro-sc' },
+  clarendon: { seat: 'Manning', metro: 'sumter-metro-sc' },
+  edgefield: { seat: 'Edgefield', metro: 'augusta-aiken-metro-sc' },
 };
 
 export function applySouthCarolinaCountyOverrides(

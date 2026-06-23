@@ -7549,6 +7549,47 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Columbia',
     website: 'https://gentlemenmoversinc.com/',
   },
+  'two-men-and-a-truck-spartanburg': {
+    id: 'two-men-and-a-truck-spartanburg',
+    name: 'Two Men and a Truck Spartanburg',
+    rating: 4.6,
+    reviewCount: 185,
+    shortDescription:
+      'Spartanburg franchise serving Cherokee, Laurens, and Upstate counties with local moving, packing, and storage.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Spartanburg',
+    website: 'https://twomenandatruck.com/movers/sc/spartanburg',
+  },
+  'two-men-and-a-truck-myrtle-beach': {
+    id: 'two-men-and-a-truck-myrtle-beach',
+    name: 'Two Men and a Truck Myrtle Beach',
+    rating: 4.5,
+    reviewCount: 240,
+    shortDescription:
+      'Myrtle Beach franchise serving Georgetown County and the Grand Strand with local moving, packing, and coastal property experience.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
+    city: 'Myrtle Beach',
+    website: 'https://twomenandatruck.com/movers/sc/myrtle-beach',
+  },
+  'labarbera-movers-myrtle-beach': {
+    id: 'labarbera-movers-myrtle-beach',
+    name: 'LaBarbera Movers LLC',
+    rating: 4.5,
+    reviewCount: 120,
+    shortDescription:
+      'Grand Strand mover highly regarded for Georgetown, Pawleys Island, and coastal residential relocations with careful handling.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Myrtle Beach',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
@@ -8651,6 +8692,28 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'swamp-rabbit-moving-greenville',
       'two-men-and-a-truck-greenville',
       'college-hunks-moving-greenville',
+      'two-men-and-a-truck-spartanburg',
+    ],
+  },
+  'myrtle-beach-metro-sc': {
+    id: 'myrtle-beach-metro-sc',
+    label: 'Myrtle Beach / Grand Strand',
+    moverIds: [
+      'all-my-sons-myrtle-beach',
+      'two-men-and-a-truck-myrtle-beach',
+      'labarbera-movers-myrtle-beach',
+      'smooth-move-charleston',
+      'college-hunks-moving-charleston',
+    ],
+  },
+  'spartanburg-metro-sc': {
+    id: 'spartanburg-metro-sc',
+    label: 'Spartanburg / Upstate',
+    moverIds: [
+      'two-men-and-a-truck-spartanburg',
+      'two-men-and-a-truck-greenville',
+      'college-hunks-moving-greenville',
+      'swamp-rabbit-moving-greenville',
     ],
   },
   'florence-metro-sc': {
