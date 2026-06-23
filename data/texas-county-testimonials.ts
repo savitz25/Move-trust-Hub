@@ -3271,6 +3271,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  hale: [
+    {
+      quote:
+        'Professional for our remote Panhandle move in Plainview. The Lubbock crew confirmed Hale County coverage and navigated our ranch driveway without issues.',
+      name: 'Yuri C.',
+      location: 'Plainview, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from a second Lubbock estimate we compared. Reliable in remote Plainview with organized loading and clear travel-fee disclosure.',
+      name: 'Zoe D.',
+      location: 'Plainview, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  bee: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Beeville. The Corpus Christi crew confirmed Bee County service and handled ranch access without delay.',
+      name: 'Adam E.',
+      location: 'Beeville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from San Antonio. Reliable in remote Beeville with careful handling on a longer regional route.',
+      name: 'Beth F.',
+      location: 'Beeville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jasper: [
+    {
+      quote:
+        'Professional for our remote East Texas move in Jasper. The Beaumont crew understood Piney Woods access and protected our floors through tight doorways.',
+      name: 'Carl G.',
+      location: 'Jasper, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from Lufkin. Reliable in remote Jasper County with careful handling on a longer regional route.',
+      name: 'Dana H.',
+      location: 'Jasper, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  austin: [
+    {
+      quote:
+        'Professional for our remote South Central Texas move in Bellville. The Houston crew confirmed Austin County service and handled our ranch property access professionally.',
+      name: 'Evan I.',
+      location: 'Bellville, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the San Antonio team on an Austin County route with steady communication throughout.',
+      name: 'Faye J.',
+      location: 'Bellville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  howard: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Big Spring. The Midland crew confirmed Howard County coverage and handled our oilfield-area relocation without damage.',
+      name: 'Greg K.',
+      location: 'Big Spring, TX',
+      rating: 5,
+      moveType: 'Oilfield',
+    },
+    {
+      quote:
+        'Professional service in West Texas from Abilene. Reliable in remote Big Spring with careful handling on a longer regional route.',
+      name: 'Holly L.',
+      location: 'Big Spring, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  grimes: [
+    {
+      quote:
+        'Professional for our remote Southeast Texas move in Anderson. The Houston crew confirmed Grimes County service and managed our ranch driveway with the right truck setup.',
+      name: 'Ivan M.',
+      location: 'Anderson, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Southeast Texas from College Station. Reliable in remote Grimes County with careful handling and clear travel-fee disclosure.',
+      name: 'Jill N.',
+      location: 'Anderson, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  matagorda: [
+    {
+      quote:
+        'Professional for our coastal move in Bay City. The Houston crew confirmed Matagorda County service and handled our waterfront access carefully.',
+      name: 'Kyle O.',
+      location: 'Bay City, TX',
+      rating: 5,
+      moveType: 'Coastal',
+    },
+    {
+      quote:
+        'Careful handling from the Victoria team on a Bay City route. Reliable in remote coastal areas with upfront travel-fee disclosure.',
+      name: 'Lara P.',
+      location: 'Bay City, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  brown: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Brownwood. The Abilene crew confirmed Brown County service and navigated our ranch road without issues.',
+      name: 'Miles Q.',
+      location: 'Brownwood, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from Waco. Reliable in remote Brownwood with careful handling on a longer regional route.',
+      name: 'Nora R.',
+      location: 'Brownwood, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'jim-wells': [
+    {
+      quote:
+        'Professional for our remote South Texas move in Alice. The Corpus Christi crew confirmed Jim Wells County coverage and handled ranch access without issues.',
+      name: 'Omar S.',
+      location: 'Alice, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in South Texas from Laredo. Reliable in remote Alice with careful handling and clear travel-fee disclosure.',
+      name: 'Pam T.',
+      location: 'Alice, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  washington: [
+    {
+      quote:
+        'Professional for our remote South Central Texas move in Brenham. The Houston crew confirmed Washington County service and finished on a tight timeline.',
+      name: 'Quinn U.',
+      location: 'Brenham, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the Austin team on a Brenham route. Reliable in remote Washington County with organized loading and steady communication.',
+      name: 'Rita V.',
+      location: 'Brenham, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(
