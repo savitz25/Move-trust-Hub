@@ -117,6 +117,8 @@ export const missouriCountyOverrides: Partial<
   schuyler: { seat: 'Lancaster', metro: 'lancaster-metro-mo' },
   mercer: { seat: 'Princeton', metro: 'princeton-metro-mo' },
   worth: { seat: 'Grant City', metro: 'grant-city-metro-mo' },
+  holt: { seat: 'Oregon', metro: 'oregon-metro-mo' },
+  knox: { seat: 'Edina', metro: 'edina-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {

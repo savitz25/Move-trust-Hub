@@ -1164,6 +1164,26 @@ const CURATED_MO_COUNTIES: Record<string, string[]> = {
     'missouri-regional-moving',
     'missouri-express-movers',
   ],
+  holt: [
+    'regional-holt-mo-movers',
+    'regional-atchison-mo-movers',
+    'two-men-and-a-truck-buchanan-mo',
+    'missouri-premier-moving',
+    'missouri-pro-movers',
+    'missouri-family-movers',
+    'missouri-regional-moving',
+    'missouri-express-movers',
+  ],
+  knox: [
+    'regional-knox-mo-movers',
+    'regional-adair-mo-movers',
+    'regional-clark-mo-movers',
+    'missouri-premier-moving',
+    'missouri-pro-movers',
+    'missouri-family-movers',
+    'missouri-regional-moving',
+    'missouri-express-movers',
+  ],
 };
 
 export const missouriCountyMoverAssignments: CountyMoverAssignment[] =

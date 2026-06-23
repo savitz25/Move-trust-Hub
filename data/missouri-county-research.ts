@@ -1912,6 +1912,40 @@ export const missouriCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  holt: {
+    marketNotes:
+      'Holt County is a rural Northwest Missouri county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Holt County pricing reflects Oregon regional demand, northwest Missouri traffic patterns, and competition among local and regional agents serving the greater Oregon area.',
+    },
+    tips: [
+      'Verify coverage for Oregon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  knox: {
+    marketNotes:
+      'Knox County is a rural Northeast Missouri county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Knox County pricing reflects Edina regional demand, northeast Missouri traffic patterns, and competition among local and regional agents serving the greater Edina area.',
+    },
+    tips: [
+      'Verify coverage for Edina and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
   hickory: {
     marketNotes:
       'Hickory County is a rural Central Missouri county with residential demand.',

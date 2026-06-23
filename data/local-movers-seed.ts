@@ -4,7 +4,7 @@ import type {
   MetroMoverPool,
 } from '@/lib/local-movers/types';
 
-/** Central catalog — add movers once, assign to counties/metros by ID */
+/** Central catalog ï¿½ add movers once, assign to counties/metros by ID */
 export const localMoversCatalog: Record<string, LocalMover> = {
   // Linked to interstate directory profiles (Florida HQ)
   'amerisafe-van-lines': {
@@ -848,7 +848,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Houston',
   },
 
-  // —— Grok-researched Texas rural county movers ——
+  // ï¿½ï¿½ Grok-researched Texas rural county movers ï¿½ï¿½
   'odessa-area-moving': {
     id: 'odessa-area-moving',
     name: 'Regional Odessa Providers',
@@ -1680,7 +1680,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 89,
     shortDescription:
-      'Reliable movers serving Plaquemines Parish residential needs across Belle Chasse, Pointe à la Hache, and surrounding coastal Greater New Orleans communities.',
+      'Reliable movers serving Plaquemines Parish residential needs across Belle Chasse, Pointe ï¿½ la Hache, and surrounding coastal Greater New Orleans communities.',
     services: ['Local Moving', 'Packing'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -1929,7 +1929,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'New York',
   },
 
-  // —— Grok-researched Florida county movers ——
+  // ï¿½ï¿½ Grok-researched Florida county movers ï¿½ï¿½
   'uf-mover-guys-storage': {
     id: 'uf-mover-guys-storage',
     name: 'UF Mover Guys & Storage',
@@ -4036,7 +4036,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'Albany',
   },
 
-  // Western NY / Southern Tier (Grok-researched — serves Allegany County)
+  // Western NY / Southern Tier (Grok-researched ï¿½ serves Allegany County)
   'ck-local-movers-olean': {
     id: 'ck-local-movers-olean',
     name: 'C K Local Movers',
@@ -5026,7 +5026,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://hiredhandsmoving.com/',
   },
 
-  // Central NY / Finger Lakes (Grok-researched — serves Cayuga County)
+  // Central NY / Finger Lakes (Grok-researched ï¿½ serves Cayuga County)
   'reliable-movers-syracuse': {
     id: 'reliable-movers-syracuse',
     name: 'Reliable Movers',
@@ -5058,7 +5058,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://rocmovers.com/',
   },
 
-  // Southern Tier (Grok-researched — serves Chemung County)
+  // Southern Tier (Grok-researched ï¿½ serves Chemung County)
   'naglee-moving-elmira': {
     id: 'naglee-moving-elmira',
     name: 'Naglee Moving & Storage',
@@ -5240,7 +5240,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://twomenandatruck.com/movers/fl/st-augustine',
   },
 
-  // —— California county movers (Grok-researched) ——
+  // ï¿½ï¿½ California county movers (Grok-researched) ï¿½ï¿½
   'morningstar-moving-alameda': {
     id: 'morningstar-moving-alameda',
     name: 'MorningStar Moving & Storage',
@@ -5365,7 +5365,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 210,
     shortDescription:
-      'Regional Tahoe–Truckee mover serving Alpine County and Eastern Sierra communities.',
+      'Regional Tahoeï¿½Truckee mover serving Alpine County and Eastern Sierra communities.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential', 'Mountain'],
     fmcsaSafetyRating: 'Not Rated',
@@ -5538,7 +5538,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 175,
     shortDescription:
-      'El Centro–based mover serving Imperial County, Calexico, and desert agricultural communities.',
+      'El Centroï¿½based mover serving Imperial County, Calexico, and desert agricultural communities.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Agricultural'],
     usdotNumber: '3740431',
@@ -5808,7 +5808,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://morningstarmoving.com/',
   },
 
-  // Orange County, CA (Grok-researched — distinct from NY Orange County slugs)
+  // Orange County, CA (Grok-researched ï¿½ distinct from NY Orange County slugs)
   'piece-of-cake-moving-orange-ca': {
     id: 'piece-of-cake-moving-orange-ca',
     name: 'Piece of Cake Moving & Storage',
@@ -5924,7 +5924,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.puremovers.com/',
   },
 
-  // San Bernardino County, CA (Grok-researched — Inland Empire)
+  // San Bernardino County, CA (Grok-researched ï¿½ Inland Empire)
   'piece-of-cake-moving-sanbernardino': {
     id: 'piece-of-cake-moving-sanbernardino',
     name: 'Piece of Cake Moving & Storage',
@@ -6195,7 +6195,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.gentlegiant.com/',
   },
 
-  // San Mateo County, CA (Grok-researched — Peninsula)
+  // San Mateo County, CA (Grok-researched ï¿½ Peninsula)
   'piece-of-cake-moving-sanmateo': {
     id: 'piece-of-cake-moving-sanmateo',
     name: 'Piece of Cake Moving & Storage',
@@ -6280,7 +6280,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.allmysons.com/',
   },
 
-  // Santa Clara County, CA (Grok-researched — Silicon Valley)
+  // Santa Clara County, CA (Grok-researched ï¿½ Silicon Valley)
   'piece-of-cake-moving-santaclara': {
     id: 'piece-of-cake-moving-santaclara',
     name: 'Piece of Cake Moving & Storage',
@@ -6365,7 +6365,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     website: 'https://www.allmysons.com/',
   },
 
-  // Solano County, CA (Grok-researched — Bay Area / Travis AFB)
+  // Solano County, CA (Grok-researched ï¿½ Bay Area / Travis AFB)
   'piece-of-cake-moving-solano': {
     id: 'piece-of-cake-moving-solano',
     name: 'Piece of Cake Moving & Storage',
@@ -6484,7 +6484,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 890,
     shortDescription:
-      'Dallas–Fort Worth franchise serving regional routes into rural Northeast and North Central Texas counties.',
+      'Dallasï¿½Fort Worth franchise serving regional routes into rural Northeast and North Central Texas counties.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -6678,7 +6678,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 257,
     shortDescription:
-      'Bryan–College Station mover serving Madison, Leon, Robertson, and Lee County rural East and Central Texas routes.',
+      'Bryanï¿½College Station mover serving Madison, Leon, Robertson, and Lee County rural East and Central Texas routes.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1931566',
@@ -6830,7 +6830,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 820,
     shortDescription:
-      'Fort Worth–DFW franchise covering Eastland County and rural North Central Texas regional routes.',
+      'Fort Worthï¿½DFW franchise covering Eastland County and rural North Central Texas regional routes.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -6950,7 +6950,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 198,
     shortDescription:
-      'Denison–Sherman franchise covering Fannin, Cooke County, Bonham, and rural North Texas ranch properties.',
+      'Denisonï¿½Sherman franchise covering Fannin, Cooke County, Bonham, and rural North Texas ranch properties.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -6980,7 +6980,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 245,
     shortDescription:
-      'McAllen–Rio Grande Valley franchise covering Starr County, Rio Grande City, and remote South Texas ranch moves.',
+      'McAllenï¿½Rio Grande Valley franchise covering Starr County, Rio Grande City, and remote South Texas ranch moves.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '1669783',
@@ -7008,7 +7008,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 428,
     shortDescription:
-      'Austin full-service and labor crews for Bastrop County and Austin–Round Rock metro residential relocations.',
+      'Austin full-service and labor crews for Bastrop County and Austinï¿½Round Rock metro residential relocations.',
     services: ['Local Moving', 'Packing', 'Labor Only'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -7145,7 +7145,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 244,
     shortDescription:
-      'Savannah–Pooler franchise serving Chatham County with local, long-distance, packing, and storage for historic and coastal moves.',
+      'Savannahï¿½Pooler franchise serving Chatham County with local, long-distance, packing, and storage for historic and coastal moves.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Senior Moves'],
     usdotNumber: '2527384',
@@ -7594,7 +7594,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.4,
     reviewCount: 246,
     shortDescription:
-      'Chattanooga franchise serving Walker, Catoosa, and Dade counties on the Georgia–Tennessee border.',
+      'Chattanooga franchise serving Walker, Catoosa, and Dade counties on the Georgiaï¿½Tennessee border.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     usdotNumber: '2527384',
@@ -11199,7 +11199,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 175,
     shortDescription:
-      'Established Columbus-based mover serving the Auburn–Opelika corridor with full-service local and long-distance relocations.',
+      'Established Columbus-based mover serving the Auburnï¿½Opelika corridor with full-service local and long-distance relocations.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Commercial'],
     usdotNumber: '1934458',
@@ -11214,7 +11214,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.4,
     reviewCount: 145,
     shortDescription:
-      'Locally owned mover serving Lee County with residential packing, storage, and careful Auburn–Opelika relocations.',
+      'Locally owned mover serving Lee County with residential packing, storage, and careful Auburnï¿½Opelika relocations.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Satisfactory',
@@ -11925,7 +11925,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 59,
     shortDescription:
-      'Hamilton-based mover serving Columbus, Starkville, and the Alabama–Mississippi border with affordable loading and unloading help.',
+      'Hamilton-based mover serving Columbus, Starkville, and the Alabamaï¿½Mississippi border with affordable loading and unloading help.',
     services: ['Local Moving', 'Packing', 'Labor Only'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -12336,7 +12336,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.4,
     reviewCount: 175,
     shortDescription:
-      'Full-service Shreveport–Bossier mover serving Caddo and Bossier parishes with packing and storage.',
+      'Full-service Shreveportï¿½Bossier mover serving Caddo and Bossier parishes with packing and storage.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -12350,7 +12350,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 125,
     shortDescription:
-      'Allied Van Lines agent serving Shreveport–Bossier metro with residential and military relocations.',
+      'Allied Van Lines agent serving Shreveportï¿½Bossier metro with residential and military relocations.',
     services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
     specialties: ['Residential', 'Commercial'],
     fmcsaSafetyRating: 'Not Rated',
@@ -12476,7 +12476,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.7,
     reviewCount: 210,
     shortDescription:
-      'Trusted Houma franchise serving Terrebonne Parish with bayou and coastal residential moves across the Houma–Bayou Cane area.',
+      'Trusted Houma franchise serving Terrebonne Parish with bayou and coastal residential moves across the Houmaï¿½Bayou Cane area.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential', 'Coastal'],
     fmcsaSafetyRating: 'Not Rated',
@@ -16093,6 +16093,30 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     fmcsaSafetyRating: 'Not Rated',
     city: 'Grant City area',
   },
+  'regional-holt-mo-movers': {
+    id: 'regional-holt-mo-movers',
+    name: 'Regional Oregon / Holt County Providers',
+    rating: 4.7,
+    reviewCount: 61,
+    shortDescription:
+      'Reliable movers serving Holt County residential needs across Oregon and northwest Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Oregon area',
+  },
+  'regional-knox-mo-movers': {
+    id: 'regional-knox-mo-movers',
+    name: 'Regional Edina / Knox County Providers',
+    rating: 4.7,
+    reviewCount: 63,
+    shortDescription:
+      'Reliable movers serving Knox County residential needs across Edina and northeast Missouri communities.',
+    services: ['Local Moving', 'Packing'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'Edina area',
+  },
   'regional-st-francois-mo-movers': {
     id: 'regional-st-francois-mo-movers',
     name: 'Regional Farmington / St. Francois County Providers',
@@ -16764,7 +16788,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
   },
   'two-men-and-a-truck-st-charles-mo': {
     id: 'two-men-and-a-truck-st-charles-mo',
-    name: 'Two Men and a Truck St. Charles / O’Fallon',
+    name: 'Two Men and a Truck St. Charles / Oï¿½Fallon',
     rating: 4.8,
     reviewCount: 410,
     shortDescription:
@@ -18636,7 +18660,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'dfw-tx': {
     id: 'dfw-tx',
-    label: 'Dallas–Fort Worth',
+    label: 'Dallasï¿½Fort Worth',
     moverIds: [
       'two-men-and-a-truck-dallas',
       'two-men-and-a-truck-fort-worth',
@@ -18939,7 +18963,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'dfw-metro': {
     id: 'dfw-metro',
-    label: 'Dallas–Fort Worth (legacy)',
+    label: 'Dallasï¿½Fort Worth (legacy)',
     moverIds: [
       'two-men-and-a-truck-dallas',
       'two-men-and-a-truck-fort-worth',
@@ -19048,7 +19072,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'capital-district-ny': {
     id: 'capital-district-ny',
-    label: 'Capital District (Albany–Schenectady–Troy)',
+    label: 'Capital District (Albanyï¿½Schenectadyï¿½Troy)',
     moverIds: [
       'mabeys-moving-storage-albany',
       'dons-moving-storage-albany',
@@ -19061,7 +19085,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'buffalo-niagara-ny': {
     id: 'buffalo-niagara-ny',
-    label: 'Western New York / Buffalo–Niagara',
+    label: 'Western New York / Buffaloï¿½Niagara',
     moverIds: [
       'corrigan-moving-buffalo',
       'two-men-and-a-truck-buffalo',
@@ -21044,7 +21068,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'auburn-opelika-metro-al': {
     id: 'auburn-opelika-metro-al',
-    label: 'Auburn–Opelika Metro',
+    label: 'Auburnï¿½Opelika Metro',
     moverIds: [
       'two-men-and-a-truck-lee',
       'motivated-movers-montgomery',
@@ -21092,7 +21116,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'anniston-metro-al': {
     id: 'anniston-metro-al',
-    label: 'Anniston–Oxford Metro',
+    label: 'Annistonï¿½Oxford Metro',
     moverIds: [
       'fortson-moving-birmingham',
       'changing-spaces-moving-birmingham',
@@ -21150,7 +21174,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'florence-shoals-metro-al': {
     id: 'florence-shoals-metro-al',
-    label: 'Florence–Muscle Shoals Metro',
+    label: 'Florenceï¿½Muscle Shoals Metro',
     moverIds: [
       'christophers-moving-florence',
       'brothers-ez-moving-shoals',
@@ -21235,7 +21259,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'wiregrass-metro-al': {
     id: 'wiregrass-metro-al',
-    label: 'Wiregrass / Enterprise–Ozark',
+    label: 'Wiregrass / Enterpriseï¿½Ozark',
     moverIds: [
       'true-america-moving-dothan',
       'the-moving-truck-dothan',
@@ -22812,7 +22836,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'shreveport-bossier-metro-la': {
     id: 'shreveport-bossier-metro-la',
-    label: 'Shreveport–Bossier Metro',
+    label: 'Shreveportï¿½Bossier Metro',
     moverIds: [
       'two-men-and-a-truck-caddo-la',
       'two-men-and-a-truck-bossier-la',
@@ -22892,7 +22916,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'houma-bayou-metro-la': {
     id: 'houma-bayou-metro-la',
-    label: 'Houma–Bayou Cane–Thibodaux Metro',
+    label: 'Houmaï¿½Bayou Caneï¿½Thibodaux Metro',
     moverIds: [
       'two-men-and-a-truck-terrebonne-la',
       'two-men-and-a-truck-lafourche-la',
@@ -23845,7 +23869,7 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
   },
   'little-rock-metro-ar': {
     id: 'little-rock-metro-ar',
-    label: 'Little Rock–North Little Rock–Conway Metro',
+    label: 'Little Rockï¿½North Little Rockï¿½Conway Metro',
     moverIds: [
       'two-men-and-a-truck-pulaski-ar',
       'two-men-and-a-truck-faulkner-ar',
@@ -27648,9 +27672,37 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'missouri-express-movers',
     ],
   },
+  'oregon-metro-mo': {
+    id: 'oregon-metro-mo',
+    label: 'Oregon Metro',
+    moverIds: [
+      'regional-holt-mo-movers',
+      'regional-atchison-mo-movers',
+      'two-men-and-a-truck-buchanan-mo',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
+  'edina-metro-mo': {
+    id: 'edina-metro-mo',
+    label: 'Edina Metro',
+    moverIds: [
+      'regional-knox-mo-movers',
+      'regional-adair-mo-movers',
+      'regional-clark-mo-movers',
+      'missouri-premier-moving',
+      'missouri-pro-movers',
+      'missouri-family-movers',
+      'missouri-regional-moving',
+      'missouri-express-movers',
+    ],
+  },
 };
 
-/** Non-curated state overrides — FL/NJ/NY/CA use dedicated assignment files */
+/** Non-curated state overrides ï¿½ FL/NJ/NY/CA use dedicated assignment files */
 export const countyMoverAssignments: CountyMoverAssignment[] = [
   {
     stateSlug: 'texas',

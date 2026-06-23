@@ -2914,6 +2914,58 @@ export const missouriCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Apartment',
     },
   ],
+  holt: [
+    {
+      quote:
+        'Regional Oregon providers handled our relocation professionally — efficient service and careful handling throughout Holt County.',
+      name: 'Kate Z.',
+      location: 'Oregon, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Rock Port providers confirmed Holt County coverage and delivered excellent northwest Missouri service — professional crew with transparent pricing.',
+      name: 'Liam A.',
+      location: 'Oregon, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Premier Moving served our Oregon-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Maya B.',
+      location: 'Oregon, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  knox: [
+    {
+      quote:
+        'Regional Edina providers handled our relocation professionally — efficient service and careful handling throughout Knox County.',
+      name: 'Noah C.',
+      location: 'Edina, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Kirksville providers confirmed Knox County coverage and delivered excellent northeast Missouri service — professional crew with transparent pricing.',
+      name: 'Olivia D.',
+      location: 'Edina, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Edina-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Pete E.',
+      location: 'Edina, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
   hickory: [
     {
       quote:

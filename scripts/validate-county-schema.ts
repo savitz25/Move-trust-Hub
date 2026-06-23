@@ -178,6 +178,8 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'schuyler', expectedCity: 'Lancaster' },
   { stateSlug: 'missouri', countySlug: 'mercer', expectedCity: 'Princeton' },
   { stateSlug: 'missouri', countySlug: 'worth', expectedCity: 'Grant City' },
+  { stateSlug: 'missouri', countySlug: 'holt', expectedCity: 'Oregon' },
+  { stateSlug: 'missouri', countySlug: 'knox', expectedCity: 'Edina' },
 ];
 
 let totalIssues = 0;

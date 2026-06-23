@@ -124,6 +124,8 @@ const MO_COUNTY_NEIGHBORS: Record<string, string[]> = {
   schuyler: ['scotland', 'putnam', 'adair', 'mercer', 'grundy', 'daviess'],
   mercer: ['grundy', 'harrison', 'putnam', 'schuyler', 'daviess', 'gentry'],
   worth: ['gentry', 'harrison', 'atchison', 'nodaway', 'dekalb', 'daviess'],
+  holt: ['atchison', 'nodaway', 'andrew', 'buchanan', 'worth', 'gentry'],
+  knox: ['adair', 'lewis', 'clark', 'shelby', 'marion', 'scotland', 'macon'],
 };
 
 export function getMissouriNearbyCounties(

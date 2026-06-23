@@ -250,6 +250,8 @@ const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'schuyler',
   'mercer',
   'worth',
+  'holt',
+  'knox',
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */
