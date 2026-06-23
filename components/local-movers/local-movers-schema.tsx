@@ -7,9 +7,11 @@ import {
   TEXAS_COUNTY_CONTENT_UPDATED,
   GEORGIA_COUNTY_CONTENT_UPDATED,
   SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED,
+  NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
+import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
 import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -84,7 +86,10 @@ export function LocalMoversSchema({
                 : county?.stateSlug === 'south-carolina' &&
                     getSouthCarolinaCountyResearch(county.slug)
                   ? SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED
-                  : new Date().toISOString().slice(0, 10);
+                  : county?.stateSlug === 'north-carolina' &&
+                      getNorthCarolinaCountyResearch(county.slug)
+                    ? NORTH_CAROLINA_COUNTY_CONTENT_UPDATED
+                    : new Date().toISOString().slice(0, 10);
 
   const movingCompanies = (movers ?? []).map((mover, index) => ({
     '@type': ['MovingCompany', 'LocalBusiness'],

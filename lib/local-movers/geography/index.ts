@@ -6,6 +6,7 @@ import { newJerseyCounties } from '@/lib/local-movers/geography/new-jersey';
 import { newYorkCounties } from '@/lib/local-movers/geography/new-york';
 import { applyGeorgiaCountyOverrides } from '@/lib/local-movers/geography/georgia-overrides';
 import { applySouthCarolinaCountyOverrides } from '@/lib/local-movers/geography/south-carolina-overrides';
+import { applyNorthCarolinaCountyOverrides } from '@/lib/local-movers/geography/north-carolina-overrides';
 import { applyTexasCountyOverrides } from '@/lib/local-movers/geography/texas-overrides';
 
 const curatedStateSlugs = new Set(['california', 'florida', 'new-jersey', 'new-york']);
@@ -21,7 +22,8 @@ const allCounties: LocalCounty[] = [
   ...generatedWithoutCurated
     .map(applyTexasCountyOverrides)
     .map(applyGeorgiaCountyOverrides)
-    .map(applySouthCarolinaCountyOverrides),
+    .map(applySouthCarolinaCountyOverrides)
+    .map(applyNorthCarolinaCountyOverrides),
 ];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {
