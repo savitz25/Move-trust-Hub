@@ -592,6 +592,96 @@ export const oklahomaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       { quote: 'Two Men and a Truck Tulsa confirmed Nowata County coverage and delivered excellent northeast Oklahoma service — on time and extremely careful.', name: 'Noah J.', location: 'Nowata, OK', rating: 5, moveType: 'Townhome' },
       { quote: 'All My Sons Tulsa served our Nowata move efficiently — fast, professional, and reliable with careful handling.', name: 'Opal L.', location: 'Nowata, OK', rating: 5, moveType: 'Single-family' },
     ],
+    blaine: [
+      { quote: 'Regional Watonga / Blaine providers handled our relocation professionally — efficient service and careful handling throughout Blaine County.', name: 'Paul R.', location: 'Watonga, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Kingfisher providers confirmed Blaine County coverage and delivered excellent central Oklahoma service — on time and extremely careful.', name: 'Quinn S.', location: 'Watonga, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Capital Movers served our Watonga move efficiently — fast, professional, and reliable with careful handling.', name: 'Rita T.', location: 'Watonga, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    woods: [
+      { quote: 'Regional Alva / Woods providers handled our relocation professionally — efficient service and careful handling throughout Woods County.', name: 'Sam U.', location: 'Alva, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Woodward providers confirmed Woods County coverage and delivered excellent northwest Oklahoma service — professional crew with transparent pricing.', name: 'Tina V.', location: 'Alva, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Enid providers served our Alva move efficiently — fast, professional, and reliable with careful handling.', name: 'Ulysses W.', location: 'Alva, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    kiowa: [
+      { quote: 'Regional Hobart / Kiowa providers handled our relocation professionally — efficient service and careful handling throughout Kiowa County.', name: 'Vera X.', location: 'Hobart, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Cordell providers confirmed Kiowa County coverage and delivered excellent southwest Oklahoma service — on time and extremely careful.', name: 'Wade Y.', location: 'Hobart, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Lawton served our Hobart move efficiently — fast, professional, and reliable with careful handling.', name: 'Xena Z.', location: 'Hobart, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    major: [
+      { quote: 'Regional Fairview / Major providers handled our relocation professionally — efficient service and careful handling throughout Major County.', name: 'York A.', location: 'Fairview, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Woodward providers confirmed Major County coverage and delivered excellent northwest Oklahoma service — on time and extremely careful.', name: 'Zara B.', location: 'Fairview, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Enid providers served our Fairview move efficiently — fast, professional, and reliable with careful handling.', name: 'Aaron C.', location: 'Fairview, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    tillman: [
+      { quote: 'Regional Frederick / Tillman providers handled our relocation professionally — efficient service and careful handling throughout Tillman County.', name: 'Beth D.', location: 'Frederick, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Altus providers confirmed Tillman County coverage and delivered excellent southwest Oklahoma service — on time and extremely careful.', name: 'Carl E.', location: 'Frederick, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Lawton served our Frederick move efficiently — fast, professional, and reliable with careful handling.', name: 'Dana F.', location: 'Frederick, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    alfalfa: [
+      { quote: 'Regional Cherokee / Alfalfa providers handled our rural relocation professionally — efficient service and careful handling throughout Alfalfa County.', name: 'Earl G.', location: 'Cherokee, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Enid providers confirmed Alfalfa County coverage and delivered excellent northwest Oklahoma service — professional crew with transparent pricing.', name: 'Faye H.', location: 'Cherokee, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Oklahoma City served our Cherokee move efficiently — fast, professional, and reliable with careful handling.', name: 'Glen I.', location: 'Cherokee, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    jefferson: [
+      { quote: 'Regional Waurika / Jefferson providers handled our rural relocation professionally — efficient service and careful handling throughout Jefferson County.', name: 'Hope J.', location: 'Waurika, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Duncan providers confirmed Jefferson County coverage and delivered excellent south Oklahoma service — on time and extremely careful.', name: 'Ivan K.', location: 'Waurika, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Lawton served our Waurika move efficiently — fast, professional, and reliable with careful handling.', name: 'Jill L.', location: 'Waurika, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    coal: [
+      { quote: 'Regional Coalgate / Coal providers handled our rural move professionally — efficient service and careful handling throughout Coal County.', name: 'Kyle M.', location: 'Coalgate, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Coalgate providers confirmed remote Coal County coverage and delivered reliable southeast Oklahoma service — careful with our long driveway.', name: 'Lynn N.', location: 'Coalgate, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Coalgate area providers served our Coalgate move efficiently — timely, professional, and reliable in a very rural setting.', name: 'Mark O.', location: 'Coalgate, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    cotton: [
+      { quote: 'Regional Walters / Cotton providers handled our rural move professionally — efficient service and careful handling throughout Cotton County.', name: 'Nora P.', location: 'Walters, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Walters providers confirmed Cotton County coverage and delivered reliable southwest Oklahoma service — careful with tight rural access.', name: 'Owen Q.', location: 'Walters, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Walters area providers served our Walters move efficiently — timely, professional, and reliable in a remote county.', name: 'Pam R.', location: 'Walters, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    greer: [
+      { quote: 'Regional Mangum / Greer providers handled our rural move professionally — efficient service and careful handling throughout Greer County.', name: 'Quinn S.', location: 'Mangum, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Mangum providers confirmed Greer County coverage and delivered reliable southwest Oklahoma service — on time despite long rural routes.', name: 'Rosa T.', location: 'Mangum, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Mangum area providers served our Mangum move efficiently — timely, professional, and reliable with careful handling.', name: 'Stan U.', location: 'Mangum, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    beaver: [
+      { quote: 'Regional Beaver providers handled our panhandle move professionally — efficient service and careful handling throughout Beaver County.', name: 'Tess V.', location: 'Beaver, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Beaver providers confirmed panhandle coverage and delivered reliable service — careful with our remote property access.', name: 'Ursula W.', location: 'Beaver, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Beaver area providers served our Beaver move efficiently — timely, professional, and reliable in Oklahoma\'s panhandle.', name: 'Vince X.', location: 'Beaver, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    dewey: [
+      { quote: 'Regional Taloga / Dewey providers handled our rural move professionally — efficient service and careful handling throughout Dewey County.', name: 'Wade Y.', location: 'Taloga, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Taloga providers confirmed Dewey County coverage and delivered reliable western Oklahoma service — careful with gravel road access.', name: 'Xena Z.', location: 'Taloga, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Taloga area providers served our Taloga move efficiently — timely, professional, and reliable in a remote county.', name: 'York A.', location: 'Taloga, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    grant: [
+      { quote: 'Regional Medford / Grant providers handled our rural move professionally — efficient service and careful handling throughout Grant County.', name: 'Zara B.', location: 'Medford, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Medford providers confirmed Grant County coverage and delivered reliable north Oklahoma service — on time and extremely careful.', name: 'Alice C.', location: 'Medford, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Medford area providers served our Medford move efficiently — timely, professional, and reliable with careful handling.', name: 'Bruce D.', location: 'Medford, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    ellis: [
+      { quote: 'Regional Arnett / Ellis providers handled our rural move professionally — efficient service and careful handling throughout Ellis County.', name: 'Cara E.', location: 'Arnett, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Arnett providers confirmed Ellis County coverage and delivered reliable western Oklahoma service — careful with remote property access.', name: 'Dean F.', location: 'Arnett, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Arnett area providers served our Arnett move efficiently — timely, professional, and reliable in a very rural setting.', name: 'Eva G.', location: 'Arnett, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    'roger-mills': [
+      { quote: 'Regional Cheyenne / Roger Mills providers handled our rural move professionally — efficient service and careful handling throughout Roger Mills County.', name: 'Frank H.', location: 'Cheyenne, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Cheyenne providers confirmed Roger Mills County coverage and delivered reliable western Oklahoma service — on time despite long rural routes.', name: 'Gail I.', location: 'Cheyenne, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Cheyenne area providers served our Cheyenne move efficiently — timely, professional, and reliable with careful handling.', name: 'Hank J.', location: 'Cheyenne, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    harper: [
+      { quote: 'Regional Buffalo / Harper providers handled our panhandle move professionally — efficient service and careful handling throughout Harper County.', name: 'Iris K.', location: 'Buffalo, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Buffalo providers confirmed Harper County coverage and delivered reliable panhandle service — careful with our remote driveway.', name: 'Jake L.', location: 'Buffalo, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Buffalo area providers served our Buffalo move efficiently — timely, professional, and reliable in Oklahoma\'s panhandle.', name: 'Kate M.', location: 'Buffalo, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    harmon: [
+      { quote: 'Regional Hollis / Harmon providers handled our rural move professionally — efficient service and careful handling throughout Harmon County.', name: 'Lyle N.', location: 'Hollis, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Hollis providers confirmed Harmon County coverage and delivered reliable southwest Oklahoma service — on time and extremely careful.', name: 'Mae O.', location: 'Hollis, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Hollis area providers served our Hollis move efficiently — timely, professional, and reliable with careful handling.', name: 'Nick P.', location: 'Hollis, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    cimarron: [
+      { quote: 'Regional Boise City / Cimarron providers handled our panhandle move professionally — efficient service and careful handling throughout Cimarron County.', name: 'Olga Q.', location: 'Boise City, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Boise City providers confirmed Cimarron County coverage and delivered reliable service to Oklahoma\'s westernmost county — careful and on time.', name: 'Pete R.', location: 'Boise City, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Boise City area providers served our Boise City move efficiently — timely, professional, and reliable in a very remote panhandle setting.', name: 'Quincy S.', location: 'Boise City, OK', rating: 5, moveType: 'Single-family' },
+    ],
   };
 
 export function getOklahomaCountyTestimonials(

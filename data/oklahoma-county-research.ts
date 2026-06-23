@@ -1011,6 +1011,312 @@ export const oklahomaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  blaine: {
+    marketNotes:
+      'Blaine County is a rural Central Oklahoma county with agricultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Blaine County pricing reflects central Oklahoma agricultural demand, regional traffic constraints, and cross-county crews from OKC and Enid providers.',
+    },
+    tips: [
+      'Verify coverage for Watonga and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  woods: {
+    marketNotes:
+      'Woods County is a rural Northwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Woods County pricing reflects northwest Oklahoma regional demand, rural access constraints, and cross-county crews from Woodward and Enid providers.',
+    },
+    tips: [
+      'Verify coverage for Alva and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kiowa: {
+    marketNotes:
+      'Kiowa County is a rural Southwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Kiowa County pricing reflects southwest Oklahoma regional demand, rural access constraints, and cross-county crews from Lawton and Anadarko providers.',
+    },
+    tips: [
+      'Verify coverage for Hobart and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  major: {
+    marketNotes:
+      'Major County is a rural Northwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Major County pricing reflects northwest Oklahoma regional demand, rural access constraints, and cross-county crews from Woodward and Enid providers.',
+    },
+    tips: [
+      'Verify coverage for Fairview and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tillman: {
+    marketNotes:
+      'Tillman County is a rural Southwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Tillman County pricing reflects southwest Oklahoma regional demand, Red River valley access, and cross-county crews from Lawton and Altus providers.',
+    },
+    tips: [
+      'Verify coverage for Frederick and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  alfalfa: {
+    marketNotes:
+      'Alfalfa County is a rural Northwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Alfalfa County pricing reflects Cherokee rural demand, limited local crew availability, and cross-coverage from Enid and Woodward providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Cherokee before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is a rural South Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects Waurika rural demand, limited local crew availability, and cross-coverage from Duncan and Ardmore providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Waurika before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  coal: {
+    marketNotes:
+      'Coal County is a rural Southeast Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Coal County pricing reflects Coalgate rural demand, very limited local crew availability, and regional providers serving remote southeast Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Coalgate before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  cotton: {
+    marketNotes:
+      'Cotton County is a rural Southwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Cotton County pricing reflects Walters rural demand, very limited local crew availability, and regional providers serving remote southwest Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Walters before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  greer: {
+    marketNotes:
+      'Greer County is a rural Southwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Greer County pricing reflects Mangum rural demand, very limited local crew availability, and regional providers serving remote southwest Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Mangum before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  beaver: {
+    marketNotes:
+      'Beaver County is a rural Panhandle county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Beaver County pricing reflects panhandle rural demand, very limited local crew availability, and regional providers serving remote northwest Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Beaver before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  dewey: {
+    marketNotes:
+      'Dewey County is a rural Western Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Dewey County pricing reflects Taloga rural demand, very limited local crew availability, and regional providers serving remote western Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Taloga before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County is a rural North Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Medford rural demand, very limited local crew availability, and regional providers serving remote north Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Medford before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  ellis: {
+    marketNotes:
+      'Ellis County is a rural Western Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Ellis County pricing reflects Arnett rural demand, very limited local crew availability, and regional providers serving remote western Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Arnett before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  'roger-mills': {
+    marketNotes:
+      'Roger Mills County is a rural Western Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Roger Mills County pricing reflects Cheyenne rural demand, very limited local crew availability, and regional providers serving remote western Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Cheyenne before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  harper: {
+    marketNotes:
+      'Harper County is a rural Panhandle county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Harper County pricing reflects Buffalo rural demand, very limited local crew availability, and regional providers serving remote panhandle properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Buffalo before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  harmon: {
+    marketNotes:
+      'Harmon County is a rural Southwest Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Harmon County pricing reflects Hollis rural demand, very limited local crew availability, and regional providers serving remote southwest Oklahoma properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Hollis before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  cimarron: {
+    marketNotes:
+      'Cimarron County is Oklahoma’s westernmost Panhandle county with rural residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Cimarron County pricing reflects Boise City rural demand, very limited local crew availability, and regional providers serving Oklahoma’s most remote panhandle properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Boise City before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
 };
 
 export function getOklahomaCountyResearch(
