@@ -125,6 +125,9 @@ const MS_HIGH_TRAFFIC_COUNTIES = new Set([
   'lee',
   'forrest',
   'lauderdale',
+  'lafayette',
+  'lowndes',
+  'oktibbeha',
 ]);
 
 /** High-traffic AL counties — sitemap priority 0.85 */

@@ -16,6 +16,19 @@ export const mississippiCountyOverrides: Partial<
   lamar: { seat: 'Purvis', metro: 'hattiesburg-metro-ms' },
   jones: { seat: 'Laurel', metro: 'laurel-metro-ms' },
   'pearl-river': { seat: 'Poplarville', metro: 'picayune-metro-ms' },
+  lafayette: { seat: 'Oxford', metro: 'oxford-metro-ms' },
+  lowndes: { seat: 'Columbus', metro: 'columbus-ms-metro-ms' },
+  oktibbeha: { seat: 'Starkville', metro: 'starkville-metro-ms' },
+  hancock: { seat: 'Bay St. Louis', metro: 'hancock-coastal-ms' },
+  warren: { seat: 'Vicksburg', metro: 'vicksburg-metro-ms' },
+  washington: { seat: 'Greenville', metro: 'greenville-metro-ms' },
+  pike: { seat: 'McComb', metro: 'mccomb-metro-ms' },
+  lincoln: { seat: 'Brookhaven', metro: 'brookhaven-metro-ms' },
+  marshall: { seat: 'Holly Springs', metro: 'holly-springs-metro-ms' },
+  alcorn: { seat: 'Corinth', metro: 'corinth-metro-ms' },
+  monroe: { seat: 'Aberdeen', metro: 'aberdeen-metro-ms' },
+  panola: { seat: 'Batesville', metro: 'batesville-metro-ms' },
+  pontotoc: { seat: 'Pontotoc', metro: 'pontotoc-metro-ms' },
 };
 
 export function applyMississippiCountyOverrides(county: LocalCounty): LocalCounty {
