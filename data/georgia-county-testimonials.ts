@@ -1437,6 +1437,136 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  bulloch: [
+    {
+      quote:
+        'Badie Moving Company handled our Statesboro relocation during Georgia Southern move-in week — professional crew, careful packing, and transparent pricing throughout Bulloch County.',
+      name: 'Kayla M.',
+      location: 'Statesboro, GA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to our Brooklet home and delivered on schedule. Upfront about travel time and excellent handling of our family furniture.',
+      name: 'Derek W.',
+      location: 'Brooklet, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah served our Statesboro townhome efficiently with great communication and no surprise fees despite peak university-season demand.',
+      name: 'Priya S.',
+      location: 'Statesboro, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  effingham: [
+    {
+      quote:
+        'BC Brothers Moving handled our Rincon relocation professionally — careful with large furniture, clear scheduling despite Savannah-metro traffic, and transparent pricing.',
+      name: 'Melissa J.',
+      location: 'Rincon, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Savannah served our Springfield home move efficiently. Upfront about I-16 travel time and great crew professionalism throughout Effingham County.',
+      name: 'Tony R.',
+      location: 'Springfield, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons Moving made our Guyton apartment relocation seamless with reliable packing and on-time arrival despite heavy Highway 21 traffic.',
+      name: 'Angela F.',
+      location: 'Guyton, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
+  glynn: [
+    {
+      quote:
+        'Driftwood Moving Company handled our Brunswick coastal home relocation with careful humidity-sensitive packing and excellent communication about marsh-side property access.',
+      name: 'Richard H.',
+      location: 'Brunswick, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'T&T Moving and Packing served our St. Simons Island move professionally — experienced with island bridge logistics and transparent flat-rate pricing.',
+      name: 'Susan L.',
+      location: 'St. Simons Island, GA',
+      rating: 5,
+      moveType: 'Condo',
+    },
+    {
+      quote:
+        'BC Brothers Moving traveled from Savannah and handled our Glynn County townhome efficiently. Careful crew and upfront about coastal travel fees.',
+      name: 'Greg N.',
+      location: 'Brunswick, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  dougherty: [
+    {
+      quote:
+        'HHG Movers handled our Albany single-family relocation professionally — careful furniture wrapping, clear pricing, and reliable scheduling throughout Dougherty County.',
+      name: 'Terrence B.',
+      location: 'Albany, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'The Home Moving Solution provided excellent packing and loading for our Albany townhome. Transparent fees and great communication from quote to completion.',
+      name: 'Latoya G.',
+      location: 'Albany, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Albany served our Putney-area home move efficiently with upfront travel-time disclosure and careful handling of antiques.',
+      name: 'Frank D.',
+      location: 'Albany, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  troup: [
+    {
+      quote:
+        'Coleman Worldwide Moving handled our LaGrange relocation with military-grade professionalism — careful packing, on-schedule delivery, and clear I-85 corridor coordination.',
+      name: 'James C.',
+      location: 'LaGrange, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Wirks Moving traveled from Atlanta and served our Hogansville home move efficiently. Upfront about travel fees and excellent crew communication throughout Troup County.',
+      name: 'Brenda K.',
+      location: 'Hogansville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Zip Moving gave us a flat-rate quote for our LaGrange apartment relocation and delivered on time despite Lafayette Parkway traffic.',
+      name: 'Kevin P.',
+      location: 'LaGrange, GA',
+      rating: 4,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

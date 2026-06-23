@@ -59,6 +59,11 @@ export const georgiaCountyOverrides: Partial<
   brantley: { seat: 'Nahunta', metro: 'savannah-metro-ga' },
   houston: { seat: 'Perry', metro: 'macon-metro-ga' },
   lowndes: { seat: 'Valdosta', metro: 'valdosta-metro-ga' },
+  bulloch: { seat: 'Statesboro', metro: 'savannah-metro-ga' },
+  effingham: { seat: 'Springfield', metro: 'savannah-metro-ga' },
+  glynn: { seat: 'Brunswick', metro: 'brunswick-metro-ga' },
+  dougherty: { seat: 'Albany', metro: 'albany-metro-ga' },
+  troup: { seat: 'LaGrange', metro: 'lagrange-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

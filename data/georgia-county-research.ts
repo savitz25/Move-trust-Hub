@@ -409,7 +409,7 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   spalding: {
     marketNotes:
-      'Spalding County centers on Griffin south of Atlanta along the I-75 corridor with steady residential and commuter demand.',
+      'Spalding County includes Griffin south of Atlanta with steady residential and commuter demand along the I-75 corridor.',
     costs: {
       studioRange: '$600–$1,200',
       familyRange: '$2,000–$4,500',
@@ -949,6 +949,91 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm insurance and valuation for high-value homes before booking.',
       'Book early for peak seasons, university move-in windows, and month-end lease turnover.',
       'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Valdosta and Albany-area crews.',
+    ],
+  },
+  bulloch: {
+    marketNotes:
+      'Bulloch County includes Statesboro with strong university (Georgia Southern) influence and residential demand across the Savannah metro fringe.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Bulloch County pricing reflects Georgia Southern move-in seasonality, Statesboro suburban growth, and travel from Savannah-area crews.',
+    },
+    tips: [
+      'University-related moves are common — confirm experience with Georgia Southern housing timelines and dormitory access rules.',
+      'Verify explicit coverage for Statesboro, Brooklet, Portal, and surrounding Bulloch County addresses before booking.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons, university move-in windows, and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Statesboro and Savannah-area crews.',
+    ],
+  },
+  effingham: {
+    marketNotes:
+      'Effingham County is a suburban/rural county north of Savannah with Springfield as the seat and steady commuter residential demand.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Effingham County pricing reflects Savannah-metro traffic windows, rural driveway access, and travel from Pooler and Savannah bases.',
+    },
+    tips: [
+      'Verify explicit coverage for Springfield, Rincon, Guyton, and surrounding Effingham County addresses before booking.',
+      'Savannah-area traffic on I-16 and Highway 21 impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Savannah-metro crews.',
+    ],
+  },
+  glynn: {
+    marketNotes:
+      'Glynn County centers on Brunswick with significant coastal, port, and tourist-related residential activity along Georgia\'s Golden Isles.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Glynn County pricing reflects coastal property access, St. Simons and Jekyll Island logistics, and peak tourist-season demand.',
+    },
+    tips: [
+      'Coastal properties require specialized planning — confirm experience with marsh-side homes, island bridges, and humidity-sensitive packing.',
+      'Verify explicit coverage for Brunswick, St. Simons Island, and surrounding Glynn County addresses before booking.',
+      'Confirm insurance and valuation for high-value coastal homes before booking.',
+      'Book early for peak tourist seasons, snowbird turnover, and month-end closings.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Brunswick and Savannah coastal crews.',
+    ],
+  },
+  dougherty: {
+    marketNotes:
+      'Dougherty County centers on Albany in Southwest Georgia with steady residential turnover across the Flint River corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Dougherty County pricing reflects Albany suburban demand, rural South Georgia travel, and limited on-the-ground mover competition.',
+    },
+    tips: [
+      'Verify explicit coverage for Albany, Putney, and surrounding Dougherty County addresses before booking.',
+      'Local traffic on Slappey Boulevard and Dawson Road impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from Albany and South Georgia crews.',
+    ],
+  },
+  troup: {
+    marketNotes:
+      'Troup County centers on LaGrange in West Georgia with industrial and residential activity along the I-85 corridor between Atlanta and Columbus.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Troup County pricing reflects LaGrange industrial growth, I-85 corridor traffic, and travel from Columbus and Atlanta metro bases.',
+    },
+    tips: [
+      'Verify explicit coverage for LaGrange, Hogansville, and surrounding Troup County addresses before booking.',
+      'Local traffic on I-85 and Lafayette Parkway impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance and valuation for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple written estimates; compare hourly vs flat-rate quotes from LaGrange, Columbus, and Atlanta-area crews.',
     ],
   },
 };

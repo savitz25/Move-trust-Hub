@@ -66,6 +66,11 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   brantley: ['charlton', 'camden', 'pierce', 'ware', 'glynn', 'bacon'],
   houston: ['peach', 'bibb', 'bleckley', 'pulaski', 'taylor', 'crawford'],
   lowndes: ['brooks', 'lanier', 'berrien', 'atkinson', 'cook', 'echols'],
+  bulloch: ['evans', 'candler', 'emanuel', 'screven', 'jenkins', 'bryan'],
+  effingham: ['bryan', 'chatham', 'bulloch', 'screven', 'jasper', 'liberty'],
+  glynn: ['camden', 'mcintosh', 'wayne', 'brantley', 'pierce', 'ware'],
+  dougherty: ['lee', 'worth', 'mitchell', 'baker', 'terrell', 'sumter'],
+  troup: ['meriwether', 'coweta', 'heard', 'harris', 'muscogee', 'chattahoochee'],
 };
 
 export function getGeorgiaNearbyCounties(
