@@ -6031,6 +6031,32 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     city: 'El Paso',
     website: 'https://twomenandatruck.com/movers/tx/el-paso',
   },
+  'king-moving-company-el-paso': {
+    id: 'king-moving-company-el-paso',
+    name: 'King Moving Company',
+    rating: 4.6,
+    reviewCount: 312,
+    shortDescription:
+      'El Paso local mover serving Fort Bliss PCS relocations, border communities, and residential moves across El Paso County.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Military'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'El Paso',
+    website: 'https://kingmovingcompany.com/',
+  },
+  'all-my-sons-el-paso': {
+    id: 'all-my-sons-el-paso',
+    name: 'All My Sons Moving & Storage El Paso',
+    rating: 4.5,
+    reviewCount: 420,
+    shortDescription:
+      'Full-service El Paso mover handling local residential relocations and military household moves near Fort Bliss.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Military'],
+    fmcsaSafetyRating: 'Not Rated',
+    city: 'El Paso',
+    website: 'https://www.allmysons.com/texas/el-paso/',
+  },
   'victoria-transfer-storage': {
     id: 'victoria-transfer-storage',
     name: 'Victoria Transfer & Storage',

@@ -3645,6 +3645,74 @@ export const texasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates — Houston metro providers may price south-county routes differently.',
     ],
   },
+  cameron: {
+    marketNotes:
+      'Cameron County includes Brownsville with border-related residential and commercial moves across the Rio Grande Valley metro.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'Brownsville local providers typically cover Cameron County; confirm service for Harlingen fringe and rural Rio Grande Valley addresses.',
+    },
+    tips: [
+      'Border traffic on I-69E and international bridge corridors impacts scheduling — plan around peak crossing windows.',
+      'Verify coverage for Brownsville, Harlingen fringe, and surrounding Cameron County communities.',
+      'Confirm insurance for high-value homes and cross-border relocation paperwork if applicable.',
+      'Book early for peak seasons — summer moves can tighten Rio Grande Valley crew availability.',
+      'Obtain multiple estimates — hourly and flat-rate quotes can vary between Brownsville and McAllen providers.',
+    ],
+  },
+  williamson: {
+    marketNotes:
+      'Williamson County includes Georgetown and Round Rock with strong suburban growth along the Austin–Round Rock metro corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Austin metro crews typically cover Williamson County; confirm service for Cedar Park, Leander, and rural county addresses.',
+    },
+    tips: [
+      'Verify coverage for Georgetown, Round Rock, Cedar Park, and surrounding Williamson County communities.',
+      'Austin-area traffic on I-35 and SH-130 impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in newer Williamson County subdivisions.',
+      'Book early for peak seasons — summer growth and tech-corridor turnover can tighten Austin-area crew availability.',
+      'Obtain multiple estimates — travel distance from Austin or San Antonio can affect final pricing.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County includes Conroe and The Woodlands with rapid suburban growth north of Houston along the I-45 corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Houston metro crews typically cover Montgomery County; confirm service for Conroe, The Woodlands, and lake-community addresses.',
+    },
+    tips: [
+      'Verify coverage for Conroe, The Woodlands, Magnolia, and surrounding Montgomery County communities.',
+      'Houston-area traffic on I-45 and the Grand Parkway impacts scheduling — plan around peak commute windows.',
+      'Confirm insurance for high-value homes common in The Woodlands and newer Montgomery County subdivisions.',
+      'Book early for peak seasons — summer moves can tighten north-Houston crew availability.',
+      'Obtain multiple estimates — Houston metro providers may price north-county routes differently.',
+    ],
+  },
+  'el-paso': {
+    marketNotes:
+      'El Paso County centers on El Paso with significant military moves tied to Fort Bliss and border-related residential relocations.',
+    costs: {
+      studioRange: '$550–$1,050',
+      familyRange: '$1,900–$4,100',
+      avgHourly: '$95–$135/hr for a 2-person crew',
+      note: 'El Paso local providers typically cover El Paso County; confirm service for on-base access, PCS timelines, and Upper Valley addresses.',
+    },
+    tips: [
+      'Military moves require specific experience — confirm PCS paperwork, Fort Bliss base access, and tight timeline handling.',
+      'Verify coverage for El Paso, Socorro, and surrounding El Paso County communities.',
+      'Border traffic on I-10 and international bridge corridors impacts scheduling — plan around peak crossing windows.',
+      'Confirm insurance for high-value homes and military household goods coverage requirements.',
+      'Book early for peak seasons — summer PCS season can tighten El Paso crew availability.',
+    ],
+  },
 };
 
 export function getTexasCountyResearch(

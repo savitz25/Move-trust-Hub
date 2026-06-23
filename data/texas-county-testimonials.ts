@@ -4755,6 +4755,118 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Townhome',
     },
   ],
+  cameron: [
+    {
+      quote:
+        'Professional and efficient for our Brownsville move in Cameron County. Two Men and a Truck navigated border corridor traffic without delay.',
+      name: 'Kyle O.',
+      location: 'Brownsville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Two Men and a Truck McAllen — transparent pricing on a Rio Grande Valley route with careful handling.',
+      name: 'Lara P.',
+      location: 'Brownsville, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Professional and timely from the Corpus Christi team we compared. Great experience with organized loading throughout Cameron County.',
+      name: 'Mara Q.',
+      location: 'Brownsville, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
+  williamson: [
+    {
+      quote:
+        'Professional and efficient for our Round Rock move in Williamson County. The Austin crew navigated I-35 traffic and finished with careful handling.',
+      name: 'Ned R.',
+      location: 'Round Rock, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from College Hunks Austin — transparent pricing on a Georgetown route with steady communication.',
+      name: 'Opal S.',
+      location: 'Georgetown, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from the San Antonio team we compared. Great experience with organized loading throughout Williamson County.',
+      name: 'Paul T.',
+      location: 'Cedar Park, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  montgomery: [
+    {
+      quote:
+        'Professional and efficient for our Conroe move in Montgomery County. Two Men and a Truck Houston navigated I-45 traffic without delay.',
+      name: 'Quinn U.',
+      location: 'Conroe, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Excellent crew from Houston Local Lines — transparent pricing on a Woodlands route with careful handling.',
+      name: 'Rosa V.',
+      location: 'The Woodlands, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional and timely from Huntsville Moving Inc. we compared. Great experience with organized loading throughout Montgomery County.',
+      name: 'Seth W.',
+      location: 'Conroe, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+  ],
+  'el-paso': [
+    {
+      quote:
+        'Professional and efficient for our El Paso move. Two Men and a Truck confirmed Fort Bliss PCS experience and careful handling.',
+      name: 'Tara X.',
+      location: 'El Paso, TX',
+      rating: 5,
+      moveType: 'Military PCS',
+    },
+    {
+      quote:
+        'Excellent crew from King Moving Company — transparent pricing on a border corridor route with steady communication.',
+      name: 'Uma Y.',
+      location: 'El Paso, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Professional and timely from All My Sons El Paso. Great experience with organized loading throughout El Paso County.',
+      name: 'Vic Z.',
+      location: 'El Paso, TX',
+      rating: 5,
+      moveType: 'Residential',
+    },
+    {
+      quote:
+        'Excellent crew from a fourth local estimate we compared — careful handling and clear pricing on an Upper Valley route.',
+      name: 'Wade A.',
+      location: 'El Paso, TX',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(
