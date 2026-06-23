@@ -153,6 +153,17 @@ const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'cape-girardeau',
   'buchanan',
   'cole',
+  'st-francois',
+  'lincoln',
+  'newton',
+  'johnson',
+  'taney',
+  'pulaski',
+  'callaway',
+  'phelps',
+  'pettis',
+  'webster',
+  'camden',
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */

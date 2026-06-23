@@ -81,6 +81,17 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'cape-girardeau', expectedCity: 'Jackson' },
   { stateSlug: 'missouri', countySlug: 'buchanan', expectedCity: 'St. Joseph' },
   { stateSlug: 'missouri', countySlug: 'cole', expectedCity: 'Jefferson City' },
+  { stateSlug: 'missouri', countySlug: 'st-francois', expectedCity: 'Farmington' },
+  { stateSlug: 'missouri', countySlug: 'lincoln', expectedCity: 'Troy' },
+  { stateSlug: 'missouri', countySlug: 'newton', expectedCity: 'Neosho' },
+  { stateSlug: 'missouri', countySlug: 'johnson', expectedCity: 'Warrensburg' },
+  { stateSlug: 'missouri', countySlug: 'taney', expectedCity: 'Forsyth' },
+  { stateSlug: 'missouri', countySlug: 'pulaski', expectedCity: 'Waynesville' },
+  { stateSlug: 'missouri', countySlug: 'callaway', expectedCity: 'Fulton' },
+  { stateSlug: 'missouri', countySlug: 'phelps', expectedCity: 'Rolla' },
+  { stateSlug: 'missouri', countySlug: 'pettis', expectedCity: 'Sedalia' },
+  { stateSlug: 'missouri', countySlug: 'webster', expectedCity: 'Marshfield' },
+  { stateSlug: 'missouri', countySlug: 'camden', expectedCity: 'Camdenton' },
 ];
 
 let totalIssues = 0;

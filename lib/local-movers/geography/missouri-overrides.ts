@@ -20,6 +20,17 @@ export const missouriCountyOverrides: Partial<
   'cape-girardeau': { seat: 'Jackson', metro: 'cape-girardeau-metro-mo' },
   buchanan: { seat: 'St. Joseph', metro: 'st-joseph-metro-mo' },
   cole: { seat: 'Jefferson City', metro: 'jefferson-city-metro-mo' },
+  'st-francois': { seat: 'Farmington', metro: 'farmington-metro-mo' },
+  lincoln: { seat: 'Troy', metro: 'st-louis-metro-north-mo' },
+  newton: { seat: 'Neosho', metro: 'joplin-metro-mo' },
+  johnson: { seat: 'Warrensburg', metro: 'warrensburg-metro-mo' },
+  taney: { seat: 'Forsyth', metro: 'branson-metro-mo' },
+  pulaski: { seat: 'Waynesville', metro: 'waynesville-metro-mo' },
+  callaway: { seat: 'Fulton', metro: 'jefferson-city-metro-mo' },
+  phelps: { seat: 'Rolla', metro: 'rolla-metro-mo' },
+  pettis: { seat: 'Sedalia', metro: 'sedalia-metro-mo' },
+  webster: { seat: 'Marshfield', metro: 'springfield-metro-east-mo' },
+  camden: { seat: 'Camdenton', metro: 'camdenton-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {

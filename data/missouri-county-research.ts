@@ -280,6 +280,193 @@ export const missouriCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  'st-francois': {
+    marketNotes:
+      'St. Francois County is a key Southeast Missouri county with strong healthcare and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'St. Francois County pricing reflects southeast Missouri regional demand, Farmington healthcare corridor traffic, and competition among local and regional agents serving the greater Farmington area.',
+    },
+    tips: [
+      'Verify coverage for Farmington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County is one of Missouri’s fastest-growing counties north of St. Louis with strong suburban residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects north St. Louis metro suburban growth, Highway 61 corridor traffic, and competition among full-service local and regional agents serving Troy and Elsberry.',
+    },
+    tips: [
+      'Verify coverage for Troy, Moscow Mills, and Elsberry areas before booking.',
+      'St. Louis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood/tornado coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  newton: {
+    marketNotes:
+      'Newton County is a growing county in Southwest Missouri with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Newton County pricing reflects Joplin metro spillover demand, Neosho regional traffic patterns, and competition among local and regional agents serving southwest Missouri.',
+    },
+    tips: [
+      'Verify coverage for Neosho and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  johnson: {
+    marketNotes:
+      'Johnson County is anchored by the University of Central Missouri with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Johnson County pricing reflects Warrensburg university-town turnover, I-70 corridor access, student move seasons, and competition among local and regional agents serving central Missouri.',
+    },
+    tips: [
+      'Verify coverage for Warrensburg and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  taney: {
+    marketNotes:
+      'Taney County is a major tourism hub centered on Branson with strong residential and seasonal demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Taney County pricing reflects Branson tourism-season demand, Highway 65 corridor traffic, and competition among local and regional agents serving the Ozarks entertainment corridor.',
+    },
+    tips: [
+      'Verify coverage for Branson and Hollister areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pulaski: {
+    marketNotes:
+      'Pulaski County is anchored by Fort Leonard Wood with strong military and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Pulaski County pricing reflects Fort Leonard Wood military relocation cycles, Waynesville corridor traffic, and competition among local and regional agents serving St. Robert and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Waynesville, St. Robert, and surrounding areas before booking.',
+      'Military base traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and military relocations before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  callaway: {
+    marketNotes:
+      'Callaway County is a growing county near Jefferson City with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Callaway County pricing reflects Fulton educational corridor demand, capital-area commuter traffic, and competition among local and regional agents serving central Missouri.',
+    },
+    tips: [
+      'Verify coverage for Fulton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  phelps: {
+    marketNotes:
+      'Phelps County is anchored by the Missouri University of Science and Technology with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Phelps County pricing reflects Rolla university-town turnover, I-44 corridor traffic, student move seasons, and competition among local and regional agents serving the greater Rolla area.',
+    },
+    tips: [
+      'Verify coverage for Rolla and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pettis: {
+    marketNotes:
+      'Pettis County is a key Central Missouri county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Pettis County pricing reflects Sedalia industrial corridor demand, I-70 and Highway 65 traffic, and competition among local and regional agents serving central Missouri.',
+    },
+    tips: [
+      'Verify coverage for Sedalia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  webster: {
+    marketNotes:
+      'Webster County is a growing county east of Springfield with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Webster County pricing reflects east Springfield metro suburban growth, Highway 60 corridor traffic, and competition among local and regional agents serving Marshfield and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Marshfield and surrounding areas before booking.',
+      'Springfield-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  camden: {
+    marketNotes:
+      'Camden County is a major tourism and lake-area county with strong seasonal and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Camden County pricing reflects Lake of the Ozarks seasonal demand, lake-area access challenges, tourist traffic patterns, and competition among local and regional agents serving Camdenton and Osage Beach.',
+    },
+    tips: [
+      'Verify coverage for Camdenton, Osage Beach, and Lake of the Ozarks areas before booking.',
+      'Lake and tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getMissouriCountyResearch(
