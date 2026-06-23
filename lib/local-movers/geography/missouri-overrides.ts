@@ -47,6 +47,22 @@ export const missouriCountyOverrides: Partial<
   texas: { seat: 'Houston', metro: 'houston-metro-mo' },
   miller: { seat: 'Tuscumbia', metro: 'lake-ozarks-metro-mo' },
   adair: { seat: 'Kirksville', metro: 'kirksville-metro-mo' },
+  audrain: { seat: 'Mexico', metro: 'mexico-metro-mo' },
+  randolph: { seat: 'Huntsville', metro: 'huntsville-metro-mo' },
+  mcdonald: { seat: 'Pineville', metro: 'pineville-metro-mo' },
+  washington: { seat: 'Potosi', metro: 'potosi-metro-mo' },
+  ray: { seat: 'Richmond', metro: 'kansas-city-metro-east-mo' },
+  saline: { seat: 'Marshall', metro: 'marshall-metro-mo' },
+  crawford: { seat: 'Steelville', metro: 'steelville-metro-mo' },
+  henry: { seat: 'Clinton', metro: 'clinton-metro-mo' },
+  morgan: { seat: 'Versailles', metro: 'versailles-metro-mo' },
+  clinton: { seat: 'Plattsburg', metro: 'kansas-city-metro-north-mo' },
+  benton: { seat: 'Warsaw', metro: 'warsaw-metro-mo' },
+  vernon: { seat: 'Nevada', metro: 'nevada-metro-mo' },
+  nodaway: { seat: 'Maryville', metro: 'maryville-metro-mo' },
+  wright: { seat: 'Hartville', metro: 'hartville-metro-mo' },
+  perry: { seat: 'Perryville', metro: 'perryville-metro-mo' },
+  'ste-genevieve': { seat: 'Ste. Genevieve', metro: 'ste-genevieve-metro-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {

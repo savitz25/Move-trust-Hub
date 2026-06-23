@@ -180,6 +180,22 @@ const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'texas',
   'miller',
   'adair',
+  'audrain',
+  'randolph',
+  'mcdonald',
+  'washington',
+  'ray',
+  'saline',
+  'crawford',
+  'henry',
+  'morgan',
+  'clinton',
+  'benton',
+  'vernon',
+  'nodaway',
+  'wright',
+  'perry',
+  'ste-genevieve',
 ]);
 
 /** High-traffic KS counties — sitemap priority 0.85 */

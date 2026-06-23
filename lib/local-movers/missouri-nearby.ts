@@ -54,6 +54,22 @@ const MO_COUNTY_NEIGHBORS: Record<string, string[]> = {
   texas: ['pulaski', 'laclede', 'wright', 'douglas', 'howell'],
   miller: ['camden', 'morgan', 'cole', 'osage', 'pulaski'],
   adair: ['putnam', 'sullivan', 'macon', 'schuyler', 'knox'],
+  audrain: ['boone', 'callaway', 'monroe', 'randolph', 'pike', 'ralls'],
+  randolph: ['boone', 'audrain', 'monroe', 'howard', 'chariton', 'macon'],
+  mcdonald: ['newton', 'barry', 'barton', 'jasper', 'lawrence'],
+  washington: ['jefferson', 'st-francois', 'ste-genevieve', 'crawford', 'franklin'],
+  ray: ['clay', 'jackson', 'lafayette', 'carroll', 'caldwell', 'platte'],
+  saline: ['lafayette', 'carroll', 'howard', 'cooper', 'pettis', 'johnson'],
+  crawford: ['phelps', 'washington', 'jefferson', 'franklin', 'gasconade', 'dent'],
+  henry: ['johnson', 'cass', 'bates', 'benton', 'pettis', 'st-clair'],
+  morgan: ['miller', 'camden', 'benton', 'pulaski', 'osage', 'cole'],
+  clinton: ['clay', 'platte', 'buchanan', 'dekalb', 'caldwell', 'ray'],
+  benton: ['henry', 'morgan', 'camden', 'miller', 'st-clair', 'hickory'],
+  vernon: ['bates', 'cass', 'barton', 'cedar', 'st-clair', 'henry'],
+  nodaway: ['buchanan', 'andrew', 'dekalb', 'gentry', 'holt', 'atchison'],
+  wright: ['douglas', 'texas', 'laclede', 'webster', 'ozark', 'howell'],
+  perry: ['cape-girardeau', 'bollinger', 'st-francois', 'madison', 'ste-genevieve'],
+  'ste-genevieve': ['jefferson', 'st-francois', 'perry', 'washington', 'franklin'],
 };
 
 export function getMissouriNearbyCounties(

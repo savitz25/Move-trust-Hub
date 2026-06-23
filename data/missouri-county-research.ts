@@ -739,6 +739,278 @@ export const missouriCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  audrain: {
+    marketNotes:
+      'Audrain County is a key Central Missouri county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Audrain County pricing reflects Mexico regional demand, central Missouri agricultural corridor traffic, and competition among local and regional agents serving the greater Mexico area.',
+    },
+    tips: [
+      'Verify coverage for Mexico and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  randolph: {
+    marketNotes:
+      'Randolph County is a rural Central Missouri county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Randolph County pricing reflects Huntsville regional demand, rural central Missouri access patterns, and competition among local and regional agents serving the greater Huntsville area.',
+    },
+    tips: [
+      'Verify coverage for Huntsville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcdonald: {
+    marketNotes:
+      'McDonald County is a rural Southwest Missouri county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'McDonald County pricing reflects Pineville regional demand, rural southwest Missouri access patterns, and competition among local and regional agents serving the greater Pineville area.',
+    },
+    tips: [
+      'Verify coverage for Pineville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is a rural Southeast Missouri county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Potosi regional demand, southeast Missouri traffic patterns, and competition among local and regional agents serving the greater Potosi area.',
+    },
+    tips: [
+      'Verify coverage for Potosi and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ray: {
+    marketNotes:
+      'Ray County is a suburban county east of Kansas City with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Ray County pricing reflects east Kansas City metro suburban growth, I-70 corridor traffic, and competition among full-service local and regional agents serving Richmond and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Richmond and surrounding areas before booking.',
+      'Kansas City-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  saline: {
+    marketNotes:
+      'Saline County is a key Central Missouri county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Saline County pricing reflects Marshall agricultural corridor demand, central Missouri regional traffic patterns, and competition among local and regional agents serving the greater Marshall area.',
+    },
+    tips: [
+      'Verify coverage for Marshall and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  crawford: {
+    marketNotes:
+      'Crawford County is a rural Southeast Missouri county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Crawford County pricing reflects Steelville regional demand, southeast Missouri traffic patterns, and competition among local and regional agents serving the greater Steelville area.',
+    },
+    tips: [
+      'Verify coverage for Steelville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  henry: {
+    marketNotes:
+      'Henry County is a rural West Central Missouri county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Henry County pricing reflects Clinton regional demand, west central Missouri traffic patterns, and competition among local and regional agents serving the greater Clinton area.',
+    },
+    tips: [
+      'Verify coverage for Clinton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morgan: {
+    marketNotes:
+      'Morgan County is a scenic county with strong lake-area residential and tourism demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Morgan County pricing reflects Lake of the Ozarks seasonal demand, lake-area access challenges, tourist traffic patterns, and competition among local and regional agents serving Versailles and surrounding lake communities.',
+    },
+    tips: [
+      'Verify coverage for Versailles and Lake of the Ozarks areas before booking.',
+      'Lake and tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clinton: {
+    marketNotes:
+      'Clinton County is a suburban county north of Kansas City with strong residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Clinton County pricing reflects north Kansas City metro suburban growth, Highway 169 corridor traffic, and competition among full-service local and regional agents serving Plattsburg and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Plattsburg and surrounding areas before booking.',
+      'Kansas City-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  benton: {
+    marketNotes:
+      'Benton County is a scenic county with strong lake-area residential and tourism demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Benton County pricing reflects Lake of the Ozarks seasonal demand, Warsaw lake-area access challenges, tourist traffic patterns, and competition among local and regional agents serving Warsaw and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Warsaw and Lake of the Ozarks areas before booking.',
+      'Lake and tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  vernon: {
+    marketNotes:
+      'Vernon County is a key West Central Missouri county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Vernon County pricing reflects Nevada agricultural corridor demand, west central Missouri regional traffic patterns, and competition among local and regional agents serving the greater Nevada area.',
+    },
+    tips: [
+      'Verify coverage for Nevada and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  nodaway: {
+    marketNotes:
+      'Nodaway County is anchored by Northwest Missouri State University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Nodaway County pricing reflects Maryville university-town turnover, northwest Missouri regional traffic patterns, student move seasons, and competition among local and regional agents serving the greater Maryville area.',
+    },
+    tips: [
+      'Verify coverage for Maryville and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wright: {
+    marketNotes:
+      'Wright County is a rural South Central Missouri county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Wright County pricing reflects Hartville regional demand, rural south central Missouri access patterns, and competition among local and regional agents serving the greater Hartville area.',
+    },
+    tips: [
+      'Verify coverage for Hartville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  perry: {
+    marketNotes:
+      'Perry County is a key Southeast Missouri county with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Perry County pricing reflects Perryville regional demand, southeast Missouri traffic patterns, and competition among local and regional agents serving the greater Perryville area.',
+    },
+    tips: [
+      'Verify coverage for Perryville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'ste-genevieve': {
+    marketNotes:
+      'Ste. Genevieve County is a historic county in Southeast Missouri with strong residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Ste. Genevieve County pricing reflects historic corridor demand, southeast Missouri regional traffic patterns, and competition among local and regional agents serving the greater Ste. Genevieve area.',
+    },
+    tips: [
+      'Verify coverage for Ste. Genevieve and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getMissouriCountyResearch(

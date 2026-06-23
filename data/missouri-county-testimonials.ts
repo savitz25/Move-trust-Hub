@@ -1120,6 +1120,422 @@ export const missouriCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  audrain: [
+    {
+      quote:
+        'Regional Mexico providers handled our relocation professionally — efficient service and careful handling throughout Audrain County.',
+      name: 'Gina P.',
+      location: 'Mexico, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbia confirmed Audrain County coverage and delivered excellent central Missouri service — professional crew with transparent pricing.',
+      name: 'Harold S.',
+      location: 'Vandalia, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Mexico-area move efficiently — fast, professional, and reliable.',
+      name: 'Iris T.',
+      location: 'Mexico, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  randolph: [
+    {
+      quote:
+        'Regional Huntsville providers handled our relocation professionally — efficient service and careful handling throughout Randolph County.',
+      name: 'Jake W.',
+      location: 'Huntsville, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Columbia confirmed Randolph County coverage and delivered excellent rural central Missouri service — professional crew with transparent pricing.',
+      name: 'Kelly N.',
+      location: 'Moberly, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Premier Moving served our Huntsville-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Leo B.',
+      location: 'Huntsville, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  mcdonald: [
+    {
+      quote:
+        'Regional Pineville providers handled our relocation professionally — efficient service and careful handling throughout McDonald County.',
+      name: 'Mia C.',
+      location: 'Pineville, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Joplin confirmed McDonald County coverage and delivered excellent southwest Missouri service — professional crew with transparent pricing.',
+      name: 'Noah R.',
+      location: 'Anderson, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Pineville-area move efficiently — fast, professional, and reliable.',
+      name: 'Opal H.',
+      location: 'Noel, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  washington: [
+    {
+      quote:
+        'Regional Potosi providers handled our relocation professionally — efficient service and careful handling throughout Washington County.',
+      name: 'Paul D.',
+      location: 'Potosi, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Farmington providers confirmed Washington County coverage and delivered excellent southeast Missouri service — professional crew with transparent pricing.',
+      name: 'Quinn F.',
+      location: 'Caledonia, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Potosi-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Rita G.',
+      location: 'Potosi, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  ray: [
+    {
+      quote:
+        'Regional Richmond providers handled our suburban relocation professionally — efficient service and careful handling throughout Ray County.',
+      name: 'Sam J.',
+      location: 'Richmond, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Kansas City confirmed Ray County coverage and delivered excellent east-metro service — professional crew with transparent pricing.',
+      name: 'Tina K.',
+      location: 'Lawson, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Local Lines served our Richmond-area move efficiently — fast, professional, and reliable.',
+      name: 'Uma L.',
+      location: 'Orrick, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  saline: [
+    {
+      quote:
+        'Regional Marshall providers handled our relocation professionally — efficient service and careful handling throughout Saline County.',
+      name: 'Vic M.',
+      location: 'Marshall, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Sedalia providers confirmed Saline County coverage and delivered excellent central Missouri service — professional crew with transparent pricing.',
+      name: 'Wendy N.',
+      location: 'Sweet Springs, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Premier Moving served our Marshall-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Xander O.',
+      location: 'Marshall, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  crawford: [
+    {
+      quote:
+        'Regional Steelville providers handled our relocation professionally — efficient service and careful handling throughout Crawford County.',
+      name: 'Yara P.',
+      location: 'Steelville, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Arnold confirmed Crawford County coverage and delivered excellent southeast Missouri service — professional crew with transparent pricing.',
+      name: 'Zane Q.',
+      location: 'Bourbon, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Steelville-area move efficiently — fast, professional, and reliable.',
+      name: 'Abby R.',
+      location: 'Leasburg, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  henry: [
+    {
+      quote:
+        'Regional Clinton providers handled our relocation professionally — efficient service and careful handling throughout Henry County.',
+      name: 'Blake S.',
+      location: 'Clinton, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Harrisonville confirmed Henry County coverage and delivered excellent west central Missouri service — professional crew with transparent pricing.',
+      name: 'Cara T.',
+      location: 'Deepwater, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Clinton-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Drew U.',
+      location: 'Clinton, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  morgan: [
+    {
+      quote:
+        'Regional Versailles providers handled our lakeside relocation professionally — efficient service and careful handling throughout Morgan County.',
+      name: 'Ella V.',
+      location: 'Versailles, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Camdenton providers confirmed Morgan County coverage and delivered excellent Lake of the Ozarks service — professional crew with transparent pricing.',
+      name: 'Finn W.',
+      location: 'Stover, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Premier Moving served our Versailles-area move efficiently — fast, professional, and reliable.',
+      name: 'Gwen X.',
+      location: 'Gravois Mills, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  clinton: [
+    {
+      quote:
+        'Regional Plattsburg providers handled our suburban relocation professionally — efficient service and careful handling throughout Clinton County.',
+      name: 'Hank Y.',
+      location: 'Plattsburg, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Platte City confirmed Clinton County coverage and delivered excellent north-metro service — professional crew with transparent pricing.',
+      name: 'Ivy Z.',
+      location: 'Lathrop, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Local Lines served our Plattsburg-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Joel A.',
+      location: 'Plattsburg, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  benton: [
+    {
+      quote:
+        'Regional Warsaw providers handled our lakeside relocation professionally — efficient service and careful handling throughout Benton County.',
+      name: 'Kate B.',
+      location: 'Warsaw, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Camdenton providers confirmed Benton County coverage and delivered excellent lake-area service — professional crew with transparent pricing.',
+      name: 'Liam C.',
+      location: 'Lincoln, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Warsaw-area move efficiently — fast, professional, and reliable.',
+      name: 'Maya D.',
+      location: 'Warsaw, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  vernon: [
+    {
+      quote:
+        'Regional Nevada providers handled our relocation professionally — efficient service and careful handling throughout Vernon County.',
+      name: 'Nate E.',
+      location: 'Nevada, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Joplin confirmed Vernon County coverage and delivered excellent west central Missouri service — professional crew with transparent pricing.',
+      name: 'Olive F.',
+      location: 'Walker, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Premier Moving served our Nevada-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Pete G.',
+      location: 'Nevada, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  nodaway: [
+    {
+      quote:
+        'Regional Maryville providers handled our university-area relocation professionally — efficient service and careful handling throughout Nodaway County.',
+      name: 'Rose H.',
+      location: 'Maryville, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Two Men and a Truck St. Joseph confirmed Nodaway County coverage and delivered excellent northwest Missouri service — professional crew with transparent pricing.',
+      name: 'Sean I.',
+      location: 'Burlington Junction, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Maryville-area move efficiently — fast, professional, and reliable.',
+      name: 'Tess J.',
+      location: 'Maryville, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wright: [
+    {
+      quote:
+        'Regional Hartville providers handled our relocation professionally — efficient service and careful handling throughout Wright County.',
+      name: 'Uri K.',
+      location: 'Hartville, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Regional Pulaski providers confirmed Wright County coverage and delivered excellent south central Missouri service — professional crew with transparent pricing.',
+      name: 'Vera L.',
+      location: 'Grovespring, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Premier Moving served our Hartville-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Wade M.',
+      location: 'Mansfield, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  perry: [
+    {
+      quote:
+        'Regional Perryville providers handled our relocation professionally — efficient service and careful handling throughout Perry County.',
+      name: 'Xena N.',
+      location: 'Perryville, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Cape Girardeau confirmed Perry County coverage and delivered excellent southeast Missouri service — professional crew with transparent pricing.',
+      name: 'Yuri O.',
+      location: 'Altenburg, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Perryville-area move efficiently — fast, professional, and reliable.',
+      name: 'Zoe P.',
+      location: 'Perryville, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'ste-genevieve': [
+    {
+      quote:
+        'Regional Ste. Genevieve providers handled our historic-area relocation professionally — efficient service and careful handling throughout Ste. Genevieve County.',
+      name: 'Adam Q.',
+      location: 'Ste. Genevieve, MO',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Arnold confirmed Ste. Genevieve County coverage and delivered excellent southeast Missouri service — professional crew with transparent pricing.',
+      name: 'Beth R.',
+      location: 'Bloomsdale, MO',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Missouri Regional Moving served our Ste. Genevieve-area move efficiently — fast, professional, and reliable with careful handling.',
+      name: 'Cole S.',
+      location: 'Ste. Genevieve, MO',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getMissouriCountyTestimonials(

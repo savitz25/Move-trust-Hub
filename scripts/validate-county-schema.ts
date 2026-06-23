@@ -108,6 +108,22 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'missouri', countySlug: 'texas', expectedCity: 'Houston' },
   { stateSlug: 'missouri', countySlug: 'miller', expectedCity: 'Tuscumbia' },
   { stateSlug: 'missouri', countySlug: 'adair', expectedCity: 'Kirksville' },
+  { stateSlug: 'missouri', countySlug: 'audrain', expectedCity: 'Mexico' },
+  { stateSlug: 'missouri', countySlug: 'randolph', expectedCity: 'Huntsville' },
+  { stateSlug: 'missouri', countySlug: 'mcdonald', expectedCity: 'Pineville' },
+  { stateSlug: 'missouri', countySlug: 'washington', expectedCity: 'Potosi' },
+  { stateSlug: 'missouri', countySlug: 'ray', expectedCity: 'Richmond' },
+  { stateSlug: 'missouri', countySlug: 'saline', expectedCity: 'Marshall' },
+  { stateSlug: 'missouri', countySlug: 'crawford', expectedCity: 'Steelville' },
+  { stateSlug: 'missouri', countySlug: 'henry', expectedCity: 'Clinton' },
+  { stateSlug: 'missouri', countySlug: 'morgan', expectedCity: 'Versailles' },
+  { stateSlug: 'missouri', countySlug: 'clinton', expectedCity: 'Plattsburg' },
+  { stateSlug: 'missouri', countySlug: 'benton', expectedCity: 'Warsaw' },
+  { stateSlug: 'missouri', countySlug: 'vernon', expectedCity: 'Nevada' },
+  { stateSlug: 'missouri', countySlug: 'nodaway', expectedCity: 'Maryville' },
+  { stateSlug: 'missouri', countySlug: 'wright', expectedCity: 'Hartville' },
+  { stateSlug: 'missouri', countySlug: 'perry', expectedCity: 'Perryville' },
+  { stateSlug: 'missouri', countySlug: 'ste-genevieve', expectedCity: 'Ste. Genevieve' },
 ];
 
 let totalIssues = 0;
