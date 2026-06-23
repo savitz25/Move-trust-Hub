@@ -29,6 +29,19 @@ export const mississippiCountyOverrides: Partial<
   monroe: { seat: 'Aberdeen', metro: 'aberdeen-metro-ms' },
   panola: { seat: 'Batesville', metro: 'batesville-metro-ms' },
   pontotoc: { seat: 'Pontotoc', metro: 'pontotoc-metro-ms' },
+  adams: { seat: 'Natchez', metro: 'natchez-metro-ms' },
+  tate: { seat: 'Senatobia', metro: 'senatobia-metro-ms' },
+  neshoba: { seat: 'Philadelphia', metro: 'philadelphia-metro-ms' },
+  union: { seat: 'New Albany', metro: 'new-albany-metro-ms' },
+  scott: { seat: 'Forest', metro: 'forest-metro-ms' },
+  bolivar: { seat: 'Cleveland', metro: 'cleveland-metro-ms' },
+  copiah: { seat: 'Hazlehurst', metro: 'hazlehurst-metro-ms' },
+  george: { seat: 'Lucedale', metro: 'lucedale-metro-ms' },
+  simpson: { seat: 'Mendenhall', metro: 'mendenhall-metro-ms' },
+  prentiss: { seat: 'Booneville', metro: 'booneville-metro-ms' },
+  leflore: { seat: 'Greenwood', metro: 'greenwood-metro-ms' },
+  itawamba: { seat: 'Fulton', metro: 'fulton-metro-ms' },
+  marion: { seat: 'Columbia', metro: 'columbia-metro-ms' },
 };
 
 export function applyMississippiCountyOverrides(county: LocalCounty): LocalCounty {

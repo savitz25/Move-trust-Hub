@@ -653,6 +653,344 @@ export const mississippiCountyTestimonials: Record<string, CountyTestimonialEntr
         moveType: 'Apartment',
       },
     ],
+    adams: [
+      {
+        quote:
+          "Jermaine's Handy Service handled our Natchez relocation professionally — on time, efficient, and extremely careful with historic-home furnishings throughout Adams County.",
+        name: 'Margaret H.',
+        location: 'Natchez, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Professional Family Relocation served our Natchez-area move efficiently — fast, professional, and reliable with careful handling of antiques.',
+        name: 'Henry B.',
+        location: 'Natchez, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Central Mississippi Movers confirmed Adams County coverage and delivered excellent Southwest Mississippi service — professional crew with transparent pricing.',
+        name: 'Louise T.',
+        location: 'Natchez, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    tate: [
+      {
+        quote:
+          'Two Men and a Truck Memphis handled our Senatobia relocation professionally — on time, efficient, and extremely careful throughout Tate County.',
+        name: 'Andrea M.',
+        location: 'Senatobia, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Mighty Movers served our Northwest Mississippi move efficiently — fast, professional, and reliable with careful suburban home handling.',
+        name: 'Keith R.',
+        location: 'Senatobia, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All-Star Movers confirmed Tate County coverage and delivered excellent Memphis-metro service — professional crew with no surprise fees.',
+        name: 'Pamela S.',
+        location: 'Senatobia, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    neshoba: [
+      {
+        quote:
+          'Moving U ENT handled our Philadelphia relocation professionally — on time, efficient, and extremely careful throughout Neshoba County.',
+        name: 'James W.',
+        location: 'Philadelphia, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Tmakit Moving served our Central Mississippi move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Ruth A.',
+        location: 'Philadelphia, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Helping Hands Moving confirmed Neshoba County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Carl D.',
+        location: 'Philadelphia, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    union: [
+      {
+        quote:
+          'All-Star Movers handled our New Albany relocation professionally — on time, efficient, and extremely careful throughout Union County.',
+        name: 'Tracy L.',
+        location: 'New Albany, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Tupelo served our Union County move efficiently — fast, professional, and reliable with careful suburban handling.',
+        name: 'Bobby K.',
+        location: 'New Albany, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'House To House confirmed Union County coverage and delivered excellent Northeast Mississippi service — professional crew with no surprise fees.',
+        name: 'Cynthia N.',
+        location: 'New Albany, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    scott: [
+      {
+        quote:
+          'Helping Hands Moving handled our Forest relocation professionally — on time, efficient, and extremely careful throughout Scott County.',
+        name: 'Derrick F.',
+        location: 'Forest, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service served our Scott County move efficiently — fast, professional, and reliable with careful industrial-area handling.",
+        name: 'Gina P.',
+        location: 'Forest, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'My Two Movers confirmed Scott County coverage and delivered excellent Central Mississippi service — professional crew with transparent pricing.',
+        name: 'Oscar J.',
+        location: 'Forest, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    bolivar: [
+      {
+        quote:
+          'Armstrong Relocation handled our Cleveland relocation professionally — on time, efficient, and extremely careful throughout Bolivar County.',
+        name: 'Evelyn C.',
+        location: 'Cleveland, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Jackson served our Delta State area move efficiently — fast, professional, and reliable with careful student-housing handling.',
+        name: 'Nathan G.',
+        location: 'Cleveland, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'Professional Family Relocation confirmed Bolivar County coverage and delivered excellent Delta service — professional crew with no surprise fees.',
+        name: 'Irene M.',
+        location: 'Cleveland, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+    ],
+    copiah: [
+      {
+        quote:
+          'Two Men and a Truck Jackson handled our Hazlehurst relocation professionally — on time, efficient, and extremely careful throughout Copiah County.',
+        name: 'Walter S.',
+        location: 'Hazlehurst, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service served our Copiah County move efficiently — fast, professional, and reliable with careful residential handling.",
+        name: 'Betty R.',
+        location: 'Hazlehurst, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Helping Hands Moving confirmed Copiah County coverage and delivered excellent Jackson-metro service — professional crew with transparent pricing.',
+        name: 'Eugene H.',
+        location: 'Hazlehurst, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    george: [
+      {
+        quote:
+          'Allsouth Moving handled our Lucedale relocation professionally — on time, efficient, and extremely careful throughout George County.',
+        name: 'Rhonda B.',
+        location: 'Lucedale, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Gulf Coast served our Southeast Mississippi move efficiently — fast, professional, and reliable with careful suburban handling.',
+        name: 'Jerry L.',
+        location: 'Lucedale, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Mighty Men Movers confirmed George County coverage and delivered excellent regional coastal service — professional crew with no surprise fees.',
+        name: 'Sheila W.',
+        location: 'Lucedale, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    simpson: [
+      {
+        quote:
+          'Two Men and a Truck Jackson handled our Mendenhall relocation professionally — on time, efficient, and extremely careful throughout Simpson County.',
+        name: 'Frankie D.',
+        location: 'Mendenhall, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'MoveMint served our Simpson County move efficiently — fast, professional, and reliable with careful suburban home handling.',
+        name: 'Joyce K.',
+        location: 'Mendenhall, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'My Two Movers confirmed Simpson County coverage and delivered excellent Rankin-metro service — professional crew with transparent pricing.',
+        name: 'Leonard V.',
+        location: 'Mendenhall, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    prentiss: [
+      {
+        quote:
+          'Two Men and a Truck Tupelo handled our Booneville relocation professionally — on time, efficient, and extremely careful throughout Prentiss County.',
+        name: 'Marilyn E.',
+        location: 'Booneville, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All-Star Movers served our Northeast Mississippi move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Ralph T.',
+        location: 'Booneville, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Smooth Moves confirmed Prentiss County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Diana U.',
+        location: 'Booneville, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    leflore: [
+      {
+        quote:
+          'Armstrong Relocation handled our Greenwood relocation professionally — on time, efficient, and extremely careful throughout Leflore County.',
+        name: 'Clara J.',
+        location: 'Greenwood, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Jackson served our Delta-area move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Milton A.',
+        location: 'Greenwood, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Central Mississippi Movers confirmed Leflore County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Vera N.',
+        location: 'Greenwood, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    itawamba: [
+      {
+        quote:
+          'Two Men and a Truck Tupelo handled our Fulton relocation professionally — on time, efficient, and extremely careful throughout Itawamba County.',
+        name: 'Glenn O.',
+        location: 'Fulton, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'All-Star Movers served our Itawamba County move efficiently — fast, professional, and reliable with careful rural-home handling.',
+        name: 'Helen Q.',
+        location: 'Fulton, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'House To House confirmed Itawamba County coverage and delivered excellent Northeast Mississippi service — professional crew with no surprise fees.',
+        name: 'Roy Z.',
+        location: 'Fulton, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    marion: [
+      {
+        quote:
+          'Allsouth Moving handled our Columbia relocation professionally — on time, efficient, and extremely careful throughout Marion County.',
+        name: 'Teresa G.',
+        location: 'Columbia, MS',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Hattiesburg served our South Mississippi move efficiently — fast, professional, and reliable with careful residential handling.',
+        name: 'Alvin P.',
+        location: 'Columbia, MS',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          "Jermaine's Handy Service confirmed Marion County coverage and delivered excellent regional service — professional crew with transparent pricing.",
+        name: 'Norma C.',
+        location: 'Columbia, MS',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getMississippiCountyTestimonials(

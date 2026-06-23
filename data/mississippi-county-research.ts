@@ -433,6 +433,227 @@ export const mississippiCountyResearch: Record<string, CuratedCountyResearch> = 
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  adams: {
+    marketNotes:
+      'Adams County is a historic county in Southwest Mississippi with strong tourism and residential demand centered on Natchez.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Adams County pricing reflects Natchez tourism-season demand, historic-home handling, and regional crews from Jackson and Hattiesburg metro providers.',
+    },
+    tips: [
+      'Verify coverage for Natchez and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value historic homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tate: {
+    marketNotes:
+      'Tate County is a growing suburban county in Northwest Mississippi with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Tate County pricing reflects Senatobia suburban growth and Memphis-metro crews from DeSoto County and North Mississippi providers.',
+    },
+    tips: [
+      'Verify coverage for Senatobia and surrounding areas before booking.',
+      'Memphis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  neshoba: {
+    marketNotes:
+      'Neshoba County is a key Central Mississippi county with strong residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Neshoba County pricing reflects Philadelphia residential demand and regional crews from Meridian, Jackson, and Tupelo metro providers.',
+    },
+    tips: [
+      'Verify coverage for Philadelphia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is a growing county in Northeast Mississippi with strong residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Union County pricing reflects New Albany residential growth and regional crews from Tupelo, Memphis, and Northeast Mississippi providers.',
+    },
+    tips: [
+      'Verify coverage for New Albany and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  scott: {
+    marketNotes:
+      'Scott County is a growing county in Central Mississippi with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Scott County pricing reflects Forest industrial and residential demand, plus Jackson metro and East Mississippi regional crews.',
+    },
+    tips: [
+      'Verify coverage for Forest and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bolivar: {
+    marketNotes:
+      'Bolivar County is a key Delta county with strong educational (Delta State University) and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Bolivar County pricing reflects Cleveland university-season demand and Jackson metro regional crews serving Delta local routes.',
+    },
+    tips: [
+      'Verify coverage for Cleveland and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  copiah: {
+    marketNotes:
+      'Copiah County is a growing county in Central Mississippi with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Copiah County pricing reflects Hazlehurst residential demand and shared crews from Jackson, Hattiesburg, and Southwest Mississippi providers.',
+    },
+    tips: [
+      'Verify coverage for Hazlehurst and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  george: {
+    marketNotes:
+      'George County is a growing county in Southeast Mississippi with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'George County pricing reflects Lucedale residential growth and regional crews from Gulfport-Biloxi, Pascagoula, and Mobile metro providers.',
+    },
+    tips: [
+      'Verify coverage for Lucedale and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  simpson: {
+    marketNotes:
+      'Simpson County is a growing county in Central Mississippi with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Simpson County pricing reflects Mendenhall residential demand and Jackson metro crews from Rankin and Hinds County providers.',
+    },
+    tips: [
+      'Verify coverage for Mendenhall and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  prentiss: {
+    marketNotes:
+      'Prentiss County is a growing county in Northeast Mississippi with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Prentiss County pricing reflects Booneville residential demand and regional crews from Tupelo, Corinth, and Memphis metro providers.',
+    },
+    tips: [
+      'Verify coverage for Booneville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  leflore: {
+    marketNotes:
+      'Leflore County is a key Delta county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Leflore County pricing reflects Greenwood Delta regional demand and Jackson metro crews serving long-distance local routes.',
+    },
+    tips: [
+      'Verify coverage for Greenwood and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  itawamba: {
+    marketNotes:
+      'Itawamba County is a growing county in Northeast Mississippi with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Itawamba County pricing reflects Fulton residential demand and regional crews from Tupelo, Corinth, and Memphis metro providers.',
+    },
+    tips: [
+      'Verify coverage for Fulton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is a growing county in South Mississippi with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Marion County pricing reflects Columbia residential demand and regional crews from Hattiesburg, Gulf Coast, and Central Mississippi providers.',
+    },
+    tips: [
+      'Verify coverage for Columbia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getMississippiCountyResearch(

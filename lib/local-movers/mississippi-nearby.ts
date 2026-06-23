@@ -36,6 +36,19 @@ const MS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lamar: ['forrest', 'pearl-river', 'marion', 'jefferson-davis', 'greene', 'hancock'],
   jones: ['forrest', 'jasper', 'smith', 'covington', 'perry', 'wayne'],
   'pearl-river': ['hancock', 'harrison', 'stone', 'lamar', 'marion', 'forrest'],
+  adams: ['jefferson', 'franklin', 'wilkinson', 'claiborne', 'copiah', 'amite'],
+  tate: ['desoto', 'marshall', 'panola', 'tunica', 'benton', 'lafayette'],
+  neshoba: ['lauderdale', 'kemper', 'newton', 'scott', 'leake', 'winston'],
+  union: ['lee', 'pontotoc', 'prentiss', 'marshall', 'benton', 'tippah'],
+  scott: ['rankin', 'smith', 'leake', 'neshoba', 'newton', 'jasper'],
+  bolivar: ['washington', 'sunflower', 'leflore', 'humphreys', 'sharkey', 'issaquena'],
+  copiah: ['hinds', 'rankin', 'simpson', 'lincoln', 'jefferson', 'adams'],
+  george: ['jackson', 'stone', 'greene', 'perry', 'forrest', 'harrison'],
+  simpson: ['rankin', 'copiah', 'jefferson-davis', 'lawrence', 'smith', 'hinds'],
+  prentiss: ['tippah', 'alcorn', 'union', 'lee', 'tishomingo', 'itawamba'],
+  leflore: ['washington', 'sunflower', 'carroll', 'holmes', 'attala', 'montgomery'],
+  itawamba: ['lee', 'prentiss', 'tishomingo', 'monroe', 'choctaw', 'pontotoc'],
+  marion: ['lamar', 'pearl-river', 'hancock', 'forrest', 'jefferson-davis', 'lawrence'],
 };
 
 export function getMississippiNearbyCounties(
