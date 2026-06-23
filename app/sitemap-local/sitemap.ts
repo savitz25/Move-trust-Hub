@@ -141,6 +141,19 @@ const AR_HIGH_TRAFFIC_COUNTIES = new Set([
   'saline',
   'sebastian',
   'craighead',
+  'garland',
+  'white',
+  'lonoke',
+  'pope',
+  'crawford',
+  'jefferson',
+  'greene',
+  'crittenden',
+  'baxter',
+  'miller',
+  'independence',
+  'boone',
+  'mississippi',
 ]);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */
