@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -23,6 +23,29 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Oklahoma | 77/77 | 3 (rural) | 8 (medium) / 10 (top 5) | 12 counties | `count-oklahoma-movers.ts` |
 | Arkansas | 75/75 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-arkansas-movers.ts`, `apply-arkansas-mover-expansion.ts` |
 | Kansas | 105/105 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-kansas-movers.ts`, `apply-kansas-mover-expansion.ts` |
+| Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
+
+### Missouri metro pools (`data/local-movers-seed.ts`)
+
+- `st-louis-metro-mo` — St. Louis MSA (St. Louis County, St. Louis City)
+- `st-louis-metro-west-mo`, `st-louis-metro-south-mo`, `st-louis-metro-north-mo` — St. Charles, Jefferson, Franklin, Warren commuter corridors
+- `kansas-city-metro-mo` — Kansas City MSA (Jackson hub)
+- `kansas-city-metro-north-mo`, `kansas-city-metro-south-mo`, `kansas-city-metro-northwest-mo`, `kansas-city-metro-east-mo` — Clay, Cass, Platte, Lafayette KC suburbs
+- `springfield-metro-mo` — Springfield / Greene Ozarks hub
+- `columbia-metro-mo` — Columbia / Boone (Mizzou) university corridor
+- `joplin-metro-mo` — Joplin / Jasper southwest Missouri hub
+- `st-joseph-metro-mo`, `jefferson-city-metro-mo`, `cape-girardeau-metro-mo` — regional hubs
+- Rural pools: `regional-*-mo-movers` per remote county seat
+
+### Missouri major counties (10 movers each)
+
+`st-louis`, `st-louis-city`, `jackson`, `st-charles`, `greene`, `clay`, `jefferson`, `boone`, `platte`, `cass`, `franklin`, `jasper`, `buchanan`, `cole`, `christian`, `cape-girardeau`
+
+### Missouri sitemap priority 0.85 (14 counties)
+
+`st-louis`, `st-louis-city`, `jackson`, `st-charles`, `greene`, `clay`, `jefferson`, `boone`, `platte`, `cass`, `franklin`, `jasper`, `buchanan`, `cole`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/missouri.xml` (116 URLs: hub + 115 counties). Do **not** use `/sitemap-local/missouri.xml` (legacy path redirects to canonical).
 
 ### Kansas metro pools (`data/local-movers-seed.ts`)
 
