@@ -2371,6 +2371,186 @@ export const texasCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
       moveType: 'Single-family',
     },
   ],
+  madison: [
+    {
+      quote:
+        'Professional for our remote East Texas move near Madisonville. The Huntsville crew confirmed Madison County coverage and handled our long driveway without damaging the yard.',
+      name: 'Betty H.',
+      location: 'Madisonville, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Careful handling from the College Station team on a longer regional route into Madison County. They wrapped furniture well and stayed organized despite the early start.',
+      name: 'Carl W.',
+      location: 'Madisonville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  nolan: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Sweetwater. The Abilene crew confirmed Nolan County service and managed our ranch driveway with the right truck setup.',
+      name: 'Donna S.',
+      location: 'Sweetwater, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the San Angelo team on a West Texas oilfield-country route with clear travel-fee explanations.',
+      name: 'Ray M.',
+      location: 'Sweetwater, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  reeves: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Pecos. The Odessa crew handled desert access challenges and kept our household goods organized from start to finish.',
+      name: 'Elena R.',
+      location: 'Pecos, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in West Texas from the El Paso regional crew. Reliable in remote Reeves County with careful handling on a longer Permian Basin route.',
+      name: 'Frank T.',
+      location: 'Pecos, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  karnes: [
+    {
+      quote:
+        'Professional for our remote South Texas move near Karnes City. The San Antonio team confirmed county coverage and treated our ranch house carefully around tight halls.',
+      name: 'Grace L.',
+      location: 'Karnes City, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the Victoria crew on a Karnes County relocation. They verified service area upfront and finished faster than our closing window required.',
+      name: 'Henry P.',
+      location: 'Karnes City, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  pecos: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Fort Stockton. The Midland crew confirmed Pecos County coverage and navigated our desert ranch road without issues.',
+      name: 'Irene K.',
+      location: 'Fort Stockton, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in West Texas from San Angelo. Reliable in remote Pecos County with careful handling and steady communication on a longer regional route.',
+      name: 'Jack N.',
+      location: 'Fort Stockton, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  jackson: [
+    {
+      quote:
+        'Professional for our remote South Texas move in Edna. The Victoria crew understood Coastal Bend ranch access and finished our modest home move on a tight timeline.',
+      name: 'Kim A.',
+      location: 'Edna, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Reliable in remote areas — careful handling from the Corpus Christi team on a Jackson County route with clear travel-fee disclosure and professional packing.',
+      name: 'Leo B.',
+      location: 'Edna, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  leon: [
+    {
+      quote:
+        'Professional for our remote East Texas move near Centerville. The Huntsville crew planned rural access ahead of time and protected our floors through the whole load.',
+      name: 'Martha C.',
+      location: 'Centerville, TX',
+      rating: 5,
+      moveType: 'Rural',
+    },
+    {
+      quote:
+        'Professional service in East Texas from College Station. Reliable in remote Leon County with careful handling and upfront explanation of regional travel fees.',
+      name: 'Norman D.',
+      location: 'Centerville, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  scurry: [
+    {
+      quote:
+        'Professional for our remote West Texas move in Snyder. The Lubbock crew confirmed Scurry County service and handled our South Plains ranch property access without tearing up the driveway.',
+      name: 'Opal E.',
+      location: 'Snyder, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling on an Abilene-to-Scurry County route. They were patient with our gravel driveway and kept communication clear despite limited cell service.',
+      name: 'Paul F.',
+      location: 'Snyder, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  robertson: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Franklin. The Waco crew confirmed Robertson County coverage and managed our ranch driveway with careful handling throughout.',
+      name: 'Quinn G.',
+      location: 'Franklin, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Professional service in Central Texas from the College Station team. Reliable in remote Robertson County with careful wrapping and organized loading on a longer route.',
+      name: 'Ruth H.',
+      location: 'Franklin, TX',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  lee: [
+    {
+      quote:
+        'Professional for our remote Central Texas move in Giddings. The Austin team understood rural Lee County access and protected our antique furniture through the whole relocation.',
+      name: 'Sam I.',
+      location: 'Giddings, TX',
+      rating: 5,
+      moveType: 'Ranch',
+    },
+    {
+      quote:
+        'Careful handling from the College Station crew on a Lee County route. They confirmed service area in writing and finished on schedule despite a small-market booking window.',
+      name: 'Tina J.',
+      location: 'Giddings, TX',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getTexasCountyTestimonials(

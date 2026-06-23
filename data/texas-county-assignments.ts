@@ -96,6 +96,16 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
   comanche: ['big-country-movers-abilene', 'two-men-and-a-truck-waco'],
   trinity: ['crossin-moving-lufkin', 'huntsville-moving-inc'],
   falls: ['two-men-and-a-truck-waco', 'college-hunks-moving-waco'],
+  madison: ['huntsville-moving-inc', 'little-guys-movers-college-station'],
+  nolan: ['big-country-movers-abilene', 'west-texas-moving-san-angelo'],
+  reeves: ['brothers-moving-odessa', 'two-men-and-a-truck-el-paso'],
+  karnes: ['two-men-and-a-truck-san-antonio', 'victoria-transfer-storage'],
+  pecos: ['texas-moving-company-midland', 'west-texas-moving-san-angelo'],
+  jackson: ['victoria-transfer-storage', 'two-men-and-a-truck-corpus-christi'],
+  leon: ['huntsville-moving-inc', 'little-guys-movers-college-station'],
+  scurry: ['two-men-and-a-truck-lubbock', 'big-country-movers-abilene'],
+  robertson: ['two-men-and-a-truck-waco', 'little-guys-movers-college-station'],
+  lee: ['two-men-and-a-truck-austin', 'little-guys-movers-college-station'],
 };
 
 export const texasCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(
