@@ -14,7 +14,7 @@ import {
   TENNESSEE_COUNTY_CONTENT_UPDATED,
   ALABAMA_COUNTY_CONTENT_UPDATED,
   MISSISSIPPI_COUNTY_CONTENT_UPDATED,
-  LOUISIANA_COUNTY_CONTENT_UPDATED,
+  LOUISIANA_PARISH_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -286,7 +286,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                   ? MISSISSIPPI_COUNTY_CONTENT_UPDATED
                                   : stateSlug === 'louisiana' &&
                                       getLouisianaCountyResearch(countySlug)
-                                    ? LOUISIANA_COUNTY_CONTENT_UPDATED
+                                    ? LOUISIANA_PARISH_CONTENT_UPDATED
                                     : undefined
           }
         />

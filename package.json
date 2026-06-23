@@ -22,7 +22,8 @@
     "validate:county-schema": "tsx scripts/validate-county-schema.ts",
     "count:tennessee-movers": "tsx scripts/count-tennessee-movers.ts",
     "count:alabama-movers": "tsx scripts/count-alabama-movers.ts",
-    "count:mississippi-movers": "tsx scripts/count-mississippi-movers.ts"
+    "count:mississippi-movers": "tsx scripts/count-mississippi-movers.ts",
+    "count:louisiana-movers": "tsx scripts/count-louisiana-movers.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",

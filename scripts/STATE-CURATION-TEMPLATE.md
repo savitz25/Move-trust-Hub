@@ -1,6 +1,8 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+
+> **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
 ## Reference states (audit-complete)
 
@@ -17,6 +19,32 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Tennessee | 95/95 | 5 | 10 (cap 10) | 20 counties | `count-tennessee-movers.ts`, `apply-tennessee-mover-expansion.ts` |
 | Alabama | 67/67 | 5 | 10 (cap 10) | 15 counties | `count-alabama-movers.ts`, `apply-alabama-mover-expansion.ts` |
 | Mississippi | 82/82 | 5 | 10 (cap 10) | 15 counties | `count-mississippi-movers.ts`, `apply-mississippi-mover-expansion.ts` |
+| Louisiana | 64/64 parishes | 5 | 10 (cap 10) | 15 parishes | `count-louisiana-movers.ts`, `apply-louisiana-mover-expansion.ts` |
+
+### Louisiana metro pools (`data/local-movers-seed.ts`)
+
+- `baton-rouge-metro-la` — Baton Rouge MSA / capital corridor (EBR, Livingston, Ascension, Iberville)
+- `new-orleans-metro-la` — Greater New Orleans / Orleans–Jefferson–Plaquemines
+- `north-shore-metro-la` — St. Tammany North Shore commuter corridor
+- `lafayette-metro-la` — Lafayette / Acadiana Cajun Country hub
+- `shreveport-bossier-metro-la` — Shreveport–Bossier / Northwest LA military corridor
+- `lake-charles-metro-la` — Lake Charles / Calcasieu petrochemical and coastal corridor
+- `monroe-metro-la` — Monroe / Ouachita Northeast Louisiana hub
+- `hammond-metro-la` — Hammond / Tangipahoa I-12 corridor
+- `alexandria-metro-la` — Alexandria / Rapides Central Louisiana hub
+- `houma-bayou-metro-la` — Houma–Thibodaux / Terrebonne–Lafourche bayou corridor
+- `ruston-metro-la`, `natchitoches-metro-la`, `leesville-metro-la` — North/Central LA regional pools
+- Rural pools: `regional-*-la-movers` entries per remote parish seat
+
+### Louisiana major parishes (10 movers each)
+
+`orleans`, `jefferson`, `east-baton-rouge`, `st-tammany`, `lafayette`, `caddo`, `calcasieu`, `bossier`, `livingston`, `tangipahoa`, `ascension`, `terrebonne`, `rapides`, `ouachita`, `st-landry`
+
+### Louisiana sitemap priority 0.85 (15 parishes)
+
+`east-baton-rouge`, `orleans`, `jefferson`, `st-tammany`, `lafayette`, `caddo`, `calcasieu`, `bossier`, `livingston`, `tangipahoa`, `ascension`, `terrebonne`, `rapides`, `ouachita`, `st-landry`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/louisiana.xml` (65 URLs: hub + 64 parishes). Do **not** use `/sitemap-local/louisiana.xml` (legacy path redirects to canonical).
 
 ### Mississippi metro pools (`data/local-movers-seed.ts`)
 

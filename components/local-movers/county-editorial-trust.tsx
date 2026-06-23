@@ -14,6 +14,8 @@ export const TENNESSEE_COUNTY_CONTENT_UPDATED = '2026-06-23';
 export const ALABAMA_COUNTY_CONTENT_UPDATED = '2026-06-23';
 export const MISSISSIPPI_COUNTY_CONTENT_UPDATED = '2026-06-23';
 export const LOUISIANA_COUNTY_CONTENT_UPDATED = '2026-06-23';
+/** Parish-specific alias — Louisiana uses parishes, not counties */
+export const LOUISIANA_PARISH_CONTENT_UPDATED = LOUISIANA_COUNTY_CONTENT_UPDATED;
 
 type Props = {
   countyLabel: string;
