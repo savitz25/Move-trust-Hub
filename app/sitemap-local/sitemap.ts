@@ -150,6 +150,19 @@ const AL_HIGH_TRAFFIC_COUNTIES = new Set([
   'pike',
   'lawrence',
   'franklin',
+  'marion',
+  'geneva',
+  'cherokee',
+  'barbour',
+  'winston',
+  'randolph',
+  'bibb',
+  'clarke',
+  'monroe',
+  'henry',
+  'marengo',
+  'macon',
+  'pickens',
 ]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */

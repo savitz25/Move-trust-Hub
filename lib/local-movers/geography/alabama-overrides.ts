@@ -39,6 +39,19 @@ export const alabamaCountyOverrides: Partial<
   pike: { seat: 'Troy', metro: 'wiregrass-metro-al' },
   lawrence: { seat: 'Moulton', metro: 'moulton-metro-al' },
   franklin: { seat: 'Russellville', metro: 'russellville-metro-al' },
+  marion: { seat: 'Hamilton', metro: 'hamilton-metro-al' },
+  geneva: { seat: 'Geneva', metro: 'geneva-metro-al' },
+  cherokee: { seat: 'Centre', metro: 'centre-metro-al' },
+  barbour: { seat: 'Clayton', metro: 'eufaula-metro-al' },
+  winston: { seat: 'Double Springs', metro: 'double-springs-metro-al' },
+  randolph: { seat: 'Wedowee', metro: 'wedowee-metro-al' },
+  bibb: { seat: 'Centreville', metro: 'centreville-metro-al' },
+  clarke: { seat: 'Grove Hill', metro: 'grove-hill-metro-al' },
+  monroe: { seat: 'Monroeville', metro: 'monroeville-metro-al' },
+  henry: { seat: 'Abbeville', metro: 'abbeville-metro-al' },
+  marengo: { seat: 'Linden', metro: 'linden-metro-al' },
+  macon: { seat: 'Tuskegee', metro: 'tuskegee-metro-al' },
+  pickens: { seat: 'Carrollton', metro: 'carrollton-metro-al' },
 };
 
 export function applyAlabamaCountyOverrides(county: LocalCounty): LocalCounty {

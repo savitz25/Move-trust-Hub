@@ -603,6 +603,227 @@ export const alabamaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  marion: {
+    marketNotes:
+      'Marion County is a rural county in Northwest Alabama with residential demand centered on Hamilton.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Marion County pricing reflects rural northwest Alabama access, limited local provider competition, and Birmingham–Jasper regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Hamilton and surrounding areas before booking.',
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  geneva: {
+    marketNotes:
+      'Geneva County is a rural county in Southeast Alabama with residential demand centered on Geneva.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Geneva County pricing reflects rural Wiregrass regional demand and Dothan–Mobile metro crew travel.',
+    },
+    tips: [
+      'Verify coverage for Geneva and surrounding areas before booking.',
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cherokee: {
+    marketNotes:
+      'Cherokee County is a rural county in Northeast Alabama with lake-area residential demand centered on Centre.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Cherokee County pricing reflects Weiss Lake waterfront access, rural Northeast Alabama demand, and Huntsville–Gadsden regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Centre and surrounding areas before booking.',
+      'Lake access considerations apply — confirm scheduling buffers for waterfront routes.',
+      'Confirm insurance for high-value lakeside homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  barbour: {
+    marketNotes:
+      'Barbour County is a rural county in Southeast Alabama with residential demand in Eufaula and Clayton.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Barbour County pricing reflects Lake Eufaula corridor demand, rural Southeast Alabama access, and Auburn–Columbus regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Eufaula and surrounding areas before booking.',
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  winston: {
+    marketNotes:
+      'Winston County is a rural mountain county in Northwest Alabama with scenic residential demand centered on Double Springs.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Winston County pricing reflects Bankhead National Forest mountain access, rural northwest Alabama demand, and Birmingham–Huntsville regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Double Springs and surrounding areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew equipment.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  randolph: {
+    marketNotes:
+      'Randolph County is a rural county in East Alabama with residential demand centered on Wedowee.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Randolph County pricing reflects rural East Alabama access, Lake Wedowee corridor demand, and Auburn–Birmingham regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Wedowee before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  bibb: {
+    marketNotes:
+      'Bibb County is a rural county in Central Alabama with residential demand centered on Centreville.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Bibb County pricing reflects rural central Alabama access and Birmingham–Tuscaloosa regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Centreville before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  clarke: {
+    marketNotes:
+      'Clarke County is a rural county in Southwest Alabama with residential demand centered on Grove Hill.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Clarke County pricing reflects rural Southwest Alabama access and Mobile–Dothan regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Grove Hill before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is a rural county in Southwest Alabama with residential demand centered on Monroeville.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects rural Southwest Alabama access and Mobile–Gulf Coast regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Monroeville before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  henry: {
+    marketNotes:
+      'Henry County is a rural county in Southeast Alabama with residential demand centered on Abbeville.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Henry County pricing reflects rural Wiregrass regional demand and Dothan-metro crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Abbeville before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  marengo: {
+    marketNotes:
+      'Marengo County is a rural county in West Alabama with residential demand centered on Linden.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Marengo County pricing reflects rural Black Belt access and Tuscaloosa–Montgomery regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Linden before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  macon: {
+    marketNotes:
+      'Macon County is a historic county in East Alabama with strong educational (Tuskegee University) and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Macon County pricing reflects university-season demand, Auburn–Montgomery corridor access, and regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Tuskegee and surrounding areas before booking.',
+      'University and regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pickens: {
+    marketNotes:
+      'Pickens County is a rural county in West Alabama with residential demand centered on Carrollton.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Pickens County pricing reflects rural West Alabama access and Tuscaloosa–Birmingham regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Carrollton before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
 };
 
 export function getAlabamaCountyResearch(

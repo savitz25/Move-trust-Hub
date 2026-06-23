@@ -46,6 +46,19 @@ const AL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   pike: ['coffee', 'bullock', 'crenshaw', 'covington', 'montgomery', 'barbour'],
   lawrence: ['limestone', 'morgan', 'lauderdale', 'colbert', 'franklin', 'winston'],
   franklin: ['colbert', 'lauderdale', 'lawrence', 'marion', 'winston', 'jackson'],
+  marion: ['walker', 'fayette', 'lamar', 'franklin', 'winston', 'pickens'],
+  geneva: ['coffee', 'dale', 'houston', 'covington', 'crenshaw', 'henry'],
+  cherokee: ['etowah', 'calhoun', 'cleburne', 'dekalb', 'clay', 'randolph'],
+  barbour: ['bullock', 'pike', 'russell', 'henry', 'dale', 'coffee'],
+  winston: ['walker', 'marion', 'fayette', 'cullman', 'lawrence', 'blount'],
+  randolph: ['clay', 'cleburne', 'cherokee', 'tallapoosa', 'chambers', 'coosa'],
+  bibb: ['jefferson', 'shelby', 'chilton', 'perry', 'dallas', 'tuscaloosa'],
+  clarke: ['washington', 'monroe', 'conecuh', 'escambia', 'marengo', 'wilcox'],
+  monroe: ['clarke', 'wilcox', 'conecuh', 'escambia', 'baldwin', 'butler'],
+  henry: ['barbour', 'dale', 'houston', 'covington', 'crenshaw', 'geneva'],
+  marengo: ['sumter', 'greene', 'hale', 'perry', 'dallas', 'wilcox'],
+  macon: ['montgomery', 'elmore', 'lee', 'russell', 'tallapoosa', 'bullock'],
+  pickens: ['tuscaloosa', 'greene', 'fayette', 'lamar', 'sumter', 'marengo'],
 };
 
 export function getAlabamaNearbyCounties(

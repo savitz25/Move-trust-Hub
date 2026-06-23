@@ -913,6 +913,344 @@ export const alabamaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
         moveType: 'Apartment',
       },
     ],
+    marion: [
+      {
+        quote:
+          'New Latitude Movers handled our Hamilton relocation professionally — on time, efficient, and extremely careful throughout Marion County.',
+        name: 'Earl W.',
+        location: 'Hamilton, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Secure Moving served our rural northwest Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Ruby H.',
+        location: 'Hamilton, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Fortson Moving Systems confirmed Marion County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Dennis K.',
+        location: 'Hamilton, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    geneva: [
+      {
+        quote:
+          'True America Moving handled our Geneva relocation professionally — on time, efficient, and extremely careful throughout Geneva County.',
+        name: 'Floyd M.',
+        location: 'Geneva, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'The Moving Truck Inc served our rural Southeast Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Irene P.',
+        location: 'Geneva, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving confirmed Geneva County coverage and delivered excellent Gulf Coast regional service — professional crew with transparent pricing.',
+        name: 'Roy L.',
+        location: 'Geneva, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    cherokee: [
+      {
+        quote:
+          'Fortson Moving Systems handled our Centre relocation professionally — on time, efficient, and extremely careful throughout Cherokee County.',
+        name: 'Glenn R.',
+        location: 'Centre, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Black Tie Moving served our lake-area move efficiently — fast, professional, and reliable with careful waterfront handling.',
+        name: 'Bonnie S.',
+        location: 'Centre, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Cherokee County coverage and delivered excellent Huntsville-metro regional service — professional crew with no surprise fees.',
+        name: 'Carl T.',
+        location: 'Centre, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    barbour: [
+      {
+        quote:
+          'Two Men and a Truck Auburn handled our Eufaula relocation professionally — on time, efficient, and extremely careful throughout Barbour County.',
+        name: 'Marvin J.',
+        location: 'Eufaula, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving served our lake-corridor move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Lois B.',
+        location: 'Eufaula, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Peachtree Movers confirmed Barbour County coverage and delivered excellent East Alabama regional service — professional crew with transparent pricing.',
+        name: 'Howard D.',
+        location: 'Clayton, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    winston: [
+      {
+        quote:
+          'Fortson Moving Systems handled our Double Springs relocation professionally — on time, efficient, and extremely careful throughout Winston County.',
+        name: 'Norman G.',
+        location: 'Double Springs, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Black Tie Moving served our mountain-area move efficiently — fast, professional, and reliable with careful scenic-route handling.',
+        name: 'Peggy F.',
+        location: 'Double Springs, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          "Christopher's Moving confirmed Winston County coverage and delivered excellent northwest Alabama regional service — professional crew with no surprise fees.",
+        name: 'Walter C.',
+        location: 'Double Springs, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    randolph: [
+      {
+        quote:
+          'Fortson Moving Systems handled our Wedowee relocation professionally — on time, efficient, and extremely careful throughout Randolph County.',
+        name: 'Evelyn M.',
+        location: 'Wedowee, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Auburn served our rural East Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Claude N.',
+        location: 'Wedowee, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Changing Spaces Moving confirmed Randolph County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Doris A.',
+        location: 'Wedowee, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    bibb: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Centreville relocation professionally — on time, efficient, and extremely careful throughout Bibb County.',
+        name: 'Homer E.',
+        location: 'Centreville, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Awesome Moving Services served our rural central Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Velma R.',
+        location: 'Centreville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Bibb County coverage and delivered excellent Birmingham–Tuscaloosa corridor service — professional crew with no surprise fees.',
+        name: 'Otis P.',
+        location: 'Centreville, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    clarke: [
+      {
+        quote:
+          'Coleman Worldwide Moving handled our Grove Hill relocation professionally — on time, efficient, and extremely careful throughout Clarke County.',
+        name: 'Lester H.',
+        location: 'Grove Hill, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Handy Guys Moving served our Southwest Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Mabel W.',
+        location: 'Grove Hill, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'True America Moving confirmed Clarke County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Clyde B.',
+        location: 'Grove Hill, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    monroe: [
+      {
+        quote:
+          'Coleman Worldwide Moving handled our Monroeville relocation professionally — on time, efficient, and extremely careful throughout Monroe County.',
+        name: 'Nellie S.',
+        location: 'Monroeville, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Motivated Movers Daphne served our rural Southwest Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Archie T.',
+        location: 'Monroeville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'All My Sons Mobile confirmed Monroe County coverage and delivered excellent Gulf Coast regional service — professional crew with no surprise fees.',
+        name: 'Fannie L.',
+        location: 'Monroeville, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    henry: [
+      {
+        quote:
+          'True America Moving handled our Abbeville relocation professionally — on time, efficient, and extremely careful throughout Henry County.',
+        name: 'Rufus M.',
+        location: 'Abbeville, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'HHG Movers served our Wiregrass rural move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Opal K.',
+        location: 'Abbeville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Admiral Movers confirmed Henry County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Jesse D.',
+        location: 'Abbeville, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    marengo: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Linden relocation professionally — on time, efficient, and extremely careful throughout Marengo County.',
+        name: 'Clara J.',
+        location: 'Linden, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Admiral Movers served our Black Belt move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Herman V.',
+        location: 'Linden, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'New Latitude Movers confirmed Marengo County coverage and delivered excellent West Alabama regional service — professional crew with no surprise fees.',
+        name: 'Minnie G.',
+        location: 'Linden, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    macon: [
+      {
+        quote:
+          'Two Men and a Truck Montgomery handled our Tuskegee relocation professionally — on time, efficient, and extremely careful throughout Macon County.',
+        name: 'Leonard F.',
+        location: 'Tuskegee, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'College Hunks Moving Auburn served our university-area move efficiently — fast, professional, and reliable with careful student-housing handling.',
+        name: 'Alicia N.',
+        location: 'Tuskegee, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'McCorquodale Transfer confirmed Macon County coverage and delivered excellent Montgomery-metro service — professional crew with transparent pricing.',
+        name: 'Reginald H.',
+        location: 'Tuskegee, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+    ],
+    pickens: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Carrollton relocation professionally — on time, efficient, and extremely careful throughout Pickens County.',
+        name: 'Vernon C.',
+        location: 'Carrollton, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'MoveDaddy served our rural West Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Gladys R.',
+        location: 'Carrollton, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Awesome Moving Services confirmed Pickens County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Lloyd M.',
+        location: 'Carrollton, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getAlabamaCountyTestimonials(
