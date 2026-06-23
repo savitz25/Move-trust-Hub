@@ -15063,13 +15063,13 @@ export const localMoversCatalog: Record<string, LocalMover> = {
   },
   'two-men-and-a-truck-johnson-ks': {
     id: 'two-men-and-a-truck-johnson-ks',
-    name: 'Two Men and a Truck Overland Park',
+    name: 'Two Men and a Truck Overland Park / Olathe',
     rating: 4.8,
     reviewCount: 445,
     shortDescription:
-      'Trusted Overland Park franchise with excellent reputation for residential and commercial moves across Johnson County.',
+      'Trusted local franchise with outstanding reputation for suburban residential moves across Johnson County.',
     services: ['Local Moving', 'Packing', 'Storage'],
-    specialties: ['Residential', 'Commercial'],
+    specialties: ['Residential', 'Corporate Relocation'],
     fmcsaSafetyRating: 'Not Rated',
     bbbRating: 'A+',
     city: 'Overland Park',
