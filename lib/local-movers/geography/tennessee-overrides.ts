@@ -11,6 +11,10 @@ export const tennesseeCountyOverrides: Partial<
   rutherford: { seat: 'Murfreesboro', metro: 'nashville-metro-tn' },
   williamson: { seat: 'Franklin', metro: 'nashville-metro-tn' },
   montgomery: { seat: 'Clarksville', metro: 'clarksville-metro-tn' },
+  sumner: { seat: 'Gallatin', metro: 'nashville-metro-tn' },
+  wilson: { seat: 'Lebanon', metro: 'nashville-metro-tn' },
+  sullivan: { seat: 'Blountville', metro: 'kingsport-bristol-metro-tn' },
+  blount: { seat: 'Maryville', metro: 'knoxville-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

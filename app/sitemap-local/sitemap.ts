@@ -119,6 +119,10 @@ const TN_HIGH_TRAFFIC_COUNTIES = new Set([
   'rutherford',
   'williamson',
   'montgomery',
+  'sumner',
+  'wilson',
+  'sullivan',
+  'blount',
 ]);
 
 const SC_HIGH_TRAFFIC_COUNTIES = new Set([

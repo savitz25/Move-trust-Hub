@@ -16,6 +16,10 @@ const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   rutherford: ['davidson', 'williamson', 'wilson', 'cannon', 'bedford', 'marshall'],
   williamson: ['davidson', 'rutherford', 'maury', 'marshall', 'cheatham', 'hickman'],
   montgomery: ['stewart', 'houston', 'dickson', 'robertson', 'cheatham', 'davidson'],
+  sumner: ['davidson', 'wilson', 'robertson', 'macon', 'smith', 'trousdale'],
+  wilson: ['sumner', 'davidson', 'rutherford', 'smith', 'dekalb', 'cannon'],
+  sullivan: ['hawkins', 'washington', 'carter', 'johnson', 'unicoi', 'greene'],
+  blount: ['knox', 'loudon', 'monroe', 'sevier', 'grainger', 'anderson'],
 };
 
 export function getTennesseeNearbyCounties(

@@ -127,6 +127,74 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  sumner: {
+    marketNotes:
+      'Sumner County is a rapidly growing suburban county northeast of Nashville with strong residential and corporate relocation demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,700',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Sumner County pricing reflects Gallatin and Hendersonville suburban growth, Portland corridor demand, and Nashville-metro I-65 traffic.',
+    },
+    tips: [
+      'Verify coverage for Gallatin, Hendersonville, and Portland areas before booking.',
+      'Nashville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wilson: {
+    marketNotes:
+      'Wilson County is a fast-growing suburban county east of Nashville with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,700',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Wilson County pricing reflects Lebanon and Mount Juliet suburban turnover, Watertown rural access, and Nashville-metro I-40 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Lebanon, Mount Juliet, and Watertown areas before booking.',
+      'Nashville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sullivan: {
+    marketNotes:
+      'Sullivan County is a key Tri-Cities hub with strong industrial, healthcare, and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Sullivan County pricing reflects Kingsport and Bristol corridor demand, healthcare-sector relocations, and regional Tri-Cities crew travel.',
+    },
+    tips: [
+      'Verify coverage for Kingsport, Bristol, and Blountville areas before booking.',
+      'Regional Tri-Cities traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  blount: {
+    marketNotes:
+      'Blount County is a growing county south of Knoxville with strong residential, tourism (Great Smoky Mountains), and industrial demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Blount County pricing reflects Maryville and Alcoa suburban demand, Smokies tourism seasonality, and Knoxville-metro I-140 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Maryville, Alcoa, and Townsend areas before booking.',
+      'Knoxville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes near the mountains before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(
