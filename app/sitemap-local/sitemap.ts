@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 import {
   CALIFORNIA_COUNTY_CONTENT_UPDATED,
   FLORIDA_COUNTY_CONTENT_UPDATED,
+  GEORGIA_COUNTY_CONTENT_UPDATED,
+  SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -50,6 +52,29 @@ const TX_HIGH_TRAFFIC_COUNTIES = new Set([
   'williamson',
 ]);
 
+/** High-traffic GA counties — sitemap priority 0.85 */
+const GA_HIGH_TRAFFIC_COUNTIES = new Set([
+  'bibb',
+  'carroll',
+  'chatham',
+  'cherokee',
+  'clayton',
+  'cobb',
+  'columbia',
+  'coweta',
+  'dekalb',
+  'douglas',
+  'forsyth',
+  'fulton',
+  'gwinnett',
+  'hall',
+  'henry',
+  'houston',
+  'muscogee',
+  'paulding',
+  'richmond',
+]);
+
 /** High-traffic NY counties — sitemap priority 0.85 */
 const NY_HIGH_TRAFFIC_COUNTIES = new Set([
   'albany',
@@ -91,7 +116,11 @@ export default async function sitemap({
             ? new Date(NEW_YORK_COUNTY_CONTENT_UPDATED)
             : id === 'texas'
               ? new Date(TEXAS_COUNTY_CONTENT_UPDATED)
-              : new Date();
+              : id === 'georgia'
+                ? new Date(GEORGIA_COUNTY_CONTENT_UPDATED)
+                : id === 'south-carolina'
+                  ? new Date(SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED)
+                  : new Date();
 
   return [
     {
@@ -117,7 +146,8 @@ export default async function sitemap({
         county.slug === 'passaic' ||
         (id === 'california' && CA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'new-york' && NY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'texas' && TX_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'texas' && TX_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'georgia' && GA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

@@ -8,6 +8,8 @@ import { getNewYorkCountyResearch } from '@/data/new-york-county-research';
 import { getNewYorkCountyTestimonials } from '@/data/new-york-county-testimonials';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getGeorgiaCountyTestimonials } from '@/data/georgia-county-testimonials';
+import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
+import { getSouthCarolinaCountyTestimonials } from '@/data/south-carolina-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
 import { getTexasCountyTestimonials } from '@/data/texas-county-testimonials';
 import { testimonials } from '@/lib/trust/trust-data';
@@ -87,8 +89,10 @@ export function buildStateDescription(
   const moverRange =
     stateName === 'California' ||
     stateName === 'Florida' ||
+    stateName === 'Georgia' ||
     stateName === 'New Jersey' ||
-    stateName === 'New York'
+    stateName === 'New York' ||
+    stateName === 'Texas'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';
   return `Find trusted local movers in all ${countyCount} ${stateName} counties — ${moverRange}, FMCSA licensing, county cost guides, and local moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
@@ -169,6 +173,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'georgia') {
     return getGeorgiaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'south-carolina') {
+    return getSouthCarolinaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -198,6 +205,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'georgia') {
     const curated = getGeorgiaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'south-carolina') {
+    const curated = getSouthCarolinaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -264,6 +275,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getGeorgiaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'south-carolina') {
+    const curated = getSouthCarolinaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -313,6 +328,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'georgia') {
     const curated = getGeorgiaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'south-carolina') {
+    const curated = getSouthCarolinaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 
