@@ -13829,7 +13829,8 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
     city: 'Boise City area',
-  },};
+  },
+};
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
   'south-florida': {
