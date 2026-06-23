@@ -20,6 +20,21 @@ export const kansasCountyOverrides: Partial<
   miami: { seat: 'Paola', metro: 'kansas-city-metro-south-ks' },
   cowley: { seat: 'Winfield', metro: 'winfield-metro-ks' },
   ford: { seat: 'Dodge City', metro: 'dodge-city-metro-ks' },
+  harvey: { seat: 'Newton', metro: 'wichita-metro-north-ks' },
+  lyon: { seat: 'Emporia', metro: 'emporia-metro-ks' },
+  mcpherson: { seat: 'McPherson', metro: 'mcpherson-metro-ks' },
+  montgomery: { seat: 'Independence', metro: 'independence-metro-ks' },
+  ellis: { seat: 'Hays', metro: 'hays-metro-ks' },
+  pottawatomie: { seat: 'Westmoreland', metro: 'manhattan-metro-ks' },
+  franklin: { seat: 'Ottawa', metro: 'ottawa-metro-ks' },
+  barton: { seat: 'Great Bend', metro: 'great-bend-metro-ks' },
+  sumner: { seat: 'Wellington', metro: 'wellington-metro-ks' },
+  seward: { seat: 'Liberal', metro: 'liberal-metro-ks' },
+  labette: { seat: 'Oswego', metro: 'parsons-metro-ks' },
+  cherokee: { seat: 'Columbus', metro: 'columbus-metro-ks' },
+  dickinson: { seat: 'Abilene', metro: 'abilene-metro-ks' },
+  jefferson: { seat: 'Oskaloosa', metro: 'topeka-metro-northeast-ks' },
+  atchison: { seat: 'Atchison', metro: 'atchison-metro-ks' },
 };
 
 export function applyKansasCountyOverrides(county: LocalCounty): LocalCounty {

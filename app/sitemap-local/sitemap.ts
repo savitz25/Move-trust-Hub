@@ -152,6 +152,21 @@ const KS_HIGH_TRAFFIC_COUNTIES = new Set([
   'miami',
   'cowley',
   'ford',
+  'harvey',
+  'lyon',
+  'mcpherson',
+  'montgomery',
+  'ellis',
+  'pottawatomie',
+  'franklin',
+  'barton',
+  'sumner',
+  'seward',
+  'labette',
+  'cherokee',
+  'dickinson',
+  'jefferson',
+  'atchison',
 ]);
 
 /** High-traffic AR counties — sitemap priority 0.85 */

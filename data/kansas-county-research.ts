@@ -280,6 +280,261 @@ export const kansasCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  harvey: {
+    marketNotes:
+      'Harvey County is a growing suburban county north of Wichita with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Harvey County pricing reflects Wichita metro northward suburban growth, Newton corridor traffic, and competition among full-service local and regional agents serving Harvey County.',
+    },
+    tips: [
+      'Verify coverage for Newton and surrounding areas before booking.',
+      'Wichita-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lyon: {
+    marketNotes:
+      'Lyon County is anchored by Emporia State University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Lyon County pricing reflects Emporia State University student-move cycles, Flint Hills residential turnover, and competition among full-service local and regional agents serving Emporia.',
+    },
+    tips: [
+      'Verify coverage for Emporia and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows, especially during move-in/move-out periods.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons and semester turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcpherson: {
+    marketNotes:
+      'McPherson County is a key Central Kansas county with strong manufacturing and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'McPherson County pricing reflects central Kansas manufacturing-industry relocations, regional traffic patterns, and competition among full-service local and regional agents serving McPherson.',
+    },
+    tips: [
+      'Verify coverage for McPherson and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County is a key Southeast Kansas county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$150/hr for a 2-person crew',
+      note: 'Montgomery County pricing reflects Independence and Coffeyville industrial corridors, southeast Kansas regional traffic, and competition among full-service local and regional agents serving Montgomery County.',
+    },
+    tips: [
+      'Verify coverage for Independence and Coffeyville areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ellis: {
+    marketNotes:
+      'Ellis County is a major hub in Northwest Kansas with strong educational (Fort Hays State University) and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$150/hr for a 2-person crew',
+      note: 'Ellis County pricing reflects Fort Hays State University area demand, northwest Kansas regional traffic, and competition among full-service local and regional agents serving Hays.',
+    },
+    tips: [
+      'Verify coverage for Hays and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pottawatomie: {
+    marketNotes:
+      'Pottawatomie County is a growing suburban county near Manhattan with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Pottawatomie County pricing reflects Manhattan metro spillover demand, Wamego corridor growth, and competition among full-service local and regional agents serving Pottawatomie County.',
+    },
+    tips: [
+      'Verify coverage for Wamego and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a growing county south of Kansas City with strong residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Kansas City metro southward suburban growth, Ottawa corridor traffic, and competition among full-service local and regional agents serving Franklin County.',
+    },
+    tips: [
+      'Verify coverage for Ottawa and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  barton: {
+    marketNotes:
+      'Barton County is a key Central Kansas county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$150/hr for a 2-person crew',
+      note: 'Barton County pricing reflects Great Bend energy-industry relocations, central Kansas regional traffic, and competition among full-service local and regional agents serving Barton County.',
+    },
+    tips: [
+      'Verify coverage for Great Bend and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sumner: {
+    marketNotes:
+      'Sumner County is a rural South Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Sumner County pricing reflects south central Kansas rural residential turnover, Wellington corridor traffic, and competition among full-service local and regional agents serving Sumner County.',
+    },
+    tips: [
+      'Verify coverage for Wellington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  seward: {
+    marketNotes:
+      'Seward County is a key Southwest Kansas county with strong energy and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Seward County pricing reflects Liberal energy-industry relocations, southwest Kansas regional traffic, and competition among full-service local and regional agents serving Seward County.',
+    },
+    tips: [
+      'Verify coverage for Liberal and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  labette: {
+    marketNotes:
+      'Labette County is a key Southeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$150/hr for a 2-person crew',
+      note: 'Labette County pricing reflects Parsons area residential turnover, southeast Kansas regional traffic, and competition among full-service local and regional agents serving Labette County.',
+    },
+    tips: [
+      'Verify coverage for Parsons and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cherokee: {
+    marketNotes:
+      'Cherokee County is a rural Southeast Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Cherokee County pricing reflects southeast Kansas rural residential turnover, Columbus corridor traffic, and competition among full-service local and regional agents serving Cherokee County.',
+    },
+    tips: [
+      'Verify coverage for Columbus and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dickinson: {
+    marketNotes:
+      'Dickinson County is a rural Central Kansas county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Dickinson County pricing reflects central Kansas rural residential turnover, Abilene corridor traffic, and competition among full-service local and regional agents serving Dickinson County.',
+    },
+    tips: [
+      'Verify coverage for Abilene and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is a suburban county northeast of Topeka with residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects Topeka metro northeast suburban growth, Oskaloosa corridor traffic, and competition among full-service local and regional agents serving Jefferson County.',
+    },
+    tips: [
+      'Verify coverage for Oskaloosa and surrounding areas before booking.',
+      'Topeka-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  atchison: {
+    marketNotes:
+      'Atchison County is a key Northeast Kansas county with historical and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Atchison County pricing reflects northeast Kansas residential turnover, Missouri River corridor traffic, and competition among full-service local and regional agents serving Atchison County.',
+    },
+    tips: [
+      'Verify coverage for Atchison and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getKansasCountyResearch(

@@ -27,6 +27,21 @@ const KS_COUNTY_NEIGHBORS: Record<string, string[]> = {
   miami: ['johnson', 'wyandotte', 'linn', 'anderson', 'franklin', 'douglas'],
   cowley: ['butler', 'sumner', 'chautauqua', 'elk', 'sedgwick', 'harvey'],
   ford: ['hodgeman', 'gray', 'meade', 'clark', 'edwards', 'kiowa'],
+  harvey: ['sedgwick', 'mcpherson', 'reno', 'butler', 'marion', 'cowley'],
+  lyon: ['chase', 'greenwood', 'coffey', 'osage', 'morris', 'wabaunsee'],
+  mcpherson: ['harvey', 'reno', 'saline', 'rice', 'marion', 'ellsworth'],
+  montgomery: ['labette', 'cherokee', 'wilson', 'neosho', 'cowley', 'elk'],
+  ellis: ['rush', 'norton', 'trego', 'russell', 'barton', 'phillips'],
+  pottawatomie: ['riley', 'jackson', 'wabaunsee', 'shawnee', 'marshall', 'nemaha'],
+  franklin: ['johnson', 'miami', 'douglas', 'anderson', 'coffey', 'osage'],
+  barton: ['ellsworth', 'rice', 'stafford', 'rush', 'pawnee', 'russell'],
+  sumner: ['sedgwick', 'cowley', 'harper', 'kingman', 'butler', 'reno'],
+  seward: ['haskell', 'meade', 'stevens', 'grant', 'finney', 'gray'],
+  labette: ['montgomery', 'neosho', 'cherokee', 'crawford', 'wilson', 'allen'],
+  cherokee: ['crawford', 'labette', 'bourbon', 'neosho', 'wilson', 'montgomery'],
+  dickinson: ['geary', 'marion', 'morris', 'clay', 'ottawa', 'saline'],
+  jefferson: ['douglas', 'shawnee', 'jackson', 'atchison', 'leavenworth', 'osage'],
+  atchison: ['leavenworth', 'jefferson', 'doniphan', 'brown', 'jackson', 'nemaha'],
 };
 
 export function getKansasNearbyCounties(
