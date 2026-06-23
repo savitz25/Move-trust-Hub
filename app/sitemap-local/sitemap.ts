@@ -136,7 +136,7 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic MO counties — sitemap priority 0.85 */
-const MO_HIGH_TRAFFIC_COUNTIES = new Set(['st-louis']);
+const MO_HIGH_TRAFFIC_COUNTIES = new Set(['st-louis', 'jackson', 'st-charles']);
 
 /** High-traffic KS counties — sitemap priority 0.85 */
 const KS_HIGH_TRAFFIC_COUNTIES = new Set([

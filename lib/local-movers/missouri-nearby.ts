@@ -12,6 +12,8 @@ const countyNameBySlug = new Map(missouriCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated MO county pages — expands as counties are researched */
 const MO_COUNTY_NEIGHBORS: Record<string, string[]> = {
   'st-louis': ['st-charles', 'jefferson', 'franklin', 'warren', 'lincoln'],
+  jackson: ['clay', 'cass', 'lafayette', 'ray', 'johnson', 'platte'],
+  'st-charles': ['st-louis', 'warren', 'lincoln', 'franklin', 'jefferson'],
 };
 
 export function getMissouriNearbyCounties(

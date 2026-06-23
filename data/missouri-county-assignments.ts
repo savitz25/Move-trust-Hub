@@ -14,6 +14,30 @@ const CURATED_MO_COUNTIES: Record<string, string[]> = {
     'missouri-county-moving-co',
     'missouri-express-movers',
   ],
+  jackson: [
+    'two-men-and-a-truck-jackson-mo',
+    'all-my-sons-kansas-city-mo',
+    'missouri-local-lines',
+    'missouri-premier-moving',
+    'missouri-pro-movers',
+    'missouri-family-movers',
+    'college-hunks-kansas-city-mo',
+    'coleman-worldwide-kansas-city-mo',
+    'north-american-van-lines-kansas-city-mo',
+    'missouri-express-movers',
+  ],
+  'st-charles': [
+    'two-men-and-a-truck-st-charles-mo',
+    'two-men-and-a-truck-st-louis-mo',
+    'all-my-sons-st-louis-mo',
+    'missouri-premier-moving',
+    'missouri-pro-movers',
+    'missouri-family-movers',
+    'college-hunks-st-louis-mo',
+    'coleman-worldwide-st-louis-mo',
+    'north-american-van-lines-st-louis-mo',
+    'missouri-express-movers',
+  ],
 };
 
 export const missouriCountyMoverAssignments: CountyMoverAssignment[] =

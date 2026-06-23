@@ -66,6 +66,8 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kansas', countySlug: 'sedgwick', expectedCity: 'Wichita' },
   { stateSlug: 'kansas', countySlug: 'shawnee', expectedCity: 'Topeka' },
   { stateSlug: 'missouri', countySlug: 'st-louis', expectedCity: 'Clayton' },
+  { stateSlug: 'missouri', countySlug: 'jackson', expectedCity: 'Independence' },
+  { stateSlug: 'missouri', countySlug: 'st-charles', expectedCity: 'St. Charles' },
 ];
 
 let totalIssues = 0;

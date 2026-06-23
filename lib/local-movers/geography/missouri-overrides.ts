@@ -5,6 +5,8 @@ export const missouriCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
   'st-louis': { seat: 'Clayton', metro: 'st-louis-metro-mo' },
+  jackson: { seat: 'Independence', metro: 'kansas-city-metro-mo' },
+  'st-charles': { seat: 'St. Charles', metro: 'st-louis-metro-west-mo' },
 };
 
 export function applyMissouriCountyOverrides(county: LocalCounty): LocalCounty {
