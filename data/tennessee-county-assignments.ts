@@ -14,6 +14,18 @@ const CURATED_TN_COUNTIES: Record<string, string[]> = {
     'my-town-movers-memphis',
     'wrightway-moving-memphis',
   ],
+  davidson: [
+    'two-men-and-a-truck-nashville',
+    'college-hunks-moving-nashville',
+    'all-my-sons-nashville',
+    'bellhop-nashville',
+    'fox-moving-nashville',
+    'music-city-movers-nashville',
+    'master-movers-nashville',
+    'armstrong-relocation-nashville',
+    'alexanders-mobility-nashville',
+    'spyder-moving-nashville',
+  ],
 };
 
 export const tennesseeCountyMoverAssignments: CountyMoverAssignment[] =

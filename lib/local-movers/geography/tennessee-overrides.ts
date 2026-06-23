@@ -5,6 +5,7 @@ export const tennesseeCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
   shelby: { seat: 'Memphis', metro: 'memphis-metro-tn' },
+  davidson: { seat: 'Nashville', metro: 'nashville-metro-tn' },
 };
 
 export function applyTennesseeCountyOverrides(county: LocalCounty): LocalCounty {

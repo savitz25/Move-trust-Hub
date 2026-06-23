@@ -10,6 +10,7 @@ const countyNameBySlug = new Map(tnCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for internal linking on TN county pages */
 const TN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   shelby: ['fayette', 'tipton', 'haywood', 'hardeman', 'lauderdale', 'crockett'],
+  davidson: ['williamson', 'sumner', 'wilson', 'rutherford', 'robertson', 'cheatham'],
 };
 
 export function getTennesseeNearbyCounties(

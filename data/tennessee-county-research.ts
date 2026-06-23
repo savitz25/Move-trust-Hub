@@ -25,6 +25,23 @@ export const tennesseeCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  davidson: {
+    marketNotes:
+      'Davidson County is the core of the Nashville metropolitan area, a major economic, entertainment, and healthcare hub with very high moving volume.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,800–$6,200',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Davidson County pricing reflects Nashville metro growth, downtown and Midtown turnover, Music Row corridor access, and heavy I-40 and I-65 traffic.',
+    },
+    tips: [
+      'Verify coverage for Nashville, Franklin (adjacent), and surrounding urban/suburban areas before booking.',
+      'Heavy urban and tourist traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value urban, entertainment, and corporate properties before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getTennesseeCountyResearch(

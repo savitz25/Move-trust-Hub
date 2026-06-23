@@ -35,6 +35,32 @@ export const tennesseeCountyTestimonials: Record<string, CountyTestimonialEntry[
         moveType: 'Townhome',
       },
     ],
+    davidson: [
+      {
+        quote:
+          'Two Men and a Truck Nashville handled our East Nashville relocation professionally — on time, extremely careful with our belongings, and transparent Davidson County pricing throughout.',
+        name: 'Sarah R.',
+        location: 'Nashville, TN',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'College Hunks Moving Nashville served our downtown apartment move efficiently — fast, professional, and reliable with great value for careful handling.',
+        name: 'James T.',
+        location: 'Nashville, TN',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+      {
+        quote:
+          'Music City Movers confirmed Green Hills coverage and delivered reliable packing and loading with no surprise fees despite heavy Nashville traffic.',
+        name: 'Emily W.',
+        location: 'Nashville, TN',
+        rating: 4,
+        moveType: 'Townhome',
+      },
+    ],
   };
 
 export function getTennesseeCountyTestimonials(
