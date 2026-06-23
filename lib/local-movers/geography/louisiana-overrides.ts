@@ -40,6 +40,18 @@ export const louisianaCountyOverrides: Partial<
   iberville: { seat: 'Plaquemine', metro: 'baton-rouge-metro-la' },
   'west-baton-rouge': { seat: 'Port Allen', metro: 'baton-rouge-metro-la' },
   'de-soto': { seat: 'Mansfield', metro: 'shreveport-bossier-metro-la' },
+  'west-feliciana': { seat: 'St. Francisville', metro: 'baton-rouge-metro-la' },
+  claiborne: { seat: 'Homer', metro: 'shreveport-bossier-metro-la' },
+  bienville: { seat: 'Arcadia', metro: 'shreveport-bossier-metro-la' },
+  'st-helena': { seat: 'Greensburg', metro: 'hammond-metro-la' },
+  caldwell: { seat: 'Columbia', metro: 'monroe-metro-la' },
+  'west-carroll': { seat: 'Oak Grove', metro: 'monroe-metro-la' },
+  madison: { seat: 'Tallulah', metro: 'monroe-metro-la' },
+  catahoula: { seat: 'Harrisonburg', metro: 'alexandria-metro-la' },
+  'red-river': { seat: 'Coushatta', metro: 'shreveport-bossier-metro-la' },
+  'east-carroll': { seat: 'Lake Providence', metro: 'monroe-metro-la' },
+  cameron: { seat: 'Cameron', metro: 'lake-charles-metro-la' },
+  tensas: { seat: 'St. Joseph', metro: 'monroe-metro-la' },
 };
 
 export function applyLouisianaCountyOverrides(county: LocalCounty): LocalCounty {

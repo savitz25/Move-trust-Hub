@@ -620,6 +620,210 @@ export const louisianaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  'west-feliciana': {
+    marketNotes:
+      'West Feliciana Parish is a historic rural parish in East Louisiana with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'West Feliciana Parish pricing reflects St. Francisville historic-property demand and cross-coverage from Baton Rouge metro west-bank providers.',
+    },
+    tips: [
+      'Verify coverage for St. Francisville and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route feasibility.',
+      'Confirm insurance for high-value historic homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  claiborne: {
+    marketNotes:
+      'Claiborne Parish is a rural North Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Claiborne Parish pricing reflects Homer rural demand and cross-coverage from Shreveport–Bossier and Ruston providers.',
+    },
+    tips: [
+      'Verify coverage for Homer and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bienville: {
+    marketNotes:
+      'Bienville Parish is a rural North Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Bienville Parish pricing reflects Arcadia rural demand, limited local crew availability, and cross-coverage from Shreveport–Bossier providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Arcadia before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  'st-helena': {
+    marketNotes:
+      'St. Helena Parish is a rural East Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'St. Helena Parish pricing reflects Greensburg rural demand and cross-coverage from Hammond, Livingston, and Washington Parish providers.',
+    },
+    tips: [
+      'Verify coverage for Greensburg and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route feasibility.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  caldwell: {
+    marketNotes:
+      'Caldwell Parish is a rural Northeast Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Caldwell Parish pricing reflects Columbia rural demand, limited local crew availability, and cross-coverage from Monroe and Ruston providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Columbia before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  'west-carroll': {
+    marketNotes:
+      'West Carroll Parish is a rural Northeast Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'West Carroll Parish pricing reflects Oak Grove rural demand, very limited local crew availability, and regional providers serving remote Northeast Louisiana properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Oak Grove before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison Parish is a rural Northeast Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Madison Parish pricing reflects Tallulah rural demand along the Mississippi River corridor and regional providers serving remote Northeast Louisiana properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Tallulah before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  catahoula: {
+    marketNotes:
+      'Catahoula Parish is a rural Central Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Catahoula Parish pricing reflects Harrisonburg rural demand, very limited local crew availability, and regional providers serving remote Central Louisiana properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Harrisonburg before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  'red-river': {
+    marketNotes:
+      'Red River Parish is a rural Northwest Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Red River Parish pricing reflects Coushatta rural demand, limited local crew availability, and cross-coverage from Shreveport–Bossier and Natchitoches providers.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Coushatta before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  'east-carroll': {
+    marketNotes:
+      'East Carroll Parish is a rural Northeast Louisiana parish with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'East Carroll Parish pricing reflects Lake Providence rural demand along the Mississippi River corridor and regional providers serving remote Northeast Louisiana properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to Lake Providence before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  cameron: {
+    marketNotes:
+      'Cameron Parish is a coastal parish in Southwest Louisiana with strong energy and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Cameron Parish pricing reflects coastal access constraints, hurricane-season scheduling, and cross-coverage from Lake Charles and Acadiana providers.',
+    },
+    tips: [
+      'Verify coverage for Cameron and surrounding areas before booking.',
+      'Coastal access and hurricane considerations are critical — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and flood/hurricane coverage before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tensas: {
+    marketNotes:
+      'Tensas Parish is one of Louisiana’s smallest rural parishes with residential demand.',
+    costs: {
+      studioRange: '$550–$1,150',
+      familyRange: '$1,900–$4,400',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Tensas Parish pricing reflects St. Joseph rural demand, very limited local crew availability, and regional providers serving remote Northeast Louisiana properties.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm route feasibility before booking.',
+      'Verify explicit regional service to St. Joseph before booking.',
+      'Storage is very limited — confirm availability if needed.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
 };
 
 export function getLouisianaCountyResearch(

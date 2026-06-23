@@ -398,6 +398,72 @@ const CURATED_LA_PARISHES: Record<string, string[]> = {
     'regional-natchitoches-la-movers',
     'shreveport-la-area-moving',
   ],
+  'west-feliciana': [
+    'regional-west-feliciana-la-movers',
+    'regional-west-baton-rouge-la-movers',
+    'two-men-and-a-truck-baton-rouge-la',
+    'atmosphere-movers-baton-rouge-la',
+  ],
+  claiborne: [
+    'regional-claiborne-la-movers',
+    'two-men-and-a-truck-caddo-la',
+    'louisiana-premier-moving',
+    'regional-lincoln-la-movers',
+  ],
+  bienville: [
+    'regional-bienville-la-movers',
+    'two-men-and-a-truck-caddo-la',
+    'louisiana-premier-moving',
+    'regional-webster-la-movers',
+  ],
+  'st-helena': [
+    'regional-st-helena-la-movers',
+    'two-men-and-a-truck-tangipahoa-la',
+    'two-men-and-a-truck-livingston-la',
+    'regional-washington-la-movers',
+  ],
+  caldwell: [
+    'regional-caldwell-la-movers',
+    'two-men-and-a-truck-ouachita-la',
+    'all-my-sons-monroe-la',
+    'regional-lincoln-la-movers',
+  ],
+  'west-carroll': [
+    'regional-west-carroll-la-movers',
+    'regional-west-carroll-la-movers-2',
+    'regional-west-carroll-la-movers-3',
+  ],
+  madison: [
+    'regional-madison-la-movers',
+    'regional-madison-la-movers-2',
+    'regional-madison-la-movers-3',
+  ],
+  catahoula: [
+    'regional-catahoula-la-movers',
+    'regional-catahoula-la-movers-2',
+    'regional-catahoula-la-movers-3',
+  ],
+  'red-river': [
+    'regional-red-river-la-movers',
+    'two-men-and-a-truck-caddo-la',
+    'regional-natchitoches-la-movers',
+    'regional-de-soto-la-movers',
+  ],
+  'east-carroll': [
+    'regional-east-carroll-la-movers',
+    'regional-east-carroll-la-movers-2',
+    'regional-east-carroll-la-movers-3',
+  ],
+  cameron: [
+    'regional-cameron-la-movers',
+    'two-men-and-a-truck-calcasieu-la',
+    'all-my-sons-lake-charles-la',
+  ],
+  tensas: [
+    'regional-tensas-la-movers',
+    'regional-tensas-la-movers-2',
+    'regional-tensas-la-movers-3',
+  ],
 };
 
 export const louisianaCountyMoverAssignments: CountyMoverAssignment[] =

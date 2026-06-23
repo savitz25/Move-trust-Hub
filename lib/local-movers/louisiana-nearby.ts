@@ -208,6 +208,25 @@ const LA_PARISH_NEIGHBORS: Record<string, string[]> = {
     'ascension',
   ],
   'de-soto': ['caddo', 'red-river', 'sabine', 'natchitoches', 'bienville', 'bossier'],
+  'west-feliciana': [
+    'west-baton-rouge',
+    'east-feliciana',
+    'pointe-coupee',
+    'iberville',
+    'concordia',
+    'east-baton-rouge',
+  ],
+  claiborne: ['bienville', 'webster', 'lincoln', 'union', 'red-river', 'natchitoches'],
+  bienville: ['claiborne', 'webster', 'red-river', 'natchitoches', 'bossier', 'de-soto'],
+  'st-helena': ['washington', 'tangipahoa', 'livingston', 'east-feliciana', 'st-tammany', 'ascension'],
+  caldwell: ['ouachita', 'la-salle', 'franklin', 'richland', 'jackson', 'catahoula'],
+  'west-carroll': ['east-carroll', 'madison', 'richland', 'morehouse', 'ouachita', 'franklin'],
+  madison: ['east-carroll', 'tensas', 'concordia', 'richland', 'franklin', 'west-carroll'],
+  catahoula: ['la-salle', 'caldwell', 'franklin', 'concordia', 'avoyelles', 'grant'],
+  'red-river': ['de-soto', 'bienville', 'natchitoches', 'sabine', 'bossier', 'caddo'],
+  'east-carroll': ['west-carroll', 'madison', 'morehouse', 'richland', 'franklin', 'tensas'],
+  cameron: ['calcasieu', 'jefferson-davis', 'vermilion', 'iberia', 'beauregard', 'allen'],
+  tensas: ['madison', 'concordia', 'east-carroll', 'claiborne', 'franklin', 'catahoula'],
 };
 
 export function getLouisianaNearbyCounties(

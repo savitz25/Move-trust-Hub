@@ -153,6 +153,18 @@ const LA_HIGH_TRAFFIC_PARISHES = new Set([
   'iberville',
   'west-baton-rouge',
   'de-soto',
+  'west-feliciana',
+  'claiborne',
+  'bienville',
+  'st-helena',
+  'caldwell',
+  'west-carroll',
+  'madison',
+  'catahoula',
+  'red-river',
+  'east-carroll',
+  'cameron',
+  'tensas',
 ]);
 
 /** High-traffic MS counties — sitemap priority 0.85 */
