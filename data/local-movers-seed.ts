@@ -13941,6 +13941,108 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'movedaddy-birmingham',
     ],
   },
+  'greenville-metro-al': {
+    id: 'greenville-metro-al',
+    label: 'Greenville Metro',
+    moverIds: [
+      'true-america-moving-dothan',
+      'coleman-worldwide-moving-montgomery',
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+      'motivated-movers-montgomery',
+      'coleman-worldwide-moving-mobile',
+      'the-moving-truck-dothan',
+      'asap-moving-dothan',
+    ],
+  },
+  'heflin-metro-al': {
+    id: 'heflin-metro-al',
+    label: 'Heflin Metro',
+    moverIds: [
+      'fortson-moving-birmingham',
+      'peachtree-movers-calhoun',
+      'changing-spaces-moving-birmingham',
+      'two-men-and-a-truck-huntsville',
+    ],
+  },
+  'fayette-metro-al': {
+    id: 'fayette-metro-al',
+    label: 'Fayette Metro',
+    moverIds: [
+      'new-latitude-movers-birmingham',
+      'two-men-and-a-truck-tuscaloosa',
+      'motivated-movers-tuscaloosa',
+      'awesome-moving-tuscaloosa',
+      'secure-moving-birmingham',
+      'changing-spaces-moving-birmingham',
+      'fortson-moving-birmingham',
+      'movedaddy-birmingham',
+    ],
+  },
+  'greensboro-metro-al': {
+    id: 'greensboro-metro-al',
+    label: 'Greensboro Metro',
+    moverIds: [
+      'two-men-and-a-truck-tuscaloosa',
+      'motivated-movers-tuscaloosa',
+      'awesome-moving-tuscaloosa',
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+      'new-latitude-movers-birmingham',
+      'secure-moving-birmingham',
+      'changing-spaces-moving-birmingham',
+    ],
+  },
+  'chatom-metro-al': {
+    id: 'chatom-metro-al',
+    label: 'Chatom Metro',
+    moverIds: [
+      'coleman-worldwide-moving-mobile',
+      'handy-guys-moving-mobile',
+      'true-america-moving-dothan',
+      'the-moving-truck-dothan',
+    ],
+  },
+  'ashland-metro-al': {
+    id: 'ashland-metro-al',
+    label: 'Ashland Metro',
+    moverIds: [
+      'fortson-moving-birmingham',
+      'peachtree-movers-calhoun',
+      'two-men-and-a-truck-huntsville',
+      'changing-spaces-moving-birmingham',
+    ],
+  },
+  'vernon-metro-al': {
+    id: 'vernon-metro-al',
+    label: 'Vernon Metro',
+    moverIds: [
+      'two-men-and-a-truck-tuscaloosa',
+      'new-latitude-movers-birmingham',
+      'secure-moving-birmingham',
+      'fortson-moving-birmingham',
+    ],
+  },
+  'luverne-metro-al': {
+    id: 'luverne-metro-al',
+    label: 'Luverne Metro',
+    moverIds: [
+      'true-america-moving-dothan',
+      'two-men-and-a-truck-montgomery',
+      'admiral-movers-montgomery',
+      'motivated-movers-montgomery',
+    ],
+  },
+  'choctaw-metro-al': {
+    id: 'choctaw-metro-al',
+    label: 'Choctaw County Metro',
+    moverIds: [
+      'coleman-worldwide-moving-mobile',
+      'handy-guys-moving-mobile',
+      'true-america-moving-dothan',
+      'griner-moving-services-mobile',
+    ],
+  },
 };
 
 /** Non-curated state overrides — FL/NJ/NY/CA use dedicated assignment files */

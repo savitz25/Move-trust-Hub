@@ -52,6 +52,15 @@ export const alabamaCountyOverrides: Partial<
   marengo: { seat: 'Linden', metro: 'linden-metro-al' },
   macon: { seat: 'Tuskegee', metro: 'tuskegee-metro-al' },
   pickens: { seat: 'Carrollton', metro: 'carrollton-metro-al' },
+  butler: { seat: 'Greenville', metro: 'greenville-metro-al' },
+  cleburne: { seat: 'Heflin', metro: 'heflin-metro-al' },
+  fayette: { seat: 'Fayette', metro: 'fayette-metro-al' },
+  hale: { seat: 'Greensboro', metro: 'greensboro-metro-al' },
+  washington: { seat: 'Chatom', metro: 'chatom-metro-al' },
+  clay: { seat: 'Ashland', metro: 'ashland-metro-al' },
+  lamar: { seat: 'Vernon', metro: 'vernon-metro-al' },
+  crenshaw: { seat: 'Luverne', metro: 'luverne-metro-al' },
+  choctaw: { seat: 'Butler', metro: 'choctaw-metro-al' },
 };
 
 export function applyAlabamaCountyOverrides(county: LocalCounty): LocalCounty {

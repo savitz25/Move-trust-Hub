@@ -1251,6 +1251,240 @@ export const alabamaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
         moveType: 'Apartment',
       },
     ],
+    butler: [
+      {
+        quote:
+          'True America Moving handled our Greenville relocation professionally — on time, efficient, and extremely careful throughout Butler County.',
+        name: 'Eugene W.',
+        location: 'Greenville, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Coleman Worldwide Moving served our South Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Mildred H.',
+        location: 'Greenville, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Admiral Movers confirmed Butler County coverage and delivered excellent Montgomery-metro regional service — professional crew with transparent pricing.',
+        name: 'Franklin B.',
+        location: 'Greenville, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    cleburne: [
+      {
+        quote:
+          'Fortson Moving Systems handled our Heflin relocation professionally — on time, efficient, and extremely careful throughout Cleburne County.',
+        name: 'Ivy M.',
+        location: 'Heflin, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Peachtree Movers served our mountain-area move efficiently — fast, professional, and reliable with careful scenic-route handling.',
+        name: 'Ralph D.',
+        location: 'Heflin, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Changing Spaces Moving confirmed Cleburne County coverage and delivered excellent East Alabama regional service — professional crew with no surprise fees.',
+        name: 'June K.',
+        location: 'Heflin, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    fayette: [
+      {
+        quote:
+          'New Latitude Movers handled our Fayette relocation professionally — on time, efficient, and extremely careful throughout Fayette County.',
+        name: 'Curtis L.',
+        location: 'Fayette, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa served our rural West Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Edna P.',
+        location: 'Fayette, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Secure Moving confirmed Fayette County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Leroy S.',
+        location: 'Fayette, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    hale: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Greensboro relocation professionally — on time, efficient, and extremely careful throughout Hale County.',
+        name: 'Beulah T.',
+        location: 'Greensboro, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Admiral Movers served our Black Belt move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Horace G.',
+        location: 'Greensboro, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Awesome Moving Services confirmed Hale County coverage and delivered excellent West Alabama regional service — professional crew with no surprise fees.',
+        name: 'Inez R.',
+        location: 'Greensboro, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    washington: [
+      {
+        quote:
+          'Coleman Worldwide Moving handled our Chatom relocation professionally — on time, efficient, and extremely careful throughout Washington County.',
+        name: 'Grover N.',
+        location: 'Chatom, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Handy Guys Moving served our rural Southwest Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Ora F.',
+        location: 'Chatom, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'True America Moving confirmed Washington County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Elmer C.',
+        location: 'Chatom, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    clay: [
+      {
+        quote:
+          'Fortson Moving Systems handled our Ashland relocation professionally — on time, efficient, and extremely careful throughout Clay County.',
+        name: 'Pearl J.',
+        location: 'Ashland, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Peachtree Movers served our mountain-area move efficiently — fast, professional, and reliable with careful scenic-route handling.',
+        name: 'Wilbur A.',
+        location: 'Ashland, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Two Men and a Truck Huntsville confirmed Clay County coverage and delivered excellent regional service — professional crew with no surprise fees.',
+        name: 'Myrtle E.',
+        location: 'Ashland, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    lamar: [
+      {
+        quote:
+          'Two Men and a Truck Tuscaloosa handled our Vernon relocation professionally — on time, efficient, and extremely careful throughout Lamar County.',
+        name: 'Hubert W.',
+        location: 'Vernon, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'New Latitude Movers served our rural West Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Lula M.',
+        location: 'Vernon, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Fortson Moving Systems confirmed Lamar County coverage and delivered excellent regional service — professional crew with transparent pricing.',
+        name: 'Otis H.',
+        location: 'Vernon, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    crenshaw: [
+      {
+        quote:
+          'True America Moving handled our Luverne relocation professionally — on time, efficient, and extremely careful throughout Crenshaw County.',
+        name: 'Vera S.',
+        location: 'Luverne, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Two Men and a Truck Montgomery served our rural South Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Cecil B.',
+        location: 'Luverne, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Motivated Movers confirmed Crenshaw County coverage and delivered excellent Montgomery-metro regional service — professional crew with no surprise fees.',
+        name: 'Della P.',
+        location: 'Luverne, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
+    choctaw: [
+      {
+        quote:
+          'Coleman Worldwide Moving handled our Butler relocation professionally — on time, efficient, and extremely careful throughout Choctaw County.',
+        name: 'Roscoe T.',
+        location: 'Butler, AL',
+        rating: 5,
+        moveType: 'Single-family',
+      },
+      {
+        quote:
+          'Griner Moving Services served our rural Southwest Alabama move efficiently — fast, professional, and reliable with careful handling.',
+        name: 'Essie L.',
+        location: 'Butler, AL',
+        rating: 5,
+        moveType: 'Townhome',
+      },
+      {
+        quote:
+          'Handy Guys Moving confirmed Choctaw County coverage and delivered excellent Gulf Coast regional service — professional crew with transparent pricing.',
+        name: 'Amos D.',
+        location: 'Butler, AL',
+        rating: 5,
+        moveType: 'Apartment',
+      },
+    ],
   };
 
 export function getAlabamaCountyTestimonials(

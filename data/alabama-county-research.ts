@@ -824,6 +824,159 @@ export const alabamaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm credentials for rural moves before booking.',
     ],
   },
+  butler: {
+    marketNotes:
+      'Butler County is a rural county in South Alabama with residential demand centered on Greenville.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Butler County pricing reflects rural South Alabama access and Montgomery–Dothan regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Greenville and surrounding areas before booking.',
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cleburne: {
+    marketNotes:
+      'Cleburne County is a rural mountain county in East Alabama with scenic residential demand centered on Heflin.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Cleburne County pricing reflects Cheaha Mountain corridor access, rural East Alabama demand, and Anniston–Huntsville regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Heflin and surrounding areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew equipment.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County is a rural county in West Alabama with residential demand centered on Fayette.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Fayette County pricing reflects rural northwest Alabama access and Birmingham–Tuscaloosa regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Fayette and surrounding areas before booking.',
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hale: {
+    marketNotes:
+      'Hale County is a rural county in West Alabama with residential demand centered on Greensboro.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Hale County pricing reflects rural Black Belt access and Tuscaloosa–Montgomery regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Greensboro before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is a rural county in Southwest Alabama with residential demand centered on Chatom.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Washington County pricing reflects rural Southwest Alabama access and Mobile–Dothan regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Chatom before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  clay: {
+    marketNotes:
+      'Clay County is a rural mountain county in East Alabama with residential demand centered on Ashland.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Clay County pricing reflects Talladega National Forest mountain access and Anniston–Huntsville regional crew travel.',
+    },
+    tips: [
+      'Verify coverage for Ashland and surrounding areas before booking.',
+      'Mountain roads and weather conditions require specialized experience — confirm crew equipment.',
+      'Confirm insurance for high-value mountain homes before booking.',
+      'Book early for peak seasons.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lamar: {
+    marketNotes:
+      'Lamar County is a rural county in West Alabama with residential demand centered on Vernon.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Lamar County pricing reflects rural West Alabama access and Tuscaloosa–Birmingham regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Vernon before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  crenshaw: {
+    marketNotes:
+      'Crenshaw County is a rural county in South Alabama with residential demand centered on Luverne.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Crenshaw County pricing reflects rural South Alabama access and Montgomery–Dothan regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Luverne before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
+  choctaw: {
+    marketNotes:
+      'Choctaw County is a rural county in Southwest Alabama with residential demand centered on Butler.',
+    costs: {
+      studioRange: '$600–$1,250',
+      familyRange: '$2,200–$4,900',
+      avgHourly: '$100–$145/hr for a 2-person crew',
+      note: 'Choctaw County pricing reflects rural Southwest Alabama access and Mobile–Dothan regional crew travel.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm driveway and road constraints.',
+      'Verify explicit regional service to Butler before booking.',
+      'Storage is very limited — confirm timing and holding options early.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm credentials for rural moves before booking.',
+    ],
+  },
 };
 
 export function getAlabamaCountyResearch(

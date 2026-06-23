@@ -163,6 +163,15 @@ const AL_HIGH_TRAFFIC_COUNTIES = new Set([
   'marengo',
   'macon',
   'pickens',
+  'butler',
+  'cleburne',
+  'fayette',
+  'hale',
+  'washington',
+  'clay',
+  'lamar',
+  'crenshaw',
+  'choctaw',
 ]);
 
 /** High-traffic TN counties — sitemap priority 0.85 */
