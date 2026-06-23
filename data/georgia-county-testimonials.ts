@@ -2633,6 +2633,240 @@ export const georgiaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Townhome',
     },
   ],
+  cook: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Adel move with professional crews and clear rural travel pricing.',
+      name: 'Tom R.',
+      location: 'Adel, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Adel coverage and delivered careful handling for our rural Cook County relocation.',
+      name: 'Brenda L.',
+      location: 'Adel, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Cook County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Carl M.',
+      location: 'Adel, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  jasper: [
+    {
+      quote:
+        'Wirks Moving Atlanta confirmed Monticello coverage and handled our rural Jasper County move with careful driveway access planning.',
+      name: 'Kim L.',
+      location: 'Monticello, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta traveled to Monticello and finished our southeast-metro move on schedule despite rural access challenges.',
+      name: 'Scott D.',
+      location: 'Monticello, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'College Hunks Moving Atlanta served our Jasper County relocation with transparent travel pricing and professional packing.',
+      name: 'Angela V.',
+      location: 'Monticello, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  rabun: [
+    {
+      quote:
+        'Atlanta Home Movers confirmed Clayton coverage and handled our mountain Rabun County move with careful route planning on steep roads.',
+      name: 'Laura V.',
+      location: 'Clayton, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bulldog Movers served our Clayton relocation with professional packing and transparent northeast-metro travel pricing.',
+      name: 'Frank L.',
+      location: 'Clayton, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Atlanta traveled to Rabun County and finished our mountain move on schedule despite narrow road access challenges.',
+      name: 'Diana S.',
+      location: 'Tiger, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  'ben-hill': [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Fitzgerald move with professional crews and clear rural travel pricing.',
+      name: 'Johnny R.',
+      location: 'Fitzgerald, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Fitzgerald coverage and delivered careful handling for our rural Ben Hill County relocation.',
+      name: 'Wanda G.',
+      location: 'Fitzgerald, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Ben Hill County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Donald P.',
+      location: 'Fitzgerald, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  oglethorpe: [
+    {
+      quote:
+        'University Moving and Storage handled our Lexington relocation with specialty care for antiques and excellent Athens-corridor knowledge.',
+      name: 'Charles M.',
+      location: 'Lexington, GA',
+      rating: 5,
+      moveType: 'Historic home',
+    },
+    {
+      quote:
+        'Two Men and a Truck Athens served our Oglethorpe County move efficiently with clear communication and careful handling of rural property access.',
+      name: 'Diana S.',
+      location: 'Lexington, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Atlanta Home Movers traveled to Lexington and finished our northeast Georgia move on schedule despite rural access challenges.',
+      name: 'Frank L.',
+      location: 'Lexington, GA',
+      rating: 4,
+      moveType: 'Family home',
+    },
+  ],
+  brooks: [
+    {
+      quote:
+        'HHG Movers provided reliable South Georgia coverage for our Quitman move with professional crews and clear Florida-border travel pricing.',
+      name: 'Tom R.',
+      location: 'Quitman, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Perez Moving confirmed explicit Quitman coverage and delivered careful handling for our rural Brooks County relocation.',
+      name: 'Brenda L.',
+      location: 'Quitman, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'Mudanza Moving Valdosta served our Brooks County move from their Valdosta base with transparent travel estimates and reliable packing.',
+      name: 'Carl M.',
+      location: 'Quitman, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  'jeff-davis': [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Hazlehurst and delivered on schedule. Upfront about Southeast Georgia travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Hazlehurst, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Jeff Davis County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Hazlehurst, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Badie Moving Statesboro provided reliable packing for our rural Hazlehurst home. Finished on schedule with no hidden fees despite the coastal-plain drive.',
+      name: 'Dennis K.',
+      location: 'Hazlehurst, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
+  jefferson: [
+    {
+      quote:
+        'Budget Movers Augusta confirmed Louisville coverage and delivered careful handling for our rural Jefferson County relocation.',
+      name: 'Johnny R.',
+      location: 'Louisville, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Augusta handled our Louisville move with great communication and no surprise fees despite rural CSRA access challenges.',
+      name: 'Wanda G.',
+      location: 'Louisville, GA',
+      rating: 5,
+      moveType: 'Family home',
+    },
+    {
+      quote:
+        'ADSI Moving Augusta provided reliable packing and loading for our Jefferson County home. Finished on schedule with transparent Augusta-area pricing.',
+      name: 'Donald P.',
+      location: 'Louisville, GA',
+      rating: 4,
+      moveType: 'Townhome',
+    },
+  ],
+  screven: [
+    {
+      quote:
+        'Two Men and a Truck Savannah traveled to Sylvania and delivered on schedule. Upfront about rural travel time and excellent crew care.',
+      name: 'Harold W.',
+      location: 'Sylvania, GA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'BC Brothers Moving handled our Screven County relocation with careful furniture wrapping and transparent pricing despite the long drive from Savannah.',
+      name: 'Vicki M.',
+      location: 'Sylvania, GA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Moving Savannah provided reliable packing and loading for our rural Sylvania home. Finished on schedule with no hidden fees.',
+      name: 'Dennis K.',
+      location: 'Sylvania, GA',
+      rating: 4,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getGeorgiaCountyTestimonials(

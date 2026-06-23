@@ -105,6 +105,15 @@ export const georgiaCountyOverrides: Partial<
   dodge: { seat: 'Eastman', metro: 'macon-metro-ga' },
   washington: { seat: 'Sandersville', metro: 'macon-metro-ga' },
   crisp: { seat: 'Cordele', metro: 'valdosta-metro-ga' },
+  cook: { seat: 'Adel', metro: 'valdosta-metro-ga' },
+  jasper: { seat: 'Monticello', metro: 'atlanta-metro-ga' },
+  rabun: { seat: 'Clayton', metro: 'atlanta-metro-ga' },
+  'ben-hill': { seat: 'Fitzgerald', metro: 'valdosta-metro-ga' },
+  oglethorpe: { seat: 'Lexington', metro: 'athens-metro-ga' },
+  brooks: { seat: 'Quitman', metro: 'valdosta-metro-ga' },
+  'jeff-davis': { seat: 'Hazlehurst', metro: 'savannah-metro-ga' },
+  jefferson: { seat: 'Louisville', metro: 'augusta-metro-ga' },
+  screven: { seat: 'Sylvania', metro: 'savannah-metro-ga' },
 };
 
 export function applyGeorgiaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -580,6 +580,51 @@ const CURATED_GA_COUNTIES: Record<string, string[]> = {
     'perez-moving-valdosta',
     'mudanza-moving-valdosta',
   ],
+  cook: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  jasper: [
+    'wirks-moving-atlanta',
+    'two-men-and-a-truck-atlanta',
+    'college-hunks-moving-atlanta',
+  ],
+  rabun: [
+    'atlanta-home-movers',
+    'bulldog-movers-atlanta',
+    'two-men-and-a-truck-atlanta',
+  ],
+  'ben-hill': [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  oglethorpe: [
+    'university-moving-athens',
+    'two-men-and-a-truck-athens',
+    'atlanta-home-movers',
+  ],
+  brooks: [
+    'hhg-movers-south-georgia',
+    'perez-moving-valdosta',
+    'mudanza-moving-valdosta',
+  ],
+  'jeff-davis': [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'badie-moving-statesboro',
+  ],
+  jefferson: [
+    'budget-movers-augusta',
+    'two-men-and-a-truck-augusta',
+    'adsi-moving-augusta',
+  ],
+  screven: [
+    'two-men-and-a-truck-savannah',
+    'bc-brothers-moving-savannah',
+    'college-hunks-moving-savannah',
+  ],
 };
 
 export const georgiaCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(

@@ -1733,6 +1733,159 @@ export const georgiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm FMCSA credentials for rural South Georgia relocations.',
     ],
   },
+  cook: {
+    marketNotes:
+      'Cook County is rural South Georgia with Adel as the seat along the Valdosta and Tifton corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Cook County pricing reflects rural property access and travel from Valdosta or Tifton-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Adel and outer Cook properties.',
+      'Verify explicit regional service to Adel before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  jasper: {
+    marketNotes:
+      'Jasper County is rural southeast of Atlanta with Monticello as the seat between Newton and the Macon corridor.',
+    costs: {
+      studioRange: '$600–$1,200',
+      familyRange: '$2,000–$4,500',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jasper County pricing reflects rural driveway access, limited storage, and travel from Atlanta south-metro bases.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Monticello and outer Jasper addresses.',
+      'Verify explicit regional service to Monticello before booking.',
+      'Storage is very limited locally — plan with Atlanta or Griffin providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural south-metro relocations.',
+    ],
+  },
+  rabun: {
+    marketNotes:
+      'Rabun County is rural and mountainous in Northeast Georgia with Clayton as the seat near the North Carolina border.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Rabun County pricing reflects mountain-road access, limited storage, and travel from Atlanta northeast-metro crews.',
+    },
+    tips: [
+      'Mountain roads and access challenges are common — confirm truck size and route feasibility for Clayton.',
+      'Verify explicit regional service to Clayton before booking.',
+      'Storage is very limited locally — plan with Atlanta northeast-metro providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural and mountain relocations.',
+    ],
+  },
+  'ben-hill': {
+    marketNotes:
+      'Ben Hill County is rural South Georgia with Fitzgerald as the seat along the I-75 corridor between Valdosta and Macon.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Ben Hill County pricing reflects rural property access and travel from Valdosta or Tifton-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Fitzgerald and outer Ben Hill properties.',
+      'Verify explicit regional service to Fitzgerald before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  oglethorpe: {
+    marketNotes:
+      'Oglethorpe County is rural with Lexington as the seat between Athens and the Madison historic corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Oglethorpe County pricing reflects rural property access and travel from Athens or Atlanta crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Lexington and outer Oglethorpe addresses.',
+      'Verify explicit regional service to Lexington before booking.',
+      'Storage is very limited locally — plan with Athens providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Northeast Georgia relocations.',
+    ],
+  },
+  brooks: {
+    marketNotes:
+      'Brooks County is rural South Georgia with Quitman as the seat along the Florida border and Valdosta corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Brooks County pricing reflects rural property access and travel from Valdosta or Thomasville-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Quitman and outer Brooks properties.',
+      'Verify explicit regional service to Quitman before booking.',
+      'Storage is very limited locally — coordinate with Valdosta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural South Georgia relocations.',
+    ],
+  },
+  'jeff-davis': {
+    marketNotes:
+      'Jeff Davis County is rural Southeast Georgia with Hazlehurst as the seat between Savannah and Statesboro.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jeff Davis County pricing reflects rural coastal-plain access and travel from Savannah or Statesboro crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Hazlehurst and outer Jeff Davis properties.',
+      'Verify explicit regional service to Hazlehurst before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is rural in the CSRA with Louisville as the seat between Augusta and Sandersville.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects rural property access and travel from Augusta-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm truck routes for Louisville and outer Jefferson properties.',
+      'Verify explicit regional service to Louisville before booking.',
+      'Storage is very limited locally — coordinate with Augusta providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural CSRA relocations.',
+    ],
+  },
+  screven: {
+    marketNotes:
+      'Screven County is rural with Sylvania as the seat between Savannah and the CSRA inland corridor.',
+    costs: {
+      studioRange: '$550–$1,100',
+      familyRange: '$1,900–$4,200',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Screven County pricing reflects rural property access and travel from Savannah-area crews.',
+    },
+    tips: [
+      'Rural access challenges are common — confirm routes for Sylvania and outer Screven properties.',
+      'Verify explicit regional service to Sylvania before booking.',
+      'Storage is very limited locally — coordinate with Savannah providers if needed.',
+      'Obtain multiple written estimates and confirm travel fees.',
+      'Confirm FMCSA credentials for rural Southeast Georgia relocations.',
+    ],
+  },
 };
 
 export function getGeorgiaCountyResearch(

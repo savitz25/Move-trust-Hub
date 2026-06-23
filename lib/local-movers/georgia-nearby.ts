@@ -112,6 +112,15 @@ const GA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   dodge: ['bleckley', 'laurens', 'pulaski', 'wilcox', 'twiggs', 'emanuel'],
   washington: ['baldwin', 'johnson', 'hancock', 'wilkinson', 'jefferson', 'glascock'],
   crisp: ['dooly', 'lee', 'sumter', 'turner', 'wilcox', 'worth'],
+  cook: ['berrien', 'lowndes', 'tift', 'colquitt', 'brooks', 'atkinson'],
+  jasper: ['butts', 'newton', 'morgan', 'putnam', 'jones', 'monroe'],
+  rabun: ['habersham', 'stephens', 'white', 'fannin', 'gilmer', 'towns'],
+  'ben-hill': ['coffee', 'irwin', 'tift', 'turner', 'wilcox', 'crisp'],
+  oglethorpe: ['madison', 'elbert', 'wilkes', 'greene', 'oconee', 'clarke'],
+  brooks: ['lowndes', 'lanier', 'thomas', 'colquitt', 'cook', 'grady'],
+  'jeff-davis': ['appling', 'coffee', 'toombs', 'tattnall', 'montgomery', 'ware'],
+  jefferson: ['richmond', 'burke', 'mcduffie', 'washington', 'glascock', 'warren'],
+  screven: ['burke', 'jenkins', 'bulloch', 'effingham', 'chatham', 'emanuel'],
 };
 
 export function getGeorgiaNearbyCounties(
