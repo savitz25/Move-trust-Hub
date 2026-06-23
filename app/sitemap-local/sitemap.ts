@@ -162,6 +162,21 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
   'woodward',
   'marshall',
   'pawnee',
+  'kingfisher',
+  'atoka',
+  'craig',
+  'choctaw',
+  'murray',
+  'hughes',
+  'haskell',
+  'okfuskee',
+  'love',
+  'washita',
+  'noble',
+  'pushmataha',
+  'johnston',
+  'latimer',
+  'nowata',
 ]);
 
 /** High-traffic LA parishes — sitemap priority 0.85 */

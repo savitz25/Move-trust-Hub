@@ -756,6 +756,261 @@ export const oklahomaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  kingfisher: {
+    marketNotes:
+      'Kingfisher County is a growing county in Central Oklahoma with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Kingfisher County pricing reflects central Oklahoma growth, regional traffic constraints, and cross-county crews from OKC metro providers.',
+    },
+    tips: [
+      'Verify coverage for Kingfisher and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  atoka: {
+    marketNotes:
+      'Atoka County is a rural Southeast Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Atoka County pricing reflects southeast Oklahoma rural access challenges, regional demand, and cross-county crews from McAlester and Durant providers.',
+    },
+    tips: [
+      'Verify coverage for Atoka and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  craig: {
+    marketNotes:
+      'Craig County is a rural Northeast Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Craig County pricing reflects northeast Oklahoma regional demand, rural access constraints, and cross-county crews from Tulsa metro providers.',
+    },
+    tips: [
+      'Verify coverage for Vinita and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  choctaw: {
+    marketNotes:
+      'Choctaw County is a rural Southeast Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Choctaw County pricing reflects southeast Oklahoma regional demand, Hugo-area rural access, and cross-county crews from Durant and Tulsa providers.',
+    },
+    tips: [
+      'Verify coverage for Hugo and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  murray: {
+    marketNotes:
+      'Murray County is a scenic county in South Oklahoma with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Murray County pricing reflects Sulphur lake-area tourism demand, south Oklahoma regional traffic, and cross-county crews from Ardmore and Lawton providers.',
+    },
+    tips: [
+      'Verify coverage for Sulphur and surrounding areas before booking.',
+      'Lake and tourism traffic impacts scheduling — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons and summer relocation windows.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hughes: {
+    marketNotes:
+      'Hughes County is a rural Central Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Hughes County pricing reflects central Oklahoma rural access constraints, regional demand, and cross-county crews from Shawnee and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Holdenville and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  haskell: {
+    marketNotes:
+      'Haskell County is a rural East Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Haskell County pricing reflects east Oklahoma regional demand, rural access constraints, and cross-county crews from Muskogee and Tulsa providers.',
+    },
+    tips: [
+      'Verify coverage for Stigler and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  okfuskee: {
+    marketNotes:
+      'Okfuskee County is a rural Central Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Okfuskee County pricing reflects central Oklahoma rural access constraints, regional demand, and cross-county crews from Shawnee and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Okemah and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  love: {
+    marketNotes:
+      'Love County is a rural South Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Love County pricing reflects south Oklahoma regional demand, Red River valley access, and cross-county crews from Ardmore and Durant providers.',
+    },
+    tips: [
+      'Verify coverage for Marietta and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washita: {
+    marketNotes:
+      'Washita County is a rural Western Oklahoma county with agricultural and residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Washita County pricing reflects western Oklahoma agricultural demand, regional traffic constraints, and cross-county crews from Lawton and OKC providers.',
+    },
+    tips: [
+      'Verify coverage for Cordell and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  noble: {
+    marketNotes:
+      'Noble County is a rural North Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Noble County pricing reflects north Oklahoma regional demand, rural access constraints, and cross-county crews from Enid and Stillwater providers.',
+    },
+    tips: [
+      'Verify coverage for Perry and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pushmataha: {
+    marketNotes:
+      'Pushmataha County is a rural Southeast Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Pushmataha County pricing reflects southeast Oklahoma rural access challenges, regional demand, and cross-county crews from McAlester and Hugo providers.',
+    },
+    tips: [
+      'Verify coverage for Antlers and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  johnston: {
+    marketNotes:
+      'Johnston County is a rural South Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Johnston County pricing reflects south Oklahoma regional demand, rural access constraints, and cross-county crews from Durant and Ardmore providers.',
+    },
+    tips: [
+      'Verify coverage for Tishomingo and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  latimer: {
+    marketNotes:
+      'Latimer County is a rural Southeast Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Latimer County pricing reflects southeast Oklahoma rural access challenges, regional demand, and cross-county crews from McAlester and Muskogee providers.',
+    },
+    tips: [
+      'Verify coverage for Wilburton and surrounding areas before booking.',
+      'Rural access challenges are common — confirm crew arrival windows and route planning.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  nowata: {
+    marketNotes:
+      'Nowata County is a rural Northeast Oklahoma county with residential demand.',
+    costs: {
+      studioRange: '$650–$1,350',
+      familyRange: '$2,300–$5,200',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Nowata County pricing reflects northeast Oklahoma regional demand, rural access constraints, and cross-county crews from Tulsa metro providers.',
+    },
+    tips: [
+      'Verify coverage for Nowata and surrounding areas before booking.',
+      'Regional traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getOklahomaCountyResearch(

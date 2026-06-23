@@ -55,6 +55,21 @@ const OK_COUNTY_NEIGHBORS: Record<string, string[]> = {
   woodward: ['ellis', 'dewey', 'major', 'woods', 'alfalfa', 'roger-mills'],
   marshall: ['bryan', 'johnston', 'love', 'carter', 'atoka', 'coal'],
   pawnee: ['osage', 'creek', 'payne', 'noble', 'kay', 'tulsa'],
+  kingfisher: ['canadian', 'blaine', 'major', 'garfield', 'logan', 'oklahoma'],
+  atoka: ['bryan', 'marshall', 'coal', 'pittsburg', 'pushmataha', 'johnston'],
+  craig: ['mayes', 'delaware', 'ottawa', 'nowata', 'rogers', 'wagoner'],
+  choctaw: ['pushmataha', 'mccurtain', 'atoka', 'bryan', 'marshall', 'coal'],
+  murray: ['garvin', 'carter', 'pontotoc', 'johnston', 'love', 'stephens'],
+  hughes: ['okfuskee', 'mcintosh', 'pittsburg', 'seminole', 'pontotoc', 'pottawatomie'],
+  haskell: ['le-flore', 'sequoyah', 'muskogee', 'latimer', 'pittsburg', 'mccurtain'],
+  okfuskee: ['okmulgee', 'mcintosh', 'hughes', 'seminole', 'lincoln', 'pottawatomie'],
+  love: ['carter', 'marshall', 'johnston', 'bryan', 'jefferson', 'garvin'],
+  washita: ['custer', 'beckham', 'kiowa', 'greer', 'caddo', 'grady'],
+  noble: ['kay', 'pawnee', 'grant', 'garfield', 'payne', 'logan'],
+  pushmataha: ['mccurtain', 'choctaw', 'atoka', 'latimer', 'le-flore', 'pittsburg'],
+  johnston: ['marshall', 'love', 'carter', 'bryan', 'pontotoc', 'murray'],
+  latimer: ['le-flore', 'pushmataha', 'pittsburg', 'haskell', 'coal', 'atoka'],
+  nowata: ['craig', 'rogers', 'washington', 'osage', 'tulsa', 'ottawa'],
 };
 
 export function getOklahomaNearbyCounties(

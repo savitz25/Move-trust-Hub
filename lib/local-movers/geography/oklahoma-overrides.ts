@@ -48,6 +48,21 @@ export const oklahomaCountyOverrides: Partial<
   woodward: { seat: 'Woodward', metro: 'woodward-metro-ok' },
   marshall: { seat: 'Madill', metro: 'madill-metro-ok' },
   pawnee: { seat: 'Pawnee', metro: 'pawnee-metro-ok' },
+  kingfisher: { seat: 'Kingfisher', metro: 'kingfisher-metro-ok' },
+  atoka: { seat: 'Atoka', metro: 'atoka-metro-ok' },
+  craig: { seat: 'Vinita', metro: 'vinita-metro-ok' },
+  choctaw: { seat: 'Hugo', metro: 'hugo-metro-ok' },
+  murray: { seat: 'Sulphur', metro: 'sulphur-metro-ok' },
+  hughes: { seat: 'Holdenville', metro: 'holdenville-metro-ok' },
+  haskell: { seat: 'Stigler', metro: 'stigler-metro-ok' },
+  okfuskee: { seat: 'Okemah', metro: 'okemah-metro-ok' },
+  love: { seat: 'Marietta', metro: 'marietta-metro-ok' },
+  washita: { seat: 'Cordell', metro: 'cordell-metro-ok' },
+  noble: { seat: 'Perry', metro: 'perry-metro-ok' },
+  pushmataha: { seat: 'Antlers', metro: 'antlers-metro-ok' },
+  johnston: { seat: 'Tishomingo', metro: 'tishomingo-metro-ok' },
+  latimer: { seat: 'Wilburton', metro: 'wilburton-metro-ok' },
+  nowata: { seat: 'Nowata', metro: 'nowata-metro-ok' },
 };
 
 export function applyOklahomaCountyOverrides(county: LocalCounty): LocalCounty {

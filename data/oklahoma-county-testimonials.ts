@@ -517,6 +517,81 @@ export const oklahomaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       { quote: 'Two Men and a Truck Stillwater confirmed Pawnee County coverage and delivered excellent north Oklahoma service — on time and extremely careful.', name: 'Ursula F.', location: 'Pawnee, OK', rating: 5, moveType: 'Townhome' },
       { quote: 'Oklahoma Capital Movers served our Pawnee move efficiently — fast, professional, and reliable with careful handling.', name: 'Vince L.', location: 'Pawnee, OK', rating: 5, moveType: 'Single-family' },
     ],
+    kingfisher: [
+      { quote: 'Regional Kingfisher providers handled our relocation professionally — efficient service and careful handling throughout Kingfisher County.', name: 'Wade B.', location: 'Kingfisher, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Oklahoma City confirmed Kingfisher County coverage and delivered excellent central Oklahoma service — on time and extremely careful.', name: 'Xena P.', location: 'Kingfisher, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Capital Movers served our Kingfisher move efficiently — fast, professional, and reliable with careful handling.', name: 'York D.', location: 'Kingfisher, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    atoka: [
+      { quote: 'Regional Atoka providers handled our relocation professionally — efficient service and careful handling throughout Atoka County.', name: 'Zara K.', location: 'Atoka, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional McAlester providers confirmed Atoka County coverage and delivered excellent southeast Oklahoma service — on time and extremely careful.', name: 'Aaron T.', location: 'Atoka, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Oklahoma City served our Atoka move efficiently — fast, professional, and reliable with careful handling.', name: 'Beth R.', location: 'Atoka, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    craig: [
+      { quote: 'Regional Vinita / Craig providers handled our relocation professionally — efficient service and careful handling throughout Craig County.', name: 'Carl M.', location: 'Vinita, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Craig County coverage and delivered excellent northeast Oklahoma service — on time and extremely careful.', name: 'Dana S.', location: 'Vinita, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'All My Sons Tulsa served our Vinita move efficiently — fast, professional, and reliable with careful handling.', name: 'Earl W.', location: 'Vinita, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    choctaw: [
+      { quote: 'Regional Hugo / Choctaw providers handled our relocation professionally — efficient service and careful handling throughout Choctaw County.', name: 'Faye L.', location: 'Hugo, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Durant providers confirmed Choctaw County coverage and delivered excellent southeast Oklahoma service — on time and extremely careful.', name: 'Glen H.', location: 'Hugo, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Tulsa served our Hugo move efficiently — fast, professional, and reliable with careful handling.', name: 'Hope N.', location: 'Hugo, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    murray: [
+      { quote: 'Regional Sulphur / Murray providers handled our lakeside relocation professionally — efficient service and careful handling throughout Murray County.', name: 'Ivan C.', location: 'Sulphur, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Ardmore providers confirmed Murray County coverage and delivered excellent south Oklahoma service — on time and extremely careful.', name: 'Jill F.', location: 'Sulphur, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Lawton served our Sulphur move efficiently — fast, professional, and reliable with careful handling.', name: 'Kyle A.', location: 'Sulphur, OK', rating: 5, moveType: 'Cabin' },
+    ],
+    hughes: [
+      { quote: 'Regional Holdenville / Hughes providers handled our relocation professionally — efficient service and careful handling throughout Hughes County.', name: 'Lynn G.', location: 'Holdenville, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Shawnee confirmed Hughes County coverage and delivered excellent central Oklahoma service — on time and extremely careful.', name: 'Mark J.', location: 'Holdenville, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Capital Movers served our Holdenville move efficiently — fast, professional, and reliable with careful handling.', name: 'Nora V.', location: 'Holdenville, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    haskell: [
+      { quote: 'Regional Stigler / Haskell providers handled our relocation professionally — efficient service and careful handling throughout Haskell County.', name: 'Owen B.', location: 'Stigler, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Haskell County coverage and delivered excellent east Oklahoma service — on time and extremely careful.', name: 'Pam E.', location: 'Stigler, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Muskogee providers served our Stigler move efficiently — fast, professional, and reliable with careful handling.', name: 'Quinn R.', location: 'Stigler, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    okfuskee: [
+      { quote: 'Regional Okemah / Okfuskee providers handled our relocation professionally — efficient service and careful handling throughout Okfuskee County.', name: 'Rita S.', location: 'Okemah, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Shawnee confirmed Okfuskee County coverage and delivered excellent central Oklahoma service — on time and extremely careful.', name: 'Seth M.', location: 'Okemah, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Oklahoma Capital Movers served our Okemah move efficiently — fast, professional, and reliable with careful handling.', name: 'Tara K.', location: 'Okemah, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    love: [
+      { quote: 'Regional Marietta / Love providers handled our relocation professionally — efficient service and careful handling throughout Love County.', name: 'Uma D.', location: 'Marietta, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Ardmore providers confirmed Love County coverage and delivered excellent south Oklahoma service — on time and extremely careful.', name: 'Vic L.', location: 'Marietta, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Lawton served our Marietta move efficiently — fast, professional, and reliable with careful handling.', name: 'Wendy P.', location: 'Marietta, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    washita: [
+      { quote: 'Regional Cordell / Washita providers handled our relocation professionally — efficient service and careful handling throughout Washita County.', name: 'Xander H.', location: 'Cordell, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Lawton confirmed Washita County coverage and delivered excellent western Oklahoma service — on time and extremely careful.', name: 'Yolanda C.', location: 'Cordell, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Regional Anadarko providers served our Cordell move efficiently — fast, professional, and reliable with careful handling.', name: 'Zane F.', location: 'Cordell, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    noble: [
+      { quote: 'Regional Perry / Noble providers handled our relocation professionally — efficient service and careful handling throughout Noble County.', name: 'Amy W.', location: 'Perry, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Enid providers confirmed Noble County coverage and delivered excellent north Oklahoma service — professional crew with transparent pricing.', name: 'Ben O.', location: 'Perry, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Stillwater served our Perry move efficiently — fast, professional, and reliable with careful handling.', name: 'Cara N.', location: 'Perry, OK', rating: 5, moveType: 'Single-family' },
+    ],
+    pushmataha: [
+      { quote: 'Regional Antlers / Pushmataha providers handled our relocation professionally — efficient service and careful handling throughout Pushmataha County.', name: 'Drew T.', location: 'Antlers, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Idabel providers confirmed Pushmataha County coverage and delivered excellent southeast Oklahoma service — on time and extremely careful.', name: 'Ella G.', location: 'Antlers, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Tulsa served our Antlers move efficiently — fast, professional, and reliable with careful handling.', name: 'Finn R.', location: 'Antlers, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    johnston: [
+      { quote: 'Regional Tishomingo / Johnston providers handled our relocation professionally — efficient service and careful handling throughout Johnston County.', name: 'Gina M.', location: 'Tishomingo, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional Durant providers confirmed Johnston County coverage and delivered excellent south Oklahoma service — on time and extremely careful.', name: 'Hank S.', location: 'Tishomingo, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Lawton served our Tishomingo move efficiently — fast, professional, and reliable with careful handling.', name: 'Iris K.', location: 'Tishomingo, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    latimer: [
+      { quote: 'Regional Wilburton / Latimer providers handled our relocation professionally — efficient service and careful handling throughout Latimer County.', name: 'Jake V.', location: 'Wilburton, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Regional McAlester providers confirmed Latimer County coverage and delivered excellent southeast Oklahoma service — on time and extremely careful.', name: 'Kara B.', location: 'Wilburton, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'Two Men and a Truck Tulsa served our Wilburton move efficiently — fast, professional, and reliable with careful handling.', name: 'Leo D.', location: 'Wilburton, OK', rating: 5, moveType: 'Apartment' },
+    ],
+    nowata: [
+      { quote: 'Regional Nowata providers handled our relocation professionally — efficient service and careful handling throughout Nowata County.', name: 'Mia H.', location: 'Nowata, OK', rating: 5, moveType: 'Single-family' },
+      { quote: 'Two Men and a Truck Tulsa confirmed Nowata County coverage and delivered excellent northeast Oklahoma service — on time and extremely careful.', name: 'Noah J.', location: 'Nowata, OK', rating: 5, moveType: 'Townhome' },
+      { quote: 'All My Sons Tulsa served our Nowata move efficiently — fast, professional, and reliable with careful handling.', name: 'Opal L.', location: 'Nowata, OK', rating: 5, moveType: 'Single-family' },
+    ],
   };
 
 export function getOklahomaCountyTestimonials(
