@@ -87,6 +87,22 @@ const IN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   orange: ['washington', 'lawrence', 'monroe', 'dubois', 'harrison', 'jackson'],
   perry: ['spencer', 'dubois', 'harrison', 'crawford', 'warrick', 'orange'],
   fountain: ['montgomery', 'tippecanoe', 'warren', 'vermillion', 'parke', 'benton'],
+  parke: ['putnam', 'clay', 'vigo', 'vermillion', 'fountain', 'montgomery'],
+  rush: ['shelby', 'hancock', 'henry', 'decatur', 'fayette', 'franklin'],
+  brown: ['monroe', 'jackson', 'lawrence', 'morgan', 'johnson', 'bartholomew'],
+  vermillion: ['parke', 'fountain', 'warren', 'vigo', 'sullivan', 'clay'],
+  tipton: ['hamilton', 'madison', 'howard', 'grant', 'boone', 'clinton'],
+  newton: ['jasper', 'lake', 'porter', 'laporte', 'benton', 'starke'],
+  pulaski: ['starke', 'marshall', 'fulton', 'cass', 'white', 'jasper'],
+  pike: ['dubois', 'knox', 'daviess', 'gibson', 'martin', 'warrick'],
+  blackford: ['delaware', 'grant', 'jay', 'wells', 'randolph', 'henry'],
+  crawford: ['harrison', 'orange', 'washington', 'perry', 'spencer', 'dubois'],
+  switzerland: ['ohio', 'dearborn', 'jefferson', 'ripley', 'franklin', 'floyd'],
+  martin: ['dubois', 'orange', 'lawrence', 'daviess', 'greene', 'pike'],
+  benton: ['tippecanoe', 'white', 'jasper', 'newton', 'carroll', 'fountain'],
+  warren: ['fountain', 'tippecanoe', 'vermillion', 'parke', 'montgomery', 'benton'],
+  union: ['henry', 'wayne', 'randolph', 'fayette', 'franklin', 'rush'],
+  ohio: ['dearborn', 'switzerland', 'ripley', 'jefferson', 'floyd', 'clark'],
 };
 
 export function getIndianaNearbyCounties(

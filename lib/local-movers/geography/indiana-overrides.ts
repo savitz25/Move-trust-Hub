@@ -80,6 +80,22 @@ export const indianaCountyOverrides: Partial<
   orange: { seat: 'Paoli', metro: 'paoli-metro-in' },
   perry: { seat: 'Tell City', metro: 'tell-city-metro-in' },
   fountain: { seat: 'Covington', metro: 'covington-metro-in' },
+  parke: { seat: 'Rockville', metro: 'rockville-metro-in' },
+  rush: { seat: 'Rushville', metro: 'rushville-metro-in' },
+  brown: { seat: 'Nashville', metro: 'nashville-metro-in' },
+  vermillion: { seat: 'Newport', metro: 'newport-metro-in' },
+  tipton: { seat: 'Tipton', metro: 'tipton-metro-in' },
+  newton: { seat: 'Kentland', metro: 'kentland-metro-in' },
+  pulaski: { seat: 'Winamac', metro: 'winamac-metro-in' },
+  pike: { seat: 'Petersburg', metro: 'petersburg-metro-in' },
+  blackford: { seat: 'Hartford City', metro: 'hartford-city-metro-in' },
+  crawford: { seat: 'English', metro: 'english-metro-in' },
+  switzerland: { seat: 'Vevay', metro: 'vevay-metro-in' },
+  martin: { seat: 'Shoals', metro: 'shoals-metro-in' },
+  benton: { seat: 'Fowler', metro: 'fowler-metro-in' },
+  warren: { seat: 'Williamsport', metro: 'williamsport-metro-in' },
+  union: { seat: 'Liberty', metro: 'liberty-metro-in' },
+  ohio: { seat: 'Rising Sun', metro: 'rising-sun-metro-in' },
 };
 
 export function applyIndianaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -216,6 +216,22 @@ const IN_HIGH_TRAFFIC_COUNTIES = new Set([
   'orange',
   'perry',
   'fountain',
+  'parke',
+  'rush',
+  'brown',
+  'vermillion',
+  'tipton',
+  'newton',
+  'pulaski',
+  'pike',
+  'blackford',
+  'crawford',
+  'switzerland',
+  'martin',
+  'benton',
+  'warren',
+  'union',
+  'ohio',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([
