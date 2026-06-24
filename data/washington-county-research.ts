@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Washington county research — 19 premium hubs */
+/** Hand-curated Washington county research — 39/39 complete */
 export const washingtonCountyResearch: Record<string, CuratedCountyResearch> = {
   king: {
     marketNotes:
@@ -334,6 +334,346 @@ export const washingtonCountyResearch: Record<string, CuratedCountyResearch> = {
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mason: {
+    marketNotes:
+      'Mason County is a rural waterfront county on Hood Canal with residential demand centered in Shelton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Mason County pricing reflects Hood Canal and rural waterfront demand, US-101 corridor traffic, and competition among regional full-service agents serving Shelton and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Shelton and Hood Canal communities before booking.',
+      'Rural roads and waterfront access impact scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value waterfront and rural homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'walla-walla': {
+    marketNotes:
+      'Walla Walla County is a southeastern Washington agricultural county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Walla Walla County pricing reflects southeastern Washington agricultural demand, harvest-season traffic patterns, and competition among regional full-service agents serving Walla Walla and valley communities.',
+    },
+    tips: [
+      'Verify coverage for Walla Walla and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stevens: {
+    marketNotes:
+      'Stevens County is a northeastern Washington rural county with residential demand centered in Colville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Stevens County pricing reflects northeastern Washington rural demand, mountain-road logistics, and competition among regional full-service agents serving Colville and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Colville and surrounding areas before booking.',
+      'Rural and mountain-road traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and winter-weather changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kittitas: {
+    marketNotes:
+      'Kittitas County is an educational county centered in Ellensburg with residential and university demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Kittitas County pricing reflects Ellensburg university and I-90 corridor demand, student housing turnover, and competition among regional full-service agents serving Kittitas Valley communities.',
+    },
+    tips: [
+      'Verify coverage for Ellensburg and surrounding cities before booking.',
+      'I-90 corridor traffic impacts scheduling — confirm crew arrival windows.',
+      'University term changeover creates seasonal demand spikes — book early around semester start and end.',
+      'Confirm insurance for high-value homes.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  whitman: {
+    marketNotes:
+      'Whitman County is a university county centered in Pullman with WSU-driven residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Whitman County pricing reflects WSU/Pullman university demand, Palouse-region traffic patterns, and competition among regional full-service agents serving Pullman and Colfax-area communities.',
+    },
+    tips: [
+      'Verify coverage for Pullman and Colfax before booking.',
+      'University term changeover creates seasonal demand spikes — book early around semester start and end.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  douglas: {
+    marketNotes:
+      'Douglas County is a central Washington county with agricultural and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Douglas County pricing reflects central Washington regional demand, agricultural-season traffic patterns, and competition among regional full-service agents serving Waterville and highland communities.',
+    },
+    tips: [
+      'Verify coverage for Waterville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  okanogan: {
+    marketNotes:
+      'Okanogan County is a north central Washington rural county with residential and agricultural demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Okanogan County pricing reflects north central Washington rural demand, US-97 corridor traffic, and competition among regional full-service agents serving Okanogan and Omak-area communities.',
+    },
+    tips: [
+      'Verify coverage for Okanogan and Omak before booking.',
+      'Rural and mountain-road traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is an Olympic Peninsula county with tourism, ferry, and residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects Olympic Peninsula tourism and ferry-dependent logistics, waterfront demand, and competition among regional full-service agents serving Port Townsend and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Port Townsend and surrounding areas before booking.',
+      'Ferry and regional traffic significantly impacts scheduling — confirm crew arrival windows and peninsula access.',
+      'Confirm insurance for high-value waterfront and historic homes.',
+      'Book early for peak tourist seasons (June–August) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  klickitat: {
+    marketNotes:
+      'Klickitat County is a Columbia River county with residential and Gorge-area demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Klickitat County pricing reflects Columbia River and Gorge-area demand, US-97 corridor traffic, and competition among regional full-service agents serving Goldendale and river communities.',
+    },
+    tips: [
+      'Verify coverage for Goldendale and surrounding areas before booking.',
+      'Gorge and regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and river-view homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pacific: {
+    marketNotes:
+      'Pacific County is a coastal tourism county with residential demand along the Washington coast.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Pacific County pricing reflects coastal tourism demand, US-101 corridor traffic, and competition among regional full-service agents serving South Bend and Long Beach-area communities.',
+    },
+    tips: [
+      'Verify coverage for South Bend and coastal communities before booking.',
+      'Coastal and regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value coastal homes.',
+      'Book early for peak tourist seasons (June–August) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  asotin: {
+    marketNotes:
+      'Asotin County is a southeastern Washington county at the Idaho border with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Asotin County pricing reflects southeastern corner regional demand, Clarkston-Lewiston metro spillover, and competition among regional full-service agents serving Asotin and river communities.',
+    },
+    tips: [
+      'Verify coverage for Asotin and Clarkston-area communities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  adams: {
+    marketNotes:
+      'Adams County is an agricultural county in eastern Washington with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Adams County pricing reflects eastern Washington agricultural demand, harvest-season traffic patterns, and competition among regional full-service agents serving Ritzville and plateau communities.',
+    },
+    tips: [
+      'Verify coverage for Ritzville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'san-juan': {
+    marketNotes:
+      'San Juan County is an island county with ferry-dependent residential and tourism demand.',
+    costs: {
+      studioRange: '$950–$2,000',
+      familyRange: '$4,000–$9,500+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'San Juan County pricing reflects island and ferry-dependent logistics, waterfront demand, and competition among regional full-service agents serving Friday Harbor and San Juan Islands communities.',
+    },
+    tips: [
+      'Verify coverage for Friday Harbor and island communities before booking.',
+      'Ferry schedules significantly impact scheduling — confirm crew arrival windows and inter-island logistics.',
+      'Confirm insurance for high-value waterfront and island homes.',
+      'Book early for peak tourist seasons (June–August) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'pend-oreille': {
+    marketNotes:
+      'Pend Oreille County is a northeastern Washington rural county with residential demand centered in Newport.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Pend Oreille County pricing reflects northeastern Washington rural and lake-area demand, US-2 corridor traffic, and competition among regional full-service agents serving Newport and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Newport and surrounding areas before booking.',
+      'Rural and lake-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and lakefront homes.',
+      'Book early for peak seasons (May–September) and winter-weather changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  skamania: {
+    marketNotes:
+      'Skamania County is a Columbia Gorge county with residential and outdoor-tourism demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Skamania County pricing reflects Columbia Gorge demand, US-14 and I-84 corridor traffic, and competition among regional full-service agents serving Stevenson and Gorge communities.',
+    },
+    tips: [
+      'Verify coverage for Stevenson and surrounding areas before booking.',
+      'Gorge and bridge-crossing traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and river-view homes.',
+      'Book early for peak tourist seasons (June–August) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County is an eastern Washington rural county with residential demand centered in Davenport.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects eastern Washington rural demand, agricultural-season traffic patterns, and competition among regional full-service agents serving Davenport and plateau communities.',
+    },
+    tips: [
+      'Verify coverage for Davenport and surrounding areas before booking.',
+      'Rural-road traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ferry: {
+    marketNotes:
+      'Ferry County is a remote northeastern Washington county with residential demand centered in Republic.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Ferry County pricing reflects remote northeastern Washington demand, mountain-road logistics, and competition among regional full-service agents serving Republic and highland communities.',
+    },
+    tips: [
+      'Verify coverage for Republic and surrounding areas before booking.',
+      'Remote mountain-road access impacts scheduling — confirm crew arrival windows and route feasibility.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and winter-weather changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wahkiakum: {
+    marketNotes:
+      'Wahkiakum County is one of Washington’s smallest counties with residential demand along the lower Columbia River.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Wahkiakum County pricing reflects lower Columbia River regional demand, rural-road logistics, and competition among regional full-service agents serving Cathlamet and river communities.',
+    },
+    tips: [
+      'Verify coverage for Cathlamet and surrounding areas before booking.',
+      'Rural and river-road traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and waterfront homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  columbia: {
+    marketNotes:
+      'Columbia County is a southeastern Washington rural county (not Oregon’s Columbia County) with residential demand centered in Dayton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Columbia County pricing reflects southeastern plateau regional demand, agricultural-season traffic patterns, and competition among regional full-service agents serving Dayton and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Dayton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  garfield: {
+    marketNotes:
+      'Garfield County is one of Washington’s smallest counties with residential demand centered in Pomeroy.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Garfield County pricing reflects southeastern Washington rural demand, Palouse-region traffic patterns, and competition among regional full-service agents serving Pomeroy and valley communities.',
+    },
+    tips: [
+      'Verify coverage for Pomeroy and surrounding areas before booking.',
+      'Rural-road traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
