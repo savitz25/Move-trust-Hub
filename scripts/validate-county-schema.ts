@@ -1053,6 +1053,17 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'washington', countySlug: 'thurston', expectedCity: 'Olympia' },
   { stateSlug: 'washington', countySlug: 'kitsap', expectedCity: 'Port Orchard' },
   { stateSlug: 'washington', countySlug: 'yakima', expectedCity: 'Yakima' },
+  { stateSlug: 'washington', countySlug: 'whatcom', expectedCity: 'Bellingham' },
+  { stateSlug: 'washington', countySlug: 'benton', expectedCity: 'Kennewick' },
+  { stateSlug: 'washington', countySlug: 'skagit', expectedCity: 'Mount Vernon' },
+  { stateSlug: 'washington', countySlug: 'cowlitz', expectedCity: 'Kelso' },
+  { stateSlug: 'washington', countySlug: 'grant', expectedCity: 'Ephrata' },
+  { stateSlug: 'washington', countySlug: 'franklin', expectedCity: 'Pasco' },
+  { stateSlug: 'washington', countySlug: 'lewis', expectedCity: 'Chehalis' },
+  { stateSlug: 'washington', countySlug: 'island', expectedCity: 'Coupeville' },
+  { stateSlug: 'washington', countySlug: 'chelan', expectedCity: 'Wenatchee' },
+  { stateSlug: 'washington', countySlug: 'clallam', expectedCity: 'Port Angeles' },
+  { stateSlug: 'washington', countySlug: 'grays-harbor', expectedCity: 'Montesano' },
 ];
 
 let totalIssues = 0;

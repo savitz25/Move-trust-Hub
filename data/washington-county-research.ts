@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Washington county research — 8 premium hubs */
+/** Hand-curated Washington county research — 19 premium hubs */
 export const washingtonCountyResearch: Record<string, CuratedCountyResearch> = {
   king: {
     marketNotes:
@@ -146,6 +146,194 @@ export const washingtonCountyResearch: Record<string, CuratedCountyResearch> = {
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes.',
       'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  whatcom: {
+    marketNotes:
+      'Whatcom County is a northern Washington county with strong residential, educational, and border-related demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Whatcom County pricing reflects Bellingham metro and northern border demand, I-5 corridor traffic, and competition among regional full-service agents serving Bellingham and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Bellingham and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and university term changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  benton: {
+    marketNotes:
+      'Benton County is part of the Tri-Cities area with strong residential and industrial demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Benton County pricing reflects Tri-Cities regional demand, Hanford-area industrial relocations, and competition among regional full-service agents serving Kennewick and Richland communities.',
+    },
+    tips: [
+      'Verify coverage for Kennewick, Richland, and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  skagit: {
+    marketNotes:
+      'Skagit County is a northwestern Washington county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Skagit County pricing reflects North Sound agricultural and suburban demand, I-5 corridor traffic, and competition among regional full-service agents serving Mount Vernon and valley communities.',
+    },
+    tips: [
+      'Verify coverage for Mount Vernon and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cowlitz: {
+    marketNotes:
+      'Cowlitz County is a southwestern Washington county with residential and industrial demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Cowlitz County pricing reflects Longview-Kelso regional demand, I-5 corridor traffic, and competition among regional full-service agents serving southwestern Washington communities.',
+    },
+    tips: [
+      'Verify coverage for Longview and Kelso before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County is a central Washington county with strong agricultural and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Moses Lake and Columbia Basin regional demand, agricultural-season traffic patterns, and competition among regional full-service agents serving central Washington communities.',
+    },
+    tips: [
+      'Verify coverage for Moses Lake and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is part of the Tri-Cities area with strong residential and industrial demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Tri-Cities regional demand, agricultural and industrial relocations, and competition among regional full-service agents serving Pasco and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Pasco and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lewis: {
+    marketNotes:
+      'Lewis County is a southwestern Washington county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Lewis County pricing reflects Chehalis-Centralia regional demand, I-5 South Sound corridor traffic, and competition among regional full-service agents serving southwestern Washington communities.',
+    },
+    tips: [
+      'Verify coverage for Chehalis and Centralia before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  island: {
+    marketNotes:
+      'Island County includes Whidbey Island with strong residential and military demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$175/hr for a 2-person crew',
+      note: 'Island County pricing reflects Whidbey Island and naval-base demand, ferry-dependent logistics, and competition among regional full-service agents serving Oak Harbor and Coupeville-area communities.',
+    },
+    tips: [
+      'Verify coverage for Oak Harbor, Coupeville, and Whidbey Island before booking.',
+      'Ferry traffic significantly impacts scheduling — confirm crew arrival windows and island access.',
+      'Naval base and military moves near NAS Whidbey require coordination — confirm credentials.',
+      'Confirm insurance for high-value island homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  chelan: {
+    marketNotes:
+      'Chelan County is a central Washington county with strong residential, agricultural, and tourism demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Chelan County pricing reflects Wenatchee and Lake Chelan regional demand, tourism-season traffic, and competition among regional full-service agents serving central Washington communities.',
+    },
+    tips: [
+      'Verify coverage for Wenatchee and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak tourist seasons (June–August) and harvest-season changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clallam: {
+    marketNotes:
+      'Clallam County is an Olympic Peninsula county with strong residential and tourism demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Clallam County pricing reflects Olympic Peninsula and coastal demand, ferry and regional traffic, and competition among regional full-service agents serving Port Angeles and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for Port Angeles and surrounding areas before booking.',
+      'Ferry and regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak tourist seasons (June–August) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'grays-harbor': {
+    marketNotes:
+      'Grays Harbor County is a coastal county with residential and industrial demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$160/hr for a 2-person crew',
+      note: 'Grays Harbor County pricing reflects coastal southwestern Washington demand, industrial and port-related relocations, and competition among regional full-service agents serving Aberdeen and Montesano-area communities.',
+    },
+    tips: [
+      'Verify coverage for Aberdeen and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },

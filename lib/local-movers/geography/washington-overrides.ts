@@ -12,6 +12,17 @@ export const washingtonCountyOverrides: Partial<
   thurston: { seat: 'Olympia', metro: 'thurston-metro-wa' },
   kitsap: { seat: 'Port Orchard', metro: 'kitsap-metro-wa' },
   yakima: { seat: 'Yakima', metro: 'yakima-metro-wa' },
+  whatcom: { seat: 'Bellingham', metro: 'whatcom-metro-wa' },
+  benton: { seat: 'Kennewick', metro: 'benton-metro-wa' },
+  skagit: { seat: 'Mount Vernon', metro: 'skagit-metro-wa' },
+  cowlitz: { seat: 'Kelso', metro: 'cowlitz-metro-wa' },
+  grant: { seat: 'Ephrata', metro: 'grant-metro-wa' },
+  franklin: { seat: 'Pasco', metro: 'franklin-metro-wa' },
+  lewis: { seat: 'Chehalis', metro: 'lewis-metro-wa' },
+  island: { seat: 'Coupeville', metro: 'island-metro-wa' },
+  chelan: { seat: 'Wenatchee', metro: 'chelan-metro-wa' },
+  clallam: { seat: 'Port Angeles', metro: 'clallam-metro-wa' },
+  'grays-harbor': { seat: 'Montesano', metro: 'grays-harbor-metro-wa' },
 };
 
 export function applyWashingtonCountyOverrides(county: LocalCounty): LocalCounty {

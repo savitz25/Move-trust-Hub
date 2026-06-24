@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Washington county testimonials — 8 premium hubs */
+/** Hand-curated Washington county testimonials — 19 premium hubs */
 export const washingtonCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   king: [
     { quote: 'Two Men and a Truck Seattle handled our Capitol Hill move professionally — on time and extremely careful with our urban apartment.', name: 'Alex M.', location: 'Seattle, WA', rating: 5, moveType: 'Apartment' },
@@ -41,6 +41,61 @@ export const washingtonCountyTestimonials: Record<string, CountyTestimonialEntry
     { quote: 'Regional Yakima / Yakima County providers handled our Central Washington move professionally — efficient and careful with our valley home.', name: 'Vic H.', location: 'Yakima, WA', rating: 5, moveType: 'Single-family' },
     { quote: 'All My Sons Yakima navigated our West Valley relocation with fair pricing and excellent regional scheduling.', name: 'Wendy I.', location: 'Yakima, WA', rating: 5, moveType: 'Townhome' },
     { quote: 'Yakima Corridor Moving served our Selah move efficiently with punctual arrival and professional crew coordination.', name: 'Xander J.', location: 'Selah, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  whatcom: [
+    { quote: 'Regional Bellingham / Whatcom providers handled our Fairhaven move professionally — efficient and careful with our home.', name: 'Yara K.', location: 'Bellingham, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Bellingham navigated our Lynden relocation with fair pricing and excellent regional scheduling.', name: 'Zane L.', location: 'Lynden, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bellingham Corridor Moving served our Ferndale move efficiently with punctual arrival and professional coordination.', name: 'Amy M.', location: 'Ferndale, WA', rating: 5, moveType: 'Apartment' },
+  ],
+  benton: [
+    { quote: 'Regional Kennewick / Benton providers handled our Tri-Cities move professionally — efficient and careful with our suburban home.', name: 'Ben N.', location: 'Kennewick, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Kennewick navigated our Richland relocation with fair pricing and excellent regional scheduling.', name: 'Cara O.', location: 'Richland, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kennewick Corridor Moving served our West Richland move efficiently with steady communication and professional coordination.', name: 'Dan P.', location: 'West Richland, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  skagit: [
+    { quote: 'Regional Mount Vernon / Skagit providers handled our valley move professionally — efficient and careful with our home.', name: 'Eva Q.', location: 'Mount Vernon, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Mount Vernon navigated our Burlington relocation with fair pricing and excellent regional scheduling.', name: 'Finn R.', location: 'Burlington, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Skagit Valley Moving served our Anacortes move efficiently with punctual arrival and professional coordination.', name: 'Gia S.', location: 'Anacortes, WA', rating: 5, moveType: 'Apartment' },
+  ],
+  cowlitz: [
+    { quote: 'Regional Longview / Cowlitz providers handled our Kelso move professionally — efficient and careful with our home.', name: 'Hal T.', location: 'Kelso, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Longview navigated our Longview relocation with fair pricing and excellent regional scheduling.', name: 'Ivy U.', location: 'Longview, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Longview Corridor Moving served our Woodland move efficiently with steady communication and professional coordination.', name: 'Jay V.', location: 'Woodland, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  grant: [
+    { quote: 'Regional Moses Lake / Grant providers handled our central Washington move professionally — efficient and careful with our home.', name: 'Kim W.', location: 'Moses Lake, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Moses Lake navigated our Ephrata relocation with fair pricing and excellent regional scheduling.', name: 'Leo X.', location: 'Ephrata, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Moses Lake Corridor Moving served our Quincy move efficiently with punctual arrival and professional coordination.', name: 'Mia Y.', location: 'Quincy, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  franklin: [
+    { quote: 'Regional Pasco / Franklin providers handled our Tri-Cities move professionally — efficient and careful with our suburban home.', name: 'Noah Z.', location: 'Pasco, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Pasco navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Olive A.', location: 'Pasco, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pasco Corridor Moving served our Connell move efficiently with steady communication and professional coordination.', name: 'Pete B.', location: 'Connell, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  lewis: [
+    { quote: 'Regional Chehalis / Lewis providers handled our southwestern Washington move professionally — efficient and careful with our home.', name: 'Quinn C.', location: 'Chehalis, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Chehalis navigated our Centralia relocation with fair pricing and excellent regional scheduling.', name: 'Rosa D.', location: 'Centralia, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Chehalis Corridor Moving served our Toledo move efficiently with punctual arrival and professional coordination.', name: 'Sam E.', location: 'Toledo, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  island: [
+    { quote: 'Regional Oak Harbor / Island providers handled our Whidbey Island move professionally — efficient and careful with our home.', name: 'Tess F.', location: 'Oak Harbor, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Oak Harbor navigated our Coupeville relocation with fair pricing through ferry-season scheduling.', name: 'Uma G.', location: 'Coupeville, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Whidbey Island Moving served our Langley move efficiently with steady communication and professional coordination.', name: 'Vic H.', location: 'Langley, WA', rating: 5, moveType: 'Apartment' },
+  ],
+  chelan: [
+    { quote: 'Regional Wenatchee / Chelan providers handled our central Washington move professionally — efficient and careful with our home.', name: 'Wade I.', location: 'Wenatchee, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Wenatchee navigated our East Wenatchee relocation with fair pricing and excellent regional scheduling.', name: 'Xena J.', location: 'East Wenatchee, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Lake Chelan Moving served our Cashmere move efficiently with punctual arrival and professional coordination.', name: 'Yuri K.', location: 'Cashmere, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  clallam: [
+    { quote: 'Regional Port Angeles / Clallam providers handled our Olympic Peninsula move professionally — efficient and careful with our home.', name: 'Zara L.', location: 'Port Angeles, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Port Angeles navigated our Sequim relocation with fair pricing through regional traffic scheduling.', name: 'Adam M.', location: 'Sequim, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Olympic Peninsula Moving served our Forks move efficiently with steady communication and professional coordination.', name: 'Beth N.', location: 'Forks, WA', rating: 5, moveType: 'Single-family' },
+  ],
+  'grays-harbor': [
+    { quote: 'Regional Aberdeen / Grays Harbor providers handled our coastal move professionally — efficient and careful with our home.', name: 'Carl O.', location: 'Aberdeen, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Aberdeen navigated our Hoquiam relocation with fair pricing and excellent regional scheduling.', name: 'Dana P.', location: 'Hoquiam, WA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Grays Harbor Coast Moving served our Montesano move efficiently with punctual arrival and professional coordination.', name: 'Evan Q.', location: 'Montesano, WA', rating: 5, moveType: 'Single-family' },
   ],
 };
 

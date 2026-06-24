@@ -43,8 +43,8 @@ console.log('==============');
 console.log(`Curated counties: ${curatedSlugs.length}`);
 const researchCount = Object.keys(washingtonCountyResearch).length;
 console.log(`Research entries: ${researchCount}`);
-if (researchCount !== 8) {
-  issues.push(`research count: ${researchCount} (expected 8)`);
+if (researchCount !== 19) {
+  issues.push(`research count: ${researchCount} (expected 19)`);
 }
 
 for (const slug of curatedSlugs) {
@@ -57,7 +57,7 @@ for (const slug of curatedSlugs) {
 console.log(`Issues: ${issues.length}`);
 
 if (issues.length === 0) {
-  console.log('\n✓ Washington curated counties meet full curation standard (8/8).');
+  console.log('\n✓ Washington curated counties meet full curation standard (19/19).');
 } else {
   console.log('\nIssues:');
   for (const line of issues) console.log(`  ${line}`);
