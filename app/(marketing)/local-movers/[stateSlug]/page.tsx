@@ -116,6 +116,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'washington' ||
                 state.slug === 'oregon' ||
                 state.slug === 'nevada' ||
+                state.slug === 'arizona' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -147,7 +148,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                             ? 'Browse all 36 Oregon county guides — up to 12 curated movers in Portland metro (Multnomah, Washington, Clackamas), 9–10 in Lane and Marion, and 6–10 regional specialists in every county. Portland metro covers tech, corporate, and high-density moves; Willamette Valley, Central Oregon (Bend), coast, and eastern Oregon each have localized guides. FMCSA licensing, cost estimates, and Oregon-specific moving tips.'
                                             : state.slug === 'nevada'
                                               ? 'Browse all 17 Nevada county guides — up to 12 curated movers in Clark County (Las Vegas metro), 9–10 in Washoe (Reno–Sparks), and 6–10 regional specialists in every county. Las Vegas covers tourism, corporate, military, and high-density moves; Reno covers tech, manufacturing, and logistics; rural Nevada covers mining and remote regional hauls. FMCSA licensing, cost estimates, and Nevada-specific moving tips.'
-                                              : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                              : state.slug === 'arizona'
+                                                ? 'Browse all 15 Arizona county guides — 10 curated movers in every county from Maricopa (Phoenix metro) and Pima (Tucson) through Flagstaff, Prescott, Yuma, and rural regional markets statewide. Phoenix metro covers urban traffic, suburban high-value homes, and desert heat scheduling; Tucson and southern Arizona cover border and military corridors; northern Arizona covers tourism and high-country moves. FMCSA licensing, cost estimates, and Arizona-specific moving tips.'
+                                                : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>
