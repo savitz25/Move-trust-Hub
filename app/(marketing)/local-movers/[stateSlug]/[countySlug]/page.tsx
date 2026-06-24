@@ -33,6 +33,7 @@ import {
   CONNECTICUT_COUNTY_CONTENT_UPDATED,
   MASSACHUSETTS_COUNTY_CONTENT_UPDATED,
   RHODE_ISLAND_COUNTY_CONTENT_UPDATED,
+  VERMONT_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -55,6 +56,7 @@ import { getPennsylvaniaCountyResearch } from '@/data/pennsylvania-county-resear
 import { getConnecticutCountyResearch } from '@/data/connecticut-county-research';
 import { getMassachusettsCountyResearch } from '@/data/massachusetts-county-research';
 import { getRhodeIslandCountyResearch } from '@/data/rhode-island-county-research';
+import { getVermontCountyResearch } from '@/data/vermont-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -89,6 +91,7 @@ import { getPennsylvaniaNearbyCounties } from '@/lib/local-movers/pennsylvania-n
 import { getConnecticutNearbyCounties } from '@/lib/local-movers/connecticut-nearby';
 import { getMassachusettsNearbyCounties } from '@/lib/local-movers/massachusetts-nearby';
 import { getRhodeIslandNearbyCounties } from '@/lib/local-movers/rhode-island-nearby';
+import { getVermontNearbyCounties } from '@/lib/local-movers/vermont-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -245,7 +248,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                               : stateSlug === 'rhode-island' &&
                                                                   getRhodeIslandCountyResearch(countySlug)
                                                                 ? getRhodeIslandNearbyCounties(countySlug)
-                                                                : [];
+                                                                : stateSlug === 'vermont' &&
+                                                                    getVermontCountyResearch(countySlug)
+                                                                  ? getVermontNearbyCounties(countySlug)
+                                                                  : [];
 
   return (
     <>
@@ -449,7 +455,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                       : stateSlug === 'rhode-island' &&
                                                                           getRhodeIslandCountyResearch(countySlug)
                                                                         ? RHODE_ISLAND_COUNTY_CONTENT_UPDATED
-                                                                        : undefined
+                                                                        : stateSlug === 'vermont' &&
+                                                                            getVermontCountyResearch(countySlug)
+                                                                          ? VERMONT_COUNTY_CONTENT_UPDATED
+                                                                          : undefined
           }
         />
 

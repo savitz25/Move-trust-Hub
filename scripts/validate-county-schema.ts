@@ -56,6 +56,7 @@ const CURATED_STATES = [
   'connecticut',
   'massachusetts',
   'rhode-island',
+  'vermont',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -989,6 +990,20 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'rhode-island', countySlug: 'washington', expectedCity: 'South Kingstown' },
   { stateSlug: 'rhode-island', countySlug: 'newport', expectedCity: 'Newport' },
   { stateSlug: 'rhode-island', countySlug: 'bristol', expectedCity: 'Bristol' },
+  { stateSlug: 'vermont', countySlug: 'chittenden', expectedCity: 'Burlington' },
+  { stateSlug: 'vermont', countySlug: 'washington', expectedCity: 'Montpelier' },
+  { stateSlug: 'vermont', countySlug: 'rutland', expectedCity: 'Rutland' },
+  { stateSlug: 'vermont', countySlug: 'windsor', expectedCity: 'Woodstock' },
+  { stateSlug: 'vermont', countySlug: 'franklin', expectedCity: 'St. Albans' },
+  { stateSlug: 'vermont', countySlug: 'windham', expectedCity: 'Brattleboro' },
+  { stateSlug: 'vermont', countySlug: 'addison', expectedCity: 'Middlebury' },
+  { stateSlug: 'vermont', countySlug: 'bennington', expectedCity: 'Bennington' },
+  { stateSlug: 'vermont', countySlug: 'caledonia', expectedCity: 'St. Johnsbury' },
+  { stateSlug: 'vermont', countySlug: 'orange', expectedCity: 'Chelsea' },
+  { stateSlug: 'vermont', countySlug: 'orleans', expectedCity: 'Newport' },
+  { stateSlug: 'vermont', countySlug: 'lamoille', expectedCity: 'Hyde Park' },
+  { stateSlug: 'vermont', countySlug: 'grand-isle', expectedCity: 'North Hero' },
+  { stateSlug: 'vermont', countySlug: 'essex', expectedCity: 'Guildhall' },
 ];
 
 let totalIssues = 0;

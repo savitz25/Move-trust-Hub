@@ -54,6 +54,8 @@ import { getMassachusettsCountyResearch } from '@/data/massachusetts-county-rese
 import { getMassachusettsCountyTestimonials } from '@/data/massachusetts-county-testimonials';
 import { getRhodeIslandCountyResearch } from '@/data/rhode-island-county-research';
 import { getRhodeIslandCountyTestimonials } from '@/data/rhode-island-county-testimonials';
+import { getVermontCountyResearch } from '@/data/vermont-county-research';
+import { getVermontCountyTestimonials } from '@/data/vermont-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -155,6 +157,9 @@ export function buildStateDescription(
   }
   if (stateName === 'Rhode Island') {
     return `Find curated local movers in all 5 Rhode Island counties — 10 ranked companies per county from Providence and Kent through Washington, Newport, and Bristol. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
+  if (stateName === 'Vermont') {
+    return `Find curated local movers in all 14 Vermont counties — 10 ranked companies per county from Burlington (Chittenden) and Montpelier through Rutland, the Northeast Kingdom, and Lake Champlain islands. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =
@@ -334,6 +339,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'rhode-island') {
     return getRhodeIslandCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'vermont') {
+    return getVermontCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -459,6 +467,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'rhode-island') {
     const curated = getRhodeIslandCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'vermont') {
+    const curated = getVermontCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -621,6 +633,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getRhodeIslandCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'vermont') {
+    const curated = getVermontCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -766,6 +782,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'rhode-island') {
     const curated = getRhodeIslandCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'vermont') {
+    const curated = getVermontCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

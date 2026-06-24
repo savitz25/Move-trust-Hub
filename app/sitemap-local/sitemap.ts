@@ -27,6 +27,7 @@ import {
   CONNECTICUT_COUNTY_CONTENT_UPDATED,
   MASSACHUSETTS_COUNTY_CONTENT_UPDATED,
   RHODE_ISLAND_COUNTY_CONTENT_UPDATED,
+  VERMONT_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -218,6 +219,9 @@ const CT_HIGH_TRAFFIC_COUNTIES = new Set(['fairfield']);
 /** High-traffic MA counties — sitemap priority 0.85 (Greater Boston core) */
 /** High-traffic RI counties — sitemap priority 0.85 */
 const RI_HIGH_TRAFFIC_COUNTIES = new Set(['providence']);
+
+/** High-traffic VT counties — sitemap priority 0.85 */
+const VT_HIGH_TRAFFIC_COUNTIES = new Set(['chittenden']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -636,7 +640,9 @@ export default async function sitemap({
                                                               ? new Date(MASSACHUSETTS_COUNTY_CONTENT_UPDATED)
                                                               : id === 'rhode-island'
                                                                 ? new Date(RHODE_ISLAND_COUNTY_CONTENT_UPDATED)
-                                                                : new Date();
+                                                                : id === 'vermont'
+                                                                  ? new Date(VERMONT_COUNTY_CONTENT_UPDATED)
+                                                                  : new Date();
 
   return [
     {
@@ -687,7 +693,8 @@ export default async function sitemap({
         (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'connecticut' && CT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'massachusetts' && MA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'rhode-island' && RI_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'rhode-island' && RI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'vermont' && VT_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
