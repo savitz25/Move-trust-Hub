@@ -8,7 +8,7 @@ const AZ_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'pinal', name: 'Pinal', seat: 'Florence', href: '/local-movers/arizona/pinal', displayLabel: 'Pinal County, AZ' },
     { slug: 'pima', name: 'Pima', seat: 'Tucson', href: '/local-movers/arizona/pima', displayLabel: 'Pima County, AZ' },
     { slug: 'yavapai', name: 'Yavapai', seat: 'Prescott', href: '/local-movers/arizona/yavapai', displayLabel: 'Yavapai County, AZ' },
-    { slug: 'gila', name: 'Gila', seat: 'Globe', href: '/local-movers/arizona/gila', displayLabel: 'Gila County, AZ' },
+    { slug: 'san-bernardino', name: 'San Bernardino', seat: 'San Bernardino', href: '/local-movers/california/san-bernardino', displayLabel: 'San Bernardino County, CA' },
     { slug: 'clark', name: 'Clark', seat: 'Las Vegas', href: '/local-movers/nevada/clark', displayLabel: 'Clark County, NV' },
   ],
   pima: [
@@ -16,7 +16,7 @@ const AZ_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'pinal', name: 'Pinal', seat: 'Florence', href: '/local-movers/arizona/pinal', displayLabel: 'Pinal County, AZ' },
     { slug: 'santa-cruz', name: 'Santa Cruz', seat: 'Nogales', href: '/local-movers/arizona/santa-cruz', displayLabel: 'Santa Cruz County, AZ' },
     { slug: 'cochise', name: 'Cochise', seat: 'Bisbee', href: '/local-movers/arizona/cochise', displayLabel: 'Cochise County, AZ' },
-    { slug: 'yuma', name: 'Yuma', seat: 'Yuma', href: '/local-movers/arizona/yuma', displayLabel: 'Yuma County, AZ' },
+    { slug: 'imperial', name: 'Imperial', seat: 'El Centro', href: '/local-movers/california/imperial', displayLabel: 'Imperial County, CA' },
   ],
   pinal: [
     { slug: 'maricopa', name: 'Maricopa', seat: 'Phoenix', href: '/local-movers/arizona/maricopa', displayLabel: 'Maricopa County, AZ' },

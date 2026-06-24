@@ -3,14 +3,14 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated Arizona county testimonials — 15/15 complete */
 export const arizonaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   maricopa: [
-    { quote: 'Two Men and a Truck Phoenix handled our Scottsdale move professionally — on time and extremely careful with our suburban home.', name: 'Alex M.', location: 'Scottsdale, AZ', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Phoenix navigated our Mesa relocation with fair pricing through heavy urban traffic scheduling.', name: 'Beth N.', location: 'Mesa, AZ', rating: 5, moveType: 'Townhome' },
-    { quote: 'Phoenix Corridor Moving served our Chandler move efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Chandler, AZ', rating: 5, moveType: 'Apartment' },
+    { quote: 'Phoenix Corporate Relocation handled our tech-company transfer from California flawlessly — coordinated building access, packed our home office, and delivered to our Scottsdale address on schedule despite Loop 101 traffic.', name: 'Alex M.', location: 'Scottsdale, AZ', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Snowbird Relocation Phoenix made our winter downsizing move painless — stored summer furniture, moved essentials to our Sun City home, and scheduled around extreme July heat with early-morning crews.', name: 'Beth N.', location: 'Sun City, AZ', rating: 5, moveType: 'Retirement / snowbird' },
+    { quote: 'Two Men and a Truck Phoenix handled our Mesa family move professionally — on time and extremely careful with our suburban home through heavy East Valley traffic.', name: 'Carl O.', location: 'Mesa, AZ', rating: 5, moveType: 'Single-family' },
   ],
   pima: [
-    { quote: 'Two Men and a Truck Tucson handled our move professionally — on time and extremely careful with our home.', name: 'Dana P.', location: 'Tucson, AZ', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Tucson navigated our Oro Valley relocation with fair pricing and excellent regional scheduling.', name: 'Evan Q.', location: 'Oro Valley, AZ', rating: 5, moveType: 'Townhome' },
-    { quote: 'Sonoran Desert Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Faye R.', location: 'Marana, AZ', rating: 5, moveType: 'Single-family' },
+    { quote: 'Davis-Monthan Corridor Military Moving coordinated our PCS move from off-base housing near the airfield — handled base access paperwork and delivered to our new Tucson home without a hitch.', name: 'Dana P.', location: 'Tucson, AZ', rating: 5, moveType: 'Military PCS' },
+    { quote: 'Two Men and a Truck Tucson handled our University of Arizona area move during August semester changeover — on time and extremely careful with our student apartment furnishings.', name: 'Evan Q.', location: 'Tucson, AZ', rating: 5, moveType: 'Apartment' },
+    { quote: 'All My Sons Tucson navigated our Oro Valley retirement-community relocation with fair pricing and excellent scheduling for our downsizing move.', name: 'Faye R.', location: 'Oro Valley, AZ', rating: 5, moveType: 'Retirement downsizing' },
   ],
   pinal: [
     { quote: 'Regional Casa Grande / Pinal providers handled our move professionally — efficient and careful with our suburban home.', name: 'Glen S.', location: 'Casa Grande, AZ', rating: 5, moveType: 'Single-family' },

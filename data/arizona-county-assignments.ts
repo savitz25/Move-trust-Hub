@@ -13,6 +13,8 @@ const CURATED_AZ_COUNTIES: Record<string, string[]> = {
     'valley-metro-moving-maricopa-az',
     'hercules-movers-phoenix-az',
     'krupp-moving-phoenix-az',
+    'phoenix-corporate-relocation-maricopa-az',
+    'snowbird-relocation-phoenix-maricopa-az',
   ],
   pima: [
     'twomenandatruck-pima-az',
@@ -23,8 +25,7 @@ const CURATED_AZ_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-tucson-az',
     'tucson-corridor-moving-pima-az',
     'sonoran-desert-moving-pima-az',
-    'hercules-movers-tucson-az',
-    'krupp-moving-tucson-az',
+    'davis-monthan-military-moving-pima-az',
   ],
   pinal: [
     'regional-pinal-az-movers',

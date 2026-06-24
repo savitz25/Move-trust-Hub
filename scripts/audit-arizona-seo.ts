@@ -8,18 +8,27 @@ import { getArizonaNearbyCounties } from '../lib/local-movers/arizona-nearby';
 import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  maricopa: 12,
+  pima: 9,
+};
+const DEFAULT_TARGET = 6;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const issues: string[] = [];
 const curatedSlugs = Object.keys(arizonaCountyResearch).sort();
 
 for (const slug of curatedSlugs) {
+  const target = getTarget(slug);
   const c = getCounty('arizona', slug);
   const result = getMoversForCounty('arizona', slug);
   const moverCount = result?.movers.length ?? 0;
 
-  if (moverCount < DEFAULT_TARGET) {
-    issues.push(`movers<${DEFAULT_TARGET}: ${slug} (${moverCount})`);
+  if (moverCount < target) {
+    issues.push(`movers<${target}: ${slug} (${moverCount})`);
   }
   if (!arizonaCountyResearch[slug]) {
     issues.push(`no research: ${slug}`);
@@ -48,9 +57,10 @@ if (researchCount !== 15) {
 }
 
 for (const slug of curatedSlugs) {
+  const target = getTarget(slug);
   const n = getMoversForCounty('arizona', slug)?.movers.length ?? 0;
   console.log(
-    `  ${slug}: ${n} movers (target ${DEFAULT_TARGET}), testimonials ${getArizonaCountyTestimonials(slug).length}, nearby ${getArizonaNearbyCounties(slug).length}`
+    `  ${slug}: ${n} movers (target ${target}), testimonials ${getArizonaCountyTestimonials(slug).length}, nearby ${getArizonaNearbyCounties(slug).length}`
   );
 }
 

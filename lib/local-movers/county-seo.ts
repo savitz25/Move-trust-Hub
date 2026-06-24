@@ -198,6 +198,9 @@ export function buildStateDescription(
   if (stateName === 'Nevada') {
     return `Find curated local movers in all 17 Nevada counties — up to 12 ranked companies in Clark County (Las Vegas metro), 9–10 in Washoe (Reno–Sparks), and 6–10 regional specialists in every county. Las Vegas guides cover tourism, corporate, military, and high-density moves; Reno guides cover tech, manufacturing, and logistics; rural Nevada guides cover mining, remote logistics, and long-distance regional hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Arizona') {
+    return `Find curated local movers in all 15 Arizona counties — up to 12 ranked companies in Maricopa County (Phoenix metro), 9–10 in Pima (Tucson), and 6–10 regional specialists in every county. Phoenix metro guides cover corporate growth, retirement/snowbird moves, and extreme heat logistics; Tucson guides cover university, Davis-Monthan AFB military PCS, and retirement moves; rural Arizona guides cover mining, border corridors, and long-distance regional hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

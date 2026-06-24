@@ -10,35 +10,39 @@ export type CuratedCountyResearch = {
 export const arizonaCountyResearch: Record<string, CuratedCountyResearch> = {
   maricopa: {
     marketNotes:
-      'Maricopa County is Arizona’s most populous county with strong urban, suburban, and residential demand.',
+      'Maricopa County anchors Arizona’s Phoenix metro — by far the state’s highest-value moving market. Rapid population growth, corporate and tech-sector relocations, retirement and snowbird seasonal moves, and extreme summer heat logistics distinguish Maricopa from Tucson and rural Arizona.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,500+',
       avgHourly: '$130–$195/hr for a 2-person crew',
-      note: 'Maricopa County pricing reflects Phoenix metro demand, I-10 and Loop 101/202 corridor traffic, desert heat, and competition among full-service agents serving urban and East Valley suburban communities.',
+      note: 'Maricopa County pricing reflects Phoenix metro demand, I-10 and Loop 101/202 corridor traffic, extreme desert heat affecting crew scheduling, and competition among full-service agents serving Scottsdale, Mesa, Chandler, and East Valley suburban communities.',
     },
     tips: [
-      'Verify coverage for Phoenix, Mesa, Scottsdale, and surrounding cities before booking.',
+      'Verify coverage for Phoenix, Scottsdale, Mesa, Chandler, and surrounding cities before booking.',
       'Heavy urban traffic significantly impacts scheduling — confirm crew arrival windows.',
-      'Summer heat may affect loading times — confirm early-morning scheduling when possible.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Summer heat (110°F+) may affect loading times — confirm early-morning scheduling when possible.',
+      'Corporate and executive relocations may require building access coordination — confirm commercial move experience.',
+      'Snowbird and retirement downsizing moves often need storage and seasonal scheduling — confirm flexible timing.',
+      'Confirm insurance for high-value suburban and golf-community homes.',
+      'Book early for peak seasons (October–April snowbird influx, May–September heat) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
   pima: {
     marketNotes:
-      'Pima County is Arizona’s second most populous county with strong urban and residential demand.',
+      'Pima County anchors southern Arizona’s Tucson metro — a university, military, and retirement market distinct from Phoenix corporate growth. University of Arizona student moves, Davis-Monthan AFB military PCS relocations, and Oro Valley retirement communities distinguish Pima from the fast-growing Valley.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
       avgHourly: '$120–$180/hr for a 2-person crew',
-      note: 'Pima County pricing reflects Tucson metro demand, I-10 corridor traffic, and competition among full-service agents serving Tucson and surrounding communities.',
+      note: 'Pima County pricing reflects Tucson metro demand, I-10 corridor traffic, Davis-Monthan AFB-area military PCS volume, and competition among full-service agents serving Tucson, Oro Valley, and Marana communities.',
     },
     tips: [
-      'Verify coverage for Tucson and surrounding cities before booking.',
+      'Verify coverage for Tucson, Oro Valley, Marana, and surrounding cities before booking.',
+      'Military PCS moves near Davis-Monthan AFB require base access coordination — confirm mover credentials and clearance experience.',
+      'University of Arizona semester changeover (August and December) creates peak demand — book early.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes.',
+      'Confirm insurance for high-value retirement-community and foothills homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
@@ -79,35 +83,37 @@ export const arizonaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   mohave: {
     marketNotes:
-      'Mohave County is a northwestern Arizona county with residential demand.',
+      'Mohave County spans northwestern Arizona’s Colorado River corridor — a long-distance and cross-border market linking Kingman, Lake Havasu City, and Bullhead City to Las Vegas (Clark County, NV) and California’s Inland Empire. Retirement and tourism moves along the river distinguish Mohave from Phoenix metro demand.',
     costs: {
       studioRange: '$750–$1,500',
       familyRange: '$2,600–$5,800+',
       avgHourly: '$105–$155/hr for a 2-person crew',
-      note: 'Mohave County pricing reflects Kingman and Colorado River corridor demand with regional travel affecting crew availability.',
+      note: 'Mohave County pricing reflects Kingman and Colorado River corridor demand, cross-border long-distance hauls to NV and CA, and regional travel affecting crew availability.',
     },
     tips: [
-      'Verify coverage for Kingman and surrounding cities before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Verify coverage for Kingman, Lake Havasu City, and Bullhead City before booking.',
+      'Long-distance moves to Las Vegas or California may require interstate FMCSA authority — confirm licensing.',
+      'Extreme summer heat affects loading schedules — confirm early-morning crew windows.',
+      'Confirm insurance for high-value riverfront and retirement-community homes.',
+      'Book early for peak snowbird seasons (October–April) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
   yuma: {
     marketNotes:
-      'Yuma County is a southwestern Arizona county with residential and agricultural demand.',
+      'Yuma County anchors southwestern Arizona’s border and agricultural corridor — extreme summer heat, Imperial Valley cross-border logistics, and long-distance moves to San Diego and Phoenix distinguish Yuma from northern high-country markets.',
     costs: {
       studioRange: '$750–$1,500',
       familyRange: '$2,600–$5,800+',
       avgHourly: '$105–$155/hr for a 2-person crew',
-      note: 'Yuma County pricing reflects border-region and agricultural-community demand with extreme summer heat affecting scheduling.',
+      note: 'Yuma County pricing reflects border-region and agricultural-community demand, Imperial Valley cross-border traffic, and extreme summer heat (often the nation’s hottest) affecting scheduling.',
     },
     tips: [
-      'Verify coverage for Yuma and surrounding cities before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Verify coverage for Yuma, San Luis, and surrounding communities before booking.',
+      'Cross-border moves to Imperial County, CA may require additional customs and timing coordination.',
+      'Extreme summer heat severely limits outdoor loading — confirm early-morning scheduling.',
+      'Agricultural and military (MCAS Yuma) relocations may need specialized scheduling — confirm experience.',
+      'Book early for winter snowbird influx (October–March) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -130,16 +136,17 @@ export const arizonaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   cochise: {
     marketNotes:
-      'Cochise County is a southeastern Arizona county with residential demand.',
+      'Cochise County is southeastern Arizona’s military and border corridor — Fort Huachuca PCS moves, Sierra Vista suburban growth, and Douglas border-region logistics distinguish Cochise from Tucson metro density.',
     costs: {
       studioRange: '$750–$1,500',
       familyRange: '$2,600–$5,800+',
       avgHourly: '$105–$155/hr for a 2-person crew',
-      note: 'Cochise County pricing reflects Sierra Vista and Fort Huachuca-area demand with regional travel affecting crew scheduling.',
+      note: 'Cochise County pricing reflects Sierra Vista and Fort Huachuca military PCS demand, I-10 corridor traffic, and regional travel affecting crew scheduling.',
     },
     tips: [
-      'Verify coverage for Sierra Vista and surrounding cities before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Sierra Vista, Bisbee, and Douglas before booking.',
+      'Military PCS moves near Fort Huachuca require base access coordination — confirm mover credentials.',
+      'Border-region long-distance hauls may need interstate FMCSA authority — confirm licensing.',
       'Confirm insurance for high-value homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
@@ -249,18 +256,19 @@ export const arizonaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   greenlee: {
     marketNotes:
-      'Greenlee County is one of Arizona’s smallest counties with rural residential demand.',
+      'Greenlee County is Arizona’s smallest county and a rural mining corridor — copper-industry relocations, remote mountain-road access, and long-distance regional hauls to Tucson or Phoenix distinguish Greenlee from metro Arizona markets.',
     costs: {
       studioRange: '$750–$1,500',
       familyRange: '$2,600–$5,800+',
       avgHourly: '$95–$145/hr for a 2-person crew',
-      note: 'Greenlee County pricing reflects Clifton copper-corridor demand with remote travel affecting regional mover availability.',
+      note: 'Greenlee County pricing reflects Clifton–Morenci copper-corridor and mining-community demand with remote travel and limited local crew availability.',
     },
     tips: [
-      'Verify coverage for Clifton and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Verify coverage for Clifton, Morenci, and surrounding areas before booking.',
+      'Mining-industry relocations may require industrial-site coordination — confirm commercial move experience.',
+      'Remote mountain roads affect truck access and scheduling — confirm vehicle size and route planning.',
+      'Long-distance hauls to Tucson or Phoenix are common — confirm interstate FMCSA authority.',
+      'Book early — limited local crew availability in rural Greenlee County.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
