@@ -167,6 +167,20 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'boone',
   'jackson',
   'ogle',
+  'henry',
+  'knox',
+  'coles',
+  'macoupin',
+  'stephenson',
+  'woodford',
+  'clinton',
+  'fayette',
+  'shelby',
+  'perry',
+  'washington',
+  'massac',
+  'johnson',
+  'ford',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([

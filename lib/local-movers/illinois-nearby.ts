@@ -39,6 +39,20 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   boone: ['winnebago', 'mchenry', 'ogle', 'dekalb'],
   jackson: ['williamson', 'franklin', 'perry', 'randolph', 'union'],
   ogle: ['winnebago', 'boone', 'dekalb', 'lee', 'carroll', 'whiteside'],
+  henry: ['rock-island', 'whiteside', 'knox', 'bureau', 'stark'],
+  knox: ['henry', 'warren', 'peoria', 'stark', 'mcdonough'],
+  coles: ['vermilion', 'edgar', 'douglas', 'shelby', 'macon', 'cumberland'],
+  macoupin: ['madison', 'sangamon', 'montgomery', 'jersey', 'morgan'],
+  stephenson: ['winnebago', 'carroll', 'ogle', 'boone', 'jo-daviess'],
+  woodford: ['peoria', 'tazewell', 'mclean', 'livingston', 'marshall'],
+  clinton: ['st-clair', 'washington', 'bond', 'fayette', 'marion'],
+  fayette: ['clinton', 'bond', 'marion', 'effingham', 'shelby', 'montgomery'],
+  shelby: ['macon', 'coles', 'fayette', 'christian', 'moultrie'],
+  perry: ['washington', 'jefferson', 'franklin', 'jackson', 'williamson'],
+  washington: ['st-clair', 'clinton', 'perry', 'jefferson', 'marion', 'fayette'],
+  massac: ['johnson', 'pope', 'pulaski', 'mccracken'],
+  johnson: ['williamson', 'massac', 'pope', 'union', 'saline'],
+  ford: ['champaign', 'iroquois', 'kankakee', 'livingston', 'mclean', 'vermilion'],
 };
 
 export function getIllinoisNearbyCounties(

@@ -32,6 +32,20 @@ export const illinoisCountyOverrides: Partial<
   boone: { seat: 'Belvidere', metro: 'rockford-metro-il' },
   jackson: { seat: 'Murphysboro', metro: 'carbondale-metro-il' },
   ogle: { seat: 'Oregon', metro: 'oregon-metro-il' },
+  henry: { seat: 'Cambridge', metro: 'quad-cities-metro-il' },
+  knox: { seat: 'Galesburg', metro: 'galesburg-metro-il' },
+  coles: { seat: 'Charleston', metro: 'champaign-urbana-metro-il' },
+  macoupin: { seat: 'Carlinville', metro: 'st-louis-metro-il' },
+  stephenson: { seat: 'Freeport', metro: 'rockford-metro-il' },
+  woodford: { seat: 'Eureka', metro: 'peoria-metro-il' },
+  clinton: { seat: 'Carlyle', metro: 'st-louis-metro-il' },
+  fayette: { seat: 'Vandalia', metro: 'springfield-metro-il' },
+  shelby: { seat: 'Shelbyville', metro: 'decatur-metro-il' },
+  perry: { seat: 'Pinckneyville', metro: 'marion-metro-il' },
+  washington: { seat: 'Nashville', metro: 'st-louis-metro-il' },
+  massac: { seat: 'Metropolis', metro: 'carbondale-metro-il' },
+  johnson: { seat: 'Vienna', metro: 'carbondale-metro-il' },
+  ford: { seat: 'Paxton', metro: 'champaign-urbana-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

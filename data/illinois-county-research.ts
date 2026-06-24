@@ -489,6 +489,244 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  henry: {
+    marketNotes:
+      'Henry County is a key county in Northwest Illinois with strong agricultural and residential demand across Cambridge and Quad Cities-influenced communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Henry County pricing reflects Quad Cities metro spillover, Mississippi River valley traffic, and northwest Illinois agricultural-property relocations.',
+    },
+    tips: [
+      'Verify coverage for Cambridge and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  knox: {
+    marketNotes:
+      'Knox County is a key county in West Central Illinois with strong educational and residential demand across Galesburg.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Knox County pricing reflects Galesburg regional traffic, rail-corridor communities, and spillover demand from Quad Cities and Peoria metros.',
+    },
+    tips: [
+      'Verify coverage for Galesburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  coles: {
+    marketNotes:
+      'Coles County is anchored by Eastern Illinois University with strong educational and residential demand across Charleston and Mattoon.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Coles County pricing reflects EIU student move windows, east-central Illinois rural routes, and Champaign-Urbana metro spillover.',
+    },
+    tips: [
+      'Verify coverage for Charleston and Mattoon areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows around campus move periods.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and August student move-in.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  macoupin: {
+    marketNotes:
+      'Macoupin County is a rural county in Southwest Illinois with residential demand across Carlinville and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Macoupin County pricing reflects southwest Illinois rural drive times, farm-property access, and spillover demand from St. Louis and Springfield metros.',
+    },
+    tips: [
+      'Verify coverage for Carlinville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stephenson: {
+    marketNotes:
+      'Stephenson County is a key county in Northwest Illinois with strong industrial and residential demand across Freeport.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Stephenson County pricing reflects Rockford metro spillover, I-90 corridor traffic, and northwest Illinois industrial relocations.',
+    },
+    tips: [
+      'Verify coverage for Freeport and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  woodford: {
+    marketNotes:
+      'Woodford County is a suburban county in Central Illinois with strong residential demand across Eureka and Peoria-metro communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Woodford County pricing reflects Peoria metro suburban growth, I-74 corridor traffic, and central Illinois residential relocations.',
+    },
+    tips: [
+      'Verify coverage for Eureka and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clinton: {
+    marketNotes:
+      'Clinton County is a rural county in South Central Illinois with residential demand across Carlyle and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Clinton County pricing reflects south-central Illinois rural routes, Carlyle Lake-area properties, and spillover demand from St. Louis metro.',
+    },
+    tips: [
+      'Verify coverage for Carlyle and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County is a rural South Central Illinois county with residential demand across Vandalia and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Fayette County pricing reflects rural south-central Illinois drive times, historic-town properties, and spillover demand from Springfield metro.',
+    },
+    tips: [
+      'Verify coverage for Vandalia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  shelby: {
+    marketNotes:
+      'Shelby County is a rural Central Illinois county with residential demand across Shelbyville and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Shelby County pricing reflects central Illinois rural routes, farm-property access, and spillover demand from Decatur and Bloomington metros.',
+    },
+    tips: [
+      'Verify coverage for Shelbyville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  perry: {
+    marketNotes:
+      'Perry County is a rural Southern Illinois county with residential demand across Pinckneyville and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Perry County pricing reflects southern Illinois rural drive times and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Pinckneyville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is a rural South Central Illinois county with residential demand across Nashville and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Washington County pricing reflects south-central Illinois rural routes and spillover demand from St. Louis and Marion metros.',
+    },
+    tips: [
+      'Verify coverage for Nashville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  massac: {
+    marketNotes:
+      'Massac County is a Southern Illinois county with residential demand across Metropolis and Ohio River communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Massac County pricing reflects far-southern Illinois rural routes, Ohio River valley communities, and spillover demand from Carbondale metro.',
+    },
+    tips: [
+      'Verify coverage for Metropolis and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  johnson: {
+    marketNotes:
+      'Johnson County is a rural Southern Illinois county with residential demand across Vienna and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Johnson County pricing reflects southern Illinois rural drive times and spillover demand from Carbondale and Marion metros.',
+    },
+    tips: [
+      'Verify coverage for Vienna and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ford: {
+    marketNotes:
+      'Ford County is a rural East Central Illinois county with residential demand across Paxton and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Ford County pricing reflects east-central Illinois rural routes, agricultural communities, and spillover demand from Champaign and Kankakee metros.',
+    },
+    tips: [
+      'Verify coverage for Paxton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(
