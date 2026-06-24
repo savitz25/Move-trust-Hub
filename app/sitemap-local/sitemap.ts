@@ -181,6 +181,20 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'massac',
   'johnson',
   'ford',
+  'white',
+  'clay',
+  'cass',
+  'mason',
+  'menard',
+  'marshall',
+  'greene',
+  'wabash',
+  'cumberland',
+  'jasper',
+  'hamilton',
+  'schuyler',
+  'brown',
+  'henderson',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([

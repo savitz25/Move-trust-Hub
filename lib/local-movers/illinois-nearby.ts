@@ -53,6 +53,20 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   massac: ['johnson', 'pope', 'pulaski', 'mccracken'],
   johnson: ['williamson', 'massac', 'pope', 'union', 'saline'],
   ford: ['champaign', 'iroquois', 'kankakee', 'livingston', 'mclean', 'vermilion'],
+  white: ['edwards', 'wabash', 'wayne', 'hamilton', 'gallatin', 'posey'],
+  clay: ['effingham', 'fayette', 'marion', 'wayne', 'richland', 'jasper'],
+  cass: ['morgan', 'menard', 'sangamon', 'brown', 'schuyler', 'mason'],
+  mason: ['tazewell', 'peoria', 'fulton', 'logan', 'menard', 'marshall'],
+  menard: ['sangamon', 'cass', 'mason', 'logan', 'christian'],
+  marshall: ['peoria', 'woodford', 'stark', 'putnam', 'mason'],
+  greene: ['jersey', 'macoupin', 'morgan', 'scott', 'pike', 'calhoun'],
+  wabash: ['edwards', 'white', 'lawrence', 'knox', 'gibson'],
+  cumberland: ['coles', 'shelby', 'moultrie', 'clark', 'jasper'],
+  jasper: ['cumberland', 'effingham', 'clay', 'crawford', 'richland'],
+  hamilton: ['white', 'wayne', 'jefferson', 'franklin', 'saline', 'williamson'],
+  schuyler: ['adams', 'brown', 'cass', 'mcdonough', 'fulton', 'hancock'],
+  brown: ['adams', 'schuyler', 'pike', 'cass', 'morgan'],
+  henderson: ['warren', 'mercer', 'hancock', 'mcdonough', 'rock-island'],
 };
 
 export function getIllinoisNearbyCounties(

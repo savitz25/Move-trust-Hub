@@ -727,6 +727,244 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  white: {
+    marketNotes:
+      'White County is a rural Southeast Illinois county with residential demand across Carmi and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'White County pricing reflects southeast Illinois rural drive times and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Carmi and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clay: {
+    marketNotes:
+      'Clay County is a rural South Central Illinois county with residential demand across Louisville and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Clay County pricing reflects south-central Illinois rural routes and spillover demand from Springfield and Marion metros.',
+    },
+    tips: [
+      'Verify coverage for Louisville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cass: {
+    marketNotes:
+      'Cass County is a rural West Central Illinois county with residential demand across Virginia and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Cass County pricing reflects west-central Illinois rural drive times and spillover demand from Springfield and Quincy metros.',
+    },
+    tips: [
+      'Verify coverage for Virginia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mason: {
+    marketNotes:
+      'Mason County is a rural Central Illinois county with residential demand across Havana and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Mason County pricing reflects central Illinois rural routes, Illinois River valley communities, and spillover demand from Peoria and Springfield metros.',
+    },
+    tips: [
+      'Verify coverage for Havana and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  menard: {
+    marketNotes:
+      'Menard County is a rural Central Illinois county with residential demand across Petersburg and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Menard County pricing reflects Springfield metro spillover and central Illinois rural residential relocations.',
+    },
+    tips: [
+      'Verify coverage for Petersburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marshall: {
+    marketNotes:
+      'Marshall County is a rural Central Illinois county with residential demand across Lacon and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Marshall County pricing reflects central Illinois rural drive times and spillover demand from Peoria and Bloomington metros.',
+    },
+    tips: [
+      'Verify coverage for Lacon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  greene: {
+    marketNotes:
+      'Greene County is a rural West Central Illinois county with residential demand across Carrollton and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Greene County pricing reflects west-central Illinois rural routes and spillover demand from Springfield and St. Louis metros.',
+    },
+    tips: [
+      'Verify coverage for Carrollton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wabash: {
+    marketNotes:
+      'Wabash County is a rural Southeast Illinois county with residential demand across Mount Carmel and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Wabash County pricing reflects southeast Illinois rural drive times and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Mount Carmel and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cumberland: {
+    marketNotes:
+      'Cumberland County is a rural East Central Illinois county with residential demand across Toledo and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Cumberland County pricing reflects east-central Illinois rural routes and spillover demand from Champaign and Decatur metros.',
+    },
+    tips: [
+      'Verify coverage for Toledo and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jasper: {
+    marketNotes:
+      'Jasper County is a rural Southeast Illinois county with residential demand across Newton and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Jasper County pricing reflects southeast Illinois rural drive times and spillover demand from Decatur, Champaign, and Marion metros.',
+    },
+    tips: [
+      'Verify coverage for Newton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hamilton: {
+    marketNotes:
+      'Hamilton County is a rural Southern Illinois county with residential demand across McLeansboro and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Hamilton County pricing reflects southern Illinois rural routes and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for McLeansboro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  schuyler: {
+    marketNotes:
+      'Schuyler County is a rural West Central Illinois county with residential demand across Rushville and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Schuyler County pricing reflects west-central Illinois rural drive times and spillover demand from Quincy and Springfield metros.',
+    },
+    tips: [
+      'Verify coverage for Rushville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  brown: {
+    marketNotes:
+      'Brown County is a rural West Central Illinois county with residential demand across Mount Sterling and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Brown County pricing reflects west-central Illinois rural routes and spillover demand from Quincy and Springfield metros.',
+    },
+    tips: [
+      'Verify coverage for Mount Sterling and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  henderson: {
+    marketNotes:
+      'Henderson County is a rural West Central Illinois county with residential demand across Oquawka and Mississippi River communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Henderson County pricing reflects Mississippi River valley communities and spillover demand from Quad Cities and Quincy metros.',
+    },
+    tips: [
+      'Verify coverage for Oquawka and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

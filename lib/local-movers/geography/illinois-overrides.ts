@@ -46,6 +46,20 @@ export const illinoisCountyOverrides: Partial<
   massac: { seat: 'Metropolis', metro: 'carbondale-metro-il' },
   johnson: { seat: 'Vienna', metro: 'carbondale-metro-il' },
   ford: { seat: 'Paxton', metro: 'champaign-urbana-metro-il' },
+  white: { seat: 'Carmi', metro: 'marion-metro-il' },
+  clay: { seat: 'Louisville', metro: 'springfield-metro-il' },
+  cass: { seat: 'Virginia', metro: 'springfield-metro-il' },
+  mason: { seat: 'Havana', metro: 'peoria-metro-il' },
+  menard: { seat: 'Petersburg', metro: 'springfield-metro-il' },
+  marshall: { seat: 'Lacon', metro: 'peoria-metro-il' },
+  greene: { seat: 'Carrollton', metro: 'springfield-metro-il' },
+  wabash: { seat: 'Mount Carmel', metro: 'marion-metro-il' },
+  cumberland: { seat: 'Toledo', metro: 'champaign-urbana-metro-il' },
+  jasper: { seat: 'Newton', metro: 'decatur-metro-il' },
+  hamilton: { seat: 'McLeansboro', metro: 'marion-metro-il' },
+  schuyler: { seat: 'Rushville', metro: 'quincy-metro-il' },
+  brown: { seat: 'Mount Sterling', metro: 'quincy-metro-il' },
+  henderson: { seat: 'Oquawka', metro: 'quad-cities-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {
