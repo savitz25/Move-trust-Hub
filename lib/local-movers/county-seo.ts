@@ -62,6 +62,8 @@ import { getMaineCountyResearch } from '@/data/maine-county-research';
 import { getMaineCountyTestimonials } from '@/data/maine-county-testimonials';
 import { getHawaiiCountyResearch } from '@/data/hawaii-county-research';
 import { getHawaiiCountyTestimonials } from '@/data/hawaii-county-testimonials';
+import { getAlaskaCountyResearch } from '@/data/alaska-county-research';
+import { getAlaskaCountyTestimonials } from '@/data/alaska-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -175,6 +177,9 @@ export function buildStateDescription(
   }
   if (stateName === 'Hawaii') {
     return `Find curated local movers in all 5 Hawaii counties — 10 ranked companies per county from Honolulu (Oahu) through Maui, Kauai, Hawaii Island (Big Island), and remote Kalawao. FMCSA licensing, county cost guides, and Hawaii-specific island moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
+  if (stateName === 'Alaska') {
+    return `Find curated local movers in Alaska’s 5 major population centers — 10 ranked companies each in Anchorage Municipality, Matanuska-Susitna, Fairbanks North Star, Kenai Peninsula, and Juneau. FMCSA licensing, borough cost guides, and Alaska-specific moving tips for ${SEO_YEAR}. Remote boroughs and census areas use generated listings. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =
@@ -366,6 +371,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'hawaii') {
     return getHawaiiCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'alaska') {
+    return getAlaskaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -507,6 +515,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'hawaii') {
     const curated = getHawaiiCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'alaska') {
+    const curated = getAlaskaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -685,6 +697,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getHawaiiCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'alaska') {
+    const curated = getAlaskaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -848,6 +864,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'hawaii') {
     const curated = getHawaiiCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'alaska') {
+    const curated = getAlaskaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

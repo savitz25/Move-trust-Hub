@@ -42,6 +42,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | New Hampshire | 10/10 (complete) | 7 | 10–12 (Hillsborough) / 9–11 (Rockingham) / 7–8+ (others) | `hillsborough`, `rockingham` 0.85 | `count-new-hampshire-movers.ts`, `apply-new-hampshire-mover-expansion.ts`, `audit-new-hampshire-seo.ts` |
 | Maine | 16/16 (complete) | 6 | 8–10 (Cumberland) / 7–9 (York) / 6–8+ (others) | `cumberland` 0.85 | `count-maine-movers.ts`, `apply-maine-mover-expansion.ts`, `audit-maine-seo.ts` |
 | Hawaii | 5/5 (complete) | 10 | 10 (all counties) | `honolulu` 0.85 | `count-hawaii-movers.ts`, `apply-hawaii-mover-expansion.ts`, `audit-hawaii-seo.ts` |
+| Alaska | 5/5 major boroughs | 10 | 10 (curated boroughs) | `anchorage` 0.85 | `count-alaska-movers.ts`, `apply-alaska-mover-expansion.ts`, `audit-alaska-seo.ts` |
+
+> **Alaska note:** Alaska has **30+ boroughs/census areas** — curation targets **5 major population centers** only: **Anchorage Municipality**, **Matanuska-Susitna**, **Fairbanks North Star**, **Kenai Peninsula**, and **Juneau**. **Anchorage** uses Two Men and a Truck franchise #1; other curated boroughs use `regional-*-ak-movers`. Remote boroughs keep generated `alaska-region-*` metro fallback. Inter-borough nearby links among the 5 curated markets. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
 > **Hawaii note:** Hawaii has **5 counties** — complete state curation. **Honolulu** (Oahu) uses Two Men and a Truck franchise #1; **Hawaii** (Big Island), **Maui**, **Kauai**, and remote **Kalawao** use `regional-*-hi-movers`. HI state slug and **Hawaii County** slug both use `hawaii` — nearby links use `displayLabel` disambiguation (Big Island vs state). Inter-island nearby links only (no land borders). Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 

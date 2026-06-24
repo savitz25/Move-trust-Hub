@@ -33,6 +33,7 @@ import {
   NEW_HAMPSHIRE_COUNTY_CONTENT_UPDATED,
   MAINE_COUNTY_CONTENT_UPDATED,
   HAWAII_COUNTY_CONTENT_UPDATED,
+  ALASKA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDelawareCountyResearch } from '@/data/delaware-county-research';
@@ -45,6 +46,7 @@ import { getVermontCountyResearch } from '@/data/vermont-county-research';
 import { getNewHampshireCountyResearch } from '@/data/new-hampshire-county-research';
 import { getMaineCountyResearch } from '@/data/maine-county-research';
 import { getHawaiiCountyResearch } from '@/data/hawaii-county-research';
+import { getAlaskaCountyResearch } from '@/data/alaska-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
@@ -266,6 +268,12 @@ function resolveContentModified(county: LocalCounty): string {
     getHawaiiCountyResearch(county.slug)
   ) {
     return HAWAII_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'alaska' &&
+    getAlaskaCountyResearch(county.slug)
+  ) {
+    return ALASKA_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

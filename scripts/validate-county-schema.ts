@@ -60,6 +60,7 @@ const CURATED_STATES = [
   'new-hampshire',
   'maine',
   'hawaii',
+  'alaska',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -1038,6 +1039,11 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'hawaii', countySlug: 'maui', expectedCity: 'Wailuku' },
   { stateSlug: 'hawaii', countySlug: 'kauai', expectedCity: 'Lihue' },
   { stateSlug: 'hawaii', countySlug: 'kalawao', expectedCity: 'Kalaupapa' },
+  { stateSlug: 'alaska', countySlug: 'anchorage', expectedCity: 'Anchorage' },
+  { stateSlug: 'alaska', countySlug: 'matanuska-susitna', expectedCity: 'Palmer' },
+  { stateSlug: 'alaska', countySlug: 'fairbanks-north-star', expectedCity: 'Fairbanks' },
+  { stateSlug: 'alaska', countySlug: 'kenai-peninsula', expectedCity: 'Soldotna' },
+  { stateSlug: 'alaska', countySlug: 'juneau', expectedCity: 'Juneau' },
 ];
 
 let totalIssues = 0;
