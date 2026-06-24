@@ -32,6 +32,7 @@ import { newHampshireCountyMoverAssignments } from '@/data/new-hampshire-county-
 import { maineCountyMoverAssignments } from '@/data/maine-county-assignments';
 import { hawaiiCountyMoverAssignments } from '@/data/hawaii-county-assignments';
 import { alaskaCountyMoverAssignments } from '@/data/alaska-county-assignments';
+import { washingtonCountyMoverAssignments } from '@/data/washington-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -76,6 +77,7 @@ const allCountyAssignments = [
   ...maineCountyMoverAssignments,
   ...hawaiiCountyMoverAssignments,
   ...alaskaCountyMoverAssignments,
+  ...washingtonCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,

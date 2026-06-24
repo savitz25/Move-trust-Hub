@@ -61,6 +61,7 @@ const CURATED_STATES = [
   'maine',
   'hawaii',
   'alaska',
+  'washington',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -1044,6 +1045,7 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'alaska', countySlug: 'fairbanks-north-star', expectedCity: 'Fairbanks' },
   { stateSlug: 'alaska', countySlug: 'kenai-peninsula', expectedCity: 'Soldotna' },
   { stateSlug: 'alaska', countySlug: 'juneau', expectedCity: 'Juneau' },
+  { stateSlug: 'washington', countySlug: 'king', expectedCity: 'Seattle' },
 ];
 
 let totalIssues = 0;

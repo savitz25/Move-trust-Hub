@@ -64,6 +64,8 @@ import { getHawaiiCountyResearch } from '@/data/hawaii-county-research';
 import { getHawaiiCountyTestimonials } from '@/data/hawaii-county-testimonials';
 import { getAlaskaCountyResearch } from '@/data/alaska-county-research';
 import { getAlaskaCountyTestimonials } from '@/data/alaska-county-testimonials';
+import { getWashingtonCountyResearch } from '@/data/washington-county-research';
+import { getWashingtonCountyTestimonials } from '@/data/washington-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -180,6 +182,9 @@ export function buildStateDescription(
   }
   if (stateName === 'Alaska') {
     return `Find curated local movers across all 29 Alaska boroughs — up to 10 ranked companies in Anchorage Municipality, 8–10 in Fairbanks North Star and Matanuska-Susitna, and 5+ regional specialists statewide experienced with military PCS, oil & gas relocations, harsh winters, remote logistics, and Lower 48 long-distance moves via Washington. FMCSA licensing, borough cost guides, and Alaska-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
+  if (stateName === 'Washington') {
+    return `Find curated local movers in Washington — premium county guides expanding statewide, starting with King County (Seattle metro) and 10 ranked companies. FMCSA licensing, county cost guides, and Puget Sound moving tips for ${SEO_YEAR}. Remaining counties use generated listings until curated. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =
@@ -374,6 +379,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'alaska') {
     return getAlaskaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'washington') {
+    return getWashingtonCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -519,6 +527,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'alaska') {
     const curated = getAlaskaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'washington') {
+    const curated = getWashingtonCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -701,6 +713,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getAlaskaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'washington') {
+    const curated = getWashingtonCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -868,6 +884,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'alaska') {
     const curated = getAlaskaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'washington') {
+    const curated = getWashingtonCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

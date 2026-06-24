@@ -113,6 +113,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'maine' ||
                 state.slug === 'hawaii' ||
                 state.slug === 'alaska' ||
+                state.slug === 'washington' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -138,7 +139,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                       ? 'Browse all 5 Hawaii county guides — up to 10 curated movers on Oahu (Honolulu) and Maui, 6–10 island specialists on Kauai and Hawaii Island (Big Island), experienced with inter-island shipping, military moves, and mainland-to-Hawaii relocations. FMCSA licensing, cost estimates, and island-specific moving tips.'
                                       : state.slug === 'alaska'
                                         ? 'Browse all 29 Alaska borough guides — up to 10 curated movers in Anchorage Municipality, 8–10 in Fairbanks North Star and Matanuska-Susitna, and 5+ regional specialists in every borough experienced with military PCS, oil & gas relocations, harsh winters, and Lower 48 long-distance moves. FMCSA licensing, cost estimates, and Alaska-specific moving tips.'
-                                        : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                        : state.slug === 'washington'
+                                          ? 'Browse Washington county guides — premium curation expanding statewide, starting with King County (Seattle metro) and 10 curated movers. Remaining counties use generated listings until curated. FMCSA licensing, cost estimates, and Puget Sound moving tips.'
+                                          : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>
