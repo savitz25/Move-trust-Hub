@@ -23,6 +23,15 @@ export const illinoisCountyOverrides: Partial<
   lasalle: { seat: 'Ottawa', metro: 'ottawa-metro-il' },
   kankakee: { seat: 'Kankakee', metro: 'kankakee-metro-il' },
   dekalb: { seat: 'Sycamore', metro: 'dekalb-metro-il' },
+  macon: { seat: 'Decatur', metro: 'decatur-metro-il' },
+  vermilion: { seat: 'Danville', metro: 'danville-metro-il' },
+  williamson: { seat: 'Marion', metro: 'marion-metro-il' },
+  adams: { seat: 'Quincy', metro: 'quincy-metro-il' },
+  grundy: { seat: 'Morris', metro: 'chicago-metro-southwest-il' },
+  whiteside: { seat: 'Morrison', metro: 'sterling-rock-falls-metro-il' },
+  boone: { seat: 'Belvidere', metro: 'rockford-metro-il' },
+  jackson: { seat: 'Murphysboro', metro: 'carbondale-metro-il' },
+  ogle: { seat: 'Oregon', metro: 'oregon-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

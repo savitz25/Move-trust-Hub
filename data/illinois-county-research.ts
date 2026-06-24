@@ -336,6 +336,159 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  macon: {
+    marketNotes:
+      'Macon County is a key Central Illinois county anchored by Decatur with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Macon County pricing reflects Decatur industrial corridor relocations, Lake Decatur-adjacent properties, and central Illinois regional mover competition.',
+    },
+    tips: [
+      'Verify coverage for Decatur and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  vermilion: {
+    marketNotes:
+      'Vermilion County is a key East Central Illinois county with strong industrial and residential demand across Danville and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Vermilion County pricing reflects east-central Illinois industrial demand, I-74 corridor traffic, and regional mover competition from Champaign-Urbana.',
+    },
+    tips: [
+      'Verify coverage for Danville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  williamson: {
+    marketNotes:
+      'Williamson County is a key Southern Illinois county with strong healthcare and residential demand across Marion and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Williamson County pricing reflects southern Illinois healthcare-sector relocations and regional traffic on I-57.',
+    },
+    tips: [
+      'Verify coverage for Marion and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  adams: {
+    marketNotes:
+      'Adams County is a major hub in Western Illinois with strong industrial and residential demand across Quincy and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Adams County pricing reflects western Illinois tri-state corridor communities and Mississippi River-adjacent relocations.',
+    },
+    tips: [
+      'Verify coverage for Quincy and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grundy: {
+    marketNotes:
+      'Grundy County is a growing suburban county southwest of Chicago with strong residential and logistics demand across Morris and surrounding communities.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,200–$7,200+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Grundy County pricing reflects Chicago southwest suburban spillover, I-80 corridor logistics traffic, and demand near Morris and Minooka growth corridors.',
+    },
+    tips: [
+      'Verify coverage for Morris and surrounding areas before booking.',
+      'Chicago-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  whiteside: {
+    marketNotes:
+      'Whiteside County is a key county in Northwest Illinois with strong industrial and residential demand across Sterling, Rock Falls, and Morrison.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Whiteside County pricing reflects Quad Cities spillover demand, Rock River valley communities, and northwest Illinois industrial relocations.',
+    },
+    tips: [
+      'Verify coverage for Sterling, Rock Falls, and Morrison areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boone: {
+    marketNotes:
+      'Boone County is a suburban county in Northern Illinois with strong residential demand across Belvidere and surrounding Rockford-metro communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Boone County pricing reflects Rockford metro suburban growth, I-90 corridor traffic, and demand in Belvidere commuter communities.',
+    },
+    tips: [
+      'Verify coverage for Belvidere and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is a key Southern Illinois county anchored by Southern Illinois University with strong educational and residential demand across Carbondale and Murphysboro.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects SIU student move windows, southern Illinois rural routes, and regional healthcare-adjacent relocations.',
+    },
+    tips: [
+      'Verify coverage for Carbondale, Murphysboro, and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows around campus move periods.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and August student move-in.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ogle: {
+    marketNotes:
+      'Ogle County is a rural Northern Illinois county with residential demand across Oregon and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Ogle County pricing reflects rural northern Illinois drive times, farm-property access, and spillover demand from Rockford and DeKalb metros.',
+    },
+    tips: [
+      'Verify coverage for Oregon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

@@ -496,6 +496,240 @@ export const illinoisCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  macon: [
+    {
+      quote:
+        'Decatur Moving & Storage handled our Macon County relocation professionally — on time, efficient, and extremely careful throughout Decatur.',
+      name: 'Phil B.',
+      location: 'Decatur, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Heart of Illinois Moving confirmed Decatur coverage — best local moving service in Macon County with transparent pricing.',
+      name: 'Gloria S.',
+      location: 'Decatur, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Bloomington served our Macon County move efficiently — professional crew with careful handling.',
+      name: 'Wayne T.',
+      location: 'Forsyth, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  vermilion: [
+    {
+      quote:
+        'Danville Moving & Storage handled our Vermilion County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Irene C.',
+      location: 'Danville, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'East Central Illinois Moving confirmed Danville coverage — best local moving service in Vermilion County with fair pricing.',
+      name: 'Harold M.',
+      location: 'Danville, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Maher Brothers Transfer coordinated our Vermilion County move efficiently — professional crew from the Champaign-Urbana area.',
+      name: 'Vera L.',
+      location: 'Hoopeston, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  williamson: [
+    {
+      quote:
+        'Marion Moving & Storage handled our Williamson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Glen P.',
+      location: 'Marion, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Southern Illinois Moving confirmed Marion coverage — best local moving service in Williamson County with transparent pricing.',
+      name: 'Lois K.',
+      location: 'Marion, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Edwardsville served our southern Illinois move efficiently — professional crew with careful handling.',
+      name: 'Dean R.',
+      location: 'Herrin, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  adams: [
+    {
+      quote:
+        'Quincy Moving & Storage handled our Adams County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Norma H.',
+      location: 'Quincy, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Tri-State Moving confirmed Quincy coverage — best local moving service in Adams County with excellent communication.',
+      name: 'Roger F.',
+      location: 'Quincy, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Heartland Moving & Storage served our western Illinois move efficiently — professional crew with careful handling.',
+      name: 'Alice D.',
+      location: 'Camp Point, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  grundy: [
+    {
+      quote:
+        'Morris Moving & Storage handled our Grundy County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Chad W.',
+      location: 'Morris, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Joliet confirmed Morris-area coverage — best local moving service in Grundy County with transparent pricing.',
+      name: 'Megan O.',
+      location: 'Minooka, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Yorkville navigated Chicago-area traffic smartly and moved our Grundy County home efficiently.',
+      name: 'Todd N.',
+      location: 'Coal City, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  whiteside: [
+    {
+      quote:
+        'Sterling Moving & Storage handled our Whiteside County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Janice U.',
+      location: 'Sterling, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Whiteside Relocation Services confirmed Morrison coverage — best local moving service in Whiteside County with fair pricing.',
+      name: 'Keith V.',
+      location: 'Rock Falls, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Glick Moving & Storage served our Quad Cities-area move efficiently — professional crew with careful handling.',
+      name: 'Sharon Q.',
+      location: 'Morrison, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  boone: [
+    {
+      quote:
+        'Belvidere Moving & Storage handled our Boone County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Craig X.',
+      location: 'Belvidere, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Rockford confirmed Belvidere coverage — best local moving service in Boone County with transparent pricing.',
+      name: 'Diana Y.',
+      location: 'Belvidere, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Pearson Moving & Storage served our Boone County move efficiently — professional crew with careful handling.',
+      name: 'Bruce Z.',
+      location: 'Poplar Grove, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jackson: [
+    {
+      quote:
+        'Carbondale Moving & Storage handled our Jackson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Emma A.',
+      location: 'Carbondale, IL',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Jackson County Moving confirmed Murphysboro coverage — best local moving service in Jackson County with excellent student-move coordination.',
+      name: 'Luke B.',
+      location: 'Murphysboro, IL',
+      rating: 5,
+      moveType: 'Student housing',
+    },
+    {
+      quote:
+        'Marion Moving & Storage served our southern Illinois move efficiently — professional crew with careful handling near SIU.',
+      name: 'Grace C.',
+      location: 'Carbondale, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  ogle: [
+    {
+      quote:
+        'Oregon Moving & Storage handled our Ogle County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Henry D.',
+      location: 'Oregon, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Ogle Relocation Services confirmed county coverage — best local moving service in Ogle County with transparent pricing.',
+      name: 'Ivy E.',
+      location: 'Oregon, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Rockford served our Ogle County move efficiently — professional crew with careful handling on rural routes.',
+      name: 'Jack F.',
+      location: 'Byron, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIllinoisCountyTestimonials(

@@ -30,6 +30,15 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lasalle: ['lee', 'bureau', 'putnam', 'kendall', 'grundy', 'livingston'],
   kankakee: ['will', 'ford', 'iroquois', 'grundy', 'livingston'],
   dekalb: ['kane', 'mchenry', 'boone', 'winnebago', 'lee', 'ogle'],
+  macon: ['sangamon', 'mclean', 'piatt', 'shelby', 'christian', 'logan'],
+  vermilion: ['champaign', 'douglas', 'edgar', 'ford', 'iroquois'],
+  williamson: ['franklin', 'jackson', 'johnson', 'saline', 'union'],
+  adams: ['brown', 'pike', 'schuyler', 'hancock', 'lewis'],
+  grundy: ['will', 'kendall', 'lasalle', 'kankakee', 'livingston'],
+  whiteside: ['rock-island', 'henry', 'carroll', 'lee', 'ogle'],
+  boone: ['winnebago', 'mchenry', 'ogle', 'dekalb'],
+  jackson: ['williamson', 'franklin', 'perry', 'randolph', 'union'],
+  ogle: ['winnebago', 'boone', 'dekalb', 'lee', 'carroll', 'whiteside'],
 };
 
 export function getIllinoisNearbyCounties(

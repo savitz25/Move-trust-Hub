@@ -158,6 +158,15 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'lasalle',
   'kankakee',
   'dekalb',
+  'macon',
+  'vermilion',
+  'williamson',
+  'adams',
+  'grundy',
+  'whiteside',
+  'boone',
+  'jackson',
+  'ogle',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([
