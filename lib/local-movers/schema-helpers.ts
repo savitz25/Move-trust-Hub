@@ -45,23 +45,61 @@ export function buildSchemaPrimaryCity(county: LocalCounty): string | undefined 
   return county.seat;
 }
 
-export function buildSchemaItemReviewed(
+/** Types Google accepts for Review.itemReviewed (Review snippet rich results). */
+export const REVIEW_ITEM_REVIEWED_TYPES = new Set([
+  'LocalBusiness',
+  'MovingCompany',
+  'Organization',
+  'Product',
+  'Service',
+]);
+
+export function buildLocalMovingServiceSchemaNode(
   county: LocalCounty | undefined,
   stateName: string | undefined,
   placeId: string,
   pageUrl: string
 ): Record<string, unknown> {
+  const serviceId = `${pageUrl}#local-moving-service`;
+
   if (county && stateName) {
+    const countyLabel = buildCountyLabel(county);
+    const placeName = buildCountyPlaceName(county, stateName);
     return {
-      '@type': 'AdministrativeArea',
-      '@id': placeId,
-      name: buildCountyPlaceName(county, stateName),
+      '@type': ['MovingCompany', 'LocalBusiness'],
+      '@id': serviceId,
+      name: `Local Moving Companies in ${countyLabel}`,
+      description: `Licensed local and regional moving companies serving ${placeName}.`,
+      url: pageUrl,
+      areaServed: {
+        '@type': 'AdministrativeArea',
+        '@id': placeId,
+        name: placeName,
+      },
     };
   }
+
   return {
-    '@type': 'WebPage',
-    '@id': pageUrl,
-    name: 'Local Movers',
+    '@type': ['MovingCompany', 'LocalBusiness'],
+    '@id': serviceId,
+    name: 'Local Moving Services',
+    url: pageUrl,
+  };
+}
+
+export function buildSchemaItemReviewed(
+  county: LocalCounty | undefined,
+  stateName: string | undefined,
+  _placeId: string,
+  pageUrl: string
+): Record<string, unknown> {
+  return {
+    '@type': 'LocalBusiness',
+    '@id': `${pageUrl}#local-moving-service`,
+    name:
+      county && stateName
+        ? `Local Moving Companies in ${buildCountyLabel(county)}`
+        : 'Local Moving Services',
   };
 }
 
@@ -247,17 +285,21 @@ export function buildReviewSchemaNode(
   pageUrl: string,
   county: LocalCounty | undefined,
   stateName: string | undefined,
-  placeId: string
+  placeId: string,
+  datePublished?: string
 ): Record<string, unknown> | null {
   const authorName = testimonial.name?.trim();
   const reviewBody = testimonial.quote?.trim();
   if (!authorName || !reviewBody) return null;
+
+  const itemReviewed = buildSchemaItemReviewed(county, stateName, placeId, pageUrl);
 
   return {
     '@type': 'Review',
     '@id': `${pageUrl}#review-${index + 1}`,
     name: buildReviewSchemaName(testimonial),
     reviewBody,
+    datePublished: datePublished ?? '2026-01-15',
     author: {
       '@type': 'Person',
       name: authorName,
@@ -268,7 +310,7 @@ export function buildReviewSchemaNode(
       bestRating: '5',
       worstRating: '1',
     },
-    itemReviewed: buildSchemaItemReviewed(county, stateName, placeId, pageUrl),
+    itemReviewed,
   };
 }
 
@@ -338,10 +380,51 @@ export function validateCountySchemaGraph(
 
     if (types.includes('Review')) {
       const itemReviewed = node.itemReviewed as Record<string, unknown> | undefined;
-      if (!itemReviewed?.name) {
+      const reviewId = String(node['@id'] ?? 'no @id');
+
+      if (!itemReviewed) {
         issues.push({
           ...base,
-          issue: `Review missing itemReviewed.name (${String(node['@id'] ?? 'no @id')})`,
+          issue: `Review missing itemReviewed (${reviewId})`,
+        });
+      } else {
+        if (!itemReviewed.name) {
+          issues.push({
+            ...base,
+            issue: `Review missing itemReviewed.name (${reviewId})`,
+          });
+        }
+
+        const reviewedType = itemReviewed['@type'];
+        const reviewedTypes = Array.isArray(reviewedType)
+          ? reviewedType
+          : reviewedType
+            ? [reviewedType]
+            : [];
+        const hasValidReviewedType = reviewedTypes.some((type) =>
+          REVIEW_ITEM_REVIEWED_TYPES.has(String(type))
+        );
+
+        if (!hasValidReviewedType) {
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed has invalid @type "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
+          });
+        }
+      }
+
+      if (!node.reviewBody) {
+        issues.push({
+          ...base,
+          issue: `Review missing reviewBody (${reviewId})`,
+        });
+      }
+
+      const author = node.author as Record<string, unknown> | undefined;
+      if (!author?.name) {
+        issues.push({
+          ...base,
+          issue: `Review missing author.name (${reviewId})`,
         });
       }
     }

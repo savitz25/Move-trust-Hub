@@ -40,6 +40,7 @@ import {
   buildCountyLabel,
   buildCountyPlaceSchema,
   buildFaqSchema,
+  buildLocalMovingServiceSchemaNode,
   buildMoverSchemaNode,
   buildMoversItemListName,
   buildReviewSchemaNode,
@@ -269,6 +270,7 @@ export function buildCountySchemaGraph({
   }
 
   if (testimonials?.length) {
+    graph.push(buildLocalMovingServiceSchemaNode(county, stateName, placeId, url));
     graph.push(
       ...testimonials
         .map((testimonial, index) =>
@@ -278,7 +280,8 @@ export function buildCountySchemaGraph({
             url,
             county,
             stateName,
-            placeId
+            placeId,
+            contentModified
           )
         )
         .filter((node): node is Record<string, unknown> => node !== null)

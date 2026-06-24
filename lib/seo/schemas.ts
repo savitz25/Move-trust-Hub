@@ -42,9 +42,12 @@ function buildTestimonialReviewSchemas() {
       '@type': 'Rating',
       ratingValue: String(testimonial.rating),
       bestRating: '5',
+      worstRating: '1',
     },
     itemReviewed: {
+      '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
+      name: 'Move Trust Hub',
     },
   }));
 }

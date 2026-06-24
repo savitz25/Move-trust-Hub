@@ -35,6 +35,11 @@ const CURATED_STATES = [
   'arkansas',
   'kansas',
   'missouri',
+  'georgia',
+  'illinois',
+  'michigan',
+  'indiana',
+  'ohio',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
