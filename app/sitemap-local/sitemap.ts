@@ -216,6 +216,22 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
   'culpeper',
   'campbell',
   'franklin',
+  'washington',
+  'harrisonburg',
+  'henry',
+  'shenandoah',
+  'manassas',
+  'charlottesville',
+  'prince-george',
+  'louisa',
+  'warren',
+  'isle-of-wight',
+  'danville',
+  'orange',
+  'gloucester',
+  'tazewell',
+  'caroline',
+  'wise',
 ]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */

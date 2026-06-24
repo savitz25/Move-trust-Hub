@@ -886,6 +886,422 @@ export const virginiaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Apartment',
     },
   ],
+  washington: [
+    {
+      quote:
+        'Two Men and a Truck Washington handled our Abingdon relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Ella H.',
+      location: 'Abingdon, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Southwest Virginia Moving confirmed Abingdon coverage — best local moving service in Washington County with fair pricing.',
+      name: 'Ian I.',
+      location: 'Abingdon, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Blue Ridge Southwest Moving served our Damascus area move efficiently — professional crew with careful mountain handling.',
+      name: 'Jade J.',
+      location: 'Abingdon, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  harrisonburg: [
+    {
+      quote:
+        'Two Men and a Truck Harrisonburg handled our city relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Kyle K.',
+      location: 'Harrisonburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'JMU District Moving confirmed university-area coverage — best local moving service in Harrisonburg with fair pricing.',
+      name: 'Lena L.',
+      location: 'Harrisonburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Valley Core Moving served our downtown move efficiently — professional crew with careful handling.',
+      name: 'Miles M.',
+      location: 'Harrisonburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  henry: [
+    {
+      quote:
+        'Two Men and a Truck Henry handled our Martinsville relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Nina N.',
+      location: 'Martinsville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Martinsville Area Moving confirmed county coverage — best local moving service in Henry County with fair pricing.',
+      name: 'Owen O.',
+      location: 'Martinsville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Southside Piedmont Moving served our Ridgeway area move efficiently — professional crew with careful handling.',
+      name: 'Paige P.',
+      location: 'Martinsville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  shenandoah: [
+    {
+      quote:
+        'Two Men and a Truck Shenandoah handled our Woodstock relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Quinn Q.',
+      location: 'Woodstock, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Shenandoah Valley North Moving confirmed county coverage — best local moving service in Shenandoah County with fair pricing.',
+      name: 'Riley R.',
+      location: 'Woodstock, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'I-81 Corridor Moving served our Strasburg area move efficiently — professional crew with careful valley handling.',
+      name: 'Sage S.',
+      location: 'Woodstock, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  manassas: [
+    {
+      quote:
+        'Two Men and a Truck Manassas handled our suburban relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Troy T.',
+      location: 'Manassas, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'NOVA Central Moving confirmed Manassas coverage — best local moving service with fair pricing.',
+      name: 'Uma U.',
+      location: 'Manassas, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Historic Manassas Moving served our Old Town move efficiently — professional crew with careful handling.',
+      name: 'Vince V.',
+      location: 'Manassas, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  charlottesville: [
+    {
+      quote:
+        'Two Men and a Truck Charlottesville handled our city relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Willa W.',
+      location: 'Charlottesville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'UVA District Moving confirmed university-area coverage — best local moving service in Charlottesville with fair pricing.',
+      name: 'Xander X.',
+      location: 'Charlottesville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Downtown Charlottesville Moving served our Belmont move efficiently — professional crew with careful handling.',
+      name: 'Yara Y.',
+      location: 'Charlottesville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'prince-george': [
+    {
+      quote:
+        'Two Men and a Truck Prince George handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Zane Z.',
+      location: 'Prince George, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond South Moving confirmed Prince George coverage — best local moving service with fair pricing.',
+      name: 'Aria A.',
+      location: 'Prince George, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Fort Lee Area Moving served our military-adjacent move efficiently — professional crew with careful handling.',
+      name: 'Blake B.',
+      location: 'Prince George, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  louisa: [
+    {
+      quote:
+        'Two Men and a Truck Louisa handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Cora C.',
+      location: 'Louisa, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Lake Anna Moving confirmed waterfront coverage — best local moving service in Louisa County with fair pricing.',
+      name: 'Dean D.',
+      location: 'Louisa, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Central Virginia Moving served our Mineral area move efficiently — professional crew with careful rural handling.',
+      name: 'Eva E.',
+      location: 'Louisa, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  warren: [
+    {
+      quote:
+        'Two Men and a Truck Warren handled our Front Royal relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Finn F.',
+      location: 'Front Royal, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Shenandoah North Moving confirmed Warren County coverage — best local moving service with fair pricing.',
+      name: 'Gia G.',
+      location: 'Front Royal, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Skyline Drive Moving served our Linden area move efficiently — professional crew with careful handling.',
+      name: 'Hugo H.',
+      location: 'Front Royal, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'isle-of-wight': [
+    {
+      quote:
+        'Two Men and a Truck Isle of Wight handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Iris I.',
+      location: 'Isle of Wight, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Hampton Roads West Moving confirmed peninsula coverage — best local moving service in Isle of Wight County with fair pricing.',
+      name: 'Jett J.',
+      location: 'Isle of Wight, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Peninsula Rural Moving served our Smithfield area move efficiently — professional crew with careful handling.',
+      name: 'Kira K.',
+      location: 'Isle of Wight, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  danville: [
+    {
+      quote:
+        'Two Men and a Truck Danville handled our city relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Levi L.',
+      location: 'Danville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Dan River Moving confirmed Danville coverage — best local moving service with fair pricing.',
+      name: 'Mira M.',
+      location: 'Danville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Southside Central Moving served our riverfront move efficiently — professional crew with careful handling.',
+      name: 'Nico N.',
+      location: 'Danville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  orange: [
+    {
+      quote:
+        'Two Men and a Truck Orange handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Opal O.',
+      location: 'Orange, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Central Piedmont Moving confirmed Orange County coverage — best local moving service with fair pricing.',
+      name: 'Pax P.',
+      location: 'Orange, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Montpelier Area Moving served our Gordonsville move efficiently — professional crew with careful handling.',
+      name: 'Quin Q.',
+      location: 'Orange, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  gloucester: [
+    {
+      quote:
+        'Two Men and a Truck Gloucester handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Remy R.',
+      location: 'Gloucester, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Middle Peninsula Moving confirmed Gloucester coverage — best local moving service with fair pricing.',
+      name: 'Sloane S.',
+      location: 'Gloucester, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'York River Moving served our Hayes area move efficiently — professional crew with careful waterfront handling.',
+      name: 'Tate T.',
+      location: 'Gloucester, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  tazewell: [
+    {
+      quote:
+        'Two Men and a Truck Tazewell handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Uma U.',
+      location: 'Tazewell, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Coalfields Moving confirmed Tazewell County coverage — best local moving service with fair pricing.',
+      name: 'Vera V.',
+      location: 'Tazewell, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Clinch Valley Moving served our Richlands area move efficiently — professional crew with careful mountain handling.',
+      name: 'Wade W.',
+      location: 'Tazewell, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  caroline: [
+    {
+      quote:
+        'Two Men and a Truck Caroline handled our Bowling Green relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Xena X.',
+      location: 'Bowling Green, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Northern Neck Moving confirmed Caroline County coverage — best local moving service with fair pricing.',
+      name: 'York Y.',
+      location: 'Bowling Green, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Rappahannock East Moving served our Ladysmith area move efficiently — professional crew with careful rural handling.',
+      name: 'Zoe Z.',
+      location: 'Bowling Green, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  wise: [
+    {
+      quote:
+        'Two Men and a Truck Wise handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Adam A.',
+      location: 'Wise, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Coalfields North Moving confirmed Wise County coverage — best local moving service with fair pricing.',
+      name: 'Beth B.',
+      location: 'Wise, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Pound River Moving served our Norton area move efficiently — professional crew with careful mountain handling.',
+      name: 'Cole C.',
+      location: 'Wise, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getVirginiaCountyTestimonials(

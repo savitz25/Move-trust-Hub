@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Virginia county research — batches 1–5 large markets */
+/** Hand-curated Virginia county research — batches 1–6 large markets */
 export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
   fairfax: {
     marketNotes:
@@ -580,6 +580,278 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for Rocky Mount and surrounding Franklin County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is a key Southwest Virginia county with residential demand centered on Abingdon and the Blue Ridge highlands.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Appalachian geography, rural property access, and competition among Southwest Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Abingdon and surrounding Washington County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  harrisonburg: {
+    marketNotes:
+      'Harrisonburg is an independent city and the core of the Shenandoah Valley with strong educational and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Harrisonburg pricing reflects JMU student turnover, valley suburban demand, and competition among Shenandoah Valley full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Harrisonburg and surrounding valley areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  henry: {
+    marketNotes:
+      'Henry County is a rural South Central Virginia county with residential demand centered on Martinsville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Henry County pricing reflects Southside Virginia geography, rural property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Martinsville and surrounding Henry County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  shenandoah: {
+    marketNotes:
+      'Shenandoah County is a rural Shenandoah Valley county with residential demand centered on Woodstock.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Shenandoah County pricing reflects valley rural geography, I-81 corridor access, and competition among Northern Shenandoah full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Woodstock and surrounding Shenandoah County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  manassas: {
+    marketNotes:
+      'Manassas is an independent city with strong suburban and historical residential demand in the Northern Virginia / Washington DC metro.',
+    costs: {
+      studioRange: '$900–$1,900',
+      familyRange: '$3,500–$8,500+',
+      avgHourly: '$130–$200/hr for a 2-person crew',
+      note: 'Manassas pricing reflects Northern Virginia suburban demand, I-66 corridor traffic, high-value home relocations, and competition among full-service DC-metro agents.',
+    },
+    tips: [
+      'Verify coverage for Manassas and surrounding Northern Virginia areas before booking.',
+      'Heavy Northern Virginia traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  charlottesville: {
+    marketNotes:
+      'Charlottesville is an independent city anchored by the University of Virginia with strong educational and residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Charlottesville pricing reflects UVA student turnover, Central Virginia suburban demand, and competition among full-service valley agents.',
+    },
+    tips: [
+      'Verify coverage for Charlottesville and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'prince-george': {
+    marketNotes:
+      'Prince George County is a suburban county south of Richmond with strong residential and industrial demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Prince George County pricing reflects Richmond-metro south corridor demand, Fort Lee adjacency, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Prince George and surrounding Richmond-south areas before booking.',
+      'Richmond-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  louisa: {
+    marketNotes:
+      'Louisa County is a rural Central Virginia county with residential demand centered on Louisa and Lake Anna.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Louisa County pricing reflects Lake Anna waterfront geography, rural property access, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Louisa and surrounding county areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and lakefront homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  warren: {
+    marketNotes:
+      'Warren County is a suburban county in Northern Virginia with residential demand centered on Front Royal.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Warren County pricing reflects Shenandoah Valley fringe suburban demand, I-66 corridor traffic, and competition among Northern Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Front Royal and surrounding Warren County areas before booking.',
+      'Northern Virginia traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'isle-of-wight': {
+    marketNotes:
+      'Isle of Wight County is a suburban/rural county on the Virginia Peninsula with residential demand across Smithfield and Windsor.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,500+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Isle of Wight County pricing reflects Hampton Roads peninsula demand, rural property access, and competition among Tidewater full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Isle of Wight and surrounding Hampton Roads areas before booking.',
+      'Hampton Roads traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  danville: {
+    marketNotes:
+      'Danville is an independent city in South Central Virginia with residential demand across the Dan River corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Danville pricing reflects Southside Virginia geography, regional industrial turnover, and competition among South Central full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Danville and surrounding Southside areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  orange: {
+    marketNotes:
+      'Orange County is a rural Central Virginia county with residential demand centered on Orange and Gordonsville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Orange County pricing reflects Central Virginia piedmont geography, rural property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Orange and surrounding county areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gloucester: {
+    marketNotes:
+      'Gloucester County is a suburban/rural county on the Virginia Peninsula with residential demand across the Middle Peninsula.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Gloucester County pricing reflects Middle Peninsula geography, waterfront property access, and competition among Tidewater full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Gloucester and surrounding peninsula areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and waterfront homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tazewell: {
+    marketNotes:
+      'Tazewell County is a rural Southwest Virginia county with residential demand centered on Tazewell and Richlands.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Tazewell County pricing reflects coalfields geography, mountain property access, and competition among Southwest Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Tazewell and surrounding county areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  caroline: {
+    marketNotes:
+      'Caroline County is a rural Central Virginia county with residential demand centered on Bowling Green.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Caroline County pricing reflects Northern Neck geography, rural property access, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Bowling Green and surrounding Caroline County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wise: {
+    marketNotes:
+      'Wise County is a rural Southwest Virginia county with residential demand centered on Wise and Norton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Wise County pricing reflects coalfields geography, mountain property access, and competition among Southwest Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Wise and surrounding county areas before booking.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value rural and hillside homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',

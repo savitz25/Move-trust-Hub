@@ -38,6 +38,22 @@ export const virginiaCountyOverrides: Partial<
   culpeper: { seat: 'Culpeper', metro: 'culpeper-metro-va' },
   campbell: { seat: 'Rustburg', metro: 'campbell-metro-va' },
   franklin: { seat: 'Rocky Mount', metro: 'franklin-metro-va' },
+  washington: { seat: 'Abingdon', metro: 'washington-metro-va', name: 'Washington County' },
+  harrisonburg: { seat: 'Harrisonburg', metro: 'harrisonburg-metro-va' },
+  henry: { seat: 'Martinsville', metro: 'henry-metro-va' },
+  shenandoah: { seat: 'Woodstock', metro: 'shenandoah-metro-va' },
+  manassas: { seat: 'Manassas', metro: 'manassas-metro-va' },
+  charlottesville: { seat: 'Charlottesville', metro: 'charlottesville-metro-va' },
+  'prince-george': { seat: 'Prince George', metro: 'prince-george-metro-va' },
+  louisa: { seat: 'Louisa', metro: 'louisa-metro-va' },
+  warren: { seat: 'Front Royal', metro: 'warren-metro-va' },
+  'isle-of-wight': { seat: 'Isle of Wight', metro: 'isle-of-wight-metro-va' },
+  danville: { seat: 'Danville', metro: 'danville-metro-va' },
+  orange: { seat: 'Orange', metro: 'orange-metro-va' },
+  gloucester: { seat: 'Gloucester', metro: 'gloucester-metro-va' },
+  tazewell: { seat: 'Tazewell', metro: 'tazewell-metro-va' },
+  caroline: { seat: 'Bowling Green', metro: 'caroline-metro-va' },
+  wise: { seat: 'Wise', metro: 'wise-metro-va' },
 };
 
 /** Duplicate FIPS slugs disambiguated by generated metro region */

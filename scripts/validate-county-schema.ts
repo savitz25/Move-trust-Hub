@@ -768,6 +768,22 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'virginia', countySlug: 'culpeper', expectedCity: 'Culpeper' },
   { stateSlug: 'virginia', countySlug: 'campbell', expectedCity: 'Rustburg' },
   { stateSlug: 'virginia', countySlug: 'franklin', expectedCity: 'Rocky Mount' },
+  { stateSlug: 'virginia', countySlug: 'washington', expectedCity: 'Abingdon' },
+  { stateSlug: 'virginia', countySlug: 'harrisonburg', expectedCity: 'Harrisonburg' },
+  { stateSlug: 'virginia', countySlug: 'henry', expectedCity: 'Martinsville' },
+  { stateSlug: 'virginia', countySlug: 'shenandoah', expectedCity: 'Woodstock' },
+  { stateSlug: 'virginia', countySlug: 'manassas', expectedCity: 'Manassas' },
+  { stateSlug: 'virginia', countySlug: 'charlottesville', expectedCity: 'Charlottesville' },
+  { stateSlug: 'virginia', countySlug: 'prince-george', expectedCity: 'Prince George' },
+  { stateSlug: 'virginia', countySlug: 'louisa', expectedCity: 'Louisa' },
+  { stateSlug: 'virginia', countySlug: 'warren', expectedCity: 'Front Royal' },
+  { stateSlug: 'virginia', countySlug: 'isle-of-wight', expectedCity: 'Isle of Wight' },
+  { stateSlug: 'virginia', countySlug: 'danville', expectedCity: 'Danville' },
+  { stateSlug: 'virginia', countySlug: 'orange', expectedCity: 'Orange' },
+  { stateSlug: 'virginia', countySlug: 'gloucester', expectedCity: 'Gloucester' },
+  { stateSlug: 'virginia', countySlug: 'tazewell', expectedCity: 'Tazewell' },
+  { stateSlug: 'virginia', countySlug: 'caroline', expectedCity: 'Bowling Green' },
+  { stateSlug: 'virginia', countySlug: 'wise', expectedCity: 'Wise' },
 ];
 
 let totalIssues = 0;
