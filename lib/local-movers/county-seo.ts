@@ -56,6 +56,8 @@ import { getRhodeIslandCountyResearch } from '@/data/rhode-island-county-researc
 import { getRhodeIslandCountyTestimonials } from '@/data/rhode-island-county-testimonials';
 import { getVermontCountyResearch } from '@/data/vermont-county-research';
 import { getVermontCountyTestimonials } from '@/data/vermont-county-testimonials';
+import { getNewHampshireCountyResearch } from '@/data/new-hampshire-county-research';
+import { getNewHampshireCountyTestimonials } from '@/data/new-hampshire-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -160,6 +162,9 @@ export function buildStateDescription(
   }
   if (stateName === 'Vermont') {
     return `Find curated local movers in all 14 Vermont counties — up to 10 ranked companies in Chittenden (Burlington), 6–10 regional specialists in every county experienced with rural roads, winter conditions, ski-season and lakeside moves. FMCSA licensing, county cost guides, and Vermont-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
+  if (stateName === 'New Hampshire') {
+    return `Find curated local movers in all 10 New Hampshire counties — 10 ranked companies per county from Manchester–Nashua (Hillsborough) and the Seacoast through Concord, the Upper Valley, Lakes Region, and North Country. FMCSA licensing, county cost guides, and New Hampshire-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =
@@ -342,6 +347,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'vermont') {
     return getVermontCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'new-hampshire') {
+    return getNewHampshireCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -471,6 +479,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'vermont') {
     const curated = getVermontCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'new-hampshire') {
+    const curated = getNewHampshireCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -637,6 +649,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getVermontCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'new-hampshire') {
+    const curated = getNewHampshireCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -659,6 +675,8 @@ export type CountyTestimonial = {
   rating: number;
   moveType?: string;
 };
+
+export type CountyTestimonialEntry = CountyTestimonial;
 
 export function buildCountyTestimonials(
   county: LocalCounty,
@@ -786,6 +804,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'vermont') {
     const curated = getVermontCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'new-hampshire') {
+    const curated = getNewHampshireCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

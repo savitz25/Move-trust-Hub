@@ -57,6 +57,7 @@ const CURATED_STATES = [
   'massachusetts',
   'rhode-island',
   'vermont',
+  'new-hampshire',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -1004,6 +1005,16 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'vermont', countySlug: 'lamoille', expectedCity: 'Hyde Park' },
   { stateSlug: 'vermont', countySlug: 'grand-isle', expectedCity: 'North Hero' },
   { stateSlug: 'vermont', countySlug: 'essex', expectedCity: 'Guildhall' },
+  { stateSlug: 'new-hampshire', countySlug: 'hillsborough', expectedCity: 'Nashua' },
+  { stateSlug: 'new-hampshire', countySlug: 'rockingham', expectedCity: 'Brentwood' },
+  { stateSlug: 'new-hampshire', countySlug: 'merrimack', expectedCity: 'Concord' },
+  { stateSlug: 'new-hampshire', countySlug: 'strafford', expectedCity: 'Dover' },
+  { stateSlug: 'new-hampshire', countySlug: 'grafton', expectedCity: 'North Haverhill' },
+  { stateSlug: 'new-hampshire', countySlug: 'cheshire', expectedCity: 'Keene' },
+  { stateSlug: 'new-hampshire', countySlug: 'belknap', expectedCity: 'Laconia' },
+  { stateSlug: 'new-hampshire', countySlug: 'carroll', expectedCity: 'Ossipee' },
+  { stateSlug: 'new-hampshire', countySlug: 'sullivan', expectedCity: 'Newport' },
+  { stateSlug: 'new-hampshire', countySlug: 'coos', expectedCity: 'Lancaster' },
 ];
 
 let totalIssues = 0;

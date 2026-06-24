@@ -109,6 +109,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'massachusetts' ||
                 state.slug === 'rhode-island' ||
                 state.slug === 'vermont' ||
+                state.slug === 'new-hampshire' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -126,7 +127,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                               ? 'Browse all 5 Rhode Island county guides — 10 curated movers per county from Providence and Kent through Washington, Newport, and Bristol. FMCSA licensing, cost estimates, and county-specific moving tips.'
                               : state.slug === 'vermont'
                                 ? 'Browse all 14 Vermont county guides — up to 10 curated movers in Chittenden (Burlington), 6–10 regional specialists in every county experienced with rural roads, winter weather, and seasonal moves. FMCSA licensing, cost estimates, and county-specific moving tips.'
-                                : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                : state.slug === 'new-hampshire'
+                                  ? 'Browse all 10 New Hampshire county guides — 10 curated movers per county from Manchester–Nashua and the Seacoast through Concord, the Upper Valley, Lakes Region, and North Country. FMCSA licensing, cost estimates, and county-specific moving tips.'
+                                  : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>
