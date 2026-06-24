@@ -5,6 +5,8 @@ export const michiganCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
   wayne: { seat: 'Detroit', metro: 'detroit-metro-mi' },
+  oakland: { seat: 'Pontiac', metro: 'detroit-metro-mi' },
+  macomb: { seat: 'Mount Clemens', metro: 'detroit-metro-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {

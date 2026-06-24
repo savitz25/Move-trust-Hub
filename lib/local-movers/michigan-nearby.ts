@@ -12,6 +12,8 @@ const countyNameBySlug = new Map(michiganCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated MI county pages — expands as counties are researched */
 const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   wayne: ['oakland', 'macomb', 'washtenaw', 'monroe'],
+  oakland: ['wayne', 'macomb', 'lapeer', 'livingston', 'washtenaw', 'genesee'],
+  macomb: ['wayne', 'oakland', 'st-clair', 'lapeer'],
 };
 
 export function getMichiganNearbyCounties(
