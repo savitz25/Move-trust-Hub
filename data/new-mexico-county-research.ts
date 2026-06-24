@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated New Mexico county research — batch 1: 11/33 */
+/** Hand-curated New Mexico county research — 33/33 complete */
 export const newMexicoCountyResearch: Record<string, CuratedCountyResearch> = {
   bernalillo: {
     marketNotes:
@@ -191,6 +191,380 @@ export const newMexicoCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Roswell and surrounding areas before booking.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  curry: {
+    marketNotes:
+      'Curry County is an eastern New Mexico county with residential demand across the Clovis metro and high-plains corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Curry County pricing reflects Clovis metro demand, US-60/70/84 corridor traffic, and competition among regional agents serving eastern New Mexico high-plains communities.',
+    },
+    tips: [
+      'Verify coverage for Clovis and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Cannon AFB relocations may require base access coordination — confirm credentials.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'rio-arriba': {
+    marketNotes:
+      'Rio Arriba County is a northern New Mexico county with residential demand across Española, Tierra Amarilla, and the northern Rio Grande valley.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Rio Arriba County pricing reflects Española metro demand, US-84/285 corridor traffic, and competition among regional agents serving northern valley and high-country communities.',
+    },
+    tips: [
+      'Verify coverage for Española, Tierra Amarilla, and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and historic adobe properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  taos: {
+    marketNotes:
+      'Taos County is a northern New Mexico ski-valley county with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Taos County pricing reflects ski-valley tourism demand, US-64 corridor traffic, and competition among regional agents serving Taos, Taos Ski Valley, and high-country communities.',
+    },
+    tips: [
+      'Verify coverage for Taos and surrounding areas before booking.',
+      'Tourist and ski-season traffic impacts scheduling — confirm crew arrival windows.',
+      'Historic adobe and high-value mountain homes may require specialty handling — confirm insurance and experience.',
+      'Book early for peak tourist and ski seasons (June–March) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County is a southwestern New Mexico county with residential demand across Silver City and the Gila edge region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Silver City metro demand, US-180 corridor traffic, and competition among regional agents serving southwestern New Mexico communities.',
+    },
+    tips: [
+      'Verify coverage for Silver City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cibola: {
+    marketNotes:
+      'Cibola County is a western New Mexico county with residential demand across Grants and the Mt. Taylor region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Cibola County pricing reflects Grants metro demand, I-40 corridor traffic, and competition among regional agents serving western New Mexico communities.',
+    },
+    tips: [
+      'Verify coverage for Grants and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'san-miguel': {
+    marketNotes:
+      'San Miguel County is a northeastern New Mexico county with residential demand across Las Vegas and the Sangre de Cristo foothills.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'San Miguel County pricing reflects Las Vegas metro demand, I-25 corridor traffic, and competition among regional agents serving northeastern New Mexico communities.',
+    },
+    tips: [
+      'Verify coverage for Las Vegas and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value historic homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  luna: {
+    marketNotes:
+      'Luna County is a southwestern New Mexico border county with residential demand across Deming and the border southwest region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Luna County pricing reflects Deming metro demand, I-10 corridor traffic, and competition among regional agents serving southwestern New Mexico border communities.',
+    },
+    tips: [
+      'Verify coverage for Deming and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County is a southern New Mexico mountain county with strong tourism and residential demand across Ruidoso and the Sacramento Mountains.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects Ruidoso tourism and mountain-home demand, US-70 corridor traffic, and competition among regional agents serving southern New Mexico mountain communities.',
+    },
+    tips: [
+      'Verify coverage for Ruidoso, Carrizozo, and surrounding areas before booking.',
+      'Tourist and mountain-road traffic impacts scheduling — confirm crew arrival windows.',
+      'Mountain elevation and winding roads may require specialty handling — confirm truck access and insurance.',
+      'Book early for peak tourist seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'los-alamos': {
+    marketNotes:
+      'Los Alamos County is a northern New Mexico county with residential demand across Los Alamos National Laboratory and the Pajarito Plateau.',
+    costs: {
+      studioRange: '$900–$1,900',
+      familyRange: '$3,500–$8,000+',
+      avgHourly: '$125–$190/hr for a 2-person crew',
+      note: 'Los Alamos County pricing reflects National Laboratory and high-income residential demand, NM-502 corridor traffic, and competition among regional agents serving northern New Mexico plateau communities.',
+    },
+    tips: [
+      'Verify coverage for Los Alamos and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Federal and National Laboratory relocations may require security clearance coordination — confirm credentials.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  roosevelt: {
+    marketNotes:
+      'Roosevelt County is an eastern New Mexico plains county with residential demand across Portales and the eastern plains region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Roosevelt County pricing reflects Portales metro and university-area demand, US-70 corridor traffic, and competition among regional agents serving eastern New Mexico plains communities.',
+    },
+    tips: [
+      'Verify coverage for Portales and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'University and agricultural relocations may require flexible scheduling — confirm experience when needed.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  torrance: {
+    marketNotes:
+      'Torrance County is a central New Mexico county with residential demand across Estancia and the central valley region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Torrance County pricing reflects Estancia-area demand, US-60 corridor traffic, and competition among regional agents serving central New Mexico valley communities.',
+    },
+    tips: [
+      'Verify coverage for Estancia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  socorro: {
+    marketNotes:
+      'Socorro County is a central New Mexico county with residential demand across Socorro and the Rio Grande corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Socorro County pricing reflects Socorro metro and research-community demand, I-25 corridor traffic, and competition among regional agents serving central New Mexico Rio Grande communities.',
+    },
+    tips: [
+      'Verify coverage for Socorro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Research and university relocations near NM Tech may require specialty handling — confirm experience.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  colfax: {
+    marketNotes:
+      'Colfax County is a northeastern New Mexico plateau county with residential demand across Raton and the northeast plateau region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Colfax County pricing reflects Raton metro demand, I-25 corridor traffic, and competition among regional agents serving northeastern New Mexico plateau communities.',
+    },
+    tips: [
+      'Verify coverage for Raton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sierra: {
+    marketNotes:
+      'Sierra County is a southern New Mexico county with residential demand across Truth or Consequences and the southern Rio Grande corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sierra County pricing reflects Truth or Consequences metro demand, I-25 and US-85 corridor traffic, and competition among regional agents serving southern New Mexico Rio Grande communities.',
+    },
+    tips: [
+      'Verify coverage for Truth or Consequences and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and waterfront properties near Elephant Butte Lake.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  quay: {
+    marketNotes:
+      'Quay County is an eastern New Mexico county with residential demand across Tucumcari and the Route 66 east corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Quay County pricing reflects Tucumcari metro demand, I-40 corridor traffic, and competition among regional agents serving eastern New Mexico Route 66 communities.',
+    },
+    tips: [
+      'Verify coverage for Tucumcari and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  guadalupe: {
+    marketNotes:
+      'Guadalupe County is an eastern New Mexico corridor county with residential demand across Santa Rosa and the eastern corridor region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Guadalupe County pricing reflects Santa Rosa-area demand, I-40 corridor traffic, and competition among regional agents serving eastern New Mexico corridor communities.',
+    },
+    tips: [
+      'Verify coverage for Santa Rosa and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mora: {
+    marketNotes:
+      'Mora County is a northern New Mexico rural county with residential demand across Mora and the Sangre de Cristo north region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Mora County pricing reflects rural northern New Mexico residential demand, NM-518 corridor traffic, and competition among regional agents serving remote valley communities.',
+    },
+    tips: [
+      'Verify coverage for Mora and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and ranch properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hidalgo: {
+    marketNotes:
+      'Hidalgo County is a southwestern New Mexico border county with residential demand across Lordsburg and the border south region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hidalgo County pricing reflects Lordsburg metro demand, I-10 corridor traffic, and competition among regional agents serving southwestern New Mexico border communities.',
+    },
+    tips: [
+      'Verify coverage for Lordsburg and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  catron: {
+    marketNotes:
+      'Catron County is a remote southwestern New Mexico county with residential demand across Reserve and the Gila Wilderness region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Catron County pricing reflects remote southwestern New Mexico residential demand, US-180 corridor traffic, and competition among regional agents serving Gila Wilderness communities with extended travel distances.',
+    },
+    tips: [
+      'Verify coverage for Reserve and surrounding areas before booking.',
+      'Remote rural routes may require advance scheduling and cross-county crew coordination — confirm travel fees and availability.',
+      'Confirm insurance for high-value ranch and wilderness-area homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is a northeastern New Mexico corner county with residential demand across Clayton and the northeast corner region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Union County pricing reflects Clayton-area demand, US-56/64/87 corridor traffic, and competition among regional agents serving northeastern New Mexico corner communities.',
+    },
+    tips: [
+      'Verify coverage for Clayton and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and ranch properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'de-baca': {
+    marketNotes:
+      'De Baca County is a rural eastern New Mexico county with residential demand across Fort Sumner and the eastern plateau region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'De Baca County pricing reflects Fort Sumner-area demand, US-60/84 corridor traffic, and competition among regional agents serving rural eastern New Mexico plateau communities.',
+    },
+    tips: [
+      'Verify coverage for Fort Sumner and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and ranch properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  harding: {
+    marketNotes:
+      'Harding County is a remote northeastern New Mexico ranch county with residential demand across Roy and the northeast ranch region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Harding County pricing reflects remote northeastern New Mexico ranch-country demand, US-87 corridor traffic, and competition among regional agents serving isolated ranch communities with extended travel distances.',
+    },
+    tips: [
+      'Verify coverage for Roy and surrounding areas before booking.',
+      'Remote rural routes may require advance scheduling and cross-county crew coordination — confirm travel fees and availability.',
+      'Confirm insurance for high-value ranch properties.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],

@@ -1,5 +1,5 @@
 /**
- * One-shot script: ensure NM batch-1 curated assignments meet county mover targets.
+ * One-shot script: ensure NM curated assignments meet county mover targets.
  * Run: npx tsx scripts/apply-new-mexico-mover-expansion.ts
  */
 import { readFileSync, writeFileSync } from 'fs';

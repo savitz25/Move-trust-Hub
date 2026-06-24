@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for New Mexico local movers directory (batch 1).
+ * Full SEO / E-E-A-T audit for New Mexico local movers directory.
  * Run: npx tsx scripts/audit-new-mexico-seo.ts
  */
 import { newMexicoCountyResearch } from '../data/new-mexico-county-research';
@@ -9,7 +9,7 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const DEFAULT_TARGET = 10;
-const EXPECTED_COUNT = 11;
+const EXPECTED_COUNT = 33;
 
 const issues: string[] = [];
 const curatedSlugs = Object.keys(newMexicoCountyResearch).sort();
@@ -39,8 +39,8 @@ for (const slug of curatedSlugs) {
   }
 }
 
-console.log('New Mexico SEO audit (batch 1)');
-console.log('================================');
+console.log('New Mexico SEO audit');
+console.log('====================');
 console.log(`Curated counties: ${curatedSlugs.length}`);
 const researchCount = Object.keys(newMexicoCountyResearch).length;
 console.log(`Research entries: ${researchCount}`);
@@ -58,7 +58,7 @@ for (const slug of curatedSlugs) {
 console.log(`Issues: ${issues.length}`);
 
 if (issues.length === 0) {
-  console.log(`\n✓ New Mexico batch-1 counties meet full curation standard (${EXPECTED_COUNT}/${EXPECTED_COUNT}).`);
+  console.log(`\n✓ New Mexico curated counties meet full curation standard (${EXPECTED_COUNT}/${EXPECTED_COUNT}).`);
 } else {
   console.log('\nIssues:');
   for (const line of issues) console.log(`  ${line}`);

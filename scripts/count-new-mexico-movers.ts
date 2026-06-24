@@ -4,7 +4,7 @@ import { getMoversForCounty } from '../lib/local-movers/index';
 const DEFAULT_TARGET = 10;
 
 const curatedSlugs = Object.keys(newMexicoCountyResearch).sort();
-console.log(`New Mexico curated counties (batch 1): ${curatedSlugs.length}`);
+console.log(`New Mexico curated counties: ${curatedSlugs.length}`);
 const underTarget: string[] = [];
 
 for (const slug of curatedSlugs) {
@@ -14,7 +14,7 @@ for (const slug of curatedSlugs) {
 }
 
 if (underTarget.length === 0) {
-  console.log('\n✓ All New Mexico batch-1 counties meet mover targets.');
+  console.log('\n✓ All New Mexico curated counties meet mover targets.');
 } else {
   console.error('\n✗ Under target:', underTarget.join(', '));
   process.exit(1);
