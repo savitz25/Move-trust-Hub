@@ -30,6 +30,8 @@ import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getIllinoisCountyTestimonials } from '@/data/illinois-county-testimonials';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
 import { getMichiganCountyTestimonials } from '@/data/michigan-county-testimonials';
+import { getIndianaCountyResearch } from '@/data/indiana-county-research';
+import { getIndianaCountyTestimonials } from '@/data/indiana-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -129,6 +131,7 @@ export function buildStateDescription(
     stateName === 'Missouri' ||
     stateName === 'Illinois' ||
     stateName === 'Michigan' ||
+    stateName === 'Indiana' ||
     stateName === 'Texas'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';
@@ -246,6 +249,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'michigan') {
     return getMichiganCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'indiana') {
+    return getIndianaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -323,6 +329,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'michigan') {
     const curated = getMichiganCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'indiana') {
+    const curated = getIndianaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -437,6 +447,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getMichiganCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'indiana') {
+    const curated = getIndianaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -534,6 +548,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'michigan') {
     const curated = getMichiganCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'indiana') {
+    const curated = getIndianaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

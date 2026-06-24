@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -26,6 +26,24 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
+| Indiana | 5/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 5 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
+
+### Indiana metro pools (`data/local-movers-seed.ts`)
+
+- `indianapolis-metro-in` — Indianapolis / Marion hub (Hamilton collar spillover)
+- `northwest-indiana-metro-in` — Lake County / Gary–Hammond–Merrillville–Crown Point (Chicago metro Indiana side)
+- `fort-wayne-metro-in` — Fort Wayne / Allen Northeast Indiana hub
+- `south-bend-metro-in` — South Bend / St. Joseph (Notre Dame) hub
+
+### Indiana major counties (10 movers each; Marion up to 18)
+
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`
+
+### Indiana sitemap priority 0.85 (5 counties — batch 1)
+
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/indiana.xml` (93 URLs: hub + 92 counties). Do **not** use `/sitemap-local/indiana.xml` (legacy path redirects to canonical).
 
 ### Michigan metro pools (`data/local-movers-seed.ts`)
 
@@ -505,8 +523,10 @@ npx tsx scripts/count-texas-movers.ts
 npx tsx scripts/count-tennessee-movers.ts
 npx tsx scripts/count-illinois-movers.ts
 npx tsx scripts/count-michigan-movers.ts
+npx tsx scripts/count-indiana-movers.ts
 npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
 npx tsx scripts/apply-michigan-mover-expansion.ts   # if needed
+npx tsx scripts/apply-indiana-mover-expansion.ts   # if needed
 npx tsx scripts/apply-{state}-mover-expansion.ts   # if needed
 ```
 

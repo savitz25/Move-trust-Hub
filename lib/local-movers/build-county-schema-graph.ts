@@ -17,10 +17,12 @@ import {
   MISSOURI_COUNTY_CONTENT_UPDATED,
   ILLINOIS_COUNTY_CONTENT_UPDATED,
   MICHIGAN_COUNTY_CONTENT_UPDATED,
+  INDIANA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
+import { getIndianaCountyResearch } from '@/data/indiana-county-research';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
 import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
@@ -137,6 +139,12 @@ function resolveContentModified(county: LocalCounty): string {
     getMichiganCountyResearch(county.slug)
   ) {
     return MICHIGAN_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'indiana' &&
+    getIndianaCountyResearch(county.slug)
+  ) {
+    return INDIANA_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }
