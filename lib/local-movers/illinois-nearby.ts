@@ -23,6 +23,13 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   champaign: ['piatt', 'douglas', 'vermilion', 'ford', 'mclean'],
   sangamon: ['menard', 'logan', 'christian', 'macoupin', 'montgomery'],
   peoria: ['tazewell', 'woodford', 'marshall', 'stark', 'fulton'],
+  mclean: ['woodford', 'livingston', 'ford', 'piatt', 'dewitt', 'logan'],
+  kendall: ['will', 'dupage', 'kane', 'grundy', 'lasalle'],
+  'rock-island': ['henry', 'mercer', 'whiteside'],
+  tazewell: ['peoria', 'woodford', 'mclean', 'logan', 'mason'],
+  lasalle: ['lee', 'bureau', 'putnam', 'kendall', 'grundy', 'livingston'],
+  kankakee: ['will', 'ford', 'iroquois', 'grundy', 'livingston'],
+  dekalb: ['kane', 'mchenry', 'boone', 'winnebago', 'lee', 'ogle'],
 };
 
 export function getIllinoisNearbyCounties(

@@ -151,6 +151,13 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'champaign',
   'sangamon',
   'peoria',
+  'mclean',
+  'kendall',
+  'rock-island',
+  'tazewell',
+  'lasalle',
+  'kankakee',
+  'dekalb',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([

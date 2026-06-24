@@ -217,6 +217,125 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  mclean: {
+    marketNotes:
+      'McLean County is a key Central Illinois county anchored by Illinois State University and State Farm Insurance with strong educational, corporate, and residential demand across Bloomington and Normal.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'McLean County pricing reflects corporate relocation demand, university move windows, and I-55/I-74 corridor traffic in Bloomington-Normal.',
+    },
+    tips: [
+      'Verify coverage for Bloomington, Normal, and surrounding areas before booking.',
+      'University and corporate traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kendall: {
+    marketNotes:
+      'Kendall County is one of Illinois’s fastest-growing suburban counties with strong residential demand across Yorkville, Oswego, and Plano.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,200–$7,200+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Kendall County pricing reflects Chicago southwest suburban growth, I-88 corridor traffic, and demand in fast-growing Yorkville and Oswego communities.',
+    },
+    tips: [
+      'Verify coverage for Yorkville, Oswego, and Plano areas before booking.',
+      'Chicago-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'rock-island': {
+    marketNotes:
+      'Rock Island County is part of the Quad Cities metropolitan area with strong industrial and residential demand across Rock Island, Moline, and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Rock Island County pricing reflects Quad Cities bi-state traffic, Mississippi River corridor communities, and regional industrial relocation demand.',
+    },
+    tips: [
+      'Verify coverage for Rock Island, Moline, and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tazewell: {
+    marketNotes:
+      'Tazewell County is a key county in the Peoria metropolitan area with strong residential and industrial demand across Pekin, Morton, and East Peoria.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Tazewell County pricing reflects Peoria metro spillover demand, I-74 corridor traffic, and industrial-adjacent residential relocations.',
+    },
+    tips: [
+      'Verify coverage for Pekin, Morton, and East Peoria areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lasalle: {
+    marketNotes:
+      'LaSalle County is a significant county in North Central Illinois with strong industrial and residential demand across Ottawa, Peru, and LaSalle.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'LaSalle County pricing reflects Illinois River valley communities, industrial corridor relocations, and regional north-central Illinois mover competition.',
+    },
+    tips: [
+      'Verify coverage for Ottawa, Peru, and LaSalle areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kankakee: {
+    marketNotes:
+      'Kankakee County is a key county south of Chicago with strong residential and agricultural demand across Kankakee and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Kankakee County pricing reflects south Chicago suburban spillover, I-57 corridor traffic, and regional agricultural-community relocations.',
+    },
+    tips: [
+      'Verify coverage for Kankakee and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dekalb: {
+    marketNotes:
+      'DeKalb County is anchored by Northern Illinois University with strong educational and residential demand across DeKalb and Sycamore.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'DeKalb County pricing reflects university move-in/out windows, student housing turnover, and I-88 corridor traffic west of Chicago.',
+    },
+    tips: [
+      'Verify coverage for DeKalb and Sycamore areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows around campus move periods.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and August student move-in.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

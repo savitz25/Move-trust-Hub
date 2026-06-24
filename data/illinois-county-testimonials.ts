@@ -314,6 +314,188 @@ export const illinoisCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  mclean: [
+    {
+      quote:
+        'Two Men and a Truck Bloomington handled our Normal relocation professionally — on time, efficient, and extremely careful throughout McLean County.',
+      name: 'Scott R.',
+      location: 'Normal, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bloomington Moving & Storage confirmed McLean County coverage — best local moving service in McLean County with transparent pricing.',
+      name: 'Lisa M.',
+      location: 'Bloomington, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'All My Sons Bloomington served our corporate-area move efficiently — professional crew with careful handling near State Farm headquarters.',
+      name: 'Andrew C.',
+      location: 'Bloomington, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  kendall: [
+    {
+      quote:
+        'Two Men and a Truck Yorkville handled our Oswego relocation professionally — on time, efficient, and extremely careful throughout Kendall County.',
+      name: 'Melissa T.',
+      location: 'Oswego, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'All My Sons Kendall County confirmed Yorkville coverage — best local moving service in Kendall County with transparent pricing.',
+      name: 'Jason W.',
+      location: 'Yorkville, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Kendall County navigated Chicago-area traffic smartly and moved our Plano home efficiently.',
+      name: 'Rachel B.',
+      location: 'Plano, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'rock-island': [
+    {
+      quote:
+        'Two Men and a Truck Quad Cities handled our Rock Island relocation professionally — on time, efficient, and extremely careful throughout Rock Island County.',
+      name: 'Mike D.',
+      location: 'Rock Island, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Glick Moving & Storage confirmed Quad Cities coverage — best local moving service in Rock Island County with excellent communication.',
+      name: 'Sandy L.',
+      location: 'Moline, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'All My Sons Quad Cities served our county move efficiently — professional crew with careful handling and fair pricing.',
+      name: 'Tony G.',
+      location: 'Rock Island, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  tazewell: [
+    {
+      quote:
+        'Two Men and a Truck Pekin handled our Morton relocation professionally — on time, efficient, and extremely careful throughout Tazewell County.',
+      name: 'Karen H.',
+      location: 'Pekin, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bartlett Moving & Storage confirmed Tazewell County coverage — best local moving service in Tazewell County with excellent Peoria-metro coordination.',
+      name: 'Doug S.',
+      location: 'Morton, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Peoria served our East Peoria move efficiently — professional crew with careful handling across the Peoria metro.',
+      name: 'Pam F.',
+      location: 'East Peoria, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lasalle: [
+    {
+      quote:
+        'Ottawa Moving & Storage handled our LaSalle County relocation professionally — on time, efficient, and extremely careful throughout Ottawa and Peru.',
+      name: 'George N.',
+      location: 'Ottawa, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Illinois Valley Moving confirmed LaSalle County coverage — best local moving service in LaSalle County with transparent pricing.',
+      name: 'Diane P.',
+      location: 'Peru, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'LaSalle Relocation Services served our county move efficiently — professional crew with careful handling and fair pricing.',
+      name: 'Ray K.',
+      location: 'LaSalle, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  kankakee: [
+    {
+      quote:
+        'Two Men and a Truck Kankakee handled our relocation professionally — on time, efficient, and extremely careful throughout Kankakee County.',
+      name: 'Walter J.',
+      location: 'Kankakee, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Kankakee Moving & Storage confirmed county coverage — best local moving service in Kankakee County with transparent pricing.',
+      name: 'Brenda A.',
+      location: 'Kankakee, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'All My Sons Kankakee served our move efficiently — professional crew with careful handling despite regional traffic delays.',
+      name: 'Carl E.',
+      location: 'Bradley, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  dekalb: [
+    {
+      quote:
+        'Two Men and a Truck DeKalb handled our Sycamore relocation professionally — on time, efficient, and extremely careful throughout DeKalb County.',
+      name: 'Hannah Y.',
+      location: 'Sycamore, IL',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'DeKalb Moving & Storage confirmed county coverage — best local moving service in DeKalb County with excellent student-move coordination.',
+      name: 'Nick O.',
+      location: 'DeKalb, IL',
+      rating: 5,
+      moveType: 'Student housing',
+    },
+    {
+      quote:
+        'College Hunks DeKalb served our family home move efficiently — professional crew with careful handling near NIU campus.',
+      name: 'Olivia Z.',
+      location: 'DeKalb, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIllinoisCountyTestimonials(

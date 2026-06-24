@@ -16,6 +16,13 @@ export const illinoisCountyOverrides: Partial<
   champaign: { seat: 'Urbana', metro: 'champaign-urbana-metro-il' },
   sangamon: { seat: 'Springfield', metro: 'springfield-metro-il' },
   peoria: { seat: 'Peoria', metro: 'peoria-metro-il' },
+  mclean: { seat: 'Bloomington', metro: 'bloomington-normal-metro-il' },
+  kendall: { seat: 'Yorkville', metro: 'chicago-metro-southwest-il' },
+  'rock-island': { seat: 'Rock Island', metro: 'quad-cities-metro-il' },
+  tazewell: { seat: 'Pekin', metro: 'peoria-metro-il' },
+  lasalle: { seat: 'Ottawa', metro: 'ottawa-metro-il' },
+  kankakee: { seat: 'Kankakee', metro: 'kankakee-metro-il' },
+  dekalb: { seat: 'Sycamore', metro: 'dekalb-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {
