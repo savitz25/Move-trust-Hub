@@ -1,5 +1,5 @@
 import { testimonials, trustStats } from '@/lib/trust/trust-data';
-import { SITE_PHONE_TEL } from '@/lib/contact';
+import { SITE_EMAIL } from '@/lib/contact';
 
 const SITE_URL = 'https://www.movetrusthub.com';
 
@@ -9,14 +9,13 @@ export const organizationSchema = {
   name: 'Move Trust Hub',
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
-  telephone: SITE_PHONE_TEL,
+  email: SITE_EMAIL,
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: SITE_PHONE_TEL,
+    email: SITE_EMAIL,
     contactType: 'customer service',
     areaServed: 'US',
     availableLanguage: 'English',
-    contactOption: 'TollFree',
   },
   description:
     'Independent directory and quote-matching service for FMCSA-licensed interstate and long-distance moving companies in the United States.',

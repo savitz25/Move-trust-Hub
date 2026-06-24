@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { TrustBadges } from '@/components/trust/trust-badges';
-import { ClickToCallButton } from '@/components/click-to-call-button';
-
-
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -24,15 +21,6 @@ export function Footer() {
             <p className="mt-2.5 text-sm text-muted-foreground max-w-[210px] leading-snug">
               Independent directory for trusted interstate movers.
             </p>
-            <div className="mt-4">
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/80 mb-2">
-                Talk to a specialist
-              </p>
-              <ClickToCallButton variant="footer" showLabel={false} />
-              <p className="mt-2 text-[11px] text-muted-foreground/70">
-                Toll-free
-              </p>
-            </div>
           </div>
 
           <div>

@@ -1,6 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { ClickToCallButton } from '@/components/click-to-call-button';
-import { SITE_PHONE_DISPLAY } from '@/lib/contact';
+import { SITE_EMAIL } from '@/lib/contact';
 
 export const metadata = { title: 'Contact Move Trust Hub' };
 
@@ -13,15 +12,8 @@ export default function ContactPage() {
         <CardContent className="pt-6 space-y-4 text-sm">
           <p>This is an informational directory. For questions about specific moves, please contact the moving company directly.</p>
           <div>
-            <strong>Call us (toll-free)</strong>
-            <div className="mt-2">
-              <ClickToCallButton variant="prominent" />
-            </div>
-            <p className="mt-2 text-muted-foreground">{SITE_PHONE_DISPLAY}</p>
-          </div>
-          <div>
             <strong>General inquiries &amp; data corrections</strong><br />
-            <a href="mailto:hello@movetrusthub.com" className="text-primary">hello@movetrusthub.com</a>
+            <a href={`mailto:${SITE_EMAIL}`} className="text-primary">{SITE_EMAIL}</a>
           </div>
           <div>
             <strong>Press / Partnerships</strong><br />
