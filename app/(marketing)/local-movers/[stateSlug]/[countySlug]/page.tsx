@@ -28,6 +28,7 @@ import {
   VIRGINIA_COUNTY_CONTENT_UPDATED,
   DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED,
   DELAWARE_COUNTY_CONTENT_UPDATED,
+  MARYLAND_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -45,6 +46,7 @@ import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-resea
 import { getVirginiaCountyResearch } from '@/data/virginia-county-research';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDelawareCountyResearch } from '@/data/delaware-county-research';
+import { getMarylandCountyResearch } from '@/data/maryland-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -74,6 +76,7 @@ import { getWestVirginiaNearbyCounties } from '@/lib/local-movers/west-virginia-
 import { getVirginiaNearbyCounties } from '@/lib/local-movers/virginia-nearby';
 import { getDistrictOfColumbiaNearbyCounties } from '@/lib/local-movers/district-of-columbia-nearby';
 import { getDelawareNearbyCounties } from '@/lib/local-movers/delaware-nearby';
+import { getMarylandNearbyCounties } from '@/lib/local-movers/maryland-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -215,7 +218,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                     : stateSlug === 'delaware' &&
                                                         getDelawareCountyResearch(countySlug)
                                                       ? getDelawareNearbyCounties(countySlug)
-                                                      : [];
+                                                      : stateSlug === 'maryland' &&
+                                                          getMarylandCountyResearch(countySlug)
+                                                        ? getMarylandNearbyCounties(countySlug)
+                                                        : [];
 
   return (
     <>
@@ -404,7 +410,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                             : stateSlug === 'delaware' &&
                                                                 getDelawareCountyResearch(countySlug)
                                                               ? DELAWARE_COUNTY_CONTENT_UPDATED
-                                                              : undefined
+                                                              : stateSlug === 'maryland' &&
+                                                                  getMarylandCountyResearch(countySlug)
+                                                                ? MARYLAND_COUNTY_CONTENT_UPDATED
+                                                                : undefined
           }
         />
 

@@ -22,6 +22,7 @@ import {
   VIRGINIA_COUNTY_CONTENT_UPDATED,
   DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED,
   DELAWARE_COUNTY_CONTENT_UPDATED,
+  MARYLAND_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -206,6 +207,9 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
 
 /** High-traffic DE counties — sitemap priority 0.85 (Wilmington metro) */
 const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
+
+/** High-traffic MD counties — sitemap priority 0.85 (batch 1 large markets) */
+const MD_HIGH_TRAFFIC_COUNTIES = new Set(['montgomery', 'prince-georges', 'baltimore']);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */
 const WV_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -516,7 +520,9 @@ export default async function sitemap({
                                                     ? new Date(DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED)
                                                     : id === 'delaware'
                                                       ? new Date(DELAWARE_COUNTY_CONTENT_UPDATED)
-                                                      : new Date();
+                                                      : id === 'maryland'
+                                                        ? new Date(MARYLAND_COUNTY_CONTENT_UPDATED)
+                                                        : new Date();
 
   return [
     {
@@ -562,7 +568,8 @@ export default async function sitemap({
         (id === 'west-virginia' && WV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'virginia' && VA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         id === 'district-of-columbia' ||
-        (id === 'delaware' && DE_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'delaware' && DE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'maryland' && MD_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
