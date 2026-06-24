@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next';
+import type { Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
@@ -10,6 +10,7 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/sonner';
 import { Suspense } from 'react';
 import { Chatbot } from '@/components/chatbot';
+import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,60 +26,7 @@ const geistMono = Geist_Mono({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://www.movetrusthub.com'),
-  title: {
-    default: 'Move Trust Hub | Trusted Directory for Interstate & Long-Distance Movers',
-    template: '%s | Move Trust Hub',
-  },
-  description: 'Find trusted interstate moving companies. Compare movers by reputation, price, reviews & FMCSA data. Get free quotes and book with confidence at Move Trust Hub.',
-  keywords: [
-    'interstate movers',
-    'moving companies USA',
-    'best interstate moving companies',
-    'compare moving companies',
-    'FMCSA licensed movers',
-    'long distance movers',
-    'trusted movers directory',
-    'move trust hub',
-    'Allied Van Lines',
-    'United Van Lines',
-    'moving reviews',
-  ],
-  authors: [{ name: 'Move Trust Hub' }],
-  icons: {
-    icon: '/logo.png',
-    // For full cross-browser/device support (recommended):
-    // 1. Use a tool like https://realfavicongenerator.net/ with your logo to generate:
-    //    - favicon.ico (place in app/favicon.ico)
-    //    - apple-icon.png (180x180, place in app/apple-icon.png)
-    //    - icon.png etc. if wanted
-    // 2. Then change the icon line above to: icon: '/favicon.ico',
-    //    and add apple: '/apple-icon.png',
-  },
-  openGraph: {
-    title: 'Move Trust Hub — Trusted Directory & Reviews for Interstate Movers',
-    description: 'Research, compare, and choose reputable interstate moving companies with verified reviews, FMCSA data, and transparent pricing. Your hub for trusted movers.',
-    images: [{ url: '/logo.png' }], // Your loved PNG logo - https://www.movetrusthub.com/logo.png (perfect for emails & social)
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Move Trust Hub',
-    description: 'The most trusted directory for comparing interstate moving companies.',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-};
+export const metadata = rootLayoutMetadata;
 
 export const viewport: Viewport = {
   themeColor: [
