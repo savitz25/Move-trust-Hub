@@ -44,6 +44,21 @@ export const ohioCountyOverrides: Partial<
   knox: { seat: 'Mount Vernon', metro: 'columbus-metro-oh' },
   belmont: { seat: 'St. Clairsville', metro: 'youngstown-metro-oh' },
   pickaway: { seat: 'Circleville', metro: 'columbus-metro-oh' },
+  highland: { seat: 'Hillsboro', metro: 'chillicothe-metro-oh' },
+  mercer: { seat: 'Celina', metro: 'celina-metro-oh' },
+  clinton: { seat: 'Wilmington', metro: 'cincinnati-metro-oh' },
+  crawford: { seat: 'Bucyrus', metro: 'mansfield-metro-oh' },
+  fulton: { seat: 'Wauseon', metro: 'toledo-metro-oh' },
+  preble: { seat: 'Eaton', metro: 'dayton-metro-oh' },
+  ottawa: { seat: 'Port Clinton', metro: 'cleveland-metro-oh' },
+  champaign: { seat: 'Urbana', metro: 'springfield-metro-oh' },
+  guernsey: { seat: 'Cambridge', metro: 'cambridge-metro-oh' },
+  defiance: { seat: 'Defiance', metro: 'defiance-metro-oh' },
+  coshocton: { seat: 'Coshocton', metro: 'coshocton-metro-oh' },
+  morrow: { seat: 'Mount Gilead', metro: 'columbus-metro-oh' },
+  williams: { seat: 'Bryan', metro: 'bryan-metro-oh' },
+  perry: { seat: 'New Lexington', metro: 'columbus-metro-oh' },
+  putnam: { seat: 'Ottawa', metro: 'toledo-metro-oh' },
 };
 
 export function applyOhioCountyOverrides(county: LocalCounty): LocalCounty {

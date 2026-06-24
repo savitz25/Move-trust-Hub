@@ -51,6 +51,21 @@ const OH_COUNTY_NEIGHBORS: Record<string, string[]> = {
   knox: ['licking', 'delaware', 'morrow', 'richland', 'coshocton', 'holmes'],
   belmont: ['harrison', 'jefferson', 'monroe', 'noble', 'guernsey', 'columbiana'],
   pickaway: ['franklin', 'fairfield', 'ross', 'hocking', 'fayette', 'madison'],
+  highland: ['clinton', 'ross', 'fayette', 'brown', 'clermont', 'hamilton'],
+  mercer: ['darke', 'shelby', 'auglaize', 'van-wert', 'allen', 'jay'],
+  clinton: ['highland', 'greene', 'warren', 'fayette', 'clermont', 'hamilton'],
+  crawford: ['richland', 'marion', 'morrow', 'seneca', 'huron', 'erie'],
+  fulton: ['lucas', 'henry', 'williams', 'defiance', 'wood', 'ottawa'],
+  preble: ['montgomery', 'butler', 'darke', 'wayne', 'union', 'fayette'],
+  ottawa: ['erie', 'sandusky', 'lucas', 'wood', 'huron', 'cuyahoga'],
+  champaign: ['clark', 'union', 'madison', 'logan', 'shelby', 'miami'],
+  guernsey: ['belmont', 'noble', 'muskingum', 'coshocton', 'tuscarawas', 'harrison'],
+  defiance: ['fulton', 'henry', 'williams', 'paulding', 'putnam', 'hancock'],
+  coshocton: ['knox', 'muskingum', 'guernsey', 'tuscarawas', 'holmes', 'licking'],
+  morrow: ['delaware', 'marion', 'knox', 'richland', 'crawford', 'union'],
+  williams: ['fulton', 'defiance', 'henry', 'paulding', 'steuben', 'dekalb'],
+  perry: ['licking', 'fairfield', 'hocking', 'muskingum', 'morgan', 'athens'],
+  putnam: ['allen', 'hancock', 'henry', 'defiance', 'wood', 'van-wert'],
 };
 
 export function getOhioNearbyCounties(

@@ -54,6 +54,21 @@ const MAJOR = new Set([
   'knox',
   'belmont',
   'pickaway',
+  'highland',
+  'mercer',
+  'clinton',
+  'crawford',
+  'fulton',
+  'preble',
+  'ottawa',
+  'champaign',
+  'guernsey',
+  'defiance',
+  'coshocton',
+  'morrow',
+  'williams',
+  'perry',
+  'putnam',
 ]);
 const curatedSlugs = new Set(Object.keys(ohioCountyResearch));
 

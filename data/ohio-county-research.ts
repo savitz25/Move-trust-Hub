@@ -688,6 +688,261 @@ export const ohioCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  highland: {
+    marketNotes:
+      'Highland County is a rural South Central Ohio county with residential demand centered on Hillsboro.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Highland County pricing reflects South Central Ohio rural and residential demand, US-62 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Hillsboro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mercer: {
+    marketNotes:
+      'Mercer County is a rural West Central Ohio county with residential demand centered on Celina.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Mercer County pricing reflects West Central Ohio rural and residential demand, Grand Lake St. Marys corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Celina and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clinton: {
+    marketNotes:
+      'Clinton County is a rural Southwest Ohio county with residential demand centered on Wilmington.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Clinton County pricing reflects Southwest Ohio rural and residential demand, I-71 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Wilmington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  crawford: {
+    marketNotes:
+      'Crawford County is a rural North Central Ohio county with residential demand centered on Bucyrus.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Crawford County pricing reflects North Central Ohio rural and residential demand, US-30 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Bucyrus and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fulton: {
+    marketNotes:
+      'Fulton County is a rural Northwest Ohio county with residential demand centered on Wauseon.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Fulton County pricing reflects Northwest Ohio rural and residential demand, US-20 and US-23 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Wauseon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  preble: {
+    marketNotes:
+      'Preble County is a rural Southwest Ohio county with residential demand centered on Eaton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Preble County pricing reflects Southwest Ohio rural and residential demand, I-70 and US-127 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Eaton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ottawa: {
+    marketNotes:
+      'Ottawa County is a scenic North Central Ohio county with strong tourism and residential demand centered on Port Clinton.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Ottawa County pricing reflects Lake Erie tourism and residential demand, summer shoreline traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Port Clinton and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  champaign: {
+    marketNotes:
+      'Champaign County is a rural West Central Ohio county with residential demand centered on Urbana.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Champaign County pricing reflects West Central Ohio rural and residential demand, US-36 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Urbana and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  guernsey: {
+    marketNotes:
+      'Guernsey County is a rural East Central Ohio county with residential demand centered on Cambridge.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Guernsey County pricing reflects East Central Ohio rural and residential demand, I-70 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Cambridge and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  defiance: {
+    marketNotes:
+      'Defiance County is a rural Northwest Ohio county with residential demand centered on Defiance.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Defiance County pricing reflects Northwest Ohio rural and residential demand, Maumee River valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Defiance and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  coshocton: {
+    marketNotes:
+      'Coshocton County is a rural East Central Ohio county with residential demand centered on Coshocton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Coshocton County pricing reflects East Central Ohio rural and residential demand, US-36 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Coshocton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morrow: {
+    marketNotes:
+      'Morrow County is a rural Central Ohio county with residential demand centered on Mount Gilead.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Morrow County pricing reflects Central Ohio rural and residential demand, US-42 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Mount Gilead and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  williams: {
+    marketNotes:
+      'Williams County is a rural Northwest Ohio county with residential demand centered on Bryan.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Williams County pricing reflects Northwest Ohio rural and residential demand, US-6 and Ohio–Indiana border corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Bryan and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  perry: {
+    marketNotes:
+      'Perry County is a rural Central Ohio county with residential demand centered on New Lexington.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Perry County pricing reflects Central Ohio rural and residential demand, US-22 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for New Lexington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  putnam: {
+    marketNotes:
+      'Putnam County is a rural Northwest Ohio county with residential demand centered on Ottawa.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Putnam County pricing reflects Northwest Ohio rural and residential demand, US-224 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Ottawa and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getOhioCountyResearch(
