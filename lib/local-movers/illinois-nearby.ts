@@ -99,6 +99,20 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   pike: ['adams', 'brown', 'scott', 'greene', 'calhoun', 'schuyler'],
   clark: ['edgar', 'cumberland', 'coles', 'crawford', 'jasper'],
   iroquois: ['ford', 'kankakee', 'vermilion', 'champaign', 'livingston'],
+  bond: ['madison', 'fayette', 'clinton', 'montgomery', 'macoupin'],
+  jersey: ['madison', 'macoupin', 'greene', 'calhoun', 'morgan'],
+  monroe: ['st-clair', 'randolph', 'washington', 'jefferson'],
+  montgomery: ['macoupin', 'sangamon', 'christian', 'shelby', 'fayette', 'bond'],
+  randolph: ['st-clair', 'monroe', 'washington', 'perry', 'jackson', 'jefferson'],
+  crawford: ['jasper', 'clark', 'edgar', 'lawrence', 'richland'],
+  franklin: ['williamson', 'jefferson', 'perry', 'jackson', 'hamilton'],
+  jefferson: ['washington', 'perry', 'franklin', 'hamilton', 'marion', 'wayne'],
+  lawrence: ['wabash', 'richland', 'crawford', 'edgar'],
+  marion: ['fayette', 'clay', 'wayne', 'jefferson', 'washington', 'clinton', 'bond'],
+  richland: ['clay', 'jasper', 'crawford', 'lawrence', 'edwards', 'wabash'],
+  saline: ['williamson', 'franklin', 'hamilton', 'gallatin', 'johnson', 'pope'],
+  union: ['johnson', 'alexander', 'pulaski', 'williamson', 'jackson', 'hardin'],
+  wayne: ['white', 'clay', 'marion', 'edwards', 'jefferson', 'hamilton'],
 };
 
 export function getIllinoisNearbyCounties(

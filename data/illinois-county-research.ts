@@ -1509,6 +1509,244 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  bond: {
+    marketNotes:
+      'Bond County is a rural South Central Illinois county with residential demand across Greenville and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Bond County pricing reflects south-central Illinois rural routes and spillover demand from St. Louis and Springfield metros.',
+    },
+    tips: [
+      'Verify coverage for Greenville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jersey: {
+    marketNotes:
+      'Jersey County is a suburban/rural county in Southwest Illinois with residential demand across Jerseyville and Mississippi River-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jersey County pricing reflects southwest Illinois rural drive times and spillover demand from St. Louis metro providers.',
+    },
+    tips: [
+      'Verify coverage for Jerseyville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is a suburban county on the Illinois side of the St. Louis metropolitan area with strong residential demand across Waterloo and river-bluff communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects St. Louis-metro suburban demand, river-bluff access, and higher competition among regional full-service providers.',
+    },
+    tips: [
+      'Verify coverage for Waterloo and surrounding areas before booking.',
+      'St. Louis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County is a rural South Central Illinois county with residential demand across Hillsboro and I-55 corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Montgomery County pricing reflects south-central Illinois rural routes and spillover demand from Springfield and Decatur metros.',
+    },
+    tips: [
+      'Verify coverage for Hillsboro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  randolph: {
+    marketNotes:
+      'Randolph County is a rural Southwest Illinois county with residential demand across Chester and Mississippi River communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Randolph County pricing reflects southwest Illinois rural drive times and spillover demand from St. Louis and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Chester and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  crawford: {
+    marketNotes:
+      'Crawford County is a rural East Central Illinois county with residential demand across Robinson and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Crawford County pricing reflects east-central Illinois rural routes and spillover demand from Danville and Champaign metros.',
+    },
+    tips: [
+      'Verify coverage for Robinson and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a key Southern Illinois county with residential demand across Benton and Williamson-metro-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects southern Illinois rural market rates and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Benton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is a key Southern Illinois county with residential demand across Mount Vernon and crossroads corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects southern Illinois hub demand at I-57/I-64 and spillover from Marion and St. Louis metros.',
+    },
+    tips: [
+      'Verify coverage for Mount Vernon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lawrence: {
+    marketNotes:
+      'Lawrence County is a rural East Central Illinois county with residential demand across Lawrenceville and Wabash River-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lawrence County pricing reflects east-central Illinois rural drive times and spillover demand from Danville and Vincennes-area regional providers.',
+    },
+    tips: [
+      'Verify coverage for Lawrenceville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is a key South Central Illinois county with residential demand across Salem and surrounding communities — distinct from Williamson County’s city of Marion.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Marion County pricing reflects south-central Illinois rural routes and spillover demand from Springfield and Williamson-metro providers.',
+    },
+    tips: [
+      'Verify coverage for Salem and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  richland: {
+    marketNotes:
+      'Richland County is a rural Southeast Illinois county with residential demand across Olney and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Richland County pricing reflects southeast Illinois rural market rates and spillover demand from Marion and Danville metros.',
+    },
+    tips: [
+      'Verify coverage for Olney and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  saline: {
+    marketNotes:
+      'Saline County is a key Southern Illinois county with residential demand across Harrisburg and Shawnee National Forest-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Saline County pricing reflects southern Illinois rural routes and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Harrisburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is a rural Southern Illinois county with residential demand across Jonesboro and Mississippi River-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Union County pricing reflects southern Illinois rural drive times and spillover demand from Carbondale and St. Louis metros.',
+    },
+    tips: [
+      'Verify coverage for Jonesboro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wayne: {
+    marketNotes:
+      'Wayne County is a rural Southeast Illinois county with residential demand across Fairfield and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Wayne County pricing reflects southeast Illinois rural market rates and spillover demand from Marion and White County regional providers.',
+    },
+    tips: [
+      'Verify coverage for Fairfield and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

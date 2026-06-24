@@ -92,6 +92,20 @@ export const illinoisCountyOverrides: Partial<
   pike: { seat: 'Pittsfield', metro: 'quincy-metro-il' },
   clark: { seat: 'Marshall', metro: 'danville-metro-il' },
   iroquois: { seat: 'Watseka', metro: 'kankakee-metro-il' },
+  bond: { seat: 'Greenville', metro: 'st-louis-metro-il' },
+  jersey: { seat: 'Jerseyville', metro: 'st-louis-metro-il' },
+  monroe: { seat: 'Waterloo', metro: 'st-louis-metro-il' },
+  montgomery: { seat: 'Hillsboro', metro: 'springfield-metro-il' },
+  randolph: { seat: 'Chester', metro: 'st-louis-metro-il' },
+  crawford: { seat: 'Robinson', metro: 'danville-metro-il' },
+  franklin: { seat: 'Benton', metro: 'marion-metro-il' },
+  jefferson: { seat: 'Mount Vernon', metro: 'marion-metro-il' },
+  lawrence: { seat: 'Lawrenceville', metro: 'danville-metro-il' },
+  marion: { seat: 'Salem', metro: 'springfield-metro-il' },
+  richland: { seat: 'Olney', metro: 'marion-metro-il' },
+  saline: { seat: 'Harrisburg', metro: 'marion-metro-il' },
+  union: { seat: 'Jonesboro', metro: 'carbondale-metro-il' },
+  wayne: { seat: 'Fairfield', metro: 'marion-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

@@ -227,6 +227,20 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'pike',
   'clark',
   'iroquois',
+  'bond',
+  'jersey',
+  'monroe',
+  'montgomery',
+  'randolph',
+  'crawford',
+  'franklin',
+  'jefferson',
+  'lawrence',
+  'marion',
+  'richland',
+  'saline',
+  'union',
+  'wayne',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([
