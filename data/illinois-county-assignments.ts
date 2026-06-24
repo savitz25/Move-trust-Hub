@@ -13,6 +13,15 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
     'golan-moving-chicago-il',
+    'american-moving-cook-il',
+    'the-moving-company-cook-il',
+    'h2h-movers-cook-il',
+    'chicago-moving-company-cook-il',
+    'a1-moving-cook-il',
+    'elite-moving-cook-il',
+    'north-shore-movers-cook-il',
+    'alliance-moving-cook-il',
+    'metro-movers-chicago-cook-il',
   ],
 };
 

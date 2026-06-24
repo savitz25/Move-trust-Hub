@@ -23,6 +23,7 @@ import { getCounty } from '@/lib/local-movers/geography/index';
 import { getLocalState } from '@/lib/local-movers/states';
 
 const MAX_MOVERS_PER_COUNTY = 10;
+const LARGE_MARKET_MAX_MOVERS = 20;
 
 const curatedAssignmentStateSlugs = new Set([
   'alabama',
@@ -103,10 +104,14 @@ export function getMoversForCounty(
     .map((id) => fullMoversCatalog[id])
     .filter((mover): mover is LocalMover => Boolean(mover));
 
+  const displayLimit = hasExplicitAssignment
+    ? Math.min(moverIds.length, LARGE_MARKET_MAX_MOVERS)
+    : MAX_MOVERS_PER_COUNTY;
+
   const movers = (hasExplicitAssignment
     ? resolved
     : resolved.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
-  ).slice(0, MAX_MOVERS_PER_COUNTY);
+  ).slice(0, displayLimit);
 
   return {
     county,
