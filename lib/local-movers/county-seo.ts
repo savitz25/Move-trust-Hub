@@ -186,7 +186,7 @@ export function buildStateDescription(
     return `Find curated local movers across all 29 Alaska boroughs — up to 10 ranked companies in Anchorage Municipality, 8–10 in Fairbanks North Star and Matanuska-Susitna, and 5+ regional specialists statewide experienced with military PCS, oil & gas relocations, harsh winters, remote logistics, and Lower 48 long-distance moves via Washington. FMCSA licensing, borough cost guides, and Alaska-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Washington') {
-    return `Find curated local movers in all 39 Washington counties — 10 ranked companies per county from Puget Sound (King, Pierce, Snohomish, Kitsap, Island) through Tri-Cities, Spokane, Yakima, Olympic Peninsula, San Juan Islands, and rural eastern Washington markets. FMCSA licensing, county cost guides, and Washington-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+    return `Find curated local movers in all 39 Washington counties — up to 12 ranked companies in King County (Seattle metro), 10+ in Snohomish and Pierce, 9–10 in Spokane, and 6–10 regional specialists in every county. Western Washington guides cover tech-corridor, corporate, military (JBLM), and high-density moves; Eastern Washington guides cover suburban, rural, and agricultural markets. FMCSA licensing, county cost guides, and Washington-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =

@@ -8,7 +8,17 @@ import { getWashingtonNearbyCounties } from '../lib/local-movers/washington-near
 import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  king: 12,
+  snohomish: 10,
+  pierce: 10,
+  spokane: 9,
+};
+const DEFAULT_TARGET = 6;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const issues: string[] = [];
 const curatedSlugs = Object.keys(washingtonCountyResearch).sort();
@@ -17,9 +27,10 @@ for (const slug of curatedSlugs) {
   const c = getCounty('washington', slug);
   const result = getMoversForCounty('washington', slug);
   const moverCount = result?.movers.length ?? 0;
+  const target = getTarget(slug);
 
-  if (moverCount < DEFAULT_TARGET) {
-    issues.push(`movers<${DEFAULT_TARGET}: ${slug} (${moverCount})`);
+  if (moverCount < target) {
+    issues.push(`movers<${target}: ${slug} (${moverCount})`);
   }
   if (!washingtonCountyResearch[slug]) {
     issues.push(`no research: ${slug}`);
@@ -49,8 +60,9 @@ if (researchCount !== 39) {
 
 for (const slug of curatedSlugs) {
   const n = getMoversForCounty('washington', slug)?.movers.length ?? 0;
+  const target = getTarget(slug);
   console.log(
-    `  ${slug}: ${n} movers (target ${DEFAULT_TARGET}), testimonials ${getWashingtonCountyTestimonials(slug).length}, nearby ${getWashingtonNearbyCounties(slug).length}`
+    `  ${slug}: ${n} movers (target ${target}), testimonials ${getWashingtonCountyTestimonials(slug).length}, nearby ${getWashingtonNearbyCounties(slug).length}`
   );
 }
 

@@ -26,18 +26,18 @@ const WA_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'pierce', name: 'Pierce', seat: 'Tacoma', href: '/local-movers/washington/pierce', displayLabel: 'Pierce County, WA' },
   ],
   spokane: [
-    { slug: 'yakima', name: 'Yakima', seat: 'Yakima', href: '/local-movers/washington/yakima', displayLabel: 'Yakima County, WA' },
+    { slug: 'kootenai', name: 'Kootenai', seat: "Coeur d'Alene", href: '/local-movers/idaho/kootenai', displayLabel: 'Kootenai County, ID' },
     { slug: 'benton', name: 'Benton', seat: 'Kennewick', href: '/local-movers/washington/benton', displayLabel: 'Benton County, WA' },
     { slug: 'grant', name: 'Grant', seat: 'Ephrata', href: '/local-movers/washington/grant', displayLabel: 'Grant County, WA' },
     { slug: 'chelan', name: 'Chelan', seat: 'Wenatchee', href: '/local-movers/washington/chelan', displayLabel: 'Chelan County, WA' },
-    { slug: 'king', name: 'King', seat: 'Seattle', href: '/local-movers/washington/king', displayLabel: 'King County, WA' },
+    { slug: 'stevens', name: 'Stevens', seat: 'Colville', href: '/local-movers/washington/stevens', displayLabel: 'Stevens County, WA' },
   ],
   clark: [
+    { slug: 'multnomah', name: 'Multnomah', seat: 'Portland', href: '/local-movers/oregon/multnomah', displayLabel: 'Multnomah County, OR' },
+    { slug: 'washington', name: 'Washington', seat: 'Hillsboro', href: '/local-movers/oregon/washington', displayLabel: 'Washington County, OR' },
     { slug: 'cowlitz', name: 'Cowlitz', seat: 'Kelso', href: '/local-movers/washington/cowlitz', displayLabel: 'Cowlitz County, WA' },
     { slug: 'pierce', name: 'Pierce', seat: 'Tacoma', href: '/local-movers/washington/pierce', displayLabel: 'Pierce County, WA' },
     { slug: 'king', name: 'King', seat: 'Seattle', href: '/local-movers/washington/king', displayLabel: 'King County, WA' },
-    { slug: 'lewis', name: 'Lewis', seat: 'Chehalis', href: '/local-movers/washington/lewis', displayLabel: 'Lewis County, WA' },
-    { slug: 'thurston', name: 'Thurston', seat: 'Olympia', href: '/local-movers/washington/thurston', displayLabel: 'Thurston County, WA' },
   ],
   thurston: [
     { slug: 'pierce', name: 'Pierce', seat: 'Tacoma', href: '/local-movers/washington/pierce', displayLabel: 'Pierce County, WA' },
@@ -153,10 +153,10 @@ const WA_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   ],
   stevens: [
     { slug: 'spokane', name: 'Spokane', seat: 'Spokane', href: '/local-movers/washington/spokane', displayLabel: 'Spokane County, WA' },
+    { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
     { slug: 'ferry', name: 'Ferry', seat: 'Republic', href: '/local-movers/washington/ferry', displayLabel: 'Ferry County, WA' },
     { slug: 'pend-oreille', name: 'Pend Oreille', seat: 'Newport', href: '/local-movers/washington/pend-oreille', displayLabel: 'Pend Oreille County, WA' },
     { slug: 'lincoln', name: 'Lincoln', seat: 'Davenport', href: '/local-movers/washington/lincoln', displayLabel: 'Lincoln County, WA' },
-    { slug: 'okanogan', name: 'Okanogan', seat: 'Okanogan', href: '/local-movers/washington/okanogan', displayLabel: 'Okanogan County, WA' },
   ],
   kittitas: [
     { slug: 'yakima', name: 'Yakima', seat: 'Yakima', href: '/local-movers/washington/yakima', displayLabel: 'Yakima County, WA' },
@@ -208,11 +208,11 @@ const WA_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'cowlitz', name: 'Cowlitz', seat: 'Kelso', href: '/local-movers/washington/cowlitz', displayLabel: 'Cowlitz County, WA' },
   ],
   asotin: [
+    { slug: 'latah', name: 'Latah', seat: 'Moscow', href: '/local-movers/idaho/latah', displayLabel: 'Latah County, ID' },
     { slug: 'garfield', name: 'Garfield', seat: 'Pomeroy', href: '/local-movers/washington/garfield', displayLabel: 'Garfield County, WA' },
     { slug: 'columbia', name: 'Columbia', seat: 'Dayton', href: '/local-movers/washington/columbia', displayLabel: 'Columbia County, WA' },
     { slug: 'whitman', name: 'Whitman', seat: 'Colfax', href: '/local-movers/washington/whitman', displayLabel: 'Whitman County, WA' },
     { slug: 'walla-walla', name: 'Walla Walla', seat: 'Walla Walla', href: '/local-movers/washington/walla-walla', displayLabel: 'Walla Walla County, WA' },
-    { slug: 'spokane', name: 'Spokane', seat: 'Spokane', href: '/local-movers/washington/spokane', displayLabel: 'Spokane County, WA' },
   ],
   adams: [
     { slug: 'lincoln', name: 'Lincoln', seat: 'Davenport', href: '/local-movers/washington/lincoln', displayLabel: 'Lincoln County, WA' },
@@ -229,17 +229,17 @@ const WA_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'snohomish', name: 'Snohomish', seat: 'Everett', href: '/local-movers/washington/snohomish', displayLabel: 'Snohomish County, WA' },
   ],
   'pend-oreille': [
+    { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
     { slug: 'stevens', name: 'Stevens', seat: 'Colville', href: '/local-movers/washington/stevens', displayLabel: 'Stevens County, WA' },
     { slug: 'spokane', name: 'Spokane', seat: 'Spokane', href: '/local-movers/washington/spokane', displayLabel: 'Spokane County, WA' },
     { slug: 'ferry', name: 'Ferry', seat: 'Republic', href: '/local-movers/washington/ferry', displayLabel: 'Ferry County, WA' },
     { slug: 'lincoln', name: 'Lincoln', seat: 'Davenport', href: '/local-movers/washington/lincoln', displayLabel: 'Lincoln County, WA' },
-    { slug: 'okanogan', name: 'Okanogan', seat: 'Okanogan', href: '/local-movers/washington/okanogan', displayLabel: 'Okanogan County, WA' },
   ],
   skamania: [
+    { slug: 'multnomah', name: 'Multnomah', seat: 'Portland', href: '/local-movers/oregon/multnomah', displayLabel: 'Multnomah County, OR' },
     { slug: 'clark', name: 'Clark', seat: 'Vancouver', href: '/local-movers/washington/clark', displayLabel: 'Clark County, WA' },
     { slug: 'klickitat', name: 'Klickitat', seat: 'Goldendale', href: '/local-movers/washington/klickitat', displayLabel: 'Klickitat County, WA' },
     { slug: 'cowlitz', name: 'Cowlitz', seat: 'Kelso', href: '/local-movers/washington/cowlitz', displayLabel: 'Cowlitz County, WA' },
-    { slug: 'yakima', name: 'Yakima', seat: 'Yakima', href: '/local-movers/washington/yakima', displayLabel: 'Yakima County, WA' },
     { slug: 'lewis', name: 'Lewis', seat: 'Chehalis', href: '/local-movers/washington/lewis', displayLabel: 'Lewis County, WA' },
   ],
   lincoln: [

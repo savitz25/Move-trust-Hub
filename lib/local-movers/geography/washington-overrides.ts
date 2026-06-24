@@ -46,6 +46,7 @@ export const washingtonCountyOverrides: Partial<
 };
 
 export function applyWashingtonCountyOverrides(county: LocalCounty): LocalCounty {
+  if (county.stateSlug !== 'washington') return county;
   const override = washingtonCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

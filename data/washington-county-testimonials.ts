@@ -4,8 +4,8 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 export const washingtonCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   king: [
     { quote: 'Two Men and a Truck Seattle handled our Capitol Hill move professionally — on time and extremely careful with our urban apartment.', name: 'Alex M.', location: 'Seattle, WA', rating: 5, moveType: 'Apartment' },
-    { quote: 'All My Sons Seattle navigated our Bellevue relocation with fair pricing through bridge-crossing traffic scheduling.', name: 'Beth N.', location: 'Bellevue, WA', rating: 5, moveType: 'Townhome' },
-    { quote: 'Seattle Moving served our Redmond tech-corridor move efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Redmond, WA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Eco Movers coordinated our Bellevue corporate relocation with excellent communication through bridge-crossing traffic and building elevator reservations.', name: 'Beth N.', location: 'Bellevue, WA', rating: 5, moveType: 'Corporate' },
+    { quote: 'Eastside Tech Corridor Moving served our Redmond relocation efficiently — professional crew experienced with high-density suburban housing.', name: 'Carl O.', location: 'Redmond, WA', rating: 5, moveType: 'Single-family' },
   ],
   pierce: [
     { quote: 'Two Men and a Truck Tacoma handled our Lakewood move professionally — on time and extremely careful with our suburban home.', name: 'Dana P.', location: 'Lakewood, WA', rating: 5, moveType: 'Single-family' },

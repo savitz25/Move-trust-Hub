@@ -13,6 +13,8 @@ const CURATED_WA_COUNTIES: Record<string, string[]> = {
     'puget-sound-moving-king-wa',
     'hercules-movers-seattle-wa',
     'krupp-moving-seattle-wa',
+    'eco-movers-seattle-wa',
+    'eastside-tech-corridor-moving-king-wa',
   ],
   pierce: [
     'twomenandatruck-pierce-wa',

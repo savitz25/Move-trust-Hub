@@ -18,6 +18,7 @@ export const oregonCountyOverrides: Partial<
 };
 
 export function applyOregonCountyOverrides(county: LocalCounty): LocalCounty {
+  if (county.stateSlug !== 'oregon') return county;
   const override = oregonCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

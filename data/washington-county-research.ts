@@ -10,7 +10,7 @@ export type CuratedCountyResearch = {
 export const washingtonCountyResearch: Record<string, CuratedCountyResearch> = {
   king: {
     marketNotes:
-      'King County is Washington’s most populous county, encompassing Seattle and surrounding suburban areas with strong urban, tech, and residential demand.',
+      'King County anchors Western Washington’s Seattle metro — the state’s highest-value moving market. Dense urban housing, Amazon and Microsoft tech-corridor relocations, high-rise and Eastside suburban moves, and elevated labor costs distinguish King from Eastern Washington markets.',
     costs: {
       studioRange: '$950–$2,100',
       familyRange: '$4,000–$9,500+',
@@ -47,7 +47,7 @@ export const washingtonCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   snohomish: {
     marketNotes:
-      'Snohomish County is a large and rapidly growing suburban county north of Seattle with strong residential demand.',
+      'Snohomish County is Western Washington’s fast-growing North Sound suburban market — Everett, Lynnwood, and Boeing-corridor communities north of Seattle with strong tech-spillover and residential demand distinct from Eastern Washington’s rural profile.',
     costs: {
       studioRange: '$950–$2,000',
       familyRange: '$3,800–$9,000+',
@@ -64,7 +64,7 @@ export const washingtonCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   spokane: {
     marketNotes:
-      'Spokane County is the core of Eastern Washington with strong urban and suburban residential demand.',
+      'Spokane County anchors Eastern Washington — a more suburban and rural market than the Puget Sound corridor, with lower costs, agricultural spillover, and longer regional hauls to Idaho and central Washington rather than Seattle tech-corridor density.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',

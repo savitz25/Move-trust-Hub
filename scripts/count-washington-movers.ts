@@ -1,7 +1,17 @@
 import { washingtonCountyResearch } from '../data/washington-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  king: 12,
+  snohomish: 10,
+  pierce: 10,
+  spokane: 9,
+};
+const DEFAULT_TARGET = 6;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const underTarget: string[] = [];
 
@@ -9,8 +19,9 @@ const curatedSlugs = Object.keys(washingtonCountyResearch).sort();
 console.log(`Washington curated counties: ${curatedSlugs.length}`);
 for (const slug of curatedSlugs) {
   const n = getMoversForCounty('washington', slug)?.movers.length ?? 0;
-  console.log(`  ${slug}: ${n} movers (target ${DEFAULT_TARGET})`);
-  if (n < DEFAULT_TARGET) underTarget.push(`${slug}: ${n}/${DEFAULT_TARGET}`);
+  const target = getTarget(slug);
+  console.log(`  ${slug}: ${n} movers (target ${target})`);
+  if (n < target) underTarget.push(`${slug}: ${n}/${target}`);
 }
 
 if (underTarget.length === 0) {

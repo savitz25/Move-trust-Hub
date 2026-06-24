@@ -7,7 +7,17 @@ import { washingtonCountyResearch } from '../data/washington-county-research';
 import { metroMoverPools } from '../data/local-movers-seed';
 import { fullMoversCatalog } from '../lib/local-movers/catalog';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  king: 12,
+  snohomish: 10,
+  pierce: 10,
+  spokane: 9,
+};
+const DEFAULT_TARGET = 6;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const assignmentsPath = 'data/washington-county-assignments.ts';
 const file = readFileSync(assignmentsPath, 'utf8');
@@ -21,13 +31,14 @@ function poolIdForSlug(slug: string): string {
 }
 
 function expandIds(slug: string, existing: string[]): string[] {
+  const target = getTarget(slug);
   const ids = [...existing];
   const seen = new Set(ids);
 
   const poolId = poolIdForSlug(slug);
   const metroIds = metroMoverPools[poolId]?.moverIds ?? [];
   for (const id of metroIds) {
-    if (ids.length >= DEFAULT_TARGET) break;
+    if (ids.length >= target) break;
     if (fullMoversCatalog[id] && !seen.has(id)) {
       ids.push(id);
       seen.add(id);
@@ -36,14 +47,14 @@ function expandIds(slug: string, existing: string[]): string[] {
 
   const waMoverIds = Object.keys(fullMoversCatalog).filter((id) => id.endsWith('-wa'));
   for (const id of waMoverIds) {
-    if (ids.length >= DEFAULT_TARGET) break;
+    if (ids.length >= target) break;
     if (!seen.has(id) && id.includes(slug)) {
       ids.push(id);
       seen.add(id);
     }
   }
 
-  return ids.slice(0, DEFAULT_TARGET);
+  return ids.slice(0, target);
 }
 
 for (const slug of Object.keys(washingtonCountyResearch)) {
@@ -63,5 +74,6 @@ const updated = file.replace(/const CURATED_WA_COUNTIES[^=]*=\s*\{[\s\S]*?\n\};/
 writeFileSync(assignmentsPath, updated);
 console.log('Updated', assignmentsPath);
 for (const slug of Object.keys(washingtonCountyResearch)) {
-  console.log(`  ${slug}: ${current[slug].length} movers (target ${DEFAULT_TARGET})`);
+  const target = getTarget(slug);
+  console.log(`  ${slug}: ${current[slug].length} movers (target ${target})`);
 }
