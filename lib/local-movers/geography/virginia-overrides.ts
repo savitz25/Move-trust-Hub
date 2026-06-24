@@ -17,6 +17,14 @@ export const virginiaCountyOverrides: Partial<
   'newport-news': { seat: 'Newport News', metro: 'newport-news-metro-va' },
   stafford: { seat: 'Stafford', metro: 'stafford-metro-va' },
   alexandria: { seat: 'Alexandria', metro: 'alexandria-metro-va' },
+  spotsylvania: { seat: 'Spotsylvania', metro: 'spotsylvania-metro-va' },
+  hampton: { seat: 'Hampton', metro: 'hampton-metro-va' },
+  albemarle: { seat: 'Charlottesville', metro: 'albemarle-metro-va' },
+  hanover: { seat: 'Hanover', metro: 'hanover-metro-va' },
+  suffolk: { seat: 'Suffolk', metro: 'suffolk-metro-va' },
+  frederick: { seat: 'Winchester', metro: 'frederick-metro-va' },
+  roanoke: { seat: 'Roanoke', metro: 'roanoke-metro-va' },
+  montgomery: { seat: 'Christiansburg', metro: 'montgomery-metro-va' },
 };
 
 /** Duplicate FIPS slugs disambiguated by generated metro region */
@@ -30,6 +38,10 @@ const VIRGINIA_DUPLICATE_SLUG_METROS: Record<
   richmond: {
     'virginia-region-1': { slug: 'richmond-county', name: 'Richmond County' },
     'virginia-region-2': { slug: 'richmond', name: 'Richmond' },
+  },
+  roanoke: {
+    'virginia-region-3': { slug: 'roanoke-county', name: 'Roanoke County' },
+    'virginia-region-4': { slug: 'roanoke', name: 'Roanoke' },
   },
 };
 

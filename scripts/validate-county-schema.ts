@@ -747,6 +747,14 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'virginia', countySlug: 'newport-news', expectedCity: 'Newport News' },
   { stateSlug: 'virginia', countySlug: 'stafford', expectedCity: 'Stafford' },
   { stateSlug: 'virginia', countySlug: 'alexandria', expectedCity: 'Alexandria' },
+  { stateSlug: 'virginia', countySlug: 'spotsylvania', expectedCity: 'Fredericksburg' },
+  { stateSlug: 'virginia', countySlug: 'hampton', expectedCity: 'Hampton' },
+  { stateSlug: 'virginia', countySlug: 'albemarle', expectedCity: 'Charlottesville' },
+  { stateSlug: 'virginia', countySlug: 'hanover', expectedCity: 'Mechanicsville' },
+  { stateSlug: 'virginia', countySlug: 'suffolk', expectedCity: 'Suffolk' },
+  { stateSlug: 'virginia', countySlug: 'frederick', expectedCity: 'Winchester' },
+  { stateSlug: 'virginia', countySlug: 'roanoke', expectedCity: 'Roanoke' },
+  { stateSlug: 'virginia', countySlug: 'montgomery', expectedCity: 'Christiansburg' },
 ];
 
 let totalIssues = 0;

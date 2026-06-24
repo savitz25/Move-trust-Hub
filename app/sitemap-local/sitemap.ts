@@ -195,6 +195,14 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
   'newport-news',
   'stafford',
   'alexandria',
+  'spotsylvania',
+  'hampton',
+  'albemarle',
+  'hanover',
+  'suffolk',
+  'frederick',
+  'roanoke',
+  'montgomery',
 ]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */

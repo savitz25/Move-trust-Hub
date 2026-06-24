@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Virginia county research — batches 1–3 large markets */
+/** Hand-curated Virginia county research — batches 1–4 large markets */
 export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
   fairfax: {
     marketNotes:
@@ -226,6 +226,142 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Heavy DC metro traffic significantly impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value urban homes, townhomes, and historic properties.',
       'Book early for peak seasons (May–September), federal turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  spotsylvania: {
+    marketNotes:
+      'Spotsylvania County is a growing suburban county south of Fredericksburg with strong residential demand along the I-95 corridor.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Spotsylvania County pricing reflects Fredericksburg-area suburban growth, I-95 corridor commuter traffic, and competition among Northern Virginia and Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Spotsylvania and surrounding Fredericksburg areas before booking.',
+      'Fredericksburg / I-95 traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and rural properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hampton: {
+    marketNotes:
+      'Hampton is an independent city with strong military, residential, and tourism-related demand across the Virginia Peninsula.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,500+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Hampton pricing reflects Peninsula military PCS turnover, Langley and NASA corridor demand, bridge-tunnel traffic, and competition among Hampton Roads full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Hampton and surrounding Peninsula areas before booking.',
+      'Hampton Roads traffic and bridge-tunnel impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and military housing relocations.',
+      'Book early for peak seasons (May–September), PCS windows, and summer relocations.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  albemarle: {
+    marketNotes:
+      'Albemarle County surrounds Charlottesville with strong educational, residential, and tourism demand across the UVA area.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Albemarle County pricing reflects UVA semester turnover, Charlottesville tourism volume, rural property access, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Charlottesville and surrounding Albemarle areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows around UVA events and semesters.',
+      'Confirm insurance for high-value suburban and rural homes.',
+      'Book early for peak seasons (May–September), semester changeover, and graduation weekends.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hanover: {
+    marketNotes:
+      'Hanover County is a suburban county north of Richmond with strong residential demand across Mechanicsville and the Atlee corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Hanover County pricing reflects Richmond-metro northern suburban growth, I-95 and I-295 corridor traffic, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Hanover, Mechanicsville, and surrounding areas before booking.',
+      'Richmond-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and townhome communities.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  suffolk: {
+    marketNotes:
+      'Suffolk is an independent city with extensive rural and suburban areas and strong residential demand across western Tidewater.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,500+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Suffolk pricing reflects western Tidewater rural sprawl, long-driveway access challenges, Hampton Roads spillover traffic, and competition among coastal Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Suffolk and surrounding Hampton Roads areas before booking.',
+      'Hampton Roads traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and rural properties with long access drives.',
+      'Book early for peak seasons (May–September) and summer relocations.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  frederick: {
+    marketNotes:
+      'Frederick County is a growing suburban county in the Northern Shenandoah Valley with strong residential demand around Winchester.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Frederick County pricing reflects Winchester metro suburban growth, I-81 corridor traffic, DC-metro spillover demand, and competition among Shenandoah Valley full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Winchester and surrounding Frederick County areas before booking.',
+      'Regional I-81 traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and rural properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  roanoke: {
+    marketNotes:
+      'Roanoke is an independent city and the core of the Roanoke Valley with strong residential and commercial demand across southwest Virginia.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Roanoke pricing reflects Blue Ridge valley geography, hillside access challenges, regional commercial demand, and competition among southwest Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Roanoke and surrounding valley areas before booking.',
+      'Regional traffic and hillside access impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and multi-level properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County is anchored by Virginia Tech with strong educational and residential demand across Christiansburg and Blacksburg.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Montgomery County pricing reflects Virginia Tech semester turnover, New River Valley demand, mountain corridor traffic, and competition among student-focused and full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Christiansburg, Blacksburg, and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows around VT semesters and game days.',
+      'Confirm insurance for high-value homes and student-related moves.',
+      'Book early for peak seasons (May–September), semester changeover (August and May), and graduation weekends.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },

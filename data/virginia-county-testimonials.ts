@@ -340,6 +340,214 @@ export const virginiaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Apartment',
     },
   ],
+  spotsylvania: [
+    {
+      quote:
+        'Two Men and a Truck Spotsylvania handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Jeffrey R.',
+      location: 'Spotsylvania, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'I-95 Corridor Moving confirmed Fredericksburg-area coverage — best local moving service in Spotsylvania County with fair pricing.',
+      name: 'Michelle L.',
+      location: 'Fredericksburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Spotsylvania Valley Moving served our Lake Anna area move efficiently — professional crew that navigated I-95 traffic on schedule.',
+      name: 'Scott H.',
+      location: 'Spotsylvania, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  hampton: [
+    {
+      quote:
+        'Two Men and a Truck Hampton handled our relocation professionally — on time, efficient, and extremely careful near Langley.',
+      name: 'Angela D.',
+      location: 'Hampton, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Fort Monroe Moving confirmed Peninsula coverage — best local moving service in Hampton with transparent pricing.',
+      name: 'George T.',
+      location: 'Hampton, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Hampton Roads North Moving served our Phoebus area move efficiently — professional crew through bridge-tunnel traffic without delays.',
+      name: 'Rachel B.',
+      location: 'Hampton, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  albemarle: [
+    {
+      quote:
+        'Two Men and a Truck Albemarle handled our county relocation professionally — on time, efficient, and extremely careful near UVA.',
+      name: 'Catherine M.',
+      location: 'Charlottesville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'UVA Area Moving confirmed university district coverage — best local moving service in Albemarle County with careful handling.',
+      name: 'Peter J.',
+      location: 'Charlottesville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Shenandoah Valley Moving served our Crozet area move efficiently — professional crew with fair pricing across rural Albemarle.',
+      name: 'Hannah W.',
+      location: 'Charlottesville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  hanover: [
+    {
+      quote:
+        'Two Men and a Truck Hanover handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Richard C.',
+      location: 'Mechanicsville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond North Moving confirmed Mechanicsville coverage — best local moving service in Hanover County with transparent pricing.',
+      name: 'Susan K.',
+      location: 'Mechanicsville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Atlee Station Moving served our Ashland area move efficiently — professional crew with careful handling along the Richmond corridor.',
+      name: 'Timothy N.',
+      location: 'Hanover, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  suffolk: [
+    {
+      quote:
+        'Two Men and a Truck Suffolk handled our relocation professionally — on time, efficient, and extremely careful across our rural property.',
+      name: 'Deborah F.',
+      location: 'Suffolk, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Western Tidewater Moving confirmed North Suffolk coverage — best local moving service with fair pricing and careful handling.',
+      name: 'Charles V.',
+      location: 'Suffolk, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Peanut City Moving served our southern Suffolk move efficiently — professional crew that navigated long driveway access without issues.',
+      name: 'Linda S.',
+      location: 'Suffolk, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  frederick: [
+    {
+      quote:
+        'Two Men and a Truck Frederick handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'John A.',
+      location: 'Winchester, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Shenandoah Valley Moving confirmed Winchester coverage — best local moving service in Frederick County with transparent pricing.',
+      name: 'Mary E.',
+      location: 'Winchester, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Northern Shenandoah Moving served our Stephens City area move efficiently — professional crew along the I-81 corridor on schedule.',
+      name: 'Paul I.',
+      location: 'Winchester, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  roanoke: [
+    {
+      quote:
+        'Two Men and a Truck Roanoke handled our city relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Steven Y.',
+      location: 'Roanoke, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Blue Ridge Moving confirmed valley coverage — best local moving service in Roanoke with careful hillside handling.',
+      name: 'Barbara U.',
+      location: 'Roanoke, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Roanoke Valley Moving served our South Roanoke move efficiently — professional crew with fair pricing and excellent communication.',
+      name: 'Donald Z.',
+      location: 'Roanoke, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  montgomery: [
+    {
+      quote:
+        'Two Men and a Truck Montgomery handled our county relocation professionally — on time, efficient, and extremely careful near VT.',
+      name: 'Emma Q.',
+      location: 'Christiansburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Blacksburg Moving confirmed Virginia Tech area coverage — best local moving service in Montgomery County with fair pricing.',
+      name: 'Jacob X.',
+      location: 'Blacksburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Virginia Tech Area Moving served our Christiansburg move efficiently — professional crew during semester changeover without delays.',
+      name: 'Grace P.',
+      location: 'Christiansburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getVirginiaCountyTestimonials(
