@@ -14,6 +14,11 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   wayne: ['oakland', 'macomb', 'washtenaw', 'monroe'],
   oakland: ['wayne', 'macomb', 'lapeer', 'livingston', 'washtenaw', 'genesee'],
   macomb: ['wayne', 'oakland', 'st-clair', 'lapeer'],
+  kent: ['ottawa', 'ionia', 'allegan', 'muskegon', 'barry', 'montcalm'],
+  ottawa: ['kent', 'allegan', 'muskegon'],
+  genesee: ['oakland', 'lapeer', 'shiawassee', 'saginaw', 'livingston', 'washtenaw'],
+  washtenaw: ['wayne', 'oakland', 'livingston', 'jackson', 'lenawee', 'genesee'],
+  ingham: ['eaton', 'clinton', 'jackson', 'shiawassee', 'livingston', 'washtenaw'],
 };
 
 export function getMichiganNearbyCounties(

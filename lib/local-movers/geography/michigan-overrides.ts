@@ -7,6 +7,11 @@ export const michiganCountyOverrides: Partial<
   wayne: { seat: 'Detroit', metro: 'detroit-metro-mi' },
   oakland: { seat: 'Pontiac', metro: 'detroit-metro-mi' },
   macomb: { seat: 'Mount Clemens', metro: 'detroit-metro-mi' },
+  kent: { seat: 'Grand Rapids', metro: 'grand-rapids-metro-mi' },
+  ottawa: { seat: 'Grand Haven', metro: 'grand-rapids-metro-mi' },
+  genesee: { seat: 'Flint', metro: 'flint-metro-mi' },
+  washtenaw: { seat: 'Ann Arbor', metro: 'ann-arbor-metro-mi' },
+  ingham: { seat: 'Mason', metro: 'lansing-metro-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {

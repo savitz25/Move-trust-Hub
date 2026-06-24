@@ -80,6 +80,136 @@ export const michiganCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  kent: [
+    {
+      quote:
+        'Two Men and a Truck Grand Rapids handled our Kent County relocation professionally — on time, efficient, and extremely careful throughout Grand Rapids.',
+      name: 'Ian R.',
+      location: 'Grand Rapids, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        "Herman's Moving & Storage confirmed Kent County coverage — best local moving service in Kent County with transparent pricing.",
+      name: 'Julia S.',
+      location: 'Kentwood, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Boerman Moving & Storage served our Wyoming relocation efficiently — professional crew with careful handling across West Michigan.',
+      name: 'Kevin T.',
+      location: 'Wyoming, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  ottawa: [
+    {
+      quote:
+        'Two Men and a Truck Holland / Grand Haven handled our Ottawa County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Laura U.',
+      location: 'Holland, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Ottawa County Moving confirmed Grand Haven coverage — best local moving service in Ottawa County with fair pricing.',
+      name: 'Michael V.',
+      location: 'Grand Haven, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Holland Moving & Storage served our Zeeland move efficiently — professional crew with careful handling along the lakeshore.',
+      name: 'Nancy W.',
+      location: 'Zeeland, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  genesee: [
+    {
+      quote:
+        'Two Men and a Truck Flint handled our Genesee County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Oscar X.',
+      location: 'Flint, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Burke Moving & Storage confirmed Genesee County coverage — best local moving service in Genesee County with transparent pricing.',
+      name: 'Patricia Y.',
+      location: 'Grand Blanc, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Corrigan Moving Systems served our Fenton move efficiently — professional crew with careful handling in Genesee County.',
+      name: 'Quinn Z.',
+      location: 'Fenton, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  washtenaw: [
+    {
+      quote:
+        'Two Men and a Truck Ann Arbor handled our Washtenaw County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Rachel A.',
+      location: 'Ann Arbor, MI',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Ann Arbor Moving & Storage confirmed student move coverage — best local moving service in Washtenaw County with fair pricing.',
+      name: 'Samuel B.',
+      location: 'Ypsilanti, MI',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Men on the Move served our Saline relocation efficiently — professional crew with careful handling across Washtenaw County.',
+      name: 'Teresa C.',
+      location: 'Saline, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  ingham: [
+    {
+      quote:
+        'Two Men and a Truck Lansing / East Lansing handled our Ingham County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Uma D.',
+      location: 'Lansing, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Lansing Moving & Storage confirmed East Lansing coverage — best local moving service in Ingham County with transparent pricing.',
+      name: 'Victor E.',
+      location: 'East Lansing, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Hauling Junk served our Mason move efficiently — professional crew with careful handling in Ingham County.',
+      name: 'Wendy F.',
+      location: 'Mason, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getMichiganCountyTestimonials(

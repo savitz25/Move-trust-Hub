@@ -138,7 +138,16 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic MI counties — sitemap priority 0.85 */
-const MI_HIGH_TRAFFIC_COUNTIES = new Set(['wayne', 'oakland', 'macomb']);
+const MI_HIGH_TRAFFIC_COUNTIES = new Set([
+  'wayne',
+  'oakland',
+  'macomb',
+  'kent',
+  'ottawa',
+  'genesee',
+  'washtenaw',
+  'ingham',
+]);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */
 const IL_HIGH_TRAFFIC_COUNTIES = new Set([
