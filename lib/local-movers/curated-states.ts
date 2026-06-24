@@ -27,6 +27,7 @@ export const CURATED_STATE_SLUGS = new Set([
   'hawaii',
   'alaska',
   'washington',
+  'oregon',
   'california',
   'florida',
   'new-jersey',

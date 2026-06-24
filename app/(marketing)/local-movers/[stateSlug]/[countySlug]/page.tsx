@@ -39,6 +39,7 @@ import {
   HAWAII_COUNTY_CONTENT_UPDATED,
   ALASKA_COUNTY_CONTENT_UPDATED,
   WASHINGTON_COUNTY_CONTENT_UPDATED,
+  OREGON_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -67,6 +68,7 @@ import { getMaineCountyResearch } from '@/data/maine-county-research';
 import { getHawaiiCountyResearch } from '@/data/hawaii-county-research';
 import { getAlaskaCountyResearch } from '@/data/alaska-county-research';
 import { getWashingtonCountyResearch } from '@/data/washington-county-research';
+import { getOregonCountyResearch } from '@/data/oregon-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -107,6 +109,7 @@ import { getMaineNearbyCounties } from '@/lib/local-movers/maine-nearby';
 import { getHawaiiNearbyCounties } from '@/lib/local-movers/hawaii-nearby';
 import { getAlaskaNearbyCounties } from '@/lib/local-movers/alaska-nearby';
 import { getWashingtonNearbyCounties } from '@/lib/local-movers/washington-nearby';
+import { getOregonNearbyCounties } from '@/lib/local-movers/oregon-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -281,7 +284,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                           : stateSlug === 'washington' &&
                                                                               getWashingtonCountyResearch(countySlug)
                                                                             ? getWashingtonNearbyCounties(countySlug)
-                                                                            : [];
+                                                                            : stateSlug === 'oregon' &&
+                                                                                getOregonCountyResearch(countySlug)
+                                                                              ? getOregonNearbyCounties(countySlug)
+                                                                              : [];
 
   return (
     <>
@@ -503,7 +509,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                   : stateSlug === 'washington' &&
                                                                                       getWashingtonCountyResearch(countySlug)
                                                                                     ? WASHINGTON_COUNTY_CONTENT_UPDATED
-                                                                                    : undefined
+                                                                                    : stateSlug === 'oregon' &&
+                                                                                        getOregonCountyResearch(countySlug)
+                                                                                      ? OREGON_COUNTY_CONTENT_UPDATED
+                                                                                      : undefined
           }
         />
 

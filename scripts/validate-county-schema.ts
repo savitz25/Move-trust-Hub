@@ -62,6 +62,7 @@ const CURATED_STATES = [
   'hawaii',
   'alaska',
   'washington',
+  'oregon',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -1084,6 +1085,17 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'washington', countySlug: 'wahkiakum', expectedCity: 'Cathlamet' },
   { stateSlug: 'washington', countySlug: 'columbia', expectedCity: 'Dayton' },
   { stateSlug: 'washington', countySlug: 'garfield', expectedCity: 'Pomeroy' },
+  { stateSlug: 'oregon', countySlug: 'multnomah', expectedCity: 'Portland' },
+  { stateSlug: 'oregon', countySlug: 'washington', expectedCity: 'Hillsboro' },
+  { stateSlug: 'oregon', countySlug: 'clackamas', expectedCity: 'Oregon City' },
+  { stateSlug: 'oregon', countySlug: 'lane', expectedCity: 'Eugene' },
+  { stateSlug: 'oregon', countySlug: 'marion', expectedCity: 'Salem' },
+  { stateSlug: 'oregon', countySlug: 'jackson', expectedCity: 'Medford' },
+  { stateSlug: 'oregon', countySlug: 'deschutes', expectedCity: 'Bend' },
+  { stateSlug: 'oregon', countySlug: 'linn', expectedCity: 'Albany' },
+  { stateSlug: 'oregon', countySlug: 'douglas', expectedCity: 'Roseburg' },
+  { stateSlug: 'oregon', countySlug: 'yamhill', expectedCity: 'McMinnville' },
+  { stateSlug: 'oregon', countySlug: 'benton', expectedCity: 'Corvallis' },
 ];
 
 let totalIssues = 0;

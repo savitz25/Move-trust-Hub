@@ -40,6 +40,7 @@ export const MAINE_COUNTY_CONTENT_UPDATED = '2026-06-24';
 export const HAWAII_COUNTY_CONTENT_UPDATED = '2026-06-24';
 export const ALASKA_COUNTY_CONTENT_UPDATED = '2026-06-24';
 export const WASHINGTON_COUNTY_CONTENT_UPDATED = '2026-06-24';
+export const OREGON_COUNTY_CONTENT_UPDATED = '2026-06-24';
 
 type Props = {
   countyLabel: string;

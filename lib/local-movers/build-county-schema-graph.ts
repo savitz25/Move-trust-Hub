@@ -35,6 +35,7 @@ import {
   HAWAII_COUNTY_CONTENT_UPDATED,
   ALASKA_COUNTY_CONTENT_UPDATED,
   WASHINGTON_COUNTY_CONTENT_UPDATED,
+  OREGON_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDelawareCountyResearch } from '@/data/delaware-county-research';
@@ -49,6 +50,7 @@ import { getMaineCountyResearch } from '@/data/maine-county-research';
 import { getHawaiiCountyResearch } from '@/data/hawaii-county-research';
 import { getAlaskaCountyResearch } from '@/data/alaska-county-research';
 import { getWashingtonCountyResearch } from '@/data/washington-county-research';
+import { getOregonCountyResearch } from '@/data/oregon-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
@@ -282,6 +284,12 @@ function resolveContentModified(county: LocalCounty): string {
     getWashingtonCountyResearch(county.slug)
   ) {
     return WASHINGTON_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'oregon' &&
+    getOregonCountyResearch(county.slug)
+  ) {
+    return OREGON_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

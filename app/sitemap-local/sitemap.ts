@@ -33,6 +33,7 @@ import {
   HAWAII_COUNTY_CONTENT_UPDATED,
   ALASKA_COUNTY_CONTENT_UPDATED,
   WASHINGTON_COUNTY_CONTENT_UPDATED,
+  OREGON_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -240,6 +241,8 @@ const HI_HIGH_TRAFFIC_COUNTIES = new Set(['honolulu', 'maui']);
 const AK_HIGH_TRAFFIC_COUNTIES = new Set(['anchorage']);
 
 const WA_HIGH_TRAFFIC_COUNTIES = new Set(['king', 'pierce', 'snohomish', 'spokane']);
+
+const OR_HIGH_TRAFFIC_COUNTIES = new Set(['multnomah', 'washington', 'clackamas']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -670,7 +673,9 @@ export default async function sitemap({
                                                                           ? new Date(ALASKA_COUNTY_CONTENT_UPDATED)
                                                                           : id === 'washington'
                                                                             ? new Date(WASHINGTON_COUNTY_CONTENT_UPDATED)
-                                                                            : new Date();
+                                                                            : id === 'oregon'
+                                                                              ? new Date(OREGON_COUNTY_CONTENT_UPDATED)
+                                                                              : new Date();
 
   return [
     {
@@ -727,7 +732,8 @@ export default async function sitemap({
         (id === 'maine' && ME_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'hawaii' && HI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'alaska' && AK_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'washington' && WA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'washington' && WA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'oregon' && OR_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
