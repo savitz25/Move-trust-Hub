@@ -37,6 +37,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Pennsylvania | 67/67 (complete) | 10 | 10 (large markets) | 67 counties 0.85 | `count-pennsylvania-movers.ts`, `apply-pennsylvania-mover-expansion.ts`, `audit-pennsylvania-seo.ts` |
 | Connecticut | 8/8 (complete) | 8 | 12 (Fairfield) / 10 (others) | `fairfield` 0.85 | `count-connecticut-movers.ts`, `apply-connecticut-mover-expansion.ts`, `audit-connecticut-seo.ts` |
 | Massachusetts | 14/14 (complete) | 10 | 10 (all counties) | 4 Boston counties 0.85 | `count-massachusetts-movers.ts`, `apply-massachusetts-mover-expansion.ts`, `audit-massachusetts-seo.ts` |
+| Rhode Island | 5/5 (complete) | 10 | 10 (all counties) | `providence` 0.85 | `count-rhode-island-movers.ts`, `apply-rhode-island-mover-expansion.ts`, `audit-rhode-island-seo.ts` |
+
+> **Rhode Island note:** Rhode Island has only **5 counties** — complete state curation. **Providence** and **Kent** use Two Men and a Truck franchise #1; **Washington**, **Newport**, and **Bristol** use `regional-*-ri-movers`. RI `bristol` slug = Bristol County RI (not MA); nearby links use `displayLabel` disambiguation. Cross-border nearby links to MA and CT. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
 > **Massachusetts note:** Massachusetts has **14 counties** — complete state curation. Boston metro counties (**Suffolk**, **Middlesex**, **Norfolk**, **Essex**, **Plymouth**) and **Worcester**, **Bristol**, **Hampden** use Two Men and a Truck franchise #1; Cape Cod, Pioneer Valley, Berkshires, and island counties use `regional-*-ma-movers`. Seat/metro overrides in `lib/local-movers/geography/massachusetts-overrides.ts`. Cross-border nearby links to NH, RI, CT, and NY. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 

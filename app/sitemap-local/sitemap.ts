@@ -26,6 +26,7 @@ import {
   PENNSYLVANIA_COUNTY_CONTENT_UPDATED,
   CONNECTICUT_COUNTY_CONTENT_UPDATED,
   MASSACHUSETTS_COUNTY_CONTENT_UPDATED,
+  RHODE_ISLAND_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -215,6 +216,9 @@ const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
 const CT_HIGH_TRAFFIC_COUNTIES = new Set(['fairfield']);
 
 /** High-traffic MA counties — sitemap priority 0.85 (Greater Boston core) */
+/** High-traffic RI counties — sitemap priority 0.85 */
+const RI_HIGH_TRAFFIC_COUNTIES = new Set(['providence']);
+
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
   'middlesex',
@@ -630,7 +634,9 @@ export default async function sitemap({
                                                             ? new Date(CONNECTICUT_COUNTY_CONTENT_UPDATED)
                                                             : id === 'massachusetts'
                                                               ? new Date(MASSACHUSETTS_COUNTY_CONTENT_UPDATED)
-                                                              : new Date();
+                                                              : id === 'rhode-island'
+                                                                ? new Date(RHODE_ISLAND_COUNTY_CONTENT_UPDATED)
+                                                                : new Date();
 
   return [
     {
@@ -680,7 +686,8 @@ export default async function sitemap({
         (id === 'maryland' && MD_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'connecticut' && CT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'massachusetts' && MA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'massachusetts' && MA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'rhode-island' && RI_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

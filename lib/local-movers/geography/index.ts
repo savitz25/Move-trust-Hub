@@ -27,6 +27,7 @@ import { applyDelawareCountyOverrides } from '@/lib/local-movers/geography/delaw
 import { applyMarylandCountyOverrides } from '@/lib/local-movers/geography/maryland-overrides';
 import { applyPennsylvaniaCountyOverrides } from '@/lib/local-movers/geography/pennsylvania-overrides';
 import { applyMassachusettsCountyOverrides } from '@/lib/local-movers/geography/massachusetts-overrides';
+import { applyRhodeIslandCountyOverrides } from '@/lib/local-movers/geography/rhode-island-overrides';
 import { marylandSupplementalCounties } from '@/lib/local-movers/geography/maryland-supplemental';
 import { applyTennesseeCountyOverrides } from '@/lib/local-movers/geography/tennessee-overrides';
 import { applyTexasCountyOverrides } from '@/lib/local-movers/geography/texas-overrides';
@@ -83,7 +84,8 @@ const allCounties: LocalCounty[] = [
     .map(applyDelawareCountyOverrides)
     .map(applyMarylandCountyOverrides)
     .map(applyPennsylvaniaCountyOverrides)
-    .map(applyMassachusettsCountyOverrides),
+    .map(applyMassachusettsCountyOverrides)
+    .map(applyRhodeIslandCountyOverrides),
 ];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {
