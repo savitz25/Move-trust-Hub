@@ -115,6 +115,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'alaska' ||
                 state.slug === 'washington' ||
                 state.slug === 'oregon' ||
+                state.slug === 'nevada' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -144,7 +145,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                           ? 'Browse all 39 Washington county guides — up to 12 curated movers in King County (Seattle metro), 10+ in Snohomish and Pierce, 9–10 in Spokane, and 6–10 regional specialists in every county. Western Washington covers tech-corridor, corporate, military (JBLM), and high-density moves; Eastern Washington covers suburban, rural, and agricultural markets. FMCSA licensing, cost estimates, and Washington-specific moving tips.'
                                           : state.slug === 'oregon'
                                             ? 'Browse all 36 Oregon county guides — up to 12 curated movers in Portland metro (Multnomah, Washington, Clackamas), 9–10 in Lane and Marion, and 6–10 regional specialists in every county. Portland metro covers tech, corporate, and high-density moves; Willamette Valley, Central Oregon (Bend), coast, and eastern Oregon each have localized guides. FMCSA licensing, cost estimates, and Oregon-specific moving tips.'
-                                            : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                            : state.slug === 'nevada'
+                                              ? 'Browse all 17 Nevada county guides — 10 curated movers per county from Las Vegas (Clark) and Reno (Washoe) through rural eastern and western Nevada. FMCSA licensing, cost estimates, and Nevada-specific moving tips.'
+                                              : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>

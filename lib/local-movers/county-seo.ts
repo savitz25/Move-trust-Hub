@@ -68,6 +68,8 @@ import { getWashingtonCountyResearch } from '@/data/washington-county-research';
 import { getWashingtonCountyTestimonials } from '@/data/washington-county-testimonials';
 import { getOregonCountyResearch } from '@/data/oregon-county-research';
 import { getOregonCountyTestimonials } from '@/data/oregon-county-testimonials';
+import { getNevadaCountyResearch } from '@/data/nevada-county-research';
+import { getNevadaCountyTestimonials } from '@/data/nevada-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -390,6 +392,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'oregon') {
     return getOregonCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'nevada') {
+    return getNevadaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -543,6 +548,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'oregon') {
     const curated = getOregonCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'nevada') {
+    const curated = getNevadaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -733,6 +742,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getOregonCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'nevada') {
+    const curated = getNevadaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -908,6 +921,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'oregon') {
     const curated = getOregonCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'nevada') {
+    const curated = getNevadaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 
