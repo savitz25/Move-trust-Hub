@@ -524,6 +524,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'coleman-worldwide-st-louis-mo',
     'mid-west-moving-storage-chicago-il',
+    'mount-vernon-moving-jefferson-il',
+    'jefferson-county-moving-jefferson-il',
   ],
   clay: [
     'louisville-moving-clay-il',
@@ -534,6 +536,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'coleman-worldwide-st-louis-mo',
     'mid-west-moving-storage-chicago-il',
+    'salem-moving-marion-il',
+    'marion-county-moving-marion-il',
   ],
   cass: [
     'virginia-moving-cass-il',
@@ -544,6 +548,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'heartland-moving-sangamon-il',
     'two-men-and-a-truck-peoria-il',
     'mid-west-moving-storage-chicago-il',
+    'salem-moving-marion-il',
+    'marion-county-moving-marion-il',
   ],
   mason: [
     'havana-moving-mason-il',
@@ -554,6 +560,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-sangamon-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'lewistown-moving-fulton-il',
+    'fulton-county-moving-fulton-il',
   ],
   menard: [
     'petersburg-moving-menard-il',
@@ -564,6 +572,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'capitol-moving-sangamon-il',
     'decatur-moving-macon-il',
     'mid-west-moving-storage-chicago-il',
+    'salem-moving-marion-il',
+    'marion-county-moving-marion-il',
   ],
   marshall: [
     'lacon-moving-marshall-il',
@@ -574,6 +584,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'bartlett-moving-peoria-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'lewistown-moving-fulton-il',
+    'fulton-county-moving-fulton-il',
   ],
   greene: [
     'carrollton-moving-greene-il',
@@ -584,6 +596,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'heartland-moving-sangamon-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'salem-moving-marion-il',
+    'marion-county-moving-marion-il',
   ],
   wabash: [
     'mount-carmel-moving-wabash-il',
@@ -594,6 +608,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'coleman-worldwide-st-louis-mo',
     'mid-west-moving-storage-chicago-il',
+    'mount-vernon-moving-jefferson-il',
+    'jefferson-county-moving-jefferson-il',
   ],
   cumberland: [
     'toledo-moving-cumberland-il',
@@ -604,6 +620,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'decatur-moving-macon-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'paxton-moving-ford-il',
+    'ford-county-moving-ford-il',
   ],
   jasper: [
     'newton-moving-jasper-il',
@@ -614,6 +632,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'marion-moving-williamson-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'effingham-moving-effingham-il',
+    'effingham-county-moving-effingham-il',
   ],
   hamilton: [
     'mcleansboro-moving-hamilton-il',
@@ -624,6 +644,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'pinckneyville-moving-perry-il',
     'two-men-and-a-truck-madison-il',
     'mid-west-moving-storage-chicago-il',
+    'mount-vernon-moving-jefferson-il',
+    'jefferson-county-moving-jefferson-il',
   ],
   schuyler: [
     'rushville-moving-schuyler-il',
@@ -634,6 +656,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-peoria-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'carthage-moving-hancock-il',
+    'hancock-county-moving-hancock-il',
   ],
   brown: [
     'mount-sterling-moving-brown-il',
@@ -644,6 +668,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'heartland-moving-sangamon-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'carthage-moving-hancock-il',
+    'hancock-county-moving-hancock-il',
   ],
   henderson: [
     'oquawka-moving-henderson-il',
@@ -654,6 +680,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'tri-state-moving-adams-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'aledo-moving-mercer-il',
+    'mercer-county-moving-mercer-il',
   ],
   edwards: [
     'albion-moving-edwards-il',
@@ -664,6 +692,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'mount-vernon-moving-jefferson-il',
+    'jefferson-county-moving-jefferson-il',
   ],
   putnam: [
     'hennepin-moving-putnam-il',
@@ -674,6 +704,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-mclean-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'princeton-moving-bureau-il',
+    'bureau-county-moving-bureau-il',
   ],
   stark: [
     'toulon-moving-stark-il',
@@ -684,6 +716,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-mclean-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'lewistown-moving-fulton-il',
+    'fulton-county-moving-fulton-il',
   ],
   scott: [
     'winchester-moving-scott-il',
@@ -694,6 +728,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'heartland-moving-sangamon-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'salem-moving-marion-il',
+    'marion-county-moving-marion-il',
   ],
   pulaski: [
     'mound-city-moving-pulaski-il',
@@ -704,6 +740,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'jonesboro-moving-union-il',
+    'union-county-moving-union-il',
   ],
   gallatin: [
     'shawneetown-moving-gallatin-il',
@@ -714,6 +752,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'mount-vernon-moving-jefferson-il',
+    'jefferson-county-moving-jefferson-il',
   ],
   alexander: [
     'cairo-moving-alexander-il',
@@ -724,6 +764,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'jonesboro-moving-union-il',
+    'union-county-moving-union-il',
   ],
   calhoun: [
     'hardin-moving-calhoun-il',
@@ -734,6 +776,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-sangamon-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'waterloo-moving-monroe-il',
+    'monroe-county-moving-monroe-il',
   ],
   pope: [
     'golconda-moving-pope-il',
@@ -744,6 +788,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'vienna-moving-johnson-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'jonesboro-moving-union-il',
+    'union-county-moving-union-il',
   ],
   hardin: [
     'elizabethtown-moving-hardin-il',
@@ -754,6 +800,8 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-madison-il',
     'mid-west-moving-storage-chicago-il',
     'coleman-worldwide-chicago-il',
+    'jonesboro-moving-union-il',
+    'union-county-moving-union-il',
   ],
   bureau: [
     'princeton-moving-bureau-il',

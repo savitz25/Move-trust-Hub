@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -24,6 +24,33 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Arkansas | 75/75 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-arkansas-movers.ts`, `apply-arkansas-mover-expansion.ts` |
 | Kansas | 105/105 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-kansas-movers.ts`, `apply-kansas-mover-expansion.ts` |
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
+| Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
+
+### Illinois metro pools (`data/local-movers-seed.ts`)
+
+- `chicago-metro-il` — Chicago core (Cook hub)
+- `chicago-metro-west-il`, `chicago-metro-north-il`, `chicago-metro-southwest-il`, `chicago-metro-northwest-il` — DuPage, Lake, Will, Kane, McHenry collar counties
+- `rockford-metro-il` — Rockford / Winnebago northern Illinois hub
+- `st-louis-metro-il` — St. Louis MSA Illinois side (Madison, St. Clair, Monroe, Jersey, Bond, Randolph)
+- `champaign-urbana-metro-il` — Champaign-Urbana / University of Illinois corridor
+- `springfield-metro-il` — Springfield / Sangamon state capital corridor
+- `peoria-metro-il` — Peoria / Tazewell / Woodford central Illinois hub
+- `bloomington-normal-metro-il` — Bloomington-Normal / McLean I-55 corridor
+- `quad-cities-metro-il` — Rock Island / Henry / Mercer Mississippi River metro
+- `decatur-metro-il`, `danville-metro-il`, `kankakee-metro-il`, `ottawa-metro-il` — east-central and collar corridors
+- `quincy-metro-il`, `galesburg-metro-il`, `galena-metro-il`, `oregon-metro-il` — west-central and northwest Illinois
+- `carbondale-metro-il`, `marion-metro-il` — southern Illinois hubs
+- `sterling-rock-falls-metro-il`, `dekalb-metro-il` — additional regional pools
+
+### Illinois major counties (10 movers each; Cook up to 19)
+
+`cook`, `dupage`, `lake`, `will`, `kane`, `mchenry`, `winnebago`, `madison`, `st-clair`, `champaign`, `sangamon`, `peoria`, `mclean`, `rock-island`, `kendall`
+
+### Illinois sitemap priority 0.85 (15 counties)
+
+`cook`, `dupage`, `lake`, `will`, `kane`, `mchenry`, `winnebago`, `madison`, `st-clair`, `champaign`, `sangamon`, `peoria`, `mclean`, `rock-island`, `kendall`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/illinois.xml` (103 URLs: hub + 102 counties). Do **not** use `/sitemap-local/illinois.xml` (legacy path redirects to canonical).
 
 ### Missouri metro pools (`data/local-movers-seed.ts`)
 
@@ -451,6 +478,8 @@ npx tsx scripts/count-nj-movers.ts
 npx tsx scripts/count-ny-movers.ts
 npx tsx scripts/count-texas-movers.ts
 npx tsx scripts/count-tennessee-movers.ts
+npx tsx scripts/count-illinois-movers.ts
+npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
 npx tsx scripts/apply-{state}-mover-expansion.ts   # if needed
 ```
 
