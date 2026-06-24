@@ -943,6 +943,568 @@ export const ohioCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  jackson: {
+    marketNotes:
+      'Jackson County is a rural South Central Ohio county with residential demand centered on Jackson.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects South Central Ohio rural and residential demand, US-35 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Jackson and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hardin: {
+    marketNotes:
+      'Hardin County is a rural Northwest Ohio county with residential demand centered on Kenton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Hardin County pricing reflects Northwest Ohio rural and residential demand, US-68 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Kenton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gallia: {
+    marketNotes:
+      'Gallia County is a rural Southeast Ohio county with residential demand centered on Gallipolis.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Gallia County pricing reflects Southeast Ohio rural and residential demand, Ohio River valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Gallipolis and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'van-wert': {
+    marketNotes:
+      'Van Wert County is a rural Northwest Ohio county with residential demand centered on Van Wert.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Van Wert County pricing reflects Northwest Ohio rural and residential demand, US-30 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Van Wert and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County is a rural South Central Ohio county with residential demand centered on Washington Court House.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Fayette County pricing reflects South Central Ohio rural and residential demand, US-22 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Washington Court House and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  adams: {
+    marketNotes:
+      'Adams County is a rural South Central Ohio county with residential demand centered on West Union.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Adams County pricing reflects South Central Ohio rural and residential demand, US-52 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for West Union and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  henry: {
+    marketNotes:
+      'Henry County is a rural Northwest Ohio county with residential demand centered on Napoleon.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Henry County pricing reflects Northwest Ohio rural and residential demand, US-24 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Napoleon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hocking: {
+    marketNotes:
+      'Hocking County is a rural Southeast Ohio county with residential demand centered on Logan.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Hocking County pricing reflects Southeast Ohio rural and residential demand, Hocking Hills corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Logan and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pike: {
+    marketNotes:
+      'Pike County is a rural South Central Ohio county with residential demand centered on Waverly.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Pike County pricing reflects South Central Ohio rural and residential demand, US-23 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Waverly and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County is a rural East Central Ohio county with residential demand centered on Carrollton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects East Central Ohio rural and residential demand, US-30 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Carrollton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  meigs: {
+    marketNotes:
+      'Meigs County is a rural Southeast Ohio county with residential demand centered on Pomeroy.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Meigs County pricing reflects Southeast Ohio rural and residential demand, Ohio River valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Pomeroy and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wyandot: {
+    marketNotes:
+      'Wyandot County is a rural Northwest Ohio county with residential demand centered on Upper Sandusky.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Wyandot County pricing reflects Northwest Ohio rural and residential demand, US-23 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Upper Sandusky and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  paulding: {
+    marketNotes:
+      'Paulding County is a rural Northwest Ohio county with residential demand centered on Paulding.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Paulding County pricing reflects Northwest Ohio rural and residential demand, US-24 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Paulding and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  noble: {
+    marketNotes:
+      'Noble County is a rural East Central Ohio county with residential demand centered on Caldwell.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Noble County pricing reflects East Central Ohio rural and residential demand, US-77 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Caldwell and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  harrison: {
+    marketNotes:
+      'Harrison County is a rural East Central Ohio county with residential demand centered on Cadiz.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Harrison County pricing reflects East Central Ohio rural and residential demand, US-22 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Cadiz and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morgan: {
+    marketNotes:
+      'Morgan County is a rural East Central Ohio county with residential demand centered on McConnelsville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Morgan County pricing reflects East Central Ohio rural and residential demand, US-37 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for McConnelsville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is a rural East Central Ohio county with residential demand centered on Woodsfield.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects East Central Ohio rural and residential demand, US-40 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Woodsfield and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  vinton: {
+    marketNotes:
+      'Vinton County is a rural Southeast Ohio county with residential demand centered on McArthur.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Vinton County pricing reflects Southeast Ohio rural and residential demand, US-50 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for McArthur and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ashland: {
+    marketNotes:
+      'Ashland County is a rural North Central Ohio county with residential demand centered on Ashland.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Ashland County pricing reflects North Central Ohio rural and residential demand, US-42 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Ashland and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  auglaize: {
+    marketNotes:
+      'Auglaize County is a rural West Central Ohio county with residential demand centered on Wapakoneta.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Auglaize County pricing reflects West Central Ohio rural and residential demand, I-75 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Wapakoneta and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  brown: {
+    marketNotes:
+      'Brown County is a rural Southwest Ohio county with residential demand centered on Georgetown.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Brown County pricing reflects Southwest Ohio rural and residential demand, US-68 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Georgetown and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  darke: {
+    marketNotes:
+      'Darke County is a rural West Central Ohio county with residential demand centered on Greenville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Darke County pricing reflects West Central Ohio rural and residential demand, US-127 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Greenville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  holmes: {
+    marketNotes:
+      'Holmes County is a rural East Central Ohio county with residential demand centered on Millersburg.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Holmes County pricing reflects East Central Ohio rural and residential demand, Amish country corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Millersburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  huron: {
+    marketNotes:
+      'Huron County is a rural North Central Ohio county with residential demand centered on Norwalk.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Huron County pricing reflects North Central Ohio rural and residential demand, US-20 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Norwalk and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is a rural Eastern Ohio county with residential demand centered on Steubenville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects Eastern Ohio rural and residential demand, Ohio River valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Steubenville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lawrence: {
+    marketNotes:
+      'Lawrence County is a rural Southern Ohio county with residential demand centered on Ironton.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Lawrence County pricing reflects Southern Ohio rural and residential demand, Ohio River valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Ironton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County is a rural West Central Ohio county with residential demand centered on Bellefontaine.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Logan County pricing reflects West Central Ohio rural and residential demand, US-33 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Bellefontaine and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison County is a rural Central Ohio county with residential demand centered on London.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Madison County pricing reflects Central Ohio rural and residential demand, US-42 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for London and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sandusky: {
+    marketNotes:
+      'Sandusky County is a rural North Central Ohio county with residential demand centered on Fremont.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Sandusky County pricing reflects North Central Ohio rural and residential demand, US-20 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Fremont and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  seneca: {
+    marketNotes:
+      'Seneca County is a rural Northwest Ohio county with residential demand centered on Tiffin.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Seneca County pricing reflects Northwest Ohio rural and residential demand, US-224 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Tiffin and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  shelby: {
+    marketNotes:
+      'Shelby County is a rural West Central Ohio county with residential demand centered on Sidney.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Shelby County pricing reflects West Central Ohio rural and residential demand, I-75 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Sidney and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  athens: {
+    marketNotes:
+      'Athens County is a rural Southeast Ohio county with residential demand centered on Athens.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Athens County pricing reflects Southeast Ohio rural and residential demand, Ohio University area corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Athens and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is a rural Southeast Ohio county with residential demand centered on Marietta.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Southeast Ohio rural and residential demand, Ohio River valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Marietta and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+
 };
 
 export function getOhioCountyResearch(

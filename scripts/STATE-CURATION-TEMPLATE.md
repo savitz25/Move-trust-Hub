@@ -27,7 +27,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
 | Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
-| Ohio | 55/88 (in progress) | 5 | 10 (cap 10; Franklin up to 18) | 55 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
+| Ohio | 88/88 (complete) | 5 | 10 (cap 10; Franklin up to 18) | 88 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
 
 ### Ohio metro pools (`data/local-movers-seed.ts`)
 
@@ -51,14 +51,14 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 - `defiance-metro-oh` — Defiance / Defiance County hub
 - `coshocton-metro-oh` — Coshocton / Coshocton County hub
 - `bryan-metro-oh` — Bryan / Williams hub
+- `athens-metro-oh` — Athens / Athens County hub
+- `marietta-metro-oh` — Marietta / Washington County hub
 
 ### Ohio major counties (10 movers each; Franklin may expand to 18)
 
-`franklin`, `cuyahoga`, `hamilton`, `montgomery`, `summit`, `lucas`, `butler`, `stark`, `lorain`, `warren`, `delaware`, `lake`, `mahoning`, `clermont`, `trumbull`, `licking`, `medina`, `greene`, `fairfield`, `portage`, `wood`, `clark`, `richland`, `wayne`, `miami`, `allen`, `columbiana`, `ashtabula`, `geauga`, `tuscarawas`, `muskingum`, `ross`, `hancock`, `union`, `erie`, `scioto`, `marion`, `knox`, `belmont`, `pickaway`, `highland`, `mercer`, `clinton`, `crawford`, `fulton`, `preble`, `ottawa`, `champaign`, `guernsey`, `defiance`, `coshocton`, `morrow`, `williams`, `perry`, `putnam`
+All 88 Ohio counties are curated at 10 movers each (Franklin may expand to 18).
 
-### Ohio sitemap priority 0.85 (55 counties — top metro hubs)
-
-`franklin`, `cuyahoga`, `hamilton`, `montgomery`, `summit`, `lucas`, `butler`, `stark`, `lorain`, `warren`, `delaware`, `lake`, `mahoning`, `clermont`, `trumbull`, `licking`, `medina`, `greene`, `fairfield`, `portage`, `wood`, `clark`, `richland`, `wayne`, `miami`, `allen`, `columbiana`, `ashtabula`, `geauga`, `tuscarawas`, `muskingum`, `ross`, `hancock`, `union`, `erie`, `scioto`, `marion`, `knox`, `belmont`, `pickaway`, `highland`, `mercer`, `clinton`, `crawford`, `fulton`, `preble`, `ottawa`, `champaign`, `guernsey`, `defiance`, `coshocton`, `morrow`, `williams`, `perry`, `putnam`
+### Ohio sitemap priority 0.85 (88 counties — all curated)
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
