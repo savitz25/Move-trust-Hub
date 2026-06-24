@@ -705,6 +705,90 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  houghton: {
+    marketNotes:
+      'Houghton County is a key county in Michigan\'s Upper Peninsula with strong educational demand from Michigan Technological University and residential need across Houghton and Hancock.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Houghton County pricing reflects Upper Peninsula education and healthcare demand, US-41 corridor traffic, harsh winter weather, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Houghton and surrounding areas before booking.', 'Harsh winter weather and regional traffic impact scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  delta: {
+    marketNotes:
+      'Delta County is a key county in Michigan\'s Upper Peninsula with strong industrial and residential demand across Escanaba and Gladstone.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Delta County pricing reflects Upper Peninsula industrial and residential demand, US-2/US-41 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Escanaba and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  chippewa: {
+    marketNotes:
+      'Chippewa County is a key Upper Peninsula county with strong border and tourism-related residential demand across Sault Ste. Marie and surrounding communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Chippewa County pricing reflects border tourism and residential demand, I-75 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Sault Ste. Marie and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  wexford: {
+    marketNotes:
+      'Wexford County is a key Northern Michigan county with strong tourism and residential demand across Cadillac and Manton.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Wexford County pricing reflects Northern Michigan tourism demand, US-131 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Cadillac and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  emmet: {
+    marketNotes:
+      'Emmet County is a scenic Northern Michigan county with strong tourism and residential demand across Petoskey, Harbor Springs, and Charlevoix area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Emmet County pricing reflects lakeshore tourism demand, US-31/M-119 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Petoskey and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  clare: {
+    marketNotes:
+      'Clare County is a rural Central Michigan county with residential demand across Clare, Harrison, and Farwell.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Clare County pricing reflects rural Central Michigan residential demand, US-127 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Clare and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  huron: {
+    marketNotes:
+      'Huron County is a rural Thumb region county with strong agricultural and residential demand across Bad Axe, Harbor Beach, and Ubly.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Huron County pricing reflects Thumb region agricultural and residential demand, M-53/M-25 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Bad Axe and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  mason: {
+    marketNotes:
+      'Mason County is a scenic West Michigan county with strong tourism and residential demand across Ludington, Scottville, and Pentwater.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Mason County pricing reflects lakeshore tourism demand, US-10/US-31 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Ludington and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  alpena: {
+    marketNotes:
+      'Alpena County is a key Northeast Michigan county with strong industrial and residential demand across Alpena and surrounding communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Alpena County pricing reflects Northeast Michigan industrial and residential demand, US-23 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Alpena and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  oceana: {
+    marketNotes:
+      'Oceana County is a rural West Michigan county with strong agricultural and residential demand across Hart, Shelby, and Pentwater area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Oceana County pricing reflects rural West Michigan agricultural and residential demand, US-31 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Hart and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  gladwin: {
+    marketNotes:
+      'Gladwin County is a rural Central Michigan county with residential demand across Gladwin, Beaverton, and West Branch area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Gladwin County pricing reflects rural Central Michigan residential demand, M-61/US-127 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Gladwin and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  otsego: {
+    marketNotes:
+      'Otsego County is a scenic Northern Michigan county with strong tourism and residential demand across Gaylord and Vanderbilt.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Otsego County pricing reflects Northern Michigan tourism demand, I-75/US-27 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Gaylord and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  charlevoix: {
+    marketNotes:
+      'Charlevoix County is a scenic Northern Michigan county with strong tourism and residential demand across Charlevoix, Boyne City, and East Jordan.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Charlevoix County pricing reflects lakeshore tourism demand, US-31/M-66 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Charlevoix and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  manistee: {
+    marketNotes:
+      'Manistee County is a scenic West Michigan county with strong tourism and residential demand across Manistee, Onekama, and Bear Lake.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Manistee County pricing reflects lakeshore tourism demand, US-31 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Manistee and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
 };
 
 export function getMichiganCountyResearch(

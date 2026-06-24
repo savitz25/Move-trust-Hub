@@ -45,6 +45,20 @@ export const michiganCountyOverrides: Partial<
   mecosta: { seat: 'Big Rapids', metro: 'big-rapids-metro-mi' },
   gratiot: { seat: 'Ithaca', metro: 'central-michigan-mi' },
   sanilac: { seat: 'Sandusky', metro: 'sandusky-metro-mi' },
+  houghton: { seat: 'Houghton', metro: 'houghton-metro-mi' },
+  delta: { seat: 'Escanaba', metro: 'escanaba-metro-mi' },
+  chippewa: { seat: 'Sault Ste. Marie', metro: 'sault-ste-marie-metro-mi' },
+  wexford: { seat: 'Cadillac', metro: 'cadillac-metro-mi' },
+  emmet: { seat: 'Petoskey', metro: 'petoskey-metro-mi' },
+  clare: { seat: 'Clare', metro: 'clare-metro-mi' },
+  huron: { seat: 'Bad Axe', metro: 'bad-axe-metro-mi' },
+  mason: { seat: 'Ludington', metro: 'ludington-metro-mi' },
+  alpena: { seat: 'Alpena', metro: 'alpena-metro-mi' },
+  oceana: { seat: 'Hart', metro: 'hart-metro-mi' },
+  gladwin: { seat: 'Gladwin', metro: 'gladwin-metro-mi' },
+  otsego: { seat: 'Gaylord', metro: 'gaylord-metro-mi' },
+  charlevoix: { seat: 'Charlevoix', metro: 'charlevoix-metro-mi' },
+  manistee: { seat: 'Manistee', metro: 'manistee-metro-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {

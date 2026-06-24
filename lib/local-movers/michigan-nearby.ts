@@ -52,6 +52,20 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   mecosta: ['osceola', 'newaygo', 'montcalm', 'isabella', 'lake', 'mason'],
   gratiot: ['clinton', 'montcalm', 'isabella', 'midland', 'saginaw', 'shiawassee'],
   sanilac: ['st-clair', 'lapeer', 'tuscola', 'huron'],
+  houghton: ['baraga', 'iron', 'ontonagon', 'keweenaw', 'marquette', 'alger'],
+  delta: ['alger', 'schoolcraft', 'menominee', 'marquette', 'dickinson'],
+  chippewa: ['mackinac', 'luce', 'alger', 'marquette', 'schoolcraft'],
+  wexford: ['missaukee', 'osceola', 'lake', 'manistee', 'grand-traverse', 'kalkaska'],
+  emmet: ['charlevoix', 'cheboygan', 'otsego', 'grand-traverse'],
+  clare: ['isabella', 'midland', 'gladwin', 'osceola', 'mecosta', 'missaukee'],
+  huron: ['tuscola', 'sanilac', 'bay', 'saginaw'],
+  mason: ['manistee', 'lake', 'oceana', 'muskegon', 'benzie'],
+  alpena: ['montmorency', 'presque-isle', 'alcona', 'iosco', 'cheboygan'],
+  oceana: ['muskegon', 'newaygo', 'mason', 'lake', 'manistee'],
+  gladwin: ['clare', 'midland', 'arenac', 'osceola', 'bay'],
+  otsego: ['cheboygan', 'crawford', 'montmorency', 'charlevoix', 'wexford', 'kalkaska'],
+  charlevoix: ['emmet', 'antrim', 'otsego', 'grand-traverse'],
+  manistee: ['benzie', 'lake', 'mason', 'wexford', 'grand-traverse'],
 };
 
 export function getMichiganNearbyCounties(

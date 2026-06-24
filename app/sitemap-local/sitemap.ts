@@ -180,6 +180,20 @@ const MI_HIGH_TRAFFIC_COUNTIES = new Set([
   'mecosta',
   'gratiot',
   'sanilac',
+  'houghton',
+  'delta',
+  'chippewa',
+  'wexford',
+  'emmet',
+  'clare',
+  'huron',
+  'mason',
+  'alpena',
+  'oceana',
+  'gladwin',
+  'otsego',
+  'charlevoix',
+  'manistee',
 ]);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */
