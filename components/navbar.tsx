@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
+import { SiteLogo } from '@/components/site-logo';
 import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -25,15 +25,8 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
-          <Link href="/" className="group">
-            <Image
-              src="/logo.png"
-              alt="Move Trust Hub — trusted interstate moving directory and free quote matching"
-              width={300}
-              height={75}
-              priority
-              className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]"
-            />
+          <Link href="/" className="group block">
+            <SiteLogo className="h-12 max-w-[300px] transition-transform group-hover:scale-[1.02]" />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
             TRUSTED

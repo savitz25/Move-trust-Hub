@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" fill="none" role="img" aria-label="Move Trust Hub">
+  <defs>
+    <linearGradient id="roofDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5BB8FF"/>
+      <stop offset="100%" stop-color="#2B7FD4"/>
+    </linearGradient>
+    <linearGradient id="houseDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ADE80"/>
+      <stop offset="100%" stop-color="#16A34A"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="34" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="34" font-weight="700" fill="#F8FAFC">Move</text>
+  <g transform="translate(102 2)">
+    <rect x="36" y="0" width="7" height="11" rx="1" fill="#5BB8FF"/>
+    <polygon points="2,18 24,2 44,18" fill="url(#roofDark)"/>
+    <rect x="6" y="18" width="34" height="22" rx="2" fill="url(#houseDark)"/>
+  </g>
+  <text x="0" y="64" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="700" fill="#4ADE80">Trust Hub</text>
+</svg>
