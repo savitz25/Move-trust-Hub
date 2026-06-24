@@ -164,7 +164,7 @@ export function buildStateDescription(
     return `Find curated local movers in all 14 Vermont counties — up to 10 ranked companies in Chittenden (Burlington), 6–10 regional specialists in every county experienced with rural roads, winter conditions, ski-season and lakeside moves. FMCSA licensing, county cost guides, and Vermont-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'New Hampshire') {
-    return `Find curated local movers in all 10 New Hampshire counties — 10 ranked companies per county from Manchester–Nashua (Hillsborough) and the Seacoast through Concord, the Upper Valley, Lakes Region, and North Country. FMCSA licensing, county cost guides, and New Hampshire-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+    return `Find curated local movers in all 10 New Hampshire counties — up to 10 ranked companies in Hillsborough (Manchester–Nashua) and Rockingham (Seacoast), 7–10 regional specialists in every county from southern suburban corridors through Lakes Region, White Mountains, and North Country. FMCSA licensing, county cost guides, and New Hampshire-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =

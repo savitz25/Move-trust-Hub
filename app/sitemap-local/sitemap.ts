@@ -225,7 +225,7 @@ const RI_HIGH_TRAFFIC_COUNTIES = new Set(['providence']);
 const VT_HIGH_TRAFFIC_COUNTIES = new Set(['chittenden']);
 
 /** High-traffic NH counties — sitemap priority 0.85 */
-const NH_HIGH_TRAFFIC_COUNTIES = new Set(['hillsborough']);
+const NH_HIGH_TRAFFIC_COUNTIES = new Set(['hillsborough', 'rockingham']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
