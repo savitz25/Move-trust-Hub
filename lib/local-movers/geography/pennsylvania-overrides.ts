@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Pennsylvania counties — batches 1–4 */
+/** Seat and metro overrides for hand-curated Pennsylvania counties — batches 1–5 */
 export const pennsylvaniaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -45,6 +45,21 @@ export const pennsylvaniaCountyOverrides: Partial<
   carbon: { seat: 'Jim Thorpe', metro: 'carbon-metro-pa' },
   armstrong: { seat: 'Kittanning', metro: 'armstrong-metro-pa' },
   pike: { seat: 'Milford', metro: 'pike-metro-pa' },
+  bradford: { seat: 'Towanda', metro: 'bradford-metro-pa' },
+  wayne: { seat: 'Honesdale', metro: 'wayne-metro-pa' },
+  venango: { seat: 'Franklin', metro: 'venango-metro-pa' },
+  bedford: { seat: 'Bedford', metro: 'bedford-metro-pa' },
+  perry: { seat: 'New Bloomfield', metro: 'perry-metro-pa' },
+  mifflin: { seat: 'Lewistown', metro: 'mifflin-metro-pa' },
+  jefferson: { seat: 'Brookville', metro: 'jefferson-metro-pa' },
+  huntingdon: { seat: 'Huntingdon', metro: 'huntingdon-metro-pa' },
+  union: { seat: 'Lewisburg', metro: 'union-metro-pa' },
+  tioga: { seat: 'Wellsboro', metro: 'tioga-metro-pa' },
+  snyder: { seat: 'Middleburg', metro: 'snyder-metro-pa' },
+  mckean: { seat: 'Smethport', metro: 'mckean-metro-pa' },
+  susquehanna: { seat: 'Montrose', metro: 'susquehanna-metro-pa' },
+  clinton: { seat: 'Lock Haven', metro: 'clinton-metro-pa' },
+  warren: { seat: 'Warren', metro: 'warren-metro-pa' },
 };
 
 export function applyPennsylvaniaCountyOverrides(county: LocalCounty): LocalCounty {

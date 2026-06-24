@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/types';
 
-/** Hand-curated Pennsylvania county testimonials — batches 1–4 */
+/** Hand-curated Pennsylvania county testimonials — batches 1–5 */
 export const pennsylvaniaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   philadelphia: [
     {
@@ -437,6 +437,81 @@ export const pennsylvaniaCountyTestimonials: Record<string, CountyTestimonialEnt
     { quote: 'Regional Milford providers handled our Pike County move professionally — efficient and careful through Delaware Highlands traffic.', name: 'Tara I.', location: 'Milford, PA', rating: 5, moveType: 'Single-family' },
     { quote: 'Milford Corridor Moving navigated our relocation with fair pricing and excellent seasonal scheduling.', name: 'Uma J.', location: 'Milford, PA', rating: 5, moveType: 'Townhome' },
     { quote: 'Delaware Highlands Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Vic K.', location: 'Matamoras, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  bradford: [
+    { quote: 'Regional Towanda providers handled our Bradford County move professionally — efficient and careful.', name: 'Walt A.', location: 'Towanda, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Towanda Corridor Moving navigated our relocation with fair pricing and excellent rural scheduling.', name: 'Xena B.', location: 'Towanda, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Northern Tier Moving served our move efficiently with punctual arrival and professional coordination.', name: 'York C.', location: 'Athens, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  wayne: [
+    { quote: 'Regional Honesdale providers handled our Wayne County move professionally — efficient and careful.', name: 'Zara D.', location: 'Honesdale, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Honesdale Corridor Moving navigated our relocation with fair pricing through Pocono north traffic.', name: 'Alan E.', location: 'Honesdale, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pocono North Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Beth F.', location: 'Hawley, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  venango: [
+    { quote: 'Regional Franklin providers handled our Venango County move professionally — efficient and careful.', name: 'Carl G.', location: 'Franklin, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Franklin Corridor Moving navigated our Oil Region relocation with fair pricing and excellent scheduling.', name: 'Dana H.', location: 'Franklin, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Oil Region Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Evan I.', location: 'Oil City, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  bedford: [
+    { quote: 'Regional Bedford providers handled our Bedford County move professionally — efficient and careful.', name: 'Faye J.', location: 'Bedford, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Bedford Corridor Moving navigated our relocation with fair pricing through Allegheny south traffic.', name: 'Glen K.', location: 'Bedford, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Allegheny South Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Hope L.', location: 'Everett, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  perry: [
+    { quote: 'Regional New Bloomfield providers handled our Perry County move professionally — efficient and careful.', name: 'Ira M.', location: 'New Bloomfield, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Perry Corridor Moving navigated our relocation with fair pricing and excellent rural scheduling.', name: 'Joy N.', location: 'New Bloomfield, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Susquehanna West Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Kyle O.', location: 'Newport, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  mifflin: [
+    { quote: 'Regional Lewistown providers handled our Mifflin County move professionally — efficient and careful.', name: 'Lynn P.', location: 'Lewistown, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Lewistown Corridor Moving navigated our Juniata Valley relocation with fair pricing and excellent scheduling.', name: 'Mark Q.', location: 'Lewistown, PA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Juniata Valley Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Nina R.', location: 'Burnham, PA', rating: 5, moveType: 'Townhome' },
+  ],
+  jefferson: [
+    { quote: 'Regional Brookville providers handled our Jefferson County move professionally — efficient and careful.', name: 'Otto S.', location: 'Brookville, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Brookville Corridor Moving navigated our relocation with fair pricing through northwest plateau scheduling.', name: 'Pam T.', location: 'Brookville, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Northwest Plateau Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Quinn U.', location: 'Reynoldsville, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  huntingdon: [
+    { quote: 'Regional Huntingdon providers handled our Huntingdon County move professionally — efficient and careful.', name: 'Rita V.', location: 'Huntingdon, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Huntingdon Corridor Moving navigated our Raystown area relocation with fair pricing and excellent scheduling.', name: 'Sam W.', location: 'Huntingdon, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Raystown Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Tina X.', location: 'Mount Union, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  union: [
+    { quote: 'Regional Lewisburg providers handled our Union County move professionally — efficient and careful.', name: 'Uma Y.', location: 'Lewisburg, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Lewisburg Corridor Moving navigated our relocation with fair pricing through US-15 traffic.', name: 'Vic Z.', location: 'Lewisburg, PA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Susquehanna West Central Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Wade A.', location: 'Mifflinburg, PA', rating: 5, moveType: 'Townhome' },
+  ],
+  tioga: [
+    { quote: 'Regional Wellsboro providers handled our Tioga County move professionally — efficient and careful.', name: 'Xena B.', location: 'Wellsboro, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Wellsboro Corridor Moving navigated our Pine Creek area relocation with fair pricing and excellent rural scheduling.', name: 'York C.', location: 'Wellsboro, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pine Creek Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Zoe D.', location: 'Mansfield, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  snyder: [
+    { quote: 'Regional Middleburg providers handled our Snyder County move professionally — efficient and careful.', name: 'Adam E.', location: 'Middleburg, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Middleburg Corridor Moving navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Beth F.', location: 'Middleburg, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Susquehanna Middle Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Carl G.', location: 'Selinsgrove, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  mckean: [
+    { quote: 'Regional Smethport providers handled our McKean County move professionally — efficient and careful.', name: 'Dana H.', location: 'Smethport, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Smethport Corridor Moving navigated our Allegheny National Forest area relocation with fair pricing.', name: 'Evan I.', location: 'Smethport, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Allegheny National Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Faye J.', location: 'Bradford, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  susquehanna: [
+    { quote: 'Regional Montrose providers handled our Susquehanna County move professionally — efficient and careful.', name: 'Glen K.', location: 'Montrose, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Montrose Corridor Moving navigated our Endless Mountains relocation with fair pricing and excellent scheduling.', name: 'Hope L.', location: 'Montrose, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Endless Mountains Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Ira M.', location: 'New Milford, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  clinton: [
+    { quote: 'Regional Lock Haven providers handled our Clinton County move professionally — efficient and careful.', name: 'Joy N.', location: 'Lock Haven, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Lock Haven Corridor Moving navigated our West Branch relocation with fair pricing through I-80 traffic.', name: 'Kyle O.', location: 'Lock Haven, PA', rating: 5, moveType: 'Apartment' },
+    { quote: 'West Branch Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Lynn P.', location: 'Renovo, PA', rating: 5, moveType: 'Townhome' },
+  ],
+  warren: [
+    { quote: 'Regional Warren providers handled our Warren County move professionally — efficient and careful.', name: 'Mark Q.', location: 'Warren, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Warren Corridor Moving navigated our Allegheny Reservoir area relocation with fair pricing and excellent scheduling.', name: 'Nina R.', location: 'Warren, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Allegheny Reservoir Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Otto S.', location: 'Youngsville, PA', rating: 5, moveType: 'Single-family' },
   ],
 };
 

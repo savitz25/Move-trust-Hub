@@ -209,7 +209,7 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
 /** High-traffic DE counties — sitemap priority 0.85 (Wilmington metro) */
 const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
 
-/** High-traffic PA counties — sitemap priority 0.85 (batches 1–4 large markets) */
+/** High-traffic PA counties — sitemap priority 0.85 (batches 1–5 large markets) */
 const PA_HIGH_TRAFFIC_COUNTIES = new Set([
   'philadelphia',
   'allegheny',
@@ -252,6 +252,21 @@ const PA_HIGH_TRAFFIC_COUNTIES = new Set([
   'carbon',
   'armstrong',
   'pike',
+  'bradford',
+  'wayne',
+  'venango',
+  'bedford',
+  'perry',
+  'mifflin',
+  'jefferson',
+  'huntingdon',
+  'union',
+  'tioga',
+  'snyder',
+  'mckean',
+  'susquehanna',
+  'clinton',
+  'warren',
 ]);
 
 /** High-traffic MD counties — sitemap priority 0.85 (batch 1 large markets) */

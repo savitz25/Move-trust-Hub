@@ -933,6 +933,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'pennsylvania', countySlug: 'carbon', expectedCity: 'Jim Thorpe' },
   { stateSlug: 'pennsylvania', countySlug: 'armstrong', expectedCity: 'Kittanning' },
   { stateSlug: 'pennsylvania', countySlug: 'pike', expectedCity: 'Milford' },
+  { stateSlug: 'pennsylvania', countySlug: 'bradford', expectedCity: 'Towanda' },
+  { stateSlug: 'pennsylvania', countySlug: 'wayne', expectedCity: 'Honesdale' },
+  { stateSlug: 'pennsylvania', countySlug: 'venango', expectedCity: 'Franklin' },
+  { stateSlug: 'pennsylvania', countySlug: 'bedford', expectedCity: 'Bedford' },
+  { stateSlug: 'pennsylvania', countySlug: 'perry', expectedCity: 'New Bloomfield' },
+  { stateSlug: 'pennsylvania', countySlug: 'mifflin', expectedCity: 'Lewistown' },
+  { stateSlug: 'pennsylvania', countySlug: 'jefferson', expectedCity: 'Brookville' },
+  { stateSlug: 'pennsylvania', countySlug: 'huntingdon', expectedCity: 'Huntingdon' },
+  { stateSlug: 'pennsylvania', countySlug: 'union', expectedCity: 'Lewisburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'tioga', expectedCity: 'Wellsboro' },
+  { stateSlug: 'pennsylvania', countySlug: 'snyder', expectedCity: 'Middleburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'mckean', expectedCity: 'Smethport' },
+  { stateSlug: 'pennsylvania', countySlug: 'susquehanna', expectedCity: 'Montrose' },
+  { stateSlug: 'pennsylvania', countySlug: 'clinton', expectedCity: 'Lock Haven' },
+  { stateSlug: 'pennsylvania', countySlug: 'warren', expectedCity: 'Warren' },
 ];
 
 let totalIssues = 0;
