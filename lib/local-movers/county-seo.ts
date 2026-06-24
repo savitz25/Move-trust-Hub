@@ -188,6 +188,9 @@ export function buildStateDescription(
   if (stateName === 'Washington') {
     return `Find curated local movers in all 39 Washington counties — up to 12 ranked companies in King County (Seattle metro), 10+ in Snohomish and Pierce, 9–10 in Spokane, and 6–10 regional specialists in every county. Western Washington guides cover tech-corridor, corporate, military (JBLM), and high-density moves; Eastern Washington guides cover suburban, rural, and agricultural markets. FMCSA licensing, county cost guides, and Washington-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Oregon') {
+    return `Find curated local movers in all 36 Oregon counties — up to 12 ranked companies in Portland metro (Multnomah, Washington, Clackamas), 9–10 in Lane and Marion, and 6–10 regional specialists in every county. Portland metro guides cover tech, corporate, and high-density urban moves; Willamette Valley, Central Oregon (Bend), coast, and eastern Oregon each have localized cost guides and moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

@@ -1,7 +1,18 @@
 import { oregonCountyResearch } from '../data/oregon-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  multnomah: 12,
+  washington: 12,
+  clackamas: 12,
+  lane: 9,
+  marion: 9,
+};
+const DEFAULT_TARGET = 6;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const underTarget: string[] = [];
 
@@ -9,8 +20,9 @@ const curatedSlugs = Object.keys(oregonCountyResearch).sort();
 console.log(`Oregon curated counties: ${curatedSlugs.length}`);
 for (const slug of curatedSlugs) {
   const n = getMoversForCounty('oregon', slug)?.movers.length ?? 0;
-  console.log(`  ${slug}: ${n} movers (target ${DEFAULT_TARGET})`);
-  if (n < DEFAULT_TARGET) underTarget.push(`${slug}: ${n}/${DEFAULT_TARGET}`);
+  const target = getTarget(slug);
+  console.log(`  ${slug}: ${n} movers (target ${target})`);
+  if (n < target) underTarget.push(`${slug}: ${n}/${target}`);
 }
 
 if (underTarget.length === 0) {

@@ -29,6 +29,17 @@ export const oregonCountyOverrides: Partial<
   sherman: { seat: 'Moro', metro: 'sherman-metro-or' },
   gilliam: { seat: 'Condon', metro: 'gilliam-metro-or' },
   wheeler: { seat: 'Fossil', metro: 'wheeler-metro-or' },
+  clatsop: { seat: 'Astoria', metro: 'clatsop-metro-or' },
+  columbia: { seat: 'St. Helens', metro: 'columbia-metro-or' },
+  coos: { seat: 'Coquille', metro: 'coos-metro-or' },
+  crook: { seat: 'Prineville', metro: 'crook-metro-or' },
+  josephine: { seat: 'Grants Pass', metro: 'josephine-metro-or' },
+  klamath: { seat: 'Klamath Falls', metro: 'klamath-metro-or' },
+  lincoln: { seat: 'Newport', metro: 'lincoln-metro-or' },
+  malheur: { seat: 'Ontario', metro: 'malheur-metro-or' },
+  polk: { seat: 'Dallas', metro: 'polk-metro-or' },
+  tillamook: { seat: 'Tillamook', metro: 'tillamook-metro-or' },
+  umatilla: { seat: 'Pendleton', metro: 'umatilla-metro-or' },
 };
 
 export function applyOregonCountyOverrides(county: LocalCounty): LocalCounty {

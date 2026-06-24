@@ -1110,6 +1110,17 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'oregon', countySlug: 'sherman', expectedCity: 'Moro' },
   { stateSlug: 'oregon', countySlug: 'gilliam', expectedCity: 'Condon' },
   { stateSlug: 'oregon', countySlug: 'wheeler', expectedCity: 'Fossil' },
+  { stateSlug: 'oregon', countySlug: 'clatsop', expectedCity: 'Astoria' },
+  { stateSlug: 'oregon', countySlug: 'columbia', expectedCity: 'St. Helens' },
+  { stateSlug: 'oregon', countySlug: 'coos', expectedCity: 'Coquille' },
+  { stateSlug: 'oregon', countySlug: 'crook', expectedCity: 'Prineville' },
+  { stateSlug: 'oregon', countySlug: 'josephine', expectedCity: 'Grants Pass' },
+  { stateSlug: 'oregon', countySlug: 'klamath', expectedCity: 'Klamath Falls' },
+  { stateSlug: 'oregon', countySlug: 'lincoln', expectedCity: 'Newport' },
+  { stateSlug: 'oregon', countySlug: 'malheur', expectedCity: 'Ontario' },
+  { stateSlug: 'oregon', countySlug: 'polk', expectedCity: 'Dallas' },
+  { stateSlug: 'oregon', countySlug: 'tillamook', expectedCity: 'Tillamook' },
+  { stateSlug: 'oregon', countySlug: 'umatilla', expectedCity: 'Pendleton' },
 ];
 
 let totalIssues = 0;

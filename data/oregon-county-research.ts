@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Oregon county research — 25/36 complete (batches 1–2) */
+/** Hand-curated Oregon county research — 36/36 complete */
 export const oregonCountyResearch: Record<string, CuratedCountyResearch> = {
   multnomah: {
     marketNotes:
-      'Multnomah County is Oregon’s most populous county, encompassing Portland with strong urban, suburban, and residential demand.',
+      'Multnomah County is Oregon’s most populous county, encompassing Portland’s high-density urban core with strong tech-sector, corporate-relocation, and residential demand across downtown, Eastside, and inner-suburban neighborhoods.',
     costs: {
       studioRange: '$950–$2,000',
       familyRange: '$3,800–$9,000+',
@@ -27,7 +27,7 @@ export const oregonCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   washington: {
     marketNotes:
-      'Washington County is a large and affluent suburban county west of Portland with strong tech and residential demand.',
+      'Washington County, Oregon is a large and affluent Portland metro county west of the Willamette with strong tech-corridor, corporate-campus, and high-growth suburban residential demand in Hillsboro, Beaverton, and Tigard.',
     costs: {
       studioRange: '$950–$2,000',
       familyRange: '$3,800–$9,000+',
@@ -44,7 +44,7 @@ export const oregonCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   clackamas: {
     marketNotes:
-      'Clackamas County is a large suburban county southeast of Portland with strong residential demand.',
+      'Clackamas County is a large Portland metro county southeast of the urban core with strong corporate-park, suburban, and increasingly high-density residential demand across Oregon City, Lake Oswego, and Happy Valley.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,500+',
@@ -430,6 +430,204 @@ export const oregonCountyResearch: Record<string, CuratedCountyResearch> = {
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clatsop: {
+    marketNotes:
+      'Clatsop County is a northern Oregon coastal county with strong fishing, tourism, and residential demand across Astoria and US-101 corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Clatsop County pricing reflects northern Oregon coastal demand, US-101 and Columbia River bridge traffic, and competition among regional agents serving Astoria, Seaside, and Cannon Beach-area communities.',
+    },
+    tips: [
+      'Verify coverage for Astoria, Seaside, and surrounding coastal cities before booking.',
+      'US-101 and bridge-crossing traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value waterfront and hillside coastal homes.',
+      'Book early for peak tourist seasons (May–September) and storm-season scheduling constraints.',
+      'Ask about experience with narrow coastal driveways, stairs, and limited truck access.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  columbia: {
+    marketNotes:
+      'Columbia County, Oregon is a lower Columbia River county north of Portland with residential and commuter demand centered on St. Helens — not to be confused with Columbia County in Washington or other states.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Columbia County, Oregon pricing reflects Portland metro fringe and lower Columbia River corridor demand, US-30 and I-5 access traffic, and competition among regional agents serving St. Helens, Scappoose, and Rainier-area communities.',
+    },
+    tips: [
+      'Verify coverage for St. Helens, Scappoose, and surrounding cities before booking.',
+      'Portland metro and Columbia River corridor traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and riverfront homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about bridge-crossing routes when moving between Columbia County and Clark County, WA.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  coos: {
+    marketNotes:
+      'Coos County is a southern Oregon coastal county with residential, port, and tourism demand across Coquille, North Bend, and Coos Bay.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Coos County pricing reflects southern Oregon coastal demand, US-101 corridor traffic, and competition among regional agents serving Coquille, North Bend, and Bandon-area communities.',
+    },
+    tips: [
+      'Verify coverage for Coquille, North Bend, and surrounding coastal cities before booking.',
+      'US-101 coastal traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value waterfront and port-area homes.',
+      'Book early for peak tourist seasons (May–September) and winter storm-season constraints.',
+      'Ask about experience with coastal humidity and long regional crew travel from Eugene or Medford.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  crook: {
+    marketNotes:
+      'Crook County is a rural central Oregon high-desert county with residential and growth demand centered on Prineville.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Crook County pricing reflects Prineville-area high-desert demand, US-26 corridor traffic, and competition among regional agents serving central Oregon communities with extended travel from Bend.',
+    },
+    tips: [
+      'Verify coverage for Prineville and surrounding areas before booking.',
+      'Regional and high-desert road travel impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and acreage properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about equipment fit for rural driveways and unpaved access roads.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  josephine: {
+    marketNotes:
+      'Josephine County is a southern Oregon county with residential demand across Grants Pass and the Rogue Valley.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Josephine County pricing reflects Grants Pass and Rogue Valley demand, I-5 corridor traffic, and competition among regional agents serving southern Oregon communities near the California border.',
+    },
+    tips: [
+      'Verify coverage for Grants Pass and surrounding cities before booking.',
+      'I-5 and Rogue Valley traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value hillside and valley homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about cross-border scheduling if your move involves Siskiyou County, CA.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  klamath: {
+    marketNotes:
+      'Klamath County is a rural southern Oregon basin county with residential demand centered on Klamath Falls.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Klamath County pricing reflects Klamath Falls basin demand, US-97 corridor traffic, and competition among regional agents serving southern Oregon and northern California border communities.',
+    },
+    tips: [
+      'Verify coverage for Klamath Falls and surrounding areas before booking.',
+      'Basin and mountain-road travel impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and lakefront properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about cross-border routes if your move involves Siskiyou County, CA.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County, Oregon is a central Oregon coastal county with fishing, tourism, and residential demand across Newport and the central coast — not to be confused with Lincoln County in Maine, Nebraska, or other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Lincoln County, Oregon pricing reflects central coast tourism demand, US-101 corridor traffic, and competition among regional agents serving Newport, Lincoln City, and Depoe Bay-area communities.',
+    },
+    tips: [
+      'Verify coverage for Newport, Lincoln City, and surrounding coastal cities before booking.',
+      'US-101 coastal traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value waterfront and vacation homes.',
+      'Book early for peak tourist seasons (May–September) and storm-season scheduling constraints.',
+      'Ask about experience with coastal stairs, dunes access, and limited parking zones.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  malheur: {
+    marketNotes:
+      'Malheur County is an eastern Oregon county with agricultural and residential demand across Ontario and the Treasure Valley near the Idaho border.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Malheur County pricing reflects Ontario Treasure Valley demand, I-84 corridor traffic, and competition among regional agents serving eastern Oregon and cross-border Idaho communities.',
+    },
+    tips: [
+      'Verify coverage for Ontario and surrounding areas before booking.',
+      'I-84 and long regional travel impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and agricultural properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about cross-border scheduling if your move involves Ada County, ID.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County is a western Willamette Valley county with residential demand across Dallas, Monmouth, and Salem metro fringe communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Polk County pricing reflects western Willamette Valley and Salem metro spillover demand, OR-99W corridor traffic, and competition among regional agents serving Dallas, Monmouth, and Independence communities.',
+    },
+    tips: [
+      'Verify coverage for Dallas, Monmouth, and surrounding cities before booking.',
+      'Willamette Valley and Salem metro traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and rural-residential homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about university-area scheduling if moving near Western Oregon University.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tillamook: {
+    marketNotes:
+      'Tillamook County is a northern Oregon coastal county with dairy, fishing, tourism, and residential demand across Tillamook and US-101 communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Tillamook County pricing reflects north-coast dairy-country demand, US-101 corridor traffic, and competition among regional agents serving Tillamook, Pacific City, and Manzanita-area communities.',
+    },
+    tips: [
+      'Verify coverage for Tillamook and surrounding coastal cities before booking.',
+      'US-101 coastal traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value coastal and farm-residential properties.',
+      'Book early for peak tourist seasons (May–September) and storm-season constraints.',
+      'Ask about experience with beach-access roads and limited coastal parking.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  umatilla: {
+    marketNotes:
+      'Umatilla County is an eastern Oregon plateau county with agricultural, industrial, and residential demand across Pendleton and Hermiston.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Umatilla County pricing reflects Pendleton and Hermiston plateau demand, I-84 corridor traffic, and competition among regional agents serving eastern Oregon agricultural and industrial communities.',
+    },
+    tips: [
+      'Verify coverage for Pendleton, Hermiston, and surrounding cities before booking.',
+      'I-84 and plateau travel impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and agricultural properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about long-distance crew travel from Tri-Cities or Portland metro providers.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
