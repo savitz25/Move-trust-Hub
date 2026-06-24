@@ -53,6 +53,7 @@ const CURATED_STATES = [
   'delaware',
   'maryland',
   'pennsylvania',
+  'connecticut',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -959,6 +960,15 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'pennsylvania', countySlug: 'potter', expectedCity: 'Coudersport' },
   { stateSlug: 'pennsylvania', countySlug: 'sullivan', expectedCity: 'Laporte' },
   { stateSlug: 'pennsylvania', countySlug: 'wyoming', expectedCity: 'Tunkhannock' },
+  { stateSlug: 'connecticut', countySlug: 'capitol', expectedCity: 'Hartford' },
+  { stateSlug: 'connecticut', countySlug: 'western-connecticut', expectedCity: 'Danbury' },
+  { stateSlug: 'connecticut', countySlug: 'south-central-connecticut', expectedCity: 'New Haven' },
+  { stateSlug: 'connecticut', countySlug: 'naugatuck-valley', expectedCity: 'Waterbury' },
+  { stateSlug: 'connecticut', countySlug: 'greater-bridgeport', expectedCity: 'Bridgeport' },
+  { stateSlug: 'connecticut', countySlug: 'southeastern-connecticut', expectedCity: 'New London' },
+  { stateSlug: 'connecticut', countySlug: 'lower-connecticut-river-valley', expectedCity: 'Middletown' },
+  { stateSlug: 'connecticut', countySlug: 'northwest-hills', expectedCity: 'Torrington' },
+  { stateSlug: 'connecticut', countySlug: 'northeastern-connecticut', expectedCity: 'Putnam' },
 ];
 
 let totalIssues = 0;

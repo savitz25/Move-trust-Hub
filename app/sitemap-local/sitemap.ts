@@ -24,6 +24,7 @@ import {
   DELAWARE_COUNTY_CONTENT_UPDATED,
   MARYLAND_COUNTY_CONTENT_UPDATED,
   PENNSYLVANIA_COUNTY_CONTENT_UPDATED,
+  CONNECTICUT_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -208,6 +209,19 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
 
 /** High-traffic DE counties — sitemap priority 0.85 (Wilmington metro) */
 const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
+
+/** High-traffic CT planning regions — sitemap priority 0.85 (state complete) */
+const CT_HIGH_TRAFFIC_REGIONS = new Set([
+  'capitol',
+  'western-connecticut',
+  'south-central-connecticut',
+  'naugatuck-valley',
+  'greater-bridgeport',
+  'southeastern-connecticut',
+  'lower-connecticut-river-valley',
+  'northwest-hills',
+  'northeastern-connecticut',
+]);
 
 /** High-traffic PA counties — sitemap priority 0.85 (batches 1–5 large markets) */
 const PA_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -613,7 +627,9 @@ export default async function sitemap({
                                                         ? new Date(MARYLAND_COUNTY_CONTENT_UPDATED)
                                                         : id === 'pennsylvania'
                                                           ? new Date(PENNSYLVANIA_COUNTY_CONTENT_UPDATED)
-                                                          : new Date();
+                                                          : id === 'connecticut'
+                                                            ? new Date(CONNECTICUT_COUNTY_CONTENT_UPDATED)
+                                                            : new Date();
 
   return [
     {
@@ -661,7 +677,8 @@ export default async function sitemap({
         id === 'district-of-columbia' ||
         (id === 'delaware' && DE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'maryland' && MD_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'connecticut' && CT_HIGH_TRAFFIC_REGIONS.has(county.slug))
           ? 0.85
           : 0.8,
     })),

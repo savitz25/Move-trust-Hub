@@ -105,6 +105,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'delaware' ||
                 state.slug === 'maryland' ||
                 state.slug === 'pennsylvania' ||
+                state.slug === 'connecticut' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -114,7 +115,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                       ? 'Browse all 24 Maryland jurisdiction guides — 10 curated movers in every county and Baltimore City. FMCSA licensing, cost estimates, and local moving tips from DC suburbs to the Eastern Shore and Western Maryland.'
                       : state.slug === 'pennsylvania'
                         ? 'Browse all 67 Pennsylvania county guides — 10 curated movers in every county from Philadelphia and Pittsburgh to Harrisburg, Erie, Scranton, and rural regional markets statewide. FMCSA licensing, cost estimates, and local moving tips.'
-                        : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                        : state.slug === 'connecticut'
+                          ? 'Browse all 9 Connecticut planning region guides — 10 curated movers in every region from Hartford and New Haven to Bridgeport, Danbury, and the Quiet Corner. FMCSA licensing, cost estimates, and local moving tips.'
+                          : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>

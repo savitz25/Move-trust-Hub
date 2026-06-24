@@ -18,6 +18,7 @@ export const CURATED_STATE_SLUGS = new Set([
   'delaware',
   'maryland',
   'pennsylvania',
+  'connecticut',
   'california',
   'florida',
   'new-jersey',

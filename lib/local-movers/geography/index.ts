@@ -1,6 +1,7 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 import { generatedCounties } from '@/data/generated/index';
 import { districtOfColumbiaCounties } from '@/lib/local-movers/geography/district-of-columbia';
+import { connecticutCounties } from '@/lib/local-movers/geography/connecticut';
 import { californiaCounties } from '@/lib/local-movers/geography/california';
 import { floridaCounties } from '@/lib/local-movers/geography/florida';
 import { newJerseyCounties } from '@/lib/local-movers/geography/new-jersey';
@@ -44,11 +45,15 @@ function dedupeMarylandBaltimore(counties: typeof generatedCounties): typeof gen
 }
 
 const generatedWithoutCurated = dedupeMarylandBaltimore(
-  generatedCounties.filter((county) => !curatedStateSlugs.has(county.stateSlug))
+  generatedCounties.filter(
+    (county) =>
+      !curatedStateSlugs.has(county.stateSlug) && county.stateSlug !== 'connecticut'
+  )
 );
 
 const allCounties: LocalCounty[] = [
   ...districtOfColumbiaCounties,
+  ...connecticutCounties,
   ...marylandSupplementalCounties,
   ...californiaCounties,
   ...floridaCounties,

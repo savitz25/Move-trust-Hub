@@ -35,6 +35,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Delaware | 3/3 (complete) | 8 | 12 (New Castle) / 8 (Kent, Sussex) | `new-castle` 0.85 | `count-delaware-movers.ts`, `apply-delaware-mover-expansion.ts`, `audit-delaware-seo.ts` |
 | Maryland | 24/24 (complete) | 10 | 10 (all jurisdictions) | 16 regional hubs 0.85 | `count-maryland-movers.ts`, `apply-maryland-mover-expansion.ts`, `audit-maryland-seo.ts` |
 | Pennsylvania | 67/67 (complete) | 10 | 10 (large markets) | 67 counties 0.85 | `count-pennsylvania-movers.ts`, `apply-pennsylvania-mover-expansion.ts`, `audit-pennsylvania-seo.ts` |
+| Connecticut | 9/9 (complete) | 10 | 10 (large markets) | 9 regions 0.85 | `count-connecticut-movers.ts`, `audit-connecticut-seo.ts` |
+
+> **Connecticut note:** Connecticut uses **9 planning regions** (not legacy 8 counties). Geography lives in `lib/local-movers/geography/connecticut.ts`; generated `connecticut.ts` county slugs are excluded. `capitol` and `south-central-connecticut` use Two Men and a Truck franchise #1; other regions use `regional-*-ct-movers`. Cross-border nearby links to NY, MA, and RI. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
 > **Pennsylvania note:** Philadelphia County is coterminous with the City of Philadelphia — no supplemental geography needed. PA `delaware` slug = Delaware County PA (not DE state); nearby links use `displayLabel` disambiguation. Montgomery PA nearby links to Montgomery MD cross-border. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
