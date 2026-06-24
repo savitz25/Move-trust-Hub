@@ -57,24 +57,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/logo-wordmark.svg',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/logo-wordmark-dark.svg',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
         source: '/(.*)',
         headers: [
           {

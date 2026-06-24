@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SiteLogo } from '@/components/site-logo';
+import Image from 'next/image';
 import { TrustBadges } from '@/components/trust/trust-badges';
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,9 +10,12 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-y-9">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-              <SiteLogo
-                className="h-[72px] max-w-[450px]"
+              <Image
+                src="/logo.png"
                 alt="Move Trust Hub logo — compare licensed long-distance movers"
+                width={300}
+                height={75}
+                className="h-12 w-auto max-w-[300px]"
               />
             </Link>
             <p className="mt-2.5 text-sm text-muted-foreground max-w-[210px] leading-snug">

@@ -53,14 +53,10 @@
     "count:new-hampshire-movers": "tsx scripts/count-new-hampshire-movers.ts",
     "apply:new-hampshire-mover-expansion": "tsx scripts/apply-new-hampshire-mover-expansion.ts",
     "audit:new-hampshire-seo": "tsx scripts/audit-new-hampshire-seo.ts",
-    "count:maine-movers": "tsx scripts/count-maine-movers.ts",
-    "apply:maine-mover-expansion": "tsx scripts/apply-maine-mover-expansion.ts",
-    "audit:maine-seo": "tsx scripts/audit-maine-seo.ts",
     "audit:virginia-seo": "tsx scripts/audit-virginia-seo.ts",
     "count:district-of-columbia-movers": "tsx scripts/count-district-of-columbia-movers.ts",
     "audit:district-of-columbia-seo": "tsx scripts/audit-district-of-columbia-seo.ts",
-    "generate:us-map-geo": "tsx scripts/generate-us-map-geo.ts",
-    "generate:logo": "tsx scripts/process-logo-transparency.ts"
+    "generate:us-map-geo": "tsx scripts/generate-us-map-geo.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
@@ -97,7 +93,6 @@
     "eslint": "^9.23.0",
     "eslint-config-next": "15.5.19",
     "postcss": "^8.5.3",
-    "sharp": "^0.35.2",
     "tailwindcss": "^4.1.3",
     "topojson-client": "^3.1.0",
     "tsx": "^4.19.3",
