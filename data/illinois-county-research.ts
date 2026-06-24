@@ -1135,6 +1135,108 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  bureau: {
+    marketNotes:
+      'Bureau County is a rural North Central Illinois county with residential demand across Princeton and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Bureau County pricing reflects north-central Illinois rural routes, I-80 corridor traffic, and spillover demand from Ottawa and Quad Cities metros.',
+    },
+    tips: [
+      'Verify coverage for Princeton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County is a rural Northwest Illinois county with residential demand across Mount Carroll and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects northwest Illinois rural drive times and spillover demand from Rockford and Quad Cities metros.',
+    },
+    tips: [
+      'Verify coverage for Mount Carroll and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'jo-daviess': {
+    marketNotes:
+      'Jo Daviess County is a scenic rural Northwest Illinois county with tourism and residential demand across Galena and Mississippi River bluff communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jo Daviess County pricing reflects Galena tourism-season demand, historic-property relocations, and spillover from Quad Cities metro.',
+    },
+    tips: [
+      'Verify coverage for Galena and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows around peak visitor seasons.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons (May–October) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lee: {
+    marketNotes:
+      'Lee County is a rural North Central Illinois county with residential demand across Dixon and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lee County pricing reflects north-central Illinois rural routes, Reagan Parkway corridor traffic, and spillover demand from Rockford and Quad Cities metros.',
+    },
+    tips: [
+      'Verify coverage for Dixon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mercer: {
+    marketNotes:
+      'Mercer County is a rural Northwest Illinois county with residential demand across Aledo and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Mercer County pricing reflects northwest Illinois rural drive times and spillover demand from Quad Cities and Henry County metros.',
+    },
+    tips: [
+      'Verify coverage for Aledo and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  warren: {
+    marketNotes:
+      'Warren County is a rural West Central Illinois county with residential demand across Monmouth and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Warren County pricing reflects west-central Illinois rural routes and spillover demand from Galesburg, Peoria, and Quad Cities metros.',
+    },
+    tips: [
+      'Verify coverage for Monmouth and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

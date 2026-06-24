@@ -70,6 +70,12 @@ export const illinoisCountyOverrides: Partial<
   calhoun: { seat: 'Hardin', metro: 'st-louis-metro-il' },
   pope: { seat: 'Golconda', metro: 'carbondale-metro-il' },
   hardin: { seat: 'Elizabethtown', metro: 'carbondale-metro-il' },
+  bureau: { seat: 'Princeton', metro: 'ottawa-metro-il' },
+  carroll: { seat: 'Mount Carroll', metro: 'rockford-metro-il' },
+  'jo-daviess': { seat: 'Galena', metro: 'galena-metro-il' },
+  lee: { seat: 'Dixon', metro: 'rockford-metro-il' },
+  mercer: { seat: 'Aledo', metro: 'quad-cities-metro-il' },
+  warren: { seat: 'Monmouth', metro: 'galesburg-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

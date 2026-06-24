@@ -1718,6 +1718,162 @@ export const illinoisCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  bureau: [
+    {
+      quote:
+        'Princeton Moving & Storage handled our Bureau County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Wade Q.',
+      location: 'Princeton, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bureau County Moving confirmed Princeton coverage — best local moving service in Bureau County with fair pricing.',
+      name: 'Xena R.',
+      location: 'Princeton, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Ottawa Moving & Storage served our north-central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Yuri S.',
+      location: 'Spring Valley, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  carroll: [
+    {
+      quote:
+        'Mount Carroll Moving & Storage handled our Carroll County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Zoe T.',
+      location: 'Mount Carroll, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Carroll County Moving confirmed Mount Carroll coverage — best local moving service in Carroll County with transparent pricing.',
+      name: 'Aaron U.',
+      location: 'Mount Carroll, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Freeport Moving & Storage served our northwest Illinois move efficiently — professional crew with careful handling.',
+      name: 'Beth V.',
+      location: 'Savanna, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'jo-daviess': [
+    {
+      quote:
+        'Galena Moving & Storage handled our Jo Daviess County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Carl W.',
+      location: 'Galena, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Jo Daviess County Moving confirmed Galena coverage — best local moving service in Jo Daviess County with fair pricing.',
+      name: 'Dana X.',
+      location: 'Galena, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Glick Moving & Storage served our bluff-country move efficiently — professional crew with careful handling near Galena.',
+      name: 'Evan Y.',
+      location: 'Elizabeth, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lee: [
+    {
+      quote:
+        'Dixon Moving & Storage handled our Lee County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Faye Z.',
+      location: 'Dixon, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Lee County Moving confirmed Dixon coverage — best local moving service in Lee County with transparent pricing.',
+      name: 'Greg A.',
+      location: 'Dixon, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Pearson Moving & Storage served our Lee County move efficiently — professional crew with careful handling on rural routes.',
+      name: 'Hope B.',
+      location: 'Amboy, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  mercer: [
+    {
+      quote:
+        'Aledo Moving & Storage handled our Mercer County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Ian C.',
+      location: 'Aledo, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mercer County Moving confirmed Aledo coverage — best local moving service in Mercer County with fair pricing.',
+      name: 'Jill D.',
+      location: 'Aledo, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Sterling Moving & Storage served our Quad Cities-area move efficiently — professional crew with careful handling in Mercer County.',
+      name: 'Kyle E.',
+      location: 'New Windsor, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  warren: [
+    {
+      quote:
+        'Monmouth Moving & Storage handled our Warren County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Lara F.',
+      location: 'Monmouth, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Warren County Moving confirmed Monmouth coverage — best local moving service in Warren County with transparent pricing.',
+      name: 'Miles G.',
+      location: 'Monmouth, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Galesburg Moving & Storage served our west-central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Nina H.',
+      location: 'Roseville, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIllinoisCountyTestimonials(

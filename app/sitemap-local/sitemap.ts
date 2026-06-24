@@ -205,6 +205,12 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'calhoun',
   'pope',
   'hardin',
+  'bureau',
+  'carroll',
+  'jo-daviess',
+  'lee',
+  'mercer',
+  'warren',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([

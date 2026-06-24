@@ -77,6 +77,12 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   calhoun: ['greene', 'jersey', 'pike', 'macoupin', 'st-charles'],
   pope: ['johnson', 'massac', 'hardin', 'saline', 'livingston'],
   hardin: ['gallatin', 'pope', 'saline', 'union', 'crittenden'],
+  bureau: ['putnam', 'lasalle', 'henry', 'stark', 'marshall', 'whiteside'],
+  carroll: ['whiteside', 'ogle', 'stephenson', 'jo-daviess', 'lee'],
+  'jo-daviess': ['carroll', 'stephenson', 'whiteside', 'jackson', 'dubuque'],
+  lee: ['ogle', 'dekalb', 'lasalle', 'bureau', 'whiteside', 'carroll'],
+  mercer: ['henry', 'rock-island', 'warren', 'henderson', 'knox'],
+  warren: ['henderson', 'mercer', 'knox', 'mcdonough', 'fulton'],
 };
 
 export function getIllinoisNearbyCounties(
