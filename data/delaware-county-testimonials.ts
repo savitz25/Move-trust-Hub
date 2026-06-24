@@ -5,15 +5,15 @@ export const delawareCountyTestimonials: Record<string, CountyTestimonialEntry[]
   'new-castle': [
     {
       quote:
-        'Two Men and a Truck Wilmington handled our move professionally — on time, efficient, and extremely careful with our belongings.',
+        'Two Men and a Truck Wilmington handled our corporate relocation professionally — on time, efficient, and extremely careful with our belongings along the Wilmington financial corridor.',
       name: 'Karen L.',
       location: 'Wilmington, DE',
       rating: 5,
-      moveType: 'Townhome',
+      moveType: 'Corporate',
     },
     {
       quote:
-        'Best local moving service in New Castle County with fair pricing and excellent care through Newark suburbs.',
+        'Philadelphia Metro Moving navigated our Newark-to-Chester County move seamlessly with fair pricing and excellent care through Brandywine Valley suburbs.',
       name: 'David M.',
       location: 'Newark, DE',
       rating: 5,
@@ -21,43 +21,43 @@ export const delawareCountyTestimonials: Record<string, CountyTestimonialEntry[]
     },
     {
       quote:
-        'Professional crew served our Wilmington relocation efficiently with steady communication throughout.',
+        'Corporate Relocation Wilmington served our executive transfer efficiently with steady communication and careful handling of high-value furnishings.',
       name: 'Angela P.',
       location: 'Wilmington, DE',
       rating: 5,
-      moveType: 'Apartment',
+      moveType: 'Townhome',
     },
   ],
   sussex: [
     {
       quote:
-        'Two Men and a Truck Sussex managed our coastal move with great care — professional and efficient from Georgetown to the beach.',
+        'Two Men and a Truck Sussex managed our beach-second-home move with great care — professional and efficient from Georgetown to Rehoboth Beach.',
       name: 'Robert H.',
       location: 'Georgetown, DE',
       rating: 5,
-      moveType: 'Single-family',
+      moveType: 'Vacation home',
     },
     {
       quote:
-        'Careful handling for our Rehoboth Beach seasonal move with fair pricing and excellent service.',
+        'Delaware Beach Moving handled our retirement relocation to Lewes with careful packing and fair pricing through coastal summer traffic.',
       name: 'Susan W.',
+      location: 'Lewes, DE',
+      rating: 5,
+      moveType: 'Retirement',
+    },
+    {
+      quote:
+        'Coastal Sussex Moving served our seasonal condo move with excellent care, punctual arrival, and steady communication throughout.',
+      name: 'Michael T.',
       location: 'Rehoboth Beach, DE',
       rating: 5,
       moveType: 'Condo',
-    },
-    {
-      quote:
-        'Professional team served our Sussex County relocation with excellent care and punctual arrival.',
-      name: 'Michael T.',
-      location: 'Lewes, DE',
-      rating: 5,
-      moveType: 'Townhome',
     },
   ],
   kent: [
     {
       quote:
-        'Two Men and a Truck Kent handled our Dover move professionally — on time and extremely careful with our home.',
+        'Two Men and a Truck Kent handled our Dover government-corridor move professionally — on time and extremely careful with our home.',
       name: 'Jennifer S.',
       location: 'Dover, DE',
       rating: 5,
@@ -65,17 +65,17 @@ export const delawareCountyTestimonials: Record<string, CountyTestimonialEntry[]
     },
     {
       quote:
-        'Reliable Central Delaware movers with fair pricing and careful handling across Kent County.',
+        'Central Delaware Moving managed our Smyrna relocation with fair pricing and careful handling across Kent County.',
       name: 'Thomas B.',
-      location: 'Dover, DE',
+      location: 'Smyrna, DE',
       rating: 5,
       moveType: 'Townhome',
     },
     {
       quote:
-        'Professional crew managed our Dover relocation efficiently with excellent communication.',
+        'All My Sons Dover served our legislative-session move efficiently with excellent communication and professional crew coordination.',
       name: 'Lisa G.',
-      location: 'Smyrna, DE',
+      location: 'Dover, DE',
       rating: 5,
       moveType: 'Apartment',
     },

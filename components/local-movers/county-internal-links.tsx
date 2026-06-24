@@ -70,7 +70,7 @@ export function CountyInternalLinks({
         <div className="rounded-xl border bg-muted/20 p-4 mb-4">
           <div className="flex items-center gap-2 text-sm font-semibold mb-3">
             <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
-            {stateSlug === 'district-of-columbia'
+            {stateSlug === 'district-of-columbia' || stateSlug === 'delaware'
               ? 'Nearby metro area guides'
               : `Nearby ${stateName} county guides`}
           </div>

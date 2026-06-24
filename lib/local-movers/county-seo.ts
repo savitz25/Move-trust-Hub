@@ -131,6 +131,9 @@ export function buildStateDescription(
   if (stateName === 'District of Columbia') {
     return `Find 15 curated local movers in Washington, DC — government, diplomatic, high-rise, and corporate relocation specialists with FMCSA licensing, DC cost guides, and capital-city moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Delaware') {
+    return `Find curated local movers in all 3 Delaware counties — up to 12 ranked companies in New Castle (Wilmington metro), 8+ in Kent and Sussex, FMCSA licensing, county cost guides, and Delaware-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||
@@ -155,6 +158,7 @@ export function buildStateDescription(
     stateName === 'Kentucky' ||
     stateName === 'West Virginia' ||
     stateName === 'Virginia' ||
+    stateName === 'Delaware' ||
     stateName === 'Texas'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';

@@ -75461,11 +75461,37 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.5,
     reviewCount: 265,
     shortDescription:
-      'Full-service local mover serving Wilmington and new-castle County.',
+      'Full-service local mover serving Wilmington and New Castle County.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential', 'Commercial'],
     fmcsaSafetyRating: 'Not Rated',
     bbbRating: 'A+',
+    city: 'Wilmington',
+  },
+  'philadelphia-metro-moving-new-castle-de': {
+    id: 'philadelphia-metro-moving-new-castle-de',
+    name: 'Philadelphia Metro Moving',
+    rating: 4.7,
+    reviewCount: 520,
+    shortDescription:
+      'Cross-border specialist for Wilmington, Newark, and Philadelphia metro corporate and residential relocations along I-95.',
+    services: ['Local Moving', 'Long Distance', 'Packing'],
+    specialties: ['Residential', 'Commercial'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Wilmington',
+  },
+  'corporate-relocation-wilmington-new-castle-de': {
+    id: 'corporate-relocation-wilmington-new-castle-de',
+    name: 'Corporate Relocation Wilmington',
+    rating: 4.6,
+    reviewCount: 380,
+    shortDescription:
+      'Corporate and executive relocation specialist serving Wilmington financial corridor, Newark, and suburban New Castle County.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Commercial', 'Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A',
     city: 'Wilmington',
   },
   'two-men-and-a-truck-sussex-de': {
@@ -92971,6 +92997,8 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'brandywine-valley-moving-new-castle-de',
       'hercules-movers-wilmington-de',
       'krupp-moving-wilmington-de',
+      'philadelphia-metro-moving-new-castle-de',
+      'corporate-relocation-wilmington-new-castle-de',
     ],
   },
   'sussex-metro-de': {

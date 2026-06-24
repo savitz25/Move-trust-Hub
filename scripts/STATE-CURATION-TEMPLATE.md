@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio / Kentucky / West Virginia / Virginia model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, Kentucky, West Virginia, Virginia, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio / Kentucky / West Virginia / Virginia / District of Columbia / Delaware model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, Kentucky, West Virginia, Virginia, District of Columbia, Delaware, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -32,8 +32,11 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | West Virginia | 55/55 (complete) | 5 | 10 (cap 10) | 15 counties | `count-west-virginia-movers.ts`, `apply-west-virginia-mover-expansion.ts`, `audit-west-virginia-seo.ts` |
 | Virginia | 134/134 (complete) | 5 | 10 (cap 10; Fairfax up to 15) | 18 counties/cities | `count-virginia-movers.ts`, `apply-virginia-mover-expansion.ts`, `audit-virginia-seo.ts` |
 | District of Columbia | 1/1 jurisdiction (complete) | 15 | 15 (premium hub) | hub + jurisdiction 0.85 | `count-district-of-columbia-movers.ts`, `apply-district-of-columbia-mover-expansion.ts`, `audit-district-of-columbia-seo.ts` |
+| Delaware | 3/3 (complete) | 8 | 12 (New Castle) / 8 (Kent, Sussex) | `new-castle` 0.85 | `count-delaware-movers.ts`, `apply-delaware-mover-expansion.ts`, `audit-delaware-seo.ts` |
 
 > **District of Columbia note:** DC is a **federal district**, not a state. It has a single jurisdiction (`district-of-columbia` slug) treated as county-equivalent in code. Use district-specific copy on hub and detail pages; data files follow the `{district}-county-*` naming convention for code consistency. Compare quality bar to Cook (IL), Wayne (MI), or Marion (IN) large-market hubs.
+
+> **Delaware note:** Delaware has only **3 counties** — complete state curation is efficient. New Castle (Wilmington metro) is the premium market (12 movers); Kent (Dover/government) and Sussex (coastal/beach/retirement) target 8+ movers each. Cross-border nearby links to MD, PA, and NJ curated counties strengthen E-E-A-T. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
 ### District of Columbia metro pool (`data/local-movers-seed.ts`)
 
@@ -48,6 +51,30 @@ npx tsx scripts/validate-county-schema.ts
 ```
 
 **GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/district-of-columbia.xml` (2 URLs: hub + jurisdiction).
+
+### Delaware metro pools (`data/local-movers-seed.ts`)
+
+- `new-castle-metro-de` — Wilmington / New Castle corporate & Philadelphia spillover hub (12 movers)
+- `kent-metro-de` — Dover / state capital & government hub (10 movers)
+- `sussex-metro-de` — Georgetown / coastal & beach-second-home hub (10 movers)
+
+### Delaware counties (targets)
+
+`new-castle` (12), `kent` (8+), `sussex` (8+)
+
+### Delaware sitemap priority 0.85
+
+`new-castle` (Wilmington metro hub)
+
+### Delaware verification commands
+
+```bash
+npx tsx scripts/count-delaware-movers.ts
+npx tsx scripts/audit-delaware-seo.ts
+npx tsx scripts/validate-county-schema.ts
+```
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/delaware.xml` (4 URLs: hub + 3 counties).
 
 ### Virginia metro pools (`data/local-movers-seed.ts`)
 

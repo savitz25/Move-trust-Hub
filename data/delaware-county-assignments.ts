@@ -13,6 +13,8 @@ const CURATED_DE_COUNTIES: Record<string, string[]> = {
     'brandywine-valley-moving-new-castle-de',
     'hercules-movers-wilmington-de',
     'krupp-moving-wilmington-de',
+    'philadelphia-metro-moving-new-castle-de',
+    'corporate-relocation-wilmington-new-castle-de',
   ],
   sussex: [
     'two-men-and-a-truck-sussex-de',

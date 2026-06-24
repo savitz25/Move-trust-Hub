@@ -204,6 +204,9 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
 ]);
 
+/** High-traffic DE counties — sitemap priority 0.85 (Wilmington metro) */
+const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
+
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */
 const WV_HIGH_TRAFFIC_COUNTIES = new Set([
   'kanawha',
@@ -558,7 +561,8 @@ export default async function sitemap({
         (id === 'kentucky' && KY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'west-virginia' && WV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'virginia' && VA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        id === 'district-of-columbia' || id === 'delaware'
+        id === 'district-of-columbia' ||
+        (id === 'delaware' && DE_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
