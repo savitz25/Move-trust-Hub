@@ -26,7 +26,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
-| Indiana | 5/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 5 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
+| Indiana | 12/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 12 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
@@ -34,14 +34,18 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 - `northwest-indiana-metro-in` — Lake County / Gary–Hammond–Merrillville–Crown Point (Chicago metro Indiana side)
 - `fort-wayne-metro-in` — Fort Wayne / Allen Northeast Indiana hub
 - `south-bend-metro-in` — South Bend / St. Joseph (Notre Dame) hub
+- `elkhart-goshen-metro-in` — Elkhart / Goshen RV-industry corridor
+- `lafayette-metro-in` — Lafayette / Tippecanoe (Purdue) hub
+- `evansville-metro-in` — Evansville / Vanderburgh Southwest Indiana hub
+- `bloomington-metro-in` — Bloomington / Monroe (Indiana University) hub
 
 ### Indiana major counties (10 movers each; Marion up to 18)
 
-`marion`, `lake`, `allen`, `hamilton`, `st-joseph`
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`
 
-### Indiana sitemap priority 0.85 (5 counties — batch 1)
+### Indiana sitemap priority 0.85 (12 counties — batches 1–2)
 
-`marion`, `lake`, `allen`, `hamilton`, `st-joseph`
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`
 
 **GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/indiana.xml` (93 URLs: hub + 92 counties). Do **not** use `/sitemap-local/indiana.xml` (legacy path redirects to canonical).
 

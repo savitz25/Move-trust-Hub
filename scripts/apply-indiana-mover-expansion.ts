@@ -18,6 +18,13 @@ const MAJOR = new Set([
   'allen',
   'hamilton',
   'st-joseph',
+  'elkhart',
+  'hendricks',
+  'tippecanoe',
+  'vanderburgh',
+  'johnson',
+  'porter',
+  'monroe',
 ]);
 
 const MIN_MOVERS = 5;
@@ -29,6 +36,10 @@ const FALLBACK_POOLS = [
   'northwest-indiana-metro-in',
   'fort-wayne-metro-in',
   'south-bend-metro-in',
+  'elkhart-goshen-metro-in',
+  'lafayette-metro-in',
+  'evansville-metro-in',
+  'bloomington-metro-in',
 ];
 
 const assignmentsPath = 'data/indiana-county-assignments.ts';

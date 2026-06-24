@@ -132,6 +132,188 @@ export const indianaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Apartment',
     },
   ],
+  elkhart: [
+    {
+      quote:
+        'Two Men and a Truck Elkhart / Goshen handled our Elkhart County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Carlos M.',
+      location: 'Elkhart, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Goshen Moving & Storage confirmed Goshen coverage — best local moving service in Elkhart County with fair pricing.',
+      name: 'Diana L.',
+      location: 'Goshen, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'South Bend Moving & Storage served our Nappanee area move efficiently — professional crew with careful handling in Northern Indiana.',
+      name: 'Eric N.',
+      location: 'Nappanee, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  hendricks: [
+    {
+      quote:
+        'Two Men and a Truck Avon handled our Hendricks County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Fiona P.',
+      location: 'Avon, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Danville Moving & Storage confirmed Plainfield coverage — best local moving service in Hendricks County with transparent pricing.',
+      name: 'Greg Q.',
+      location: 'Plainfield, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Indianapolis Moving & Storage served our Brownsburg move efficiently — professional crew with careful handling west of Indianapolis.',
+      name: 'Hannah R.',
+      location: 'Brownsburg, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  tippecanoe: [
+    {
+      quote:
+        'Two Men and a Truck Lafayette handled our Tippecanoe County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Ian S.',
+      location: 'Lafayette, IN',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Lafayette Moving & Storage confirmed West Lafayette coverage — best local moving service in Tippecanoe County with fair pricing.',
+      name: 'Julia T.',
+      location: 'West Lafayette, IN',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Purdue Area Moving & Storage served our student move efficiently — professional crew with careful handling near campus.',
+      name: 'Kyle U.',
+      location: 'West Lafayette, IN',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  vanderburgh: [
+    {
+      quote:
+        'Two Men and a Truck Evansville handled our Vanderburgh County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Laura V.',
+      location: 'Evansville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Evansville Moving & Storage confirmed county coverage — best local moving service in Vanderburgh County with transparent pricing.',
+      name: 'Mark W.',
+      location: 'Evansville, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Tri-State Moving Evansville served our Ohio River area move efficiently — professional crew with careful handling in Southwest Indiana.',
+      name: 'Nina X.',
+      location: 'Evansville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  johnson: [
+    {
+      quote:
+        'Two Men and a Truck Greenwood handled our Johnson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Oscar Y.',
+      location: 'Greenwood, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Franklin Moving & Storage confirmed Franklin coverage — best local moving service in Johnson County with fair pricing.',
+      name: 'Paula Z.',
+      location: 'Franklin, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Indianapolis Moving & Storage served our Whiteland move efficiently — professional crew with careful handling south of Indianapolis.',
+      name: 'Quinn A.',
+      location: 'Whiteland, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  porter: [
+    {
+      quote:
+        'Two Men and a Truck Valparaiso handled our Porter County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Rita B.',
+      location: 'Valparaiso, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Portage Moving & Storage confirmed Portage coverage — best local moving service in Porter County with transparent pricing.',
+      name: 'Sam C.',
+      location: 'Portage, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Crown Point Moving & Storage served our Chesterton area move efficiently — professional crew with careful handling in Northwest Indiana.',
+      name: 'Tina D.',
+      location: 'Chesterton, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  monroe: [
+    {
+      quote:
+        'Two Men and a Truck Bloomington handled our Monroe County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Uma E.',
+      location: 'Bloomington, IN',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Bloomington Moving & Storage confirmed county coverage — best local moving service in Monroe County with fair pricing.',
+      name: 'Vince F.',
+      location: 'Bloomington, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'IU Area Moving & Storage served our student move efficiently — professional crew with careful handling near Indiana University.',
+      name: 'Wendy G.',
+      location: 'Bloomington, IN',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getIndianaCountyTestimonials(

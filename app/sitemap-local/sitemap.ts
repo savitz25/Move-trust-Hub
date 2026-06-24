@@ -145,6 +145,13 @@ const IN_HIGH_TRAFFIC_COUNTIES = new Set([
   'allen',
   'hamilton',
   'st-joseph',
+  'elkhart',
+  'hendricks',
+  'tippecanoe',
+  'vanderburgh',
+  'johnson',
+  'porter',
+  'monroe',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

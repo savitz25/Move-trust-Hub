@@ -13,6 +13,13 @@ const MAJOR = new Set([
   'allen',
   'hamilton',
   'st-joseph',
+  'elkhart',
+  'hendricks',
+  'tippecanoe',
+  'vanderburgh',
+  'johnson',
+  'porter',
+  'monroe',
 ]);
 
 const under5: string[] = [];
