@@ -214,16 +214,12 @@ const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
 /** High-traffic CT counties — sitemap priority 0.85 (Fairfield premium metro) */
 const CT_HIGH_TRAFFIC_COUNTIES = new Set(['fairfield']);
 
-/** High-traffic MA counties — sitemap priority 0.85 */
+/** High-traffic MA counties — sitemap priority 0.85 (Greater Boston core) */
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
-  'middlesex',
-  'worcester',
-  'essex',
   'suffolk',
+  'middlesex',
   'norfolk',
-  'bristol',
-  'plymouth',
-  'hampden',
+  'essex',
 ]);
 
 /** High-traffic PA counties — sitemap priority 0.85 (batches 1–5 large markets) */
