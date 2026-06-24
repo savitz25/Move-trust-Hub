@@ -19,6 +19,7 @@ import {
   OHIO_COUNTY_CONTENT_UPDATED,
   KENTUCKY_COUNTY_CONTENT_UPDATED,
   WEST_VIRGINIA_COUNTY_CONTENT_UPDATED,
+  VIRGINIA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -178,6 +179,9 @@ const OH_HIGH_TRAFFIC_COUNTIES = new Set([
   'delaware',
   'mahoning',
 ]);
+
+/** High-traffic VA counties — sitemap priority 0.85 (batch 1 large markets) */
+const VA_HIGH_TRAFFIC_COUNTIES = new Set(['fairfax']);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */
 const WV_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -482,7 +486,9 @@ export default async function sitemap({
                                               ? new Date(KENTUCKY_COUNTY_CONTENT_UPDATED)
                                               : id === 'west-virginia'
                                                 ? new Date(WEST_VIRGINIA_COUNTY_CONTENT_UPDATED)
-                                                : new Date();
+                                                : id === 'virginia'
+                                                  ? new Date(VIRGINIA_COUNTY_CONTENT_UPDATED)
+                                                  : new Date();
 
   return [
     {
@@ -525,7 +531,8 @@ export default async function sitemap({
         (id === 'indiana' && IN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'ohio' && OH_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'kentucky' && KY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'west-virginia' && WV_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'west-virginia' && WV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'virginia' && VA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

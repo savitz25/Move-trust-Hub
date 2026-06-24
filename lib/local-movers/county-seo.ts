@@ -38,6 +38,8 @@ import { getKentuckyCountyResearch } from '@/data/kentucky-county-research';
 import { getKentuckyCountyTestimonials } from '@/data/kentucky-county-testimonials';
 import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-research';
 import { getWestVirginiaCountyTestimonials } from '@/data/west-virginia-county-testimonials';
+import { getVirginiaCountyResearch } from '@/data/virginia-county-research';
+import { getVirginiaCountyTestimonials } from '@/data/virginia-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -267,6 +269,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'west-virginia') {
     return getWestVirginiaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'virginia') {
+    return getVirginiaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -360,6 +365,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'west-virginia') {
     const curated = getWestVirginiaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'virginia') {
+    const curated = getVirginiaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -490,6 +499,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getWestVirginiaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'virginia') {
+    const curated = getVirginiaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -603,6 +616,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'west-virginia') {
     const curated = getWestVirginiaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'virginia') {
+    const curated = getVirginiaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

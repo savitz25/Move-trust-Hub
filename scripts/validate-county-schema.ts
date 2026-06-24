@@ -48,6 +48,7 @@ const CURATED_STATES = [
   'ohio',
   'kentucky',
   'west-virginia',
+  'virginia',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -733,6 +734,7 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'west-virginia', countySlug: 'calhoun', expectedCity: 'Grantsville' },
   { stateSlug: 'west-virginia', countySlug: 'pendleton', expectedCity: 'Franklin' },
   { stateSlug: 'west-virginia', countySlug: 'wirt', expectedCity: 'Elizabeth' },
+  { stateSlug: 'virginia', countySlug: 'fairfax', expectedCity: 'Fairfax' },
 ];
 
 let totalIssues = 0;

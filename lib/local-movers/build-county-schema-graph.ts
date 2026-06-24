@@ -21,6 +21,7 @@ import {
   OHIO_COUNTY_CONTENT_UPDATED,
   KENTUCKY_COUNTY_CONTENT_UPDATED,
   WEST_VIRGINIA_COUNTY_CONTENT_UPDATED,
+  VIRGINIA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
@@ -29,6 +30,7 @@ import { getIndianaCountyResearch } from '@/data/indiana-county-research';
 import { getOhioCountyResearch } from '@/data/ohio-county-research';
 import { getKentuckyCountyResearch } from '@/data/kentucky-county-research';
 import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-research';
+import { getVirginiaCountyResearch } from '@/data/virginia-county-research';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
 import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
@@ -170,6 +172,12 @@ function resolveContentModified(county: LocalCounty): string {
     getWestVirginiaCountyResearch(county.slug)
   ) {
     return WEST_VIRGINIA_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'virginia' &&
+    getVirginiaCountyResearch(county.slug)
+  ) {
+    return VIRGINIA_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

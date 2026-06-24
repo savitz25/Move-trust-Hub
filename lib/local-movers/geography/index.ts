@@ -20,6 +20,7 @@ import { applyIndianaCountyOverrides } from '@/lib/local-movers/geography/indian
 import { applyOhioCountyOverrides } from '@/lib/local-movers/geography/ohio-overrides';
 import { applyKentuckyCountyOverrides } from '@/lib/local-movers/geography/kentucky-overrides';
 import { applyWestVirginiaCountyOverrides } from '@/lib/local-movers/geography/west-virginia-overrides';
+import { applyVirginiaCountyOverrides } from '@/lib/local-movers/geography/virginia-overrides';
 import { applyTennesseeCountyOverrides } from '@/lib/local-movers/geography/tennessee-overrides';
 import { applyTexasCountyOverrides } from '@/lib/local-movers/geography/texas-overrides';
 
@@ -51,7 +52,8 @@ const allCounties: LocalCounty[] = [
     .map(applyIndianaCountyOverrides)
     .map(applyOhioCountyOverrides)
     .map(applyKentuckyCountyOverrides)
-    .map(applyWestVirginiaCountyOverrides),
+    .map(applyWestVirginiaCountyOverrides)
+    .map(applyVirginiaCountyOverrides),
 ];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {
