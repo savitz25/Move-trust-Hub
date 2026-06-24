@@ -159,7 +159,14 @@ const IN_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic OH counties — sitemap priority 0.85 */
-const OH_HIGH_TRAFFIC_COUNTIES = new Set(['franklin']);
+const OH_HIGH_TRAFFIC_COUNTIES = new Set([
+  'franklin',
+  'cuyahoga',
+  'hamilton',
+  'montgomery',
+  'summit',
+  'lucas',
+]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([
   'wayne',

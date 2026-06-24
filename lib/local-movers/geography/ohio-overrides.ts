@@ -5,6 +5,11 @@ export const ohioCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
   franklin: { seat: 'Columbus', metro: 'columbus-metro-oh' },
+  cuyahoga: { seat: 'Cleveland', metro: 'cleveland-metro-oh' },
+  hamilton: { seat: 'Cincinnati', metro: 'cincinnati-metro-oh' },
+  montgomery: { seat: 'Dayton', metro: 'dayton-metro-oh' },
+  summit: { seat: 'Akron', metro: 'akron-metro-oh' },
+  lucas: { seat: 'Toledo', metro: 'toledo-metro-oh' },
 };
 
 export function applyOhioCountyOverrides(county: LocalCounty): LocalCounty {

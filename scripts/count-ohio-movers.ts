@@ -7,7 +7,14 @@ const ohCounties = generatedCounties
   .map(applyOhioCountyOverrides);
 
 /** Columbus metro hub — expands as more counties are curated */
-const MAJOR = new Set(['franklin']);
+const MAJOR = new Set([
+  'franklin',
+  'cuyahoga',
+  'hamilton',
+  'montgomery',
+  'summit',
+  'lucas',
+]);
 
 const under5: string[] = [];
 const under8Major: string[] = [];

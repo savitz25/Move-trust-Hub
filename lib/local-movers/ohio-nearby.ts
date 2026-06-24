@@ -12,6 +12,11 @@ const countyNameBySlug = new Map(ohioCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated OH county pages — expands as counties are researched */
 const OH_COUNTY_NEIGHBORS: Record<string, string[]> = {
   franklin: ['delaware', 'licking', 'fairfield', 'pickaway', 'madison', 'union'],
+  cuyahoga: ['lake', 'geauga', 'portage', 'summit', 'medina', 'lorain'],
+  hamilton: ['butler', 'warren', 'clermont', 'brown', 'clinton', 'highland'],
+  montgomery: ['greene', 'warren', 'miami', 'darke', 'preble', 'hamilton'],
+  summit: ['cuyahoga', 'portage', 'stark', 'medina', 'wayne', 'geauga'],
+  lucas: ['wood', 'fulton', 'henry', 'ottawa', 'monroe', 'sandusky'],
 };
 
 export function getOhioNearbyCounties(

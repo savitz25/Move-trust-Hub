@@ -13,7 +13,14 @@ const ohCounties = generatedCounties
   .filter((c) => c.stateSlug === 'ohio')
   .map(applyOhioCountyOverrides);
 
-const MAJOR = new Set(['franklin']);
+const MAJOR = new Set([
+  'franklin',
+  'cuyahoga',
+  'hamilton',
+  'montgomery',
+  'summit',
+  'lucas',
+]);
 const curatedSlugs = new Set(Object.keys(ohioCountyResearch));
 
 const assignmentsPath = 'data/ohio-county-assignments.ts';
