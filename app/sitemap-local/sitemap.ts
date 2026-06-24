@@ -187,6 +187,14 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
   'loudoun',
   'virginia-beach',
   'chesterfield',
+  'henrico',
+  'chesapeake',
+  'arlington',
+  'richmond',
+  'norfolk',
+  'newport-news',
+  'stafford',
+  'alexandria',
 ]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */

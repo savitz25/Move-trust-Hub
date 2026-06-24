@@ -739,6 +739,14 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'virginia', countySlug: 'loudoun', expectedCity: 'Leesburg' },
   { stateSlug: 'virginia', countySlug: 'virginia-beach', expectedCity: 'Virginia Beach' },
   { stateSlug: 'virginia', countySlug: 'chesterfield', expectedCity: 'Chesterfield' },
+  { stateSlug: 'virginia', countySlug: 'henrico', expectedCity: 'Henrico' },
+  { stateSlug: 'virginia', countySlug: 'chesapeake', expectedCity: 'Chesapeake' },
+  { stateSlug: 'virginia', countySlug: 'arlington', expectedCity: 'Arlington' },
+  { stateSlug: 'virginia', countySlug: 'richmond', expectedCity: 'Richmond' },
+  { stateSlug: 'virginia', countySlug: 'norfolk', expectedCity: 'Norfolk' },
+  { stateSlug: 'virginia', countySlug: 'newport-news', expectedCity: 'Newport News' },
+  { stateSlug: 'virginia', countySlug: 'stafford', expectedCity: 'Stafford' },
+  { stateSlug: 'virginia', countySlug: 'alexandria', expectedCity: 'Alexandria' },
 ];
 
 let totalIssues = 0;
