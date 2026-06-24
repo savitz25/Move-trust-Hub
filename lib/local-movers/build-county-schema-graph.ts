@@ -15,8 +15,10 @@ import {
   ARKANSAS_COUNTY_CONTENT_UPDATED,
   KANSAS_COUNTY_CONTENT_UPDATED,
   MISSOURI_COUNTY_CONTENT_UPDATED,
+  ILLINOIS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
+import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
 import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
@@ -121,6 +123,12 @@ function resolveContentModified(county: LocalCounty): string {
     getMissouriCountyResearch(county.slug)
   ) {
     return MISSOURI_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'illinois' &&
+    getIllinoisCountyResearch(county.slug)
+  ) {
+    return ILLINOIS_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }
