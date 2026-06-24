@@ -84,6 +84,21 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   rockcastle: ['knox', 'laurel', 'pulaski', 'lincoln', 'garrard', 'madison'],
   fleming: ['mason', 'bracken', 'rowan', 'bath', 'nicholas', 'lewis'],
   lawrence: ['boyd', 'johnson', 'martin', 'floyd', 'morgan', 'carter'],
+  larue: ['nelson', 'hardin', 'hart', 'green', 'marion', 'taylor'],
+  pendleton: ['harrison', 'grant', 'bracken', 'robertson', 'owen', 'mason'],
+  morgan: ['elliott', 'carter', 'rowan', 'wolfe', 'johnson', 'magoffin'],
+  trigg: ['calloway', 'marshall', 'lyon', 'caldwell', 'christian', 'todd'],
+  estill: ['powell', 'clark', 'madison', 'jackson', 'lee', 'menifee'],
+  bath: ['montgomery', 'fleming', 'rowan', 'menifee', 'carter', 'nicholas'],
+  jackson: ['rockcastle', 'laurel', 'clay', 'owsley', 'lee', 'estill'],
+  knott: ['perry', 'breathitt', 'leslie', 'letcher', 'floyd', 'pike'],
+  todd: ['christian', 'logan', 'muhlenberg', 'trigg', 'simpson', 'warren'],
+  webster: ['hopkins', 'mclean', 'henderson', 'caldwell', 'crittenden', 'union'],
+  lewis: ['mason', 'greenup', 'carter', 'rowan', 'fleming', 'bracken'],
+  edmonson: ['warren', 'barren', 'hart', 'butler', 'grayson', 'hardin'],
+  powell: ['clark', 'estill', 'menifee', 'wolfe', 'lee', 'montgomery'],
+  caldwell: ['lyon', 'crittenden', 'webster', 'hopkins', 'trigg', 'marshall'],
+  butler: ['edmonson', 'warren', 'ohio', 'muhlenberg', 'logan', 'simpson'],
 };
 
 export function getKentuckyNearbyCounties(

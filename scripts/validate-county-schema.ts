@@ -624,6 +624,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: rockcastle, expectedCity: 'Mount Vernon' },
   { stateSlug: 'kentucky', countySlug: fleming, expectedCity: 'Flemingsburg' },
   { stateSlug: 'kentucky', countySlug: lawrence, expectedCity: 'Louisa' },
+  { stateSlug: 'kentucky', countySlug: larue, expectedCity: 'Hodgenville' },
+  { stateSlug: 'kentucky', countySlug: pendleton, expectedCity: 'Falmouth' },
+  { stateSlug: 'kentucky', countySlug: morgan, expectedCity: 'West Liberty' },
+  { stateSlug: 'kentucky', countySlug: trigg, expectedCity: 'Cadiz' },
+  { stateSlug: 'kentucky', countySlug: estill, expectedCity: 'Irvine' },
+  { stateSlug: 'kentucky', countySlug: bath, expectedCity: 'Owingsville' },
+  { stateSlug: 'kentucky', countySlug: jackson, expectedCity: 'McKee' },
+  { stateSlug: 'kentucky', countySlug: knott, expectedCity: 'Hindman' },
+  { stateSlug: 'kentucky', countySlug: todd, expectedCity: 'Elkton' },
+  { stateSlug: 'kentucky', countySlug: webster, expectedCity: 'Dixon' },
+  { stateSlug: 'kentucky', countySlug: lewis, expectedCity: 'Vanceburg' },
+  { stateSlug: 'kentucky', countySlug: edmonson, expectedCity: 'Brownsville' },
+  { stateSlug: 'kentucky', countySlug: powell, expectedCity: 'Stanton' },
+  { stateSlug: 'kentucky', countySlug: caldwell, expectedCity: 'Princeton' },
+  { stateSlug: 'kentucky', countySlug: butler, expectedCity: 'Morgantown' },
 ];
 
 let totalIssues = 0;

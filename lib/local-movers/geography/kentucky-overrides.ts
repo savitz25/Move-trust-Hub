@@ -77,6 +77,21 @@ export const kentuckyCountyOverrides: Partial<
   rockcastle: { seat: 'Mount Vernon', metro: 'mount-vernon-metro-ky' },
   fleming: { seat: 'Flemingsburg', metro: 'flemingsburg-metro-ky' },
   lawrence: { seat: 'Louisa', metro: 'louisa-metro-ky' },
+  larue: { seat: 'Hodgenville', metro: 'hodgenville-metro-ky' },
+  pendleton: { seat: 'Falmouth', metro: 'falmouth-metro-ky' },
+  morgan: { seat: 'West Liberty', metro: 'west-liberty-metro-ky' },
+  trigg: { seat: 'Cadiz', metro: 'cadiz-metro-ky' },
+  estill: { seat: 'Irvine', metro: 'irvine-metro-ky' },
+  bath: { seat: 'Owingsville', metro: 'owingsville-metro-ky' },
+  jackson: { seat: 'McKee', metro: 'mckee-metro-ky' },
+  knott: { seat: 'Hindman', metro: 'hindman-metro-ky' },
+  todd: { seat: 'Elkton', metro: 'elkton-metro-ky' },
+  webster: { seat: 'Dixon', metro: 'dixon-metro-ky' },
+  lewis: { seat: 'Vanceburg', metro: 'vanceburg-metro-ky' },
+  edmonson: { seat: 'Brownsville', metro: 'brownsville-metro-ky' },
+  powell: { seat: 'Stanton', metro: 'stanton-metro-ky' },
+  caldwell: { seat: 'Princeton', metro: 'princeton-metro-ky' },
+  butler: { seat: 'Morgantown', metro: 'morgantown-metro-ky' },
 };
 
 export function applyKentuckyCountyOverrides(county: LocalCounty): LocalCounty {

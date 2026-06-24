@@ -253,6 +253,21 @@ const KY_HIGH_TRAFFIC_COUNTIES = new Set([
   'rockcastle',
   'fleming',
   'lawrence',
+  'larue',
+  'pendleton',
+  'morgan',
+  'trigg',
+  'estill',
+  'bath',
+  'jackson',
+  'knott',
+  'todd',
+  'webster',
+  'lewis',
+  'edmonson',
+  'powell',
+  'caldwell',
+  'butler',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([
