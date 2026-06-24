@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -27,6 +27,19 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
 | Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
+| Ohio | 1/88 (in progress) | 5 | 10 (cap 10; Franklin up to 18) | 1 county | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
+
+### Ohio metro pools (`data/local-movers-seed.ts`)
+
+- `columbus-metro-oh` — Columbus / Franklin hub (Ohio's largest market)
+
+### Ohio major counties (10 movers each; Franklin may expand to 18)
+
+`franklin`
+
+### Ohio sitemap priority 0.85 (1 county — Columbus metro hub)
+
+`franklin`
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
@@ -557,6 +570,8 @@ npx tsx scripts/count-illinois-movers.ts
 npx tsx scripts/count-michigan-movers.ts
 npx tsx scripts/count-indiana-movers.ts
 npx tsx scripts/audit-indiana-seo.ts
+npx tsx scripts/count-ohio-movers.ts
+npx tsx scripts/audit-ohio-seo.ts
 npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
 npx tsx scripts/apply-michigan-mover-expansion.ts   # if needed
 npx tsx scripts/apply-indiana-mover-expansion.ts   # if needed

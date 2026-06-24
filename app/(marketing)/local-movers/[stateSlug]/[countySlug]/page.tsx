@@ -22,6 +22,7 @@ import {
   ILLINOIS_COUNTY_CONTENT_UPDATED,
   MICHIGAN_COUNTY_CONTENT_UPDATED,
   INDIANA_COUNTY_CONTENT_UPDATED,
+  OHIO_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -33,6 +34,7 @@ import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
 import { getIndianaCountyResearch } from '@/data/indiana-county-research';
+import { getOhioCountyResearch } from '@/data/ohio-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -56,6 +58,7 @@ import { getMissouriNearbyCounties } from '@/lib/local-movers/missouri-nearby';
 import { getIllinoisNearbyCounties } from '@/lib/local-movers/illinois-nearby';
 import { getMichiganNearbyCounties } from '@/lib/local-movers/michigan-nearby';
 import { getIndianaNearbyCounties } from '@/lib/local-movers/indiana-nearby';
+import { getOhioNearbyCounties } from '@/lib/local-movers/ohio-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -179,7 +182,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                         : stateSlug === 'indiana' &&
                                             getIndianaCountyResearch(countySlug)
                                           ? getIndianaNearbyCounties(countySlug)
-                                          : [];
+                                          : stateSlug === 'ohio' &&
+                                              getOhioCountyResearch(countySlug)
+                                            ? getOhioNearbyCounties(countySlug)
+                                            : [];
 
   return (
     <>
@@ -350,7 +356,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                 : stateSlug === 'indiana' &&
                                                     getIndianaCountyResearch(countySlug)
                                                   ? INDIANA_COUNTY_CONTENT_UPDATED
-                                                  : undefined
+                                                  : stateSlug === 'ohio' &&
+                                                      getOhioCountyResearch(countySlug)
+                                                    ? OHIO_COUNTY_CONTENT_UPDATED
+                                                    : undefined
           }
         />
 
