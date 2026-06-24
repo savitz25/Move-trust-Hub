@@ -24,6 +24,7 @@ import {
   INDIANA_COUNTY_CONTENT_UPDATED,
   OHIO_COUNTY_CONTENT_UPDATED,
   KENTUCKY_COUNTY_CONTENT_UPDATED,
+  WEST_VIRGINIA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -37,6 +38,7 @@ import { getMichiganCountyResearch } from '@/data/michigan-county-research';
 import { getIndianaCountyResearch } from '@/data/indiana-county-research';
 import { getOhioCountyResearch } from '@/data/ohio-county-research';
 import { getKentuckyCountyResearch } from '@/data/kentucky-county-research';
+import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -62,6 +64,7 @@ import { getMichiganNearbyCounties } from '@/lib/local-movers/michigan-nearby';
 import { getIndianaNearbyCounties } from '@/lib/local-movers/indiana-nearby';
 import { getOhioNearbyCounties } from '@/lib/local-movers/ohio-nearby';
 import { getKentuckyNearbyCounties } from '@/lib/local-movers/kentucky-nearby';
+import { getWestVirginiaNearbyCounties } from '@/lib/local-movers/west-virginia-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -191,7 +194,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                             : stateSlug === 'kentucky' &&
                                                 getKentuckyCountyResearch(countySlug)
                                               ? getKentuckyNearbyCounties(countySlug)
-                                              : [];
+                                              : stateSlug === 'west-virginia' &&
+                                                  getWestVirginiaCountyResearch(countySlug)
+                                                ? getWestVirginiaNearbyCounties(countySlug)
+                                                : [];
 
   return (
     <>
@@ -368,7 +374,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                     : stateSlug === 'kentucky' &&
                                                         getKentuckyCountyResearch(countySlug)
                                                       ? KENTUCKY_COUNTY_CONTENT_UPDATED
-                                                      : undefined
+                                                      : stateSlug === 'west-virginia' &&
+                                                          getWestVirginiaCountyResearch(countySlug)
+                                                        ? WEST_VIRGINIA_COUNTY_CONTENT_UPDATED
+                                                        : undefined
           }
         />
 

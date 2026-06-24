@@ -47,6 +47,7 @@ const CURATED_STATES = [
   'indiana',
   'ohio',
   'kentucky',
+  'west-virginia',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -677,6 +678,15 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: 'hickman', expectedCity: 'Clinton' },
   { stateSlug: 'kentucky', countySlug: 'owsley', expectedCity: 'Booneville' },
   { stateSlug: 'kentucky', countySlug: 'robertson', expectedCity: 'Mount Olivet' },
+  { stateSlug: 'west-virginia', countySlug: 'kanawha', expectedCity: 'Charleston' },
+  { stateSlug: 'west-virginia', countySlug: 'berkeley', expectedCity: 'Martinsburg' },
+  { stateSlug: 'west-virginia', countySlug: 'monongalia', expectedCity: 'Morgantown' },
+  { stateSlug: 'west-virginia', countySlug: 'cabell', expectedCity: 'Huntington' },
+  { stateSlug: 'west-virginia', countySlug: 'wood', expectedCity: 'Parkersburg' },
+  { stateSlug: 'west-virginia', countySlug: 'raleigh', expectedCity: 'Beckley' },
+  { stateSlug: 'west-virginia', countySlug: 'jefferson', expectedCity: 'Charles Town' },
+  { stateSlug: 'west-virginia', countySlug: 'harrison', expectedCity: 'Clarksburg' },
+  { stateSlug: 'west-virginia', countySlug: 'mercer', expectedCity: 'Princeton' },
 ];
 
 let totalIssues = 0;
