@@ -325,8 +325,7 @@ export function AutoTransportCalculator() {
                           {formatCurrency(estimate.lowTotal)} – {formatCurrency(estimate.highTotal)}
                         </p>
                         <p className="text-sm text-muted-foreground mt-2">
-                          {formatCurrency(estimate.lowPerMile)} – {formatCurrency(estimate.highPerMile)}{' '}
-                          per mile · {estimate.distanceMiles.toLocaleString()} miles
+                          {estimate.distanceMiles.toLocaleString()} miles
                         </p>
                       </>
                     ) : (
