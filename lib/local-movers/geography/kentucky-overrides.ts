@@ -92,6 +92,21 @@ export const kentuckyCountyOverrides: Partial<
   powell: { seat: 'Stanton', metro: 'stanton-metro-ky' },
   caldwell: { seat: 'Princeton', metro: 'princeton-metro-ky' },
   butler: { seat: 'Morgantown', metro: 'morgantown-metro-ky' },
+  union: { seat: 'Morganfield', metro: 'morganfield-metro-ky' },
+  washington: { seat: 'Springfield', metro: 'springfield-metro-ky' },
+  breathitt: { seat: 'Jackson', metro: 'jackson-metro-ky' },
+  green: { seat: 'Greensburg', metro: 'greensburg-metro-ky' },
+  owen: { seat: 'Owenton', metro: 'owenton-metro-ky' },
+  monroe: { seat: 'Tompkinsville', metro: 'tompkinsville-metro-ky' },
+  carroll: { seat: 'Carrollton', metro: 'carrollton-metro-ky' },
+  magoffin: { seat: 'Salyersville', metro: 'salyersville-metro-ky' },
+  martin: { seat: 'Inez', metro: 'inez-metro-ky' },
+  metcalfe: { seat: 'Edmonton', metro: 'edmonton-metro-ky' },
+  leslie: { seat: 'Hyden', metro: 'hyden-metro-ky' },
+  lyon: { seat: 'Eddyville', metro: 'eddyville-metro-ky' },
+  clinton: { seat: 'Albany', metro: 'albany-metro-ky' },
+  hancock: { seat: 'Hawesville', metro: 'hawesville-metro-ky' },
+  mclean: { seat: 'Calhoun', metro: 'calhoun-metro-ky' },
 };
 
 export function applyKentuckyCountyOverrides(county: LocalCounty): LocalCounty {

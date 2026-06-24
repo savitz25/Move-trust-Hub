@@ -268,6 +268,21 @@ const KY_HIGH_TRAFFIC_COUNTIES = new Set([
   'powell',
   'caldwell',
   'butler',
+  'union',
+  'washington',
+  'breathitt',
+  'green',
+  'owen',
+  'monroe',
+  'carroll',
+  'magoffin',
+  'martin',
+  'metcalfe',
+  'leslie',
+  'lyon',
+  'clinton',
+  'hancock',
+  'mclean',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

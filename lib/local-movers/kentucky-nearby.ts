@@ -99,6 +99,21 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   powell: ['clark', 'estill', 'menifee', 'wolfe', 'lee', 'montgomery'],
   caldwell: ['lyon', 'crittenden', 'webster', 'hopkins', 'trigg', 'marshall'],
   butler: ['edmonson', 'warren', 'ohio', 'muhlenberg', 'logan', 'simpson'],
+  union: ['webster', 'henderson', 'mccracken', 'crittenden', 'livingston', 'hopkins'],
+  washington: ['nelson', 'marion', 'mercer', 'boyle', 'larue', 'spencer'],
+  breathitt: ['perry', 'knott', 'lee', 'owsley', 'floyd', 'magoffin'],
+  green: ['taylor', 'adair', 'hart', 'larue', 'marion', 'metcalfe'],
+  owen: ['grant', 'henry', 'franklin', 'pendleton', 'carroll', 'harrison'],
+  monroe: ['barren', 'allen', 'simpson', 'cumberland', 'metcalfe', 'warren'],
+  carroll: ['henry', 'trimble', 'owen', 'grant', 'jefferson', 'oldham'],
+  magoffin: ['morgan', 'floyd', 'johnson', 'martin', 'elliott', 'wolfe'],
+  martin: ['lawrence', 'johnson', 'floyd', 'pike', 'magoffin', 'elliott'],
+  metcalfe: ['barren', 'green', 'hart', 'monroe', 'cumberland', 'adair'],
+  leslie: ['perry', 'harlan', 'clay', 'bell', 'laurel', 'knott'],
+  lyon: ['caldwell', 'trigg', 'marshall', 'livingston', 'crittenden', 'hopkins'],
+  clinton: ['wayne', 'russell', 'cumberland', 'monroe', 'pulaski', 'mccreary'],
+  hancock: ['ohio', 'daviess', 'breckinridge', 'meade', 'henderson', 'mclean'],
+  mclean: ['hancock', 'ohio', 'webster', 'hopkins', 'muhlenberg', 'daviess'],
 };
 
 export function getKentuckyNearbyCounties(
