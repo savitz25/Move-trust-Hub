@@ -31,6 +31,7 @@ import {
   RHODE_ISLAND_COUNTY_CONTENT_UPDATED,
   VERMONT_COUNTY_CONTENT_UPDATED,
   NEW_HAMPSHIRE_COUNTY_CONTENT_UPDATED,
+  MAINE_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDelawareCountyResearch } from '@/data/delaware-county-research';
@@ -41,6 +42,7 @@ import { getMassachusettsCountyResearch } from '@/data/massachusetts-county-rese
 import { getRhodeIslandCountyResearch } from '@/data/rhode-island-county-research';
 import { getVermontCountyResearch } from '@/data/vermont-county-research';
 import { getNewHampshireCountyResearch } from '@/data/new-hampshire-county-research';
+import { getMaineCountyResearch } from '@/data/maine-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
@@ -250,6 +252,12 @@ function resolveContentModified(county: LocalCounty): string {
     getNewHampshireCountyResearch(county.slug)
   ) {
     return NEW_HAMPSHIRE_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'maine' &&
+    getMaineCountyResearch(county.slug)
+  ) {
+    return MAINE_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

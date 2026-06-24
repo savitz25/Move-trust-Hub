@@ -58,6 +58,7 @@ const CURATED_STATES = [
   'rhode-island',
   'vermont',
   'new-hampshire',
+  'maine',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -1015,6 +1016,22 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'new-hampshire', countySlug: 'carroll', expectedCity: 'Ossipee' },
   { stateSlug: 'new-hampshire', countySlug: 'sullivan', expectedCity: 'Newport' },
   { stateSlug: 'new-hampshire', countySlug: 'coos', expectedCity: 'Lancaster' },
+  { stateSlug: 'maine', countySlug: 'cumberland', expectedCity: 'Portland' },
+  { stateSlug: 'maine', countySlug: 'york', expectedCity: 'Alfred' },
+  { stateSlug: 'maine', countySlug: 'penobscot', expectedCity: 'Bangor' },
+  { stateSlug: 'maine', countySlug: 'kennebec', expectedCity: 'Augusta' },
+  { stateSlug: 'maine', countySlug: 'androscoggin', expectedCity: 'Auburn' },
+  { stateSlug: 'maine', countySlug: 'aroostook', expectedCity: 'Houlton' },
+  { stateSlug: 'maine', countySlug: 'oxford', expectedCity: 'South Paris' },
+  { stateSlug: 'maine', countySlug: 'hancock', expectedCity: 'Ellsworth' },
+  { stateSlug: 'maine', countySlug: 'somerset', expectedCity: 'Skowhegan' },
+  { stateSlug: 'maine', countySlug: 'knox', expectedCity: 'Rockland' },
+  { stateSlug: 'maine', countySlug: 'waldo', expectedCity: 'Belfast' },
+  { stateSlug: 'maine', countySlug: 'sagadahoc', expectedCity: 'Bath' },
+  { stateSlug: 'maine', countySlug: 'lincoln', expectedCity: 'Wiscasset' },
+  { stateSlug: 'maine', countySlug: 'washington', expectedCity: 'Machias' },
+  { stateSlug: 'maine', countySlug: 'franklin', expectedCity: 'Farmington' },
+  { stateSlug: 'maine', countySlug: 'piscataquis', expectedCity: 'Dover-Foxcroft' },
 ];
 
 let totalIssues = 0;

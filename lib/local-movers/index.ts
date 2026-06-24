@@ -29,6 +29,7 @@ import { massachusettsCountyMoverAssignments } from '@/data/massachusetts-county
 import { rhodeIslandCountyMoverAssignments } from '@/data/rhode-island-county-assignments';
 import { vermontCountyMoverAssignments } from '@/data/vermont-county-assignments';
 import { newHampshireCountyMoverAssignments } from '@/data/new-hampshire-county-assignments';
+import { maineCountyMoverAssignments } from '@/data/maine-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -70,6 +71,7 @@ const allCountyAssignments = [
   ...rhodeIslandCountyMoverAssignments,
   ...vermontCountyMoverAssignments,
   ...newHampshireCountyMoverAssignments,
+  ...maineCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,

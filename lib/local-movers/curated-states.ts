@@ -23,6 +23,7 @@ export const CURATED_STATE_SLUGS = new Set([
   'rhode-island',
   'vermont',
   'new-hampshire',
+  'maine',
   'california',
   'florida',
   'new-jersey',

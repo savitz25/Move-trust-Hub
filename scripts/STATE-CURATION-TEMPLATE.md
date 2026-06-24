@@ -40,6 +40,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Rhode Island | 5/5 (complete) | 10 | 10 (all counties) | `providence` 0.85 | `count-rhode-island-movers.ts`, `apply-rhode-island-mover-expansion.ts`, `audit-rhode-island-seo.ts` |
 | Vermont | 14/14 (complete) | 6 | 8–10 (Chittenden) / 6–8+ (others) | `chittenden` 0.85 | `count-vermont-movers.ts`, `apply-vermont-mover-expansion.ts`, `audit-vermont-seo.ts` |
 | New Hampshire | 10/10 (complete) | 7 | 10–12 (Hillsborough) / 9–11 (Rockingham) / 7–8+ (others) | `hillsborough`, `rockingham` 0.85 | `count-new-hampshire-movers.ts`, `apply-new-hampshire-mover-expansion.ts`, `audit-new-hampshire-seo.ts` |
+| Maine | 16/16 (complete) | 10 | 10 (all counties) | `cumberland` 0.85 | `count-maine-movers.ts`, `apply-maine-mover-expansion.ts`, `audit-maine-seo.ts` |
+
+> **Maine note:** Maine has **16 counties** — complete state curation. **Cumberland** (Portland) uses Two Men and a Truck franchise #1; other counties use `regional-*-me-movers`. ME `washington`, `franklin`, `lincoln`, and `oxford` slugs collide with other states — nearby links use `displayLabel` disambiguation. Cross-border nearby links to NH, MA, and VT. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
 > **New Hampshire note:** New Hampshire has **10 counties** — complete state curation. **Hillsborough** (Manchester–Nashua) and **Rockingham** (Seacoast) use Two Men and a Truck franchise #1; other counties use `regional-*-nh-movers`. NH `merrimack` is a county (seat Concord); `sullivan` Newport is NH — disambiguate from RI/VT Newport in nearby `displayLabel`. Cross-border nearby links to MA, VT, ME, and RI. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
