@@ -246,6 +246,244 @@ export const kentuckyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  laurel: {
+    marketNotes:
+      'Laurel County is a key Southeast Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Laurel County pricing reflects London regional demand, I-75 corridor traffic, and competition among Southeast Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for London and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  scott: {
+    marketNotes:
+      'Scott County is a growing suburban county north of Lexington with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Scott County pricing reflects Lexington-metro north suburban demand, Georgetown growth corridor traffic, and competition among Bluegrass-area local agents.',
+    },
+    tips: [
+      'Verify coverage for Georgetown and surrounding areas before booking.',
+      'Lexington-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jessamine: {
+    marketNotes:
+      'Jessamine County is a suburban county south of Lexington with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Jessamine County pricing reflects Lexington-metro south suburban demand, Nicholasville residential growth, and competition among Bluegrass-area local agents.',
+    },
+    tips: [
+      'Verify coverage for Nicholasville and surrounding areas before booking.',
+      'Lexington-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pike: {
+    marketNotes:
+      'Pike County is a key Eastern Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Pike County pricing reflects Pikeville regional demand, Big Sandy corridor traffic, and competition among Eastern Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Pikeville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is the state capital county with strong governmental and residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Frankfort capital-area demand, governmental relocation volume, and competition among Central Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Frankfort and surrounding areas before booking.',
+      'Governmental traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  shelby: {
+    marketNotes:
+      'Shelby County is a suburban county east of Louisville with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Shelby County pricing reflects Louisville-metro east suburban demand, Shelbyville residential growth, and competition among Louisville-area local agents.',
+    },
+    tips: [
+      'Verify coverage for Shelbyville and surrounding areas before booking.',
+      'Louisville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  nelson: {
+    marketNotes:
+      'Nelson County is a key Central Kentucky county with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Nelson County pricing reflects Bardstown regional demand, Bourbon Trail tourism traffic, and competition among Central Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Bardstown and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boyd: {
+    marketNotes:
+      'Boyd County is a key Northeast Kentucky county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Boyd County pricing reflects Ashland regional demand, tri-state industrial corridor traffic, and competition among Northeast Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Ashland and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  barren: {
+    marketNotes:
+      'Barren County is a key South Central Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Barren County pricing reflects Glasgow regional demand, cave country relocation volume, and competition among South Central Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Glasgow and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hopkins: {
+    marketNotes:
+      'Hopkins County is a key Western Kentucky county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Hopkins County pricing reflects Madisonville regional demand, Pennyrile industrial corridor traffic, and competition among Western Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Madisonville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  henderson: {
+    marketNotes:
+      'Henderson County is a key Western Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Henderson County pricing reflects Henderson regional demand, Ohio River valley relocation volume, and competition among Western Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Henderson and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  calloway: {
+    marketNotes:
+      'Calloway County is anchored by Murray State University with strong educational and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Calloway County pricing reflects Murray regional demand, university and student relocation volume, and competition among Western Kentucky lakes-region local agents.',
+    },
+    tips: [
+      'Verify coverage for Murray and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clark: {
+    marketNotes:
+      'Clark County is a suburban county east of Lexington with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Clark County pricing reflects Lexington-metro east suburban demand, Winchester residential growth, and competition among Bluegrass-area local agents.',
+    },
+    tips: [
+      'Verify coverage for Winchester and surrounding areas before booking.',
+      'Lexington-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  whitley: {
+    marketNotes:
+      'Whitley County is a rural Southeast Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Whitley County pricing reflects Williamsburg regional demand, Cumberland Gap corridor traffic, and competition among rural Southeast Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Williamsburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getKentuckyCountyResearch(

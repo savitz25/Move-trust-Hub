@@ -25,6 +25,20 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   christian: ['todd', 'logan', 'simpson', 'trigg', 'muhlenberg', 'caldwell'],
   pulaski: ['laurel', 'mccreary', 'wayne', 'casey', 'russell', 'lincoln'],
   mccracken: ['marshall', 'graves', 'ballard', 'livingston', 'crittenden', 'carlisle'],
+  laurel: ['pulaski', 'whitley', 'knox', 'clay', 'jackson', 'rockcastle'],
+  scott: ['fayette', 'franklin', 'bourbon', 'woodford', 'harrison', 'grant'],
+  jessamine: ['fayette', 'garrard', 'madison', 'woodford', 'mercer', 'anderson'],
+  pike: ['floyd', 'martin', 'johnson', 'letcher', 'knott', 'harlan'],
+  franklin: ['anderson', 'woodford', 'shelby', 'henry', 'owen', 'scott'],
+  shelby: ['jefferson', 'oldham', 'spencer', 'bullitt', 'henry', 'franklin'],
+  nelson: ['hardin', 'bullitt', 'larue', 'washington', 'marion', 'spencer'],
+  boyd: ['greenup', 'lawrence', 'carter', 'elliott', 'johnson', 'lewis'],
+  barren: ['warren', 'hart', 'metcalfe', 'monroe', 'allen', 'edmonson'],
+  hopkins: ['christian', 'muhlenberg', 'webster', 'caldwell', 'mclean', 'daviess'],
+  henderson: ['daviess', 'webster', 'union', 'mclean', 'hancock', 'hopkins'],
+  calloway: ['marshall', 'graves', 'henry', 'trigg', 'lyon', 'mccracken'],
+  clark: ['fayette', 'bourbon', 'powell', 'estill', 'madison', 'montgomery'],
+  whitley: ['laurel', 'knox', 'bell', 'mccreary', 'wayne', 'clinton'],
 };
 
 export function getKentuckyNearbyCounties(

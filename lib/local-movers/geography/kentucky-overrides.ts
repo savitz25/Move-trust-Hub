@@ -18,6 +18,20 @@ export const kentuckyCountyOverrides: Partial<
   christian: { seat: 'Hopkinsville', metro: 'hopkinsville-metro-ky' },
   pulaski: { seat: 'Somerset', metro: 'somerset-metro-ky' },
   mccracken: { seat: 'Paducah', metro: 'paducah-metro-ky' },
+  laurel: { seat: 'London', metro: 'london-metro-ky' },
+  scott: { seat: 'Georgetown', metro: 'lexington-metro-ky' },
+  jessamine: { seat: 'Nicholasville', metro: 'lexington-metro-ky' },
+  pike: { seat: 'Pikeville', metro: 'pikeville-metro-ky' },
+  franklin: { seat: 'Frankfort', metro: 'frankfort-metro-ky' },
+  shelby: { seat: 'Shelbyville', metro: 'louisville-metro-ky' },
+  nelson: { seat: 'Bardstown', metro: 'bardstown-metro-ky' },
+  boyd: { seat: 'Catlettsburg', metro: 'ashland-metro-ky' },
+  barren: { seat: 'Glasgow', metro: 'glasgow-metro-ky' },
+  hopkins: { seat: 'Madisonville', metro: 'madisonville-metro-ky' },
+  henderson: { seat: 'Henderson', metro: 'henderson-metro-ky' },
+  calloway: { seat: 'Murray', metro: 'murray-metro-ky' },
+  clark: { seat: 'Winchester', metro: 'lexington-metro-ky' },
+  whitley: { seat: 'Williamsburg', metro: 'williamsburg-metro-ky' },
 };
 
 export function applyKentuckyCountyOverrides(county: LocalCounty): LocalCounty {

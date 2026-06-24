@@ -565,6 +565,20 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: christian, expectedCity: 'Hopkinsville' },
   { stateSlug: 'kentucky', countySlug: pulaski, expectedCity: 'Somerset' },
   { stateSlug: 'kentucky', countySlug: mccracken, expectedCity: 'Paducah' },
+  { stateSlug: 'kentucky', countySlug: laurel, expectedCity: 'London' },
+  { stateSlug: 'kentucky', countySlug: scott, expectedCity: 'Georgetown' },
+  { stateSlug: 'kentucky', countySlug: jessamine, expectedCity: 'Nicholasville' },
+  { stateSlug: 'kentucky', countySlug: pike, expectedCity: 'Pikeville' },
+  { stateSlug: 'kentucky', countySlug: franklin, expectedCity: 'Frankfort' },
+  { stateSlug: 'kentucky', countySlug: shelby, expectedCity: 'Shelbyville' },
+  { stateSlug: 'kentucky', countySlug: nelson, expectedCity: 'Bardstown' },
+  { stateSlug: 'kentucky', countySlug: boyd, expectedCity: 'Catlettsburg' },
+  { stateSlug: 'kentucky', countySlug: barren, expectedCity: 'Glasgow' },
+  { stateSlug: 'kentucky', countySlug: hopkins, expectedCity: 'Madisonville' },
+  { stateSlug: 'kentucky', countySlug: henderson, expectedCity: 'Henderson' },
+  { stateSlug: 'kentucky', countySlug: calloway, expectedCity: 'Murray' },
+  { stateSlug: 'kentucky', countySlug: clark, expectedCity: 'Winchester' },
+  { stateSlug: 'kentucky', countySlug: whitley, expectedCity: 'Williamsburg' },
 ];
 
 let totalIssues = 0;
