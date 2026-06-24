@@ -37,6 +37,20 @@ export const indianaCountyOverrides: Partial<
   jackson: { seat: 'Seymour', metro: 'seymour-metro-in' },
   marshall: { seat: 'Plymouth', metro: 'plymouth-metro-in' },
   shelby: { seat: 'Shelbyville', metro: 'indianapolis-metro-in' },
+  lawrence: { seat: 'Bedford', metro: 'bedford-metro-in' },
+  dekalb: { seat: 'Auburn', metro: 'auburn-metro-in' },
+  dubois: { seat: 'Jasper', metro: 'jasper-metro-in' },
+  lagrange: { seat: 'LaGrange', metro: 'lagrange-metro-in' },
+  harrison: { seat: 'Corydon', metro: 'louisville-metro-in' },
+  montgomery: { seat: 'Crawfordsville', metro: 'crawfordsville-metro-in' },
+  putnam: { seat: 'Greencastle', metro: 'greencastle-metro-in' },
+  cass: { seat: 'Logansport', metro: 'logansport-metro-in' },
+  huntington: { seat: 'Huntington', metro: 'huntington-county-metro-in' },
+  adams: { seat: 'Decatur', metro: 'adams-decatur-metro-in' },
+  knox: { seat: 'Vincennes', metro: 'vincennes-metro-in' },
+  whitley: { seat: 'Columbia City', metro: 'columbia-city-metro-in' },
+  steuben: { seat: 'Angola', metro: 'angola-metro-in' },
+  miami: { seat: 'Peru', metro: 'peru-metro-in' },
 };
 
 export function applyIndianaCountyOverrides(county: LocalCounty): LocalCounty {

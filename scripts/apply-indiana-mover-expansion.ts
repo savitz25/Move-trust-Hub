@@ -46,6 +46,20 @@ const MAJOR = new Set([
   'jackson',
   'marshall',
   'shelby',
+  'lawrence',
+  'dekalb',
+  'dubois',
+  'lagrange',
+  'harrison',
+  'montgomery',
+  'putnam',
+  'cass',
+  'huntington',
+  'adams',
+  'knox',
+  'whitley',
+  'steuben',
+  'miami',
 ]);
 
 const MIN_MOVERS = 5;
@@ -76,6 +90,19 @@ const FALLBACK_POOLS = [
   'noble-metro-in',
   'seymour-metro-in',
   'plymouth-metro-in',
+  'bedford-metro-in',
+  'auburn-metro-in',
+  'jasper-metro-in',
+  'lagrange-metro-in',
+  'crawfordsville-metro-in',
+  'greencastle-metro-in',
+  'logansport-metro-in',
+  'huntington-county-metro-in',
+  'adams-decatur-metro-in',
+  'vincennes-metro-in',
+  'columbia-city-metro-in',
+  'angola-metro-in',
+  'peru-metro-in',
 ];
 
 const assignmentsPath = 'data/indiana-county-assignments.ts';

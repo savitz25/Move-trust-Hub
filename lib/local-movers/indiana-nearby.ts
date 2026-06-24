@@ -44,6 +44,20 @@ const IN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   jackson: ['bartholomew', 'jennings', 'scott', 'washington', 'brown', 'monroe'],
   marshall: ['st-joseph', 'kosciusko', 'starke', 'pulaski', 'fulton', 'elkhart'],
   shelby: ['marion', 'johnson', 'hancock', 'rush', 'decatur', 'bartholomew'],
+  lawrence: ['monroe', 'jackson', 'orange', 'martin', 'washington', 'greene'],
+  dekalb: ['noble', 'allen', 'steuben', 'lagrange', 'kosciusko', 'whitley'],
+  dubois: ['pike', 'martin', 'orange', 'spencer', 'warrick', 'knox'],
+  lagrange: ['elkhart', 'noble', 'steuben', 'kosciusko', 'st-joseph', 'dekalb'],
+  harrison: ['floyd', 'crawford', 'washington', 'scott', 'jefferson', 'perry'],
+  montgomery: ['tippecanoe', 'boone', 'putnam', 'parke', 'fountain', 'clinton'],
+  putnam: ['hendricks', 'morgan', 'montgomery', 'clay', 'parke', 'owen'],
+  cass: ['miami', 'howard', 'carroll', 'pulaski', 'white', 'fulton'],
+  huntington: ['whitley', 'allen', 'wells', 'wabash', 'grant', 'dekalb'],
+  adams: ['allen', 'wells', 'jay', 'dekalb', 'huntington', 'noble'],
+  knox: ['sullivan', 'greene', 'pike', 'gibson', 'warrick', 'dubois'],
+  whitley: ['kosciusko', 'huntington', 'noble', 'allen', 'dekalb', 'marshall'],
+  steuben: ['dekalb', 'noble', 'lagrange', 'elkhart', 'kosciusko', 'allen'],
+  miami: ['cass', 'howard', 'grant', 'wabash', 'fulton', 'carroll'],
 };
 
 export function getIndianaNearbyCounties(

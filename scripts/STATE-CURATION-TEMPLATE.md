@@ -26,7 +26,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
-| Indiana | 33/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 33 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
+| Indiana | 47/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 47 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
@@ -53,14 +53,27 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 - `noble-metro-in` — Noble County / Albion Northeast Indiana hub
 - `seymour-metro-in` — Seymour / Jackson I-65 South Central Indiana hub
 - `plymouth-metro-in` — Plymouth / Marshall Northern Indiana hub
+- `bedford-metro-in` — Bedford / Lawrence South Central Indiana hub
+- `auburn-metro-in` — Auburn / DeKalb Northeast Indiana hub
+- `jasper-metro-in` — Jasper / Dubois Southern Indiana manufacturing hub
+- `lagrange-metro-in` — LaGrange County Amish country hub
+- `crawfordsville-metro-in` — Crawfordsville / Montgomery (Wabash College) hub
+- `greencastle-metro-in` — Greencastle / Putnam (DePauw) hub
+- `logansport-metro-in` — Logansport / Cass North Central Indiana hub
+- `huntington-county-metro-in` — Huntington County Northeast Indiana hub
+- `adams-decatur-metro-in` — Adams County / Decatur (distinct from Bartholomew Columbus)
+- `vincennes-metro-in` — Vincennes / Knox Southwest Indiana hub
+- `columbia-city-metro-in` — Columbia City / Whitley Northeast Indiana hub
+- `angola-metro-in` — Angola / Steuben lakes tourism hub
+- `peru-metro-in` — Peru / Miami North Central Indiana hub
 
 ### Indiana major counties (10 movers each; Marion up to 18)
 
-`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`, `lawrence`, `dekalb`, `dubois`, `lagrange`, `harrison`, `montgomery`, `putnam`, `cass`, `huntington`, `adams`, `knox`, `whitley`, `steuben`, `miami`
 
-### Indiana sitemap priority 0.85 (33 counties — batches 1–4)
+### Indiana sitemap priority 0.85 (47 counties — batches 1–5)
 
-`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`, `lawrence`, `dekalb`, `dubois`, `lagrange`, `harrison`, `montgomery`, `putnam`, `cass`, `huntington`, `adams`, `knox`, `whitley`, `steuben`, `miami`
 
 **GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/indiana.xml` (93 URLs: hub + 92 counties). Do **not** use `/sitemap-local/indiana.xml` (legacy path redirects to canonical).
 
