@@ -35,33 +35,18 @@ export function TestimonialsSection({
 
         <div className={cn('grid gap-5', gridClass)}>
           {testimonials.map((testimonial) => (
-            <Card
-              key={testimonial.name}
-              className="p-6 h-full flex flex-col"
-              itemScope
-              itemType="https://schema.org/Review"
-            >
-              <meta itemProp="itemReviewed" content="Move Trust Hub" />
+            <Card key={testimonial.name} className="p-6 h-full flex flex-col">
               <Quote className="h-5 w-5 text-primary/60 mb-3" aria-hidden="true" />
-              <blockquote className="text-base italic leading-relaxed mb-4 flex-1" itemProp="reviewBody">
+              <blockquote className="text-base italic leading-relaxed mb-4 flex-1">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
-              <div
-                className="mb-3"
-                itemProp="reviewRating"
-                itemScope
-                itemType="https://schema.org/Rating"
-              >
-                <meta itemProp="ratingValue" content={String(testimonial.rating)} />
-                <meta itemProp="bestRating" content="5" />
+              <div className="mb-3">
                 <StarRating rating={testimonial.rating} />
               </div>
 
-              <div itemProp="author" itemScope itemType="https://schema.org/Person">
-                <div className="font-semibold" itemProp="name">
-                  {testimonial.name}
-                </div>
+              <div>
+                <div className="font-semibold">{testimonial.name}</div>
                 <div className="text-sm text-muted-foreground">{testimonial.location}</div>
               </div>
 

@@ -54,21 +54,37 @@ export const REVIEW_ITEM_REVIEWED_TYPES = new Set([
   'Service',
 ]);
 
+export const LOCAL_MOVING_SERVICE_FRAGMENT = '#local-moving-service';
+
+export function buildLocalMovingServiceId(pageUrl: string): string {
+  return `${pageUrl}${LOCAL_MOVING_SERVICE_FRAGMENT}`;
+}
+
+/** Display name for the county-level LocalBusiness that Reviews reference. */
+export function buildLocalMovingServiceName(
+  county: LocalCounty | undefined,
+  stateName: string | undefined
+): string {
+  if (county && stateName) {
+    return `Local Moving Companies in ${buildCountyLabel(county)}, ${stateName}`;
+  }
+  return 'Local Moving Services';
+}
+
 export function buildLocalMovingServiceSchemaNode(
   county: LocalCounty | undefined,
   stateName: string | undefined,
   placeId: string,
   pageUrl: string
 ): Record<string, unknown> {
-  const serviceId = `${pageUrl}#local-moving-service`;
+  const serviceId = buildLocalMovingServiceId(pageUrl);
 
   if (county && stateName) {
-    const countyLabel = buildCountyLabel(county);
     const placeName = buildCountyPlaceName(county, stateName);
     return {
-      '@type': ['MovingCompany', 'LocalBusiness'],
+      '@type': 'LocalBusiness',
       '@id': serviceId,
-      name: `Local Moving Companies in ${countyLabel}`,
+      name: buildLocalMovingServiceName(county, stateName),
       description: `Licensed local and regional moving companies serving ${placeName}.`,
       url: pageUrl,
       areaServed: {
@@ -80,9 +96,9 @@ export function buildLocalMovingServiceSchemaNode(
   }
 
   return {
-    '@type': ['MovingCompany', 'LocalBusiness'],
+    '@type': 'LocalBusiness',
     '@id': serviceId,
-    name: 'Local Moving Services',
+    name: buildLocalMovingServiceName(county, stateName),
     url: pageUrl,
   };
 }
@@ -95,11 +111,8 @@ export function buildSchemaItemReviewed(
 ): Record<string, unknown> {
   return {
     '@type': 'LocalBusiness',
-    '@id': `${pageUrl}#local-moving-service`,
-    name:
-      county && stateName
-        ? `Local Moving Companies in ${buildCountyLabel(county)}`
-        : 'Local Moving Services',
+    '@id': buildLocalMovingServiceId(pageUrl),
+    name: buildLocalMovingServiceName(county, stateName),
   };
 }
 
@@ -355,30 +368,78 @@ const SCHEMA_REQUIRED_TYPES = new Set([
  * Lightweight validator for county page schema graphs.
  * Used by scripts/validate-county-schema.ts to catch regressions before deploy.
  */
+function nodeTypes(node: Record<string, unknown>): string[] {
+  const rawType = node['@type'];
+  return Array.isArray(rawType) ? rawType.map(String) : rawType ? [String(rawType)] : [];
+}
+
+function findGraphPageUrl(graph: Record<string, unknown>[]): string | undefined {
+  for (const node of graph) {
+    if (nodeTypes(node).includes('WebPage') && node.url) {
+      return String(node.url);
+    }
+  }
+  return undefined;
+}
+
 export function validateCountySchemaGraph(
   graph: Record<string, unknown>[],
-  county: LocalCounty
+  county: LocalCounty,
+  stateName?: string
 ): SchemaValidationIssue[] {
   const issues: SchemaValidationIssue[] = [];
   const base = { stateSlug: county.stateSlug, countySlug: county.slug };
+  const pageUrl = findGraphPageUrl(graph);
+  const expectedServiceId = pageUrl ? buildLocalMovingServiceId(pageUrl) : undefined;
+  const expectedServiceName = buildLocalMovingServiceName(county, stateName);
+
+  let reviewCount = 0;
+  let hasLocalMovingServiceNode = false;
 
   for (const node of graph) {
-    const rawType = node['@type'];
-    const types = Array.isArray(rawType) ? rawType : rawType ? [rawType] : [];
+    const types = nodeTypes(node);
+    const nodeId = String(node['@id'] ?? 'no @id');
+
+    if (nodeId.endsWith(LOCAL_MOVING_SERVICE_FRAGMENT)) {
+      hasLocalMovingServiceNode = true;
+      if (!types.includes('LocalBusiness')) {
+        issues.push({
+          ...base,
+          issue: `local-moving-service node must have @type LocalBusiness (${nodeId})`,
+        });
+      }
+      if (expectedServiceId && nodeId !== expectedServiceId) {
+        issues.push({
+          ...base,
+          issue: `local-moving-service @id must be "${expectedServiceId}", got "${nodeId}"`,
+        });
+      }
+      if (!node.name) {
+        issues.push({
+          ...base,
+          issue: `local-moving-service node missing name (${nodeId})`,
+        });
+      } else if (node.name !== expectedServiceName) {
+        issues.push({
+          ...base,
+          issue: `local-moving-service name must be "${expectedServiceName}", got "${String(node.name)}"`,
+        });
+      }
+    }
 
     for (const type of types) {
-      if (typeof type !== 'string') continue;
       if (SCHEMA_REQUIRED_TYPES.has(type) && !node.name) {
         issues.push({
           ...base,
-          issue: `${type} node missing required "name" (${String(node['@id'] ?? 'no @id')})`,
+          issue: `${type} node missing required "name" (${nodeId})`,
         });
       }
     }
 
     if (types.includes('Review')) {
+      reviewCount += 1;
       const itemReviewed = node.itemReviewed as Record<string, unknown> | undefined;
-      const reviewId = String(node['@id'] ?? 'no @id');
+      const reviewId = nodeId;
 
       if (!itemReviewed) {
         issues.push({
@@ -391,22 +452,37 @@ export function validateCountySchemaGraph(
             ...base,
             issue: `Review missing itemReviewed.name (${reviewId})`,
           });
+        } else if (itemReviewed.name !== expectedServiceName) {
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed.name must be "${expectedServiceName}", got "${String(itemReviewed.name)}" (${reviewId})`,
+          });
         }
 
         const reviewedType = itemReviewed['@type'];
         const reviewedTypes = Array.isArray(reviewedType)
-          ? reviewedType
+          ? reviewedType.map(String)
           : reviewedType
-            ? [reviewedType]
+            ? [String(reviewedType)]
             : [];
-        const hasValidReviewedType = reviewedTypes.some((type) =>
-          REVIEW_ITEM_REVIEWED_TYPES.has(String(type))
-        );
 
-        if (!hasValidReviewedType) {
+        if (!reviewedTypes.includes('LocalBusiness')) {
           issues.push({
             ...base,
-            issue: `Review itemReviewed has invalid @type "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
+            issue: `Review itemReviewed must have @type LocalBusiness, got "${reviewedTypes.join(', ') || 'none'}" (${reviewId})`,
+          });
+        }
+
+        const reviewedId = String(itemReviewed['@id'] ?? '');
+        if (!reviewedId) {
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed missing @id (${reviewId})`,
+          });
+        } else if (expectedServiceId && reviewedId !== expectedServiceId) {
+          issues.push({
+            ...base,
+            issue: `Review itemReviewed @id must be "${expectedServiceId}", got "${reviewedId}" (${reviewId})`,
           });
         }
       }
@@ -418,11 +494,26 @@ export function validateCountySchemaGraph(
         });
       }
 
+      if (!node.datePublished) {
+        issues.push({
+          ...base,
+          issue: `Review missing datePublished (${reviewId})`,
+        });
+      }
+
       const author = node.author as Record<string, unknown> | undefined;
       if (!author?.name) {
         issues.push({
           ...base,
           issue: `Review missing author.name (${reviewId})`,
+        });
+      }
+
+      const reviewRating = node.reviewRating as Record<string, unknown> | undefined;
+      if (!reviewRating?.ratingValue) {
+        issues.push({
+          ...base,
+          issue: `Review missing reviewRating.ratingValue (${reviewId})`,
         });
       }
     }
@@ -442,18 +533,24 @@ export function validateCountySchemaGraph(
       if (node.position !== undefined) {
         issues.push({
           ...base,
-          issue: `Mover node must not duplicate ListItem position (${String(node['@id'] ?? 'no @id')})`,
+          issue: `Mover node must not duplicate ListItem position (${nodeId})`,
         });
       }
     }
   }
 
+  if (reviewCount > 0 && !hasLocalMovingServiceNode) {
+    issues.push({
+      ...base,
+      issue: `Graph has ${reviewCount} Review node(s) but no local-moving-service LocalBusiness node`,
+    });
+  }
+
   const moverUrls = new Map<string, string[]>();
   for (const node of graph) {
-    const rawType = node['@type'];
-    const types = Array.isArray(rawType) ? rawType : rawType ? [rawType] : [];
+    const types = nodeTypes(node);
     if (!types.includes('LocalBusiness') && !types.includes('MovingCompany')) continue;
-    if (String(node['@id'] ?? '').includes('local-moving-service')) continue;
+    if (String(node['@id'] ?? '').includes(LOCAL_MOVING_SERVICE_FRAGMENT)) continue;
 
     const url = String(node.url ?? '');
     if (!url) continue;

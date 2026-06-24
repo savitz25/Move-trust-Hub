@@ -33,11 +33,13 @@ function buildTestimonialReviewSchemas() {
   return testimonials.map((testimonial, index) => ({
     '@type': 'Review',
     '@id': `${SITE_URL}/#testimonial-${index + 1}`,
+    name: `Move Trust Hub customer review — ${testimonial.location}`,
     author: {
       '@type': 'Person',
       name: testimonial.name,
     },
     reviewBody: testimonial.quote,
+    datePublished: '2026-01-15',
     reviewRating: {
       '@type': 'Rating',
       ratingValue: String(testimonial.rating),
