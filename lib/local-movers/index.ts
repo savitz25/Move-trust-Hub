@@ -25,6 +25,7 @@ import { delawareCountyMoverAssignments } from '@/data/delaware-county-assignmen
 import { marylandCountyMoverAssignments } from '@/data/maryland-county-assignments';
 import { pennsylvaniaCountyMoverAssignments } from '@/data/pennsylvania-county-assignments';
 import { connecticutCountyMoverAssignments } from '@/data/connecticut-county-assignments';
+import { massachusettsCountyMoverAssignments } from '@/data/massachusetts-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -62,6 +63,7 @@ const allCountyAssignments = [
   ...marylandCountyMoverAssignments,
   ...pennsylvaniaCountyMoverAssignments,
   ...connecticutCountyMoverAssignments,
+  ...massachusettsCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,

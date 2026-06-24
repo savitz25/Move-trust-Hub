@@ -25,6 +25,7 @@ import {
   MARYLAND_COUNTY_CONTENT_UPDATED,
   PENNSYLVANIA_COUNTY_CONTENT_UPDATED,
   CONNECTICUT_COUNTY_CONTENT_UPDATED,
+  MASSACHUSETTS_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -212,6 +213,9 @@ const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
 
 /** High-traffic CT counties — sitemap priority 0.85 (Fairfield premium metro) */
 const CT_HIGH_TRAFFIC_COUNTIES = new Set(['fairfield']);
+
+/** High-traffic MA counties — sitemap priority 0.85 (batch 1 large markets) */
+const MA_HIGH_TRAFFIC_COUNTIES = new Set(['middlesex', 'worcester', 'essex']);
 
 /** High-traffic PA counties — sitemap priority 0.85 (batches 1–5 large markets) */
 const PA_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -619,7 +623,9 @@ export default async function sitemap({
                                                           ? new Date(PENNSYLVANIA_COUNTY_CONTENT_UPDATED)
                                                           : id === 'connecticut'
                                                             ? new Date(CONNECTICUT_COUNTY_CONTENT_UPDATED)
-                                                            : new Date();
+                                                            : id === 'massachusetts'
+                                                              ? new Date(MASSACHUSETTS_COUNTY_CONTENT_UPDATED)
+                                                              : new Date();
 
   return [
     {
@@ -668,7 +674,8 @@ export default async function sitemap({
         (id === 'delaware' && DE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'maryland' && MD_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'connecticut' && CT_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'connecticut' && CT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'massachusetts' && MA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

@@ -54,6 +54,7 @@ const CURATED_STATES = [
   'maryland',
   'pennsylvania',
   'connecticut',
+  'massachusetts',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -968,6 +969,9 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'connecticut', countySlug: 'new-london', expectedCity: 'New London' },
   { stateSlug: 'connecticut', countySlug: 'tolland', expectedCity: 'Rockville' },
   { stateSlug: 'connecticut', countySlug: 'windham', expectedCity: 'Willimantic' },
+  { stateSlug: 'massachusetts', countySlug: 'middlesex', expectedCity: 'Cambridge' },
+  { stateSlug: 'massachusetts', countySlug: 'worcester', expectedCity: 'Worcester' },
+  { stateSlug: 'massachusetts', countySlug: 'essex', expectedCity: 'Salem' },
 ];
 
 let totalIssues = 0;

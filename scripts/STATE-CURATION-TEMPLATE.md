@@ -36,6 +36,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Maryland | 24/24 (complete) | 10 | 10 (all jurisdictions) | 16 regional hubs 0.85 | `count-maryland-movers.ts`, `apply-maryland-mover-expansion.ts`, `audit-maryland-seo.ts` |
 | Pennsylvania | 67/67 (complete) | 10 | 10 (large markets) | 67 counties 0.85 | `count-pennsylvania-movers.ts`, `apply-pennsylvania-mover-expansion.ts`, `audit-pennsylvania-seo.ts` |
 | Connecticut | 8/8 (complete) | 8 | 12 (Fairfield) / 10 (others) | `fairfield` 0.85 | `count-connecticut-movers.ts`, `apply-connecticut-mover-expansion.ts`, `audit-connecticut-seo.ts` |
+| Massachusetts | 3/14 (batch 1) | 10 | 10 (large markets) | `middlesex`, `worcester`, `essex` 0.85 | `count-massachusetts-movers.ts`, `apply-massachusetts-mover-expansion.ts`, `audit-massachusetts-seo.ts` |
+
+> **Massachusetts note:** Massachusetts has **14 counties** — batch 1 covers **Middlesex** (Boston metro, Cambridge seat), **Worcester**, and **Essex** (North Shore, Salem seat). All three use Two Men and a Truck franchise #1. Seat/metro overrides in `lib/local-movers/geography/massachusetts-overrides.ts`. Cross-border nearby links to NH and CT. Add to `CURATED_STATE_SLUGS` at batch 1; do **not** add to `SKIP_STATES` until all 14 counties are complete.
 
 > **Connecticut note:** Connecticut has **8 counties** — complete state curation. **Fairfield County** is the premium NYC-corridor market (12 movers, sitemap 0.85); other counties target 8–10 movers. `fairfield`, `hartford`, and `new-haven` use Two Men and a Truck franchise #1; rural counties use `regional-*-ct-movers`. Geography in `lib/local-movers/geography/connecticut.ts` replaces generated county slugs. Cross-border nearby links to Westchester NY, MA, and RI. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 

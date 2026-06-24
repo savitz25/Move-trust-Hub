@@ -50,6 +50,8 @@ import { getPennsylvaniaCountyResearch } from '@/data/pennsylvania-county-resear
 import { getPennsylvaniaCountyTestimonials } from '@/data/pennsylvania-county-testimonials';
 import { getConnecticutCountyResearch } from '@/data/connecticut-county-research';
 import { getConnecticutCountyTestimonials } from '@/data/connecticut-county-testimonials';
+import { getMassachusettsCountyResearch } from '@/data/massachusetts-county-research';
+import { getMassachusettsCountyTestimonials } from '@/data/massachusetts-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -145,6 +147,9 @@ export function buildStateDescription(
   }
   if (stateName === 'Pennsylvania') {
     return `Find curated local movers in all 67 Pennsylvania counties — 10 ranked companies per county from Philadelphia and Pittsburgh metros through Harrisburg, Erie, Scranton, and rural regional markets statewide. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
+  if (stateName === 'Massachusetts') {
+    return `Find curated local movers in Massachusetts — 10 ranked companies each in Middlesex (Boston metro), Worcester, and Essex (North Shore) with FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Additional counties rolling out in batches. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =
@@ -318,6 +323,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'connecticut') {
     return getConnecticutCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'massachusetts') {
+    return getMassachusettsCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -435,6 +443,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'connecticut') {
     const curated = getConnecticutCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'massachusetts') {
+    const curated = getMassachusettsCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -589,6 +601,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getConnecticutCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'massachusetts') {
+    const curated = getMassachusettsCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -726,6 +742,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'connecticut') {
     const curated = getConnecticutCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'massachusetts') {
+    const curated = getMassachusettsCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

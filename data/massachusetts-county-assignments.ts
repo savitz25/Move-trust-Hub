@@ -1,0 +1,48 @@
+import type { CountyMoverAssignment } from '@/lib/local-movers/types';
+
+/** Hand-curated Massachusetts county mover lists — batch 1 (3/14 counties) */
+const CURATED_MA_COUNTIES: Record<string, string[]> = {
+  middlesex: [
+    'twomenandatruck-middlesex-ma',
+    'all-my-sons-cambridge-ma',
+    'cambridge-moving-middlesex-ma',
+    'middlesex-county-moving-middlesex-ma',
+    'college-hunks-moving-cambridge-ma',
+    'budd-van-lines-cambridge-ma',
+    'boston-metro-corridor-moving-middlesex-ma',
+    'route-128-tech-moving-middlesex-ma',
+    'hercules-movers-cambridge-ma',
+    'krupp-moving-cambridge-ma',
+  ],
+  worcester: [
+    'twomenandatruck-worcester-ma',
+    'all-my-sons-worcester-ma',
+    'worcester-moving-worcester-ma',
+    'worcester-county-moving-worcester-ma',
+    'college-hunks-moving-worcester-ma',
+    'budd-van-lines-worcester-ma',
+    'worcester-corridor-moving-worcester-ma',
+    'central-mass-moving-worcester-ma',
+    'hercules-movers-worcester-ma',
+    'krupp-moving-worcester-ma',
+  ],
+  essex: [
+    'twomenandatruck-essex-ma',
+    'all-my-sons-salem-ma',
+    'salem-moving-essex-ma',
+    'essex-county-moving-essex-ma',
+    'college-hunks-moving-salem-ma',
+    'budd-van-lines-salem-ma',
+    'north-shore-corridor-moving-essex-ma',
+    'historic-coast-moving-essex-ma',
+    'hercules-movers-salem-ma',
+    'krupp-moving-salem-ma',
+  ],
+};
+
+export const massachusettsCountyMoverAssignments: CountyMoverAssignment[] =
+  Object.entries(CURATED_MA_COUNTIES).map(([countySlug, moverIds]) => ({
+    stateSlug: 'massachusetts',
+    countySlug,
+    moverIds,
+  }));
