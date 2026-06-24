@@ -30,6 +30,7 @@ import {
   VERMONT_COUNTY_CONTENT_UPDATED,
   NEW_HAMPSHIRE_COUNTY_CONTENT_UPDATED,
   MAINE_COUNTY_CONTENT_UPDATED,
+  HAWAII_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -230,6 +231,9 @@ const NH_HIGH_TRAFFIC_COUNTIES = new Set(['hillsborough', 'rockingham']);
 
 /** High-traffic ME counties — sitemap priority 0.85 */
 const ME_HIGH_TRAFFIC_COUNTIES = new Set(['cumberland']);
+
+/** High-traffic HI counties — sitemap priority 0.85 */
+const HI_HIGH_TRAFFIC_COUNTIES = new Set(['honolulu']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -654,7 +658,9 @@ export default async function sitemap({
                                                                     ? new Date(NEW_HAMPSHIRE_COUNTY_CONTENT_UPDATED)
                                                                     : id === 'maine'
                                                                       ? new Date(MAINE_COUNTY_CONTENT_UPDATED)
-                                                                      : new Date();
+                                                                      : id === 'hawaii'
+                                                                        ? new Date(HAWAII_COUNTY_CONTENT_UPDATED)
+                                                                        : new Date();
 
   return [
     {
@@ -708,7 +714,8 @@ export default async function sitemap({
         (id === 'rhode-island' && RI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'vermont' && VT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'new-hampshire' && NH_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'maine' && ME_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'maine' && ME_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'hawaii' && HI_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

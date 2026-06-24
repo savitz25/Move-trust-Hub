@@ -41,6 +41,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Vermont | 14/14 (complete) | 6 | 8–10 (Chittenden) / 6–8+ (others) | `chittenden` 0.85 | `count-vermont-movers.ts`, `apply-vermont-mover-expansion.ts`, `audit-vermont-seo.ts` |
 | New Hampshire | 10/10 (complete) | 7 | 10–12 (Hillsborough) / 9–11 (Rockingham) / 7–8+ (others) | `hillsborough`, `rockingham` 0.85 | `count-new-hampshire-movers.ts`, `apply-new-hampshire-mover-expansion.ts`, `audit-new-hampshire-seo.ts` |
 | Maine | 16/16 (complete) | 6 | 8–10 (Cumberland) / 7–9 (York) / 6–8+ (others) | `cumberland` 0.85 | `count-maine-movers.ts`, `apply-maine-mover-expansion.ts`, `audit-maine-seo.ts` |
+| Hawaii | 5/5 (complete) | 10 | 10 (all counties) | `honolulu` 0.85 | `count-hawaii-movers.ts`, `apply-hawaii-mover-expansion.ts`, `audit-hawaii-seo.ts` |
+
+> **Hawaii note:** Hawaii has **5 counties** — complete state curation. **Honolulu** (Oahu) uses Two Men and a Truck franchise #1; **Hawaii** (Big Island), **Maui**, **Kauai**, and remote **Kalawao** use `regional-*-hi-movers`. HI state slug and **Hawaii County** slug both use `hawaii` — nearby links use `displayLabel` disambiguation (Big Island vs state). Inter-island nearby links only (no land borders). Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
 > **Maine note:** Maine has **16 counties** — complete state curation. **Cumberland** (Portland) uses Two Men and a Truck franchise #1; other counties use `regional-*-me-movers`. ME `washington`, `franklin`, `lincoln`, and `oxford` slugs collide with other states — nearby links use `displayLabel` disambiguation. Cross-border nearby links to NH, MA, and VT. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 

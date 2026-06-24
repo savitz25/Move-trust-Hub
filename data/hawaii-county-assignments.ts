@@ -1,0 +1,72 @@
+import type { CountyMoverAssignment } from '@/lib/local-movers/types';
+
+/** Hand-curated Hawaii county mover lists — complete state (5/5 counties) */
+const CURATED_HI_COUNTIES: Record<string, string[]> = {
+  honolulu: [
+    'twomenandatruck-honolulu-hi',
+    'all-my-sons-honolulu-hi',
+    'honolulu-moving-honolulu-hi',
+    'honolulu-county-moving-honolulu-hi',
+    'college-hunks-moving-honolulu-hi',
+    'budd-van-lines-honolulu-hi',
+    'honolulu-corridor-moving-honolulu-hi',
+    'oahu-metro-moving-honolulu-hi',
+    'hercules-movers-honolulu-hi',
+    'krupp-moving-honolulu-hi',
+  ],
+  hawaii: [
+    'regional-hawaii-hi-movers',
+    'all-my-sons-hilo-hi',
+    'hilo-moving-hawaii-hi',
+    'hawaii-county-moving-hawaii-hi',
+    'college-hunks-moving-hilo-hi',
+    'budd-van-lines-hilo-hi',
+    'hilo-corridor-moving-hawaii-hi',
+    'big-island-moving-hawaii-hi',
+    'hercules-movers-hilo-hi',
+    'krupp-moving-hilo-hi',
+  ],
+  maui: [
+    'regional-maui-hi-movers',
+    'all-my-sons-kahului-hi',
+    'kahului-moving-maui-hi',
+    'maui-county-moving-maui-hi',
+    'college-hunks-moving-kahului-hi',
+    'budd-van-lines-kahului-hi',
+    'kahului-corridor-moving-maui-hi',
+    'valley-isle-moving-maui-hi',
+    'hercules-movers-kahului-hi',
+    'krupp-moving-kahului-hi',
+  ],
+  kauai: [
+    'regional-kauai-hi-movers',
+    'all-my-sons-lihue-hi',
+    'lihue-moving-kauai-hi',
+    'kauai-county-moving-kauai-hi',
+    'college-hunks-moving-lihue-hi',
+    'budd-van-lines-lihue-hi',
+    'lihue-corridor-moving-kauai-hi',
+    'garden-isle-moving-kauai-hi',
+    'hercules-movers-lihue-hi',
+    'krupp-moving-lihue-hi',
+  ],
+  kalawao: [
+    'regional-kalawao-hi-movers',
+    'all-my-sons-kalaupapa-hi',
+    'kalaupapa-moving-kalawao-hi',
+    'kalawao-county-moving-kalawao-hi',
+    'college-hunks-moving-kalaupapa-hi',
+    'budd-van-lines-kalaupapa-hi',
+    'kalaupapa-corridor-moving-kalawao-hi',
+    'molokai-remote-moving-kalawao-hi',
+    'hercules-movers-kalaupapa-hi',
+    'krupp-moving-kalaupapa-hi',
+  ],
+};
+
+export const hawaiiCountyMoverAssignments: CountyMoverAssignment[] =
+  Object.entries(CURATED_HI_COUNTIES).map(([countySlug, moverIds]) => ({
+    stateSlug: 'hawaii',
+    countySlug,
+    moverIds,
+  }));

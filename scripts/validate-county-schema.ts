@@ -59,6 +59,7 @@ const CURATED_STATES = [
   'vermont',
   'new-hampshire',
   'maine',
+  'hawaii',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -1032,6 +1033,11 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'maine', countySlug: 'washington', expectedCity: 'Machias' },
   { stateSlug: 'maine', countySlug: 'franklin', expectedCity: 'Farmington' },
   { stateSlug: 'maine', countySlug: 'piscataquis', expectedCity: 'Dover-Foxcroft' },
+  { stateSlug: 'hawaii', countySlug: 'honolulu', expectedCity: 'Honolulu' },
+  { stateSlug: 'hawaii', countySlug: 'hawaii', expectedCity: 'Hilo' },
+  { stateSlug: 'hawaii', countySlug: 'maui', expectedCity: 'Wailuku' },
+  { stateSlug: 'hawaii', countySlug: 'kauai', expectedCity: 'Lihue' },
+  { stateSlug: 'hawaii', countySlug: 'kalawao', expectedCity: 'Kalaupapa' },
 ];
 
 let totalIssues = 0;
