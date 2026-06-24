@@ -195,6 +195,16 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'schuyler',
   'brown',
   'henderson',
+  'edwards',
+  'putnam',
+  'stark',
+  'scott',
+  'pulaski',
+  'gallatin',
+  'alexander',
+  'calhoun',
+  'pope',
+  'hardin',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([

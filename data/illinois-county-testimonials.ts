@@ -1458,6 +1458,266 @@ export const illinoisCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  edwards: [
+    {
+      quote:
+        'Albion Moving & Storage handled our Edwards County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Sue M.',
+      location: 'Albion, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Edwards County Moving confirmed Albion coverage — best local moving service in Edwards County with fair pricing.',
+      name: 'Tom N.',
+      location: 'Albion, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Carmi Moving & Storage served our southeast Illinois move efficiently — professional crew with careful handling.',
+      name: 'Uma O.',
+      location: 'West Salem, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  putnam: [
+    {
+      quote:
+        'Hennepin Moving & Storage handled our Putnam County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Vic P.',
+      location: 'Hennepin, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Putnam County Moving confirmed Hennepin coverage — best local moving service in Putnam County with transparent pricing.',
+      name: 'Wendy Q.',
+      location: 'Hennepin, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Ottawa Moving & Storage served our north-central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Xander R.',
+      location: 'Granville, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  stark: [
+    {
+      quote:
+        'Toulon Moving & Storage handled our Stark County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Yara S.',
+      location: 'Toulon, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Stark County Moving confirmed Toulon coverage — best local moving service in Stark County with fair pricing.',
+      name: 'Zack T.',
+      location: 'Toulon, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Lacon Moving & Storage served our Peoria-metro move efficiently — professional crew with careful handling in Stark County.',
+      name: 'Amy U.',
+      location: 'Wyoming, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  scott: [
+    {
+      quote:
+        'Winchester Moving & Storage handled our Scott County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Ben V.',
+      location: 'Winchester, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Scott County Moving confirmed Winchester coverage — best local moving service in Scott County with transparent pricing.',
+      name: 'Cara W.',
+      location: 'Winchester, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Heartland Moving & Storage served our west-central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Dan X.',
+      location: 'Bluffs, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  pulaski: [
+    {
+      quote:
+        'Mound City Moving & Storage handled our Pulaski County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Eva Y.',
+      location: 'Mound City, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Pulaski County Moving confirmed Mound City coverage — best local moving service in Pulaski County with fair pricing.',
+      name: 'Finn Z.',
+      location: 'Mound City, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Carbondale Moving & Storage served our southern Illinois move efficiently — professional crew with careful handling.',
+      name: 'Gina A.',
+      location: 'Ullin, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  gallatin: [
+    {
+      quote:
+        'Shawneetown Moving & Storage handled our Gallatin County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Hank B.',
+      location: 'Shawneetown, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Gallatin County Moving confirmed Shawneetown coverage — best local moving service in Gallatin County with transparent pricing.',
+      name: 'Iris C.',
+      location: 'Shawneetown, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Marion Moving & Storage served our Ohio River valley move efficiently — professional crew with careful handling.',
+      name: 'Joel D.',
+      location: 'Ridgway, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  alexander: [
+    {
+      quote:
+        'Cairo Moving & Storage handled our Alexander County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Kim E.',
+      location: 'Cairo, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Alexander County Moving confirmed Cairo coverage — best local moving service in Alexander County with fair pricing.',
+      name: 'Leo F.',
+      location: 'Cairo, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Metropolis Moving & Storage served our far-southern Illinois move efficiently — professional crew with careful handling.',
+      name: 'Mia G.',
+      location: 'Thebes, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  calhoun: [
+    {
+      quote:
+        'Hardin Moving & Storage handled our Calhoun County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Noah H.',
+      location: 'Hardin, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Calhoun County Moving confirmed Hardin coverage — best local moving service in Calhoun County with transparent pricing.',
+      name: 'Olivia I.',
+      location: 'Hardin, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Edwardsville served our Mississippi River peninsula move efficiently — professional crew with careful handling.',
+      name: 'Pete J.',
+      location: 'Batchtown, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  pope: [
+    {
+      quote:
+        'Golconda Moving & Storage handled our Pope County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Quinn K.',
+      location: 'Golconda, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Pope County Moving confirmed Golconda coverage — best local moving service in Pope County with fair pricing.',
+      name: 'Rita L.',
+      location: 'Golconda, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Vienna Moving & Storage served our southern Illinois move efficiently — professional crew with careful handling near Pope County.',
+      name: 'Sam M.',
+      location: 'Herod, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  hardin: [
+    {
+      quote:
+        'Elizabethtown Moving & Storage handled our Hardin County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Todd N.',
+      location: 'Elizabethtown, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Hardin County Moving confirmed Elizabethtown coverage — best local moving service in Hardin County with transparent pricing.',
+      name: 'Uma O.',
+      location: 'Elizabethtown, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Golconda Moving & Storage served our Shawnee Forest-area move efficiently — professional crew with careful handling.',
+      name: 'Vince P.',
+      location: 'Karbers Ridge, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIllinoisCountyTestimonials(

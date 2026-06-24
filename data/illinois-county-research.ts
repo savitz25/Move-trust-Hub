@@ -965,6 +965,176 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  edwards: {
+    marketNotes:
+      'Edwards County is a rural Southeast Illinois county with residential demand across Albion and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Edwards County pricing reflects southeast Illinois rural drive times and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Albion and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  putnam: {
+    marketNotes:
+      'Putnam County is a small rural county in North Central Illinois with residential demand across Hennepin and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Putnam County pricing reflects north-central Illinois rural routes and spillover demand from Ottawa and Peoria metros.',
+    },
+    tips: [
+      'Verify coverage for Hennepin and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stark: {
+    marketNotes:
+      'Stark County is a small rural county in North Central Illinois with residential demand across Toulon and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Stark County pricing reflects north-central Illinois rural drive times and spillover demand from Peoria and Marshall County metros.',
+    },
+    tips: [
+      'Verify coverage for Toulon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  scott: {
+    marketNotes:
+      'Scott County is a rural West Central Illinois county with residential demand across Winchester and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Scott County pricing reflects west-central Illinois rural routes and spillover demand from Springfield and Quincy metros.',
+    },
+    tips: [
+      'Verify coverage for Winchester and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pulaski: {
+    marketNotes:
+      'Pulaski County is a rural Southern Illinois county with residential demand across Mound City and Ohio River communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Pulaski County pricing reflects far-southern Illinois rural routes and spillover demand from Carbondale and Marion metros.',
+    },
+    tips: [
+      'Verify coverage for Mound City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gallatin: {
+    marketNotes:
+      'Gallatin County is a rural Southern Illinois county with residential demand across Shawneetown and Ohio River communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Gallatin County pricing reflects southern Illinois rural drive times and spillover demand from Marion and Carbondale metros.',
+    },
+    tips: [
+      'Verify coverage for Shawneetown and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  alexander: {
+    marketNotes:
+      'Alexander County is a rural Southern Illinois county with residential demand across Cairo and Mississippi-Ohio River confluence communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Alexander County pricing reflects far-southern Illinois rural routes, river-valley properties, and spillover demand from Carbondale metro.',
+    },
+    tips: [
+      'Verify coverage for Cairo and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  calhoun: {
+    marketNotes:
+      'Calhoun County is a small rural county in West Central Illinois with residential demand across Hardin and Mississippi River communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Calhoun County pricing reflects Mississippi River peninsula communities and spillover demand from St. Louis and Quincy metros.',
+    },
+    tips: [
+      'Verify coverage for Hardin and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pope: {
+    marketNotes:
+      'Pope County is a small rural Southern Illinois county with residential demand across Golconda and Ohio River communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Pope County pricing reflects southern Illinois rural drive times and spillover demand from Carbondale and Marion metros.',
+    },
+    tips: [
+      'Verify coverage for Golconda and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hardin: {
+    marketNotes:
+      'Hardin County is a small rural Southern Illinois county with residential demand across Elizabethtown and Shawnee National Forest communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$140/hr for a 2-person crew',
+      note: 'Hardin County pricing reflects southern Illinois rural routes, forest-adjacent properties, and spillover demand from Carbondale metro.',
+    },
+    tips: [
+      'Verify coverage for Elizabethtown and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

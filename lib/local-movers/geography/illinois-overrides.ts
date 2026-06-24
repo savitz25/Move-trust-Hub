@@ -60,6 +60,16 @@ export const illinoisCountyOverrides: Partial<
   schuyler: { seat: 'Rushville', metro: 'quincy-metro-il' },
   brown: { seat: 'Mount Sterling', metro: 'quincy-metro-il' },
   henderson: { seat: 'Oquawka', metro: 'quad-cities-metro-il' },
+  edwards: { seat: 'Albion', metro: 'marion-metro-il' },
+  putnam: { seat: 'Hennepin', metro: 'ottawa-metro-il' },
+  stark: { seat: 'Toulon', metro: 'peoria-metro-il' },
+  scott: { seat: 'Winchester', metro: 'springfield-metro-il' },
+  pulaski: { seat: 'Mound City', metro: 'carbondale-metro-il' },
+  gallatin: { seat: 'Shawneetown', metro: 'marion-metro-il' },
+  alexander: { seat: 'Cairo', metro: 'carbondale-metro-il' },
+  calhoun: { seat: 'Hardin', metro: 'st-louis-metro-il' },
+  pope: { seat: 'Golconda', metro: 'carbondale-metro-il' },
+  hardin: { seat: 'Elizabethtown', metro: 'carbondale-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {
