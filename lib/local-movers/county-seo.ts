@@ -179,7 +179,7 @@ export function buildStateDescription(
     return `Find curated local movers in all 5 Hawaii counties — up to 10 ranked companies on Oahu (Honolulu) and Maui, 6–10 island specialists on Kauai and Hawaii Island (Big Island), experienced with inter-island shipping, military relocations, and mainland-to-Hawaii long-distance moves. FMCSA licensing, county cost guides, and Hawaii-specific island moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Alaska') {
-    return `Find curated local movers in Alaska’s 5 major population centers — 10 ranked companies each in Anchorage Municipality, Matanuska-Susitna, Fairbanks North Star, Kenai Peninsula, and Juneau. FMCSA licensing, borough cost guides, and Alaska-specific moving tips for ${SEO_YEAR}. Remote boroughs and census areas use generated listings. Use our free moving calculator and interstate directory.`;
+    return `Find curated local movers across all 29 Alaska boroughs — up to 10 ranked companies in Anchorage Municipality, 8–10 in Fairbanks North Star and Matanuska-Susitna, and 5+ regional specialists statewide experienced with military PCS, oil & gas relocations, harsh winters, remote logistics, and Lower 48 long-distance moves via Washington. FMCSA licensing, borough cost guides, and Alaska-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =

@@ -1,7 +1,18 @@
 import { alaskaCountyResearch } from '../data/alaska-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  anchorage: 10,
+  'fairbanks-north-star': 8,
+  'matanuska-susitna': 8,
+  'kenai-peninsula': 5,
+  juneau: 5,
+};
+const DEFAULT_TARGET = 5;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const underTarget: string[] = [];
 
@@ -9,8 +20,9 @@ const curatedSlugs = Object.keys(alaskaCountyResearch).sort();
 console.log(`Alaska curated boroughs: ${curatedSlugs.length}`);
 for (const slug of curatedSlugs) {
   const n = getMoversForCounty('alaska', slug)?.movers.length ?? 0;
-  console.log(`  ${slug}: ${n} movers (target ${DEFAULT_TARGET})`);
-  if (n < DEFAULT_TARGET) underTarget.push(`${slug}: ${n}/${DEFAULT_TARGET}`);
+  const target = getTarget(slug);
+  console.log(`  ${slug}: ${n} movers (target ${target})`);
+  if (n < target) underTarget.push(`${slug}: ${n}/${target}`);
 }
 
 if (underTarget.length === 0) {

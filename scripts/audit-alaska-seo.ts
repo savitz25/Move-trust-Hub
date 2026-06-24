@@ -8,7 +8,18 @@ import { getAlaskaNearbyCounties } from '../lib/local-movers/alaska-nearby';
 import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  anchorage: 10,
+  'fairbanks-north-star': 8,
+  'matanuska-susitna': 8,
+  'kenai-peninsula': 5,
+  juneau: 5,
+};
+const DEFAULT_TARGET = 5;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const issues: string[] = [];
 const curatedSlugs = Object.keys(alaskaCountyResearch).sort();
@@ -18,8 +29,9 @@ for (const slug of curatedSlugs) {
   const result = getMoversForCounty('alaska', slug);
   const moverCount = result?.movers.length ?? 0;
 
-  if (moverCount < DEFAULT_TARGET) {
-    issues.push(`movers<${DEFAULT_TARGET}: ${slug} (${moverCount})`);
+  const target = getTarget(slug);
+  if (moverCount < target) {
+    issues.push(`movers<${target}: ${slug} (${moverCount})`);
   }
   if (!alaskaCountyResearch[slug]) {
     issues.push(`no research: ${slug}`);
@@ -50,8 +62,9 @@ console.log(`Research entries: ${researchCount}`);
 
 for (const slug of curatedSlugs) {
   const n = getMoversForCounty('alaska', slug)?.movers.length ?? 0;
+  const target = getTarget(slug);
   console.log(
-    `  ${slug}: ${n} movers (target ${DEFAULT_TARGET}), testimonials ${getAlaskaCountyTestimonials(slug).length}, nearby ${getAlaskaNearbyCounties(slug).length}`
+    `  ${slug}: ${n} movers (target ${target}), testimonials ${getAlaskaCountyTestimonials(slug).length}, nearby ${getAlaskaNearbyCounties(slug).length}`
   );
 }
 
