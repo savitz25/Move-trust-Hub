@@ -484,6 +484,261 @@ export const kentuckyCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  graves: {
+    marketNotes:
+      'Graves County is a key Western Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Graves County pricing reflects Mayfield regional demand, Purchase area relocation volume, and competition among Western Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Mayfield and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  greenup: {
+    marketNotes:
+      'Greenup County is a key Northeast Kentucky county with industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Greenup County pricing reflects tri-state industrial corridor demand, Ohio River valley traffic, and competition among Northeast Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Greenup and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  floyd: {
+    marketNotes:
+      'Floyd County is a key Eastern Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Floyd County pricing reflects Prestonsburg regional demand, Big Sandy corridor traffic, and competition among Eastern Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Prestonsburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boyle: {
+    marketNotes:
+      'Boyle County is a key Central Kentucky county with strong educational and residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Boyle County pricing reflects Danville regional demand, Centre College area relocation volume, and competition among Central Kentucky full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Danville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marshall: {
+    marketNotes:
+      'Marshall County is a key Western Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Marshall County pricing reflects Benton regional demand, Kentucky lakes area relocation volume, and competition among Western Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Benton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  meade: {
+    marketNotes:
+      'Meade County is a suburban county in the Louisville metropolitan area with residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Meade County pricing reflects Louisville-metro west suburban demand, Ohio River corridor traffic, and competition among Louisville-area local agents.',
+    },
+    tips: [
+      'Verify coverage for Brandenburg and surrounding areas before booking.',
+      'Louisville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  muhlenberg: {
+    marketNotes:
+      'Muhlenberg County is a rural Western Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Muhlenberg County pricing reflects Greenville regional demand, Pennyrile Parkway corridor traffic, and competition among rural Western Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Greenville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  knox: {
+    marketNotes:
+      'Knox County is a rural Southeast Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Knox County pricing reflects Barbourville regional demand, Cumberland Valley corridor traffic, and competition among rural Southeast Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Barbourville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County is a rural South Central Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Logan County pricing reflects Russellville regional demand, Pennyrile south corridor traffic, and competition among South Central Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Russellville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  montgomery: {
+    marketNotes:
+      'Montgomery County is a key Eastern Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Montgomery County pricing reflects Mount Sterling regional demand, I-64 corridor traffic, and competition among Eastern Bluegrass local agents.',
+    },
+    tips: [
+      'Verify coverage for Mount Sterling and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  woodford: {
+    marketNotes:
+      'Woodford County is an affluent suburban county west of Lexington with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Woodford County pricing reflects Lexington-metro west suburban demand, Versailles thoroughbred country relocation volume, and competition among Bluegrass-area local agents.',
+    },
+    tips: [
+      'Verify coverage for Versailles and surrounding areas before booking.',
+      'Lexington-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grayson: {
+    marketNotes:
+      'Grayson County is a rural Western Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Grayson County pricing reflects Leitchfield regional demand, cave country corridor traffic, and competition among rural Western Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Leitchfield and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  taylor: {
+    marketNotes:
+      'Taylor County is a rural Central Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Taylor County pricing reflects Campbellsville regional demand, Green River corridor traffic, and competition among South Central Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Campbellsville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County is a suburban/rural county in Northern Kentucky with residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Williamstown regional demand, I-71 corridor traffic, and competition among Northern Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Williamstown and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  perry: {
+    marketNotes:
+      'Perry County is a key Eastern Kentucky county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Perry County pricing reflects Hazard regional demand, mountain corridor traffic, and competition among Eastern Kentucky local agents.',
+    },
+    tips: [
+      'Verify coverage for Hazard and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getKentuckyCountyResearch(

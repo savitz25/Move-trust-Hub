@@ -579,6 +579,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: calloway, expectedCity: 'Murray' },
   { stateSlug: 'kentucky', countySlug: clark, expectedCity: 'Winchester' },
   { stateSlug: 'kentucky', countySlug: whitley, expectedCity: 'Williamsburg' },
+  { stateSlug: 'kentucky', countySlug: graves, expectedCity: 'Mayfield' },
+  { stateSlug: 'kentucky', countySlug: greenup, expectedCity: 'Greenup' },
+  { stateSlug: 'kentucky', countySlug: floyd, expectedCity: 'Prestonsburg' },
+  { stateSlug: 'kentucky', countySlug: boyle, expectedCity: 'Danville' },
+  { stateSlug: 'kentucky', countySlug: marshall, expectedCity: 'Benton' },
+  { stateSlug: 'kentucky', countySlug: meade, expectedCity: 'Brandenburg' },
+  { stateSlug: 'kentucky', countySlug: muhlenberg, expectedCity: 'Greenville' },
+  { stateSlug: 'kentucky', countySlug: knox, expectedCity: 'Barbourville' },
+  { stateSlug: 'kentucky', countySlug: logan, expectedCity: 'Russellville' },
+  { stateSlug: 'kentucky', countySlug: montgomery, expectedCity: 'Mount Sterling' },
+  { stateSlug: 'kentucky', countySlug: woodford, expectedCity: 'Versailles' },
+  { stateSlug: 'kentucky', countySlug: grayson, expectedCity: 'Leitchfield' },
+  { stateSlug: 'kentucky', countySlug: taylor, expectedCity: 'Campbellsville' },
+  { stateSlug: 'kentucky', countySlug: grant, expectedCity: 'Williamstown' },
+  { stateSlug: 'kentucky', countySlug: perry, expectedCity: 'Hazard' },
 ];
 
 let totalIssues = 0;

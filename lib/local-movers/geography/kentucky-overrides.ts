@@ -32,6 +32,21 @@ export const kentuckyCountyOverrides: Partial<
   calloway: { seat: 'Murray', metro: 'murray-metro-ky' },
   clark: { seat: 'Winchester', metro: 'lexington-metro-ky' },
   whitley: { seat: 'Williamsburg', metro: 'williamsburg-metro-ky' },
+  graves: { seat: 'Mayfield', metro: 'mayfield-metro-ky' },
+  greenup: { seat: 'Greenup', metro: 'greenup-metro-ky' },
+  floyd: { seat: 'Prestonsburg', metro: 'prestonsburg-metro-ky' },
+  boyle: { seat: 'Danville', metro: 'danville-metro-ky' },
+  marshall: { seat: 'Benton', metro: 'benton-metro-ky' },
+  meade: { seat: 'Brandenburg', metro: 'louisville-metro-ky' },
+  muhlenberg: { seat: 'Greenville', metro: 'greenville-metro-ky' },
+  knox: { seat: 'Barbourville', metro: 'barbourville-metro-ky' },
+  logan: { seat: 'Russellville', metro: 'russellville-metro-ky' },
+  montgomery: { seat: 'Mount Sterling', metro: 'mount-sterling-metro-ky' },
+  woodford: { seat: 'Versailles', metro: 'lexington-metro-ky' },
+  grayson: { seat: 'Leitchfield', metro: 'leitchfield-metro-ky' },
+  taylor: { seat: 'Campbellsville', metro: 'campbellsville-metro-ky' },
+  grant: { seat: 'Williamstown', metro: 'williamstown-metro-ky' },
+  perry: { seat: 'Hazard', metro: 'hazard-metro-ky' },
 };
 
 export function applyKentuckyCountyOverrides(county: LocalCounty): LocalCounty {

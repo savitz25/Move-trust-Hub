@@ -39,6 +39,21 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   calloway: ['marshall', 'graves', 'henry', 'trigg', 'lyon', 'mccracken'],
   clark: ['fayette', 'bourbon', 'powell', 'estill', 'madison', 'montgomery'],
   whitley: ['laurel', 'knox', 'bell', 'mccreary', 'wayne', 'clinton'],
+  graves: ['mccracken', 'calloway', 'marshall', 'hickman', 'carlisle', 'ballard'],
+  greenup: ['boyd', 'carter', 'lewis', 'lawrence', 'elliott', 'rowan'],
+  floyd: ['pike', 'johnson', 'martin', 'knott', 'magoffin', 'lawrence'],
+  boyle: ['mercer', 'lincoln', 'casey', 'garrard', 'marion', 'taylor'],
+  marshall: ['mccracken', 'graves', 'calloway', 'livingston', 'lyon', 'trigg'],
+  meade: ['hardin', 'breckinridge', 'hancock', 'bullitt', 'jefferson', 'larue'],
+  muhlenberg: ['hopkins', 'christian', 'todd', 'logan', 'butler', 'mclean'],
+  knox: ['laurel', 'whitley', 'bell', 'harlan', 'clay', 'rockcastle'],
+  logan: ['simpson', 'warren', 'butler', 'muhlenberg', 'todd', 'christian'],
+  montgomery: ['clark', 'bourbon', 'bath', 'powell', 'menifee', 'rowan'],
+  woodford: ['fayette', 'franklin', 'scott', 'anderson', 'jessamine', 'mercer'],
+  grayson: ['hardin', 'breckinridge', 'hancock', 'edmonson', 'hart', 'ohio'],
+  taylor: ['marion', 'casey', 'green', 'larue', 'adair', 'russell'],
+  grant: ['boone', 'pendleton', 'owen', 'scott', 'harrison', 'kenton'],
+  perry: ['knott', 'leslie', 'harlan', 'breathitt', 'clay', 'floyd'],
 };
 
 export function getKentuckyNearbyCounties(
