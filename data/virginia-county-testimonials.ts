@@ -1302,6 +1302,396 @@ export const virginiaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Apartment',
     },
   ],
+  botetourt: [
+    {
+      quote:
+        'Two Men and a Truck Botetourt handled our Fincastle relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Dana D.',
+      location: 'Fincastle, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Roanoke Valley Moving confirmed Botetourt coverage — best local moving service with fair pricing.',
+      name: 'Evan E.',
+      location: 'Fincastle, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Blue Ridge East Moving served our Daleville area move efficiently — professional crew with careful handling.',
+      name: 'Faye F.',
+      location: 'Fincastle, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  accomack: [
+    {
+      quote:
+        'Two Men and a Truck Accomack handled our Eastern Shore relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Gabe G.',
+      location: 'Accomac, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Eastern Shore Moving confirmed Accomack County coverage — best local moving service with fair pricing.',
+      name: 'Hope H.',
+      location: 'Accomac, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Chesapeake Bay Moving served our Onancock area move efficiently — professional crew with careful coastal handling.',
+      name: 'Ivy I.',
+      location: 'Accomac, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  pulaski: [
+    {
+      quote:
+        'Two Men and a Truck Pulaski handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Jace J.',
+      location: 'Pulaski, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'New River Valley Moving confirmed Pulaski County coverage — best local moving service with fair pricing.',
+      name: 'Kara K.',
+      location: 'Pulaski, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Southwest Piedmont Moving served our Dublin area move efficiently — professional crew with careful mountain handling.',
+      name: 'Liam L.',
+      location: 'Pulaski, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  petersburg: [
+    {
+      quote:
+        'Two Men and a Truck Petersburg handled our city relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Mila M.',
+      location: 'Petersburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond South Moving confirmed Petersburg coverage — best local moving service with fair pricing.',
+      name: 'Nash N.',
+      location: 'Petersburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Appomattox River Moving served our historic district move efficiently — professional crew with careful handling.',
+      name: 'Olive O.',
+      location: 'Petersburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  halifax: [
+    {
+      quote:
+        'Two Men and a Truck Halifax handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Pete P.',
+      location: 'Halifax, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Southside Virginia Moving confirmed Halifax County coverage — best local moving service with fair pricing.',
+      name: 'Quin Q.',
+      location: 'Halifax, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Banister River Moving served our South Boston area move efficiently — professional crew with careful handling.',
+      name: 'Rosa R.',
+      location: 'Halifax, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  powhatan: [
+    {
+      quote:
+        'Two Men and a Truck Powhatan handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Seth S.',
+      location: 'Powhatan, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond West Moving confirmed Powhatan County coverage — best local moving service with fair pricing.',
+      name: 'Tess T.',
+      location: 'Powhatan, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'James River West Moving served our western Powhatan move efficiently — professional crew with careful handling.',
+      name: 'Uma U.',
+      location: 'Powhatan, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  amherst: [
+    {
+      quote:
+        'Two Men and a Truck Amherst handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Vic V.',
+      location: 'Amherst, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Lynchburg Area Moving confirmed Amherst County coverage — best local moving service with fair pricing.',
+      name: 'Wren W.',
+      location: 'Amherst, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Blue Ridge Foothills Moving served our Madison Heights move efficiently — professional crew with careful hillside handling.',
+      name: 'Xavi X.',
+      location: 'Amherst, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  fredericksburg: [
+    {
+      quote:
+        'Two Men and a Truck Fredericksburg handled our city relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Yael Y.',
+      location: 'Fredericksburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'I-95 Corridor Moving confirmed Fredericksburg coverage — best local moving service with fair pricing.',
+      name: 'Zara Z.',
+      location: 'Fredericksburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Historic Fredericksburg Moving served our Old Town move efficiently — professional crew with careful handling.',
+      name: 'Aiden A.',
+      location: 'Fredericksburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  mecklenburg: [
+    {
+      quote:
+        'Two Men and a Truck Mecklenburg handled our Boydton relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Bria B.',
+      location: 'Boydton, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Lake Country Moving confirmed Mecklenburg County coverage — best local moving service with fair pricing.',
+      name: 'Cade C.',
+      location: 'Boydton, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Southside Lakes Moving served our Clarksville area move efficiently — professional crew with careful lakefront handling.',
+      name: 'Demi D.',
+      location: 'Boydton, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'king-george': [
+    {
+      quote:
+        'Two Men and a Truck King George handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Eli E.',
+      location: 'King George, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Northern Neck Moving confirmed King George County coverage — best local moving service with fair pricing.',
+      name: 'Fern F.',
+      location: 'King George, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Potomac River Moving served our Dahlgren area move efficiently — professional crew with careful handling.',
+      name: 'Glen G.',
+      location: 'King George, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  goochland: [
+    {
+      quote:
+        'Two Men and a Truck Goochland handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Hana H.',
+      location: 'Goochland, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond West Moving confirmed Goochland County coverage — best local moving service with fair pricing.',
+      name: 'Ivan I.',
+      location: 'Goochland, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'James River Corridor Moving served our Manakin-Sabot move efficiently — professional crew with careful estate handling.',
+      name: 'Jade J.',
+      location: 'Goochland, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  carroll: [
+    {
+      quote:
+        'Two Men and a Truck Carroll handled our Hillsville relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Kian K.',
+      location: 'Hillsville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Blue Ridge Highlands Moving confirmed Carroll County coverage — best local moving service with fair pricing.',
+      name: 'Lila L.',
+      location: 'Hillsville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Floyd Carroll Moving served our Galax area move efficiently — professional crew with careful mountain handling.',
+      name: 'Mack M.',
+      location: 'Hillsville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  fluvanna: [
+    {
+      quote:
+        'Two Men and a Truck Fluvanna handled our Palmyra relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Nell N.',
+      location: 'Palmyra, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Central Virginia Moving confirmed Fluvanna County coverage — best local moving service with fair pricing.',
+      name: 'Omar O.',
+      location: 'Palmyra, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'James River East Moving served our Lake Monticello move efficiently — professional crew with careful handling.',
+      name: 'Pia P.',
+      location: 'Palmyra, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  dinwiddie: [
+    {
+      quote:
+        'Two Men and a Truck Dinwiddie handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Reed R.',
+      location: 'Dinwiddie, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond South Moving confirmed Dinwiddie County coverage — best local moving service with fair pricing.',
+      name: 'Sage S.',
+      location: 'Dinwiddie, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'I-85 Corridor Moving served our southern Dinwiddie move efficiently — professional crew with careful rural handling.',
+      name: 'Troy T.',
+      location: 'Dinwiddie, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'new-kent': [
+    {
+      quote:
+        'Two Men and a Truck New Kent handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Una U.',
+      location: 'New Kent, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond East Moving confirmed New Kent County coverage — best local moving service with fair pricing.',
+      name: 'Vale V.',
+      location: 'New Kent, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Colonial Corridor Moving served our Quinton area move efficiently — professional crew with careful handling.',
+      name: 'Wade W.',
+      location: 'New Kent, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getVirginiaCountyTestimonials(

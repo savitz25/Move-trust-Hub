@@ -784,6 +784,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'virginia', countySlug: 'tazewell', expectedCity: 'Tazewell' },
   { stateSlug: 'virginia', countySlug: 'caroline', expectedCity: 'Bowling Green' },
   { stateSlug: 'virginia', countySlug: 'wise', expectedCity: 'Wise' },
+  { stateSlug: 'virginia', countySlug: 'botetourt', expectedCity: 'Fincastle' },
+  { stateSlug: 'virginia', countySlug: 'accomack', expectedCity: 'Accomac' },
+  { stateSlug: 'virginia', countySlug: 'pulaski', expectedCity: 'Pulaski' },
+  { stateSlug: 'virginia', countySlug: 'petersburg', expectedCity: 'Petersburg' },
+  { stateSlug: 'virginia', countySlug: 'halifax', expectedCity: 'Halifax' },
+  { stateSlug: 'virginia', countySlug: 'powhatan', expectedCity: 'Powhatan' },
+  { stateSlug: 'virginia', countySlug: 'amherst', expectedCity: 'Amherst' },
+  { stateSlug: 'virginia', countySlug: 'fredericksburg', expectedCity: 'Fredericksburg' },
+  { stateSlug: 'virginia', countySlug: 'mecklenburg', expectedCity: 'Boydton' },
+  { stateSlug: 'virginia', countySlug: 'king-george', expectedCity: 'King George' },
+  { stateSlug: 'virginia', countySlug: 'goochland', expectedCity: 'Goochland' },
+  { stateSlug: 'virginia', countySlug: 'carroll', expectedCity: 'Hillsville' },
+  { stateSlug: 'virginia', countySlug: 'fluvanna', expectedCity: 'Palmyra' },
+  { stateSlug: 'virginia', countySlug: 'dinwiddie', expectedCity: 'Dinwiddie' },
+  { stateSlug: 'virginia', countySlug: 'new-kent', expectedCity: 'New Kent' },
 ];
 
 let totalIssues = 0;

@@ -232,6 +232,21 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
   'tazewell',
   'caroline',
   'wise',
+  'botetourt',
+  'accomack',
+  'pulaski',
+  'petersburg',
+  'halifax',
+  'powhatan',
+  'amherst',
+  'fredericksburg',
+  'mecklenburg',
+  'king-george',
+  'goochland',
+  'carroll',
+  'fluvanna',
+  'dinwiddie',
+  'new-kent',
 ]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */

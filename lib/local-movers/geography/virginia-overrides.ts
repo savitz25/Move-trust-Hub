@@ -54,6 +54,21 @@ export const virginiaCountyOverrides: Partial<
   tazewell: { seat: 'Tazewell', metro: 'tazewell-metro-va' },
   caroline: { seat: 'Bowling Green', metro: 'caroline-metro-va' },
   wise: { seat: 'Wise', metro: 'wise-metro-va' },
+  botetourt: { seat: 'Fincastle', metro: 'botetourt-metro-va' },
+  accomack: { seat: 'Accomac', metro: 'accomack-metro-va' },
+  pulaski: { seat: 'Pulaski', metro: 'pulaski-metro-va' },
+  petersburg: { seat: 'Petersburg', metro: 'petersburg-metro-va' },
+  halifax: { seat: 'Halifax', metro: 'halifax-metro-va' },
+  powhatan: { seat: 'Powhatan', metro: 'powhatan-metro-va' },
+  amherst: { seat: 'Amherst', metro: 'amherst-metro-va' },
+  fredericksburg: { seat: 'Fredericksburg', metro: 'fredericksburg-metro-va' },
+  mecklenburg: { seat: 'Boydton', metro: 'mecklenburg-metro-va' },
+  'king-george': { seat: 'King George', metro: 'king-george-metro-va' },
+  goochland: { seat: 'Goochland', metro: 'goochland-metro-va' },
+  carroll: { seat: 'Hillsville', metro: 'carroll-metro-va' },
+  fluvanna: { seat: 'Palmyra', metro: 'fluvanna-metro-va' },
+  dinwiddie: { seat: 'Dinwiddie', metro: 'dinwiddie-metro-va' },
+  'new-kent': { seat: 'New Kent', metro: 'new-kent-metro-va' },
 };
 
 /** Duplicate FIPS slugs disambiguated by generated metro region */

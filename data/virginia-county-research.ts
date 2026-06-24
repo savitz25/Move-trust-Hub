@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Virginia county research — batches 1–6 large markets */
+/** Hand-curated Virginia county research — batches 1–7 large markets */
 export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
   fairfax: {
     marketNotes:
@@ -854,6 +854,261 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Wise and surrounding county areas before booking.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  botetourt: {
+    marketNotes:
+      'Botetourt County is a suburban/rural county in the Roanoke Valley with residential demand centered on Fincastle.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Botetourt County pricing reflects Roanoke Valley suburban demand, Blue Ridge geography, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Fincastle and surrounding Botetourt areas before booking.',
+      'Roanoke-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  accomack: {
+    marketNotes:
+      'Accomack County is a rural Eastern Shore county with residential and tourism demand across coastal communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Accomack County pricing reflects Eastern Shore isolation, seasonal tourism volume, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Accomac and surrounding Eastern Shore areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and waterfront homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pulaski: {
+    marketNotes:
+      'Pulaski County is a rural Southwest Virginia county with residential demand centered on Pulaski and the New River Valley.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Pulaski County pricing reflects New River Valley geography, rural property access, and competition among Southwest Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Pulaski and surrounding county areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  petersburg: {
+    marketNotes:
+      'Petersburg is an independent city with historical significance and residential demand in the Richmond metro south corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Petersburg pricing reflects Tri-Cities corridor demand, historic district relocations, and competition among Richmond-metro full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Petersburg and surrounding Richmond-south areas before booking.',
+      'Richmond-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value historic and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  halifax: {
+    marketNotes:
+      'Halifax County is a rural South Central Virginia county with residential demand centered on Halifax and South Boston.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Halifax County pricing reflects Southside Virginia geography, rural property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Halifax and surrounding county areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  powhatan: {
+    marketNotes:
+      'Powhatan County is a suburban/rural county west of Richmond with residential demand across growing western suburbs.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Powhatan County pricing reflects Richmond-metro west corridor demand, suburban estate relocations, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Powhatan and surrounding Richmond-west areas before booking.',
+      'Richmond-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  amherst: {
+    marketNotes:
+      'Amherst County is a rural Central Virginia county with residential demand centered on Amherst and the Lynchburg metro.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Amherst County pricing reflects Lynchburg-metro collar demand, Blue Ridge foothills geography, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Amherst and surrounding Lynchburg-area communities before booking.',
+      'Lynchburg-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fredericksburg: {
+    marketNotes:
+      'Fredericksburg is an independent city with strong historical, residential, and commercial demand along the I-95 corridor.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Fredericksburg pricing reflects I-95 corridor suburban demand, historic district relocations, and competition among Northern Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Fredericksburg and surrounding I-95 corridor areas before booking.',
+      'I-95 traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value historic and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mecklenburg: {
+    marketNotes:
+      'Mecklenburg County is a rural South Central Virginia county with residential demand centered on Boydton and Kerr Lake.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Mecklenburg County pricing reflects lake-country geography, rural property access, and competition among Southside Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Boydton and surrounding Mecklenburg areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and lakefront homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'king-george': {
+    marketNotes:
+      'King George County is a suburban/rural county in Northern Virginia with residential demand along the Potomac River.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'King George County pricing reflects Northern Virginia fringe demand, naval facility adjacency, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for King George and surrounding Northern Virginia areas before booking.',
+      'Northern Virginia traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  goochland: {
+    marketNotes:
+      'Goochland County is a suburban/rural county west of Richmond with residential demand across western metro suburbs.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Goochland County pricing reflects Richmond-metro west corridor demand, estate and suburban relocations, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Goochland and surrounding Richmond-west areas before booking.',
+      'Richmond-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County is a rural Southwest Virginia county with residential demand centered on Hillsville and the Blue Ridge highlands.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects Blue Ridge highlands geography, rural property access, and competition among Southwest Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Hillsville and surrounding Carroll County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fluvanna: {
+    marketNotes:
+      'Fluvanna County is a rural Central Virginia county with residential demand centered on Palmyra and Lake Monticello.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Fluvanna County pricing reflects Central Virginia geography, lakefront property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Palmyra and surrounding Fluvanna areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and lakefront homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dinwiddie: {
+    marketNotes:
+      'Dinwiddie County is a suburban/rural county south of Richmond with residential demand across the Tri-Cities corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Dinwiddie County pricing reflects Richmond-metro south corridor demand, rural property access, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Dinwiddie and surrounding Richmond-south areas before booking.',
+      'Richmond-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'new-kent': {
+    marketNotes:
+      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
+      'Richmond-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
