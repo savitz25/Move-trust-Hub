@@ -181,7 +181,13 @@ const OH_HIGH_TRAFFIC_COUNTIES = new Set([
 ]);
 
 /** High-traffic VA counties — sitemap priority 0.85 (batch 1 large markets) */
-const VA_HIGH_TRAFFIC_COUNTIES = new Set(['fairfax']);
+const VA_HIGH_TRAFFIC_COUNTIES = new Set([
+  'fairfax',
+  'prince-william',
+  'loudoun',
+  'virginia-beach',
+  'chesterfield',
+]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */
 const WV_HIGH_TRAFFIC_COUNTIES = new Set([

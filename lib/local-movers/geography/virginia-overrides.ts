@@ -5,6 +5,10 @@ export const virginiaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro' | 'name'>>
 > = {
   fairfax: { seat: 'Fairfax', metro: 'northern-virginia-metro-va', name: 'Fairfax' },
+  'prince-william': { seat: 'Manassas', metro: 'prince-william-metro-va' },
+  loudoun: { seat: 'Leesburg', metro: 'loudoun-metro-va' },
+  'virginia-beach': { seat: 'Virginia Beach', metro: 'virginia-beach-metro-va' },
+  chesterfield: { seat: 'Chesterfield', metro: 'chesterfield-metro-va' },
 };
 
 /** Fairfax County and Fairfax City both slugify to "fairfax" in generated data */

@@ -20,6 +20,36 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'fairfax-city',
     'fauquier',
   ],
+  'prince-william': [
+    'fairfax',
+    'loudoun',
+    'fauquier',
+    'stafford',
+    'arlington',
+    'fairfax-city',
+  ],
+  loudoun: [
+    'fairfax',
+    'prince-william',
+    'fauquier',
+    'clarke',
+    'warren',
+    'fairfax-city',
+  ],
+  'virginia-beach': [
+    'norfolk',
+    'chesapeake',
+    'suffolk',
+    'hampton',
+    'portsmouth',
+  ],
+  chesterfield: [
+    'richmond-city',
+    'henrico',
+    'powhatan',
+    'dinwiddie',
+    'hopewell',
+  ],
 };
 
 export function getVirginiaNearbyCounties(

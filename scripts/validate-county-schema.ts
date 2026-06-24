@@ -735,6 +735,10 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'west-virginia', countySlug: 'pendleton', expectedCity: 'Franklin' },
   { stateSlug: 'west-virginia', countySlug: 'wirt', expectedCity: 'Elizabeth' },
   { stateSlug: 'virginia', countySlug: 'fairfax', expectedCity: 'Fairfax' },
+  { stateSlug: 'virginia', countySlug: 'prince-william', expectedCity: 'Manassas' },
+  { stateSlug: 'virginia', countySlug: 'loudoun', expectedCity: 'Leesburg' },
+  { stateSlug: 'virginia', countySlug: 'virginia-beach', expectedCity: 'Virginia Beach' },
+  { stateSlug: 'virginia', countySlug: 'chesterfield', expectedCity: 'Chesterfield' },
 ];
 
 let totalIssues = 0;
