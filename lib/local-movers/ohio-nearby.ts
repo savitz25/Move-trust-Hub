@@ -17,6 +17,16 @@ const OH_COUNTY_NEIGHBORS: Record<string, string[]> = {
   montgomery: ['greene', 'warren', 'miami', 'darke', 'preble', 'hamilton'],
   summit: ['cuyahoga', 'portage', 'stark', 'medina', 'wayne', 'geauga'],
   lucas: ['wood', 'fulton', 'henry', 'ottawa', 'monroe', 'sandusky'],
+  butler: ['hamilton', 'warren', 'preble', 'montgomery', 'clermont', 'brown'],
+  stark: ['summit', 'portage', 'carroll', 'tuscarawas', 'holmes', 'wayne'],
+  lorain: ['cuyahoga', 'erie', 'huron', 'medina', 'ashland', 'lake'],
+  warren: ['butler', 'clermont', 'hamilton', 'montgomery', 'greene', 'clinton'],
+  delaware: ['franklin', 'morrow', 'knox', 'licking', 'union', 'marion'],
+  lake: ['cuyahoga', 'geauga', 'ashtabula', 'trumbull', 'lorain', 'medina'],
+  mahoning: ['trumbull', 'columbiana', 'stark', 'portage', 'mercer', 'lawrence'],
+  clermont: ['hamilton', 'warren', 'brown', 'clinton', 'highland', 'butler'],
+  trumbull: ['mahoning', 'geauga', 'portage', 'ashtabula', 'columbiana', 'lake'],
+  licking: ['franklin', 'delaware', 'knox', 'muskingum', 'perry', 'fairfield'],
 };
 
 export function getOhioNearbyCounties(

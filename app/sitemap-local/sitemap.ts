@@ -166,6 +166,16 @@ const OH_HIGH_TRAFFIC_COUNTIES = new Set([
   'montgomery',
   'summit',
   'lucas',
+  'butler',
+  'stark',
+  'lorain',
+  'warren',
+  'delaware',
+  'lake',
+  'mahoning',
+  'clermont',
+  'trumbull',
+  'licking',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

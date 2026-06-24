@@ -10,6 +10,16 @@ export const ohioCountyOverrides: Partial<
   montgomery: { seat: 'Dayton', metro: 'dayton-metro-oh' },
   summit: { seat: 'Akron', metro: 'akron-metro-oh' },
   lucas: { seat: 'Toledo', metro: 'toledo-metro-oh' },
+  butler: { seat: 'Hamilton', metro: 'cincinnati-metro-oh' },
+  stark: { seat: 'Canton', metro: 'canton-metro-oh' },
+  lorain: { seat: 'Elyria', metro: 'cleveland-metro-oh' },
+  warren: { seat: 'Lebanon', metro: 'cincinnati-metro-oh' },
+  delaware: { seat: 'Delaware', metro: 'columbus-metro-oh' },
+  lake: { seat: 'Painesville', metro: 'cleveland-metro-oh' },
+  mahoning: { seat: 'Youngstown', metro: 'youngstown-metro-oh' },
+  clermont: { seat: 'Batavia', metro: 'cincinnati-metro-oh' },
+  trumbull: { seat: 'Warren', metro: 'youngstown-metro-oh' },
+  licking: { seat: 'Newark', metro: 'columbus-metro-oh' },
 };
 
 export function applyOhioCountyOverrides(county: LocalCounty): LocalCounty {
