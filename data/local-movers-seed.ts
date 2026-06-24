@@ -35045,7 +35045,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 167,
     shortDescription:
-      'Historic Bluegrass mover serving Mercer County with full-service residential relocations across Harrodsburg, Kentucky's oldest town.',
+      'Historic Bluegrass mover serving Mercer County with full-service residential relocations across Harrodsburg, Kentucky\'s oldest town.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential'],
     fmcsaSafetyRating: 'Not Rated',
@@ -63723,7 +63723,6 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'krupp-moving-marietta-oh',
     ],
   },
-,
   'louisville-metro-ky': {
     id: 'louisville-metro-ky',
     label: 'Louisville Metro',
