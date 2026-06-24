@@ -38,7 +38,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Connecticut | 8/8 (complete) | 8 | 12 (Fairfield) / 10 (others) | `fairfield` 0.85 | `count-connecticut-movers.ts`, `apply-connecticut-mover-expansion.ts`, `audit-connecticut-seo.ts` |
 | Massachusetts | 14/14 (complete) | 10 | 10 (all counties) | 4 Boston counties 0.85 | `count-massachusetts-movers.ts`, `apply-massachusetts-mover-expansion.ts`, `audit-massachusetts-seo.ts` |
 | Rhode Island | 5/5 (complete) | 10 | 10 (all counties) | `providence` 0.85 | `count-rhode-island-movers.ts`, `apply-rhode-island-mover-expansion.ts`, `audit-rhode-island-seo.ts` |
-| Vermont | 14/14 (complete) | 10 | 10 (all counties) | `chittenden` 0.85 | `count-vermont-movers.ts`, `apply-vermont-mover-expansion.ts`, `audit-vermont-seo.ts` |
+| Vermont | 14/14 (complete) | 6 | 8–10 (Chittenden) / 6–8+ (others) | `chittenden` 0.85 | `count-vermont-movers.ts`, `apply-vermont-mover-expansion.ts`, `audit-vermont-seo.ts` |
 
 > **Vermont note:** Vermont has **14 counties** — complete state curation. **Chittenden** (Burlington) uses Two Men and a Truck franchise #1; other counties use `regional-*-vt-movers`. VT `washington`, `franklin`, `essex`, `windham`, and `orange` slugs collide with other states — nearby links use `displayLabel` disambiguation. Cross-border nearby links to NH, NY, MA, CT, and RI. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 

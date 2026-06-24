@@ -159,7 +159,7 @@ export function buildStateDescription(
     return `Find curated local movers in all 5 Rhode Island counties — 10 ranked companies per county from Providence and Kent through Washington, Newport, and Bristol. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Vermont') {
-    return `Find curated local movers in all 14 Vermont counties — 10 ranked companies per county from Burlington (Chittenden) and Montpelier through Rutland, the Northeast Kingdom, and Lake Champlain islands. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+    return `Find curated local movers in all 14 Vermont counties — up to 10 ranked companies in Chittenden (Burlington), 6–10 regional specialists in every county experienced with rural roads, winter conditions, ski-season and lakeside moves. FMCSA licensing, county cost guides, and Vermont-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =
