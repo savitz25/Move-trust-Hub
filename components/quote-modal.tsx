@@ -10,6 +10,8 @@ import { Badge } from '@/components/ui/badge';
 import { X, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { toast } from 'sonner';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
+import type { AutoTransportQuotePrefill } from '@/lib/auto-transport/types';
+import { formatCurrency } from '@/lib/auto-transport/pricing';
 
 export type QuoteInventoryItem = {
   name: string;
@@ -18,16 +20,21 @@ export type QuoteInventoryItem = {
   room?: string;
 };
 
+export type QuotePrefillData = {
+  estimatedVolume?: number;
+  estimatedWeight?: number;
+  fromZip?: string;
+  toZip?: string;
+  inventory?: QuoteInventoryItem[];
+  serviceType?: 'moving' | 'auto-transport';
+  notes?: string;
+  autoTransport?: AutoTransportQuotePrefill;
+};
+
 interface QuoteModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  prefilledData?: {
-    estimatedVolume?: number;
-    estimatedWeight?: number;
-    fromZip?: string;
-    toZip?: string;
-    inventory?: QuoteInventoryItem[];
-  };
+  prefilledData?: QuotePrefillData;
 }
 
 type FormData = {
@@ -45,6 +52,8 @@ type FormData = {
 type FormErrors = Partial<Record<keyof FormData, string>>;
 
 export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModalProps) {
+  const isAutoTransport = prefilledData.serviceType === 'auto-transport';
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -54,7 +63,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     moveDate: '',
     homeSize: '2',
     estimatedVolume: prefilledData.estimatedVolume ? String(Math.round(prefilledData.estimatedVolume)) : '',
-    notes: '',
+    notes: prefilledData.notes || '',
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -80,7 +89,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         moveDate: '',
         homeSize: '2',
         estimatedVolume: prefilledData.estimatedVolume ? String(Math.round(prefilledData.estimatedVolume)) : '',
-        notes: '',
+        notes: prefilledData.notes || '',
       });
     }
   }, [open]);  // Intentionally only depend on `open` to snapshot prefilledData at open time
@@ -141,13 +150,19 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       from_zip: formData.fromZip.trim(),
       to_zip: formData.toZip.trim(),
       move_date: formData.moveDate || null,
-      home_size: formData.homeSize,
+      home_size: isAutoTransport ? 'auto-transport' : formData.homeSize,
       estimated_volume: formData.estimatedVolume ? parseFloat(formData.estimatedVolume) : null,
       estimated_weight: prefilledData.estimatedWeight
         ?? (formData.estimatedVolume ? Math.round(parseFloat(formData.estimatedVolume) * 7) : null),
       inventory: hasInventory ? prefilledData.inventory : null,
       notes: formData.notes.trim() || null,
-      source: hasInventory ? 'moving-calculator' : 'quote-modal',
+      source: isAutoTransport
+        ? 'auto-transport-calculator'
+        : hasInventory
+          ? 'moving-calculator'
+          : 'quote-modal',
+      service_type: isAutoTransport ? 'auto-transport' : 'moving',
+      auto_transport: prefilledData.autoTransport ?? null,
     };
 
     try {
@@ -200,7 +215,9 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
 
       // Also fire a nice toast in case they miss the in-modal success
       toast.success('Request received!', {
-        description: "We'll connect you with 2-3 top-rated licensed movers within 24 hours.",
+        description: isAutoTransport
+          ? "We'll connect you with 2-3 vetted auto transport carriers within 24 hours."
+          : "We'll connect you with 2-3 top-rated licensed movers within 24 hours.",
       });
     } catch (err) {
       console.error('Quote submission error:', err);
@@ -220,7 +237,9 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       setIsSubmitting(false);
       setSubmitted(true);
       toast.success('Request received!', {
-        description: "We'll connect you with 2-3 top-rated licensed movers within 24 hours.",
+        description: isAutoTransport
+          ? "We'll connect you with 2-3 vetted auto transport carriers within 24 hours."
+          : "We'll connect you with 2-3 top-rated licensed movers within 24 hours.",
       });
     }
   };
@@ -263,11 +282,15 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
           <div className="flex items-start justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <DialogTitle className="text-2xl tracking-tight font-semibold">Get 2-3 Competitive Quotes</DialogTitle>
+                <DialogTitle className="text-2xl tracking-tight font-semibold">
+                  {isAutoTransport ? 'Get Auto Transport Quotes' : 'Get 2-3 Competitive Quotes'}
+                </DialogTitle>
                 <Badge variant="secondary" className="text-[10px] px-2 py-0.5 font-medium">FREE</Badge>
               </div>
               <p className="text-sm text-muted-foreground">
-                No obligation. Only licensed interstate movers. Matched within 24 hours.
+                {isAutoTransport
+                  ? 'No obligation. FMCSA-licensed carriers and brokers. Matched within 24 hours.'
+                  : 'No obligation. Only licensed interstate movers. Matched within 24 hours.'}
               </p>
             </div>
             <button
@@ -308,7 +331,22 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
             /* ENGAGING FORM */
             <form onSubmit={handleSubmit} className="space-y-5">
             {/* Value reinforcement + prefill highlight */}
-            {estimatedWeight && (
+            {isAutoTransport && prefilledData.autoTransport && (
+              <div className="rounded-lg bg-primary/5 border border-primary/20 p-3 text-sm space-y-1">
+                <div className="font-medium">Your transport estimate</div>
+                <div className="font-semibold">
+                  {formatCurrency(prefilledData.autoTransport.lowTotal)} –{' '}
+                  {formatCurrency(prefilledData.autoTransport.highTotal)}
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  {prefilledData.autoTransport.distanceMiles.toLocaleString()} miles ·{' '}
+                  {prefilledData.autoTransport.transportMethod === 'open' ? 'Open' : 'Enclosed'} ·{' '}
+                  {prefilledData.autoTransport.vehicleCategory === 'regular' ? 'Regular vehicle' : 'Larger vehicle'}
+                </div>
+              </div>
+            )}
+
+            {!isAutoTransport && estimatedWeight && (
               <div className="rounded-lg bg-primary/5 border border-primary/20 p-3 text-sm flex items-center gap-3">
                 <div className="font-medium">Your current estimate:</div>
                 <div className="font-semibold">{formData.estimatedVolume} cu ft ≈ {estimatedWeight} lbs</div>
@@ -363,7 +401,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
             {/* Move Route */}
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold tracking-[1px] text-muted-foreground mb-3">
-                <div className="h-px flex-1 bg-border" /> MOVE DETAILS <div className="h-px flex-1 bg-border" />
+                <div className="h-px flex-1 bg-border" /> {isAutoTransport ? 'TRANSPORT ROUTE' : 'MOVE DETAILS'} <div className="h-px flex-1 bg-border" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
@@ -396,47 +434,52 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
             </div>
 
             {/* Details row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className={`grid grid-cols-1 ${isAutoTransport ? '' : 'sm:grid-cols-2'} gap-3`}>
               <div>
-                <label className="block text-sm font-medium mb-1">Preferred date</label>
+                <label className="block text-sm font-medium mb-1">
+                  {isAutoTransport ? 'Preferred ship date' : 'Preferred date'}
+                </label>
                 <Input type="date" name="moveDate" value={formData.moveDate} onChange={handleChange} />
                 <p className="text-[10px] text-muted-foreground mt-1">Flexible? Leave blank</p>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium mb-1">Home / move size</label>
-                <Select name="homeSize" value={formData.homeSize} onChange={handleChange}>
-                  <option value="studio">Studio / Small apartment</option>
-                  <option value="1">1 Bedroom</option>
-                  <option value="2">2 Bedrooms</option>
-                  <option value="3">3 Bedrooms</option>
-                  <option value="4+">4+ Bedrooms / Large</option>
-                </Select>
-              </div>
+              {!isAutoTransport && (
+                <div>
+                  <label className="block text-sm font-medium mb-1">Home / move size</label>
+                  <Select name="homeSize" value={formData.homeSize} onChange={handleChange}>
+                    <option value="studio">Studio / Small apartment</option>
+                    <option value="1">1 Bedroom</option>
+                    <option value="2">2 Bedrooms</option>
+                    <option value="3">3 Bedrooms</option>
+                    <option value="4+">4+ Bedrooms / Large</option>
+                  </Select>
+                </div>
+              )}
             </div>
 
-            {/* Volume + Notes */}
-            <div>
-              <label className="block text-sm font-medium mb-1">
-                Estimated volume (cubic feet)
-              </label>
-              <div className="flex gap-2 items-center">
-                <Input
-                  name="estimatedVolume"
-                  type="number"
-                  value={formData.estimatedVolume}
-                  onChange={handleChange}
-                  placeholder="Use our calculator"
-                  className="flex-1"
-                />
-                {estimatedWeight && (
-                  <div className="text-xs whitespace-nowrap px-2 py-1 bg-muted rounded">
-                    ≈ {estimatedWeight} lbs
-                  </div>
-                )}
+            {!isAutoTransport && (
+              <div>
+                <label className="block text-sm font-medium mb-1">
+                  Estimated volume (cubic feet)
+                </label>
+                <div className="flex gap-2 items-center">
+                  <Input
+                    name="estimatedVolume"
+                    type="number"
+                    value={formData.estimatedVolume}
+                    onChange={handleChange}
+                    placeholder="Use our calculator"
+                    className="flex-1"
+                  />
+                  {estimatedWeight && (
+                    <div className="text-xs whitespace-nowrap px-2 py-1 bg-muted rounded">
+                      ≈ {estimatedWeight} lbs
+                    </div>
+                  )}
+                </div>
+                <p className="text-[10px] text-muted-foreground mt-1">Pro tip: Use the Smart Move Estimator above for accuracy.</p>
               </div>
-              <p className="text-[10px] text-muted-foreground mt-1">Pro tip: Use the Smart Move Estimator above for accuracy.</p>
-            </div>
+            )}
 
             <div>
               <label className="block text-sm font-medium mb-1">Special notes or requirements</label>
@@ -445,7 +488,11 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
                 value={formData.notes}
                 onChange={handleChange}
                 rows={2}
-                placeholder="Piano, antiques, tight timeline, stairs, or anything else..."
+                placeholder={
+                  isAutoTransport
+                    ? 'Vehicle make/model, running condition, preferred pickup window, or other details...'
+                    : 'Piano, antiques, tight timeline, stairs, or anything else...'
+                }
                 className="flex w-full rounded-lg border border-input bg-background px-3 py-2 text-sm resize-y min-h-[60px]"
               />
             </div>
@@ -457,7 +504,11 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
                 className="w-full h-12 text-base font-semibold shadow-sm"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending to our matching team...' : 'Get my free quotes now'}
+                {isSubmitting
+                  ? 'Sending to our matching team...'
+                  : isAutoTransport
+                    ? 'Get my transport quotes now'
+                    : 'Get my free quotes now'}
                 {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
               </Button>
 

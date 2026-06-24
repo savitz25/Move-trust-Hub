@@ -172,7 +172,11 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const subject = `New Quote Request from ${payload.name || 'Unknown'}`;
 
-    const homeSizeLabel = getHomeSizeLabel(payload.home_size);
+    const isAutoTransport =
+      payload.service_type === 'auto-transport' || payload.source === 'auto-transport-calculator';
+    const homeSizeLabel = isAutoTransport
+      ? 'Auto transport'
+      : getHomeSizeLabel(payload.home_size);
     const inventory = Array.isArray(payload.inventory)
       ? (payload.inventory as InventoryItem[])
       : [];
@@ -183,8 +187,23 @@ export async function POST(req: NextRequest) {
     const safeNotes = payload.notes ? escapeHtml(payload.notes) : '';
     const safeSource = escapeHtml(payload.source || 'quote-modal');
 
+    const autoTransportHtml =
+      isAutoTransport && payload.auto_transport
+        ? `
+      <h3>Auto Transport Details</h3>
+      <p><strong>Vehicle Category:</strong> ${escapeHtml(payload.auto_transport.vehicleCategory || '')}</p>
+      <p><strong>Transport Type:</strong> ${escapeHtml(payload.auto_transport.transportMethod || '')}</p>
+      <p><strong>Estimated Distance:</strong> ${payload.auto_transport.distanceMiles ? `${payload.auto_transport.distanceMiles} miles` : 'Not provided'}</p>
+      <p><strong>Calculator Estimate:</strong> ${
+        payload.auto_transport.lowTotal && payload.auto_transport.highTotal
+          ? `$${payload.auto_transport.lowTotal} – $${payload.auto_transport.highTotal}`
+          : 'Not provided'
+      }</p>
+    `
+        : '';
+
     const leadHtml = `
-      <h2>New Move Quote Request</h2>
+      <h2>${isAutoTransport ? 'New Auto Transport Quote Request' : 'New Move Quote Request'}</h2>
       <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
       
       <h3>Contact Information</h3>
@@ -192,14 +211,19 @@ export async function POST(req: NextRequest) {
       <p><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
       <p><strong>Phone:</strong> ${safePhone}</p>
       
-      <h3>Move Details</h3>
+      <h3>${isAutoTransport ? 'Transport Route' : 'Move Details'}</h3>
       <p><strong>From ZIP:</strong> ${escapeHtml(payload.from_zip || '')}</p>
       <p><strong>To ZIP:</strong> ${escapeHtml(payload.to_zip || '')}</p>
       <p><strong>Preferred Date:</strong> ${payload.move_date ? escapeHtml(payload.move_date) : 'Flexible'}</p>
-      <p><strong>Home Size:</strong> ${escapeHtml(homeSizeLabel)}</p>
+      ${
+        isAutoTransport
+          ? ''
+          : `<p><strong>Home Size:</strong> ${escapeHtml(homeSizeLabel)}</p>
       <p><strong>Estimated Volume:</strong> ${payload.estimated_volume ? `${payload.estimated_volume} cu ft` : 'Not provided'}</p>
-      <p><strong>Estimated Weight:</strong> ${payload.estimated_weight ? `${payload.estimated_weight} lbs` : 'Not provided'}</p>
+      <p><strong>Estimated Weight:</strong> ${payload.estimated_weight ? `${payload.estimated_weight} lbs` : 'Not provided'}</p>`
+      }
       
+      ${autoTransportHtml}
       ${inventoryHtml}
       ${safeNotes ? `<h3>Additional Notes</h3><p>${safeNotes}</p>` : ''}
       
@@ -241,7 +265,9 @@ export async function POST(req: NextRequest) {
     let confirmationError: unknown = null;
 
     if (payload.email) {
-      const confirmationSubject = `Your move quote is confirmed — ${payload.from_zip} to ${payload.to_zip}`;
+      const confirmationSubject = isAutoTransport
+        ? `Your auto transport quote is confirmed — ${payload.from_zip} to ${payload.to_zip}`
+        : `Your move quote is confirmed — ${payload.from_zip} to ${payload.to_zip}`;
       const confirmationHtml = buildQuoteConfirmationEmail({
         name: payload.name,
         fromZip: payload.from_zip,
