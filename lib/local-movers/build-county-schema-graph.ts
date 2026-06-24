@@ -56,10 +56,10 @@ type BreadcrumbItem = {
   path: string;
 };
 
+/** Unique per-list-item URL for ItemList rich results (website URLs can repeat across metro spillover movers). */
 function buildMoverUrl(mover: LocalMover, pageUrl: string): string {
   if (mover.profileSlug) return `${SITE_URL}/companies/${mover.profileSlug}`;
-  if (mover.website) return mover.website;
-  return pageUrl;
+  return `${pageUrl}#mover-${mover.id}`;
 }
 
 function resolveContentModified(county: LocalCounty): string {
@@ -188,7 +188,6 @@ export function buildCountySchemaGraph({
     .map((mover, index) =>
       buildMoverSchemaNode(
         mover,
-        index,
         url,
         county,
         stateName,

@@ -190,7 +190,6 @@ export function buildFaqSchema(
 
 export function buildMoverSchemaNode(
   mover: LocalMover,
-  index: number,
   pageUrl: string,
   county: LocalCounty | undefined,
   stateName: string | undefined,
@@ -205,7 +204,6 @@ export function buildMoverSchemaNode(
     '@id': `${pageUrl}#mover-${mover.id}`,
     name,
     url: buildMoverUrl(mover, pageUrl),
-    position: index + 1,
   };
 
   const description = mover.shortDescription?.trim();
@@ -268,7 +266,7 @@ export function buildMoverSchemaNode(
   }
 
   if (county && stateName) {
-    node.areaServed = buildSchemaAreaServed(county, stateName, placeId);
+    node.areaServed = { '@id': placeId };
   } else if (stateName) {
     node.areaServed = {
       '@type': 'State',
@@ -438,6 +436,39 @@ export function validateCountySchemaGraph(
           issue: `AdministrativeArea name "${name}" does not include "${expected}"`,
         });
       }
+    }
+
+    if (types.includes('LocalBusiness') || types.includes('MovingCompany')) {
+      if (node.position !== undefined) {
+        issues.push({
+          ...base,
+          issue: `Mover node must not duplicate ListItem position (${String(node['@id'] ?? 'no @id')})`,
+        });
+      }
+    }
+  }
+
+  const moverUrls = new Map<string, string[]>();
+  for (const node of graph) {
+    const rawType = node['@type'];
+    const types = Array.isArray(rawType) ? rawType : rawType ? [rawType] : [];
+    if (!types.includes('LocalBusiness') && !types.includes('MovingCompany')) continue;
+    if (String(node['@id'] ?? '').includes('local-moving-service')) continue;
+
+    const url = String(node.url ?? '');
+    if (!url) continue;
+    const id = String(node['@id'] ?? 'unknown');
+    const existing = moverUrls.get(url) ?? [];
+    existing.push(id);
+    moverUrls.set(url, existing);
+  }
+
+  for (const [url, ids] of moverUrls) {
+    if (ids.length > 1) {
+      issues.push({
+        ...base,
+        issue: `Duplicate mover url "${url}" on nodes: ${ids.join(', ')}`,
+      });
     }
   }
 
