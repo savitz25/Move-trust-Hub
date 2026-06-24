@@ -1,116 +1,4 @@
-import type { CountyMoverAssignment } from '@/lib/local-movers/types';
-
-/** Hand-curated Maryland county mover lists — complete state (23 counties + Baltimore City) */
-const CURATED_MD_COUNTIES: Record<string, string[]> = {
-  montgomery: [
-    'twomenandatruck-montgomery-md',
-    'all-my-sons-rockville-md',
-    'rockville-moving-montgomery-md',
-    'montgomery-county-moving-montgomery-md',
-    'college-hunks-moving-rockville-md',
-    'budd-van-lines-rockville-md',
-    'dc-metro-moving-montgomery-md',
-    'bethesda-corridor-moving-montgomery-md',
-    'hercules-movers-rockville-md',
-    'krupp-moving-rockville-md',
-  ],
-  'prince-georges': [
-    'twomenandatruck-princegeorges-md',
-    'all-my-sons-upper-marlboro-md',
-    'upper-marlboro-moving-prince-georges-md',
-    'prince-georges-county-moving-prince-georges-md',
-    'college-hunks-moving-upper-marlboro-md',
-    'budd-van-lines-upper-marlboro-md',
-    'dc-metro-moving-prince-georges-md',
-    'bowie-corridor-moving-prince-georges-md',
-    'hercules-movers-upper-marlboro-md',
-    'krupp-moving-upper-marlboro-md',
-  ],
-  baltimore: [
-    'twomenandatruck-baltimorecounty-md',
-    'all-my-sons-towson-md',
-    'towson-moving-baltimore-md',
-    'baltimore-county-moving-baltimore-md',
-    'college-hunks-moving-towson-md',
-    'budd-van-lines-towson-md',
-    'catonsville-corridor-moving-baltimore-md',
-    'dundalk-area-moving-baltimore-md',
-    'hercules-movers-towson-md',
-    'krupp-moving-towson-md',
-  ],
-  'anne-arundel': [
-    'twomenandatruck-annearundel-md',
-    'all-my-sons-annapolis-md',
-    'annapolis-moving-anne-arundel-md',
-    'anne-arundel-county-moving-anne-arundel-md',
-    'college-hunks-moving-annapolis-md',
-    'budd-van-lines-annapolis-md',
-    'naval-waterfront-moving-anne-arundel-md',
-    'glen-burnie-corridor-moving-anne-arundel-md',
-    'hercules-movers-annapolis-md',
-    'krupp-moving-annapolis-md',
-  ],
-  'baltimore-city': [
-    'twomenandatruck-baltimorecity-md',
-    'all-my-sons-baltimore-city-md',
-    'baltimore-city-moving-baltimore-city-md',
-    'baltimore-city-local-moving-baltimore-city-md',
-    'college-hunks-moving-baltimore-city-md',
-    'budd-van-lines-baltimore-city-md',
-    'inner-harbor-moving-baltimore-city-md',
-    'urban-baltimore-moving-baltimore-city-md',
-    'hercules-movers-baltimore-city-md',
-    'krupp-moving-baltimore-city-md',
-  ],
-  howard: [
-    'twomenandatruck-howard-md',
-    'all-my-sons-ellicott-city-md',
-    'ellicott-city-moving-howard-md',
-    'howard-county-moving-howard-md',
-    'college-hunks-moving-ellicott-city-md',
-    'budd-van-lines-ellicott-city-md',
-    'columbia-corridor-moving-howard-md',
-    'central-maryland-moving-howard-md',
-    'hercules-movers-ellicott-city-md',
-    'krupp-moving-ellicott-city-md',
-  ],
-  frederick: [
-    'twomenandatruck-frederick-md',
-    'all-my-sons-frederick-md',
-    'frederick-moving-frederick-md',
-    'frederick-county-moving-frederick-md',
-    'college-hunks-moving-frederick-md',
-    'budd-van-lines-frederick-md',
-    'i70-corridor-moving-frederick-md',
-    'catoctin-area-moving-frederick-md',
-    'hercules-movers-frederick-md',
-    'krupp-moving-frederick-md',
-  ],
-  harford: [
-    'twomenandatruck-harford-md',
-    'all-my-sons-bel-air-md',
-    'bel-air-moving-harford-md',
-    'harford-county-moving-harford-md',
-    'college-hunks-moving-bel-air-md',
-    'budd-van-lines-bel-air-md',
-    'i95-northeast-moving-harford-md',
-    'aberdeen-corridor-moving-harford-md',
-    'hercules-movers-bel-air-md',
-    'krupp-moving-bel-air-md',
-  ],
-  charles: [
-    'twomenandatruck-charles-md',
-    'all-my-sons-la-plata-md',
-    'la-plata-moving-charles-md',
-    'charles-county-moving-charles-md',
-    'college-hunks-moving-la-plata-md',
-    'budd-van-lines-la-plata-md',
-    'potomac-south-moving-charles-md',
-    'waldorf-corridor-moving-charles-md',
-    'hercules-movers-la-plata-md',
-    'krupp-moving-la-plata-md',
-  ],
-  carroll: [
+﻿  'carroll': [
     'twomenandatruck-carroll-md',
     'all-my-sons-westminster-md',
     'westminster-moving-carroll-md',
@@ -122,7 +10,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-westminster-md',
     'krupp-moving-westminster-md',
   ],
-  washington: [
+
+  'washington': [
     'regional-washington-md-movers',
     'all-my-sons-hagerstown-md',
     'hagerstown-moving-washington-md',
@@ -134,6 +23,7 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-hagerstown-md',
     'krupp-moving-hagerstown-md',
   ],
+
   'st-marys': [
     'regional-stmarys-md-movers',
     'all-my-sons-leonardtown-md',
@@ -146,7 +36,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-leonardtown-md',
     'krupp-moving-leonardtown-md',
   ],
-  cecil: [
+
+  'cecil': [
     'regional-cecil-md-movers',
     'all-my-sons-elkton-md',
     'elkton-moving-cecil-md',
@@ -158,7 +49,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-elkton-md',
     'krupp-moving-elkton-md',
   ],
-  wicomico: [
+
+  'wicomico': [
     'regional-wicomico-md-movers',
     'all-my-sons-salisbury-md',
     'salisbury-moving-wicomico-md',
@@ -170,7 +62,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-salisbury-md',
     'krupp-moving-salisbury-md',
   ],
-  calvert: [
+
+  'calvert': [
     'regional-calvert-md-movers',
     'all-my-sons-prince-frederick-md',
     'prince-frederick-moving-calvert-md',
@@ -182,7 +75,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-prince-frederick-md',
     'krupp-moving-prince-frederick-md',
   ],
-  allegany: [
+
+  'allegany': [
     'regional-allegany-md-movers',
     'all-my-sons-cumberland-md',
     'cumberland-moving-allegany-md',
@@ -194,6 +88,7 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-cumberland-md',
     'krupp-moving-cumberland-md',
   ],
+
   'queen-annes': [
     'regional-queenannes-md-movers',
     'all-my-sons-centreville-md',
@@ -206,7 +101,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-centreville-md',
     'krupp-moving-centreville-md',
   ],
-  worcester: [
+
+  'worcester': [
     'regional-worcester-md-movers',
     'all-my-sons-ocean-city-md',
     'ocean-city-moving-worcester-md',
@@ -218,7 +114,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-ocean-city-md',
     'krupp-moving-ocean-city-md',
   ],
-  talbot: [
+
+  'talbot': [
     'regional-talbot-md-movers',
     'all-my-sons-easton-md',
     'easton-moving-talbot-md',
@@ -230,7 +127,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-easton-md',
     'krupp-moving-easton-md',
   ],
-  caroline: [
+
+  'caroline': [
     'regional-caroline-md-movers',
     'all-my-sons-denton-md',
     'denton-moving-caroline-md',
@@ -242,7 +140,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-denton-md',
     'krupp-moving-denton-md',
   ],
-  dorchester: [
+
+  'dorchester': [
     'regional-dorchester-md-movers',
     'all-my-sons-cambridge-md',
     'cambridge-moving-dorchester-md',
@@ -254,7 +153,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-cambridge-md',
     'krupp-moving-cambridge-md',
   ],
-  garrett: [
+
+  'garrett': [
     'regional-garrett-md-movers',
     'all-my-sons-oakland-md',
     'oakland-moving-garrett-md',
@@ -266,7 +166,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-oakland-md',
     'krupp-moving-oakland-md',
   ],
-  somerset: [
+
+  'somerset': [
     'regional-somerset-md-movers',
     'all-my-sons-princess-anne-md',
     'princess-anne-moving-somerset-md',
@@ -278,7 +179,8 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-princess-anne-md',
     'krupp-moving-princess-anne-md',
   ],
-  kent: [
+
+  'kent': [
     'regional-kent-md-movers',
     'all-my-sons-chestertown-md',
     'chestertown-moving-kent-md',
@@ -290,11 +192,3 @@ const CURATED_MD_COUNTIES: Record<string, string[]> = {
     'hercules-movers-chestertown-md',
     'krupp-moving-chestertown-md',
   ],
-};
-
-export const marylandCountyMoverAssignments: CountyMoverAssignment[] =
-  Object.entries(CURATED_MD_COUNTIES).map(([countySlug, moverIds]) => ({
-    stateSlug: 'maryland',
-    countySlug,
-    moverIds,
-  }));

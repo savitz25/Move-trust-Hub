@@ -110,7 +110,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                   : state.slug === 'delaware'
                     ? 'Browse all 3 Delaware county guides — up to 12 curated movers in New Castle (Wilmington metro), 8+ in Kent and Sussex. FMCSA licensing, cost estimates, and county-specific tips for corporate, beach, and retirement moves.'
                     : state.slug === 'maryland'
-                      ? 'Browse Maryland county guides — 10 curated movers each in Montgomery, Prince George\'s, Baltimore County, Baltimore City, Anne Arundel, Howard, Frederick, Harford, and Charles. FMCSA licensing, DC and Baltimore metro cost estimates, and county-specific moving tips.'
+                      ? 'Browse all 24 Maryland jurisdiction guides — 10 curated movers in every county and Baltimore City. FMCSA licensing, cost estimates, and local moving tips from DC suburbs to the Eastern Shore and Western Maryland.'
                       : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}

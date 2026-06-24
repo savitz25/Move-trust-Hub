@@ -219,6 +219,13 @@ const MD_HIGH_TRAFFIC_COUNTIES = new Set([
   'frederick',
   'harford',
   'charles',
+  'carroll',
+  'washington',
+  'wicomico',
+  'st-marys',
+  'calvert',
+  'cecil',
+  'worcester',
 ]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */

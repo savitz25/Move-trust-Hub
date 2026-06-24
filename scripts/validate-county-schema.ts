@@ -888,6 +888,9 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'maryland', countySlug: 'frederick', expectedCity: 'Frederick' },
   { stateSlug: 'maryland', countySlug: 'harford', expectedCity: 'Bel Air' },
   { stateSlug: 'maryland', countySlug: 'charles', expectedCity: 'La Plata' },
+  { stateSlug: 'maryland', countySlug: 'carroll', expectedCity: 'Westminster' },
+  { stateSlug: 'maryland', countySlug: 'wicomico', expectedCity: 'Salisbury' },
+  { stateSlug: 'maryland', countySlug: 'worcester', expectedCity: 'Snow Hill' },
 ];
 
 let totalIssues = 0;
