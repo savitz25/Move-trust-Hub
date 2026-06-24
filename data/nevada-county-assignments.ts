@@ -13,6 +13,8 @@ const CURATED_NV_COUNTIES: Record<string, string[]> = {
     'strip-corridor-moving-clark-nv',
     'hercules-movers-las-vegas-nv',
     'krupp-moving-las-vegas-nv',
+    'vegas-tourism-moving-clark-nv',
+    'nellis-corporate-moving-clark-nv',
   ],
   washoe: [
     'twomenandatruck-washoe-nv',

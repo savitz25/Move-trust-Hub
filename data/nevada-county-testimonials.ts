@@ -4,8 +4,8 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 export const nevadaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   clark: [
     { quote: 'Two Men and a Truck Las Vegas handled our Summerlin move professionally — on time and extremely careful with our suburban home.', name: 'Alex M.', location: 'Las Vegas, NV', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Las Vegas navigated our Henderson relocation with fair pricing through I-15 corridor and tourist-season traffic.', name: 'Beth N.', location: 'Henderson, NV', rating: 5, moveType: 'Townhome' },
-    { quote: 'Strip Corridor Moving served our downtown condo move efficiently with excellent elevator and parking coordination.', name: 'Carl O.', location: 'Las Vegas, NV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Vegas Tourism & Hospitality Moving coordinated our Strip-adjacent high-rise relocation with excellent elevator and parking permit logistics.', name: 'Beth N.', location: 'Las Vegas, NV', rating: 5, moveType: 'Corporate' },
+    { quote: 'Nellis Corridor Corporate Moving served our Henderson military PCS move efficiently with professional base-access coordination.', name: 'Carl O.', location: 'Henderson, NV', rating: 5, moveType: 'Military PCS' },
   ],
   washoe: [
     { quote: 'Two Men and a Truck Reno handled our Sparks move professionally — on time and extremely careful with our suburban home.', name: 'Dana P.', location: 'Sparks, NV', rating: 5, moveType: 'Single-family' },

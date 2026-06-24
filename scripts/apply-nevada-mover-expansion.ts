@@ -8,11 +8,10 @@ import { metroMoverPools } from '../data/local-movers-seed';
 import { fullMoversCatalog } from '../lib/local-movers/catalog';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  clark: 10,
-  washoe: 10,
-  douglas: 10,
+  clark: 12,
+  washoe: 9,
 };
-const DEFAULT_TARGET = 10;
+const DEFAULT_TARGET = 6;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;

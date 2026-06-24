@@ -193,6 +193,9 @@ export function buildStateDescription(
   if (stateName === 'Oregon') {
     return `Find curated local movers in all 36 Oregon counties — up to 12 ranked companies in Portland metro (Multnomah, Washington, Clackamas), 9–10 in Lane and Marion, and 6–10 regional specialists in every county. Portland metro guides cover tech, corporate, and high-density urban moves; Willamette Valley, Central Oregon (Bend), coast, and eastern Oregon each have localized cost guides and moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Nevada') {
+    return `Find curated local movers in all 17 Nevada counties — up to 12 ranked companies in Clark County (Las Vegas metro), 9–10 in Washoe (Reno–Sparks), and 6–10 regional specialists in every county. Las Vegas guides cover tourism, corporate, military, and high-density moves; Reno guides cover tech, manufacturing, and logistics; rural Nevada guides cover mining, remote logistics, and long-distance regional hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

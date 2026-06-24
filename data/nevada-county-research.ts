@@ -10,7 +10,7 @@ export type CuratedCountyResearch = {
 export const nevadaCountyResearch: Record<string, CuratedCountyResearch> = {
   clark: {
     marketNotes:
-      'Clark County, NV is Nevada’s most populous county, encompassing Las Vegas and Henderson with strong tourism, entertainment, corporate-relocation, and high-growth suburban residential demand across the Strip corridor and urban core — not to be confused with Clark County in Washington.',
+      'Clark County anchors Nevada’s Las Vegas metro — by far the state’s highest-value moving market. Tourism and hospitality relocations, corporate growth, high-density condos and high-rises, Nellis AFB military PCS moves, and elevated labor costs distinguish Clark from Reno and rural Nevada — not to be confused with Clark County, Washington.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,500+',
@@ -21,6 +21,7 @@ export const nevadaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Las Vegas, Henderson, and surrounding cities before booking.',
       'Heavy urban and tourist traffic significantly impacts scheduling — confirm crew arrival windows.',
       'Strip corridor and convention-week moves may require parking permits and elevator reservations — confirm building logistics.',
+      'Military PCS moves near Nellis AFB and Creech require base access coordination — confirm mover credentials and clearance experience.',
       'Confirm insurance for high-value urban condos, high-rises, and suburban homes.',
       'Book early for peak tourist seasons (March–May, September–November) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
@@ -28,7 +29,7 @@ export const nevadaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   washoe: {
     marketNotes:
-      'Washoe County is a major northern Nevada county with strong residential, university, and tech-sector demand centered on Reno and Sparks.',
+      'Washoe County anchors northern Nevada’s Reno–Sparks metro — a tech, manufacturing, logistics, and university market distinct from Las Vegas tourism density. Tesla Gigafactory spillover, suburban Truckee Meadows growth, and I-80 corridor logistics distinguish Washoe from Clark County’s hospitality-driven demand.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -37,6 +38,7 @@ export const nevadaCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for Reno, Sparks, and surrounding cities before booking.',
+      'Tech-corridor and logistics-industry relocations may require warehouse or industrial-site coordination — confirm commercial move experience.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value suburban and mountain-view homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',

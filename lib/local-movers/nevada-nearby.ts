@@ -6,8 +6,8 @@ export type { NearbyCountyLink };
 const NV_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   clark: [
     { slug: 'washoe', name: 'Washoe', seat: 'Reno', href: '/local-movers/nevada/washoe', displayLabel: 'Washoe County, NV' },
+    { slug: 'mohave', name: 'Mohave', seat: 'Kingman', href: '/local-movers/arizona/mohave', displayLabel: 'Mohave County, AZ' },
     { slug: 'nye', name: 'Nye', seat: 'Tonopah', href: '/local-movers/nevada/nye', displayLabel: 'Nye County, NV' },
-    { slug: 'lincoln', name: 'Lincoln', seat: 'Pioche', href: '/local-movers/nevada/lincoln', displayLabel: 'Lincoln County, NV' },
     { slug: 'san-bernardino', name: 'San Bernardino', seat: 'San Bernardino', href: '/local-movers/california/san-bernardino', displayLabel: 'San Bernardino County, CA' },
     { slug: 'los-angeles', name: 'Los Angeles', seat: 'Los Angeles', href: '/local-movers/california/los-angeles', displayLabel: 'Los Angeles County, CA' },
   ],
@@ -15,9 +15,8 @@ const NV_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'clark', name: 'Clark', seat: 'Las Vegas', href: '/local-movers/nevada/clark', displayLabel: 'Clark County, NV' },
     { slug: 'douglas', name: 'Douglas', seat: 'Minden', href: '/local-movers/nevada/douglas', displayLabel: 'Douglas County, NV' },
     { slug: 'carson-city', name: 'Carson City', seat: 'Carson City', href: '/local-movers/nevada/carson-city', displayLabel: 'Carson City, NV' },
-    { slug: 'storey', name: 'Storey', seat: 'Virginia City', href: '/local-movers/nevada/storey', displayLabel: 'Storey County, NV' },
-    { slug: 'lyon', name: 'Lyon', seat: 'Yerington', href: '/local-movers/nevada/lyon', displayLabel: 'Lyon County, NV' },
     { slug: 'placer', name: 'Placer', seat: 'Auburn', href: '/local-movers/california/placer', displayLabel: 'Placer County, CA' },
+    { slug: 'maricopa', name: 'Maricopa', seat: 'Phoenix', href: '/local-movers/arizona/maricopa', displayLabel: 'Maricopa County, AZ' },
   ],
   lyon: [
     { slug: 'washoe', name: 'Washoe', seat: 'Reno', href: '/local-movers/nevada/washoe', displayLabel: 'Washoe County, NV' },
