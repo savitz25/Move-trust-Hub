@@ -113,7 +113,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                     : state.slug === 'maryland'
                       ? 'Browse all 24 Maryland jurisdiction guides — 10 curated movers in every county and Baltimore City. FMCSA licensing, cost estimates, and local moving tips from DC suburbs to the Eastern Shore and Western Maryland.'
                       : state.slug === 'pennsylvania'
-                        ? 'Browse Pennsylvania county guides — 10 curated movers in Philadelphia, Allegheny, and Montgomery counties. FMCSA licensing, cost estimates, and local moving tips from Philadelphia to Pittsburgh and the Main Line suburbs.'
+                        ? 'Browse Pennsylvania county guides — 10 curated movers in Philadelphia, Pittsburgh, and suburban metros including Bucks, Chester, Lancaster, York, Berks, Lehigh, and Westmoreland. FMCSA licensing, cost estimates, and local moving tips.'
                         : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}

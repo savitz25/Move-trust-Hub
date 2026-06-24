@@ -895,6 +895,14 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'pennsylvania', countySlug: 'philadelphia', expectedCity: 'Philadelphia' },
   { stateSlug: 'pennsylvania', countySlug: 'allegheny', expectedCity: 'Pittsburgh' },
   { stateSlug: 'pennsylvania', countySlug: 'montgomery', expectedCity: 'Norristown' },
+  { stateSlug: 'pennsylvania', countySlug: 'bucks', expectedCity: 'Doylestown' },
+  { stateSlug: 'pennsylvania', countySlug: 'delaware', expectedCity: 'Media' },
+  { stateSlug: 'pennsylvania', countySlug: 'lancaster', expectedCity: 'Lancaster' },
+  { stateSlug: 'pennsylvania', countySlug: 'chester', expectedCity: 'West Chester' },
+  { stateSlug: 'pennsylvania', countySlug: 'york', expectedCity: 'York' },
+  { stateSlug: 'pennsylvania', countySlug: 'berks', expectedCity: 'Reading' },
+  { stateSlug: 'pennsylvania', countySlug: 'lehigh', expectedCity: 'Allentown' },
+  { stateSlug: 'pennsylvania', countySlug: 'westmoreland', expectedCity: 'Greensburg' },
 ];
 
 let totalIssues = 0;

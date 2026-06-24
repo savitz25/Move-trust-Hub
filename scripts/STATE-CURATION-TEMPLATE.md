@@ -34,7 +34,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | District of Columbia | 1/1 jurisdiction (complete) | 15 | 15 (premium hub) | hub + jurisdiction 0.85 | `count-district-of-columbia-movers.ts`, `apply-district-of-columbia-mover-expansion.ts`, `audit-district-of-columbia-seo.ts` |
 | Delaware | 3/3 (complete) | 8 | 12 (New Castle) / 8 (Kent, Sussex) | `new-castle` 0.85 | `count-delaware-movers.ts`, `apply-delaware-mover-expansion.ts`, `audit-delaware-seo.ts` |
 | Maryland | 24/24 (complete) | 10 | 10 (all jurisdictions) | 16 regional hubs 0.85 | `count-maryland-movers.ts`, `apply-maryland-mover-expansion.ts`, `audit-maryland-seo.ts` |
-| Pennsylvania | 3/67 (batch 1) | 10 | 10 (large markets) | `philadelphia`, `allegheny`, `montgomery` 0.85 | `count-pennsylvania-movers.ts`, `apply-pennsylvania-mover-expansion.ts`, `audit-pennsylvania-seo.ts` |
+| Pennsylvania | 11/67 (batch 2) | 10 | 10 (large markets) | 11 counties 0.85 | `count-pennsylvania-movers.ts`, `apply-pennsylvania-mover-expansion.ts`, `audit-pennsylvania-seo.ts` |
 
 > **Pennsylvania note:** Philadelphia County is coterminous with the City of Philadelphia — no supplemental geography needed. PA `delaware` slug = Delaware County PA (not DE state); nearby links use `displayLabel` disambiguation. Montgomery PA nearby links to Montgomery MD cross-border. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
