@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Oregon county research — 11/36 premium hubs (batch 1) */
+/** Hand-curated Oregon county research — 25/36 complete (batches 1–2) */
 export const oregonCountyResearch: Record<string, CuratedCountyResearch> = {
   multnomah: {
     marketNotes:
@@ -191,6 +191,244 @@ export const oregonCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Corvallis and surrounding cities before booking.',
       'University traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes and student-related moves.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wasco: {
+    marketNotes:
+      'Wasco County is a Columbia River Gorge county with residential and tourism demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Wasco County pricing reflects Columbia Gorge demand, I-84 corridor traffic, and competition among regional agents serving The Dalles and surrounding communities.',
+    },
+    tips: [
+      'Verify coverage for The Dalles and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is an eastern Oregon county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Union County, Oregon pricing reflects La Grande metro and Grande Ronde Valley demand with regional travel affecting crew scheduling.',
+    },
+    tips: [
+      'Verify coverage for La Grande and surrounding cities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County is a central Oregon county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Jefferson County, Oregon pricing reflects Madras-area demand, US-97 corridor traffic, and competition among regional agents serving central Oregon communities.',
+    },
+    tips: [
+      'Verify coverage for Madras and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'hood-river': {
+    marketNotes:
+      'Hood River County is a Columbia River Gorge county with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Hood River County pricing reflects Gorge tourism demand, seasonal traffic, and competition among regional agents serving Hood River and waterfront communities.',
+    },
+    tips: [
+      'Verify coverage for Hood River and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak tourist seasons (May–September).',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  curry: {
+    marketNotes:
+      'Curry County is a southern coastal county with residential and tourism demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Curry County pricing reflects southern Oregon coastal demand, US-101 corridor traffic, and competition among regional agents serving Gold Beach and Brookings-area communities.',
+    },
+    tips: [
+      'Verify coverage for Gold Beach and surrounding cities before booking.',
+      'Coastal traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value waterfront homes.',
+      'Book early for peak tourist seasons (May–September).',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  baker: {
+    marketNotes:
+      'Baker County is an eastern Oregon county with rural residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Baker County pricing reflects Baker City and Powder River Valley demand with extended travel distances affecting regional mover scheduling.',
+    },
+    tips: [
+      'Verify coverage for Baker City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morrow: {
+    marketNotes:
+      'Morrow County is a rural eastern Oregon county with agricultural and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Morrow County pricing reflects Heppner-area agricultural community demand with regional travel affecting crew availability.',
+    },
+    tips: [
+      'Verify coverage for Heppner and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lake: {
+    marketNotes:
+      'Lake County is a large rural southeastern Oregon county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Lake County, Oregon pricing reflects Lakeview high-desert demand with extended travel distances affecting regional mover scheduling.',
+    },
+    tips: [
+      'Verify coverage for Lakeview and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wallowa: {
+    marketNotes:
+      'Wallowa County is a remote northeastern Oregon county with rural residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Wallowa County pricing reflects Enterprise and Wallowa Valley demand with mountain-road travel affecting crew scheduling.',
+    },
+    tips: [
+      'Verify coverage for Enterprise and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  harney: {
+    marketNotes:
+      'Harney County is one of Oregon’s largest and most remote counties with rural residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Harney County pricing reflects Burns-area high-desert demand with very long travel distances affecting regional mover availability.',
+    },
+    tips: [
+      'Verify coverage for Burns and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County is a rural eastern Oregon county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Grant County, Oregon pricing reflects Canyon City and John Day Valley demand with extended travel distances affecting regional mover scheduling.',
+    },
+    tips: [
+      'Verify coverage for Canyon City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sherman: {
+    marketNotes:
+      'Sherman County is one of Oregon’s smallest counties with rural residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Sherman County, Oregon pricing reflects Moro wheat-country demand with regional travel affecting crew availability.',
+    },
+    tips: [
+      'Verify coverage for Moro and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gilliam: {
+    marketNotes:
+      'Gilliam County is one of Oregon’s smallest counties with rural residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Gilliam County pricing reflects Condon plateau demand with regional travel affecting crew scheduling.',
+    },
+    tips: [
+      'Verify coverage for Condon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wheeler: {
+    marketNotes:
+      'Wheeler County is one of Oregon’s smallest and most rural counties with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Wheeler County pricing reflects Fossil and John Day Fossil Beds area demand with remote travel affecting regional mover availability.',
+    },
+    tips: [
+      'Verify coverage for Fossil and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],

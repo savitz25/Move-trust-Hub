@@ -43,8 +43,8 @@ console.log('==============');
 console.log(`Curated counties: ${curatedSlugs.length}`);
 const researchCount = Object.keys(oregonCountyResearch).length;
 console.log(`Research entries: ${researchCount}`);
-if (researchCount !== 11) {
-  issues.push(`research count: ${researchCount} (expected 11)`);
+if (researchCount !== 25) {
+  issues.push(`research count: ${researchCount} (expected 25)`);
 }
 
 for (const slug of curatedSlugs) {
@@ -57,7 +57,7 @@ for (const slug of curatedSlugs) {
 console.log(`Issues: ${issues.length}`);
 
 if (issues.length === 0) {
-  console.log('\n✓ Oregon curated counties meet full curation standard (11/36 batch 1).');
+  console.log('\n✓ Oregon curated counties meet full curation standard (25/36 batches 1–2).');
 } else {
   console.log('\nIssues:');
   for (const line of issues) console.log(`  ${line}`);

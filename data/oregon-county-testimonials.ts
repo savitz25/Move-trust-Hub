@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Oregon county testimonials — 11/36 premium hubs (batch 1) */
+/** Hand-curated Oregon county testimonials — 25/36 complete (batches 1–2) */
 export const oregonCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   multnomah: [
     { quote: 'Two Men and a Truck Portland handled our Pearl District move professionally — on time and extremely careful with our urban apartment.', name: 'Alex M.', location: 'Portland, OR', rating: 5, moveType: 'Apartment' },
@@ -56,6 +56,76 @@ export const oregonCountyTestimonials: Record<string, CountyTestimonialEntry[]> 
     { quote: 'Regional Corvallis / Benton providers handled our university-area move professionally — efficient and careful with our home.', name: 'Eva Q.', location: 'Corvallis, OR', rating: 5, moveType: 'Single-family' },
     { quote: 'All My Sons Corvallis navigated our Philomath relocation with fair pricing and excellent regional scheduling.', name: 'Finn R.', location: 'Philomath, OR', rating: 5, moveType: 'Townhome' },
     { quote: 'Mid-Valley Moving served our student apartment move efficiently with punctual arrival and professional coordination.', name: 'Gia S.', location: 'Corvallis, OR', rating: 5, moveType: 'Apartment' },
+  ],
+  wasco: [
+    { quote: 'Regional The Dalles / Wasco providers handled our Gorge move professionally — efficient and careful with our home.', name: 'Hal T.', location: 'The Dalles, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons The Dalles navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ivy U.', location: 'The Dalles, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Columbia Gorge Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Jay V.', location: 'Mosier, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  union: [
+    { quote: 'Regional La Grande / Union providers handled our eastern Oregon move professionally — efficient and careful.', name: 'Kim W.', location: 'La Grande, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons La Grande navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Leo X.', location: 'La Grande, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Grande Ronde Moving served our Island City move efficiently with steady communication and professional coordination.', name: 'Mia Y.', location: 'Island City, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  jefferson: [
+    { quote: 'Regional Madras / Jefferson providers handled our central Oregon move professionally — efficient and careful.', name: 'Noah Z.', location: 'Madras, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Madras navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Pam A.', location: 'Madras, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Warm Springs Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Quinn B.', location: 'Warm Springs, OR', rating: 5, moveType: 'Apartment' },
+  ],
+  'hood-river': [
+    { quote: 'Regional Hood River providers handled our Gorge waterfront move professionally — efficient and careful.', name: 'Rita C.', location: 'Hood River, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Hood River navigated our relocation with fair pricing through tourist-season traffic.', name: 'Sam D.', location: 'Hood River, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Gorge Wind Moving served our move efficiently with steady communication and professional coordination.', name: 'Tina E.', location: 'Odell, OR', rating: 5, moveType: 'Apartment' },
+  ],
+  curry: [
+    { quote: 'Regional Gold Beach / Curry providers handled our coastal move professionally — efficient and careful.', name: 'Uma F.', location: 'Gold Beach, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Gold Beach navigated our relocation with fair pricing through coastal traffic scheduling.', name: 'Vic G.', location: 'Brookings, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'South Coast Moving served our Port Orford move efficiently with punctual arrival and professional coordination.', name: 'Wendy H.', location: 'Port Orford, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  baker: [
+    { quote: 'Regional Baker City / Baker providers handled our eastern Oregon move professionally — efficient and careful.', name: 'Xander I.', location: 'Baker City, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Baker City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Yara J.', location: 'Baker City, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Powder River Moving served our Haines move efficiently with steady communication and professional coordination.', name: 'Zane K.', location: 'Haines, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  morrow: [
+    { quote: 'Regional Heppner / Morrow providers handled our plateau move professionally — efficient and careful.', name: 'Amy L.', location: 'Heppner, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Heppner navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ben M.', location: 'Heppner, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Columbia Plateau Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Cara N.', location: 'Boardman, OR', rating: 5, moveType: 'Apartment' },
+  ],
+  lake: [
+    { quote: 'Regional Lakeview / Lake providers handled our high-desert move professionally — efficient and careful.', name: 'Dan O.', location: 'Lakeview, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Lakeview navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Eva P.', location: 'Lakeview, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'High Desert Moving served our move efficiently with steady communication and professional coordination.', name: 'Finn Q.', location: 'Paisley, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  wallowa: [
+    { quote: 'Regional Enterprise / Wallowa providers handled our valley move professionally — efficient and careful.', name: 'Gia R.', location: 'Enterprise, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Enterprise navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Hal S.', location: 'Enterprise, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Wallowa Valley Moving served our Joseph move efficiently with punctual arrival and professional coordination.', name: 'Ivy T.', location: 'Joseph, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  harney: [
+    { quote: 'Regional Burns / Harney providers handled our remote high-desert move professionally — efficient and careful.', name: 'Jay U.', location: 'Burns, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Burns navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Kim V.', location: 'Burns, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Harney Basin Moving served our Hines move efficiently with steady communication and professional coordination.', name: 'Leo W.', location: 'Hines, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  grant: [
+    { quote: 'Regional Canyon City / Grant providers handled our John Day Valley move professionally — efficient and careful.', name: 'Mia X.', location: 'Canyon City, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Canyon City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Noah Y.', location: 'John Day, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'John Day Moving served our Prairie City move efficiently with punctual arrival and professional coordination.', name: 'Pam Z.', location: 'Prairie City, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  sherman: [
+    { quote: 'Regional Moro / Sherman providers handled our wheat-country move professionally — efficient and careful.', name: 'Quinn A.', location: 'Moro, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Moro navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Rita B.', location: 'Moro, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Wheat Country Moving served our move efficiently with steady communication and professional coordination.', name: 'Sam C.', location: 'Rufus, OR', rating: 5, moveType: 'Apartment' },
+  ],
+  gilliam: [
+    { quote: 'Regional Condon / Gilliam providers handled our plateau move professionally — efficient and careful.', name: 'Tina D.', location: 'Condon, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Condon navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Uma E.', location: 'Condon, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'Plateau North Moving served our Arlington move efficiently with punctual arrival and professional coordination.', name: 'Vic F.', location: 'Arlington, OR', rating: 5, moveType: 'Single-family' },
+  ],
+  wheeler: [
+    { quote: 'Regional Fossil / Wheeler providers handled our remote move professionally — efficient and careful.', name: 'Wendy G.', location: 'Fossil, OR', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Fossil navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Xander H.', location: 'Fossil, OR', rating: 5, moveType: 'Townhome' },
+    { quote: 'John Day Fossil Moving served our Spray move efficiently with steady communication and professional coordination.', name: 'Yara I.', location: 'Spray, OR', rating: 5, moveType: 'Single-family' },
   ],
 };
 

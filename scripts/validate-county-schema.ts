@@ -1096,6 +1096,20 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'oregon', countySlug: 'douglas', expectedCity: 'Roseburg' },
   { stateSlug: 'oregon', countySlug: 'yamhill', expectedCity: 'McMinnville' },
   { stateSlug: 'oregon', countySlug: 'benton', expectedCity: 'Corvallis' },
+  { stateSlug: 'oregon', countySlug: 'wasco', expectedCity: 'The Dalles' },
+  { stateSlug: 'oregon', countySlug: 'union', expectedCity: 'La Grande' },
+  { stateSlug: 'oregon', countySlug: 'jefferson', expectedCity: 'Madras' },
+  { stateSlug: 'oregon', countySlug: 'hood-river', expectedCity: 'Hood River' },
+  { stateSlug: 'oregon', countySlug: 'curry', expectedCity: 'Gold Beach' },
+  { stateSlug: 'oregon', countySlug: 'baker', expectedCity: 'Baker City' },
+  { stateSlug: 'oregon', countySlug: 'morrow', expectedCity: 'Heppner' },
+  { stateSlug: 'oregon', countySlug: 'lake', expectedCity: 'Lakeview' },
+  { stateSlug: 'oregon', countySlug: 'wallowa', expectedCity: 'Enterprise' },
+  { stateSlug: 'oregon', countySlug: 'harney', expectedCity: 'Burns' },
+  { stateSlug: 'oregon', countySlug: 'grant', expectedCity: 'Canyon City' },
+  { stateSlug: 'oregon', countySlug: 'sherman', expectedCity: 'Moro' },
+  { stateSlug: 'oregon', countySlug: 'gilliam', expectedCity: 'Condon' },
+  { stateSlug: 'oregon', countySlug: 'wheeler', expectedCity: 'Fossil' },
 ];
 
 let totalIssues = 0;

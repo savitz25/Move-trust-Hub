@@ -15,6 +15,20 @@ export const oregonCountyOverrides: Partial<
   douglas: { seat: 'Roseburg', metro: 'douglas-metro-or' },
   yamhill: { seat: 'McMinnville', metro: 'yamhill-metro-or' },
   benton: { seat: 'Corvallis', metro: 'benton-metro-or' },
+  wasco: { seat: 'The Dalles', metro: 'wasco-metro-or' },
+  union: { seat: 'La Grande', metro: 'union-metro-or' },
+  jefferson: { seat: 'Madras', metro: 'jefferson-metro-or' },
+  'hood-river': { seat: 'Hood River', metro: 'hood-river-metro-or' },
+  curry: { seat: 'Gold Beach', metro: 'curry-metro-or' },
+  baker: { seat: 'Baker City', metro: 'baker-metro-or' },
+  morrow: { seat: 'Heppner', metro: 'morrow-metro-or' },
+  lake: { seat: 'Lakeview', metro: 'lake-metro-or' },
+  wallowa: { seat: 'Enterprise', metro: 'wallowa-metro-or' },
+  harney: { seat: 'Burns', metro: 'harney-metro-or' },
+  grant: { seat: 'Canyon City', metro: 'grant-metro-or' },
+  sherman: { seat: 'Moro', metro: 'sherman-metro-or' },
+  gilliam: { seat: 'Condon', metro: 'gilliam-metro-or' },
+  wheeler: { seat: 'Fossil', metro: 'wheeler-metro-or' },
 };
 
 export function applyOregonCountyOverrides(county: LocalCounty): LocalCounty {
