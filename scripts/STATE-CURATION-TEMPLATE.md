@@ -26,7 +26,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
-| Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 92 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
+| Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
@@ -71,9 +71,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 
 `marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`, `lawrence`, `dekalb`, `dubois`, `lagrange`, `harrison`, `montgomery`, `putnam`, `cass`, `huntington`, `adams`, `knox`, `whitley`, `steuben`, `miami`
 
-### Indiana sitemap priority 0.85 (47 counties — batches 1–5)
+### Indiana sitemap priority 0.85 (15 counties — top population / metro hubs)
 
-`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`, `lawrence`, `dekalb`, `dubois`, `lagrange`, `harrison`, `montgomery`, `putnam`, `cass`, `huntington`, `adams`, `knox`, `whitley`, `steuben`, `miami`
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `vanderburgh`, `porter`, `hendricks`, `madison`, `tippecanoe`, `monroe`, `delaware`, `bartholomew`, `clark`
 
 **GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/indiana.xml` (93 URLs: hub + 92 counties). Do **not** use `/sitemap-local/indiana.xml` (legacy path redirects to canonical).
 
@@ -556,6 +556,7 @@ npx tsx scripts/count-tennessee-movers.ts
 npx tsx scripts/count-illinois-movers.ts
 npx tsx scripts/count-michigan-movers.ts
 npx tsx scripts/count-indiana-movers.ts
+npx tsx scripts/audit-indiana-seo.ts
 npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
 npx tsx scripts/apply-michigan-mover-expansion.ts   # if needed
 npx tsx scripts/apply-indiana-mover-expansion.ts   # if needed
