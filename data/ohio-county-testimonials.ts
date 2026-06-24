@@ -730,6 +730,318 @@ export const ohioCountyTestimonials: Record<string, CountyTestimonialEntry[]> = 
       moveType: 'Apartment',
     },
   ],
+  geauga: [
+    {
+      quote:
+        'Two Men and a Truck Geauga handled our Chardon relocation professionally — on time, efficient, and extremely careful with our high-value home.',
+      name: 'Uma N.',
+      location: 'Chardon, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Chesterland Moving confirmed affluent suburban coverage — best local moving service in Geauga County with transparent pricing.',
+      name: 'Vic O.',
+      location: 'Chesterland, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Geauga County Moving served our Middlefield area move efficiently — professional crew with careful handling east of Cleveland.',
+      name: 'Wendy P.',
+      location: 'Middlefield, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  tuscarawas: [
+    {
+      quote:
+        'Two Men and a Truck Tuscarawas handled our New Philadelphia relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Xander Q.',
+      location: 'New Philadelphia, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Dover Moving confirmed East Central Ohio coverage — best local moving service in Tuscarawas County with fair pricing.',
+      name: 'Yara R.',
+      location: 'Dover, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Tuscarawas County Moving served our Uhrichsville area move efficiently — professional crew with careful handling.',
+      name: 'Zane S.',
+      location: 'Uhrichsville, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  muskingum: [
+    {
+      quote:
+        'Two Men and a Truck Muskingum handled our Zanesville relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Abby T.',
+      location: 'Zanesville, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Zanesville Moving confirmed downtown and Y bridge area coverage — best local moving service in Muskingum County with transparent pricing.',
+      name: 'Blake U.',
+      location: 'Zanesville, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Y Bridge Moving served our Muskingum County move efficiently — professional crew with careful handling in East Central Ohio.',
+      name: 'Cora V.',
+      location: 'Zanesville, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  ross: [
+    {
+      quote:
+        'Two Men and a Truck Ross handled our Chillicothe relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Drew W.',
+      location: 'Chillicothe, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Chillicothe Moving confirmed historic district coverage — best local moving service in Ross County with transparent pricing.',
+      name: 'Eva X.',
+      location: 'Chillicothe, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Hopewell Moving served our South Central Ohio move efficiently — professional crew with careful handling in Ross County.',
+      name: 'Finn Y.',
+      location: 'Chillicothe, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  hancock: [
+    {
+      quote:
+        'Two Men and a Truck Hancock handled our Findlay relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Gia Z.',
+      location: 'Findlay, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Findlay Moving confirmed Northwest Ohio coverage — best local moving service in Hancock County with fair pricing.',
+      name: 'Hugo A.',
+      location: 'Findlay, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Hancock Valley Moving served our industrial-area move efficiently — professional crew with careful handling in Findlay.',
+      name: 'Ivy B.',
+      location: 'Findlay, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  union: [
+    {
+      quote:
+        'Two Men and a Truck Union handled our Marysville relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Jade C.',
+      location: 'Marysville, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Marysville Moving confirmed growing suburban coverage — best local moving service in Union County with transparent pricing.',
+      name: 'Kyle D.',
+      location: 'Marysville, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Plain City Moving served our Union County move efficiently — professional crew with careful handling northwest of Columbus.',
+      name: 'Lena E.',
+      location: 'Plain City, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  erie: [
+    {
+      quote:
+        'Two Men and a Truck Erie handled our Sandusky relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Milo F.',
+      location: 'Sandusky, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Sandusky Moving confirmed tourist-season coverage — best local moving service in Erie County with transparent pricing.',
+      name: 'Nora G.',
+      location: 'Sandusky, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Huron Moving served our Lake Erie shoreline move efficiently — professional crew with careful handling near Cedar Point.',
+      name: 'Owen H.',
+      location: 'Huron, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  scioto: [
+    {
+      quote:
+        'Two Men and a Truck Scioto handled our Portsmouth relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Paige I.',
+      location: 'Portsmouth, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Portsmouth Moving confirmed Ohio River valley coverage — best local moving service in Scioto County with fair pricing.',
+      name: 'Quinn J.',
+      location: 'Portsmouth, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Ohio River Valley Moving served our Scioto County move efficiently — professional crew with careful handling in Southern Ohio.',
+      name: 'Riley K.',
+      location: 'Portsmouth, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  marion: [
+    {
+      quote:
+        'Two Men and a Truck Marion handled our Marion County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Sage L.',
+      location: 'Marion, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Marion Moving confirmed Central Ohio hub coverage — best local moving service in Marion County with transparent pricing.',
+      name: 'Troy M.',
+      location: 'Marion, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Marion County Moving served our Prospect area move efficiently — professional crew with careful handling in Marion County.',
+      name: 'Uma N.',
+      location: 'Prospect, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  knox: [
+    {
+      quote:
+        'Two Men and a Truck Knox handled our Mount Vernon relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Vic O.',
+      location: 'Mount Vernon, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mount Vernon Moving confirmed rural Central Ohio coverage — best local moving service in Knox County with fair pricing.',
+      name: 'Wendy P.',
+      location: 'Mount Vernon, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Gambier Moving served our Knox County move efficiently — professional crew with careful handling near Kenyon College.',
+      name: 'Xander Q.',
+      location: 'Gambier, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  belmont: [
+    {
+      quote:
+        'Two Men and a Truck Belmont handled our St. Clairsville relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Yara R.',
+      location: 'St. Clairsville, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'St. Clairsville Moving confirmed Ohio River coverage — best local moving service in Belmont County with transparent pricing.',
+      name: 'Zane S.',
+      location: 'St. Clairsville, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Bellaire Moving served our Belmont County move efficiently — professional crew with careful handling in East Central Ohio.',
+      name: 'Abby T.',
+      location: 'Bellaire, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  pickaway: [
+    {
+      quote:
+        'Two Men and a Truck Pickaway handled our Circleville relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Blake U.',
+      location: 'Circleville, OH',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Circleville Moving confirmed Columbus spillover coverage — best local moving service in Pickaway County with transparent pricing.',
+      name: 'Cora V.',
+      location: 'Circleville, OH',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Ashville Moving served our rural Pickaway County move efficiently — professional crew with careful handling south of Columbus.',
+      name: 'Drew W.',
+      location: 'Ashville, OH',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getOhioCountyTestimonials(

@@ -188,6 +188,18 @@ const OH_HIGH_TRAFFIC_COUNTIES = new Set([
   'allen',
   'columbiana',
   'ashtabula',
+  'geauga',
+  'tuscarawas',
+  'muskingum',
+  'ross',
+  'hancock',
+  'union',
+  'erie',
+  'scioto',
+  'marion',
+  'knox',
+  'belmont',
+  'pickaway',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

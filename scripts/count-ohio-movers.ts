@@ -36,6 +36,18 @@ const MAJOR = new Set([
   'allen',
   'columbiana',
   'ashtabula',
+  'geauga',
+  'tuscarawas',
+  'muskingum',
+  'ross',
+  'hancock',
+  'union',
+  'erie',
+  'scioto',
+  'marion',
+  'knox',
+  'belmont',
+  'pickaway',
 ]);
 
 const under5: string[] = [];

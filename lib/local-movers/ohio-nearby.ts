@@ -39,6 +39,18 @@ const OH_COUNTY_NEIGHBORS: Record<string, string[]> = {
   allen: ['auglaize', 'putnam', 'hancock', 'hardin', 'van-wert', 'logan'],
   columbiana: ['mahoning', 'stark', 'carroll', 'jefferson', 'harrison', 'trumbull'],
   ashtabula: ['lake', 'geauga', 'trumbull', 'crawford', 'erie', 'cuyahoga'],
+  geauga: ['cuyahoga', 'lake', 'portage', 'trumbull', 'ashtabula', 'summit'],
+  tuscarawas: ['stark', 'carroll', 'holmes', 'coshocton', 'guernsey', 'harrison'],
+  muskingum: ['licking', 'coshocton', 'guernsey', 'noble', 'morgan', 'perry'],
+  ross: ['pickaway', 'pike', 'scioto', 'hocking', 'vinton', 'fairfield'],
+  hancock: ['allen', 'hardin', 'wyandot', 'seneca', 'wood', 'putnam'],
+  union: ['delaware', 'marion', 'logan', 'champaign', 'madison', 'franklin'],
+  erie: ['lorain', 'huron', 'ottawa', 'sandusky', 'crawford', 'hancock'],
+  scioto: ['pike', 'lawrence', 'adams', 'jackson', 'ross', 'gallia'],
+  marion: ['delaware', 'union', 'morrow', 'crawford', 'richland', 'knox'],
+  knox: ['licking', 'delaware', 'morrow', 'richland', 'coshocton', 'holmes'],
+  belmont: ['harrison', 'jefferson', 'monroe', 'noble', 'guernsey', 'columbiana'],
+  pickaway: ['franklin', 'fairfield', 'ross', 'hocking', 'fayette', 'madison'],
 };
 
 export function getOhioNearbyCounties(

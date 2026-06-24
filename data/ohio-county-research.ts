@@ -484,6 +484,210 @@ export const ohioCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  geauga: {
+    marketNotes:
+      'Geauga County is an affluent suburban and rural county east of Cleveland with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Geauga County pricing reflects Cleveland east-metro affluent suburban demand, US-422 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Chardon and surrounding areas before booking.',
+      'Cleveland-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tuscarawas: {
+    marketNotes:
+      'Tuscarawas County is a key county in East Central Ohio with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Tuscarawas County pricing reflects East Central Ohio industrial and residential demand, I-77 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for New Philadelphia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  muskingum: {
+    marketNotes:
+      'Muskingum County is the core of the Zanesville metropolitan area with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Muskingum County pricing reflects Zanesville metro industrial and residential demand, I-70/US-40 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Zanesville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ross: {
+    marketNotes:
+      'Ross County is a key South Central Ohio county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Ross County pricing reflects Chillicothe metro industrial and residential demand, US-35 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Chillicothe and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hancock: {
+    marketNotes:
+      'Hancock County is a key Northwest Ohio county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Hancock County pricing reflects Findlay metro industrial and residential demand, I-75/US-30 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Findlay and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  union: {
+    marketNotes:
+      'Union County is a growing suburban county northwest of Columbus with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Union County pricing reflects Columbus northwest-metro suburban growth, US-33 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Marysville and surrounding areas before booking.',
+      'Columbus-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  erie: {
+    marketNotes:
+      'Erie County is a key North Central Ohio county with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Erie County pricing reflects Sandusky tourism and residential demand, seasonal lakefront traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Sandusky and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  scioto: {
+    marketNotes:
+      'Scioto County is a key South Central Ohio county with residential demand centered on Portsmouth.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Scioto County pricing reflects Portsmouth metro residential demand, Ohio River valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Portsmouth and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  marion: {
+    marketNotes:
+      'Marion County is a key Central Ohio county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Marion County pricing reflects Central Ohio industrial and residential demand, US-23 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Marion and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  knox: {
+    marketNotes:
+      'Knox County is a rural Central Ohio county with residential demand centered on Mount Vernon.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Knox County pricing reflects Central Ohio rural and residential demand, US-36 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Mount Vernon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  belmont: {
+    marketNotes:
+      'Belmont County is a key East Central Ohio county with strong industrial and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Belmont County pricing reflects Ohio River valley industrial and residential demand, I-70 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for St. Clairsville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pickaway: {
+    marketNotes:
+      'Pickaway County is a suburban and rural county south of Columbus with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Pickaway County pricing reflects Columbus south-metro suburban demand, US-23 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Circleville and surrounding areas before booking.',
+      'Columbus-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getOhioCountyResearch(

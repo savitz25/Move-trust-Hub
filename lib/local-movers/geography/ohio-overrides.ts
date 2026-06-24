@@ -32,6 +32,18 @@ export const ohioCountyOverrides: Partial<
   allen: { seat: 'Lima', metro: 'lima-metro-oh' },
   columbiana: { seat: 'Lisbon', metro: 'youngstown-metro-oh' },
   ashtabula: { seat: 'Jefferson', metro: 'cleveland-metro-oh' },
+  geauga: { seat: 'Chardon', metro: 'cleveland-metro-oh' },
+  tuscarawas: { seat: 'New Philadelphia', metro: 'canton-metro-oh' },
+  muskingum: { seat: 'Zanesville', metro: 'zanesville-metro-oh' },
+  ross: { seat: 'Chillicothe', metro: 'chillicothe-metro-oh' },
+  hancock: { seat: 'Findlay', metro: 'findlay-metro-oh' },
+  union: { seat: 'Marysville', metro: 'columbus-metro-oh' },
+  erie: { seat: 'Sandusky', metro: 'cleveland-metro-oh' },
+  scioto: { seat: 'Portsmouth', metro: 'portsmouth-metro-oh' },
+  marion: { seat: 'Marion', metro: 'columbus-metro-oh' },
+  knox: { seat: 'Mount Vernon', metro: 'columbus-metro-oh' },
+  belmont: { seat: 'St. Clairsville', metro: 'youngstown-metro-oh' },
+  pickaway: { seat: 'Circleville', metro: 'columbus-metro-oh' },
 };
 
 export function applyOhioCountyOverrides(county: LocalCounty): LocalCounty {
