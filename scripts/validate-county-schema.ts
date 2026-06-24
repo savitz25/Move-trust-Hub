@@ -594,6 +594,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: taylor, expectedCity: 'Campbellsville' },
   { stateSlug: 'kentucky', countySlug: grant, expectedCity: 'Williamstown' },
   { stateSlug: 'kentucky', countySlug: perry, expectedCity: 'Hazard' },
+  { stateSlug: 'kentucky', countySlug: carter, expectedCity: 'Grayson' },
+  { stateSlug: 'kentucky', countySlug: lincoln, expectedCity: 'Stanford' },
+  { stateSlug: 'kentucky', countySlug: anderson, expectedCity: 'Lawrenceburg' },
+  { stateSlug: 'kentucky', countySlug: rowan, expectedCity: 'Morehead' },
+  { stateSlug: 'kentucky', countySlug: harlan, expectedCity: 'Harlan' },
+  { stateSlug: 'kentucky', countySlug: ohio, expectedCity: 'Hartford' },
+  { stateSlug: 'kentucky', countySlug: mercer, expectedCity: 'Harrodsburg' },
+  { stateSlug: 'kentucky', countySlug: allen, expectedCity: 'Scottsville' },
+  { stateSlug: 'kentucky', countySlug: bell, expectedCity: 'Pineville' },
+  { stateSlug: 'kentucky', countySlug: johnson, expectedCity: 'Paintsville' },
+  { stateSlug: 'kentucky', countySlug: breckinridge, expectedCity: 'Hardinsburg' },
+  { stateSlug: 'kentucky', countySlug: spencer, expectedCity: 'Taylorsville' },
+  { stateSlug: 'kentucky', countySlug: simpson, expectedCity: 'Franklin' },
+  { stateSlug: 'kentucky', countySlug: hart, expectedCity: 'Munfordville' },
+  { stateSlug: 'kentucky', countySlug: marion, expectedCity: 'Lebanon' },
 ];
 
 let totalIssues = 0;

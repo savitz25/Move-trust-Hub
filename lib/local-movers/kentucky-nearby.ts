@@ -54,6 +54,21 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   taylor: ['marion', 'casey', 'green', 'larue', 'adair', 'russell'],
   grant: ['boone', 'pendleton', 'owen', 'scott', 'harrison', 'kenton'],
   perry: ['knott', 'leslie', 'harlan', 'breathitt', 'clay', 'floyd'],
+  carter: ['greenup', 'boyd', 'elliott', 'rowan', 'lewis', 'lawrence'],
+  lincoln: ['garrard', 'boyle', 'pulaski', 'casey', 'rockcastle', 'madison'],
+  anderson: ['franklin', 'shelby', 'woodford', 'spencer', 'nelson', 'mercer'],
+  rowan: ['carter', 'lewis', 'elliott', 'fleming', 'morgan', 'menifee'],
+  harlan: ['leslie', 'perry', 'letcher', 'bell', 'knox', 'clay'],
+  ohio: ['daviess', 'hancock', 'mclean', 'butler', 'grayson', 'breckinridge'],
+  mercer: ['boyle', 'anderson', 'woodford', 'garrard', 'washington', 'jessamine'],
+  allen: ['simpson', 'warren', 'barren', 'monroe', 'logan', 'edmonson'],
+  bell: ['harlan', 'knox', 'whitley', 'leslie', 'clay', 'mccreary'],
+  johnson: ['floyd', 'lawrence', 'martin', 'magoffin', 'morgan', 'pike'],
+  breckinridge: ['ohio', 'hancock', 'grayson', 'meade', 'hardin', 'larue'],
+  spencer: ['shelby', 'bullitt', 'nelson', 'jefferson', 'oldham', 'henry'],
+  simpson: ['allen', 'warren', 'logan', 'butler', 'barren', 'edmonson'],
+  hart: ['barren', 'edmonson', 'larue', 'hardin', 'green', 'grayson'],
+  marion: ['taylor', 'washington', 'boyle', 'casey', 'nelson', 'mercer'],
 };
 
 export function getKentuckyNearbyCounties(

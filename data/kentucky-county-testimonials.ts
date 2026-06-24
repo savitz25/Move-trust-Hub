@@ -511,6 +511,81 @@ export const kentuckyCountyTestimonials: Record<string, CountyTestimonialEntry[]
     { quote: 'Hazard Moving confirmed Eastern Kentucky coverage — best local moving service in Perry County with fair pricing.', name: 'Zane M.', location: 'Hazard, KY', rating: 5, moveType: 'Townhome' },
     { quote: 'Mountain Moving served our residential move efficiently — professional crew with careful handling across Perry County.', name: 'Abigail N.', location: 'Hazard, KY', rating: 5, moveType: 'Single-family' },
   ],
+  carter: [
+    { quote: 'Two Men and a Truck Grayson handled our Carter County relocation professionally — on time, efficient, and extremely careful.', name: 'Bruce O.', location: 'Grayson, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Grayson Moving confirmed Northeast Kentucky coverage — best local moving service in Carter County with fair pricing.', name: 'Cindy P.', location: 'Grayson, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Little Sandy Moving served our rural move efficiently — professional crew with careful handling across Carter County.', name: 'Dale Q.', location: 'Grayson, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  lincoln: [
+    { quote: 'Two Men and a Truck Stanford handled our Lincoln County relocation professionally — on time, efficient, and extremely careful.', name: 'Ella R.', location: 'Stanford, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Stanford Moving confirmed Central Kentucky coverage — best local moving service in Lincoln County with transparent pricing.', name: 'Fred S.', location: 'Stanford, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bluegrass South Moving served our residential move efficiently — professional crew with careful handling across Stanford.', name: 'Gail T.', location: 'Stanford, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  anderson: [
+    { quote: 'Two Men and a Truck Lawrenceburg handled our Anderson County relocation professionally — on time, efficient, and extremely careful.', name: 'Hank U.', location: 'Lawrenceburg, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Lawrenceburg Moving confirmed Central Kentucky coverage — best local moving service in Anderson County with fair pricing.', name: 'Ivy V.', location: 'Lawrenceburg, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bourbon Lake Moving served our suburban move efficiently — professional crew with careful handling across Lawrenceburg.', name: 'Jake W.', location: 'Lawrenceburg, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  rowan: [
+    { quote: 'Two Men and a Truck Morehead handled our Rowan County relocation professionally — on time, efficient, and extremely careful.', name: 'Kara X.', location: 'Morehead, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Morehead State Campus Moving confirmed university-area coverage — best local moving service in Rowan County with fair pricing.', name: 'Liam Y.', location: 'Morehead, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Eastern Kentucky University Moving served our student move efficiently — professional crew with careful handling near Morehead State.', name: 'Maya Z.', location: 'Morehead, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  harlan: [
+    { quote: 'Two Men and a Truck Harlan handled our Harlan County relocation professionally — on time, efficient, and extremely careful.', name: 'Noah A.', location: 'Harlan, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Harlan Moving confirmed Southeast Kentucky coverage — best local moving service in Harlan County with transparent pricing.', name: 'Opal B.', location: 'Harlan, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Black Mountain Moving served our rural move efficiently — professional crew with careful handling across Harlan County.', name: 'Pete C.', location: 'Harlan, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  ohio: [
+    { quote: 'Two Men and a Truck Hartford handled our Ohio County relocation professionally — on time, efficient, and extremely careful.', name: 'Quinn D.', location: 'Hartford, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Hartford Moving confirmed Western Kentucky coverage — best local moving service in Ohio County with fair pricing.', name: 'Rita E.', location: 'Hartford, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Green River East Moving served our residential move efficiently — professional crew with careful handling along the Green River.', name: 'Sam F.', location: 'Hartford, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  mercer: [
+    { quote: 'Two Men and a Truck Harrodsburg handled our Mercer County relocation professionally — on time, efficient, and extremely careful.', name: 'Tina G.', location: 'Harrodsburg, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Oldest Town Moving confirmed Central Kentucky coverage — best local moving service in Mercer County with transparent pricing.', name: 'Umar H.', location: 'Harrodsburg, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bluegrass Heart Moving served our residential move efficiently — professional crew with careful handling across Harrodsburg.', name: 'Vera I.', location: 'Harrodsburg, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  allen: [
+    { quote: 'Two Men and a Truck Scottsville handled our Allen County relocation professionally — on time, efficient, and extremely careful.', name: 'Wade J.', location: 'Scottsville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Scottsville Moving confirmed South Central Kentucky coverage — best local moving service in Allen County with fair pricing.', name: 'Xena K.', location: 'Scottsville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pennyrile East Moving served our rural move efficiently — professional crew with careful handling across Scottsville.', name: 'Yuri L.', location: 'Scottsville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  bell: [
+    { quote: 'Two Men and a Truck Pineville handled our Bell County relocation professionally — on time, efficient, and extremely careful.', name: 'Zoe M.', location: 'Pineville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Pineville Moving confirmed Cumberland Gap coverage — best local moving service in Bell County with transparent pricing.', name: 'Adam N.', location: 'Pineville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cumberland Gap East Moving served our residential move efficiently — professional crew with careful handling across Bell County.', name: 'Beth O.', location: 'Pineville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  johnson: [
+    { quote: 'Two Men and a Truck Paintsville handled our Johnson County relocation professionally — on time, efficient, and extremely careful.', name: 'Cole P.', location: 'Paintsville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Paintsville Moving confirmed Big Sandy coverage — best local moving service in Johnson County with fair pricing.', name: 'Dana Q.', location: 'Paintsville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Big Sandy Valley Moving served our rural move efficiently — professional crew with careful handling across Paintsville.', name: 'Evan R.', location: 'Paintsville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  breckinridge: [
+    { quote: 'Two Men and a Truck Hardinsburg handled our Breckinridge County relocation professionally — on time, efficient, and extremely careful.', name: 'Faye S.', location: 'Hardinsburg, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Hardinsburg Moving confirmed Western Kentucky coverage — best local moving service in Breckinridge County with transparent pricing.', name: 'Glen T.', location: 'Hardinsburg, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Rough River Moving served our residential move efficiently — professional crew with careful handling across Hardinsburg.', name: 'Hope U.', location: 'Hardinsburg, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  spencer: [
+    { quote: 'Two Men and a Truck Taylorsville handled our Spencer County relocation professionally — on time, efficient, and extremely careful.', name: 'Ian V.', location: 'Taylorsville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Taylorsville Moving confirmed Louisville-metro coverage — best local moving service in Spencer County with fair pricing.', name: 'Jill W.', location: 'Taylorsville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Derby City Moving served our suburban move efficiently — professional crew with careful handling east of Louisville.', name: 'Kyle X.', location: 'Taylorsville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  simpson: [
+    { quote: 'Two Men and a Truck Franklin handled our Simpson County relocation professionally — on time, efficient, and extremely careful.', name: 'Lana Y.', location: 'Franklin, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Franklin Moving confirmed South Central Kentucky coverage — best local moving service in Simpson County with transparent pricing.', name: 'Miles Z.', location: 'Franklin, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pennyrile Franklin Moving served our rural move efficiently — professional crew with careful handling across Simpson County.', name: 'Nora A.', location: 'Franklin, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  hart: [
+    { quote: 'Two Men and a Truck Munfordville handled our Hart County relocation professionally — on time, efficient, and extremely careful.', name: 'Owen B.', location: 'Munfordville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Munfordville Moving confirmed cave country coverage — best local moving service in Hart County with fair pricing.', name: 'Pam C.', location: 'Munfordville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cave River Moving served our residential move efficiently — professional crew with careful handling across Munfordville.', name: 'Quincy D.', location: 'Munfordville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  marion: [
+    { quote: 'Two Men and a Truck Lebanon handled our Marion County relocation professionally — on time, efficient, and extremely careful.', name: 'Rosa E.', location: 'Lebanon, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Lebanon Moving confirmed Central Kentucky coverage — best local moving service in Marion County with transparent pricing.', name: 'Sean F.', location: 'Lebanon, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bluegrass Marion Moving served our rural move efficiently — professional crew with careful handling across Lebanon.', name: 'Tara G.', location: 'Lebanon, KY', rating: 5, moveType: 'Single-family' },
+  ],
 };
 
 export function getKentuckyCountyTestimonials(

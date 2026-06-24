@@ -47,6 +47,21 @@ export const kentuckyCountyOverrides: Partial<
   taylor: { seat: 'Campbellsville', metro: 'campbellsville-metro-ky' },
   grant: { seat: 'Williamstown', metro: 'williamstown-metro-ky' },
   perry: { seat: 'Hazard', metro: 'hazard-metro-ky' },
+  carter: { seat: 'Grayson', metro: 'carter-metro-ky' },
+  lincoln: { seat: 'Stanford', metro: 'stanford-metro-ky' },
+  anderson: { seat: 'Lawrenceburg', metro: 'lawrenceburg-metro-ky' },
+  rowan: { seat: 'Morehead', metro: 'morehead-metro-ky' },
+  harlan: { seat: 'Harlan', metro: 'harlan-metro-ky' },
+  ohio: { seat: 'Hartford', metro: 'hartford-metro-ky' },
+  mercer: { seat: 'Harrodsburg', metro: 'harrodsburg-metro-ky' },
+  allen: { seat: 'Scottsville', metro: 'scottsville-metro-ky' },
+  bell: { seat: 'Pineville', metro: 'pineville-metro-ky' },
+  johnson: { seat: 'Paintsville', metro: 'paintsville-metro-ky' },
+  breckinridge: { seat: 'Hardinsburg', metro: 'hardinsburg-metro-ky' },
+  spencer: { seat: 'Taylorsville', metro: 'louisville-metro-ky' },
+  simpson: { seat: 'Franklin', metro: 'simpson-metro-ky' },
+  hart: { seat: 'Munfordville', metro: 'munfordville-metro-ky' },
+  marion: { seat: 'Lebanon', metro: 'lebanon-metro-ky' },
 };
 
 export function applyKentuckyCountyOverrides(county: LocalCounty): LocalCounty {
