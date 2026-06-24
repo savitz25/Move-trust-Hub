@@ -267,6 +267,17 @@ const PA_HIGH_TRAFFIC_COUNTIES = new Set([
   'susquehanna',
   'clinton',
   'warren',
+  'cameron',
+  'clarion',
+  'elk',
+  'forest',
+  'fulton',
+  'greene',
+  'juniata',
+  'montour',
+  'potter',
+  'sullivan',
+  'wyoming',
 ]);
 
 /** High-traffic MD counties — sitemap priority 0.85 (batch 1 large markets) */

@@ -948,6 +948,17 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'pennsylvania', countySlug: 'susquehanna', expectedCity: 'Montrose' },
   { stateSlug: 'pennsylvania', countySlug: 'clinton', expectedCity: 'Lock Haven' },
   { stateSlug: 'pennsylvania', countySlug: 'warren', expectedCity: 'Warren' },
+  { stateSlug: 'pennsylvania', countySlug: 'cameron', expectedCity: 'Emporium' },
+  { stateSlug: 'pennsylvania', countySlug: 'clarion', expectedCity: 'Clarion' },
+  { stateSlug: 'pennsylvania', countySlug: 'elk', expectedCity: 'Ridgway' },
+  { stateSlug: 'pennsylvania', countySlug: 'forest', expectedCity: 'Tionesta' },
+  { stateSlug: 'pennsylvania', countySlug: 'fulton', expectedCity: 'McConnellsburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'greene', expectedCity: 'Waynesburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'juniata', expectedCity: 'Mifflintown' },
+  { stateSlug: 'pennsylvania', countySlug: 'montour', expectedCity: 'Danville' },
+  { stateSlug: 'pennsylvania', countySlug: 'potter', expectedCity: 'Coudersport' },
+  { stateSlug: 'pennsylvania', countySlug: 'sullivan', expectedCity: 'Laporte' },
+  { stateSlug: 'pennsylvania', countySlug: 'wyoming', expectedCity: 'Tunkhannock' },
 ];
 
 let totalIssues = 0;

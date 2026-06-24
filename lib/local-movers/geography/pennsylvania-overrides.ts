@@ -60,6 +60,17 @@ export const pennsylvaniaCountyOverrides: Partial<
   susquehanna: { seat: 'Montrose', metro: 'susquehanna-metro-pa' },
   clinton: { seat: 'Lock Haven', metro: 'clinton-metro-pa' },
   warren: { seat: 'Warren', metro: 'warren-metro-pa' },
+  cameron: { seat: 'Emporium', metro: 'cameron-metro-pa' },
+  clarion: { seat: 'Clarion', metro: 'clarion-metro-pa' },
+  elk: { seat: 'Ridgway', metro: 'elk-metro-pa' },
+  forest: { seat: 'Tionesta', metro: 'forest-metro-pa' },
+  fulton: { seat: 'McConnellsburg', metro: 'fulton-metro-pa' },
+  greene: { seat: 'Waynesburg', metro: 'greene-metro-pa' },
+  juniata: { seat: 'Mifflintown', metro: 'juniata-metro-pa' },
+  montour: { seat: 'Danville', metro: 'montour-metro-pa' },
+  potter: { seat: 'Coudersport', metro: 'potter-metro-pa' },
+  sullivan: { seat: 'Laporte', metro: 'sullivan-metro-pa' },
+  wyoming: { seat: 'Tunkhannock', metro: 'wyoming-metro-pa' },
 };
 
 export function applyPennsylvaniaCountyOverrides(county: LocalCounty): LocalCounty {
