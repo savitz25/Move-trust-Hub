@@ -1,20 +1,19 @@
 /**
- * Full SEO / E-E-A-T audit for Maryland local movers directory — batch 1.
+ * Full SEO / E-E-A-T audit for Maryland local movers directory.
  * Run: npx tsx scripts/audit-maryland-seo.ts
  */
-import { generatedCounties } from '../data/generated/index';
 import { marylandCountyResearch } from '../data/maryland-county-research';
 import { getMarylandCountyTestimonials } from '../data/maryland-county-testimonials';
 import { getMarylandNearbyCounties } from '../lib/local-movers/maryland-nearby';
-import { applyMarylandCountyOverrides } from '../lib/local-movers/geography/maryland-overrides';
+import { getCountiesForState } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const BATCH1 = new Set(['montgomery', 'prince-georges', 'baltimore']);
+const CURATED_SLUGS = new Set(Object.keys(marylandCountyResearch));
 const TARGET = 10;
 
-const counties = generatedCounties
-  .filter((c) => c.stateSlug === 'maryland' && BATCH1.has(c.slug))
-  .map(applyMarylandCountyOverrides);
+const counties = getCountiesForState('maryland').filter((c) =>
+  CURATED_SLUGS.has(c.slug)
+);
 
 const issues: string[] = [];
 
@@ -43,16 +42,16 @@ for (const c of counties) {
 }
 
 const researchCount = Object.keys(marylandCountyResearch).length;
-if (researchCount !== 3) {
-  issues.push(`research count: ${researchCount} (expected 3)`);
+if (researchCount !== CURATED_SLUGS.size) {
+  issues.push(`research count: ${researchCount} (expected ${CURATED_SLUGS.size})`);
 }
 
-console.log('Maryland SEO audit (batch 1)');
-console.log('============================');
-console.log(`Counties: ${counties.length}`);
+console.log('Maryland SEO audit');
+console.log('==================');
+console.log(`Curated counties: ${counties.length}`);
 console.log(`Research entries: ${researchCount}`);
 
-for (const c of counties) {
+for (const c of counties.sort((a, b) => a.slug.localeCompare(b.slug))) {
   const n = getMoversForCounty('maryland', c.slug)?.movers.length ?? 0;
   console.log(
     `  ${c.slug}: ${n} movers (target ${TARGET}), testimonials ${getMarylandCountyTestimonials(c.slug).length}, nearby ${getMarylandNearbyCounties(c.slug).length}`
@@ -62,7 +61,7 @@ for (const c of counties) {
 console.log(`Issues: ${issues.length}`);
 
 if (issues.length === 0) {
-  console.log('\n✓ Maryland batch 1 meets full curation standard (3/3 counties).');
+  console.log(`\n✓ Maryland meets full curation standard (${researchCount}/${researchCount} counties).`);
 } else {
   console.log('\nIssues:');
   for (const line of issues) console.log(`  ${line}`);

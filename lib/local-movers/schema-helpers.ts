@@ -8,7 +8,7 @@ const COUNTY_SUFFIX_PATTERN = /\s(county|parish|borough)$/i;
  * Avoids duplicating "County" when the name already includes it.
  */
 export function buildCountyLabel(county: LocalCounty): string {
-  if (COUNTY_SUFFIX_PATTERN.test(county.name)) {
+  if (COUNTY_SUFFIX_PATTERN.test(county.name) || /\sCity$/i.test(county.name)) {
     return county.name;
   }
   if (county.stateSlug === 'louisiana') {

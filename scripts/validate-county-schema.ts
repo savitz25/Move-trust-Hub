@@ -882,6 +882,12 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'maryland', countySlug: 'montgomery', expectedCity: 'Rockville' },
   { stateSlug: 'maryland', countySlug: 'prince-georges', expectedCity: 'Upper Marlboro' },
   { stateSlug: 'maryland', countySlug: 'baltimore', expectedCity: 'Towson' },
+  { stateSlug: 'maryland', countySlug: 'anne-arundel', expectedCity: 'Annapolis' },
+  { stateSlug: 'maryland', countySlug: 'baltimore-city', expectedCity: 'Baltimore' },
+  { stateSlug: 'maryland', countySlug: 'howard', expectedCity: 'Ellicott City' },
+  { stateSlug: 'maryland', countySlug: 'frederick', expectedCity: 'Frederick' },
+  { stateSlug: 'maryland', countySlug: 'harford', expectedCity: 'Bel Air' },
+  { stateSlug: 'maryland', countySlug: 'charles', expectedCity: 'La Plata' },
 ];
 
 let totalIssues = 0;

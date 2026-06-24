@@ -209,7 +209,17 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
 const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
 
 /** High-traffic MD counties — sitemap priority 0.85 (batch 1 large markets) */
-const MD_HIGH_TRAFFIC_COUNTIES = new Set(['montgomery', 'prince-georges', 'baltimore']);
+const MD_HIGH_TRAFFIC_COUNTIES = new Set([
+  'montgomery',
+  'prince-georges',
+  'baltimore',
+  'anne-arundel',
+  'baltimore-city',
+  'howard',
+  'frederick',
+  'harford',
+  'charles',
+]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */
 const WV_HIGH_TRAFFIC_COUNTIES = new Set([

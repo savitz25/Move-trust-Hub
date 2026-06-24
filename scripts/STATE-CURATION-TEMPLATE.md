@@ -33,9 +33,9 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Virginia | 134/134 (complete) | 5 | 10 (cap 10; Fairfax up to 15) | 18 counties/cities | `count-virginia-movers.ts`, `apply-virginia-mover-expansion.ts`, `audit-virginia-seo.ts` |
 | District of Columbia | 1/1 jurisdiction (complete) | 15 | 15 (premium hub) | hub + jurisdiction 0.85 | `count-district-of-columbia-movers.ts`, `apply-district-of-columbia-mover-expansion.ts`, `audit-district-of-columbia-seo.ts` |
 | Delaware | 3/3 (complete) | 8 | 12 (New Castle) / 8 (Kent, Sussex) | `new-castle` 0.85 | `count-delaware-movers.ts`, `apply-delaware-mover-expansion.ts`, `audit-delaware-seo.ts` |
-| Maryland | 3/24 (batch 1) | — | 10 (Montgomery, Prince George's, Baltimore) | 3 batch-1 counties 0.85 | `count-maryland-movers.ts`, `apply-maryland-mover-expansion.ts`, `audit-maryland-seo.ts` |
+| Maryland | 9/24 (batches 1–2) | — | 10 (9 large markets) | 9 curated counties 0.85 | `count-maryland-movers.ts`, `apply-maryland-mover-expansion.ts`, `audit-maryland-seo.ts` |
 
-> **Maryland note:** Maryland has **24 counties** — batch 1 covers Montgomery (DC metro), Prince George's (DC-border), and Baltimore County (Baltimore metro), 10 movers each. Cross-border nearby links to DC, VA, and DE curated counties strengthen E-E-A-T. `baltimore` slug = Baltimore **County** (seat Towson). Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`. Use `generate-maryland-batch1-catalog.ps1` + `insert-maryland-batch1-catalog.ps1`.
+> **Maryland note:** Maryland has **24 counties** plus Baltimore **City** (independent). Batches 1–2 cover Montgomery, Prince George's, Baltimore County, Baltimore City, Anne Arundel, Howard, Frederick, Harford, and Charles — 10 movers each. `baltimore` slug = Baltimore **County** (seat Towson); `baltimore-city` = independent city (supplemental geography). Cross-border nearby links to DC, VA, PA, and DE strengthen E-E-A-T. Use `generate-maryland-batch{N}-catalog.ps1` + `insert-maryland-batch{N}-catalog.ps1`.
 
 > **District of Columbia note:** DC is a **federal district**, not a state. It has a single jurisdiction (`district-of-columbia` slug) treated as county-equivalent in code. Use district-specific copy on hub and detail pages; data files follow the `{district}-county-*` naming convention for code consistency. Compare quality bar to Cook (IL), Wayne (MI), or Marion (IN) large-market hubs.
 
@@ -79,19 +79,25 @@ npx tsx scripts/validate-county-schema.ts
 
 **GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/delaware.xml` (4 URLs: hub + 3 counties).
 
-### Maryland metro pools (`data/local-movers-seed.ts`) — batch 1
+### Maryland metro pools (`data/local-movers-seed.ts`) — batches 1–2
 
 - `montgomery-metro-md` — Rockville / Bethesda / Silver Spring DC-suburb hub (10 movers)
 - `prince-georges-metro-md` — Upper Marlboro / Bowie / Laurel DC-border hub (10 movers)
 - `baltimore-metro-md` — Towson / Catonsville / Dundalk Baltimore County hub (10 movers)
+- `anne-arundel-metro-md` — Annapolis / Glen Burnie naval & waterfront hub (10 movers)
+- `baltimore-city-metro-md` — Baltimore City urban hub (10 movers)
+- `howard-metro-md` — Ellicott City / Columbia hub (10 movers)
+- `frederick-metro-md` — Frederick / I-70 corridor hub (10 movers)
+- `harford-metro-md` — Bel Air / Aberdeen northeast Baltimore hub (10 movers)
+- `charles-metro-md` — La Plata / Waldorf DC-south hub (10 movers)
 
-### Maryland counties (batch 1 targets)
+### Maryland counties (batches 1–2 targets)
 
-`montgomery` (10), `prince-georges` (10), `baltimore` (10)
+`montgomery`, `prince-georges`, `baltimore`, `anne-arundel`, `baltimore-city`, `howard`, `frederick`, `harford`, `charles` (10 each)
 
-### Maryland sitemap priority 0.85 (batch 1)
+### Maryland sitemap priority 0.85 (batches 1–2)
 
-`montgomery`, `prince-georges`, `baltimore`
+All 9 curated counties above
 
 ### Maryland verification commands (batch 1)
 

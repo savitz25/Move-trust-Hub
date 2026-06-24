@@ -24,16 +24,31 @@ import { applyWestVirginiaCountyOverrides } from '@/lib/local-movers/geography/w
 import { applyVirginiaCountyOverrides } from '@/lib/local-movers/geography/virginia-overrides';
 import { applyDelawareCountyOverrides } from '@/lib/local-movers/geography/delaware-overrides';
 import { applyMarylandCountyOverrides } from '@/lib/local-movers/geography/maryland-overrides';
+import { marylandSupplementalCounties } from '@/lib/local-movers/geography/maryland-supplemental';
 import { applyTennesseeCountyOverrides } from '@/lib/local-movers/geography/tennessee-overrides';
 import { applyTexasCountyOverrides } from '@/lib/local-movers/geography/texas-overrides';
 
 const curatedStateSlugs = new Set(['california', 'florida', 'new-jersey', 'new-york']);
-const generatedWithoutCurated = generatedCounties.filter(
-  (county) => !curatedStateSlugs.has(county.stateSlug)
+
+/** Generated MD data includes duplicate Baltimore County entries — keep one. */
+function dedupeMarylandBaltimore(counties: typeof generatedCounties): typeof generatedCounties {
+  let seenBaltimoreCounty = false;
+  return counties.filter((county) => {
+    if (county.stateSlug === 'maryland' && county.slug === 'baltimore') {
+      if (seenBaltimoreCounty) return false;
+      seenBaltimoreCounty = true;
+    }
+    return true;
+  });
+}
+
+const generatedWithoutCurated = dedupeMarylandBaltimore(
+  generatedCounties.filter((county) => !curatedStateSlugs.has(county.stateSlug))
 );
 
 const allCounties: LocalCounty[] = [
   ...districtOfColumbiaCounties,
+  ...marylandSupplementalCounties,
   ...californiaCounties,
   ...floridaCounties,
   ...newJerseyCounties,

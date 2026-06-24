@@ -1,30 +1,25 @@
-import { generatedCounties } from '../data/generated/index';
-import { applyMarylandCountyOverrides } from '../lib/local-movers/geography/maryland-overrides';
+import { marylandCountyResearch } from '../data/maryland-county-research';
+import { getCountiesForState } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const TARGETS: Record<string, number> = {
-  montgomery: 10,
-  'prince-georges': 10,
-  baltimore: 10,
-};
+const TARGET = 10;
+const curatedSlugs = new Set(Object.keys(marylandCountyResearch));
 
-const mdCounties = generatedCounties
-  .filter((c) => c.stateSlug === 'maryland')
-  .map(applyMarylandCountyOverrides)
-  .filter((c) => TARGETS[c.slug] !== undefined);
+const mdCounties = getCountiesForState('maryland').filter((c) =>
+  curatedSlugs.has(c.slug)
+);
 
 const underTarget: string[] = [];
 
-console.log(`Maryland batch-1 counties: ${mdCounties.length}`);
-for (const c of mdCounties) {
+console.log(`Maryland curated counties: ${mdCounties.length}`);
+for (const c of mdCounties.sort((a, b) => a.slug.localeCompare(b.slug))) {
   const n = getMoversForCounty('maryland', c.slug)?.movers.length ?? 0;
-  const target = TARGETS[c.slug] ?? 10;
-  console.log(`  ${c.slug}: ${n} movers (target ${target})`);
-  if (n < target) underTarget.push(`${c.slug}: ${n}/${target}`);
+  console.log(`  ${c.slug}: ${n} movers (target ${TARGET})`);
+  if (n < TARGET) underTarget.push(`${c.slug}: ${n}/${TARGET}`);
 }
 
 if (underTarget.length === 0) {
-  console.log('\n✓ All Maryland batch-1 counties meet mover targets.');
+  console.log('\n✓ All Maryland curated counties meet mover targets.');
 } else {
   console.error('\n✗ Under target:', underTarget.join(', '));
   process.exit(1);
