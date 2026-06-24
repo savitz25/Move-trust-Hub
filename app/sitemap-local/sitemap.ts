@@ -210,18 +210,8 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
 /** High-traffic DE counties — sitemap priority 0.85 (Wilmington metro) */
 const DE_HIGH_TRAFFIC_COUNTIES = new Set(['new-castle']);
 
-/** High-traffic CT planning regions — sitemap priority 0.85 (state complete) */
-const CT_HIGH_TRAFFIC_REGIONS = new Set([
-  'capitol',
-  'western-connecticut',
-  'south-central-connecticut',
-  'naugatuck-valley',
-  'greater-bridgeport',
-  'southeastern-connecticut',
-  'lower-connecticut-river-valley',
-  'northwest-hills',
-  'northeastern-connecticut',
-]);
+/** High-traffic CT counties — sitemap priority 0.85 (Fairfield premium metro) */
+const CT_HIGH_TRAFFIC_COUNTIES = new Set(['fairfield']);
 
 /** High-traffic PA counties — sitemap priority 0.85 (batches 1–5 large markets) */
 const PA_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -678,7 +668,7 @@ export default async function sitemap({
         (id === 'delaware' && DE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'maryland' && MD_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'pennsylvania' && PA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'connecticut' && CT_HIGH_TRAFFIC_REGIONS.has(county.slug))
+        (id === 'connecticut' && CT_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

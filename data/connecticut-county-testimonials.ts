@@ -1,51 +1,46 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Connecticut planning region testimonials — complete state (9 regions) */
+/** Hand-curated Connecticut county testimonials — complete state (8 counties) */
 export const connecticutCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
-  capitol: [
-    { quote: 'Two Men and a Truck Hartford handled our Capitol Region move professionally — on time, extremely careful, and great communication.', name: 'Alex M.', location: 'Hartford, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Hartford Corridor Moving navigated our West Hartford relocation with fair pricing through I-84 traffic.', name: 'Beth N.', location: 'West Hartford, CT', rating: 5, moveType: 'Single-family' },
-    { quote: 'Connecticut River Moving served our East Hartford move efficiently with punctual arrival and professional coordination.', name: 'Carl O.', location: 'East Hartford, CT', rating: 5, moveType: 'Apartment' },
+  fairfield: [
+    { quote: 'Two Men and a Truck Stamford handled our Greenwich relocation flawlessly — white-glove care for antiques and punctual NYC-corridor scheduling.', name: 'Alex M.', location: 'Greenwich, CT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Luxury Home Moving Stamford navigated our Westport estate move with outstanding packing and transparent pricing for high-value furnishings.', name: 'Beth N.', location: 'Westport, CT', rating: 5, moveType: 'Single-family' },
+    { quote: 'NYC Commuter Moving Fairfield coordinated our Stamford apartment move around Metro-North timing — professional crew and excellent communication.', name: 'Carl O.', location: 'Stamford, CT', rating: 5, moveType: 'Apartment' },
   ],
-  'western-connecticut': [
-    { quote: 'Regional Danbury providers handled our Western Connecticut move professionally — efficient and careful with our suburban home.', name: 'Dana P.', location: 'Danbury, CT', rating: 5, moveType: 'Single-family' },
-    { quote: 'Danbury Corridor Moving navigated our Ridgefield relocation with fair pricing and excellent scheduling.', name: 'Evan Q.', location: 'Ridgefield, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Fairfield Hills Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Faye R.', location: 'New Milford, CT', rating: 5, moveType: 'Single-family' },
+  hartford: [
+    { quote: 'Two Men and a Truck Hartford handled our corporate relocation professionally — efficient scheduling around downtown Hartford traffic.', name: 'Dana P.', location: 'Hartford, CT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Hartford Corridor Moving navigated our West Hartford move with fair pricing and careful handling of our home office equipment.', name: 'Evan Q.', location: 'West Hartford, CT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Connecticut River Moving served our Bloomfield relocation efficiently with punctual arrival and professional coordination.', name: 'Faye R.', location: 'Bloomfield, CT', rating: 5, moveType: 'Townhome' },
   ],
-  'south-central-connecticut': [
-    { quote: 'Two Men and a Truck New Haven handled our South Central Connecticut move professionally — on time, extremely careful, and great communication.', name: 'Glen S.', location: 'New Haven, CT', rating: 5, moveType: 'Apartment' },
-    { quote: 'New Haven Corridor Moving navigated our Hamden relocation with fair pricing through I-95 corridor traffic.', name: 'Hope T.', location: 'Hamden, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Shoreline South Moving served our Milford move efficiently with punctual arrival and professional coordination.', name: 'Ira U.', location: 'Milford, CT', rating: 5, moveType: 'Single-family' },
+  'new-haven': [
+    { quote: 'Two Men and a Truck New Haven handled our university-area move professionally — careful with bookshelves and excellent semester timing.', name: 'Glen S.', location: 'New Haven, CT', rating: 5, moveType: 'Apartment' },
+    { quote: 'New Haven Corridor Moving navigated our Hamden relocation with fair pricing through I-91 corridor traffic.', name: 'Hope T.', location: 'Hamden, CT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Shoreline South Moving served our Milford coastal move efficiently with steady communication and professional crew coordination.', name: 'Ira U.', location: 'Milford, CT', rating: 5, moveType: 'Single-family' },
   ],
-  'naugatuck-valley': [
-    { quote: 'Regional Waterbury providers handled our Naugatuck Valley move professionally — efficient and careful.', name: 'Joy V.', location: 'Waterbury, CT', rating: 5, moveType: 'Single-family' },
-    { quote: 'Waterbury Corridor Moving navigated our Naugatuck relocation with fair pricing and excellent Route 8 scheduling.', name: 'Kyle W.', location: 'Naugatuck, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Naugatuck River Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Lynn X.', location: 'Seymour, CT', rating: 5, moveType: 'Single-family' },
+  litchfield: [
+    { quote: 'Regional Litchfield providers handled our Torrington move professionally — efficient and careful with our hillside property.', name: 'Joy V.', location: 'Torrington, CT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Litchfield Hills Moving navigated our rural relocation with fair pricing and excellent scheduling.', name: 'Kyle W.', location: 'Litchfield, CT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Berkshire Foothills Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Lynn X.', location: 'Winchester, CT', rating: 5, moveType: 'Single-family' },
   ],
-  'greater-bridgeport': [
-    { quote: 'Regional Bridgeport providers handled our Greater Bridgeport move professionally — efficient and careful with our coastal home.', name: 'Mark Y.', location: 'Bridgeport, CT', rating: 5, moveType: 'Apartment' },
-    { quote: 'Bridgeport Corridor Moving navigated our Stratford relocation with fair pricing through Merritt Parkway traffic.', name: 'Nina Z.', location: 'Stratford, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Long Island Sound Moving served our Fairfield move efficiently with punctual arrival and professional coordination.', name: 'Otto A.', location: 'Fairfield, CT', rating: 5, moveType: 'Single-family' },
+  middlesex: [
+    { quote: 'Regional Middletown providers handled our Middlesex County move professionally — efficient and careful.', name: 'Mark Y.', location: 'Middletown, CT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Middletown Corridor Moving navigated our Cromwell relocation with fair pricing through Route 9 traffic.', name: 'Nina Z.', location: 'Cromwell, CT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Connecticut River Lower Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Otto A.', location: 'East Hampton, CT', rating: 5, moveType: 'Single-family' },
   ],
-  'southeastern-connecticut': [
-    { quote: 'Regional New London providers handled our Southeastern Connecticut move professionally — efficient and careful.', name: 'Pam B.', location: 'New London, CT', rating: 5, moveType: 'Single-family' },
-    { quote: 'New London Corridor Moving navigated our Groton relocation with fair pricing and excellent naval-corridor scheduling.', name: 'Quinn C.', location: 'Groton, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Thames River Moving served our Mystic move efficiently with steady communication and professional crew coordination.', name: 'Rita D.', location: 'Mystic, CT', rating: 5, moveType: 'Single-family' },
+  'new-london': [
+    { quote: 'Regional New London providers handled our coastal move professionally — careful with our waterfront condo and excellent scheduling.', name: 'Pam B.', location: 'New London, CT', rating: 5, moveType: 'Apartment' },
+    { quote: 'New London Corridor Moving navigated our Groton relocation with fair pricing and naval-corridor scheduling flexibility.', name: 'Quinn C.', location: 'Groton, CT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Thames River Moving served our Mystic move efficiently with punctual arrival and professional coordination.', name: 'Rita D.', location: 'Mystic, CT', rating: 5, moveType: 'Single-family' },
   ],
-  'lower-connecticut-river-valley': [
-    { quote: 'Regional Middletown providers handled our Lower Connecticut River Valley move professionally — efficient and careful.', name: 'Sam E.', location: 'Middletown, CT', rating: 5, moveType: 'Single-family' },
-    { quote: 'Middletown Corridor Moving navigated our Cromwell relocation with fair pricing through Route 9 traffic.', name: 'Tina F.', location: 'Cromwell, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Connecticut River Lower Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Uma G.', location: 'East Hampton, CT', rating: 5, moveType: 'Single-family' },
+  tolland: [
+    { quote: 'Regional Rockville providers handled our Tolland County move professionally — efficient and careful.', name: 'Sam E.', location: 'Rockville, CT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Tolland Corridor Moving navigated our Vernon relocation with fair pricing and excellent suburban scheduling.', name: 'Tina F.', location: 'Vernon, CT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Eastern Connecticut Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Uma G.', location: 'Storrs, CT', rating: 5, moveType: 'Apartment' },
   ],
-  'northwest-hills': [
-    { quote: 'Regional Torrington providers handled our Northwest Hills move professionally — efficient and careful with our rural property.', name: 'Vic H.', location: 'Torrington, CT', rating: 5, moveType: 'Single-family' },
-    { quote: 'Torrington Corridor Moving navigated our Litchfield relocation with fair pricing and excellent rural scheduling.', name: 'Wade I.', location: 'Litchfield, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Berkshire Foothills Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Xena J.', location: 'Winchester, CT', rating: 5, moveType: 'Single-family' },
-  ],
-  'northeastern-connecticut': [
-    { quote: 'Regional Putnam providers handled our Northeastern Connecticut move professionally — efficient and careful.', name: 'York K.', location: 'Putnam, CT', rating: 5, moveType: 'Single-family' },
-    { quote: 'Putnam Corridor Moving navigated our Quiet Corner relocation with fair pricing and excellent rural scheduling.', name: 'Zoe L.', location: 'Danielson, CT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Quiet Corner Moving served our Thompson move efficiently with punctual arrival and professional coordination.', name: 'Adam M.', location: 'Thompson, CT', rating: 5, moveType: 'Single-family' },
+  windham: [
+    { quote: 'Regional Willimantic providers handled our Windham County move professionally — efficient and careful with our rural property.', name: 'Vic H.', location: 'Willimantic, CT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Willimantic Corridor Moving navigated our Quiet Corner relocation with fair pricing and excellent rural scheduling.', name: 'Wade I.', location: 'Danielson, CT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Quiet Corner Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Xena J.', location: 'Putnam, CT', rating: 5, moveType: 'Single-family' },
   ],
 };
 

@@ -39,6 +39,7 @@
     "apply:pennsylvania-mover-expansion": "tsx scripts/apply-pennsylvania-mover-expansion.ts",
     "audit:pennsylvania-seo": "tsx scripts/audit-pennsylvania-seo.ts",
     "count:connecticut-movers": "tsx scripts/count-connecticut-movers.ts",
+    "apply:connecticut-mover-expansion": "tsx scripts/apply-connecticut-mover-expansion.ts",
     "audit:connecticut-seo": "tsx scripts/audit-connecticut-seo.ts",
     "audit:virginia-seo": "tsx scripts/audit-virginia-seo.ts",
     "count:district-of-columbia-movers": "tsx scripts/count-district-of-columbia-movers.ts",

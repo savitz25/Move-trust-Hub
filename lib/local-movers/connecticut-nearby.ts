@@ -2,82 +2,74 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Connecticut planning regions plus cross-border NY, MA, and RI metro guides */
-const CT_REGION_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
-  capitol: [
-    { slug: 'south-central-connecticut', name: 'South Central Connecticut', seat: 'New Haven', href: '/local-movers/connecticut/south-central-connecticut', displayLabel: 'South Central CT Planning Region' },
-    { slug: 'naugatuck-valley', name: 'Naugatuck Valley', seat: 'Waterbury', href: '/local-movers/connecticut/naugatuck-valley', displayLabel: 'Naugatuck Valley Planning Region' },
-    { slug: 'lower-connecticut-river-valley', name: 'Lower Connecticut River Valley', seat: 'Middletown', href: '/local-movers/connecticut/lower-connecticut-river-valley', displayLabel: 'Lower CT River Valley Planning Region' },
-    { slug: 'northwest-hills', name: 'Northwest Hills', seat: 'Torrington', href: '/local-movers/connecticut/northwest-hills', displayLabel: 'Northwest Hills Planning Region' },
-    { slug: 'hampden', name: 'Hampden', seat: 'Springfield', href: '/local-movers/massachusetts/hampden', displayLabel: 'Hampden County, MA' },
-    { slug: 'northeastern-connecticut', name: 'Northeastern Connecticut', seat: 'Putnam', href: '/local-movers/connecticut/northeastern-connecticut', displayLabel: 'Northeastern CT Planning Region' },
-  ],
-  'western-connecticut': [
-    { slug: 'greater-bridgeport', name: 'Greater Bridgeport', seat: 'Bridgeport', href: '/local-movers/connecticut/greater-bridgeport', displayLabel: 'Greater Bridgeport Planning Region' },
-    { slug: 'northwest-hills', name: 'Northwest Hills', seat: 'Torrington', href: '/local-movers/connecticut/northwest-hills', displayLabel: 'Northwest Hills Planning Region' },
-    { slug: 'capitol', name: 'Capitol', seat: 'Hartford', href: '/local-movers/connecticut/capitol', displayLabel: 'Capitol Planning Region' },
+/** Connecticut counties plus cross-border NY, MA, and RI metro guides */
+const CT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
+  fairfield: [
+    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/new-haven', displayLabel: 'New Haven County, CT' },
+    { slug: 'litchfield', name: 'Litchfield', seat: 'Torrington', href: '/local-movers/connecticut/litchfield', displayLabel: 'Litchfield County, CT' },
     { slug: 'westchester', name: 'Westchester', seat: 'White Plains', href: '/local-movers/new-york/westchester', displayLabel: 'Westchester County, NY' },
     { slug: 'putnam', name: 'Putnam', seat: 'Carmel', href: '/local-movers/new-york/putnam', displayLabel: 'Putnam County, NY' },
-    { slug: 'fairfield', name: 'Fairfield', seat: 'Bridgeport', href: '/local-movers/connecticut/greater-bridgeport', displayLabel: 'Greater Bridgeport Planning Region, CT' },
-  ],
-  'south-central-connecticut': [
-    { slug: 'capitol', name: 'Capitol', seat: 'Hartford', href: '/local-movers/connecticut/capitol', displayLabel: 'Capitol Planning Region' },
-    { slug: 'naugatuck-valley', name: 'Naugatuck Valley', seat: 'Waterbury', href: '/local-movers/connecticut/naugatuck-valley', displayLabel: 'Naugatuck Valley Planning Region' },
-    { slug: 'lower-connecticut-river-valley', name: 'Lower Connecticut River Valley', seat: 'Middletown', href: '/local-movers/connecticut/lower-connecticut-river-valley', displayLabel: 'Lower CT River Valley Planning Region' },
-    { slug: 'greater-bridgeport', name: 'Greater Bridgeport', seat: 'Bridgeport', href: '/local-movers/connecticut/greater-bridgeport', displayLabel: 'Greater Bridgeport Planning Region' },
-    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/south-central-connecticut', displayLabel: 'South Central CT Planning Region' },
-    { slug: 'middlesex', name: 'Middlesex', seat: 'Middletown', href: '/local-movers/connecticut/lower-connecticut-river-valley', displayLabel: 'Lower CT River Valley Planning Region, CT' },
-  ],
-  'naugatuck-valley': [
-    { slug: 'capitol', name: 'Capitol', seat: 'Hartford', href: '/local-movers/connecticut/capitol', displayLabel: 'Capitol Planning Region' },
-    { slug: 'south-central-connecticut', name: 'South Central Connecticut', seat: 'New Haven', href: '/local-movers/connecticut/south-central-connecticut', displayLabel: 'South Central CT Planning Region' },
-    { slug: 'northwest-hills', name: 'Northwest Hills', seat: 'Torrington', href: '/local-movers/connecticut/northwest-hills', displayLabel: 'Northwest Hills Planning Region' },
-    { slug: 'western-connecticut', name: 'Western Connecticut', seat: 'Danbury', href: '/local-movers/connecticut/western-connecticut', displayLabel: 'Western Connecticut Planning Region' },
-    { slug: 'litchfield', name: 'Litchfield', seat: 'Torrington', href: '/local-movers/connecticut/northwest-hills', displayLabel: 'Northwest Hills Planning Region, CT' },
-    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/south-central-connecticut', displayLabel: 'South Central CT Planning Region, CT' },
-  ],
-  'greater-bridgeport': [
-    { slug: 'western-connecticut', name: 'Western Connecticut', seat: 'Danbury', href: '/local-movers/connecticut/western-connecticut', displayLabel: 'Western Connecticut Planning Region' },
-    { slug: 'south-central-connecticut', name: 'South Central Connecticut', seat: 'New Haven', href: '/local-movers/connecticut/south-central-connecticut', displayLabel: 'South Central CT Planning Region' },
-    { slug: 'fairfield', name: 'Fairfield', seat: 'Bridgeport', href: '/local-movers/connecticut/greater-bridgeport', displayLabel: 'Greater Bridgeport Planning Region, CT' },
-    { slug: 'westchester', name: 'Westchester', seat: 'White Plains', href: '/local-movers/new-york/westchester', displayLabel: 'Westchester County, NY' },
     { slug: 'new-york', name: 'New York', seat: 'New York', href: '/local-movers/new-york/new-york', displayLabel: 'New York County, NY' },
-    { slug: 'suffolk', name: 'Suffolk', seat: 'Riverhead', href: '/local-movers/new-york/suffolk', displayLabel: 'Suffolk County, NY' },
+    { slug: 'bronx', name: 'Bronx', seat: 'Bronx', href: '/local-movers/new-york/bronx', displayLabel: 'Bronx County, NY' },
   ],
-  'southeastern-connecticut': [
-    { slug: 'south-central-connecticut', name: 'South Central Connecticut', seat: 'New Haven', href: '/local-movers/connecticut/south-central-connecticut', displayLabel: 'South Central CT Planning Region' },
-    { slug: 'lower-connecticut-river-valley', name: 'Lower Connecticut River Valley', seat: 'Middletown', href: '/local-movers/connecticut/lower-connecticut-river-valley', displayLabel: 'Lower CT River Valley Planning Region' },
-    { slug: 'northeastern-connecticut', name: 'Northeastern Connecticut', seat: 'Putnam', href: '/local-movers/connecticut/northeastern-connecticut', displayLabel: 'Northeastern CT Planning Region' },
+  hartford: [
+    { slug: 'tolland', name: 'Tolland', seat: 'Rockville', href: '/local-movers/connecticut/tolland', displayLabel: 'Tolland County, CT' },
+    { slug: 'middlesex', name: 'Middlesex', seat: 'Middletown', href: '/local-movers/connecticut/middlesex', displayLabel: 'Middlesex County, CT' },
+    { slug: 'litchfield', name: 'Litchfield', seat: 'Torrington', href: '/local-movers/connecticut/litchfield', displayLabel: 'Litchfield County, CT' },
+    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/new-haven', displayLabel: 'New Haven County, CT' },
+    { slug: 'hampden', name: 'Hampden', seat: 'Springfield', href: '/local-movers/massachusetts/hampden', displayLabel: 'Hampden County, MA' },
+    { slug: 'windham', name: 'Windham', seat: 'Willimantic', href: '/local-movers/connecticut/windham', displayLabel: 'Windham County, CT' },
+  ],
+  'new-haven': [
+    { slug: 'fairfield', name: 'Fairfield', seat: 'Bridgeport', href: '/local-movers/connecticut/fairfield', displayLabel: 'Fairfield County, CT' },
+    { slug: 'hartford', name: 'Hartford', seat: 'Hartford', href: '/local-movers/connecticut/hartford', displayLabel: 'Hartford County, CT' },
+    { slug: 'middlesex', name: 'Middlesex', seat: 'Middletown', href: '/local-movers/connecticut/middlesex', displayLabel: 'Middlesex County, CT' },
+    { slug: 'litchfield', name: 'Litchfield', seat: 'Torrington', href: '/local-movers/connecticut/litchfield', displayLabel: 'Litchfield County, CT' },
+    { slug: 'new-london', name: 'New London', seat: 'New London', href: '/local-movers/connecticut/new-london', displayLabel: 'New London County, CT' },
+    { slug: 'westchester', name: 'Westchester', seat: 'White Plains', href: '/local-movers/new-york/westchester', displayLabel: 'Westchester County, NY' },
+  ],
+  litchfield: [
+    { slug: 'fairfield', name: 'Fairfield', seat: 'Bridgeport', href: '/local-movers/connecticut/fairfield', displayLabel: 'Fairfield County, CT' },
+    { slug: 'hartford', name: 'Hartford', seat: 'Hartford', href: '/local-movers/connecticut/hartford', displayLabel: 'Hartford County, CT' },
+    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/new-haven', displayLabel: 'New Haven County, CT' },
+    { slug: 'berkshire', name: 'Berkshire', seat: 'Pittsfield', href: '/local-movers/massachusetts/berkshire', displayLabel: 'Berkshire County, MA' },
+    { slug: 'dutchess', name: 'Dutchess', seat: 'Poughkeepsie', href: '/local-movers/new-york/dutchess', displayLabel: 'Dutchess County, NY' },
+    { slug: 'putnam', name: 'Putnam', seat: 'Carmel', href: '/local-movers/new-york/putnam', displayLabel: 'Putnam County, NY' },
+  ],
+  middlesex: [
+    { slug: 'hartford', name: 'Hartford', seat: 'Hartford', href: '/local-movers/connecticut/hartford', displayLabel: 'Hartford County, CT' },
+    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/new-haven', displayLabel: 'New Haven County, CT' },
+    { slug: 'new-london', name: 'New London', seat: 'New London', href: '/local-movers/connecticut/new-london', displayLabel: 'New London County, CT' },
+    { slug: 'tolland', name: 'Tolland', seat: 'Rockville', href: '/local-movers/connecticut/tolland', displayLabel: 'Tolland County, CT' },
+    { slug: 'windham', name: 'Windham', seat: 'Willimantic', href: '/local-movers/connecticut/windham', displayLabel: 'Windham County, CT' },
+    { slug: 'hampden', name: 'Hampden', seat: 'Springfield', href: '/local-movers/massachusetts/hampden', displayLabel: 'Hampden County, MA' },
+  ],
+  'new-london': [
+    { slug: 'middlesex', name: 'Middlesex', seat: 'Middletown', href: '/local-movers/connecticut/middlesex', displayLabel: 'Middlesex County, CT' },
+    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/new-haven', displayLabel: 'New Haven County, CT' },
+    { slug: 'windham', name: 'Windham', seat: 'Willimantic', href: '/local-movers/connecticut/windham', displayLabel: 'Windham County, CT' },
     { slug: 'kent', name: 'Kent', seat: 'East Greenwich', href: '/local-movers/rhode-island/kent', displayLabel: 'Kent County, RI' },
     { slug: 'washington', name: 'Washington', seat: 'South Kingstown', href: '/local-movers/rhode-island/washington', displayLabel: 'Washington County, RI' },
-    { slug: 'new-london', name: 'New London', seat: 'New London', href: '/local-movers/connecticut/southeastern-connecticut', displayLabel: 'Southeastern CT Planning Region, CT' },
+    { slug: 'suffolk', name: 'Suffolk', seat: 'Riverhead', href: '/local-movers/new-york/suffolk', displayLabel: 'Suffolk County, NY' },
   ],
-  'lower-connecticut-river-valley': [
-    { slug: 'capitol', name: 'Capitol', seat: 'Hartford', href: '/local-movers/connecticut/capitol', displayLabel: 'Capitol Planning Region' },
-    { slug: 'south-central-connecticut', name: 'South Central Connecticut', seat: 'New Haven', href: '/local-movers/connecticut/south-central-connecticut', displayLabel: 'South Central CT Planning Region' },
-    { slug: 'southeastern-connecticut', name: 'Southeastern Connecticut', seat: 'New London', href: '/local-movers/connecticut/southeastern-connecticut', displayLabel: 'Southeastern CT Planning Region' },
-    { slug: 'naugatuck-valley', name: 'Naugatuck Valley', seat: 'Waterbury', href: '/local-movers/connecticut/naugatuck-valley', displayLabel: 'Naugatuck Valley Planning Region' },
-    { slug: 'middlesex', name: 'Middlesex', seat: 'Middletown', href: '/local-movers/connecticut/lower-connecticut-river-valley', displayLabel: 'Lower CT River Valley Planning Region, CT' },
-    { slug: 'new-london', name: 'New London', seat: 'New London', href: '/local-movers/connecticut/southeastern-connecticut', displayLabel: 'Southeastern CT Planning Region, CT' },
+  tolland: [
+    { slug: 'hartford', name: 'Hartford', seat: 'Hartford', href: '/local-movers/connecticut/hartford', displayLabel: 'Hartford County, CT' },
+    { slug: 'windham', name: 'Windham', seat: 'Willimantic', href: '/local-movers/connecticut/windham', displayLabel: 'Windham County, CT' },
+    { slug: 'middlesex', name: 'Middlesex', seat: 'Middletown', href: '/local-movers/connecticut/middlesex', displayLabel: 'Middlesex County, CT' },
+    { slug: 'hampden', name: 'Hampden', seat: 'Springfield', href: '/local-movers/massachusetts/hampden', displayLabel: 'Hampden County, MA' },
+    { slug: 'worcester', name: 'Worcester', seat: 'Worcester', href: '/local-movers/massachusetts/worcester', displayLabel: 'Worcester County, MA' },
+    { slug: 'new-haven', name: 'New Haven', seat: 'New Haven', href: '/local-movers/connecticut/new-haven', displayLabel: 'New Haven County, CT' },
   ],
-  'northwest-hills': [
-    { slug: 'capitol', name: 'Capitol', seat: 'Hartford', href: '/local-movers/connecticut/capitol', displayLabel: 'Capitol Planning Region' },
-    { slug: 'western-connecticut', name: 'Western Connecticut', seat: 'Danbury', href: '/local-movers/connecticut/western-connecticut', displayLabel: 'Western Connecticut Planning Region' },
-    { slug: 'naugatuck-valley', name: 'Naugatuck Valley', seat: 'Waterbury', href: '/local-movers/connecticut/naugatuck-valley', displayLabel: 'Naugatuck Valley Planning Region' },
-    { slug: 'northeastern-connecticut', name: 'Northeastern Connecticut', seat: 'Putnam', href: '/local-movers/connecticut/northeastern-connecticut', displayLabel: 'Northeastern CT Planning Region' },
-    { slug: 'berkshire', name: 'Berkshire', seat: 'Pittsfield', href: '/local-movers/massachusetts/berkshire', displayLabel: 'Berkshire County, MA' },
-    { slug: 'litchfield', name: 'Litchfield', seat: 'Torrington', href: '/local-movers/connecticut/northwest-hills', displayLabel: 'Northwest Hills Planning Region, CT' },
-  ],
-  'northeastern-connecticut': [
-    { slug: 'northwest-hills', name: 'Northwest Hills', seat: 'Torrington', href: '/local-movers/connecticut/northwest-hills', displayLabel: 'Northwest Hills Planning Region' },
-    { slug: 'southeastern-connecticut', name: 'Southeastern Connecticut', seat: 'New London', href: '/local-movers/connecticut/southeastern-connecticut', displayLabel: 'Southeastern CT Planning Region' },
-    { slug: 'capitol', name: 'Capitol', seat: 'Hartford', href: '/local-movers/connecticut/capitol', displayLabel: 'Capitol Planning Region' },
+  windham: [
+    { slug: 'tolland', name: 'Tolland', seat: 'Rockville', href: '/local-movers/connecticut/tolland', displayLabel: 'Tolland County, CT' },
+    { slug: 'hartford', name: 'Hartford', seat: 'Hartford', href: '/local-movers/connecticut/hartford', displayLabel: 'Hartford County, CT' },
+    { slug: 'new-london', name: 'New London', seat: 'New London', href: '/local-movers/connecticut/new-london', displayLabel: 'New London County, CT' },
+    { slug: 'middlesex', name: 'Middlesex', seat: 'Middletown', href: '/local-movers/connecticut/middlesex', displayLabel: 'Middlesex County, CT' },
     { slug: 'worcester', name: 'Worcester', seat: 'Worcester', href: '/local-movers/massachusetts/worcester', displayLabel: 'Worcester County, MA' },
     { slug: 'kent', name: 'Kent', seat: 'East Greenwich', href: '/local-movers/rhode-island/kent', displayLabel: 'Kent County, RI' },
-    { slug: 'windham', name: 'Windham', seat: 'Putnam', href: '/local-movers/connecticut/northeastern-connecticut', displayLabel: 'Northeastern CT Planning Region, CT' },
   ],
 };
 
 export function getConnecticutNearbyCounties(countySlug: string): NearbyCountyLink[] {
-  return CT_REGION_NEIGHBORS[countySlug] ?? [];
+  return CT_COUNTY_NEIGHBORS[countySlug] ?? [];
 }
