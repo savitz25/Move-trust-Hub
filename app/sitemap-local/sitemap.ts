@@ -184,6 +184,16 @@ const KY_HIGH_TRAFFIC_COUNTIES = new Set([
   'fayette',
   'kenton',
   'warren',
+  'boone',
+  'hardin',
+  'daviess',
+  'madison',
+  'campbell',
+  'bullitt',
+  'oldham',
+  'christian',
+  'pulaski',
+  'mccracken',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

@@ -15,6 +15,16 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   fayette: ['madison', 'clark', 'bourbon', 'woodford', 'jessamine', 'scott'],
   kenton: ['campbell', 'boone', 'grant', 'pendleton', 'bracken', 'gallatin'],
   warren: ['butler', 'edmonson', 'barren', 'simpson', 'allen', 'logan'],
+  boone: ['kenton', 'campbell', 'gallatin', 'grant', 'pendleton', 'bracken'],
+  hardin: ['jefferson', 'bullitt', 'nelson', 'larue', 'breckinridge', 'meade'],
+  daviess: ['hancock', 'mclean', 'ohio', 'muhlenberg', 'henderson', 'webster'],
+  madison: ['fayette', 'jackson', 'rockcastle', 'garrard', 'estill', 'clay'],
+  campbell: ['boone', 'kenton', 'pendleton', 'bracken', 'mason', 'grant'],
+  bullitt: ['jefferson', 'nelson', 'hardin', 'spencer', 'shelby', 'larue'],
+  oldham: ['jefferson', 'henry', 'trimble', 'shelby', 'spencer', 'bullitt'],
+  christian: ['todd', 'logan', 'simpson', 'trigg', 'muhlenberg', 'caldwell'],
+  pulaski: ['laurel', 'mccreary', 'wayne', 'casey', 'russell', 'lincoln'],
+  mccracken: ['marshall', 'graves', 'ballard', 'livingston', 'crittenden', 'carlisle'],
 };
 
 export function getKentuckyNearbyCounties(

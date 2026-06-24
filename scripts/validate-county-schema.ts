@@ -555,6 +555,16 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: fayette, expectedCity: 'Lexington' },
   { stateSlug: 'kentucky', countySlug: kenton, expectedCity: 'Covington' },
   { stateSlug: 'kentucky', countySlug: warren, expectedCity: 'Bowling Green' },
+  { stateSlug: 'kentucky', countySlug: boone, expectedCity: 'Burlington' },
+  { stateSlug: 'kentucky', countySlug: hardin, expectedCity: 'Elizabethtown' },
+  { stateSlug: 'kentucky', countySlug: daviess, expectedCity: 'Owensboro' },
+  { stateSlug: 'kentucky', countySlug: madison, expectedCity: 'Richmond' },
+  { stateSlug: 'kentucky', countySlug: campbell, expectedCity: 'Alexandria' },
+  { stateSlug: 'kentucky', countySlug: bullitt, expectedCity: 'Shepherdsville' },
+  { stateSlug: 'kentucky', countySlug: oldham, expectedCity: 'La Grange' },
+  { stateSlug: 'kentucky', countySlug: christian, expectedCity: 'Hopkinsville' },
+  { stateSlug: 'kentucky', countySlug: pulaski, expectedCity: 'Somerset' },
+  { stateSlug: 'kentucky', countySlug: mccracken, expectedCity: 'Paducah' },
 ];
 
 let totalIssues = 0;
