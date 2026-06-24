@@ -66,6 +66,21 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   otsego: ['cheboygan', 'crawford', 'montmorency', 'charlevoix', 'wexford', 'kalkaska'],
   charlevoix: ['emmet', 'antrim', 'otsego', 'grand-traverse'],
   manistee: ['benzie', 'lake', 'mason', 'wexford', 'grand-traverse'],
+  dickinson: ['marquette', 'menominee', 'delta'],
+  cheboygan: ['emmet', 'alpena', 'otsego', 'charlevoix'],
+  iosco: ['alpena', 'roscommon', 'arenac', 'bay', 'ogemaw'],
+  antrim: ['charlevoix', 'otsego', 'kalkaska', 'leelanau'],
+  roscommon: ['crawford', 'ogemaw', 'iosco', 'clare', 'missaukee'],
+  osceola: ['wexford', 'mecosta', 'isabella', 'clare', 'missaukee', 'newaygo'],
+  leelanau: ['grand-traverse', 'benzie', 'antrim'],
+  menominee: ['delta', 'marquette', 'dickinson'],
+  ogemaw: ['crawford', 'roscommon', 'iosco', 'gladwin', 'clare'],
+  kalkaska: ['antrim', 'grand-traverse', 'missaukee', 'wexford', 'crawford', 'otsego'],
+  benzie: ['grand-traverse', 'manistee', 'leelanau'],
+  missaukee: ['wexford', 'osceola', 'clare', 'kalkaska', 'grand-traverse'],
+  arenac: ['bay', 'gladwin', 'ogemaw', 'iosco', 'midland'],
+  gogebic: ['dickinson', 'houghton'],
+  crawford: ['otsego', 'roscommon', 'kalkaska', 'ogemaw'],
 };
 
 export function getMichiganNearbyCounties(

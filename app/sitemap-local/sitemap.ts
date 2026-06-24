@@ -194,6 +194,21 @@ const MI_HIGH_TRAFFIC_COUNTIES = new Set([
   'otsego',
   'charlevoix',
   'manistee',
+  'dickinson',
+  'cheboygan',
+  'iosco',
+  'antrim',
+  'roscommon',
+  'osceola',
+  'leelanau',
+  'menominee',
+  'ogemaw',
+  'kalkaska',
+  'benzie',
+  'missaukee',
+  'arenac',
+  'gogebic',
+  'crawford',
 ]);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */

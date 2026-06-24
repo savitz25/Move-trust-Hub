@@ -789,6 +789,96 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
     costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Manistee County pricing reflects lakeshore tourism demand, US-31 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
     tips: ['Verify coverage for Manistee and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
   },
+  dickinson: {
+    marketNotes:
+      'Dickinson County is a key Upper Peninsula county with strong industrial and residential demand across Iron Mountain, Kingsford, and Norway.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Dickinson County pricing reflects Upper Peninsula industrial and residential demand, US-2/US-141 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Iron Mountain and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  cheboygan: {
+    marketNotes:
+      'Cheboygan County is a scenic Northern Michigan county with strong tourism and residential demand across Cheboygan, Indian River, and Mackinaw City area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Cheboygan County pricing reflects lakeshore tourism demand, US-23 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Cheboygan and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  iosco: {
+    marketNotes:
+      'Iosco County is a scenic East Michigan county with strong tourism and residential demand across Tawas City, East Tawas, and Oscoda area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Iosco County pricing reflects lakeshore tourism demand, US-23 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Tawas City and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  antrim: {
+    marketNotes:
+      'Antrim County is a scenic Northern Michigan county with strong tourism and residential demand across Bellaire, Elk Rapids, and Torch Lake area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Antrim County pricing reflects lakeshore tourism demand, US-31/M-88 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Bellaire and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  roscommon: {
+    marketNotes:
+      'Roscommon County is a rural Northern Michigan county with strong tourism and residential demand across Roscommon, Houghton Lake, and Prudenville.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Roscommon County pricing reflects lake-country tourism demand, US-127/M-55 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Roscommon and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  osceola: {
+    marketNotes:
+      'Osceola County is a rural Central Michigan county with residential demand across Reed City, Evart, and Marion area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Osceola County pricing reflects rural Central Michigan residential demand, US-10/US-131 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Reed City and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  leelanau: {
+    marketNotes:
+      'Leelanau County is a scenic Northern Michigan county with strong tourism and residential demand across Suttons Bay, Northport, and Glen Arbor, with Traverse City metro influence.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Leelanau County pricing reflects lakeshore tourism demand, M-22 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Suttons Bay and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  menominee: {
+    marketNotes:
+      'Menominee County is a key Upper Peninsula county with strong industrial and residential demand across Menominee, Stephenson, and Powers.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Menominee County pricing reflects Upper Peninsula industrial and residential demand, US-41 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Menominee and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  ogemaw: {
+    marketNotes:
+      'Ogemaw County is a rural Northern Michigan county with residential demand across West Branch, Rose City, and Lupton area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Ogemaw County pricing reflects rural Northern Michigan residential demand, M-55/US-23 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for West Branch and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  kalkaska: {
+    marketNotes:
+      'Kalkaska County is a rural Northern Michigan county with strong tourism and residential demand across Kalkaska, Rapid City, and South Boardman.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Kalkaska County pricing reflects Northern Michigan tourism demand, US-131/M-72 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Kalkaska and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  benzie: {
+    marketNotes:
+      'Benzie County is a scenic West Michigan county with strong tourism and residential demand across Beulah, Frankfort, and Benzonia.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Benzie County pricing reflects lakeshore tourism demand, US-31/M-22 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Beulah and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  missaukee: {
+    marketNotes:
+      'Missaukee County is a rural Northern Michigan county with residential demand across Lake City, McBain, and Jennings area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Missaukee County pricing reflects rural Northern Michigan residential demand, M-55/US-131 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Lake City and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  arenac: {
+    marketNotes:
+      'Arenac County is a rural East Central Michigan county with residential demand across Standish, Au Gres, and Twining area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Arenac County pricing reflects rural East Central Michigan residential demand, US-23/M-61 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Standish and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  gogebic: {
+    marketNotes:
+      'Gogebic County is a key Upper Peninsula county with strong tourism and residential demand across Bessemer, Ironwood, and Wakefield.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Gogebic County pricing reflects Upper Peninsula tourism and residential demand, US-2 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Bessemer and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  crawford: {
+    marketNotes:
+      'Crawford County is a rural Northern Michigan county with strong tourism and residential demand across Grayling, Frederic, and Lovells.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Crawford County pricing reflects Northern Michigan tourism demand, I-75/US-127 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Grayling and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
 };
 
 export function getMichiganCountyResearch(

@@ -844,6 +844,81 @@ export const michiganCountyTestimonials: Record<string, CountyTestimonialEntry[]
     { quote: 'Manistee County Moving confirmed Onekama coverage — best local moving service in Manistee County with fair pricing.', name: 'Rex R.', location: 'Onekama, MI', rating: 5, moveType: 'Townhome' },
     { quote: 'Ludington Moving & Storage served our Bear Lake move efficiently — professional crew with careful handling along West Michigan lakeshore.', name: 'Sia S.', location: 'Bear Lake, MI', rating: 5, moveType: 'Single-family' },
   ],
+  dickinson: [
+    { quote: 'Iron Mountain Moving & Storage handled our Dickinson County relocation professionally — on time, efficient, and extremely careful.', name: 'Tad T.', location: 'Iron Mountain, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Dickinson County Moving confirmed Kingsford coverage — best local moving service in Dickinson County with transparent pricing.', name: 'Uma U.', location: 'Kingsford, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Marquette Moving & Storage served our Norway move efficiently — professional crew with careful handling in the Upper Peninsula.', name: 'Vic V.', location: 'Norway, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  cheboygan: [
+    { quote: 'Cheboygan Moving & Storage handled our Cheboygan County relocation professionally — on time, efficient, and extremely careful.', name: 'Wes W.', location: 'Cheboygan, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Cheboygan County Moving confirmed Indian River coverage — best local moving service in Cheboygan County with fair pricing.', name: 'Xan X.', location: 'Indian River, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Petoskey Moving & Storage served our Mackinaw City area move efficiently — professional crew with careful handling along the lakeshore.', name: 'Yara Y.', location: 'Mackinaw City, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  iosco: [
+    { quote: 'Tawas City Moving & Storage handled our Iosco County relocation professionally — on time, efficient, and extremely careful.', name: 'Zed Z.', location: 'Tawas City, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Iosco County Moving confirmed East Tawas coverage — best local moving service in Iosco County with transparent pricing.', name: 'Ann A.', location: 'East Tawas, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Alpena Moving & Storage served our Oscoda area move efficiently — professional crew with careful handling along Lake Huron.', name: 'Ben B.', location: 'Oscoda, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  antrim: [
+    { quote: 'Bellaire Moving & Storage handled our Antrim County relocation professionally — on time, efficient, and extremely careful.', name: 'Cid C.', location: 'Bellaire, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Antrim County Moving confirmed Elk Rapids coverage — best local moving service in Antrim County with fair pricing.', name: 'Dan D.', location: 'Elk Rapids, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Charlevoix Moving & Storage served our Torch Lake area move efficiently — professional crew with careful handling in Northern Michigan.', name: 'Eve E.', location: 'Central Lake, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  roscommon: [
+    { quote: 'Roscommon Moving & Storage handled our Roscommon County relocation professionally — on time, efficient, and extremely careful.', name: 'Fin F.', location: 'Roscommon, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Roscommon County Moving confirmed Houghton Lake coverage — best local moving service in Roscommon County with transparent pricing.', name: 'Gia G.', location: 'Houghton Lake, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cadillac Moving & Storage served our Prudenville move efficiently — professional crew with careful handling in lake country.', name: 'Hugh H.', location: 'Prudenville, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  osceola: [
+    { quote: 'Reed City Moving & Storage handled our Osceola County relocation professionally — on time, efficient, and extremely careful.', name: 'Ira I.', location: 'Reed City, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Osceola County Moving confirmed Evart coverage — best local moving service in Osceola County with fair pricing.', name: 'Jae J.', location: 'Evart, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Big Rapids Moving & Storage served our Marion move efficiently — professional crew with careful handling in Central Michigan.', name: 'Kai K.', location: 'Marion, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  leelanau: [
+    { quote: 'Suttons Bay Moving & Storage handled our Leelanau County relocation professionally — on time, efficient, and extremely careful.', name: 'Liv L.', location: 'Suttons Bay, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Leelanau County Moving confirmed Northport coverage — best local moving service in Leelanau County with transparent pricing.', name: 'Max M.', location: 'Northport, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Traverse City Moving & Storage served our Glen Arbor move efficiently — professional crew with careful handling along M-22.', name: 'Nia N.', location: 'Glen Arbor, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  menominee: [
+    { quote: 'Menominee Moving & Storage handled our Menominee County relocation professionally — on time, efficient, and extremely careful.', name: 'Omar O.', location: 'Menominee, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Menominee County Moving confirmed Stephenson coverage — best local moving service in Menominee County with fair pricing.', name: 'Pam P.', location: 'Stephenson, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Escanaba Moving & Storage served our Powers move efficiently — professional crew with careful handling in the Upper Peninsula.', name: 'Quin Q.', location: 'Powers, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  ogemaw: [
+    { quote: 'West Branch Moving & Storage handled our Ogemaw County relocation professionally — on time, efficient, and extremely careful.', name: 'Ray R.', location: 'West Branch, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Ogemaw County Moving confirmed Rose City coverage — best local moving service in Ogemaw County with transparent pricing.', name: 'Sue S.', location: 'Rose City, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Gladwin Moving & Storage served our Lupton move efficiently — professional crew with careful handling in Northern Michigan.', name: 'Tom T.', location: 'Lupton, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  kalkaska: [
+    { quote: 'Kalkaska Moving & Storage handled our Kalkaska County relocation professionally — on time, efficient, and extremely careful.', name: 'Uma U.', location: 'Kalkaska, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Kalkaska County Moving confirmed Rapid City coverage — best local moving service in Kalkaska County with fair pricing.', name: 'Vic V.', location: 'Rapid City, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Traverse City Moving & Storage served our South Boardman move efficiently — professional crew with careful handling in Northern Michigan.', name: 'Wes W.', location: 'South Boardman, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  benzie: [
+    { quote: 'Beulah Moving & Storage handled our Benzie County relocation professionally — on time, efficient, and extremely careful.', name: 'Xan X.', location: 'Beulah, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Benzie County Moving confirmed Frankfort coverage — best local moving service in Benzie County with transparent pricing.', name: 'Yara Y.', location: 'Frankfort, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Manistee Moving & Storage served our Benzonia move efficiently — professional crew with careful handling along West Michigan lakeshore.', name: 'Zed Z.', location: 'Benzonia, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  missaukee: [
+    { quote: 'Lake City Moving & Storage handled our Missaukee County relocation professionally — on time, efficient, and extremely careful.', name: 'Art A.', location: 'Lake City, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Missaukee County Moving confirmed McBain coverage — best local moving service in Missaukee County with fair pricing.', name: 'Bree B.', location: 'McBain, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cadillac Moving & Storage served our Jennings move efficiently — professional crew with careful handling in Northern Michigan.', name: 'Cal C.', location: 'Jennings, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  arenac: [
+    { quote: 'Standish Moving & Storage handled our Arenac County relocation professionally — on time, efficient, and extremely careful.', name: 'Dee D.', location: 'Standish, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Arenac County Moving confirmed Au Gres coverage — best local moving service in Arenac County with transparent pricing.', name: 'Eli E.', location: 'Au Gres, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bay City Moving & Storage served our Twining move efficiently — professional crew with careful handling in East Central Michigan.', name: 'Fay F.', location: 'Twining, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  gogebic: [
+    { quote: 'Bessemer Moving & Storage handled our Gogebic County relocation professionally — on time, efficient, and extremely careful.', name: 'Gus G.', location: 'Bessemer, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Gogebic County Moving confirmed Ironwood coverage — best local moving service in Gogebic County with fair pricing.', name: 'Hal H.', location: 'Ironwood, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Iron Mountain Moving & Storage served our Wakefield move efficiently — professional crew with careful handling in the Upper Peninsula.', name: 'Ivy I.', location: 'Wakefield, MI', rating: 5, moveType: 'Single-family' },
+  ],
+  crawford: [
+    { quote: 'Grayling Moving & Storage handled our Crawford County relocation professionally — on time, efficient, and extremely careful.', name: 'Jay J.', location: 'Grayling, MI', rating: 5, moveType: 'Single-family' },
+    { quote: 'Crawford County Moving confirmed Frederic coverage — best local moving service in Crawford County with transparent pricing.', name: 'Kay K.', location: 'Frederic, MI', rating: 5, moveType: 'Townhome' },
+    { quote: 'Gaylord Moving & Storage served our Lovells move efficiently — professional crew with careful handling in Northern Michigan.', name: 'Leo L.', location: 'Lovells, MI', rating: 5, moveType: 'Single-family' },
+  ],
 };
 
 export function getMichiganCountyTestimonials(

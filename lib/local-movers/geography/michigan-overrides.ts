@@ -59,6 +59,21 @@ export const michiganCountyOverrides: Partial<
   otsego: { seat: 'Gaylord', metro: 'gaylord-metro-mi' },
   charlevoix: { seat: 'Charlevoix', metro: 'charlevoix-metro-mi' },
   manistee: { seat: 'Manistee', metro: 'manistee-metro-mi' },
+  dickinson: { seat: 'Iron Mountain', metro: 'iron-mountain-metro-mi' },
+  cheboygan: { seat: 'Cheboygan', metro: 'cheboygan-metro-mi' },
+  iosco: { seat: 'Tawas City', metro: 'tawas-city-metro-mi' },
+  antrim: { seat: 'Bellaire', metro: 'bellaire-metro-mi' },
+  roscommon: { seat: 'Roscommon', metro: 'roscommon-metro-mi' },
+  osceola: { seat: 'Reed City', metro: 'reed-city-metro-mi' },
+  leelanau: { seat: 'Suttons Bay', metro: 'traverse-city-metro-mi' },
+  menominee: { seat: 'Menominee', metro: 'menominee-metro-mi' },
+  ogemaw: { seat: 'West Branch', metro: 'west-branch-metro-mi' },
+  kalkaska: { seat: 'Kalkaska', metro: 'kalkaska-metro-mi' },
+  benzie: { seat: 'Beulah', metro: 'beulah-metro-mi' },
+  missaukee: { seat: 'Lake City', metro: 'lake-city-metro-mi' },
+  arenac: { seat: 'Standish', metro: 'standish-metro-mi' },
+  gogebic: { seat: 'Bessemer', metro: 'bessemer-metro-mi' },
+  crawford: { seat: 'Grayling', metro: 'grayling-metro-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {
