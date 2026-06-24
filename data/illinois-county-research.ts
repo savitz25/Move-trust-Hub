@@ -1237,6 +1237,176 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  christian: {
+    marketNotes:
+      'Christian County is a rural Central Illinois county with residential demand across Taylorville and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Christian County pricing reflects central Illinois rural routes and spillover demand from Springfield and Decatur metros.',
+    },
+    tips: [
+      'Verify coverage for Taylorville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'de-witt': {
+    marketNotes:
+      'De Witt County is a rural Central Illinois county with residential demand across Clinton and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'De Witt County pricing reflects central Illinois rural drive times and spillover demand from Bloomington and Springfield metros.',
+    },
+    tips: [
+      'Verify coverage for Clinton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  douglas: {
+    marketNotes:
+      'Douglas County is a rural East Central Illinois county with residential demand across Tuscola and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Douglas County pricing reflects east-central Illinois rural routes and spillover demand from Champaign-Urbana and Danville metros.',
+    },
+    tips: [
+      'Verify coverage for Tuscola and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  edgar: {
+    marketNotes:
+      'Edgar County is a rural East Central Illinois county with residential demand across Paris and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Edgar County pricing reflects east-central Illinois rural drive times and spillover demand from Champaign and Danville metros.',
+    },
+    tips: [
+      'Verify coverage for Paris and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  effingham: {
+    marketNotes:
+      'Effingham County is a key county in South Central Illinois with strong transportation and residential demand across Effingham and I-57/I-70 corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Effingham County pricing reflects south-central Illinois logistics corridor traffic, regional interstate access, and spillover demand from Decatur and Champaign metros.',
+    },
+    tips: [
+      'Verify coverage for Effingham and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fulton: {
+    marketNotes:
+      'Fulton County is a rural West Central Illinois county with residential demand across Lewistown and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Fulton County pricing reflects west-central Illinois rural routes and spillover demand from Peoria and Galesburg metros.',
+    },
+    tips: [
+      'Verify coverage for Lewistown and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  livingston: {
+    marketNotes:
+      'Livingston County is a rural Central Illinois county with residential demand across Pontiac and I-55 corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Livingston County pricing reflects central Illinois interstate corridor traffic and spillover demand from Bloomington and Kankakee metros.',
+    },
+    tips: [
+      'Verify coverage for Pontiac and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County is a rural Central Illinois county with residential demand across Lincoln and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Logan County pricing reflects central Illinois rural routes, historic-town properties, and spillover demand from Springfield and Bloomington metros.',
+    },
+    tips: [
+      'Verify coverage for Lincoln and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  moultrie: {
+    marketNotes:
+      'Moultrie County is a rural Central Illinois county with residential demand across Sullivan and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Moultrie County pricing reflects central Illinois rural drive times and spillover demand from Decatur and Champaign metros.',
+    },
+    tips: [
+      'Verify coverage for Sullivan and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  piatt: {
+    marketNotes:
+      'Piatt County is a rural Central Illinois county with residential demand across Monticello and Champaign-metro-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Piatt County pricing reflects Champaign-Urbana metro spillover and central Illinois rural residential relocations.',
+    },
+    tips: [
+      'Verify coverage for Monticello and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

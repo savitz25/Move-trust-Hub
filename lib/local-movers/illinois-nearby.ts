@@ -83,6 +83,16 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lee: ['ogle', 'dekalb', 'lasalle', 'bureau', 'whiteside', 'carroll'],
   mercer: ['henry', 'rock-island', 'warren', 'henderson', 'knox'],
   warren: ['henderson', 'mercer', 'knox', 'mcdonough', 'fulton'],
+  christian: ['sangamon', 'macon', 'montgomery', 'shelby', 'moultrie'],
+  'de-witt': ['mclean', 'logan', 'macon', 'piatt', 'champaign'],
+  douglas: ['champaign', 'coles', 'edgar', 'vermilion', 'moultrie'],
+  edgar: ['douglas', 'vermilion', 'coles', 'clark', 'crawford'],
+  effingham: ['clay', 'fayette', 'shelby', 'cumberland', 'jasper', 'christian'],
+  fulton: ['knox', 'mcdonough', 'peoria', 'mclean', 'schuyler', 'warren'],
+  livingston: ['mclean', 'ford', 'kankakee', 'grundy', 'lasalle', 'woodford'],
+  logan: ['de-witt', 'mclean', 'sangamon', 'mason', 'menard', 'macon'],
+  moultrie: ['douglas', 'coles', 'shelby', 'cumberland', 'christian', 'macon'],
+  piatt: ['mclean', 'champaign', 'de-witt', 'moultrie', 'macon', 'douglas'],
 };
 
 export function getIllinoisNearbyCounties(

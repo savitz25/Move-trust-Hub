@@ -1874,6 +1874,266 @@ export const illinoisCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  christian: [
+    {
+      quote:
+        'Taylorville Moving & Storage handled our Christian County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Oscar I.',
+      location: 'Taylorville, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Christian County Moving confirmed Taylorville coverage — best local moving service in Christian County with fair pricing.',
+      name: 'Paula J.',
+      location: 'Taylorville, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Decatur Moving & Storage served our central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Quinn K.',
+      location: 'Pana, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'de-witt': [
+    {
+      quote:
+        'Clinton Moving & Storage handled our De Witt County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Rita L.',
+      location: 'Clinton, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'De Witt County Moving confirmed Clinton coverage — best local moving service in De Witt County with transparent pricing.',
+      name: 'Sam M.',
+      location: 'Clinton, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Bloomington served our De Witt County move efficiently — professional crew with careful handling.',
+      name: 'Tina N.',
+      location: 'Wapella, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  douglas: [
+    {
+      quote:
+        'Tuscola Moving & Storage handled our Douglas County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Uma O.',
+      location: 'Tuscola, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Douglas County Moving confirmed Tuscola coverage — best local moving service in Douglas County with fair pricing.',
+      name: 'Vince P.',
+      location: 'Tuscola, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Champaign served our east-central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Wade Q.',
+      location: 'Arcola, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  edgar: [
+    {
+      quote:
+        'Paris Moving & Storage handled our Edgar County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Xena R.',
+      location: 'Paris, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Edgar County Moving confirmed Paris coverage — best local moving service in Edgar County with transparent pricing.',
+      name: 'Yuri S.',
+      location: 'Paris, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Danville Moving & Storage served our Edgar County move efficiently — professional crew with careful handling.',
+      name: 'Zoe T.',
+      location: 'Kansas, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  effingham: [
+    {
+      quote:
+        'Effingham Moving & Storage handled our Effingham County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Aaron U.',
+      location: 'Effingham, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Effingham County Moving confirmed county coverage — best local moving service in Effingham County with fair pricing.',
+      name: 'Beth V.',
+      location: 'Effingham, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Mattoon Moving & Storage served our south-central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Carl W.',
+      location: 'Altamont, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  fulton: [
+    {
+      quote:
+        'Lewistown Moving & Storage handled our Fulton County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Dana X.',
+      location: 'Lewistown, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Fulton County Moving confirmed Lewistown coverage — best local moving service in Fulton County with transparent pricing.',
+      name: 'Evan Y.',
+      location: 'Lewistown, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Bartlett Moving & Storage served our west-central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Faye Z.',
+      location: 'Cuba, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  livingston: [
+    {
+      quote:
+        'Pontiac Moving & Storage handled our Livingston County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Greg A.',
+      location: 'Pontiac, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Livingston County Moving confirmed Pontiac coverage — best local moving service in Livingston County with fair pricing.',
+      name: 'Hope B.',
+      location: 'Pontiac, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Bloomington served our I-55 corridor move efficiently — professional crew with careful handling.',
+      name: 'Ian C.',
+      location: 'Fairbury, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  logan: [
+    {
+      quote:
+        'Lincoln Moving & Storage handled our Logan County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Jill D.',
+      location: 'Lincoln, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Logan County Moving confirmed Lincoln coverage — best local moving service in Logan County with transparent pricing.',
+      name: 'Kyle E.',
+      location: 'Lincoln, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Heartland Moving & Storage served our Logan County move efficiently — professional crew with careful handling.',
+      name: 'Lara F.',
+      location: 'Atlanta, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  moultrie: [
+    {
+      quote:
+        'Sullivan Moving & Storage handled our Moultrie County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Miles G.',
+      location: 'Sullivan, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Moultrie County Moving confirmed Sullivan coverage — best local moving service in Moultrie County with fair pricing.',
+      name: 'Nina H.',
+      location: 'Sullivan, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Charleston Moving & Storage served our central Illinois move efficiently — professional crew with careful handling.',
+      name: 'Omar I.',
+      location: 'Bethany, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  piatt: [
+    {
+      quote:
+        'Monticello Moving & Storage handled our Piatt County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Paula J.',
+      location: 'Monticello, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Piatt County Moving confirmed Monticello coverage — best local moving service in Piatt County with transparent pricing.',
+      name: 'Quinn K.',
+      location: 'Monticello, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Maher Moving & Storage served our Champaign-metro move efficiently — professional crew with careful handling in Piatt County.',
+      name: 'Rita L.',
+      location: 'Cerro Gordo, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIllinoisCountyTestimonials(

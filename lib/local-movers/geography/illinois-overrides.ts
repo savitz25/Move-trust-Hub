@@ -76,6 +76,16 @@ export const illinoisCountyOverrides: Partial<
   lee: { seat: 'Dixon', metro: 'rockford-metro-il' },
   mercer: { seat: 'Aledo', metro: 'quad-cities-metro-il' },
   warren: { seat: 'Monmouth', metro: 'galesburg-metro-il' },
+  christian: { seat: 'Taylorville', metro: 'decatur-metro-il' },
+  'de-witt': { seat: 'Clinton', metro: 'bloomington-normal-metro-il' },
+  douglas: { seat: 'Tuscola', metro: 'champaign-urbana-metro-il' },
+  edgar: { seat: 'Paris', metro: 'danville-metro-il' },
+  effingham: { seat: 'Effingham', metro: 'decatur-metro-il' },
+  fulton: { seat: 'Lewistown', metro: 'peoria-metro-il' },
+  livingston: { seat: 'Pontiac', metro: 'bloomington-normal-metro-il' },
+  logan: { seat: 'Lincoln', metro: 'springfield-metro-il' },
+  moultrie: { seat: 'Sullivan', metro: 'decatur-metro-il' },
+  piatt: { seat: 'Monticello', metro: 'champaign-urbana-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {
