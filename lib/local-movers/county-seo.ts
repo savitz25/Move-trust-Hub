@@ -141,6 +141,9 @@ export function buildStateDescription(
   if (stateName === 'Maryland') {
     return `Find curated local movers in all 24 Maryland jurisdictions — 10 ranked companies per county from DC suburbs (Montgomery, Prince George's, Howard, Anne Arundel) through Baltimore metro to the Eastern Shore and Western Maryland. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Pennsylvania') {
+    return `Find curated local movers in all 67 Pennsylvania counties — 10 ranked companies per county from Philadelphia and Pittsburgh metros through Harrisburg, Erie, Scranton, and rural regional markets statewide. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||
