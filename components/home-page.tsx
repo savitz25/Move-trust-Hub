@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -13,7 +14,7 @@ import { TrustBadges } from '@/components/trust/trust-badges';
 import { ReviewHighlights } from '@/components/trust/review-highlights';
 import { TestimonialsSection } from '@/components/trust/testimonials-section';
 
-export function HomePage() {
+export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   return (
@@ -63,6 +64,8 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      {mapSection}
 
       <TrustBadges />
 

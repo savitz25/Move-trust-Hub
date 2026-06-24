@@ -26,38 +26,14 @@ import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
 import { fullMetroPools, fullMoversCatalog } from '@/lib/local-movers/catalog';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
+import { CURATED_STATE_SLUGS } from '@/lib/local-movers/curated-states';
 import { getCounty } from '@/lib/local-movers/geography/index';
 import { getLocalState } from '@/lib/local-movers/states';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 const LARGE_MARKET_MAX_MOVERS = 20;
 
-const curatedAssignmentStateSlugs = new Set([
-  'alabama',
-  'mississippi',
-  'louisiana',
-  'oklahoma',
-  'arkansas',
-  'kansas',
-  'missouri',
-  'illinois',
-  'michigan',
-  'indiana',
-  'ohio',
-  'kentucky',
-  'west-virginia',
-  'virginia',
-  'district-of-columbia',
-  'california',
-  'florida',
-  'new-jersey',
-  'new-york',
-  'texas',
-  'georgia',
-  'south-carolina',
-  'north-carolina',
-  'tennessee',
-]);
+const curatedAssignmentStateSlugs = CURATED_STATE_SLUGS;
 const generatedAssignmentsWithoutCurated = generatedCountyAssignments.filter(
   (entry) => !curatedAssignmentStateSlugs.has(entry.stateSlug)
 );

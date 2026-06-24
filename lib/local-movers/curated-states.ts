@@ -1,0 +1,31 @@
+/** States with hand-curated county mover assignments and full SEO content. */
+export const CURATED_STATE_SLUGS = new Set([
+  'alabama',
+  'mississippi',
+  'louisiana',
+  'oklahoma',
+  'arkansas',
+  'kansas',
+  'missouri',
+  'illinois',
+  'michigan',
+  'indiana',
+  'ohio',
+  'kentucky',
+  'west-virginia',
+  'virginia',
+  'district-of-columbia',
+  'california',
+  'florida',
+  'new-jersey',
+  'new-york',
+  'texas',
+  'georgia',
+  'south-carolina',
+  'north-carolina',
+  'tennessee',
+]);
+
+export function isCuratedState(stateSlug: string): boolean {
+  return CURATED_STATE_SLUGS.has(stateSlug);
+}
