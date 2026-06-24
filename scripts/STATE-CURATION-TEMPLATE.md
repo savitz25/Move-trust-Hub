@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio / Kentucky model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, Kentucky, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio / Kentucky / West Virginia model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, Kentucky, West Virginia, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -29,6 +29,45 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
 | Ohio | 88/88 (complete) | 5 | 10 (cap 10; Franklin up to 18) | 15 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
 | Kentucky | 120/120 (complete) | 5 | 10 (cap 10) | 15 counties | `count-kentucky-movers.ts`, `apply-kentucky-mover-expansion.ts`, `audit-kentucky-seo.ts` |
+| West Virginia | 55/55 (complete) | 5 | 10 (cap 10) | 15 counties | `count-west-virginia-movers.ts`, `apply-west-virginia-mover-expansion.ts`, `audit-west-virginia-seo.ts` |
+
+### West Virginia metro pools (`data/local-movers-seed.ts`)
+
+- `charleston-metro-wv` — Charleston / Kanawha state capital hub
+- `martinsburg-metro-wv` — Martinsburg / Berkeley Eastern Panhandle (I-81 DC commuter spillover)
+- `morgantown-metro-wv` — Morgantown / Monongalia WVU university hub
+- `huntington-metro-wv` — Huntington / Cabell tri-state Ohio River hub
+- `parkersburg-metro-wv` — Parkersburg / Wood mid-Ohio Valley hub
+- `beckley-metro-wv` — Beckley / Raleigh Southern WV coalfields hub
+- `wheeling-metro-wv` — Wheeling / Ohio Northern Panhandle tri-state hub
+- `clarksburg-metro-wv` — Clarksburg / Harrison North Central hub
+- `fairmont-metro-wv` — Fairmont / Marion I-79 university corridor hub
+- `princeton-metro-wv` — Princeton / Mercer Southern WV hub
+- `fayetteville-metro-wv` — Fayetteville / Fayette New River Gorge hub
+- `lewisburg-metro-wv` — Lewisburg / Greenbrier tourism hub
+- `logan-metro-wv` — Logan / Logan coalfields hub
+- `williamson-metro-wv` — Williamson / Mingo Tug Fork coalfields hub
+- `welch-metro-wv` — Welch / McDowell coalfields hub
+
+### West Virginia major counties (10 movers each)
+
+`kanawha`, `berkeley`, `monongalia`, `cabell`, `wood`, `raleigh`, `jefferson`, `harrison`, `mercer`, `putnam`, `marion`, `ohio`, `fayette`, `wayne`, `preston`
+
+All 55 West Virginia counties are curated at 10 movers each.
+
+### West Virginia sitemap priority 0.85 (15 counties — top population / metro hubs)
+
+`kanawha`, `berkeley`, `monongalia`, `cabell`, `wood`, `raleigh`, `jefferson`, `harrison`, `mercer`, `putnam`, `marion`, `ohio`, `fayette`, `wayne`, `preston`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/west-virginia.xml` (56 URLs: hub + 55 counties).
+
+### West Virginia verification commands
+
+```bash
+npx tsx scripts/count-west-virginia-movers.ts
+npx tsx scripts/audit-west-virginia-seo.ts
+npx tsx scripts/validate-county-schema.ts
+```
 
 ### Kentucky metro pools (`data/local-movers-seed.ts`)
 
