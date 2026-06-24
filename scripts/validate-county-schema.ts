@@ -40,6 +40,7 @@ const CURATED_STATES = [
   'michigan',
   'indiana',
   'ohio',
+  'kentucky',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -550,6 +551,10 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'ohio', countySlug: shelby, expectedCity: 'Sidney' },
   { stateSlug: 'ohio', countySlug: athens, expectedCity: 'Athens' },
   { stateSlug: 'ohio', countySlug: washington, expectedCity: 'Marietta' },
+  { stateSlug: 'kentucky', countySlug: jefferson, expectedCity: 'Louisville' },
+  { stateSlug: 'kentucky', countySlug: fayette, expectedCity: 'Lexington' },
+  { stateSlug: 'kentucky', countySlug: kenton, expectedCity: 'Covington' },
+  { stateSlug: 'kentucky', countySlug: warren, expectedCity: 'Bowling Green' },
 ];
 
 let totalIssues = 0;

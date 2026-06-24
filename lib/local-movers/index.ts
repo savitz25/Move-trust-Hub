@@ -17,6 +17,7 @@ import { illinoisCountyMoverAssignments } from '@/data/illinois-county-assignmen
 import { michiganCountyMoverAssignments } from '@/data/michigan-county-assignments';
 import { indianaCountyMoverAssignments } from '@/data/indiana-county-assignments';
 import { ohioCountyMoverAssignments } from '@/data/ohio-county-assignments';
+import { kentuckyCountyMoverAssignments } from '@/data/kentucky-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -66,6 +67,7 @@ const allCountyAssignments = [
   ...michiganCountyMoverAssignments,
   ...indianaCountyMoverAssignments,
   ...ohioCountyMoverAssignments,
+  ...kentuckyCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,

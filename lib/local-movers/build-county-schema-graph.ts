@@ -19,12 +19,14 @@ import {
   MICHIGAN_COUNTY_CONTENT_UPDATED,
   INDIANA_COUNTY_CONTENT_UPDATED,
   OHIO_COUNTY_CONTENT_UPDATED,
+  KENTUCKY_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
 import { getIndianaCountyResearch } from '@/data/indiana-county-research';
 import { getOhioCountyResearch } from '@/data/ohio-county-research';
+import { getKentuckyCountyResearch } from '@/data/kentucky-county-research';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
 import { getLouisianaCountyResearch } from '@/data/louisiana-county-research';
@@ -154,6 +156,12 @@ function resolveContentModified(county: LocalCounty): string {
     getOhioCountyResearch(county.slug)
   ) {
     return OHIO_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'kentucky' &&
+    getKentuckyCountyResearch(county.slug)
+  ) {
+    return KENTUCKY_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

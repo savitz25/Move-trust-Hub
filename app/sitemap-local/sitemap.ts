@@ -17,6 +17,7 @@ import {
   MICHIGAN_COUNTY_CONTENT_UPDATED,
   INDIANA_COUNTY_CONTENT_UPDATED,
   OHIO_COUNTY_CONTENT_UPDATED,
+  KENTUCKY_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -175,6 +176,14 @@ const OH_HIGH_TRAFFIC_COUNTIES = new Set([
   'medina',
   'delaware',
   'mahoning',
+]);
+
+/** High-traffic KY counties — sitemap priority 0.85 (batch 1 large markets) */
+const KY_HIGH_TRAFFIC_COUNTIES = new Set([
+  'jefferson',
+  'fayette',
+  'kenton',
+  'warren',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -438,7 +447,9 @@ export default async function sitemap({
                                           ? new Date(INDIANA_COUNTY_CONTENT_UPDATED)
                                           : id === 'ohio'
                                             ? new Date(OHIO_COUNTY_CONTENT_UPDATED)
-                                            : new Date();
+                                            : id === 'kentucky'
+                                              ? new Date(KENTUCKY_COUNTY_CONTENT_UPDATED)
+                                              : new Date();
 
   return [
     {
@@ -479,7 +490,8 @@ export default async function sitemap({
         (id === 'illinois' && IL_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'michigan' && MI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'indiana' && IN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'ohio' && OH_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'ohio' && OH_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'kentucky' && KY_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

@@ -34,6 +34,8 @@ import { getIndianaCountyResearch } from '@/data/indiana-county-research';
 import { getIndianaCountyTestimonials } from '@/data/indiana-county-testimonials';
 import { getOhioCountyResearch } from '@/data/ohio-county-research';
 import { getOhioCountyTestimonials } from '@/data/ohio-county-testimonials';
+import { getKentuckyCountyResearch } from '@/data/kentucky-county-research';
+import { getKentuckyCountyTestimonials } from '@/data/kentucky-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -257,6 +259,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'ohio') {
     return getOhioCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'kentucky') {
+    return getKentuckyCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -342,6 +347,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'ohio') {
     const curated = getOhioCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'kentucky') {
+    const curated = getKentuckyCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -569,6 +578,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'ohio') {
     const curated = getOhioCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'kentucky') {
+    const curated = getKentuckyCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

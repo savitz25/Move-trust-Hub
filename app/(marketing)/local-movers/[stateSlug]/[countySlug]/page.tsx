@@ -23,6 +23,7 @@ import {
   MICHIGAN_COUNTY_CONTENT_UPDATED,
   INDIANA_COUNTY_CONTENT_UPDATED,
   OHIO_COUNTY_CONTENT_UPDATED,
+  KENTUCKY_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -35,6 +36,7 @@ import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
 import { getIndianaCountyResearch } from '@/data/indiana-county-research';
 import { getOhioCountyResearch } from '@/data/ohio-county-research';
+import { getKentuckyCountyResearch } from '@/data/kentucky-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -59,6 +61,7 @@ import { getIllinoisNearbyCounties } from '@/lib/local-movers/illinois-nearby';
 import { getMichiganNearbyCounties } from '@/lib/local-movers/michigan-nearby';
 import { getIndianaNearbyCounties } from '@/lib/local-movers/indiana-nearby';
 import { getOhioNearbyCounties } from '@/lib/local-movers/ohio-nearby';
+import { getKentuckyNearbyCounties } from '@/lib/local-movers/kentucky-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -185,7 +188,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                           : stateSlug === 'ohio' &&
                                               getOhioCountyResearch(countySlug)
                                             ? getOhioNearbyCounties(countySlug)
-                                            : [];
+                                            : stateSlug === 'kentucky' &&
+                                                getKentuckyCountyResearch(countySlug)
+                                              ? getKentuckyNearbyCounties(countySlug)
+                                              : [];
 
   return (
     <>
@@ -359,7 +365,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                   : stateSlug === 'ohio' &&
                                                       getOhioCountyResearch(countySlug)
                                                     ? OHIO_COUNTY_CONTENT_UPDATED
-                                                    : undefined
+                                                    : stateSlug === 'kentucky' &&
+                                                        getKentuckyCountyResearch(countySlug)
+                                                      ? KENTUCKY_COUNTY_CONTENT_UPDATED
+                                                      : undefined
           }
         />
 
