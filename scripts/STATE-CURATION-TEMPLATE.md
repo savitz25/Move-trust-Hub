@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -25,6 +25,31 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Kansas | 105/105 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-kansas-movers.ts`, `apply-kansas-mover-expansion.ts` |
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
+| Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
+
+### Michigan metro pools (`data/local-movers-seed.ts`)
+
+- `detroit-metro-mi` — Detroit / Wayne hub (collar spillover from Oakland, Macomb, Livingston)
+- `grand-rapids-metro-mi` — Grand Rapids / Kent / Ottawa West Michigan hub
+- `flint-metro-mi` — Flint / Genesee corridor
+- `ann-arbor-metro-mi` — Ann Arbor / Washtenaw (University of Michigan)
+- `lansing-metro-mi` — Lansing / Ingham / Eaton state capital corridor
+- `kalamazoo-metro-mi` — Kalamazoo / Western Michigan university hub
+- `saginaw-metro-mi`, `bay-city-metro-mi`, `midland-metro-mi` — Tri-Cities and Central Michigan
+- `muskegon-metro-mi`, `holland-allegan-metro-mi`, `manistee-metro-mi`, `beulah-metro-mi` — West Michigan lakeshore
+- `traverse-city-metro-mi`, `petoskey-metro-mi`, `charlevoix-metro-mi`, `gaylord-metro-mi` — Northern Michigan tourism
+- `marquette-metro-mi`, `escanaba-metro-mi`, `iron-mountain-metro-mi`, `sault-ste-marie-metro-mi` — Upper Peninsula hubs
+- Rural pools: county-seat metros (`baldwin-metro-mi`, `grayling-metro-mi`, `munising-metro-mi`, etc.)
+
+### Michigan major counties (10 movers each; Wayne up to 18)
+
+`wayne`, `oakland`, `macomb`, `kent`, `ottawa`, `washtenaw`, `ingham`, `genesee`, `kalamazoo`, `livingston`, `saginaw`, `muskegon`, `monroe`, `grand-traverse`, `marquette`
+
+### Michigan sitemap priority 0.85 (15 counties)
+
+`wayne`, `oakland`, `macomb`, `kent`, `ottawa`, `washtenaw`, `ingham`, `genesee`, `kalamazoo`, `livingston`, `saginaw`, `muskegon`, `monroe`, `grand-traverse`, `marquette`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/michigan.xml` (84 URLs: hub + 83 counties). Do **not** use `/sitemap-local/michigan.xml` (legacy path redirects to canonical).
 
 ### Illinois metro pools (`data/local-movers-seed.ts`)
 
@@ -479,7 +504,9 @@ npx tsx scripts/count-ny-movers.ts
 npx tsx scripts/count-texas-movers.ts
 npx tsx scripts/count-tennessee-movers.ts
 npx tsx scripts/count-illinois-movers.ts
+npx tsx scripts/count-michigan-movers.ts
 npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
+npx tsx scripts/apply-michigan-mover-expansion.ts   # if needed
 npx tsx scripts/apply-{state}-mover-expansion.ts   # if needed
 ```
 
