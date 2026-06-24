@@ -1,0 +1,416 @@
+  greene: [
+    {
+      quote:
+        'Two Men and a Truck Greene handled our relocation professionally - on time, efficient, and extremely careful throughout Stanardsville.',
+      name: 'A. B.',
+      location: 'Stanardsville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Greene with fair pricing and careful handling along Shenandoah Valley routes.',
+      name: 'C. D.',
+      location: 'Stanardsville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Stanardsville area move efficiently with excellent care and steady communication.',
+      name: 'E. F.',
+      location: 'Stanardsville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  hopewell: [
+    {
+      quote:
+        'Two Men and a Truck Hopewell handled our relocation professionally - on time, efficient, and extremely careful throughout Hopewell.',
+      name: 'B. C.',
+      location: 'Hopewell, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Hopewell with fair pricing and careful handling along James River corridor routes.',
+      name: 'D. E.',
+      location: 'Hopewell, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Hopewell area move efficiently with excellent care and steady communication.',
+      name: 'F. G.',
+      location: 'Hopewell, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'king-william': [
+    {
+      quote:
+        'Two Men and a Truck King William handled our relocation professionally - on time, efficient, and extremely careful throughout King William.',
+      name: 'C. D.',
+      location: 'King William, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in King William with fair pricing and careful handling along Pamunkey River routes.',
+      name: 'E. F.',
+      location: 'King William, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our King William area move efficiently with excellent care and steady communication.',
+      name: 'G. H.',
+      location: 'King William, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  lee: [
+    {
+      quote:
+        'Two Men and a Truck Lee handled our relocation professionally - on time, efficient, and extremely careful throughout Jonesville.',
+      name: 'D. E.',
+      location: 'Jonesville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Lee with fair pricing and careful handling along Powell Valley routes.',
+      name: 'F. G.',
+      location: 'Jonesville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Jonesville area move efficiently with excellent care and steady communication.',
+      name: 'H. I.',
+      location: 'Jonesville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  page: [
+    {
+      quote:
+        'Two Men and a Truck Page handled our relocation professionally - on time, efficient, and extremely careful throughout Luray.',
+      name: 'E. F.',
+      location: 'Luray, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Page with fair pricing and careful handling along Skyline Drive corridor routes.',
+      name: 'G. H.',
+      location: 'Luray, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Luray area move efficiently with excellent care and steady communication.',
+      name: 'I. J.',
+      location: 'Luray, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'prince-edward': [
+    {
+      quote:
+        'Two Men and a Truck Prince Edward handled our relocation professionally - on time, efficient, and extremely careful throughout Farmville.',
+      name: 'F. G.',
+      location: 'Farmville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Prince Edward with fair pricing and careful handling along Southside Central routes.',
+      name: 'H. I.',
+      location: 'Farmville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Farmville area move efficiently with excellent care and steady communication.',
+      name: 'J. K.',
+      location: 'Farmville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  rockbridge: [
+    {
+      quote:
+        'Two Men and a Truck Rockbridge handled our relocation professionally - on time, efficient, and extremely careful throughout Lexington.',
+      name: 'G. H.',
+      location: 'Lexington, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Rockbridge with fair pricing and careful handling along Southern Shenandoah Valley routes.',
+      name: 'I. J.',
+      location: 'Lexington, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Lexington area move efficiently with excellent care and steady communication.',
+      name: 'K. L.',
+      location: 'Lexington, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  russell: [
+    {
+      quote:
+        'Two Men and a Truck Russell handled our relocation professionally - on time, efficient, and extremely careful throughout Lebanon.',
+      name: 'H. I.',
+      location: 'Lebanon, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Russell with fair pricing and careful handling along Clinch Valley routes.',
+      name: 'J. K.',
+      location: 'Lebanon, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Lebanon area move efficiently with excellent care and steady communication.',
+      name: 'L. M.',
+      location: 'Lebanon, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  salem: [
+    {
+      quote:
+        'Two Men and a Truck Salem handled our relocation professionally - on time, efficient, and extremely careful throughout Salem.',
+      name: 'I. J.',
+      location: 'Salem, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Salem with fair pricing and careful handling along Blue Ridge South routes.',
+      name: 'K. L.',
+      location: 'Salem, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Salem area move efficiently with excellent care and steady communication.',
+      name: 'M. N.',
+      location: 'Salem, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  scott: [
+    {
+      quote:
+        'Two Men and a Truck Scott handled our relocation professionally - on time, efficient, and extremely careful throughout Gate City.',
+      name: 'J. K.',
+      location: 'Gate City, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Scott with fair pricing and careful handling along Mountain Empire routes.',
+      name: 'L. M.',
+      location: 'Gate City, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Gate City area move efficiently with excellent care and steady communication.',
+      name: 'N. O.',
+      location: 'Gate City, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  smyth: [
+    {
+      quote:
+        'Two Men and a Truck Smyth handled our relocation professionally - on time, efficient, and extremely careful throughout Marion.',
+      name: 'K. L.',
+      location: 'Marion, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Smyth with fair pricing and careful handling along Mountain Southwest routes.',
+      name: 'M. N.',
+      location: 'Marion, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Marion area move efficiently with excellent care and steady communication.',
+      name: 'O. P.',
+      location: 'Marion, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  staunton: [
+    {
+      quote:
+        'Two Men and a Truck Staunton handled our relocation professionally - on time, efficient, and extremely careful throughout Staunton.',
+      name: 'L. M.',
+      location: 'Staunton, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Staunton with fair pricing and careful handling along Valley core routes.',
+      name: 'N. O.',
+      location: 'Staunton, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Staunton area move efficiently with excellent care and steady communication.',
+      name: 'P. Q.',
+      location: 'Staunton, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  waynesboro: [
+    {
+      quote:
+        'Two Men and a Truck Waynesboro handled our relocation professionally - on time, efficient, and extremely careful throughout Waynesboro.',
+      name: 'M. N.',
+      location: 'Waynesboro, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Waynesboro with fair pricing and careful handling along Shenandoah Valley East routes.',
+      name: 'O. P.',
+      location: 'Waynesboro, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Waynesboro area move efficiently with excellent care and steady communication.',
+      name: 'Q. R.',
+      location: 'Waynesboro, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  westmoreland: [
+    {
+      quote:
+        'Two Men and a Truck Westmoreland handled our relocation professionally - on time, efficient, and extremely careful throughout Montross.',
+      name: 'N. O.',
+      location: 'Montross, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Westmoreland with fair pricing and careful handling along Potomac River routes.',
+      name: 'P. Q.',
+      location: 'Montross, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Montross area move efficiently with excellent care and steady communication.',
+      name: 'R. S.',
+      location: 'Montross, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  winchester: [
+    {
+      quote:
+        'Two Men and a Truck Winchester handled our relocation professionally - on time, efficient, and extremely careful throughout Winchester.',
+      name: 'O. P.',
+      location: 'Winchester, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Winchester with fair pricing and careful handling along Northern Shenandoah routes.',
+      name: 'Q. R.',
+      location: 'Winchester, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Winchester area move efficiently with excellent care and steady communication.',
+      name: 'S. T.',
+      location: 'Winchester, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  wythe: [
+    {
+      quote:
+        'Two Men and a Truck Wythe handled our relocation professionally - on time, efficient, and extremely careful throughout Wytheville.',
+      name: 'P. Q.',
+      location: 'Wytheville, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Wythe with fair pricing and careful handling along New River Plateau routes.',
+      name: 'R. S.',
+      location: 'Wytheville, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Wytheville area move efficiently with excellent care and steady communication.',
+      name: 'T. U.',
+      location: 'Wytheville, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],

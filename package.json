@@ -28,7 +28,9 @@
     "count:arkansas-movers": "tsx scripts/count-arkansas-movers.ts",
     "count:kansas-movers": "tsx scripts/count-kansas-movers.ts",
     "count:missouri-movers": "tsx scripts/count-missouri-movers.ts",
-    "count:west-virginia-movers": "tsx scripts/count-west-virginia-movers.ts"
+    "count:west-virginia-movers": "tsx scripts/count-west-virginia-movers.ts",
+    "count:virginia-movers": "tsx scripts/count-virginia-movers.ts",
+    "audit:virginia-seo": "tsx scripts/audit-virginia-seo.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",

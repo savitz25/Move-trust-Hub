@@ -1,4 +1,4 @@
-﻿import { generatedCounties } from '@/data/generated/index';
+import { generatedCounties } from '@/data/generated/index';
 import { applyVirginiaCountyOverrides } from '@/lib/local-movers/geography/virginia-overrides';
 import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
@@ -11,6 +11,13 @@ const countyNameBySlug = new Map(virginiaCounties.map((c) => [c.slug, c.name]));
 
 /** Geographic adjacency for curated VA county pages â€” expands as counties are researched */
 const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
+  'fairfax-city': [
+    'fairfax',
+    'arlington',
+    'alexandria',
+    'falls-church',
+    'prince-william',
+  ],
   fairfax: [
     'loudoun',
     'prince-william',
@@ -191,6 +198,13 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'newport-news',
     'charles-city',
     'gloucester',
+  ],
+  'bedford-city': [
+    'bedford',
+    'lynchburg',
+    'campbell',
+    'franklin',
+    'roanoke-county',
   ],
   bedford: [
     'lynchburg',
@@ -625,6 +639,22 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   highland: [
     'bath', 'augusta', 'rockbridge', 'alleghany', 'madison'
   ],
+  greene: ['madison', 'albemarle', 'orange', 'page', 'rockingham'],
+  hopewell: ['colonial-heights', 'petersburg', 'chesterfield', 'prince-george', 'dinwiddie'],
+  'king-william': ['new-kent', 'hanover', 'king-and-queen', 'richmond-county', 'caroline'],
+  lee: ['scott', 'wise', 'russell', 'dickenson', 'buchanan'],
+  page: ['warren', 'rappahannock', 'greene', 'rockingham', 'madison'],
+  'prince-edward': ['charlotte', 'lunenburg', 'nottoway', 'amelia', 'cumberland'],
+  rockbridge: ['lexington', 'bath', 'alleghany', 'botetourt', 'augusta'],
+  russell: ['buchanan', 'dickenson', 'wise', 'tazewell', 'scott'],
+  salem: ['roanoke', 'roanoke-county', 'montgomery', 'bedford', 'craig'],
+  scott: ['lee', 'wise', 'washington', 'russell', 'bristol'],
+  smyth: ['washington', 'wythe', 'grayson', 'bland', 'tazewell'],
+  staunton: ['augusta', 'waynesboro', 'rockingham', 'nelson', 'highland'],
+  waynesboro: ['augusta', 'staunton', 'nelson', 'albemarle', 'rockingham'],
+  westmoreland: ['richmond-county', 'northumberland', 'lancaster', 'king-george', 'essex'],
+  winchester: ['frederick', 'clarke', 'warren', 'fauquier', 'shenandoah'],
+  wythe: ['pulaski', 'grayson', 'bland', 'carroll', 'montgomery'],
 };
 
 export function getVirginiaNearbyCounties(

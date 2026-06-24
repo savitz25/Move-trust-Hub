@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio / Kentucky / West Virginia model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, Kentucky, West Virginia, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio / Kentucky / West Virginia / Virginia model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, Kentucky, West Virginia, Virginia, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -30,6 +30,40 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Ohio | 88/88 (complete) | 5 | 10 (cap 10; Franklin up to 18) | 15 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
 | Kentucky | 120/120 (complete) | 5 | 10 (cap 10) | 15 counties | `count-kentucky-movers.ts`, `apply-kentucky-mover-expansion.ts`, `audit-kentucky-seo.ts` |
 | West Virginia | 55/55 (complete) | 5 | 10 (cap 10) | 15 counties | `count-west-virginia-movers.ts`, `apply-west-virginia-mover-expansion.ts`, `audit-west-virginia-seo.ts` |
+| Virginia | 134/134 (complete) | 5 | 10 (cap 10; Fairfax up to 15) | 18 counties/cities | `count-virginia-movers.ts`, `apply-virginia-mover-expansion.ts`, `audit-virginia-seo.ts` |
+
+### Virginia metro pools (`data/local-movers-seed.ts`)
+
+- `northern-virginia-metro-va` — Fairfax County / NoVA DC-metro hub
+- `fairfax-city-metro-va` — Fairfax City independent city hub
+- `prince-william-metro-va` — Prince William / Manassas / Woodbridge hub
+- `loudoun-metro-va` — Loudoun / Ashburn / Leesburg hub
+- `arlington-metro-va` — Arlington urban hub
+- `alexandria-metro-va` — Alexandria Potomac waterfront hub
+- `hampton-roads-metro-va` — Virginia Beach / Norfolk / Chesapeake / Newport News hub
+- `richmond-metro-va` — Richmond City / Henrico / Chesterfield hub
+- `roanoke-metro-va` — Roanoke Valley hub
+- Per-county `{slug}-metro-va` pools for all 134 localities (batch 1-10 curation)
+
+### Virginia major localities (10 movers each)
+
+`fairfax`, `fairfax-city`, `loudoun`, `prince-william`, `arlington`, `alexandria`, `virginia-beach`, `norfolk`, `chesapeake`, `richmond`, `henrico`, `chesterfield`, `newport-news`, `hampton`, `stafford`, `spotsylvania`, `roanoke`, `roanoke-county`, `salem`
+
+All 134 Virginia counties and independent cities are curated at minimum 5 movers (10 for major metros).
+
+### Virginia sitemap priority 0.85 (18 high-traffic localities)
+
+`fairfax`, `prince-william`, `loudoun`, `virginia-beach`, `chesterfield`, `henrico`, `chesapeake`, `arlington`, `richmond`, `norfolk`, `newport-news`, `stafford`, `alexandria`, `spotsylvania`, `hampton`, `albemarle`, `hanover`, `suffolk`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/virginia.xml` (135 URLs: hub + 134 localities).
+
+### Virginia verification commands
+
+```bash
+npx tsx scripts/count-virginia-movers.ts
+npx tsx scripts/audit-virginia-seo.ts
+npx tsx scripts/validate-county-schema.ts
+```
 
 ### West Virginia metro pools (`data/local-movers-seed.ts`)
 
@@ -681,6 +715,8 @@ npx tsx scripts/count-indiana-movers.ts
 npx tsx scripts/audit-indiana-seo.ts
 npx tsx scripts/count-ohio-movers.ts
 npx tsx scripts/audit-ohio-seo.ts
+npx tsx scripts/count-virginia-movers.ts
+npx tsx scripts/audit-virginia-seo.ts
 npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
 npx tsx scripts/apply-michigan-mover-expansion.ts   # if needed
 npx tsx scripts/apply-indiana-mover-expansion.ts   # if needed

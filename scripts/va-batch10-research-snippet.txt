@@ -1,0 +1,272 @@
+  greene: {
+    marketNotes:
+      'Greene County is a rural Shenandoah Valley county between Charlottesville and Skyline Drive with residential demand.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Greene pricing reflects Shenandoah Valley geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Stanardsville and surrounding Greene communities before booking.',
+      'Skyline Drive corridor traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hopewell: {
+    marketNotes:
+      'Hopewell is an independent city on the James River with industrial and residential demand near Richmond and Fort Lee.',
+    costs: {
+      studioRange: '$800-$1,600',
+      familyRange: '$2,900-$6,500+',
+      avgHourly: '$115-$175/hr for a 2-person crew',
+      note: 'Hopewell pricing reflects James River corridor geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Hopewell and surrounding Hopewell communities before booking.',
+      'Richmond Southside traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'king-william': {
+    marketNotes:
+      'King William County is a rural county east of Richmond along the Pamunkey River with residential demand.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'King William pricing reflects Pamunkey River geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for King William and surrounding King William communities before booking.',
+      'Richmond East traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lee: {
+    marketNotes:
+      'Lee County is the westernmost Virginia county in far Southwest Appalachia with residential demand centered on Jonesville.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Lee pricing reflects Powell Valley geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Jonesville and surrounding Lee communities before booking.',
+      'Appalachian mountain traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  page: {
+    marketNotes:
+      'Page County is a Shenandoah Valley county anchored by Luray and the Skyline Drive tourism gateway.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Page pricing reflects Skyline Drive corridor geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Luray and surrounding Page communities before booking.',
+      'Shenandoah tourism traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'prince-edward': {
+    marketNotes:
+      'Prince Edward County is a Central Virginia county anchored by Farmville and Longwood University with residential demand.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Prince Edward pricing reflects Southside Central geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Farmville and surrounding Prince Edward communities before booking.',
+      'University area traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  rockbridge: {
+    marketNotes:
+      'Rockbridge County is a Shenandoah Valley county anchored by Lexington with VMI and W&L institutional demand.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Rockbridge pricing reflects Southern Shenandoah Valley geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Lexington and surrounding Rockbridge communities before booking.',
+      'Historic Lexington traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  russell: {
+    marketNotes:
+      'Russell County is a Southwest Virginia coalfields county with residential demand centered on Lebanon.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Russell pricing reflects Clinch Valley geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Lebanon and surrounding Russell communities before booking.',
+      'Coalfields corridor traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  salem: {
+    marketNotes:
+      'Salem is an independent city in the Roanoke Valley with strong suburban and institutional residential demand.',
+    costs: {
+      studioRange: '$800-$1,600',
+      familyRange: '$2,900-$6,500+',
+      avgHourly: '$115-$175/hr for a 2-person crew',
+      note: 'Salem pricing reflects Blue Ridge South geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Salem and surrounding Salem communities before booking.',
+      'Roanoke Valley traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  scott: {
+    marketNotes:
+      'Scott County is a far Southwest Virginia county on the Tennessee border with residential demand centered on Gate City.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Scott pricing reflects Mountain Empire geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Gate City and surrounding Scott communities before booking.',
+      'Appalachian border traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  smyth: {
+    marketNotes:
+      'Smyth County is a Southwest Virginia county along I-81 with residential demand centered on Marion.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Smyth pricing reflects Mountain Southwest geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Marion and surrounding Smyth communities before booking.',
+      'I-81 South traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  staunton: {
+    marketNotes:
+      'Staunton is an independent city in the Shenandoah Valley with historic downtown and suburban residential demand.',
+    costs: {
+      studioRange: '$800-$1,600',
+      familyRange: '$2,900-$6,500+',
+      avgHourly: '$115-$175/hr for a 2-person crew',
+      note: 'Staunton pricing reflects Valley core geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Staunton and surrounding Staunton communities before booking.',
+      'Shenandoah Valley traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  waynesboro: {
+    marketNotes:
+      'Waynesboro is an independent city at the Blue Ridge Parkway gateway with residential demand in the eastern Shenandoah Valley.',
+    costs: {
+      studioRange: '$800-$1,600',
+      familyRange: '$2,900-$6,500+',
+      avgHourly: '$115-$175/hr for a 2-person crew',
+      note: 'Waynesboro pricing reflects Shenandoah Valley East geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Waynesboro and surrounding Waynesboro communities before booking.',
+      'Blue Ridge Parkway traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  westmoreland: {
+    marketNotes:
+      'Westmoreland County is a Northern Neck county with waterfront and rural residential demand centered on Montross.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Westmoreland pricing reflects Potomac River geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Montross and surrounding Westmoreland communities before booking.',
+      'Northern Neck traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  winchester: {
+    marketNotes:
+      'Winchester is an independent city in the northern Shenandoah Valley with strong suburban and commuter residential demand.',
+    costs: {
+      studioRange: '$850-$1,700',
+      familyRange: '$3,000-$7,000+',
+      avgHourly: '$120-$185/hr for a 2-person crew',
+      note: 'Winchester pricing reflects Northern Shenandoah geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Winchester and surrounding Winchester communities before booking.',
+      'I-81 North traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wythe: {
+    marketNotes:
+      'Wythe County is a Southwest Virginia county along I-77 and I-81 with residential demand centered on Wytheville.',
+    costs: {
+      studioRange: '$750-$1,500',
+      familyRange: '$2,600-$5,800+',
+      avgHourly: '$110-$165/hr for a 2-person crew',
+      note: 'Wythe pricing reflects New River Plateau geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Wytheville and surrounding Wythe communities before booking.',
+      'I-77 corridor traffic impacts scheduling - confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, military relocations, and rural driveway access where applicable.',
+      'Book early for peak seasons (May-September), PCS turnover, and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },

@@ -1,4 +1,4 @@
-﻿import type { LocalCounty } from '@/lib/local-movers/types';
+import type { LocalCounty } from '@/lib/local-movers/types';
 
 /** Seat and metro overrides for hand-curated Virginia counties */
 export const virginiaCountyOverrides: Partial<
@@ -120,6 +120,24 @@ export const virginiaCountyOverrides: Partial<
   bath: { seat: 'Warm Springs', metro: 'bath-metro-va' },
   norton: { seat: 'Norton', metro: 'norton-metro-va' },
   highland: { seat: 'Monterey', metro: 'highland-metro-va' },
+  greene: { seat: 'Stanardsville', metro: 'greene-metro-va' },
+  hopewell: { seat: 'Hopewell', metro: 'hopewell-metro-va' },
+  'king-william': { seat: 'King William', metro: 'king-william-metro-va' },
+  lee: { seat: 'Jonesville', metro: 'lee-metro-va' },
+  page: { seat: 'Luray', metro: 'page-metro-va' },
+  'prince-edward': { seat: 'Farmville', metro: 'prince-edward-metro-va' },
+  rockbridge: { seat: 'Lexington', metro: 'rockbridge-metro-va' },
+  russell: { seat: 'Lebanon', metro: 'russell-metro-va' },
+  salem: { seat: 'Salem', metro: 'salem-metro-va' },
+  scott: { seat: 'Gate City', metro: 'scott-metro-va' },
+  smyth: { seat: 'Marion', metro: 'smyth-metro-va' },
+  staunton: { seat: 'Staunton', metro: 'staunton-metro-va' },
+  waynesboro: { seat: 'Waynesboro', metro: 'waynesboro-metro-va' },
+  westmoreland: { seat: 'Montross', metro: 'westmoreland-metro-va' },
+  winchester: { seat: 'Winchester', metro: 'winchester-metro-va' },
+  wythe: { seat: 'Wytheville', metro: 'wythe-metro-va' },
+  'fairfax-city': { seat: 'Fairfax', metro: 'fairfax-city-metro-va', name: 'Fairfax City' },
+  'bedford-city': { seat: 'Bedford', metro: 'bedford-city-metro-va', name: 'Bedford City' },
 };
 
 /** Duplicate FIPS slugs disambiguated by generated metro region */
