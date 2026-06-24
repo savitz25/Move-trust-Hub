@@ -27,7 +27,7 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   fairfax: {
     marketNotes:
-      'Fairfax County is one of Virginia's largest and wealthiest counties with strong suburban, corporate, and residential demand across Northern Virginia and the Washington DC metro.',
+      'Fairfax County is one of Virginia\'s largest and wealthiest counties with strong suburban, corporate, and residential demand across Northern Virginia and the Washington DC metro.',
     costs: {
       studioRange: '$900-$1,900',
       familyRange: '$3,500-$8,500+',
@@ -1999,7 +1999,7 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   highland: {
     marketNotes:
-      'Highland County is Virginia''s least populous county, a rural mountainous area with residential demand centered on Monterey.',
+      'Highland County is Virginia\'s least populous county, a rural mountainous area with residential demand centered on Monterey.',
     costs: {
       studioRange: '$750-$1,500',
       familyRange: '$2,600-$5,800+',
