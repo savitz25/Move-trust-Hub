@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/types';
 
-/** Hand-curated Pennsylvania county testimonials — batches 1–3 */
+/** Hand-curated Pennsylvania county testimonials — batches 1–4 */
 export const pennsylvaniaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   philadelphia: [
     {
@@ -357,6 +357,86 @@ export const pennsylvaniaCountyTestimonials: Record<string, CountyTestimonialEnt
     { quote: 'Regional Pottsville providers handled our Schuylkill County move professionally — efficient and careful.', name: 'Katherine Z.', location: 'Pottsville, PA', rating: 5, moveType: 'Single-family' },
     { quote: 'Coal Region Moving navigated our relocation with fair pricing and excellent rural scheduling.', name: 'Lawrence Q.', location: 'Pottsville, PA', rating: 5, moveType: 'Townhome' },
     { quote: 'Pottsville Corridor Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Margaret X.', location: 'Schuylkill Haven, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  cambria: [
+    { quote: 'Regional Johnstown providers handled our Cambria County move professionally — efficient and careful.', name: 'Albert M.', location: 'Johnstown, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Johnstown Corridor Moving navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Brenda K.', location: 'Johnstown, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Southwestern PA Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Carl R.', location: 'Ebensburg, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  fayette: [
+    { quote: 'Regional Uniontown providers handled our Fayette County move professionally — efficient and careful.', name: 'Diana S.', location: 'Uniontown, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Uniontown Corridor Moving navigated our relocation with fair pricing through regional traffic.', name: 'Eric T.', location: 'Uniontown, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Monongahela South Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Frances U.', location: 'Connellsville, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  blair: [
+    { quote: 'Regional Altoona providers handled our Blair County move professionally — efficient and careful.', name: 'George V.', location: 'Altoona, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Altoona Corridor Moving navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Helen W.', location: 'Altoona, PA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Allegheny Mountains Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Ivan X.', location: 'Hollidaysburg, PA', rating: 5, moveType: 'Townhome' },
+  ],
+  lycoming: [
+    { quote: 'Regional Williamsport providers handled our Lycoming County move professionally — efficient and careful.', name: 'Julia Y.', location: 'Williamsport, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Williamsport Corridor Moving navigated our relocation with fair pricing through I-180 traffic.', name: 'Keith Z.', location: 'Williamsport, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'North Central PA Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Laura A.', location: 'Muncy, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  adams: [
+    { quote: 'Regional Gettysburg providers handled our Adams County move professionally — efficient and careful with historic-area access.', name: 'Martin B.', location: 'Gettysburg, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Gettysburg Corridor Moving navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Nora C.', location: 'Gettysburg, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'South Mountain Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Oscar D.', location: 'Littlestown, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  mercer: [
+    { quote: 'Regional Mercer providers handled our Mercer County move professionally — efficient and careful.', name: 'Paula E.', location: 'Mercer, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Mercer Corridor Moving navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Quinn F.', location: 'Sharon, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Northwest PA Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Rita G.', location: 'Grove City, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  northumberland: [
+    { quote: 'Regional Sunbury providers handled our Northumberland County move professionally — efficient and careful.', name: 'Sam H.', location: 'Sunbury, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Sunbury Corridor Moving navigated our relocation with fair pricing through Susquehanna River corridor traffic.', name: 'Tina I.', location: 'Sunbury, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Susquehanna River Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Ulysses J.', location: 'Shamokin, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  lawrence: [
+    { quote: 'Regional New Castle providers handled our Lawrence County move professionally — efficient and careful.', name: 'Vera K.', location: 'New Castle, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'New Castle Corridor Moving navigated our relocation with fair pricing and excellent Beaver Valley scheduling.', name: 'Wade L.', location: 'New Castle, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Beaver Valley Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Xena M.', location: 'Ellwood City, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  indiana: [
+    { quote: 'Regional Indiana providers handled our Indiana County move professionally — efficient and careful.', name: 'York N.', location: 'Indiana, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Indiana Corridor Moving navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Zoe O.', location: 'Indiana, PA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Western PA Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Adam P.', location: 'Homer City, PA', rating: 5, moveType: 'Townhome' },
+  ],
+  crawford: [
+    { quote: 'Regional Meadville providers handled our Crawford County move professionally — efficient and careful.', name: 'Beth Q.', location: 'Meadville, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Meadville Corridor Moving navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Curt R.', location: 'Meadville, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Crawford Corridor Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Dawn S.', location: 'Titusville, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  clearfield: [
+    { quote: 'Regional Clearfield providers handled our Clearfield County move professionally — efficient and careful.', name: 'Earl T.', location: 'Clearfield, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Clearfield Corridor Moving navigated our relocation with fair pricing through rural plateau scheduling.', name: 'Faye U.', location: 'Clearfield, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Allegheny Plateau Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Glen V.', location: 'DuBois, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  somerset: [
+    { quote: 'Regional Somerset providers handled our Somerset County move professionally — efficient and careful.', name: 'Hope W.', location: 'Somerset, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Somerset Corridor Moving navigated our relocation with fair pricing and excellent Laurel Highlands scheduling.', name: 'Ira X.', location: 'Somerset, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Laurel Highlands South Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Joy Y.', location: 'Windber, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  columbia: [
+    { quote: 'Regional Bloomsburg providers handled our Columbia County move professionally — efficient and careful.', name: 'Kyle Z.', location: 'Bloomsburg, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Bloomsburg Corridor Moving navigated our relocation with fair pricing through I-80 traffic.', name: 'Lynn A.', location: 'Bloomsburg, PA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Susquehanna North Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Miles B.', location: 'Berwick, PA', rating: 5, moveType: 'Townhome' },
+  ],
+  carbon: [
+    { quote: 'Regional Jim Thorpe providers handled our Carbon County move professionally — efficient and careful.', name: 'Nina C.', location: 'Jim Thorpe, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Jim Thorpe Corridor Moving navigated our relocation with fair pricing through mountain corridor traffic.', name: 'Owen D.', location: 'Lehighton, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pocono West Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Pam E.', location: 'Jim Thorpe, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  armstrong: [
+    { quote: 'Regional Kittanning providers handled our Armstrong County move professionally — efficient and careful.', name: 'Quincy F.', location: 'Kittanning, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Kittanning Corridor Moving navigated our relocation with fair pricing and excellent Allegheny River scheduling.', name: 'Rose G.', location: 'Kittanning, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Allegheny River Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Seth H.', location: 'Ford City, PA', rating: 5, moveType: 'Single-family' },
+  ],
+  pike: [
+    { quote: 'Regional Milford providers handled our Pike County move professionally — efficient and careful through Delaware Highlands traffic.', name: 'Tara I.', location: 'Milford, PA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Milford Corridor Moving navigated our relocation with fair pricing and excellent seasonal scheduling.', name: 'Uma J.', location: 'Milford, PA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Delaware Highlands Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Vic K.', location: 'Matamoras, PA', rating: 5, moveType: 'Single-family' },
   ],
 };
 

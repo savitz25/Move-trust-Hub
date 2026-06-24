@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Pennsylvania county research — batches 1–3 */
+/** Hand-curated Pennsylvania county research — batches 1–4 */
 export const pennsylvaniaCountyResearch: Record<string, CuratedCountyResearch> = {
   philadelphia: {
     marketNotes:
@@ -457,6 +457,102 @@ export const pennsylvaniaCountyResearch: Record<string, CuratedCountyResearch> =
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
+  },
+  cambria: {
+    marketNotes:
+      'Cambria County is a key county in Southwestern Pennsylvania with residential demand across Johnstown, Ebensburg, and the Conemaugh River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Cambria County pricing reflects Johnstown metro demand, Route 22 and US-219 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Johnstown and surrounding areas before booking.', 'Regional traffic on Route 22 and US-219 impacts scheduling — confirm crew arrival windows.', 'Hillside and industrial communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County is a county in Southwestern Pennsylvania with residential demand across Uniontown, Connellsville, and the Monongahela River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Fayette County pricing reflects Uniontown metro demand, US-40 and I-68 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Uniontown and surrounding areas before booking.', 'Regional traffic on US-40 and I-68 impacts scheduling — confirm crew arrival windows.', 'Hillside communities may require shuttle truck coordination — confirm building access.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  blair: {
+    marketNotes:
+      'Blair County is a key county in Central Pennsylvania with residential demand across Altoona, Hollidaysburg, and the Allegheny Mountains corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Blair County pricing reflects Altoona metro demand, I-99 and US-22 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Altoona and surrounding areas before booking.', 'Regional traffic on I-99 and US-22 impacts scheduling — confirm crew arrival windows.', 'Mountain and suburban communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  lycoming: {
+    marketNotes:
+      'Lycoming County is a key county in North Central Pennsylvania with residential demand across Williamsport and the West Branch Susquehanna River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Lycoming County pricing reflects Williamsport metro demand, I-180 and US-15 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Williamsport and surrounding areas before booking.', 'Regional traffic on I-180 and US-15 impacts scheduling — confirm crew arrival windows.', 'River valley communities may require bridge crossing coordination — confirm crew routing.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  adams: {
+    marketNotes:
+      'Adams County is a county in South Central Pennsylvania with strong residential and historical demand across Gettysburg and the South Mountain corridor.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$165/hr for a 2-person crew', note: 'Adams County pricing reflects Gettysburg historical tourism demand, US-15 and Route 30 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Gettysburg and surrounding areas before booking.', 'Regional traffic on US-15 and Route 30 impacts scheduling — confirm crew arrival windows.', 'Historic properties and rural farm communities may require access coordination — confirm building access.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  mercer: {
+    marketNotes:
+      'Mercer County is a county in Northwestern Pennsylvania with residential demand across Mercer, Sharon, and the Shenango River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Mercer County pricing reflects northwestern PA demand, I-80 and US-19 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Mercer and surrounding areas before booking.', 'Regional traffic on I-80 and US-19 impacts scheduling — confirm crew arrival windows.', 'Industrial and suburban communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  northumberland: {
+    marketNotes:
+      'Northumberland County is a county in Central Pennsylvania with residential demand across Sunbury, Shamokin, and the Susquehanna River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Northumberland County pricing reflects Sunbury metro demand, Route 11 and US-15 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Sunbury and surrounding areas before booking.', 'Regional traffic on Route 11 and US-15 impacts scheduling — confirm crew arrival windows.', 'River valley communities may require bridge crossing coordination — confirm crew routing.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  lawrence: {
+    marketNotes:
+      'Lawrence County is a county in Northwestern Pennsylvania with residential demand across New Castle and the Beaver Valley corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Lawrence County pricing reflects New Castle metro demand, I-376 and US-422 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for New Castle and surrounding areas before booking.', 'Regional traffic on I-376 and US-422 impacts scheduling — confirm crew arrival windows.', 'Industrial and suburban communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  indiana: {
+    marketNotes:
+      'Indiana County is a county in Western Pennsylvania with residential demand across Indiana, Homer City, and the Kiski River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Indiana County pricing reflects western PA demand, US-119 and Route 286 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Indiana and surrounding areas before booking.', 'Regional traffic on US-119 and Route 286 impacts scheduling — confirm crew arrival windows.', 'Rural and hillside communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  crawford: {
+    marketNotes:
+      'Crawford County is a county in Northwestern Pennsylvania with residential demand across Meadville and the French Creek corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Crawford County pricing reflects Meadville metro demand, I-79 and US-322 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Meadville and surrounding areas before booking.', 'Regional traffic on I-79 and US-322 impacts scheduling — confirm crew arrival windows.', 'Rural communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  clearfield: {
+    marketNotes:
+      'Clearfield County is a rural county in Central Pennsylvania with residential demand across Clearfield, DuBois, and the Allegheny Plateau corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Clearfield County pricing reflects rural central PA demand, I-80 and US-219 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Clearfield and surrounding areas before booking.', 'Regional traffic on I-80 and US-219 impacts scheduling — confirm crew arrival windows.', 'Rural and plateau communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  somerset: {
+    marketNotes:
+      'Somerset County is a rural county in Southwestern Pennsylvania with residential demand across Somerset and the Laurel Highlands southern corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Somerset County pricing reflects rural southwestern PA demand, US-219 and the Turnpike corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Somerset and surrounding areas before booking.', 'Regional traffic on US-219 and the Turnpike impacts scheduling — confirm crew arrival windows.', 'Mountain and rural communities may require longer drive times — confirm crew coverage radius.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  columbia: {
+    marketNotes:
+      'Columbia County is a county in Central Pennsylvania with residential demand across Bloomsburg and the North Branch Susquehanna River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Columbia County pricing reflects Bloomsburg metro and university demand, I-80 and Route 11 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Bloomsburg and surrounding areas before booking.', 'Regional traffic on I-80 and Route 11 impacts scheduling — confirm crew arrival windows.', 'University and rural communities may require seasonal scheduling coordination — confirm crew arrival windows.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  carbon: {
+    marketNotes:
+      'Carbon County is a county in Northeastern Pennsylvania with residential demand across Jim Thorpe, Lehighton, and the Pocono western corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Carbon County pricing reflects northeastern PA demand, Route 209 and I-476 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Jim Thorpe and surrounding areas before booking.', 'Regional traffic on Route 209 and I-476 impacts scheduling — confirm crew arrival windows.', 'Mountain and river valley communities may require access coordination — confirm building access.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  armstrong: {
+    marketNotes:
+      'Armstrong County is a county in Western Pennsylvania with residential demand across Kittanning and the Allegheny River corridor.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$105–$160/hr for a 2-person crew', note: 'Armstrong County pricing reflects western PA demand, Route 28 and the Allegheny River corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Kittanning and surrounding areas before booking.', 'Regional traffic on Route 28 impacts scheduling — confirm crew arrival windows.', 'River valley communities may require bridge crossing coordination — confirm crew routing.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak seasons (May–September) and month-end lease changeover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  pike: {
+    marketNotes:
+      'Pike County is a county in Northeastern Pennsylvania with residential and tourism demand across Milford and the Delaware Highlands corridor.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$165/hr for a 2-person crew', note: 'Pike County pricing reflects Delaware Highlands tourism demand, Route 6 and I-84 corridor traffic, and competition among regional full-service agents.' },
+    tips: ['Verify coverage for Milford and surrounding areas before booking.', 'Regional and tourist traffic on Route 6 and I-84 impacts scheduling — confirm crew arrival windows.', 'Vacation home and lake communities may require seasonal access coordination — confirm building access.', 'Confirm insurance for high-value homes and multi-floor loading zones.', 'Book early for peak tourist seasons (June–August) and holiday weekends.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
   },
 };
 

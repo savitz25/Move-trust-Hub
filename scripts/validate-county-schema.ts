@@ -917,6 +917,22 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'pennsylvania', countySlug: 'centre', expectedCity: 'Bellefonte' },
   { stateSlug: 'pennsylvania', countySlug: 'lebanon', expectedCity: 'Lebanon' },
   { stateSlug: 'pennsylvania', countySlug: 'schuylkill', expectedCity: 'Pottsville' },
+  { stateSlug: 'pennsylvania', countySlug: 'cambria', expectedCity: 'Ebensburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'fayette', expectedCity: 'Uniontown' },
+  { stateSlug: 'pennsylvania', countySlug: 'blair', expectedCity: 'Hollidaysburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'lycoming', expectedCity: 'Williamsport' },
+  { stateSlug: 'pennsylvania', countySlug: 'adams', expectedCity: 'Gettysburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'mercer', expectedCity: 'Mercer' },
+  { stateSlug: 'pennsylvania', countySlug: 'northumberland', expectedCity: 'Sunbury' },
+  { stateSlug: 'pennsylvania', countySlug: 'lawrence', expectedCity: 'New Castle' },
+  { stateSlug: 'pennsylvania', countySlug: 'indiana', expectedCity: 'Indiana' },
+  { stateSlug: 'pennsylvania', countySlug: 'crawford', expectedCity: 'Meadville' },
+  { stateSlug: 'pennsylvania', countySlug: 'clearfield', expectedCity: 'Clearfield' },
+  { stateSlug: 'pennsylvania', countySlug: 'somerset', expectedCity: 'Somerset' },
+  { stateSlug: 'pennsylvania', countySlug: 'columbia', expectedCity: 'Bloomsburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'carbon', expectedCity: 'Jim Thorpe' },
+  { stateSlug: 'pennsylvania', countySlug: 'armstrong', expectedCity: 'Kittanning' },
+  { stateSlug: 'pennsylvania', countySlug: 'pike', expectedCity: 'Milford' },
 ];
 
 let totalIssues = 0;
