@@ -27,7 +27,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
 | Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
-| Ohio | 88/88 (complete) | 5 | 10 (cap 10; Franklin up to 18) | 88 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
+| Ohio | 88/88 (complete) | 5 | 10 (cap 10; Franklin up to 18) | 15 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
 
 ### Ohio metro pools (`data/local-movers-seed.ts`)
 
@@ -58,7 +58,13 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 
 All 88 Ohio counties are curated at 10 movers each (Franklin may expand to 18).
 
-### Ohio sitemap priority 0.85 (88 counties — all curated)
+### Ohio sitemap priority 0.85 (15 counties — top population / metro hubs)
+
+`franklin`, `cuyahoga`, `hamilton`, `summit`, `montgomery`, `lucas`, `butler`, `stark`, `lorain`, `warren`, `lake`, `clermont`, `medina`, `delaware`, `mahoning`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/ohio.xml` (89 URLs: hub + 88 counties). Do **not** use `/sitemap-local/ohio.xml` (legacy path redirects to canonical).
+
+### Ohio sitemap priority 0.80 (remaining 73 counties)
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
