@@ -31,6 +31,20 @@ export const michiganCountyOverrides: Partial<
   clinton: { seat: 'St. Johns', metro: 'lansing-metro-mi' },
   'van-buren': { seat: 'Paw Paw', metro: 'southwest-michigan-mi' },
   montcalm: { seat: 'Stanton', metro: 'central-michigan-mi' },
+  marquette: { seat: 'Marquette', metro: 'marquette-metro-mi' },
+  shiawassee: { seat: 'Corunna', metro: 'owosso-metro-mi' },
+  ionia: { seat: 'Ionia', metro: 'ionia-metro-mi' },
+  isabella: { seat: 'Mount Pleasant', metro: 'mount-pleasant-metro-mi' },
+  barry: { seat: 'Hastings', metro: 'hastings-metro-mi' },
+  'st-joseph': { seat: 'Centreville', metro: 'three-rivers-metro-mi' },
+  tuscola: { seat: 'Caro', metro: 'caro-metro-mi' },
+  newaygo: { seat: 'White Cloud', metro: 'newaygo-metro-mi' },
+  cass: { seat: 'Cassopolis', metro: 'southwest-michigan-mi' },
+  branch: { seat: 'Coldwater', metro: 'coldwater-metro-mi' },
+  hillsdale: { seat: 'Hillsdale', metro: 'hillsdale-metro-mi' },
+  mecosta: { seat: 'Big Rapids', metro: 'big-rapids-metro-mi' },
+  gratiot: { seat: 'Ithaca', metro: 'central-michigan-mi' },
+  sanilac: { seat: 'Sandusky', metro: 'sandusky-metro-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {

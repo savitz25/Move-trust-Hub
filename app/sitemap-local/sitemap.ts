@@ -166,6 +166,20 @@ const MI_HIGH_TRAFFIC_COUNTIES = new Set([
   'clinton',
   'van-buren',
   'montcalm',
+  'marquette',
+  'shiawassee',
+  'ionia',
+  'isabella',
+  'barry',
+  'st-joseph',
+  'tuscola',
+  'newaygo',
+  'cass',
+  'branch',
+  'hillsdale',
+  'mecosta',
+  'gratiot',
+  'sanilac',
 ]);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */

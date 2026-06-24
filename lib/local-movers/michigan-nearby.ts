@@ -38,6 +38,20 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   clinton: ['ingham', 'eaton', 'shiawassee', 'ionia', 'montcalm', 'gratiot'],
   'van-buren': ['berrien', 'kalamazoo', 'allegan', 'cass'],
   montcalm: ['kent', 'ionia', 'clinton', 'gratiot', 'mecosta', 'newaygo'],
+  marquette: ['alger', 'dickinson', 'iron', 'menominee', 'baraga', 'delta'],
+  shiawassee: ['clinton', 'ingham', 'livingston', 'genesee', 'saginaw', 'gratiot'],
+  ionia: ['kent', 'montcalm', 'clinton', 'eaton', 'barry', 'allegan'],
+  isabella: ['midland', 'clare', 'mecosta', 'gratiot', 'clinton', 'osceola'],
+  barry: ['kalamazoo', 'allegan', 'eaton', 'ionia', 'calhoun', 'kent'],
+  'st-joseph': ['branch', 'cass', 'kalamazoo', 'calhoun', 'berrien', 'van-buren'],
+  tuscola: ['saginaw', 'bay', 'sanilac', 'lapeer', 'genesee', 'huron'],
+  newaygo: ['muskegon', 'mecosta', 'lake', 'osceola', 'montcalm', 'oceana'],
+  cass: ['berrien', 'van-buren', 'st-joseph', 'branch', 'kalamazoo'],
+  branch: ['calhoun', 'hillsdale', 'st-joseph', 'jackson', 'lenawee'],
+  hillsdale: ['branch', 'lenawee', 'jackson', 'calhoun'],
+  mecosta: ['osceola', 'newaygo', 'montcalm', 'isabella', 'lake', 'mason'],
+  gratiot: ['clinton', 'montcalm', 'isabella', 'midland', 'saginaw', 'shiawassee'],
+  sanilac: ['st-clair', 'lapeer', 'tuscola', 'huron'],
 };
 
 export function getMichiganNearbyCounties(
