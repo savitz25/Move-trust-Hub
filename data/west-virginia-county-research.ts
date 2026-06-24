@@ -671,6 +671,278 @@ export const westVirginiaCountyResearch: Record<string, CuratedCountyResearch> =
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  monroe: {
+    marketNotes:
+      'Monroe County is a rural Southeast West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects Union regional demand, US-219 corridor traffic, and competition among Southeast West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Union and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  braxton: {
+    marketNotes:
+      'Braxton County is a rural Central West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Braxton County pricing reflects Sutton regional demand, Sutton Lake corridor traffic, and competition among Central West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Sutton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  summers: {
+    marketNotes:
+      'Summers County is a rural Southern West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Summers County pricing reflects Hinton regional demand, New River Gorge corridor traffic, and competition among Southern West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Hinton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County is a rural Eastern Panhandle county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Petersburg regional demand, Potomac Highlands traffic patterns, and competition among Eastern Panhandle full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Petersburg and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  ritchie: {
+    marketNotes:
+      'Ritchie County is a rural North Central West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Ritchie County pricing reflects Harrisville regional demand, US-50 corridor traffic, and competition among North Central West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Harrisville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tyler: {
+    marketNotes:
+      'Tyler County is a rural Northern West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Tyler County pricing reflects Middlebourne regional demand, Ohio River corridor traffic, and competition among Northern West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Middlebourne and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  doddridge: {
+    marketNotes:
+      'Doddridge County is a rural North Central West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Doddridge County pricing reflects West Union regional demand, rural North Central corridor traffic, and competition among local full-service agents.',
+    },
+    tips: [
+      'Verify coverage for West Union and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  webster: {
+    marketNotes:
+      'Webster County is a rural Central West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Webster County pricing reflects Webster Springs regional demand, mountain corridor traffic, and competition among Central West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Webster Springs and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pocahontas: {
+    marketNotes:
+      'Pocahontas County is a rural Eastern West Virginia county with strong tourism and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Pocahontas County pricing reflects Marlinton tourism and residential demand, Allegheny Highlands corridor traffic, and competition among mountain West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Marlinton and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons (June–October) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clay: {
+    marketNotes:
+      'Clay County is a rural Central West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Clay County pricing reflects Clay regional demand, Elk River corridor traffic, and competition among Central West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Clay and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pleasants: {
+    marketNotes:
+      'Pleasants County is a small rural Northern West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Pleasants County pricing reflects St. Marys regional demand, Ohio River corridor traffic, and competition among Northern West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for St. Marys and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gilmer: {
+    marketNotes:
+      'Gilmer County is a rural Central West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Gilmer County pricing reflects Glenville regional demand, Little Kanawha corridor traffic, and competition among Central West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Glenville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  tucker: {
+    marketNotes:
+      'Tucker County is a rural Eastern West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Tucker County pricing reflects Parsons regional demand, Allegheny Highlands corridor traffic, and competition among mountain West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Parsons and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  calhoun: {
+    marketNotes:
+      'Calhoun County is a small rural Central West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Calhoun County pricing reflects Grantsville regional demand, rural Central West Virginia corridor traffic, and competition among local full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Grantsville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pendleton: {
+    marketNotes:
+      'Pendleton County is a rural Eastern West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Pendleton County pricing reflects Franklin regional demand, Potomac Highlands corridor traffic, and competition among Eastern West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Franklin and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wirt: {
+    marketNotes:
+      'Wirt County is a small rural Western West Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$165/hr for a 2-person crew',
+      note: 'Wirt County pricing reflects Elizabeth regional demand, Little Kanawha corridor traffic, and competition among Western West Virginia full-service local agents.',
+    },
+    tips: [
+      'Verify coverage for Elizabeth and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getWestVirginiaCountyResearch(

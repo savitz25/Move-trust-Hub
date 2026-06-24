@@ -43,6 +43,22 @@ export const westVirginiaCountyOverrides: Partial<
   hardy: { seat: 'Moorefield', metro: 'moorefield-metro-wv' },
   wetzel: { seat: 'New Martinsville', metro: 'new-martinsville-metro-wv' },
   roane: { seat: 'Spencer', metro: 'spencer-metro-wv' },
+  monroe: { seat: 'Union', metro: 'union-metro-wv' },
+  braxton: { seat: 'Sutton', metro: 'sutton-metro-wv' },
+  summers: { seat: 'Hinton', metro: 'hinton-metro-wv' },
+  grant: { seat: 'Petersburg', metro: 'petersburg-metro-wv' },
+  ritchie: { seat: 'Harrisville', metro: 'harrisville-metro-wv' },
+  tyler: { seat: 'Middlebourne', metro: 'middlebourne-metro-wv' },
+  doddridge: { seat: 'West Union', metro: 'west-union-metro-wv' },
+  webster: { seat: 'Webster Springs', metro: 'webster-springs-metro-wv' },
+  pocahontas: { seat: 'Marlinton', metro: 'marlinton-metro-wv' },
+  clay: { seat: 'Clay', metro: 'clay-metro-wv' },
+  pleasants: { seat: 'St. Marys', metro: 'st-marys-metro-wv' },
+  gilmer: { seat: 'Glenville', metro: 'glenville-metro-wv' },
+  tucker: { seat: 'Parsons', metro: 'parsons-metro-wv' },
+  calhoun: { seat: 'Grantsville', metro: 'grantsville-metro-wv' },
+  pendleton: { seat: 'Franklin', metro: 'franklin-metro-wv' },
+  wirt: { seat: 'Elizabeth', metro: 'elizabeth-metro-wv' },
 };
 
 export function applyWestVirginiaCountyOverrides(county: LocalCounty): LocalCounty {

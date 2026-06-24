@@ -717,6 +717,22 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'west-virginia', countySlug: 'hardy', expectedCity: 'Moorefield' },
   { stateSlug: 'west-virginia', countySlug: 'wetzel', expectedCity: 'New Martinsville' },
   { stateSlug: 'west-virginia', countySlug: 'roane', expectedCity: 'Spencer' },
+  { stateSlug: 'west-virginia', countySlug: 'monroe', expectedCity: 'Union' },
+  { stateSlug: 'west-virginia', countySlug: 'braxton', expectedCity: 'Sutton' },
+  { stateSlug: 'west-virginia', countySlug: 'summers', expectedCity: 'Hinton' },
+  { stateSlug: 'west-virginia', countySlug: 'grant', expectedCity: 'Petersburg' },
+  { stateSlug: 'west-virginia', countySlug: 'ritchie', expectedCity: 'Harrisville' },
+  { stateSlug: 'west-virginia', countySlug: 'tyler', expectedCity: 'Middlebourne' },
+  { stateSlug: 'west-virginia', countySlug: 'doddridge', expectedCity: 'West Union' },
+  { stateSlug: 'west-virginia', countySlug: 'webster', expectedCity: 'Webster Springs' },
+  { stateSlug: 'west-virginia', countySlug: 'pocahontas', expectedCity: 'Marlinton' },
+  { stateSlug: 'west-virginia', countySlug: 'clay', expectedCity: 'Clay' },
+  { stateSlug: 'west-virginia', countySlug: 'pleasants', expectedCity: 'St. Marys' },
+  { stateSlug: 'west-virginia', countySlug: 'gilmer', expectedCity: 'Glenville' },
+  { stateSlug: 'west-virginia', countySlug: 'tucker', expectedCity: 'Parsons' },
+  { stateSlug: 'west-virginia', countySlug: 'calhoun', expectedCity: 'Grantsville' },
+  { stateSlug: 'west-virginia', countySlug: 'pendleton', expectedCity: 'Franklin' },
+  { stateSlug: 'west-virginia', countySlug: 'wirt', expectedCity: 'Elizabeth' },
 ];
 
 let totalIssues = 0;
