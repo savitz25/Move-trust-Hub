@@ -23,6 +23,16 @@ const IN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   johnson: ['marion', 'morgan', 'shelby', 'bartholomew', 'brown', 'hendricks'],
   porter: ['lake', 'laporte', 'jasper', 'starke'],
   monroe: ['brown', 'lawrence', 'morgan', 'greene', 'owen', 'jackson'],
+  madison: ['hamilton', 'hancock', 'delaware', 'henry', 'grant', 'tipton'],
+  clark: ['floyd', 'scott', 'washington', 'jefferson'],
+  delaware: ['madison', 'grant', 'blackford', 'jay', 'henry', 'randolph'],
+  laporte: ['porter', 'lake', 'starke', 'st-joseph', 'elkhart', 'newton'],
+  vigo: ['parke', 'vermillion', 'clay', 'sullivan', 'greene', 'putnam'],
+  hancock: ['marion', 'hamilton', 'madison', 'rush', 'shelby', 'henry'],
+  bartholomew: ['johnson', 'brown', 'jennings', 'decatur', 'shelby', 'jackson'],
+  howard: ['tipton', 'grant', 'miami', 'cass', 'carroll', 'clinton'],
+  boone: ['marion', 'hamilton', 'hendricks', 'montgomery', 'clinton', 'tippecanoe'],
+  floyd: ['clark', 'washington', 'scott', 'jefferson'],
 };
 
 export function getIndianaNearbyCounties(

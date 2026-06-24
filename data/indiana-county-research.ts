@@ -212,6 +212,176 @@ export const indianaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  madison: {
+    marketNotes:
+      'Madison County is a key East Central Indiana county with strong industrial and residential demand across Anderson, Pendleton, and Elwood.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Madison County pricing reflects East Central Indiana industrial and residential demand, I-69 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Anderson and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clark: {
+    marketNotes:
+      'Clark County is a major suburban county in the Louisville metropolitan area with strong residential demand across Jeffersonville, Clarksville, and Sellersburg.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Clark County pricing reflects Louisville-metro spillover demand, I-65 bridge corridor traffic, Ohio River flood-zone considerations, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Jeffersonville, Clarksville, and New Albany areas before booking.',
+      'Louisville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  delaware: {
+    marketNotes:
+      'Delaware County is anchored by Ball State University with strong educational and residential demand across Muncie and Yorktown.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Delaware County pricing reflects university-area demand, I-69/US-35 corridor traffic, seasonal student move volume, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Muncie and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  laporte: {
+    marketNotes:
+      'LaPorte County is a key Northwest Indiana county with strong industrial and residential demand across La Porte, Michigan City, and Wanatah.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'LaPorte County pricing reflects Northwest Indiana lakeshore demand, I-80/I-94 and US-20 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for La Porte, Michigan City, and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  vigo: {
+    marketNotes:
+      'Vigo County is the core of the Terre Haute metropolitan area with strong educational, healthcare, and residential demand across Terre Haute and West Terre Haute.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Vigo County pricing reflects West Central Indiana residential demand, I-70/US-41 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Terre Haute and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hancock: {
+    marketNotes:
+      'Hancock County is a growing suburban county east of Indianapolis with strong residential demand across Greenfield, McCordsville, and Fortville.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Hancock County pricing reflects Indianapolis east-suburb growth, I-70 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Greenfield and surrounding areas before booking.',
+      'Indianapolis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bartholomew: {
+    marketNotes:
+      'Bartholomew County is anchored by the city of Columbus with strong industrial (Cummins corridor) and residential demand across Columbus and Hope.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Bartholomew County pricing reflects South Central Indiana industrial and residential demand, I-65 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Columbus and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  howard: {
+    marketNotes:
+      'Howard County is anchored by Kokomo with strong industrial, automotive, and residential demand across Kokomo and Greentown.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Howard County pricing reflects North Central Indiana industrial and residential demand, US-31 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Kokomo and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boone: {
+    marketNotes:
+      'Boone County is a growing suburban county northwest of Indianapolis with strong residential demand across Lebanon, Whitestown, and Zionsville.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Boone County pricing reflects Indianapolis northwest-suburb growth, I-65 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Lebanon and surrounding areas before booking.',
+      'Indianapolis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  floyd: {
+    marketNotes:
+      'Floyd County is a suburban county in the Louisville metropolitan area with strong residential demand across New Albany, Georgetown, and Floyds Knobs.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Floyd County pricing reflects Louisville-metro spillover demand, I-64 and Ohio River corridor traffic, flood-zone considerations, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for New Albany and surrounding areas before booking.',
+      'Louisville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIndianaCountyResearch(

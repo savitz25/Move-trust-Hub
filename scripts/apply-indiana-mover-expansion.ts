@@ -25,6 +25,16 @@ const MAJOR = new Set([
   'johnson',
   'porter',
   'monroe',
+  'madison',
+  'clark',
+  'delaware',
+  'laporte',
+  'vigo',
+  'hancock',
+  'bartholomew',
+  'howard',
+  'boone',
+  'floyd',
 ]);
 
 const MIN_MOVERS = 5;
@@ -40,6 +50,13 @@ const FALLBACK_POOLS = [
   'lafayette-metro-in',
   'evansville-metro-in',
   'bloomington-metro-in',
+  'anderson-metro-in',
+  'louisville-metro-in',
+  'muncie-metro-in',
+  'laporte-metro-in',
+  'terre-haute-metro-in',
+  'columbus-metro-in',
+  'kokomo-metro-in',
 ];
 
 const assignmentsPath = 'data/indiana-county-assignments.ts';

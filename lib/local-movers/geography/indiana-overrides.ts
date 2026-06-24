@@ -16,6 +16,16 @@ export const indianaCountyOverrides: Partial<
   johnson: { seat: 'Franklin', metro: 'indianapolis-metro-in' },
   porter: { seat: 'Valparaiso', metro: 'northwest-indiana-metro-in' },
   monroe: { seat: 'Bloomington', metro: 'bloomington-metro-in' },
+  madison: { seat: 'Anderson', metro: 'anderson-metro-in' },
+  clark: { seat: 'Jeffersonville', metro: 'louisville-metro-in' },
+  delaware: { seat: 'Muncie', metro: 'muncie-metro-in' },
+  laporte: { seat: 'La Porte', metro: 'laporte-metro-in' },
+  vigo: { seat: 'Terre Haute', metro: 'terre-haute-metro-in' },
+  hancock: { seat: 'Greenfield', metro: 'indianapolis-metro-in' },
+  bartholomew: { seat: 'Columbus', metro: 'columbus-metro-in' },
+  howard: { seat: 'Kokomo', metro: 'kokomo-metro-in' },
+  boone: { seat: 'Lebanon', metro: 'indianapolis-metro-in' },
+  floyd: { seat: 'New Albany', metro: 'louisville-metro-in' },
 };
 
 export function applyIndianaCountyOverrides(county: LocalCounty): LocalCounty {
