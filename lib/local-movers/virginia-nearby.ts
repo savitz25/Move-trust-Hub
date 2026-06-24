@@ -1,4 +1,4 @@
-import { generatedCounties } from '@/data/generated/index';
+﻿import { generatedCounties } from '@/data/generated/index';
 import { applyVirginiaCountyOverrides } from '@/lib/local-movers/geography/virginia-overrides';
 import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
@@ -9,7 +9,7 @@ const virginiaCounties = generatedCounties
   .map(applyVirginiaCountyOverrides);
 const countyNameBySlug = new Map(virginiaCounties.map((c) => [c.slug, c.name]));
 
-/** Geographic adjacency for curated VA county pages — expands as counties are researched */
+/** Geographic adjacency for curated VA county pages â€” expands as counties are researched */
 const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   fairfax: [
     'loudoun',
@@ -472,7 +472,126 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'richmond',
     'james-city',
   ],
-};
+  'colonial-heights': [
+    'petersburg', 'hopewell', 'chesterfield', 'prince-george', 'dinwiddie'
+  ],
+  buchanan: [
+    'dickenson',
+    'wise',
+    'tazewell',
+    'russell',
+    'scott',
+  ],
+  southampton: [
+    'isle-of-wight', 'suffolk', 'franklin-city', 'greensville', 'sussex'
+  ],
+  patrick: [
+    'carroll',
+    'henry',
+    'floyd',
+    'franklin',
+    'martinsville',
+  ],
+  appomattox: [
+    'lynchburg', 'campbell', 'amherst', 'bedford', 'buckingham'
+  ],
+  radford: [
+    'montgomery', 'pulaski', 'giles', 'christiansburg', 'wythe'
+  ],
+  buckingham: [
+    'appomattox', 'nelson', 'fluvanna', 'cumberland', 'amherst'
+  ],
+  'manassas-park': [
+    'manassas', 'prince-william', 'fairfax', 'loudoun', 'stafford'
+  ],
+  giles: [
+    'pulaski',
+    'montgomery',
+    'bland',
+    'wythe',
+    'tazewell',
+  ],
+  bristol: [
+    'washington',
+    'scott',
+    'wise',
+    'russell',
+    'smyth',
+  ],
+  nottoway: [
+    'amelia', 'lunenburg', 'prince-edward', 'dinwiddie', 'chesterfield'
+  ],
+  floyd: [
+    'carroll', 'patrick', 'montgomery', 'pulaski', 'roanoke'
+  ],
+  williamsburg: [
+    'james-city', 'york', 'newport-news', 'charles-city', 'gloucester'
+  ],
+  brunswick: [
+    'greensville', 'lunenburg', 'mecklenburg', 'halifax', 'nottoway'
+  ],
+  clarke: [
+    'frederick', 'warren', 'loudoun', 'fauquier', 'shenandoah'
+  ],
+  'falls-church': [
+    'arlington', 'fairfax', 'alexandria', 'fairfax-city', 'prince-william'
+  ],
+  grayson: [
+    'carroll',
+    'wythe',
+    'surry',
+    'patrick',
+    'galax',
+  ],
+  nelson: [
+    'amherst', 'augusta', 'albemarle', 'buckingham', 'appomattox'
+  ],
+  alleghany: [
+    'botetourt', 'rockbridge', 'bath', 'craig', 'covington'
+  ],
+  madison: [
+    'orange', 'culpeper', 'greene', 'page', 'rappahannock'
+  ],
+  martinsville: [
+    'henry', 'patrick', 'rockingham', 'pittsylvania', 'franklin'
+  ],
+  poquoson: [
+    'york', 'hampton', 'newport-news', 'james-city', 'gloucester'
+  ],
+  amelia: [
+    'powhatan', 'chesterfield', 'nottoway', 'cumberland', 'prince-edward'
+  ],
+  dickenson: [
+    'wise',
+    'buchanan',
+    'russell',
+    'scott',
+    'tazewell',
+  ],
+  northumberland: [
+    'lancaster', 'richmond-county', 'westmoreland', 'essex', 'king-george'
+  ],
+  lunenburg: [
+    'nottoway', 'brunswick', 'mecklenburg', 'charlotte', 'greensville'
+  ],
+  northampton: [
+    'accomack', 'virginia-beach', 'norfolk', 'mathews', 'gloucester'
+  ],
+  charlotte: [
+    'lunenburg', 'campbell', 'pittsylvania', 'halifax', 'mecklenburg'
+  ],
+  greensville: [
+    'emporia', 'sussex', 'southampton', 'brunswick', 'dinwiddie'
+  ],
+  lancaster: [
+    'northumberland', 'richmond-county', 'middlesex', 'king-george', 'westmoreland'
+  ],
+  sussex: [
+    'dinwiddie', 'greensville', 'southampton', 'prince-george', 'surry'
+  ],
+  middlesex: [
+    'lancaster', 'gloucester', 'mathews', 'king-and-queen', 'richmond-county'
+  ],};
 
 export function getVirginiaNearbyCounties(
   countySlug: string

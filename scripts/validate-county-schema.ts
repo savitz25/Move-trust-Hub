@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Validates JSON-LD graph integrity for curated-state county pages.
  * Run: npm run validate:county-schema
  *
@@ -799,6 +799,38 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'virginia', countySlug: 'fluvanna', expectedCity: 'Palmyra' },
   { stateSlug: 'virginia', countySlug: 'dinwiddie', expectedCity: 'Dinwiddie' },
   { stateSlug: 'virginia', countySlug: 'new-kent', expectedCity: 'New Kent' },
+  { stateSlug: 'virginia', countySlug: 'colonial-heights', expectedCity: 'Colonial Heights' },
+  { stateSlug: 'virginia', countySlug: 'buchanan', expectedCity: 'Grundy' },
+  { stateSlug: 'virginia', countySlug: 'southampton', expectedCity: 'Courtland' },
+  { stateSlug: 'virginia', countySlug: 'patrick', expectedCity: 'Stuart' },
+  { stateSlug: 'virginia', countySlug: 'appomattox', expectedCity: 'Appomattox' },
+  { stateSlug: 'virginia', countySlug: 'radford', expectedCity: 'Radford' },
+  { stateSlug: 'virginia', countySlug: 'buckingham', expectedCity: 'Buckingham' },
+  { stateSlug: 'virginia', countySlug: 'manassas-park', expectedCity: 'Manassas Park' },
+  { stateSlug: 'virginia', countySlug: 'giles', expectedCity: 'Pearisburg' },
+  { stateSlug: 'virginia', countySlug: 'bristol', expectedCity: 'Bristol' },
+  { stateSlug: 'virginia', countySlug: 'nottoway', expectedCity: 'Nottoway' },
+  { stateSlug: 'virginia', countySlug: 'floyd', expectedCity: 'Floyd' },
+  { stateSlug: 'virginia', countySlug: 'williamsburg', expectedCity: 'Williamsburg' },
+  { stateSlug: 'virginia', countySlug: 'brunswick', expectedCity: 'Lawrenceville' },
+  { stateSlug: 'virginia', countySlug: 'clarke', expectedCity: 'Berryville' },
+  { stateSlug: 'virginia', countySlug: 'falls-church', expectedCity: 'Falls Church' },
+  { stateSlug: 'virginia', countySlug: 'grayson', expectedCity: 'Independence' },
+  { stateSlug: 'virginia', countySlug: 'nelson', expectedCity: 'Lovingston' },
+  { stateSlug: 'virginia', countySlug: 'alleghany', expectedCity: 'Covington' },
+  { stateSlug: 'virginia', countySlug: 'madison', expectedCity: 'Madison' },
+  { stateSlug: 'virginia', countySlug: 'martinsville', expectedCity: 'Martinsville' },
+  { stateSlug: 'virginia', countySlug: 'poquoson', expectedCity: 'Poquoson' },
+  { stateSlug: 'virginia', countySlug: 'amelia', expectedCity: 'Amelia Court House' },
+  { stateSlug: 'virginia', countySlug: 'dickenson', expectedCity: 'Clintwood' },
+  { stateSlug: 'virginia', countySlug: 'northumberland', expectedCity: 'Heathsville' },
+  { stateSlug: 'virginia', countySlug: 'lunenburg', expectedCity: 'Lunenburg' },
+  { stateSlug: 'virginia', countySlug: 'northampton', expectedCity: 'Eastville' },
+  { stateSlug: 'virginia', countySlug: 'charlotte', expectedCity: 'Charlotte Court House' },
+  { stateSlug: 'virginia', countySlug: 'greensville', expectedCity: 'Emporia' },
+  { stateSlug: 'virginia', countySlug: 'lancaster', expectedCity: 'Lancaster' },
+  { stateSlug: 'virginia', countySlug: 'sussex', expectedCity: 'Sussex' },
+  { stateSlug: 'virginia', countySlug: 'middlesex', expectedCity: 'Saluda' },
 ];
 
 let totalIssues = 0;

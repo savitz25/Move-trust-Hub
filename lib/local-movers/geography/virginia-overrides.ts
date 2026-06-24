@@ -1,4 +1,4 @@
-import type { LocalCounty } from '@/lib/local-movers/types';
+﻿import type { LocalCounty } from '@/lib/local-movers/types';
 
 /** Seat and metro overrides for hand-curated Virginia counties */
 export const virginiaCountyOverrides: Partial<
@@ -69,7 +69,38 @@ export const virginiaCountyOverrides: Partial<
   fluvanna: { seat: 'Palmyra', metro: 'fluvanna-metro-va' },
   dinwiddie: { seat: 'Dinwiddie', metro: 'dinwiddie-metro-va' },
   'new-kent': { seat: 'New Kent', metro: 'new-kent-metro-va' },
-};
+  'colonial-heights': { seat: 'Colonial Heights', metro: 'colonial-heights-metro-va' },
+  buchanan: { seat: 'Grundy', metro: 'buchanan-metro-va' },
+  southampton: { seat: 'Courtland', metro: 'southampton-metro-va' },
+  patrick: { seat: 'Stuart', metro: 'patrick-metro-va' },
+  appomattox: { seat: 'Appomattox', metro: 'appomattox-metro-va' },
+  radford: { seat: 'Radford', metro: 'radford-metro-va' },
+  buckingham: { seat: 'Buckingham', metro: 'buckingham-metro-va' },
+  'manassas-park': { seat: 'Manassas Park', metro: 'manassas-park-metro-va' },
+  giles: { seat: 'Pearisburg', metro: 'giles-metro-va' },
+  bristol: { seat: 'Bristol', metro: 'bristol-metro-va' },
+  nottoway: { seat: 'Nottoway', metro: 'nottoway-metro-va' },
+  floyd: { seat: 'Floyd', metro: 'floyd-metro-va' },
+  williamsburg: { seat: 'Williamsburg', metro: 'williamsburg-metro-va' },
+  brunswick: { seat: 'Lawrenceville', metro: 'brunswick-metro-va' },
+  clarke: { seat: 'Berryville', metro: 'clarke-metro-va' },
+  'falls-church': { seat: 'Falls Church', metro: 'falls-church-metro-va' },
+  grayson: { seat: 'Independence', metro: 'grayson-metro-va' },
+  nelson: { seat: 'Lovingston', metro: 'nelson-metro-va' },
+  alleghany: { seat: 'Covington', metro: 'alleghany-metro-va' },
+  madison: { seat: 'Madison', metro: 'madison-metro-va' },
+  martinsville: { seat: 'Martinsville', metro: 'martinsville-metro-va' },
+  poquoson: { seat: 'Poquoson', metro: 'poquoson-metro-va' },
+  amelia: { seat: 'Amelia Court House', metro: 'amelia-metro-va' },
+  dickenson: { seat: 'Clintwood', metro: 'dickenson-metro-va' },
+  northumberland: { seat: 'Heathsville', metro: 'northumberland-metro-va' },
+  lunenburg: { seat: 'Lunenburg', metro: 'lunenburg-metro-va' },
+  northampton: { seat: 'Eastville', metro: 'northampton-metro-va' },
+  charlotte: { seat: 'Charlotte Court House', metro: 'charlotte-metro-va' },
+  greensville: { seat: 'Emporia', metro: 'greensville-metro-va' },
+  lancaster: { seat: 'Lancaster', metro: 'lancaster-metro-va' },
+  sussex: { seat: 'Sussex', metro: 'sussex-metro-va' },
+  middlesex: { seat: 'Saluda', metro: 'middlesex-metro-va' },};
 
 /** Duplicate FIPS slugs disambiguated by generated metro region */
 const VIRGINIA_DUPLICATE_SLUG_METROS: Record<
