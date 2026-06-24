@@ -13,6 +13,21 @@ export const westVirginiaCountyOverrides: Partial<
   jefferson: { seat: 'Charles Town', metro: 'charles-town-metro-wv' },
   harrison: { seat: 'Clarksburg', metro: 'clarksburg-metro-wv' },
   mercer: { seat: 'Princeton', metro: 'princeton-metro-wv' },
+  putnam: { seat: 'Winfield', metro: 'winfield-metro-wv' },
+  marion: { seat: 'Fairmont', metro: 'fairmont-metro-wv' },
+  ohio: { seat: 'Wheeling', metro: 'wheeling-metro-wv' },
+  fayette: { seat: 'Fayetteville', metro: 'fayetteville-metro-wv' },
+  wayne: { seat: 'Wayne', metro: 'wayne-metro-wv' },
+  preston: { seat: 'Kingwood', metro: 'kingwood-metro-wv' },
+  greenbrier: { seat: 'Lewisburg', metro: 'lewisburg-metro-wv' },
+  logan: { seat: 'Logan', metro: 'logan-metro-wv' },
+  marshall: { seat: 'Moundsville', metro: 'moundsville-metro-wv' },
+  hancock: { seat: 'New Cumberland', metro: 'new-cumberland-metro-wv' },
+  jackson: { seat: 'Ripley', metro: 'ripley-metro-wv' },
+  mineral: { seat: 'Keyser', metro: 'keyser-metro-wv' },
+  randolph: { seat: 'Elkins', metro: 'elkins-metro-wv' },
+  mason: { seat: 'Point Pleasant', metro: 'point-pleasant-metro-wv' },
+  hampshire: { seat: 'Romney', metro: 'romney-metro-wv' },
 };
 
 export function applyWestVirginiaCountyOverrides(county: LocalCounty): LocalCounty {

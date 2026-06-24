@@ -190,6 +190,12 @@ const WV_HIGH_TRAFFIC_COUNTIES = new Set([
   'jefferson',
   'harrison',
   'mercer',
+  'putnam',
+  'marion',
+  'ohio',
+  'fayette',
+  'wayne',
+  'preston',
 ]);
 
 /** High-traffic KY counties — sitemap priority 0.85 (top 15 population / metro hubs) */

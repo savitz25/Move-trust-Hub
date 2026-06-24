@@ -687,6 +687,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'west-virginia', countySlug: 'jefferson', expectedCity: 'Charles Town' },
   { stateSlug: 'west-virginia', countySlug: 'harrison', expectedCity: 'Clarksburg' },
   { stateSlug: 'west-virginia', countySlug: 'mercer', expectedCity: 'Princeton' },
+  { stateSlug: 'west-virginia', countySlug: 'putnam', expectedCity: 'Winfield' },
+  { stateSlug: 'west-virginia', countySlug: 'marion', expectedCity: 'Fairmont' },
+  { stateSlug: 'west-virginia', countySlug: 'ohio', expectedCity: 'Wheeling' },
+  { stateSlug: 'west-virginia', countySlug: 'fayette', expectedCity: 'Fayetteville' },
+  { stateSlug: 'west-virginia', countySlug: 'wayne', expectedCity: 'Wayne' },
+  { stateSlug: 'west-virginia', countySlug: 'preston', expectedCity: 'Kingwood' },
+  { stateSlug: 'west-virginia', countySlug: 'greenbrier', expectedCity: 'Lewisburg' },
+  { stateSlug: 'west-virginia', countySlug: 'logan', expectedCity: 'Logan' },
+  { stateSlug: 'west-virginia', countySlug: 'marshall', expectedCity: 'Moundsville' },
+  { stateSlug: 'west-virginia', countySlug: 'hancock', expectedCity: 'New Cumberland' },
+  { stateSlug: 'west-virginia', countySlug: 'jackson', expectedCity: 'Ripley' },
+  { stateSlug: 'west-virginia', countySlug: 'mineral', expectedCity: 'Keyser' },
+  { stateSlug: 'west-virginia', countySlug: 'randolph', expectedCity: 'Elkins' },
+  { stateSlug: 'west-virginia', countySlug: 'mason', expectedCity: 'Point Pleasant' },
+  { stateSlug: 'west-virginia', countySlug: 'hampshire', expectedCity: 'Romney' },
 ];
 
 let totalIssues = 0;

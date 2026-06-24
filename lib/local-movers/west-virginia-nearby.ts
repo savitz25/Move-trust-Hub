@@ -20,6 +20,21 @@ const WV_COUNTY_NEIGHBORS: Record<string, string[]> = {
   jefferson: ['berkeley', 'morgan', 'hampshire', 'grant', 'hardy', 'mineral'],
   harrison: ['doddridge', 'lewis', 'gilmer', 'marion', 'taylor', 'barbour', 'upshur'],
   mercer: ['raleigh', 'wyoming', 'summers', 'mcdowell', 'monroe', 'mingo'],
+  putnam: ['kanawha', 'cabell', 'lincoln', 'jackson', 'mason', 'boone'],
+  marion: ['harrison', 'monongalia', 'preston', 'taylor', 'wetzel', 'barbour'],
+  ohio: ['marshall', 'brooke', 'hancock', 'wetzel', 'tyler', 'pleasants'],
+  fayette: ['kanawha', 'raleigh', 'nicholas', 'greenbrier', 'summers', 'wyoming'],
+  wayne: ['cabell', 'lincoln', 'mingo', 'logan', 'boone', 'mcdowell'],
+  preston: ['monongalia', 'marion', 'taylor', 'tucker', 'grant', 'barbour'],
+  greenbrier: ['fayette', 'monroe', 'pocahontas', 'summers', 'nicholas', 'webster'],
+  logan: ['wayne', 'lincoln', 'boone', 'mingo', 'wyoming', 'mcdowell'],
+  marshall: ['ohio', 'wetzel', 'tyler', 'pleasants', 'hancock', 'brooke'],
+  hancock: ['marshall', 'brooke', 'ohio', 'wetzel', 'pleasants'],
+  jackson: ['kanawha', 'putnam', 'mason', 'wood', 'roane', 'wirt'],
+  mineral: ['berkeley', 'jefferson', 'hampshire', 'grant', 'hardy', 'preston'],
+  randolph: ['pendleton', 'pocahontas', 'webster', 'upshur', 'barbour', 'tucker'],
+  mason: ['jackson', 'putnam', 'cabell', 'pleasants', 'wood', 'roane'],
+  hampshire: ['berkeley', 'jefferson', 'mineral', 'hardy', 'morgan', 'grant'],
 };
 
 export function getWestVirginiaNearbyCounties(
