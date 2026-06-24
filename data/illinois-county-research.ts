@@ -1407,6 +1407,108 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  hancock: {
+    marketNotes:
+      'Hancock County is a rural West Central Illinois county with residential demand across Carthage and Mississippi River-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Hancock County pricing reflects west-central Illinois rural routes and spillover demand from Quincy and Galesburg metros.',
+    },
+    tips: [
+      'Verify coverage for Carthage and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcdonough: {
+    marketNotes:
+      'McDonough County is anchored by Western Illinois University with strong educational and residential demand across Macomb.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'McDonough County pricing reflects university-season demand, west-central Illinois rural routes, and spillover from Galesburg and Peoria metros.',
+    },
+    tips: [
+      'Verify coverage for Macomb and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows and student-move timing.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morgan: {
+    marketNotes:
+      'Morgan County is a key West Central Illinois county with strong educational and residential demand across Jacksonville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Morgan County pricing reflects west-central Illinois rural routes, historic-town properties, and spillover demand from Springfield and Decatur metros.',
+    },
+    tips: [
+      'Verify coverage for Jacksonville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pike: {
+    marketNotes:
+      'Pike County is a rural West Central Illinois county with residential demand across Pittsfield and surrounding communities.',
+    costs: {
+      studioRange: '$700–$1,450',
+      familyRange: '$2,500–$5,600+',
+      avgHourly: '$95–$145/hr for a 2-person crew',
+      note: 'Pike County pricing reflects rural west-central Illinois market rates and spillover demand from Quincy and Springfield metros.',
+    },
+    tips: [
+      'Verify coverage for Pittsfield and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clark: {
+    marketNotes:
+      'Clark County is a rural East Central Illinois county near the Indiana border with residential demand across Marshall and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Clark County pricing reflects east-central Illinois rural drive times and spillover demand from Danville and Champaign metros.',
+    },
+    tips: [
+      'Verify coverage for Marshall and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  iroquois: {
+    marketNotes:
+      'Iroquois County is a rural East Central Illinois county with residential demand across Watseka and Kankakee-metro-adjacent communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$150/hr for a 2-person crew',
+      note: 'Iroquois County pricing reflects Kankakee metro spillover, east-central Illinois rural routes, and cross-coverage from Champaign and Danville providers.',
+    },
+    tips: [
+      'Verify coverage for Watseka and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

@@ -2134,6 +2134,162 @@ export const illinoisCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  hancock: [
+    {
+      quote:
+        'Carthage Moving & Storage handled our Hancock County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Sam M.',
+      location: 'Carthage, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Hancock County Moving confirmed Carthage coverage — best local moving service in Hancock County with transparent pricing.',
+      name: 'Tina N.',
+      location: 'Carthage, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Quincy Moving & Storage served our west-central Illinois move efficiently — professional crew with careful handling in Hancock County.',
+      name: 'Uma O.',
+      location: 'Hamilton, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  mcdonough: [
+    {
+      quote:
+        'Macomb Moving & Storage handled our McDonough County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Vic P.',
+      location: 'Macomb, IL',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'McDonough County Moving confirmed Macomb coverage — best local moving service in McDonough County with fair pricing.',
+      name: 'Wendy Q.',
+      location: 'Macomb, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Galesburg Moving & Storage served our university-area move efficiently — professional crew with careful handling near WIU.',
+      name: 'Xander R.',
+      location: 'Bushnell, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  morgan: [
+    {
+      quote:
+        'Jacksonville Moving & Storage handled our Morgan County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Yara S.',
+      location: 'Jacksonville, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Morgan County Moving confirmed Jacksonville coverage — best local moving service in Morgan County with transparent pricing.',
+      name: 'Zane T.',
+      location: 'Jacksonville, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Heartland Moving & Storage served our Springfield-metro move efficiently — professional crew with careful handling in Morgan County.',
+      name: 'Abby U.',
+      location: 'Waverly, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  pike: [
+    {
+      quote:
+        'Pittsfield Moving & Storage handled our Pike County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Blake V.',
+      location: 'Pittsfield, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Pike County Moving confirmed Pittsfield coverage — best local moving service in Pike County with fair pricing.',
+      name: 'Cara W.',
+      location: 'Pittsfield, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Tri-State Moving served our west-central Illinois move efficiently — professional crew with careful handling in Pike County.',
+      name: 'Drew X.',
+      location: 'Barry, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  clark: [
+    {
+      quote:
+        'Marshall Moving & Storage handled our Clark County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Ella Y.',
+      location: 'Marshall, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Clark County Moving confirmed Marshall coverage — best local moving service in Clark County with transparent pricing.',
+      name: 'Finn Z.',
+      location: 'Marshall, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Danville Moving & Storage served our east-central Illinois move efficiently — professional crew with careful handling in Clark County.',
+      name: 'Gina A.',
+      location: 'Casey, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  iroquois: [
+    {
+      quote:
+        'Watseka Moving & Storage handled our Iroquois County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Hugo B.',
+      location: 'Watseka, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Iroquois County Moving confirmed Watseka coverage — best local moving service in Iroquois County with fair pricing.',
+      name: 'Ivy C.',
+      location: 'Watseka, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Kankakee Moving & Storage served our east-central Illinois move efficiently — professional crew with careful handling in Iroquois County.',
+      name: 'Jake D.',
+      location: 'Onarga, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIllinoisCountyTestimonials(

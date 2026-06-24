@@ -86,6 +86,12 @@ export const illinoisCountyOverrides: Partial<
   logan: { seat: 'Lincoln', metro: 'springfield-metro-il' },
   moultrie: { seat: 'Sullivan', metro: 'decatur-metro-il' },
   piatt: { seat: 'Monticello', metro: 'champaign-urbana-metro-il' },
+  hancock: { seat: 'Carthage', metro: 'quincy-metro-il' },
+  mcdonough: { seat: 'Macomb', metro: 'galesburg-metro-il' },
+  morgan: { seat: 'Jacksonville', metro: 'springfield-metro-il' },
+  pike: { seat: 'Pittsfield', metro: 'quincy-metro-il' },
+  clark: { seat: 'Marshall', metro: 'danville-metro-il' },
+  iroquois: { seat: 'Watseka', metro: 'kankakee-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

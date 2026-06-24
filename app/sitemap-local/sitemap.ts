@@ -221,6 +221,12 @@ const IL_HIGH_TRAFFIC_COUNTIES = new Set([
   'logan',
   'moultrie',
   'piatt',
+  'hancock',
+  'mcdonough',
+  'morgan',
+  'pike',
+  'clark',
+  'iroquois',
 ]);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([
