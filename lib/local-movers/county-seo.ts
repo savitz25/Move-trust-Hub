@@ -136,6 +136,9 @@ export function buildStateDescription(
   if (stateName === 'Delaware') {
     return `Find curated local movers in all 3 Delaware counties — up to 12 ranked companies in New Castle (Wilmington metro), 8+ in Kent and Sussex, FMCSA licensing, county cost guides, and Delaware-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Maryland') {
+    return `Find curated local movers in all 24 Maryland jurisdictions — 10 ranked companies per county from DC suburbs (Montgomery, Prince George's, Howard, Anne Arundel) through Baltimore metro to the Eastern Shore and Western Maryland. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

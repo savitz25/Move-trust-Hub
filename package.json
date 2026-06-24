@@ -33,6 +33,7 @@
     "count:delaware-movers": "tsx scripts/count-delaware-movers.ts",
     "audit:delaware-seo": "tsx scripts/audit-delaware-seo.ts",
     "count:maryland-movers": "tsx scripts/count-maryland-movers.ts",
+    "apply:maryland-mover-expansion": "tsx scripts/apply-maryland-mover-expansion.ts",
     "audit:maryland-seo": "tsx scripts/audit-maryland-seo.ts",
     "audit:virginia-seo": "tsx scripts/audit-virginia-seo.ts",
     "count:district-of-columbia-movers": "tsx scripts/count-district-of-columbia-movers.ts",
