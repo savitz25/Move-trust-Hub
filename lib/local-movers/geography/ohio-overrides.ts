@@ -20,6 +20,18 @@ export const ohioCountyOverrides: Partial<
   clermont: { seat: 'Batavia', metro: 'cincinnati-metro-oh' },
   trumbull: { seat: 'Warren', metro: 'youngstown-metro-oh' },
   licking: { seat: 'Newark', metro: 'columbus-metro-oh' },
+  medina: { seat: 'Medina', metro: 'cleveland-metro-oh' },
+  greene: { seat: 'Xenia', metro: 'dayton-metro-oh' },
+  fairfield: { seat: 'Lancaster', metro: 'columbus-metro-oh' },
+  portage: { seat: 'Ravenna', metro: 'akron-metro-oh' },
+  wood: { seat: 'Bowling Green', metro: 'toledo-metro-oh' },
+  clark: { seat: 'Springfield', metro: 'springfield-metro-oh' },
+  richland: { seat: 'Mansfield', metro: 'mansfield-metro-oh' },
+  wayne: { seat: 'Wooster', metro: 'akron-metro-oh' },
+  miami: { seat: 'Troy', metro: 'dayton-metro-oh' },
+  allen: { seat: 'Lima', metro: 'lima-metro-oh' },
+  columbiana: { seat: 'Lisbon', metro: 'youngstown-metro-oh' },
+  ashtabula: { seat: 'Jefferson', metro: 'cleveland-metro-oh' },
 };
 
 export function applyOhioCountyOverrides(county: LocalCounty): LocalCounty {

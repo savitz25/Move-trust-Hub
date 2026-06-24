@@ -176,6 +176,18 @@ const OH_HIGH_TRAFFIC_COUNTIES = new Set([
   'clermont',
   'trumbull',
   'licking',
+  'medina',
+  'greene',
+  'fairfield',
+  'portage',
+  'wood',
+  'clark',
+  'richland',
+  'wayne',
+  'miami',
+  'allen',
+  'columbiana',
+  'ashtabula',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

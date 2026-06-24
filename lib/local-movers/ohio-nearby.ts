@@ -27,6 +27,18 @@ const OH_COUNTY_NEIGHBORS: Record<string, string[]> = {
   clermont: ['hamilton', 'warren', 'brown', 'clinton', 'highland', 'butler'],
   trumbull: ['mahoning', 'geauga', 'portage', 'ashtabula', 'columbiana', 'lake'],
   licking: ['franklin', 'delaware', 'knox', 'muskingum', 'perry', 'fairfield'],
+  medina: ['summit', 'lorain', 'wayne', 'ashland', 'cuyahoga', 'lake'],
+  greene: ['montgomery', 'warren', 'clark', 'fayette', 'clinton', 'madison'],
+  fairfield: ['franklin', 'licking', 'perry', 'hocking', 'pickaway', 'ross'],
+  portage: ['summit', 'stark', 'cuyahoga', 'geauga', 'trumbull', 'mahoning'],
+  wood: ['lucas', 'henry', 'fulton', 'sandusky', 'ottawa', 'hancock'],
+  clark: ['greene', 'montgomery', 'miami', 'champaign', 'madison', 'fairfield'],
+  richland: ['ashland', 'knox', 'morrow', 'crawford', 'huron', 'wayne'],
+  wayne: ['medina', 'summit', 'stark', 'holmes', 'ashland', 'knox'],
+  miami: ['montgomery', 'darke', 'shelby', 'champaign', 'clark', 'greene'],
+  allen: ['auglaize', 'putnam', 'hancock', 'hardin', 'van-wert', 'logan'],
+  columbiana: ['mahoning', 'stark', 'carroll', 'jefferson', 'harrison', 'trumbull'],
+  ashtabula: ['lake', 'geauga', 'trumbull', 'crawford', 'erie', 'cuyahoga'],
 };
 
 export function getOhioNearbyCounties(

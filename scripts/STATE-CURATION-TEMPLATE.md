@@ -27,7 +27,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
 | Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
-| Ohio | 16/88 (in progress) | 5 | 10 (cap 10; Franklin up to 18) | 16 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
+| Ohio | 28/88 (in progress) | 5 | 10 (cap 10; Franklin up to 18) | 28 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
 
 ### Ohio metro pools (`data/local-movers-seed.ts`)
 
@@ -39,14 +39,17 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 - `toledo-metro-oh` — Toledo / Lucas hub
 - `canton-metro-oh` — Canton / Stark hub
 - `youngstown-metro-oh` — Youngstown / Mahoning hub
+- `springfield-metro-oh` — Springfield / Clark hub
+- `mansfield-metro-oh` — Mansfield / Richland hub
+- `lima-metro-oh` — Lima / Allen hub
 
 ### Ohio major counties (10 movers each; Franklin may expand to 18)
 
-`franklin`, `cuyahoga`, `hamilton`, `montgomery`, `summit`, `lucas`, `butler`, `stark`, `lorain`, `warren`, `delaware`, `lake`, `mahoning`, `clermont`, `trumbull`, `licking`
+`franklin`, `cuyahoga`, `hamilton`, `montgomery`, `summit`, `lucas`, `butler`, `stark`, `lorain`, `warren`, `delaware`, `lake`, `mahoning`, `clermont`, `trumbull`, `licking`, `medina`, `greene`, `fairfield`, `portage`, `wood`, `clark`, `richland`, `wayne`, `miami`, `allen`, `columbiana`, `ashtabula`
 
-### Ohio sitemap priority 0.85 (16 counties — top metro hubs)
+### Ohio sitemap priority 0.85 (28 counties — top metro hubs)
 
-`franklin`, `cuyahoga`, `hamilton`, `montgomery`, `summit`, `lucas`, `butler`, `stark`, `lorain`, `warren`, `delaware`, `lake`, `mahoning`, `clermont`, `trumbull`, `licking`
+`franklin`, `cuyahoga`, `hamilton`, `montgomery`, `summit`, `lucas`, `butler`, `stark`, `lorain`, `warren`, `delaware`, `lake`, `mahoning`, `clermont`, `trumbull`, `licking`, `medina`, `greene`, `fairfield`, `portage`, `wood`, `clark`, `richland`, `wayne`, `miami`, `allen`, `columbiana`, `ashtabula`
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
