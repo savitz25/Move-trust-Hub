@@ -36,6 +36,7 @@ import {
   OREGON_COUNTY_CONTENT_UPDATED,
   NEVADA_COUNTY_CONTENT_UPDATED,
   ARIZONA_COUNTY_CONTENT_UPDATED,
+  NEW_MEXICO_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -249,6 +250,8 @@ const OR_HIGH_TRAFFIC_COUNTIES = new Set(['multnomah', 'washington', 'clackamas'
 const NV_HIGH_TRAFFIC_COUNTIES = new Set(['clark', 'washoe']);
 
 const AZ_HIGH_TRAFFIC_COUNTIES = new Set(['maricopa', 'pima']);
+
+const NM_HIGH_TRAFFIC_COUNTIES = new Set(['bernalillo', 'doa-ana']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -685,7 +688,9 @@ export default async function sitemap({
                                                                                 ? new Date(NEVADA_COUNTY_CONTENT_UPDATED)
                                                                                 : id === 'arizona'
                                                                                   ? new Date(ARIZONA_COUNTY_CONTENT_UPDATED)
-                                                                                  : new Date();
+                                                                                  : id === 'new-mexico'
+                                                                                    ? new Date(NEW_MEXICO_COUNTY_CONTENT_UPDATED)
+                                                                                    : new Date();
 
   return [
     {
@@ -745,7 +750,8 @@ export default async function sitemap({
         (id === 'washington' && WA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'oregon' && OR_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'nevada' && NV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'arizona' && AZ_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'arizona' && AZ_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'new-mexico' && NM_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
