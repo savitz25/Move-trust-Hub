@@ -23,10 +23,10 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Link href="/" className="group block">
-            <SiteLogo className="h-12 max-w-[300px] transition-transform group-hover:scale-[1.02]" />
+      <div className="container mx-auto flex h-24 md:h-28 items-center justify-between px-4">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <Link href="/" className="group block shrink-0">
+            <SiteLogo className="h-20 sm:h-24 max-w-[600px] transition-transform group-hover:scale-[1.02]" />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
             TRUSTED

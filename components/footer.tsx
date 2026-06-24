@@ -11,7 +11,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
               <SiteLogo
-                className="h-12 max-w-[300px]"
+                className="h-24 max-w-[600px]"
                 alt="Move Trust Hub logo — compare licensed long-distance movers"
               />
             </Link>
