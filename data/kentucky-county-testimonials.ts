@@ -811,6 +811,91 @@ export const kentuckyCountyTestimonials: Record<string, CountyTestimonialEntry[]
     { quote: 'Calhoun Moving confirmed Green River coverage — best local moving service in McLean County with transparent pricing.', name: 'Vince K.', location: 'Calhoun, KY', rating: 5, moveType: 'Townhome' },
     { quote: 'Green River McLean Moving served our river-valley move efficiently — professional crew with careful handling across Calhoun.', name: 'Willa L.', location: 'Calhoun, KY', rating: 5, moveType: 'Single-family' },
   ],
+  gallatin: [
+    { quote: 'Two Men and a Truck Warsaw handled our Gallatin County relocation professionally — on time, efficient, and extremely careful.', name: 'Xena M.', location: 'Warsaw, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Warsaw Moving confirmed Ohio River coverage — best local moving service in Gallatin County with fair pricing.', name: 'Yuri N.', location: 'Warsaw, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Ohio River Warsaw Moving served our river-valley move efficiently — professional crew with careful handling across Warsaw.', name: 'Zara O.', location: 'Warsaw, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  livingston: [
+    { quote: 'Two Men and a Truck Smithland handled our Livingston County relocation professionally — on time, efficient, and extremely careful.', name: 'Axel P.', location: 'Smithland, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Smithland Moving confirmed Cumberland River coverage — best local moving service in Livingston County with transparent pricing.', name: 'Brynn Q.', location: 'Smithland, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cumberland River Smithland Moving served our river-valley move efficiently — professional crew with careful handling across Smithland.', name: 'Cade R.', location: 'Smithland, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  trimble: [
+    { quote: 'Two Men and a Truck Bedford handled our Trimble County relocation professionally — on time, efficient, and extremely careful.', name: 'Dora S.', location: 'Bedford, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Bedford Moving confirmed Northern Kentucky coverage — best local moving service in Trimble County with fair pricing.', name: 'Ellis T.', location: 'Bedford, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bluegrass Trimble Moving served our rural move efficiently — professional crew with careful handling across Bedford.', name: 'Fern U.', location: 'Bedford, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  crittenden: [
+    { quote: 'Two Men and a Truck Marion handled our Crittenden County relocation professionally — on time, efficient, and extremely careful.', name: 'Gray V.', location: 'Marion, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Marion Moving confirmed Pennyrile coverage — best local moving service in Crittenden County with transparent pricing.', name: 'Hope W.', location: 'Marion, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pennyrile Crittenden Moving served our rural move efficiently — professional crew with careful handling across Marion.', name: 'Ivan X.', location: 'Marion, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  bracken: [
+    { quote: 'Two Men and a Truck Brooksville handled our Bracken County relocation professionally — on time, efficient, and extremely careful.', name: 'Jade Y.', location: 'Brooksville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Brooksville Moving confirmed Ohio River coverage — best local moving service in Bracken County with fair pricing.', name: 'Kane Z.', location: 'Brooksville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Ohio River Bracken Moving served our river-valley move efficiently — professional crew with careful handling across Brooksville.', name: 'Lena A.', location: 'Brooksville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  nicholas: [
+    { quote: 'Two Men and a Truck Carlisle handled our Nicholas County relocation professionally — on time, efficient, and extremely careful.', name: 'Mack B.', location: 'Carlisle, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Carlisle Moving confirmed Bluegrass coverage — best local moving service in Nicholas County with transparent pricing.', name: 'Nell C.', location: 'Carlisle, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'North Central Nicholas Moving served our rural move efficiently — professional crew with careful handling across Carlisle.', name: 'Otto D.', location: 'Carlisle, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  ballard: [
+    { quote: 'Two Men and a Truck Wickliffe handled our Ballard County relocation professionally — on time, efficient, and extremely careful.', name: 'Pia E.', location: 'Wickliffe, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Wickliffe Moving confirmed Purchase region coverage — best local moving service in Ballard County with fair pricing.', name: 'Reed F.', location: 'Wickliffe, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Purchase Region Ballard Moving served our Mississippi River move efficiently — professional crew with careful handling across Wickliffe.', name: 'Sia G.', location: 'Wickliffe, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  lee: [
+    { quote: 'Two Men and a Truck Beattyville handled our Lee County relocation professionally — on time, efficient, and extremely careful.', name: 'Tate H.', location: 'Beattyville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Beattyville Moving confirmed Kentucky River coverage — best local moving service in Lee County with transparent pricing.', name: 'Uma I.', location: 'Beattyville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kentucky River Beattyville Moving served our river-valley move efficiently — professional crew with careful handling across Beattyville.', name: 'Vince J.', location: 'Beattyville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  elliott: [
+    { quote: 'Two Men and a Truck Sandy Hook handled our Elliott County relocation professionally — on time, efficient, and extremely careful.', name: 'Willa K.', location: 'Sandy Hook, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Sandy Hook Moving confirmed Eastern Kentucky coverage — best local moving service in Elliott County with fair pricing.', name: 'Xander L.', location: 'Sandy Hook, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Mountain Elliott Moving served our hillside move efficiently — professional crew with careful handling across Sandy Hook.', name: 'Yara M.', location: 'Sandy Hook, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  menifee: [
+    { quote: 'Two Men and a Truck Frenchburg handled our Menifee County relocation professionally — on time, efficient, and extremely careful.', name: 'Zane N.', location: 'Frenchburg, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Frenchburg Moving confirmed Daniel Boone foothills coverage — best local moving service in Menifee County with transparent pricing.', name: 'Abby O.', location: 'Frenchburg, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Mountain Menifee Moving served our rural move efficiently — professional crew with careful handling across Frenchburg.', name: 'Blake P.', location: 'Frenchburg, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  wolfe: [
+    { quote: 'Two Men and a Truck Campton handled our Wolfe County relocation professionally — on time, efficient, and extremely careful.', name: 'Cara Q.', location: 'Campton, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Campton Moving confirmed Red River Gorge coverage — best local moving service in Wolfe County with fair pricing.', name: 'Drew R.', location: 'Campton, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Mountain Wolfe Moving served our hillside move efficiently — professional crew with careful handling across Campton.', name: 'Ella S.', location: 'Campton, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  fulton: [
+    { quote: 'Two Men and a Truck Hickman handled our Fulton County relocation professionally — on time, efficient, and extremely careful.', name: 'Finn T.', location: 'Hickman, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Hickman Moving confirmed Mississippi River coverage — best local moving service in Fulton County with transparent pricing.', name: 'Gina U.', location: 'Hickman, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Purchase Region Fulton Moving served our river-valley move efficiently — professional crew with careful handling across Hickman.', name: 'Hugo V.', location: 'Hickman, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  cumberland: [
+    { quote: 'Two Men and a Truck Burkesville handled our Cumberland County relocation professionally — on time, efficient, and extremely careful.', name: 'Iris W.', location: 'Burkesville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Burkesville Moving confirmed Lake Cumberland coverage — best local moving service in Cumberland County with fair pricing.', name: 'Jude X.', location: 'Burkesville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Lake Cumberland Burkesville Moving served our lake-country move efficiently — professional crew with careful handling across Burkesville.', name: 'Kira Y.', location: 'Burkesville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  carlisle: [
+    { quote: 'Two Men and a Truck Bardwell handled our Carlisle County relocation professionally — on time, efficient, and extremely careful.', name: 'Levi Z.', location: 'Bardwell, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Bardwell Moving confirmed Purchase region coverage — best local moving service in Carlisle County with transparent pricing.', name: 'Maya A.', location: 'Bardwell, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Western Kentucky Carlisle Moving served our rural move efficiently — professional crew with careful handling across Bardwell.', name: 'Noah B.', location: 'Bardwell, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  hickman: [
+    { quote: 'Two Men and a Truck Clinton handled our Hickman County relocation professionally — on time, efficient, and extremely careful.', name: 'Olive C.', location: 'Clinton, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Clinton Moving confirmed Mississippi River coverage — best local moving service in Hickman County with fair pricing.', name: 'Paul D.', location: 'Clinton, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Purchase Region Hickman Moving served our river-valley move efficiently — professional crew with careful handling across Clinton.', name: 'Quinn E.', location: 'Clinton, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  owsley: [
+    { quote: 'Two Men and a Truck Booneville handled our Owsley County relocation professionally — on time, efficient, and extremely careful.', name: 'Ruth F.', location: 'Booneville, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Booneville Moving confirmed mountain coverage — best local moving service in Owsley County with transparent pricing.', name: 'Seth G.', location: 'Booneville, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Mountain Owsley Moving served our hillside move efficiently — professional crew with careful handling across Booneville.', name: 'Tess H.', location: 'Booneville, KY', rating: 5, moveType: 'Single-family' },
+  ],
+  robertson: [
+    { quote: 'Two Men and a Truck Mount Olivet handled our Robertson County relocation professionally — on time, efficient, and extremely careful.', name: 'Nora L.', location: 'Mount Olivet, KY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Mount Olivet Moving confirmed Northern Kentucky coverage — best local moving service in Robertson County with fair pricing.', name: 'Otto M.', location: 'Mount Olivet, KY', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bluegrass Robertson Moving served our rural move efficiently — professional crew with careful handling across Mount Olivet.', name: 'Pia N.', location: 'Mount Olivet, KY', rating: 5, moveType: 'Single-family' },
+  ],
 };
 
 export function getKentuckyCountyTestimonials(

@@ -283,6 +283,23 @@ const KY_HIGH_TRAFFIC_COUNTIES = new Set([
   'clinton',
   'hancock',
   'mclean',
+  'gallatin',
+  'livingston',
+  'trimble',
+  'crittenden',
+  'bracken',
+  'nicholas',
+  'ballard',
+  'lee',
+  'elliott',
+  'menifee',
+  'wolfe',
+  'fulton',
+  'cumberland',
+  'carlisle',
+  'hickman',
+  'owsley',
+  'robertson',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

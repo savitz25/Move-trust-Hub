@@ -654,6 +654,23 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: clinton, expectedCity: 'Albany' },
   { stateSlug: 'kentucky', countySlug: hancock, expectedCity: 'Hawesville' },
   { stateSlug: 'kentucky', countySlug: mclean, expectedCity: 'Calhoun' },
+  { stateSlug: 'kentucky', countySlug: gallatin, expectedCity: 'Warsaw' },
+  { stateSlug: 'kentucky', countySlug: livingston, expectedCity: 'Smithland' },
+  { stateSlug: 'kentucky', countySlug: trimble, expectedCity: 'Bedford' },
+  { stateSlug: 'kentucky', countySlug: crittenden, expectedCity: 'Marion' },
+  { stateSlug: 'kentucky', countySlug: bracken, expectedCity: 'Brooksville' },
+  { stateSlug: 'kentucky', countySlug: nicholas, expectedCity: 'Carlisle' },
+  { stateSlug: 'kentucky', countySlug: ballard, expectedCity: 'Wickliffe' },
+  { stateSlug: 'kentucky', countySlug: lee, expectedCity: 'Beattyville' },
+  { stateSlug: 'kentucky', countySlug: elliott, expectedCity: 'Sandy Hook' },
+  { stateSlug: 'kentucky', countySlug: menifee, expectedCity: 'Frenchburg' },
+  { stateSlug: 'kentucky', countySlug: wolfe, expectedCity: 'Campton' },
+  { stateSlug: 'kentucky', countySlug: fulton, expectedCity: 'Hickman' },
+  { stateSlug: 'kentucky', countySlug: cumberland, expectedCity: 'Burkesville' },
+  { stateSlug: 'kentucky', countySlug: carlisle, expectedCity: 'Bardwell' },
+  { stateSlug: 'kentucky', countySlug: hickman, expectedCity: 'Clinton' },
+  { stateSlug: 'kentucky', countySlug: owsley, expectedCity: 'Booneville' },
+  { stateSlug: 'kentucky', countySlug: robertson, expectedCity: 'Mount Olivet' },
 ];
 
 let totalIssues = 0;

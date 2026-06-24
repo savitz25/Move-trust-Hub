@@ -107,6 +107,23 @@ export const kentuckyCountyOverrides: Partial<
   clinton: { seat: 'Albany', metro: 'albany-metro-ky' },
   hancock: { seat: 'Hawesville', metro: 'hawesville-metro-ky' },
   mclean: { seat: 'Calhoun', metro: 'calhoun-metro-ky' },
+  gallatin: { seat: 'Warsaw', metro: 'warsaw-metro-ky' },
+  livingston: { seat: 'Smithland', metro: 'smithland-metro-ky' },
+  trimble: { seat: 'Bedford', metro: 'bedford-metro-ky' },
+  crittenden: { seat: 'Marion', metro: 'marion-metro-ky' },
+  bracken: { seat: 'Brooksville', metro: 'brooksville-metro-ky' },
+  nicholas: { seat: 'Carlisle', metro: 'carlisle-metro-ky' },
+  ballard: { seat: 'Wickliffe', metro: 'wickliffe-metro-ky' },
+  lee: { seat: 'Beattyville', metro: 'beattyville-metro-ky' },
+  elliott: { seat: 'Sandy Hook', metro: 'sandy-hook-metro-ky' },
+  menifee: { seat: 'Frenchburg', metro: 'frenchburg-metro-ky' },
+  wolfe: { seat: 'Campton', metro: 'campton-metro-ky' },
+  fulton: { seat: 'Hickman', metro: 'hickman-metro-ky' },
+  cumberland: { seat: 'Burkesville', metro: 'burkesville-metro-ky' },
+  carlisle: { seat: 'Bardwell', metro: 'bardwell-metro-ky' },
+  hickman: { seat: 'Clinton', metro: 'clinton-metro-ky' },
+  owsley: { seat: 'Booneville', metro: 'booneville-metro-ky' },
+  robertson: { seat: 'Mount Olivet', metro: 'mount-olivet-metro-ky' },
 };
 
 export function applyKentuckyCountyOverrides(county: LocalCounty): LocalCounty {

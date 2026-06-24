@@ -114,6 +114,23 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   clinton: ['wayne', 'russell', 'cumberland', 'monroe', 'pulaski', 'mccreary'],
   hancock: ['ohio', 'daviess', 'breckinridge', 'meade', 'henderson', 'mclean'],
   mclean: ['hancock', 'ohio', 'webster', 'hopkins', 'muhlenberg', 'daviess'],
+  gallatin: ['boone', 'grant', 'owen', 'carroll', 'trimble', 'pendleton'],
+  livingston: ['crittenden', 'lyon', 'caldwell', 'union', 'mccracken', 'marshall'],
+  trimble: ['henry', 'oldham', 'carroll', 'gallatin', 'shelby', 'jefferson'],
+  crittenden: ['livingston', 'lyon', 'caldwell', 'webster', 'hopkins', 'union'],
+  bracken: ['mason', 'robertson', 'pendleton', 'harrison', 'lewis', 'nicholas'],
+  nicholas: ['bourbon', 'fleming', 'robertson', 'bracken', 'harrison', 'bath'],
+  ballard: ['mccracken', 'graves', 'carlisle', 'hickman', 'fulton', 'livingston'],
+  lee: ['estill', 'powell', 'wolfe', 'owsley', 'breathitt', 'jackson'],
+  elliott: ['morgan', 'rowan', 'carter', 'menifee', 'fleming', 'lewis'],
+  menifee: ['bath', 'montgomery', 'powell', 'wolfe', 'morgan', 'rowan'],
+  wolfe: ['morgan', 'menifee', 'powell', 'lee', 'breathitt', 'magoffin'],
+  fulton: ['hickman', 'graves', 'carlisle', 'ballard', 'mccracken', 'livingston'],
+  cumberland: ['monroe', 'metcalfe', 'adair', 'clinton', 'russell', 'wayne'],
+  carlisle: ['ballard', 'hickman', 'graves', 'mccracken', 'fulton', 'livingston'],
+  hickman: ['fulton', 'graves', 'carlisle', 'ballard', 'mccracken', 'calloway'],
+  owsley: ['lee', 'breathitt', 'perry', 'knott', 'jackson', 'clay'],
+  robertson: ['bracken', 'mason', 'nicholas', 'harrison', 'pendleton', 'lewis'],
 };
 
 export function getKentuckyNearbyCounties(
