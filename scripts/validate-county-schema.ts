@@ -903,6 +903,20 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'pennsylvania', countySlug: 'berks', expectedCity: 'Reading' },
   { stateSlug: 'pennsylvania', countySlug: 'lehigh', expectedCity: 'Allentown' },
   { stateSlug: 'pennsylvania', countySlug: 'westmoreland', expectedCity: 'Greensburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'luzerne', expectedCity: 'Wilkes-Barre' },
+  { stateSlug: 'pennsylvania', countySlug: 'northampton', expectedCity: 'Easton' },
+  { stateSlug: 'pennsylvania', countySlug: 'dauphin', expectedCity: 'Harrisburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'cumberland', expectedCity: 'Carlisle' },
+  { stateSlug: 'pennsylvania', countySlug: 'erie', expectedCity: 'Erie' },
+  { stateSlug: 'pennsylvania', countySlug: 'lackawanna', expectedCity: 'Scranton' },
+  { stateSlug: 'pennsylvania', countySlug: 'washington', expectedCity: 'Washington' },
+  { stateSlug: 'pennsylvania', countySlug: 'butler', expectedCity: 'Butler' },
+  { stateSlug: 'pennsylvania', countySlug: 'monroe', expectedCity: 'Stroudsburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'beaver', expectedCity: 'Beaver' },
+  { stateSlug: 'pennsylvania', countySlug: 'franklin', expectedCity: 'Chambersburg' },
+  { stateSlug: 'pennsylvania', countySlug: 'centre', expectedCity: 'Bellefonte' },
+  { stateSlug: 'pennsylvania', countySlug: 'lebanon', expectedCity: 'Lebanon' },
+  { stateSlug: 'pennsylvania', countySlug: 'schuylkill', expectedCity: 'Pottsville' },
 ];
 
 let totalIssues = 0;

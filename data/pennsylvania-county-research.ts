@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Pennsylvania county research — batches 1–2 */
+/** Hand-curated Pennsylvania county research — batches 1–3 */
 export const pennsylvaniaCountyResearch: Record<string, CuratedCountyResearch> = {
   philadelphia: {
     marketNotes:
@@ -202,6 +202,258 @@ export const pennsylvaniaCountyResearch: Record<string, CuratedCountyResearch> =
       'Pittsburgh-area traffic on Route 30 and the Turnpike impacts scheduling — confirm crew arrival windows.',
       'Hillside and suburban communities may require shuttle truck coordination — confirm building access.',
       'Confirm insurance for high-value suburban homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  luzerne: {
+    marketNotes:
+      'Luzerne County is a key Northeastern Pennsylvania county with strong residential and industrial demand across Wilkes-Barre and the Wyoming Valley corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Luzerne County pricing reflects Wyoming Valley metro demand, I-81 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Wilkes-Barre and surrounding areas before booking.',
+      'Regional traffic on I-81 and Route 309 impacts scheduling — confirm crew arrival windows.',
+      'Industrial and suburban communities may require longer drive times — confirm crew coverage radius.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  northampton: {
+    marketNotes:
+      'Northampton County is a key Lehigh Valley county with strong residential and industrial demand across Easton, Bethlehem, and the Delaware River corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Northampton County pricing reflects Lehigh Valley metro demand, Route 22 and I-78 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Easton and surrounding areas before booking.',
+      'Regional traffic on Route 22 and I-78 impacts scheduling — confirm crew arrival windows.',
+      'Delaware River communities may require bridge crossing coordination — confirm crew routing.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dauphin: {
+    marketNotes:
+      'Dauphin County is the core of the Harrisburg metropolitan area with strong governmental and residential demand across Harrisburg and the Susquehanna River corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Dauphin County pricing reflects state capital demand, I-83 and I-81 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Harrisburg and surrounding areas before booking.',
+      'Regional traffic on I-83 and I-81 impacts scheduling — confirm crew arrival windows.',
+      'Government and suburban communities may require parking permit coordination — confirm building access.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cumberland: {
+    marketNotes:
+      'Cumberland County is a suburban county west of Harrisburg with strong residential demand across Carlisle, Camp Hill, and the I-81 corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Cumberland County pricing reflects Harrisburg-metro suburban demand, I-81 and Route 11 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Carlisle and surrounding areas before booking.',
+      'Harrisburg-area traffic on I-81 and Route 11 impacts scheduling — confirm crew arrival windows.',
+      'Suburban and military-adjacent communities may require access coordination — confirm building access.',
+      'Confirm insurance for high-value suburban homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  erie: {
+    marketNotes:
+      'Erie County is Pennsylvania\'s northwesternmost county with strong residential and industrial demand across Erie and the Lake Erie shoreline.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Erie County pricing reflects northwestern PA demand, I-90 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Erie and surrounding areas before booking.',
+      'Regional traffic on I-90 and Peach Street impacts scheduling — confirm crew arrival windows.',
+      'Lakefront and industrial communities may require longer drive times — confirm crew coverage radius.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lackawanna: {
+    marketNotes:
+      'Lackawanna County is a key Northeastern Pennsylvania county with strong residential demand across Scranton and the Wyoming Valley border corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Lackawanna County pricing reflects Scranton metro demand, I-81 and I-476 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Scranton and surrounding areas before booking.',
+      'Regional traffic on I-81 and I-476 impacts scheduling — confirm crew arrival windows.',
+      'Hillside and suburban communities may require shuttle truck coordination — confirm building access.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County is a suburban county south of Pittsburgh with strong residential demand across Washington, Canonsburg, and the Monongahela River corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Pittsburgh-metro suburban demand, I-70 and Route 19 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Washington and surrounding areas before booking.',
+      'Pittsburgh-area traffic on I-70 and Route 19 impacts scheduling — confirm crew arrival windows.',
+      'Hillside and suburban communities may require shuttle truck coordination — confirm building access.',
+      'Confirm insurance for high-value suburban homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  butler: {
+    marketNotes:
+      'Butler County is a suburban county north of Pittsburgh with strong residential demand across Butler, Cranberry Township, and the I-79 corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Butler County pricing reflects Pittsburgh-metro suburban demand, I-79 and Route 8 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Butler and surrounding areas before booking.',
+      'Pittsburgh-area traffic on I-79 and Route 8 impacts scheduling — confirm crew arrival windows.',
+      'Suburban and rural communities may require longer drive times — confirm crew coverage radius.',
+      'Confirm insurance for high-value suburban homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is a key Pocono Mountains county with strong tourism and residential demand across Stroudsburg, East Stroudsburg, and the I-80 corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects Pocono tourism demand, I-80 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Stroudsburg and surrounding areas before booking.',
+      'Tourist traffic on I-80 and Route 611 significantly impacts scheduling — confirm crew arrival windows.',
+      'Vacation home and mountain communities may require seasonal access coordination — confirm building access.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak tourist seasons (June–August) and holiday weekends.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  beaver: {
+    marketNotes:
+      'Beaver County is a suburban county northwest of Pittsburgh with strong residential demand across Beaver, Aliquippa, and the Ohio River corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Beaver County pricing reflects Pittsburgh-metro suburban demand, Route 18 and Ohio River bridge traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Beaver and surrounding areas before booking.',
+      'Pittsburgh-area traffic on Route 18 and bridge crossings impacts scheduling — confirm crew arrival windows.',
+      'Ohio River communities may require bridge crossing coordination — confirm crew routing.',
+      'Confirm insurance for high-value suburban homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a growing county in South Central Pennsylvania with residential demand across Chambersburg and the I-81 corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects South Central PA demand, I-81 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Chambersburg and surrounding areas before booking.',
+      'Regional traffic on I-81 and US-30 impacts scheduling — confirm crew arrival windows.',
+      'Rural and suburban communities may require longer drive times — confirm crew coverage radius.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  centre: {
+    marketNotes:
+      'Centre County is anchored by Penn State University with strong educational and residential demand across State College, Bellefonte, and the Happy Valley corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Centre County pricing reflects university corridor demand, Route 322 and I-99 traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for State College and surrounding areas before booking.',
+      'University traffic on Route 322 and I-99 significantly impacts scheduling — confirm crew arrival windows.',
+      'Student housing and off-campus moves may require tight stairwell coordination — confirm crew equipment fit.',
+      'Confirm insurance for high-value homes and student-related moves.',
+      'Book early for peak seasons (May–August) around semester changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lebanon: {
+    marketNotes:
+      'Lebanon County is a growing county in South Central Pennsylvania with residential demand across Lebanon and the I-81 corridor.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Lebanon County pricing reflects South Central PA demand, I-81 and Route 422 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Lebanon and surrounding areas before booking.',
+      'Regional traffic on I-81 and Route 422 impacts scheduling — confirm crew arrival windows.',
+      'Suburban and rural communities may require longer drive times — confirm crew coverage radius.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  schuylkill: {
+    marketNotes:
+      'Schuylkill County is a rural county in Northeastern Pennsylvania with residential demand across Pottsville and the coal region corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Schuylkill County pricing reflects rural northeastern PA demand, I-81 and Route 61 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Pottsville and surrounding areas before booking.',
+      'Regional traffic on I-81 and Route 61 impacts scheduling — confirm crew arrival windows.',
+      'Rural and hillside communities may require longer drive times — confirm crew coverage radius.',
+      'Confirm insurance for high-value homes and multi-floor loading zones.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
