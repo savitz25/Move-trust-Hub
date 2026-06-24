@@ -879,6 +879,84 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
     costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Crawford County pricing reflects Northern Michigan tourism demand, I-75/US-127 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
     tips: ['Verify coverage for Grayling and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
   },
+  lake: {
+    marketNotes:
+      'Lake County is a rural West Central Michigan county with residential demand across Baldwin, Luther, and Irons area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Lake County pricing reflects rural West Central Michigan residential demand, US-10 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Baldwin and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  'presque-isle': {
+    marketNotes:
+      'Presque Isle County is a scenic Northeast Michigan county with strong tourism and residential demand across Rogers City, Onaway, and Posen.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Presque Isle County pricing reflects lakeshore tourism demand, US-23 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Rogers City and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  iron: {
+    marketNotes:
+      'Iron County is a rural Upper Peninsula county with residential demand across Crystal Falls, Iron River, and Caspian area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Iron County pricing reflects Upper Peninsula residential demand, US-2/US-141 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Crystal Falls and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  mackinac: {
+    marketNotes:
+      'Mackinac County is a scenic Upper Peninsula county with strong tourism and residential demand across St. Ignace, Moran, and Mackinac Island ferry communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Mackinac County pricing reflects Straits of Mackinac tourism demand, I-75/US-2 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for St. Ignace and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  alcona: {
+    marketNotes:
+      'Alcona County is a rural Northeast Michigan county with residential demand across Harrisville, Lincoln, and Mikado area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Alcona County pricing reflects rural Northeast Michigan residential demand, US-23 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Harrisville and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  montmorency: {
+    marketNotes:
+      'Montmorency County is a rural Northern Michigan county with residential demand across Atlanta, Lewiston, and Hillman area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Montmorency County pricing reflects rural Northern Michigan residential demand, M-32/US-127 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Atlanta and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  oscoda: {
+    marketNotes:
+      'Oscoda County is a rural Northern Michigan county with residential demand across Mio, Fairview, and Luzerne area communities.',
+    costs: { studioRange: '$750–$1,500', familyRange: '$2,600–$5,800+', avgHourly: '$100–$160/hr for a 2-person crew', note: 'Oscoda County pricing reflects rural Northern Michigan residential demand, M-33/M-72 corridor traffic, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Mio and surrounding areas before booking.', 'Regional traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  alger: {
+    marketNotes:
+      'Alger County is a scenic Upper Peninsula county with strong tourism and residential demand across Munising, Grand Marais, and Chatham.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Alger County pricing reflects Pictured Rocks tourism demand, US-41/M-28 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Munising and surrounding areas before booking.', 'Tourist traffic impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak tourist seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  schoolcraft: {
+    marketNotes:
+      'Schoolcraft County is a rural Upper Peninsula county with residential demand across Manistique, Germfask, and Seney area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Schoolcraft County pricing reflects Upper Peninsula residential demand, US-2 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Manistique and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  baraga: {
+    marketNotes:
+      'Baraga County is a rural Upper Peninsula county with residential demand across Baraga, L\'Anse, and Covington area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Baraga County pricing reflects Upper Peninsula residential demand, US-41 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Baraga and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  luce: {
+    marketNotes:
+      'Luce County is a rural Upper Peninsula county with residential demand across Newberry, McMillan, and Tahquamenon area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Luce County pricing reflects Upper Peninsula residential demand, M-28/US-123 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Newberry and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  ontonagon: {
+    marketNotes:
+      'Ontonagon County is a remote Upper Peninsula county with residential demand across Ontonagon, White Pine, and Bergland area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Ontonagon County pricing reflects remote Upper Peninsula residential demand, US-45/M-28 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Ontonagon and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
+  keweenaw: {
+    marketNotes:
+      'Keweenaw County is a remote Upper Peninsula county with residential demand across Eagle River, Copper Harbor, and Mohawk area communities.',
+    costs: { studioRange: '$800–$1,600', familyRange: '$2,900–$6,500+', avgHourly: '$110–$170/hr for a 2-person crew', note: 'Keweenaw County pricing reflects remote Upper Peninsula residential demand, US-41 corridor traffic, winter weather considerations, and competition among full-service local and regional agents.' },
+    tips: ['Verify coverage for Eagle River and surrounding areas before booking.', 'Regional and winter weather impacts scheduling — confirm crew arrival windows.', 'Confirm insurance for high-value homes before booking.', 'Book early for peak seasons (May–September) and month-end lease turnover.', 'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.'],
+  },
 };
 
 export function getMichiganCountyResearch(

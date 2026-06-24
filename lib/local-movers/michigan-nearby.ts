@@ -81,6 +81,19 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   arenac: ['bay', 'gladwin', 'ogemaw', 'iosco', 'midland'],
   gogebic: ['dickinson', 'houghton'],
   crawford: ['otsego', 'roscommon', 'kalkaska', 'ogemaw'],
+  lake: ['wexford', 'osceola', 'newaygo', 'mecosta', 'mason', 'manistee', 'missaukee'],
+  'presque-isle': ['alpena', 'cheboygan', 'montmorency'],
+  iron: ['dickinson', 'marquette', 'baraga', 'houghton', 'gogebic'],
+  mackinac: ['chippewa', 'emmet', 'cheboygan'],
+  alcona: ['iosco', 'oscoda', 'alpena', 'ogemaw'],
+  montmorency: ['alpena', 'presque-isle', 'otsego', 'crawford', 'cheboygan'],
+  oscoda: ['alcona', 'iosco', 'ogemaw', 'roscommon'],
+  alger: ['marquette', 'delta', 'schoolcraft', 'luce', 'mackinac'],
+  schoolcraft: ['delta', 'alger', 'menominee', 'mackinac'],
+  baraga: ['houghton', 'marquette', 'iron', 'gogebic'],
+  luce: ['chippewa', 'alger', 'schoolcraft', 'mackinac'],
+  ontonagon: ['gogebic', 'houghton', 'baraga'],
+  keweenaw: ['houghton'],
 };
 
 export function getMichiganNearbyCounties(

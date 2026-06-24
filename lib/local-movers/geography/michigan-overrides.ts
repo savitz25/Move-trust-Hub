@@ -74,6 +74,19 @@ export const michiganCountyOverrides: Partial<
   arenac: { seat: 'Standish', metro: 'standish-metro-mi' },
   gogebic: { seat: 'Bessemer', metro: 'bessemer-metro-mi' },
   crawford: { seat: 'Grayling', metro: 'grayling-metro-mi' },
+  lake: { seat: 'Baldwin', metro: 'baldwin-metro-mi' },
+  'presque-isle': { seat: 'Rogers City', metro: 'rogers-city-metro-mi' },
+  iron: { seat: 'Crystal Falls', metro: 'crystal-falls-metro-mi' },
+  mackinac: { seat: 'St. Ignace', metro: 'st-ignace-metro-mi' },
+  alcona: { seat: 'Harrisville', metro: 'harrisville-metro-mi' },
+  montmorency: { seat: 'Atlanta', metro: 'atlanta-metro-mi' },
+  oscoda: { seat: 'Mio', metro: 'mio-metro-mi' },
+  alger: { seat: 'Munising', metro: 'munising-metro-mi' },
+  schoolcraft: { seat: 'Manistique', metro: 'manistique-metro-mi' },
+  baraga: { seat: 'Baraga', metro: 'baraga-metro-mi' },
+  luce: { seat: 'Newberry', metro: 'newberry-metro-mi' },
+  ontonagon: { seat: 'Ontonagon', metro: 'ontonagon-metro-mi' },
+  keweenaw: { seat: 'Eagle River', metro: 'eagle-river-metro-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {

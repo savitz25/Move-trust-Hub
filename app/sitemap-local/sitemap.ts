@@ -209,6 +209,19 @@ const MI_HIGH_TRAFFIC_COUNTIES = new Set([
   'arenac',
   'gogebic',
   'crawford',
+  'lake',
+  'presque-isle',
+  'iron',
+  'mackinac',
+  'alcona',
+  'montmorency',
+  'oscoda',
+  'alger',
+  'schoolcraft',
+  'baraga',
+  'luce',
+  'ontonagon',
+  'keweenaw',
 ]);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */
