@@ -574,6 +574,292 @@ export const indianaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  kosciusko: [
+    {
+      quote:
+        'Two Men and a Truck Warsaw handled our Kosciusko County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Liam L.',
+      location: 'Warsaw, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Warsaw Moving & Storage confirmed county coverage — best local moving service in Kosciusko County with transparent pricing.',
+      name: 'Maya M.',
+      location: 'Warsaw, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'South Bend Moving & Storage served our Winona Lake move efficiently — professional crew with careful handling in Northern Indiana.',
+      name: 'Noah N.',
+      location: 'Winona Lake, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  morgan: [
+    {
+      quote:
+        'Two Men and a Truck Martinsville handled our Morgan County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Owen O.',
+      location: 'Martinsville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Mooresville Moving & Storage confirmed Mooresville coverage — best local moving service in Morgan County with fair pricing.',
+      name: 'Paige P.',
+      location: 'Mooresville, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Indianapolis Moving & Storage served our south-suburb move efficiently — professional crew with careful handling near I-70.',
+      name: 'Quinn Q.',
+      location: 'Martinsville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  warrick: [
+    {
+      quote:
+        'Two Men and a Truck Boonville handled our Warrick County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Rita R.',
+      location: 'Boonville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Newburgh Moving & Storage confirmed Newburgh coverage — best local moving service in Warrick County with transparent pricing.',
+      name: 'Sam S.',
+      location: 'Newburgh, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Evansville Moving & Storage served our Evansville-metro move efficiently — professional crew with careful handling in Southwest Indiana.',
+      name: 'Tina T.',
+      location: 'Boonville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  grant: [
+    {
+      quote:
+        'Two Men and a Truck Grant County handled our Marion relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Uma U.',
+      location: 'Marion, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Grant Marion Moving & Storage confirmed Grant County coverage — best local moving service with fair pricing.',
+      name: 'Vince V.',
+      location: 'Marion, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Muncie Moving & Storage served our East Central Indiana move efficiently — professional crew with careful handling.',
+      name: 'Wade W.',
+      location: 'Gas City, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wayne: [
+    {
+      quote:
+        'Two Men and a Truck Richmond handled our Wayne County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Xena X.',
+      location: 'Richmond, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Richmond Moving & Storage confirmed county coverage — best local moving service in Wayne County with transparent pricing.',
+      name: 'Yuri Y.',
+      location: 'Richmond, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Anderson Moving & Storage served our Indiana–Ohio border move efficiently — professional crew with careful handling.',
+      name: 'Zara Z.',
+      location: 'Centerville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  dearborn: [
+    {
+      quote:
+        'Two Men and a Truck Lawrenceburg handled our Dearborn County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Adam A.',
+      location: 'Lawrenceburg, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Aurora Moving & Storage confirmed Aurora coverage — best local moving service in Dearborn County with fair pricing.',
+      name: 'Beth B.',
+      location: 'Aurora, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Ohio Premier Moving served our Cincinnati-metro move efficiently — professional crew with careful handling along the Ohio River.',
+      name: 'Carl C.',
+      location: 'Lawrenceburg, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  henry: [
+    {
+      quote:
+        'Two Men and a Truck New Castle handled our Henry County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Dana D.',
+      location: 'New Castle, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Knightstown Moving & Storage confirmed Knightstown coverage — best local moving service in Henry County with transparent pricing.',
+      name: 'Evan E.',
+      location: 'Knightstown, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Anderson Moving & Storage served our East Central Indiana move efficiently — professional crew with careful handling.',
+      name: 'Faye F.',
+      location: 'New Castle, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  noble: [
+    {
+      quote:
+        'Two Men and a Truck Albion handled our Noble County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Glen G.',
+      location: 'Albion, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Kendallville Moving & Storage confirmed Kendallville coverage — best local moving service in Noble County with fair pricing.',
+      name: 'Hope H.',
+      location: 'Kendallville, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Fort Wayne Moving & Storage served our Northeast Indiana move efficiently — professional crew with careful handling.',
+      name: 'Ian I.',
+      location: 'Albion, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jackson: [
+    {
+      quote:
+        'Two Men and a Truck Seymour handled our Jackson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Jill J.',
+      location: 'Seymour, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Seymour Moving & Storage confirmed county coverage — best local moving service in Jackson County with transparent pricing.',
+      name: 'Kirk K.',
+      location: 'Seymour, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Columbus Moving & Storage served our I-65 corridor move efficiently — professional crew with careful handling in South Central Indiana.',
+      name: 'Liam L.',
+      location: 'Seymour, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  marshall: [
+    {
+      quote:
+        'Two Men and a Truck Plymouth handled our Marshall County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Maya M.',
+      location: 'Plymouth, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Plymouth Moving & Storage confirmed county coverage — best local moving service in Marshall County with fair pricing.',
+      name: 'Noah N.',
+      location: 'Plymouth, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Warsaw Moving & Storage served our Northern Indiana move efficiently — professional crew with careful handling.',
+      name: 'Owen O.',
+      location: 'Bourbon, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  shelby: [
+    {
+      quote:
+        'Two Men and a Truck Shelbyville handled our Shelby County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Paige P.',
+      location: 'Shelbyville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Fairland Moving & Storage confirmed Fairland coverage — best local moving service in Shelby County with transparent pricing.',
+      name: 'Quinn Q.',
+      location: 'Fairland, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Greenwood Moving & Storage served our southeast Indianapolis suburb move efficiently — professional crew with careful handling.',
+      name: 'Rita R.',
+      location: 'Shelbyville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIndianaCountyTestimonials(

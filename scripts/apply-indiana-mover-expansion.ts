@@ -35,6 +35,17 @@ const MAJOR = new Set([
   'howard',
   'boone',
   'floyd',
+  'kosciusko',
+  'morgan',
+  'warrick',
+  'grant',
+  'wayne',
+  'dearborn',
+  'henry',
+  'noble',
+  'jackson',
+  'marshall',
+  'shelby',
 ]);
 
 const MIN_MOVERS = 5;
@@ -57,6 +68,14 @@ const FALLBACK_POOLS = [
   'terre-haute-metro-in',
   'columbus-metro-in',
   'kokomo-metro-in',
+  'warsaw-metro-in',
+  'grant-marion-metro-in',
+  'richmond-metro-in',
+  'cincinnati-metro-in',
+  'new-castle-metro-in',
+  'noble-metro-in',
+  'seymour-metro-in',
+  'plymouth-metro-in',
 ];
 
 const assignmentsPath = 'data/indiana-county-assignments.ts';

@@ -26,6 +26,17 @@ export const indianaCountyOverrides: Partial<
   howard: { seat: 'Kokomo', metro: 'kokomo-metro-in' },
   boone: { seat: 'Lebanon', metro: 'indianapolis-metro-in' },
   floyd: { seat: 'New Albany', metro: 'louisville-metro-in' },
+  kosciusko: { seat: 'Warsaw', metro: 'warsaw-metro-in' },
+  morgan: { seat: 'Martinsville', metro: 'indianapolis-metro-in' },
+  warrick: { seat: 'Boonville', metro: 'evansville-metro-in' },
+  grant: { seat: 'Marion', metro: 'grant-marion-metro-in' },
+  wayne: { seat: 'Richmond', metro: 'richmond-metro-in' },
+  dearborn: { seat: 'Lawrenceburg', metro: 'cincinnati-metro-in' },
+  henry: { seat: 'New Castle', metro: 'new-castle-metro-in' },
+  noble: { seat: 'Albion', metro: 'noble-metro-in' },
+  jackson: { seat: 'Seymour', metro: 'seymour-metro-in' },
+  marshall: { seat: 'Plymouth', metro: 'plymouth-metro-in' },
+  shelby: { seat: 'Shelbyville', metro: 'indianapolis-metro-in' },
 };
 
 export function applyIndianaCountyOverrides(county: LocalCounty): LocalCounty {

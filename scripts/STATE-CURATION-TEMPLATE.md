@@ -26,7 +26,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
-| Indiana | 22/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 22 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
+| Indiana | 33/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 33 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 
@@ -45,14 +45,22 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 - `terre-haute-metro-in` — Terre Haute / Vigo West Central Indiana hub
 - `columbus-metro-in` — Columbus / Bartholomew South Central Indiana hub
 - `kokomo-metro-in` — Kokomo / Howard North Central Indiana hub
+- `warsaw-metro-in` — Warsaw / Kosciusko Northern Indiana lakes hub
+- `grant-marion-metro-in` — Grant County / Marion city (distinct from Marion County Indianapolis)
+- `richmond-metro-in` — Richmond / Wayne East Central Indiana hub
+- `cincinnati-metro-in` — Cincinnati metro Indiana side (Dearborn)
+- `new-castle-metro-in` — New Castle / Henry East Central Indiana hub
+- `noble-metro-in` — Noble County / Albion Northeast Indiana hub
+- `seymour-metro-in` — Seymour / Jackson I-65 South Central Indiana hub
+- `plymouth-metro-in` — Plymouth / Marshall Northern Indiana hub
 
 ### Indiana major counties (10 movers each; Marion up to 18)
 
-`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`
 
-### Indiana sitemap priority 0.85 (22 counties — batches 1–3)
+### Indiana sitemap priority 0.85 (33 counties — batches 1–4)
 
-`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`
+`marion`, `lake`, `allen`, `hamilton`, `st-joseph`, `elkhart`, `hendricks`, `tippecanoe`, `vanderburgh`, `johnson`, `porter`, `monroe`, `madison`, `clark`, `delaware`, `laporte`, `vigo`, `hancock`, `bartholomew`, `howard`, `boone`, `floyd`, `kosciusko`, `morgan`, `warrick`, `grant`, `wayne`, `dearborn`, `henry`, `noble`, `jackson`, `marshall`, `shelby`
 
 **GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/indiana.xml` (93 URLs: hub + 92 counties). Do **not** use `/sitemap-local/indiana.xml` (legacy path redirects to canonical).
 

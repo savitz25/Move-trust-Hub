@@ -33,6 +33,17 @@ const IN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   howard: ['tipton', 'grant', 'miami', 'cass', 'carroll', 'clinton'],
   boone: ['marion', 'hamilton', 'hendricks', 'montgomery', 'clinton', 'tippecanoe'],
   floyd: ['clark', 'washington', 'scott', 'jefferson'],
+  kosciusko: ['st-joseph', 'elkhart', 'marshall', 'noble', 'whitley', 'lagrange'],
+  morgan: ['marion', 'johnson', 'hendricks', 'monroe', 'owen', 'putnam'],
+  warrick: ['vanderburgh', 'spencer', 'dubois', 'pike', 'gibson'],
+  grant: ['madison', 'delaware', 'howard', 'blackford', 'jay', 'wells'],
+  wayne: ['henry', 'randolph', 'union', 'fayette', 'delaware', 'jay'],
+  dearborn: ['ohio', 'ripley', 'franklin', 'switzerland', 'decatur', 'jennings'],
+  henry: ['madison', 'delaware', 'rush', 'hancock', 'wayne', 'randolph'],
+  noble: ['allen', 'dekalb', 'lagrange', 'elkhart', 'kosciusko', 'whitley'],
+  jackson: ['bartholomew', 'jennings', 'scott', 'washington', 'brown', 'monroe'],
+  marshall: ['st-joseph', 'kosciusko', 'starke', 'pulaski', 'fulton', 'elkhart'],
+  shelby: ['marion', 'johnson', 'hancock', 'rush', 'decatur', 'bartholomew'],
 };
 
 export function getIndianaNearbyCounties(

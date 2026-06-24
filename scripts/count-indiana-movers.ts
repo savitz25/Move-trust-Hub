@@ -30,6 +30,17 @@ const MAJOR = new Set([
   'howard',
   'boone',
   'floyd',
+  'kosciusko',
+  'morgan',
+  'warrick',
+  'grant',
+  'wayne',
+  'dearborn',
+  'henry',
+  'noble',
+  'jackson',
+  'marshall',
+  'shelby',
 ]);
 
 const under5: string[] = [];
