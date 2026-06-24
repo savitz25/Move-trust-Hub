@@ -100,7 +100,27 @@ export const virginiaCountyOverrides: Partial<
   greensville: { seat: 'Emporia', metro: 'greensville-metro-va' },
   lancaster: { seat: 'Lancaster', metro: 'lancaster-metro-va' },
   sussex: { seat: 'Sussex', metro: 'sussex-metro-va' },
-  middlesex: { seat: 'Saluda', metro: 'middlesex-metro-va' },};
+  middlesex: { seat: 'Saluda', metro: 'middlesex-metro-va' },
+  essex: { seat: 'Tappahannock', metro: 'essex-metro-va' },
+  cumberland: { seat: 'Cumberland', metro: 'cumberland-metro-va' },
+  'richmond-county': { seat: 'Warsaw', metro: 'richmond-county-metro-va', name: 'Richmond County' },
+  'franklin-city': { seat: 'Franklin', metro: 'franklin-city-metro-va', name: 'Franklin' },
+  mathews: { seat: 'Mathews', metro: 'mathews-metro-va' },
+  lexington: { seat: 'Lexington', metro: 'lexington-metro-va' },
+  rappahannock: { seat: 'Washington', metro: 'rappahannock-metro-va' },
+  'king-and-queen': { seat: 'King and Queen Court House', metro: 'king-and-queen-metro-va' },
+  'buena-vista': { seat: 'Buena Vista', metro: 'buena-vista-metro-va' },
+  'charles-city': { seat: 'Charles City', metro: 'charles-city-metro-va' },
+  galax: { seat: 'Galax', metro: 'galax-metro-va' },
+  surry: { seat: 'Surry', metro: 'surry-metro-va' },
+  bland: { seat: 'Bland', metro: 'bland-metro-va' },
+  covington: { seat: 'Covington', metro: 'covington-metro-va' },
+  emporia: { seat: 'Emporia', metro: 'emporia-metro-va' },
+  craig: { seat: 'New Castle', metro: 'craig-metro-va' },
+  bath: { seat: 'Warm Springs', metro: 'bath-metro-va' },
+  norton: { seat: 'Norton', metro: 'norton-metro-va' },
+  highland: { seat: 'Monterey', metro: 'highland-metro-va' },
+};
 
 /** Duplicate FIPS slugs disambiguated by generated metro region */
 const VIRGINIA_DUPLICATE_SLUG_METROS: Record<

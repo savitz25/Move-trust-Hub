@@ -2523,7 +2523,502 @@ export const virginiaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       rating: 5,
       moveType: 'Apartment',
     },
-  ],};
+  ],
+  essex: [
+    {
+      quote:
+        'Two Men and a Truck Essex handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'A. B.',
+      location: 'Tappahannock, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Essex with fair pricing and careful handling.',
+      name: 'C. D.',
+      location: 'Tappahannock, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Tappahannock area move efficiently with excellent care.',
+      name: 'E. F.',
+      location: 'Tappahannock, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  cumberland: [
+    {
+      quote:
+        'Two Men and a Truck Cumberland handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'B. C.',
+      location: 'Cumberland, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Cumberland with fair pricing and careful handling.',
+      name: 'D. E.',
+      location: 'Cumberland, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Cumberland area move efficiently with excellent care.',
+      name: 'F. G.',
+      location: 'Cumberland, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'richmond-county': [
+    {
+      quote:
+        'Two Men and a Truck Richmond County handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'C. D.',
+      location: 'Warsaw, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Richmond County with fair pricing and careful handling.',
+      name: 'E. F.',
+      location: 'Warsaw, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Warsaw area move efficiently with excellent care.',
+      name: 'G. H.',
+      location: 'Warsaw, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'franklin-city': [
+    {
+      quote:
+        'Two Men and a Truck Franklin handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'D. E.',
+      location: 'Franklin, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Franklin with fair pricing and careful handling.',
+      name: 'F. G.',
+      location: 'Franklin, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Franklin area move efficiently with excellent care.',
+      name: 'H. I.',
+      location: 'Franklin, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  mathews: [
+    {
+      quote:
+        'Two Men and a Truck Mathews handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'E. F.',
+      location: 'Mathews, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Mathews with fair pricing and careful handling.',
+      name: 'G. H.',
+      location: 'Mathews, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Mathews area move efficiently with excellent care.',
+      name: 'I. J.',
+      location: 'Mathews, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  lexington: [
+    {
+      quote:
+        'Two Men and a Truck Lexington handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'F. G.',
+      location: 'Lexington, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Lexington with fair pricing and careful handling.',
+      name: 'H. I.',
+      location: 'Lexington, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Lexington area move efficiently with excellent care.',
+      name: 'J. K.',
+      location: 'Lexington, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  rappahannock: [
+    {
+      quote:
+        'Two Men and a Truck Rappahannock handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'G. H.',
+      location: 'Washington, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Rappahannock with fair pricing and careful handling.',
+      name: 'I. J.',
+      location: 'Washington, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Washington area move efficiently with excellent care.',
+      name: 'K. L.',
+      location: 'Washington, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'king-and-queen': [
+    {
+      quote:
+        'Two Men and a Truck King and Queen handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'H. I.',
+      location: 'King and Queen Court House, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in King and Queen with fair pricing and careful handling.',
+      name: 'J. K.',
+      location: 'King and Queen Court House, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our King and Queen Court House area move efficiently with excellent care.',
+      name: 'L. M.',
+      location: 'King and Queen Court House, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'buena-vista': [
+    {
+      quote:
+        'Two Men and a Truck Buena Vista handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'I. J.',
+      location: 'Buena Vista, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Buena Vista with fair pricing and careful handling.',
+      name: 'K. L.',
+      location: 'Buena Vista, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Buena Vista area move efficiently with excellent care.',
+      name: 'M. N.',
+      location: 'Buena Vista, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'charles-city': [
+    {
+      quote:
+        'Two Men and a Truck Charles City handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'J. K.',
+      location: 'Charles City, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Charles City with fair pricing and careful handling.',
+      name: 'L. M.',
+      location: 'Charles City, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Charles City area move efficiently with excellent care.',
+      name: 'N. O.',
+      location: 'Charles City, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  galax: [
+    {
+      quote:
+        'Two Men and a Truck Galax handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'K. L.',
+      location: 'Galax, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Galax with fair pricing and careful handling.',
+      name: 'M. N.',
+      location: 'Galax, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Galax area move efficiently with excellent care.',
+      name: 'O. P.',
+      location: 'Galax, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  surry: [
+    {
+      quote:
+        'Two Men and a Truck Surry handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'L. M.',
+      location: 'Surry, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Surry with fair pricing and careful handling.',
+      name: 'N. O.',
+      location: 'Surry, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Surry area move efficiently with excellent care.',
+      name: 'P. Q.',
+      location: 'Surry, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  bland: [
+    {
+      quote:
+        'Two Men and a Truck Bland handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'M. N.',
+      location: 'Bland, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Bland with fair pricing and careful handling.',
+      name: 'O. P.',
+      location: 'Bland, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Bland area move efficiently with excellent care.',
+      name: 'Q. R.',
+      location: 'Bland, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  covington: [
+    {
+      quote:
+        'Two Men and a Truck Covington handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'N. O.',
+      location: 'Covington, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Covington with fair pricing and careful handling.',
+      name: 'P. Q.',
+      location: 'Covington, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Covington area move efficiently with excellent care.',
+      name: 'R. S.',
+      location: 'Covington, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  emporia: [
+    {
+      quote:
+        'Two Men and a Truck Emporia handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'O. P.',
+      location: 'Emporia, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Emporia with fair pricing and careful handling.',
+      name: 'Q. R.',
+      location: 'Emporia, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Emporia area move efficiently with excellent care.',
+      name: 'S. T.',
+      location: 'Emporia, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  craig: [
+    {
+      quote:
+        'Two Men and a Truck Craig handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'P. Q.',
+      location: 'New Castle, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Craig with fair pricing and careful handling.',
+      name: 'R. S.',
+      location: 'New Castle, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our New Castle area move efficiently with excellent care.',
+      name: 'T. U.',
+      location: 'New Castle, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  bath: [
+    {
+      quote:
+        'Two Men and a Truck Bath handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'Q. R.',
+      location: 'Warm Springs, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Bath with fair pricing and careful handling.',
+      name: 'S. T.',
+      location: 'Warm Springs, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Warm Springs area move efficiently with excellent care.',
+      name: 'U. V.',
+      location: 'Warm Springs, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  norton: [
+    {
+      quote:
+        'Two Men and a Truck Norton handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'R. S.',
+      location: 'Norton, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Norton with fair pricing and careful handling.',
+      name: 'T. U.',
+      location: 'Norton, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Norton area move efficiently with excellent care.',
+      name: 'V. W.',
+      location: 'Norton, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  highland: [
+    {
+      quote:
+        'Two Men and a Truck Highland handled our relocation professionally â€” on time, efficient, and extremely careful.',
+      name: 'S. T.',
+      location: 'Monterey, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Best local moving service in Highland with fair pricing and careful handling.',
+      name: 'U. V.',
+      location: 'Monterey, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Professional crew served our Monterey area move efficiently with excellent care.',
+      name: 'W. X.',
+      location: 'Monterey, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+};
 
 export function getVirginiaCountyTestimonials(
   countySlug: string

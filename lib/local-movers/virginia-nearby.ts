@@ -476,21 +476,13 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'petersburg', 'hopewell', 'chesterfield', 'prince-george', 'dinwiddie'
   ],
   buchanan: [
-    'dickenson',
-    'wise',
-    'tazewell',
-    'russell',
-    'scott',
+    'dickenson', 'wise', 'tazewell', 'russell', 'mcdowell'
   ],
   southampton: [
     'isle-of-wight', 'suffolk', 'franklin-city', 'greensville', 'sussex'
   ],
   patrick: [
-    'carroll',
-    'henry',
-    'floyd',
-    'franklin',
-    'martinsville',
+    'carroll', 'henry', 'floyd', 'stuart', 'martinsville'
   ],
   appomattox: [
     'lynchburg', 'campbell', 'amherst', 'bedford', 'buckingham'
@@ -505,18 +497,10 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'manassas', 'prince-william', 'fairfax', 'loudoun', 'stafford'
   ],
   giles: [
-    'pulaski',
-    'montgomery',
-    'bland',
-    'wythe',
-    'tazewell',
+    'pulaski', 'montgomery', 'bland', 'mercer', 'tazewell'
   ],
   bristol: [
-    'washington',
-    'scott',
-    'wise',
-    'russell',
-    'smyth',
+    'washington', 'scott', 'sullivan', 'wise', 'abingdon'
   ],
   nottoway: [
     'amelia', 'lunenburg', 'prince-edward', 'dinwiddie', 'chesterfield'
@@ -537,11 +521,7 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'arlington', 'fairfax', 'alexandria', 'fairfax-city', 'prince-william'
   ],
   grayson: [
-    'carroll',
-    'wythe',
-    'surry',
-    'patrick',
-    'galax',
+    'carroll', 'wythe', 'surry', 'ashe', 'galax'
   ],
   nelson: [
     'amherst', 'augusta', 'albemarle', 'buckingham', 'appomattox'
@@ -562,11 +542,7 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
     'powhatan', 'chesterfield', 'nottoway', 'cumberland', 'prince-edward'
   ],
   dickenson: [
-    'wise',
-    'buchanan',
-    'russell',
-    'scott',
-    'tazewell',
+    'wise', 'buchanan', 'russell', 'scott', 'pike'
   ],
   northumberland: [
     'lancaster', 'richmond-county', 'westmoreland', 'essex', 'king-george'
@@ -591,7 +567,65 @@ const VA_COUNTY_NEIGHBORS: Record<string, string[]> = {
   ],
   middlesex: [
     'lancaster', 'gloucester', 'mathews', 'king-and-queen', 'richmond-county'
-  ],};
+  ],
+  essex: [
+    'king-and-queen', 'richmond-county', 'westmoreland', 'king-george', 'caroline'
+  ],
+  cumberland: [
+    'powhatan', 'goochland', 'buckingham', 'amelia', 'fluvanna'
+  ],
+  'richmond-county': [
+    'lancaster', 'northumberland', 'westmoreland', 'essex', 'king-george'
+  ],
+  'franklin-city': [
+    'southampton', 'isle-of-wight', 'suffolk', 'greensville', 'sussex'
+  ],
+  mathews: [
+    'gloucester', 'middlesex', 'lancaster', 'york', 'james-city'
+  ],
+  lexington: [
+    'rockbridge', 'bath', 'alleghany', 'augusta', 'buena-vista'
+  ],
+  rappahannock: [
+    'madison', 'culpeper', 'fauquier', 'warren', 'page'
+  ],
+  'king-and-queen': [
+    'essex', 'new-kent', 'king-william', 'middlesex', 'caroline'
+  ],
+  'buena-vista': [
+    'rockbridge', 'lexington', 'alleghany', 'bath', 'augusta'
+  ],
+  'charles-city': [
+    'new-kent', 'james-city', 'henrico', 'surry', 'prince-george'
+  ],
+  galax: [
+    'carroll', 'grayson', 'wythe', 'patrick', 'bristol'
+  ],
+  surry: [
+    'isle-of-wight', 'james-city', 'charles-city', 'sussex', 'prince-george'
+  ],
+  bland: [
+    'wythe', 'giles', 'tazewell', 'pulaski', 'montgomery'
+  ],
+  covington: [
+    'alleghany', 'bath', 'rockbridge', 'botetourt', 'craig'
+  ],
+  emporia: [
+    'greensville', 'sussex', 'brunswick', 'southampton', 'halifax'
+  ],
+  craig: [
+    'roanoke-county', 'botetourt', 'alleghany', 'montgomery', 'giles'
+  ],
+  bath: [
+    'highland', 'alleghany', 'augusta', 'rockbridge', 'covington'
+  ],
+  norton: [
+    'wise', 'lee', 'scott', 'dickenson', 'bristol'
+  ],
+  highland: [
+    'bath', 'augusta', 'rockbridge', 'alleghany', 'madison'
+  ],
+};
 
 export function getVirginiaNearbyCounties(
   countySlug: string

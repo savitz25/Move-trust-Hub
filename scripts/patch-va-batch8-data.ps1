@@ -163,7 +163,11 @@ $research = Get-Content $researchPath -Raw
 if ($research -notmatch 'colonial-heights:') {
   $research = $research -replace 'batches 1–7', 'batches 1–8'
   $block = $researchLines -join "`n"
-  $research = $research -replace "(\s+'new-kent': \{[\s\S]*?\n  \},\r?\n)(\};)", "`$1$block`$2"
+  $marker = "`n};`n`nexport function getVirginiaCountyResearch"
+  $idx = $research.IndexOf($marker)
+  if ($idx -ge 0) {
+    $research = $research.Substring(0, $idx) + "`n" + $block + $research.Substring($idx)
+  }
   Set-Content $researchPath $research -Encoding UTF8 -NoNewline
   Write-Host 'Patched research'
 }
@@ -173,7 +177,9 @@ $testPath = Join-Path $root 'data\virginia-county-testimonials.ts'
 $test = Get-Content $testPath -Raw
 if ($test -notmatch 'colonial-heights:') {
   $block = $testimonialLines -join "`n"
-  $test = $test -replace "(\s+'new-kent': \[[\s\S]*?\n  \],\r?\n)(\};)", "`$1$block`$2"
+  $marker = "`n};`n`nexport function getVirginiaCountyTestimonials"
+  $idx = $test.IndexOf($marker)
+  if ($idx -ge 0) { $test = $test.Substring(0, $idx) + "`n" + $block + $test.Substring($idx) }
   Set-Content $testPath $test -Encoding UTF8 -NoNewline
   Write-Host 'Patched testimonials'
 }
@@ -193,7 +199,9 @@ $nearbyPath = Join-Path $root 'lib\local-movers\virginia-nearby.ts'
 $nearby = Get-Content $nearbyPath -Raw
 if ($nearby -notmatch 'colonial-heights:') {
   $block = $nearbyLines -join "`n"
-  $nearby = $nearby -replace "(\s+'new-kent': \[[\s\S]*?\n  \],\r?\n)(\};)", "`$1$block`$2"
+  $marker = "`n};`n`nexport function getVirginiaNearbyCounties"
+  $idx = $nearby.IndexOf($marker)
+  if ($idx -ge 0) { $nearby = $nearby.Substring(0, $idx) + "`n" + $block + $nearby.Substring($idx) }
   Set-Content $nearbyPath $nearby -Encoding UTF8 -NoNewline
   Write-Host 'Patched nearby'
 }

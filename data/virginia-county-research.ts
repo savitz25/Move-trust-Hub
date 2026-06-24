@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Virginia county research — batches 1–8 large markets */
+/** Hand-curated Virginia county research â€” batches 1â€“9 large markets */
 export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
   fairfax: {
     marketNotes:
@@ -1117,26 +1117,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Colonial Heights is an independent city in the Richmond area with strong residential demand.',
     costs: {
-      studioRange: '$800â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
       studioRange: '$800â€“$1,600',
       familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,600',
-      familyRange: '};,900â€“$6,500+',
       avgHourly: '$115â€“$175/hr for a 2-person crew',
       note: 'Colonial Heights pricing reflects Richmond-metro geography, local property access, and competition among regional full-service agents.',
     },
@@ -1152,26 +1134,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Buchanan County is a rural Southwest Virginia county with residential demand centered on Grundy.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Buchanan pricing reflects Southwest Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1187,26 +1151,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Southampton County is a rural Southside Virginia county with residential demand centered on Courtland.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Southampton pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1222,26 +1168,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Patrick County is a rural Southside Virginia county with residential demand centered on Stuart.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Patrick pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1257,26 +1185,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Appomattox County is a rural Central Virginia county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Appomattox pricing reflects Central Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1292,26 +1202,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Radford is an independent city anchored by Radford University with strong educational and residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Radford pricing reflects New River Valley geography, local property access, and competition among regional full-service agents.',
     },
@@ -1327,26 +1219,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Buckingham County is a rural Central Virginia county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Buckingham pricing reflects Central Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1362,25 +1236,7 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Manassas Park is an independent city in Northern Virginia with strong suburban residential demand.',
     costs: {
-      studioRange: '$900â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,900',
+      studioRange: '$900â€“$1,900',
       familyRange: '$3,500â€“$8,500+',
       avgHourly: '$130â€“$200/hr for a 2-person crew',
       note: 'Manassas Park pricing reflects Northern Virginia geography, local property access, and competition among regional full-service agents.',
@@ -1397,26 +1253,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Giles County is a rural Southwest Virginia county with residential demand centered on Pearisburg.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Giles pricing reflects Southwest Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1432,26 +1270,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Bristol is an independent city on the Tennessee border with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Bristol pricing reflects Appalachian border geography, local property access, and competition among regional full-service agents.',
     },
@@ -1467,26 +1287,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Nottoway County is a rural South Central Virginia county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Nottoway pricing reflects South Central Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1502,26 +1304,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Floyd County is a rural Southwest Virginia county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Floyd pricing reflects Blue Ridge highlands geography, local property access, and competition among regional full-service agents.',
     },
@@ -1537,25 +1321,7 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Williamsburg is an independent city with strong historical, tourism, and educational demand.',
     costs: {
-      studioRange: '$850â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,700',
+      studioRange: '$850â€“$1,700',
       familyRange: '$3,000â€“$7,000+',
       avgHourly: '$120â€“$185/hr for a 2-person crew',
       note: 'Williamsburg pricing reflects Historic Triangle geography, local property access, and competition among regional full-service agents.',
@@ -1572,26 +1338,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Brunswick County is a rural Southside Virginia county with residential demand centered on Lawrenceville.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Brunswick pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1607,25 +1355,7 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Clarke County is a rural Northern Virginia county in the Shenandoah Valley with residential demand.',
     costs: {
-      studioRange: '$850â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,700',
+      studioRange: '$850â€“$1,700',
       familyRange: '$3,000â€“$7,000+',
       avgHourly: '$120â€“$185/hr for a 2-person crew',
       note: 'Clarke pricing reflects Shenandoah Valley geography, local property access, and competition among regional full-service agents.',
@@ -1642,7 +1372,7 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Falls Church is an independent city in Northern Virginia with dense urban and residential demand.',
     costs: {
-      studioRange: '$950â€“};,000',
+      studioRange: '$950â€“$2,000',
       familyRange: '$3,800â€“$9,000+',
       avgHourly: '$135â€“$210/hr for a 2-person crew',
       note: 'Falls Church pricing reflects Northern Virginia geography, local property access, and competition among regional full-service agents.',
@@ -1659,26 +1389,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Grayson County is a rural Southwest Virginia county with residential demand centered on Independence.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Grayson pricing reflects Southwest Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1694,26 +1406,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Nelson County is a rural Central Virginia county with residential demand centered on Lovingston.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Nelson pricing reflects Central Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1729,26 +1423,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Alleghany County is a rural Western Virginia county with residential demand centered on Covington.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Alleghany pricing reflects Western Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1764,26 +1440,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Madison County is a rural Central Virginia county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Madison pricing reflects Central Virginia piedmont geography, local property access, and competition among regional full-service agents.',
     },
@@ -1799,26 +1457,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Martinsville is an independent city in South Central Virginia with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Martinsville pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1834,25 +1474,7 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Poquoson is an independent city on the Virginia Peninsula with residential demand.',
     costs: {
-      studioRange: '$850â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,700',
+      studioRange: '$850â€“$1,700',
       familyRange: '$3,000â€“$7,500+',
       avgHourly: '$120â€“$185/hr for a 2-person crew',
       note: 'Poquoson pricing reflects Hampton Roads geography, local property access, and competition among regional full-service agents.',
@@ -1869,26 +1491,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Amelia County is a rural Central Virginia county with residential demand centered on Amelia Court House.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Amelia pricing reflects Central Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -1904,26 +1508,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Dickenson County is a rural Southwest Virginia county with residential demand centered on Clintwood.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Dickenson pricing reflects Southwest Virginia coalfields geography, local property access, and competition among regional full-service agents.',
     },
@@ -1939,26 +1525,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Northumberland County is a rural Northern Neck county with residential demand centered on Heathsville.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Northumberland pricing reflects Northern Neck geography, local property access, and competition among regional full-service agents.',
     },
@@ -1974,26 +1542,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Lunenburg County is a rural Southside Virginia county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Lunenburg pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -2009,26 +1559,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Northampton County is a rural Eastern Shore county with residential and tourism demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Northampton pricing reflects Eastern Shore geography, local property access, and competition among regional full-service agents.',
     },
@@ -2044,26 +1576,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Charlotte County is a rural South Central Virginia county with residential demand centered on Charlotte Court House.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Charlotte pricing reflects South Central Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -2079,26 +1593,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Greensville County is a rural Southside Virginia county with residential demand centered on Emporia.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Greensville pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -2114,26 +1610,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Lancaster County is a rural Northern Neck county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Lancaster pricing reflects Northern Neck geography, local property access, and competition among regional full-service agents.',
     },
@@ -2149,26 +1627,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Sussex County is a rural Southside Virginia county with residential demand.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Sussex pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
     },
@@ -2184,26 +1644,8 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
     marketNotes:
       'Middlesex County is a rural Northern Neck county with residential demand centered on Saluda.',
     costs: {
-      studioRange: '$750â€“
-  'new-kent': {
-    marketNotes:
-      'New Kent County is a suburban/rural county east of Richmond with residential demand across the colonial corridor.',
-    costs: {
-      studioRange: '$800â€“$1,600',
-      familyRange: '$2,900â€“$6,500+',
-      avgHourly: '$115â€“$175/hr for a 2-person crew',
-      note: 'New Kent County pricing reflects Richmond-metro east corridor growth, suburban relocations, and competition among Central Virginia full-service agents.',
-    },
-    tips: [
-      'Verify coverage for New Kent and surrounding Richmond-east areas before booking.',
-      'Richmond-area traffic impacts scheduling â€” confirm crew arrival windows.',
-      'Confirm insurance for high-value suburban homes.',
-      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
-      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
-    ],
-  },
-,500',
-      familyRange: '};,600â€“$5,800+',
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
       avgHourly: '$110â€“$165/hr for a 2-person crew',
       note: 'Middlesex pricing reflects Middle Peninsula geography, local property access, and competition among regional full-service agents.',
     },
@@ -2214,7 +1656,331 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
-  },};
+  },
+  essex: {
+    marketNotes:
+      'Essex County is a rural Northern Neck county with residential demand centered on Tappahannock.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Essex pricing reflects Northern Neck geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Tappahannock and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cumberland: {
+    marketNotes:
+      'Cumberland County is a rural Central Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Cumberland pricing reflects Central Virginia geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Cumberland and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'richmond-county': {
+    marketNotes:
+      'Richmond County is a rural Northern Neck county with residential demand centered on Warsaw.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Richmond County pricing reflects Northern Neck geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Warsaw and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'franklin-city': {
+    marketNotes:
+      'Franklin is an independent city in Southside Virginia with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Franklin pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Franklin and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mathews: {
+    marketNotes:
+      'Mathews County is a rural Northern Neck county with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Mathews pricing reflects Middle Peninsula geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Mathews and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lexington: {
+    marketNotes:
+      'Lexington is an independent city anchored by Washington and Lee University and Virginia Military Institute with strong educational demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Lexington pricing reflects Shenandoah Valley geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Lexington and surrounding areas before booking.',
+      'University traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  rappahannock: {
+    marketNotes:
+      'Rappahannock County is a rural Northern Virginia county with residential demand centered on Washington.',
+    costs: {
+      studioRange: '$850â€“$1,700',
+      familyRange: '$3,000â€“$7,000+',
+      avgHourly: '$120â€“$185/hr for a 2-person crew',
+      note: 'Rappahannock pricing reflects Northern Virginia piedmont geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Washington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and rural homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'king-and-queen': {
+    marketNotes:
+      'King and Queen County is a rural Central Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'King and Queen pricing reflects Central Virginia geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for King and Queen Court House and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'buena-vista': {
+    marketNotes:
+      'Buena Vista is an independent city in Central Virginia with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Buena Vista pricing reflects Rockbridge area geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Buena Vista and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'charles-city': {
+    marketNotes:
+      'Charles City County is a rural county on the Virginia Peninsula with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Charles City pricing reflects Virginia Peninsula geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Charles City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  galax: {
+    marketNotes:
+      'Galax is an independent city in Southwest Virginia with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Galax pricing reflects Blue Ridge highlands geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Galax and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  surry: {
+    marketNotes:
+      'Surry County is a rural county on the Virginia Peninsula with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Surry pricing reflects Virginia Peninsula geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Surry and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bland: {
+    marketNotes:
+      'Bland County is a rural Southwest Virginia county with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Bland pricing reflects Southwest Virginia geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Bland and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  covington: {
+    marketNotes:
+      'Covington is an independent city in Western Virginia with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Covington pricing reflects Alleghany Highlands geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Covington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  emporia: {
+    marketNotes:
+      'Emporia is an independent city in Southside Virginia with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Emporia pricing reflects Southside Virginia geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Emporia and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  craig: {
+    marketNotes:
+      'Craig County is a small rural Western Virginia county with residential demand centered on New Castle.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Craig pricing reflects Western Virginia geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for New Castle and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bath: {
+    marketNotes:
+      'Bath County is a small rural Western Virginia county with residential and tourism demand centered on Warm Springs.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Bath pricing reflects Allegheny highlands geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Warm Springs and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak tourist seasons (Juneâ€“August) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  norton: {
+    marketNotes:
+      'Norton is an independent city in Southwest Virginia with residential demand.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Norton pricing reflects Southwest Virginia coalfields geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Norton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  highland: {
+    marketNotes:
+      'Highland County is Virginia''s least populous county, a rural mountainous area with residential demand centered on Monterey.',
+    costs: {
+      studioRange: '$750â€“$1,500',
+      familyRange: '$2,600â€“$5,800+',
+      avgHourly: '$110â€“$165/hr for a 2-person crew',
+      note: 'Highland pricing reflects Allegheny highlands geography, local property access, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Monterey and surrounding areas before booking.',
+      'Mountainous terrain and regional traffic impacts scheduling â€” confirm crew arrival windows.',
+      'Confirm insurance for high-value homes.',
+      'Book early for peak seasons (Mayâ€“September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+};
 
 export function getVirginiaCountyResearch(
   countySlug: string
