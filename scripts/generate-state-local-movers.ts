@@ -33,6 +33,7 @@ const SKIP_STATES = new Set([
   'north-carolina',
   'tennessee',
   'illinois',
+  'michigan',
 ]);
 
 const STATE_BY_FIPS: Record<

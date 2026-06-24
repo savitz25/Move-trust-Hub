@@ -20,6 +20,7 @@ import {
   KANSAS_COUNTY_CONTENT_UPDATED,
   MISSOURI_COUNTY_CONTENT_UPDATED,
   ILLINOIS_COUNTY_CONTENT_UPDATED,
+  MICHIGAN_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -29,6 +30,7 @@ import { getArkansasCountyResearch } from '@/data/arkansas-county-research';
 import { getKansasCountyResearch } from '@/data/kansas-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
+import { getMichiganCountyResearch } from '@/data/michigan-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -50,6 +52,7 @@ import { getArkansasNearbyCounties } from '@/lib/local-movers/arkansas-nearby';
 import { getKansasNearbyCounties } from '@/lib/local-movers/kansas-nearby';
 import { getMissouriNearbyCounties } from '@/lib/local-movers/missouri-nearby';
 import { getIllinoisNearbyCounties } from '@/lib/local-movers/illinois-nearby';
+import { getMichiganNearbyCounties } from '@/lib/local-movers/michigan-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -167,7 +170,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                     : stateSlug === 'illinois' &&
                                         getIllinoisCountyResearch(countySlug)
                                       ? getIllinoisNearbyCounties(countySlug)
-                                      : [];
+                                      : stateSlug === 'michigan' &&
+                                          getMichiganCountyResearch(countySlug)
+                                        ? getMichiganNearbyCounties(countySlug)
+                                        : [];
 
   return (
     <>
@@ -332,7 +338,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                             : stateSlug === 'illinois' &&
                                                 getIllinoisCountyResearch(countySlug)
                                               ? ILLINOIS_COUNTY_CONTENT_UPDATED
-                                              : undefined
+                                              : stateSlug === 'michigan' &&
+                                                  getMichiganCountyResearch(countySlug)
+                                                ? MICHIGAN_COUNTY_CONTENT_UPDATED
+                                                : undefined
           }
         />
 

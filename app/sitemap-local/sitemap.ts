@@ -14,6 +14,7 @@ import {
   KANSAS_COUNTY_CONTENT_UPDATED,
   MISSOURI_COUNTY_CONTENT_UPDATED,
   ILLINOIS_COUNTY_CONTENT_UPDATED,
+  MICHIGAN_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -135,6 +136,9 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
   'grady',
   'wagoner',
 ]);
+
+/** High-traffic MI counties — sitemap priority 0.85 */
+const MI_HIGH_TRAFFIC_COUNTIES = new Set(['wayne']);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */
 const IL_HIGH_TRAFFIC_COUNTIES = new Set([
@@ -373,7 +377,9 @@ export default async function sitemap({
                                     ? new Date(MISSOURI_COUNTY_CONTENT_UPDATED)
                                     : id === 'illinois'
                                       ? new Date(ILLINOIS_COUNTY_CONTENT_UPDATED)
-                                      : new Date();
+                                      : id === 'michigan'
+                                        ? new Date(MICHIGAN_COUNTY_CONTENT_UPDATED)
+                                        : new Date();
 
   return [
     {
@@ -411,7 +417,8 @@ export default async function sitemap({
         (id === 'arkansas' && AR_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'kansas' && KS_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'missouri' && MO_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'illinois' && IL_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'illinois' && IL_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'michigan' && MI_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
