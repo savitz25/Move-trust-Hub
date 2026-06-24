@@ -39,6 +39,7 @@ const SKIP_STATES = new Set([
   'kentucky',
   'west-virginia',
   'virginia',
+  'district-of-columbia',
 ]);
 
 const STATE_BY_FIPS: Record<

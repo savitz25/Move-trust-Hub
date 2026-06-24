@@ -20,6 +20,7 @@ import { ohioCountyMoverAssignments } from '@/data/ohio-county-assignments';
 import { kentuckyCountyMoverAssignments } from '@/data/kentucky-county-assignments';
 import { westVirginiaCountyMoverAssignments } from '@/data/west-virginia-county-assignments';
 import { virginiaCountyMoverAssignments } from '@/data/virginia-county-assignments';
+import { districtOfColumbiaCountyMoverAssignments } from '@/data/district-of-columbia-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -46,6 +47,7 @@ const curatedAssignmentStateSlugs = new Set([
   'kentucky',
   'west-virginia',
   'virginia',
+  'district-of-columbia',
   'california',
   'florida',
   'new-jersey',
@@ -75,6 +77,7 @@ const allCountyAssignments = [
   ...kentuckyCountyMoverAssignments,
   ...westVirginiaCountyMoverAssignments,
   ...virginiaCountyMoverAssignments,
+  ...districtOfColumbiaCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,

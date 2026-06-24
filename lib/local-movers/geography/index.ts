@@ -1,5 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 import { generatedCounties } from '@/data/generated/index';
+import { districtOfColumbiaCounties } from '@/lib/local-movers/geography/district-of-columbia';
 import { californiaCounties } from '@/lib/local-movers/geography/california';
 import { floridaCounties } from '@/lib/local-movers/geography/florida';
 import { newJerseyCounties } from '@/lib/local-movers/geography/new-jersey';
@@ -30,6 +31,7 @@ const generatedWithoutCurated = generatedCounties.filter(
 );
 
 const allCounties: LocalCounty[] = [
+  ...districtOfColumbiaCounties,
   ...californiaCounties,
   ...floridaCounties,
   ...newJerseyCounties,

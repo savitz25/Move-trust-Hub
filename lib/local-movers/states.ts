@@ -9,6 +9,7 @@ export const localStates: LocalState[] = [
   { slug: 'colorado', name: 'Colorado', code: 'CO' },
   { slug: 'connecticut', name: 'Connecticut', code: 'CT' },
   { slug: 'delaware', name: 'Delaware', code: 'DE' },
+  { slug: 'district-of-columbia', name: 'District of Columbia', code: 'DC' },
   { slug: 'florida', name: 'Florida', code: 'FL' },
   { slug: 'georgia', name: 'Georgia', code: 'GA' },
   { slug: 'hawaii', name: 'Hawaii', code: 'HI' },

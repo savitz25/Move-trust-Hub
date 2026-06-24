@@ -14,6 +14,9 @@ export function buildCountyLabel(county: LocalCounty): string {
   if (county.stateSlug === 'louisiana') {
     return `${county.name} Parish`;
   }
+  if (county.stateSlug === 'district-of-columbia') {
+    return county.name;
+  }
   return `${county.name} County`;
 }
 

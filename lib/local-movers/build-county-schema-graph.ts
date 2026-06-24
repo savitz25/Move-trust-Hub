@@ -22,7 +22,9 @@ import {
   KENTUCKY_COUNTY_CONTENT_UPDATED,
   WEST_VIRGINIA_COUNTY_CONTENT_UPDATED,
   VIRGINIA_COUNTY_CONTENT_UPDATED,
+  DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
+import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
@@ -178,6 +180,12 @@ function resolveContentModified(county: LocalCounty): string {
     getVirginiaCountyResearch(county.slug)
   ) {
     return VIRGINIA_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'district-of-columbia' &&
+    getDistrictOfColumbiaCountyResearch(county.slug)
+  ) {
+    return DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

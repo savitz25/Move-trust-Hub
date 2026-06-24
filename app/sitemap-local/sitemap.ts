@@ -20,6 +20,7 @@ import {
   KENTUCKY_COUNTY_CONTENT_UPDATED,
   WEST_VIRGINIA_COUNTY_CONTENT_UPDATED,
   VIRGINIA_COUNTY_CONTENT_UPDATED,
+  DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -507,7 +508,9 @@ export default async function sitemap({
                                                 ? new Date(WEST_VIRGINIA_COUNTY_CONTENT_UPDATED)
                                                 : id === 'virginia'
                                                   ? new Date(VIRGINIA_COUNTY_CONTENT_UPDATED)
-                                                  : new Date();
+                                                  : id === 'district-of-columbia'
+                                                    ? new Date(DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED)
+                                                    : new Date();
 
   return [
     {
@@ -551,7 +554,8 @@ export default async function sitemap({
         (id === 'ohio' && OH_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'kentucky' && KY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'west-virginia' && WV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'virginia' && VA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'virginia' && VA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        id === 'district-of-columbia'
           ? 0.85
           : 0.8,
     })),

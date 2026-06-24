@@ -49,6 +49,7 @@ const CURATED_STATES = [
   'kentucky',
   'west-virginia',
   'virginia',
+  'district-of-columbia',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -868,6 +869,11 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'virginia', countySlug: 'bath', expectedCity: 'Warm Springs' },
   { stateSlug: 'virginia', countySlug: 'norton', expectedCity: 'Norton' },
   { stateSlug: 'virginia', countySlug: 'highland', expectedCity: 'Monterey' },
+  {
+    stateSlug: 'district-of-columbia',
+    countySlug: 'district-of-columbia',
+    expectedCity: 'Washington',
+  },
 ];
 
 let totalIssues = 0;

@@ -70,17 +70,19 @@ export function CountyInternalLinks({
         <div className="rounded-xl border bg-muted/20 p-4 mb-4">
           <div className="flex items-center gap-2 text-sm font-semibold mb-3">
             <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
-            Nearby {stateName} county guides
+            {stateSlug === 'district-of-columbia'
+              ? 'Nearby metro area guides'
+              : `Nearby ${stateName} county guides`}
           </div>
           <div className="flex flex-wrap gap-2">
             {nearbyCounties.map((nearby) => (
               <Link
                 key={nearby.slug}
-                href={getCountyPath(stateSlug, nearby.slug)}
+                href={nearby.href ?? getCountyPath(stateSlug, nearby.slug)}
                 className="inline-flex items-center gap-1 rounded-full border bg-background px-3 py-1.5 text-xs font-medium hover:border-primary/40 hover:text-primary transition-colors"
               >
-                {nearby.name} County
-                {nearby.seat ? ` (${nearby.seat})` : ''}
+                {nearby.displayLabel ??
+                  `${nearby.name} County${nearby.seat ? ` (${nearby.seat})` : ''}`}
                 <ArrowRight className="h-3 w-3 opacity-50" aria-hidden="true" />
               </Link>
             ))}
