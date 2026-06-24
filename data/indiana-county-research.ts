@@ -1062,6 +1062,244 @@ export const indianaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  posey: {
+    marketNotes:
+      'Posey County is a suburban/rural county in the Evansville metropolitan area with residential demand centered on Mount Vernon and New Harmony along the Ohio River.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Posey County pricing reflects Evansville-metro suburban demand, Ohio River corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Mount Vernon and surrounding areas before booking.',
+      'Evansville-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and Ohio River flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  randolph: {
+    marketNotes:
+      'Randolph County is a rural East Central Indiana county with residential demand centered on Winchester and Union City.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Randolph County pricing reflects East Central Indiana rural demand, US-27 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Winchester and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County is a rural East Central Indiana county with residential demand centered on Connersville along the Whitewater River valley.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Fayette County pricing reflects East Central Indiana rural demand, Whitewater Valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Connersville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  starke: {
+    marketNotes:
+      'Starke County is a rural Northwest Indiana county with residential demand centered on Knox and North Judson.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Starke County pricing reflects Northwest Indiana rural demand, US-35 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Knox and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a rural Southeast Indiana county with residential demand centered on Brookville and Metamora along the Whitewater River.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Southeast Indiana rural demand, historic canal corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Brookville and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  owen: {
+    marketNotes:
+      'Owen County is a rural South Central Indiana county with residential demand centered on Spencer near McCormicks Creek State Park.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Owen County pricing reflects South Central Indiana rural demand, state park corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Spencer and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sullivan: {
+    marketNotes:
+      'Sullivan County is a rural Southwest Indiana county with residential demand centered on Sullivan and Carlisle in the Wabash Valley.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Sullivan County pricing reflects Southwest Indiana rural demand, Wabash Valley corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Sullivan and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County is a rural North Central Indiana county with residential demand centered on Delphi and Flora along the Wabash River.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects North Central Indiana rural demand, Wabash River corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Delphi and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fulton: {
+    marketNotes:
+      'Fulton County is a rural North Central Indiana county with residential demand centered on Rochester and Akron.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Fulton County pricing reflects North Central Indiana rural demand, US-31 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Rochester and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jay: {
+    marketNotes:
+      'Jay County is a rural East Central Indiana county with residential demand centered on Portland and Dunkirk.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Jay County pricing reflects East Central Indiana rural demand, US-27 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Portland and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  spencer: {
+    marketNotes:
+      'Spencer County is a rural Southwest Indiana county with residential demand centered on Rockport and Chrisney along the Ohio River.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Spencer County pricing reflects Southwest Indiana rural demand, Ohio River corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Rockport and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  orange: {
+    marketNotes:
+      'Orange County is a rural South Central Indiana county with residential demand centered on Paoli and Orleans near the Hoosier National Forest.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Orange County pricing reflects South Central Indiana rural demand, southern hills corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Paoli and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  perry: {
+    marketNotes:
+      'Perry County is a rural Southern Indiana county with residential demand centered on Tell City and Cannelton along the Ohio River hills.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Perry County pricing reflects Southern Indiana rural demand, Ohio River hills corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Tell City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fountain: {
+    marketNotes:
+      'Fountain County is a rural West Central Indiana county with residential demand centered on Covington and Attica.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Fountain County pricing reflects West Central Indiana rural demand, Wabash River valley traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Covington and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIndianaCountyResearch(

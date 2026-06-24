@@ -75,6 +75,20 @@ const MAJOR = new Set([
   'clay',
   'scott',
   'white',
+  'posey',
+  'randolph',
+  'fayette',
+  'starke',
+  'franklin',
+  'owen',
+  'sullivan',
+  'carroll',
+  'fulton',
+  'jay',
+  'spencer',
+  'orange',
+  'perry',
+  'fountain',
 ]);
 
 const MIN_MOVERS = 5;
@@ -133,6 +147,19 @@ const FALLBACK_POOLS = [
   'brazil-metro-in',
   'scottsburg-metro-in',
   'monticello-metro-in',
+  'winchester-metro-in',
+  'connersville-metro-in',
+  'starke-metro-in',
+  'brookville-metro-in',
+  'owen-metro-in',
+  'sullivan-metro-in',
+  'delphi-metro-in',
+  'rochester-metro-in',
+  'portland-metro-in',
+  'rockport-metro-in',
+  'paoli-metro-in',
+  'tell-city-metro-in',
+  'covington-metro-in',
 ];
 
 const assignmentsPath = 'data/indiana-county-assignments.ts';

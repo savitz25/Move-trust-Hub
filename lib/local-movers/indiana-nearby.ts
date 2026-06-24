@@ -73,6 +73,20 @@ const IN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   clay: ['owen', 'putnam', 'parke', 'vigo', 'greene', 'sullivan'],
   scott: ['washington', 'jefferson', 'jackson', 'jennings', 'clark', 'floyd'],
   white: ['tippecanoe', 'cass', 'pulaski', 'carroll', 'benton', 'jasper'],
+  posey: ['vanderburgh', 'gibson', 'warrick', 'spencer', 'dubois', 'knox'],
+  randolph: ['wayne', 'henry', 'delaware', 'jay', 'fayette', 'blackford'],
+  fayette: ['wayne', 'union', 'franklin', 'rush', 'henry', 'randolph'],
+  starke: ['porter', 'laporte', 'st-joseph', 'marshall', 'pulaski', 'jasper'],
+  franklin: ['dearborn', 'ripley', 'union', 'fayette', 'decatur', 'rush'],
+  owen: ['monroe', 'morgan', 'putnam', 'clay', 'greene', 'lawrence'],
+  sullivan: ['vigo', 'greene', 'knox', 'daviess', 'clay', 'parke'],
+  carroll: ['tippecanoe', 'white', 'cass', 'howard', 'clinton', 'fulton'],
+  fulton: ['marshall', 'pulaski', 'starke', 'kosciusko', 'wabash', 'miami'],
+  jay: ['adams', 'wells', 'blackford', 'delaware', 'randolph', 'grant'],
+  spencer: ['warrick', 'dubois', 'perry', 'posey', 'vanderburgh', 'gibson'],
+  orange: ['washington', 'lawrence', 'monroe', 'dubois', 'harrison', 'jackson'],
+  perry: ['spencer', 'dubois', 'harrison', 'crawford', 'warrick', 'orange'],
+  fountain: ['montgomery', 'tippecanoe', 'warren', 'vermillion', 'parke', 'benton'],
 };
 
 export function getIndianaNearbyCounties(

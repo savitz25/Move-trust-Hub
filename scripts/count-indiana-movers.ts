@@ -70,6 +70,20 @@ const MAJOR = new Set([
   'clay',
   'scott',
   'white',
+  'posey',
+  'randolph',
+  'fayette',
+  'starke',
+  'franklin',
+  'owen',
+  'sullivan',
+  'carroll',
+  'fulton',
+  'jay',
+  'spencer',
+  'orange',
+  'perry',
+  'fountain',
 ]);
 
 const under5: string[] = [];

@@ -66,6 +66,20 @@ export const indianaCountyOverrides: Partial<
   clay: { seat: 'Brazil', metro: 'brazil-metro-in' },
   scott: { seat: 'Scottsburg', metro: 'scottsburg-metro-in' },
   white: { seat: 'Monticello', metro: 'monticello-metro-in' },
+  posey: { seat: 'Mount Vernon', metro: 'evansville-metro-in' },
+  randolph: { seat: 'Winchester', metro: 'winchester-metro-in' },
+  fayette: { seat: 'Connersville', metro: 'connersville-metro-in' },
+  starke: { seat: 'Knox', metro: 'starke-metro-in' },
+  franklin: { seat: 'Brookville', metro: 'brookville-metro-in' },
+  owen: { seat: 'Spencer', metro: 'owen-metro-in' },
+  sullivan: { seat: 'Sullivan', metro: 'sullivan-metro-in' },
+  carroll: { seat: 'Delphi', metro: 'delphi-metro-in' },
+  fulton: { seat: 'Rochester', metro: 'rochester-metro-in' },
+  jay: { seat: 'Portland', metro: 'portland-metro-in' },
+  spencer: { seat: 'Rockport', metro: 'rockport-metro-in' },
+  orange: { seat: 'Paoli', metro: 'paoli-metro-in' },
+  perry: { seat: 'Tell City', metro: 'tell-city-metro-in' },
+  fountain: { seat: 'Covington', metro: 'covington-metro-in' },
 };
 
 export function applyIndianaCountyOverrides(county: LocalCounty): LocalCounty {
