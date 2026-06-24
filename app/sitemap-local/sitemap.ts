@@ -187,6 +187,21 @@ const IN_HIGH_TRAFFIC_COUNTIES = new Set([
   'whitley',
   'steuben',
   'miami',
+  'daviess',
+  'jasper',
+  'jefferson',
+  'clinton',
+  'gibson',
+  'greene',
+  'wabash',
+  'ripley',
+  'wells',
+  'washington',
+  'jennings',
+  'decatur',
+  'clay',
+  'scott',
+  'white',
 ]);
 
 const MI_HIGH_TRAFFIC_COUNTIES = new Set([

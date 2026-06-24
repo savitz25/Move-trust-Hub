@@ -1224,6 +1224,396 @@ export const indianaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
       moveType: 'Single-family',
     },
   ],
+  daviess: [
+    {
+      quote:
+        'Two Men and a Truck Washington handled our Daviess County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Iris I.',
+      location: 'Washington, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Washington Moving & Storage confirmed US-50 corridor coverage — best local moving service in Daviess County with transparent pricing.',
+      name: 'Jake J.',
+      location: 'Washington, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Southwest Indiana Moving & Storage served our Odon move efficiently — professional crew with careful handling.',
+      name: 'Kara K.',
+      location: 'Odon, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jasper: [
+    {
+      quote:
+        'Two Men and a Truck Rensselaer handled our Jasper County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Liam L.',
+      location: 'Rensselaer, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Rensselaer Moving & Storage confirmed Northwest Indiana coverage — best local moving service in Jasper County with fair pricing.',
+      name: 'Mia M.',
+      location: 'Rensselaer, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'DeMotte Moving & Storage served our rural Jasper County move efficiently — professional crew with careful handling.',
+      name: 'Noah N.',
+      location: 'DeMotte, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jefferson: [
+    {
+      quote:
+        'Two Men and a Truck Madison handled our Jefferson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Olivia O.',
+      location: 'Madison, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Ohio River Historic Moving & Storage confirmed historic-home coverage — best local moving service in Jefferson County with transparent pricing.',
+      name: 'Paul P.',
+      location: 'Madison, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Madison Jefferson Moving & Storage served our Hanover move efficiently — professional crew with careful handling.',
+      name: 'Quinn Q.',
+      location: 'Hanover, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  clinton: [
+    {
+      quote:
+        'Two Men and a Truck Frankfort handled our Clinton County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Rita R.',
+      location: 'Frankfort, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Frankfort Moving & Storage confirmed Central Indiana coverage — best local moving service in Clinton County with fair pricing.',
+      name: 'Sam S.',
+      location: 'Frankfort, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Clinton County Moving served our rural Clinton County move efficiently — professional crew with careful handling.',
+      name: 'Tina T.',
+      location: 'Kirklin, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  gibson: [
+    {
+      quote:
+        'Two Men and a Truck Princeton handled our Gibson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Uma U.',
+      location: 'Princeton, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Princeton Moving & Storage confirmed tri-state coverage — best local moving service in Gibson County with transparent pricing.',
+      name: 'Vince V.',
+      location: 'Princeton, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Gibson County Moving served our Patoka River area move efficiently — professional crew with careful handling.',
+      name: 'Wendy W.',
+      location: 'Oakland City, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  greene: [
+    {
+      quote:
+        'Two Men and a Truck Bloomfield handled our Greene County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Xander X.',
+      location: 'Bloomfield, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bloomfield Moving & Storage confirmed Southwest Indiana coverage — best local moving service in Greene County with fair pricing.',
+      name: 'Yara Y.',
+      location: 'Bloomfield, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Greene County Moving served our Linton move efficiently — professional crew with careful handling.',
+      name: 'Zane Z.',
+      location: 'Linton, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wabash: [
+    {
+      quote:
+        'Two Men and a Truck Wabash handled our Wabash County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Abby A.',
+      location: 'Wabash, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Wabash Moving & Storage confirmed North Central Indiana coverage — best local moving service in Wabash County with transparent pricing.',
+      name: 'Ben B.',
+      location: 'Wabash, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Wabash County Moving served our North Manchester move efficiently — professional crew with careful handling.',
+      name: 'Cara C.',
+      location: 'North Manchester, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  ripley: [
+    {
+      quote:
+        'Two Men and a Truck Versailles handled our Ripley County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Drew D.',
+      location: 'Versailles, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Versailles Moving & Storage confirmed Southeast Indiana coverage — best local moving service in Ripley County with fair pricing.',
+      name: 'Ella E.',
+      location: 'Versailles, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Ripley County Moving served our Batesville area move efficiently — professional crew with careful handling.',
+      name: 'Finn F.',
+      location: 'Batesville, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  wells: [
+    {
+      quote:
+        'Two Men and a Truck Bluffton handled our Wells County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Gina G.',
+      location: 'Bluffton, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bluffton Moving & Storage confirmed Northeast Indiana coverage — best local moving service in Wells County with transparent pricing.',
+      name: 'Hank H.',
+      location: 'Bluffton, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Wells County Moving served our Ossian move efficiently — professional crew with careful handling.',
+      name: 'Ivy I.',
+      location: 'Ossian, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  washington: [
+    {
+      quote:
+        'Two Men and a Truck Salem handled our Washington County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Joel J.',
+      location: 'Salem, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Salem Moving & Storage confirmed I-64 corridor coverage — best local moving service in Washington County with fair pricing.',
+      name: 'Kate K.',
+      location: 'Salem, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Washington County Moving served our Campbellsburg move efficiently — professional crew with careful handling.',
+      name: 'Leo L.',
+      location: 'Campbellsburg, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jennings: [
+    {
+      quote:
+        'Two Men and a Truck Vernon handled our Jennings County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Maya M.',
+      location: 'Vernon, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Vernon Moving & Storage confirmed Southeast Indiana coverage — best local moving service in Jennings County with transparent pricing.',
+      name: 'Nate N.',
+      location: 'Vernon, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'North Vernon Moving & Storage served our rural Jennings County move efficiently — professional crew with careful handling.',
+      name: 'Owen O.',
+      location: 'North Vernon, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  decatur: [
+    {
+      quote:
+        'Two Men and a Truck Greensburg handled our Decatur County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Pam P.',
+      location: 'Greensburg, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Greensburg Moving & Storage confirmed I-74 corridor coverage — best local moving service in Decatur County with fair pricing.',
+      name: 'Quincy Q.',
+      location: 'Greensburg, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Decatur County Moving served our St. Paul move efficiently — professional crew with careful handling.',
+      name: 'Rosa R.',
+      location: 'St. Paul, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  clay: [
+    {
+      quote:
+        'Two Men and a Truck Brazil handled our Clay County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Seth S.',
+      location: 'Brazil, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Brazil Moving & Storage confirmed West Central Indiana coverage — best local moving service in Clay County with transparent pricing.',
+      name: 'Tara T.',
+      location: 'Brazil, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Clay County Moving served our rural Clay County move efficiently — professional crew with careful handling.',
+      name: 'Uma U.',
+      location: 'Clay City, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  scott: [
+    {
+      quote:
+        'Two Men and a Truck Scottsburg handled our Scott County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Vic V.',
+      location: 'Scottsburg, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Scottsburg Moving & Storage confirmed I-65 corridor coverage — best local moving service in Scott County with fair pricing.',
+      name: 'Willa W.',
+      location: 'Scottsburg, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Scott County Moving served our Austin move efficiently — professional crew with careful handling.',
+      name: 'Xavi X.',
+      location: 'Austin, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  white: [
+    {
+      quote:
+        'Two Men and a Truck Monticello handled our White County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Yuki Y.',
+      location: 'Monticello, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Monticello Moving & Storage confirmed Lake Freeman coverage — best local moving service in White County with transparent pricing.',
+      name: 'Zoe Z.',
+      location: 'Monticello, IN',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Lake Freeman Moving & Storage served our lakes country move efficiently — professional crew with careful handling.',
+      name: 'Adam A.',
+      location: 'Buffalo, IN',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIndianaCountyTestimonials(

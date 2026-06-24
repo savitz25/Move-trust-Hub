@@ -26,7 +26,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
-| Indiana | 47/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 47 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
+| Indiana | 62/92 (in progress) | 5 | 10 (cap 10; Marion up to 18) | 62 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts` |
 
 ### Indiana metro pools (`data/local-movers-seed.ts`)
 

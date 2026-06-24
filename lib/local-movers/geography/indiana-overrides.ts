@@ -51,6 +51,21 @@ export const indianaCountyOverrides: Partial<
   whitley: { seat: 'Columbia City', metro: 'columbia-city-metro-in' },
   steuben: { seat: 'Angola', metro: 'angola-metro-in' },
   miami: { seat: 'Peru', metro: 'peru-metro-in' },
+  daviess: { seat: 'Washington', metro: 'daviess-metro-in' },
+  jasper: { seat: 'Rensselaer', metro: 'rensselaer-metro-in' },
+  jefferson: { seat: 'Madison', metro: 'madison-jefferson-metro-in' },
+  clinton: { seat: 'Frankfort', metro: 'frankfort-metro-in' },
+  gibson: { seat: 'Princeton', metro: 'princeton-metro-in' },
+  greene: { seat: 'Bloomfield', metro: 'bloomfield-metro-in' },
+  wabash: { seat: 'Wabash', metro: 'wabash-metro-in' },
+  ripley: { seat: 'Versailles', metro: 'versailles-metro-in' },
+  wells: { seat: 'Bluffton', metro: 'bluffton-metro-in' },
+  washington: { seat: 'Salem', metro: 'salem-metro-in' },
+  jennings: { seat: 'Vernon', metro: 'vernon-metro-in' },
+  decatur: { seat: 'Greensburg', metro: 'greensburg-metro-in' },
+  clay: { seat: 'Brazil', metro: 'brazil-metro-in' },
+  scott: { seat: 'Scottsburg', metro: 'scottsburg-metro-in' },
+  white: { seat: 'Monticello', metro: 'monticello-metro-in' },
 };
 
 export function applyIndianaCountyOverrides(county: LocalCounty): LocalCounty {

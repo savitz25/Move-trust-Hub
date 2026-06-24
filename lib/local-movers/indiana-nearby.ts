@@ -58,6 +58,21 @@ const IN_COUNTY_NEIGHBORS: Record<string, string[]> = {
   whitley: ['kosciusko', 'huntington', 'noble', 'allen', 'dekalb', 'marshall'],
   steuben: ['dekalb', 'noble', 'lagrange', 'elkhart', 'kosciusko', 'allen'],
   miami: ['cass', 'howard', 'grant', 'wabash', 'fulton', 'carroll'],
+  daviess: ['knox', 'dubois', 'martin', 'pike', 'greene', 'sullivan'],
+  jasper: ['newton', 'pulaski', 'starke', 'lake', 'porter', 'benton'],
+  jefferson: ['switzerland', 'ripley', 'jennings', 'scott', 'clark', 'floyd'],
+  clinton: ['tippecanoe', 'boone', 'carroll', 'howard', 'tipton', 'montgomery'],
+  gibson: ['pike', 'knox', 'warrick', 'posey', 'vanderburgh', 'dubois'],
+  greene: ['sullivan', 'knox', 'daviess', 'lawrence', 'monroe', 'martin'],
+  wabash: ['huntington', 'wells', 'grant', 'miami', 'fulton', 'kosciusko'],
+  ripley: ['dearborn', 'franklin', 'decatur', 'jennings', 'jefferson', 'switzerland'],
+  wells: ['allen', 'huntington', 'adams', 'jay', 'blackford', 'grant'],
+  washington: ['jackson', 'scott', 'orange', 'harrison', 'jefferson', 'clark'],
+  jennings: ['jackson', 'bartholomew', 'decatur', 'ripley', 'jefferson', 'scott'],
+  decatur: ['shelby', 'rush', 'bartholomew', 'jennings', 'franklin', 'ripley'],
+  clay: ['owen', 'putnam', 'parke', 'vigo', 'greene', 'sullivan'],
+  scott: ['washington', 'jefferson', 'jackson', 'jennings', 'clark', 'floyd'],
+  white: ['tippecanoe', 'cass', 'pulaski', 'carroll', 'benton', 'jasper'],
 };
 
 export function getIndianaNearbyCounties(

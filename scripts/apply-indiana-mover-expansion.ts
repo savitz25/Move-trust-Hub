@@ -60,6 +60,21 @@ const MAJOR = new Set([
   'whitley',
   'steuben',
   'miami',
+  'daviess',
+  'jasper',
+  'jefferson',
+  'clinton',
+  'gibson',
+  'greene',
+  'wabash',
+  'ripley',
+  'wells',
+  'washington',
+  'jennings',
+  'decatur',
+  'clay',
+  'scott',
+  'white',
 ]);
 
 const MIN_MOVERS = 5;
@@ -103,6 +118,21 @@ const FALLBACK_POOLS = [
   'columbia-city-metro-in',
   'angola-metro-in',
   'peru-metro-in',
+  'daviess-metro-in',
+  'rensselaer-metro-in',
+  'madison-jefferson-metro-in',
+  'frankfort-metro-in',
+  'princeton-metro-in',
+  'bloomfield-metro-in',
+  'wabash-metro-in',
+  'versailles-metro-in',
+  'bluffton-metro-in',
+  'salem-metro-in',
+  'vernon-metro-in',
+  'greensburg-metro-in',
+  'brazil-metro-in',
+  'scottsburg-metro-in',
+  'monticello-metro-in',
 ];
 
 const assignmentsPath = 'data/indiana-county-assignments.ts';
