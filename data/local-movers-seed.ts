@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   CountyMoverAssignment,
   LocalMover,
   MetroMoverPool,
@@ -75292,7 +75292,7 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     rating: 4.6,
     reviewCount: 360,
     shortDescription:
-      'Northern Virginiaâ€“DC corridor specialist for cross-jurisdiction local and short-distance moves.',
+      'Northern Virginia-DC corridor specialist for cross-jurisdiction local and short-distance moves.',
     services: ['Local Moving', 'Packing', 'Storage'],
     specialties: ['Residential', 'Commercial'],
     fmcsaSafetyRating: 'Not Rated',

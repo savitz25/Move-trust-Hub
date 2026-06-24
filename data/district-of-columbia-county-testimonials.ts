@@ -5,7 +5,7 @@ export const districtOfColumbiaCountyTestimonials: Record<string, CountyTestimon
   'district-of-columbia': [
     {
       quote:
-        'Two Men and a Truck Washington DC handled our Capitol Hill move professionally — on time, efficient, and extremely careful with our belongings.',
+        'Two Men and a Truck Washington DC handled our Capitol Hill rowhouse move professionally — they secured street parking, navigated tight stairs, and finished ahead of schedule.',
       name: 'Marcus T.',
       location: 'Washington, DC',
       rating: 5,
@@ -13,19 +13,27 @@ export const districtOfColumbiaCountyTestimonials: Record<string, CountyTestimon
     },
     {
       quote:
-        'Beltway Movers navigated DC parking and narrow streets expertly. Fair pricing and excellent service across Georgetown.',
+        'Beltway Movers managed our Georgetown high-rise relocation with excellent care — freight elevator coordination, COI paperwork, and zero damage to our furnishings.',
       name: 'Priya S.',
       location: 'Washington, DC',
       rating: 5,
-      moveType: 'Apartment',
+      moveType: 'High-rise apartment',
     },
     {
       quote:
-        'All My Sons Moving & Storage DC managed our federal corridor relocation with great care and steady communication throughout.',
+        'Federal District Moving coordinated our agency relocation near the federal corridor with steady communication, security-aware crews, and fair transparent pricing.',
       name: 'James R.',
       location: 'Washington, DC',
       rating: 5,
       moveType: 'Townhome',
+    },
+    {
+      quote:
+        'All My Sons Moving & Storage DC handled our Joint Base Anacostia-Bolling PCS move efficiently — careful packing, on-time delivery, and great communication throughout.',
+      name: 'Elena V.',
+      location: 'Washington, DC',
+      rating: 5,
+      moveType: 'Military PCS',
     },
   ],
 };

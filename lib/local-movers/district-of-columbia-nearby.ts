@@ -39,6 +39,13 @@ const DC_METRO_NEIGHBORS: NearbyCountyLink[] = [
     href: '/local-movers/maryland/montgomery',
     displayLabel: 'Montgomery County, MD',
   },
+  {
+    slug: 'prince-georges',
+    name: "Prince George's",
+    seat: 'Upper Marlboro',
+    href: '/local-movers/maryland/prince-georges',
+    displayLabel: "Prince George's County, MD",
+  },
 ];
 
 export function getDistrictOfColumbiaNearbyCounties(

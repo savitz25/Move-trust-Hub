@@ -116,6 +116,9 @@ export function buildCountyDescription(
 }
 
 export function buildStateTitle(stateName: string, countyCount: number): string {
+  if (stateName === 'District of Columbia') {
+    return `Local Movers in Washington, DC — Premium Capital City Guide ${SEO_YEAR}`;
+  }
   return `Local Movers in ${stateName} — ${countyCount} County Guides ${SEO_YEAR}`;
 }
 
@@ -123,6 +126,10 @@ export function buildStateDescription(
   stateName: string,
   countyCount: number
 ): string {
+  if (stateName === 'District of Columbia') {
+    return `Find 15 curated local movers in Washington, DC — government, diplomatic, high-rise, and corporate relocation specialists with FMCSA licensing, DC cost guides, and capital-city moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
+
   const moverRange =
     stateName === 'California' ||
     stateName === 'Florida' ||
@@ -142,6 +149,10 @@ export function buildStateDescription(
     stateName === 'Illinois' ||
     stateName === 'Michigan' ||
     stateName === 'Indiana' ||
+    stateName === 'Ohio' ||
+    stateName === 'Kentucky' ||
+    stateName === 'West Virginia' ||
+    stateName === 'Virginia' ||
     stateName === 'Texas'
       ? '5–10 curated movers per county'
       : 'vetted local movers per county';

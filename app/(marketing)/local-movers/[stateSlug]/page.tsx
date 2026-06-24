@@ -101,8 +101,11 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'kentucky' ||
                 state.slug === 'west-virginia' ||
                 state.slug === 'virginia' ||
+                state.slug === 'district-of-columbia' ||
                 state.slug === 'texas'
-                ? `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                ? state.slug === 'district-of-columbia'
+                  ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
+                  : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>
@@ -111,7 +114,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
         {hasCounties ? (
           <section className="mb-12">
             <h2 className="text-2xl font-semibold tracking-tight mb-4">
-              Counties in {state.name}
+              {state.slug === 'district-of-columbia'
+                ? 'Washington, DC local mover guide'
+                : `Counties in ${state.name}`}
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {counties.map((county) => (

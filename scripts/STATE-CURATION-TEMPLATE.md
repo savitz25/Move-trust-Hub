@@ -31,6 +31,23 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Kentucky | 120/120 (complete) | 5 | 10 (cap 10) | 15 counties | `count-kentucky-movers.ts`, `apply-kentucky-mover-expansion.ts`, `audit-kentucky-seo.ts` |
 | West Virginia | 55/55 (complete) | 5 | 10 (cap 10) | 15 counties | `count-west-virginia-movers.ts`, `apply-west-virginia-mover-expansion.ts`, `audit-west-virginia-seo.ts` |
 | Virginia | 134/134 (complete) | 5 | 10 (cap 10; Fairfax up to 15) | 18 counties/cities | `count-virginia-movers.ts`, `apply-virginia-mover-expansion.ts`, `audit-virginia-seo.ts` |
+| District of Columbia | 1/1 jurisdiction (complete) | 15 | 15 (premium hub) | hub + jurisdiction 0.85 | `count-district-of-columbia-movers.ts`, `apply-district-of-columbia-mover-expansion.ts`, `audit-district-of-columbia-seo.ts` |
+
+> **District of Columbia note:** DC is a **federal district**, not a state. It has a single jurisdiction (`district-of-columbia` slug) treated as county-equivalent in code. Use district-specific copy on hub and detail pages; data files follow the `{district}-county-*` naming convention for code consistency. Compare quality bar to Cook (IL), Wayne (MI), or Marion (IN) large-market hubs.
+
+### District of Columbia metro pool (`data/local-movers-seed.ts`)
+
+- `washington-dc-metro-dc` — Washington, DC capital-city hub (15 movers)
+
+### District of Columbia verification commands
+
+```bash
+npx tsx scripts/count-district-of-columbia-movers.ts
+npx tsx scripts/audit-district-of-columbia-seo.ts
+npx tsx scripts/validate-county-schema.ts
+```
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/district-of-columbia.xml` (2 URLs: hub + jurisdiction).
 
 ### Virginia metro pools (`data/local-movers-seed.ts`)
 
@@ -717,6 +734,8 @@ npx tsx scripts/count-ohio-movers.ts
 npx tsx scripts/audit-ohio-seo.ts
 npx tsx scripts/count-virginia-movers.ts
 npx tsx scripts/audit-virginia-seo.ts
+npx tsx scripts/count-district-of-columbia-movers.ts
+npx tsx scripts/audit-district-of-columbia-seo.ts
 npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
 npx tsx scripts/apply-michigan-mover-expansion.ts   # if needed
 npx tsx scripts/apply-indiana-mover-expansion.ts   # if needed
