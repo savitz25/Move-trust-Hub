@@ -28,6 +28,21 @@ export const westVirginiaCountyOverrides: Partial<
   randolph: { seat: 'Elkins', metro: 'elkins-metro-wv' },
   mason: { seat: 'Point Pleasant', metro: 'point-pleasant-metro-wv' },
   hampshire: { seat: 'Romney', metro: 'romney-metro-wv' },
+  upshur: { seat: 'Buckhannon', metro: 'buckhannon-metro-wv' },
+  nicholas: { seat: 'Summersville', metro: 'summersville-metro-wv' },
+  mingo: { seat: 'Williamson', metro: 'williamson-metro-wv' },
+  brooke: { seat: 'Wellsburg', metro: 'wellsburg-metro-wv' },
+  boone: { seat: 'Madison', metro: 'madison-metro-wv' },
+  wyoming: { seat: 'Pineville', metro: 'pineville-metro-wv' },
+  lincoln: { seat: 'Hamlin', metro: 'hamlin-metro-wv' },
+  morgan: { seat: 'Berkeley Springs', metro: 'berkeley-springs-metro-wv' },
+  mcdowell: { seat: 'Welch', metro: 'welch-metro-wv' },
+  lewis: { seat: 'Weston', metro: 'weston-metro-wv' },
+  taylor: { seat: 'Grafton', metro: 'grafton-metro-wv' },
+  barbour: { seat: 'Philippi', metro: 'philippi-metro-wv' },
+  hardy: { seat: 'Moorefield', metro: 'moorefield-metro-wv' },
+  wetzel: { seat: 'New Martinsville', metro: 'new-martinsville-metro-wv' },
+  roane: { seat: 'Spencer', metro: 'spencer-metro-wv' },
 };
 
 export function applyWestVirginiaCountyOverrides(county: LocalCounty): LocalCounty {

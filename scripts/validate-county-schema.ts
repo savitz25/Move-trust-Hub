@@ -702,6 +702,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'west-virginia', countySlug: 'randolph', expectedCity: 'Elkins' },
   { stateSlug: 'west-virginia', countySlug: 'mason', expectedCity: 'Point Pleasant' },
   { stateSlug: 'west-virginia', countySlug: 'hampshire', expectedCity: 'Romney' },
+  { stateSlug: 'west-virginia', countySlug: 'upshur', expectedCity: 'Buckhannon' },
+  { stateSlug: 'west-virginia', countySlug: 'nicholas', expectedCity: 'Summersville' },
+  { stateSlug: 'west-virginia', countySlug: 'mingo', expectedCity: 'Williamson' },
+  { stateSlug: 'west-virginia', countySlug: 'brooke', expectedCity: 'Wellsburg' },
+  { stateSlug: 'west-virginia', countySlug: 'boone', expectedCity: 'Madison' },
+  { stateSlug: 'west-virginia', countySlug: 'wyoming', expectedCity: 'Pineville' },
+  { stateSlug: 'west-virginia', countySlug: 'lincoln', expectedCity: 'Hamlin' },
+  { stateSlug: 'west-virginia', countySlug: 'morgan', expectedCity: 'Berkeley Springs' },
+  { stateSlug: 'west-virginia', countySlug: 'mcdowell', expectedCity: 'Welch' },
+  { stateSlug: 'west-virginia', countySlug: 'lewis', expectedCity: 'Weston' },
+  { stateSlug: 'west-virginia', countySlug: 'taylor', expectedCity: 'Grafton' },
+  { stateSlug: 'west-virginia', countySlug: 'barbour', expectedCity: 'Philippi' },
+  { stateSlug: 'west-virginia', countySlug: 'hardy', expectedCity: 'Moorefield' },
+  { stateSlug: 'west-virginia', countySlug: 'wetzel', expectedCity: 'New Martinsville' },
+  { stateSlug: 'west-virginia', countySlug: 'roane', expectedCity: 'Spencer' },
 ];
 
 let totalIssues = 0;

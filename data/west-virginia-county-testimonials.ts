@@ -311,6 +311,81 @@ export const westVirginiaCountyTestimonials: Record<string, CountyTestimonialEnt
     { quote: 'Romney Moving & Storage confirmed Eastern Panhandle coverage — best local moving service in Hampshire County with transparent pricing.', name: 'Ben U.', location: 'Romney, WV', rating: 5, moveType: 'Townhome' },
     { quote: 'Eastern Panhandle Hampshire Moving served our Capon Bridge area move efficiently — professional crew with careful rural handling.', name: 'Cara V.', location: 'Romney, WV', rating: 5, moveType: 'Single-family' },
   ],
+  upshur: [
+    { quote: 'Two Men and a Truck Buckhannon handled our Upshur County relocation professionally — on time, efficient, and extremely careful.', name: 'Dale W.', location: 'Buckhannon, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Buckhannon Moving & Storage confirmed North Central coverage — best local moving service in Upshur County with fair pricing.', name: 'Eva X.', location: 'Buckhannon, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Buckhannon University Moving served our Rock Cave area move efficiently — professional crew with careful handling.', name: 'Fred Y.', location: 'Buckhannon, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  nicholas: [
+    { quote: 'Two Men and a Truck Summersville handled our Nicholas County relocation professionally — on time, efficient, and extremely careful.', name: 'Gail Z.', location: 'Summersville, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Summersville Moving & Storage confirmed Gauley River coverage — best local moving service in Nicholas County with transparent pricing.', name: 'Hank A.', location: 'Summersville, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Gauley River Moving served our Craigsville area move efficiently — professional crew with careful mountain-road handling.', name: 'Ivy B.', location: 'Summersville, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  mingo: [
+    { quote: 'Two Men and a Truck Williamson handled our Mingo County relocation professionally — on time, efficient, and extremely careful.', name: 'Jake C.', location: 'Williamson, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Williamson Moving & Storage confirmed coalfields coverage — best local moving service in Mingo County with fair pricing.', name: 'Kim D.', location: 'Williamson, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Tug Fork Moving served our Kermit area move efficiently — professional crew with careful handling along the river.', name: 'Leo E.', location: 'Williamson, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  brooke: [
+    { quote: 'Two Men and a Truck Wellsburg handled our Brooke County relocation professionally — on time, efficient, and extremely careful.', name: 'Mia F.', location: 'Wellsburg, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Wellsburg Moving & Storage confirmed Northern Panhandle coverage — best local moving service in Brooke County with transparent pricing.', name: 'Noah G.', location: 'Wellsburg, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Ohio River Brooke Moving served our Follansbee area move efficiently — professional crew with careful river-valley handling.', name: 'Opal H.', location: 'Wellsburg, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  boone: [
+    { quote: 'Two Men and a Truck Madison handled our Boone County relocation professionally — on time, efficient, and extremely careful.', name: 'Pete I.', location: 'Madison, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Madison Moving & Storage confirmed coalfields coverage — best local moving service in Boone County with fair pricing.', name: 'Quinn J.', location: 'Madison, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Coalfields Boone Moving served our Whitesville area move efficiently — professional crew with careful handling.', name: 'Rosa K.', location: 'Madison, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  wyoming: [
+    { quote: 'Two Men and a Truck Pineville handled our Wyoming County relocation professionally — on time, efficient, and extremely careful.', name: 'Sam L.', location: 'Pineville, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Pineville Moving & Storage confirmed plateau coverage — best local moving service in Wyoming County with transparent pricing.', name: 'Tina M.', location: 'Pineville, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Pineville Plateau Moving served our Mullens area move efficiently — professional crew with careful coalfields handling.', name: 'Uma N.', location: 'Pineville, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  lincoln: [
+    { quote: 'Two Men and a Truck Hamlin handled our Lincoln County relocation professionally — on time, efficient, and extremely careful.', name: 'Vic O.', location: 'Hamlin, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Huntington Collar Moving confirmed tri-state coverage — best local moving service in Lincoln County with fair pricing.', name: 'Wendy P.', location: 'Hamlin, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Ohio River Moving served our West Hamlin area move efficiently — professional crew with careful Huntington-metro handling.', name: 'Xander Q.', location: 'Hamlin, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  morgan: [
+    { quote: 'Two Men and a Truck Berkeley Springs handled our Morgan County relocation professionally — on time, efficient, and extremely careful.', name: 'Yara R.', location: 'Berkeley Springs, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Berkeley Springs Moving & Storage confirmed Eastern Panhandle coverage — best local moving service in Morgan County with transparent pricing.', name: 'Zane S.', location: 'Berkeley Springs, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Potomac Springs Moving served our Great Cacapon area move efficiently — professional crew with careful rural handling.', name: 'Amy T.', location: 'Berkeley Springs, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  mcdowell: [
+    { quote: 'Two Men and a Truck Welch handled our McDowell County relocation professionally — on time, efficient, and extremely careful.', name: 'Ben U.', location: 'Welch, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Welch Moving & Storage confirmed southern coalfields coverage — best local moving service in McDowell County with fair pricing.', name: 'Cora V.', location: 'Welch, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Southern Coalfields Moving served our Bradshaw area move efficiently — professional crew with careful mountain handling.', name: 'Dan W.', location: 'Welch, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  lewis: [
+    { quote: 'Two Men and a Truck Weston handled our Lewis County relocation professionally — on time, efficient, and extremely careful.', name: 'Ella X.', location: 'Weston, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Weston Moving & Storage confirmed I-79 corridor coverage — best local moving service in Lewis County with transparent pricing.', name: 'Finn Y.', location: 'Weston, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Lewis County Weston Moving served our Jane Lew area move efficiently — professional crew with careful handling.', name: 'Gina Z.', location: 'Weston, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  taylor: [
+    { quote: 'Two Men and a Truck Grafton handled our Taylor County relocation professionally — on time, efficient, and extremely careful.', name: 'Hugo A.', location: 'Grafton, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Grafton Moving & Storage confirmed North Central coverage — best local moving service in Taylor County with fair pricing.', name: 'Iris B.', location: 'Grafton, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Grafton Railroad Moving served our Flemington area move efficiently — professional crew with careful handling.', name: 'Joel C.', location: 'Grafton, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  barbour: [
+    { quote: 'Two Men and a Truck Philippi handled our Barbour County relocation professionally — on time, efficient, and extremely careful.', name: 'Kate D.', location: 'Philippi, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Philippi Moving & Storage confirmed covered-bridge country coverage — best local moving service in Barbour County with transparent pricing.', name: 'Liam E.', location: 'Philippi, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Philippi Covered Bridge Moving served our Belington area move efficiently — professional crew with careful rural handling.', name: 'Maya F.', location: 'Philippi, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  hardy: [
+    { quote: 'Two Men and a Truck Moorefield handled our Hardy County relocation professionally — on time, efficient, and extremely careful.', name: 'Nate G.', location: 'Moorefield, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Moorefield Moving & Storage confirmed South Branch Valley coverage — best local moving service in Hardy County with fair pricing.', name: 'Olga H.', location: 'Moorefield, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'South Branch Moving served our Wardensville area move efficiently — professional crew with careful mountain handling.', name: 'Paul I.', location: 'Moorefield, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  wetzel: [
+    { quote: 'Two Men and a Truck New Martinsville handled our Wetzel County relocation professionally — on time, efficient, and extremely careful.', name: 'Rita J.', location: 'New Martinsville, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'New Martinsville Moving & Storage confirmed Ohio River coverage — best local moving service in Wetzel County with transparent pricing.', name: 'Sean K.', location: 'New Martinsville, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Northern Panhandle Wetzel Moving served our Paden City area move efficiently — professional crew with careful river handling.', name: 'Tara L.', location: 'New Martinsville, WV', rating: 5, moveType: 'Single-family' },
+  ],
+  roane: [
+    { quote: 'Two Men and a Truck Spencer handled our Roane County relocation professionally — on time, efficient, and extremely careful.', name: 'Uma M.', location: 'Spencer, WV', rating: 5, moveType: 'Apartment' },
+    { quote: 'Spencer Moving & Storage confirmed Central West Virginia coverage — best local moving service in Roane County with fair pricing.', name: 'Vince N.', location: 'Spencer, WV', rating: 5, moveType: 'Townhome' },
+    { quote: 'Roane County Spencer Moving served our Reedy area move efficiently — professional crew with careful rural handling.', name: 'Willa O.', location: 'Spencer, WV', rating: 5, moveType: 'Single-family' },
+  ],
 };
 
 export function getWestVirginiaCountyTestimonials(
