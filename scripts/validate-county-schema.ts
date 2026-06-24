@@ -52,6 +52,7 @@ const CURATED_STATES = [
   'district-of-columbia',
   'delaware',
   'maryland',
+  'pennsylvania',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -891,6 +892,9 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'maryland', countySlug: 'carroll', expectedCity: 'Westminster' },
   { stateSlug: 'maryland', countySlug: 'wicomico', expectedCity: 'Salisbury' },
   { stateSlug: 'maryland', countySlug: 'worcester', expectedCity: 'Snow Hill' },
+  { stateSlug: 'pennsylvania', countySlug: 'philadelphia', expectedCity: 'Philadelphia' },
+  { stateSlug: 'pennsylvania', countySlug: 'allegheny', expectedCity: 'Pittsburgh' },
+  { stateSlug: 'pennsylvania', countySlug: 'montgomery', expectedCity: 'Norristown' },
 ];
 
 let totalIssues = 0;

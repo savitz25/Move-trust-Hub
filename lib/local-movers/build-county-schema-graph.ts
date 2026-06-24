@@ -25,10 +25,12 @@ import {
   DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED,
   DELAWARE_COUNTY_CONTENT_UPDATED,
   MARYLAND_COUNTY_CONTENT_UPDATED,
+  PENNSYLVANIA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDelawareCountyResearch } from '@/data/delaware-county-research';
 import { getMarylandCountyResearch } from '@/data/maryland-county-research';
+import { getPennsylvaniaCountyResearch } from '@/data/pennsylvania-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
@@ -202,6 +204,12 @@ function resolveContentModified(county: LocalCounty): string {
     getMarylandCountyResearch(county.slug)
   ) {
     return MARYLAND_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'pennsylvania' &&
+    getPennsylvaniaCountyResearch(county.slug)
+  ) {
+    return PENNSYLVANIA_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }

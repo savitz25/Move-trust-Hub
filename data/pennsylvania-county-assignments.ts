@@ -1,0 +1,48 @@
+import type { CountyMoverAssignment } from '@/lib/local-movers/types';
+
+/** Hand-curated Pennsylvania county mover lists — batch 1 (Philadelphia, Allegheny, Montgomery) */
+const CURATED_PA_COUNTIES: Record<string, string[]> = {
+  philadelphia: [
+    'twomenandatruck-philadelphia-pa',
+    'all-my-sons-philadelphia-pa',
+    'philadelphia-moving-philadelphia-pa',
+    'philadelphia-county-moving-philadelphia-pa',
+    'college-hunks-moving-philadelphia-pa',
+    'budd-van-lines-philadelphia-pa',
+    'inner-city-moving-philadelphia-pa',
+    'schuylkill-corridor-moving-philadelphia-pa',
+    'hercules-movers-philadelphia-pa',
+    'krupp-moving-philadelphia-pa',
+  ],
+  allegheny: [
+    'twomenandatruck-allegheny-pa',
+    'all-my-sons-pittsburgh-pa',
+    'pittsburgh-moving-allegheny-pa',
+    'allegheny-county-moving-allegheny-pa',
+    'college-hunks-moving-pittsburgh-pa',
+    'budd-van-lines-pittsburgh-pa',
+    'three-rivers-moving-allegheny-pa',
+    'steel-city-moving-allegheny-pa',
+    'hercules-movers-pittsburgh-pa',
+    'krupp-moving-pittsburgh-pa',
+  ],
+  montgomery: [
+    'twomenandatruck-montgomery-pa',
+    'all-my-sons-norristown-pa',
+    'norristown-moving-montgomery-pa',
+    'montgomery-county-moving-montgomery-pa',
+    'college-hunks-moving-norristown-pa',
+    'budd-van-lines-norristown-pa',
+    'king-of-prussia-corridor-moving-montgomery-pa',
+    'main-line-moving-montgomery-pa',
+    'hercules-movers-norristown-pa',
+    'krupp-moving-norristown-pa',
+  ],
+};
+
+export const pennsylvaniaCountyMoverAssignments: CountyMoverAssignment[] =
+  Object.entries(CURATED_PA_COUNTIES).map(([countySlug, moverIds]) => ({
+    stateSlug: 'pennsylvania',
+    countySlug,
+    moverIds,
+  }));

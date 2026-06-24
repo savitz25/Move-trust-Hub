@@ -46,6 +46,8 @@ import { getDelawareCountyResearch } from '@/data/delaware-county-research';
 import { getDelawareCountyTestimonials } from '@/data/delaware-county-testimonials';
 import { getMarylandCountyResearch } from '@/data/maryland-county-research';
 import { getMarylandCountyTestimonials } from '@/data/maryland-county-testimonials';
+import { getPennsylvaniaCountyResearch } from '@/data/pennsylvania-county-research';
+import { getPennsylvaniaCountyTestimonials } from '@/data/pennsylvania-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -305,6 +307,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'maryland') {
     return getMarylandCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'pennsylvania') {
+    return getPennsylvaniaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -414,6 +419,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'maryland') {
     const curated = getMarylandCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'pennsylvania') {
+    const curated = getPennsylvaniaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -560,6 +569,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getMarylandCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'pennsylvania') {
+    const curated = getPennsylvaniaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -689,6 +702,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'maryland') {
     const curated = getMarylandCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'pennsylvania') {
+    const curated = getPennsylvaniaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 
