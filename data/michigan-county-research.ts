@@ -297,6 +297,176 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  allegan: {
+    marketNotes:
+      'Allegan County is a growing county in Southwest Michigan with strong tourism and residential demand across Allegan, Holland, and lakeshore communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Allegan County pricing reflects Southwest Michigan tourism and residential demand, I-196/US-31 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Allegan, Holland, and surrounding areas before booking.',
+      'Regional and tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  eaton: {
+    marketNotes:
+      'Eaton County is a suburban county in the Lansing metropolitan area with strong residential demand across Charlotte and Potterville.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Eaton County pricing reflects Lansing metro suburban growth, I-69/US-127 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Charlotte and surrounding areas before booking.',
+      'Lansing-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bay: {
+    marketNotes:
+      'Bay County is a key county in East Central Michigan with strong industrial and residential demand across Bay City and Essexville.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Bay County pricing reflects East Central Michigan industrial and residential demand, I-75/US-10 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Bay City and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lenawee: {
+    marketNotes:
+      'Lenawee County is a key county in Southeast Michigan with strong agricultural and residential demand across Adrian and Tecumseh.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Lenawee County pricing reflects Southeast Michigan agricultural and residential demand, US-223/I-94 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Adrian and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'grand-traverse': {
+    marketNotes:
+      'Grand Traverse County is the core of Northern Michigan’s tourism and economic hub with strong residential demand across Traverse City and surrounding communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Grand Traverse County pricing reflects Northern Michigan tourism demand, US-31/M-72 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Traverse City and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lapeer: {
+    marketNotes:
+      'Lapeer County is a suburban/rural county north of Detroit with strong residential demand across Lapeer, Imlay City, and Metamora.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Lapeer County pricing reflects north Detroit suburban and rural growth, I-69/M-24 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Lapeer and surrounding areas before booking.',
+      'Detroit-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  midland: {
+    marketNotes:
+      'Midland County is anchored by Dow Chemical with strong corporate and residential demand across Midland and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Midland County pricing reflects corporate relocation demand, US-10/US-127 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Midland and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clinton: {
+    marketNotes:
+      'Clinton County is a suburban county in the Lansing metropolitan area with strong residential demand across St. Johns, DeWitt, and Fowler.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Clinton County pricing reflects Lansing metro suburban growth, I-69/US-127 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for St. Johns and surrounding areas before booking.',
+      'Lansing-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'van-buren': {
+    marketNotes:
+      'Van Buren County is a key Southwest Michigan county with strong tourism and residential demand across Paw Paw, South Haven, and Hartford.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Van Buren County pricing reflects lakeshore tourism and residential demand, I-94/US-31 corridor traffic, seasonal relocation volume, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Paw Paw, South Haven, and surrounding areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak tourist seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  montcalm: {
+    marketNotes:
+      'Montcalm County is a rural Central Michigan county with residential demand across Stanton, Greenville, and Lakeview.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Montcalm County pricing reflects rural Central Michigan residential demand, M-57/US-127 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Stanton and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getMichiganCountyResearch(

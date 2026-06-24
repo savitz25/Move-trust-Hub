@@ -21,6 +21,16 @@ export const michiganCountyOverrides: Partial<
   monroe: { seat: 'Monroe', metro: 'detroit-metro-mi' },
   berrien: { seat: 'St. Joseph', metro: 'southwest-michigan-mi' },
   calhoun: { seat: 'Marshall', metro: 'battle-creek-metro-mi' },
+  allegan: { seat: 'Allegan', metro: 'holland-allegan-metro-mi' },
+  eaton: { seat: 'Charlotte', metro: 'lansing-metro-mi' },
+  bay: { seat: 'Bay City', metro: 'bay-city-metro-mi' },
+  lenawee: { seat: 'Adrian', metro: 'adrian-metro-mi' },
+  'grand-traverse': { seat: 'Traverse City', metro: 'traverse-city-metro-mi' },
+  lapeer: { seat: 'Lapeer', metro: 'detroit-metro-mi' },
+  midland: { seat: 'Midland', metro: 'midland-metro-mi' },
+  clinton: { seat: 'St. Johns', metro: 'lansing-metro-mi' },
+  'van-buren': { seat: 'Paw Paw', metro: 'southwest-michigan-mi' },
+  montcalm: { seat: 'Stanton', metro: 'central-michigan-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {

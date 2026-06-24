@@ -156,6 +156,16 @@ const MI_HIGH_TRAFFIC_COUNTIES = new Set([
   'monroe',
   'berrien',
   'calhoun',
+  'allegan',
+  'eaton',
+  'bay',
+  'lenawee',
+  'grand-traverse',
+  'lapeer',
+  'midland',
+  'clinton',
+  'van-buren',
+  'montcalm',
 ]);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */

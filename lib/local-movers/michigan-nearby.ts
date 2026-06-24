@@ -28,6 +28,16 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   monroe: ['wayne', 'lenawee'],
   berrien: ['van-buren', 'cass', 'kalamazoo'],
   calhoun: ['jackson', 'kalamazoo', 'eaton', 'branch', 'hillsdale', 'barry'],
+  allegan: ['ottawa', 'kent', 'kalamazoo', 'van-buren', 'barry'],
+  eaton: ['ingham', 'clinton', 'jackson', 'calhoun', 'barry', 'ionia'],
+  bay: ['saginaw', 'midland', 'tuscola', 'arenac', 'gladwin'],
+  lenawee: ['monroe', 'washtenaw', 'jackson', 'hillsdale'],
+  'grand-traverse': ['leelanau', 'benzie', 'kalkaska', 'missaukee', 'wexford', 'manistee'],
+  lapeer: ['oakland', 'macomb', 'st-clair', 'genesee', 'livingston', 'sanilac'],
+  midland: ['saginaw', 'bay', 'gladwin', 'isabella', 'gratiot', 'clare'],
+  clinton: ['ingham', 'eaton', 'shiawassee', 'ionia', 'montcalm', 'gratiot'],
+  'van-buren': ['berrien', 'kalamazoo', 'allegan', 'cass'],
+  montcalm: ['kent', 'ionia', 'clinton', 'gratiot', 'mecosta', 'newaygo'],
 };
 
 export function getMichiganNearbyCounties(

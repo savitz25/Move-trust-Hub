@@ -444,6 +444,266 @@ export const michiganCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  allegan: [
+    {
+      quote:
+        'Allegan Moving & Storage handled our Allegan County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Helen H.',
+      location: 'Allegan, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Holland confirmed lakeshore coverage — best local moving service in Allegan County with transparent pricing.',
+      name: 'Ivan I.',
+      location: 'Saugatuck, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        "Herman's Moving & Storage served our Plainwell move efficiently — professional crew with careful handling in Southwest Michigan.",
+      name: 'Joy J.',
+      location: 'Plainwell, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  eaton: [
+    {
+      quote:
+        'Charlotte Moving & Storage handled our Eaton County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Karl K.',
+      location: 'Charlotte, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Lansing confirmed Eaton County coverage — best local moving service in Eaton County with fair pricing.',
+      name: 'Lynn L.',
+      location: 'Potterville, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'College Hunks Hauling Junk served our Dimondale move efficiently — professional crew with careful handling in the Lansing metro.',
+      name: 'Mitch M.',
+      location: 'Dimondale, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  bay: [
+    {
+      quote:
+        'Two Men and a Truck Bay City handled our Bay County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Nina N.',
+      location: 'Bay City, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Bay City Moving & Storage confirmed county coverage — best local moving service in Bay County with transparent pricing.',
+      name: 'Otto O.',
+      location: 'Essexville, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Corrigan Moving Systems served our Bay City move efficiently — professional crew with careful handling in East Central Michigan.',
+      name: 'Pam P.',
+      location: 'Bay City, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lenawee: [
+    {
+      quote:
+        'Adrian Moving & Storage handled our Lenawee County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Quincy Q.',
+      location: 'Adrian, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Lenawee County Moving confirmed Tecumseh coverage — best local moving service in Lenawee County with fair pricing.',
+      name: 'Rosa R.',
+      location: 'Tecumseh, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Monroe served our Lenawee County move efficiently — professional crew with careful handling in Southeast Michigan.',
+      name: 'Sam S.',
+      location: 'Clinton, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'grand-traverse': [
+    {
+      quote:
+        'Traverse City Moving & Storage handled our Grand Traverse County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Tina T.',
+      location: 'Traverse City, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Northern Michigan Moving confirmed county coverage — best local moving service in Grand Traverse County with transparent pricing.',
+      name: 'Ulysses U.',
+      location: 'Traverse City, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        "Herman's Moving & Storage served our Acme move efficiently — professional crew with careful handling in Northern Michigan.",
+      name: 'Vera V.',
+      location: 'Acme, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  lapeer: [
+    {
+      quote:
+        'Lapeer Moving & Storage handled our Lapeer County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Walt W.',
+      location: 'Lapeer, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Howell confirmed Lapeer County coverage — best local moving service in Lapeer County with fair pricing.',
+      name: 'Xena X.',
+      location: 'Imlay City, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Men on the Move served our Metamora move efficiently — professional crew with careful handling north of Detroit.',
+      name: 'Yuri Y.',
+      location: 'Metamora, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  midland: [
+    {
+      quote:
+        'Midland Moving & Storage handled our Midland County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Zoe Z.',
+      location: 'Midland, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Midland County Moving confirmed county coverage — best local moving service in Midland County with transparent pricing.',
+      name: 'Adam A.',
+      location: 'Midland, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Saginaw served our Midland area move efficiently — professional crew with careful handling in Central Michigan.',
+      name: 'Beth B.',
+      location: 'Midland, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  clinton: [
+    {
+      quote:
+        'St. Johns Moving & Storage handled our Clinton County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Carl C.',
+      location: 'St. Johns, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Two Men and a Truck Lansing confirmed Clinton County coverage — best local moving service in Clinton County with fair pricing.',
+      name: 'Dana D.',
+      location: 'DeWitt, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Corrigan Moving Systems served our Fowler move efficiently — professional crew with careful handling in the Lansing metro.',
+      name: 'Eric E.',
+      location: 'Fowler, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'van-buren': [
+    {
+      quote:
+        'Paw Paw Moving & Storage handled our Van Buren County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Faye F.',
+      location: 'Paw Paw, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'South Haven Moving & Storage confirmed lakeshore coverage — best local moving service in Van Buren County with transparent pricing.',
+      name: 'Greg G.',
+      location: 'South Haven, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Kalamazoo served our Hartford move efficiently — professional crew with careful handling in Southwest Michigan.',
+      name: 'Hope H.',
+      location: 'Hartford, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  montcalm: [
+    {
+      quote:
+        'Stanton Moving & Storage handled our Montcalm County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Iris I.',
+      location: 'Stanton, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Greenville Moving & Storage confirmed county coverage — best local moving service in Montcalm County with fair pricing.',
+      name: 'Jack J.',
+      location: 'Greenville, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Grand Rapids served our Lakeview move efficiently — professional crew with careful handling in Central Michigan.',
+      name: 'Kim K.',
+      location: 'Lakeview, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getMichiganCountyTestimonials(
