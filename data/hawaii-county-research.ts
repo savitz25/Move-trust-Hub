@@ -19,6 +19,9 @@ export const hawaiiCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for Honolulu, Pearl City, and surrounding areas before booking.',
+      'Inter-island moves require barge or air freight coordination — confirm whether your mover handles Oahu-only or multi-island logistics.',
+      'Mainland-to-Hawaii relocations involve port scheduling and container shipping — distinguish local Oahu movers from interstate van-line agents.',
+      'Military PCS and government housing moves near Joint Base Pearl Harbor–Hickam may require base access coordination — confirm credentials.',
       'Heavy urban and tourist traffic significantly impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value island properties and multi-floor loading zones.',
       'Book early for peak tourist seasons (December–April) and month-end lease changeover.',
@@ -53,6 +56,8 @@ export const hawaiiCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for Kahului, Wailuku, and island towns before booking.',
+      'Inter-island moves to Molokai and Lanai require ferry or barge logistics — confirm multi-island capability before booking.',
+      'Second-home and vacation-property moves often involve seasonal access windows — confirm peak and off-season availability.',
       'Tourist traffic significantly impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value island properties and vacation homes.',
       'Book early for peak tourist seasons (December–April) and summer lease changeover.',
@@ -70,6 +75,8 @@ export const hawaiiCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for Lihue and surrounding towns before booking.',
+      'Inter-island shipping from Kauai adds significant cost and lead time — confirm barge or air-freight options for multi-island relocations.',
+      'Retirement and second-home moves are common on the Garden Isle — confirm experience with coastal and hillside properties.',
       'Tourist traffic significantly impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value island properties and coastal homes.',
       'Book early for peak tourist seasons (December–April) and summer lease changeover.',

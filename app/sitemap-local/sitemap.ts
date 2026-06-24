@@ -234,7 +234,7 @@ const NH_HIGH_TRAFFIC_COUNTIES = new Set(['hillsborough', 'rockingham']);
 const ME_HIGH_TRAFFIC_COUNTIES = new Set(['cumberland']);
 
 /** High-traffic HI counties — sitemap priority 0.85 */
-const HI_HIGH_TRAFFIC_COUNTIES = new Set(['honolulu']);
+const HI_HIGH_TRAFFIC_COUNTIES = new Set(['honolulu', 'maui']);
 
 const AK_HIGH_TRAFFIC_COUNTIES = new Set(['anchorage']);
 

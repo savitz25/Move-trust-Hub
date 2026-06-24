@@ -176,7 +176,7 @@ export function buildStateDescription(
     return `Find curated local movers in all 16 Maine counties — up to 10 ranked companies in Cumberland (Portland), 7–9 in York (Seacoast), and 6–10 regional specialists in every county experienced with rural roads, harsh winters, tourism/second-home moves, and long-distance relocations. FMCSA licensing, county cost guides, and Maine-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Hawaii') {
-    return `Find curated local movers in all 5 Hawaii counties — 10 ranked companies per county from Honolulu (Oahu) through Maui, Kauai, Hawaii Island (Big Island), and remote Kalawao. FMCSA licensing, county cost guides, and Hawaii-specific island moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+    return `Find curated local movers in all 5 Hawaii counties — up to 10 ranked companies on Oahu (Honolulu) and Maui, 6–10 island specialists on Kauai and Hawaii Island (Big Island), experienced with inter-island shipping, military relocations, and mainland-to-Hawaii long-distance moves. FMCSA licensing, county cost guides, and Hawaii-specific island moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Alaska') {
     return `Find curated local movers in Alaska’s 5 major population centers — 10 ranked companies each in Anchorage Municipality, Matanuska-Susitna, Fairbanks North Star, Kenai Peninsula, and Juneau. FMCSA licensing, borough cost guides, and Alaska-specific moving tips for ${SEO_YEAR}. Remote boroughs and census areas use generated listings. Use our free moving calculator and interstate directory.`;
