@@ -1046,6 +1046,13 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'alaska', countySlug: 'kenai-peninsula', expectedCity: 'Soldotna' },
   { stateSlug: 'alaska', countySlug: 'juneau', expectedCity: 'Juneau' },
   { stateSlug: 'washington', countySlug: 'king', expectedCity: 'Seattle' },
+  { stateSlug: 'washington', countySlug: 'pierce', expectedCity: 'Tacoma' },
+  { stateSlug: 'washington', countySlug: 'snohomish', expectedCity: 'Everett' },
+  { stateSlug: 'washington', countySlug: 'spokane', expectedCity: 'Spokane' },
+  { stateSlug: 'washington', countySlug: 'clark', expectedCity: 'Vancouver' },
+  { stateSlug: 'washington', countySlug: 'thurston', expectedCity: 'Olympia' },
+  { stateSlug: 'washington', countySlug: 'kitsap', expectedCity: 'Port Orchard' },
+  { stateSlug: 'washington', countySlug: 'yakima', expectedCity: 'Yakima' },
 ];
 
 let totalIssues = 0;

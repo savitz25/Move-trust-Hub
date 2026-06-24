@@ -239,7 +239,7 @@ const HI_HIGH_TRAFFIC_COUNTIES = new Set(['honolulu', 'maui']);
 
 const AK_HIGH_TRAFFIC_COUNTIES = new Set(['anchorage']);
 
-const WA_HIGH_TRAFFIC_COUNTIES = new Set(['king']);
+const WA_HIGH_TRAFFIC_COUNTIES = new Set(['king', 'pierce', 'snohomish', 'spokane']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
