@@ -972,6 +972,17 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'massachusetts', countySlug: 'middlesex', expectedCity: 'Cambridge' },
   { stateSlug: 'massachusetts', countySlug: 'worcester', expectedCity: 'Worcester' },
   { stateSlug: 'massachusetts', countySlug: 'essex', expectedCity: 'Salem' },
+  { stateSlug: 'massachusetts', countySlug: 'suffolk', expectedCity: 'Boston' },
+  { stateSlug: 'massachusetts', countySlug: 'norfolk', expectedCity: 'Dedham' },
+  { stateSlug: 'massachusetts', countySlug: 'bristol', expectedCity: 'Taunton' },
+  { stateSlug: 'massachusetts', countySlug: 'plymouth', expectedCity: 'Plymouth' },
+  { stateSlug: 'massachusetts', countySlug: 'hampden', expectedCity: 'Springfield' },
+  { stateSlug: 'massachusetts', countySlug: 'barnstable', expectedCity: 'Barnstable' },
+  { stateSlug: 'massachusetts', countySlug: 'hampshire', expectedCity: 'Northampton' },
+  { stateSlug: 'massachusetts', countySlug: 'berkshire', expectedCity: 'Pittsfield' },
+  { stateSlug: 'massachusetts', countySlug: 'franklin', expectedCity: 'Greenfield' },
+  { stateSlug: 'massachusetts', countySlug: 'dukes', expectedCity: 'Edgartown' },
+  { stateSlug: 'massachusetts', countySlug: 'nantucket', expectedCity: 'Nantucket' },
 ];
 
 let totalIssues = 0;

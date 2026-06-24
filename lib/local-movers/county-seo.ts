@@ -149,7 +149,7 @@ export function buildStateDescription(
     return `Find curated local movers in all 67 Pennsylvania counties — 10 ranked companies per county from Philadelphia and Pittsburgh metros through Harrisburg, Erie, Scranton, and rural regional markets statewide. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Massachusetts') {
-    return `Find curated local movers in Massachusetts — 10 ranked companies each in Middlesex (Boston metro), Worcester, and Essex (North Shore) with FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Additional counties rolling out in batches. Use our free moving calculator and interstate directory.`;
+    return `Find curated local movers in all 14 Massachusetts counties — 10 ranked companies per county from Boston (Suffolk) and Middlesex through Worcester, Cape Cod, the Berkshires, and the islands. FMCSA licensing, county cost guides, and regional moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =

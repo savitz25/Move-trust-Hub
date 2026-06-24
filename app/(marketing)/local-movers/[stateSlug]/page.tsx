@@ -119,7 +119,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                         : state.slug === 'connecticut'
                           ? 'Browse all 8 Connecticut county guides — up to 12 curated movers in Fairfield County (NYC corridor and Gold Coast), 8–10 movers in Hartford, New Haven, and coastal counties. FMCSA licensing, cost estimates, and county-specific moving tips.'
                           : state.slug === 'massachusetts'
-                            ? 'Browse Massachusetts county guides — 10 curated movers each in Middlesex (Boston metro), Worcester, and Essex (North Shore). FMCSA licensing, cost estimates, and county-specific moving tips. Additional counties rolling out in batches.'
+                            ? 'Browse all 14 Massachusetts county guides — 10 curated movers per county from Boston and Middlesex through Worcester, Cape Cod, the Berkshires, and the islands. FMCSA licensing, cost estimates, and county-specific moving tips.'
                             : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}

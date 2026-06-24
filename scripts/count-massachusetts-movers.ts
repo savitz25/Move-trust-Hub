@@ -6,7 +6,7 @@ const DEFAULT_TARGET = 10;
 const underTarget: string[] = [];
 
 const curatedSlugs = Object.keys(massachusettsCountyResearch).sort();
-console.log(`Massachusetts curated counties (batch 1): ${curatedSlugs.length}`);
+console.log(`Massachusetts curated counties: ${curatedSlugs.length}`);
 for (const slug of curatedSlugs) {
   const n = getMoversForCounty('massachusetts', slug)?.movers.length ?? 0;
   console.log(`  ${slug}: ${n} movers (target ${DEFAULT_TARGET})`);
