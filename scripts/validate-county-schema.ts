@@ -50,6 +50,7 @@ const CURATED_STATES = [
   'west-virginia',
   'virginia',
   'district-of-columbia',
+  'delaware',
 ] as const;
 
 const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: string }> = [
@@ -874,6 +875,9 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
     countySlug: 'district-of-columbia',
     expectedCity: 'Washington',
   },
+  { stateSlug: 'delaware', countySlug: 'new-castle', expectedCity: 'Wilmington' },
+  { stateSlug: 'delaware', countySlug: 'sussex', expectedCity: 'Georgetown' },
+  { stateSlug: 'delaware', countySlug: 'kent', expectedCity: 'Dover' },
 ];
 
 let totalIssues = 0;

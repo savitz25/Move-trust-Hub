@@ -15,6 +15,7 @@ export const CURATED_STATE_SLUGS = new Set([
   'west-virginia',
   'virginia',
   'district-of-columbia',
+  'delaware',
   'california',
   'florida',
   'new-jersey',

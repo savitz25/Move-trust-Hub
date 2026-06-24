@@ -42,6 +42,8 @@ import { getVirginiaCountyResearch } from '@/data/virginia-county-research';
 import { getVirginiaCountyTestimonials } from '@/data/virginia-county-testimonials';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDistrictOfColumbiaCountyTestimonials } from '@/data/district-of-columbia-county-testimonials';
+import { getDelawareCountyResearch } from '@/data/delaware-county-research';
+import { getDelawareCountyTestimonials } from '@/data/delaware-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -288,6 +290,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'district-of-columbia') {
     return getDistrictOfColumbiaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'delaware') {
+    return getDelawareCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -389,6 +394,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'district-of-columbia') {
     const curated = getDistrictOfColumbiaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'delaware') {
+    const curated = getDelawareCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -527,6 +536,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getDistrictOfColumbiaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'delaware') {
+    const curated = getDelawareCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -648,6 +661,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'district-of-columbia') {
     const curated = getDistrictOfColumbiaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'delaware') {
+    const curated = getDelawareCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

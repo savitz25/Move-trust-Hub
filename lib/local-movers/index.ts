@@ -21,6 +21,7 @@ import { kentuckyCountyMoverAssignments } from '@/data/kentucky-county-assignmen
 import { westVirginiaCountyMoverAssignments } from '@/data/west-virginia-county-assignments';
 import { virginiaCountyMoverAssignments } from '@/data/virginia-county-assignments';
 import { districtOfColumbiaCountyMoverAssignments } from '@/data/district-of-columbia-county-assignments';
+import { delawareCountyMoverAssignments } from '@/data/delaware-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -54,6 +55,7 @@ const allCountyAssignments = [
   ...westVirginiaCountyMoverAssignments,
   ...virginiaCountyMoverAssignments,
   ...districtOfColumbiaCountyMoverAssignments,
+  ...delawareCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,
