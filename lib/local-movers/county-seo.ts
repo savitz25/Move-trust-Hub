@@ -473,6 +473,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getOhioCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'kentucky') {
+    const curated = getKentuckyCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);

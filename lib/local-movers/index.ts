@@ -41,6 +41,7 @@ const curatedAssignmentStateSlugs = new Set([
   'michigan',
   'indiana',
   'ohio',
+  'kentucky',
   'california',
   'florida',
   'new-jersey',

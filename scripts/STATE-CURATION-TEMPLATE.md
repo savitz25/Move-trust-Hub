@@ -1,6 +1,6 @@
 # State Local Movers Curation Template (Texas & Beyond)
 
-Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
+Replicate the Florida / New Jersey / New York / California / Texas / Georgia / South Carolina / North Carolina / Tennessee / Alabama / Mississippi / Louisiana / Oklahoma / Arkansas / Kansas / Missouri / Illinois / Michigan / Indiana / Ohio / Kentucky model for any new state. California, Florida, Georgia, New Jersey, New York, North Carolina, South Carolina, Tennessee, Alabama, Mississippi, Louisiana, Oklahoma, Arkansas, Kansas, Missouri, Illinois, Michigan, Indiana, Ohio, Kentucky, and Texas are **hand-curated** — do not run `generate-state-local-movers.ts` for them.
 
 > **Louisiana note:** Administrative divisions are **parishes** (not counties). Use parish-specific copy on hub and detail pages; data files follow the `{state}-county-*` naming convention for code consistency.
 
@@ -28,6 +28,51 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
 | Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
 | Ohio | 88/88 (complete) | 5 | 10 (cap 10; Franklin up to 18) | 15 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
+| Kentucky | 120/120 (complete) | 5 | 10 (cap 10) | 15 counties | `count-kentucky-movers.ts`, `apply-kentucky-mover-expansion.ts`, `audit-kentucky-seo.ts` |
+
+### Kentucky metro pools (`data/local-movers-seed.ts`)
+
+- `louisville-metro-ky` — Louisville / Jefferson hub (Ohio River corridor)
+- `lexington-metro-ky` — Lexington / Fayette Bluegrass horse country hub
+- `cincinnati-metro-ky` — Northern Kentucky / Covington–Florence–Erlanger (Cincinnati MSA)
+- `bowling-green-metro-ky` — Bowling Green / Warren I-65 South Central hub
+- `elizabethtown-metro-ky` — Elizabethtown / Hardin Fort Knox military corridor
+- `owensboro-metro-ky` — Owensboro / Daviess Western Kentucky hub
+- `richmond-metro-ky` — Richmond / Madison Eastern Kentucky hub
+- `hopkinsville-metro-ky` — Hopkinsville / Christian Fort Campbell hub
+- `paducah-metro-ky` — Paducah / McCracken Western Kentucky lakes hub
+- `pikeville-metro-ky` — Pikeville / Pike Eastern Kentucky coalfields hub
+- `frankfort-metro-ky` — Frankfort / Franklin state capital hub
+- `bardstown-metro-ky` — Bardstown / Nelson bourbon trail hub
+- `ashland-metro-ky` — Ashland / Boyd Northeast Kentucky hub
+- `glasgow-metro-ky` — Glasgow / Barren South Central hub
+- `madisonville-metro-ky` — Madisonville / Hopkins Western Kentucky hub
+- `henderson-metro-ky` — Henderson / Henderson Ohio River hub
+- `murray-metro-ky` — Murray / Calloway lakes hub
+- `hazard-metro-ky` — Hazard / Perry Appalachian hub
+- `lebanon-metro-ky` — Lebanon / Marion Central Kentucky hub (distinct from Crittenden seat Marion)
+
+### Kentucky major counties (10 movers each)
+
+`jefferson`, `fayette`, `kenton`, `boone`, `warren`, `hardin`, `daviess`, `madison`, `campbell`, `mccracken`, `bullitt`, `oldham`, `scott`, `shelby`, `christian`, `pulaski`, `laurel`, `jessamine`, `pike`, `franklin`, `nelson`, `boyd`, `barren`, `hopkins`, `henderson`, `calloway`, `clark`, `whitley`, `graves`, `greenup`, `floyd`, `boyle`, `marshall`, `meade`, `muhlenberg`, `knox`, `logan`, `montgomery`, `woodford`, `grayson`, `taylor`, `grant`, `perry`, `carter`, `lincoln`, `anderson`, `rowan`, `harlan`, `mercer`, `allen`, `bell`, `johnson`, `breckinridge`, `spencer`, `simpson`, `hart`, `marion`
+
+All 120 Kentucky counties are curated at 10 movers each.
+
+### Kentucky sitemap priority 0.85 (15 counties — top population / metro hubs)
+
+`jefferson`, `fayette`, `kenton`, `boone`, `warren`, `hardin`, `daviess`, `madison`, `campbell`, `mccracken`, `bullitt`, `oldham`, `scott`, `shelby`, `christian`
+
+**GSC submit URL:** `https://www.movetrusthub.com/sitemap-local/sitemap/kentucky.xml` (121 URLs: hub + 120 counties). Do **not** use `/sitemap-local/kentucky.xml` (legacy path redirects to canonical).
+
+### Kentucky sitemap priority 0.80 (remaining 105 counties)
+
+### Kentucky verification commands
+
+```bash
+npx tsx scripts/count-kentucky-movers.ts
+npx tsx scripts/audit-kentucky-seo.ts
+npx tsx scripts/validate-county-schema.ts
+```
 
 ### Ohio metro pools (`data/local-movers-seed.ts`)
 
