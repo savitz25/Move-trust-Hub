@@ -69,6 +69,21 @@ const KY_COUNTY_NEIGHBORS: Record<string, string[]> = {
   simpson: ['allen', 'warren', 'logan', 'butler', 'barren', 'edmonson'],
   hart: ['barren', 'edmonson', 'larue', 'hardin', 'green', 'grayson'],
   marion: ['taylor', 'washington', 'boyle', 'casey', 'nelson', 'mercer'],
+  bourbon: ['clark', 'fayette', 'montgomery', 'harrison', 'nicholas', 'scott'],
+  harrison: ['grant', 'bourbon', 'nicholas', 'pendleton', 'scott', 'owen'],
+  letcher: ['harlan', 'perry', 'knott', 'pike', 'floyd', 'johnson'],
+  wayne: ['whitley', 'mccreary', 'pulaski', 'russell', 'clinton', 'adair'],
+  adair: ['taylor', 'casey', 'russell', 'wayne', 'green', 'cumberland'],
+  clay: ['knox', 'harlan', 'leslie', 'perry', 'owsley', 'jackson'],
+  russell: ['wayne', 'adair', 'casey', 'pulaski', 'cumberland', 'clinton'],
+  garrard: ['lincoln', 'boyle', 'madison', 'fayette', 'mercer', 'rockcastle'],
+  mccreary: ['wayne', 'whitley', 'pulaski', 'knox', 'laurel', 'bell'],
+  mason: ['bracken', 'fleming', 'robertson', 'lewis', 'greenup', 'harrison'],
+  henry: ['shelby', 'oldham', 'spencer', 'jefferson', 'trimble', 'owen'],
+  casey: ['taylor', 'adair', 'russell', 'lincoln', 'pulaski', 'marion'],
+  rockcastle: ['knox', 'laurel', 'pulaski', 'lincoln', 'garrard', 'madison'],
+  fleming: ['mason', 'bracken', 'rowan', 'bath', 'nicholas', 'lewis'],
+  lawrence: ['boyd', 'johnson', 'martin', 'floyd', 'morgan', 'carter'],
 };
 
 export function getKentuckyNearbyCounties(

@@ -609,6 +609,21 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'kentucky', countySlug: simpson, expectedCity: 'Franklin' },
   { stateSlug: 'kentucky', countySlug: hart, expectedCity: 'Munfordville' },
   { stateSlug: 'kentucky', countySlug: marion, expectedCity: 'Lebanon' },
+  { stateSlug: 'kentucky', countySlug: bourbon, expectedCity: 'Paris' },
+  { stateSlug: 'kentucky', countySlug: harrison, expectedCity: 'Cynthiana' },
+  { stateSlug: 'kentucky', countySlug: letcher, expectedCity: 'Whitesburg' },
+  { stateSlug: 'kentucky', countySlug: wayne, expectedCity: 'Monticello' },
+  { stateSlug: 'kentucky', countySlug: adair, expectedCity: 'Columbia' },
+  { stateSlug: 'kentucky', countySlug: clay, expectedCity: 'Manchester' },
+  { stateSlug: 'kentucky', countySlug: russell, expectedCity: 'Jamestown' },
+  { stateSlug: 'kentucky', countySlug: garrard, expectedCity: 'Lancaster' },
+  { stateSlug: 'kentucky', countySlug: mccreary, expectedCity: 'Whitley City' },
+  { stateSlug: 'kentucky', countySlug: mason, expectedCity: 'Maysville' },
+  { stateSlug: 'kentucky', countySlug: henry, expectedCity: 'New Castle' },
+  { stateSlug: 'kentucky', countySlug: casey, expectedCity: 'Liberty' },
+  { stateSlug: 'kentucky', countySlug: rockcastle, expectedCity: 'Mount Vernon' },
+  { stateSlug: 'kentucky', countySlug: fleming, expectedCity: 'Flemingsburg' },
+  { stateSlug: 'kentucky', countySlug: lawrence, expectedCity: 'Louisa' },
 ];
 
 let totalIssues = 0;

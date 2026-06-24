@@ -62,6 +62,21 @@ export const kentuckyCountyOverrides: Partial<
   simpson: { seat: 'Franklin', metro: 'simpson-metro-ky' },
   hart: { seat: 'Munfordville', metro: 'munfordville-metro-ky' },
   marion: { seat: 'Lebanon', metro: 'lebanon-metro-ky' },
+  bourbon: { seat: 'Paris', metro: 'paris-metro-ky' },
+  harrison: { seat: 'Cynthiana', metro: 'cynthiana-metro-ky' },
+  letcher: { seat: 'Whitesburg', metro: 'whitesburg-metro-ky' },
+  wayne: { seat: 'Monticello', metro: 'monticello-metro-ky' },
+  adair: { seat: 'Columbia', metro: 'columbia-metro-ky' },
+  clay: { seat: 'Manchester', metro: 'manchester-metro-ky' },
+  russell: { seat: 'Jamestown', metro: 'jamestown-metro-ky' },
+  garrard: { seat: 'Lancaster', metro: 'lancaster-metro-ky' },
+  mccreary: { seat: 'Whitley City', metro: 'whitley-city-metro-ky' },
+  mason: { seat: 'Maysville', metro: 'maysville-metro-ky' },
+  henry: { seat: 'New Castle', metro: 'new-castle-metro-ky' },
+  casey: { seat: 'Liberty', metro: 'liberty-metro-ky' },
+  rockcastle: { seat: 'Mount Vernon', metro: 'mount-vernon-metro-ky' },
+  fleming: { seat: 'Flemingsburg', metro: 'flemingsburg-metro-ky' },
+  lawrence: { seat: 'Louisa', metro: 'louisa-metro-ky' },
 };
 
 export function applyKentuckyCountyOverrides(county: LocalCounty): LocalCounty {
