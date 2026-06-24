@@ -8,7 +8,15 @@ import { getMaineNearbyCounties } from '../lib/local-movers/maine-nearby';
 import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  cumberland: 8,
+  york: 7,
+};
+const DEFAULT_TARGET = 6;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const issues: string[] = [];
 const curatedSlugs = Object.keys(maineCountyResearch).sort();
@@ -18,8 +26,9 @@ for (const slug of curatedSlugs) {
   const result = getMoversForCounty('maine', slug);
   const moverCount = result?.movers.length ?? 0;
 
-  if (moverCount < DEFAULT_TARGET) {
-    issues.push(`movers<${DEFAULT_TARGET}: ${slug} (${moverCount})`);
+  const target = getTarget(slug);
+  if (moverCount < target) {
+    issues.push(`movers<${target}: ${slug} (${moverCount})`);
   }
   if (!maineCountyResearch[slug]) {
     issues.push(`no research: ${slug}`);
@@ -50,8 +59,9 @@ console.log(`Research entries: ${researchCount}`);
 
 for (const slug of curatedSlugs) {
   const n = getMoversForCounty('maine', slug)?.movers.length ?? 0;
+  const target = getTarget(slug);
   console.log(
-    `  ${slug}: ${n} movers (target ${DEFAULT_TARGET}), testimonials ${getMaineCountyTestimonials(slug).length}, nearby ${getMaineNearbyCounties(slug).length}`
+    `  ${slug}: ${n} movers (target ${target}), testimonials ${getMaineCountyTestimonials(slug).length}, nearby ${getMaineNearbyCounties(slug).length}`
   );
 }
 

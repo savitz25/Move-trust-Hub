@@ -169,7 +169,7 @@ export function buildStateDescription(
     return `Find curated local movers in all 10 New Hampshire counties — up to 10 ranked companies in Hillsborough (Manchester–Nashua) and Rockingham (Seacoast), 7–10 regional specialists in every county from southern suburban corridors through Lakes Region, White Mountains, and North Country. FMCSA licensing, county cost guides, and New Hampshire-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Maine') {
-    return `Find curated local movers in all 16 Maine counties — 10 ranked companies per county from Portland (Cumberland) and the Seacoast through Bangor, Augusta, Midcoast, Downeast, and Aroostook. FMCSA licensing, county cost guides, and Maine-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+    return `Find curated local movers in all 16 Maine counties — up to 10 ranked companies in Cumberland (Portland), 7–9 in York (Seacoast), and 6–10 regional specialists in every county experienced with rural roads, harsh winters, tourism/second-home moves, and long-distance relocations. FMCSA licensing, county cost guides, and Maine-specific moving tips for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
 
   const moverRange =
