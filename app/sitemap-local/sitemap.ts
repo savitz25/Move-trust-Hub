@@ -147,6 +147,15 @@ const MI_HIGH_TRAFFIC_COUNTIES = new Set([
   'genesee',
   'washtenaw',
   'ingham',
+  'kalamazoo',
+  'livingston',
+  'saginaw',
+  'muskegon',
+  'st-clair',
+  'jackson',
+  'monroe',
+  'berrien',
+  'calhoun',
 ]);
 
 /** High-traffic IL counties — sitemap priority 0.85 (Chicago collar + downstate hubs) */

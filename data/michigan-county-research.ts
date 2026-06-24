@@ -144,6 +144,159 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
+  kalamazoo: {
+    marketNotes:
+      'Kalamazoo County is a key Southwest Michigan county anchored by Western Michigan University with strong educational, healthcare, and residential demand.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Kalamazoo County pricing reflects university-driven demand, I-94/US-131 corridor traffic, student move-in/out seasons, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Kalamazoo and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  livingston: {
+    marketNotes:
+      'Livingston County is a rapidly growing suburban county northwest of Detroit with strong residential demand across Howell, Brighton, and Hartland.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Livingston County pricing reflects northwest Detroit suburban growth, I-96/M-59 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Howell and surrounding areas before booking.',
+      'Detroit-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  saginaw: {
+    marketNotes:
+      'Saginaw County is a major county in Central Michigan with strong industrial and residential demand across Saginaw, Bay City, and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Saginaw County pricing reflects Central Michigan industrial and residential demand, I-75/I-675 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Saginaw and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  muskegon: {
+    marketNotes:
+      'Muskegon County is a key West Michigan county with strong industrial and residential demand across Muskegon, Norton Shores, and Muskegon Heights.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Muskegon County pricing reflects West Michigan lakefront industrial and residential demand, US-31 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Muskegon and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-clair': {
+    marketNotes:
+      'St. Clair County is a key county in Southeast Michigan along the St. Clair River with strong industrial and residential demand across Port Huron, Marysville, and St. Clair.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'St. Clair County pricing reflects Blue Water corridor industrial and residential demand, I-94/I-69 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Port Huron and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County is a key county in South Central Michigan with strong industrial and residential demand across Jackson and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects South Central Michigan industrial and residential demand, I-94/US-127 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Jackson and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  monroe: {
+    marketNotes:
+      'Monroe County is a suburban county south of Detroit with strong residential demand across Monroe, Temperance, and Lambertville along the Lake Erie corridor.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Monroe County pricing reflects south Detroit suburban growth, I-75/US-23 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Monroe and surrounding areas before booking.',
+      'Detroit-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  berrien: {
+    marketNotes:
+      'Berrien County is a key Southwest Michigan county with strong tourism and residential demand across St. Joseph, Benton Harbor, and Niles.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$110–$170/hr for a 2-person crew',
+      note: 'Berrien County pricing reflects lakeshore tourism and residential demand, I-94/US-31 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for St. Joseph, Benton Harbor, and Niles areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  calhoun: {
+    marketNotes:
+      'Calhoun County is a key county in South Central Michigan with strong industrial and residential demand across Battle Creek and Marshall.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$160/hr for a 2-person crew',
+      note: 'Calhoun County pricing reflects Battle Creek industrial and residential demand, I-94/I-69 corridor traffic, and competition among full-service local and regional agents.',
+    },
+    tips: [
+      'Verify coverage for Battle Creek and Marshall areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getMichiganCountyResearch(

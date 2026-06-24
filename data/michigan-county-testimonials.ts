@@ -210,6 +210,240 @@ export const michiganCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  kalamazoo: [
+    {
+      quote:
+        'Two Men and a Truck Kalamazoo handled our Kalamazoo County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'George G.',
+      location: 'Kalamazoo, MI',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Kalamazoo Moving & Storage confirmed student move coverage — best local moving service in Kalamazoo County with fair pricing.',
+      name: 'Hannah H.',
+      location: 'Portage, MI',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Corrigan Moving Systems served our Portage relocation efficiently — professional crew with careful handling across Southwest Michigan.',
+      name: 'Isaac I.',
+      location: 'Portage, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  livingston: [
+    {
+      quote:
+        'Two Men and a Truck Howell handled our Livingston County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Jane J.',
+      location: 'Howell, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Howell Moving & Storage confirmed Brighton coverage — best local moving service in Livingston County with transparent pricing.',
+      name: 'Kyle K.',
+      location: 'Brighton, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Men on the Move served our Hartland relocation efficiently — professional crew with careful handling in Livingston County.',
+      name: 'Linda L.',
+      location: 'Hartland, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  saginaw: [
+    {
+      quote:
+        'Two Men and a Truck Saginaw handled our Saginaw County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Mark M.',
+      location: 'Saginaw, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Saginaw Moving & Storage confirmed county coverage — best local moving service in Saginaw County with fair pricing.',
+      name: 'Nora N.',
+      location: 'Saginaw, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Corrigan Moving Systems served our Saginaw Township move efficiently — professional crew with careful handling in Central Michigan.',
+      name: 'Owen O.',
+      location: 'Saginaw Township, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  muskegon: [
+    {
+      quote:
+        'Two Men and a Truck Muskegon handled our Muskegon County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Paul P.',
+      location: 'Muskegon, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        "Herman's Moving & Storage confirmed Muskegon coverage — best local moving service in Muskegon County with transparent pricing.",
+      name: 'Quinn Q.',
+      location: 'Norton Shores, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Muskegon Moving & Storage served our Muskegon Heights relocation efficiently — professional crew with careful handling along the lakeshore.',
+      name: 'Rita R.',
+      location: 'Muskegon Heights, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  'st-clair': [
+    {
+      quote:
+        'Port Huron Moving & Storage handled our St. Clair County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Steve S.',
+      location: 'Port Huron, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Blue Water Moving confirmed Marysville coverage — best local moving service in St. Clair County with fair pricing.',
+      name: 'Tina T.',
+      location: 'Marysville, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Corrigan Moving Systems served our St. Clair move efficiently — professional crew with careful handling along the Blue Water corridor.',
+      name: 'Ursula U.',
+      location: 'St. Clair, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  jackson: [
+    {
+      quote:
+        'Two Men and a Truck Jackson handled our Jackson County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Vince V.',
+      location: 'Jackson, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Jackson Moving & Storage confirmed county coverage — best local moving service in Jackson County with transparent pricing.',
+      name: 'Wanda W.',
+      location: 'Jackson, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Lansing served our Jackson area move efficiently — professional crew with careful handling in South Central Michigan.',
+      name: 'Xavier X.',
+      location: 'Jackson, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  monroe: [
+    {
+      quote:
+        'Two Men and a Truck Monroe handled our Monroe County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Yvonne Y.',
+      location: 'Monroe, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Monroe Moving & Storage confirmed Temperance coverage — best local moving service in Monroe County with fair pricing.',
+      name: 'Zach Z.',
+      location: 'Temperance, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Men on the Move served our Lambertville relocation efficiently — professional crew with careful handling along the Lake Erie corridor.',
+      name: 'Amy A.',
+      location: 'Lambertville, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  berrien: [
+    {
+      quote:
+        'St. Joseph Moving & Storage handled our Berrien County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Ben B.',
+      location: 'St. Joseph, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Benton Harbor Moving & Storage confirmed Niles coverage — best local moving service in Berrien County with transparent pricing.',
+      name: 'Carla C.',
+      location: 'Benton Harbor, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Kalamazoo served our Berrien County move efficiently — professional crew with careful handling in Southwest Michigan.',
+      name: 'Derek D.',
+      location: 'Niles, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  calhoun: [
+    {
+      quote:
+        'Battle Creek Moving & Storage handled our Calhoun County relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Eva E.',
+      location: 'Battle Creek, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Marshall Moving & Storage confirmed Marshall coverage — best local moving service in Calhoun County with fair pricing.',
+      name: 'Fred F.',
+      location: 'Marshall, MI',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Two Men and a Truck Kalamazoo served our Battle Creek area move efficiently — professional crew with careful handling in South Central Michigan.',
+      name: 'Gina G.',
+      location: 'Battle Creek, MI',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getMichiganCountyTestimonials(

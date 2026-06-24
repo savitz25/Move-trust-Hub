@@ -12,6 +12,15 @@ export const michiganCountyOverrides: Partial<
   genesee: { seat: 'Flint', metro: 'flint-metro-mi' },
   washtenaw: { seat: 'Ann Arbor', metro: 'ann-arbor-metro-mi' },
   ingham: { seat: 'Mason', metro: 'lansing-metro-mi' },
+  kalamazoo: { seat: 'Kalamazoo', metro: 'kalamazoo-metro-mi' },
+  livingston: { seat: 'Howell', metro: 'detroit-metro-mi' },
+  saginaw: { seat: 'Saginaw', metro: 'saginaw-metro-mi' },
+  muskegon: { seat: 'Muskegon', metro: 'muskegon-metro-mi' },
+  'st-clair': { seat: 'Port Huron', metro: 'port-huron-metro-mi' },
+  jackson: { seat: 'Jackson', metro: 'jackson-metro-mi' },
+  monroe: { seat: 'Monroe', metro: 'detroit-metro-mi' },
+  berrien: { seat: 'St. Joseph', metro: 'southwest-michigan-mi' },
+  calhoun: { seat: 'Marshall', metro: 'battle-creek-metro-mi' },
 };
 
 export function applyMichiganCountyOverrides(county: LocalCounty): LocalCounty {
