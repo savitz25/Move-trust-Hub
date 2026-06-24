@@ -755,6 +755,19 @@ const SPOT_CHECK: Array<{ stateSlug: string; countySlug: string; expectedCity?: 
   { stateSlug: 'virginia', countySlug: 'frederick', expectedCity: 'Winchester' },
   { stateSlug: 'virginia', countySlug: 'roanoke', expectedCity: 'Roanoke' },
   { stateSlug: 'virginia', countySlug: 'montgomery', expectedCity: 'Christiansburg' },
+  { stateSlug: 'virginia', countySlug: 'roanoke-county', expectedCity: 'Salem' },
+  { stateSlug: 'virginia', countySlug: 'portsmouth', expectedCity: 'Portsmouth' },
+  { stateSlug: 'virginia', countySlug: 'rockingham', expectedCity: 'Harrisonburg' },
+  { stateSlug: 'virginia', countySlug: 'james-city', expectedCity: 'Williamsburg' },
+  { stateSlug: 'virginia', countySlug: 'bedford', expectedCity: 'Bedford' },
+  { stateSlug: 'virginia', countySlug: 'lynchburg', expectedCity: 'Lynchburg' },
+  { stateSlug: 'virginia', countySlug: 'augusta', expectedCity: 'Staunton' },
+  { stateSlug: 'virginia', countySlug: 'fauquier', expectedCity: 'Warrenton' },
+  { stateSlug: 'virginia', countySlug: 'york', expectedCity: 'Yorktown' },
+  { stateSlug: 'virginia', countySlug: 'pittsylvania', expectedCity: 'Chatham' },
+  { stateSlug: 'virginia', countySlug: 'culpeper', expectedCity: 'Culpeper' },
+  { stateSlug: 'virginia', countySlug: 'campbell', expectedCity: 'Rustburg' },
+  { stateSlug: 'virginia', countySlug: 'franklin', expectedCity: 'Rocky Mount' },
 ];
 
 let totalIssues = 0;

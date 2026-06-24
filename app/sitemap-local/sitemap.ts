@@ -203,6 +203,19 @@ const VA_HIGH_TRAFFIC_COUNTIES = new Set([
   'frederick',
   'roanoke',
   'montgomery',
+  'roanoke-county',
+  'portsmouth',
+  'rockingham',
+  'james-city',
+  'bedford',
+  'lynchburg',
+  'augusta',
+  'fauquier',
+  'york',
+  'pittsylvania',
+  'culpeper',
+  'campbell',
+  'franklin',
 ]);
 
 /** High-traffic WV counties — sitemap priority 0.85 (batch 1 large markets) */

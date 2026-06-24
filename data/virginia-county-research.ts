@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Virginia county research — batches 1–4 large markets */
+/** Hand-curated Virginia county research — batches 1–5 large markets */
 export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
   fairfax: {
     marketNotes:
@@ -362,6 +362,227 @@ export const virginiaCountyResearch: Record<string, CuratedCountyResearch> = {
       'University traffic impacts scheduling — confirm crew arrival windows around VT semesters and game days.',
       'Confirm insurance for high-value homes and student-related moves.',
       'Book early for peak seasons (May–September), semester changeover (August and May), and graduation weekends.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'roanoke-county': {
+    marketNotes:
+      'Roanoke County surrounds the independent city of Roanoke with strong suburban and residential demand across Salem and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Roanoke County pricing reflects Blue Ridge valley suburban demand, Salem corridor traffic, and competition among Roanoke Valley full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Salem, Roanoke County areas, and surrounding communities before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and hillside properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  portsmouth: {
+    marketNotes:
+      'Portsmouth is an independent city with strong naval, residential, and industrial demand across Hampton Roads.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,500+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Portsmouth pricing reflects naval base PCS turnover, port district traffic, Hampton Roads bridge-tunnel congestion, and competition among Tidewater full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Portsmouth and surrounding Hampton Roads areas before booking.',
+      'Hampton Roads traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and military housing relocations.',
+      'Book early for peak seasons (May–September), PCS windows, and summer relocations.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  rockingham: {
+    marketNotes:
+      'Rockingham County surrounds Harrisonburg with strong agricultural, educational, and residential demand across the Shenandoah Valley.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Rockingham County pricing reflects JMU semester turnover, Shenandoah Valley rural access, and competition among full-service Central Virginia agents.',
+    },
+    tips: [
+      'Verify coverage for Harrisonburg and surrounding Rockingham areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and rural homes.',
+      'Book early for peak seasons (May–September), semester changeover, and graduation weekends.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'james-city': {
+    marketNotes:
+      'James City County is a historic suburban county with strong tourism and residential demand across Williamsburg and the Historic Triangle.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'James City County pricing reflects Historic Triangle tourism volume, Colonial Parkway traffic, and competition among Peninsula full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Williamsburg and surrounding James City areas before booking.',
+      'Tourist traffic impacts scheduling — confirm crew arrival windows around peak visitor seasons.',
+      'Confirm insurance for high-value homes and historic district properties.',
+      'Book early for peak tourist seasons (June–August) and summer relocations.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bedford: {
+    marketNotes:
+      'Bedford County is a rural county near Lynchburg with residential demand across Smith Mountain Lake and South Central Virginia.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Bedford County pricing reflects Smith Mountain Lake waterfront demand, rural property access, and competition among Lynchburg-metro full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Bedford and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value lakefront and rural homes.',
+      'Book early for peak seasons (May–September) and summer lake-home turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lynchburg: {
+    marketNotes:
+      'Lynchburg is an independent city with strong educational and residential demand across Central Virginia.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Lynchburg pricing reflects university corridor demand, hillside access challenges, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Lynchburg and surrounding metro areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and multi-level hillside properties.',
+      'Book early for peak seasons (May–September) and semester changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  augusta: {
+    marketNotes:
+      'Augusta County surrounds Staunton and Waynesboro with strong residential demand across the Shenandoah Valley.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Augusta County pricing reflects Shenandoah Valley rural and suburban demand, I-81 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Staunton, Waynesboro, and surrounding Augusta areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and rural homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fauquier: {
+    marketNotes:
+      'Fauquier County is a suburban/rural county in outer Northern Virginia with strong residential demand across Warrenton and horse country.',
+    costs: {
+      studioRange: '$900–$1,900',
+      familyRange: '$3,500–$8,500+',
+      avgHourly: '$130–$200/hr for a 2-person crew',
+      note: 'Fauquier County pricing reflects outer NOVA piedmont affluence, equestrian property access, Route 29 corridor traffic, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Warrenton and surrounding Fauquier areas before booking.',
+      'Northern Virginia traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and rural estate properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  york: {
+    marketNotes:
+      'York County is a suburban county on the Virginia Peninsula with strong residential and historical demand across Yorktown.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,500+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'York County pricing reflects Peninsula suburban growth, Historic Triangle spillover traffic, and competition among Hampton Roads full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Yorktown and surrounding York County areas before booking.',
+      'Hampton Roads traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and historic corridor homes.',
+      'Book early for peak seasons (May–September) and summer relocations.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pittsylvania: {
+    marketNotes:
+      'Pittsylvania County is a large rural county in South Central Virginia with residential demand centered on Chatham and the Danville area.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Pittsylvania County pricing reflects Southside Virginia rural sprawl, Danville-metro spillover, and competition among regional full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Chatham and surrounding Pittsylvania areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and suburban homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  culpeper: {
+    marketNotes:
+      'Culpeper County is a growing suburban/rural county in Northern Virginia piedmont with strong residential demand.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Culpeper County pricing reflects NOVA spillover growth, Route 29 corridor traffic, and competition among piedmont full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Culpeper and surrounding areas before booking.',
+      'Northern Virginia traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and rural properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  campbell: {
+    marketNotes:
+      'Campbell County surrounds Lynchburg with strong residential demand across Rustburg and the metro collar.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Campbell County pricing reflects Lynchburg-metro collar demand, rural property access, and competition among Central Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Rustburg and surrounding Campbell areas before booking.',
+      'Lynchburg-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban and rural homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a rural South Central Virginia county with residential demand centered on Rocky Mount and the Blue Ridge foothills.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Blue Ridge foothills geography, rural property access, and competition among Southside Virginia full-service agents.',
+    },
+    tips: [
+      'Verify coverage for Rocky Mount and surrounding Franklin County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value rural and hillside homes.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },

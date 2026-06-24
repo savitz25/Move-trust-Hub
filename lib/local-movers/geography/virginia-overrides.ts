@@ -24,7 +24,20 @@ export const virginiaCountyOverrides: Partial<
   suffolk: { seat: 'Suffolk', metro: 'suffolk-metro-va' },
   frederick: { seat: 'Winchester', metro: 'frederick-metro-va' },
   roanoke: { seat: 'Roanoke', metro: 'roanoke-metro-va' },
+  'roanoke-county': { seat: 'Salem', metro: 'roanoke-county-metro-va', name: 'Roanoke County' },
   montgomery: { seat: 'Christiansburg', metro: 'montgomery-metro-va' },
+  portsmouth: { seat: 'Portsmouth', metro: 'portsmouth-metro-va' },
+  rockingham: { seat: 'Harrisonburg', metro: 'rockingham-metro-va' },
+  'james-city': { seat: 'Williamsburg', metro: 'james-city-metro-va' },
+  bedford: { seat: 'Bedford', metro: 'bedford-metro-va' },
+  lynchburg: { seat: 'Lynchburg', metro: 'lynchburg-metro-va' },
+  augusta: { seat: 'Staunton', metro: 'augusta-metro-va' },
+  fauquier: { seat: 'Warrenton', metro: 'fauquier-metro-va' },
+  york: { seat: 'Yorktown', metro: 'york-metro-va' },
+  pittsylvania: { seat: 'Chatham', metro: 'pittsylvania-metro-va' },
+  culpeper: { seat: 'Culpeper', metro: 'culpeper-metro-va' },
+  campbell: { seat: 'Rustburg', metro: 'campbell-metro-va' },
+  franklin: { seat: 'Rocky Mount', metro: 'franklin-metro-va' },
 };
 
 /** Duplicate FIPS slugs disambiguated by generated metro region */
@@ -42,6 +55,14 @@ const VIRGINIA_DUPLICATE_SLUG_METROS: Record<
   roanoke: {
     'virginia-region-3': { slug: 'roanoke-county', name: 'Roanoke County' },
     'virginia-region-4': { slug: 'roanoke', name: 'Roanoke' },
+  },
+  bedford: {
+    'virginia-region-1': { slug: 'bedford', name: 'Bedford' },
+    'virginia-region-2': { slug: 'bedford-city', name: 'Bedford City' },
+  },
+  franklin: {
+    'virginia-region-5': { slug: 'franklin', name: 'Franklin' },
+    'virginia-region-1': { slug: 'franklin-city', name: 'Franklin City' },
   },
 };
 

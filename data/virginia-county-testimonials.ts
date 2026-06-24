@@ -548,6 +548,344 @@ export const virginiaCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  'roanoke-county': [
+    {
+      quote:
+        'Two Men and a Truck Roanoke County handled our Salem relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Alan T.',
+      location: 'Salem, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Blue Ridge South Moving confirmed Roanoke County coverage — best local moving service with transparent pricing.',
+      name: 'Beth K.',
+      location: 'Salem, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Roanoke County Valley Moving served our Cave Spring area move efficiently — professional crew with careful suburban handling.',
+      name: 'Carl M.',
+      location: 'Roanoke County, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  portsmouth: [
+    {
+      quote:
+        'Two Men and a Truck Portsmouth handled our relocation professionally — on time, efficient, and extremely careful near the naval base.',
+      name: 'Diane R.',
+      location: 'Portsmouth, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Naval Port Moving confirmed waterfront coverage — best local moving service in Portsmouth with fair pricing.',
+      name: 'Frank L.',
+      location: 'Portsmouth, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'Hampton Roads West Moving served our Olde Towne area move efficiently — professional crew through bridge-tunnel traffic on schedule.',
+      name: 'Gina P.',
+      location: 'Portsmouth, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  rockingham: [
+    {
+      quote:
+        'Two Men and a Truck Rockingham handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Henry W.',
+      location: 'Harrisonburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Shenandoah Valley Moving confirmed Harrisonburg coverage — best local moving service in Rockingham County with careful handling.',
+      name: 'Irene S.',
+      location: 'Harrisonburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'JMU Area Moving served our university district move efficiently — professional crew during semester changeover without delays.',
+      name: 'Jack N.',
+      location: 'Harrisonburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  'james-city': [
+    {
+      quote:
+        'Two Men and a Truck James City handled our county relocation professionally — on time, efficient, and extremely careful near Williamsburg.',
+      name: 'Kelly H.',
+      location: 'Williamsburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Colonial Moving confirmed Historic Triangle coverage — best local moving service in James City County with fair pricing.',
+      name: 'Leo B.',
+      location: 'Williamsburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Historic Triangle Moving served our move efficiently — professional crew that navigated tourist-season traffic on schedule.',
+      name: 'Megan C.',
+      location: 'Williamsburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  bedford: [
+    {
+      quote:
+        'Two Men and a Truck Bedford handled our county relocation professionally — on time, efficient, and extremely careful at Smith Mountain Lake.',
+      name: 'Nathan D.',
+      location: 'Bedford, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Smith Mountain Lake Moving confirmed lakefront coverage — best local moving service in Bedford County with careful handling.',
+      name: 'Olivia F.',
+      location: 'Bedford, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Lynchburg Area Moving served our rural Bedford move efficiently — professional crew with transparent pricing.',
+      name: 'Paul G.',
+      location: 'Bedford, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  lynchburg: [
+    {
+      quote:
+        'Two Men and a Truck Lynchburg handled our city relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Quinn J.',
+      location: 'Lynchburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Hill City Moving confirmed downtown coverage — best local moving service in Lynchburg with fair pricing.',
+      name: 'Rita K.',
+      location: 'Lynchburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+    {
+      quote:
+        'James River Lynchburg Moving served our riverfront move efficiently — professional crew with careful hillside handling.',
+      name: 'Sam L.',
+      location: 'Lynchburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
+  augusta: [
+    {
+      quote:
+        'Two Men and a Truck Augusta handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Tina M.',
+      location: 'Staunton, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Shenandoah Valley Moving confirmed Staunton coverage — best local moving service in Augusta County with transparent pricing.',
+      name: 'Uma N.',
+      location: 'Staunton, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Waynesboro Area Moving served our eastern Augusta move efficiently — professional crew along the I-81 corridor on schedule.',
+      name: 'Vince O.',
+      location: 'Staunton, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  fauquier: [
+    {
+      quote:
+        'Two Men and a Truck Fauquier handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Wendy P.',
+      location: 'Warrenton, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Northern Piedmont Moving confirmed Warrenton coverage — best local moving service in Fauquier County with fair pricing.',
+      name: 'Xavier Q.',
+      location: 'Warrenton, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Horse Country Moving served our Upperville area move efficiently — professional crew with careful estate property handling.',
+      name: 'Yvonne R.',
+      location: 'Warrenton, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  york: [
+    {
+      quote:
+        'Two Men and a Truck York handled our county relocation professionally — on time, efficient, and extremely careful near Yorktown.',
+      name: 'Zach S.',
+      location: 'Yorktown, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Historic Triangle Moving confirmed York County coverage — best local moving service with transparent pricing.',
+      name: 'Amy T.',
+      location: 'Yorktown, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Peninsula South Moving served our Tabb area move efficiently — professional crew through Hampton Roads traffic on schedule.',
+      name: 'Ben U.',
+      location: 'Yorktown, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  pittsylvania: [
+    {
+      quote:
+        'Two Men and a Truck Pittsylvania handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Cindy V.',
+      location: 'Chatham, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Danville Area Moving confirmed Southside coverage — best local moving service in Pittsylvania County with fair pricing.',
+      name: 'Derek W.',
+      location: 'Chatham, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Southside Virginia Moving served our rural Chatham move efficiently — professional crew with careful handling.',
+      name: 'Ella X.',
+      location: 'Chatham, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  culpeper: [
+    {
+      quote:
+        'Two Men and a Truck Culpeper handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Fred Y.',
+      location: 'Culpeper, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Northern Piedmont Moving confirmed Culpeper coverage — best local moving service with transparent pricing.',
+      name: 'Gloria Z.',
+      location: 'Culpeper, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Rappahannock Area Moving served our Brandy Station move efficiently — professional crew along Route 29 on schedule.',
+      name: 'Hank A.',
+      location: 'Culpeper, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  campbell: [
+    {
+      quote:
+        'Two Men and a Truck Campbell handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Ivy B.',
+      location: 'Rustburg, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Lynchburg Area Moving confirmed Campbell County coverage — best local moving service with fair pricing.',
+      name: 'Joe C.',
+      location: 'Rustburg, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Campbell County Local Moving served our Brookneal area move efficiently — professional crew with careful rural handling.',
+      name: 'Kate D.',
+      location: 'Rustburg, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
+  franklin: [
+    {
+      quote:
+        'Two Men and a Truck Franklin handled our county relocation professionally — on time, efficient, and extremely careful.',
+      name: 'Luke E.',
+      location: 'Rocky Mount, VA',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Blue Ridge Foothills Moving confirmed Rocky Mount coverage — best local moving service in Franklin County with fair pricing.',
+      name: 'Maya F.',
+      location: 'Rocky Mount, VA',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'Smith River Moving served our Ferrum area move efficiently — professional crew with careful hillside handling.',
+      name: 'Noah G.',
+      location: 'Rocky Mount, VA',
+      rating: 5,
+      moveType: 'Apartment',
+    },
+  ],
 };
 
 export function getVirginiaCountyTestimonials(
