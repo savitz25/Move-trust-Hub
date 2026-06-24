@@ -44,6 +44,60 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Check HOA move rules, gate access, and parking in newer DuPage subdivisions and townhome communities.',
     ],
   },
+  lake: {
+    marketNotes:
+      'Lake County is a major affluent suburban county north of Chicago with strong corporate, residential, and lakeshore demand across Waukegan, Libertyville, Gurnee, Highland Park, and surrounding communities.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,200–$7,200+',
+      avgHourly: '$125–$185/hr for a 2-person crew',
+      note: 'Lake County pricing reflects I-94/I-294 corridor traffic, lakeshore properties, high-value suburban homes, and strong demand near Gurnee retail corridors and North Shore commuter towns.',
+    },
+    tips: [
+      'Verify coverage for Waukegan, Libertyville, Gurnee, Highland Park, and surrounding areas before booking.',
+      'Heavy suburban and interstate traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Ask about specialty handling for lakeshore homes, long driveways, and narrow North Shore streets.',
+    ],
+  },
+  will: {
+    marketNotes:
+      'Will County is one of Illinois’s fastest-growing counties with strong suburban residential and logistics demand across Joliet, Bolingbrook, Plainfield, and New Lenox.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,200–$7,200+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Will County pricing reflects I-55/I-80 corridor growth, new-construction subdivisions, logistics-adjacent traffic, and rising demand in Plainfield and New Lenox.',
+    },
+    tips: [
+      'Verify coverage for Joliet, Bolingbrook, Plainfield, and New Lenox areas before booking.',
+      'Heavy suburban and interstate traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Check HOA move rules and gate access in fast-growing Plainfield and New Lenox subdivisions.',
+    ],
+  },
+  kane: {
+    marketNotes:
+      'Kane County is a rapidly growing suburban county west of Chicago with strong residential and corporate demand across Aurora, Elgin, Geneva, and St. Charles.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,200–$7,200+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'Kane County pricing reflects I-88/I-90 corridor traffic, Fox River valley communities, corporate campus relocations, and competition among western suburban full-service movers.',
+    },
+    tips: [
+      'Verify coverage for Aurora, Elgin, Geneva, and St. Charles areas before booking.',
+      'Heavy suburban and interstate traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+      'Confirm travel fees and crew routing for moves between Aurora, Elgin, and Geneva corridor towns.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(

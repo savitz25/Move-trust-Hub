@@ -6,6 +6,9 @@ export const illinoisCountyOverrides: Partial<
 > = {
   cook: { seat: 'Chicago', metro: 'chicago-metro-il' },
   dupage: { seat: 'Wheaton', metro: 'chicago-metro-west-il' },
+  lake: { seat: 'Waukegan', metro: 'chicago-metro-north-il' },
+  will: { seat: 'Joliet', metro: 'chicago-metro-southwest-il' },
+  kane: { seat: 'Geneva', metro: 'chicago-metro-west-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

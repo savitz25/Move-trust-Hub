@@ -138,7 +138,7 @@ const OK_HIGH_TRAFFIC_COUNTIES = new Set([
 
 /** High-traffic MO counties — sitemap priority 0.85 */
 /** High-traffic IL counties — sitemap priority 0.85 */
-const IL_HIGH_TRAFFIC_COUNTIES = new Set(['cook', 'dupage']);
+const IL_HIGH_TRAFFIC_COUNTIES = new Set(['cook', 'dupage', 'lake', 'will', 'kane']);
 
 const MO_HIGH_TRAFFIC_COUNTIES = new Set([
   'st-louis',

@@ -13,6 +13,9 @@ const countyNameBySlug = new Map(illinoisCounties.map((c) => [c.slug, c.name]));
 const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   cook: ['dupage', 'lake', 'will', 'kane'],
   dupage: ['cook', 'kane', 'will', 'kendall'],
+  lake: ['cook', 'mchenry'],
+  will: ['cook', 'dupage', 'kendall', 'grundy', 'kankakee'],
+  kane: ['cook', 'dupage', 'mchenry', 'dekalb', 'kendall'],
 };
 
 export function getIllinoisNearbyCounties(
