@@ -12,6 +12,7 @@ const countyNameBySlug = new Map(illinoisCounties.map((c) => [c.slug, c.name]));
 /** Geographic adjacency for curated IL county pages — expands as counties are researched */
 const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   cook: ['dupage', 'lake', 'will', 'kane'],
+  dupage: ['cook', 'kane', 'will', 'kendall'],
 };
 
 export function getIllinoisNearbyCounties(

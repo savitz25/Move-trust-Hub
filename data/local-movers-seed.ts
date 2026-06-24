@@ -18754,6 +18754,63 @@ export const localMoversCatalog: Record<string, LocalMover> = {
     bbbRating: 'A',
     city: 'Chicago',
   },
+  'two-men-and-a-truck-dupage-il': {
+    id: 'two-men-and-a-truck-dupage-il',
+    name: 'Two Men and a Truck Naperville / Wheaton',
+    rating: 4.8,
+    reviewCount: 495,
+    shortDescription:
+      'Trusted local franchise with outstanding reputation for suburban residential and corporate relocations across DuPage County.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential', 'Corporate Relocation'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Naperville',
+    website: 'https://twomenandatruck.com/movers/il/naperville',
+  },
+  'all-my-sons-dupage-il': {
+    id: 'all-my-sons-dupage-il',
+    name: 'All My Sons Moving & Storage Western Suburbs',
+    rating: 4.4,
+    reviewCount: 315,
+    shortDescription:
+      'Full-service western suburbs mover serving DuPage County with packing, storage, and local residential relocations.',
+    services: ['Local Moving', 'Long Distance', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Naperville',
+    website: 'https://www.allmysons.com/illinois/naperville/',
+  },
+  'college-hunks-dupage-il': {
+    id: 'college-hunks-dupage-il',
+    name: 'College Hunks Hauling Junk & Moving Naperville',
+    rating: 4.6,
+    reviewCount: 275,
+    shortDescription:
+      'Full-service DuPage County mover with local residential moves, packing, and junk removal across western suburbs.',
+    services: ['Local Moving', 'Packing', 'Labor Only'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Naperville',
+    website:
+      'https://www.collegehunkshaulingjunk.com/locations/moving/illinois/naperville/',
+  },
+  'schroeder-moving-dupage-il': {
+    id: 'schroeder-moving-dupage-il',
+    name: 'Schroeder Moving Service',
+    rating: 4.8,
+    reviewCount: 340,
+    shortDescription:
+      'Family-owned Naperville mover serving DuPage County with careful residential relocations and full packing services.',
+    services: ['Local Moving', 'Packing', 'Storage'],
+    specialties: ['Residential'],
+    fmcsaSafetyRating: 'Not Rated',
+    bbbRating: 'A+',
+    city: 'Naperville',
+    website: 'https://www.schroedermoving.com/',
+  },
 };
 
 export const metroMoverPools: Record<string, MetroMoverPool> = {
@@ -27983,6 +28040,22 @@ export const metroMoverPools: Record<string, MetroMoverPool> = {
       'north-shore-movers-cook-il',
       'alliance-moving-cook-il',
       'metro-movers-chicago-cook-il',
+    ],
+  },
+  'chicago-metro-west-il': {
+    id: 'chicago-metro-west-il',
+    label: 'Chicago Metro (West)',
+    moverIds: [
+      'two-men-and-a-truck-dupage-il',
+      'all-my-sons-dupage-il',
+      'schroeder-moving-dupage-il',
+      'college-hunks-dupage-il',
+      'new-city-moving-chicago-il',
+      'move-tastic-chicago-il',
+      'mid-west-moving-storage-chicago-il',
+      'h2h-movers-cook-il',
+      'reebie-storage-moving-chicago-il',
+      'coleman-worldwide-chicago-il',
     ],
   },
 };

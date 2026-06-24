@@ -5,6 +5,7 @@ export const illinoisCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
   cook: { seat: 'Chicago', metro: 'chicago-metro-il' },
+  dupage: { seat: 'Wheaton', metro: 'chicago-metro-west-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

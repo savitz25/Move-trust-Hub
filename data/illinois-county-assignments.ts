@@ -23,6 +23,18 @@ const CURATED_IL_COUNTIES: Record<string, string[]> = {
     'alliance-moving-cook-il',
     'metro-movers-chicago-cook-il',
   ],
+  dupage: [
+    'two-men-and-a-truck-dupage-il',
+    'all-my-sons-dupage-il',
+    'schroeder-moving-dupage-il',
+    'college-hunks-dupage-il',
+    'new-city-moving-chicago-il',
+    'move-tastic-chicago-il',
+    'mid-west-moving-storage-chicago-il',
+    'h2h-movers-cook-il',
+    'reebie-storage-moving-chicago-il',
+    'coleman-worldwide-chicago-il',
+  ],
 };
 
 export const illinoisCountyMoverAssignments: CountyMoverAssignment[] =

@@ -28,6 +28,32 @@ export const illinoisCountyTestimonials: Record<string, CountyTestimonialEntry[]
       moveType: 'Single-family',
     },
   ],
+  dupage: [
+    {
+      quote:
+        'Two Men and a Truck Naperville handled our Wheaton relocation professionally — on time, efficient, and extremely careful throughout DuPage County.',
+      name: 'Jennifer L.',
+      location: 'Wheaton, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+    {
+      quote:
+        'Schroeder Moving Service confirmed DuPage County coverage and delivered excellent suburban service — best local moving service in DuPage with transparent pricing.',
+      name: 'Michael R.',
+      location: 'Naperville, IL',
+      rating: 5,
+      moveType: 'Townhome',
+    },
+    {
+      quote:
+        'All My Sons Western Suburbs navigated I-355 traffic smartly and moved our Downers Grove home efficiently — professional crew with careful handling.',
+      name: 'Karen S.',
+      location: 'Downers Grove, IL',
+      rating: 5,
+      moveType: 'Single-family',
+    },
+  ],
 };
 
 export function getIllinoisCountyTestimonials(
