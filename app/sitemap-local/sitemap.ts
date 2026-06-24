@@ -251,7 +251,7 @@ const NV_HIGH_TRAFFIC_COUNTIES = new Set(['clark', 'washoe']);
 
 const AZ_HIGH_TRAFFIC_COUNTIES = new Set(['maricopa', 'pima']);
 
-const NM_HIGH_TRAFFIC_COUNTIES = new Set(['bernalillo', 'doa-ana']);
+const NM_HIGH_TRAFFIC_COUNTIES = new Set(['bernalillo']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',

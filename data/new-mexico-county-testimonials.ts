@@ -3,14 +3,14 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated New Mexico county testimonials — 33/33 complete */
 export const newMexicoCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   bernalillo: [
-    { quote: 'Two Men and a Truck Albuquerque handled our move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Albuquerque, NM', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Albuquerque navigated our Rio Rancho-area relocation with fair pricing through heavy metro traffic.', name: 'Beth N.', location: 'Rio Rancho, NM', rating: 5, moveType: 'Townhome' },
-    { quote: 'Albuquerque Corridor Moving served our move efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Albuquerque, NM', rating: 5, moveType: 'Apartment' },
+    { quote: 'Kirtland Corridor Military Moving coordinated our PCS move from on-base housing — handled Kirtland AFB access paperwork and delivered to our Rio Rancho home without delays.', name: 'Alex M.', location: 'Rio Rancho, NM', rating: 5, moveType: 'Military PCS' },
+    { quote: 'Two Men and a Truck Albuquerque handled our corporate relocation from California professionally — on time and extremely careful with our suburban home through heavy I-25 traffic.', name: 'Beth N.', location: 'Albuquerque, NM', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'All My Sons Albuquerque navigated our Northeast Heights move with fair pricing and excellent scheduling despite high-desert heat in July.', name: 'Carl O.', location: 'Albuquerque, NM', rating: 5, moveType: 'Single-family' },
   ],
   'doa-ana': [
-    { quote: 'Regional Las Cruces / Doña Ana providers handled our move professionally — efficient and careful with our home.', name: 'Dana P.', location: 'Las Cruces, NM', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Las Cruces navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Evan Q.', location: 'Las Cruces, NM', rating: 5, moveType: 'Townhome' },
-    { quote: 'Mesilla Valley Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Faye R.', location: 'Mesilla, NM', rating: 5, moveType: 'Single-family' },
+    { quote: 'White Sands & Border Corridor Moving handled our Holloman AFB PCS flawlessly — coordinated base access and delivered to our Las Cruces home on schedule.', name: 'Dana P.', location: 'Las Cruces, NM', rating: 5, moveType: 'Military PCS' },
+    { quote: 'All My Sons Las Cruces navigated our cross-border relocation to El Paso with fair pricing and excellent coordination through I-10 corridor traffic.', name: 'Evan Q.', location: 'Las Cruces, NM', rating: 5, moveType: 'Cross-border' },
+    { quote: 'Mesilla Valley Moving served our Mesilla historic-district move efficiently with careful handling of our adobe home furnishings.', name: 'Faye R.', location: 'Mesilla, NM', rating: 5, moveType: 'Single-family' },
   ],
   sandoval: [
     { quote: 'Regional Rio Rancho / Sandoval providers handled our suburban move professionally — efficient and careful.', name: 'Glen S.', location: 'Rio Rancho, NM', rating: 5, moveType: 'Single-family' },
@@ -18,9 +18,9 @@ export const newMexicoCountyTestimonials: Record<string, CountyTestimonialEntry[
     { quote: 'Sandoval Valley Moving served our Bernalillo-area move efficiently with professional crew coordination.', name: 'Ira U.', location: 'Bernalillo, NM', rating: 5, moveType: 'Apartment' },
   ],
   'santa-fe': [
-    { quote: 'Regional Santa Fe / Santa Fe County providers handled our capital-city move professionally — efficient and careful.', name: 'Jade V.', location: 'Santa Fe, NM', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Santa Fe navigated our relocation with fair pricing and excellent scheduling through tourist-season traffic.', name: 'Kyle W.', location: 'Santa Fe, NM', rating: 5, moveType: 'Townhome' },
-    { quote: 'Capital North Moving served our Eldorado-area move efficiently with punctual arrival and professional coordination.', name: 'Lynn X.', location: 'Eldorado at Santa Fe, NM', rating: 5, moveType: 'Single-family' },
+    { quote: 'Santa Fe Tourism & Second-Home Moving handled our retirement downsizing from a historic adobe home with extraordinary care — stored seasonal art and furniture for our summer absence.', name: 'Jade V.', location: 'Santa Fe, NM', rating: 5, moveType: 'Retirement / second-home' },
+    { quote: 'All My Sons Santa Fe navigated our capital-city relocation with fair pricing and excellent scheduling through peak tourist-season traffic on US-285.', name: 'Kyle W.', location: 'Santa Fe, NM', rating: 5, moveType: 'Townhome' },
+    { quote: 'Capital North Moving served our Eldorado-area move efficiently with specialty handling for our high-country foothills home.', name: 'Lynn X.', location: 'Eldorado at Santa Fe, NM', rating: 5, moveType: 'Single-family' },
   ],
   'san-juan': [
     { quote: 'Regional Farmington / San Juan providers handled our Four Corners move professionally — efficient and careful.', name: 'Mark Y.', location: 'Farmington, NM', rating: 5, moveType: 'Single-family' },

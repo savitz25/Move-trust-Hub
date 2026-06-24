@@ -9,7 +9,7 @@ const NM_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'valencia', name: 'Valencia', seat: 'Los Lunas', href: '/local-movers/new-mexico/valencia', displayLabel: 'Valencia County, NM' },
     { slug: 'santa-fe', name: 'Santa Fe', seat: 'Santa Fe', href: '/local-movers/new-mexico/santa-fe', displayLabel: 'Santa Fe County, NM' },
     { slug: 'cibola', name: 'Cibola', seat: 'Grants', href: '/local-movers/new-mexico/cibola', displayLabel: 'Cibola County, NM' },
-    { slug: 'torrance', name: 'Torrance', seat: 'Estancia', href: '/local-movers/new-mexico/torrance', displayLabel: 'Torrance County, NM' },
+    { slug: 'las-animas', name: 'Las Animas', seat: 'Trinidad', href: '/local-movers/colorado/las-animas', displayLabel: 'Las Animas County, CO' },
   ],
   'doa-ana': [
     { slug: 'otero', name: 'Otero', seat: 'Alamogordo', href: '/local-movers/new-mexico/otero', displayLabel: 'Otero County, NM' },

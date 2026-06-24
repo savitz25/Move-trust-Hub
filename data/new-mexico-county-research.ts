@@ -10,32 +10,37 @@ export type CuratedCountyResearch = {
 export const newMexicoCountyResearch: Record<string, CuratedCountyResearch> = {
   bernalillo: {
     marketNotes:
-      'Bernalillo County is New Mexico’s most populous county with strong urban, suburban, and residential demand.',
+      'Bernalillo County anchors New Mexico’s Albuquerque metro — by far the state’s highest-value moving market. Corporate and Sandia National Labs relocations, Kirtland AFB military PCS moves, Rio Rancho suburban growth, and I-25/I-40 corridor logistics distinguish Bernalillo from rural New Mexico counties.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
       avgHourly: '$120–$180/hr for a 2-person crew',
-      note: 'Bernalillo County pricing reflects Albuquerque metro demand, I-25 and I-40 corridor traffic, and competition among full-service agents serving urban and suburban communities.',
+      note: 'Bernalillo County pricing reflects Albuquerque metro demand, I-25 and I-40 corridor traffic, Kirtland AFB-area military PCS volume, and competition among full-service agents serving urban and suburban communities.',
     },
     tips: [
-      'Verify coverage for Albuquerque and surrounding cities before booking.',
+      'Verify coverage for Albuquerque, Rio Rancho, and surrounding cities before booking.',
+      'Military PCS moves near Kirtland AFB require base access coordination — confirm mover credentials and clearance experience.',
+      'Sandia National Labs and corporate relocations may require security-cleared crews — confirm commercial move experience.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes.',
+      'High-desert heat and altitude may affect loading times — confirm early-morning scheduling when possible.',
+      'Confirm insurance for high-value suburban and foothills homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
   'doa-ana': {
     marketNotes:
-      'Doña Ana County is New Mexico’s second most populous county with strong residential demand.',
+      'Doña Ana County anchors southern New Mexico’s Las Cruces metro — a military and cross-border market distinct from Albuquerque. Holloman AFB and White Sands Missile Range PCS moves, Mesilla Valley agricultural communities, and El Paso, TX cross-border relocations distinguish Doña Ana from northern tourism markets.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
       avgHourly: '$115–$175/hr for a 2-person crew',
-      note: 'Doña Ana County pricing reflects Las Cruces metro demand, I-10 and I-25 corridor traffic, and competition among regional agents serving southern New Mexico communities.',
+      note: 'Doña Ana County pricing reflects Las Cruces metro demand, I-10 and I-25 corridor traffic, Holloman AFB military PCS volume, and cross-border hauls to El Paso, TX.',
     },
     tips: [
-      'Verify coverage for Las Cruces and surrounding cities before booking.',
+      'Verify coverage for Las Cruces, Mesilla, and surrounding communities before booking.',
+      'Military PCS moves near Holloman AFB and White Sands require base access coordination — confirm mover credentials.',
+      'Cross-border moves to El Paso, TX may require interstate FMCSA authority — confirm licensing and border timing.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
@@ -61,17 +66,18 @@ export const newMexicoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   'santa-fe': {
     marketNotes:
-      'Santa Fe County is the state capital county with strong governmental, tourism, and residential demand.',
+      'Santa Fe County is New Mexico’s capital and tourism hub — historic adobe homes, second-home and retirement moves, state-government relocations, and Los Alamos National Lab spillover distinguish Santa Fe from Albuquerque corporate growth and southern military corridors.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
       avgHourly: '$120–$180/hr for a 2-person crew',
-      note: 'Santa Fe County pricing reflects capital-city and tourism demand, US-84/285 corridor traffic, and competition among regional agents serving historic adobe homes and high-country communities.',
+      note: 'Santa Fe County pricing reflects capital-city and tourism demand, US-84/285 corridor traffic, historic adobe specialty handling, and competition among regional agents serving high-country and Eldorado communities.',
     },
     tips: [
-      'Verify coverage for Santa Fe and surrounding areas before booking.',
+      'Verify coverage for Santa Fe, Eldorado, and surrounding areas before booking.',
+      'Historic adobe and high-value homes require specialty handling — confirm insurance and adobe-move experience.',
+      'Tourism and second-home seasonal moves often need flexible scheduling and storage — confirm availability.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Historic adobe and high-value homes may require specialty handling — confirm insurance and experience.',
       'Book early for peak tourist seasons (June–October) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
@@ -231,7 +237,7 @@ export const newMexicoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   taos: {
     marketNotes:
-      'Taos County is a northern New Mexico ski-valley county with strong tourism and residential demand.',
+      'Taos County is northern New Mexico’s ski-valley and art-colony market — tourism, second-home, and retirement moves, Taos Ski Valley seasonal transitions, and high-country mountain-road logistics distinguish Taos from Albuquerque metro and southern border corridors.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',

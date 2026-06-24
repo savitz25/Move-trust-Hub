@@ -203,6 +203,9 @@ export function buildStateDescription(
   if (stateName === 'Arizona') {
     return `Find curated local movers in all 15 Arizona counties — up to 12 ranked companies in Maricopa County (Phoenix metro), 9–10 in Pima (Tucson), and 6–10 regional specialists in every county. Phoenix metro guides cover corporate growth, retirement/snowbird moves, and extreme heat logistics; Tucson guides cover university, Davis-Monthan AFB military PCS, and retirement moves; rural Arizona guides cover mining, border corridors, and long-distance regional hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'New Mexico') {
+    return `Find curated local movers in all 33 New Mexico counties — up to 11 ranked companies in Bernalillo County (Albuquerque metro), 8–9 in Santa Fe and Doña Ana (Las Cruces), and 5–7 regional specialists in every county. Albuquerque guides cover corporate, Kirtland AFB military PCS, and suburban moves; Santa Fe and Taos guides cover tourism, second-home, and retirement moves; southern New Mexico guides cover border and military corridors; rural counties emphasize long-distance hauls and remote logistics for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

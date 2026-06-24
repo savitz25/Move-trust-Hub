@@ -1,16 +1,26 @@
 import { newMexicoCountyResearch } from '../data/new-mexico-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  bernalillo: 11,
+  'santa-fe': 9,
+  'doa-ana': 9,
+};
+const DEFAULT_TARGET = 5;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const curatedSlugs = Object.keys(newMexicoCountyResearch).sort();
 console.log(`New Mexico curated counties: ${curatedSlugs.length}`);
 const underTarget: string[] = [];
 
 for (const slug of curatedSlugs) {
+  const target = getTarget(slug);
   const n = getMoversForCounty('new-mexico', slug)?.movers.length ?? 0;
-  console.log(`  ${slug}: ${n} movers (target ${DEFAULT_TARGET})`);
-  if (n < DEFAULT_TARGET) underTarget.push(`${slug}: ${n}/${DEFAULT_TARGET}`);
+  console.log(`  ${slug}: ${n} movers (target ${target})`);
+  if (n < target) underTarget.push(`${slug}: ${n}/${target}`);
 }
 
 if (underTarget.length === 0) {

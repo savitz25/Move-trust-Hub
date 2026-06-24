@@ -13,6 +13,7 @@ const CURATED_NM_COUNTIES: Record<string, string[]> = {
     'duke-city-moving-bernalillo-nm',
     'hercules-movers-albuquerque-nm',
     'krupp-moving-albuquerque-nm',
+    'kirtland-military-moving-bernalillo-nm',
   ],
   'doa-ana': [
     'regional-donaana-nm-movers',
@@ -23,8 +24,7 @@ const CURATED_NM_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-las-cruces-nm',
     'las-cruces-corridor-moving-doa-ana-nm',
     'mesilla-valley-moving-doa-ana-nm',
-    'hercules-movers-las-cruces-nm',
-    'krupp-moving-las-cruces-nm',
+    'white-sands-border-moving-doa-ana-nm',
   ],
   sandoval: [
     'regional-sandoval-nm-movers',
@@ -47,8 +47,7 @@ const CURATED_NM_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-santa-fe-nm',
     'santa-fe-corridor-moving-santa-fe-nm',
     'capital-north-moving-santa-fe-nm',
-    'hercules-movers-santa-fe-nm',
-    'krupp-moving-santa-fe-nm',
+    'santafe-tourism-second-home-moving-santa-fe-nm',
   ],
   'san-juan': [
     'regional-sanjuan-nm-movers',

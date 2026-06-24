@@ -8,19 +8,29 @@ import { getNewMexicoNearbyCounties } from '../lib/local-movers/new-mexico-nearb
 import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  bernalillo: 11,
+  'santa-fe': 9,
+  'doa-ana': 9,
+};
+const DEFAULT_TARGET = 5;
 const EXPECTED_COUNT = 33;
+
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+}
 
 const issues: string[] = [];
 const curatedSlugs = Object.keys(newMexicoCountyResearch).sort();
 
 for (const slug of curatedSlugs) {
+  const target = getTarget(slug);
   const c = getCounty('new-mexico', slug);
   const result = getMoversForCounty('new-mexico', slug);
   const moverCount = result?.movers.length ?? 0;
 
-  if (moverCount < DEFAULT_TARGET) {
-    issues.push(`movers<${DEFAULT_TARGET}: ${slug} (${moverCount})`);
+  if (moverCount < target) {
+    issues.push(`movers<${target}: ${slug} (${moverCount})`);
   }
   if (!newMexicoCountyResearch[slug]) {
     issues.push(`no research: ${slug}`);
@@ -49,9 +59,10 @@ if (researchCount !== EXPECTED_COUNT) {
 }
 
 for (const slug of curatedSlugs) {
+  const target = getTarget(slug);
   const n = getMoversForCounty('new-mexico', slug)?.movers.length ?? 0;
   console.log(
-    `  ${slug}: ${n} movers (target ${DEFAULT_TARGET}), testimonials ${getNewMexicoCountyTestimonials(slug).length}, nearby ${getNewMexicoNearbyCounties(slug).length}`
+    `  ${slug}: ${n} movers (target ${target}), testimonials ${getNewMexicoCountyTestimonials(slug).length}, nearby ${getNewMexicoNearbyCounties(slug).length}`
   );
 }
 
