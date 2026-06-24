@@ -16,6 +16,13 @@ const IL_COUNTY_NEIGHBORS: Record<string, string[]> = {
   lake: ['cook', 'mchenry'],
   will: ['cook', 'dupage', 'kendall', 'grundy', 'kankakee'],
   kane: ['cook', 'dupage', 'mchenry', 'dekalb', 'kendall'],
+  mchenry: ['lake', 'kane', 'boone', 'dekalb'],
+  winnebago: ['boone', 'ogle', 'stephenson', 'mchenry', 'dekalb'],
+  madison: ['st-clair', 'bond', 'macoupin', 'jersey'],
+  'st-clair': ['madison', 'clinton', 'monroe', 'randolph', 'washington'],
+  champaign: ['piatt', 'douglas', 'vermilion', 'ford', 'mclean'],
+  sangamon: ['menard', 'logan', 'christian', 'macoupin', 'montgomery'],
+  peoria: ['tazewell', 'woodford', 'marshall', 'stark', 'fulton'],
 };
 
 export function getIllinoisNearbyCounties(

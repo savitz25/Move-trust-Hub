@@ -9,6 +9,13 @@ export const illinoisCountyOverrides: Partial<
   lake: { seat: 'Waukegan', metro: 'chicago-metro-north-il' },
   will: { seat: 'Joliet', metro: 'chicago-metro-southwest-il' },
   kane: { seat: 'Geneva', metro: 'chicago-metro-west-il' },
+  mchenry: { seat: 'Woodstock', metro: 'chicago-metro-northwest-il' },
+  winnebago: { seat: 'Rockford', metro: 'rockford-metro-il' },
+  madison: { seat: 'Edwardsville', metro: 'st-louis-metro-il' },
+  'st-clair': { seat: 'Belleville', metro: 'st-louis-metro-il' },
+  champaign: { seat: 'Urbana', metro: 'champaign-urbana-metro-il' },
+  sangamon: { seat: 'Springfield', metro: 'springfield-metro-il' },
+  peoria: { seat: 'Peoria', metro: 'peoria-metro-il' },
 };
 
 export function applyIllinoisCountyOverrides(county: LocalCounty): LocalCounty {

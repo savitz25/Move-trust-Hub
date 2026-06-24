@@ -98,6 +98,125 @@ export const illinoisCountyResearch: Record<string, CuratedCountyResearch> = {
       'Confirm travel fees and crew routing for moves between Aurora, Elgin, and Geneva corridor towns.',
     ],
   },
+  mchenry: {
+    marketNotes:
+      'McHenry County is a growing suburban county northwest of Chicago with strong residential demand across Crystal Lake, McHenry, Woodstock, and surrounding communities.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,200–$7,200+',
+      avgHourly: '$120–$180/hr for a 2-person crew',
+      note: 'McHenry County pricing reflects I-90/I-94 northwest corridor traffic, lake-adjacent properties, and demand in Crystal Lake and Woodstock commuter towns.',
+    },
+    tips: [
+      'Verify coverage for Crystal Lake, McHenry, Woodstock, and surrounding areas before booking.',
+      'Heavy suburban and interstate traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  winnebago: {
+    marketNotes:
+      'Winnebago County is the core of the Rockford metropolitan area with strong manufacturing and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$110–$165/hr for a 2-person crew',
+      note: 'Winnebago County pricing reflects Rockford regional traffic, manufacturing-corridor relocations, and competition among north-central Illinois full-service movers.',
+    },
+    tips: [
+      'Verify coverage for Rockford and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and tornado/flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  madison: {
+    marketNotes:
+      'Madison County is a major county on the Illinois side of the St. Louis metropolitan area with strong industrial and residential demand across Edwardsville, Alton, Granite City, and Collinsville.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'Madison County pricing reflects bi-state St. Louis metro traffic, Mississippi River corridor communities, and competition among Illinois-side and cross-border full-service movers.',
+    },
+    tips: [
+      'Verify coverage for Edwardsville, Alton, Granite City, and Collinsville areas before booking.',
+      'St. Louis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'st-clair': {
+    marketNotes:
+      'St. Clair County is a major county on the Illinois side of the St. Louis metropolitan area with strong industrial and residential demand across Belleville, O’Fallon, East St. Louis, and Shiloh.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$170/hr for a 2-person crew',
+      note: 'St. Clair County pricing reflects bi-state St. Louis metro traffic, Scott Air Force Base-adjacent relocations, and competition among Illinois-side full-service movers.',
+    },
+    tips: [
+      'Verify coverage for Belleville, O’Fallon, East St. Louis, and Shiloh areas before booking.',
+      'St. Louis-area traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes and flood coverage before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  champaign: {
+    marketNotes:
+      'Champaign County is anchored by the University of Illinois with strong educational and residential demand across Champaign, Urbana, and surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Champaign County pricing reflects university move-in/out windows, student housing turnover, and regional I-57/I-74 corridor traffic.',
+    },
+    tips: [
+      'Verify coverage for Champaign, Urbana, and surrounding areas before booking.',
+      'University traffic impacts scheduling — confirm crew arrival windows around campus move periods.',
+      'Confirm insurance for high-value homes and student-related moves before booking.',
+      'Book early for peak seasons (May–September) and August student move-in.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sangamon: {
+    marketNotes:
+      'Sangamon County is the core of the Springfield metropolitan area with strong governmental and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$155/hr for a 2-person crew',
+      note: 'Sangamon County pricing reflects state-government relocation cycles, I-55 corridor traffic, and central Illinois regional mover competition.',
+    },
+    tips: [
+      'Verify coverage for Springfield and surrounding areas before booking.',
+      'Governmental and legislative session traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  peoria: {
+    marketNotes:
+      'Peoria County is the core of the Peoria metropolitan area with strong healthcare, manufacturing, and residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Peoria County pricing reflects I-74 corridor traffic, healthcare-sector relocations, and central Illinois regional mover competition.',
+    },
+    tips: [
+      'Verify coverage for Peoria and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease turnover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
 };
 
 export function getIllinoisCountyResearch(
