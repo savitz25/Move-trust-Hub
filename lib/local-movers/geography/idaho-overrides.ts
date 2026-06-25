@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Idaho counties (batch 1: 21/44) */
+/** Seat and metro overrides for hand-curated Idaho counties (batch 1–2: 44/44) */
 export const idahoCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -25,6 +25,29 @@ export const idahoCountyOverrides: Partial<
   gem: { seat: 'Emmett', metro: 'gem-metro-id' },
   idaho: { seat: 'Grangeville', metro: 'idaho-metro-id' },
   gooding: { seat: 'Gooding', metro: 'gooding-metro-id' },
+  franklin: { seat: 'Preston', metro: 'franklin-metro-id' },
+  shoshone: { seat: 'Wallace', metro: 'shoshone-metro-id' },
+  boundary: { seat: 'Bonners Ferry', metro: 'boundary-metro-id' },
+  fremont: { seat: 'St. Anthony', metro: 'fremont-metro-id' },
+  teton: { seat: 'Driggs', metro: 'teton-metro-id' },
+  valley: { seat: 'Cascade', metro: 'valley-metro-id' },
+  owyhee: { seat: 'Murphy', metro: 'owyhee-metro-id' },
+  washington: { seat: 'Weiser', metro: 'washington-metro-id' },
+  benewah: { seat: 'St. Maries', metro: 'benewah-metro-id' },
+  clearwater: { seat: 'Orofino', metro: 'clearwater-metro-id' },
+  boise: { seat: 'Idaho City', metro: 'boise-metro-id' },
+  lemhi: { seat: 'Salmon', metro: 'lemhi-metro-id' },
+  power: { seat: 'American Falls', metro: 'power-metro-id' },
+  caribou: { seat: 'Soda Springs', metro: 'caribou-metro-id' },
+  'bear-lake': { seat: 'Paris', metro: 'bear-lake-metro-id' },
+  lincoln: { seat: 'Shoshone', metro: 'lincoln-metro-id' },
+  oneida: { seat: 'Malad City', metro: 'oneida-metro-id' },
+  adams: { seat: 'Council', metro: 'adams-metro-id' },
+  custer: { seat: 'Challis', metro: 'custer-metro-id' },
+  lewis: { seat: 'Nezperce', metro: 'lewis-metro-id' },
+  butte: { seat: 'Arco', metro: 'butte-metro-id' },
+  camas: { seat: 'Fairfield', metro: 'camas-metro-id' },
+  clark: { seat: 'Dubois', metro: 'clark-metro-id' },
 };
 
 export function applyIdahoCountyOverrides(county: LocalCounty): LocalCounty {

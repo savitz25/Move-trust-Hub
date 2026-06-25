@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Idaho curated county corridor links — batch 1: 21/44 */
+/** Idaho curated county corridor links — batch 1–2: 44/44 */
 const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   ada: [
     { slug: 'canyon', name: 'Canyon', seat: 'Caldwell', href: '/local-movers/idaho/canyon', displayLabel: 'Canyon County, ID' },
@@ -150,6 +150,148 @@ const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'camas', name: 'Camas', seat: 'Fairfield', href: '/local-movers/idaho/camas', displayLabel: 'Camas County, ID' },
     { slug: 'twin-falls', name: 'Twin Falls', seat: 'Twin Falls', href: '/local-movers/idaho/twin-falls', displayLabel: 'Twin Falls County, ID' },
     { slug: 'minidoka', name: 'Minidoka', seat: 'Rupert', href: '/local-movers/idaho/minidoka', displayLabel: 'Minidoka County, ID' },
+  ],
+  franklin: [
+    { slug: 'oneida', name: 'Oneida', seat: 'Malad City', href: '/local-movers/idaho/oneida', displayLabel: 'Oneida County, ID' },
+    { slug: 'bannock', name: 'Bannock', seat: 'Pocatello', href: '/local-movers/idaho/bannock', displayLabel: 'Bannock County, ID' },
+    { slug: 'bear-lake', name: 'Bear Lake', seat: 'Paris', href: '/local-movers/idaho/bear-lake', displayLabel: 'Bear Lake County, ID' },
+  ],
+  shoshone: [
+    { slug: 'benewah', name: 'Benewah', seat: 'St. Maries', href: '/local-movers/idaho/benewah', displayLabel: 'Benewah County, ID' },
+    { slug: 'kootenai', name: 'Kootenai', seat: "Coeur d'Alene", href: '/local-movers/idaho/kootenai', displayLabel: 'Kootenai County, ID' },
+    { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
+    { slug: 'clearwater', name: 'Clearwater', seat: 'Orofino', href: '/local-movers/idaho/clearwater', displayLabel: 'Clearwater County, ID' },
+  ],
+  boundary: [
+    { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
+    { slug: 'kootenai', name: 'Kootenai', seat: "Coeur d'Alene", href: '/local-movers/idaho/kootenai', displayLabel: 'Kootenai County, ID' },
+    { slug: 'benewah', name: 'Benewah', seat: 'St. Maries', href: '/local-movers/idaho/benewah', displayLabel: 'Benewah County, ID' },
+    { slug: 'shoshone', name: 'Shoshone', seat: 'Wallace', href: '/local-movers/idaho/shoshone', displayLabel: 'Shoshone County, ID' },
+  ],
+  fremont: [
+    { slug: 'clark', name: 'Clark', seat: 'Dubois', href: '/local-movers/idaho/clark', displayLabel: 'Clark County, ID' },
+    { slug: 'jefferson', name: 'Jefferson', seat: 'Rigby', href: '/local-movers/idaho/jefferson', displayLabel: 'Jefferson County, ID' },
+    { slug: 'madison', name: 'Madison', seat: 'Rexburg', href: '/local-movers/idaho/madison', displayLabel: 'Madison County, ID' },
+    { slug: 'teton', name: 'Teton', seat: 'Driggs', href: '/local-movers/idaho/teton', displayLabel: 'Teton County, ID' },
+  ],
+  teton: [
+    { slug: 'fremont', name: 'Fremont', seat: 'St. Anthony', href: '/local-movers/idaho/fremont', displayLabel: 'Fremont County, ID' },
+    { slug: 'madison', name: 'Madison', seat: 'Rexburg', href: '/local-movers/idaho/madison', displayLabel: 'Madison County, ID' },
+    { slug: 'bonneville', name: 'Bonneville', seat: 'Idaho Falls', href: '/local-movers/idaho/bonneville', displayLabel: 'Bonneville County, ID' },
+  ],
+  valley: [
+    { slug: 'adams', name: 'Adams', seat: 'Council', href: '/local-movers/idaho/adams', displayLabel: 'Adams County, ID' },
+    { slug: 'boise', name: 'Boise', seat: 'Idaho City', href: '/local-movers/idaho/boise', displayLabel: 'Boise County, ID' },
+    { slug: 'custer', name: 'Custer', seat: 'Challis', href: '/local-movers/idaho/custer', displayLabel: 'Custer County, ID' },
+    { slug: 'idaho', name: 'Idaho', seat: 'Grangeville', href: '/local-movers/idaho/idaho', displayLabel: 'Idaho County, ID' },
+    { slug: 'lemhi', name: 'Lemhi', seat: 'Salmon', href: '/local-movers/idaho/lemhi', displayLabel: 'Lemhi County, ID' },
+  ],
+  owyhee: [
+    { slug: 'ada', name: 'Ada', seat: 'Boise', href: '/local-movers/idaho/ada', displayLabel: 'Ada County, ID' },
+    { slug: 'canyon', name: 'Canyon', seat: 'Caldwell', href: '/local-movers/idaho/canyon', displayLabel: 'Canyon County, ID' },
+    { slug: 'elmore', name: 'Elmore', seat: 'Mountain Home', href: '/local-movers/idaho/elmore', displayLabel: 'Elmore County, ID' },
+    { slug: 'twin-falls', name: 'Twin Falls', seat: 'Twin Falls', href: '/local-movers/idaho/twin-falls', displayLabel: 'Twin Falls County, ID' },
+    { slug: 'cassia', name: 'Cassia', seat: 'Burley', href: '/local-movers/idaho/cassia', displayLabel: 'Cassia County, ID' },
+  ],
+  washington: [
+    { slug: 'adams', name: 'Adams', seat: 'Council', href: '/local-movers/idaho/adams', displayLabel: 'Adams County, ID' },
+    { slug: 'canyon', name: 'Canyon', seat: 'Caldwell', href: '/local-movers/idaho/canyon', displayLabel: 'Canyon County, ID' },
+    { slug: 'payette', name: 'Payette', seat: 'Payette', href: '/local-movers/idaho/payette', displayLabel: 'Payette County, ID' },
+  ],
+  benewah: [
+    { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
+    { slug: 'kootenai', name: 'Kootenai', seat: "Coeur d'Alene", href: '/local-movers/idaho/kootenai', displayLabel: 'Kootenai County, ID' },
+    { slug: 'shoshone', name: 'Shoshone', seat: 'Wallace', href: '/local-movers/idaho/shoshone', displayLabel: 'Shoshone County, ID' },
+  ],
+  clearwater: [
+    { slug: 'idaho', name: 'Idaho', seat: 'Grangeville', href: '/local-movers/idaho/idaho', displayLabel: 'Idaho County, ID' },
+    { slug: 'lewis', name: 'Lewis', seat: 'Nezperce', href: '/local-movers/idaho/lewis', displayLabel: 'Lewis County, ID' },
+    { slug: 'nez-perce', name: 'Nez Perce', seat: 'Lewiston', href: '/local-movers/idaho/nez-perce', displayLabel: 'Nez Perce County, ID' },
+    { slug: 'shoshone', name: 'Shoshone', seat: 'Wallace', href: '/local-movers/idaho/shoshone', displayLabel: 'Shoshone County, ID' },
+  ],
+  boise: [
+    { slug: 'ada', name: 'Ada', seat: 'Boise', href: '/local-movers/idaho/ada', displayLabel: 'Ada County, ID' },
+    { slug: 'custer', name: 'Custer', seat: 'Challis', href: '/local-movers/idaho/custer', displayLabel: 'Custer County, ID' },
+    { slug: 'elmore', name: 'Elmore', seat: 'Mountain Home', href: '/local-movers/idaho/elmore', displayLabel: 'Elmore County, ID' },
+    { slug: 'gem', name: 'Gem', seat: 'Emmett', href: '/local-movers/idaho/gem', displayLabel: 'Gem County, ID' },
+    { slug: 'valley', name: 'Valley', seat: 'Cascade', href: '/local-movers/idaho/valley', displayLabel: 'Valley County, ID' },
+  ],
+  lemhi: [
+    { slug: 'blaine', name: 'Blaine', seat: 'Hailey', href: '/local-movers/idaho/blaine', displayLabel: 'Blaine County, ID' },
+    { slug: 'butte', name: 'Butte', seat: 'Arco', href: '/local-movers/idaho/butte', displayLabel: 'Butte County, ID' },
+    { slug: 'custer', name: 'Custer', seat: 'Challis', href: '/local-movers/idaho/custer', displayLabel: 'Custer County, ID' },
+    { slug: 'idaho', name: 'Idaho', seat: 'Grangeville', href: '/local-movers/idaho/idaho', displayLabel: 'Idaho County, ID' },
+    { slug: 'valley', name: 'Valley', seat: 'Cascade', href: '/local-movers/idaho/valley', displayLabel: 'Valley County, ID' },
+  ],
+  power: [
+    { slug: 'bannock', name: 'Bannock', seat: 'Pocatello', href: '/local-movers/idaho/bannock', displayLabel: 'Bannock County, ID' },
+    { slug: 'bingham', name: 'Bingham', seat: 'Blackfoot', href: '/local-movers/idaho/bingham', displayLabel: 'Bingham County, ID' },
+    { slug: 'caribou', name: 'Caribou', seat: 'Soda Springs', href: '/local-movers/idaho/caribou', displayLabel: 'Caribou County, ID' },
+    { slug: 'cassia', name: 'Cassia', seat: 'Burley', href: '/local-movers/idaho/cassia', displayLabel: 'Cassia County, ID' },
+    { slug: 'minidoka', name: 'Minidoka', seat: 'Rupert', href: '/local-movers/idaho/minidoka', displayLabel: 'Minidoka County, ID' },
+  ],
+  caribou: [
+    { slug: 'bannock', name: 'Bannock', seat: 'Pocatello', href: '/local-movers/idaho/bannock', displayLabel: 'Bannock County, ID' },
+    { slug: 'bear-lake', name: 'Bear Lake', seat: 'Paris', href: '/local-movers/idaho/bear-lake', displayLabel: 'Bear Lake County, ID' },
+    { slug: 'bingham', name: 'Bingham', seat: 'Blackfoot', href: '/local-movers/idaho/bingham', displayLabel: 'Bingham County, ID' },
+    { slug: 'bonneville', name: 'Bonneville', seat: 'Idaho Falls', href: '/local-movers/idaho/bonneville', displayLabel: 'Bonneville County, ID' },
+    { slug: 'franklin', name: 'Franklin', seat: 'Preston', href: '/local-movers/idaho/franklin', displayLabel: 'Franklin County, ID' },
+  ],
+  'bear-lake': [
+    { slug: 'bannock', name: 'Bannock', seat: 'Pocatello', href: '/local-movers/idaho/bannock', displayLabel: 'Bannock County, ID' },
+    { slug: 'caribou', name: 'Caribou', seat: 'Soda Springs', href: '/local-movers/idaho/caribou', displayLabel: 'Caribou County, ID' },
+    { slug: 'franklin', name: 'Franklin', seat: 'Preston', href: '/local-movers/idaho/franklin', displayLabel: 'Franklin County, ID' },
+    { slug: 'oneida', name: 'Oneida', seat: 'Malad City', href: '/local-movers/idaho/oneida', displayLabel: 'Oneida County, ID' },
+  ],
+  lincoln: [
+    { slug: 'blaine', name: 'Blaine', seat: 'Hailey', href: '/local-movers/idaho/blaine', displayLabel: 'Blaine County, ID' },
+    { slug: 'camas', name: 'Camas', seat: 'Fairfield', href: '/local-movers/idaho/camas', displayLabel: 'Camas County, ID' },
+    { slug: 'gooding', name: 'Gooding', seat: 'Gooding', href: '/local-movers/idaho/gooding', displayLabel: 'Gooding County, ID' },
+    { slug: 'jerome', name: 'Jerome', seat: 'Jerome', href: '/local-movers/idaho/jerome', displayLabel: 'Jerome County, ID' },
+    { slug: 'minidoka', name: 'Minidoka', seat: 'Rupert', href: '/local-movers/idaho/minidoka', displayLabel: 'Minidoka County, ID' },
+  ],
+  oneida: [
+    { slug: 'bannock', name: 'Bannock', seat: 'Pocatello', href: '/local-movers/idaho/bannock', displayLabel: 'Bannock County, ID' },
+    { slug: 'bear-lake', name: 'Bear Lake', seat: 'Paris', href: '/local-movers/idaho/bear-lake', displayLabel: 'Bear Lake County, ID' },
+    { slug: 'cassia', name: 'Cassia', seat: 'Burley', href: '/local-movers/idaho/cassia', displayLabel: 'Cassia County, ID' },
+    { slug: 'franklin', name: 'Franklin', seat: 'Preston', href: '/local-movers/idaho/franklin', displayLabel: 'Franklin County, ID' },
+    { slug: 'power', name: 'Power', seat: 'American Falls', href: '/local-movers/idaho/power', displayLabel: 'Power County, ID' },
+  ],
+  adams: [
+    { slug: 'idaho', name: 'Idaho', seat: 'Grangeville', href: '/local-movers/idaho/idaho', displayLabel: 'Idaho County, ID' },
+    { slug: 'valley', name: 'Valley', seat: 'Cascade', href: '/local-movers/idaho/valley', displayLabel: 'Valley County, ID' },
+    { slug: 'washington', name: 'Washington', seat: 'Weiser', href: '/local-movers/idaho/washington', displayLabel: 'Washington County, ID' },
+  ],
+  custer: [
+    { slug: 'blaine', name: 'Blaine', seat: 'Hailey', href: '/local-movers/idaho/blaine', displayLabel: 'Blaine County, ID' },
+    { slug: 'boise', name: 'Boise', seat: 'Idaho City', href: '/local-movers/idaho/boise', displayLabel: 'Boise County, ID' },
+    { slug: 'butte', name: 'Butte', seat: 'Arco', href: '/local-movers/idaho/butte', displayLabel: 'Butte County, ID' },
+    { slug: 'lemhi', name: 'Lemhi', seat: 'Salmon', href: '/local-movers/idaho/lemhi', displayLabel: 'Lemhi County, ID' },
+    { slug: 'valley', name: 'Valley', seat: 'Cascade', href: '/local-movers/idaho/valley', displayLabel: 'Valley County, ID' },
+  ],
+  lewis: [
+    { slug: 'clearwater', name: 'Clearwater', seat: 'Orofino', href: '/local-movers/idaho/clearwater', displayLabel: 'Clearwater County, ID' },
+    { slug: 'idaho', name: 'Idaho', seat: 'Grangeville', href: '/local-movers/idaho/idaho', displayLabel: 'Idaho County, ID' },
+    { slug: 'latah', name: 'Latah', seat: 'Moscow', href: '/local-movers/idaho/latah', displayLabel: 'Latah County, ID' },
+    { slug: 'nez-perce', name: 'Nez Perce', seat: 'Lewiston', href: '/local-movers/idaho/nez-perce', displayLabel: 'Nez Perce County, ID' },
+  ],
+  butte: [
+    { slug: 'blaine', name: 'Blaine', seat: 'Hailey', href: '/local-movers/idaho/blaine', displayLabel: 'Blaine County, ID' },
+    { slug: 'custer', name: 'Custer', seat: 'Challis', href: '/local-movers/idaho/custer', displayLabel: 'Custer County, ID' },
+    { slug: 'lemhi', name: 'Lemhi', seat: 'Salmon', href: '/local-movers/idaho/lemhi', displayLabel: 'Lemhi County, ID' },
+  ],
+  camas: [
+    { slug: 'blaine', name: 'Blaine', seat: 'Hailey', href: '/local-movers/idaho/blaine', displayLabel: 'Blaine County, ID' },
+    { slug: 'elmore', name: 'Elmore', seat: 'Mountain Home', href: '/local-movers/idaho/elmore', displayLabel: 'Elmore County, ID' },
+    { slug: 'gooding', name: 'Gooding', seat: 'Gooding', href: '/local-movers/idaho/gooding', displayLabel: 'Gooding County, ID' },
+    { slug: 'jerome', name: 'Jerome', seat: 'Jerome', href: '/local-movers/idaho/jerome', displayLabel: 'Jerome County, ID' },
+    { slug: 'twin-falls', name: 'Twin Falls', seat: 'Twin Falls', href: '/local-movers/idaho/twin-falls', displayLabel: 'Twin Falls County, ID' },
+  ],
+  clark: [
+    { slug: 'fremont', name: 'Fremont', seat: 'St. Anthony', href: '/local-movers/idaho/fremont', displayLabel: 'Fremont County, ID' },
+    { slug: 'jefferson', name: 'Jefferson', seat: 'Rigby', href: '/local-movers/idaho/jefferson', displayLabel: 'Jefferson County, ID' },
+    { slug: 'lemhi', name: 'Lemhi', seat: 'Salmon', href: '/local-movers/idaho/lemhi', displayLabel: 'Lemhi County, ID' },
+    { slug: 'madison', name: 'Madison', seat: 'Rexburg', href: '/local-movers/idaho/madison', displayLabel: 'Madison County, ID' },
   ],
 };
 

@@ -58,6 +58,7 @@ const SKIP_STATES = new Set([
   'new-mexico',
   'utah',
   'colorado',
+  'idaho',
 ]);
 
 const STATE_BY_FIPS: Record<

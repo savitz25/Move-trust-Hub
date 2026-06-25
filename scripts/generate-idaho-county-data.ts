@@ -1,11 +1,12 @@
 /**
- * Generates Idaho county curation files (batch 1: 21/44 counties).
+ * Generates Idaho county curation files (batch 1–2: 44/44 counties).
  * Run: npx tsx scripts/generate-idaho-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
+const EXPECTED_COUNT = 44;
 
 type CostTier = 'metro' | 'metro_boulder' | 'western_slope' | 'rural';
 
@@ -269,6 +270,7 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   shoshone: 'Shoshone County, ID',
   lewis: 'Lewis County, ID',
   elmore: 'Elmore County, ID',
+  butte: 'Butte County, ID',
 };
 
 const ID_NEIGHBORS: Record<string, string[]> = {
@@ -293,6 +295,29 @@ const ID_NEIGHBORS: Record<string, string[]> = {
   gem: ['ada', 'canyon', 'payette', 'boise', 'elmore'],
   idaho: ['clearwater', 'lewis', 'adams', 'valley', 'lemhi'],
   gooding: ['jerome', 'lincoln', 'camas', 'twin-falls', 'minidoka'],
+  franklin: ['oneida', 'bannock', 'bear-lake'],
+  shoshone: ['benewah', 'kootenai', 'bonner', 'clearwater'],
+  boundary: ['bonner', 'kootenai', 'benewah', 'shoshone'],
+  fremont: ['clark', 'jefferson', 'madison', 'teton'],
+  teton: ['fremont', 'madison', 'bonneville'],
+  valley: ['adams', 'boise', 'custer', 'idaho', 'lemhi'],
+  owyhee: ['ada', 'canyon', 'elmore', 'twin-falls', 'cassia'],
+  washington: ['adams', 'canyon', 'payette'],
+  benewah: ['bonner', 'kootenai', 'shoshone'],
+  clearwater: ['idaho', 'lewis', 'nez-perce', 'shoshone'],
+  boise: ['ada', 'custer', 'elmore', 'gem', 'valley'],
+  lemhi: ['blaine', 'butte', 'custer', 'idaho', 'valley'],
+  power: ['bannock', 'bingham', 'caribou', 'cassia', 'minidoka'],
+  caribou: ['bannock', 'bear-lake', 'bingham', 'bonneville', 'franklin'],
+  'bear-lake': ['bannock', 'caribou', 'franklin', 'oneida'],
+  lincoln: ['blaine', 'camas', 'gooding', 'jerome', 'minidoka'],
+  oneida: ['bannock', 'bear-lake', 'cassia', 'franklin', 'power'],
+  adams: ['idaho', 'valley', 'washington'],
+  custer: ['blaine', 'boise', 'butte', 'lemhi', 'valley'],
+  lewis: ['clearwater', 'idaho', 'latah', 'nez-perce'],
+  butte: ['blaine', 'custer', 'lemhi'],
+  camas: ['blaine', 'elmore', 'gooding', 'jerome', 'twin-falls'],
+  clark: ['fremont', 'jefferson', 'lemhi', 'madison'],
 };
 
 type CrossBorder = {
@@ -748,6 +773,466 @@ const COUNTIES: CountyDef[] = [
       'Gooding County pricing reflects Gooding-area demand, US-26 corridor traffic, and competition among regional agents serving southern Idaho communities.',
     tipVariant: 'rural',
   },
+  {
+    slug: 'franklin',
+    name: 'Franklin',
+    seat: 'Preston',
+    city: 'Preston',
+    metro: 'franklin-metro-id',
+    costTier: 'rural',
+    citySlug: 'preston',
+    regional1: 'preston-corridor',
+    regional2: 'cache-valley',
+    topId: 'regional-franklin-id-movers',
+    topName: 'Regional Preston / Franklin Providers',
+    regional1Name: 'Preston Corridor Moving',
+    regional2Name: 'Cache Valley Moving',
+    marketNotes:
+      'Franklin County is a southeastern Idaho county centered on Preston with residential and agricultural demand across Cache Valley corridor communities.',
+    costNote:
+      'Franklin County pricing reflects Preston-area demand, US-91 corridor traffic, and competition among regional agents serving southeastern Idaho communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'shoshone',
+    name: 'Shoshone',
+    seat: 'Wallace',
+    city: 'Wallace',
+    metro: 'shoshone-metro-id',
+    costTier: 'rural',
+    citySlug: 'wallace',
+    regional1: 'wallace-corridor',
+    regional2: 'silver-valley',
+    topId: 'regional-shoshone-id-movers',
+    topName: 'Regional Wallace / Shoshone County, ID Providers',
+    regional1Name: 'Wallace Corridor Moving',
+    regional2Name: 'Silver Valley Moving',
+    marketNotes:
+      'Shoshone County, ID is a northern Idaho mining and timber county centered on Wallace with residential demand across Silver Valley corridor communities — not to be confused with the city of Shoshone in Lincoln County.',
+    costNote:
+      'Shoshone County pricing reflects Wallace-area demand, I-90 corridor traffic, mountain-access logistics, and competition among regional agents serving northern Idaho Silver Valley communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'boundary',
+    name: 'Boundary',
+    seat: 'Bonners Ferry',
+    city: 'Bonners Ferry',
+    metro: 'boundary-metro-id',
+    costTier: 'rural',
+    citySlug: 'bonners-ferry',
+    regional1: 'bonners-ferry-corridor',
+    regional2: 'kootenai-north',
+    topId: 'regional-boundary-id-movers',
+    topName: 'Regional Bonners Ferry / Boundary Providers',
+    regional1Name: 'Bonners Ferry Corridor Moving',
+    regional2Name: 'Kootenai North Moving',
+    marketNotes:
+      'Boundary County is Idaho’s northern panhandle county centered on Bonners Ferry with residential, timber, and cross-border corridor demand.',
+    costNote:
+      'Boundary County pricing reflects Bonners Ferry-area demand, US-95 corridor traffic, and competition among regional agents serving Idaho panhandle communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'fremont',
+    name: 'Fremont',
+    seat: 'St. Anthony',
+    city: 'St. Anthony',
+    metro: 'fremont-metro-id',
+    costTier: 'rural',
+    citySlug: 'st-anthony',
+    regional1: 'st-anthony-corridor',
+    regional2: 'henrys-fork',
+    topId: 'regional-fremont-id-movers',
+    topName: 'Regional St. Anthony / Fremont County, ID Providers',
+    regional1Name: 'St. Anthony Corridor Moving',
+    regional2Name: "Henry's Fork Moving",
+    marketNotes:
+      'Fremont County, ID is an eastern Idaho county centered on St. Anthony with residential and agricultural demand across Henry’s Fork and Island Park corridor communities.',
+    costNote:
+      'Fremont County pricing reflects St. Anthony-area demand, US-20 corridor traffic, and competition among regional agents serving eastern upper valley communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'teton',
+    name: 'Teton',
+    seat: 'Driggs',
+    city: 'Driggs',
+    metro: 'teton-metro-id',
+    costTier: 'metro',
+    citySlug: 'driggs',
+    regional1: 'driggs-corridor',
+    regional2: 'teton-valley',
+    topId: 'regional-teton-id-movers',
+    topName: 'Regional Driggs / Teton Providers',
+    regional1Name: 'Driggs Corridor Moving',
+    regional2Name: 'Teton Valley Moving',
+    marketNotes:
+      'Teton County anchors Idaho’s Teton Valley resort gateway with strong residential, tourism, and second-home demand across Driggs, Victor, and mountain corridor communities.',
+    costNote:
+      'Teton County pricing reflects Driggs-area resort demand, Teton Pass corridor traffic, ski-season turnover, and competition among full-service agents serving Teton Valley communities.',
+    tipVariant: 'tourist_mountain',
+  },
+  {
+    slug: 'valley',
+    name: 'Valley',
+    seat: 'Cascade',
+    city: 'Cascade',
+    metro: 'valley-metro-id',
+    costTier: 'metro',
+    citySlug: 'cascade',
+    regional1: 'cascade-corridor',
+    regional2: 'mccall-area',
+    topId: 'regional-valley-id-movers',
+    topName: 'Regional Cascade / Valley Providers',
+    regional1Name: 'Cascade Corridor Moving',
+    regional2Name: 'McCall Area Moving',
+    marketNotes:
+      'Valley County is a central Idaho lakes and mountain county centered on Cascade with tourism, vacation-home, and residential demand across Payette Lakes corridor communities.',
+    costNote:
+      'Valley County pricing reflects Cascade-area demand, Payette Lakes tourism-season traffic, mountain-access logistics, and competition among full-service agents serving central Idaho resort communities.',
+    tipVariant: 'tourist_mountain',
+  },
+  {
+    slug: 'owyhee',
+    name: 'Owyhee',
+    seat: 'Murphy',
+    city: 'Murphy',
+    metro: 'owyhee-metro-id',
+    costTier: 'rural',
+    citySlug: 'murphy',
+    regional1: 'murphy-corridor',
+    regional2: 'owyhee-desert',
+    topId: 'regional-owyhee-id-movers',
+    topName: 'Regional Murphy / Owyhee Providers',
+    regional1Name: 'Murphy Corridor Moving',
+    regional2Name: 'Owyhee Desert Moving',
+    marketNotes:
+      'Owyhee County is Idaho’s vast southwestern high-desert county with ranch, agricultural, and remote residential demand across Murphy and Owyhee Mountains corridor communities.',
+    costNote:
+      'Owyhee County pricing reflects Murphy-area demand, long rural travel distances, and competition among regional agents serving southwestern Idaho high-desert communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'washington',
+    name: 'Washington',
+    seat: 'Weiser',
+    city: 'Weiser',
+    metro: 'washington-metro-id',
+    costTier: 'rural',
+    citySlug: 'weiser',
+    regional1: 'weiser-corridor',
+    regional2: 'treasure-valley-west-border',
+    topId: 'regional-washington-id-movers',
+    topName: 'Regional Weiser / Washington Providers',
+    regional1Name: 'Weiser Corridor Moving',
+    regional2Name: 'Treasure Valley West Border Moving',
+    marketNotes:
+      'Washington County, ID is a southwestern Idaho county centered on Weiser with residential and agricultural demand across US-95 corridor communities — not to be confused with Washington State.',
+    costNote:
+      'Washington County pricing reflects Weiser-area demand, US-95 corridor traffic, and competition among regional agents serving southwestern Idaho border communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'benewah',
+    name: 'Benewah',
+    seat: 'St. Maries',
+    city: 'St. Maries',
+    metro: 'benewah-metro-id',
+    costTier: 'rural',
+    citySlug: 'st-maries',
+    regional1: 'st-maries-corridor',
+    regional2: 'st-joe-river',
+    topId: 'regional-benewah-id-movers',
+    topName: 'Regional St. Maries / Benewah Providers',
+    regional1Name: 'St. Maries Corridor Moving',
+    regional2Name: 'St. Joe River Moving',
+    marketNotes:
+      'Benewah County is a northern Idaho county centered on St. Maries with residential and timber demand across St. Joe River corridor communities.',
+    costNote:
+      'Benewah County pricing reflects St. Maries-area demand, US-95 corridor traffic, and competition among regional agents serving northern Idaho panhandle communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'clearwater',
+    name: 'Clearwater',
+    seat: 'Orofino',
+    city: 'Orofino',
+    metro: 'clearwater-metro-id',
+    costTier: 'rural',
+    citySlug: 'orofino',
+    regional1: 'orofino-corridor',
+    regional2: 'clearwater-river',
+    topId: 'regional-clearwater-id-movers',
+    topName: 'Regional Orofino / Clearwater Providers',
+    regional1Name: 'Orofino Corridor Moving',
+    regional2Name: 'Clearwater River Moving',
+    marketNotes:
+      'Clearwater County is a north-central Idaho county centered on Orofino with residential, timber, and Clearwater River corridor demand.',
+    costNote:
+      'Clearwater County pricing reflects Orofino-area demand, US-12 corridor traffic, and competition among regional agents serving north-central Idaho river communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'boise',
+    name: 'Boise',
+    seat: 'Idaho City',
+    city: 'Idaho City',
+    metro: 'boise-metro-id',
+    costTier: 'rural',
+    citySlug: 'idaho-city',
+    regional1: 'idaho-city-corridor',
+    regional2: 'boise-basin',
+    topId: 'regional-boise-id-movers',
+    topName: 'Regional Idaho City / Boise County, ID Providers',
+    regional1Name: 'Idaho City Corridor Moving',
+    regional2Name: 'Boise Basin Moving',
+    marketNotes:
+      'Boise County, ID spans Idaho City and mountain basin communities north of the Treasure Valley — not to be confused with Ada County or the City of Boise.',
+    costNote:
+      'Boise County pricing reflects Idaho City-area demand, mountain-access logistics, Boise metro spillover, and competition among regional agents serving Treasure Valley fringe communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lemhi',
+    name: 'Lemhi',
+    seat: 'Salmon',
+    city: 'Salmon',
+    metro: 'lemhi-metro-id',
+    costTier: 'rural',
+    citySlug: 'salmon',
+    regional1: 'salmon-corridor',
+    regional2: 'salmon-river',
+    topId: 'regional-lemhi-id-movers',
+    topName: 'Regional Salmon / Lemhi Providers',
+    regional1Name: 'Salmon Corridor Moving',
+    regional2Name: 'Salmon River Moving',
+    marketNotes:
+      'Lemhi County is a central Idaho county centered on Salmon with ranch, timber, and Salmon River corridor demand across vast rural mountain communities.',
+    costNote:
+      'Lemhi County pricing reflects Salmon-area demand, US-93 corridor traffic, remote travel distances, and competition among regional agents serving central Idaho river communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'power',
+    name: 'Power',
+    seat: 'American Falls',
+    city: 'American Falls',
+    metro: 'power-metro-id',
+    costTier: 'rural',
+    citySlug: 'american-falls',
+    regional1: 'american-falls-corridor',
+    regional2: 'snake-river-southeast',
+    topId: 'regional-power-id-movers',
+    topName: 'Regional American Falls / Power Providers',
+    regional1Name: 'American Falls Corridor Moving',
+    regional2Name: 'Snake River Southeast Moving',
+    marketNotes:
+      'Power County is an eastern Idaho county centered on American Falls with residential and agricultural demand across Snake River plain communities.',
+    costNote:
+      'Power County pricing reflects American Falls-area demand, I-86 corridor traffic, and competition among regional agents serving southeastern Idaho agricultural communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'caribou',
+    name: 'Caribou',
+    seat: 'Soda Springs',
+    city: 'Soda Springs',
+    metro: 'caribou-metro-id',
+    costTier: 'rural',
+    citySlug: 'soda-springs',
+    regional1: 'soda-springs-corridor',
+    regional2: 'caribou-highlands',
+    topId: 'regional-caribou-id-movers',
+    topName: 'Regional Soda Springs / Caribou Providers',
+    regional1Name: 'Soda Springs Corridor Moving',
+    regional2Name: 'Caribou Highlands Moving',
+    marketNotes:
+      'Caribou County is an eastern Idaho county centered on Soda Springs with residential and agricultural demand across Caribou Highlands corridor communities.',
+    costNote:
+      'Caribou County pricing reflects Soda Springs-area demand, US-30 corridor traffic, and competition among regional agents serving eastern Idaho highland communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'bear-lake',
+    name: 'Bear Lake',
+    seat: 'Paris',
+    city: 'Paris',
+    metro: 'bear-lake-metro-id',
+    costTier: 'rural',
+    citySlug: 'paris',
+    regional1: 'paris-corridor',
+    regional2: 'bear-lake-valley',
+    topId: 'regional-bearlake-id-movers',
+    topName: 'Regional Paris / Bear Lake Providers',
+    regional1Name: 'Paris Corridor Moving',
+    regional2Name: 'Bear Lake Valley Moving',
+    marketNotes:
+      'Bear Lake County is a southeastern Idaho county centered on Paris with lakeside residential, tourism, and agricultural demand across Bear Lake shore communities.',
+    costNote:
+      'Bear Lake County pricing reflects Paris-area demand, US-89 corridor traffic, seasonal lakeside tourism, and competition among regional agents serving southeastern Idaho communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lincoln',
+    name: 'Lincoln',
+    seat: 'Shoshone',
+    city: 'Shoshone',
+    metro: 'lincoln-metro-id',
+    costTier: 'rural',
+    citySlug: 'shoshone',
+    regional1: 'shoshone-corridor',
+    regional2: 'magic-valley-north',
+    topId: 'regional-lincoln-id-movers',
+    topName: 'Regional Shoshone / Lincoln County, ID Providers',
+    regional1Name: 'Shoshone Corridor Moving',
+    regional2Name: 'Magic Valley North Moving',
+    marketNotes:
+      'Lincoln County, ID is a Magic Valley county centered on the city of Shoshone with residential and agricultural demand — not to be confused with Shoshone County in northern Idaho.',
+    costNote:
+      'Lincoln County pricing reflects Shoshone-area demand, US-26 corridor traffic, and competition among regional agents serving central Magic Valley communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'oneida',
+    name: 'Oneida',
+    seat: 'Malad City',
+    city: 'Malad City',
+    metro: 'oneida-metro-id',
+    costTier: 'rural',
+    citySlug: 'malad-city',
+    regional1: 'malad-city-corridor',
+    regional2: 'oneida-pass',
+    topId: 'regional-oneida-id-movers',
+    topName: 'Regional Malad City / Oneida Providers',
+    regional1Name: 'Malad City Corridor Moving',
+    regional2Name: 'Oneida Pass Moving',
+    marketNotes:
+      'Oneida County is a southeastern Idaho county centered on Malad City with residential and agricultural demand across Malad Valley corridor communities.',
+    costNote:
+      'Oneida County pricing reflects Malad City-area demand, US-91 corridor traffic, and competition among regional agents serving southeastern Idaho border communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'adams',
+    name: 'Adams',
+    seat: 'Council',
+    city: 'Council',
+    metro: 'adams-metro-id',
+    costTier: 'rural',
+    citySlug: 'council',
+    regional1: 'council-corridor',
+    regional2: 'weiser-river',
+    topId: 'regional-adams-id-movers',
+    topName: 'Regional Council / Adams Providers',
+    regional1Name: 'Council Corridor Moving',
+    regional2Name: 'Weiser River Moving',
+    marketNotes:
+      'Adams County, ID is a west-central Idaho county centered on Council with ranch and residential demand across Weiser River corridor communities — not to be confused with Adams County, Colorado.',
+    costNote:
+      'Adams County pricing reflects Council-area demand, US-95 corridor traffic, and competition among regional agents serving west-central Idaho rural communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'custer',
+    name: 'Custer',
+    seat: 'Challis',
+    city: 'Challis',
+    metro: 'custer-metro-id',
+    costTier: 'rural',
+    citySlug: 'challis',
+    regional1: 'challis-corridor',
+    regional2: 'salmon-river-east',
+    topId: 'regional-custer-id-movers',
+    topName: 'Regional Challis / Custer Providers',
+    regional1Name: 'Challis Corridor Moving',
+    regional2Name: 'Salmon River East Moving',
+    marketNotes:
+      'Custer County, ID is a vast central Idaho mountain county centered on Challis with ranch, mining, and remote residential demand — not to be confused with Custer County, Colorado.',
+    costNote:
+      'Custer County pricing reflects Challis-area demand, US-93 corridor traffic, remote mountain travel distances, and competition among regional agents serving central Idaho communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lewis',
+    name: 'Lewis',
+    seat: 'Nezperce',
+    city: 'Nezperce',
+    metro: 'lewis-metro-id',
+    costTier: 'rural',
+    citySlug: 'nezperce',
+    regional1: 'nezperce-corridor',
+    regional2: 'camas-prairie',
+    topId: 'regional-lewis-id-movers',
+    topName: 'Regional Nezperce / Lewis County, ID Providers',
+    regional1Name: 'Nezperce Corridor Moving',
+    regional2Name: 'Camas Prairie Moving',
+    marketNotes:
+      'Lewis County, ID is a north-central Idaho county centered on Nezperce with agricultural and residential demand across Camas Prairie corridor communities — not to be confused with Lewis County, Washington.',
+    costNote:
+      'Lewis County pricing reflects Nezperce-area demand, US-95 corridor traffic, and competition among regional agents serving north-central Idaho prairie communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'butte',
+    name: 'Butte',
+    seat: 'Arco',
+    city: 'Arco',
+    metro: 'butte-metro-id',
+    costTier: 'rural',
+    citySlug: 'arco',
+    regional1: 'arco-corridor',
+    regional2: 'craters-moon',
+    topId: 'regional-butte-id-movers',
+    topName: 'Regional Arco / Butte Providers',
+    regional1Name: 'Arco Corridor Moving',
+    regional2Name: 'Craters Moon Moving',
+    marketNotes:
+      'Butte County, ID is a remote central Idaho county centered on Arco with ranch, nuclear-site, and high-desert residential demand — not to be confused with Butte County, California.',
+    costNote:
+      'Butte County pricing reflects Arco-area demand, US-20/26 corridor traffic, remote travel distances, and competition among regional agents serving central Idaho high-desert communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'camas',
+    name: 'Camas',
+    seat: 'Fairfield',
+    city: 'Fairfield',
+    metro: 'camas-metro-id',
+    costTier: 'rural',
+    citySlug: 'fairfield',
+    regional1: 'fairfield-corridor',
+    regional2: 'camas-prairie-south',
+    topId: 'regional-camas-id-movers',
+    topName: 'Regional Fairfield / Camas Providers',
+    regional1Name: 'Fairfield Corridor Moving',
+    regional2Name: 'Camas Prairie South Moving',
+    marketNotes:
+      'Camas County is a small southern Idaho county centered on Fairfield with ranch and agricultural demand across Camas Prairie corridor communities.',
+    costNote:
+      'Camas County pricing reflects Fairfield-area demand, US-20 corridor traffic, and competition among regional agents serving southern Idaho prairie communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'clark',
+    name: 'Clark',
+    seat: 'Dubois',
+    city: 'Dubois',
+    metro: 'clark-metro-id',
+    costTier: 'rural',
+    citySlug: 'dubois',
+    regional1: 'dubois-corridor',
+    regional2: 'eastern-idaho-frontier',
+    topId: 'regional-clark-id-movers',
+    topName: 'Regional Dubois / Clark Providers',
+    regional1Name: 'Dubois Corridor Moving',
+    regional2Name: 'Eastern Idaho Frontier Moving',
+    marketNotes:
+      'Clark County, ID is a small eastern Idaho county centered on Dubois with ranch and agricultural demand across the northern upper valley — not to be confused with Clark County, Nevada.',
+    costNote:
+      'Clark County pricing reflects Dubois-area demand, US-20 corridor traffic, and competition among regional agents serving eastern Idaho rural communities.',
+    tipVariant: 'rural',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
@@ -869,30 +1354,8 @@ const TESTIMONIAL_NAMES = [
   'Vic E.',
 ];
 
-const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
-  boise: { name: 'Boise', seat: 'Idaho City' },
-  owyhee: { name: 'Owyhee', seat: 'Murphy' },
-  washington: { name: 'Washington', seat: 'Weiser' },
-  benewah: { name: 'Benewah', seat: 'St. Maries' },
-  shoshone: { name: 'Shoshone', seat: 'Wallace' },
-  boundary: { name: 'Boundary', seat: 'Bonners Ferry' },
-  caribou: { name: 'Caribou', seat: 'Soda Springs' },
-  teton: { name: 'Teton', seat: 'Driggs' },
-  power: { name: 'Power', seat: 'American Falls' },
-  'bear-lake': { name: 'Bear Lake', seat: 'Paris' },
-  oneida: { name: 'Oneida', seat: 'Malad City' },
-  clearwater: { name: 'Clearwater', seat: 'Orofino' },
-  lewis: { name: 'Lewis', seat: 'Nezperce' },
-  adams: { name: 'Adams', seat: 'Council' },
-  fremont: { name: 'Fremont', seat: 'St. Anthony' },
-  clark: { name: 'Clark', seat: 'Dubois' },
-  camas: { name: 'Camas', seat: 'Fairfield' },
-  custer: { name: 'Custer', seat: 'Challis' },
-  butte: { name: 'Butte', seat: 'Arco' },
-  lincoln: { name: 'Lincoln', seat: 'Shoshone' },
-  valley: { name: 'Valley', seat: 'Cascade' },
-  lemhi: { name: 'Lemhi', seat: 'Salmon' },
-};
+/** Fallback labels for Idaho counties not yet in COUNTIES (empty at 44/44 curation) */
+const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {};
 
 function buildBatch2Testimonials(c: CountyDef, idx: number): string {
   const n1 = TESTIMONIAL_NAMES[idx % TESTIMONIAL_NAMES.length];
@@ -985,7 +1448,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Idaho county research — batch 1: 21/44 */
+/** Hand-curated Idaho county research — batch 1–2: 44/44 */
 export const idahoCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -1013,7 +1476,7 @@ function genTestimonials(): string {
   );
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Idaho county testimonials — batch 1: 21/44 */
+/** Hand-curated Idaho county testimonials — batch 1–2: 44/44 */
 export const idahoCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${[...batch1, ...batch2].join('\n')}
 };
@@ -1035,7 +1498,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Idaho county mover lists — batch 1: 21/44 */
+/** Hand-curated Idaho county mover lists — batch 1–2: 44/44 */
 const CURATED_ID_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -1055,7 +1518,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Idaho counties (batch 1: 21/44) */
+/** Seat and metro overrides for hand-curated Idaho counties (batch 1–2: 44/44) */
 export const idahoCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -1076,7 +1539,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** Idaho curated county corridor links — batch 1: 21/44 */
+/** Idaho curated county corridor links — batch 1–2: 44/44 */
 const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };
@@ -1101,4 +1564,6 @@ for (const { path, content } of OUTPUTS) {
   console.log(`Wrote ${path}`);
 }
 
-console.log(`\nGenerated ${COUNTIES.length} Idaho counties across ${OUTPUTS.length} files.`);
+console.log(
+  `\nGenerated ${COUNTIES.length}/${EXPECTED_COUNT} Idaho counties across ${OUTPUTS.length} files.`
+);

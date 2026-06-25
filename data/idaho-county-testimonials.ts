@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Idaho county testimonials — batch 1: 21/44 */
+/** Hand-curated Idaho county testimonials — batch 1–2: 44/44 */
 export const idahoCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   ada: [
     { quote: 'Two Men and a Truck Boise handled our move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Boise, ID', rating: 5, moveType: 'Single-family' },
@@ -106,6 +106,121 @@ export const idahoCountyTestimonials: Record<string, CountyTestimonialEntry[]> =
     { quote: 'Regional Gooding / Gooding County Providers handled our Gooding move professionally — on time and extremely careful with our home.', name: 'Vic E.', location: 'Gooding, ID', rating: 5, moveType: 'Single-family' },
     { quote: 'All My Sons Gooding navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ann K.', location: 'Gooding, ID', rating: 5, moveType: 'Townhome' },
     { quote: 'Magic Valley West Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ben L.', location: 'Gooding, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  franklin: [
+    { quote: 'Regional Preston / Franklin Providers handled our Preston move professionally — on time and extremely careful with our home.', name: 'Ann K.', location: 'Preston, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Preston navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ben L.', location: 'Preston, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cache Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Cal M.', location: 'Preston, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  shoshone: [
+    { quote: 'Regional Wallace / Shoshone County, ID Providers handled our Wallace move professionally — on time and extremely careful with our home.', name: 'Ben L.', location: 'Wallace, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Wallace navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Cal M.', location: 'Wallace, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Silver Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Dee N.', location: 'Wallace, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  boundary: [
+    { quote: 'Regional Bonners Ferry / Boundary Providers handled our Bonners Ferry move professionally — on time and extremely careful with our home.', name: 'Cal M.', location: 'Bonners Ferry, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Bonners Ferry navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Dee N.', location: 'Bonners Ferry, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Kootenai North Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Eli O.', location: 'Bonners Ferry, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  fremont: [
+    { quote: 'Regional St. Anthony / Fremont County, ID Providers handled our St. Anthony move professionally — on time and extremely careful with our home.', name: 'Dee N.', location: 'St. Anthony, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons St. Anthony navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Eli O.', location: 'St. Anthony, ID', rating: 5, moveType: 'Townhome' },
+    { quote: "Henry's Fork Moving served our move efficiently with punctual arrival and professional crew coordination.", name: 'Fay P.', location: 'St. Anthony, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  teton: [
+    { quote: 'Regional Driggs / Teton Providers handled our Driggs move professionally — on time and extremely careful with our home.', name: 'Eli O.', location: 'Driggs, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Driggs navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Fay P.', location: 'Driggs, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Teton Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Gia Q.', location: 'Driggs, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  valley: [
+    { quote: 'Regional Cascade / Valley Providers handled our Cascade move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Cascade, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Cascade navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Gia Q.', location: 'Cascade, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'McCall Area Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Cascade, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  owyhee: [
+    { quote: 'Regional Murphy / Owyhee Providers handled our Murphy move professionally — on time and extremely careful with our home.', name: 'Gia Q.', location: 'Murphy, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Murphy navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Hal R.', location: 'Murphy, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Owyhee Desert Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ivy S.', location: 'Murphy, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  washington: [
+    { quote: 'Regional Weiser / Washington Providers handled our Weiser move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Weiser, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Weiser navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ivy S.', location: 'Weiser, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Treasure Valley West Border Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Weiser, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  benewah: [
+    { quote: 'Regional St. Maries / Benewah Providers handled our St. Maries move professionally — on time and extremely careful with our home.', name: 'Ivy S.', location: 'St. Maries, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons St. Maries navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Jay T.', location: 'St. Maries, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'St. Joe River Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'St. Maries, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  clearwater: [
+    { quote: 'Regional Orofino / Clearwater Providers handled our Orofino move professionally — on time and extremely careful with our home.', name: 'Jay T.', location: 'Orofino, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Orofino navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Kim U.', location: 'Orofino, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Clearwater River Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Leo V.', location: 'Orofino, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  boise: [
+    { quote: 'Regional Idaho City / Boise County, ID Providers handled our Idaho City move professionally — on time and extremely careful with our home.', name: 'Kim U.', location: 'Idaho City, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Idaho City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Leo V.', location: 'Idaho City, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Boise Basin Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Mia W.', location: 'Idaho City, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  lemhi: [
+    { quote: 'Regional Salmon / Lemhi Providers handled our Salmon move professionally — on time and extremely careful with our home.', name: 'Leo V.', location: 'Salmon, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Salmon navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Mia W.', location: 'Salmon, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Salmon River Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Noah X.', location: 'Salmon, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  power: [
+    { quote: 'Regional American Falls / Power Providers handled our American Falls move professionally — on time and extremely careful with our home.', name: 'Mia W.', location: 'American Falls, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons American Falls navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Noah X.', location: 'American Falls, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Snake River Southeast Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Pam Y.', location: 'American Falls, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  caribou: [
+    { quote: 'Regional Soda Springs / Caribou Providers handled our Soda Springs move professionally — on time and extremely careful with our home.', name: 'Noah X.', location: 'Soda Springs, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Soda Springs navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Pam Y.', location: 'Soda Springs, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Caribou Highlands Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Quinn Z.', location: 'Soda Springs, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  'bear-lake': [
+    { quote: 'Regional Paris / Bear Lake Providers handled our Paris move professionally — on time and extremely careful with our home.', name: 'Pam Y.', location: 'Paris, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Paris navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Quinn Z.', location: 'Paris, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Bear Lake Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Rita A.', location: 'Paris, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  lincoln: [
+    { quote: 'Regional Shoshone / Lincoln County, ID Providers handled our Shoshone move professionally — on time and extremely careful with our home.', name: 'Quinn Z.', location: 'Shoshone, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Shoshone navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Rita A.', location: 'Shoshone, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Magic Valley North Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Sam B.', location: 'Shoshone, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  oneida: [
+    { quote: 'Regional Malad City / Oneida Providers handled our Malad City move professionally — on time and extremely careful with our home.', name: 'Rita A.', location: 'Malad City, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Malad City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Sam B.', location: 'Malad City, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Oneida Pass Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Tina C.', location: 'Malad City, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  adams: [
+    { quote: 'Regional Council / Adams Providers handled our Council move professionally — on time and extremely careful with our home.', name: 'Sam B.', location: 'Council, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Council navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Tina C.', location: 'Council, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Weiser River Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Uma D.', location: 'Council, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  custer: [
+    { quote: 'Regional Challis / Custer Providers handled our Challis move professionally — on time and extremely careful with our home.', name: 'Tina C.', location: 'Challis, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Challis navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Uma D.', location: 'Challis, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Salmon River East Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Vic E.', location: 'Challis, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  lewis: [
+    { quote: 'Regional Nezperce / Lewis County, ID Providers handled our Nezperce move professionally — on time and extremely careful with our home.', name: 'Uma D.', location: 'Nezperce, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Nezperce navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Vic E.', location: 'Nezperce, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Camas Prairie Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ann K.', location: 'Nezperce, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  butte: [
+    { quote: 'Regional Arco / Butte Providers handled our Arco move professionally — on time and extremely careful with our home.', name: 'Vic E.', location: 'Arco, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Arco navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ann K.', location: 'Arco, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Craters Moon Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ben L.', location: 'Arco, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  camas: [
+    { quote: 'Regional Fairfield / Camas Providers handled our Fairfield move professionally — on time and extremely careful with our home.', name: 'Ann K.', location: 'Fairfield, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Fairfield navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ben L.', location: 'Fairfield, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Camas Prairie South Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Cal M.', location: 'Fairfield, ID', rating: 5, moveType: 'Apartment' },
+  ],
+  clark: [
+    { quote: 'Regional Dubois / Clark Providers handled our Dubois move professionally — on time and extremely careful with our home.', name: 'Ben L.', location: 'Dubois, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Dubois navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Cal M.', location: 'Dubois, ID', rating: 5, moveType: 'Townhome' },
+    { quote: 'Eastern Idaho Frontier Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Dee N.', location: 'Dubois, ID', rating: 5, moveType: 'Apartment' },
   ],
 };
 

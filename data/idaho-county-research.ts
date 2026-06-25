@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Idaho county research — batch 1: 21/44 */
+/** Hand-curated Idaho county research — batch 1–2: 44/44 */
 export const idahoCountyResearch: Record<string, CuratedCountyResearch> = {
   ada: {
     marketNotes:
@@ -359,6 +359,397 @@ export const idahoCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for Gooding and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County is a southeastern Idaho county centered on Preston with residential and agricultural demand across Cache Valley corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Preston-area demand, US-91 corridor traffic, and competition among regional agents serving southeastern Idaho communities.',
+    },
+    tips: [
+      'Verify coverage for Preston and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  shoshone: {
+    marketNotes:
+      'Shoshone County, ID is a northern Idaho mining and timber county centered on Wallace with residential demand across Silver Valley corridor communities — not to be confused with the city of Shoshone in Lincoln County.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Shoshone County pricing reflects Wallace-area demand, I-90 corridor traffic, mountain-access logistics, and competition among regional agents serving northern Idaho Silver Valley communities.',
+    },
+    tips: [
+      'Verify coverage for Wallace and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boundary: {
+    marketNotes:
+      'Boundary County is Idaho’s northern panhandle county centered on Bonners Ferry with residential, timber, and cross-border corridor demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Boundary County pricing reflects Bonners Ferry-area demand, US-95 corridor traffic, and competition among regional agents serving Idaho panhandle communities.',
+    },
+    tips: [
+      'Verify coverage for Bonners Ferry and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fremont: {
+    marketNotes:
+      'Fremont County, ID is an eastern Idaho county centered on St. Anthony with residential and agricultural demand across Henry’s Fork and Island Park corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Fremont County pricing reflects St. Anthony-area demand, US-20 corridor traffic, and competition among regional agents serving eastern upper valley communities.',
+    },
+    tips: [
+      'Verify coverage for St. Anthony and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  teton: {
+    marketNotes:
+      'Teton County anchors Idaho’s Teton Valley resort gateway with strong residential, tourism, and second-home demand across Driggs, Victor, and mountain corridor communities.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Teton County pricing reflects Driggs-area resort demand, Teton Pass corridor traffic, ski-season turnover, and competition among full-service agents serving Teton Valley communities.',
+    },
+    tips: [
+      'Verify coverage for Driggs and surrounding areas before booking.',
+      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  valley: {
+    marketNotes:
+      'Valley County is a central Idaho lakes and mountain county centered on Cascade with tourism, vacation-home, and residential demand across Payette Lakes corridor communities.',
+    costs: {
+      studioRange: '$850–$1,700',
+      familyRange: '$3,000–$7,000+',
+      avgHourly: '$120–$185/hr for a 2-person crew',
+      note: 'Valley County pricing reflects Cascade-area demand, Payette Lakes tourism-season traffic, mountain-access logistics, and competition among full-service agents serving central Idaho resort communities.',
+    },
+    tips: [
+      'Verify coverage for Cascade and surrounding areas before booking.',
+      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  owyhee: {
+    marketNotes:
+      'Owyhee County is Idaho’s vast southwestern high-desert county with ranch, agricultural, and remote residential demand across Murphy and Owyhee Mountains corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Owyhee County pricing reflects Murphy-area demand, long rural travel distances, and competition among regional agents serving southwestern Idaho high-desert communities.',
+    },
+    tips: [
+      'Verify coverage for Murphy and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County, ID is a southwestern Idaho county centered on Weiser with residential and agricultural demand across US-95 corridor communities — not to be confused with Washington State.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Weiser-area demand, US-95 corridor traffic, and competition among regional agents serving southwestern Idaho border communities.',
+    },
+    tips: [
+      'Verify coverage for Weiser and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  benewah: {
+    marketNotes:
+      'Benewah County is a northern Idaho county centered on St. Maries with residential and timber demand across St. Joe River corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Benewah County pricing reflects St. Maries-area demand, US-95 corridor traffic, and competition among regional agents serving northern Idaho panhandle communities.',
+    },
+    tips: [
+      'Verify coverage for St. Maries and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clearwater: {
+    marketNotes:
+      'Clearwater County is a north-central Idaho county centered on Orofino with residential, timber, and Clearwater River corridor demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Clearwater County pricing reflects Orofino-area demand, US-12 corridor traffic, and competition among regional agents serving north-central Idaho river communities.',
+    },
+    tips: [
+      'Verify coverage for Orofino and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boise: {
+    marketNotes:
+      'Boise County, ID spans Idaho City and mountain basin communities north of the Treasure Valley — not to be confused with Ada County or the City of Boise.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Boise County pricing reflects Idaho City-area demand, mountain-access logistics, Boise metro spillover, and competition among regional agents serving Treasure Valley fringe communities.',
+    },
+    tips: [
+      'Verify coverage for Idaho City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lemhi: {
+    marketNotes:
+      'Lemhi County is a central Idaho county centered on Salmon with ranch, timber, and Salmon River corridor demand across vast rural mountain communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lemhi County pricing reflects Salmon-area demand, US-93 corridor traffic, remote travel distances, and competition among regional agents serving central Idaho river communities.',
+    },
+    tips: [
+      'Verify coverage for Salmon and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  power: {
+    marketNotes:
+      'Power County is an eastern Idaho county centered on American Falls with residential and agricultural demand across Snake River plain communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Power County pricing reflects American Falls-area demand, I-86 corridor traffic, and competition among regional agents serving southeastern Idaho agricultural communities.',
+    },
+    tips: [
+      'Verify coverage for American Falls and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  caribou: {
+    marketNotes:
+      'Caribou County is an eastern Idaho county centered on Soda Springs with residential and agricultural demand across Caribou Highlands corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Caribou County pricing reflects Soda Springs-area demand, US-30 corridor traffic, and competition among regional agents serving eastern Idaho highland communities.',
+    },
+    tips: [
+      'Verify coverage for Soda Springs and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'bear-lake': {
+    marketNotes:
+      'Bear Lake County is a southeastern Idaho county centered on Paris with lakeside residential, tourism, and agricultural demand across Bear Lake shore communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Bear Lake County pricing reflects Paris-area demand, US-89 corridor traffic, seasonal lakeside tourism, and competition among regional agents serving southeastern Idaho communities.',
+    },
+    tips: [
+      'Verify coverage for Paris and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      'Lincoln County, ID is a Magic Valley county centered on the city of Shoshone with residential and agricultural demand — not to be confused with Shoshone County in northern Idaho.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lincoln County pricing reflects Shoshone-area demand, US-26 corridor traffic, and competition among regional agents serving central Magic Valley communities.',
+    },
+    tips: [
+      'Verify coverage for Shoshone and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  oneida: {
+    marketNotes:
+      'Oneida County is a southeastern Idaho county centered on Malad City with residential and agricultural demand across Malad Valley corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Oneida County pricing reflects Malad City-area demand, US-91 corridor traffic, and competition among regional agents serving southeastern Idaho border communities.',
+    },
+    tips: [
+      'Verify coverage for Malad City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  adams: {
+    marketNotes:
+      'Adams County, ID is a west-central Idaho county centered on Council with ranch and residential demand across Weiser River corridor communities — not to be confused with Adams County, Colorado.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Adams County pricing reflects Council-area demand, US-95 corridor traffic, and competition among regional agents serving west-central Idaho rural communities.',
+    },
+    tips: [
+      'Verify coverage for Council and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  custer: {
+    marketNotes:
+      'Custer County, ID is a vast central Idaho mountain county centered on Challis with ranch, mining, and remote residential demand — not to be confused with Custer County, Colorado.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Custer County pricing reflects Challis-area demand, US-93 corridor traffic, remote mountain travel distances, and competition among regional agents serving central Idaho communities.',
+    },
+    tips: [
+      'Verify coverage for Challis and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lewis: {
+    marketNotes:
+      'Lewis County, ID is a north-central Idaho county centered on Nezperce with agricultural and residential demand across Camas Prairie corridor communities — not to be confused with Lewis County, Washington.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lewis County pricing reflects Nezperce-area demand, US-95 corridor traffic, and competition among regional agents serving north-central Idaho prairie communities.',
+    },
+    tips: [
+      'Verify coverage for Nezperce and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  butte: {
+    marketNotes:
+      'Butte County, ID is a remote central Idaho county centered on Arco with ranch, nuclear-site, and high-desert residential demand — not to be confused with Butte County, California.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Butte County pricing reflects Arco-area demand, US-20/26 corridor traffic, remote travel distances, and competition among regional agents serving central Idaho high-desert communities.',
+    },
+    tips: [
+      'Verify coverage for Arco and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  camas: {
+    marketNotes:
+      'Camas County is a small southern Idaho county centered on Fairfield with ranch and agricultural demand across Camas Prairie corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Camas County pricing reflects Fairfield-area demand, US-20 corridor traffic, and competition among regional agents serving southern Idaho prairie communities.',
+    },
+    tips: [
+      'Verify coverage for Fairfield and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clark: {
+    marketNotes:
+      'Clark County, ID is a small eastern Idaho county centered on Dubois with ranch and agricultural demand across the northern upper valley — not to be confused with Clark County, Nevada.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Clark County pricing reflects Dubois-area demand, US-20 corridor traffic, and competition among regional agents serving eastern Idaho rural communities.',
+    },
+    tips: [
+      'Verify coverage for Dubois and surrounding areas before booking.',
       'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
       'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
