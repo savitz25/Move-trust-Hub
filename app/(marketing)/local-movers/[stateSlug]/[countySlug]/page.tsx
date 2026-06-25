@@ -48,6 +48,7 @@ import {
   IDAHO_COUNTY_CONTENT_UPDATED,
   MONTANA_COUNTY_CONTENT_UPDATED,
   WYOMING_COUNTY_CONTENT_UPDATED,
+  NORTH_DAKOTA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -85,6 +86,7 @@ import { getColoradoCountyResearch } from '@/data/colorado-county-research';
 import { getIdahoCountyResearch } from '@/data/idaho-county-research';
 import { getMontanaCountyResearch } from '@/data/montana-county-research';
 import { getWyomingCountyResearch } from '@/data/wyoming-county-research';
+import { getNorthDakotaCountyResearch } from '@/data/north-dakota-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -134,6 +136,7 @@ import { getColoradoNearbyCounties } from '@/lib/local-movers/colorado-nearby';
 import { getIdahoNearbyCounties } from '@/lib/local-movers/idaho-nearby';
 import { getMontanaNearbyCounties } from '@/lib/local-movers/montana-nearby';
 import { getWyomingNearbyCounties } from '@/lib/local-movers/wyoming-nearby';
+import { getNorthDakotaNearbyCounties } from '@/lib/local-movers/north-dakota-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -335,7 +338,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                             : stateSlug === 'wyoming' &&
                                                                                                 getWyomingCountyResearch(countySlug)
                                                                                               ? getWyomingNearbyCounties(countySlug)
-                                                                                              : [];
+                                                                                              : stateSlug === 'north-dakota' &&
+                                                                                                  getNorthDakotaCountyResearch(countySlug)
+                                                                                                ? getNorthDakotaNearbyCounties(countySlug)
+                                                                                                : [];
 
   return (
     <>
@@ -584,7 +590,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                     : stateSlug === 'wyoming' &&
                                                                                                         getWyomingCountyResearch(countySlug)
                                                                                                       ? WYOMING_COUNTY_CONTENT_UPDATED
-                                                                                                      : undefined
+                                                                                                      : stateSlug === 'north-dakota' &&
+                                                                                                          getNorthDakotaCountyResearch(countySlug)
+                                                                                                        ? NORTH_DAKOTA_COUNTY_CONTENT_UPDATED
+                                                                                                        : undefined
           }
         />
 
