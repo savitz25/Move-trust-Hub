@@ -1,5 +1,12 @@
 import type { DestinationResourceLink } from '@/lib/destinations/types';
 
+export type FloridaCorridorCity = {
+  slug: string;
+  displayName: string;
+  zip: string;
+  tagline: string;
+};
+
 export type FloridaClusterContent = {
   h1: string;
   seo: {
@@ -10,27 +17,24 @@ export type FloridaClusterContent = {
   };
   heroSubheadline: string;
   introParagraphs: string[];
-  palmBeachCorridor: {
-    slug: string;
-    displayName: string;
-    zip: string;
-    tagline: string;
-  }[];
+  miamiDadeBrowardCorridor: FloridaCorridorCity[];
+  palmBeachCorridor: FloridaCorridorCity[];
   bodySections: { heading: string; paragraphs: string[] }[];
   resourceLinks: DestinationResourceLink[];
 };
 
 export const floridaClusterContent: FloridaClusterContent = {
-  h1: 'Moving to Florida: City Guides, Palm Beach Corridor Hubs & Trusted Movers',
+  h1: 'Moving to Florida: Miami-Dade, Broward & Palm Beach City Guides & Trusted Movers',
   seo: {
     title:
       'Moving to Florida (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
     description:
-      'Explore Florida inbound moving guides including Boca Raton, Delray Beach, Boynton Beach, Deerfield Beach, Jacksonville, Sarasota, and more. FMCSA-verified movers, free calculator, and transparent cost data. Independent directory.',
+      'Explore Florida inbound moving guides for Miami, Fort Lauderdale, Hollywood, Pompano Beach, Boca Raton, Delray Beach, and more. FMCSA-verified movers, free calculator, and transparent cost data. Independent directory.',
     keywords: [
       'moving to florida',
       'florida movers',
       'best cities to move to in florida 2026',
+      'miami dade broward movers',
       'palm beach county movers',
       'south florida relocation guide',
       'florida interstate moving costs',
@@ -40,9 +44,35 @@ export const floridaClusterContent: FloridaClusterContent = {
   heroSubheadline:
     'Florida remains the highest-volume Sunbelt inbound corridor in 2026 — drawing retirees, remote workers, and families from the Northeast, Midwest, and California. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting the Palm Beach County coastal corridor, northeast Florida around Jacksonville, or Gulf Coast markets like Sarasota and Naples, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting the Miami-Dade and Broward metro, the Palm Beach County coastal corridor, northeast Florida around Jacksonville, or Gulf Coast markets like Sarasota and Naples, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Florida moves involve unique logistics: snowbird-season scheduling, hurricane contingency planning, condo COI requirements, and gated-community shuttle trucks. Our city guides surface these factors so you can plan with confidence.',
-    'Start with our live Palm Beach County corridor guides below — four high-demand sub-city hubs spanning Boca Raton through Deerfield Beach — or browse additional Florida markets launching soon across the state.',
+    'Eight live South Florida hubs span the Miami-Dade / Broward corridor (Miami through Pompano Beach) and the Palm Beach County coast (Boca Raton through Deerfield Beach). Browse each city guide below or explore additional Florida markets launching soon.',
+  ],
+  miamiDadeBrowardCorridor: [
+    {
+      slug: 'miami',
+      displayName: 'Miami',
+      zip: '33101',
+      tagline: 'Urban coastal hub · Brickell · Miami Beach · international inbound',
+    },
+    {
+      slug: 'fort-lauderdale',
+      displayName: 'Fort Lauderdale',
+      zip: '33301',
+      tagline: 'Yachting capital · Las Olas · Intracoastal waterfront lifestyle',
+    },
+    {
+      slug: 'hollywood',
+      displayName: 'Hollywood',
+      zip: '33020',
+      tagline: 'Broadwalk beach living · family suburbs · ArtsPark district',
+    },
+    {
+      slug: 'pompano-beach',
+      displayName: 'Pompano Beach',
+      zip: '33060',
+      tagline: 'Affordable Broward beach · fishing pier · boating communities',
+    },
   ],
   palmBeachCorridor: [
     {
@@ -72,31 +102,43 @@ export const floridaClusterContent: FloridaClusterContent = {
   ],
   bodySections: [
     {
-      heading: 'Why the Palm Beach County corridor leads South Florida inbound volume',
+      heading: 'Why the Miami-Dade and Broward corridor drives urban South Florida inbound volume',
       paragraphs: [
-        'The Boca Raton–Delray Beach–Boynton Beach–Deerfield Beach corridor captures a wide spectrum of South Florida relocation intent: luxury downsizers in Boca, arts-and-culture households in Delray, value-seeking families in Boynton Beach, and boating-oriented residents in Deerfield Beach. All four cities share Palm Beach County infrastructure — top-rated healthcare, Palm Beach International Airport, and I-95 / Turnpike access — while offering distinct price points and lifestyle profiles.',
-        'Interstate moves into this corridor typically originate from New York, New Jersey, Massachusetts, Pennsylvania, Ohio, and Illinois. Snowbird season (October–April) tightens southbound carrier schedules and adds 10–20% to linehaul rates. Hurricane season (June–November) requires flexible delivery clauses in your bill of lading regardless of which city you choose.',
-        'Our four live city hubs include 2026 cost tables, calculator prefill by ZIP, Palm Beach and Broward county mover directories, and route links to our New York–Florida interstate guide. Each hub follows the same independent, transparent structure as our Myrtle Beach launch.',
+        'The Miami–Fort Lauderdale–Hollywood–Pompano Beach corridor captures the full spectrum of dense South Florida relocation intent: international professionals and Brickell high-rise households in Miami, yachting and Intracoastal lifestyles in Fort Lauderdale, family Broadwalk beach living in Hollywood, and affordable boating-community appeal in Pompano Beach. Miami-Dade and Broward counties share Fort Lauderdale-Hollywood International Airport, Port Everglades, and I-95 / Turnpike access while offering distinct urban-to-suburban price gradients.',
+        'Interstate moves into this corridor typically originate from New York, New Jersey, Massachusetts, Pennsylvania, California, and Illinois. Snowbird season (October–April) tightens southbound carrier schedules and adds 10–25% to linehaul rates. High-rise COI requirements, causeway traffic in Miami-Dade, and beach-condo elevator reservations in Broward are standard destination accessorials.',
+        'Our four Miami-Dade / Broward hubs include 2026 cost tables, calculator prefill by ZIP, county mover directories, and cross-links to the Palm Beach corridor and New York–Florida route guide.',
+      ],
+    },
+    {
+      heading: 'Why the Palm Beach County corridor leads luxury and retiree inbound volume',
+      paragraphs: [
+        'The Boca Raton–Delray Beach–Boynton Beach–Deerfield Beach corridor captures luxury downsizers, arts-district households, value-seeking families, and boating-oriented residents along Palm Beach County\'s coast. All four cities share Palm Beach International Airport and I-95 access while offering distinct price points from Boca\'s luxury towers to Boynton\'s value market.',
+        'Interstate moves into Palm Beach County share the same snowbird and hurricane-season dynamics as Broward and Miami-Dade. Luxury high-rise protocols in Boca Raton and Atlantic Avenue logistics in Delray Beach are the primary destination cost drivers beyond base linehaul.',
       ],
     },
     {
       heading: 'More Florida destination guides launching soon',
       paragraphs: [
-        'Beyond the Palm Beach corridor, our Florida cluster will expand to Jacksonville, Sarasota, Naples, Ocala, St. Augustine, and Wildwood — each with county-level mover coverage, cost tables, and calculator embeds. Register for quotes through any live hub and your request is attributed to the destination market for accurate carrier matching.',
+        'Beyond South Florida, our Florida cluster will expand to Jacksonville, Sarasota, Naples, Ocala, St. Augustine, and Wildwood — each with county-level mover coverage, cost tables, and calculator embeds. Register for quotes through any live hub and your request is attributed to the destination market for accurate carrier matching.',
         'For statewide research, browse our Florida local movers map with 67 county directories, or use the national compare tool to evaluate FMCSA-licensed interstate carriers before requesting matched quotes to your Florida destination.',
       ],
     },
   ],
   resourceLinks: [
     {
-      title: 'Browse Palm Beach County local movers',
-      description: '10+ vetted companies with ratings, services, and luxury-move experience.',
-      href: '/local-movers/florida/palm-beach',
+      title: 'Browse Miami-Dade County local movers',
+      description: 'Vetted companies with high-rise, luxury, and urban move experience.',
+      href: '/local-movers/florida/miami-dade',
     },
     {
       title: 'Browse Broward County local movers',
-      description: 'Pompano Beach, Fort Lauderdale, and Deerfield Beach–adjacent carriers.',
+      description: 'Fort Lauderdale, Hollywood, Pompano Beach, and coastal Broward carriers.',
       href: '/local-movers/florida/broward',
+    },
+    {
+      title: 'Browse Palm Beach County local movers',
+      description: '10+ vetted companies with ratings, services, and luxury-move experience.',
+      href: '/local-movers/florida/palm-beach',
     },
     {
       title: 'New York to Florida route guide',

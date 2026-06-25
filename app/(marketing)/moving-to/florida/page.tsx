@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
-import { floridaClusterContent } from '@/lib/destinations/content/florida-cluster';
+import {
+  floridaClusterContent,
+  type FloridaCorridorCity,
+} from '@/lib/destinations/content/florida-cluster';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import {
   getClusterMarkets,
@@ -30,6 +33,71 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   category: 'Moving Destination Guides',
 };
+
+function CorridorCityGrid({
+  cities,
+  published,
+}: {
+  cities: FloridaCorridorCity[];
+  published: Set<string>;
+}) {
+  return (
+    <div className="grid sm:grid-cols-2 gap-4">
+      {cities.map((city) => {
+        const market = getMarketBySlug(city.slug);
+        const isLive = published.has(city.slug);
+        const path = market ? getMarketPath(market) : `/moving-to/florida/${city.slug}`;
+
+        return (
+          <div
+            key={city.slug}
+            className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors"
+          >
+            <div className="flex items-start justify-between gap-2 mb-2">
+              <h3 className="font-semibold text-lg">
+                {isLive ? (
+                  <Link href={path} className="hover:text-primary transition-colors">
+                    {city.displayName}, FL
+                  </Link>
+                ) : (
+                  <span>{city.displayName}, FL</span>
+                )}
+              </h3>
+              {isLive ? (
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
+                  Live
+                </span>
+              ) : (
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
+                  Soon
+                </span>
+              )}
+            </div>
+            <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
+            <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
+            {isLive && market ? (
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href={path}
+                  className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                >
+                  View guide
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+                <Link
+                  href={`/moving-calculator?toZip=${market.defaultToZip}&dest=${market.slug}`}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Open calculator
+                </Link>
+              </div>
+            ) : null}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function FloridaClusterPage() {
   const published = new Set(getPublishedCityHubSlugs());
@@ -76,68 +144,28 @@ export default function FloridaClusterPage() {
       <section className="py-12 md:py-16 border-b">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-            Palm Beach County Corridor — Live City Guides
+            Miami-Dade &amp; Broward Corridor — Live City Guides
           </h2>
           <p className="text-muted-foreground mb-8 max-w-3xl">
             Four production-ready hubs covering South Florida&apos;s highest-intent
-            Palm Beach County relocation markets. Each includes cost tables, calculator
-            prefill, county mover directories, and free quote matching.
+            Miami-Dade and Broward County relocation markets — from Brickell urban
+            density to Pompano Beach boating communities.
           </p>
+          <CorridorCityGrid cities={content.miamiDadeBrowardCorridor} published={published} />
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            {content.palmBeachCorridor.map((city) => {
-              const market = getMarketBySlug(city.slug);
-              const isLive = published.has(city.slug);
-              const path = market ? getMarketPath(market) : `/moving-to/florida/${city.slug}`;
-
-              return (
-                <div
-                  key={city.slug}
-                  className="rounded-xl border bg-card p-6 hover:border-primary/40 transition-colors"
-                >
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="font-semibold text-lg">
-                      {isLive ? (
-                        <Link href={path} className="hover:text-primary transition-colors">
-                          {city.displayName}, FL
-                        </Link>
-                      ) : (
-                        <span>{city.displayName}, FL</span>
-                      )}
-                    </h3>
-                    {isLive ? (
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                        Live
-                      </span>
-                    ) : (
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                        Soon
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
-                  {isLive && market ? (
-                    <div className="flex flex-wrap gap-3">
-                      <Link
-                        href={path}
-                        className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-                      >
-                        View guide
-                        <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                      </Link>
-                      <Link
-                        href={`/moving-calculator?toZip=${market.defaultToZip}&dest=${market.slug}`}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        Open calculator
-                      </Link>
-                    </div>
-                  ) : null}
-                </div>
-              );
-            })}
-          </div>
+      <section className="py-12 md:py-16 border-b">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+            Palm Beach County Corridor — Live City Guides
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">
+            Four production-ready hubs covering Palm Beach County&apos;s coastal
+            relocation markets from Boca Raton luxury through Deerfield Beach on
+            the Broward border.
+          </p>
+          <CorridorCityGrid cities={content.palmBeachCorridor} published={published} />
         </div>
       </section>
 

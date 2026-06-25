@@ -5,6 +5,10 @@ import { bocaRatonFlContent } from '@/lib/destinations/content/boca-raton-fl';
 import { deerfieldBeachFlContent } from '@/lib/destinations/content/deerfield-beach-fl';
 import { boyntonBeachFlContent } from '@/lib/destinations/content/boynton-beach-fl';
 import { delrayBeachFlContent } from '@/lib/destinations/content/delray-beach-fl';
+import { miamiFlContent } from '@/lib/destinations/content/miami-fl';
+import { fortLauderdaleFlContent } from '@/lib/destinations/content/fort-lauderdale-fl';
+import { hollywoodFlContent } from '@/lib/destinations/content/hollywood-fl';
+import { pompanoBeachFlContent } from '@/lib/destinations/content/pompano-beach-fl';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -12,6 +16,10 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'deerfield-beach': deerfieldBeachFlContent,
   'boynton-beach': boyntonBeachFlContent,
   'delray-beach': delrayBeachFlContent,
+  'miami': miamiFlContent,
+  'fort-lauderdale': fortLauderdaleFlContent,
+  'hollywood': hollywoodFlContent,
+  'pompano-beach': pompanoBeachFlContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
