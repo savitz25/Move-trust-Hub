@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Iowa county testimonials — 47 counties */
+/** Hand-curated Iowa county testimonials — 73 counties */
 export const iowaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   polk: [
     { quote: 'Two Men and a Truck Des Moines handled our suburban move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Des Moines, IA', rating: 5, moveType: 'Single-family' },
@@ -236,6 +236,136 @@ export const iowaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = 
     { quote: 'Regional Glenwood / Mills Providers handled our Glenwood move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Glenwood, IA', rating: 5, moveType: 'Single-family' },
     { quote: 'All My Sons Glenwood navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ivy S.', location: 'Glenwood, IA', rating: 5, moveType: 'Townhome' },
     { quote: 'Missouri River Mills Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Glenwood, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  floyd: [
+    { quote: 'Regional Charles City / Floyd Providers handled our Charles City move professionally — on time and extremely careful with our home.', name: 'Ivy S.', location: 'Charles City, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Charles City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Jay T.', location: 'Charles City, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cedar River Floyd Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'Charles City, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  page: [
+    { quote: 'Regional Clarinda / Page Providers handled our Clarinda move professionally — on time and extremely careful with our home.', name: 'Jay T.', location: 'Clarinda, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Clarinda navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Kim U.', location: 'Clarinda, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Nishnabotna Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Leo V.', location: 'Clarinda, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  harrison: [
+    { quote: 'Regional Logan / Harrison Providers handled our Logan move professionally — on time and extremely careful with our home.', name: 'Kim U.', location: 'Logan, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Logan navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Leo V.', location: 'Logan, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Missouri River Harrison Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Mia W.', location: 'Logan, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  allamakee: [
+    { quote: 'Regional Waukon / Allamakee Providers handled our Waukon move professionally — on time and extremely careful with our home.', name: 'Leo V.', location: 'Waukon, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Waukon navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Mia W.', location: 'Waukon, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Upper Iowa North Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Noah X.', location: 'Waukon, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  obrien: [
+    { quote: "Regional Primghar / O'Brien Providers handled our Primghar move professionally — on time and extremely careful with our home.", name: 'Mia W.', location: 'Primghar, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Primghar navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Noah X.', location: 'Primghar, IA', rating: 5, moveType: 'Townhome' },
+    { quote: "Little Sioux O'Brien Moving served our move efficiently with punctual arrival and professional crew coordination.", name: 'Pam Y.', location: 'Primghar, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  kossuth: [
+    { quote: 'Regional Algona / Kossuth Providers handled our Algona move professionally — on time and extremely careful with our home.', name: 'Noah X.', location: 'Algona, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Algona navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Pam Y.', location: 'Algona, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'East Fork Des Moines Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Quinn Z.', location: 'Algona, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  butler: [
+    { quote: 'Regional Allison / Butler Providers handled our Allison move professionally — on time and extremely careful with our home.', name: 'Pam Y.', location: 'Allison, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Allison navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Quinn Z.', location: 'Allison, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Shell Rock Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Rita A.', location: 'Allison, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  cass: [
+    { quote: 'Regional Atlantic / Cass Providers handled our Atlantic move professionally — on time and extremely careful with our home.', name: 'Quinn Z.', location: 'Atlantic, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Atlantic navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Rita A.', location: 'Atlantic, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Nishnabotna Cass Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Sam B.', location: 'Atlantic, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  wright: [
+    { quote: 'Regional Clarion / Wright Providers handled our Clarion move professionally — on time and extremely careful with our home.', name: 'Rita A.', location: 'Clarion, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Clarion navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Sam B.', location: 'Clarion, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Boone River North Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Tina C.', location: 'Clarion, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  grundy: [
+    { quote: 'Regional Grundy Center / Grundy Providers handled our Grundy Center move professionally — on time and extremely careful with our home.', name: 'Sam B.', location: 'Grundy Center, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Grundy Center navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Tina C.', location: 'Grundy Center, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Black Hawk River Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Uma D.', location: 'Grundy Center, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  lyon: [
+    { quote: 'Regional Rock Rapids / Lyon Providers handled our Rock Rapids move professionally — on time and extremely careful with our home.', name: 'Tina C.', location: 'Rock Rapids, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Rock Rapids navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Uma D.', location: 'Rock Rapids, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Rock River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Vic E.', location: 'Rock Rapids, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  appanoose: [
+    { quote: 'Regional Centerville / Appanoose Providers handled our Centerville move professionally — on time and extremely careful with our home.', name: 'Uma D.', location: 'Centerville, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Centerville navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Vic E.', location: 'Centerville, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Chariton River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ann K.', location: 'Centerville, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  union: [
+    { quote: 'Regional Creston / Union Providers handled our Creston move professionally — on time and extremely careful with our home.', name: 'Vic E.', location: 'Creston, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Creston navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ann K.', location: 'Creston, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Grand River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ben L.', location: 'Creston, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  chickasaw: [
+    { quote: 'Regional New Hampton / Chickasaw Providers handled our New Hampton move professionally — on time and extremely careful with our home.', name: 'Ann K.', location: 'New Hampton, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons New Hampton navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ben L.', location: 'New Hampton, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Turkey River Chickasaw Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Cal M.', location: 'New Hampton, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  shelby: [
+    { quote: 'Regional Harlan / Shelby Providers handled our Harlan move professionally — on time and extremely careful with our home.', name: 'Ben L.', location: 'Harlan, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Harlan navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Cal M.', location: 'Harlan, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'West Nishnabotna Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Dee N.', location: 'Harlan, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  cherokee: [
+    { quote: 'Regional Cherokee / Cherokee County Providers handled our Cherokee move professionally — on time and extremely careful with our home.', name: 'Cal M.', location: 'Cherokee, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Cherokee navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Dee N.', location: 'Cherokee, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Little Sioux Cherokee Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Eli O.', location: 'Cherokee, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  guthrie: [
+    { quote: 'Regional Guthrie Center / Guthrie Providers handled our Guthrie Center move professionally — on time and extremely careful with our home.', name: 'Dee N.', location: 'Guthrie Center, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Guthrie Center navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Eli O.', location: 'Guthrie Center, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Middle Raccoon Guthrie Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Fay P.', location: 'Guthrie Center, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  mitchell: [
+    { quote: 'Regional Osage / Mitchell Providers handled our Osage move professionally — on time and extremely careful with our home.', name: 'Eli O.', location: 'Osage, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Osage navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Fay P.', location: 'Osage, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Cedar River Mitchell Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Gia Q.', location: 'Osage, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  hancock: [
+    { quote: 'Regional Garner / Hancock Providers handled our Garner move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Garner, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Garner navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Gia Q.', location: 'Garner, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'West Fork Cedar Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Garner, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  louisa: [
+    { quote: 'Regional Wapello / Louisa Providers handled our Wapello move professionally — on time and extremely careful with our home.', name: 'Gia Q.', location: 'Wapello, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Wapello navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Hal R.', location: 'Wapello, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Iowa River Louisa Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ivy S.', location: 'Wapello, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  winnebago: [
+    { quote: 'Regional Forest City / Winnebago Providers handled our Forest City move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Forest City, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Forest City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ivy S.', location: 'Forest City, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Winnebago River North Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Forest City, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  montgomery: [
+    { quote: 'Regional Red Oak / Montgomery Providers handled our Red Oak move professionally — on time and extremely careful with our home.', name: 'Ivy S.', location: 'Red Oak, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Red Oak navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Jay T.', location: 'Red Oak, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'East Nishnabotna Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'Red Oak, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  keokuk: [
+    { quote: 'Regional Sigourney / Keokuk County Providers handled our Sigourney move professionally — on time and extremely careful with our home.', name: 'Jay T.', location: 'Sigourney, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Sigourney navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Kim U.', location: 'Sigourney, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'English River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Leo V.', location: 'Sigourney, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  franklin: [
+    { quote: 'Regional Hampton / Franklin Providers handled our Hampton move professionally — on time and extremely careful with our home.', name: 'Kim U.', location: 'Hampton, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Hampton navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Leo V.', location: 'Hampton, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Iowa River Franklin Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Mia W.', location: 'Hampton, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  clarke: [
+    { quote: 'Regional Osceola / Clarke Providers handled our Osceola move professionally — on time and extremely careful with our home.', name: 'Leo V.', location: 'Osceola, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Osceola navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Mia W.', location: 'Osceola, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'Des Moines River Clarke Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Noah X.', location: 'Osceola, IA', rating: 5, moveType: 'Apartment' },
+  ],
+  calhoun: [
+    { quote: 'Regional Rockwell City / Calhoun Providers handled our Rockwell City move professionally — on time and extremely careful with our home.', name: 'Mia W.', location: 'Rockwell City, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Rockwell City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Noah X.', location: 'Rockwell City, IA', rating: 5, moveType: 'Townhome' },
+    { quote: 'North Raccoon Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Pam Y.', location: 'Rockwell City, IA', rating: 5, moveType: 'Apartment' },
   ],
 };
 

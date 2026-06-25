@@ -1,12 +1,12 @@
 /**
- * Generates Iowa county curation files (batch 1 + batch 2 — 47 counties).
+ * Generates Iowa county curation files (batches 1–3 — 73 counties).
  * Run: npx tsx scripts/generate-iowa-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
-const EXPECTED_COUNT = 47;
+const EXPECTED_COUNT = 73;
 
 type CostTier = 'metro' | 'secondary_metro' | 'rural';
 
@@ -145,6 +145,14 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   howard: 'Howard County, IA',
   osceola: 'Osceola County, IA',
   carroll: 'Carroll County, IA',
+  page: 'Page County, IA',
+  obrien: "O'Brien County, IA",
+  kossuth: 'Kossuth County, IA',
+  mitchell: 'Mitchell County, IA',
+  taylor: 'Taylor County, IA',
+  adams: 'Adams County, IA',
+  ringgold: 'Ringgold County, IA',
+  'palo-alto': 'Palo Alto County, IA',
 };
 
 const IA_NEIGHBORS: Record<string, string[]> = {
@@ -195,6 +203,32 @@ const IA_NEIGHBORS: Record<string, string[]> = {
   jefferson: ['henry', 'washington', 'wapello', 'davis', 'van-buren', 'lee'],
   hamilton: ['boone', 'hardin', 'story', 'webster', 'wright', 'franklin'],
   mills: ['pottawattamie', 'montgomery'],
+  floyd: ['bremer', 'chickasaw', 'cerro-gordo', 'franklin', 'mitchell', 'winnebago', 'worth'],
+  page: ['montgomery', 'taylor'],
+  harrison: ['crawford', 'monona', 'pottawattamie', 'shelby', 'mills'],
+  allamakee: ['clayton', 'winneshiek', 'fayette', 'howard'],
+  obrien: ['clay', 'plymouth', 'cherokee', 'sioux'],
+  kossuth: ['palo-alto', 'humboldt', 'pocahontas', 'winnebago', 'hancock'],
+  butler: ['bremer', 'floyd', 'chickasaw', 'franklin', 'grundy', 'hardin'],
+  cass: ['adair', 'audubon', 'montgomery', 'mills', 'shelby', 'pottawattamie'],
+  wright: ['hamilton', 'webster', 'hancock', 'franklin', 'hardin'],
+  grundy: ['black-hawk', 'butler', 'hardin', 'marshall', 'tama', 'story'],
+  lyon: ['osceola', 'sioux', 'obrien', 'plymouth'],
+  appanoose: ['davis', 'lucas', 'monroe', 'wapello', 'wayne'],
+  union: ['adair', 'adams', 'cass', 'madison', 'ringgold', 'taylor'],
+  chickasaw: ['bremer', 'butler', 'fayette', 'floyd', 'howard', 'winnebago'],
+  shelby: ['audubon', 'cass', 'crawford', 'harrison', 'pottawattamie'],
+  cherokee: ['clay', 'obrien', 'plymouth', 'woodbury', 'buena-vista'],
+  guthrie: ['adair', 'audubon', 'boone', 'dallas', 'greene', 'polk'],
+  mitchell: ['cerro-gordo', 'floyd', 'howard', 'winnebago', 'worth'],
+  hancock: ['cerro-gordo', 'kossuth', 'wright', 'winnebago', 'worth'],
+  louisa: ['des-moines', 'henry', 'johnson', 'muscatine', 'washington', 'wapello'],
+  winnebago: ['cerro-gordo', 'floyd', 'hancock', 'kossuth', 'mitchell', 'worth'],
+  montgomery: ['adams', 'cass', 'page', 'mills', 'pottawattamie'],
+  keokuk: ['iowa', 'johnson', 'mahaska', 'poweshiek', 'washington', 'wapello'],
+  franklin: ['butler', 'floyd', 'grundy', 'hamilton', 'hardin', 'wright'],
+  clarke: ['decatur', 'lucas', 'madison', 'ringgold', 'union', 'warren'],
+  calhoun: ['carroll', 'greene', 'pocahontas', 'sac', 'webster', 'audubon'],
 };
 
 type CrossBorder = {
@@ -356,6 +390,56 @@ const CROSS_BORDER: Partial<Record<string, CrossBorder[]>> = {
       name: 'Henderson',
       seat: 'Oquawka',
       displayLabel: 'Henderson County, IL',
+    },
+  ],
+  page: [
+    {
+      slug: 'taylor',
+      stateSlug: 'missouri',
+      name: 'Taylor',
+      seat: 'Green City',
+      displayLabel: 'Taylor County, MO',
+    },
+    {
+      slug: 'fremont',
+      stateSlug: 'nebraska',
+      name: 'Fremont',
+      seat: 'Hamburg',
+      displayLabel: 'Fremont County, NE',
+    },
+  ],
+  montgomery: [
+    {
+      slug: 'fremont',
+      stateSlug: 'nebraska',
+      name: 'Fremont',
+      seat: 'Hamburg',
+      displayLabel: 'Fremont County, NE',
+    },
+  ],
+  lyon: [
+    {
+      slug: 'union',
+      stateSlug: 'south-dakota',
+      name: 'Union',
+      seat: 'Elk Point',
+      displayLabel: 'Union County, SD',
+    },
+  ],
+  allamakee: [
+    {
+      slug: 'crawford',
+      stateSlug: 'wisconsin',
+      name: 'Crawford',
+      seat: 'Prairie du Chien',
+      displayLabel: 'Crawford County, WI',
+    },
+    {
+      slug: 'houston',
+      stateSlug: 'minnesota',
+      name: 'Houston',
+      seat: 'Caledonia',
+      displayLabel: 'Houston County, MN',
     },
   ],
 };
@@ -1303,51 +1387,556 @@ const COUNTIES: CountyDef[] = [
       'Mills County pricing reflects Glenwood secondary-metro demand, Omaha metro Missouri River corridor traffic, cross-border Nebraska logistics, and competition among regional agents serving Mills County communities.',
     tipVariant: 'standard',
   },
+  {
+    slug: 'floyd',
+    name: 'Floyd',
+    seat: 'Charles City',
+    city: 'Charles City',
+    metro: 'floyd-metro-ia',
+    costTier: 'rural',
+    citySlug: 'charles-city',
+    regional1: 'charles-city-corridor',
+    regional2: 'cedar-river-floyd',
+    topId: 'regional-floyd-ia-movers',
+    topName: 'Regional Charles City / Floyd Providers',
+    regional1Name: 'Charles City Corridor Moving',
+    regional2Name: 'Cedar River Floyd Moving',
+    marketNotes:
+      'Floyd County, IA is a north-central Iowa county centered on Charles City with rural residential, manufacturing, and Cedar River corridor agricultural demand across I-35 gateway communities.',
+    costNote:
+      'Floyd County pricing reflects Charles City-area demand, Cedar River corridor travel distances, agricultural property logistics, and competition among regional agents serving Floyd County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'page',
+    name: 'Page',
+    seat: 'Clarinda',
+    city: 'Clarinda',
+    metro: 'page-metro-ia',
+    costTier: 'rural',
+    citySlug: 'clarinda',
+    regional1: 'clarinda-corridor',
+    regional2: 'nishnabotna-valley',
+    topId: 'regional-page-ia-movers',
+    topName: 'Regional Clarinda / Page Providers',
+    regional1Name: 'Clarinda Corridor Moving',
+    regional2Name: 'Nishnabotna Valley Moving',
+    marketNotes:
+      'Page County, IA is a southwest Iowa county centered on Clarinda with rural residential, agricultural, and Nishnabotna River valley corridor demand across Missouri and Nebraska border communities.',
+    costNote:
+      'Page County pricing reflects Clarinda-area demand, Nishnabotna valley corridor travel distances, cross-border Missouri and Nebraska logistics, and competition among regional agents serving Page County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'harrison',
+    name: 'Harrison',
+    seat: 'Logan',
+    city: 'Logan',
+    metro: 'harrison-metro-ia',
+    costTier: 'rural',
+    citySlug: 'logan',
+    regional1: 'logan-corridor',
+    regional2: 'missouri-river-harrison',
+    topId: 'regional-harrison-ia-movers',
+    topName: 'Regional Logan / Harrison Providers',
+    regional1Name: 'Logan Corridor Moving',
+    regional2Name: 'Missouri River Harrison Moving',
+    marketNotes:
+      'Harrison County, IA is a western Iowa Missouri River bluff county centered on Logan with rural residential, agricultural, and Council Bluffs fringe corridor demand — not to be confused with Harrison County in other states.',
+    costNote:
+      'Harrison County pricing reflects Logan-area demand, Missouri River bluff corridor travel distances, Omaha metro spillover logistics, and competition among regional agents serving Harrison County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'allamakee',
+    name: 'Allamakee',
+    seat: 'Waukon',
+    city: 'Waukon',
+    metro: 'allamakee-metro-ia',
+    costTier: 'rural',
+    citySlug: 'waukon',
+    regional1: 'waukon-corridor',
+    regional2: 'upper-iowa-north',
+    topId: 'regional-allamakee-ia-movers',
+    topName: 'Regional Waukon / Allamakee Providers',
+    regional1Name: 'Waukon Corridor Moving',
+    regional2Name: 'Upper Iowa North Moving',
+    marketNotes:
+      'Allamakee County is a northeast Iowa Mississippi River bluff county centered on Waukon with rural residential, tourism, and Upper Iowa River north corridor demand across Wisconsin and Minnesota border communities.',
+    costNote:
+      'Allamakee County pricing reflects Waukon-area demand, Upper Iowa River north corridor travel distances, cross-border Wisconsin and Minnesota logistics, and competition among regional agents serving Allamakee County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'obrien',
+    name: "O'Brien",
+    seat: 'Primghar',
+    city: 'Primghar',
+    metro: 'obrien-metro-ia',
+    costTier: 'rural',
+    citySlug: 'primghar',
+    regional1: 'primghar-corridor',
+    regional2: 'little-sioux-obrien',
+    topId: 'regional-obrien-ia-movers',
+    topName: "Regional Primghar / O'Brien Providers",
+    regional1Name: 'Primghar Corridor Moving',
+    regional2Name: "Little Sioux O'Brien Moving",
+    marketNotes:
+      "O'Brien County is a northwest Iowa county centered on Primghar with rural residential, agricultural, and Little Sioux River corridor demand across Siouxland fringe communities.",
+    costNote:
+      "O'Brien County pricing reflects Primghar-area demand, Little Sioux corridor travel distances, agricultural property logistics, and competition among regional agents serving O'Brien County communities.",
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'kossuth',
+    name: 'Kossuth',
+    seat: 'Algona',
+    city: 'Algona',
+    metro: 'kossuth-metro-ia',
+    costTier: 'rural',
+    citySlug: 'algona',
+    regional1: 'algona-corridor',
+    regional2: 'east-fork-des-moines',
+    topId: 'regional-kossuth-ia-movers',
+    topName: 'Regional Algona / Kossuth Providers',
+    regional1Name: 'Algona Corridor Moving',
+    regional2Name: 'East Fork Des Moines Moving',
+    marketNotes:
+      'Kossuth County is a north-central Iowa county centered on Algona with rural residential, agricultural, and East Fork Des Moines River corridor demand across regional hub communities.',
+    costNote:
+      'Kossuth County pricing reflects Algona-area demand, East Fork Des Moines corridor travel distances, agricultural property logistics, and competition among regional agents serving Kossuth County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'butler',
+    name: 'Butler',
+    seat: 'Allison',
+    city: 'Allison',
+    metro: 'butler-metro-ia',
+    costTier: 'rural',
+    citySlug: 'allison',
+    regional1: 'allison-corridor',
+    regional2: 'shell-rock-valley',
+    topId: 'regional-butler-ia-movers',
+    topName: 'Regional Allison / Butler Providers',
+    regional1Name: 'Allison Corridor Moving',
+    regional2Name: 'Shell Rock Valley Moving',
+    marketNotes:
+      'Butler County is a north-central Iowa county centered on Allison with rural residential, agricultural, and Shell Rock River valley corridor demand across Waterloo and Cedar Valley fringe communities.',
+    costNote:
+      'Butler County pricing reflects Allison-area demand, Shell Rock valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Butler County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'cass',
+    name: 'Cass',
+    seat: 'Atlantic',
+    city: 'Atlantic',
+    metro: 'cass-metro-ia',
+    costTier: 'rural',
+    citySlug: 'atlantic',
+    regional1: 'atlantic-corridor',
+    regional2: 'nishnabotna-cass',
+    topId: 'regional-cass-ia-movers',
+    topName: 'Regional Atlantic / Cass Providers',
+    regional1Name: 'Atlantic Corridor Moving',
+    regional2Name: 'Nishnabotna Cass Moving',
+    marketNotes:
+      'Cass County, IA is a southwest Iowa county centered on Atlantic with rural residential, agricultural, and Nishnabotna River corridor demand across Omaha metro fringe communities — not to be confused with Cass County in other states.',
+    costNote:
+      'Cass County pricing reflects Atlantic-area demand, Nishnabotna corridor travel distances, agricultural property logistics, and competition among regional agents serving Cass County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'wright',
+    name: 'Wright',
+    seat: 'Clarion',
+    city: 'Clarion',
+    metro: 'wright-metro-ia',
+    costTier: 'rural',
+    citySlug: 'clarion',
+    regional1: 'clarion-corridor',
+    regional2: 'boone-river-north',
+    topId: 'regional-wright-ia-movers',
+    topName: 'Regional Clarion / Wright Providers',
+    regional1Name: 'Clarion Corridor Moving',
+    regional2Name: 'Boone River North Moving',
+    marketNotes:
+      'Wright County, IA is a north-central Iowa county centered on Clarion with rural residential, agricultural, and Boone River north corridor demand across regional hub communities.',
+    costNote:
+      'Wright County pricing reflects Clarion-area demand, Boone River north corridor travel distances, agricultural property logistics, and competition among regional agents serving Wright County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'grundy',
+    name: 'Grundy',
+    seat: 'Grundy Center',
+    city: 'Grundy Center',
+    metro: 'grundy-metro-ia',
+    costTier: 'rural',
+    citySlug: 'grundy-center',
+    regional1: 'grundy-center-corridor',
+    regional2: 'black-hawk-river',
+    topId: 'regional-grundy-ia-movers',
+    topName: 'Regional Grundy Center / Grundy Providers',
+    regional1Name: 'Grundy Center Corridor Moving',
+    regional2Name: 'Black Hawk River Moving',
+    marketNotes:
+      'Grundy County is a central Iowa county centered on Grundy Center with rural residential, agricultural, and Black Hawk River corridor demand across Waterloo and Cedar Valley fringe communities.',
+    costNote:
+      'Grundy County pricing reflects Grundy Center-area demand, Black Hawk River corridor travel distances, agricultural property logistics, and competition among regional agents serving Grundy County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lyon',
+    name: 'Lyon',
+    seat: 'Rock Rapids',
+    city: 'Rock Rapids',
+    metro: 'lyon-metro-ia',
+    costTier: 'rural',
+    citySlug: 'rock-rapids',
+    regional1: 'rock-rapids-corridor',
+    regional2: 'rock-river-valley',
+    topId: 'regional-lyon-ia-movers',
+    topName: 'Regional Rock Rapids / Lyon Providers',
+    regional1Name: 'Rock Rapids Corridor Moving',
+    regional2Name: 'Rock River Valley Moving',
+    marketNotes:
+      'Lyon County, IA is Iowa’s northwesternmost county centered on Rock Rapids with rural residential, agricultural, and Rock River valley corridor demand across South Dakota border communities.',
+    costNote:
+      'Lyon County pricing reflects Rock Rapids-area demand, Rock River valley travel distances, cross-border South Dakota logistics, and competition among regional agents serving Lyon County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'appanoose',
+    name: 'Appanoose',
+    seat: 'Centerville',
+    city: 'Centerville',
+    metro: 'appanoose-metro-ia',
+    costTier: 'rural',
+    citySlug: 'centerville',
+    regional1: 'centerville-corridor',
+    regional2: 'chariton-river-valley',
+    topId: 'regional-appanoose-ia-movers',
+    topName: 'Regional Centerville / Appanoose Providers',
+    regional1Name: 'Centerville Corridor Moving',
+    regional2Name: 'Chariton River Valley Moving',
+    marketNotes:
+      'Appanoose County is a southern Iowa county centered on Centerville with rural residential, manufacturing, and Chariton River valley corridor agricultural demand across regional hub communities.',
+    costNote:
+      'Appanoose County pricing reflects Centerville-area demand, Chariton River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Appanoose County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'union',
+    name: 'Union',
+    seat: 'Creston',
+    city: 'Creston',
+    metro: 'union-metro-ia',
+    costTier: 'rural',
+    citySlug: 'creston',
+    regional1: 'creston-corridor',
+    regional2: 'grand-river-valley',
+    topId: 'regional-union-ia-movers',
+    topName: 'Regional Creston / Union Providers',
+    regional1Name: 'Creston Corridor Moving',
+    regional2Name: 'Grand River Valley Moving',
+    marketNotes:
+      'Union County, IA is a south-central Iowa county centered on Creston with rural residential, railroad-hub, and Grand River valley corridor agricultural demand — not to be confused with Union County in other states.',
+    costNote:
+      'Union County pricing reflects Creston-area demand, Grand River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Union County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'chickasaw',
+    name: 'Chickasaw',
+    seat: 'New Hampton',
+    city: 'New Hampton',
+    metro: 'chickasaw-metro-ia',
+    costTier: 'rural',
+    citySlug: 'new-hampton',
+    regional1: 'new-hampton-corridor',
+    regional2: 'turkey-river-chickasaw',
+    topId: 'regional-chickasaw-ia-movers',
+    topName: 'Regional New Hampton / Chickasaw Providers',
+    regional1Name: 'New Hampton Corridor Moving',
+    regional2Name: 'Turkey River Chickasaw Moving',
+    marketNotes:
+      'Chickasaw County is a northeastern Iowa county centered on New Hampton with rural residential, agricultural, and Turkey River corridor demand across regional hub communities.',
+    costNote:
+      'Chickasaw County pricing reflects New Hampton-area demand, Turkey River corridor travel distances, agricultural property logistics, and competition among regional agents serving Chickasaw County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'shelby',
+    name: 'Shelby',
+    seat: 'Harlan',
+    city: 'Harlan',
+    metro: 'shelby-metro-ia',
+    costTier: 'rural',
+    citySlug: 'harlan',
+    regional1: 'harlan-corridor',
+    regional2: 'west-nishnabotna',
+    topId: 'regional-shelby-ia-movers',
+    topName: 'Regional Harlan / Shelby Providers',
+    regional1Name: 'Harlan Corridor Moving',
+    regional2Name: 'West Nishnabotna Moving',
+    marketNotes:
+      'Shelby County, IA is a western Iowa county centered on Harlan with rural residential, agricultural, and West Nishnabotna River corridor demand across Omaha metro fringe communities.',
+    costNote:
+      'Shelby County pricing reflects Harlan-area demand, West Nishnabotna corridor travel distances, agricultural property logistics, and competition among regional agents serving Shelby County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'cherokee',
+    name: 'Cherokee',
+    seat: 'Cherokee',
+    city: 'Cherokee',
+    metro: 'cherokee-metro-ia',
+    costTier: 'rural',
+    citySlug: 'cherokee',
+    regional1: 'cherokee-corridor',
+    regional2: 'little-sioux-cherokee',
+    topId: 'regional-cherokee-ia-movers',
+    topName: 'Regional Cherokee / Cherokee County Providers',
+    regional1Name: 'Cherokee Corridor Moving',
+    regional2Name: 'Little Sioux Cherokee Moving',
+    marketNotes:
+      'Cherokee County, IA is a northwest Iowa county centered on Cherokee with rural residential, agricultural, and Little Sioux River corridor demand — not to be confused with Cherokee County in other states.',
+    costNote:
+      'Cherokee County pricing reflects Cherokee-area demand, Little Sioux corridor travel distances, agricultural property logistics, and competition among regional agents serving Cherokee County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'guthrie',
+    name: 'Guthrie',
+    seat: 'Guthrie Center',
+    city: 'Guthrie Center',
+    metro: 'guthrie-metro-ia',
+    costTier: 'rural',
+    citySlug: 'guthrie-center',
+    regional1: 'guthrie-center-corridor',
+    regional2: 'middle-raccoon-guthrie',
+    topId: 'regional-guthrie-ia-movers',
+    topName: 'Regional Guthrie Center / Guthrie Providers',
+    regional1Name: 'Guthrie Center Corridor Moving',
+    regional2Name: 'Middle Raccoon Guthrie Moving',
+    marketNotes:
+      'Guthrie County is a central Iowa county centered on Guthrie Center with rural residential, agricultural, and Middle Raccoon River corridor demand across Des Moines metro fringe communities.',
+    costNote:
+      'Guthrie County pricing reflects Guthrie Center-area demand, Middle Raccoon corridor travel distances, agricultural property logistics, and competition among regional agents serving Guthrie County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'mitchell',
+    name: 'Mitchell',
+    seat: 'Osage',
+    city: 'Osage',
+    metro: 'mitchell-metro-ia',
+    costTier: 'rural',
+    citySlug: 'osage',
+    regional1: 'osage-corridor',
+    regional2: 'cedar-river-mitchell',
+    topId: 'regional-mitchell-ia-movers',
+    topName: 'Regional Osage / Mitchell Providers',
+    regional1Name: 'Osage Corridor Moving',
+    regional2Name: 'Cedar River Mitchell Moving',
+    marketNotes:
+      'Mitchell County, IA is a north-central Iowa county centered on Osage with rural residential, agricultural, and Cedar River corridor demand — not to be confused with Mitchell County in other states.',
+    costNote:
+      'Mitchell County pricing reflects Osage-area demand, Cedar River corridor travel distances, agricultural property logistics, and competition among regional agents serving Mitchell County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'hancock',
+    name: 'Hancock',
+    seat: 'Garner',
+    city: 'Garner',
+    metro: 'hancock-metro-ia',
+    costTier: 'rural',
+    citySlug: 'garner',
+    regional1: 'garner-corridor',
+    regional2: 'west-fork-cedar',
+    topId: 'regional-hancock-ia-movers',
+    topName: 'Regional Garner / Hancock Providers',
+    regional1Name: 'Garner Corridor Moving',
+    regional2Name: 'West Fork Cedar Moving',
+    marketNotes:
+      'Hancock County, IA is a north-central Iowa county centered on Garner with rural residential, agricultural, and West Fork Cedar River corridor demand — not to be confused with Hancock County in other states.',
+    costNote:
+      'Hancock County pricing reflects Garner-area demand, West Fork Cedar corridor travel distances, agricultural property logistics, and competition among regional agents serving Hancock County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'louisa',
+    name: 'Louisa',
+    seat: 'Wapello',
+    city: 'Wapello',
+    metro: 'louisa-metro-ia',
+    costTier: 'rural',
+    citySlug: 'wapello',
+    regional1: 'wapello-corridor',
+    regional2: 'iowa-river-louisa',
+    topId: 'regional-louisa-ia-movers',
+    topName: 'Regional Wapello / Louisa Providers',
+    regional1Name: 'Wapello Corridor Moving',
+    regional2Name: 'Iowa River Louisa Moving',
+    marketNotes:
+      'Louisa County, IA is a southeastern Iowa county with seat at Wapello (town) — not Wapello County (Ottumwa) — with rural residential, Mississippi River corridor, and Iowa River valley agricultural demand across regional hub communities.',
+    costNote:
+      'Louisa County pricing reflects Wapello-area demand, Iowa River corridor travel distances, Mississippi River fringe logistics, and competition among regional agents serving Louisa County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'winnebago',
+    name: 'Winnebago',
+    seat: 'Forest City',
+    city: 'Forest City',
+    metro: 'winnebago-metro-ia',
+    costTier: 'rural',
+    citySlug: 'forest-city',
+    regional1: 'forest-city-corridor',
+    regional2: 'winnebago-river-north',
+    topId: 'regional-winnebago-ia-movers',
+    topName: 'Regional Forest City / Winnebago Providers',
+    regional1Name: 'Forest City Corridor Moving',
+    regional2Name: 'Winnebago River North Moving',
+    marketNotes:
+      'Winnebago County is a north-central Iowa county centered on Forest City with rural residential, agricultural, and Winnebago River north corridor demand across I-35 gateway communities.',
+    costNote:
+      'Winnebago County pricing reflects Forest City-area demand, Winnebago River north corridor travel distances, agricultural property logistics, and competition among regional agents serving Winnebago County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'montgomery',
+    name: 'Montgomery',
+    seat: 'Red Oak',
+    city: 'Red Oak',
+    metro: 'montgomery-metro-ia',
+    costTier: 'rural',
+    citySlug: 'red-oak',
+    regional1: 'red-oak-corridor',
+    regional2: 'east-nishnabotna',
+    topId: 'regional-montgomery-ia-movers',
+    topName: 'Regional Red Oak / Montgomery Providers',
+    regional1Name: 'Red Oak Corridor Moving',
+    regional2Name: 'East Nishnabotna Moving',
+    marketNotes:
+      'Montgomery County, IA is a southwest Iowa county centered on Red Oak with rural residential, agricultural, and East Nishnabotna River corridor demand across Nebraska border communities.',
+    costNote:
+      'Montgomery County pricing reflects Red Oak-area demand, East Nishnabotna corridor travel distances, cross-border Nebraska logistics, and competition among regional agents serving Montgomery County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'keokuk',
+    name: 'Keokuk',
+    seat: 'Sigourney',
+    city: 'Sigourney',
+    metro: 'keokuk-metro-ia',
+    costTier: 'rural',
+    citySlug: 'sigourney',
+    regional1: 'sigourney-corridor',
+    regional2: 'english-river-valley',
+    topId: 'regional-keokuk-ia-movers',
+    topName: 'Regional Sigourney / Keokuk County Providers',
+    regional1Name: 'Sigourney Corridor Moving',
+    regional2Name: 'English River Valley Moving',
+    marketNotes:
+      'Keokuk County, IA is a southeastern Iowa county centered on Sigourney — not Keokuk city in Lee County — with rural residential, agricultural, and English River valley corridor demand across regional hub communities.',
+    costNote:
+      'Keokuk County pricing reflects Sigourney-area demand, English River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Keokuk County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'franklin',
+    name: 'Franklin',
+    seat: 'Hampton',
+    city: 'Hampton',
+    metro: 'franklin-metro-ia',
+    costTier: 'rural',
+    citySlug: 'hampton',
+    regional1: 'hampton-corridor',
+    regional2: 'iowa-river-franklin',
+    topId: 'regional-franklin-ia-movers',
+    topName: 'Regional Hampton / Franklin Providers',
+    regional1Name: 'Hampton Corridor Moving',
+    regional2Name: 'Iowa River Franklin Moving',
+    marketNotes:
+      'Franklin County, IA is a north-central Iowa county centered on Hampton with rural residential, agricultural, and Iowa River corridor demand — not to be confused with Franklin County in other states.',
+    costNote:
+      'Franklin County pricing reflects Hampton-area demand, Iowa River corridor travel distances, agricultural property logistics, and competition among regional agents serving Franklin County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'clarke',
+    name: 'Clarke',
+    seat: 'Osceola',
+    city: 'Osceola',
+    metro: 'clarke-metro-ia',
+    costTier: 'rural',
+    citySlug: 'osceola',
+    regional1: 'osceola-corridor',
+    regional2: 'des-moines-river-clarke',
+    topId: 'regional-clarke-ia-movers',
+    topName: 'Regional Osceola / Clarke Providers',
+    regional1Name: 'Osceola Corridor Moving',
+    regional2Name: 'Des Moines River Clarke Moving',
+    marketNotes:
+      'Clarke County, IA is a south-central Iowa county centered on Osceola — not to be confused with Osceola County, IA (Sibley) — with rural residential, agricultural, and Des Moines River corridor demand across regional hub communities.',
+    costNote:
+      'Clarke County pricing reflects Osceola-area demand, Des Moines River corridor travel distances, agricultural property logistics, and competition among regional agents serving Clarke County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'calhoun',
+    name: 'Calhoun',
+    seat: 'Rockwell City',
+    city: 'Rockwell City',
+    metro: 'calhoun-metro-ia',
+    costTier: 'rural',
+    citySlug: 'rockwell-city',
+    regional1: 'rockwell-city-corridor',
+    regional2: 'north-raccoon-valley',
+    topId: 'regional-calhoun-ia-movers',
+    topName: 'Regional Rockwell City / Calhoun Providers',
+    regional1Name: 'Rockwell City Corridor Moving',
+    regional2Name: 'North Raccoon Valley Moving',
+    marketNotes:
+      'Calhoun County, IA is a west-central Iowa county centered on Rockwell City with rural residential, agricultural, and Raccoon River corridor demand — not to be confused with Calhoun County in other states.',
+    costNote:
+      'Calhoun County pricing reflects Rockwell City-area demand, Raccoon River corridor travel distances, agricultural property logistics, and competition among regional agents serving Calhoun County communities.',
+    tipVariant: 'rural',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
 
 const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
   adair: { name: 'Adair', seat: 'Greenfield' },
-  allamakee: { name: 'Allamakee', seat: 'Waukon' },
-  appanoose: { name: 'Appanoose', seat: 'Centerville' },
+  adams: { name: 'Adams', seat: 'Corning' },
   audubon: { name: 'Audubon', seat: 'Audubon' },
-  butler: { name: 'Butler', seat: 'Allison' },
-  calhoun: { name: 'Calhoun', seat: 'Rockwell City' },
-  cherokee: { name: 'Cherokee', seat: 'Cherokee' },
-  chickasaw: { name: 'Chickasaw', seat: 'New Hampton' },
-  clarke: { name: 'Clarke', seat: 'Osceola' },
   clayton: { name: 'Clayton', seat: 'Elkader' },
   davis: { name: 'Davis', seat: 'Bloomfield' },
+  decatur: { name: 'Decatur', seat: 'Leon' },
   emmet: { name: 'Emmet', seat: 'Estherville' },
-  floyd: { name: 'Floyd', seat: 'Charles City' },
-  franklin: { name: 'Franklin', seat: 'Hampton' },
   greene: { name: 'Greene', seat: 'Jefferson' },
-  grundy: { name: 'Grundy', seat: 'Grundy Center' },
-  guthrie: { name: 'Guthrie', seat: 'Guthrie Center' },
-  hancock: { name: 'Hancock', seat: 'Garner' },
-  harrison: { name: 'Harrison', seat: 'Logan' },
   howard: { name: 'Howard', seat: 'Cresco' },
   humboldt: { name: 'Humboldt', seat: 'Dakota City' },
   ida: { name: 'Ida', seat: 'Ida Grove' },
-  keokuk: { name: 'Keokuk', seat: 'Sigourney' },
-  louisa: { name: 'Louisa', seat: 'Wapello' },
   lucas: { name: 'Lucas', seat: 'Chariton' },
-  lyon: { name: 'Lyon', seat: 'Rock Rapids' },
   madison: { name: 'Madison', seat: 'Winterset' },
-  mitchell: { name: 'Mitchell', seat: 'Osage' },
   monona: { name: 'Monona', seat: 'Onawa' },
   monroe: { name: 'Monroe', seat: 'Albia' },
-  montgomery: { name: 'Montgomery', seat: 'Red Oak' },
-  obrien: { name: "O'Brien", seat: 'Primghar' },
   osceola: { name: 'Osceola', seat: 'Sibley' },
+  'palo-alto': { name: 'Palo Alto', seat: 'Emmetsburg' },
   pocahontas: { name: 'Pocahontas', seat: 'Pocahontas' },
+  ringgold: { name: 'Ringgold', seat: 'Mount Ayr' },
   sac: { name: 'Sac', seat: 'Sac City' },
-  shelby: { name: 'Shelby', seat: 'Harlan' },
   tama: { name: 'Tama', seat: 'Toledo' },
+  taylor: { name: 'Taylor', seat: 'Bedford' },
   'van-buren': { name: 'Van Buren', seat: 'Keosauqua' },
+  wayne: { name: 'Wayne', seat: 'Corydon' },
   worth: { name: 'Worth', seat: 'Northwood' },
-  wright: { name: 'Wright', seat: 'Clarion' },
 };
 
 function slugKey(slug: string): string {
@@ -1376,6 +1965,24 @@ function buildTips(c: CountyDef): string[] {
   if (c.slug === 'lee') {
     return [
       'Verify coverage for Fort Madison, Keokuk, and surrounding Lee County areas before booking.',
+      base[1],
+      base[2],
+      base[3],
+      base[4],
+    ];
+  }
+  if (c.slug === 'keokuk') {
+    return [
+      'Verify coverage for Sigourney and surrounding Keokuk County areas before booking — not Keokuk city in Lee County.',
+      base[1],
+      base[2],
+      base[3],
+      base[4],
+    ];
+  }
+  if (c.slug === 'louisa') {
+    return [
+      'Verify coverage for Wapello and surrounding Louisa County areas before booking — not Wapello County (Ottumwa).',
       base[1],
       base[2],
       base[3],
@@ -1606,7 +2213,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Iowa county research — 47 counties */
+/** Hand-curated Iowa county research — 73 counties */
 export const iowaCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -1623,7 +2230,7 @@ function genTestimonials(): string {
   const entries = COUNTIES.map((c, i) => buildTestimonials(c, i + 3));
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Iowa county testimonials — 47 counties */
+/** Hand-curated Iowa county testimonials — 73 counties */
 export const iowaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${entries.join('\n')}
 };
@@ -1645,7 +2252,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Iowa county mover lists — 47 counties */
+/** Hand-curated Iowa county mover lists — 73 counties */
 const CURATED_IA_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -1665,7 +2272,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Iowa counties (batch 1 + batch 2 — 47 counties) */
+/** Seat and metro overrides for hand-curated Iowa counties (batches 1–3 — 73 counties) */
 export const iowaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -1687,7 +2294,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** Iowa curated county corridor links — 47 counties */
+/** Iowa curated county corridor links — 73 counties */
 const IA_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };

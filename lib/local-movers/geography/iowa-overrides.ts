@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Iowa counties (batch 1 + batch 2 — 47 counties) */
+/** Seat and metro overrides for hand-curated Iowa counties (batches 1–3 — 73 counties) */
 export const iowaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -51,6 +51,32 @@ export const iowaCountyOverrides: Partial<
   jefferson: { seat: 'Fairfield', metro: 'jefferson-metro-ia' },
   hamilton: { seat: 'Webster City', metro: 'hamilton-metro-ia' },
   mills: { seat: 'Glenwood', metro: 'mills-metro-ia' },
+  floyd: { seat: 'Charles City', metro: 'floyd-metro-ia' },
+  page: { seat: 'Clarinda', metro: 'page-metro-ia' },
+  harrison: { seat: 'Logan', metro: 'harrison-metro-ia' },
+  allamakee: { seat: 'Waukon', metro: 'allamakee-metro-ia' },
+  obrien: { seat: 'Primghar', metro: 'obrien-metro-ia' },
+  kossuth: { seat: 'Algona', metro: 'kossuth-metro-ia' },
+  butler: { seat: 'Allison', metro: 'butler-metro-ia' },
+  cass: { seat: 'Atlantic', metro: 'cass-metro-ia' },
+  wright: { seat: 'Clarion', metro: 'wright-metro-ia' },
+  grundy: { seat: 'Grundy Center', metro: 'grundy-metro-ia' },
+  lyon: { seat: 'Rock Rapids', metro: 'lyon-metro-ia' },
+  appanoose: { seat: 'Centerville', metro: 'appanoose-metro-ia' },
+  union: { seat: 'Creston', metro: 'union-metro-ia' },
+  chickasaw: { seat: 'New Hampton', metro: 'chickasaw-metro-ia' },
+  shelby: { seat: 'Harlan', metro: 'shelby-metro-ia' },
+  cherokee: { seat: 'Cherokee', metro: 'cherokee-metro-ia' },
+  guthrie: { seat: 'Guthrie Center', metro: 'guthrie-metro-ia' },
+  mitchell: { seat: 'Osage', metro: 'mitchell-metro-ia' },
+  hancock: { seat: 'Garner', metro: 'hancock-metro-ia' },
+  louisa: { seat: 'Wapello', metro: 'louisa-metro-ia' },
+  winnebago: { seat: 'Forest City', metro: 'winnebago-metro-ia' },
+  montgomery: { seat: 'Red Oak', metro: 'montgomery-metro-ia' },
+  keokuk: { seat: 'Sigourney', metro: 'keokuk-metro-ia' },
+  franklin: { seat: 'Hampton', metro: 'franklin-metro-ia' },
+  clarke: { seat: 'Osceola', metro: 'clarke-metro-ia' },
+  calhoun: { seat: 'Rockwell City', metro: 'calhoun-metro-ia' },
 };
 
 export function applyIowaCountyOverrides(county: LocalCounty): LocalCounty {

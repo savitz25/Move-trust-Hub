@@ -19,7 +19,7 @@ const SECONDARY_TARGETS: Record<string, number> = {
   dallas: 8,
 };
 const DEFAULT_TARGET = 5;
-const EXPECTED_COUNT = 47;
+const EXPECTED_COUNT = 73;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? SECONDARY_TARGETS[slug] ?? DEFAULT_TARGET;
