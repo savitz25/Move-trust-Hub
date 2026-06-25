@@ -14,7 +14,7 @@ const PREMIUM_TARGETS: Record<string, number> = {
   missoula: 10,
 };
 const DEFAULT_TARGET = 5;
-const EXPECTED_COUNT = 25;
+const EXPECTED_COUNT = 56;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;

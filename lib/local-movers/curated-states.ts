@@ -34,6 +34,7 @@ export const CURATED_STATE_SLUGS = new Set([
   'utah',
   'colorado',
   'idaho',
+  'montana',
   'california',
   'florida',
   'new-jersey',

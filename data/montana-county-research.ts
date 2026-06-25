@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Montana county research — batch 1: 25/56 */
+/** Hand-curated Montana county research — batch 1–2: 56/56 */
 export const montanaCountyResearch: Record<string, CuratedCountyResearch> = {
   yellowstone: {
     marketNotes:
@@ -427,6 +427,533 @@ export const montanaCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for Columbus and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  broadwater: {
+    marketNotes:
+      'Broadwater County is a central Montana county centered on Townsend with rural residential demand across Missouri River headwaters corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Broadwater County pricing reflects Townsend-area demand, I-15 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    },
+    tips: [
+      'Verify coverage for Townsend and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dawson: {
+    marketNotes:
+      'Dawson County is an eastern Montana county centered on Glendive with rural residential demand along the Yellowstone River eastern corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Dawson County pricing reflects Glendive-area demand, I-94 eastern Montana corridor traffic, and competition among regional agents serving eastern plains communities.',
+    },
+    tips: [
+      'Verify coverage for Glendive and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  rosebud: {
+    marketNotes:
+      'Rosebud County is an eastern Montana county centered on Forsyth with rural residential demand across southeastern Montana corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Rosebud County pricing reflects Forsyth-area demand, I-94 corridor traffic, and competition among regional agents serving southeastern Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Forsyth and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  valley: {
+    marketNotes:
+      'Valley County, MT is a northeastern Montana county centered on Glasgow with rural residential demand across Hi-Line corridor communities — not to be confused with Valley County, Idaho.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Valley County pricing reflects Glasgow-area demand, US-2 Hi-Line corridor traffic, and competition among regional agents serving northeastern Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Glasgow and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  powell: {
+    marketNotes:
+      'Powell County is a southwestern Montana county with seat at Deer Lodge (distinct from Deer Lodge County / Anaconda) with rural residential demand.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Powell County pricing reflects Deer Lodge-area demand, I-90 corridor traffic, and competition among regional agents serving southwestern Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Deer Lodge and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  blaine: {
+    marketNotes:
+      'Blaine County, MT is a northern Montana county centered on Chinook with rural residential demand — not to be confused with Blaine County, Idaho (Sun Valley).',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Blaine County pricing reflects Chinook-area demand, US-2 Milk River corridor traffic, and competition among regional agents serving northern Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Chinook and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  teton: {
+    marketNotes:
+      'Teton County, MT is a north-central Montana county centered on Choteau with rural residential demand along the Rocky Mountain Front — not to be confused with Teton County, Idaho or Wyoming.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Teton County pricing reflects Choteau-area demand, US-89 Rocky Mountain Front corridor traffic, and competition among regional agents serving north-central Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Choteau and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pondera: {
+    marketNotes:
+      'Pondera County is a north-central Montana county centered on Conrad with rural residential demand across northern plains corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Pondera County pricing reflects Conrad-area demand, US-2 and US-89 corridor traffic, and competition among regional agents serving north-central Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Conrad and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  chouteau: {
+    marketNotes:
+      'Chouteau County is a north-central Montana county centered on Fort Benton with rural residential demand along the Missouri Breaks corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Chouteau County pricing reflects Fort Benton-area demand, Missouri River corridor logistics, and competition among regional agents serving north-central Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Fort Benton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  musselshell: {
+    marketNotes:
+      'Musselshell County is a central Montana county centered on Roundup with rural residential demand across Musselshell Valley corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Musselshell County pricing reflects Roundup-area demand, US-87 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    },
+    tips: [
+      'Verify coverage for Roundup and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  toole: {
+    marketNotes:
+      'Toole County is a northern Montana county centered on Shelby with rural residential demand across Marias Pass corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Toole County pricing reflects Shelby-area demand, I-15 and US-2 corridor traffic, and competition among regional agents serving northern Montana border communities.',
+    },
+    tips: [
+      'Verify coverage for Shelby and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mineral: {
+    marketNotes:
+      'Mineral County, MT is a western Montana county centered on Superior with rural residential demand — not to be confused with Mineral County, Nevada or West Virginia.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Mineral County pricing reflects Superior-area demand, I-90 western Montana corridor traffic, and competition among regional agents serving Clark Fork corridor communities.',
+    },
+    tips: [
+      'Verify coverage for Superior and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  phillips: {
+    marketNotes:
+      'Phillips County, MT is a northern Montana county centered on Malta with rural residential demand — not to be confused with Phillips County, Pennsylvania.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Phillips County pricing reflects Malta-area demand, US-2 Hi-Line corridor traffic, and competition among regional agents serving northern Montana prairie communities.',
+    },
+    tips: [
+      'Verify coverage for Malta and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'sweet-grass': {
+    marketNotes:
+      'Sweet Grass County is a south-central Montana county centered on Big Timber with rural residential demand along the Yellowstone River south corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sweet Grass County pricing reflects Big Timber-area demand, I-90 corridor traffic, and competition among regional agents serving south-central Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Big Timber and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  granite: {
+    marketNotes:
+      'Granite County, MT is a southwestern Montana county centered on Philipsburg with rural residential demand — not to be confused with Granite County, Utah.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Granite County pricing reflects Philipsburg-area demand, mountain-road access logistics, and competition among regional agents serving southwestern Montana communities.',
+    },
+    tips: [
+      'Verify coverage for Philipsburg and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sheridan: {
+    marketNotes:
+      'Sheridan County, MT is a northeastern Montana county centered on Plentywood with rural residential demand — not to be confused with Sheridan County, Wyoming.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sheridan County pricing reflects Plentywood-area demand, remote northeastern Montana travel distances, and competition among regional agents serving border prairie communities.',
+    },
+    tips: [
+      'Verify coverage for Plentywood and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fallon: {
+    marketNotes:
+      'Fallon County is an eastern Montana county centered on Baker with rural residential demand across southeastern plains corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Fallon County pricing reflects Baker-area demand, I-94 southeastern Montana corridor traffic, and competition among regional agents serving eastern plains communities.',
+    },
+    tips: [
+      'Verify coverage for Baker and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'judith-basin': {
+    marketNotes:
+      'Judith Basin County is a central Montana county centered on Stanford with rural residential demand across Judith Gap corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Judith Basin County pricing reflects Stanford-area demand, US-87 corridor traffic, and competition among regional agents serving central Montana prairie communities.',
+    },
+    tips: [
+      'Verify coverage for Stanford and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  meagher: {
+    marketNotes:
+      'Meagher County is a central Montana county centered on White Sulphur Springs with rural residential demand across Smith River corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Meagher County pricing reflects White Sulphur Springs-area demand, US-12 and US-89 corridor traffic, and competition among regional agents serving central Montana communities.',
+    },
+    tips: [
+      'Verify coverage for White Sulphur Springs and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wheatland: {
+    marketNotes:
+      'Wheatland County is a central Montana county centered on Harlowton with rural residential demand across south Musselshell corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Wheatland County pricing reflects Harlowton-area demand, US-12 and US-191 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    },
+    tips: [
+      'Verify coverage for Harlowton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  liberty: {
+    marketNotes:
+      'Liberty County, MT is a northern Montana county centered on Chester with rural residential demand — not to be confused with Liberty County, Pennsylvania.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Liberty County pricing reflects Chester-area demand, US-2 northern Montana corridor traffic, and competition among regional agents serving Sweet Grass Hills communities.',
+    },
+    tips: [
+      'Verify coverage for Chester and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'powder-river': {
+    marketNotes:
+      'Powder River County is a southeastern Montana county centered on Broadus with rural residential demand across Powder River Basin corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Powder River County pricing reflects Broadus-area demand, remote southeastern Montana travel distances, and competition among regional agents serving Powder River Basin communities.',
+    },
+    tips: [
+      'Verify coverage for Broadus and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mccone: {
+    marketNotes:
+      'McCone County is an eastern Montana county centered on Circle with rural residential demand along the eastern Missouri Breaks corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'McCone County pricing reflects Circle-area demand, remote eastern Montana travel distances, and competition among regional agents serving Missouri Breaks communities.',
+    },
+    tips: [
+      'Verify coverage for Circle and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  daniels: {
+    marketNotes:
+      'Daniels County is a northeastern Montana county centered on Scobey with rural residential demand across northeastern Hi-Line corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Daniels County pricing reflects Scobey-area demand, US-2 Hi-Line corridor traffic, and competition among regional agents serving northeastern Montana border communities.',
+    },
+    tips: [
+      'Verify coverage for Scobey and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carter: {
+    marketNotes:
+      'Carter County, MT is an eastern Montana county centered on Ekalaka with rural residential demand — not to be confused with Carter County, Oklahoma or Tennessee.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Carter County pricing reflects Ekalaka-area demand, remote southeastern Montana travel distances, and competition among regional agents serving eastern frontier communities.',
+    },
+    tips: [
+      'Verify coverage for Ekalaka and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  garfield: {
+    marketNotes:
+      'Garfield County, MT is an eastern Montana county centered on Jordan with rural residential demand — not to be confused with Garfield County, Colorado.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Garfield County pricing reflects Jordan-area demand, remote eastern Montana frontier travel distances, and competition among regional agents serving vast prairie communities.',
+    },
+    tips: [
+      'Verify coverage for Jordan and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  prairie: {
+    marketNotes:
+      'Prairie County, MT is an eastern Montana county centered on Terry with rural residential demand — not to be confused with Prairie County, Arkansas.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Prairie County pricing reflects Terry-area demand, I-94 eastern Montana corridor traffic, and competition among regional agents serving eastern badlands communities.',
+    },
+    tips: [
+      'Verify coverage for Terry and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wibaux: {
+    marketNotes:
+      'Wibaux County is an eastern Montana county centered on Wibaux with rural residential demand along the North Dakota border badlands corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Wibaux County pricing reflects Wibaux-area demand, I-94 border corridor traffic, and competition among regional agents serving eastern Montana border communities.',
+    },
+    tips: [
+      'Verify coverage for Wibaux and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'golden-valley': {
+    marketNotes:
+      'Golden Valley County is a central Montana county centered on Ryegate with rural residential demand across north Musselshell corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Golden Valley County pricing reflects Ryegate-area demand, US-12 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    },
+    tips: [
+      'Verify coverage for Ryegate and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  treasure: {
+    marketNotes:
+      'Treasure County is an eastern Montana county centered on Hysham with rural residential demand along the mid Yellowstone River corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Treasure County pricing reflects Hysham-area demand, I-94 corridor traffic, and competition among regional agents serving eastern Montana agricultural communities.',
+    },
+    tips: [
+      'Verify coverage for Hysham and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  petroleum: {
+    marketNotes:
+      'Petroleum County is one of Montana’s smallest counties centered on Winnett with rural residential demand across central plains corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Petroleum County pricing reflects Winnett-area demand, remote central Montana travel distances, and competition among regional agents serving one of Montana’s least populous counties.',
+    },
+    tips: [
+      'Verify coverage for Winnett and surrounding areas before booking.',
       'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
       'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',

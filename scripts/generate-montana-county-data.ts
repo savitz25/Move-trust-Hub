@@ -1,12 +1,12 @@
 /**
- * Generates Montana county curation files (batch 1: 25/56 counties).
+ * Generates Montana county curation files (batch 1–2: 56/56 counties).
  * Run: npx tsx scripts/generate-montana-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
-const EXPECTED_COUNT = 25;
+const EXPECTED_COUNT = 56;
 
 type CostTier = 'metro' | 'metro_growth' | 'western_slope' | 'rural';
 
@@ -78,6 +78,19 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   glacier: 'Glacier County, MT',
   roosevelt: 'Roosevelt County, MT',
   stillwater: 'Stillwater County, MT',
+  valley: 'Valley County, MT',
+  blaine: 'Blaine County, MT',
+  teton: 'Teton County, MT',
+  mineral: 'Mineral County, MT',
+  phillips: 'Phillips County, MT',
+  sheridan: 'Sheridan County, MT',
+  garfield: 'Garfield County, MT',
+  prairie: 'Prairie County, MT',
+  powell: 'Powell County, MT',
+  petroleum: 'Petroleum County, MT',
+  liberty: 'Liberty County, MT',
+  carter: 'Carter County, MT',
+  dawson: 'Dawson County, MT',
 };
 
 const MT_NEIGHBORS: Record<string, string[]> = {
@@ -86,7 +99,7 @@ const MT_NEIGHBORS: Record<string, string[]> = {
   missoula: ['lake', 'sanders', 'ravalli', 'flathead', 'mineral'],
   flathead: ['lake', 'sanders', 'lincoln', 'glacier', 'missoula'],
   cascade: ['glacier', 'lewis-and-clark', 'fergus', 'hill', 'meagher'],
-  'lewis-and-clark': ['cascade', 'jefferson', 'deer-lodge', 'silver-bow', 'fergus'],
+  'lewis-and-clark': ['cascade', 'jefferson', 'deer-lodge', 'silver-bow', 'broadwater'],
   ravalli: ['missoula', 'deer-lodge', 'silver-bow', 'beaverhead', 'granite'],
   'silver-bow': ['deer-lodge', 'jefferson', 'madison', 'gallatin', 'ravalli'],
   lake: ['flathead', 'missoula', 'sanders', 'glacier', 'pondera'],
@@ -94,18 +107,49 @@ const MT_NEIGHBORS: Record<string, string[]> = {
   park: ['gallatin', 'carbon', 'yellowstone', 'stillwater', 'sweet-grass'],
   hill: ['glacier', 'cascade', 'liberty', 'blaine', 'chouteau'],
   sanders: ['flathead', 'lake', 'missoula', 'lincoln', 'mineral'],
-  jefferson: ['gallatin', 'madison', 'silver-bow', 'deer-lodge', 'lewis-and-clark'],
+  jefferson: ['gallatin', 'madison', 'silver-bow', 'deer-lodge', 'broadwater'],
   glacier: ['flathead', 'hill', 'cascade', 'pondera', 'toole'],
   'big-horn': ['yellowstone', 'carbon', 'treasure', 'rosebud', 'custer'],
   custer: ['fergus', 'richland', 'prairie', 'fallon', 'powder-river'],
-  fergus: ['cascade', 'lewis-and-clark', 'custer', 'petroleum', 'meagher'],
+  fergus: ['cascade', 'lewis-and-clark', 'custer', 'petroleum', 'judith-basin'],
   richland: ['roosevelt', 'custer', 'dawson', 'mccone', 'wibaux'],
   carbon: ['park', 'yellowstone', 'big-horn', 'stillwater', 'sweet-grass'],
   madison: ['gallatin', 'jefferson', 'silver-bow', 'beaverhead', 'park'],
   roosevelt: ['richland', 'sheridan', 'daniels', 'mccone', 'valley'],
   beaverhead: ['madison', 'silver-bow', 'deer-lodge', 'ravalli', 'granite'],
-  'deer-lodge': ['ravalli', 'silver-bow', 'jefferson', 'lewis-and-clark', 'missoula'],
+  'deer-lodge': ['ravalli', 'silver-bow', 'jefferson', 'lewis-and-clark', 'powell'],
   stillwater: ['yellowstone', 'park', 'carbon', 'gallatin', 'sweet-grass'],
+  broadwater: ['lewis-and-clark', 'jefferson', 'gallatin', 'meagher', 'wheatland'],
+  dawson: ['richland', 'wibaux', 'prairie', 'fallon', 'garfield'],
+  rosebud: ['big-horn', 'treasure', 'custer', 'powder-river', 'yellowstone'],
+  valley: ['roosevelt', 'daniels', 'sheridan', 'mccone', 'phillips'],
+  powell: ['deer-lodge', 'granite', 'missoula', 'ravalli', 'jefferson'],
+  blaine: ['hill', 'chouteau', 'liberty', 'phillips', 'fergus'],
+  teton: ['pondera', 'cascade', 'glacier', 'flathead', 'chouteau'],
+  pondera: ['glacier', 'lake', 'teton', 'chouteau', 'cascade'],
+  chouteau: ['pondera', 'cascade', 'hill', 'blaine', 'fergus'],
+  musselshell: ['yellowstone', 'stillwater', 'wheatland', 'golden-valley', 'petroleum'],
+  toole: ['glacier', 'liberty', 'pondera', 'hill', 'sheridan'],
+  mineral: ['missoula', 'sanders', 'lake', 'ravalli', 'lincoln'],
+  phillips: ['blaine', 'valley', 'daniels', 'hill', 'liberty'],
+  'sweet-grass': ['gallatin', 'park', 'stillwater', 'yellowstone', 'wheatland'],
+  granite: ['ravalli', 'deer-lodge', 'powell', 'beaverhead', 'silver-bow'],
+  sheridan: ['roosevelt', 'daniels', 'valley', 'toole', 'liberty'],
+  fallon: ['custer', 'carter', 'powder-river', 'prairie', 'dawson'],
+  'judith-basin': ['fergus', 'cascade', 'meagher', 'wheatland', 'musselshell'],
+  meagher: ['cascade', 'lewis-and-clark', 'broadwater', 'wheatland', 'judith-basin'],
+  wheatland: ['sweet-grass', 'musselshell', 'golden-valley', 'meagher', 'broadwater'],
+  liberty: ['hill', 'toole', 'sheridan', 'blaine', 'lincoln'],
+  'powder-river': ['custer', 'rosebud', 'carter', 'fallon', 'prairie'],
+  mccone: ['richland', 'roosevelt', 'valley', 'dawson', 'garfield'],
+  daniels: ['roosevelt', 'sheridan', 'valley', 'phillips', 'liberty'],
+  carter: ['fallon', 'powder-river', 'custer', 'prairie', 'dawson'],
+  garfield: ['dawson', 'mccone', 'prairie', 'richland', 'fallon'],
+  prairie: ['custer', 'dawson', 'fallon', 'powder-river', 'carter'],
+  wibaux: ['richland', 'dawson', 'mccone', 'fallon', 'prairie'],
+  'golden-valley': ['musselshell', 'wheatland', 'yellowstone', 'petroleum', 'judith-basin'],
+  treasure: ['yellowstone', 'big-horn', 'rosebud', 'musselshell', 'sweet-grass'],
+  petroleum: ['musselshell', 'fergus', 'judith-basin', 'golden-valley', 'wheatland'],
 };
 
 type CrossBorder = {
@@ -163,6 +207,15 @@ const CROSS_BORDER: Partial<Record<string, CrossBorder[]>> = {
     },
   ],
   richland: [
+    {
+      slug: 'williams',
+      stateSlug: 'north-dakota',
+      name: 'Williams',
+      seat: 'Williston',
+      displayLabel: 'Williams County, ND',
+    },
+  ],
+  sheridan: [
     {
       slug: 'williams',
       stateSlug: 'north-dakota',
@@ -677,34 +730,631 @@ const COUNTIES: CountyDef[] = [
       'Stillwater County pricing reflects Columbus-area demand, I-90 south-central Montana corridor traffic, and competition among regional agents serving Stillwater County communities.',
     tipVariant: 'rural',
   },
+  {
+    slug: 'broadwater',
+    name: 'Broadwater',
+    seat: 'Townsend',
+    city: 'Townsend',
+    metro: 'broadwater-metro-mt',
+    costTier: 'rural',
+    citySlug: 'townsend',
+    regional1: 'townsend-corridor',
+    regional2: 'missouri-headwaters',
+    topId: 'regional-broadwater-mt-movers',
+    topName: 'Regional Townsend / Broadwater Providers',
+    regional1Name: 'Townsend Corridor Moving',
+    regional2Name: 'Missouri Headwaters Moving',
+    marketNotes:
+      'Broadwater County is a central Montana county centered on Townsend with rural residential demand across Missouri River headwaters corridor communities.',
+    costNote:
+      'Broadwater County pricing reflects Townsend-area demand, I-15 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'dawson',
+    name: 'Dawson',
+    seat: 'Glendive',
+    city: 'Glendive',
+    metro: 'dawson-metro-mt',
+    costTier: 'rural',
+    citySlug: 'glendive',
+    regional1: 'glendive-corridor',
+    regional2: 'yellowstone-river-east',
+    topId: 'regional-dawson-mt-movers',
+    topName: 'Regional Glendive / Dawson Providers',
+    regional1Name: 'Glendive Corridor Moving',
+    regional2Name: 'Yellowstone River East Moving',
+    marketNotes:
+      'Dawson County is an eastern Montana county centered on Glendive with rural residential demand along the Yellowstone River eastern corridor.',
+    costNote:
+      'Dawson County pricing reflects Glendive-area demand, I-94 eastern Montana corridor traffic, and competition among regional agents serving eastern plains communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'rosebud',
+    name: 'Rosebud',
+    seat: 'Forsyth',
+    city: 'Forsyth',
+    metro: 'rosebud-metro-mt',
+    costTier: 'rural',
+    citySlug: 'forsyth',
+    regional1: 'forsyth-corridor',
+    regional2: 'rosebud-creek',
+    topId: 'regional-rosebud-mt-movers',
+    topName: 'Regional Forsyth / Rosebud Providers',
+    regional1Name: 'Forsyth Corridor Moving',
+    regional2Name: 'Rosebud Creek Moving',
+    marketNotes:
+      'Rosebud County is an eastern Montana county centered on Forsyth with rural residential demand across southeastern Montana corridor communities.',
+    costNote:
+      'Rosebud County pricing reflects Forsyth-area demand, I-94 corridor traffic, and competition among regional agents serving southeastern Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'valley',
+    name: 'Valley',
+    seat: 'Glasgow',
+    city: 'Glasgow',
+    metro: 'valley-metro-mt',
+    costTier: 'rural',
+    citySlug: 'glasgow',
+    regional1: 'glasgow-corridor',
+    regional2: 'hi-line-east',
+    topId: 'regional-valley-mt-movers',
+    topName: 'Regional Glasgow / Valley Providers',
+    regional1Name: 'Glasgow Corridor Moving',
+    regional2Name: 'Hi-Line East Moving',
+    marketNotes:
+      'Valley County, MT is a northeastern Montana county centered on Glasgow with rural residential demand across Hi-Line corridor communities — not to be confused with Valley County, Idaho.',
+    costNote:
+      'Valley County pricing reflects Glasgow-area demand, US-2 Hi-Line corridor traffic, and competition among regional agents serving northeastern Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'powell',
+    name: 'Powell',
+    seat: 'Deer Lodge',
+    city: 'Deer Lodge',
+    metro: 'powell-metro-mt',
+    costTier: 'rural',
+    citySlug: 'deer-lodge',
+    regional1: 'deer-lodge-corridor',
+    regional2: 'clark-fork-west',
+    topId: 'regional-powell-mt-movers',
+    topName: 'Regional Deer Lodge / Powell Providers',
+    regional1Name: 'Deer Lodge Corridor Moving',
+    regional2Name: 'Clark Fork West Moving',
+    marketNotes:
+      'Powell County is a southwestern Montana county with seat at Deer Lodge (distinct from Deer Lodge County / Anaconda) with rural residential demand.',
+    costNote:
+      'Powell County pricing reflects Deer Lodge-area demand, I-90 corridor traffic, and competition among regional agents serving southwestern Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'blaine',
+    name: 'Blaine',
+    seat: 'Chinook',
+    city: 'Chinook',
+    metro: 'blaine-metro-mt',
+    costTier: 'rural',
+    citySlug: 'chinook',
+    regional1: 'chinook-corridor',
+    regional2: 'milk-river',
+    topId: 'regional-blaine-mt-movers',
+    topName: 'Regional Chinook / Blaine Providers',
+    regional1Name: 'Chinook Corridor Moving',
+    regional2Name: 'Milk River Moving',
+    marketNotes:
+      'Blaine County, MT is a northern Montana county centered on Chinook with rural residential demand — not to be confused with Blaine County, Idaho (Sun Valley).',
+    costNote:
+      'Blaine County pricing reflects Chinook-area demand, US-2 Milk River corridor traffic, and competition among regional agents serving northern Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'teton',
+    name: 'Teton',
+    seat: 'Choteau',
+    city: 'Choteau',
+    metro: 'teton-metro-mt',
+    costTier: 'rural',
+    citySlug: 'choteau',
+    regional1: 'choteau-corridor',
+    regional2: 'rocky-mountain-front',
+    topId: 'regional-teton-mt-movers',
+    topName: 'Regional Choteau / Teton Providers',
+    regional1Name: 'Choteau Corridor Moving',
+    regional2Name: 'Rocky Mountain Front Moving',
+    marketNotes:
+      'Teton County, MT is a north-central Montana county centered on Choteau with rural residential demand along the Rocky Mountain Front — not to be confused with Teton County, Idaho or Wyoming.',
+    costNote:
+      'Teton County pricing reflects Choteau-area demand, US-89 Rocky Mountain Front corridor traffic, and competition among regional agents serving north-central Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'pondera',
+    name: 'Pondera',
+    seat: 'Conrad',
+    city: 'Conrad',
+    metro: 'pondera-metro-mt',
+    costTier: 'rural',
+    citySlug: 'conrad',
+    regional1: 'conrad-corridor',
+    regional2: 'northern-plains-west',
+    topId: 'regional-pondera-mt-movers',
+    topName: 'Regional Conrad / Pondera Providers',
+    regional1Name: 'Conrad Corridor Moving',
+    regional2Name: 'Northern Plains West Moving',
+    marketNotes:
+      'Pondera County is a north-central Montana county centered on Conrad with rural residential demand across northern plains corridor communities.',
+    costNote:
+      'Pondera County pricing reflects Conrad-area demand, US-2 and US-89 corridor traffic, and competition among regional agents serving north-central Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'chouteau',
+    name: 'Chouteau',
+    seat: 'Fort Benton',
+    city: 'Fort Benton',
+    metro: 'chouteau-metro-mt',
+    costTier: 'rural',
+    citySlug: 'fort-benton',
+    regional1: 'fort-benton-corridor',
+    regional2: 'missouri-breaks',
+    topId: 'regional-chouteau-mt-movers',
+    topName: 'Regional Fort Benton / Chouteau Providers',
+    regional1Name: 'Fort Benton Corridor Moving',
+    regional2Name: 'Missouri Breaks Moving',
+    marketNotes:
+      'Chouteau County is a north-central Montana county centered on Fort Benton with rural residential demand along the Missouri Breaks corridor.',
+    costNote:
+      'Chouteau County pricing reflects Fort Benton-area demand, Missouri River corridor logistics, and competition among regional agents serving north-central Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'musselshell',
+    name: 'Musselshell',
+    seat: 'Roundup',
+    city: 'Roundup',
+    metro: 'musselshell-metro-mt',
+    costTier: 'rural',
+    citySlug: 'roundup',
+    regional1: 'roundup-corridor',
+    regional2: 'musselshell-valley',
+    topId: 'regional-musselshell-mt-movers',
+    topName: 'Regional Roundup / Musselshell Providers',
+    regional1Name: 'Roundup Corridor Moving',
+    regional2Name: 'Musselshell Valley Moving',
+    marketNotes:
+      'Musselshell County is a central Montana county centered on Roundup with rural residential demand across Musselshell Valley corridor communities.',
+    costNote:
+      'Musselshell County pricing reflects Roundup-area demand, US-87 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'toole',
+    name: 'Toole',
+    seat: 'Shelby',
+    city: 'Shelby',
+    metro: 'toole-metro-mt',
+    costTier: 'rural',
+    citySlug: 'shelby',
+    regional1: 'shelby-corridor',
+    regional2: 'marias-pass',
+    topId: 'regional-toole-mt-movers',
+    topName: 'Regional Shelby / Toole Providers',
+    regional1Name: 'Shelby Corridor Moving',
+    regional2Name: 'Marias Pass Moving',
+    marketNotes:
+      'Toole County is a northern Montana county centered on Shelby with rural residential demand across Marias Pass corridor communities.',
+    costNote:
+      'Toole County pricing reflects Shelby-area demand, I-15 and US-2 corridor traffic, and competition among regional agents serving northern Montana border communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'mineral',
+    name: 'Mineral',
+    seat: 'Superior',
+    city: 'Superior',
+    metro: 'mineral-metro-mt',
+    costTier: 'rural',
+    citySlug: 'superior',
+    regional1: 'superior-corridor',
+    regional2: 'clark-river-west',
+    topId: 'regional-mineral-mt-movers',
+    topName: 'Regional Superior / Mineral Providers',
+    regional1Name: 'Superior Corridor Moving',
+    regional2Name: 'Clark River West Moving',
+    marketNotes:
+      'Mineral County, MT is a western Montana county centered on Superior with rural residential demand — not to be confused with Mineral County, Nevada or West Virginia.',
+    costNote:
+      'Mineral County pricing reflects Superior-area demand, I-90 western Montana corridor traffic, and competition among regional agents serving Clark Fork corridor communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'phillips',
+    name: 'Phillips',
+    seat: 'Malta',
+    city: 'Malta',
+    metro: 'phillips-metro-mt',
+    costTier: 'rural',
+    citySlug: 'malta',
+    regional1: 'malta-corridor',
+    regional2: 'hi-line-north',
+    topId: 'regional-phillips-mt-movers',
+    topName: 'Regional Malta / Phillips Providers',
+    regional1Name: 'Malta Corridor Moving',
+    regional2Name: 'Hi-Line North Moving',
+    marketNotes:
+      'Phillips County, MT is a northern Montana county centered on Malta with rural residential demand — not to be confused with Phillips County, Pennsylvania.',
+    costNote:
+      'Phillips County pricing reflects Malta-area demand, US-2 Hi-Line corridor traffic, and competition among regional agents serving northern Montana prairie communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'sweet-grass',
+    name: 'Sweet Grass',
+    seat: 'Big Timber',
+    city: 'Big Timber',
+    metro: 'sweet-grass-metro-mt',
+    costTier: 'rural',
+    citySlug: 'big-timber',
+    regional1: 'big-timber-corridor',
+    regional2: 'yellowstone-river-south',
+    topId: 'regional-sweetgrass-mt-movers',
+    topName: 'Regional Big Timber / Sweet Grass Providers',
+    regional1Name: 'Big Timber Corridor Moving',
+    regional2Name: 'Yellowstone River South Moving',
+    marketNotes:
+      'Sweet Grass County is a south-central Montana county centered on Big Timber with rural residential demand along the Yellowstone River south corridor.',
+    costNote:
+      'Sweet Grass County pricing reflects Big Timber-area demand, I-90 corridor traffic, and competition among regional agents serving south-central Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'granite',
+    name: 'Granite',
+    seat: 'Philipsburg',
+    city: 'Philipsburg',
+    metro: 'granite-metro-mt',
+    costTier: 'rural',
+    citySlug: 'philipsburg',
+    regional1: 'philipsburg-corridor',
+    regional2: 'flint-creek',
+    topId: 'regional-granite-mt-movers',
+    topName: 'Regional Philipsburg / Granite Providers',
+    regional1Name: 'Philipsburg Corridor Moving',
+    regional2Name: 'Flint Creek Moving',
+    marketNotes:
+      'Granite County, MT is a southwestern Montana county centered on Philipsburg with rural residential demand — not to be confused with Granite County, Utah.',
+    costNote:
+      'Granite County pricing reflects Philipsburg-area demand, mountain-road access logistics, and competition among regional agents serving southwestern Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'sheridan',
+    name: 'Sheridan',
+    seat: 'Plentywood',
+    city: 'Plentywood',
+    metro: 'sheridan-metro-mt',
+    costTier: 'rural',
+    citySlug: 'plentywood',
+    regional1: 'plentywood-corridor',
+    regional2: 'northeast-corner',
+    topId: 'regional-sheridan-mt-movers',
+    topName: 'Regional Plentywood / Sheridan Providers',
+    regional1Name: 'Plentywood Corridor Moving',
+    regional2Name: 'Northeast Corner Moving',
+    marketNotes:
+      'Sheridan County, MT is a northeastern Montana county centered on Plentywood with rural residential demand — not to be confused with Sheridan County, Wyoming.',
+    costNote:
+      'Sheridan County pricing reflects Plentywood-area demand, remote northeastern Montana travel distances, and competition among regional agents serving border prairie communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'fallon',
+    name: 'Fallon',
+    seat: 'Baker',
+    city: 'Baker',
+    metro: 'fallon-metro-mt',
+    costTier: 'rural',
+    citySlug: 'baker',
+    regional1: 'baker-corridor',
+    regional2: 'southeast-plains',
+    topId: 'regional-fallon-mt-movers',
+    topName: 'Regional Baker / Fallon Providers',
+    regional1Name: 'Baker Corridor Moving',
+    regional2Name: 'Southeast Plains Moving',
+    marketNotes:
+      'Fallon County is an eastern Montana county centered on Baker with rural residential demand across southeastern plains corridor communities.',
+    costNote:
+      'Fallon County pricing reflects Baker-area demand, I-94 southeastern Montana corridor traffic, and competition among regional agents serving eastern plains communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'judith-basin',
+    name: 'Judith Basin',
+    seat: 'Stanford',
+    city: 'Stanford',
+    metro: 'judith-basin-metro-mt',
+    costTier: 'rural',
+    citySlug: 'stanford',
+    regional1: 'stanford-corridor',
+    regional2: 'judith-gap',
+    topId: 'regional-judithbasin-mt-movers',
+    topName: 'Regional Stanford / Judith Basin Providers',
+    regional1Name: 'Stanford Corridor Moving',
+    regional2Name: 'Judith Gap Moving',
+    marketNotes:
+      'Judith Basin County is a central Montana county centered on Stanford with rural residential demand across Judith Gap corridor communities.',
+    costNote:
+      'Judith Basin County pricing reflects Stanford-area demand, US-87 corridor traffic, and competition among regional agents serving central Montana prairie communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'meagher',
+    name: 'Meagher',
+    seat: 'White Sulphur Springs',
+    city: 'White Sulphur Springs',
+    metro: 'meagher-metro-mt',
+    costTier: 'rural',
+    citySlug: 'white-sulphur-springs',
+    regional1: 'white-sulphur-corridor',
+    regional2: 'smith-river',
+    topId: 'regional-meagher-mt-movers',
+    topName: 'Regional White Sulphur Springs / Meagher Providers',
+    regional1Name: 'White Sulphur Corridor Moving',
+    regional2Name: 'Smith River Moving',
+    marketNotes:
+      'Meagher County is a central Montana county centered on White Sulphur Springs with rural residential demand across Smith River corridor communities.',
+    costNote:
+      'Meagher County pricing reflects White Sulphur Springs-area demand, US-12 and US-89 corridor traffic, and competition among regional agents serving central Montana communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'wheatland',
+    name: 'Wheatland',
+    seat: 'Harlowton',
+    city: 'Harlowton',
+    metro: 'wheatland-metro-mt',
+    costTier: 'rural',
+    citySlug: 'harlowton',
+    regional1: 'harlowton-corridor',
+    regional2: 'musselshell-south',
+    topId: 'regional-wheatland-mt-movers',
+    topName: 'Regional Harlowton / Wheatland Providers',
+    regional1Name: 'Harlowton Corridor Moving',
+    regional2Name: 'Musselshell South Moving',
+    marketNotes:
+      'Wheatland County is a central Montana county centered on Harlowton with rural residential demand across south Musselshell corridor communities.',
+    costNote:
+      'Wheatland County pricing reflects Harlowton-area demand, US-12 and US-191 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'liberty',
+    name: 'Liberty',
+    seat: 'Chester',
+    city: 'Chester',
+    metro: 'liberty-metro-mt',
+    costTier: 'rural',
+    citySlug: 'chester',
+    regional1: 'chester-corridor',
+    regional2: 'sweet-grass-hills',
+    topId: 'regional-liberty-mt-movers',
+    topName: 'Regional Chester / Liberty Providers',
+    regional1Name: 'Chester Corridor Moving',
+    regional2Name: 'Sweet Grass Hills Moving',
+    marketNotes:
+      'Liberty County, MT is a northern Montana county centered on Chester with rural residential demand — not to be confused with Liberty County, Pennsylvania.',
+    costNote:
+      'Liberty County pricing reflects Chester-area demand, US-2 northern Montana corridor traffic, and competition among regional agents serving Sweet Grass Hills communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'powder-river',
+    name: 'Powder River',
+    seat: 'Broadus',
+    city: 'Broadus',
+    metro: 'powder-river-metro-mt',
+    costTier: 'rural',
+    citySlug: 'broadus',
+    regional1: 'broadus-corridor',
+    regional2: 'powder-river-basin',
+    topId: 'regional-powderriver-mt-movers',
+    topName: 'Regional Broadus / Powder River Providers',
+    regional1Name: 'Broadus Corridor Moving',
+    regional2Name: 'Powder River Basin Moving',
+    marketNotes:
+      'Powder River County is a southeastern Montana county centered on Broadus with rural residential demand across Powder River Basin corridor communities.',
+    costNote:
+      'Powder River County pricing reflects Broadus-area demand, remote southeastern Montana travel distances, and competition among regional agents serving Powder River Basin communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'mccone',
+    name: 'McCone',
+    seat: 'Circle',
+    city: 'Circle',
+    metro: 'mccone-metro-mt',
+    costTier: 'rural',
+    citySlug: 'circle',
+    regional1: 'circle-corridor',
+    regional2: 'missouri-breaks-east',
+    topId: 'regional-mccone-mt-movers',
+    topName: 'Regional Circle / McCone Providers',
+    regional1Name: 'Circle Corridor Moving',
+    regional2Name: 'Missouri Breaks East Moving',
+    marketNotes:
+      'McCone County is an eastern Montana county centered on Circle with rural residential demand along the eastern Missouri Breaks corridor.',
+    costNote:
+      'McCone County pricing reflects Circle-area demand, remote eastern Montana travel distances, and competition among regional agents serving Missouri Breaks communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'daniels',
+    name: 'Daniels',
+    seat: 'Scobey',
+    city: 'Scobey',
+    metro: 'daniels-metro-mt',
+    costTier: 'rural',
+    citySlug: 'scobey',
+    regional1: 'scobey-corridor',
+    regional2: 'northeast-hi-line',
+    topId: 'regional-daniels-mt-movers',
+    topName: 'Regional Scobey / Daniels Providers',
+    regional1Name: 'Scobey Corridor Moving',
+    regional2Name: 'Northeast Hi-Line Moving',
+    marketNotes:
+      'Daniels County is a northeastern Montana county centered on Scobey with rural residential demand across northeastern Hi-Line corridor communities.',
+    costNote:
+      'Daniels County pricing reflects Scobey-area demand, US-2 Hi-Line corridor traffic, and competition among regional agents serving northeastern Montana border communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'carter',
+    name: 'Carter',
+    seat: 'Ekalaka',
+    city: 'Ekalaka',
+    metro: 'carter-metro-mt',
+    costTier: 'rural',
+    citySlug: 'ekalaka',
+    regional1: 'ekalaka-corridor',
+    regional2: 'southeast-corner',
+    topId: 'regional-carter-mt-movers',
+    topName: 'Regional Ekalaka / Carter Providers',
+    regional1Name: 'Ekalaka Corridor Moving',
+    regional2Name: 'Southeast Corner Moving',
+    marketNotes:
+      'Carter County, MT is an eastern Montana county centered on Ekalaka with rural residential demand — not to be confused with Carter County, Oklahoma or Tennessee.',
+    costNote:
+      'Carter County pricing reflects Ekalaka-area demand, remote southeastern Montana travel distances, and competition among regional agents serving eastern frontier communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'garfield',
+    name: 'Garfield',
+    seat: 'Jordan',
+    city: 'Jordan',
+    metro: 'garfield-metro-mt',
+    costTier: 'rural',
+    citySlug: 'jordan',
+    regional1: 'jordan-corridor',
+    regional2: 'eastern-frontier',
+    topId: 'regional-garfield-mt-movers',
+    topName: 'Regional Jordan / Garfield Providers',
+    regional1Name: 'Jordan Corridor Moving',
+    regional2Name: 'Eastern Frontier Moving',
+    marketNotes:
+      'Garfield County, MT is an eastern Montana county centered on Jordan with rural residential demand — not to be confused with Garfield County, Colorado.',
+    costNote:
+      'Garfield County pricing reflects Jordan-area demand, remote eastern Montana frontier travel distances, and competition among regional agents serving vast prairie communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'prairie',
+    name: 'Prairie',
+    seat: 'Terry',
+    city: 'Terry',
+    metro: 'prairie-metro-mt',
+    costTier: 'rural',
+    citySlug: 'terry',
+    regional1: 'terry-corridor',
+    regional2: 'badlands-east',
+    topId: 'regional-prairie-mt-movers',
+    topName: 'Regional Terry / Prairie Providers',
+    regional1Name: 'Terry Corridor Moving',
+    regional2Name: 'Badlands East Moving',
+    marketNotes:
+      'Prairie County, MT is an eastern Montana county centered on Terry with rural residential demand — not to be confused with Prairie County, Arkansas.',
+    costNote:
+      'Prairie County pricing reflects Terry-area demand, I-94 eastern Montana corridor traffic, and competition among regional agents serving eastern badlands communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'wibaux',
+    name: 'Wibaux',
+    seat: 'Wibaux',
+    city: 'Wibaux',
+    metro: 'wibaux-metro-mt',
+    costTier: 'rural',
+    citySlug: 'wibaux',
+    regional1: 'wibaux-corridor',
+    regional2: 'badlands-border',
+    topId: 'regional-wibaux-mt-movers',
+    topName: 'Regional Wibaux / Wibaux County Providers',
+    regional1Name: 'Wibaux Corridor Moving',
+    regional2Name: 'Badlands Border Moving',
+    marketNotes:
+      'Wibaux County is an eastern Montana county centered on Wibaux with rural residential demand along the North Dakota border badlands corridor.',
+    costNote:
+      'Wibaux County pricing reflects Wibaux-area demand, I-94 border corridor traffic, and competition among regional agents serving eastern Montana border communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'golden-valley',
+    name: 'Golden Valley',
+    seat: 'Ryegate',
+    city: 'Ryegate',
+    metro: 'golden-valley-metro-mt',
+    costTier: 'rural',
+    citySlug: 'ryegate',
+    regional1: 'ryegate-corridor',
+    regional2: 'musselshell-north',
+    topId: 'regional-goldenvalley-mt-movers',
+    topName: 'Regional Ryegate / Golden Valley Providers',
+    regional1Name: 'Ryegate Corridor Moving',
+    regional2Name: 'Musselshell North Moving',
+    marketNotes:
+      'Golden Valley County is a central Montana county centered on Ryegate with rural residential demand across north Musselshell corridor communities.',
+    costNote:
+      'Golden Valley County pricing reflects Ryegate-area demand, US-12 corridor traffic, and competition among regional agents serving central Montana rural communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'treasure',
+    name: 'Treasure',
+    seat: 'Hysham',
+    city: 'Hysham',
+    metro: 'treasure-metro-mt',
+    costTier: 'rural',
+    citySlug: 'hysham',
+    regional1: 'hysham-corridor',
+    regional2: 'yellowstone-river-mid',
+    topId: 'regional-treasure-mt-movers',
+    topName: 'Regional Hysham / Treasure Providers',
+    regional1Name: 'Hysham Corridor Moving',
+    regional2Name: 'Yellowstone River Mid Moving',
+    marketNotes:
+      'Treasure County is an eastern Montana county centered on Hysham with rural residential demand along the mid Yellowstone River corridor.',
+    costNote:
+      'Treasure County pricing reflects Hysham-area demand, I-94 corridor traffic, and competition among regional agents serving eastern Montana agricultural communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'petroleum',
+    name: 'Petroleum',
+    seat: 'Winnett',
+    city: 'Winnett',
+    metro: 'petroleum-metro-mt',
+    costTier: 'rural',
+    citySlug: 'winnett',
+    regional1: 'winnett-corridor',
+    regional2: 'central-plains',
+    topId: 'regional-petroleum-mt-movers',
+    topName: 'Regional Winnett / Petroleum Providers',
+    regional1Name: 'Winnett Corridor Moving',
+    regional2Name: 'Central Plains Moving',
+    marketNotes:
+      'Petroleum County is one of Montana’s smallest counties centered on Winnett with rural residential demand across central plains corridor communities.',
+    costNote:
+      'Petroleum County pricing reflects Winnett-area demand, remote central Montana travel distances, and competition among regional agents serving one of Montana’s least populous counties.',
+    tipVariant: 'rural',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
 
-const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
-  treasure: { name: 'Treasure', seat: 'Hysham' },
-  'sweet-grass': { name: 'Sweet Grass', seat: 'Big Timber' },
-  powell: { name: 'Powell', seat: 'Deer Lodge' },
-  mineral: { name: 'Mineral', seat: 'Superior' },
-  pondera: { name: 'Pondera', seat: 'Conrad' },
-  liberty: { name: 'Liberty', seat: 'Chester' },
-  blaine: { name: 'Blaine', seat: 'Chinook' },
-  chouteau: { name: 'Chouteau', seat: 'Fort Benton' },
-  meagher: { name: 'Meagher', seat: 'White Sulphur Springs' },
-  granite: { name: 'Granite', seat: 'Philipsburg' },
-  rosebud: { name: 'Rosebud', seat: 'Forsyth' },
-  prairie: { name: 'Prairie', seat: 'Terry' },
-  fallon: { name: 'Fallon', seat: 'Baker' },
-  'powder-river': { name: 'Powder River', seat: 'Broadus' },
-  petroleum: { name: 'Petroleum', seat: 'Winnett' },
-  dawson: { name: 'Dawson', seat: 'Glendive' },
-  mccone: { name: 'McCone', seat: 'Circle' },
-  wibaux: { name: 'Wibaux', seat: 'Wibaux' },
-  sheridan: { name: 'Sheridan', seat: 'Plentywood' },
-  daniels: { name: 'Daniels', seat: 'Scobey' },
-  valley: { name: 'Valley', seat: 'Glasgow' },
-  toole: { name: 'Toole', seat: 'Shelby' },
-};
+const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {};
 
 function slugKey(slug: string): string {
   return /[^a-z]/.test(slug) ? `'${slug}'` : slug;
@@ -968,7 +1618,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Montana county research — batch 1: 25/56 */
+/** Hand-curated Montana county research — batch 1–2: 56/56 */
 export const montanaCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -985,7 +1635,7 @@ function genTestimonials(): string {
   const entries = COUNTIES.map((c, i) => buildTestimonials(c, i + 3));
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Montana county testimonials — batch 1: 25/56 */
+/** Hand-curated Montana county testimonials — batch 1–2: 56/56 */
 export const montanaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${entries.join('\n')}
 };
@@ -1007,7 +1657,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Montana county mover lists — batch 1: 25/56 */
+/** Hand-curated Montana county mover lists — batch 1–2: 56/56 */
 const CURATED_MT_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -1027,7 +1677,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Montana counties (batch 1: 25/56) */
+/** Seat and metro overrides for hand-curated Montana counties (batch 1–2: 56/56) */
 export const montanaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -1048,7 +1698,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** Montana curated county corridor links — batch 1: 25/56 */
+/** Montana curated county corridor links — batch 1–2: 56/56 */
 const MT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };

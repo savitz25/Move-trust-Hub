@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Montana counties (batch 1: 25/56) */
+/** Seat and metro overrides for hand-curated Montana counties (batch 1–2: 56/56) */
 export const montanaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -29,6 +29,37 @@ export const montanaCountyOverrides: Partial<
   beaverhead: { seat: 'Dillon', metro: 'beaverhead-metro-mt' },
   'deer-lodge': { seat: 'Anaconda', metro: 'deer-lodge-metro-mt' },
   stillwater: { seat: 'Columbus', metro: 'stillwater-metro-mt' },
+  broadwater: { seat: 'Townsend', metro: 'broadwater-metro-mt' },
+  dawson: { seat: 'Glendive', metro: 'dawson-metro-mt' },
+  rosebud: { seat: 'Forsyth', metro: 'rosebud-metro-mt' },
+  valley: { seat: 'Glasgow', metro: 'valley-metro-mt' },
+  powell: { seat: 'Deer Lodge', metro: 'powell-metro-mt' },
+  blaine: { seat: 'Chinook', metro: 'blaine-metro-mt' },
+  teton: { seat: 'Choteau', metro: 'teton-metro-mt' },
+  pondera: { seat: 'Conrad', metro: 'pondera-metro-mt' },
+  chouteau: { seat: 'Fort Benton', metro: 'chouteau-metro-mt' },
+  musselshell: { seat: 'Roundup', metro: 'musselshell-metro-mt' },
+  toole: { seat: 'Shelby', metro: 'toole-metro-mt' },
+  mineral: { seat: 'Superior', metro: 'mineral-metro-mt' },
+  phillips: { seat: 'Malta', metro: 'phillips-metro-mt' },
+  'sweet-grass': { seat: 'Big Timber', metro: 'sweet-grass-metro-mt' },
+  granite: { seat: 'Philipsburg', metro: 'granite-metro-mt' },
+  sheridan: { seat: 'Plentywood', metro: 'sheridan-metro-mt' },
+  fallon: { seat: 'Baker', metro: 'fallon-metro-mt' },
+  'judith-basin': { seat: 'Stanford', metro: 'judith-basin-metro-mt' },
+  meagher: { seat: 'White Sulphur Springs', metro: 'meagher-metro-mt' },
+  wheatland: { seat: 'Harlowton', metro: 'wheatland-metro-mt' },
+  liberty: { seat: 'Chester', metro: 'liberty-metro-mt' },
+  'powder-river': { seat: 'Broadus', metro: 'powder-river-metro-mt' },
+  mccone: { seat: 'Circle', metro: 'mccone-metro-mt' },
+  daniels: { seat: 'Scobey', metro: 'daniels-metro-mt' },
+  carter: { seat: 'Ekalaka', metro: 'carter-metro-mt' },
+  garfield: { seat: 'Jordan', metro: 'garfield-metro-mt' },
+  prairie: { seat: 'Terry', metro: 'prairie-metro-mt' },
+  wibaux: { seat: 'Wibaux', metro: 'wibaux-metro-mt' },
+  'golden-valley': { seat: 'Ryegate', metro: 'golden-valley-metro-mt' },
+  treasure: { seat: 'Hysham', metro: 'treasure-metro-mt' },
+  petroleum: { seat: 'Winnett', metro: 'petroleum-metro-mt' },
 };
 
 export function applyMontanaCountyOverrides(county: LocalCounty): LocalCounty {
