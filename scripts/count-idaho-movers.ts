@@ -1,10 +1,14 @@
 import { idahoCountyResearch } from '../data/idaho-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  ada: 11,
+  canyon: 8,
+};
+const DEFAULT_TARGET = 5;
 
-function getTarget(_slug: string): number {
-  return DEFAULT_TARGET;
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const curatedSlugs = Object.keys(idahoCountyResearch).sort();

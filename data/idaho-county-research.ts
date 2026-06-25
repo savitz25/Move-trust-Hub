@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Idaho county research — batch 1–2: 44/44 */
+/** Hand-curated Idaho county research — 44/44 complete */
 export const idahoCountyResearch: Record<string, CuratedCountyResearch> = {
   ada: {
     marketNotes:
-      'Ada County is Idaho’s most populous county and the heart of the Boise metro with strong tech, suburban, and residential demand across the Treasure Valley.',
+      'Ada County anchors Idaho’s highest-value market — the fast-growing Boise metro. Tech-sector corporate relocations, Treasure Valley suburban family moves, and rapid population growth along I-84 distinguish Ada from rural Idaho counties and tourism-focused resort markets.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -27,7 +27,7 @@ export const idahoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   canyon: {
     marketNotes:
-      'Canyon County is a rapidly growing Treasure Valley county west of Boise centered on Nampa with strong suburban and residential demand.',
+      'Canyon County is Idaho’s second-highest-value market — the rapidly growing western Treasure Valley centered on Nampa and Caldwell. Boise metro spillover, affordable suburban growth, and I-84 corridor logistics distinguish Canyon from Ada’s urban core and rural agricultural counties.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',

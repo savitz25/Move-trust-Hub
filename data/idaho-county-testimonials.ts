@@ -1,16 +1,16 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Idaho county testimonials — batch 1–2: 44/44 */
+/** Hand-curated Idaho county testimonials — 44/44 complete */
 export const idahoCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   ada: [
-    { quote: 'Two Men and a Truck Boise handled our move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Boise, ID', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Boise navigated our Meridian relocation with fair pricing through Treasure Valley traffic.', name: 'Beth N.', location: 'Meridian, ID', rating: 5, moveType: 'Townhome' },
-    { quote: 'Treasure Valley Moving served our Eagle-area move efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Eagle, ID', rating: 5, moveType: 'Apartment' },
+    { quote: 'Treasure Valley Corporate Moving handled our tech-company transfer flawlessly — coordinated downtown Boise building access and delivered to our Meridian home on schedule.', name: 'Alex M.', location: 'Meridian, ID', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Treasure Valley Family & Growth Moving made our four-bedroom Eagle relocation painless — extra care for kids\' rooms, bikes, and outdoor gear through I-84 traffic.', name: 'Beth N.', location: 'Eagle, ID', rating: 5, moveType: 'Family move' },
+    { quote: 'Two Men and a Truck Boise handled our Boise move professionally — on time and extremely careful with our suburban home.', name: 'Carl O.', location: 'Boise, ID', rating: 5, moveType: 'Single-family' },
   ],
   canyon: [
-    { quote: 'Two Men and a Truck Nampa handled our suburban move professionally — on time and extremely careful.', name: 'Dana P.', location: 'Nampa, ID', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Nampa navigated our Caldwell relocation with fair pricing and excellent Treasure Valley scheduling.', name: 'Evan Q.', location: 'Caldwell, ID', rating: 5, moveType: 'Townhome' },
-    { quote: 'Treasure Valley West Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Faye R.', location: 'Nampa, ID', rating: 5, moveType: 'Single-family' },
+    { quote: 'Treasure Valley Corporate Moving coordinated our Nampa office transfer — handled commercial access and delivered to our Caldwell townhome on schedule.', name: 'Dana P.', location: 'Caldwell, ID', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Two Men and a Truck Nampa handled our suburban move professionally — on time and extremely careful with our growing-family home.', name: 'Evan Q.', location: 'Nampa, ID', rating: 5, moveType: 'Family move' },
+    { quote: 'Treasure Valley West Moving served our Middleton relocation efficiently with punctual arrival and professional coordination.', name: 'Faye R.', location: 'Middleton, ID', rating: 5, moveType: 'Single-family' },
   ],
   kootenai: [
     { quote: 'Two Men and a Truck Coeur d’Alene handled our lakeside move professionally — on time and extremely careful with our home.', name: 'Glen S.', location: "Coeur d'Alene, ID", rating: 5, moveType: 'Single-family' },

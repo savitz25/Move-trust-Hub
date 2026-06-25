@@ -2,14 +2,14 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Idaho curated county corridor links — batch 1–2: 44/44 */
+/** Idaho curated county corridor links — 44/44 complete */
 const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   ada: [
     { slug: 'canyon', name: 'Canyon', seat: 'Caldwell', href: '/local-movers/idaho/canyon', displayLabel: 'Canyon County, ID' },
     { slug: 'gem', name: 'Gem', seat: 'Emmett', href: '/local-movers/idaho/gem', displayLabel: 'Gem County, ID' },
     { slug: 'elmore', name: 'Elmore', seat: 'Mountain Home', href: '/local-movers/idaho/elmore', displayLabel: 'Elmore County, ID' },
     { slug: 'boise', name: 'Boise', seat: 'Idaho City', href: '/local-movers/idaho/boise', displayLabel: 'Boise County, ID' },
-    { slug: 'owyhee', name: 'Owyhee', seat: 'Murphy', href: '/local-movers/idaho/owyhee', displayLabel: 'Owyhee County, ID' },
+    { slug: 'malheur', name: 'Malheur', seat: 'Vale', href: '/local-movers/oregon/malheur', displayLabel: 'Malheur County, OR' },
   ],
   canyon: [
     { slug: 'ada', name: 'Ada', seat: 'Boise', href: '/local-movers/idaho/ada', displayLabel: 'Ada County, ID' },
@@ -121,7 +121,7 @@ const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'custer', name: 'Custer', seat: 'Challis', href: '/local-movers/idaho/custer', displayLabel: 'Custer County, ID' },
     { slug: 'elmore', name: 'Elmore', seat: 'Mountain Home', href: '/local-movers/idaho/elmore', displayLabel: 'Elmore County, ID' },
     { slug: 'cassia', name: 'Cassia', seat: 'Burley', href: '/local-movers/idaho/cassia', displayLabel: 'Cassia County, ID' },
-    { slug: 'butte', name: 'Butte', seat: 'Arco', href: '/local-movers/idaho/butte', displayLabel: 'Butte County, ID' },
+    { slug: 'teton', name: 'Teton', seat: 'Jackson', href: '/local-movers/wyoming/teton', displayLabel: 'Teton County, WY' },
   ],
   minidoka: [
     { slug: 'cassia', name: 'Cassia', seat: 'Burley', href: '/local-movers/idaho/cassia', displayLabel: 'Cassia County, ID' },
@@ -167,6 +167,7 @@ const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'kootenai', name: 'Kootenai', seat: "Coeur d'Alene", href: '/local-movers/idaho/kootenai', displayLabel: 'Kootenai County, ID' },
     { slug: 'benewah', name: 'Benewah', seat: 'St. Maries', href: '/local-movers/idaho/benewah', displayLabel: 'Benewah County, ID' },
     { slug: 'shoshone', name: 'Shoshone', seat: 'Wallace', href: '/local-movers/idaho/shoshone', displayLabel: 'Shoshone County, ID' },
+    { slug: 'lincoln', name: 'Lincoln', seat: 'Libby', href: '/local-movers/montana/lincoln', displayLabel: 'Lincoln County, MT' },
   ],
   fremont: [
     { slug: 'clark', name: 'Clark', seat: 'Dubois', href: '/local-movers/idaho/clark', displayLabel: 'Clark County, ID' },
@@ -191,7 +192,7 @@ const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'canyon', name: 'Canyon', seat: 'Caldwell', href: '/local-movers/idaho/canyon', displayLabel: 'Canyon County, ID' },
     { slug: 'elmore', name: 'Elmore', seat: 'Mountain Home', href: '/local-movers/idaho/elmore', displayLabel: 'Elmore County, ID' },
     { slug: 'twin-falls', name: 'Twin Falls', seat: 'Twin Falls', href: '/local-movers/idaho/twin-falls', displayLabel: 'Twin Falls County, ID' },
-    { slug: 'cassia', name: 'Cassia', seat: 'Burley', href: '/local-movers/idaho/cassia', displayLabel: 'Cassia County, ID' },
+    { slug: 'elko', name: 'Elko', seat: 'Elko', href: '/local-movers/nevada/elko', displayLabel: 'Elko County, NV' },
   ],
   washington: [
     { slug: 'adams', name: 'Adams', seat: 'Council', href: '/local-movers/idaho/adams', displayLabel: 'Adams County, ID' },
@@ -221,7 +222,7 @@ const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'butte', name: 'Butte', seat: 'Arco', href: '/local-movers/idaho/butte', displayLabel: 'Butte County, ID' },
     { slug: 'custer', name: 'Custer', seat: 'Challis', href: '/local-movers/idaho/custer', displayLabel: 'Custer County, ID' },
     { slug: 'idaho', name: 'Idaho', seat: 'Grangeville', href: '/local-movers/idaho/idaho', displayLabel: 'Idaho County, ID' },
-    { slug: 'valley', name: 'Valley', seat: 'Cascade', href: '/local-movers/idaho/valley', displayLabel: 'Valley County, ID' },
+    { slug: 'beaverhead', name: 'Beaverhead', seat: 'Dillon', href: '/local-movers/montana/beaverhead', displayLabel: 'Beaverhead County, MT' },
   ],
   power: [
     { slug: 'bannock', name: 'Bannock', seat: 'Pocatello', href: '/local-movers/idaho/bannock', displayLabel: 'Bannock County, ID' },
@@ -292,6 +293,7 @@ const ID_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'jefferson', name: 'Jefferson', seat: 'Rigby', href: '/local-movers/idaho/jefferson', displayLabel: 'Jefferson County, ID' },
     { slug: 'lemhi', name: 'Lemhi', seat: 'Salmon', href: '/local-movers/idaho/lemhi', displayLabel: 'Lemhi County, ID' },
     { slug: 'madison', name: 'Madison', seat: 'Rexburg', href: '/local-movers/idaho/madison', displayLabel: 'Madison County, ID' },
+    { slug: 'teton', name: 'Teton', seat: 'Jackson', href: '/local-movers/wyoming/teton', displayLabel: 'Teton County, WY' },
   ],
 };
 

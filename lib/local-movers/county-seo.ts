@@ -218,6 +218,9 @@ export function buildStateDescription(
   if (stateName === 'Colorado') {
     return `Find curated local movers in all 64 Colorado counties — up to 12 ranked companies in Denver metro (Denver, Arapahoe, Jefferson, Adams, Douglas), 10–11 in El Paso (Colorado Springs), 9–10 in Boulder, Larimer, and Weld, and 6–8 regional specialists in every county. Denver metro guides cover tech/corporate growth and outdoor-lifestyle family moves; Colorado Springs guides cover Fort Carson and Peterson SFB military PCS; mountain counties cover tourism and second-home logistics; eastern plains and Western Slope counties emphasize long-distance and agricultural hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Idaho') {
+    return `Find curated local movers in all 44 Idaho counties — up to 11 ranked companies in Ada County (Boise metro), 8–9 in Canyon (Nampa–Caldwell), and 5–7 regional specialists in every county. Treasure Valley guides cover rapid suburban growth, corporate relocations, and family moves; northern Idaho guides cover Coeur d'Alene lakeside tourism and second-home logistics; Sun Valley and Teton Valley cover resort-season moves; rural counties emphasize agricultural hauls, long-distance relocations, and remote logistics for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

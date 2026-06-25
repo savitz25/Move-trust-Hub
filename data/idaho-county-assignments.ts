@@ -1,6 +1,6 @@
 import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Idaho county mover lists — batch 1–2: 44/44 */
+/** Hand-curated Idaho county mover lists — 44/44 complete */
 const CURATED_ID_COUNTIES: Record<string, string[]> = {
   ada: [
     'twomenandatruck-ada-id',
@@ -11,8 +11,9 @@ const CURATED_ID_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-boise-id',
     'boise-corridor-moving-ada-id',
     'treasure-valley-moving-ada-id',
+    'treasure-valley-corporate-moving-id',
+    'treasure-valley-family-growth-moving-id',
     'hercules-movers-boise-id',
-    'krupp-moving-boise-id',
   ],
   canyon: [
     'twomenandatruck-canyon-id',
@@ -20,11 +21,9 @@ const CURATED_ID_COUNTIES: Record<string, string[]> = {
     'nampa-moving-canyon-id',
     'canyon-county-moving-canyon-id',
     'college-hunks-moving-nampa-id',
-    'budd-van-lines-nampa-id',
     'nampa-corridor-moving-canyon-id',
     'treasure-valley-west-moving-canyon-id',
-    'hercules-movers-nampa-id',
-    'krupp-moving-nampa-id',
+    'treasure-valley-corporate-moving-id',
   ],
   kootenai: [
     'twomenandatruck-kootenai-id',

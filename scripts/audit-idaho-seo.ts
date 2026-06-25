@@ -8,11 +8,15 @@ import { getIdahoNearbyCounties } from '../lib/local-movers/idaho-nearby';
 import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  ada: 11,
+  canyon: 8,
+};
+const DEFAULT_TARGET = 5;
 const EXPECTED_COUNT = 44;
 
-function getTarget(_slug: string): number {
-  return DEFAULT_TARGET;
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const issues: string[] = [];

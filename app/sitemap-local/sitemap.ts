@@ -260,7 +260,7 @@ const UT_HIGH_TRAFFIC_COUNTIES = new Set(['salt-lake', 'utah']);
 
 const CO_HIGH_TRAFFIC_COUNTIES = new Set(['denver', 'arapahoe', 'jefferson', 'adams', 'douglas']);
 
-const ID_HIGH_TRAFFIC_COUNTIES = new Set(['ada', 'canyon', 'kootenai']);
+const ID_HIGH_TRAFFIC_COUNTIES = new Set(['ada', 'canyon']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
