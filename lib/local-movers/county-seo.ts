@@ -80,6 +80,8 @@ import { getColoradoCountyResearch } from '@/data/colorado-county-research';
 import { getColoradoCountyTestimonials } from '@/data/colorado-county-testimonials';
 import { getIdahoCountyResearch } from '@/data/idaho-county-research';
 import { getIdahoCountyTestimonials } from '@/data/idaho-county-testimonials';
+import { getMontanaCountyResearch } from '@/data/montana-county-research';
+import { getMontanaCountyTestimonials } from '@/data/montana-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -438,6 +440,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'idaho') {
     return getIdahoCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'montana') {
+    return getMontanaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -615,6 +620,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'idaho') {
     const curated = getIdahoCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'montana') {
+    const curated = getMontanaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -829,6 +838,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getIdahoCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'montana') {
+    const curated = getMontanaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -1028,6 +1041,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'idaho') {
     const curated = getIdahoCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'montana') {
+    const curated = getMontanaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

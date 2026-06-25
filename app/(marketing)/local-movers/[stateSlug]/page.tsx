@@ -121,6 +121,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'utah' ||
                 state.slug === 'colorado' ||
                 state.slug === 'idaho' ||
+                state.slug === 'montana' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -162,7 +163,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                                       ? 'Browse all 64 Colorado county guides — up to 12 curated movers in Denver metro (Denver, Arapahoe, Jefferson, Adams, Douglas), 10–11 in El Paso (Colorado Springs), 9–10 in Boulder, Larimer, and Weld, and 6–8 regional specialists in every county. Denver metro covers tech/corporate growth and outdoor-lifestyle family moves; Colorado Springs covers Fort Carson and Peterson SFB military PCS; mountain counties cover tourism and second-home logistics; eastern plains and Western Slope counties emphasize long-distance and agricultural hauls. FMCSA licensing, cost estimates, and Colorado-specific moving tips.'
                                                       : state.slug === 'idaho'
                                                         ? 'Browse all 44 Idaho county guides — up to 11 curated movers in Ada County (Boise metro), 8–9 in Canyon (Nampa–Caldwell), and 5–7 regional specialists in every county. Treasure Valley guides cover rapid suburban growth, corporate relocations, and family moves; northern Idaho covers Coeur d\'Alene lakeside tourism and second-home logistics; Sun Valley and Teton Valley cover resort-season moves; rural counties emphasize agricultural hauls, long-distance relocations, and remote logistics. FMCSA licensing, cost estimates, and Idaho-specific moving tips.'
-                                                        : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                                        : state.slug === 'montana'
+                                                          ? 'Browse 25 curated Montana county guides (25/56) — 10 movers each in Yellowstone (Billings), Gallatin (Bozeman), Missoula, Flathead (Kalispell), and every batch-1 market. Billings and Bozeman guides cover rapid growth and suburban demand; western Montana covers university, lakeside tourism, and mountain-home logistics; eastern and central counties emphasize rural hauls, energy-corridor relocations, and long-distance regional moves. FMCSA licensing, cost estimates, and Montana-specific moving tips.'
+                                                          : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>

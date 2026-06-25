@@ -1,0 +1,186 @@
+import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
+
+export type { NearbyCountyLink };
+
+/** Montana curated county corridor links — batch 1: 25/56 */
+const MT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
+  yellowstone: [
+    { slug: 'carbon', name: 'Carbon', seat: 'Red Lodge', href: '/local-movers/montana/carbon', displayLabel: 'Carbon County, MT' },
+    { slug: 'stillwater', name: 'Stillwater', seat: 'Columbus', href: '/local-movers/montana/stillwater', displayLabel: 'Stillwater County, MT' },
+    { slug: 'park', name: 'Park', seat: 'Livingston', href: '/local-movers/montana/park', displayLabel: 'Park County, MT' },
+    { slug: 'big-horn', name: 'Big Horn', seat: 'Hardin', href: '/local-movers/montana/big-horn', displayLabel: 'Big Horn County, MT' },
+    { slug: 'campbell', name: 'Campbell', seat: 'Gillette', href: '/local-movers/wyoming/campbell', displayLabel: 'Campbell County, WY' },
+  ],
+  gallatin: [
+    { slug: 'park', name: 'Park', seat: 'Livingston', href: '/local-movers/montana/park', displayLabel: 'Park County, MT' },
+    { slug: 'madison', name: 'Madison', seat: 'Virginia City', href: '/local-movers/montana/madison', displayLabel: 'Madison County, MT' },
+    { slug: 'jefferson', name: 'Jefferson', seat: 'Boulder', href: '/local-movers/montana/jefferson', displayLabel: 'Jefferson County, MT' },
+    { slug: 'stillwater', name: 'Stillwater', seat: 'Columbus', href: '/local-movers/montana/stillwater', displayLabel: 'Stillwater County, MT' },
+    { slug: 'teton', name: 'Teton', seat: 'Jackson', href: '/local-movers/wyoming/teton', displayLabel: 'Teton County, WY' },
+  ],
+  missoula: [
+    { slug: 'lake', name: 'Lake', seat: 'Polson', href: '/local-movers/montana/lake', displayLabel: 'Lake County, MT' },
+    { slug: 'sanders', name: 'Sanders', seat: 'Thompson Falls', href: '/local-movers/montana/sanders', displayLabel: 'Sanders County, MT' },
+    { slug: 'ravalli', name: 'Ravalli', seat: 'Hamilton', href: '/local-movers/montana/ravalli', displayLabel: 'Ravalli County, MT' },
+    { slug: 'flathead', name: 'Flathead', seat: 'Kalispell', href: '/local-movers/montana/flathead', displayLabel: 'Flathead County, MT' },
+    { slug: 'clearwater', name: 'Clearwater', seat: 'Orofino', href: '/local-movers/idaho/clearwater', displayLabel: 'Clearwater County, ID' },
+  ],
+  flathead: [
+    { slug: 'lake', name: 'Lake', seat: 'Polson', href: '/local-movers/montana/lake', displayLabel: 'Lake County, MT' },
+    { slug: 'sanders', name: 'Sanders', seat: 'Thompson Falls', href: '/local-movers/montana/sanders', displayLabel: 'Sanders County, MT' },
+    { slug: 'lincoln', name: 'Lincoln', seat: 'Libby', href: '/local-movers/montana/lincoln', displayLabel: 'Lincoln County, MT' },
+    { slug: 'glacier', name: 'Glacier', seat: 'Cut Bank', href: '/local-movers/montana/glacier', displayLabel: 'Glacier County, MT' },
+    { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
+  ],
+  cascade: [
+    { slug: 'glacier', name: 'Glacier', seat: 'Cut Bank', href: '/local-movers/montana/glacier', displayLabel: 'Glacier County, MT' },
+    { slug: 'lewis-and-clark', name: 'Lewis and Clark', seat: 'Helena', href: '/local-movers/montana/lewis-and-clark', displayLabel: 'Lewis and Clark County, MT' },
+    { slug: 'fergus', name: 'Fergus', seat: 'Lewistown', href: '/local-movers/montana/fergus', displayLabel: 'Fergus County, MT' },
+    { slug: 'hill', name: 'Hill', seat: 'Havre', href: '/local-movers/montana/hill', displayLabel: 'Hill County, MT' },
+    { slug: 'meagher', name: 'Meagher', seat: 'White Sulphur Springs', href: '/local-movers/montana/meagher', displayLabel: 'Meagher County, MT' },
+  ],
+  'lewis-and-clark': [
+    { slug: 'cascade', name: 'Cascade', seat: 'Great Falls', href: '/local-movers/montana/cascade', displayLabel: 'Cascade County, MT' },
+    { slug: 'jefferson', name: 'Jefferson', seat: 'Boulder', href: '/local-movers/montana/jefferson', displayLabel: 'Jefferson County, MT' },
+    { slug: 'deer-lodge', name: 'Deer Lodge', seat: 'Anaconda', href: '/local-movers/montana/deer-lodge', displayLabel: 'Deer Lodge County, MT' },
+    { slug: 'silver-bow', name: 'Silver Bow', seat: 'Butte', href: '/local-movers/montana/silver-bow', displayLabel: 'Silver Bow County, MT' },
+    { slug: 'fergus', name: 'Fergus', seat: 'Lewistown', href: '/local-movers/montana/fergus', displayLabel: 'Fergus County, MT' },
+  ],
+  ravalli: [
+    { slug: 'missoula', name: 'Missoula', seat: 'Missoula', href: '/local-movers/montana/missoula', displayLabel: 'Missoula County, MT' },
+    { slug: 'deer-lodge', name: 'Deer Lodge', seat: 'Anaconda', href: '/local-movers/montana/deer-lodge', displayLabel: 'Deer Lodge County, MT' },
+    { slug: 'silver-bow', name: 'Silver Bow', seat: 'Butte', href: '/local-movers/montana/silver-bow', displayLabel: 'Silver Bow County, MT' },
+    { slug: 'beaverhead', name: 'Beaverhead', seat: 'Dillon', href: '/local-movers/montana/beaverhead', displayLabel: 'Beaverhead County, MT' },
+    { slug: 'granite', name: 'Granite', seat: 'Philipsburg', href: '/local-movers/montana/granite', displayLabel: 'Granite County, MT' },
+  ],
+  'silver-bow': [
+    { slug: 'deer-lodge', name: 'Deer Lodge', seat: 'Anaconda', href: '/local-movers/montana/deer-lodge', displayLabel: 'Deer Lodge County, MT' },
+    { slug: 'jefferson', name: 'Jefferson', seat: 'Boulder', href: '/local-movers/montana/jefferson', displayLabel: 'Jefferson County, MT' },
+    { slug: 'madison', name: 'Madison', seat: 'Virginia City', href: '/local-movers/montana/madison', displayLabel: 'Madison County, MT' },
+    { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
+    { slug: 'ravalli', name: 'Ravalli', seat: 'Hamilton', href: '/local-movers/montana/ravalli', displayLabel: 'Ravalli County, MT' },
+  ],
+  lake: [
+    { slug: 'flathead', name: 'Flathead', seat: 'Kalispell', href: '/local-movers/montana/flathead', displayLabel: 'Flathead County, MT' },
+    { slug: 'missoula', name: 'Missoula', seat: 'Missoula', href: '/local-movers/montana/missoula', displayLabel: 'Missoula County, MT' },
+    { slug: 'sanders', name: 'Sanders', seat: 'Thompson Falls', href: '/local-movers/montana/sanders', displayLabel: 'Sanders County, MT' },
+    { slug: 'glacier', name: 'Glacier', seat: 'Cut Bank', href: '/local-movers/montana/glacier', displayLabel: 'Glacier County, MT' },
+    { slug: 'pondera', name: 'Pondera', seat: 'Conrad', href: '/local-movers/montana/pondera', displayLabel: 'Pondera County, MT' },
+  ],
+  lincoln: [
+    { slug: 'flathead', name: 'Flathead', seat: 'Kalispell', href: '/local-movers/montana/flathead', displayLabel: 'Flathead County, MT' },
+    { slug: 'sanders', name: 'Sanders', seat: 'Thompson Falls', href: '/local-movers/montana/sanders', displayLabel: 'Sanders County, MT' },
+    { slug: 'lake', name: 'Lake', seat: 'Polson', href: '/local-movers/montana/lake', displayLabel: 'Lake County, MT' },
+    { slug: 'liberty', name: 'Liberty', seat: 'Chester', href: '/local-movers/montana/liberty', displayLabel: 'Liberty County, MT' },
+    { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
+  ],
+  park: [
+    { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
+    { slug: 'carbon', name: 'Carbon', seat: 'Red Lodge', href: '/local-movers/montana/carbon', displayLabel: 'Carbon County, MT' },
+    { slug: 'yellowstone', name: 'Yellowstone', seat: 'Billings', href: '/local-movers/montana/yellowstone', displayLabel: 'Yellowstone County, MT' },
+    { slug: 'stillwater', name: 'Stillwater', seat: 'Columbus', href: '/local-movers/montana/stillwater', displayLabel: 'Stillwater County, MT' },
+    { slug: 'sweet-grass', name: 'Sweet Grass', seat: 'Big Timber', href: '/local-movers/montana/sweet-grass', displayLabel: 'Sweet Grass County, MT' },
+  ],
+  hill: [
+    { slug: 'glacier', name: 'Glacier', seat: 'Cut Bank', href: '/local-movers/montana/glacier', displayLabel: 'Glacier County, MT' },
+    { slug: 'cascade', name: 'Cascade', seat: 'Great Falls', href: '/local-movers/montana/cascade', displayLabel: 'Cascade County, MT' },
+    { slug: 'liberty', name: 'Liberty', seat: 'Chester', href: '/local-movers/montana/liberty', displayLabel: 'Liberty County, MT' },
+    { slug: 'blaine', name: 'Blaine', seat: 'Chinook', href: '/local-movers/montana/blaine', displayLabel: 'Blaine County, MT' },
+    { slug: 'chouteau', name: 'Chouteau', seat: 'Fort Benton', href: '/local-movers/montana/chouteau', displayLabel: 'Chouteau County, MT' },
+  ],
+  sanders: [
+    { slug: 'flathead', name: 'Flathead', seat: 'Kalispell', href: '/local-movers/montana/flathead', displayLabel: 'Flathead County, MT' },
+    { slug: 'lake', name: 'Lake', seat: 'Polson', href: '/local-movers/montana/lake', displayLabel: 'Lake County, MT' },
+    { slug: 'missoula', name: 'Missoula', seat: 'Missoula', href: '/local-movers/montana/missoula', displayLabel: 'Missoula County, MT' },
+    { slug: 'lincoln', name: 'Lincoln', seat: 'Libby', href: '/local-movers/montana/lincoln', displayLabel: 'Lincoln County, MT' },
+    { slug: 'mineral', name: 'Mineral', seat: 'Superior', href: '/local-movers/montana/mineral', displayLabel: 'Mineral County, MT' },
+  ],
+  jefferson: [
+    { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
+    { slug: 'madison', name: 'Madison', seat: 'Virginia City', href: '/local-movers/montana/madison', displayLabel: 'Madison County, MT' },
+    { slug: 'silver-bow', name: 'Silver Bow', seat: 'Butte', href: '/local-movers/montana/silver-bow', displayLabel: 'Silver Bow County, MT' },
+    { slug: 'deer-lodge', name: 'Deer Lodge', seat: 'Anaconda', href: '/local-movers/montana/deer-lodge', displayLabel: 'Deer Lodge County, MT' },
+    { slug: 'lewis-and-clark', name: 'Lewis and Clark', seat: 'Helena', href: '/local-movers/montana/lewis-and-clark', displayLabel: 'Lewis and Clark County, MT' },
+  ],
+  glacier: [
+    { slug: 'flathead', name: 'Flathead', seat: 'Kalispell', href: '/local-movers/montana/flathead', displayLabel: 'Flathead County, MT' },
+    { slug: 'hill', name: 'Hill', seat: 'Havre', href: '/local-movers/montana/hill', displayLabel: 'Hill County, MT' },
+    { slug: 'cascade', name: 'Cascade', seat: 'Great Falls', href: '/local-movers/montana/cascade', displayLabel: 'Cascade County, MT' },
+    { slug: 'pondera', name: 'Pondera', seat: 'Conrad', href: '/local-movers/montana/pondera', displayLabel: 'Pondera County, MT' },
+    { slug: 'toole', name: 'Toole', seat: 'Shelby', href: '/local-movers/montana/toole', displayLabel: 'Toole County, MT' },
+  ],
+  'big-horn': [
+    { slug: 'yellowstone', name: 'Yellowstone', seat: 'Billings', href: '/local-movers/montana/yellowstone', displayLabel: 'Yellowstone County, MT' },
+    { slug: 'carbon', name: 'Carbon', seat: 'Red Lodge', href: '/local-movers/montana/carbon', displayLabel: 'Carbon County, MT' },
+    { slug: 'treasure', name: 'Treasure', seat: 'Hysham', href: '/local-movers/montana/treasure', displayLabel: 'Treasure County, MT' },
+    { slug: 'rosebud', name: 'Rosebud', seat: 'Forsyth', href: '/local-movers/montana/rosebud', displayLabel: 'Rosebud County, MT' },
+    { slug: 'custer', name: 'Custer', seat: 'Miles City', href: '/local-movers/montana/custer', displayLabel: 'Custer County, MT' },
+  ],
+  custer: [
+    { slug: 'fergus', name: 'Fergus', seat: 'Lewistown', href: '/local-movers/montana/fergus', displayLabel: 'Fergus County, MT' },
+    { slug: 'richland', name: 'Richland', seat: 'Sidney', href: '/local-movers/montana/richland', displayLabel: 'Richland County, MT' },
+    { slug: 'prairie', name: 'Prairie', seat: 'Terry', href: '/local-movers/montana/prairie', displayLabel: 'Prairie County, MT' },
+    { slug: 'fallon', name: 'Fallon', seat: 'Baker', href: '/local-movers/montana/fallon', displayLabel: 'Fallon County, MT' },
+    { slug: 'powder-river', name: 'Powder River', seat: 'Broadus', href: '/local-movers/montana/powder-river', displayLabel: 'Powder River County, MT' },
+  ],
+  fergus: [
+    { slug: 'cascade', name: 'Cascade', seat: 'Great Falls', href: '/local-movers/montana/cascade', displayLabel: 'Cascade County, MT' },
+    { slug: 'lewis-and-clark', name: 'Lewis and Clark', seat: 'Helena', href: '/local-movers/montana/lewis-and-clark', displayLabel: 'Lewis and Clark County, MT' },
+    { slug: 'custer', name: 'Custer', seat: 'Miles City', href: '/local-movers/montana/custer', displayLabel: 'Custer County, MT' },
+    { slug: 'petroleum', name: 'Petroleum', seat: 'Winnett', href: '/local-movers/montana/petroleum', displayLabel: 'Petroleum County, MT' },
+    { slug: 'meagher', name: 'Meagher', seat: 'White Sulphur Springs', href: '/local-movers/montana/meagher', displayLabel: 'Meagher County, MT' },
+  ],
+  richland: [
+    { slug: 'roosevelt', name: 'Roosevelt', seat: 'Wolf Point', href: '/local-movers/montana/roosevelt', displayLabel: 'Roosevelt County, MT' },
+    { slug: 'custer', name: 'Custer', seat: 'Miles City', href: '/local-movers/montana/custer', displayLabel: 'Custer County, MT' },
+    { slug: 'dawson', name: 'Dawson', seat: 'Glendive', href: '/local-movers/montana/dawson', displayLabel: 'Dawson County, MT' },
+    { slug: 'mccone', name: 'McCone', seat: 'Circle', href: '/local-movers/montana/mccone', displayLabel: 'McCone County, MT' },
+    { slug: 'williams', name: 'Williams', seat: 'Williston', href: '/local-movers/north-dakota/williams', displayLabel: 'Williams County, ND' },
+  ],
+  carbon: [
+    { slug: 'park', name: 'Park', seat: 'Livingston', href: '/local-movers/montana/park', displayLabel: 'Park County, MT' },
+    { slug: 'yellowstone', name: 'Yellowstone', seat: 'Billings', href: '/local-movers/montana/yellowstone', displayLabel: 'Yellowstone County, MT' },
+    { slug: 'big-horn', name: 'Big Horn', seat: 'Hardin', href: '/local-movers/montana/big-horn', displayLabel: 'Big Horn County, MT' },
+    { slug: 'stillwater', name: 'Stillwater', seat: 'Columbus', href: '/local-movers/montana/stillwater', displayLabel: 'Stillwater County, MT' },
+    { slug: 'sweet-grass', name: 'Sweet Grass', seat: 'Big Timber', href: '/local-movers/montana/sweet-grass', displayLabel: 'Sweet Grass County, MT' },
+  ],
+  madison: [
+    { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
+    { slug: 'jefferson', name: 'Jefferson', seat: 'Boulder', href: '/local-movers/montana/jefferson', displayLabel: 'Jefferson County, MT' },
+    { slug: 'silver-bow', name: 'Silver Bow', seat: 'Butte', href: '/local-movers/montana/silver-bow', displayLabel: 'Silver Bow County, MT' },
+    { slug: 'beaverhead', name: 'Beaverhead', seat: 'Dillon', href: '/local-movers/montana/beaverhead', displayLabel: 'Beaverhead County, MT' },
+    { slug: 'park', name: 'Park', seat: 'Livingston', href: '/local-movers/montana/park', displayLabel: 'Park County, MT' },
+  ],
+  roosevelt: [
+    { slug: 'richland', name: 'Richland', seat: 'Sidney', href: '/local-movers/montana/richland', displayLabel: 'Richland County, MT' },
+    { slug: 'sheridan', name: 'Sheridan', seat: 'Plentywood', href: '/local-movers/montana/sheridan', displayLabel: 'Sheridan County, MT' },
+    { slug: 'daniels', name: 'Daniels', seat: 'Scobey', href: '/local-movers/montana/daniels', displayLabel: 'Daniels County, MT' },
+    { slug: 'mccone', name: 'McCone', seat: 'Circle', href: '/local-movers/montana/mccone', displayLabel: 'McCone County, MT' },
+    { slug: 'valley', name: 'Valley', seat: 'Glasgow', href: '/local-movers/montana/valley', displayLabel: 'Valley County, MT' },
+  ],
+  beaverhead: [
+    { slug: 'madison', name: 'Madison', seat: 'Virginia City', href: '/local-movers/montana/madison', displayLabel: 'Madison County, MT' },
+    { slug: 'silver-bow', name: 'Silver Bow', seat: 'Butte', href: '/local-movers/montana/silver-bow', displayLabel: 'Silver Bow County, MT' },
+    { slug: 'deer-lodge', name: 'Deer Lodge', seat: 'Anaconda', href: '/local-movers/montana/deer-lodge', displayLabel: 'Deer Lodge County, MT' },
+    { slug: 'ravalli', name: 'Ravalli', seat: 'Hamilton', href: '/local-movers/montana/ravalli', displayLabel: 'Ravalli County, MT' },
+    { slug: 'granite', name: 'Granite', seat: 'Philipsburg', href: '/local-movers/montana/granite', displayLabel: 'Granite County, MT' },
+  ],
+  'deer-lodge': [
+    { slug: 'ravalli', name: 'Ravalli', seat: 'Hamilton', href: '/local-movers/montana/ravalli', displayLabel: 'Ravalli County, MT' },
+    { slug: 'silver-bow', name: 'Silver Bow', seat: 'Butte', href: '/local-movers/montana/silver-bow', displayLabel: 'Silver Bow County, MT' },
+    { slug: 'jefferson', name: 'Jefferson', seat: 'Boulder', href: '/local-movers/montana/jefferson', displayLabel: 'Jefferson County, MT' },
+    { slug: 'lewis-and-clark', name: 'Lewis and Clark', seat: 'Helena', href: '/local-movers/montana/lewis-and-clark', displayLabel: 'Lewis and Clark County, MT' },
+    { slug: 'missoula', name: 'Missoula', seat: 'Missoula', href: '/local-movers/montana/missoula', displayLabel: 'Missoula County, MT' },
+  ],
+  stillwater: [
+    { slug: 'yellowstone', name: 'Yellowstone', seat: 'Billings', href: '/local-movers/montana/yellowstone', displayLabel: 'Yellowstone County, MT' },
+    { slug: 'park', name: 'Park', seat: 'Livingston', href: '/local-movers/montana/park', displayLabel: 'Park County, MT' },
+    { slug: 'carbon', name: 'Carbon', seat: 'Red Lodge', href: '/local-movers/montana/carbon', displayLabel: 'Carbon County, MT' },
+    { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
+    { slug: 'sweet-grass', name: 'Sweet Grass', seat: 'Big Timber', href: '/local-movers/montana/sweet-grass', displayLabel: 'Sweet Grass County, MT' },
+  ],
+};
+
+export function getMontanaNearbyCounties(countySlug: string): NearbyCountyLink[] {
+  return MT_COUNTY_NEIGHBORS[countySlug] ?? [];
+}
