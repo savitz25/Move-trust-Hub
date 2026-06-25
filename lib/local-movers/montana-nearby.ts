@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Montana curated county corridor links — batch 1–2: 56/56 */
+/** Montana curated county corridor links — 56/56 complete */
 const MT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   yellowstone: [
     { slug: 'carbon', name: 'Carbon', seat: 'Red Lodge', href: '/local-movers/montana/carbon', displayLabel: 'Carbon County, MT' },
@@ -71,8 +71,8 @@ const MT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'flathead', name: 'Flathead', seat: 'Kalispell', href: '/local-movers/montana/flathead', displayLabel: 'Flathead County, MT' },
     { slug: 'sanders', name: 'Sanders', seat: 'Thompson Falls', href: '/local-movers/montana/sanders', displayLabel: 'Sanders County, MT' },
     { slug: 'lake', name: 'Lake', seat: 'Polson', href: '/local-movers/montana/lake', displayLabel: 'Lake County, MT' },
-    { slug: 'liberty', name: 'Liberty', seat: 'Chester', href: '/local-movers/montana/liberty', displayLabel: 'Liberty County, MT' },
     { slug: 'bonner', name: 'Bonner', seat: 'Sandpoint', href: '/local-movers/idaho/bonner', displayLabel: 'Bonner County, ID' },
+    { slug: 'spokane', name: 'Spokane', seat: 'Spokane', href: '/local-movers/washington/spokane', displayLabel: 'Spokane County, WA' },
   ],
   park: [
     { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
@@ -93,7 +93,7 @@ const MT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'lake', name: 'Lake', seat: 'Polson', href: '/local-movers/montana/lake', displayLabel: 'Lake County, MT' },
     { slug: 'missoula', name: 'Missoula', seat: 'Missoula', href: '/local-movers/montana/missoula', displayLabel: 'Missoula County, MT' },
     { slug: 'lincoln', name: 'Lincoln', seat: 'Libby', href: '/local-movers/montana/lincoln', displayLabel: 'Lincoln County, MT' },
-    { slug: 'mineral', name: 'Mineral', seat: 'Superior', href: '/local-movers/montana/mineral', displayLabel: 'Mineral County, MT' },
+    { slug: 'malheur', name: 'Malheur', seat: 'Vale', href: '/local-movers/oregon/malheur', displayLabel: 'Malheur County, OR' },
   ],
   jefferson: [
     { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
@@ -191,14 +191,14 @@ const MT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'wibaux', name: 'Wibaux', seat: 'Wibaux', href: '/local-movers/montana/wibaux', displayLabel: 'Wibaux County, MT' },
     { slug: 'prairie', name: 'Prairie', seat: 'Terry', href: '/local-movers/montana/prairie', displayLabel: 'Prairie County, MT' },
     { slug: 'fallon', name: 'Fallon', seat: 'Baker', href: '/local-movers/montana/fallon', displayLabel: 'Fallon County, MT' },
-    { slug: 'garfield', name: 'Garfield', seat: 'Jordan', href: '/local-movers/montana/garfield', displayLabel: 'Garfield County, MT' },
+    { slug: 'mckenzie', name: 'McKenzie', seat: 'Watford City', href: '/local-movers/north-dakota/mckenzie', displayLabel: 'McKenzie County, ND' },
   ],
   rosebud: [
     { slug: 'big-horn', name: 'Big Horn', seat: 'Hardin', href: '/local-movers/montana/big-horn', displayLabel: 'Big Horn County, MT' },
     { slug: 'treasure', name: 'Treasure', seat: 'Hysham', href: '/local-movers/montana/treasure', displayLabel: 'Treasure County, MT' },
     { slug: 'custer', name: 'Custer', seat: 'Miles City', href: '/local-movers/montana/custer', displayLabel: 'Custer County, MT' },
     { slug: 'powder-river', name: 'Powder River', seat: 'Broadus', href: '/local-movers/montana/powder-river', displayLabel: 'Powder River County, MT' },
-    { slug: 'yellowstone', name: 'Yellowstone', seat: 'Billings', href: '/local-movers/montana/yellowstone', displayLabel: 'Yellowstone County, MT' },
+    { slug: 'harding', name: 'Harding', seat: 'Buffalo', href: '/local-movers/south-dakota/harding', displayLabel: 'Harding County, SD' },
   ],
   valley: [
     { slug: 'roosevelt', name: 'Roosevelt', seat: 'Wolf Point', href: '/local-movers/montana/roosevelt', displayLabel: 'Roosevelt County, MT' },
@@ -373,7 +373,7 @@ const MT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'dawson', name: 'Dawson', seat: 'Glendive', href: '/local-movers/montana/dawson', displayLabel: 'Dawson County, MT' },
     { slug: 'mccone', name: 'McCone', seat: 'Circle', href: '/local-movers/montana/mccone', displayLabel: 'McCone County, MT' },
     { slug: 'fallon', name: 'Fallon', seat: 'Baker', href: '/local-movers/montana/fallon', displayLabel: 'Fallon County, MT' },
-    { slug: 'prairie', name: 'Prairie', seat: 'Terry', href: '/local-movers/montana/prairie', displayLabel: 'Prairie County, MT' },
+    { slug: 'mckenzie', name: 'McKenzie', seat: 'Watford City', href: '/local-movers/north-dakota/mckenzie', displayLabel: 'McKenzie County, ND' },
   ],
   'golden-valley': [
     { slug: 'musselshell', name: 'Musselshell', seat: 'Roundup', href: '/local-movers/montana/musselshell', displayLabel: 'Musselshell County, MT' },

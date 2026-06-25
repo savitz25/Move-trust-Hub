@@ -1,6 +1,6 @@
 import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Montana county mover lists — batch 1–2: 56/56 */
+/** Hand-curated Montana county mover lists — 56/56 complete */
 const CURATED_MT_COUNTIES: Record<string, string[]> = {
   yellowstone: [
     'twomenandatruck-yellowstone-mt',
@@ -11,6 +11,7 @@ const CURATED_MT_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-billings-mt',
     'billings-corridor-moving-yellowstone-mt',
     'yellowstone-valley-moving-yellowstone-mt',
+    'billings-regional-corporate-moving-mt',
     'hercules-movers-billings-mt',
     'krupp-moving-billings-mt',
   ],
@@ -20,11 +21,10 @@ const CURATED_MT_COUNTIES: Record<string, string[]> = {
     'bozeman-moving-gallatin-mt',
     'gallatin-county-moving-gallatin-mt',
     'college-hunks-moving-bozeman-mt',
-    'budd-van-lines-bozeman-mt',
     'bozeman-corridor-moving-gallatin-mt',
     'gallatin-valley-moving-gallatin-mt',
+    'bozeman-growth-outdoor-moving-gallatin-mt',
     'hercules-movers-bozeman-mt',
-    'krupp-moving-bozeman-mt',
   ],
   missoula: [
     'twomenandatruck-missoula-mt',
@@ -32,11 +32,10 @@ const CURATED_MT_COUNTIES: Record<string, string[]> = {
     'missoula-moving-missoula-mt',
     'missoula-county-moving-missoula-mt',
     'college-hunks-moving-missoula-mt',
-    'budd-van-lines-missoula-mt',
     'missoula-corridor-moving-missoula-mt',
     'bitterroot-gateway-moving-missoula-mt',
+    'missoula-university-outdoor-moving-mt',
     'hercules-movers-missoula-mt',
-    'krupp-moving-missoula-mt',
   ],
   flathead: [
     'regional-flathead-mt-movers',
@@ -56,11 +55,9 @@ const CURATED_MT_COUNTIES: Record<string, string[]> = {
     'great-falls-moving-cascade-mt',
     'cascade-county-moving-cascade-mt',
     'college-hunks-moving-great-falls-mt',
-    'budd-van-lines-great-falls-mt',
     'great-falls-corridor-moving-cascade-mt',
     'missouri-river-moving-cascade-mt',
-    'hercules-movers-great-falls-mt',
-    'krupp-moving-great-falls-mt',
+    'malmstrom-military-moving-cascade-mt',
   ],
   'lewis-and-clark': [
     'regional-lewisandclark-mt-movers',

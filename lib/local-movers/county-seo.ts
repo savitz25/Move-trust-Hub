@@ -223,6 +223,9 @@ export function buildStateDescription(
   if (stateName === 'Idaho') {
     return `Find curated local movers in all 44 Idaho counties — up to 11 ranked companies in Ada County (Boise metro), 8–9 in Canyon (Nampa–Caldwell), and 5–7 regional specialists in every county. Treasure Valley guides cover rapid suburban growth, corporate relocations, and family moves; northern Idaho guides cover Coeur d'Alene lakeside tourism and second-home logistics; Sun Valley and Teton Valley cover resort-season moves; rural counties emphasize agricultural hauls, long-distance relocations, and remote logistics for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Montana') {
+    return `Find curated local movers in all 56 Montana counties — up to 11 ranked companies in Yellowstone County (Billings), 8–10 in Missoula and Gallatin (Bozeman), 8 in Cascade (Great Falls), and 5–7 regional specialists in every county. Billings guides cover regional hub, corporate, and agricultural moves; Missoula and Bozeman cover university, tourism, and outdoor-lifestyle growth; Great Falls covers Malmstrom AFB military PCS; Glacier and Yellowstone gateway counties emphasize tourism and second-home logistics; rural Hi-Line and plains counties emphasize harsh winters, remote logistics, and long-distance Lower 48 hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

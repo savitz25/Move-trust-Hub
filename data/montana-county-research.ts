@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Montana county research — batch 1–2: 56/56 */
+/** Hand-curated Montana county research — 56/56 complete */
 export const montanaCountyResearch: Record<string, CuratedCountyResearch> = {
   yellowstone: {
     marketNotes:
-      'Yellowstone County is Montana’s most populous county with strong urban, suburban, and residential demand across the Billings metro.',
+      'Yellowstone County anchors Montana’s highest-value market — the Billings regional hub. Corporate and energy-sector relocations, agricultural corridor logistics, and I-90 east-west transfers distinguish Yellowstone from western university counties and remote Hi-Line communities.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
@@ -27,7 +27,7 @@ export const montanaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   gallatin: {
     marketNotes:
-      'Gallatin County is a rapidly growing county with strong educational, tourism, and residential demand across the Bozeman metro and Gallatin Valley.',
+      'Gallatin County is Montana’s fastest-growing market — the Bozeman metro and Gallatin Valley. MSU university turnover, Big Sky tourism gateway logistics, outdoor-lifestyle family relocations, and Yellowstone National Park corridor moves distinguish Gallatin from Billings hub demand.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,000+',
@@ -44,7 +44,7 @@ export const montanaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   missoula: {
     marketNotes:
-      'Missoula County is a western Montana county with strong educational and residential demand across the University of Montana area and Bitterroot gateway communities.',
+      'Missoula County is western Montana’s primary population center — university-area turnover, Bitterroot gateway communities, outdoor-lifestyle relocations, and Glacier corridor spillover distinguish Missoula from eastern plains counties and Bozeman growth corridors.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -78,7 +78,7 @@ export const montanaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   cascade: {
     marketNotes:
-      'Cascade County is a central Montana county centered on Great Falls with residential and Missouri River corridor demand.',
+      'Cascade County anchors central Montana around Great Falls — Malmstrom AFB military PCS moves, agricultural corridor logistics, and Missouri River regional hub transfers distinguish Cascade from western tourism counties and eastern energy-belt communities.',
     costs: {
       studioRange: '$750–$1,500',
       familyRange: '$2,600–$5,800+',

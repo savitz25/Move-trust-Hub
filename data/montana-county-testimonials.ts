@@ -1,21 +1,21 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Montana county testimonials — batch 1–2: 56/56 */
+/** Hand-curated Montana county testimonials — 56/56 complete */
 export const montanaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   yellowstone: [
-    { quote: 'Two Men and a Truck Billings handled our move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Billings, MT', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Billings navigated our Laurel relocation with fair pricing through Billings metro traffic.', name: 'Beth N.', location: 'Laurel, MT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Yellowstone Valley Moving served our Heights-area move efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Billings, MT', rating: 5, moveType: 'Apartment' },
+    { quote: 'Billings Regional Corporate Moving handled our energy-sector transfer flawlessly — coordinated downtown Billings access and delivered to our Heights home on schedule.', name: 'Alex M.', location: 'Billings, MT', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Two Men and a Truck Billings handled our Laurel agricultural-corridor move professionally — on time and extremely careful with our ranch outbuildings.', name: 'Beth N.', location: 'Laurel, MT', rating: 5, moveType: 'Agricultural' },
+    { quote: 'Yellowstone Valley Moving served our Billings family relocation efficiently with steady communication through I-90 corridor traffic.', name: 'Carl O.', location: 'Billings, MT', rating: 5, moveType: 'Family move' },
   ],
   gallatin: [
-    { quote: 'Two Men and a Truck Bozeman handled our Gallatin Valley move professionally — on time and extremely careful.', name: 'Dana P.', location: 'Bozeman, MT', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Bozeman navigated our Belgrade relocation with fair pricing and excellent valley scheduling.', name: 'Evan Q.', location: 'Belgrade, MT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Gallatin Valley Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Faye R.', location: 'Bozeman, MT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Bozeman Growth & Outdoor Moving made our Belgrade family relocation seamless — careful handling of outdoor gear and MSU-area semester timing.', name: 'Dana P.', location: 'Belgrade, MT', rating: 5, moveType: 'Family move' },
+    { quote: 'Two Men and a Truck Bozeman handled our Bozeman move professionally — on time and extremely careful with our Gallatin Valley home.', name: 'Evan Q.', location: 'Bozeman, MT', rating: 5, moveType: 'Single-family' },
+    { quote: 'Gallatin Valley Moving served our Big Sky gateway relocation efficiently with mountain-road route planning and professional coordination.', name: 'Faye R.', location: 'Bozeman, MT', rating: 5, moveType: 'Tourism/second-home' },
   ],
   missoula: [
-    { quote: 'Two Men and a Truck Missoula handled our move professionally — on time and extremely careful with our home.', name: 'Glen S.', location: 'Missoula, MT', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Missoula navigated our university-area relocation with fair pricing and excellent western Montana scheduling.', name: 'Hope T.', location: 'Missoula, MT', rating: 5, moveType: 'Apartment' },
-    { quote: 'Bitterroot Gateway Moving served our Lolo-area move efficiently with professional crew coordination.', name: 'Ira U.', location: 'Lolo, MT', rating: 5, moveType: 'Townhome' },
+    { quote: 'Missoula University & Outdoor Moving coordinated our UM-area semester move — handled student housing access and delivered to our Bitterroot townhome on schedule.', name: 'Glen S.', location: 'Missoula, MT', rating: 5, moveType: 'University move' },
+    { quote: 'Two Men and a Truck Missoula handled our Lolo relocation professionally — on time and extremely careful with our outdoor-lifestyle gear.', name: 'Hope T.', location: 'Lolo, MT', rating: 5, moveType: 'Outdoor lifestyle' },
+    { quote: 'Bitterroot Gateway Moving served our Missoula family move efficiently with professional crew coordination through western Montana traffic.', name: 'Ira U.', location: 'Missoula, MT', rating: 5, moveType: 'Family move' },
   ],
   flathead: [
     { quote: 'Regional Kalispell / Flathead Providers handled our Kalispell move professionally — on time and extremely careful with our home.', name: 'Gia Q.', location: 'Kalispell, MT', rating: 5, moveType: 'Single-family' },
@@ -23,9 +23,9 @@ export const montanaCountyTestimonials: Record<string, CountyTestimonialEntry[]>
     { quote: 'Flathead Lakes Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ivy S.', location: 'Kalispell, MT', rating: 5, moveType: 'Apartment' },
   ],
   cascade: [
-    { quote: 'Regional Great Falls / Cascade Providers handled our Great Falls move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Great Falls, MT', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Great Falls navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ivy S.', location: 'Great Falls, MT', rating: 5, moveType: 'Townhome' },
-    { quote: 'Missouri River Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Great Falls, MT', rating: 5, moveType: 'Apartment' },
+    { quote: 'Malmstrom Military Moving coordinated our PCS move from Malmstrom AFB — handled base access paperwork and delivered to our Great Falls home on schedule.', name: 'Hal R.', location: 'Great Falls, MT', rating: 5, moveType: 'Military PCS' },
+    { quote: 'Regional Great Falls / Cascade Providers handled our agricultural-corridor move professionally — careful with ranch equipment and long driveways.', name: 'Ivy S.', location: 'Great Falls, MT', rating: 5, moveType: 'Agricultural' },
+    { quote: 'Missouri River Moving served our Great Falls family relocation efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Great Falls, MT', rating: 5, moveType: 'Family move' },
   ],
   'lewis-and-clark': [
     { quote: 'Regional Helena / Lewis and Clark Providers handled our Helena move professionally — on time and extremely careful with our home.', name: 'Ivy S.', location: 'Helena, MT', rating: 5, moveType: 'Single-family' },

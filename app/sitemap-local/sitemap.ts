@@ -263,7 +263,7 @@ const CO_HIGH_TRAFFIC_COUNTIES = new Set(['denver', 'arapahoe', 'jefferson', 'ad
 
 const ID_HIGH_TRAFFIC_COUNTIES = new Set(['ada', 'canyon']);
 
-const MT_HIGH_TRAFFIC_COUNTIES = new Set(['yellowstone', 'gallatin', 'missoula']);
+const MT_HIGH_TRAFFIC_COUNTIES = new Set(['yellowstone', 'missoula', 'gallatin', 'cascade']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',

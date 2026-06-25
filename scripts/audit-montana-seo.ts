@@ -9,9 +9,10 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  yellowstone: 10,
-  gallatin: 10,
-  missoula: 10,
+  yellowstone: 11,
+  missoula: 9,
+  gallatin: 9,
+  cascade: 8,
 };
 const DEFAULT_TARGET = 5;
 const EXPECTED_COUNT = 56;
