@@ -1,12 +1,12 @@
 /**
- * Generates Wisconsin county curation files (batch 1 — 10 counties).
+ * Generates Wisconsin county curation files (batches 1–2 — 30 counties).
  * Run: npx tsx scripts/generate-wisconsin-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
-const EXPECTED_COUNT = 10;
+const EXPECTED_COUNT = 30;
 
 type CostTier = 'metro' | 'secondary_metro' | 'regional_hub' | 'rural';
 
@@ -22,6 +22,7 @@ type CountyDef = {
   tipVariant:
     | 'standard'
     | 'metro'
+    | 'msp_metro'
     | 'medical'
     | 'tourist'
     | 'university'
@@ -73,6 +74,14 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   kenosha: 'Kenosha County, WI',
   rock: 'Rock County, WI',
   marathon: 'Marathon County, WI',
+  washington: 'Washington County, WI',
+  dodge: 'Dodge County, WI',
+  grant: 'Grant County, WI',
+  monroe: 'Monroe County, WI',
+  portage: 'Portage County, WI',
+  columbia: 'Columbia County, WI',
+  wood: 'Wood County, WI',
+  'st-croix': 'St. Croix County, WI',
 };
 
 const WI_NEIGHBORS: Record<string, string[]> = {
@@ -93,6 +102,26 @@ const WI_NEIGHBORS: Record<string, string[]> = {
   kenosha: ['racine', 'walworth', 'lake'],
   rock: ['dane', 'green', 'jefferson', 'walworth', 'winnebago'],
   marathon: ['clark', 'langlade', 'lincoln', 'portage', 'taylor', 'wood'],
+  washington: ['dodge', 'fond-du-lac', 'milwaukee', 'ozaukee', 'sheboygan', 'waukesha'],
+  'la-crosse': ['buffalo', 'jackson', 'monroe', 'trempealeau', 'vernon'],
+  sheboygan: ['calumet', 'fond-du-lac', 'manitowoc', 'ozaukee', 'washington'],
+  'eau-claire': ['buffalo', 'chippewa', 'clark', 'dunn', 'jackson', 'pepin', 'trempealeau'],
+  walworth: ['jefferson', 'kenosha', 'racine', 'rock', 'waukesha'],
+  'fond-du-lac': ['calumet', 'dodge', 'green-lake', 'sheboygan', 'washington', 'winnebago'],
+  'st-croix': ['barron', 'dunn', 'pierce', 'polk'],
+  ozaukee: ['milwaukee', 'sheboygan', 'washington'],
+  dodge: ['columbia', 'dane', 'fond-du-lac', 'green-lake', 'jefferson', 'washington', 'waukesha'],
+  jefferson: ['dane', 'dodge', 'rock', 'walworth', 'waukesha'],
+  manitowoc: ['brown', 'calumet', 'kewaunee', 'outagamie', 'sheboygan'],
+  wood: ['adams', 'clark', 'jackson', 'juneau', 'marathon', 'portage'],
+  portage: ['adams', 'marathon', 'waupaca', 'waushara', 'wood'],
+  chippewa: ['barron', 'clark', 'dunn', 'eau-claire', 'pepin', 'rusk', 'taylor'],
+  sauk: ['adams', 'columbia', 'crawford', 'iowa', 'juneau', 'richland', 'vernon'],
+  columbia: ['dane', 'dodge', 'green-lake', 'marquette', 'sauk'],
+  calumet: ['fond-du-lac', 'manitowoc', 'outagamie', 'sheboygan', 'winnebago'],
+  grant: ['crawford', 'iowa', 'lafayette', 'richland'],
+  waupaca: ['langlade', 'marathon', 'outagamie', 'portage', 'shawano', 'waushara', 'winnebago'],
+  monroe: ['crawford', 'jackson', 'juneau', 'la-crosse', 'richland', 'vernon'],
 };
 
 const CROSS_BORDER: Record<
@@ -121,6 +150,24 @@ const CROSS_BORDER: Record<
       name: 'Winnebago',
       seat: 'Rockford',
       displayLabel: 'Winnebago County, IL',
+    },
+  ],
+  'st-croix': [
+    {
+      slug: 'washington',
+      stateSlug: 'minnesota',
+      name: 'Washington',
+      seat: 'Stillwater',
+      displayLabel: 'Washington County, MN',
+    },
+  ],
+  'la-crosse': [
+    {
+      slug: 'houston',
+      stateSlug: 'minnesota',
+      name: 'Houston',
+      seat: 'Caledonia',
+      displayLabel: 'Houston County, MN',
     },
   ],
 };
@@ -327,36 +374,439 @@ const COUNTIES: CountyDef[] = [
       'Marathon County pricing reflects Wausau-area demand, Wisconsin River corridor travel distances, and competition among regional agents serving Marathon County communities.',
     tipVariant: 'standard',
   },
+  {
+    slug: 'washington',
+    name: 'Washington',
+    seat: 'West Bend',
+    city: 'West Bend',
+    metro: 'washington-metro-wi',
+    costTier: 'metro',
+    citySlug: 'west-bend',
+    regional1: 'west-bend-corridor',
+    regional2: 'kettle-moraine-washington',
+    topId: 'regional-washington-wi-movers',
+    topName: 'Regional West Bend / Washington Providers',
+    regional1Name: 'West Bend Corridor Moving',
+    regional2Name: 'Kettle Moraine Washington Moving',
+    marketNotes:
+      'Washington County, WI is a northern suburban county in the Milwaukee metro centered on West Bend with strong residential demand — not to be confused with Washington County, MN or Washington State.',
+    costNote:
+      'Washington County pricing reflects north Milwaukee suburban demand, I-41 and US-45 corridor traffic, high-value suburban homes, and competition among regional agents serving Washington County, WI communities.',
+    tipVariant: 'metro',
+  },
+  {
+    slug: 'la-crosse',
+    name: 'La Crosse',
+    seat: 'La Crosse',
+    city: 'La Crosse',
+    metro: 'la-crosse-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'la-crosse',
+    regional1: 'la-crosse-corridor',
+    regional2: 'mississippi-bluff-la-crosse',
+    topId: 'regional-lacrosse-wi-movers',
+    topName: 'Regional La Crosse / La Crosse County Providers',
+    regional1Name: 'La Crosse Corridor Moving',
+    regional2Name: 'Mississippi Bluff La Crosse Moving',
+    marketNotes:
+      'La Crosse County, WI is a western Wisconsin county centered on La Crosse with strong urban and residential demand along the Mississippi River bluff corridor.',
+    costNote:
+      'La Crosse County pricing reflects La Crosse-area demand, Mississippi River corridor travel distances, cross-border Minnesota logistics, and competition among regional agents serving La Crosse County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'sheboygan',
+    name: 'Sheboygan',
+    seat: 'Sheboygan',
+    city: 'Sheboygan',
+    metro: 'sheboygan-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'sheboygan',
+    regional1: 'sheboygan-corridor',
+    regional2: 'lake-michigan-sheboygan',
+    topId: 'regional-sheboygan-wi-movers',
+    topName: 'Regional Sheboygan / Sheboygan County Providers',
+    regional1Name: 'Sheboygan Corridor Moving',
+    regional2Name: 'Lake Michigan Sheboygan Moving',
+    marketNotes:
+      'Sheboygan County, WI is an eastern Wisconsin county centered on Sheboygan with strong residential demand along the Lake Michigan shoreline.',
+    costNote:
+      'Sheboygan County pricing reflects Sheboygan-area demand, Lake Michigan corridor travel distances, and competition among regional agents serving Sheboygan County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'eau-claire',
+    name: 'Eau Claire',
+    seat: 'Eau Claire',
+    city: 'Eau Claire',
+    metro: 'eau-claire-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'eau-claire',
+    regional1: 'eau-claire-corridor',
+    regional2: 'chippewa-valley-eau-claire',
+    topId: 'regional-eauclaire-wi-movers',
+    topName: 'Regional Eau Claire / Eau Claire County Providers',
+    regional1Name: 'Eau Claire Corridor Moving',
+    regional2Name: 'Chippewa Valley Eau Claire Moving',
+    marketNotes:
+      'Eau Claire County, WI is a northwestern Wisconsin county centered on Eau Claire with strong urban and residential demand across the Chippewa Valley corridor.',
+    costNote:
+      'Eau Claire County pricing reflects Chippewa Valley demand, regional corridor travel distances, and competition among regional agents serving Eau Claire County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'walworth',
+    name: 'Walworth',
+    seat: 'Elkhorn',
+    city: 'Elkhorn',
+    metro: 'walworth-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'elkhorn',
+    regional1: 'elkhorn-corridor',
+    regional2: 'geneva-lake-walworth',
+    topId: 'regional-walworth-wi-movers',
+    topName: 'Regional Elkhorn / Walworth Providers',
+    regional1Name: 'Elkhorn Corridor Moving',
+    regional2Name: 'Geneva Lake Walworth Moving',
+    marketNotes:
+      'Walworth County, WI is a southeastern Wisconsin county centered on Elkhorn with strong residential demand across Geneva Lake and resort-lake communities — not to be confused with Walworth County in other states.',
+    costNote:
+      'Walworth County pricing reflects Geneva Lake-area demand, seasonal resort-home logistics, and competition among regional agents serving Walworth County, WI communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'fond-du-lac',
+    name: 'Fond du Lac',
+    seat: 'Fond du Lac',
+    city: 'Fond du Lac',
+    metro: 'fond-du-lac-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'fond-du-lac',
+    regional1: 'fond-du-lac-corridor',
+    regional2: 'lake-winnebago-fonddulac',
+    topId: 'regional-fonddulac-wi-movers',
+    topName: 'Regional Fond du Lac / Fond du Lac County Providers',
+    regional1Name: 'Fond du Lac Corridor Moving',
+    regional2Name: 'Lake Winnebago Fond du Lac Moving',
+    marketNotes:
+      'Fond du Lac County, WI is an east-central Wisconsin county centered on Fond du Lac with residential demand along Lake Winnebago.',
+    costNote:
+      'Fond du Lac County pricing reflects Lake Winnebago-area demand, regional corridor travel distances, and competition among regional agents serving Fond du Lac County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'st-croix',
+    name: 'St. Croix',
+    seat: 'Hudson',
+    city: 'Hudson',
+    metro: 'st-croix-metro-wi',
+    costTier: 'metro',
+    citySlug: 'hudson',
+    regional1: 'hudson-corridor',
+    regional2: 'st-croix-river-valley',
+    topId: 'regional-stcroix-wi-movers',
+    topName: 'Regional Hudson / St. Croix Providers',
+    regional1Name: 'Hudson Corridor Moving',
+    regional2Name: 'St. Croix River Valley Moving',
+    marketNotes:
+      'St. Croix County, WI is a western Wisconsin county centered on Hudson with strong suburban and residential demand along the Twin Cities west-metro St. Croix River corridor.',
+    costNote:
+      'St. Croix County pricing reflects Twin Cities corridor demand, I-94 and St. Croix River bridge traffic, high-value suburban homes, and competition among regional agents serving St. Croix County communities.',
+    tipVariant: 'msp_metro',
+  },
+  {
+    slug: 'ozaukee',
+    name: 'Ozaukee',
+    seat: 'Port Washington',
+    city: 'Port Washington',
+    metro: 'ozaukee-metro-wi',
+    costTier: 'metro',
+    citySlug: 'port-washington',
+    regional1: 'port-washington-corridor',
+    regional2: 'lake-michigan-ozaukee',
+    topId: 'regional-ozaukee-wi-movers',
+    topName: 'Regional Port Washington / Ozaukee Providers',
+    regional1Name: 'Port Washington Corridor Moving',
+    regional2Name: 'Lake Michigan Ozaukee Moving',
+    marketNotes:
+      'Ozaukee County, WI is a northern suburban county in the Milwaukee metro centered on Port Washington with strong lakeshore residential demand.',
+    costNote:
+      'Ozaukee County pricing reflects north Milwaukee lakeshore suburban demand, I-43 corridor traffic, high-value suburban homes, and competition among regional agents serving Ozaukee County communities.',
+    tipVariant: 'metro',
+  },
+  {
+    slug: 'dodge',
+    name: 'Dodge',
+    seat: 'Juneau',
+    city: 'Juneau',
+    metro: 'dodge-metro-wi',
+    costTier: 'regional_hub',
+    citySlug: 'juneau',
+    regional1: 'juneau-corridor',
+    regional2: 'rock-river-dodge',
+    topId: 'regional-dodge-wi-movers',
+    topName: 'Regional Juneau / Dodge Providers',
+    regional1Name: 'Juneau Corridor Moving',
+    regional2Name: 'Rock River Dodge Moving',
+    marketNotes:
+      'Dodge County, WI is an east-central Wisconsin county centered on Juneau with rural residential demand — not to be confused with Dodge County, MN or Dodge County in other states.',
+    costNote:
+      'Dodge County pricing reflects rural east-central Wisconsin demand, longer travel distances between communities, and competition among regional agents serving Dodge County, WI communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'jefferson',
+    name: 'Jefferson',
+    seat: 'Jefferson',
+    city: 'Jefferson',
+    metro: 'jefferson-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'jefferson',
+    regional1: 'jefferson-corridor',
+    regional2: 'rock-river-jefferson',
+    topId: 'regional-jefferson-wi-movers',
+    topName: 'Regional Jefferson / Jefferson County Providers',
+    regional1Name: 'Jefferson Corridor Moving',
+    regional2Name: 'Rock River Jefferson Moving',
+    marketNotes:
+      'Jefferson County, WI is a southeastern Wisconsin county centered on Jefferson with residential demand along the Rock River corridor — not to be confused with Jefferson County in other states.',
+    costNote:
+      'Jefferson County pricing reflects Rock River corridor demand, regional travel distances, and competition among regional agents serving Jefferson County, WI communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'manitowoc',
+    name: 'Manitowoc',
+    seat: 'Manitowoc',
+    city: 'Manitowoc',
+    metro: 'manitowoc-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'manitowoc',
+    regional1: 'manitowoc-corridor',
+    regional2: 'lake-michigan-manitowoc',
+    topId: 'regional-manitowoc-wi-movers',
+    topName: 'Regional Manitowoc / Manitowoc County Providers',
+    regional1Name: 'Manitowoc Corridor Moving',
+    regional2Name: 'Lake Michigan Manitowoc Moving',
+    marketNotes:
+      'Manitowoc County, WI is an eastern Wisconsin county centered on Manitowoc with residential demand along the Lake Michigan shoreline.',
+    costNote:
+      'Manitowoc County pricing reflects Lake Michigan shoreline demand, regional corridor travel distances, and competition among regional agents serving Manitowoc County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'wood',
+    name: 'Wood',
+    seat: 'Wisconsin Rapids',
+    city: 'Wisconsin Rapids',
+    metro: 'wood-metro-wi',
+    costTier: 'regional_hub',
+    citySlug: 'wisconsin-rapids',
+    regional1: 'wisconsin-rapids-corridor',
+    regional2: 'wisconsin-river-wood',
+    topId: 'regional-wood-wi-movers',
+    topName: 'Regional Wisconsin Rapids / Wood Providers',
+    regional1Name: 'Wisconsin Rapids Corridor Moving',
+    regional2Name: 'Wisconsin River Wood Moving',
+    marketNotes:
+      'Wood County, WI is a central Wisconsin county centered on Wisconsin Rapids with residential demand along the Wisconsin River corridor.',
+    costNote:
+      'Wood County pricing reflects Wisconsin River corridor demand, regional travel distances, and competition among regional agents serving Wood County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'portage',
+    name: 'Portage',
+    seat: 'Stevens Point',
+    city: 'Stevens Point',
+    metro: 'portage-metro-wi',
+    costTier: 'regional_hub',
+    citySlug: 'stevens-point',
+    regional1: 'stevens-point-corridor',
+    regional2: 'wisconsin-river-portage',
+    topId: 'regional-portage-wi-movers',
+    topName: 'Regional Stevens Point / Portage Providers',
+    regional1Name: 'Stevens Point Corridor Moving',
+    regional2Name: 'Wisconsin River Portage Moving',
+    marketNotes:
+      'Portage County, WI is a central Wisconsin county centered on Stevens Point with educational and residential demand — not to be confused with Portage County in other states.',
+    costNote:
+      'Portage County pricing reflects Stevens Point-area demand, UW–Stevens Point campus turnover, and competition among regional agents serving Portage County, WI communities.',
+    tipVariant: 'university',
+  },
+  {
+    slug: 'chippewa',
+    name: 'Chippewa',
+    seat: 'Chippewa Falls',
+    city: 'Chippewa Falls',
+    metro: 'chippewa-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'chippewa-falls',
+    regional1: 'chippewa-falls-corridor',
+    regional2: 'chippewa-valley-chippewa',
+    topId: 'regional-chippewa-wi-movers',
+    topName: 'Regional Chippewa Falls / Chippewa Providers',
+    regional1Name: 'Chippewa Falls Corridor Moving',
+    regional2Name: 'Chippewa Valley Chippewa Moving',
+    marketNotes:
+      'Chippewa County, WI is a northwestern Wisconsin county centered on Chippewa Falls with residential demand across the Chippewa Valley corridor.',
+    costNote:
+      'Chippewa County pricing reflects Chippewa Valley demand, regional corridor travel distances, and competition among regional agents serving Chippewa County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'sauk',
+    name: 'Sauk',
+    seat: 'Baraboo',
+    city: 'Baraboo',
+    metro: 'sauk-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'baraboo',
+    regional1: 'baraboo-corridor',
+    regional2: 'devil-lake-sauk',
+    topId: 'regional-sauk-wi-movers',
+    topName: 'Regional Baraboo / Sauk Providers',
+    regional1Name: 'Baraboo Corridor Moving',
+    regional2Name: 'Devil Lake Sauk Moving',
+    marketNotes:
+      'Sauk County, WI is a south-central Wisconsin county centered on Baraboo with residential demand across Devil\'s Lake and Wisconsin Dells gateway communities.',
+    costNote:
+      'Sauk County pricing reflects tourism-gateway demand, seasonal vacation-home logistics, and competition among regional agents serving Sauk County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'columbia',
+    name: 'Columbia',
+    seat: 'Portage',
+    city: 'Portage',
+    metro: 'columbia-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'portage',
+    regional1: 'portage-corridor',
+    regional2: 'wisconsin-river-columbia',
+    topId: 'regional-columbia-wi-movers',
+    topName: 'Regional Portage / Columbia Providers',
+    regional1Name: 'Portage Corridor Moving',
+    regional2Name: 'Wisconsin River Columbia Moving',
+    marketNotes:
+      'Columbia County, WI is a south-central Wisconsin county centered on Portage with residential demand along the Wisconsin River corridor — not to be confused with Columbia County in other states.',
+    costNote:
+      'Columbia County pricing reflects Wisconsin River corridor demand, regional travel distances, and competition among regional agents serving Columbia County, WI communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'calumet',
+    name: 'Calumet',
+    seat: 'Chilton',
+    city: 'Chilton',
+    metro: 'calumet-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'chilton',
+    regional1: 'chilton-corridor',
+    regional2: 'fox-river-calumet',
+    topId: 'regional-calumet-wi-movers',
+    topName: 'Regional Chilton / Calumet Providers',
+    regional1Name: 'Chilton Corridor Moving',
+    regional2Name: 'Fox River Calumet Moving',
+    marketNotes:
+      'Calumet County, WI is an east-central Wisconsin county centered on Chilton with residential demand across the Fox River corridor.',
+    costNote:
+      'Calumet County pricing reflects Fox River corridor demand, regional travel distances, and competition among regional agents serving Calumet County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'grant',
+    name: 'Grant',
+    seat: 'Lancaster',
+    city: 'Lancaster',
+    metro: 'grant-metro-wi',
+    costTier: 'rural',
+    citySlug: 'lancaster',
+    regional1: 'lancaster-corridor',
+    regional2: 'driftless-grant',
+    topId: 'regional-grant-wi-movers',
+    topName: 'Regional Lancaster / Grant Providers',
+    regional1Name: 'Lancaster Corridor Moving',
+    regional2Name: 'Driftless Grant Moving',
+    marketNotes:
+      'Grant County, WI is a southwestern Wisconsin county centered on Lancaster with rural residential demand across the Driftless Area — not to be confused with Grant County in other states.',
+    costNote:
+      'Grant County pricing reflects Driftless Area rural demand, longer travel distances, and competition among regional agents serving Grant County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'waupaca',
+    name: 'Waupaca',
+    seat: 'Waupaca',
+    city: 'Waupaca',
+    metro: 'waupaca-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'waupaca',
+    regional1: 'waupaca-corridor',
+    regional2: 'chain-of-lakes-waupaca',
+    topId: 'regional-waupaca-wi-movers',
+    topName: 'Regional Waupaca / Waupaca County Providers',
+    regional1Name: 'Waupaca Corridor Moving',
+    regional2Name: 'Chain of Lakes Waupaca Moving',
+    marketNotes:
+      'Waupaca County, WI is a central Wisconsin county centered on Waupaca with lakes-country and residential demand across the Chain of Lakes corridor.',
+    costNote:
+      'Waupaca County pricing reflects lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Waupaca County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'monroe',
+    name: 'Monroe',
+    seat: 'Sparta',
+    city: 'Sparta',
+    metro: 'monroe-metro-wi',
+    costTier: 'regional_hub',
+    citySlug: 'sparta',
+    regional1: 'sparta-corridor',
+    regional2: 'driftless-monroe',
+    topId: 'regional-monroe-wi-movers',
+    topName: 'Regional Sparta / Monroe Providers',
+    regional1Name: 'Sparta Corridor Moving',
+    regional2Name: 'Driftless Monroe Moving',
+    marketNotes:
+      'Monroe County, WI is a western Wisconsin county centered on Sparta with rural residential demand across the Driftless Area — not to be confused with Monroe County in other states.',
+    costNote:
+      'Monroe County pricing reflects Driftless Area rural demand, regional travel distances, and competition among regional agents serving Monroe County, WI communities.',
+    tipVariant: 'standard',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
 
 const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
-  washington: { name: 'Washington', seat: 'West Bend' },
-  ozaukee: { name: 'Ozaukee', seat: 'Port Washington' },
-  jefferson: { name: 'Jefferson', seat: 'Jefferson' },
-  walworth: { name: 'Walworth', seat: 'Elkhorn' },
-  columbia: { name: 'Columbia', seat: 'Portage' },
   green: { name: 'Green', seat: 'Monroe' },
-  sauk: { name: 'Sauk', seat: 'Baraboo' },
   iowa: { name: 'Iowa', seat: 'Dodgeville' },
   door: { name: 'Door', seat: 'Sturgeon Bay' },
   kewaunee: { name: 'Kewaunee', seat: 'Kewaunee' },
   oconto: { name: 'Oconto', seat: 'Oconto' },
   shawano: { name: 'Shawano', seat: 'Shawano' },
-  calumet: { name: 'Calumet', seat: 'Chilton' },
-  manitowoc: { name: 'Manitowoc', seat: 'Manitowoc' },
-  waupaca: { name: 'Waupaca', seat: 'Waupaca' },
-  'fond-du-lac': { name: 'Fond du Lac', seat: 'Fond du Lac' },
   'green-lake': { name: 'Green Lake', seat: 'Green Lake' },
   waushara: { name: 'Waushara', seat: 'Wautoma' },
   clark: { name: 'Clark', seat: 'Neillsville' },
   langlade: { name: 'Langlade', seat: 'Antigo' },
   lincoln: { name: 'Lincoln', seat: 'Merrill' },
-  portage: { name: 'Portage', seat: 'Stevens Point' },
   taylor: { name: 'Taylor', seat: 'Medford' },
-  wood: { name: 'Wood', seat: 'Wisconsin Rapids' },
-  dodge: { name: 'Dodge', seat: 'Juneau' },
+  buffalo: { name: 'Buffalo', seat: 'Alma' },
+  trempealeau: { name: 'Trempealeau', seat: 'Whitehall' },
+  vernon: { name: 'Vernon', seat: 'Viroqua' },
+  jackson: { name: 'Jackson', seat: 'Black River Falls' },
+  pepin: { name: 'Pepin', seat: 'Durand' },
+  dunn: { name: 'Dunn', seat: 'Menomonie' },
+  pierce: { name: 'Pierce', seat: 'Ellsworth' },
+  polk: { name: 'Polk', seat: 'Balsam Lake' },
+  barron: { name: 'Barron', seat: 'Barron' },
+  adams: { name: 'Adams', seat: 'Friendship' },
+  juneau: { name: 'Juneau', seat: 'Mauston' },
+  crawford: { name: 'Crawford', seat: 'Prairie du Chien' },
+  richland: { name: 'Richland', seat: 'Richland Center' },
+  marquette: { name: 'Marquette', seat: 'Montello' },
+  rusk: { name: 'Rusk', seat: 'Ladysmith' },
+  lafayette: { name: 'Lafayette', seat: 'Darlington' },
 };
 
 function q(s: string): string {
@@ -385,6 +835,15 @@ function buildTips(c: CountyDef): string[] {
     return [
       `Verify coverage for ${city} and surrounding Milwaukee metro communities before booking.`,
       'I-43, I-94, and I-41 congestion significantly impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value suburban homes, condos, and townhomes before move day.',
+      STANDARD_TIPS[3],
+      STANDARD_TIPS[4],
+    ];
+  }
+  if (c.tipVariant === 'msp_metro') {
+    return [
+      `Verify coverage for ${city} and surrounding Twin Cities corridor communities before booking.`,
+      'I-94 and St. Croix River bridge corridor congestion significantly impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value suburban homes, condos, and townhomes before move day.',
       STANDARD_TIPS[3],
       STANDARD_TIPS[4],
@@ -571,7 +1030,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Wisconsin county research — batch 1 (10 counties) */
+/** Hand-curated Wisconsin county research — batches 1–2 (30 counties) */
 export const wisconsinCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -588,7 +1047,7 @@ function genTestimonials(): string {
   const entries = COUNTIES.map((c, i) => buildTestimonials(c, i + 3));
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Wisconsin county testimonials — batch 1 (10 counties) */
+/** Hand-curated Wisconsin county testimonials — batches 1–2 (30 counties) */
 export const wisconsinCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${entries.join('\n')}
 };
@@ -610,7 +1069,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Wisconsin county mover lists — batch 1 (10 counties) */
+/** Hand-curated Wisconsin county mover lists — batches 1–2 (30 counties) */
 const CURATED_WI_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -630,7 +1089,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Wisconsin counties (batch 1 — 10 counties) */
+/** Seat and metro overrides for hand-curated Wisconsin counties (batches 1–2 — 30 counties) */
 export const wisconsinCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -652,7 +1111,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** Wisconsin curated county corridor links — batch 1 (10 counties) */
+/** Wisconsin curated county corridor links — batches 1–2 (30 counties) */
 const WI_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };

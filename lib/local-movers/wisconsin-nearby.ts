@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Wisconsin curated county corridor links — batch 1 (10 counties) */
+/** Wisconsin curated county corridor links — batches 1–2 (30 counties) */
 const WI_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   milwaukee: [
     { slug: "waukesha", name: "Waukesha", seat: "Waukesha", href: "/local-movers/wisconsin/waukesha", displayLabel: "Waukesha County, WI" },
@@ -68,6 +68,143 @@ const WI_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: "lincoln", name: "Lincoln", seat: "Merrill", href: "/local-movers/wisconsin/lincoln", displayLabel: "Lincoln County, WI" },
     { slug: "portage", name: "Portage", seat: "Stevens Point", href: "/local-movers/wisconsin/portage", displayLabel: "Portage County, WI" },
     { slug: "taylor", name: "Taylor", seat: "Medford", href: "/local-movers/wisconsin/taylor", displayLabel: "Taylor County, WI" },
+  ],
+  washington: [
+    { slug: "dodge", name: "Dodge", seat: "Juneau", href: "/local-movers/wisconsin/dodge", displayLabel: "Dodge County, WI" },
+    { slug: "fond-du-lac", name: "Fond du Lac", seat: "Fond du Lac", href: "/local-movers/wisconsin/fond-du-lac", displayLabel: "Fond du Lac County, WI" },
+    { slug: "milwaukee", name: "Milwaukee", seat: "Milwaukee", href: "/local-movers/wisconsin/milwaukee", displayLabel: "Milwaukee County, WI" },
+    { slug: "ozaukee", name: "Ozaukee", seat: "Port Washington", href: "/local-movers/wisconsin/ozaukee", displayLabel: "Ozaukee County, WI" },
+    { slug: "sheboygan", name: "Sheboygan", seat: "Sheboygan", href: "/local-movers/wisconsin/sheboygan", displayLabel: "Sheboygan County, WI" },
+  ],
+  'la-crosse': [
+    { slug: "buffalo", name: "Buffalo", seat: "Alma", href: "/local-movers/wisconsin/buffalo", displayLabel: "Buffalo County, WI" },
+    { slug: "jackson", name: "Jackson", seat: "Black River Falls", href: "/local-movers/wisconsin/jackson", displayLabel: "Jackson County, WI" },
+    { slug: "monroe", name: "Monroe", seat: "Sparta", href: "/local-movers/wisconsin/monroe", displayLabel: "Monroe County, WI" },
+    { slug: "trempealeau", name: "Trempealeau", seat: "Whitehall", href: "/local-movers/wisconsin/trempealeau", displayLabel: "Trempealeau County, WI" },
+    { slug: "houston", name: "Houston", seat: "Caledonia", href: "/local-movers/minnesota/houston", displayLabel: "Houston County, MN" },
+  ],
+  sheboygan: [
+    { slug: "calumet", name: "Calumet", seat: "Chilton", href: "/local-movers/wisconsin/calumet", displayLabel: "Calumet County, WI" },
+    { slug: "fond-du-lac", name: "Fond du Lac", seat: "Fond du Lac", href: "/local-movers/wisconsin/fond-du-lac", displayLabel: "Fond du Lac County, WI" },
+    { slug: "manitowoc", name: "Manitowoc", seat: "Manitowoc", href: "/local-movers/wisconsin/manitowoc", displayLabel: "Manitowoc County, WI" },
+    { slug: "ozaukee", name: "Ozaukee", seat: "Port Washington", href: "/local-movers/wisconsin/ozaukee", displayLabel: "Ozaukee County, WI" },
+    { slug: "washington", name: "Washington", seat: "West Bend", href: "/local-movers/wisconsin/washington", displayLabel: "Washington County, WI" },
+  ],
+  'eau-claire': [
+    { slug: "buffalo", name: "Buffalo", seat: "Alma", href: "/local-movers/wisconsin/buffalo", displayLabel: "Buffalo County, WI" },
+    { slug: "chippewa", name: "Chippewa", seat: "Chippewa Falls", href: "/local-movers/wisconsin/chippewa", displayLabel: "Chippewa County, WI" },
+    { slug: "clark", name: "Clark", seat: "Neillsville", href: "/local-movers/wisconsin/clark", displayLabel: "Clark County, WI" },
+    { slug: "dunn", name: "Dunn", seat: "Menomonie", href: "/local-movers/wisconsin/dunn", displayLabel: "Dunn County, WI" },
+    { slug: "jackson", name: "Jackson", seat: "Black River Falls", href: "/local-movers/wisconsin/jackson", displayLabel: "Jackson County, WI" },
+  ],
+  walworth: [
+    { slug: "jefferson", name: "Jefferson", seat: "Jefferson", href: "/local-movers/wisconsin/jefferson", displayLabel: "Jefferson County, WI" },
+    { slug: "kenosha", name: "Kenosha", seat: "Kenosha", href: "/local-movers/wisconsin/kenosha", displayLabel: "Kenosha County, WI" },
+    { slug: "racine", name: "Racine", seat: "Racine", href: "/local-movers/wisconsin/racine", displayLabel: "Racine County, WI" },
+    { slug: "rock", name: "Rock", seat: "Janesville", href: "/local-movers/wisconsin/rock", displayLabel: "Rock County, WI" },
+    { slug: "waukesha", name: "Waukesha", seat: "Waukesha", href: "/local-movers/wisconsin/waukesha", displayLabel: "Waukesha County, WI" },
+  ],
+  'fond-du-lac': [
+    { slug: "calumet", name: "Calumet", seat: "Chilton", href: "/local-movers/wisconsin/calumet", displayLabel: "Calumet County, WI" },
+    { slug: "dodge", name: "Dodge", seat: "Juneau", href: "/local-movers/wisconsin/dodge", displayLabel: "Dodge County, WI" },
+    { slug: "green-lake", name: "Green Lake", seat: "Green Lake", href: "/local-movers/wisconsin/green-lake", displayLabel: "Green Lake County, WI" },
+    { slug: "sheboygan", name: "Sheboygan", seat: "Sheboygan", href: "/local-movers/wisconsin/sheboygan", displayLabel: "Sheboygan County, WI" },
+    { slug: "washington", name: "Washington", seat: "West Bend", href: "/local-movers/wisconsin/washington", displayLabel: "Washington County, WI" },
+  ],
+  'st-croix': [
+    { slug: "barron", name: "Barron", seat: "Barron", href: "/local-movers/wisconsin/barron", displayLabel: "Barron County, WI" },
+    { slug: "dunn", name: "Dunn", seat: "Menomonie", href: "/local-movers/wisconsin/dunn", displayLabel: "Dunn County, WI" },
+    { slug: "pierce", name: "Pierce", seat: "Ellsworth", href: "/local-movers/wisconsin/pierce", displayLabel: "Pierce County, WI" },
+    { slug: "polk", name: "Polk", seat: "Balsam Lake", href: "/local-movers/wisconsin/polk", displayLabel: "Polk County, WI" },
+    { slug: "washington", name: "Washington", seat: "Stillwater", href: "/local-movers/minnesota/washington", displayLabel: "Washington County, MN" },
+  ],
+  ozaukee: [
+    { slug: "milwaukee", name: "Milwaukee", seat: "Milwaukee", href: "/local-movers/wisconsin/milwaukee", displayLabel: "Milwaukee County, WI" },
+    { slug: "sheboygan", name: "Sheboygan", seat: "Sheboygan", href: "/local-movers/wisconsin/sheboygan", displayLabel: "Sheboygan County, WI" },
+    { slug: "washington", name: "Washington", seat: "West Bend", href: "/local-movers/wisconsin/washington", displayLabel: "Washington County, WI" },
+  ],
+  dodge: [
+    { slug: "columbia", name: "Columbia", seat: "Portage", href: "/local-movers/wisconsin/columbia", displayLabel: "Columbia County, WI" },
+    { slug: "dane", name: "Dane", seat: "Madison", href: "/local-movers/wisconsin/dane", displayLabel: "Dane County, WI" },
+    { slug: "fond-du-lac", name: "Fond du Lac", seat: "Fond du Lac", href: "/local-movers/wisconsin/fond-du-lac", displayLabel: "Fond du Lac County, WI" },
+    { slug: "green-lake", name: "Green Lake", seat: "Green Lake", href: "/local-movers/wisconsin/green-lake", displayLabel: "Green Lake County, WI" },
+    { slug: "jefferson", name: "Jefferson", seat: "Jefferson", href: "/local-movers/wisconsin/jefferson", displayLabel: "Jefferson County, WI" },
+  ],
+  jefferson: [
+    { slug: "dane", name: "Dane", seat: "Madison", href: "/local-movers/wisconsin/dane", displayLabel: "Dane County, WI" },
+    { slug: "dodge", name: "Dodge", seat: "Juneau", href: "/local-movers/wisconsin/dodge", displayLabel: "Dodge County, WI" },
+    { slug: "rock", name: "Rock", seat: "Janesville", href: "/local-movers/wisconsin/rock", displayLabel: "Rock County, WI" },
+    { slug: "walworth", name: "Walworth", seat: "Elkhorn", href: "/local-movers/wisconsin/walworth", displayLabel: "Walworth County, WI" },
+    { slug: "waukesha", name: "Waukesha", seat: "Waukesha", href: "/local-movers/wisconsin/waukesha", displayLabel: "Waukesha County, WI" },
+  ],
+  manitowoc: [
+    { slug: "brown", name: "Brown", seat: "Green Bay", href: "/local-movers/wisconsin/brown", displayLabel: "Brown County, WI" },
+    { slug: "calumet", name: "Calumet", seat: "Chilton", href: "/local-movers/wisconsin/calumet", displayLabel: "Calumet County, WI" },
+    { slug: "kewaunee", name: "Kewaunee", seat: "Kewaunee", href: "/local-movers/wisconsin/kewaunee", displayLabel: "Kewaunee County, WI" },
+    { slug: "outagamie", name: "Outagamie", seat: "Appleton", href: "/local-movers/wisconsin/outagamie", displayLabel: "Outagamie County, WI" },
+    { slug: "sheboygan", name: "Sheboygan", seat: "Sheboygan", href: "/local-movers/wisconsin/sheboygan", displayLabel: "Sheboygan County, WI" },
+  ],
+  wood: [
+    { slug: "adams", name: "Adams", seat: "Friendship", href: "/local-movers/wisconsin/adams", displayLabel: "Adams County, WI" },
+    { slug: "clark", name: "Clark", seat: "Neillsville", href: "/local-movers/wisconsin/clark", displayLabel: "Clark County, WI" },
+    { slug: "jackson", name: "Jackson", seat: "Black River Falls", href: "/local-movers/wisconsin/jackson", displayLabel: "Jackson County, WI" },
+    { slug: "juneau", name: "Juneau", seat: "Mauston", href: "/local-movers/wisconsin/juneau", displayLabel: "Juneau County, WI" },
+    { slug: "marathon", name: "Marathon", seat: "Wausau", href: "/local-movers/wisconsin/marathon", displayLabel: "Marathon County, WI" },
+  ],
+  portage: [
+    { slug: "adams", name: "Adams", seat: "Friendship", href: "/local-movers/wisconsin/adams", displayLabel: "Adams County, WI" },
+    { slug: "marathon", name: "Marathon", seat: "Wausau", href: "/local-movers/wisconsin/marathon", displayLabel: "Marathon County, WI" },
+    { slug: "waupaca", name: "Waupaca", seat: "Waupaca", href: "/local-movers/wisconsin/waupaca", displayLabel: "Waupaca County, WI" },
+    { slug: "waushara", name: "Waushara", seat: "Wautoma", href: "/local-movers/wisconsin/waushara", displayLabel: "Waushara County, WI" },
+    { slug: "wood", name: "Wood", seat: "Wisconsin Rapids", href: "/local-movers/wisconsin/wood", displayLabel: "Wood County, WI" },
+  ],
+  chippewa: [
+    { slug: "barron", name: "Barron", seat: "Barron", href: "/local-movers/wisconsin/barron", displayLabel: "Barron County, WI" },
+    { slug: "clark", name: "Clark", seat: "Neillsville", href: "/local-movers/wisconsin/clark", displayLabel: "Clark County, WI" },
+    { slug: "dunn", name: "Dunn", seat: "Menomonie", href: "/local-movers/wisconsin/dunn", displayLabel: "Dunn County, WI" },
+    { slug: "eau-claire", name: "Eau Claire", seat: "Eau Claire", href: "/local-movers/wisconsin/eau-claire", displayLabel: "Eau Claire County, WI" },
+    { slug: "pepin", name: "Pepin", seat: "Durand", href: "/local-movers/wisconsin/pepin", displayLabel: "Pepin County, WI" },
+  ],
+  sauk: [
+    { slug: "adams", name: "Adams", seat: "Friendship", href: "/local-movers/wisconsin/adams", displayLabel: "Adams County, WI" },
+    { slug: "columbia", name: "Columbia", seat: "Portage", href: "/local-movers/wisconsin/columbia", displayLabel: "Columbia County, WI" },
+    { slug: "crawford", name: "Crawford", seat: "Prairie du Chien", href: "/local-movers/wisconsin/crawford", displayLabel: "Crawford County, WI" },
+    { slug: "iowa", name: "Iowa", seat: "Dodgeville", href: "/local-movers/wisconsin/iowa", displayLabel: "Iowa County, WI" },
+    { slug: "juneau", name: "Juneau", seat: "Mauston", href: "/local-movers/wisconsin/juneau", displayLabel: "Juneau County, WI" },
+  ],
+  columbia: [
+    { slug: "dane", name: "Dane", seat: "Madison", href: "/local-movers/wisconsin/dane", displayLabel: "Dane County, WI" },
+    { slug: "dodge", name: "Dodge", seat: "Juneau", href: "/local-movers/wisconsin/dodge", displayLabel: "Dodge County, WI" },
+    { slug: "green-lake", name: "Green Lake", seat: "Green Lake", href: "/local-movers/wisconsin/green-lake", displayLabel: "Green Lake County, WI" },
+    { slug: "marquette", name: "Marquette", seat: "Montello", href: "/local-movers/wisconsin/marquette", displayLabel: "Marquette County, WI" },
+    { slug: "sauk", name: "Sauk", seat: "Baraboo", href: "/local-movers/wisconsin/sauk", displayLabel: "Sauk County, WI" },
+  ],
+  calumet: [
+    { slug: "fond-du-lac", name: "Fond du Lac", seat: "Fond du Lac", href: "/local-movers/wisconsin/fond-du-lac", displayLabel: "Fond du Lac County, WI" },
+    { slug: "manitowoc", name: "Manitowoc", seat: "Manitowoc", href: "/local-movers/wisconsin/manitowoc", displayLabel: "Manitowoc County, WI" },
+    { slug: "outagamie", name: "Outagamie", seat: "Appleton", href: "/local-movers/wisconsin/outagamie", displayLabel: "Outagamie County, WI" },
+    { slug: "sheboygan", name: "Sheboygan", seat: "Sheboygan", href: "/local-movers/wisconsin/sheboygan", displayLabel: "Sheboygan County, WI" },
+    { slug: "winnebago", name: "Winnebago", seat: "Oshkosh", href: "/local-movers/wisconsin/winnebago", displayLabel: "Winnebago County, WI" },
+  ],
+  grant: [
+    { slug: "crawford", name: "Crawford", seat: "Prairie du Chien", href: "/local-movers/wisconsin/crawford", displayLabel: "Crawford County, WI" },
+    { slug: "iowa", name: "Iowa", seat: "Dodgeville", href: "/local-movers/wisconsin/iowa", displayLabel: "Iowa County, WI" },
+    { slug: "lafayette", name: "Lafayette", seat: "Darlington", href: "/local-movers/wisconsin/lafayette", displayLabel: "Lafayette County, WI" },
+    { slug: "richland", name: "Richland", seat: "Richland Center", href: "/local-movers/wisconsin/richland", displayLabel: "Richland County, WI" },
+  ],
+  waupaca: [
+    { slug: "langlade", name: "Langlade", seat: "Antigo", href: "/local-movers/wisconsin/langlade", displayLabel: "Langlade County, WI" },
+    { slug: "marathon", name: "Marathon", seat: "Wausau", href: "/local-movers/wisconsin/marathon", displayLabel: "Marathon County, WI" },
+    { slug: "outagamie", name: "Outagamie", seat: "Appleton", href: "/local-movers/wisconsin/outagamie", displayLabel: "Outagamie County, WI" },
+    { slug: "portage", name: "Portage", seat: "Stevens Point", href: "/local-movers/wisconsin/portage", displayLabel: "Portage County, WI" },
+    { slug: "shawano", name: "Shawano", seat: "Shawano", href: "/local-movers/wisconsin/shawano", displayLabel: "Shawano County, WI" },
+  ],
+  monroe: [
+    { slug: "crawford", name: "Crawford", seat: "Prairie du Chien", href: "/local-movers/wisconsin/crawford", displayLabel: "Crawford County, WI" },
+    { slug: "jackson", name: "Jackson", seat: "Black River Falls", href: "/local-movers/wisconsin/jackson", displayLabel: "Jackson County, WI" },
+    { slug: "juneau", name: "Juneau", seat: "Mauston", href: "/local-movers/wisconsin/juneau", displayLabel: "Juneau County, WI" },
+    { slug: "la-crosse", name: "La Crosse", seat: "La Crosse", href: "/local-movers/wisconsin/la-crosse", displayLabel: "La Crosse County, WI" },
+    { slug: "richland", name: "Richland", seat: "Richland Center", href: "/local-movers/wisconsin/richland", displayLabel: "Richland County, WI" },
   ],
 };
 
