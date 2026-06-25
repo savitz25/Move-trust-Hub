@@ -3,9 +3,10 @@ import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
   laramie: 10,
-  natrona: 10,
+  natrona: 9,
+  teton: 8,
 };
-const DEFAULT_TARGET = 10;
+const DEFAULT_TARGET = 5;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;

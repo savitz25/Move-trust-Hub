@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Wyoming curated county corridor links — 23/23 */
+/** Wyoming curated county corridor links — 23/23 (cross-border CO, MT, ID, SD, NE) */
 const WY_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   laramie: [
     { slug: 'albany', name: 'Albany', seat: 'Laramie', href: '/local-movers/wyoming/albany', displayLabel: 'Albany County, WY' },
@@ -64,8 +64,9 @@ const WY_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'fremont', name: 'Fremont', seat: 'Lander', href: '/local-movers/wyoming/fremont', displayLabel: 'Fremont County, WY' },
     { slug: 'lincoln', name: 'Lincoln', seat: 'Kemmerer', href: '/local-movers/wyoming/lincoln', displayLabel: 'Lincoln County, WY' },
     { slug: 'park', name: 'Park', seat: 'Cody', href: '/local-movers/wyoming/park', displayLabel: 'Park County, WY' },
+    { slug: 'sublette', name: 'Sublette', seat: 'Pinedale', href: '/local-movers/wyoming/sublette', displayLabel: 'Sublette County, WY' },
     { slug: 'teton', name: 'Teton', seat: 'Driggs', href: '/local-movers/idaho/teton', displayLabel: 'Teton County, ID' },
-    { slug: 'fremont', name: 'Fremont', seat: 'St. Anthony', href: '/local-movers/idaho/fremont', displayLabel: 'Fremont County, ID' },
+    { slug: 'gallatin', name: 'Gallatin', seat: 'Bozeman', href: '/local-movers/montana/gallatin', displayLabel: 'Gallatin County, MT' },
   ],
   lincoln: [
     { slug: 'sublette', name: 'Sublette', seat: 'Pinedale', href: '/local-movers/wyoming/sublette', displayLabel: 'Sublette County, WY' },
@@ -123,6 +124,7 @@ const WY_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'goshen', name: 'Goshen', seat: 'Torrington', href: '/local-movers/wyoming/goshen', displayLabel: 'Goshen County, WY' },
     { slug: 'laramie', name: 'Laramie', seat: 'Cheyenne', href: '/local-movers/wyoming/laramie', displayLabel: 'Laramie County, WY' },
     { slug: 'niobrara', name: 'Niobrara', seat: 'Lusk', href: '/local-movers/wyoming/niobrara', displayLabel: 'Niobrara County, WY' },
+    { slug: 'kimball', name: 'Kimball', seat: 'Kimball', href: '/local-movers/nebraska/kimball', displayLabel: 'Kimball County, NE' },
   ],
   crook: [
     { slug: 'campbell', name: 'Campbell', seat: 'Gillette', href: '/local-movers/wyoming/campbell', displayLabel: 'Campbell County, WY' },

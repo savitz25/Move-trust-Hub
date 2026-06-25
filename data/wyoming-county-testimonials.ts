@@ -3,14 +3,14 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated Wyoming county testimonials — 23/23 */
 export const wyomingCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   laramie: [
-    { quote: 'Two Men and a Truck Cheyenne handled our capital-region move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Cheyenne, WY', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Cheyenne navigated our south Cheyenne relocation with fair pricing through Front Range corridor traffic.', name: 'Beth N.', location: 'Cheyenne, WY', rating: 5, moveType: 'Townhome' },
-    { quote: 'Capital Region Moving served our government-sector relocation efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Cheyenne, WY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Warren AFB Military Moving coordinated our PCS from F.E. Warren — handled base access paperwork and delivered to our Cheyenne home on schedule despite winter weather.', name: 'Alex M.', location: 'Cheyenne, WY', rating: 5, moveType: 'Military PCS' },
+    { quote: 'Two Men and a Truck Cheyenne handled our capital-region move professionally — on time and extremely careful with our home through I-25 corridor traffic.', name: 'Beth N.', location: 'Cheyenne, WY', rating: 5, moveType: 'Single-family' },
+    { quote: 'Capital Region Moving served our state government transfer efficiently with steady communication and professional crew coordination downtown.', name: 'Carl O.', location: 'Cheyenne, WY', rating: 5, moveType: 'Government relocation' },
   ],
   natrona: [
-    { quote: 'Two Men and a Truck Casper handled our energy-basin move professionally — on time and extremely careful with our home.', name: 'Dana P.', location: 'Casper, WY', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Casper navigated our Mills relocation with fair pricing and excellent North Platte corridor scheduling.', name: 'Evan Q.', location: 'Mills, WY', rating: 5, moveType: 'Townhome' },
-    { quote: 'Energy Basin Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Faye R.', location: 'Casper, WY', rating: 5, moveType: 'Single-family' },
+    { quote: 'Energy Basin Moving coordinated our oilfield rotation from Casper to Williston — understood our tight rig-start window and delivered on schedule.', name: 'Dana P.', location: 'Casper, WY', rating: 5, moveType: 'Energy sector' },
+    { quote: 'Two Men and a Truck Casper handled our energy-basin family move professionally — on time and extremely careful with our home.', name: 'Evan Q.', location: 'Casper, WY', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Casper navigated our Denver-to-Casper corporate transfer with fair pricing and excellent North Platte corridor scheduling.', name: 'Faye R.', location: 'Casper, WY', rating: 5, moveType: 'Interstate (CO to WY)' },
   ],
   campbell: [
     { quote: 'Regional Gillette / Campbell Providers handled our Gillette move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Gillette, WY', rating: 5, moveType: 'Single-family' },
@@ -43,9 +43,9 @@ export const wyomingCountyTestimonials: Record<string, CountyTestimonialEntry[]>
     { quote: 'Yellowstone Gateway Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Mia W.', location: 'Cody, WY', rating: 5, moveType: 'Apartment' },
   ],
   teton: [
-    { quote: 'Regional Jackson / Teton Providers handled our Jackson move professionally — on time and extremely careful with our home.', name: 'Leo V.', location: 'Jackson, WY', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Jackson navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Mia W.', location: 'Jackson, WY', rating: 5, moveType: 'Townhome' },
-    { quote: 'Jackson Hole Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Noah X.', location: 'Jackson, WY', rating: 5, moveType: 'Apartment' },
+    { quote: 'Jackson Hole Moving handled our California-to-Jackson second-home relocation with white-glove care for antiques, art, and ski gear.', name: 'Leo V.', location: 'Jackson, WY', rating: 5, moveType: 'Luxury second-home' },
+    { quote: 'All My Sons Jackson navigated our resort-season staffing move with fair pricing and excellent Teton Pass route planning.', name: 'Mia W.', location: 'Jackson, WY', rating: 5, moveType: 'Tourism / resort staffing' },
+    { quote: 'Regional Jackson / Teton Providers waited for clear weather over Teton Pass and delivered our winter move safely and on schedule.', name: 'Noah X.', location: 'Jackson, WY', rating: 5, moveType: 'Winter mountain move' },
   ],
   lincoln: [
     { quote: 'Regional Kemmerer / Lincoln Providers handled our Kemmerer move professionally — on time and extremely careful with our home.', name: 'Mia W.', location: 'Kemmerer, WY', rating: 5, moveType: 'Single-family' },

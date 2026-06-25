@@ -228,6 +228,9 @@ export function buildStateDescription(
   if (stateName === 'Montana') {
     return `Find curated local movers in all 56 Montana counties — up to 11 ranked companies in Yellowstone County (Billings), 8–10 in Missoula and Gallatin (Bozeman), 8 in Cascade (Great Falls), and 5–7 regional specialists in every county. Billings guides cover regional hub, corporate, and agricultural moves; Missoula and Bozeman cover university, tourism, and outdoor-lifestyle growth; Great Falls covers Malmstrom AFB military PCS; Glacier and Yellowstone gateway counties emphasize tourism and second-home logistics; rural Hi-Line and plains counties emphasize harsh winters, remote logistics, and long-distance Lower 48 hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Wyoming') {
+    return `Find curated local movers in all 23 Wyoming counties — up to 10 ranked companies in Laramie County (Cheyenne), 8–9 in Natrona (Casper), 7–8 in Teton (Jackson Hole), and 5–7 regional specialists in every county. Cheyenne guides cover government, F.E. Warren AFB military PCS, and Front Range regional hub moves; Casper covers oil-and-gas energy-sector relocations; Jackson Hole covers luxury resort and second-home logistics; rural counties emphasize harsh winters, remote ranch properties, agricultural hauls, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Wyoming county research — 23/23 */
+/** Hand-curated Wyoming county research — 23/23 (rural/specialized market) */
 export const wyomingCountyResearch: Record<string, CuratedCountyResearch> = {
   laramie: {
     marketNotes:
-      'Laramie County is Wyoming’s most populous county and state capital region with strong government, commercial, suburban, and residential demand across the Cheyenne metro and Front Range corridor.',
+      'Laramie County is Wyoming’s most populous county and state capital region with strong government, F.E. Warren AFB military PCS, commercial, suburban, and residential demand across the Cheyenne metro and I-25 Front Range corridor.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
@@ -18,10 +18,10 @@ export const wyomingCountyResearch: Record<string, CuratedCountyResearch> = {
       note: 'Laramie County pricing reflects Cheyenne capital-region demand, F.E. Warren AFB and government-sector relocations, I-25 Front Range corridor traffic, and competition among full-service agents serving Laramie County communities.',
     },
     tips: [
-      'Verify coverage for Cheyenne and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Cheyenne, Warren AFB PCS moves, and surrounding areas before booking.',
+      'I-25 Front Range corridor traffic and winter weather impact scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), military PCS windows, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -35,10 +35,10 @@ export const wyomingCountyResearch: Record<string, CuratedCountyResearch> = {
       note: 'Natrona County pricing reflects Casper metro demand, oil-and-gas workforce relocations, I-25 and US-20 corridor traffic, and competition among full-service agents serving Natrona County communities.',
     },
     tips: [
-      'Verify coverage for Casper and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Casper, oilfield support relocations, and surrounding areas before booking.',
+      'Energy-sector rotation windows and I-25 corridor traffic impact scheduling — confirm crew arrival dates.',
       'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), energy hiring cycles, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -154,10 +154,10 @@ export const wyomingCountyResearch: Record<string, CuratedCountyResearch> = {
       note: 'Teton County pricing reflects Jackson Hole resort demand, ski-season and summer-tourism turnover, Teton Pass mountain-access logistics, and competition among full-service agents serving Teton County luxury and vacation-home communities.',
     },
     tips: [
-      'Verify coverage for Jackson and surrounding areas before booking.',
-      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Verify coverage for Jackson, luxury second-home moves, and surrounding areas before booking.',
+      'Resort-season congestion, Teton Pass winter closures, and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
       'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), ski-season staffing, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
