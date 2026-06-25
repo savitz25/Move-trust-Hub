@@ -2,7 +2,14 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Wisconsin curated county corridor links — all 72 Wisconsin counties */
+/**
+ * Wisconsin curated county corridor links — all 72 Wisconsin counties.
+ * Cross-border nearby links connect to Illinois (Lake, Winnebago, Cook corridor),
+ * Minnesota (St. Croix, Pierce, Douglas), Michigan (Upper Peninsula border counties),
+ * and Iowa (Grant, Crawford, La Crosse fringe). WI `washington`, `dane`, `jefferson`,
+ * `lincoln`, `buffalo`, `iowa`, `grant`, `richland`, `columbia`, and `door` slugs collide
+ * with other states — nearby links use `displayLabel` disambiguation.
+ */
 const WI_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   milwaukee: [
     { slug: "waukesha", name: "Waukesha", seat: "Waukesha", href: "/local-movers/wisconsin/waukesha", displayLabel: "Waukesha County, WI" },

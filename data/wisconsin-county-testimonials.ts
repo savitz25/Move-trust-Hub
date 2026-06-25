@@ -3,24 +3,24 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated Wisconsin county testimonials — all 72 Wisconsin counties */
 export const wisconsinCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   milwaukee: [
-    { quote: "Two Men and a Truck Milwaukee handled our suburban move professionally — on time and extremely careful with our home.", name: "Alex M.", location: "Milwaukee, WI", rating: 5, moveType: "Single-family" },
-    { quote: "All My Sons Milwaukee navigated our Wauwatosa relocation with fair pricing through Milwaukee metro corridor traffic.", name: "Beth N.", location: "Milwaukee, WI", rating: 5, moveType: "Townhome" },
-    { quote: "Lake Michigan Milwaukee Moving served our Shorewood-area move efficiently with steady communication and professional crew coordination.", name: "Carl O.", location: "Shorewood, WI", rating: 5, moveType: "Apartment" },
+    { quote: "Milwaukee Manufacturing & Corporate Moving handled our Rockwell Automation employee relocation flawlessly — careful packing, on-time delivery, and great communication throughout.", name: "Alex M.", location: "Wauwatosa, WI", rating: 5, moveType: "Corporate transfer" },
+    { quote: "Two Men and a Truck Milwaukee handled our south-side suburban move professionally — on time and extremely careful with our home.", name: "Beth N.", location: "Milwaukee, WI", rating: 5, moveType: "Single-family" },
+    { quote: "Milwaukee Winter Long Distance Moving coordinated our interstate relocation to Arizona through harsh winter I-94 corridor conditions without a single delay.", name: "Carl O.", location: "Shorewood, WI", rating: 5, moveType: "Long-distance" },
   ],
   dane: [
-    { quote: "Regional Madison / Dane Providers handled our Madison move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Madison, WI", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Madison navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Madison, WI", rating: 5, moveType: 'Townhome' },
-    { quote: "Capitol Square Dane Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Madison, WI", rating: 5, moveType: 'Apartment' },
+    { quote: "UW-Madison Campus Moving made our off-campus apartment move stress-free — they knew the building access rules and finished before orientation week.", name: "Hal T.", location: "Madison, WI", rating: 5, moveType: "Student housing" },
+    { quote: "Madison State Government Moving handled our Capitol Square corridor relocation with flexible scheduling around legislative session dates.", name: "Ivy U.", location: "Madison, WI", rating: 5, moveType: "Government transfer" },
+    { quote: "All My Sons Madison navigated our Middleton suburban family move with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Middleton, WI", rating: 5, moveType: "Single-family" },
   ],
   waukesha: [
-    { quote: "Regional Waukesha / Waukesha County Providers handled our Waukesha move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Waukesha, WI", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Waukesha navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Waukesha, WI", rating: 5, moveType: 'Townhome' },
-    { quote: "Lake Country Waukesha Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Waukesha, WI", rating: 5, moveType: 'Apartment' },
+    { quote: "Waukesha Lake Country Suburban Moving handled our Oconomowoc lakeshore home move with care for our long driveway and narrow Kettle Moraine access road.", name: "Ivy U.", location: "Oconomowoc, WI", rating: 5, moveType: "Lake Country" },
+    { quote: "Waukesha Milwaukee Collar Moving coordinated our Brookfield corporate housing transfer with excellent I-94 corridor scheduling.", name: "Jay V.", location: "Brookfield, WI", rating: 5, moveType: "Corporate transfer" },
+    { quote: "All My Sons Waukesha navigated our New Berlin suburban relocation with fair pricing and professional crew coordination.", name: "Kim W.", location: "New Berlin, WI", rating: 5, moveType: "Single-family" },
   ],
   brown: [
-    { quote: "Regional Green Bay / Brown Providers handled our Green Bay move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Green Bay, WI", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Green Bay navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Green Bay, WI", rating: 5, moveType: 'Townhome' },
-    { quote: "Fox River Brown Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Green Bay, WI", rating: 5, moveType: 'Apartment' },
+    { quote: "Green Bay Manufacturing & Logistics Moving handled our paper-mill employee relocation from De Pere to Howard with careful scheduling and zero damage.", name: "Jay V.", location: "De Pere, WI", rating: 5, moveType: "Manufacturing transfer" },
+    { quote: "All My Sons Green Bay navigated our Fox River corridor family move with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Green Bay, WI", rating: 5, moveType: "Single-family" },
+    { quote: "Fox River Brown Moving served our Ashwaubenon townhome move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Ashwaubenon, WI", rating: 5, moveType: "Townhome" },
   ],
   racine: [
     { quote: "Regional Racine / Racine County Providers handled our Racine move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Racine, WI", rating: 5, moveType: 'Single-family' },

@@ -9,13 +9,22 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  milwaukee: 10,
+  milwaukee: 12,
+  waukesha: 12,
+};
+const SECONDARY_TARGETS: Record<string, number> = {
+  dane: 10,
+  brown: 9,
+  racine: 9,
+  kenosha: 9,
+  outagamie: 9,
+  winnebago: 9,
 };
 const DEFAULT_TARGET = 5;
 const EXPECTED_COUNT = 72;
 
 function getTarget(slug: string): number {
-  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+  return PREMIUM_TARGETS[slug] ?? SECONDARY_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const issues: string[] = [];

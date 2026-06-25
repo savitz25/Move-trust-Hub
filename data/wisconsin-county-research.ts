@@ -10,68 +10,68 @@ export type CuratedCountyResearch = {
 export const wisconsinCountyResearch: Record<string, CuratedCountyResearch> = {
   milwaukee: {
     marketNotes:
-      "Milwaukee County, WI is Wisconsin’s most populous county centered on Milwaukee with strong urban, suburban, and residential demand across the Milwaukee metro and Lake Michigan corridor.",
+      "Milwaukee County anchors Wisconsin’s largest metro — a dense Lake Michigan corridor market driven by manufacturing headquarters (Harley-Davidson, Rockwell Automation), Northwestern Mutual and corporate office relocations, high-rise downtown housing, and inner-ring suburban family moves across Wauwatosa, Shorewood, and the south-side industrial corridor.",
     costs: {
       studioRange: "$900–$1,900",
       familyRange: "$3,500–$8,500+",
       avgHourly: "$125–$195/hr for a 2-person crew",
-      note: "Milwaukee County pricing reflects Milwaukee metro demand, I-43 and I-94 corridor traffic, high-value urban and suburban homes, and competition among full-service agents serving Milwaukee County communities.",
+      note: "Milwaukee County pricing reflects Milwaukee metro demand, manufacturing and corporate employee transfers, I-43 and I-94 corridor traffic, high-value urban and suburban homes, and competition among full-service agents serving Milwaukee County communities.",
     },
     tips: [
-      "Verify coverage for Milwaukee and surrounding Milwaukee metro communities before booking.",
+      "Confirm movers have experience with manufacturing and corporate relocations if moving for employer transfers.",
+      "Verify coverage for Milwaukee, Wauwatosa, West Allis, and south-side communities before booking — crews may differ across the metro.",
       "I-43, I-94, and I-41 congestion significantly impacts scheduling — confirm crew arrival windows.",
-      "Confirm insurance for high-value suburban homes, condos, and townhomes before move day.",
-      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Ask about long-distance and interstate scheduling if relocating out of Wisconsin — harsh winters can affect Lake Michigan corridor timing.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
   },
   dane: {
     marketNotes:
-      "Dane County, WI is a major urban county centered on Madison with strong governmental, university, and residential demand across Wisconsin’s capital corridor — not to be confused with Dane County in other states.",
+      "Dane County centers on Madison — Wisconsin’s capital and home to UW–Madison — with strong demand from state government transfers, university campus and off-campus housing turnover, Epic Systems and healthcare-sector professional relocations, and suburban growth across Fitchburg, Middleton, and Sun Prairie.",
     costs: {
       studioRange: "$900–$1,900",
       familyRange: "$3,500–$8,500+",
       avgHourly: "$125–$195/hr for a 2-person crew",
-      note: "Dane County pricing reflects Madison metro demand, capitol-city and university-area logistics, and competition among regional agents serving Dane County communities.",
+      note: "Dane County pricing reflects Madison metro demand, capitol-city and university-area logistics, legislative session scheduling, and competition among regional agents serving Dane County communities.",
     },
     tips: [
-      "Verify coverage for Madison and surrounding areas before booking.",
-      "University-area turnover (semester start/end) may affect scheduling — confirm peak-season crew availability.",
-      "Confirm coverage for student housing, off-campus apartments, and family homes before booking.",
+      "Confirm movers have experience with UW–Madison campus and off-campus student housing if moving near semester start or end.",
+      "Verify coverage for Capitol Square, Isthmus, and west-side Madison suburbs before booking.",
+      "State government and professional relocations may require flexible scheduling — confirm crew availability around legislative sessions.",
       "Book early for peak seasons (May–September) and month-end lease changeover.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
   },
   waukesha: {
     marketNotes:
-      "Waukesha County, WI is a major suburban county in the Milwaukee metro west corridor with strong residential demand across Waukesha, Lake Country, and west suburban communities.",
+      "Waukesha County is the Milwaukee metro’s affluent west-collar market — Brookfield, New Berlin, Menomonee Falls, and Lake Country (Oconomowoc, Pewaukee, Delafield) — with strong demand from corporate suburban relocations, high-value lakeshore homes, manufacturing-plant employee transfers, and family moves along the I-94 corridor.",
     costs: {
       studioRange: "$900–$1,900",
       familyRange: "$3,500–$8,500+",
       avgHourly: "$125–$195/hr for a 2-person crew",
-      note: "Waukesha County pricing reflects west Milwaukee suburban demand, I-94 corridor traffic, high-value Lake Country homes, and competition among regional agents serving Waukesha County communities.",
+      note: "Waukesha County pricing reflects west Milwaukee suburban demand, Lake Country high-value homes, I-94 corridor traffic, corporate and manufacturing employee transfers, and competition among regional agents serving Waukesha County communities.",
     },
     tips: [
-      "Verify coverage for Waukesha and surrounding Milwaukee metro communities before booking.",
-      "I-43, I-94, and I-41 congestion significantly impacts scheduling — confirm crew arrival windows.",
+      "Confirm movers have experience with Lake Country lakeshore properties and long driveways before booking.",
+      "Verify coverage for Brookfield, New Berlin, Waukesha, and Oconomowoc — suburban crews may differ across the county.",
+      "I-94 corridor congestion significantly impacts scheduling — confirm crew arrival windows.",
       "Confirm insurance for high-value suburban homes, condos, and townhomes before move day.",
-      "Book early for peak seasons (May–September) and month-end lease changeover.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
   },
   brown: {
     marketNotes:
-      "Brown County, WI is a northeastern Wisconsin county centered on Green Bay with strong urban, port, and residential demand along the Fox River corridor — not to be confused with Brown County, MN or other Brown counties nationwide.",
+      "Brown County centers on Green Bay — northeastern Wisconsin’s manufacturing and port-logistics hub along the Fox River — with strong demand from paper-mill and manufacturing employee relocations, De Pere-adjacent suburban family moves, Lambeau Field corridor housing turnover, and long-distance regional hauls.",
     costs: {
       studioRange: "$850–$1,700",
       familyRange: "$3,000–$7,000+",
       avgHourly: "$120–$185/hr for a 2-person crew",
-      note: "Brown County pricing reflects Green Bay-area demand, Fox River corridor travel distances, and competition among regional agents serving Brown County, WI communities.",
+      note: "Brown County pricing reflects Green Bay-area demand, manufacturing and logistics-sector relocations, Fox River corridor travel distances, and competition among regional agents serving Brown County, WI communities.",
     },
     tips: [
-      "Verify coverage for Green Bay and surrounding areas before booking.",
-      "Regional traffic impacts scheduling — confirm crew arrival windows.",
-      "Confirm insurance for high-value homes before move day.",
+      "Confirm movers have experience with manufacturing and port-logistics relocations if moving for employer transfers.",
+      "Verify coverage for Green Bay, De Pere, Ashwaubenon, and Howard before booking.",
+      "Regional traffic and winter weather impacts scheduling — confirm crew arrival windows.",
       "Book early for peak seasons (May–September) and month-end lease changeover.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],

@@ -294,18 +294,7 @@ const MN_HIGH_TRAFFIC_COUNTIES = new Set([
 
 const WI_HIGH_TRAFFIC_COUNTIES = new Set([
   'milwaukee',
-  'dane',
   'waukesha',
-  'kenosha',
-  'washington',
-  'ozaukee',
-  'st-croix',
-  'la-crosse',
-  'pierce',
-  'douglas',
-  'door',
-  'sawyer',
-  'bayfield',
 ]);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
