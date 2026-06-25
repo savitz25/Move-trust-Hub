@@ -376,8 +376,8 @@ const CURATED_SD_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-rapid-city-sd',
     'rapid-city-corridor-moving-pennington-sd',
     'black-hills-east-moving-pennington-sd',
+    'ellsworth-afb-military-moving-pennington-sd',
     'hercules-movers-rapid-city-sd',
-    'krupp-moving-rapid-city-sd',
   ],
   perkins: [
     'regional-perkins-sd-movers',
