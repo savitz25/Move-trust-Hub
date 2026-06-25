@@ -116,7 +116,7 @@ export default function FmcsaPage() {
         <li>Cross-reference with our Reputation Score on the directory</li>
       </ul>
 
-      <GuideFooter relatedSlugs={['how-to-choose', 'scams', 'routes', 'move-size-weight', 'checklist']} />
+      <GuideFooter relatedSlugs={['carrier-vs-broker', 'how-to-choose', 'scams', 'routes', 'move-size-weight', 'checklist']} />
 
       <p className="text-xs text-muted-foreground mt-12">
         This information is for educational purposes. Always verify licensing and safety data directly on fmcsa.dot.gov.

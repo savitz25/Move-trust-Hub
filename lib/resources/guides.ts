@@ -30,7 +30,16 @@ export const guides: GuideEntry[] = [
     excerpt: 'A step-by-step framework using reputation scores, licensing verification, and quote evaluation.',
     category: 'Buying Guide',
     href: '/resources/how-to-choose',
-    related: ['fmcsa', 'scams', 'move-size-weight', 'routes'],
+    related: ['carrier-vs-broker', 'fmcsa', 'scams', 'move-size-weight', 'routes'],
+  },
+  {
+    slug: 'carrier-vs-broker',
+    title: 'Carrier vs Broker vs Carrier-Broker: Key Differences',
+    excerpt:
+      'Understand FMCSA authority types, costs, risks, and accountability before booking your interstate move.',
+    category: 'Buying Guide',
+    href: '/resources/carrier-vs-broker',
+    related: ['how-to-choose', 'fmcsa', 'scams', 'move-size-weight', 'routes'],
   },
   {
     slug: 'scams',

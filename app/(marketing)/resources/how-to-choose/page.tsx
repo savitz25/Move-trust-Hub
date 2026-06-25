@@ -42,9 +42,15 @@ export default function HowToChoose() {
       <ul>
         <li><strong>Carriers</strong> own the trucks and employ (or contract) the crews that load, transport, and unload your belongings.</li>
         <li><strong>Brokers</strong> act as middlemen — they sell the job to a carrier. While some brokers are legitimate, many add unnecessary cost and make communication difficult.</li>
+        <li><strong>Carrier-brokers</strong> hold both authorities — they run their own fleet and may subcontract overflow moves to partner carriers.</li>
       </ul>
       <p>
-        <strong>Pro tip:</strong> Look for companies that operate as carriers (or carrier + broker hybrids) and have their own USDOT number. You can verify this on the <a href="https://www.fmcsa.dot.gov" target="_blank" rel="noopener">FMCSA website</a>.
+        <strong>Pro tip:</strong> Read our full{' '}
+        <Link href="/resources/carrier-vs-broker" className="text-primary underline">
+          carrier vs broker vs carrier-broker guide
+        </Link>{' '}
+        for FMCSA authority types, comparison tables, and red flags. Verify any company on the{' '}
+        <a href="https://www.fmcsa.dot.gov" target="_blank" rel="noopener">FMCSA website</a>.
       </p>
 
       <h2>2. Check Licensing and Safety Data (FMCSA)</h2>
@@ -142,7 +148,7 @@ export default function HowToChoose() {
         <li>Confirm pickup and delivery windows in writing</li>
       </ol>
 
-      <GuideFooter relatedSlugs={['fmcsa', 'scams', 'move-size-weight', 'routes', 'packing-checklist']} />
+      <GuideFooter relatedSlugs={['carrier-vs-broker', 'fmcsa', 'scams', 'move-size-weight', 'routes', 'packing-checklist']} />
 
       <p className="text-xs text-muted-foreground mt-12">
         This guide is for educational purposes. Always perform your own due diligence and verify all licensing and insurance directly with the FMCSA and your chosen mover.

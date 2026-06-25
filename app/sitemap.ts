@@ -8,6 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const resourcePages = [
     '/resources/move-size-weight',
+    '/resources/carrier-vs-broker',
     '/resources/how-to-choose',
     '/resources/fmcsa',
     '/resources/scams',
