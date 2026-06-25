@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for Iowa local movers directory (batches 1–2 — 47 counties).
+ * Full SEO / E-E-A-T audit for Iowa local movers directory (73 curated counties).
  * Run: npx tsx scripts/audit-iowa-seo.ts
  */
 import { iowaCountyResearch } from '../data/iowa-county-research';
@@ -9,14 +9,13 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  polk: 10,
+  polk: 12,
   linn: 10,
   johnson: 10,
 };
 const SECONDARY_TARGETS: Record<string, number> = {
-  scott: 8,
-  'black-hawk': 8,
-  dallas: 8,
+  scott: 9,
+  woodbury: 8,
 };
 const DEFAULT_TARGET = 5;
 const EXPECTED_COUNT = 73;

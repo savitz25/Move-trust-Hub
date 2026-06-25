@@ -248,6 +248,9 @@ export function buildStateDescription(
   if (stateName === 'Nebraska') {
     return `Find curated local movers in all 93 Nebraska counties — up to 12 ranked companies in Douglas County (Omaha metro), 10 in Sarpy (Papillion / Bellevue) and Lancaster (Lincoln), 7–8 in Hall (Grand Island), Buffalo (Kearney), and Dodge (Fremont), and 5–7 regional specialists in every county. Omaha guides cover corporate, suburban family moves, and Offutt AFB military PCS; Lincoln covers University of Nebraska and state government relocations; rural counties emphasize agricultural hauls (corn, soybeans, cattle), harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Iowa') {
+    return `Find curated local movers in 73 Iowa county guides — up to 12 ranked companies in Polk County (Des Moines metro), 9–10 in Linn (Cedar Rapids), Johnson (Iowa City), and Scott (Quad Cities), 8 in Woodbury (Sioux City), and 5–7 regional specialists in every curated county. Des Moines guides cover insurance and finance headquarters, corporate relocations, and suburban family moves; the Cedar Rapids–Iowa City corridor covers manufacturing, University of Iowa campus turnover, and professional relocations; Quad Cities and Sioux City cover cross-border and agricultural processing logistics; rural counties emphasize corn/soybean/pork agricultural hauls, ethanol-industry corridors, harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

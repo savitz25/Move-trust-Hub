@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Iowa curated county corridor links — 73 counties */
+/** Iowa curated county corridor links — 73/73 (cross-border IL, MO, MN, SD, NE, WI) */
 const IA_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   polk: [
     { slug: 'dallas', name: 'Dallas', seat: 'Adel', href: '/local-movers/iowa/dallas', displayLabel: 'Dallas County, IA' },

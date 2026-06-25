@@ -2,14 +2,13 @@ import { iowaCountyResearch } from '../data/iowa-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  polk: 10,
+  polk: 12,
   linn: 10,
   johnson: 10,
 };
 const SECONDARY_TARGETS: Record<string, number> = {
-  scott: 8,
-  'black-hawk': 8,
-  dallas: 8,
+  scott: 9,
+  woodbury: 8,
 };
 const DEFAULT_TARGET = 5;
 

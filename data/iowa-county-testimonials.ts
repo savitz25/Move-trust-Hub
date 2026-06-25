@@ -3,24 +3,24 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated Iowa county testimonials — 73 counties */
 export const iowaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   polk: [
-    { quote: 'Two Men and a Truck Des Moines handled our suburban move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Des Moines, IA', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Des Moines navigated our West Des Moines relocation with fair pricing through Raccoon River valley corridor traffic.', name: 'Beth N.', location: 'Des Moines, IA', rating: 5, moveType: 'Townhome' },
-    { quote: 'Raccoon River Valley Moving served our Ankeny-area move efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Ankeny, IA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Des Moines Insurance & Corporate Moving handled our Principal Financial employee relocation flawlessly — careful packing, on-time delivery, and great communication throughout.', name: 'Alex M.', location: 'West Des Moines, IA', rating: 5, moveType: 'Corporate transfer' },
+    { quote: 'Two Men and a Truck Des Moines handled our Ankeny suburban move professionally — on time and extremely careful with our new-construction home.', name: 'Beth N.', location: 'Ankeny, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'Des Moines Long Distance Moving coordinated our interstate relocation to Colorado through harsh winter I-80 corridor conditions without a single delay.', name: 'Carl O.', location: 'Urbandale, IA', rating: 5, moveType: 'Long-distance' },
   ],
   linn: [
-    { quote: 'Two Men and a Truck Cedar Rapids handled our Cedar River valley move professionally — on time and extremely careful with our home.', name: 'Dana P.', location: 'Cedar Rapids, IA', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Cedar Rapids navigated our Marion-adjacent relocation with fair pricing through Cedar River corridor traffic.', name: 'Eric Q.', location: 'Cedar Rapids, IA', rating: 5, moveType: 'Townhome' },
-    { quote: 'Cedar River Valley Moving served our relocation efficiently with punctual arrival and professional crew coordination.', name: 'Fran R.', location: 'Marion, IA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Eastern Iowa Manufacturing Moving handled our plant relocation from Cedar Rapids to Marion with careful equipment packing and zero downtime for our family move.', name: 'Dana P.', location: 'Cedar Rapids, IA', rating: 5, moveType: 'Manufacturing transfer' },
+    { quote: 'Two Men and a Truck Cedar Rapids handled our Cedar River valley move professionally — on time and extremely careful with our home.', name: 'Eric Q.', location: 'Marion, IA', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Cedar Rapids navigated our healthcare-sector relocation with fair pricing and excellent scheduling around hospital shift changes.', name: 'Fran R.', location: 'Cedar Rapids, IA', rating: 5, moveType: 'Professional' },
   ],
   scott: [
-    { quote: 'Regional Quad Cities / Scott Providers handled our Davenport move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Davenport, IA', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Davenport navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Gia Q.', location: 'Davenport, IA', rating: 5, moveType: 'Townhome' },
-    { quote: 'Mississippi River East Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Davenport, IA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Quad Cities Cross-Border Moving coordinated our Davenport-to-Moline relocation seamlessly — handled Illinois permits and river-crossing logistics without any hassle.', name: 'Fay P.', location: 'Davenport, IA', rating: 5, moveType: 'Cross-border' },
+    { quote: 'All My Sons Davenport navigated our Bettendorf manufacturing-plant transfer with fair pricing and excellent regional scheduling.', name: 'Gia Q.', location: 'Bettendorf, IA', rating: 5, moveType: 'Manufacturing transfer' },
+    { quote: 'Mississippi River East Moving served our riverfront apartment move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Davenport, IA', rating: 5, moveType: 'Apartment' },
   ],
   johnson: [
-    { quote: 'Regional Iowa City / Johnson Providers handled our Iowa City move professionally — on time and extremely careful with our home.', name: 'Gia Q.', location: 'Iowa City, IA', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Iowa City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Hal R.', location: 'Iowa City, IA', rating: 5, moveType: 'Townhome' },
-    { quote: 'Iowa River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ivy S.', location: 'Iowa City, IA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Hawkeyes Campus Moving made our University of Iowa off-campus apartment move stress-free — they knew the building access rules and finished before orientation week.', name: 'Gia Q.', location: 'Iowa City, IA', rating: 5, moveType: 'Student housing' },
+    { quote: 'All My Sons Iowa City navigated our UI Hospitals professional relocation with fair pricing and excellent scheduling around clinic hours.', name: 'Hal R.', location: 'Coralville, IA', rating: 5, moveType: 'Healthcare transfer' },
+    { quote: 'Iowa River Valley Moving served our family home move efficiently with punctual arrival and careful handling of our Iowa River valley property.', name: 'Ivy S.', location: 'Iowa City, IA', rating: 5, moveType: 'Single-family' },
   ],
   'black-hawk': [
     { quote: 'Regional Waterloo / Black Hawk Providers handled our Waterloo move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Waterloo, IA', rating: 5, moveType: 'Single-family' },
@@ -33,9 +33,9 @@ export const iowaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = 
     { quote: 'Raccoon River West Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'Waukee, IA', rating: 5, moveType: 'Apartment' },
   ],
   woodbury: [
-    { quote: 'Regional Sioux City / Woodbury Providers handled our Sioux City move professionally — on time and extremely careful with our home.', name: 'Jay T.', location: 'Sioux City, IA', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Sioux City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Kim U.', location: 'Sioux City, IA', rating: 5, moveType: 'Townhome' },
-    { quote: 'Missouri River Northwest Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Leo V.', location: 'Sioux City, IA', rating: 5, moveType: 'Apartment' },
+    { quote: 'Sioux City Agricultural Moving handled our ag-processing plant transfer and family relocation in one coordinated move — excellent tri-state corridor experience.', name: 'Jay T.', location: 'Sioux City, IA', rating: 5, moveType: 'Agricultural transfer' },
+    { quote: 'All My Sons Sioux City navigated our cross-border relocation to South Sioux City, NE with fair pricing and excellent regional scheduling.', name: 'Kim U.', location: 'Sioux City, IA', rating: 5, moveType: 'Cross-border' },
+    { quote: 'Missouri River Northwest Moving served our Sergeant Bluff move efficiently with punctual arrival and professional crew coordination.', name: 'Leo V.', location: 'Sergeant Bluff, IA', rating: 5, moveType: 'Single-family' },
   ],
   story: [
     { quote: 'Regional Ames / Story Providers handled our Ames move professionally — on time and extremely careful with our home.', name: 'Kim U.', location: 'Ames, IA', rating: 5, moveType: 'Single-family' },

@@ -10,41 +10,41 @@ export type CuratedCountyResearch = {
 export const iowaCountyResearch: Record<string, CuratedCountyResearch> = {
   polk: {
     marketNotes:
-      'Polk County anchors Iowa’s largest metro centered on Des Moines with strong suburban, commercial, insurance-sector, and state-government demand across West Des Moines, Ankeny, Urbandale, and Raccoon River valley corridor communities.',
+      'Polk County anchors Iowa’s largest metro centered on Des Moines — home to major insurance and finance headquarters (Principal, Nationwide, EMC), state government, and fast-growing West Des Moines, Ankeny, and Urbandale suburbs. Movers here routinely handle corporate employee transfers, executive relocations, suburban new-construction moves, and long-distance hauls along the I-35 and I-80 corridors.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
       avgHourly: '$120–$185/hr for a 2-person crew',
-      note: 'Polk County pricing reflects Des Moines metro demand, suburban new-construction turnover, I-35 and I-80 corridor traffic, and competition among full-service agents serving Polk County communities.',
+      note: 'Polk County pricing reflects Des Moines metro demand, insurance-sector corporate relocations, suburban new-construction turnover, I-35 and I-80 corridor traffic, and competition among full-service agents serving Polk County communities.',
     },
     tips: [
-      'Verify coverage for Des Moines and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Confirm movers have experience with insurance and finance corporate relocations and executive-level packing standards.',
+      'Verify coverage for West Des Moines, Ankeny, Urbandale, and Clive before booking — suburban crews may differ from downtown Des Moines teams.',
+      'Book early for peak seasons (May–September) and month-end lease changeover in fast-growing suburbs.',
+      'Ask about long-distance and interstate scheduling if relocating out of Iowa — winter weather can affect I-35 and I-80 corridor timing.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
   linn: {
     marketNotes:
-      'Linn County is eastern Iowa’s second-largest metro county centered on Cedar Rapids with strong manufacturing, healthcare, suburban, and Cedar River valley residential demand across Marion-adjacent and corridor communities.',
+      'Linn County is eastern Iowa’s manufacturing and healthcare corridor centered on Cedar Rapids, with strong demand from food-processing plants, Marion-adjacent suburban growth, and professional relocations along the Cedar River valley. Movers here handle manufacturing-sector transfers, hospital and clinic staff moves, and family relocations between Cedar Rapids and the Iowa City corridor.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
       avgHourly: '$115–$175/hr for a 2-person crew',
-      note: 'Linn County pricing reflects Cedar Rapids secondary-metro demand, Cedar River valley corridor traffic, manufacturing-sector relocations, and competition among full-service agents serving Linn County communities.',
+      note: 'Linn County pricing reflects Cedar Rapids secondary-metro demand, manufacturing and healthcare-sector relocations, Cedar River valley corridor traffic, and competition among full-service agents serving Linn County communities.',
     },
     tips: [
-      'Verify coverage for Cedar Rapids and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes and rural properties.',
+      'Confirm movers have experience with manufacturing and healthcare-sector relocations if moving for employer transfers.',
+      'Verify coverage for Cedar Rapids, Marion, and Hiawatha before booking — crews may differ across the Cedar River valley.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Ask about long-distance scheduling if relocating to or from the Cedar Rapids–Iowa City corridor.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
   scott: {
     marketNotes:
-      'Scott County anchors the Iowa side of the Quad Cities metro centered on Davenport with strong Mississippi River east-bank, Bettendorf-adjacent, and cross-border Illinois corridor demand across riverfront and suburban communities.',
+      'Scott County anchors the Iowa side of the Quad Cities metro centered on Davenport — a major Mississippi River manufacturing and logistics hub with heavy cross-border demand into Rock Island and Moline, Illinois. Movers here routinely coordinate interstate permits, river-crossing logistics, Bettendorf-adjacent suburban moves, and manufacturing-plant employee relocations.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
@@ -52,27 +52,27 @@ export const iowaCountyResearch: Record<string, CuratedCountyResearch> = {
       note: 'Scott County pricing reflects Quad Cities secondary-metro demand, Mississippi River east corridor traffic, cross-border Illinois logistics, and competition among regional agents serving Scott County communities.',
     },
     tips: [
-      'Verify coverage for Davenport and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes and rural properties.',
+      'Confirm movers have cross-border experience for Illinois destinations — Rock Island, Moline, and East Moline moves may require interstate coordination.',
+      'Verify coverage for Davenport, Bettendorf, and riverfront neighborhoods before booking.',
+      'Ask about manufacturing-plant and industrial relocation experience if moving for employer transfers.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
   johnson: {
     marketNotes:
-      'Johnson County, IA is a university and healthcare county centered on Iowa City with strong University of Iowa, student-housing, Coralville-adjacent, and Iowa River valley residential demand — not to be confused with Johnson County in other states.',
+      'Johnson County, IA is anchored by Iowa City and the University of Iowa — one of the Midwest’s premier university towns with strong student-housing turnover, University of Iowa Hospitals & Clinics professional relocations, and Coralville-adjacent suburban growth along the Iowa River valley. Not to be confused with Johnson County in other states.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
       avgHourly: '$120–$185/hr for a 2-person crew',
-      note: 'Johnson County pricing reflects Iowa City metro demand, university and healthcare relocations, Iowa River valley corridor traffic, and competition among full-service agents serving Johnson County communities.',
+      note: 'Johnson County pricing reflects Iowa City metro demand, University of Iowa campus and healthcare relocations, Iowa River valley corridor traffic, and competition among full-service agents serving Johnson County communities.',
     },
     tips: [
-      'Verify coverage for Iowa City and surrounding areas before booking.',
-      'University-area turnover (semester start/end) may affect scheduling — confirm peak-season crew availability.',
-      'Confirm coverage for student housing, off-campus apartments, and family homes before booking.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book well ahead for semester start/end windows (August and May) — University of Iowa campus turnover creates peak demand.',
+      'Confirm coverage for student housing, off-campus apartments, Coralville, and family homes before booking.',
+      'Ask about experience with University of Iowa Hospitals & Clinics professional relocations if moving for healthcare employment.',
+      'Verify parking and building access for downtown Iowa City apartments and multi-unit housing.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -112,18 +112,18 @@ export const iowaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   woodbury: {
     marketNotes:
-      'Woodbury County anchors northwest Iowa’s Sioux City metro with strong Missouri River northwest corridor, cross-border Nebraska and South Dakota, and industrial riverfront residential demand across Sergeant Bluff-adjacent communities.',
+      'Woodbury County anchors northwest Iowa’s Sioux City metro — a tri-state regional hub for agricultural processing (corn, soybeans, pork, ethanol), meatpacking, and Missouri River northwest corridor logistics with strong cross-border demand into Nebraska and South Dakota. Movers here handle ag-industry employee transfers, riverfront industrial relocations, and long-distance hauls across the Great Plains.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
       avgHourly: '$115–$175/hr for a 2-person crew',
-      note: 'Woodbury County pricing reflects Sioux City secondary-metro demand, Missouri River northwest corridor traffic, tri-state cross-border logistics, and competition among regional agents serving Woodbury County communities.',
+      note: 'Woodbury County pricing reflects Sioux City secondary-metro demand, agricultural processing and tri-state cross-border logistics, Missouri River northwest corridor traffic, and competition among regional agents serving Woodbury County communities.',
     },
     tips: [
-      'Verify coverage for Sioux City and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Confirm movers have agricultural and ag-processing relocation experience if moving for employer transfers in the Sioux City corridor.',
+      'Verify cross-border coverage for Nebraska (South Sioux City) and South Dakota destinations before booking.',
+      'Ask about long-distance scheduling — Sioux City is a regional hub for very long-distance Lower 48 hauls.',
+      'Book early for peak seasons (May–September) and harvest-season corridor traffic.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
