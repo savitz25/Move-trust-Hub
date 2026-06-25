@@ -50,6 +50,7 @@ import {
   WYOMING_COUNTY_CONTENT_UPDATED,
   NORTH_DAKOTA_COUNTY_CONTENT_UPDATED,
   SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED,
+  NEBRASKA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -89,6 +90,7 @@ import { getMontanaCountyResearch } from '@/data/montana-county-research';
 import { getWyomingCountyResearch } from '@/data/wyoming-county-research';
 import { getNorthDakotaCountyResearch } from '@/data/north-dakota-county-research';
 import { getSouthDakotaCountyResearch } from '@/data/south-dakota-county-research';
+import { getNebraskaCountyResearch } from '@/data/nebraska-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -140,6 +142,7 @@ import { getMontanaNearbyCounties } from '@/lib/local-movers/montana-nearby';
 import { getWyomingNearbyCounties } from '@/lib/local-movers/wyoming-nearby';
 import { getNorthDakotaNearbyCounties } from '@/lib/local-movers/north-dakota-nearby';
 import { getSouthDakotaNearbyCounties } from '@/lib/local-movers/south-dakota-nearby';
+import { getNebraskaNearbyCounties } from '@/lib/local-movers/nebraska-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -347,7 +350,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                 : stateSlug === 'south-dakota' &&
                                                                                                     getSouthDakotaCountyResearch(countySlug)
                                                                                                   ? getSouthDakotaNearbyCounties(countySlug)
-                                                                                                  : [];
+                                                                                                  : stateSlug === 'nebraska' &&
+                                                                                                      getNebraskaCountyResearch(countySlug)
+                                                                                                    ? getNebraskaNearbyCounties(countySlug)
+                                                                                                    : [];
 
   return (
     <>
@@ -602,7 +608,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                         : stateSlug === 'south-dakota' &&
                                                                                                             getSouthDakotaCountyResearch(countySlug)
                                                                                                           ? SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED
-                                                                                                          : undefined
+                                                                                                          : stateSlug === 'nebraska' &&
+                                                                                                              getNebraskaCountyResearch(countySlug)
+                                                                                                            ? NEBRASKA_COUNTY_CONTENT_UPDATED
+                                                                                                            : undefined
           }
         />
 
