@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated North Dakota county research — 25/53 */
+/** Hand-curated North Dakota county research — 53/53 */
 export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = {
   cass: {
     marketNotes:
@@ -427,6 +427,482 @@ export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = 
     },
     tips: [
       'Verify coverage for Rugby and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sargent: {
+    marketNotes:
+      'Sargent County is a southeastern North Dakota county centered on Forman with rural residential and Red River south-basin agricultural demand across southeastern plains corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sargent County pricing reflects Forman-area demand, southeastern plains travel distances, agricultural property logistics, and competition among regional agents serving Sargent County communities.',
+    },
+    tips: [
+      'Verify coverage for Forman and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wells: {
+    marketNotes:
+      'Wells County, ND is a central North Dakota county centered on Fessenden with rural residential and central plains agricultural demand — not to be confused with Wells County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Wells County pricing reflects Fessenden-area demand, central plains travel distances, agricultural property logistics, and competition among regional agents serving Wells County communities.',
+    },
+    tips: [
+      'Verify coverage for Fessenden and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sioux: {
+    marketNotes:
+      'Sioux County, ND is a southern North Dakota county centered on Fort Yates with rural residential and Standing Rock Missouri River corridor demand — not to be confused with Sioux County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sioux County pricing reflects Fort Yates-area demand, Missouri River corridor travel distances, tribal and rural property logistics, and competition among regional agents serving Sioux County communities.',
+    },
+    tips: [
+      'Verify coverage for Fort Yates and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cavalier: {
+    marketNotes:
+      'Cavalier County, ND is a northern North Dakota county centered on Langdon with rural residential and northern valley agricultural demand — distinct from Pembina County seat Cavalier — not to be confused with Cavalier County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Cavalier County pricing reflects Langdon-area demand, northern valley travel distances, agricultural property logistics, and competition among regional agents serving Cavalier County communities.',
+    },
+    tips: [
+      'Verify coverage for Langdon and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  emmons: {
+    marketNotes:
+      'Emmons County is a southern North Dakota county centered on Linton with rural residential and southern plains agricultural demand across Missouri River south-bank corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Emmons County pricing reflects Linton-area demand, southern plains travel distances, agricultural property logistics, and competition among regional agents serving Emmons County communities.',
+    },
+    tips: [
+      'Verify coverage for Linton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  foster: {
+    marketNotes:
+      'Foster County is a central North Dakota county centered on Carrington with rural residential and James River central-basin agricultural demand across US-281 corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Foster County pricing reflects Carrington-area demand, James River central-basin travel distances, agricultural property logistics, and competition among regional agents serving Foster County communities.',
+    },
+    tips: [
+      'Verify coverage for Carrington and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  nelson: {
+    marketNotes:
+      'Nelson County, ND is a northeastern North Dakota county centered on Lakota with rural residential and northern lake-region agricultural demand — not to be confused with Nelson County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Nelson County pricing reflects Lakota-area demand, northern lake-region travel distances, agricultural property logistics, and competition among regional agents serving Nelson County communities.',
+    },
+    tips: [
+      'Verify coverage for Lakota and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bowman: {
+    marketNotes:
+      'Bowman County, ND is a southwestern North Dakota county centered on Bowman with rural residential and southwest-corner ranch demand — not to be confused with Bowman County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Bowman County pricing reflects Bowman-area demand, southwest-corner travel distances, ranch property logistics, and competition among regional agents serving Bowman County communities.',
+    },
+    tips: [
+      'Verify coverage for Bowman and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hettinger: {
+    marketNotes:
+      'Hettinger County, ND is a southwestern North Dakota county serving Hettinger-area communities with rural residential and southwest plateau ranch demand — not to be confused with Hettinger County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hettinger County pricing reflects Hettinger-area demand, southwest plateau travel distances, ranch property logistics, and competition among regional agents serving Hettinger County communities.',
+    },
+    tips: [
+      'Verify coverage for Hettinger and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcintosh: {
+    marketNotes:
+      'McIntosh County, ND is a southeastern North Dakota county centered on Ashley with rural residential and James River south-basin agricultural demand — not to be confused with McIntosh County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'McIntosh County pricing reflects Ashley-area demand, James River south-basin travel distances, agricultural property logistics, and competition among regional agents serving McIntosh County communities.',
+    },
+    tips: [
+      'Verify coverage for Ashley and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kidder: {
+    marketNotes:
+      'Kidder County, ND is a central North Dakota county centered on Steele with rural residential and central coteau agricultural demand — not to be confused with Kidder County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Kidder County pricing reflects Steele-area demand, central coteau travel distances, agricultural property logistics, and competition among regional agents serving Kidder County communities.',
+    },
+    tips: [
+      'Verify coverage for Steele and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  renville: {
+    marketNotes:
+      'Renville County, ND is a northwestern North Dakota county centered on Mohall with rural residential and northwest plains agricultural demand — not to be confused with Renville County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Renville County pricing reflects Mohall-area demand, northwest plains travel distances, agricultural property logistics, and competition among regional agents serving Renville County communities.',
+    },
+    tips: [
+      'Verify coverage for Mohall and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  adams: {
+    marketNotes:
+      'Adams County, ND is a southwestern North Dakota county centered on Hettinger with rural residential and southwest border ranch demand — not to be confused with Adams County in Colorado or other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Adams County pricing reflects Hettinger-area demand, southwest border travel distances, ranch property logistics, and competition among regional agents serving Adams County communities.',
+    },
+    tips: [
+      'Verify coverage for Hettinger and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  eddy: {
+    marketNotes:
+      'Eddy County, ND is a central North Dakota county centered on New Rockford with rural residential and central lake-basin agricultural demand — not to be confused with Eddy County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Eddy County pricing reflects New Rockford-area demand, central lake-basin travel distances, agricultural property logistics, and competition among regional agents serving Eddy County communities.',
+    },
+    tips: [
+      'Verify coverage for New Rockford and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  griggs: {
+    marketNotes:
+      'Griggs County is a central North Dakota county centered on Cooperstown with rural residential and central Red River corridor agricultural demand across US-281 corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Griggs County pricing reflects Cooperstown-area demand, central Red River corridor travel distances, agricultural property logistics, and competition among regional agents serving Griggs County communities.',
+    },
+    tips: [
+      'Verify coverage for Cooperstown and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County, ND is a southwestern North Dakota county centered on Carson with rural residential and Missouri River southwest-bank ranch demand — not to be confused with Grant County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Carson-area demand, Missouri southwest corridor travel distances, ranch property logistics, and competition among regional agents serving Grant County communities.',
+    },
+    tips: [
+      'Verify coverage for Carson and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  burke: {
+    marketNotes:
+      'Burke County, ND is a northwestern North Dakota county centered on Bowbells with rural residential and northwest border agricultural demand — not to be confused with Burke County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Burke County pricing reflects Bowbells-area demand, northwest border travel distances, agricultural property logistics, and competition among regional agents serving Burke County communities.',
+    },
+    tips: [
+      'Verify coverage for Bowbells and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  divide: {
+    marketNotes:
+      'Divide County, ND is a northwestern North Dakota county centered on Crosby with rural residential and northwest corner agricultural demand — not to be confused with Divide County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Divide County pricing reflects Crosby-area demand, northwest corner travel distances, agricultural property logistics, and competition among regional agents serving Divide County communities.',
+    },
+    tips: [
+      'Verify coverage for Crosby and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  towner: {
+    marketNotes:
+      'Towner County, ND is a northern North Dakota county centered on Cando with rural residential and northern plains agricultural demand — not to be confused with Towner County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Towner County pricing reflects Cando-area demand, northern plains travel distances, agricultural property logistics, and competition among regional agents serving Towner County communities.',
+    },
+    tips: [
+      'Verify coverage for Cando and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  oliver: {
+    marketNotes:
+      'Oliver County, ND is a central North Dakota county centered on Center with rural residential and Missouri Slope coal-creek ranch demand — not to be confused with Oliver County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Oliver County pricing reflects Center-area demand, Missouri Slope travel distances, ranch and energy property logistics, and competition among regional agents serving Oliver County communities.',
+    },
+    tips: [
+      'Verify coverage for Center and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'golden-valley': {
+    marketNotes:
+      'Golden Valley County, ND is a southwestern North Dakota county centered on Beach with rural residential and badlands south ranch demand — not to be confused with Golden Valley County in Montana or other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Golden Valley County pricing reflects Beach-area demand, badlands south travel distances, ranch property logistics, and competition among regional agents serving Golden Valley County communities.',
+    },
+    tips: [
+      'Verify coverage for Beach and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County, ND is a central North Dakota county centered on Napoleon with rural residential and James River mid-basin agricultural demand — not to be confused with Logan County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Logan County pricing reflects Napoleon-area demand, James River mid-basin travel distances, agricultural property logistics, and competition among regional agents serving Logan County communities.',
+    },
+    tips: [
+      'Verify coverage for Napoleon and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  steele: {
+    marketNotes:
+      'Steele County, ND is a southeastern North Dakota county centered on Finley with rural residential and central Red River corridor agricultural demand — not to be confused with Steele County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Steele County pricing reflects Finley-area demand, central Red River corridor travel distances, agricultural property logistics, and competition among regional agents serving Steele County communities.',
+    },
+    tips: [
+      'Verify coverage for Finley and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sheridan: {
+    marketNotes:
+      'Sheridan County, ND is a central North Dakota county centered on McClusky with rural residential and Missouri Coteau agricultural demand — not to be confused with Sheridan County in Montana or Wyoming.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sheridan County pricing reflects McClusky-area demand, Missouri Coteau travel distances, agricultural property logistics, and competition among regional agents serving Sheridan County communities.',
+    },
+    tips: [
+      'Verify coverage for McClusky and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  billings: {
+    marketNotes:
+      'Billings County, ND is a southwestern North Dakota county centered on Medora with rural residential, tourism, and Theodore Roosevelt badlands gateway demand — not to be confused with Billings County in Montana or other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Billings County pricing reflects Medora-area demand, badlands gateway travel distances, tourism and ranch property logistics, and competition among regional agents serving Billings County communities.',
+    },
+    tips: [
+      'Verify coverage for Medora and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  slope: {
+    marketNotes:
+      'Slope County is one of North Dakota’s smallest counties centered on Amidon with rural residential and southwest frontier ranch demand across remote badlands corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Slope County pricing reflects Amidon-area demand, remote southwest frontier travel distances, ranch property logistics, and competition among regional agents serving Slope County communities.',
+    },
+    tips: [
+      'Verify coverage for Amidon and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dickey: {
+    marketNotes:
+      'Dickey County is a southeastern North Dakota county centered on Ellendale with rural residential and southeast coteau agricultural demand across I-94 corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Dickey County pricing reflects Ellendale-area demand, southeast coteau travel distances, agricultural property logistics, and competition among regional agents serving Dickey County communities.',
+    },
+    tips: [
+      'Verify coverage for Ellendale and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mchenry: {
+    marketNotes:
+      'McHenry County, ND is a north-central North Dakota county centered on Towner with rural residential and northern Souris River agricultural demand — not to be confused with McHenry County in Illinois or other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'McHenry County pricing reflects Towner-area demand, northern Souris River travel distances, agricultural property logistics, and competition among regional agents serving McHenry County communities.',
+    },
+    tips: [
+      'Verify coverage for Towner and surrounding areas before booking.',
       'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
       'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',

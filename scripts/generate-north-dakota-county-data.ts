@@ -1,12 +1,12 @@
 /**
- * Generates North Dakota county curation files (batch 1: 25/53 counties).
+ * Generates North Dakota county curation files (53/53 counties).
  * Run: npx tsx scripts/generate-north-dakota-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
-const EXPECTED_COUNT = 25;
+const EXPECTED_COUNT = 53;
 
 type CostTier = 'metro' | 'western_slope' | 'rural' | 'resort';
 
@@ -74,6 +74,28 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   mercer: 'Mercer County, ND',
   mountrail: 'Mountrail County, ND',
   mclean: 'McLean County, ND',
+  wells: 'Wells County, ND',
+  sioux: 'Sioux County, ND',
+  cavalier: 'Cavalier County, ND',
+  nelson: 'Nelson County, ND',
+  bowman: 'Bowman County, ND',
+  hettinger: 'Hettinger County, ND',
+  mcintosh: 'McIntosh County, ND',
+  kidder: 'Kidder County, ND',
+  renville: 'Renville County, ND',
+  adams: 'Adams County, ND',
+  eddy: 'Eddy County, ND',
+  grant: 'Grant County, ND',
+  burke: 'Burke County, ND',
+  divide: 'Divide County, ND',
+  towner: 'Towner County, ND',
+  oliver: 'Oliver County, ND',
+  'golden-valley': 'Golden Valley County, ND',
+  logan: 'Logan County, ND',
+  steele: 'Steele County, ND',
+  sheridan: 'Sheridan County, ND',
+  billings: 'Billings County, ND',
+  mchenry: 'McHenry County, ND',
 };
 
 const ND_NEIGHBORS: Record<string, string[]> = {
@@ -102,6 +124,34 @@ const ND_NEIGHBORS: Record<string, string[]> = {
   lamoure: ['ransom', 'richland', 'stutsman', 'dickey', 'logan', 'mcintosh'],
   dunn: ['stark', 'mercer', 'mckenzie', 'mountrail', 'mclean', 'billings', 'hettinger', 'oliver'],
   pierce: ['rolette', 'benson', 'ward', 'bottineau', 'mchenry'],
+  sargent: ['richland', 'ransom', 'dickey', 'lamoure'],
+  wells: ['foster', 'eddy', 'sheridan', 'benson', 'ramsey'],
+  sioux: ['morton', 'emmons', 'grant', 'burleigh'],
+  cavalier: ['walsh', 'ramsey', 'pembina', 'nelson', 'towner'],
+  emmons: ['morton', 'burleigh', 'logan', 'mcintosh', 'hettinger'],
+  foster: ['stutsman', 'wells', 'eddy', 'griggs', 'kidder'],
+  nelson: ['grand-forks', 'walsh', 'ramsey', 'benson', 'cavalier', 'traill'],
+  bowman: ['slope', 'adams', 'hettinger', 'golden-valley'],
+  hettinger: ['stark', 'adams', 'bowman', 'slope', 'grant', 'morton', 'emmons'],
+  mcintosh: ['emmons', 'logan', 'lamoure', 'dickey', 'kidder'],
+  kidder: ['burleigh', 'stutsman', 'foster', 'wells', 'mcintosh', 'logan'],
+  renville: ['ward', 'bottineau', 'mchenry', 'mountrail', 'burke'],
+  adams: ['hettinger', 'bowman', 'slope', 'billings'],
+  eddy: ['foster', 'wells', 'sheridan', 'stutsman'],
+  griggs: ['barnes', 'steele', 'traill', 'cass'],
+  grant: ['morton', 'mercer', 'stark', 'hettinger', 'sioux', 'oliver'],
+  burke: ['williams', 'mountrail', 'renville', 'divide'],
+  divide: ['williams', 'burke', 'mckenzie'],
+  towner: ['rolette', 'benson', 'ramsey', 'cavalier', 'mchenry'],
+  oliver: ['burleigh', 'morton', 'mclean', 'mercer', 'grant'],
+  'golden-valley': ['stark', 'billings', 'mckenzie', 'slope'],
+  logan: ['emmons', 'mcintosh', 'lamoure', 'kidder'],
+  steele: ['cass', 'grand-forks', 'traill', 'griggs', 'barnes'],
+  sheridan: ['burleigh', 'mclean', 'wells', 'eddy', 'kidder'],
+  billings: ['stark', 'golden-valley', 'mckenzie', 'slope'],
+  slope: ['bowman', 'adams', 'hettinger', 'billings', 'golden-valley'],
+  dickey: ['richland', 'sargent', 'lamoure', 'mcintosh'],
+  mchenry: ['ward', 'bottineau', 'pierce', 'renville', 'towner'],
 };
 
 type CrossBorder = {
@@ -217,6 +267,58 @@ const CROSS_BORDER: Partial<Record<string, CrossBorder[]>> = {
       name: 'Harding',
       seat: 'Buffalo',
       displayLabel: 'Harding County, SD',
+    },
+  ],
+  sioux: [
+    {
+      slug: 'campbell',
+      stateSlug: 'south-dakota',
+      name: 'Campbell',
+      seat: 'Mound City',
+      displayLabel: 'Campbell County, SD',
+    },
+  ],
+  bowman: [
+    {
+      slug: 'harding',
+      stateSlug: 'south-dakota',
+      name: 'Harding',
+      seat: 'Buffalo',
+      displayLabel: 'Harding County, SD',
+    },
+    {
+      slug: 'fallon',
+      stateSlug: 'montana',
+      name: 'Fallon',
+      seat: 'Baker',
+      displayLabel: 'Fallon County, MT',
+    },
+  ],
+  grant: [
+    {
+      slug: 'perkins',
+      stateSlug: 'south-dakota',
+      name: 'Perkins',
+      seat: 'Bison',
+      displayLabel: 'Perkins County, SD',
+    },
+  ],
+  divide: [
+    {
+      slug: 'richland',
+      stateSlug: 'montana',
+      name: 'Richland',
+      seat: 'Sidney',
+      displayLabel: 'Richland County, MT',
+    },
+  ],
+  sargent: [
+    {
+      slug: 'wilkin',
+      stateSlug: 'minnesota',
+      name: 'Wilkin',
+      seat: 'Breckenridge',
+      displayLabel: 'Wilkin County, MN',
     },
   ],
 };
@@ -723,37 +825,571 @@ const COUNTIES: CountyDef[] = [
       'Pierce County pricing reflects Rugby-area demand, remote north-central travel distances, agricultural property logistics, and competition among regional agents serving Pierce County communities.',
     tipVariant: 'rural',
   },
+  {
+    slug: 'sargent',
+    name: 'Sargent',
+    seat: 'Forman',
+    city: 'Forman',
+    metro: 'sargent-metro-nd',
+    costTier: 'rural',
+    citySlug: 'forman',
+    regional1: 'forman-corridor',
+    regional2: 'southeast-plains',
+    topId: 'regional-sargent-nd-movers',
+    topName: 'Regional Forman / Sargent Providers',
+    regional1Name: 'Forman Corridor Moving',
+    regional2Name: 'Southeast Plains Moving',
+    marketNotes:
+      'Sargent County is a southeastern North Dakota county centered on Forman with rural residential and Red River south-basin agricultural demand across southeastern plains corridor communities.',
+    costNote:
+      'Sargent County pricing reflects Forman-area demand, southeastern plains travel distances, agricultural property logistics, and competition among regional agents serving Sargent County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'wells',
+    name: 'Wells',
+    seat: 'Fessenden',
+    city: 'Fessenden',
+    metro: 'wells-metro-nd',
+    costTier: 'rural',
+    citySlug: 'fessenden',
+    regional1: 'fessenden-corridor',
+    regional2: 'central-plains',
+    topId: 'regional-wells-nd-movers',
+    topName: 'Regional Fessenden / Wells Providers',
+    regional1Name: 'Fessenden Corridor Moving',
+    regional2Name: 'Central Plains Moving',
+    marketNotes:
+      'Wells County, ND is a central North Dakota county centered on Fessenden with rural residential and central plains agricultural demand — not to be confused with Wells County in other states.',
+    costNote:
+      'Wells County pricing reflects Fessenden-area demand, central plains travel distances, agricultural property logistics, and competition among regional agents serving Wells County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'sioux',
+    name: 'Sioux',
+    seat: 'Fort Yates',
+    city: 'Fort Yates',
+    metro: 'sioux-metro-nd',
+    costTier: 'rural',
+    citySlug: 'fort-yates',
+    regional1: 'fort-yates-corridor',
+    regional2: 'standing-rock',
+    topId: 'regional-sioux-nd-movers',
+    topName: 'Regional Fort Yates / Sioux Providers',
+    regional1Name: 'Fort Yates Corridor Moving',
+    regional2Name: 'Standing Rock Moving',
+    marketNotes:
+      'Sioux County, ND is a southern North Dakota county centered on Fort Yates with rural residential and Standing Rock Missouri River corridor demand — not to be confused with Sioux County in other states.',
+    costNote:
+      'Sioux County pricing reflects Fort Yates-area demand, Missouri River corridor travel distances, tribal and rural property logistics, and competition among regional agents serving Sioux County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'cavalier',
+    name: 'Cavalier',
+    seat: 'Langdon',
+    city: 'Langdon',
+    metro: 'cavalier-metro-nd',
+    costTier: 'rural',
+    citySlug: 'langdon',
+    regional1: 'langdon-corridor',
+    regional2: 'northern-valley',
+    topId: 'regional-cavalier-nd-movers',
+    topName: 'Regional Langdon / Cavalier Providers',
+    regional1Name: 'Langdon Corridor Moving',
+    regional2Name: 'Northern Valley Moving',
+    marketNotes:
+      'Cavalier County, ND is a northern North Dakota county centered on Langdon with rural residential and northern valley agricultural demand — distinct from Pembina County seat Cavalier — not to be confused with Cavalier County in other states.',
+    costNote:
+      'Cavalier County pricing reflects Langdon-area demand, northern valley travel distances, agricultural property logistics, and competition among regional agents serving Cavalier County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'emmons',
+    name: 'Emmons',
+    seat: 'Linton',
+    city: 'Linton',
+    metro: 'emmons-metro-nd',
+    costTier: 'rural',
+    citySlug: 'linton',
+    regional1: 'linton-corridor',
+    regional2: 'southern-plains',
+    topId: 'regional-emmons-nd-movers',
+    topName: 'Regional Linton / Emmons Providers',
+    regional1Name: 'Linton Corridor Moving',
+    regional2Name: 'Southern Plains Moving',
+    marketNotes:
+      'Emmons County is a southern North Dakota county centered on Linton with rural residential and southern plains agricultural demand across Missouri River south-bank corridor communities.',
+    costNote:
+      'Emmons County pricing reflects Linton-area demand, southern plains travel distances, agricultural property logistics, and competition among regional agents serving Emmons County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'foster',
+    name: 'Foster',
+    seat: 'Carrington',
+    city: 'Carrington',
+    metro: 'foster-metro-nd',
+    costTier: 'rural',
+    citySlug: 'carrington',
+    regional1: 'carrington-corridor',
+    regional2: 'james-river-central',
+    topId: 'regional-foster-nd-movers',
+    topName: 'Regional Carrington / Foster Providers',
+    regional1Name: 'Carrington Corridor Moving',
+    regional2Name: 'James River Central Moving',
+    marketNotes:
+      'Foster County is a central North Dakota county centered on Carrington with rural residential and James River central-basin agricultural demand across US-281 corridor communities.',
+    costNote:
+      'Foster County pricing reflects Carrington-area demand, James River central-basin travel distances, agricultural property logistics, and competition among regional agents serving Foster County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'nelson',
+    name: 'Nelson',
+    seat: 'Lakota',
+    city: 'Lakota',
+    metro: 'nelson-metro-nd',
+    costTier: 'rural',
+    citySlug: 'lakota',
+    regional1: 'lakota-corridor',
+    regional2: 'northern-lake-region',
+    topId: 'regional-nelson-nd-movers',
+    topName: 'Regional Lakota / Nelson Providers',
+    regional1Name: 'Lakota Corridor Moving',
+    regional2Name: 'Northern Lake Region Moving',
+    marketNotes:
+      'Nelson County, ND is a northeastern North Dakota county centered on Lakota with rural residential and northern lake-region agricultural demand — not to be confused with Nelson County in other states.',
+    costNote:
+      'Nelson County pricing reflects Lakota-area demand, northern lake-region travel distances, agricultural property logistics, and competition among regional agents serving Nelson County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'bowman',
+    name: 'Bowman',
+    seat: 'Bowman',
+    city: 'Bowman',
+    metro: 'bowman-metro-nd',
+    costTier: 'rural',
+    citySlug: 'bowman',
+    regional1: 'bowman-corridor',
+    regional2: 'southwest-corner',
+    topId: 'regional-bowman-nd-movers',
+    topName: 'Regional Bowman / Bowman County Providers',
+    regional1Name: 'Bowman Corridor Moving',
+    regional2Name: 'Southwest Corner Moving',
+    marketNotes:
+      'Bowman County, ND is a southwestern North Dakota county centered on Bowman with rural residential and southwest-corner ranch demand — not to be confused with Bowman County in other states.',
+    costNote:
+      'Bowman County pricing reflects Bowman-area demand, southwest-corner travel distances, ranch property logistics, and competition among regional agents serving Bowman County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'hettinger',
+    name: 'Hettinger',
+    seat: 'Hettinger',
+    city: 'Hettinger',
+    metro: 'hettinger-metro-nd',
+    costTier: 'rural',
+    citySlug: 'hettinger',
+    regional1: 'hettinger-corridor',
+    regional2: 'southwest-plateau',
+    topId: 'regional-hettinger-nd-movers',
+    topName: 'Regional Hettinger / Hettinger County Providers',
+    regional1Name: 'Hettinger Corridor Moving',
+    regional2Name: 'Southwest Plateau Moving',
+    marketNotes:
+      'Hettinger County, ND is a southwestern North Dakota county serving Hettinger-area communities with rural residential and southwest plateau ranch demand — not to be confused with Hettinger County in other states.',
+    costNote:
+      'Hettinger County pricing reflects Hettinger-area demand, southwest plateau travel distances, ranch property logistics, and competition among regional agents serving Hettinger County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'mcintosh',
+    name: 'McIntosh',
+    seat: 'Ashley',
+    city: 'Ashley',
+    metro: 'mcintosh-metro-nd',
+    costTier: 'rural',
+    citySlug: 'ashley',
+    regional1: 'ashley-corridor',
+    regional2: 'james-river-south',
+    topId: 'regional-mcintosh-nd-movers',
+    topName: 'Regional Ashley / McIntosh Providers',
+    regional1Name: 'Ashley Corridor Moving',
+    regional2Name: 'James River South Moving',
+    marketNotes:
+      'McIntosh County, ND is a southeastern North Dakota county centered on Ashley with rural residential and James River south-basin agricultural demand — not to be confused with McIntosh County in other states.',
+    costNote:
+      'McIntosh County pricing reflects Ashley-area demand, James River south-basin travel distances, agricultural property logistics, and competition among regional agents serving McIntosh County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'kidder',
+    name: 'Kidder',
+    seat: 'Steele',
+    city: 'Steele',
+    metro: 'kidder-metro-nd',
+    costTier: 'rural',
+    citySlug: 'steele',
+    regional1: 'steele-corridor',
+    regional2: 'central-coteau',
+    topId: 'regional-kidder-nd-movers',
+    topName: 'Regional Steele / Kidder Providers',
+    regional1Name: 'Steele Corridor Moving',
+    regional2Name: 'Central Coteau Moving',
+    marketNotes:
+      'Kidder County, ND is a central North Dakota county centered on Steele with rural residential and central coteau agricultural demand — not to be confused with Kidder County in other states.',
+    costNote:
+      'Kidder County pricing reflects Steele-area demand, central coteau travel distances, agricultural property logistics, and competition among regional agents serving Kidder County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'renville',
+    name: 'Renville',
+    seat: 'Mohall',
+    city: 'Mohall',
+    metro: 'renville-metro-nd',
+    costTier: 'rural',
+    citySlug: 'mohall',
+    regional1: 'mohall-corridor',
+    regional2: 'northwest-plains',
+    topId: 'regional-renville-nd-movers',
+    topName: 'Regional Mohall / Renville Providers',
+    regional1Name: 'Mohall Corridor Moving',
+    regional2Name: 'Northwest Plains Moving',
+    marketNotes:
+      'Renville County, ND is a northwestern North Dakota county centered on Mohall with rural residential and northwest plains agricultural demand — not to be confused with Renville County in other states.',
+    costNote:
+      'Renville County pricing reflects Mohall-area demand, northwest plains travel distances, agricultural property logistics, and competition among regional agents serving Renville County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'adams',
+    name: 'Adams',
+    seat: 'Hettinger',
+    city: 'Hettinger',
+    metro: 'adams-metro-nd',
+    costTier: 'rural',
+    citySlug: 'hettinger',
+    regional1: 'hettinger-adams-corridor',
+    regional2: 'southwest-border',
+    topId: 'regional-adams-nd-movers',
+    topName: 'Regional Hettinger / Adams Providers',
+    regional1Name: 'Hettinger Adams Corridor Moving',
+    regional2Name: 'Southwest Border Moving',
+    marketNotes:
+      'Adams County, ND is a southwestern North Dakota county centered on Hettinger with rural residential and southwest border ranch demand — not to be confused with Adams County in Colorado or other states.',
+    costNote:
+      'Adams County pricing reflects Hettinger-area demand, southwest border travel distances, ranch property logistics, and competition among regional agents serving Adams County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'eddy',
+    name: 'Eddy',
+    seat: 'New Rockford',
+    city: 'New Rockford',
+    metro: 'eddy-metro-nd',
+    costTier: 'rural',
+    citySlug: 'new-rockford',
+    regional1: 'new-rockford-corridor',
+    regional2: 'central-lake-basin',
+    topId: 'regional-eddy-nd-movers',
+    topName: 'Regional New Rockford / Eddy Providers',
+    regional1Name: 'New Rockford Corridor Moving',
+    regional2Name: 'Central Lake Basin Moving',
+    marketNotes:
+      'Eddy County, ND is a central North Dakota county centered on New Rockford with rural residential and central lake-basin agricultural demand — not to be confused with Eddy County in other states.',
+    costNote:
+      'Eddy County pricing reflects New Rockford-area demand, central lake-basin travel distances, agricultural property logistics, and competition among regional agents serving Eddy County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'griggs',
+    name: 'Griggs',
+    seat: 'Cooperstown',
+    city: 'Cooperstown',
+    metro: 'griggs-metro-nd',
+    costTier: 'rural',
+    citySlug: 'cooperstown',
+    regional1: 'cooperstown-corridor',
+    regional2: 'red-river-central',
+    topId: 'regional-griggs-nd-movers',
+    topName: 'Regional Cooperstown / Griggs Providers',
+    regional1Name: 'Cooperstown Corridor Moving',
+    regional2Name: 'Red River Central Moving',
+    marketNotes:
+      'Griggs County is a central North Dakota county centered on Cooperstown with rural residential and central Red River corridor agricultural demand across US-281 corridor communities.',
+    costNote:
+      'Griggs County pricing reflects Cooperstown-area demand, central Red River corridor travel distances, agricultural property logistics, and competition among regional agents serving Griggs County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'grant',
+    name: 'Grant',
+    seat: 'Carson',
+    city: 'Carson',
+    metro: 'grant-metro-nd',
+    costTier: 'rural',
+    citySlug: 'carson',
+    regional1: 'carson-corridor',
+    regional2: 'missouri-southwest',
+    topId: 'regional-grant-nd-movers',
+    topName: 'Regional Carson / Grant Providers',
+    regional1Name: 'Carson Corridor Moving',
+    regional2Name: 'Missouri Southwest Moving',
+    marketNotes:
+      'Grant County, ND is a southwestern North Dakota county centered on Carson with rural residential and Missouri River southwest-bank ranch demand — not to be confused with Grant County in other states.',
+    costNote:
+      'Grant County pricing reflects Carson-area demand, Missouri southwest corridor travel distances, ranch property logistics, and competition among regional agents serving Grant County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'burke',
+    name: 'Burke',
+    seat: 'Bowbells',
+    city: 'Bowbells',
+    metro: 'burke-metro-nd',
+    costTier: 'rural',
+    citySlug: 'bowbells',
+    regional1: 'bowbells-corridor',
+    regional2: 'northwest-border',
+    topId: 'regional-burke-nd-movers',
+    topName: 'Regional Bowbells / Burke Providers',
+    regional1Name: 'Bowbells Corridor Moving',
+    regional2Name: 'Northwest Border Moving',
+    marketNotes:
+      'Burke County, ND is a northwestern North Dakota county centered on Bowbells with rural residential and northwest border agricultural demand — not to be confused with Burke County in other states.',
+    costNote:
+      'Burke County pricing reflects Bowbells-area demand, northwest border travel distances, agricultural property logistics, and competition among regional agents serving Burke County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'divide',
+    name: 'Divide',
+    seat: 'Crosby',
+    city: 'Crosby',
+    metro: 'divide-metro-nd',
+    costTier: 'rural',
+    citySlug: 'crosby',
+    regional1: 'crosby-corridor',
+    regional2: 'northwest-corner',
+    topId: 'regional-divide-nd-movers',
+    topName: 'Regional Crosby / Divide Providers',
+    regional1Name: 'Crosby Corridor Moving',
+    regional2Name: 'Northwest Corner Moving',
+    marketNotes:
+      'Divide County, ND is a northwestern North Dakota county centered on Crosby with rural residential and northwest corner agricultural demand — not to be confused with Divide County in other states.',
+    costNote:
+      'Divide County pricing reflects Crosby-area demand, northwest corner travel distances, agricultural property logistics, and competition among regional agents serving Divide County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'towner',
+    name: 'Towner',
+    seat: 'Cando',
+    city: 'Cando',
+    metro: 'towner-metro-nd',
+    costTier: 'rural',
+    citySlug: 'cando',
+    regional1: 'cando-corridor',
+    regional2: 'northern-plains',
+    topId: 'regional-towner-nd-movers',
+    topName: 'Regional Cando / Towner Providers',
+    regional1Name: 'Cando Corridor Moving',
+    regional2Name: 'Northern Plains Moving',
+    marketNotes:
+      'Towner County, ND is a northern North Dakota county centered on Cando with rural residential and northern plains agricultural demand — not to be confused with Towner County in other states.',
+    costNote:
+      'Towner County pricing reflects Cando-area demand, northern plains travel distances, agricultural property logistics, and competition among regional agents serving Towner County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'oliver',
+    name: 'Oliver',
+    seat: 'Center',
+    city: 'Center',
+    metro: 'oliver-metro-nd',
+    costTier: 'rural',
+    citySlug: 'center',
+    regional1: 'center-corridor',
+    regional2: 'coal-creek',
+    topId: 'regional-oliver-nd-movers',
+    topName: 'Regional Center / Oliver Providers',
+    regional1Name: 'Center Corridor Moving',
+    regional2Name: 'Coal Creek Moving',
+    marketNotes:
+      'Oliver County, ND is a central North Dakota county centered on Center with rural residential and Missouri Slope coal-creek ranch demand — not to be confused with Oliver County in other states.',
+    costNote:
+      'Oliver County pricing reflects Center-area demand, Missouri Slope travel distances, ranch and energy property logistics, and competition among regional agents serving Oliver County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'golden-valley',
+    name: 'Golden Valley',
+    seat: 'Beach',
+    city: 'Beach',
+    metro: 'golden-valley-metro-nd',
+    costTier: 'rural',
+    citySlug: 'beach',
+    regional1: 'beach-corridor',
+    regional2: 'badlands-south',
+    topId: 'regional-goldenvalley-nd-movers',
+    topName: 'Regional Beach / Golden Valley Providers',
+    regional1Name: 'Beach Corridor Moving',
+    regional2Name: 'Badlands South Moving',
+    marketNotes:
+      'Golden Valley County, ND is a southwestern North Dakota county centered on Beach with rural residential and badlands south ranch demand — not to be confused with Golden Valley County in Montana or other states.',
+    costNote:
+      'Golden Valley County pricing reflects Beach-area demand, badlands south travel distances, ranch property logistics, and competition among regional agents serving Golden Valley County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'logan',
+    name: 'Logan',
+    seat: 'Napoleon',
+    city: 'Napoleon',
+    metro: 'logan-metro-nd',
+    costTier: 'rural',
+    citySlug: 'napoleon',
+    regional1: 'napoleon-corridor',
+    regional2: 'james-river-mid',
+    topId: 'regional-logan-nd-movers',
+    topName: 'Regional Napoleon / Logan Providers',
+    regional1Name: 'Napoleon Corridor Moving',
+    regional2Name: 'James River Mid Moving',
+    marketNotes:
+      'Logan County, ND is a central North Dakota county centered on Napoleon with rural residential and James River mid-basin agricultural demand — not to be confused with Logan County in other states.',
+    costNote:
+      'Logan County pricing reflects Napoleon-area demand, James River mid-basin travel distances, agricultural property logistics, and competition among regional agents serving Logan County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'steele',
+    name: 'Steele',
+    seat: 'Finley',
+    city: 'Finley',
+    metro: 'steele-metro-nd',
+    costTier: 'rural',
+    citySlug: 'finley',
+    regional1: 'finley-corridor',
+    regional2: 'red-river-mid',
+    topId: 'regional-steele-nd-movers',
+    topName: 'Regional Finley / Steele Providers',
+    regional1Name: 'Finley Corridor Moving',
+    regional2Name: 'Red River Mid Moving',
+    marketNotes:
+      'Steele County, ND is a southeastern North Dakota county centered on Finley with rural residential and central Red River corridor agricultural demand — not to be confused with Steele County in other states.',
+    costNote:
+      'Steele County pricing reflects Finley-area demand, central Red River corridor travel distances, agricultural property logistics, and competition among regional agents serving Steele County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'sheridan',
+    name: 'Sheridan',
+    seat: 'McClusky',
+    city: 'McClusky',
+    metro: 'sheridan-metro-nd',
+    costTier: 'rural',
+    citySlug: 'mcclusky',
+    regional1: 'mcclusky-corridor',
+    regional2: 'missouri-coteau',
+    topId: 'regional-sheridan-nd-movers',
+    topName: 'Regional McClusky / Sheridan Providers',
+    regional1Name: 'McClusky Corridor Moving',
+    regional2Name: 'Missouri Coteau Moving',
+    marketNotes:
+      'Sheridan County, ND is a central North Dakota county centered on McClusky with rural residential and Missouri Coteau agricultural demand — not to be confused with Sheridan County in Montana or Wyoming.',
+    costNote:
+      'Sheridan County pricing reflects McClusky-area demand, Missouri Coteau travel distances, agricultural property logistics, and competition among regional agents serving Sheridan County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'billings',
+    name: 'Billings',
+    seat: 'Medora',
+    city: 'Medora',
+    metro: 'billings-metro-nd',
+    costTier: 'rural',
+    citySlug: 'medora',
+    regional1: 'medora-corridor',
+    regional2: 'badlands-gateway',
+    topId: 'regional-billings-nd-movers',
+    topName: 'Regional Medora / Billings Providers',
+    regional1Name: 'Medora Corridor Moving',
+    regional2Name: 'Badlands Gateway Moving',
+    marketNotes:
+      'Billings County, ND is a southwestern North Dakota county centered on Medora with rural residential, tourism, and Theodore Roosevelt badlands gateway demand — not to be confused with Billings County in Montana or other states.',
+    costNote:
+      'Billings County pricing reflects Medora-area demand, badlands gateway travel distances, tourism and ranch property logistics, and competition among regional agents serving Billings County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'slope',
+    name: 'Slope',
+    seat: 'Amidon',
+    city: 'Amidon',
+    metro: 'slope-metro-nd',
+    costTier: 'rural',
+    citySlug: 'amidon',
+    regional1: 'amidon-corridor',
+    regional2: 'southwest-frontier',
+    topId: 'regional-slope-nd-movers',
+    topName: 'Regional Amidon / Slope Providers',
+    regional1Name: 'Amidon Corridor Moving',
+    regional2Name: 'Southwest Frontier Moving',
+    marketNotes:
+      'Slope County is one of North Dakota’s smallest counties centered on Amidon with rural residential and southwest frontier ranch demand across remote badlands corridor communities.',
+    costNote:
+      'Slope County pricing reflects Amidon-area demand, remote southwest frontier travel distances, ranch property logistics, and competition among regional agents serving Slope County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'dickey',
+    name: 'Dickey',
+    seat: 'Ellendale',
+    city: 'Ellendale',
+    metro: 'dickey-metro-nd',
+    costTier: 'rural',
+    citySlug: 'ellendale',
+    regional1: 'ellendale-corridor',
+    regional2: 'southeast-coteau',
+    topId: 'regional-dickey-nd-movers',
+    topName: 'Regional Ellendale / Dickey Providers',
+    regional1Name: 'Ellendale Corridor Moving',
+    regional2Name: 'Southeast Coteau Moving',
+    marketNotes:
+      'Dickey County is a southeastern North Dakota county centered on Ellendale with rural residential and southeast coteau agricultural demand across I-94 corridor communities.',
+    costNote:
+      'Dickey County pricing reflects Ellendale-area demand, southeast coteau travel distances, agricultural property logistics, and competition among regional agents serving Dickey County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'mchenry',
+    name: 'McHenry',
+    seat: 'Towner',
+    city: 'Towner',
+    metro: 'mchenry-metro-nd',
+    costTier: 'rural',
+    citySlug: 'towner',
+    regional1: 'towner-mchenry-corridor',
+    regional2: 'northern-souris',
+    topId: 'regional-mchenry-nd-movers',
+    topName: 'Regional Towner / McHenry Providers',
+    regional1Name: 'Towner McHenry Corridor Moving',
+    regional2Name: 'Northern Souris Moving',
+    marketNotes:
+      'McHenry County, ND is a north-central North Dakota county centered on Towner with rural residential and northern Souris River agricultural demand — not to be confused with McHenry County in Illinois or other states.',
+    costNote:
+      'McHenry County pricing reflects Towner-area demand, northern Souris River travel distances, agricultural property logistics, and competition among regional agents serving McHenry County communities.',
+    tipVariant: 'rural',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
 
-const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
-  steele: { name: 'Steele', seat: 'Finley' },
-  griggs: { name: 'Griggs', seat: 'Cooperstown' },
-  kidder: { name: 'Kidder', seat: 'Steele' },
-  sioux: { name: 'Sioux', seat: 'Fort Yates' },
-  grant: { name: 'Grant', seat: 'Carson' },
-  emmons: { name: 'Emmons', seat: 'Linton' },
-  sheridan: { name: 'Sheridan', seat: 'McClusky' },
-  oliver: { name: 'Oliver', seat: 'Center' },
-  burke: { name: 'Burke', seat: 'Bowbells' },
-  divide: { name: 'Divide', seat: 'Crosby' },
-  billings: { name: 'Billings', seat: 'Medora' },
-  slope: { name: 'Slope', seat: 'Amidon' },
-  'golden-valley': { name: 'Golden Valley', seat: 'Beach' },
-  hettinger: { name: 'Hettinger', seat: 'Mott' },
-  sargent: { name: 'Sargent', seat: 'Forman' },
-  dickey: { name: 'Dickey', seat: 'Ellendale' },
-  foster: { name: 'Foster', seat: 'Carrington' },
-  logan: { name: 'Logan', seat: 'Napoleon' },
-  mcintosh: { name: 'McIntosh', seat: 'Ashley' },
-  nelson: { name: 'Nelson', seat: 'Lakota' },
-  cavalier: { name: 'Cavalier', seat: 'Langdon' },
-  mchenry: { name: 'McHenry', seat: 'Towner' },
-  renville: { name: 'Renville', seat: 'Mohall' },
-  eddy: { name: 'Eddy', seat: 'New Rockford' },
-  towner: { name: 'Towner', seat: 'Cando' },
-};
+const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {};
 
 function slugKey(slug: string): string {
   return /[^a-z]/.test(slug) ? `'${slug}'` : slug;
@@ -974,7 +1610,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated North Dakota county research — 25/53 */
+/** Hand-curated North Dakota county research — 53/53 */
 export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -991,7 +1627,7 @@ function genTestimonials(): string {
   const entries = COUNTIES.map((c, i) => buildTestimonials(c, i + 3));
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated North Dakota county testimonials — 25/53 */
+/** Hand-curated North Dakota county testimonials — 53/53 */
 export const northDakotaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${entries.join('\n')}
 };
@@ -1013,7 +1649,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated North Dakota county mover lists — 25/53 */
+/** Hand-curated North Dakota county mover lists — 53/53 */
 const CURATED_ND_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -1033,7 +1669,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated North Dakota counties (25/53) */
+/** Seat and metro overrides for hand-curated North Dakota counties (53/53) */
 export const northDakotaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -1054,7 +1690,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** North Dakota curated county corridor links — 25/53 */
+/** North Dakota curated county corridor links — 53/53 */
 const ND_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };

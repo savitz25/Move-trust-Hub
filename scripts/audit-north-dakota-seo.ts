@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for North Dakota local movers directory (batch 1).
+ * Full SEO / E-E-A-T audit for North Dakota local movers directory (53/53).
  * Run: npx tsx scripts/audit-north-dakota-seo.ts
  */
 import { northDakotaCountyResearch } from '../data/north-dakota-county-research';
@@ -14,7 +14,7 @@ const PREMIUM_TARGETS: Record<string, number> = {
   williams: 10,
 };
 const DEFAULT_TARGET = 10;
-const EXPECTED_COUNT = 25;
+const EXPECTED_COUNT = 53;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
