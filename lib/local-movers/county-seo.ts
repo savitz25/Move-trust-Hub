@@ -243,6 +243,9 @@ export function buildStateDescription(
   if (stateName === 'South Dakota') {
     return `Find curated local movers in all 66 South Dakota counties — up to 11 ranked companies in Minnehaha County (Sioux Falls metro), 9–10 in Pennington (Rapid City / Black Hills), 7–8 in Brown (Aberdeen), Codington (Watertown), and Lincoln, and 5–7 regional specialists in every county. Sioux Falls guides cover corporate, university, and suburban Big Sioux Valley moves; Rapid City covers Mount Rushmore tourism, Black Hills second-home logistics, and Ellsworth AFB military PCS; rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Nebraska') {
+    return `Find curated local movers in all 93 Nebraska counties — up to 12 ranked companies in Douglas County (Omaha metro), 10 in Sarpy (Papillion / Bellevue) and Lancaster (Lincoln), 7–8 in Hall (Grand Island), Buffalo (Kearney), and Dodge (Fremont), and 5–7 regional specialists in every county. Omaha guides cover corporate, suburban family moves, and Offutt AFB military PCS; Lincoln covers University of Nebraska and state government relocations; rural counties emphasize agricultural hauls (corn, soybeans, cattle), harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

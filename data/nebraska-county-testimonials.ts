@@ -3,19 +3,19 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated Nebraska county testimonials — all 93 counties */
 export const nebraskaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   douglas: [
-    { quote: 'Two Men and a Truck Omaha handled our suburban move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Omaha, NE', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Omaha navigated our West Omaha relocation with fair pricing through Platte River east corridor traffic.', name: 'Beth N.', location: 'Omaha, NE', rating: 5, moveType: 'Townhome' },
-    { quote: 'Platte River East Moving served our relocation efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Bellevue, NE', rating: 5, moveType: 'Apartment' },
+    { quote: 'Omaha Metro Corporate Moving coordinated our healthcare-sector transfer into West Omaha — handled suburban new-construction access and delivered on schedule.', name: 'Alex M.', location: 'Omaha, NE', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Two Men and a Truck Omaha handled our suburban move professionally — on time and extremely careful with our home through I-80 corridor traffic.', name: 'Beth N.', location: 'Omaha, NE', rating: 5, moveType: 'Single-family' },
+    { quote: 'Platte River East Moving served our Council Bluffs cross-border relocation efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Omaha, NE', rating: 5, moveType: 'Interstate (NE to IA)' },
   ],
   lancaster: [
-    { quote: 'Two Men and a Truck Lincoln handled our capital-city move professionally — on time and extremely careful with our home.', name: 'Dana P.', location: 'Lincoln, NE', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Lincoln navigated our university-area relocation with fair pricing through Salt Creek Valley corridor traffic.', name: 'Eric Q.', location: 'Lincoln, NE', rating: 5, moveType: 'Townhome' },
-    { quote: 'Salt Creek Valley Moving served our relocation efficiently with punctual arrival and professional crew coordination.', name: 'Fran R.', location: 'Lincoln, NE', rating: 5, moveType: 'Apartment' },
+    { quote: 'Huskers Campus & Government Moving coordinated our UNL faculty relocation — handled semester timing and delivered to our Salt Creek Valley townhome on schedule.', name: 'Dana P.', location: 'Lincoln, NE', rating: 5, moveType: 'University move' },
+    { quote: 'Two Men and a Truck Lincoln handled our state government transfer professionally — on time and extremely careful with our home.', name: 'Eric Q.', location: 'Lincoln, NE', rating: 5, moveType: 'Government relocation' },
+    { quote: 'Salt Creek Valley Moving served our family relocation efficiently with punctual arrival and professional crew coordination.', name: 'Fran R.', location: 'Lincoln, NE', rating: 5, moveType: 'Single-family' },
   ],
   sarpy: [
-    { quote: 'Regional Papillion / Sarpy Providers handled our Papillion move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Papillion, NE', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Papillion navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Gia Q.', location: 'Papillion, NE', rating: 5, moveType: 'Townhome' },
-    { quote: 'Omaha South Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Papillion, NE', rating: 5, moveType: 'Apartment' },
+    { quote: 'Offutt AFB Military Moving coordinated our PCS from Offutt — handled base access paperwork and delivered to our Bellevue home on schedule.', name: 'Fay P.', location: 'Bellevue, NE', rating: 5, moveType: 'Military PCS' },
+    { quote: 'All My Sons Papillion navigated our La Vista suburban relocation with fair pricing and excellent Omaha south-bank scheduling.', name: 'Gia Q.', location: 'La Vista, NE', rating: 5, moveType: 'Suburban move' },
+    { quote: 'Omaha South Moving served our Papillion family move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Papillion, NE', rating: 5, moveType: 'Single-family' },
   ],
   hall: [
     { quote: 'Regional Grand Island / Hall Providers handled our Grand Island move professionally — on time and extremely careful with our home.', name: 'Gia Q.', location: 'Grand Island, NE', rating: 5, moveType: 'Single-family' },

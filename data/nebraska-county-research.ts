@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Nebraska county research — all 93 counties */
+/** Hand-curated Nebraska county research — 93/93 (rural/specialized market) */
 export const nebraskaCountyResearch: Record<string, CuratedCountyResearch> = {
   douglas: {
     marketNotes:
-      'Douglas County anchors Nebraska’s largest metro centered on Omaha with strong suburban, commercial, healthcare, and Missouri River cross-border demand across Bellevue-adjacent, West Omaha, and Council Bluffs corridor communities.',
+      'Douglas County anchors Nebraska’s largest metro centered on Omaha with strong corporate, suburban family, healthcare, Offutt AFB military-adjacent, and Missouri River cross-border demand across West Omaha, Midtown, and Council Bluffs corridor communities.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -18,10 +18,10 @@ export const nebraskaCountyResearch: Record<string, CuratedCountyResearch> = {
       note: 'Douglas County pricing reflects Omaha metro demand, suburban new-construction turnover, I-80 and I-29 corridor traffic, and competition among full-service agents serving Douglas County communities.',
     },
     tips: [
-      'Verify coverage for Omaha and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Omaha, corporate relocations, and West Omaha suburban communities before booking.',
+      'I-80 and I-29 corridor traffic and winter weather impact scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), military PCS windows, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -52,10 +52,10 @@ export const nebraskaCountyResearch: Record<string, CuratedCountyResearch> = {
       note: 'Sarpy County pricing reflects Omaha metro suburban growth demand, Papillion and Bellevue corridor traffic, new-construction turnover, and competition among regional agents serving Sarpy County communities.',
     },
     tips: [
-      'Verify coverage for Papillion and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Papillion, Bellevue, Offutt AFB PCS moves, and La Vista communities before booking.',
+      'Omaha metro south-bank suburban growth and I-80 corridor traffic impact scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), military PCS windows, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },

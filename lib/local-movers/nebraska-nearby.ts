@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Nebraska curated county corridor links — all 93 counties */
+/** Nebraska curated county corridor links — 93/93 (cross-border IA, MO, KS, CO, WY, SD) */
 const NE_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   douglas: [
     { slug: 'dodge', name: 'Dodge', seat: 'Fremont', href: '/local-movers/nebraska/dodge', displayLabel: 'Dodge County, NE' },

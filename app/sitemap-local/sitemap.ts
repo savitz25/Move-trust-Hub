@@ -275,7 +275,7 @@ const ND_HIGH_TRAFFIC_COUNTIES = new Set(['cass', 'burleigh', 'williams', 'grand
 
 const SD_HIGH_TRAFFIC_COUNTIES = new Set(['minnehaha', 'pennington']);
 
-const NE_HIGH_TRAFFIC_COUNTIES = new Set(['douglas', 'lancaster']);
+const NE_HIGH_TRAFFIC_COUNTIES = new Set(['douglas', 'sarpy', 'lancaster']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',

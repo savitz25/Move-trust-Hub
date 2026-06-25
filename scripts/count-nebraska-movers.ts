@@ -2,13 +2,19 @@ import { nebraskaCountyResearch } from '../data/nebraska-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  douglas: 10,
+  douglas: 12,
+  sarpy: 10,
   lancaster: 10,
 };
-const DEFAULT_TARGET = 10;
+const SECONDARY_TARGETS: Record<string, number> = {
+  hall: 8,
+  buffalo: 8,
+  dodge: 8,
+};
+const DEFAULT_TARGET = 5;
 
 function getTarget(slug: string): number {
-  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+  return PREMIUM_TARGETS[slug] ?? SECONDARY_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const curatedSlugs = Object.keys(nebraskaCountyResearch).sort();
