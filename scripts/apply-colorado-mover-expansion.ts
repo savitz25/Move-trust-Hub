@@ -7,10 +7,21 @@ import { coloradoCountyResearch } from '../data/colorado-county-research';
 import { metroMoverPools } from '../data/local-movers-seed';
 import { fullMoversCatalog } from '../lib/local-movers/catalog';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  denver: 12,
+  arapahoe: 12,
+  jefferson: 12,
+  adams: 12,
+  douglas: 12,
+  'el-paso': 11,
+  boulder: 9,
+  larimer: 9,
+  weld: 9,
+};
+const DEFAULT_TARGET = 6;
 
-function getTarget(_slug: string): number {
-  return DEFAULT_TARGET;
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const assignmentsPath = 'data/colorado-county-assignments.ts';

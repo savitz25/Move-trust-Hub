@@ -1,6 +1,6 @@
 import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Colorado county mover lists — batch 1+2+3: 44/64 */
+/** Hand-curated Colorado county mover lists — 64/64 complete */
 const CURATED_CO_COUNTIES: Record<string, string[]> = {
   'el-paso': [
     'twomenandatruck-elpaso-co',
@@ -13,6 +13,7 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'pikes-peak-moving-el-paso-co',
     'hercules-movers-colorado-springs-co',
     'krupp-moving-colorado-springs-co',
+    'fort-carson-military-moving-el-paso-co',
   ],
   denver: [
     'twomenandatruck-denver-co',
@@ -25,6 +26,8 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'front-range-moving-denver-co',
     'hercules-movers-denver-co',
     'krupp-moving-denver-co',
+    'front-range-corporate-moving-co',
+    'front-range-family-outdoor-moving-co',
   ],
   arapahoe: [
     'twomenandatruck-arapahoe-co',
@@ -37,6 +40,8 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'south-metro-moving-arapahoe-co',
     'hercules-movers-aurora-co',
     'krupp-moving-aurora-co',
+    'front-range-corporate-moving-co',
+    'front-range-family-outdoor-moving-co',
   ],
   jefferson: [
     'twomenandatruck-jefferson-co',
@@ -49,6 +54,8 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'foothills-west-moving-jefferson-co',
     'hercules-movers-lakewood-co',
     'krupp-moving-lakewood-co',
+    'front-range-corporate-moving-co',
+    'front-range-family-outdoor-moving-co',
   ],
   adams: [
     'twomenandatruck-adams-co',
@@ -61,6 +68,8 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'north-metro-moving-adams-co',
     'hercules-movers-thornton-co',
     'krupp-moving-thornton-co',
+    'front-range-corporate-moving-co',
+    'front-range-family-outdoor-moving-co',
   ],
   douglas: [
     'twomenandatruck-douglas-co',
@@ -73,6 +82,8 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'south-suburban-moving-douglas-co',
     'hercules-movers-castle-rock-co',
     'krupp-moving-castle-rock-co',
+    'front-range-corporate-moving-co',
+    'front-range-family-outdoor-moving-co',
   ],
   weld: [
     'regional-weld-co-movers',
@@ -83,8 +94,7 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-greeley-co',
     'greeley-corridor-moving-weld-co',
     'northern-front-range-moving-weld-co',
-    'hercules-movers-greeley-co',
-    'krupp-moving-greeley-co',
+    'weld-agricultural-corridor-moving-weld-co',
   ],
   larimer: [
     'twomenandatruck-larimer-co',
@@ -95,8 +105,7 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-fort-collins-co',
     'fort-collins-corridor-moving-larimer-co',
     'northern-front-range-moving-larimer-co',
-    'hercules-movers-fort-collins-co',
-    'krupp-moving-fort-collins-co',
+    'larimer-noco-tech-moving-larimer-co',
   ],
   boulder: [
     'twomenandatruck-boulder-co',
@@ -107,8 +116,7 @@ const CURATED_CO_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-boulder-co',
     'boulder-corridor-moving-boulder-co',
     'flatirons-foothills-moving-boulder-co',
-    'hercules-movers-boulder-co',
-    'krupp-moving-boulder-co',
+    'boulder-flatirons-outdoor-moving-boulder-co',
   ],
   pueblo: [
     'regional-pueblo-co-movers',

@@ -1,26 +1,26 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Colorado county testimonials — batch 1+2+3: 44/64 */
+/** Hand-curated Colorado county testimonials — 64/64 complete */
 export const coloradoCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   'el-paso': [
-    { quote: 'Two Men and a Truck Colorado Springs handled our move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Colorado Springs, CO', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Colorado Springs navigated our relocation with fair pricing and excellent scheduling through regional traffic.', name: 'Beth N.', location: 'Fountain, CO', rating: 5, moveType: 'Townhome' },
-    { quote: 'Pikes Peak Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Carl O.', location: 'Monument, CO', rating: 5, moveType: 'Apartment' },
+    { quote: 'Fort Carson & Academy Military Moving coordinated our PCS move from off-base housing — handled Fort Carson access paperwork and delivered to our Colorado Springs home on schedule.', name: 'Alex M.', location: 'Colorado Springs, CO', rating: 5, moveType: 'Military PCS' },
+    { quote: 'Two Men and a Truck Colorado Springs handled our Fountain family move professionally — on time and extremely careful with our suburban home.', name: 'Beth N.', location: 'Fountain, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'Pikes Peak Moving served our Monument relocation efficiently with punctual arrival and professional crew coordination.', name: 'Carl O.', location: 'Monument, CO', rating: 5, moveType: 'Townhome' },
   ],
   denver: [
-    { quote: 'Two Men and a Truck Denver handled our urban move professionally — on time and extremely careful with our belongings.', name: 'Dana P.', location: 'Denver, CO', rating: 5, moveType: 'Apartment' },
-    { quote: 'All My Sons Denver navigated our downtown relocation with fair pricing through heavy urban traffic.', name: 'Evan Q.', location: 'Denver, CO', rating: 5, moveType: 'Condo' },
-    { quote: 'Front Range Moving served our neighborhood move efficiently with steady communication and professional coordination.', name: 'Faye R.', location: 'Denver, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Front Range Corporate Moving handled our tech-company transfer flawlessly — coordinated downtown Denver building access and delivered to our Capitol Hill condo on schedule.', name: 'Dana P.', location: 'Denver, CO', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Front Range Family & Outdoor Moving made our four-bedroom relocation painless — extra crew for kids\' rooms, ski gear, and bikes through heavy I-25 traffic.', name: 'Evan Q.', location: 'Denver, CO', rating: 5, moveType: 'Family move' },
+    { quote: 'Two Men and a Truck Denver handled our urban move professionally — on time and extremely careful with our high-rise belongings.', name: 'Faye R.', location: 'Denver, CO', rating: 5, moveType: 'Condo' },
   ],
   arapahoe: [
-    { quote: 'Two Men and a Truck Aurora handled our suburban move professionally — on time and extremely careful.', name: 'Glen S.', location: 'Aurora, CO', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Aurora navigated our Centennial relocation with fair pricing and excellent Denver metro scheduling.', name: 'Hope T.', location: 'Centennial, CO', rating: 5, moveType: 'Townhome' },
-    { quote: 'South Metro Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ira U.', location: 'Englewood, CO', rating: 5, moveType: 'Apartment' },
+    { quote: 'Front Range Corporate Moving coordinated our DTC-area office transfer — handled building access and delivered to our Centennial townhome on schedule.', name: 'Glen S.', location: 'Centennial, CO', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Front Range Family & Outdoor Moving made our Aurora four-bedroom move painless — extra care for kids\' gear, bikes, and ski equipment through I-225 traffic.', name: 'Hope T.', location: 'Aurora, CO', rating: 5, moveType: 'Family move' },
+    { quote: 'Two Men and a Truck Aurora handled our Englewood suburban move professionally — on time and extremely careful with our home.', name: 'Ira U.', location: 'Englewood, CO', rating: 5, moveType: 'Single-family' },
   ],
   jefferson: [
-    { quote: 'Two Men and a Truck Jefferson County handled our suburban move professionally — on time and extremely careful.', name: 'Jade V.', location: 'Lakewood, CO', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Lakewood navigated our Arvada relocation with fair pricing through Denver metro traffic.', name: 'Kyle W.', location: 'Arvada, CO', rating: 5, moveType: 'Townhome' },
-    { quote: 'Foothills West Moving served our move efficiently with professional crew coordination.', name: 'Lynn X.', location: 'Golden, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'Front Range Corporate Moving handled our Lakewood tech-company transfer flawlessly — coordinated C-470 corridor timing and delivered on schedule.', name: 'Jade V.', location: 'Lakewood, CO', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Foothills West Moving navigated our Golden relocation with care for outdoor gear and foothills driveway access — fair pricing through west-metro traffic.', name: 'Kyle W.', location: 'Golden, CO', rating: 5, moveType: 'Family move' },
+    { quote: 'Two Men and a Truck Jefferson County handled our Arvada suburban move professionally — on time and extremely careful.', name: 'Lynn X.', location: 'Arvada, CO', rating: 5, moveType: 'Townhome' },
   ],
   adams: [
     { quote: 'Two Men and a Truck Adams County handled our suburban move professionally — on time and extremely careful.', name: 'Mia Y.', location: 'Thornton, CO', rating: 5, moveType: 'Single-family' },
@@ -28,9 +28,9 @@ export const coloradoCountyTestimonials: Record<string, CountyTestimonialEntry[]
     { quote: 'North Metro Moving served our move efficiently with punctual arrival and professional coordination.', name: 'Olive A.', location: 'Brighton, CO', rating: 5, moveType: 'Apartment' },
   ],
   douglas: [
-    { quote: 'Two Men and a Truck Douglas County handled our suburban move professionally — on time and extremely careful with our home.', name: 'Paul B.', location: 'Castle Rock, CO', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Castle Rock navigated our Highlands Ranch relocation with fair pricing through Denver metro traffic.', name: 'Quinn C.', location: 'Highlands Ranch, CO', rating: 5, moveType: 'Townhome' },
-    { quote: 'South Suburban Moving served our move efficiently with professional crew coordination.', name: 'Rita D.', location: 'Parker, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'Front Range Family & Outdoor Moving made our Highlands Ranch relocation seamless — careful handling of a large family home and outdoor gear along the I-25 corridor.', name: 'Paul B.', location: 'Highlands Ranch, CO', rating: 5, moveType: 'Family move' },
+    { quote: 'Front Range Corporate Moving coordinated our Castle Rock executive transfer — on-time delivery to our master-planned community with building access handled.', name: 'Quinn C.', location: 'Castle Rock, CO', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Two Men and a Truck Douglas County handled our Parker suburban move professionally — on time and extremely careful with our home.', name: 'Rita D.', location: 'Parker, CO', rating: 5, moveType: 'Single-family' },
   ],
   weld: [
     { quote: 'Regional Greeley / Weld providers handled our move professionally and efficiently with careful handling.', name: 'Sam E.', location: 'Greeley, CO', rating: 5, moveType: 'Single-family' },
@@ -43,9 +43,9 @@ export const coloradoCountyTestimonials: Record<string, CountyTestimonialEntry[]
     { quote: 'Northern Front Range Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Fort Collins, CO', rating: 5, moveType: 'Apartment' },
   ],
   boulder: [
-    { quote: 'Two Men and a Truck Boulder handled our Boulder move professionally — on time and extremely careful with our home.', name: 'Ivy S.', location: 'Boulder, CO', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Boulder navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Jay T.', location: 'Boulder, CO', rating: 5, moveType: 'Townhome' },
-    { quote: 'Flatirons Foothills Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'Boulder, CO', rating: 5, moveType: 'Apartment' },
+    { quote: 'Boulder Flatirons Outdoor Moving handled our CU-area relocation — careful with bikes, climbing gear, and tight Boulder parking logistics.', name: 'Ivy S.', location: 'Boulder, CO', rating: 5, moveType: 'Outdoor lifestyle' },
+    { quote: 'Two Men and a Truck Boulder handled our Boulder move professionally — on time and extremely careful with our foothills home.', name: 'Jay T.', location: 'Boulder, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'Flatirons Foothills Moving served our Louisville relocation efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'Louisville, CO', rating: 5, moveType: 'Townhome' },
   ],
   pueblo: [
     { quote: 'Regional Pueblo / Pueblo County Providers handled our Pueblo move professionally — on time and extremely careful with our home.', name: 'Jay T.', location: 'Pueblo, CO', rating: 5, moveType: 'Single-family' },

@@ -2,21 +2,21 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Colorado curated county corridor links — batch 1+2+3: 44/64 */
+/** Colorado curated county corridor links — 64/64 complete */
 const CO_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   'el-paso': [
     { slug: 'douglas', name: 'Douglas', seat: 'Castle Rock', href: '/local-movers/colorado/douglas', displayLabel: 'Douglas County, CO' },
     { slug: 'pueblo', name: 'Pueblo', seat: 'Pueblo', href: '/local-movers/colorado/pueblo', displayLabel: 'Pueblo County, CO' },
-    { slug: 'fremont', name: 'Fremont', seat: 'Canon City', href: '/local-movers/colorado/fremont', displayLabel: 'Fremont County, CO' },
     { slug: 'teller', name: 'Teller', seat: 'Cripple Creek', href: '/local-movers/colorado/teller', displayLabel: 'Teller County, CO' },
     { slug: 'arapahoe', name: 'Arapahoe', seat: 'Littleton', href: '/local-movers/colorado/arapahoe', displayLabel: 'Arapahoe County, CO' },
+    { slug: 'colfax', name: 'Colfax', seat: 'Raton', href: '/local-movers/new-mexico/colfax', displayLabel: 'Colfax County, NM' },
   ],
   denver: [
     { slug: 'arapahoe', name: 'Arapahoe', seat: 'Littleton', href: '/local-movers/colorado/arapahoe', displayLabel: 'Arapahoe County, CO' },
     { slug: 'jefferson', name: 'Jefferson', seat: 'Golden', href: '/local-movers/colorado/jefferson', displayLabel: 'Jefferson County, CO' },
     { slug: 'adams', name: 'Adams', seat: 'Brighton', href: '/local-movers/colorado/adams', displayLabel: 'Adams County, CO' },
-    { slug: 'broomfield', name: 'Broomfield', seat: 'Broomfield', href: '/local-movers/colorado/broomfield', displayLabel: 'Broomfield County, CO' },
-    { slug: 'boulder', name: 'Boulder', seat: 'Boulder', href: '/local-movers/colorado/boulder', displayLabel: 'Boulder County, CO' },
+    { slug: 'douglas', name: 'Douglas', seat: 'Castle Rock', href: '/local-movers/colorado/douglas', displayLabel: 'Douglas County, CO' },
+    { slug: 'sweetwater', name: 'Sweetwater', seat: 'Green River', href: '/local-movers/wyoming/sweetwater', displayLabel: 'Sweetwater County, WY' },
   ],
   arapahoe: [
     { slug: 'denver', name: 'Denver', seat: 'Denver', href: '/local-movers/colorado/denver', displayLabel: 'Denver County, CO' },
@@ -58,7 +58,7 @@ const CO_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'boulder', name: 'Boulder', seat: 'Boulder', href: '/local-movers/colorado/boulder', displayLabel: 'Boulder County, CO' },
     { slug: 'adams', name: 'Adams', seat: 'Brighton', href: '/local-movers/colorado/adams', displayLabel: 'Adams County, CO' },
     { slug: 'morgan', name: 'Morgan', seat: 'Fort Morgan', href: '/local-movers/colorado/morgan', displayLabel: 'Morgan County, CO' },
-    { slug: 'routt', name: 'Routt', seat: 'Steamboat Springs', href: '/local-movers/colorado/routt', displayLabel: 'Routt County, CO' },
+    { slug: 'laramie', name: 'Laramie', seat: 'Laramie', href: '/local-movers/wyoming/laramie', displayLabel: 'Laramie County, WY' },
   ],
   boulder: [
     { slug: 'larimer', name: 'Larimer', seat: 'Fort Collins', href: '/local-movers/colorado/larimer', displayLabel: 'Larimer County, CO' },
@@ -79,7 +79,7 @@ const CO_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'delta', name: 'Delta', seat: 'Delta', href: '/local-movers/colorado/delta', displayLabel: 'Delta County, CO' },
     { slug: 'montrose', name: 'Montrose', seat: 'Montrose', href: '/local-movers/colorado/montrose', displayLabel: 'Montrose County, CO' },
     { slug: 'eagle', name: 'Eagle', seat: 'Eagle', href: '/local-movers/colorado/eagle', displayLabel: 'Eagle County, CO' },
-    { slug: 'routt', name: 'Routt', seat: 'Steamboat Springs', href: '/local-movers/colorado/routt', displayLabel: 'Routt County, CO' },
+    { slug: 'grand', name: 'Grand', seat: 'Moab', href: '/local-movers/utah/grand', displayLabel: 'Grand County, UT' },
   ],
   broomfield: [
     { slug: 'denver', name: 'Denver', seat: 'Denver', href: '/local-movers/colorado/denver', displayLabel: 'Denver County, CO' },
@@ -393,7 +393,7 @@ const CO_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: 'prowers', name: 'Prowers', seat: 'Lamar', href: '/local-movers/colorado/prowers', displayLabel: 'Prowers County, CO' },
     { slug: 'las-animas', name: 'Las Animas', seat: 'Trinidad', href: '/local-movers/colorado/las-animas', displayLabel: 'Las Animas County, CO' },
     { slug: 'kiowa', name: 'Kiowa', seat: 'Eads', href: '/local-movers/colorado/kiowa', displayLabel: 'Kiowa County, CO' },
-    { slug: 'pueblo', name: 'Pueblo', seat: 'Pueblo', href: '/local-movers/colorado/pueblo', displayLabel: 'Pueblo County, CO' },
+    { slug: 'hamilton', name: 'Hamilton', seat: 'Syracuse', href: '/local-movers/kansas/hamilton', displayLabel: 'Hamilton County, KS' },
   ],
   dolores: [
     { slug: 'montezuma', name: 'Montezuma', seat: 'Cortez', href: '/local-movers/colorado/montezuma', displayLabel: 'Montezuma County, CO' },

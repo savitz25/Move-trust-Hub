@@ -213,6 +213,9 @@ export function buildStateDescription(
   if (stateName === 'Utah') {
     return `Find curated local movers in all 29 Utah counties — up to 12 ranked companies in Salt Lake County (Salt Lake City metro), 9–10 in Utah County (Provo-Orem / Silicon Slopes), 8–9 in Davis, Weber, and Washington (St. George), and 6–8 regional specialists in every county. Wasatch Front guides cover tech growth, family moves, and military PCS; southern Utah guides cover retirement, tourism, and snowbird moves; rural counties emphasize long-distance hauls and outdoor-lifestyle logistics for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Colorado') {
+    return `Find curated local movers in all 64 Colorado counties — up to 12 ranked companies in Denver metro (Denver, Arapahoe, Jefferson, Adams, Douglas), 10–11 in El Paso (Colorado Springs), 9–10 in Boulder, Larimer, and Weld, and 6–8 regional specialists in every county. Denver metro guides cover tech/corporate growth and outdoor-lifestyle family moves; Colorado Springs guides cover Fort Carson and Peterson SFB military PCS; mountain counties cover tourism and second-home logistics; eastern plains and Western Slope counties emphasize long-distance and agricultural hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

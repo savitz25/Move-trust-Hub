@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Colorado county research — batch 1+2+3: 44/64 */
+/** Hand-curated Colorado county research — 64/64 complete */
 export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
   'el-paso': {
     marketNotes:
-      'El Paso County is Colorado’s second most populous county with strong military, suburban, and residential demand.',
+      'El Paso County anchors Colorado Springs — the state’s second-highest-value market. Fort Carson, Peterson Space Force Base, and Air Force Academy military PCS moves, family suburban growth, and Pikes Peak corridor logistics distinguish El Paso from Denver metro density.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,000+',
@@ -18,7 +18,8 @@ export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
       note: 'El Paso County pricing reflects Colorado Springs metro demand, military PCS turnover, Pikes Peak corridor traffic, and competition among full-service agents serving suburban communities.',
     },
     tips: [
-      'Verify coverage for Colorado Springs, Fountain, and surrounding cities before booking.',
+      'Verify coverage for Colorado Springs, Fountain, and Monument before booking.',
+      'Military PCS moves near Fort Carson, Peterson SFB, and the Air Force Academy require base access coordination — confirm mover credentials.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value suburban homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
@@ -27,16 +28,18 @@ export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   denver: {
     marketNotes:
-      'Denver County is coterminous with the City of Denver, with dense urban and residential demand.',
+      'Denver County anchors the Front Range metro — Colorado’s highest-value moving market. Tech and corporate growth, outdoor-lifestyle family moves, dense urban high-rises, and rapid population growth along I-25 distinguish Denver from Colorado Springs military corridors and mountain resort counties.',
     costs: {
       studioRange: '$950–$2,100',
       familyRange: '$4,000–$9,500+',
       avgHourly: '$135–$200/hr for a 2-person crew',
-      note: 'Denver County pricing reflects dense urban demand, parking and elevator access fees, heavy I-25 and I-70 corridor traffic, and competition among full-service agents serving downtown and neighborhood moves.',
+      note: 'Denver County pricing reflects dense urban demand, parking and elevator access fees, heavy I-25 and I-70 corridor traffic, tech-sector corporate relocations, and competition among full-service agents serving downtown and neighborhood moves.',
     },
     tips: [
       'Verify coverage for Denver and surrounding neighborhoods before booking.',
+      'Corporate and tech-sector relocations may require building access coordination — confirm commercial move experience.',
       'Heavy urban traffic significantly impacts scheduling — confirm crew arrival windows.',
+      'High-rise and condo moves may require elevator reservations and parking permits — confirm building logistics.',
       'Confirm insurance for high-value urban properties.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
@@ -44,7 +47,7 @@ export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   arapahoe: {
     marketNotes:
-      'Arapahoe County is a large suburban county south of Denver with strong residential demand.',
+      'Arapahoe County anchors Denver’s south metro — Aurora, Centennial, and Englewood drive high-volume suburban and corporate relocations. Tech-sector spillover from DTC, family-oriented communities, and I-225 corridor traffic distinguish Arapahoe from downtown Denver density.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,500+',
@@ -61,7 +64,7 @@ export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   jefferson: {
     marketNotes:
-      'Jefferson County is a large suburban county west of Denver with strong residential demand.',
+      'Jefferson County anchors Denver’s west metro — Lakewood, Arvada, and Golden combine foothills access with dense suburban demand. Outdoor-lifestyle family moves, I-70 mountain corridor staging, and corporate relocations along the C-470 belt distinguish Jefferson from downtown Denver.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,500+',
@@ -95,7 +98,7 @@ export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   douglas: {
     marketNotes:
-      'Douglas County is a large and affluent suburban county south of Denver with strong residential demand.',
+      'Douglas County is Denver’s affluent south-suburban corridor — Castle Rock, Highlands Ranch, and Parker attract family-oriented corporate relocations and long-distance inbound moves along the I-25 growth spine. Higher home values and master-planned communities distinguish Douglas from urban Denver counties.',
     costs: {
       studioRange: '$950–$2,000',
       familyRange: '$3,800–$9,000+',
@@ -146,7 +149,7 @@ export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   boulder: {
     marketNotes:
-      'Boulder County is a high-demand Front Range county with strong residential, university, and foothills demand across Boulder and mountain gateway communities.',
+      'Boulder County blends university-town demand (CU Boulder), tech and outdoor-lifestyle relocations, and Flatirons foothills access. Boulder’s high cost of living and limited parking drive specialized urban and suburban move logistics distinct from Denver metro sprawl.',
     costs: {
       studioRange: '$950–$2,000',
       familyRange: '$3,800–$9,000+',
