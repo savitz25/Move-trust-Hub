@@ -43,6 +43,7 @@ import {
   MONTANA_COUNTY_CONTENT_UPDATED,
   WYOMING_COUNTY_CONTENT_UPDATED,
   NORTH_DAKOTA_COUNTY_CONTENT_UPDATED,
+  SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -270,6 +271,8 @@ const MT_HIGH_TRAFFIC_COUNTIES = new Set(['yellowstone', 'missoula', 'gallatin',
 const WY_HIGH_TRAFFIC_COUNTIES = new Set(['laramie', 'natrona', 'teton']);
 
 const ND_HIGH_TRAFFIC_COUNTIES = new Set(['cass', 'burleigh', 'williams', 'grand-forks']);
+
+const SD_HIGH_TRAFFIC_COUNTIES = new Set(['minnehaha', 'pennington', 'lincoln']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -720,7 +723,9 @@ export default async function sitemap({
                                                                                               ? new Date(WYOMING_COUNTY_CONTENT_UPDATED)
                                                                                               : id === 'north-dakota'
                                                                                                 ? new Date(NORTH_DAKOTA_COUNTY_CONTENT_UPDATED)
-                                                                                                : new Date();
+                                                                                                : id === 'south-dakota'
+                                                                                                  ? new Date(SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED)
+                                                                                                  : new Date();
 
   return [
     {
@@ -787,7 +792,8 @@ export default async function sitemap({
         (id === 'idaho' && ID_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'montana' && MT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'wyoming' && WY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'north-dakota' && ND_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'north-dakota' && ND_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'south-dakota' && SD_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

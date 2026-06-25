@@ -1,0 +1,190 @@
+import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
+
+export type { NearbyCountyLink };
+
+/** South Dakota curated county corridor links — batch 1: 26/66 */
+const SD_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
+  minnehaha: [
+    { slug: 'lincoln', name: 'Lincoln', seat: 'Canton', href: '/local-movers/south-dakota/lincoln', displayLabel: 'Lincoln County, SD' },
+    { slug: 'turner', name: 'Turner', seat: 'Parker', href: '/local-movers/south-dakota/turner', displayLabel: 'Turner County, SD' },
+    { slug: 'lake', name: 'Lake', seat: 'Madison', href: '/local-movers/south-dakota/lake', displayLabel: 'Lake County, SD' },
+    { slug: 'lyon', name: 'Lyon', seat: 'Rock Rapids', href: '/local-movers/iowa/lyon', displayLabel: 'Lyon County, IA' },
+    { slug: 'clay', name: 'Clay', seat: 'Spencer', href: '/local-movers/iowa/clay', displayLabel: 'Clay County, IA' },
+  ],
+  pennington: [
+    { slug: 'meade', name: 'Meade', seat: 'Sturgis', href: '/local-movers/south-dakota/meade', displayLabel: 'Meade County, SD' },
+    { slug: 'custer', name: 'Custer', seat: 'Custer', href: '/local-movers/south-dakota/custer', displayLabel: 'Custer County, SD' },
+    { slug: 'fall-river', name: 'Fall River', seat: 'Hot Springs', href: '/local-movers/south-dakota/fall-river', displayLabel: 'Fall River County, SD' },
+    { slug: 'haakon', name: 'Haakon', seat: 'Philip', href: '/local-movers/south-dakota/haakon', displayLabel: 'Haakon County, SD' },
+    { slug: 'weston', name: 'Weston', seat: 'Newcastle', href: '/local-movers/wyoming/weston', displayLabel: 'Weston County, WY' },
+  ],
+  lincoln: [
+    { slug: 'minnehaha', name: 'Minnehaha', seat: 'Sioux Falls', href: '/local-movers/south-dakota/minnehaha', displayLabel: 'Minnehaha County, SD' },
+    { slug: 'turner', name: 'Turner', seat: 'Parker', href: '/local-movers/south-dakota/turner', displayLabel: 'Turner County, SD' },
+    { slug: 'union', name: 'Union', seat: 'Elk Point', href: '/local-movers/south-dakota/union', displayLabel: 'Union County, SD' },
+    { slug: 'clay', name: 'Clay', seat: 'Vermillion', href: '/local-movers/south-dakota/clay', displayLabel: 'Clay County, SD' },
+    { slug: 'yankton', name: 'Yankton', seat: 'Yankton', href: '/local-movers/south-dakota/yankton', displayLabel: 'Yankton County, SD' },
+  ],
+  brookings: [
+    { slug: 'moody', name: 'Moody', seat: 'Flandreau', href: '/local-movers/south-dakota/moody', displayLabel: 'Moody County, SD' },
+    { slug: 'lake', name: 'Lake', seat: 'Madison', href: '/local-movers/south-dakota/lake', displayLabel: 'Lake County, SD' },
+    { slug: 'minnehaha', name: 'Minnehaha', seat: 'Sioux Falls', href: '/local-movers/south-dakota/minnehaha', displayLabel: 'Minnehaha County, SD' },
+    { slug: 'kingsbury', name: 'Kingsbury', seat: 'De Smet', href: '/local-movers/south-dakota/kingsbury', displayLabel: 'Kingsbury County, SD' },
+    { slug: 'deuel', name: 'Deuel', seat: 'Clear Lake', href: '/local-movers/south-dakota/deuel', displayLabel: 'Deuel County, SD' },
+  ],
+  brown: [
+    { slug: 'marshall', name: 'Marshall', seat: 'Britton', href: '/local-movers/south-dakota/marshall', displayLabel: 'Marshall County, SD' },
+    { slug: 'day', name: 'Day', seat: 'Webster', href: '/local-movers/south-dakota/day', displayLabel: 'Day County, SD' },
+    { slug: 'spink', name: 'Spink', seat: 'Redfield', href: '/local-movers/south-dakota/spink', displayLabel: 'Spink County, SD' },
+    { slug: 'roberts', name: 'Roberts', seat: 'Sisseton', href: '/local-movers/south-dakota/roberts', displayLabel: 'Roberts County, SD' },
+    { slug: 'edmunds', name: 'Edmunds', seat: 'Ipswich', href: '/local-movers/south-dakota/edmunds', displayLabel: 'Edmunds County, SD' },
+  ],
+  meade: [
+    { slug: 'lawrence', name: 'Lawrence', seat: 'Deadwood', href: '/local-movers/south-dakota/lawrence', displayLabel: 'Lawrence County, SD' },
+    { slug: 'butte', name: 'Butte', seat: 'Belle Fourche', href: '/local-movers/south-dakota/butte', displayLabel: 'Butte County, SD' },
+    { slug: 'pennington', name: 'Pennington', seat: 'Rapid City', href: '/local-movers/south-dakota/pennington', displayLabel: 'Pennington County, SD' },
+    { slug: 'perkins', name: 'Perkins', seat: 'Bison', href: '/local-movers/south-dakota/perkins', displayLabel: 'Perkins County, SD' },
+    { slug: 'crook', name: 'Crook', seat: 'Sundance', href: '/local-movers/wyoming/crook', displayLabel: 'Crook County, WY' },
+  ],
+  lawrence: [
+    { slug: 'meade', name: 'Meade', seat: 'Sturgis', href: '/local-movers/south-dakota/meade', displayLabel: 'Meade County, SD' },
+    { slug: 'butte', name: 'Butte', seat: 'Belle Fourche', href: '/local-movers/south-dakota/butte', displayLabel: 'Butte County, SD' },
+    { slug: 'pennington', name: 'Pennington', seat: 'Rapid City', href: '/local-movers/south-dakota/pennington', displayLabel: 'Pennington County, SD' },
+    { slug: 'custer', name: 'Custer', seat: 'Custer', href: '/local-movers/south-dakota/custer', displayLabel: 'Custer County, SD' },
+    { slug: 'crook', name: 'Crook', seat: 'Sundance', href: '/local-movers/wyoming/crook', displayLabel: 'Crook County, WY' },
+  ],
+  codington: [
+    { slug: 'grant', name: 'Grant', seat: 'Milbank', href: '/local-movers/south-dakota/grant', displayLabel: 'Grant County, SD' },
+    { slug: 'clark', name: 'Clark', seat: 'Clark', href: '/local-movers/south-dakota/clark', displayLabel: 'Clark County, SD' },
+    { slug: 'hamlin', name: 'Hamlin', seat: 'Hayti', href: '/local-movers/south-dakota/hamlin', displayLabel: 'Hamlin County, SD' },
+    { slug: 'deuel', name: 'Deuel', seat: 'Clear Lake', href: '/local-movers/south-dakota/deuel', displayLabel: 'Deuel County, SD' },
+    { slug: 'kingsbury', name: 'Kingsbury', seat: 'De Smet', href: '/local-movers/south-dakota/kingsbury', displayLabel: 'Kingsbury County, SD' },
+  ],
+  yankton: [
+    { slug: 'clay', name: 'Clay', seat: 'Vermillion', href: '/local-movers/south-dakota/clay', displayLabel: 'Clay County, SD' },
+    { slug: 'union', name: 'Union', seat: 'Elk Point', href: '/local-movers/south-dakota/union', displayLabel: 'Union County, SD' },
+    { slug: 'bon-homme', name: 'Bon Homme', seat: 'Tyndall', href: '/local-movers/south-dakota/bon-homme', displayLabel: 'Bon Homme County, SD' },
+    { slug: 'turner', name: 'Turner', seat: 'Parker', href: '/local-movers/south-dakota/turner', displayLabel: 'Turner County, SD' },
+    { slug: 'hutchinson', name: 'Hutchinson', seat: 'Olivet', href: '/local-movers/south-dakota/hutchinson', displayLabel: 'Hutchinson County, SD' },
+  ],
+  davison: [
+    { slug: 'hutchinson', name: 'Hutchinson', seat: 'Olivet', href: '/local-movers/south-dakota/hutchinson', displayLabel: 'Hutchinson County, SD' },
+    { slug: 'aurora', name: 'Aurora', seat: 'Plankinton', href: '/local-movers/south-dakota/aurora', displayLabel: 'Aurora County, SD' },
+    { slug: 'douglas', name: 'Douglas', seat: 'Armour', href: '/local-movers/south-dakota/douglas', displayLabel: 'Douglas County, SD' },
+    { slug: 'sanborn', name: 'Sanborn', seat: 'Woonsocket', href: '/local-movers/south-dakota/sanborn', displayLabel: 'Sanborn County, SD' },
+    { slug: 'gregory', name: 'Gregory', seat: 'Burke', href: '/local-movers/south-dakota/gregory', displayLabel: 'Gregory County, SD' },
+  ],
+  beadle: [
+    { slug: 'sanborn', name: 'Sanborn', seat: 'Woonsocket', href: '/local-movers/south-dakota/sanborn', displayLabel: 'Sanborn County, SD' },
+    { slug: 'spink', name: 'Spink', seat: 'Redfield', href: '/local-movers/south-dakota/spink', displayLabel: 'Spink County, SD' },
+    { slug: 'hand', name: 'Hand', seat: 'Miller', href: '/local-movers/south-dakota/hand', displayLabel: 'Hand County, SD' },
+    { slug: 'buffalo', name: 'Buffalo', seat: 'Gann Valley', href: '/local-movers/south-dakota/buffalo', displayLabel: 'Buffalo County, SD' },
+    { slug: 'jerauld', name: 'Jerauld', seat: 'Wessington Springs', href: '/local-movers/south-dakota/jerauld', displayLabel: 'Jerauld County, SD' },
+  ],
+  hughes: [
+    { slug: 'hyde', name: 'Hyde', seat: 'Highmore', href: '/local-movers/south-dakota/hyde', displayLabel: 'Hyde County, SD' },
+    { slug: 'sully', name: 'Sully', seat: 'Onida', href: '/local-movers/south-dakota/sully', displayLabel: 'Sully County, SD' },
+    { slug: 'lyman', name: 'Lyman', seat: 'Kennebec', href: '/local-movers/south-dakota/lyman', displayLabel: 'Lyman County, SD' },
+    { slug: 'jones', name: 'Jones', seat: 'Murdo', href: '/local-movers/south-dakota/jones', displayLabel: 'Jones County, SD' },
+    { slug: 'stanley', name: 'Stanley', seat: 'Fort Pierre', href: '/local-movers/south-dakota/stanley', displayLabel: 'Stanley County, SD' },
+  ],
+  union: [
+    { slug: 'clay', name: 'Clay', seat: 'Vermillion', href: '/local-movers/south-dakota/clay', displayLabel: 'Clay County, SD' },
+    { slug: 'lincoln', name: 'Lincoln', seat: 'Canton', href: '/local-movers/south-dakota/lincoln', displayLabel: 'Lincoln County, SD' },
+    { slug: 'minnehaha', name: 'Minnehaha', seat: 'Sioux Falls', href: '/local-movers/south-dakota/minnehaha', displayLabel: 'Minnehaha County, SD' },
+    { slug: 'mccook', name: 'McCook', seat: 'Salem', href: '/local-movers/south-dakota/mccook', displayLabel: 'McCook County, SD' },
+    { slug: 'woodbury', name: 'Woodbury', seat: 'Sioux City', href: '/local-movers/iowa/woodbury', displayLabel: 'Woodbury County, IA' },
+  ],
+  clay: [
+    { slug: 'union', name: 'Union', seat: 'Elk Point', href: '/local-movers/south-dakota/union', displayLabel: 'Union County, SD' },
+    { slug: 'yankton', name: 'Yankton', seat: 'Yankton', href: '/local-movers/south-dakota/yankton', displayLabel: 'Yankton County, SD' },
+    { slug: 'turner', name: 'Turner', seat: 'Parker', href: '/local-movers/south-dakota/turner', displayLabel: 'Turner County, SD' },
+    { slug: 'lincoln', name: 'Lincoln', seat: 'Canton', href: '/local-movers/south-dakota/lincoln', displayLabel: 'Lincoln County, SD' },
+    { slug: 'clay', name: 'Clay', seat: 'Spencer', href: '/local-movers/iowa/clay', displayLabel: 'Clay County, IA' },
+  ],
+  shannon: [
+    { slug: 'todd', name: 'Todd', seat: 'Mission', href: '/local-movers/south-dakota/todd', displayLabel: 'Todd County, SD' },
+    { slug: 'jackson', name: 'Jackson', seat: 'Kadoka', href: '/local-movers/south-dakota/jackson', displayLabel: 'Jackson County, SD' },
+    { slug: 'bennett', name: 'Bennett', seat: 'Martin', href: '/local-movers/south-dakota/bennett', displayLabel: 'Bennett County, SD' },
+    { slug: 'mellette', name: 'Mellette', seat: 'White River', href: '/local-movers/south-dakota/mellette', displayLabel: 'Mellette County, SD' },
+    { slug: 'fall-river', name: 'Fall River', seat: 'Hot Springs', href: '/local-movers/south-dakota/fall-river', displayLabel: 'Fall River County, SD' },
+  ],
+  lake: [
+    { slug: 'minnehaha', name: 'Minnehaha', seat: 'Sioux Falls', href: '/local-movers/south-dakota/minnehaha', displayLabel: 'Minnehaha County, SD' },
+    { slug: 'brookings', name: 'Brookings', seat: 'Brookings', href: '/local-movers/south-dakota/brookings', displayLabel: 'Brookings County, SD' },
+    { slug: 'moody', name: 'Moody', seat: 'Flandreau', href: '/local-movers/south-dakota/moody', displayLabel: 'Moody County, SD' },
+    { slug: 'kingsbury', name: 'Kingsbury', seat: 'De Smet', href: '/local-movers/south-dakota/kingsbury', displayLabel: 'Kingsbury County, SD' },
+    { slug: 'miner', name: 'Miner', seat: 'Howard', href: '/local-movers/south-dakota/miner', displayLabel: 'Miner County, SD' },
+  ],
+  butte: [
+    { slug: 'meade', name: 'Meade', seat: 'Sturgis', href: '/local-movers/south-dakota/meade', displayLabel: 'Meade County, SD' },
+    { slug: 'lawrence', name: 'Lawrence', seat: 'Deadwood', href: '/local-movers/south-dakota/lawrence', displayLabel: 'Lawrence County, SD' },
+    { slug: 'harding', name: 'Harding', seat: 'Buffalo', href: '/local-movers/south-dakota/harding', displayLabel: 'Harding County, SD' },
+    { slug: 'perkins', name: 'Perkins', seat: 'Bison', href: '/local-movers/south-dakota/perkins', displayLabel: 'Perkins County, SD' },
+    { slug: 'carter', name: 'Carter', seat: 'Ekalaka', href: '/local-movers/montana/carter', displayLabel: 'Carter County, MT' },
+  ],
+  roberts: [
+    { slug: 'marshall', name: 'Marshall', seat: 'Britton', href: '/local-movers/south-dakota/marshall', displayLabel: 'Marshall County, SD' },
+    { slug: 'day', name: 'Day', seat: 'Webster', href: '/local-movers/south-dakota/day', displayLabel: 'Day County, SD' },
+    { slug: 'grant', name: 'Grant', seat: 'Milbank', href: '/local-movers/south-dakota/grant', displayLabel: 'Grant County, SD' },
+    { slug: 'edmunds', name: 'Edmunds', seat: 'Ipswich', href: '/local-movers/south-dakota/edmunds', displayLabel: 'Edmunds County, SD' },
+    { slug: 'traverse', name: 'Traverse', seat: 'Wheaton', href: '/local-movers/minnesota/traverse', displayLabel: 'Traverse County, MN' },
+  ],
+  custer: [
+    { slug: 'pennington', name: 'Pennington', seat: 'Rapid City', href: '/local-movers/south-dakota/pennington', displayLabel: 'Pennington County, SD' },
+    { slug: 'fall-river', name: 'Fall River', seat: 'Hot Springs', href: '/local-movers/south-dakota/fall-river', displayLabel: 'Fall River County, SD' },
+    { slug: 'lawrence', name: 'Lawrence', seat: 'Deadwood', href: '/local-movers/south-dakota/lawrence', displayLabel: 'Lawrence County, SD' },
+  ],
+  turner: [
+    { slug: 'minnehaha', name: 'Minnehaha', seat: 'Sioux Falls', href: '/local-movers/south-dakota/minnehaha', displayLabel: 'Minnehaha County, SD' },
+    { slug: 'lincoln', name: 'Lincoln', seat: 'Canton', href: '/local-movers/south-dakota/lincoln', displayLabel: 'Lincoln County, SD' },
+    { slug: 'clay', name: 'Clay', seat: 'Vermillion', href: '/local-movers/south-dakota/clay', displayLabel: 'Clay County, SD' },
+    { slug: 'hutchinson', name: 'Hutchinson', seat: 'Olivet', href: '/local-movers/south-dakota/hutchinson', displayLabel: 'Hutchinson County, SD' },
+    { slug: 'bon-homme', name: 'Bon Homme', seat: 'Tyndall', href: '/local-movers/south-dakota/bon-homme', displayLabel: 'Bon Homme County, SD' },
+  ],
+  'charles-mix': [
+    { slug: 'yankton', name: 'Yankton', seat: 'Yankton', href: '/local-movers/south-dakota/yankton', displayLabel: 'Yankton County, SD' },
+    { slug: 'bon-homme', name: 'Bon Homme', seat: 'Tyndall', href: '/local-movers/south-dakota/bon-homme', displayLabel: 'Bon Homme County, SD' },
+    { slug: 'gregory', name: 'Gregory', seat: 'Burke', href: '/local-movers/south-dakota/gregory', displayLabel: 'Gregory County, SD' },
+    { slug: 'douglas', name: 'Douglas', seat: 'Armour', href: '/local-movers/south-dakota/douglas', displayLabel: 'Douglas County, SD' },
+    { slug: 'hutchinson', name: 'Hutchinson', seat: 'Olivet', href: '/local-movers/south-dakota/hutchinson', displayLabel: 'Hutchinson County, SD' },
+  ],
+  todd: [
+    { slug: 'mellette', name: 'Mellette', seat: 'White River', href: '/local-movers/south-dakota/mellette', displayLabel: 'Mellette County, SD' },
+    { slug: 'tripp', name: 'Tripp', seat: 'Winner', href: '/local-movers/south-dakota/tripp', displayLabel: 'Tripp County, SD' },
+    { slug: 'gregory', name: 'Gregory', seat: 'Burke', href: '/local-movers/south-dakota/gregory', displayLabel: 'Gregory County, SD' },
+    { slug: 'charles-mix', name: 'Charles Mix', seat: 'Lake Andes', href: '/local-movers/south-dakota/charles-mix', displayLabel: 'Charles Mix County, SD' },
+    { slug: 'shannon', name: 'Oglala Lakota', seat: 'Pine Ridge', href: '/local-movers/south-dakota/shannon', displayLabel: 'Oglala Lakota County, SD' },
+  ],
+  'fall-river': [
+    { slug: 'custer', name: 'Custer', seat: 'Custer', href: '/local-movers/south-dakota/custer', displayLabel: 'Custer County, SD' },
+    { slug: 'pennington', name: 'Pennington', seat: 'Rapid City', href: '/local-movers/south-dakota/pennington', displayLabel: 'Pennington County, SD' },
+    { slug: 'shannon', name: 'Oglala Lakota', seat: 'Pine Ridge', href: '/local-movers/south-dakota/shannon', displayLabel: 'Oglala Lakota County, SD' },
+    { slug: 'bennett', name: 'Bennett', seat: 'Martin', href: '/local-movers/south-dakota/bennett', displayLabel: 'Bennett County, SD' },
+  ],
+  grant: [
+    { slug: 'codington', name: 'Codington', seat: 'Watertown', href: '/local-movers/south-dakota/codington', displayLabel: 'Codington County, SD' },
+    { slug: 'roberts', name: 'Roberts', seat: 'Sisseton', href: '/local-movers/south-dakota/roberts', displayLabel: 'Roberts County, SD' },
+    { slug: 'clark', name: 'Clark', seat: 'Clark', href: '/local-movers/south-dakota/clark', displayLabel: 'Clark County, SD' },
+    { slug: 'deuel', name: 'Deuel', seat: 'Clear Lake', href: '/local-movers/south-dakota/deuel', displayLabel: 'Deuel County, SD' },
+    { slug: 'big-stone', name: 'Big Stone', seat: 'Ortonville', href: '/local-movers/minnesota/big-stone', displayLabel: 'Big Stone County, MN' },
+  ],
+  hutchinson: [
+    { slug: 'davison', name: 'Davison', seat: 'Mitchell', href: '/local-movers/south-dakota/davison', displayLabel: 'Davison County, SD' },
+    { slug: 'turner', name: 'Turner', seat: 'Parker', href: '/local-movers/south-dakota/turner', displayLabel: 'Turner County, SD' },
+    { slug: 'bon-homme', name: 'Bon Homme', seat: 'Tyndall', href: '/local-movers/south-dakota/bon-homme', displayLabel: 'Bon Homme County, SD' },
+    { slug: 'charles-mix', name: 'Charles Mix', seat: 'Lake Andes', href: '/local-movers/south-dakota/charles-mix', displayLabel: 'Charles Mix County, SD' },
+    { slug: 'douglas', name: 'Douglas', seat: 'Armour', href: '/local-movers/south-dakota/douglas', displayLabel: 'Douglas County, SD' },
+  ],
+  'bon-homme': [
+    { slug: 'yankton', name: 'Yankton', seat: 'Yankton', href: '/local-movers/south-dakota/yankton', displayLabel: 'Yankton County, SD' },
+    { slug: 'union', name: 'Union', seat: 'Elk Point', href: '/local-movers/south-dakota/union', displayLabel: 'Union County, SD' },
+    { slug: 'turner', name: 'Turner', seat: 'Parker', href: '/local-movers/south-dakota/turner', displayLabel: 'Turner County, SD' },
+    { slug: 'hutchinson', name: 'Hutchinson', seat: 'Olivet', href: '/local-movers/south-dakota/hutchinson', displayLabel: 'Hutchinson County, SD' },
+    { slug: 'charles-mix', name: 'Charles Mix', seat: 'Lake Andes', href: '/local-movers/south-dakota/charles-mix', displayLabel: 'Charles Mix County, SD' },
+  ],
+};
+
+export function getSouthDakotaNearbyCounties(countySlug: string): NearbyCountyLink[] {
+  return SD_COUNTY_NEIGHBORS[countySlug] ?? [];
+}
