@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Wisconsin counties (batches 1–2 — 30 counties) */
+/** Seat and metro overrides for hand-curated Wisconsin counties (batches 1–3 — 50 counties) */
 export const wisconsinCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -34,6 +34,26 @@ export const wisconsinCountyOverrides: Partial<
   grant: { seat: "Lancaster", metro: "grant-metro-wi" },
   waupaca: { seat: "Waupaca", metro: "waupaca-metro-wi" },
   monroe: { seat: "Sparta", metro: "monroe-metro-wi" },
+  dunn: { seat: "Menomonie", metro: "dunn-metro-wi" },
+  barron: { seat: "Barron", metro: "barron-metro-wi" },
+  polk: { seat: "Balsam Lake", metro: "polk-metro-wi" },
+  douglas: { seat: "Superior", metro: "douglas-metro-wi" },
+  pierce: { seat: "Ellsworth", metro: "pierce-metro-wi" },
+  marinette: { seat: "Marinette", metro: "marinette-metro-wi" },
+  shawano: { seat: "Shawano", metro: "shawano-metro-wi" },
+  oconto: { seat: "Oconto", metro: "oconto-metro-wi" },
+  oneida: { seat: "Rhinelander", metro: "oneida-metro-wi" },
+  green: { seat: "Monroe", metro: "green-metro-wi" },
+  trempealeau: { seat: "Whitehall", metro: "trempealeau-metro-wi" },
+  door: { seat: "Sturgeon Bay", metro: "door-metro-wi" },
+  lincoln: { seat: "Merrill", metro: "lincoln-metro-wi" },
+  juneau: { seat: "Mauston", metro: "juneau-metro-wi" },
+  waushara: { seat: "Wautoma", metro: "waushara-metro-wi" },
+  iowa: { seat: "Dodgeville", metro: "iowa-metro-wi" },
+  vilas: { seat: "Eagle River", metro: "vilas-metro-wi" },
+  adams: { seat: "Friendship", metro: "adams-metro-wi" },
+  jackson: { seat: "Black River Falls", metro: "jackson-metro-wi" },
+  kewaunee: { seat: "Kewaunee", metro: "kewaunee-metro-wi" },
 };
 
 export function applyWisconsinCountyOverrides(county: LocalCounty): LocalCounty {

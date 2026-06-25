@@ -301,6 +301,9 @@ const WI_HIGH_TRAFFIC_COUNTIES = new Set([
   'ozaukee',
   'st-croix',
   'la-crosse',
+  'pierce',
+  'douglas',
+  'door',
 ]);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([

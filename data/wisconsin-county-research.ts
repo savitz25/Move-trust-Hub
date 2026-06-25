@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Wisconsin county research — batches 1–2 (30 counties) */
+/** Hand-curated Wisconsin county research — batches 1–3 (50 counties) */
 export const wisconsinCountyResearch: Record<string, CuratedCountyResearch> = {
   milwaukee: {
     marketNotes:
@@ -514,6 +514,346 @@ export const wisconsinCountyResearch: Record<string, CuratedCountyResearch> = {
       "Verify coverage for Sparta and surrounding areas before booking.",
       "Regional traffic impacts scheduling — confirm crew arrival windows.",
       "Confirm insurance for high-value homes before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  dunn: {
+    marketNotes:
+      "Dunn County, WI is a western Wisconsin county centered on Menomonie with residential demand across the Red Cedar and Chippewa Valley fringe corridor — not to be confused with Dunn County in other states.",
+    costs: {
+      studioRange: "$800–$1,600",
+      familyRange: "$2,900–$6,500+",
+      avgHourly: "$115–$175/hr for a 2-person crew",
+      note: "Dunn County pricing reflects Menomonie-area demand, UW–Stout campus turnover, and competition among regional agents serving Dunn County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Menomonie and surrounding areas before booking.",
+      "University-area turnover (semester start/end) may affect scheduling — confirm peak-season crew availability.",
+      "Confirm coverage for student housing, off-campus apartments, and family homes before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  barron: {
+    marketNotes:
+      "Barron County, WI is a northwestern Wisconsin county centered on Barron with rural residential demand — not to be confused with Barron County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Barron County pricing reflects northwest Wisconsin rural demand, longer travel distances, and competition among regional agents serving Barron County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Barron and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  polk: {
+    marketNotes:
+      "Polk County, WI is a northwestern Wisconsin county centered on Balsam Lake with rural residential demand along the St. Croix River corridor — not to be confused with Polk County, MN or other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Polk County pricing reflects northwest Wisconsin rural demand, St. Croix River corridor travel distances, cross-border Minnesota logistics, and competition among regional agents serving Polk County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Balsam Lake and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  douglas: {
+    marketNotes:
+      "Douglas County, WI is a northwestern Wisconsin county centered on Superior with strong urban and residential demand across the Duluth–Superior Twin Ports corridor — not to be confused with Douglas County in other states.",
+    costs: {
+      studioRange: "$850–$1,700",
+      familyRange: "$3,000–$7,000+",
+      avgHourly: "$120–$185/hr for a 2-person crew",
+      note: "Douglas County pricing reflects Twin Ports cross-border demand, Lake Superior shoreline logistics, and competition among regional agents serving Douglas County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Superior and surrounding areas before booking.",
+      "Regional traffic impacts scheduling — confirm crew arrival windows.",
+      "Confirm insurance for high-value homes before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  pierce: {
+    marketNotes:
+      "Pierce County, WI is a western Wisconsin county centered on Ellsworth with suburban and residential demand along the Twin Cities west-metro St. Croix River corridor — not to be confused with Pierce County in other states.",
+    costs: {
+      studioRange: "$900–$1,900",
+      familyRange: "$3,500–$8,500+",
+      avgHourly: "$125–$195/hr for a 2-person crew",
+      note: "Pierce County pricing reflects Twin Cities corridor demand, I-94 and St. Croix River bridge traffic, high-value suburban homes, and competition among regional agents serving Pierce County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Ellsworth and surrounding Twin Cities corridor communities before booking.",
+      "I-94 and St. Croix River bridge corridor congestion significantly impacts scheduling — confirm crew arrival windows.",
+      "Confirm insurance for high-value suburban homes, condos, and townhomes before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  marinette: {
+    marketNotes:
+      "Marinette County, WI is a northeastern Wisconsin county centered on Marinette with residential demand along the Menominee River and Green Bay fringe corridor.",
+    costs: {
+      studioRange: "$800–$1,600",
+      familyRange: "$2,900–$6,500+",
+      avgHourly: "$115–$175/hr for a 2-person crew",
+      note: "Marinette County pricing reflects northeast Wisconsin regional demand, Menominee River corridor travel distances, and competition among regional agents serving Marinette County communities.",
+    },
+    tips: [
+      "Verify coverage for Marinette and surrounding areas before booking.",
+      "Regional traffic impacts scheduling — confirm crew arrival windows.",
+      "Confirm insurance for high-value homes before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  shawano: {
+    marketNotes:
+      "Shawano County, WI is a northeastern Wisconsin county centered on Shawano with rural residential demand along the Wolf River corridor.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Shawano County pricing reflects rural northeast Wisconsin demand, longer travel distances, and competition among regional agents serving Shawano County communities.",
+    },
+    tips: [
+      "Verify coverage for Shawano and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  oconto: {
+    marketNotes:
+      "Oconto County, WI is a northeastern Wisconsin county centered on Oconto with rural residential demand along the Bay of Green Bay fringe corridor.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Oconto County pricing reflects rural northeast Wisconsin demand, Bay of Green Bay corridor travel distances, and competition among regional agents serving Oconto County communities.",
+    },
+    tips: [
+      "Verify coverage for Oconto and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  oneida: {
+    marketNotes:
+      "Oneida County, WI is a north-central Wisconsin county centered on Rhinelander with lakes-country and residential demand — not to be confused with Oneida County in other states.",
+    costs: {
+      studioRange: "$850–$1,700",
+      familyRange: "$3,000–$7,000+",
+      avgHourly: "$120–$185/hr for a 2-person crew",
+      note: "Oneida County pricing reflects northwoods lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Oneida County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Rhinelander and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  green: {
+    marketNotes:
+      "Green County, WI is a southern Wisconsin county centered on Monroe with rural residential demand across the Driftless Area — not to be confused with Green County in other states or Monroe County, WI (Sparta).",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Green County pricing reflects Driftless Area rural demand, longer travel distances, and competition among regional agents serving Green County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Monroe and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  trempealeau: {
+    marketNotes:
+      "Trempealeau County, WI is a western Wisconsin county centered on Whitehall with rural residential demand along the Mississippi River bluff corridor.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Trempealeau County pricing reflects rural western Wisconsin demand, Mississippi River bluff corridor travel distances, and competition among regional agents serving Trempealeau County communities.",
+    },
+    tips: [
+      "Verify coverage for Whitehall and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  door: {
+    marketNotes:
+      "Door County, WI is a northeastern Wisconsin county centered on Sturgeon Bay with strong tourism, vacation-home, and residential demand across the Door Peninsula.",
+    costs: {
+      studioRange: "$900–$1,900",
+      familyRange: "$3,500–$8,500+",
+      avgHourly: "$125–$195/hr for a 2-person crew",
+      note: "Door County pricing reflects Door Peninsula tourism demand, seasonal vacation-home and second-home logistics, high-value lakeshore properties, and competition among regional agents serving Door County communities.",
+    },
+    tips: [
+      "Verify coverage for Sturgeon Bay and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      "Lincoln County, WI is a north-central Wisconsin county centered on Merrill with rural residential demand along the Wisconsin River corridor — not to be confused with Lincoln County in other states.",
+    costs: {
+      studioRange: "$800–$1,600",
+      familyRange: "$2,900–$6,500+",
+      avgHourly: "$115–$175/hr for a 2-person crew",
+      note: "Lincoln County pricing reflects north-central Wisconsin regional demand, Wisconsin River corridor travel distances, and competition among regional agents serving Lincoln County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Merrill and surrounding areas before booking.",
+      "Regional traffic impacts scheduling — confirm crew arrival windows.",
+      "Confirm insurance for high-value homes before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  juneau: {
+    marketNotes:
+      "Juneau County, WI is a central Wisconsin county centered on Mauston with rural residential demand across the Wisconsin Dells gateway corridor — not to be confused with Juneau County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Juneau County pricing reflects Wisconsin Dells tourism-gateway demand, seasonal turnover, and competition among regional agents serving Juneau County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Mauston and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  waushara: {
+    marketNotes:
+      "Waushara County, WI is a central Wisconsin county centered on Wautoma with rural residential demand across central Wisconsin plains communities.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Waushara County pricing reflects rural central Wisconsin demand, longer travel distances, and competition among regional agents serving Waushara County communities.",
+    },
+    tips: [
+      "Verify coverage for Wautoma and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  iowa: {
+    marketNotes:
+      "Iowa County, WI is a southwestern Wisconsin county centered on Dodgeville with rural residential demand across the Driftless Area — not to be confused with the state of Iowa or Iowa County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Iowa County pricing reflects Driftless Area rural demand, longer travel distances, and competition among regional agents serving Iowa County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Dodgeville and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  vilas: {
+    marketNotes:
+      "Vilas County, WI is a north-central Wisconsin county centered on Eagle River with lakes-country and residential demand across the northwoods corridor.",
+    costs: {
+      studioRange: "$850–$1,700",
+      familyRange: "$3,000–$7,000+",
+      avgHourly: "$120–$185/hr for a 2-person crew",
+      note: "Vilas County pricing reflects northwoods lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Vilas County communities.",
+    },
+    tips: [
+      "Verify coverage for Eagle River and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  adams: {
+    marketNotes:
+      "Adams County, WI is a central Wisconsin county centered on Friendship with rural residential demand across central sands corridor communities — not to be confused with Adams County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Adams County pricing reflects rural central Wisconsin demand, Wisconsin Dells fringe tourism logistics, and competition among regional agents serving Adams County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Friendship and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  jackson: {
+    marketNotes:
+      "Jackson County, WI is a western Wisconsin county centered on Black River Falls with rural residential demand — not to be confused with Jackson County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Jackson County pricing reflects rural western Wisconsin demand, Black River corridor travel distances, and competition among regional agents serving Jackson County, WI communities.",
+    },
+    tips: [
+      "Verify coverage for Black River Falls and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  kewaunee: {
+    marketNotes:
+      "Kewaunee County, WI is an eastern Wisconsin county centered on Kewaunee with rural residential demand along the Lake Michigan shoreline.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Kewaunee County pricing reflects rural eastern Wisconsin demand, Lake Michigan shoreline corridor travel distances, and competition among regional agents serving Kewaunee County communities.",
+    },
+    tips: [
+      "Verify coverage for Kewaunee and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
       "Book early for peak seasons (May–September) and month-end lease changeover.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
