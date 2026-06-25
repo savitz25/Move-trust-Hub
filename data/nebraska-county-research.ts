@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Nebraska county research — batch 1 (21 counties) */
+/** Hand-curated Nebraska county research — all 93 counties */
 export const nebraskaCountyResearch: Record<string, CuratedCountyResearch> = {
   douglas: {
     marketNotes:
@@ -359,6 +359,1230 @@ export const nebraskaCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       'Verify coverage for York and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  colfax: {
+    marketNotes:
+      'Colfax County is a rural Nebraska county centered on Schuyler with residential, agricultural, and platte river upper corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Colfax County pricing reflects Schuyler-area demand, platte river upper travel distances, agricultural property logistics, and competition among regional agents serving Colfax County communities.',
+    },
+    tips: [
+      'Verify coverage for Schuyler and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  custer: {
+    marketNotes:
+      'Custer County, NE is a rural Nebraska county centered on Broken Bow with residential, agricultural, and sandhills central corridor demand across surrounding communities — not to be confused with Custer County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Custer County pricing reflects Broken Bow-area demand, sandhills central travel distances, agricultural property logistics, and competition among regional agents serving Custer County communities.',
+    },
+    tips: [
+      'Verify coverage for Broken Bow and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'box-butte': {
+    marketNotes:
+      'Box Butte County, NE is a rural Nebraska county centered on Alliance with residential, agricultural, and panhandle north corridor demand across surrounding communities — not to be confused with Box Butte County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Box Butte County pricing reflects Alliance-area demand, panhandle north travel distances, agricultural property logistics, and competition among regional agents serving Box Butte County communities.',
+    },
+    tips: [
+      'Verify coverage for Alliance and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'red-willow': {
+    marketNotes:
+      'Red Willow County, NE is a rural Nebraska county centered on McCook with residential, agricultural, and republican river southwest corridor demand across surrounding communities — not to be confused with Red Willow County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Red Willow County pricing reflects McCook-area demand, republican river southwest travel distances, agricultural property logistics, and competition among regional agents serving Red Willow County communities.',
+    },
+    tips: [
+      'Verify coverage for McCook and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wayne: {
+    marketNotes:
+      'Wayne County, NE is a rural Nebraska county centered on Wayne with residential, agricultural, and elkhorn valley east corridor demand across surrounding communities — not to be confused with Wayne County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Wayne County pricing reflects Wayne-area demand, elkhorn valley east travel distances, agricultural property logistics, and competition among regional agents serving Wayne County communities.',
+    },
+    tips: [
+      'Verify coverage for Wayne and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  holt: {
+    marketNotes:
+      "Holt County is a rural Nebraska county centered on O'Neill with residential, agricultural, and niobrara plateau corridor demand across surrounding communities.",
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: "Holt County pricing reflects O'Neill-area demand, niobrara plateau travel distances, agricultural property logistics, and competition among regional agents serving Holt County communities.",
+    },
+    tips: [
+      "Verify coverage for O'Neill and surrounding areas before booking.",
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hamilton: {
+    marketNotes:
+      'Hamilton County, NE is a rural Nebraska county centered on Aurora with residential, agricultural, and platte valley east corridor demand across surrounding communities — not to be confused with Hamilton County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hamilton County pricing reflects Aurora-area demand, platte valley east travel distances, agricultural property logistics, and competition among regional agents serving Hamilton County communities.',
+    },
+    tips: [
+      'Verify coverage for Aurora and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cheyenne: {
+    marketNotes:
+      'Cheyenne County, NE is a rural Nebraska county centered on Sidney with residential, agricultural, and high plains east corridor demand across surrounding communities — not to be confused with Cheyenne County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Cheyenne County pricing reflects Sidney-area demand, high plains east travel distances, agricultural property logistics, and competition among regional agents serving Cheyenne County communities.',
+    },
+    tips: [
+      'Verify coverage for Sidney and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  phelps: {
+    marketNotes:
+      'Phelps County is a rural Nebraska county centered on Holdrege with residential, agricultural, and platte valley south corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Phelps County pricing reflects Holdrege-area demand, platte valley south travel distances, agricultural property logistics, and competition among regional agents serving Phelps County communities.',
+    },
+    tips: [
+      'Verify coverage for Holdrege and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cuming: {
+    marketNotes:
+      'Cuming County is a rural Nebraska county centered on West Point with residential, agricultural, and elkhorn river mid corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Cuming County pricing reflects West Point-area demand, elkhorn river mid travel distances, agricultural property logistics, and competition among regional agents serving Cuming County communities.',
+    },
+    tips: [
+      'Verify coverage for West Point and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  butler: {
+    marketNotes:
+      'Butler County, NE is a rural Nebraska county centered on David City with residential, agricultural, and platte river mid corridor demand across surrounding communities — not to be confused with Butler County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Butler County pricing reflects David City-area demand, platte river mid travel distances, agricultural property logistics, and competition among regional agents serving Butler County communities.',
+    },
+    tips: [
+      'Verify coverage for David City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cedar: {
+    marketNotes:
+      'Cedar County is a rural Nebraska county centered on Hartington with residential, agricultural, and missouri bluff north corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Cedar County pricing reflects Hartington-area demand, missouri bluff north travel distances, agricultural property logistics, and competition among regional agents serving Cedar County communities.',
+    },
+    tips: [
+      'Verify coverage for Hartington and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  knox: {
+    marketNotes:
+      'Knox County is a rural Nebraska county centered on Center with residential, agricultural, and missouri plateau corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Knox County pricing reflects Center-area demand, missouri plateau travel distances, agricultural property logistics, and competition among regional agents serving Knox County communities.',
+    },
+    tips: [
+      'Verify coverage for Center and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  keith: {
+    marketNotes:
+      'Keith County is a rural Nebraska county centered on Ogallala with residential, agricultural, and north platte valley mid corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Keith County pricing reflects Ogallala-area demand, north platte valley mid travel distances, agricultural property logistics, and competition among regional agents serving Keith County communities.',
+    },
+    tips: [
+      'Verify coverage for Ogallala and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  merrick: {
+    marketNotes:
+      'Merrick County is a rural Nebraska county centered on Central City with residential, agricultural, and loup river upper corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Merrick County pricing reflects Central City-area demand, loup river upper travel distances, agricultural property logistics, and competition among regional agents serving Merrick County communities.',
+    },
+    tips: [
+      'Verify coverage for Central City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dawes: {
+    marketNotes:
+      'Dawes County is a rural Nebraska county centered on Chadron with residential, agricultural, and pine ridge foothills corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Dawes County pricing reflects Chadron-area demand, pine ridge foothills travel distances, agricultural property logistics, and competition among regional agents serving Dawes County communities.',
+    },
+    tips: [
+      'Verify coverage for Chadron and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  richardson: {
+    marketNotes:
+      'Richardson County is a rural Nebraska county centered on Falls City with residential, agricultural, and nemaha river valley corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Richardson County pricing reflects Falls City-area demand, nemaha river valley travel distances, agricultural property logistics, and competition among regional agents serving Richardson County communities.',
+    },
+    tips: [
+      'Verify coverage for Falls City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pierce: {
+    marketNotes:
+      'Pierce County, NE is a rural Nebraska county centered on Pierce with residential, agricultural, and elkhorn valley central corridor demand across surrounding communities — not to be confused with Pierce County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Pierce County pricing reflects Pierce-area demand, elkhorn valley central travel distances, agricultural property logistics, and competition among regional agents serving Pierce County communities.',
+    },
+    tips: [
+      'Verify coverage for Pierce and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  nemaha: {
+    marketNotes:
+      'Nemaha County, NE is a rural Nebraska county centered on Auburn with residential, agricultural, and nemaha river basin corridor demand across surrounding communities — not to be confused with Nemaha County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Nemaha County pricing reflects Auburn-area demand, nemaha river basin travel distances, agricultural property logistics, and competition among regional agents serving Nemaha County communities.',
+    },
+    tips: [
+      'Verify coverage for Auburn and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County, NE is a rural Nebraska county centered on Fairbury with residential, agricultural, and little blue valley corridor demand across surrounding communities — not to be confused with Jefferson County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects Fairbury-area demand, little blue valley travel distances, agricultural property logistics, and competition among regional agents serving Jefferson County communities.',
+    },
+    tips: [
+      'Verify coverage for Fairbury and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  thurston: {
+    marketNotes:
+      'Thurston County is a rural Nebraska county centered on Pender with residential, agricultural, and omaha nation corridor corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Thurston County pricing reflects Pender-area demand, omaha nation corridor travel distances, agricultural property logistics, and competition among regional agents serving Thurston County communities.',
+    },
+    tips: [
+      'Verify coverage for Pender and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kearney: {
+    marketNotes:
+      'Kearney County, NE is a rural Nebraska county centered on Minden with residential, agricultural, and platte valley lower corridor demand across surrounding communities — not to be confused with Kearney County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Kearney County pricing reflects Minden-area demand, platte valley lower travel distances, agricultural property logistics, and competition among regional agents serving Kearney County communities.',
+    },
+    tips: [
+      'Verify coverage for Minden and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  burt: {
+    marketNotes:
+      'Burt County is a rural Nebraska county centered on Tekamah with residential, agricultural, and missouri bluff west corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Burt County pricing reflects Tekamah-area demand, missouri bluff west travel distances, agricultural property logistics, and competition among regional agents serving Burt County communities.',
+    },
+    tips: [
+      'Verify coverage for Tekamah and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  howard: {
+    marketNotes:
+      'Howard County is a rural Nebraska county centered on St. Paul with residential, agricultural, and loup river mid corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Howard County pricing reflects St. Paul-area demand, loup river mid travel distances, agricultural property logistics, and competition among regional agents serving Howard County communities.',
+    },
+    tips: [
+      'Verify coverage for St. Paul and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  antelope: {
+    marketNotes:
+      'Antelope County is a rural Nebraska county centered on Neligh with residential, agricultural, and elkhorn valley south corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Antelope County pricing reflects Neligh-area demand, elkhorn valley south travel distances, agricultural property logistics, and competition among regional agents serving Antelope County communities.',
+    },
+    tips: [
+      'Verify coverage for Neligh and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clay: {
+    marketNotes:
+      'Clay County, NE is a rural Nebraska county centered on Clay Center with residential, agricultural, and republican river upper corridor demand across surrounding communities — not to be confused with Clay County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Clay County pricing reflects Clay Center-area demand, republican river upper travel distances, agricultural property logistics, and competition among regional agents serving Clay County communities.',
+    },
+    tips: [
+      'Verify coverage for Clay Center and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  stanton: {
+    marketNotes:
+      'Stanton County, NE is a rural Nebraska county centered on Stanton with residential, agricultural, and elkhorn river south corridor demand across surrounding communities — not to be confused with Stanton County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Stanton County pricing reflects Stanton-area demand, elkhorn river south travel distances, agricultural property logistics, and competition among regional agents serving Stanton County communities.',
+    },
+    tips: [
+      'Verify coverage for Stanton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dixon: {
+    marketNotes:
+      'Dixon County is a rural Nebraska county centered on Ponca with residential, agricultural, and missouri river northwest corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Dixon County pricing reflects Ponca-area demand, missouri river northwest travel distances, agricultural property logistics, and competition among regional agents serving Dixon County communities.',
+    },
+    tips: [
+      'Verify coverage for Ponca and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cherry: {
+    marketNotes:
+      'Cherry County is a rural Nebraska county centered on Valentine with residential, agricultural, and sandhills north corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Cherry County pricing reflects Valentine-area demand, sandhills north travel distances, agricultural property logistics, and competition among regional agents serving Cherry County communities.',
+    },
+    tips: [
+      'Verify coverage for Valentine and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fillmore: {
+    marketNotes:
+      'Fillmore County is a rural Nebraska county centered on Geneva with residential, agricultural, and big blue west corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Fillmore County pricing reflects Geneva-area demand, big blue west travel distances, agricultural property logistics, and competition among regional agents serving Fillmore County communities.',
+    },
+    tips: [
+      'Verify coverage for Geneva and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boone: {
+    marketNotes:
+      'Boone County, NE is a rural Nebraska county centered on Albion with residential, agricultural, and elkhorn river basin corridor demand across surrounding communities — not to be confused with Boone County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Boone County pricing reflects Albion-area demand, elkhorn river basin travel distances, agricultural property logistics, and competition among regional agents serving Boone County communities.',
+    },
+    tips: [
+      'Verify coverage for Albion and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  polk: {
+    marketNotes:
+      'Polk County, NE is a rural Nebraska county centered on Osceola with residential, agricultural, and platte river looped corridor demand across surrounding communities — not to be confused with Polk County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Polk County pricing reflects Osceola-area demand, platte river looped travel distances, agricultural property logistics, and competition among regional agents serving Polk County communities.',
+    },
+    tips: [
+      'Verify coverage for Osceola and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  johnson: {
+    marketNotes:
+      'Johnson County, NE is a rural Nebraska county centered on Tecumseh with residential, agricultural, and indian creek valley corridor demand across surrounding communities — not to be confused with Johnson County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Johnson County pricing reflects Tecumseh-area demand, indian creek valley travel distances, agricultural property logistics, and competition among regional agents serving Johnson County communities.',
+    },
+    tips: [
+      'Verify coverage for Tecumseh and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  thayer: {
+    marketNotes:
+      'Thayer County is a rural Nebraska county centered on Hebron with residential, agricultural, and little blue south corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Thayer County pricing reflects Hebron-area demand, little blue south travel distances, agricultural property logistics, and competition among regional agents serving Thayer County communities.',
+    },
+    tips: [
+      'Verify coverage for Hebron and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  arthur: {
+    marketNotes:
+      'Arthur County is a rural Nebraska county centered on Arthur with residential, agricultural, and sandhills east corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Arthur County pricing reflects Arthur-area demand, sandhills east travel distances, agricultural property logistics, and competition among regional agents serving Arthur County communities.',
+    },
+    tips: [
+      'Verify coverage for Arthur and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  banner: {
+    marketNotes:
+      'Banner County is a rural Nebraska county centered on Harrisburg with residential, agricultural, and panhandle gateway corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Banner County pricing reflects Harrisburg-area demand, panhandle gateway travel distances, agricultural property logistics, and competition among regional agents serving Banner County communities.',
+    },
+    tips: [
+      'Verify coverage for Harrisburg and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  blaine: {
+    marketNotes:
+      'Blaine County is a rural Nebraska county centered on Brewster with residential, agricultural, and sandhills northeast corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Blaine County pricing reflects Brewster-area demand, sandhills northeast travel distances, agricultural property logistics, and competition among regional agents serving Blaine County communities.',
+    },
+    tips: [
+      'Verify coverage for Brewster and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boyd: {
+    marketNotes:
+      'Boyd County is a rural Nebraska county centered on Butte with residential, agricultural, and missouri niobrara corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Boyd County pricing reflects Butte-area demand, missouri niobrara travel distances, agricultural property logistics, and competition among regional agents serving Boyd County communities.',
+    },
+    tips: [
+      'Verify coverage for Butte and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  brown: {
+    marketNotes:
+      'Brown County, NE is a rural Nebraska county centered on Ainsworth with residential, agricultural, and niobrara valley corridor demand across surrounding communities — not to be confused with Brown County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Brown County pricing reflects Ainsworth-area demand, niobrara valley travel distances, agricultural property logistics, and competition among regional agents serving Brown County communities.',
+    },
+    tips: [
+      'Verify coverage for Ainsworth and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  chase: {
+    marketNotes:
+      'Chase County is a rural Nebraska county centered on Imperial with residential, agricultural, and republican river mid corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Chase County pricing reflects Imperial-area demand, republican river mid travel distances, agricultural property logistics, and competition among regional agents serving Chase County communities.',
+    },
+    tips: [
+      'Verify coverage for Imperial and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  deuel: {
+    marketNotes:
+      'Deuel County, NE is a rural Nebraska county centered on Chappell with residential, agricultural, and high plains southwest corridor demand across surrounding communities — not to be confused with Deuel County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Deuel County pricing reflects Chappell-area demand, high plains southwest travel distances, agricultural property logistics, and competition among regional agents serving Deuel County communities.',
+    },
+    tips: [
+      'Verify coverage for Chappell and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dundy: {
+    marketNotes:
+      'Dundy County is a rural Nebraska county centered on Benkelman with residential, agricultural, and republican river far west corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Dundy County pricing reflects Benkelman-area demand, republican river far west travel distances, agricultural property logistics, and competition among regional agents serving Dundy County communities.',
+    },
+    tips: [
+      'Verify coverage for Benkelman and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  franklin: {
+    marketNotes:
+      'Franklin County, NE is a rural Nebraska county centered on Franklin with residential, agricultural, and republican river lower corridor demand across surrounding communities — not to be confused with Franklin County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Franklin County pricing reflects Franklin-area demand, republican river lower travel distances, agricultural property logistics, and competition among regional agents serving Franklin County communities.',
+    },
+    tips: [
+      'Verify coverage for Franklin and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  frontier: {
+    marketNotes:
+      'Frontier County is a rural Nebraska county centered on Stockville with residential, agricultural, and republican river upper mid corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Frontier County pricing reflects Stockville-area demand, republican river upper mid travel distances, agricultural property logistics, and competition among regional agents serving Frontier County communities.',
+    },
+    tips: [
+      'Verify coverage for Stockville and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  furnas: {
+    marketNotes:
+      'Furnas County is a rural Nebraska county centered on Beaver City with residential, agricultural, and republican river central corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Furnas County pricing reflects Beaver City-area demand, republican river central travel distances, agricultural property logistics, and competition among regional agents serving Furnas County communities.',
+    },
+    tips: [
+      'Verify coverage for Beaver City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  garden: {
+    marketNotes:
+      'Garden County is a rural Nebraska county centered on Oshkosh with residential, agricultural, and north platte valley north corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Garden County pricing reflects Oshkosh-area demand, north platte valley north travel distances, agricultural property logistics, and competition among regional agents serving Garden County communities.',
+    },
+    tips: [
+      'Verify coverage for Oshkosh and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  garfield: {
+    marketNotes:
+      'Garfield County, NE is a rural Nebraska county centered on Burwell with residential, agricultural, and sandhills loup corridor demand across surrounding communities — not to be confused with Garfield County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Garfield County pricing reflects Burwell-area demand, sandhills loup travel distances, agricultural property logistics, and competition among regional agents serving Garfield County communities.',
+    },
+    tips: [
+      'Verify coverage for Burwell and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gosper: {
+    marketNotes:
+      'Gosper County is a rural Nebraska county centered on Elwood with residential, agricultural, and platte valley southwest corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Gosper County pricing reflects Elwood-area demand, platte valley southwest travel distances, agricultural property logistics, and competition among regional agents serving Gosper County communities.',
+    },
+    tips: [
+      'Verify coverage for Elwood and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grant: {
+    marketNotes:
+      'Grant County, NE is a rural Nebraska county centered on Hyannis with residential, agricultural, and sandhills grant corridor demand across surrounding communities — not to be confused with Grant County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Grant County pricing reflects Hyannis-area demand, sandhills grant travel distances, agricultural property logistics, and competition among regional agents serving Grant County communities.',
+    },
+    tips: [
+      'Verify coverage for Hyannis and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  greeley: {
+    marketNotes:
+      'Greeley County, NE is a rural Nebraska county centered on Greeley with residential, agricultural, and sandhills central north corridor demand across surrounding communities — not to be confused with Greeley County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Greeley County pricing reflects Greeley-area demand, sandhills central north travel distances, agricultural property logistics, and competition among regional agents serving Greeley County communities.',
+    },
+    tips: [
+      'Verify coverage for Greeley and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  harlan: {
+    marketNotes:
+      'Harlan County, NE is a rural Nebraska county centered on Alma with residential, agricultural, and republican river harlan corridor demand across surrounding communities — not to be confused with Harlan County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Harlan County pricing reflects Alma-area demand, republican river harlan travel distances, agricultural property logistics, and competition among regional agents serving Harlan County communities.',
+    },
+    tips: [
+      'Verify coverage for Alma and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hayes: {
+    marketNotes:
+      'Hayes County is a rural Nebraska county centered on Hayes Center with residential, agricultural, and platte valley hayes corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hayes County pricing reflects Hayes Center-area demand, platte valley hayes travel distances, agricultural property logistics, and competition among regional agents serving Hayes County communities.',
+    },
+    tips: [
+      'Verify coverage for Hayes Center and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hitchcock: {
+    marketNotes:
+      'Hitchcock County is a rural Nebraska county centered on Trenton with residential, agricultural, and republican river hitchcock corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hitchcock County pricing reflects Trenton-area demand, republican river hitchcock travel distances, agricultural property logistics, and competition among regional agents serving Hitchcock County communities.',
+    },
+    tips: [
+      'Verify coverage for Trenton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hooker: {
+    marketNotes:
+      'Hooker County is a rural Nebraska county centered on Mullen with residential, agricultural, and sandhills hooker corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hooker County pricing reflects Mullen-area demand, sandhills hooker travel distances, agricultural property logistics, and competition among regional agents serving Hooker County communities.',
+    },
+    tips: [
+      'Verify coverage for Mullen and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'keya-paha': {
+    marketNotes:
+      'Keya Paha County is a rural Nebraska county centered on Springview with residential, agricultural, and niobrara keya paha corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Keya Paha County pricing reflects Springview-area demand, niobrara keya paha travel distances, agricultural property logistics, and competition among regional agents serving Keya Paha County communities.',
+    },
+    tips: [
+      'Verify coverage for Springview and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  kimball: {
+    marketNotes:
+      'Kimball County, NE is a rural Nebraska county centered on Kimball with residential, agricultural, and high plains kimball corridor demand across surrounding communities — not to be confused with Kimball County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Kimball County pricing reflects Kimball-area demand, high plains kimball travel distances, agricultural property logistics, and competition among regional agents serving Kimball County communities.',
+    },
+    tips: [
+      'Verify coverage for Kimball and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County, NE is a rural Nebraska county centered on Stapleton with residential, agricultural, and sandhills logan corridor demand across surrounding communities — not to be confused with Logan County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Logan County pricing reflects Stapleton-area demand, sandhills logan travel distances, agricultural property logistics, and competition among regional agents serving Logan County communities.',
+    },
+    tips: [
+      'Verify coverage for Stapleton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  loup: {
+    marketNotes:
+      'Loup County is a rural Nebraska county centered on Taylor with residential, agricultural, and loup river lower corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Loup County pricing reflects Taylor-area demand, loup river lower travel distances, agricultural property logistics, and competition among regional agents serving Loup County communities.',
+    },
+    tips: [
+      'Verify coverage for Taylor and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mcpherson: {
+    marketNotes:
+      'McPherson County is a rural Nebraska county centered on Tryon with residential, agricultural, and sandhills mcpherson corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'McPherson County pricing reflects Tryon-area demand, sandhills mcpherson travel distances, agricultural property logistics, and competition among regional agents serving McPherson County communities.',
+    },
+    tips: [
+      'Verify coverage for Tryon and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  morrill: {
+    marketNotes:
+      'Morrill County is a rural Nebraska county centered on Bridgeport with residential, agricultural, and north platte scottsbluff east corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Morrill County pricing reflects Bridgeport-area demand, north platte scottsbluff east travel distances, agricultural property logistics, and competition among regional agents serving Morrill County communities.',
+    },
+    tips: [
+      'Verify coverage for Bridgeport and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  nance: {
+    marketNotes:
+      'Nance County is a rural Nebraska county centered on Fullerton with residential, agricultural, and loup river nance corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Nance County pricing reflects Fullerton-area demand, loup river nance travel distances, agricultural property logistics, and competition among regional agents serving Nance County communities.',
+    },
+    tips: [
+      'Verify coverage for Fullerton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  nuckolls: {
+    marketNotes:
+      'Nuckolls County, NE is a rural Nebraska county centered on Nelson with residential, agricultural, and republican river nuckolls corridor demand across surrounding communities — not to be confused with Nuckolls County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Nuckolls County pricing reflects Nelson-area demand, republican river nuckolls travel distances, agricultural property logistics, and competition among regional agents serving Nuckolls County communities.',
+    },
+    tips: [
+      'Verify coverage for Nelson and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pawnee: {
+    marketNotes:
+      'Pawnee County, NE is a rural Nebraska county centered on Pawnee City with residential, agricultural, and nemaha river pawnee corridor demand across surrounding communities — not to be confused with Pawnee County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Pawnee County pricing reflects Pawnee City-area demand, nemaha river pawnee travel distances, agricultural property logistics, and competition among regional agents serving Pawnee County communities.',
+    },
+    tips: [
+      'Verify coverage for Pawnee City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  perkins: {
+    marketNotes:
+      'Perkins County, NE is a rural Nebraska county centered on Grant with residential, agricultural, and platte valley perkins corridor demand across surrounding communities — not to be confused with Perkins County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Perkins County pricing reflects Grant-area demand, platte valley perkins travel distances, agricultural property logistics, and competition among regional agents serving Perkins County communities.',
+    },
+    tips: [
+      'Verify coverage for Grant and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  rock: {
+    marketNotes:
+      'Rock County is a rural Nebraska county centered on Bassett with residential, agricultural, and niobrara rock corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Rock County pricing reflects Bassett-area demand, niobrara rock travel distances, agricultural property logistics, and competition among regional agents serving Rock County communities.',
+    },
+    tips: [
+      'Verify coverage for Bassett and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sheridan: {
+    marketNotes:
+      'Sheridan County, NE is a rural Nebraska county centered on Rushville with residential, agricultural, and sandhills sheridan corridor demand across surrounding communities — not to be confused with Sheridan County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sheridan County pricing reflects Rushville-area demand, sandhills sheridan travel distances, agricultural property logistics, and competition among regional agents serving Sheridan County communities.',
+    },
+    tips: [
+      'Verify coverage for Rushville and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sherman: {
+    marketNotes:
+      'Sherman County is a rural Nebraska county centered on Loup City with residential, agricultural, and loup river sherman corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sherman County pricing reflects Loup City-area demand, loup river sherman travel distances, agricultural property logistics, and competition among regional agents serving Sherman County communities.',
+    },
+    tips: [
+      'Verify coverage for Loup City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  sioux: {
+    marketNotes:
+      'Sioux County, NE is a rural Nebraska county centered on Harrison with residential, agricultural, and high plains sioux corridor demand across surrounding communities — not to be confused with Sioux County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Sioux County pricing reflects Harrison-area demand, high plains sioux travel distances, agricultural property logistics, and competition among regional agents serving Sioux County communities.',
+    },
+    tips: [
+      'Verify coverage for Harrison and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  thomas: {
+    marketNotes:
+      'Thomas County is a rural Nebraska county centered on Thedford with residential, agricultural, and sandhills thomas corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Thomas County pricing reflects Thedford-area demand, sandhills thomas travel distances, agricultural property logistics, and competition among regional agents serving Thomas County communities.',
+    },
+    tips: [
+      'Verify coverage for Thedford and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  valley: {
+    marketNotes:
+      'Valley County is a rural Nebraska county centered on Ord with residential, agricultural, and loup valley ord corridor demand across surrounding communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Valley County pricing reflects Ord-area demand, loup valley ord travel distances, agricultural property logistics, and competition among regional agents serving Valley County communities.',
+    },
+    tips: [
+      'Verify coverage for Ord and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  webster: {
+    marketNotes:
+      'Webster County, NE is a rural Nebraska county centered on Red Cloud with residential, agricultural, and republican river webster corridor demand across surrounding communities — not to be confused with Webster County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Webster County pricing reflects Red Cloud-area demand, republican river webster travel distances, agricultural property logistics, and competition among regional agents serving Webster County communities.',
+    },
+    tips: [
+      'Verify coverage for Red Cloud and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  wheeler: {
+    marketNotes:
+      'Wheeler County, NE is a rural Nebraska county centered on Bartlett with residential, agricultural, and elkhorn river wheeler corridor demand across surrounding communities — not to be confused with Wheeler County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Wheeler County pricing reflects Bartlett-area demand, elkhorn river wheeler travel distances, agricultural property logistics, and competition among regional agents serving Wheeler County communities.',
+    },
+    tips: [
+      'Verify coverage for Bartlett and surrounding areas before booking.',
       'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
       'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',

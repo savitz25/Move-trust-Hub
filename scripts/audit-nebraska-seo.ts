@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for Nebraska local movers directory (batch 1).
+ * Full SEO / E-E-A-T audit for Nebraska local movers directory (full 93 counties).
  * Run: npx tsx scripts/audit-nebraska-seo.ts
  */
 import { nebraskaCountyResearch } from '../data/nebraska-county-research';
@@ -13,7 +13,7 @@ const PREMIUM_TARGETS: Record<string, number> = {
   lancaster: 10,
 };
 const DEFAULT_TARGET = 10;
-const EXPECTED_COUNT = 21;
+const EXPECTED_COUNT = 93;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
