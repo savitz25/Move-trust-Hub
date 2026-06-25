@@ -51,6 +51,10 @@ const SCHEMA_PRIMARY_CITY_OVERRIDES: Record<string, Record<string, string>> = {
     mcleod: 'Hutchinson',
     carlton: 'Cloquet',
     nicollet: 'St. Peter',
+    faribault: 'Blue Earth',
+    dodge: 'Mantorville',
+    lyon: 'Marshall',
+    brown: 'New Ulm',
   },
 };
 

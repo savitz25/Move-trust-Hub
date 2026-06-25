@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–2 — 37 counties) */
+/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–3 — 63 counties) */
 export const minnesotaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -41,6 +41,32 @@ export const minnesotaCountyOverrides: Partial<
   pine: { seat: "Pine City", metro: "pine-metro-mn" },
   freeborn: { seat: "Albert Lea", metro: "freeborn-metro-mn" },
   polk: { seat: "Crookston", metro: "polk-metro-mn" },
+  'le-sueur': { seat: "Le Center", metro: "le-sueur-metro-mn" },
+  'mille-lacs': { seat: "Milaca", metro: "mille-lacs-metro-mn" },
+  todd: { seat: "Long Prairie", metro: "todd-metro-mn" },
+  lyon: { seat: "Marshall", metro: "lyon-metro-mn" },
+  brown: { seat: "New Ulm", metro: "brown-metro-mn" },
+  meeker: { seat: "Litchfield", metro: "meeker-metro-mn" },
+  hubbard: { seat: "Park Rapids", metro: "hubbard-metro-mn" },
+  nobles: { seat: "Worthington", metro: "nobles-metro-mn" },
+  fillmore: { seat: "Preston", metro: "fillmore-metro-mn" },
+  wabasha: { seat: "Wabasha", metro: "wabasha-metro-mn" },
+  dodge: { seat: "Mantorville", metro: "dodge-metro-mn" },
+  martin: { seat: "Fairmont", metro: "martin-metro-mn" },
+  waseca: { seat: "Waseca", metro: "waseca-metro-mn" },
+  houston: { seat: "Caledonia", metro: "houston-metro-mn" },
+  kanabec: { seat: "Mora", metro: "kanabec-metro-mn" },
+  aitkin: { seat: "Aitkin", metro: "aitkin-metro-mn" },
+  sibley: { seat: "Gaylord", metro: "sibley-metro-mn" },
+  redwood: { seat: "Redwood Falls", metro: "redwood-metro-mn" },
+  roseau: { seat: "Roseau", metro: "roseau-metro-mn" },
+  wadena: { seat: "Wadena", metro: "wadena-metro-mn" },
+  renville: { seat: "Olivia", metro: "renville-metro-mn" },
+  faribault: { seat: "Blue Earth", metro: "faribault-metro-mn" },
+  pennington: { seat: "Thief River Falls", metro: "pennington-metro-mn" },
+  chippewa: { seat: "Montevideo", metro: "chippewa-metro-mn" },
+  koochiching: { seat: "International Falls", metro: "koochiching-metro-mn" },
+  watonwan: { seat: "St. James", metro: "watonwan-metro-mn" },
 };
 
 export function applyMinnesotaCountyOverrides(county: LocalCounty): LocalCounty {

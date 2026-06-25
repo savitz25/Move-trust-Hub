@@ -1,12 +1,12 @@
 /**
- * Generates Minnesota county curation files (batches 1–2 — 37 counties).
+ * Generates Minnesota county curation files (batches 1–3 — 63 counties).
  * Run: npx tsx scripts/generate-minnesota-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
-const EXPECTED_COUNT = 37;
+const EXPECTED_COUNT = 63;
 
 type CostTier = 'metro' | 'secondary_metro' | 'regional_hub' | 'rural';
 
@@ -100,6 +100,32 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   pine: 'Pine County, MN',
   freeborn: 'Freeborn County, MN',
   polk: 'Polk County, MN',
+  'le-sueur': 'Le Sueur County, MN',
+  'mille-lacs': 'Mille Lacs County, MN',
+  todd: 'Todd County, MN',
+  lyon: 'Lyon County, MN',
+  brown: 'Brown County, MN',
+  meeker: 'Meeker County, MN',
+  hubbard: 'Hubbard County, MN',
+  nobles: 'Nobles County, MN',
+  fillmore: 'Fillmore County, MN',
+  wabasha: 'Wabasha County, MN',
+  dodge: 'Dodge County, MN',
+  martin: 'Martin County, MN',
+  waseca: 'Waseca County, MN',
+  houston: 'Houston County, MN',
+  kanabec: 'Kanabec County, MN',
+  aitkin: 'Aitkin County, MN',
+  sibley: 'Sibley County, MN',
+  redwood: 'Redwood County, MN',
+  roseau: 'Roseau County, MN',
+  wadena: 'Wadena County, MN',
+  renville: 'Renville County, MN',
+  faribault: 'Faribault County, MN',
+  pennington: 'Pennington County, MN',
+  chippewa: 'Chippewa County, MN',
+  koochiching: 'Koochiching County, MN',
+  watonwan: 'Watonwan County, MN',
 };
 
 const MN_NEIGHBORS: Record<string, string[]> = {
@@ -140,6 +166,32 @@ const MN_NEIGHBORS: Record<string, string[]> = {
   pine: ['carlton', 'chisago', 'isanti', 'kanabec', 'aitkin'],
   freeborn: ['mower', 'steele', 'dodge', 'faribault', 'waseca'],
   polk: ['clearwater', 'mahnomen', 'marshall', 'norman', 'pennington', 'red-lake'],
+  'le-sueur': ['blue-earth', 'nicollet', 'rice', 'scott', 'sibley', 'waseca', 'steele', 'faribault'],
+  'mille-lacs': ['benton', 'crow-wing', 'isanti', 'kanabec', 'morrison', 'sherburne'],
+  todd: ['cass', 'douglas', 'morrison', 'otter-tail', 'pope', 'stearns', 'wadena'],
+  lyon: ['lincoln', 'murray', 'pipestone', 'redwood', 'yellow-medicine'],
+  brown: ['blue-earth', 'cottonwood', 'nicollet', 'redwood', 'renville', 'sibley', 'watonwan'],
+  meeker: ['kandiyohi', 'mcleod', 'pope', 'renville', 'stearns', 'wright'],
+  hubbard: ['becker', 'beltrami', 'cass', 'clearwater', 'mahnomen', 'wadena'],
+  nobles: ['cottonwood', 'jackson', 'murray', 'pipestone', 'rock'],
+  fillmore: ['houston', 'mower', 'olmsted', 'winona'],
+  wabasha: ['goodhue', 'olmsted', 'winona', 'pierce'],
+  dodge: ['fillmore', 'goodhue', 'mower', 'olmsted', 'rice', 'steele'],
+  martin: ['blue-earth', 'brown', 'faribault', 'freeborn', 'jackson', 'watonwan', 'waseca'],
+  waseca: ['blue-earth', 'faribault', 'freeborn', 'le-sueur', 'rice', 'steele'],
+  houston: ['fillmore', 'winona', 'la-crosse'],
+  kanabec: ['aitkin', 'chisago', 'isanti', 'mille-lacs', 'morrison', 'pine'],
+  aitkin: ['carlton', 'cass', 'crow-wing', 'itasca', 'kanabec', 'mille-lacs', 'pine', 'st-louis'],
+  sibley: ['brown', 'le-sueur', 'mcleod', 'nicollet', 'renville'],
+  redwood: ['brown', 'cottonwood', 'lyon', 'murray', 'nicollet', 'renville', 'yellow-medicine'],
+  roseau: ['beltrami', 'kittson', 'marshall', 'pennington'],
+  wadena: ['becker', 'cass', 'hubbard', 'otter-tail', 'todd'],
+  renville: ['chippewa', 'kandiyohi', 'mcleod', 'meeker', 'nicollet', 'redwood', 'sibley', 'yellow-medicine'],
+  faribault: ['blue-earth', 'freeborn', 'jackson', 'martin', 'watonwan', 'waseca'],
+  pennington: ['beltrami', 'marshall', 'norman', 'polk', 'red-lake', 'roseau'],
+  chippewa: ['big-stone', 'kandiyohi', 'lac-qui-parle', 'renville', 'swift', 'yellow-medicine'],
+  koochiching: ['beltrami', 'itasca', 'lake-of-the-woods', 'st-louis'],
+  watonwan: ['brown', 'blue-earth', 'cottonwood', 'faribault', 'jackson', 'martin', 'nicollet'],
 };
 
 const CROSS_BORDER: Record<
@@ -204,6 +256,33 @@ const CROSS_BORDER: Record<
       name: 'Pierce',
       seat: 'Ellsworth',
       displayLabel: 'Pierce County, WI',
+    },
+  ],
+  wabasha: [
+    {
+      slug: 'pierce',
+      stateSlug: 'wisconsin',
+      name: 'Pierce',
+      seat: 'Ellsworth',
+      displayLabel: 'Pierce County, WI',
+    },
+  ],
+  houston: [
+    {
+      slug: 'la-crosse',
+      stateSlug: 'wisconsin',
+      name: 'La Crosse',
+      seat: 'La Crosse',
+      displayLabel: 'La Crosse County, WI',
+    },
+  ],
+  pennington: [
+    {
+      slug: 'marshall',
+      stateSlug: 'north-dakota',
+      name: 'Marshall',
+      seat: 'Warren',
+      displayLabel: 'Marshall County, ND',
     },
   ],
 };
@@ -950,48 +1029,556 @@ const COUNTIES: CountyDef[] = [
       'Polk County pricing reflects Crookston regional-hub demand, Red River Valley corridor travel distances, cross-border North Dakota logistics, and competition among regional agents serving Polk County, MN communities.',
     tipVariant: 'standard',
   },
+  {
+    slug: 'le-sueur',
+    name: 'Le Sueur',
+    seat: 'Le Center',
+    city: 'Le Center',
+    metro: 'le-sueur-metro-mn',
+    costTier: 'regional_hub',
+    citySlug: 'le-center',
+    regional1: 'le-center-corridor',
+    regional2: 'le-sueur-river-valley',
+    topId: 'regional-lesueur-mn-movers',
+    topName: 'Regional Le Center / Le Sueur Providers',
+    regional1Name: 'Le Center Corridor Moving',
+    regional2Name: 'Le Sueur River Valley Moving',
+    marketNotes:
+      'Le Sueur County, MN is a south-central Minnesota county centered on Le Center with residential and Minnesota River valley corridor demand across regional hub communities — not to be confused with Le Sueur County in other states.',
+    costNote:
+      'Le Sueur County pricing reflects Le Center regional-hub demand, Minnesota River valley corridor travel distances, and competition among regional agents serving Le Sueur County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'mille-lacs',
+    name: 'Mille Lacs',
+    seat: 'Milaca',
+    city: 'Milaca',
+    metro: 'mille-lacs-metro-mn',
+    costTier: 'secondary_metro',
+    citySlug: 'milaca',
+    regional1: 'milaca-corridor',
+    regional2: 'mille-lacs-lakes',
+    topId: 'regional-millelacs-mn-movers',
+    topName: 'Regional Milaca / Mille Lacs Providers',
+    regional1Name: 'Milaca Corridor Moving',
+    regional2Name: 'Mille Lacs Lakes Moving',
+    marketNotes:
+      'Mille Lacs County, MN is a central lakes-country county centered on Milaca with strong Mille Lacs Lake resort, vacation-rental, and seasonal-property demand across north metro fringe corridor communities.',
+    costNote:
+      'Mille Lacs County pricing reflects Milaca lakes secondary-metro demand, resort-season corridor traffic, vacation-rental turnover logistics, and competition among regional agents serving Mille Lacs County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'todd',
+    name: 'Todd',
+    seat: 'Long Prairie',
+    city: 'Long Prairie',
+    metro: 'todd-metro-mn',
+    costTier: 'rural',
+    citySlug: 'long-prairie',
+    regional1: 'long-prairie-corridor',
+    regional2: 'sauk-todd',
+    topId: 'regional-todd-mn-movers',
+    topName: 'Regional Long Prairie / Todd Providers',
+    regional1Name: 'Long Prairie Corridor Moving',
+    regional2Name: 'Sauk Todd Moving',
+    marketNotes:
+      'Todd County, MN is a central Minnesota county centered on Long Prairie with rural residential and Sauk River corridor agricultural demand across regional gateway communities — not to be confused with Todd County in other states.',
+    costNote:
+      'Todd County pricing reflects Long Prairie-area rural demand, Sauk River corridor travel distances, agricultural property logistics, and competition among regional agents serving Todd County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lyon',
+    name: 'Lyon',
+    seat: 'Marshall',
+    city: 'Marshall',
+    metro: 'lyon-metro-mn',
+    costTier: 'rural',
+    citySlug: 'marshall',
+    regional1: 'marshall-corridor',
+    regional2: 'redwood-lyon',
+    topId: 'regional-lyon-mn-movers',
+    topName: 'Regional Marshall / Lyon Providers',
+    regional1Name: 'Marshall Corridor Moving',
+    regional2Name: 'Redwood Lyon Moving',
+    marketNotes:
+      'Lyon County, MN is a southwestern Minnesota county centered on Marshall with rural residential, agricultural, and Minnesota River fringe corridor demand — not to be confused with Lyon County in Iowa, Kentucky, or Nevada.',
+    costNote:
+      'Lyon County pricing reflects Marshall-area rural demand, southwestern Minnesota corridor travel distances, agricultural property logistics, and competition among regional agents serving Lyon County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'brown',
+    name: 'Brown',
+    seat: 'New Ulm',
+    city: 'New Ulm',
+    metro: 'brown-metro-mn',
+    costTier: 'rural',
+    citySlug: 'new-ulm',
+    regional1: 'new-ulm-corridor',
+    regional2: 'minnesota-river-brown',
+    topId: 'regional-brown-mn-movers',
+    topName: 'Regional New Ulm / Brown Providers',
+    regional1Name: 'New Ulm Corridor Moving',
+    regional2Name: 'Minnesota River Brown Moving',
+    marketNotes:
+      'Brown County, MN is a south-central Minnesota county centered on New Ulm with rural residential, heritage-tourism, and Minnesota River valley corridor agricultural demand — not to be confused with Brown County in other states.',
+    costNote:
+      'Brown County pricing reflects New Ulm-area rural demand, Minnesota River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Brown County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'meeker',
+    name: 'Meeker',
+    seat: 'Litchfield',
+    city: 'Litchfield',
+    metro: 'meeker-metro-mn',
+    costTier: 'rural',
+    citySlug: 'litchfield',
+    regional1: 'litchfield-corridor',
+    regional2: 'crow-river-meeker',
+    topId: 'regional-meeker-mn-movers',
+    topName: 'Regional Litchfield / Meeker Providers',
+    regional1Name: 'Litchfield Corridor Moving',
+    regional2Name: 'Crow River Meeker Moving',
+    marketNotes:
+      'Meeker County, MN is a west-metro fringe county centered on Litchfield with rural residential and Crow River corridor agricultural demand across regional gateway communities.',
+    costNote:
+      'Meeker County pricing reflects Litchfield-area rural demand, Crow River corridor travel distances, agricultural property logistics, and competition among regional agents serving Meeker County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'hubbard',
+    name: 'Hubbard',
+    seat: 'Park Rapids',
+    city: 'Park Rapids',
+    metro: 'hubbard-metro-mn',
+    costTier: 'secondary_metro',
+    citySlug: 'park-rapids',
+    regional1: 'park-rapids-corridor',
+    regional2: 'heartland-hubbard',
+    topId: 'regional-hubbard-mn-movers',
+    topName: 'Regional Park Rapids / Hubbard Providers',
+    regional1Name: 'Park Rapids Corridor Moving',
+    regional2Name: 'Heartland Hubbard Moving',
+    marketNotes:
+      'Hubbard County, MN is a north-central lakes-country county centered on Park Rapids with strong resort, vacation-rental, and Heartland corridor seasonal-property demand — not to be confused with Hubbard County in other states.',
+    costNote:
+      'Hubbard County pricing reflects Park Rapids lakes secondary-metro demand, resort-season corridor traffic, vacation-rental turnover logistics, and competition among regional agents serving Hubbard County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'nobles',
+    name: 'Nobles',
+    seat: 'Worthington',
+    city: 'Worthington',
+    metro: 'nobles-metro-mn',
+    costTier: 'rural',
+    citySlug: 'worthington',
+    regional1: 'worthington-corridor',
+    regional2: 'okabena-nobles',
+    topId: 'regional-nobles-mn-movers',
+    topName: 'Regional Worthington / Nobles Providers',
+    regional1Name: 'Worthington Corridor Moving',
+    regional2Name: 'Okabena Nobles Moving',
+    marketNotes:
+      'Nobles County, MN is a southwestern Minnesota county centered on Worthington with rural residential, food-processing, and Okabena Lake corridor agricultural demand across prairie gateway communities.',
+    costNote:
+      'Nobles County pricing reflects Worthington-area rural demand, southwestern Minnesota corridor travel distances, agricultural property logistics, and competition among regional agents serving Nobles County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'fillmore',
+    name: 'Fillmore',
+    seat: 'Preston',
+    city: 'Preston',
+    metro: 'fillmore-metro-mn',
+    costTier: 'rural',
+    citySlug: 'preston',
+    regional1: 'preston-corridor',
+    regional2: 'root-river-fillmore',
+    topId: 'regional-fillmore-mn-movers',
+    topName: 'Regional Preston / Fillmore Providers',
+    regional1Name: 'Preston Corridor Moving',
+    regional2Name: 'Root River Fillmore Moving',
+    marketNotes:
+      'Fillmore County, MN is a southeastern Minnesota county centered on Preston with rural residential and Root River bluff-country corridor demand across driftless gateway communities.',
+    costNote:
+      'Fillmore County pricing reflects Preston-area rural demand, Root River bluff corridor travel distances, agricultural property logistics, and competition among regional agents serving Fillmore County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'wabasha',
+    name: 'Wabasha',
+    seat: 'Wabasha',
+    city: 'Wabasha',
+    metro: 'wabasha-metro-mn',
+    costTier: 'rural',
+    citySlug: 'wabasha',
+    regional1: 'wabasha-corridor',
+    regional2: 'mississippi-wabasha',
+    topId: 'regional-wabasha-mn-movers',
+    topName: 'Regional Wabasha / Wabasha County Providers',
+    regional1Name: 'Wabasha Corridor Moving',
+    regional2Name: 'Mississippi Wabasha Moving',
+    marketNotes:
+      'Wabasha County, MN is a southeastern Mississippi River bluff-country county centered on Wabasha with rural residential and cross-border Wisconsin corridor demand along the Great River Road gateway.',
+    costNote:
+      'Wabasha County pricing reflects Wabasha-area rural demand, Mississippi River bluff corridor travel distances, cross-border Wisconsin logistics, and competition among regional agents serving Wabasha County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'dodge',
+    name: 'Dodge',
+    seat: 'Mantorville',
+    city: 'Mantorville',
+    metro: 'dodge-metro-mn',
+    costTier: 'rural',
+    citySlug: 'mantorville',
+    regional1: 'mantorville-corridor',
+    regional2: 'zumbro-dodge',
+    topId: 'regional-dodge-mn-movers',
+    topName: 'Regional Mantorville / Dodge Providers',
+    regional1Name: 'Mantorville Corridor Moving',
+    regional2Name: 'Zumbro Dodge Moving',
+    marketNotes:
+      'Dodge County, MN is a southeastern Minnesota county centered on Mantorville with rural residential and Zumbro River corridor agricultural demand — not to be confused with Dodge County in Wisconsin or other states.',
+    costNote:
+      'Dodge County pricing reflects Mantorville-area rural demand, Zumbro River corridor travel distances, agricultural property logistics, and competition among regional agents serving Dodge County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'martin',
+    name: 'Martin',
+    seat: 'Fairmont',
+    city: 'Fairmont',
+    metro: 'martin-metro-mn',
+    costTier: 'rural',
+    citySlug: 'fairmont',
+    regional1: 'fairmont-corridor',
+    regional2: 'east-chain-martin',
+    topId: 'regional-martin-mn-movers',
+    topName: 'Regional Fairmont / Martin Providers',
+    regional1Name: 'Fairmont Corridor Moving',
+    regional2Name: 'East Chain Martin Moving',
+    marketNotes:
+      'Martin County, MN is a southern Minnesota county centered on Fairmont with rural residential, lake-country, and East Chain of Lakes corridor agricultural demand — not to be confused with Martin County in other states.',
+    costNote:
+      'Martin County pricing reflects Fairmont-area rural demand, southern Minnesota lakes corridor travel distances, agricultural property logistics, and competition among regional agents serving Martin County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'waseca',
+    name: 'Waseca',
+    seat: 'Waseca',
+    city: 'Waseca',
+    metro: 'waseca-metro-mn',
+    costTier: 'rural',
+    citySlug: 'waseca',
+    regional1: 'waseca-corridor',
+    regional2: 'straight-river-waseca',
+    topId: 'regional-waseca-mn-movers',
+    topName: 'Regional Waseca / Waseca County Providers',
+    regional1Name: 'Waseca Corridor Moving',
+    regional2Name: 'Straight River Waseca Moving',
+    marketNotes:
+      'Waseca County, MN is a south-central Minnesota county centered on Waseca with rural residential and Straight River corridor agricultural demand across regional gateway communities.',
+    costNote:
+      'Waseca County pricing reflects Waseca-area rural demand, Straight River corridor travel distances, agricultural property logistics, and competition among regional agents serving Waseca County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'houston',
+    name: 'Houston',
+    seat: 'Caledonia',
+    city: 'Caledonia',
+    metro: 'houston-metro-mn',
+    costTier: 'rural',
+    citySlug: 'caledonia',
+    regional1: 'caledonia-corridor',
+    regional2: 'root-river-houston',
+    topId: 'regional-houston-mn-movers',
+    topName: 'Regional Caledonia / Houston Providers',
+    regional1Name: 'Caledonia Corridor Moving',
+    regional2Name: 'Root River Houston Moving',
+    marketNotes:
+      'Houston County, MN is a southeastern Minnesota county centered on Caledonia with rural residential and Root River bluff-country corridor demand along the Mississippi River gateway — not to be confused with Houston, Texas.',
+    costNote:
+      'Houston County pricing reflects Caledonia-area rural demand, Root River bluff corridor travel distances, cross-border Wisconsin logistics, and competition among regional agents serving Houston County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'kanabec',
+    name: 'Kanabec',
+    seat: 'Mora',
+    city: 'Mora',
+    metro: 'kanabec-metro-mn',
+    costTier: 'rural',
+    citySlug: 'mora',
+    regional1: 'mora-corridor',
+    regional2: 'snake-river-kanabec',
+    topId: 'regional-kanabec-mn-movers',
+    topName: 'Regional Mora / Kanabec Providers',
+    regional1Name: 'Mora Corridor Moving',
+    regional2Name: 'Snake River Kanabec Moving',
+    marketNotes:
+      'Kanabec County, MN is an east-central Minnesota county centered on Mora with rural residential and Snake River northwoods corridor demand across regional gateway communities.',
+    costNote:
+      'Kanabec County pricing reflects Mora-area rural demand, Snake River corridor travel distances, limited crew availability, and competition among regional agents serving Kanabec County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'aitkin',
+    name: 'Aitkin',
+    seat: 'Aitkin',
+    city: 'Aitkin',
+    metro: 'aitkin-metro-mn',
+    costTier: 'secondary_metro',
+    citySlug: 'aitkin',
+    regional1: 'aitkin-corridor',
+    regional2: 'mississippi-aitkin',
+    topId: 'regional-aitkin-mn-movers',
+    topName: 'Regional Aitkin / Aitkin County Providers',
+    regional1Name: 'Aitkin Corridor Moving',
+    regional2Name: 'Mississippi Aitkin Moving',
+    marketNotes:
+      'Aitkin County, MN is a north-central lakes-country county centered on Aitkin with strong Mississippi River resort, vacation-rental, and seasonal-property demand across northwoods gateway corridor communities.',
+    costNote:
+      'Aitkin County pricing reflects Aitkin lakes secondary-metro demand, resort-season corridor traffic, vacation-rental turnover logistics, and competition among regional agents serving Aitkin County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'sibley',
+    name: 'Sibley',
+    seat: 'Gaylord',
+    city: 'Gaylord',
+    metro: 'sibley-metro-mn',
+    costTier: 'rural',
+    citySlug: 'gaylord',
+    regional1: 'gaylord-corridor',
+    regional2: 'minnesota-river-sibley',
+    topId: 'regional-sibley-mn-movers',
+    topName: 'Regional Gaylord / Sibley Providers',
+    regional1Name: 'Gaylord Corridor Moving',
+    regional2Name: 'Minnesota River Sibley Moving',
+    marketNotes:
+      'Sibley County, MN is a south-central Minnesota county centered on Gaylord with rural residential and Minnesota River valley corridor agricultural demand — not to be confused with Sibley County in other states.',
+    costNote:
+      'Sibley County pricing reflects Gaylord-area rural demand, Minnesota River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Sibley County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'redwood',
+    name: 'Redwood',
+    seat: 'Redwood Falls',
+    city: 'Redwood Falls',
+    metro: 'redwood-metro-mn',
+    costTier: 'rural',
+    citySlug: 'redwood-falls',
+    regional1: 'redwood-falls-corridor',
+    regional2: 'minnesota-river-redwood',
+    topId: 'regional-redwood-mn-movers',
+    topName: 'Regional Redwood Falls / Redwood Providers',
+    regional1Name: 'Redwood Falls Corridor Moving',
+    regional2Name: 'Minnesota River Redwood Moving',
+    marketNotes:
+      'Redwood County, MN is a southwestern Minnesota county centered on Redwood Falls with rural residential and Minnesota River valley corridor agricultural demand across prairie gateway communities.',
+    costNote:
+      'Redwood County pricing reflects Redwood Falls-area rural demand, Minnesota River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Redwood County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'roseau',
+    name: 'Roseau',
+    seat: 'Roseau',
+    city: 'Roseau',
+    metro: 'roseau-metro-mn',
+    costTier: 'rural',
+    citySlug: 'roseau',
+    regional1: 'roseau-corridor',
+    regional2: 'roseau-river-valley',
+    topId: 'regional-roseau-mn-movers',
+    topName: 'Regional Roseau / Roseau County Providers',
+    regional1Name: 'Roseau Corridor Moving',
+    regional2Name: 'Roseau River Valley Moving',
+    marketNotes:
+      'Roseau County, MN is a far-northwestern Minnesota county centered on Roseau with rural residential, snowmobile-country, and Roseau River valley corridor agricultural demand along the Manitoba border gateway.',
+    costNote:
+      'Roseau County pricing reflects Roseau-area rural demand, remote northwest corridor travel distances, harsh winters, and competition among regional agents serving Roseau County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'wadena',
+    name: 'Wadena',
+    seat: 'Wadena',
+    city: 'Wadena',
+    metro: 'wadena-metro-mn',
+    costTier: 'rural',
+    citySlug: 'wadena',
+    regional1: 'wadena-corridor',
+    regional2: 'crow-wing-wadena',
+    topId: 'regional-wadena-mn-movers',
+    topName: 'Regional Wadena / Wadena County Providers',
+    regional1Name: 'Wadena Corridor Moving',
+    regional2Name: 'Crow Wing Wadena Moving',
+    marketNotes:
+      'Wadena County, MN is a central Minnesota county centered on Wadena with rural residential and Crow Wing lakes gateway corridor demand across northwoods fringe communities.',
+    costNote:
+      'Wadena County pricing reflects Wadena-area rural demand, central lakes gateway corridor travel distances, limited crew availability, and competition among regional agents serving Wadena County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'renville',
+    name: 'Renville',
+    seat: 'Olivia',
+    city: 'Olivia',
+    metro: 'renville-metro-mn',
+    costTier: 'rural',
+    citySlug: 'olivia',
+    regional1: 'olivia-corridor',
+    regional2: 'hawk-creek-renville',
+    topId: 'regional-renville-mn-movers',
+    topName: 'Regional Olivia / Renville Providers',
+    regional1Name: 'Olivia Corridor Moving',
+    regional2Name: 'Hawk Creek Renville Moving',
+    marketNotes:
+      'Renville County, MN is a southwestern Minnesota county centered on Olivia with rural residential and Hawk Creek Minnesota River fringe corridor agricultural demand — not to be confused with Renville County in North Dakota.',
+    costNote:
+      'Renville County pricing reflects Olivia-area rural demand, Hawk Creek corridor travel distances, agricultural property logistics, and competition among regional agents serving Renville County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'faribault',
+    name: 'Faribault',
+    seat: 'Blue Earth',
+    city: 'Blue Earth',
+    metro: 'faribault-metro-mn',
+    costTier: 'rural',
+    citySlug: 'blue-earth',
+    regional1: 'blue-earth-corridor',
+    regional2: 'east-chain-faribault',
+    topId: 'regional-faribault-mn-movers',
+    topName: 'Regional Blue Earth / Faribault Providers',
+    regional1Name: 'Blue Earth Corridor Moving',
+    regional2Name: 'East Chain Faribault Moving',
+    marketNotes:
+      'Faribault County, MN is a southern Minnesota county centered on Blue Earth with rural residential and East Chain of Lakes corridor agricultural demand — not to be confused with Rice County’s Faribault city or Faribault County in other states.',
+    costNote:
+      'Faribault County pricing reflects Blue Earth-area rural demand, southern Minnesota lakes corridor travel distances, agricultural property logistics, and competition among regional agents serving Faribault County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'pennington',
+    name: 'Pennington',
+    seat: 'Thief River Falls',
+    city: 'Thief River Falls',
+    metro: 'pennington-metro-mn',
+    costTier: 'rural',
+    citySlug: 'thief-river-falls',
+    regional1: 'thief-river-falls-corridor',
+    regional2: 'red-lake-pennington',
+    topId: 'regional-pennington-mn-movers',
+    topName: 'Regional Thief River Falls / Pennington Providers',
+    regional1Name: 'Thief River Falls Corridor Moving',
+    regional2Name: 'Red Lake Pennington Moving',
+    marketNotes:
+      'Pennington County, MN is a northwest Minnesota county centered on Thief River Falls with rural residential, agribusiness, and Red Lake River valley corridor demand along the North Dakota border gateway.',
+    costNote:
+      'Pennington County pricing reflects Thief River Falls-area rural demand, northwest corridor travel distances, cross-border North Dakota logistics, and competition among regional agents serving Pennington County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'chippewa',
+    name: 'Chippewa',
+    seat: 'Montevideo',
+    city: 'Montevideo',
+    metro: 'chippewa-metro-mn',
+    costTier: 'rural',
+    citySlug: 'montevideo',
+    regional1: 'montevideo-corridor',
+    regional2: 'minnesota-river-chippewa',
+    topId: 'regional-chippewa-mn-movers',
+    topName: 'Regional Montevideo / Chippewa Providers',
+    regional1Name: 'Montevideo Corridor Moving',
+    regional2Name: 'Minnesota River Chippewa Moving',
+    marketNotes:
+      'Chippewa County, MN is a southwestern Minnesota county centered on Montevideo with rural residential and Minnesota River valley corridor agricultural demand — not to be confused with Chippewa County in Michigan or Wisconsin.',
+    costNote:
+      'Chippewa County pricing reflects Montevideo-area rural demand, Minnesota River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Chippewa County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'koochiching',
+    name: 'Koochiching',
+    seat: 'International Falls',
+    city: 'International Falls',
+    metro: 'koochiching-metro-mn',
+    costTier: 'regional_hub',
+    citySlug: 'international-falls',
+    regional1: 'international-falls-corridor',
+    regional2: 'rainy-river-koochiching',
+    topId: 'regional-koochiching-mn-movers',
+    topName: 'Regional International Falls / Koochiching Providers',
+    regional1Name: 'International Falls Corridor Moving',
+    regional2Name: 'Rainy River Koochiching Moving',
+    marketNotes:
+      'Koochiching County, MN is a far-northern Minnesota county centered on International Falls with residential, border-gateway, and Rainy River corridor demand along the Ontario and Lake of the Woods gateway.',
+    costNote:
+      'Koochiching County pricing reflects International Falls regional-hub demand, remote northwoods travel distances, harsh winters, border-corridor logistics, and competition among regional agents serving Koochiching County communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'watonwan',
+    name: 'Watonwan',
+    seat: 'St. James',
+    city: 'St. James',
+    metro: 'watonwan-metro-mn',
+    costTier: 'rural',
+    citySlug: 'st-james',
+    regional1: 'st-james-corridor',
+    regional2: 'watonwan-river-valley',
+    topId: 'regional-watonwan-mn-movers',
+    topName: 'Regional St. James / Watonwan Providers',
+    regional1Name: 'St. James Corridor Moving',
+    regional2Name: 'Watonwan River Valley Moving',
+    marketNotes:
+      'Watonwan County, MN is a south-central Minnesota county centered on St. James with rural residential and Watonwan River valley corridor agricultural demand across prairie gateway communities.',
+    costNote:
+      'Watonwan County pricing reflects St. James-area rural demand, Watonwan River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Watonwan County communities.',
+    tipVariant: 'rural',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
 
 const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
-  'mille-lacs': { name: 'Mille Lacs', seat: 'Milaca' },
   pierce: { name: 'Pierce', seat: 'Ellsworth' },
   lake: { name: 'Lake', seat: 'Two Harbors' },
-  koochiching: { name: 'Koochiching', seat: 'International Falls' },
   cook: { name: 'Cook', seat: 'Grand Marais' },
-  dodge: { name: 'Dodge', seat: 'Mantorville' },
-  wabasha: { name: 'Wabasha', seat: 'Wabasha' },
-  fillmore: { name: 'Fillmore', seat: 'Preston' },
-  todd: { name: 'Todd', seat: 'Long Prairie' },
   pope: { name: 'Pope', seat: 'Glenwood' },
-  meeker: { name: 'Meeker', seat: 'Litchfield' },
-  sibley: { name: 'Sibley', seat: 'Gaylord' },
-  'le-sueur': { name: 'Le Sueur', seat: 'Le Center' },
-  aitkin: { name: 'Aitkin', seat: 'Aitkin' },
-  kanabec: { name: 'Kanabec', seat: 'Mora' },
-  houston: { name: 'Houston', seat: 'Caledonia' },
-  brown: { name: 'Brown', seat: 'New Ulm' },
-  faribault: { name: 'Faribault', seat: 'Blue Earth' },
-  martin: { name: 'Martin', seat: 'Fairmont' },
-  waseca: { name: 'Waseca', seat: 'Waseca' },
-  watonwan: { name: 'Watonwan', seat: 'St. James' },
   norman: { name: 'Norman', seat: 'Ada' },
   wilkin: { name: 'Wilkin', seat: 'Breckenridge' },
-  hubbard: { name: 'Hubbard', seat: 'Park Rapids' },
   clearwater: { name: 'Clearwater', seat: 'Bagley' },
   marshall: { name: 'Marshall', seat: 'Warren' },
-  pennington: { name: 'Pennington', seat: 'Thief River Falls' },
-  roseau: { name: 'Roseau', seat: 'Roseau' },
   'lake-of-the-woods': { name: 'Lake of the Woods', seat: 'Baudette' },
-  chippewa: { name: 'Chippewa', seat: 'Montevideo' },
-  renville: { name: 'Renville', seat: 'Olivia' },
   swift: { name: 'Swift', seat: 'Benson' },
   grant: { name: 'Grant', seat: 'Elbow Lake' },
   stevens: { name: 'Stevens', seat: 'Morris' },
   mahnomen: { name: 'Mahnomen', seat: 'Mahnomen' },
   'red-lake': { name: 'Red Lake', seat: 'Red Lake Falls' },
-  wadena: { name: 'Wadena', seat: 'Wadena' },
+  'la-crosse': { name: 'La Crosse', seat: 'La Crosse' },
+  kittson: { name: 'Kittson', seat: 'Hallock' },
+  lincoln: { name: 'Lincoln', seat: 'Ivanhoe' },
+  murray: { name: 'Murray', seat: 'Slayton' },
+  pipestone: { name: 'Pipestone', seat: 'Pipestone' },
+  'yellow-medicine': { name: 'Yellow Medicine', seat: 'Granite Falls' },
+  cottonwood: { name: 'Cottonwood', seat: 'Windom' },
+  jackson: { name: 'Jackson', seat: 'Jackson' },
+  rock: { name: 'Rock', seat: 'Luverne' },
+  'big-stone': { name: 'Big Stone', seat: 'Ortonville' },
+  'lac-qui-parle': { name: 'Lac qui Parle', seat: 'Madison' },
 };
 
 function q(s: string): string {
@@ -1206,7 +1793,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Minnesota county research — 37 counties */
+/** Hand-curated Minnesota county research — 63 counties */
 export const minnesotaCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -1223,7 +1810,7 @@ function genTestimonials(): string {
   const entries = COUNTIES.map((c, i) => buildTestimonials(c, i + 3));
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Minnesota county testimonials — 37 counties */
+/** Hand-curated Minnesota county testimonials — 63 counties */
 export const minnesotaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${entries.join('\n')}
 };
@@ -1245,7 +1832,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Minnesota county mover lists — 37 counties */
+/** Hand-curated Minnesota county mover lists — 63 counties */
 const CURATED_MN_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -1265,7 +1852,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–2 — 37 counties) */
+/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–3 — 63 counties) */
 export const minnesotaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -1287,7 +1874,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** Minnesota curated county corridor links — 37 counties */
+/** Minnesota curated county corridor links — 63 counties */
 const MN_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };

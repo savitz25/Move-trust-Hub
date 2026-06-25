@@ -13,7 +13,7 @@ const PREMIUM_TARGETS: Record<string, number> = {
   ramsey: 10,
 };
 const DEFAULT_TARGET = 5;
-const EXPECTED_COUNT = 37;
+const EXPECTED_COUNT = 63;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
