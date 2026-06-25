@@ -6,10 +6,10 @@ export type { NearbyCountyLink };
 const UT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   'salt-lake': [
     { slug: 'davis', name: 'Davis', seat: 'Farmington', href: '/local-movers/utah/davis', displayLabel: 'Davis County, UT' },
-    { slug: 'morgan', name: 'Morgan', seat: 'Morgan', href: '/local-movers/utah/morgan', displayLabel: 'Morgan County, UT' },
+    { slug: 'utah', name: 'Utah', seat: 'Provo', href: '/local-movers/utah/utah', displayLabel: 'Utah County, UT' },
     { slug: 'summit', name: 'Summit', seat: 'Coalville', href: '/local-movers/utah/summit' },
     { slug: 'tooele', name: 'Tooele', seat: 'Tooele', href: '/local-movers/utah/tooele' },
-    { slug: 'utah', name: 'Utah', seat: 'Provo', href: '/local-movers/utah/utah', displayLabel: 'Utah County, UT' },
+    { slug: 'sweetwater', name: 'Sweetwater', seat: 'Green River', href: '/local-movers/wyoming/sweetwater', displayLabel: 'Sweetwater County, WY' },
   ],
   utah: [
     { slug: 'carbon', name: 'Carbon', seat: 'Price', href: '/local-movers/utah/carbon' },
@@ -39,8 +39,8 @@ const UT_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   cache: [
     { slug: 'box-elder', name: 'Box Elder', seat: 'Brigham City', href: '/local-movers/utah/box-elder', displayLabel: 'Box Elder County, UT' },
     { slug: 'rich', name: 'Rich', seat: 'Randolph', href: '/local-movers/utah/rich', displayLabel: 'Rich County, UT' },
-    { slug: 'morgan', name: 'Morgan', seat: 'Morgan', href: '/local-movers/utah/morgan', displayLabel: 'Morgan County, UT' },
     { slug: 'weber', name: 'Weber', seat: 'Ogden', href: '/local-movers/utah/weber' },
+    { slug: 'bonneville', name: 'Bonneville', seat: 'Idaho Falls', href: '/local-movers/idaho/bonneville', displayLabel: 'Bonneville County, ID' },
   ],
   tooele: [
     { slug: 'box-elder', name: 'Box Elder', seat: 'Brigham City', href: '/local-movers/utah/box-elder', displayLabel: 'Box Elder County, UT' },

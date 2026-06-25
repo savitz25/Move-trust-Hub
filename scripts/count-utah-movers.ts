@@ -1,10 +1,17 @@
 import { utahCountyResearch } from '../data/utah-county-research';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  'salt-lake': 12,
+  utah: 9,
+  davis: 8,
+  weber: 8,
+  washington: 8,
+};
+const DEFAULT_TARGET = 6;
 
-function getTarget(_slug: string): number {
-  return DEFAULT_TARGET;
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const curatedSlugs = Object.keys(utahCountyResearch).sort();

@@ -10,15 +10,17 @@ export type CuratedCountyResearch = {
 export const utahCountyResearch: Record<string, CuratedCountyResearch> = {
   'salt-lake': {
     marketNotes:
-      'Salt Lake County is Utah’s most populous county with strong urban, suburban, and residential demand.',
+      'Salt Lake County anchors Utah’s Wasatch Front — by far the state’s highest-value moving market. Tech and corporate growth spilling from Silicon Slopes, large family-oriented suburban relocations, rapid population growth, and I-15/I-80 corridor logistics distinguish Salt Lake from rural Utah counties.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,500+',
       avgHourly: '$130–$195/hr for a 2-person crew',
-      note: 'Salt Lake County pricing reflects Salt Lake City metro demand, I-15 and I-80 corridor traffic, and competition among full-service agents serving urban and suburban communities.',
+      note: 'Salt Lake County pricing reflects Salt Lake City metro demand, I-15 and I-80 corridor traffic, tech-sector corporate relocations, and competition among full-service agents serving urban and suburban communities.',
     },
     tips: [
-      'Verify coverage for Salt Lake City, West Valley City, Sandy, and surrounding cities before booking.',
+      'Verify coverage for Salt Lake City, Sandy, West Valley City, and surrounding cities before booking.',
+      'Corporate and tech-sector relocations may require building access coordination — confirm commercial move experience.',
+      'Large family moves often need multi-crew scheduling — confirm capacity for 4+ bedroom suburban homes.',
       'Heavy urban traffic significantly impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value suburban homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
@@ -27,15 +29,17 @@ export const utahCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   utah: {
     marketNotes:
-      'Utah County is a rapidly growing county with strong residential, educational, and tech demand.',
+      'Utah County anchors the Provo-Orem metro and Silicon Slopes tech corridor — Utah’s second-highest-value market. BYU and UVU student turnover, Lehi tech-campus growth, family suburban expansion, and Utah Valley I-15 traffic distinguish Utah County from Salt Lake’s urban core.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
       avgHourly: '$120–$180/hr for a 2-person crew',
-      note: 'Utah County pricing reflects Provo-Orem metro demand, BYU and UVU student turnover, tech-corridor growth, and competition among full-service agents serving Utah Valley communities.',
+      note: 'Utah County pricing reflects Provo-Orem metro demand, Silicon Slopes tech-corridor growth, BYU/UVU semester changeover, and competition among full-service agents serving Utah Valley communities.',
     },
     tips: [
       'Verify coverage for Provo, Orem, Lehi, and surrounding cities before booking.',
+      'Tech-sector and startup relocations may require office equipment handling — confirm commercial move experience.',
+      'University semester changeover (August and December) creates peak demand — book early.',
       'Regional traffic impacts scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value suburban homes.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
@@ -44,7 +48,7 @@ export const utahCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   davis: {
     marketNotes:
-      'Davis County is a large suburban county north of Salt Lake City with strong residential demand.',
+      'Davis County is the northern Wasatch Front suburban corridor — Hill AFB military PCS moves, Layton and Clearfield suburban growth, and Salt Lake metro spillover distinguish Davis from Ogden’s Weber County market.',
     costs: {
       studioRange: '$900–$1,900',
       familyRange: '$3,500–$8,000+',
@@ -78,18 +82,20 @@ export const utahCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   washington: {
     marketNotes:
-      'Washington County anchors southwestern Utah’s St. George metro — one of the nation’s fastest-growing retirement and recreation markets, not to be confused with Washington state.',
+      'Washington County anchors southern Utah’s St. George metro — one of the nation’s fastest-growing retirement, tourism, and snowbird markets, not to be confused with Washington state. Color country recreation communities, seasonal second-home moves, and Las Vegas corridor long-distance hauls distinguish Washington from the Wasatch Front.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
       avgHourly: '$120–$180/hr for a 2-person crew',
-      note: 'Washington County pricing reflects St. George metro growth, I-15 corridor traffic, and competition among full-service agents serving color country communities.',
+      note: 'Washington County pricing reflects St. George metro growth, I-15 corridor traffic, retirement and snowbird seasonal demand, and competition among full-service agents serving color country communities.',
     },
     tips: [
-      'Verify coverage for St. George and surrounding areas before booking.',
+      'Verify coverage for St. George, Hurricane, and surrounding areas before booking.',
+      'Retirement and snowbird downsizing moves often need storage and seasonal scheduling — confirm flexible timing.',
       'Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.',
+      'Long-distance hauls to Las Vegas (Clark County, NV) are common — confirm interstate FMCSA authority.',
       'Confirm parking permits and access for seasonal properties, resort condos, and short-term rentals before move day.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (October–April snowbird influx, May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },

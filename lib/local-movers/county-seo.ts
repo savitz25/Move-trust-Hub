@@ -208,6 +208,9 @@ export function buildStateDescription(
   if (stateName === 'New Mexico') {
     return `Find curated local movers in all 33 New Mexico counties — up to 11 ranked companies in Bernalillo County (Albuquerque metro), 8–9 in Santa Fe and Doña Ana (Las Cruces), and 5–7 regional specialists in every county. Albuquerque guides cover corporate, Kirtland AFB military PCS, and suburban moves; Santa Fe and Taos guides cover tourism, second-home, and retirement moves; southern New Mexico guides cover border and military corridors; rural counties emphasize long-distance hauls and remote logistics for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'Utah') {
+    return `Find curated local movers in all 29 Utah counties — up to 12 ranked companies in Salt Lake County (Salt Lake City metro), 9–10 in Utah County (Provo-Orem / Silicon Slopes), 8–9 in Davis, Weber, and Washington (St. George), and 6–8 regional specialists in every county. Wasatch Front guides cover tech growth, family moves, and military PCS; southern Utah guides cover retirement, tourism, and snowbird moves; rural counties emphasize long-distance hauls and outdoor-lifestyle logistics for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

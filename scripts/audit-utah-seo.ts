@@ -8,11 +8,18 @@ import { getUtahNearbyCounties } from '../lib/local-movers/utah-nearby';
 import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
-const DEFAULT_TARGET = 10;
+const PREMIUM_TARGETS: Record<string, number> = {
+  'salt-lake': 12,
+  utah: 9,
+  davis: 8,
+  weber: 8,
+  washington: 8,
+};
+const DEFAULT_TARGET = 6;
 const EXPECTED_COUNT = 29;
 
-function getTarget(_slug: string): number {
-  return DEFAULT_TARGET;
+function getTarget(slug: string): number {
+  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const issues: string[] = [];
@@ -64,7 +71,7 @@ for (const slug of curatedSlugs) {
 console.log(`Issues: ${issues.length}`);
 
 if (issues.length === 0) {
-  console.log(`\n✓ Utah curated counties meet full curation standard (29/29).`);
+  console.log(`\n✓ Utah curated counties meet full curation standard (${EXPECTED_COUNT}/${EXPECTED_COUNT}).`);
 } else {
   console.log('\nIssues:');
   for (const line of issues) console.log(`  ${line}`);

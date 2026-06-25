@@ -13,6 +13,8 @@ const CURATED_UT_COUNTIES: Record<string, string[]> = {
     'wasatch-front-moving-salt-lake-ut',
     'hercules-movers-salt-lake-city-ut',
     'krupp-moving-salt-lake-city-ut',
+    'silicon-slopes-corporate-moving-salt-lake-ut',
+    'wasatch-family-moving-salt-lake-ut',
   ],
   utah: [
     'twomenandatruck-utah-ut',
@@ -23,8 +25,7 @@ const CURATED_UT_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-provo-ut',
     'provo-corridor-moving-utah-ut',
     'utah-valley-moving-utah-ut',
-    'hercules-movers-provo-ut',
-    'krupp-moving-provo-ut',
+    'silicon-slopes-tech-moving-utah-ut',
   ],
   davis: [
     'twomenandatruck-davis-ut',
@@ -34,9 +35,7 @@ const CURATED_UT_COUNTIES: Record<string, string[]> = {
     'college-hunks-moving-layton-ut',
     'budd-van-lines-layton-ut',
     'layton-corridor-moving-davis-ut',
-    'north-salt-lake-moving-davis-ut',
-    'hercules-movers-layton-ut',
-    'krupp-moving-layton-ut',
+    'hill-afb-military-moving-davis-ut',
   ],
   weber: [
     'twomenandatruck-weber-ut',
@@ -47,8 +46,6 @@ const CURATED_UT_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-ogden-ut',
     'ogden-corridor-moving-weber-ut',
     'wasatch-north-moving-weber-ut',
-    'hercules-movers-ogden-ut',
-    'krupp-moving-ogden-ut',
   ],
   washington: [
     'regional-washington-ut-movers',
@@ -58,9 +55,7 @@ const CURATED_UT_COUNTIES: Record<string, string[]> = {
     'college-hunks-moving-st-george-ut',
     'budd-van-lines-st-george-ut',
     'st-george-corridor-moving-washington-ut',
-    'color-country-moving-washington-ut',
-    'hercules-movers-st-george-ut',
-    'krupp-moving-st-george-ut',
+    'st-george-retirement-snowbird-moving-washington-ut',
   ],
   cache: [
     'regional-cache-ut-movers',
