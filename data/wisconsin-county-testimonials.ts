@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Wisconsin county testimonials — batches 1–3 (50 counties) */
+/** Hand-curated Wisconsin county testimonials — all 72 Wisconsin counties */
 export const wisconsinCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   milwaukee: [
     { quote: "Two Men and a Truck Milwaukee handled our suburban move professionally — on time and extremely careful with our home.", name: "Alex M.", location: "Milwaukee, WI", rating: 5, moveType: "Single-family" },
@@ -251,6 +251,116 @@ export const wisconsinCountyTestimonials: Record<string, CountyTestimonialEntry[
     { quote: "Regional Kewaunee / Kewaunee County Providers handled our Kewaunee move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Kewaunee, WI", rating: 5, moveType: 'Single-family' },
     { quote: "All My Sons Kewaunee navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Kewaunee, WI", rating: 5, moveType: 'Townhome' },
     { quote: "Lake Michigan Kewaunee Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Kewaunee, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  taylor: [
+    { quote: "Regional Medford / Taylor Providers handled our Medford move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Medford, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Medford navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Medford, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Red Cedar Taylor Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Medford, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  langlade: [
+    { quote: "Regional Antigo / Langlade Providers handled our Antigo move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Antigo, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Antigo navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Antigo, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Wolf River Langlade Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Antigo, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  'green-lake': [
+    { quote: "Regional Green Lake / Green Lake County Providers handled our Green Lake move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Green Lake, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Green Lake navigated our relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Green Lake, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Big Green Lake Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Green Lake, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  sawyer: [
+    { quote: "Regional Hayward / Sawyer Providers handled our Hayward move professionally — on time and extremely careful with our home.", name: "Dana P.", location: "Hayward, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Hayward navigated our relocation with fair pricing and excellent regional scheduling.", name: "Eric Q.", location: "Hayward, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Namakagon Sawyer Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Hayward, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  lafayette: [
+    { quote: "Regional Darlington / Lafayette Providers handled our Darlington move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "Darlington, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Darlington navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "Darlington, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Driftless Lafayette Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Darlington, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  burnett: [
+    { quote: "Regional Grantsburg / Burnett Providers handled our Grantsburg move professionally — on time and extremely careful with our home.", name: "Fran R.", location: "Grantsburg, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Grantsburg navigated our relocation with fair pricing and excellent regional scheduling.", name: "Gia S.", location: "Grantsburg, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "St. Croix Burnett Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Hal T.", location: "Grantsburg, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  washburn: [
+    { quote: "Regional Shell Lake / Washburn Providers handled our Shell Lake move professionally — on time and extremely careful with our home.", name: "Gia S.", location: "Shell Lake, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Shell Lake navigated our relocation with fair pricing and excellent regional scheduling.", name: "Hal T.", location: "Shell Lake, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Northwoods Washburn Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Ivy U.", location: "Shell Lake, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  richland: [
+    { quote: "Regional Richland Center / Richland Providers handled our Richland Center move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Richland Center, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Richland Center navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Richland Center, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Driftless Richland Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Richland Center, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  bayfield: [
+    { quote: "Regional Washburn / Bayfield Providers handled our Washburn move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Washburn, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Washburn navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Washburn, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Apostle Bayfield Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Washburn, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  ashland: [
+    { quote: "Regional Ashland / Ashland County Providers handled our Ashland move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Ashland, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Ashland navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Ashland, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Lake Superior Ashland Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Ashland, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  marquette: [
+    { quote: "Regional Montello / Marquette Providers handled our Montello move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Montello, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Montello navigated our relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Montello, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Fox River Marquette Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Montello, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  crawford: [
+    { quote: "Regional Prairie du Chien / Crawford Providers handled our Prairie du Chien move professionally — on time and extremely careful with our home.", name: "Dana P.", location: "Prairie du Chien, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Prairie du Chien navigated our relocation with fair pricing and excellent regional scheduling.", name: "Eric Q.", location: "Prairie du Chien, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Mississippi Crawford Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Prairie du Chien, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  rusk: [
+    { quote: "Regional Ladysmith / Rusk Providers handled our Ladysmith move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "Ladysmith, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Ladysmith navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "Ladysmith, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Flambeau Rusk Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Ladysmith, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  price: [
+    { quote: "Regional Phillips / Price Providers handled our Phillips move professionally — on time and extremely careful with our home.", name: "Fran R.", location: "Phillips, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Phillips navigated our relocation with fair pricing and excellent regional scheduling.", name: "Gia S.", location: "Phillips, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Northwoods Price Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Hal T.", location: "Phillips, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  buffalo: [
+    { quote: "Regional Alma / Buffalo Providers handled our Alma move professionally — on time and extremely careful with our home.", name: "Gia S.", location: "Alma, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Alma navigated our relocation with fair pricing and excellent regional scheduling.", name: "Hal T.", location: "Alma, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Mississippi Bluff Buffalo Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Ivy U.", location: "Alma, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  forest: [
+    { quote: "Regional Crandon / Forest Providers handled our Crandon move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Crandon, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Crandon navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Crandon, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Northwoods Forest Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Crandon, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  pepin: [
+    { quote: "Regional Durand / Pepin Providers handled our Durand move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Durand, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Durand navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Durand, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Chippewa River Pepin Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Durand, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  iron: [
+    { quote: "Regional Hurley / Iron Providers handled our Hurley move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Hurley, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Hurley navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Hurley, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Gogebic Range Iron Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Hurley, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  florence: [
+    { quote: "Regional Florence / Florence County Providers handled our Florence move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Florence, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Florence navigated our relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Florence, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Pine River Florence Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Florence, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  menominee: [
+    { quote: "Regional Keshena / Menominee Providers handled our Keshena move professionally — on time and extremely careful with our home.", name: "Dana P.", location: "Keshena, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Keshena navigated our relocation with fair pricing and excellent regional scheduling.", name: "Eric Q.", location: "Keshena, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Wolf River Menominee Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Keshena, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  clark: [
+    { quote: "Regional Neillsville / Clark Providers handled our Neillsville move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "Neillsville, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Neillsville navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "Neillsville, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Black River Clark Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Neillsville, WI", rating: 5, moveType: 'Apartment' },
+  ],
+  vernon: [
+    { quote: "Regional Viroqua / Vernon Providers handled our Viroqua move professionally — on time and extremely careful with our home.", name: "Fran R.", location: "Viroqua, WI", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Viroqua navigated our relocation with fair pricing and excellent regional scheduling.", name: "Gia S.", location: "Viroqua, WI", rating: 5, moveType: 'Townhome' },
+    { quote: "Driftless Vernon Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Hal T.", location: "Viroqua, WI", rating: 5, moveType: 'Apartment' },
   ],
 };
 

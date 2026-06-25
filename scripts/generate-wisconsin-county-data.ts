@@ -1,12 +1,12 @@
 /**
- * Generates Wisconsin county curation files (batches 1–3 — 50 counties).
+ * Generates Wisconsin county curation files (all 72 Wisconsin counties).
  * Run: npx tsx scripts/generate-wisconsin-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
-const EXPECTED_COUNT = 50;
+const EXPECTED_COUNT = 72;
 
 type CostTier = 'metro' | 'secondary_metro' | 'regional_hub' | 'rural';
 
@@ -86,6 +86,10 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   iowa: 'Iowa County, WI',
   pierce: 'Pierce County, WI',
   douglas: 'Douglas County, WI',
+  crawford: 'Crawford County, WI',
+  iron: 'Iron County, WI',
+  florence: 'Florence County, WI',
+  ashland: 'Ashland County, WI',
 };
 
 const WI_NEIGHBORS: Record<string, string[]> = {
@@ -146,6 +150,28 @@ const WI_NEIGHBORS: Record<string, string[]> = {
   adams: ['columbia', 'juneau', 'marquette', 'portage', 'sauk', 'waushara', 'wood'],
   jackson: ['clark', 'eau-claire', 'juneau', 'la-crosse', 'monroe', 'trempealeau', 'wood'],
   kewaunee: ['brown', 'door', 'manitowoc'],
+  taylor: ['chippewa', 'clark', 'jackson', 'langlade', 'lincoln', 'marathon', 'price', 'rusk'],
+  langlade: ['forest', 'lincoln', 'marathon', 'menominee', 'oconto', 'oneida', 'price', 'shawano'],
+  'green-lake': ['columbia', 'fond-du-lac', 'green', 'marquette', 'winnebago', 'waushara'],
+  sawyer: ['ashland', 'bayfield', 'barron', 'douglas', 'price', 'rusk', 'washburn'],
+  lafayette: ['grant', 'green', 'iowa'],
+  burnett: ['barron', 'douglas', 'polk', 'washburn'],
+  washburn: ['barron', 'bayfield', 'burnett', 'douglas', 'polk', 'sawyer'],
+  richland: ['crawford', 'grant', 'iowa', 'sauk', 'vernon'],
+  bayfield: ['ashland', 'douglas', 'sawyer', 'washburn'],
+  ashland: ['bayfield', 'iron', 'price', 'sawyer', 'washburn'],
+  marquette: ['adams', 'columbia', 'green-lake', 'waushara'],
+  crawford: ['grant', 'iowa', 'richland', 'vernon'],
+  rusk: ['barron', 'chippewa', 'clark', 'jackson', 'price', 'sawyer', 'taylor'],
+  price: ['ashland', 'lincoln', 'oneida', 'rusk', 'sawyer', 'taylor', 'vilas'],
+  buffalo: ['pepin', 'trempealeau', 'la-crosse', 'eau-claire', 'dunn'],
+  forest: ['florence', 'langlade', 'marinette', 'oconto', 'oneida', 'vilas'],
+  pepin: ['buffalo', 'dunn', 'eau-claire', 'pierce', 'trempealeau'],
+  iron: ['ashland', 'vilas'],
+  florence: ['forest', 'marinette'],
+  menominee: ['langlade', 'oconto', 'shawano', 'outagamie'],
+  clark: ['chippewa', 'dunn', 'eau-claire', 'jackson', 'marathon', 'taylor', 'wood', 'rusk'],
+  vernon: ['crawford', 'la-crosse', 'monroe', 'richland', 'sauk'],
 };
 
 const CROSS_BORDER: Record<
@@ -226,6 +252,33 @@ const CROSS_BORDER: Record<
       name: 'Polk',
       seat: 'Crookston',
       displayLabel: 'Polk County, MN',
+    },
+  ],
+  crawford: [
+    {
+      slug: 'clayton',
+      stateSlug: 'iowa',
+      name: 'Clayton',
+      seat: 'Elkader',
+      displayLabel: 'Clayton County, IA',
+    },
+  ],
+  iron: [
+    {
+      slug: 'gogebic',
+      stateSlug: 'michigan',
+      name: 'Gogebic',
+      seat: 'Bessemer',
+      displayLabel: 'Gogebic County, MI',
+    },
+  ],
+  florence: [
+    {
+      slug: 'dickinson',
+      stateSlug: 'michigan',
+      name: 'Dickinson',
+      seat: 'Iron Mountain',
+      displayLabel: 'Dickinson County, MI',
     },
   ],
 };
@@ -1232,34 +1285,451 @@ const COUNTIES: CountyDef[] = [
       'Kewaunee County pricing reflects rural eastern Wisconsin demand, Lake Michigan shoreline corridor travel distances, and competition among regional agents serving Kewaunee County communities.',
     tipVariant: 'rural',
   },
+  {
+    slug: 'taylor',
+    name: 'Taylor',
+    seat: 'Medford',
+    city: 'Medford',
+    metro: 'taylor-metro-wi',
+    costTier: 'regional_hub',
+    citySlug: 'medford',
+    regional1: 'medford-corridor',
+    regional2: 'red-cedar-taylor',
+    topId: 'regional-taylor-wi-movers',
+    topName: 'Regional Medford / Taylor Providers',
+    regional1Name: 'Medford Corridor Moving',
+    regional2Name: 'Red Cedar Taylor Moving',
+    marketNotes:
+      'Taylor County, WI is a north-central Wisconsin county centered on Medford with rural residential demand across the Red Cedar corridor — not to be confused with Taylor County in other states.',
+    costNote:
+      'Taylor County pricing reflects north-central Wisconsin regional demand, Red Cedar corridor travel distances, and competition among regional agents serving Taylor County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'langlade',
+    name: 'Langlade',
+    seat: 'Antigo',
+    city: 'Antigo',
+    metro: 'langlade-metro-wi',
+    costTier: 'rural',
+    citySlug: 'antigo',
+    regional1: 'antigo-corridor',
+    regional2: 'wolf-river-langlade',
+    topId: 'regional-langlade-wi-movers',
+    topName: 'Regional Antigo / Langlade Providers',
+    regional1Name: 'Antigo Corridor Moving',
+    regional2Name: 'Wolf River Langlade Moving',
+    marketNotes:
+      'Langlade County, WI is a north-central Wisconsin county centered on Antigo with rural residential demand along the Wolf River corridor — not to be confused with Langlade County in other states.',
+    costNote:
+      'Langlade County pricing reflects rural north-central Wisconsin demand, longer travel distances, and competition among regional agents serving Langlade County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'green-lake',
+    name: 'Green Lake',
+    seat: 'Green Lake',
+    city: 'Green Lake',
+    metro: 'green-lake-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'green-lake',
+    regional1: 'green-lake-corridor',
+    regional2: 'big-green-lake',
+    topId: 'regional-greenlake-wi-movers',
+    topName: 'Regional Green Lake / Green Lake County Providers',
+    regional1Name: 'Green Lake Corridor Moving',
+    regional2Name: 'Big Green Lake Moving',
+    marketNotes:
+      'Green Lake County, WI is a central Wisconsin county centered on Green Lake with lakes-country and residential demand across Big Green Lake corridor communities.',
+    costNote:
+      'Green Lake County pricing reflects lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Green Lake County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'sawyer',
+    name: 'Sawyer',
+    seat: 'Hayward',
+    city: 'Hayward',
+    metro: 'sawyer-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'hayward',
+    regional1: 'hayward-corridor',
+    regional2: 'namakagon-sawyer',
+    topId: 'regional-sawyer-wi-movers',
+    topName: 'Regional Hayward / Sawyer Providers',
+    regional1Name: 'Hayward Corridor Moving',
+    regional2Name: 'Namakagon Sawyer Moving',
+    marketNotes:
+      'Sawyer County, WI is a northwestern Wisconsin county centered on Hayward with lakes-country and residential demand across the northwoods Namakagon corridor.',
+    costNote:
+      'Sawyer County pricing reflects northwoods lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Sawyer County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'lafayette',
+    name: 'Lafayette',
+    seat: 'Darlington',
+    city: 'Darlington',
+    metro: 'lafayette-metro-wi',
+    costTier: 'rural',
+    citySlug: 'darlington',
+    regional1: 'darlington-corridor',
+    regional2: 'driftless-lafayette',
+    topId: 'regional-lafayette-wi-movers',
+    topName: 'Regional Darlington / Lafayette Providers',
+    regional1Name: 'Darlington Corridor Moving',
+    regional2Name: 'Driftless Lafayette Moving',
+    marketNotes:
+      'Lafayette County, WI is a southwestern Wisconsin county centered on Darlington with rural residential demand across the Driftless Area — not to be confused with Lafayette County in other states.',
+    costNote:
+      'Lafayette County pricing reflects Driftless Area rural demand, longer travel distances, and competition among regional agents serving Lafayette County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'burnett',
+    name: 'Burnett',
+    seat: 'Grantsburg',
+    city: 'Grantsburg',
+    metro: 'burnett-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'grantsburg',
+    regional1: 'grantsburg-corridor',
+    regional2: 'st-croix-burnett',
+    topId: 'regional-burnett-wi-movers',
+    topName: 'Regional Grantsburg / Burnett Providers',
+    regional1Name: 'Grantsburg Corridor Moving',
+    regional2Name: 'St. Croix Burnett Moving',
+    marketNotes:
+      'Burnett County, WI is a northwestern Wisconsin county centered on Grantsburg with lakes-country and residential demand along the St. Croix River corridor.',
+    costNote:
+      'Burnett County pricing reflects northwest Wisconsin lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Burnett County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'washburn',
+    name: 'Washburn',
+    seat: 'Shell Lake',
+    city: 'Shell Lake',
+    metro: 'washburn-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'shell-lake',
+    regional1: 'shell-lake-corridor',
+    regional2: 'northwoods-washburn',
+    topId: 'regional-washburn-wi-movers',
+    topName: 'Regional Shell Lake / Washburn Providers',
+    regional1Name: 'Shell Lake Corridor Moving',
+    regional2Name: 'Northwoods Washburn Moving',
+    marketNotes:
+      'Washburn County, WI is a northwestern Wisconsin county centered on Shell Lake with lakes-country and residential demand across the northwoods corridor — not to be confused with Washburn County in other states.',
+    costNote:
+      'Washburn County pricing reflects northwest Wisconsin lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Washburn County, WI communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'richland',
+    name: 'Richland',
+    seat: 'Richland Center',
+    city: 'Richland Center',
+    metro: 'richland-metro-wi',
+    costTier: 'rural',
+    citySlug: 'richland-center',
+    regional1: 'richland-center-corridor',
+    regional2: 'driftless-richland',
+    topId: 'regional-richland-wi-movers',
+    topName: 'Regional Richland Center / Richland Providers',
+    regional1Name: 'Richland Center Corridor Moving',
+    regional2Name: 'Driftless Richland Moving',
+    marketNotes:
+      'Richland County, WI is a southwestern Wisconsin county centered on Richland Center with rural residential demand across the Driftless Area — not to be confused with Richland County in other states.',
+    costNote:
+      'Richland County pricing reflects Driftless Area rural demand, longer travel distances, and competition among regional agents serving Richland County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'bayfield',
+    name: 'Bayfield',
+    seat: 'Washburn',
+    city: 'Washburn',
+    metro: 'bayfield-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'washburn',
+    regional1: 'washburn-corridor',
+    regional2: 'apostle-bayfield',
+    topId: 'regional-bayfield-wi-movers',
+    topName: 'Regional Washburn / Bayfield Providers',
+    regional1Name: 'Washburn Corridor Moving',
+    regional2Name: 'Apostle Bayfield Moving',
+    marketNotes:
+      'Bayfield County, WI is a northwestern Wisconsin county centered on Washburn with lakes-country and residential demand across the Apostle Islands lakeshore corridor.',
+    costNote:
+      'Bayfield County pricing reflects Apostle Islands lakeshore demand, seasonal vacation-home logistics, and competition among regional agents serving Bayfield County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'ashland',
+    name: 'Ashland',
+    seat: 'Ashland',
+    city: 'Ashland',
+    metro: 'ashland-metro-wi',
+    costTier: 'regional_hub',
+    citySlug: 'ashland',
+    regional1: 'ashland-corridor',
+    regional2: 'lake-superior-ashland',
+    topId: 'regional-ashland-wi-movers',
+    topName: 'Regional Ashland / Ashland County Providers',
+    regional1Name: 'Ashland Corridor Moving',
+    regional2Name: 'Lake Superior Ashland Moving',
+    marketNotes:
+      'Ashland County, WI is a northwestern Wisconsin county centered on Ashland with residential demand along the Lake Superior northwoods corridor — not to be confused with Ashland County in other states.',
+    costNote:
+      'Ashland County pricing reflects Lake Superior northwoods regional demand, corridor travel distances, and competition among regional agents serving Ashland County, WI communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'marquette',
+    name: 'Marquette',
+    seat: 'Montello',
+    city: 'Montello',
+    metro: 'marquette-metro-wi',
+    costTier: 'rural',
+    citySlug: 'montello',
+    regional1: 'montello-corridor',
+    regional2: 'fox-river-marquette',
+    topId: 'regional-marquette-wi-movers',
+    topName: 'Regional Montello / Marquette Providers',
+    regional1Name: 'Montello Corridor Moving',
+    regional2Name: 'Fox River Marquette Moving',
+    marketNotes:
+      'Marquette County, WI is a central Wisconsin county centered on Montello with rural residential demand along the Fox River corridor — not to be confused with Marquette County in other states.',
+    costNote:
+      'Marquette County pricing reflects rural central Wisconsin demand, longer travel distances, and competition among regional agents serving Marquette County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'crawford',
+    name: 'Crawford',
+    seat: 'Prairie du Chien',
+    city: 'Prairie du Chien',
+    metro: 'crawford-metro-wi',
+    costTier: 'rural',
+    citySlug: 'prairie-du-chien',
+    regional1: 'prairie-du-chien-corridor',
+    regional2: 'mississippi-crawford',
+    topId: 'regional-crawford-wi-movers',
+    topName: 'Regional Prairie du Chien / Crawford Providers',
+    regional1Name: 'Prairie du Chien Corridor Moving',
+    regional2Name: 'Mississippi Crawford Moving',
+    marketNotes:
+      'Crawford County, WI is a southwestern Wisconsin county centered on Prairie du Chien with rural residential demand along the Mississippi River corridor and cross-border Iowa logistics.',
+    costNote:
+      'Crawford County pricing reflects Mississippi River corridor demand, cross-border Iowa logistics, and competition among regional agents serving Crawford County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'rusk',
+    name: 'Rusk',
+    seat: 'Ladysmith',
+    city: 'Ladysmith',
+    metro: 'rusk-metro-wi',
+    costTier: 'rural',
+    citySlug: 'ladysmith',
+    regional1: 'ladysmith-corridor',
+    regional2: 'flambeau-rusk',
+    topId: 'regional-rusk-wi-movers',
+    topName: 'Regional Ladysmith / Rusk Providers',
+    regional1Name: 'Ladysmith Corridor Moving',
+    regional2Name: 'Flambeau Rusk Moving',
+    marketNotes:
+      'Rusk County, WI is a northern Wisconsin county centered on Ladysmith with rural residential demand along the Flambeau River corridor — not to be confused with Rusk County in other states.',
+    costNote:
+      'Rusk County pricing reflects rural northern Wisconsin demand, longer travel distances, and competition among regional agents serving Rusk County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'price',
+    name: 'Price',
+    seat: 'Phillips',
+    city: 'Phillips',
+    metro: 'price-metro-wi',
+    costTier: 'rural',
+    citySlug: 'phillips',
+    regional1: 'phillips-corridor',
+    regional2: 'northwoods-price',
+    topId: 'regional-price-wi-movers',
+    topName: 'Regional Phillips / Price Providers',
+    regional1Name: 'Phillips Corridor Moving',
+    regional2Name: 'Northwoods Price Moving',
+    marketNotes:
+      'Price County, WI is a north-central Wisconsin county centered on Phillips with rural residential demand across the northwoods corridor — not to be confused with Price County in other states.',
+    costNote:
+      'Price County pricing reflects northwoods rural demand, longer travel distances, and competition among regional agents serving Price County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'buffalo',
+    name: 'Buffalo',
+    seat: 'Alma',
+    city: 'Alma',
+    metro: 'buffalo-metro-wi',
+    costTier: 'rural',
+    citySlug: 'alma',
+    regional1: 'alma-corridor',
+    regional2: 'mississippi-bluff-buffalo',
+    topId: 'regional-buffalo-wi-movers',
+    topName: 'Regional Alma / Buffalo Providers',
+    regional1Name: 'Alma Corridor Moving',
+    regional2Name: 'Mississippi Bluff Buffalo Moving',
+    marketNotes:
+      'Buffalo County, WI is a western Wisconsin county centered on Alma with rural residential demand along the Mississippi River bluff corridor — not to be confused with Buffalo County in other states.',
+    costNote:
+      'Buffalo County pricing reflects Mississippi River bluff corridor demand, rural travel distances, and competition among regional agents serving Buffalo County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'forest',
+    name: 'Forest',
+    seat: 'Crandon',
+    city: 'Crandon',
+    metro: 'forest-metro-wi',
+    costTier: 'secondary_metro',
+    citySlug: 'crandon',
+    regional1: 'crandon-corridor',
+    regional2: 'northwoods-forest',
+    topId: 'regional-forest-wi-movers',
+    topName: 'Regional Crandon / Forest Providers',
+    regional1Name: 'Crandon Corridor Moving',
+    regional2Name: 'Northwoods Forest Moving',
+    marketNotes:
+      'Forest County, WI is a north-central Wisconsin county centered on Crandon with lakes-country and residential demand across the northwoods corridor.',
+    costNote:
+      'Forest County pricing reflects northwoods lakes-country demand, seasonal vacation-home logistics, and competition among regional agents serving Forest County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'pepin',
+    name: 'Pepin',
+    seat: 'Durand',
+    city: 'Durand',
+    metro: 'pepin-metro-wi',
+    costTier: 'rural',
+    citySlug: 'durand',
+    regional1: 'durand-corridor',
+    regional2: 'chippewa-river-pepin',
+    topId: 'regional-pepin-wi-movers',
+    topName: 'Regional Durand / Pepin Providers',
+    regional1Name: 'Durand Corridor Moving',
+    regional2Name: 'Chippewa River Pepin Moving',
+    marketNotes:
+      'Pepin County, WI is a western Wisconsin county centered on Durand with rural residential demand along the Chippewa River corridor — not to be confused with Pepin County in other states.',
+    costNote:
+      'Pepin County pricing reflects rural western Wisconsin demand, Chippewa River corridor travel distances, and competition among regional agents serving Pepin County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'iron',
+    name: 'Iron',
+    seat: 'Hurley',
+    city: 'Hurley',
+    metro: 'iron-metro-wi',
+    costTier: 'rural',
+    citySlug: 'hurley',
+    regional1: 'hurley-corridor',
+    regional2: 'gogebic-range-iron',
+    topId: 'regional-iron-wi-movers',
+    topName: 'Regional Hurley / Iron Providers',
+    regional1Name: 'Hurley Corridor Moving',
+    regional2Name: 'Gogebic Range Iron Moving',
+    marketNotes:
+      'Iron County, WI is a northern Wisconsin county centered on Hurley with rural residential demand across the Gogebic Range corridor — not to be confused with Iron County in other states.',
+    costNote:
+      'Iron County pricing reflects Gogebic Range rural demand, cross-border Michigan logistics, and competition among regional agents serving Iron County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'florence',
+    name: 'Florence',
+    seat: 'Florence',
+    city: 'Florence',
+    metro: 'florence-metro-wi',
+    costTier: 'rural',
+    citySlug: 'florence',
+    regional1: 'florence-corridor',
+    regional2: 'pine-river-florence',
+    topId: 'regional-florence-wi-movers',
+    topName: 'Regional Florence / Florence County Providers',
+    regional1Name: 'Florence Corridor Moving',
+    regional2Name: 'Pine River Florence Moving',
+    marketNotes:
+      'Florence County, WI is a northeastern Wisconsin county centered on Florence with rural residential demand along the Pine River UP-border corridor — not to be confused with Florence County in other states.',
+    costNote:
+      'Florence County pricing reflects rural northeast Wisconsin demand, cross-border Michigan logistics, and competition among regional agents serving Florence County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'menominee',
+    name: 'Menominee',
+    seat: 'Keshena',
+    city: 'Keshena',
+    metro: 'menominee-metro-wi',
+    costTier: 'rural',
+    citySlug: 'keshena',
+    regional1: 'keshena-corridor',
+    regional2: 'wolf-river-menominee',
+    topId: 'regional-menominee-wi-movers',
+    topName: 'Regional Keshena / Menominee Providers',
+    regional1Name: 'Keshena Corridor Moving',
+    regional2Name: 'Wolf River Menominee Moving',
+    marketNotes:
+      'Menominee County, WI is a northeastern Wisconsin county centered on Keshena with rural residential demand along the Wolf River corridor — not to be confused with Menominee County in other states.',
+    costNote:
+      'Menominee County pricing reflects rural northeast Wisconsin demand, Wolf River corridor travel distances, and competition among regional agents serving Menominee County, WI communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'clark',
+    name: 'Clark',
+    seat: 'Neillsville',
+    city: 'Neillsville',
+    metro: 'clark-metro-wi',
+    costTier: 'regional_hub',
+    citySlug: 'neillsville',
+    regional1: 'neillsville-corridor',
+    regional2: 'black-river-clark',
+    topId: 'regional-clark-wi-movers',
+    topName: 'Regional Neillsville / Clark Providers',
+    regional1Name: 'Neillsville Corridor Moving',
+    regional2Name: 'Black River Clark Moving',
+    marketNotes:
+      'Clark County, WI is a central Wisconsin county centered on Neillsville with residential demand along the Black River corridor — not to be confused with Clark County in other states.',
+    costNote:
+      'Clark County pricing reflects central Wisconsin regional demand, Black River corridor travel distances, and competition among regional agents serving Clark County, WI communities.',
+    tipVariant: 'standard',
+  },
+  {
+    slug: 'vernon',
+    name: 'Vernon',
+    seat: 'Viroqua',
+    city: 'Viroqua',
+    metro: 'vernon-metro-wi',
+    costTier: 'rural',
+    citySlug: 'viroqua',
+    regional1: 'viroqua-corridor',
+    regional2: 'driftless-vernon',
+    topId: 'regional-vernon-wi-movers',
+    topName: 'Regional Viroqua / Vernon Providers',
+    regional1Name: 'Viroqua Corridor Moving',
+    regional2Name: 'Driftless Vernon Moving',
+    marketNotes:
+      'Vernon County, WI is a western Wisconsin county centered on Viroqua with rural residential demand across the Driftless Area — not to be confused with Vernon County in other states.',
+    costNote:
+      'Vernon County pricing reflects Driftless Area rural demand, longer travel distances, and competition among regional agents serving Vernon County, WI communities.',
+    tipVariant: 'rural',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
 
-const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
-  'green-lake': { name: 'Green Lake', seat: 'Green Lake' },
-  clark: { name: 'Clark', seat: 'Neillsville' },
-  langlade: { name: 'Langlade', seat: 'Antigo' },
-  taylor: { name: 'Taylor', seat: 'Medford' },
-  buffalo: { name: 'Buffalo', seat: 'Alma' },
-  vernon: { name: 'Vernon', seat: 'Viroqua' },
-  pepin: { name: 'Pepin', seat: 'Durand' },
-  crawford: { name: 'Crawford', seat: 'Prairie du Chien' },
-  richland: { name: 'Richland', seat: 'Richland Center' },
-  marquette: { name: 'Marquette', seat: 'Montello' },
-  rusk: { name: 'Rusk', seat: 'Ladysmith' },
-  lafayette: { name: 'Lafayette', seat: 'Darlington' },
-  forest: { name: 'Forest', seat: 'Crandon' },
-  menominee: { name: 'Menominee', seat: 'Keshena' },
-  florence: { name: 'Florence', seat: 'Florence' },
-  burnett: { name: 'Burnett', seat: 'Siren' },
-  washburn: { name: 'Washburn', seat: 'Shell Lake' },
-  bayfield: { name: 'Bayfield', seat: 'Washburn' },
-  ashland: { name: 'Ashland', seat: 'Ashland' },
-  sawyer: { name: 'Sawyer', seat: 'Hayward' },
-  price: { name: 'Price', seat: 'Phillips' },
-  iron: { name: 'Iron', seat: 'Hurley' },
-};
+const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {};
 
 function q(s: string): string {
   return JSON.stringify(s);
@@ -1482,7 +1952,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Wisconsin county research — batches 1–3 (50 counties) */
+/** Hand-curated Wisconsin county research — all 72 Wisconsin counties */
 export const wisconsinCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -1499,7 +1969,7 @@ function genTestimonials(): string {
   const entries = COUNTIES.map((c, i) => buildTestimonials(c, i + 3));
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Wisconsin county testimonials — batches 1–3 (50 counties) */
+/** Hand-curated Wisconsin county testimonials — all 72 Wisconsin counties */
 export const wisconsinCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${entries.join('\n')}
 };
@@ -1521,7 +1991,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Wisconsin county mover lists — batches 1–3 (50 counties) */
+/** Hand-curated Wisconsin county mover lists — all 72 Wisconsin counties */
 const CURATED_WI_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -1541,7 +2011,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Wisconsin counties (batches 1–3 — 50 counties) */
+/** Seat and metro overrides for hand-curated Wisconsin counties (all 72 Wisconsin counties) */
 export const wisconsinCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -1563,7 +2033,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** Wisconsin curated county corridor links — batches 1–3 (50 counties) */
+/** Wisconsin curated county corridor links — all 72 Wisconsin counties */
 const WI_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };

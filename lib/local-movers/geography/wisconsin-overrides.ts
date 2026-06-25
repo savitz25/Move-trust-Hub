@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Wisconsin counties (batches 1–3 — 50 counties) */
+/** Seat and metro overrides for hand-curated Wisconsin counties (all 72 Wisconsin counties) */
 export const wisconsinCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -54,6 +54,28 @@ export const wisconsinCountyOverrides: Partial<
   adams: { seat: "Friendship", metro: "adams-metro-wi" },
   jackson: { seat: "Black River Falls", metro: "jackson-metro-wi" },
   kewaunee: { seat: "Kewaunee", metro: "kewaunee-metro-wi" },
+  taylor: { seat: "Medford", metro: "taylor-metro-wi" },
+  langlade: { seat: "Antigo", metro: "langlade-metro-wi" },
+  'green-lake': { seat: "Green Lake", metro: "green-lake-metro-wi" },
+  sawyer: { seat: "Hayward", metro: "sawyer-metro-wi" },
+  lafayette: { seat: "Darlington", metro: "lafayette-metro-wi" },
+  burnett: { seat: "Grantsburg", metro: "burnett-metro-wi" },
+  washburn: { seat: "Shell Lake", metro: "washburn-metro-wi" },
+  richland: { seat: "Richland Center", metro: "richland-metro-wi" },
+  bayfield: { seat: "Washburn", metro: "bayfield-metro-wi" },
+  ashland: { seat: "Ashland", metro: "ashland-metro-wi" },
+  marquette: { seat: "Montello", metro: "marquette-metro-wi" },
+  crawford: { seat: "Prairie du Chien", metro: "crawford-metro-wi" },
+  rusk: { seat: "Ladysmith", metro: "rusk-metro-wi" },
+  price: { seat: "Phillips", metro: "price-metro-wi" },
+  buffalo: { seat: "Alma", metro: "buffalo-metro-wi" },
+  forest: { seat: "Crandon", metro: "forest-metro-wi" },
+  pepin: { seat: "Durand", metro: "pepin-metro-wi" },
+  iron: { seat: "Hurley", metro: "iron-metro-wi" },
+  florence: { seat: "Florence", metro: "florence-metro-wi" },
+  menominee: { seat: "Keshena", metro: "menominee-metro-wi" },
+  clark: { seat: "Neillsville", metro: "clark-metro-wi" },
+  vernon: { seat: "Viroqua", metro: "vernon-metro-wi" },
 };
 
 export function applyWisconsinCountyOverrides(county: LocalCounty): LocalCounty {

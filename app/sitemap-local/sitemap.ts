@@ -304,6 +304,8 @@ const WI_HIGH_TRAFFIC_COUNTIES = new Set([
   'pierce',
   'douglas',
   'door',
+  'sawyer',
+  'bayfield',
 ]);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([

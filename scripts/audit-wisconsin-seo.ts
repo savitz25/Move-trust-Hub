@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for Wisconsin local movers directory (batches 1–3 — 50 counties).
+ * Full SEO / E-E-A-T audit for Wisconsin local movers directory (all 72 counties).
  * Run: npx tsx scripts/audit-wisconsin-seo.ts
  */
 import { wisconsinCountyResearch } from '../data/wisconsin-county-research';
@@ -12,7 +12,7 @@ const PREMIUM_TARGETS: Record<string, number> = {
   milwaukee: 10,
 };
 const DEFAULT_TARGET = 5;
-const EXPECTED_COUNT = 50;
+const EXPECTED_COUNT = 72;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
