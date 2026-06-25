@@ -544,8 +544,8 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         ) : (
           /* HIGH-CONVERSION SUCCESS STATE */
           <div className="p-8 text-center">
-            <div className="mx-auto w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center mb-5">
-              <CheckCircle2 className="h-9 w-9 text-emerald-600 dark:text-emerald-400" />
+            <div className="mx-auto w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mb-5">
+              <CheckCircle2 className="h-9 w-9 text-emerald-600" />
             </div>
 
             <h3 className="text-2xl font-semibold tracking-tight">You&apos;re all set!</h3>

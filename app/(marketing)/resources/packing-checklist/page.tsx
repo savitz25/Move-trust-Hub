@@ -166,9 +166,9 @@ export default function PackingChecklistPage() {
             </ul>
           </section>
 
-          <section className="rounded-xl border border-amber-200/80 dark:border-amber-900/50 bg-amber-50/50 dark:bg-amber-950/20 p-6">
+          <section className="rounded-xl border border-amber-200/80 bg-amber-50/50 p-6">
             <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-2">
-              <ShieldCheck className="h-5 w-5 text-amber-700 dark:text-amber-400" aria-hidden="true" />
+              <ShieldCheck className="h-5 w-5 text-amber-700" aria-hidden="true" />
               Do Not Pack on the Moving Truck
             </h2>
             <ul className="list-disc pl-5 space-y-1.5 text-muted-foreground">

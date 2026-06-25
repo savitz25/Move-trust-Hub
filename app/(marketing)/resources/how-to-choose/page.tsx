@@ -19,7 +19,7 @@ export default function HowToChoose() {
       description="Step-by-step guide using FMCSA data, reputation scores, and written estimates to find trustworthy long-distance movers."
       path="/resources/how-to-choose"
     />
-    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral dark:prose-invert">
+    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral">
       <Link href="/resources" className="text-sm hover:underline">← Back to all resources</Link>
 
       <h1 className="mt-4">How to Choose a Reliable Interstate Moving Company in 2026</h1>

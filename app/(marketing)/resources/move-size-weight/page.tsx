@@ -83,13 +83,13 @@ export default function MoveSizeWeightGuide() {
           </p>
           <div className="grid sm:grid-cols-2 gap-4 mb-6">
             <div className="rounded-xl bg-muted/60 px-5 py-4 text-center">
-              <div className="text-3xl font-semibold tracking-tight text-emerald-600 dark:text-emerald-400">
+              <div className="text-3xl font-semibold tracking-tight text-emerald-600">
                 $6,000
               </div>
               <p className="text-xs text-muted-foreground mt-1">Low estimate</p>
             </div>
             <div className="rounded-xl bg-muted/60 px-5 py-4 text-center">
-              <div className="text-3xl font-semibold tracking-tight text-rose-600 dark:text-rose-400">
+              <div className="text-3xl font-semibold tracking-tight text-rose-600">
                 $18,000
               </div>
               <p className="text-xs text-muted-foreground mt-1">High estimate</p>
@@ -114,10 +114,10 @@ export default function MoveSizeWeightGuide() {
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="rounded-xl border border-amber-200/80 dark:border-amber-900/50 bg-amber-50/50 dark:bg-amber-950/20 p-5">
+            <div className="rounded-xl border border-amber-200/80 bg-amber-50/50 p-5">
               <div className="flex items-center gap-2 mb-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/40">
-                  <TrendingDown className="h-4 w-4 text-amber-700 dark:text-amber-400" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100">
+                  <TrendingDown className="h-4 w-4 text-amber-700" />
                 </div>
                 <h3 className="font-semibold text-sm">Underbidding companies</h3>
               </div>
@@ -126,10 +126,10 @@ export default function MoveSizeWeightGuide() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-rose-200/80 dark:border-rose-900/50 bg-rose-50/50 dark:bg-rose-950/20 p-5">
+            <div className="rounded-xl border border-rose-200/80 bg-rose-50/50 p-5">
               <div className="flex items-center gap-2 mb-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-100 dark:bg-rose-900/40">
-                  <TrendingUp className="h-4 w-4 text-rose-700 dark:text-rose-400" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-100">
+                  <TrendingUp className="h-4 w-4 text-rose-700" />
                 </div>
                 <h3 className="font-semibold text-sm">Padding companies</h3>
               </div>

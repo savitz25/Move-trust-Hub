@@ -68,28 +68,6 @@
     --star: 45 93% 47%;
   }
 
-  .dark {
-    /* Premium sharp dark - deep navy, not flat black. Pairs beautifully with bright logo blues */
-    --background: 215 35% 9%;   /* Deep navy #0b1629 */
-    --foreground: 210 40% 97%;
-    --card: 215 30% 13%;        /* Slightly lifted navy cards */
-    --card-foreground: 210 40% 97%;
-    --popover: 215 30% 11%;
-    --popover-foreground: 210 40% 97%;
-    --primary: 200 100% 63%;    /* Bright logo blue #1E9FFF for pop in dark */
-    --primary-foreground: 215 35% 9%;
-    --secondary: 215 25% 18%;
-    --secondary-foreground: 210 40% 97%;
-    --muted: 215 25% 17%;
-    --muted-foreground: 215 20% 68%;
-    --accent: 195 100% 62%;     /* Logo cyan for accents */
-    --accent-foreground: 215 35% 9%;
-    --destructive: 0 63% 55%;
-    --destructive-foreground: 210 40% 97%;
-    --border: 215 25% 22%;
-    --input: 215 25% 22%;
-    --ring: 200 100% 63%;
-  }
 }
 
 @layer base {
@@ -109,13 +87,13 @@
     @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border;
   }
   .trust-badge-verified {
-    @apply bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-400 dark:border-emerald-800;
+    @apply bg-emerald-50 text-emerald-700 border-emerald-200;
   }
   .trust-badge-fmcsa {
-    @apply bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-400 dark:border-blue-800;
+    @apply bg-blue-50 text-blue-700 border-blue-200;
   }
   .star {
-    @apply text-amber-500 dark:text-amber-400;
+    @apply text-amber-500;
   }
 
   .company-card {

@@ -15,7 +15,7 @@ export default function Scams() {
       description="Learn how to spot and avoid rogue brokers, lowball quotes, and bait-and-switch interstate moving scams."
       path="/resources/scams"
     />
-    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral dark:prose-invert">
+    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral">
       <Link href="/resources" className="text-sm hover:underline">← Back to all resources</Link>
 
       <h1>8 Red Flags of Interstate Moving Scams</h1>

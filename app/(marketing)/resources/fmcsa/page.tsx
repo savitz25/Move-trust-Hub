@@ -15,7 +15,7 @@ export default function FmcsaPage() {
       description="What USDOT numbers, safety ratings, and complaint ratios mean when choosing an interstate mover."
       path="/resources/fmcsa"
     />
-    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral dark:prose-invert">
+    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral">
       <Link href="/resources" className="text-sm hover:underline">← Back to all resources</Link>
 
       <h1>Understanding FMCSA Safety Ratings &amp; Complaint Data</h1>

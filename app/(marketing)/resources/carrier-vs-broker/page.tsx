@@ -228,22 +228,22 @@ const faqs = [
 
 const colorMap = {
   emerald: {
-    border: 'border-emerald-200/80 dark:border-emerald-900/50',
-    bg: 'bg-emerald-50/50 dark:bg-emerald-950/20',
-    icon: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400',
-    badge: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300',
+    border: 'border-emerald-200/80',
+    bg: 'bg-emerald-50/50',
+    icon: 'bg-emerald-100 text-emerald-700',
+    badge: 'bg-emerald-100 text-emerald-800',
   },
   amber: {
-    border: 'border-amber-200/80 dark:border-amber-900/50',
-    bg: 'bg-amber-50/50 dark:bg-amber-950/20',
-    icon: 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400',
-    badge: 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300',
+    border: 'border-amber-200/80',
+    bg: 'bg-amber-50/50',
+    icon: 'bg-amber-100 text-amber-700',
+    badge: 'bg-amber-100 text-amber-800',
   },
   blue: {
-    border: 'border-blue-200/80 dark:border-blue-900/50',
-    bg: 'bg-blue-50/50 dark:bg-blue-950/20',
-    icon: 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400',
-    badge: 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300',
+    border: 'border-blue-200/80',
+    bg: 'bg-blue-50/50',
+    icon: 'bg-blue-100 text-blue-700',
+    badge: 'bg-blue-100 text-blue-800',
   },
 };
 
@@ -502,14 +502,14 @@ export default function CarrierVsBrokerPage() {
                     <h3 className="font-semibold">{type}</h3>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                    <div className="rounded-lg bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40 px-4 py-3">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1">
+                    <div className="rounded-lg bg-emerald-50/60 border border-emerald-200/60 px-4 py-3">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-1">
                         Pros
                       </p>
                       <p className="text-sm text-muted-foreground leading-relaxed">{pros}</p>
                     </div>
-                    <div className="rounded-lg bg-rose-50/60 dark:bg-rose-950/20 border border-rose-200/60 dark:border-rose-900/40 px-4 py-3">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-rose-700 dark:text-rose-400 mb-1">
+                    <div className="rounded-lg bg-rose-50/60 border border-rose-200/60 px-4 py-3">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-rose-700 mb-1">
                         Cons
                       </p>
                       <p className="text-sm text-muted-foreground leading-relaxed">{cons}</p>
@@ -524,10 +524,10 @@ export default function CarrierVsBrokerPage() {
           </section>
 
           {/* Scam prevention callout */}
-          <section className="rounded-2xl border border-amber-200/80 dark:border-amber-900/50 bg-amber-50/40 dark:bg-amber-950/20 p-6 sm:p-8">
+          <section className="rounded-2xl border border-amber-200/80 bg-amber-50/40 p-6 sm:p-8">
             <div className="flex items-start gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 dark:bg-amber-900/40">
-                <AlertTriangle className="h-5 w-5 text-amber-700 dark:text-amber-400" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100">
+                <AlertTriangle className="h-5 w-5 text-amber-700" />
               </div>
               <div>
                 <h2 className="text-xl font-semibold tracking-tight mb-2">Scam prevention tip</h2>

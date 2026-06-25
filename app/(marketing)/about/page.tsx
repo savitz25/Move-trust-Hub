@@ -224,7 +224,7 @@ export default function AboutPage() {
 
         {/* Disclaimer */}
         <section id="disclaimer">
-          <Card className="border-amber-500/30 bg-amber-50/50 dark:bg-amber-950/20">
+          <Card className="border-amber-500/30 bg-amber-50/50">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <AlertTriangle className="h-5 w-5 text-amber-600" />

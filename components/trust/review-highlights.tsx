@@ -21,7 +21,7 @@ export function ReviewHighlights({
   return (
     <section className={cn('container mx-auto px-4', className)} aria-labelledby="review-highlights-heading">
       <div className={cn('mb-8', compact ? 'text-left' : 'text-center max-w-2xl mx-auto')}>
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 px-3 py-1 text-xs font-medium mb-3">
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 text-emerald-700 px-3 py-1 text-xs font-medium mb-3">
           <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
           Verified Review Highlights
         </div>

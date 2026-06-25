@@ -15,7 +15,7 @@ export default function Checklist() {
       description="Interstate moving timeline from 8 weeks out through delivery day and post-move tasks."
       path="/resources/checklist"
     />
-    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral dark:prose-invert">
+    <div className="container mx-auto px-4 py-10 max-w-3xl prose prose-neutral">
       <Link href="/resources" className="text-sm hover:underline">← Back to all resources</Link>
 
       <h1>Complete Interstate Moving Checklist</h1>

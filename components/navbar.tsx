@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { QuoteModal } from '@/components/quote-modal';
 import { DestinationsMegaMenu } from '@/components/navbar/destinations-mega-menu';
 
@@ -67,12 +66,10 @@ export function Navbar() {
           >
             <FileText className="h-4 w-4" /> Get Free Quotes
           </Button>
-          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center gap-2">
-          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"

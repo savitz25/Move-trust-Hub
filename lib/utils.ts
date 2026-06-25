@@ -18,10 +18,10 @@ export function formatRating(rating: number): string {
 }
 
 export function getRatingColor(rating: number): string {
-  if (rating >= 4.5) return 'text-emerald-600 dark:text-emerald-400';
-  if (rating >= 4.0) return 'text-emerald-600 dark:text-emerald-400';
-  if (rating >= 3.5) return 'text-amber-600 dark:text-amber-400';
-  return 'text-rose-600 dark:text-rose-400';
+  if (rating >= 4.5) return 'text-emerald-600';
+  if (rating >= 4.0) return 'text-emerald-600';
+  if (rating >= 3.5) return 'text-amber-600';
+  return 'text-rose-600';
 }
 
 export function calculateComplaintRatio(complaints: number, shipments: number): number {

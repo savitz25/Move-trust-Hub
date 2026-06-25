@@ -47,7 +47,7 @@ export function LocalMoverCard({
             <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700 dark:text-amber-400">
+        <div className="flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-1 text-sm font-semibold text-amber-700">
           <Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
           {mover.rating.toFixed(1)}
           <span className="text-xs font-normal text-muted-foreground">
