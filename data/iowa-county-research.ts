@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Iowa county research — batch 1: 21 counties */
+/** Hand-curated Iowa county research — 47 counties */
 export const iowaCountyResearch: Record<string, CuratedCountyResearch> = {
   polk: {
     marketNotes:
@@ -361,6 +361,448 @@ export const iowaCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Knoxville and surrounding areas before booking.',
       'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
       'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lee: {
+    marketNotes:
+      'Lee County, IA is a southeastern Iowa Mississippi River county centered on Fort Madison and Keokuk with rural residential, riverfront industrial, and Mississippi River southeast corridor demand across bluff-country communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Lee County pricing reflects Fort Madison and Keokuk-area demand, Mississippi River southeast corridor travel distances, cross-border Missouri logistics, and competition among regional agents serving Lee County communities.',
+    },
+    tips: [
+      'Verify coverage for Fort Madison, Keokuk, and surrounding Lee County areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and rural properties.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  boone: {
+    marketNotes:
+      'Boone County, IA is a central Iowa county centered on Boone with residential, manufacturing, and Des Moines River central corridor agricultural demand across I-35 gateway communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Boone County pricing reflects Boone-area demand, Des Moines River central corridor travel distances, agricultural property logistics, and competition among regional agents serving Boone County communities.',
+    },
+    tips: [
+      'Verify coverage for Boone and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  benton: {
+    marketNotes:
+      'Benton County is an eastern Iowa county centered on Vinton with rural residential, manufacturing, and Cedar River east corridor agricultural demand across Linn County fringe communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Benton County pricing reflects Vinton-area demand, Cedar River east corridor travel distances, agricultural property logistics, and competition among regional agents serving Benton County communities.',
+    },
+    tips: [
+      'Verify coverage for Vinton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  plymouth: {
+    marketNotes:
+      'Plymouth County, IA is a northwest Iowa county centered on Le Mars with Dutch-heritage community, agricultural, and Floyd River valley corridor demand across Siouxland fringe communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Plymouth County pricing reflects Le Mars-area demand, Floyd River valley travel distances, cross-border South Dakota logistics, and competition among regional agents serving Plymouth County communities.',
+    },
+    tips: [
+      'Verify coverage for Le Mars and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  bremer: {
+    marketNotes:
+      'Bremer County is a northeastern Iowa county centered on Waverly with rural residential, Wartburg College-adjacent, and northern Cedar River corridor agricultural demand across Waterloo fringe communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Bremer County pricing reflects Waverly-area demand, Cedar River north corridor travel distances, agricultural property logistics, and competition among regional agents serving Bremer County communities.',
+    },
+    tips: [
+      'Verify coverage for Waverly and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  washington: {
+    marketNotes:
+      'Washington County, IA is an eastern Iowa county centered on Washington — not to be confused with Washington County in other states — with rural residential and eastern Skunk River corridor agricultural demand across Johnson County fringe communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Washington County pricing reflects Washington-area demand, Skunk River east corridor travel distances, agricultural property logistics, and competition among regional agents serving Washington County communities.',
+    },
+    tips: [
+      'Verify coverage for Washington and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mahaska: {
+    marketNotes:
+      'Mahaska County is a south-central Iowa county centered on Oskaloosa with residential, manufacturing, and Des Moines River corridor agricultural demand across regional hub communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Mahaska County pricing reflects Oskaloosa-area demand, Des Moines River corridor travel distances, agricultural property logistics, and competition among regional agents serving Mahaska County communities.',
+    },
+    tips: [
+      'Verify coverage for Oskaloosa and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jones: {
+    marketNotes:
+      'Jones County, IA is an eastern Iowa county centered on Anamosa with rural residential, state-penitentiary-adjacent, and Wapsipinicon River valley corridor demand — not to be confused with Jones County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Jones County pricing reflects Anamosa-area demand, Wapsipinicon valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Jones County communities.',
+    },
+    tips: [
+      'Verify coverage for Anamosa and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  buchanan: {
+    marketNotes:
+      'Buchanan County, IA is a northeastern Iowa county centered on Independence with rural residential and Wapsipinicon River north corridor agricultural demand — not to be confused with Buchanan County in Missouri or other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Buchanan County pricing reflects Independence-area demand, Wapsipinicon north corridor travel distances, agricultural property logistics, and competition among regional agents serving Buchanan County communities.',
+    },
+    tips: [
+      'Verify coverage for Independence and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'buena-vista': {
+    marketNotes:
+      'Buena Vista County is a northwest Iowa county centered on Storm Lake with rural residential, college-town, and Little Sioux River valley agricultural demand across lake-country communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Buena Vista County pricing reflects Storm Lake-area demand, Little Sioux valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Buena Vista County communities.',
+    },
+    tips: [
+      'Verify coverage for Storm Lake and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  carroll: {
+    marketNotes:
+      'Carroll County, IA is a western Iowa county centered on Carroll with rural residential and Middle Raccoon River valley agricultural demand — not to be confused with Carroll County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Carroll County pricing reflects Carroll-area demand, Middle Raccoon valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Carroll County communities.',
+    },
+    tips: [
+      'Verify coverage for Carroll and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  winneshiek: {
+    marketNotes:
+      'Winneshiek County is a northeast Iowa county centered on Decorah with rural residential, Luther College-adjacent, tourism, and Upper Iowa River valley corridor demand across bluff-country communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Winneshiek County pricing reflects Decorah-area demand, Upper Iowa River valley corridor travel distances, agricultural and bluff-country property logistics, and competition among regional agents serving Winneshiek County communities.',
+    },
+    tips: [
+      'Verify coverage for Decorah and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  henry: {
+    marketNotes:
+      'Henry County, IA is a southeastern Iowa county centered on Mount Pleasant with rural residential, Iowa Wesleyan-adjacent, and Skunk River southeast corridor agricultural demand — not to be confused with Henry County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Henry County pricing reflects Mount Pleasant-area demand, Skunk River southeast corridor travel distances, agricultural property logistics, and competition among regional agents serving Henry County communities.',
+    },
+    tips: [
+      'Verify coverage for Mount Pleasant and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jackson: {
+    marketNotes:
+      'Jackson County, IA is an eastern Iowa county centered on Maquoketa with rural residential, state-park tourism, and Maquoketa River valley corridor demand — not to be confused with Jackson County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Jackson County pricing reflects Maquoketa-area demand, Maquoketa River valley corridor travel distances, cross-border Dubuque corridor logistics, and competition among regional agents serving Jackson County communities.',
+    },
+    tips: [
+      'Verify coverage for Maquoketa and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  fayette: {
+    marketNotes:
+      'Fayette County, IA is a northeastern Iowa county centered on West Union with rural residential and Turkey River valley corridor agricultural demand — not to be confused with Fayette County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Fayette County pricing reflects West Union-area demand, Turkey River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Fayette County communities.',
+    },
+    tips: [
+      'Verify coverage for West Union and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  cedar: {
+    marketNotes:
+      'Cedar County, IA is an eastern Iowa county centered on Tipton — not to be confused with Cedar County in Nebraska or other states — with rural residential and southern Cedar River corridor agricultural demand across Quad Cities fringe communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Cedar County pricing reflects Tipton-area demand, Cedar River south corridor travel distances, agricultural property logistics, and competition among regional agents serving Cedar County communities.',
+    },
+    tips: [
+      'Verify coverage for Tipton and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  poweshiek: {
+    marketNotes:
+      'Poweshiek County is a central Iowa county centered on Montezuma with rural residential, Grinnell-adjacent spillover, and North Skunk River valley corridor agricultural demand across regional hub communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Poweshiek County pricing reflects Montezuma-area demand, North Skunk valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Poweshiek County communities.',
+    },
+    tips: [
+      'Verify coverage for Montezuma and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  dickinson: {
+    marketNotes:
+      'Dickinson County, IA is a northwest Iowa lakes-country county centered on Spirit Lake and the Okoboji chain with strong resort, vacation-rental, seasonal-property, and cross-border Minnesota corridor demand — not to be confused with Dickinson County in Michigan or other states.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Dickinson County pricing reflects Spirit Lake and Okoboji lakes secondary-metro demand, resort-season corridor traffic, vacation-rental turnover logistics, and competition among regional agents serving Dickinson County communities.',
+    },
+    tips: [
+      'Verify coverage for Spirit Lake and surrounding areas before booking.',
+      'Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.',
+      'Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  delaware: {
+    marketNotes:
+      'Delaware County, IA is an eastern Iowa county centered on Manchester with rural residential and Maquoketa River north corridor agricultural demand — not to be confused with Delaware County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Delaware County pricing reflects Manchester-area demand, Maquoketa River north corridor travel distances, agricultural property logistics, and competition among regional agents serving Delaware County communities.',
+    },
+    tips: [
+      'Verify coverage for Manchester and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  iowa: {
+    marketNotes:
+      'Iowa County, IA is an eastern Iowa county centered on Marengo — not to be confused with the state of Iowa or Iowa County in Wisconsin — with rural residential and Iowa River corridor agricultural demand across Johnson and Linn County fringe communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Iowa County pricing reflects Marengo-area demand, Iowa River corridor travel distances, agricultural property logistics, and competition among regional agents serving Iowa County communities.',
+    },
+    tips: [
+      'Verify coverage for Marengo and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hardin: {
+    marketNotes:
+      'Hardin County is a central Iowa county centered on Eldora with rural residential, Iowa River north corridor agricultural demand, and Story County fringe spillover across regional hub communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hardin County pricing reflects Eldora-area demand, Iowa River north corridor travel distances, agricultural property logistics, and competition among regional agents serving Hardin County communities.',
+    },
+    tips: [
+      'Verify coverage for Eldora and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  crawford: {
+    marketNotes:
+      'Crawford County, IA is a western Iowa county centered on Denison with rural residential, meatpacking-industry, and Boyer River valley corridor agricultural demand — not to be confused with Crawford County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Crawford County pricing reflects Denison-area demand, Boyer River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Crawford County communities.',
+    },
+    tips: [
+      'Verify coverage for Denison and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  clay: {
+    marketNotes:
+      'Clay County, IA is a northwest Iowa county centered on Spencer with rural residential, regional retail-hub, and Little Sioux River north corridor agricultural demand — not to be confused with Clay County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Clay County pricing reflects Spencer-area demand, Little Sioux north corridor travel distances, cross-border South Dakota logistics, and competition among regional agents serving Clay County communities.',
+    },
+    tips: [
+      'Verify coverage for Spencer and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  jefferson: {
+    marketNotes:
+      'Jefferson County, IA is a southeastern Iowa county centered on Fairfield with rural residential, Maharishi University-adjacent, and Skunk River corridor agricultural demand — not to be confused with Jefferson County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Jefferson County pricing reflects Fairfield-area demand, Skunk River corridor travel distances, cross-border Illinois logistics, and competition among regional agents serving Jefferson County communities.',
+    },
+    tips: [
+      'Verify coverage for Fairfield and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  hamilton: {
+    marketNotes:
+      'Hamilton County, IA is a north-central Iowa county centered on Webster City with rural residential, manufacturing, and Boone River valley corridor agricultural demand — not to be confused with Hamilton County in other states.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$100–$155/hr for a 2-person crew',
+      note: 'Hamilton County pricing reflects Webster City-area demand, Boone River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Hamilton County communities.',
+    },
+    tips: [
+      'Verify coverage for Webster City and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  mills: {
+    marketNotes:
+      'Mills County, IA anchors southwest Iowa Omaha metro spillover centered on Glenwood with strong Missouri River cross-border, Council Bluffs-adjacent, and suburban residential demand across river-bluff corridor communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Mills County pricing reflects Glenwood secondary-metro demand, Omaha metro Missouri River corridor traffic, cross-border Nebraska logistics, and competition among regional agents serving Mills County communities.',
+    },
+    tips: [
+      'Verify coverage for Glenwood and surrounding areas before booking.',
+      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes and rural properties.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],

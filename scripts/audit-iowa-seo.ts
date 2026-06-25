@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for Iowa local movers directory (batch 1 — 21 counties).
+ * Full SEO / E-E-A-T audit for Iowa local movers directory (batches 1–2 — 47 counties).
  * Run: npx tsx scripts/audit-iowa-seo.ts
  */
 import { iowaCountyResearch } from '../data/iowa-county-research';
@@ -19,7 +19,7 @@ const SECONDARY_TARGETS: Record<string, number> = {
   dallas: 8,
 };
 const DEFAULT_TARGET = 5;
-const EXPECTED_COUNT = 21;
+const EXPECTED_COUNT = 47;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? SECONDARY_TARGETS[slug] ?? DEFAULT_TARGET;
