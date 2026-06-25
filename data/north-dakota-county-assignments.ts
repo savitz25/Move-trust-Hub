@@ -71,8 +71,8 @@ const CURATED_ND_COUNTIES: Record<string, string[]> = {
     'budd-van-lines-fargo-nd',
     'fargo-corridor-moving-cass-nd',
     'red-river-valley-moving-cass-nd',
+    'fargo-metro-corporate-moving-cass-nd',
     'hercules-movers-fargo-nd',
-    'krupp-moving-fargo-nd',
   ],
   cavalier: [
     'regional-cavalier-nd-movers',
