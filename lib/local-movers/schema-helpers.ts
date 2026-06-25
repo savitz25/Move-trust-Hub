@@ -47,6 +47,10 @@ const SCHEMA_PRIMARY_CITY_OVERRIDES: Record<string, Record<string, string>> = {
   minnesota: {
     dakota: 'Lakeville',
     ramsey: 'Saint Paul',
+    'blue-earth': 'Mankato',
+    mcleod: 'Hutchinson',
+    carlton: 'Cloquet',
+    nicollet: 'St. Peter',
   },
 };
 
