@@ -9,7 +9,7 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const DEFAULT_TARGET = 10;
-const EXPECTED_COUNT = 4;
+const EXPECTED_COUNT = 29;
 
 function getTarget(_slug: string): number {
   return DEFAULT_TARGET;
@@ -64,7 +64,7 @@ for (const slug of curatedSlugs) {
 console.log(`Issues: ${issues.length}`);
 
 if (issues.length === 0) {
-  console.log(`\n✓ Utah curated counties meet full curation standard (${EXPECTED_COUNT}/${EXPECTED_COUNT}).`);
+  console.log(`\n✓ Utah curated counties meet full curation standard (29/29).`);
 } else {
   console.log('\nIssues:');
   for (const line of issues) console.log(`  ${line}`);

@@ -254,7 +254,7 @@ const AZ_HIGH_TRAFFIC_COUNTIES = new Set(['maricopa', 'pima']);
 
 const NM_HIGH_TRAFFIC_COUNTIES = new Set(['bernalillo']);
 
-const UT_HIGH_TRAFFIC_COUNTIES = new Set(['salt-lake', 'utah', 'davis']);
+const UT_HIGH_TRAFFIC_COUNTIES = new Set(['salt-lake', 'utah', 'davis', 'washington']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
