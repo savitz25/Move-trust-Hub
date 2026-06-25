@@ -257,7 +257,7 @@ const NM_HIGH_TRAFFIC_COUNTIES = new Set(['bernalillo']);
 
 const UT_HIGH_TRAFFIC_COUNTIES = new Set(['salt-lake', 'utah']);
 
-const CO_HIGH_TRAFFIC_COUNTIES = new Set(['denver', 'el-paso', 'arapahoe']);
+const CO_HIGH_TRAFFIC_COUNTIES = new Set(['denver', 'el-paso', 'arapahoe', 'larimer', 'boulder']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
