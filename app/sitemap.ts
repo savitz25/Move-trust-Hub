@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data';
+import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
+import { getMarketBySlug, getMarketPath } from '@/lib/destinations/markets';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const companies = await getAllCompanies();
   const autoTransportCompanies = await getAllAutoTransportCompanies();
@@ -24,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/companies',
     '/local-movers',
+    '/moving-to',
     '/auto-transport',
     '/moving-calculator',
     '/compare',
@@ -45,6 +48,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  const destinationPages = getPublishedCityHubSlugs()
+    .map((slug) => getMarketBySlug(slug))
+    .filter((market): market is NonNullable<typeof market> => Boolean(market))
+    .map((market) => ({
+      url: `https://www.movetrusthub.com${getMarketPath(market)}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    }));
+
   const autoTransportPages = autoTransportCompanies.map((company) => ({
     url: `https://www.movetrusthub.com/auto-transport/${company.slug}`,
     lastModified: new Date(company.lastUpdated),
@@ -52,5 +65,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...companyPages, ...autoTransportPages];
+  return [...staticPages, ...destinationPages, ...companyPages, ...autoTransportPages];
 }

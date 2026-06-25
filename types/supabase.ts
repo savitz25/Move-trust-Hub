@@ -77,6 +77,8 @@ export interface Database {
           home_size: string | null;
           estimated_volume: number | null;
           notes: string | null;
+          destination_slug: string | null;
+          market_priority: number | null;
           source: string | null;
           created_at: string;
         };
@@ -90,6 +92,8 @@ export interface Database {
           home_size?: string | null;
           estimated_volume?: number | null;
           notes?: string | null;
+          destination_slug?: string | null;
+          market_priority?: number | null;
           source?: string | null;
         };
         Update: Partial<Database['public']['Tables']['quote_requests']['Row']>;

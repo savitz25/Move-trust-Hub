@@ -168,12 +168,15 @@ create table if not exists public.quote_requests (
   home_size text,
   estimated_volume numeric,
   notes text,
+  destination_slug text,
+  market_priority smallint,
   source text default 'website',
   created_at timestamptz default now()
 );
 
 create index if not exists idx_quote_requests_created on public.quote_requests (created_at desc);
 create index if not exists idx_quote_requests_email on public.quote_requests (email);
+create index if not exists idx_quote_requests_destination on public.quote_requests (destination_slug) where destination_slug is not null;
 
 -- RLS: Public can submit leads (insert only). No public read.
 alter table public.quote_requests enable row level security;

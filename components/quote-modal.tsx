@@ -29,6 +29,8 @@ export type QuotePrefillData = {
   serviceType?: 'moving' | 'auto-transport';
   notes?: string;
   autoTransport?: AutoTransportQuotePrefill;
+  destinationSlug?: string;
+  marketPriority?: number;
 };
 
 interface QuoteModalProps {
@@ -156,11 +158,15 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
         ?? (formData.estimatedVolume ? Math.round(parseFloat(formData.estimatedVolume) * 7) : null),
       inventory: hasInventory ? prefilledData.inventory : null,
       notes: formData.notes.trim() || null,
+      destination_slug: prefilledData.destinationSlug ?? null,
+      market_priority: prefilledData.marketPriority ?? null,
       source: isAutoTransport
         ? 'auto-transport-calculator'
-        : hasInventory
-          ? 'moving-calculator'
-          : 'quote-modal',
+        : prefilledData.destinationSlug
+          ? `destination-hub:${prefilledData.destinationSlug}`
+          : hasInventory
+            ? 'moving-calculator'
+            : 'quote-modal',
       service_type: isAutoTransport ? 'auto-transport' : 'moving',
       auto_transport: prefilledData.autoTransport ?? null,
     };
@@ -330,6 +336,18 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
           {!submitted ? (
             /* ENGAGING FORM */
             <form onSubmit={handleSubmit} className="space-y-5">
+            <input
+              type="hidden"
+              name="destination_slug"
+              value={prefilledData.destinationSlug ?? ''}
+              readOnly
+            />
+            <input
+              type="hidden"
+              name="market_priority"
+              value={prefilledData.marketPriority != null ? String(prefilledData.marketPriority) : ''}
+              readOnly
+            />
             {/* Value reinforcement + prefill highlight */}
             {isAutoTransport && prefilledData.autoTransport && (
               <div className="rounded-lg bg-primary/5 border border-primary/20 p-3 text-sm space-y-1">
