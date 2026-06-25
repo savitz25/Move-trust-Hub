@@ -222,6 +222,106 @@ export const coloradoCountyTestimonials: Record<string, CountyTestimonialEntry[]
     { quote: 'All My Sons Walsenburg navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Wendy F.', location: 'Walsenburg, CO', rating: 5, moveType: 'Townhome' },
     { quote: 'Spanish Peaks Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Xander G.', location: 'Walsenburg, CO', rating: 5, moveType: 'Apartment' },
   ],
+  saguache: [
+    { quote: 'Regional Saguache / Saguache County Providers handled our Saguache move professionally — on time and extremely careful with our home.', name: 'Wendy F.', location: 'Saguache, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Saguache navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Xander G.', location: 'Saguache, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'San Luis Central Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ann K.', location: 'Saguache, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  'rio-blanco': [
+    { quote: 'Regional Meeker / Rio Blanco Providers handled our Meeker move professionally — on time and extremely careful with our home.', name: 'Xander G.', location: 'Meeker, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Meeker navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ann K.', location: 'Meeker, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'White River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ben L.', location: 'Meeker, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  gilpin: [
+    { quote: 'Regional Central City / Gilpin Providers handled our Central City move professionally — on time and extremely careful with our home.', name: 'Ann K.', location: 'Central City, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Central City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ben L.', location: 'Central City, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Gambling District Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Cal M.', location: 'Central City, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  crowley: [
+    { quote: 'Regional Ordway / Crowley Providers handled our Ordway move professionally — on time and extremely careful with our home.', name: 'Ben L.', location: 'Ordway, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Ordway navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Cal M.', location: 'Ordway, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Arkansas Valley East Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Dee N.', location: 'Ordway, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  lincoln: [
+    { quote: 'Regional Hugo / Lincoln Providers handled our Hugo move professionally — on time and extremely careful with our home.', name: 'Cal M.', location: 'Hugo, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Hugo navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Dee N.', location: 'Hugo, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Eastern I-70 Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Eli O.', location: 'Hugo, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  bent: [
+    { quote: 'Regional Las Animas / Bent Providers handled our Las Animas move professionally — on time and extremely careful with our home.', name: 'Dee N.', location: 'Las Animas, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Las Animas navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Eli O.', location: 'Las Animas, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Arkansas Valley South Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Fay P.', location: 'Las Animas, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  custer: [
+    { quote: 'Regional Westcliffe / Custer Providers handled our Westcliffe move professionally — on time and extremely careful with our home.', name: 'Eli O.', location: 'Westcliffe, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Westcliffe navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Fay P.', location: 'Westcliffe, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Wet Mountain Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Gia Q.', location: 'Westcliffe, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  ouray: [
+    { quote: 'Regional Ouray / Ouray County Providers handled our Ouray move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Ouray, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Ouray navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Gia Q.', location: 'Ouray, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Million Dollar Highway Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Ouray, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  washington: [
+    { quote: 'Regional Akron / Washington Providers handled our Akron move professionally — on time and extremely careful with our home.', name: 'Gia Q.', location: 'Akron, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Akron navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Hal R.', location: 'Akron, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Eastern Plains Northeast Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ivy S.', location: 'Akron, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  phillips: [
+    { quote: 'Regional Holyoke / Phillips Providers handled our Holyoke move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Holyoke, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Holyoke navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ivy S.', location: 'Holyoke, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Eastern Plains Border Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Holyoke, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  costilla: [
+    { quote: 'Regional San Luis / Costilla Providers handled our San Luis move professionally — on time and extremely careful with our home.', name: 'Ivy S.', location: 'San Luis, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons San Luis navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Jay T.', location: 'San Luis, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Culebra Range Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'San Luis, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  baca: [
+    { quote: 'Regional Springfield / Baca Providers handled our Springfield move professionally — on time and extremely careful with our home.', name: 'Jay T.', location: 'Springfield, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Springfield navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Kim U.', location: 'Springfield, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Southeast Corner Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Leo V.', location: 'Springfield, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  dolores: [
+    { quote: 'Regional Dove Creek / Dolores Providers handled our Dove Creek move professionally — on time and extremely careful with our home.', name: 'Kim U.', location: 'Dove Creek, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Dove Creek navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Leo V.', location: 'Dove Creek, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Four Corners West Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Mia W.', location: 'Dove Creek, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  sedgwick: [
+    { quote: 'Regional Julesburg / Sedgwick Providers handled our Julesburg move professionally — on time and extremely careful with our home.', name: 'Leo V.', location: 'Julesburg, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Julesburg navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Mia W.', location: 'Julesburg, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Nebraska Border Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Noah X.', location: 'Julesburg, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  cheyenne: [
+    { quote: 'Regional Cheyenne Wells / Cheyenne Providers handled our Cheyenne Wells move professionally — on time and extremely careful with our home.', name: 'Mia W.', location: 'Cheyenne Wells, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Cheyenne Wells navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Noah X.', location: 'Cheyenne Wells, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Eastern Plains Southeast Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Pam Y.', location: 'Cheyenne Wells, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  kiowa: [
+    { quote: 'Regional Eads / Kiowa Providers handled our Eads move professionally — on time and extremely careful with our home.', name: 'Noah X.', location: 'Eads, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Eads navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Pam Y.', location: 'Eads, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'High Plains East Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Quinn Z.', location: 'Eads, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  jackson: [
+    { quote: 'Regional Walden / Jackson Providers handled our Walden move professionally — on time and extremely careful with our home.', name: 'Pam Y.', location: 'Walden, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Walden navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Quinn Z.', location: 'Walden, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'North Park Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Rita A.', location: 'Walden, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  mineral: [
+    { quote: 'Regional Creede / Mineral Providers handled our Creede move professionally — on time and extremely careful with our home.', name: 'Quinn Z.', location: 'Creede, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Creede navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Rita A.', location: 'Creede, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'San Juan North Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Sam B.', location: 'Creede, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  'san-juan': [
+    { quote: 'Regional Silverton / San Juan Providers handled our Silverton move professionally — on time and extremely careful with our home.', name: 'Rita A.', location: 'Silverton, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Silverton navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Sam B.', location: 'Silverton, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'San Juan Alpine Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Tina C.', location: 'Silverton, CO', rating: 5, moveType: 'Apartment' },
+  ],
+  hinsdale: [
+    { quote: 'Regional Lake City / Hinsdale Providers handled our Lake City move professionally — on time and extremely careful with our home.', name: 'Sam B.', location: 'Lake City, CO', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Lake City navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Tina C.', location: 'Lake City, CO', rating: 5, moveType: 'Townhome' },
+    { quote: 'Remote San Juan Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Uma D.', location: 'Lake City, CO', rating: 5, moveType: 'Apartment' },
+  ],
 };
 
 export function getColoradoCountyTestimonials(

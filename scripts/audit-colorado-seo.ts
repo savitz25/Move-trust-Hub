@@ -9,7 +9,7 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const DEFAULT_TARGET = 10;
-const EXPECTED_COUNT = 44;
+const EXPECTED_COUNT = 64;
 
 function getTarget(_slug: string): number {
   return DEFAULT_TARGET;
