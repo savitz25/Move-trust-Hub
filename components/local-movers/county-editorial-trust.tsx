@@ -48,6 +48,7 @@ export const UTAH_COUNTY_CONTENT_UPDATED = '2026-06-24';
 export const COLORADO_COUNTY_CONTENT_UPDATED = '2026-06-25';
 export const IDAHO_COUNTY_CONTENT_UPDATED = '2026-06-25';
 export const MONTANA_COUNTY_CONTENT_UPDATED = '2026-06-25';
+export const WYOMING_COUNTY_CONTENT_UPDATED = '2026-06-25';
 
 type Props = {
   countyLabel: string;

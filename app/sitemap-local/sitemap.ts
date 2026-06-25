@@ -41,6 +41,7 @@ import {
   COLORADO_COUNTY_CONTENT_UPDATED,
   IDAHO_COUNTY_CONTENT_UPDATED,
   MONTANA_COUNTY_CONTENT_UPDATED,
+  WYOMING_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -264,6 +265,8 @@ const CO_HIGH_TRAFFIC_COUNTIES = new Set(['denver', 'arapahoe', 'jefferson', 'ad
 const ID_HIGH_TRAFFIC_COUNTIES = new Set(['ada', 'canyon']);
 
 const MT_HIGH_TRAFFIC_COUNTIES = new Set(['yellowstone', 'missoula', 'gallatin', 'cascade']);
+
+const WY_HIGH_TRAFFIC_COUNTIES = new Set(['laramie', 'natrona']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -710,7 +713,9 @@ export default async function sitemap({
                                                                                           ? new Date(IDAHO_COUNTY_CONTENT_UPDATED)
                                                                                           : id === 'montana'
                                                                                             ? new Date(MONTANA_COUNTY_CONTENT_UPDATED)
-                                                                                            : new Date();
+                                                                                            : id === 'wyoming'
+                                                                                              ? new Date(WYOMING_COUNTY_CONTENT_UPDATED)
+                                                                                              : new Date();
 
   return [
     {
@@ -775,7 +780,8 @@ export default async function sitemap({
         (id === 'utah' && UT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'colorado' && CO_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'idaho' && ID_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'montana' && MT_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'montana' && MT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'wyoming' && WY_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

@@ -122,6 +122,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'colorado' ||
                 state.slug === 'idaho' ||
                 state.slug === 'montana' ||
+                state.slug === 'wyoming' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -165,7 +166,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                                         ? 'Browse all 44 Idaho county guides — up to 11 curated movers in Ada County (Boise metro), 8–9 in Canyon (Nampa–Caldwell), and 5–7 regional specialists in every county. Treasure Valley guides cover rapid suburban growth, corporate relocations, and family moves; northern Idaho covers Coeur d\'Alene lakeside tourism and second-home logistics; Sun Valley and Teton Valley cover resort-season moves; rural counties emphasize agricultural hauls, long-distance relocations, and remote logistics. FMCSA licensing, cost estimates, and Idaho-specific moving tips.'
                                                         : state.slug === 'montana'
                                                           ? 'Browse all 56 Montana county guides — up to 11 curated movers in Yellowstone County (Billings), 8–10 in Missoula and Gallatin (Bozeman), 8 in Cascade (Great Falls), and 5–7 regional specialists in every county. Billings covers regional hub, corporate, and agricultural moves; Missoula and Bozeman cover university, tourism, and outdoor-lifestyle growth; Great Falls covers Malmstrom AFB military PCS; Glacier and Yellowstone gateway counties emphasize tourism and second-home logistics; rural Hi-Line and plains counties emphasize harsh winters, remote logistics, and long-distance Lower 48 hauls. FMCSA licensing, cost estimates, and Montana-specific moving tips.'
-                                                          : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                                          : state.slug === 'wyoming'
+                                                            ? 'Browse all 23 Wyoming county guides — 10 curated movers in every county. Laramie County (Cheyenne) and Natrona County (Casper) lead with Two Men and a Truck franchises; Campbell, Sweetwater, and Albany cover energy-sector and university demand; Teton and Park cover luxury resort and Yellowstone gateway tourism; rural counties emphasize long regional hauls, ranch properties, and limited crew availability. FMCSA licensing, cost estimates, and Wyoming-specific moving tips.'
+                                                            : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>
