@@ -4,8 +4,13 @@ import type { Database } from '@/types/supabase';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
+let missingEnvWarned = false;
+
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn('Missing Supabase env vars. Using local seed data fallback.');
+  if (!missingEnvWarned) {
+    missingEnvWarned = true;
+    console.warn('Missing Supabase env vars. Using local seed data fallback.');
+  }
 }
 
 export const supabase = createClient<Database>(
