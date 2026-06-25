@@ -269,7 +269,7 @@ const MT_HIGH_TRAFFIC_COUNTIES = new Set(['yellowstone', 'missoula', 'gallatin',
 
 const WY_HIGH_TRAFFIC_COUNTIES = new Set(['laramie', 'natrona', 'teton']);
 
-const ND_HIGH_TRAFFIC_COUNTIES = new Set(['cass', 'burleigh', 'williams']);
+const ND_HIGH_TRAFFIC_COUNTIES = new Set(['cass', 'burleigh', 'williams', 'grand-forks']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',

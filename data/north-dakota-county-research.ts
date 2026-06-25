@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated North Dakota county research — 53/53 */
+/** Hand-curated North Dakota county research — 53/53 (rural/specialized market) */
 export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = {
   cass: {
     marketNotes:
-      'Cass County is North Dakota’s most populous county centered on Fargo with strong suburban, commercial, university-spillover, and Red River Valley residential demand across West Fargo, Horace, and Moorhead-adjacent communities.',
+      'Cass County is North Dakota’s most populous county centered on Fargo with strong corporate, university (NDSU), suburban new-construction, and Red River Valley residential demand across West Fargo, Horace, and Moorhead-adjacent communities.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
@@ -18,10 +18,10 @@ export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = 
       note: 'Cass County pricing reflects Fargo metro demand, suburban new-construction turnover, I-29 Red River corridor traffic, and competition among full-service agents serving Cass County communities.',
     },
     tips: [
-      'Verify coverage for Fargo and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Fargo, West Fargo, corporate relocations, and NDSU-area moves before booking.',
+      'I-29 Red River Valley corridor traffic and winter weather impact scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), university semester turnover, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -35,10 +35,10 @@ export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = 
       note: 'Burleigh County pricing reflects Bismarck capital-region demand, state-government and healthcare relocations, I-94 Missouri Plateau corridor traffic, and competition among regional agents serving Burleigh County communities.',
     },
     tips: [
-      'Verify coverage for Bismarck and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Bismarck, state government transfers, and Missouri River corridor communities before booking.',
+      'I-94 Missouri Plateau corridor traffic and winter weather impact scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), legislative session turnover, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -86,10 +86,10 @@ export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = 
       note: 'Williams County pricing reflects Williston Bakken-basin demand, energy-sector workforce relocations, US-2 and US-85 corridor traffic, and competition among regional agents serving Williams County communities.',
     },
     tips: [
-      'Verify coverage for Williston and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Verify coverage for Williston, Bakken oilfield rotations, and surrounding energy-corridor communities before booking.',
+      'Energy-sector rotation windows and US-2/US-85 corridor traffic impact scheduling — confirm crew arrival dates.',
+      'Confirm insurance for high-value homes, man-camp housing, and rural properties.',
+      'Book early for peak seasons (May–September), energy hiring cycles, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
@@ -112,7 +112,7 @@ export const northDakotaCountyResearch: Record<string, CuratedCountyResearch> = 
   },
   stark: {
     marketNotes:
-      'Stark County is a southwestern North Dakota county centered on Dickinson with residential, energy-sector, and agricultural demand across the southwest plains and I-94 corridor communities.',
+      'Stark County is a southwestern North Dakota county centered on Dickinson with residential, Bakken-adjacent energy-sector, and agricultural demand across the southwest plains and I-94 corridor communities.',
     costs: {
       studioRange: '$750–$1,500',
       familyRange: '$2,600–$5,800+',

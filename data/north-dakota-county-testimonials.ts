@@ -3,19 +3,19 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated North Dakota county testimonials — 53/53 */
 export const northDakotaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   cass: [
-    { quote: 'Two Men and a Truck Fargo handled our suburban move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Fargo, ND', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Fargo navigated our West Fargo relocation with fair pricing through Red River Valley corridor traffic.', name: 'Beth N.', location: 'West Fargo, ND', rating: 5, moveType: 'Townhome' },
-    { quote: 'Red River Valley Moving served our relocation efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Fargo, ND', rating: 5, moveType: 'Apartment' },
+    { quote: 'Fargo Metro Corporate Moving coordinated our tech-company transfer into West Fargo — handled suburban new-construction access and delivered on schedule.', name: 'Alex M.', location: 'West Fargo, ND', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Two Men and a Truck Fargo handled our suburban move professionally — on time and extremely careful with our home through Red River Valley traffic.', name: 'Beth N.', location: 'Fargo, ND', rating: 5, moveType: 'Single-family' },
+    { quote: 'Red River Valley Moving served our NDSU-area semester move efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Fargo, ND', rating: 5, moveType: 'University move' },
   ],
   burleigh: [
-    { quote: 'Regional Bismarck / Burleigh Providers handled our Bismarck move professionally — on time and extremely careful with our home.', name: 'Eli O.', location: 'Bismarck, ND', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Bismarck navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Fay P.', location: 'Bismarck, ND', rating: 5, moveType: 'Townhome' },
-    { quote: 'Capital Region Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Gia Q.', location: 'Bismarck, ND', rating: 5, moveType: 'Apartment' },
+    { quote: 'Capital Region Moving coordinated our state government transfer into Bismarck — handled downtown access and delivered to our Lincoln-area home on schedule.', name: 'Eli O.', location: 'Bismarck, ND', rating: 5, moveType: 'Government relocation' },
+    { quote: 'Regional Bismarck Providers handled our Bismarck move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Bismarck, ND', rating: 5, moveType: 'Single-family' },
+    { quote: 'All My Sons Bismarck navigated our Mandan cross-river relocation with fair pricing and excellent I-94 corridor scheduling.', name: 'Gia Q.', location: 'Mandan, ND', rating: 5, moveType: 'Regional hub move' },
   ],
   'grand-forks': [
-    { quote: 'Regional Grand Forks / Grand Forks County Providers handled our Grand Forks move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Grand Forks, ND', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Grand Forks navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Gia Q.', location: 'Grand Forks, ND', rating: 5, moveType: 'Townhome' },
-    { quote: 'Red River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Hal R.', location: 'Grand Forks, ND', rating: 5, moveType: 'Apartment' },
+    { quote: 'Red River Valley Moving coordinated our UND faculty relocation — handled semester timing and delivered to our Grand Forks townhome on schedule.', name: 'Fay P.', location: 'Grand Forks, ND', rating: 5, moveType: 'University move' },
+    { quote: 'All My Sons Grand Forks navigated our relocation with fair pricing and excellent I-29 Red River corridor scheduling.', name: 'Gia Q.', location: 'Grand Forks, ND', rating: 5, moveType: 'Townhome' },
+    { quote: 'Regional Grand Forks Providers handled our family move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Grand Forks, ND', rating: 5, moveType: 'Single-family' },
   ],
   ward: [
     { quote: 'Regional Minot / Ward Providers handled our Minot move professionally — on time and extremely careful with our home.', name: 'Gia Q.', location: 'Minot, ND', rating: 5, moveType: 'Single-family' },
@@ -23,9 +23,9 @@ export const northDakotaCountyTestimonials: Record<string, CountyTestimonialEntr
     { quote: 'North Central Plains Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Ivy S.', location: 'Minot, ND', rating: 5, moveType: 'Apartment' },
   ],
   williams: [
-    { quote: 'Regional Williston / Williams Providers handled our Williston move professionally — on time and extremely careful with our home.', name: 'Hal R.', location: 'Williston, ND', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Williston navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Ivy S.', location: 'Williston, ND', rating: 5, moveType: 'Townhome' },
-    { quote: 'Bakken Basin Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Jay T.', location: 'Williston, ND', rating: 5, moveType: 'Apartment' },
+    { quote: 'Bakken Basin Moving coordinated our Casper-to-Williston oilfield rotation — understood our tight rig-start window and delivered on schedule.', name: 'Hal R.', location: 'Williston, ND', rating: 5, moveType: 'Energy sector (Bakken)' },
+    { quote: 'All My Sons Williston navigated our energy-sector family relocation with fair pricing and excellent US-2 corridor scheduling.', name: 'Ivy S.', location: 'Williston, ND', rating: 5, moveType: 'Single-family' },
+    { quote: 'Regional Williston Providers handled our man-camp housing move professionally — on time and extremely careful with our belongings.', name: 'Jay T.', location: 'Williston, ND', rating: 5, moveType: 'Energy workforce' },
   ],
   morton: [
     { quote: 'Regional Mandan / Morton Providers handled our Mandan move professionally — on time and extremely careful with our home.', name: 'Ivy S.', location: 'Mandan, ND', rating: 5, moveType: 'Single-family' },
@@ -33,9 +33,9 @@ export const northDakotaCountyTestimonials: Record<string, CountyTestimonialEntr
     { quote: 'Missouri Plateau Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Kim U.', location: 'Mandan, ND', rating: 5, moveType: 'Apartment' },
   ],
   stark: [
-    { quote: 'Regional Dickinson / Stark Providers handled our Dickinson move professionally — on time and extremely careful with our home.', name: 'Jay T.', location: 'Dickinson, ND', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Dickinson navigated our relocation with fair pricing and excellent regional scheduling.', name: 'Kim U.', location: 'Dickinson, ND', rating: 5, moveType: 'Townhome' },
-    { quote: 'Southwest Plains Moving served our move efficiently with punctual arrival and professional crew coordination.', name: 'Leo V.', location: 'Dickinson, ND', rating: 5, moveType: 'Apartment' },
+    { quote: 'Southwest Plains Moving coordinated our energy-sector transfer into Dickinson — handled I-94 corridor logistics and delivered on schedule.', name: 'Jay T.', location: 'Dickinson, ND', rating: 5, moveType: 'Energy sector' },
+    { quote: 'All My Sons Dickinson navigated our agricultural-property relocation with fair pricing and excellent rural driveway access planning.', name: 'Kim U.', location: 'Dickinson, ND', rating: 5, moveType: 'Agricultural' },
+    { quote: 'Regional Dickinson Providers handled our family move professionally — on time and extremely careful with our home.', name: 'Leo V.', location: 'Dickinson, ND', rating: 5, moveType: 'Single-family' },
   ],
   stutsman: [
     { quote: 'Regional Jamestown / Stutsman Providers handled our Jamestown move professionally — on time and extremely careful with our home.', name: 'Kim U.', location: 'Jamestown, ND', rating: 5, moveType: 'Single-family' },

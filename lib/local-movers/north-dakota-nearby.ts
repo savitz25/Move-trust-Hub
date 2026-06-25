@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** North Dakota curated county corridor links — 53/53 */
+/** North Dakota curated county corridor links — 53/53 (cross-border MN, SD, MT) */
 const ND_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   cass: [
     { slug: 'traill', name: 'Traill', seat: 'Hillsboro', href: '/local-movers/north-dakota/traill', displayLabel: 'Traill County, ND' },

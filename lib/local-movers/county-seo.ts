@@ -233,6 +233,9 @@ export function buildStateDescription(
   if (stateName === 'Wyoming') {
     return `Find curated local movers in all 23 Wyoming counties — up to 10 ranked companies in Laramie County (Cheyenne), 8–9 in Natrona (Casper), 7–8 in Teton (Jackson Hole), and 5–7 regional specialists in every county. Cheyenne guides cover government, F.E. Warren AFB military PCS, and Front Range regional hub moves; Casper covers oil-and-gas energy-sector relocations; Jackson Hole covers luxury resort and second-home logistics; rural counties emphasize harsh winters, remote ranch properties, agricultural hauls, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'North Dakota') {
+    return `Find curated local movers in all 53 North Dakota counties — up to 10 ranked companies in Cass County (Fargo metro), 8–9 in Burleigh (Bismarck), 7–8 in Williams (Williston / Bakken) and Grand Forks, and 5–7 regional specialists in every county. Fargo guides cover corporate, university, and suburban Red River Valley moves; Bismarck covers state government and regional hub relocations; Williston and McKenzie cover Bakken oil-and-gas workforce moves; rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||
