@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Colorado county research — batch 1+2: 23/64 */
+/** Hand-curated Colorado county research — batch 1+2+3: 44/64 */
 export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
   'el-paso': {
     marketNotes:
@@ -395,6 +395,363 @@ export const coloradoCountyResearch: Record<string, CuratedCountyResearch> = {
       'Verify coverage for Steamboat Springs and surrounding areas before booking.',
       'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
       'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  teller: {
+    marketNotes:
+      'Teller County is a Pikes Peak west mountain county with tourism, gaming, and residential demand across Cripple Creek and Woodland Park corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Teller County pricing reflects Cripple Creek-area demand, Pikes Peak west mountain-access logistics, Colorado Springs metro spillover, and competition among regional agents serving Teller County communities.',
+    },
+    tips: [
+      'Verify coverage for Cripple Creek and surrounding areas before booking.',
+      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  chaffee: {
+    marketNotes:
+      'Chaffee County is a central Colorado mountain county centered on Salida with tourism, outdoor-recreation, and residential demand across the Arkansas River Valley.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Chaffee County pricing reflects Salida tourism demand, mountain-access logistics, vacation-rental turnover, and competition among regional agents serving central Colorado mountain communities.',
+    },
+    tips: [
+      'Verify coverage for Salida and surrounding areas before booking.',
+      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  logan: {
+    marketNotes:
+      'Logan County, CO is an eastern plains county centered on Sterling with residential and agricultural demand across northeastern Colorado communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Logan County pricing reflects Sterling-area demand, eastern plains travel distances, and competition among regional agents serving northeastern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Sterling and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  park: {
+    marketNotes:
+      'Park County, CO spans Fairplay and the South Park high-country basin with mountain residential and seasonal demand across central Colorado communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Park County pricing reflects Fairplay-area demand, South Park mountain-access logistics, Denver metro spillover, and competition among regional agents serving high-country communities.',
+    },
+    tips: [
+      'Verify coverage for Fairplay and surrounding areas before booking.',
+      'Mountain-access roads and secondary-home logistics require route planning — confirm crew vehicle size and driveway access.',
+      'Confirm coverage for mountain cabins, ski-season properties, and steep-driveway homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  otero: {
+    marketNotes:
+      'Otero County, CO is a southeastern plains county centered on La Junta with residential and agricultural demand across Arkansas Valley communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Otero County pricing reflects La Junta-area demand, southeastern plains travel distances, and competition among regional agents serving rural Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for La Junta and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  gunnison: {
+    marketNotes:
+      'Gunnison County is a central Colorado mountain county with tourism, university, and outdoor-recreation demand across Gunnison and Crested Butte communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Gunnison County pricing reflects Gunnison tourism demand, Crested Butte resort spillover, mountain-access logistics, and competition among regional agents serving central Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Gunnison and surrounding areas before booking.',
+      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  grand: {
+    marketNotes:
+      'Grand County, CO spans Granby, Winter Park, and Hot Sulphur Springs with mountain resort and residential demand across the western I-70 corridor.',
+    costs: {
+      studioRange: '$900–$1,900',
+      familyRange: '$3,500–$8,000+',
+      avgHourly: '$125–$190/hr for a 2-person crew',
+      note: 'Grand County pricing reflects Granby and Winter Park demand, I-70 mountain corridor traffic, ski-season turnover, and competition among full-service agents serving Grand County resort communities.',
+    },
+    tips: [
+      'Verify coverage for Granby and surrounding areas before booking.',
+      'Mountain-access roads and secondary-home logistics require route planning — confirm crew vehicle size and driveway access.',
+      'Confirm coverage for mountain cabins, ski-season properties, and steep-driveway homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  alamosa: {
+    marketNotes:
+      'Alamosa County anchors the San Luis Valley with residential, agricultural, and university demand across Alamosa and southern Colorado valley communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Alamosa County pricing reflects San Luis Valley demand, rural travel distances, and competition among regional agents serving southern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Alamosa and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  pitkin: {
+    marketNotes:
+      'Pitkin County anchors Colorado’s Aspen luxury resort market with high-value homes, vacation properties, and strong demand across Aspen and Roaring Fork Valley communities.',
+    costs: {
+      studioRange: '$1,200–$2,500',
+      familyRange: '$5,500–$12,000+',
+      avgHourly: '$155–$230/hr for a 2-person crew',
+      note: 'Pitkin County pricing reflects Aspen luxury resort demand, ski-season turnover, Roaring Fork Valley logistics, and competition among full-service agents serving high-end mountain resort communities.',
+    },
+    tips: [
+      'Verify coverage for Aspen and surrounding areas before booking.',
+      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  archuleta: {
+    marketNotes:
+      'Archuleta County is a southwestern Colorado county centered on Pagosa Springs with tourism, outdoor-recreation, and residential demand across the San Juan south corridor.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Archuleta County pricing reflects Pagosa Springs tourism demand, mountain-access logistics, vacation-rental turnover, and competition among regional agents serving southwestern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Pagosa Springs and surrounding areas before booking.',
+      'Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.',
+      'Confirm parking permits and access for seasonal properties, resort condos, and short-term rentals before move day.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'las-animas': {
+    marketNotes:
+      'Las Animas County is a southern Colorado county centered on Trinidad with residential and energy-corridor demand across the southern frontier region.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Las Animas County pricing reflects Trinidad-area demand, southern Colorado rural travel distances, and competition among regional agents serving frontier corridor communities.',
+    },
+    tips: [
+      'Verify coverage for Trinidad and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  moffat: {
+    marketNotes:
+      'Moffat County is a northwestern Colorado county centered on Craig with residential, energy, and agricultural demand across northwest Colorado communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Moffat County pricing reflects Craig-area demand, northwest Colorado travel distances, and competition among regional agents serving rural corridor communities.',
+    },
+    tips: [
+      'Verify coverage for Craig and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  prowers: {
+    marketNotes:
+      'Prowers County is an eastern plains county centered on Lamar with residential and agricultural demand across southeastern Colorado communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Prowers County pricing reflects Lamar-area demand, eastern plains travel distances, and competition among regional agents serving rural southeastern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Lamar and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'rio-grande': {
+    marketNotes:
+      'Rio Grande County, CO is a southern Colorado county centered on Del Norte with residential and agricultural demand across the Rio Grande Valley.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Rio Grande County pricing reflects Del Norte-area demand, San Juan south corridor logistics, and competition among regional agents serving rural southern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Del Norte and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  yuma: {
+    marketNotes:
+      'Yuma County, CO is an eastern Colorado corner county centered on Wray with residential and agricultural demand across the northeastern plains.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Yuma County pricing reflects Wray-area demand, eastern corner travel distances, and competition among regional agents serving rural northeastern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Wray and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'clear-creek': {
+    marketNotes:
+      'Clear Creek County spans Georgetown and the I-70 mountain corridor with residential and seasonal demand across Denver metro gateway communities.',
+    costs: {
+      studioRange: '$900–$1,900',
+      familyRange: '$3,500–$8,500+',
+      avgHourly: '$125–$190/hr for a 2-person crew',
+      note: 'Clear Creek County pricing reflects Georgetown-area demand, I-70 mountain corridor traffic, Denver metro spillover, and competition among full-service agents serving west-metro mountain communities.',
+    },
+    tips: [
+      'Verify coverage for Georgetown and surrounding areas before booking.',
+      'Mountain-access roads and secondary-home logistics require route planning — confirm crew vehicle size and driveway access.',
+      'Confirm coverage for mountain cabins, ski-season properties, and steep-driveway homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'san-miguel': {
+    marketNotes:
+      'San Miguel County, CO anchors the Telluride resort market with luxury homes, vacation properties, and strong demand across southwestern Colorado mountain communities.',
+    costs: {
+      studioRange: '$1,000–$2,200',
+      familyRange: '$4,500–$10,500+',
+      avgHourly: '$140–$210/hr for a 2-person crew',
+      note: 'San Miguel County pricing reflects Telluride resort demand, ski-season turnover, San Juan mountain-access logistics, and competition among full-service agents serving luxury resort communities.',
+    },
+    tips: [
+      'Verify coverage for Telluride and surrounding areas before booking.',
+      'Resort-season congestion and ski-town traffic significantly impact scheduling — confirm peak-season crew availability.',
+      'Mountain-home and vacation-rental logistics require route planning — confirm parking permits, elevator reservations, and driveway access.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  lake: {
+    marketNotes:
+      'Lake County, CO is Colorado’s smallest county centered on Leadville with mountain residential and tourism demand across high-country communities.',
+    costs: {
+      studioRange: '$800–$1,600',
+      familyRange: '$2,900–$6,500+',
+      avgHourly: '$115–$175/hr for a 2-person crew',
+      note: 'Lake County pricing reflects Leadville-area demand, high-country mountain-access logistics, and competition among regional agents serving central Colorado mountain communities.',
+    },
+    tips: [
+      'Verify coverage for Leadville and surrounding areas before booking.',
+      'Mountain-access roads and secondary-home logistics require route planning — confirm crew vehicle size and driveway access.',
+      'Confirm coverage for mountain cabins, ski-season properties, and steep-driveway homes before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  conejos: {
+    marketNotes:
+      'Conejos County is a southern Colorado county with residential and agricultural demand across Conejos and San Luis Valley south corridor communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Conejos County pricing reflects Conejos-area demand, San Luis Valley rural travel distances, and competition among regional agents serving southern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Conejos and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  'kit-carson': {
+    marketNotes:
+      'Kit Carson County is an eastern plains county centered on Burlington with residential and agricultural demand across northeastern Colorado communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Kit Carson County pricing reflects Burlington-area demand, eastern plains travel distances, and competition among regional agents serving rural northeastern Colorado communities.',
+    },
+    tips: [
+      'Verify coverage for Burlington and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
+      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
+    ],
+  },
+  huerfano: {
+    marketNotes:
+      'Huerfano County is a southern Colorado county centered on Walsenburg with residential demand across Spanish Peaks corridor and I-25 south communities.',
+    costs: {
+      studioRange: '$750–$1,500',
+      familyRange: '$2,600–$5,800+',
+      avgHourly: '$105–$160/hr for a 2-person crew',
+      note: 'Huerfano County pricing reflects Walsenburg-area demand, southern Colorado rural travel distances, and competition among regional agents serving I-25 south corridor communities.',
+    },
+    tips: [
+      'Verify coverage for Walsenburg and surrounding areas before booking.',
+      'Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.',
+      'Confirm coverage for ranch properties, long driveways, and outbuildings before booking.',
       'Book early for peak seasons (May–September) and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],

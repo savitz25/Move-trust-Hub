@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Colorado counties (batch 1+2: 23/64) */
+/** Seat and metro overrides for hand-curated Colorado counties (batch 1+2+3: 44/64) */
 export const coloradoCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -27,6 +27,27 @@ export const coloradoCountyOverrides: Partial<
   morgan: { seat: 'Fort Morgan', metro: 'morgan-metro-co' },
   montezuma: { seat: 'Cortez', metro: 'montezuma-metro-co' },
   routt: { seat: 'Steamboat Springs', metro: 'routt-metro-co' },
+  teller: { seat: 'Cripple Creek', metro: 'teller-metro-co' },
+  chaffee: { seat: 'Salida', metro: 'chaffee-metro-co' },
+  logan: { seat: 'Sterling', metro: 'logan-metro-co' },
+  park: { seat: 'Fairplay', metro: 'park-metro-co' },
+  otero: { seat: 'La Junta', metro: 'otero-metro-co' },
+  gunnison: { seat: 'Gunnison', metro: 'gunnison-metro-co' },
+  grand: { seat: 'Hot Sulphur Springs', metro: 'grand-metro-co' },
+  alamosa: { seat: 'Alamosa', metro: 'alamosa-metro-co' },
+  pitkin: { seat: 'Aspen', metro: 'pitkin-metro-co' },
+  archuleta: { seat: 'Pagosa Springs', metro: 'archuleta-metro-co' },
+  'las-animas': { seat: 'Trinidad', metro: 'las-animas-metro-co' },
+  moffat: { seat: 'Craig', metro: 'moffat-metro-co' },
+  prowers: { seat: 'Lamar', metro: 'prowers-metro-co' },
+  'rio-grande': { seat: 'Del Norte', metro: 'rio-grande-metro-co' },
+  yuma: { seat: 'Wray', metro: 'yuma-metro-co' },
+  'clear-creek': { seat: 'Georgetown', metro: 'clear-creek-metro-co' },
+  'san-miguel': { seat: 'Telluride', metro: 'san-miguel-metro-co' },
+  lake: { seat: 'Leadville', metro: 'lake-metro-co' },
+  conejos: { seat: 'Conejos', metro: 'conejos-metro-co' },
+  'kit-carson': { seat: 'Burlington', metro: 'kit-carson-metro-co' },
+  huerfano: { seat: 'Walsenburg', metro: 'huerfano-metro-co' },
 };
 
 export function applyColoradoCountyOverrides(county: LocalCounty): LocalCounty {
