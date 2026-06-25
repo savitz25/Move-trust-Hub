@@ -13,6 +13,7 @@ export function Navbar() {
 
   const navLinks = [
     { href: '/companies', label: 'Movers Directory' },
+    { href: '/moving-to', label: 'Destinations' },
     { href: '/local-movers', label: 'Local Movers' },
     { href: '/auto-transport', label: 'Auto Transport' },
     { href: '/moving-calculator', label: 'Move Calculator' },

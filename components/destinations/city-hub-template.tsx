@@ -9,6 +9,7 @@ import { DestinationMapSnippet } from '@/components/destinations/destination-map
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
 import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
 import { getMoversForMarket, countMoversForMarket } from '@/lib/destinations/get-movers-for-market';
+import { getMarketBySlug } from '@/lib/destinations/markets';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
@@ -28,6 +29,10 @@ export async function CityHubTemplate({ market, content }: Props) {
       content.featuredInterstateSlugs.map((slug) => getCompanyBySlugAsync(slug))
     )
   ).filter((company): company is NonNullable<typeof company> => Boolean(company));
+
+  const clusterParent = market.clusterParent
+    ? getMarketBySlug(market.clusterParent)
+    : undefined;
 
   const countyLabels = market.primaryCounties.map((key) => {
     const parts = key.split('-');
@@ -50,6 +55,9 @@ export async function CityHubTemplate({ market, content }: Props) {
             crumbs={[
               { label: 'Home', href: '/' },
               { label: 'Popular Destinations', href: '/moving-to' },
+              ...(clusterParent
+                ? [{ label: clusterParent.displayName, href: `/moving-to/${clusterParent.slug}` }]
+                : []),
               { label: `${market.displayName}, ${market.stateCode}` },
             ]}
           />

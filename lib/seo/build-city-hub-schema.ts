@@ -1,6 +1,7 @@
 import { organizationSchema } from '@/lib/seo/schemas';
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
+import { getMarketBySlug } from '@/lib/destinations/markets';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 
 export function buildCityHubSchemaGraph(
@@ -8,6 +9,41 @@ export function buildCityHubSchemaGraph(
   content: CityHubContent,
   canonical: string
 ) {
+  const clusterParent = market.clusterParent
+    ? getMarketBySlug(market.clusterParent)
+    : undefined;
+
+  const breadcrumbItems = [
+    {
+      '@type': 'ListItem' as const,
+      position: 1,
+      name: 'Home',
+      item: SITE_URL,
+    },
+    {
+      '@type': 'ListItem' as const,
+      position: 2,
+      name: 'Popular Destinations',
+      item: `${SITE_URL}/moving-to`,
+    },
+    ...(clusterParent
+      ? [
+          {
+            '@type': 'ListItem' as const,
+            position: 3,
+            name: clusterParent.displayName,
+            item: `${SITE_URL}/moving-to/${clusterParent.slug}`,
+          },
+        ]
+      : []),
+    {
+      '@type': 'ListItem' as const,
+      position: clusterParent ? 4 : 3,
+      name: `${market.displayName}, ${market.stateCode}`,
+      item: canonical,
+    },
+  ];
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -15,26 +51,7 @@ export function buildCityHubSchemaGraph(
       {
         '@type': 'BreadcrumbList',
         '@id': `${canonical}#breadcrumbs`,
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: SITE_URL,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Popular Destinations',
-            item: `${SITE_URL}/moving-to`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: `${market.displayName}, ${market.stateCode}`,
-            item: canonical,
-          },
-        ],
+        itemListElement: breadcrumbItems,
       },
       {
         '@type': 'WebPage',

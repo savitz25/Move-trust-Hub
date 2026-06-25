@@ -63,8 +63,11 @@ export default function MovingToIndexPage() {
             >
               <div className="flex items-start justify-between gap-2 mb-2">
                 <h2 className="font-semibold text-lg">
-                  {isLive ? (
-                    <Link href={path} className="hover:text-primary transition-colors">
+                  {isLive || (market.isClusterParent && subCities.some((s) => published.has(s.slug))) ? (
+                    <Link
+                      href={isLive ? path : `/moving-to/${market.slug}`}
+                      className="hover:text-primary transition-colors"
+                    >
                       {market.displayName}
                       {market.stateCode ? `, ${market.stateCode}` : ''}
                     </Link>
@@ -75,9 +78,9 @@ export default function MovingToIndexPage() {
                     </span>
                   )}
                 </h2>
-                {isLive ? (
+                {isLive || (market.isClusterParent && subCities.some((s) => published.has(s.slug))) ? (
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                    Live
+                    {isLive ? 'Live' : 'Partial'}
                   </span>
                 ) : (
                   <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
@@ -86,22 +89,37 @@ export default function MovingToIndexPage() {
                 )}
               </div>
               <p className="text-sm text-muted-foreground mb-3">{market.inboundGrowthStat}</p>
-              {isLive ? (
+              {isLive || (market.isClusterParent && subCities.some((s) => published.has(s.slug))) ? (
                 <Link
-                  href={path}
+                  href={isLive ? path : `/moving-to/${market.slug}`}
                   className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
                 >
-                  View guide
+                  {isLive ? 'View guide' : 'View cluster'}
                   <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </Link>
               ) : null}
               {subCities.length > 0 && (
                 <ul className="mt-3 pt-3 border-t text-xs text-muted-foreground space-y-1">
-                  {subCities.slice(0, 4).map((sub) => (
-                    <li key={sub.slug}>{sub.displayName}</li>
-                  ))}
-                  {subCities.length > 4 && (
-                    <li>+{subCities.length - 4} more cities</li>
+                  {subCities.slice(0, 6).map((sub) => {
+                    const subPath = getMarketPath(sub);
+                    const subLive = published.has(sub.slug);
+                    return (
+                      <li key={sub.slug}>
+                        {subLive ? (
+                          <Link
+                            href={subPath}
+                            className="text-primary hover:underline font-medium"
+                          >
+                            {sub.displayName}
+                          </Link>
+                        ) : (
+                          sub.displayName
+                        )}
+                      </li>
+                    );
+                  })}
+                  {subCities.length > 6 && (
+                    <li>+{subCities.length - 6} more cities</li>
                   )}
                 </ul>
               )}
