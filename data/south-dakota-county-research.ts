@@ -6,11 +6,11 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated South Dakota county research — 66/66 counties (full set) */
+/** Hand-curated South Dakota county research — 66/66 (rural/specialized market) */
 export const southDakotaCountyResearch: Record<string, CuratedCountyResearch> = {
   minnehaha: {
     marketNotes:
-      'Minnehaha County is South Dakota’s most populous county centered on Sioux Falls with strong suburban, commercial, healthcare, and Big Sioux Valley residential demand across Tea, Brandon, and Harrisburg communities.',
+      'Minnehaha County is South Dakota’s most populous county centered on Sioux Falls with strong corporate, healthcare, university-spillover, suburban, and Big Sioux Valley residential demand across Tea, Brandon, and Harrisburg communities.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
@@ -18,16 +18,16 @@ export const southDakotaCountyResearch: Record<string, CuratedCountyResearch> = 
       note: 'Minnehaha County pricing reflects Sioux Falls metro demand, suburban new-construction turnover, I-29 Big Sioux corridor traffic, and competition among full-service agents serving Minnehaha County communities.',
     },
     tips: [
-      'Verify coverage for Sioux Falls and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
+      'Verify coverage for Sioux Falls, corporate relocations, and Brandon–Tea suburban communities before booking.',
+      'I-29 Big Sioux Valley corridor traffic and winter weather impact scheduling — confirm crew arrival windows.',
       'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Book early for peak seasons (May–September), healthcare hiring cycles, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },
   pennington: {
     marketNotes:
-      'Pennington County anchors western South Dakota’s Black Hills gateway with strong tourism, healthcare, military-adjacent, and residential demand across Rapid City, Box Elder, and eastern hills corridor communities.',
+      'Pennington County anchors western South Dakota’s Black Hills gateway with strong Mount Rushmore tourism, second-home, Ellsworth AFB military PCS, healthcare, and residential demand across Rapid City, Box Elder, and eastern hills corridor communities.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -35,10 +35,10 @@ export const southDakotaCountyResearch: Record<string, CuratedCountyResearch> = 
       note: 'Pennington County pricing reflects Rapid City metro demand, Black Hills gateway traffic, I-90 corridor logistics, and competition among full-service agents serving Pennington County communities.',
     },
     tips: [
-      'Verify coverage for Rapid City and surrounding areas before booking.',
-      'Regional traffic impacts scheduling — confirm crew arrival windows.',
-      'Confirm insurance for high-value homes and rural properties.',
-      'Book early for peak seasons (May–September) and month-end lease changeover.',
+      'Verify coverage for Rapid City, Ellsworth AFB PCS moves, and Black Hills gateway communities before booking.',
+      'Tourism-season congestion, Sturgis Rally traffic, and winter weather impact scheduling — confirm crew arrival windows.',
+      'Confirm insurance for high-value homes, vacation properties, and rural ranch properties.',
+      'Book early for peak seasons (May–September), military PCS windows, and month-end lease changeover.',
       'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.',
     ],
   },

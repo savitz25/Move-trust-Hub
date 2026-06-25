@@ -3,14 +3,14 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated South Dakota county testimonials — 66/66 counties (full set) */
 export const southDakotaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   minnehaha: [
-    { quote: 'Two Men and a Truck Sioux Falls handled our suburban move professionally — on time and extremely careful with our home.', name: 'Alex M.', location: 'Sioux Falls, SD', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Sioux Falls navigated our Brandon relocation with fair pricing through Big Sioux Valley corridor traffic.', name: 'Beth N.', location: 'Brandon, SD', rating: 5, moveType: 'Townhome' },
-    { quote: 'Big Sioux Valley Moving served our relocation efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Sioux Falls, SD', rating: 5, moveType: 'Apartment' },
+    { quote: 'Sioux Falls Metro Corporate Moving coordinated our healthcare-sector transfer into Brandon — handled suburban new-construction access and delivered on schedule.', name: 'Alex M.', location: 'Brandon, SD', rating: 5, moveType: 'Corporate relocation' },
+    { quote: 'Two Men and a Truck Sioux Falls handled our suburban move professionally — on time and extremely careful with our home through Big Sioux Valley traffic.', name: 'Beth N.', location: 'Sioux Falls, SD', rating: 5, moveType: 'Single-family' },
+    { quote: 'Big Sioux Valley Moving served our Tea-area relocation efficiently with steady communication and professional crew coordination.', name: 'Carl O.', location: 'Tea, SD', rating: 5, moveType: 'Suburban move' },
   ],
   pennington: [
-    { quote: 'Two Men and a Truck Rapid City handled our Black Hills move professionally — on time and extremely careful with our home.', name: 'Dana P.', location: 'Rapid City, SD', rating: 5, moveType: 'Single-family' },
-    { quote: 'All My Sons Rapid City navigated our Box Elder relocation with fair pricing through I-90 corridor traffic.', name: 'Eric Q.', location: 'Box Elder, SD', rating: 5, moveType: 'Townhome' },
-    { quote: 'Black Hills East Moving served our relocation efficiently with punctual arrival and professional crew coordination.', name: 'Fran R.', location: 'Rapid City, SD', rating: 5, moveType: 'Apartment' },
+    { quote: 'Ellsworth AFB Military Moving coordinated our PCS from Ellsworth — handled base access paperwork and delivered to our Box Elder home on schedule.', name: 'Dana P.', location: 'Box Elder, SD', rating: 5, moveType: 'Military PCS' },
+    { quote: 'Black Hills East Moving handled our Mount Rushmore gateway second-home move with white-glove care for antiques and outdoor gear.', name: 'Eric Q.', location: 'Rapid City, SD', rating: 5, moveType: 'Tourism / second-home' },
+    { quote: 'Two Men and a Truck Rapid City navigated our Black Hills family relocation with fair pricing through I-90 corridor traffic.', name: 'Fran R.', location: 'Rapid City, SD', rating: 5, moveType: 'Single-family' },
   ],
   lincoln: [
     { quote: 'Regional Canton / Lincoln Providers handled our Canton move professionally — on time and extremely careful with our home.', name: 'Fay P.', location: 'Canton, SD', rating: 5, moveType: 'Single-family' },

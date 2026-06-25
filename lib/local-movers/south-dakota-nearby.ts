@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** South Dakota curated county corridor links — 66/66 counties (full set) */
+/** South Dakota curated county corridor links — 66/66 (cross-border MN, IA, NE, WY, ND, MT) */
 const SD_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   minnehaha: [
     { slug: 'lincoln', name: 'Lincoln', seat: 'Canton', href: '/local-movers/south-dakota/lincoln', displayLabel: 'Lincoln County, SD' },

@@ -238,6 +238,9 @@ export function buildStateDescription(
   if (stateName === 'North Dakota') {
     return `Find curated local movers in all 53 North Dakota counties — up to 10 ranked companies in Cass County (Fargo metro), 8–9 in Burleigh (Bismarck), 7–8 in Williams (Williston / Bakken) and Grand Forks, and 5–7 regional specialists in every county. Fargo guides cover corporate, university, and suburban Red River Valley moves; Bismarck covers state government and regional hub relocations; Williston and McKenzie cover Bakken oil-and-gas workforce moves; rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
+  if (stateName === 'South Dakota') {
+    return `Find curated local movers in all 66 South Dakota counties — up to 11 ranked companies in Minnehaha County (Sioux Falls metro), 9–10 in Pennington (Rapid City / Black Hills), 7–8 in Brown (Aberdeen), Codington (Watertown), and Lincoln, and 5–7 regional specialists in every county. Sioux Falls guides cover corporate, university, and suburban Big Sioux Valley moves; Rapid City covers Mount Rushmore tourism, Black Hills second-home logistics, and Ellsworth AFB military PCS; rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
 
   const moverRange =
     stateName === 'California' ||

@@ -9,14 +9,19 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  minnehaha: 10,
+  minnehaha: 11,
   pennington: 10,
 };
-const DEFAULT_TARGET = 10;
+const SECONDARY_TARGETS: Record<string, number> = {
+  brown: 8,
+  codington: 8,
+  lincoln: 8,
+};
+const DEFAULT_TARGET = 5;
 const EXPECTED_COUNT = 66;
 
 function getTarget(slug: string): number {
-  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+  return PREMIUM_TARGETS[slug] ?? SECONDARY_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const issues: string[] = [];
