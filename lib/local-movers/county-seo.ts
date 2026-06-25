@@ -94,6 +94,8 @@ import { getIowaCountyResearch } from '@/data/iowa-county-research';
 import { getIowaCountyTestimonials } from '@/data/iowa-county-testimonials';
 import { getMinnesotaCountyResearch } from '@/data/minnesota-county-research';
 import { getMinnesotaCountyTestimonials } from '@/data/minnesota-county-testimonials';
+import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
+import { getWisconsinCountyTestimonials } from '@/data/wisconsin-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -252,6 +254,9 @@ export function buildStateDescription(
   }
   if (stateName === 'Iowa') {
     return `Find curated local movers in 73 Iowa county guides — up to 12 ranked companies in Polk County (Des Moines metro), 9–10 in Linn (Cedar Rapids), Johnson (Iowa City), and Scott (Quad Cities), 8 in Woodbury (Sioux City), and 5–7 regional specialists in every curated county. Des Moines guides cover insurance and finance headquarters, corporate relocations, and suburban family moves; the Cedar Rapids–Iowa City corridor covers manufacturing, University of Iowa campus turnover, and professional relocations; Quad Cities and Sioux City cover cross-border and agricultural processing logistics; rural counties emphasize corn/soybean/pork agricultural hauls, ethanol-industry corridors, harsh winters, remote logistics, and very long-distance Lower 48 moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
+  }
+  if (stateName === 'Wisconsin') {
+    return `Find curated local movers in 10 Wisconsin county guides — 10 ranked companies in Milwaukee, Madison (Dane), Waukesha, Green Bay (Brown), Racine, Appleton (Outagamie), Oshkosh (Winnebago), Kenosha, Janesville (Rock), and Wausau (Marathon). Milwaukee and Kenosha metros cover I-94 corridor traffic and Chicago–Milwaukee commuter relocations; Madison covers state government and UW–Madison campus turnover; Fox Cities and Green Bay cover northeast Wisconsin regional hub demand; Wausau covers north-central Wisconsin corridor moves for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
   }
   if (stateName === 'Minnesota') {
     return `Find curated local movers in all 87 Minnesota county guides — 10 ranked companies in every county from Hennepin (Minneapolis) and Ramsey (Saint Paul) through Duluth, Rochester, St. Cloud, Mankato, Moorhead, Brainerd, and every rural hub statewide. Twin Cities metros cover corporate relocations and I-94/I-35W corridor traffic; Rochester covers Mayo Clinic medical-sector relocations; Duluth, Carlton, Cook, and Lake counties cover Lake Superior and Gunflint northwoods logistics; lakes-country counties cover resort-season and vacation-rental moves; Red River Valley and northwest counties cover cross-border North Dakota and Manitoba corridors; southern and western counties cover agricultural, rural, and long-distance hauls for ${SEO_YEAR}. Use our free moving calculator and interstate directory.`;
@@ -494,6 +499,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'minnesota') {
     return getMinnesotaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'wisconsin') {
+    return getWisconsinCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -699,6 +707,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'minnesota') {
     const curated = getMinnesotaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'wisconsin') {
+    const curated = getWisconsinCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -941,6 +953,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getMinnesotaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'wisconsin') {
+    const curated = getWisconsinCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -1170,6 +1186,10 @@ export function buildCountyTestimonials(
     const curated = getMinnesotaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
+  if (county.stateSlug === 'wisconsin') {
+    const curated = getWisconsinCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(testimonials, key);
@@ -1219,6 +1239,7 @@ export const STATE_CODE_TO_SLUG: Record<string, string> = {
   MA: 'massachusetts',
   MI: 'michigan',
   MN: 'minnesota',
+  WI: 'wisconsin',
   MS: 'mississippi',
   MO: 'missouri',
   MT: 'montana',

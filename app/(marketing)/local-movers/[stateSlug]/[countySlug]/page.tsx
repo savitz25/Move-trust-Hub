@@ -53,6 +53,7 @@ import {
   NEBRASKA_COUNTY_CONTENT_UPDATED,
   IOWA_COUNTY_CONTENT_UPDATED,
   MINNESOTA_COUNTY_CONTENT_UPDATED,
+  WISCONSIN_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -95,6 +96,7 @@ import { getSouthDakotaCountyResearch } from '@/data/south-dakota-county-researc
 import { getNebraskaCountyResearch } from '@/data/nebraska-county-research';
 import { getIowaCountyResearch } from '@/data/iowa-county-research';
 import { getMinnesotaCountyResearch } from '@/data/minnesota-county-research';
+import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -149,6 +151,7 @@ import { getSouthDakotaNearbyCounties } from '@/lib/local-movers/south-dakota-ne
 import { getNebraskaNearbyCounties } from '@/lib/local-movers/nebraska-nearby';
 import { getIowaNearbyCounties } from '@/lib/local-movers/iowa-nearby';
 import { getMinnesotaNearbyCounties } from '@/lib/local-movers/minnesota-nearby';
+import { getWisconsinNearbyCounties } from '@/lib/local-movers/wisconsin-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -365,7 +368,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                       : stateSlug === 'minnesota' &&
                                                                                                           getMinnesotaCountyResearch(countySlug)
                                                                                                         ? getMinnesotaNearbyCounties(countySlug)
-                                                                                                        : [];
+                                                                                                        : stateSlug === 'wisconsin' &&
+                                                                                                            getWisconsinCountyResearch(countySlug)
+                                                                                                          ? getWisconsinNearbyCounties(countySlug)
+                                                                                                          : [];
 
   return (
     <>
@@ -629,7 +635,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                               : stateSlug === 'minnesota' &&
                                                                                                                   getMinnesotaCountyResearch(countySlug)
                                                                                                                 ? MINNESOTA_COUNTY_CONTENT_UPDATED
-                                                                                                                : undefined
+                                                                                                                : stateSlug === 'wisconsin' &&
+                                                                                                                    getWisconsinCountyResearch(countySlug)
+                                                                                                                  ? WISCONSIN_COUNTY_CONTENT_UPDATED
+                                                                                                                  : undefined
           }
         />
 

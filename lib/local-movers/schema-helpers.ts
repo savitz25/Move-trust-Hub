@@ -44,6 +44,9 @@ const SCHEMA_PRIMARY_CITY_OVERRIDES: Record<string, Record<string, string>> = {
     dallas: 'Waukee',
     story: 'Ames',
   },
+  wisconsin: {
+    brown: 'Green Bay',
+  },
   minnesota: {
     dakota: 'Lakeville',
     ramsey: 'Saint Paul',

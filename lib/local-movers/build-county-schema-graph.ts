@@ -49,6 +49,7 @@ import {
   NEBRASKA_COUNTY_CONTENT_UPDATED,
   IOWA_COUNTY_CONTENT_UPDATED,
   MINNESOTA_COUNTY_CONTENT_UPDATED,
+  WISCONSIN_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDelawareCountyResearch } from '@/data/delaware-county-research';
@@ -77,6 +78,7 @@ import { getSouthDakotaCountyResearch } from '@/data/south-dakota-county-researc
 import { getNebraskaCountyResearch } from '@/data/nebraska-county-research';
 import { getIowaCountyResearch } from '@/data/iowa-county-research';
 import { getMinnesotaCountyResearch } from '@/data/minnesota-county-research';
+import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
@@ -394,6 +396,12 @@ function resolveContentModified(county: LocalCounty): string {
     getMinnesotaCountyResearch(county.slug)
   ) {
     return MINNESOTA_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'wisconsin' &&
+    getWisconsinCountyResearch(county.slug)
+  ) {
+    return WISCONSIN_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }
