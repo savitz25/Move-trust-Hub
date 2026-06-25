@@ -46,6 +46,7 @@ import { northDakotaCountyMoverAssignments } from '@/data/north-dakota-county-as
 import { southDakotaCountyMoverAssignments } from '@/data/south-dakota-county-assignments';
 import { nebraskaCountyMoverAssignments } from '@/data/nebraska-county-assignments';
 import { iowaCountyMoverAssignments } from '@/data/iowa-county-assignments';
+import { minnesotaCountyMoverAssignments } from '@/data/minnesota-county-assignments';
 import { tennesseeCountyMoverAssignments } from '@/data/tennessee-county-assignments';
 import { texasCountyMoverAssignments } from '@/data/texas-county-assignments';
 import { countyMoverAssignments } from '@/data/local-movers-seed';
@@ -104,6 +105,7 @@ const allCountyAssignments = [
   ...southDakotaCountyMoverAssignments,
   ...nebraskaCountyMoverAssignments,
   ...iowaCountyMoverAssignments,
+  ...minnesotaCountyMoverAssignments,
   ...californiaCountyMoverAssignments,
   ...floridaCountyMoverAssignments,
   ...newJerseyCountyMoverAssignments,

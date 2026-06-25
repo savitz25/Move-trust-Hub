@@ -52,6 +52,7 @@ import {
   SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED,
   NEBRASKA_COUNTY_CONTENT_UPDATED,
   IOWA_COUNTY_CONTENT_UPDATED,
+  MINNESOTA_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -93,6 +94,7 @@ import { getNorthDakotaCountyResearch } from '@/data/north-dakota-county-researc
 import { getSouthDakotaCountyResearch } from '@/data/south-dakota-county-research';
 import { getNebraskaCountyResearch } from '@/data/nebraska-county-research';
 import { getIowaCountyResearch } from '@/data/iowa-county-research';
+import { getMinnesotaCountyResearch } from '@/data/minnesota-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -146,6 +148,7 @@ import { getNorthDakotaNearbyCounties } from '@/lib/local-movers/north-dakota-ne
 import { getSouthDakotaNearbyCounties } from '@/lib/local-movers/south-dakota-nearby';
 import { getNebraskaNearbyCounties } from '@/lib/local-movers/nebraska-nearby';
 import { getIowaNearbyCounties } from '@/lib/local-movers/iowa-nearby';
+import { getMinnesotaNearbyCounties } from '@/lib/local-movers/minnesota-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -359,7 +362,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                     : stateSlug === 'iowa' &&
                                                                                                         getIowaCountyResearch(countySlug)
                                                                                                       ? getIowaNearbyCounties(countySlug)
-                                                                                                      : [];
+                                                                                                      : stateSlug === 'minnesota' &&
+                                                                                                          getMinnesotaCountyResearch(countySlug)
+                                                                                                        ? getMinnesotaNearbyCounties(countySlug)
+                                                                                                        : [];
 
   return (
     <>
@@ -620,7 +626,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                             : stateSlug === 'iowa' &&
                                                                                                                 getIowaCountyResearch(countySlug)
                                                                                                               ? IOWA_COUNTY_CONTENT_UPDATED
-                                                                                                              : undefined
+                                                                                                              : stateSlug === 'minnesota' &&
+                                                                                                                  getMinnesotaCountyResearch(countySlug)
+                                                                                                                ? MINNESOTA_COUNTY_CONTENT_UPDATED
+                                                                                                                : undefined
           }
         />
 

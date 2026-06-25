@@ -44,6 +44,10 @@ const SCHEMA_PRIMARY_CITY_OVERRIDES: Record<string, Record<string, string>> = {
     dallas: 'Waukee',
     story: 'Ames',
   },
+  minnesota: {
+    dakota: 'Lakeville',
+    ramsey: 'Saint Paul',
+  },
 };
 
 export function buildSchemaPrimaryCity(county: LocalCounty): string | undefined {

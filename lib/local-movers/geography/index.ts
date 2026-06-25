@@ -47,6 +47,7 @@ import { applyNorthDakotaCountyOverrides } from '@/lib/local-movers/geography/no
 import { applySouthDakotaCountyOverrides } from '@/lib/local-movers/geography/south-dakota-overrides';
 import { applyNebraskaCountyOverrides } from '@/lib/local-movers/geography/nebraska-overrides';
 import { applyIowaCountyOverrides } from '@/lib/local-movers/geography/iowa-overrides';
+import { applyMinnesotaCountyOverrides } from '@/lib/local-movers/geography/minnesota-overrides';
 import { marylandSupplementalCounties } from '@/lib/local-movers/geography/maryland-supplemental';
 import { applyTennesseeCountyOverrides } from '@/lib/local-movers/geography/tennessee-overrides';
 import { applyTexasCountyOverrides } from '@/lib/local-movers/geography/texas-overrides';
@@ -123,7 +124,8 @@ const allCounties: LocalCounty[] = [
     .map(applyNorthDakotaCountyOverrides)
     .map(applySouthDakotaCountyOverrides)
     .map(applyNebraskaCountyOverrides)
-    .map(applyIowaCountyOverrides),
+    .map(applyIowaCountyOverrides)
+    .map(applyMinnesotaCountyOverrides),
 ];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {
