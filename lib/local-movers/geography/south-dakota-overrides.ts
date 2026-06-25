@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated South Dakota counties (batch 1: 26/66) */
+/** Seat and metro overrides for hand-curated South Dakota counties (66/66 — full set) */
 export const southDakotaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -30,6 +30,46 @@ export const southDakotaCountyOverrides: Partial<
   grant: { seat: 'Milbank', metro: 'grant-metro-sd' },
   hutchinson: { seat: 'Olivet', metro: 'hutchinson-metro-sd' },
   'bon-homme': { seat: 'Tyndall', metro: 'bon-homme-metro-sd' },
+  hamlin: { seat: 'Hayti', metro: 'hamlin-metro-sd' },
+  moody: { seat: 'Flandreau', metro: 'moody-metro-sd' },
+  spink: { seat: 'Redfield', metro: 'spink-metro-sd' },
+  mccook: { seat: 'Salem', metro: 'mccook-metro-sd' },
+  tripp: { seat: 'Winner', metro: 'tripp-metro-sd' },
+  day: { seat: 'Webster', metro: 'day-metro-sd' },
+  dewey: { seat: 'Timber Lake', metro: 'dewey-metro-sd' },
+  kingsbury: { seat: 'De Smet', metro: 'kingsbury-metro-sd' },
+  brule: { seat: 'Chamberlain', metro: 'brule-metro-sd' },
+  walworth: { seat: 'Selby', metro: 'walworth-metro-sd' },
+  deuel: { seat: 'Clear Lake', metro: 'deuel-metro-sd' },
+  marshall: { seat: 'Britton', metro: 'marshall-metro-sd' },
+  clark: { seat: 'Clark', metro: 'clark-metro-sd' },
+  edmunds: { seat: 'Ipswich', metro: 'edmunds-metro-sd' },
+  gregory: { seat: 'Burke', metro: 'gregory-metro-sd' },
+  corson: { seat: 'McIntosh', metro: 'corson-metro-sd' },
+  lyman: { seat: 'Kennebec', metro: 'lyman-metro-sd' },
+  hanson: { seat: 'Alexandria', metro: 'hanson-metro-sd' },
+  bennett: { seat: 'Martin', metro: 'bennett-metro-sd' },
+  hand: { seat: 'Miller', metro: 'hand-metro-sd' },
+  stanley: { seat: 'Fort Pierre', metro: 'stanley-metro-sd' },
+  douglas: { seat: 'Armour', metro: 'douglas-metro-sd' },
+  perkins: { seat: 'Bison', metro: 'perkins-metro-sd' },
+  aurora: { seat: 'Plankinton', metro: 'aurora-metro-sd' },
+  jackson: { seat: 'Kadoka', metro: 'jackson-metro-sd' },
+  sanborn: { seat: 'Woonsocket', metro: 'sanborn-metro-sd' },
+  ziebach: { seat: 'Dupree', metro: 'ziebach-metro-sd' },
+  mcpherson: { seat: 'Leola', metro: 'mcpherson-metro-sd' },
+  potter: { seat: 'Gettysburg', metro: 'potter-metro-sd' },
+  miner: { seat: 'Howard', metro: 'miner-metro-sd' },
+  mellette: { seat: 'White River', metro: 'mellette-metro-sd' },
+  faulk: { seat: 'Faulkton', metro: 'faulk-metro-sd' },
+  buffalo: { seat: 'Gann Valley', metro: 'buffalo-metro-sd' },
+  haakon: { seat: 'Philip', metro: 'haakon-metro-sd' },
+  jerauld: { seat: 'Wessington Springs', metro: 'jerauld-metro-sd' },
+  sully: { seat: 'Onida', metro: 'sully-metro-sd' },
+  campbell: { seat: 'Mound City', metro: 'campbell-metro-sd' },
+  harding: { seat: 'Buffalo', metro: 'harding-metro-sd' },
+  hyde: { seat: 'Highmore', metro: 'hyde-metro-sd' },
+  jones: { seat: 'Murdo', metro: 'jones-metro-sd' },
 };
 
 export function applySouthDakotaCountyOverrides(county: LocalCounty): LocalCounty {

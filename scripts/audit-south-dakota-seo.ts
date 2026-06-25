@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for South Dakota local movers directory (batch 1).
+ * Full SEO / E-E-A-T audit for South Dakota local movers directory (full 66 counties).
  * Run: npx tsx scripts/audit-south-dakota-seo.ts
  */
 import { southDakotaCountyResearch } from '../data/south-dakota-county-research';
@@ -13,7 +13,7 @@ const PREMIUM_TARGETS: Record<string, number> = {
   pennington: 10,
 };
 const DEFAULT_TARGET = 10;
-const EXPECTED_COUNT = 26;
+const EXPECTED_COUNT = 66;
 
 function getTarget(slug: string): number {
   return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
