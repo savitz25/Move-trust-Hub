@@ -148,6 +148,8 @@ export async function POST(req: NextRequest) {
           : 0,
         notes: payload.notes ? '[provided]' : null,
         source: payload.source || 'quote-modal',
+        destination_slug: payload.destination_slug || null,
+        market_priority: payload.market_priority ?? null,
       },
     });
 
