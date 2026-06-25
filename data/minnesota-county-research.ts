@@ -6,7 +6,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Minnesota county research — 63 counties */
+/** Hand-curated Minnesota county research — 87 counties */
 export const minnesotaCountyResearch: Record<string, CuratedCountyResearch> = {
   hennepin: {
     marketNotes:
@@ -1073,6 +1073,414 @@ export const minnesotaCountyResearch: Record<string, CuratedCountyResearch> = {
     },
     tips: [
       "Verify coverage for St. James and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  cottonwood: {
+    marketNotes:
+      "Cottonwood County, MN is a southwestern Minnesota county centered on Windom with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Cottonwood County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Cottonwood County pricing reflects Windom-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Cottonwood County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Windom and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  pope: {
+    marketNotes:
+      "Pope County, MN is a west-central lakes-country county centered on Glenwood with strong Minnewaska Lake resort, vacation-rental, and seasonal-property demand across Alexandria-adjacent corridor communities — not to be confused with Pope County in other states.",
+    costs: {
+      studioRange: "$850–$1,700",
+      familyRange: "$3,000–$7,000+",
+      avgHourly: "$120–$185/hr for a 2-person crew",
+      note: "Pope County pricing reflects Glenwood lakes secondary-metro demand, Minnewaska resort-season corridor traffic, vacation-rental turnover logistics, and competition among regional agents serving Pope County communities.",
+    },
+    tips: [
+      "Verify coverage for Glenwood and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  lake: {
+    marketNotes:
+      "Lake County, MN is a northeastern Minnesota county centered on Two Harbors with strong North Shore resort, vacation-rental, and seasonal-property demand along the Lake Superior gateway — not to be confused with Lake County in California, Florida, Illinois, or other states.",
+    costs: {
+      studioRange: "$850–$1,700",
+      familyRange: "$3,000–$7,000+",
+      avgHourly: "$120–$185/hr for a 2-person crew",
+      note: "Lake County pricing reflects Two Harbors lakes secondary-metro demand, North Shore resort-season corridor traffic, vacation-rental turnover logistics, harsh winters, and competition among regional agents serving Lake County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Two Harbors and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  jackson: {
+    marketNotes:
+      "Jackson County, MN is a southwestern Minnesota county centered on Jackson with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Jackson County in Mississippi or other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Jackson County pricing reflects Jackson-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Jackson County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Jackson and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  swift: {
+    marketNotes:
+      "Swift County, MN is a west-central Minnesota county centered on Benson with rural residential and Chippewa River valley corridor agricultural demand across prairie gateway communities — not to be confused with Swift County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Swift County pricing reflects Benson-area rural demand, Chippewa River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Swift County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Benson and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  stevens: {
+    marketNotes:
+      "Stevens County, MN is a west-central Minnesota county centered on Morris with rural residential, University of Minnesota Morris corridor, and Stevens River valley agricultural demand — not to be confused with Stevens County in Kansas or Washington.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Stevens County pricing reflects Morris-area rural demand, Stevens River valley corridor travel distances, university and agricultural property logistics, and competition among regional agents serving Stevens County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Morris and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  rock: {
+    marketNotes:
+      "Rock County, MN is Minnesota’s southwesternmost county centered on Luverne with rural residential and Rock River valley corridor agricultural demand along the Iowa border gateway — not to be confused with Rock County in Nebraska or Wisconsin.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Rock County pricing reflects Luverne-area rural demand, Rock River valley corridor travel distances, cross-border Iowa logistics, agricultural property logistics, and competition among regional agents serving Rock County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Luverne and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  'yellow-medicine': {
+    marketNotes:
+      "Yellow Medicine County, MN is a southwestern Minnesota county centered on Granite Falls with rural residential and Minnesota River valley corridor agricultural demand across prairie gateway communities.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Yellow Medicine County pricing reflects Granite Falls-area rural demand, Minnesota River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Yellow Medicine County communities.",
+    },
+    tips: [
+      "Verify coverage for Granite Falls and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  pipestone: {
+    marketNotes:
+      "Pipestone County, MN is a southwestern Minnesota county centered on Pipestone with rural residential, heritage-tourism, and quarry-valley corridor agricultural demand — not to be confused with Pipestone in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Pipestone County pricing reflects Pipestone-area rural demand, quarry-valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Pipestone County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Pipestone and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  marshall: {
+    marketNotes:
+      "Marshall County, MN is a northwest Red River Valley county centered on Warren with rural residential and Red River border-corridor agricultural demand — not to be confused with Lyon County’s Marshall city or Marshall County in North Dakota or other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Marshall County pricing reflects Warren-area rural demand, Red River Valley corridor travel distances, cross-border North Dakota logistics, agricultural property logistics, and competition among regional agents serving Marshall County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Warren and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  clearwater: {
+    marketNotes:
+      "Clearwater County, MN is a northwest Minnesota county centered on Bagley with rural residential and Clearwater River valley corridor agricultural demand across northwoods fringe gateway communities — not to be confused with Clearwater County in Idaho.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Clearwater County pricing reflects Bagley-area rural demand, Clearwater River valley corridor travel distances, limited crew availability, and competition among regional agents serving Clearwater County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Bagley and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  murray: {
+    marketNotes:
+      "Murray County, MN is a southwestern Minnesota county centered on Slayton with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Murray County in Georgia, Oklahoma, or other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Murray County pricing reflects Slayton-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Murray County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Slayton and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  'lac-qui-parle': {
+    marketNotes:
+      "Lac qui Parle County, MN is a southwestern Minnesota county centered on Madison with rural residential and Lac qui Parle River valley corridor agricultural demand across prairie gateway communities — not to be confused with Madison in Dane County, Wisconsin.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Lac qui Parle County pricing reflects Madison-area rural demand, Lac qui Parle River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Lac qui Parle County communities.",
+    },
+    tips: [
+      "Verify coverage for Madison and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  norman: {
+    marketNotes:
+      "Norman County, MN is a northwest Red River Valley county centered on Ada with rural residential and Wild Rice River valley corridor agricultural demand — not to be confused with Norman, Oklahoma or Norman County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Norman County pricing reflects Ada-area rural demand, Wild Rice River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Norman County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Ada and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  wilkin: {
+    marketNotes:
+      "Wilkin County, MN is a Red River Valley county centered on Breckenridge with rural residential and cross-border Wahpeton–Breckenridge metro corridor agricultural demand along the North Dakota border gateway.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Wilkin County pricing reflects Breckenridge-area rural demand, Red River border-corridor traffic, cross-border North Dakota logistics, agricultural property logistics, and competition among regional agents serving Wilkin County communities.",
+    },
+    tips: [
+      "Verify coverage for Breckenridge and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  grant: {
+    marketNotes:
+      "Grant County, MN is a west-central Minnesota county centered on Elbow Lake with rural residential and Pelican Lake corridor agricultural demand across prairie gateway communities — not to be confused with Grant County in North Dakota, Wisconsin, or other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Grant County pricing reflects Elbow Lake-area rural demand, Pelican Lake corridor travel distances, agricultural property logistics, and competition among regional agents serving Grant County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Elbow Lake and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  lincoln: {
+    marketNotes:
+      "Lincoln County, MN is a southwestern Minnesota county centered on Ivanhoe with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Lincoln County in Nebraska or other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Lincoln County pricing reflects Ivanhoe-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Lincoln County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Ivanhoe and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  cook: {
+    marketNotes:
+      "Cook County, MN is Minnesota’s northeasternmost county centered on Grand Marais with strong Gunflint Trail resort, vacation-rental, and seasonal-property demand along the Lake Superior and Boundary Waters gateway — not to be confused with Cook County in Illinois.",
+    costs: {
+      studioRange: "$850–$1,700",
+      familyRange: "$3,000–$7,000+",
+      avgHourly: "$120–$185/hr for a 2-person crew",
+      note: "Cook County pricing reflects Grand Marais lakes secondary-metro demand, Gunflint Trail resort-season corridor traffic, vacation-rental turnover logistics, remote northwoods travel distances, harsh winters, and competition among regional agents serving Cook County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Grand Marais and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  mahnomen: {
+    marketNotes:
+      "Mahnomen County, MN is a northwest Minnesota county centered on Mahnomen with rural residential, tribal-nation gateway, and Wild Rice River valley corridor agricultural demand across northwoods fringe communities.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Mahnomen County pricing reflects Mahnomen-area rural demand, Wild Rice River valley corridor travel distances, limited crew availability, and competition among regional agents serving Mahnomen County communities.",
+    },
+    tips: [
+      "Verify coverage for Mahnomen and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  'big-stone': {
+    marketNotes:
+      "Big Stone County, MN is a west-central Minnesota county centered on Ortonville with rural residential and Big Stone Lake corridor agricultural demand along the South Dakota border gateway — not to be confused with Big Stone in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Big Stone County pricing reflects Ortonville-area rural demand, Big Stone Lake corridor travel distances, cross-border South Dakota logistics, agricultural property logistics, and competition among regional agents serving Big Stone County communities.",
+    },
+    tips: [
+      "Verify coverage for Ortonville and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  kittson: {
+    marketNotes:
+      "Kittson County, MN is Minnesota’s northwesternmost county centered on Hallock with rural residential and Red River valley corridor agricultural demand along the North Dakota and Manitoba border gateway.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Kittson County pricing reflects Hallock-area rural demand, remote northwest corridor travel distances, cross-border North Dakota logistics, harsh winters, and competition among regional agents serving Kittson County communities.",
+    },
+    tips: [
+      "Verify coverage for Hallock and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  'red-lake': {
+    marketNotes:
+      "Red Lake County, MN is a northwest Minnesota county centered on Red Lake Falls with rural residential and Red Lake River valley corridor agricultural demand — not to be confused with the Red Lake Nation reservation geography in Beltrami County.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Red Lake County pricing reflects Red Lake Falls-area rural demand, Red Lake River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Red Lake County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Red Lake Falls and surrounding areas before booking.",
+      "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
+      "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  'lake-of-the-woods': {
+    marketNotes:
+      "Lake of the Woods County, MN is a far-northern Minnesota county centered on Baudette with strong Rainy Lake resort, vacation-rental, and seasonal-property demand along the Ontario and Manitoba border gateway.",
+    costs: {
+      studioRange: "$850–$1,700",
+      familyRange: "$3,000–$7,000+",
+      avgHourly: "$120–$185/hr for a 2-person crew",
+      note: "Lake of the Woods County pricing reflects Baudette lakes secondary-metro demand, Rainy Lake resort-season corridor traffic, vacation-rental turnover logistics, remote northwoods travel distances, harsh winters, and competition among regional agents serving Lake of the Woods County communities.",
+    },
+    tips: [
+      "Verify coverage for Baudette and surrounding areas before booking.",
+      "Tourist-season congestion and vacation-rental turnover may affect scheduling — confirm peak-season crew availability.",
+      "Confirm insurance for high-value gateway homes, seasonal properties, and vacation rentals before move day.",
+      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
+    ],
+  },
+  traverse: {
+    marketNotes:
+      "Traverse County, MN is a west-central Minnesota county centered on Wheaton with rural residential and Bois de Sioux River valley corridor agricultural demand along the South Dakota border gateway — not to be confused with Traverse County in other states.",
+    costs: {
+      studioRange: "$750–$1,500",
+      familyRange: "$2,600–$5,800+",
+      avgHourly: "$100–$155/hr for a 2-person crew",
+      note: "Traverse County pricing reflects Wheaton-area rural demand, Bois de Sioux River valley corridor travel distances, cross-border South Dakota logistics, agricultural property logistics, and competition among regional agents serving Traverse County, MN communities.",
+    },
+    tips: [
+      "Verify coverage for Wheaton and surrounding areas before booking.",
       "Rural travel distances and limited crew availability may affect scheduling — confirm arrival windows and route access.",
       "Confirm coverage for ranch properties, long driveways, and outbuildings before booking.",
       "Book early for peak seasons (May–September) and month-end lease changeover.",

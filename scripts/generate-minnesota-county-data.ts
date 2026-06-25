@@ -1,12 +1,12 @@
 /**
- * Generates Minnesota county curation files (batches 1–3 — 63 counties).
+ * Generates Minnesota county curation files (batches 1–4 — 87 counties (full MN coverage)).
  * Run: npx tsx scripts/generate-minnesota-county-data.ts
  */
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT = join(__dirname, '..');
-const EXPECTED_COUNT = 63;
+const EXPECTED_COUNT = 87;
 
 type CostTier = 'metro' | 'secondary_metro' | 'regional_hub' | 'rural';
 
@@ -126,6 +126,30 @@ const DISPLAY_LABELS: Partial<Record<string, string>> = {
   chippewa: 'Chippewa County, MN',
   koochiching: 'Koochiching County, MN',
   watonwan: 'Watonwan County, MN',
+  cottonwood: 'Cottonwood County, MN',
+  pope: 'Pope County, MN',
+  lake: 'Lake County, MN',
+  jackson: 'Jackson County, MN',
+  swift: 'Swift County, MN',
+  stevens: 'Stevens County, MN',
+  rock: 'Rock County, MN',
+  'yellow-medicine': 'Yellow Medicine County, MN',
+  pipestone: 'Pipestone County, MN',
+  marshall: 'Marshall County, MN',
+  clearwater: 'Clearwater County, MN',
+  murray: 'Murray County, MN',
+  'lac-qui-parle': 'Lac qui Parle County, MN',
+  norman: 'Norman County, MN',
+  wilkin: 'Wilkin County, MN',
+  grant: 'Grant County, MN',
+  lincoln: 'Lincoln County, MN',
+  cook: 'Cook County, MN',
+  mahnomen: 'Mahnomen County, MN',
+  'big-stone': 'Big Stone County, MN',
+  kittson: 'Kittson County, MN',
+  'red-lake': 'Red Lake County, MN',
+  'lake-of-the-woods': 'Lake of the Woods County, MN',
+  traverse: 'Traverse County, MN',
 };
 
 const MN_NEIGHBORS: Record<string, string[]> = {
@@ -192,6 +216,30 @@ const MN_NEIGHBORS: Record<string, string[]> = {
   chippewa: ['big-stone', 'kandiyohi', 'lac-qui-parle', 'renville', 'swift', 'yellow-medicine'],
   koochiching: ['beltrami', 'itasca', 'lake-of-the-woods', 'st-louis'],
   watonwan: ['brown', 'blue-earth', 'cottonwood', 'faribault', 'jackson', 'martin', 'nicollet'],
+  cottonwood: ['brown', 'jackson', 'murray', 'nobles', 'redwood', 'watonwan'],
+  pope: ['douglas', 'grant', 'otter-tail', 'renville', 'stearns', 'stevens', 'swift'],
+  lake: ['cook', 'lake-of-the-woods', 'st-louis'],
+  jackson: ['cottonwood', 'faribault', 'martin', 'murray', 'nobles', 'watonwan'],
+  swift: ['chippewa', 'kandiyohi', 'lac-qui-parle', 'pope', 'renville', 'stevens', 'yellow-medicine'],
+  stevens: ['big-stone', 'douglas', 'grant', 'pope', 'swift', 'traverse'],
+  rock: ['nobles', 'pipestone'],
+  'yellow-medicine': ['chippewa', 'lac-qui-parle', 'lincoln', 'lyon', 'redwood', 'renville', 'swift'],
+  pipestone: ['lyon', 'murray', 'nobles', 'rock'],
+  marshall: ['beltrami', 'clearwater', 'kittson', 'pennington', 'polk', 'roseau'],
+  clearwater: ['becker', 'beltrami', 'hubbard', 'marshall', 'mahnomen', 'norman', 'pennington', 'polk', 'red-lake'],
+  murray: ['cottonwood', 'jackson', 'lyon', 'nobles', 'pipestone', 'rock'],
+  'lac-qui-parle': ['big-stone', 'chippewa', 'renville', 'swift', 'yellow-medicine'],
+  norman: ['becker', 'clay', 'clearwater', 'mahnomen', 'polk', 'wilkin'],
+  wilkin: ['clay', 'norman', 'otter-tail'],
+  grant: ['douglas', 'otter-tail', 'pope', 'stevens', 'traverse'],
+  lincoln: ['lyon', 'murray', 'yellow-medicine'],
+  cook: ['lake', 'lake-of-the-woods', 'st-louis'],
+  mahnomen: ['becker', 'clearwater', 'norman', 'polk'],
+  'big-stone': ['chippewa', 'lac-qui-parle', 'stevens', 'traverse'],
+  kittson: ['marshall', 'pennington', 'roseau'],
+  'red-lake': ['clearwater', 'pennington', 'polk'],
+  'lake-of-the-woods': ['beltrami', 'cook', 'koochiching'],
+  traverse: ['big-stone', 'grant', 'stevens'],
 };
 
 const CROSS_BORDER: Record<
@@ -283,6 +331,42 @@ const CROSS_BORDER: Record<
       name: 'Marshall',
       seat: 'Warren',
       displayLabel: 'Marshall County, ND',
+    },
+  ],
+  wilkin: [
+    {
+      slug: 'richland',
+      stateSlug: 'north-dakota',
+      name: 'Richland',
+      seat: 'Wahpeton',
+      displayLabel: 'Richland County, ND',
+    },
+  ],
+  kittson: [
+    {
+      slug: 'pembina',
+      stateSlug: 'north-dakota',
+      name: 'Pembina',
+      seat: 'Cavalier',
+      displayLabel: 'Pembina County, ND',
+    },
+  ],
+  traverse: [
+    {
+      slug: 'roberts',
+      stateSlug: 'south-dakota',
+      name: 'Roberts',
+      seat: 'Sisseton',
+      displayLabel: 'Roberts County, SD',
+    },
+  ],
+  rock: [
+    {
+      slug: 'lyon',
+      stateSlug: 'iowa',
+      name: 'Lyon',
+      seat: 'Rock Rapids',
+      displayLabel: 'Lyon County, IA',
     },
   ],
 };
@@ -1549,36 +1633,493 @@ const COUNTIES: CountyDef[] = [
       'Watonwan County pricing reflects St. James-area rural demand, Watonwan River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Watonwan County communities.',
     tipVariant: 'rural',
   },
+  {
+    slug: 'cottonwood',
+    name: 'Cottonwood',
+    seat: 'Windom',
+    city: 'Windom',
+    metro: 'cottonwood-metro-mn',
+    costTier: 'rural',
+    citySlug: 'windom',
+    regional1: 'windom-corridor',
+    regional2: 'des-moines-cottonwood',
+    topId: 'regional-cottonwood-mn-movers',
+    topName: 'Regional Windom / Cottonwood Providers',
+    regional1Name: 'Windom Corridor Moving',
+    regional2Name: 'Des Moines Cottonwood Moving',
+    marketNotes:
+      'Cottonwood County, MN is a southwestern Minnesota county centered on Windom with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Cottonwood County in other states.',
+    costNote:
+      'Cottonwood County pricing reflects Windom-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Cottonwood County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'pope',
+    name: 'Pope',
+    seat: 'Glenwood',
+    city: 'Glenwood',
+    metro: 'pope-metro-mn',
+    costTier: 'secondary_metro',
+    citySlug: 'glenwood',
+    regional1: 'glenwood-corridor',
+    regional2: 'minnewaska-pope',
+    topId: 'regional-pope-mn-movers',
+    topName: 'Regional Glenwood / Pope Providers',
+    regional1Name: 'Glenwood Corridor Moving',
+    regional2Name: 'Minnewaska Pope Moving',
+    marketNotes:
+      'Pope County, MN is a west-central lakes-country county centered on Glenwood with strong Minnewaska Lake resort, vacation-rental, and seasonal-property demand across Alexandria-adjacent corridor communities — not to be confused with Pope County in other states.',
+    costNote:
+      'Pope County pricing reflects Glenwood lakes secondary-metro demand, Minnewaska resort-season corridor traffic, vacation-rental turnover logistics, and competition among regional agents serving Pope County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'lake',
+    name: 'Lake',
+    seat: 'Two Harbors',
+    city: 'Two Harbors',
+    metro: 'lake-metro-mn',
+    costTier: 'secondary_metro',
+    citySlug: 'two-harbors',
+    regional1: 'two-harbors-corridor',
+    regional2: 'north-shore-lake',
+    topId: 'regional-lake-mn-movers',
+    topName: 'Regional Two Harbors / Lake Providers',
+    regional1Name: 'Two Harbors Corridor Moving',
+    regional2Name: 'North Shore Lake Moving',
+    marketNotes:
+      'Lake County, MN is a northeastern Minnesota county centered on Two Harbors with strong North Shore resort, vacation-rental, and seasonal-property demand along the Lake Superior gateway — not to be confused with Lake County in California, Florida, Illinois, or other states.',
+    costNote:
+      'Lake County pricing reflects Two Harbors lakes secondary-metro demand, North Shore resort-season corridor traffic, vacation-rental turnover logistics, harsh winters, and competition among regional agents serving Lake County, MN communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'jackson',
+    name: 'Jackson',
+    seat: 'Jackson',
+    city: 'Jackson',
+    metro: 'jackson-metro-mn',
+    costTier: 'rural',
+    citySlug: 'jackson',
+    regional1: 'jackson-corridor',
+    regional2: 'des-moines-jackson',
+    topId: 'regional-jackson-mn-movers',
+    topName: 'Regional Jackson / Jackson County Providers',
+    regional1Name: 'Jackson Corridor Moving',
+    regional2Name: 'Des Moines Jackson Moving',
+    marketNotes:
+      'Jackson County, MN is a southwestern Minnesota county centered on Jackson with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Jackson County in Mississippi or other states.',
+    costNote:
+      'Jackson County pricing reflects Jackson-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Jackson County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'swift',
+    name: 'Swift',
+    seat: 'Benson',
+    city: 'Benson',
+    metro: 'swift-metro-mn',
+    costTier: 'rural',
+    citySlug: 'benson',
+    regional1: 'benson-corridor',
+    regional2: 'chippewa-swift',
+    topId: 'regional-swift-mn-movers',
+    topName: 'Regional Benson / Swift Providers',
+    regional1Name: 'Benson Corridor Moving',
+    regional2Name: 'Chippewa Swift Moving',
+    marketNotes:
+      'Swift County, MN is a west-central Minnesota county centered on Benson with rural residential and Chippewa River valley corridor agricultural demand across prairie gateway communities — not to be confused with Swift County in other states.',
+    costNote:
+      'Swift County pricing reflects Benson-area rural demand, Chippewa River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Swift County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'stevens',
+    name: 'Stevens',
+    seat: 'Morris',
+    city: 'Morris',
+    metro: 'stevens-metro-mn',
+    costTier: 'rural',
+    citySlug: 'morris',
+    regional1: 'morris-corridor',
+    regional2: 'stevens-river-valley',
+    topId: 'regional-stevens-mn-movers',
+    topName: 'Regional Morris / Stevens Providers',
+    regional1Name: 'Morris Corridor Moving',
+    regional2Name: 'Stevens River Valley Moving',
+    marketNotes:
+      'Stevens County, MN is a west-central Minnesota county centered on Morris with rural residential, University of Minnesota Morris corridor, and Stevens River valley agricultural demand — not to be confused with Stevens County in Kansas or Washington.',
+    costNote:
+      'Stevens County pricing reflects Morris-area rural demand, Stevens River valley corridor travel distances, university and agricultural property logistics, and competition among regional agents serving Stevens County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'rock',
+    name: 'Rock',
+    seat: 'Luverne',
+    city: 'Luverne',
+    metro: 'rock-metro-mn',
+    costTier: 'rural',
+    citySlug: 'luverne',
+    regional1: 'luverne-corridor',
+    regional2: 'rock-river-valley',
+    topId: 'regional-rock-mn-movers',
+    topName: 'Regional Luverne / Rock Providers',
+    regional1Name: 'Luverne Corridor Moving',
+    regional2Name: 'Rock River Valley Moving',
+    marketNotes:
+      'Rock County, MN is Minnesota’s southwesternmost county centered on Luverne with rural residential and Rock River valley corridor agricultural demand along the Iowa border gateway — not to be confused with Rock County in Nebraska or Wisconsin.',
+    costNote:
+      'Rock County pricing reflects Luverne-area rural demand, Rock River valley corridor travel distances, cross-border Iowa logistics, agricultural property logistics, and competition among regional agents serving Rock County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'yellow-medicine',
+    name: 'Yellow Medicine',
+    seat: 'Granite Falls',
+    city: 'Granite Falls',
+    metro: 'yellow-medicine-metro-mn',
+    costTier: 'rural',
+    citySlug: 'granite-falls',
+    regional1: 'granite-falls-corridor',
+    regional2: 'minnesota-river-yellow-medicine',
+    topId: 'regional-yellowmedicine-mn-movers',
+    topName: 'Regional Granite Falls / Yellow Medicine Providers',
+    regional1Name: 'Granite Falls Corridor Moving',
+    regional2Name: 'Minnesota River Yellow Medicine Moving',
+    marketNotes:
+      'Yellow Medicine County, MN is a southwestern Minnesota county centered on Granite Falls with rural residential and Minnesota River valley corridor agricultural demand across prairie gateway communities.',
+    costNote:
+      'Yellow Medicine County pricing reflects Granite Falls-area rural demand, Minnesota River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Yellow Medicine County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'pipestone',
+    name: 'Pipestone',
+    seat: 'Pipestone',
+    city: 'Pipestone',
+    metro: 'pipestone-metro-mn',
+    costTier: 'rural',
+    citySlug: 'pipestone',
+    regional1: 'pipestone-corridor',
+    regional2: 'pipestone-quarry-valley',
+    topId: 'regional-pipestone-mn-movers',
+    topName: 'Regional Pipestone / Pipestone County Providers',
+    regional1Name: 'Pipestone Corridor Moving',
+    regional2Name: 'Pipestone Quarry Valley Moving',
+    marketNotes:
+      'Pipestone County, MN is a southwestern Minnesota county centered on Pipestone with rural residential, heritage-tourism, and quarry-valley corridor agricultural demand — not to be confused with Pipestone in other states.',
+    costNote:
+      'Pipestone County pricing reflects Pipestone-area rural demand, quarry-valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Pipestone County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'marshall',
+    name: 'Marshall',
+    seat: 'Warren',
+    city: 'Warren',
+    metro: 'marshall-metro-mn',
+    costTier: 'rural',
+    citySlug: 'warren',
+    regional1: 'warren-corridor',
+    regional2: 'red-river-marshall',
+    topId: 'regional-marshall-mn-movers',
+    topName: 'Regional Warren / Marshall Providers',
+    regional1Name: 'Warren Corridor Moving',
+    regional2Name: 'Red River Marshall Moving',
+    marketNotes:
+      'Marshall County, MN is a northwest Red River Valley county centered on Warren with rural residential and Red River border-corridor agricultural demand — not to be confused with Lyon County’s Marshall city or Marshall County in North Dakota or other states.',
+    costNote:
+      'Marshall County pricing reflects Warren-area rural demand, Red River Valley corridor travel distances, cross-border North Dakota logistics, agricultural property logistics, and competition among regional agents serving Marshall County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'clearwater',
+    name: 'Clearwater',
+    seat: 'Bagley',
+    city: 'Bagley',
+    metro: 'clearwater-metro-mn',
+    costTier: 'rural',
+    citySlug: 'bagley',
+    regional1: 'bagley-corridor',
+    regional2: 'clearwater-river-valley',
+    topId: 'regional-clearwater-mn-movers',
+    topName: 'Regional Bagley / Clearwater Providers',
+    regional1Name: 'Bagley Corridor Moving',
+    regional2Name: 'Clearwater River Valley Moving',
+    marketNotes:
+      'Clearwater County, MN is a northwest Minnesota county centered on Bagley with rural residential and Clearwater River valley corridor agricultural demand across northwoods fringe gateway communities — not to be confused with Clearwater County in Idaho.',
+    costNote:
+      'Clearwater County pricing reflects Bagley-area rural demand, Clearwater River valley corridor travel distances, limited crew availability, and competition among regional agents serving Clearwater County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'murray',
+    name: 'Murray',
+    seat: 'Slayton',
+    city: 'Slayton',
+    metro: 'murray-metro-mn',
+    costTier: 'rural',
+    citySlug: 'slayton',
+    regional1: 'slayton-corridor',
+    regional2: 'des-moines-murray',
+    topId: 'regional-murray-mn-movers',
+    topName: 'Regional Slayton / Murray Providers',
+    regional1Name: 'Slayton Corridor Moving',
+    regional2Name: 'Des Moines Murray Moving',
+    marketNotes:
+      'Murray County, MN is a southwestern Minnesota county centered on Slayton with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Murray County in Georgia, Oklahoma, or other states.',
+    costNote:
+      'Murray County pricing reflects Slayton-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Murray County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lac-qui-parle',
+    name: 'Lac qui Parle',
+    seat: 'Madison',
+    city: 'Madison',
+    metro: 'lac-qui-parle-metro-mn',
+    costTier: 'rural',
+    citySlug: 'madison',
+    regional1: 'madison-corridor',
+    regional2: 'lac-qui-parle-valley',
+    topId: 'regional-lacquiparle-mn-movers',
+    topName: 'Regional Madison / Lac qui Parle Providers',
+    regional1Name: 'Madison Corridor Moving',
+    regional2Name: 'Lac qui Parle Valley Moving',
+    marketNotes:
+      'Lac qui Parle County, MN is a southwestern Minnesota county centered on Madison with rural residential and Lac qui Parle River valley corridor agricultural demand across prairie gateway communities — not to be confused with Madison in Dane County, Wisconsin.',
+    costNote:
+      'Lac qui Parle County pricing reflects Madison-area rural demand, Lac qui Parle River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Lac qui Parle County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'norman',
+    name: 'Norman',
+    seat: 'Ada',
+    city: 'Ada',
+    metro: 'norman-metro-mn',
+    costTier: 'rural',
+    citySlug: 'ada',
+    regional1: 'ada-corridor',
+    regional2: 'wild-rice-norman',
+    topId: 'regional-norman-mn-movers',
+    topName: 'Regional Ada / Norman Providers',
+    regional1Name: 'Ada Corridor Moving',
+    regional2Name: 'Wild Rice Norman Moving',
+    marketNotes:
+      'Norman County, MN is a northwest Red River Valley county centered on Ada with rural residential and Wild Rice River valley corridor agricultural demand — not to be confused with Norman, Oklahoma or Norman County in other states.',
+    costNote:
+      'Norman County pricing reflects Ada-area rural demand, Wild Rice River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Norman County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'wilkin',
+    name: 'Wilkin',
+    seat: 'Breckenridge',
+    city: 'Breckenridge',
+    metro: 'wilkin-metro-mn',
+    costTier: 'rural',
+    citySlug: 'breckenridge',
+    regional1: 'breckenridge-corridor',
+    regional2: 'red-river-wilkin',
+    topId: 'regional-wilkin-mn-movers',
+    topName: 'Regional Breckenridge / Wilkin Providers',
+    regional1Name: 'Breckenridge Corridor Moving',
+    regional2Name: 'Red River Wilkin Moving',
+    marketNotes:
+      'Wilkin County, MN is a Red River Valley county centered on Breckenridge with rural residential and cross-border Wahpeton–Breckenridge metro corridor agricultural demand along the North Dakota border gateway.',
+    costNote:
+      'Wilkin County pricing reflects Breckenridge-area rural demand, Red River border-corridor traffic, cross-border North Dakota logistics, agricultural property logistics, and competition among regional agents serving Wilkin County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'grant',
+    name: 'Grant',
+    seat: 'Elbow Lake',
+    city: 'Elbow Lake',
+    metro: 'grant-metro-mn',
+    costTier: 'rural',
+    citySlug: 'elbow-lake',
+    regional1: 'elbow-lake-corridor',
+    regional2: 'pelican-grant',
+    topId: 'regional-grant-mn-movers',
+    topName: 'Regional Elbow Lake / Grant Providers',
+    regional1Name: 'Elbow Lake Corridor Moving',
+    regional2Name: 'Pelican Grant Moving',
+    marketNotes:
+      'Grant County, MN is a west-central Minnesota county centered on Elbow Lake with rural residential and Pelican Lake corridor agricultural demand across prairie gateway communities — not to be confused with Grant County in North Dakota, Wisconsin, or other states.',
+    costNote:
+      'Grant County pricing reflects Elbow Lake-area rural demand, Pelican Lake corridor travel distances, agricultural property logistics, and competition among regional agents serving Grant County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lincoln',
+    name: 'Lincoln',
+    seat: 'Ivanhoe',
+    city: 'Ivanhoe',
+    metro: 'lincoln-metro-mn',
+    costTier: 'rural',
+    citySlug: 'ivanhoe',
+    regional1: 'ivanhoe-corridor',
+    regional2: 'des-moines-lincoln',
+    topId: 'regional-lincoln-mn-movers',
+    topName: 'Regional Ivanhoe / Lincoln Providers',
+    regional1Name: 'Ivanhoe Corridor Moving',
+    regional2Name: 'Des Moines Lincoln Moving',
+    marketNotes:
+      'Lincoln County, MN is a southwestern Minnesota county centered on Ivanhoe with rural residential and Des Moines River valley corridor agricultural demand across prairie gateway communities — not to be confused with Lincoln County in Nebraska or other states.',
+    costNote:
+      'Lincoln County pricing reflects Ivanhoe-area rural demand, Des Moines River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Lincoln County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'cook',
+    name: 'Cook',
+    seat: 'Grand Marais',
+    city: 'Grand Marais',
+    metro: 'cook-metro-mn',
+    costTier: 'secondary_metro',
+    citySlug: 'grand-marais',
+    regional1: 'grand-marais-corridor',
+    regional2: 'gunflint-cook',
+    topId: 'regional-cook-mn-movers',
+    topName: 'Regional Grand Marais / Cook Providers',
+    regional1Name: 'Grand Marais Corridor Moving',
+    regional2Name: 'Gunflint Cook Moving',
+    marketNotes:
+      'Cook County, MN is Minnesota’s northeasternmost county centered on Grand Marais with strong Gunflint Trail resort, vacation-rental, and seasonal-property demand along the Lake Superior and Boundary Waters gateway — not to be confused with Cook County in Illinois.',
+    costNote:
+      'Cook County pricing reflects Grand Marais lakes secondary-metro demand, Gunflint Trail resort-season corridor traffic, vacation-rental turnover logistics, remote northwoods travel distances, harsh winters, and competition among regional agents serving Cook County, MN communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'mahnomen',
+    name: 'Mahnomen',
+    seat: 'Mahnomen',
+    city: 'Mahnomen',
+    metro: 'mahnomen-metro-mn',
+    costTier: 'rural',
+    citySlug: 'mahnomen',
+    regional1: 'mahnomen-corridor',
+    regional2: 'wild-rice-mahnomen',
+    topId: 'regional-mahnomen-mn-movers',
+    topName: 'Regional Mahnomen / Mahnomen County Providers',
+    regional1Name: 'Mahnomen Corridor Moving',
+    regional2Name: 'Wild Rice Mahnomen Moving',
+    marketNotes:
+      'Mahnomen County, MN is a northwest Minnesota county centered on Mahnomen with rural residential, tribal-nation gateway, and Wild Rice River valley corridor agricultural demand across northwoods fringe communities.',
+    costNote:
+      'Mahnomen County pricing reflects Mahnomen-area rural demand, Wild Rice River valley corridor travel distances, limited crew availability, and competition among regional agents serving Mahnomen County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'big-stone',
+    name: 'Big Stone',
+    seat: 'Ortonville',
+    city: 'Ortonville',
+    metro: 'big-stone-metro-mn',
+    costTier: 'rural',
+    citySlug: 'ortonville',
+    regional1: 'ortonville-corridor',
+    regional2: 'big-stone-lake',
+    topId: 'regional-bigstone-mn-movers',
+    topName: 'Regional Ortonville / Big Stone Providers',
+    regional1Name: 'Ortonville Corridor Moving',
+    regional2Name: 'Big Stone Lake Moving',
+    marketNotes:
+      'Big Stone County, MN is a west-central Minnesota county centered on Ortonville with rural residential and Big Stone Lake corridor agricultural demand along the South Dakota border gateway — not to be confused with Big Stone in other states.',
+    costNote:
+      'Big Stone County pricing reflects Ortonville-area rural demand, Big Stone Lake corridor travel distances, cross-border South Dakota logistics, agricultural property logistics, and competition among regional agents serving Big Stone County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'kittson',
+    name: 'Kittson',
+    seat: 'Hallock',
+    city: 'Hallock',
+    metro: 'kittson-metro-mn',
+    costTier: 'rural',
+    citySlug: 'hallock',
+    regional1: 'hallock-corridor',
+    regional2: 'red-river-kittson',
+    topId: 'regional-kittson-mn-movers',
+    topName: 'Regional Hallock / Kittson Providers',
+    regional1Name: 'Hallock Corridor Moving',
+    regional2Name: 'Red River Kittson Moving',
+    marketNotes:
+      'Kittson County, MN is Minnesota’s northwesternmost county centered on Hallock with rural residential and Red River valley corridor agricultural demand along the North Dakota and Manitoba border gateway.',
+    costNote:
+      'Kittson County pricing reflects Hallock-area rural demand, remote northwest corridor travel distances, cross-border North Dakota logistics, harsh winters, and competition among regional agents serving Kittson County communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'red-lake',
+    name: 'Red Lake',
+    seat: 'Red Lake Falls',
+    city: 'Red Lake Falls',
+    metro: 'red-lake-metro-mn',
+    costTier: 'rural',
+    citySlug: 'red-lake-falls',
+    regional1: 'red-lake-falls-corridor',
+    regional2: 'red-lake-river-valley',
+    topId: 'regional-redlake-mn-movers',
+    topName: 'Regional Red Lake Falls / Red Lake Providers',
+    regional1Name: 'Red Lake Falls Corridor Moving',
+    regional2Name: 'Red Lake River Valley Moving',
+    marketNotes:
+      'Red Lake County, MN is a northwest Minnesota county centered on Red Lake Falls with rural residential and Red Lake River valley corridor agricultural demand — not to be confused with the Red Lake Nation reservation geography in Beltrami County.',
+    costNote:
+      'Red Lake County pricing reflects Red Lake Falls-area rural demand, Red Lake River valley corridor travel distances, agricultural property logistics, and competition among regional agents serving Red Lake County, MN communities.',
+    tipVariant: 'rural',
+  },
+  {
+    slug: 'lake-of-the-woods',
+    name: 'Lake of the Woods',
+    seat: 'Baudette',
+    city: 'Baudette',
+    metro: 'lake-of-the-woods-metro-mn',
+    costTier: 'secondary_metro',
+    citySlug: 'baudette',
+    regional1: 'baudette-corridor',
+    regional2: 'rainy-lake-lake-of-the-woods',
+    topId: 'regional-lakeofthewoods-mn-movers',
+    topName: 'Regional Baudette / Lake of the Woods Providers',
+    regional1Name: 'Baudette Corridor Moving',
+    regional2Name: 'Rainy Lake Lake of the Woods Moving',
+    marketNotes:
+      'Lake of the Woods County, MN is a far-northern Minnesota county centered on Baudette with strong Rainy Lake resort, vacation-rental, and seasonal-property demand along the Ontario and Manitoba border gateway.',
+    costNote:
+      'Lake of the Woods County pricing reflects Baudette lakes secondary-metro demand, Rainy Lake resort-season corridor traffic, vacation-rental turnover logistics, remote northwoods travel distances, harsh winters, and competition among regional agents serving Lake of the Woods County communities.',
+    tipVariant: 'tourist',
+  },
+  {
+    slug: 'traverse',
+    name: 'Traverse',
+    seat: 'Wheaton',
+    city: 'Wheaton',
+    metro: 'traverse-metro-mn',
+    costTier: 'rural',
+    citySlug: 'wheaton',
+    regional1: 'wheaton-corridor',
+    regional2: 'bois-de-sioux-traverse',
+    topId: 'regional-traverse-mn-movers',
+    topName: 'Regional Wheaton / Traverse Providers',
+    regional1Name: 'Wheaton Corridor Moving',
+    regional2Name: 'Bois de Sioux Traverse Moving',
+    marketNotes:
+      'Traverse County, MN is a west-central Minnesota county centered on Wheaton with rural residential and Bois de Sioux River valley corridor agricultural demand along the South Dakota border gateway — not to be confused with Traverse County in other states.',
+    costNote:
+      'Traverse County pricing reflects Wheaton-area rural demand, Bois de Sioux River valley corridor travel distances, cross-border South Dakota logistics, agricultural property logistics, and competition among regional agents serving Traverse County, MN communities.',
+    tipVariant: 'rural',
+  },
 ];
 
 const SEAT_BY_SLUG = Object.fromEntries(COUNTIES.map((c) => [c.slug, c.seat]));
 
 const NON_CURATED_NAMES: Record<string, { name: string; seat: string }> = {
   pierce: { name: 'Pierce', seat: 'Ellsworth' },
-  lake: { name: 'Lake', seat: 'Two Harbors' },
-  cook: { name: 'Cook', seat: 'Grand Marais' },
-  pope: { name: 'Pope', seat: 'Glenwood' },
-  norman: { name: 'Norman', seat: 'Ada' },
-  wilkin: { name: 'Wilkin', seat: 'Breckenridge' },
-  clearwater: { name: 'Clearwater', seat: 'Bagley' },
-  marshall: { name: 'Marshall', seat: 'Warren' },
-  'lake-of-the-woods': { name: 'Lake of the Woods', seat: 'Baudette' },
-  swift: { name: 'Swift', seat: 'Benson' },
-  grant: { name: 'Grant', seat: 'Elbow Lake' },
-  stevens: { name: 'Stevens', seat: 'Morris' },
-  mahnomen: { name: 'Mahnomen', seat: 'Mahnomen' },
-  'red-lake': { name: 'Red Lake', seat: 'Red Lake Falls' },
   'la-crosse': { name: 'La Crosse', seat: 'La Crosse' },
-  kittson: { name: 'Kittson', seat: 'Hallock' },
-  lincoln: { name: 'Lincoln', seat: 'Ivanhoe' },
-  murray: { name: 'Murray', seat: 'Slayton' },
-  pipestone: { name: 'Pipestone', seat: 'Pipestone' },
-  'yellow-medicine': { name: 'Yellow Medicine', seat: 'Granite Falls' },
-  cottonwood: { name: 'Cottonwood', seat: 'Windom' },
-  jackson: { name: 'Jackson', seat: 'Jackson' },
-  rock: { name: 'Rock', seat: 'Luverne' },
-  'big-stone': { name: 'Big Stone', seat: 'Ortonville' },
-  'lac-qui-parle': { name: 'Lac qui Parle', seat: 'Madison' },
 };
 
 function q(s: string): string {
@@ -1793,7 +2334,7 @@ export type CuratedCountyResearch = {
   tips: string[];
 };
 
-/** Hand-curated Minnesota county research — 63 counties */
+/** Hand-curated Minnesota county research — 87 counties */
 export const minnesotaCountyResearch: Record<string, CuratedCountyResearch> = {
 ${entries.join('\n')}
 };
@@ -1810,7 +2351,7 @@ function genTestimonials(): string {
   const entries = COUNTIES.map((c, i) => buildTestimonials(c, i + 3));
   return `import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Minnesota county testimonials — 63 counties */
+/** Hand-curated Minnesota county testimonials — 87 counties */
 export const minnesotaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
 ${entries.join('\n')}
 };
@@ -1832,7 +2373,7 @@ function genAssignments(): string {
   });
   return `import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/** Hand-curated Minnesota county mover lists — 63 counties */
+/** Hand-curated Minnesota county mover lists — 87 counties */
 const CURATED_MN_COUNTIES: Record<string, string[]> = {
 ${entries.join('\n')}
 };
@@ -1852,7 +2393,7 @@ function genOverrides(): string {
   );
   return `import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–3 — 63 counties) */
+/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–4 — 87 counties (full MN coverage)) */
 export const minnesotaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -1874,7 +2415,7 @@ function genNearby(): string {
 
 export type { NearbyCountyLink };
 
-/** Minnesota curated county corridor links — 63 counties */
+/** Minnesota curated county corridor links — 87 counties */
 const MN_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
 ${entries.join('\n')}
 };

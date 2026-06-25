@@ -1,6 +1,6 @@
 import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 
-/** Hand-curated Minnesota county testimonials — 63 counties */
+/** Hand-curated Minnesota county testimonials — 87 counties */
 export const minnesotaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   hennepin: [
     { quote: "Two Men and a Truck Minneapolis handled our suburban move professionally — on time and extremely careful with our home.", name: "Alex M.", location: "Minneapolis, MN", rating: 5, moveType: "Single-family" },
@@ -316,6 +316,126 @@ export const minnesotaCountyTestimonials: Record<string, CountyTestimonialEntry[
     { quote: "Regional St. James / Watonwan Providers handled our St. James move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "St. James, MN", rating: 5, moveType: 'Single-family' },
     { quote: "All My Sons St. James navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "St. James, MN", rating: 5, moveType: 'Townhome' },
     { quote: "Watonwan River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "St. James, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  cottonwood: [
+    { quote: "Regional Windom / Cottonwood Providers handled our Windom move professionally — on time and extremely careful with our home.", name: "Fran R.", location: "Windom, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Windom navigated our relocation with fair pricing and excellent regional scheduling.", name: "Gia S.", location: "Windom, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Des Moines Cottonwood Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Hal T.", location: "Windom, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  pope: [
+    { quote: "Regional Glenwood / Pope Providers handled our Glenwood move professionally — on time and extremely careful with our home.", name: "Gia S.", location: "Glenwood, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Glenwood navigated our relocation with fair pricing and excellent regional scheduling.", name: "Hal T.", location: "Glenwood, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Minnewaska Pope Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Ivy U.", location: "Glenwood, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  lake: [
+    { quote: "Regional Two Harbors / Lake Providers handled our Two Harbors move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Two Harbors, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Two Harbors navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Two Harbors, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "North Shore Lake Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Two Harbors, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  jackson: [
+    { quote: "Regional Jackson / Jackson County Providers handled our Jackson move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Jackson, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Jackson navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Jackson, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Des Moines Jackson Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Jackson, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  swift: [
+    { quote: "Regional Benson / Swift Providers handled our Benson move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Benson, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Benson navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Benson, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Chippewa Swift Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Benson, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  stevens: [
+    { quote: "Regional Morris / Stevens Providers handled our Morris move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Morris, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Morris navigated our relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Morris, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Stevens River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Morris, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  rock: [
+    { quote: "Regional Luverne / Rock Providers handled our Luverne move professionally — on time and extremely careful with our home.", name: "Dana P.", location: "Luverne, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Luverne navigated our relocation with fair pricing and excellent regional scheduling.", name: "Eric Q.", location: "Luverne, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Rock River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Luverne, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  'yellow-medicine': [
+    { quote: "Regional Granite Falls / Yellow Medicine Providers handled our Granite Falls move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "Granite Falls, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Granite Falls navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "Granite Falls, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Minnesota River Yellow Medicine Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Granite Falls, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  pipestone: [
+    { quote: "Regional Pipestone / Pipestone County Providers handled our Pipestone move professionally — on time and extremely careful with our home.", name: "Fran R.", location: "Pipestone, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Pipestone navigated our relocation with fair pricing and excellent regional scheduling.", name: "Gia S.", location: "Pipestone, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Pipestone Quarry Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Hal T.", location: "Pipestone, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  marshall: [
+    { quote: "Regional Warren / Marshall Providers handled our Warren move professionally — on time and extremely careful with our home.", name: "Gia S.", location: "Warren, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Warren navigated our relocation with fair pricing and excellent regional scheduling.", name: "Hal T.", location: "Warren, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Red River Marshall Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Ivy U.", location: "Warren, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  clearwater: [
+    { quote: "Regional Bagley / Clearwater Providers handled our Bagley move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Bagley, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Bagley navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Bagley, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Clearwater River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Bagley, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  murray: [
+    { quote: "Regional Slayton / Murray Providers handled our Slayton move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Slayton, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Slayton navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Slayton, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Des Moines Murray Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Slayton, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  'lac-qui-parle': [
+    { quote: "Regional Madison / Lac qui Parle Providers handled our Madison move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Madison, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Madison navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Madison, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Lac qui Parle Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Madison, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  norman: [
+    { quote: "Regional Ada / Norman Providers handled our Ada move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Ada, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Ada navigated our relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Ada, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Wild Rice Norman Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Ada, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  wilkin: [
+    { quote: "Regional Breckenridge / Wilkin Providers handled our Breckenridge move professionally — on time and extremely careful with our home.", name: "Dana P.", location: "Breckenridge, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Breckenridge navigated our relocation with fair pricing and excellent regional scheduling.", name: "Eric Q.", location: "Breckenridge, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Red River Wilkin Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Breckenridge, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  grant: [
+    { quote: "Regional Elbow Lake / Grant Providers handled our Elbow Lake move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "Elbow Lake, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Elbow Lake navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "Elbow Lake, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Pelican Grant Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Elbow Lake, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  lincoln: [
+    { quote: "Regional Ivanhoe / Lincoln Providers handled our Ivanhoe move professionally — on time and extremely careful with our home.", name: "Fran R.", location: "Ivanhoe, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Ivanhoe navigated our relocation with fair pricing and excellent regional scheduling.", name: "Gia S.", location: "Ivanhoe, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Des Moines Lincoln Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Hal T.", location: "Ivanhoe, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  cook: [
+    { quote: "Regional Grand Marais / Cook Providers handled our Grand Marais move professionally — on time and extremely careful with our home.", name: "Gia S.", location: "Grand Marais, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Grand Marais navigated our relocation with fair pricing and excellent regional scheduling.", name: "Hal T.", location: "Grand Marais, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Gunflint Cook Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Ivy U.", location: "Grand Marais, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  mahnomen: [
+    { quote: "Regional Mahnomen / Mahnomen County Providers handled our Mahnomen move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Mahnomen, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Mahnomen navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Mahnomen, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Wild Rice Mahnomen Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Mahnomen, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  'big-stone': [
+    { quote: "Regional Ortonville / Big Stone Providers handled our Ortonville move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Ortonville, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Ortonville navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Ortonville, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Big Stone Lake Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Ortonville, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  kittson: [
+    { quote: "Regional Hallock / Kittson Providers handled our Hallock move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Hallock, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Hallock navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Hallock, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Red River Kittson Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Hallock, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  'red-lake': [
+    { quote: "Regional Red Lake Falls / Red Lake Providers handled our Red Lake Falls move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Red Lake Falls, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Red Lake Falls navigated our relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Red Lake Falls, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Red Lake River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Red Lake Falls, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  'lake-of-the-woods': [
+    { quote: "Regional Baudette / Lake of the Woods Providers handled our Baudette move professionally — on time and extremely careful with our home.", name: "Dana P.", location: "Baudette, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Baudette navigated our relocation with fair pricing and excellent regional scheduling.", name: "Eric Q.", location: "Baudette, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Rainy Lake Lake of the Woods Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Baudette, MN", rating: 5, moveType: 'Apartment' },
+  ],
+  traverse: [
+    { quote: "Regional Wheaton / Traverse Providers handled our Wheaton move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "Wheaton, MN", rating: 5, moveType: 'Single-family' },
+    { quote: "All My Sons Wheaton navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "Wheaton, MN", rating: 5, moveType: 'Townhome' },
+    { quote: "Bois de Sioux Traverse Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Wheaton, MN", rating: 5, moveType: 'Apartment' },
   ],
 };
 

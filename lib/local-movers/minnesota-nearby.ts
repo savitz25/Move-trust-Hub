@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Minnesota curated county corridor links — 63 counties */
+/** Minnesota curated county corridor links — 87 counties */
 const MN_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   hennepin: [
     { slug: "anoka", name: "Anoka", seat: "Anoka", href: "/local-movers/minnesota/anoka", displayLabel: "Anoka County, MN" },
@@ -431,6 +431,156 @@ const MN_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
     { slug: "cottonwood", name: "Cottonwood", seat: "Windom", href: "/local-movers/minnesota/cottonwood", displayLabel: "Cottonwood County, MN" },
     { slug: "faribault", name: "Faribault", seat: "Blue Earth", href: "/local-movers/minnesota/faribault", displayLabel: "Faribault County, MN" },
     { slug: "jackson", name: "Jackson", seat: "Jackson", href: "/local-movers/minnesota/jackson", displayLabel: "Jackson County, MN" },
+  ],
+  cottonwood: [
+    { slug: "brown", name: "Brown", seat: "New Ulm", href: "/local-movers/minnesota/brown", displayLabel: "Brown County, MN" },
+    { slug: "jackson", name: "Jackson", seat: "Jackson", href: "/local-movers/minnesota/jackson", displayLabel: "Jackson County, MN" },
+    { slug: "murray", name: "Murray", seat: "Slayton", href: "/local-movers/minnesota/murray", displayLabel: "Murray County, MN" },
+    { slug: "nobles", name: "Nobles", seat: "Worthington", href: "/local-movers/minnesota/nobles", displayLabel: "Nobles County, MN" },
+    { slug: "redwood", name: "Redwood", seat: "Redwood Falls", href: "/local-movers/minnesota/redwood", displayLabel: "Redwood County, MN" },
+  ],
+  pope: [
+    { slug: "douglas", name: "Douglas", seat: "Alexandria", href: "/local-movers/minnesota/douglas", displayLabel: "Douglas County, MN" },
+    { slug: "grant", name: "Grant", seat: "Elbow Lake", href: "/local-movers/minnesota/grant", displayLabel: "Grant County, MN" },
+    { slug: "otter-tail", name: "Otter Tail", seat: "Fergus Falls", href: "/local-movers/minnesota/otter-tail", displayLabel: "Otter Tail County, MN" },
+    { slug: "renville", name: "Renville", seat: "Olivia", href: "/local-movers/minnesota/renville", displayLabel: "Renville County, MN" },
+    { slug: "stearns", name: "Stearns", seat: "St. Cloud", href: "/local-movers/minnesota/stearns", displayLabel: "Stearns County, MN" },
+  ],
+  lake: [
+    { slug: "cook", name: "Cook", seat: "Grand Marais", href: "/local-movers/minnesota/cook", displayLabel: "Cook County, MN" },
+    { slug: "lake-of-the-woods", name: "Lake of the Woods", seat: "Baudette", href: "/local-movers/minnesota/lake-of-the-woods", displayLabel: "Lake of the Woods County, MN" },
+    { slug: "st-louis", name: "St. Louis", seat: "Duluth", href: "/local-movers/minnesota/st-louis", displayLabel: "St. Louis County, MN" },
+  ],
+  jackson: [
+    { slug: "cottonwood", name: "Cottonwood", seat: "Windom", href: "/local-movers/minnesota/cottonwood", displayLabel: "Cottonwood County, MN" },
+    { slug: "faribault", name: "Faribault", seat: "Blue Earth", href: "/local-movers/minnesota/faribault", displayLabel: "Faribault County, MN" },
+    { slug: "martin", name: "Martin", seat: "Fairmont", href: "/local-movers/minnesota/martin", displayLabel: "Martin County, MN" },
+    { slug: "murray", name: "Murray", seat: "Slayton", href: "/local-movers/minnesota/murray", displayLabel: "Murray County, MN" },
+    { slug: "nobles", name: "Nobles", seat: "Worthington", href: "/local-movers/minnesota/nobles", displayLabel: "Nobles County, MN" },
+  ],
+  swift: [
+    { slug: "chippewa", name: "Chippewa", seat: "Montevideo", href: "/local-movers/minnesota/chippewa", displayLabel: "Chippewa County, MN" },
+    { slug: "kandiyohi", name: "Kandiyohi", seat: "Willmar", href: "/local-movers/minnesota/kandiyohi", displayLabel: "Kandiyohi County, MN" },
+    { slug: "lac-qui-parle", name: "Lac qui Parle", seat: "Madison", href: "/local-movers/minnesota/lac-qui-parle", displayLabel: "Lac qui Parle County, MN" },
+    { slug: "pope", name: "Pope", seat: "Glenwood", href: "/local-movers/minnesota/pope", displayLabel: "Pope County, MN" },
+    { slug: "renville", name: "Renville", seat: "Olivia", href: "/local-movers/minnesota/renville", displayLabel: "Renville County, MN" },
+  ],
+  stevens: [
+    { slug: "big-stone", name: "Big Stone", seat: "Ortonville", href: "/local-movers/minnesota/big-stone", displayLabel: "Big Stone County, MN" },
+    { slug: "douglas", name: "Douglas", seat: "Alexandria", href: "/local-movers/minnesota/douglas", displayLabel: "Douglas County, MN" },
+    { slug: "grant", name: "Grant", seat: "Elbow Lake", href: "/local-movers/minnesota/grant", displayLabel: "Grant County, MN" },
+    { slug: "pope", name: "Pope", seat: "Glenwood", href: "/local-movers/minnesota/pope", displayLabel: "Pope County, MN" },
+    { slug: "swift", name: "Swift", seat: "Benson", href: "/local-movers/minnesota/swift", displayLabel: "Swift County, MN" },
+  ],
+  rock: [
+    { slug: "nobles", name: "Nobles", seat: "Worthington", href: "/local-movers/minnesota/nobles", displayLabel: "Nobles County, MN" },
+    { slug: "pipestone", name: "Pipestone", seat: "Pipestone", href: "/local-movers/minnesota/pipestone", displayLabel: "Pipestone County, MN" },
+    { slug: "lyon", name: "Lyon", seat: "Rock Rapids", href: "/local-movers/iowa/lyon", displayLabel: "Lyon County, IA" },
+  ],
+  'yellow-medicine': [
+    { slug: "chippewa", name: "Chippewa", seat: "Montevideo", href: "/local-movers/minnesota/chippewa", displayLabel: "Chippewa County, MN" },
+    { slug: "lac-qui-parle", name: "Lac qui Parle", seat: "Madison", href: "/local-movers/minnesota/lac-qui-parle", displayLabel: "Lac qui Parle County, MN" },
+    { slug: "lincoln", name: "Lincoln", seat: "Ivanhoe", href: "/local-movers/minnesota/lincoln", displayLabel: "Lincoln County, MN" },
+    { slug: "lyon", name: "Lyon", seat: "Marshall", href: "/local-movers/minnesota/lyon", displayLabel: "Lyon County, MN" },
+    { slug: "redwood", name: "Redwood", seat: "Redwood Falls", href: "/local-movers/minnesota/redwood", displayLabel: "Redwood County, MN" },
+  ],
+  pipestone: [
+    { slug: "lyon", name: "Lyon", seat: "Marshall", href: "/local-movers/minnesota/lyon", displayLabel: "Lyon County, MN" },
+    { slug: "murray", name: "Murray", seat: "Slayton", href: "/local-movers/minnesota/murray", displayLabel: "Murray County, MN" },
+    { slug: "nobles", name: "Nobles", seat: "Worthington", href: "/local-movers/minnesota/nobles", displayLabel: "Nobles County, MN" },
+    { slug: "rock", name: "Rock", seat: "Luverne", href: "/local-movers/minnesota/rock", displayLabel: "Rock County, MN" },
+  ],
+  marshall: [
+    { slug: "beltrami", name: "Beltrami", seat: "Bemidji", href: "/local-movers/minnesota/beltrami", displayLabel: "Beltrami County, MN" },
+    { slug: "clearwater", name: "Clearwater", seat: "Bagley", href: "/local-movers/minnesota/clearwater", displayLabel: "Clearwater County, MN" },
+    { slug: "kittson", name: "Kittson", seat: "Hallock", href: "/local-movers/minnesota/kittson", displayLabel: "Kittson County, MN" },
+    { slug: "pennington", name: "Pennington", seat: "Thief River Falls", href: "/local-movers/minnesota/pennington", displayLabel: "Pennington County, MN" },
+    { slug: "polk", name: "Polk", seat: "Crookston", href: "/local-movers/minnesota/polk", displayLabel: "Polk County, MN" },
+  ],
+  clearwater: [
+    { slug: "becker", name: "Becker", seat: "Detroit Lakes", href: "/local-movers/minnesota/becker", displayLabel: "Becker County, MN" },
+    { slug: "beltrami", name: "Beltrami", seat: "Bemidji", href: "/local-movers/minnesota/beltrami", displayLabel: "Beltrami County, MN" },
+    { slug: "hubbard", name: "Hubbard", seat: "Park Rapids", href: "/local-movers/minnesota/hubbard", displayLabel: "Hubbard County, MN" },
+    { slug: "marshall", name: "Marshall", seat: "Warren", href: "/local-movers/minnesota/marshall", displayLabel: "Marshall County, MN" },
+    { slug: "mahnomen", name: "Mahnomen", seat: "Mahnomen", href: "/local-movers/minnesota/mahnomen", displayLabel: "Mahnomen County, MN" },
+  ],
+  murray: [
+    { slug: "cottonwood", name: "Cottonwood", seat: "Windom", href: "/local-movers/minnesota/cottonwood", displayLabel: "Cottonwood County, MN" },
+    { slug: "jackson", name: "Jackson", seat: "Jackson", href: "/local-movers/minnesota/jackson", displayLabel: "Jackson County, MN" },
+    { slug: "lyon", name: "Lyon", seat: "Marshall", href: "/local-movers/minnesota/lyon", displayLabel: "Lyon County, MN" },
+    { slug: "nobles", name: "Nobles", seat: "Worthington", href: "/local-movers/minnesota/nobles", displayLabel: "Nobles County, MN" },
+    { slug: "pipestone", name: "Pipestone", seat: "Pipestone", href: "/local-movers/minnesota/pipestone", displayLabel: "Pipestone County, MN" },
+  ],
+  'lac-qui-parle': [
+    { slug: "big-stone", name: "Big Stone", seat: "Ortonville", href: "/local-movers/minnesota/big-stone", displayLabel: "Big Stone County, MN" },
+    { slug: "chippewa", name: "Chippewa", seat: "Montevideo", href: "/local-movers/minnesota/chippewa", displayLabel: "Chippewa County, MN" },
+    { slug: "renville", name: "Renville", seat: "Olivia", href: "/local-movers/minnesota/renville", displayLabel: "Renville County, MN" },
+    { slug: "swift", name: "Swift", seat: "Benson", href: "/local-movers/minnesota/swift", displayLabel: "Swift County, MN" },
+    { slug: "yellow-medicine", name: "Yellow Medicine", seat: "Granite Falls", href: "/local-movers/minnesota/yellow-medicine", displayLabel: "Yellow Medicine County, MN" },
+  ],
+  norman: [
+    { slug: "becker", name: "Becker", seat: "Detroit Lakes", href: "/local-movers/minnesota/becker", displayLabel: "Becker County, MN" },
+    { slug: "clay", name: "Clay", seat: "Moorhead", href: "/local-movers/minnesota/clay", displayLabel: "Clay County, MN" },
+    { slug: "clearwater", name: "Clearwater", seat: "Bagley", href: "/local-movers/minnesota/clearwater", displayLabel: "Clearwater County, MN" },
+    { slug: "mahnomen", name: "Mahnomen", seat: "Mahnomen", href: "/local-movers/minnesota/mahnomen", displayLabel: "Mahnomen County, MN" },
+    { slug: "polk", name: "Polk", seat: "Crookston", href: "/local-movers/minnesota/polk", displayLabel: "Polk County, MN" },
+  ],
+  wilkin: [
+    { slug: "clay", name: "Clay", seat: "Moorhead", href: "/local-movers/minnesota/clay", displayLabel: "Clay County, MN" },
+    { slug: "norman", name: "Norman", seat: "Ada", href: "/local-movers/minnesota/norman", displayLabel: "Norman County, MN" },
+    { slug: "otter-tail", name: "Otter Tail", seat: "Fergus Falls", href: "/local-movers/minnesota/otter-tail", displayLabel: "Otter Tail County, MN" },
+    { slug: "richland", name: "Richland", seat: "Wahpeton", href: "/local-movers/north-dakota/richland", displayLabel: "Richland County, ND" },
+  ],
+  grant: [
+    { slug: "douglas", name: "Douglas", seat: "Alexandria", href: "/local-movers/minnesota/douglas", displayLabel: "Douglas County, MN" },
+    { slug: "otter-tail", name: "Otter Tail", seat: "Fergus Falls", href: "/local-movers/minnesota/otter-tail", displayLabel: "Otter Tail County, MN" },
+    { slug: "pope", name: "Pope", seat: "Glenwood", href: "/local-movers/minnesota/pope", displayLabel: "Pope County, MN" },
+    { slug: "stevens", name: "Stevens", seat: "Morris", href: "/local-movers/minnesota/stevens", displayLabel: "Stevens County, MN" },
+    { slug: "traverse", name: "Traverse", seat: "Wheaton", href: "/local-movers/minnesota/traverse", displayLabel: "Traverse County, MN" },
+  ],
+  lincoln: [
+    { slug: "lyon", name: "Lyon", seat: "Marshall", href: "/local-movers/minnesota/lyon", displayLabel: "Lyon County, MN" },
+    { slug: "murray", name: "Murray", seat: "Slayton", href: "/local-movers/minnesota/murray", displayLabel: "Murray County, MN" },
+    { slug: "yellow-medicine", name: "Yellow Medicine", seat: "Granite Falls", href: "/local-movers/minnesota/yellow-medicine", displayLabel: "Yellow Medicine County, MN" },
+  ],
+  cook: [
+    { slug: "lake", name: "Lake", seat: "Two Harbors", href: "/local-movers/minnesota/lake", displayLabel: "Lake County, MN" },
+    { slug: "lake-of-the-woods", name: "Lake of the Woods", seat: "Baudette", href: "/local-movers/minnesota/lake-of-the-woods", displayLabel: "Lake of the Woods County, MN" },
+    { slug: "st-louis", name: "St. Louis", seat: "Duluth", href: "/local-movers/minnesota/st-louis", displayLabel: "St. Louis County, MN" },
+  ],
+  mahnomen: [
+    { slug: "becker", name: "Becker", seat: "Detroit Lakes", href: "/local-movers/minnesota/becker", displayLabel: "Becker County, MN" },
+    { slug: "clearwater", name: "Clearwater", seat: "Bagley", href: "/local-movers/minnesota/clearwater", displayLabel: "Clearwater County, MN" },
+    { slug: "norman", name: "Norman", seat: "Ada", href: "/local-movers/minnesota/norman", displayLabel: "Norman County, MN" },
+    { slug: "polk", name: "Polk", seat: "Crookston", href: "/local-movers/minnesota/polk", displayLabel: "Polk County, MN" },
+  ],
+  'big-stone': [
+    { slug: "chippewa", name: "Chippewa", seat: "Montevideo", href: "/local-movers/minnesota/chippewa", displayLabel: "Chippewa County, MN" },
+    { slug: "lac-qui-parle", name: "Lac qui Parle", seat: "Madison", href: "/local-movers/minnesota/lac-qui-parle", displayLabel: "Lac qui Parle County, MN" },
+    { slug: "stevens", name: "Stevens", seat: "Morris", href: "/local-movers/minnesota/stevens", displayLabel: "Stevens County, MN" },
+    { slug: "traverse", name: "Traverse", seat: "Wheaton", href: "/local-movers/minnesota/traverse", displayLabel: "Traverse County, MN" },
+  ],
+  kittson: [
+    { slug: "marshall", name: "Marshall", seat: "Warren", href: "/local-movers/minnesota/marshall", displayLabel: "Marshall County, MN" },
+    { slug: "pennington", name: "Pennington", seat: "Thief River Falls", href: "/local-movers/minnesota/pennington", displayLabel: "Pennington County, MN" },
+    { slug: "roseau", name: "Roseau", seat: "Roseau", href: "/local-movers/minnesota/roseau", displayLabel: "Roseau County, MN" },
+    { slug: "pembina", name: "Pembina", seat: "Cavalier", href: "/local-movers/north-dakota/pembina", displayLabel: "Pembina County, ND" },
+  ],
+  'red-lake': [
+    { slug: "clearwater", name: "Clearwater", seat: "Bagley", href: "/local-movers/minnesota/clearwater", displayLabel: "Clearwater County, MN" },
+    { slug: "pennington", name: "Pennington", seat: "Thief River Falls", href: "/local-movers/minnesota/pennington", displayLabel: "Pennington County, MN" },
+    { slug: "polk", name: "Polk", seat: "Crookston", href: "/local-movers/minnesota/polk", displayLabel: "Polk County, MN" },
+  ],
+  'lake-of-the-woods': [
+    { slug: "beltrami", name: "Beltrami", seat: "Bemidji", href: "/local-movers/minnesota/beltrami", displayLabel: "Beltrami County, MN" },
+    { slug: "cook", name: "Cook", seat: "Grand Marais", href: "/local-movers/minnesota/cook", displayLabel: "Cook County, MN" },
+    { slug: "koochiching", name: "Koochiching", seat: "International Falls", href: "/local-movers/minnesota/koochiching", displayLabel: "Koochiching County, MN" },
+  ],
+  traverse: [
+    { slug: "big-stone", name: "Big Stone", seat: "Ortonville", href: "/local-movers/minnesota/big-stone", displayLabel: "Big Stone County, MN" },
+    { slug: "grant", name: "Grant", seat: "Elbow Lake", href: "/local-movers/minnesota/grant", displayLabel: "Grant County, MN" },
+    { slug: "stevens", name: "Stevens", seat: "Morris", href: "/local-movers/minnesota/stevens", displayLabel: "Stevens County, MN" },
+    { slug: "roberts", name: "Roberts", seat: "Sisseton", href: "/local-movers/south-dakota/roberts", displayLabel: "Roberts County, SD" },
   ],
 };
 

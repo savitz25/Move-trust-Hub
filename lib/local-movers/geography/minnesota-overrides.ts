@@ -1,6 +1,6 @@
 import type { LocalCounty } from '@/lib/local-movers/types';
 
-/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–3 — 63 counties) */
+/** Seat and metro overrides for hand-curated Minnesota counties (batches 1–4 — 87 counties (full MN coverage)) */
 export const minnesotaCountyOverrides: Partial<
   Record<string, Pick<LocalCounty, 'seat' | 'metro'>>
 > = {
@@ -67,6 +67,30 @@ export const minnesotaCountyOverrides: Partial<
   chippewa: { seat: "Montevideo", metro: "chippewa-metro-mn" },
   koochiching: { seat: "International Falls", metro: "koochiching-metro-mn" },
   watonwan: { seat: "St. James", metro: "watonwan-metro-mn" },
+  cottonwood: { seat: "Windom", metro: "cottonwood-metro-mn" },
+  pope: { seat: "Glenwood", metro: "pope-metro-mn" },
+  lake: { seat: "Two Harbors", metro: "lake-metro-mn" },
+  jackson: { seat: "Jackson", metro: "jackson-metro-mn" },
+  swift: { seat: "Benson", metro: "swift-metro-mn" },
+  stevens: { seat: "Morris", metro: "stevens-metro-mn" },
+  rock: { seat: "Luverne", metro: "rock-metro-mn" },
+  'yellow-medicine': { seat: "Granite Falls", metro: "yellow-medicine-metro-mn" },
+  pipestone: { seat: "Pipestone", metro: "pipestone-metro-mn" },
+  marshall: { seat: "Warren", metro: "marshall-metro-mn" },
+  clearwater: { seat: "Bagley", metro: "clearwater-metro-mn" },
+  murray: { seat: "Slayton", metro: "murray-metro-mn" },
+  'lac-qui-parle': { seat: "Madison", metro: "lac-qui-parle-metro-mn" },
+  norman: { seat: "Ada", metro: "norman-metro-mn" },
+  wilkin: { seat: "Breckenridge", metro: "wilkin-metro-mn" },
+  grant: { seat: "Elbow Lake", metro: "grant-metro-mn" },
+  lincoln: { seat: "Ivanhoe", metro: "lincoln-metro-mn" },
+  cook: { seat: "Grand Marais", metro: "cook-metro-mn" },
+  mahnomen: { seat: "Mahnomen", metro: "mahnomen-metro-mn" },
+  'big-stone': { seat: "Ortonville", metro: "big-stone-metro-mn" },
+  kittson: { seat: "Hallock", metro: "kittson-metro-mn" },
+  'red-lake': { seat: "Red Lake Falls", metro: "red-lake-metro-mn" },
+  'lake-of-the-woods': { seat: "Baudette", metro: "lake-of-the-woods-metro-mn" },
+  traverse: { seat: "Wheaton", metro: "traverse-metro-mn" },
 };
 
 export function applyMinnesotaCountyOverrides(county: LocalCounty): LocalCounty {

@@ -55,6 +55,12 @@ const SCHEMA_PRIMARY_CITY_OVERRIDES: Record<string, Record<string, string>> = {
     dodge: 'Mantorville',
     lyon: 'Marshall',
     brown: 'New Ulm',
+    marshall: 'Warren',
+    'lac-qui-parle': 'Madison',
+    'red-lake': 'Red Lake Falls',
+    'yellow-medicine': 'Granite Falls',
+    'big-stone': 'Ortonville',
+    'lake-of-the-woods': 'Baudette',
   },
 };
 
