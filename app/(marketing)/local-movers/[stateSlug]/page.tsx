@@ -119,6 +119,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'arizona' ||
                 state.slug === 'new-mexico' ||
                 state.slug === 'utah' ||
+                state.slug === 'colorado' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -156,7 +157,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                                   ? 'Browse all 33 New Mexico county guides — up to 11 curated movers in Bernalillo County (Albuquerque metro), 8–9 in Santa Fe and Doña Ana (Las Cruces), and 5–7 regional specialists in every county. Albuquerque covers corporate, Kirtland AFB military PCS, and suburban moves; Santa Fe and Taos cover tourism, second-home, and retirement moves; southern New Mexico covers border and military corridors; rural counties emphasize long-distance hauls and remote logistics. FMCSA licensing, cost estimates, and New Mexico-specific moving tips.'
                                                   : state.slug === 'utah'
                                                     ? 'Browse all 29 Utah county guides — up to 12 curated movers in Salt Lake County (Salt Lake City metro), 9–10 in Utah County (Provo-Orem / Silicon Slopes), 8–9 in Davis, Weber, and Washington (St. George), and 6–8 regional specialists in every county. Wasatch Front metros cover tech growth, family moves, and Hill AFB military PCS; southern Utah covers retirement, tourism, and snowbird moves; rural counties emphasize long-distance hauls and outdoor-lifestyle logistics. FMCSA licensing, cost estimates, and Utah-specific moving tips.'
-                                                    : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                                    : state.slug === 'colorado'
+                                                      ? 'Browse Colorado county guides — 10 curated movers in El Paso County (Colorado Springs), Denver, Arapahoe (Aurora), Jefferson (Lakewood), Adams (Thornton), Douglas (Castle Rock), and Weld (Greeley). Denver metro guides cover urban traffic and suburban high-value homes; Colorado Springs covers military PCS and Pikes Peak corridor moves; additional county guides are rolling out statewide. FMCSA licensing, cost estimates, and Colorado-specific moving tips.'
+                                                      : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>

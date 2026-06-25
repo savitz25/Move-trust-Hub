@@ -45,6 +45,7 @@ export const NEVADA_COUNTY_CONTENT_UPDATED = '2026-06-24';
 export const ARIZONA_COUNTY_CONTENT_UPDATED = '2026-06-24';
 export const NEW_MEXICO_COUNTY_CONTENT_UPDATED = '2026-06-24';
 export const UTAH_COUNTY_CONTENT_UPDATED = '2026-06-24';
+export const COLORADO_COUNTY_CONTENT_UPDATED = '2026-06-25';
 
 type Props = {
   countyLabel: string;

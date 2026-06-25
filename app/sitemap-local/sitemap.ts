@@ -38,6 +38,7 @@ import {
   ARIZONA_COUNTY_CONTENT_UPDATED,
   NEW_MEXICO_COUNTY_CONTENT_UPDATED,
   UTAH_COUNTY_CONTENT_UPDATED,
+  COLORADO_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -255,6 +256,8 @@ const AZ_HIGH_TRAFFIC_COUNTIES = new Set(['maricopa', 'pima']);
 const NM_HIGH_TRAFFIC_COUNTIES = new Set(['bernalillo']);
 
 const UT_HIGH_TRAFFIC_COUNTIES = new Set(['salt-lake', 'utah']);
+
+const CO_HIGH_TRAFFIC_COUNTIES = new Set(['denver', 'el-paso', 'arapahoe']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -695,7 +698,9 @@ export default async function sitemap({
                                                                                     ? new Date(NEW_MEXICO_COUNTY_CONTENT_UPDATED)
                                                                                     : id === 'utah'
                                                                                       ? new Date(UTAH_COUNTY_CONTENT_UPDATED)
-                                                                                      : new Date();
+                                                                                      : id === 'colorado'
+                                                                                        ? new Date(COLORADO_COUNTY_CONTENT_UPDATED)
+                                                                                        : new Date();
 
   return [
     {
@@ -757,7 +762,8 @@ export default async function sitemap({
         (id === 'nevada' && NV_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'arizona' && AZ_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'new-mexico' && NM_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'utah' && UT_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'utah' && UT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'colorado' && CO_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
