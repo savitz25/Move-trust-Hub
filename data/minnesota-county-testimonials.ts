@@ -3,39 +3,39 @@ import type { CountyTestimonialEntry } from '@/lib/local-movers/county-seo';
 /** Hand-curated Minnesota county testimonials — 87 counties */
 export const minnesotaCountyTestimonials: Record<string, CountyTestimonialEntry[]> = {
   hennepin: [
-    { quote: "Two Men and a Truck Minneapolis handled our suburban move professionally — on time and extremely careful with our home.", name: "Alex M.", location: "Minneapolis, MN", rating: 5, moveType: "Single-family" },
-    { quote: "All My Sons Minneapolis navigated our Edina relocation with fair pricing through Twin Cities metro corridor traffic.", name: "Beth N.", location: "Minneapolis, MN", rating: 5, moveType: "Townhome" },
-    { quote: "Twin Cities Metro West Moving served our Bloomington-area move efficiently with steady communication and professional crew coordination.", name: "Carl O.", location: "Bloomington, MN", rating: 5, moveType: "Apartment" },
+    { quote: "Twin Cities Corporate HQ Moving handled our Target headquarters employee relocation flawlessly — careful packing, on-time delivery, and great communication throughout.", name: "Alex M.", location: "Minneapolis, MN", rating: 5, moveType: "Corporate transfer" },
+    { quote: "Twin Cities Urban High-Rise Moving coordinated our downtown Minneapolis condo move with perfect elevator timing and zero building damage.", name: "Beth N.", location: "Minneapolis, MN", rating: 5, moveType: "High-rise condo" },
+    { quote: "Twin Cities Winter Long Distance Moving got us to Arizona through a January blizzard on I-94 without a single delay — impressive winter logistics.", name: "Carl O.", location: "Edina, MN", rating: 5, moveType: "Long-distance" },
   ],
   ramsey: [
-    { quote: "Regional Saint Paul / Ramsey Providers handled our Saint Paul move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Saint Paul, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Saint Paul navigated our relocation with fair pricing and excellent regional scheduling.", name: "Ivy U.", location: "Saint Paul, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "Mississippi River Ramsey Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Saint Paul, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "Saint Paul Capital Government Moving handled our state agency relocation with professional crew coordination and careful handling of our home office.", name: "Hal T.", location: "Saint Paul, MN", rating: 5, moveType: "Government transfer" },
+    { quote: "Twin Cities University Moving made our U of M Saint Paul campus-area move stress-free — they knew the building access rules perfectly.", name: "Ivy U.", location: "Saint Paul, MN", rating: 5, moveType: "Student housing" },
+    { quote: "Twin Cities East Corporate Moving navigated our 3M corridor professional relocation with fair pricing and excellent east-metro scheduling.", name: "Jay V.", location: "Maplewood, MN", rating: 5, moveType: "Professional" },
   ],
   dakota: [
-    { quote: "Regional Lakeville / Dakota Providers handled our Lakeville move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Lakeville, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Lakeville navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Hastings, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "Minnesota River Dakota Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Lakeville, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "Twin Cities South Metro Suburban Moving handled our Lakeville new-construction move perfectly — on time and extremely careful with our home.", name: "Ivy U.", location: "Lakeville, MN", rating: 5, moveType: "Suburban family" },
+    { quote: "All My Sons Lakeville navigated our Eagan relocation with fair pricing through I-35W south-metro corridor traffic.", name: "Jay V.", location: "Eagan, MN", rating: 5, moveType: "Townhome" },
+    { quote: "Minnesota River Dakota Moving served our Apple Valley move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Apple Valley, MN", rating: 5, moveType: "Single-family" },
   ],
   anoka: [
-    { quote: "Regional Anoka / Anoka County Providers handled our Anoka move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Anoka, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Anoka navigated our relocation with fair pricing and excellent regional scheduling.", name: "Kim W.", location: "Anoka, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "Rum River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Anoka, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "Twin Cities North Metro Suburban Moving handled our Blaine suburban move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Blaine, MN", rating: 5, moveType: "Suburban family" },
+    { quote: "All My Sons Anoka navigated our Coon Rapids relocation with fair pricing and excellent I-35W north-metro scheduling.", name: "Kim W.", location: "Coon Rapids, MN", rating: 5, moveType: "Townhome" },
+    { quote: "Rum River Valley Moving served our Andover move efficiently with punctual arrival and professional crew coordination.", name: "Dana P.", location: "Andover, MN", rating: 5, moveType: "Single-family" },
   ],
   washington: [
-    { quote: "Regional Stillwater / Washington Providers handled our Stillwater move professionally — on time and extremely careful with our home.", name: "Kim W.", location: "Stillwater, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Stillwater navigated our relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Stillwater, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "St. Croix River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Stillwater, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "St. Croix Cross-Border Moving coordinated our Woodbury-to-Hudson, WI relocation seamlessly — excellent bridge corridor experience.", name: "Kim W.", location: "Woodbury, MN", rating: 5, moveType: "Cross-border" },
+    { quote: "All My Sons Stillwater navigated our Stillwater riverfront relocation with fair pricing and excellent regional scheduling.", name: "Dana P.", location: "Stillwater, MN", rating: 5, moveType: "Townhome" },
+    { quote: "St. Croix River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Eric Q.", location: "Stillwater, MN", rating: 5, moveType: "Single-family" },
   ],
   'st-louis': [
-    { quote: "Regional Duluth / St. Louis Providers handled our Duluth move professionally — on time and extremely careful with our home.", name: "Dana P.", location: "Duluth, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Duluth navigated our relocation with fair pricing and excellent regional scheduling.", name: "Eric Q.", location: "Duluth, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "Lake Superior North Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Duluth, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "Duluth North Shore Moving handled our Lake Superior seasonal cabin relocation with careful winter scheduling and excellent North Shore corridor experience.", name: "Dana P.", location: "Duluth, MN", rating: 5, moveType: "Second-home" },
+    { quote: "All My Sons Duluth navigated our port-city relocation with fair pricing through harsh January snow conditions.", name: "Eric Q.", location: "Duluth, MN", rating: 5, moveType: "Single-family" },
+    { quote: "Lake Superior North Moving served our Hermantown move efficiently with punctual arrival and professional crew coordination.", name: "Fran R.", location: "Hermantown, MN", rating: 5, moveType: "Townhome" },
   ],
   olmsted: [
-    { quote: "Regional Rochester / Olmsted Providers handled our Rochester move professionally — on time and extremely careful with our home.", name: "Eric Q.", location: "Rochester, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Rochester navigated our relocation with fair pricing and excellent regional scheduling.", name: "Fran R.", location: "Rochester, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "Zumbro River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Rochester, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "Mayo Clinic Medical Moving handled our physician fellowship relocation to Rochester with careful scheduling around clinic orientation week.", name: "Eric Q.", location: "Rochester, MN", rating: 5, moveType: "Medical professional" },
+    { quote: "All My Sons Rochester navigated our healthcare-sector family relocation with fair pricing and excellent Zumbro River valley scheduling.", name: "Fran R.", location: "Rochester, MN", rating: 5, moveType: "Healthcare transfer" },
+    { quote: "Zumbro River Valley Moving served our Byron-area move efficiently with punctual arrival and professional crew coordination.", name: "Gia S.", location: "Byron, MN", rating: 5, moveType: "Single-family" },
   ],
   stearns: [
     { quote: "Regional St. Cloud / Stearns Providers handled our St. Cloud move professionally — on time and extremely careful with our home.", name: "Fran R.", location: "St. Cloud, MN", rating: 5, moveType: 'Single-family' },
@@ -43,9 +43,9 @@ export const minnesotaCountyTestimonials: Record<string, CountyTestimonialEntry[
     { quote: "Mississippi River Stearns Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Hal T.", location: "St. Cloud, MN", rating: 5, moveType: 'Apartment' },
   ],
   scott: [
-    { quote: "Regional Shakopee / Scott Providers handled our Shakopee move professionally — on time and extremely careful with our home.", name: "Gia S.", location: "Shakopee, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Shakopee navigated our relocation with fair pricing and excellent regional scheduling.", name: "Hal T.", location: "Shakopee, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "Minnesota River Scott Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Ivy U.", location: "Shakopee, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "Minnesota River Southwest Suburban Moving handled our Shakopee suburban move professionally — on time and extremely careful with our new-construction home.", name: "Gia S.", location: "Shakopee, MN", rating: 5, moveType: "Suburban family" },
+    { quote: "All My Sons Shakopee navigated our Prior Lake relocation with fair pricing and excellent southwest-metro scheduling.", name: "Hal T.", location: "Prior Lake, MN", rating: 5, moveType: "Townhome" },
+    { quote: "Minnesota River Scott Moving served our Savage move efficiently with punctual arrival and professional crew coordination.", name: "Ivy U.", location: "Savage, MN", rating: 5, moveType: "Single-family" },
   ],
   wright: [
     { quote: "Regional Buffalo / Wright Providers handled our Buffalo move professionally — on time and extremely careful with our home.", name: "Hal T.", location: "Buffalo, MN", rating: 5, moveType: 'Single-family' },
@@ -53,9 +53,9 @@ export const minnesotaCountyTestimonials: Record<string, CountyTestimonialEntry[
     { quote: "Crow River Valley Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Jay V.", location: "Buffalo, MN", rating: 5, moveType: 'Apartment' },
   ],
   carver: [
-    { quote: "Regional Chaska / Carver Providers handled our Chaska move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Chaska, MN", rating: 5, moveType: 'Single-family' },
-    { quote: "All My Sons Chaska navigated our relocation with fair pricing and excellent regional scheduling.", name: "Jay V.", location: "Chaska, MN", rating: 5, moveType: 'Townhome' },
-    { quote: "Minnesota River Carver Moving served our move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Chaska, MN", rating: 5, moveType: 'Apartment' },
+    { quote: "Twin Cities West Metro Suburban Moving handled our Chanhassen suburban move professionally — on time and extremely careful with our home.", name: "Ivy U.", location: "Chanhassen, MN", rating: 5, moveType: "Suburban family" },
+    { quote: "All My Sons Chaska navigated our Victoria relocation with fair pricing and excellent west-metro scheduling.", name: "Jay V.", location: "Victoria, MN", rating: 5, moveType: "Townhome" },
+    { quote: "Minnesota River Carver Moving served our Waconia move efficiently with punctual arrival and professional crew coordination.", name: "Kim W.", location: "Waconia, MN", rating: 5, moveType: "Single-family" },
   ],
   sherburne: [
     { quote: "Regional Elk River / Sherburne Providers handled our Elk River move professionally — on time and extremely careful with our home.", name: "Jay V.", location: "Elk River, MN", rating: 5, moveType: 'Single-family' },

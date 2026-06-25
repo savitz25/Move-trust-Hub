@@ -282,7 +282,15 @@ const NE_HIGH_TRAFFIC_COUNTIES = new Set(['douglas', 'sarpy', 'lancaster']);
 
 const IA_HIGH_TRAFFIC_COUNTIES = new Set(['polk', 'linn', 'scott', 'johnson']);
 
-const MN_HIGH_TRAFFIC_COUNTIES = new Set(['hennepin', 'ramsey', 'dakota', 'anoka']);
+const MN_HIGH_TRAFFIC_COUNTIES = new Set([
+  'hennepin',
+  'ramsey',
+  'dakota',
+  'anoka',
+  'washington',
+  'scott',
+  'carver',
+]);
 
 const WI_HIGH_TRAFFIC_COUNTIES = new Set(['milwaukee', 'dane', 'waukesha', 'kenosha']);
 

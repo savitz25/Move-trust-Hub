@@ -10,35 +10,35 @@ export type CuratedCountyResearch = {
 export const minnesotaCountyResearch: Record<string, CuratedCountyResearch> = {
   hennepin: {
     marketNotes:
-      "Hennepin County, MN is Minnesota’s most populous county centered on Minneapolis with strong urban, suburban, and residential demand across the Twin Cities metro west corridor.",
+      "Hennepin County anchors the Minneapolis side of the Twin Cities metro — home to Fortune 500 headquarters (Target, US Bancorp, Best Buy), downtown high-rises, and affluent Bloomington–Edina–Minnetonka suburbs. Movers here routinely handle corporate employee transfers, executive relocations, dense urban condo moves, and long-distance hauls along the I-94 and I-494 corridors.",
     costs: {
       studioRange: "$900–$1,900",
       familyRange: "$3,500–$8,500+",
       avgHourly: "$125–$195/hr for a 2-person crew",
-      note: "Hennepin County pricing reflects Minneapolis metro demand, I-94 and I-494 corridor traffic, high-value suburban homes, and competition among full-service agents serving Hennepin County communities.",
+      note: "Hennepin County pricing reflects Minneapolis metro demand, Fortune 500 corporate relocations, I-94 and I-494 corridor traffic, high-value suburban homes, and competition among full-service agents serving Hennepin County communities.",
     },
     tips: [
-      "Verify coverage for Minneapolis and surrounding Twin Cities metro communities before booking.",
-      "I-94, I-35W, and I-494 congestion significantly impacts scheduling — confirm crew arrival windows.",
-      "Confirm insurance for high-value suburban homes, condos, and townhomes before move day.",
-      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Confirm movers have experience with Fortune 500 corporate relocations and downtown Minneapolis high-rise elevator logistics.",
+      "Verify coverage for Minneapolis, Bloomington, Edina, and Minnetonka before booking — suburban crews may differ from urban core teams.",
+      "Book early for peak seasons (May–September) and month-end lease changeover in fast-growing suburbs.",
+      "Ask about harsh winter scheduling and long-distance interstate coordination if relocating out of Minnesota.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
   },
   ramsey: {
     marketNotes:
-      "Ramsey County, MN is a major urban county centered on Saint Paul with strong governmental, university, and residential demand along the Mississippi River capital corridor.",
+      "Ramsey County anchors the Saint Paul side of the Twin Cities metro — Minnesota’s capital county with strong state government, University of Minnesota Saint Paul campus, 3M corridor professional, and Mississippi River east-bank residential demand across the capital region.",
     costs: {
       studioRange: "$900–$1,900",
       familyRange: "$3,500–$8,500+",
       avgHourly: "$125–$195/hr for a 2-person crew",
-      note: "Ramsey County pricing reflects Saint Paul metro demand, capital-city and riverfront logistics, and competition among regional agents serving Ramsey County communities.",
+      note: "Ramsey County pricing reflects Saint Paul metro demand, state government and university relocations, capital-city riverfront logistics, and competition among regional agents serving Ramsey County communities.",
     },
     tips: [
-      "Verify coverage for Saint Paul and surrounding Twin Cities metro communities before booking.",
-      "I-94, I-35W, and I-494 congestion significantly impacts scheduling — confirm crew arrival windows.",
-      "Confirm insurance for high-value suburban homes, condos, and townhomes before move day.",
-      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Confirm movers have experience with state government and capital-city relocations if moving for legislative or agency employment.",
+      "Book well ahead for University of Minnesota semester start/end windows — campus turnover creates peak demand.",
+      "Verify coverage for Saint Paul, Maplewood, and Roseville before booking.",
+      "Ask about 3M corridor and east-metro corporate relocation experience for professional transfers.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
   },
@@ -95,35 +95,35 @@ export const minnesotaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   'st-louis': {
     marketNotes:
-      "St. Louis County, MN is a major northern Minnesota county centered on Duluth with strong urban, port, and residential demand along the Lake Superior north shore — not to be confused with St. Louis, Missouri.",
+      "St. Louis County, MN centers on Duluth — a major Lake Superior port city with strong shipping, tourism, North Shore seasonal demand, and harsh winter logistics across the Arrowhead region. Not to be confused with St. Louis, Missouri. Movers here handle port-city residential transfers, North Shore second-home moves, and long-distance hauls across northern Minnesota.",
     costs: {
       studioRange: "$850–$1,700",
       familyRange: "$3,000–$7,000+",
       avgHourly: "$120–$185/hr for a 2-person crew",
-      note: "St. Louis County pricing reflects Duluth-area demand, Lake Superior corridor travel distances, harsh winters, and competition among regional agents serving St. Louis County communities.",
+      note: "St. Louis County pricing reflects Duluth-area demand, Lake Superior North Shore tourism and seasonal logistics, harsh winter scheduling, and competition among regional agents serving St. Louis County communities.",
     },
     tips: [
-      "Verify coverage for Duluth and surrounding areas before booking.",
-      "Regional traffic impacts scheduling — confirm crew arrival windows.",
-      "Confirm insurance for high-value homes before move day.",
-      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Confirm movers have North Shore and seasonal second-home relocation experience if moving to or from Duluth-area lake properties.",
+      "Ask about harsh winter scheduling — Duluth snow and ice significantly affect move timing November through March.",
+      "Verify coverage for Duluth, Hermantown, and North Shore corridor communities before booking.",
+      "Book early for peak summer tourism season (June–August) when North Shore demand surges.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
   },
   olmsted: {
     marketNotes:
-      "Olmsted County, MN is a southeastern Minnesota county centered on Rochester with strong Mayo Clinic medical-sector and residential demand across Zumbro River corridor communities.",
+      "Olmsted County centers on Rochester and the Mayo Clinic — one of the world's premier medical destinations with constant physician fellow, nurse, and healthcare professional relocations along the Zumbro River valley. Movers here specialize in medical-sector transfers, professional housing, and family moves tied to Mayo employment.",
     costs: {
       studioRange: "$800–$1,600",
       familyRange: "$2,900–$6,500+",
       avgHourly: "$115–$175/hr for a 2-person crew",
-      note: "Olmsted County pricing reflects Rochester medical-sector relocations, Zumbro River corridor travel distances, and competition among regional agents serving Olmsted County communities.",
+      note: "Olmsted County pricing reflects Rochester Mayo Clinic medical-sector relocations, healthcare professional housing turnover, Zumbro River corridor travel distances, and competition among regional agents serving Olmsted County communities.",
     },
     tips: [
-      "Verify coverage for Rochester and surrounding Olmsted County communities before booking.",
-      "Mayo Clinic medical-sector relocations and housing turnover may affect scheduling — confirm peak-season crew availability.",
-      "Confirm insurance for high-value homes and professional relocations before move day.",
-      "Book early for peak seasons (May–September) and month-end lease changeover.",
+      "Confirm movers have Mayo Clinic medical professional relocation experience if moving for fellowship, residency, or clinic employment.",
+      "Book well ahead — Rochester healthcare hiring cycles create year-round peak demand for quality movers.",
+      "Verify coverage for Rochester, Byron, and Stewartville before booking.",
+      "Ask about careful handling standards for high-value professional household goods and medical equipment.",
       "Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews.",
     ],
   },

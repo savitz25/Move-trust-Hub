@@ -1,5 +1,5 @@
 /**
- * Full SEO / E-E-A-T audit for Minnesota local movers directory (11 curated counties).
+ * Full SEO / E-E-A-T audit for Minnesota local movers directory (87 curated counties).
  * Run: npx tsx scripts/audit-minnesota-seo.ts
  */
 import { minnesotaCountyResearch } from '../data/minnesota-county-research';
@@ -9,14 +9,23 @@ import { getCounty } from '../lib/local-movers/geography/index';
 import { getMoversForCounty } from '../lib/local-movers/index';
 
 const PREMIUM_TARGETS: Record<string, number> = {
-  hennepin: 10,
-  ramsey: 10,
+  hennepin: 13,
+  ramsey: 13,
+};
+const SECONDARY_TARGETS: Record<string, number> = {
+  dakota: 10,
+  anoka: 10,
+  washington: 10,
+  scott: 10,
+  carver: 10,
+  olmsted: 10,
+  'st-louis': 9,
 };
 const DEFAULT_TARGET = 5;
 const EXPECTED_COUNT = 87;
 
 function getTarget(slug: string): number {
-  return PREMIUM_TARGETS[slug] ?? DEFAULT_TARGET;
+  return PREMIUM_TARGETS[slug] ?? SECONDARY_TARGETS[slug] ?? DEFAULT_TARGET;
 }
 
 const issues: string[] = [];

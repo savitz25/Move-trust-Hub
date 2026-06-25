@@ -2,7 +2,7 @@ import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
 
 export type { NearbyCountyLink };
 
-/** Minnesota curated county corridor links — 87 counties */
+/** Minnesota curated county corridor links — 87/87 (cross-border WI, IA, SD, ND) */
 const MN_COUNTY_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   hennepin: [
     { slug: "anoka", name: "Anoka", seat: "Anoka", href: "/local-movers/minnesota/anoka", displayLabel: "Anoka County, MN" },
