@@ -90,6 +90,8 @@ import { getSouthDakotaCountyResearch } from '@/data/south-dakota-county-researc
 import { getSouthDakotaCountyTestimonials } from '@/data/south-dakota-county-testimonials';
 import { getNebraskaCountyResearch } from '@/data/nebraska-county-research';
 import { getNebraskaCountyTestimonials } from '@/data/nebraska-county-testimonials';
+import { getIowaCountyResearch } from '@/data/iowa-county-research';
+import { getIowaCountyTestimonials } from '@/data/iowa-county-testimonials';
 import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
@@ -478,6 +480,9 @@ export function buildCountyMarketNotes(county: LocalCounty): string | undefined 
   if (county.stateSlug === 'nebraska') {
     return getNebraskaCountyResearch(county.slug)?.marketNotes;
   }
+  if (county.stateSlug === 'iowa') {
+    return getIowaCountyResearch(county.slug)?.marketNotes;
+  }
   return undefined;
 }
 
@@ -675,6 +680,10 @@ export function buildCountyCostGuide(
   }
   if (county.stateSlug === 'nebraska') {
     const curated = getNebraskaCountyResearch(county.slug)?.costs;
+    if (curated) return curated;
+  }
+  if (county.stateSlug === 'iowa') {
+    const curated = getIowaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
   }
 
@@ -909,6 +918,10 @@ export function buildCountyTips(county: LocalCounty, _stateName: string): string
     const curated = getNebraskaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
   }
+  if (county.stateSlug === 'iowa') {
+    const curated = getIowaCountyResearch(county.slug)?.tips;
+    if (curated?.length) return curated;
+  }
 
   const key = `${county.stateSlug}-${county.slug}`;
   const base = pickByHash(LOCAL_MOVE_TIPS, key);
@@ -1128,6 +1141,10 @@ export function buildCountyTestimonials(
   }
   if (county.stateSlug === 'nebraska') {
     const curated = getNebraskaCountyTestimonials(county.slug);
+    if (curated.length) return curated;
+  }
+  if (county.stateSlug === 'iowa') {
+    const curated = getIowaCountyTestimonials(county.slug);
     if (curated.length) return curated;
   }
 

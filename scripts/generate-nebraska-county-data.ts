@@ -2567,6 +2567,7 @@ ${entries.join('\n')}
 };
 
 export function applyNebraskaCountyOverrides(county: LocalCounty): LocalCounty {
+  if (county.stateSlug !== 'nebraska') return county;
   const override = nebraskaCountyOverrides[county.slug];
   if (!override) return county;
   return { ...county, ...override };

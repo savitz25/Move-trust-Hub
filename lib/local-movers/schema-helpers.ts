@@ -40,6 +40,10 @@ const SCHEMA_PRIMARY_CITY_OVERRIDES: Record<string, Record<string, string>> = {
   texas: {
     austin: 'Bellville',
   },
+  iowa: {
+    dallas: 'Waukee',
+    story: 'Ames',
+  },
 };
 
 export function buildSchemaPrimaryCity(county: LocalCounty): string | undefined {

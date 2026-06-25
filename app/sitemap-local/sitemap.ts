@@ -45,6 +45,7 @@ import {
   NORTH_DAKOTA_COUNTY_CONTENT_UPDATED,
   SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED,
   NEBRASKA_COUNTY_CONTENT_UPDATED,
+  IOWA_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -276,6 +277,8 @@ const ND_HIGH_TRAFFIC_COUNTIES = new Set(['cass', 'burleigh', 'williams', 'grand
 const SD_HIGH_TRAFFIC_COUNTIES = new Set(['minnehaha', 'pennington']);
 
 const NE_HIGH_TRAFFIC_COUNTIES = new Set(['douglas', 'sarpy', 'lancaster']);
+
+const IA_HIGH_TRAFFIC_COUNTIES = new Set(['polk', 'linn', 'scott', 'johnson']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -730,7 +733,9 @@ export default async function sitemap({
                                                                                                   ? new Date(SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED)
                                                                                                   : id === 'nebraska'
                                                                                                     ? new Date(NEBRASKA_COUNTY_CONTENT_UPDATED)
-                                                                                                    : new Date();
+                                                                                                    : id === 'iowa'
+                                                                                                      ? new Date(IOWA_COUNTY_CONTENT_UPDATED)
+                                                                                                      : new Date();
 
   return [
     {
@@ -799,7 +804,8 @@ export default async function sitemap({
         (id === 'wyoming' && WY_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'north-dakota' && ND_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'south-dakota' && SD_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'nebraska' && NE_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'nebraska' && NE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'iowa' && IA_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),
