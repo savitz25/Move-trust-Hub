@@ -39,6 +39,7 @@ import {
   NEW_MEXICO_COUNTY_CONTENT_UPDATED,
   UTAH_COUNTY_CONTENT_UPDATED,
   COLORADO_COUNTY_CONTENT_UPDATED,
+  IDAHO_COUNTY_CONTENT_UPDATED,
   NEW_JERSEY_COUNTY_CONTENT_UPDATED,
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
@@ -258,6 +259,8 @@ const NM_HIGH_TRAFFIC_COUNTIES = new Set(['bernalillo']);
 const UT_HIGH_TRAFFIC_COUNTIES = new Set(['salt-lake', 'utah']);
 
 const CO_HIGH_TRAFFIC_COUNTIES = new Set(['denver', 'arapahoe', 'jefferson', 'adams', 'douglas']);
+
+const ID_HIGH_TRAFFIC_COUNTIES = new Set(['ada', 'canyon', 'kootenai']);
 
 const MA_HIGH_TRAFFIC_COUNTIES = new Set([
   'suffolk',
@@ -700,7 +703,9 @@ export default async function sitemap({
                                                                                       ? new Date(UTAH_COUNTY_CONTENT_UPDATED)
                                                                                       : id === 'colorado'
                                                                                         ? new Date(COLORADO_COUNTY_CONTENT_UPDATED)
-                                                                                        : new Date();
+                                                                                        : id === 'idaho'
+                                                                                          ? new Date(IDAHO_COUNTY_CONTENT_UPDATED)
+                                                                                          : new Date();
 
   return [
     {
@@ -763,7 +768,8 @@ export default async function sitemap({
         (id === 'arizona' && AZ_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'new-mexico' && NM_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'utah' && UT_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'colorado' && CO_HIGH_TRAFFIC_COUNTIES.has(county.slug))
+        (id === 'colorado' && CO_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        (id === 'idaho' && ID_HIGH_TRAFFIC_COUNTIES.has(county.slug))
           ? 0.85
           : 0.8,
     })),

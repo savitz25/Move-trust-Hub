@@ -120,6 +120,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'new-mexico' ||
                 state.slug === 'utah' ||
                 state.slug === 'colorado' ||
+                state.slug === 'idaho' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -159,7 +160,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                                     ? 'Browse all 29 Utah county guides — up to 12 curated movers in Salt Lake County (Salt Lake City metro), 9–10 in Utah County (Provo-Orem / Silicon Slopes), 8–9 in Davis, Weber, and Washington (St. George), and 6–8 regional specialists in every county. Wasatch Front metros cover tech growth, family moves, and Hill AFB military PCS; southern Utah covers retirement, tourism, and snowbird moves; rural counties emphasize long-distance hauls and outdoor-lifestyle logistics. FMCSA licensing, cost estimates, and Utah-specific moving tips.'
                                                     : state.slug === 'colorado'
                                                       ? 'Browse all 64 Colorado county guides — up to 12 curated movers in Denver metro (Denver, Arapahoe, Jefferson, Adams, Douglas), 10–11 in El Paso (Colorado Springs), 9–10 in Boulder, Larimer, and Weld, and 6–8 regional specialists in every county. Denver metro covers tech/corporate growth and outdoor-lifestyle family moves; Colorado Springs covers Fort Carson and Peterson SFB military PCS; mountain counties cover tourism and second-home logistics; eastern plains and Western Slope counties emphasize long-distance and agricultural hauls. FMCSA licensing, cost estimates, and Colorado-specific moving tips.'
-                                                      : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                                      : state.slug === 'idaho'
+                                                        ? 'Browse Idaho county guides — 10 curated movers in 21 counties including Boise metro (Ada, Canyon), Coeur d\'Alene (Kootenai), Idaho Falls (Bonneville), Twin Falls, Pocatello (Bannock), and regional markets from Sun Valley (Blaine) to Moscow (Latah) and Lewiston (Nez Perce). Treasure Valley guides cover rapid suburban growth; eastern Idaho covers university and agricultural communities; northern Idaho covers lakeside tourism logistics. Additional county guides are rolling out statewide toward 44 counties. FMCSA licensing, cost estimates, and Idaho-specific moving tips.'
+                                                        : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>
