@@ -118,6 +118,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 state.slug === 'nevada' ||
                 state.slug === 'arizona' ||
                 state.slug === 'new-mexico' ||
+                state.slug === 'utah' ||
                 state.slug === 'texas'
                 ? state.slug === 'district-of-columbia'
                   ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
@@ -153,7 +154,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                                 ? 'Browse all 15 Arizona county guides — up to 12 curated movers in Maricopa County (Phoenix metro), 9–10 in Pima (Tucson), and 6–10 regional specialists in every county. Phoenix metro covers corporate growth, retirement/snowbird moves, and extreme heat logistics; Tucson covers university, Davis-Monthan AFB military PCS, and retirement moves; rural Arizona covers mining, border corridors, and long-distance regional hauls. FMCSA licensing, cost estimates, and Arizona-specific moving tips.'
                                                 : state.slug === 'new-mexico'
                                                   ? 'Browse all 33 New Mexico county guides — up to 11 curated movers in Bernalillo County (Albuquerque metro), 8–9 in Santa Fe and Doña Ana (Las Cruces), and 5–7 regional specialists in every county. Albuquerque covers corporate, Kirtland AFB military PCS, and suburban moves; Santa Fe and Taos cover tourism, second-home, and retirement moves; southern New Mexico covers border and military corridors; rural counties emphasize long-distance hauls and remote logistics. FMCSA licensing, cost estimates, and New Mexico-specific moving tips.'
-                                                  : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
+                                                  : state.slug === 'utah'
+                                                    ? 'Browse Utah county guides — 10 curated movers in Salt Lake County (Salt Lake City metro), Utah County (Provo-Orem), Davis County (Layton–Bountiful), and Weber County (Ogden). Wasatch Front guides cover urban traffic, suburban high-value homes, and peak-season demand; additional county guides are rolling out statewide. FMCSA licensing, cost estimates, and Utah-specific moving tips.'
+                                                    : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>

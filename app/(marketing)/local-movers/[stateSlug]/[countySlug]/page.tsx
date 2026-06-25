@@ -43,6 +43,7 @@ import {
   NEVADA_COUNTY_CONTENT_UPDATED,
   ARIZONA_COUNTY_CONTENT_UPDATED,
   NEW_MEXICO_COUNTY_CONTENT_UPDATED,
+  UTAH_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getAlabamaCountyResearch } from '@/data/alabama-county-research';
 import { getMississippiCountyResearch } from '@/data/mississippi-county-research';
@@ -75,6 +76,7 @@ import { getOregonCountyResearch } from '@/data/oregon-county-research';
 import { getNevadaCountyResearch } from '@/data/nevada-county-research';
 import { getArizonaCountyResearch } from '@/data/arizona-county-research';
 import { getNewMexicoCountyResearch } from '@/data/new-mexico-county-research';
+import { getUtahCountyResearch } from '@/data/utah-county-research';
 import { getGeorgiaCountyResearch } from '@/data/georgia-county-research';
 import { getSouthCarolinaCountyResearch } from '@/data/south-carolina-county-research';
 import { getNorthCarolinaCountyResearch } from '@/data/north-carolina-county-research';
@@ -119,6 +121,7 @@ import { getOregonNearbyCounties } from '@/lib/local-movers/oregon-nearby';
 import { getNevadaNearbyCounties } from '@/lib/local-movers/nevada-nearby';
 import { getArizonaNearbyCounties } from '@/lib/local-movers/arizona-nearby';
 import { getNewMexicoNearbyCounties } from '@/lib/local-movers/new-mexico-nearby';
+import { getUtahNearbyCounties } from '@/lib/local-movers/utah-nearby';
 import { getTexasNearbyCounties } from '@/lib/local-movers/texas-nearby';
 import {
   CountyCostSection,
@@ -305,7 +308,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                   : stateSlug === 'new-mexico' &&
                                                                                       getNewMexicoCountyResearch(countySlug)
                                                                                     ? getNewMexicoNearbyCounties(countySlug)
-                                                                                    : [];
+                                                                                    : stateSlug === 'utah' &&
+                                                                                        getUtahCountyResearch(countySlug)
+                                                                                      ? getUtahNearbyCounties(countySlug)
+                                                                                      : [];
 
   return (
     <>
@@ -539,7 +545,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                           : stateSlug === 'new-mexico' &&
                                                                                               getNewMexicoCountyResearch(countySlug)
                                                                                             ? NEW_MEXICO_COUNTY_CONTENT_UPDATED
-                                                                                            : undefined
+                                                                                            : stateSlug === 'utah' &&
+                                                                                                getUtahCountyResearch(countySlug)
+                                                                                              ? UTAH_COUNTY_CONTENT_UPDATED
+                                                                                              : undefined
           }
         />
 

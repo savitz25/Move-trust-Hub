@@ -39,6 +39,7 @@ import {
   NEVADA_COUNTY_CONTENT_UPDATED,
   ARIZONA_COUNTY_CONTENT_UPDATED,
   NEW_MEXICO_COUNTY_CONTENT_UPDATED,
+  UTAH_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { getDistrictOfColumbiaCountyResearch } from '@/data/district-of-columbia-county-research';
 import { getDelawareCountyResearch } from '@/data/delaware-county-research';
@@ -57,6 +58,7 @@ import { getOregonCountyResearch } from '@/data/oregon-county-research';
 import { getNevadaCountyResearch } from '@/data/nevada-county-research';
 import { getArizonaCountyResearch } from '@/data/arizona-county-research';
 import { getNewMexicoCountyResearch } from '@/data/new-mexico-county-research';
+import { getUtahCountyResearch } from '@/data/utah-county-research';
 import { getMissouriCountyResearch } from '@/data/missouri-county-research';
 import { getIllinoisCountyResearch } from '@/data/illinois-county-research';
 import { getMichiganCountyResearch } from '@/data/michigan-county-research';
@@ -314,6 +316,12 @@ function resolveContentModified(county: LocalCounty): string {
     getNewMexicoCountyResearch(county.slug)
   ) {
     return NEW_MEXICO_COUNTY_CONTENT_UPDATED;
+  }
+  if (
+    county.stateSlug === 'utah' &&
+    getUtahCountyResearch(county.slug)
+  ) {
+    return UTAH_COUNTY_CONTENT_UPDATED;
   }
   return new Date().toISOString().slice(0, 10);
 }
