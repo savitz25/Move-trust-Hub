@@ -15,6 +15,8 @@ export type RouteGuide = {
   costFactors: string[];
   popularCorridors: string[];
   relatedRoutes: string[];
+  /** Optional inbound destination hub for internal linking */
+  destinationHubPath?: string;
 };
 
 export const routeGuides: RouteGuide[] = [
@@ -85,6 +87,7 @@ export const routeGuides: RouteGuide[] = [
       'Westchester → Orlando',
     ],
     relatedRoutes: ['florida-to-new-york', 'california-to-new-york', 'california-to-texas'],
+    destinationHubPath: '/moving-to/florida',
   },
   {
     slug: 'california-to-new-york',
@@ -221,6 +224,42 @@ export const routeGuides: RouteGuide[] = [
       'Charlotte → Portland',
     ],
     relatedRoutes: ['california-to-new-york', 'california-to-texas', 'new-york-to-florida'],
+  },
+  {
+    slug: 'new-york-to-myrtle-beach',
+    title: 'Moving from New York to Myrtle Beach',
+    from: 'New York',
+    to: 'Myrtle Beach, SC',
+    fromState: 'NY',
+    toState: 'SC',
+    distance: '~680 miles',
+    driveTime: '11–14 hours transit',
+    avgCostRange: '$3,200–$7,800+ (varies by home size)',
+    peakSeason: 'May–September (Grand Strand peak)',
+    deliveryWindow: '2–7 days for most household shipments',
+    description:
+      'New York to Myrtle Beach is a high-volume Northeast-to-Grand Strand corridor popular with retirees and remote workers. Pricing depends on NYC borough access, inventory volume, and summer seasonal demand along the I-95 corridor.',
+    planningTips: [
+      'Build your inventory with our moving calculator — NYC high-rise pickups often need elevator and parking permits.',
+      'Book early for May–September; Grand Strand demand tightens crew availability.',
+      'Verify binding vs. non-binding estimates after a full inventory survey.',
+      'Confirm HOA/condo move-in rules at your Myrtle Beach or North Myrtle Beach destination.',
+      'Browse our Myrtle Beach destination hub for county-level local movers and cost tables.',
+    ],
+    costFactors: [
+      'Borough high-rise pickup fees and shuttle requirements',
+      'Total cubic feet and weight',
+      'Summer peak-season demand',
+      'Packing services and specialty items',
+      'Gated-community long carries in Horry County',
+    ],
+    popularCorridors: [
+      'Manhattan → Myrtle Beach',
+      'Long Island → North Myrtle Beach',
+      'Westchester → Conway / Surfside Beach',
+    ],
+    relatedRoutes: ['new-york-to-florida', 'florida-to-new-york', 'east-coast-to-west-coast'],
+    destinationHubPath: '/moving-to/myrtle-beach-sc',
   },
 ];
 

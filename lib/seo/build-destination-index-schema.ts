@@ -1,0 +1,143 @@
+import { organizationSchema } from '@/lib/seo/schemas';
+import { SITE_URL } from '@/lib/seo/site-metadata';
+import {
+  DESTINATIONS_INDEX_DESCRIPTION,
+  DESTINATIONS_INDEX_TITLE,
+} from '@/lib/seo/destination-seo';
+import {
+  getClusterMarkets,
+  getMarketPath,
+  priorityMarketsForNav,
+} from '@/lib/destinations/markets';
+import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
+
+type HubListItem = {
+  name: string;
+  url: string;
+  description?: string;
+};
+
+function buildPublishedHubListItems(): HubListItem[] {
+  const published = new Set(getPublishedCityHubSlugs());
+
+  return priorityMarketsForNav
+    .filter((market) => published.has(market.slug))
+    .map((market) => ({
+      name: `${market.displayName}, ${market.stateCode}`,
+      url: `${SITE_URL}${getMarketPath(market)}`,
+      description: market.inboundGrowthStat,
+    }));
+}
+
+/** JSON-LD for /moving-to destinations index */
+export function buildDestinationsIndexSchemaGraph() {
+  const canonical = `${SITE_URL}/moving-to`;
+  const hubItems = buildPublishedHubListItems();
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: canonical,
+          },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: DESTINATIONS_INDEX_TITLE,
+        description: DESTINATIONS_INDEX_DESCRIPTION,
+        url: canonical,
+        inLanguage: 'en-US',
+        mainEntity: { '@id': `${canonical}#hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#hub-list`,
+        name: 'Popular Moving Destination Guides',
+        numberOfItems: hubItems.length,
+        itemListElement: hubItems.map((hub, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: hub.name,
+          url: hub.url,
+          ...(hub.description ? { description: hub.description } : {}),
+        })),
+      },
+    ],
+  };
+}
+
+/** JSON-LD for /moving-to/florida cluster parent */
+export function buildFloridaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const floridaHubs = getClusterMarkets('florida').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Florida', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Florida',
+          addressRegion: 'FL',
+        },
+        mainEntity: { '@id': `${canonical}#florida-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#florida-hub-list`,
+        name: 'Florida City Moving Guides',
+        numberOfItems: floridaHubs.length,
+        itemListElement: floridaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, FL`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}

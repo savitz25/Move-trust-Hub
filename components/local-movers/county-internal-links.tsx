@@ -1,19 +1,25 @@
 import Link from 'next/link';
-import { ArrowRight, Calculator, Truck, BookOpen, MapPin } from 'lucide-react';
+import { ArrowRight, Calculator, Truck, BookOpen, MapPin, Compass } from 'lucide-react';
 import { getCountyPath, getStatePath } from '@/lib/local-movers/index';
 import type { NearbyCountyLink } from '@/lib/local-movers/nearby-types';
+import { getDestinationHubLinkForCounty } from '@/lib/destinations/county-destination-links';
 
 export function CountyInternalLinks({
   stateName,
   stateSlug,
   countyLabel,
   nearbyCounties = [],
+  countySlug = '',
 }: {
   stateName: string;
   stateSlug: string;
   countyLabel: string;
   nearbyCounties?: NearbyCountyLink[];
+  countySlug?: string;
 }) {
+  const destinationHub = countySlug
+    ? getDestinationHubLinkForCounty(stateSlug, countySlug)
+    : undefined;
   const tools = [
     {
       href: '/moving-calculator',
@@ -66,6 +72,22 @@ export function CountyInternalLinks({
           </Link>
         ))}
       </div>
+      {destinationHub && (
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 mb-4">
+          <div className="flex items-center gap-2 text-sm font-semibold mb-2">
+            <Compass className="h-4 w-4 text-primary" aria-hidden="true" />
+            Inbound destination guide
+          </div>
+          <Link
+            href={destinationHub.href}
+            className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+          >
+            {destinationHub.label}
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
+          <p className="text-xs text-muted-foreground mt-1">{destinationHub.description}</p>
+        </div>
+      )}
       {nearbyCounties.length > 0 && (
         <div className="rounded-xl border bg-muted/20 p-4 mb-4">
           <div className="flex items-center gap-2 text-sm font-semibold mb-3">

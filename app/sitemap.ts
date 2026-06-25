@@ -20,6 +20,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources/routes/florida-to-new-york',
     '/resources/routes/texas-to-california',
     '/resources/routes/east-coast-to-west-coast',
+    '/resources/routes/new-york-to-myrtle-beach',
+    '/resources/guides/moving-to-myrtle-beach-2026',
   ];
 
   const staticPages = [

@@ -33,23 +33,23 @@ export const myrtleBeachScContent: CityHubContent = {
   routeLinks: [
     {
       label: 'New York → Myrtle Beach',
-      href: '/from-new-york-to-myrtle-beach',
+      href: '/resources/routes/new-york-to-myrtle-beach',
       miles: '≈680 miles',
     },
     {
-      label: 'New Jersey → Myrtle Beach',
-      href: '/from-new-jersey-to-myrtle-beach',
-      miles: '≈640 miles',
+      label: 'New York → Florida',
+      href: '/resources/routes/new-york-to-florida',
+      miles: '≈1,100 miles',
     },
     {
-      label: 'Pennsylvania → Myrtle Beach',
-      href: '/from-pennsylvania-to-myrtle-beach',
-      miles: '≈580 miles',
+      label: 'East Coast → West Coast',
+      href: '/resources/routes/east-coast-to-west-coast',
+      miles: '2,500+ miles',
     },
     {
-      label: 'Ohio → Myrtle Beach',
-      href: '/from-ohio-to-myrtle-beach',
-      miles: '≈720 miles',
+      label: 'All interstate route guides',
+      href: '/resources/routes',
+      miles: 'National',
     },
   ],
   costTableRows: [
@@ -225,5 +225,5 @@ export const myrtleBeachScContent: CityHubContent = {
     'jk-moving-services',
     'pensey-moving',
   ],
-  bestMoversPath: '/best-movers-myrtle-beach-sc',
+  bestMoversPath: '/local-movers/south-carolina/horry',
 };

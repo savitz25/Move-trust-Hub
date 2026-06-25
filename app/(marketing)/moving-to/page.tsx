@@ -7,23 +7,11 @@ import {
   priorityMarketsForNav,
 } from '@/lib/destinations/markets';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
-import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildDestinationsIndexSchemaGraph } from '@/lib/seo/build-destination-index-schema';
+import { buildDestinationsIndexMetadata } from '@/lib/seo/destination-seo';
 
-const TITLE = 'Popular Moving Destinations (2026) — City Guides & Free Quotes';
-const DESCRIPTION =
-  'Explore inbound moving guides for Myrtle Beach, Florida, Knoxville, Texas, the Carolinas, and more. Free calculator, FMCSA-verified movers, and transparent cost data.';
-
-export const metadata: Metadata = {
-  title: { absolute: `${TITLE} | Move Trust Hub` },
-  description: DESCRIPTION,
-  alternates: { canonical: `${SITE_URL}/moving-to` },
-  openGraph: buildOpenGraph({
-    title: TITLE,
-    description: DESCRIPTION,
-    url: `${SITE_URL}/moving-to`,
-  }),
-  twitter: buildTwitter({ title: TITLE, description: DESCRIPTION }),
-};
+export const metadata: Metadata = buildDestinationsIndexMetadata();
 
 export default function MovingToIndexPage() {
   const published = new Set(getPublishedCityHubSlugs());
@@ -32,6 +20,8 @@ export default function MovingToIndexPage() {
   );
 
   return (
+    <>
+      <JsonLd data={buildDestinationsIndexSchemaGraph()} />
     <div className="container mx-auto px-4 py-10 max-w-6xl">
       <div className="mb-10">
         <div className="inline-flex items-center gap-2 rounded-full border bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
@@ -128,5 +118,6 @@ export default function MovingToIndexPage() {
         })}
       </div>
     </div>
+    </>
   );
 }

@@ -483,6 +483,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         <CountyInternalLinks
           stateName={state.name}
           stateSlug={state.slug}
+          countySlug={county.slug}
           countyLabel={countyLabel}
           nearbyCounties={nearbyCounties}
         />

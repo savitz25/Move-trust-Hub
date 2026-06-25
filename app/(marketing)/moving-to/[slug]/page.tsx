@@ -5,7 +5,9 @@ import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCityHubSchemaGraph } from '@/lib/seo/build-city-hub-schema';
 import { getCityHubContent, getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import { getMarketBySlug } from '@/lib/destinations/markets';
-import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
+import { getMoversForMarket } from '@/lib/destinations/get-movers-for-market';
+import { buildCityHubMetadata } from '@/lib/seo/destination-seo';
+import { SITE_URL } from '@/lib/seo/site-metadata';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,35 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const market = getMarketBySlug(slug);
   if (!content || !market) return {};
 
-  const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
-
-  return {
-    title: { absolute: content.seo.title },
-    description: content.seo.description,
-    keywords: content.seo.keywords,
-    alternates: { canonical },
-    openGraph: {
-      ...buildOpenGraph({
-        title: content.seo.title,
-        description: content.seo.description,
-        url: canonical,
-      }),
-      images: [
-        {
-          url: content.seo.ogImagePath,
-          width: 1200,
-          height: 630,
-          alt: content.seo.ogImageAlt,
-        },
-      ],
-    },
-    twitter: buildTwitter({
-      title: content.seo.title,
-      description: content.seo.description,
-    }),
-    robots: { index: true, follow: true },
-    category: 'Moving Destination Guides',
-  };
+  return buildCityHubMetadata(content);
 }
 
 export default async function CityHubPage({ params }: Props) {
@@ -58,10 +32,11 @@ export default async function CityHubPage({ params }: Props) {
   if (!market || !content) notFound();
 
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
+  const movers = getMoversForMarket(market, 6);
 
   return (
     <>
-      <JsonLd data={buildCityHubSchemaGraph(market, content, canonical)} />
+      <JsonLd data={buildCityHubSchemaGraph(market, content, canonical, movers)} />
       <CityHubTemplate market={market} content={content} />
     </>
   );

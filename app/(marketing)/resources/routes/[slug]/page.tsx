@@ -171,6 +171,15 @@ export default async function RouteGuidePage({ params }: Props) {
                 All 50 states
                 <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
               </Link>
+              {route.destinationHubPath && (
+                <Link
+                  href={route.destinationHubPath}
+                  className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/5 px-3 py-1.5 text-sm font-medium text-primary hover:border-primary/50 transition-colors"
+                >
+                  Destination city guide
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              )}
             </div>
           </section>
         )}

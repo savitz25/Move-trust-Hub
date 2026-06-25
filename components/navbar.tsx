@@ -7,13 +7,14 @@ import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { QuoteModal } from '@/components/quote-modal';
+import { DestinationsMegaMenu } from '@/components/navbar/destinations-mega-menu';
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   const navLinks = [
     { href: '/companies', label: 'Movers Directory' },
-    { href: '/moving-to', label: 'Destinations' },
     { href: '/local-movers', label: 'Local Movers' },
     { href: '/auto-transport', label: 'Auto Transport' },
     { href: '/moving-calculator', label: 'Move Calculator' },
@@ -43,7 +44,14 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 text-sm">
-          {navLinks.map((link) => (
+          <Link
+            href="/companies"
+            className="font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
+          >
+            Movers Directory
+          </Link>
+          <DestinationsMegaMenu />
+          {navLinks.slice(1).map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -53,7 +61,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button
-            size="sm" 
+            size="sm"
             onClick={() => setShowQuoteModal(true)}
             className="gap-2 bg-primary hover:bg-primary/90 shadow-sm"
           >
@@ -80,7 +88,35 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden border-t bg-background px-4 py-4">
           <div className="flex flex-col gap-3 text-sm">
-            {navLinks.map((link) => (
+            <Link
+              href="/companies"
+              className="py-2 font-medium text-muted-foreground hover:text-foreground"
+              onClick={() => setIsOpen(false)}
+            >
+              Movers Directory
+            </Link>
+            <Link
+              href="/moving-to"
+              className="py-2 font-medium text-muted-foreground hover:text-foreground"
+              onClick={() => setIsOpen(false)}
+            >
+              Destinations
+            </Link>
+            <Link
+              href="/moving-to/myrtle-beach-sc"
+              className="py-1 pl-3 text-muted-foreground hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              Myrtle Beach, SC
+            </Link>
+            <Link
+              href="/moving-to/florida"
+              className="py-1 pl-3 text-muted-foreground hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              Florida corridor
+            </Link>
+            {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -91,12 +127,19 @@ export function Navbar() {
               </Link>
             ))}
             <Button
-              className="w-full mt-2" 
-              onClick={() => { setIsOpen(false); setShowQuoteModal(true); }}
+              className="w-full mt-2"
+              onClick={() => {
+                setIsOpen(false);
+                setShowQuoteModal(true);
+              }}
             >
               Get Free Quotes
             </Button>
-            <Link href="/auto-transport" onClick={() => setIsOpen(false)} className="text-center py-2 text-primary">
+            <Link
+              href="/auto-transport"
+              onClick={() => setIsOpen(false)}
+              className="text-center py-2 text-primary"
+            >
               Browse Auto Transport →
             </Link>
           </div>

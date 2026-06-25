@@ -1,0 +1,133 @@
+'use client';
+
+import Link from 'next/link';
+import { useState, useRef, useEffect } from 'react';
+import { ChevronDown, MapPin, ArrowRight } from 'lucide-react';
+import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
+import {
+  getClusterMarkets,
+  getMarketPath,
+  priorityMarketsForNav,
+} from '@/lib/destinations/markets';
+
+export function DestinationsMegaMenu() {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const published = new Set(getPublishedCityHubSlugs());
+
+  const floridaCities = getClusterMarkets('florida').filter((m) => published.has(m.slug));
+  const topStandalone = priorityMarketsForNav.filter(
+    (m) => !m.isClusterParent && !m.clusterParent && published.has(m.slug)
+  );
+  const clusterParents = priorityMarketsForNav.filter(
+    (m) =>
+      m.isClusterParent &&
+      (published.has(m.slug) ||
+        getClusterMarkets(m.slug).some((child) => published.has(child.slug)))
+  );
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div ref={containerRef} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <Link
+        href="/moving-to"
+        className="inline-flex items-center gap-1 font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
+        onClick={() => setOpen(false)}
+      >
+        Destinations
+        <ChevronDown
+          className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        />
+      </Link>
+
+      {open && (
+        <div className="absolute left-0 top-full pt-2 z-50 w-[min(92vw,720px)]">
+          <div className="rounded-xl border bg-background shadow-lg p-5 grid sm:grid-cols-2 gap-6">
+            <div>
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                <MapPin className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                Featured Destinations
+              </div>
+              <ul className="space-y-2 text-sm">
+                {topStandalone.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="font-medium hover:text-primary transition-colors"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}, {market.stateCode}
+                    </Link>
+                    <p className="text-xs text-muted-foreground line-clamp-1">
+                      {market.inboundGrowthStat}
+                    </p>
+                  </li>
+                ))}
+                {clusterParents.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="font-medium hover:text-primary transition-colors"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                      {market.stateCode ? `, ${market.stateCode}` : ''}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/moving-to"
+                className="inline-flex items-center gap-1 text-xs font-medium text-primary mt-4 hover:underline"
+                onClick={() => setOpen(false)}
+              >
+                All destination guides
+                <ArrowRight className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </div>
+
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                Florida Corridor — Live Guides
+              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {floridaCities.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="text-primary hover:underline font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 pt-4 border-t text-xs text-muted-foreground space-y-1">
+                <Link href="/local-movers/florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Florida county mover directories →
+                </Link>
+                <Link href="/resources/routes/new-york-to-florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  NY → Florida route guide →
+                </Link>
+                <Link href="/local-movers/south-carolina/horry" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Myrtle Beach / Horry County movers →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

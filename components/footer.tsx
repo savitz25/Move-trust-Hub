@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/20">
       <div className="container mx-auto px-4 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-9">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-y-9">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
               <Image
@@ -29,6 +29,17 @@ export function Footer() {
               <div><Link href="/companies" className="hover:text-foreground transition-colors">All Companies</Link></div>
               <div><Link href="/companies?sort=reputation" className="hover:text-foreground transition-colors">Top Rated</Link></div>
               <div><Link href="/compare" className="hover:text-foreground transition-colors">Compare Tool</Link></div>
+            </div>
+          </div>
+
+          <div>
+            <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">DESTINATIONS</div>
+            <div className="space-y-1.5 text-sm text-muted-foreground">
+              <div><Link href="/moving-to" className="hover:text-foreground transition-colors">All Destinations</Link></div>
+              <div><Link href="/moving-to/myrtle-beach-sc" className="hover:text-foreground transition-colors">Myrtle Beach, SC</Link></div>
+              <div><Link href="/moving-to/florida" className="hover:text-foreground transition-colors">Florida Corridor</Link></div>
+              <div><Link href="/moving-to/florida/miami" className="hover:text-foreground transition-colors">Miami</Link></div>
+              <div><Link href="/local-movers" className="hover:text-foreground transition-colors">Local Movers by State</Link></div>
             </div>
           </div>
 

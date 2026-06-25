@@ -9,6 +9,7 @@ import { DestinationMapSnippet } from '@/components/destinations/destination-map
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
 import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
 import { getMoversForMarket, countMoversForMarket } from '@/lib/destinations/get-movers-for-market';
+import { getMarketMoversDirectoryHref } from '@/lib/destinations/market-paths';
 import { getMarketBySlug } from '@/lib/destinations/markets';
 
 import type { CityHubContent } from '@/lib/destinations/types';
@@ -33,6 +34,10 @@ export async function CityHubTemplate({ market, content }: Props) {
   const clusterParent = market.clusterParent
     ? getMarketBySlug(market.clusterParent)
     : undefined;
+  const moversDirectoryHref = getMarketMoversDirectoryHref(
+    market,
+    content.seo.canonicalPath
+  );
 
   const countyLabels = market.primaryCounties.map((key) => {
     const parts = key.split('-');
@@ -171,7 +176,7 @@ export async function CityHubTemplate({ market, content }: Props) {
               </p>
             </div>
             <Link
-              href={content.bestMoversPath}
+              href={moversDirectoryHref}
               className="text-sm font-medium text-primary hover:underline shrink-0"
             >
               View all {totalMovers}+ movers serving the area →

@@ -12,6 +12,8 @@ import {
   getMarketBySlug,
   getMarketPath,
 } from '@/lib/destinations/markets';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildFloridaClusterSchemaGraph } from '@/lib/seo/build-destination-index-schema';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
 
 const content = floridaClusterContent;
@@ -106,6 +108,14 @@ export default function FloridaClusterPage() {
   );
 
   return (
+    <>
+      <JsonLd
+        data={buildFloridaClusterSchemaGraph(
+          content.seo.title,
+          content.seo.description,
+          content.seo.canonicalPath
+        )}
+      />
     <div className="min-h-screen">
       <section className="relative border-b bg-gradient-to-b from-primary/5 to-background py-12 md:py-20">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -225,5 +235,6 @@ export default function FloridaClusterPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
