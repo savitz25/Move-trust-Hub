@@ -15,8 +15,8 @@ export const destinationGuides: DestinationGuide[] = [
     title: '2026 Moving Guide to Myrtle Beach & the Grand Strand',
     description:
       'Neighborhood overview, seasonal timing, hurricane prep, HOA/condo move rules, and a printable mover-vetting checklist for relocations to Myrtle Beach, SC and the Wilmington–Brunswick corridor.',
-    destinationHubPath: '/moving-to/myrtle-beach-sc',
-    destinationLabel: 'Myrtle Beach, SC',
+    destinationHubPath: '/moving-to/south-carolina',
+    destinationLabel: 'South Carolina',
     sections: [
       {
         heading: 'Why families and retirees choose the Grand Strand',
@@ -50,9 +50,9 @@ export const destinationGuides: DestinationGuide[] = [
     ],
     relatedLinks: [
       {
-        title: 'Myrtle Beach destination hub',
-        href: '/moving-to/myrtle-beach-sc',
-        description: 'Costs, movers, calculator, and FAQ',
+        title: 'South Carolina destination cluster',
+        href: '/moving-to/south-carolina',
+        description: 'Grand Strand costs, movers, calculator, and FAQ',
       },
       {
         title: 'New York → Myrtle Beach route guide',

@@ -41,6 +41,16 @@ const nextConfig: NextConfig = {
         destination: '/sitemap-local/sitemap/:state.xml',
         permanent: true,
       },
+      {
+        source: '/moving-to/myrtle-beach-sc',
+        destination: '/moving-to/south-carolina',
+        permanent: true,
+      },
+      {
+        source: '/moving-to/myrtle-beach-sc/:slug',
+        destination: '/moving-to/south-carolina/:slug',
+        permanent: true,
+      },
     ];
   },
   // Generate sitemap and robots via metadata in app dir

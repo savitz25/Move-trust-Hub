@@ -202,6 +202,126 @@ export function buildTennesseeClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/south-carolina cluster parent */
+export function buildSouthCarolinaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const southCarolinaHubs = getClusterMarkets('south-carolina').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'South Carolina', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'South Carolina',
+          addressRegion: 'SC',
+        },
+        mainEntity: { '@id': `${canonical}#south-carolina-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#south-carolina-hub-list`,
+        name: 'South Carolina City Moving Guides',
+        numberOfItems: southCarolinaHubs.length,
+        itemListElement: southCarolinaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, SC`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
+/** JSON-LD for /moving-to/north-carolina cluster parent */
+export function buildNorthCarolinaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const northCarolinaHubs = getClusterMarkets('north-carolina').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'North Carolina', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'North Carolina',
+          addressRegion: 'NC',
+        },
+        mainEntity: { '@id': `${canonical}#north-carolina-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#north-carolina-hub-list`,
+        name: 'North Carolina City Moving Guides',
+        numberOfItems: northCarolinaHubs.length,
+        itemListElement: northCarolinaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, NC`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/texas cluster parent */
 export function buildTexasClusterSchemaGraph(
   title: string,

@@ -18,7 +18,7 @@ export const myrtleBeachScContent: CityHubContent = {
       'myrtle beach interstate moving cost 2026',
       'horry county movers',
     ],
-    canonicalPath: '/moving-to/myrtle-beach-sc',
+    canonicalPath: '/moving-to/south-carolina/myrtle-beach-sc',
     ogImagePath: '/images/destinations/myrtle-beach-cost-infographic.svg',
     ogImageAlt:
       '2026 interstate moving costs to Myrtle Beach SC by home size – Move Trust Hub',
@@ -124,17 +124,17 @@ export const myrtleBeachScContent: CityHubContent = {
     {
       title: 'Moving to North Myrtle Beach guide',
       description: 'Shag dance capital, Main Street, and Cherry Grove — northern Grand Strand hub.',
-      href: '/moving-to/myrtle-beach-sc/north-myrtle-beach',
+      href: '/moving-to/south-carolina/north-myrtle-beach',
     },
     {
       title: 'Moving to Murrells Inlet guide',
       description: 'MarshWalk seafood district and inlet waterfront in Georgetown County.',
-      href: '/moving-to/myrtle-beach-sc/murrells-inlet',
+      href: '/moving-to/south-carolina/murrells-inlet',
     },
     {
       title: 'Moving to Carolina Forest guide',
       description: 'Master-planned golf communities and fastest-growing Horry County suburb.',
-      href: '/moving-to/myrtle-beach-sc/carolina-forest',
+      href: '/moving-to/south-carolina/carolina-forest',
     },
     {
       title: '2026 Full Moving Guide to Myrtle Beach',

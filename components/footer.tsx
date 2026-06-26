@@ -38,7 +38,8 @@ export function Footer() {
             <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">DESTINATIONS</div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
               <div><Link href="/moving-to" className="hover:text-foreground transition-colors">All Destinations</Link></div>
-              <div><Link href="/moving-to/myrtle-beach-sc" className="hover:text-foreground transition-colors">Myrtle Beach, SC</Link></div>
+              <div><Link href="/moving-to/south-carolina" className="hover:text-foreground transition-colors">South Carolina</Link></div>
+              <div><Link href="/moving-to/north-carolina" className="hover:text-foreground transition-colors">North Carolina</Link></div>
               <div><Link href="/moving-to/florida" className="hover:text-foreground transition-colors">Florida Corridor</Link></div>
               <div><Link href="/moving-to/florida/miami" className="hover:text-foreground transition-colors">Miami</Link></div>
               <div><Link href="/local-movers" className="hover:text-foreground transition-colors">Local Movers by State</Link></div>

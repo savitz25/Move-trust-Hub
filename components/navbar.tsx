@@ -101,11 +101,18 @@ export function Navbar() {
               Destinations
             </Link>
             <Link
-              href="/moving-to/myrtle-beach-sc"
+              href="/moving-to/south-carolina"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
-              Myrtle Beach, SC
+              South Carolina
+            </Link>
+            <Link
+              href="/moving-to/north-carolina"
+              className="py-1 pl-3 text-muted-foreground hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              North Carolina
             </Link>
             <Link
               href="/moving-to/florida"

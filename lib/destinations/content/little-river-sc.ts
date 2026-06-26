@@ -18,7 +18,7 @@ export const littleRiverScContent: CityHubContent = {
       'horry county movers',
       'intracoastal waterway movers little river',
     ],
-    canonicalPath: '/moving-to/myrtle-beach-sc/little-river',
+    canonicalPath: '/moving-to/south-carolina/little-river',
     ogImagePath: '/images/destinations/little-river-cost-infographic.svg',
     ogImageAlt:
       '2026 interstate moving costs to Little River SC by home size – Move Trust Hub',
@@ -126,7 +126,7 @@ export const littleRiverScContent: CityHubContent = {
     {
       title: 'Myrtle Beach & Grand Strand moving hub',
       description: 'Compare Little River with Murrells Inlet, Carolina Forest, and other Grand Strand inbound markets.',
-      href: '/moving-to/myrtle-beach-sc',
+      href: '/moving-to/south-carolina',
     },
     {
       title: 'Browse Horry County local movers',

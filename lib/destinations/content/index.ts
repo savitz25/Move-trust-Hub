@@ -43,6 +43,13 @@ import { dallasFortWorthTxContent } from '@/lib/destinations/content/dallas-fort
 import { austinTxContent } from '@/lib/destinations/content/austin-tx';
 import { houstonTxContent } from '@/lib/destinations/content/houston-tx';
 import { sanAntonioTxContent } from '@/lib/destinations/content/san-antonio-tx';
+import { hickoryNcContent } from '@/lib/destinations/content/hickory-nc';
+import { wendellZebulonNcContent } from '@/lib/destinations/content/wendell-zebulon-nc';
+import { apexFuquayVarinaNcContent } from '@/lib/destinations/content/apex-fuquay-varina-nc';
+import { wilmingtonLelandNcContent } from '@/lib/destinations/content/wilmington-leland-nc';
+import { charlotteNcContent } from '@/lib/destinations/content/charlotte-nc';
+import { raleighDurhamNcContent } from '@/lib/destinations/content/raleigh-durham-nc';
+import { mooresvilleNcContent } from '@/lib/destinations/content/mooresville-nc';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -88,6 +95,13 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'austin-tx': austinTxContent,
   'houston-tx': houstonTxContent,
   'san-antonio-tx': sanAntonioTxContent,
+  'hickory-nc': hickoryNcContent,
+  'wendell-zebulon-nc': wendellZebulonNcContent,
+  'apex-fuquay-varina-nc': apexFuquayVarinaNcContent,
+  'wilmington-leland-nc': wilmingtonLelandNcContent,
+  'charlotte-nc': charlotteNcContent,
+  'raleigh-durham-nc': raleighDurhamNcContent,
+  'mooresville-nc': mooresvilleNcContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -104,10 +118,15 @@ export function getPublishedFloridaHubSlugs(): string[] {
   );
 }
 
-export function getPublishedGrandStrandHubSlugs(): string[] {
+export function getPublishedSouthCarolinaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
-    (slug) => getMarketBySlug(slug)?.clusterParent === 'myrtle-beach-sc'
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'south-carolina'
   );
+}
+
+/** @deprecated Use getPublishedSouthCarolinaHubSlugs */
+export function getPublishedGrandStrandHubSlugs(): string[] {
+  return getPublishedSouthCarolinaHubSlugs();
 }
 
 export function getPublishedTennesseeHubSlugs(): string[] {
@@ -119,5 +138,11 @@ export function getPublishedTennesseeHubSlugs(): string[] {
 export function getPublishedTexasHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'texas'
+  );
+}
+
+export function getPublishedNorthCarolinaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'north-carolina'
   );
 }

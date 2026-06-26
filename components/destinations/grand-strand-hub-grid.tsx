@@ -32,7 +32,7 @@ export function GrandStrandHubGrid({
             const isLive = published.has(city.slug);
             const path = market
               ? getMarketPath(market)
-              : `/moving-to/myrtle-beach-sc/${city.slug}`;
+              : `/moving-to/south-carolina/${city.slug}`;
 
             return (
               <div

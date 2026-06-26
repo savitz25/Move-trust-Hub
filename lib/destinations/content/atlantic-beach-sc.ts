@@ -18,7 +18,7 @@ export const atlanticBeachScContent: CityHubContent = {
       'horry county movers',
       'grand strand historic beach town moving',
     ],
-    canonicalPath: '/moving-to/myrtle-beach-sc/atlantic-beach',
+    canonicalPath: '/moving-to/south-carolina/atlantic-beach',
     ogImagePath: '/images/destinations/atlantic-beach-cost-infographic.svg',
     ogImageAlt:
       '2026 interstate moving costs to Atlantic Beach SC by home size – Move Trust Hub',
@@ -126,7 +126,7 @@ export const atlanticBeachScContent: CityHubContent = {
     {
       title: 'Grand Strand moving hub — Myrtle Beach',
       description: 'Parent guide covering all eight hyper-local city hubs across Horry and Georgetown counties.',
-      href: '/moving-to/myrtle-beach-sc',
+      href: '/moving-to/south-carolina',
     },
     {
       title: 'Browse Horry County local movers',
@@ -156,17 +156,17 @@ export const atlanticBeachScContent: CityHubContent = {
     {
       title: 'Moving to North Myrtle Beach guide',
       description: 'Shag dance capital, Main Street, and Cherry Grove — minutes north of Atlantic Beach.',
-      href: '/moving-to/myrtle-beach-sc/north-myrtle-beach',
+      href: '/moving-to/south-carolina/north-myrtle-beach',
     },
     {
       title: 'Moving to Surfside Beach guide',
       description: 'Family Beach pier town south of Atlantic Beach on the Grand Strand.',
-      href: '/moving-to/myrtle-beach-sc/surfside-beach',
+      href: '/moving-to/south-carolina/surfside-beach',
     },
     {
       title: 'Moving to Garden City Beach guide',
       description: 'Pier village and rental corridor spanning Horry and Georgetown counties.',
-      href: '/moving-to/myrtle-beach-sc/garden-city-beach',
+      href: '/moving-to/south-carolina/garden-city-beach',
     },
     {
       title: 'Room-by-room packing checklist',

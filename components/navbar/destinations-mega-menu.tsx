@@ -15,6 +15,12 @@ export function DestinationsMegaMenu() {
   const containerRef = useRef<HTMLDivElement>(null);
   const published = new Set(getPublishedCityHubSlugs());
 
+  const southCarolinaCities = getClusterMarkets('south-carolina').filter((m) =>
+    published.has(m.slug)
+  );
+  const northCarolinaCities = getClusterMarkets('north-carolina').filter((m) =>
+    published.has(m.slug)
+  );
   const floridaCities = getClusterMarkets('florida').filter((m) => published.has(m.slug));
   const tennesseeCities = getClusterMarkets('tennessee').filter((m) => published.has(m.slug));
   const texasCities = getClusterMarkets('texas').filter((m) => published.has(m.slug));
@@ -100,6 +106,38 @@ export function DestinationsMegaMenu() {
 
             <div>
               <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                South Carolina — Live Guides
+              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {southCarolinaCities.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="text-primary hover:underline font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
+                North Carolina — Live Guides
+              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {northCarolinaCities.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="text-primary hover:underline font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
                 Florida Corridor — Live Guides
               </div>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
@@ -169,8 +207,17 @@ export function DestinationsMegaMenu() {
                 <Link href="/resources/routes/new-york-to-florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   NY → Florida route guide →
                 </Link>
+                <Link href="/moving-to/south-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  South Carolina destination cluster →
+                </Link>
+                <Link href="/moving-to/north-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  North Carolina destination cluster →
+                </Link>
                 <Link href="/local-movers/south-carolina/horry" className="block hover:text-primary" onClick={() => setOpen(false)}>
-                  Myrtle Beach / Horry County movers →
+                  Horry County local movers →
+                </Link>
+                <Link href="/local-movers/north-carolina/mecklenburg" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Mecklenburg County local movers →
                 </Link>
               </div>
             </div>

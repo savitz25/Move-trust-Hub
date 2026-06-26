@@ -259,7 +259,7 @@ export const routeGuides: RouteGuide[] = [
       'Westchester → Conway / Surfside Beach',
     ],
     relatedRoutes: ['new-york-to-florida', 'florida-to-new-york', 'east-coast-to-west-coast'],
-    destinationHubPath: '/moving-to/myrtle-beach-sc',
+    destinationHubPath: '/moving-to/south-carolina',
   },
 ];
 

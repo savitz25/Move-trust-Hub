@@ -6,6 +6,15 @@ import {
   type Market,
 } from '@/lib/destinations/markets';
 
+/** Cluster parents with a dedicated state-level hub page (not in cityHubContentBySlug). */
+const LIVE_CLUSTER_PARENT_SLUGS = new Set([
+  'florida',
+  'tennessee',
+  'texas',
+  'south-carolina',
+  'north-carolina',
+]);
+
 type Props = {
   market: Market;
   publishedSlugs: Set<string>;
@@ -13,11 +22,17 @@ type Props = {
 
 export function DestinationClusterCard({ market, publishedSlugs }: Props) {
   const path = getMarketPath(market);
-  const isLive = publishedSlugs.has(market.slug);
+  const hasParentHubPage =
+    market.isClusterParent && LIVE_CLUSTER_PARENT_SLUGS.has(market.slug);
+  const isCityHubLive = publishedSlugs.has(market.slug);
+  const isLive = isCityHubLive;
   const subCities = market.isClusterParent ? getSortedClusterMarkets(market.slug) : [];
   const hasLiveSubCity = subCities.some((sub) => publishedSlugs.has(sub.slug));
-  const isClusterActive = isLive || (market.isClusterParent && hasLiveSubCity);
-  const clusterHref = isLive ? path : `/moving-to/${market.slug}`;
+  const isClusterActive =
+    isLive || hasParentHubPage || (market.isClusterParent && hasLiveSubCity);
+  const clusterHref = path;
+  const clusterCtaLabel =
+    isCityHubLive ? 'View guide' : hasParentHubPage || hasLiveSubCity ? 'View cluster' : 'View guide';
 
   return (
     <div className="rounded-xl border bg-card p-5 hover:border-primary/40 transition-colors">
@@ -37,7 +52,7 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
         </h2>
         {isClusterActive ? (
           <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-            {isLive ? 'Live' : 'Partial'}
+            {isCityHubLive ? 'Live' : 'Partial'}
           </span>
         ) : (
           <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
@@ -53,7 +68,7 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
           href={clusterHref}
           className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
         >
-          {isLive ? 'View guide' : 'View cluster'}
+          {clusterCtaLabel}
           <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
         </Link>
       ) : null}

@@ -18,7 +18,7 @@ export const carolinaForestScContent: CityHubContent = {
       'horry county movers',
       'master planned golf community movers',
     ],
-    canonicalPath: '/moving-to/myrtle-beach-sc/carolina-forest',
+    canonicalPath: '/moving-to/south-carolina/carolina-forest',
     ogImagePath: '/images/destinations/carolina-forest-cost-infographic.svg',
     ogImageAlt:
       '2026 interstate moving costs to Carolina Forest SC by home size – Move Trust Hub',
@@ -126,7 +126,7 @@ export const carolinaForestScContent: CityHubContent = {
     {
       title: 'Myrtle Beach & Grand Strand moving hub',
       description: 'Compare Carolina Forest with Socastee, Murrells Inlet, and other Grand Strand inbound markets.',
-      href: '/moving-to/myrtle-beach-sc',
+      href: '/moving-to/south-carolina',
     },
     {
       title: 'Browse Horry County local movers',

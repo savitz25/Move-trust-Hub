@@ -18,7 +18,7 @@ export const socasteeScContent: CityHubContent = {
       'horry county movers',
       'us 501 socastee movers',
     ],
-    canonicalPath: '/moving-to/myrtle-beach-sc/socastee',
+    canonicalPath: '/moving-to/south-carolina/socastee',
     ogImagePath: '/images/destinations/socastee-cost-infographic.svg',
     ogImageAlt:
       '2026 interstate moving costs to Socastee SC by home size – Move Trust Hub',
@@ -126,7 +126,7 @@ export const socasteeScContent: CityHubContent = {
     {
       title: 'Myrtle Beach & Grand Strand moving hub',
       description: 'Compare Socastee with Carolina Forest, Little River, and other Grand Strand inbound markets.',
-      href: '/moving-to/myrtle-beach-sc',
+      href: '/moving-to/south-carolina',
     },
     {
       title: 'Browse Horry County local movers',

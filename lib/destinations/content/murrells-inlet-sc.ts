@@ -18,7 +18,7 @@ export const murrellsInletScContent: CityHubContent = {
       'georgetown county movers',
       'seafood capital south carolina movers',
     ],
-    canonicalPath: '/moving-to/myrtle-beach-sc/murrells-inlet',
+    canonicalPath: '/moving-to/south-carolina/murrells-inlet',
     ogImagePath: '/images/destinations/murrells-inlet-cost-infographic.svg',
     ogImageAlt:
       '2026 interstate moving costs to Murrells Inlet SC by home size – Move Trust Hub',
@@ -126,7 +126,7 @@ export const murrellsInletScContent: CityHubContent = {
     {
       title: 'Myrtle Beach & Grand Strand moving hub',
       description: 'Compare Murrells Inlet with Little River, Carolina Forest, and other Grand Strand inbound markets.',
-      href: '/moving-to/myrtle-beach-sc',
+      href: '/moving-to/south-carolina',
     },
     {
       title: 'Browse Horry County local movers',
