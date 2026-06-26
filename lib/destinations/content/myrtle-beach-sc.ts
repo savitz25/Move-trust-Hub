@@ -28,7 +28,7 @@ export const myrtleBeachScContent: CityHubContent = {
   introParagraphs: [
     'Myrtle Beach and the surrounding Grand Strand corridor remain one of the highest-intent inbound moving markets in the United States for 2026. Whether you are relocating from the Northeast, Midwest, or another Sunbelt state, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
-    'This guide covers movers serving Myrtle Beach, North Myrtle Beach, Surfside Beach, Conway, and the greater Wilmington, NC area across the state line. Interstate shipments into coastal Carolina often involve condo elevators, gated-community shuttle trucks, and seasonal demand swings — all of which affect your final price if they are not disclosed upfront.',
+    'This guide covers movers serving Myrtle Beach and the full Grand Strand — including our eight hyper-local city hubs for North Myrtle Beach, Surfside Beach, Atlantic Beach, Garden City Beach, Little River, Murrells Inlet, Socastee, and Carolina Forest — plus the greater Wilmington, NC area across the state line. Interstate shipments into coastal Carolina often involve condo elevators, gated-community shuttle trucks, and seasonal demand swings — all of which affect your final price if they are not disclosed upfront.',
   ],
   routeLinks: [
     {
@@ -121,6 +121,21 @@ export const myrtleBeachScContent: CityHubContent = {
     },
   ],
   resourceLinks: [
+    {
+      title: 'Moving to North Myrtle Beach guide',
+      description: 'Shag dance capital, Main Street, and Cherry Grove — northern Grand Strand hub.',
+      href: '/moving-to/myrtle-beach-sc/north-myrtle-beach',
+    },
+    {
+      title: 'Moving to Murrells Inlet guide',
+      description: 'MarshWalk seafood district and inlet waterfront in Georgetown County.',
+      href: '/moving-to/myrtle-beach-sc/murrells-inlet',
+    },
+    {
+      title: 'Moving to Carolina Forest guide',
+      description: 'Master-planned golf communities and fastest-growing Horry County suburb.',
+      href: '/moving-to/myrtle-beach-sc/carolina-forest',
+    },
     {
       title: '2026 Full Moving Guide to Myrtle Beach',
       description:

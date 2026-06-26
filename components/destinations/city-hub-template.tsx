@@ -11,6 +11,7 @@ import { DestinationInterstateCard } from '@/components/destinations/destination
 import { getMoversForMarket, countMoversForMarket } from '@/lib/destinations/get-movers-for-market';
 import { getMarketMoversDirectoryHref } from '@/lib/destinations/market-paths';
 import { getMarketBySlug } from '@/lib/destinations/markets';
+import { GrandStrandHubGrid } from '@/components/destinations/grand-strand-hub-grid';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
@@ -106,6 +107,8 @@ export async function CityHubTemplate({ market, content }: Props) {
           <TrustBadges variant="compact" />
         </div>
       </section>
+
+      {market.slug === 'myrtle-beach-sc' ? <GrandStrandHubGrid /> : null}
 
       {/* §2 Interactive Embeds */}
       <section
