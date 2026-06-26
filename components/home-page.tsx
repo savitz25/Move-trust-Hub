@@ -14,16 +14,18 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
   return (
     <div className="flex flex-col">
       <section className="relative bg-gradient-to-br from-primary/8 via-background to-background border-b">
-        <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="container mx-auto px-4 py-12 sm:py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-4 py-1 text-sm font-medium mb-6">
-              <Truck className="h-4 w-4" /> FREE QUOTES • LICENSED MOVERS • 24HR RESPONSE
+            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium mb-5 sm:mb-6 max-w-full">
+              <Truck className="h-4 w-4 shrink-0" />
+              <span className="truncate sm:whitespace-normal">FREE QUOTES • LICENSED MOVERS • 24HR RESPONSE</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-semibold tracking-tighter mb-6 leading-tight">
-              Compare Trusted Interstate Movers<br />&amp; Get Free Long-Distance Quotes
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tighter mb-5 sm:mb-6 leading-[1.15]">
+              Compare Trusted Interstate Movers<br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>&amp; Get Free Long-Distance Quotes
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-7 sm:mb-8 leading-relaxed">
               Compare real reviews,{' '}
               <Link href="/resources/fmcsa" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 FMCSA licensing data
@@ -39,15 +41,15 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
               first, then get matched with the best options — completely free.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 w-full max-w-md sm:max-w-none mx-auto">
               <HomeQuoteButton
                 size="lg"
-                className="gap-2 text-base px-10 h-14 text-lg"
+                className="gap-2 text-base px-8 sm:px-10 h-12 sm:h-14 text-base sm:text-lg w-full sm:w-auto min-h-[48px]"
               >
                 Get My Free Quotes <ArrowRight className="h-5 w-5" />
               </HomeQuoteButton>
-              <Link href="/moving-calculator">
-                <Button size="lg" variant="outline" className="gap-2 text-base px-8 h-14">
+              <Link href="/moving-calculator" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="gap-2 text-base px-8 h-12 sm:h-14 w-full min-h-[48px]">
                   Estimate My Move First
                 </Button>
               </Link>
@@ -64,7 +66,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <div className="text-primary font-semibold tracking-widest text-sm mb-2">3 SIMPLE STEPS</div>
-          <h2 className="text-4xl font-semibold tracking-tight">How Move Trust Hub Works</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">How Move Trust Hub Works</h2>
           <p className="mt-3 text-muted-foreground max-w-md mx-auto">We make finding and booking the right interstate mover easy and transparent.</p>
         </div>
 
@@ -112,7 +114,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
       <section className="bg-muted/30 border-y py-16 content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-semibold tracking-tight">Why Families Choose Us for Long-Distance Moves</h2>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Why Families Choose Us for Long-Distance Moves</h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
@@ -135,7 +137,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
       <section className="container mx-auto px-4 py-16 content-auto">
         <div className="text-center mb-10">
           <Badge variant="outline" className="mb-3">FREE TOOLS</Badge>
-          <h2 className="text-4xl font-semibold tracking-tight">Research &amp; Plan Your Move</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Research &amp; Plan Your Move</h2>
           <p className="text-muted-foreground mt-3 max-w-md mx-auto">Powerful free tools to help you make the smartest decision for your interstate move.</p>
         </div>
 
@@ -233,10 +235,10 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
       </div>
 
       <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Ready to start your move?</h2>
-        <p className="text-xl text-muted-foreground mb-8 max-w-md mx-auto">Join thousands of families who found their perfect interstate mover through us.</p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">Ready to start your move?</h2>
+        <p className="text-base sm:text-xl text-muted-foreground mb-8 max-w-md mx-auto">Join thousands of families who found their perfect interstate mover through us.</p>
 
-        <HomeQuoteButton size="lg" className="text-lg px-12 h-14">
+        <HomeQuoteButton size="lg" className="text-base sm:text-lg px-10 sm:px-12 h-12 sm:h-14 min-h-[48px] w-full sm:w-auto max-w-sm sm:max-w-none mx-auto">
           Get Your Free Quotes Now
         </HomeQuoteButton>
         <p className="text-xs text-muted-foreground mt-4">Takes 60 seconds • Completely free • No spam</p>

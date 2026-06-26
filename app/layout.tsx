@@ -1,12 +1,12 @@
 import type { Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Script from 'next/script';
 import './globals.css';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Suspense } from 'react';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
+import { DeferredGtag } from '@/components/performance/deferred-gtag';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 
 const geistSans = Geist({
@@ -33,6 +33,7 @@ export const viewport: Viewport = {
   themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
@@ -53,22 +54,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <DeferredWidgets />
-
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-433BDVV8MJ');
-          `}
-        </Script>
-
+        <DeferredGtag />
         <DeferredAnalytics />
       </body>
     </html>

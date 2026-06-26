@@ -175,6 +175,21 @@
   contain-intrinsic-size: auto 600px;
 }
 
+/* Mobile touch polish */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  [role='button'] {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* Print styles for profile pages */
 @media print {
   .no-print {

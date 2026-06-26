@@ -10,15 +10,17 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-y-9">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
-              <Image
-                src="/logo.png"
-                alt="Move Trust Hub logo — compare licensed long-distance movers"
-                width={300}
-                height={75}
-                loading="lazy"
-                sizes="200px"
-                className="h-12 w-auto max-w-[300px]"
-              />
+              <span className="relative block h-12 w-[192px] shrink-0" aria-hidden="true">
+                <Image
+                  src="/logo.png"
+                  alt="Move Trust Hub logo — compare licensed long-distance movers"
+                  width={192}
+                  height={48}
+                  loading="lazy"
+                  sizes="192px"
+                  className="h-12 w-[192px] object-contain object-left"
+                />
+              </span>
             </Link>
             <p className="mt-2.5 text-sm text-muted-foreground max-w-[210px] leading-snug">
               Independent directory for trusted interstate movers.
