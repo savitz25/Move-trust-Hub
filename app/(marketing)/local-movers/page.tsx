@@ -4,6 +4,8 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import { StateSelector } from '@/components/local-movers/state-selector';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
+import { PageHeroCta } from '@/components/conversion/page-hero-cta';
+import { TrustBadges } from '@/components/trust/trust-badges';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { localStates } from '@/lib/local-movers/states';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
@@ -66,6 +68,14 @@ export default function LocalMoversHubPage() {
             </Link>
             .
           </p>
+          <div className="mt-6">
+            <PageHeroCta
+              quoteLabel="Get Free Interstate Quotes"
+              calculatorHref="/moving-calculator"
+              prefilledData={{ notes: 'Local movers hub — quote request' }}
+            />
+          </div>
+          <TrustBadges variant="compact" className="mt-6" />
         </div>
 
         <section className="mb-10">

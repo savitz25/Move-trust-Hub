@@ -78,6 +78,14 @@ export function Navbar() {
 
         <div className="flex md:hidden items-center gap-2">
           <Button
+            size="sm"
+            className="gap-1.5 min-h-[44px] px-3"
+            onClick={() => setShowQuoteModal(true)}
+          >
+            <FileText className="h-4 w-4" aria-hidden="true" />
+            Quotes
+          </Button>
+          <Button
             variant="ghost"
             size="icon"
             className="h-11 w-11 min-h-[44px] min-w-[44px]"

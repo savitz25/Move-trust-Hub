@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
+import { DestinationClusterHeroCta } from '@/components/destinations/destination-cluster-hero-cta';
 import {
   tennesseeClusterContent,
   type TennesseeCorridorCity,
@@ -150,6 +151,8 @@ export default function TennesseeClusterPage() {
                 {paragraph}
               </p>
             ))}
+
+            <DestinationClusterHeroCta clusterSlug="tennessee" clusterLabel="Tennessee" />
           </div>
         </section>
 

@@ -162,6 +162,7 @@ import {
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
+import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-cta';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState } from '@/lib/local-movers/states';
 import {
@@ -436,6 +437,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               including {countyLabel}.
             </p>
           )}
+          <div className="mt-6">
+            <CountyPageHeroCta countyLabel={countyLabel} stateName={state.name} />
+          </div>
         </header>
 
         <section className="mb-10" id="movers" aria-labelledby="movers-heading">

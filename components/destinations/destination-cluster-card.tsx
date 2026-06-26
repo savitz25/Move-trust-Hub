@@ -89,21 +89,26 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
 
             return (
               <li key={sub.slug}>
-                <Link
-                  href={subPath}
-                  className={
-                    subLive
-                      ? 'text-primary hover:underline font-medium'
-                      : 'text-muted-foreground hover:text-primary hover:underline'
-                  }
-                  aria-label={
-                    subLive
-                      ? `${sub.displayName}, ${sub.stateCode} — live city guide`
-                      : `${sub.displayName}, ${sub.stateCode} — city guide (coming soon)`
-                  }
-                >
-                  {sub.displayName}
-                </Link>
+                {subLive ? (
+                  <Link
+                    href={subPath}
+                    prefetch={false}
+                    className="text-primary hover:underline font-medium"
+                    aria-label={`${sub.displayName}, ${sub.stateCode} — live city guide`}
+                  >
+                    {sub.displayName}
+                  </Link>
+                ) : (
+                  <span
+                    className="text-muted-foreground"
+                    aria-label={`${sub.displayName}, ${sub.stateCode} — city guide coming soon`}
+                  >
+                    {sub.displayName}
+                    <span className="text-[10px] uppercase tracking-wide ml-1.5 text-muted-foreground/70">
+                      (soon)
+                    </span>
+                  </span>
+                )}
               </li>
             );
           })}

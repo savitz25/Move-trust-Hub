@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/moving-to/myrtle-beach-sc',
-        destination: '/moving-to/south-carolina',
+        destination: '/moving-to/south-carolina/myrtle-beach-sc',
         permanent: true,
       },
       {

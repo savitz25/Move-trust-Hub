@@ -1,4 +1,4 @@
-import { parseCountyKey } from '@/lib/destinations/county-keys';
+import { parseCountyKey, countyKeyToLabel } from '@/lib/destinations/county-keys';
 import { getCountyPath } from '@/lib/local-movers';
 import type { Market } from '@/lib/destinations/types';
 
@@ -14,4 +14,23 @@ export function getMarketMoversDirectoryHref(
   if (!parsed) return `${canonicalPath}#movers`;
 
   return getCountyPath(parsed.stateSlug, parsed.countySlug);
+}
+
+export function getMarketCountyDirectoryLinks(
+  market: Market
+): { href: string; label: string }[] {
+  return market.primaryCounties
+    .map((key) => {
+      const parsed = parseCountyKey(key);
+      if (!parsed) return null;
+      return {
+        href: getCountyPath(parsed.stateSlug, parsed.countySlug),
+        label: countyKeyToLabel(key),
+      };
+    })
+    .filter((entry): entry is { href: string; label: string } => Boolean(entry));
+}
+
+export function buildCalculatorHrefForMarket(market: Market): string {
+  return `/moving-calculator?toZip=${market.defaultToZip}&dest=${market.slug}`;
 }

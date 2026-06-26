@@ -295,6 +295,95 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Saline County Little Rock bedroom community guide',
     },
   },
+  tennessee: {
+    davidson: {
+      label: 'Moving to Nashville',
+      href: '/moving-to/tennessee/nashville-tn',
+      description: 'Music City inbound guide — corporate, healthcare, and suburban growth corridors',
+    },
+    williamson: {
+      label: 'Moving to Franklin & Brentwood',
+      href: '/moving-to/tennessee/franklin-brentwood-tn',
+      description: 'Williamson County premium Nashville suburb inbound guide',
+    },
+    rutherford: {
+      label: 'Moving to Murfreesboro',
+      href: '/moving-to/tennessee/murfreesboro-tn',
+      description: 'Murfreesboro and Rutherford County Nashville spillover guide',
+    },
+    knox: {
+      label: 'Moving to Knoxville',
+      href: '/moving-to/tennessee/knoxville-tn',
+      description: 'East Tennessee university and Oak Ridge corridor inbound guide',
+    },
+    hamilton: {
+      label: 'Moving to Chattanooga',
+      href: '/moving-to/tennessee/chattanooga-tn',
+      description: 'Chattanooga riverfront and Lookout Mountain inbound guide',
+    },
+    montgomery: {
+      label: 'Moving to Clarksville',
+      href: '/moving-to/tennessee/clarksville-tn',
+      description: 'Fort Campbell and Austin Peay corridor inbound guide',
+    },
+    wilson: {
+      label: 'Moving to Mount Juliet',
+      href: '/moving-to/tennessee/mount-juliet-tn',
+      description: 'Wilson County Nashville eastern suburb inbound guide',
+    },
+  },
+  texas: {
+    harris: {
+      label: 'Moving to Houston',
+      href: '/moving-to/texas/houston-tx',
+      description: 'Houston metro energy and medical corridor inbound guide',
+    },
+    travis: {
+      label: 'Moving to Austin',
+      href: '/moving-to/texas/austin-tx',
+      description: 'Austin tech corridor inbound moving guide and cost data',
+    },
+    dallas: {
+      label: 'Moving to Dallas–Fort Worth',
+      href: '/moving-to/texas/dallas-fort-worth-tx',
+      description: 'DFW corporate and suburban growth inbound guide',
+    },
+    tarrant: {
+      label: 'Moving to Dallas–Fort Worth',
+      href: '/moving-to/texas/dallas-fort-worth-tx',
+      description: 'Fort Worth and Arlington metro inbound relocation guide',
+    },
+    bexar: {
+      label: 'Moving to San Antonio',
+      href: '/moving-to/texas/san-antonio-tx',
+      description: 'San Antonio military and healthcare corridor inbound guide',
+    },
+    'el-paso': {
+      label: 'Moving to El Paso',
+      href: '/moving-to/texas/el-paso-tx',
+      description: 'West Texas border metro inbound moving guide',
+    },
+    lubbock: {
+      label: 'Moving to Lubbock',
+      href: '/moving-to/texas/lubbock-tx',
+      description: 'South Plains university and agriculture hub inbound guide',
+    },
+    midland: {
+      label: 'Moving to Midland & Odessa',
+      href: '/moving-to/texas/midland-odessa-tx',
+      description: 'Permian Basin energy corridor inbound guide',
+    },
+    denton: {
+      label: 'Moving to Dallas–Fort Worth',
+      href: '/moving-to/texas/dallas-fort-worth-tx',
+      description: 'Denton County DFW northern growth corridor guide',
+    },
+    collin: {
+      label: 'Moving to Dallas–Fort Worth',
+      href: '/moving-to/texas/dallas-fort-worth-tx',
+      description: 'Collin County Plano–Frisco corporate suburb guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',

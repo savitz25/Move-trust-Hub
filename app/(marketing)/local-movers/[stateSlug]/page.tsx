@@ -5,6 +5,8 @@ import { MapPin } from 'lucide-react';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
+import { PageHeroCta } from '@/components/conversion/page-hero-cta';
+import { TrustBadges } from '@/components/trust/trust-badges';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState, localStates } from '@/lib/local-movers/states';
 import {
@@ -192,6 +194,14 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
               : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
           </p>
+          <div className="mt-6">
+            <PageHeroCta
+              quoteLabel="Get Free Interstate Quotes"
+              calculatorHref="/moving-calculator"
+              prefilledData={{ notes: `Local movers state hub: ${state.name}` }}
+            />
+          </div>
+          <TrustBadges variant="compact" className="mt-6" />
         </div>
 
         {hasCounties ? (
@@ -243,7 +253,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
           countyLabel={state.name}
         />
 
-        <LocalMoversCta />
+        <LocalMoversCta countyName={state.name} />
       </div>
     </>
   );

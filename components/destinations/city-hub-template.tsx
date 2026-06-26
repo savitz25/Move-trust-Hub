@@ -9,7 +9,10 @@ import { DestinationMapSnippet } from '@/components/destinations/destination-map
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
 import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
 import { getMoversForMarket, countMoversForMarket } from '@/lib/destinations/get-movers-for-market';
-import { getMarketMoversDirectoryHref } from '@/lib/destinations/market-paths';
+import {
+  getMarketCountyDirectoryLinks,
+  getMarketMoversDirectoryHref,
+} from '@/lib/destinations/market-paths';
 import { getMarketBySlug } from '@/lib/destinations/markets';
 import { GrandStrandHubGrid } from '@/components/destinations/grand-strand-hub-grid';
 
@@ -39,6 +42,7 @@ export async function CityHubTemplate({ market, content }: Props) {
     market,
     content.seo.canonicalPath
   );
+  const countyDirectoryLinks = getMarketCountyDirectoryLinks(market);
 
   const countyLabels = market.primaryCounties.map((key) => {
     const parts = key.split('-');
@@ -93,16 +97,20 @@ export async function CityHubTemplate({ market, content }: Props) {
             </p>
           ))}
 
-          <div className="flex flex-col sm:flex-row gap-3 mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 mb-3">
             <DestinationQuoteCta market={market} />
             <Link
               href={`/moving-calculator?toZip=${market.defaultToZip}&dest=${market.slug}`}
-              className="inline-flex items-center justify-center rounded-md border bg-card px-6 py-3 text-sm font-medium hover:border-primary/40 transition-colors"
+              prefetch={false}
+              className="inline-flex items-center justify-center rounded-md border bg-card px-6 py-3 text-sm font-medium hover:border-primary/40 transition-colors min-h-[48px]"
             >
               Estimate My Move First
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
+          <p className="text-xs text-muted-foreground mb-6">
+            Takes less than 60 seconds. No obligation.
+          </p>
 
           <TrustBadges variant="compact" />
         </div>
@@ -180,11 +188,27 @@ export async function CityHubTemplate({ market, content }: Props) {
             </div>
             <Link
               href={moversDirectoryHref}
+              prefetch={false}
               className="text-sm font-medium text-primary hover:underline shrink-0"
             >
               View all {totalMovers}+ movers serving the area →
             </Link>
           </div>
+
+          {countyDirectoryLinks.length > 0 ? (
+            <div className="flex flex-wrap gap-2 mb-8" aria-label="County mover directories">
+              {countyDirectoryLinks.map((county) => (
+                <Link
+                  key={county.href}
+                  href={county.href}
+                  prefetch={false}
+                  className="inline-flex items-center rounded-full border bg-card px-3 py-1.5 text-xs font-medium hover:border-primary/40 hover:text-primary transition-colors"
+                >
+                  {county.label} movers →
+                </Link>
+              ))}
+            </div>
+          ) : null}
 
           {featuredCompanies.length > 0 && (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8" role="list">

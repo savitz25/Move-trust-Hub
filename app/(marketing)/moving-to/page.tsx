@@ -3,6 +3,7 @@ import { MapPin } from 'lucide-react';
 import { priorityMarketsForNav } from '@/lib/destinations/markets';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import { DestinationClusterCard } from '@/components/destinations/destination-cluster-card';
+import { PageHeroCta } from '@/components/conversion/page-hero-cta';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildDestinationsIndexSchemaGraph } from '@/lib/seo/build-destination-index-schema';
 import { buildDestinationsIndexMetadata } from '@/lib/seo/destination-seo';
@@ -29,11 +30,16 @@ export default function MovingToIndexPage() {
           <h1 className="text-4xl font-semibold tracking-tight mb-3">
             Moving Destinations: City Guides, Costs &amp; Trusted Movers
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-6">
             High-intent inbound guides for America&apos;s fastest-growing relocation markets.
             Each hub includes cost tables, route calculators, county-level mover directories,
             and free quote matching from FMCSA-licensed carriers.
           </p>
+          <PageHeroCta
+            quoteLabel="Get Free Moving Quotes"
+            calculatorHref="/moving-calculator"
+            prefilledData={{ notes: 'Inbound destination index — quote request' }}
+          />
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
