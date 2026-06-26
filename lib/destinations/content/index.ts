@@ -71,6 +71,16 @@ import { normanOkContent } from '@/lib/destinations/content/norman-ok';
 import { brokenArrowOkContent } from '@/lib/destinations/content/broken-arrow-ok';
 import { jenksOkContent } from '@/lib/destinations/content/jenks-ok';
 import { stillwaterOkContent } from '@/lib/destinations/content/stillwater-ok';
+import { phoenixAzContent } from '@/lib/destinations/content/phoenix-az';
+import { scottsdaleAzContent } from '@/lib/destinations/content/scottsdale-az';
+import { tempeAzContent } from '@/lib/destinations/content/tempe-az';
+import { gilbertAzContent } from '@/lib/destinations/content/gilbert-az';
+import { chandlerAzContent } from '@/lib/destinations/content/chandler-az';
+import { queenCreekAzContent } from '@/lib/destinations/content/queen-creek-az';
+import { buckeyeAzContent } from '@/lib/destinations/content/buckeye-az';
+import { goodyearSurpriseAzContent } from '@/lib/destinations/content/goodyear-surprise-az';
+import { maricopaCasaGrandeAzContent } from '@/lib/destinations/content/maricopa-casa-grande-az';
+import { tucsonMaranaAzContent } from '@/lib/destinations/content/tucson-marana-az';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -144,6 +154,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'broken-arrow-ok': brokenArrowOkContent,
   'jenks-ok': jenksOkContent,
   'stillwater-ok': stillwaterOkContent,
+  'phoenix-az': phoenixAzContent,
+  'scottsdale-az': scottsdaleAzContent,
+  'tempe-az': tempeAzContent,
+  'gilbert-az': gilbertAzContent,
+  'chandler-az': chandlerAzContent,
+  'queen-creek-az': queenCreekAzContent,
+  'buckeye-az': buckeyeAzContent,
+  'goodyear-surprise-az': goodyearSurpriseAzContent,
+  'maricopa-casa-grande-az': maricopaCasaGrandeAzContent,
+  'tucson-marana-az': tucsonMaranaAzContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -204,5 +224,11 @@ export function getPublishedOregonHubSlugs(): string[] {
 export function getPublishedOklahomaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'oklahoma'
+  );
+}
+
+export function getPublishedArizonaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'arizona'
   );
 }

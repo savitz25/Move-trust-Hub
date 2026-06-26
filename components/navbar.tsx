@@ -151,6 +151,14 @@ export function Navbar() {
             </Link>
             <Link
               prefetch={false}
+              href="/moving-to/arizona"
+              className="py-1 pl-3 text-muted-foreground hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              Arizona
+            </Link>
+            <Link
+              prefetch={false}
               href="/moving-to/florida"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}

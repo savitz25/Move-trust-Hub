@@ -71,6 +71,11 @@ const nextConfig: NextConfig = {
         destination: '/moving-to/oklahoma/tulsa-ok',
         permanent: true,
       },
+      {
+        source: '/moving-to/phoenix-az',
+        destination: '/moving-to/arizona/phoenix-az',
+        permanent: true,
+      },
     ];
   },
   // Generate sitemap and robots via metadata in app dir

@@ -167,6 +167,23 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Oklahoma State University affordable college-town guide',
     },
   },
+  arizona: {
+    maricopa: {
+      label: 'Moving to Phoenix',
+      href: '/moving-to/arizona/phoenix-az',
+      description: 'Valley of the Sun flagship metro inbound moving guide',
+    },
+    pinal: {
+      label: 'Moving to Maricopa & Casa Grande',
+      href: '/moving-to/arizona/maricopa-casa-grande-az',
+      description: 'Pinal County affordable Phoenix commute corridor guide',
+    },
+    pima: {
+      label: 'Moving to Tucson & Marana',
+      href: '/moving-to/arizona/tucson-marana-az',
+      description: 'Southern Arizona mountain lifestyle inbound guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',
