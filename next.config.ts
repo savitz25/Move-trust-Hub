@@ -76,6 +76,11 @@ const nextConfig: NextConfig = {
         destination: '/moving-to/arizona/phoenix-az',
         permanent: true,
       },
+      {
+        source: '/moving-to/little-rock-ar',
+        destination: '/moving-to/arkansas/benton-bryant-ar',
+        permanent: true,
+      },
     ];
   },
   // Generate sitemap and robots via metadata in app dir

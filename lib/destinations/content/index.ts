@@ -81,6 +81,12 @@ import { buckeyeAzContent } from '@/lib/destinations/content/buckeye-az';
 import { goodyearSurpriseAzContent } from '@/lib/destinations/content/goodyear-surprise-az';
 import { maricopaCasaGrandeAzContent } from '@/lib/destinations/content/maricopa-casa-grande-az';
 import { tucsonMaranaAzContent } from '@/lib/destinations/content/tucson-marana-az';
+import { bentonvilleArContent } from '@/lib/destinations/content/bentonville-ar';
+import { fayettevilleArContent } from '@/lib/destinations/content/fayetteville-ar';
+import { rogersArContent } from '@/lib/destinations/content/rogers-ar';
+import { conwayArContent } from '@/lib/destinations/content/conway-ar';
+import { springdaleArContent } from '@/lib/destinations/content/springdale-ar';
+import { bentonBryantArContent } from '@/lib/destinations/content/benton-bryant-ar';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -164,6 +170,12 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'goodyear-surprise-az': goodyearSurpriseAzContent,
   'maricopa-casa-grande-az': maricopaCasaGrandeAzContent,
   'tucson-marana-az': tucsonMaranaAzContent,
+  'bentonville-ar': bentonvilleArContent,
+  'fayetteville-ar': fayettevilleArContent,
+  'rogers-ar': rogersArContent,
+  'conway-ar': conwayArContent,
+  'springdale-ar': springdaleArContent,
+  'benton-bryant-ar': bentonBryantArContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -230,5 +242,11 @@ export function getPublishedOklahomaHubSlugs(): string[] {
 export function getPublishedArizonaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'arizona'
+  );
+}
+
+export function getPublishedArkansasHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'arkansas'
   );
 }

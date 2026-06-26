@@ -184,6 +184,28 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Southern Arizona mountain lifestyle inbound guide',
     },
   },
+  arkansas: {
+    benton: {
+      label: 'Moving to Bentonville & NWA',
+      href: '/moving-to/arkansas/bentonville-ar',
+      description: 'Walmart HQ corridor and Northwest Arkansas inbound guide',
+    },
+    washington: {
+      label: 'Moving to Fayetteville',
+      href: '/moving-to/arkansas/fayetteville-ar',
+      description: 'University of Arkansas NWA college-town inbound guide',
+    },
+    faulkner: {
+      label: 'Moving to Conway',
+      href: '/moving-to/arkansas/conway-ar',
+      description: 'City of Colleges central Arkansas inbound guide',
+    },
+    saline: {
+      label: 'Moving to Benton & Bryant',
+      href: '/moving-to/arkansas/benton-bryant-ar',
+      description: 'Saline County Little Rock bedroom community guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',
