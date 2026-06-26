@@ -50,6 +50,14 @@ import { wilmingtonLelandNcContent } from '@/lib/destinations/content/wilmington
 import { charlotteNcContent } from '@/lib/destinations/content/charlotte-nc';
 import { raleighDurhamNcContent } from '@/lib/destinations/content/raleigh-durham-nc';
 import { mooresvilleNcContent } from '@/lib/destinations/content/mooresville-nc';
+import { boiseIdContent } from '@/lib/destinations/content/boise-id';
+import { meridianIdContent } from '@/lib/destinations/content/meridian-id';
+import { eagleIdContent } from '@/lib/destinations/content/eagle-id';
+import { nampaCaldwellIdContent } from '@/lib/destinations/content/nampa-caldwell-id';
+import { coeurDaleneIdContent } from '@/lib/destinations/content/coeur-dalene-id';
+import { sandpointIdContent } from '@/lib/destinations/content/sandpoint-id';
+import { idahoFallsIdContent } from '@/lib/destinations/content/idaho-falls-id';
+import { twinFallsIdContent } from '@/lib/destinations/content/twin-falls-id';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -102,6 +110,14 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'charlotte-nc': charlotteNcContent,
   'raleigh-durham-nc': raleighDurhamNcContent,
   'mooresville-nc': mooresvilleNcContent,
+  'boise-id': boiseIdContent,
+  'meridian-id': meridianIdContent,
+  'eagle-id': eagleIdContent,
+  'nampa-caldwell-id': nampaCaldwellIdContent,
+  'coeur-dalene-id': coeurDaleneIdContent,
+  'sandpoint-id': sandpointIdContent,
+  'idaho-falls-id': idahoFallsIdContent,
+  'twin-falls-id': twinFallsIdContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -144,5 +160,11 @@ export function getPublishedTexasHubSlugs(): string[] {
 export function getPublishedNorthCarolinaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'north-carolina'
+  );
+}
+
+export function getPublishedIdahoHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'idaho'
   );
 }

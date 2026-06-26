@@ -13,6 +13,7 @@ const LIVE_CLUSTER_PARENT_SLUGS = new Set([
   'texas',
   'south-carolina',
   'north-carolina',
+  'idaho',
 ]);
 
 type Props = {
@@ -25,12 +26,10 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
   const hasParentHubPage =
     market.isClusterParent && LIVE_CLUSTER_PARENT_SLUGS.has(market.slug);
   const isCityHubLive = publishedSlugs.has(market.slug);
-  const isLive = isCityHubLive;
   const subCities = market.isClusterParent ? getSortedClusterMarkets(market.slug) : [];
   const hasLiveSubCity = subCities.some((sub) => publishedSlugs.has(sub.slug));
   const isClusterActive =
-    isLive || hasParentHubPage || (market.isClusterParent && hasLiveSubCity);
-  const clusterHref = path;
+    isCityHubLive || hasParentHubPage || (market.isClusterParent && hasLiveSubCity);
   const clusterCtaLabel =
     isCityHubLive ? 'View guide' : hasParentHubPage || hasLiveSubCity ? 'View cluster' : 'View guide';
 
@@ -39,7 +38,7 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
       <div className="flex items-start justify-between gap-2 mb-2">
         <h2 className="font-semibold text-lg">
           {isClusterActive ? (
-            <Link href={clusterHref} className="hover:text-primary transition-colors">
+            <Link href={path} className="hover:text-primary transition-colors">
               {market.displayName}
               {market.stateCode ? `, ${market.stateCode}` : ''}
             </Link>
@@ -65,7 +64,7 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
 
       {isClusterActive ? (
         <Link
-          href={clusterHref}
+          href={path}
           className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
         >
           {clusterCtaLabel}

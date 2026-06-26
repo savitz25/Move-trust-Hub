@@ -82,6 +82,66 @@ export function buildDestinationsIndexSchemaGraph() {
   };
 }
 
+/** JSON-LD for /moving-to/idaho cluster parent */
+export function buildIdahoClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const idahoHubs = getClusterMarkets('idaho').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Idaho', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Idaho',
+          addressRegion: 'ID',
+        },
+        mainEntity: { '@id': `${canonical}#idaho-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#idaho-hub-list`,
+        name: 'Idaho City Moving Guides',
+        numberOfItems: idahoHubs.length,
+        itemListElement: idahoHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, ID`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/florida cluster parent */
 export function buildFloridaClusterSchemaGraph(
   title: string,

@@ -15,7 +15,7 @@ export const dynamic = 'force-static';
 
 export async function generateStaticParams() {
   return getPublishedCityHubSlugs()
-    .filter((slug) => !getMarketBySlug(slug)?.clusterParent)
+    .filter((slug) => getMarketBySlug(slug)?.clusterParent === 'idaho')
     .map((slug) => ({ slug }));
 }
 
@@ -28,12 +28,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildCityHubMetadata(content);
 }
 
-export default async function CityHubPage({ params }: Props) {
+export default async function IdahoCityHubPage({ params }: Props) {
   const { slug } = await params;
   const market = getMarketBySlug(slug);
   const content = getCityHubContent(slug);
 
-  if (!market || !content) notFound();
+  if (!market || !content || market.clusterParent !== 'idaho') notFound();
 
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
   const movers = getMoversForMarket(market, 6);

@@ -61,6 +61,38 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Blue Ridge foothills affordable alternative near Charlotte',
     },
   },
+  idaho: {
+    ada: {
+      label: 'Moving to Idaho',
+      href: '/moving-to/idaho',
+      description: 'Treasure Valley inbound guide — Boise, Meridian, Eagle city hubs',
+    },
+    canyon: {
+      label: 'Moving to Nampa & Caldwell',
+      href: '/moving-to/idaho/nampa-caldwell-id',
+      description: 'Affordable Treasure Valley corridor with Boise job access',
+    },
+    kootenai: {
+      label: "Moving to Coeur d'Alene",
+      href: '/moving-to/idaho/coeur-dalene-id',
+      description: 'Panhandle lakeside inbound moving guide',
+    },
+    bonner: {
+      label: 'Moving to Sandpoint',
+      href: '/moving-to/idaho/sandpoint-id',
+      description: 'Lake Pend Oreille and Schweitzer Mountain relocation guide',
+    },
+    bonneville: {
+      label: 'Moving to Idaho Falls',
+      href: '/moving-to/idaho/idaho-falls-id',
+      description: 'Eastern Idaho INL corridor inbound guide',
+    },
+    'twin-falls': {
+      label: 'Moving to Twin Falls',
+      href: '/moving-to/idaho/twin-falls-id',
+      description: 'Snake River Canyon affordable outdoor living guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',

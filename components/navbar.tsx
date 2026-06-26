@@ -118,6 +118,13 @@ export function Navbar() {
               North Carolina
             </Link>
             <Link
+              href="/moving-to/idaho"
+              className="py-1 pl-3 text-muted-foreground hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              Idaho
+            </Link>
+            <Link
               href="/moving-to/florida"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}

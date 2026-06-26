@@ -51,6 +51,11 @@ const nextConfig: NextConfig = {
         destination: '/moving-to/south-carolina/:slug',
         permanent: true,
       },
+      {
+        source: '/moving-to/boise-id',
+        destination: '/moving-to/idaho/boise-id',
+        permanent: true,
+      },
     ];
   },
   // Generate sitemap and robots via metadata in app dir
