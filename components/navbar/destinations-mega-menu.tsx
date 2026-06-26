@@ -16,6 +16,8 @@ export function DestinationsMegaMenu() {
   const published = new Set(getPublishedCityHubSlugs());
 
   const floridaCities = getClusterMarkets('florida').filter((m) => published.has(m.slug));
+  const tennesseeCities = getClusterMarkets('tennessee').filter((m) => published.has(m.slug));
+  const texasCities = getClusterMarkets('texas').filter((m) => published.has(m.slug));
   const topStandalone = priorityMarketsForNav.filter(
     (m) => !m.isClusterParent && !m.clusterParent && published.has(m.slug)
   );
@@ -113,9 +115,56 @@ export function DestinationsMegaMenu() {
                   </li>
                 ))}
               </ul>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
+                Tennessee Corridor — Live Guides
+              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {tennesseeCities.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="text-primary hover:underline font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
+                Texas Corridor — Live Guides
+              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {texasCities.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="text-primary hover:underline font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               <div className="mt-4 pt-4 border-t text-xs text-muted-foreground space-y-1">
                 <Link href="/local-movers/florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Florida county mover directories →
+                </Link>
+                <Link href="/moving-to/texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Texas destination cluster →
+                </Link>
+                <Link href="/moving-to/tennessee" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Tennessee destination cluster →
+                </Link>
+                <Link href="/local-movers/tennessee" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Tennessee county mover directories →
+                </Link>
+                <Link href="/local-movers/texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Texas county mover directories →
+                </Link>
+                <Link href="/resources/routes/california-to-texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  CA → Texas route guide →
                 </Link>
                 <Link href="/resources/routes/new-york-to-florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   NY → Florida route guide →

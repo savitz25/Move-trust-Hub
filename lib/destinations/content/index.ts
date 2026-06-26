@@ -23,6 +23,26 @@ import { ocalaFlContent } from '@/lib/destinations/content/ocala-fl';
 import { sarasotaFlContent } from '@/lib/destinations/content/sarasota-fl';
 import { stAugustineFlContent } from '@/lib/destinations/content/st-augustine-fl';
 import { wildwoodFlContent } from '@/lib/destinations/content/wildwood-fl';
+import { nashvilleTnContent } from '@/lib/destinations/content/nashville-tn';
+import { clarksvilleTnContent } from '@/lib/destinations/content/clarksville-tn';
+import { murfreesboroTnContent } from '@/lib/destinations/content/murfreesboro-tn';
+import { knoxvilleTnContent } from '@/lib/destinations/content/knoxville-tn';
+import { chattanoogaTnContent } from '@/lib/destinations/content/chattanooga-tn';
+import { lebanonTnContent } from '@/lib/destinations/content/lebanon-tn';
+import { franklinBrentwoodTnContent } from '@/lib/destinations/content/franklin-brentwood-tn';
+import { mountJulietTnContent } from '@/lib/destinations/content/mount-juliet-tn';
+import { columbiaTnContent } from '@/lib/destinations/content/columbia-tn';
+import { triCitiesTnContent } from '@/lib/destinations/content/tri-cities-tn';
+import { lubbockTxContent } from '@/lib/destinations/content/lubbock-tx';
+import { midlandOdessaTxContent } from '@/lib/destinations/content/midland-odessa-tx';
+import { elPasoTxContent } from '@/lib/destinations/content/el-paso-tx';
+import { arlingtonTxContent } from '@/lib/destinations/content/arlington-tx';
+import { irvingTxContent } from '@/lib/destinations/content/irving-tx';
+import { grandPrairieTxContent } from '@/lib/destinations/content/grand-prairie-tx';
+import { dallasFortWorthTxContent } from '@/lib/destinations/content/dallas-fort-worth-tx';
+import { austinTxContent } from '@/lib/destinations/content/austin-tx';
+import { houstonTxContent } from '@/lib/destinations/content/houston-tx';
+import { sanAntonioTxContent } from '@/lib/destinations/content/san-antonio-tx';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -48,6 +68,26 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'sarasota': sarasotaFlContent,
   'st-augustine': stAugustineFlContent,
   'wildwood': wildwoodFlContent,
+  'nashville-tn': nashvilleTnContent,
+  'clarksville-tn': clarksvilleTnContent,
+  'murfreesboro-tn': murfreesboroTnContent,
+  'knoxville-tn': knoxvilleTnContent,
+  'chattanooga-tn': chattanoogaTnContent,
+  'lebanon-tn': lebanonTnContent,
+  'franklin-brentwood-tn': franklinBrentwoodTnContent,
+  'mount-juliet-tn': mountJulietTnContent,
+  'columbia-tn': columbiaTnContent,
+  'tri-cities-tn': triCitiesTnContent,
+  'lubbock-tx': lubbockTxContent,
+  'midland-odessa-tx': midlandOdessaTxContent,
+  'el-paso-tx': elPasoTxContent,
+  'arlington-tx': arlingtonTxContent,
+  'irving-tx': irvingTxContent,
+  'grand-prairie-tx': grandPrairieTxContent,
+  'dallas-fort-worth-tx': dallasFortWorthTxContent,
+  'austin-tx': austinTxContent,
+  'houston-tx': houstonTxContent,
+  'san-antonio-tx': sanAntonioTxContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -67,5 +107,17 @@ export function getPublishedFloridaHubSlugs(): string[] {
 export function getPublishedGrandStrandHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'myrtle-beach-sc'
+  );
+}
+
+export function getPublishedTennesseeHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'tennessee'
+  );
+}
+
+export function getPublishedTexasHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'texas'
   );
 }
