@@ -91,6 +91,16 @@ const nextConfig: NextConfig = {
         destination: '/moving-to/alabama/hoover-al',
         permanent: true,
       },
+      {
+        source: '/moving-to/south-carolina/greenville-spartanburg',
+        destination: '/moving-to/south-carolina/greenville-sc',
+        permanent: true,
+      },
+      {
+        source: '/moving-to/south-carolina/hilton-head',
+        destination: '/moving-to/south-carolina/hilton-head-sc',
+        permanent: true,
+      },
     ];
   },
   // Generate sitemap and robots via metadata in app dir

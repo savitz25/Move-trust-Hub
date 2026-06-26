@@ -172,13 +172,26 @@ export default function SouthCarolinaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Lowcountry &amp; Upstate — City Guides
+              Upstate — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Premium Lowcountry island living and Upstate manufacturing corridors beyond
-              the Grand Strand beach market.
+              Greenville and Spartanburg — BMW and Michelin manufacturing, revitalized
+              downtown living, and affordable family suburbs along the I-85 corridor.
             </p>
-            <CorridorCityGrid cities={content.lowcountryUpstateCorridor} published={published} />
+            <CorridorCityGrid cities={content.upstateCorridor} published={published} />
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+              Lowcountry — Live City Guides
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Hilton Head — premier resort island living with world-class golf, gated
+              communities, and relaxed Lowcountry lifestyle.
+            </p>
+            <CorridorCityGrid cities={content.lowcountryCorridor} published={published} />
           </div>
         </section>
 

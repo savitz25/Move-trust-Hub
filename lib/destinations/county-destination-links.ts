@@ -19,14 +19,19 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Myrtle Beach, Murrells Inlet, and Georgetown County coastal guides',
     },
     beaufort: {
-      label: 'Moving to South Carolina',
-      href: '/moving-to/south-carolina',
-      description: 'Lowcountry and Hilton Head inbound moving guides',
+      label: 'Moving to Hilton Head',
+      href: '/moving-to/south-carolina/hilton-head-sc',
+      description: 'Premier Lowcountry island and resort inbound moving guide',
     },
     greenville: {
-      label: 'Moving to South Carolina',
-      href: '/moving-to/south-carolina',
-      description: 'Upstate SC inbound guide — Greenville, Spartanburg, and beyond',
+      label: 'Moving to Greenville',
+      href: '/moving-to/south-carolina/greenville-sc',
+      description: 'Upstate SC economic powerhouse inbound moving guide',
+    },
+    spartanburg: {
+      label: 'Moving to Spartanburg',
+      href: '/moving-to/south-carolina/spartanburg-sc',
+      description: 'Automotive and logistics Upstate SC inbound guide',
     },
   },
   'north-carolina': {

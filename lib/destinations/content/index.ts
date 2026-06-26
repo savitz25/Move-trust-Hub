@@ -9,6 +9,9 @@ import { littleRiverScContent } from '@/lib/destinations/content/little-river-sc
 import { murrellsInletScContent } from '@/lib/destinations/content/murrells-inlet-sc';
 import { socasteeScContent } from '@/lib/destinations/content/socastee-sc';
 import { carolinaForestScContent } from '@/lib/destinations/content/carolina-forest-sc';
+import { greenvilleScContent } from '@/lib/destinations/content/greenville-sc';
+import { spartanburgScContent } from '@/lib/destinations/content/spartanburg-sc';
+import { hiltonHeadScContent } from '@/lib/destinations/content/hilton-head-sc';
 import { bocaRatonFlContent } from '@/lib/destinations/content/boca-raton-fl';
 import { deerfieldBeachFlContent } from '@/lib/destinations/content/deerfield-beach-fl';
 import { boyntonBeachFlContent } from '@/lib/destinations/content/boynton-beach-fl';
@@ -116,6 +119,9 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'murrells-inlet': murrellsInletScContent,
   'socastee': socasteeScContent,
   'carolina-forest': carolinaForestScContent,
+  'greenville-sc': greenvilleScContent,
+  'spartanburg-sc': spartanburgScContent,
+  'hilton-head-sc': hiltonHeadScContent,
   'boca-raton': bocaRatonFlContent,
   'deerfield-beach': deerfieldBeachFlContent,
   'boynton-beach': boyntonBeachFlContent,
