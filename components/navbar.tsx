@@ -33,6 +33,7 @@ export function Navbar() {
               width={300}
               height={75}
               priority
+              sizes="(max-width: 768px) 180px, 300px"
               className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]"
             />
           </Link>

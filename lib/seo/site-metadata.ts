@@ -53,11 +53,23 @@ export function buildTwitter(
 
 export const rootLayoutMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: 'moving services',
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
   title: {
     default: HOMEPAGE_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
   description: DEFAULT_SITE_DESCRIPTION,
+  alternates: {
+    canonical: SITE_URL,
+  },
   keywords: [
     'interstate movers',
     'moving companies USA',
@@ -72,7 +84,9 @@ export const rootLayoutMetadata: Metadata = {
   authors: [{ name: SITE_NAME }],
   icons: {
     icon: '/logo.png',
+    apple: '/logo.png',
   },
+  manifest: '/manifest.webmanifest',
   openGraph: buildOpenGraph(),
   twitter: buildTwitter(),
   robots: {

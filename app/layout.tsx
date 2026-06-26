@@ -6,9 +6,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
-import { Toaster } from '@/components/ui/sonner';
 import { Suspense } from 'react';
-import { Chatbot } from '@/components/chatbot';
+import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 
 const geistSans = Geist({
@@ -16,6 +15,8 @@ const geistSans = Geist({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const geistMono = Geist_Mono({
@@ -23,12 +24,16 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
   display: 'swap',
+  preload: false,
+  adjustFontFallback: true,
 });
 
 export const metadata = rootLayoutMetadata;
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -48,16 +53,14 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
-        <Toaster position="top-center" richColors closeButton />
-        <Chatbot />
+        <DeferredWidgets />
 
-        {/* Google Analytics */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -67,7 +70,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Vercel Web Analytics & Speed Insights */}
         <Analytics />
         <SpeedInsights />
       </body>

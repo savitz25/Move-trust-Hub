@@ -18,6 +18,8 @@ import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata'
 
 const content = floridaClusterContent;
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
   title: { absolute: `${content.seo.title} | Move Trust Hub` },
   description: content.seo.description,

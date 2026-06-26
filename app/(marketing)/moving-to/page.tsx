@@ -7,6 +7,8 @@ import { JsonLd } from '@/lib/seo/json-ld';
 import { buildDestinationsIndexSchemaGraph } from '@/lib/seo/build-destination-index-schema';
 import { buildDestinationsIndexMetadata } from '@/lib/seo/destination-seo';
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = buildDestinationsIndexMetadata();
 
 export default function MovingToIndexPage() {

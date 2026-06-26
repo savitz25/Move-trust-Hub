@@ -296,6 +296,7 @@ export async function CityHubTemplate({ market, content }: Props) {
               width={1200}
               height={630}
               loading="lazy"
+              sizes="(max-width: 768px) 100vw, 72rem"
               className="w-full h-auto"
             />
           </div>

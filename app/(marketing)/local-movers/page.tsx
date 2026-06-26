@@ -9,6 +9,8 @@ import { localStates } from '@/lib/local-movers/states';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { buildHubPageMetadata, getCountyPath } from '@/lib/local-movers/index';
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = buildHubPageMetadata();
 
 const featuredCounties = [

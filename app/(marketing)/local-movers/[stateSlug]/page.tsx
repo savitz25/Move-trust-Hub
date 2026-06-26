@@ -18,6 +18,8 @@ import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geogra
 
 type Props = { params: Promise<{ stateSlug: string }> };
 
+export const dynamic = 'force-static';
+
 export async function generateStaticParams() {
   return localStates.map((state) => ({ stateSlug: state.slug }));
 }

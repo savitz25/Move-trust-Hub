@@ -15,6 +15,8 @@ export function Footer() {
                 alt="Move Trust Hub logo — compare licensed long-distance movers"
                 width={300}
                 height={75}
+                loading="lazy"
+                sizes="200px"
                 className="h-12 w-auto max-w-[300px]"
               />
             </Link>

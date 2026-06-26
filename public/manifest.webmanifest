@@ -1,0 +1,16 @@
+{
+  "name": "Move Trust Hub",
+  "short_name": "Move Trust Hub",
+  "description": "Compare FMCSA-licensed interstate movers and get free moving quotes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "300x75",
+      "type": "image/png"
+    }
+  ]
+}

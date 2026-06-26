@@ -11,6 +11,8 @@ import { SITE_URL } from '@/lib/seo/site-metadata';
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamic = 'force-static';
+
 export async function generateStaticParams() {
   return getPublishedCityHubSlugs()
     .filter((slug) => getMarketBySlug(slug)?.clusterParent === 'myrtle-beach-sc')
