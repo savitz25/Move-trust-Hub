@@ -1015,6 +1015,13 @@ export function getClusterMarkets(cluster: string): Market[] {
   return markets.filter((market) => market.clusterParent === cluster);
 }
 
+/** Sub-cities for cluster cards and nav — stable alphabetical order. */
+export function getSortedClusterMarkets(cluster: string): Market[] {
+  return getClusterMarkets(cluster).sort((a, b) =>
+    a.displayName.localeCompare(b.displayName)
+  );
+}
+
 export function getMarketPath(market: Market): string {
   if (market.isClusterParent) {
     return `/moving-to/${market.slug}`;
