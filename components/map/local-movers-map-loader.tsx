@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { MapSectionSkeleton } from '@/components/map/map-section-skeleton';
+import { useInView } from '@/lib/hooks/use-in-view';
 
 const LocalMoversMapSection = dynamic(
   () =>
@@ -13,30 +13,14 @@ const LocalMoversMapSection = dynamic(
 );
 
 export function LocalMoversMapLoader() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [shouldLoad, setShouldLoad] = useState(false);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '250px 0px', threshold: 0 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, inView } = useInView({
+    rootMargin: '200px 0px',
+    idleDelay: 1000,
+  });
 
   return (
-    <div ref={containerRef}>
-      {shouldLoad ? <LocalMoversMapSection /> : <MapSectionSkeleton />}
+    <div ref={ref}>
+      {inView ? <LocalMoversMapSection /> : <MapSectionSkeleton />}
     </div>
   );
 }

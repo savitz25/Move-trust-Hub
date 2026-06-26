@@ -31,7 +31,12 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Experimental for Next 15
   experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-*', 'framer-motion'],
+    optimizePackageImports: [
+      'lucide-react',
+      '@radix-ui/react-*',
+      'framer-motion',
+      'sonner',
+    ],
   },
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
   async redirects() {

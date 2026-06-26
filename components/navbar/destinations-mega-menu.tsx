@@ -10,8 +10,8 @@ import {
   priorityMarketsForNav,
 } from '@/lib/destinations/markets';
 
-export function DestinationsMegaMenu() {
-  const [open, setOpen] = useState(false);
+export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen);
   const containerRef = useRef<HTMLDivElement>(null);
   const published = new Set(getPublishedCityHubSlugs());
 
@@ -49,6 +49,7 @@ export function DestinationsMegaMenu() {
   return (
     <div ref={containerRef} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
       <Link
+        prefetch={false}
         href="/moving-to"
         className="inline-flex items-center gap-1 font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
         onClick={() => setOpen(false)}
@@ -72,6 +73,7 @@ export function DestinationsMegaMenu() {
                 {topStandalone.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="font-medium hover:text-primary transition-colors"
                       onClick={() => setOpen(false)}
@@ -86,6 +88,7 @@ export function DestinationsMegaMenu() {
                 {clusterParents.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="font-medium hover:text-primary transition-colors"
                       onClick={() => setOpen(false)}
@@ -97,6 +100,7 @@ export function DestinationsMegaMenu() {
                 ))}
               </ul>
               <Link
+                prefetch={false}
                 href="/moving-to"
                 className="inline-flex items-center gap-1 text-xs font-medium text-primary mt-4 hover:underline"
                 onClick={() => setOpen(false)}
@@ -114,6 +118,7 @@ export function DestinationsMegaMenu() {
                 {southCarolinaCities.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="text-primary hover:underline font-medium"
                       onClick={() => setOpen(false)}
@@ -130,6 +135,7 @@ export function DestinationsMegaMenu() {
                 {northCarolinaCities.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="text-primary hover:underline font-medium"
                       onClick={() => setOpen(false)}
@@ -146,6 +152,7 @@ export function DestinationsMegaMenu() {
                 {idahoCities.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="text-primary hover:underline font-medium"
                       onClick={() => setOpen(false)}
@@ -162,6 +169,7 @@ export function DestinationsMegaMenu() {
                 {oregonCities.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="text-primary hover:underline font-medium"
                       onClick={() => setOpen(false)}
@@ -178,6 +186,7 @@ export function DestinationsMegaMenu() {
                 {floridaCities.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="text-primary hover:underline font-medium"
                       onClick={() => setOpen(false)}
@@ -194,6 +203,7 @@ export function DestinationsMegaMenu() {
                 {tennesseeCities.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="text-primary hover:underline font-medium"
                       onClick={() => setOpen(false)}
@@ -210,6 +220,7 @@ export function DestinationsMegaMenu() {
                 {texasCities.map((market) => (
                   <li key={market.slug}>
                     <Link
+                      prefetch={false}
                       href={getMarketPath(market)}
                       className="text-primary hover:underline font-medium"
                       onClick={() => setOpen(false)}
@@ -220,49 +231,49 @@ export function DestinationsMegaMenu() {
                 ))}
               </ul>
               <div className="mt-4 pt-4 border-t text-xs text-muted-foreground space-y-1">
-                <Link href="/local-movers/florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/local-movers/florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Florida county mover directories →
                 </Link>
-                <Link href="/moving-to/texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/moving-to/texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Texas destination cluster →
                 </Link>
-                <Link href="/moving-to/tennessee" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/moving-to/tennessee" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Tennessee destination cluster →
                 </Link>
-                <Link href="/local-movers/tennessee" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/local-movers/tennessee" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Tennessee county mover directories →
                 </Link>
-                <Link href="/local-movers/texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/local-movers/texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Texas county mover directories →
                 </Link>
-                <Link href="/resources/routes/california-to-texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/resources/routes/california-to-texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   CA → Texas route guide →
                 </Link>
-                <Link href="/resources/routes/new-york-to-florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/resources/routes/new-york-to-florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   NY → Florida route guide →
                 </Link>
-                <Link href="/moving-to/south-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/moving-to/south-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   South Carolina destination cluster →
                 </Link>
-                <Link href="/moving-to/north-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/moving-to/north-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   North Carolina destination cluster →
                 </Link>
-                <Link href="/moving-to/idaho" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/moving-to/idaho" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Idaho destination cluster →
                 </Link>
-                <Link href="/moving-to/oregon" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/moving-to/oregon" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Oregon destination cluster →
                 </Link>
-                <Link href="/local-movers/oregon/multnomah" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/local-movers/oregon/multnomah" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Multnomah County (Portland) local movers →
                 </Link>
-                <Link href="/local-movers/idaho/ada" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/local-movers/idaho/ada" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Ada County (Boise) local movers →
                 </Link>
-                <Link href="/local-movers/south-carolina/horry" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/local-movers/south-carolina/horry" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Horry County local movers →
                 </Link>
-                <Link href="/local-movers/north-carolina/mecklenburg" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                <Link prefetch={false} href="/local-movers/north-carolina/mecklenburg" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Mecklenburg County local movers →
                 </Link>
               </div>

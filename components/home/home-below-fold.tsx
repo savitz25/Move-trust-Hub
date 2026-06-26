@@ -1,11 +1,17 @@
 import dynamic from 'next/dynamic';
 
-const ReviewHighlights = dynamic(() =>
-  import('@/components/trust/review-highlights').then((m) => m.ReviewHighlights)
+const ReviewHighlights = dynamic(
+  () =>
+    import('@/components/trust/review-highlights').then((m) => m.ReviewHighlights),
+  { ssr: false }
 );
 
-const TestimonialsSection = dynamic(() =>
-  import('@/components/trust/testimonials-section').then((m) => m.TestimonialsSection)
+const TestimonialsSection = dynamic(
+  () =>
+    import('@/components/trust/testimonials-section').then(
+      (m) => m.TestimonialsSection
+    ),
+  { ssr: false }
 );
 
 export function HomeBelowFold() {

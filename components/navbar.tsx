@@ -31,7 +31,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
-          <Link href="/" className="group">
+          <Link prefetch={false} href="/" className="group">
             <Image
               src="/logo.png"
               alt="Move Trust Hub — trusted interstate moving directory and free quote matching"
@@ -50,6 +50,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-8 text-sm">
           <Link
+            prefetch={false}
             href="/companies"
             className="font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
           >
@@ -59,6 +60,7 @@ export function Navbar() {
           {navLinks.slice(1).map((link) => (
             <Link
               key={link.href}
+              prefetch={false}
               href={link.href}
               className="font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
             >
@@ -92,6 +94,7 @@ export function Navbar() {
         <div className="md:hidden border-t bg-background px-4 py-4">
           <div className="flex flex-col gap-3 text-sm">
             <Link
+              prefetch={false}
               href="/companies"
               className="py-3 min-h-[44px] flex items-center font-medium text-muted-foreground hover:text-foreground"
               onClick={() => setIsOpen(false)}
@@ -99,6 +102,7 @@ export function Navbar() {
               Movers Directory
             </Link>
             <Link
+              prefetch={false}
               href="/moving-to"
               className="py-2 font-medium text-muted-foreground hover:text-foreground"
               onClick={() => setIsOpen(false)}
@@ -106,6 +110,7 @@ export function Navbar() {
               Destinations
             </Link>
             <Link
+              prefetch={false}
               href="/moving-to/south-carolina"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
@@ -113,6 +118,7 @@ export function Navbar() {
               South Carolina
             </Link>
             <Link
+              prefetch={false}
               href="/moving-to/north-carolina"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
@@ -120,6 +126,7 @@ export function Navbar() {
               North Carolina
             </Link>
             <Link
+              prefetch={false}
               href="/moving-to/idaho"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
@@ -127,6 +134,7 @@ export function Navbar() {
               Idaho
             </Link>
             <Link
+              prefetch={false}
               href="/moving-to/oregon"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
@@ -134,6 +142,7 @@ export function Navbar() {
               Oregon
             </Link>
             <Link
+              prefetch={false}
               href="/moving-to/florida"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
@@ -143,6 +152,7 @@ export function Navbar() {
             {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
+                prefetch={false}
                 href={link.href}
                 className="py-3 min-h-[44px] flex items-center font-medium text-muted-foreground hover:text-foreground"
                 onClick={() => setIsOpen(false)}
@@ -160,6 +170,7 @@ export function Navbar() {
               Get Free Quotes
             </Button>
             <Link
+              prefetch={false}
               href="/auto-transport"
               onClick={() => setIsOpen(false)}
               className="text-center py-2 text-primary"

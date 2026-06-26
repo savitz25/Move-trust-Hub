@@ -8,7 +8,7 @@ import { FaqSection } from '@/components/seo/faq-section';
 import { homepageFaqItems } from '@/lib/seo/schemas';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { HomeQuoteButton } from '@/components/home/home-quote-button';
-import { HomeBelowFold } from '@/components/home/home-below-fold';
+import { HomeBelowFoldLoader } from '@/components/home/home-below-fold-loader';
 
 export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
   return (
@@ -142,7 +142,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <Link href="/moving-calculator" className="group">
+          <Link prefetch={false} href="/moving-calculator" className="group">
             <Card className="h-full p-6 hover:border-primary/50 transition-all">
               <div className="text-3xl mb-4">📦</div>
               <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">Smart Move Estimator</h3>
@@ -151,7 +151,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             </Card>
           </Link>
 
-          <Link href="/companies" className="group">
+          <Link prefetch={false} href="/companies" className="group">
             <Card className="h-full p-6 hover:border-primary/50 transition-all">
               <div className="text-3xl mb-4">🔍</div>
               <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">Mover Directory</h3>
@@ -160,7 +160,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             </Card>
           </Link>
 
-          <Link href="/compare" className="group">
+          <Link prefetch={false} href="/compare" className="group">
             <Card className="h-full p-6 hover:border-primary/50 transition-all">
               <div className="text-3xl mb-4">⚖️</div>
               <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">Side-by-Side Comparison</h3>
@@ -169,7 +169,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             </Card>
           </Link>
 
-          <Link href="/auto-transport" className="group">
+          <Link prefetch={false} href="/auto-transport" className="group">
             <Card className="h-full p-6 hover:border-primary/50 transition-all">
               <div className="text-3xl mb-4">🚗</div>
               <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">Auto Transport Directory</h3>
@@ -197,9 +197,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         </div>
       </section>
 
-      <div className="content-auto">
-        <HomeBelowFold />
-      </div>
+      <HomeBelowFoldLoader />
 
       <section className="container mx-auto px-4 py-14 max-w-3xl text-center border-t content-auto">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
