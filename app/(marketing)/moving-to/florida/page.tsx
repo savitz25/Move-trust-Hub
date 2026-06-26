@@ -179,6 +179,23 @@ export default function FloridaClusterPage() {
         </div>
       </section>
 
+      <section className="py-12 md:py-16 border-b">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+            Central &amp; North Florida Corridor — Live City Guides
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">
+            Six production-ready hubs covering northeast Florida (Jacksonville, St.
+            Augustine), Gulf Coast markets (Sarasota, Naples), and the central
+            affordability corridor (Ocala, Wildwood near The Villages).
+          </p>
+          <CorridorCityGrid
+            cities={content.centralNorthFloridaCorridor}
+            published={published}
+          />
+        </div>
+      </section>
+
       {content.bodySections.map((section) => (
         <section key={section.heading} className="py-10 border-b">
           <div className="container mx-auto px-4 max-w-3xl">

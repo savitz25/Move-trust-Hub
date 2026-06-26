@@ -19,24 +19,26 @@ export type FloridaClusterContent = {
   introParagraphs: string[];
   miamiDadeBrowardCorridor: FloridaCorridorCity[];
   palmBeachCorridor: FloridaCorridorCity[];
+  centralNorthFloridaCorridor: FloridaCorridorCity[];
   bodySections: { heading: string; paragraphs: string[] }[];
   resourceLinks: DestinationResourceLink[];
 };
 
 export const floridaClusterContent: FloridaClusterContent = {
-  h1: 'Moving to Florida: Miami-Dade, Broward & Palm Beach City Guides & Trusted Movers',
+  h1: 'Moving to Florida: South Florida, Gulf Coast & Central Florida City Guides & Trusted Movers',
   seo: {
     title:
       'Moving to Florida (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
     description:
-      'Explore Florida inbound moving guides for Miami, Fort Lauderdale, Hollywood, Pompano Beach, Boca Raton, Delray Beach, and more. FMCSA-verified movers, free calculator, and transparent cost data. Independent directory.',
+      'Explore Florida inbound moving guides for Miami, Fort Lauderdale, Boca Raton, Jacksonville, Naples, Sarasota, St. Augustine, Ocala, Wildwood, and more. FMCSA-verified movers, free calculator, and transparent cost data. Independent directory.',
     keywords: [
       'moving to florida',
       'florida movers',
       'best cities to move to in florida 2026',
       'miami dade broward movers',
       'palm beach county movers',
-      'south florida relocation guide',
+      'jacksonville naples sarasota movers',
+      'central florida relocation guide',
       'florida interstate moving costs',
     ],
     canonicalPath: '/moving-to/florida',
@@ -46,7 +48,7 @@ export const floridaClusterContent: FloridaClusterContent = {
   introParagraphs: [
     'Whether you are targeting the Miami-Dade and Broward metro, the Palm Beach County coastal corridor, northeast Florida around Jacksonville, or Gulf Coast markets like Sarasota and Naples, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Florida moves involve unique logistics: snowbird-season scheduling, hurricane contingency planning, condo COI requirements, and gated-community shuttle trucks. Our city guides surface these factors so you can plan with confidence.',
-    'Eight live South Florida hubs span the Miami-Dade / Broward corridor (Miami through Pompano Beach) and the Palm Beach County coast (Boca Raton through Deerfield Beach). Browse each city guide below or explore additional Florida markets launching soon.',
+    'Fourteen live Florida hubs now span three corridors: Miami-Dade and Broward (Miami through Pompano Beach), Palm Beach County (Boca Raton through Deerfield Beach), and Central & North Florida (Jacksonville through Wildwood). Browse each city guide below for 2026 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],
   miamiDadeBrowardCorridor: [
     {
@@ -100,6 +102,44 @@ export const floridaClusterContent: FloridaClusterContent = {
       tagline: 'Palm Beach–Broward border · boating · Quiet Waters · family suburbs',
     },
   ],
+  centralNorthFloridaCorridor: [
+    {
+      slug: 'jacksonville',
+      displayName: 'Jacksonville',
+      zip: '32202',
+      tagline: 'Northeast metro · Beaches · St. Johns River · military · affordable vs South FL',
+    },
+    {
+      slug: 'st-augustine',
+      displayName: 'St. Augustine',
+      zip: '32084',
+      tagline: 'Historic coast · Castillo de San Marcos · Spanish colonial charm · beaches',
+    },
+    {
+      slug: 'sarasota',
+      displayName: 'Sarasota',
+      zip: '34236',
+      tagline: 'Arts & culture hub · Ringling Museum · Siesta Key · downtown walkability',
+    },
+    {
+      slug: 'naples',
+      displayName: 'Naples',
+      zip: '34102',
+      tagline: 'Luxury Gulf Coast · 5th Avenue South · golf · high-end retirement',
+    },
+    {
+      slug: 'ocala',
+      displayName: 'Ocala',
+      zip: '34471',
+      tagline: 'Horse country · Silver Springs · affordable central Florida · equestrian estates',
+    },
+    {
+      slug: 'wildwood',
+      displayName: 'Wildwood',
+      zip: '34785',
+      tagline: 'Central growth corridor · The Villages proximity · affordable suburban expansion',
+    },
+  ],
   bodySections: [
     {
       heading: 'Why the Miami-Dade and Broward corridor drives urban South Florida inbound volume',
@@ -117,10 +157,17 @@ export const floridaClusterContent: FloridaClusterContent = {
       ],
     },
     {
-      heading: 'More Florida destination guides launching soon',
+      heading: 'Why Central and North Florida drives value-seeking inbound volume',
       paragraphs: [
-        'Beyond South Florida, our Florida cluster will expand to Jacksonville, Sarasota, Naples, Ocala, St. Augustine, and Wildwood — each with county-level mover coverage, cost tables, and calculator embeds. Register for quotes through any live hub and your request is attributed to the destination market for accurate carrier matching.',
-        'For statewide research, browse our Florida local movers map with 67 county directories, or use the national compare tool to evaluate FMCSA-licensed interstate carriers before requesting matched quotes to your Florida destination.',
+        'The Jacksonville–St. Augustine northeast corridor captures military PCS relocations, finance-and-logistics job growth, and Northeast households seeking Atlantic beach access at price points below Miami-Dade. Jacksonville\'s Riverside, San Marco, and Mandarin neighborhoods and the Beaches communities of Jax Beach, Atlantic Beach, and Neptune Beach each carry distinct parking, flood-zone, and bridge-traffic logistics that affect delivery scheduling.',
+        'St. Augustine adds historic-district access constraints — narrow streets, tourism-season traffic, and strict move windows near St. George Street and the Castillo de San Marcos — alongside Vilano Beach and Ponte Vedra spillover in St. Johns County. Compared to South Florida, northeast Florida interstate linehaul from Northeast origins is often shorter and snowbird premiums are less pronounced, though summer hurricane contingency planning still applies.',
+      ],
+    },
+    {
+      heading: 'Why the Gulf Coast and central corridor attract retirees and remote workers',
+      paragraphs: [
+        'Sarasota and Naples anchor Florida\'s Gulf Coast inbound mix: Sarasota draws arts-and-culture households to the Ringling Museum corridor, downtown, and Siesta Key beaches, while Naples attracts luxury retirees and snowbirds to 5th Avenue South, Pelican Bay, and gated golf communities in Collier County. Both markets share October–April snowbird tightening and gated-community shuttle requirements, with Naples commanding premium specialty-item and white-glove accessorials.',
+        'Ocala and Wildwood serve central Florida\'s affordability corridor — horse-country equestrian estates and Silver Springs recreation in Marion County, plus Wildwood\'s rapid suburban growth adjacent to The Villages in Sumter County. Active-adult community move-day restrictions, new-construction HOA rules, and summer heat scheduling are the primary destination cost drivers beyond base linehaul. Our six Central & North Florida hubs include 2026–2027 cost tables, calculator prefill by ZIP, and cross-links to Duval, St. Johns, Sarasota, Collier, Marion, and Sumter county directories.',
       ],
     },
   ],
@@ -139,6 +186,36 @@ export const floridaClusterContent: FloridaClusterContent = {
       title: 'Browse Palm Beach County local movers',
       description: '10+ vetted companies with ratings, services, and luxury-move experience.',
       href: '/local-movers/florida/palm-beach',
+    },
+    {
+      title: 'Browse Duval County local movers',
+      description: 'Jacksonville, the Beaches, and northeast Florida interstate carriers.',
+      href: '/local-movers/florida/duval',
+    },
+    {
+      title: 'Browse Collier County local movers',
+      description: 'Naples luxury moves, gated communities, and Gulf Coast shuttle experience.',
+      href: '/local-movers/florida/collier',
+    },
+    {
+      title: 'Browse Sarasota County local movers',
+      description: 'Gulf Coast condos, arts-district deliveries, and Siesta Key access.',
+      href: '/local-movers/florida/sarasota',
+    },
+    {
+      title: 'Browse Marion County local movers',
+      description: 'Ocala horse-country estates and central Florida suburban moves.',
+      href: '/local-movers/florida/marion',
+    },
+    {
+      title: 'Browse St. Johns County local movers',
+      description: 'St. Augustine historic district and Ponte Vedra coastal deliveries.',
+      href: '/local-movers/florida/st-johns',
+    },
+    {
+      title: 'Browse Sumter County local movers',
+      description: 'Wildwood, The Villages corridor, and active-adult community protocols.',
+      href: '/local-movers/florida/sumter',
     },
     {
       title: 'New York to Florida route guide',

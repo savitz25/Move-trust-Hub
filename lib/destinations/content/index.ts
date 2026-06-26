@@ -17,6 +17,12 @@ import { miamiFlContent } from '@/lib/destinations/content/miami-fl';
 import { fortLauderdaleFlContent } from '@/lib/destinations/content/fort-lauderdale-fl';
 import { hollywoodFlContent } from '@/lib/destinations/content/hollywood-fl';
 import { pompanoBeachFlContent } from '@/lib/destinations/content/pompano-beach-fl';
+import { jacksonvilleFlContent } from '@/lib/destinations/content/jacksonville-fl';
+import { naplesFlContent } from '@/lib/destinations/content/naples-fl';
+import { ocalaFlContent } from '@/lib/destinations/content/ocala-fl';
+import { sarasotaFlContent } from '@/lib/destinations/content/sarasota-fl';
+import { stAugustineFlContent } from '@/lib/destinations/content/st-augustine-fl';
+import { wildwoodFlContent } from '@/lib/destinations/content/wildwood-fl';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -36,6 +42,12 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'fort-lauderdale': fortLauderdaleFlContent,
   'hollywood': hollywoodFlContent,
   'pompano-beach': pompanoBeachFlContent,
+  'jacksonville': jacksonvilleFlContent,
+  'naples': naplesFlContent,
+  'ocala': ocalaFlContent,
+  'sarasota': sarasotaFlContent,
+  'st-augustine': stAugustineFlContent,
+  'wildwood': wildwoodFlContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
