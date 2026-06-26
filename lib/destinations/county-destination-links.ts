@@ -93,6 +93,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Snake River Canyon affordable outdoor living guide',
     },
   },
+  oregon: {
+    multnomah: {
+      label: 'Moving to Portland',
+      href: '/moving-to/oregon/portland-or',
+      description: 'Portland metro inbound moving guide — creative urban neighborhoods',
+    },
+    washington: {
+      label: 'Moving to Hillsboro & Beaverton',
+      href: '/moving-to/oregon/hillsboro-beaverton-or',
+      description: 'Silicon Forest tech corridor inbound guide with MAX light-rail access',
+    },
+    clackamas: {
+      label: 'Moving to Oregon',
+      href: '/moving-to/oregon',
+      description: 'Portland metro spillover — Oregon inbound cluster overview',
+    },
+    deschutes: {
+      label: 'Moving to Bend',
+      href: '/moving-to/oregon/bend-or',
+      description: 'Central Oregon outdoor capital inbound moving guide',
+    },
+    lane: {
+      label: 'Moving to Eugene',
+      href: '/moving-to/oregon/eugene-or',
+      description: 'University of Oregon Willamette Valley inbound guide',
+    },
+    benton: {
+      label: 'Moving to Corvallis',
+      href: '/moving-to/oregon/corvallis-or',
+      description: 'Oregon State University research corridor inbound guide',
+    },
+    marion: {
+      label: 'Moving to Salem',
+      href: '/moving-to/oregon/salem-or',
+      description: 'Affordable Oregon state capital inbound moving guide',
+    },
+    polk: {
+      label: 'Moving to Salem',
+      href: '/moving-to/oregon/salem-or',
+      description: 'West Salem and Polk County — state capital corridor guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',

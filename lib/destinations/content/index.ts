@@ -58,6 +58,12 @@ import { coeurDaleneIdContent } from '@/lib/destinations/content/coeur-dalene-id
 import { sandpointIdContent } from '@/lib/destinations/content/sandpoint-id';
 import { idahoFallsIdContent } from '@/lib/destinations/content/idaho-falls-id';
 import { twinFallsIdContent } from '@/lib/destinations/content/twin-falls-id';
+import { eugeneOrContent } from '@/lib/destinations/content/eugene-or';
+import { corvallisOrContent } from '@/lib/destinations/content/corvallis-or';
+import { salemOrContent } from '@/lib/destinations/content/salem-or';
+import { portlandOrContent } from '@/lib/destinations/content/portland-or';
+import { bendOrContent } from '@/lib/destinations/content/bend-or';
+import { hillsboroBeavertonOrContent } from '@/lib/destinations/content/hillsboro-beaverton-or';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -118,6 +124,12 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'sandpoint-id': sandpointIdContent,
   'idaho-falls-id': idahoFallsIdContent,
   'twin-falls-id': twinFallsIdContent,
+  'eugene-or': eugeneOrContent,
+  'corvallis-or': corvallisOrContent,
+  'salem-or': salemOrContent,
+  'portland-or': portlandOrContent,
+  'bend-or': bendOrContent,
+  'hillsboro-beaverton-or': hillsboroBeavertonOrContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -166,5 +178,11 @@ export function getPublishedNorthCarolinaHubSlugs(): string[] {
 export function getPublishedIdahoHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'idaho'
+  );
+}
+
+export function getPublishedOregonHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'oregon'
   );
 }

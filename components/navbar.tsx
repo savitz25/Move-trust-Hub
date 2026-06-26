@@ -78,8 +78,10 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
+            className="h-11 w-11 min-h-[44px] min-w-[44px]"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -91,7 +93,7 @@ export function Navbar() {
           <div className="flex flex-col gap-3 text-sm">
             <Link
               href="/companies"
-              className="py-2 font-medium text-muted-foreground hover:text-foreground"
+              className="py-3 min-h-[44px] flex items-center font-medium text-muted-foreground hover:text-foreground"
               onClick={() => setIsOpen(false)}
             >
               Movers Directory
@@ -125,6 +127,13 @@ export function Navbar() {
               Idaho
             </Link>
             <Link
+              href="/moving-to/oregon"
+              className="py-1 pl-3 text-muted-foreground hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              Oregon
+            </Link>
+            <Link
               href="/moving-to/florida"
               className="py-1 pl-3 text-muted-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
@@ -135,14 +144,14 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2 font-medium text-muted-foreground hover:text-foreground"
+                className="py-3 min-h-[44px] flex items-center font-medium text-muted-foreground hover:text-foreground"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
             <Button
-              className="w-full mt-2"
+              className="w-full mt-2 min-h-[48px]"
               onClick={() => {
                 setIsOpen(false);
                 setShowQuoteModal(true);

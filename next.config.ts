@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Experimental for Next 15
   experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-*'],
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-*', 'framer-motion'],
   },
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
   async redirects() {
@@ -54,6 +54,11 @@ const nextConfig: NextConfig = {
       {
         source: '/moving-to/boise-id',
         destination: '/moving-to/idaho/boise-id',
+        permanent: true,
+      },
+      {
+        source: '/moving-to/eugene-springfield-or',
+        destination: '/moving-to/oregon/eugene-or',
         permanent: true,
       },
     ];
