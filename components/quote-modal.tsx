@@ -12,6 +12,7 @@ import { toast } from 'sonner';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
 import type { AutoTransportQuotePrefill } from '@/lib/auto-transport/types';
 import { formatCurrency } from '@/lib/auto-transport/pricing';
+import { trackQuoteFormSubmit } from '@/components/ga-events';
 
 export type QuoteInventoryItem = {
   name: string;
@@ -145,6 +146,30 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
 
     const hasInventory = (prefilledData.inventory?.length ?? 0) > 0;
 
+    const recordQuoteSubmit = () => {
+      trackQuoteFormSubmit({
+        from_zip: formData.fromZip.trim(),
+        to_zip: formData.toZip.trim(),
+        home_size: isAutoTransport ? 'auto-transport' : formData.homeSize,
+        source: isAutoTransport
+          ? 'auto-transport-calculator'
+          : hasInventory
+            ? 'moving-calculator'
+            : 'quote-modal',
+        service_type: isAutoTransport ? 'auto-transport' : 'moving',
+        estimated_volume: formData.estimatedVolume
+          ? parseFloat(formData.estimatedVolume)
+          : prefilledData.estimatedVolume ?? null,
+        estimated_weight:
+          prefilledData.estimatedWeight ??
+          (formData.estimatedVolume
+            ? Math.round(parseFloat(formData.estimatedVolume) * 7)
+            : null),
+        has_inventory: hasInventory,
+        has_phone: Boolean(formData.phone.trim()),
+      });
+    };
+
     const payload = {
       name: formData.name.trim(),
       email: formData.email.trim().toLowerCase(),
@@ -218,6 +243,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
 
       setIsSubmitting(false);
       setSubmitted(true);
+      recordQuoteSubmit();
 
       // Also fire a nice toast in case they miss the in-modal success
       toast.success('Request received!', {
@@ -242,6 +268,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       // Still succeed for the user experience (demo-friendly)
       setIsSubmitting(false);
       setSubmitted(true);
+      recordQuoteSubmit();
       toast.success('Request received!', {
         description: isAutoTransport
           ? "We'll connect you with 2-3 vetted auto transport carriers within 24 hours."

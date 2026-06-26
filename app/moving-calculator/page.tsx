@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -20,6 +20,10 @@ import { TrustBadges } from '@/components/trust/trust-badges';
 import { useCalculatorStore, type InventoryItem, type InputMode } from '@/store/calculator-store';
 import { furnitureItems, roomCategories, getItemsByCategory, searchItems, type FurnitureItem } from '@/data/furniture';
 import { toast } from 'sonner';
+import {
+  trackCalculatorComplete,
+  trackCalculatorStart,
+} from '@/components/ga-events';
 
 // Move size thresholds and recommendations (realistic industry averages)
 const MOVE_SIZES = [
@@ -114,6 +118,15 @@ export default function MovingCalculatorPage() {
   const [showBrowseDialog, setShowBrowseDialog] = useState(false);
   const [browseSearch, setBrowseSearch] = useState('');
 
+  const calculatorStarted = useRef(false);
+  const calculatorCompleted = useRef(false);
+
+  const markCalculatorStarted = (interaction: string) => {
+    if (calculatorStarted.current) return;
+    calculatorStarted.current = true;
+    trackCalculatorStart({ interaction, mode });
+  };
+
   // Computed values
   const totalVolume = useMemo(() => 
     inventory.reduce((sum, item) => sum + item.volume * item.quantity, 0), 
@@ -131,6 +144,20 @@ export default function MovingCalculatorPage() {
   );
 
   const recommendation = getRecommendation(totalVolume);
+
+  useEffect(() => {
+    if (totalVolume <= 0 || totalItems <= 0 || calculatorCompleted.current) return;
+
+    calculatorCompleted.current = true;
+    trackCalculatorComplete({
+      volume: Math.round(totalVolume),
+      weight: totalWeight,
+      truck_size: recommendation.truck,
+      move_size: recommendation.label,
+      item_count: totalItems,
+      mode,
+    });
+  }, [totalVolume, totalItems, totalWeight, recommendation, mode]);
 
   // Grouped by room (only meaningful in room mode)
   const groupedByRoom = useMemo(() => {
@@ -162,6 +189,7 @@ export default function MovingCalculatorPage() {
       return;
     }
     addItem(itemName);
+    markCalculatorStarted('add_item');
     toast.success(`Added ${itemName}`, { description: 'Quantity increased' });
   };
 
@@ -194,6 +222,7 @@ export default function MovingCalculatorPage() {
       return;
     }
     addCustomItem(customName.trim(), vol, selectedRoom || undefined);
+    markCalculatorStarted('add_custom_item');
     setCustomName('');
     setCustomVolume('');
     toast.success('Custom item added');
