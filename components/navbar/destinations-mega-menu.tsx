@@ -27,6 +27,7 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
   const arizonaCities = getClusterMarkets('arizona').filter((m) => published.has(m.slug));
   const arkansasCities = getClusterMarkets('arkansas').filter((m) => published.has(m.slug));
   const californiaCities = getClusterMarkets('california').filter((m) => published.has(m.slug));
+  const alabamaCities = getClusterMarkets('alabama').filter((m) => published.has(m.slug));
   const floridaCities = getClusterMarkets('florida').filter((m) => published.has(m.slug));
   const tennesseeCities = getClusterMarkets('tennessee').filter((m) => published.has(m.slug));
   const texasCities = getClusterMarkets('texas').filter((m) => published.has(m.slug));
@@ -301,6 +302,23 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
                   </li>
                 ))}
               </ul>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
+                Alabama — Live Guides
+              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {alabamaCities.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      prefetch={false}
+                      href={getMarketPath(market)}
+                      className="text-primary hover:underline font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
               <div className="mt-4 pt-4 border-t text-xs text-muted-foreground space-y-1">
                 <Link prefetch={false} href="/local-movers/florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Florida county mover directories →
@@ -346,6 +364,12 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
                 </Link>
                 <Link prefetch={false} href="/moving-to/california" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   California destination cluster →
+                </Link>
+                <Link prefetch={false} href="/moving-to/alabama" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Alabama destination cluster →
+                </Link>
+                <Link prefetch={false} href="/local-movers/alabama/madison" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Madison County (Huntsville) local movers →
                 </Link>
                 <Link prefetch={false} href="/local-movers/arkansas/benton" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Benton County (Bentonville) local movers →

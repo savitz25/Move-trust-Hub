@@ -97,6 +97,14 @@ import { modestoCaContent } from '@/lib/destinations/content/modesto-ca';
 import { sacramentoCaContent } from '@/lib/destinations/content/sacramento-ca';
 import { riversideSanBernardinoCaContent } from '@/lib/destinations/content/riverside-san-bernardino-ca';
 import { bakersfieldCaContent } from '@/lib/destinations/content/bakersfield-ca';
+import { huntsvilleAlContent } from '@/lib/destinations/content/huntsville-al';
+import { madisonAlContent } from '@/lib/destinations/content/madison-al';
+import { athensAlContent } from '@/lib/destinations/content/athens-al';
+import { foleyAlContent } from '@/lib/destinations/content/foley-al';
+import { daphneAlContent } from '@/lib/destinations/content/daphne-al';
+import { fairhopeGulfShoresAlContent } from '@/lib/destinations/content/fairhope-gulf-shores-al';
+import { hooverAlContent } from '@/lib/destinations/content/hoover-al';
+import { auburnOpelikaAlContent } from '@/lib/destinations/content/auburn-opelika-al';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -196,6 +204,14 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'sacramento-ca': sacramentoCaContent,
   'riverside-san-bernardino-ca': riversideSanBernardinoCaContent,
   'bakersfield-ca': bakersfieldCaContent,
+  'huntsville-al': huntsvilleAlContent,
+  'madison-al': madisonAlContent,
+  'athens-al': athensAlContent,
+  'foley-al': foleyAlContent,
+  'daphne-al': daphneAlContent,
+  'fairhope-gulf-shores-al': fairhopeGulfShoresAlContent,
+  'hoover-al': hooverAlContent,
+  'auburn-opelika-al': auburnOpelikaAlContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -274,5 +290,11 @@ export function getPublishedArkansasHubSlugs(): string[] {
 export function getPublishedCaliforniaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'california'
+  );
+}
+
+export function getPublishedAlabamaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'alabama'
   );
 }

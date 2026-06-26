@@ -81,6 +81,16 @@ const nextConfig: NextConfig = {
         destination: '/moving-to/arkansas/benton-bryant-ar',
         permanent: true,
       },
+      {
+        source: '/moving-to/huntsville-al',
+        destination: '/moving-to/alabama/huntsville-al',
+        permanent: true,
+      },
+      {
+        source: '/moving-to/birmingham-al',
+        destination: '/moving-to/alabama/hoover-al',
+        permanent: true,
+      },
     ];
   },
   // Generate sitemap and robots via metadata in app dir

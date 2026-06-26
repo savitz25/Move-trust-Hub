@@ -184,6 +184,38 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Southern Arizona mountain lifestyle inbound guide',
     },
   },
+  alabama: {
+    madison: {
+      label: 'Moving to Huntsville & Madison',
+      href: '/moving-to/alabama/huntsville-al',
+      description: 'Rocket City NASA and Redstone Arsenal inbound moving guide',
+    },
+    limestone: {
+      label: 'Moving to Athens',
+      href: '/moving-to/alabama/athens-al',
+      description: 'Limestone County Huntsville spillover inbound guide',
+    },
+    baldwin: {
+      label: 'Moving to Baldwin County',
+      href: '/moving-to/alabama/fairhope-gulf-shores-al',
+      description: 'Coastal South Foley, Daphne, Fairhope and Gulf Shores guide',
+    },
+    jefferson: {
+      label: 'Moving to Hoover',
+      href: '/moving-to/alabama/hoover-al',
+      description: 'Upscale Birmingham-metro Hoover inbound moving guide',
+    },
+    shelby: {
+      label: 'Moving to Hoover',
+      href: '/moving-to/alabama/hoover-al',
+      description: 'Shelby County Hoover master-planned suburb guide',
+    },
+    lee: {
+      label: 'Moving to Auburn & Opelika',
+      href: '/moving-to/alabama/auburn-opelika-al',
+      description: 'Auburn University Lee County inbound moving guide',
+    },
+  },
   california: {
     sacramento: {
       label: 'Moving to Sacramento',
