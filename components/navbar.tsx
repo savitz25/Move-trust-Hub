@@ -3,10 +3,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { QuoteModal } from '@/components/quote-modal';
-import { DestinationsMegaMenu } from '@/components/navbar/destinations-mega-menu';
+import { DestinationsMegaMenuLazy } from '@/components/navbar/destinations-mega-menu-lazy';
+
+const QuoteModal = dynamic(
+  () => import('@/components/quote-modal').then((m) => m.QuoteModal),
+  { ssr: false }
+);
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +38,7 @@ export function Navbar() {
               width={300}
               height={75}
               priority
+              fetchPriority="high"
               sizes="(max-width: 768px) 180px, 300px"
               className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]"
             />
@@ -42,7 +48,6 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 text-sm">
           <Link
             href="/companies"
@@ -50,7 +55,7 @@ export function Navbar() {
           >
             Movers Directory
           </Link>
-          <DestinationsMegaMenu />
+          <DestinationsMegaMenuLazy />
           {navLinks.slice(1).map((link) => (
             <Link
               key={link.href}
@@ -69,7 +74,6 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center gap-2">
           <Button
             variant="ghost"
@@ -82,7 +86,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-t bg-background px-4 py-4">
           <div className="flex flex-col gap-3 text-sm">
@@ -151,7 +154,9 @@ export function Navbar() {
         </div>
       )}
 
-      <QuoteModal open={showQuoteModal} onOpenChange={setShowQuoteModal} />
+      {showQuoteModal ? (
+        <QuoteModal open={showQuoteModal} onOpenChange={setShowQuoteModal} />
+      ) : null}
     </nav>
   );
 }

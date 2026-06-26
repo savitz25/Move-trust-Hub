@@ -1,19 +1,18 @@
 import type { Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { Suspense } from 'react';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
+import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
   display: 'swap',
   preload: true,
   adjustFontFallback: true,
@@ -22,7 +21,7 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500'],
   display: 'swap',
   preload: false,
   adjustFontFallback: true,
@@ -70,8 +69,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        <Analytics />
-        <SpeedInsights />
+        <DeferredAnalytics />
       </body>
     </html>
   );

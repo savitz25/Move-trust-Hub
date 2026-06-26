@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { HomePage } from '@/components/home-page';
+import { HomeQuoteProvider } from '@/components/home/home-quote-provider';
 import { LocalMoversMapLoader } from '@/components/map/local-movers-map-loader';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildHomepageSchemaGraph } from '@/lib/seo/schemas';
@@ -46,7 +47,9 @@ export default function Page() {
   return (
     <>
       <JsonLd data={buildHomepageSchemaGraph()} />
-      <HomePage mapSection={<LocalMoversMapLoader />} />
+      <HomeQuoteProvider>
+        <HomePage mapSection={<LocalMoversMapLoader />} />
+      </HomeQuoteProvider>
     </>
   );
 }

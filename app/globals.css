@@ -169,6 +169,12 @@
   @apply animate-pulse bg-muted rounded;
 }
 
+/* Defer rendering of below-fold sections on long pages */
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
 /* Print styles for profile pages */
 @media print {
   .no-print {

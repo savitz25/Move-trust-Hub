@@ -1,25 +1,18 @@
-'use client';
-
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Shield, ArrowRight, Clock, DollarSign, Star, Truck, Headphones } from 'lucide-react';
-import { QuoteModal } from '@/components/quote-modal';
 import { FaqSection } from '@/components/seo/faq-section';
 import { homepageFaqItems } from '@/lib/seo/schemas';
 import { TrustBadges } from '@/components/trust/trust-badges';
-import { ReviewHighlights } from '@/components/trust/review-highlights';
-import { TestimonialsSection } from '@/components/trust/testimonials-section';
+import { HomeQuoteButton } from '@/components/home/home-quote-button';
+import { HomeBelowFold } from '@/components/home/home-below-fold';
 
 export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
-  const [showQuoteModal, setShowQuoteModal] = useState(false);
-
   return (
     <div className="flex flex-col">
-      {/* MARKETING HERO - Strong CTA focused */}
       <section className="relative bg-gradient-to-br from-primary/8 via-background to-background border-b">
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
@@ -47,13 +40,12 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Button 
-                size="lg" 
-                className="gap-2 text-base px-10 h-14 text-lg" 
-                onClick={() => setShowQuoteModal(true)}
+              <HomeQuoteButton
+                size="lg"
+                className="gap-2 text-base px-10 h-14 text-lg"
               >
                 Get My Free Quotes <ArrowRight className="h-5 w-5" />
-              </Button>
+              </HomeQuoteButton>
               <Link href="/moving-calculator">
                 <Button size="lg" variant="outline" className="gap-2 text-base px-8 h-14">
                   Estimate My Move First
@@ -69,7 +61,6 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
 
       <TrustBadges />
 
-      {/* HOW IT WORKS - Classic marketing section */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <div className="text-primary font-semibold tracking-widest text-sm mb-2">3 SIMPLE STEPS</div>
@@ -80,8 +71,8 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {[
             {
-              step: "01",
-              title: "Tell Us About Your Move",
+              step: '01',
+              title: 'Tell Us About Your Move',
               desc: (
                 <>
                   Use our <Link href="/moving-calculator" className="text-primary underline underline-offset-2">free moving calculator</Link> or quick form to share your from/to locations, date, and home size.
@@ -90,14 +81,14 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
               icon: Truck,
             },
             {
-              step: "02",
-              title: "Compare Personalized Quotes",
-              desc: "Receive 2-3 competitive quotes from top-rated, licensed interstate movers within 24 hours.",
+              step: '02',
+              title: 'Compare Personalized Quotes',
+              desc: 'Receive 2-3 competitive quotes from top-rated, licensed interstate movers within 24 hours.',
               icon: Star,
             },
             {
-              step: "03",
-              title: "Book with Confidence",
+              step: '03',
+              title: 'Book with Confidence',
               desc: (
                 <>
                   Review real feedback in our <Link href="/companies" className="text-primary underline underline-offset-2">mover directory</Link>, <Link href="/compare" className="text-primary underline underline-offset-2">compare companies side-by-side</Link>, and book with confidence.
@@ -118,8 +109,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         </div>
       </section>
 
-      {/* VALUE PROPS / BENEFITS */}
-      <section className="bg-muted/30 border-y py-16">
+      <section className="bg-muted/30 border-y py-16 content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-semibold tracking-tight">Why Families Choose Us for Long-Distance Moves</h2>
@@ -127,10 +117,10 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { icon: DollarSign, title: "Save Money", desc: "Compare multiple quotes side-by-side so you never overpay." },
-              { icon: Shield, title: "Move with Confidence", desc: "Every mover is FMCSA licensed with verified reviews and low complaint ratios." },
-              { icon: Clock, title: "Save Time", desc: "Skip the phone calls. Get matched with the right movers instantly." },
-              { icon: Headphones, title: "Dedicated Support", desc: "Our team is here to answer questions before, during, and after your move." },
+              { icon: DollarSign, title: 'Save Money', desc: 'Compare multiple quotes side-by-side so you never overpay.' },
+              { icon: Shield, title: 'Move with Confidence', desc: 'Every mover is FMCSA licensed with verified reviews and low complaint ratios.' },
+              { icon: Clock, title: 'Save Time', desc: 'Skip the phone calls. Get matched with the right movers instantly.' },
+              { icon: Headphones, title: 'Dedicated Support', desc: 'Our team is here to answer questions before, during, and after your move.' },
             ].map((benefit, i) => (
               <Card key={i} className="p-6 border border-border/50 shadow-trust">
                 <benefit.icon className="h-8 w-8 text-primary mb-4" />
@@ -142,8 +132,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         </div>
       </section>
 
-      {/* FREE TOOLS - Highlight our existing features as value */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-16 content-auto">
         <div className="text-center mb-10">
           <Badge variant="outline" className="mb-3">FREE TOOLS</Badge>
           <h2 className="text-4xl font-semibold tracking-tight">Research &amp; Plan Your Move</h2>
@@ -187,25 +176,30 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             </Card>
           </Link>
 
-          <Link href="/resources" className="group md:col-span-3">
-            <Card className="h-full p-6 hover:border-primary/50 transition-all">
-              <div className="text-3xl mb-4">📚</div>
-              <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">Moving Guides &amp; Resources</h3>
-              <p className="text-muted-foreground">
-                Learn <Link href="/resources/move-size-weight" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>why move size matters</Link>, <Link href="/resources/how-to-choose" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>how to choose a mover</Link>, <Link href="/resources/routes" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>route guides</Link>, and <Link href="/resources/packing-checklist" className="text-primary underline underline-offset-2" onClick={(e) => e.stopPropagation()}>packing checklists</Link>.
-              </p>
-              <div className="mt-4 text-primary font-medium flex items-center gap-1">Read free guides →</div>
-            </Card>
-          </Link>
+          <div className="md:col-span-3">
+          <Card className="h-full p-6 hover:border-primary/50 transition-all">
+            <div className="text-3xl mb-4">📚</div>
+            <h3 className="text-2xl font-semibold mb-2">Moving Guides &amp; Resources</h3>
+            <p className="text-muted-foreground">
+              Learn{' '}
+              <Link href="/resources/move-size-weight" className="text-primary underline underline-offset-2">why move size matters</Link>,{' '}
+              <Link href="/resources/how-to-choose" className="text-primary underline underline-offset-2">how to choose a mover</Link>,{' '}
+              <Link href="/resources/routes" className="text-primary underline underline-offset-2">route guides</Link>, and{' '}
+              <Link href="/resources/packing-checklist" className="text-primary underline underline-offset-2">packing checklists</Link>.
+            </p>
+            <Link href="/resources" className="mt-4 text-primary font-medium flex items-center gap-1 hover:underline">
+              Read free guides →
+            </Link>
+          </Card>
+          </div>
         </div>
       </section>
 
-      <ReviewHighlights className="py-16" />
+      <div className="content-auto">
+        <HomeBelowFold />
+      </div>
 
-      <TestimonialsSection columns={4} />
-
-      {/* SEO / INTERNAL LINKS */}
-      <section className="container mx-auto px-4 py-14 max-w-3xl text-center border-t">
+      <section className="container mx-auto px-4 py-14 max-w-3xl text-center border-t content-auto">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
           Plan a Smarter Interstate Move
         </h2>
@@ -234,24 +228,19 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         </p>
       </section>
 
-      <FaqSection title="Frequently Asked Questions" items={homepageFaqItems} />
+      <div className="content-auto">
+        <FaqSection title="Frequently Asked Questions" items={homepageFaqItems} />
+      </div>
 
-      {/* FINAL CTA */}
       <section className="container mx-auto px-4 py-20 text-center">
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Ready to start your move?</h2>
         <p className="text-xl text-muted-foreground mb-8 max-w-md mx-auto">Join thousands of families who found their perfect interstate mover through us.</p>
-        
-        <Button 
-          size="lg" 
-          className="text-lg px-12 h-14"
-          onClick={() => setShowQuoteModal(true)}
-        >
+
+        <HomeQuoteButton size="lg" className="text-lg px-12 h-14">
           Get Your Free Quotes Now
-        </Button>
+        </HomeQuoteButton>
         <p className="text-xs text-muted-foreground mt-4">Takes 60 seconds • Completely free • No spam</p>
       </section>
-
-      <QuoteModal open={showQuoteModal} onOpenChange={setShowQuoteModal} />
     </div>
   );
 }
