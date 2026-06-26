@@ -87,6 +87,16 @@ import { rogersArContent } from '@/lib/destinations/content/rogers-ar';
 import { conwayArContent } from '@/lib/destinations/content/conway-ar';
 import { springdaleArContent } from '@/lib/destinations/content/springdale-ar';
 import { bentonBryantArContent } from '@/lib/destinations/content/benton-bryant-ar';
+import { sanDiegoCaContent } from '@/lib/destinations/content/san-diego-ca';
+import { venturaOxnardCaContent } from '@/lib/destinations/content/ventura-oxnard-ca';
+import { palmdaleLancasterCaContent } from '@/lib/destinations/content/palmdale-lancaster-ca';
+import { reddingCaContent } from '@/lib/destinations/content/redding-ca';
+import { fresnoCaContent } from '@/lib/destinations/content/fresno-ca';
+import { stocktonCaContent } from '@/lib/destinations/content/stockton-ca';
+import { modestoCaContent } from '@/lib/destinations/content/modesto-ca';
+import { sacramentoCaContent } from '@/lib/destinations/content/sacramento-ca';
+import { riversideSanBernardinoCaContent } from '@/lib/destinations/content/riverside-san-bernardino-ca';
+import { bakersfieldCaContent } from '@/lib/destinations/content/bakersfield-ca';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -176,6 +186,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'conway-ar': conwayArContent,
   'springdale-ar': springdaleArContent,
   'benton-bryant-ar': bentonBryantArContent,
+  'san-diego-ca': sanDiegoCaContent,
+  'ventura-oxnard-ca': venturaOxnardCaContent,
+  'palmdale-lancaster-ca': palmdaleLancasterCaContent,
+  'redding-ca': reddingCaContent,
+  'fresno-ca': fresnoCaContent,
+  'stockton-ca': stocktonCaContent,
+  'modesto-ca': modestoCaContent,
+  'sacramento-ca': sacramentoCaContent,
+  'riverside-san-bernardino-ca': riversideSanBernardinoCaContent,
+  'bakersfield-ca': bakersfieldCaContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -248,5 +268,11 @@ export function getPublishedArizonaHubSlugs(): string[] {
 export function getPublishedArkansasHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'arkansas'
+  );
+}
+
+export function getPublishedCaliforniaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'california'
   );
 }

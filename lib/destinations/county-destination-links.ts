@@ -184,6 +184,63 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Southern Arizona mountain lifestyle inbound guide',
     },
   },
+  california: {
+    sacramento: {
+      label: 'Moving to Sacramento',
+      href: '/moving-to/california/sacramento-ca',
+      description: 'Capital region tech and government inbound moving guide',
+    },
+    riverside: {
+      label: 'Moving to Inland Empire',
+      href: '/moving-to/california/riverside-san-bernardino-ca',
+      description: 'Riverside and San Bernardino affordable SoCal corridor guide',
+    },
+    'san-bernardino': {
+      label: 'Moving to Inland Empire',
+      href: '/moving-to/california/riverside-san-bernardino-ca',
+      description: 'Inland Empire logistics and suburban growth inbound guide',
+    },
+    kern: {
+      label: 'Moving to Bakersfield',
+      href: '/moving-to/california/bakersfield-ca',
+      description: 'Kern County Central Valley affordability inbound guide',
+    },
+    fresno: {
+      label: 'Moving to Fresno',
+      href: '/moving-to/california/fresno-ca',
+      description: 'Central Valley agriculture hub inbound moving guide',
+    },
+    'san-joaquin': {
+      label: 'Moving to Stockton',
+      href: '/moving-to/california/stockton-ca',
+      description: 'San Joaquin County port logistics inbound guide',
+    },
+    stanislaus: {
+      label: 'Moving to Modesto',
+      href: '/moving-to/california/modesto-ca',
+      description: 'Stanislaus County agribusiness inbound moving guide',
+    },
+    'san-diego': {
+      label: 'Moving to San Diego',
+      href: '/moving-to/california/san-diego-ca',
+      description: 'San Diego and North County biotech corridor inbound guide',
+    },
+    ventura: {
+      label: 'Moving to Ventura & Oxnard',
+      href: '/moving-to/california/ventura-oxnard-ca',
+      description: 'Ventura County coastal corridor inbound guide',
+    },
+    'los-angeles': {
+      label: 'Moving to Palmdale & Lancaster',
+      href: '/moving-to/california/palmdale-lancaster-ca',
+      description: 'Antelope Valley high-desert affordability inbound guide',
+    },
+    shasta: {
+      label: 'Moving to Redding',
+      href: '/moving-to/california/redding-ca',
+      description: 'Shasta County Northern California outdoor gateway guide',
+    },
+  },
   arkansas: {
     benton: {
       label: 'Moving to Bentonville & NWA',
