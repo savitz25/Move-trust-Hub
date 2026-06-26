@@ -64,6 +64,13 @@ import { salemOrContent } from '@/lib/destinations/content/salem-or';
 import { portlandOrContent } from '@/lib/destinations/content/portland-or';
 import { bendOrContent } from '@/lib/destinations/content/bend-or';
 import { hillsboroBeavertonOrContent } from '@/lib/destinations/content/hillsboro-beaverton-or';
+import { oklahomaCityOkContent } from '@/lib/destinations/content/oklahoma-city-ok';
+import { tulsaOkContent } from '@/lib/destinations/content/tulsa-ok';
+import { edmondOkContent } from '@/lib/destinations/content/edmond-ok';
+import { normanOkContent } from '@/lib/destinations/content/norman-ok';
+import { brokenArrowOkContent } from '@/lib/destinations/content/broken-arrow-ok';
+import { jenksOkContent } from '@/lib/destinations/content/jenks-ok';
+import { stillwaterOkContent } from '@/lib/destinations/content/stillwater-ok';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -130,6 +137,13 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'portland-or': portlandOrContent,
   'bend-or': bendOrContent,
   'hillsboro-beaverton-or': hillsboroBeavertonOrContent,
+  'oklahoma-city-ok': oklahomaCityOkContent,
+  'tulsa-ok': tulsaOkContent,
+  'edmond-ok': edmondOkContent,
+  'norman-ok': normanOkContent,
+  'broken-arrow-ok': brokenArrowOkContent,
+  'jenks-ok': jenksOkContent,
+  'stillwater-ok': stillwaterOkContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -184,5 +198,11 @@ export function getPublishedIdahoHubSlugs(): string[] {
 export function getPublishedOregonHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'oregon'
+  );
+}
+
+export function getPublishedOklahomaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'oklahoma'
   );
 }

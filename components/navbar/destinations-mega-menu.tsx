@@ -23,6 +23,7 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
   );
   const idahoCities = getClusterMarkets('idaho').filter((m) => published.has(m.slug));
   const oregonCities = getClusterMarkets('oregon').filter((m) => published.has(m.slug));
+  const oklahomaCities = getClusterMarkets('oklahoma').filter((m) => published.has(m.slug));
   const floridaCities = getClusterMarkets('florida').filter((m) => published.has(m.slug));
   const tennesseeCities = getClusterMarkets('tennessee').filter((m) => published.has(m.slug));
   const texasCities = getClusterMarkets('texas').filter((m) => published.has(m.slug));
@@ -163,6 +164,22 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
                 ))}
               </ul>
               <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
+                Oklahoma — Live Guides
+              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                {oklahomaCities.map((market) => (
+                  <li key={market.slug}>
+                    <Link
+                      href={getMarketPath(market)}
+                      className="text-primary hover:underline font-medium"
+                      onClick={() => setOpen(false)}
+                    >
+                      {market.displayName}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">
                 Oregon — Live Guides
               </div>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
@@ -264,8 +281,14 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
                 <Link prefetch={false} href="/moving-to/oregon" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Oregon destination cluster →
                 </Link>
+                <Link prefetch={false} href="/moving-to/oklahoma" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Oklahoma destination cluster →
+                </Link>
                 <Link prefetch={false} href="/local-movers/oregon/multnomah" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Multnomah County (Portland) local movers →
+                </Link>
+                <Link prefetch={false} href="/local-movers/oklahoma/oklahoma" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  Oklahoma County (OKC) local movers →
                 </Link>
                 <Link prefetch={false} href="/local-movers/idaho/ada" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   Ada County (Boise) local movers →

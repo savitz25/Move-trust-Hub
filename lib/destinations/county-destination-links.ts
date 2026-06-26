@@ -135,6 +135,38 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'West Salem and Polk County — state capital corridor guide',
     },
   },
+  oklahoma: {
+    oklahoma: {
+      label: 'Moving to Oklahoma City',
+      href: '/moving-to/oklahoma/oklahoma-city-ok',
+      description: 'OKC metro inbound guide — MAPS revitalization and aerospace corridor',
+    },
+    canadian: {
+      label: 'Moving to Edmond',
+      href: '/moving-to/oklahoma/edmond-ok',
+      description: 'Premier OKC suburb with top schools and family neighborhoods',
+    },
+    cleveland: {
+      label: 'Moving to Norman',
+      href: '/moving-to/oklahoma/norman-ok',
+      description: 'University of Oklahoma college-town inbound moving guide',
+    },
+    tulsa: {
+      label: 'Moving to Tulsa',
+      href: '/moving-to/oklahoma/tulsa-ok',
+      description: 'Tulsa metro cultural hub — Art Deco, Gathering Place, arts scene',
+    },
+    wagoner: {
+      label: 'Moving to Oklahoma',
+      href: '/moving-to/oklahoma',
+      description: 'Tulsa metro spillover — Oklahoma inbound cluster overview',
+    },
+    payne: {
+      label: 'Moving to Stillwater',
+      href: '/moving-to/oklahoma/stillwater-ok',
+      description: 'Oklahoma State University affordable college-town guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',

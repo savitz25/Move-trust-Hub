@@ -37,6 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/moving-to/texas',
     '/moving-to/idaho',
     '/moving-to/oregon',
+    '/moving-to/oklahoma',
     '/auto-transport',
     '/moving-calculator',
     '/compare',
