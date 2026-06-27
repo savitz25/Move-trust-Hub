@@ -43,7 +43,7 @@ export const deerfieldBeachFlContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Deerfield Beach',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/pennsylvania-to-florida',
       miles: '≈1,120 miles',
     },
     {

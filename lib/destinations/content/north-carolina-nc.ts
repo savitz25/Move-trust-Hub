@@ -153,6 +153,11 @@ export const northCarolinaClusterContent: NorthCarolinaClusterContent = {
       href: '/local-movers/north-carolina/catawba',
     },
     {
+      title: 'Pennsylvania to North Carolina route guide',
+      description: 'Charlotte, Research Triangle, and coastal NC pricing from PA origins.',
+      href: '/resources/routes/pennsylvania-to-north-carolina',
+    },
+    {
       title: 'South Carolina Grand Strand hub',
       description: 'Compare NC with Myrtle Beach and Grand Strand SC markets.',
       href: '/moving-to/south-carolina',

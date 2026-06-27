@@ -43,7 +43,7 @@ export const murrellsInletScContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Murrells Inlet',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
       miles: '≈580 miles',
     },
     {

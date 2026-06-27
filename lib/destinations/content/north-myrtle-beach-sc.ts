@@ -43,7 +43,7 @@ export const northMyrtleBeachScContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → North Myrtle Beach',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
       miles: '≈580 miles',
     },
     {

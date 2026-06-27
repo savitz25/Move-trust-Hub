@@ -43,7 +43,7 @@ export const pompanoBeachFlContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Pompano Beach',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/pennsylvania-to-florida',
       miles: '≈1,160 miles',
     },
     {

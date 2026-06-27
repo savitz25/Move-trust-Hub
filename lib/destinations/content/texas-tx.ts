@@ -202,6 +202,11 @@ export const texasClusterContent: TexasClusterContent = {
       href: '/resources/routes/new-jersey-to-texas',
     },
     {
+      title: 'Pennsylvania to Texas route guide',
+      description: 'Philly and Pittsburgh to DFW, Austin, Houston, and San Antonio — 2026–2027 costs.',
+      href: '/resources/routes/pennsylvania-to-texas',
+    },
+    {
       title: 'Texas to California route guide',
       description: 'Reverse corridor pricing and seasonal factors.',
       href: '/resources/routes/texas-to-california',

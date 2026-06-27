@@ -43,7 +43,7 @@ export const littleRiverScContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Little River',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
       miles: '≈620 miles',
     },
     {

@@ -43,7 +43,7 @@ export const carolinaForestScContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Carolina Forest',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
       miles: '≈590 miles',
     },
     {

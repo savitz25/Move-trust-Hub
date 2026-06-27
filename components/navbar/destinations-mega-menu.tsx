@@ -353,6 +353,15 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
                 <Link prefetch={false} href="/resources/routes/new-jersey-to-texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   NJ → Texas route guide →
                 </Link>
+                <Link prefetch={false} href="/resources/routes/pennsylvania-to-florida" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  PA → Florida route guide →
+                </Link>
+                <Link prefetch={false} href="/resources/routes/pennsylvania-to-south-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  PA → South Carolina route guide →
+                </Link>
+                <Link prefetch={false} href="/resources/routes/pennsylvania-to-texas" className="block hover:text-primary" onClick={() => setOpen(false)}>
+                  PA → Texas route guide →
+                </Link>
                 <Link prefetch={false} href="/moving-to/south-carolina" className="block hover:text-primary" onClick={() => setOpen(false)}>
                   South Carolina destination cluster →
                 </Link>

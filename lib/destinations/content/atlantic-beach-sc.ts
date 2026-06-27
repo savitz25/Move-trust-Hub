@@ -43,7 +43,7 @@ export const atlanticBeachScContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Atlantic Beach',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
       miles: '≈575 miles',
     },
     {

@@ -48,7 +48,7 @@ export const fortLauderdaleFlContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Fort Lauderdale',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/pennsylvania-to-florida',
       miles: '≈1,180 miles',
     },
   ],

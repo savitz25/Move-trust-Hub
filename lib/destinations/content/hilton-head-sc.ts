@@ -44,7 +44,7 @@ export const hiltonHeadScContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Hilton Head',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
       miles: '≈680 miles',
     },
     {

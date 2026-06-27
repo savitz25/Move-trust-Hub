@@ -48,7 +48,7 @@ export const stAugustineFlContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → St. Augustine',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/pennsylvania-to-florida',
       miles: '≈960 miles',
     },
   ],

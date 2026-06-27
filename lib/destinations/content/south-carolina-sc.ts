@@ -186,6 +186,11 @@ export const southCarolinaClusterContent: SouthCarolinaClusterContent = {
       href: '/resources/routes/new-jersey-to-south-carolina',
     },
     {
+      title: 'Pennsylvania to South Carolina route guide',
+      description: 'Philly, Pittsburgh, and statewide PA origins to Grand Strand and Upstate SC.',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
+    },
+    {
       title: 'New York to Myrtle Beach route guide',
       description: 'Mileage, timing, and cost factors for Northeast-to-Grand-Strand moves.',
       href: '/resources/routes/new-york-to-myrtle-beach',

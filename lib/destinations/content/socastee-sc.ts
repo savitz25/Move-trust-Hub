@@ -48,7 +48,7 @@ export const socasteeScContent: CityHubContent = {
     },
     {
       label: 'Pennsylvania → Socastee',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/pennsylvania-to-south-carolina',
       miles: '≈595 miles',
     },
   ],

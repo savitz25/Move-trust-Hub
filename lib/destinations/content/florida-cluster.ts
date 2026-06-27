@@ -233,6 +233,11 @@ export const floridaClusterContent: FloridaClusterContent = {
       href: '/resources/routes/new-jersey-to-south-carolina',
     },
     {
+      title: 'Pennsylvania to Florida route guide',
+      description: 'Snowbird corridor pricing, Philly/Pittsburgh pickup tips, and FL delivery logistics.',
+      href: '/resources/routes/pennsylvania-to-florida',
+    },
+    {
       title: 'Verify any mover\'s USDOT & MC number',
       description: 'Step-by-step FMCSA lookup before booking.',
       href: '/resources/fmcsa',
