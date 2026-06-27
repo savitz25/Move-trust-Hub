@@ -389,6 +389,73 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Collin County Plano–Frisco corporate suburb guide',
     },
   },
+  virginia: {
+    arlington: {
+      label: 'Moving to Arlington & Alexandria',
+      href: '/moving-to/virginia/arlington-alexandria-va',
+      description: 'Urban D.C. suburb inbound guide — federal contractors and Metro access',
+    },
+    alexandria: {
+      label: 'Moving to Arlington & Alexandria',
+      href: '/moving-to/virginia/arlington-alexandria-va',
+      description: 'Old Town Alexandria and National Landing inbound moving guide',
+    },
+    loudoun: {
+      label: 'Moving to Leesburg & Fairfax',
+      href: '/moving-to/virginia/leesburg-fairfax-va',
+      description: 'Dulles corridor Loudoun County suburban inbound guide',
+    },
+    fairfax: {
+      label: 'Moving to Leesburg & Fairfax',
+      href: '/moving-to/virginia/leesburg-fairfax-va',
+      description: 'Fairfax County NoVA schools and defense contractor suburb guide',
+    },
+    frederick: {
+      label: 'Moving to Winchester',
+      href: '/moving-to/virginia/winchester-va',
+      description: 'Shenandoah Valley fastest-growing metro inbound guide',
+    },
+    fredericksburg: {
+      label: 'Moving to Fredericksburg & Culpeper',
+      href: '/moving-to/virginia/fredericksburg-culpeper-va',
+      description: 'I-95 corridor commuter-belt inbound moving guide',
+    },
+    culpeper: {
+      label: 'Moving to Fredericksburg & Culpeper',
+      href: '/moving-to/virginia/fredericksburg-culpeper-va',
+      description: 'Culpeper wine-country and I-95 spillover inbound guide',
+    },
+    richmond: {
+      label: 'Moving to Richmond',
+      href: '/moving-to/virginia/richmond-va',
+      description: 'Virginia capital revitalized downtown inbound moving guide',
+    },
+    suffolk: {
+      label: 'Moving to Suffolk & Chesapeake',
+      href: '/moving-to/virginia/suffolk-chesapeake-va',
+      description: 'Hampton Roads fastest-growing coastal corridor inbound guide',
+    },
+    chesapeake: {
+      label: 'Moving to Suffolk & Chesapeake',
+      href: '/moving-to/virginia/suffolk-chesapeake-va',
+      description: 'Chesapeake suburban Hampton Roads inbound moving guide',
+    },
+    albemarle: {
+      label: 'Moving to Charlottesville',
+      href: '/moving-to/virginia/charlottesville-va',
+      description: 'UVA and Blue Ridge foothill college-town inbound guide',
+    },
+    charlottesville: {
+      label: 'Moving to Charlottesville',
+      href: '/moving-to/virginia/charlottesville-va',
+      description: 'Charlottesville UVA Health and Downtown Mall inbound guide',
+    },
+    roanoke: {
+      label: 'Moving to Roanoke',
+      href: '/moving-to/virginia/roanoke-va',
+      description: 'Blue Ridge valley outdoor recreation inbound moving guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',

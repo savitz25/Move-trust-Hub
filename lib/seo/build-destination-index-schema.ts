@@ -382,6 +382,66 @@ export function buildAlabamaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/virginia cluster parent */
+export function buildVirginiaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const virginiaHubs = getClusterMarkets('virginia').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Virginia', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Virginia',
+          addressRegion: 'VA',
+        },
+        mainEntity: { '@id': `${canonical}#virginia-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#virginia-hub-list`,
+        name: 'Virginia City Moving Guides',
+        numberOfItems: virginiaHubs.length,
+        itemListElement: virginiaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, VA`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/california cluster parent */
 export function buildCaliforniaClusterSchemaGraph(
   title: string,

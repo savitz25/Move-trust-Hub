@@ -2761,6 +2761,231 @@ export const markets: Market[] = [
     mapDescription:
       'Auburn and Opelika in Lee County — SEC university town with Kia manufacturing corridor growth.',
   },
+  {
+    slug: 'virginia',
+    displayName: 'Virginia',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: [],
+    lat: 37.5,
+    lng: -78.5,
+    defaultToZip: '22201',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Maryland'],
+    avgCostRanges: {
+      studio: '$2,800–$5,800',
+      twoBR: '$5,200–$8,900',
+      threeBR: '$7,600–$12,400',
+      fourBR: '$10,800–$17,200',
+    },
+    inboundGrowthStat:
+      'NoVA tech/government · I-95 suburban overflow · Hampton Roads & Shenandoah Valley growth',
+    peakSeasonNote:
+      'Summer DC-area corporate relocation and Hampton Roads military PCS season tighten carrier schedules',
+    isClusterParent: true,
+    priority: 13,
+    mapDescription:
+      'Virginia inbound hub covering Northern Virginia (Arlington, Alexandria, Leesburg, Fairfax, Winchester), I-95 Central (Fredericksburg, Culpeper, Richmond), Hampton Roads (Suffolk, Chesapeake), and Mountains & College Towns (Charlottesville, Roanoke).',
+  },
+  {
+    slug: 'arlington-alexandria-va',
+    displayName: 'Arlington & Alexandria',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['arlington-va', 'alexandria-va'],
+    lat: 38.88,
+    lng: -77.1,
+    defaultToZip: '22201',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Maryland'],
+    avgCostRanges: {
+      studio: '$3,200–$6,400',
+      twoBR: '$5,900–$9,600',
+      threeBR: '$8,600–$13,800',
+      fourBR: '$12,200–$19,000',
+    },
+    inboundGrowthStat:
+      'Urban D.C. suburbs · federal contractors · Metro transit · Amazon HQ2 corridor',
+    peakSeasonNote:
+      'High-rise COI and Metro-adjacent parking limits add accessorials — book 8–10 weeks ahead in summer',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Arlington and Alexandria in the DC metro — Pentagon corridor, National Landing, and Old Town waterfront.',
+  },
+  {
+    slug: 'leesburg-fairfax-va',
+    displayName: 'Leesburg & Fairfax',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['loudoun-va', 'fairfax-va'],
+    lat: 38.99,
+    lng: -77.54,
+    defaultToZip: '20175',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Maryland'],
+    avgCostRanges: {
+      studio: '$3,000–$6,100',
+      twoBR: '$5,600–$9,200',
+      threeBR: '$8,200–$13,200',
+      fourBR: '$11,800–$18,200',
+    },
+    inboundGrowthStat:
+      'Dulles tech corridor · excellent schools · low crime · defense contractor suburbs',
+    peakSeasonNote:
+      'Gated communities and Dulles corridor traffic compress summer delivery windows',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Leesburg and Fairfax County in Loudoun and Fairfax — premier NoVA suburban schools and Dulles employment.',
+  },
+  {
+    slug: 'winchester-va',
+    displayName: 'Winchester',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['frederick-va'],
+    lat: 39.1857,
+    lng: -78.1633,
+    defaultToZip: '22601',
+    topInboundOrigins: ['Maryland', 'New York', 'New Jersey', 'Pennsylvania'],
+    avgCostRanges: {
+      studio: '$2,600–$5,200',
+      twoBR: '$4,800–$7,900',
+      threeBR: '$7,000–$11,200',
+      fourBR: '$10,000–$15,600',
+    },
+    inboundGrowthStat:
+      'Shenandoah Valley · fastest-growing % metro · affordable NoVA spillover · I-81 corridor',
+    peakSeasonNote:
+      'Valley long-driveway shuttle trucks common in new subdivisions — disclose access in inventory',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Winchester in Frederick County — Shenandoah Valley gateway with NoVA-priced-out inbound growth.',
+  },
+  {
+    slug: 'fredericksburg-culpeper-va',
+    displayName: 'Fredericksburg & Culpeper',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['fredericksburg-va', 'culpeper-va'],
+    lat: 38.3032,
+    lng: -77.4605,
+    defaultToZip: '22401',
+    topInboundOrigins: ['Maryland', 'New York', 'New Jersey', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,700–$5,400',
+      twoBR: '$5,000–$8,200',
+      threeBR: '$7,300–$11,600',
+      fourBR: '$10,400–$16,200',
+    },
+    inboundGrowthStat:
+      'I-95 corridor growth · families priced out of closer NoVA · D.C. and Quantico commute access',
+    peakSeasonNote:
+      'Historic-district shuttle trucks and VRE commuter-belt scheduling peak May–August',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Fredericksburg and Culpeper on the I-95 corridor — Stafford spillover and Culpeper wine-country suburbs.',
+  },
+  {
+    slug: 'richmond-va',
+    displayName: 'Richmond',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['richmond-va'],
+    lat: 37.5407,
+    lng: -77.436,
+    defaultToZip: '23219',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,500–$5,000',
+      twoBR: '$4,600–$7,600',
+      threeBR: '$6,800–$10,800',
+      fourBR: '$9,600–$15,000',
+    },
+    inboundGrowthStat:
+      'State capital · revitalized downtown · arts/food scene · healthcare & finance jobs',
+    peakSeasonNote:
+      'Downtown loft elevator reservations and Fan District narrow-street shuttles are standard accessorials',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Richmond metro — Virginia capital with Scott\'s Addition, Fan District, and suburban Chesterfield spillover.',
+  },
+  {
+    slug: 'suffolk-chesapeake-va',
+    displayName: 'Suffolk & Chesapeake',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['suffolk-va', 'chesapeake-va'],
+    lat: 36.7282,
+    lng: -76.5836,
+    defaultToZip: '23434',
+    topInboundOrigins: ['North Carolina', 'Maryland', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$4,900',
+      twoBR: '$4,400–$7,300',
+      threeBR: '$6,400–$10,200',
+      fourBR: '$9,200–$14,400',
+    },
+    inboundGrowthStat:
+      'Fastest-growing Hampton Roads · newer housing · space & acreage · coastal job access',
+    peakSeasonNote:
+      'Military PCS season (May–August) and bridge-tunnel congestion affect Hampton Roads deliveries',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Suffolk and Chesapeake in Hampton Roads — fastest-growing coastal corridor with naval and port employment.',
+  },
+  {
+    slug: 'charlottesville-va',
+    displayName: 'Charlottesville',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['albemarle-va', 'charlottesville-va'],
+    lat: 38.0293,
+    lng: -78.4767,
+    defaultToZip: '22902',
+    topInboundOrigins: ['Maryland', 'New York', 'Virginia', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,500–$5,100',
+      twoBR: '$4,600–$7,700',
+      threeBR: '$6,800–$10,800',
+      fourBR: '$9,600–$15,000',
+    },
+    inboundGrowthStat:
+      'University of Virginia · culture & mountains · UVA Health · remote workers & retirees',
+    peakSeasonNote:
+      'August academic turnover and Downtown Mall loft deliveries peak — book early for UVA-area moves',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Charlottesville in Albemarle County — UVA college town with Blue Ridge foothill lifestyle appeal.',
+  },
+  {
+    slug: 'roanoke-va',
+    displayName: 'Roanoke',
+    stateCode: 'VA',
+    stateName: 'Virginia',
+    primaryCounties: ['roanoke-va'],
+    lat: 37.271,
+    lng: -79.9414,
+    defaultToZip: '24011',
+    topInboundOrigins: ['Virginia', 'North Carolina', 'Maryland', 'New York'],
+    avgCostRanges: {
+      studio: '$2,300–$4,700',
+      twoBR: '$4,200–$7,000',
+      threeBR: '$6,200–$9,800',
+      fourBR: '$8,800–$13,600',
+    },
+    inboundGrowthStat:
+      'Blue Ridge valley living · outdoor recreation · affordable vs NoVA · mountain trail access',
+    peakSeasonNote:
+      'Hillside driveways and narrow valley streets may require shuttle trucks — document grade and access',
+    clusterParent: 'virginia',
+    priority: 13,
+    mapDescription:
+      'Roanoke in the Blue Ridge valley — McAfee Knob gateway with affordable mountain metro living.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
