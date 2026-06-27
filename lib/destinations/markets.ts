@@ -6895,6 +6895,281 @@ export const markets: Market[] = [
     mapDescription:
       'Bossier City in Bossier Parish — tech-forward Shreveport suburb with military and healthcare employment.',
   },
+  {
+    slug: 'mississippi',
+    displayName: 'Mississippi',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: [],
+    lat: 32.7,
+    lng: -89.7,
+    defaultToZip: '39501',
+    topInboundOrigins: ['Louisiana', 'Tennessee', 'Alabama', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$5,800',
+      twoBR: '$4,000–$8,200',
+      threeBR: '$6,000–$11,000',
+      fourBR: '$8,800–$15,800',
+    },
+    inboundGrowthStat:
+      'Gulf Coast sunshine · Jackson Metro suburbs · competitive COL · port growth',
+    peakSeasonNote:
+      'Hurricane season and I-10/I-55 summer closing clusters compress MS coastal and metro schedules May–September',
+    isClusterParent: true,
+    priority: 27,
+    mapDescription:
+      'Mississippi inbound hub covering Gulf Coast (Gulfport, Ocean Springs), Jackson Metro (Madison, Flowood, Brandon, Ridgeland, Jackson), Hub Cities (Hattiesburg, Oxford), and Border Growth (Olive Branch).',
+  },
+  {
+    slug: 'gulfport-ms',
+    displayName: 'Gulfport',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['harrison-ms'],
+    lat: 30.3674,
+    lng: -89.0928,
+    defaultToZip: '39501',
+    topInboundOrigins: ['Louisiana', 'Alabama', 'Florida', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      '#1 in Mississippi · sunny coastal city · port sector · public beaches',
+    peakSeasonNote:
+      'Beach-corridor shuttle staging and hurricane-season scheduling affect Gulfport delivery windows',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Gulfport in Harrison County — #1 ranked Mississippi city with port-sector employment and public beach access.',
+  },
+  {
+    slug: 'madison-ms',
+    displayName: 'Madison',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['madison-ms'],
+    lat: 32.4618,
+    lng: -90.1151,
+    defaultToZip: '39110',
+    topInboundOrigins: ['Louisiana', 'Tennessee', 'Alabama', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Affluent suburb · A+ schools · premier Jackson bedroom community',
+    peakSeasonNote:
+      'Highland Colony Parkway estate driveways and Jackson Metro closing peaks affect Madison scheduling',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Madison in Madison County — affluent A+ school suburb and premier Jackson Metro bedroom community.',
+  },
+  {
+    slug: 'hattiesburg-ms',
+    displayName: 'Hattiesburg',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['forrest-ms'],
+    lat: 31.3271,
+    lng: -89.2903,
+    defaultToZip: '39401',
+    topInboundOrigins: ['Louisiana', 'Alabama', 'Texas', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$15,000',
+    },
+    inboundGrowthStat:
+      'Hub City · University of Southern Mississippi · diverse economy',
+    peakSeasonNote:
+      'USM semester closing peaks and I-59 corridor scheduling affect Hattiesburg delivery windows',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Hattiesburg in Forrest County — Hub City with USM university and diverse manufacturing economy.',
+  },
+  {
+    slug: 'ocean-springs-ms',
+    displayName: 'Ocean Springs',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['jackson-ms'],
+    lat: 30.4113,
+    lng: -88.8278,
+    defaultToZip: '39564',
+    topInboundOrigins: ['Louisiana', 'Alabama', 'Florida', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Artistic coastal community · walkable downtown · beaches',
+    peakSeasonNote:
+      'Historic-district narrow-street deliveries and Gulf Coast hurricane season affect Ocean Springs scheduling',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Ocean Springs in Jackson County — artistic coastal community with walkable downtown and beach access.',
+  },
+  {
+    slug: 'olive-branch-ms',
+    displayName: 'Olive Branch',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['desoto-ms'],
+    lat: 34.9618,
+    lng: -89.8295,
+    defaultToZip: '38654',
+    topInboundOrigins: ['Tennessee', 'Texas', 'California', 'Louisiana'],
+    avgCostRanges: {
+      studio: '$2,200–$5,200',
+      twoBR: '$4,000–$7,400',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,600–$14,600',
+    },
+    inboundGrowthStat:
+      'Fastest-growing boomtown · Memphis border · low taxes',
+    peakSeasonNote:
+      'I-55/I-69 Memphis-border traffic and DeSoto County closing peaks affect Olive Branch scheduling',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Olive Branch in DeSoto County — fastest-growing Memphis-border boomtown with low taxes.',
+  },
+  {
+    slug: 'oxford-ms',
+    displayName: 'Oxford',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['lafayette-ms'],
+    lat: 34.3665,
+    lng: -89.5192,
+    defaultToZip: '38655',
+    topInboundOrigins: ['Tennessee', 'Texas', 'Louisiana', 'Alabama'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Sophisticated Ole Miss college town · culinary scene · outdoor recreation',
+    peakSeasonNote:
+      'Ole Miss semester closing peaks and historic-square narrow-street deliveries affect Oxford scheduling',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Oxford in Lafayette County — sophisticated Ole Miss college town with culinary and outdoor recreation.',
+  },
+  {
+    slug: 'flowood-ms',
+    displayName: 'Flowood',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['rankin-ms'],
+    lat: 32.3096,
+    lng: -90.1389,
+    defaultToZip: '39232',
+    topInboundOrigins: ['Louisiana', 'Tennessee', 'Alabama', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$15,000',
+    },
+    inboundGrowthStat:
+      'Healthcare & commercial suburb · convenient to Jackson',
+    peakSeasonNote:
+      'Rankin County healthcare-corridor and Jackson Metro closing peaks affect Flowood scheduling',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Flowood in Rankin County — healthcare and commercial suburb convenient to Jackson employment.',
+  },
+  {
+    slug: 'brandon-ms',
+    displayName: 'Brandon',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['rankin-ms'],
+    lat: 32.2732,
+    lng: -89.9859,
+    defaultToZip: '39042',
+    topInboundOrigins: ['Louisiana', 'Tennessee', 'Alabama', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$15,000',
+    },
+    inboundGrowthStat:
+      'Peaceful lakeside family community · strong infrastructure',
+    peakSeasonNote:
+      'Rankin County lakeside cul-de-sac shuttle staging affects Brandon delivery windows',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Brandon in Rankin County — peaceful lakeside family community with strong infrastructure.',
+  },
+  {
+    slug: 'ridgeland-ms',
+    displayName: 'Ridgeland',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['madison-ms'],
+    lat: 32.4285,
+    lng: -90.1323,
+    defaultToZip: '39157',
+    topInboundOrigins: ['Louisiana', 'Tennessee', 'Alabama', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Upscale reservoir suburb · luxury developments · shopping',
+    peakSeasonNote:
+      'Reservoir-area estate driveways and Highland Village corridor peaks affect Ridgeland scheduling',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Ridgeland in Madison County — upscale reservoir suburb with luxury developments and shopping.',
+  },
+  {
+    slug: 'jackson-ms',
+    displayName: 'Jackson',
+    stateCode: 'MS',
+    stateName: 'Mississippi',
+    primaryCounties: ['hinds-ms'],
+    lat: 32.2988,
+    lng: -90.1848,
+    defaultToZip: '39201',
+    topInboundOrigins: ['Louisiana', 'Tennessee', 'Alabama', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$15,000',
+    },
+    inboundGrowthStat:
+      'State capital · historic cultural heart · government & healthcare',
+    peakSeasonNote:
+      'Downtown high-rise COI coordination and state-government relocation peaks affect Jackson scheduling',
+    clusterParent: 'mississippi',
+    priority: 27,
+    mapDescription:
+      'Jackson in Hinds County — state capital with government, healthcare, and historic cultural employment.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

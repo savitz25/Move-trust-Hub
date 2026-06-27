@@ -515,6 +515,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Bossier Parish tech-forward Shreveport spillover inbound guide',
     },
   },
+  mississippi: {
+    harrison: {
+      label: 'Moving to Gulfport',
+      href: '/moving-to/mississippi/gulfport-ms',
+      description: 'Harrison County #1 Mississippi Gulf Coast port and beach inbound guide',
+    },
+    jackson: {
+      label: 'Moving to Ocean Springs',
+      href: '/moving-to/mississippi/ocean-springs-ms',
+      description: 'Jackson County artistic coastal community inbound guide',
+    },
+    madison: {
+      label: 'Moving to Madison',
+      href: '/moving-to/mississippi/madison-ms',
+      description: 'Madison County affluent A+ school Jackson Metro suburb inbound guides',
+    },
+    rankin: {
+      label: 'Moving to Flowood',
+      href: '/moving-to/mississippi/flowood-ms',
+      description: 'Rankin County healthcare-commercial Jackson Metro suburb inbound guides',
+    },
+    hinds: {
+      label: 'Moving to Jackson',
+      href: '/moving-to/mississippi/jackson-ms',
+      description: 'Hinds County state capital government and healthcare inbound guide',
+    },
+    forrest: {
+      label: 'Moving to Hattiesburg',
+      href: '/moving-to/mississippi/hattiesburg-ms',
+      description: 'Forrest County Hub City USM university economy inbound guide',
+    },
+    lafayette: {
+      label: 'Moving to Oxford',
+      href: '/moving-to/mississippi/oxford-ms',
+      description: 'Lafayette County Ole Miss college-town inbound guide',
+    },
+    desoto: {
+      label: 'Moving to Olive Branch',
+      href: '/moving-to/mississippi/olive-branch-ms',
+      description: 'DeSoto County Memphis-border fastest-growing boomtown inbound guide',
+    },
+  },
   georgia: {
     fulton: {
       label: 'Moving to Johns Creek',
