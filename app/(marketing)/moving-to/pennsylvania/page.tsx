@@ -159,13 +159,38 @@ export default function PennsylvaniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Lehigh Valley — Live City Guides
+              Western Pennsylvania — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Bethlehem, Allentown, and Easton — Pennsylvania&apos;s fastest-growing NY/NJ spillover
-              corridor with arts, revitalization, and logistics employment.
+              Pittsburgh, Erie, and Johnstown — tech revival, Great Lakes waterfront, and among the
+              Northeast&apos;s most affordable riverfront communities.
             </p>
-            <CorridorCityGrid cities={content.lehighValleyCorridor} published={published} />
+            <CorridorCityGrid cities={content.westernPaCorridor} published={published} />
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+              Allegheny Mountains — Live City Guides
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Altoona — budget-friendly mountain living with Allegheny Mountains outdoor access.
+            </p>
+            <CorridorCityGrid cities={content.alleghenyMountainsCorridor} published={published} />
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+              Lehigh &amp; Northeast — Live City Guides
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Bethlehem and Scranton — Lehigh Valley innovation and historic Electric City
+              revitalization commutable to the East Coast.
+            </p>
+            <CorridorCityGrid cities={content.lehighNortheastCorridor} published={published} />
           </div>
         </section>
 
@@ -175,36 +200,10 @@ export default function PennsylvaniaClusterPage() {
               Central Pennsylvania — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Lancaster and Carlisle &amp; Mechanicsburg — top-ranked livability, Cumberland County
-              school quality, and affordable Central PA suburban growth.
+              Lancaster, Chambersburg, State College, and Williamsport — arts-and-farmland charm,
+              Cumberland Valley schools, Penn State economy, and north-central affordability.
             </p>
             <CorridorCityGrid cities={content.centralPaCorridor} published={published} />
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16 border-b">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Philadelphia Suburbs — Live City Guides
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              Phoenixville and Hatfield &amp; Spring City — reinvented arts corridors and affordable
-              suburban growth in the Philadelphia orbit.
-            </p>
-            <CorridorCityGrid cities={content.philadelphiaSuburbsCorridor} published={published} />
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16 border-b">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Major Metros — Live City Guides
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              Pittsburgh and Philadelphia — tech and robotics revival in the Steel City and walkable
-              East Coast urban living at lower cost than New York or Boston.
-            </p>
-            <CorridorCityGrid cities={content.majorMetrosCorridor} published={published} />
           </div>
         </section>
 

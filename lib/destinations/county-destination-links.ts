@@ -464,45 +464,55 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
     },
   },
   pennsylvania: {
-    northampton: {
-      label: 'Moving to the Lehigh Valley',
-      href: '/moving-to/pennsylvania/bethlehem-pa',
-      description: 'Bethlehem and Easton Lehigh Valley inbound moving guides',
+    allegheny: {
+      label: 'Moving to Pittsburgh',
+      href: '/moving-to/pennsylvania/pittsburgh-pa',
+      description: 'Pittsburgh tech, robotics, and healthcare corridor inbound guide',
     },
-    lehigh: {
-      label: 'Moving to Allentown',
-      href: '/moving-to/pennsylvania/allentown-pa',
-      description: 'Allentown revitalization and logistics corridor inbound guide',
+    erie: {
+      label: 'Moving to Erie',
+      href: '/moving-to/pennsylvania/erie-pa',
+      description: 'Erie County Great Lakes waterfront inbound moving guide',
+    },
+    cambria: {
+      label: 'Moving to Johnstown',
+      href: '/moving-to/pennsylvania/johnstown-pa',
+      description: 'Cambria County affordable riverfront inbound guide',
+    },
+    blair: {
+      label: 'Moving to Altoona',
+      href: '/moving-to/pennsylvania/altoona-pa',
+      description: 'Blair County Allegheny Mountains budget-friendly inbound guide',
+    },
+    northampton: {
+      label: 'Moving to Bethlehem',
+      href: '/moving-to/pennsylvania/bethlehem-pa',
+      description: 'Bethlehem Lehigh Valley innovation and arts inbound guide',
+    },
+    lackawanna: {
+      label: 'Moving to Scranton',
+      href: '/moving-to/pennsylvania/scranton-pa',
+      description: 'Scranton Electric City revitalization inbound guide',
     },
     lancaster: {
       label: 'Moving to Lancaster',
       href: '/moving-to/pennsylvania/lancaster-pa',
-      description: 'Lancaster County livability and food/arts inbound guide',
+      description: 'Lancaster County arts-and-farmland inbound guide',
     },
-    cumberland: {
-      label: 'Moving to Carlisle & Mechanicsburg',
-      href: '/moving-to/pennsylvania/carlisle-mechanicsburg-pa',
-      description: 'Cumberland County Central PA suburban growth inbound guide',
+    franklin: {
+      label: 'Moving to Chambersburg',
+      href: '/moving-to/pennsylvania/chambersburg-pa',
+      description: 'Franklin County Cumberland Valley inbound guide',
     },
-    chester: {
-      label: 'Moving to Chester County suburbs',
-      href: '/moving-to/pennsylvania/phoenixville-pa',
-      description: 'Phoenixville and Spring City Philadelphia-orbit inbound guides',
+    centre: {
+      label: 'Moving to State College',
+      href: '/moving-to/pennsylvania/state-college-pa',
+      description: 'Centre County Penn State college-town inbound guide',
     },
-    montgomery: {
-      label: 'Moving to Hatfield & Spring City',
-      href: '/moving-to/pennsylvania/hatfield-spring-city-pa',
-      description: 'Montgomery County affordable Philadelphia-orbit inbound guide',
-    },
-    allegheny: {
-      label: 'Moving to Pittsburgh',
-      href: '/moving-to/pennsylvania/pittsburgh-pa',
-      description: 'Pittsburgh tech and healthcare corridor inbound guide',
-    },
-    philadelphia: {
-      label: 'Moving to Philadelphia',
-      href: '/moving-to/pennsylvania/philadelphia-pa',
-      description: 'Philadelphia East Coast urban inbound moving guide',
+    lycoming: {
+      label: 'Moving to Williamsport',
+      href: '/moving-to/pennsylvania/williamsport-pa',
+      description: 'Lycoming County north-central PA affordability inbound guide',
     },
   },
   'west-virginia': {

@@ -125,15 +125,16 @@ import { charlestonWvContent } from '@/lib/destinations/content/charleston-wv';
 import { hurricaneTeaysValleyWvContent } from '@/lib/destinations/content/hurricane-teays-valley-wv';
 import { lewisburgWvContent } from '@/lib/destinations/content/lewisburg-wv';
 import { elkinsWvContent } from '@/lib/destinations/content/elkins-wv';
-import { bethlehemPaContent } from '@/lib/destinations/content/bethlehem-pa';
-import { allentownPaContent } from '@/lib/destinations/content/allentown-pa';
-import { eastonPaContent } from '@/lib/destinations/content/easton-pa';
-import { lancasterPaContent } from '@/lib/destinations/content/lancaster-pa';
-import { carlisleMechanicsburgPaContent } from '@/lib/destinations/content/carlisle-mechanicsburg-pa';
-import { phoenixvillePaContent } from '@/lib/destinations/content/phoenixville-pa';
-import { hatfieldSpringCityPaContent } from '@/lib/destinations/content/hatfield-spring-city-pa';
 import { pittsburghPaContent } from '@/lib/destinations/content/pittsburgh-pa';
-import { philadelphiaPaContent } from '@/lib/destinations/content/philadelphia-pa';
+import { williamsportPaContent } from '@/lib/destinations/content/williamsport-pa';
+import { altoonaPaContent } from '@/lib/destinations/content/altoona-pa';
+import { eriePaContent } from '@/lib/destinations/content/erie-pa';
+import { bethlehemPaContent } from '@/lib/destinations/content/bethlehem-pa';
+import { chambersburgPaContent } from '@/lib/destinations/content/chambersburg-pa';
+import { lancasterPaContent } from '@/lib/destinations/content/lancaster-pa';
+import { johnstownPaContent } from '@/lib/destinations/content/johnstown-pa';
+import { stateCollegePaContent } from '@/lib/destinations/content/state-college-pa';
+import { scrantonPaContent } from '@/lib/destinations/content/scranton-pa';
 import { jerseyCityNjContent } from '@/lib/destinations/content/jersey-city-nj';
 import { hobokenNjContent } from '@/lib/destinations/content/hoboken-nj';
 import { cliftonNjContent } from '@/lib/destinations/content/clifton-nj';
@@ -281,15 +282,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'hurricane-teays-valley-wv': hurricaneTeaysValleyWvContent,
   'lewisburg-wv': lewisburgWvContent,
   'elkins-wv': elkinsWvContent,
-  'bethlehem-pa': bethlehemPaContent,
-  'allentown-pa': allentownPaContent,
-  'easton-pa': eastonPaContent,
-  'lancaster-pa': lancasterPaContent,
-  'carlisle-mechanicsburg-pa': carlisleMechanicsburgPaContent,
-  'phoenixville-pa': phoenixvillePaContent,
-  'hatfield-spring-city-pa': hatfieldSpringCityPaContent,
   'pittsburgh-pa': pittsburghPaContent,
-  'philadelphia-pa': philadelphiaPaContent,
+  'williamsport-pa': williamsportPaContent,
+  'altoona-pa': altoonaPaContent,
+  'erie-pa': eriePaContent,
+  'bethlehem-pa': bethlehemPaContent,
+  'chambersburg-pa': chambersburgPaContent,
+  'lancaster-pa': lancasterPaContent,
+  'johnstown-pa': johnstownPaContent,
+  'state-college-pa': stateCollegePaContent,
+  'scranton-pa': scrantonPaContent,
   'jersey-city-nj': jerseyCityNjContent,
   'hoboken-nj': hobokenNjContent,
   'clifton-nj': cliftonNjContent,

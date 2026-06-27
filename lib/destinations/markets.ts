@@ -3244,197 +3244,22 @@ export const markets: Market[] = [
     primaryCounties: [],
     lat: 40.9,
     lng: -77.8,
-    defaultToZip: '18101',
-    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
-    avgCostRanges: {
-      studio: '$2,500–$5,200',
-      twoBR: '$4,600–$7,800',
-      threeBR: '$6,800–$11,200',
-      fourBR: '$9,600–$15,800',
-    },
-    inboundGrowthStat:
-      'Lehigh Valley NY/NJ spillover · Central PA affordability · Philly suburbs · Pittsburgh tech revival',
-    peakSeasonNote:
-      'Summer Northeast corridor peak season and Philly/NoVA spillover compress carrier schedules May–September',
-    isClusterParent: true,
-    priority: 15,
-    mapDescription:
-      'Pennsylvania inbound hub covering Lehigh Valley (Bethlehem, Allentown, Easton), Central PA (Lancaster, Carlisle), Philadelphia suburbs (Phoenixville, Hatfield), and major metros (Pittsburgh, Philadelphia).',
-  },
-  {
-    slug: 'bethlehem-pa',
-    displayName: 'Bethlehem',
-    stateCode: 'PA',
-    stateName: 'Pennsylvania',
-    primaryCounties: ['northampton-pa'],
-    lat: 40.6259,
-    lng: -75.3705,
-    defaultToZip: '18015',
-    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
-    avgCostRanges: {
-      studio: '$2,600–$5,300',
-      twoBR: '$4,800–$7,900',
-      threeBR: '$7,000–$11,400',
-      fourBR: '$10,000–$15,600',
-    },
-    inboundGrowthStat:
-      'Lehigh Valley hotspot · SteelStacks arts · Lehigh University · NY/NJ inbound growth',
-    peakSeasonNote:
-      'Historic South Side and SteelStacks-area deliveries may need shuttle trucks on narrow streets',
-    clusterParent: 'pennsylvania',
-    priority: 15,
-    mapDescription:
-      'Bethlehem in Northampton County — Lehigh Valley arts and university corridor with strong NY/NJ spillover.',
-  },
-  {
-    slug: 'allentown-pa',
-    displayName: 'Allentown',
-    stateCode: 'PA',
-    stateName: 'Pennsylvania',
-    primaryCounties: ['lehigh-pa'],
-    lat: 40.6084,
-    lng: -75.4902,
-    defaultToZip: '18101',
-    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
-    avgCostRanges: {
-      studio: '$2,500–$5,200',
-      twoBR: '$4,600–$7,700',
-      threeBR: '$6,800–$11,000',
-      fourBR: '$9,600–$15,200',
-    },
-    inboundGrowthStat:
-      'Major revitalization · logistics & healthcare jobs · PA third-largest city · new housing',
-    peakSeasonNote:
-      'Downtown loft and Center City high-rise COI requirements common in revitalized districts',
-    clusterParent: 'pennsylvania',
-    priority: 15,
-    mapDescription:
-      'Allentown in Lehigh County — revitalized third-largest PA city with logistics and healthcare employment.',
-  },
-  {
-    slug: 'easton-pa',
-    displayName: 'Easton',
-    stateCode: 'PA',
-    stateName: 'Pennsylvania',
-    primaryCounties: ['northampton-pa'],
-    lat: 40.6884,
-    lng: -75.2207,
-    defaultToZip: '18042',
-    topInboundOrigins: ['New Jersey', 'New York', 'Maryland', 'Virginia'],
-    avgCostRanges: {
-      studio: '$2,500–$5,100',
-      twoBR: '$4,600–$7,600',
-      threeBR: '$6,800–$10,800',
-      fourBR: '$9,600–$15,000',
-    },
-    inboundGrowthStat:
-      'Vibrant culinary scene · historic charm · NJ border proximity · walkable downtown',
-    peakSeasonNote:
-      'Centre Square historic-district narrow streets often require shuttle staging from nearby lots',
-    clusterParent: 'pennsylvania',
-    priority: 15,
-    mapDescription:
-      'Easton in Northampton County — historic Lehigh Valley river town with NJ spillover and culinary appeal.',
-  },
-  {
-    slug: 'lancaster-pa',
-    displayName: 'Lancaster',
-    stateCode: 'PA',
-    stateName: 'Pennsylvania',
-    primaryCounties: ['lancaster-pa'],
-    lat: 40.0379,
-    lng: -76.3055,
     defaultToZip: '17602',
     topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
     avgCostRanges: {
-      studio: '$2,400–$4,900',
-      twoBR: '$4,400–$7,300',
-      threeBR: '$6,400–$10,200',
-      fourBR: '$9,200–$14,400',
+      studio: '$2,200–$5,200',
+      twoBR: '$4,000–$7,800',
+      threeBR: '$5,800–$11,200',
+      fourBR: '$8,200–$15,800',
     },
     inboundGrowthStat:
-      'Top-ranked livability · food & arts culture · Amish Country proximity · strong inbound ratio',
+      'Western PA tech · Central PA affordability · Lehigh Valley growth · Northeast Electric City revival',
     peakSeasonNote:
-      'Lancaster City historic rowhouses and suburban HOA communities each carry distinct accessorial needs',
-    clusterParent: 'pennsylvania',
+      'Summer Northeast corridor peak season and Penn State move-in windows compress carrier schedules May–September',
+    isClusterParent: true,
     priority: 15,
     mapDescription:
-      'Lancaster in Lancaster County — Central PA livability leader with food, arts, and farmland lifestyle.',
-  },
-  {
-    slug: 'carlisle-mechanicsburg-pa',
-    displayName: 'Carlisle & Mechanicsburg',
-    stateCode: 'PA',
-    stateName: 'Pennsylvania',
-    primaryCounties: ['cumberland-pa'],
-    lat: 40.2015,
-    lng: -77.1892,
-    defaultToZip: '17013',
-    topInboundOrigins: ['Maryland', 'Virginia', 'New Jersey', 'New York'],
-    avgCostRanges: {
-      studio: '$2,300–$4,800',
-      twoBR: '$4,200–$7,100',
-      threeBR: '$6,200–$9,800',
-      fourBR: '$8,800–$13,800',
-    },
-    inboundGrowthStat:
-      'Fast-growing Cumberland County · top schools · affordable · government & healthcare jobs',
-    peakSeasonNote:
-      'Army War College and Harrisburg West Shore corporate transfers peak May–August',
-    clusterParent: 'pennsylvania',
-    priority: 15,
-    mapDescription:
-      'Carlisle and Mechanicsburg in Cumberland County — fast-growing Central PA suburbs with top schools.',
-  },
-  {
-    slug: 'phoenixville-pa',
-    displayName: 'Phoenixville',
-    stateCode: 'PA',
-    stateName: 'Pennsylvania',
-    primaryCounties: ['chester-pa'],
-    lat: 40.1304,
-    lng: -75.5149,
-    defaultToZip: '19460',
-    topInboundOrigins: ['New Jersey', 'New York', 'Maryland', 'Delaware'],
-    avgCostRanges: {
-      studio: '$2,700–$5,500',
-      twoBR: '$5,000–$8,200',
-      threeBR: '$7,300–$11,600',
-      fourBR: '$10,400–$16,200',
-    },
-    inboundGrowthStat:
-      'Reinvented dining/brewery/arts hub · Chester County lifestyle · Colonial Theatre corridor',
-    peakSeasonNote:
-      'Bridge Street historic district and converted-factory lofts may need elevator and shuttle coordination',
-    clusterParent: 'pennsylvania',
-    priority: 15,
-    mapDescription:
-      'Phoenixville in Chester County — reinvented brewery and arts corridor in the Philadelphia suburbs.',
-  },
-  {
-    slug: 'hatfield-spring-city-pa',
-    displayName: 'Hatfield & Spring City',
-    stateCode: 'PA',
-    stateName: 'Pennsylvania',
-    primaryCounties: ['montgomery-pa', 'chester-pa'],
-    lat: 40.2793,
-    lng: -75.2993,
-    defaultToZip: '19440',
-    topInboundOrigins: ['New Jersey', 'New York', 'Maryland', 'Delaware'],
-    avgCostRanges: {
-      studio: '$2,600–$5,400',
-      twoBR: '$4,800–$8,000',
-      threeBR: '$7,000–$11,200',
-      fourBR: '$10,000–$15,600',
-    },
-    inboundGrowthStat:
-      'Affordable Philadelphia-orbit suburban growth · strong schools · Route 309 corridor',
-    peakSeasonNote:
-      'Montgomery and Chester County HOA subdivisions often require move-in certificates and COI paperwork',
-    clusterParent: 'pennsylvania',
-    priority: 15,
-    mapDescription:
-      'Hatfield and Spring City — affordable suburban growth in the Philadelphia orbit along Route 309.',
+      'Pennsylvania inbound hub covering Western PA (Pittsburgh, Erie, Johnstown), Allegheny Mountains (Altoona), Lehigh & Northeast (Bethlehem, Scranton), and Central PA (Lancaster, Chambersburg, State College, Williamsport).',
   },
   {
     slug: 'pittsburgh-pa',
@@ -3453,7 +3278,7 @@ export const markets: Market[] = [
       fourBR: '$9,200–$14,400',
     },
     inboundGrowthStat:
-      'Tech/robotics/healthcare boom · affordable housing · cultural revival · CMU & UPMC',
+      'Tech/robotics/healthcare hub · affordable housing · cultural revival · neighborhood feel',
     peakSeasonNote:
       'Hillside Lawrenceville and South Side Slopes properties often require long carries and shuttle trucks',
     clusterParent: 'pennsylvania',
@@ -3462,29 +3287,229 @@ export const markets: Market[] = [
       'Pittsburgh in Allegheny County — tech, robotics, and healthcare hub with affordable urban revival.',
   },
   {
-    slug: 'philadelphia-pa',
-    displayName: 'Philadelphia',
+    slug: 'williamsport-pa',
+    displayName: 'Williamsport',
     stateCode: 'PA',
     stateName: 'Pennsylvania',
-    primaryCounties: ['philadelphia-pa'],
-    lat: 39.9526,
-    lng: -75.1652,
-    defaultToZip: '19103',
+    primaryCounties: ['lycoming-pa'],
+    lat: 41.2412,
+    lng: -77.0011,
+    defaultToZip: '17701',
     topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
     avgCostRanges: {
-      studio: '$2,800–$5,800',
-      twoBR: '$5,200–$8,600',
-      threeBR: '$7,600–$11,800',
-      fourBR: '$10,800–$16,800',
+      studio: '$2,200–$4,600',
+      twoBR: '$4,000–$6,800',
+      threeBR: '$5,800–$9,200',
+      fourBR: '$8,200–$12,800',
     },
     inboundGrowthStat:
-      'Major East Coast city · walkable neighborhoods · cheaper than NY/Boston · young professionals',
+      'Low commute times · Little League fame · affordable north-central PA · Susquehanna corridor',
     peakSeasonNote:
-      'Rowhouse narrow-street shuttles and Center City high-rise COI fees are standard Philly accessorials',
+      'Little League World Series traffic windows affect late-summer delivery scheduling',
     clusterParent: 'pennsylvania',
     priority: 15,
     mapDescription:
-      'Philadelphia — walkable East Coast metro with arts, healthcare, and finance at lower cost than NY/Boston.',
+      'Williamsport in Lycoming County — affordable north-central PA with short commutes and Little League heritage.',
+  },
+  {
+    slug: 'altoona-pa',
+    displayName: 'Altoona',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['blair-pa'],
+    lat: 40.5187,
+    lng: -78.3947,
+    defaultToZip: '16601',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,000–$4,200',
+      twoBR: '$3,600–$6,200',
+      threeBR: '$5,200–$8,400',
+      fourBR: '$7,400–$11,600',
+    },
+    inboundGrowthStat:
+      'Mountain setting · extremely budget-friendly · Allegheny Mountains access · I-99 corridor',
+    peakSeasonNote:
+      'Allegheny Mountain hillside properties and Horseshoe Curve-area routing may require shuttle staging',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Altoona in Blair County — budget-friendly mountain city with Allegheny Mountains outdoor access.',
+  },
+  {
+    slug: 'erie-pa',
+    displayName: 'Erie',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['erie-pa'],
+    lat: 42.1292,
+    lng: -80.0851,
+    defaultToZip: '16501',
+    topInboundOrigins: ['New York', 'Ohio', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,100–$4,400',
+      twoBR: '$3,800–$6,500',
+      threeBR: '$5,600–$8,800',
+      fourBR: '$8,000–$12,400',
+    },
+    inboundGrowthStat:
+      'Lakeside maritime community · Great Lakes access · affordable waterfront · Presque Isle',
+    peakSeasonNote:
+      'Presque Isle summer tourism and lakeshore condo COI requirements affect peak-season scheduling',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Erie on Lake Erie — affordable Great Lakes waterfront city with maritime community appeal.',
+  },
+  {
+    slug: 'bethlehem-pa',
+    displayName: 'Bethlehem',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['northampton-pa'],
+    lat: 40.6259,
+    lng: -75.3705,
+    defaultToZip: '18015',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,600–$5,300',
+      twoBR: '$4,800–$7,900',
+      threeBR: '$7,000–$11,400',
+      fourBR: '$10,000–$15,600',
+    },
+    inboundGrowthStat:
+      'Lehigh Valley innovation · historic downtown · arts scene · job growth · NY/NJ spillover',
+    peakSeasonNote:
+      'Historic South Side and SteelStacks-area deliveries may need shuttle trucks on narrow streets',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Bethlehem in Northampton County — Lehigh Valley arts and university corridor with strong NY/NJ spillover.',
+  },
+  {
+    slug: 'scranton-pa',
+    displayName: 'Scranton',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['lackawanna-pa'],
+    lat: 41.409,
+    lng: -75.6624,
+    defaultToZip: '18503',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,200–$4,600',
+      twoBR: '$4,000–$6,800',
+      threeBR: '$5,800–$9,200',
+      fourBR: '$8,200–$12,800',
+    },
+    inboundGrowthStat:
+      'Historic Electric City · affordable · up-and-coming · commutable to East Coast',
+    peakSeasonNote:
+      'Downtown revitalization high-rises and historic-district shuttle trucks common on narrow streets',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Scranton in Lackawanna County — historic Electric City with affordable inventory and NY/NJ spillover.',
+  },
+  {
+    slug: 'lancaster-pa',
+    displayName: 'Lancaster',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['lancaster-pa'],
+    lat: 40.0379,
+    lng: -76.3055,
+    defaultToZip: '17602',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,400–$4,900',
+      twoBR: '$4,400–$7,300',
+      threeBR: '$6,400–$10,200',
+      fourBR: '$9,200–$14,400',
+    },
+    inboundGrowthStat:
+      'Arts-centric downtown · Amish farmland · food scene · historic charm · strong livability',
+    peakSeasonNote:
+      'Lancaster City historic rowhouses and suburban HOA communities each carry distinct accessorial needs',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Lancaster in Lancaster County — Central PA livability leader with food, arts, and farmland lifestyle.',
+  },
+  {
+    slug: 'chambersburg-pa',
+    displayName: 'Chambersburg',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['franklin-pa'],
+    lat: 39.9376,
+    lng: -77.6611,
+    defaultToZip: '17201',
+    topInboundOrigins: ['Maryland', 'Virginia', 'New Jersey', 'New York'],
+    avgCostRanges: {
+      studio: '$2,200–$4,600',
+      twoBR: '$4,000–$6,800',
+      threeBR: '$5,800–$9,200',
+      fourBR: '$8,200–$12,800',
+    },
+    inboundGrowthStat:
+      'Cumberland Valley · agricultural/logistics · strong schools · Maryland border proximity',
+    peakSeasonNote:
+      'I-81 logistics corridor traffic and Cumberland Valley rural driveways may require shuttle staging',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Chambersburg in Franklin County — Cumberland Valley hub with strong schools and I-81 logistics.',
+  },
+  {
+    slug: 'state-college-pa',
+    displayName: 'State College',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['centre-pa'],
+    lat: 40.7934,
+    lng: -77.86,
+    defaultToZip: '16801',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,400–$5,000',
+      twoBR: '$4,400–$7,400',
+      threeBR: '$6,400–$10,200',
+      fourBR: '$9,200–$14,400',
+    },
+    inboundGrowthStat:
+      'Penn State University · educated population · robust college-town economy',
+    peakSeasonNote:
+      'Late-August Penn State move-in windows and apartment-tower COI requirements compress schedules',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'State College in Centre County — Penn State Happy Valley with university and research employment.',
+  },
+  {
+    slug: 'johnstown-pa',
+    displayName: 'Johnstown',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['cambria-pa'],
+    lat: 40.3267,
+    lng: -78.922,
+    defaultToZip: '15901',
+    topInboundOrigins: ['New York', 'Ohio', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$1,900–$4,000',
+      twoBR: '$3,400–$5,800',
+      threeBR: '$5,000–$7,800',
+      fourBR: '$7,200–$11,200',
+    },
+    inboundGrowthStat:
+      'Extremely affordable · riverfront living · resilient community · Laurel Highlands access',
+    peakSeasonNote:
+      'Conemaugh valley hillside properties and Inclined Plane-area streets may require shuttle trucks',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Johnstown in Cambria County — highly affordable riverfront city with resilient community appeal.',
   },
   {
     slug: 'new-jersey',
