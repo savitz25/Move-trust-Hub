@@ -473,6 +473,43 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  alaska: {
+    anchorage: {
+      label: 'Moving to Anchorage',
+      href: '/moving-to/alaska/anchorage-ak',
+      description: 'Anchorage Borough largest-city economic and defense hub inbound guide',
+    },
+    'matanuska-susitna': {
+      label: 'Moving to Wasilla & Palmer',
+      href: '/moving-to/alaska/wasilla-ak',
+      description: 'Mat-Su Valley fastest-growing family corridor inbound guides',
+    },
+    'fairbanks-north-star': {
+      label: 'Moving to Fairbanks',
+      href: '/moving-to/alaska/fairbanks-ak',
+      description: 'Interior Alaska university and Northern Lights inbound guide',
+    },
+    juneau: {
+      label: 'Moving to Juneau',
+      href: '/moving-to/alaska/juneau-ak',
+      description: 'Alaska state capital island-community inbound guide',
+    },
+    'kenai-peninsula': {
+      label: 'Moving to Soldotna & Kenai',
+      href: '/moving-to/alaska/soldotna-ak',
+      description: 'Kenai Peninsula fishing and recreation inbound guides',
+    },
+    sitka: {
+      label: 'Moving to Sitka',
+      href: '/moving-to/alaska/sitka-ak',
+      description: 'Sitka maritime heritage safest-city inbound guide',
+    },
+    'ketchikan-gateway': {
+      label: 'Moving to Ketchikan',
+      href: '/moving-to/alaska/ketchikan-ak',
+      description: 'Ketchikan Inside Passage rainforest inbound guide',
+    },
+  },
   louisiana: {
     jefferson: {
       label: 'Moving to Metairie',
