@@ -1,5 +1,13 @@
 import type { RouteGuideExtendedContent } from '@/lib/resources/routes/types';
 import { californiaToTexasContent } from '@/lib/resources/routes/california-to-texas';
+import { illinoisToGeorgiaContent } from '@/lib/resources/routes/illinois-to-georgia';
+import { illinoisToLouisianaContent } from '@/lib/resources/routes/illinois-to-louisiana';
+import { illinoisToFloridaContent } from '@/lib/resources/routes/illinois-to-florida';
+import { illinoisToTexasContent } from '@/lib/resources/routes/illinois-to-texas';
+import { illinoisToNorthCarolinaContent } from '@/lib/resources/routes/illinois-to-north-carolina';
+import { illinoisToSouthCarolinaContent } from '@/lib/resources/routes/illinois-to-south-carolina';
+import { illinoisToArizonaContent } from '@/lib/resources/routes/illinois-to-arizona';
+import { illinoisToTennesseeContent } from '@/lib/resources/routes/illinois-to-tennessee';
 import { losAngelesToDallasFortWorthContent } from '@/lib/resources/routes/los-angeles-to-dallas-fort-worth';
 import { massachusettsToFloridaContent } from '@/lib/resources/routes/massachusetts-to-florida';
 import { massachusettsToGeorgiaContent } from '@/lib/resources/routes/massachusetts-to-georgia';
@@ -28,6 +36,12 @@ import { sanFranciscoToAustinContent } from '@/lib/resources/routes/san-francisc
 
 const extendedRouteGuides: Record<string, RouteGuideExtendedContent> = {
   'california-to-texas': californiaToTexasContent,
+  'illinois-to-georgia': illinoisToGeorgiaContent,
+  'illinois-to-louisiana': illinoisToLouisianaContent,
+  'illinois-to-florida': illinoisToFloridaContent,
+  'illinois-to-texas': illinoisToTexasContent,
+  'illinois-to-north-carolina': illinoisToNorthCarolinaContent,
+  'illinois-to-south-carolina': illinoisToSouthCarolinaContent,
   'los-angeles-to-dallas-fort-worth': losAngelesToDallasFortWorthContent,
   'san-francisco-to-austin': sanFranciscoToAustinContent,
   'san-diego-to-houston': sanDiegoToHoustonContent,
@@ -52,6 +66,8 @@ const extendedRouteGuides: Record<string, RouteGuideExtendedContent> = {
   'minnesota-to-north-carolina': minnesotaToNorthCarolinaContent,
   'minnesota-to-georgia': minnesotaToGeorgiaContent,
   'minnesota-to-florida': minnesotaToFloridaContent,
+  'illinois-to-arizona': illinoisToArizonaContent,
+  'illinois-to-tennessee': illinoisToTennesseeContent,
   'new-york-to-texas': newYorkToTexasContent,
 };
 
