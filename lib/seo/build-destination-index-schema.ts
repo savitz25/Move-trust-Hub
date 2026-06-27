@@ -442,6 +442,66 @@ export function buildNewYorkClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/new-hampshire cluster parent */
+export function buildNewHampshireClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const newHampshireHubs = getClusterMarkets('new-hampshire').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'New Hampshire', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'New Hampshire',
+          addressRegion: 'NH',
+        },
+        mainEntity: { '@id': `${canonical}#new-hampshire-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#new-hampshire-hub-list`,
+        name: 'New Hampshire City Moving Guides',
+        numberOfItems: newHampshireHubs.length,
+        itemListElement: newHampshireHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, NH`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/vermont cluster parent */
 export function buildVermontClusterSchemaGraph(
   title: string,

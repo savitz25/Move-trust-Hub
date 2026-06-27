@@ -4886,6 +4886,281 @@ export const markets: Market[] = [
     mapDescription:
       'Brattleboro in Windham County — artsy southern gateway on the Connecticut River.',
   },
+  {
+    slug: 'new-hampshire',
+    displayName: 'New Hampshire',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: [],
+    lat: 43.5,
+    lng: -71.5,
+    defaultToZip: '03301',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,200–$10,400',
+      threeBR: '$7,600–$13,800',
+      fourBR: '$11,000–$19,200',
+    },
+    inboundGrowthStat:
+      'No income or sales tax · Boston proximity · strong schools · coastal to mountain lifestyle',
+    peakSeasonNote:
+      'Massachusetts-border closing clusters and summer Seacoast tourism peaks compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 21,
+    mapDescription:
+      'New Hampshire inbound hub covering Southern Border (Nashua, Bedford, Merrimack, Amherst), Manchester Metro, Seacoast (Portsmouth, Dover), Capital Region (Concord), and Upper Valley (Hanover, Lebanon).',
+  },
+  {
+    slug: 'nashua-nh',
+    displayName: 'Nashua',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['hillsborough-nh'],
+    lat: 42.7654,
+    lng: -71.4676,
+    defaultToZip: '03060',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,500',
+      twoBR: '$5,500–$9,800',
+      threeBR: '$8,000–$13,200',
+      fourBR: '$11,800–$18,500',
+    },
+    inboundGrowthStat:
+      '#1 ranked NH city · MA border · Boston commuter · historic downtown',
+    peakSeasonNote:
+      'Everett Turnpike commuter peaks and historic downtown shuttle staging affect Nashua scheduling',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Nashua in Hillsborough County — #1 ranked border city with Boston commuter access and historic downtown.',
+  },
+  {
+    slug: 'bedford-nh',
+    displayName: 'Bedford',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['hillsborough-nh'],
+    lat: 42.9465,
+    lng: -71.5159,
+    defaultToZip: '03110',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,400',
+      threeBR: '$8,400–$13,800',
+      fourBR: '$12,400–$19,200',
+    },
+    inboundGrowthStat:
+      'Prestigious affluent suburb · top schools · high incomes',
+    peakSeasonNote:
+      'Cul-de-sac estate driveways and Everett Turnpike corridor traffic affect Bedford delivery scheduling',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Bedford in Hillsborough County — affluent suburb with top-rated schools along the Manchester–Boston corridor.',
+  },
+  {
+    slug: 'merrimack-nh',
+    displayName: 'Merrimack',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['hillsborough-nh'],
+    lat: 42.8651,
+    lng: -71.4934,
+    defaultToZip: '03054',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$2,900–$6,300',
+      twoBR: '$5,300–$9,500',
+      threeBR: '$7,700–$12,600',
+      fourBR: '$11,000–$17,400',
+    },
+    inboundGrowthStat:
+      'Fast-growing suburban hub · Everett Turnpike · between Nashua and Manchester',
+    peakSeasonNote:
+      'Everett Turnpike corridor commuter peaks and suburban cul-de-sac shuttle staging common',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Merrimack in Hillsborough County — fast-growing suburban hub between Nashua and Manchester.',
+  },
+  {
+    slug: 'amherst-nh',
+    displayName: 'Amherst',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['hillsborough-nh'],
+    lat: 42.8623,
+    lng: -71.6245,
+    defaultToZip: '03031',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,500',
+      twoBR: '$5,500–$9,800',
+      threeBR: '$8,000–$13,000',
+      fourBR: '$11,500–$18,000',
+    },
+    inboundGrowthStat:
+      'Historic tree-lined New England town · excellent schools · rural-suburban prestige',
+    peakSeasonNote:
+      'Rural-suburban long driveways and southern-border closing clusters affect Amherst scheduling',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Amherst in Hillsborough County — prestigious rural-suburban town with top school reputation.',
+  },
+  {
+    slug: 'manchester-nh',
+    displayName: 'Manchester',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['hillsborough-nh'],
+    lat: 42.9956,
+    lng: -71.4548,
+    defaultToZip: '03101',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$2,900–$6,200',
+      twoBR: '$5,400–$9,400',
+      threeBR: '$7,800–$12,800',
+      fourBR: '$11,400–$17,800',
+    },
+    inboundGrowthStat:
+      'Largest NH city · Millyard revitalization · tech & healthcare growth',
+    peakSeasonNote:
+      'Millyard loft COI filings and downtown parking permits standard on Manchester deliveries',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Manchester in Hillsborough County — largest city with Millyard tech corridor and airport connectivity.',
+  },
+  {
+    slug: 'portsmouth-nh',
+    displayName: 'Portsmouth',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['rockingham-nh'],
+    lat: 43.0718,
+    lng: -70.7626,
+    defaultToZip: '03801',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Upscale coastal seaport · historic Market Square · premium Seacoast living',
+    peakSeasonNote:
+      'Historic-district narrow lanes and summer Seacoast tourism peaks affect Portsmouth scheduling',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Portsmouth in Rockingham County — upscale historic seaport with Market Square cultural hub.',
+  },
+  {
+    slug: 'dover-nh',
+    displayName: 'Dover',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['strafford-nh'],
+    lat: 43.1979,
+    lng: -70.8737,
+    defaultToZip: '03820',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,400',
+      twoBR: '$5,400–$9,600',
+      threeBR: '$7,800–$12,800',
+      fourBR: '$11,200–$17,600',
+    },
+    inboundGrowthStat:
+      'Fast-growing riverside town · Amtrak access · trendy downtown',
+    peakSeasonNote:
+      'Downtown walk-up constraints and UNH corridor summer move-in peaks affect Dover scheduling',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Dover in Strafford County — fast-growing Seacoast corridor town with Amtrak and downtown revival.',
+  },
+  {
+    slug: 'concord-nh',
+    displayName: 'Concord',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['merrimack-nh'],
+    lat: 43.2081,
+    lng: -71.5376,
+    defaultToZip: '03301',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$6,000',
+      twoBR: '$5,200–$9,200',
+      threeBR: '$7,600–$12,400',
+      fourBR: '$11,000–$17,400',
+    },
+    inboundGrowthStat:
+      'Walkable state capital · stable government jobs · arts scene',
+    peakSeasonNote:
+      'State Street historic-district parking and legislative session turnover affect Concord scheduling',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Concord in Merrimack County — walkable state capital with government and healthcare employment.',
+  },
+  {
+    slug: 'hanover-nh',
+    displayName: 'Hanover',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['grafton-nh'],
+    lat: 43.7022,
+    lng: -72.2896,
+    defaultToZip: '03755',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$3,100–$6,600',
+      twoBR: '$5,600–$9,900',
+      threeBR: '$8,100–$13,200',
+      fourBR: '$11,600–$18,200',
+    },
+    inboundGrowthStat:
+      'Dartmouth College town · Upper Valley prestige · I-89 corridor',
+    peakSeasonNote:
+      'College semester move-in windows and I-89 winter scheduling affect Hanover deliveries',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Hanover in Grafton County — Dartmouth College intellectual enclave in the Upper Valley.',
+  },
+  {
+    slug: 'lebanon-nh',
+    displayName: 'Lebanon',
+    stateCode: 'NH',
+    stateName: 'New Hampshire',
+    primaryCounties: ['grafton-nh'],
+    lat: 43.6459,
+    lng: -72.2512,
+    defaultToZip: '03766',
+    topInboundOrigins: ['Massachusetts', 'New York', 'Connecticut', 'California'],
+    avgCostRanges: {
+      studio: '$3,100–$6,600',
+      twoBR: '$5,600–$9,900',
+      threeBR: '$8,100–$13,200',
+      fourBR: '$11,600–$18,200',
+    },
+    inboundGrowthStat:
+      'Dartmouth-Hitchcock medical hub · tech & healthcare center · Vermont border',
+    peakSeasonNote:
+      'Medical-center relocation peaks and I-89 corridor winter weather affect Lebanon scheduling',
+    clusterParent: 'new-hampshire',
+    priority: 21,
+    mapDescription:
+      'Lebanon in Grafton County — Dartmouth-Hitchcock medical and tech hub on the Vermont border.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
