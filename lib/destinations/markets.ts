@@ -4061,6 +4061,281 @@ export const markets: Market[] = [
     mapDescription:
       'Lindenhurst in Suffolk County — classic Long Island maritime village with beaches and brewery revival.',
   },
+  {
+    slug: 'massachusetts',
+    displayName: 'Massachusetts',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: [],
+    lat: 42.4,
+    lng: -71.4,
+    defaultToZip: '02139',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$14,200',
+      fourBR: '$12,200–$19,800',
+    },
+    inboundGrowthStat:
+      'Greater Boston innovation · elite schools · MBTA transit · Worcester affordability',
+    peakSeasonNote:
+      'September academic move-in windows and summer tri-state peak season compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 18,
+    mapDescription:
+      'Massachusetts inbound hub covering Inner Core (Cambridge, Somerville, Brookline), Elite Suburbs (Newton, Lexington, Waltham), MetroWest & Coast (Framingham, Malden, Quincy), and Central MA (Worcester).',
+  },
+  {
+    slug: 'newton-ma',
+    displayName: 'Newton',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['middlesex-ma'],
+    lat: 42.337,
+    lng: -71.2092,
+    defaultToZip: '02458',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Elite Garden City · exceptional schools · Green Line · interconnected villages',
+    peakSeasonNote:
+      'Garden City village streets and hillside properties may require shuttle trucks on narrow roads',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Newton in Middlesex County — elite Garden City with nationally ranked schools and Green Line access.',
+  },
+  {
+    slug: 'waltham-ma',
+    displayName: 'Waltham',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['middlesex-ma'],
+    lat: 42.3765,
+    lng: -71.2356,
+    defaultToZip: '02451',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Energetic Watch City · Moody Street scene · tech/life sciences · Route 128 corridor',
+    peakSeasonNote:
+      'Route 128 corridor commuter peaks and Moody Street narrow-block deliveries affect scheduling',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Waltham in Middlesex County — Watch City with Route 128 life sciences and Moody Street dining.',
+  },
+  {
+    slug: 'somerville-ma',
+    displayName: 'Somerville',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['middlesex-ma'],
+    lat: 42.3876,
+    lng: -71.0995,
+    defaultToZip: '02144',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Progressive walkable arts hub · Green Line Extension · Union/Davis Squares',
+    peakSeasonNote:
+      'Dense walk-up stairwell constraints and GLX corridor parking limits common on Somerville deliveries',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Somerville in Middlesex County — progressive arts hub with GLX access and Union/Davis Square walkability.',
+  },
+  {
+    slug: 'brookline-ma',
+    displayName: 'Brookline',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['norfolk-ma'],
+    lat: 42.3318,
+    lng: -71.1212,
+    defaultToZip: '02446',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Prestigious urban-suburban · top schools · Longwood Medical Area adjacency',
+    peakSeasonNote:
+      'High-density Coolidge Corner and Longwood corridor COI filings standard on Brookline deliveries',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Brookline in Norfolk County — prestigious urban-suburban density near Longwood Medical Area.',
+  },
+  {
+    slug: 'lexington-ma',
+    displayName: 'Lexington',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['middlesex-ma'],
+    lat: 42.4473,
+    lng: -71.2245,
+    defaultToZip: '02420',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Connecticut'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Historic academic excellence · Revolutionary War heritage · peaceful tree-lined suburbs',
+    peakSeasonNote:
+      'Battle Green area historic streets and September school-year closings compress Lexington schedules',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Lexington in Middlesex County — historic suburb with nationally ranked schools and Battle Green heritage.',
+  },
+  {
+    slug: 'cambridge-ma',
+    displayName: 'Cambridge',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['middlesex-ma'],
+    lat: 42.3736,
+    lng: -71.1097,
+    defaultToZip: '02139',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Innovation powerhouse · Harvard/MIT · Kendall Square biotech · vibrant squares',
+    peakSeasonNote:
+      'Kendall Square high-rise COI filings and academic-year closing clusters standard on Cambridge deliveries',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Cambridge in Middlesex County — Harvard/MIT innovation hub with Kendall Square biotech campuses.',
+  },
+  {
+    slug: 'worcester-ma',
+    displayName: 'Worcester',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['worcester-ma'],
+    lat: 42.2626,
+    lng: -71.8023,
+    defaultToZip: '01608',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$5,800',
+      twoBR: '$5,200–$8,800',
+      threeBR: '$7,600–$12,200',
+      fourBR: '$11,000–$17,200',
+    },
+    inboundGrowthStat:
+      'Revitalizing central hub · colleges · healthcare · affordable Boston alternative',
+    peakSeasonNote:
+      'Triple-decker stairwell constraints and college move-in windows affect Worcester scheduling',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Worcester in Worcester County — revitalizing college-and-healthcare hub with Boston-alternative value.',
+  },
+  {
+    slug: 'malden-ma',
+    displayName: 'Malden',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['middlesex-ma'],
+    lat: 42.4251,
+    lng: -71.0662,
+    defaultToZip: '02148',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Diverse transit-oriented · Orange Line access · culinary scene · first-time buyer appeal',
+    peakSeasonNote:
+      'Orange Line corridor parking permits and dense triple-decker stairwell accessorials common',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Malden in Middlesex County — diverse Orange Line city with culinary corridors and transit access.',
+  },
+  {
+    slug: 'framingham-ma',
+    displayName: 'Framingham',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['middlesex-ma'],
+    lat: 42.2793,
+    lng: -71.4162,
+    defaultToZip: '01702',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'MetroWest commercial hub · commuter rail · convenient Boston access · corporate parks',
+    peakSeasonNote:
+      'MetroWest corporate park deliveries and commuter-rail corridor scheduling affect peak windows',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Framingham in Middlesex County — MetroWest commercial hub with MBTA commuter rail to Boston.',
+  },
+  {
+    slug: 'quincy-ma',
+    displayName: 'Quincy',
+    stateCode: 'MA',
+    stateName: 'Massachusetts',
+    primaryCounties: ['norfolk-ma'],
+    lat: 42.2529,
+    lng: -71.0023,
+    defaultToZip: '02169',
+    topInboundOrigins: ['New York', 'New Jersey', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,200',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$14,800',
+      fourBR: '$13,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Coastal City of Presidents · Red Line transit · revitalized downtown · ocean access',
+    peakSeasonNote:
+      'Waterfront high-rise COI filings and Wollaston beach-area summer traffic affect Quincy scheduling',
+    clusterParent: 'massachusetts',
+    priority: 18,
+    mapDescription:
+      'Quincy in Norfolk County — City of Presidents with Red Line access and revitalized waterfront downtown.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

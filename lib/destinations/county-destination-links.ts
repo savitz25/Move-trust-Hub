@@ -463,6 +463,23 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  massachusetts: {
+    middlesex: {
+      label: 'Moving to Cambridge',
+      href: '/moving-to/massachusetts/cambridge-ma',
+      description: 'Middlesex County Greater Boston innovation and elite suburb inbound guides',
+    },
+    norfolk: {
+      label: 'Moving to Brookline',
+      href: '/moving-to/massachusetts/brookline-ma',
+      description: 'Norfolk County Brookline and Quincy coastal corridor inbound guides',
+    },
+    worcester: {
+      label: 'Moving to Worcester',
+      href: '/moving-to/massachusetts/worcester-ma',
+      description: 'Worcester County central Massachusetts affordability inbound guide',
+    },
+  },
   pennsylvania: {
     allegheny: {
       label: 'Moving to Pittsburgh',

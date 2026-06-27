@@ -442,6 +442,66 @@ export function buildNewYorkClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/massachusetts cluster parent */
+export function buildMassachusettsClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const massachusettsHubs = getClusterMarkets('massachusetts').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Massachusetts', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Massachusetts',
+          addressRegion: 'MA',
+        },
+        mainEntity: { '@id': `${canonical}#massachusetts-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#massachusetts-hub-list`,
+        name: 'Massachusetts City Moving Guides',
+        numberOfItems: massachusettsHubs.length,
+        itemListElement: massachusettsHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, MA`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/new-jersey cluster parent */
 export function buildNewJerseyClusterSchemaGraph(
   title: string,

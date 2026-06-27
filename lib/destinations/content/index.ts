@@ -155,6 +155,16 @@ import { glensFallsNyContent } from '@/lib/destinations/content/glens-falls-ny';
 import { newRochelleNyContent } from '@/lib/destinations/content/new-rochelle-ny';
 import { elmiraNyContent } from '@/lib/destinations/content/elmira-ny';
 import { lindenhurstNyContent } from '@/lib/destinations/content/lindenhurst-ny';
+import { newtonMaContent } from '@/lib/destinations/content/newton-ma';
+import { walthamMaContent } from '@/lib/destinations/content/waltham-ma';
+import { somervilleMaContent } from '@/lib/destinations/content/somerville-ma';
+import { brooklineMaContent } from '@/lib/destinations/content/brookline-ma';
+import { lexingtonMaContent } from '@/lib/destinations/content/lexington-ma';
+import { cambridgeMaContent } from '@/lib/destinations/content/cambridge-ma';
+import { worcesterMaContent } from '@/lib/destinations/content/worcester-ma';
+import { maldenMaContent } from '@/lib/destinations/content/malden-ma';
+import { framinghamMaContent } from '@/lib/destinations/content/framingham-ma';
+import { quincyMaContent } from '@/lib/destinations/content/quincy-ma';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -312,6 +322,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'new-rochelle-ny': newRochelleNyContent,
   'elmira-ny': elmiraNyContent,
   'lindenhurst-ny': lindenhurstNyContent,
+  'newton-ma': newtonMaContent,
+  'waltham-ma': walthamMaContent,
+  'somerville-ma': somervilleMaContent,
+  'brookline-ma': brooklineMaContent,
+  'lexington-ma': lexingtonMaContent,
+  'cambridge-ma': cambridgeMaContent,
+  'worcester-ma': worcesterMaContent,
+  'malden-ma': maldenMaContent,
+  'framingham-ma': framinghamMaContent,
+  'quincy-ma': quincyMaContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -426,5 +446,11 @@ export function getPublishedNewJerseyHubSlugs(): string[] {
 export function getPublishedNewYorkHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'new-york'
+  );
+}
+
+export function getPublishedMassachusettsHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'massachusetts'
   );
 }
