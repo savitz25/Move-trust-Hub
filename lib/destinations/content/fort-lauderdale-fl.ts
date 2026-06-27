@@ -43,7 +43,7 @@ export const fortLauderdaleFlContent: CityHubContent = {
     },
     {
       label: 'Massachusetts → Fort Lauderdale',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/massachusetts-to-florida',
       miles: '≈1,400 miles',
     },
     {

@@ -179,6 +179,11 @@ export const tennesseeClusterContent: TennesseeClusterContent = {
       href: '/local-movers/tennessee/washington',
     },
     {
+      title: 'Massachusetts to Tennessee route guide',
+      description: 'Boston and statewide MA origins to Nashville, Chattanooga, and Middle Tennessee.',
+      href: '/resources/routes/massachusetts-to-tennessee',
+    },
+    {
       title: 'Florida moving destinations hub',
       description: 'Compare Tennessee with Florida Sunbelt inbound markets.',
       href: '/moving-to/florida',

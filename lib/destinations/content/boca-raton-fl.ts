@@ -43,7 +43,7 @@ export const bocaRatonFlContent: CityHubContent = {
     },
     {
       label: 'Massachusetts → Boca Raton',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/massachusetts-to-florida',
       miles: '≈1,320 miles',
     },
     {

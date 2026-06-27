@@ -238,6 +238,11 @@ export const floridaClusterContent: FloridaClusterContent = {
       href: '/resources/routes/pennsylvania-to-florida',
     },
     {
+      title: 'Massachusetts to Florida route guide',
+      description: 'Boston snowbird corridor — Cape Cod pickup, FL delivery, and 2026–2027 costs.',
+      href: '/resources/routes/massachusetts-to-florida',
+    },
+    {
       title: 'Verify any mover\'s USDOT & MC number',
       description: 'Step-by-step FMCSA lookup before booking.',
       href: '/resources/fmcsa',

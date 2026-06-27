@@ -44,7 +44,7 @@ export const naplesFlContent: CityHubContent = {
     },
     {
       label: 'Massachusetts → Naples',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/massachusetts-to-florida',
       miles: '≈1,450 miles',
     },
     {

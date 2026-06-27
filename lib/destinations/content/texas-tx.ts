@@ -207,6 +207,11 @@ export const texasClusterContent: TexasClusterContent = {
       href: '/resources/routes/pennsylvania-to-texas',
     },
     {
+      title: 'Massachusetts to Texas route guide',
+      description: 'Boston and statewide MA to DFW, Austin, Houston, and San Antonio.',
+      href: '/resources/routes/massachusetts-to-texas',
+    },
+    {
       title: 'Texas to California route guide',
       description: 'Reverse corridor pricing and seasonal factors.',
       href: '/resources/routes/texas-to-california',

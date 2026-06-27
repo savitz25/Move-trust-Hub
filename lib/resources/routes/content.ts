@@ -1,6 +1,12 @@
 import type { RouteGuideExtendedContent } from '@/lib/resources/routes/types';
 import { californiaToTexasContent } from '@/lib/resources/routes/california-to-texas';
 import { losAngelesToDallasFortWorthContent } from '@/lib/resources/routes/los-angeles-to-dallas-fort-worth';
+import { massachusettsToFloridaContent } from '@/lib/resources/routes/massachusetts-to-florida';
+import { massachusettsToGeorgiaContent } from '@/lib/resources/routes/massachusetts-to-georgia';
+import { massachusettsToNorthCarolinaContent } from '@/lib/resources/routes/massachusetts-to-north-carolina';
+import { massachusettsToSouthCarolinaContent } from '@/lib/resources/routes/massachusetts-to-south-carolina';
+import { massachusettsToTennesseeContent } from '@/lib/resources/routes/massachusetts-to-tennessee';
+import { massachusettsToTexasContent } from '@/lib/resources/routes/massachusetts-to-texas';
 import { newJerseyToFloridaContent } from '@/lib/resources/routes/new-jersey-to-florida';
 import { newJerseyToGeorgiaContent } from '@/lib/resources/routes/new-jersey-to-georgia';
 import { newJerseyToSouthCarolinaContent } from '@/lib/resources/routes/new-jersey-to-south-carolina';
@@ -26,6 +32,12 @@ const extendedRouteGuides: Record<string, RouteGuideExtendedContent> = {
   'pennsylvania-to-north-carolina': pennsylvaniaToNorthCarolinaContent,
   'pennsylvania-to-florida': pennsylvaniaToFloridaContent,
   'pennsylvania-to-texas': pennsylvaniaToTexasContent,
+  'massachusetts-to-south-carolina': massachusettsToSouthCarolinaContent,
+  'massachusetts-to-north-carolina': massachusettsToNorthCarolinaContent,
+  'massachusetts-to-georgia': massachusettsToGeorgiaContent,
+  'massachusetts-to-tennessee': massachusettsToTennesseeContent,
+  'massachusetts-to-florida': massachusettsToFloridaContent,
+  'massachusetts-to-texas': massachusettsToTexasContent,
   'new-york-to-texas': newYorkToTexasContent,
 };
 

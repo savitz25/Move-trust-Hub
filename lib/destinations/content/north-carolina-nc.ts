@@ -158,6 +158,11 @@ export const northCarolinaClusterContent: NorthCarolinaClusterContent = {
       href: '/resources/routes/pennsylvania-to-north-carolina',
     },
     {
+      title: 'Massachusetts to North Carolina route guide',
+      description: 'Boston and statewide MA origins to Charlotte, RTP, and coastal NC.',
+      href: '/resources/routes/massachusetts-to-north-carolina',
+    },
+    {
       title: 'South Carolina Grand Strand hub',
       description: 'Compare NC with Myrtle Beach and Grand Strand SC markets.',
       href: '/moving-to/south-carolina',

@@ -43,7 +43,7 @@ export const boyntonBeachFlContent: CityHubContent = {
     },
     {
       label: 'Massachusetts → Boynton Beach',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/massachusetts-to-florida',
       miles: '≈1,330 miles',
     },
     {
