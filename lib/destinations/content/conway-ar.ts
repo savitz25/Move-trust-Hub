@@ -117,7 +117,7 @@ export const conwayArContent: CityHubContent = {
       heading: 'County-level mover coverage across the Conway area',
       paragraphs: [
         'Conway sits in Faulkner County — the primary jurisdiction for Conway, Greenbrier, Mayflower, Vilonia, and Enola-area deliveries. Many Conway commuters work in Little Rock along I-40, Northwest Arkansas along US-65, or at regional healthcare and tech campuses within Faulkner County itself, making dual-location planning common for households storing goods between closings.',
-        'Our Faulkner County directory lists vetted local and regional movers with FMCSA licensing, Google ratings, and cost guides. For interstate moves, also browse our national directory of 25+ major long-distance carriers — many operate well-traveled lanes from Texas, Missouri, Tennessee, and California into central Arkansas on I-40 and I-30. Compare Conway against Benton and Bryant for Saline County Little Rock bedroom communities, Springdale for affordable Northwest Arkansas entry, and Bentonville for corporate NWA relocations — each linked from /moving-to/arkansas. Confirm Greenbrier and Mayflower addresses explicitly when quoting, and disclose driveway grade or gate access on acreage properties.',
+        'Our Faulkner County directory lists vetted local and regional movers with FMCSA licensing, Google ratings, and cost guides. For interstate moves, also browse our national directory of 25+ major long-distance carriers — many operate well-traveled lanes from Texas, Missouri, Tennessee, and California into central Arkansas on I-40 and I-30. Compare Conway against Little Rock for state-capital riverfront employment, Springdale for affordable Northwest Arkansas entry, and Rogers for #1-ranked NWA family living — each linked from /moving-to/arkansas. Confirm Greenbrier and Mayflower addresses explicitly when quoting, and disclose driveway grade or gate access on acreage properties.',
       ],
     },
   ],
@@ -129,10 +129,10 @@ export const conwayArContent: CityHubContent = {
       href: '/moving-to/arkansas',
     },
     {
-      title: 'Moving to Benton & Bryant, AR',
+      title: 'Moving to Little Rock, AR',
       description:
-        'Saline County Little Rock bedroom communities with strong schools and larger lots.',
-      href: '/moving-to/arkansas/benton-bryant-ar',
+        'Arkansas state capital with riverfront government, banking, and healthcare jobs.',
+      href: '/moving-to/arkansas/little-rock-ar',
     },
     {
       title: 'Moving to Springdale, AR',
@@ -141,9 +141,9 @@ export const conwayArContent: CityHubContent = {
       href: '/moving-to/arkansas/springdale-ar',
     },
     {
-      title: 'Moving to Bentonville & NWA Suburbs, AR',
+      title: 'Moving to Bentonville, AR',
       description:
-        'Walmart HQ corridor with Crystal Bridges and Oz Trails mountain biking.',
+        'Walmart HQ corridor with Crystal Bridges and Mountain Biking Capital status.',
       href: '/moving-to/arkansas/bentonville-ar',
     },
     {

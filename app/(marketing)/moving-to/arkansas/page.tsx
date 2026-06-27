@@ -162,8 +162,9 @@ export default function ArkansasClusterPage() {
               Northwest Arkansas — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Bentonville, Fayetteville, Rogers, and Springdale — Arkansas&apos;s highest-intent
-              inbound corridor driven by Walmart, Tyson Foods, and explosive NWA corporate growth.
+              Rogers, Bentonville, Centerton, Springdale, Fayetteville, and Bella Vista — Arkansas&apos;s
+              highest-intent inbound corridor driven by Walmart, Tyson Foods, Crystal Bridges, and
+              explosive NWA corporate growth.
             </p>
             <CorridorCityGrid cities={content.nwaCorridor} published={published} />
           </div>
@@ -175,10 +176,36 @@ export default function ArkansasClusterPage() {
               Central Arkansas — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Conway and Benton &amp; Bryant — City of Colleges growth and Saline County Little Rock
-              bedroom communities with strong schools and affordable suburban lots.
+              Conway and Little Rock — City of Colleges tech growth and state-capital riverfront
+              employment in government, banking, and healthcare.
             </p>
             <CorridorCityGrid cities={content.centralArkansasCorridor} published={published} />
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+              Western Border — Live City Guide
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Fort Smith — industrial and logistics hub on the Oklahoma border with historic downtown
+              revival.
+            </p>
+            <CorridorCityGrid cities={content.westernBorderCorridor} published={published} />
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+              Northeast Arkansas — Live City Guide
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Jonesboro — regional hub with Arkansas State University, healthcare expansion, and
+              agriculture-adjacent employment.
+            </p>
+            <CorridorCityGrid cities={content.northeastArkansasCorridor} published={published} />
           </div>
         </section>
 

@@ -78,7 +78,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/moving-to/little-rock-ar',
-        destination: '/moving-to/arkansas/benton-bryant-ar',
+        destination: '/moving-to/arkansas/little-rock-ar',
         permanent: true,
       },
       {

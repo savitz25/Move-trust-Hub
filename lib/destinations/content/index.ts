@@ -92,7 +92,8 @@ import { bellaVistaArContent } from '@/lib/destinations/content/bella-vista-ar';
 import { littleRockArContent } from '@/lib/destinations/content/little-rock-ar';
 import { conwayArContent } from '@/lib/destinations/content/conway-ar';
 import { springdaleArContent } from '@/lib/destinations/content/springdale-ar';
-import { bentonBryantArContent } from '@/lib/destinations/content/benton-bryant-ar';
+import { fortSmithArContent } from '@/lib/destinations/content/fort-smith-ar';
+import { jonesboroArContent } from '@/lib/destinations/content/jonesboro-ar';
 import { sanDiegoCaContent } from '@/lib/destinations/content/san-diego-ca';
 import { venturaOxnardCaContent } from '@/lib/destinations/content/ventura-oxnard-ca';
 import { palmdaleLancasterCaContent } from '@/lib/destinations/content/palmdale-lancaster-ca';
@@ -342,7 +343,8 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'little-rock-ar': littleRockArContent,
   'conway-ar': conwayArContent,
   'springdale-ar': springdaleArContent,
-  'benton-bryant-ar': bentonBryantArContent,
+  'fort-smith-ar': fortSmithArContent,
+  'jonesboro-ar': jonesboroArContent,
   'san-diego-ca': sanDiegoCaContent,
   'ventura-oxnard-ca': venturaOxnardCaContent,
   'palmdale-lancaster-ca': palmdaleLancasterCaContent,

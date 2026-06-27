@@ -280,9 +280,9 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
   },
   arkansas: {
     benton: {
-      label: 'Moving to Bentonville & NWA',
-      href: '/moving-to/arkansas/bentonville-ar',
-      description: 'Walmart HQ corridor and Northwest Arkansas inbound guide',
+      label: 'Moving to Rogers & NWA',
+      href: '/moving-to/arkansas/rogers-ar',
+      description: '#1 Arkansas inbound city with Beaver Lake and Benton County NWA guides',
     },
     washington: {
       label: 'Moving to Fayetteville',
@@ -294,10 +294,20 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       href: '/moving-to/arkansas/conway-ar',
       description: 'City of Colleges central Arkansas inbound guide',
     },
-    saline: {
-      label: 'Moving to Benton & Bryant',
-      href: '/moving-to/arkansas/benton-bryant-ar',
-      description: 'Saline County Little Rock bedroom community guide',
+    pulaski: {
+      label: 'Moving to Little Rock',
+      href: '/moving-to/arkansas/little-rock-ar',
+      description: 'Arkansas state capital riverfront inbound guide',
+    },
+    sebastian: {
+      label: 'Moving to Fort Smith',
+      href: '/moving-to/arkansas/fort-smith-ar',
+      description: 'Western border logistics and historic downtown inbound guide',
+    },
+    craighead: {
+      label: 'Moving to Jonesboro',
+      href: '/moving-to/arkansas/jonesboro-ar',
+      description: 'Northeast Arkansas hub with Arkansas State University guide',
     },
   },
   tennessee: {
