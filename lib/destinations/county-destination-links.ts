@@ -389,6 +389,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Collin County Plano–Frisco corporate suburb guide',
     },
   },
+  'west-virginia': {
+    berkeley: {
+      label: 'Moving to Martinsburg',
+      href: '/moving-to/west-virginia/martinsburg-wv',
+      description: 'Berkeley County Eastern Panhandle DC commuter inbound guide',
+    },
+    jefferson: {
+      label: 'Moving to the Eastern Panhandle',
+      href: '/moving-to/west-virginia/charles-town-ranson-wv',
+      description: 'Charles Town, Ranson, and Shepherdstown Jefferson County guides',
+    },
+    monongalia: {
+      label: 'Moving to Morgantown',
+      href: '/moving-to/west-virginia/morgantown-wv',
+      description: 'WVU and Monongalia County tech/healthcare inbound guide',
+    },
+    harrison: {
+      label: 'Moving to Bridgeport',
+      href: '/moving-to/west-virginia/bridgeport-wv',
+      description: 'Bridgeport North Central WV suburban inbound guide',
+    },
+    kanawha: {
+      label: 'Moving to Charleston',
+      href: '/moving-to/west-virginia/charleston-wv',
+      description: 'West Virginia capital Kanawha County inbound guide',
+    },
+    putnam: {
+      label: 'Moving to Hurricane & Teays Valley',
+      href: '/moving-to/west-virginia/hurricane-teays-valley-wv',
+      description: 'Putnam County I-64 suburban family growth inbound guide',
+    },
+    greenbrier: {
+      label: 'Moving to Lewisburg',
+      href: '/moving-to/west-virginia/lewisburg-wv',
+      description: 'Greenbrier Valley arts and resort corridor inbound guide',
+    },
+    randolph: {
+      label: 'Moving to Elkins',
+      href: '/moving-to/west-virginia/elkins-wv',
+      description: 'Randolph County mountain town affordable inbound guide',
+    },
+  },
   virginia: {
     arlington: {
       label: 'Moving to Arlington & Alexandria',

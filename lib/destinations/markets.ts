@@ -2986,6 +2986,256 @@ export const markets: Market[] = [
     mapDescription:
       'Roanoke in the Blue Ridge valley — McAfee Knob gateway with affordable mountain metro living.',
   },
+  {
+    slug: 'west-virginia',
+    displayName: 'West Virginia',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: [],
+    lat: 38.6,
+    lng: -80.6,
+    defaultToZip: '25401',
+    topInboundOrigins: ['Maryland', 'Virginia', 'Pennsylvania', 'Ohio'],
+    avgCostRanges: {
+      studio: '$2,200–$4,600',
+      twoBR: '$4,000–$6,800',
+      threeBR: '$5,800–$9,400',
+      fourBR: '$8,200–$12,800',
+    },
+    inboundGrowthStat:
+      'Affordable growth state · Eastern Panhandle DC commuters · WVU tech · Ascend WV remote workers',
+    peakSeasonNote:
+      'Mountain driveway shuttles and Eastern Panhandle new-build access common — disclose property access in inventory',
+    isClusterParent: true,
+    priority: 14,
+    mapDescription:
+      'West Virginia inbound hub covering Eastern Panhandle (Martinsburg, Charles Town, Shepherdstown), North/University (Morgantown, Bridgeport), Central/Kanawha (Charleston, Hurricane), and Mountains (Lewisburg, Elkins).',
+  },
+  {
+    slug: 'martinsburg-wv',
+    displayName: 'Martinsburg',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['berkeley-wv'],
+    lat: 39.4562,
+    lng: -77.9639,
+    defaultToZip: '25401',
+    topInboundOrigins: ['Maryland', 'Virginia', 'Pennsylvania', 'District of Columbia'],
+    avgCostRanges: {
+      studio: '$2,300–$4,700',
+      twoBR: '$4,200–$6,900',
+      threeBR: '$6,100–$9,600',
+      fourBR: '$8,800–$13,200',
+    },
+    inboundGrowthStat:
+      'Fastest-growing Berkeley County · D.C. commuter access · affordable housing · job growth',
+    peakSeasonNote:
+      'New Eastern Panhandle subdivisions may require shuttle trucks — book early in summer DC spillover season',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Martinsburg in Berkeley County — Eastern Panhandle gateway with I-81 DC commuter corridor growth.',
+  },
+  {
+    slug: 'charles-town-ranson-wv',
+    displayName: 'Charles Town & Ranson',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['jefferson-wv'],
+    lat: 39.2887,
+    lng: -77.8597,
+    defaultToZip: '25414',
+    topInboundOrigins: ['Maryland', 'Virginia', 'District of Columbia', 'Pennsylvania'],
+    avgCostRanges: {
+      studio: '$2,300–$4,700',
+      twoBR: '$4,200–$6,900',
+      threeBR: '$6,100–$9,600',
+      fourBR: '$8,800–$13,200',
+    },
+    inboundGrowthStat:
+      'Rapid VA/MD border growth · new-construction communities · Jefferson County spillover',
+    peakSeasonNote:
+      'Master-planned HOA communities along Route 340 often require move-in certificates and COI paperwork',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Charles Town and Ranson in Jefferson County — fast-growing Eastern Panhandle border communities.',
+  },
+  {
+    slug: 'shepherdstown-wv',
+    displayName: 'Shepherdstown',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['jefferson-wv'],
+    lat: 39.4301,
+    lng: -77.8042,
+    defaultToZip: '25443',
+    topInboundOrigins: ['Maryland', 'Virginia', 'District of Columbia', 'Pennsylvania'],
+    avgCostRanges: {
+      studio: '$2,200–$4,600',
+      twoBR: '$4,000–$6,700',
+      threeBR: '$5,800–$9,200',
+      fourBR: '$8,400–$12,600',
+    },
+    inboundGrowthStat:
+      'Historic walkable college town · vibrant culture · best-places-to-live appeal · Potomac River',
+    peakSeasonNote:
+      'Historic district narrow streets and college-town August turnover compress late-summer schedules',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Shepherdstown in Jefferson County — historic Potomac River college town with arts and walkability.',
+  },
+  {
+    slug: 'morgantown-wv',
+    displayName: 'Morgantown',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['monongalia-wv'],
+    lat: 39.6295,
+    lng: -79.9559,
+    defaultToZip: '26505',
+    topInboundOrigins: ['Virginia', 'Maryland', 'Pennsylvania', 'Ohio'],
+    avgCostRanges: {
+      studio: '$2,200–$4,500',
+      twoBR: '$4,000–$6,600',
+      threeBR: '$5,800–$9,000',
+      fourBR: '$8,200–$12,400',
+    },
+    inboundGrowthStat:
+      'West Virginia University · tech/healthcare/research · youthful energy · Mon Health employment',
+    peakSeasonNote:
+      'August academic turnover and downtown high-rise deliveries peak — book 6–8 weeks ahead',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Morgantown in Monongalia County — WVU college town with research, healthcare, and tech growth.',
+  },
+  {
+    slug: 'bridgeport-wv',
+    displayName: 'Bridgeport',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['harrison-wv'],
+    lat: 39.2865,
+    lng: -80.2562,
+    defaultToZip: '26330',
+    topInboundOrigins: ['Virginia', 'Maryland', 'Ohio', 'Pennsylvania'],
+    avgCostRanges: {
+      studio: '$2,100–$4,300',
+      twoBR: '$3,900–$6,400',
+      threeBR: '$5,600–$8,800',
+      fourBR: '$8,000–$12,000',
+    },
+    inboundGrowthStat:
+      'Safe suburban community · top schools · aerospace & healthcare economy · polished family living',
+    peakSeasonNote:
+      'Clarksburg-Bridgeport I-79 corridor summer family moves tighten Harrison County schedules',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Bridgeport in Harrison County — premier North Central WV suburb with aerospace and healthcare jobs.',
+  },
+  {
+    slug: 'charleston-wv',
+    displayName: 'Charleston',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['kanawha-wv'],
+    lat: 38.3498,
+    lng: -81.6326,
+    defaultToZip: '25301',
+    topInboundOrigins: ['Virginia', 'Ohio', 'Kentucky', 'Maryland'],
+    avgCostRanges: {
+      studio: '$2,100–$4,300',
+      twoBR: '$3,900–$6,400',
+      threeBR: '$5,600–$8,800',
+      fourBR: '$8,000–$12,000',
+    },
+    inboundGrowthStat:
+      'State capital · government & healthcare jobs · urban amenities · arts and food scene',
+    peakSeasonNote:
+      'Downtown Capitol-adjacent deliveries and hillside Kanawha Valley driveways may need shuttle staging',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Charleston in Kanawha County — West Virginia capital with government, healthcare, and riverfront living.',
+  },
+  {
+    slug: 'hurricane-teays-valley-wv',
+    displayName: 'Hurricane & Teays Valley',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['putnam-wv'],
+    lat: 38.4326,
+    lng: -82.01,
+    defaultToZip: '25526',
+    topInboundOrigins: ['Virginia', 'Ohio', 'Kentucky', 'Maryland'],
+    avgCostRanges: {
+      studio: '$2,100–$4,300',
+      twoBR: '$3,900–$6,400',
+      threeBR: '$5,600–$8,800',
+      fourBR: '$8,000–$12,000',
+    },
+    inboundGrowthStat:
+      'I-64 suburban growth · strong schools · family-friendly master-plans · Charleston commute corridor',
+    peakSeasonNote:
+      'Putnam County HOA-governed subdivisions along Teays Valley Road often require move-in scheduling',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Hurricane and Teays Valley in Putnam County — fastest-growing Charleston-metro family suburbs on I-64.',
+  },
+  {
+    slug: 'lewisburg-wv',
+    displayName: 'Lewisburg',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['greenbrier-wv'],
+    lat: 37.8018,
+    lng: -80.4456,
+    defaultToZip: '24901',
+    topInboundOrigins: ['Virginia', 'Maryland', 'North Carolina', 'Ohio'],
+    avgCostRanges: {
+      studio: '$2,000–$4,200',
+      twoBR: '$3,700–$6,200',
+      threeBR: '$5,400–$8,600',
+      fourBR: '$7,800–$11,800',
+    },
+    inboundGrowthStat:
+      'Arts scene · Greenbrier Resort corridor · outdoor recreation · Ascend WV remote worker appeal',
+    peakSeasonNote:
+      'Greenbrier Valley historic properties and resort-area gated communities may require accessorial planning',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Lewisburg in Greenbrier County — arts-forward mountain town near the Greenbrier Resort corridor.',
+  },
+  {
+    slug: 'elkins-wv',
+    displayName: 'Elkins',
+    stateCode: 'WV',
+    stateName: 'West Virginia',
+    primaryCounties: ['randolph-wv'],
+    lat: 38.9259,
+    lng: -79.8467,
+    defaultToZip: '26241',
+    topInboundOrigins: ['Virginia', 'Maryland', 'Ohio', 'Pennsylvania'],
+    avgCostRanges: {
+      studio: '$1,900–$4,000',
+      twoBR: '$3,500–$5,900',
+      threeBR: '$5,100–$8,200',
+      fourBR: '$7,400–$11,200',
+    },
+    inboundGrowthStat:
+      'Mountain town charm · affordable historic homes · outdoor lifestyle · tight-knit community',
+    peakSeasonNote:
+      'Appalachian hillside driveways and narrow downtown streets frequently require shuttle trucks',
+    clusterParent: 'west-virginia',
+    priority: 14,
+    mapDescription:
+      'Elkins in Randolph County — affordable mountain town gateway to Monongahela National Forest recreation.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

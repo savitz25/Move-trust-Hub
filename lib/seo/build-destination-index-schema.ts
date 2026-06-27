@@ -382,6 +382,66 @@ export function buildAlabamaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/west-virginia cluster parent */
+export function buildWestVirginiaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const westVirginiaHubs = getClusterMarkets('west-virginia').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'West Virginia', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'West Virginia',
+          addressRegion: 'WV',
+        },
+        mainEntity: { '@id': `${canonical}#west-virginia-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#west-virginia-hub-list`,
+        name: 'West Virginia City Moving Guides',
+        numberOfItems: westVirginiaHubs.length,
+        itemListElement: westVirginiaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, WV`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/virginia cluster parent */
 export function buildVirginiaClusterSchemaGraph(
   title: string,
