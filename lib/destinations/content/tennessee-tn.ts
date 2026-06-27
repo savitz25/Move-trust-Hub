@@ -184,6 +184,11 @@ export const tennesseeClusterContent: TennesseeClusterContent = {
       href: '/resources/routes/massachusetts-to-tennessee',
     },
     {
+      title: 'Minnesota to Tennessee route guide',
+      description: 'Twin Cities and statewide MN origins to Nashville and Middle Tennessee.',
+      href: '/resources/routes/minnesota-to-tennessee',
+    },
+    {
       title: 'Florida moving destinations hub',
       description: 'Compare Tennessee with Florida Sunbelt inbound markets.',
       href: '/moving-to/florida',

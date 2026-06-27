@@ -33,6 +33,11 @@ export const queenCreekAzContent: CityHubContent = {
   ],
   routeLinks: [
     {
+      label: 'Minnesota → Queen Creek',
+      href: '/resources/routes/minnesota-to-arizona',
+      miles: '≈1,620 miles',
+    },
+    {
       label: 'California → Texas',
       href: '/resources/routes/california-to-texas',
       miles: 'Western corridor',

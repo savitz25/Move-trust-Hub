@@ -163,6 +163,11 @@ export const northCarolinaClusterContent: NorthCarolinaClusterContent = {
       href: '/resources/routes/massachusetts-to-north-carolina',
     },
     {
+      title: 'Minnesota to North Carolina route guide',
+      description: 'Twin Cities and statewide MN origins to Charlotte, RTP, and coastal NC.',
+      href: '/resources/routes/minnesota-to-north-carolina',
+    },
+    {
       title: 'South Carolina Grand Strand hub',
       description: 'Compare NC with Myrtle Beach and Grand Strand SC markets.',
       href: '/moving-to/south-carolina',

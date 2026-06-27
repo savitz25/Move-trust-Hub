@@ -196,6 +196,11 @@ export const southCarolinaClusterContent: SouthCarolinaClusterContent = {
       href: '/resources/routes/massachusetts-to-south-carolina',
     },
     {
+      title: 'Minnesota to South Carolina route guide',
+      description: 'Twin Cities and lake-country MN origins to Grand Strand and Upstate SC.',
+      href: '/resources/routes/minnesota-to-south-carolina',
+    },
+    {
       title: 'New York to Myrtle Beach route guide',
       description: 'Mileage, timing, and cost factors for Northeast-to-Grand-Strand moves.',
       href: '/resources/routes/new-york-to-myrtle-beach',

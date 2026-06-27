@@ -7,6 +7,13 @@ import { massachusettsToNorthCarolinaContent } from '@/lib/resources/routes/mass
 import { massachusettsToSouthCarolinaContent } from '@/lib/resources/routes/massachusetts-to-south-carolina';
 import { massachusettsToTennesseeContent } from '@/lib/resources/routes/massachusetts-to-tennessee';
 import { massachusettsToTexasContent } from '@/lib/resources/routes/massachusetts-to-texas';
+import { minnesotaToArizonaContent } from '@/lib/resources/routes/minnesota-to-arizona';
+import { minnesotaToFloridaContent } from '@/lib/resources/routes/minnesota-to-florida';
+import { minnesotaToGeorgiaContent } from '@/lib/resources/routes/minnesota-to-georgia';
+import { minnesotaToNorthCarolinaContent } from '@/lib/resources/routes/minnesota-to-north-carolina';
+import { minnesotaToSouthCarolinaContent } from '@/lib/resources/routes/minnesota-to-south-carolina';
+import { minnesotaToTennesseeContent } from '@/lib/resources/routes/minnesota-to-tennessee';
+import { minnesotaToTexasContent } from '@/lib/resources/routes/minnesota-to-texas';
 import { newJerseyToFloridaContent } from '@/lib/resources/routes/new-jersey-to-florida';
 import { newJerseyToGeorgiaContent } from '@/lib/resources/routes/new-jersey-to-georgia';
 import { newJerseyToSouthCarolinaContent } from '@/lib/resources/routes/new-jersey-to-south-carolina';
@@ -38,6 +45,13 @@ const extendedRouteGuides: Record<string, RouteGuideExtendedContent> = {
   'massachusetts-to-tennessee': massachusettsToTennesseeContent,
   'massachusetts-to-florida': massachusettsToFloridaContent,
   'massachusetts-to-texas': massachusettsToTexasContent,
+  'minnesota-to-texas': minnesotaToTexasContent,
+  'minnesota-to-arizona': minnesotaToArizonaContent,
+  'minnesota-to-tennessee': minnesotaToTennesseeContent,
+  'minnesota-to-south-carolina': minnesotaToSouthCarolinaContent,
+  'minnesota-to-north-carolina': minnesotaToNorthCarolinaContent,
+  'minnesota-to-georgia': minnesotaToGeorgiaContent,
+  'minnesota-to-florida': minnesotaToFloridaContent,
   'new-york-to-texas': newYorkToTexasContent,
 };
 

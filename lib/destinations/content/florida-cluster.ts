@@ -243,6 +243,11 @@ export const floridaClusterContent: FloridaClusterContent = {
       href: '/resources/routes/massachusetts-to-florida',
     },
     {
+      title: 'Minnesota to Florida route guide',
+      description: 'Midwest snowbird corridor — harsh winter pickup and Florida delivery tips.',
+      href: '/resources/routes/minnesota-to-florida',
+    },
+    {
       title: 'Verify any mover\'s USDOT & MC number',
       description: 'Step-by-step FMCSA lookup before booking.',
       href: '/resources/fmcsa',

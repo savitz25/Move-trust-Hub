@@ -181,6 +181,11 @@ export const arizonaClusterContent: ArizonaClusterContent = {
       href: '/resources/routes/california-to-texas',
     },
     {
+      title: 'Minnesota to Arizona route guide',
+      description: 'Midwest snowbird corridor — winter pickup tips and Phoenix delivery logistics.',
+      href: '/resources/routes/minnesota-to-arizona',
+    },
+    {
       title: 'Room-by-room packing checklist',
       description: 'Prepare your inventory before requesting fair quotes.',
       href: '/resources/packing-checklist',

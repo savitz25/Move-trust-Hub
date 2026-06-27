@@ -212,6 +212,11 @@ export const texasClusterContent: TexasClusterContent = {
       href: '/resources/routes/massachusetts-to-texas',
     },
     {
+      title: 'Minnesota to Texas route guide',
+      description: 'Twin Cities and statewide MN to DFW, Austin, Houston, and San Antonio.',
+      href: '/resources/routes/minnesota-to-texas',
+    },
+    {
       title: 'Texas to California route guide',
       description: 'Reverse corridor pricing and seasonal factors.',
       href: '/resources/routes/texas-to-california',
