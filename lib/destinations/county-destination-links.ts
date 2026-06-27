@@ -473,6 +473,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  louisiana: {
+    jefferson: {
+      label: 'Moving to Metairie',
+      href: '/moving-to/louisiana/metairie-la',
+      description: 'Jefferson Parish #1 Louisiana inbound suburb guides',
+    },
+    'st-tammany': {
+      label: 'Moving to Mandeville',
+      href: '/moving-to/louisiana/mandeville-la',
+      description: 'St. Tammany Northshore waterfront and Slidell inbound guides',
+    },
+    lafayette: {
+      label: 'Moving to Lafayette',
+      href: '/moving-to/louisiana/lafayette-la',
+      description: 'Lafayette Parish Cajun Country cultural capital inbound guide',
+    },
+    calcasieu: {
+      label: 'Moving to Lake Charles',
+      href: '/moving-to/louisiana/lake-charles-la',
+      description: 'Calcasieu Parish industrial and energy boom inbound guide',
+    },
+    terrebonne: {
+      label: 'Moving to Houma',
+      href: '/moving-to/louisiana/houma-la',
+      description: 'Terrebonne Parish authentic bayou country inbound guide',
+    },
+    'east-baton-rouge': {
+      label: 'Moving to Baton Rouge',
+      href: '/moving-to/louisiana/baton-rouge-la',
+      description: 'East Baton Rouge state capital and LSU inbound guide',
+    },
+    ascension: {
+      label: 'Moving to Prairieville',
+      href: '/moving-to/louisiana/prairieville-la',
+      description: 'Ascension Parish fast-growing Baton Rouge suburb inbound guide',
+    },
+    bossier: {
+      label: 'Moving to Bossier City',
+      href: '/moving-to/louisiana/bossier-city-la',
+      description: 'Bossier Parish tech-forward Shreveport spillover inbound guide',
+    },
+  },
   georgia: {
     fulton: {
       label: 'Moving to Johns Creek',

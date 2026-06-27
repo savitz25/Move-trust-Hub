@@ -249,6 +249,16 @@ import { cummingGaContent } from '@/lib/destinations/content/cumming-ga';
 import { savannahGaContent } from '@/lib/destinations/content/savannah-ga';
 import { warnerRobinsGaContent } from '@/lib/destinations/content/warner-robins-ga';
 import { poolerGaContent } from '@/lib/destinations/content/pooler-ga';
+import { metairieLaContent } from '@/lib/destinations/content/metairie-la';
+import { kennerLaContent } from '@/lib/destinations/content/kenner-la';
+import { slidellLaContent } from '@/lib/destinations/content/slidell-la';
+import { mandevilleLaContent } from '@/lib/destinations/content/mandeville-la';
+import { lafayetteLaContent } from '@/lib/destinations/content/lafayette-la';
+import { lakeCharlesLaContent } from '@/lib/destinations/content/lake-charles-la';
+import { bossierCityLaContent } from '@/lib/destinations/content/bossier-city-la';
+import { houmaLaContent } from '@/lib/destinations/content/houma-la';
+import { prairievilleLaContent } from '@/lib/destinations/content/prairieville-la';
+import { batonRougeLaContent } from '@/lib/destinations/content/baton-rouge-la';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -500,6 +510,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'savannah-ga': savannahGaContent,
   'warner-robins-ga': warnerRobinsGaContent,
   'pooler-ga': poolerGaContent,
+  'metairie-la': metairieLaContent,
+  'kenner-la': kennerLaContent,
+  'slidell-la': slidellLaContent,
+  'mandeville-la': mandevilleLaContent,
+  'lafayette-la': lafayetteLaContent,
+  'lake-charles-la': lakeCharlesLaContent,
+  'bossier-city-la': bossierCityLaContent,
+  'houma-la': houmaLaContent,
+  'prairieville-la': prairievilleLaContent,
+  'baton-rouge-la': batonRougeLaContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -668,5 +688,11 @@ export function getPublishedIllinoisHubSlugs(): string[] {
 export function getPublishedGeorgiaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'georgia'
+  );
+}
+
+export function getPublishedLouisianaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'louisiana'
   );
 }
