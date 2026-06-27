@@ -17,6 +17,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   nj: 'new-jersey',
   ny: 'new-york',
   ma: 'massachusetts',
+  ri: 'rhode-island',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

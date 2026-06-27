@@ -4336,6 +4336,281 @@ export const markets: Market[] = [
     mapDescription:
       'Quincy in Norfolk County — City of Presidents with Red Line access and revitalized waterfront downtown.',
   },
+  {
+    slug: 'rhode-island',
+    displayName: 'Rhode Island',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: [],
+    lat: 41.7,
+    lng: -71.5,
+    defaultToZip: '02903',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,600',
+      twoBR: '$5,600–$9,800',
+      threeBR: '$8,200–$13,400',
+      fourBR: '$11,800–$18,400',
+    },
+    inboundGrowthStat:
+      'Compact coastal state · Providence culture · Newport luxury · Boston/NYC proximity',
+    peakSeasonNote:
+      'Summer coastal tourism peaks and September academic transitions compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 19,
+    mapDescription:
+      'Rhode Island inbound hub covering Capital & Urban (Providence, Cranston, Warwick), East Bay (Barrington, East Greenwich, Bristol), South County & Newport (North Kingstown, Newport), and Northern Suburbs (Cumberland, Lincoln).',
+  },
+  {
+    slug: 'warwick-ri',
+    displayName: 'Warwick',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['kent-ri'],
+    lat: 41.7001,
+    lng: -71.4162,
+    defaultToZip: '02886',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$13,600',
+      fourBR: '$12,000–$18,800',
+    },
+    inboundGrowthStat:
+      'Practical coastal-suburban value · T.F. Green airport · MBTA commuter rail to Boston',
+    peakSeasonNote:
+      'Airport corridor traffic and MBTA commuter-rail parking limits affect Warwick delivery scheduling',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Warwick in Kent County — coastal-suburban value leader with airport access and Boston commuter rail.',
+  },
+  {
+    slug: 'cranston-ri',
+    displayName: 'Cranston',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['providence-ri'],
+    lat: 41.7798,
+    lng: -71.4373,
+    defaultToZip: '02910',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$13,600',
+      fourBR: '$12,000–$18,800',
+    },
+    inboundGrowthStat:
+      'Diverse bustling suburb · Pawtuxet Village walkable · borders Providence',
+    peakSeasonNote:
+      'Pawtuxet Village narrow-street deliveries and Providence-adjacent parking permits common',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Cranston in Providence County — diverse suburb bordering Providence with Pawtuxet Village charm.',
+  },
+  {
+    slug: 'barrington-ri',
+    displayName: 'Barrington',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['bristol-ri'],
+    lat: 41.7407,
+    lng: -71.3087,
+    defaultToZip: '02806',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Connecticut'],
+    avgCostRanges: {
+      studio: '$3,600–$7,400',
+      twoBR: '$6,400–$11,200',
+      threeBR: '$9,400–$15,200',
+      fourBR: '$13,600–$21,200',
+    },
+    inboundGrowthStat:
+      'Prestigious East Bay coastal · top-rated schools · luxury waterfront',
+    peakSeasonNote:
+      'East Bay waterfront properties and summer coastal traffic affect Barrington peak-season scheduling',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Barrington in Bristol County — prestigious East Bay coastal town with top-rated schools.',
+  },
+  {
+    slug: 'east-greenwich-ri',
+    displayName: 'East Greenwich',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['kent-ri'],
+    lat: 41.6604,
+    lng: -71.4551,
+    defaultToZip: '02818',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Connecticut'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$13,600',
+      fourBR: '$12,000–$18,800',
+    },
+    inboundGrowthStat:
+      'Upscale historic town · vibrant Main Street · strong schools',
+    peakSeasonNote:
+      'Main Street historic-district shuttle trucks and hilltop estate driveways may require staging',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'East Greenwich in Kent County — upscale historic town with vibrant Main Street and strong schools.',
+  },
+  {
+    slug: 'providence-ri',
+    displayName: 'Providence',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['providence-ri'],
+    lat: 41.824,
+    lng: -71.4128,
+    defaultToZip: '02903',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$13,600',
+      fourBR: '$12,000–$18,800',
+    },
+    inboundGrowthStat:
+      'Cultural & intellectual capital · Brown & RISD · arts/food scene',
+    peakSeasonNote:
+      'Federal Hill and College Hill parking permits and loft COI filings standard on Providence deliveries',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Providence in Providence County — Brown and RISD cultural capital with arts and dining corridors.',
+  },
+  {
+    slug: 'cumberland-ri',
+    displayName: 'Cumberland',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['providence-ri'],
+    lat: 41.9668,
+    lng: -71.4328,
+    defaultToZip: '02864',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,900–$6,200',
+      twoBR: '$5,400–$9,400',
+      threeBR: '$7,800–$12,800',
+      fourBR: '$11,200–$17,400',
+    },
+    inboundGrowthStat:
+      'High-growth MA-border suburb · Blackstone Valley · commuter value',
+    peakSeasonNote:
+      'Route 146 Massachusetts-border commuter peaks and Blackstone Valley rural driveways may need shuttles',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Cumberland in Providence County — high-growth Massachusetts-border suburb with commuter value.',
+  },
+  {
+    slug: 'north-kingstown-ri',
+    displayName: 'North Kingstown',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['washington-ri'],
+    lat: 41.5501,
+    lng: -71.4662,
+    defaultToZip: '02852',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$13,600',
+      fourBR: '$12,000–$18,800',
+    },
+    inboundGrowthStat:
+      'Scenic coastal community · Wickford Village · harbor access · excellent schools',
+    peakSeasonNote:
+      'Wickford Village historic lanes and summer harbor tourism traffic affect delivery windows',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'North Kingstown in Washington County — scenic coastal community with Wickford Village harbor charm.',
+  },
+  {
+    slug: 'bristol-ri',
+    displayName: 'Bristol',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['bristol-ri'],
+    lat: 41.6771,
+    lng: -71.2662,
+    defaultToZip: '02809',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Connecticut'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$13,600',
+      fourBR: '$12,000–$18,800',
+    },
+    inboundGrowthStat:
+      'Historic patriotic town · waterfront · Roger Williams University',
+    peakSeasonNote:
+      'Waterfront historic-district shuttle trucks and July Fourth tourism peaks affect Bristol scheduling',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Bristol in Bristol County — historic patriotic waterfront town near Roger Williams University.',
+  },
+  {
+    slug: 'newport-ri',
+    displayName: 'Newport',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['newport-ri'],
+    lat: 41.4901,
+    lng: -71.3128,
+    defaultToZip: '02840',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,600–$7,400',
+      twoBR: '$6,400–$11,200',
+      threeBR: '$9,400–$15,200',
+      fourBR: '$13,600–$21,200',
+    },
+    inboundGrowthStat:
+      'World-famous luxury resort · Gilded Age mansions · beaches · yachting',
+    peakSeasonNote:
+      'Bellevue Avenue mansion-district narrow roads and summer Ocean Drive tourism compress schedules',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Newport in Newport County — world-famous luxury coastal resort with Gilded Age mansions.',
+  },
+  {
+    slug: 'lincoln-ri',
+    displayName: 'Lincoln',
+    stateCode: 'RI',
+    stateName: 'Rhode Island',
+    primaryCounties: ['providence-ri'],
+    lat: 41.9218,
+    lng: -71.439,
+    defaultToZip: '02865',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,900–$6,200',
+      twoBR: '$5,400–$9,400',
+      threeBR: '$7,800–$12,800',
+      fourBR: '$11,200–$17,400',
+    },
+    inboundGrowthStat:
+      'Peaceful historic town · parks · good value near Providence',
+    peakSeasonNote:
+      'Lincoln Woods park-area rural driveways and Route 146 corridor traffic affect scheduling',
+    clusterParent: 'rhode-island',
+    priority: 19,
+    mapDescription:
+      'Lincoln in Providence County — peaceful historic town with parks and Providence-adjacent value.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

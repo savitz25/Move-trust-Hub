@@ -463,6 +463,33 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  'rhode-island': {
+    providence: {
+      label: 'Moving to Providence',
+      href: '/moving-to/rhode-island/providence-ri',
+      description: 'Providence County capital and Cranston urban-suburb inbound guides',
+    },
+    kent: {
+      label: 'Moving to Warwick',
+      href: '/moving-to/rhode-island/warwick-ri',
+      description: 'Kent County Warwick and East Greenwich airport-corridor inbound guides',
+    },
+    bristol: {
+      label: 'Moving to Barrington',
+      href: '/moving-to/rhode-island/barrington-ri',
+      description: 'Bristol County East Bay coastal Barrington and Bristol inbound guides',
+    },
+    washington: {
+      label: 'Moving to North Kingstown',
+      href: '/moving-to/rhode-island/north-kingstown-ri',
+      description: 'Washington County Wickford and South County coastal inbound guide',
+    },
+    newport: {
+      label: 'Moving to Newport',
+      href: '/moving-to/rhode-island/newport-ri',
+      description: 'Newport County luxury coastal resort inbound guide',
+    },
+  },
   massachusetts: {
     middlesex: {
       label: 'Moving to Cambridge',
