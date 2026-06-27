@@ -5161,6 +5161,281 @@ export const markets: Market[] = [
     mapDescription:
       'Lebanon in Grafton County — Dartmouth-Hitchcock medical and tech hub on the Vermont border.',
   },
+  {
+    slug: 'ohio',
+    displayName: 'Ohio',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: [],
+    lat: 40.4,
+    lng: -82.9,
+    defaultToZip: '43215',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$6,200',
+      twoBR: '$4,400–$9,400',
+      threeBR: '$6,400–$12,800',
+      fourBR: '$9,200–$17,800',
+    },
+    inboundGrowthStat:
+      'Silicon Heartland tech growth · affordability · manufacturing & healthcare jobs',
+    peakSeasonNote:
+      'Intel corridor relocation peaks and summer Cedar Point tourism compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 22,
+    mapDescription:
+      'Ohio inbound hub covering Northeast Lake Erie (Mentor, Parma, Cleveland, Lorain), Central Ohio (Columbus), Southwest River (Cincinnati, Hamilton), Western Value (Springfield, Lima), and North Coast (Sandusky).',
+  },
+  {
+    slug: 'mentor-oh',
+    displayName: 'Mentor',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['lake-oh'],
+    lat: 41.6662,
+    lng: -81.3396,
+    defaultToZip: '44060',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,800',
+      fourBR: '$11,200–$17,800',
+    },
+    inboundGrowthStat:
+      '#1 ranked OH city · Lake Erie access · excellent value · job stability',
+    peakSeasonNote:
+      'Lake Erie shoreline driveways and I-90 corridor winter lake-effect scheduling affect Mentor deliveries',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Mentor in Lake County — #1 ranked city with Lake Erie shoreline access and strong job stability.',
+  },
+  {
+    slug: 'parma-oh',
+    displayName: 'Parma',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['cuyahoga-oh'],
+    lat: 41.4048,
+    lng: -81.7229,
+    defaultToZip: '44129',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,800',
+      fourBR: '$11,200–$17,800',
+    },
+    inboundGrowthStat:
+      'Safe Cleveland suburb · community-centric · strong family metrics',
+    peakSeasonNote:
+      'Cleveland-adjacent suburban cul-de-sacs and Ridge Road corridor traffic affect Parma scheduling',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Parma in Cuyahoga County — safe Cleveland suburb with community-centric suburban inventory.',
+  },
+  {
+    slug: 'columbus-oh',
+    displayName: 'Columbus',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['franklin-oh'],
+    lat: 39.9612,
+    lng: -82.9988,
+    defaultToZip: '43215',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$14,000',
+      fourBR: '$12,400–$19,500',
+    },
+    inboundGrowthStat:
+      'Fast-growing capital · Intel/Google/Amazon Silicon Heartland boom',
+    peakSeasonNote:
+      'Intel fab corridor relocation peaks and Short North loft COI filings standard on Columbus deliveries',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Columbus in Franklin County — fast-growing state capital and Silicon Heartland tech hub.',
+  },
+  {
+    slug: 'cincinnati-oh',
+    displayName: 'Cincinnati',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['hamilton-oh'],
+    lat: 39.1031,
+    lng: -84.512,
+    defaultToZip: '45202',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,500',
+      twoBR: '$5,500–$9,800',
+      threeBR: '$8,000–$13,500',
+      fourBR: '$11,800–$18,800',
+    },
+    inboundGrowthStat:
+      'Corporate powerhouse · Ohio River riverfront · arts & food scene',
+    peakSeasonNote:
+      'Over-the-Rhine historic-district shuttle trucks and riverfront condo COI coordination common',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Cincinnati in Hamilton County — corporate riverfront metro with arts and dining corridors.',
+  },
+  {
+    slug: 'cleveland-oh',
+    displayName: 'Cleveland',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['cuyahoga-oh'],
+    lat: 41.4993,
+    lng: -81.6944,
+    defaultToZip: '44114',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,800',
+      fourBR: '$11,200–$17,800',
+    },
+    inboundGrowthStat:
+      'Revitalizing metro · healthcare hub · historic architecture · affordability',
+    peakSeasonNote:
+      'Ohio City and Tremont historic-district narrow streets and lakefront winter scheduling affect Cleveland deliveries',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Cleveland in Cuyahoga County — revitalizing healthcare and architecture hub on Lake Erie.',
+  },
+  {
+    slug: 'hamilton-oh',
+    displayName: 'Hamilton',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['butler-oh'],
+    lat: 39.3995,
+    lng: -84.5613,
+    defaultToZip: '45011',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,500–$7,800',
+      threeBR: '$6,500–$10,500',
+      fourBR: '$9,400–$14,800',
+    },
+    inboundGrowthStat:
+      'Creative river city · sports complex · artistic revival · Cincinnati metro value',
+    peakSeasonNote:
+      'Great Miami River corridor traffic and Spooky Nook Sports-area event peaks affect Hamilton scheduling',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Hamilton in Butler County — creative river city with Cincinnati metro spillover value.',
+  },
+  {
+    slug: 'springfield-oh',
+    displayName: 'Springfield',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['clark-oh'],
+    lat: 39.9242,
+    lng: -83.8088,
+    defaultToZip: '45503',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,100–$7,200',
+      threeBR: '$5,900–$9,400',
+      fourBR: '$8,600–$13,200',
+    },
+    inboundGrowthStat:
+      'Affordable logistics/manufacturing hub · historic neighborhoods',
+    peakSeasonNote:
+      'I-70 logistics corridor scheduling and historic South Fountain district walk-ups affect Springfield deliveries',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Springfield in Clark County — affordable I-70 logistics and manufacturing hub.',
+  },
+  {
+    slug: 'lima-oh',
+    displayName: 'Lima',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['allen-oh'],
+    lat: 40.7426,
+    lng: -84.1052,
+    defaultToZip: '45801',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,000–$4,400',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$8,800',
+      fourBR: '$8,000–$12,400',
+    },
+    inboundGrowthStat:
+      'Extremely budget-friendly · manufacturing anchor · Allen County value',
+    peakSeasonNote:
+      'I-75 manufacturing corridor scheduling and budget-housing long-driveway accessorials common',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Lima in Allen County — extremely budget-friendly manufacturing anchor city.',
+  },
+  {
+    slug: 'lorain-oh',
+    displayName: 'Lorain',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['lorain-oh'],
+    lat: 41.4528,
+    lng: -82.1824,
+    defaultToZip: '44052',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,400',
+      threeBR: '$6,200–$9,800',
+      fourBR: '$9,000–$13,800',
+    },
+    inboundGrowthStat:
+      'Scenic lake port · waterfront parks · short Cleveland commutes',
+    peakSeasonNote:
+      'Lake Erie port-area waterfront properties and Route 2 corridor winter scheduling affect Lorain deliveries',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Lorain in Lorain County — scenic Lake Erie port with waterfront parks and Cleveland proximity.',
+  },
+  {
+    slug: 'sandusky-oh',
+    displayName: 'Sandusky',
+    stateCode: 'OH',
+    stateName: 'Ohio',
+    primaryCounties: ['erie-oh'],
+    lat: 41.4489,
+    lng: -82.7079,
+    defaultToZip: '44870',
+    topInboundOrigins: ['Illinois', 'Michigan', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,100',
+      twoBR: '$4,300–$7,500',
+      threeBR: '$6,300–$10,100',
+      fourBR: '$9,200–$14,200',
+    },
+    inboundGrowthStat:
+      'Maritime tourist city · Cedar Point corridor · revitalized downtown',
+    peakSeasonNote:
+      'Summer Cedar Point tourism peaks and Sandusky Bay waterfront scheduling compress June–August deliveries',
+    clusterParent: 'ohio',
+    priority: 22,
+    mapDescription:
+      'Sandusky in Erie County — maritime tourist city with Cedar Point and revitalized downtown.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
