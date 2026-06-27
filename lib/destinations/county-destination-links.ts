@@ -463,6 +463,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  indiana: {
+    hamilton: {
+      label: 'Moving to Carmel',
+      href: '/moving-to/indiana/carmel-in',
+      description: 'Hamilton County #1 and #2 ranked suburb inbound guides',
+    },
+    marion: {
+      label: 'Moving to Indianapolis',
+      href: '/moving-to/indiana/indianapolis-in',
+      description: 'Marion County capital metro and Silicon Heartland inbound guide',
+    },
+    johnson: {
+      label: 'Moving to Greenwood',
+      href: '/moving-to/indiana/greenwood-in',
+      description: 'Johnson County southside Indy corridor inbound guide',
+    },
+    bartholomew: {
+      label: 'Moving to Columbus',
+      href: '/moving-to/indiana/columbus-in',
+      description: 'Bartholomew County Cummins architectural gem inbound guide',
+    },
+    allen: {
+      label: 'Moving to Fort Wayne',
+      href: '/moving-to/indiana/fort-wayne-in',
+      description: 'Allen County riverfront redevelopment inbound guide',
+    },
+    monroe: {
+      label: 'Moving to Bloomington',
+      href: '/moving-to/indiana/bloomington-in',
+      description: 'Monroe County Indiana University college-town inbound guide',
+    },
+    delaware: {
+      label: 'Moving to Muncie',
+      href: '/moving-to/indiana/muncie-in',
+      description: 'Delaware County Ball State affordability inbound guide',
+    },
+    vanderburgh: {
+      label: 'Moving to Evansville',
+      href: '/moving-to/indiana/evansville-in',
+      description: 'Vanderburgh County tri-state river city inbound guide',
+    },
+  },
   maine: {
     cumberland: {
       label: 'Moving to Portland',
