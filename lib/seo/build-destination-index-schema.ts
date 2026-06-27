@@ -442,6 +442,66 @@ export function buildNewYorkClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/illinois cluster parent */
+export function buildIllinoisClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const illinoisHubs = getClusterMarkets('illinois').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Illinois', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Illinois',
+          addressRegion: 'IL',
+        },
+        mainEntity: { '@id': `${canonical}#illinois-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#illinois-hub-list`,
+        name: 'Illinois City Moving Guides',
+        numberOfItems: illinoisHubs.length,
+        itemListElement: illinoisHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, IL`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/ohio cluster parent */
 export function buildOhioClusterSchemaGraph(
   title: string,
@@ -555,6 +615,66 @@ export function buildNewHampshireClusterSchemaGraph(
           '@type': 'ListItem',
           position: index + 1,
           name: `${market.displayName}, NH`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
+/** JSON-LD for /moving-to/indiana cluster parent */
+export function buildIndianaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const indianaHubs = getClusterMarkets('indiana').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Indiana', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Indiana',
+          addressRegion: 'IN',
+        },
+        mainEntity: { '@id': `${canonical}#indiana-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#indiana-hub-list`,
+        name: 'Indiana City Moving Guides',
+        numberOfItems: indianaHubs.length,
+        itemListElement: indianaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, IN`,
           url: `${SITE_URL}${getMarketPath(market)}`,
         })),
       },

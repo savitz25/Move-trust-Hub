@@ -215,6 +215,26 @@ import { falmouthMeContent } from '@/lib/destinations/content/falmouth-me';
 import { auburnMeContent } from '@/lib/destinations/content/auburn-me';
 import { lewistonMeContent } from '@/lib/destinations/content/lewiston-me';
 import { kitteryMeContent } from '@/lib/destinations/content/kittery-me';
+import { carmelInContent } from '@/lib/destinations/content/carmel-in';
+import { fishersInContent } from '@/lib/destinations/content/fishers-in';
+import { indianapolisInContent } from '@/lib/destinations/content/indianapolis-in';
+import { noblesvilleInContent } from '@/lib/destinations/content/noblesville-in';
+import { greenwoodInContent } from '@/lib/destinations/content/greenwood-in';
+import { columbusInContent } from '@/lib/destinations/content/columbus-in';
+import { fortWayneInContent } from '@/lib/destinations/content/fort-wayne-in';
+import { bloomingtonInContent } from '@/lib/destinations/content/bloomington-in';
+import { muncieInContent } from '@/lib/destinations/content/muncie-in';
+import { evansvilleInContent } from '@/lib/destinations/content/evansville-in';
+import { buffaloGroveIlContent } from '@/lib/destinations/content/buffalo-grove-il';
+import { napervilleIlContent } from '@/lib/destinations/content/naperville-il';
+import { arlingtonHeightsIlContent } from '@/lib/destinations/content/arlington-heights-il';
+import { palatineIlContent } from '@/lib/destinations/content/palatine-il';
+import { bolingbrookIlContent } from '@/lib/destinations/content/bolingbrook-il';
+import { elginIlContent } from '@/lib/destinations/content/elgin-il';
+import { bloomingtonIlContent } from '@/lib/destinations/content/bloomington-il';
+import { schaumburgIlContent } from '@/lib/destinations/content/schaumburg-il';
+import { desPlainesIlContent } from '@/lib/destinations/content/des-plaines-il';
+import { skokieIlContent } from '@/lib/destinations/content/skokie-il';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -432,6 +452,26 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'auburn-me': auburnMeContent,
   'lewiston-me': lewistonMeContent,
   'kittery-me': kitteryMeContent,
+  'carmel-in': carmelInContent,
+  'fishers-in': fishersInContent,
+  'indianapolis-in': indianapolisInContent,
+  'noblesville-in': noblesvilleInContent,
+  'greenwood-in': greenwoodInContent,
+  'columbus-in': columbusInContent,
+  'fort-wayne-in': fortWayneInContent,
+  'bloomington-in': bloomingtonInContent,
+  'muncie-in': muncieInContent,
+  'evansville-in': evansvilleInContent,
+  'buffalo-grove-il': buffaloGroveIlContent,
+  'naperville-il': napervilleIlContent,
+  'arlington-heights-il': arlingtonHeightsIlContent,
+  'palatine-il': palatineIlContent,
+  'bolingbrook-il': bolingbrookIlContent,
+  'elgin-il': elginIlContent,
+  'bloomington-il': bloomingtonIlContent,
+  'schaumburg-il': schaumburgIlContent,
+  'des-plaines-il': desPlainesIlContent,
+  'skokie-il': skokieIlContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -579,8 +619,20 @@ export function getPublishedMaineHubSlugs(): string[] {
   );
 }
 
+export function getPublishedIndianaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'indiana'
+  );
+}
+
 export function getPublishedOhioHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'ohio'
+  );
+}
+
+export function getPublishedIllinoisHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'illinois'
   );
 }

@@ -5437,6 +5437,281 @@ export const markets: Market[] = [
       'Bangor in Penobscot County — Central Maine hub with affordable housing and nature gateway access.',
   },
   {
+    slug: 'indiana',
+    displayName: 'Indiana',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: [],
+    lat: 39.8,
+    lng: -86.2,
+    defaultToZip: '46204',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$6,200',
+      twoBR: '$4,400–$9,000',
+      threeBR: '$6,400–$12,000',
+      fourBR: '$9,200–$17,200',
+    },
+    inboundGrowthStat:
+      'Silicon Heartland growth · exceptional affordability · top-ranked suburbs · manufacturing & healthcare',
+    peakSeasonNote:
+      'Hamilton County closing clusters and IU semester peaks compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 24,
+    mapDescription:
+      'Indiana inbound hub covering Hamilton County Elite Suburbs (Carmel, Fishers, Noblesville), Indianapolis Metro (Indianapolis, Greenwood), Heartland Cities (Columbus, Fort Wayne, Evansville), and College Towns (Bloomington, Muncie).',
+  },
+  {
+    slug: 'carmel-in',
+    displayName: 'Carmel',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['hamilton-in'],
+    lat: 39.9784,
+    lng: -86.118,
+    defaultToZip: '46032',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$4,800–$9,000',
+      threeBR: '$7,000–$12,000',
+      fourBR: '$10,200–$17,200',
+    },
+    inboundGrowthStat:
+      '#1 in America · master-planned · elite schools · arts district',
+    peakSeasonNote:
+      'Master-planned cul-de-sac shuttle staging and Hamilton County closing peaks affect Carmel scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Carmel in Hamilton County — #1 ranked America suburb with master-planned schools and arts district.',
+  },
+  {
+    slug: 'fishers-in',
+    displayName: 'Fishers',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['hamilton-in'],
+    lat: 39.9568,
+    lng: -85.9685,
+    defaultToZip: '46038',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$4,800–$9,000',
+      threeBR: '$7,000–$12,000',
+      fourBR: '$10,200–$17,200',
+    },
+    inboundGrowthStat:
+      '#2 in America · tech & entrepreneurial · Geist Reservoir · family-friendly',
+    peakSeasonNote:
+      'Geist Reservoir driveway accessorials and entrepreneurial-corridor closing peaks affect Fishers scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Fishers in Hamilton County — #2 ranked suburb with tech growth and Geist Reservoir lifestyle.',
+  },
+  {
+    slug: 'indianapolis-in',
+    displayName: 'Indianapolis',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['marion-in'],
+    lat: 39.7684,
+    lng: -86.1581,
+    defaultToZip: '46204',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$4,800–$9,000',
+      threeBR: '$7,000–$12,000',
+      fourBR: '$10,200–$17,200',
+    },
+    inboundGrowthStat:
+      'Thriving capital · tech boom · sports & convention culture',
+    peakSeasonNote:
+      'Downtown loft COI coordination and convention-season delivery peaks affect Indianapolis scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Indianapolis in Marion County — capital city with Silicon Heartland tech and healthcare growth.',
+  },
+  {
+    slug: 'noblesville-in',
+    displayName: 'Noblesville',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['hamilton-in'],
+    lat: 40.0456,
+    lng: -86.0086,
+    defaultToZip: '46060',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$4,800–$9,000',
+      threeBR: '$7,000–$12,000',
+      fourBR: '$10,200–$17,200',
+    },
+    inboundGrowthStat:
+      'Historic county seat · Ruoff Music Center · suburban acreage',
+    peakSeasonNote:
+      'Ruoff Music Center summer event traffic and county-seat acreage long carries affect Noblesville scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Noblesville in Hamilton County — historic county seat with suburban acreage and entertainment access.',
+  },
+  {
+    slug: 'greenwood-in',
+    displayName: 'Greenwood',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['johnson-in'],
+    lat: 39.6137,
+    lng: -86.1066,
+    defaultToZip: '46142',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,400',
+      threeBR: '$6,400–$11,200',
+      fourBR: '$9,200–$16,400',
+    },
+    inboundGrowthStat:
+      'Southside commercial hub · parks · short commute to Indy',
+    peakSeasonNote:
+      'Southside retail corridor traffic and Johnson County suburban closing peaks affect Greenwood scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Greenwood in Johnson County — southside commercial hub with parks and Indy commute value.',
+  },
+  {
+    slug: 'columbus-in',
+    displayName: 'Columbus',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['bartholomew-in'],
+    lat: 39.2014,
+    lng: -85.9214,
+    defaultToZip: '47201',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,400',
+      threeBR: '$6,400–$11,200',
+      fourBR: '$9,200–$16,400',
+    },
+    inboundGrowthStat:
+      'Architectural gem · Cummins-powered economy · strong schools',
+    peakSeasonNote:
+      'Cummins corporate relocation peaks and architectural-district shuttle staging affect Columbus IN scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Columbus in Bartholomew County — architectural gem with Cummins corporate economy (Indiana, not Ohio).',
+  },
+  {
+    slug: 'fort-wayne-in',
+    displayName: 'Fort Wayne',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['allen-in'],
+    lat: 41.0793,
+    lng: -85.1394,
+    defaultToZip: '46802',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,400',
+      threeBR: '$6,400–$11,200',
+      fourBR: '$9,200–$16,400',
+    },
+    inboundGrowthStat:
+      'Second-largest city · riverfront redevelopment · inbound growth',
+    peakSeasonNote:
+      'Riverfront narrow-street deliveries and Allen County closing clusters affect Fort Wayne scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Fort Wayne in Allen County — second-largest Indiana city with riverfront redevelopment momentum.',
+  },
+  {
+    slug: 'bloomington-in',
+    displayName: 'Bloomington',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['monroe-in'],
+    lat: 39.1653,
+    lng: -86.5264,
+    defaultToZip: '47401',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,400',
+      threeBR: '$6,400–$11,200',
+      fourBR: '$9,200–$16,400',
+    },
+    inboundGrowthStat:
+      'Vibrant IU college town · arts · outdoor recreation',
+    peakSeasonNote:
+      'Indiana University semester closing clusters (August) compress Bloomington carrier availability',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Bloomington in Monroe County — Indiana University college town with arts and outdoor recreation.',
+  },
+  {
+    slug: 'muncie-in',
+    displayName: 'Muncie',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['delaware-in'],
+    lat: 40.1934,
+    lng: -85.3864,
+    defaultToZip: '47302',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,800',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$15,200',
+    },
+    inboundGrowthStat:
+      'Affordable Ball State corridor · healthcare jobs',
+    peakSeasonNote:
+      'Ball State semester peaks and historic downtown walk-up constraints affect Muncie scheduling',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Muncie in Delaware County — affordable university town with Ball State and healthcare employment.',
+  },
+  {
+    slug: 'evansville-in',
+    displayName: 'Evansville',
+    stateCode: 'IN',
+    stateName: 'Indiana',
+    primaryCounties: ['vanderburgh-in'],
+    lat: 37.9716,
+    lng: -87.5711,
+    defaultToZip: '47708',
+    topInboundOrigins: ['Illinois', 'Ohio', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,800',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$15,200',
+    },
+    inboundGrowthStat:
+      'Tri-state river city · manufacturing & healthcare · low cost of living',
+    peakSeasonNote:
+      'Ohio River bridge scheduling and tri-state closing clusters affect Evansville delivery windows',
+    clusterParent: 'indiana',
+    priority: 24,
+    mapDescription:
+      'Evansville in Vanderburgh County — tri-state Ohio River city with manufacturing and healthcare jobs.',
+  },
+  {
     slug: 'ohio',
     displayName: 'Ohio',
     stateCode: 'OH',
@@ -5710,6 +5985,281 @@ export const markets: Market[] = [
     priority: 22,
     mapDescription:
       'Sandusky in Erie County — maritime tourist city with Cedar Point and revitalized downtown.',
+  },
+  {
+    slug: 'illinois',
+    displayName: 'Illinois',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: [],
+    lat: 41.8,
+    lng: -88.0,
+    defaultToZip: '60089',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$6,800',
+      twoBR: '$5,200–$10,200',
+      threeBR: '$7,600–$13,600',
+      fourBR: '$11,200–$18,400',
+    },
+    inboundGrowthStat:
+      'Chicagoland suburbs · excellent schools & transit · Downstate affordability',
+    peakSeasonNote:
+      'O\'Hare corridor and I-90/I-294 tollway peak congestion compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 24,
+    mapDescription:
+      'Illinois inbound hub covering Premier Northwest (Buffalo Grove, Naperville, Arlington Heights, Palatine), Corporate Transit (Schaumburg, Des Plaines, Skokie), Fox Valley Southwest (Bolingbrook, Elgin), and Downstate Central (Bloomington).',
+  },
+  {
+    slug: 'buffalo-grove-il',
+    displayName: 'Buffalo Grove',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['lake-il'],
+    lat: 42.1514,
+    lng: -87.9598,
+    defaultToZip: '60089',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$13,800',
+      fourBR: '$12,200–$19,200',
+    },
+    inboundGrowthStat:
+      '#1 ranked IL city · A+ safety & schools · affluent family suburb',
+    peakSeasonNote:
+      'Lake County cul-de-sac shuttle staging and I-94 corridor winter scheduling affect Buffalo Grove deliveries',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Buffalo Grove in Lake County — #1 ranked Illinois city with A+ safety and top schools.',
+  },
+  {
+    slug: 'naperville-il',
+    displayName: 'Naperville',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['dupage-il'],
+    lat: 41.7508,
+    lng: -88.1535,
+    defaultToZip: '60540',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,400–$7,000',
+      twoBR: '$6,000–$10,600',
+      threeBR: '$8,800–$14,400',
+      fourBR: '$12,800–$19,800',
+    },
+    inboundGrowthStat:
+      '#26 nationally · renowned riverwalk · top schools · thriving downtown',
+    peakSeasonNote:
+      'Riverwalk historic-district parking and Metra closing-date clusters affect Naperville scheduling',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Naperville in DuPage County — nationally ranked city with riverwalk downtown and top schools.',
+  },
+  {
+    slug: 'arlington-heights-il',
+    displayName: 'Arlington Heights',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['cook-il'],
+    lat: 42.0884,
+    lng: -87.9806,
+    defaultToZip: '60004',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,900',
+      twoBR: '$5,900–$10,400',
+      threeBR: '$8,600–$14,100',
+      fourBR: '$12,500–$19,500',
+    },
+    inboundGrowthStat:
+      'Walkable downtown · Metra transit · vibrant community hub',
+    peakSeasonNote:
+      'Metra commuter closing clusters and downtown walk-up shuttle protocols common in Arlington Heights',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Arlington Heights in Cook County — walkable downtown with Metra transit and vibrant community.',
+  },
+  {
+    slug: 'palatine-il',
+    displayName: 'Palatine',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['cook-il'],
+    lat: 42.1103,
+    lng: -88.0342,
+    defaultToZip: '60067',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,100–$6,700',
+      twoBR: '$5,700–$10,100',
+      threeBR: '$8,300–$13,600',
+      fourBR: '$12,100–$18,900',
+    },
+    inboundGrowthStat:
+      'Balanced suburban living · green space · reliable Chicago access',
+    peakSeasonNote:
+      'Northwest Cook suburban cul-de-sacs and Metra corridor traffic affect Palatine scheduling',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Palatine in Cook County — balanced suburban community with green space and Chicago access.',
+  },
+  {
+    slug: 'bolingbrook-il',
+    displayName: 'Bolingbrook',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['will-il'],
+    lat: 41.6986,
+    lng: -88.0684,
+    defaultToZip: '60440',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,500',
+      twoBR: '$5,500–$9,800',
+      threeBR: '$8,000–$13,200',
+      fourBR: '$11,800–$18,400',
+    },
+    inboundGrowthStat:
+      'Logistics & retail hub · master-planned communities · parks',
+    peakSeasonNote:
+      'I-355 corridor logistics traffic and master-planned community accessorials affect Bolingbrook deliveries',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Bolingbrook in Will County — logistics and retail hub with master-planned suburban communities.',
+  },
+  {
+    slug: 'elgin-il',
+    displayName: 'Elgin',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['kane-il'],
+    lat: 42.0354,
+    lng: -88.2826,
+    defaultToZip: '60120',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,900–$6,400',
+      twoBR: '$5,400–$9,600',
+      threeBR: '$7,800–$12,900',
+      fourBR: '$11,400–$17,600',
+    },
+    inboundGrowthStat:
+      'Historic Fox River city · affordable entry · riverfront trails',
+    peakSeasonNote:
+      'Fox River corridor historic-district walk-ups and I-90 spillover traffic affect Elgin scheduling',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Elgin in Kane County — historic Fox River city with affordable entry and trail access.',
+  },
+  {
+    slug: 'bloomington-il',
+    displayName: 'Bloomington',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['mclean-il'],
+    lat: 40.4842,
+    lng: -88.9937,
+    defaultToZip: '61701',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,500–$12,400',
+      fourBR: '$11,000–$17,200',
+    },
+    inboundGrowthStat:
+      'Resilient central hub · State Farm · Illinois State University',
+    peakSeasonNote:
+      'ISU semester move-in peaks and I-55/I-74 corridor scheduling affect Bloomington deliveries',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Bloomington in McLean County — resilient Downstate hub with State Farm and ISU employment.',
+  },
+  {
+    slug: 'schaumburg-il',
+    displayName: 'Schaumburg',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['cook-il'],
+    lat: 42.0334,
+    lng: -88.0834,
+    defaultToZip: '60193',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,100–$6,700',
+      twoBR: '$5,700–$10,100',
+      threeBR: '$8,200–$13,500',
+      fourBR: '$11,900–$18,200',
+    },
+    inboundGrowthStat:
+      'Corporate & retail powerhouse · Woodfield Mall · healthcare hub',
+    peakSeasonNote:
+      'Woodfield Mall corridor traffic and corporate campus COI filings standard on Schaumburg deliveries',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Schaumburg in Cook County — corporate and retail powerhouse with Woodfield Mall corridor.',
+  },
+  {
+    slug: 'des-plaines-il',
+    displayName: 'Des Plaines',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['cook-il'],
+    lat: 42.0334,
+    lng: -87.8834,
+    defaultToZip: '60016',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,600',
+      twoBR: '$5,600–$9,900',
+      threeBR: '$8,000–$13,300',
+      fourBR: '$11,700–$18,000',
+    },
+    inboundGrowthStat:
+      'O\'Hare proximity · transit center · diverse community',
+    peakSeasonNote:
+      'O\'Hare flight-path staging and Metra/CTA corridor closing clusters affect Des Plaines scheduling',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Des Plaines in Cook County — O\'Hare-adjacent transit center with diverse suburban inventory.',
+  },
+  {
+    slug: 'skokie-il',
+    displayName: 'Skokie',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['cook-il'],
+    lat: 42.0324,
+    lng: -87.7416,
+    defaultToZip: '60076',
+    topInboundOrigins: ['Wisconsin', 'Indiana', 'Michigan', 'California', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,100–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,300–$13,600',
+      fourBR: '$12,000–$18,400',
+    },
+    inboundGrowthStat:
+      'Culturally rich near-north suburb · CTA access · Old Orchard shopping',
+    peakSeasonNote:
+      'CTA Yellow Line corridor walk-ups and Old Orchard retail traffic affect Skokie delivery windows',
+    clusterParent: 'illinois',
+    priority: 24,
+    mapDescription:
+      'Skokie in Cook County — culturally rich near-north suburb with CTA and Old Orchard access.',
   },
 ];
 
