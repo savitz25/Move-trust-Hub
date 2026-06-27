@@ -382,6 +382,66 @@ export function buildAlabamaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/pennsylvania cluster parent */
+export function buildPennsylvaniaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const pennsylvaniaHubs = getClusterMarkets('pennsylvania').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Pennsylvania', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Pennsylvania',
+          addressRegion: 'PA',
+        },
+        mainEntity: { '@id': `${canonical}#pennsylvania-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#pennsylvania-hub-list`,
+        name: 'Pennsylvania City Moving Guides',
+        numberOfItems: pennsylvaniaHubs.length,
+        itemListElement: pennsylvaniaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, PA`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/west-virginia cluster parent */
 export function buildWestVirginiaClusterSchemaGraph(
   title: string,

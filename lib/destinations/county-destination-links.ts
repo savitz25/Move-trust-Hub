@@ -389,6 +389,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Collin County Plano–Frisco corporate suburb guide',
     },
   },
+  pennsylvania: {
+    northampton: {
+      label: 'Moving to the Lehigh Valley',
+      href: '/moving-to/pennsylvania/bethlehem-pa',
+      description: 'Bethlehem and Easton Lehigh Valley inbound moving guides',
+    },
+    lehigh: {
+      label: 'Moving to Allentown',
+      href: '/moving-to/pennsylvania/allentown-pa',
+      description: 'Allentown revitalization and logistics corridor inbound guide',
+    },
+    lancaster: {
+      label: 'Moving to Lancaster',
+      href: '/moving-to/pennsylvania/lancaster-pa',
+      description: 'Lancaster County livability and food/arts inbound guide',
+    },
+    cumberland: {
+      label: 'Moving to Carlisle & Mechanicsburg',
+      href: '/moving-to/pennsylvania/carlisle-mechanicsburg-pa',
+      description: 'Cumberland County Central PA suburban growth inbound guide',
+    },
+    chester: {
+      label: 'Moving to Chester County suburbs',
+      href: '/moving-to/pennsylvania/phoenixville-pa',
+      description: 'Phoenixville and Spring City Philadelphia-orbit inbound guides',
+    },
+    montgomery: {
+      label: 'Moving to Hatfield & Spring City',
+      href: '/moving-to/pennsylvania/hatfield-spring-city-pa',
+      description: 'Montgomery County affordable Philadelphia-orbit inbound guide',
+    },
+    allegheny: {
+      label: 'Moving to Pittsburgh',
+      href: '/moving-to/pennsylvania/pittsburgh-pa',
+      description: 'Pittsburgh tech and healthcare corridor inbound guide',
+    },
+    philadelphia: {
+      label: 'Moving to Philadelphia',
+      href: '/moving-to/pennsylvania/philadelphia-pa',
+      description: 'Philadelphia East Coast urban inbound moving guide',
+    },
+  },
   'west-virginia': {
     berkeley: {
       label: 'Moving to Martinsburg',

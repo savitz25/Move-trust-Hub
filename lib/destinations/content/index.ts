@@ -125,6 +125,15 @@ import { charlestonWvContent } from '@/lib/destinations/content/charleston-wv';
 import { hurricaneTeaysValleyWvContent } from '@/lib/destinations/content/hurricane-teays-valley-wv';
 import { lewisburgWvContent } from '@/lib/destinations/content/lewisburg-wv';
 import { elkinsWvContent } from '@/lib/destinations/content/elkins-wv';
+import { bethlehemPaContent } from '@/lib/destinations/content/bethlehem-pa';
+import { allentownPaContent } from '@/lib/destinations/content/allentown-pa';
+import { eastonPaContent } from '@/lib/destinations/content/easton-pa';
+import { lancasterPaContent } from '@/lib/destinations/content/lancaster-pa';
+import { carlisleMechanicsburgPaContent } from '@/lib/destinations/content/carlisle-mechanicsburg-pa';
+import { phoenixvillePaContent } from '@/lib/destinations/content/phoenixville-pa';
+import { hatfieldSpringCityPaContent } from '@/lib/destinations/content/hatfield-spring-city-pa';
+import { pittsburghPaContent } from '@/lib/destinations/content/pittsburgh-pa';
+import { philadelphiaPaContent } from '@/lib/destinations/content/philadelphia-pa';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -252,6 +261,15 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'hurricane-teays-valley-wv': hurricaneTeaysValleyWvContent,
   'lewisburg-wv': lewisburgWvContent,
   'elkins-wv': elkinsWvContent,
+  'bethlehem-pa': bethlehemPaContent,
+  'allentown-pa': allentownPaContent,
+  'easton-pa': eastonPaContent,
+  'lancaster-pa': lancasterPaContent,
+  'carlisle-mechanicsburg-pa': carlisleMechanicsburgPaContent,
+  'phoenixville-pa': phoenixvillePaContent,
+  'hatfield-spring-city-pa': hatfieldSpringCityPaContent,
+  'pittsburgh-pa': pittsburghPaContent,
+  'philadelphia-pa': philadelphiaPaContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -348,5 +366,11 @@ export function getPublishedVirginiaHubSlugs(): string[] {
 export function getPublishedWestVirginiaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'west-virginia'
+  );
+}
+
+export function getPublishedPennsylvaniaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'pennsylvania'
   );
 }

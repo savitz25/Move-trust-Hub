@@ -13,6 +13,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   tx: 'texas',
   va: 'virginia',
   wv: 'west-virginia',
+  pa: 'pennsylvania',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

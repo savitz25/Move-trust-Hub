@@ -3236,6 +3236,256 @@ export const markets: Market[] = [
     mapDescription:
       'Elkins in Randolph County — affordable mountain town gateway to Monongahela National Forest recreation.',
   },
+  {
+    slug: 'pennsylvania',
+    displayName: 'Pennsylvania',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: [],
+    lat: 40.9,
+    lng: -77.8,
+    defaultToZip: '18101',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,500–$5,200',
+      twoBR: '$4,600–$7,800',
+      threeBR: '$6,800–$11,200',
+      fourBR: '$9,600–$15,800',
+    },
+    inboundGrowthStat:
+      'Lehigh Valley NY/NJ spillover · Central PA affordability · Philly suburbs · Pittsburgh tech revival',
+    peakSeasonNote:
+      'Summer Northeast corridor peak season and Philly/NoVA spillover compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 15,
+    mapDescription:
+      'Pennsylvania inbound hub covering Lehigh Valley (Bethlehem, Allentown, Easton), Central PA (Lancaster, Carlisle), Philadelphia suburbs (Phoenixville, Hatfield), and major metros (Pittsburgh, Philadelphia).',
+  },
+  {
+    slug: 'bethlehem-pa',
+    displayName: 'Bethlehem',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['northampton-pa'],
+    lat: 40.6259,
+    lng: -75.3705,
+    defaultToZip: '18015',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,600–$5,300',
+      twoBR: '$4,800–$7,900',
+      threeBR: '$7,000–$11,400',
+      fourBR: '$10,000–$15,600',
+    },
+    inboundGrowthStat:
+      'Lehigh Valley hotspot · SteelStacks arts · Lehigh University · NY/NJ inbound growth',
+    peakSeasonNote:
+      'Historic South Side and SteelStacks-area deliveries may need shuttle trucks on narrow streets',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Bethlehem in Northampton County — Lehigh Valley arts and university corridor with strong NY/NJ spillover.',
+  },
+  {
+    slug: 'allentown-pa',
+    displayName: 'Allentown',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['lehigh-pa'],
+    lat: 40.6084,
+    lng: -75.4902,
+    defaultToZip: '18101',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,500–$5,200',
+      twoBR: '$4,600–$7,700',
+      threeBR: '$6,800–$11,000',
+      fourBR: '$9,600–$15,200',
+    },
+    inboundGrowthStat:
+      'Major revitalization · logistics & healthcare jobs · PA third-largest city · new housing',
+    peakSeasonNote:
+      'Downtown loft and Center City high-rise COI requirements common in revitalized districts',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Allentown in Lehigh County — revitalized third-largest PA city with logistics and healthcare employment.',
+  },
+  {
+    slug: 'easton-pa',
+    displayName: 'Easton',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['northampton-pa'],
+    lat: 40.6884,
+    lng: -75.2207,
+    defaultToZip: '18042',
+    topInboundOrigins: ['New Jersey', 'New York', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,500–$5,100',
+      twoBR: '$4,600–$7,600',
+      threeBR: '$6,800–$10,800',
+      fourBR: '$9,600–$15,000',
+    },
+    inboundGrowthStat:
+      'Vibrant culinary scene · historic charm · NJ border proximity · walkable downtown',
+    peakSeasonNote:
+      'Centre Square historic-district narrow streets often require shuttle staging from nearby lots',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Easton in Northampton County — historic Lehigh Valley river town with NJ spillover and culinary appeal.',
+  },
+  {
+    slug: 'lancaster-pa',
+    displayName: 'Lancaster',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['lancaster-pa'],
+    lat: 40.0379,
+    lng: -76.3055,
+    defaultToZip: '17602',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,400–$4,900',
+      twoBR: '$4,400–$7,300',
+      threeBR: '$6,400–$10,200',
+      fourBR: '$9,200–$14,400',
+    },
+    inboundGrowthStat:
+      'Top-ranked livability · food & arts culture · Amish Country proximity · strong inbound ratio',
+    peakSeasonNote:
+      'Lancaster City historic rowhouses and suburban HOA communities each carry distinct accessorial needs',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Lancaster in Lancaster County — Central PA livability leader with food, arts, and farmland lifestyle.',
+  },
+  {
+    slug: 'carlisle-mechanicsburg-pa',
+    displayName: 'Carlisle & Mechanicsburg',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['cumberland-pa'],
+    lat: 40.2015,
+    lng: -77.1892,
+    defaultToZip: '17013',
+    topInboundOrigins: ['Maryland', 'Virginia', 'New Jersey', 'New York'],
+    avgCostRanges: {
+      studio: '$2,300–$4,800',
+      twoBR: '$4,200–$7,100',
+      threeBR: '$6,200–$9,800',
+      fourBR: '$8,800–$13,800',
+    },
+    inboundGrowthStat:
+      'Fast-growing Cumberland County · top schools · affordable · government & healthcare jobs',
+    peakSeasonNote:
+      'Army War College and Harrisburg West Shore corporate transfers peak May–August',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Carlisle and Mechanicsburg in Cumberland County — fast-growing Central PA suburbs with top schools.',
+  },
+  {
+    slug: 'phoenixville-pa',
+    displayName: 'Phoenixville',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['chester-pa'],
+    lat: 40.1304,
+    lng: -75.5149,
+    defaultToZip: '19460',
+    topInboundOrigins: ['New Jersey', 'New York', 'Maryland', 'Delaware'],
+    avgCostRanges: {
+      studio: '$2,700–$5,500',
+      twoBR: '$5,000–$8,200',
+      threeBR: '$7,300–$11,600',
+      fourBR: '$10,400–$16,200',
+    },
+    inboundGrowthStat:
+      'Reinvented dining/brewery/arts hub · Chester County lifestyle · Colonial Theatre corridor',
+    peakSeasonNote:
+      'Bridge Street historic district and converted-factory lofts may need elevator and shuttle coordination',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Phoenixville in Chester County — reinvented brewery and arts corridor in the Philadelphia suburbs.',
+  },
+  {
+    slug: 'hatfield-spring-city-pa',
+    displayName: 'Hatfield & Spring City',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['montgomery-pa', 'chester-pa'],
+    lat: 40.2793,
+    lng: -75.2993,
+    defaultToZip: '19440',
+    topInboundOrigins: ['New Jersey', 'New York', 'Maryland', 'Delaware'],
+    avgCostRanges: {
+      studio: '$2,600–$5,400',
+      twoBR: '$4,800–$8,000',
+      threeBR: '$7,000–$11,200',
+      fourBR: '$10,000–$15,600',
+    },
+    inboundGrowthStat:
+      'Affordable Philadelphia-orbit suburban growth · strong schools · Route 309 corridor',
+    peakSeasonNote:
+      'Montgomery and Chester County HOA subdivisions often require move-in certificates and COI paperwork',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Hatfield and Spring City — affordable suburban growth in the Philadelphia orbit along Route 309.',
+  },
+  {
+    slug: 'pittsburgh-pa',
+    displayName: 'Pittsburgh',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['allegheny-pa'],
+    lat: 40.4406,
+    lng: -79.9959,
+    defaultToZip: '15222',
+    topInboundOrigins: ['New York', 'Ohio', 'Virginia', 'Maryland'],
+    avgCostRanges: {
+      studio: '$2,400–$4,900',
+      twoBR: '$4,400–$7,300',
+      threeBR: '$6,500–$10,200',
+      fourBR: '$9,200–$14,400',
+    },
+    inboundGrowthStat:
+      'Tech/robotics/healthcare boom · affordable housing · cultural revival · CMU & UPMC',
+    peakSeasonNote:
+      'Hillside Lawrenceville and South Side Slopes properties often require long carries and shuttle trucks',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Pittsburgh in Allegheny County — tech, robotics, and healthcare hub with affordable urban revival.',
+  },
+  {
+    slug: 'philadelphia-pa',
+    displayName: 'Philadelphia',
+    stateCode: 'PA',
+    stateName: 'Pennsylvania',
+    primaryCounties: ['philadelphia-pa'],
+    lat: 39.9526,
+    lng: -75.1652,
+    defaultToZip: '19103',
+    topInboundOrigins: ['New York', 'New Jersey', 'Maryland', 'Virginia'],
+    avgCostRanges: {
+      studio: '$2,800–$5,800',
+      twoBR: '$5,200–$8,600',
+      threeBR: '$7,600–$11,800',
+      fourBR: '$10,800–$16,800',
+    },
+    inboundGrowthStat:
+      'Major East Coast city · walkable neighborhoods · cheaper than NY/Boston · young professionals',
+    peakSeasonNote:
+      'Rowhouse narrow-street shuttles and Center City high-rise COI fees are standard Philly accessorials',
+    clusterParent: 'pennsylvania',
+    priority: 15,
+    mapDescription:
+      'Philadelphia — walkable East Coast metro with arts, healthcare, and finance at lower cost than NY/Boston.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
