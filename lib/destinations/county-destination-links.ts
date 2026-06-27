@@ -463,6 +463,28 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  maine: {
+    cumberland: {
+      label: 'Moving to Portland',
+      href: '/moving-to/maine/portland-me',
+      description: 'Cumberland County Greater Portland and suburban inbound guides',
+    },
+    york: {
+      label: 'Moving to Kittery',
+      href: '/moving-to/maine/kittery-me',
+      description: 'York County border-town and Seacoast corridor inbound guide',
+    },
+    androscoggin: {
+      label: 'Moving to Lewiston',
+      href: '/moving-to/maine/lewiston-me',
+      description: 'Androscoggin County twin-city affordability inbound guides',
+    },
+    penobscot: {
+      label: 'Moving to Bangor',
+      href: '/moving-to/maine/bangor-me',
+      description: 'Penobscot County Central Maine hub inbound guide',
+    },
+  },
   vermont: {
     chittenden: {
       label: 'Moving to Burlington',

@@ -205,6 +205,16 @@ import { springfieldOhContent } from '@/lib/destinations/content/springfield-oh'
 import { limaOhContent } from '@/lib/destinations/content/lima-oh';
 import { lorainOhContent } from '@/lib/destinations/content/lorain-oh';
 import { sanduskyOhContent } from '@/lib/destinations/content/sandusky-oh';
+import { portlandMeContent } from '@/lib/destinations/content/portland-me';
+import { bangorMeContent } from '@/lib/destinations/content/bangor-me';
+import { standishMeContent } from '@/lib/destinations/content/standish-me';
+import { gorhamMeContent } from '@/lib/destinations/content/gorham-me';
+import { southPortlandMeContent } from '@/lib/destinations/content/south-portland-me';
+import { brunswickMeContent } from '@/lib/destinations/content/brunswick-me';
+import { falmouthMeContent } from '@/lib/destinations/content/falmouth-me';
+import { auburnMeContent } from '@/lib/destinations/content/auburn-me';
+import { lewistonMeContent } from '@/lib/destinations/content/lewiston-me';
+import { kitteryMeContent } from '@/lib/destinations/content/kittery-me';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -412,6 +422,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'lima-oh': limaOhContent,
   'lorain-oh': lorainOhContent,
   'sandusky-oh': sanduskyOhContent,
+  'portland-me': portlandMeContent,
+  'bangor-me': bangorMeContent,
+  'standish-me': standishMeContent,
+  'gorham-me': gorhamMeContent,
+  'south-portland-me': southPortlandMeContent,
+  'brunswick-me': brunswickMeContent,
+  'falmouth-me': falmouthMeContent,
+  'auburn-me': auburnMeContent,
+  'lewiston-me': lewistonMeContent,
+  'kittery-me': kitteryMeContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -550,6 +570,12 @@ export function getPublishedVermontHubSlugs(): string[] {
 export function getPublishedNewHampshireHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'new-hampshire'
+  );
+}
+
+export function getPublishedMaineHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'maine'
   );
 }
 

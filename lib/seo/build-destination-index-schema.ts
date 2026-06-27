@@ -562,6 +562,66 @@ export function buildNewHampshireClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/maine cluster parent */
+export function buildMaineClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const maineHubs = getClusterMarkets('maine').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Maine', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Maine',
+          addressRegion: 'ME',
+        },
+        mainEntity: { '@id': `${canonical}#maine-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#maine-hub-list`,
+        name: 'Maine City Moving Guides',
+        numberOfItems: maineHubs.length,
+        itemListElement: maineHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, ME`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/vermont cluster parent */
 export function buildVermontClusterSchemaGraph(
   title: string,

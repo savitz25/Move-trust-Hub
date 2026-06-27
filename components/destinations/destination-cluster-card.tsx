@@ -29,6 +29,7 @@ const LIVE_CLUSTER_PARENT_SLUGS = new Set([
   'rhode-island',
   'vermont',
   'new-hampshire',
+  'maine',
   'ohio',
 ]);
 
