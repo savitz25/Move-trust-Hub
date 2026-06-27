@@ -3486,6 +3486,281 @@ export const markets: Market[] = [
     mapDescription:
       'Philadelphia — walkable East Coast metro with arts, healthcare, and finance at lower cost than NY/Boston.',
   },
+  {
+    slug: 'new-jersey',
+    displayName: 'New Jersey',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: [],
+    lat: 40.2,
+    lng: -74.5,
+    defaultToZip: '07302',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$5,800',
+      twoBR: '$5,200–$8,800',
+      threeBR: '$7,600–$12,200',
+      fourBR: '$10,800–$17,500',
+    },
+    inboundGrowthStat:
+      'NYC commuter corridor · Hudson Waterfront · upscale train-line suburbs · South Jersey value',
+    peakSeasonNote:
+      'Summer tri-state peak season and corporate relocation windows compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 16,
+    mapDescription:
+      'New Jersey inbound hub covering Hudson Waterfront (Jersey City, Hoboken, Bayonne, Union City), Gateway cities (Clifton, Passaic & Elizabeth), upscale suburbs (Morristown, Montclair, Princeton), and South Jersey (Vineland).',
+  },
+  {
+    slug: 'jersey-city-nj',
+    displayName: 'Jersey City',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['hudson-nj'],
+    lat: 40.7178,
+    lng: -74.0431,
+    defaultToZip: '07302',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,200',
+      twoBR: '$5,600–$9,200',
+      threeBR: '$8,200–$13,200',
+      fourBR: '$11,800–$18,400',
+    },
+    inboundGrowthStat:
+      'Gold Coast skyline · PATH/Ferry transit · diverse dining · Manhattan views',
+    peakSeasonNote:
+      'High-rise COI filings and freight elevator reservations standard in Newport and Exchange Place towers',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Jersey City in Hudson County — dynamic urban waterfront with PATH access and Manhattan skyline views.',
+  },
+  {
+    slug: 'hoboken-nj',
+    displayName: 'Hoboken',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['hudson-nj'],
+    lat: 40.744,
+    lng: -74.0324,
+    defaultToZip: '07030',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$3,100–$6,400',
+      twoBR: '$5,800–$9,500',
+      threeBR: '$8,400–$13,600',
+      fourBR: '$12,000–$18,800',
+    },
+    inboundGrowthStat:
+      'Walkable young-professional hub · lively nightlife · tight-knit community · PATH access',
+    peakSeasonNote:
+      'Brownstone narrow-street shuttle trucks common on Washington Street and historic grid blocks',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Hoboken in Hudson County — vibrant walkable grid with PATH trains and Hudson River waterfront parks.',
+  },
+  {
+    slug: 'clifton-nj',
+    displayName: 'Clifton',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['passaic-nj'],
+    lat: 40.8584,
+    lng: -74.1638,
+    defaultToZip: '07011',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'New Jersey'],
+    avgCostRanges: {
+      studio: '$2,700–$5,500',
+      twoBR: '$5,000–$8,400',
+      threeBR: '$7,300–$11,600',
+      fourBR: '$10,400–$16,200',
+    },
+    inboundGrowthStat:
+      'Suburban-urban balance · parks · strong schools · regional value vs Hudson Waterfront',
+    peakSeasonNote:
+      'Route 3 and Garden State Parkway commuter peaks affect delivery scheduling May–September',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Clifton in Passaic County — balanced suburban-urban mix with parks, schools, and NYC corridor access.',
+  },
+  {
+    slug: 'morristown-nj',
+    displayName: 'Morristown',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['morris-nj'],
+    lat: 40.7968,
+    lng: -74.4815,
+    defaultToZip: '07960',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,900–$5,900',
+      twoBR: '$5,400–$8,900',
+      threeBR: '$7,900–$12,400',
+      fourBR: '$11,200–$17,200',
+    },
+    inboundGrowthStat:
+      '#1 ranked desirable suburb · historic downtown · direct Midtown train · top schools',
+    peakSeasonNote:
+      'Train-station parking and historic downtown street access may require shuttle staging',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Morristown in Morris County — premier NJ suburb with historic Green and Midtown Direct commuter rail.',
+  },
+  {
+    slug: 'montclair-nj',
+    displayName: 'Montclair',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['essex-nj'],
+    lat: 40.8259,
+    lng: -74.209,
+    defaultToZip: '07042',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,100',
+      twoBR: '$5,600–$9,200',
+      threeBR: '$8,200–$13,000',
+      fourBR: '$11,800–$18,000',
+    },
+    inboundGrowthStat:
+      'Cultural & arts hub · walkable restaurant scene · Midtown Direct · independent retail',
+    peakSeasonNote:
+      'Bloomfield Avenue and Upper Montclair deliveries compete with commuter rail peak windows',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Montclair in Essex County — arts-forward walkable downtown with Midtown Direct train service.',
+  },
+  {
+    slug: 'princeton-nj',
+    displayName: 'Princeton',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['mercer-nj'],
+    lat: 40.3573,
+    lng: -74.6672,
+    defaultToZip: '08540',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$2,900–$6,000',
+      twoBR: '$5,400–$8,900',
+      threeBR: '$7,900–$12,400',
+      fourBR: '$11,200–$17,400',
+    },
+    inboundGrowthStat:
+      'Ivy League prestige · top schools · upscale walkable downtown · research economy',
+    peakSeasonNote:
+      'Academic-year faculty turnover and Princeton University move-in windows compress late-summer schedules',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Princeton in Mercer County — Ivy League campus town with Nassau Street walkability and top schools.',
+  },
+  {
+    slug: 'bayonne-nj',
+    displayName: 'Bayonne',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['hudson-nj'],
+    lat: 40.6687,
+    lng: -74.1143,
+    defaultToZip: '07002',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'New Jersey'],
+    avgCostRanges: {
+      studio: '$2,600–$5,400',
+      twoBR: '$4,800–$8,000',
+      threeBR: '$7,000–$11,200',
+      fourBR: '$10,000–$15,600',
+    },
+    inboundGrowthStat:
+      'Peaceful peninsula · waterfront living · affordability · quick Manhattan access',
+    peakSeasonNote:
+      'Peninsula bridge routing and narrow residential streets may require shuttle trucks',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Bayonne in Hudson County — affordable peninsula waterfront with NYC skyline views and ferry access.',
+  },
+  {
+    slug: 'vineland-nj',
+    displayName: 'Vineland',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['cumberland-nj'],
+    lat: 39.4862,
+    lng: -75.0257,
+    defaultToZip: '08360',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'New Jersey'],
+    avgCostRanges: {
+      studio: '$2,300–$4,800',
+      twoBR: '$4,200–$7,100',
+      threeBR: '$6,200–$9,800',
+      fourBR: '$8,800–$13,600',
+    },
+    inboundGrowthStat:
+      'Affordable South Jersey · space & acreage · farm-to-table appeal · Philly corridor',
+    peakSeasonNote:
+      'Cumberland County rural driveways and farm-country properties often require shuttle staging',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Vineland in Cumberland County — South Jersey affordability with larger lots and farm-country lifestyle.',
+  },
+  {
+    slug: 'union-city-nj',
+    displayName: 'Union City',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['hudson-nj'],
+    lat: 40.7795,
+    lng: -74.0238,
+    defaultToZip: '07087',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'New Jersey'],
+    avgCostRanges: {
+      studio: '$2,800–$5,700',
+      twoBR: '$5,200–$8,600',
+      threeBR: '$7,600–$12,000',
+      fourBR: '$10,800–$16,800',
+    },
+    inboundGrowthStat:
+      'High-energy diversity · spectacular Manhattan views · fast commutes · Bergenline corridor',
+    peakSeasonNote:
+      'Bergenline Avenue dense retail corridor and hillside streets require careful shuttle planning',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Union City in Hudson County — diverse Bergenline corridor with skyline views and fast NYC commutes.',
+  },
+  {
+    slug: 'passaic-elizabeth-nj',
+    displayName: 'Passaic & Elizabeth',
+    stateCode: 'NJ',
+    stateName: 'New Jersey',
+    primaryCounties: ['passaic-nj', 'union-nj'],
+    lat: 40.6639,
+    lng: -74.2107,
+    defaultToZip: '07201',
+    topInboundOrigins: ['New York', 'Pennsylvania', 'Florida', 'New Jersey'],
+    avgCostRanges: {
+      studio: '$2,500–$5,200',
+      twoBR: '$4,600–$7,800',
+      threeBR: '$6,800–$10,800',
+      fourBR: '$9,600–$15,200',
+    },
+    inboundGrowthStat:
+      'Historic riverside · NJ Transit hubs · cultural diversity · gateway-city value',
+    peakSeasonNote:
+      'Elizabeth NJ Transit and port-corridor traffic windows affect delivery scheduling',
+    clusterParent: 'new-jersey',
+    priority: 16,
+    mapDescription:
+      'Passaic and Elizabeth — gateway cities with Great Falls heritage, NJ Transit hubs, and cultural diversity.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

@@ -382,6 +382,66 @@ export function buildAlabamaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/new-jersey cluster parent */
+export function buildNewJerseyClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const newJerseyHubs = getClusterMarkets('new-jersey').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'New Jersey', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'New Jersey',
+          addressRegion: 'NJ',
+        },
+        mainEntity: { '@id': `${canonical}#new-jersey-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#new-jersey-hub-list`,
+        name: 'New Jersey City Moving Guides',
+        numberOfItems: newJerseyHubs.length,
+        itemListElement: newJerseyHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, NJ`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/pennsylvania cluster parent */
 export function buildPennsylvaniaClusterSchemaGraph(
   title: string,

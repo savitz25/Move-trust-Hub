@@ -134,6 +134,16 @@ import { phoenixvillePaContent } from '@/lib/destinations/content/phoenixville-p
 import { hatfieldSpringCityPaContent } from '@/lib/destinations/content/hatfield-spring-city-pa';
 import { pittsburghPaContent } from '@/lib/destinations/content/pittsburgh-pa';
 import { philadelphiaPaContent } from '@/lib/destinations/content/philadelphia-pa';
+import { jerseyCityNjContent } from '@/lib/destinations/content/jersey-city-nj';
+import { hobokenNjContent } from '@/lib/destinations/content/hoboken-nj';
+import { cliftonNjContent } from '@/lib/destinations/content/clifton-nj';
+import { morristownNjContent } from '@/lib/destinations/content/morristown-nj';
+import { montclairNjContent } from '@/lib/destinations/content/montclair-nj';
+import { princetonNjContent } from '@/lib/destinations/content/princeton-nj';
+import { bayonneNjContent } from '@/lib/destinations/content/bayonne-nj';
+import { vinelandNjContent } from '@/lib/destinations/content/vineland-nj';
+import { unionCityNjContent } from '@/lib/destinations/content/union-city-nj';
+import { passaicElizabethNjContent } from '@/lib/destinations/content/passaic-elizabeth-nj';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -270,6 +280,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'hatfield-spring-city-pa': hatfieldSpringCityPaContent,
   'pittsburgh-pa': pittsburghPaContent,
   'philadelphia-pa': philadelphiaPaContent,
+  'jersey-city-nj': jerseyCityNjContent,
+  'hoboken-nj': hobokenNjContent,
+  'clifton-nj': cliftonNjContent,
+  'morristown-nj': morristownNjContent,
+  'montclair-nj': montclairNjContent,
+  'princeton-nj': princetonNjContent,
+  'bayonne-nj': bayonneNjContent,
+  'vineland-nj': vinelandNjContent,
+  'union-city-nj': unionCityNjContent,
+  'passaic-elizabeth-nj': passaicElizabethNjContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -372,5 +392,11 @@ export function getPublishedWestVirginiaHubSlugs(): string[] {
 export function getPublishedPennsylvaniaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'pennsylvania'
+  );
+}
+
+export function getPublishedNewJerseyHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'new-jersey'
   );
 }

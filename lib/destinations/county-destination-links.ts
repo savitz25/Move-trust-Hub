@@ -389,6 +389,43 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Collin County Plano–Frisco corporate suburb guide',
     },
   },
+  'new-jersey': {
+    hudson: {
+      label: 'Moving to the Hudson Waterfront',
+      href: '/moving-to/new-jersey/jersey-city-nj',
+      description: 'Jersey City, Hoboken, Bayonne, and Union City Manhattan-adjacent guides',
+    },
+    passaic: {
+      label: 'Moving to Clifton & Passaic',
+      href: '/moving-to/new-jersey/clifton-nj',
+      description: 'Passaic County gateway-city and suburban inbound moving guides',
+    },
+    union: {
+      label: 'Moving to Elizabeth & Union County',
+      href: '/moving-to/new-jersey/passaic-elizabeth-nj',
+      description: 'Elizabeth NJ Transit hub and Union County gateway inbound guide',
+    },
+    morris: {
+      label: 'Moving to Morristown',
+      href: '/moving-to/new-jersey/morristown-nj',
+      description: 'Morris County premier suburb with Midtown Direct commuter rail',
+    },
+    essex: {
+      label: 'Moving to Montclair',
+      href: '/moving-to/new-jersey/montclair-nj',
+      description: 'Montclair arts corridor and Essex County walkable downtown guide',
+    },
+    mercer: {
+      label: 'Moving to Princeton',
+      href: '/moving-to/new-jersey/princeton-nj',
+      description: 'Princeton Ivy League campus town and Mercer County inbound guide',
+    },
+    cumberland: {
+      label: 'Moving to Vineland',
+      href: '/moving-to/new-jersey/vineland-nj',
+      description: 'Cumberland County South Jersey affordability and farm-country guide',
+    },
+  },
   pennsylvania: {
     northampton: {
       label: 'Moving to the Lehigh Valley',
