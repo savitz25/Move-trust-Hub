@@ -44,7 +44,7 @@ export const dallasFortWorthTxContent: CityHubContent = {
     },
     {
       label: 'New York → Dallas–Fort Worth',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-york-to-texas',
       miles: '≈1,540 miles',
     },
     {

@@ -49,7 +49,7 @@ export const houstonTxContent: CityHubContent = {
     },
     {
       label: 'New York → Houston',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-york-to-texas',
       miles: '≈1,630 miles',
     },
   ],

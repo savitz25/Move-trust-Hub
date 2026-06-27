@@ -39,7 +39,7 @@ export const austinTxContent: CityHubContent = {
     },
     {
       label: 'New York → Austin',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-york-to-texas',
       miles: '≈1,720 miles',
     },
     {

@@ -44,7 +44,7 @@ export const irvingTxContent: CityHubContent = {
     },
     {
       label: 'New York → Irving',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-york-to-texas',
       miles: '≈1,550 miles',
     },
     {

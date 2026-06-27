@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources/packing-checklist',
     '/resources/routes',
     '/resources/routes/california-to-texas',
+    '/resources/routes/new-york-to-texas',
     '/resources/routes/new-york-to-florida',
     '/resources/routes/california-to-new-york',
     '/resources/routes/florida-to-new-york',

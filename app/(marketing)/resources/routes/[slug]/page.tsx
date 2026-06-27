@@ -3,8 +3,11 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, MapPin, Truck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { ArticleSchema } from '@/components/resources/article-schema';
+import { ExtendedRouteGuide } from '@/components/resources/extended-route-guide';
+import { RouteGuideSchema } from '@/components/resources/route-guide-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
 import { getStateSlugFromCode } from '@/lib/local-movers/index';
+import { getExtendedRouteGuide } from '@/lib/resources/routes/content';
 import { getRouteGuide, routeGuides } from '@/lib/resources/routes';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -17,6 +20,23 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const route = getRouteGuide(slug);
   if (!route) return {};
+
+  const extended = getExtendedRouteGuide(slug);
+
+  if (extended) {
+    return {
+      title: extended.seo.title,
+      description: extended.seo.description,
+      keywords: extended.seo.keywords,
+      openGraph: {
+        title: extended.seo.title,
+        description: extended.seo.description,
+      },
+      alternates: {
+        canonical: `https://www.movetrusthub.com/resources/routes/${route.slug}`,
+      },
+    };
+  }
 
   return {
     title: `${route.title} — Interstate Moving Route Guide`,
@@ -36,6 +56,8 @@ export default async function RouteGuidePage({ params }: Props) {
   const route = getRouteGuide(slug);
   if (!route) notFound();
 
+  const extended = getExtendedRouteGuide(slug);
+
   const related = route.relatedRoutes
     .map((s) => getRouteGuide(s))
     .filter((r): r is NonNullable<typeof r> => Boolean(r));
@@ -45,11 +67,15 @@ export default async function RouteGuidePage({ params }: Props) {
 
   return (
     <>
-      <ArticleSchema
-        title={route.title}
-        description={route.description}
-        path={`/resources/routes/${route.slug}`}
-      />
+      {extended ? (
+        <RouteGuideSchema route={route} content={extended} path={`/resources/routes/${route.slug}`} />
+      ) : (
+        <ArticleSchema
+          title={route.title}
+          description={route.description}
+          path={`/resources/routes/${route.slug}`}
+        />
+      )}
 
       <div className="container mx-auto px-4 py-10 max-w-3xl">
         <Link
@@ -65,9 +91,8 @@ export default async function RouteGuidePage({ params }: Props) {
         </Badge>
 
         <h1 className="text-4xl font-semibold tracking-tight mb-4">{route.title}</h1>
-        <p className="text-lg text-muted-foreground leading-relaxed mb-8">{route.description}</p>
 
-        <div className="grid sm:grid-cols-2 gap-4 mb-10">
+        <div className="grid sm:grid-cols-2 gap-4 mb-8">
           {[
             { label: 'Typical Distance', value: route.distance },
             { label: 'Transit Time', value: route.driveTime },
@@ -83,6 +108,12 @@ export default async function RouteGuidePage({ params }: Props) {
             </div>
           ))}
         </div>
+
+        {extended ? (
+          <ExtendedRouteGuide content={extended} />
+        ) : (
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">{route.description}</p>
+        )}
 
         <section className="mb-10">
           <h2 className="text-2xl font-semibold tracking-tight mb-3">Planning Tips for This Route</h2>
@@ -184,22 +215,24 @@ export default async function RouteGuidePage({ params }: Props) {
           </section>
         )}
 
-        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 mb-10">
-          <div className="flex items-start gap-3">
-            <Truck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-            <div>
-              <h2 className="font-semibold mb-2">Compare movers for {route.from} → {route.to}</h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                Build your inventory in our{' '}
-                <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
-                , then browse{' '}
-                <Link href="/companies" className="text-primary underline underline-offset-2">licensed interstate carriers</Link>
-                {' '}or{' '}
-                <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
-              </p>
+        {!extended && (
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 mb-10">
+            <div className="flex items-start gap-3">
+              <Truck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+              <div>
+                <h2 className="font-semibold mb-2">Compare movers for {route.from} → {route.to}</h2>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  Build your inventory in our{' '}
+                  <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
+                  , then browse{' '}
+                  <Link href="/companies" className="text-primary underline underline-offset-2">licensed interstate carriers</Link>
+                  {' '}or{' '}
+                  <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         <GuideFooter
           relatedSlugs={['how-to-choose', 'move-size-weight', 'scams', 'packing-checklist', 'checklist']}

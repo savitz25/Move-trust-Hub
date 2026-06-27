@@ -177,6 +177,11 @@ export const texasClusterContent: TexasClusterContent = {
       href: '/resources/routes/california-to-texas',
     },
     {
+      title: 'New York to Texas route guide',
+      description: 'NYC pickup tips, Texas destination insights, and 2026–2027 cost ranges.',
+      href: '/resources/routes/new-york-to-texas',
+    },
+    {
       title: 'Texas to California route guide',
       description: 'Reverse corridor pricing and seasonal factors.',
       href: '/resources/routes/texas-to-california',
