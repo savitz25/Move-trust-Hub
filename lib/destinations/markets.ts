@@ -3761,6 +3761,281 @@ export const markets: Market[] = [
     mapDescription:
       'Passaic and Elizabeth — gateway cities with Great Falls heritage, NJ Transit hubs, and cultural diversity.',
   },
+  {
+    slug: 'new-york',
+    displayName: 'New York',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: [],
+    lat: 42.9,
+    lng: -75.5,
+    defaultToZip: '11762',
+    topInboundOrigins: ['New Jersey', 'Florida', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$2,600–$5,600',
+      twoBR: '$4,800–$8,400',
+      threeBR: '$7,000–$11,600',
+      fourBR: '$10,000–$16,400',
+    },
+    inboundGrowthStat:
+      'Long Island LIRR suburbs · Westchester corporate corridors · affordable Upstate Buffalo–Rochester',
+    peakSeasonNote:
+      'Summer tri-state peak season and corporate relocation windows compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 17,
+    mapDescription:
+      'New York inbound hub covering Long Island (Massapequa Park, Hicksville, Lindenhurst), Westchester (White Plains, New Rochelle), Buffalo–Rochester (Greece, Cheektowaga, Tonawanda), and Upstate (Glens Falls, Elmira).',
+  },
+  {
+    slug: 'massapequa-park-ny',
+    displayName: 'Massapequa Park',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['nassau-ny'],
+    lat: 40.6804,
+    lng: -73.4551,
+    defaultToZip: '11762',
+    topInboundOrigins: ['New Jersey', 'Florida', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$3,200–$6,500',
+      twoBR: '$5,800–$9,600',
+      threeBR: '$8,400–$13,400',
+      fourBR: '$12,000–$18,600',
+    },
+    inboundGrowthStat:
+      'Quiet high-earning LI village · excellent schools · quick LIRR to Manhattan',
+    peakSeasonNote:
+      'South Shore parkway routing and LIRR parking limits common on Nassau County deliveries',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Massapequa Park in Nassau County — quiet high-earning Long Island village with top schools and LIRR access.',
+  },
+  {
+    slug: 'greece-ny',
+    displayName: 'Greece',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['monroe-ny'],
+    lat: 43.2098,
+    lng: -77.6931,
+    defaultToZip: '14626',
+    topInboundOrigins: ['Florida', 'New Jersey', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$4,600',
+      twoBR: '$4,000–$6,800',
+      threeBR: '$5,800–$9,200',
+      fourBR: '$8,200–$12,800',
+    },
+    inboundGrowthStat:
+      'Affordable Rochester suburb · spacious homes · Lake Ontario proximity · strong value',
+    peakSeasonNote:
+      'Monroe County winter-weather delivery windows require November–March scheduling flexibility',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Greece in Monroe County — affordable Rochester suburb with spacious homes near Lake Ontario.',
+  },
+  {
+    slug: 'hicksville-ny',
+    displayName: 'Hicksville',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['nassau-ny'],
+    lat: 40.7684,
+    lng: -73.5251,
+    defaultToZip: '11801',
+    topInboundOrigins: ['New Jersey', 'Florida', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$3,100–$6,400',
+      twoBR: '$5,600–$9,400',
+      threeBR: '$8,200–$13,200',
+      fourBR: '$11,800–$18,200',
+    },
+    inboundGrowthStat:
+      'Bustling LI transit hub · robust economy · excellent shopping · LIRR junction',
+    peakSeasonNote:
+      'LIRR junction-area parking and retail-corridor traffic affect delivery scheduling',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Hicksville in Nassau County — Long Island transit hub with robust retail economy and LIRR access.',
+  },
+  {
+    slug: 'cheektowaga-ny',
+    displayName: 'Cheektowaga',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['erie-ny'],
+    lat: 42.9034,
+    lng: -78.7548,
+    defaultToZip: '14225',
+    topInboundOrigins: ['Florida', 'New Jersey', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$2,100–$4,400',
+      twoBR: '$3,800–$6,500',
+      threeBR: '$5,600–$8,800',
+      fourBR: '$8,000–$12,400',
+    },
+    inboundGrowthStat:
+      'Budget-friendly Buffalo suburb · low cost of living · family-friendly parks',
+    peakSeasonNote:
+      'Buffalo-metro winter weather and airport-adjacent traffic windows affect scheduling',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Cheektowaga in Erie County — budget-friendly Buffalo suburb with family-friendly inventory.',
+  },
+  {
+    slug: 'white-plains-ny',
+    displayName: 'White Plains',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['westchester-ny'],
+    lat: 41.034,
+    lng: -73.7629,
+    defaultToZip: '10601',
+    topInboundOrigins: ['New Jersey', 'Florida', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$3,200–$6,600',
+      twoBR: '$5,900–$9,800',
+      threeBR: '$8,600–$13,600',
+      fourBR: '$12,200–$19,000',
+    },
+    inboundGrowthStat:
+      'Upscale Westchester mini-metropolis · corporate center · fast Metro-North to NYC',
+    peakSeasonNote:
+      'Downtown high-rise COI filings and Metro-North commuter peaks standard on Westchester deliveries',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'White Plains in Westchester County — upscale corporate mini-metropolis with Metro-North express service.',
+  },
+  {
+    slug: 'tonawanda-ny',
+    displayName: 'Tonawanda',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['erie-ny'],
+    lat: 43.0203,
+    lng: -78.8803,
+    defaultToZip: '14150',
+    topInboundOrigins: ['Florida', 'New Jersey', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$2,100–$4,400',
+      twoBR: '$3,800–$6,500',
+      threeBR: '$5,600–$8,800',
+      fourBR: '$8,000–$12,400',
+    },
+    inboundGrowthStat:
+      'Scenic waterfront near Buffalo · affordable · parks and trails · Niagara River',
+    peakSeasonNote:
+      'Niagara River waterfront properties and trail-adjacent streets may require shuttle staging',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Tonawanda in Erie County — scenic Niagara River waterfront suburb near Buffalo with parks and trails.',
+  },
+  {
+    slug: 'glens-falls-ny',
+    displayName: 'Glens Falls',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['warren-ny'],
+    lat: 43.3095,
+    lng: -73.644,
+    defaultToZip: '12801',
+    topInboundOrigins: ['New Jersey', 'Florida', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$4,600',
+      twoBR: '$4,000–$6,800',
+      threeBR: '$5,800–$9,200',
+      fourBR: '$8,200–$12,800',
+    },
+    inboundGrowthStat:
+      'Adirondacks gateway · arts scene · outdoor recreation · quaint downtown',
+    peakSeasonNote:
+      'Adirondacks gateway mountain roads and summer tourism traffic affect delivery windows',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Glens Falls in Warren County — Adirondacks gateway with arts culture and outdoor recreation.',
+  },
+  {
+    slug: 'new-rochelle-ny',
+    displayName: 'New Rochelle',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['westchester-ny'],
+    lat: 40.9115,
+    lng: -73.7826,
+    defaultToZip: '10801',
+    topInboundOrigins: ['New Jersey', 'Florida', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,200',
+      twoBR: '$5,600–$9,200',
+      threeBR: '$8,200–$13,000',
+      fourBR: '$11,800–$18,200',
+    },
+    inboundGrowthStat:
+      'Diverse coastal city · revitalization · quick Manhattan access · waterfront growth',
+    peakSeasonNote:
+      'Waterfront redevelopment high-rises and coastal access roads require COI and shuttle planning',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'New Rochelle in Westchester County — diverse coastal city with revitalization and quick Manhattan access.',
+  },
+  {
+    slug: 'elmira-ny',
+    displayName: 'Elmira',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['chemung-ny'],
+    lat: 42.0898,
+    lng: -76.8077,
+    defaultToZip: '14901',
+    topInboundOrigins: ['Florida', 'Pennsylvania', 'New Jersey', 'California'],
+    avgCostRanges: {
+      studio: '$1,900–$4,000',
+      twoBR: '$3,400–$5,800',
+      threeBR: '$5,000–$7,800',
+      fourBR: '$7,200–$11,200',
+    },
+    inboundGrowthStat:
+      'Highly affordable Southern Tier · among NY\'s lowest home prices · four-season value',
+    peakSeasonNote:
+      'Southern Tier rural driveways and Chemung River valley properties often require shuttle trucks',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Elmira in Chemung County — highly affordable Southern Tier city with among NY\'s lowest home prices.',
+  },
+  {
+    slug: 'lindenhurst-ny',
+    displayName: 'Lindenhurst',
+    stateCode: 'NY',
+    stateName: 'New York',
+    primaryCounties: ['suffolk-ny'],
+    lat: 40.6868,
+    lng: -73.3701,
+    defaultToZip: '11757',
+    topInboundOrigins: ['New Jersey', 'Florida', 'Pennsylvania', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,200',
+      twoBR: '$5,600–$9,400',
+      threeBR: '$8,200–$13,200',
+      fourBR: '$11,800–$18,200',
+    },
+    inboundGrowthStat:
+      'Classic LI maritime village · beaches · breweries · downtown revival',
+    peakSeasonNote:
+      'South Shore maritime village streets and summer beach-traffic windows affect Suffolk deliveries',
+    clusterParent: 'new-york',
+    priority: 17,
+    mapDescription:
+      'Lindenhurst in Suffolk County — classic Long Island maritime village with beaches and brewery revival.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

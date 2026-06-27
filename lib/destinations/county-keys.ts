@@ -15,6 +15,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   wv: 'west-virginia',
   pa: 'pennsylvania',
   nj: 'new-jersey',
+  ny: 'new-york',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

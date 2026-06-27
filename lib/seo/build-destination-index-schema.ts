@@ -382,6 +382,66 @@ export function buildAlabamaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/new-york cluster parent */
+export function buildNewYorkClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const newYorkHubs = getClusterMarkets('new-york').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'New York', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'New York',
+          addressRegion: 'NY',
+        },
+        mainEntity: { '@id': `${canonical}#new-york-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#new-york-hub-list`,
+        name: 'New York City Moving Guides',
+        numberOfItems: newYorkHubs.length,
+        itemListElement: newYorkHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, NY`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/new-jersey cluster parent */
 export function buildNewJerseyClusterSchemaGraph(
   title: string,

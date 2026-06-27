@@ -389,6 +389,43 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Collin County Plano–Frisco corporate suburb guide',
     },
   },
+  'new-york': {
+    nassau: {
+      label: 'Moving to Nassau County',
+      href: '/moving-to/new-york/massapequa-park-ny',
+      description: 'Massapequa Park and Hicksville Long Island LIRR suburb guides',
+    },
+    suffolk: {
+      label: 'Moving to Lindenhurst',
+      href: '/moving-to/new-york/lindenhurst-ny',
+      description: 'Suffolk County South Shore maritime village inbound guide',
+    },
+    westchester: {
+      label: 'Moving to Westchester County',
+      href: '/moving-to/new-york/white-plains-ny',
+      description: 'White Plains and New Rochelle corporate-coastal inbound guides',
+    },
+    monroe: {
+      label: 'Moving to Greece',
+      href: '/moving-to/new-york/greece-ny',
+      description: 'Monroe County Rochester-area affordable suburb guide',
+    },
+    erie: {
+      label: 'Moving to Buffalo suburbs',
+      href: '/moving-to/new-york/cheektowaga-ny',
+      description: 'Cheektowaga and Tonawanda Erie County affordability guides',
+    },
+    warren: {
+      label: 'Moving to Glens Falls',
+      href: '/moving-to/new-york/glens-falls-ny',
+      description: 'Warren County Adirondacks gateway arts and outdoor guide',
+    },
+    chemung: {
+      label: 'Moving to Elmira',
+      href: '/moving-to/new-york/elmira-ny',
+      description: 'Chemung County Southern Tier affordability inbound guide',
+    },
+  },
   'new-jersey': {
     hudson: {
       label: 'Moving to the Hudson Waterfront',

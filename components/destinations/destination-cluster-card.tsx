@@ -24,6 +24,7 @@ const LIVE_CLUSTER_PARENT_SLUGS = new Set([
   'west-virginia',
   'pennsylvania',
   'new-jersey',
+  'new-york',
 ]);
 
 type Props = {
