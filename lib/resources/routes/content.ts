@@ -1,5 +1,14 @@
 import type { RouteGuideExtendedContent } from '@/lib/resources/routes/types';
+import { californiaToArizonaContent } from '@/lib/resources/routes/california-to-arizona';
+import { californiaToFloridaContent } from '@/lib/resources/routes/california-to-florida';
+import { californiaToIdahoContent } from '@/lib/resources/routes/california-to-idaho';
+import { californiaToNorthCarolinaContent } from '@/lib/resources/routes/california-to-north-carolina';
+import { californiaToOregonContent } from '@/lib/resources/routes/california-to-oregon';
+import { californiaToSouthCarolinaContent } from '@/lib/resources/routes/california-to-south-carolina';
+import { californiaToTennesseeContent } from '@/lib/resources/routes/california-to-tennessee';
 import { californiaToTexasContent } from '@/lib/resources/routes/california-to-texas';
+import { californiaToWashingtonContent } from '@/lib/resources/routes/california-to-washington';
+import { californiaToWyomingContent } from '@/lib/resources/routes/california-to-wyoming';
 import { illinoisToGeorgiaContent } from '@/lib/resources/routes/illinois-to-georgia';
 import { illinoisToLouisianaContent } from '@/lib/resources/routes/illinois-to-louisiana';
 import { illinoisToFloridaContent } from '@/lib/resources/routes/illinois-to-florida';
@@ -35,7 +44,16 @@ import { sanDiegoToHoustonContent } from '@/lib/resources/routes/san-diego-to-ho
 import { sanFranciscoToAustinContent } from '@/lib/resources/routes/san-francisco-to-austin';
 
 const extendedRouteGuides: Record<string, RouteGuideExtendedContent> = {
+  'california-to-oregon': californiaToOregonContent,
+  'california-to-washington': californiaToWashingtonContent,
+  'california-to-idaho': californiaToIdahoContent,
+  'california-to-wyoming': californiaToWyomingContent,
   'california-to-texas': californiaToTexasContent,
+  'california-to-arizona': californiaToArizonaContent,
+  'california-to-north-carolina': californiaToNorthCarolinaContent,
+  'california-to-south-carolina': californiaToSouthCarolinaContent,
+  'california-to-florida': californiaToFloridaContent,
+  'california-to-tennessee': californiaToTennesseeContent,
   'illinois-to-georgia': illinoisToGeorgiaContent,
   'illinois-to-louisiana': illinoisToLouisianaContent,
   'illinois-to-florida': illinoisToFloridaContent,
