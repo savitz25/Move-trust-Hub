@@ -6261,6 +6261,281 @@ export const markets: Market[] = [
     mapDescription:
       'Skokie in Cook County — culturally rich near-north suburb with CTA and Old Orchard access.',
   },
+  {
+    slug: 'georgia',
+    displayName: 'Georgia',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: [],
+    lat: 33.0,
+    lng: -83.5,
+    defaultToZip: '30303',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,600–$6,500',
+      twoBR: '$4,800–$9,800',
+      threeBR: '$7,000–$13,200',
+      fourBR: '$10,400–$18,500',
+    },
+    inboundGrowthStat:
+      'Tech & corporate expansions · elite suburban schools · coastal port growth',
+    peakSeasonNote:
+      'I-285 Perimeter peaks and summer school-year closing clusters compress carrier schedules May–September',
+    isClusterParent: true,
+    priority: 25,
+    mapDescription:
+      'Georgia inbound hub covering North Fulton Elite Suburbs (Johns Creek, Alpharetta, Roswell), Metro Atlanta (Atlanta, Decatur, Smyrna, Cumming), Coastal Growth (Savannah, Pooler), and Heartland (Warner Robins).',
+  },
+  {
+    slug: 'johns-creek-ga',
+    displayName: 'Johns Creek',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['fulton-ga'],
+    lat: 34.0289,
+    lng: -84.1986,
+    defaultToZip: '30097',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,200–$9,800',
+      threeBR: '$7,600–$13,200',
+      fourBR: '$11,200–$18,500',
+    },
+    inboundGrowthStat:
+      '#1 in Georgia · elite schools · high incomes · medical facilities',
+    peakSeasonNote:
+      'North Fulton estate driveways and GA-141 corridor closing peaks affect Johns Creek scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Johns Creek in Fulton County — #1 ranked Georgia city with elite schools and safe neighborhoods.',
+  },
+  {
+    slug: 'alpharetta-ga',
+    displayName: 'Alpharetta',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['fulton-ga'],
+    lat: 34.0754,
+    lng: -84.2941,
+    defaultToZip: '30009',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,200–$9,800',
+      threeBR: '$7,600–$13,200',
+      fourBR: '$11,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Technology City of the South · Avalon · tech jobs',
+    peakSeasonNote:
+      'Avalon mixed-use shuttle staging and tech-corridor corporate relocation peaks affect Alpharetta scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Alpharetta in Fulton County — Technology City of the South with Avalon development and tech employment.',
+  },
+  {
+    slug: 'roswell-ga',
+    displayName: 'Roswell',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['fulton-ga'],
+    lat: 34.0232,
+    lng: -84.3616,
+    defaultToZip: '30075',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,200–$9,800',
+      threeBR: '$7,600–$13,200',
+      fourBR: '$11,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Historic river community · Canton Street · Chattahoochee access',
+    peakSeasonNote:
+      'Canton Street narrow-street deliveries and Chattahoochee corridor accessorials affect Roswell scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Roswell in Fulton County — historic river town with walkable Canton Street and Chattahoochee access.',
+  },
+  {
+    slug: 'atlanta-ga',
+    displayName: 'Atlanta',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['fulton-ga'],
+    lat: 33.749,
+    lng: -84.388,
+    defaultToZip: '30303',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,200–$9,800',
+      threeBR: '$7,600–$13,200',
+      fourBR: '$11,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Cultural & economic heart · BeltLine · airline hub · entertainment',
+    peakSeasonNote:
+      'Downtown high-rise COI coordination and I-285 Perimeter peaks affect Atlanta delivery windows',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Atlanta in Fulton County — capital city with BeltLine culture, Delta hub, and Fortune 500 corridors.',
+  },
+  {
+    slug: 'decatur-ga',
+    displayName: 'Decatur',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['dekalb-ga'],
+    lat: 33.7748,
+    lng: -84.2963,
+    defaultToZip: '30030',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,600–$6,000',
+      twoBR: '$4,800–$9,200',
+      threeBR: '$7,000–$12,400',
+      fourBR: '$10,400–$17,200',
+    },
+    inboundGrowthStat:
+      'Progressive college-town feel · MARTA · tight-knit community',
+    peakSeasonNote:
+      'MARTA-adjacent walk-up constraints and Decatur Square narrow-street staging affect deliveries',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Decatur in DeKalb County — progressive MARTA-connected walkable community near Atlanta.',
+  },
+  {
+    slug: 'smyrna-ga',
+    displayName: 'Smyrna',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['cobb-ga'],
+    lat: 33.8839,
+    lng: -84.5144,
+    defaultToZip: '30080',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,600–$6,000',
+      twoBR: '$4,800–$9,200',
+      threeBR: '$7,000–$12,400',
+      fourBR: '$10,400–$17,200',
+    },
+    inboundGrowthStat:
+      'Truist Park convenience · Jonquil City · retail growth',
+    peakSeasonNote:
+      'Truist Park event-traffic peaks and Jonquil City retail corridor congestion affect Smyrna scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Smyrna in Cobb County — Jonquil City with Truist Park convenience and retail growth.',
+  },
+  {
+    slug: 'cumming-ga',
+    displayName: 'Cumming',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['forsyth-ga'],
+    lat: 34.2073,
+    lng: -84.1402,
+    defaultToZip: '30040',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,600–$6,000',
+      twoBR: '$4,800–$9,200',
+      threeBR: '$7,000–$12,400',
+      fourBR: '$10,400–$17,200',
+    },
+    inboundGrowthStat:
+      'Fast-growing exurban · Lake Lanier · low taxes',
+    peakSeasonNote:
+      'Lake Lanier seasonal driveway access and GA-400 exurban closing clusters affect Cumming scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Cumming in Forsyth County — fast-growing Lake Lanier exurban corridor with low taxes.',
+  },
+  {
+    slug: 'savannah-ga',
+    displayName: 'Savannah',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['chatham-ga'],
+    lat: 32.0809,
+    lng: -81.0912,
+    defaultToZip: '31401',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,600–$6,000',
+      twoBR: '$4,800–$9,200',
+      threeBR: '$7,000–$12,400',
+      fourBR: '$10,400–$17,200',
+    },
+    inboundGrowthStat:
+      'Historic coastal jewel · port growth · tourism economy',
+    peakSeasonNote:
+      'Historic-district narrow-street shuttle staging and summer tourism peaks affect Savannah scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Savannah in Chatham County — historic coastal port city with tourism and logistics growth.',
+  },
+  {
+    slug: 'warner-robins-ga',
+    displayName: 'Warner Robins',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['houston-ga'],
+    lat: 32.613,
+    lng: -83.6242,
+    defaultToZip: '31088',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,400',
+      threeBR: '$6,400–$11,200',
+      fourBR: '$9,400–$16,200',
+    },
+    inboundGrowthStat:
+      'Defense & aerospace hub · Robins AFB · affordability',
+    peakSeasonNote:
+      'Robins AFB relocation windows and Houston County closing clusters affect Warner Robins scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Warner Robins in Houston County — Robins Air Force Base defense-aerospace hub with affordability.',
+  },
+  {
+    slug: 'pooler-ga',
+    displayName: 'Pooler',
+    stateCode: 'GA',
+    stateName: 'Georgia',
+    primaryCounties: ['chatham-ga'],
+    lat: 32.1155,
+    lng: -81.2471,
+    defaultToZip: '31322',
+    topInboundOrigins: ['Florida', 'New York', 'California', 'Texas', 'North Carolina'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,400',
+      threeBR: '$6,400–$11,200',
+      fourBR: '$9,400–$16,200',
+    },
+    inboundGrowthStat:
+      'Coastal boomtown · Hyundai EV plant · rapid expansion',
+    peakSeasonNote:
+      'I-95 closing clusters and Hyundai plant corridor new-construction peaks affect Pooler scheduling',
+    clusterParent: 'georgia',
+    priority: 25,
+    mapDescription:
+      'Pooler in Chatham County — rapidly expanding coastal boomtown with Hyundai EV plant influence.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

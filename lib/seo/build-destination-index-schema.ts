@@ -622,6 +622,66 @@ export function buildNewHampshireClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/georgia cluster parent */
+export function buildGeorgiaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const georgiaHubs = getClusterMarkets('georgia').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Georgia', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Georgia',
+          addressRegion: 'GA',
+        },
+        mainEntity: { '@id': `${canonical}#georgia-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#georgia-hub-list`,
+        name: 'Georgia City Moving Guides',
+        numberOfItems: georgiaHubs.length,
+        itemListElement: georgiaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, GA`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/indiana cluster parent */
 export function buildIndianaClusterSchemaGraph(
   title: string,

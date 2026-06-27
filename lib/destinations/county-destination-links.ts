@@ -463,6 +463,38 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  georgia: {
+    fulton: {
+      label: 'Moving to Johns Creek',
+      href: '/moving-to/georgia/johns-creek-ga',
+      description: 'Fulton County North Fulton elite suburb inbound guides',
+    },
+    dekalb: {
+      label: 'Moving to Decatur',
+      href: '/moving-to/georgia/decatur-ga',
+      description: 'DeKalb County progressive MARTA-connected inbound guide',
+    },
+    cobb: {
+      label: 'Moving to Smyrna',
+      href: '/moving-to/georgia/smyrna-ga',
+      description: 'Cobb County Jonquil City Truist Park corridor inbound guide',
+    },
+    forsyth: {
+      label: 'Moving to Cumming',
+      href: '/moving-to/georgia/cumming-ga',
+      description: 'Forsyth County Lake Lanier exurban inbound guide',
+    },
+    chatham: {
+      label: 'Moving to Savannah',
+      href: '/moving-to/georgia/savannah-ga',
+      description: 'Chatham County historic coastal and Pooler boomtown inbound guides',
+    },
+    houston: {
+      label: 'Moving to Warner Robins',
+      href: '/moving-to/georgia/warner-robins-ga',
+      description: 'Houston County Robins AFB defense-aerospace inbound guide',
+    },
+  },
   indiana: {
     hamilton: {
       label: 'Moving to Carmel',

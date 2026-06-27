@@ -87,6 +87,9 @@ import { tucsonMaranaAzContent } from '@/lib/destinations/content/tucson-marana-
 import { bentonvilleArContent } from '@/lib/destinations/content/bentonville-ar';
 import { fayettevilleArContent } from '@/lib/destinations/content/fayetteville-ar';
 import { rogersArContent } from '@/lib/destinations/content/rogers-ar';
+import { centertonArContent } from '@/lib/destinations/content/centerton-ar';
+import { bellaVistaArContent } from '@/lib/destinations/content/bella-vista-ar';
+import { littleRockArContent } from '@/lib/destinations/content/little-rock-ar';
 import { conwayArContent } from '@/lib/destinations/content/conway-ar';
 import { springdaleArContent } from '@/lib/destinations/content/springdale-ar';
 import { bentonBryantArContent } from '@/lib/destinations/content/benton-bryant-ar';
@@ -235,6 +238,16 @@ import { bloomingtonIlContent } from '@/lib/destinations/content/bloomington-il'
 import { schaumburgIlContent } from '@/lib/destinations/content/schaumburg-il';
 import { desPlainesIlContent } from '@/lib/destinations/content/des-plaines-il';
 import { skokieIlContent } from '@/lib/destinations/content/skokie-il';
+import { johnsCreekGaContent } from '@/lib/destinations/content/johns-creek-ga';
+import { alpharettaGaContent } from '@/lib/destinations/content/alpharetta-ga';
+import { roswellGaContent } from '@/lib/destinations/content/roswell-ga';
+import { atlantaGaContent } from '@/lib/destinations/content/atlanta-ga';
+import { decaturGaContent } from '@/lib/destinations/content/decatur-ga';
+import { smyrnaGaContent } from '@/lib/destinations/content/smyrna-ga';
+import { cummingGaContent } from '@/lib/destinations/content/cumming-ga';
+import { savannahGaContent } from '@/lib/destinations/content/savannah-ga';
+import { warnerRobinsGaContent } from '@/lib/destinations/content/warner-robins-ga';
+import { poolerGaContent } from '@/lib/destinations/content/pooler-ga';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -324,6 +337,9 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'bentonville-ar': bentonvilleArContent,
   'fayetteville-ar': fayettevilleArContent,
   'rogers-ar': rogersArContent,
+  'centerton-ar': centertonArContent,
+  'bella-vista-ar': bellaVistaArContent,
+  'little-rock-ar': littleRockArContent,
   'conway-ar': conwayArContent,
   'springdale-ar': springdaleArContent,
   'benton-bryant-ar': bentonBryantArContent,
@@ -472,6 +488,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'schaumburg-il': schaumburgIlContent,
   'des-plaines-il': desPlainesIlContent,
   'skokie-il': skokieIlContent,
+  'johns-creek-ga': johnsCreekGaContent,
+  'alpharetta-ga': alpharettaGaContent,
+  'roswell-ga': roswellGaContent,
+  'atlanta-ga': atlantaGaContent,
+  'decatur-ga': decaturGaContent,
+  'smyrna-ga': smyrnaGaContent,
+  'cumming-ga': cummingGaContent,
+  'savannah-ga': savannahGaContent,
+  'warner-robins-ga': warnerRobinsGaContent,
+  'pooler-ga': poolerGaContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -634,5 +660,11 @@ export function getPublishedOhioHubSlugs(): string[] {
 export function getPublishedIllinoisHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'illinois'
+  );
+}
+
+export function getPublishedGeorgiaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'georgia'
   );
 }
