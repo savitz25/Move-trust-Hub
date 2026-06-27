@@ -463,6 +463,38 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  vermont: {
+    chittenden: {
+      label: 'Moving to Burlington',
+      href: '/moving-to/vermont/burlington-vt',
+      description: 'Chittenden County Champlain Valley Burlington metro inbound guides',
+    },
+    washington: {
+      label: 'Moving to Montpelier',
+      href: '/moving-to/vermont/montpelier-vt',
+      description: 'Washington County state capital inbound guide',
+    },
+    rutland: {
+      label: 'Moving to Rutland',
+      href: '/moving-to/vermont/rutland-vt',
+      description: 'Rutland County central Vermont affordability inbound guide',
+    },
+    caledonia: {
+      label: 'Moving to St. Johnsbury',
+      href: '/moving-to/vermont/st-johnsbury-vt',
+      description: 'Caledonia County Northeast Kingdom gateway inbound guide',
+    },
+    addison: {
+      label: 'Moving to Middlebury',
+      href: '/moving-to/vermont/middlebury-vt',
+      description: 'Addison County college-town inbound guide',
+    },
+    windham: {
+      label: 'Moving to Brattleboro',
+      href: '/moving-to/vermont/brattleboro-vt',
+      description: 'Windham County southern gateway inbound guide',
+    },
+  },
   'rhode-island': {
     providence: {
       label: 'Moving to Providence',

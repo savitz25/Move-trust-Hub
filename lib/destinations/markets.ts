@@ -4611,6 +4611,281 @@ export const markets: Market[] = [
     mapDescription:
       'Lincoln in Providence County — peaceful historic town with parks and Providence-adjacent value.',
   },
+  {
+    slug: 'vermont',
+    displayName: 'Vermont',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: [],
+    lat: 44.0,
+    lng: -72.7,
+    defaultToZip: '05401',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,200',
+      threeBR: '$7,400–$12,400',
+      fourBR: '$10,800–$17,200',
+    },
+    inboundGrowthStat:
+      'Champlain Valley schools · Green Mountain beauty · safe communities · quality of life',
+    peakSeasonNote:
+      'Winter weather windows and August UVM/college move-in peaks compress carrier schedules',
+    isClusterParent: true,
+    priority: 20,
+    mapDescription:
+      'Vermont inbound hub covering Champlain Valley (South Burlington, Burlington, Essex, Colchester, Williston), Central VT (Montpelier, Rutland), Kingdom & College (St. Johnsbury, Middlebury), and Southern Gateway (Brattleboro).',
+  },
+  {
+    slug: 'south-burlington-vt',
+    displayName: 'South Burlington',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['chittenden-vt'],
+    lat: 44.4669,
+    lng: -73.1709,
+    defaultToZip: '05403',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,400',
+      twoBR: '$5,600–$9,600',
+      threeBR: '$8,000–$13,200',
+      fourBR: '$11,600–$17,800',
+    },
+    inboundGrowthStat:
+      'Top-ranked schools · Lake Champlain access · modern suburban convenience',
+    peakSeasonNote:
+      'Lake Champlain lakeshore driveways and I-89 corridor winter scheduling affect deliveries',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'South Burlington in Chittenden County — top-ranked schools with Lake Champlain access and suburban convenience.',
+  },
+  {
+    slug: 'burlington-vt',
+    displayName: 'Burlington',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['chittenden-vt'],
+    lat: 44.4759,
+    lng: -73.2121,
+    defaultToZip: '05401',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,400',
+      twoBR: '$5,600–$9,600',
+      threeBR: '$8,000–$13,200',
+      fourBR: '$11,600–$17,800',
+    },
+    inboundGrowthStat:
+      'Vibrant college town · UVM · walkable downtown · cultural hub',
+    peakSeasonNote:
+      'Church Street narrow blocks and hill-section shuttle trucks common on Burlington deliveries',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Burlington in Chittenden County — UVM college town with Church Street cultural downtown.',
+  },
+  {
+    slug: 'essex-vt',
+    displayName: 'Essex',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['chittenden-vt'],
+    lat: 44.4906,
+    lng: -73.1104,
+    defaultToZip: '05452',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,400',
+      twoBR: '$5,600–$9,600',
+      threeBR: '$8,000–$13,200',
+      fourBR: '$11,600–$17,800',
+    },
+    inboundGrowthStat:
+      'Family-friendly · strong schools · growing employment corridor',
+    peakSeasonNote:
+      'Essex Junction rail-corridor traffic and village narrow-street deliveries affect scheduling',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Essex in Chittenden County — family-friendly suburb with strong schools and employment growth.',
+  },
+  {
+    slug: 'colchester-vt',
+    displayName: 'Colchester',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['chittenden-vt'],
+    lat: 44.5439,
+    lng: -73.1479,
+    defaultToZip: '05446',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,400',
+      twoBR: '$5,600–$9,600',
+      threeBR: '$8,000–$13,200',
+      fourBR: '$11,600–$17,800',
+    },
+    inboundGrowthStat:
+      'Lakeside suburban · outdoor recreation · good Champlain Valley value',
+    peakSeasonNote:
+      'Malletts Bay lakeshore properties and summer recreation traffic affect peak-season scheduling',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Colchester in Chittenden County — lakeside suburban community with outdoor recreation access.',
+  },
+  {
+    slug: 'williston-vt',
+    displayName: 'Williston',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['chittenden-vt'],
+    lat: 44.4376,
+    lng: -73.0676,
+    defaultToZip: '05495',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,000–$6,400',
+      twoBR: '$5,600–$9,600',
+      threeBR: '$8,000–$13,200',
+      fourBR: '$11,600–$17,800',
+    },
+    inboundGrowthStat:
+      'Upscale high-income suburb · top schools · retail and employment growth',
+    peakSeasonNote:
+      'Taft Corners retail-corridor traffic and upscale cul-de-sac shuttle staging common',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Williston in Chittenden County — upscale suburb with top schools and retail corridor growth.',
+  },
+  {
+    slug: 'montpelier-vt',
+    displayName: 'Montpelier',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['washington-vt'],
+    lat: 44.2601,
+    lng: -72.5754,
+    defaultToZip: '05602',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$5,800',
+      twoBR: '$5,200–$8,800',
+      threeBR: '$7,400–$12,000',
+      fourBR: '$10,800–$16,400',
+    },
+    inboundGrowthStat:
+      'Historic state capital · government jobs · arts scene',
+    peakSeasonNote:
+      'State Street historic-district narrow blocks and legislative session turnover affect scheduling',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Montpelier in Washington County — historic state capital with government and arts employment.',
+  },
+  {
+    slug: 'rutland-vt',
+    displayName: 'Rutland',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['rutland-vt'],
+    lat: 43.6106,
+    lng: -72.9726,
+    defaultToZip: '05701',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$5,400',
+      twoBR: '$4,800–$8,200',
+      threeBR: '$7,000–$11,400',
+      fourBR: '$10,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Affordable central Vermont hub · mountain access · revitalizing downtown',
+    peakSeasonNote:
+      'Killington corridor winter tourism and mountain-road shuttle staging affect Rutland deliveries',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Rutland in Rutland County — affordable central Vermont hub with Green Mountain access.',
+  },
+  {
+    slug: 'st-johnsbury-vt',
+    displayName: 'St. Johnsbury',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['caledonia-vt'],
+    lat: 44.4192,
+    lng: -72.0151,
+    defaultToZip: '05819',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$5,400',
+      twoBR: '$4,800–$8,200',
+      threeBR: '$7,000–$11,400',
+      fourBR: '$10,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Affordable Northeast Kingdom gateway · scenic beauty · small-town charm',
+    peakSeasonNote:
+      'Northeast Kingdom rural driveways and I-91 corridor winter weather affect scheduling',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'St. Johnsbury in Caledonia County — affordable Northeast Kingdom gateway with scenic beauty.',
+  },
+  {
+    slug: 'middlebury-vt',
+    displayName: 'Middlebury',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['addison-vt'],
+    lat: 44.0153,
+    lng: -73.1673,
+    defaultToZip: '05753',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$5,800',
+      twoBR: '$5,200–$8,800',
+      threeBR: '$7,400–$12,000',
+      fourBR: '$10,800–$16,400',
+    },
+    inboundGrowthStat:
+      'Charming college town · farmland surroundings · Middlebury College culture',
+    peakSeasonNote:
+      'College semester move-in windows and Route 7 village narrow-street deliveries compress August schedules',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Middlebury in Addison County — charming college town with farmland and cultural appeal.',
+  },
+  {
+    slug: 'brattleboro-vt',
+    displayName: 'Brattleboro',
+    stateCode: 'VT',
+    stateName: 'Vermont',
+    primaryCounties: ['windham-vt'],
+    lat: 42.8509,
+    lng: -72.5579,
+    defaultToZip: '05301',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$5,800',
+      twoBR: '$5,200–$8,800',
+      threeBR: '$7,400–$12,000',
+      fourBR: '$10,800–$16,400',
+    },
+    inboundGrowthStat:
+      'Artsy southern gateway · progressive vibe · Connecticut River access',
+    peakSeasonNote:
+      'Main Street historic walk-ups and Connecticut River corridor winter scheduling affect deliveries',
+    clusterParent: 'vermont',
+    priority: 20,
+    mapDescription:
+      'Brattleboro in Windham County — artsy southern gateway on the Connecticut River.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
