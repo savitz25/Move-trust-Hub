@@ -38,7 +38,7 @@ export const surfsideBeachScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Surfside Beach',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈635 miles',
     },
     {

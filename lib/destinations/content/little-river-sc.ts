@@ -38,7 +38,7 @@ export const littleRiverScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Little River',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈670 miles',
     },
     {

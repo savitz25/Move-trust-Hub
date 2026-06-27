@@ -40,7 +40,7 @@ export const sarasotaFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Sarasota',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈1,120 miles',
     },
     {

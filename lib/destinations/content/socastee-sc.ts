@@ -38,7 +38,7 @@ export const socasteeScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Socastee',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈645 miles',
     },
     {

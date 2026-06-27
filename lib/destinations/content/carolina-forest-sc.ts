@@ -38,7 +38,7 @@ export const carolinaForestScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Carolina Forest',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈640 miles',
     },
     {

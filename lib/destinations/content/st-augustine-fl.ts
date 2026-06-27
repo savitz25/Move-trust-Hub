@@ -38,7 +38,7 @@ export const stAugustineFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → St. Augustine',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈920 miles',
     },
     {

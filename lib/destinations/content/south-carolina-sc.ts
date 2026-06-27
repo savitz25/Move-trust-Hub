@@ -181,6 +181,11 @@ export const southCarolinaClusterContent: SouthCarolinaClusterContent = {
       href: '/local-movers/south-carolina/beaufort',
     },
     {
+      title: 'New Jersey to South Carolina route guide',
+      description: 'Grand Strand, Lowcountry, and Upstate pricing from NJ origins on I-95.',
+      href: '/resources/routes/new-jersey-to-south-carolina',
+    },
+    {
       title: 'New York to Myrtle Beach route guide',
       description: 'Mileage, timing, and cost factors for Northeast-to-Grand-Strand moves.',
       href: '/resources/routes/new-york-to-myrtle-beach',

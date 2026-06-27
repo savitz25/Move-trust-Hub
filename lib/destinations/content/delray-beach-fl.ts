@@ -38,7 +38,7 @@ export const delrayBeachFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Delray Beach',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈1,155 miles',
     },
     {

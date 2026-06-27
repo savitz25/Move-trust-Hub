@@ -40,7 +40,7 @@ export const ocalaFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Ocala',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈1,020 miles',
     },
     {

@@ -38,7 +38,7 @@ export const northMyrtleBeachScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → North Myrtle Beach',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈650 miles',
     },
     {

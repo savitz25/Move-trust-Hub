@@ -38,7 +38,7 @@ export const miamiFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Miami',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈1,250 miles',
     },
     {

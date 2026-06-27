@@ -223,6 +223,16 @@ export const floridaClusterContent: FloridaClusterContent = {
       href: '/resources/routes/new-york-to-florida',
     },
     {
+      title: 'New Jersey to Florida route guide',
+      description: 'Snowbird corridor pricing, NJ pickup tips, and Florida delivery logistics.',
+      href: '/resources/routes/new-jersey-to-florida',
+    },
+    {
+      title: 'New Jersey to South Carolina route guide',
+      description: 'Shorter I-95 corridor to the Grand Strand and Upstate from New Jersey.',
+      href: '/resources/routes/new-jersey-to-south-carolina',
+    },
+    {
       title: 'Verify any mover\'s USDOT & MC number',
       description: 'Step-by-step FMCSA lookup before booking.',
       href: '/resources/fmcsa',

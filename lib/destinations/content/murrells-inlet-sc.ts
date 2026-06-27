@@ -38,7 +38,7 @@ export const murrellsInletScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Murrells Inlet',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈630 miles',
     },
     {

@@ -39,7 +39,7 @@ export const hiltonHeadScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Hilton Head',
-      href: '/resources/routes/new-york-to-myrtle-beach',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈750 miles',
     },
     {

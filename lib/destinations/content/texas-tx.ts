@@ -197,6 +197,11 @@ export const texasClusterContent: TexasClusterContent = {
       href: '/resources/routes/new-york-to-texas',
     },
     {
+      title: 'New Jersey to Texas route guide',
+      description: 'NJ property-tax migration corridor — DFW, Austin, Houston, and San Antonio.',
+      href: '/resources/routes/new-jersey-to-texas',
+    },
+    {
       title: 'Texas to California route guide',
       description: 'Reverse corridor pricing and seasonal factors.',
       href: '/resources/routes/texas-to-california',

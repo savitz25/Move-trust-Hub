@@ -39,7 +39,7 @@ export const jacksonvilleFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Jacksonville',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈900 miles',
     },
     {

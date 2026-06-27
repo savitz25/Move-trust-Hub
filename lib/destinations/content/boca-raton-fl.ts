@@ -38,7 +38,7 @@ export const bocaRatonFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Boca Raton',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈1,150 miles',
     },
     {

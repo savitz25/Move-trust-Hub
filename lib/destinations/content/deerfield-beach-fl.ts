@@ -38,7 +38,7 @@ export const deerfieldBeachFlContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Deerfield Beach',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-florida',
       miles: '≈1,140 miles',
     },
     {
