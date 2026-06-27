@@ -10,6 +10,8 @@ export type RouteDestinationCity = {
   hubPath: string;
   tagline: string;
   paragraphs: string[];
+  /** Defaults to "City guide" when omitted */
+  linkLabel?: string;
 };
 
 export type RouteFaqItem = {
@@ -77,4 +79,6 @@ export type RouteGuideExtendedContent = {
   faqItems: RouteFaqItem[];
   howToSteps: RouteHowToStep[];
   internalLinks: RouteInternalLink[];
+  /** Mid-page quote CTA heading; defaults to generic copy when omitted */
+  ctaHeading?: string;
 };

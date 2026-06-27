@@ -141,10 +141,24 @@ export default async function RouteGuidePage({ params }: Props) {
             <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
             Popular City Pairs on This Corridor
           </h2>
-          <ul className="space-y-1.5 text-sm text-muted-foreground">
-            {route.popularCorridors.map((corridor) => (
-              <li key={corridor}>{corridor}</li>
-            ))}
+          <ul className="space-y-2 text-sm">
+            {route.popularCorridorLinks?.length
+              ? route.popularCorridorLinks.map((corridor) => (
+                  <li key={corridor.slug}>
+                    <Link
+                      href={`/resources/routes/${corridor.slug}`}
+                      className="inline-flex items-center gap-1 text-primary font-medium hover:underline"
+                    >
+                      {corridor.label}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
+                  </li>
+                ))
+              : route.popularCorridors.map((corridor) => (
+                  <li key={corridor} className="text-muted-foreground">
+                    {corridor}
+                  </li>
+                ))}
           </ul>
         </section>
 

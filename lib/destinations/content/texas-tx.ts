@@ -177,6 +177,21 @@ export const texasClusterContent: TexasClusterContent = {
       href: '/resources/routes/california-to-texas',
     },
     {
+      title: 'Los Angeles to Dallas–Fort Worth route guide',
+      description: 'The busiest CA→TX city pair — LA pickup tips and DFW delivery logistics.',
+      href: '/resources/routes/los-angeles-to-dallas-fort-worth',
+    },
+    {
+      title: 'San Francisco to Austin route guide',
+      description: 'Tech relocation corridor pricing, Bay Area pickup, and Austin delivery tips.',
+      href: '/resources/routes/san-francisco-to-austin',
+    },
+    {
+      title: 'San Diego to Houston route guide',
+      description: 'Southern California to Gulf Coast — SD origins and Houston suburban delivery.',
+      href: '/resources/routes/san-diego-to-houston',
+    },
+    {
       title: 'New York to Texas route guide',
       description: 'NYC pickup tips, Texas destination insights, and 2026–2027 cost ranges.',
       href: '/resources/routes/new-york-to-texas',

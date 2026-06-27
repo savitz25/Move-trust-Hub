@@ -33,8 +33,8 @@ export const austinTxContent: CityHubContent = {
   ],
   routeLinks: [
     {
-      label: 'California → Austin',
-      href: '/resources/routes/california-to-texas',
+      label: 'San Francisco → Austin',
+      href: '/resources/routes/san-francisco-to-austin',
       miles: '≈1,750 miles',
     },
     {

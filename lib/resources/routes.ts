@@ -14,6 +14,8 @@ export type RouteGuide = {
   planningTips: string[];
   costFactors: string[];
   popularCorridors: string[];
+  /** Optional slugs for clickable city-pair links in Popular City Pairs section */
+  popularCorridorLinks?: { label: string; slug: string }[];
   relatedRoutes: string[];
   /** Optional inbound destination hub for internal linking */
   destinationHubPath?: string;
@@ -52,7 +54,131 @@ export const routeGuides: RouteGuide[] = [
       'San Francisco Bay Area → Austin',
       'San Diego → Houston',
     ],
-    relatedRoutes: ['new-york-to-texas', 'texas-to-california', 'california-to-new-york', 'east-coast-to-west-coast'],
+    popularCorridorLinks: [
+      { label: 'Los Angeles → Dallas–Fort Worth', slug: 'los-angeles-to-dallas-fort-worth' },
+      { label: 'San Francisco Bay Area → Austin', slug: 'san-francisco-to-austin' },
+      { label: 'San Diego → Houston', slug: 'san-diego-to-houston' },
+    ],
+    relatedRoutes: [
+      'los-angeles-to-dallas-fort-worth',
+      'san-francisco-to-austin',
+      'san-diego-to-houston',
+      'new-york-to-texas',
+      'texas-to-california',
+      'california-to-new-york',
+    ],
+    destinationHubPath: '/moving-to/texas',
+  },
+  {
+    slug: 'los-angeles-to-dallas-fort-worth',
+    title: 'Moving from Los Angeles to Dallas–Fort Worth',
+    from: 'Los Angeles',
+    to: 'Dallas–Fort Worth',
+    fromState: 'CA',
+    toState: 'TX',
+    distance: '~1,400–1,450 miles',
+    driveTime: '20–24 hours transit',
+    avgCostRange: '$3,200–$7,800+ (varies by home size)',
+    peakSeason: 'May–September and corporate relocation season',
+    deliveryWindow: '3–8 days typical for full-service interstate loads',
+    description:
+      'Los Angeles to Dallas–Fort Worth is the busiest California-to-Texas city pair, driven by entertainment and tech transferees, finance hires, and families trading SoCal housing costs for DFW suburban space and no state income tax.',
+    planningTips: [
+      'Build your inventory with our moving calculator — LA high-rise and hillside driveway access can add origin fees beyond linehaul.',
+      'Compare at least three FMCSA-licensed carriers on identical cubic footage before booking.',
+      'Ask about Collin County shuttle trucks and Frisco–Plano narrow-street access at your Texas destination.',
+      'Book six to ten weeks ahead for summer moves when CA→DFW volume peaks.',
+      'Browse our Dallas–Fort Worth destination hub for county-level mover directories and 2026–2027 cost tables.',
+    ],
+    costFactors: [
+      'Total cubic feet and weight',
+      'LA parking permits, stairs, and hillside long carries',
+      'DFW suburban shuttle and HOA gate access',
+      'Peak summer demand on I-40 / I-30 corridors',
+      'Packing services and specialty items',
+      'Storage-in-transit if closing dates misalign',
+    ],
+    popularCorridors: [
+      'West LA / Santa Monica → Frisco',
+      'Downtown LA → Uptown Dallas',
+      'Pasadena → Plano',
+    ],
+    relatedRoutes: ['california-to-texas', 'san-francisco-to-austin', 'san-diego-to-houston', 'texas-to-california', 'new-york-to-texas'],
+    destinationHubPath: '/moving-to/texas/dallas-fort-worth-tx',
+  },
+  {
+    slug: 'san-francisco-to-austin',
+    title: 'Moving from San Francisco to Austin',
+    from: 'San Francisco Bay Area',
+    to: 'Austin',
+    fromState: 'CA',
+    toState: 'TX',
+    distance: '~1,700–1,800 miles',
+    driveTime: '24–30 hours transit',
+    avgCostRange: '$3,800–$8,800+ (varies by home size)',
+    peakSeason: 'May–September and tech hiring cycles',
+    deliveryWindow: '4–9 days typical for full-service interstate loads',
+    description:
+      'San Francisco to Austin is a premier tech relocation corridor in 2026, as Bay Area workers and founders trade state income tax and housing premiums for Silicon Hills hiring, Hill Country lifestyle, and Williamson County suburban inventory.',
+    planningTips: [
+      'Document garage workshops, home offices, and patio setups — Bay Area inventory density often exceeds phone estimates.',
+      'Confirm SF building COI, elevator reservations, and street parking for downtown and SoMa pickups.',
+      'Ask about Austin downtown loft deliveries vs. Round Rock cul-de-sac shuttle requirements at destination.',
+      'Compare binding estimates after virtual or in-home survey — SF→Austin linehaul is unforgiving of volume errors.',
+      'Read our scam avoidance guide before paying more than a modest booking deposit.',
+    ],
+    costFactors: [
+      'Shipment volume and weight (primary driver)',
+      'Bay Area high-rise pickup and parking permits',
+      'Austin hill-country driveway and gated-community access',
+      'Summer peak pricing on I-10 / I-35 routes',
+      'Full-packing vs. self-pack tiers',
+      'Enclosed handling for high-value furniture',
+    ],
+    popularCorridors: [
+      'San Francisco → Downtown Austin',
+      'Oakland / East Bay → Round Rock',
+      'San Jose → Cedar Park',
+    ],
+    relatedRoutes: ['california-to-texas', 'los-angeles-to-dallas-fort-worth', 'san-diego-to-houston', 'texas-to-california', 'new-york-to-texas'],
+    destinationHubPath: '/moving-to/texas/austin-tx',
+  },
+  {
+    slug: 'san-diego-to-houston',
+    title: 'Moving from San Diego to Houston',
+    from: 'San Diego',
+    to: 'Houston',
+    fromState: 'CA',
+    toState: 'TX',
+    distance: '~1,550–1,620 miles',
+    driveTime: '22–28 hours transit',
+    avgCostRange: '$3,400–$8,200+ (varies by home size)',
+    peakSeason: 'May–September and energy-sector relocation season',
+    deliveryWindow: '3–8 days typical for full-service interstate loads',
+    description:
+      'San Diego to Houston connects Southern California military, biotech, and defense households with Texas energy, medical-center, and port-logistics employment — a Gulf Coast corridor where hurricane-season planning and suburban Katy/Woodlands delivery access matter as much as linehaul mileage.',
+    planningTips: [
+      'Build room-by-room inventory before comparing quotes — SD coastal homes often include patio and garage volume phone estimates miss.',
+      'Confirm whether your carrier routes via I-10 direct or consolidates through Southwest hubs; ask about transit time in writing.',
+      'For Houston delivery, verify HOA move-in rules in Katy, Sugar Land, or the Woodlands and hurricane-season flexible date clauses.',
+      'Book car shipping alongside household goods — the drive is 22+ hours and impractical during a coordinated relocation.',
+      'Browse our Houston destination hub for Harris County movers and 2026–2027 inbound cost tables.',
+    ],
+    costFactors: [
+      'Cubic footage and weight',
+      'San Diego condo and coastal-community access',
+      'Houston Medical Center high-rise or suburban shuttle fees',
+      'Summer and energy-sector peak demand',
+      'Packing and crating for humidity-sensitive items',
+      'Storage if Texas closing dates slip',
+    ],
+    popularCorridors: [
+      'La Jolla → Katy',
+      'North Park / Downtown SD → Medical Center',
+      'Carlsbad → Sugar Land',
+    ],
+    relatedRoutes: ['california-to-texas', 'los-angeles-to-dallas-fort-worth', 'san-francisco-to-austin', 'texas-to-california', 'new-york-to-texas'],
+    destinationHubPath: '/moving-to/texas/houston-tx',
   },
   {
     slug: 'new-york-to-texas',

@@ -33,8 +33,8 @@ export const houstonTxContent: CityHubContent = {
   ],
   routeLinks: [
     {
-      label: 'California → Houston',
-      href: '/resources/routes/california-to-texas',
+      label: 'San Diego → Houston',
+      href: '/resources/routes/san-diego-to-houston',
       miles: '≈1,580 miles',
     },
     {

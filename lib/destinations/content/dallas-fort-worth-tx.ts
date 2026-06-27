@@ -33,9 +33,9 @@ export const dallasFortWorthTxContent: CityHubContent = {
   ],
   routeLinks: [
     {
-      label: 'California → Dallas–Fort Worth',
-      href: '/resources/routes/california-to-texas',
-      miles: '≈1,600 miles',
+      label: 'Los Angeles → Dallas–Fort Worth',
+      href: '/resources/routes/los-angeles-to-dallas-fort-worth',
+      miles: '≈1,430 miles',
     },
     {
       label: 'Illinois → Dallas–Fort Worth',
