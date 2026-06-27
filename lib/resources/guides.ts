@@ -22,7 +22,16 @@ export const guides: GuideEntry[] = [
     excerpt: 'Stop guessing your move size. Learn why accurate cubic footage protects you from lowball quotes and inflated prices.',
     category: 'Planning',
     href: '/resources/move-size-weight',
-    related: ['how-to-choose', 'packing-checklist', 'routes'],
+    related: ['interstate-moving-costs', 'how-to-choose', 'packing-checklist', 'routes'],
+  },
+  {
+    slug: 'interstate-moving-costs',
+    title: 'Interstate Moving Costs 2026: Average Prices & Savings Tips',
+    excerpt:
+      '2026 average prices by home size and distance, key cost drivers, and proven strategies to save without sacrificing quality.',
+    category: 'Planning',
+    href: '/resources/interstate-moving-costs',
+    related: ['move-size-weight', 'how-to-choose', 'carrier-vs-broker', 'routes', 'checklist'],
   },
   {
     slug: 'how-to-choose',

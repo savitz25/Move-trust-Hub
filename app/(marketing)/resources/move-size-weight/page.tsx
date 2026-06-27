@@ -231,7 +231,7 @@ export default function MoveSizeWeightGuide() {
           </div>
         </section>
 
-        <RelatedGuides slugs={['how-to-choose', 'packing-checklist', 'routes', 'scams', 'checklist']} />
+        <RelatedGuides slugs={['interstate-moving-costs', 'how-to-choose', 'packing-checklist', 'routes', 'scams', 'checklist']} />
 
         <p className="text-xs text-muted-foreground text-center pb-4">
           Move Trust Hub — Trusted Directory &amp; Reviews for Interstate Movers
