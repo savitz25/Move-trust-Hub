@@ -67,9 +67,6 @@ export const rootLayoutMetadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: DEFAULT_SITE_DESCRIPTION,
-  alternates: {
-    canonical: SITE_URL,
-  },
   keywords: [
     'interstate movers',
     'moving companies USA',

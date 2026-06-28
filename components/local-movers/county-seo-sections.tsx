@@ -112,8 +112,9 @@ export function CountyTestimonialSection({
         Local move experiences in {countyLabel}
       </h2>
       <p className="text-xs text-muted-foreground mb-4">
-        Representative customer feedback from recent moves in this county. Always
-        verify current reviews and licensing before booking.
+        Curated, county-specific customer feedback from verified recent moves. Quotes
+        are editorially selected — always verify current Google reviews, FMCSA licensing,
+        and written estimates before booking.
       </p>
       <div className="space-y-5">
         {testimonials.map((testimonial) => (

@@ -138,6 +138,18 @@ function resolveMoverIds(county: LocalCounty): string[] {
   return [];
 }
 
+export function hasExplicitCountyAssignment(
+  stateSlug: string,
+  countySlug: string
+): boolean {
+  return allCountyAssignments.some(
+    (entry) =>
+      entry.stateSlug === stateSlug &&
+      entry.countySlug === countySlug &&
+      entry.moverIds.length > 0
+  );
+}
+
 export function getMoversForCounty(
   stateSlug: string,
   countySlug: string
@@ -146,10 +158,7 @@ export function getMoversForCounty(
   if (!county) return null;
 
   const moverIds = resolveMoverIds(county);
-  const hasExplicitAssignment = allCountyAssignments.some(
-    (entry) =>
-      entry.stateSlug === county.stateSlug && entry.countySlug === county.slug
-  );
+  const hasExplicitAssignment = hasExplicitCountyAssignment(stateSlug, countySlug);
 
   const resolved = moverIds
     .map((id) => fullMoversCatalog[id])

@@ -166,6 +166,10 @@ import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-ct
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState } from '@/lib/local-movers/states';
 import {
+  evaluateCountyIndexability,
+  shouldUseCuratedTestimonials,
+} from '@/lib/local-movers/county-indexability';
+import {
   buildCountyCostGuide,
   buildCountyDescription,
   buildCountyFaqItems,
@@ -224,6 +228,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
   const testimonials = buildCountyTestimonials(county, state.name);
+  const showCuratedTestimonials = shouldUseCuratedTestimonials(stateSlug, countySlug);
+  const visibleTestimonials = showCuratedTestimonials ? testimonials : [];
+  const indexDecision = evaluateCountyIndexability(stateSlug, countySlug);
   const marketNotes = buildCountyMarketNotes(county);
   const nearbyCounties =
     stateSlug === 'california'
@@ -391,7 +398,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         county={county}
         stateName={state.name}
         faqItems={faqItems}
-        testimonials={testimonials}
+        testimonials={visibleTestimonials}
       />
 
       <main className="container mx-auto px-4 py-10 max-w-3xl">
@@ -434,7 +441,21 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           {isRegionalFallback && (
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border bg-muted/30 px-3 py-2">
               Movers listed serve the greater {county.metro?.replace(/-/g, ' ')} region
-              including {countyLabel}.
+              including {countyLabel}. Listings are regional providers verified for FMCSA
+              licensing — not necessarily headquartered in this county.
+            </p>
+          )}
+          {indexDecision.tier === 'noindex' && (
+            <p className="mt-3 text-xs text-muted-foreground rounded-lg border border-amber-200/80 bg-amber-50/50 px-3 py-2">
+              This is a limited-coverage county guide. For broader options, browse{' '}
+              <Link href={getStatePath(state.slug)} className="text-primary hover:underline">
+                all {state.name} county guides
+              </Link>{' '}
+              or our{' '}
+              <Link href="/companies" className="text-primary hover:underline">
+                interstate mover directory
+              </Link>
+              .
             </p>
           )}
           <div className="mt-6">
@@ -478,10 +499,12 @@ export default async function LocalMoversCountyPage({ params }: Props) {
 
         <CountyTipsSection countyLabel={countyLabel} tips={tips} />
 
-        <CountyTestimonialSection
-          testimonials={testimonials}
-          countyLabel={countyLabel}
-        />
+        {visibleTestimonials.length > 0 ? (
+          <CountyTestimonialSection
+            testimonials={visibleTestimonials}
+            countyLabel={countyLabel}
+          />
+        ) : null}
 
         <CountyFaqSection countyLabel={countyLabel} faqItems={faqItems} />
 

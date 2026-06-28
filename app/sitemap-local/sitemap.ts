@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import {
+  COUNTY_INDEX_POLICY_UPDATED,
   CALIFORNIA_COUNTY_CONTENT_UPDATED,
   FLORIDA_COUNTY_CONTENT_UPDATED,
   GEORGIA_COUNTY_CONTENT_UPDATED,
@@ -52,6 +53,7 @@ import {
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
+import { shouldIndexCounty } from '@/lib/local-movers/county-indexability';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { localStates } from '@/lib/local-movers/states';
 
@@ -756,7 +758,7 @@ export default async function sitemap({
                                                                                                         ? new Date(MINNESOTA_COUNTY_CONTENT_UPDATED)
                                                                                                         : id === 'wisconsin'
                                                                                                           ? new Date(WISCONSIN_COUNTY_CONTENT_UPDATED)
-                                                                                                          : new Date();
+                                                                                                          : new Date(COUNTY_INDEX_POLICY_UPDATED);
 
   return [
     {
@@ -765,7 +767,9 @@ export default async function sitemap({
       changeFrequency: 'weekly',
       priority: 0.85,
     },
-    ...counties.map((county) => ({
+    ...counties
+      .filter((county) => shouldIndexCounty(id, county.slug))
+      .map((county) => ({
       url: `${SITE_URL}/local-movers/${id}/${county.slug}`,
       lastModified,
       changeFrequency: 'weekly',

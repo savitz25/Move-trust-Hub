@@ -149,7 +149,7 @@ export function getSeoYear(): string {
 
 export function buildCountyTitle(county: LocalCounty, stateName: string): string {
   const seat = county.seat ? ` (${county.seat})` : '';
-  return `Top Local Movers in ${buildCountyLabel(county)}${seat}, ${county.stateCode} ${SEO_YEAR}`;
+  return `Local Movers in ${buildCountyLabel(county)}${seat}, ${county.stateCode} | ${SEO_YEAR} Guide`;
 }
 
 export function buildCountyDescription(

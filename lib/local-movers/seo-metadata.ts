@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { evaluateCountyIndexability } from '@/lib/local-movers/county-indexability';
 import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import {
@@ -91,7 +92,9 @@ export function buildCountyPageMetadata(
 ): Metadata {
   const title = buildCountyTitle(county, stateName);
   const description = buildCountyDescription(county, stateName, movers.length);
-  const keywords = buildCountyKeywords(county, stateName, movers);
+  const keywords = buildCountyKeywords(county, stateName, movers).slice(0, 12);
+  const indexDecision = evaluateCountyIndexability(county.stateSlug, county.slug);
+  const shouldIndex = indexDecision.tier === 'index';
 
   return {
     title,
@@ -100,7 +103,9 @@ export function buildCountyPageMetadata(
     alternates: { canonical: `${SITE_URL}${path}` },
     openGraph: buildOpenGraph(title, description, path),
     twitter: buildTwitter(title, description),
-    robots: { index: true, follow: true },
+    robots: shouldIndex
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     category: 'Local Moving Services',
   };
 }
