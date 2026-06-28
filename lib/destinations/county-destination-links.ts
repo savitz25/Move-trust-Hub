@@ -473,6 +473,53 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County South Jersey affordability and farm-country guide',
     },
   },
+  'new-mexico': {
+    sandoval: {
+      label: 'Moving to Rio Rancho',
+      href: '/moving-to/new-mexico/rio-rancho-nm',
+      description: 'Sandoval County #1 New Mexico inbound master-planned guide',
+    },
+    bernalillo: {
+      label: 'Moving to Albuquerque',
+      href: '/moving-to/new-mexico/albuquerque-nm',
+      description: 'Bernalillo County Rio Grande metro and Corrales inbound guides',
+    },
+    'santa-fe': {
+      label: 'Moving to Santa Fe',
+      href: '/moving-to/new-mexico/santa-fe-nm',
+      description: 'Santa Fe County arts capital inbound guide',
+    },
+    'los-alamos': {
+      label: 'Moving to Los Alamos',
+      href: '/moving-to/new-mexico/los-alamos-nm',
+      description: 'Los Alamos national laboratory mesa community inbound guide',
+    },
+    'doa-ana': {
+      label: 'Moving to Las Cruces',
+      href: '/moving-to/new-mexico/las-cruces-nm',
+      description: 'Doña Ana County southern college-town inbound guide',
+    },
+    'san-juan': {
+      label: 'Moving to Farmington',
+      href: '/moving-to/new-mexico/farmington-nm',
+      description: 'San Juan County Four Corners inbound guide',
+    },
+    otero: {
+      label: 'Moving to Alamogordo',
+      href: '/moving-to/new-mexico/alamogordo-nm',
+      description: 'Otero County White Sands military corridor inbound guide',
+    },
+    taos: {
+      label: 'Moving to Taos',
+      href: '/moving-to/new-mexico/taos-nm',
+      description: 'Taos County artistic mountain-town inbound guide',
+    },
+    lincoln: {
+      label: 'Moving to Ruidoso',
+      href: '/moving-to/new-mexico/ruidoso-nm',
+      description: 'Lincoln County Sierra Blanca resort inbound guide',
+    },
+  },
   alaska: {
     anchorage: {
       label: 'Moving to Anchorage',
@@ -508,6 +555,28 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       label: 'Moving to Ketchikan',
       href: '/moving-to/alaska/ketchikan-ak',
       description: 'Ketchikan Inside Passage rainforest inbound guide',
+    },
+  },
+  hawaii: {
+    honolulu: {
+      label: 'Moving to Honolulu',
+      href: '/moving-to/hawaii/honolulu-hi',
+      description: 'Honolulu County Oʻahu urban capital and suburb inbound guides',
+    },
+    maui: {
+      label: 'Moving to Kihei & Wailuku',
+      href: '/moving-to/hawaii/kihei-hi',
+      description: 'Maui County south-shore and historic county-seat inbound guides',
+    },
+    hawaii: {
+      label: 'Moving to Hilo & Kailua-Kona',
+      href: '/moving-to/hawaii/hilo-hi',
+      description: 'Hawaiʻi County Big Island rainforest and leeward coast inbound guides',
+    },
+    kauai: {
+      label: 'Moving to Lihue',
+      href: '/moving-to/hawaii/lihue-hi',
+      description: 'Kauaʻi County Garden Isle commercial capital inbound guide',
     },
   },
   louisiana: {

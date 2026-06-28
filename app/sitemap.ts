@@ -105,6 +105,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/moving-to/illinois',
     '/moving-to/louisiana',
     '/moving-to/mississippi',
+    '/moving-to/alaska',
+    '/moving-to/new-mexico',
     '/auto-transport',
     '/moving-calculator',
     '/compare',

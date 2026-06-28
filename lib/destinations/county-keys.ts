@@ -27,6 +27,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   la: 'louisiana',
   ms: 'mississippi',
   ak: 'alaska',
+  nm: 'new-mexico',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

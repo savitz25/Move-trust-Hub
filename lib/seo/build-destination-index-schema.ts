@@ -622,6 +622,66 @@ export function buildNewHampshireClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/new-mexico cluster parent */
+export function buildNewMexicoClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const newMexicoHubs = getClusterMarkets('new-mexico').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'New Mexico', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'New Mexico',
+          addressRegion: 'NM',
+        },
+        mainEntity: { '@id': `${canonical}#new-mexico-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#new-mexico-hub-list`,
+        name: 'New Mexico City Moving Guides',
+        numberOfItems: newMexicoHubs.length,
+        itemListElement: newMexicoHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, NM`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/alaska cluster parent */
 export function buildAlaskaClusterSchemaGraph(
   title: string,
@@ -675,6 +735,66 @@ export function buildAlaskaClusterSchemaGraph(
           '@type': 'ListItem',
           position: index + 1,
           name: `${market.displayName}, AK`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
+/** JSON-LD for /moving-to/hawaii cluster parent */
+export function buildHawaiiClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const hawaiiHubs = getClusterMarkets('hawaii').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Hawaii', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Hawaii',
+          addressRegion: 'HI',
+        },
+        mainEntity: { '@id': `${canonical}#hawaii-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#hawaii-hub-list`,
+        name: 'Hawaii City Moving Guides',
+        numberOfItems: hawaiiHubs.length,
+        itemListElement: hawaiiHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, HI`,
           url: `${SITE_URL}${getMarketPath(market)}`,
         })),
       },

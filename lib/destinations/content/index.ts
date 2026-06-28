@@ -279,6 +279,16 @@ import { soldotnaAkContent } from '@/lib/destinations/content/soldotna-ak';
 import { kenaiAkContent } from '@/lib/destinations/content/kenai-ak';
 import { homerAkContent } from '@/lib/destinations/content/homer-ak';
 import { ketchikanAkContent } from '@/lib/destinations/content/ketchikan-ak';
+import { rioRanchoNmContent } from '@/lib/destinations/content/rio-rancho-nm';
+import { albuquerqueNmContent } from '@/lib/destinations/content/albuquerque-nm';
+import { farmingtonNmContent } from '@/lib/destinations/content/farmington-nm';
+import { santaFeNmContent } from '@/lib/destinations/content/santa-fe-nm';
+import { lasCrucesNmContent } from '@/lib/destinations/content/las-cruces-nm';
+import { losAlamosNmContent } from '@/lib/destinations/content/los-alamos-nm';
+import { alamogordoNmContent } from '@/lib/destinations/content/alamogordo-nm';
+import { corralesNmContent } from '@/lib/destinations/content/corrales-nm';
+import { taosNmContent } from '@/lib/destinations/content/taos-nm';
+import { ruidosoNmContent } from '@/lib/destinations/content/ruidoso-nm';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -560,6 +570,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'kenai-ak': kenaiAkContent,
   'homer-ak': homerAkContent,
   'ketchikan-ak': ketchikanAkContent,
+  'rio-rancho-nm': rioRanchoNmContent,
+  'albuquerque-nm': albuquerqueNmContent,
+  'farmington-nm': farmingtonNmContent,
+  'santa-fe-nm': santaFeNmContent,
+  'las-cruces-nm': lasCrucesNmContent,
+  'los-alamos-nm': losAlamosNmContent,
+  'alamogordo-nm': alamogordoNmContent,
+  'corrales-nm': corralesNmContent,
+  'taos-nm': taosNmContent,
+  'ruidoso-nm': ruidosoNmContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -746,5 +766,11 @@ export function getPublishedMississippiHubSlugs(): string[] {
 export function getPublishedAlaskaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'alaska'
+  );
+}
+
+export function getPublishedNewMexicoHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'new-mexico'
   );
 }
