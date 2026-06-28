@@ -53,6 +53,7 @@ export function Footer() {
             <div className="space-y-1.5 text-sm text-muted-foreground">
               <div><Link prefetch={false} href="/resources" className="hover:text-foreground transition-colors">All Guides</Link></div>
               <div><Link prefetch={false} href="/resources/how-to-choose" className="hover:text-foreground transition-colors">How to Choose a Mover</Link></div>
+              <div><Link prefetch={false} href="/resources/interstate-moving-costs" className="hover:text-foreground transition-colors">Moving Costs 2026</Link></div>
               <div><Link prefetch={false} href="/resources/routes" className="hover:text-foreground transition-colors">Route Guides</Link></div>
               <div><Link prefetch={false} href="/resources/scams" className="hover:text-foreground transition-colors">Avoid Scams</Link></div>
               <div><Link prefetch={false} href="/resources/packing-checklist" className="hover:text-foreground transition-colors">Packing Checklist</Link></div>

@@ -1,46 +1,16 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getRelatedGuides } from '@/lib/resources/guides';
+import { GuideCtaClient } from '@/components/resources/guide-cta-client';
 
-export function GuideCta() {
+export function GuideCta({ prefilledNotes }: { prefilledNotes?: string }) {
   return (
     <div className="not-prose mt-10 rounded-xl border border-primary/20 bg-gradient-to-br from-primary/8 via-primary/5 to-transparent p-6 sm:p-8">
       <h3 className="font-semibold text-lg mb-2">Ready to plan your interstate move?</h3>
       <p className="text-sm text-muted-foreground mb-4">
         Use our free tools to research licensed movers, estimate your volume, and request competitive quotes.
       </p>
-      <div className="flex flex-wrap gap-3">
-        <Link
-          href="/moving-calculator"
-          className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-        >
-          Moving Calculator
-        </Link>
-        <Link
-          href="/"
-          className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-        >
-          Get Free Quotes
-        </Link>
-        <Link
-          href="/companies"
-          className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-        >
-          Browse Movers
-        </Link>
-        <Link
-          href="/compare"
-          className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-        >
-          Compare Movers
-        </Link>
-        <Link
-          href="/local-movers"
-          className="inline-flex items-center px-4 py-2 rounded-md border text-sm font-medium hover:bg-accent transition-colors"
-        >
-          Local Movers by County
-        </Link>
-      </div>
+      <GuideCtaClient prefilledNotes={prefilledNotes} />
     </div>
   );
 }
@@ -69,11 +39,17 @@ export function RelatedGuides({ slugs }: { slugs: string[] }) {
   );
 }
 
-export function GuideFooter({ relatedSlugs }: { relatedSlugs: string[] }) {
+export function GuideFooter({
+  relatedSlugs,
+  prefilledNotes,
+}: {
+  relatedSlugs: string[];
+  prefilledNotes?: string;
+}) {
   return (
     <>
       <RelatedGuides slugs={relatedSlugs} />
-      <GuideCta />
+      <GuideCta prefilledNotes={prefilledNotes} />
     </>
   );
 }

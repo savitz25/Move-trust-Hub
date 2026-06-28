@@ -2,16 +2,29 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { TestimonialsSection } from '@/components/trust/testimonials-section';
+import { PageHeroCta } from '@/components/conversion/page-hero-cta';
+import { destinationGuides } from '@/lib/resources/destination-guides';
 import { guidesByCategory } from '@/lib/resources/guides';
 import { routeGuides } from '@/lib/resources/routes';
+import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
 
 export const metadata = {
   title: 'Moving Resources & Guides | How to Choose an Interstate Mover',
   description:
     'Free moving guides: route planning, how to choose a mover, scam avoidance, FMCSA licensing, packing checklists, and interstate moving timelines.',
   alternates: {
-    canonical: 'https://www.movetrusthub.com/resources',
+    canonical: `${SITE_URL}/resources`,
   },
+  openGraph: buildOpenGraph({
+    title: 'Moving Resources & Guides',
+    description:
+      'Free moving guides: route planning, how to choose a mover, scam avoidance, FMCSA licensing, and interstate moving timelines.',
+    url: `${SITE_URL}/resources`,
+  }),
+  twitter: buildTwitter({
+    title: 'Moving Resources & Guides',
+    description: 'Free interstate moving guides, route planners, and cost research.',
+  }),
 };
 
 const categoryOrder = ['Planning', 'Buying Guide', 'Routes', 'Safety', 'Regulation', 'Checklist'];
@@ -33,7 +46,13 @@ export default function ResourcesPage() {
         <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
       </p>
 
-      <TrustBadges variant="grid" className="mb-10" />
+      <PageHeroCta
+        quoteLabel="Get Free Moving Quotes"
+        calculatorHref="/moving-calculator"
+        prefilledData={{ notes: 'Resources hub — quote request' }}
+      />
+
+      <TrustBadges variant="grid" className="mb-10 mt-8" />
 
       {categoryOrder.map((category) => {
         const items = guidesByCategory[category];
@@ -84,6 +103,29 @@ export default function ResourcesPage() {
         >
           Browse local movers near you →
         </Link>
+      </section>
+
+      <section className="mb-10 border-t pt-10">
+        <h2 className="text-xl font-semibold tracking-tight mb-2">Destination Moving Guides</h2>
+        <p className="text-sm text-muted-foreground mb-4">
+          In-depth editorial guides for popular inbound relocation markets — neighborhoods,
+          timing, and mover-vetting checklists.
+        </p>
+        <div className="grid sm:grid-cols-2 gap-3 mb-10">
+          {destinationGuides.map((guide) => (
+            <Link
+              key={guide.slug}
+              href={`/resources/guides/${guide.slug}`}
+              prefetch={false}
+              className="rounded-lg border px-4 py-3 text-sm hover:border-primary/40 hover:text-primary transition-colors"
+            >
+              <span className="font-medium">{guide.title}</span>
+              <span className="block text-xs text-muted-foreground mt-0.5 line-clamp-2">
+                {guide.description}
+              </span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className="mb-10 border-t pt-10">

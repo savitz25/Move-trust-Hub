@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
-export const metadata = {
-  title: 'Complete Interstate Moving Checklist',
-  description: 'Detailed interstate moving timeline from 8 weeks out through delivery day and post-move tasks. Free printable-style checklist for long-distance moves.',
-};
+const TITLE = 'Complete Interstate Moving Checklist';
+const DESCRIPTION =
+  'Detailed interstate moving timeline from 8 weeks out through delivery day and post-move tasks. Free printable-style checklist for long-distance moves.';
+
+export const metadata = buildResourceMetadata('/resources/checklist', TITLE, DESCRIPTION);
 
 export default function Checklist() {
   return (

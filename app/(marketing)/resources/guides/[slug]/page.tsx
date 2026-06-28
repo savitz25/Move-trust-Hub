@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ArticleSchema } from '@/components/resources/article-schema';
+import { GuideCtaClient } from '@/components/resources/guide-cta-client';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { TrustBadges } from '@/components/trust/trust-badges';
 import {
   destinationGuides,
   getDestinationGuide,
@@ -59,9 +61,15 @@ export default async function DestinationGuidePage({ params }: Props) {
         </Link>
 
         <h1 className="text-4xl font-semibold tracking-tight mb-4">{guide.title}</h1>
-        <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+        <p className="text-lg text-muted-foreground leading-relaxed mb-6">
           {guide.description}
         </p>
+
+        <GuideCtaClient
+          quoteLabel={`Get Free Quotes to ${guide.destinationLabel}`}
+          prefilledNotes={`Destination guide: ${guide.destinationLabel}`}
+        />
+        <TrustBadges variant="compact" className="mb-10" />
 
         {guide.sections.map((section) => (
           <section key={section.heading} className="mb-10">
@@ -123,7 +131,8 @@ export default async function DestinationGuidePage({ params }: Props) {
         </div>
 
         <GuideFooter
-          relatedSlugs={['how-to-choose', 'fmcsa', 'scams', 'packing-checklist', 'checklist']}
+          relatedSlugs={['how-to-choose', 'interstate-moving-costs', 'fmcsa', 'scams', 'packing-checklist']}
+          prefilledNotes={`Destination guide: ${guide.destinationLabel}`}
         />
       </div>
     </>

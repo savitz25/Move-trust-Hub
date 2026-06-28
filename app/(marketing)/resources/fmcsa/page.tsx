@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
-export const metadata = {
-  title: 'Understanding FMCSA Safety Ratings & Complaint Data',
-  description: 'Learn exactly what USDOT numbers, safety ratings, and complaint ratios mean when choosing an interstate mover. Includes how to look up data yourself and what to watch for.',
-};
+const TITLE = 'Understanding FMCSA Safety Ratings & Complaint Data';
+const DESCRIPTION =
+  'Learn exactly what USDOT numbers, safety ratings, and complaint ratios mean when choosing an interstate mover. Includes how to look up data yourself and what to watch for.';
+
+export const metadata = buildResourceMetadata('/resources/fmcsa', TITLE, DESCRIPTION);
 
 export default function FmcsaPage() {
   return (

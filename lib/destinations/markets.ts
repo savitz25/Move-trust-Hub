@@ -8014,3 +8014,7 @@ export const priorityMarketsForNav = [...markets].sort((a, b) => {
 export function getStandaloneAndClusterParentMarkets(): Market[] {
   return markets.filter((market) => market.isClusterParent || !market.clusterParent);
 }
+
+export function getClusterParentMarkets(): Market[] {
+  return markets.filter((market) => market.isClusterParent);
+}

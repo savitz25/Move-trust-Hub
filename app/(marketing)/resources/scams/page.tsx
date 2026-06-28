@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
-export const metadata = {
-  title: '8 Red Flags of Interstate Moving Scams',
-  description: 'Learn how to spot and avoid common interstate moving scams. Protect yourself from rogue brokers, lowball quotes, and bait-and-switch tactics with this detailed guide.',
-};
+const TITLE = '8 Red Flags of Interstate Moving Scams';
+const DESCRIPTION =
+  'Learn how to spot and avoid common interstate moving scams. Protect yourself from rogue brokers, lowball quotes, and bait-and-switch tactics with this detailed guide.';
+
+export const metadata = buildResourceMetadata('/resources/scams', TITLE, DESCRIPTION);
 
 export default function Scams() {
   return (

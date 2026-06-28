@@ -151,6 +151,15 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             </Card>
           </Link>
 
+          <Link prefetch={false} href="/resources/interstate-moving-costs" className="group">
+            <Card className="h-full p-6 hover:border-primary/50 transition-all">
+              <div className="text-3xl mb-4">💰</div>
+              <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">2026 Moving Costs Guide</h3>
+              <p className="text-muted-foreground">Average interstate prices by home size and distance, cost drivers, and proven ways to save without sacrificing quality.</p>
+              <div className="mt-4 text-primary font-medium flex items-center gap-1">See average costs →</div>
+            </Card>
+          </Link>
+
           <Link prefetch={false} href="/companies" className="group">
             <Card className="h-full p-6 hover:border-primary/50 transition-all">
               <div className="text-3xl mb-4">🔍</div>

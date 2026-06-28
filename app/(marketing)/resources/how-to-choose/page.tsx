@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
-export const metadata = {
-  title: 'How to Choose a Reliable Interstate Moving Company in 2026',
-  description: 'Learn how to pick a trustworthy long-distance mover. Use reputation scores, FMCSA data, written estimates, and our moving calculator to avoid scams and overpaying.',
-  openGraph: {
-    title: 'How to Choose a Reliable Interstate Moving Company in 2026',
-    description: 'Step-by-step guide using real data from FMCSA, BBB, customer reviews, and reputation scoring to find the best interstate movers.',
-  },
-};
+const TITLE = 'How to Choose a Reliable Interstate Moving Company in 2026';
+const DESCRIPTION =
+  'Learn how to pick a trustworthy long-distance mover. Use reputation scores, FMCSA data, written estimates, and our moving calculator to avoid scams and overpaying.';
+
+export const metadata = buildResourceMetadata('/resources/how-to-choose', TITLE, DESCRIPTION);
 
 export default function HowToChoose() {
   return (

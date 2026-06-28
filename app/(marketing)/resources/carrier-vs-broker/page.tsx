@@ -17,6 +17,7 @@ import { Button } from '@/components/ui/button';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
 import { JsonLd } from '@/lib/seo/json-ld';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
 const TITLE = 'Carrier vs Broker vs Carrier-Broker: Key Differences for Interstate Moves';
 const DESCRIPTION =
@@ -247,19 +248,11 @@ const colorMap = {
   },
 };
 
-export const metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: {
-    canonical: 'https://www.movetrusthub.com/resources/carrier-vs-broker',
-  },
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: 'https://www.movetrusthub.com/resources/carrier-vs-broker',
-    type: 'article',
-  },
-};
+export const metadata = buildResourceMetadata(
+  '/resources/carrier-vs-broker',
+  TITLE,
+  DESCRIPTION
+);
 
 export default function CarrierVsBrokerPage() {
   return (

@@ -6,6 +6,8 @@ import { ArticleSchema } from '@/components/resources/article-schema';
 import { ExtendedRouteGuide } from '@/components/resources/extended-route-guide';
 import { RouteGuideSchema } from '@/components/resources/route-guide-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { RouteHeroCta } from '@/components/resources/route-hero-cta';
+import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
 import { getStateSlugFromCode } from '@/lib/local-movers/index';
 import { getExtendedRouteGuide } from '@/lib/resources/routes/content';
 import { getRouteGuide, routeGuides } from '@/lib/resources/routes';
@@ -23,31 +25,36 @@ export async function generateMetadata({ params }: Props) {
 
   const extended = getExtendedRouteGuide(slug);
 
+  const canonical = `${SITE_URL}/resources/routes/${route.slug}`;
+
   if (extended) {
     return {
       title: extended.seo.title,
       description: extended.seo.description,
       keywords: extended.seo.keywords,
-      openGraph: {
+      openGraph: buildOpenGraph({
         title: extended.seo.title,
         description: extended.seo.description,
-      },
-      alternates: {
-        canonical: `https://www.movetrusthub.com/resources/routes/${route.slug}`,
-      },
+        url: canonical,
+        type: 'article',
+      }),
+      twitter: buildTwitter({
+        title: extended.seo.title,
+        description: extended.seo.description,
+      }),
+      alternates: { canonical },
     };
   }
 
+  const title = `${route.title} — Interstate Moving Route Guide`;
+  const description = `Plan your ${route.from} to ${route.to} move: ${route.distance}, ${route.deliveryWindow}, cost factors, and how to compare licensed long-distance movers.`;
+
   return {
-    title: `${route.title} — Interstate Moving Route Guide`,
-    description: `Plan your ${route.from} to ${route.to} move: ${route.distance}, ${route.deliveryWindow}, cost factors, and how to compare licensed long-distance movers.`,
-    openGraph: {
-      title: `${route.title} | Move Trust Hub`,
-      description: route.description,
-    },
-    alternates: {
-      canonical: `https://www.movetrusthub.com/resources/routes/${route.slug}`,
-    },
+    title,
+    description,
+    openGraph: buildOpenGraph({ title, description, url: canonical, type: 'article' }),
+    twitter: buildTwitter({ title, description }),
+    alternates: { canonical },
   };
 }
 
@@ -91,6 +98,12 @@ export default async function RouteGuidePage({ params }: Props) {
         </Badge>
 
         <h1 className="text-4xl font-semibold tracking-tight mb-4">{route.title}</h1>
+
+        <RouteHeroCta
+          from={route.from}
+          to={route.to}
+          destinationHubPath={route.destinationHubPath}
+        />
 
         <div className="grid sm:grid-cols-2 gap-4 mb-8">
           {[
@@ -249,7 +262,8 @@ export default async function RouteGuidePage({ params }: Props) {
         )}
 
         <GuideFooter
-          relatedSlugs={['how-to-choose', 'move-size-weight', 'scams', 'packing-checklist', 'checklist']}
+          relatedSlugs={['how-to-choose', 'move-size-weight', 'interstate-moving-costs', 'scams', 'packing-checklist']}
+          prefilledNotes={`Route guide quote: ${route.from} to ${route.to}`}
         />
       </div>
     </>

@@ -3,19 +3,13 @@ import { ArrowLeft, Box, Package, ShieldCheck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
-export const metadata = {
-  title: 'Room-by-Room Packing Checklist for Long-Distance Moves',
-  description:
-    'Complete packing checklist for interstate moves: supplies, room-by-room tasks, fragile items, labeling system, and what to keep out of the moving truck.',
-  openGraph: {
-    title: 'Room-by-Room Packing Checklist for Long-Distance Moves',
-    description: 'Pack smarter for a long-distance move with this room-by-room checklist and labeling guide.',
-  },
-  alternates: {
-    canonical: 'https://www.movetrusthub.com/resources/packing-checklist',
-  },
-};
+const TITLE = 'Room-by-Room Packing Checklist for Long-Distance Moves';
+const DESCRIPTION =
+  'Complete packing checklist for interstate moves: supplies, room-by-room tasks, fragile items, labeling system, and what to keep out of the moving truck.';
+
+export const metadata = buildResourceMetadata('/resources/packing-checklist', TITLE, DESCRIPTION);
 
 const supplies = [
   'Medium and large moving boxes (plus wardrobe boxes for hanging clothes)',

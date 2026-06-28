@@ -18,8 +18,11 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArticleSchema } from '@/components/resources/article-schema';
+import { GuideCtaClient } from '@/components/resources/guide-cta-client';
 import { GuideFooter } from '@/components/resources/guide-footer';
+import { TrustBadges } from '@/components/trust/trust-badges';
 import { JsonLd } from '@/lib/seo/json-ld';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
 const TITLE = 'Interstate Moving Costs 2026: Average Prices, Factors & Smart Savings Tips';
 const DESCRIPTION =
@@ -175,19 +178,11 @@ const faqs = [
   },
 ];
 
-export const metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: {
-    canonical: 'https://www.movetrusthub.com/resources/interstate-moving-costs',
-  },
-  openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    url: 'https://www.movetrusthub.com/resources/interstate-moving-costs',
-    type: 'article',
-  },
-};
+export const metadata = buildResourceMetadata(
+  '/resources/interstate-moving-costs',
+  TITLE,
+  DESCRIPTION
+);
 
 export default function InterstateMovingCostsPage() {
   return (
@@ -253,6 +248,14 @@ export default function InterstateMovingCostsPage() {
                 <p className="text-xs text-muted-foreground mt-1">Typical high end (2026)</p>
               </div>
             </div>
+
+            <div className="mt-8">
+              <GuideCtaClient
+                quoteLabel="Get Free Moving Quotes"
+                prefilledNotes="Interstate moving costs guide — quote request"
+              />
+            </div>
+            <TrustBadges variant="compact" className="mt-6" />
 
             <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-2xl">
               At{' '}

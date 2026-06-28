@@ -13,17 +13,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { RelatedGuides } from '@/components/resources/guide-footer';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
-export const metadata = {
-  title: 'Why Knowing the Size and Weight of Your Move Is the Most Important First Step',
-  description:
-    'Learn why accurate cubic footage and weight estimates protect you from lowball quotes, inflated prices, and moving day surprises. Use our free calculator first.',
-  openGraph: {
-    title: 'Why Knowing the Size and Weight of Your Move Is the Most Important First Step',
-    description:
-      'Stop guessing your move size. Understand why inventory and weight matter before you request quotes from interstate movers.',
-  },
-};
+const TITLE =
+  'Why Knowing the Size and Weight of Your Move Is the Most Important First Step';
+const DESCRIPTION =
+  'Learn why accurate cubic footage and weight estimates protect you from lowball quotes, inflated prices, and moving day surprises. Use our free calculator first.';
+
+export const metadata = buildResourceMetadata('/resources/move-size-weight', TITLE, DESCRIPTION);
 
 const benefits = [
   'Get an accurate estimate of total cubic feet and weight',
