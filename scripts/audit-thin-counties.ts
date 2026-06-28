@@ -6,7 +6,8 @@ import { writeFileSync } from 'node:fs';
 import { evaluateCountyIndexability } from '../lib/local-movers/county-indexability';
 import { getAllCountyParams } from '../lib/local-movers/geography/index';
 import { getMoversForCounty, hasExplicitCountyAssignment } from '../lib/local-movers/index';
-import { hasCountyResearch, hasCuratedCountyTestimonials } from '../lib/local-movers/county-research';
+import { hasCountyResearch } from '../lib/local-movers/county-research';
+import { hasAttributableCountyReviews } from '../lib/trust/verified-reviews';
 
 const params = getAllCountyParams();
 const byReason = new Map<string, string[]>();
@@ -31,7 +32,7 @@ for (const { stateSlug, countySlug } of params) {
   const movers = result?.movers.length ?? 0;
 
   if (result?.isRegionalFallback) regionalFallback += 1;
-  if (!hasCuratedCountyTestimonials(stateSlug, countySlug)) genericReviews += 1;
+  if (!hasAttributableCountyReviews(result?.movers ?? [])) genericReviews += 1;
 
   if (decision.tier === 'index') {
     indexed += 1;
@@ -46,7 +47,7 @@ for (const { stateSlug, countySlug } of params) {
     regionalFallback: Boolean(result?.isRegionalFallback),
     explicit: hasExplicitCountyAssignment(stateSlug, countySlug),
     research: hasCountyResearch(stateSlug, countySlug),
-    curatedReviews: hasCuratedCountyTestimonials(stateSlug, countySlug),
+    curatedReviews: hasAttributableCountyReviews(result?.movers ?? []),
   });
   const bucket = byReason.get(decision.reason) ?? [];
   bucket.push(`${stateSlug}/${countySlug} (${movers})`);

@@ -1,5 +1,6 @@
 import type { CountyFaqItem, CountyTestimonial } from '@/lib/local-movers/county-seo';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
+import { moverHasSchemaAggregateRating } from '@/lib/trust/verified-reviews';
 
 const COUNTY_SUFFIX_PATTERN = /\s(county|parish|borough)$/i;
 
@@ -320,7 +321,7 @@ export function buildMoverSchemaNode(
     };
   }
 
-  if (mover.rating > 0 && mover.reviewCount > 0) {
+  if (moverHasSchemaAggregateRating(mover) && mover.rating > 0 && mover.reviewCount > 0) {
     node.aggregateRating = {
       '@type': 'AggregateRating',
       ratingValue: String(mover.rating),
@@ -396,7 +397,7 @@ export function buildReviewSchemaNode(
     '@id': `${pageUrl}#review-${index + 1}`,
     name: buildReviewSchemaName(testimonial),
     reviewBody,
-    datePublished: datePublished ?? '2026-01-15',
+    datePublished: testimonial.date ?? datePublished ?? undefined,
     author: {
       '@type': 'Person',
       name: authorName,

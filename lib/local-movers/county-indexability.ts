@@ -1,10 +1,11 @@
 import {
   getCountyResearch,
   hasCountyResearch,
-  hasCuratedCountyTestimonials,
   marketNotesDescribeThinMarket,
 } from '@/lib/local-movers/county-research';
 import { getMoversForCounty, hasExplicitCountyAssignment } from '@/lib/local-movers/index';
+import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
+import type { LocalMover } from '@/lib/local-movers/types';
 
 export type CountyIndexTier = 'index' | 'noindex';
 
@@ -29,7 +30,7 @@ export function evaluateCountyIndexability(
   const moverCount = movers.length;
   const research = getCountyResearch(stateSlug, countySlug);
   const hasResearch = hasCountyResearch(stateSlug, countySlug);
-  const hasCuratedReviews = hasCuratedCountyTestimonials(stateSlug, countySlug);
+  const hasCuratedReviews = hasAttributableCountyReviews(movers);
   const hasExplicit = hasExplicitCountyAssignment(stateSlug, countySlug);
   const thinMarket = marketNotesDescribeThinMarket(research?.marketNotes);
 
@@ -76,9 +77,6 @@ export function shouldIndexCounty(stateSlug: string, countySlug: string): boolea
   return evaluateCountyIndexability(stateSlug, countySlug).tier === 'index';
 }
 
-export function shouldUseCuratedTestimonials(
-  stateSlug: string,
-  countySlug: string
-): boolean {
-  return hasCuratedCountyTestimonials(stateSlug, countySlug);
+export function shouldUseCuratedTestimonials(movers: LocalMover[]): boolean {
+  return hasAttributableCountyReviews(movers);
 }

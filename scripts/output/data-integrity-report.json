@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-06-28T17:50:09.636Z",
+  "catalog": {
+    "totalMoversInCatalog": 15966,
+    "displayableAfterPolicy": 316,
+    "excluded": 15650,
+    "regionalPlaceholderIds": 1318,
+    "generatedTemplateIds": 392,
+    "exclusionReasons": {
+      "license_known_placeholder_usdot": 1,
+      "license_missing_usdot": 13938,
+      "regional_placeholder_id": 1318,
+      "license_invalid_usdot_format": 1,
+      "generated_template_catalog": 392
+    }
+  },
+  "directory": {
+    "totalCompanies": 25,
+    "suspiciousLicenseCompanies": []
+  },
+  "reviews": {
+    "attributableGoogleReviews": 9,
+    "countiesWithAttributableReviews": 17,
+    "countiesWithoutReviews": 3126
+  },
+  "counties": {
+    "total": 3143,
+    "zeroMoversAfterFilter": 2255,
+    "totalDisplayedMoverSlots": 3026
+  },
+  "priorityMetros": [
+    {
+      "county": "california/los-angeles",
+      "movers": 8,
+      "attributableReviews": 3
+    },
+    {
+      "county": "california/san-diego",
+      "movers": 1,
+      "attributableReviews": 0
+    },
+    {
+      "county": "florida/broward",
+      "movers": 9,
+      "attributableReviews": 3
+    },
+    {
+      "county": "florida/miami-dade",
+      "movers": 6,
+      "attributableReviews": 3
+    },
+    {
+      "county": "new-york/kings",
+      "movers": 3,
+      "attributableReviews": 1
+    },
+    {
+      "county": "new-york/new-york",
+      "movers": 3,
+      "attributableReviews": 1
+    },
+    {
+      "county": "georgia/fulton",
+      "movers": 4,
+      "attributableReviews": 0
+    },
+    {
+      "county": "illinois/cook",
+      "movers": 0,
+      "attributableReviews": 0
+    },
+    {
+      "county": "texas/dallas",
+      "movers": 9,
+      "attributableReviews": 3
+    },
+    {
+      "county": "texas/harris",
+      "movers": 10,
+      "attributableReviews": 3
+    }
+  ],
+  "remediation": {
+    "fabricatedCountyTestimonialsSuppressed": true,
+    "genericHashTestimonialsRemoved": true,
+    "schemaReviewOnlyWhenAttributable": true,
+    "amerisafeUsdotCorrected": "3341650"
+  }
+}

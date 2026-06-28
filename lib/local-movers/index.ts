@@ -56,6 +56,7 @@ import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { CURATED_STATE_SLUGS } from '@/lib/local-movers/curated-states';
 import { getCounty } from '@/lib/local-movers/geography/index';
 import { getLocalState } from '@/lib/local-movers/states';
+import { isCuratedMover } from '@/lib/trust/curated-listing-policy';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 const LARGE_MARKET_MAX_MOVERS = 20;
@@ -162,7 +163,8 @@ export function getMoversForCounty(
 
   const resolved = moverIds
     .map((id) => fullMoversCatalog[id])
-    .filter((mover): mover is LocalMover => Boolean(mover));
+    .filter((mover): mover is LocalMover => Boolean(mover))
+    .filter(isCuratedMover);
 
   const displayLimit = hasExplicitAssignment
     ? Math.min(moverIds.length, LARGE_MARKET_MAX_MOVERS)

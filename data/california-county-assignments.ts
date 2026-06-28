@@ -153,6 +153,9 @@ const CURATED_CA_COUNTIES: Record<string, string[]> = {
     'california-county-moving-co',
   ],
   'los-angeles': [
+    'amerisafe-van-lines',
+    'international-van-lines',
+    'american-van-lines',
     'piece-of-cake-moving-losangeles',
     'booth-movers-losangeles',
     'white-glove-moving-losangeles',

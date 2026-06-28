@@ -347,7 +347,7 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
               href="/companies?sort=reputation"
               className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
             >
-              52k+ Verified Reviews
+              Attributed Google Reviews
             </Link>
             <Link
               href="/about#disclaimer"

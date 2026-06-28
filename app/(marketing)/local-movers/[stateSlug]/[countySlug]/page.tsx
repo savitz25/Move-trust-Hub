@@ -227,9 +227,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const faqItems = buildCountyFaqItems(county, state.name, movers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
-  const testimonials = buildCountyTestimonials(county, state.name);
-  const showCuratedTestimonials = shouldUseCuratedTestimonials(stateSlug, countySlug);
-  const visibleTestimonials = showCuratedTestimonials ? testimonials : [];
+  const testimonials = buildCountyTestimonials(county, state.name, movers);
+  const visibleTestimonials = shouldUseCuratedTestimonials(movers) ? testimonials : [];
   const indexDecision = evaluateCountyIndexability(stateSlug, countySlug);
   const marketNotes = buildCountyMarketNotes(county);
   const nearbyCounties =

@@ -13,8 +13,8 @@ type TestimonialsSectionProps = {
 };
 
 export function TestimonialsSection({
-  title = 'Real Families. Real Moves.',
-  subtitle = 'How customers use Move Trust Hub to research FMCSA data, compare movers, and book with confidence.',
+  title = 'Attributed Google Reviews',
+  subtitle = 'Named reviewer quotes sourced from our directory — not representative or fabricated testimonials.',
   className,
   columns = 2,
 }: TestimonialsSectionProps) {
@@ -35,7 +35,7 @@ export function TestimonialsSection({
 
         <div className={cn('grid gap-5', gridClass)}>
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="p-6 h-full flex flex-col">
+            <Card key={`${testimonial.name}-${testimonial.date ?? testimonial.location}`} className="p-6 h-full flex flex-col">
               <Quote className="h-5 w-5 text-primary/60 mb-3" aria-hidden="true" />
               <blockquote className="text-base italic leading-relaxed mb-4 flex-1">
                 &ldquo;{testimonial.quote}&rdquo;
@@ -47,7 +47,15 @@ export function TestimonialsSection({
 
               <div>
                 <div className="font-semibold">{testimonial.name}</div>
-                <div className="text-sm text-muted-foreground">{testimonial.location}</div>
+                <div className="text-sm text-muted-foreground">
+                  {testimonial.location}
+                  {'source' in testimonial && testimonial.source ? (
+                    <> · {testimonial.source} review</>
+                  ) : null}
+                  {'companyName' in testimonial && testimonial.companyName ? (
+                    <> · {testimonial.companyName}</>
+                  ) : null}
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t">

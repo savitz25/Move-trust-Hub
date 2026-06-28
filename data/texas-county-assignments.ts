@@ -1708,6 +1708,9 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-amarillo',
   ],
   dallas: [
+    'amerisafe-van-lines',
+    'international-van-lines',
+    'american-van-lines',
     'two-men-and-a-truck-dallas',
     'dallas-area-moving',
     'two-men-and-a-truck-fort-worth',
@@ -1720,6 +1723,9 @@ const CURATED_TX_COUNTIES: Record<string, string[]> = {
     'two-men-and-a-truck-amarillo',
   ],
   harris: [
+    'amerisafe-van-lines',
+    'international-van-lines',
+    'american-van-lines',
     'two-men-and-a-truck-houston',
     'houston-local-lines',
     'beaumont-area-moving',

@@ -274,7 +274,7 @@ export function buildQuoteConfirmationEmail(
                           <p style="margin:0;font-size:13px;line-height:1.8;color:#334155;">
                             <span style="display:inline-block;margin:0 8px;">&#10003; FMCSA Verified</span>
                             <span style="display:inline-block;margin:0 8px;">&#10003; Licensed Interstate Movers</span>
-                            <span style="display:inline-block;margin:0 8px;">&#10003; 52k+ Verified Reviews</span>
+                            <span style="display:inline-block;margin:0 8px;">&#10003; Attributed Google Reviews</span>
                           </p>
                         </td>
                       </tr>

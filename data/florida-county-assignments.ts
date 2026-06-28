@@ -40,6 +40,9 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'green-team-logistics-brevard',
   ],
   'miami-dade': [
+    'amerisafe-van-lines',
+    'international-van-lines',
+    'american-van-lines',
     'two-men-and-a-truck-miami-dade',
     'all-my-sons-miami-dade',
     'gentle-giant-miami-dade',
@@ -52,6 +55,9 @@ const CURATED_FL_COUNTIES: Record<string, string[]> = {
     'miami-pro-movers',
   ],
   broward: [
+    'amerisafe-van-lines',
+    'international-van-lines',
+    'american-van-lines',
     'two-men-and-a-truck-fort-lauderdale',
     'gentle-giant-moving-broward',
     'all-my-sons-fort-lauderdale',

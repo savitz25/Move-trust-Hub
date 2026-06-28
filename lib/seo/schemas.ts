@@ -1,4 +1,4 @@
-import { testimonials, trustStats } from '@/lib/trust/trust-data';
+import { testimonials } from '@/lib/trust/trust-data';
 import { SITE_EMAIL } from '@/lib/contact';
 
 const SITE_URL = 'https://www.movetrusthub.com';
@@ -19,38 +19,41 @@ export const organizationSchema = {
   },
   description:
     'Independent directory and quote-matching service for FMCSA-licensed interstate and long-distance moving companies in the United States.',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: String(trustStats.averageRating),
-    reviewCount: String(trustStats.totalReviews),
-    bestRating: '5',
-    worstRating: '1',
-  },
 };
 
-function buildTestimonialReviewSchemas() {
-  return testimonials.map((testimonial, index) => ({
-    '@type': 'Review',
-    '@id': `${SITE_URL}/#testimonial-${index + 1}`,
-    name: `Move Trust Hub customer review — ${testimonial.location}`,
-    author: {
-      '@type': 'Person',
-      name: testimonial.name,
-    },
-    reviewBody: testimonial.quote,
-    datePublished: '2026-01-15',
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: String(testimonial.rating),
-      bestRating: '5',
-      worstRating: '1',
-    },
-    itemReviewed: {
-      '@type': 'Organization',
-      '@id': `${SITE_URL}/#organization`,
-      name: 'Move Trust Hub',
-    },
-  }));
+function buildAttributableReviewSchemas() {
+  return testimonials
+    .filter((t) => t.date && t.source === 'Google')
+    .map((testimonial, index) => ({
+      '@type': 'Review',
+      '@id': `${SITE_URL}/#attributed-review-${index + 1}`,
+      name: testimonial.companyName
+        ? `${testimonial.companyName} — ${testimonial.source} review`
+        : `Attributed ${testimonial.source} review`,
+      author: {
+        '@type': 'Person',
+        name: testimonial.name,
+      },
+      reviewBody: testimonial.quote,
+      datePublished: testimonial.date,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: String(testimonial.rating),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      itemReviewed: testimonial.companySlug
+        ? {
+            '@type': 'MovingCompany',
+            name: testimonial.companyName,
+            url: `${SITE_URL}/companies/${testimonial.companySlug}`,
+          }
+        : {
+            '@type': 'Organization',
+            '@id': `${SITE_URL}/#organization`,
+            name: 'Move Trust Hub',
+          },
+    }));
 }
 
 export const websiteSchema = {
@@ -92,7 +95,7 @@ export const homepageFaqItems = [
   {
     question: 'How does Move Trust Hub help me compare long-distance movers?',
     answer:
-      'Move Trust Hub combines verified customer reviews, FMCSA licensing and complaint data, reputation scores, and side-by-side comparison tools so you can research movers before requesting quotes.',
+      'Move Trust Hub combines attributed customer reviews where available, FMCSA licensing data, reputation scores, and side-by-side comparison tools so you can research movers before requesting quotes.',
   },
   {
     question: 'Why should I use the moving calculator before requesting quotes?',
@@ -145,6 +148,7 @@ function buildFaqSchema(items: { question: string; answer: string }[], id: strin
 }
 
 export function buildHomepageSchemaGraph() {
+  const attributableReviews = buildAttributableReviewSchemas();
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -152,7 +156,7 @@ export function buildHomepageSchemaGraph() {
       websiteSchema,
       homepageServiceSchema,
       buildFaqSchema(homepageFaqItems, `${SITE_URL}/#homepage-faq`),
-      ...buildTestimonialReviewSchemas(),
+      ...(attributableReviews.length > 0 ? attributableReviews : []),
     ],
   };
 }

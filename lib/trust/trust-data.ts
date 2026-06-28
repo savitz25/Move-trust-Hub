@@ -1,106 +1,116 @@
+import { seedCompanies } from '@/data/seed-companies';
+import { assessLicense } from '@/lib/trust/license-verification';
+import {
+  countAttributableReviews,
+  getHomepageAttributableReviews,
+} from '@/lib/trust/verified-reviews';
+
+const verifiedDirectoryCompanies = seedCompanies.filter(
+  (c) => c.isVerified && assessLicense(c.usdotNumber, c.mcNumber).isDisplayable
+);
+
+const attributableReviewCount = countAttributableReviews();
+
+const avgDirectoryRating =
+  verifiedDirectoryCompanies.length > 0
+    ? Math.round(
+        (verifiedDirectoryCompanies.reduce((sum, c) => sum + c.overallRating, 0) /
+          verifiedDirectoryCompanies.length) *
+          10
+      ) / 10
+    : 0;
+
 export const trustStats = {
-  verifiedMovers: 25,
-  totalReviews: 52400,
-  averageRating: 4.3,
-  fmcsaVerified: 22,
+  verifiedMovers: verifiedDirectoryCompanies.length,
+  attributableReviews: attributableReviewCount,
+  averageRating: avgDirectoryRating,
+  fmcsaLicensed: verifiedDirectoryCompanies.length,
 };
 
 export const trustBadges = [
   {
     id: 'fmcsa',
-    label: 'FMCSA Data Verified',
-    description: 'USDOT & MC licensing checked',
+    label: 'FMCSA Licensing Checked',
+    description: 'USDOT numbers formatted and screened against placeholder patterns',
     href: '/resources/fmcsa',
     externalHref: 'https://www.fmcsa.dot.gov/',
   },
   {
     id: 'licensed',
-    label: '25+ Licensed Movers',
-    description: 'Interstate carriers in directory',
+    label: `${verifiedDirectoryCompanies.length} Directory Movers`,
+    description: 'Interstate carriers with verifiable USDOT records',
     href: '/companies',
   },
   {
     id: 'reviews',
-    label: '52k+ Real Reviews',
-    description: 'Google, BBB & Trustpilot',
+    label: `${attributableReviewCount} Attributed Google Reviews`,
+    description: 'Sourced reviews with named reviewers — not representative quotes',
     href: '/companies?sort=reputation',
   },
   {
     id: 'rating',
-    label: '4.3★ Avg Rating',
-    description: 'Across listed companies',
+    label: `${avgDirectoryRating}★ Directory Avg`,
+    description: 'Across FMCSA-licensed interstate listings',
     href: '/companies?sort=rating',
   },
   {
     id: 'independent',
     label: 'Independent Directory',
-    description: 'Not affiliated with movers',
+    description: 'Not affiliated with movers — verify FMCSA yourself',
     href: '/about#disclaimer',
   },
 ] as const;
 
-export const reviewHighlights = [
-  {
-    companyName: 'Amerisafe Van Lines',
-    slug: 'amerisafe-van-lines',
-    rating: 4.7,
-    reviewCount: 1650,
-    reputationScore: 97,
-    highlight: 'Top reputation score with strong FMCSA standing and consistently high customer ratings.',
-    source: 'Google & Verified Customer',
-  },
-  {
-    companyName: 'JK Moving Services',
-    slug: 'jk-moving-services',
-    rating: 4.7,
-    reviewCount: 3120,
-    reputationScore: 93,
-    highlight: 'One of the most-reviewed interstate movers in our directory with thousands of verified feedback.',
-    source: 'Google',
-  },
-  {
-    companyName: 'Pensey Moving & Storage',
-    slug: 'pensey-moving',
-    rating: 4.8,
-    reviewCount: 940,
-    reputationScore: 94,
-    highlight: 'Excellent customer satisfaction scores and transparent long-distance pricing patterns.',
-    source: 'Google & Trustpilot',
-  },
-] as const;
+const homepageReviews = getHomepageAttributableReviews(4);
 
-export const testimonials = [
+export const testimonials = homepageReviews.map((review) => ({
+  quote: review.quote,
+  name: review.name,
+  location: review.location,
+  rating: review.rating,
+  source: review.source,
+  date: review.date,
+  companyName: review.companyName,
+  companySlug: review.companySlug,
+  toolsUsed: ['companies'] as const,
+}));
+
+export const reviewHighlights = verifiedDirectoryCompanies
+  .filter((c) =>
+    homepageReviews.some((r) => r.companySlug === c.slug)
+  )
+  .sort((a, b) => b.reputationScore - a.reputationScore)
+  .slice(0, 3)
+  .map((company) => {
+    const sample = homepageReviews.find((r) => r.companySlug === company.slug);
+    return {
+      companyName: company.name,
+      slug: company.slug,
+      rating: company.overallRating,
+      reviewCount: company.reviewCount,
+      reputationScore: company.reputationScore,
+      highlight: sample
+        ? `"${sample.quote.slice(0, 120)}${sample.quote.length > 120 ? '…' : ''}" — ${sample.name}, ${sample.source}`
+        : `FMCSA USDOT ${company.usdotNumber} · ${company.headquarters}`,
+      source: sample ? `${sample.source} review` : 'FMCSA directory',
+    };
+  });
+
+export const neutralTrustSignals = [
   {
-    quote:
-      'We used the calculator and comparison tool to choose between 4 movers. Saved over $2,800 and the move went perfectly.',
-    name: 'Sarah & Michael T.',
-    location: 'Moved from VA to TX',
-    rating: 5,
-    toolsUsed: ['moving-calculator', 'compare'] as const,
+    title: 'Verify FMCSA licensing yourself',
+    body: 'Every directory listing includes a USDOT number you can look up on the official FMCSA SAFER site before booking.',
+    href: '/resources/fmcsa',
   },
   {
-    quote:
-      'Got quotes from 5 different companies in less than a day. The reviews and FMCSA data on this site gave us total peace of mind.',
-    name: 'The Ramirez Family',
-    location: 'Moved from CA to FL',
-    rating: 5,
-    toolsUsed: ['companies', 'fmcsa'] as const,
+    title: 'Attributed reviews only',
+    body: 'We display named Google reviews where available. Pages without sourced reviews use neutral trust signals — no fabricated quotes.',
+    href: '/companies',
   },
   {
-    quote:
-      'The reputation scores helped us avoid a broker with a high complaint ratio. We booked a carrier with a Satisfactory FMCSA rating instead.',
-    name: 'David L.',
-    location: 'Moved from TX to CA',
-    rating: 5,
-    toolsUsed: ['companies', 'fmcsa'] as const,
-  },
-  {
-    quote:
-      'Building our inventory first meant every quote was based on the same cubic footage. No more guessing or surprise charges.',
-    name: 'Jennifer M.',
-    location: 'Moved from FL to NY',
-    rating: 5,
-    toolsUsed: ['moving-calculator'] as const,
+    title: 'Independent research directory',
+    body: 'Move Trust Hub is not affiliated with listed movers. Compare licensing, complaints, and reviews before requesting quotes.',
+    href: '/about#disclaimer',
   },
 ] as const;
 

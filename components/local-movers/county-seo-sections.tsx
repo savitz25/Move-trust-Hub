@@ -109,12 +109,12 @@ export function CountyTestimonialSection({
         className="text-lg font-semibold tracking-tight mb-2 flex items-center gap-2"
       >
         <MessageSquareQuote className="h-5 w-5 text-primary" aria-hidden="true" />
-        Local move experiences in {countyLabel}
+        Attributed reviews for movers serving {countyLabel}
       </h2>
       <p className="text-xs text-muted-foreground mb-4">
-        Curated, county-specific customer feedback from verified recent moves. Quotes
-        are editorially selected — always verify current Google reviews, FMCSA licensing,
-        and written estimates before booking.
+        Named Google reviews from our interstate directory listings. We do not display
+        representative or county-specific fabricated quotes. Verify current reviews,
+        FMCSA licensing, and written estimates before booking.
       </p>
       <div className="space-y-5">
         {testimonials.map((testimonial) => (
@@ -129,6 +129,24 @@ export function CountyTestimonialSection({
               <span className="font-semibold text-foreground">{testimonial.name}</span>
               <span aria-hidden="true">·</span>
               <span>{testimonial.location}</span>
+              {testimonial.source && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>{testimonial.source}</span>
+                </>
+              )}
+              {testimonial.date && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <time dateTime={testimonial.date}>{testimonial.date}</time>
+                </>
+              )}
+              {testimonial.companyName && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>{testimonial.companyName}</span>
+                </>
+              )}
               {testimonial.moveType && (
                 <>
                   <span aria-hidden="true">·</span>

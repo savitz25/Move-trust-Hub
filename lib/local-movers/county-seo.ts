@@ -100,7 +100,7 @@ import { getTennesseeCountyResearch } from '@/data/tennessee-county-research';
 import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
 import { getTexasCountyResearch } from '@/data/texas-county-research';
 import { getTexasCountyTestimonials } from '@/data/texas-county-testimonials';
-import { testimonials } from '@/lib/trust/trust-data';
+import { buildAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -978,233 +978,21 @@ export type CountyTestimonial = {
   location: string;
   rating: number;
   moveType?: string;
+  source?: string;
+  date?: string;
+  reviewId?: string;
+  companyName?: string;
+  companySlug?: string;
 };
 
 export type CountyTestimonialEntry = CountyTestimonial;
 
 export function buildCountyTestimonials(
-  county: LocalCounty,
-  _stateName: string
+  _county: LocalCounty,
+  _stateName: string,
+  movers: LocalMover[] = []
 ): CountyTestimonial[] {
-  if (county.stateSlug === 'california') {
-    const curated = getCaliforniaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'florida') {
-    const curated = getFloridaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'new-jersey') {
-    const curated = getNewJerseyCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'new-york') {
-    const curated = getNewYorkCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'texas') {
-    const curated = getTexasCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'georgia') {
-    const curated = getGeorgiaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'south-carolina') {
-    const curated = getSouthCarolinaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'north-carolina') {
-    const curated = getNorthCarolinaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'tennessee') {
-    const curated = getTennesseeCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'alabama') {
-    const curated = getAlabamaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'mississippi') {
-    const curated = getMississippiCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'louisiana') {
-    const curated = getLouisianaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'oklahoma') {
-    const curated = getOklahomaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'arkansas') {
-    const curated = getArkansasCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'kansas') {
-    const curated = getKansasCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'missouri') {
-    const curated = getMissouriCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'illinois') {
-    const curated = getIllinoisCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'michigan') {
-    const curated = getMichiganCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'indiana') {
-    const curated = getIndianaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'ohio') {
-    const curated = getOhioCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'kentucky') {
-    const curated = getKentuckyCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'west-virginia') {
-    const curated = getWestVirginiaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'virginia') {
-    const curated = getVirginiaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'district-of-columbia') {
-    const curated = getDistrictOfColumbiaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'delaware') {
-    const curated = getDelawareCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'maryland') {
-    const curated = getMarylandCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'pennsylvania') {
-    const curated = getPennsylvaniaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'connecticut') {
-    const curated = getConnecticutCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'massachusetts') {
-    const curated = getMassachusettsCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'rhode-island') {
-    const curated = getRhodeIslandCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'vermont') {
-    const curated = getVermontCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'new-hampshire') {
-    const curated = getNewHampshireCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'maine') {
-    const curated = getMaineCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'hawaii') {
-    const curated = getHawaiiCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'alaska') {
-    const curated = getAlaskaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'washington') {
-    const curated = getWashingtonCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'oregon') {
-    const curated = getOregonCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'nevada') {
-    const curated = getNevadaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'arizona') {
-    const curated = getArizonaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'new-mexico') {
-    const curated = getNewMexicoCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'utah') {
-    const curated = getUtahCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'colorado') {
-    const curated = getColoradoCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'idaho') {
-    const curated = getIdahoCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'montana') {
-    const curated = getMontanaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'wyoming') {
-    const curated = getWyomingCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'north-dakota') {
-    const curated = getNorthDakotaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'south-dakota') {
-    const curated = getSouthDakotaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'nebraska') {
-    const curated = getNebraskaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'iowa') {
-    const curated = getIowaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'minnesota') {
-    const curated = getMinnesotaCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-  if (county.stateSlug === 'wisconsin') {
-    const curated = getWisconsinCountyTestimonials(county.slug);
-    if (curated.length) return curated;
-  }
-
-  const key = `${county.stateSlug}-${county.slug}`;
-  const base = pickByHash(testimonials, key);
-  const location = county.seat
-    ? `${county.seat}, ${county.stateCode}`
-    : `${county.name} County, ${county.stateCode}`;
-
-  return [
-    {
-      quote: base.quote,
-      name: base.name,
-      location,
-      rating: base.rating,
-    },
-  ];
+  return buildAttributableCountyReviews(movers, 3);
 }
 
 /** @deprecated Use buildCountyTestimonials */
