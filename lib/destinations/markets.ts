@@ -7702,6 +7702,281 @@ export const markets: Market[] = [
     mapDescription:
       'Ruidoso in Lincoln County — Sierra Blanca mountain resort with skiing and cabin retirement living.',
   },
+  {
+    slug: 'hawaii',
+    displayName: 'Hawaii',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: [],
+    lat: 20.8,
+    lng: -157.5,
+    defaultToZip: '96813',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,500–$10,500',
+      twoBR: '$7,500–$15,500',
+      threeBR: '$11,000–$20,500',
+      fourBR: '$15,500–$28,000',
+    },
+    inboundGrowthStat:
+      'Island lifestyle · mild climate · Oʻahu job market · neighbor-island options',
+    peakSeasonNote:
+      'Military PCS peaks and Pacific port capacity compress Hawaii container schedules May–September — book 8–12 weeks ahead',
+    isClusterParent: true,
+    priority: 30,
+    mapDescription:
+      'Hawaii inbound hub covering Oʻahu (Honolulu, Kapolei, Kailua, Pearl City, Waipahu), Maui (Kihei, Wailuku), Big Island (Hilo, Kailua-Kona), and Kauaʻi (Lihue).',
+  },
+  {
+    slug: 'honolulu-hi',
+    displayName: 'Honolulu',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['honolulu-hi'],
+    lat: 21.3069,
+    lng: -157.8583,
+    defaultToZip: '96813',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,500–$9,500',
+      twoBR: '$7,500–$14,500',
+      threeBR: '$11,000–$19,500',
+      fourBR: '$15,500–$26,500',
+    },
+    inboundGrowthStat:
+      'Dynamic urban capital · Kakaʻako luxury growth · cultural hub',
+    peakSeasonNote:
+      'High-rise COI coordination and Honolulu Harbor drayage peaks affect urban delivery windows',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Honolulu — dynamic urban capital with Kakaʻako luxury growth and cultural hub employment.',
+  },
+  {
+    slug: 'kapolei-hi',
+    displayName: 'Kapolei',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['honolulu-hi'],
+    lat: 21.3354,
+    lng: -158.0582,
+    defaultToZip: '96707',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,500–$9,500',
+      twoBR: '$7,500–$14,500',
+      threeBR: '$11,000–$19,500',
+      fourBR: '$15,500–$26,500',
+    },
+    inboundGrowthStat:
+      'Oahu Second City · master-planned housing & retail',
+    peakSeasonNote:
+      'West Oʻahu new-construction staging and H-1 corridor peaks affect Kapolei scheduling',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Kapolei — Oʻahu Second City with master-planned housing and Ko Olina corridor growth.',
+  },
+  {
+    slug: 'kailua-hi',
+    displayName: 'Kailua',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['honolulu-hi'],
+    lat: 21.4022,
+    lng: -157.7394,
+    defaultToZip: '96734',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,200–$9,000',
+      twoBR: '$7,000–$13,500',
+      threeBR: '$10,500–$18,500',
+      fourBR: '$14,500–$25,000',
+    },
+    inboundGrowthStat:
+      'Windward beach lifestyle · walkable town center',
+    peakSeasonNote:
+      'Pali Highway tunnel traffic and windward narrow-street deliveries affect Kailua scheduling',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Kailua — windward coast beach lifestyle with walkable town center and Lanikai access.',
+  },
+  {
+    slug: 'pearl-city-hi',
+    displayName: 'Pearl City',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['honolulu-hi'],
+    lat: 21.3972,
+    lng: -157.9753,
+    defaultToZip: '96782',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,200–$9,000',
+      twoBR: '$7,000–$13,500',
+      threeBR: '$10,500–$18,500',
+      fourBR: '$14,500–$25,000',
+    },
+    inboundGrowthStat:
+      'Central transit convenience · strong job market',
+    peakSeasonNote:
+      'H-1 central corridor traffic and military PCS peaks affect Pearl City delivery windows',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Pearl City — central Oʻahu transit convenience with Pearl Harbor–adjacent employment.',
+  },
+  {
+    slug: 'waipahu-hi',
+    displayName: 'Waipahu',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['honolulu-hi'],
+    lat: 21.3867,
+    lng: -158.0092,
+    defaultToZip: '96797',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,200–$9,000',
+      twoBR: '$7,000–$13,500',
+      threeBR: '$10,500–$18,500',
+      fourBR: '$14,500–$25,000',
+    },
+    inboundGrowthStat:
+      'Affordable Oʻahu entry · diverse cuisine · suburban value',
+    peakSeasonNote:
+      'West Oʻahu H-1 traffic and established-neighborhood access affect Waipahu final-mile scheduling',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Waipahu — affordable west Oʻahu suburban entry with diverse culinary corridors.',
+  },
+  {
+    slug: 'kihei-hi',
+    displayName: 'Kihei',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['maui-hi'],
+    lat: 20.7647,
+    lng: -156.4458,
+    defaultToZip: '96753',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,800–$10,500',
+      twoBR: '$8,000–$15,500',
+      threeBR: '$11,500–$20,500',
+      fourBR: '$16,000–$28,000',
+    },
+    inboundGrowthStat:
+      'Sun-drenched beaches · snorkeling · dining corridor',
+    peakSeasonNote:
+      'Maui barge schedules and south-shore tourism peaks affect Kihei delivery windows',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Kihei on Maui — sun-drenched south-shore beach community with snorkeling and dining.',
+  },
+  {
+    slug: 'wailuku-hi',
+    displayName: 'Wailuku',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['maui-hi'],
+    lat: 20.8911,
+    lng: -156.5047,
+    defaultToZip: '96793',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,800–$10,500',
+      twoBR: '$8,000–$15,500',
+      threeBR: '$11,500–$20,500',
+      fourBR: '$16,000–$28,000',
+    },
+    inboundGrowthStat:
+      'Historic creative charm · mountain base · county seat',
+    peakSeasonNote:
+      'Central Maui harbor routing and historic town-center narrow streets affect Wailuku scheduling',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Wailuku on Maui — historic county seat with creative charm at the West Maui Mountains base.',
+  },
+  {
+    slug: 'hilo-hi',
+    displayName: 'Hilo',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['hawaii-hi'],
+    lat: 19.7297,
+    lng: -155.09,
+    defaultToZip: '96720',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,500–$9,800',
+      twoBR: '$7,500–$14,500',
+      threeBR: '$10,800–$19,000',
+      fourBR: '$15,000–$26,000',
+    },
+    inboundGrowthStat:
+      'Lush rainforest · affordable · nature lovers',
+    peakSeasonNote:
+      'Hilo Harbor routing and rainforest hillside access affect Big Island windward delivery windows',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Hilo on Hawaiʻi Island — lush affordable rainforest gateway for nature-oriented relocations.',
+  },
+  {
+    slug: 'kailua-kona-hi',
+    displayName: 'Kailua-Kona',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['hawaii-hi'],
+    lat: 19.64,
+    lng: -155.9969,
+    defaultToZip: '96740',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,800–$10,500',
+      twoBR: '$8,000–$15,500',
+      threeBR: '$11,500–$20,500',
+      fourBR: '$16,000–$28,000',
+    },
+    inboundGrowthStat:
+      'Sunny leeward coast · fishing · volcanic landscapes',
+    peakSeasonNote:
+      'Kona resort-corridor traffic and Ironman-season peaks affect leeward Big Island scheduling',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Kailua-Kona on Hawaiʻi Island — sunny leeward coast with fishing culture and volcanic landscapes.',
+  },
+  {
+    slug: 'lihue-hi',
+    displayName: 'Lihue',
+    stateCode: 'HI',
+    stateName: 'Hawaii',
+    primaryCounties: ['kauai-hi'],
+    lat: 21.974,
+    lng: -159.3718,
+    defaultToZip: '96766',
+    topInboundOrigins: ['California', 'Washington', 'Texas', 'Arizona'],
+    avgCostRanges: {
+      studio: '$4,800–$10,500',
+      twoBR: '$8,000–$15,500',
+      threeBR: '$11,500–$20,500',
+      fourBR: '$16,000–$28,000',
+    },
+    inboundGrowthStat:
+      'Quiet commercial capital · dramatic natural beauty',
+    peakSeasonNote:
+      'Kauaʻi barge frequency limits and hurricane-season scheduling affect Lihue delivery windows',
+    clusterParent: 'hawaii',
+    priority: 30,
+    mapDescription:
+      'Lihue on Kauaʻi — Garden Isle commercial capital with dramatic natural beauty access.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
