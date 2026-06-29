@@ -1,5 +1,8 @@
-// Minimal Supabase Database types matching our schema.
-// Run `npx supabase gen types typescript --linked > types/supabase.ts` after connecting your project for full accuracy.
+/**
+ * Supabase Database types for Move Trust Hub (savitz25).
+ * Regenerate after schema changes:
+ *   npx supabase gen types typescript --project-id <ref> > types/supabase.ts
+ */
 
 export type Json =
   | string
@@ -8,6 +11,9 @@ export type Json =
   | null
   | { [key: string]: Json | undefined }
   | Json[];
+
+export type QuoteStatus = 'new' | 'contacted' | 'matched' | 'closed' | 'spam';
+export type QuoteServiceType = 'moving' | 'auto-transport';
 
 export interface Database {
   public: {
@@ -76,11 +82,18 @@ export interface Database {
           move_date: string | null;
           home_size: string | null;
           estimated_volume: number | null;
+          estimated_weight: number | null;
+          inventory: Json | null;
           notes: string | null;
           destination_slug: string | null;
           market_priority: number | null;
           source: string | null;
+          service_type: QuoteServiceType;
+          auto_transport: Json | null;
+          status: QuoteStatus;
+          deleted_at: string | null;
           created_at: string;
+          updated_at: string;
         };
         Insert: {
           name: string;
@@ -91,12 +104,60 @@ export interface Database {
           move_date?: string | null;
           home_size?: string | null;
           estimated_volume?: number | null;
+          estimated_weight?: number | null;
+          inventory?: Json | null;
           notes?: string | null;
           destination_slug?: string | null;
           market_priority?: number | null;
           source?: string | null;
+          service_type?: QuoteServiceType;
+          auto_transport?: Json | null;
+          status?: QuoteStatus;
         };
         Update: Partial<Database['public']['Tables']['quote_requests']['Row']>;
+      };
+      saved_quotes: {
+        Row: {
+          id: string;
+          user_id: string;
+          quote_request_id: string | null;
+          label: string | null;
+          payload: Json;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          quote_request_id?: string | null;
+          label?: string | null;
+          payload?: Json;
+        };
+        Update: Partial<Database['public']['Tables']['saved_quotes']['Row']>;
+      };
+      saved_comparisons: {
+        Row: {
+          id: string;
+          user_id: string;
+          company_slugs: string[];
+          name: string | null;
+          created_at: string;
+        };
+        Insert: {
+          user_id: string;
+          company_slugs: string[];
+          name?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['saved_comparisons']['Row']>;
+      };
+    };
+    Views: {
+      quote_analytics_summary: {
+        Row: {
+          day: string;
+          quotes: number;
+          with_phone: number;
+          attributed: number;
+        };
       };
     };
   };

@@ -18,7 +18,7 @@ import { GrandStrandHubGrid } from '@/components/destinations/grand-strand-hub-g
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
-import { getCompanyBySlugAsync } from '@/lib/data';
+import { getCompanyBySlugAsync } from '@/lib/data-server';
 
 type Props = {
   market: Market;

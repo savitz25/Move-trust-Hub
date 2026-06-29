@@ -9,7 +9,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Badge } from '@/components/ui/badge';
 import { X, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { toast } from 'sonner';
-import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
+import { submitQuoteRequest } from '@/actions/quotes';
 import type { AutoTransportQuotePrefill } from '@/lib/auto-transport/types';
 import { formatCurrency } from '@/lib/auto-transport/pricing';
 import { trackQuoteFormSubmit } from '@/components/ga-events';
@@ -197,55 +197,27 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     };
 
     try {
-      // Real persistence when Supabase is configured
-      if (isSupabaseConfigured()) {
-        const { inventory: _inventory, estimated_weight: _weight, ...dbPayload } = payload;
-        const { error } = await supabase.from('quote_requests').insert(dbPayload);
-        if (error) {
-          console.warn('Supabase insert failed (non-fatal for user):', error.message);
+      const result = await submitQuoteRequest(payload);
+
+      if (!result.success && result.errors) {
+        const fieldErrors: FormErrors = {};
+        for (const [key, messages] of Object.entries(result.errors)) {
+          if (messages?.[0] && key in formData) {
+            fieldErrors[key as keyof FormData] = messages[0];
+          }
         }
-      }
-
-      // Always log the lead for visibility / easy copy to CRM
-      console.log('%c[Quote Lead Captured]', 'color:#0077D4', {
-        ...payload,
-        timestamp: new Date().toISOString(),
-      });
-
-      const notifyResponse = await fetch('/api/send-quote-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      const notifyData = await notifyResponse.json().catch(() => ({}));
-
-      if (notifyData?.success) {
-        console.log('%c[Quote Lead Synced]', 'color:#22c55e', {
-          lead: payload.name,
-          teamEmailSent: notifyData.teamEmailSent,
-          confirmationSent: notifyData.confirmationSent,
-          brevoSynced: notifyData.brevoSynced,
-          brevoContactId: notifyData.brevoContactId,
-          messageIds: notifyData.messageIds,
-        });
-      } else {
-        console.warn('[Quote Lead Sync Issue]', {
-          status: notifyResponse.status,
-          teamEmailSent: notifyData?.teamEmailSent,
-          teamEmailError: notifyData?.teamEmailError,
-          brevoSynced: notifyData?.brevoSynced,
-          brevoError: notifyData?.brevoError,
-          brevoAttempts: notifyData?.brevoAttempts,
-          env: notifyData?.env,
-          error: notifyData?.error || notifyData?.reason,
-        });
+        if (Object.keys(fieldErrors).length > 0) {
+          setErrors(fieldErrors);
+          toast.error('Please fix the highlighted fields');
+          setIsSubmitting(false);
+          return;
+        }
       }
 
       setIsSubmitting(false);
       setSubmitted(true);
       recordQuoteSubmit();
 
-      // Also fire a nice toast in case they miss the in-modal success
       toast.success('Request received!', {
         description: isAutoTransport
           ? "We'll connect you with 2-3 vetted auto transport carriers within 24 hours."
@@ -253,19 +225,6 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
       });
     } catch (err) {
       console.error('Quote submission error:', err);
-      try {
-        const notifyResponse = await fetch('/api/send-quote-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-        const notifyData = await notifyResponse.json().catch(() => ({}));
-        console.warn('[Quote Lead Sync Fallback]', notifyData);
-      } catch (notifyErr) {
-        console.warn('Lead notification failed (fallback):', notifyErr);
-      }
-
-      // Still succeed for the user experience (demo-friendly)
       setIsSubmitting(false);
       setSubmitted(true);
       recordQuoteSubmit();

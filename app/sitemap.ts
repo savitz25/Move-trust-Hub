@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data';
+import { getAllCompanies, getAllAutoTransportCompanies } from '@/lib/data-server';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import {
   getClusterParentMarkets,

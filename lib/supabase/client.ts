@@ -1,23 +1,30 @@
-import { createClient } from '@supabase/supabase-js';
+'use client';
+
+import { createBrowserClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
+import {
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  isSupabaseConfigured,
+} from '@/lib/supabase/config';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+let browserClient: ReturnType<typeof createBrowserClient<Database>> | null = null;
 
-let missingEnvWarned = false;
+/**
+ * Browser Supabase client — use only in Client Components.
+ * Quote submissions should prefer the submitQuoteRequest Server Action.
+ * Returns null when env vars are not configured (build / local without Supabase).
+ */
+export function createBrowserSupabaseClient() {
+  if (!isSupabaseConfigured()) return null;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  if (!missingEnvWarned) {
-    missingEnvWarned = true;
-    console.warn('Missing Supabase env vars. Using local seed data fallback.');
+  if (!browserClient) {
+    browserClient = createBrowserClient<Database>(
+      getSupabaseUrl()!,
+      getSupabaseAnonKey()!
+    );
   }
+  return browserClient;
 }
 
-export const supabase = createClient<Database>(
-  supabaseUrl || 'https://placeholder.supabase.co',
-  supabaseAnonKey || 'placeholder'
-);
-
-// Helper: check if we should use live Supabase or fallback to in-memory seed
-export const isSupabaseConfigured = () => 
-  !!process.env.NEXT_PUBLIC_SUPABASE_URL && !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+export { isSupabaseConfigured };

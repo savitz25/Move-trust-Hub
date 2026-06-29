@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { CompareLoader } from '@/components/compare/compare-loader';
 import { TrustBadges } from '@/components/trust/trust-badges';
-import { getAllCompanies } from '@/lib/data';
+import { getAllCompanies } from '@/lib/data-server';
 
 export const metadata = {
   title: 'Compare Movers Side-by-Side | Move Trust Hub',

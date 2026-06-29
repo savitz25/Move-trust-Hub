@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getCompanyBySlugAsync, getReviews } from '@/lib/data';
+import { getCompanyBySlugAsync, getReviews } from '@/lib/data-server';
 import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';

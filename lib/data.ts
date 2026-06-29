@@ -2,16 +2,18 @@ import { Company, Review, DirectoryFilters, SortOption } from '@/types';
 import { seedCompanies, getCompanyBySlug } from '@/data/seed-companies';
 import { seedReviews, getReviewsForCompany } from '@/data/seed-reviews';
 import { seedAutoTransportCompanies, getAutoTransportBySlug } from '@/data/seed-auto-transport';
-import { supabase, isSupabaseConfigured } from '@/lib/supabase/client';
+import { createBrowserSupabaseClient, isSupabaseConfigured } from '@/lib/supabase/client';
 import { computeReputationScore } from '@/data/seed-companies';
 
 // In-memory cache for demo (in real app use React Query / server cache)
 let companiesCache: Company[] | null = null;
 
+/** Client-side company fetch. Server Components should use `@/lib/data-server`. */
 export async function getAllCompanies(): Promise<Company[]> {
   if (companiesCache) return companiesCache;
 
-  if (isSupabaseConfigured()) {
+  const supabase = createBrowserSupabaseClient();
+  if (supabase) {
     const { data, error } = await supabase
       .from('companies')
       .select('*')
@@ -24,7 +26,6 @@ export async function getAllCompanies(): Promise<Company[]> {
     console.warn('Supabase fetch failed, falling back to seed data.');
   }
 
-  // Fallback to seed
   companiesCache = [...seedCompanies];
   return companiesCache;
 }
@@ -35,7 +36,8 @@ export async function getCompanyBySlugAsync(slug: string): Promise<Company | und
 }
 
 export async function getReviews(companyId: string, limit = 12): Promise<Review[]> {
-  if (isSupabaseConfigured()) {
+  const supabase = createBrowserSupabaseClient();
+  if (supabase) {
     const { data } = await supabase
       .from('reviews')
       .select('*')
@@ -48,7 +50,8 @@ export async function getReviews(companyId: string, limit = 12): Promise<Review[
 }
 
 export async function getAllReviewsForCompany(companyId: string): Promise<Review[]> {
-  if (isSupabaseConfigured()) {
+  const supabase = createBrowserSupabaseClient();
+  if (supabase) {
     const { data } = await supabase
       .from('reviews')
       .select('*')

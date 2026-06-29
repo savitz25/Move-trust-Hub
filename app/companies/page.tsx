@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { DirectoryLoader } from '@/components/directory/directory-loader';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { ReviewHighlights } from '@/components/trust/review-highlights';
-import { getAllCompanies } from '@/lib/data';
+import { getAllCompanies } from '@/lib/data-server';
 import {
   SITE_URL,
   buildOpenGraph,

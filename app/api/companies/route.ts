@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getAllCompanies } from '@/lib/data';
+import { getAllCompanies } from '@/lib/data-server';
 
 export async function GET() {
   const companies = await getAllCompanies();

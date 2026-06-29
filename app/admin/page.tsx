@@ -3,6 +3,7 @@
 export const dynamic = 'force-dynamic';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Company } from '@/types';
 import { getAllCompanies, saveCompany, deleteCompany } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -82,9 +83,16 @@ export default function AdminDashboard() {
       <div className="flex justify-between items-center mb-6">
         <div>
           <h1 className="text-3xl font-semibold">Admin Dashboard</h1>
-          <p className="text-sm text-muted-foreground">Demo mode — changes are stored in-memory for this browser session.</p>
+          <p className="text-sm text-muted-foreground">
+            Company editor (session cache). View live quote analytics on the quotes dashboard.
+          </p>
         </div>
-        <Button onClick={startNew}>+ Add New Company</Button>
+        <div className="flex gap-2">
+          <Button variant="outline" asChild>
+            <Link href="/admin/quotes">Quote Analytics</Link>
+          </Button>
+          <Button onClick={startNew}>+ Add New Company</Button>
+        </div>
       </div>
 
       {editing && (

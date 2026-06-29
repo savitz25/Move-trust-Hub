@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { AutoTransportCalculator } from '@/components/auto-transport/auto-transport-calculator';
 import { AutoTransportSeoSections } from '@/components/auto-transport/auto-transport-seo-sections';
 import { AutoTransportDirectoryClient } from '@/components/directory/auto-transport-directory-client';
-import { getAllAutoTransportCompanies } from '@/lib/data';
+import { getAllAutoTransportCompanies } from '@/lib/data-server';
 import type { Company } from '@/types';
 
 export default async function AutoTransportHubPage() {
