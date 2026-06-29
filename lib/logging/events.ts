@@ -16,6 +16,8 @@ export function logQuoteSubmitFailed(context: {
   reason: string;
   source?: string | null;
   errors?: unknown;
+  persistPath?: string;
+  dbErrorCode?: string;
 }) {
   logger.error('quote.submit_failed', context);
 }

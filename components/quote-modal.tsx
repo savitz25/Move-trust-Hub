@@ -199,6 +199,19 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
     try {
       const result = await submitQuoteRequest(payload);
 
+      // Dev / support: full result in browser console (no PII beyond what user typed)
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('[Quote Submit Result]', {
+          success: result.success,
+          dbSaved: result.dbSaved,
+          quoteId: result.quoteId,
+          persistPath: result.persistPath,
+          dbError: result.dbError,
+          dbErrorCode: result.dbErrorCode,
+          env: result.env,
+        });
+      }
+
       if (!result.success && result.errors) {
         const fieldErrors: FormErrors = {};
         for (const [key, messages] of Object.entries(result.errors)) {
@@ -212,6 +225,30 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
           setIsSubmitting(false);
           return;
         }
+      }
+
+      if (!result.success) {
+        console.error('[Quote Submit Failed]', {
+          dbError: result.dbError,
+          dbErrorCode: result.dbErrorCode,
+          persistPath: result.persistPath,
+          persistAttempts: result.persistAttempts,
+          env: result.env,
+        });
+        toast.error('Could not submit your request', {
+          description:
+            'Please try again or call 1-800-918-1477. Our team may still have received your email.',
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (!result.dbSaved) {
+        console.warn('[Quote DB not saved — notification may have succeeded]', {
+          dbError: result.dbError,
+          persistPath: result.persistPath,
+          notification: result.notification,
+        });
       }
 
       setIsSubmitting(false);
