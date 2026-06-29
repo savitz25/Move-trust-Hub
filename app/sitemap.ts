@@ -14,6 +14,7 @@ import {
   DESTINATION_CLUSTERS_CONTENT_UPDATED,
   RESOURCES_CONTENT_UPDATED,
 } from '@/lib/seo/content-dates';
+import { getMovingCompanySlugsForSitemap } from '@/lib/reviews/bridge';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -42,6 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/auto-transport',
     '/moving-calculator',
     '/verify-dot',
+    '/review',
     '/compare',
     '/about',
     '/contact',
@@ -102,5 +104,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...destinationPages, ...companyPages, ...autoTransportPages];
+  const reviewCompanyPages = (await getMovingCompanySlugsForSitemap()).map((row) => ({
+    url: `${SITE}/company/${row.slug}`,
+    lastModified: new Date(row.updated_at),
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }));
+
+  return [
+    ...staticPages,
+    ...destinationPages,
+    ...companyPages,
+    ...reviewCompanyPages,
+    ...autoTransportPages,
+  ];
 }

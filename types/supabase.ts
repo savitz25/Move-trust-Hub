@@ -134,6 +134,87 @@ export interface Database {
         };
         Update: Partial<Database['public']['Tables']['saved_quotes']['Row']>;
       };
+      moving_companies: {
+        Row: {
+          id: string;
+          dot_number: string | null;
+          mc_number: string | null;
+          slug: string;
+          name: string;
+          address: string | null;
+          city: string | null;
+          state: string | null;
+          zip: string | null;
+          phone: string | null;
+          website: string | null;
+          avg_rating: number;
+          review_count: number;
+          approved_review_count: number;
+          legacy_company_id: string | null;
+          source: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: Partial<Database['public']['Tables']['moving_companies']['Row']> & {
+          slug: string;
+          name: string;
+        };
+        Update: Partial<Database['public']['Tables']['moving_companies']['Row']>;
+      };
+      company_reviews: {
+        Row: {
+          id: string;
+          company_id: string;
+          user_id: string | null;
+          reviewer_name: string;
+          reviewer_email: string;
+          rating: number;
+          title: string | null;
+          content: string;
+          photo_urls: Json;
+          status: 'pending' | 'approved' | 'rejected';
+          moderation_note: string | null;
+          moderated_at: string | null;
+          moderated_by: string | null;
+          submitter_ip: string | null;
+          email_hash: string;
+          move_date: string | null;
+          source_page: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          company_id: string;
+          reviewer_name: string;
+          reviewer_email: string;
+          rating: number;
+          content: string;
+          email_hash: string;
+          title?: string | null;
+          photo_urls?: Json;
+          status?: 'pending' | 'approved' | 'rejected';
+          submitter_ip?: string | null;
+          move_date?: string | null;
+          source_page?: string | null;
+          user_id?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['company_reviews']['Row']>;
+      };
+      review_rate_limits: {
+        Row: {
+          id: string;
+          ip_hash: string;
+          email_hash: string | null;
+          attempt_count: number;
+          window_start: string;
+          last_attempt_at: string;
+        };
+        Insert: {
+          ip_hash: string;
+          email_hash?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['review_rate_limits']['Row']>;
+      };
       dot_verifications: {
         Row: {
           id: string;

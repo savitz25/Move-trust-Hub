@@ -340,6 +340,12 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
               <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" /> Verify DOT #
             </Link>
             <Link
+              href="/review"
+              className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+            >
+              Leave a Review
+            </Link>
+            <Link
               href="/resources/fmcsa"
               className="inline-flex items-center gap-1.5 rounded-full bg-background/80 px-3 py-1 border text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
             >

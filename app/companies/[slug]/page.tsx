@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { ReviewsSection } from '@/components/reviews/reviews-section';
+import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
+import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
+import { slugFromCarrier } from '@/lib/reviews/schema';
 import { CoverageMap } from '@/components/map/coverage-map';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 
@@ -33,6 +36,12 @@ export default async function CompanyProfilePage({ params }: Props) {
   const reviews = await getReviews(company.id, 8);
   const complaintRatio = (company.fmcsaComplaints / Math.max(company.fmcsaShipments, 1) * 1000).toFixed(2);
 
+  const dot = company.usdotNumber?.replace(/\D/g, '');
+  const mc = company.mcNumber?.replace(/\D/g, '');
+  const reviewHref = `/review?carrier=${encodeURIComponent(
+    dot ? `DOT ${dot}` : mc ? `MC-${mc}` : company.name
+  )}&slug=${dot ? slugFromCarrier('DOT', dot) : mc ? slugFromCarrier('MC', mc) : company.slug}`;
+
   const trustSignals = [
     company.fmcsaSafetyRating === 'Satisfactory' && 'FMCSA Satisfactory',
     company.bbbAccredited && `BBB ${company.bbbRating} Accredited`,
@@ -58,6 +67,7 @@ export default async function CompanyProfilePage({ params }: Props) {
           <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">
             Visit official site <ExternalLink className="h-3.5 w-3.5" />
           </a>
+          <UserReviewsCta href={reviewHref} />
           <Link href={`/compare?add=${company.slug}`}>
             <Button>Add to Compare</Button>
           </Link>
@@ -171,7 +181,15 @@ export default async function CompanyProfilePage({ params }: Props) {
             </CardContent>
           </Card>
 
-          {/* Recent Reviews */}
+          {/* Community reviews (user-submitted, moderated) */}
+          <LegacyCompanyUserReviews
+            legacyId={company.id}
+            companyName={company.name}
+            usdotNumber={company.usdotNumber}
+            mcNumber={company.mcNumber}
+          />
+
+          {/* Aggregated third-party reviews */}
           <ReviewsSection companyId={company.id} companyName={company.name} initialReviews={reviews} />
         </div>
 

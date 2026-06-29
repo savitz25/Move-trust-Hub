@@ -98,6 +98,18 @@ export function LocalMoverCard({
       </div>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+        {(mover.usdotNumber || mover.mcNumber) && (
+          <Link
+            href={`/review?carrier=${encodeURIComponent(
+              mover.usdotNumber
+                ? `DOT ${mover.usdotNumber.replace(/\D/g, '')}`
+                : `MC-${mover.mcNumber!.replace(/\D/g, '')}`
+            )}`}
+            className="text-sm text-muted-foreground hover:text-primary hover:underline"
+          >
+            Leave a review
+          </Link>
+        )}
         {profileHref ? (
           <Link
             href={profileHref}

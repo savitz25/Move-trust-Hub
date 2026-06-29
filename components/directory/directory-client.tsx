@@ -381,6 +381,13 @@ function CompanyCard({ company, compareStore }: { company: Company; compareStore
           <span className="text-muted-foreground"> rep • ${company.avgPricePerMove.toLocaleString()}</span>
         </div>
         <div className="flex gap-2">
+          <Link
+            href={`/review?carrier=${encodeURIComponent(
+              company.usdotNumber ? `DOT ${company.usdotNumber.replace(/\D/g, '')}` : company.mcNumber ? `MC-${company.mcNumber.replace(/\D/g, '')}` : company.name
+            )}`}
+          >
+            <Button size="sm" variant="ghost" className="h-8 px-2 text-xs">Review</Button>
+          </Link>
           <Link href={`/companies/${company.slug}`}>
             <Button size="sm" variant="ghost" className="h-8 px-3">Details</Button>
           </Link>
