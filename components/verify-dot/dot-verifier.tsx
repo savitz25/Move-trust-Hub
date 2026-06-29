@@ -1,8 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Loader2, Search, ShieldCheck } from 'lucide-react';
+import { Loader2, Search, ShieldCheck } from 'lucide-react';
 import { verifyCarrierNumber, type VerifyDotResult } from '@/actions/verify-dot';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,20 +21,9 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<VerifyDotResult | null>(null);
   const [quoteOpen, setQuoteOpen] = useState(false);
-  const redirectTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const clearRedirectTimer = useCallback(() => {
-    if (redirectTimer.current) {
-      clearTimeout(redirectTimer.current);
-      redirectTimer.current = null;
-    }
-  }, []);
-
-  useEffect(() => () => clearRedirectTimer(), [clearRedirectTimer]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    clearRedirectTimer();
     setLoading(true);
     setError(null);
     setResult(null);
@@ -53,12 +42,6 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
 
       setResult(res);
       setLoading(false);
-
-      if (res.saferUrl) {
-        redirectTimer.current = setTimeout(() => {
-          window.location.assign(res.saferUrl!);
-        }, 2800);
-      }
     } catch (err) {
       console.error('[DOT Verify]', err);
       setError('Something went wrong. Please try again.');
@@ -124,24 +107,11 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
           ) : null}
         </form>
 
-        {result?.success && result.saferUrl ? (
+        {result?.success ? (
           <div className="mt-6 pt-6 border-t">
-            <p className="text-sm text-muted-foreground mb-4">
-              Redirecting to official FMCSA SAFER in a few seconds…{' '}
-              <button
-                type="button"
-                className="underline underline-offset-2 hover:text-foreground"
-                onClick={clearRedirectTimer}
-              >
-                Stay on this page
-              </button>
-            </p>
             <DotVerifierResults
               result={result}
-              onGetQuotes={() => {
-                clearRedirectTimer();
-                setQuoteOpen(true);
-              }}
+              onGetQuotes={() => setQuoteOpen(true)}
             />
           </div>
         ) : null}

@@ -5,9 +5,11 @@ import {
   AlertTriangle,
   ArrowRight,
   Building2,
+  CheckCircle2,
   ExternalLink,
   MapPin,
   Phone,
+  SearchX,
   ShieldCheck,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -21,20 +23,81 @@ type Props = {
 };
 
 export function DotVerifierResults({ result, onGetQuotes }: Props) {
-  if (!result.success || !result.saferUrl) return null;
+  if (!result.success) return null;
 
   const preview = result.preview;
+  const inDirectory = Boolean(result.directorySlug);
+  const hasPreview = Boolean(preview?.legalName);
+  const saferUrl = result.saferUrl;
+
+  const statusBanner = inDirectory ? (
+    <div
+      className="flex items-start gap-3 rounded-lg border border-primary/25 bg-primary/10 p-4"
+      role="status"
+    >
+      <CheckCircle2 className="h-5 w-5 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+      <div>
+        <p className="font-medium text-foreground">
+          We found this company in our directory
+        </p>
+        <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+          Below is what Move Trust Hub has on file for{' '}
+          <strong>{result.displayNumber}</strong>. You can compare quotes or
+          open the official FMCSA record when you&apos;re ready.
+        </p>
+      </div>
+    </div>
+  ) : hasPreview ? (
+    <div
+      className="flex items-start gap-3 rounded-lg border bg-muted/40 p-4"
+      role="status"
+    >
+      <ShieldCheck className="h-5 w-5 shrink-0 text-muted-foreground mt-0.5" aria-hidden="true" />
+      <div>
+        <p className="font-medium text-foreground">
+          Public FMCSA data available
+        </p>
+        <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+          This carrier isn&apos;t in our directory yet, but we pulled a preview
+          from FMCSA records for <strong>{result.displayNumber}</strong>. Confirm
+          licensing on the official government site before you book.
+        </p>
+      </div>
+    </div>
+  ) : (
+    <div
+      className="flex items-start gap-3 rounded-lg border border-amber-200/80 bg-amber-50/80 dark:border-amber-900/40 dark:bg-amber-950/30 p-4"
+      role="status"
+    >
+      <SearchX className="h-5 w-5 shrink-0 text-amber-700 dark:text-amber-400 mt-0.5" aria-hidden="true" />
+      <div>
+        <p className="font-medium text-foreground">
+          No record in our directory
+        </p>
+        <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+          We don&apos;t have <strong>{result.displayNumber}</strong> in Move Trust
+          Hub yet. Use the button below to open the official FMCSA SAFER Company
+          Snapshot — the authoritative source for authority status, safety
+          ratings, inspections, and crash history.
+        </p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
-      {preview ? (
+      {statusBanner}
+
+      {hasPreview && preview ? (
         <Card className="border-primary/20 bg-primary/5 p-5 sm:p-6">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <Badge variant="secondary" className="mb-2">
-                {preview.source === 'directory'
-                  ? 'In Move Trust Hub Directory'
-                  : 'FMCSA Data Preview'}
+                {inDirectory
+                  ? 'Move Trust Hub Directory'
+                  : preview.source === 'fmcsa_api'
+                    ? 'FMCSA Data Preview'
+                    : 'Carrier Preview'}
               </Badge>
               <h2 className="text-xl font-semibold tracking-tight">
                 {preview.legalName}
@@ -83,7 +146,11 @@ export function DotVerifierResults({ result, onGetQuotes }: Props) {
                   <dt className="text-xs text-muted-foreground">
                     Allowed to operate
                   </dt>
-                  <dd>{preview.allowedToOperate === 'Y' ? 'Yes' : preview.allowedToOperate}</dd>
+                  <dd>
+                    {preview.allowedToOperate === 'Y'
+                      ? 'Yes'
+                      : preview.allowedToOperate}
+                  </dd>
                 </div>
               </div>
             ) : null}
@@ -92,54 +159,73 @@ export function DotVerifierResults({ result, onGetQuotes }: Props) {
           {result.directorySlug ? (
             <div className="mt-4 rounded-lg border bg-background/80 p-3 text-sm">
               <Building2 className="inline h-4 w-4 mr-1.5 text-primary" />
-              This carrier is listed in our directory.{' '}
+              See reviews, service areas, and more on our{' '}
               <Link
                 href={`/companies/${result.directorySlug}`}
                 className="font-medium text-primary underline underline-offset-2"
               >
-                View {result.directoryName} profile →
+                {result.directoryName} profile →
               </Link>
             </div>
           ) : null}
 
           <p className="mt-4 text-xs text-muted-foreground">
-            Preview may be incomplete. The official FMCSA SAFER report is the
-            authoritative source for licensing and safety data.
+            {inDirectory
+              ? 'Directory data is maintained by Move Trust Hub. Licensing and safety details can change — confirm on FMCSA before signing a contract.'
+              : 'Preview may be incomplete. The official FMCSA SAFER report is the authoritative source for licensing and safety data.'}
           </p>
         </Card>
-      ) : (
-        <Card className="p-5 sm:p-6">
-          <h2 className="text-lg font-semibold">
-            Opening official lookup for {result.displayNumber}
-          </h2>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            We don&apos;t have a preview for this carrier in our directory or
-            public FMCSA cache. You&apos;ll view the full government Company
-            Snapshot on{' '}
-            <strong>safer.fmcsa.dot.gov</strong> — including authority status,
-            safety rating, inspections, and crash history.
-          </p>
-        </Card>
-      )}
+      ) : null}
 
       <div className="flex flex-col sm:flex-row gap-3">
-        <Button asChild size="lg" className="gap-2 min-h-[48px] flex-1">
-          <a href={result.saferUrl} target="_blank" rel="noopener noreferrer">
-            View Full FMCSA SAFER Report
-            <ExternalLink className="h-4 w-4" />
-          </a>
-        </Button>
-        <Button
-          type="button"
-          variant="outline"
-          size="lg"
-          className="gap-2 min-h-[48px]"
-          onClick={onGetQuotes}
-        >
-          Get Free Moving Quotes
-          <ArrowRight className="h-4 w-4" />
-        </Button>
+        {inDirectory || hasPreview ? (
+          <>
+            <Button
+              type="button"
+              size="lg"
+              className="gap-2 min-h-[48px] flex-1"
+              onClick={onGetQuotes}
+            >
+              Get Free Moving Quotes
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+            {saferUrl ? (
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="gap-2 min-h-[48px]"
+              >
+                <a href={saferUrl} target="_blank" rel="noopener noreferrer">
+                  View Official FMCSA Record
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            ) : null}
+          </>
+        ) : saferUrl ? (
+          <Button asChild size="lg" className="gap-2 min-h-[48px] flex-1">
+            <a href={saferUrl} target="_blank" rel="noopener noreferrer">
+              View Official FMCSA SAFER Report
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+        ) : null}
       </div>
+
+      {(inDirectory || hasPreview) && saferUrl ? (
+        <p className="text-xs text-muted-foreground">
+          Prefer the government source?{' '}
+          <a
+            href={saferUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-foreground"
+          >
+            Open {result.displayNumber} on safer.fmcsa.dot.gov
+          </a>
+        </p>
+      ) : null}
 
       <p className="text-xs text-muted-foreground flex items-start gap-2">
         <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" />
