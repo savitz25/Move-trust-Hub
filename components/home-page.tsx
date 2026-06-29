@@ -141,7 +141,16 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
           <p className="text-muted-foreground mt-3 max-w-md mx-auto">Powerful free tools to help you make the smartest decision for your interstate move.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <Link prefetch={false} href="/verify-dot" className="group">
+            <Card className="h-full p-6 hover:border-primary/50 transition-all border-primary/20 bg-primary/[0.03]">
+              <div className="text-3xl mb-4">🛡️</div>
+              <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary">Verify a DOT Number</h3>
+              <p className="text-muted-foreground">Look up any mover&apos;s USDOT or MC number and jump to the official FMCSA SAFER report — even if they&apos;re not in our directory.</p>
+              <div className="mt-4 text-primary font-medium flex items-center gap-1">Verify a carrier →</div>
+            </Card>
+          </Link>
+
           <Link prefetch={false} href="/moving-calculator" className="group">
             <Card className="h-full p-6 hover:border-primary/50 transition-all">
               <div className="text-3xl mb-4">📦</div>

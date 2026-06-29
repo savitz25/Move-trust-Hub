@@ -41,6 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...clusterRoutes,
     '/auto-transport',
     '/moving-calculator',
+    '/verify-dot',
     '/compare',
     '/about',
     '/contact',

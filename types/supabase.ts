@@ -134,6 +134,23 @@ export interface Database {
         };
         Update: Partial<Database['public']['Tables']['saved_quotes']['Row']>;
       };
+      dot_verifications: {
+        Row: {
+          id: string;
+          dot_number: string;
+          number_type: 'DOT' | 'MC';
+          searched_at: string;
+          user_ip: string | null;
+          source_page: string | null;
+        };
+        Insert: {
+          dot_number: string;
+          number_type?: 'DOT' | 'MC';
+          user_ip?: string | null;
+          source_page?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['dot_verifications']['Row']>;
+      };
       saved_comparisons: {
         Row: {
           id: string;

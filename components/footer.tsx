@@ -57,6 +57,7 @@ export function Footer() {
               <div><Link prefetch={false} href="/resources/routes" className="hover:text-foreground transition-colors">Route Guides</Link></div>
               <div><Link prefetch={false} href="/resources/scams" className="hover:text-foreground transition-colors">Avoid Scams</Link></div>
               <div><Link prefetch={false} href="/resources/packing-checklist" className="hover:text-foreground transition-colors">Packing Checklist</Link></div>
+              <div><Link prefetch={false} href="/verify-dot" className="hover:text-foreground transition-colors">Verify DOT Number</Link></div>
               <div><Link prefetch={false} href="/resources/fmcsa" className="hover:text-foreground transition-colors">FMCSA Guide</Link></div>
             </div>
           </div>
@@ -67,6 +68,7 @@ export function Footer() {
               <div><Link prefetch={false} href="/about" className="hover:text-foreground transition-colors">About Us</Link></div>
               <div><Link prefetch={false} href="/about#disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></div>
               <div><Link prefetch={false} href="/contact" className="hover:text-foreground transition-colors">Contact</Link></div>
+              <div><Link prefetch={false} href="/verify-dot" className="hover:text-foreground transition-colors">DOT Lookup Tool</Link></div>
               <div><a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener" className="hover:text-foreground transition-colors">FMCSA.gov ↗</a></div>
             </div>
           </div>

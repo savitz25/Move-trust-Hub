@@ -1,0 +1,140 @@
+import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
+import { DotVerifier } from '@/components/verify-dot/dot-verifier';
+import { PageHeroCta } from '@/components/conversion/page-hero-cta';
+import { FaqSection } from '@/components/seo/faq-section';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
+import {
+  VERIFY_DOT_CANONICAL,
+  VERIFY_DOT_DESCRIPTION,
+  VERIFY_DOT_TITLE,
+  verifyDotFaqItems,
+  verifyDotHowToSteps,
+} from '@/lib/verify-dot/seo';
+
+export const metadata = buildResourceMetadata(
+  '/verify-dot',
+  VERIFY_DOT_TITLE,
+  VERIFY_DOT_DESCRIPTION
+);
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to verify a moving company DOT number',
+  description: VERIFY_DOT_DESCRIPTION,
+  step: verifyDotHowToSteps.map((step, index) => ({
+    '@type': 'HowToStep',
+    position: index + 1,
+    name: step.name,
+    text: step.text,
+  })),
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: verifyDotFaqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: VERIFY_DOT_TITLE,
+  description: VERIFY_DOT_DESCRIPTION,
+  url: VERIFY_DOT_CANONICAL,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Move Trust Hub',
+    url: 'https://www.movetrusthub.com',
+  },
+};
+
+export default function VerifyDotPage() {
+  return (
+    <>
+      <JsonLd data={howToSchema} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={webPageSchema} />
+
+      <div className="border-b bg-gradient-to-br from-primary/8 via-background to-background">
+        <div className="container mx-auto px-4 py-12 sm:py-16 max-w-3xl">
+          <Badge variant="outline" className="mb-4">
+            FREE TOOL · OFFICIAL FMCSA LINK
+          </Badge>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+            Verify a DOT Number
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Check any interstate mover&apos;s <strong>USDOT</strong> or{' '}
+            <strong>MC number</strong> before you sign. We link you directly to
+            the official FMCSA SAFER Company Snapshot — the same government
+            database regulators use — even if the company isn&apos;t in our
+            directory yet.
+          </p>
+          <div className="mt-6">
+            <PageHeroCta
+              quoteLabel="Get Free Moving Quotes"
+              calculatorLabel="Estimate My Move"
+              showTrustBadges={false}
+              showMicrocopy={false}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-10 sm:py-14 max-w-3xl">
+        <DotVerifier sourcePage="/verify-dot" />
+
+        <section className="mt-12 prose prose-neutral max-w-none">
+          <h2>Why verify before you book</h2>
+          <p>
+            Rogue brokers and unlicensed operators are a leading cause of moving
+            scams. A legitimate interstate household goods carrier must be
+            registered with FMCSA. If a company refuses to share a USDOT number,
+            or the number doesn&apos;t match the legal name on your estimate,
+            walk away.
+          </p>
+          <p>
+            Read our{' '}
+            <Link href="/resources/fmcsa">FMCSA safety ratings guide</Link> and{' '}
+            <Link href="/resources/scams">moving scam red flags</Link> for what
+            to look for on the official report.
+          </p>
+        </section>
+
+        <div className="mt-12">
+          <FaqSection
+            title="DOT Verification FAQ"
+            items={verifyDotFaqItems}
+          />
+        </div>
+
+        <section className="mt-12 rounded-2xl border bg-muted/30 p-6 sm:p-8 text-center">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Verified the carrier? Get competitive quotes next.
+          </h2>
+          <p className="mt-2 text-muted-foreground max-w-lg mx-auto">
+            Compare FMCSA-licensed interstate movers with real reviews and
+            transparent pricing — free, no obligation.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <PageHeroCta
+              quoteLabel="Get Free Quotes Now"
+              showTrustBadges
+              className="justify-center"
+            />
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}
