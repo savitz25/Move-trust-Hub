@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getRelatedGuides } from '@/lib/resources/guides';
 import { GuideCtaClient } from '@/components/resources/guide-cta-client';
+import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 
 export function GuideCta({ prefilledNotes }: { prefilledNotes?: string }) {
   return (
@@ -49,6 +50,9 @@ export function GuideFooter({
   return (
     <>
       <RelatedGuides slugs={relatedSlugs} />
+      <div className="not-prose mt-8">
+        <TrustToolsBar />
+      </div>
       <GuideCta prefilledNotes={prefilledNotes} />
     </>
   );

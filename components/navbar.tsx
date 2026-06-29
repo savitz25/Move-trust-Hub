@@ -22,6 +22,8 @@ export function Navbar() {
     { href: '/local-movers', label: 'Local Movers' },
     { href: '/auto-transport', label: 'Auto Transport' },
     { href: '/moving-calculator', label: 'Move Calculator' },
+    { href: '/verify-dot', label: 'Verify DOT' },
+    { href: '/review', label: 'Reviews' },
     { href: '/compare', label: 'Compare' },
     { href: '/resources', label: 'Resources' },
     { href: '/about', label: 'About & Trust' },

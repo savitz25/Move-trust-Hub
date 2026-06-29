@@ -1,5 +1,7 @@
 import type { PublicReview } from '@/lib/reviews/queries';
 
+const MIN_REVIEWS_FOR_AGGREGATE = 1;
+
 export function buildAggregateRatingSchema(params: {
   companyName: string;
   slug: string;
@@ -8,26 +10,31 @@ export function buildAggregateRatingSchema(params: {
   reviews?: PublicReview[];
 }) {
   const { companyName, slug, avgRating, reviewCount, reviews = [] } = params;
+  const canonical = `https://www.movetrusthub.com/company/${slug}`;
+  const canEmitAggregate =
+    reviewCount >= MIN_REVIEWS_FOR_AGGREGATE && avgRating > 0 && reviews.length > 0;
 
-  const schema: Record<string, unknown> = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+  const business: Record<string, unknown> = {
+    '@type': ['MovingCompany', 'LocalBusiness'],
+    '@id': `${canonical}#company`,
     name: companyName,
-    url: `https://www.movetrusthub.com/company/${slug}`,
+    url: canonical,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Move Trust Hub',
+      url: 'https://www.movetrusthub.com',
+    },
   };
 
-  if (reviewCount > 0 && avgRating > 0) {
-    schema.aggregateRating = {
+  if (canEmitAggregate) {
+    business.aggregateRating = {
       '@type': 'AggregateRating',
       ratingValue: avgRating.toFixed(1),
       bestRating: '5',
       worstRating: '1',
       ratingCount: reviewCount,
     };
-  }
-
-  if (reviews.length > 0) {
-    schema.review = reviews.slice(0, 5).map((r) => ({
+    business.review = reviews.slice(0, 5).map((r) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: r.reviewer_name },
       datePublished: r.created_at.split('T')[0],
@@ -42,5 +49,17 @@ export function buildAggregateRatingSchema(params: {
     }));
   }
 
-  return schema;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: `${companyName} — Moderated Customer Reviews`,
+        url: canonical,
+        about: { '@id': `${canonical}#company` },
+      },
+      business,
+    ],
+  };
 }

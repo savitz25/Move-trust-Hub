@@ -20,12 +20,38 @@ type Props = {
   searchParams: Promise<{ carrier?: string; slug?: string }>;
 };
 
-const webPageSchema = {
+const reviewPageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: REVIEW_PAGE_TITLE,
-  description: REVIEW_PAGE_DESCRIPTION,
-  url: REVIEW_PAGE_CANONICAL,
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': REVIEW_PAGE_CANONICAL,
+      name: REVIEW_PAGE_TITLE,
+      description: REVIEW_PAGE_DESCRIPTION,
+      url: REVIEW_PAGE_CANONICAL,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Move Trust Hub',
+        url: 'https://www.movetrusthub.com',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${REVIEW_PAGE_CANONICAL}#faq`,
+      mainEntity: reviewFaqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.movetrusthub.com' },
+        { '@type': 'ListItem', position: 2, name: 'Leave a Review', item: REVIEW_PAGE_CANONICAL },
+      ],
+    },
+  ],
 };
 
 export default async function ReviewPage({ searchParams }: Props) {
@@ -34,7 +60,7 @@ export default async function ReviewPage({ searchParams }: Props) {
 
   return (
     <>
-      <JsonLd data={webPageSchema} />
+      <JsonLd data={reviewPageSchema} />
 
       <div className="border-b bg-gradient-to-br from-primary/8 via-background to-background">
         <div className="container mx-auto px-4 py-12 sm:py-16 max-w-3xl">

@@ -19,51 +19,56 @@ export const metadata = buildResourceMetadata(
   VERIFY_DOT_DESCRIPTION
 );
 
-const howToSchema = {
+const verifyDotSchemaGraph = {
   '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'How to verify a moving company DOT number',
-  description: VERIFY_DOT_DESCRIPTION,
-  step: verifyDotHowToSteps.map((step, index) => ({
-    '@type': 'HowToStep',
-    position: index + 1,
-    name: step.name,
-    text: step.text,
-  })),
-};
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: verifyDotFaqItems.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer,
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': VERIFY_DOT_CANONICAL,
+      name: VERIFY_DOT_TITLE,
+      description: VERIFY_DOT_DESCRIPTION,
+      url: VERIFY_DOT_CANONICAL,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'Move Trust Hub',
+        url: 'https://www.movetrusthub.com',
+      },
     },
-  })),
-};
-
-const webPageSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: VERIFY_DOT_TITLE,
-  description: VERIFY_DOT_DESCRIPTION,
-  url: VERIFY_DOT_CANONICAL,
-  isPartOf: {
-    '@type': 'WebSite',
-    name: 'Move Trust Hub',
-    url: 'https://www.movetrusthub.com',
-  },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.movetrusthub.com' },
+        { '@type': 'ListItem', position: 2, name: 'Verify DOT Number', item: VERIFY_DOT_CANONICAL },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      '@id': `${VERIFY_DOT_CANONICAL}#howto`,
+      name: 'How to verify a moving company DOT number',
+      description: VERIFY_DOT_DESCRIPTION,
+      step: verifyDotHowToSteps.map((step, index) => ({
+        '@type': 'HowToStep',
+        position: index + 1,
+        name: step.name,
+        text: step.text,
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${VERIFY_DOT_CANONICAL}#faq`,
+      mainEntity: verifyDotFaqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
 };
 
 export default function VerifyDotPage() {
   return (
     <>
-      <JsonLd data={howToSchema} />
-      <JsonLd data={faqSchema} />
-      <JsonLd data={webPageSchema} />
+      <JsonLd data={verifyDotSchemaGraph} />
 
       <div className="border-b bg-gradient-to-br from-primary/8 via-background to-background">
         <div className="container mx-auto px-4 py-12 sm:py-16 max-w-3xl">
@@ -107,7 +112,8 @@ export default function VerifyDotPage() {
             Read our{' '}
             <Link href="/resources/fmcsa">FMCSA safety ratings guide</Link> and{' '}
             <Link href="/resources/scams">moving scam red flags</Link> for what
-            to look for on the official report.
+            to look for on the official report. After verifying, you can{' '}
+            <Link href="/review">leave a moderated review</Link> to help other families.
           </p>
         </section>
 

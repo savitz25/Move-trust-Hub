@@ -1,4 +1,3 @@
-import { testimonials } from '@/lib/trust/trust-data';
 import { SITE_EMAIL } from '@/lib/contact';
 
 const SITE_URL = 'https://www.movetrusthub.com';
@@ -20,41 +19,6 @@ export const organizationSchema = {
   description:
     'Independent directory and quote-matching service for FMCSA-licensed interstate and long-distance moving companies in the United States.',
 };
-
-function buildAttributableReviewSchemas() {
-  return testimonials
-    .filter((t) => t.date && t.source === 'Google')
-    .map((testimonial, index) => ({
-      '@type': 'Review',
-      '@id': `${SITE_URL}/#attributed-review-${index + 1}`,
-      name: testimonial.companyName
-        ? `${testimonial.companyName} — ${testimonial.source} review`
-        : `Attributed ${testimonial.source} review`,
-      author: {
-        '@type': 'Person',
-        name: testimonial.name,
-      },
-      reviewBody: testimonial.quote,
-      datePublished: testimonial.date,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: String(testimonial.rating),
-        bestRating: '5',
-        worstRating: '1',
-      },
-      itemReviewed: testimonial.companySlug
-        ? {
-            '@type': 'MovingCompany',
-            name: testimonial.companyName,
-            url: `${SITE_URL}/companies/${testimonial.companySlug}`,
-          }
-        : {
-            '@type': 'Organization',
-            '@id': `${SITE_URL}/#organization`,
-            name: 'Move Trust Hub',
-          },
-    }));
-}
 
 export const websiteSchema = {
   '@type': 'WebSite',
@@ -148,7 +112,6 @@ function buildFaqSchema(items: { question: string; answer: string }[], id: strin
 }
 
 export function buildHomepageSchemaGraph() {
-  const attributableReviews = buildAttributableReviewSchemas();
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -156,7 +119,6 @@ export function buildHomepageSchemaGraph() {
       websiteSchema,
       homepageServiceSchema,
       buildFaqSchema(homepageFaqItems, `${SITE_URL}/#homepage-faq`),
-      ...(attributableReviews.length > 0 ? attributableReviews : []),
     ],
   };
 }

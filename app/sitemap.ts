@@ -68,12 +68,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           ? 1
           : route === '/local-movers'
             ? 0.9
+            : route === '/verify-dot' || route === '/review'
+              ? 0.88
             : route.startsWith('/resources/guides/')
               ? 0.9
               : route.startsWith('/resources/routes/')
                 ? 0.85
                 : route === '/resources/interstate-moving-costs'
                   ? 0.9
+                  : route === '/moving-calculator'
+                    ? 0.87
                   : isCluster
                     ? 0.88
                     : 0.8,

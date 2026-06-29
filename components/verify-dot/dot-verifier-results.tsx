@@ -213,19 +213,28 @@ export function DotVerifierResults({ result, onGetQuotes }: Props) {
         ) : null}
       </div>
 
-      {(inDirectory || hasPreview) && saferUrl ? (
-        <p className="text-xs text-muted-foreground">
-          Prefer the government source?{' '}
-          <a
-            href={saferUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-foreground"
-          >
-            Open {result.displayNumber} on safer.fmcsa.dot.gov
-          </a>
-        </p>
-      ) : null}
+      <p className="text-xs text-muted-foreground">
+        {saferUrl ? (
+          <>
+            Prefer the government source?{' '}
+            <a
+              href={saferUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              Open {result.displayNumber} on safer.fmcsa.dot.gov
+            </a>
+            {' · '}
+          </>
+        ) : null}
+        <Link
+          href={`/review?carrier=${encodeURIComponent(result.displayNumber ?? '')}`}
+          className="underline underline-offset-2 hover:text-foreground"
+        >
+          Leave a moderated review
+        </Link>
+      </p>
 
       <p className="text-xs text-muted-foreground flex items-start gap-2">
         <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" />

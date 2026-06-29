@@ -1,4 +1,5 @@
 import { organizationSchema } from '@/lib/seo/schemas';
+import { moverHasSchemaAggregateRating } from '@/lib/trust/verified-reviews';
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
 import type { MarketMoverEntry } from '@/lib/destinations/get-movers-for-market';
@@ -36,7 +37,9 @@ function buildDestinationMoverNode(
       '@type': 'City',
       name: destinationLabel,
     },
-    ...(mover.rating > 0 && mover.reviewCount > 0
+    ...(moverHasSchemaAggregateRating(mover) &&
+    mover.rating > 0 &&
+    mover.reviewCount > 0
       ? {
           aggregateRating: {
             '@type': 'AggregateRating',
@@ -202,29 +205,7 @@ export function buildCityHubSchemaGraph(
     }
   }
 
-  for (const [index, testimonial] of content.testimonials.entries()) {
-    graph.push({
-      '@type': 'Review',
-      '@id': `${canonical}#review-${index + 1}`,
-      name: `Move to ${destinationLabel} — ${testimonial.name}`,
-      reviewBody: testimonial.quote,
-      author: {
-        '@type': 'Person',
-        name: testimonial.name,
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-        worstRating: '1',
-      },
-      itemReviewed: {
-        '@type': 'LocalBusiness',
-        '@id': serviceId,
-        name: `Moving Companies Serving ${destinationLabel}`,
-      },
-    });
-  }
+  // Editorial destination quotes are UI-only — not emitted as Review schema (E-E-A-T).
 
   return {
     '@context': 'https://schema.org',

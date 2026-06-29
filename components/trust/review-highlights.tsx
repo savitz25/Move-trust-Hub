@@ -23,7 +23,7 @@ export function ReviewHighlights({
       <div className={cn('mb-8', compact ? 'text-left' : 'text-center max-w-2xl mx-auto')}>
         <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 text-emerald-700 px-3 py-1 text-xs font-medium mb-3">
           <BadgeCheck className="h-3.5 w-3.5" aria-hidden="true" />
-          Verified Review Highlights
+          Directory Highlights
         </div>
         <h2 id="review-highlights-heading" className="text-2xl md:text-3xl font-semibold tracking-tight">
           {title}
@@ -37,13 +37,10 @@ export function ReviewHighlights({
             key={company.slug}
             href={`/companies/${company.slug}`}
             className="group rounded-xl border bg-card p-5 shadow-sm hover:border-primary/40 transition-all"
-            itemScope
-            itemType="https://schema.org/MovingCompany"
           >
-            <meta itemProp="url" content={`https://www.movetrusthub.com/companies/${company.slug}`} />
             <div className="flex items-start justify-between gap-2 mb-3">
               <div>
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors" itemProp="name">
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
                   {company.companyName}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-0.5">{company.source}</p>
@@ -53,15 +50,7 @@ export function ReviewHighlights({
               </Badge>
             </div>
 
-            <div
-              className="flex items-center gap-2 mb-3"
-              itemProp="aggregateRating"
-              itemScope
-              itemType="https://schema.org/AggregateRating"
-            >
-              <meta itemProp="ratingValue" content={String(company.rating)} />
-              <meta itemProp="reviewCount" content={String(company.reviewCount)} />
-              <meta itemProp="bestRating" content="5" />
+            <div className="flex items-center gap-2 mb-3">
               <StarRating rating={company.rating} />
               <span className="text-sm text-muted-foreground">
                 ({company.reviewCount.toLocaleString()} reviews)

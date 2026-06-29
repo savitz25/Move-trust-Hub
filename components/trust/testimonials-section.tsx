@@ -13,8 +13,9 @@ type TestimonialsSectionProps = {
 };
 
 export function TestimonialsSection({
-  title = 'Attributed Google Reviews',
-  subtitle = 'Named reviewer quotes sourced from our directory — not representative or fabricated testimonials.',
+  title = 'Directory Research Highlights',
+  subtitle =
+    'Illustrative quotes from our mover research dataset for planning context. These are not live Google reviews and are not emitted as structured Review schema. Submit moderated reviews on our review page.',
   className,
   columns = 2,
 }: TestimonialsSectionProps) {

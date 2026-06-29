@@ -1,5 +1,8 @@
 import { notFound } from 'next/navigation';
 import { getCompanyBySlugAsync, getReviews } from '@/lib/data-server';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildCompanyDirectorySchemaGraph } from '@/lib/seo/build-company-directory-schema';
+import { SITE_URL } from '@/lib/seo/site-metadata';
 import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -21,9 +24,12 @@ export async function generateMetadata({ params }: Props) {
   const company = await getCompanyBySlugAsync(slug);
   if (!company) return { title: 'Company Not Found' };
 
+  const canonical = `${SITE_URL}/companies/${slug}`;
   return {
     title: `${company.name} — Reviews, Pricing & FMCSA Info`,
     description: `${company.name} interstate mover profile. ${company.overallRating}★ from ${company.reviewCount} reviews. USDOT ${company.usdotNumber}. BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
+    alternates: { canonical },
+    robots: { index: true, follow: true },
   };
 }
 
@@ -49,6 +55,8 @@ export default async function CompanyProfilePage({ params }: Props) {
   ].filter(Boolean);
 
   return (
+    <>
+      <JsonLd data={buildCompanyDirectorySchemaGraph(company)} />
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <Link href="/companies" className="inline-flex items-center gap-1 text-sm mb-4 text-muted-foreground hover:text-foreground">
         <ArrowLeft className="h-4 w-4" /> Back to Directory
@@ -223,5 +231,6 @@ export default async function CompanyProfilePage({ params }: Props) {
         </div>
       </div>
     </div>
+    </>
   );
 }

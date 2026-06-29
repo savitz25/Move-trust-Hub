@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 export const SITE_URL = 'https://www.movetrusthub.com';
 export const SITE_NAME = 'Move Trust Hub';
 
-export const HOMEPAGE_TITLE = 'Free Interstate Moving Quotes | Compare Licensed Movers';
+export const HOMEPAGE_TITLE =
+  'Free Moving Quotes (2026) | Compare FMCSA-Licensed Interstate Movers';
 export const HOMEPAGE_DESCRIPTION =
   'Get instant moving quotes from trusted, licensed long-distance movers. Compare prices, reviews & FMCSA ratings. Save time and money on your move.';
 

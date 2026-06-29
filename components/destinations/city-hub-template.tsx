@@ -15,6 +15,7 @@ import {
 } from '@/lib/destinations/market-paths';
 import { getMarketBySlug } from '@/lib/destinations/markets';
 import { GrandStrandHubGrid } from '@/components/destinations/grand-strand-hub-grid';
+import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
@@ -112,7 +113,8 @@ export async function CityHubTemplate({ market, content }: Props) {
             Takes less than 60 seconds. No obligation.
           </p>
 
-          <TrustBadges variant="compact" />
+          <TrustBadges variant="compact" className="mb-4" />
+          <TrustToolsBar />
         </div>
       </section>
 
@@ -356,10 +358,22 @@ export async function CityHubTemplate({ market, content }: Props) {
         <div className="container mx-auto px-4 max-w-6xl">
           <h2
             id="reviews-heading"
-            className="text-2xl font-semibold tracking-tight mb-8"
+            className="text-2xl font-semibold tracking-tight mb-2"
           >
-            Families Who Moved to {market.displayName}
+            Moving Stories: {market.displayName}
           </h2>
+          <p className="text-sm text-muted-foreground mb-8 max-w-3xl">
+            Editorial examples for planning context — not verified customer reviews.
+            For moderated submissions,{' '}
+            <Link href="/review" className="text-primary underline underline-offset-2">
+              leave a review by DOT number
+            </Link>{' '}
+            or verify licensing on{' '}
+            <Link href="/verify-dot" className="text-primary underline underline-offset-2">
+              our DOT tool
+            </Link>
+            .
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {content.testimonials.map((testimonial) => (
               <blockquote
