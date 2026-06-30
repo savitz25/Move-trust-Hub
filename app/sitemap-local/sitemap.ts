@@ -54,6 +54,7 @@ import {
   TEXAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { shouldIndexCounty } from '@/lib/local-movers/county-indexability';
+import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { localStates } from '@/lib/local-movers/states';
 
@@ -832,8 +833,9 @@ export default async function sitemap({
         (id === 'nebraska' && NE_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'iowa' && IA_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         (id === 'minnesota' && MN_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
-        (id === 'wisconsin' && WI_HIGH_TRAFFIC_COUNTIES.has(county.slug))
-          ? 0.85
+        (id === 'wisconsin' && WI_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
+        isPremiumMetroCounty(id, county.slug)
+          ? 0.88
           : 0.8,
     })),
   ];

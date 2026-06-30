@@ -3,6 +3,7 @@ import {
   hasCountyResearch,
   marketNotesDescribeThinMarket,
 } from '@/lib/local-movers/county-research';
+import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { getMoversForCounty, hasExplicitCountyAssignment } from '@/lib/local-movers/index';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import type { LocalMover } from '@/lib/local-movers/types';
@@ -64,6 +65,16 @@ export function evaluateCountyIndexability(
 
   const usdotCoverage =
     moverCount > 0 ? movers.filter((m) => Boolean(m.usdotNumber)).length / moverCount : 0;
+
+  if (
+    isPremiumMetroCounty(stateSlug, countySlug) &&
+    hasExplicit &&
+    hasResearch &&
+    moverCount >= MIN_MOVERS_PREMIUM_INDEX &&
+    usdotCoverage >= 0.6
+  ) {
+    return { tier: 'index', reason: 'premium_metro_verified_listings' };
+  }
 
   if (!hasResearch && moverCount < MIN_MOVERS_PREMIUM_INDEX) {
     return { tier: 'noindex', reason: 'uncurated_template_page' };

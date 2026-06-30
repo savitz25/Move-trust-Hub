@@ -2,11 +2,13 @@ import {
   generatedMetroPools,
   generatedMoversCatalog,
 } from '@/data/generated/index';
+import { directoryLocalMovers } from '@/data/directory-local-movers';
 import { localMoversCatalog, metroMoverPools } from '@/data/local-movers-seed';
 import type { LocalMover } from '@/lib/local-movers/types';
 
 export const fullMoversCatalog: Record<string, LocalMover> = {
   ...localMoversCatalog,
+  ...directoryLocalMovers,
   ...generatedMoversCatalog,
 };
 
