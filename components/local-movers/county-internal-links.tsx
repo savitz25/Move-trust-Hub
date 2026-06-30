@@ -44,7 +44,7 @@ export function CountyInternalLinks({
   const guides = [
     { href: '/verify-dot', label: 'Verify a DOT Number' },
     { href: '/review', label: 'Leave a Mover Review' },
-    { href: '/resources/how-to-choose', label: 'How to Choose a Mover' },
+    { href: '/resources/how-to-choose#reputation-score', label: 'How We Score Movers' },
     { href: '/resources/fmcsa', label: 'FMCSA Licensing Guide' },
     { href: '/resources/scams', label: 'Avoid Moving Scams' },
     { href: '/resources/checklist', label: 'Moving Checklist' },

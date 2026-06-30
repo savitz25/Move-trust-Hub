@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { BadgeCheck, Calendar, Shield, User } from 'lucide-react';
 import { getSeoYear } from '@/lib/local-movers/index';
 
-export const COUNTY_INDEX_POLICY_UPDATED = '2026-06-28';
+export const COUNTY_INDEX_POLICY_UPDATED = '2026-06-30';
 
 export const CALIFORNIA_COUNTY_CONTENT_UPDATED = '2026-06-22';
 export const FLORIDA_COUNTY_CONTENT_UPDATED = '2026-06-21';
@@ -106,8 +106,8 @@ export function CountyEditorialTrust({
         This {countyLabel}, {stateName} guide is researched and maintained by our moving
         industry editors. We verify USDOT/MC licensing, compare customer ratings, and
         update cost ranges and local tips when market conditions change.{' '}
-        <Link href="/resources/how-to-choose" className="text-primary font-medium hover:underline">
-          See our methodology
+        <Link href="/resources/how-to-choose#reputation-score" className="text-primary font-medium hover:underline">
+          See how we score movers
         </Link>
         .
       </p>

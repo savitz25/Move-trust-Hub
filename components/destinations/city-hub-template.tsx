@@ -16,6 +16,8 @@ import {
 import { getMarketBySlug } from '@/lib/destinations/markets';
 import { GrandStrandHubGrid } from '@/components/destinations/grand-strand-hub-grid';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
+import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
+import { VerificationTransparency } from '@/components/trust/verification-transparency';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
@@ -431,6 +433,14 @@ export async function CityHubTemplate({ market, content }: Props) {
               Disclaimer
             </Link>
           </p>
+        </div>
+      </section>
+
+      {/* Trust & scoring */}
+      <section className="py-12 md:py-16 border-b">
+        <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-2 gap-6">
+          <HowWeScorePanel />
+          <VerificationTransparency />
         </div>
       </section>
 

@@ -66,7 +66,7 @@ export default function HowToChoose() {
         Our <Link href="/companies">Mover Directory</Link> already pulls and displays this data so you don’t have to hunt through government websites.
       </p>
 
-      <h2>3. Use Reputation Scores, Not Just Star Ratings</h2>
+      <h2 id="reputation-score">3. Use Reputation Scores, Not Just Star Ratings</h2>
       <p>
         A 4.9-star rating on Google from 12 reviews is less meaningful than a 4.3 average from 2,000 verified reviews.
       </p>

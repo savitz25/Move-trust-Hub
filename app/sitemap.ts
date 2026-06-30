@@ -9,6 +9,7 @@ import {
 import { destinationGuides } from '@/lib/resources/destination-guides';
 import { guides } from '@/lib/resources/guides';
 import { routeGuides } from '@/lib/resources/routes';
+import { getExtendedRouteSlugs } from '@/lib/resources/routes/content';
 import {
   CITY_HUBS_CONTENT_UPDATED,
   DESTINATION_CLUSTERS_CONTENT_UPDATED,
@@ -18,7 +19,24 @@ import { getMovingCompanySlugsForSitemap } from '@/lib/reviews/bridge';
 
 const SITE = 'https://www.movetrusthub.com';
 
+/** High-intent corridor guides — elevated sitemap priority */
+const PRIORITY_ROUTE_SLUGS = new Set([
+  'california-to-texas',
+  'california-to-florida',
+  'california-to-arizona',
+  'new-york-to-texas',
+  'new-jersey-to-florida',
+  'new-jersey-to-texas',
+  'pennsylvania-to-florida',
+  'massachusetts-to-florida',
+  'illinois-to-texas',
+  'los-angeles-to-dallas-fort-worth',
+  'san-francisco-to-austin',
+  'san-diego-to-houston',
+]);
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
   const companies = await getAllCompanies();
   const autoTransportCompanies = await getAllAutoTransportCompanies();
 
@@ -74,8 +92,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
               ? 0.88
             : route.startsWith('/resources/guides/')
               ? 0.9
-              : route.startsWith('/resources/routes/')
-                ? 0.85
+              : route.startsWith('/resources/routes/') &&
+                PRIORITY_ROUTE_SLUGS.has(route.replace('/resources/routes/', ''))
+              ? 0.92
+              : route.startsWith('/resources/routes/') &&
+                  extendedRouteSlugs.has(route.replace('/resources/routes/', ''))
+                ? 0.9
+                : route.startsWith('/resources/routes/')
+                  ? 0.85
                 : route === '/resources/interstate-moving-costs'
                   ? 0.9
                   : route === '/moving-calculator'

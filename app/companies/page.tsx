@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { DirectoryLoader } from '@/components/directory/directory-loader';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { ReviewHighlights } from '@/components/trust/review-highlights';
+import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
+import { VerificationTransparency } from '@/components/trust/verification-transparency';
+import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { getAllCompanies } from '@/lib/data-server';
 import {
   SITE_URL,
@@ -58,9 +61,14 @@ export default async function CompaniesDirectoryPage() {
         </p>
       </div>
 
-      <TrustBadges variant="compact" className="mb-8" />
+      <TrustBadges variant="compact" className="mb-4" />
+      <TrustToolsBar className="mb-8" />
+
+      <HowWeScorePanel className="mb-8" />
 
       <DirectoryLoader initialCompanies={companies} />
+
+      <VerificationTransparency className="mt-10" />
 
       <ReviewHighlights
         className="py-16 mt-8 border-t"

@@ -2,9 +2,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ArrowRight, MapPin, Truck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { ArticleSchema } from '@/components/resources/article-schema';
+import { BasicRouteGuideSchema } from '@/components/resources/basic-route-guide-schema';
 import { ExtendedRouteGuide } from '@/components/resources/extended-route-guide';
 import { RouteGuideSchema } from '@/components/resources/route-guide-schema';
+import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
+import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { GuideFooter } from '@/components/resources/guide-footer';
 import { RouteHeroCta } from '@/components/resources/route-hero-cta';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
@@ -77,9 +79,8 @@ export default async function RouteGuidePage({ params }: Props) {
       {extended ? (
         <RouteGuideSchema route={route} content={extended} path={`/resources/routes/${route.slug}`} />
       ) : (
-        <ArticleSchema
-          title={route.title}
-          description={route.description}
+        <BasicRouteGuideSchema
+          route={route}
           path={`/resources/routes/${route.slug}`}
         />
       )}
@@ -104,6 +105,8 @@ export default async function RouteGuidePage({ params }: Props) {
           to={route.to}
           destinationHubPath={route.destinationHubPath}
         />
+
+        <TrustToolsBar className="mb-6" />
 
         <div className="grid sm:grid-cols-2 gap-4 mb-8">
           {[
@@ -242,24 +245,40 @@ export default async function RouteGuidePage({ params }: Props) {
           </section>
         )}
 
-        {!extended && (
-          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 mb-10">
-            <div className="flex items-start gap-3">
-              <Truck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-              <div>
-                <h2 className="font-semibold mb-2">Compare movers for {route.from} → {route.to}</h2>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  Build your inventory in our{' '}
-                  <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
-                  , then browse{' '}
-                  <Link href="/companies" className="text-primary underline underline-offset-2">licensed interstate carriers</Link>
-                  {' '}or{' '}
-                  <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
-                </p>
-              </div>
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 mb-10">
+          <div className="flex items-start gap-3">
+            <Truck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
+            <div>
+              <h2 className="font-semibold mb-2">
+                Estimate &amp; compare movers for {route.from} → {route.to}
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                Build your room-by-room inventory in our{' '}
+                <Link href="/moving-calculator" className="text-primary underline underline-offset-2">
+                  moving calculator
+                </Link>
+                , then browse{' '}
+                <Link href="/companies" className="text-primary underline underline-offset-2">
+                  FMCSA-licensed interstate carriers
+                </Link>{' '}
+                or{' '}
+                <Link href="/compare" className="text-primary underline underline-offset-2">
+                  compare up to 4 movers side-by-side
+                </Link>
+                .
+              </p>
+              <Link
+                href="/moving-calculator"
+                className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Open Moving Calculator
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
           </div>
-        )}
+        </div>
+
+        <HowWeScorePanel className="mb-10" compact />
 
         <GuideFooter
           relatedSlugs={['how-to-choose', 'move-size-weight', 'interstate-moving-costs', 'scams', 'packing-checklist']}

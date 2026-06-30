@@ -62,8 +62,15 @@ export function evaluateCountyIndexability(
     return { tier: 'index', reason: 'explicit_assignment_substantive_listings' };
   }
 
+  const usdotCoverage =
+    moverCount > 0 ? movers.filter((m) => Boolean(m.usdotNumber)).length / moverCount : 0;
+
   if (!hasResearch && moverCount < MIN_MOVERS_PREMIUM_INDEX) {
     return { tier: 'noindex', reason: 'uncurated_template_page' };
+  }
+
+  if (moverCount >= MIN_MOVERS_TO_INDEX && usdotCoverage < 0.6) {
+    return { tier: 'noindex', reason: 'insufficient_fmcsa_verification' };
   }
 
   if (moverCount >= MIN_MOVERS_TO_INDEX && hasResearch && hasCuratedReviews) {

@@ -159,6 +159,15 @@ import {
   CountyTestimonialSection,
   CountyTipsSection,
 } from '@/components/local-movers/county-seo-sections';
+import { CountyMarketInsightsPanel } from '@/components/local-movers/county-market-insights';
+import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
+import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
+import { VerificationTransparency } from '@/components/trust/verification-transparency';
+import { buildCountyMarketInsights } from '@/lib/local-movers/county-market-insights';
+import {
+  getInboundRouteLinksForState,
+  getOutboundRouteLinksForState,
+} from '@/lib/local-movers/state-route-links';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
@@ -231,6 +240,9 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const visibleTestimonials = shouldUseCuratedTestimonials(movers) ? testimonials : [];
   const indexDecision = evaluateCountyIndexability(stateSlug, countySlug);
   const marketNotes = buildCountyMarketNotes(county);
+  const marketInsights = buildCountyMarketInsights(stateSlug, countySlug, county, movers);
+  const outboundRoutes = getOutboundRouteLinksForState(county.stateCode);
+  const inboundRoutes = getInboundRouteLinksForState(county.stateCode);
   const nearbyCounties =
     stateSlug === 'california'
       ? getCaliforniaNearbyCounties(countySlug)
@@ -441,7 +453,16 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border bg-muted/30 px-3 py-2">
               Movers listed serve the greater {county.metro?.replace(/-/g, ' ')} region
               including {countyLabel}. Listings are regional providers verified for FMCSA
-              licensing — not necessarily headquartered in this county.
+              licensing — not necessarily headquartered in this county. For broader metro
+              coverage, browse{' '}
+              <Link href={getStatePath(state.slug)} className="text-primary hover:underline">
+                all {state.name} county guides
+              </Link>{' '}
+              or our{' '}
+              <Link href="/moving-to" className="text-primary hover:underline">
+                destination city hubs
+              </Link>
+              .
             </p>
           )}
           {indexDecision.tier === 'noindex' && (
@@ -460,7 +481,19 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           <div className="mt-6">
             <CountyPageHeroCta countyLabel={countyLabel} stateName={state.name} />
           </div>
+          <TrustToolsBar className="mt-4" />
         </header>
+
+        {indexDecision.tier === 'index' && movers.length > 0 ? (
+          <CountyMarketInsightsPanel
+            countyLabel={countyLabel}
+            stateName={state.name}
+            stateCode={county.stateCode}
+            insights={marketInsights}
+            outboundRoutes={outboundRoutes}
+            inboundRoutes={inboundRoutes}
+          />
+        ) : null}
 
         <section className="mb-10" id="movers" aria-labelledby="movers-heading">
           <h2 id="movers-heading" className="text-2xl font-semibold tracking-tight mb-4">
@@ -506,6 +539,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         ) : null}
 
         <CountyFaqSection countyLabel={countyLabel} faqItems={faqItems} />
+
+        <HowWeScorePanel className="mb-10" compact={indexDecision.tier === 'noindex'} />
+
+        <VerificationTransparency className="mb-10" />
 
         <CountyInternalLinks
           stateName={state.name}
