@@ -15,16 +15,27 @@ const DestinationsMegaMenu = dynamic(
 
 function DestinationsNavTrigger({ onActivate }: { onActivate: () => void }) {
   return (
-    <Link
-      prefetch={false}
-      href="/moving-to"
-      className="inline-flex items-center gap-1 font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
-      onMouseEnter={onActivate}
-      onFocus={onActivate}
-    >
-      Destinations
-      <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
-    </Link>
+    <div className="inline-flex items-center gap-0.5">
+      <Link
+        prefetch={false}
+        href="/moving-to"
+        className="font-medium text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
+        onMouseEnter={onActivate}
+        onFocus={onActivate}
+      >
+        Destinations
+      </Link>
+      <button
+        type="button"
+        className="p-0.5 text-muted-foreground hover:text-foreground transition-colors min-h-[44px] min-w-[28px] flex items-center justify-center"
+        aria-label="Open destinations menu"
+        onMouseEnter={onActivate}
+        onFocus={onActivate}
+        onClick={onActivate}
+      >
+        <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+      </button>
+    </div>
   );
 }
 

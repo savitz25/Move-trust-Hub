@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import { Menu, X, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DestinationsMegaMenuLazy } from '@/components/navbar/destinations-mega-menu-lazy';
+import { DestinationsMobileNav } from '@/components/navbar/destinations-mobile-nav';
 
 const QuoteModal = dynamic(
   () => import('@/components/quote-modal').then((m) => m.QuoteModal),
@@ -112,94 +113,10 @@ export function Navbar() {
             >
               Movers Directory
             </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to"
-              className="py-2 font-medium text-muted-foreground hover:text-foreground"
-              onClick={() => setIsOpen(false)}
-            >
-              Destinations
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/south-carolina"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              South Carolina
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/north-carolina"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              North Carolina
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/idaho"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Idaho
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/oregon"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Oregon
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/oklahoma"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Oklahoma
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/arizona"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Arizona
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/arkansas"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Arkansas
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/california"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              California
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/alabama"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Alabama
-            </Link>
-            <Link
-              prefetch={false}
-              href="/moving-to/florida"
-              className="py-1 pl-3 text-muted-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              Florida corridor
-            </Link>
+            <DestinationsMobileNav
+              onClose={() => setIsOpen(false)}
+              onRequestQuote={() => setShowQuoteModal(true)}
+            />
             {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
