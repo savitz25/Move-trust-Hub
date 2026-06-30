@@ -1582,6 +1582,66 @@ export function buildNevadaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/north-dakota cluster parent */
+export function buildNorthDakotaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const northDakotaHubs = getClusterMarkets('north-dakota').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'North Dakota', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'North Dakota',
+          addressRegion: 'ND',
+        },
+        mainEntity: { '@id': `${canonical}#north-dakota-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#north-dakota-hub-list`,
+        name: 'North Dakota City Moving Guides',
+        numberOfItems: northDakotaHubs.length,
+        itemListElement: northDakotaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, ND`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/louisiana cluster parent */
 export function buildLouisianaClusterSchemaGraph(
   title: string,

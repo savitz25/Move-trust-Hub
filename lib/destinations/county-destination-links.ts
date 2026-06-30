@@ -1069,6 +1069,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Elko County gold-mining corridor inbound guide',
     },
   },
+  'north-dakota': {
+    cass: {
+      label: 'Moving to Fargo',
+      href: '/moving-to/north-dakota/fargo-nd',
+      description: 'Cass County Red River Valley Fargo, West Fargo, and Horace inbound guides',
+    },
+    burleigh: {
+      label: 'Moving to Bismarck',
+      href: '/moving-to/north-dakota/bismarck-nd',
+      description: 'Burleigh County capital corridor Bismarck inbound guide',
+    },
+    'grand-forks': {
+      label: 'Moving to Grand Forks',
+      href: '/moving-to/north-dakota/grand-forks-nd',
+      description: 'Grand Forks County UND academic and aerospace inbound guide',
+    },
+    williams: {
+      label: 'Moving to Williston',
+      href: '/moving-to/north-dakota/williston-nd',
+      description: 'Williams County Bakken energy corridor inbound guide',
+    },
+    morton: {
+      label: 'Moving to Mandan',
+      href: '/moving-to/north-dakota/mandan-nd',
+      description: 'Morton County historic western Mandan inbound guide',
+    },
+    stark: {
+      label: 'Moving to Dickinson',
+      href: '/moving-to/north-dakota/dickinson-nd',
+      description: 'Stark County Badlands gateway and energy inbound guide',
+    },
+    richland: {
+      label: 'Moving to Wahpeton',
+      href: '/moving-to/north-dakota/wahpeton-nd',
+      description: 'Richland County Red River Valley tech-ed inbound guide',
+    },
+    ward: {
+      label: 'Moving to Minot',
+      href: '/moving-to/north-dakota/minot-nd',
+      description: 'Ward County Magic City and Minot AFB inbound guide',
+    },
+  },
   nebraska: {
     sarpy: {
       label: 'Moving to Papillion',

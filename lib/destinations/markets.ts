@@ -11352,6 +11352,281 @@ export const markets: Market[] = [
     mapDescription:
       'Elko in Elko County — mountainous rural workhorse with gold-mining employment.',
   },
+  {
+    slug: 'north-dakota',
+    displayName: 'North Dakota',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: [],
+    lat: 47.5,
+    lng: -100.0,
+    defaultToZip: '58102',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$5,200',
+      twoBR: '$3,800–$7,400',
+      threeBR: '$5,500–$9,800',
+      fourBR: '$8,000–$14,200',
+    },
+    inboundGrowthStat:
+      'Low unemployment · open spaces · strong Northern Plains economy',
+    peakSeasonNote:
+      'Red River Valley winter windows and Bakken energy-transfer peaks affect ND delivery scheduling',
+    isClusterParent: true,
+    priority: 43,
+    mapDescription:
+      'North Dakota inbound hub covering Red River Valley, capital corridor, and energy-western regions.',
+  },
+  {
+    slug: 'fargo-nd',
+    displayName: 'Fargo',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['cass-nd'],
+    lat: 46.8772,
+    lng: -96.7898,
+    defaultToZip: '58102',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Economic & cultural pioneer · NDSU · Silicon Prairie',
+    peakSeasonNote:
+      'NDSU semester peaks and downtown Broadway shuttle constraints affect Fargo scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Fargo in Cass County — economic and cultural pioneer with NDSU and Silicon Prairie tech energy.',
+  },
+  {
+    slug: 'bismarck-nd',
+    displayName: 'Bismarck',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['burleigh-nd'],
+    lat: 46.8083,
+    lng: -100.7837,
+    defaultToZip: '58501',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Polished capital core · Missouri River · state government',
+    peakSeasonNote:
+      'Legislative session peaks and Missouri River corridor access affect Bismarck scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Bismarck in Burleigh County — polished capital core along the Missouri River.',
+  },
+  {
+    slug: 'west-fargo-nd',
+    displayName: 'West Fargo',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['cass-nd'],
+    lat: 46.8749,
+    lng: -96.9006,
+    defaultToZip: '58078',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Rapidly growing family hub · safe neighborhoods',
+    peakSeasonNote:
+      'West Fargo builder closing clusters and HOA move-day rules affect scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'West Fargo in Cass County — rapidly growing family suburb with safe neighborhood inventory.',
+  },
+  {
+    slug: 'grand-forks-nd',
+    displayName: 'Grand Forks',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['grand-forks-nd'],
+    lat: 47.9253,
+    lng: -97.0329,
+    defaultToZip: '58201',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Academic & aerospace oasis · UND · Grand Sky',
+    peakSeasonNote:
+      'UND semester peaks and Grand Sky aerospace transfer closings affect scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Grand Forks in Grand Forks County — academic and aerospace oasis anchored by UND.',
+  },
+  {
+    slug: 'horace-nd',
+    displayName: 'Horace',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['cass-nd'],
+    lat: 46.7591,
+    lng: -96.9043,
+    defaultToZip: '58047',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Explosive growth phenomenon · luxury lots · Cass County south',
+    peakSeasonNote:
+      'Horace luxury-lot cul-de-sac shuttle constraints and builder closings affect scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Horace in Cass County — explosive growth with luxury-lot subdivisions south of Fargo.',
+  },
+  {
+    slug: 'williston-nd',
+    displayName: 'Williston',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['williams-nd'],
+    lat: 48.147,
+    lng: -103.618,
+    defaultToZip: '58801',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,400',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Resilient energy king · Bakken formation',
+    peakSeasonNote:
+      'Bakken energy-transfer closing clusters and western rural long carries affect Williston scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Williston in Williams County — resilient Bakken energy king of western North Dakota.',
+  },
+  {
+    slug: 'mandan-nd',
+    displayName: 'Mandan',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['morton-nd'],
+    lat: 46.8267,
+    lng: -100.8896,
+    defaultToZip: '58554',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,800',
+      twoBR: '$3,800–$7,000',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$13,200',
+    },
+    inboundGrowthStat:
+      'Historic western alternative · Missouri River west bank',
+    peakSeasonNote:
+      'Fort Abraham Lincoln corridor access and historic-district shuttle constraints affect Mandan scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Mandan in Morton County — historic western alternative across the Missouri from Bismarck.',
+  },
+  {
+    slug: 'dickinson-nd',
+    displayName: 'Dickinson',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['stark-nd'],
+    lat: 46.8792,
+    lng: -102.7896,
+    defaultToZip: '58601',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,400',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Gateway to the Badlands · energy sector hub',
+    peakSeasonNote:
+      'Badlands gateway access and energy-sector transfer peaks affect Dickinson scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Dickinson in Stark County — gateway to Theodore Roosevelt National Park and energy employment.',
+  },
+  {
+    slug: 'wahpeton-nd',
+    displayName: 'Wahpeton',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['richland-nd'],
+    lat: 46.2652,
+    lng: -96.6059,
+    defaultToZip: '58075',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'California'],
+    avgCostRanges: {
+      studio: '$2,100–$4,800',
+      twoBR: '$3,800–$7,000',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$13,200',
+    },
+    inboundGrowthStat:
+      'Affordable tech-ed capital · Red River Valley · NDSCS',
+    peakSeasonNote:
+      'NDSCS semester peaks and Red River Valley flood-season awareness affect Wahpeton scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Wahpeton in Richland County — affordable tech-ed capital in the Red River Valley.',
+  },
+  {
+    slug: 'minot-nd',
+    displayName: 'Minot',
+    stateCode: 'ND',
+    stateName: 'North Dakota',
+    primaryCounties: ['ward-nd'],
+    lat: 48.2325,
+    lng: -101.2963,
+    defaultToZip: '58701',
+    topInboundOrigins: ['Minnesota', 'South Dakota', 'Montana', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,400',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Resilient Magic City · Minot Air Force Base',
+    peakSeasonNote:
+      'Minot AFB housing coordination and Magic City school-year closings affect scheduling',
+    clusterParent: 'north-dakota',
+    priority: 43,
+    mapDescription:
+      'Minot in Ward County — resilient Magic City anchored by Minot Air Force Base.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
