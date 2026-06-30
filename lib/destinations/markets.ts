@@ -9702,6 +9702,281 @@ export const markets: Market[] = [
     mapDescription:
       'Paducah in McCracken County — UNESCO Creative City and Ohio-Tennessee river confluence.',
   },
+  {
+    slug: 'maryland',
+    displayName: 'Maryland',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: [],
+    lat: 39.0,
+    lng: -76.7,
+    defaultToZip: '20814',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$6,000',
+      twoBR: '$4,400–$9,500',
+      threeBR: '$6,400–$13,200',
+      fourBR: '$9,200–$18,500',
+    },
+    inboundGrowthStat:
+      'D.C. suburbs · Chesapeake Bay · elite schools · historic Baltimore',
+    peakSeasonNote:
+      'Federal transfer season and school-year closings tighten May–September Metro and I-495 delivery windows',
+    isClusterParent: true,
+    priority: 37,
+    mapDescription:
+      'Maryland inbound hub covering Montgomery Metro corridors, Howard County schools, Chesapeake waterfront, Baltimore urban neighborhoods, Frederick mountain towns, and Eastern Shore arts culture.',
+  },
+  {
+    slug: 'bethesda-md',
+    displayName: 'Bethesda',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['montgomery-md'],
+    lat: 38.9847,
+    lng: -77.0947,
+    defaultToZip: '20814',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$6,000',
+      twoBR: '$5,200–$9,500',
+      threeBR: '$7,600–$13,200',
+      fourBR: '$11,000–$18,500',
+    },
+    inboundGrowthStat:
+      'High-income NIH corridor · Bethesda Row · Metro Red Line access',
+    peakSeasonNote:
+      'Downtown Bethesda COI filings and federal fiscal-year closings compress peak-season schedules',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Bethesda in Montgomery County — NIH-and-federal employment powerhouse with Bethesda Row walkability.',
+  },
+  {
+    slug: 'rockville-md',
+    displayName: 'Rockville',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['montgomery-md'],
+    lat: 39.084,
+    lng: -77.1528,
+    defaultToZip: '20850',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,500–$5,400',
+      twoBR: '$4,600–$8,400',
+      threeBR: '$6,800–$11,400',
+      fourBR: '$9,800–$15,800',
+    },
+    inboundGrowthStat:
+      'I-270 biotech hub · Town Square · diverse tech employment',
+    peakSeasonNote:
+      'Town Square high-rise COI rules and I-270 corridor closings affect August move-in windows',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Rockville in Montgomery County — I-270 biotech corridor and Town Square inbound hub.',
+  },
+  {
+    slug: 'silver-spring-md',
+    displayName: 'Silver Spring',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['montgomery-md'],
+    lat: 38.9907,
+    lng: -77.0261,
+    defaultToZip: '20910',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,500–$5,400',
+      twoBR: '$4,600–$8,400',
+      threeBR: '$6,800–$11,400',
+      fourBR: '$9,800–$15,800',
+    },
+    inboundGrowthStat:
+      'Vibrant transit core · AFI Silver Theatre · diverse urban scene',
+    peakSeasonNote:
+      'Downtown Silver Spring elevator reservations and Georgia Avenue congestion peak in summer',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Silver Spring in Montgomery County — Metro transit core with AFI Silver Theatre arts culture.',
+  },
+  {
+    slug: 'columbia-md',
+    displayName: 'Columbia',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['howard-md'],
+    lat: 39.2037,
+    lng: -76.861,
+    defaultToZip: '21044',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,600–$5,500',
+      twoBR: '$4,800–$8,800',
+      threeBR: '$7,000–$11,800',
+      fourBR: '$10,200–$16,500',
+    },
+    inboundGrowthStat:
+      'Master-planned benchmark · Howard County schools · Merriweather district',
+    peakSeasonNote:
+      'Howard County school-year closings and Merriweather event weekends tighten peak delivery windows',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Columbia in Howard County — master-planned village centers and nationally ranked school district.',
+  },
+  {
+    slug: 'ellicott-city-md',
+    displayName: 'Ellicott City',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['howard-md'],
+    lat: 39.2673,
+    lng: -76.7983,
+    defaultToZip: '21043',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,600–$5,500',
+      twoBR: '$4,800–$8,800',
+      threeBR: '$7,000–$11,800',
+      fourBR: '$10,200–$16,500',
+    },
+    inboundGrowthStat:
+      'Historic family haven · Old Ellicott City · Patapsco river valley',
+    peakSeasonNote:
+      'Old Ellicott City hillside access and flood-zone planning require early coordination',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Ellicott City in Howard County — historic Old Ellicott City charm and Patapsco valley inventory.',
+  },
+  {
+    slug: 'annapolis-md',
+    displayName: 'Annapolis',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['anne-arundel-md'],
+    lat: 38.9784,
+    lng: -76.4922,
+    defaultToZip: '21401',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$5,600',
+      twoBR: '$4,800–$8,600',
+      threeBR: '$7,000–$11,600',
+      fourBR: '$10,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Colonial capital · Naval Academy · Chesapeake sailing waterfront',
+    peakSeasonNote:
+      'Naval Academy events and Ego Alley waterfront closings compress summer delivery schedules',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Annapolis in Anne Arundel County — Naval Academy employment and colonial sailing capital.',
+  },
+  {
+    slug: 'severna-park-md',
+    displayName: 'Severna Park',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['anne-arundel-md'],
+    lat: 39.0704,
+    lng: -76.5455,
+    defaultToZip: '21146',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,600–$5,600',
+      twoBR: '$4,800–$8,600',
+      threeBR: '$7,000–$11,600',
+      fourBR: '$10,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Elite waterfront peninsula · B&A Trail · Severn River lifestyle',
+    peakSeasonNote:
+      'Severn River peninsula long carries and B&A Trail weekend traffic affect peak-season routing',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Severna Park in Anne Arundel County — Severn River peninsula estates and B&A Trail active lifestyle.',
+  },
+  {
+    slug: 'baltimore-md',
+    displayName: 'Baltimore',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['baltimore-city-md'],
+    lat: 39.282,
+    lng: -76.5912,
+    defaultToZip: '21231',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,500',
+    },
+    inboundGrowthStat:
+      'Urban value play · Fells Point · Canton · Federal Hill harbor views',
+    peakSeasonNote:
+      'Fells Point cobblestone shuttle staging and harbor district parking permits peak in summer',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Baltimore City — Fells Point, Federal Hill, and Canton urban neighborhood inbound hub.',
+  },
+  {
+    slug: 'frederick-md',
+    displayName: 'Frederick',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['frederick-md'],
+    lat: 39.4143,
+    lng: -77.4105,
+    defaultToZip: '21701',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Historic mountain trendsetter · Carroll Creek · Catoctin corridor',
+    peakSeasonNote:
+      'Carroll Creek downtown events and Catoctin corridor closings affect peak-season scheduling',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Frederick in Frederick County — Carroll Creek downtown revival and Catoctin Mountain corridor.',
+  },
+  {
+    slug: 'easton-md',
+    displayName: 'Easton',
+    stateCode: 'MD',
+    stateName: 'Maryland',
+    primaryCounties: ['talbot-md'],
+    lat: 38.7743,
+    lng: -76.0763,
+    defaultToZip: '21601',
+    topInboundOrigins: ['Virginia', 'Pennsylvania', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Eastern Shore gem · Talbot arts district · Chesapeake bay access',
+    peakSeasonNote:
+      'Bay Bridge traffic and Eastern Shore arts festival weekends compress peak delivery windows',
+    clusterParent: 'maryland',
+    priority: 37,
+    mapDescription:
+      'Easton in Talbot County — Eastern Shore arts sanctuary and Chesapeake bay-access lifestyle.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
