@@ -41,6 +41,12 @@ import { newJerseyToGeorgiaContent } from '@/lib/resources/routes/new-jersey-to-
 import { newJerseyToSouthCarolinaContent } from '@/lib/resources/routes/new-jersey-to-south-carolina';
 import { newJerseyToTexasContent } from '@/lib/resources/routes/new-jersey-to-texas';
 import { newYorkToTexasContent } from '@/lib/resources/routes/new-york-to-texas';
+import { newYorkToFloridaContent } from '@/lib/resources/routes/new-york-to-florida';
+import { californiaToNewYorkContent } from '@/lib/resources/routes/california-to-new-york';
+import { floridaToNewYorkContent } from '@/lib/resources/routes/florida-to-new-york';
+import { texasToCaliforniaContent } from '@/lib/resources/routes/texas-to-california';
+import { eastCoastToWestCoastContent } from '@/lib/resources/routes/east-coast-to-west-coast';
+import { newYorkToMyrtleBeachContent } from '@/lib/resources/routes/new-york-to-myrtle-beach';
 import { pennsylvaniaToFloridaContent } from '@/lib/resources/routes/pennsylvania-to-florida';
 import { pennsylvaniaToNorthCarolinaContent } from '@/lib/resources/routes/pennsylvania-to-north-carolina';
 import { pennsylvaniaToSouthCarolinaContent } from '@/lib/resources/routes/pennsylvania-to-south-carolina';
@@ -92,6 +98,12 @@ const extendedRouteGuides: Record<string, RouteGuideExtendedContent> = {
   'illinois-to-arizona': illinoisToArizonaContent,
   'illinois-to-tennessee': illinoisToTennesseeContent,
   'new-york-to-texas': newYorkToTexasContent,
+  'new-york-to-florida': newYorkToFloridaContent,
+  'california-to-new-york': californiaToNewYorkContent,
+  'florida-to-new-york': floridaToNewYorkContent,
+  'texas-to-california': texasToCaliforniaContent,
+  'east-coast-to-west-coast': eastCoastToWestCoastContent,
+  'new-york-to-myrtle-beach': newYorkToMyrtleBeachContent,
 };
 
 export function getExtendedRouteGuide(slug: string): RouteGuideExtendedContent | undefined {

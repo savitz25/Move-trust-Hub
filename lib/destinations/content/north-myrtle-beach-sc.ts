@@ -7,7 +7,7 @@ export const northMyrtleBeachScContent: CityHubContent = {
     title:
       'Moving to North Myrtle Beach, SC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to North Myrtle Beach? Compare FMCSA-verified movers serving Horry County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to North Myrtle Beach? Compare FMCSA-verified movers serving Horry County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Cherry Grove, Barefoot Resort, and Main Street neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to north myrtle beach sc',
       'north myrtle beach movers',
@@ -93,6 +93,10 @@ export const northMyrtleBeachScContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Horry County are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers. Some North Myrtle Beach-area companies broker interstate loads — always verify who physically transports your goods before paying a deposit.',
     },
+    {
+      title: 'Cherry Grove & Canal Access',
+      body: 'Canal-front homes behind Cherry Grove Pier, Barefoot Resort gate restrictions, and Ocean Drive weekend traffic routinely require shuttle trucks from US-17 staging areas. SOS Spring Safari and summer rental turnover compress delivery windows — plan HOA and elevator paperwork early.',
+    },
   ],
   bodySections: [
     {
@@ -119,6 +123,22 @@ export const northMyrtleBeachScContent: CityHubContent = {
         'Horry County is the primary jurisdiction for North Myrtle Beach, Cherry Grove, Ocean Drive, and the Barefoot Resort communities. Our Horry County directory lists vetted local and regional movers with FMCSA licensing, Google ratings, and county cost guides — including teams experienced with oceanfront condo protocols and gated-community shuttle delivery.',
         'For interstate moves, browse our national directory of 25+ major long-distance carriers — many operate dedicated lanes from the Northeast and Midwest into the Carolinas. Pair a reputable interstate linehaul carrier with a Horry County local crew for final-mile shuttle service when your building or HOA requires it. If your closing is near the North Carolina border, also review movers serving Brunswick and New Hanover counties for spillover coverage into the Little River and Calabash corridor.',
         'Compare North Myrtle Beach with sibling Grand Strand hubs — Surfside Beach for quieter Family Beach living, Atlantic Beach for historic coastal heritage, and Garden City Beach for pier-village charm spanning Horry and Georgetown counties — using our Myrtle Beach cluster guides before you finalize a destination neighborhood.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in North Myrtle Beach',
+      paragraphs: [
+        'North Myrtle Beach neighborhoods each impose distinct delivery constraints. Cherry Grove canal-front streets behind the pier feature narrow bridge crossings and limited turnaround space — carriers often stage 53-foot trailers on US-17 and shuttle through box trucks across residential canals. Ocean Drive Beach Club corridor condos along Ocean Boulevard require freight elevator reservations, COI filings naming the building, and strict move-in windows that property managers enforce during shag-dance season weekends. Barefoot Resort\'s four gated villages prohibit oversized commercial vehicles past entrance gates; gate passes, golf-cart path awareness, and designated delivery time slots are mandatory before any crew crosses the property line.',
+        'Main Street-adjacent neighborhoods offer more walkable urban delivery profiles than oceanfront towers, but street parking along Main Street and Sea Mountain Highway tightens during restaurant and live-music peak hours. Crescent Beach and Atlantic Beach spillover addresses add single-lane coastal roads where long carries from municipal staging lots are standard. Little River corridor homes near the North Carolina border may involve cross-county carrier coordination when your origin quote assumes Horry County delivery but your closing shifts to Brunswick County spillover.',
+        'Seasonal moving challenges are especially pronounced in northern Horry County. SOS Spring Safari in April draws tens of thousands of visitors, compressing Ocean Drive parking and delaying final-mile crews. Summer rental turnover from May through September overlaps with peak interstate pricing and hurricane-season contingency planning. October snowbird returns from Pennsylvania and New Jersey tighten southbound carrier schedules again. Book elevator and HOA paperwork at least two weeks before delivery, and avoid Friday afternoon closings during July unless your carrier has verified US-17 staging access with your property manager.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From New York and New Jersey, a three-bedroom household (roughly 5,000–7,000 cubic feet) to North Myrtle Beach typically ranges from $8,200 to $12,500, with Cherry Grove oceanfront condos adding $500–$1,200 for elevator fees, COI processing, and canal-bridge shuttle staging. Pennsylvania origins benefit from shorter linehaul distances — roughly 580 miles — and often see studio deliveries in the $3,000–$5,200 range when booked off-peak in fall or winter.',
+        'Ohio and Midwest retirees targeting Barefoot Resort or Main Street bungalows should budget for gated-community shuttle accessorials ($300–$800) that flat suburban estimates omit. New Jersey households downsizing from larger homes frequently under-report porch furniture, garage storage, and outdoor grills — items that inflate cubic footage and trigger non-binding estimate disputes on delivery day if omitted from the initial inventory.',
+        'Compare at least three FMCSA-licensed carriers on identical cubic footage using our moving calculator. Northeast and Midwest origins into North Myrtle Beach share similar I-95 and I-77 corridor routing, but destination neighborhood type — canal-front Cherry Grove versus inland Barefoot villa — often matters more than origin state for final-mile pricing.',
       ],
     },
   ],
@@ -178,6 +198,11 @@ export const northMyrtleBeachScContent: CityHubContent = {
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
     },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched North Myrtle Beach quotes.',
+      href: '/moving-calculator',
+    },
   ],
   testimonials: [
     {
@@ -229,6 +254,21 @@ export const northMyrtleBeachScContent: CityHubContent = {
       question: 'Are binding estimates required for moves to South Carolina?',
       answer:
         'Binding estimates are not legally required, but they protect you when your inventory is accurate. A binding not-to-exceed quote locks in price after an in-home or virtual survey. Non-binding estimates can increase on delivery if weight or volume exceeds the estimate — common when households under-report garage, patio, and outdoor contents common in beach-town relocations.',
+    },
+    {
+      question: 'Can moving trucks cross Cherry Grove canal bridges?',
+      answer:
+        'Full-size 53-foot trailers typically cannot safely navigate Cherry Grove\'s narrow canal bridges and residential streets. Carriers stage on US-17 or Kings Highway and shuttle goods via smaller box trucks. Bridge-access shuttle fees should appear as line items on your written estimate — confirm them when requesting quotes for canal-front Cherry Grove addresses.',
+    },
+    {
+      question: 'What Barefoot Resort HOA rules affect moving day?',
+      answer:
+        'Barefoot Resort requires advance gate passes, designated delivery time windows, and often prohibits commercial trailers past village entrance gates. Some communities restrict moving hours to weekdays before 10 a.m. Share your closing date with the HOA office immediately and forward written move-in requirements to your carrier — gatehouse delays are a frequent cause of rescheduling fees at Barefoot.',
+    },
+    {
+      question: 'How does SOS Spring Safari affect North Myrtle Beach deliveries?',
+      answer:
+        'The April SOS Spring Safari festival draws heavy traffic to Ocean Drive and Main Street, limiting parking and delaying final-mile crews on oceanfront corridors. If your closing falls during festival week, confirm staging plans with your carrier and building manager early. Off-peak fall and winter deliveries typically offer more flexible elevator and street-parking windows.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',

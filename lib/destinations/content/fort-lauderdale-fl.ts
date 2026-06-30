@@ -7,7 +7,7 @@ export const fortLauderdaleFlContent: CityHubContent = {
     title:
       'Moving to Fort Lauderdale, FL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to Fort Lauderdale? Compare FMCSA-verified movers serving Broward County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Fort Lauderdale? Compare FMCSA-verified movers serving Broward County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Las Olas, Victoria Park, and Intracoastal neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to fort lauderdale fl',
       'fort lauderdale movers',
@@ -93,6 +93,10 @@ export const fortLauderdaleFlContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Broward County are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers — always verify USDOT and MC numbers before paying a deposit.',
     },
+    {
+      title: 'Intracoastal & Beach Access',
+      body: 'Las Olas high-rises, Rio Vista waterfront estates, and A1A beach condos require elevator reservations, COI filings, and narrow-driveway shuttle trucks. Snowbird-season I-95 congestion from October through April delays Northeast-origin crews — build timing buffers into winter closing schedules.',
+    },
   ],
   bodySections: [
     {
@@ -117,6 +121,22 @@ export const fortLauderdaleFlContent: CityHubContent = {
       paragraphs: [
         'Broward County is the primary jurisdiction for Fort Lauderdale, Hollywood, and Pompano Beach. Miami-Dade County to the south serves Miami spillover for families comparing both metros. Palm Beach County to the north covers Boca Raton and Delray Beach. Our Broward County directory lists vetted local and regional movers with FMCSA licensing, Google ratings, and county cost guides.',
         'For interstate moves, browse our national directory of 25+ major long-distance carriers — many operate dedicated lanes from the Northeast and Midwest into South Florida. Pair a reputable interstate linehaul carrier with a Broward County local crew for final-mile shuttle service when your property requires it.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in Fort Lauderdale',
+      paragraphs: [
+        'Fort Lauderdale neighborhoods present distinct final-mile profiles across Broward County. Las Olas Boulevard high-rises and beachfront A1A towers require certificates of insurance, freight elevator reservations, padded hallway protection, and loading-zone windows that building management enforces during peak restaurant and yacht-show weekends. Victoria Park and Rio Vista historic districts feature tree-lined streets with limited trailer turnaround — carriers stage on adjacent avenues and shuttle goods via box trucks. Intracoastal waterfront estates along the New River and Las Olas Isles add narrow driveway access where 53-foot trailers cannot reach dock-side garages.',
+        'Wilton Manors and Oakland Park offer more suburban delivery access than beach corridors, but HOA-governed townhome communities still require move-in certificates and weekday delivery windows. Lauderdale-by-the-Sea and Pompano Beach spillover addresses north and south of city limits share Broward County carrier coverage but add beach-access stairs and mid-rise elevator protocols. Galt Ocean Mile\'s concentrated high-rise strip creates parking competition among multiple simultaneous move-ins — reserve elevator slots early when your closing aligns with snowbird season turnover.',
+        'Snowbird season from October through April drives Fort Lauderdale\'s tightest delivery windows as Northeast retirees close on winter residences along Las Olas and the beach. I-95 southbound congestion through Broward County delays interstate crews arriving from New York, New Jersey, and Massachusetts. Summer offers more carrier flexibility but overlaps with hurricane season. Boat Show week in October and spring break traffic on A1A can restrict beach-access deliveries — confirm staging plans with your carrier when closing dates fall near major events.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From New York and New Jersey, a three-bedroom household (roughly 5,000–7,000 cubic feet) to Fort Lauderdale typically ranges from $8,700 to $13,500, with Las Olas high-rise deliveries adding $400–$1,500 for elevator fees, COI processing, and shuttle staging. Massachusetts origins run slightly higher on linehaul — roughly 1,400 miles — but direct I-95 routing keeps transit to six to nine days for most households.',
+        'Pennsylvania and Mid-Atlantic retirees targeting Victoria Park bungalows or Rio Vista waterfront homes should budget for historic-district shuttle accessorials ($300–$700) when narrow streets prevent trailer access. Midwest households from Illinois may see modestly lower linehaul than Northeast origins, but Intracoastal estate deliveries with dock-side long carries can offset any origin-state savings.',
+        'Use our moving calculator with your Fort Lauderdale ZIP and origin state, then compare three FMCSA-licensed carriers on identical inventory. Broward County destination type — beach high-rise versus Intracoastal estate versus Wilton Manors suburban — typically drives final-mile cost variance more than which Northeast state you depart from.',
       ],
     },
   ],
@@ -160,6 +180,11 @@ export const fortLauderdaleFlContent: CityHubContent = {
       title: 'Compare movers side-by-side',
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
+    },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched Fort Lauderdale quotes.',
+      href: '/moving-calculator',
     },
   ],
   testimonials: [
@@ -212,6 +237,21 @@ export const fortLauderdaleFlContent: CityHubContent = {
       question: 'How does Fort Lauderdale compare to Miami for moving?',
       answer:
         'Interstate linehaul from the same origin is similar. Miami often has higher urban accessorials (causeways, parking permits). Fort Lauderdale beach high-rises have comparable elevator protocols. Broward suburban neighborhoods may have easier truck access than Brickell or Downtown Miami.',
+    },
+    {
+      question: 'What elevator rules apply to Las Olas high-rise moves?',
+      answer:
+        'Las Olas and Galt Ocean Mile buildings typically require freight elevator reservations booked two to four weeks ahead, COI naming the building as additional insured, padded hallway protection, and move windows limited to weekday mornings. Buildings often charge elevator padding deposits ($200–$500) refundable after inspection. Share building requirements with your carrier before loading day.',
+    },
+    {
+      question: 'Do Intracoastal waterfront homes need shuttle trucks?',
+      answer:
+        'Rio Vista, Las Olas Isles, and Intracoastal estates frequently have driveways too narrow for 53-foot trailers and dock-side access that requires long carries from street staging. Carriers park on adjacent avenues and shuttle via smaller trucks. Intracoastal shuttle and long-carry fees ($400–$1,000) should appear on your written estimate.',
+    },
+    {
+      question: 'How does Fort Lauderdale Boat Show week affect deliveries?',
+      answer:
+        'The Fort Lauderdale International Boat Show in late October draws heavy traffic to Las Olas, the Intracoastal, and beach corridors, limiting parking and delaying final-mile crews. If your closing falls during boat show week, confirm staging and elevator reservations early. Late January through March snowbird closings are equally competitive — book carriers 8–12 weeks ahead.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',

@@ -7,7 +7,7 @@ export const nashvilleTnContent: CityHubContent = {
     title:
       'Moving to Nashville, TN (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to Nashville? Compare FMCSA-verified movers serving Davidson County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Nashville? Compare FMCSA-verified movers serving Davidson County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. East Nashville, The Gulch, and Green Hills neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to nashville tn',
       'nashville movers',
@@ -94,6 +94,10 @@ export const nashvilleTnContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Davidson County are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers. Some Nashville-area companies broker interstate loads — always verify who physically transports your goods before paying a deposit.',
     },
+    {
+      title: 'Historic District & High-Rise Access',
+      body: 'East Nashville and Germantown narrow streets require shuttle trucks, Gulch towers need elevator COI filings, and Williamson County gated estates prohibit full-size trailers. Corporate relocation season May–August compresses I-40 and I-65 carrier availability — book transferee deliveries 8–10 weeks ahead.',
+    },
   ],
   bodySections: [
     {
@@ -126,6 +130,22 @@ export const nashvilleTnContent: CityHubContent = {
         'East Nashville and Inglewood form the city\'s creative inbound corridor — bungalow-lined streets, Five Points dining, and a younger demographic that skews toward remote workers and entertainment industry professionals. Moving here means planning around narrow historic streets, limited trailer turnaround on oak-canopied blocks, and parking restrictions during weekend festival traffic. Carriers experienced with Germantown and East Nashville shuttle logistics save delivery-day disputes.',
         'Downtown, The Gulch, and SoBro concentrate high-rise condos, corporate housing, and walkable urban amenities along the Cumberland River. These deliveries require elevator reservations, building COI filings, and often weekend move-in windows enforced by property management. Green Hills and Belle Meade serve established families with larger lots, premium retail, and straightforward suburban trailer access — though I-440 and I-65 rush-hour delays still affect scheduling.',
         'Bellevue, Antioch, and the Donelson corridor offer newer apartment inventory and value-oriented suburban homes popular with first-time buyers relocating from Illinois and California. Whichever Nashville neighborhood you choose, equal cubic-footage quotes, FMCSA verification, and written accessorial disclosure remain the best defense against delivery-day surprises. Browse our Tennessee statewide hub to compare Nashville with Murfreesboro, Clarksville, and Knoxville before finalizing your destination.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in Nashville',
+      paragraphs: [
+        'Nashville neighborhood delivery constraints split along urban, historic, and suburban lines. The Gulch, SoBro, and downtown towers require certificates of insurance, freight elevator reservations, loading-dock scheduling, and parking permits that building management coordinates with Metro Nashville. East Nashville, Germantown, and 12 South craftsman bungalows feature oak-canopied streets too narrow for 53-foot trailers — carriers stage on Woodland Street or Jefferson Street and shuttle via box trucks. Green Hills and Belle Meade estates offer suburban driveway access but HOAs along Tyne Boulevard and Lynwood Boulevard still enforce weekday move-in windows.',
+        'Williamson County spillover into Franklin and Brentwood adds gated-community protocols — many estates along Carnton Lane and Crockett Cove prohibit commercial trailers past stone entrance gates. Antioch and Donelson apartment corridors near Nashville International Airport involve construction-zone staging and limited commercial parking during BNA expansion projects. Music Row and Midtown loft conversions attract entertainment industry transferees, but concurrent event traffic during CMA Fest and Titans game weekends restricts street parking — confirm delivery timing when your closing falls near major Nashville events.',
+        'Corporate relocation season from May through August compresses Middle Tennessee carrier availability as Amazon, Oracle, and HCA transferees arrive on fixed start dates. I-40 and I-65 merge congestion through downtown delays final-mile crews arriving from California and Illinois origins. Spring and fall offer the most flexible scheduling. Winter year-end corporate transfers from New York and Chicago can still tighten December delivery windows — book early when your employer sets a non-negotiable start date.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From California, a three-bedroom household (roughly 5,000–7,000 cubic feet) to Nashville typically ranges from $8,500 to $12,800 due to roughly 2,000-mile linehaul, with Gulch high-rise deliveries adding $400–$1,200 for elevator fees and COI processing. Illinois and Chicago origins benefit from shorter Midwest corridor routing — approximately 470 miles — and often see two-bedroom deliveries in the $4,800–$7,200 range when booked in spring or fall off-peak windows.',
+        'New York and Florida households targeting East Nashville bungalows or Green Hills estates should budget for historic-district shuttle accessorials ($300–$700) when narrow streets prevent trailer access. Florida-to-Nashville moves on the I-75 northbound corridor — roughly 550 miles — are mid-range interstate jobs where destination neighborhood type drives final-mile variance more than the moderate linehaul distance.',
+        'Use our moving calculator with your Nashville ZIP and origin state, then compare three FMCSA-licensed carriers on identical inventory. Corporate transferees should confirm whether employer relocation vendors require binding estimates and whether your carrier coordinates Gulch and downtown COI filings before the truck departs the origin state.',
       ],
     },
   ],
@@ -180,6 +200,11 @@ export const nashvilleTnContent: CityHubContent = {
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
     },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched Nashville quotes.',
+      href: '/moving-calculator',
+    },
   ],
   testimonials: [
     {
@@ -231,6 +256,21 @@ export const nashvilleTnContent: CityHubContent = {
       question: 'What should corporate transferees know about Nashville moves?',
       answer:
         'Confirm whether your employer\'s relocation vendor requires specific estimate types (binding vs. non-binding) and whether your carrier coordinates with building management for downtown COI filings. Document inventory accurately — corporate relocation season compresses carrier availability May through August. Compare at least three FMCSA-licensed carriers on equal cubic footage.',
+    },
+    {
+      question: 'Do East Nashville streets require shuttle trucks?',
+      answer:
+        'Most East Nashville, Germantown, and 12 South blocks cannot accommodate 53-foot trailer turnaround due to narrow historic streets and oak canopy overhang. Carriers stage on adjacent corridors like Woodland Street and shuttle via box trucks. Historic-district shuttle fees ($300–$700) should appear on your written estimate before booking.',
+    },
+    {
+      question: 'What COI requirements do Gulch high-rises enforce?',
+      answer:
+        'The Gulch, SoBro, and downtown towers require certificates of insurance naming the building as additional insured, freight elevator reservations booked two to three weeks ahead, and loading-dock time windows often limited to four hours. Submit COI paperwork to property management before your carrier departs the origin state — late filings cause rescheduling fees.',
+    },
+    {
+      question: 'How does corporate relocation season affect Nashville pricing?',
+      answer:
+        'May through August aligns with Amazon, Oracle, and HCA corporate transfer peaks, compressing carrier availability and adding 10–15% to peak-season linehaul into Davidson County. Book transferee deliveries 8–10 weeks ahead during summer windows. Fall and winter generally offer more flexible scheduling except around year-end corporate moves from California and New York.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',

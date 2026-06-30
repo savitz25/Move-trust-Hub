@@ -7,7 +7,7 @@ export const myrtleBeachScContent: CityHubContent = {
     title:
       'Moving to Myrtle Beach, SC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to Myrtle Beach or the greater Wilmington, NC area? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Myrtle Beach or the greater Wilmington, NC area? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Neighborhood logistics for Carolina Forest, oceanfront towers, and gated communities. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to myrtle beach sc',
       'myrtle beach movers',
@@ -93,6 +93,10 @@ export const myrtleBeachScContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Horry or Brunswick counties are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers — always verify USDOT and MC numbers before paying a deposit.',
     },
+    {
+      title: 'Grand Strand Access Challenges',
+      body: 'Oceanfront high-rises along Ocean Boulevard, gated communities in Carolina Forest, and narrow Surfside Beach streets routinely require shuttle trucks, COI filings, and elevator reservations. Summer tourism traffic on US-17 and Kings Highway can delay final-mile crews — confirm parking and staging plans in your written estimate.',
+    },
   ],
   bodySections: [
     {
@@ -117,6 +121,22 @@ export const myrtleBeachScContent: CityHubContent = {
       paragraphs: [
         'Horry County is the primary jurisdiction for Myrtle Beach, Surfside Beach, Conway, and Aynor. Brunswick County, NC covers Southport, Leland, and coastal communities between Wilmington and the SC border. New Hanover County includes Wilmington proper and Wrightsville Beach.',
         'Our county directories list 5–10 vetted local and regional movers per county with FMCSA licensing, Google ratings, and cost guides. For interstate moves, also browse our national directory of 25+ major long-distance carriers — many operate dedicated lanes from the Northeast and Midwest into the Carolinas.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in Myrtle Beach',
+      paragraphs: [
+        'Myrtle Beach delivery logistics vary sharply by neighborhood type. Oceanfront towers along Ocean Boulevard and the Boardwalk district require freight elevator reservations, certificates of insurance naming the building, padded hallway protection, and loading-zone permits that property managers enforce strictly during peak summer weekends. Carolina Forest and Grande Dunes gated communities often prohibit 53-foot trailers past guard gates — carriers stage on US-501 or Carolina Forest Boulevard and shuttle goods via box trucks through winding cul-de-sacs. Surfside Beach and Garden City Beach pier villages add narrow A1A access and limited street parking that can force long carries from staging lots two blocks inland.',
+        'Inland Conway and Socastee neighborhoods generally offer easier trailer access than oceanfront corridors, but HOA move-in certificates and designated weekday delivery windows still apply in master-planned subdivisions like River Oaks and Forestbrook. Murrells Inlet marsh-front homes along the Waccamaw Neck may need shuttle service when driveways cannot accommodate commercial vehicles. Ask your carrier whether they have delivered to your specific ZIP — Horry County spans dramatically different final-mile profiles between a downtown Myrtle Beach condo and a Carolina Forest single-family home.',
+        'Seasonal challenges compound neighborhood logistics on the Grand Strand. May through September brings 15–25% peak-season pricing, rental-turnover congestion, and hurricane preparedness windows that can delay southbound deliveries from Northeast origins. Snowbird returns in October and November tighten carrier schedules again. Book 8–12 weeks ahead for summer closings, confirm elevator and HOA paperwork two weeks before delivery, and avoid scheduling oceanfront moves during major event weekends unless your carrier has verified parking permits with building management.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From New York and New Jersey, a two-bedroom household (roughly 3,000–4,000 cubic feet) to Myrtle Beach typically ranges from $5,900 to $8,900 for full-service interstate transport, with oceanfront condo deliveries adding $400–$1,200 for elevator fees, COI processing, and shuttle staging. Pennsylvania and Ohio origins run slightly lower on linehaul — often $300–$600 less — because carriers reach Horry County in four to seven transit days without the Northeast corridor surcharges that affect longer Florida routes.',
+        'Midwest households from Ohio and Michigan frequently target Carolina Forest and Conway for affordable single-family inventory, where suburban trailer access keeps destination accessorials modest compared to Surfside Beach or North Myrtle Beach oceanfront towers. Northeast retirees downsizing from larger suburban homes should document garage, patio, and outdoor furniture in the inventory — under-reporting volume is the leading cause of delivery-day price disputes on Grand Strand routes.',
+        'Use our moving calculator with your destination ZIP and origin state, then compare at least three FMCSA-licensed carriers on identical cubic footage. Binding not-to-exceed estimates after a virtual survey offer the strongest protection when shuttle trucks, elevator reservations, and peak-season surcharges are disclosed as line items upfront.',
       ],
     },
   ],
@@ -177,6 +197,11 @@ export const myrtleBeachScContent: CityHubContent = {
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
     },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched Grand Strand quotes.',
+      href: '/moving-calculator',
+    },
   ],
   testimonials: [
     {
@@ -228,6 +253,21 @@ export const myrtleBeachScContent: CityHubContent = {
       question: 'What HOA or condo rules affect Myrtle Beach moves?',
       answer:
         'Oceanfront condos and many gated communities require move-in/move-out certificates, COI naming the building, elevator time slots, and padded hallway protection. Failure to reserve elevator windows is a frequent cause of rescheduling fees. Ask your destination property manager for written requirements and share them with your carrier before loading day.',
+    },
+    {
+      question: 'How do parking restrictions affect Myrtle Beach oceanfront moves?',
+      answer:
+        'Ocean Boulevard and Boardwalk-area buildings enforce limited loading zones, often restricted to early-morning windows before beach traffic peaks. Carriers frequently stage 53-foot trailers on side streets or municipal lots and shuttle goods via smaller trucks. Parking permit fees and long carries from staging areas should appear as line items on your estimate — not surprises when the crew arrives on a Saturday in July.',
+    },
+    {
+      question: 'Do Carolina Forest gated communities require shuttle trucks?',
+      answer:
+        'Many Carolina Forest and Grande Dunes subdivisions prohibit full-size commercial trailers past guard gates due to narrow interior roads and landscaping covenants. Interstate carriers commonly park on US-501 or perimeter roads and transfer goods via box trucks. Confirm shuttle accessorials in writing before booking, and share your HOA move-in certificate requirements with your carrier at least two weeks before delivery.',
+    },
+    {
+      question: 'When should I reserve freight elevators for a Myrtle Beach condo?',
+      answer:
+        'Reserve freight elevator slots as soon as your closing date is firm — popular oceanfront buildings book two to four weeks out during peak season. Buildings typically require COI naming the property, padded hallway protection, and move windows limited to weekday mornings. Failure to coordinate elevator access is one of the most common causes of rescheduling fees on Grand Strand condo deliveries.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',

@@ -7,7 +7,7 @@ export const austinTxContent: CityHubContent = {
     title:
       'Moving to Austin, TX (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to Austin? Compare FMCSA-verified movers serving Travis County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Austin? Compare FMCSA-verified movers serving Travis County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. South Congress, Domain, and Hill Country neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to austin tx',
       'austin movers',
@@ -94,6 +94,10 @@ export const austinTxContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Travis County are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers. Some Austin-area companies broker interstate loads — always verify who physically transports your goods before paying a deposit.',
     },
+    {
+      title: 'Hill Country & Urban Access',
+      body: 'Downtown and Domain towers require elevator COI filings, East Austin narrow streets need shuttle trucks, and Dripping Springs steep driveways force mainland staging. SXSW and summer festival weekends restrict downtown parking — confirm delivery timing with your carrier before booking March or July move dates.',
+    },
   ],
   bodySections: [
     {
@@ -126,6 +130,22 @@ export const austinTxContent: CityHubContent = {
         'South Congress, East Austin, and Hyde Park form the city\'s creative inbound corridor — bungalow-lined streets, walkable dining, and a younger demographic that skews toward remote workers and creative professionals. Moving here means planning around narrow historic streets, limited trailer turnaround, and parking restrictions during festival weekends. Carriers experienced with East Austin shuttle logistics save delivery-day disputes.',
         'Downtown, the Warehouse District, and the Domain concentrate high-rise condos, corporate housing, and walkable urban amenities along I-35 and the north tech corridor. These deliveries require elevator reservations, building COI filings, and often weekend move-in windows enforced by property management. Round Rock and Cedar Park serve established families with larger lots and straightforward suburban trailer access — though I-35 rush-hour delays still affect scheduling.',
         'Dripping Springs, Bee Cave, and Lakeway offer Hill Country inventory popular with California and Washington transplants seeking outdoor lifestyle at a premium on driveway access. Whichever Austin neighborhood you choose, equal cubic-footage quotes, FMCSA verification, and written accessorial disclosure remain the best defense against delivery-day surprises. Browse our Texas statewide hub to compare Austin with Dallas–Fort Worth, Houston, and San Antonio before finalizing your destination.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in Austin',
+      paragraphs: [
+        'Austin metro delivery logistics span dense urban towers and Hill Country terrain. Downtown, the Domain, and Mueller high-rises require certificates of insurance, freight elevator reservations, loading-dock scheduling, and parking permits coordinated with building management. East Austin and South Congress bungalow corridors feature narrow historic streets where 53-foot trailers cannot turn around — carriers stage on adjacent arterials and shuttle via box trucks. Hyde Park and Clarksville add university-adjacent parking restrictions during UT football weekends and move-in weeks.',
+        'Williamson County spillover into Round Rock, Cedar Park, and Leander generally offers suburban trailer access, but master-planned communities along 183A and Ronald Reagan Boulevard still require HOA move-in certificates and weekday delivery windows. Dripping Springs, Bee Cave, and Lakeway Hill Country properties add steep limestone driveways where carriers stage on main roads and use long carries or shuttle trucks — a final-mile profile entirely different from Domain tower delivery. Steiner Ranch and Spanish Oaks gated communities prohibit oversized commercial vehicles past entrance gates.',
+        'SXSW in March and Austin City Limits in October paralyze downtown and South Congress street access for days. Summer tech relocation season from May through August compresses I-35 corridor carrier availability as Silicon Hills transferees arrive on fixed start dates. I-35 construction zones through downtown add unpredictable final-mile delays. Book Domain and downtown COI filings before your carrier departs California or Washington — building management will not process paperwork on delivery morning.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From California, a three-bedroom household (roughly 5,000–7,000 cubic feet) to Austin typically ranges from $9,500 to $13,500 due to roughly 1,750-mile linehaul from Bay Area origins, with Domain high-rise deliveries adding $400–$1,400 for elevator fees and COI processing. Washington and Seattle origins run similar long-haul economics — approximately 2,100 miles — with Hill Country Dripping Springs deliveries adding $600–$1,800 for steep-driveway shuttle and long carries.',
+        'New York and Illinois households targeting East Austin bungalows or Round Rock suburban subdivisions should budget for neighborhood-specific accessorials: historic-district shuttle trucks ($300–$700) in East Austin versus straightforward suburban trailer access in Cedar Park. Illinois origins benefit from shorter Midwest corridor routing — roughly 1,020 miles — and often see two-bedroom deliveries in the $5,000–$7,800 range when booked in spring off-peak windows.',
+        'Compare at least three FMCSA-licensed carriers on identical cubic footage using our moving calculator. Austin\'s sustained tech inbound means summer pricing tightens regardless of origin state — book 8–10 weeks ahead for May through August corporate transfer deliveries from California, Washington, and New York.',
       ],
     },
   ],
@@ -180,6 +200,11 @@ export const austinTxContent: CityHubContent = {
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
     },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched Austin quotes.',
+      href: '/moving-calculator',
+    },
   ],
   testimonials: [
     {
@@ -231,6 +256,21 @@ export const austinTxContent: CityHubContent = {
       question: 'What should tech transferees know about Austin moves?',
       answer:
         'Confirm whether your employer\'s relocation vendor requires specific estimate types (binding vs. non-binding) and whether your carrier coordinates with building management for downtown and Domain COI filings. Document inventory accurately — tech relocation season compresses carrier availability May through August. Compare at least three FMCSA-licensed carriers on equal cubic footage.',
+    },
+    {
+      question: 'Do Dripping Springs Hill Country homes require shuttle trucks?',
+      answer:
+        'Steep limestone driveways and narrow ranch roads in Dripping Springs, Bee Cave, and Lakeway frequently prevent 53-foot trailer access. Carriers stage on Highway 290 or RR 12 and use shuttle trucks or long carries to reach the home. Hill Country accessorials ($600–$1,800) should appear on your written estimate — confirm driveway grade when requesting quotes.',
+    },
+    {
+      question: 'How does SXSW affect downtown Austin moving schedules?',
+      answer:
+        'SXSW in March closes multiple downtown streets, restricts commercial parking, and limits access to South Congress and East Austin corridors for nearly two weeks. Avoid scheduling Domain, downtown, or South Congress deliveries during SXSW without confirmed staging plans. October ACL Festival creates similar constraints — spring and late fall offer the most predictable urban delivery windows.',
+    },
+    {
+      question: 'What elevator requirements apply to Domain high-rises?',
+      answer:
+        'The Domain and downtown Austin towers require COI naming the building as additional insured, freight elevator reservations booked two to three weeks ahead, and loading-dock windows often capped at four hours. Tech transferees into Domain corporate housing should submit COI paperwork to building management before the carrier departs California or Washington.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',

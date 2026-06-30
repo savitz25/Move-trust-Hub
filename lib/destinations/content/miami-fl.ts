@@ -7,7 +7,7 @@ export const miamiFlContent: CityHubContent = {
     title:
       'Moving to Miami, FL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to Miami? Compare FMCSA-verified movers serving Miami-Dade County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Miami? Compare FMCSA-verified movers serving Miami-Dade County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Brickell, Miami Beach, and Coral Gables neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to miami fl',
       'miami movers',
@@ -93,6 +93,10 @@ export const miamiFlContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Miami-Dade County are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers. Some Miami-area companies broker interstate loads — always verify who physically transports your goods before paying a deposit.',
     },
+    {
+      title: 'Urban & Causeway Logistics',
+      body: 'Brickell towers, Miami Beach causeway crossings, and Coconut Grove narrow streets routinely require parking permits, freight elevator reservations, and mainland shuttle staging. Causeway traffic on MacArthur and Julia Tuttle can add hours to final-mile delivery — confirm timing buffers in your estimate.',
+    },
   ],
   bodySections: [
     {
@@ -117,6 +121,22 @@ export const miamiFlContent: CityHubContent = {
       paragraphs: [
         'Miami-Dade County is the primary jurisdiction for Miami, Miami Beach, Coral Gables, Hialeah, and Kendall. Broward County to the north serves Fort Lauderdale, Hollywood, and Pompano Beach for families comparing both sides of the metro. Our Miami-Dade County directory lists vetted local and regional movers with FMCSA licensing, Google ratings, and county cost guides — including teams experienced with high-rise and international move protocols.',
         'For interstate moves, browse our national directory of 25+ major long-distance carriers — many operate dedicated lanes from the Northeast, Midwest, and West Coast into South Florida. Pair a reputable interstate linehaul carrier with a Miami-Dade local crew for final-mile shuttle service when your building requires it.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in Miami',
+      paragraphs: [
+        'Miami-Dade delivery logistics are among the most complex in South Florida. Brickell and Downtown towers require certificates of insurance, freight elevator reservations booked weeks ahead, loading-zone parking permits from the City of Miami, and strict four-hour move windows enforced by building management. Miami Beach condos add causeway crossings on MacArthur or Julia Tuttle — interstate trailers often stage on the mainland in Miami or North Bay Village and shuttle goods across the causeway via smaller trucks because beach streets cannot accommodate 53-foot turnarounds. Coral Gables and Coconut Grove estates feature banyan-canopied streets with height restrictions that force shuttle delivery even for single-family homes.',
+        'Wynwood and Edgewater loft conversions attract remote workers and creatives, but narrow industrial-era streets and concurrent construction staging limit trailer access. Kendall and Doral suburban subdivisions offer more straightforward driveway delivery, though newer gated communities along the Turnpike corridor still require HOA move-in certificates and weekday-only delivery windows. Pinecrest and South Miami single-family neighborhoods balance suburban trailer access with mature-tree canopy restrictions — confirm whether your carrier has delivered to your specific street before assuming standard suburban pricing.',
+        'Seasonal challenges amplify Miami\'s urban logistics. Snowbird season from October through April compresses southbound carrier schedules and adds 10–25% to linehaul rates. Hurricane season from June through November requires contingency clauses in bills of lading. Art Basel week and Ultra Music Festival traffic can paralyze Downtown and Miami Beach access — avoid scheduling Brickell or South Beach deliveries during major event weekends unless your carrier has verified parking permits and building dock reservations.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From New York and New Jersey, a three-bedroom household (roughly 5,000–7,000 cubic feet) to Miami typically ranges from $9,000 to $14,200, with Brickell high-rise deliveries adding $600–$2,000 for elevator fees, COI processing, parking permits, and causeway shuttle staging. California origins run higher on base linehaul — roughly 2,720 miles — with Los Angeles-to-Miami three-bedroom shipments often landing in the $11,000–$16,000 range depending on season and accessorials.',
+        'Illinois and Chicago-area households targeting Coral Gables or Pinecrest estates should budget for shuttle trucks on canopy-restricted streets ($300–$800) even when moving to single-family homes. Northeast finance professionals relocating to Brickell should confirm building COI requirements before carrier selection — buildings like Icon Brickell and SLS Lux enforce insurance minimums that budget carriers may not meet, forcing last-minute rescheduling.',
+        'Compare at least three FMCSA-licensed carriers on identical cubic footage using our moving calculator. Miami\'s destination accessorials often exceed linehaul variance between origin states — a New York-to-Brickell move and a Chicago-to-Brickell move may share similar base rates but diverge sharply on elevator, permit, and shuttle fees disclosed only when you specify your exact building address.',
       ],
     },
   ],
@@ -160,6 +180,11 @@ export const miamiFlContent: CityHubContent = {
       title: 'Compare movers side-by-side',
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
+    },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched Miami quotes.',
+      href: '/moving-calculator',
     },
   ],
   testimonials: [
@@ -212,6 +237,21 @@ export const miamiFlContent: CityHubContent = {
       question: 'How does Miami compare to Fort Lauderdale for moving costs?',
       answer:
         'Interstate linehaul from the same origin is similar, but Miami\'s higher urban density and causeway logistics often add more destination accessorials than Broward County suburbs. High-rise fees, parking permits, and shuttle service are the primary differentiators — not the base mileage rate.',
+    },
+    {
+      question: 'How do Miami Beach causeways affect moving logistics?',
+      answer:
+        'Interstate trailers typically cannot efficiently deliver to Miami Beach condos due to causeway traffic, limited turnaround space, and building dock constraints. Carriers stage on the mainland and shuttle goods across MacArthur or Julia Tuttle causeways via smaller trucks. Causeway shuttle fees and timing buffers for rush-hour delays should appear as line items on your estimate — not surprises after a three-hour traffic delay.',
+    },
+    {
+      question: 'What parking permits does Miami require for moving trucks?',
+      answer:
+        'The City of Miami requires temporary no-parking permits for commercial moving vehicles on many Brickell, Downtown, and Wynwood streets. Permit processing takes three to five business days and fees range from $50 to $200 depending on zone. Your carrier or building manager typically coordinates permits — confirm who handles filing before delivery day.',
+    },
+    {
+      question: 'When should I reserve freight elevators in Brickell towers?',
+      answer:
+        'Reserve freight elevator slots as soon as your closing date is confirmed — popular Brickell buildings book two to four weeks out during snowbird season. Buildings require COI naming the property, padded hallway protection, and deposits for elevator padding. Late COI submission is the most common cause of rescheduling fees on Miami high-rise deliveries.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',

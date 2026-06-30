@@ -16,7 +16,10 @@ import {
   RESOURCES_CONTENT_UPDATED,
 } from '@/lib/seo/content-dates';
 import { getMovingCompanySlugsForSitemap } from '@/lib/reviews/bridge';
-import { getCityHubSitemapPriority } from '@/lib/seo/sitemap-priority';
+import {
+  getCityHubSitemapPriority,
+  getRouteGuideSitemapPriority,
+} from '@/lib/seo/sitemap-priority';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -99,14 +102,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
               ? 0.88
             : route.startsWith('/resources/guides/')
               ? 0.9
-              : route.startsWith('/resources/routes/') &&
-                PRIORITY_ROUTE_SLUGS.has(route.replace('/resources/routes/', ''))
-              ? 0.92
-              : route.startsWith('/resources/routes/') &&
-                  extendedRouteSlugs.has(route.replace('/resources/routes/', ''))
-                ? 0.9
-                : route.startsWith('/resources/routes/')
-                  ? 0.85
+              : route.startsWith('/resources/routes/')
+                ? getRouteGuideSitemapPriority(
+                    route.replace('/resources/routes/', ''),
+                    extendedRouteSlugs.has(route.replace('/resources/routes/', ''))
+                  )
                 : route === '/resources/interstate-moving-costs'
                   ? 0.9
                   : route === '/moving-calculator'
@@ -131,7 +131,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE}${getMarketPath(market)}`,
       lastModified: CITY_HUBS_CONTENT_UPDATED,
       changeFrequency: 'weekly' as const,
-      priority: getCityHubSitemapPriority(market.priority),
+      priority: getCityHubSitemapPriority(market.priority, market.slug),
     }));
 
   const autoTransportPages = autoTransportCompanies.map((company) => ({

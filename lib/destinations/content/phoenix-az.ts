@@ -7,7 +7,7 @@ export const phoenixAzContent: CityHubContent = {
     title:
       'Moving to Phoenix, AZ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to Phoenix or the greater Valley of the Sun? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Phoenix or the greater Valley of the Sun? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Roosevelt Row, Arcadia, and Scottsdale district neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to phoenix az',
       'phoenix movers',
@@ -93,6 +93,10 @@ export const phoenixAzContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Maricopa County are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers — always verify USDOT and MC numbers before paying a deposit. Some Valley companies broker interstate loads to third parties; confirm who physically transports your goods.',
     },
+    {
+      title: 'Heat, HOA & Desert Access',
+      body: 'June–August temperatures above 110°F restrict loading to early-morning windows, master-planned HOAs require move-in certificates and shuttle trucks, and monsoon storms July–September delay deliveries. Downtown high-rises need elevator COI filings — confirm heat-scheduling language in your estimate.',
+    },
   ],
   bodySections: [
     {
@@ -117,6 +121,22 @@ export const phoenixAzContent: CityHubContent = {
       paragraphs: [
         'Maricopa County is the primary jurisdiction for Phoenix, Scottsdale, Tempe, Mesa, Glendale, and the full Valley of the Sun urban footprint. Pinal County to the south — including Maricopa and Casa Grande — serves commuters seeking lower housing costs with I-10 access to Phoenix employers. Our county directories list vetted local and regional movers per county with FMCSA licensing, Google ratings, and cost guides.',
         'For interstate moves, also browse our national directory of 25+ major long-distance carriers — many operate well-traveled lanes from California, the Midwest, Pacific Northwest, and Texas into Arizona on I-10 and I-17. Compare Phoenix against Scottsdale for luxury and golf-community deliveries, Tempe for ASU campus-area logistics, and Gilbert or Chandler for East Valley family suburban demand — all linked from /moving-to/arizona. Pair a reputable interstate linehaul carrier with a Maricopa County local crew when your gated community, downtown high-rise, or new-build subdivision requires final-mile shuttle service.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in Phoenix',
+      paragraphs: [
+        'Phoenix metro delivery logistics vary between urban infill, established neighborhoods, and master-planned suburbs. Downtown and Roosevelt Row high-rises require certificates of insurance, freight elevator reservations, and loading-zone permits from the City of Phoenix. Arcadia and Biltmore corridor homes along Camelback Road feature mature citrus groves and narrow side-street access that can force shuttle delivery even for single-family residences. North Phoenix and Deer Valley master-planned communities in Tramonto, Fireside, and Desert Ridge require HOA move-in certificates, designated weekday delivery windows, and shuttle trucks when community covenants prohibit 53-foot trailers on interior loop roads.',
+        'Scottsdale spillover districts — Old Town, McCormick Ranch, and DC Ranch — add luxury golf-community gate protocols with stricter COI minimums and golf-cart path awareness. Ahwatukee and South Mountain foothill neighborhoods involve steep access roads where summer heat compounds long-carry difficulty. Maryvale and West Phoenix offer more straightforward trailer access but older infrastructure can mean narrower street clearance. Document whether your address is downtown tower, Arcadia ranch, or North Phoenix HOA subdivision when requesting quotes — Maricopa County final-mile profiles differ by hundreds of dollars.',
+        'Summer heat from June through August routinely pushes pavement temperatures above 150°F, limiting crew loading and unloading to 5 a.m.–10 a.m. windows — a legitimate scheduling constraint that should appear in your estimate. Monsoon storms from July through September can delay I-10 and I-17 corridor deliveries for 24–48 hours. Peak inbound season May through September adds 15–25% to linehaul rates. October through April offers comfortable temperatures and more flexible scheduling — the preferred window for California and Washington households arriving with heat-sensitive items like electronics, artwork, and vinyl collections.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From California, a three-bedroom household (roughly 5,000–7,000 cubic feet) to Phoenix typically ranges from $7,800 to $11,500 on the well-traveled I-10 western corridor, with downtown high-rise deliveries adding $350–$1,200 for elevator fees and COI processing. Southern California origins (Los Angeles, San Diego) represent the highest-volume Phoenix inbound lane — studio deliveries often land in the $2,800–$4,800 range when booked off-peak October through April.',
+        'Illinois and Chicago-area households benefit from direct I-40 and I-44 western routing — approximately 1,600 miles — with two-bedroom deliveries commonly in the $4,800–$7,400 range. Washington and Seattle origins run longer linehaul but share similar destination accessorial profiles: North Phoenix HOA shuttle fees ($250–$800) and summer heat-scheduling premiums ($150–$400) apply regardless of whether you depart from California or the Pacific Northwest.',
+        'Texas origins on the I-10 eastern corridor — roughly 1,200 miles from Dallas — are mid-range interstate jobs where Phoenix destination neighborhood type drives final-mile variance. Use our moving calculator with your Phoenix ZIP and origin state, then compare three FMCSA-licensed carriers on identical inventory. Book summer deliveries 8–12 weeks ahead and confirm early-morning heat-scheduling language in writing.',
       ],
     },
   ],
@@ -176,6 +196,16 @@ export const phoenixAzContent: CityHubContent = {
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
     },
+    {
+      title: 'California to Texas route guide',
+      description: 'I-10 western corridor context for California origins into Phoenix Valley.',
+      href: '/resources/routes/california-to-texas',
+    },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched Phoenix quotes.',
+      href: '/moving-calculator',
+    },
   ],
   testimonials: [
     {
@@ -232,6 +262,21 @@ export const phoenixAzContent: CityHubContent = {
       question: 'How does Phoenix compare to Scottsdale or Tempe for movers?',
       answer:
         'All three cities fall within Maricopa County for local mover coverage, but delivery logistics differ. Phoenix includes more downtown high-rise and urban infill constraints; Scottsdale often involves gated golf communities and luxury white-glove expectations; Tempe centers on ASU campus-area apartments and walkable Mill Avenue logistics. Compare quotes for your exact destination address, not just the city name.',
+    },
+    {
+      question: 'How does summer heat affect Phoenix moving schedules?',
+      answer:
+        'From June through August, pavement temperatures routinely exceed 150°F and crew safety protocols limit loading and unloading to early-morning windows — typically 5 a.m. to 10 a.m. Heat-scheduling premiums ($150–$400) are legitimate cost drivers that should appear in your estimate. Book summer deliveries 8–12 weeks ahead and confirm morning-window language in your contract.',
+    },
+    {
+      question: 'Do North Phoenix master-planned communities require shuttle trucks?',
+      answer:
+        'Communities like Tramonto, Desert Ridge, and Fireside frequently prohibit 53-foot trailers on interior loop roads due to HOA covenants. Carriers stage on perimeter arterials and shuttle via box trucks. HOA move-in certificates, COI naming the community, and weekday-only delivery windows are standard — share written HOA requirements with your carrier before loading day.',
+    },
+    {
+      question: 'What elevator rules apply to downtown Phoenix condos?',
+      answer:
+        'Roosevelt Row, Biltmore, and downtown towers require COI filings naming the building, freight elevator reservations booked one to two weeks ahead, and loading-zone permits from the City of Phoenix. Buildings may restrict move windows to weekday mornings. Late COI submission is a frequent cause of rescheduling fees on Phoenix urban deliveries.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',

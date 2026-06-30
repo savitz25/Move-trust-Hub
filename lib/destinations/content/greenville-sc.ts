@@ -7,7 +7,7 @@ export const greenvilleScContent: CityHubContent = {
     title:
       'Moving to Greenville, SC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
     description:
-      'Planning a move to Greenville or South Carolina\'s Upstate? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. BMW, Michelin, vibrant downtown, Blue Ridge access. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Greenville or South Carolina\'s Upstate? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Downtown lofts, Paris Mountain, and Greer suburb neighborhood logistics covered. BMW, Michelin, vibrant downtown, Blue Ridge access. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to greenville sc',
       'greenville sc movers',
@@ -95,6 +95,10 @@ export const greenvilleScContent: CityHubContent = {
       title: 'Local vs. Interstate',
       body: 'Moves within Greenville County or the immediate Upstate metro are typically local hourly jobs. Cross-state shipments require FMCSA-licensed interstate carriers — always verify USDOT and MC numbers before paying a deposit.',
     },
+    {
+      title: 'Upstate Terrain & Access',
+      body: 'Downtown Greenville lofts require elevator COI filings, Paris Mountain hillside homes need long carries on steep grades, and Greer gated subdivisions often require shuttle trucks. Summer BMW supplier hiring season (May–August) compresses I-85 carrier availability — book corporate relocations early.',
+    },
   ],
   bodySections: [
     {
@@ -120,6 +124,22 @@ export const greenvilleScContent: CityHubContent = {
         'Greenville County is the primary jurisdiction for downtown Greenville (ZIP 29601), Taylors, Greer, Mauldin, Simpsonville, Travelers Rest, and the city\'s full urban and suburban footprint. Anderson County to the west serves Pendleton and Clemson spillover for households comparing Greenville proper against university-town inventory and lower western Upstate price points. Spartanburg County to the northeast captures BMW corridor employment spillover — browse our Spartanburg guide if your employer location sits closer to the I-85 manufacturing belt than downtown Greenville.',
         'Our Greenville County directory lists vetted local and regional movers with FMCSA licensing, Google ratings, and county cost guides — including teams experienced with downtown high-rise protocols, historic-district deliveries, and suburban new-construction access. For interstate moves, browse our national directory of 25+ major long-distance carriers — many operate dedicated lanes from New York, New Jersey, Florida, and Ohio into the I-85 Piedmont corridor. Pair a reputable interstate linehaul carrier with a Greenville County local crew for final-mile shuttle service when your downtown loft, hillside driveway, or gated community requires it.',
         'Households still weighing South Carolina corridors should cross-link to our Myrtle Beach and North Myrtle Beach Grand Strand guides for coastal alternatives, our Hilton Head guide for premium Lowcountry island living, and our South Carolina statewide hub at /moving-to/south-carolina for side-by-side corridor comparison before you commit to an Upstate ZIP code. Greenville\'s Prisma Health campus, Clemson University spillover in Anderson County, and Furman University\'s east-side presence also shape neighborhood demand — medical professionals often target Augusta Road and Paris Mountain, while supplier engineers cluster along the Greer and Duncan corridors closest to BMW\'s Upstate footprint.',
+      ],
+    },
+    {
+      heading: 'Neighborhood moving logistics in Greenville',
+      paragraphs: [
+        'Greenville County delivery logistics vary between urban lofts and foothill suburbs. Downtown high-rises near Falls Park and the West End require certificates of insurance, freight elevator reservations, and loading-dock scheduling that property managers enforce during weekend festival traffic on Main Street. Historic neighborhoods along Augusta Road and the Hampton-Pinckney district feature narrow streets with mature oaks that limit 53-foot trailer access — carriers stage on adjacent corridors and shuttle via box trucks. Paris Mountain and North Greenville hillside homes add steep-driveway long carries where trailers cannot safely reach the garage.',
+        'Greer, Mauldin, Simpsonville, and Taylors suburban corridors generally offer easier trailer access for new-construction subdivisions, but gated communities along the BMW supplier belt frequently prohibit commercial vehicles past entrance gates. Travelers Rest and the Swamp Rabbit Trail corridor attract remote workers into walkable small-town inventory with modest street-parking constraints. Furman University\'s east-side neighborhoods and Augusta Road medical corridor deliveries align with Prisma Health transferee schedules — confirm whether your carrier has experience with hospital-adjacent high-rise and historic-district protocols.',
+        'Seasonal challenges center on summer corporate relocation season from May through August, when BMW and Michelin supplier hiring compresses I-85 Piedmont carrier availability. Charlotte spillover moves on the 100-mile I-85 corridor add short-haul demand that tightens local crew schedules. Spring and fall offer the most flexible delivery windows. Winter moves from Northeast origins occasionally face weather delays on mountain approaches through Asheville — confirm routing experience when booking November through February deliveries.',
+      ],
+    },
+    {
+      heading: 'Local cost examples from popular origin states',
+      paragraphs: [
+        'From New York and New Jersey, a three-bedroom household (roughly 5,000–7,000 cubic feet) to Greenville typically ranges from $6,800 to $10,600, with downtown loft deliveries adding $250–$800 for elevator fees and COI processing. Florida origins benefit from shorter south-to-north reverse routing — roughly 550 miles from Orlando-area markets — and often see two-bedroom deliveries in the $4,200–$6,800 range when booked off-peak.',
+        'Ohio and Midwest manufacturing professionals relocating for BMW supplier roles frequently target Greer and Duncan subdivisions where suburban trailer access keeps destination fees modest. Charlotte spillover households moving 100 miles up I-85 are typically local or short-haul jobs ($800–$2,500) rather than full interstate shipments — verify pricing structure when your origin is within the Carolinas metro.',
+        'Use our moving calculator with your Greenville ZIP (29601 and surrounding Upstate communities) and origin state, then compare three FMCSA-licensed carriers on identical inventory. Paris Mountain hillside carries and downtown elevator accessorials should appear as line items before booking — they are standard Upstate costs, not delivery-day surprises.',
       ],
     },
   ],
@@ -184,6 +204,16 @@ export const greenvilleScContent: CityHubContent = {
       description: 'Select up to 4 carriers and compare reputation and services.',
       href: '/compare',
     },
+    {
+      title: 'New York to Florida route guide',
+      description: 'I-85 Piedmont corridor context for Northeast origins into Greenville Upstate.',
+      href: '/resources/routes/new-york-to-florida',
+    },
+    {
+      title: 'Free moving cost calculator',
+      description: 'Estimate cubic footage and weight before requesting matched Greenville quotes.',
+      href: '/moving-calculator',
+    },
   ],
   testimonials: [
     {
@@ -240,6 +270,21 @@ export const greenvilleScContent: CityHubContent = {
       question: 'Are binding estimates required for moves to South Carolina?',
       answer:
         'Binding estimates are not legally required, but they protect you when your inventory is accurate. A binding not-to-exceed quote locks in price after an in-home or virtual survey. Non-binding estimates can increase on delivery if weight or volume exceeds the estimate — common when garage, workshop, and patio contents are omitted from the initial inventory.',
+    },
+    {
+      question: 'Do Paris Mountain homes require special moving accessorials?',
+      answer:
+        'Hillside properties on Paris Mountain and North Greenville often have steep driveways that prevent 53-foot trailer access. Carriers stage on the main road and use long carries or smaller shuttle trucks to reach the home. Steep-grade accessorials ($200–$600) should appear on your written estimate — confirm driveway grade and turnaround space when requesting quotes.',
+    },
+    {
+      question: 'What elevator requirements apply to downtown Greenville lofts?',
+      answer:
+        'Downtown lofts and high-rises near Falls Park require COI filings naming the building, freight elevator reservations, and loading-dock scheduling. Buildings along Main Street may restrict move windows during weekend festival events. Reserve elevator slots when your closing date is firm — popular buildings book two to three weeks out during summer corporate relocation season.',
+    },
+    {
+      question: 'Do Greer BMW-corridor subdivisions require shuttle trucks?',
+      answer:
+        'Several Greer and Simpsonville gated subdivisions prohibit full-size commercial trailers on interior cul-de-sacs. Carriers stage on Highway 101 or suburban perimeter roads and shuttle via box trucks. If your employer relocation targets the BMW supplier corridor, disclose gated-community status during the estimate phase — not on delivery morning.',
     },
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
