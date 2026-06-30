@@ -331,6 +331,16 @@ import { lewesDeContent } from '@/lib/destinations/content/lewes-de';
 import { milfordDeContent } from '@/lib/destinations/content/milford-de';
 import { miltonDeContent } from '@/lib/destinations/content/milton-de';
 import { rehobothBeachDeContent } from '@/lib/destinations/content/rehoboth-beach-de';
+import { ankenyIaContent } from '@/lib/destinations/content/ankeny-ia';
+import { westDesMoinesIaContent } from '@/lib/destinations/content/west-des-moines-ia';
+import { desMoinesIaContent } from '@/lib/destinations/content/des-moines-ia';
+import { waukeeIaContent } from '@/lib/destinations/content/waukee-ia';
+import { iowaCityIaContent } from '@/lib/destinations/content/iowa-city-ia';
+import { amesIaContent } from '@/lib/destinations/content/ames-ia';
+import { cedarRapidsIaContent } from '@/lib/destinations/content/cedar-rapids-ia';
+import { dubuqueIaContent } from '@/lib/destinations/content/dubuque-ia';
+import { decorahIaContent } from '@/lib/destinations/content/decorah-ia';
+import { pellaIaContent } from '@/lib/destinations/content/pella-ia';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -664,6 +674,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'milford-de': milfordDeContent,
   'milton-de': miltonDeContent,
   'rehoboth-beach-de': rehobothBeachDeContent,
+  'ankeny-ia': ankenyIaContent,
+  'west-des-moines-ia': westDesMoinesIaContent,
+  'des-moines-ia': desMoinesIaContent,
+  'waukee-ia': waukeeIaContent,
+  'iowa-city-ia': iowaCityIaContent,
+  'ames-ia': amesIaContent,
+  'cedar-rapids-ia': cedarRapidsIaContent,
+  'dubuque-ia': dubuqueIaContent,
+  'decorah-ia': decorahIaContent,
+  'pella-ia': pellaIaContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -886,5 +906,11 @@ export function getPublishedConnecticutHubSlugs(): string[] {
 export function getPublishedDelawareHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'delaware'
+  );
+}
+
+export function getPublishedIowaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'iowa'
   );
 }

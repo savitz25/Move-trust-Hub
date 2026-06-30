@@ -32,6 +32,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   ct: 'connecticut',
   co: 'colorado',
   de: 'delaware',
+  ia: 'iowa',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

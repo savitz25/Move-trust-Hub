@@ -8877,6 +8877,281 @@ export const markets: Market[] = [
     mapDescription:
       'Milton in Sussex County — Dogfish Head craft-beer village and tidal river lifestyle.',
   },
+  {
+    slug: 'iowa',
+    displayName: 'Iowa',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: [],
+    lat: 42.0,
+    lng: -93.5,
+    defaultToZip: '50309',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,400',
+      fourBR: '$8,400–$14,800',
+    },
+    inboundGrowthStat:
+      'Affordable housing · strong schools · Midwest values & university towns',
+    peakSeasonNote:
+      'Des Moines metro builder closings and August university turnover tighten peak-season windows',
+    isClusterParent: true,
+    priority: 34,
+    mapDescription:
+      'Iowa inbound hub covering Des Moines metro growth, university corridors, eastern river cities, and Driftless heritage towns.',
+  },
+  {
+    slug: 'ankeny-ia',
+    displayName: 'Ankeny',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['polk-ia'],
+    lat: 41.7318,
+    lng: -93.6001,
+    defaultToZip: '50023',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'National growth standout · Prairie Trail · excellent schools',
+    peakSeasonNote:
+      'Prairie Trail and new-build HOA move-day rules may require advance coordination',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Ankeny in Polk County — nationally ranked growth corridor with Prairie Trail master-planned living.',
+  },
+  {
+    slug: 'west-des-moines-ia',
+    displayName: 'West Des Moines',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['polk-ia'],
+    lat: 41.5772,
+    lng: -93.7113,
+    defaultToZip: '50266',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,500',
+    },
+    inboundGrowthStat:
+      'Corporate powerhouse · Jordan Creek · top-rated schools',
+    peakSeasonNote:
+      'Jordan Creek towers and Valley West corridor closings compress summer schedules',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'West Des Moines in Polk County — Jordan Creek corporate corridor and premier suburban schools.',
+  },
+  {
+    slug: 'des-moines-ia',
+    displayName: 'Des Moines',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['polk-ia'],
+    lat: 41.5868,
+    lng: -93.625,
+    defaultToZip: '50309',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,500',
+    },
+    inboundGrowthStat:
+      'Capital opportunity · insurance & finance · riverwalk culture',
+    peakSeasonNote:
+      'Downtown high-rises and East Village loft conversions require COI coordination',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Des Moines in Polk County — state capital with insurance-and-finance employment hub.',
+  },
+  {
+    slug: 'waukee-ia',
+    displayName: 'Waukee',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['dallas-ia'],
+    lat: 41.6117,
+    lng: -93.8853,
+    defaultToZip: '50263',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Safety & active lifestyle · trail network · Dallas County value',
+    peakSeasonNote:
+      'Kettlestone and new subdivision cul-de-sacs may require shuttle trucks',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Waukee in Dallas County — trail-forward family suburbs with Dallas County affordability.',
+  },
+  {
+    slug: 'iowa-city-ia',
+    displayName: 'Iowa City',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['johnson-ia'],
+    lat: 41.6611,
+    lng: -91.5302,
+    defaultToZip: '52240',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Cultural hub · University of Iowa · UNESCO City of Literature',
+    peakSeasonNote:
+      'Academic calendar turnover and August move-ins affect delivery scheduling',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Iowa City in Johnson County — University of Iowa and UNESCO literary culture hub.',
+  },
+  {
+    slug: 'ames-ia',
+    displayName: 'Ames',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['story-ia'],
+    lat: 42.0308,
+    lng: -93.6319,
+    defaultToZip: '50010',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Tech & innovation · Iowa State University · bike-friendly',
+    peakSeasonNote:
+      'Campustown turnover and fall semester move-ins tighten August scheduling',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Ames in Story County — Iowa State University innovation and bike-friendly campus town.',
+  },
+  {
+    slug: 'cedar-rapids-ia',
+    displayName: 'Cedar Rapids',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['linn-ia'],
+    lat: 41.9779,
+    lng: -91.6656,
+    defaultToZip: '52401',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'Affordable manufacturing hub · Five Seasons · Cedar River',
+    peakSeasonNote:
+      'Cedar River flood-zone properties require early delivery planning',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Cedar Rapids in Linn County — Five Seasons affordability and manufacturing employment.',
+  },
+  {
+    slug: 'dubuque-ia',
+    displayName: 'Dubuque',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['dubuque-ia'],
+    lat: 42.5006,
+    lng: -90.6648,
+    defaultToZip: '52001',
+    topInboundOrigins: ['Illinois', 'Wisconsin', 'Minnesota', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,700',
+      twoBR: '$4,000–$7,000',
+      threeBR: '$5,800–$9,500',
+      fourBR: '$8,400–$13,200',
+    },
+    inboundGrowthStat:
+      'Mississippi River jewel · historic architecture · riverfront',
+    peakSeasonNote:
+      'Bluff streets and historic district blocks may require shuttle coordination',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Dubuque in Dubuque County — Mississippi bluff architecture and riverfront inbound market.',
+  },
+  {
+    slug: 'decorah-ia',
+    displayName: 'Decorah',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['winneshiek-ia'],
+    lat: 43.3033,
+    lng: -91.7857,
+    defaultToZip: '52101',
+    topInboundOrigins: ['Minnesota', 'Wisconsin', 'Illinois', 'California'],
+    avgCostRanges: {
+      studio: '$2,100–$4,500',
+      twoBR: '$3,800–$6,600',
+      threeBR: '$5,500–$9,000',
+      fourBR: '$8,000–$12,500',
+    },
+    inboundGrowthStat:
+      'Outdoor favorite · Driftless Region · craft beer & trails',
+    peakSeasonNote:
+      'Rural driveways and Trout Run Trail corridor homes may need long carries',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Decorah in Winneshiek County — Driftless Region outdoor lifestyle and craft-beer culture.',
+  },
+  {
+    slug: 'pella-ia',
+    displayName: 'Pella',
+    stateCode: 'IA',
+    stateName: 'Iowa',
+    primaryCounties: ['marion-ia'],
+    lat: 41.408,
+    lng: -92.9163,
+    defaultToZip: '50219',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Wisconsin', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,500',
+      twoBR: '$3,800–$6,600',
+      threeBR: '$5,500–$9,000',
+      fourBR: '$8,000–$12,500',
+    },
+    inboundGrowthStat:
+      'Dutch treasure · Tulip Time · Vermeer & Pella Windows heritage',
+    peakSeasonNote:
+      'Tulip Time festival season and Molengracht district traffic affect spring scheduling',
+    clusterParent: 'iowa',
+    priority: 34,
+    mapDescription:
+      'Pella in Marion County — Dutch heritage village with Vermeer and Pella Windows corporate roots.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

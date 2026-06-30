@@ -1042,6 +1042,66 @@ export function buildDelawareClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/iowa cluster parent */
+export function buildIowaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const iowaHubs = getClusterMarkets('iowa').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Iowa', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Iowa',
+          addressRegion: 'IA',
+        },
+        mainEntity: { '@id': `${canonical}#iowa-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#iowa-hub-list`,
+        name: 'Iowa City Moving Guides',
+        numberOfItems: iowaHubs.length,
+        itemListElement: iowaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, IA`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/louisiana cluster parent */
 export function buildLouisianaClusterSchemaGraph(
   title: string,
