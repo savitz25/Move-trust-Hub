@@ -1044,7 +1044,32 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
     king: {
       label: 'Moving to Seattle',
       href: '/moving-to/washington/seattle-wa',
-      description: 'King County Puget Sound flagship metro inbound moving guide',
+      description: 'King County Puget Sound Seattle, Bellevue, Redmond, and Sammamish inbound guides',
+    },
+    pierce: {
+      label: 'Moving to Tacoma',
+      href: '/moving-to/washington/tacoma-wa',
+      description: 'Pierce County gritty-chic maritime Tacoma inbound guide',
+    },
+    clark: {
+      label: 'Moving to Vancouver',
+      href: '/moving-to/washington/vancouver-wa',
+      description: 'Clark County Columbia River Vancouver inbound guide',
+    },
+    spokane: {
+      label: 'Moving to Spokane Valley',
+      href: '/moving-to/washington/spokane-valley-wa',
+      description: 'Spokane County Inland Northwest bargain inbound guide',
+    },
+    franklin: {
+      label: 'Moving to Pasco',
+      href: '/moving-to/washington/pasco-wa',
+      description: 'Franklin County Tri-Cities Pasco growth engine inbound guide',
+    },
+    snohomish: {
+      label: 'Moving to Marysville',
+      href: '/moving-to/washington/marysville-wa',
+      description: 'Snohomish County North Sound Marysville inbound guide',
     },
   },
   nevada: {

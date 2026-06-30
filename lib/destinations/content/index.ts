@@ -241,6 +241,15 @@ import { desPlainesIlContent } from '@/lib/destinations/content/des-plaines-il';
 import { skokieIlContent } from '@/lib/destinations/content/skokie-il';
 import { chicagoIlContent } from '@/lib/destinations/content/chicago-il';
 import { seattleWaContent } from '@/lib/destinations/content/seattle-wa';
+import { bellevueWaContent } from '@/lib/destinations/content/bellevue-wa';
+import { redmondWaContent } from '@/lib/destinations/content/redmond-wa';
+import { tacomaWaContent } from '@/lib/destinations/content/tacoma-wa';
+import { vancouverWaContent } from '@/lib/destinations/content/vancouver-wa';
+import { sammamishWaContent } from '@/lib/destinations/content/sammamish-wa';
+import { spokaneValleyWaContent } from '@/lib/destinations/content/spokane-valley-wa';
+import { pascoWaContent } from '@/lib/destinations/content/pasco-wa';
+import { shorelineWaContent } from '@/lib/destinations/content/shoreline-wa';
+import { marysvilleWaContent } from '@/lib/destinations/content/marysville-wa';
 import { johnsCreekGaContent } from '@/lib/destinations/content/johns-creek-ga';
 import { alpharettaGaContent } from '@/lib/destinations/content/alpharetta-ga';
 import { roswellGaContent } from '@/lib/destinations/content/roswell-ga';
@@ -696,6 +705,15 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'skokie-il': skokieIlContent,
   'chicago-il': chicagoIlContent,
   'seattle-wa': seattleWaContent,
+  'bellevue-wa': bellevueWaContent,
+  'redmond-wa': redmondWaContent,
+  'tacoma-wa': tacomaWaContent,
+  'vancouver-wa': vancouverWaContent,
+  'sammamish-wa': sammamishWaContent,
+  'spokane-valley-wa': spokaneValleyWaContent,
+  'pasco-wa': pascoWaContent,
+  'shoreline-wa': shorelineWaContent,
+  'marysville-wa': marysvilleWaContent,
   'johns-creek-ga': johnsCreekGaContent,
   'alpharetta-ga': alpharettaGaContent,
   'roswell-ga': roswellGaContent,

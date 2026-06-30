@@ -1720,13 +1720,13 @@ export const markets: Market[] = [
       fourBR: '$12,000–$19,500',
     },
     inboundGrowthStat:
-      'Puget Sound tech hub · no state income tax · Pacific Northwest outdoor access',
+      'Evergreen State beauty · tech economy · diverse Pacific Northwest regions',
     peakSeasonNote:
       'Hillside shuttle staging and Snoqualmie Pass winter routing may affect Puget Sound delivery windows',
     isClusterParent: true,
-    priority: 10,
+    priority: 46,
     mapDescription:
-      'Washington inbound hub covering Puget Sound flagship metro (Seattle) and King County tech-and-aerospace corridor.',
+      'Washington inbound hub covering Puget Sound, North Sound, and Inland Pacific Northwest corridors.',
   },
   {
     slug: 'seattle-wa',
@@ -1737,7 +1737,7 @@ export const markets: Market[] = [
     lat: 47.6062,
     lng: -122.3321,
     defaultToZip: '98101',
-    topInboundOrigins: ['California', 'Texas', 'Illinois', 'Colorado'],
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
     avgCostRanges: {
       studio: '$2,800–$6,500',
       twoBR: '$5,400–$9,800',
@@ -1745,13 +1745,13 @@ export const markets: Market[] = [
       fourBR: '$12,000–$19,500',
     },
     inboundGrowthStat:
-      'Tech & aerospace hub · Puget Sound · no state income tax · urban neighborhoods',
+      'Resurgent urban core · South Lake Union · Capitol Hill',
     peakSeasonNote:
       'Hillside shuttles, condo COI filings, and I-5 peak congestion common on Seattle deliveries',
     clusterParent: 'washington',
-    priority: 10,
+    priority: 46,
     mapDescription:
-      'Seattle in King County — Pacific Northwest flagship metro with Capitol Hill, Ballard, and South Lake Union corridors.',
+      'Seattle in King County — resurgent urban basecamp with South Lake Union and Capitol Hill corridors.',
   },
   {
     slug: 'oklahoma',
@@ -12176,6 +12176,231 @@ export const markets: Market[] = [
     priority: 45,
     mapDescription:
       'American Fork in Utah County — balanced walkable hybrid with American Fork Canyon adjacency.',
+  },
+  {
+    slug: 'bellevue-wa',
+    displayName: 'Bellevue',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['king-wa'],
+    lat: 47.6101,
+    lng: -122.2015,
+    defaultToZip: '98004',
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,400–$9,800',
+      threeBR: '$8,200–$14,200',
+      fourBR: '$12,000–$19,500',
+    },
+    inboundGrowthStat:
+      'Tech & luxury elite · Bellevue Square · Eastside',
+    peakSeasonNote:
+      'Bellevue Square corridor access and Eastside hillside shuttle constraints affect scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Bellevue in King County — tech and luxury elite Eastside hub around Bellevue Square.',
+  },
+  {
+    slug: 'redmond-wa',
+    displayName: 'Redmond',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['king-wa'],
+    lat: 47.674,
+    lng: -122.1215,
+    defaultToZip: '98052',
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,400–$9,800',
+      threeBR: '$8,200–$14,200',
+      fourBR: '$12,000–$19,500',
+    },
+    inboundGrowthStat:
+      'Innovation hub · Microsoft · Overlake',
+    peakSeasonNote:
+      'Microsoft campus transfer peaks and Overlake corridor access affect Redmond scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Redmond in King County — innovation hub anchored by Microsoft and Overlake corporate culture.',
+  },
+  {
+    slug: 'tacoma-wa',
+    displayName: 'Tacoma',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['pierce-wa'],
+    lat: 47.2529,
+    lng: -122.4443,
+    defaultToZip: '98402',
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,800',
+      threeBR: '$6,400–$11,600',
+      fourBR: '$9,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Gritty-chic maritime choice · Stadium District',
+    peakSeasonNote:
+      'Stadium District access and Ruston Way corridor logistics affect Tacoma scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Tacoma in Pierce County — gritty-chic maritime alternative with Stadium District character.',
+  },
+  {
+    slug: 'vancouver-wa',
+    displayName: 'Vancouver',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['clark-wa'],
+    lat: 45.6387,
+    lng: -122.6615,
+    defaultToZip: '98660',
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$5,000–$9,400',
+      threeBR: '$7,600–$13,600',
+      fourBR: '$11,000–$18,200',
+    },
+    inboundGrowthStat:
+      'Tax-straddling sanctuary · Columbia River',
+    peakSeasonNote:
+      'Columbia River corridor access and Portland spillover closings affect Vancouver scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Vancouver in Clark County — tax-straddling sanctuary along the Columbia River.',
+  },
+  {
+    slug: 'sammamish-wa',
+    displayName: 'Sammamish',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['king-wa'],
+    lat: 47.6163,
+    lng: -122.0356,
+    defaultToZip: '98074',
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,400–$9,800',
+      threeBR: '$8,200–$14,200',
+      fourBR: '$12,000–$19,500',
+    },
+    inboundGrowthStat:
+      'Safe family king · Lake Sammamish',
+    peakSeasonNote:
+      'Lake Sammamish plateau cul-de-sac shuttle constraints affect Sammamish scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Sammamish in King County — safe family king around Lake Sammamish and top-tier schools.',
+  },
+  {
+    slug: 'spokane-valley-wa',
+    displayName: 'Spokane Valley',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['spokane-wa'],
+    lat: 47.6733,
+    lng: -117.2394,
+    defaultToZip: '99206',
+    topInboundOrigins: ['California', 'Oregon', 'Idaho', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,800',
+      threeBR: '$6,400–$11,600',
+      fourBR: '$9,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Inland Northwest bargain · Spokane River',
+    peakSeasonNote:
+      'Spokane River corridor access and Inland Northwest winter routing affect scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Spokane Valley in Spokane County — Inland Northwest bargain along the Spokane River.',
+  },
+  {
+    slug: 'pasco-wa',
+    displayName: 'Pasco (Tri-Cities)',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['franklin-wa'],
+    lat: 46.2396,
+    lng: -119.1006,
+    defaultToZip: '99301',
+    topInboundOrigins: ['California', 'Oregon', 'Idaho', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,500–$6,000',
+      twoBR: '$4,600–$9,200',
+      threeBR: '$6,800–$12,400',
+      fourBR: '$9,800–$17,200',
+    },
+    inboundGrowthStat:
+      'Sun-drenched growth engine · Tri-Cities region',
+    peakSeasonNote:
+      'Tri-Cities energy-transfer peaks and Columbia Basin heat accessorials affect Pasco scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Pasco in Franklin County — sun-drenched Tri-Cities growth engine in eastern Washington.',
+  },
+  {
+    slug: 'shoreline-wa',
+    displayName: 'Shoreline',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['king-wa'],
+    lat: 47.7557,
+    lng: -122.3415,
+    defaultToZip: '98133',
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$5,000–$9,400',
+      threeBR: '$7,600–$13,600',
+      fourBR: '$11,000–$18,200',
+    },
+    inboundGrowthStat:
+      'Transit-oriented gateway · Sound Transit',
+    peakSeasonNote:
+      'Sound Transit corridor access and Richmond Beach shuttle constraints affect Shoreline scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Shoreline in King County — transit-oriented gateway with Sound Transit light rail connectivity.',
+  },
+  {
+    slug: 'marysville-wa',
+    displayName: 'Marysville',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['snohomish-wa'],
+    lat: 48.0518,
+    lng: -122.1771,
+    defaultToZip: '98270',
+    topInboundOrigins: ['California', 'Oregon', 'Texas', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$5,000–$9,400',
+      threeBR: '$7,600–$13,600',
+      fourBR: '$11,000–$18,200',
+    },
+    inboundGrowthStat:
+      'North-Sound expansion outlet · Smokey Point',
+    peakSeasonNote:
+      'Smokey Point builder closing clusters and I-5 North Sound access affect Marysville scheduling',
+    clusterParent: 'washington',
+    priority: 46,
+    mapDescription:
+      'Marysville in Snohomish County — North Sound expansion outlet through Smokey Point growth.',
   },
 ];
 

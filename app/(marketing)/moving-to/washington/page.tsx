@@ -162,10 +162,37 @@ export default function WashingtonClusterPage() {
               Puget Sound — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Seattle — Pacific Northwest tech and aerospace flagship with Capitol Hill, Ballard,
-              South Lake Union, and King County mover coverage.
+              Seattle, Bellevue, Redmond, Tacoma, and Shoreline — resurgent urban core, Eastside tech
+              luxury, Microsoft innovation hub, gritty-chic maritime living, and Sound Transit gateway
+              access.
             </p>
             <CorridorCityGrid cities={content.pugetSoundCorridor} published={published} />
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+              North Sound & Southwest — Live City Guides
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Sammamish, Marysville, and Vancouver — Lake Sammamish family king, Smokey Point North
+              Sound expansion, and Columbia River tax-straddling sanctuary.
+            </p>
+            <CorridorCityGrid cities={content.northSoundCorridor} published={published} />
+          </div>
+        </section>
+
+        <section className="py-12 md:py-16 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
+              Inland Washington — Live City Guides
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Spokane Valley and Pasco (Tri-Cities) — Inland Northwest bargain living and sun-drenched
+              eastern Washington growth corridors.
+            </p>
+            <CorridorCityGrid cities={content.inlandCorridor} published={published} />
           </div>
         </section>
 
