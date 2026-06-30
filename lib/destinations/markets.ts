@@ -11902,6 +11902,281 @@ export const markets: Market[] = [
     mapDescription:
       'Box Elder in Pennington County — booming military corridor adjacent to Ellsworth Air Force Base.',
   },
+  {
+    slug: 'utah',
+    displayName: 'Utah',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: [],
+    lat: 39.5,
+    lng: -111.5,
+    defaultToZip: '84101',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,400–$6,200',
+      twoBR: '$4,400–$9,400',
+      threeBR: '$6,400–$12,800',
+      fourBR: '$9,200–$17,500',
+    },
+    inboundGrowthStat:
+      'Strong economy · Wasatch Range · Silicon Slopes tech corridor',
+    peakSeasonNote:
+      'I-15 summer heat and Wasatch foothill winter access affect Utah delivery scheduling',
+    isClusterParent: true,
+    priority: 45,
+    mapDescription:
+      'Utah inbound hub covering Salt Lake metro, Silicon Slopes, and resort-southern corridors.',
+  },
+  {
+    slug: 'salt-lake-city-ut',
+    displayName: 'Salt Lake City',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['salt-lake-ut'],
+    lat: 40.7608,
+    lng: -111.891,
+    defaultToZip: '84101',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$6,400',
+      twoBR: '$4,800–$9,800',
+      threeBR: '$7,000–$13,200',
+      fourBR: '$10,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Urban basecamp · Sugar House · The Avenues · Wasatch trails',
+    peakSeasonNote:
+      'Downtown loft COI access and Avenues hillside shuttle constraints affect SLC scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Salt Lake City in Salt Lake County — urban basecamp with Sugar House and Wasatch trail access.',
+  },
+  {
+    slug: 'lehi-ut',
+    displayName: 'Lehi',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['utah-ut'],
+    lat: 40.3916,
+    lng: -111.8508,
+    defaultToZip: '84043',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$6,400',
+      twoBR: '$4,800–$9,800',
+      threeBR: '$7,000–$13,200',
+      fourBR: '$10,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Silicon Slopes epicenter · Thanksgiving Point',
+    peakSeasonNote:
+      'Silicon Slopes tech-transfer closings and Thanksgiving Point corridor access affect Lehi scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Lehi in Utah County — Silicon Slopes epicenter around Thanksgiving Point tech culture.',
+  },
+  {
+    slug: 'saratoga-springs-eagle-mountain-ut',
+    displayName: 'Saratoga Springs & Eagle Mountain',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['utah-ut'],
+    lat: 40.3491,
+    lng: -111.9047,
+    defaultToZip: '84045',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,500–$6,000',
+      twoBR: '$4,600–$9,200',
+      threeBR: '$6,800–$12,400',
+      fourBR: '$9,800–$17,200',
+    },
+    inboundGrowthStat:
+      'New-construction giants · Utah Lake views',
+    peakSeasonNote:
+      'Saratoga Springs and Eagle Mountain builder closing clusters affect scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Saratoga Springs and Eagle Mountain in Utah County — new-construction growth with Utah Lake views.',
+  },
+  {
+    slug: 'st-george-ut',
+    displayName: 'St. George',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['washington-ut'],
+    lat: 37.0965,
+    lng: -113.5684,
+    defaultToZip: '84770',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Nevada'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,800',
+      threeBR: '$6,400–$11,600',
+      fourBR: '$9,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Sun-drenched desert oasis · Snow Canyon · Zion gateway',
+    peakSeasonNote:
+      'St. George retirement-corridor peaks and desert heat accessorials affect scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'St. George in Washington County — sun-drenched desert oasis near Snow Canyon and Zion.',
+  },
+  {
+    slug: 'provo-orem-ut',
+    displayName: 'Provo & Orem',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['utah-ut'],
+    lat: 40.2338,
+    lng: -111.6585,
+    defaultToZip: '84601',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$6,400',
+      twoBR: '$4,800–$9,800',
+      threeBR: '$7,000–$13,200',
+      fourBR: '$10,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Brainy valley anchors · BYU · UVU · Mount Timpanogos',
+    peakSeasonNote:
+      'BYU and UVU semester peaks and university-district access affect Provo-Orem scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Provo and Orem in Utah County — brainy valley anchors with BYU and UVU academic energy.',
+  },
+  {
+    slug: 'park-city-ut',
+    displayName: 'Park City',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['summit-ut'],
+    lat: 40.6461,
+    lng: -111.498,
+    defaultToZip: '84060',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'New York'],
+    avgCostRanges: {
+      studio: '$3,000–$7,000',
+      twoBR: '$5,600–$10,800',
+      threeBR: '$8,200–$15,000',
+      fourBR: '$12,000–$20,500',
+    },
+    inboundGrowthStat:
+      'Ultra-luxury alpine resort · Sundance · Deer Valley',
+    peakSeasonNote:
+      'Sundance festival restrictions and Park City mountain-pass winter closures affect scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Park City in Summit County — ultra-luxury alpine resort with Sundance and Deer Valley prestige.',
+  },
+  {
+    slug: 'ogden-ut',
+    displayName: 'Ogden',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['weber-ut'],
+    lat: 41.223,
+    lng: -111.9738,
+    defaultToZip: '84401',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,400–$5,800',
+      twoBR: '$4,400–$8,800',
+      threeBR: '$6,400–$11,600',
+      fourBR: '$9,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Historic budget-friendly alternative · Snowbasin · Powder Mountain',
+    peakSeasonNote:
+      'Historic 25th Street access and northern Wasatch ski-season peaks affect Ogden scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Ogden in Weber County — historic northern alternative with Snowbasin and Powder Mountain access.',
+  },
+  {
+    slug: 'draper-ut',
+    displayName: 'Draper',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['salt-lake-ut'],
+    lat: 40.5247,
+    lng: -111.8638,
+    defaultToZip: '84020',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$6,400',
+      twoBR: '$4,800–$9,800',
+      threeBR: '$7,000–$13,200',
+      fourBR: '$10,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Upscale foothill haven · Flight Park · SunCrest',
+    peakSeasonNote:
+      'SunCrest hillside shuttle constraints and Corner Canyon access affect Draper scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Draper in Salt Lake County — upscale foothill haven with Flight Park and SunCrest inventory.',
+  },
+  {
+    slug: 'farmington-ut',
+    displayName: 'Farmington',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['davis-ut'],
+    lat: 40.9805,
+    lng: -111.8874,
+    defaultToZip: '84025',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$6,400',
+      twoBR: '$4,800–$9,800',
+      threeBR: '$7,000–$13,200',
+      fourBR: '$10,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Davis County jewel · Station Park · FrontRunner rail',
+    peakSeasonNote:
+      'Station Park retail corridor access and FrontRunner rail adjacency affect Farmington scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'Farmington in Davis County — jewel community along Station Park and FrontRunner rail.',
+  },
+  {
+    slug: 'american-fork-ut',
+    displayName: 'American Fork',
+    stateCode: 'UT',
+    stateName: 'Utah',
+    primaryCounties: ['utah-ut'],
+    lat: 40.3769,
+    lng: -111.7958,
+    defaultToZip: '84003',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$6,400',
+      twoBR: '$4,800–$9,800',
+      threeBR: '$7,000–$13,200',
+      fourBR: '$10,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Balanced walkable hybrid · American Fork Canyon',
+    peakSeasonNote:
+      'American Fork Canyon access and downtown walkable corridor logistics affect scheduling',
+    clusterParent: 'utah',
+    priority: 45,
+    mapDescription:
+      'American Fork in Utah County — balanced walkable hybrid with American Fork Canyon adjacency.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

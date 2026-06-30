@@ -1069,6 +1069,38 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Elko County gold-mining corridor inbound guide',
     },
   },
+  utah: {
+    'salt-lake': {
+      label: 'Moving to Salt Lake City',
+      href: '/moving-to/utah/salt-lake-city-ut',
+      description: 'Salt Lake County urban basecamp and Draper foothill inbound guides',
+    },
+    utah: {
+      label: 'Moving to Lehi',
+      href: '/moving-to/utah/lehi-ut',
+      description: 'Utah County Silicon Slopes Lehi, Provo-Orem, and American Fork inbound guides',
+    },
+    davis: {
+      label: 'Moving to Farmington',
+      href: '/moving-to/utah/farmington-ut',
+      description: 'Davis County Station Park and FrontRunner corridor inbound guide',
+    },
+    weber: {
+      label: 'Moving to Ogden',
+      href: '/moving-to/utah/ogden-ut',
+      description: 'Weber County historic northern Wasatch inbound guide',
+    },
+    summit: {
+      label: 'Moving to Park City',
+      href: '/moving-to/utah/park-city-ut',
+      description: 'Summit County ultra-luxury alpine resort inbound guide',
+    },
+    washington: {
+      label: 'Moving to St. George',
+      href: '/moving-to/utah/st-george-ut',
+      description: 'Washington County southern Utah desert oasis inbound guide',
+    },
+  },
   'south-dakota': {
     minnehaha: {
       label: 'Moving to Sioux Falls',

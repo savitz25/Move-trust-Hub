@@ -43,6 +43,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   nv: 'nevada',
   nd: 'north-dakota',
   sd: 'south-dakota',
+  ut: 'utah',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

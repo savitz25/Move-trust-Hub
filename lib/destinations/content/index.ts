@@ -441,6 +441,16 @@ import { teaSdContent } from '@/lib/destinations/content/tea-sd';
 import { watertownSdContent } from '@/lib/destinations/content/watertown-sd';
 import { vermillionSdContent } from '@/lib/destinations/content/vermillion-sd';
 import { boxElderSdContent } from '@/lib/destinations/content/box-elder-sd';
+import { saltLakeCityUtContent } from '@/lib/destinations/content/salt-lake-city-ut';
+import { lehiUtContent } from '@/lib/destinations/content/lehi-ut';
+import { saratogaSpringsEagleMountainUtContent } from '@/lib/destinations/content/saratoga-springs-eagle-mountain-ut';
+import { stGeorgeUtContent } from '@/lib/destinations/content/st-george-ut';
+import { provoOremUtContent } from '@/lib/destinations/content/provo-orem-ut';
+import { parkCityUtContent } from '@/lib/destinations/content/park-city-ut';
+import { ogdenUtContent } from '@/lib/destinations/content/ogden-ut';
+import { draperUtContent } from '@/lib/destinations/content/draper-ut';
+import { farmingtonUtContent } from '@/lib/destinations/content/farmington-ut';
+import { americanForkUtContent } from '@/lib/destinations/content/american-fork-ut';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -886,6 +896,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'watertown-sd': watertownSdContent,
   'vermillion-sd': vermillionSdContent,
   'box-elder-sd': boxElderSdContent,
+  'salt-lake-city-ut': saltLakeCityUtContent,
+  'lehi-ut': lehiUtContent,
+  'saratoga-springs-eagle-mountain-ut': saratogaSpringsEagleMountainUtContent,
+  'st-george-ut': stGeorgeUtContent,
+  'provo-orem-ut': provoOremUtContent,
+  'park-city-ut': parkCityUtContent,
+  'ogden-ut': ogdenUtContent,
+  'draper-ut': draperUtContent,
+  'farmington-ut': farmingtonUtContent,
+  'american-fork-ut': americanForkUtContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -1174,5 +1194,11 @@ export function getPublishedNorthDakotaHubSlugs(): string[] {
 export function getPublishedSouthDakotaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'south-dakota'
+  );
+}
+
+export function getPublishedUtahHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'utah'
   );
 }
