@@ -4,6 +4,7 @@ import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
 import type { MarketMoverEntry } from '@/lib/destinations/get-movers-for-market';
 import { getMarketBySlug } from '@/lib/destinations/markets';
+import { CITY_HUBS_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 const DESTINATION_SERVICE_FRAGMENT = '#destination-moving-service';
 
@@ -112,6 +113,7 @@ export function buildCityHubSchemaGraph(
       description: content.seo.description,
       url: canonical,
       inLanguage: 'en-US',
+      dateModified: CITY_HUBS_CONTENT_UPDATED.toISOString().split('T')[0],
       about: { '@id': `${canonical}#place` },
       mainEntity: { '@id': `${canonical}#faq` },
     },

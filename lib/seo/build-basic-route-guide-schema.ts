@@ -1,4 +1,5 @@
 import { organizationSchema } from '@/lib/seo/schemas';
+import { RESOURCES_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import type { RouteGuide } from '@/lib/resources/routes';
 
@@ -37,7 +38,7 @@ export function buildBasicRouteGuideSchemaGraph(route: RouteGuide, path: string)
         description: route.description,
         url: canonical,
         datePublished: '2026-06-01',
-        dateModified: new Date().toISOString().split('T')[0],
+        dateModified: RESOURCES_CONTENT_UPDATED.toISOString().split('T')[0],
         author: {
           '@type': 'Organization',
           name: 'Move Trust Hub',

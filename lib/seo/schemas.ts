@@ -123,6 +123,45 @@ export function buildHomepageSchemaGraph() {
   };
 }
 
+export function buildAboutPageSchemaGraph() {
+  const aboutUrl = `${SITE_URL}/about`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'AboutPage',
+        '@id': `${aboutUrl}#webpage`,
+        url: aboutUrl,
+        name: 'About Move Trust Hub & Trust Center',
+        description:
+          'Our mission, how we calculate reputation scores, data sources, tools we offer, and important disclaimers.',
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        about: { '@id': `${SITE_URL}/#organization` },
+        inLanguage: 'en-US',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${aboutUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'About',
+            item: aboutUrl,
+          },
+        ],
+      },
+    ],
+  };
+}
+
 export function buildCalculatorSchemaGraph() {
   return {
     '@context': 'https://schema.org',

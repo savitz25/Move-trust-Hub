@@ -16,6 +16,7 @@ import {
   RESOURCES_CONTENT_UPDATED,
 } from '@/lib/seo/content-dates';
 import { getMovingCompanySlugsForSitemap } from '@/lib/reviews/bridge';
+import { getCityHubSitemapPriority } from '@/lib/seo/sitemap-priority';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -24,12 +25,18 @@ const PRIORITY_ROUTE_SLUGS = new Set([
   'california-to-texas',
   'california-to-florida',
   'california-to-arizona',
+  'california-to-new-york',
   'new-york-to-texas',
+  'new-york-to-florida',
+  'new-york-to-myrtle-beach',
+  'florida-to-new-york',
   'new-jersey-to-florida',
   'new-jersey-to-texas',
   'pennsylvania-to-florida',
   'massachusetts-to-florida',
   'illinois-to-texas',
+  'texas-to-california',
+  'east-coast-to-west-coast',
   'los-angeles-to-dallas-fort-worth',
   'san-francisco-to-austin',
   'san-diego-to-houston',
@@ -124,7 +131,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE}${getMarketPath(market)}`,
       lastModified: CITY_HUBS_CONTENT_UPDATED,
       changeFrequency: 'weekly' as const,
-      priority: 0.95,
+      priority: getCityHubSitemapPriority(market.priority),
     }));
 
   const autoTransportPages = autoTransportCompanies.map((company) => ({

@@ -1,3 +1,5 @@
+import { getAutoDestinationHubLinkForCounty } from '@/lib/destinations/hub-county-linking';
+
 /** Bidirectional county ↔ destination hub links for internal linking SEO */
 
 export type DestinationHubLink = {
@@ -1436,7 +1438,11 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
 
 export function getDestinationHubLinkForCounty(
   stateSlug: string,
-  countySlug: string
+  countySlug: string,
+  countyLabel?: string
 ): DestinationHubLink | undefined {
-  return COUNTY_DESTINATION_HUBS[stateSlug]?.[countySlug];
+  return (
+    COUNTY_DESTINATION_HUBS[stateSlug]?.[countySlug] ??
+    getAutoDestinationHubLinkForCounty(stateSlug, countySlug, countyLabel)
+  );
 }

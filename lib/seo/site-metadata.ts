@@ -6,7 +6,7 @@ export const SITE_NAME = 'Move Trust Hub';
 export const HOMEPAGE_TITLE =
   'Free Moving Quotes (2026) | Compare FMCSA-Licensed Interstate Movers';
 export const HOMEPAGE_DESCRIPTION =
-  'Get instant moving quotes from trusted, licensed long-distance movers. Compare prices, reviews & FMCSA ratings. Save time and money on your move.';
+  'Compare FMCSA-licensed interstate movers by attributable reviews, pricing, and safety ratings. Free moving calculator, 480+ city guides, and county directories. Get matched with 2–3 quotes in 24 hours.';
 
 export const DEFAULT_SITE_DESCRIPTION =
   'Compare FMCSA-licensed interstate movers by reviews, pricing, and reputation. Get free moving quotes and research trusted long-distance carriers at Move Trust Hub.';

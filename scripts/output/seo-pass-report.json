@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-06-30T19:08:23.073Z",
+  "summary": {
+    "publishedCityHubs": 480,
+    "stateClusterHubs": 49,
+    "totalMarketsDefined": 529,
+    "routeGuidesTotal": 49,
+    "extendedRouteGuides": 49,
+    "handWrittenExtended": 43,
+    "syntheticExtended": 6,
+    "basicThinRoutes": 0
+  },
+  "contentDates": {
+    "cityHubs": "2026-06-29",
+    "clusters": "2026-06-29",
+    "resources": "2026-06-29"
+  },
+  "internalLinking": {
+    "autoCountyToHubMappings": 375,
+    "countiesWithDestinationHubLink": 386,
+    "manualHubLinkOverrides": 37,
+    "autoHubLinkFallbacks": 349
+  },
+  "countyIndexability": {
+    "indexable": 110,
+    "noindex": 3033,
+    "total": 3143
+  },
+  "sitemap": {
+    "hubPriorityTiers": {
+      "p1": 12,
+      "p2": 14,
+      "p3": 10,
+      "p4": 10,
+      "p40": 10,
+      "p5": 7,
+      "p6": 8,
+      "p7": 6,
+      "p8": 7,
+      "p9": 10,
+      "p10": 11,
+      "p11": 10,
+      "p12": 8,
+      "p13": 8,
+      "p14": 9,
+      "p15": 10,
+      "p16": 10,
+      "p17": 10,
+      "p18": 10,
+      "p19": 10,
+      "p20": 10,
+      "p21": 10,
+      "p22": 10,
+      "p23": 10,
+      "p24": 20,
+      "p46": 10,
+      "p25": 10,
+      "p26": 10,
+      "p27": 10,
+      "p28": 10,
+      "p30": 10,
+      "p29": 10,
+      "p32": 10,
+      "p31": 10,
+      "p33": 10,
+      "p34": 10,
+      "p35": 10,
+      "p36": 10,
+      "p37": 10,
+      "p38": 10,
+      "p39": 10,
+      "p41": 10,
+      "p42": 10,
+      "p43": 10,
+      "p44": 10,
+      "p45": 10,
+      "p47": 10,
+      "p48": 10
+    },
+    "samplePriorities": {
+      "priority1": 0.95,
+      "priority2": 0.92,
+      "priority3": 0.89,
+      "priority4": 0.86,
+      "priority5": 0.83
+    }
+  },
+  "recommendations": {
+    "topPriorityCityHubs": [
+      {
+        "slug": "myrtle-beach-sc",
+        "displayName": "Myrtle Beach",
+        "priority": 1
+      },
+      {
+        "slug": "north-myrtle-beach",
+        "displayName": "North Myrtle Beach",
+        "priority": 1
+      },
+      {
+        "slug": "surfside-beach",
+        "displayName": "Surfside Beach",
+        "priority": 1
+      },
+      {
+        "slug": "atlantic-beach",
+        "displayName": "Atlantic Beach",
+        "priority": 1
+      },
+      {
+        "slug": "garden-city-beach",
+        "displayName": "Garden City Beach",
+        "priority": 1
+      },
+      {
+        "slug": "little-river",
+        "displayName": "Little River",
+        "priority": 1
+      },
+      {
+        "slug": "murrells-inlet",
+        "displayName": "Murrells Inlet",
+        "priority": 1
+      },
+      {
+        "slug": "socastee",
+        "displayName": "Socastee",
+        "priority": 1
+      },
+      {
+        "slug": "carolina-forest",
+        "displayName": "Carolina Forest",
+        "priority": 1
+      },
+      {
+        "slug": "greenville-sc",
+        "displayName": "Greenville",
+        "priority": 1
+      },
+      {
+        "slug": "spartanburg-sc",
+        "displayName": "Spartanburg",
+        "priority": 1
+      },
+      {
+        "slug": "hilton-head-sc",
+        "displayName": "Hilton Head",
+        "priority": 1
+      },
+      {
+        "slug": "boca-raton",
+        "displayName": "Boca Raton",
+        "priority": 2
+      },
+      {
+        "slug": "deerfield-beach",
+        "displayName": "Deerfield Beach",
+        "priority": 2
+      },
+      {
+        "slug": "boynton-beach",
+        "displayName": "Boynton Beach",
+        "priority": 2
+      }
+    ],
+    "routesToExpandNext": [],
+    "syntheticRoutesNeedingHandContent": [
+      "new-york-to-florida",
+      "california-to-new-york",
+      "florida-to-new-york",
+      "texas-to-california",
+      "east-coast-to-west-coast",
+      "new-york-to-myrtle-beach"
+    ]
+  },
+  "improvementsApplied": [
+    "Auto county→city hub linking via primaryCounties",
+    "Data-driven route suggestions on city hubs and county pages",
+    "Synthetic extended content for 6 high-intent corridor routes",
+    "Tiered city hub sitemap priorities by market.priority",
+    "Unified Reputation Score methodology (E-E-A-T)",
+    "Stable schema dateModified on city hubs and route guides",
+    "About page metadata + AboutPage/BreadcrumbList schema"
+  ]
+}

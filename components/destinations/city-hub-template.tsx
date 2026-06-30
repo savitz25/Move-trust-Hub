@@ -13,6 +13,8 @@ import {
   getMarketCountyDirectoryLinks,
   getMarketMoversDirectoryHref,
 } from '@/lib/destinations/market-paths';
+import { mergeHubRouteLinks } from '@/lib/destinations/hub-route-linking';
+import { CITY_HUBS_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { getMarketBySlug } from '@/lib/destinations/markets';
 import { GrandStrandHubGrid } from '@/components/destinations/grand-strand-hub-grid';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
@@ -46,6 +48,8 @@ export async function CityHubTemplate({ market, content }: Props) {
     content.seo.canonicalPath
   );
   const countyDirectoryLinks = getMarketCountyDirectoryLinks(market);
+  const routeLinks = mergeHubRouteLinks(content.routeLinks, market, 6);
+  const contentUpdatedLabel = CITY_HUBS_CONTENT_UPDATED.toISOString().slice(0, 10);
 
   const countyLabels = market.primaryCounties.map((key) => {
     const parts = key.split('-');
@@ -77,7 +81,7 @@ export async function CityHubTemplate({ market, content }: Props) {
 
           <div className="inline-flex items-center gap-2 rounded-full border bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
             <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-            Popular Destination · Updated 2026
+            Popular Destination · Updated {contentUpdatedLabel}
           </div>
 
           <h1
@@ -150,7 +154,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                   Popular Routes to {market.displayName}
                 </h3>
                 <ul className="space-y-2" role="list">
-                  {content.routeLinks.map((route) => (
+                  {routeLinks.map((route) => (
                     <li key={route.href}>
                       <Link
                         href={route.href}

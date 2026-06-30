@@ -1,50 +1,47 @@
 import Link from 'next/link';
-import { Shield, Award, Users, BarChart3, Clock, AlertTriangle, ArrowRight, CheckCircle, Target, Zap } from 'lucide-react';
+import {
+  Shield,
+  Award,
+  Users,
+  BarChart3,
+  Clock,
+  AlertTriangle,
+  ArrowRight,
+  Target,
+  Zap,
+  TrendingUp,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
+import { buildAboutPageSchemaGraph } from '@/lib/seo/schemas';
+import {
+  REPUTATION_SCORE_FACTORS,
+  REPUTATION_SCORE_THRESHOLD,
+} from '@/lib/trust/reputation-score-factors';
 
-export const metadata = {
-  title: 'About Move Trust Hub & Trust Center',
-  description: 'Our mission, how we calculate reputation scores, data sources, tools we offer, and important disclaimers.',
+export const metadata = buildResourceMetadata(
+  '/about',
+  'About Move Trust Hub & Trust Center (2026)',
+  'Our mission, how we calculate reputation scores, FMCSA data sources, free moving tools, and important disclaimers. Independent directory — no paid placements or commissions.'
+);
+
+const FACTOR_ICONS: Record<(typeof REPUTATION_SCORE_FACTORS)[number]['id'], LucideIcon> = {
+  reviews: BarChart3,
+  fmcsa: Shield,
+  longevity: Clock,
+  bbb: Award,
+  trend: TrendingUp,
 };
-
-const reputationFactors = [
-  {
-    icon: BarChart3,
-    title: 'Customer Rating',
-    weight: '40%',
-    desc: 'Weighted average across Google, BBB, Trustpilot and other platforms. We prioritize recent reviews.',
-  },
-  {
-    icon: Users,
-    title: 'Review Volume & Recency',
-    weight: '20%',
-    desc: 'More reviews = more confidence. We give extra weight to reviews from the last 24 months.',
-  },
-  {
-    icon: Shield,
-    title: 'FMCSA Compliance',
-    weight: '20%',
-    desc: 'Complaint ratio (complaints per 1,000 shipments) and safety rating. Lower is better.',
-  },
-  {
-    icon: Award,
-    title: 'BBB & Accreditation',
-    weight: '10%',
-    desc: 'BBB letter grade + accreditation status. A+ accredited companies score higher.',
-  },
-  {
-    icon: Clock,
-    title: 'Years in Business + Verification',
-    weight: '10%',
-    desc: 'Longevity bonus + our manual verification for accuracy and legitimacy.',
-  },
-];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
+      <JsonLd data={buildAboutPageSchemaGraph()} />
+
       {/* Hero */}
       <div className="border-b bg-muted/30">
         <div className="container mx-auto px-4 py-16 max-w-5xl">
@@ -83,7 +80,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-4xl font-semibold tracking-tight mb-6">Transparency in an opaque industry</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                The long-distance moving and auto transport industries are full of hidden fees, unreliable carriers, and hard-to-compare options. We aggregate FMCSA, BBB, and real customer reviews into clean, filterable directories so you can make confident decisions without the guesswork.
+                The long-distance moving and auto transport industries are full of hidden fees, unreliable carriers, and hard-to-compare options. We aggregate FMCSA, BBB, and attributable customer reviews into clean, filterable directories so you can make confident decisions without the guesswork.
               </p>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 We also built free tools like the Smart Move Estimator (volume + weight) and instant quote matching to remove friction from the process.
@@ -102,7 +99,7 @@ export default function AboutPage() {
                   <div className="mt-1 text-primary"><Shield className="h-6 w-6" /></div>
                   <div>
                     <div className="font-semibold mb-1">Real, aggregated data</div>
-                    <p className="text-sm text-muted-foreground">FMCSA safety ratings, complaint ratios, BBB, and verified reviews.</p>
+                    <p className="text-sm text-muted-foreground">FMCSA safety ratings, complaint ratios, BBB, and attributable reviews only.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -123,15 +120,16 @@ export default function AboutPage() {
             <div className="uppercase tracking-[2px] text-xs text-primary font-semibold mb-3">The Trust Engine</div>
             <h2 className="text-4xl font-semibold tracking-tight mb-3">How We Calculate Reputation Scores</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A transparent, weighted formula that rewards real performance over marketing.
+              A transparent, weighted formula that rewards real performance over marketing. Scores above{' '}
+              <strong className="text-foreground">{REPUTATION_SCORE_THRESHOLD}</strong> generally indicate safer interstate choices.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reputationFactors.map((factor, index) => {
-              const Icon = factor.icon;
+            {REPUTATION_SCORE_FACTORS.map((factor) => {
+              const Icon = FACTOR_ICONS[factor.id];
               return (
-                <Card key={index} className="group hover:border-primary/40 transition-colors">
+                <Card key={factor.id} className="group hover:border-primary/40 transition-colors">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between">
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary/15 transition-colors">
@@ -139,10 +137,10 @@ export default function AboutPage() {
                       </div>
                       <Badge variant="secondary" className="font-mono text-xs">{factor.weight}</Badge>
                     </div>
-                    <CardTitle className="text-xl mt-4">{factor.title}</CardTitle>
+                    <CardTitle className="text-xl mt-4">{factor.label}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{factor.desc}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{factor.detail}</p>
                   </CardContent>
                 </Card>
               );
@@ -150,7 +148,10 @@ export default function AboutPage() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-6 max-w-md mx-auto">
-            Scores are recalculated regularly. Higher reputation score = stronger overall track record.
+            Scores are recalculated regularly. We never fabricate reviews or inflate ratings.{' '}
+            <Link href="/resources/how-to-choose#reputation-score" className="text-primary hover:underline">
+              Full methodology
+            </Link>
           </p>
         </section>
 
@@ -199,7 +200,7 @@ export default function AboutPage() {
                 <ul className="space-y-1 text-muted-foreground">
                   <li>• FMCSA (USDOT &amp; MC numbers, safety ratings, complaints)</li>
                   <li>• BBB (ratings &amp; accreditation)</li>
-                  <li>• Google, Trustpilot, Yelp reviews</li>
+                  <li>• Attributable Google reviews (named reviewers only)</li>
                 </ul>
               </div>
               <div>
@@ -211,7 +212,7 @@ export default function AboutPage() {
                 </ul>
               </div>
               <div>
-                <div className="font-medium mb-2">What We Don't Do</div>
+                <div className="font-medium mb-2">What We Don&apos;t Do</div>
                 <ul className="space-y-1 text-muted-foreground">
                   <li>• We are not movers or brokers</li>
                   <li>• We do not take deposits or book moves</li>

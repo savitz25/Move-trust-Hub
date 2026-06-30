@@ -1,38 +1,14 @@
 import Link from 'next/link';
 import { BarChart3, ShieldCheck, Star, Scale } from 'lucide-react';
+import {
+  REPUTATION_SCORE_FACTORS,
+  REPUTATION_SCORE_THRESHOLD,
+} from '@/lib/trust/reputation-score-factors';
 
 type Props = {
   className?: string;
   compact?: boolean;
 };
-
-const SCORE_FACTORS = [
-  {
-    label: 'Review volume & recency',
-    weight: '30%',
-    detail: 'Named Google reviews with enough volume to be statistically meaningful.',
-  },
-  {
-    label: 'FMCSA safety & complaints',
-    weight: '25%',
-    detail: 'USDOT authority status, safety rating, and complaint-to-shipment ratio.',
-  },
-  {
-    label: 'Years in business',
-    weight: '15%',
-    detail: 'Operating history and stability for interstate household goods moves.',
-  },
-  {
-    label: 'BBB accreditation',
-    weight: '15%',
-    detail: 'Accreditation status and letter grade where publicly available.',
-  },
-  {
-    label: 'Customer trend signals',
-    weight: '15%',
-    detail: 'Recent rating trajectory and consistency across review sources.',
-  },
-] as const;
 
 /**
  * Visible E-E-A-T explainer for the 0–100 Reputation Score methodology.
@@ -52,16 +28,17 @@ export function HowWeScorePanel({ className = '', compact = false }: Props) {
             How We Score Movers (0–100)
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed mt-1">
-            Our Reputation Score is an editorial composite — not a star average. Scores above{' '}
-            <strong className="text-foreground">85</strong> generally indicate safer interstate
-            choices. We never fabricate reviews or inflate ratings.
+            Our Reputation Score is an editorial composite (0–100) — not a simple star average.
+            Scores above{' '}
+            <strong className="text-foreground">{REPUTATION_SCORE_THRESHOLD}</strong> generally
+            indicate safer interstate choices. We never fabricate reviews or inflate ratings.
           </p>
         </div>
       </div>
 
       {!compact && (
         <ul className="space-y-3 mb-4" role="list">
-          {SCORE_FACTORS.map((factor) => (
+          {REPUTATION_SCORE_FACTORS.map((factor) => (
             <li
               key={factor.label}
               className="flex items-start gap-3 rounded-xl border bg-muted/20 px-4 py-3 text-sm"

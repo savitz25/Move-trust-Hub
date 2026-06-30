@@ -1,3 +1,8 @@
+import { getRouteGuide, routeGuides } from '@/lib/resources/routes';
+import {
+  buildSyntheticExtendedRoute,
+  isSyntheticExtendedRoute,
+} from '@/lib/resources/routes/build-synthetic-extended';
 import type { RouteGuideExtendedContent } from '@/lib/resources/routes/types';
 import { californiaToArizonaContent } from '@/lib/resources/routes/california-to-arizona';
 import { californiaToFloridaContent } from '@/lib/resources/routes/california-to-florida';
@@ -90,9 +95,18 @@ const extendedRouteGuides: Record<string, RouteGuideExtendedContent> = {
 };
 
 export function getExtendedRouteGuide(slug: string): RouteGuideExtendedContent | undefined {
-  return extendedRouteGuides[slug];
+  if (extendedRouteGuides[slug]) {
+    return extendedRouteGuides[slug];
+  }
+  if (!isSyntheticExtendedRoute(slug)) return undefined;
+  const route = getRouteGuide(slug);
+  if (!route) return undefined;
+  return buildSyntheticExtendedRoute(route);
 }
 
 export function getExtendedRouteSlugs(): string[] {
-  return Object.keys(extendedRouteGuides);
+  const synthetic = routeGuides
+    .map((r) => r.slug)
+    .filter((slug) => isSyntheticExtendedRoute(slug) && !extendedRouteGuides[slug]);
+  return [...Object.keys(extendedRouteGuides), ...synthetic];
 }
