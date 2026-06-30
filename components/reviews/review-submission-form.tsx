@@ -226,8 +226,8 @@ export function ReviewSubmissionForm({
       <p className="text-xs text-muted-foreground leading-relaxed">
         By submitting, you confirm this review reflects your genuine experience. All
         reviews are moderated before publication. We never sell your email. See our{' '}
-        <Link href="/about#disclaimer" className="underline">
-          disclaimer
+        <Link href="/privacy-policy" className="underline">
+          Privacy Policy
         </Link>
         .
       </p>

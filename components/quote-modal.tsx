@@ -568,6 +568,17 @@ export function QuoteModal({ open, onOpenChange, prefilledData = {} }: QuoteModa
               <div className="text-center text-xs text-muted-foreground">
                 100% free • No obligation • We only work with licensed, highly-rated movers
               </div>
+              <p className="text-center text-[10px] text-muted-foreground">
+                By submitting, you agree to our{' '}
+                <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground">
+                  Privacy Policy
+                </Link>{' '}
+                and{' '}
+                <Link href="/terms-of-service" className="underline underline-offset-2 hover:text-foreground">
+                  Terms of Service
+                </Link>
+                . We share your move details with matched licensed carriers so they can contact you.
+              </p>
 
               <div className="flex items-center justify-center gap-4 text-[10px] text-muted-foreground pt-1">
                 <div className="flex items-center gap-1">✓ Instant matching</div>

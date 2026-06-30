@@ -84,7 +84,7 @@ export default function AdminDashboard() {
         <div>
           <h1 className="text-3xl font-semibold">Admin Dashboard</h1>
           <p className="text-sm text-muted-foreground">
-            Company editor (session cache). View live quote analytics on the quotes dashboard.
+            Internal company editor. View live quote analytics on the quotes dashboard.
           </p>
         </div>
         <div className="flex gap-2">
@@ -114,7 +114,7 @@ export default function AdminDashboard() {
             <Button onClick={save}>Save Company</Button>
             <Button variant="outline" onClick={() => setEditing(null)}>Cancel</Button>
           </div>
-          <p className="text-[10px] text-muted-foreground mt-3">For full production use Supabase + proper auth + image upload for logos.</p>
+          <p className="text-[10px] text-muted-foreground mt-3">Admin-only editor. Changes sync to the live directory when saved.</p>
         </Card>
       )}
 
@@ -146,7 +146,7 @@ export default function AdminDashboard() {
           </tbody>
         </table>
       </div>
-      <p className="text-xs mt-4 text-muted-foreground">In production, connect proper Supabase RLS + admin auth (Clerk/Auth.js) and move this behind /admin/login.</p>
+      <p className="text-xs mt-4 text-muted-foreground">Protected by admin login. Review moderation at /admin/reviews.</p>
     </div>
   );
 }

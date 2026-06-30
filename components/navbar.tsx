@@ -26,7 +26,8 @@ export function Navbar() {
     { href: '/review', label: 'Reviews' },
     { href: '/compare', label: 'Compare' },
     { href: '/resources', label: 'Resources' },
-    { href: '/about', label: 'About & Trust' },
+    { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (

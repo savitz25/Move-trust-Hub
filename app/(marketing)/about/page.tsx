@@ -259,7 +259,14 @@ export default function AboutPage() {
               <Button size="lg" variant="ghost">Contact Us</Button>
             </Link>
           </div>
-          <p className="text-xs text-muted-foreground mt-6">Questions? We’re happy to help clarify how the directories or estimator work.</p>
+          <p className="text-xs text-muted-foreground mt-6">
+            Questions?{' '}
+            <Link href="/contact" className="text-primary underline underline-offset-2">Contact us</Link>
+            {' · '}
+            <Link href="/privacy-policy" className="text-primary underline underline-offset-2">Privacy</Link>
+            {' · '}
+            <Link href="/terms-of-service" className="text-primary underline underline-offset-2">Terms</Link>
+          </p>
         </section>
       </div>
     </div>

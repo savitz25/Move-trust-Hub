@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { TrustBadges } from '@/components/trust/trust-badges';
+import { SITE_EMAIL } from '@/lib/contact';
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -64,11 +65,13 @@ export function Footer() {
           </div>
 
           <div>
-            <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">COMPANY</div>
+            <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">COMPANY &amp; LEGAL</div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
               <div><Link prefetch={false} href="/about" className="hover:text-foreground transition-colors">About Us</Link></div>
-              <div><Link prefetch={false} href="/about#disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></div>
               <div><Link prefetch={false} href="/contact" className="hover:text-foreground transition-colors">Contact</Link></div>
+              <div><Link prefetch={false} href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></div>
+              <div><Link prefetch={false} href="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link></div>
+              <div><Link prefetch={false} href="/about#disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></div>
               <div><Link prefetch={false} href="/verify-dot" className="hover:text-foreground transition-colors">DOT Lookup Tool</Link></div>
               <div><a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener" className="hover:text-foreground transition-colors">FMCSA.gov ↗</a></div>
             </div>
@@ -77,7 +80,12 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1 text-sm text-muted-foreground">
             <div className="font-semibold text-foreground mb-2 text-xs tracking-widest text-muted-foreground/80">TRUST &amp; TRANSPARENCY</div>
             <p className="leading-snug text-[13px]">
-              Data from FMCSA, BBB, Google, Trustpilot &amp; disclosures. <strong>Not affiliated</strong> with any mover.
+              Independent directory — <strong>not affiliated</strong> with listed movers. FMCSA, BBB, and review data for research only.
+            </p>
+            <p className="mt-2.5 text-[13px]">
+              <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground transition-colors">
+                {SITE_EMAIL}
+              </a>
             </p>
             <div className="mt-3 text-[11px] text-muted-foreground/70">
               © {year} Move Trust Hub
