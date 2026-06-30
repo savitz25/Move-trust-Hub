@@ -8052,6 +8052,281 @@ export const markets: Market[] = [
     mapDescription:
       'Lihue on Kauaʻi — Garden Isle commercial capital with dramatic natural beauty access.',
   },
+  {
+    slug: 'colorado',
+    displayName: 'Colorado',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: [],
+    lat: 39.0,
+    lng: -105.5,
+    defaultToZip: '80202',
+    topInboundOrigins: ['California', 'Texas', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,800',
+      fourBR: '$10,800–$17,500',
+    },
+    inboundGrowthStat:
+      'Front Range jobs · outdoor lifestyle · Denver to Pikes Peak corridor',
+    peakSeasonNote:
+      'Summer I-25/I-70 peak and winter mountain-pass delays affect delivery windows — book early',
+    isClusterParent: true,
+    priority: 31,
+    mapDescription:
+      'Colorado inbound hub covering Denver metro, south-metro Douglas County growth, Boulder–Longmont corridor, Colorado Springs, and Pueblo affordability markets.',
+  },
+  {
+    slug: 'denver-co',
+    displayName: 'Denver',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['denver-co', 'jefferson-co', 'arapahoe-co'],
+    lat: 39.7392,
+    lng: -104.9903,
+    defaultToZip: '80202',
+    topInboundOrigins: ['California', 'Texas', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,200–$6,500',
+      twoBR: '$5,800–$9,800',
+      threeBR: '$8,500–$13,500',
+      fourBR: '$12,000–$18,500',
+    },
+    inboundGrowthStat:
+      'State economic engine · RiNo & Capitol Hill · corporate & tech inbound',
+    peakSeasonNote:
+      'LoDo high-rises and RiNo loft conversions require COI and elevator reservations',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Denver and Denver County with Jefferson and Arapahoe county spillover for greater metro relocations.',
+  },
+  {
+    slug: 'colorado-springs-co',
+    displayName: 'Colorado Springs',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['el-paso-co'],
+    lat: 38.8339,
+    lng: -104.8214,
+    defaultToZip: '80903',
+    topInboundOrigins: ['California', 'Texas', 'Florida', 'New York'],
+    avgCostRanges: {
+      studio: '$2,900–$6,000',
+      twoBR: '$5,400–$9,200',
+      threeBR: '$7,900–$12,600',
+      fourBR: '$11,200–$17,200',
+    },
+    inboundGrowthStat:
+      'Pikes Peak views · military & aerospace · Garden of the Gods lifestyle',
+    peakSeasonNote:
+      'Foothill grades and Briargate HOA scheduling may require shuttle planning',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Colorado Springs in El Paso County — Pikes Peak corridor with military and aerospace employment.',
+  },
+  {
+    slug: 'fort-collins-co',
+    displayName: 'Fort Collins',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['larimer-co'],
+    lat: 40.5853,
+    lng: -105.0844,
+    defaultToZip: '80521',
+    topInboundOrigins: ['California', 'Texas', 'Colorado', 'Illinois'],
+    avgCostRanges: {
+      studio: '$3,000–$6,200',
+      twoBR: '$5,600–$9,400',
+      threeBR: '$8,200–$12,800',
+      fourBR: '$11,600–$17,500',
+    },
+    inboundGrowthStat:
+      'CSU college town · craft beer capital · bike-friendly Old Town',
+    peakSeasonNote:
+      'University turnover peaks May–August; Horsetooth foothill driveways may need shuttles',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Fort Collins in Larimer County — northern Front Range college town with craft-beer and outdoor culture.',
+  },
+  {
+    slug: 'boulder-co',
+    displayName: 'Boulder',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['boulder-co'],
+    lat: 40.015,
+    lng: -105.2705,
+    defaultToZip: '80302',
+    topInboundOrigins: ['California', 'New York', 'Texas', 'Washington'],
+    avgCostRanges: {
+      studio: '$3,400–$6,800',
+      twoBR: '$6,200–$10,200',
+      threeBR: '$9,000–$14,200',
+      fourBR: '$12,800–$19,500',
+    },
+    inboundGrowthStat:
+      'Flatirons backdrop · tech startups · progressive outdoor lifestyle',
+    peakSeasonNote:
+      'Pearl Street and University Hill narrow streets often require shuttle trucks',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Boulder in Boulder County — premium Flatirons market with tech and university inbound demand.',
+  },
+  {
+    slug: 'castle-rock-co',
+    displayName: 'Castle Rock',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['douglas-co'],
+    lat: 39.3722,
+    lng: -104.8561,
+    defaultToZip: '80104',
+    topInboundOrigins: ['California', 'Texas', 'Illinois', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,100–$6,300',
+      twoBR: '$5,700–$9,500',
+      threeBR: '$8,300–$13,000',
+      fourBR: '$11,800–$17,800',
+    },
+    inboundGrowthStat:
+      'Safe family suburb · master-planned · I-25 Denver–Springs midpoint',
+    peakSeasonNote:
+      'The Meadows and Terrain HOA move-day rules require advance scheduling',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Castle Rock in Douglas County — south-metro master-planned family growth between Denver and Colorado Springs.',
+  },
+  {
+    slug: 'centennial-co',
+    displayName: 'Centennial',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['arapahoe-co'],
+    lat: 39.5807,
+    lng: -104.8772,
+    defaultToZip: '80112',
+    topInboundOrigins: ['California', 'Texas', 'New York', 'Illinois'],
+    avgCostRanges: {
+      studio: '$3,100–$6,400',
+      twoBR: '$5,800–$9,600',
+      threeBR: '$8,400–$13,200',
+      fourBR: '$12,000–$18,000',
+    },
+    inboundGrowthStat:
+      'Top-rated schools · DTC proximity · Willow Creek family neighborhoods',
+    peakSeasonNote:
+      'Denver Tech Center corridor traffic peaks weekday mornings — plan delivery windows',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Centennial in Arapahoe County — DTC-adjacent suburban relocations with strong school districts.',
+  },
+  {
+    slug: 'parker-co',
+    displayName: 'Parker',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['douglas-co'],
+    lat: 39.5186,
+    lng: -104.7614,
+    defaultToZip: '80134',
+    topInboundOrigins: ['California', 'Texas', 'Illinois', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,100–$6,300',
+      twoBR: '$5,700–$9,500',
+      threeBR: '$8,300–$13,000',
+      fourBR: '$11,800–$17,800',
+    },
+    inboundGrowthStat:
+      'Upscale commuter haven · charming Mainstreet · top Douglas County schools',
+    peakSeasonNote:
+      'Stonegate and Pinery gated communities may restrict weekend move windows',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Parker in Douglas County — upscale south-metro commuter community with Mainstreet charm.',
+  },
+  {
+    slug: 'arvada-co',
+    displayName: 'Arvada',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['jefferson-co', 'adams-co'],
+    lat: 39.8028,
+    lng: -105.0875,
+    defaultToZip: '80002',
+    topInboundOrigins: ['California', 'Texas', 'Illinois', 'Florida'],
+    avgCostRanges: {
+      studio: '$3,100–$6,400',
+      twoBR: '$5,800–$9,600',
+      threeBR: '$8,400–$13,200',
+      fourBR: '$12,000–$18,000',
+    },
+    inboundGrowthStat:
+      'Olde Town charm · G-Line RTD · foothills trail access',
+    peakSeasonNote:
+      'Olde Town event weekends and Ralston Road traffic can affect delivery scheduling',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Arvada spanning Jefferson and Adams counties — Olde Town and foothills-west metro relocations.',
+  },
+  {
+    slug: 'longmont-co',
+    displayName: 'Longmont',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['boulder-co', 'weld-co'],
+    lat: 40.1672,
+    lng: -105.1019,
+    defaultToZip: '80501',
+    topInboundOrigins: ['California', 'Texas', 'Colorado', 'Washington'],
+    avgCostRanges: {
+      studio: '$2,900–$6,000',
+      twoBR: '$5,400–$9,000',
+      threeBR: '$7,900–$12,400',
+      fourBR: '$11,200–$16,800',
+    },
+    inboundGrowthStat:
+      'NextLight fiber · craft breweries · affordable Boulder alternative',
+    peakSeasonNote:
+      'Historic downtown and St. Vrain corridor narrow streets may need shuttle trucks',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Longmont in Boulder and Weld counties — northern Front Range affordability with brewery-district culture.',
+  },
+  {
+    slug: 'pueblo-co',
+    displayName: 'Pueblo',
+    stateCode: 'CO',
+    stateName: 'Colorado',
+    primaryCounties: ['pueblo-co'],
+    lat: 38.2544,
+    lng: -104.6091,
+    defaultToZip: '81003',
+    topInboundOrigins: ['Texas', 'Florida', 'California', 'Arizona'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$7,800',
+      threeBR: '$6,500–$10,800',
+      fourBR: '$9,200–$14,500',
+    },
+    inboundGrowthStat:
+      'Budget-friendly · Arkansas Riverwalk · Pueblo chile Southwestern culture',
+    peakSeasonNote:
+      'Union Avenue historic district and riverwalk access may require long-carry planning',
+    clusterParent: 'colorado',
+    priority: 31,
+    mapDescription:
+      'Pueblo in Pueblo County — southern Colorado affordability corridor with riverwalk lifestyle.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
