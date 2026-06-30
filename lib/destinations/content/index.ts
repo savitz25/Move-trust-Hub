@@ -42,6 +42,8 @@ import { elPasoTxContent } from '@/lib/destinations/content/el-paso-tx';
 import { arlingtonTxContent } from '@/lib/destinations/content/arlington-tx';
 import { irvingTxContent } from '@/lib/destinations/content/irving-tx';
 import { grandPrairieTxContent } from '@/lib/destinations/content/grand-prairie-tx';
+import { greatFallsMtContent } from '@/lib/destinations/content/great-falls-mt';
+import { hamiltonMtContent } from '@/lib/destinations/content/hamilton-mt';
 import { dallasFortWorthTxContent } from '@/lib/destinations/content/dallas-fort-worth-tx';
 import { austinTxContent } from '@/lib/destinations/content/austin-tx';
 import { houstonTxContent } from '@/lib/destinations/content/houston-tx';
@@ -381,6 +383,10 @@ import { rochesterMnContent } from '@/lib/destinations/content/rochester-mn';
 import { stillwaterMnContent } from '@/lib/destinations/content/stillwater-mn';
 import { wayzataMnContent } from '@/lib/destinations/content/wayzata-mn';
 import { woodburyMnContent } from '@/lib/destinations/content/woodbury-mn';
+import { belgradeMtContent } from '@/lib/destinations/content/belgrade-mt';
+import { helenaMtContent } from '@/lib/destinations/content/helena-mt';
+import { kalispellMtContent } from '@/lib/destinations/content/kalispell-mt';
+import { whitefishMtContent } from '@/lib/destinations/content/whitefish-mt';
 import { columbiaMoContent } from '@/lib/destinations/content/columbia-mo';
 import { leesSummitMoContent } from '@/lib/destinations/content/lees-summit-mo';
 import { ofallonMoContent } from '@/lib/destinations/content/ofallon-mo';
@@ -391,6 +397,16 @@ import { stCharlesMoContent } from '@/lib/destinations/content/st-charles-mo';
 import { libertyMoContent } from '@/lib/destinations/content/liberty-mo';
 import { stLouisMoContent } from '@/lib/destinations/content/st-louis-mo';
 import { republicNixaMoContent } from '@/lib/destinations/content/republic-nixa-mo';
+import { bozemanMtContent } from '@/lib/destinations/content/bozeman-mt';
+import { missoulaMtContent } from '@/lib/destinations/content/missoula-mt';
+import { billingsMtContent } from '@/lib/destinations/content/billings-mt';
+import { kalispellMtContent } from '@/lib/destinations/content/kalispell-mt';
+import { helenaMtContent } from '@/lib/destinations/content/helena-mt';
+import { whitefishMtContent } from '@/lib/destinations/content/whitefish-mt';
+import { belgradeMtContent } from '@/lib/destinations/content/belgrade-mt';
+import { greatFallsMtContent } from '@/lib/destinations/content/great-falls-mt';
+import { livingstonMtContent } from '@/lib/destinations/content/livingston-mt';
+import { hamiltonMtContent } from '@/lib/destinations/content/hamilton-mt';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -435,6 +451,8 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'arlington-tx': arlingtonTxContent,
   'irving-tx': irvingTxContent,
   'grand-prairie-tx': grandPrairieTxContent,
+  'great-falls-mt': greatFallsMtContent,
+  'hamilton-mt': hamiltonMtContent,
   'dallas-fort-worth-tx': dallasFortWorthTxContent,
   'austin-tx': austinTxContent,
   'houston-tx': houstonTxContent,
@@ -774,6 +792,10 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'stillwater-mn': stillwaterMnContent,
   'wayzata-mn': wayzataMnContent,
   'woodbury-mn': woodburyMnContent,
+  'belgrade-mt': belgradeMtContent,
+  'helena-mt': helenaMtContent,
+  'kalispell-mt': kalispellMtContent,
+  'whitefish-mt': whitefishMtContent,
   'columbia-mo': columbiaMoContent,
   'lees-summit-mo': leesSummitMoContent,
   'ofallon-mo': ofallonMoContent,
@@ -784,6 +806,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'liberty-mo': libertyMoContent,
   'st-louis-mo': stLouisMoContent,
   'republic-nixa-mo': republicNixaMoContent,
+  'bozeman-mt': bozemanMtContent,
+  'missoula-mt': missoulaMtContent,
+  'billings-mt': billingsMtContent,
+  'kalispell-mt': kalispellMtContent,
+  'helena-mt': helenaMtContent,
+  'whitefish-mt': whitefishMtContent,
+  'belgrade-mt': belgradeMtContent,
+  'great-falls-mt': greatFallsMtContent,
+  'livingston-mt': livingstonMtContent,
+  'hamilton-mt': hamiltonMtContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -1042,5 +1074,11 @@ export function getPublishedMinnesotaHubSlugs(): string[] {
 export function getPublishedMissouriHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'missouri'
+  );
+}
+
+export function getPublishedMontanaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'montana'
   );
 }

@@ -1047,6 +1047,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'King County Puget Sound flagship metro inbound moving guide',
     },
   },
+  montana: {
+    gallatin: {
+      label: 'Moving to Bozeman',
+      href: '/moving-to/montana/bozeman-mt',
+      description: 'Gallatin County Bridger Bowl tech-and-outdoor mecca inbound guide',
+    },
+    flathead: {
+      label: 'Moving to Kalispell',
+      href: '/moving-to/montana/kalispell-mt',
+      description: 'Flathead County Glacier gateway and Flathead Valley inbound guide',
+    },
+    yellowstone: {
+      label: 'Moving to Billings',
+      href: '/moving-to/montana/billings-mt',
+      description: 'Yellowstone County eastern Montana economic powerhouse inbound guide',
+    },
+    'lewis-and-clark': {
+      label: 'Moving to Helena',
+      href: '/moving-to/montana/helena-mt',
+      description: 'Lewis and Clark County state capital inbound guide',
+    },
+    missoula: {
+      label: 'Moving to Missoula',
+      href: '/moving-to/montana/missoula-mt',
+      description: 'Missoula County Clark Fork cultural capital inbound guide',
+    },
+    cascade: {
+      label: 'Moving to Great Falls',
+      href: '/moving-to/montana/great-falls-mt',
+      description: 'Cascade County Missouri River budget corridor inbound guide',
+    },
+    park: {
+      label: 'Moving to Livingston',
+      href: '/moving-to/montana/livingston-mt',
+      description: 'Park County Yellowstone River creative gateway inbound guide',
+    },
+    ravalli: {
+      label: 'Moving to Hamilton',
+      href: '/moving-to/montana/hamilton-mt',
+      description: 'Ravalli County Bitterroot sanctuary inbound guide',
+    },
+  },
   missouri: {
     boone: {
       label: 'Moving to Columbia',

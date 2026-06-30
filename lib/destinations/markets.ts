@@ -10527,6 +10527,281 @@ export const markets: Market[] = [
     mapDescription:
       'Republic and Nixa in Christian County — explosive southwest suburban growth near Springfield.',
   },
+  {
+    slug: 'montana',
+    displayName: 'Montana',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: [],
+    lat: 47.0,
+    lng: -110.0,
+    defaultToZip: '59715',
+    topInboundOrigins: ['Washington', 'Idaho', 'California', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,400–$6,200',
+      twoBR: '$4,400–$9,400',
+      threeBR: '$6,400–$12,400',
+      fourBR: '$9,200–$17,500',
+    },
+    inboundGrowthStat:
+      'Treasure State · mountain lifestyle · Glacier gateway · outdoor mecca',
+    peakSeasonNote:
+      'I-90 winter pass closures and resort-season delivery windows compress Montana schedules',
+    isClusterParent: true,
+    priority: 40,
+    mapDescription:
+      'Montana inbound hub covering Gallatin, Flathead, Yellowstone, western, and central Treasure State corridors.',
+  },
+  {
+    slug: 'bozeman-mt',
+    displayName: 'Bozeman',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['gallatin-mt'],
+    lat: 45.677,
+    lng: -111.0429,
+    defaultToZip: '59715',
+    topInboundOrigins: ['Washington', 'California', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,400',
+      fourBR: '$11,000–$17,500',
+    },
+    inboundGrowthStat:
+      'Tech & outdoor mecca · Bridger Bowl · MSU',
+    peakSeasonNote:
+      'Gallatin Valley builder closings and MSU semester peaks affect Bozeman scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Bozeman in Gallatin County — tech-and-outdoor mecca with Bridger Bowl and MSU.',
+  },
+  {
+    slug: 'missoula-mt',
+    displayName: 'Missoula',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['missoula-mt'],
+    lat: 46.8721,
+    lng: -113.994,
+    defaultToZip: '59801',
+    topInboundOrigins: ['Washington', 'Idaho', 'California', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$5,800',
+      twoBR: '$4,800–$8,800',
+      threeBR: '$7,000–$11,600',
+      fourBR: '$10,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Cultural & creative capital · Clark Fork · University of Montana',
+    peakSeasonNote:
+      'UM semester peaks and Clark Fork corridor access affect Missoula scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Missoula in Missoula County — cultural and creative capital on the Clark Fork River.',
+  },
+  {
+    slug: 'billings-mt',
+    displayName: 'Billings',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['yellowstone-mt'],
+    lat: 45.7833,
+    lng: -108.5007,
+    defaultToZip: '59101',
+    topInboundOrigins: ['Washington', 'California', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,600–$5,800',
+      twoBR: '$4,800–$8,800',
+      threeBR: '$7,000–$11,600',
+      fourBR: '$10,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Economic powerhouse · largest city · energy sector',
+    peakSeasonNote:
+      'Energy-sector transfer clusters and Rimrock corridor access affect Billings scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Billings in Yellowstone County — Montana\'s largest city and eastern economic powerhouse.',
+  },
+  {
+    slug: 'kalispell-mt',
+    displayName: 'Kalispell',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['flathead-mt'],
+    lat: 48.192,
+    lng: -114.3168,
+    defaultToZip: '59901',
+    topInboundOrigins: ['Washington', 'Idaho', 'California', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,500–$5,600',
+      twoBR: '$4,600–$8,400',
+      threeBR: '$6,800–$11,200',
+      fourBR: '$9,800–$15,400',
+    },
+    inboundGrowthStat:
+      'Glacial gateway · Flathead Valley · Glacier National Park',
+    peakSeasonNote:
+      'Glacier tourism peaks and Flathead Valley builder closings compress summer schedules',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Kalispell in Flathead County — glacial gateway to Glacier National Park and Flathead Valley.',
+  },
+  {
+    slug: 'helena-mt',
+    displayName: 'Helena',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['lewis-and-clark-mt'],
+    lat: 46.5891,
+    lng: -112.0391,
+    defaultToZip: '59601',
+    topInboundOrigins: ['Washington', 'California', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,500–$5,600',
+      twoBR: '$4,600–$8,400',
+      threeBR: '$6,800–$11,200',
+      fourBR: '$9,800–$15,400',
+    },
+    inboundGrowthStat:
+      'Historic & stable core · state capital · government employment',
+    peakSeasonNote:
+      'State legislative session peaks and Last Chance Gulch access affect Helena scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Helena in Lewis and Clark County — historic state capital with stable government employment.',
+  },
+  {
+    slug: 'whitefish-mt',
+    displayName: 'Whitefish',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['flathead-mt'],
+    lat: 48.4111,
+    lng: -114.3376,
+    defaultToZip: '59937',
+    topInboundOrigins: ['Washington', 'California', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,400',
+      fourBR: '$11,000–$17,500',
+    },
+    inboundGrowthStat:
+      'Luxury ski resort enclave · Big Mountain · Whitefish Lake',
+    peakSeasonNote:
+      'Big Mountain resort-season shuttle constraints and lakefront access affect Whitefish scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Whitefish in Flathead County — luxury ski resort enclave on Big Mountain and Whitefish Lake.',
+  },
+  {
+    slug: 'belgrade-mt',
+    displayName: 'Belgrade',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['gallatin-mt'],
+    lat: 45.776,
+    lng: -111.1769,
+    defaultToZip: '59714',
+    topInboundOrigins: ['Washington', 'California', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,500–$5,600',
+      twoBR: '$4,600–$8,400',
+      threeBR: '$6,800–$11,200',
+      fourBR: '$9,800–$15,400',
+    },
+    inboundGrowthStat:
+      'Suburban growth outlet · Bozeman affordability valve',
+    peakSeasonNote:
+      'Gallatin Airport corridor builder closings and HOA move-day rules affect Belgrade scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Belgrade in Gallatin County — suburban growth outlet and Bozeman affordability valve.',
+  },
+  {
+    slug: 'great-falls-mt',
+    displayName: 'Great Falls',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['cascade-mt'],
+    lat: 47.5053,
+    lng: -111.3008,
+    defaultToZip: '59405',
+    topInboundOrigins: ['Washington', 'California', 'Texas', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,500–$5,600',
+      twoBR: '$4,600–$8,400',
+      threeBR: '$6,800–$11,200',
+      fourBR: '$9,800–$15,400',
+    },
+    inboundGrowthStat:
+      'Best budget play · Missouri River corridor · affordability',
+    peakSeasonNote:
+      'Missouri River bluff access and Malmstrom corridor transfers affect Great Falls scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Great Falls in Cascade County — Montana\'s best budget play along the Missouri River.',
+  },
+  {
+    slug: 'livingston-mt',
+    displayName: 'Livingston',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['park-mt'],
+    lat: 45.6624,
+    lng: -110.561,
+    defaultToZip: '59047',
+    topInboundOrigins: ['Washington', 'California', 'Colorado', 'New York'],
+    avgCostRanges: {
+      studio: '$2,400–$5,400',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,600',
+      fourBR: '$9,200–$14,800',
+    },
+    inboundGrowthStat:
+      'Wind-swept creative haven · Yellowstone River gateway',
+    peakSeasonNote:
+      'Yellowstone River bluff long carries and Paradise Valley wind access affect Livingston scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Livingston in Park County — wind-swept creative haven on the Yellowstone River.',
+  },
+  {
+    slug: 'hamilton-mt',
+    displayName: 'Hamilton',
+    stateCode: 'MT',
+    stateName: 'Montana',
+    primaryCounties: ['ravalli-mt'],
+    lat: 46.2468,
+    lng: -114.1604,
+    defaultToZip: '59840',
+    topInboundOrigins: ['Washington', 'Idaho', 'California', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,400–$5,400',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,600',
+      fourBR: '$9,200–$14,800',
+    },
+    inboundGrowthStat:
+      'Peaceful Bitterroot sanctuary · farm-and-ranch pace',
+    peakSeasonNote:
+      'Bitterroot hillside driveways and ranch-property long carries affect Hamilton scheduling',
+    clusterParent: 'montana',
+    priority: 40,
+    mapDescription:
+      'Hamilton in Ravalli County — peaceful Bitterroot sanctuary at farm-and-ranch pace.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
