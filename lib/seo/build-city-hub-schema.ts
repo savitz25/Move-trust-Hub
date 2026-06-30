@@ -1,4 +1,8 @@
 import { organizationSchema } from '@/lib/seo/schemas';
+import {
+  buildEditorPersonSchema,
+  getPrimaryEditorForContent,
+} from '@/lib/trust/editorial-team';
 import { moverHasSchemaAggregateRating } from '@/lib/trust/verified-reviews';
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
@@ -99,8 +103,12 @@ export function buildCityHubSchemaGraph(
     },
   ];
 
+  const editor = getPrimaryEditorForContent('city-hub');
+  const editorSchema = buildEditorPersonSchema(editor);
+
   const graph: Record<string, unknown>[] = [
     organizationSchema,
+    editorSchema,
     {
       '@type': 'BreadcrumbList',
       '@id': `${canonical}#breadcrumbs`,
@@ -114,6 +122,7 @@ export function buildCityHubSchemaGraph(
       url: canonical,
       inLanguage: 'en-US',
       dateModified: CITY_HUBS_CONTENT_UPDATED.toISOString().split('T')[0],
+      author: { '@id': editorSchema['@id'] as string },
       about: { '@id': `${canonical}#place` },
       mainEntity: { '@id': `${canonical}#faq` },
     },

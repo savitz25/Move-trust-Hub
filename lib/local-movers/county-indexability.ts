@@ -1,6 +1,7 @@
 import {
   getCountyResearch,
   hasCountyResearch,
+  isGenericTemplateCountyResearch,
   marketNotesDescribeThinMarket,
 } from '@/lib/local-movers/county-research';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
@@ -49,6 +50,15 @@ export function evaluateCountyIndexability(
 
   if (thinMarket && moverCount < MIN_MOVERS_PREMIUM_INDEX) {
     return { tier: 'noindex', reason: 'thin_market_limited_coverage' };
+  }
+
+  if (
+    hasResearch &&
+    isGenericTemplateCountyResearch(stateSlug, countySlug) &&
+    (!isPremiumMetroCounty(stateSlug, countySlug) ||
+      moverCount < MIN_MOVERS_PREMIUM_INDEX)
+  ) {
+    return { tier: 'noindex', reason: 'generic_template_research' };
   }
 
   if (hasExplicit && hasResearch && hasCuratedReviews && moverCount >= MIN_MOVERS_TO_INDEX) {

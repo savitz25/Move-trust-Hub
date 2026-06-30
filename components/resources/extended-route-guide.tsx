@@ -1,8 +1,16 @@
 import Link from 'next/link';
 import { ArrowRight, Car, MapPin, Sun, Truck } from 'lucide-react';
+import { RouteCalculatorEmbed } from '@/components/resources/route-calculator-embed';
+import type { RouteGuide } from '@/lib/resources/routes';
 import type { RouteGuideExtendedContent } from '@/lib/resources/routes/types';
 
-export function ExtendedRouteGuide({ content }: { content: RouteGuideExtendedContent }) {
+export function ExtendedRouteGuide({
+  content,
+  route,
+}: {
+  content: RouteGuideExtendedContent;
+  route?: RouteGuide;
+}) {
   return (
     <>
       <p className="text-lg text-muted-foreground leading-relaxed mb-6">{content.heroSubheadline}</p>
@@ -89,6 +97,8 @@ export function ExtendedRouteGuide({ content }: { content: RouteGuideExtendedCon
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed">{content.costBreakdown.note}</p>
       </section>
+
+      {route ? <RouteCalculatorEmbed route={route} /> : null}
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold tracking-tight mb-4">{content.timeline.heading}</h2>

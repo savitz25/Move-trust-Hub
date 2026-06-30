@@ -475,9 +475,11 @@ export function buildCountySchemaGraph({
       datePublished: CONTENT_PUBLISHED,
       dateModified: contentModified,
       author: {
-        '@type': 'Organization',
-        '@id': ORG_ID,
-        name: 'Move Trust Hub Editorial Team',
+        '@type': 'Person',
+        '@id': `${SITE_URL}/about#editor-elena-vargas`,
+        name: 'Elena Vargas',
+        jobTitle: 'Local Markets Research Lead',
+        worksFor: { '@id': ORG_ID },
       },
       publisher: { '@id': ORG_ID },
       isPartOf: {

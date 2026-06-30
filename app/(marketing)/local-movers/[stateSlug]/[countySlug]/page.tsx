@@ -161,6 +161,7 @@ import {
 } from '@/components/local-movers/county-seo-sections';
 import { CountyMarketInsightsPanel } from '@/components/local-movers/county-market-insights';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
+import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
 import { buildCountyMarketInsights } from '@/lib/local-movers/county-market-insights';
@@ -543,6 +544,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         <HowWeScorePanel className="mb-10" compact={indexDecision.tier === 'noindex'} />
 
         <VerificationTransparency className="mb-10" />
+
+        {indexDecision.tier === 'index' ? (
+          <EditorialTeamPanel contentType="county" className="mb-10" compact />
+        ) : null}
 
         <CountyInternalLinks
           stateName={state.name}

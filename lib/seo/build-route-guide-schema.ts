@@ -1,4 +1,8 @@
 import { organizationSchema } from '@/lib/seo/schemas';
+import {
+  buildEditorPersonSchema,
+  getPrimaryEditorForContent,
+} from '@/lib/trust/editorial-team';
 import { RESOURCES_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import type { RouteGuide } from '@/lib/resources/routes';
@@ -9,8 +13,12 @@ export function buildRouteGuideSchemaGraph(
   content: RouteGuideExtendedContent,
   canonical: string
 ) {
+  const editor = getPrimaryEditorForContent('route');
+  const editorSchema = buildEditorPersonSchema(editor);
+
   const graph: Record<string, unknown>[] = [
     organizationSchema,
+    editorSchema,
     {
       '@type': 'BreadcrumbList',
       '@id': `${canonical}#breadcrumb`,
@@ -39,11 +47,7 @@ export function buildRouteGuideSchemaGraph(
       url: canonical,
       datePublished: '2026-06-27',
       dateModified: RESOURCES_CONTENT_UPDATED.toISOString().split('T')[0],
-      author: {
-        '@type': 'Organization',
-        name: 'Move Trust Hub',
-        url: SITE_URL,
-      },
+      author: { '@id': editorSchema['@id'] as string },
       publisher: {
         '@type': 'Organization',
         name: 'Move Trust Hub',

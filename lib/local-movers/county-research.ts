@@ -103,7 +103,17 @@ import { getWyomingCountyTestimonials } from '@/data/wyoming-county-testimonials
 
 type CountyResearch = {
   marketNotes: string;
+  tips?: string[];
+  costs?: {
+    studioRange: string;
+    familyRange: string;
+    avgHourly: string;
+    note: string;
+  };
 };
+
+const GENERIC_TIP_PREFIX =
+  'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews';
 
 const RESEARCH_GETTERS: Record<
   string,
@@ -251,4 +261,53 @@ export function parseCountyPopulationFromNotes(marketNotes?: string): number | n
 export function marketNotesDescribeThinMarket(marketNotes?: string): boolean {
   if (!marketNotes) return false;
   return /thin market|very thin|market is thin|thin;/i.test(marketNotes);
+}
+
+/** Detect templated county research (generic tips repeated across many counties). */
+export function isGenericTemplateCountyResearch(
+  stateSlug: string,
+  countySlug: string
+): boolean {
+  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
+  if (!research) return true;
+
+  const tips = research.tips ?? [];
+  if (tips.length === 0) return true;
+
+  const genericCount = tips.filter((tip) =>
+    tip.startsWith(GENERIC_TIP_PREFIX)
+  ).length;
+
+  return genericCount >= Math.ceil(tips.length * 0.5);
+}
+
+export function getCountyResearchCosts(
+  stateSlug: string,
+  countySlug: string
+): CountyResearch['costs'] | undefined {
+  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
+  return research?.costs;
+}
+
+export function extractSeasonalAdviceFromResearch(
+  stateSlug: string,
+  countySlug: string
+): string | undefined {
+  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
+  if (!research?.costs?.note) return undefined;
+  return research.costs.note;
+}
+
+export function extractParkingHoaNotes(
+  stateSlug: string,
+  countySlug: string
+): string[] {
+  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
+  if (!research?.tips?.length) return [];
+
+  return research.tips.filter((tip) =>
+    /elevator|COI|certificate of insurance|HOA|condo|parking|permit|gated|shuttle|building management/i.test(
+      tip
+    )
+  ).slice(0, 2);
 }

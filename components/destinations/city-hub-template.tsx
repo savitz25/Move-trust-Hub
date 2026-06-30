@@ -18,6 +18,7 @@ import { CITY_HUBS_CONTENT_UPDATED } from '@/lib/seo/content-dates';
 import { getMarketBySlug } from '@/lib/destinations/markets';
 import { GrandStrandHubGrid } from '@/components/destinations/grand-strand-hub-grid';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
+import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
 
@@ -442,9 +443,12 @@ export async function CityHubTemplate({ market, content }: Props) {
 
       {/* Trust & scoring */}
       <section className="py-12 md:py-16 border-b">
-        <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-2 gap-6">
-          <HowWeScorePanel />
-          <VerificationTransparency />
+        <div className="container mx-auto px-4 max-w-6xl space-y-6">
+          <div className="grid lg:grid-cols-2 gap-6">
+            <HowWeScorePanel />
+            <VerificationTransparency />
+          </div>
+          <EditorialTeamPanel contentType="city-hub" compact />
         </div>
       </section>
 

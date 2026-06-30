@@ -15,6 +15,7 @@ import type { LucideIcon } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { buildAboutPageSchemaGraph } from '@/lib/seo/schemas';
@@ -154,6 +155,8 @@ export default function AboutPage() {
             </Link>
           </p>
         </section>
+
+        <EditorialTeamPanel contentType="directory" />
 
         {/* What We Offer */}
         <section>

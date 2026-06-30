@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { BasicRouteGuideSchema } from '@/components/resources/basic-route-guide-schema';
 import { ExtendedRouteGuide } from '@/components/resources/extended-route-guide';
 import { RouteGuideSchema } from '@/components/resources/route-guide-schema';
+import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { GuideFooter } from '@/components/resources/guide-footer';
@@ -126,7 +127,7 @@ export default async function RouteGuidePage({ params }: Props) {
         </div>
 
         {extended ? (
-          <ExtendedRouteGuide content={extended} />
+          <ExtendedRouteGuide content={extended} route={route} />
         ) : (
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">{route.description}</p>
         )}
@@ -279,6 +280,8 @@ export default async function RouteGuidePage({ params }: Props) {
         </div>
 
         <HowWeScorePanel className="mb-10" compact />
+
+        <EditorialTeamPanel contentType="route" className="mb-10" compact />
 
         <GuideFooter
           relatedSlugs={['how-to-choose', 'move-size-weight', 'interstate-moving-costs', 'scams', 'packing-checklist']}

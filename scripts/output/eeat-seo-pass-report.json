@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-06-30T20:09:39.261Z",
+  "countyIndexability": {
+    "indexable": 110,
+    "noindex": 3033,
+    "total": 3143,
+    "indexReasons": {
+      "fully_curated_county": 98,
+      "researched_substantive_listings": 12
+    },
+    "noindexReasons": {
+      "zero_movers": 2206,
+      "insufficient_verified_movers": 585,
+      "default_quality_guard": 237,
+      "thin_market_limited_coverage": 5
+    },
+    "genericTemplateResearchCounties": 1
+  },
+  "contentCoverage": {
+    "publishedCityHubs": 480,
+    "routeGuidesTotal": 49,
+    "extendedRouteGuides": 49
+  },
+  "eeat": {
+    "moversWithAggregateRatingSchema": 24,
+    "totalMoversInCatalog": 15986,
+    "editorialTeamExperts": 3,
+    "reviewSchemaPolicy": "attributable_google_reviews_only"
+  },
+  "improvementsApplied": [
+    "Stricter county noindex for generic template research",
+    "Dynamic county market insights (costs, seasonal, HOA/parking, migration)",
+    "Editorial team panel + Person schema authorship on routes/city hubs/counties",
+    "Route calculator embed mid-page on extended guides",
+    "Strengthened FMCSA/USDOT verification messaging",
+    "How We Score + Verification panels on county, route, and city hub pages"
+  ],
+  "recommendedNext": [
+    "Replace generic county research tips in high-traffic metros (FL, CA, TX, NY, SC)",
+    "Expand attributable Google reviews beyond current 17 counties",
+    "Add hand-written neighborhood modules to priority-2 city hubs",
+    "Monitor GSC for index coverage after generic_template_research noindex wave"
+  ]
+}

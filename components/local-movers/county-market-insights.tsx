@@ -88,6 +88,39 @@ export function CountyMarketInsightsPanel({
         </div>
       )}
 
+      {insights.costSnapshot && (
+        <div className="mb-5 rounded-xl border bg-muted/20 p-4">
+          <div className="text-sm font-medium mb-2">Local cost snapshot ({countyLabel})</div>
+          <div className="grid sm:grid-cols-3 gap-3 text-sm">
+            <div>
+              <div className="text-xs text-muted-foreground">Studio / 1BR</div>
+              <div className="font-medium">{insights.costSnapshot.studioRange}</div>
+            </div>
+            <div>
+              <div className="text-xs text-muted-foreground">3–4+ BR home</div>
+              <div className="font-medium">{insights.costSnapshot.familyRange}</div>
+            </div>
+            <div>
+              <div className="text-xs text-muted-foreground">Typical crew rate</div>
+              <div className="font-medium">{insights.costSnapshot.avgHourly}</div>
+            </div>
+          </div>
+          {insights.seasonalAdvice && (
+            <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+              <span className="font-medium text-foreground">Seasonal note:</span>{' '}
+              {insights.seasonalAdvice}
+            </p>
+          )}
+        </div>
+      )}
+
+      {insights.migrationSnippet && (
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4 rounded-lg border bg-card px-4 py-3">
+          <span className="font-medium text-foreground">Migration trend:</span>{' '}
+          {insights.migrationSnippet}
+        </p>
+      )}
+
       {insights.localChallenges.length > 0 && (
         <div className="mb-5">
           <div className="text-sm font-medium mb-2 flex items-center gap-1.5">
@@ -99,6 +132,19 @@ export function CountyMarketInsightsPanel({
               <li key={challenge.slice(0, 48)} className="flex items-start gap-2 leading-relaxed">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 {challenge}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {insights.parkingHoaNotes.length > 0 && (
+        <div className="mb-5 rounded-lg border border-amber-200/60 bg-amber-50/40 px-4 py-3">
+          <div className="text-sm font-medium mb-2">Parking, HOA &amp; building rules</div>
+          <ul className="space-y-1.5 text-xs text-muted-foreground">
+            {insights.parkingHoaNotes.map((note) => (
+              <li key={note.slice(0, 48)} className="leading-relaxed">
+                • {note}
               </li>
             ))}
           </ul>

@@ -6,7 +6,7 @@ const VERIFICATION_STEPS = [
     icon: FileSearch,
     title: 'USDOT / MC lookup',
     detail:
-      'Every listed carrier is screened for a valid USDOT number. Placeholder or malformed numbers are excluded from rankings.',
+      'Every listed carrier is screened for a valid USDOT number on FMCSA SAFER. Placeholder, malformed, or revoked authority numbers are excluded from rankings and schema.',
   },
   {
     icon: ShieldCheck,

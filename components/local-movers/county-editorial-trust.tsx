@@ -103,16 +103,29 @@ export function CountyEditorialTrust({
           Move Trust Hub Editorial Team
         </span>
         {' — '}
-        This {countyLabel}, {stateName} guide is researched and maintained by our moving
-        industry editors. We verify USDOT/MC licensing, compare customer ratings, and
-        update cost ranges and local tips when market conditions change.{' '}
+        This {countyLabel}, {stateName} guide is researched by our local markets team. Every
+        listed carrier is screened for valid USDOT/MC numbers against{' '}
+        <a
+          href="https://safer.fmcsa.dot.gov/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary font-medium hover:underline"
+        >
+          FMCSA SAFER
+        </a>
+        . Review schema appears only for directory-linked movers with named, attributable
+        Google reviews — never fabricated testimonials.{' '}
         <Link href="/resources/how-to-choose#reputation-score" className="text-primary font-medium hover:underline">
           See how we score movers
         </Link>
         .
       </p>
       <p className="text-xs text-muted-foreground mt-3">
-        Last reviewed: {formatted}. Always confirm current FMCSA authority before booking.
+        Last reviewed: {formatted}. Licensing status changes — verify current FMCSA authority on{' '}
+        <Link href="/verify-dot" className="text-primary hover:underline">
+          our USDOT lookup tool
+        </Link>{' '}
+        before paying deposits.
       </p>
     </section>
   );
