@@ -9152,6 +9152,281 @@ export const markets: Market[] = [
     mapDescription:
       'Pella in Marion County — Dutch heritage village with Vermeer and Pella Windows corporate roots.',
   },
+  {
+    slug: 'kansas',
+    displayName: 'Kansas',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: [],
+    lat: 38.5,
+    lng: -98.0,
+    defaultToZip: '66213',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,400',
+      fourBR: '$8,400–$14,800',
+    },
+    inboundGrowthStat:
+      'Affordable housing · Johnson County suburbs · university & aviation hubs',
+    peakSeasonNote:
+      'Johnson County builder closings and August university turnover tighten peak-season windows',
+    isClusterParent: true,
+    priority: 35,
+    mapDescription:
+      'Kansas inbound hub covering Johnson County suburbs, KU/KSU university corridors, Wichita aviation, and Topeka capital region.',
+  },
+  {
+    slug: 'overland-park-ks',
+    displayName: 'Overland Park',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['johnson-ks'],
+    lat: 38.9822,
+    lng: -94.6708,
+    defaultToZip: '66213',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,500',
+    },
+    inboundGrowthStat:
+      'Johnson County powerhouse · Blue Valley schools · corporate headquarters',
+    peakSeasonNote:
+      'Corporate Woods towers and Blue Valley HOA move-day rules may require advance coordination',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Overland Park in Johnson County — premier Blue Valley schools and corporate HQ inbound market.',
+  },
+  {
+    slug: 'olathe-ks',
+    displayName: 'Olathe',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['johnson-ks'],
+    lat: 38.8814,
+    lng: -94.8191,
+    defaultToZip: '66062',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Family choice · master-planned communities · Olathe USD 233 schools',
+    peakSeasonNote:
+      'Lake Olathe and new-build subdivision cul-de-sacs may require shuttle trucks',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Olathe in Johnson County — master-planned family growth with top-rated Olathe schools.',
+  },
+  {
+    slug: 'lenexa-ks',
+    displayName: 'Lenexa',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['johnson-ks'],
+    lat: 38.9536,
+    lng: -94.7336,
+    defaultToZip: '66219',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Modern suburban pioneer · Lenexa City Center · trail connectivity',
+    peakSeasonNote:
+      'Lenexa City Center towers require COI and freight elevator reservations',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Lenexa in Johnson County — City Center walkability and modern suburban pioneer growth.',
+  },
+  {
+    slug: 'leawood-ks',
+    displayName: 'Leawood',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['johnson-ks'],
+    lat: 38.9667,
+    lng: -94.6169,
+    defaultToZip: '66206',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,500',
+    },
+    inboundGrowthStat:
+      'Premium enclave · high-end estates · Town Center Plaza',
+    peakSeasonNote:
+      'Estate driveways and gated communities may require shuttle trucks and white-glove accessorials',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Leawood in Johnson County — premium estates and Town Center Plaza inbound market.',
+  },
+  {
+    slug: 'shawnee-ks',
+    displayName: 'Shawnee',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['johnson-ks'],
+    lat: 39.0228,
+    lng: -94.7152,
+    defaultToZip: '66216',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Accessible west-side suburb · historic charm · family value',
+    peakSeasonNote:
+      'Downtown Shawnee historic lanes and western trail-corridor homes may need shuttle coordination',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Shawnee in Johnson County — accessible west-side suburb with historic town charm.',
+  },
+  {
+    slug: 'lawrence-ks',
+    displayName: 'Lawrence',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['douglas-ks'],
+    lat: 38.9717,
+    lng: -95.2353,
+    defaultToZip: '66044',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Progressive cultural capital · KU · Mass Street vibrancy',
+    peakSeasonNote:
+      'Academic calendar turnover and August move-ins affect delivery scheduling',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Lawrence in Douglas County — University of Kansas and Mass Street cultural inbound hub.',
+  },
+  {
+    slug: 'manhattan-ks',
+    displayName: 'Manhattan',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['riley-ks'],
+    lat: 39.1836,
+    lng: -96.5717,
+    defaultToZip: '66502',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Active Little Apple · KSU · Flint Hills horizon',
+    peakSeasonNote:
+      'Campustown turnover and fall semester move-ins tighten August scheduling',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Manhattan in Riley County — Kansas State University Little Apple inbound market.',
+  },
+  {
+    slug: 'wichita-ks',
+    displayName: 'Wichita',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['sedgwick-ks'],
+    lat: 37.6872,
+    lng: -97.3301,
+    defaultToZip: '67202',
+    topInboundOrigins: ['Missouri', 'Texas', 'Illinois', 'California'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'Aerospace hub · Old Town · Air Capital of the World',
+    peakSeasonNote:
+      'Old Town loft conversions and aviation supplier transfer season affect summer scheduling',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Wichita in Sedgwick County — Air Capital aerospace and Old Town inbound hub.',
+  },
+  {
+    slug: 'topeka-ks',
+    displayName: 'Topeka',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['shawnee-ks'],
+    lat: 39.0473,
+    lng: -95.6752,
+    defaultToZip: '66603',
+    topInboundOrigins: ['Missouri', 'Illinois', 'Texas', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Stable state capital · government jobs · revitalized downtown',
+    peakSeasonNote:
+      'Legislative session traffic and NOTO Arts District event weekends may affect delivery windows',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Topeka in Shawnee County — state capital and government employment inbound hub.',
+  },
+  {
+    slug: 'andover-ks',
+    displayName: 'Andover',
+    stateCode: 'KS',
+    stateName: 'Kansas',
+    primaryCounties: ['butler-ks'],
+    lat: 37.7139,
+    lng: -97.1364,
+    defaultToZip: '67002',
+    topInboundOrigins: ['Missouri', 'Texas', 'Illinois', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'Fast-growing Wichita alternative · elite Butler County schools',
+    peakSeasonNote:
+      'New construction and Andover Central corridor HOA rules may require advance coordination',
+    clusterParent: 'kansas',
+    priority: 35,
+    mapDescription:
+      'Andover in Butler County — fast-growing Wichita metro alternative with elite schools.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

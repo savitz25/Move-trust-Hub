@@ -1102,6 +1102,66 @@ export function buildIowaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/kansas cluster parent */
+export function buildKansasClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const kansasHubs = getClusterMarkets('kansas').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Kansas', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Kansas',
+          addressRegion: 'KS',
+        },
+        mainEntity: { '@id': `${canonical}#kansas-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#kansas-hub-list`,
+        name: 'Kansas City Moving Guides',
+        numberOfItems: kansasHubs.length,
+        itemListElement: kansasHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, KS`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/louisiana cluster parent */
 export function buildLouisianaClusterSchemaGraph(
   title: string,

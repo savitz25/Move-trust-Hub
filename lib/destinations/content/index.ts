@@ -341,6 +341,16 @@ import { cedarRapidsIaContent } from '@/lib/destinations/content/cedar-rapids-ia
 import { dubuqueIaContent } from '@/lib/destinations/content/dubuque-ia';
 import { decorahIaContent } from '@/lib/destinations/content/decorah-ia';
 import { pellaIaContent } from '@/lib/destinations/content/pella-ia';
+import { overlandParkKsContent } from '@/lib/destinations/content/overland-park-ks';
+import { olatheKsContent } from '@/lib/destinations/content/olathe-ks';
+import { lenexaKsContent } from '@/lib/destinations/content/lenexa-ks';
+import { leawoodKsContent } from '@/lib/destinations/content/leawood-ks';
+import { shawneeKsContent } from '@/lib/destinations/content/shawnee-ks';
+import { lawrenceKsContent } from '@/lib/destinations/content/lawrence-ks';
+import { manhattanKsContent } from '@/lib/destinations/content/manhattan-ks';
+import { wichitaKsContent } from '@/lib/destinations/content/wichita-ks';
+import { topekaKsContent } from '@/lib/destinations/content/topeka-ks';
+import { andoverKsContent } from '@/lib/destinations/content/andover-ks';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -684,6 +694,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'dubuque-ia': dubuqueIaContent,
   'decorah-ia': decorahIaContent,
   'pella-ia': pellaIaContent,
+  'overland-park-ks': overlandParkKsContent,
+  'olathe-ks': olatheKsContent,
+  'lenexa-ks': lenexaKsContent,
+  'leawood-ks': leawoodKsContent,
+  'shawnee-ks': shawneeKsContent,
+  'lawrence-ks': lawrenceKsContent,
+  'manhattan-ks': manhattanKsContent,
+  'wichita-ks': wichitaKsContent,
+  'topeka-ks': topekaKsContent,
+  'andover-ks': andoverKsContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -912,5 +932,11 @@ export function getPublishedDelawareHubSlugs(): string[] {
 export function getPublishedIowaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'iowa'
+  );
+}
+
+export function getPublishedKansasHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'kansas'
   );
 }
