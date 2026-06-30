@@ -12402,6 +12402,281 @@ export const markets: Market[] = [
     mapDescription:
       'Marysville in Snohomish County — North Sound expansion outlet through Smokey Point growth.',
   },
+  {
+    slug: 'wisconsin',
+    displayName: 'Wisconsin',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: [],
+    lat: 44.5,
+    lng: -89.5,
+    defaultToZip: '53703',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Michigan', 'Iowa'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,800',
+      threeBR: '$5,800–$10,400',
+      fourBR: '$8,400–$14,800',
+    },
+    inboundGrowthStat:
+      'Badger State quality of life · strong education · diverse regions',
+    peakSeasonNote:
+      'UW semester peaks, Epic transfer clusters, and I-94 summer closing windows compress May–September schedules',
+    isClusterParent: true,
+    priority: 47,
+    mapDescription:
+      'Wisconsin inbound hub covering Madison Corridor, Milwaukee & Lake Country, Fox Valley, and Western Wisconsin corridors.',
+  },
+  {
+    slug: 'madison-wi',
+    displayName: 'Madison',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['dane-wi'],
+    lat: 43.0731,
+    lng: -89.4012,
+    defaultToZip: '53703',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Michigan', 'Iowa'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,800',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$14,600',
+    },
+    inboundGrowthStat:
+      'Vibrant consensus king · UW-Madison · isthmus lakes',
+    peakSeasonNote:
+      'UW semester move-in/out peaks and isthmus parking restrictions affect Madison scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Madison in Dane County — vibrant consensus king with UW-Madison and isthmus lake culture.',
+  },
+  {
+    slug: 'verona-wi',
+    displayName: 'Verona',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['dane-wi'],
+    lat: 42.9908,
+    lng: -89.5332,
+    defaultToZip: '53593',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'California', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,800',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$14,600',
+    },
+    inboundGrowthStat:
+      'Epic tech sandbox · Epic Systems campus',
+    peakSeasonNote:
+      'Epic campus transfer clusters and subdivision HOA move-day rules affect Verona scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Verona in Dane County — epic tech sandbox anchored by Epic Systems campus employment.',
+  },
+  {
+    slug: 'sun-prairie-wi',
+    displayName: 'Sun Prairie',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['dane-wi'],
+    lat: 43.1836,
+    lng: -89.2137,
+    defaultToZip: '53590',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Michigan', 'Iowa'],
+    avgCostRanges: {
+      studio: '$2,200–$5,400',
+      twoBR: '$4,000–$7,800',
+      threeBR: '$6,000–$10,400',
+      fourBR: '$8,800–$14,600',
+    },
+    inboundGrowthStat:
+      'Fast-growing commuter magnet · northeast Madison',
+    peakSeasonNote:
+      'Builder move-in peaks and northeast Madison commuter closing clusters affect Sun Prairie scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Sun Prairie in Dane County — fast-growing commuter magnet northeast of Madison.',
+  },
+  {
+    slug: 'brookfield-wi',
+    displayName: 'Brookfield',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['waukesha-wi'],
+    lat: 43.0606,
+    lng: -88.1065,
+    defaultToZip: '53045',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Michigan', 'Iowa'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Premium Milwaukee standard · West suburb excellence',
+    peakSeasonNote:
+      'Waukesha County cul-de-sac shuttle staging and I-94 closing clusters affect Brookfield scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Brookfield in Waukesha County — premium Milwaukee West suburb with top-tier school corridors.',
+  },
+  {
+    slug: 'oconomowoc-wi',
+    displayName: 'Oconomowoc',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['waukesha-wi'],
+    lat: 43.1117,
+    lng: -88.4993,
+    defaultToZip: '53066',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Michigan', 'Iowa'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Lake Country haven · Lac La Belle',
+    peakSeasonNote:
+      'Lake Country waterfront accessorials and HOA move-day reservations affect Oconomowoc scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Oconomowoc in Waukesha County — Lake Country haven along Lac La Belle waterfront living.',
+  },
+  {
+    slug: 'whitefish-bay-wi',
+    displayName: 'Whitefish Bay',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['milwaukee-wi'],
+    lat: 43.1134,
+    lng: -87.9001,
+    defaultToZip: '53217',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,800',
+    },
+    inboundGrowthStat:
+      'Elite lakeside enclave · Lake Michigan North Shore',
+    peakSeasonNote:
+      'North Shore narrow-street shuttle constraints and lakefront staging affect Whitefish Bay scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Whitefish Bay in Milwaukee County — elite Lake Michigan North Shore lakeside enclave.',
+  },
+  {
+    slug: 'appleton-wi',
+    displayName: 'Appleton',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['outagamie-wi'],
+    lat: 44.2619,
+    lng: -88.4154,
+    defaultToZip: '54911',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Michigan', 'Iowa'],
+    avgCostRanges: {
+      studio: '$2,100–$5,000',
+      twoBR: '$3,900–$7,400',
+      threeBR: '$5,600–$9,800',
+      fourBR: '$8,200–$14,200',
+    },
+    inboundGrowthStat:
+      'Fox Valley powerhouse · Lawrence University',
+    peakSeasonNote:
+      'Fox Valley manufacturing transfer windows and Lawrence University semester peaks affect Appleton scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Appleton in Outagamie County — Fox Valley powerhouse with Lawrence University culture.',
+  },
+  {
+    slug: 'green-bay-wi',
+    displayName: 'Green Bay',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['brown-wi'],
+    lat: 44.5133,
+    lng: -88.0133,
+    defaultToZip: '54301',
+    topInboundOrigins: ['Illinois', 'Minnesota', 'Michigan', 'Iowa'],
+    avgCostRanges: {
+      studio: '$2,100–$5,000',
+      twoBR: '$3,900–$7,400',
+      threeBR: '$5,600–$9,800',
+      fourBR: '$8,200–$14,200',
+    },
+    inboundGrowthStat:
+      'Affordable community classic · Packers · Titletown',
+    peakSeasonNote:
+      'Titletown event-season parking restrictions and Lambeau corridor accessorials affect Green Bay scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Green Bay in Brown County — affordable community classic with Packers pride and Titletown District.',
+  },
+  {
+    slug: 'eau-claire-wi',
+    displayName: 'Eau Claire',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['eau-claire-wi'],
+    lat: 44.8113,
+    lng: -91.4985,
+    defaultToZip: '54701',
+    topInboundOrigins: ['Minnesota', 'Illinois', 'Iowa', 'Michigan'],
+    avgCostRanges: {
+      studio: '$2,100–$5,000',
+      twoBR: '$3,900–$7,400',
+      threeBR: '$5,600–$9,800',
+      fourBR: '$8,200–$14,200',
+    },
+    inboundGrowthStat:
+      'Creative & indie renaissance · UW-Eau Claire',
+    peakSeasonNote:
+      'UW-Eau Claire semester peaks and Chippewa River corridor access affect Eau Claire scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'Eau Claire in Eau Claire County — creative and indie renaissance through UW-Eau Claire momentum.',
+  },
+  {
+    slug: 'la-crosse-wi',
+    displayName: 'La Crosse',
+    stateCode: 'WI',
+    stateName: 'Wisconsin',
+    primaryCounties: ['la-crosse-wi'],
+    lat: 43.8014,
+    lng: -91.2396,
+    defaultToZip: '54601',
+    topInboundOrigins: ['Minnesota', 'Illinois', 'Iowa', 'Michigan'],
+    avgCostRanges: {
+      studio: '$2,100–$5,000',
+      twoBR: '$3,900–$7,400',
+      threeBR: '$5,600–$9,800',
+      fourBR: '$8,200–$14,200',
+    },
+    inboundGrowthStat:
+      'Scenic Mississippi jewel · UW-La Crosse bluffs',
+    peakSeasonNote:
+      'Mississippi bluff long carries and UW-La Crosse semester peaks affect La Crosse scheduling',
+    clusterParent: 'wisconsin',
+    priority: 47,
+    mapDescription:
+      'La Crosse in La Crosse County — scenic Mississippi jewel with UW-La Crosse bluff-and-river character.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

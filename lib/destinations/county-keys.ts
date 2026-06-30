@@ -45,6 +45,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   sd: 'south-dakota',
   ut: 'utah',
   wa: 'washington',
+  wi: 'wisconsin',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

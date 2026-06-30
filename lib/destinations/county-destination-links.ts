@@ -1343,6 +1343,43 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Boca Raton, Delray, Boynton, and Deerfield Beach city guides',
     },
   },
+  wisconsin: {
+    dane: {
+      label: 'Moving to Madison',
+      href: '/moving-to/wisconsin/madison-wi',
+      description: 'Dane County Madison, Verona, and Sun Prairie corridor inbound guides',
+    },
+    waukesha: {
+      label: 'Moving to Brookfield',
+      href: '/moving-to/wisconsin/brookfield-wi',
+      description: 'Waukesha County Brookfield and Oconomowoc Lake Country inbound guides',
+    },
+    milwaukee: {
+      label: 'Moving to Whitefish Bay',
+      href: '/moving-to/wisconsin/whitefish-bay-wi',
+      description: 'Milwaukee County North Shore lakeside enclave inbound guide',
+    },
+    outagamie: {
+      label: 'Moving to Appleton',
+      href: '/moving-to/wisconsin/appleton-wi',
+      description: 'Outagamie County Fox Valley powerhouse inbound guide',
+    },
+    brown: {
+      label: 'Moving to Green Bay',
+      href: '/moving-to/wisconsin/green-bay-wi',
+      description: 'Brown County Titletown affordable community inbound guide',
+    },
+    'eau-claire': {
+      label: 'Moving to Eau Claire',
+      href: '/moving-to/wisconsin/eau-claire-wi',
+      description: 'Eau Claire County creative renaissance and UW-Eau Claire inbound guide',
+    },
+    'la-crosse': {
+      label: 'Moving to La Crosse',
+      href: '/moving-to/wisconsin/la-crosse-wi',
+      description: 'La Crosse County Mississippi bluff scenic jewel inbound guide',
+    },
+  },
 };
 
 export function getDestinationHubLinkForCounty(

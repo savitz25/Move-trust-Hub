@@ -3,8 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import {
   getSortedClusterMarkets,
   getMarketPath,
-  type Market,
 } from '@/lib/destinations/markets';
+import type { Market } from '@/lib/destinations/types';
 
 /** Cluster parents with a dedicated state-level hub page (not in cityHubContentBySlug). */
 const LIVE_CLUSTER_PARENT_SLUGS = new Set([
@@ -55,6 +55,7 @@ const LIVE_CLUSTER_PARENT_SLUGS = new Set([
   'south-dakota',
   'utah',
   'washington',
+  'wisconsin',
 ]);
 
 type Props = {
