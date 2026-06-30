@@ -622,6 +622,66 @@ export function buildWisconsinClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/wyoming cluster parent */
+export function buildWyomingClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const wyomingHubs = getClusterMarkets('wyoming').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Wyoming', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Wyoming',
+          addressRegion: 'WY',
+        },
+        mainEntity: { '@id': `${canonical}#wyoming-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#wyoming-hub-list`,
+        name: 'Wyoming City Moving Guides',
+        numberOfItems: wyomingHubs.length,
+        itemListElement: wyomingHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, WY`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/ohio cluster parent */
 export function buildOhioClusterSchemaGraph(
   title: string,

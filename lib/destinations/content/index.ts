@@ -470,6 +470,16 @@ import { oconomowocWiContent } from '@/lib/destinations/content/oconomowoc-wi';
 import { sunPrairieWiContent } from '@/lib/destinations/content/sun-prairie-wi';
 import { veronaWiContent } from '@/lib/destinations/content/verona-wi';
 import { whitefishBayWiContent } from '@/lib/destinations/content/whitefish-bay-wi';
+import { alpineStarValleyWyContent } from '@/lib/destinations/content/alpine-star-valley-wy';
+import { buffaloWyContent } from '@/lib/destinations/content/buffalo-wy';
+import { casperWyContent } from '@/lib/destinations/content/casper-wy';
+import { cheyenneWyContent } from '@/lib/destinations/content/cheyenne-wy';
+import { codyWyContent } from '@/lib/destinations/content/cody-wy';
+import { gilletteWyContent } from '@/lib/destinations/content/gillette-wy';
+import { laramieWyContent } from '@/lib/destinations/content/laramie-wy';
+import { sheridanWyContent } from '@/lib/destinations/content/sheridan-wy';
+import { jacksonWyContent } from '@/lib/destinations/content/jackson-wy';
+import { landerWyContent } from '@/lib/destinations/content/lander-wy';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -944,6 +954,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'sun-prairie-wi': sunPrairieWiContent,
   'verona-wi': veronaWiContent,
   'whitefish-bay-wi': whitefishBayWiContent,
+  'alpine-star-valley-wy': alpineStarValleyWyContent,
+  'buffalo-wy': buffaloWyContent,
+  'casper-wy': casperWyContent,
+  'cheyenne-wy': cheyenneWyContent,
+  'cody-wy': codyWyContent,
+  'gillette-wy': gilletteWyContent,
+  'laramie-wy': laramieWyContent,
+  'sheridan-wy': sheridanWyContent,
+  'jackson-wy': jacksonWyContent,
+  'lander-wy': landerWyContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -1244,5 +1264,11 @@ export function getPublishedUtahHubSlugs(): string[] {
 export function getPublishedWisconsinHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'wisconsin'
+  );
+}
+
+export function getPublishedWyomingHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'wyoming'
   );
 }

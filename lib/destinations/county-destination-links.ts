@@ -1380,6 +1380,58 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'La Crosse County Mississippi bluff scenic jewel inbound guide',
     },
   },
+  wyoming: {
+    laramie: {
+      label: 'Moving to Cheyenne',
+      href: '/moving-to/wyoming/cheyenne-wy',
+      description: 'Laramie County capital core and F.E. Warren corridor inbound guide',
+    },
+    albany: {
+      label: 'Moving to Laramie',
+      href: '/moving-to/wyoming/laramie-wy',
+      description: 'Albany County UW mountain valley inbound guide',
+    },
+    natrona: {
+      label: 'Moving to Casper',
+      href: '/moving-to/wyoming/casper-wy',
+      description: 'Natrona County North Platte practical hub inbound guide',
+    },
+    campbell: {
+      label: 'Moving to Gillette',
+      href: '/moving-to/wyoming/gillette-wy',
+      description: 'Campbell County Powder River Basin industrial inbound guide',
+    },
+    sheridan: {
+      label: 'Moving to Sheridan',
+      href: '/moving-to/wyoming/sheridan-wy',
+      description: 'Sheridan County Bighorn refined Western oasis inbound guide',
+    },
+    park: {
+      label: 'Moving to Cody',
+      href: '/moving-to/wyoming/cody-wy',
+      description: 'Park County Yellowstone gateway frontier inbound guide',
+    },
+    johnson: {
+      label: 'Moving to Buffalo',
+      href: '/moving-to/wyoming/buffalo-wy',
+      description: 'Johnson County base-of-the-Bighorns Old West inbound guide',
+    },
+    fremont: {
+      label: 'Moving to Lander',
+      href: '/moving-to/wyoming/lander-wy',
+      description: 'Fremont County Wind River climber sanctuary inbound guide',
+    },
+    teton: {
+      label: 'Moving to Jackson',
+      href: '/moving-to/wyoming/jackson-wy',
+      description: 'Teton County Jackson Hole alpine paradise inbound guide',
+    },
+    lincoln: {
+      label: 'Moving to Alpine & Star Valley',
+      href: '/moving-to/wyoming/alpine-star-valley-wy',
+      description: 'Lincoln County Palisades Reservoir high-growth escape inbound guide',
+    },
+  },
 };
 
 export function getDestinationHubLinkForCounty(

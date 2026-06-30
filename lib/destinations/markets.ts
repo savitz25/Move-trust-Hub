@@ -12677,6 +12677,281 @@ export const markets: Market[] = [
     mapDescription:
       'La Crosse in La Crosse County — scenic Mississippi jewel with UW-La Crosse bluff-and-river character.',
   },
+  {
+    slug: 'wyoming',
+    displayName: 'Wyoming',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: [],
+    lat: 43.0,
+    lng: -107.5,
+    defaultToZip: '82001',
+    topInboundOrigins: ['Colorado', 'Montana', 'Utah', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,400–$6,800',
+      twoBR: '$4,400–$10,200',
+      threeBR: '$6,400–$14,000',
+      fourBR: '$9,200–$18,500',
+    },
+    inboundGrowthStat:
+      'No state income tax · wide-open spaces · mountain & ranch lifestyle',
+    peakSeasonNote:
+      'I-80 winter wind closures, Jackson Hole summer tourism, and Front Range tax-spillover peaks compress May–September schedules',
+    isClusterParent: true,
+    priority: 48,
+    mapDescription:
+      'Wyoming inbound hub covering Southeast, Central Basin, Bighorn & Yellowstone, and Alpine Resort corridors.',
+  },
+  {
+    slug: 'cheyenne-wy',
+    displayName: 'Cheyenne',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['laramie-wy'],
+    lat: 41.14,
+    lng: -104.8202,
+    defaultToZip: '82001',
+    topInboundOrigins: ['Colorado', 'Montana', 'Utah', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,400',
+    },
+    inboundGrowthStat:
+      'Complete capital core · F.E. Warren Air Force Base',
+    peakSeasonNote:
+      'F.E. Warren military transfer clusters and I-25 Front Range spillover affect Cheyenne scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Cheyenne in Laramie County — complete capital core with F.E. Warren Air Force Base corridors.',
+  },
+  {
+    slug: 'laramie-wy',
+    displayName: 'Laramie',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['albany-wy'],
+    lat: 41.3114,
+    lng: -105.5911,
+    defaultToZip: '82070',
+    topInboundOrigins: ['Colorado', 'Utah', 'Montana', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,400',
+    },
+    inboundGrowthStat:
+      'Brainy mountain valley · University of Wyoming',
+    peakSeasonNote:
+      'UW semester peaks and Snowy Range pass winter windows affect Laramie scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Laramie in Albany County — brainy mountain valley anchored by University of Wyoming.',
+  },
+  {
+    slug: 'casper-wy',
+    displayName: 'Casper',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['natrona-wy'],
+    lat: 42.8666,
+    lng: -106.3131,
+    defaultToZip: '82601',
+    topInboundOrigins: ['Colorado', 'Montana', 'Utah', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,400',
+    },
+    inboundGrowthStat:
+      'Practical & affordable hub · North Platte River',
+    peakSeasonNote:
+      'Energy-sector transfer windows and North Platte corridor access affect Casper scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Casper in Natrona County — practical and affordable hub along the North Platte River.',
+  },
+  {
+    slug: 'gillette-wy',
+    displayName: 'Gillette',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['campbell-wy'],
+    lat: 44.2911,
+    lng: -105.5022,
+    defaultToZip: '82716',
+    topInboundOrigins: ['Colorado', 'Montana', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,400',
+    },
+    inboundGrowthStat:
+      'High-yield industrial workhorse · Powder River Basin',
+    peakSeasonNote:
+      'Powder River Basin crew-change scheduling and energy-sector peaks affect Gillette delivery',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Gillette in Campbell County — high-yield industrial workhorse across the Powder River Basin.',
+  },
+  {
+    slug: 'sheridan-wy',
+    displayName: 'Sheridan',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['sheridan-wy'],
+    lat: 44.7972,
+    lng: -106.9562,
+    defaultToZip: '82801',
+    topInboundOrigins: ['Colorado', 'Montana', 'Idaho', 'California'],
+    avgCostRanges: {
+      studio: '$2,500–$5,800',
+      twoBR: '$4,600–$8,600',
+      threeBR: '$6,800–$11,400',
+      fourBR: '$9,600–$16,000',
+    },
+    inboundGrowthStat:
+      'Refined Western oasis · Bighorn Mountains',
+    peakSeasonNote:
+      'Bighorn foothills access and downtown historic-district shuttle constraints affect Sheridan scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Sheridan in Sheridan County — refined Western oasis beneath the Bighorn Mountains.',
+  },
+  {
+    slug: 'cody-wy',
+    displayName: 'Cody',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['park-wy'],
+    lat: 44.5263,
+    lng: -109.0565,
+    defaultToZip: '82414',
+    topInboundOrigins: ['Colorado', 'Montana', 'Idaho', 'California'],
+    avgCostRanges: {
+      studio: '$2,500–$5,800',
+      twoBR: '$4,600–$8,600',
+      threeBR: '$6,800–$11,400',
+      fourBR: '$9,600–$16,200',
+    },
+    inboundGrowthStat:
+      'Historic frontier gate · Yellowstone gateway',
+    peakSeasonNote:
+      'Yellowstone summer tourism and Wapiti corridor accessorials affect Cody scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Cody in Park County — historic frontier gate and Yellowstone gateway through Buffalo Bill heritage.',
+  },
+  {
+    slug: 'buffalo-wy',
+    displayName: 'Buffalo',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['johnson-wy'],
+    lat: 44.3483,
+    lng: -106.6989,
+    defaultToZip: '82834',
+    topInboundOrigins: ['Colorado', 'Montana', 'Idaho', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,500–$5,800',
+      twoBR: '$4,600–$8,600',
+      threeBR: '$6,800–$11,400',
+      fourBR: '$9,600–$16,000',
+    },
+    inboundGrowthStat:
+      'Base of the Bighorns value play · Old West heritage',
+    peakSeasonNote:
+      'Bighorn mountain approach restrictions and Main Street historic access affect Buffalo scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Buffalo in Johnson County — base of the Bighorns value play with Old West heritage.',
+  },
+  {
+    slug: 'lander-wy',
+    displayName: 'Lander',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['fremont-wy'],
+    lat: 42.833,
+    lng: -108.7307,
+    defaultToZip: '82520',
+    topInboundOrigins: ['Colorado', 'Utah', 'Montana', 'Idaho'],
+    avgCostRanges: {
+      studio: '$2,500–$5,800',
+      twoBR: '$4,600–$8,600',
+      threeBR: '$6,800–$11,400',
+      fourBR: '$9,600–$16,000',
+    },
+    inboundGrowthStat:
+      'Outdoor & climber sanctuary · Wind River Mountains',
+    peakSeasonNote:
+      'Wind River hillside long carries and Sinks Canyon access affect Lander scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Lander in Fremont County — outdoor and climber sanctuary along the Wind River Mountains.',
+  },
+  {
+    slug: 'jackson-wy',
+    displayName: 'Jackson',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['teton-wy'],
+    lat: 43.4799,
+    lng: -110.7624,
+    defaultToZip: '83001',
+    topInboundOrigins: ['Colorado', 'California', 'Utah', 'New York'],
+    avgCostRanges: {
+      studio: '$2,800–$6,800',
+      twoBR: '$5,200–$10,200',
+      threeBR: '$7,800–$14,000',
+      fourBR: '$11,200–$18,500',
+    },
+    inboundGrowthStat:
+      'High-end alpine paradise · Jackson Hole',
+    peakSeasonNote:
+      'Jackson Hole valley shuttle constraints and summer tourism peaks compress Jackson scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Jackson in Teton County — high-end alpine paradise through Jackson Hole and Grand Teton proximity.',
+  },
+  {
+    slug: 'alpine-star-valley-wy',
+    displayName: 'Alpine & Star Valley',
+    stateCode: 'WY',
+    stateName: 'Wyoming',
+    primaryCounties: ['lincoln-wy'],
+    lat: 43.1611,
+    lng: -111.0179,
+    defaultToZip: '83128',
+    topInboundOrigins: ['Idaho', 'Utah', 'Colorado', 'Montana'],
+    avgCostRanges: {
+      studio: '$2,600–$6,200',
+      twoBR: '$4,800–$9,400',
+      threeBR: '$7,200–$12,600',
+      fourBR: '$10,400–$17,200',
+    },
+    inboundGrowthStat:
+      'High-growth escape · Palisades Reservoir',
+    peakSeasonNote:
+      'Star Valley pass access and Palisades Reservoir corridor builder peaks affect Alpine scheduling',
+    clusterParent: 'wyoming',
+    priority: 48,
+    mapDescription:
+      'Alpine and Star Valley in Lincoln County — high-growth escape around Palisades Reservoir.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {
