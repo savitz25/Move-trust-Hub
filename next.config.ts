@@ -42,7 +42,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/sitemap-local/:state([^/]+)\\.xml',
+        source: '/sitemap-local/:state((?!sitemap)[^/]+)\\.xml',
         destination: '/sitemap-local/sitemap/:state.xml',
         permanent: true,
       },

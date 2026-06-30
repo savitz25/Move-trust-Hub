@@ -60,7 +60,7 @@ import { localStates } from '@/lib/local-movers/states';
 
 const SITE_URL = 'https://www.movetrusthub.com';
 
-/** Canonical URL pattern: /sitemap-local/sitemap/{stateSlug}.xml (not /sitemap-local/{stateSlug}.xml) */
+/** Child sitemaps: /sitemap-local/sitemap/{stateSlug}.xml — index at /sitemap-local/sitemap.xml */
 
 /** High-traffic CA counties — sitemap priority 0.85 */
 const CA_HIGH_TRAFFIC_COUNTIES = new Set([
