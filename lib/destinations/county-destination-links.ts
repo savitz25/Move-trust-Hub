@@ -737,6 +737,13 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Vanderburgh County tri-state river city inbound guide',
     },
   },
+  illinois: {
+    cook: {
+      label: 'Moving to Chicago',
+      href: '/moving-to/illinois/chicago-il',
+      description: 'Cook County flagship urban hub — Loop, Lincoln Park, and Lakeview inbound guide',
+    },
+  },
   maine: {
     cumberland: {
       label: 'Moving to Portland',
@@ -994,6 +1001,13 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       label: 'Moving to Roanoke',
       href: '/moving-to/virginia/roanoke-va',
       description: 'Blue Ridge valley outdoor recreation inbound moving guide',
+    },
+  },
+  washington: {
+    king: {
+      label: 'Moving to Seattle',
+      href: '/moving-to/washington/seattle-wa',
+      description: 'King County Puget Sound flagship metro inbound moving guide',
     },
   },
   florida: {

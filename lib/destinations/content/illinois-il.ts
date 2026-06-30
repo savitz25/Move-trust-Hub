@@ -17,6 +17,7 @@ export type IllinoisClusterContent = {
   };
   heroSubheadline: string;
   introParagraphs: string[];
+  chicagolandUrbanCorridor: IllinoisCorridorCity[];
   premierNorthwestCorridor: IllinoisCorridorCity[];
   corporateTransitCorridor: IllinoisCorridorCity[];
   foxValleySouthwestCorridor: IllinoisCorridorCity[];
@@ -31,7 +32,7 @@ export const illinoisClusterContent: IllinoisClusterContent = {
     title:
       'Moving to Illinois (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
     description:
-      'Explore Illinois inbound moving guides for Buffalo Grove, Naperville, Arlington Heights, Palatine, Schaumburg, Des Plaines, Skokie, Bolingbrook, Elgin, and Bloomington. Chicagoland suburbs with excellent schools and transit, Downstate affordability, urban access plus suburban quality of life. FMCSA-verified movers, free calculator. Independent directory.',
+      'Explore Illinois inbound moving guides for Chicago, Buffalo Grove, Naperville, Arlington Heights, Palatine, Schaumburg, Des Plaines, Skokie, Bolingbrook, Elgin, and Bloomington. Urban lakefront hub plus Chicagoland suburbs with excellent schools and transit. FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
       'moving to illinois',
       'illinois movers',
@@ -53,7 +54,15 @@ export const illinoisClusterContent: IllinoisClusterContent = {
   introParagraphs: [
     'Whether you are accepting a corporate role in Schaumburg while targeting Buffalo Grove\'s A+ school districts, settling Naperville\'s riverwalk downtown with nationally ranked suburban prestige, joining Arlington Heights\' vibrant walkable Metra corridor, comparing Palatine\'s green-space suburban balance, relocating to Bolingbrook\'s master-planned Will County communities, or evaluating Bloomington\'s Downstate affordability alongside Chicagoland options, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Illinois moves involve corridor logistics that generic Midwest guides overlook: O\'Hare and Midway flight-path staging constraints, I-90 and I-294 tollway peak congestion, Metra commuter closing-date clusters in Lake, DuPage, Cook, and Will counties, Chicago winter lake-effect routing on I-55 and I-80, Fox Valley bridge scheduling on I-355, and summer family relocation windows that compress carrier availability across the collar counties — factors our city guides surface so you can plan with confidence.',
-    'Ten live Illinois city guides span the Premier Northwest corridor (Buffalo Grove, Naperville, Arlington Heights, Palatine), Corporate Transit (Schaumburg, Des Plaines, Skokie), Fox Valley Southwest (Bolingbrook, Elgin), and Downstate Central (Bloomington). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
+    'Eleven live Illinois city guides span Chicagoland Urban (Chicago), Premier Northwest (Buffalo Grove, Naperville, Arlington Heights, Palatine), Corporate Transit (Schaumburg, Des Plaines, Skokie), Fox Valley Southwest (Bolingbrook, Elgin), and Downstate Central (Bloomington). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
+  ],
+  chicagolandUrbanCorridor: [
+    {
+      slug: 'chicago-il',
+      displayName: 'Chicago',
+      zip: '60601',
+      tagline: 'Third-largest US city · lakefront urban hub · Loop & North Side neighborhoods',
+    },
   ],
   premierNorthwestCorridor: [
     {
@@ -175,8 +184,13 @@ export const illinoisClusterContent: IllinoisClusterContent = {
       href: '/local-movers/illinois/dupage',
     },
     {
+      title: 'Moving to Chicago, IL',
+      description: 'Flagship urban hub — Loop, Lincoln Park, Lakeview, and high-rise move guides.',
+      href: '/moving-to/illinois/chicago-il',
+    },
+    {
       title: 'Browse Cook County local movers',
-      description: 'Arlington Heights, Palatine, Schaumburg, Des Plaines, and Skokie mover directory.',
+      description: 'Chicago, Arlington Heights, Palatine, Schaumburg, Des Plaines, and Skokie mover directory.',
       href: '/local-movers/illinois/cook',
     },
     {

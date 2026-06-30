@@ -1704,6 +1704,56 @@ export const markets: Market[] = [
       'Salem in Marion and Polk counties — affordable state-capital living within an hour of Portland, Eugene, and the coast.',
   },
   {
+    slug: 'washington',
+    displayName: 'Washington',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: [],
+    lat: 47.6,
+    lng: -122.3,
+    defaultToZip: '98101',
+    topInboundOrigins: ['California', 'Texas', 'Illinois', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,400–$9,800',
+      threeBR: '$8,200–$14,200',
+      fourBR: '$12,000–$19,500',
+    },
+    inboundGrowthStat:
+      'Puget Sound tech hub · no state income tax · Pacific Northwest outdoor access',
+    peakSeasonNote:
+      'Hillside shuttle staging and Snoqualmie Pass winter routing may affect Puget Sound delivery windows',
+    isClusterParent: true,
+    priority: 10,
+    mapDescription:
+      'Washington inbound hub covering Puget Sound flagship metro (Seattle) and King County tech-and-aerospace corridor.',
+  },
+  {
+    slug: 'seattle-wa',
+    displayName: 'Seattle',
+    stateCode: 'WA',
+    stateName: 'Washington',
+    primaryCounties: ['king-wa'],
+    lat: 47.6062,
+    lng: -122.3321,
+    defaultToZip: '98101',
+    topInboundOrigins: ['California', 'Texas', 'Illinois', 'Colorado'],
+    avgCostRanges: {
+      studio: '$2,800–$6,500',
+      twoBR: '$5,400–$9,800',
+      threeBR: '$8,200–$14,200',
+      fourBR: '$12,000–$19,500',
+    },
+    inboundGrowthStat:
+      'Tech & aerospace hub · Puget Sound · no state income tax · urban neighborhoods',
+    peakSeasonNote:
+      'Hillside shuttles, condo COI filings, and I-5 peak congestion common on Seattle deliveries',
+    clusterParent: 'washington',
+    priority: 10,
+    mapDescription:
+      'Seattle in King County — Pacific Northwest flagship metro with Capitol Hill, Ballard, and South Lake Union corridors.',
+  },
+  {
     slug: 'oklahoma',
     displayName: 'Oklahoma',
     stateCode: 'OK',
@@ -6101,7 +6151,7 @@ export const markets: Market[] = [
     isClusterParent: true,
     priority: 24,
     mapDescription:
-      'Illinois inbound hub covering Premier Northwest (Buffalo Grove, Naperville, Arlington Heights, Palatine), Corporate Transit (Schaumburg, Des Plaines, Skokie), Fox Valley Southwest (Bolingbrook, Elgin), and Downstate Central (Bloomington).',
+      'Illinois inbound hub covering Chicagoland Urban (Chicago), Premier Northwest (Buffalo Grove, Naperville, Arlington Heights, Palatine), Corporate Transit (Schaumburg, Des Plaines, Skokie), Fox Valley Southwest (Bolingbrook, Elgin), and Downstate Central (Bloomington).',
   },
   {
     slug: 'buffalo-grove-il',
@@ -6352,6 +6402,31 @@ export const markets: Market[] = [
     priority: 24,
     mapDescription:
       'Skokie in Cook County — culturally rich near-north suburb with CTA and Old Orchard access.',
+  },
+  {
+    slug: 'chicago-il',
+    displayName: 'Chicago',
+    stateCode: 'IL',
+    stateName: 'Illinois',
+    primaryCounties: ['cook-il'],
+    lat: 41.8781,
+    lng: -87.6298,
+    defaultToZip: '60601',
+    topInboundOrigins: ['California', 'New York', 'Wisconsin', 'Michigan'],
+    avgCostRanges: {
+      studio: '$3,500–$7,200',
+      twoBR: '$6,200–$11,000',
+      threeBR: '$9,000–$15,500',
+      fourBR: '$13,000–$21,000',
+    },
+    inboundGrowthStat:
+      'Third-largest US city · lakefront urban hub · finance & tech employment',
+    peakSeasonNote:
+      'High-rise COI filings, parking permits, and winter lake-effect routing standard on Chicago urban deliveries',
+    clusterParent: 'illinois',
+    priority: 10,
+    mapDescription:
+      'Chicago in Cook County — Midwest flagship metro with Loop, Lincoln Park, Lakeview, and lakefront urban neighborhoods.',
   },
   {
     slug: 'georgia',

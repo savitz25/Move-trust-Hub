@@ -239,6 +239,8 @@ import { bloomingtonIlContent } from '@/lib/destinations/content/bloomington-il'
 import { schaumburgIlContent } from '@/lib/destinations/content/schaumburg-il';
 import { desPlainesIlContent } from '@/lib/destinations/content/des-plaines-il';
 import { skokieIlContent } from '@/lib/destinations/content/skokie-il';
+import { chicagoIlContent } from '@/lib/destinations/content/chicago-il';
+import { seattleWaContent } from '@/lib/destinations/content/seattle-wa';
 import { johnsCreekGaContent } from '@/lib/destinations/content/johns-creek-ga';
 import { alpharettaGaContent } from '@/lib/destinations/content/alpharetta-ga';
 import { roswellGaContent } from '@/lib/destinations/content/roswell-ga';
@@ -540,6 +542,8 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'schaumburg-il': schaumburgIlContent,
   'des-plaines-il': desPlainesIlContent,
   'skokie-il': skokieIlContent,
+  'chicago-il': chicagoIlContent,
+  'seattle-wa': seattleWaContent,
   'johns-creek-ga': johnsCreekGaContent,
   'alpharetta-ga': alpharettaGaContent,
   'roswell-ga': roswellGaContent,
@@ -762,6 +766,12 @@ export function getPublishedOhioHubSlugs(): string[] {
 export function getPublishedIllinoisHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'illinois'
+  );
+}
+
+export function getPublishedWashingtonHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'washington'
   );
 }
 

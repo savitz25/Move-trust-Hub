@@ -65,7 +65,7 @@ export const californiaToWashingtonContent: RouteGuideExtendedContent = {
     cities: [
       {
         name: 'Seattle',
-        hubPath: '/local-movers/washington/king',
+        hubPath: '/moving-to/washington/seattle-wa',
         tagline: 'Puget Sound tech hub · ~810–1,135 miles · urban & hillside delivery',
         paragraphs: [
           'Seattle captures the largest share of California to Washington inbound volume in 2026. Tech transferees, creative professionals, and families leaving Los Angeles, the Bay Area, and San Diego for King County inventory drive consistent truck demand on I-5. Capitol Hill walk-ups, downtown high-rises, and steep Magnolia and Queen Anne driveways require COI filings, elevator reservations, and shuttle planning.',
@@ -74,7 +74,7 @@ export const californiaToWashingtonContent: RouteGuideExtendedContent = {
       },
       {
         name: 'Bellevue & Eastside',
-        hubPath: '/local-movers/washington/king',
+        hubPath: '/moving-to/washington/seattle-wa',
         tagline: 'Microsoft corridor · upscale suburbs · HOA shuttle planning',
         paragraphs: [
           'Bellevue, Kirkland, and Redmond draw sustained California tech inbound — engineers and product leaders leaving the Peninsula and LA for Eastside hiring density and suburban HOA communities. Gated neighborhoods and narrow interior streets often require shuttle trucks; downtown Bellevue high-rises need white-glove elevator scheduling similar to Bay Area condos.',

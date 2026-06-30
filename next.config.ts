@@ -77,6 +77,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/moving-to/chicago-il',
+        destination: '/moving-to/illinois/chicago-il',
+        permanent: true,
+      },
+      {
+        source: '/moving-to/seattle-wa',
+        destination: '/moving-to/washington/seattle-wa',
+        permanent: true,
+      },
+      {
         source: '/moving-to/little-rock-ar',
         destination: '/moving-to/arkansas/little-rock-ar',
         permanent: true,

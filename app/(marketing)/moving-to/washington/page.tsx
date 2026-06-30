@@ -4,9 +4,9 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { DestinationClusterHeroCta } from '@/components/destinations/destination-cluster-hero-cta';
 import {
-  illinoisClusterContent,
-  type IllinoisCorridorCity,
-} from '@/lib/destinations/content/illinois-il';
+  washingtonClusterContent,
+  type WashingtonCorridorCity,
+} from '@/lib/destinations/content/washington-wa';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import {
   getClusterMarkets,
@@ -14,10 +14,10 @@ import {
   getMarketPath,
 } from '@/lib/destinations/markets';
 import { JsonLd } from '@/lib/seo/json-ld';
-import { buildIllinoisClusterSchemaGraph } from '@/lib/seo/build-destination-index-schema';
+import { buildWashingtonClusterSchemaGraph } from '@/lib/seo/build-destination-index-schema';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
 
-const content = illinoisClusterContent;
+const content = washingtonClusterContent;
 
 export const dynamic = 'force-static';
 
@@ -43,7 +43,7 @@ function CorridorCityGrid({
   cities,
   published,
 }: {
-  cities: IllinoisCorridorCity[];
+  cities: WashingtonCorridorCity[];
   published: Set<string>;
 }) {
   return (
@@ -51,7 +51,7 @@ function CorridorCityGrid({
       {cities.map((city) => {
         const market = getMarketBySlug(city.slug);
         const isLive = published.has(city.slug);
-        const path = market ? getMarketPath(market) : `/moving-to/illinois/${city.slug}`;
+        const path = market ? getMarketPath(market) : `/moving-to/washington/${city.slug}`;
 
         return (
           <div
@@ -62,10 +62,10 @@ function CorridorCityGrid({
               <h3 className="font-semibold text-lg">
                 {isLive ? (
                   <Link href={path} className="hover:text-primary transition-colors">
-                    {city.displayName}, IL
+                    {city.displayName}, WA
                   </Link>
                 ) : (
-                  <span>{city.displayName}, IL</span>
+                  <span>{city.displayName}, WA</span>
                 )}
               </h3>
               {isLive ? (
@@ -104,16 +104,16 @@ function CorridorCityGrid({
   );
 }
 
-export default function IllinoisClusterPage() {
+export default function WashingtonClusterPage() {
   const published = new Set(getPublishedCityHubSlugs());
-  const otherIllinoisCities = getClusterMarkets('illinois').filter(
+  const otherWashingtonCities = getClusterMarkets('washington').filter(
     (market) => !published.has(market.slug)
   );
 
   return (
     <>
       <JsonLd
-        data={buildIllinoisClusterSchemaGraph(
+        data={buildWashingtonClusterSchemaGraph(
           content.seo.title,
           content.seo.description,
           content.seo.canonicalPath
@@ -126,13 +126,13 @@ export default function IllinoisClusterPage() {
               crumbs={[
                 { label: 'Home', href: '/' },
                 { label: 'Popular Destinations', href: '/moving-to' },
-                { label: 'Illinois' },
+                { label: 'Washington' },
               ]}
             />
 
             <div className="inline-flex items-center gap-2 rounded-full border bg-primary/5 px-3 py-1 text-xs font-semibold text-primary mb-4">
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-              Illinois Cluster · Updated 2026
+              Washington Cluster · Updated 2026
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4 max-w-4xl">
@@ -152,73 +152,20 @@ export default function IllinoisClusterPage() {
               </p>
             ))}
 
-            <DestinationClusterHeroCta clusterSlug="illinois" clusterLabel="Illinois" />
+            <DestinationClusterHeroCta clusterSlug="washington" clusterLabel="Washington" />
           </div>
         </section>
 
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Chicagoland Urban — Live City Guide
+              Puget Sound — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Chicago — America&apos;s third-largest city with Loop high-rises, Lincoln Park
-              brownstones, Lakeview lakefront living, and Cook County urban mover coverage.
+              Seattle — Pacific Northwest tech and aerospace flagship with Capitol Hill, Ballard,
+              South Lake Union, and King County mover coverage.
             </p>
-            <CorridorCityGrid cities={content.chicagolandUrbanCorridor} published={published} />
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16 border-b">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Premier Northwest — Live City Guides
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              Buffalo Grove, Naperville, Arlington Heights, and Palatine — #1-ranked Illinois
-              livability, nationally ranked riverwalk downtown, Metra walkability, and balanced
-              green-space suburbs.
-            </p>
-            <CorridorCityGrid cities={content.premierNorthwestCorridor} published={published} />
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16 border-b">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Corporate Transit — Live City Guides
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              Schaumburg, Des Plaines, and Skokie — Fortune 500 office density, O&apos;Hare transit
-              connectivity, and culturally rich near-north suburban inventory.
-            </p>
-            <CorridorCityGrid cities={content.corporateTransitCorridor} published={published} />
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16 border-b">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Fox Valley Southwest — Live City Guides
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              Bolingbrook and Elgin — master-planned Will County communities and affordable Fox
-              River historic corridor value.
-            </p>
-            <CorridorCityGrid cities={content.foxValleySouthwestCorridor} published={published} />
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16 border-b">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Downstate Central — Live City Guide
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-3xl">
-              Bloomington — resilient McLean County hub with State Farm headquarters and Illinois
-              State University stability.
-            </p>
-            <CorridorCityGrid cities={content.downstateCentralCorridor} published={published} />
+            <CorridorCityGrid cities={content.pugetSoundCorridor} published={published} />
           </div>
         </section>
 
@@ -238,14 +185,14 @@ export default function IllinoisClusterPage() {
           </section>
         ))}
 
-        {otherIllinoisCities.length > 0 && (
+        {otherWashingtonCities.length > 0 && (
           <section className="py-12 md:py-16 bg-muted/20">
             <div className="container mx-auto px-4 max-w-6xl">
               <h2 className="text-2xl font-semibold tracking-tight mb-6">
-                More Illinois Cities — Coming Soon
+                More Washington Cities — Coming Soon
               </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {otherIllinoisCities.map((market) => (
+                {otherWashingtonCities.map((market) => (
                   <div key={market.slug} className="rounded-xl border bg-card p-5">
                     <h3 className="font-semibold mb-1">
                       {market.displayName}, {market.stateCode}
@@ -261,7 +208,7 @@ export default function IllinoisClusterPage() {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl font-semibold tracking-tight mb-8">
-              Illinois Moving Resources
+              Washington Moving Resources
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {content.resourceLinks.map((resource) => (
