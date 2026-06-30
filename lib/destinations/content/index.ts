@@ -417,6 +417,16 @@ import { elkhornNeContent } from '@/lib/destinations/content/elkhorn-ne';
 import { columbusNeContent } from '@/lib/destinations/content/columbus-ne';
 import { hastingsNeContent } from '@/lib/destinations/content/hastings-ne';
 import { fremontNeContent } from '@/lib/destinations/content/fremont-ne';
+import { hendersonNvContent } from '@/lib/destinations/content/henderson-nv';
+import { summerlinNvContent } from '@/lib/destinations/content/summerlin-nv';
+import { renoNvContent } from '@/lib/destinations/content/reno-nv';
+import { sparksNvContent } from '@/lib/destinations/content/sparks-nv';
+import { northLasVegasNvContent } from '@/lib/destinations/content/north-las-vegas-nv';
+import { carsonCityNvContent } from '@/lib/destinations/content/carson-city-nv';
+import { boulderCityNvContent } from '@/lib/destinations/content/boulder-city-nv';
+import { inclineVillageNvContent } from '@/lib/destinations/content/incline-village-nv';
+import { mesquiteNvContent } from '@/lib/destinations/content/mesquite-nv';
+import { elkoNvContent } from '@/lib/destinations/content/elko-nv';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -836,6 +846,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'columbus-ne': columbusNeContent,
   'hastings-ne': hastingsNeContent,
   'fremont-ne': fremontNeContent,
+  'henderson-nv': hendersonNvContent,
+  'summerlin-nv': summerlinNvContent,
+  'reno-nv': renoNvContent,
+  'sparks-nv': sparksNvContent,
+  'north-las-vegas-nv': northLasVegasNvContent,
+  'carson-city-nv': carsonCityNvContent,
+  'boulder-city-nv': boulderCityNvContent,
+  'incline-village-nv': inclineVillageNvContent,
+  'mesquite-nv': mesquiteNvContent,
+  'elko-nv': elkoNvContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -1106,5 +1126,11 @@ export function getPublishedMontanaHubSlugs(): string[] {
 export function getPublishedNebraskaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'nebraska'
+  );
+}
+
+export function getPublishedNevadaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'nevada'
   );
 }

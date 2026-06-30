@@ -1047,6 +1047,28 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'King County Puget Sound flagship metro inbound moving guide',
     },
   },
+  nevada: {
+    clark: {
+      label: 'Moving to Henderson',
+      href: '/moving-to/nevada/henderson-nv',
+      description: 'Clark County Las Vegas metro Henderson and Summerlin inbound guides',
+    },
+    washoe: {
+      label: 'Moving to Reno',
+      href: '/moving-to/nevada/reno-nv',
+      description: 'Washoe County Reno-Tahoe and Incline Village inbound guides',
+    },
+    'carson-city': {
+      label: 'Moving to Carson City',
+      href: '/moving-to/nevada/carson-city-nv',
+      description: 'Carson City capital corridor Eagle Valley inbound guide',
+    },
+    elko: {
+      label: 'Moving to Elko',
+      href: '/moving-to/nevada/elko-nv',
+      description: 'Elko County gold-mining corridor inbound guide',
+    },
+  },
   nebraska: {
     sarpy: {
       label: 'Moving to Papillion',

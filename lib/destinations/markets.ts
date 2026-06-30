@@ -11077,6 +11077,281 @@ export const markets: Market[] = [
     mapDescription:
       'Fremont in Dodge County — antique and recreation escape along Fremont Lakes.',
   },
+  {
+    slug: 'nevada',
+    displayName: 'Nevada',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: [],
+    lat: 39.0,
+    lng: -117.0,
+    defaultToZip: '89012',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,400–$6,200',
+      twoBR: '$4,400–$9,400',
+      threeBR: '$6,400–$12,800',
+      fourBR: '$9,200–$17,500',
+    },
+    inboundGrowthStat:
+      'No state income tax · sunshine · tax-friendly Western growth',
+    peakSeasonNote:
+      'Summer heat and master-planned HOA move-day rules compress Nevada delivery windows',
+    isClusterParent: true,
+    priority: 42,
+    mapDescription:
+      'Nevada inbound hub covering Las Vegas metro, Reno-Tahoe, capital, and eastern corridors.',
+  },
+  {
+    slug: 'henderson-nv',
+    displayName: 'Henderson',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['clark-nv'],
+    lat: 36.0395,
+    lng: -114.9817,
+    defaultToZip: '89012',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,800–$6,400',
+      twoBR: '$5,200–$9,800',
+      threeBR: '$7,600–$13,200',
+      fourBR: '$11,000–$18,500',
+    },
+    inboundGrowthStat:
+      'Gold standard safety & families · Green Valley · master-planned',
+    peakSeasonNote:
+      'Green Valley HOA move-day rules and Henderson school-year closings affect scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Henderson in Clark County — gold standard for safety and families with Green Valley master-planned growth.',
+  },
+  {
+    slug: 'summerlin-nv',
+    displayName: 'Summerlin',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['clark-nv'],
+    lat: 36.1699,
+    lng: -115.3311,
+    defaultToZip: '89135',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'New York'],
+    avgCostRanges: {
+      studio: '$2,800–$6,400',
+      twoBR: '$5,200–$9,800',
+      threeBR: '$7,600–$13,200',
+      fourBR: '$11,000–$18,500',
+    },
+    inboundGrowthStat:
+      'Elite master-plan · Red Rock Canyon · luxury living',
+    peakSeasonNote:
+      'Summerlin HOA protocols and Red Rock corridor access affect luxury delivery scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Summerlin in Clark County — elite Las Vegas master-plan with Red Rock Canyon luxury living.',
+  },
+  {
+    slug: 'reno-nv',
+    displayName: 'Reno',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['washoe-nv'],
+    lat: 39.5296,
+    lng: -119.8138,
+    defaultToZip: '89501',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,600–$6,000',
+      twoBR: '$4,800–$9,000',
+      threeBR: '$7,000–$12,000',
+      fourBR: '$10,200–$16,800',
+    },
+    inboundGrowthStat:
+      'Biggest Little City reinvention · Truckee River · tech hub',
+    peakSeasonNote:
+      'Truckee River corridor access and Reno tech-transfer closings affect scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Reno in Washoe County — Biggest Little City reinvention along the Truckee River tech hub.',
+  },
+  {
+    slug: 'sparks-nv',
+    displayName: 'Sparks',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['washoe-nv'],
+    lat: 39.5349,
+    lng: -119.7527,
+    defaultToZip: '89431',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,500–$5,800',
+      twoBR: '$4,600–$8,800',
+      threeBR: '$6,800–$11,600',
+      fourBR: '$9,800–$16,200',
+    },
+    inboundGrowthStat:
+      'Accessible East-Reno alternative · Sparks Marina',
+    peakSeasonNote:
+      'Sparks Marina corridor access and East-Reno builder closings affect scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Sparks in Washoe County — accessible East-Reno alternative around Sparks Marina.',
+  },
+  {
+    slug: 'north-las-vegas-nv',
+    displayName: 'North Las Vegas',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['clark-nv'],
+    lat: 36.1989,
+    lng: -115.1175,
+    defaultToZip: '89030',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,500–$5,800',
+      twoBR: '$4,600–$8,800',
+      threeBR: '$6,800–$11,600',
+      fourBR: '$9,800–$16,200',
+    },
+    inboundGrowthStat:
+      'First-time buyer value · new master-planned growth',
+    peakSeasonNote:
+      'North Las Vegas builder closing clusters and master-planned HOA rules affect scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'North Las Vegas in Clark County — first-time buyer value through new master-planned growth.',
+  },
+  {
+    slug: 'carson-city-nv',
+    displayName: 'Carson City',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['carson-city-nv'],
+    lat: 39.1638,
+    lng: -119.7674,
+    defaultToZip: '89701',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,600–$6,000',
+      twoBR: '$4,800–$9,000',
+      threeBR: '$7,000–$12,000',
+      fourBR: '$10,200–$16,800',
+    },
+    inboundGrowthStat:
+      'Historic capital value · Eagle Valley stability',
+    peakSeasonNote:
+      'State legislative session peaks and Eagle Valley access affect Carson City scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Carson City — historic capital value and Eagle Valley government employment stability.',
+  },
+  {
+    slug: 'boulder-city-nv',
+    displayName: 'Boulder City',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['clark-nv'],
+    lat: 35.9786,
+    lng: -114.8325,
+    defaultToZip: '89005',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,400',
+    },
+    inboundGrowthStat:
+      'Casino-free sanctuary · Hoover Dam · historic charm',
+    peakSeasonNote:
+      'Hoover Dam corridor access and historic-district shuttle constraints affect scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Boulder City in Clark County — casino-free sanctuary near Hoover Dam with historic charm.',
+  },
+  {
+    slug: 'incline-village-nv',
+    displayName: 'Incline Village',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['washoe-nv'],
+    lat: 39.2513,
+    lng: -119.9727,
+    defaultToZip: '89451',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'New York'],
+    avgCostRanges: {
+      studio: '$3,000–$6,800',
+      twoBR: '$5,600–$10,400',
+      threeBR: '$8,200–$14,000',
+      fourBR: '$12,000–$19,500',
+    },
+    inboundGrowthStat:
+      'Ultra-luxury alpine paradise · Lake Tahoe north shore',
+    peakSeasonNote:
+      'Mountain-pass winter closures and lakefront shuttle constraints affect Incline Village scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Incline Village in Washoe County — ultra-luxury alpine paradise on Lake Tahoe north shore.',
+  },
+  {
+    slug: 'mesquite-nv',
+    displayName: 'Mesquite',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['clark-nv'],
+    lat: 36.8055,
+    lng: -114.0672,
+    defaultToZip: '89027',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,400',
+    },
+    inboundGrowthStat:
+      'Sun-drenched retirement hub · championship golf',
+    peakSeasonNote:
+      'Golf-community HOA rules and I-15 retirement corridor peaks affect Mesquite scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Mesquite in Clark County — sun-drenched retirement hub along championship golf courses.',
+  },
+  {
+    slug: 'elko-nv',
+    displayName: 'Elko',
+    stateCode: 'NV',
+    stateName: 'Nevada',
+    primaryCounties: ['elko-nv'],
+    lat: 40.8324,
+    lng: -115.7631,
+    defaultToZip: '89801',
+    topInboundOrigins: ['California', 'Arizona', 'Texas', 'Utah'],
+    avgCostRanges: {
+      studio: '$2,400–$5,600',
+      twoBR: '$4,400–$8,200',
+      threeBR: '$6,400–$11,000',
+      fourBR: '$9,200–$15,400',
+    },
+    inboundGrowthStat:
+      'Mountainous rural workhorse · gold mining corridor',
+    peakSeasonNote:
+      'Elko mining-transfer clusters and rural long carries affect eastern Nevada scheduling',
+    clusterParent: 'nevada',
+    priority: 42,
+    mapDescription:
+      'Elko in Elko County — mountainous rural workhorse with gold-mining employment.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

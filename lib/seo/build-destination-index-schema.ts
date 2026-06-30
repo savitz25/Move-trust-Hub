@@ -1522,6 +1522,66 @@ export function buildNebraskaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/nevada cluster parent */
+export function buildNevadaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const nevadaHubs = getClusterMarkets('nevada').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Nevada', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Nevada',
+          addressRegion: 'NV',
+        },
+        mainEntity: { '@id': `${canonical}#nevada-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#nevada-hub-list`,
+        name: 'Nevada City Moving Guides',
+        numberOfItems: nevadaHubs.length,
+        itemListElement: nevadaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, NV`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/louisiana cluster parent */
 export function buildLouisianaClusterSchemaGraph(
   title: string,
