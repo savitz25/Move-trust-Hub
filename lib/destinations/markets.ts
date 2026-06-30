@@ -11627,6 +11627,281 @@ export const markets: Market[] = [
     mapDescription:
       'Minot in Ward County — resilient Magic City anchored by Minot Air Force Base.',
   },
+  {
+    slug: 'south-dakota',
+    displayName: 'South Dakota',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: [],
+    lat: 44.5,
+    lng: -100.0,
+    defaultToZip: '57104',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,100–$5,200',
+      twoBR: '$3,800–$7,400',
+      threeBR: '$5,500–$9,800',
+      fourBR: '$8,000–$14,200',
+    },
+    inboundGrowthStat:
+      'No state income tax · low taxes · outdoor-rich Upper Midwest',
+    peakSeasonNote:
+      'I-29 and I-90 winter windows and Ellsworth AFB transfer peaks affect SD delivery scheduling',
+    isClusterParent: true,
+    priority: 44,
+    mapDescription:
+      'South Dakota inbound hub covering Sioux Falls metro, Black Hills, and eastern corridors.',
+  },
+  {
+    slug: 'sioux-falls-sd',
+    displayName: 'Sioux Falls',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['minnehaha-sd'],
+    lat: 43.546,
+    lng: -96.7313,
+    defaultToZip: '57104',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Economic engine · Big Sioux River · healthcare & finance',
+    peakSeasonNote:
+      'Downtown Broadway shuttle constraints and Sioux Falls school-year closings affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Sioux Falls in Minnehaha County — economic engine along the Big Sioux River.',
+  },
+  {
+    slug: 'rapid-city-sd',
+    displayName: 'Rapid City',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['pennington-sd'],
+    lat: 44.0805,
+    lng: -103.231,
+    defaultToZip: '57701',
+    topInboundOrigins: ['Wyoming', 'Colorado', 'Nebraska', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,000',
+      fourBR: '$8,400–$14,500',
+    },
+    inboundGrowthStat:
+      'Gateway to the Black Hills · Mount Rushmore corridor',
+    peakSeasonNote:
+      'Black Hills tourism peaks and mountain-pass access affect Rapid City scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Rapid City in Pennington County — gateway to the Black Hills and Mount Rushmore.',
+  },
+  {
+    slug: 'harrisburg-sd',
+    displayName: 'Harrisburg',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['lincoln-sd'],
+    lat: 43.4314,
+    lng: -96.7003,
+    defaultToZip: '57032',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Explosive growth winner · master-planned suburbs',
+    peakSeasonNote:
+      'Harrisburg builder closing clusters and HOA move-day rules affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Harrisburg in Lincoln County — explosive master-planned growth south of Sioux Falls.',
+  },
+  {
+    slug: 'brookings-sd',
+    displayName: 'Brookings',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['brookings-sd'],
+    lat: 44.3114,
+    lng: -96.7984,
+    defaultToZip: '57006',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,100–$4,900',
+      twoBR: '$3,900–$7,200',
+      threeBR: '$5,600–$9,500',
+      fourBR: '$8,200–$13,800',
+    },
+    inboundGrowthStat:
+      'Brainy college town · SDSU research culture',
+    peakSeasonNote:
+      'SDSU semester peaks and downtown Brookings access affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Brookings in Brookings County — brainy college town anchored by South Dakota State University.',
+  },
+  {
+    slug: 'spearfish-sd',
+    displayName: 'Spearfish',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['lawrence-sd'],
+    lat: 44.4908,
+    lng: -103.8594,
+    defaultToZip: '57783',
+    topInboundOrigins: ['Wyoming', 'Colorado', 'Nebraska', 'Montana'],
+    avgCostRanges: {
+      studio: '$2,100–$4,900',
+      twoBR: '$3,900–$7,200',
+      threeBR: '$5,600–$9,500',
+      fourBR: '$8,200–$13,800',
+    },
+    inboundGrowthStat:
+      'Alpine sanctuary · northern Black Hills',
+    peakSeasonNote:
+      'Spearfish Canyon access and hillside shuttle constraints affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Spearfish in Lawrence County — alpine sanctuary at the northern Black Hills edge.',
+  },
+  {
+    slug: 'brandon-sd',
+    displayName: 'Brandon',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['minnehaha-sd'],
+    lat: 43.5947,
+    lng: -96.5719,
+    defaultToZip: '57005',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Premium school enclave · Brandon Valley Schools',
+    peakSeasonNote:
+      'Brandon Valley school-boundary demand and cul-de-sac shuttle staging affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Brandon in Minnehaha County — premium school enclave with Brandon Valley Schools.',
+  },
+  {
+    slug: 'tea-sd',
+    displayName: 'Tea',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['lincoln-sd'],
+    lat: 43.4483,
+    lng: -96.8367,
+    defaultToZip: '57064',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Neighborly commuter safe-haven · Sioux Falls corridor',
+    peakSeasonNote:
+      'Legacy Parkway corridor access and Tea HOA move-day rules affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Tea in Lincoln County — neighborly commuter safe-haven between Sioux Falls and Harrisburg.',
+  },
+  {
+    slug: 'watertown-sd',
+    displayName: 'Watertown',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['codington-sd'],
+    lat: 44.8994,
+    lng: -97.1151,
+    defaultToZip: '57201',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,100–$4,900',
+      twoBR: '$3,900–$7,200',
+      threeBR: '$5,600–$9,500',
+      fourBR: '$8,200–$13,800',
+    },
+    inboundGrowthStat:
+      'Lakeside recreational retreat · Lake Kampeska',
+    peakSeasonNote:
+      'Lake Kampeska summer recreation peaks and Glacial Lakes access affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Watertown in Codington County — lakeside recreational retreat along Lake Kampeska.',
+  },
+  {
+    slug: 'vermillion-sd',
+    displayName: 'Vermillion',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['clay-sd'],
+    lat: 42.7794,
+    lng: -96.9292,
+    defaultToZip: '57069',
+    topInboundOrigins: ['Minnesota', 'Iowa', 'Nebraska', 'Wyoming'],
+    avgCostRanges: {
+      studio: '$2,100–$4,900',
+      twoBR: '$3,900–$7,200',
+      threeBR: '$5,600–$9,500',
+      fourBR: '$8,200–$13,800',
+    },
+    inboundGrowthStat:
+      'Riverfront academic hub · University of South Dakota',
+    peakSeasonNote:
+      'USD semester peaks and Missouri River corridor access affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Vermillion in Clay County — riverfront academic hub anchored by the University of South Dakota.',
+  },
+  {
+    slug: 'box-elder-sd',
+    displayName: 'Box Elder',
+    stateCode: 'SD',
+    stateName: 'South Dakota',
+    primaryCounties: ['pennington-sd'],
+    lat: 44.1125,
+    lng: -103.0813,
+    defaultToZip: '57719',
+    topInboundOrigins: ['Wyoming', 'Colorado', 'Nebraska', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Booming military corridor · Ellsworth Air Force Base',
+    peakSeasonNote:
+      'Ellsworth AFB housing coordination and military transfer peaks affect scheduling',
+    clusterParent: 'south-dakota',
+    priority: 44,
+    mapDescription:
+      'Box Elder in Pennington County — booming military corridor adjacent to Ellsworth Air Force Base.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

@@ -42,8 +42,6 @@ import { elPasoTxContent } from '@/lib/destinations/content/el-paso-tx';
 import { arlingtonTxContent } from '@/lib/destinations/content/arlington-tx';
 import { irvingTxContent } from '@/lib/destinations/content/irving-tx';
 import { grandPrairieTxContent } from '@/lib/destinations/content/grand-prairie-tx';
-import { greatFallsMtContent } from '@/lib/destinations/content/great-falls-mt';
-import { hamiltonMtContent } from '@/lib/destinations/content/hamilton-mt';
 import { dallasFortWorthTxContent } from '@/lib/destinations/content/dallas-fort-worth-tx';
 import { austinTxContent } from '@/lib/destinations/content/austin-tx';
 import { houstonTxContent } from '@/lib/destinations/content/houston-tx';
@@ -383,10 +381,6 @@ import { rochesterMnContent } from '@/lib/destinations/content/rochester-mn';
 import { stillwaterMnContent } from '@/lib/destinations/content/stillwater-mn';
 import { wayzataMnContent } from '@/lib/destinations/content/wayzata-mn';
 import { woodburyMnContent } from '@/lib/destinations/content/woodbury-mn';
-import { belgradeMtContent } from '@/lib/destinations/content/belgrade-mt';
-import { helenaMtContent } from '@/lib/destinations/content/helena-mt';
-import { kalispellMtContent } from '@/lib/destinations/content/kalispell-mt';
-import { whitefishMtContent } from '@/lib/destinations/content/whitefish-mt';
 import { columbiaMoContent } from '@/lib/destinations/content/columbia-mo';
 import { leesSummitMoContent } from '@/lib/destinations/content/lees-summit-mo';
 import { ofallonMoContent } from '@/lib/destinations/content/ofallon-mo';
@@ -437,6 +431,16 @@ import { mandanNdContent } from '@/lib/destinations/content/mandan-nd';
 import { dickinsonNdContent } from '@/lib/destinations/content/dickinson-nd';
 import { wahpetonNdContent } from '@/lib/destinations/content/wahpeton-nd';
 import { minotNdContent } from '@/lib/destinations/content/minot-nd';
+import { siouxFallsSdContent } from '@/lib/destinations/content/sioux-falls-sd';
+import { rapidCitySdContent } from '@/lib/destinations/content/rapid-city-sd';
+import { harrisburgSdContent } from '@/lib/destinations/content/harrisburg-sd';
+import { brookingsSdContent } from '@/lib/destinations/content/brookings-sd';
+import { spearfishSdContent } from '@/lib/destinations/content/spearfish-sd';
+import { brandonSdContent } from '@/lib/destinations/content/brandon-sd';
+import { teaSdContent } from '@/lib/destinations/content/tea-sd';
+import { watertownSdContent } from '@/lib/destinations/content/watertown-sd';
+import { vermillionSdContent } from '@/lib/destinations/content/vermillion-sd';
+import { boxElderSdContent } from '@/lib/destinations/content/box-elder-sd';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -822,10 +826,6 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'stillwater-mn': stillwaterMnContent,
   'wayzata-mn': wayzataMnContent,
   'woodbury-mn': woodburyMnContent,
-  'belgrade-mt': belgradeMtContent,
-  'helena-mt': helenaMtContent,
-  'kalispell-mt': kalispellMtContent,
-  'whitefish-mt': whitefishMtContent,
   'columbia-mo': columbiaMoContent,
   'lees-summit-mo': leesSummitMoContent,
   'ofallon-mo': ofallonMoContent,
@@ -876,6 +876,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'dickinson-nd': dickinsonNdContent,
   'wahpeton-nd': wahpetonNdContent,
   'minot-nd': minotNdContent,
+  'sioux-falls-sd': siouxFallsSdContent,
+  'rapid-city-sd': rapidCitySdContent,
+  'harrisburg-sd': harrisburgSdContent,
+  'brookings-sd': brookingsSdContent,
+  'spearfish-sd': spearfishSdContent,
+  'brandon-sd': brandonSdContent,
+  'tea-sd': teaSdContent,
+  'watertown-sd': watertownSdContent,
+  'vermillion-sd': vermillionSdContent,
+  'box-elder-sd': boxElderSdContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -1158,5 +1168,11 @@ export function getPublishedNevadaHubSlugs(): string[] {
 export function getPublishedNorthDakotaHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'north-dakota'
+  );
+}
+
+export function getPublishedSouthDakotaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'south-dakota'
   );
 }

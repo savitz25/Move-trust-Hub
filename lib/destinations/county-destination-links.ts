@@ -1069,6 +1069,43 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Elko County gold-mining corridor inbound guide',
     },
   },
+  'south-dakota': {
+    minnehaha: {
+      label: 'Moving to Sioux Falls',
+      href: '/moving-to/south-dakota/sioux-falls-sd',
+      description: 'Minnehaha County Sioux Falls and Brandon metro inbound guides',
+    },
+    pennington: {
+      label: 'Moving to Rapid City',
+      href: '/moving-to/south-dakota/rapid-city-sd',
+      description: 'Pennington County Black Hills Rapid City, Spearfish, and Box Elder inbound guides',
+    },
+    lincoln: {
+      label: 'Moving to Harrisburg',
+      href: '/moving-to/south-dakota/harrisburg-sd',
+      description: 'Lincoln County Harrisburg and Tea suburban growth inbound guides',
+    },
+    brookings: {
+      label: 'Moving to Brookings',
+      href: '/moving-to/south-dakota/brookings-sd',
+      description: 'Brookings County SDSU college-town inbound guide',
+    },
+    lawrence: {
+      label: 'Moving to Spearfish',
+      href: '/moving-to/south-dakota/spearfish-sd',
+      description: 'Lawrence County alpine Black Hills inbound guide',
+    },
+    codington: {
+      label: 'Moving to Watertown',
+      href: '/moving-to/south-dakota/watertown-sd',
+      description: 'Codington County Lake Kampeska lakeside inbound guide',
+    },
+    clay: {
+      label: 'Moving to Vermillion',
+      href: '/moving-to/south-dakota/vermillion-sd',
+      description: 'Clay County USD riverfront academic inbound guide',
+    },
+  },
   'north-dakota': {
     cass: {
       label: 'Moving to Fargo',
