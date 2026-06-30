@@ -8602,6 +8602,281 @@ export const markets: Market[] = [
     mapDescription:
       'Mystic spanning New London and Middlesex counties — maritime heritage and eastern shoreline lifestyle.',
   },
+  {
+    slug: 'delaware',
+    displayName: 'Delaware',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: [],
+    lat: 39.0,
+    lng: -75.5,
+    defaultToZip: '19801',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$8,000',
+      threeBR: '$6,200–$10,800',
+      fourBR: '$9,000–$15,500',
+    },
+    inboundGrowthStat:
+      'No sales tax · low property taxes · corporate north & beach south',
+    peakSeasonNote:
+      'Route 1 beach traffic and summer coastal closings tighten May–September delivery windows',
+    isClusterParent: true,
+    priority: 33,
+    mapDescription:
+      'Delaware inbound hub covering Wilmington corporate corridor, Route 1 growth suburbs, capital Kent County, and Sussex shoreline.',
+  },
+  {
+    slug: 'wilmington-de',
+    displayName: 'Wilmington',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['new-castle-de'],
+    lat: 39.7391,
+    lng: -75.5398,
+    defaultToZip: '19801',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,500',
+    },
+    inboundGrowthStat:
+      'Urban revival · Christina Riverfront · corporate & banking hub',
+    peakSeasonNote:
+      'Riverfront towers require COI and freight elevator reservations',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Wilmington in New Castle County — Christina Riverfront corporate and banking inbound market.',
+  },
+  {
+    slug: 'newark-de',
+    displayName: 'Newark',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['new-castle-de'],
+    lat: 39.6837,
+    lng: -75.7497,
+    defaultToZip: '19711',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Vibrant college town · University of Delaware · Main Street walkability',
+    peakSeasonNote:
+      'Academic calendar turnover and August move-ins affect delivery scheduling',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Newark in New Castle County — University of Delaware college-town inbound hub.',
+  },
+  {
+    slug: 'hockessin-de',
+    displayName: 'Hockessin',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['new-castle-de'],
+    lat: 39.7876,
+    lng: -75.6966,
+    defaultToZip: '19707',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,600–$5,500',
+      twoBR: '$4,800–$8,500',
+      threeBR: '$7,000–$11,500',
+      fourBR: '$10,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Affluent wooded sanctuary · PA border estates · high-end homes',
+    peakSeasonNote:
+      'Wooded driveways and gated communities may require shuttle trucks',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Hockessin in New Castle County — Pennsylvania-border estate and wooded sanctuary market.',
+  },
+  {
+    slug: 'middletown-de',
+    displayName: 'Middletown',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['new-castle-de'],
+    lat: 39.4496,
+    lng: -75.7163,
+    defaultToZip: '19709',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Rapidly growing family hub · Appoquinimink schools · master-planned',
+    peakSeasonNote:
+      'New construction and HOA move-day rules may require advance coordination',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Middletown in New Castle County — Route 301 family-growth corridor with top-rated schools.',
+  },
+  {
+    slug: 'smyrna-de',
+    displayName: 'Smyrna',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['kent-de'],
+    lat: 39.2998,
+    lng: -75.6046,
+    defaultToZip: '19977',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Fast-growing commuter bargain · Route 1 access · Kent County value',
+    peakSeasonNote:
+      'Route 1 beach-bound traffic affects summer delivery scheduling',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Smyrna in Kent County — affordable Route 1 commuter growth corridor.',
+  },
+  {
+    slug: 'dover-de',
+    displayName: 'Dover',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['kent-de'],
+    lat: 39.1582,
+    lng: -75.5244,
+    defaultToZip: '19901',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'Virginia', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Stable capital · Dover Air Force Base · historic downtown',
+    peakSeasonNote:
+      'Military PCS rotations and legislative session traffic affect scheduling',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Dover in Kent County — state capital and Air Force Base inbound hub.',
+  },
+  {
+    slug: 'milford-de',
+    displayName: 'Milford',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['kent-de', 'sussex-de'],
+    lat: 38.9126,
+    lng: -75.428,
+    defaultToZip: '19963',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Art & riverfront gem · Mispillion River · creative community',
+    peakSeasonNote:
+      'Riverwalk and downtown historic streets may require shuttle coordination',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Milford spanning Kent and Sussex counties — Mispillion River arts corridor.',
+  },
+  {
+    slug: 'lewes-de',
+    displayName: 'Lewes',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['sussex-de'],
+    lat: 38.7746,
+    lng: -75.1393,
+    defaultToZip: '19958',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$5,500',
+      twoBR: '$4,800–$8,500',
+      threeBR: '$7,000–$11,500',
+      fourBR: '$10,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Historic coastal escape · Cape Henlopen · quiet luxury',
+    peakSeasonNote:
+      'Historic village streets and summer second-home turnover tighten coastal windows',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Lewes in Sussex County — Cape Henlopen historic coastal luxury inbound market.',
+  },
+  {
+    slug: 'rehoboth-beach-de',
+    displayName: 'Rehoboth Beach',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['sussex-de'],
+    lat: 38.7209,
+    lng: -75.076,
+    defaultToZip: '19971',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'California'],
+    avgCostRanges: {
+      studio: '$2,800–$5,900',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,600',
+      fourBR: '$11,000–$18,000',
+    },
+    inboundGrowthStat:
+      'Nation\'s Summer Capital · boardwalk · tax-free shopping',
+    peakSeasonNote:
+      'Boardwalk season and narrow coastal streets may require shuttle trucks',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Rehoboth Beach in Sussex County — premier Delaware boardwalk and summer capital market.',
+  },
+  {
+    slug: 'milton-de',
+    displayName: 'Milton',
+    stateCode: 'DE',
+    stateName: 'Delaware',
+    primaryCounties: ['sussex-de'],
+    lat: 38.7776,
+    lng: -75.3099,
+    defaultToZip: '19968',
+    topInboundOrigins: ['Pennsylvania', 'New Jersey', 'New York', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,400–$5,100',
+      twoBR: '$4,400–$7,800',
+      threeBR: '$6,400–$10,600',
+      fourBR: '$9,200–$15,000',
+    },
+    inboundGrowthStat:
+      'Quiet craft-beer haven · Dogfish Head · tidal river charm',
+    peakSeasonNote:
+      'Downtown historic district and brewery tourism traffic affect summer scheduling',
+    clusterParent: 'delaware',
+    priority: 33,
+    mapDescription:
+      'Milton in Sussex County — Dogfish Head craft-beer village and tidal river lifestyle.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

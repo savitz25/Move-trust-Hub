@@ -29,6 +29,9 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   ak: 'alaska',
   nm: 'new-mexico',
   hi: 'hawaii',
+  ct: 'connecticut',
+  co: 'colorado',
+  de: 'delaware',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {
