@@ -301,7 +301,12 @@ import { alamogordoNmContent } from '@/lib/destinations/content/alamogordo-nm';
 import { corralesNmContent } from '@/lib/destinations/content/corrales-nm';
 import { taosNmContent } from '@/lib/destinations/content/taos-nm';
 import { ruidosoNmContent } from '@/lib/destinations/content/ruidoso-nm';
+import { danburyCtContent } from '@/lib/destinations/content/danbury-ct';
 import { denverCoContent } from '@/lib/destinations/content/denver-co';
+import { glastonburyCtContent } from '@/lib/destinations/content/glastonbury-ct';
+import { milfordCtContent } from '@/lib/destinations/content/milford-ct';
+import { mysticCtContent } from '@/lib/destinations/content/mystic-ct';
+import { norwalkCtContent } from '@/lib/destinations/content/norwalk-ct';
 import { coloradoSpringsCoContent } from '@/lib/destinations/content/colorado-springs-co';
 import { fortCollinsCoContent } from '@/lib/destinations/content/fort-collins-co';
 import { boulderCoContent } from '@/lib/destinations/content/boulder-co';
@@ -311,6 +316,11 @@ import { parkerCoContent } from '@/lib/destinations/content/parker-co';
 import { arvadaCoContent } from '@/lib/destinations/content/arvada-co';
 import { longmontCoContent } from '@/lib/destinations/content/longmont-co';
 import { puebloCoContent } from '@/lib/destinations/content/pueblo-co';
+import { fairfieldCtContent } from '@/lib/destinations/content/fairfield-ct';
+import { greenwichCtContent } from '@/lib/destinations/content/greenwich-ct';
+import { stamfordCtContent } from '@/lib/destinations/content/stamford-ct';
+import { westHartfordCtContent } from '@/lib/destinations/content/west-hartford-ct';
+import { westportCtContent } from '@/lib/destinations/content/westport-ct';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -614,7 +624,12 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'corrales-nm': corralesNmContent,
   'taos-nm': taosNmContent,
   'ruidoso-nm': ruidosoNmContent,
+  'danbury-ct': danburyCtContent,
   'denver-co': denverCoContent,
+  'glastonbury-ct': glastonburyCtContent,
+  'milford-ct': milfordCtContent,
+  'mystic-ct': mysticCtContent,
+  'norwalk-ct': norwalkCtContent,
   'colorado-springs-co': coloradoSpringsCoContent,
   'fort-collins-co': fortCollinsCoContent,
   'boulder-co': boulderCoContent,
@@ -624,6 +639,11 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'arvada-co': arvadaCoContent,
   'longmont-co': longmontCoContent,
   'pueblo-co': puebloCoContent,
+  'fairfield-ct': fairfieldCtContent,
+  'greenwich-ct': greenwichCtContent,
+  'stamford-ct': stamfordCtContent,
+  'west-hartford-ct': westHartfordCtContent,
+  'westport-ct': westportCtContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -834,5 +854,11 @@ export function getPublishedHawaiiHubSlugs(): string[] {
 export function getPublishedColoradoHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'colorado'
+  );
+}
+
+export function getPublishedConnecticutHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'connecticut'
   );
 }

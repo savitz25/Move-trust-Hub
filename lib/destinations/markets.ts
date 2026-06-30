@@ -8327,6 +8327,281 @@ export const markets: Market[] = [
     mapDescription:
       'Pueblo in Pueblo County — southern Colorado affordability corridor with riverwalk lifestyle.',
   },
+  {
+    slug: 'connecticut',
+    displayName: 'Connecticut',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: [],
+    lat: 41.6,
+    lng: -72.7,
+    defaultToZip: '06901',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,500–$5,600',
+      twoBR: '$4,600–$8,800',
+      threeBR: '$6,800–$12,200',
+      fourBR: '$9,800–$17,000',
+    },
+    inboundGrowthStat:
+      'Gold Coast luxury · NYC commuter rail · Fairfield County & shoreline lifestyle',
+    peakSeasonNote:
+      'Metro-North corridor and summer coastal closings tighten May–September delivery windows',
+    isClusterParent: true,
+    priority: 32,
+    mapDescription:
+      'Connecticut inbound hub covering Gold Coast Fairfield County, Hartford Valley suburbs, New Haven shoreline, and eastern Mystic maritime corridor.',
+  },
+  {
+    slug: 'west-hartford-ct',
+    displayName: 'West Hartford',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['hartford-ct'],
+    lat: 41.762,
+    lng: -72.742,
+    defaultToZip: '06107',
+    topInboundOrigins: ['New York', 'Massachusetts', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$5,400',
+      twoBR: '$4,800–$8,600',
+      threeBR: '$7,000–$11,800',
+      fourBR: '$10,200–$16,500',
+    },
+    inboundGrowthStat:
+      'Walkable Center · Blue Back Square · top-rated Hartford County schools',
+    peakSeasonNote:
+      'Blue Back Square and West Hartford Center event weekends can affect delivery scheduling',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'West Hartford in Hartford County — walkable town-center living with nationally ranked schools.',
+  },
+  {
+    slug: 'stamford-ct',
+    displayName: 'Stamford',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['fairfield-ct'],
+    lat: 41.0534,
+    lng: -73.5387,
+    defaultToZip: '06901',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'California'],
+    avgCostRanges: {
+      studio: '$2,900–$6,000',
+      twoBR: '$5,400–$9,500',
+      threeBR: '$7,900–$13,200',
+      fourBR: '$11,400–$18,500',
+    },
+    inboundGrowthStat:
+      'Corporate headquarters hub · Harbor Point · Metro-North NYC access',
+    peakSeasonNote:
+      'Harbor Point high-rises require COI and freight elevator reservations',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Stamford in Fairfield County — corporate finance hub with Harbor Point and Metro-North commuter access.',
+  },
+  {
+    slug: 'greenwich-ct',
+    displayName: 'Greenwich',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['fairfield-ct'],
+    lat: 41.0262,
+    lng: -73.6282,
+    defaultToZip: '06830',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'California'],
+    avgCostRanges: {
+      studio: '$3,300–$6,800',
+      twoBR: '$6,200–$10,800',
+      threeBR: '$9,000–$15,500',
+      fourBR: '$13,200–$21,500',
+    },
+    inboundGrowthStat:
+      'Ultra-exclusive Gold Coast · historic estates · private beach access',
+    peakSeasonNote:
+      'Estate driveways and gated communities may require shuttle trucks and white-glove accessorials',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Greenwich in Fairfield County — premier Gold Coast estates and waterfront inbound market.',
+  },
+  {
+    slug: 'westport-ct',
+    displayName: 'Westport',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['fairfield-ct'],
+    lat: 41.1415,
+    lng: -73.3579,
+    defaultToZip: '06880',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'California'],
+    avgCostRanges: {
+      studio: '$3,000–$6,400',
+      twoBR: '$5,600–$9,800',
+      threeBR: '$8,200–$13,800',
+      fourBR: '$12,000–$19,200',
+    },
+    inboundGrowthStat:
+      'Coastal chic · Compo Beach · Staples High School prestige',
+    peakSeasonNote:
+      'Compo Beach and Saugatuck Island summer turnover tightens coastal delivery windows',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Westport in Fairfield County — coastal creative-class community with Compo Beach and top schools.',
+  },
+  {
+    slug: 'fairfield-ct',
+    displayName: 'Fairfield',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['fairfield-ct'],
+    lat: 41.1412,
+    lng: -73.2637,
+    defaultToZip: '06824',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,800–$5,900',
+      twoBR: '$5,200–$9,200',
+      threeBR: '$7,600–$12,600',
+      fourBR: '$11,000–$17,800',
+    },
+    inboundGrowthStat:
+      'Coastal college town · Fairfield University · beaches & train access',
+    peakSeasonNote:
+      'University turnover and Penfield Beach summer peaks affect late-summer scheduling',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Fairfield in Fairfield County — coastal university town with Metro-North and beach access.',
+  },
+  {
+    slug: 'norwalk-ct',
+    displayName: 'Norwalk',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['fairfield-ct'],
+    lat: 41.1176,
+    lng: -73.4079,
+    defaultToZip: '06854',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,700–$5,800',
+      twoBR: '$5,200–$9,200',
+      threeBR: '$7,800–$12,800',
+      fourBR: '$11,200–$17,500',
+    },
+    inboundGrowthStat:
+      'SoNo arts district · Maritime Aquarium · affordable coastal Gold Coast',
+    peakSeasonNote:
+      'SoNo loft conversions and Washington Street event traffic may require tight delivery windows',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Norwalk in Fairfield County — SoNo vibrancy with coastal access at lower Gold Coast premiums.',
+  },
+  {
+    slug: 'glastonbury-ct',
+    displayName: 'Glastonbury',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['hartford-ct'],
+    lat: 41.7123,
+    lng: -72.6082,
+    defaultToZip: '06033',
+    topInboundOrigins: ['New York', 'Massachusetts', 'New Jersey', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,600–$5,400',
+      twoBR: '$4,800–$8,600',
+      threeBR: '$7,000–$11,800',
+      fourBR: '$10,200–$16,500',
+    },
+    inboundGrowthStat:
+      'Connecticut River town · farms & orchards · excellent school districts',
+    peakSeasonNote:
+      'Historic Main Street and orchard-road driveways may need shuttle coordination',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Glastonbury in Hartford County — river-valley family suburbs with top-rated schools.',
+  },
+  {
+    slug: 'milford-ct',
+    displayName: 'Milford',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['new-haven-ct'],
+    lat: 41.2307,
+    lng: -73.064,
+    defaultToZip: '06460',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,700–$5,600',
+      twoBR: '$5,000–$8,800',
+      threeBR: '$7,300–$12,200',
+      fourBR: '$10,600–$17,200',
+    },
+    inboundGrowthStat:
+      '17 miles of coastline · town green · Walnut Beach & Charles Island',
+    peakSeasonNote:
+      'Coastal flood-zone properties and beach-access homes require early delivery planning',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Milford in New Haven County — extended shoreline with classic New England town-green character.',
+  },
+  {
+    slug: 'danbury-ct',
+    displayName: 'Danbury',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['fairfield-ct'],
+    lat: 41.3948,
+    lng: -73.454,
+    defaultToZip: '06810',
+    topInboundOrigins: ['New York', 'New Jersey', 'Massachusetts', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,500–$8,000',
+      threeBR: '$6,600–$11,000',
+      fourBR: '$9,500–$15,200',
+    },
+    inboundGrowthStat:
+      'Western CT value play · Candlewood Lake · NY border convenience',
+    peakSeasonNote:
+      'Candlewood Lake peninsula homes and I-84 corridor traffic affect summer scheduling',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Danbury in Fairfield County — affordable western Connecticut hub with Candlewood Lake lifestyle.',
+  },
+  {
+    slug: 'mystic-ct',
+    displayName: 'Mystic',
+    stateCode: 'CT',
+    stateName: 'Connecticut',
+    primaryCounties: ['new-london-ct', 'middlesex-ct'],
+    lat: 41.3543,
+    lng: -71.9665,
+    defaultToZip: '06355',
+    topInboundOrigins: ['New York', 'Massachusetts', 'Florida', 'New Jersey'],
+    avgCostRanges: {
+      studio: '$2,600–$5,400',
+      twoBR: '$4,800–$8,400',
+      threeBR: '$7,000–$11,600',
+      fourBR: '$10,200–$16,000',
+    },
+    inboundGrowthStat:
+      'Historic seaport · Mystic Aquarium · relaxed Stonington/Groton shoreline',
+    peakSeasonNote:
+      'Summer tourism season and narrow village streets may require shuttle trucks',
+    clusterParent: 'connecticut',
+    priority: 32,
+    mapDescription:
+      'Mystic spanning New London and Middlesex counties — maritime heritage and eastern shoreline lifestyle.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

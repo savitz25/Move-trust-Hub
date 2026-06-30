@@ -922,6 +922,66 @@ export function buildColoradoClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/connecticut cluster parent */
+export function buildConnecticutClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const connecticutHubs = getClusterMarkets('connecticut').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Connecticut', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Connecticut',
+          addressRegion: 'CT',
+        },
+        mainEntity: { '@id': `${canonical}#connecticut-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#connecticut-hub-list`,
+        name: 'Connecticut City Moving Guides',
+        numberOfItems: connecticutHubs.length,
+        itemListElement: connecticutHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, CT`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/louisiana cluster parent */
 export function buildLouisianaClusterSchemaGraph(
   title: string,
