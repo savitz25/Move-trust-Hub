@@ -1462,6 +1462,66 @@ export function buildMontanaClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/nebraska cluster parent */
+export function buildNebraskaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const nebraskaHubs = getClusterMarkets('nebraska').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Nebraska', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Nebraska',
+          addressRegion: 'NE',
+        },
+        mainEntity: { '@id': `${canonical}#nebraska-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#nebraska-hub-list`,
+        name: 'Nebraska City Moving Guides',
+        numberOfItems: nebraskaHubs.length,
+        itemListElement: nebraskaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, NE`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/louisiana cluster parent */
 export function buildLouisianaClusterSchemaGraph(
   title: string,

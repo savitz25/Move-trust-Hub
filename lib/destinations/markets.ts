@@ -10802,6 +10802,281 @@ export const markets: Market[] = [
     mapDescription:
       'Hamilton in Ravalli County — peaceful Bitterroot sanctuary at farm-and-ranch pace.',
   },
+  {
+    slug: 'nebraska',
+    displayName: 'Nebraska',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: [],
+    lat: 41.5,
+    lng: -99.5,
+    defaultToZip: '68102',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$5,200',
+      twoBR: '$3,800–$7,600',
+      threeBR: '$5,500–$10,200',
+      fourBR: '$8,000–$14,500',
+    },
+    inboundGrowthStat:
+      'Affordability · strong education · Midwestern stability',
+    peakSeasonNote:
+      'College World Series season and UNL semester peaks compress Nebraska summer delivery windows',
+    isClusterParent: true,
+    priority: 41,
+    mapDescription:
+      'Nebraska inbound hub covering Omaha metro, Lincoln capital, and central Great Plains corridors.',
+  },
+  {
+    slug: 'papillion-ne',
+    displayName: 'Papillion',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['sarpy-ne'],
+    lat: 41.1544,
+    lng: -96.0422,
+    defaultToZip: '68046',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,300–$5,400',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Top-ranked suburb · Sarpy County · historic downtown',
+    peakSeasonNote:
+      'Sarpy County HOA move-day rules and Papillion school-year closings affect scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Papillion in Sarpy County — top-ranked Omaha suburb with historic downtown charm.',
+  },
+  {
+    slug: 'omaha-ne',
+    displayName: 'Omaha',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['douglas-ne'],
+    lat: 41.2565,
+    lng: -95.9345,
+    defaultToZip: '68102',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,400',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$14,200',
+    },
+    inboundGrowthStat:
+      'Economic powerhouse · Henry Doorly Zoo · College World Series',
+    peakSeasonNote:
+      'College World Series June closings and downtown tower COI rules affect Omaha scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Omaha in Douglas County — economic powerhouse with Henry Doorly Zoo and College World Series.',
+  },
+  {
+    slug: 'lincoln-ne',
+    displayName: 'Lincoln',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['lancaster-ne'],
+    lat: 40.8136,
+    lng: -96.7026,
+    defaultToZip: '68508',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,400',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$14,200',
+    },
+    inboundGrowthStat:
+      'Brainy capital · University of Nebraska · Haymarket',
+    peakSeasonNote:
+      'UNL semester peaks and Haymarket walk-up constraints affect Lincoln scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Lincoln in Lancaster County — brainy capital with UNL and Haymarket district culture.',
+  },
+  {
+    slug: 'kearney-ne',
+    displayName: 'Kearney',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['buffalo-ne'],
+    lat: 40.6993,
+    lng: -99.0817,
+    defaultToZip: '68847',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,800',
+      twoBR: '$3,800–$7,000',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$13,200',
+    },
+    inboundGrowthStat:
+      'Central hub king · University of Nebraska at Kearney',
+    peakSeasonNote:
+      'UNK semester peaks and I-80 corridor access affect Kearney scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Kearney in Buffalo County — central Nebraska hub king with UNK employment.',
+  },
+  {
+    slug: 'gretna-ne',
+    displayName: 'Gretna',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['sarpy-ne'],
+    lat: 41.1408,
+    lng: -96.2397,
+    defaultToZip: '68028',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,300–$5,400',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Explosive growth gateway · Omaha–Lincoln corridor',
+    peakSeasonNote:
+      'Gretna builder closing clusters and Sarpy County HOA rules affect scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Gretna in Sarpy County — explosive growth gateway between Omaha and Lincoln.',
+  },
+  {
+    slug: 'la-vista-ne',
+    displayName: 'La Vista',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['sarpy-ne'],
+    lat: 41.1839,
+    lng: -96.0311,
+    defaultToZip: '68128',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,400',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$14,200',
+    },
+    inboundGrowthStat:
+      'Civic innovation · City Centre · sports complex',
+    peakSeasonNote:
+      'City Centre access and Sarpy County sports-complex corridor traffic affect La Vista scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'La Vista in Sarpy County — civic innovation choice with City Centre and sports complex.',
+  },
+  {
+    slug: 'elkhorn-ne',
+    displayName: 'Elkhorn',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['douglas-ne'],
+    lat: 41.285,
+    lng: -96.2342,
+    defaultToZip: '68022',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,400',
+      twoBR: '$4,200–$7,800',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'West Omaha premium · elite school enclave',
+    peakSeasonNote:
+      'Elkhorn estate driveway shuttle staging and elite-school closing clusters affect scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Elkhorn in Douglas County — West Omaha premium school enclave with elite district prestige.',
+  },
+  {
+    slug: 'columbus-ne',
+    displayName: 'Columbus',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['platte-ne'],
+    lat: 41.4297,
+    lng: -97.3684,
+    defaultToZip: '68601',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,800',
+      twoBR: '$3,800–$7,000',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$13,200',
+    },
+    inboundGrowthStat:
+      'Industrial workhorse · agribusiness corridor',
+    peakSeasonNote:
+      'Columbus industrial corridor accessorials and agribusiness transfer clusters affect scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Columbus in Platte County — industrial workhorse with agribusiness employment density.',
+  },
+  {
+    slug: 'hastings-ne',
+    displayName: 'Hastings',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['adams-ne'],
+    lat: 40.5861,
+    lng: -98.3898,
+    defaultToZip: '68901',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,800',
+      twoBR: '$3,800–$7,000',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$13,200',
+    },
+    inboundGrowthStat:
+      'College-town value · birthplace of Kool-Aid',
+    peakSeasonNote:
+      'Hastings College semester peaks and downtown walk-up constraints affect scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Hastings in Adams County — college-town value play and birthplace of Kool-Aid.',
+  },
+  {
+    slug: 'fremont-ne',
+    displayName: 'Fremont',
+    stateCode: 'NE',
+    stateName: 'Nebraska',
+    primaryCounties: ['dodge-ne'],
+    lat: 41.4334,
+    lng: -96.4981,
+    defaultToZip: '68025',
+    topInboundOrigins: ['Iowa', 'Kansas', 'Colorado', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,800',
+      twoBR: '$3,800–$7,000',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$13,200',
+    },
+    inboundGrowthStat:
+      'Antique & recreation escape · Fremont Lakes',
+    peakSeasonNote:
+      'Fremont Lakes bluff access and summer recreation peaks affect Fremont scheduling',
+    clusterParent: 'nebraska',
+    priority: 41,
+    mapDescription:
+      'Fremont in Dodge County — antique and recreation escape along Fremont Lakes.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

@@ -1047,6 +1047,43 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'King County Puget Sound flagship metro inbound moving guide',
     },
   },
+  nebraska: {
+    sarpy: {
+      label: 'Moving to Papillion',
+      href: '/moving-to/nebraska/papillion-ne',
+      description: 'Sarpy County top-ranked Omaha suburb inbound guide',
+    },
+    douglas: {
+      label: 'Moving to Omaha',
+      href: '/moving-to/nebraska/omaha-ne',
+      description: 'Douglas County economic powerhouse and West Omaha inbound guides',
+    },
+    lancaster: {
+      label: 'Moving to Lincoln',
+      href: '/moving-to/nebraska/lincoln-ne',
+      description: 'Lancaster County brainy capital and UNL corridor inbound guide',
+    },
+    buffalo: {
+      label: 'Moving to Kearney',
+      href: '/moving-to/nebraska/kearney-ne',
+      description: 'Buffalo County central Nebraska hub king inbound guide',
+    },
+    platte: {
+      label: 'Moving to Columbus',
+      href: '/moving-to/nebraska/columbus-ne',
+      description: 'Platte County industrial agribusiness inbound guide',
+    },
+    adams: {
+      label: 'Moving to Hastings',
+      href: '/moving-to/nebraska/hastings-ne',
+      description: 'Adams County college-town value and Kool-Aid heritage inbound guide',
+    },
+    dodge: {
+      label: 'Moving to Fremont',
+      href: '/moving-to/nebraska/fremont-ne',
+      description: 'Dodge County Fremont Lakes recreation corridor inbound guide',
+    },
+  },
   montana: {
     gallatin: {
       label: 'Moving to Bozeman',

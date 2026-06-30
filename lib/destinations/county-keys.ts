@@ -39,6 +39,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   mn: 'minnesota',
   mo: 'missouri',
   mt: 'montana',
+  ne: 'nebraska',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {
