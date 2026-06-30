@@ -751,13 +751,23 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Cumberland County Greater Portland and suburban inbound guides',
     },
     york: {
-      label: 'Moving to Kittery',
-      href: '/moving-to/maine/kittery-me',
-      description: 'York County border-town and Seacoast corridor inbound guide',
+      label: 'Moving to Kennebunk',
+      href: '/moving-to/maine/kennebunk-me',
+      description: 'York County southern coast and Kennebunkport inbound guide',
+    },
+    knox: {
+      label: 'Moving to Camden',
+      href: '/moving-to/maine/camden-me',
+      description: 'Knox County Midcoast harbor-and-mountain inbound guide',
+    },
+    kennebec: {
+      label: 'Moving to Augusta',
+      href: '/moving-to/maine/augusta-me',
+      description: 'Kennebec County state capital affordability inbound guide',
     },
     androscoggin: {
-      label: 'Moving to Lewiston',
-      href: '/moving-to/maine/lewiston-me',
+      label: 'Moving to Lewiston / Auburn',
+      href: '/moving-to/maine/lewiston-auburn-me',
       description: 'Androscoggin County twin-city affordability inbound guides',
     },
     penobscot: {

@@ -136,14 +136,14 @@ export const bangorMeContent: CityHubContent = {
       href: '/moving-to/maine/portland-me',
     },
     {
-      title: 'Moving to Lewiston guide',
-      description: 'Bates College and affordable Androscoggin County comparison.',
-      href: '/moving-to/maine/lewiston-me',
+      title: 'Moving to Lewiston / Auburn guide',
+      description: 'Twin Cities industrial value and Bates College comparison.',
+      href: '/moving-to/maine/lewiston-auburn-me',
     },
     {
-      title: 'Moving to Auburn guide',
-      description: 'Inland manufacturing growth and outdoor trails comparison.',
-      href: '/moving-to/maine/auburn-me',
+      title: 'Moving to Augusta guide',
+      description: 'Affordable state capital and Kennebec River comparison.',
+      href: '/moving-to/maine/augusta-me',
     },
     {
       title: 'Moving to Brunswick guide',

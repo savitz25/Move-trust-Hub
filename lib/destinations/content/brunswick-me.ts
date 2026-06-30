@@ -141,14 +141,14 @@ export const brunswickMeContent: CityHubContent = {
       href: '/moving-to/maine/falmouth-me',
     },
     {
-      title: 'Moving to Gorham guide',
-      description: 'Suburban boom and University of Southern Maine comparison.',
-      href: '/moving-to/maine/gorham-me',
+      title: 'Moving to Camden guide',
+      description: 'Scenic Jewel of the Coast harbor-and-mountain comparison.',
+      href: '/moving-to/maine/camden-me',
     },
     {
-      title: 'Moving to Kittery guide',
-      description: 'Border town naval shipyard and outlet shopping comparison.',
-      href: '/moving-to/maine/kittery-me',
+      title: 'Moving to Biddeford guide',
+      description: 'Resurgent mill-district creative revival comparison.',
+      href: '/moving-to/maine/biddeford-me',
     },
     {
       title: 'Massachusetts moving destinations hub',

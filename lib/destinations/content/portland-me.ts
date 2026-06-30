@@ -30,7 +30,7 @@ export const portlandMeContent: CityHubContent = {
   introParagraphs: [
     'Portland has emerged as Cumberland County\'s highest-intent coastal-cultural inbound market — an Old Port destination where healthcare leadership, culinary-economy density, and consistent spillover from Massachusetts, New York, and New Hampshire metros converge for households seeking capital-city culture without Boston housing extremes in 2026. Whether you are relocating from Cambridge into a West End Victorian, accepting a Maine Medical Center role while targeting Munjoy Hill inventory, moving from Brooklyn into an East End walk-up, or downsizing from a Manhattan apartment into an Old Port condo with genuine waterfront access, the fundamentals are identical: document your inventory accurately, verify every carrier on FMCSA.gov, and compare quotes built on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. Portland moves involve Cumberland County logistics that generic Maine guides overlook: narrow Old Port cobblestone streets, Munjoy Hill walk-up stairwell constraints, downtown high-rise COI filings, summer tourism and closing clusters, and I-95 corridor congestion — all legitimate cost drivers that should appear in writing before you book.',
-    'This guide covers movers serving Portland (ZIP 04101), the Old Port, Munjoy Hill, West End, East End, Deering Highlands, and surrounding Cumberland County neighborhoods — with cross-links to South Portland, Brunswick, Falmouth, Gorham, and Standish for households still comparing Greater Portland corridors. Interstate deliveries into historic walk-ups, waterfront condos, and Victorian homes frequently require shuttle trucks, long carries, and closing-date alignment — factors that should be line items on your estimate, not surprises on delivery day. For statewide context, see our parent guide at /moving-to/maine.',
+    'This guide covers movers serving Portland (ZIP 04101), the Old Port, Munjoy Hill, West End, East End, Deering Highlands, and surrounding Cumberland County neighborhoods — with cross-links to South Portland, Brunswick, Falmouth, Biddeford, and Kennebunk for households still comparing Greater Portland and southern coast corridors. Interstate deliveries into historic walk-ups, waterfront condos, and Victorian homes frequently require shuttle trucks, long carries, and closing-date alignment — factors that should be line items on your estimate, not surprises on delivery day. For statewide context, see our parent guide at /moving-to/maine.',
   ],
   routeLinks: [
     {
@@ -119,7 +119,7 @@ export const portlandMeContent: CityHubContent = {
       heading: 'County-level mover coverage across the Portland corridor',
       paragraphs: [
         'Cumberland County is the primary jurisdiction for Portland city (ZIP 04101), South Portland, Brunswick, Falmouth, Gorham, and Standish. Our Cumberland County directory lists vetted local and regional movers with FMCSA licensing, Google ratings, and county cost guides — including teams experienced with Old Port walk-up deliveries, Munjoy Hill shuttle accessorial protocols, and downtown COI staging.',
-        'For interstate moves, browse our national directory of 25+ major long-distance carriers — many operate well-traveled lanes from Massachusetts, New York, and New Hampshire into the Portland coastal corridor. Pair a reputable interstate linehaul carrier with a Cumberland County local crew for final-mile shuttle service when your walk-up, loft conversion, or narrow historic street requires it. Households still weighing Maine corridors should cross-link to our South Portland guide for waterfront commercial comparison, our Brunswick guide for Bowdoin college-town living, our Falmouth guide for affluent coastal schools, our Gorham guide for suburban USM corridors, our Bangor guide for affordable central Maine value, our Vermont statewide hub, our New Hampshire statewide hub, our Massachusetts statewide hub, our Rhode Island statewide hub, our New York statewide hub, and our Maine statewide hub at /moving-to/maine for side-by-side comparison before you commit to ZIP 04101.',
+        'For interstate moves, browse our national directory of 25+ major long-distance carriers — many operate well-traveled lanes from Massachusetts, New York, and New Hampshire into the Portland coastal corridor. Pair a reputable interstate linehaul carrier with a Cumberland County local crew for final-mile shuttle service when your walk-up, loft conversion, or narrow historic street requires it. Households still weighing Maine corridors should cross-link to our South Portland guide for Willard Beach family comparison, our Brunswick guide for Bowdoin college-town living, our Falmouth guide for elite suburban schools, our Biddeford guide for mill-district creative revival, our Kennebunk guide for coastal luxury, our Bangor guide for affordable central Maine value, our Vermont statewide hub, our New Hampshire statewide hub, our Massachusetts statewide hub, our Rhode Island statewide hub, our New York statewide hub, and our Maine statewide hub at /moving-to/maine for side-by-side comparison before you commit to ZIP 04101.',
         'Maine Medical Center hiring, culinary-economy growth, and Massachusetts-New York creative-economy spillover shape neighborhood preferences across Portland. Healthcare professionals often target the West End and Munjoy Hill for hospital proximity. Food-and-culture buyers gravitate toward Old Port walkable inventory. Creative professionals frequently choose East End and downtown loft corridors. Wherever you land in Portland, equal cubic-footage quotes and written accessorial disclosure remain the best defense against delivery-day disputes.',
       ],
     },
@@ -146,9 +146,14 @@ export const portlandMeContent: CityHubContent = {
       href: '/moving-to/maine/falmouth-me',
     },
     {
-      title: 'Moving to Gorham guide',
-      description: 'Suburban boom and University of Southern Maine comparison.',
-      href: '/moving-to/maine/gorham-me',
+      title: 'Moving to Biddeford guide',
+      description: 'Resurgent mill-district creative revival comparison.',
+      href: '/moving-to/maine/biddeford-me',
+    },
+    {
+      title: 'Moving to Kennebunk guide',
+      description: 'Historic coastal luxury and Kennebunkport beaches.',
+      href: '/moving-to/maine/kennebunk-me',
     },
     {
       title: 'Massachusetts moving destinations hub',

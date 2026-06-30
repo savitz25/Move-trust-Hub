@@ -146,9 +146,9 @@ export const falmouthMeContent: CityHubContent = {
       href: '/moving-to/maine/brunswick-me',
     },
     {
-      title: 'Moving to Gorham guide',
-      description: 'Suburban boom and University of Southern Maine comparison.',
-      href: '/moving-to/maine/gorham-me',
+      title: 'Moving to Kennebunk guide',
+      description: 'Historic coastal luxury and Kennebunkport beaches.',
+      href: '/moving-to/maine/kennebunk-me',
     },
     {
       title: 'Massachusetts moving destinations hub',

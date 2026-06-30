@@ -162,8 +162,8 @@ export default function MaineClusterPage() {
               Greater Portland — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Portland and South Portland — Old Port cultural capital, healthcare employment,
-              waterfront parks, and Gulf of Maine coastal convenience.
+              Portland, South Portland, and Falmouth — Old Port culinary epicenter,
+              Willard Beach family balance, and top-tier suburban school districts.
             </p>
             <CorridorCityGrid cities={content.greaterPortlandCorridor} published={published} />
           </div>
@@ -172,39 +172,39 @@ export default function MaineClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Cumberland Suburbs — Live City Guides
+              Southern Coast — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Gorham, Falmouth, and Standish — suburban school growth, affluent coastal trails,
-              and Sebago Lake lakeside inventory minutes from Portland.
+              Biddeford and Kennebunk — resurgent mill-district creative revival and
+              historic Kennebunkport coastal luxury.
             </p>
-            <CorridorCityGrid cities={content.cumberlandSuburbsCorridor} published={published} />
+            <CorridorCityGrid cities={content.southernCoastCorridor} published={published} />
           </div>
         </section>
 
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Coastal &amp; College Towns — Live City Guides
+              Midcoast — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Brunswick and Kittery — Bowdoin College Midcoast charm and York County border-town
-              naval shipyard stability.
+              Brunswick and Camden — Bowdoin College intellectual culture and Camden&apos;s
+              scenic harbor-and-mountain jewel.
             </p>
-            <CorridorCityGrid cities={content.coastalCollegeCorridor} published={published} />
+            <CorridorCityGrid cities={content.midcoastCorridor} published={published} />
           </div>
         </section>
 
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Inland Corridors — Live City Guides
+              Central Maine — Live City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Auburn, Lewiston, and Bangor — Androscoggin twin-city affordability and Penobscot
-              County Central Maine hub value.
+              Augusta, Lewiston/Auburn, and Bangor — Kennebec River capital value,
+              twin-city industrial affordability, and northern Acadia gateway practicality.
             </p>
-            <CorridorCityGrid cities={content.inlandCorridor} published={published} />
+            <CorridorCityGrid cities={content.centralMaineCorridor} published={published} />
           </div>
         </section>
 

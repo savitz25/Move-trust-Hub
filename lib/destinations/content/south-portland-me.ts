@@ -141,9 +141,9 @@ export const southPortlandMeContent: CityHubContent = {
       href: '/moving-to/maine/falmouth-me',
     },
     {
-      title: 'Moving to Gorham guide',
-      description: 'Suburban boom and University of Southern Maine comparison.',
-      href: '/moving-to/maine/gorham-me',
+      title: 'Moving to Biddeford guide',
+      description: 'Resurgent mill-district creative revival comparison.',
+      href: '/moving-to/maine/biddeford-me',
     },
     {
       title: 'Moving to Brunswick guide',

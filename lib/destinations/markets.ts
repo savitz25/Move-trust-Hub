@@ -5326,7 +5326,7 @@ export const markets: Market[] = [
     isClusterParent: true,
     priority: 23,
     mapDescription:
-      'Maine inbound hub covering Greater Portland (Portland, South Portland), Cumberland Suburbs (Gorham, Falmouth, Standish), Coastal & College (Brunswick, Kittery), and Inland (Auburn, Lewiston, Bangor).',
+      'Maine inbound hub covering Greater Portland, Southern Coast, Midcoast, and Central Maine corridors from Portland to Bangor.',
   },
   {
     slug: 'portland-me',
@@ -5345,7 +5345,7 @@ export const markets: Market[] = [
       fourBR: '$11,800–$18,200',
     },
     inboundGrowthStat:
-      'Coastal cultural capital · Old Port · culinary scene · healthcare · walkability',
+      'World-class food & culture · Old Port · craft beer · culinary epicenter',
     peakSeasonNote:
       'Old Port cobblestone shuttle staging and summer tourism peaks affect Portland scheduling',
     clusterParent: 'maine',
@@ -5370,38 +5370,13 @@ export const markets: Market[] = [
       fourBR: '$11,800–$18,200',
     },
     inboundGrowthStat:
-      'Coastal commercial hub · waterfront parks · retail corridors',
+      'Convenient family balance · Willard Beach · waterfront parks',
     peakSeasonNote:
-      'Waterfront park corridor traffic and Portland-adjacent closing clusters affect South Portland scheduling',
+      'Willard Beach summer parking and Portland-adjacent closing clusters affect South Portland scheduling',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'South Portland in Cumberland County — coastal commercial area with waterfront parks and retail hub.',
-  },
-  {
-    slug: 'gorham-me',
-    displayName: 'Gorham',
-    stateCode: 'ME',
-    stateName: 'Maine',
-    primaryCounties: ['cumberland-me'],
-    lat: 43.6795,
-    lng: -70.4442,
-    defaultToZip: '04038',
-    topInboundOrigins: ['Massachusetts', 'New York', 'New Hampshire', 'Florida', 'California'],
-    avgCostRanges: {
-      studio: '$3,000–$6,500',
-      twoBR: '$5,600–$9,800',
-      threeBR: '$8,200–$13,400',
-      fourBR: '$11,800–$18,200',
-    },
-    inboundGrowthStat:
-      'Suburban boom · strong schools · University of Southern Maine',
-    peakSeasonNote:
-      'Suburban cul-de-sac driveways and USM semester peaks affect Gorham delivery scheduling',
-    clusterParent: 'maine',
-    priority: 23,
-    mapDescription:
-      'Gorham in Cumberland County — suburban growth corridor with strong schools near USM.',
+      'South Portland in Cumberland County — family-friendly coastal area with Willard Beach and waterfront parks.',
   },
   {
     slug: 'falmouth-me',
@@ -5420,38 +5395,63 @@ export const markets: Market[] = [
       fourBR: '$11,800–$18,200',
     },
     inboundGrowthStat:
-      'Affluent coastal suburb · top schools · yachting & nature trails',
+      'Top-tier suburban retreat · elite schools · coastal trails',
     peakSeasonNote:
       'Coastal estate driveways and Fore River Parkway corridor traffic affect Falmouth scheduling',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'Falmouth in Cumberland County — affluent coastal suburb with top schools and nature trails.',
+      'Falmouth in Cumberland County — top-tier suburban retreat with elite schools and coastal trails.',
   },
   {
-    slug: 'standish-me',
-    displayName: 'Standish',
+    slug: 'biddeford-me',
+    displayName: 'Biddeford',
     stateCode: 'ME',
     stateName: 'Maine',
-    primaryCounties: ['cumberland-me'],
-    lat: 43.7356,
-    lng: -70.5537,
-    defaultToZip: '04084',
+    primaryCounties: ['york-me'],
+    lat: 43.4926,
+    lng: -70.4534,
+    defaultToZip: '04005',
     topInboundOrigins: ['Massachusetts', 'New York', 'New Hampshire', 'Florida', 'California'],
     avgCostRanges: {
-      studio: '$3,000–$6,500',
-      twoBR: '$5,600–$9,800',
-      threeBR: '$8,200–$13,400',
-      fourBR: '$11,800–$18,200',
+      studio: '$2,800–$6,200',
+      twoBR: '$5,200–$9,400',
+      threeBR: '$7,600–$12,800',
+      fourBR: '$10,800–$17,200',
     },
     inboundGrowthStat:
-      'Hyper-growth lakeside town · Sebago Lake · Portland proximity',
+      'Resurgent creative comeback · historic mills · Saco River revival',
     peakSeasonNote:
-      'Sebago Lake seasonal driveway access and lakeside long carries affect Standish scheduling',
+      'Mill-district walk-up constraints and Saco River corridor summer traffic affect Biddeford scheduling',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'Standish in Cumberland County — hyper-growth Sebago Lake town with Portland corridor access.',
+      'Biddeford in York County — resurgent mill-district creative hub on the Saco River.',
+  },
+  {
+    slug: 'kennebunk-me',
+    displayName: 'Kennebunk',
+    stateCode: 'ME',
+    stateName: 'Maine',
+    primaryCounties: ['york-me'],
+    lat: 43.3837,
+    lng: -70.5459,
+    defaultToZip: '04043',
+    topInboundOrigins: ['Massachusetts', 'New York', 'New Hampshire', 'Florida', 'California'],
+    avgCostRanges: {
+      studio: '$3,100–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$14,000',
+      fourBR: '$12,000–$19,500',
+    },
+    inboundGrowthStat:
+      'Historic coastal luxury · Kennebunkport beaches · summer estates',
+    peakSeasonNote:
+      'Kennebunkport summer estate driveways and Route 9 coastal traffic compress peak-season schedules',
+    clusterParent: 'maine',
+    priority: 23,
+    mapDescription:
+      'Kennebunk in York County — historic coastal luxury with Kennebunkport beach access.',
   },
   {
     slug: 'brunswick-me',
@@ -5470,88 +5470,88 @@ export const markets: Market[] = [
       fourBR: '$11,800–$18,200',
     },
     inboundGrowthStat:
-      'Historic college town · Bowdoin · walkable downtown · Amtrak access',
+      'Intellectual coastal town · Bowdoin College · Amtrak Midcoast',
     peakSeasonNote:
       'Bowdoin semester closing clusters and Midcoast narrow-street shuttle staging affect Brunswick scheduling',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'Brunswick in Cumberland County — Bowdoin College historic town with Amtrak Downeaster access.',
+      'Brunswick in Cumberland County — Bowdoin College intellectual coastal town with Amtrak Downeaster access.',
   },
   {
-    slug: 'kittery-me',
-    displayName: 'Kittery',
+    slug: 'camden-me',
+    displayName: 'Camden',
     stateCode: 'ME',
     stateName: 'Maine',
-    primaryCounties: ['york-me'],
-    lat: 43.0881,
-    lng: -70.7362,
-    defaultToZip: '03904',
+    primaryCounties: ['knox-me'],
+    lat: 44.2098,
+    lng: -69.0648,
+    defaultToZip: '04843',
     topInboundOrigins: ['Massachusetts', 'New York', 'New Hampshire', 'Florida', 'California'],
     avgCostRanges: {
-      studio: '$2,800–$5,800',
-      twoBR: '$5,200–$8,800',
-      threeBR: '$7,400–$12,000',
-      fourBR: '$10,800–$16,400',
+      studio: '$3,100–$6,800',
+      twoBR: '$5,800–$10,200',
+      threeBR: '$8,400–$14,000',
+      fourBR: '$12,000–$19,500',
     },
     inboundGrowthStat:
-      'Border town · naval shipyard · outlet shopping · coastal access',
+      'Scenic Jewel of the Coast · mountains meet sea · harbor village',
     peakSeasonNote:
-      'I-95 summer tourism peaks and Portsmouth Naval Shipyard relocation clusters affect Kittery scheduling',
+      'Camden Hills hillside long carries and summer harbor tourism compress peak delivery windows',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'Kittery in York County — border town with naval shipyard employment and outlet shopping corridors.',
+      'Camden in Knox County — scenic Midcoast jewel where mountains meet the sea.',
   },
   {
-    slug: 'auburn-me',
-    displayName: 'Auburn',
+    slug: 'augusta-me',
+    displayName: 'Augusta',
     stateCode: 'ME',
     stateName: 'Maine',
-    primaryCounties: ['androscoggin-me'],
-    lat: 44.0979,
-    lng: -70.2312,
-    defaultToZip: '04210',
+    primaryCounties: ['kennebec-me'],
+    lat: 44.3106,
+    lng: -69.7795,
+    defaultToZip: '04330',
     topInboundOrigins: ['Massachusetts', 'New York', 'New Hampshire', 'Florida', 'California'],
     avgCostRanges: {
-      studio: '$2,500–$5,200',
-      twoBR: '$4,600–$8,000',
-      threeBR: '$6,800–$11,200',
-      fourBR: '$9,800–$15,400',
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$7,800',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$14,800',
     },
     inboundGrowthStat:
-      'Inland growth · manufacturing · outdoor trails',
+      'Affordable capital value · Kennebec River · state employment',
     peakSeasonNote:
-      'Twin-city corridor traffic and mill-district walk-up constraints affect Auburn scheduling',
+      'State government fiscal-year transfers and Kennebec River corridor winter weather affect Augusta scheduling',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'Auburn in Androscoggin County — inland growth corridor with manufacturing and outdoor trail access.',
+      'Augusta in Kennebec County — affordable state capital on the Kennebec River.',
   },
   {
-    slug: 'lewiston-me',
-    displayName: 'Lewiston',
+    slug: 'lewiston-auburn-me',
+    displayName: 'Lewiston / Auburn',
     stateCode: 'ME',
     stateName: 'Maine',
     primaryCounties: ['androscoggin-me'],
-    lat: 44.1004,
-    lng: -70.2148,
+    lat: 44.0992,
+    lng: -70.223,
     defaultToZip: '04240',
     topInboundOrigins: ['Massachusetts', 'New York', 'New Hampshire', 'Florida', 'California'],
     avgCostRanges: {
-      studio: '$2,500–$5,200',
-      twoBR: '$4,600–$8,000',
-      threeBR: '$6,800–$11,200',
-      fourBR: '$9,800–$15,400',
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$7,800',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$14,800',
     },
     inboundGrowthStat:
-      'Diverse historic city · Bates College · affordable housing',
+      'Twin Cities industrial value · Bates College · Androscoggin River',
     peakSeasonNote:
-      'Mill-building walk-up carries and Bates College semester peaks affect Lewiston scheduling',
+      'Mill-building walk-up carries and Bates College semester peaks affect Lewiston/Auburn scheduling',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'Lewiston in Androscoggin County — diverse historic city with Bates College and affordable housing.',
+      'Lewiston and Auburn in Androscoggin County — twin-city industrial value with Bates College cultural energy.',
   },
   {
     slug: 'bangor-me',
@@ -5570,13 +5570,13 @@ export const markets: Market[] = [
       fourBR: '$9,800–$15,400',
     },
     inboundGrowthStat:
-      'Central Maine hub · affordable · nature access · stable economy',
+      'Practical hub of the north · Acadia gateway · affordable stability',
     peakSeasonNote:
       'Penobscot River corridor winter weather and downtown walk-up constraints affect Bangor scheduling',
     clusterParent: 'maine',
     priority: 23,
     mapDescription:
-      'Bangor in Penobscot County — Central Maine hub with affordable housing and nature gateway access.',
+      'Bangor in Penobscot County — practical northern hub and Acadia gateway with affordable stability.',
   },
   {
     slug: 'indiana',
