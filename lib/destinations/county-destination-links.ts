@@ -776,6 +776,33 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'Penobscot County Central Maine hub inbound guide',
     },
   },
+  minnesota: {
+    hennepin: {
+      label: 'Moving to Plymouth',
+      href: '/moving-to/minnesota/plymouth-mn',
+      description: 'Hennepin County west-metro and Lake Minnetonka inbound guides',
+    },
+    washington: {
+      label: 'Moving to Woodbury',
+      href: '/moving-to/minnesota/woodbury-mn',
+      description: 'Washington County east-metro and St. Croix corridor inbound guides',
+    },
+    dakota: {
+      label: 'Moving to Eagan',
+      href: '/moving-to/minnesota/eagan-mn',
+      description: 'Dakota County south-metro MSP corridor inbound guide',
+    },
+    olmsted: {
+      label: 'Moving to Rochester',
+      href: '/moving-to/minnesota/rochester-mn',
+      description: 'Olmsted County Mayo Clinic med-tech inbound guide',
+    },
+    'st-louis': {
+      label: 'Moving to Duluth',
+      href: '/moving-to/minnesota/duluth-mn',
+      description: 'St. Louis County Lake Superior north-country inbound guide',
+    },
+  },
   vermont: {
     chittenden: {
       label: 'Moving to Burlington',

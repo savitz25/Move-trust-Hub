@@ -371,6 +371,16 @@ import { annapolisMdContent } from '@/lib/destinations/content/annapolis-md';
 import { severnaParkMdContent } from '@/lib/destinations/content/severna-park-md';
 import { eastonMdContent } from '@/lib/destinations/content/easton-md';
 import { baltimoreMdContent } from '@/lib/destinations/content/baltimore-md';
+import { duluthMnContent } from '@/lib/destinations/content/duluth-mn';
+import { edenPrairieMnContent } from '@/lib/destinations/content/eden-prairie-mn';
+import { edinaMnContent } from '@/lib/destinations/content/edina-mn';
+import { eaganMnContent } from '@/lib/destinations/content/eagan-mn';
+import { mapleGroveMnContent } from '@/lib/destinations/content/maple-grove-mn';
+import { plymouthMnContent } from '@/lib/destinations/content/plymouth-mn';
+import { rochesterMnContent } from '@/lib/destinations/content/rochester-mn';
+import { stillwaterMnContent } from '@/lib/destinations/content/stillwater-mn';
+import { wayzataMnContent } from '@/lib/destinations/content/wayzata-mn';
+import { woodburyMnContent } from '@/lib/destinations/content/woodbury-mn';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -744,6 +754,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'severna-park-md': severnaParkMdContent,
   'easton-md': eastonMdContent,
   'baltimore-md': baltimoreMdContent,
+  'duluth-mn': duluthMnContent,
+  'eagan-mn': eaganMnContent,
+  'eden-prairie-mn': edenPrairieMnContent,
+  'edina-mn': edinaMnContent,
+  'maple-grove-mn': mapleGroveMnContent,
+  'plymouth-mn': plymouthMnContent,
+  'rochester-mn': rochesterMnContent,
+  'stillwater-mn': stillwaterMnContent,
+  'wayzata-mn': wayzataMnContent,
+  'woodbury-mn': woodburyMnContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -990,5 +1010,11 @@ export function getPublishedKentuckyHubSlugs(): string[] {
 export function getPublishedMarylandHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'maryland'
+  );
+}
+
+export function getPublishedMinnesotaHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'minnesota'
   );
 }

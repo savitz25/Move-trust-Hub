@@ -9977,6 +9977,281 @@ export const markets: Market[] = [
     mapDescription:
       'Easton in Talbot County — Eastern Shore arts sanctuary and Chesapeake bay-access lifestyle.',
   },
+  {
+    slug: 'minnesota',
+    displayName: 'Minnesota',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: [],
+    lat: 46.0,
+    lng: -94.0,
+    defaultToZip: '55447',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$6,400',
+      twoBR: '$4,400–$9,800',
+      threeBR: '$6,400–$13,200',
+      fourBR: '$9,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Land of 10,000 Lakes · top education · economic stability · outdoor lifestyle',
+    peakSeasonNote:
+      'Twin Cities corporate closing clusters and winter-weather windows compress May–September and January delivery schedules',
+    isClusterParent: true,
+    priority: 38,
+    mapDescription:
+      'Minnesota inbound hub covering west-metro suburbs, south and east metro, St. Croix River, Rochester med-tech, and Duluth Lake Superior corridors.',
+  },
+  {
+    slug: 'plymouth-mn',
+    displayName: 'Plymouth',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['hennepin-mn'],
+    lat: 45.0105,
+    lng: -93.4555,
+    defaultToZip: '55447',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'California'],
+    avgCostRanges: {
+      studio: '$2,700–$6,000',
+      twoBR: '$5,000–$9,200',
+      threeBR: '$7,400–$12,400',
+      fourBR: '$10,600–$17,200',
+    },
+    inboundGrowthStat:
+      'Premium balanced standard · Medicine Lake · Wayzata schools',
+    peakSeasonNote:
+      'Medicine Lake cul-de-sac shuttle staging and I-494 closing clusters affect Plymouth scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Plymouth in Hennepin County — premium balanced suburb with Medicine Lake and top school corridors.',
+  },
+  {
+    slug: 'eden-prairie-mn',
+    displayName: 'Eden Prairie',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['hennepin-mn'],
+    lat: 44.8547,
+    lng: -93.4708,
+    defaultToZip: '55344',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,700–$6,000',
+      twoBR: '$5,000–$9,200',
+      threeBR: '$7,400–$12,400',
+      fourBR: '$10,600–$17,200',
+    },
+    inboundGrowthStat:
+      'Polished corporate suburb · Purgatory Creek · DTC equivalent',
+    peakSeasonNote:
+      'Corporate campus closing clusters and Purgatory Creek trail-corridor traffic affect Eden Prairie scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Eden Prairie in Hennepin County — polished corporate suburb with Purgatory Creek outdoor corridors.',
+  },
+  {
+    slug: 'woodbury-mn',
+    displayName: 'Woodbury',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['washington-mn'],
+    lat: 44.9239,
+    lng: -92.9594,
+    defaultToZip: '55125',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'California'],
+    avgCostRanges: {
+      studio: '$2,700–$6,000',
+      twoBR: '$5,000–$9,200',
+      threeBR: '$7,400–$12,400',
+      fourBR: '$10,600–$17,200',
+    },
+    inboundGrowthStat:
+      'East-metro powerhouse · master-planned · Viking Lakes',
+    peakSeasonNote:
+      'Viking Lakes HOA move-day rules and east-metro builder closings compress peak-season schedules',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Woodbury in Washington County — east-metro master-planned powerhouse at Viking Lakes.',
+  },
+  {
+    slug: 'rochester-mn',
+    displayName: 'Rochester',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['olmsted-mn'],
+    lat: 44.0121,
+    lng: -92.4802,
+    defaultToZip: '55901',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'California'],
+    avgCostRanges: {
+      studio: '$2,600–$5,800',
+      twoBR: '$4,800–$8,800',
+      threeBR: '$7,000–$11,800',
+      fourBR: '$10,200–$16,200',
+    },
+    inboundGrowthStat:
+      'Global med-tech beacon · Mayo Clinic · Destination Medical Center',
+    peakSeasonNote:
+      'Mayo Clinic relocation peaks and DMC construction corridor traffic affect Rochester scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Rochester in Olmsted County — Mayo Clinic global med-tech beacon and Destination Medical Center.',
+  },
+  {
+    slug: 'maple-grove-mn',
+    displayName: 'Maple Grove',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['hennepin-mn'],
+    lat: 45.0725,
+    lng: -93.4558,
+    defaultToZip: '55369',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,700–$6,000',
+      twoBR: '$5,000–$9,200',
+      threeBR: '$7,400–$12,400',
+      fourBR: '$10,600–$17,200',
+    },
+    inboundGrowthStat:
+      'Family & retail favorite · Arbor Lakes · Central Park',
+    peakSeasonNote:
+      'Arbor Lakes retail corridor traffic and Central Park subdivision closings affect Maple Grove scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Maple Grove in Hennepin County — family-friendly suburb with Arbor Lakes retail and Central Park.',
+  },
+  {
+    slug: 'edina-mn',
+    displayName: 'Edina',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['hennepin-mn'],
+    lat: 44.8897,
+    lng: -93.3499,
+    defaultToZip: '55424',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'California'],
+    avgCostRanges: {
+      studio: '$2,900–$6,400',
+      twoBR: '$5,400–$9,800',
+      threeBR: '$7,800–$13,200',
+      fourBR: '$11,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Historic prestige enclave · Galleria · Centennial Lakes',
+    peakSeasonNote:
+      'Galleria corridor traffic and Centennial Lakes HOA move-day rules affect Edina scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Edina in Hennepin County — historic prestige enclave with Galleria and Centennial Lakes.',
+  },
+  {
+    slug: 'stillwater-mn',
+    displayName: 'Stillwater',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['washington-mn'],
+    lat: 45.0563,
+    lng: -92.8063,
+    defaultToZip: '55082',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,700–$6,000',
+      twoBR: '$5,000–$9,200',
+      threeBR: '$7,400–$12,400',
+      fourBR: '$10,600–$17,200',
+    },
+    inboundGrowthStat:
+      'Historic St. Croix escape · river bluffs · lift bridge charm',
+    peakSeasonNote:
+      'St. Croix River bluff access and historic downtown shuttle constraints affect Stillwater scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Stillwater in Washington County — historic St. Croix River bluff town with lift bridge charm.',
+  },
+  {
+    slug: 'eagan-mn',
+    displayName: 'Eagan',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['dakota-mn'],
+    lat: 44.8041,
+    lng: -93.1669,
+    defaultToZip: '55122',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,700–$6,000',
+      twoBR: '$5,000–$9,200',
+      threeBR: '$7,400–$12,400',
+      fourBR: '$10,600–$17,200',
+    },
+    inboundGrowthStat:
+      'South-metro hub · MSP airport · premium outlets',
+    peakSeasonNote:
+      'MSP airport corridor traffic and premium outlet district closings affect Eagan scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Eagan in Dakota County — south-metro hub with MSP airport and premium outlet convenience.',
+  },
+  {
+    slug: 'duluth-mn',
+    displayName: 'Duluth',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['st-louis-mn'],
+    lat: 46.7867,
+    lng: -92.1005,
+    defaultToZip: '55802',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,400',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,200',
+    },
+    inboundGrowthStat:
+      'Rugged outdoor sanctuary · Lake Superior · Aerial Lift Bridge',
+    peakSeasonNote:
+      'Hillside long carries and Lake Superior winter-weather windows affect Duluth scheduling',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Duluth in St. Louis County — rugged Lake Superior outdoor sanctuary with Aerial Lift Bridge.',
+  },
+  {
+    slug: 'wayzata-mn',
+    displayName: 'Wayzata',
+    stateCode: 'MN',
+    stateName: 'Minnesota',
+    primaryCounties: ['hennepin-mn'],
+    lat: 44.9741,
+    lng: -93.5066,
+    defaultToZip: '55391',
+    topInboundOrigins: ['Wisconsin', 'Illinois', 'Iowa', 'California'],
+    avgCostRanges: {
+      studio: '$2,900–$6,400',
+      twoBR: '$5,400–$9,800',
+      threeBR: '$7,800–$13,200',
+      fourBR: '$11,200–$18,500',
+    },
+    inboundGrowthStat:
+      'Lake Minnetonka luxury · yacht clubs · upscale boutiques',
+    peakSeasonNote:
+      'Lake Minnetonka estate driveways and summer marina traffic compress peak delivery windows',
+    clusterParent: 'minnesota',
+    priority: 38,
+    mapDescription:
+      'Wayzata in Hennepin County — Lake Minnetonka luxury core with yacht clubs and upscale boutiques.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

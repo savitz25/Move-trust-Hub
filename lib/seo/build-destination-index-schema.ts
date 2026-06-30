@@ -1282,6 +1282,66 @@ export function buildMarylandClusterSchemaGraph(
   };
 }
 
+/** JSON-LD for /moving-to/minnesota cluster parent */
+export function buildMinnesotaClusterSchemaGraph(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
+  const canonical = `${SITE_URL}${canonicalPath}`;
+  const published = new Set(getPublishedCityHubSlugs());
+  const minnesotaHubs = getClusterMarkets('minnesota').filter((market) =>
+    published.has(market.slug)
+  );
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumbs`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Popular Destinations',
+            item: `${SITE_URL}/moving-to`,
+          },
+          { '@type': 'ListItem', position: 3, name: 'Minnesota', item: canonical },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': canonical,
+        name: title,
+        description,
+        url: canonical,
+        inLanguage: 'en-US',
+        about: {
+          '@type': 'State',
+          name: 'Minnesota',
+          addressRegion: 'MN',
+        },
+        mainEntity: { '@id': `${canonical}#minnesota-hub-list` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${canonical}#minnesota-hub-list`,
+        name: 'Minnesota City Moving Guides',
+        numberOfItems: minnesotaHubs.length,
+        itemListElement: minnesotaHubs.map((market, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${market.displayName}, MN`,
+          url: `${SITE_URL}${getMarketPath(market)}`,
+        })),
+      },
+    ],
+  };
+}
+
 /** JSON-LD for /moving-to/louisiana cluster parent */
 export function buildLouisianaClusterSchemaGraph(
   title: string,

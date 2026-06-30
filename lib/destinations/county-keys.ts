@@ -36,6 +36,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   ks: 'kansas',
   ky: 'kentucky',
   md: 'maryland',
+  mn: 'minnesota',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {
