@@ -10252,6 +10252,281 @@ export const markets: Market[] = [
     mapDescription:
       'Wayzata in Hennepin County — Lake Minnetonka luxury core with yacht clubs and upscale boutiques.',
   },
+  {
+    slug: 'missouri',
+    displayName: 'Missouri',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: [],
+    lat: 38.5,
+    lng: -92.5,
+    defaultToZip: '64108',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Arkansas', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$5,400',
+      twoBR: '$3,800–$7,800',
+      threeBR: '$5,500–$10,400',
+      fourBR: '$8,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Low cost of living · Show-Me State · KC & STL metros · Ozark beauty',
+    peakSeasonNote:
+      'Dual-metro corporate closings and university semester peaks compress May–September delivery windows',
+    isClusterParent: true,
+    priority: 39,
+    mapDescription:
+      'Missouri inbound hub covering Kansas City metro, St. Louis metro, central Columbia, and Ozark Springfield corridors.',
+  },
+  {
+    slug: 'columbia-mo',
+    displayName: 'Columbia',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['boone-mo'],
+    lat: 38.9517,
+    lng: -92.3341,
+    defaultToZip: '65201',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Arkansas', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,400',
+      fourBR: '$8,200–$13,200',
+    },
+    inboundGrowthStat:
+      'High-value consensus king · Mizzou · Farmers Market downtown',
+    peakSeasonNote:
+      'Mizzou semester closing clusters and downtown walk-up constraints affect Columbia scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'Columbia in Boone County — Mizzou intellectual hub and central Missouri high-value consensus destination.',
+  },
+  {
+    slug: 'lees-summit-mo',
+    displayName: 'Lee\'s Summit',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['jackson-mo'],
+    lat: 38.9108,
+    lng: -94.3822,
+    defaultToZip: '64063',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,500',
+    },
+    inboundGrowthStat:
+      'Premier KC suburb · Longview Lake · top school districts',
+    peakSeasonNote:
+      'Longview Lake cul-de-sac shuttle staging and Lee\'s Summit school-year closings affect scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'Lee\'s Summit in Jackson County — premier Kansas City suburb with Longview Lake prestige.',
+  },
+  {
+    slug: 'ofallon-mo',
+    displayName: 'O\'Fallon',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['st-charles-mo'],
+    lat: 38.8106,
+    lng: -90.6998,
+    defaultToZip: '63366',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Arkansas', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,500',
+    },
+    inboundGrowthStat:
+      'St. Louis family powerhouse · master-planned · top schools',
+    peakSeasonNote:
+      'Master-planned HOA move-day rules and St. Charles County builder closings compress peak schedules',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'O\'Fallon in St. Charles County — St. Louis metro family powerhouse with master-planned growth.',
+  },
+  {
+    slug: 'kansas-city-mo',
+    displayName: 'Kansas City',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['jackson-mo'],
+    lat: 39.0997,
+    lng: -94.5786,
+    defaultToZip: '64108',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,500',
+    },
+    inboundGrowthStat:
+      'Cultural giant · Northland · riverfront revival · BBQ & arts',
+    peakSeasonNote:
+      'Riverfront district access and Northland builder closings affect Kansas City scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'Kansas City in Jackson County — cultural giant with Northland growth and riverfront revival.',
+  },
+  {
+    slug: 'chesterfield-mo',
+    displayName: 'Chesterfield',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['st-louis-mo'],
+    lat: 38.6631,
+    lng: -90.5771,
+    defaultToZip: '63017',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,400–$5,400',
+      twoBR: '$4,400–$7,800',
+      threeBR: '$6,400–$10,400',
+      fourBR: '$9,200–$14,800',
+    },
+    inboundGrowthStat:
+      'West-county luxury · corporate HQ · executive inventory',
+    peakSeasonNote:
+      'Chesterfield Valley corporate closing clusters and estate driveway accessorials affect scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'Chesterfield in St. Louis County — west-county luxury enclave with corporate headquarters density.',
+  },
+  {
+    slug: 'springfield-mo',
+    displayName: 'Springfield',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['greene-mo'],
+    lat: 37.209,
+    lng: -93.2923,
+    defaultToZip: '65807',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Arkansas', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,000',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'Ozark urban value · Bass Pro heritage · regional affordability',
+    peakSeasonNote:
+      'Ozark tourism peaks and Bass Pro corridor traffic affect Springfield scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'Springfield in Greene County — Ozark urban value play with Bass Pro Shops heritage.',
+  },
+  {
+    slug: 'st-charles-mo',
+    displayName: 'St. Charles',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['st-charles-mo'],
+    lat: 38.7881,
+    lng: -90.4974,
+    defaultToZip: '63301',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Arkansas', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,500',
+    },
+    inboundGrowthStat:
+      'Historic river city · Katy Trail · Main Street charm',
+    peakSeasonNote:
+      'Historic Main Street shuttle constraints and Katy Trail bluff access affect St. Charles scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'St. Charles in St. Charles County — historic river city on the Katy Trail with Main Street charm.',
+  },
+  {
+    slug: 'liberty-mo',
+    displayName: 'Liberty',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['clay-mo'],
+    lat: 39.2461,
+    lng: -94.4191,
+    defaultToZip: '64068',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Texas', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,200',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,200',
+      fourBR: '$9,000–$14,500',
+    },
+    inboundGrowthStat:
+      'KC Northland hidden gem · historic square · family value',
+    peakSeasonNote:
+      'Historic square district access and Northland cul-de-sac shuttle staging affect Liberty scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'Liberty in Clay County — KC Northland hidden gem with historic square charm.',
+  },
+  {
+    slug: 'st-louis-mo',
+    displayName: 'St. Louis',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['st-louis-city-mo'],
+    lat: 38.6488,
+    lng: -90.2612,
+    defaultToZip: '63108',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Arkansas', 'California'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,400',
+      fourBR: '$8,200–$13,200',
+    },
+    inboundGrowthStat:
+      'Urban value play · Central West End · South City brick neighborhoods',
+    peakSeasonNote:
+      'Brick walk-up long carries and CWE elevator COI rules affect St. Louis City scheduling',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'St. Louis City — urban value through Central West End and South City neighborhood character.',
+  },
+  {
+    slug: 'republic-nixa-mo',
+    displayName: 'Republic / Nixa',
+    stateCode: 'MO',
+    stateName: 'Missouri',
+    primaryCounties: ['christian-mo'],
+    lat: 37.1201,
+    lng: -93.4802,
+    defaultToZip: '65738',
+    topInboundOrigins: ['Illinois', 'Kansas', 'Arkansas', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,000',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'Explosive southwest sprinters · Springfield proximity · new-build growth',
+    peakSeasonNote:
+      'Ozark hillside driveways and southwest builder closing clusters compress peak schedules',
+    clusterParent: 'missouri',
+    priority: 39,
+    mapDescription:
+      'Republic and Nixa in Christian County — explosive southwest suburban growth near Springfield.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

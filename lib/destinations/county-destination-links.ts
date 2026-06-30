@@ -1047,6 +1047,48 @@ const COUNTY_DESTINATION_HUBS: Record<string, Record<string, DestinationHubLink>
       description: 'King County Puget Sound flagship metro inbound moving guide',
     },
   },
+  missouri: {
+    boone: {
+      label: 'Moving to Columbia',
+      href: '/moving-to/missouri/columbia-mo',
+      description: 'Boone County Mizzou intellectual hub and central Missouri inbound guide',
+    },
+    jackson: {
+      label: 'Moving to Kansas City',
+      href: '/moving-to/missouri/kansas-city-mo',
+      description: 'Jackson County KC metro cultural and Northland inbound guides',
+    },
+    clay: {
+      label: 'Moving to Liberty',
+      href: '/moving-to/missouri/liberty-mo',
+      description: 'Clay County KC Northland historic square inbound guide',
+    },
+    'st-charles': {
+      label: 'Moving to St. Charles',
+      href: '/moving-to/missouri/st-charles-mo',
+      description: 'St. Charles County historic Katy Trail river city inbound guide',
+    },
+    'st-louis': {
+      label: 'Moving to Chesterfield',
+      href: '/moving-to/missouri/chesterfield-mo',
+      description: 'St. Louis County west-county luxury and corporate HQ inbound guide',
+    },
+    'st-louis-city': {
+      label: 'Moving to St. Louis',
+      href: '/moving-to/missouri/st-louis-mo',
+      description: 'St. Louis City Central West End and South City urban inbound guide',
+    },
+    greene: {
+      label: 'Moving to Springfield',
+      href: '/moving-to/missouri/springfield-mo',
+      description: 'Greene County Ozark urban value and Bass Pro corridor inbound guide',
+    },
+    christian: {
+      label: 'Moving to Republic & Nixa',
+      href: '/moving-to/missouri/republic-nixa-mo',
+      description: 'Christian County southwest suburban growth inbound guide',
+    },
+  },
   florida: {
     'miami-dade': {
       label: 'Moving to Miami',
