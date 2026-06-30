@@ -42,7 +42,7 @@ export const DestinationsMegaMenuTools = memo(function DestinationsMegaMenuTools
       <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
         Quick Tools
       </div>
-      <ul className="space-y-2 text-sm flex-1">
+      <ul className="space-y-1.5 text-sm flex-1" role="list">
         {tools.map((tool) => {
           const Icon = TOOL_ICONS[tool.id] ?? ArrowRight;
           return (
@@ -50,8 +50,9 @@ export const DestinationsMegaMenuTools = memo(function DestinationsMegaMenuTools
               <Link
                 prefetch={false}
                 href={tool.href}
-                className="group flex items-start gap-2.5 rounded-lg border border-transparent px-2 py-1.5 hover:border-border hover:bg-muted/40 transition-colors"
+                className="group flex items-start gap-2.5 rounded-lg border border-transparent px-2 py-2 min-h-[44px] hover:border-border hover:bg-muted/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
                 onClick={onNavigate}
+                aria-label={`${tool.label}: ${tool.description}`}
               >
                 <Icon
                   className="h-4 w-4 text-primary shrink-0 mt-0.5"
@@ -72,24 +73,16 @@ export const DestinationsMegaMenuTools = memo(function DestinationsMegaMenuTools
       <div className="mt-4 pt-4 border-t space-y-2">
         <Button
           size="sm"
-          className="w-full gap-2 bg-primary hover:bg-primary/90 shadow-sm min-h-[40px]"
+          className="w-full gap-2 bg-primary hover:bg-primary/90 shadow-md min-h-[44px] text-sm font-semibold"
           onClick={() => {
             setShowQuoteModal(true);
             onNavigate?.();
           }}
+          aria-label="Get free moving quotes from licensed carriers"
         >
           <FileText className="h-4 w-4" aria-hidden="true" />
           Get Free Moving Quotes
         </Button>
-        <Link
-          prefetch={false}
-          href="/moving-to"
-          className="inline-flex items-center justify-center gap-1 w-full text-xs font-medium text-primary hover:underline py-1"
-          onClick={onNavigate}
-        >
-          Browse all destinations
-          <ArrowRight className="h-3 w-3" aria-hidden="true" />
-        </Link>
       </div>
 
       {showQuoteModal ? (

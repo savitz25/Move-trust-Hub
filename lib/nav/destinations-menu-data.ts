@@ -5,34 +5,40 @@ import {
   getSortedClusterMarkets,
 } from '@/lib/destinations/markets';
 import type { Market } from '@/lib/destinations/types';
-
-/** High-intent destination clusters — surfaced first in nav. */
-export const FEATURED_CLUSTER_SLUGS = [
-  'florida',
-  'south-carolina',
-  'texas',
-  'california',
-  'arizona',
-  'new-york',
-  'georgia',
-  'north-carolina',
-  'tennessee',
-] as const;
+import {
+  FEATURED_STATES_LIMIT,
+  rankFeaturedStates,
+} from '@/lib/nav/destinations-menu-priority';
 
 /**
  * Stable popular corridors for nav — kept lightweight (no routeGuides import)
  * so client mega menu code stays small.
+ * `featured: true` marks highest-conversion corridors for visual emphasis.
  */
 export const POPULAR_ROUTES_NAV = [
   {
     label: 'NY → FL',
     href: '/resources/routes/new-york-to-florida',
     distance: '~1,100–1,300 miles',
+    featured: true,
   },
   {
     label: 'CA → TX',
     href: '/resources/routes/california-to-texas',
     distance: '~1,400–1,800 miles',
+    featured: true,
+  },
+  {
+    label: 'NJ → FL',
+    href: '/resources/routes/new-jersey-to-florida',
+    distance: '~1,000–1,200 miles',
+    featured: true,
+  },
+  {
+    label: 'MN → FL',
+    href: '/resources/routes/minnesota-to-florida',
+    distance: '~1,600–1,850 miles',
+    featured: true,
   },
   {
     label: 'NY → TX',
@@ -40,18 +46,8 @@ export const POPULAR_ROUTES_NAV = [
     distance: '~1,600–1,800 miles',
   },
   {
-    label: 'MN → FL',
-    href: '/resources/routes/minnesota-to-florida',
-    distance: '~1,600–1,850 miles',
-  },
-  {
     label: 'MN → TX',
     href: '/resources/routes/minnesota-to-texas',
-    distance: '~1,000–1,200 miles',
-  },
-  {
-    label: 'NJ → FL',
-    href: '/resources/routes/new-jersey-to-florida',
     distance: '~1,000–1,200 miles',
   },
   {
@@ -97,6 +93,7 @@ export type RouteNavLink = {
   label: string;
   href: string;
   distance: string;
+  featured?: boolean;
 };
 
 export type QuickToolLink = {
@@ -142,16 +139,12 @@ function buildMenuData(): DestinationsMenuData {
     .map((cluster) => buildStateGroup(cluster, published))
     .filter((g): g is StateNavGroup => g !== null);
 
-  const groupBySlug = new Map(groups.map((g) => [g.cluster.slug, g]));
-
-  const featuredStates = FEATURED_CLUSTER_SLUGS.map((slug) => groupBySlug.get(slug)).filter(
-    (g): g is StateNavGroup => Boolean(g)
-  );
+  const featuredStates = rankFeaturedStates(groups, FEATURED_STATES_LIMIT);
 
   return {
     featuredStates,
     allStatesAlphabetical: groups,
-    popularRoutes: [...POPULAR_ROUTES_NAV],
+    popularRoutes: POPULAR_ROUTES_NAV.map((route) => ({ ...route })),
     quickTools: [
       {
         id: 'fmcsa',
