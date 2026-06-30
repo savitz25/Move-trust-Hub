@@ -9427,6 +9427,281 @@ export const markets: Market[] = [
     mapDescription:
       'Andover in Butler County — fast-growing Wichita metro alternative with elite schools.',
   },
+  {
+    slug: 'kentucky',
+    displayName: 'Kentucky',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: [],
+    lat: 37.8,
+    lng: -85.5,
+    defaultToZip: '40507',
+    topInboundOrigins: ['Ohio', 'Indiana', 'Tennessee', 'Illinois'],
+    avgCostRanges: {
+      studio: '$2,200–$5,000',
+      twoBR: '$4,000–$7,600',
+      threeBR: '$5,800–$10,400',
+      fourBR: '$8,400–$14,800',
+    },
+    inboundGrowthStat:
+      'Low cost of living · Bluegrass horse country · bourbon culture',
+    peakSeasonNote:
+      'Derby season and August university turnover tighten peak delivery windows',
+    isClusterParent: true,
+    priority: 36,
+    mapDescription:
+      'Kentucky inbound hub covering Bluegrass Lexington, Louisville metro, Northern Kentucky, I-65 western growth, and creative river towns.',
+  },
+  {
+    slug: 'lexington-ky',
+    displayName: 'Lexington',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['fayette-ky'],
+    lat: 38.0406,
+    lng: -84.5037,
+    defaultToZip: '40507',
+    topInboundOrigins: ['Ohio', 'Indiana', 'Tennessee', 'California'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Refined intellectual core · horse farms · University of Kentucky',
+    peakSeasonNote:
+      'Keeneland season and horse-farm long-driveway access may require shuttle coordination',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Lexington in Fayette County — Bluegrass horse country and UK intellectual inbound hub.',
+  },
+  {
+    slug: 'louisville-ky',
+    displayName: 'Louisville',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['jefferson-ky'],
+    lat: 38.2527,
+    lng: -85.7585,
+    defaultToZip: '40202',
+    topInboundOrigins: ['Ohio', 'Indiana', 'Tennessee', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,400–$5,200',
+      twoBR: '$4,400–$8,000',
+      threeBR: '$6,400–$10,800',
+      fourBR: '$9,200–$15,500',
+    },
+    inboundGrowthStat:
+      'Cultural heavyweight · Highlands · Old Louisville · UPS Worldport',
+    peakSeasonNote:
+      'Derby week and Highlands narrow-street deliveries compress spring schedules',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Louisville in Jefferson County — bourbon culture, Highlands, and UPS Worldport inbound hub.',
+  },
+  {
+    slug: 'bowling-green-ky',
+    displayName: 'Bowling Green',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['warren-ky'],
+    lat: 36.9685,
+    lng: -86.4808,
+    defaultToZip: '42101',
+    topInboundOrigins: ['Tennessee', 'Indiana', 'Ohio', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Booming industrial engine · WKU · Corvette Assembly Plant',
+    peakSeasonNote:
+      'Corvette plant transfer season and WKU August move-ins affect scheduling',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Bowling Green in Warren County — Corvette plant and Western Kentucky University growth corridor.',
+  },
+  {
+    slug: 'elizabethtown-ky',
+    displayName: 'Elizabethtown',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['hardin-ky'],
+    lat: 37.694,
+    lng: -85.8591,
+    defaultToZip: '42701',
+    topInboundOrigins: ['Tennessee', 'Indiana', 'Ohio', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Reshaped Hub City · EV battery corridor · I-65 growth',
+    peakSeasonNote:
+      'I-65 corridor closings and Fort Knox spillover tighten summer delivery windows',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Elizabethtown in Hardin County — I-65 Hub City and EV battery corridor inbound market.',
+  },
+  {
+    slug: 'covington-ky',
+    displayName: 'Covington',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['kenton-ky'],
+    lat: 39.0837,
+    lng: -84.5086,
+    defaultToZip: '41011',
+    topInboundOrigins: ['Ohio', 'Indiana', 'Illinois', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,300–$5,000',
+      twoBR: '$4,200–$7,600',
+      threeBR: '$6,200–$10,400',
+      fourBR: '$9,000–$14,800',
+    },
+    inboundGrowthStat:
+      'Urban Cincinnati alternative · Ohio Riverfront · historic charm',
+    peakSeasonNote:
+      'MainStrasse historic lanes and riverfront condos may require shuttle coordination',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Covington in Kenton County — Cincinnati riverfront alternative and historic district inbound hub.',
+  },
+  {
+    slug: 'georgetown-ky',
+    displayName: 'Georgetown',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['scott-ky'],
+    lat: 38.2098,
+    lng: -84.5588,
+    defaultToZip: '40324',
+    topInboundOrigins: ['Ohio', 'Indiana', 'Tennessee', 'Texas'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Stable family choice · Toyota manufacturing · Scott County value',
+    peakSeasonNote:
+      'Toyota plant corridor subdivisions and new-build HOA rules may require advance coordination',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Georgetown in Scott County — Toyota manufacturing stability and Lexington spillover value.',
+  },
+  {
+    slug: 'richmond-ky',
+    displayName: 'Richmond',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['madison-ky'],
+    lat: 37.7479,
+    lng: -84.2947,
+    defaultToZip: '40475',
+    topInboundOrigins: ['Ohio', 'Tennessee', 'Indiana', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'High-growth commuter bargain · Eastern Kentucky University',
+    peakSeasonNote:
+      'EKU academic calendar turnover and August move-ins affect delivery scheduling',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Richmond in Madison County — EKU campus town with Lexington commuter spillover.',
+  },
+  {
+    slug: 'florence-ky',
+    displayName: 'Florence',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['boone-ky'],
+    lat: 38.9989,
+    lng: -84.6266,
+    defaultToZip: '41042',
+    topInboundOrigins: ['Ohio', 'Indiana', 'Illinois', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,200–$4,800',
+      twoBR: '$4,000–$7,200',
+      threeBR: '$5,800–$9,800',
+      fourBR: '$8,400–$13,500',
+    },
+    inboundGrowthStat:
+      'Logistics & transit hub · I-75 · CVG airport corridor',
+    peakSeasonNote:
+      'Mall Road commercial traffic and CVG corridor closings compress peak-season schedules',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Florence in Boone County — I-75 logistics hub and CVG airport corridor inbound market.',
+  },
+  {
+    slug: 'owensboro-ky',
+    displayName: 'Owensboro',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['daviess-ky'],
+    lat: 37.7719,
+    lng: -87.1112,
+    defaultToZip: '42301',
+    topInboundOrigins: ['Indiana', 'Tennessee', 'Illinois', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'Affordable riverfront jewel · BBQ Capital of the World',
+    peakSeasonNote:
+      'Ohio River flood-zone properties and riverfront deliveries require early planning',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Owensboro in Daviess County — Ohio River BBQ Capital and affordable riverfront inbound hub.',
+  },
+  {
+    slug: 'paducah-ky',
+    displayName: 'Paducah',
+    stateCode: 'KY',
+    stateName: 'Kentucky',
+    primaryCounties: ['mccracken-ky'],
+    lat: 37.0834,
+    lng: -88.6001,
+    defaultToZip: '42001',
+    topInboundOrigins: ['Tennessee', 'Illinois', 'Missouri', 'Florida'],
+    avgCostRanges: {
+      studio: '$2,100–$4,600',
+      twoBR: '$3,800–$6,800',
+      threeBR: '$5,500–$9,200',
+      fourBR: '$8,000–$12,800',
+    },
+    inboundGrowthStat:
+      'Arts sanctuary · UNESCO Creative City · river confluence',
+    peakSeasonNote:
+      'Lower Town Arts District and riverfront event weekends may affect delivery windows',
+    clusterParent: 'kentucky',
+    priority: 36,
+    mapDescription:
+      'Paducah in McCracken County — UNESCO Creative City and Ohio-Tennessee river confluence.',
+  },
 ];
 
 export function getMarketBySlug(slug: string): Market | undefined {

@@ -34,6 +34,7 @@ const STATE_CODE_TO_SLUG: Record<string, string> = {
   de: 'delaware',
   ia: 'iowa',
   ks: 'kansas',
+  ky: 'kentucky',
 };
 
 export function parseCountyKey(key: string): { stateSlug: string; countySlug: string } | null {

@@ -351,6 +351,16 @@ import { manhattanKsContent } from '@/lib/destinations/content/manhattan-ks';
 import { wichitaKsContent } from '@/lib/destinations/content/wichita-ks';
 import { topekaKsContent } from '@/lib/destinations/content/topeka-ks';
 import { andoverKsContent } from '@/lib/destinations/content/andover-ks';
+import { lexingtonKyContent } from '@/lib/destinations/content/lexington-ky';
+import { louisvilleKyContent } from '@/lib/destinations/content/louisville-ky';
+import { bowlingGreenKyContent } from '@/lib/destinations/content/bowling-green-ky';
+import { elizabethtownKyContent } from '@/lib/destinations/content/elizabethtown-ky';
+import { covingtonKyContent } from '@/lib/destinations/content/covington-ky';
+import { georgetownKyContent } from '@/lib/destinations/content/georgetown-ky';
+import { richmondKyContent } from '@/lib/destinations/content/richmond-ky';
+import { florenceKyContent } from '@/lib/destinations/content/florence-ky';
+import { owensboroKyContent } from '@/lib/destinations/content/owensboro-ky';
+import { paducahKyContent } from '@/lib/destinations/content/paducah-ky';
 
 const cityHubContentBySlug: Record<string, CityHubContent> = {
   'myrtle-beach-sc': myrtleBeachScContent,
@@ -704,6 +714,16 @@ const cityHubContentBySlug: Record<string, CityHubContent> = {
   'wichita-ks': wichitaKsContent,
   'topeka-ks': topekaKsContent,
   'andover-ks': andoverKsContent,
+  'lexington-ky': lexingtonKyContent,
+  'louisville-ky': louisvilleKyContent,
+  'bowling-green-ky': bowlingGreenKyContent,
+  'elizabethtown-ky': elizabethtownKyContent,
+  'covington-ky': covingtonKyContent,
+  'georgetown-ky': georgetownKyContent,
+  'richmond-ky': richmondKyContent,
+  'florence-ky': florenceKyContent,
+  'owensboro-ky': owensboroKyContent,
+  'paducah-ky': paducahKyContent,
 };
 
 export function getCityHubContent(slug: string): CityHubContent | undefined {
@@ -938,5 +958,11 @@ export function getPublishedIowaHubSlugs(): string[] {
 export function getPublishedKansasHubSlugs(): string[] {
   return getPublishedCityHubSlugs().filter(
     (slug) => getMarketBySlug(slug)?.clusterParent === 'kansas'
+  );
+}
+
+export function getPublishedKentuckyHubSlugs(): string[] {
+  return getPublishedCityHubSlugs().filter(
+    (slug) => getMarketBySlug(slug)?.clusterParent === 'kentucky'
   );
 }
