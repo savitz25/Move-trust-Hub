@@ -31,7 +31,16 @@ export const guides: GuideEntry[] = [
       '2026 average prices by home size and distance, key cost drivers, and proven strategies to save without sacrificing quality.',
     category: 'Planning',
     href: '/resources/interstate-moving-costs',
-    related: ['move-size-weight', 'how-to-choose', 'carrier-vs-broker', 'routes', 'checklist'],
+    related: ['best-time-to-move', 'move-size-weight', 'how-to-choose', 'carrier-vs-broker', 'routes', 'checklist'],
+  },
+  {
+    slug: 'best-time-to-move',
+    title: 'Best Time to Move Interstate in 2026: Seasonal Pricing & Tips',
+    excerpt:
+      'Peak vs off-peak months, weather risks, school schedules, and strategies to secure lower rates and better crew availability.',
+    category: 'Planning',
+    href: '/resources/best-time-to-move',
+    related: ['interstate-moving-costs', 'move-size-weight', 'routes', 'how-to-choose', 'checklist'],
   },
   {
     slug: 'how-to-choose',

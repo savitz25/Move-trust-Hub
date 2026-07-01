@@ -107,7 +107,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                     route.replace('/resources/routes/', ''),
                     extendedRouteSlugs.has(route.replace('/resources/routes/', ''))
                   )
-                : route === '/resources/interstate-moving-costs'
+                : route === '/resources/interstate-moving-costs' ||
+                    route === '/resources/best-time-to-move'
                   ? 0.9
                   : route === '/moving-calculator'
                     ? 0.87

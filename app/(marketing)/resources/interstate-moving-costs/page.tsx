@@ -107,7 +107,8 @@ const savingsTips = [
   },
   {
     title: 'Choose off-peak dates',
-    detail: 'Mid-week, mid-month, or non-summer moves often cost 15–25% less than peak season.',
+    detail:
+      'Mid-week, mid-month, or non-summer moves often cost 15–25% less than peak season. See our best time to move guide for month-by-month planning.',
   },
   {
     title: 'Get multiple binding estimates',
@@ -560,6 +561,7 @@ export default function InterstateMovingCostsPage() {
 
           <GuideFooter
             relatedSlugs={[
+              'best-time-to-move',
               'move-size-weight',
               'how-to-choose',
               'carrier-vs-broker',
