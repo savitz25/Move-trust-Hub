@@ -25,7 +25,7 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Kansas | 105/105 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-kansas-movers.ts`, `apply-kansas-mover-expansion.ts` |
 | Missouri | 115/115 | 5 | 8 (medium) / 10 (major) | 14 counties | `count-missouri-movers.ts`, `apply-missouri-mover-expansion.ts` |
 | Illinois | 102/102 | 5 | 10 (cap 10; Cook up to 19) | 15 counties | `count-illinois-movers.ts`, `apply-illinois-mover-expansion.ts` |
-| Michigan | 83/83 | 5 | 10 (cap 10; Wayne up to 18) | 15 counties | `count-michigan-movers.ts`, `apply-michigan-mover-expansion.ts` |
+| Michigan | 83/83 (complete) | 7 | 13 (Wayne/Oakland/Macomb) / 11 (Kent, Washtenaw) / 10 (major) | 15 counties | `count-michigan-movers.ts`, `enrich-michigan-mover-licenses.ts`, `apply-michigan-mover-expansion.ts` |
 | Indiana | 92/92 (complete) | 5 | 10 (cap 10; Marion up to 18) | 15 counties | `count-indiana-movers.ts`, `apply-indiana-mover-expansion.ts`, `audit-indiana-seo.ts` |
 | Ohio | 88/88 (complete) | 5 | 10 (cap 10; Franklin up to 18) | 15 counties | `count-ohio-movers.ts`, `apply-ohio-mover-expansion.ts`, `audit-ohio-seo.ts` |
 | Kentucky | 120/120 (complete) | 5 | 10 (cap 10) | 15 counties | `count-kentucky-movers.ts`, `apply-kentucky-mover-expansion.ts`, `audit-kentucky-seo.ts` |
@@ -59,6 +59,8 @@ Replicate the Florida / New Jersey / New York / California / Texas / Georgia / S
 | Iowa | 73/73 (curated) | 5 | 12 (Polk) / 10 (Linn, Johnson) / 9 (Scott) / 8 (Woodbury) | `polk`, `linn`, `johnson`, `scott` 0.85 | `count-iowa-movers.ts`, `apply-iowa-mover-expansion.ts`, `audit-iowa-seo.ts` |
 | Minnesota | 87/87 (complete) | 5 | 13 (Hennepin, Ramsey) / 10 (Dakota, Anoka, Washington, Scott, Carver, Olmsted) / 9 (St. Louis) | `hennepin`, `ramsey`, `dakota`, `anoka`, `washington`, `scott`, `carver` 0.85 | `count-minnesota-movers.ts`, `apply-minnesota-mover-expansion.ts`, `audit-minnesota-seo.ts` |
 | Wisconsin | 72/72 (complete) | 5 | 12 (Milwaukee, Waukesha) / 10 (Dane) / 9 (Brown, Racine, Kenosha, Outagamie, Winnebago) | `milwaukee`, `waukesha` 0.85 | `count-wisconsin-movers.ts`, `apply-wisconsin-mover-expansion.ts`, `audit-wisconsin-seo.ts` |
+
+> **Michigan note:** Michigan has **83 counties** — **complete state curation** for a high-value Midwest market. **Wayne**, **Oakland**, and **Macomb** (13 movers each) are the premium Detroit metro hubs covering auto-industry corporate relocations, dense urban/suburban logistics, and lake-effect winter hauls. **Kent County** (Grand Rapids — 11 movers) and **Washtenaw County** (Ann Arbor — 11 movers) cover West Michigan manufacturing and University of Michigan campus moves. **Ingham**, **Genesee**, **Kalamazoo**, and **Ottawa** (10 movers each) are secondary regional hubs. Rural and Upper Peninsula counties emphasize remote logistics, tourism/second-home moves, harsh winters, and long-distance Lower 48 hauls at **7 movers minimum** (2 FMCSA-verified directory carriers + 5 local specialists). Run `enrich-michigan-mover-licenses.ts` before `apply-michigan-mover-expansion.ts` when adding new MI catalog entries. Cross-border nearby links to Ohio (Lucas/Toledo), Indiana (LaPorte, St. Joseph, Elkhart), Wisconsin (Marinette, Iron, Florence), and Windsor ON corridor context via Monroe/Wayne. Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
 > **Wisconsin note:** Wisconsin has **72 counties** — **complete state curation** for a high-value Midwest market. **Milwaukee County** (12 movers) and **Waukesha County** (12 movers) are the premium Milwaukee metro hubs covering manufacturing headquarters (Harley-Davidson, Rockwell Automation), corporate employee transfers, Lake Country suburban family moves, and harsh-winter long-distance hauls. **Dane County** (Madison — 10 movers) covers UW–Madison campus moves and state government relocations. **Brown County** (Green Bay — 9 movers) and **Outagamie County** (Fox Cities — 9 movers) cover manufacturing and logistics corridors. **Racine**, **Kenosha**, and **Winnebago** (9 movers each) cover Chicago-corridor cross-border, Lake Michigan shoreline, and Fox Valley demand. Door County and northwoods counties emphasize tourism, second-home, and seasonal logistics; rural counties emphasize dairy/agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves at 5–7 movers minimum. Franchise #1 in Milwaukee; `regional-*-wi-movers` in other counties. WI `washington`, `dane`, `jefferson`, `lincoln`, `buffalo`, `iowa`, `grant`, `richland`, `columbia`, and `door` slugs collide with other states — nearby links use `displayLabel` disambiguation. Cross-border nearby links to Illinois (Lake, Winnebago), Minnesota (St. Croix, Pierce, Douglas), Michigan (Upper Peninsula border), and Iowa (Grant, Crawford). Add to `SKIP_STATES` and `CURATED_STATE_SLUGS`.
 
@@ -391,9 +393,9 @@ All 88 Ohio counties are curated at 10 movers each (Franklin may expand to 18).
 - `marquette-metro-mi`, `escanaba-metro-mi`, `iron-mountain-metro-mi`, `sault-ste-marie-metro-mi` — Upper Peninsula hubs
 - Rural pools: county-seat metros (`baldwin-metro-mi`, `grayling-metro-mi`, `munising-metro-mi`, etc.)
 
-### Michigan major counties (10 movers each; Wayne up to 18)
+### Michigan major counties (13 Detroit metro / 11 Kent+Washtenaw / 10 secondary / 7 rural)
 
-`wayne`, `oakland`, `macomb`, `kent`, `ottawa`, `washtenaw`, `ingham`, `genesee`, `kalamazoo`, `livingston`, `saginaw`, `muskegon`, `monroe`, `grand-traverse`, `marquette`
+**13 movers:** `wayne`, `oakland`, `macomb` — **11 movers:** `kent`, `washtenaw` — **10 movers:** `ingham`, `genesee`, `kalamazoo`, `ottawa`, `livingston`, `saginaw`, `muskegon`, `monroe`, `grand-traverse`, `marquette` — **7 movers:** all remaining counties
 
 ### Michigan sitemap priority 0.85 (15 counties)
 
@@ -864,6 +866,7 @@ npx tsx scripts/audit-virginia-seo.ts
 npx tsx scripts/count-district-of-columbia-movers.ts
 npx tsx scripts/audit-district-of-columbia-seo.ts
 npx tsx scripts/apply-illinois-mover-expansion.ts   # if needed
+npx tsx scripts/enrich-michigan-mover-licenses.ts    # if new MI movers lack USDOT
 npx tsx scripts/apply-michigan-mover-expansion.ts   # if needed
 npx tsx scripts/apply-indiana-mover-expansion.ts   # if needed
 npx tsx scripts/apply-{state}-mover-expansion.ts   # if needed

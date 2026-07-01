@@ -34,6 +34,7 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'michigan', countySlug: 'oakland' },
   { stateSlug: 'michigan', countySlug: 'macomb' },
   { stateSlug: 'michigan', countySlug: 'kent' },
+  { stateSlug: 'michigan', countySlug: 'washtenaw' },
   // Virginia
   { stateSlug: 'virginia', countySlug: 'fairfax' },
   { stateSlug: 'virginia', countySlug: 'prince-william' },

@@ -9,7 +9,7 @@ const michiganCounties = generatedCounties
   .map(applyMichiganCountyOverrides);
 const countyNameBySlug = new Map(michiganCounties.map((c) => [c.slug, c.name]));
 
-/** Geographic adjacency for curated MI county pages — expands as counties are researched */
+/** Geographic adjacency for curated MI county pages */
 const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   wayne: ['oakland', 'macomb', 'washtenaw', 'monroe'],
   oakland: ['wayne', 'macomb', 'lapeer', 'livingston', 'washtenaw', 'genesee'],
@@ -96,14 +96,125 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
   keweenaw: ['houghton'],
 };
 
-export function getMichiganNearbyCounties(
-  countySlug: string
-): NearbyCountyLink[] {
+/**
+ * Cross-border corridor links — Ohio, Indiana, Wisconsin, and Windsor ON context.
+ * MI `wayne`, `monroe`, `st-joseph`, `cass`, `iron`, and `marquette` slugs collide
+ * with other states; nearby links use displayLabel disambiguation.
+ */
+const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
+  wayne: [
+    {
+      slug: 'lucas',
+      name: 'Lucas',
+      seat: 'Toledo',
+      href: '/local-movers/ohio/lucas',
+      displayLabel: 'Lucas County, OH (Toledo)',
+    },
+  ],
+  monroe: [
+    {
+      slug: 'lucas',
+      name: 'Lucas',
+      seat: 'Toledo',
+      href: '/local-movers/ohio/lucas',
+      displayLabel: 'Lucas County, OH (Toledo)',
+    },
+    {
+      slug: 'wayne',
+      name: 'Wayne',
+      seat: 'Detroit',
+      href: '/local-movers/michigan/wayne',
+      displayLabel: 'Wayne County, MI (Detroit / Windsor corridor)',
+    },
+  ],
+  berrien: [
+    {
+      slug: 'laporte',
+      name: 'LaPorte',
+      seat: 'La Porte',
+      href: '/local-movers/indiana/laporte',
+      displayLabel: 'LaPorte County, IN',
+    },
+    {
+      slug: 'st-joseph',
+      name: 'St. Joseph',
+      seat: 'South Bend',
+      href: '/local-movers/indiana/st-joseph',
+      displayLabel: 'St. Joseph County, IN (South Bend)',
+    },
+  ],
+  cass: [
+    {
+      slug: 'st-joseph',
+      name: 'St. Joseph',
+      seat: 'South Bend',
+      href: '/local-movers/indiana/st-joseph',
+      displayLabel: 'St. Joseph County, IN (South Bend)',
+    },
+  ],
+  'st-joseph': [
+    {
+      slug: 'elkhart',
+      name: 'Elkhart',
+      seat: 'Goshen',
+      href: '/local-movers/indiana/elkhart',
+      displayLabel: 'Elkhart County, IN',
+    },
+  ],
+  menominee: [
+    {
+      slug: 'marinette',
+      name: 'Marinette',
+      seat: 'Marinette',
+      href: '/local-movers/wisconsin/marinette',
+      displayLabel: 'Marinette County, WI',
+    },
+  ],
+  dickinson: [
+    {
+      slug: 'marinette',
+      name: 'Marinette',
+      seat: 'Marinette',
+      href: '/local-movers/wisconsin/marinette',
+      displayLabel: 'Marinette County, WI',
+    },
+  ],
+  gogebic: [
+    {
+      slug: 'iron',
+      name: 'Iron',
+      seat: 'Hurley',
+      href: '/local-movers/wisconsin/iron',
+      displayLabel: 'Iron County, WI',
+    },
+  ],
+  iron: [
+    {
+      slug: 'iron',
+      name: 'Iron',
+      seat: 'Hurley',
+      href: '/local-movers/wisconsin/iron',
+      displayLabel: 'Iron County, WI',
+    },
+  ],
+  marquette: [
+    {
+      slug: 'florence',
+      name: 'Florence',
+      seat: 'Florence',
+      href: '/local-movers/wisconsin/florence',
+      displayLabel: 'Florence County, WI',
+    },
+  ],
+};
+
+export function getMichiganNearbyCounties(countySlug: string): NearbyCountyLink[] {
   const neighbors = MI_COUNTY_NEIGHBORS[countySlug];
-  if (!neighbors) return [];
+  const crossBorder = MI_CROSS_BORDER_NEIGHBORS[countySlug] ?? [];
+  if (!neighbors?.length && !crossBorder.length) return [];
 
   const seen = new Set<string>();
-  return neighbors
+  const inState: NearbyCountyLink[] = (neighbors ?? [])
     .filter((slug) => {
       if (seen.has(slug)) return false;
       seen.add(slug);
@@ -114,4 +225,13 @@ export function getMichiganNearbyCounties(
       name: countyNameBySlug.get(slug)!,
       href: `/local-movers/michigan/${slug}`,
     }));
+
+  const extra = crossBorder.filter((link) => {
+    const key = link.href ?? link.slug;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  return [...inState, ...extra];
 }

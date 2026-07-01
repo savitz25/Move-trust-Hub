@@ -10,7 +10,7 @@ export type CuratedCountyResearch = {
 export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
   wayne: {
     marketNotes:
-      'Wayne County is Michigan’s most populous county and the core of the Detroit metropolitan area, with strong urban, corporate, and residential demand across Detroit, Dearborn, Livonia, and Westland.',
+      'Wayne County is Michigan’s most populous county and the core of the Detroit metropolitan area, with strong urban, auto-industry corporate, and residential demand across Detroit, Dearborn, Livonia, and Westland. Movers here routinely handle Big Three supplier relocations, downtown high-rise logistics, and harsh-winter long-distance hauls to the Sun Belt.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -27,7 +27,7 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   oakland: {
     marketNotes:
-      'Oakland County is one of Michigan’s wealthiest and most populous suburban counties with strong corporate, healthcare, and residential demand across Troy, Rochester Hills, Pontiac, and Royal Oak.',
+      'Oakland County is one of Michigan’s wealthiest Detroit suburbs with strong auto-supplier corporate, healthcare, and residential demand across Troy, Rochester Hills, Pontiac, and Royal Oak. Expect higher demand for executive transfers, lakefront second homes, and winter-sensitive packing for long-distance moves.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -44,7 +44,7 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   macomb: {
     marketNotes:
-      'Macomb County is a major suburban county northeast of Detroit with strong residential and industrial demand across Warren, Sterling Heights, Clinton Township, and Roseville.',
+      'Macomb County is a major suburban county northeast of Detroit with strong residential, manufacturing, and defense-contractor demand across Warren, Sterling Heights, Clinton Township, and Roseville. I-94 corridor traffic and lake-effect winter weather make timing and crew sizing especially important.',
     costs: {
       studioRange: '$850–$1,700',
       familyRange: '$3,000–$7,000+',
@@ -61,7 +61,7 @@ export const michiganCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   kent: {
     marketNotes:
-      'Kent County is the core of the Grand Rapids metropolitan area with strong corporate, healthcare, and residential demand across Grand Rapids, Wyoming, and Kentwood.',
+      'Kent County is the core of West Michigan and the Grand Rapids metro, with strong furniture, manufacturing, healthcare, and family residential demand across Grand Rapids, Wyoming, and Kentwood. Lake-effect snow and US-131/I-96 logistics shape winter move windows and long-distance pricing.',
     costs: {
       studioRange: '$800–$1,600',
       familyRange: '$2,900–$6,500+',
