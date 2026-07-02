@@ -5,7 +5,7 @@ export const philadelphiaPaContent: CityHubContent = {
   h1: 'Moving to Philadelphia, PA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Philadelphia, PA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Philadelphia, PA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Philadelphia? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Major East Coast city, walkable neighborhoods, cheaper than NY/Boston, young professional growth. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -230,7 +230,7 @@ export const philadelphiaPaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Philadelphia?',
       answer:
-        'From New York, New Jersey, Boston, California, Maryland, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $11,800 for full-service interstate transport in 2026 — reflecting Philadelphia premium pricing relative to other Pennsylvania destinations. Final price depends on exact volume, packing services, rowhome or high-rise accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Boston, California, Maryland, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $11,800 for full-service interstate transport in 2026 — reflecting Philadelphia premium pricing relative to other Pennsylvania destinations. Final price depends on exact volume, packing services, rowhome or high-rise accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Philadelphia compare to New York for moving costs?',

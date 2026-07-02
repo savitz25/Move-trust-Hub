@@ -5,7 +5,7 @@ export const anchorageAkContent: CityHubContent = {
   h1: 'Moving to Anchorage, AK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Anchorage, AK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Anchorage, AK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Anchorage in the Municipality of Anchorage? Compare FMCSA-verified movers, estimate Alaska Highway interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Largest city, economic/medical/defense hub, short commutes, urban amenities. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const anchorageAkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Anchorage?',
       answer:
-        'From Washington, California, Texas, and Colorado origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,500 to $18,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Hillside or suburban accessorials, Alaska Highway routing, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Washington, California, Texas, and Colorado origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,500 to $18,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Hillside or suburban accessorials, Alaska Highway routing, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Anchorage compare to Wasilla for moving costs?',

@@ -5,7 +5,7 @@ export const coloradoSpringsCoContent: CityHubContent = {
   h1: 'Moving to Colorado Springs, CO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Colorado Springs, CO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Colorado Springs, CO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Colorado Springs? Compare FMCSA-verified movers serving El Paso County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Pikes Peak, military corridors, Garden of the Gods. Independent directory. No affiliation with listed companies.',
     keywords: [

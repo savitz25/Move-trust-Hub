@@ -29,7 +29,7 @@ export const delawareClusterContent: DelawareClusterContent = {
   h1: 'Moving to Delaware: Tax-Friendly Mid-Atlantic City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Delaware (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Delaware (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Delaware inbound moving guides for Wilmington, Newark, Rehoboth Beach, Lewes, Middletown, Dover, and more. No sales tax, low property taxes, corporate north, beach south. FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -48,7 +48,7 @@ export const delawareClusterContent: DelawareClusterContent = {
   heroSubheadline:
     'Delaware ranks among the Mid-Atlantic\'s most tax-advantaged inbound states in 2026 — drawing New York, New Jersey, Pennsylvania, California, Texas, and Florida households to Wilmington\'s Riverfront revival, Newark\'s University of Delaware energy, Rehoboth Beach\'s boardwalk summer culture, and Lewes\'s quiet Cape Henlopen luxury. Zero state sales tax, comparatively low property taxes, and I-95 corridor convenience create a relocation calculus that generic Mid-Atlantic guides rarely capture with city-level precision. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and ten city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are accepting a Wilmington banking transfer along the Christina River, relocating a family from Philadelphia into Middletown\'s Appoquinimink school corridor, downsizing from Manhattan into Lewes historic lanes, or choosing Milton\'s Dogfish Head craft-beer village over Hamptons pricing, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are accepting a Wilmington banking transfer along the Christina River, relocating a family from Philadelphia into Middletown\'s Appoquinimink school corridor, downsizing from Manhattan into Lewes historic lanes, or choosing Milton\'s Dogfish Head craft-beer village over Hamptons pricing, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Delaware moves involve Mid-Atlantic logistics that statewide guides overlook: Route 1 summer beach traffic, Wilmington high-rise COI protocols, Hockessin wooded driveway clearance, Dover Air Force Base rotation timing, and Rehoboth boardwalk-season delivery windows — factors our city guides surface so you can plan with confidence.',
     'Ten live Delaware hubs span northern corporate corridors (Wilmington, Newark, Hockessin), Route 1 growth suburbs (Middletown, Smyrna), capital and central river towns (Dover, Milford), and southern shore communities (Lewes, Rehoboth Beach, Milton). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

@@ -5,7 +5,7 @@ export const maricopaCasaGrandeAzContent: CityHubContent = {
   h1: 'Moving to Maricopa & Casa Grande, AZ: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Maricopa & Casa Grande, AZ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Maricopa & Casa Grande, AZ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Maricopa, Casa Grande, or the Pinal County affordability corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const maricopaCasaGrandeAzContent: CityHubContent = {
   heroSubheadline:
     'Maricopa and Casa Grande deliver Pinal County\'s strongest affordability story in 2026 — drawing California, Illinois, Washington, and Texas households who want Phoenix metro access via the I-10 and SR 347 corridors without Maricopa County West Valley price tags. Rapid subdivision growth, distribution employment, and dramatically lower housing costs fuel consistent inbound demand. Our independent directory lets you compare FMCSA-licensed interstate movers serving Pinal County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Maricopa and Casa Grande anchor Pinal County inbound growth in 2026 as value-focused alternatives to Buckeye, Goodyear, and Chandler. Whether you are commuting on I-10 or SR 347 to Phoenix metro employers, working in Casa Grande logistics and manufacturing, or retiring into a lower-cost Sunbelt base with mountain views toward the Picacho Peak corridor, the same research steps apply: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Maricopa and Casa Grande anchor Pinal County inbound growth in 2026 as value-focused alternatives to Buckeye, Goodyear, and Chandler. Whether you are commuting on I-10 or SR 347 to Phoenix metro employers, working in Casa Grande logistics and manufacturing, or retiring into a lower-cost Sunbelt base with mountain views toward the Picacho Peak corridor, the same research steps apply: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence helps you evaluate FMCSA safety ratings and verified reviews without pressure from a single broker or carrier.',
     'This guide covers movers serving Maricopa, Casa Grande, Eloy, Coolidge, and surrounding Pinal County communities, with commute context for Phoenix, Chandler, and Tucson corridors. Interstate deliveries into Pinal County may involve agricultural road traffic, summer heat scheduling preferences, SR 347 construction zones, and new-build subdivision shuttle requirements — factors that affect timing and cost if omitted from your quote. See /moving-to/arizona for statewide guides including Buckeye and Goodyear & Surprise.',
   ],

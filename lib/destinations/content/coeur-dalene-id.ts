@@ -5,7 +5,7 @@ export const coeurDaleneIdContent: CityHubContent = {
   h1: "Moving to Coeur d'Alene, ID: Compare Trusted Movers & Estimate Your Move",
   seo: {
     title:
-      "Moving to Coeur d'Alene, ID (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub",
+      "Moving to Coeur d'Alene, ID (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub",
     description:
       "Planning a move to Coeur d'Alene or the greater Kootenai County Panhandle? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.",
     keywords: [
@@ -27,7 +27,7 @@ export const coeurDaleneIdContent: CityHubContent = {
   heroSubheadline:
     "Coeur d'Alene continues to attract retirees, remote workers, and outdoor enthusiasts seeking lakeside resort living with mountain views, boating access, and no state income tax on retirement benefits. Our independent directory lets you compare FMCSA-licensed interstate movers serving Kootenai and Benewah counties across the Idaho Panhandle. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.",
   introParagraphs: [
-    "Coeur d'Alene and the surrounding Kootenai County corridor remain one of the highest-intent inbound moving markets in the Pacific Northwest interior for 2026. Whether you are relocating from California, Washington, Oregon, or Montana, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.",
+    "Coeur d'Alene and the surrounding Kootenai County corridor remain one of the highest-intent inbound moving markets in the Pacific Northwest interior for 2026. Whether you are relocating from California, Washington, Oregon, or Montana, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.",
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     "This guide covers movers serving Coeur d'Alene, Post Falls, Hayden, Rathdrum, and lakefront communities across Kootenai and Benewah counties. Interstate shipments into northern Idaho often involve I-90 mountain-pass weather windows, lakefront peninsula shuttle trucks, and seasonal tourism demand swings — all of which affect your final price if they are not disclosed upfront.",
   ],
@@ -205,7 +205,7 @@ export const coeurDaleneIdContent: CityHubContent = {
     {
       question: "How much does it cost to move a 3-bedroom home to Coeur d'Alene?",
       answer:
-        'From California, Washington, Oregon, and Montana origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,900 to $13,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, lakefront shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Washington, Oregon, and Montana origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,900 to $13,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, lakefront shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Idaho?',

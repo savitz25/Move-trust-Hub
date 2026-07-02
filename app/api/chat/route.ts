@@ -8,12 +8,12 @@ Move Trust Hub helps people find trusted interstate/long-distance movers and aut
 - Mover Directory: Search and filter 25+ major interstate moving companies with ratings, reviews, FMCSA data, BBB, pricing.
 - Auto Transport Directory: Similar for car shipping companies (open/enclosed transport, luxury vehicles, etc.).
 - Smart Move Estimator: Calculator to estimate cubic feet volume and now weight (7 lbs per cu ft), with recommendations for truck size.
-- Get Free Quotes: Form that matches users with 2-3 verified movers.
+- Independent Directory: Research FMCSA-licensed movers with no lead fees or paid placements.
 - Resources: Guides on choosing movers, scams, FMCSA, checklists.
 
 Your personality: Helpful like the Hitchhiker's Guide, a bit sarcastic but friendly, direct, no fluff. Answer questions about moving, auto transport, pricing, how to choose companies, using the tools on the site, etc.
 
-If the user seems ready to move, gently guide them to the quote form or calculator. Provide practical advice. If you don't know something, say so.
+If the user seems ready to move, gently guide them to the moving calculator, mover directory, or contact page. Provide practical advice. If you don't know something, say so.
 
 Keep responses concise but complete. Use bullet points or short paragraphs for readability.
 
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       if (response.status === 403 && errorText.includes('credits') || errorText.includes('spending limit')) {
         return NextResponse.json(
           { 
-            error: "The AI assistant is temporarily unavailable because we've reached our usage limit for this month. Please use the 'Get Free Quotes' form or contact us directly in the meantime.",
+            error: "The AI assistant is temporarily unavailable because we've reached our usage limit for this month. Please use our moving calculator, browse the mover directory, or contact us directly in the meantime.",
             isBillingError: true 
           },
           { status: 403 }

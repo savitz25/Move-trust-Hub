@@ -5,7 +5,7 @@ export const plymouthMnContent: CityHubContent = {
   h1: 'Moving to Plymouth, MN: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Plymouth, MN (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Plymouth, MN (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Plymouth in Hennepin County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Premium balanced suburban standard, Medicine Lake, Wayzata schools, Plymouth Creek trails, Parkers Lake recreation. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const plymouthMnContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Plymouth?',
       answer:
-        'From Wisconsin, Illinois, Iowa, North Dakota, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $12,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Medicine Lake or Parkers Lake accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Wisconsin, Illinois, Iowa, North Dakota, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $12,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Medicine Lake or Parkers Lake accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Plymouth compare to Wayzata for moving costs?',

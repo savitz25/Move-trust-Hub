@@ -5,7 +5,7 @@ export const bossierCityLaContent: CityHubContent = {
   h1: 'Moving to Bossier City, LA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Bossier City, LA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Bossier City, LA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Bossier City in Bossier Parish? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Tech-forward Shreveport suburb, Barksdale military influence, casino and healthcare corridors. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -219,7 +219,7 @@ export const bossierCityLaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Bossier City?',
       answer:
-        'From Texas, Florida, California, and Mississippi origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $9,800 for full-service interstate transport in 2026. Texas and Mississippi origins often fall toward the lower end due to shorter I-20 distances. Final price depends on exact volume, packing services, military or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Florida, California, and Mississippi origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $9,800 for full-service interstate transport in 2026. Texas and Mississippi origins often fall toward the lower end due to shorter I-20 distances. Final price depends on exact volume, packing services, military or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Bossier City compare to Shreveport for moving costs?',

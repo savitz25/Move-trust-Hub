@@ -26,7 +26,7 @@ import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
 const TITLE = 'Interstate Moving Costs 2026: Average Prices, Factors & Smart Savings Tips';
 const DESCRIPTION =
-  'Discover 2026 interstate moving costs—from studio to 4-bedroom homes. Learn what drives prices, realistic averages by distance, and proven ways to save without sacrificing quality. Get free quotes on MoveTrustHub.com.';
+  'Discover 2026 interstate moving costs—from studio to 4-bedroom homes. Learn what drives prices, realistic averages by distance, and proven ways to save without sacrificing quality. Use our free calculator and independent mover directory.';
 
 const homeSizeCosts = [
   {
@@ -251,10 +251,7 @@ export default function InterstateMovingCostsPage() {
             </div>
 
             <div className="mt-8">
-              <GuideCtaClient
-                quoteLabel="Get Free Moving Quotes"
-                prefilledNotes="Interstate moving costs guide — quote request"
-              />
+              <GuideCtaClient />
             </div>
             <TrustBadges variant="compact" className="mt-6" />
 
@@ -488,7 +485,7 @@ export default function InterstateMovingCostsPage() {
                 <Link href="/moving-calculator">Moving Calculator</Link>
               </Button>
               <Button asChild variant="outline">
-                <Link href="/">Get Free Quotes</Link>
+                <Link href="/companies">Compare Trusted Movers</Link>
               </Button>
             </div>
           </section>
@@ -529,14 +526,14 @@ export default function InterstateMovingCostsPage() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Interstate moving costs in 2026 vary widely, but knowledge and preparation deliver
-              substantial savings and peace of mind. Request free interstate moving quotes and get
-              matched with 2–3 top-rated, licensed options within 24 hours.
+              substantial savings and peace of mind. Use our free calculator and
+              compare FMCSA-licensed carriers in our independent directory before you book.
             </p>
 
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg" className="shadow-sm">
-                <Link href="/">
-                  Get Free Interstate Quotes
+                <Link href="/companies">
+                  Compare Trusted Movers
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

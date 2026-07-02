@@ -5,7 +5,7 @@ export const minotNdContent: CityHubContent = {
   h1: 'Moving to Minot, ND: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Minot, ND (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Minot, ND (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Minot in Ward County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Magic City, Minot Air Force Base, Roosevelt Park Zoo, North Hill, South Hill. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -235,7 +235,7 @@ export const minotNdContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Minot?',
       answer:
-        'From Minnesota, South Dakota, Montana, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $10,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, North Hill or Minot AFB accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Minnesota, South Dakota, Montana, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $10,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, North Hill or Minot AFB accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Minot compare to Williston for moving costs?',

@@ -50,7 +50,7 @@ export const verifyDotHowToSteps = [
   },
   {
     name: 'Compare licensed movers on Move Trust Hub',
-    text: 'After verifying, get free quotes from vetted interstate movers or explore city-level moving guides.',
+    text: 'After verifying, compare vetted interstate movers in our directory or explore city-level moving guides.',
   },
 ];
 

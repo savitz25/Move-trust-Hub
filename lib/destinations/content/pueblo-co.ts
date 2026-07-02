@@ -5,7 +5,7 @@ export const puebloCoContent: CityHubContent = {
   h1: 'Moving to Pueblo, CO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Pueblo, CO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Pueblo, CO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Pueblo in Pueblo County? Compare FMCSA-verified movers serving the Historic Arkansas Riverwalk, Union Avenue district, and southern Colorado corridors, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Budget-friendly Front Range alternative. Independent directory. No affiliation with listed companies.',
     keywords: [

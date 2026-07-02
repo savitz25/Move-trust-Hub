@@ -14,7 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { QuoteModal } from '@/components/quote-modal';
+
 import { MovingCalculatorSeoSections } from '@/components/moving-calculator-seo-sections';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { useCalculatorStore, type InventoryItem, type InputMode } from '@/store/calculator-store';
@@ -112,8 +112,6 @@ export function MovingCalculatorClient() {
   const [quickSearch, setQuickSearch] = useState('');
   const [customName, setCustomName] = useState('');
   const [customVolume, setCustomVolume] = useState('');
-  const [showQuoteModal, setShowQuoteModal] = useState(false);
-
   // For browsing the full (larger) list from xlsx in a modal
   const [showBrowseDialog, setShowBrowseDialog] = useState(false);
   const [browseSearch, setBrowseSearch] = useState('');
@@ -583,21 +581,17 @@ export function MovingCalculatorClient() {
                   </div>
                 </div>
 
-                <Button 
-                  size="lg" 
-                  className="w-full" 
-                  onClick={() => setShowQuoteModal(true)}
-                >
-                  Get Free Quote Based on This Estimate
+                <Button size="lg" className="w-full" asChild>
+                  <Link href="/companies">Compare Trusted Movers</Link>
                 </Button>
-                <p className="text-center text-xs text-muted-foreground">
-                  No obligation. We’ll reach out within 1 business day.
+                <p className="text-center text-xs text-muted-foreground font-medium">
+                  Independent directory · No lead fees · Verify FMCSA licensing yourself.
                 </p>
 
-                <div className="pt-4 border-t text-center">
-                  <p className="text-sm font-medium mb-2">Want quotes from real movers right now?</p>
-                  <Button variant="outline" onClick={() => setShowQuoteModal(true)}>
-                    Get Matched with 2-3 Verified Movers
+                <div className="pt-4 border-t text-center space-y-2">
+                  <p className="text-sm font-medium">Ready to compare carriers side-by-side?</p>
+                  <Button variant="outline" asChild>
+                    <Link href="/compare">Open Compare Tool</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -656,21 +650,7 @@ export function MovingCalculatorClient() {
           </section>
         </div>
 
-        {/* Shared clean Quote Modal (prefills the calculator volume) */}
-        <QuoteModal
-          open={showQuoteModal}
-          onOpenChange={setShowQuoteModal}
-          prefilledData={{
-            estimatedVolume: totalVolume,
-            estimatedWeight: totalWeight,
-            inventory: inventory.map(({ name, quantity, volume, room }) => ({
-              name,
-              quantity,
-              volume,
-              room,
-            })),
-          }}
-        />
+
 
         {/* Full catalog browser for accessing items from the large xlsx source */}
         <Dialog open={showBrowseDialog} onOpenChange={setShowBrowseDialog}>

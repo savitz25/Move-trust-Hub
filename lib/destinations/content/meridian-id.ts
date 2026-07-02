@@ -5,7 +5,7 @@ export const meridianIdContent: CityHubContent = {
   h1: 'Moving to Meridian, ID: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Meridian, ID (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Meridian, ID (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Meridian or the Treasure Valley? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

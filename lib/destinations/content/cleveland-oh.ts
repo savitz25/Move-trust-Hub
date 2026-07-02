@@ -5,7 +5,7 @@ export const clevelandOhContent: CityHubContent = {
   h1: 'Moving to Cleveland, OH: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Cleveland, OH (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Cleveland, OH (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Cleveland in Cuyahoga County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Revitalizing metro, healthcare hub, historic architecture, affordability. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -214,7 +214,7 @@ export const clevelandOhContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Cleveland?',
       answer:
-        'From Michigan, Pennsylvania, New York, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, walk-up or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Michigan, Pennsylvania, New York, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, walk-up or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Cleveland compare to Parma for moving costs?',

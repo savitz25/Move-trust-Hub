@@ -5,7 +5,7 @@ export const conwayArContent: CityHubContent = {
   h1: 'Moving to Conway, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Conway, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Conway, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Conway, the City of Colleges? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const conwayArContent: CityHubContent = {
   heroSubheadline:
     'Conway — Arkansas\'s City of Colleges and one of the fastest-growing communities outside Northwest Arkansas — draws Texas, Missouri, Tennessee, and California households with tech employment, top-rated schools, low crime, and a community-oriented lifestyle anchored by UCA, Hendrix College, and Central Baptist College. Our independent directory lets you compare FMCSA-licensed interstate movers serving Conway, Greenbrier, Mayflower, and Faulkner County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Conway ranks among the highest-intent central Arkansas relocation destinations for 2026 — a rare combination of college-town culture, suburban family safety, and professional job growth without Northwest Arkansas housing premiums. Whether you are relocating from Dallas, Houston, Memphis, Kansas City, or coastal metros for tech transfers, healthcare hiring, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Conway ranks among the highest-intent central Arkansas relocation destinations for 2026 — a rare combination of college-town culture, suburban family safety, and professional job growth without Northwest Arkansas housing premiums. Whether you are relocating from Dallas, Houston, Memphis, Kansas City, or coastal metros for tech transfers, healthcare hiring, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Conway, Greenbrier, Mayflower, and surrounding Faulkner County communities along the I-40 corridor between Little Rock and Northwest Arkansas. Interstate shipments into Conway frequently involve college-town lease turnover peaks in late summer, new-build subdivision shuttle requirements, Ozark foothill driveway access on expanding west-side developments, and fewer dedicated Arkansas carrier lanes than Texas or Florida routes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -211,7 +211,7 @@ export const conwayArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Conway?',
       answer:
-        'From Texas, Missouri, Tennessee, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $8,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Missouri, Tennessee, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $8,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

@@ -5,7 +5,7 @@ export const stocktonCaContent: CityHubContent = {
   h1: 'Moving to Stockton, CA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Stockton, CA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Stockton, CA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Stockton or San Joaquin County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Port logistics, Delta waterways, Bay Area spillover affordability. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const stocktonCaContent: CityHubContent = {
   heroSubheadline:
     'Stockton sits at the crossroads of California\'s inland waterways and logistics economy — a San Joaquin County hub where Port of Stockton freight corridors, Delta boating lifestyle, and Bay Area spillover affordability converge for households priced out of Oakland, San Francisco, and San Jose. Manteca, Tracy, and Lodi suburbs capture commuters who want Central Valley housing costs with reasonable drives to Silicon Valley and East Bay employers. Our independent directory lets you compare FMCSA-licensed interstate and intrastate movers serving San Joaquin County and the greater Delta corridor. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Stockton and its Manteca–Tracy suburbs rank among the highest-volume Bay Area spillover destinations in California for 2026. Whether you are relocating intrastate from Oakland, Fremont, or San Jose to escape coastal housing premiums, or moving interstate from Texas, Arizona, Nevada, or the Pacific Northwest, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov (and California PUC authority for pure intrastate shipments), and compare multiple quotes on equal cubic footage before you sign.',
+    'Stockton and its Manteca–Tracy suburbs rank among the highest-volume Bay Area spillover destinations in California for 2026. Whether you are relocating intrastate from Oakland, Fremont, or San Jose to escape coastal housing premiums, or moving interstate from Texas, Arizona, Nevada, or the Pacific Northwest, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov (and California PUC authority for pure intrastate shipments), and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Stockton, Lodi, Manteca, Tracy, and surrounding San Joaquin County communities, with corridor context for Sacramento and Stanislaus counties on shared I-5 and Highway 99 lanes. Shipments into the Stockton metro often involve Altamont Pass congestion from Bay Area origins, port-adjacent logistics scheduling, Delta waterfront property access, and summer Central Valley heat — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/california.',
   ],
@@ -219,7 +219,7 @@ export const stocktonCaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Stockton?',
       answer:
-        'From Bay Area intrastate origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $4,600 to $7,200 for full-service transport in 2026. From Texas, Arizona, and out-of-state origins, expect $6,200 to $8,800. Final price depends on exact volume, packing services, Altamont Pass scheduling, shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Bay Area intrastate origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $4,600 to $7,200 for full-service transport in 2026. From Texas, Arizona, and out-of-state origins, expect $6,200 to $8,800. Final price depends on exact volume, packing services, Altamont Pass scheduling, shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Bay Area spillover affect Stockton moving demand?',

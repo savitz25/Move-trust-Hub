@@ -5,7 +5,7 @@ export const jonesboroArContent: CityHubContent = {
   h1: 'Moving to Jonesboro, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Jonesboro, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Jonesboro, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Jonesboro or Craighead County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. NE Arkansas hub, Arkansas State University, agriculture and healthcare employment. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const jonesboroArContent: CityHubContent = {
   heroSubheadline:
     'Jonesboro anchors northeast Arkansas as a regional hub — with Arkansas State University, NEA Baptist and St. Bernards healthcare expansion, agriculture-adjacent employment, and spillover affordability from Memphis and Missouri corridors — without Nashville or Dallas metro price curves. Texas, Tennessee, Missouri, and Oklahoma households relocate here for university-town culture, medical careers, and family-friendly suburban growth in Brookland, Valley View, and west Jonesboro. Our independent directory lets you compare FMCSA-licensed interstate movers serving Craighead County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Jonesboro and the greater Craighead County corridor remain one of the highest-intent inbound moving markets in northeast Arkansas for 2026. Whether you are relocating from Memphis, Dallas, Nashville, Kansas City, Tulsa, or Little Rock for healthcare hiring, Arkansas State University transfers, agriculture and food-processing employment, or remote-work affordability, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Jonesboro and the greater Craighead County corridor remain one of the highest-intent inbound moving markets in northeast Arkansas for 2026. Whether you are relocating from Memphis, Dallas, Nashville, Kansas City, Tulsa, or Little Rock for healthcare hiring, Arkansas State University transfers, agriculture and food-processing employment, or remote-work affordability, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Jonesboro, Brookland, Valley View, Bono, Lake City, and surrounding Craighead County communities along the I-555 and US-63 northeast Arkansas corridor. Interstate shipments into Jonesboro often involve ASU student lease turnover peaks, new-build subdivision shuttle requirements, fewer direct carrier lanes than Dallas or Memphis routes, and summer peak-season demand on regional consolidation hubs — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -213,7 +213,7 @@ export const jonesboroArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Jonesboro?',
       answer:
-        'From Texas, Tennessee, Missouri, and Oklahoma origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $8,600 for full-service interstate transport in 2026. Tennessee and Memphis-area origins often fall toward the lower end due to shorter distances. Final price depends on exact volume, packing services, shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Tennessee, Missouri, and Oklahoma origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $8,600 for full-service interstate transport in 2026. Tennessee and Memphis-area origins often fall toward the lower end due to shorter distances. Final price depends on exact volume, packing services, shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

@@ -11,11 +11,14 @@ type RouteHeroCtaProps = {
 export function RouteHeroCta({ from, to, destinationHubPath }: RouteHeroCtaProps) {
   return (
     <PageHeroCta
-      quoteLabel={`Get Free Quotes: ${from} → ${to}`}
-      calculatorHref="/moving-calculator"
-      prefilledData={{
-        notes: `Route guide quote request: ${from} to ${to}`,
-      }}
+      primaryLabel="Use Free Moving Calculator"
+      primaryHref="/moving-calculator"
+      secondaryLabel="Compare Trusted Movers"
+      secondaryHref="/companies"
+      tertiaryLabel={
+        destinationHubPath ? `Explore ${to} Moving Guide` : 'Learn More About This Route'
+      }
+      tertiaryHref={destinationHubPath ?? '#route-overview'}
       showTrustBadges
       className="mb-8"
     />

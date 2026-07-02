@@ -27,7 +27,7 @@ export const tennesseeClusterContent: TennesseeClusterContent = {
   h1: 'Moving to Tennessee: Nashville Metro, East Tennessee & Statewide City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Tennessee (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Tennessee (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Tennessee inbound moving guides for Nashville, Knoxville, Chattanooga, Clarksville, Murfreesboro, Franklin, Lebanon, and more. No state income tax, FMCSA-verified movers, free calculator, and transparent cost data. Independent directory.',
     keywords: [
@@ -45,7 +45,7 @@ export const tennesseeClusterContent: TennesseeClusterContent = {
   heroSubheadline:
     'Tennessee ranks among the top inbound states in 2026 — drawing families, remote workers, military households, and corporate transferees with no state income tax, affordable housing relative to coastal metros, and strong job growth in Nashville, Knoxville, and Chattanooga. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Nashville\'s booming music-and-tech corridor, Knoxville\'s high inbound ratio and Smoky Mountain access, Clarksville\'s Fort Campbell military community, or Williamson County\'s top-rated school suburbs, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Nashville\'s booming music-and-tech corridor, Knoxville\'s high inbound ratio and Smoky Mountain access, Clarksville\'s Fort Campbell military community, or Williamson County\'s top-rated school suburbs, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Tennessee moves involve distinct logistics: mountain-terrain shuttle trucks in East Tennessee, gated-community access in Williamson County, PCS timelines at Fort Campbell, and university turnover around UT and MTSU — factors our city guides surface so you can plan with confidence.',
     'Ten live Tennessee hubs span the Nashville metro and Middle Tennessee suburban ring (Nashville through Columbia) and East & North Tennessee (Knoxville, Chattanooga, Clarksville, and the Tri-Cities). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

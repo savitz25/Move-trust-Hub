@@ -5,7 +5,7 @@ export const bentonBryantArContent: CityHubContent = {
   h1: 'Moving to Benton & Bryant, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Benton & Bryant, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Benton & Bryant, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Benton or Bryant, Saline County\'s premier Little Rock bedroom communities? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const bentonBryantArContent: CityHubContent = {
   heroSubheadline:
     'Benton and Bryant — Saline County\'s premier Little Rock bedroom communities — draw Texas, Tennessee, Missouri, and California households with top-rated schools, larger suburban lots, low crime, and a straightforward I-30 commute to Arkansas\'s state capital employers in government, healthcare, and professional services. Our independent directory lets you compare FMCSA-licensed interstate movers serving Benton, Bryant, Alexander, and Saline County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Benton and Bryant rank among the highest-intent suburban relocation destinations in central Arkansas for 2026 — the default landing zone for Little Rock metro households who prioritize school quality, acreage, and family safety without capital-city housing premiums. Whether you are relocating from Dallas, Houston, Memphis, Nashville, or coastal metros for state-government transfers, healthcare hiring, aerospace supply-chain jobs, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Benton and Bryant rank among the highest-intent suburban relocation destinations in central Arkansas for 2026 — the default landing zone for Little Rock metro households who prioritize school quality, acreage, and family safety without capital-city housing premiums. Whether you are relocating from Dallas, Houston, Memphis, Nashville, or coastal metros for state-government transfers, healthcare hiring, aerospace supply-chain jobs, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Benton, Bryant, Alexander, Haskell, and surrounding Saline County communities along the I-30 corridor south of Little Rock. Interstate shipments into Benton and Bryant frequently involve HOA-governed subdivision access on both cities\' expanding edges, larger-lot rural deliveries with long driveways, I-30 commute-corridor peak-season demand, and fewer dedicated Arkansas carrier lanes than Texas routes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -212,7 +212,7 @@ export const bentonBryantArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Benton or Bryant?',
       answer:
-        'From Texas, Tennessee, Missouri, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $8,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, HOA accessorials, larger-lot long carries, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Tennessee, Missouri, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $8,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, HOA accessorials, larger-lot long carries, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

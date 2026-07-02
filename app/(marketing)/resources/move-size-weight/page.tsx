@@ -220,7 +220,7 @@ export default function MoveSizeWeightGuide() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/">Get Free Moving Quotes</Link>
+              <Link href="/companies">Compare Trusted Movers</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="/companies">Browse Trusted Movers</Link>

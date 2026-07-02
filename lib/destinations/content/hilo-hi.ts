@@ -5,7 +5,7 @@ export const hiloHiContent: CityHubContent = {
   h1: 'Moving to Hilo, HI: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Hilo, HI (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Hilo, HI (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Hilo in Hawaii County? Compare FMCSA-verified movers, estimate mainland-to-Hawaii container shipping costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Lush rainforest · affordable · nature lovers. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -221,7 +221,7 @@ export const hiloHiContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Hilo?',
       answer:
-        'From California, Washington, Texas, and Arizona origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $10,800 – $19,000 for full-service container transport in 2026. Final price depends on volume, packing, harbor drayage, inter-island legs, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Washington, Texas, and Arizona origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $10,800 – $19,000 for full-service container transport in 2026. Final price depends on volume, packing, harbor drayage, inter-island legs, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Hilo compare to Honolulu for moving costs?',

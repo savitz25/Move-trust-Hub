@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { HomePage } from '@/components/home-page';
-import { HomeQuoteProvider } from '@/components/home/home-quote-provider';
+
 import { LocalMoversMapLoader } from '@/components/map/local-movers-map-loader';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildHomepageSchemaGraph } from '@/lib/seo/schemas';
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   title: HOMEPAGE_SEO_TITLE,
   description: HOMEPAGE_SEO_DESCRIPTION,
   keywords: [
-    'free moving quotes',
     'compare moving companies',
+    'independent moving directory',
     'FMCSA licensed movers',
     'interstate movers',
     'local movers directory',
@@ -47,9 +47,7 @@ export default function Page() {
   return (
     <>
       <JsonLd data={buildHomepageSchemaGraph()} />
-      <HomeQuoteProvider>
-        <HomePage mapSection={<LocalMoversMapLoader />} />
-      </HomeQuoteProvider>
+      <HomePage mapSection={<LocalMoversMapLoader />} />
     </>
   );
 }

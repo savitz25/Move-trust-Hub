@@ -17,7 +17,7 @@ export const organizationSchema = {
     availableLanguage: 'English',
   },
   description:
-    'Independent directory and quote-matching service for FMCSA-licensed interstate and long-distance moving companies in the United States.',
+    'Independent directory for researching FMCSA-licensed interstate and long-distance moving companies in the United States. No lead fees, no paid placements.',
 };
 
 export const websiteSchema = {
@@ -31,40 +31,40 @@ export const websiteSchema = {
 
 export const homepageServiceSchema = {
   '@type': 'Service',
-  '@id': `${SITE_URL}/#moving-quote-service`,
-  name: 'Interstate Moving Quote Matching',
-  serviceType: 'Interstate moving company comparison and free quote matching',
+  '@id': `${SITE_URL}/#moving-directory-service`,
+  name: 'Interstate Moving Company Directory',
+  serviceType: 'Interstate moving company research and comparison',
   provider: { '@id': `${SITE_URL}/#organization` },
   areaServed: {
     '@type': 'Country',
     name: 'United States',
   },
   description:
-    'Compare FMCSA-licensed interstate movers by reputation, reviews, and pricing. Get matched with 2-3 free long-distance moving quotes within 24 hours.',
+    'Compare FMCSA-licensed interstate movers by reputation, reviews, and pricing. Free moving calculator, destination guides, and county-level directories — independent research with no lead fees.',
   url: SITE_URL,
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    description: 'Free quote matching for interstate moves',
+    description: 'Free moving research tools and directory access',
   },
 };
 
 export const homepageFaqItems = [
   {
-    question: 'How do I get free interstate moving quotes on Move Trust Hub?',
+    question: 'How do I research interstate movers on Move Trust Hub?',
     answer:
-      'Fill out our free quote form or use the moving calculator first, then submit your move details. We match you with 2-3 FMCSA-licensed interstate movers who contact you directly with personalized quotes within 24 hours.',
+      'Start with our free moving calculator to estimate volume and weight, then browse our FMCSA-licensed mover directory. Filter by reputation, compare companies side-by-side, and contact movers directly when you are ready.',
   },
   {
     question: 'How does Move Trust Hub help me compare long-distance movers?',
     answer:
-      'Move Trust Hub combines attributed customer reviews where available, FMCSA licensing data, reputation scores, and side-by-side comparison tools so you can research movers before requesting quotes.',
+      'Move Trust Hub combines attributed customer reviews where available, FMCSA licensing data, reputation scores, and side-by-side comparison tools so you can research movers independently before contacting carriers.',
   },
   {
-    question: 'Why should I use the moving calculator before requesting quotes?',
+    question: 'Why should I use the moving calculator before contacting movers?',
     answer:
-      'Knowing your cubic footage and estimated weight helps you compare quotes fairly, avoid lowball estimates, and spot inflated pricing. Our free room-by-room inventory calculator calculates volume, weight, and recommended truck size instantly.',
+      'Knowing your cubic footage and estimated weight helps you compare estimates fairly, avoid lowball pricing, and spot inflated quotes. Our free room-by-room inventory calculator calculates volume, weight, and recommended truck size instantly.',
   },
   {
     question: 'Is Move Trust Hub affiliated with the moving companies listed?',

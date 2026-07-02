@@ -5,7 +5,7 @@ export const fortLauderdaleFlContent: CityHubContent = {
   h1: 'Moving to Fort Lauderdale, FL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Fort Lauderdale, FL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Fort Lauderdale, FL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Fort Lauderdale? Compare FMCSA-verified movers serving Broward County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Las Olas, Victoria Park, and Intracoastal neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -26,7 +26,7 @@ export const fortLauderdaleFlContent: CityHubContent = {
   heroSubheadline:
     'Fort Lauderdale — the "Venice of America" — continues to attract Northeast retirees, yachting enthusiasts, and remote workers seeking Intracoastal waterfront living, Las Olas dining, and beach-access condos without Miami\'s premium price tags. Our independent directory lets you compare FMCSA-licensed interstate movers and vetted Broward County local carriers. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Whether you are downsizing from a Northeast suburban home into a Las Olas high-rise, relocating a family to Victoria Park, or moving a waterfront estate along the Intracoastal, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Whether you are downsizing from a Northeast suburban home into a Las Olas high-rise, relocating a family to Victoria Park, or moving a waterfront estate along the Intracoastal, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Fort Lauderdale moves involve beach high-rise protocols, snowbird-season scheduling, HOA move windows, and I-95 corridor traffic — all legitimate factors that should appear on your written estimate before booking.',
     'This guide covers movers serving Fort Lauderdale, Lauderdale-by-the-Sea, Wilton Manors, Oakland Park, and the greater Broward County metro north of Miami-Dade. Interstate deliveries into beach condos and Intracoastal properties frequently require elevator reservations, COI filings, and shuttle trucks when trailers cannot reach waterfront streets.',
   ],

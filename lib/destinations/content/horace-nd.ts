@@ -5,7 +5,7 @@ export const horaceNdContent: CityHubContent = {
   h1: 'Moving to Horace, ND: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Horace, ND (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Horace, ND (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Horace in Cass County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Explosive growth south of Fargo, luxury lots, custom homes, acreage subdivisions. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const horaceNdContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Horace?',
       answer:
-        'From Minnesota, South Dakota, Montana, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, luxury-lot or acreage accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Minnesota, South Dakota, Montana, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, luxury-lot or acreage accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Horace compare to West Fargo for moving costs?',

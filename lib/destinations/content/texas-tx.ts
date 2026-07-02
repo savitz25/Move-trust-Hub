@@ -28,7 +28,7 @@ export const texasClusterContent: TexasClusterContent = {
   h1: 'Moving to Texas: DFW, Austin, Houston & Statewide City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Texas (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Texas (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Texas inbound moving guides for Dallas–Fort Worth, Austin, Houston, San Antonio, El Paso, Arlington, and more. No state income tax, FMCSA-verified movers, free calculator, and transparent cost data. Independent directory.',
     keywords: [
@@ -46,7 +46,7 @@ export const texasClusterContent: TexasClusterContent = {
   heroSubheadline:
     'Texas remains America\'s leading job-growth state for interstate household moves in 2026 — drawing California and Illinois transferees, energy-sector professionals, tech workers, and military families with no state income tax, diverse metro economies, and housing affordability relative to coastal markets. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Dallas–Fort Worth\'s corporate headquarters corridor and Frisco–Plano–McKinney suburbs, Austin\'s Silicon Hills tech boom, Houston\'s energy and medical center employment, or San Antonio\'s military-and-family affordability, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Dallas–Fort Worth\'s corporate headquarters corridor and Frisco–Plano–McKinney suburbs, Austin\'s Silicon Hills tech boom, Houston\'s energy and medical center employment, or San Antonio\'s military-and-family affordability, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Texas moves involve distinct logistics: hurricane contingency planning on the Gulf Coast, Permian Basin housing-cycle scheduling in Midland–Odessa, DFW suburban shuttle trucks on narrow new-build streets, and Fort Bliss PCS timelines in El Paso — factors our city guides surface so you can plan with confidence.',
     'Ten live Texas hubs span the DFW metro ring (Dallas–Fort Worth through Grand Prairie), major metros (Austin, Houston, San Antonio), and West Texas growth corridors (El Paso, Lubbock, Midland–Odessa). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

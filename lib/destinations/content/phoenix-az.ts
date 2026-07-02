@@ -5,7 +5,7 @@ export const phoenixAzContent: CityHubContent = {
   h1: 'Moving to Phoenix, AZ: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Phoenix, AZ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Phoenix, AZ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Phoenix or the greater Valley of the Sun? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Roosevelt Row, Arcadia, and Scottsdale district neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -26,7 +26,7 @@ export const phoenixAzContent: CityHubContent = {
   heroSubheadline:
     'Phoenix — the fifth-largest city in the United States and anchor of the Valley of the Sun — continues to attract California, Illinois, Washington, and Texas households drawn to downtown and midtown revitalization, a diversified tech-aerospace-healthcare economy, and urban amenities at price points well below coastal metros. Our independent directory lets you compare FMCSA-licensed interstate movers serving Maricopa County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Phoenix and the greater Valley of the Sun remain one of the highest-intent inbound moving markets in the Sunbelt for 2026. Whether you are relocating from Los Angeles, Chicago, Seattle, or Dallas, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Phoenix and the greater Valley of the Sun remain one of the highest-intent inbound moving markets in the Sunbelt for 2026. Whether you are relocating from Los Angeles, Chicago, Seattle, or Dallas, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving downtown Phoenix, Roosevelt Row, Arcadia, Biltmore, and surrounding Maricopa County communities, with corridor context for Scottsdale, Tempe, and East Valley suburbs. Interstate shipments into the Valley often involve summer heat scheduling, HOA move-day windows, new-build subdivision shuttle requirements, and monsoon-season delivery contingency — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arizona.',
   ],
@@ -246,7 +246,7 @@ export const phoenixAzContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Phoenix?',
       answer:
-        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $11,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, HOA accessorials, summer heat scheduling, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $11,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, HOA accessorials, summer heat scheduling, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arizona?',

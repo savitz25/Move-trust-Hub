@@ -75,7 +75,7 @@ export function Chatbot() {
         ...prev,
         {
           role: 'assistant',
-          content: error.message || "Sorry, I'm having trouble connecting right now. Please try the quote form or contact us directly!",
+          content: error.message || "Sorry, I'm having trouble connecting right now. Try our moving calculator, browse the mover directory, or contact us directly!",
         },
       ]);
     } finally {

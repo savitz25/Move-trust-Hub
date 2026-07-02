@@ -5,7 +5,7 @@ export const farmingtonNmContent: CityHubContent = {
   h1: 'Moving to Farmington, NM: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Farmington, NM (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Farmington, NM (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Farmington in San Juan County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Outdoor recreation, energy sector, affordable Northwest hub. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -219,7 +219,7 @@ export const farmingtonNmContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Farmington?',
       answer:
-        'From Texas, Arizona, Colorado, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $12,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, acreage or ranch accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Arizona, Colorado, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $12,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, acreage or ranch accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Farmington compare to Albuquerque for moving costs?',

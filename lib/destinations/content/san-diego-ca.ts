@@ -5,7 +5,7 @@ export const sanDiegoCaContent: CityHubContent = {
   h1: 'Moving to San Diego, CA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to San Diego, CA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to San Diego, CA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to San Diego or North County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Biotech, defense, beaches, Carlsbad, Oceanside, Escondido. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const sanDiegoCaContent: CityHubContent = {
   heroSubheadline:
     'San Diego anchors Southern California\'s most balanced coastal metro — world-class biotech and defense hiring, Navy and Marine Corps installations, surf-and-trail lifestyle from La Jolla to Coronado, and a mild marine climate that stays comfortable while inland valleys bake. North County suburbs like Carlsbad, Oceanside, and Escondido absorb families seeking beach-town access, strong schools, and relative value versus coastal LA without surrendering California wages. Our independent directory lets you compare FMCSA-licensed interstate movers serving San Diego County and the greater I-5 corridor. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'San Diego and North County remain among the highest-intent inbound California destinations for 2026 — drawing Texas, Arizona, Pacific Northwest, Midwest, and intrastate Bay Area households who want coastal quality of life with a more manageable housing ladder than Los Angeles or San Francisco. Whether you are relocating on a corporate transfer to Sorrento Valley biotech, a defense contractor role near General Atomics, or a military PCS to Naval Base San Diego or Camp Pendleton, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'San Diego and North County remain among the highest-intent inbound California destinations for 2026 — drawing Texas, Arizona, Pacific Northwest, Midwest, and intrastate Bay Area households who want coastal quality of life with a more manageable housing ladder than Los Angeles or San Francisco. Whether you are relocating on a corporate transfer to Sorrento Valley biotech, a defense contractor role near General Atomics, or a military PCS to Naval Base San Diego or Camp Pendleton, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving downtown San Diego, La Jolla, Point Loma, East County, and North County communities including Carlsbad, Oceanside, and Escondido — with corridor context for shared I-5 and I-15 delivery lanes. Interstate shipments into San Diego often involve coastal high-rise elevator reservations, HOA-governed master-planned communities, summer peak-season demand on western corridor routes, and the coastal-versus-inland climate split that affects garage contents and patio inventory. For statewide context, see our parent guide at /moving-to/california.',
   ],
@@ -213,7 +213,7 @@ export const sanDiegoCaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to San Diego?',
       answer:
-        'From Texas, Arizona, Washington, and intrastate California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $11,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Arizona, Washington, and intrastate California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $11,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to California?',

@@ -5,7 +5,7 @@ export const bocaRatonFlContent: CityHubContent = {
   h1: 'Moving to Boca Raton, FL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Boca Raton, FL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Boca Raton, FL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Boca Raton? Compare FMCSA-verified movers serving Palm Beach County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Mizner Park, West Boca gated estates, and A1A tower logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -226,7 +226,7 @@ export const bocaRatonFlContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Boca Raton?',
       answer:
-        'From Northeast and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,800 to $13,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, luxury building accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Northeast and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,800 to $13,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, luxury building accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'What building rules affect Boca Raton high-rise moves?',

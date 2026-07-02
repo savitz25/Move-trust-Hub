@@ -5,7 +5,7 @@ export const houmaLaContent: CityHubContent = {
   h1: 'Moving to Houma, LA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Houma, LA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Houma, LA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Houma in Terrebonne Parish? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Authentic bayou city, affordable deep Louisiana lifestyle, offshore energy and seafood industry jobs. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -219,7 +219,7 @@ export const houmaLaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Houma?',
       answer:
-        'From Texas, Florida, California, and Mississippi origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $9,800 for full-service interstate transport in 2026. Mississippi and Texas origins often fall toward the lower end due to shorter Gulf Coast distances. Final price depends on exact volume, packing services, elevated-home or bayou accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Florida, California, and Mississippi origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $9,800 for full-service interstate transport in 2026. Mississippi and Texas origins often fall toward the lower end due to shorter Gulf Coast distances. Final price depends on exact volume, packing services, elevated-home or bayou accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Houma compare to Metairie for moving costs?',

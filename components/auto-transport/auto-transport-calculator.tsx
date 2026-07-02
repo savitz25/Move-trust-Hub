@@ -1,12 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ArrowRight, Car, Loader2, MapPin, Route, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { QuoteModal } from '@/components/quote-modal';
+
 import { InfoTooltip } from '@/components/auto-transport/info-tooltip';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import {
@@ -17,27 +18,10 @@ import {
 import { isValidUsZip } from '@/lib/auto-transport/distance';
 import type {
   AutoTransportEstimate,
-  AutoTransportQuotePrefill,
   TransportMethod,
   VehicleCategory,
   ZipDistanceResult,
 } from '@/lib/auto-transport/types';
-
-function buildQuoteNotes(prefill: AutoTransportQuotePrefill): string {
-  const route =
-    prefill.fromCity && prefill.toCity
-      ? `${prefill.fromCity}, ${prefill.fromState} → ${prefill.toCity}, ${prefill.toState}`
-      : `${prefill.fromZip} → ${prefill.toZip}`;
-
-  return [
-    'Auto transport quote request',
-    `Route: ${route}`,
-    `Distance: ~${prefill.distanceMiles.toLocaleString()} miles (estimated driving)`,
-    `Vehicle: ${VEHICLE_CATEGORY_LABELS[prefill.vehicleCategory]}`,
-    `Transport: ${prefill.transportMethod === 'open' ? 'Open' : 'Enclosed'}`,
-    `Calculator estimate: ${formatCurrency(prefill.lowTotal)} – ${formatCurrency(prefill.highTotal)}`,
-  ].join('\n');
-}
 
 export function AutoTransportCalculator() {
   const [pickupZip, setPickupZip] = useState('');
@@ -47,8 +31,6 @@ export function AutoTransportCalculator() {
   const [distanceResult, setDistanceResult] = useState<ZipDistanceResult | null>(null);
   const [distanceError, setDistanceError] = useState<string | null>(null);
   const [isLoadingDistance, setIsLoadingDistance] = useState(false);
-  const [showQuoteModal, setShowQuoteModal] = useState(false);
-
   const canCalculateDistance =
     isValidUsZip(pickupZip) && isValidUsZip(deliveryZip) && pickupZip !== deliveryZip;
 
@@ -96,38 +78,7 @@ export function AutoTransportCalculator() {
     );
   }, [distanceResult, vehicleCategory, transportMethod]);
 
-  const quotePrefill = useMemo(() => {
-    if (!estimate || !distanceResult) return undefined;
 
-    const prefill: AutoTransportQuotePrefill = {
-      fromZip: pickupZip,
-      toZip: deliveryZip,
-      vehicleCategory,
-      transportMethod,
-      distanceMiles: estimate.distanceMiles,
-      lowTotal: estimate.lowTotal,
-      highTotal: estimate.highTotal,
-      fromCity: distanceResult.fromCity,
-      fromState: distanceResult.fromState,
-      toCity: distanceResult.toCity,
-      toState: distanceResult.toState,
-    };
-
-    return {
-      fromZip: prefill.fromZip,
-      toZip: prefill.toZip,
-      serviceType: 'auto-transport' as const,
-      notes: buildQuoteNotes(prefill),
-      autoTransport: prefill,
-    };
-  }, [
-    estimate,
-    distanceResult,
-    pickupZip,
-    deliveryZip,
-    vehicleCategory,
-    transportMethod,
-  ]);
 
   const routeLabel =
     distanceResult?.fromCity && distanceResult?.toCity
@@ -338,10 +289,12 @@ export function AutoTransportCalculator() {
                     size="lg"
                     className="h-12 px-8 text-base shrink-0"
                     disabled={!estimate}
-                    onClick={() => setShowQuoteModal(true)}
+                    asChild
                   >
-                    Request Transport Quote
-                    <ArrowRight className="h-4 w-4 ml-2" />
+                    <Link href="/auto-transport">
+                      Browse Auto Transport Directory
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -360,7 +313,7 @@ export function AutoTransportCalculator() {
                   Insured transport options
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1 text-muted-foreground">
-                  No obligation quotes
+                  Independent directory
                 </span>
               </div>
             </CardContent>
@@ -372,11 +325,6 @@ export function AutoTransportCalculator() {
         <TrustBadges variant="compact" className="justify-center" />
       </div>
 
-      <QuoteModal
-        open={showQuoteModal}
-        onOpenChange={setShowQuoteModal}
-        prefilledData={quotePrefill}
-      />
     </>
   );
 }

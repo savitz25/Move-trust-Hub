@@ -5,7 +5,7 @@ export const triCitiesTnContent: CityHubContent = {
   h1: 'Moving to the Tri-Cities, TN: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Johnson City / Kingsport, TN (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Johnson City / Kingsport, TN (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to the Tri-Cities? Compare FMCSA-verified movers serving Washington and Sullivan counties, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

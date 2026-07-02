@@ -5,7 +5,7 @@ export const sanduskyOhContent: CityHubContent = {
   h1: 'Moving to Sandusky, OH: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Sandusky, OH (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Sandusky, OH (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Sandusky in Erie County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Maritime tourist city, Cedar Point, revitalized downtown, Sandusky Bay waterfront. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -235,7 +235,7 @@ export const sanduskyOhContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Sandusky?',
       answer:
-        'From Illinois, Michigan, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,300 to $10,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, waterfront or downtown accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Illinois, Michigan, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,300 to $10,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, waterfront or downtown accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Sandusky compare to Toledo for moving costs?',

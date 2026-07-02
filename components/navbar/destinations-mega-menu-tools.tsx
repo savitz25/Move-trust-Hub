@@ -1,11 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import {
   ArrowRight,
-  FileText,
   ShieldCheck,
   Star,
   Calculator,
@@ -13,11 +11,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { QuickToolLink } from '@/lib/nav/destinations-menu-data';
-
-const QuoteModal = dynamic(
-  () => import('@/components/quote-modal').then((m) => m.QuoteModal),
-  { ssr: false }
-);
 
 const TOOL_ICONS: Record<string, typeof ShieldCheck> = {
   fmcsa: ShieldCheck,
@@ -35,8 +28,6 @@ export const DestinationsMegaMenuTools = memo(function DestinationsMegaMenuTools
   tools,
   onNavigate,
 }: Props) {
-  const [showQuoteModal, setShowQuoteModal] = useState(false);
-
   return (
     <div className="flex flex-col h-full min-h-[280px]">
       <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
@@ -73,25 +64,23 @@ export const DestinationsMegaMenuTools = memo(function DestinationsMegaMenuTools
       <div className="mt-4 pt-4 border-t space-y-2">
         <Button
           size="sm"
+          asChild
           className="w-full gap-2 bg-primary hover:bg-primary/90 shadow-md min-h-[44px] text-sm font-semibold"
-          onClick={() => {
-            setShowQuoteModal(true);
-            onNavigate?.();
-          }}
-          aria-label="Get free moving quotes from licensed carriers"
         >
-          <FileText className="h-4 w-4" aria-hidden="true" />
-          Get Free Moving Quotes
+          <Link
+            prefetch={false}
+            href="/moving-calculator"
+            onClick={onNavigate}
+            aria-label="Use free moving calculator"
+          >
+            <Calculator className="h-4 w-4" aria-hidden="true" />
+            Free Moving Calculator
+          </Link>
         </Button>
+        <p className="text-[10px] text-center text-muted-foreground">
+          Independent · No lead fees · No paid placements
+        </p>
       </div>
-
-      {showQuoteModal ? (
-        <QuoteModal
-          open={showQuoteModal}
-          onOpenChange={setShowQuoteModal}
-          prefilledData={{ notes: 'Destinations mega menu — quote request' }}
-        />
-      ) : null}
     </div>
   );
 });

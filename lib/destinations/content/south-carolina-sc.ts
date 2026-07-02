@@ -28,7 +28,7 @@ export const southCarolinaClusterContent: SouthCarolinaClusterContent = {
   h1: 'Moving to South Carolina: Grand Strand, Upstate & Lowcountry City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to South Carolina (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to South Carolina (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore South Carolina inbound moving guides for Myrtle Beach, Greenville, Spartanburg, Hilton Head, and the full Grand Strand. Coastal, Upstate, and Lowcountry corridors, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -47,7 +47,7 @@ export const southCarolinaClusterContent: SouthCarolinaClusterContent = {
   heroSubheadline:
     'South Carolina ranks among the top coastal, Upstate, and retiree inbound states in 2026 — drawing Northeast and Midwest households to the Grand Strand\'s 3.88:1 inbound ratio, Greenville and Spartanburg\'s BMW-driven manufacturing boom, and Hilton Head\'s premier Lowcountry island lifestyle. With no state income tax on retirement benefits and geography from beaches to Blue Ridge foothills, our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and twelve city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Myrtle Beach and the nine-city Grand Strand corridor, Greenville\'s vibrant downtown and Falls Park on the Reedy, Spartanburg\'s automotive and logistics employment, or Hilton Head\'s gated resort communities and world-class golf, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Myrtle Beach and the nine-city Grand Strand corridor, Greenville\'s vibrant downtown and Falls Park on the Reedy, Spartanburg\'s automotive and logistics employment, or Hilton Head\'s gated resort communities and world-class golf, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. South Carolina moves involve corridor-specific logistics that generic guides overlook: summer peak-season Grand Strand scheduling, Upstate BMW-supplier corporate transfers, Hilton Head bridge access and gated-community shuttle trucks, hurricane contingency planning on the coast, and condo elevator protocols — factors our city guides surface so you can plan with confidence.',
     'Twelve live South Carolina hubs span three major corridors: Grand Strand Coastal (Myrtle Beach through Carolina Forest), Upstate (Greenville and Spartanburg), and Lowcountry (Hilton Head). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

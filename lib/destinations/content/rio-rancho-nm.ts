@@ -5,7 +5,7 @@ export const rioRanchoNmContent: CityHubContent = {
   h1: 'Moving to Rio Rancho, NM: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Rio Rancho, NM (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Rio Rancho, NM (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Rio Rancho in Sandoval County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. #1 ranked city in New Mexico, Intel expansion, affordable master-planned communities. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -219,7 +219,7 @@ export const rioRanchoNmContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Rio Rancho?',
       answer:
-        'From Texas, Arizona, Colorado, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $12,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, foothill or acreage accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Arizona, Colorado, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $12,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, foothill or acreage accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Rio Rancho compare to Albuquerque for moving costs?',

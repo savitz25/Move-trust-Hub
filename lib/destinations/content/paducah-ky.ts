@@ -5,7 +5,7 @@ export const paducahKyContent: CityHubContent = {
   h1: 'Moving to Paducah, KY: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Paducah, KY (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Paducah, KY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Paducah in McCracken County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. UNESCO Creative City, Ohio & Tennessee river confluence, Lower Town Arts District. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const paducahKyContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Paducah?',
       answer:
-        'From Ohio, Indiana, Illinois, Tennessee, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Lower Town or Nobel Park accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Ohio, Indiana, Illinois, Tennessee, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Lower Town or Nobel Park accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Paducah compare to Richmond for moving costs?',

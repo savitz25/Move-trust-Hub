@@ -3,21 +3,22 @@
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
 
 type GuideCtaClientProps = {
-  quoteLabel?: string;
   calculatorHref?: string;
-  prefilledNotes?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
 };
 
 export function GuideCtaClient({
-  quoteLabel = 'Get Free Quotes',
   calculatorHref = '/moving-calculator',
-  prefilledNotes = 'Quote request from moving resources guide',
+  secondaryHref = '/companies',
+  secondaryLabel = 'Compare Trusted Movers',
 }: GuideCtaClientProps) {
   return (
     <PageHeroCta
-      quoteLabel={quoteLabel}
-      calculatorHref={calculatorHref}
-      prefilledData={{ notes: prefilledNotes }}
+      primaryLabel="Use Free Moving Calculator"
+      primaryHref={calculatorHref}
+      secondaryLabel={secondaryLabel}
+      secondaryHref={secondaryHref}
       showTrustBadges
     />
   );

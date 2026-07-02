@@ -5,7 +5,7 @@ export const greenwichCtContent: CityHubContent = {
   h1: 'Moving to Greenwich, CT: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Greenwich, CT (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Greenwich, CT (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Greenwich in Fairfield County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Ultra-exclusive Gold Coast estates, private beaches, backcountry acreage, highest CT moving costs. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -228,7 +228,7 @@ export const greenwichCtContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Greenwich?',
       answer:
-        'From New York, New Jersey, Massachusetts, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $15,500 for full-service interstate transport in 2026 — Connecticut\'s highest band. Estate accessorials, specialty packing, and backcountry shuttle fees push many Greenwich deliveries above this range. Use our calculator for your specific inventory, then request matched quotes with in-home survey follow-up.',
+        'From New York, New Jersey, Massachusetts, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $15,500 for full-service interstate transport in 2026 — Connecticut\'s highest band. Estate accessorials, specialty packing, and backcountry shuttle fees push many Greenwich deliveries above this range. Use our calculator for your specific inventory, then compare trusted movers in our directory with in-home survey follow-up.',
     },
     {
       question: 'Why are Greenwich moving costs the highest in Connecticut?',

@@ -5,7 +5,7 @@ export const rogersArContent: CityHubContent = {
   h1: 'Moving to Rogers, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Rogers, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Rogers, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Rogers, Arkansas\'s #1 inbound city? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Beaver Lake, Walmart AMP, downtown shopping, high incomes. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const rogersArContent: CityHubContent = {
   heroSubheadline:
     'Rogers ranks #1 among Arkansas inbound destinations — combining Beaver Lake recreation, Walmart AMP concerts, a revitalized downtown shopping district, and among the highest household incomes in the state with balanced Northwest Arkansas family living. Excellent schools, high-paying corporate and healthcare jobs, Pinnacle Hills shopping, and Lake Atalanta trails give Rogers a distinct identity without Bentonville\'s premium price curve. Texas, California, Tennessee, and Missouri households relocate here for master-planned neighborhoods, low crime, and I-49 access to the full NWA employment corridor. Our independent directory lets you compare FMCSA-licensed interstate movers serving Benton County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Rogers and the greater Benton County corridor remain one of the highest-intent inbound moving markets in Northwest Arkansas for 2026. Whether you are relocating from Dallas, Houston, Nashville, Kansas City, or Southern California for family quality of life, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Rogers and the greater Benton County corridor remain one of the highest-intent inbound moving markets in Northwest Arkansas for 2026. Whether you are relocating from Dallas, Houston, Nashville, Kansas City, or Southern California for family quality of life, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Rogers, Beaver Lake neighborhoods, Pinnacle Hills, downtown Rogers shopping districts, Lake Atalanta, and surrounding Benton County communities with spillover into Lowell and Cave Springs. Interstate shipments into Rogers often involve new-build subdivision access, Beaver Lake-area long driveways, Pinnacle Hills retail-corridor traffic windows, and summer peak-season demand on shared NWA carrier lanes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -212,7 +212,7 @@ export const rogersArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Rogers?',
       answer:
-        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

@@ -190,8 +190,8 @@ export function buildCityHubSchemaGraph(
         {
           '@type': 'HowToStep',
           position: 3,
-          name: 'Compare matched quotes',
-          text: 'Request 2–3 competitive quotes from FMCSA-licensed movers and compare on equal inventory volume.',
+          name: 'Compare trusted movers',
+          text: 'Browse FMCSA-licensed movers in our independent directory and compare reputation, licensing, and reviews on equal inventory volume.',
         },
       ],
     },

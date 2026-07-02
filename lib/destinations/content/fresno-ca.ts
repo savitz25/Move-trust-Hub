@@ -5,7 +5,7 @@ export const fresnoCaContent: CityHubContent = {
   h1: 'Moving to Fresno, CA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Fresno, CA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Fresno, CA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Fresno or the Central Valley? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Agriculture hub, growing metro, affordable family living. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const fresnoCaContent: CityHubContent = {
   heroSubheadline:
     'Fresno anchors California\'s San Joaquin Valley — an agriculture powerhouse drawing Bay Area, Los Angeles, and out-of-state households seeking affordable family living, growing healthcare and logistics employment, and Central Valley lifestyle without coastal housing premiums. Clovis, North Fresno, and Fig Garden suburbs expand daily as spillover buyers trade San Francisco and San Jose price tags for four-bedroom yards and short drives to Sierra foothills recreation. Our independent directory lets you compare FMCSA-licensed interstate and intrastate movers serving Fresno County and the greater Central Valley corridor. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Fresno and its Clovis suburbs rank among the fastest-growing affordable California inbound destinations for 2026. Whether you are relocating intrastate from Oakland, San Jose, or Los Angeles on a remote-work or family budget shift, or moving interstate from Texas, Arizona, Washington, or Nevada, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov (and California PUC authority for pure intrastate shipments), and compare multiple quotes on equal cubic footage before you sign.',
+    'Fresno and its Clovis suburbs rank among the fastest-growing affordable California inbound destinations for 2026. Whether you are relocating intrastate from Oakland, San Jose, or Los Angeles on a remote-work or family budget shift, or moving interstate from Texas, Arizona, Washington, or Nevada, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov (and California PUC authority for pure intrastate shipments), and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Fresno, Clovis, Sanger, Selma, and surrounding Fresno County communities, with corridor context for Madera, Kings, and Tulare counties on shared Highway 99 and I-5 lanes. Shipments into the Central Valley often involve summer heat loading windows above 100°F, agricultural-property long carries, new-build subdivision shuttle requirements, and peak-season demand on I-5 and Highway 99 — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/california.',
   ],
@@ -219,7 +219,7 @@ export const fresnoCaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Fresno?',
       answer:
-        'From Bay Area and Los Angeles intrastate origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $4,800 to $7,500 for full-service transport in 2026. From Texas, Arizona, and out-of-state origins, expect $6,500 to $9,200. Final price depends on exact volume, packing services, heat scheduling, shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Bay Area and Los Angeles intrastate origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $4,800 to $7,500 for full-service transport in 2026. From Texas, Arizona, and out-of-state origins, expect $6,500 to $9,200. Final price depends on exact volume, packing services, heat scheduling, shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Central Valley heat affect moving logistics?',

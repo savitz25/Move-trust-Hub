@@ -5,7 +5,7 @@ export const greenvilleScContent: CityHubContent = {
   h1: 'Moving to Greenville, SC: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Greenville, SC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Greenville, SC (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Greenville or South Carolina\'s Upstate? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Downtown lofts, Paris Mountain, and Greer suburb neighborhood logistics covered. BMW, Michelin, vibrant downtown, Blue Ridge access. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const greenvilleScContent: CityHubContent = {
   heroSubheadline:
     'Greenville anchors South Carolina\'s Upstate as an economic powerhouse — a revitalized downtown centered on Falls Park on the Reedy, BMW and Michelin supplier employment, and a growing tech and advanced-manufacturing sector that draws households from New York, New Jersey, Florida, Ohio, and Charlotte spillover at lower housing costs than the Queen City. Blue Ridge Mountain access, a nationally recognized food scene, and I-85 corridor logistics make Greenville one of the Southeast\'s highest-intent inbound markets for 2026. Our independent directory lets you compare FMCSA-licensed interstate movers serving Greenville County (ZIP 29601 and surrounding Upstate communities). Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Greenville and the greater Upstate corridor continue to attract engineers, manufacturing professionals, remote workers, and young families relocating from the Northeast, Midwest, Florida, and the Charlotte metro. Whether you are accepting a BMW or Michelin supplier role, joining Greenville\'s expanding tech cluster, or downsizing from a Northeast suburb into a walkable downtown loft near Main Street, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Greenville and the greater Upstate corridor continue to attract engineers, manufacturing professionals, remote workers, and young families relocating from the Northeast, Midwest, Florida, and the Charlotte metro. Whether you are accepting a BMW or Michelin supplier role, joining Greenville\'s expanding tech cluster, or downsizing from a Northeast suburb into a walkable downtown loft near Main Street, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why Upstate households use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving downtown Greenville (ZIP 29601), Augusta Road, Paris Mountain, Taylors, Greer, Mauldin, Simpsonville, and Greenville County\'s full suburban footprint — with Anderson County spillover and cross-links to Spartanburg, the Grand Strand, and Hilton Head for households still comparing South Carolina corridors. Interstate deliveries into the Upstate often involve downtown high-rise elevator reservations, historic-district shuttle trucks, and summer corporate relocation season on the I-85 Piedmont lane — all legitimate cost drivers that should appear in writing before booking. For statewide context, see our parent guide at /moving-to/south-carolina.',
   ],
@@ -254,7 +254,7 @@ export const greenvilleScContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Greenville?',
       answer:
-        'From New York, New Jersey, Florida, Ohio, and Charlotte-area origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $10,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or hillside accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Florida, Ohio, and Charlotte-area origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $10,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or hillside accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Greenville compare to Charlotte for moving costs?',

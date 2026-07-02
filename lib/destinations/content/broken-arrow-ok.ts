@@ -5,7 +5,7 @@ export const brokenArrowOkContent: CityHubContent = {
   h1: 'Moving to Broken Arrow, OK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Broken Arrow, OK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Broken Arrow, OK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Broken Arrow or the greater Tulsa metro? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const brokenArrowOkContent: CityHubContent = {
   heroSubheadline:
     'Broken Arrow continues to attract Texas, California, Colorado, and Missouri households drawn to one of Oklahoma\'s safest suburban cities, the revitalized Rose District, strong manufacturing and aerospace hiring across the Tulsa metro, and family affordability that undercuts Dallas and Denver on both housing and moving costs. Our independent directory lets you compare FMCSA-licensed interstate movers serving Tulsa, Wagoner, and Creek counties. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Broken Arrow and the eastern Tulsa metro remain one of the highest-intent inbound moving markets in northeast Oklahoma for 2026. Whether you are relocating from Dallas–Fort Worth, Houston, Denver, Kansas City, or Southern California, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Broken Arrow and the eastern Tulsa metro remain one of the highest-intent inbound moving markets in northeast Oklahoma for 2026. Whether you are relocating from Dallas–Fort Worth, Houston, Denver, Kansas City, or Southern California, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Broken Arrow, the Rose District, south Tulsa commute corridors, and surrounding Wagoner and Creek county communities. Interstate shipments into Broken Arrow often involve new-build subdivision access, summer heat loading windows, tornado-season contingency planning, and I-44 corridor scheduling — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oklahoma.',
   ],
@@ -212,7 +212,7 @@ export const brokenArrowOkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Broken Arrow?',
       answer:
-        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Texas-origin moves often fall toward the lower end given shorter linehaul distances. Final price depends on exact volume, packing services, accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Texas-origin moves often fall toward the lower end given shorter linehaul distances. Final price depends on exact volume, packing services, accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Oklahoma?',

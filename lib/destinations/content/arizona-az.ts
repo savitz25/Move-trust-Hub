@@ -30,7 +30,7 @@ export const arizonaClusterContent: ArizonaClusterContent = {
   h1: 'Moving to Arizona: Phoenix Metro, Valley Suburbs & Tucson City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Arizona (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Arizona (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Arizona inbound moving guides for Phoenix, Scottsdale, Gilbert, Chandler, Tempe, Buckeye, Queen Creek, Goodyear, Surprise, Maricopa, Casa Grande, Tucson, and Marana. Sunbelt growth, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -48,7 +48,7 @@ export const arizonaClusterContent: ArizonaClusterContent = {
   heroSubheadline:
     'Arizona ranks among the top Sunbelt inbound destinations in 2026 — drawing California, Illinois, Washington, and Texas households with robust job growth in tech, aerospace, and healthcare, favorable tax treatment for many income types, 300+ days of sunshine, and diverse lifestyles from urban Phoenix and ASU\'s Tempe campus to hyper-growth West Valley suburbs and Tucson\'s mountain-backed relaxed pace. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Phoenix\'s downtown revitalization, Scottsdale\'s luxury golf corridors, Chandler\'s Silicon Desert tech employment, Gilbert\'s top-ranked family suburbs, Buckeye\'s master-planned affordability, Queen Creek\'s East Valley community feel, Goodyear and Surprise West Valley value, Pinal County\'s Maricopa and Casa Grande commute corridors, or Tucson and Marana\'s lower-cost mountain lifestyle, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Phoenix\'s downtown revitalization, Scottsdale\'s luxury golf corridors, Chandler\'s Silicon Desert tech employment, Gilbert\'s top-ranked family suburbs, Buckeye\'s master-planned affordability, Queen Creek\'s East Valley community feel, Goodyear and Surprise West Valley value, Pinal County\'s Maricopa and Casa Grande commute corridors, or Tucson and Marana\'s lower-cost mountain lifestyle, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Arizona moves involve Sunbelt logistics that generic guides overlook: summer heat limiting loading hours, new-build subdivision shuttle requirements in hyper-growth corridors, HOA move-day scheduling across master-planned communities, and monsoon-season delivery contingency planning — factors our city guides surface so you can plan with confidence.',
     'Ten live Arizona hubs span Phoenix metro core (Phoenix, Scottsdale, Tempe), East Valley (Gilbert, Chandler, Queen Creek), West Valley (Buckeye, Goodyear & Surprise), Pinal County (Maricopa & Casa Grande), and Southern Arizona (Tucson & Marana). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

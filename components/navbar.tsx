@@ -3,20 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DestinationsMegaMenuLazy } from '@/components/navbar/destinations-mega-menu-lazy';
 import { DestinationsMobileNav } from '@/components/navbar/destinations-mobile-nav';
 
-const QuoteModal = dynamic(
-  () => import('@/components/quote-modal').then((m) => m.QuoteModal),
-  { ssr: false }
-);
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   const navLinks = [
     { href: '/companies', label: 'Movers Directory' },
@@ -38,7 +31,7 @@ export function Navbar() {
           <Link prefetch={false} href="/" className="group">
             <Image
               src="/logo.png"
-              alt="Move Trust Hub — trusted interstate moving directory and free quote matching"
+              alt="Move Trust Hub — independent interstate moving directory"
               width={300}
               height={75}
               priority
@@ -48,7 +41,7 @@ export function Navbar() {
             />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
-            TRUSTED
+            INDEPENDENT
           </div>
         </div>
 
@@ -73,21 +66,21 @@ export function Navbar() {
           ))}
           <Button
             size="sm"
-            onClick={() => setShowQuoteModal(true)}
+            asChild
             className="gap-2 bg-primary hover:bg-primary/90 shadow-sm"
           >
-            <FileText className="h-4 w-4" /> Get Free Quotes
+            <Link prefetch={false} href="/moving-calculator">
+              <Calculator className="h-4 w-4" aria-hidden="true" /> Moving Calculator
+            </Link>
           </Button>
         </div>
 
         <div className="flex md:hidden items-center gap-2">
-          <Button
-            size="sm"
-            className="gap-1.5 min-h-[44px] px-3"
-            onClick={() => setShowQuoteModal(true)}
-          >
-            <FileText className="h-4 w-4" aria-hidden="true" />
-            Quotes
+          <Button size="sm" className="gap-1.5 min-h-[44px] px-3" asChild>
+            <Link prefetch={false} href="/moving-calculator">
+              <Calculator className="h-4 w-4" aria-hidden="true" />
+              Calculator
+            </Link>
           </Button>
           <Button
             variant="ghost"
@@ -113,10 +106,7 @@ export function Navbar() {
             >
               Movers Directory
             </Link>
-            <DestinationsMobileNav
-              onClose={() => setIsOpen(false)}
-              onRequestQuote={() => setShowQuoteModal(true)}
-            />
+            <DestinationsMobileNav onClose={() => setIsOpen(false)} />
             {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
@@ -128,30 +118,22 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button
-              className="w-full mt-2 min-h-[48px]"
-              onClick={() => {
-                setIsOpen(false);
-                setShowQuoteModal(true);
-              }}
-            >
-              Get Free Quotes
+            <Button className="w-full mt-2 min-h-[48px]" asChild>
+              <Link prefetch={false} href="/moving-calculator" onClick={() => setIsOpen(false)}>
+                Use Free Moving Calculator
+              </Link>
             </Button>
             <Link
               prefetch={false}
-              href="/auto-transport"
+              href="/companies"
               onClick={() => setIsOpen(false)}
               className="text-center py-2 text-primary"
             >
-              Browse Auto Transport →
+              Compare Trusted Movers →
             </Link>
           </div>
         </div>
       )}
-
-      {showQuoteModal ? (
-        <QuoteModal open={showQuoteModal} onOpenChange={setShowQuoteModal} />
-      ) : null}
     </nav>
   );
 }

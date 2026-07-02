@@ -5,7 +5,7 @@ export const alpharettaGaContent: CityHubContent = {
   h1: 'Moving to Alpharetta, GA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Alpharetta, GA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Alpharetta, GA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Alpharetta in Fulton County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Technology City of the South, Avalon development, tech jobs, North Fulton schools. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -214,7 +214,7 @@ export const alpharettaGaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Alpharetta?',
       answer:
-        'From California, Florida, New York, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $13,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Avalon or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Florida, New York, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $13,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Avalon or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Alpharetta compare to Johns Creek for moving costs?',

@@ -5,7 +5,7 @@ export const shepherdstownWvContent: CityHubContent = {
   h1: 'Moving to Shepherdstown, WV: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Shepherdstown, WV (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Shepherdstown, WV (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Shepherdstown in Jefferson County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Historic walkable college town, vibrant culture. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -215,7 +215,7 @@ export const shepherdstownWvContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Shepherdstown?',
       answer:
-        'From Maryland, Virginia, Pennsylvania, New York, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,100 to $11,300 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, historic downtown or rural accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Maryland, Virginia, Pennsylvania, New York, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,100 to $11,300 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, historic downtown or rural accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Shepherdstown compare to Charles Town for moving costs?',

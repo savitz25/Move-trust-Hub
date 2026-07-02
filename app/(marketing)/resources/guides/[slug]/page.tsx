@@ -65,10 +65,7 @@ export default async function DestinationGuidePage({ params }: Props) {
           {guide.description}
         </p>
 
-        <GuideCtaClient
-          quoteLabel={`Get Free Quotes to ${guide.destinationLabel}`}
-          prefilledNotes={`Destination guide: ${guide.destinationLabel}`}
-        />
+        <GuideCtaClient />
         <TrustBadges variant="compact" className="mb-10" />
 
         {guide.sections.map((section) => (

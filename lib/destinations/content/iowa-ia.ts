@@ -29,7 +29,7 @@ export const iowaClusterContent: IowaClusterContent = {
   h1: 'Moving to Iowa: Affordable Midwest City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Iowa (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Iowa (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Iowa inbound moving guides for Des Moines, Ankeny, West Des Moines, Iowa City, Ames, Cedar Rapids, Dubuque, and more. Affordable housing, strong schools, university towns, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -48,7 +48,7 @@ export const iowaClusterContent: IowaClusterContent = {
   heroSubheadline:
     'Iowa ranks among the Midwest\'s most value-forward inbound states in 2026 — drawing Illinois, Minnesota, Wisconsin, California, Texas, New York, and Florida households to Des Moines\'s insurance-and-finance capital, Ankeny\'s nationally ranked Prairie Trail growth, Iowa City\'s UNESCO City of Literature culture, and Pella\'s spotless Dutch heritage. Affordable housing, strong community schools, and deliberate urban-rural balance create a relocation calculus that coastal and Chicagoland guides rarely capture at city-level precision. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and ten city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are accepting a Des Moines corporate transfer along the Principal Riverwalk, relocating a Chicago family into Ankeny\'s Appoquinimink-adjacent school corridors, downsizing from Minneapolis into Decorah\'s Driftless Region trails, or choosing Pella\'s Tulip Time village over suburban sprawl, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are accepting a Des Moines corporate transfer along the Principal Riverwalk, relocating a Chicago family into Ankeny\'s Appoquinimink-adjacent school corridors, downsizing from Minneapolis into Decorah\'s Driftless Region trails, or choosing Pella\'s Tulip Time village over suburban sprawl, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Iowa moves involve Midwest logistics that statewide guides overlook: Des Moines metro builder closing clusters, university-town August turnover in Iowa City and Ames, Cedar Rapids flood-zone delivery planning, Dubuque bluff-street shuttle staging, and harvest-season rural driveway access — factors our city guides surface so you can plan with confidence.',
     'Ten live Iowa hubs span Des Moines metro growth (Ankeny, West Des Moines, Des Moines, Waukee), university and innovation corridors (Iowa City, Ames), eastern manufacturing and river cities (Cedar Rapids, Dubuque), and Driftless heritage communities (Decorah, Pella). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

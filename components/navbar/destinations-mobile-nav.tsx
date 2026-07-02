@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import {
   ChevronDown,
-  FileText,
+  Calculator,
   Search,
   ShieldCheck,
   Star,
@@ -20,13 +20,12 @@ import {
 
 type Props = {
   onClose: () => void;
-  onRequestQuote?: () => void;
 };
 
 const tapTarget =
   'min-h-[48px] flex items-center rounded-md px-2 -mx-2 transition-colors hover:bg-muted/40 active:bg-muted/60';
 
-export function DestinationsMobileNav({ onClose, onRequestQuote }: Props) {
+export function DestinationsMobileNav({ onClose }: Props) {
   const [expanded, setExpanded] = useState(false);
   const [openSection, setOpenSection] = useState<'states' | 'routes' | 'all' | null>(null);
   const [openFeaturedState, setOpenFeaturedState] = useState<string | null>(null);
@@ -94,14 +93,17 @@ export function DestinationsMobileNav({ onClose, onRequestQuote }: Props) {
             <Button
               size="default"
               className="w-full gap-2 min-h-[52px] bg-primary hover:bg-primary/90 shadow-md text-sm font-semibold"
-              onClick={() => {
-                onRequestQuote?.();
-                onClose();
-              }}
-              aria-label="Get free moving quotes from licensed carriers"
+              asChild
             >
-              <FileText className="h-4 w-4" aria-hidden="true" />
-              Get Free Moving Quotes
+              <Link
+                prefetch={false}
+                href="/moving-calculator"
+                onClick={onClose}
+                aria-label="Use free moving calculator"
+              >
+                <Calculator className="h-4 w-4" aria-hidden="true" />
+                Free Moving Calculator
+              </Link>
             </Button>
 
             <DestinationsCollapsibleSection

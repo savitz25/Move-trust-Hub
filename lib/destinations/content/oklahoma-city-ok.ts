@@ -5,7 +5,7 @@ export const oklahomaCityOkContent: CityHubContent = {
   h1: 'Moving to Oklahoma City, OK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Oklahoma City, OK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Oklahoma City, OK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Oklahoma City or the greater OKC metro? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const oklahomaCityOkContent: CityHubContent = {
   heroSubheadline:
     'Oklahoma City continues to attract Texas, California, Colorado, and Missouri households drawn to MAPS-funded downtown revitalization, a diversified economy spanning aerospace, energy, technology, and healthcare, and a distinctive blend of cowboy culture with modern urban energy — from Bricktown and Scissortail Park to Midtown galleries and the Plaza District. Our independent directory lets you compare FMCSA-licensed interstate movers serving Oklahoma, Canadian, and Cleveland counties. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Oklahoma City and the greater OKC metro remain one of the most affordable high-growth inbound destinations in the South Central corridor for 2026. Whether you are relocating from Dallas, Los Angeles, Denver, or Kansas City, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Oklahoma City and the greater OKC metro remain one of the most affordable high-growth inbound destinations in the South Central corridor for 2026. Whether you are relocating from Dallas, Los Angeles, Denver, or Kansas City, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Oklahoma City, Bricktown, Midtown, the Plaza District, and surrounding Oklahoma County communities, with corridor context for Edmond and Norman in Canadian and Cleveland counties. Interstate shipments into OKC often involve MAPS-era urban infill access, tornado-season contingency planning, summer heat loading windows, and I-35 corridor scheduling — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oklahoma.',
   ],
@@ -222,7 +222,7 @@ export const oklahomaCityOkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Oklahoma City?',
       answer:
-        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $9,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $9,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Oklahoma?',

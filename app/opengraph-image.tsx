@@ -99,7 +99,7 @@ export default function OpenGraphImage() {
               border: '1px solid rgba(255,255,255,0.18)',
             }}
           >
-            Free Quotes
+            No Lead Fees
           </span>
           <span
             style={{

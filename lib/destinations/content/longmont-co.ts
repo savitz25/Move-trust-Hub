@@ -5,7 +5,7 @@ export const longmontCoContent: CityHubContent = {
   h1: 'Moving to Longmont, CO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Longmont, CO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Longmont, CO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Longmont in Boulder and Weld counties? Compare FMCSA-verified movers serving the St Vrain corridor, NextLight fiber neighborhoods, and craft brewery districts, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

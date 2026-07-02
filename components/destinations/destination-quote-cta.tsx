@@ -1,51 +1,43 @@
-'use client';
-
-import { useState } from 'react';
-import { ArrowRight, FileText } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { QuoteModal } from '@/components/quote-modal';
+import Link from 'next/link';
+import { ArrowRight, Calculator, Scale } from 'lucide-react';
 import type { Market } from '@/lib/destinations/types';
 
 type Props = {
   market: Market;
-  label?: string;
   variant?: 'primary' | 'footer';
 };
 
-export function DestinationQuoteCta({
-  market,
-  label,
-  variant = 'primary',
-}: Props) {
-  const [open, setOpen] = useState(false);
-  const destinationLabel = `${market.displayName}, ${market.stateCode}`;
-  const buttonLabel =
-    label ?? `Get Free Quotes to ${market.displayName}`;
+export function DestinationQuoteCta({ market, variant = 'primary' }: Props) {
+  const calculatorHref = `/moving-calculator?toZip=${market.defaultToZip}&dest=${market.slug}`;
+  const isFooter = variant === 'footer';
 
   return (
-    <>
-      <Button
-        size={variant === 'footer' ? 'lg' : 'default'}
-        variant={variant === 'footer' ? 'secondary' : 'default'}
-        className={variant === 'footer' ? 'gap-2' : 'gap-2'}
-        onClick={() => setOpen(true)}
+    <div className={isFooter ? 'flex flex-col sm:flex-row gap-3 justify-center' : 'contents'}>
+      <Link
+        href={calculatorHref}
+        prefetch={false}
+        className={
+          isFooter
+            ? 'inline-flex items-center justify-center gap-2 rounded-md bg-background text-foreground px-6 py-3 text-sm font-medium hover:bg-background/90 transition-colors min-h-[48px]'
+            : 'inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors min-h-[48px]'
+        }
       >
-        {variant === 'footer' ? (
-          <FileText className="h-4 w-4" aria-hidden="true" />
-        ) : null}
-        {buttonLabel}
+        <Calculator className="h-4 w-4" aria-hidden="true" />
+        Estimate Move to {market.displayName}
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
-      </Button>
-      <QuoteModal
-        open={open}
-        onOpenChange={setOpen}
-        prefilledData={{
-          toZip: market.defaultToZip,
-          destinationSlug: market.slug,
-          marketPriority: market.priority,
-          notes: `Inbound destination: ${destinationLabel}`,
-        }}
-      />
-    </>
+      </Link>
+      <Link
+        href="/companies"
+        prefetch={false}
+        className={
+          isFooter
+            ? 'inline-flex items-center justify-center gap-2 rounded-md border border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground px-6 py-3 text-sm font-medium hover:bg-primary-foreground/20 transition-colors min-h-[48px]'
+            : 'inline-flex items-center justify-center gap-2 rounded-md border bg-card px-6 py-3 text-sm font-medium hover:border-primary/40 transition-colors min-h-[48px]'
+        }
+      >
+        <Scale className="h-4 w-4" aria-hidden="true" />
+        Compare Trusted Movers
+      </Link>
+    </div>
   );
 }

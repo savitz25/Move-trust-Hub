@@ -86,11 +86,11 @@ export function MovingCalculatorSeoSections() {
           ))}
         </div>
         <p className="text-sm text-muted-foreground mt-6">
-          Ready for quotes?{' '}
-          <Link href="/" className="text-primary font-medium underline underline-offset-2">
-            Get free interstate moving quotes
+          Ready to research carriers?{' '}
+          <Link href="/companies" className="text-primary font-medium underline underline-offset-2">
+            Compare trusted interstate movers
           </Link>{' '}
-          on Move Trust Hub after you finish your estimate.
+          in our independent directory after you finish your estimate.
         </p>
       </section>
     </div>

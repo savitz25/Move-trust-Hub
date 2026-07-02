@@ -5,7 +5,7 @@ export const hooverAlContent: CityHubContent = {
   h1: 'Moving to Hoover, AL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Hoover, AL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Hoover, AL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Hoover or the Birmingham metro? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Riverchase Galleria, master-planned suburbs, top safety. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const hooverAlContent: CityHubContent = {
   heroSubheadline:
     'Hoover anchors the Birmingham metro\'s most sought-after suburban corridor — a master-planned community with Riverchase Galleria retail and dining, nationally ranked safety, among Alabama\'s highest household incomes, and top-rated Hoover City Schools that draw Georgia, Florida, Texas, Tennessee, and California families seeking upscale living without downtown Birmingham constraints. Ross Bridge, Greystone, and Bluff Park neighborhoods combine HOA-managed amenities with hilly Jefferson and Shelby county lots where delivery logistics differ from flat inland subdivisions. Our independent directory lets you compare FMCSA-licensed interstate movers serving Hoover and the greater Birmingham metro. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Hoover and its Birmingham-metro suburbs rank among the most stable affluent inbound moving destinations in Central Alabama for 2026. Whether you are relocating on a UAB Health, Regions Bank, or Shipt corporate transfer from Atlanta, Dallas, Nashville, Tampa, or Southern California, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Hoover and its Birmingham-metro suburbs rank among the most stable affluent inbound moving destinations in Central Alabama for 2026. Whether you are relocating on a UAB Health, Regions Bank, or Shipt corporate transfer from Atlanta, Dallas, Nashville, Tampa, or Southern California, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Hoover, Riverchase, Greystone, Ross Bridge, Bluff Park, and surrounding Jefferson and Shelby County communities, with corridor context for Vestavia Hills and Homewood deliveries on shared I-65 and I-459 lanes. Interstate shipments into Hoover often involve hillside driveway access, HOA move-in certificate requirements, summer humidity loading windows, and peak-season demand on I-20/I-59 cross-country lanes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/alabama.',
   ],
@@ -212,7 +212,7 @@ export const hooverAlContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Hoover?',
       answer:
-        'From Georgia, Florida, Texas, Tennessee, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, hillside or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Georgia, Florida, Texas, Tennessee, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, hillside or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Alabama?',

@@ -5,7 +5,7 @@ export const warnerRobinsGaContent: CityHubContent = {
   h1: 'Moving to Warner Robins, GA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Warner Robins, GA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Warner Robins, GA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Warner Robins in Houston County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Robins Air Force Base, defense/aerospace hub, affordability, PCS relocations. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -220,7 +220,7 @@ export const warnerRobinsGaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Warner Robins?',
       answer:
-        'From Florida, Texas, California, and Carolinas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, base-corridor or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Florida, Texas, California, and Carolinas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, base-corridor or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Warner Robins compare to Atlanta for moving costs?',

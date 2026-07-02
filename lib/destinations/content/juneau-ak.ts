@@ -5,7 +5,7 @@ export const juneauAkContent: CityHubContent = {
   h1: 'Moving to Juneau, AK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Juneau, AK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Juneau, AK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Juneau, Alaska\'s state capital? Compare FMCSA-verified movers, estimate barge and ferry final-mile costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. State capital, government jobs, Tongass National Forest. No road access — shipments route via PNW ports. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const juneauAkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Juneau?',
       answer:
-        'From Washington, California, Texas, and Colorado origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $12,000 to $22,000 for full-service interstate and marine transport in 2026. Final price depends on exact volume, packing services, PNW port routing, barge or ferry sailing, hillside accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Washington, California, Texas, and Colorado origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $12,000 to $22,000 for full-service interstate and marine transport in 2026. Final price depends on exact volume, packing services, PNW port routing, barge or ferry sailing, hillside accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Juneau compare to Anchorage for moving costs?',

@@ -5,7 +5,7 @@ export const roanokeVaContent: CityHubContent = {
   h1: 'Moving to Roanoke, VA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Roanoke, VA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Roanoke, VA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Roanoke? Compare FMCSA-verified movers serving the Star City and Roanoke Valley, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Outdoor recreation, Blue Ridge views, affordable living, and mountain-trail lifestyle. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const roanokeVaContent: CityHubContent = {
   heroSubheadline:
     'Roanoke — the Star City of the South and hub of Virginia\'s Roanoke Valley — combines Blue Ridge Parkway access, Mill Mountain and McAfee Knob trail networks, Carilion Clinic healthcare employment, and housing costs well below Northern Virginia and Charlottesville in 2026. Washington, D.C., North Carolina, Florida, and Ohio households increasingly choose Roanoke for outdoor recreation, mountain-trail lifestyle, remote work, and retiree downsizing without surrendering regional healthcare access or I-81 corridor connectivity. Our independent directory lets you compare FMCSA-licensed interstate movers serving downtown Roanoke (ZIP 24011) and surrounding Roanoke County, Salem, and valley communities. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Roanoke and the greater Roanoke Valley continue to attract healthcare professionals joining Carilion Clinic, remote workers leaving expensive Mid-Atlantic metros, outdoor enthusiasts prioritizing Appalachian Trail and Blue Ridge Parkway access, and retirees trading Northeast winters for affordable valley living with mountain views. Whether you are downsizing from Florida into a South Roanoke hillside home, accepting a regional healthcare transfer, or relocating from North Carolina into a Cave Spring subdivision, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Roanoke and the greater Roanoke Valley continue to attract healthcare professionals joining Carilion Clinic, remote workers leaving expensive Mid-Atlantic metros, outdoor enthusiasts prioritizing Appalachian Trail and Blue Ridge Parkway access, and retirees trading Northeast winters for affordable valley living with mountain views. Whether you are downsizing from Florida into a South Roanoke hillside home, accepting a regional healthcare transfer, or relocating from North Carolina into a Cave Spring subdivision, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why Roanoke Valley households use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving downtown Roanoke (ZIP 24011), South Roanoke, Grandin Village, Cave Spring, Hollins, Vinton, Salem, and Roanoke County\'s full suburban footprint — with Botetourt County spillover and cross-links to Charlottesville and the Tri-Cities for households still comparing Virginia and East Tennessee mountain corridors. Interstate deliveries into the Roanoke Valley often involve hillside shuttle trucks, Blue Ridge grade-driveway accessorials, and summer inbound peaks along the I-81 Appalachian lane — all legitimate cost drivers that should appear in writing before booking. For statewide context, see our parent guide at /moving-to/virginia.',
   ],
@@ -227,7 +227,7 @@ export const roanokeVaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Roanoke?',
       answer:
-        'From Washington, D.C., North Carolina, Florida, and Ohio origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,600 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, hillside accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Washington, D.C., North Carolina, Florida, and Ohio origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,600 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, hillside accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Roanoke compare to Charlottesville for moving costs?',

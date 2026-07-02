@@ -5,7 +5,7 @@ export const tonawandaNyContent: CityHubContent = {
   h1: 'Moving to Tonawanda, NY: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Tonawanda, NY (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Tonawanda, NY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Tonawanda in Erie County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Scenic Niagara River waterfront near Buffalo, affordable housing, parks and trail networks. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -220,7 +220,7 @@ export const tonawandaNyContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Tonawanda?',
       answer:
-        'From New York, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $9,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, suburban shuttle accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $9,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, suburban shuttle accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Tonawanda compare to Cheektowaga for moving costs?',

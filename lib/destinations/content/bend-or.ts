@@ -5,7 +5,7 @@ export const bendOrContent: CityHubContent = {
   h1: 'Moving to Bend, OR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Bend, OR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Bend, OR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Bend or Deschutes County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const bendOrContent: CityHubContent = {
   heroSubheadline:
     'Bend — Oregon\'s outdoor capital — continues to attract California, Washington, Colorado, and Texas households drawn to Mt. Bachelor skiing, Deschutes River recreation, 300+ days of sunshine, craft beer culture, and a thriving remote-worker community willing to accept a higher cost of living for high-desert lifestyle. Our independent directory lets you compare FMCSA-licensed interstate movers serving Deschutes County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Bend and the greater Deschutes County corridor remain one of the highest-intent inbound moving markets in Central Oregon for 2026. Whether you are relocating from the Bay Area, Seattle, Denver, or Austin, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Bend and the greater Deschutes County corridor remain one of the highest-intent inbound moving markets in Central Oregon for 2026. Whether you are relocating from the Bay Area, Seattle, Denver, or Austin, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Bend, Sisters, Redmond, and surrounding Deschutes County communities. Interstate shipments into Central Oregon often involve Cascade Pass winter weather windows, foothill driveway access limits, new-build subdivision shuttle requirements, and summer peak-season demand — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oregon.',
   ],
@@ -205,7 +205,7 @@ export const bendOrContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Bend?',
       answer:
-        'From California, Washington, Colorado, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,200 to $14,000 for full-service interstate transport in 2026. Bend\'s premium destination status and Central Oregon accessorials sit above Willamette Valley averages. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Washington, Colorado, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,200 to $14,000 for full-service interstate transport in 2026. Bend\'s premium destination status and Central Oregon accessorials sit above Willamette Valley averages. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Oregon?',

@@ -5,7 +5,7 @@ export const arlingtonHeightsIlContent: CityHubContent = {
   h1: 'Moving to Arlington Heights, IL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Arlington Heights, IL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Arlington Heights, IL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Arlington Heights in Cook County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Walkable downtown, Metra transit, vibrant community hub. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -224,7 +224,7 @@ export const arlingtonHeightsIlContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Arlington Heights?',
       answer:
-        'From Wisconsin, Indiana, Michigan, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,600 to $14,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Wisconsin, Indiana, Michigan, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,600 to $14,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Arlington Heights compare to Palatine for moving costs?',

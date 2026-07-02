@@ -30,7 +30,7 @@ export const kentuckyClusterContent: KentuckyClusterContent = {
   h1: 'Moving to Kentucky: Bluegrass, Bourbon & Affordable City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Kentucky (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Kentucky (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Kentucky inbound moving guides for Lexington, Louisville, Bowling Green, Covington, Georgetown, Paducah, and more. Low cost of living, horse country, bourbon culture, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -49,7 +49,7 @@ export const kentuckyClusterContent: KentuckyClusterContent = {
   heroSubheadline:
     'Kentucky ranks among the Southern Midwest\'s most culturally rich inbound states in 2026 — drawing Ohio, Indiana, Illinois, Tennessee, California, Texas, New York, and Florida households to Lexington\'s horse-farm intellectual core, Louisville\'s Highlands and Old Louisville character, Covington\'s Cincinnati riverfront alternative, and Paducah\'s UNESCO Creative City sanctuary. Low cost of living relative to coastal metros, bourbon-and-Bluegrass heritage, and deliberate regional diversity create a relocation calculus that generic Appalachian guides rarely capture at city-level precision. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and ten city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are accepting a UPS Worldport corridor transfer into Louisville, relocating a Cincinnati family across the river into Covington\'s historic districts, downsizing from Chicago into Georgetown\'s Toyota manufacturing stability, or choosing Paducah\'s river-confluence arts culture over Nashville pricing, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are accepting a UPS Worldport corridor transfer into Louisville, relocating a Cincinnati family across the river into Covington\'s historic districts, downsizing from Chicago into Georgetown\'s Toyota manufacturing stability, or choosing Paducah\'s river-confluence arts culture over Nashville pricing, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Kentucky moves involve regional logistics that statewide guides overlook: Louisville Highlands narrow-street shuttle staging, Lexington horse-farm long-driveway access, I-65 Elizabethtown EV plant closing clusters, Northern Kentucky CVG airport corridor traffic, Owensboro riverfront flood-zone planning, and Paducah historic district move-day coordination — factors our city guides surface so you can plan with confidence.',
     'Ten live Kentucky hubs span Bluegrass horse country (Lexington, Georgetown), Louisville metro culture, Northern Kentucky Cincinnati spillover (Covington, Florence), I-65 western growth (Bowling Green, Elizabethtown, Owensboro), and eastern creative corridors (Richmond, Paducah). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

@@ -7,7 +7,7 @@ import { verifyCarrierNumber, type VerifyDotResult } from '@/actions/verify-dot'
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { QuoteModal } from '@/components/quote-modal';
+
 import { DotVerifierResults } from '@/components/verify-dot/dot-verifier-results';
 import { popularDestinationLinks } from '@/lib/verify-dot/seo';
 
@@ -20,8 +20,6 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<VerifyDotResult | null>(null);
-  const [quoteOpen, setQuoteOpen] = useState(false);
-
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -109,10 +107,7 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
 
         {result?.success ? (
           <div className="mt-6 pt-6 border-t">
-            <DotVerifierResults
-              result={result}
-              onGetQuotes={() => setQuoteOpen(true)}
-            />
+            <DotVerifierResults result={result} />
           </div>
         ) : null}
       </Card>
@@ -132,7 +127,6 @@ export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
         </div>
       </section>
 
-      <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} />
     </>
   );
 }

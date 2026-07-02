@@ -6,7 +6,7 @@ import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 export const metadata: Metadata = buildMovePageMetadata({
   title: 'Auto Transport Calculator & Car Shipping Companies | Free Instant Estimates',
   description:
-    'Estimate open and enclosed car shipping costs by ZIP code. Compare FMCSA-licensed auto transport companies, ratings, and services — then request free carrier quotes.',
+    'Estimate open and enclosed car shipping costs by ZIP code. Compare FMCSA-licensed auto transport companies, ratings, and services in our independent directory.',
   path: '/auto-transport',
   keywords: [
     'auto transport calculator',

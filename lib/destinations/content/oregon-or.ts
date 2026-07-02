@@ -28,7 +28,7 @@ export const oregonClusterContent: OregonClusterContent = {
   h1: 'Moving to Oregon: Portland, Willamette Valley & Central Oregon City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Oregon (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Oregon (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Oregon inbound moving guides for Portland, Bend, Hillsboro, Beaverton, Eugene, Corvallis, and Salem. Tech growth, outdoor lifestyle, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -46,7 +46,7 @@ export const oregonClusterContent: OregonClusterContent = {
   heroSubheadline:
     'Oregon ranks among the top Pacific Northwest inbound destinations in 2026 — drawing California, Washington, and Colorado households with outdoor lifestyle access, Silicon Forest tech employment, progressive culture, and diverse climates from the coast through the Willamette Valley to Bend\'s high desert. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Portland\'s creative urban neighborhoods, Hillsboro and Beaverton\'s Silicon Forest suburbs, Bend\'s outdoor capital lifestyle, Eugene and Corvallis university corridors, or affordable Salem state-capital living, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Portland\'s creative urban neighborhoods, Hillsboro and Beaverton\'s Silicon Forest suburbs, Bend\'s outdoor capital lifestyle, Eugene and Corvallis university corridors, or affordable Salem state-capital living, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Oregon moves involve Pacific Northwest logistics that generic guides overlook: rainy-season loading windows, narrow Portland street access and elevator protocols, Cascade Pass winter delays for Central Oregon deliveries, and HOA move-day scheduling in fast-growing Washington County suburbs — factors our city guides surface so you can plan with confidence.',
     'Six live Oregon hubs span the Portland metro (Portland, Hillsboro & Beaverton), the Willamette Valley (Eugene, Corvallis, Salem), and Central Oregon (Bend). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

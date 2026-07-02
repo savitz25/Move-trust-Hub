@@ -202,22 +202,18 @@ export function ExtendedRouteGuide({
           <Truck className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true" />
           <div>
             <h2 className="font-semibold mb-2">
-              {content.ctaHeading ?? 'Get quotes for your interstate move'}
+              {content.ctaHeading ?? 'Plan your interstate move with confidence'}
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
               Build your inventory in our{' '}
               <Link href="/moving-calculator" className="text-primary underline underline-offset-2">
                 moving calculator
               </Link>
-              , compare{' '}
+              , then{' '}
               <Link href="/companies" className="text-primary underline underline-offset-2">
-                FMCSA-licensed interstate carriers
-              </Link>
-              , or{' '}
-              <Link href="/" className="text-primary underline underline-offset-2">
-                request free matched quotes
+                compare FMCSA-licensed interstate carriers
               </Link>{' '}
-              within 24 hours.
+              in our independent directory — no lead fees, no paid placements.
             </p>
           </div>
         </div>

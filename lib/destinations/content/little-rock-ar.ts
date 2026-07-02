@@ -5,7 +5,7 @@ export const littleRockArContent: CityHubContent = {
   h1: 'Moving to Little Rock, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Little Rock, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Little Rock, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Little Rock or Pulaski County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. State capital, riverfront, government, banking, healthcare jobs. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const littleRockArContent: CityHubContent = {
   heroSubheadline:
     'Little Rock anchors central Arkansas as the state capital — a riverfront city where government agencies, banking headquarters, Baptist Health and UAMS healthcare campuses, and a revitalized downtown draw Texas, Tennessee, Missouri, and California households seeking professional employment, Arkansas River Trail recreation, and urban amenities without coastal price tags. Hillcrest bungalows, West Little Rock subdivisions, and North Little Rock river views each offer distinct relocation profiles on the I-30 and I-40 corridors. Our independent directory lets you compare FMCSA-licensed interstate movers serving Little Rock, Pulaski County, and the greater central Arkansas metro. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Little Rock remains one of the highest-intent inbound moving markets in central Arkansas for 2026 — a state-capital employment hub that competes with Northwest Arkansas for professional relocations while offering riverfront lifestyle, historic neighborhood character, and I-40 connectivity to Memphis, Dallas, and beyond. Whether you are relocating from Houston, Dallas, Nashville, Memphis, or Southern California for government transfers, healthcare hiring, banking careers, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Little Rock remains one of the highest-intent inbound moving markets in central Arkansas for 2026 — a state-capital employment hub that competes with Northwest Arkansas for professional relocations while offering riverfront lifestyle, historic neighborhood character, and I-40 connectivity to Memphis, Dallas, and beyond. Whether you are relocating from Houston, Dallas, Nashville, Memphis, or Southern California for government transfers, healthcare hiring, banking careers, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Little Rock, North Little Rock, Sherwood, Maumelle, and surrounding Pulaski County communities along the Arkansas River corridor. Interstate shipments into Little Rock often involve downtown high-rise elevator reservations, riverfront parking constraints, Hillcrest narrow-street access, West Little Rock HOA move-in scheduling, and summer peak-season demand on I-30 and I-40 carrier lanes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -218,7 +218,7 @@ export const littleRockArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Little Rock?',
       answer:
-        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, elevator or long-carry fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, elevator or long-carry fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

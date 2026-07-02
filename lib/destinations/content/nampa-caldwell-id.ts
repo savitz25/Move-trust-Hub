@@ -5,7 +5,7 @@ export const nampaCaldwellIdContent: CityHubContent = {
   h1: 'Moving to Nampa & Caldwell, ID: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Nampa & Caldwell, ID (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Nampa & Caldwell, ID (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Nampa, Caldwell, or the affordable Treasure Valley? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -26,7 +26,7 @@ export const nampaCaldwellIdContent: CityHubContent = {
   heroSubheadline:
     'Nampa and Caldwell offer the Treasure Valley\'s most affordable entry points — drawing California, Washington, Oregon, and Texas households who want Boise metro job access without Ada County housing premiums. Compare FMCSA-licensed interstate movers serving Canyon, Owyhee, and Gem counties, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Nampa and Caldwell anchor Canyon County inbound growth in 2026 as value-focused alternatives to Boise, Meridian, and Eagle. Whether you are commuting on I-84 to Ada County employers, working in Canyon County agriculture or logistics, or retiring into a lower-cost Treasure Valley base, the same research steps apply: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Nampa and Caldwell anchor Canyon County inbound growth in 2026 as value-focused alternatives to Boise, Meridian, and Eagle. Whether you are commuting on I-84 to Ada County employers, working in Canyon County agriculture or logistics, or retiring into a lower-cost Treasure Valley base, the same research steps apply: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence helps you evaluate FMCSA safety ratings and verified reviews without pressure from a single broker or carrier.',
     'This guide covers movers serving Nampa, Caldwell, Middleton, and surrounding Canyon County communities, with context for Owyhee and Gem counties. Interstate deliveries into western Treasure Valley corridors may involve agricultural road traffic, summer heat scheduling preferences, and industrial-district access windows — factors that affect timing and cost if omitted from your quote. See /moving-to/idaho for statewide guides including Boise, Meridian, and Eagle.',
   ],

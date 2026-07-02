@@ -5,7 +5,7 @@ export const venturaOxnardCaContent: CityHubContent = {
   h1: 'Moving to Ventura & Oxnard, CA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Ventura & Oxnard, CA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Ventura & Oxnard, CA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Ventura or Oxnard? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Coastal Ventura County, agriculture, aerospace, between LA and Santa Barbara. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const venturaOxnardCaContent: CityHubContent = {
   heroSubheadline:
     'Ventura and Oxnard anchor coastal Ventura County — a corridor that blends Pacific shoreline, fertile agricultural flatlands, and aerospace heritage between Los Angeles and Santa Barbara. Households priced out of LA County\'s western suburbs find beach-town character in Ventura\'s downtown and pier district, port-logistics employment in Oxnard, and Camarillo-to-Thousand Oaks suburban balance along the 101 freeway. Naval Base Ventura County, strawberry fields, and Channel Islands views define a market that keeps California coastal living accessible without San Diego or Bay Area price tags. Our independent directory lets you compare FMCSA-licensed interstate movers serving Ventura County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Ventura and Oxnard rank among the most strategic affordable-coastal inbound destinations in Southern California for 2026. Whether you are relocating from Los Angeles for housing relief, from the Bay Area for a slower coastal pace, from Texas on an aerospace or logistics transfer, or from the Central Valley for ocean proximity, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Ventura and Oxnard rank among the most strategic affordable-coastal inbound destinations in Southern California for 2026. Whether you are relocating from Los Angeles for housing relief, from the Bay Area for a slower coastal pace, from Texas on an aerospace or logistics transfer, or from the Central Valley for ocean proximity, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Ventura, Oxnard, Camarillo, Thousand Oaks, and surrounding Ventura County communities along Highway 101 and the Pacific Coast Highway corridor. Interstate shipments into Ventura County often involve agricultural-property long carries, coastal fog-season loading windows, port-adjacent industrial deliveries, and LA spillover demand on shared I-5 and 101 lanes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/california.',
   ],
@@ -213,7 +213,7 @@ export const venturaOxnardCaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Ventura or Oxnard?',
       answer:
-        'From Texas, Arizona, intrastate California, and Pacific Northwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $10,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Arizona, intrastate California, and Pacific Northwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $10,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to California?',

@@ -5,7 +5,7 @@ export const richmondKyContent: CityHubContent = {
   h1: 'Moving to Richmond, KY: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Richmond, KY (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Richmond, KY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Richmond in Madison County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. High-growth EKU commuter bargain, Lake Reba lifestyle, Lexington spillover value. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const richmondKyContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Richmond?',
       answer:
-        'From Ohio, Indiana, Illinois, Tennessee, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Lake Reba or EKU corridor accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Ohio, Indiana, Illinois, Tennessee, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Lake Reba or EKU corridor accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Richmond compare to Lexington for moving costs?',

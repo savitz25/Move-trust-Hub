@@ -4,15 +4,15 @@ import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata'
 
 /** Destinations index — high-intent inbound hub landing */
 export const DESTINATIONS_INDEX_TITLE =
-  'Popular Moving Destinations (2026) — City Guides, Costs & Free Quotes';
+  'Popular Moving Destinations (2026) — City Guides, Costs & Trusted Movers';
 export const DESTINATIONS_INDEX_DESCRIPTION =
-  'Explore 480+ inbound moving guides for Myrtle Beach, South Florida, Texas, Arizona, and fast-growing relocation markets. Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours.';
+  'Explore 480+ inbound moving guides for Myrtle Beach, South Florida, Texas, Arizona, and fast-growing relocation markets. Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory — no lead fees.';
 
 /** Refined homepage meta — targets quote + directory + local movers keywords */
 export const HOMEPAGE_SEO_TITLE =
-  'Free Moving Quotes (2026) | Compare FMCSA-Licensed Interstate & Local Movers';
+  'Compare FMCSA-Licensed Movers (2026) | Independent Moving Directory';
 export const HOMEPAGE_SEO_DESCRIPTION =
-  'Compare 25+ FMCSA-licensed interstate movers by attributable reviews, pricing, and safety ratings. Free moving calculator, 480+ city destination guides, and 3,100+ county local mover directories. Get matched with 2–3 quotes in 24 hours — independent directory, no sales pressure.';
+  'Research 25+ FMCSA-licensed interstate movers by attributable reviews, pricing, and safety ratings. Free moving calculator, 480+ city destination guides, and 3,100+ county local mover directories. Independent directory — no lead fees, no paid placements.';
 
 export function buildCityHubMetadata(content: CityHubContent): Metadata {
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;

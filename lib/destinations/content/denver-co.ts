@@ -5,7 +5,7 @@ export const denverCoContent: CityHubContent = {
   h1: 'Moving to Denver, CO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Denver, CO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Denver, CO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Denver? Compare FMCSA-verified movers serving Denver, Jefferson, and Arapahoe counties, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

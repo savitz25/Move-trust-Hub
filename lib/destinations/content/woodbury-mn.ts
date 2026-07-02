@@ -5,7 +5,7 @@ export const woodburyMnContent: CityHubContent = {
   h1: 'Moving to Woodbury, MN: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Woodbury, MN (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Woodbury, MN (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Woodbury in Washington County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. East-metro master-planned powerhouse, Viking Lakes, Tamarack Village retail. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -230,7 +230,7 @@ export const woodburyMnContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Woodbury?',
       answer:
-        'From Wisconsin, Illinois, Iowa, North Dakota, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $12,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Viking Lakes or Woodbury Lakes accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Wisconsin, Illinois, Iowa, North Dakota, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $12,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Viking Lakes or Woodbury Lakes accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Woodbury compare to Eagan for moving costs?',

@@ -28,7 +28,7 @@ export const northCarolinaClusterContent: NorthCarolinaClusterContent = {
   h1: 'Moving to North Carolina: Charlotte, Research Triangle & Coastal City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to North Carolina (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to North Carolina (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore North Carolina inbound moving guides for Charlotte, Raleigh, Durham, Apex, Mooresville, Wilmington, Hickory, and more. Banking, tech, biotech jobs, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -45,7 +45,7 @@ export const northCarolinaClusterContent: NorthCarolinaClusterContent = {
   heroSubheadline:
     'North Carolina ranks among America\'s top growth states in 2026 — driven by Charlotte\'s banking and corporate headquarters corridor, the Research Triangle\'s tech and biotech employment, coastal Wilmington and Leland spillover, and foothills affordability near the Blue Ridge. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Charlotte\'s Uptown finance district and Lake Norman suburbs, Raleigh and Durham\'s Research Triangle tech corridor, fast-growing Wendell Falls mega-developments, or Wilmington\'s coastal master-planned communities, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Charlotte\'s Uptown finance district and Lake Norman suburbs, Raleigh and Durham\'s Research Triangle tech corridor, fast-growing Wendell Falls mega-developments, or Wilmington\'s coastal master-planned communities, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. North Carolina moves involve distinct logistics: Uptown Charlotte high-rise COI requirements, Research Triangle new-build HOA scheduling, Lake Norman peninsula shuttle trucks, coastal hurricane contingency planning, and foothills mountain-access driveways in Hickory — factors our city guides surface so you can plan with confidence.',
     'Seven live North Carolina hubs span Charlotte and Lake Norman (Mooresville), the Research Triangle and Wake County growth corridor (Raleigh & Durham, Wendell & Zebulon, Apex & Fuquay-Varina), and coastal and foothills markets (Wilmington & Leland, Hickory). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

@@ -5,7 +5,7 @@ export const chicagoIlContent: CityHubContent = {
   h1: 'Moving to Chicago, IL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Chicago, IL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Chicago, IL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Chicago? Compare FMCSA-verified movers serving Cook County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Loop, Lincoln Park, Lakeview & South Side guides. Independent directory.',
     keywords: [
@@ -28,7 +28,7 @@ export const chicagoIlContent: CityHubContent = {
   heroSubheadline:
     'Chicago — America\'s third-largest city and the economic anchor of the Midwest — continues to draw California, New York, Wisconsin, and Michigan households in 2026 with diversified finance, tech, healthcare, and logistics employment, world-class lakefront neighborhoods, and urban amenities at price points well below coastal metros. Our independent directory lets you compare FMCSA-licensed interstate movers serving Cook County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Chicago remains one of the highest-intent urban inbound moving markets in the Midwest for 2026. Whether you are relocating from Los Angeles to a South Loop condo, accepting a finance role in the Loop while targeting Lincoln Park walkability, joining Michigan Avenue corridor hiring from New York, or downsizing from a Bay Area home into a Lakeview brownstone, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Chicago remains one of the highest-intent urban inbound moving markets in the Midwest for 2026. Whether you are relocating from Los Angeles to a South Loop condo, accepting a finance role in the Loop while targeting Lincoln Park walkability, joining Michigan Avenue corridor hiring from New York, or downsizing from a Bay Area home into a Lakeview brownstone, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. Chicago moves involve urban logistics that suburban Chicagoland guides overlook: high-rise COI filings and freight elevator windows, narrow brownstone stair carries, winter lake-effect routing on I-90 and I-94, street parking permits, and CTA-adjacent loading zones — all of which affect your final price if they are not disclosed upfront.',
     'This guide covers movers serving the Loop, River North, Lincoln Park, Lakeview, Wicker Park, Logan Square, Hyde Park, and greater Cook County. Interstate deliveries into downtown towers, vintage walk-ups, and lakefront condos frequently require shuttle trucks, long carries, and building management coordination — legitimate cost drivers that should appear in writing before you book. For suburban corridor context, see our parent guide at /moving-to/illinois.',
   ],
@@ -226,7 +226,7 @@ export const chicagoIlContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Chicago?',
       answer:
-        'From California, New York, Wisconsin, and Michigan origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $15,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, high-rise accessorials, season, and origin distance. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, New York, Wisconsin, and Michigan origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $15,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, high-rise accessorials, season, and origin distance. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'What building rules affect Chicago high-rise moves?',

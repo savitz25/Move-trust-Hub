@@ -43,14 +43,10 @@ export default function ResourcesPage() {
         , find{' '}
         <Link href="/local-movers" className="text-primary underline underline-offset-2">local movers by county</Link>
         , or{' '}
-        <Link href="/" className="text-primary underline underline-offset-2">request free quotes</Link>.
+        <Link href="/companies" className="text-primary underline underline-offset-2">compare trusted movers</Link>.
       </p>
 
-      <PageHeroCta
-        quoteLabel="Get Free Moving Quotes"
-        calculatorHref="/moving-calculator"
-        prefilledData={{ notes: 'Resources hub — quote request' }}
-      />
+      <PageHeroCta />
 
       <TrustBadges variant="grid" className="mb-10 mt-8" />
 

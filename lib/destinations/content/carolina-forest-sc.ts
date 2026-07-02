@@ -5,7 +5,7 @@ export const carolinaForestScContent: CityHubContent = {
   h1: 'Moving to Carolina Forest, SC: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Carolina Forest, SC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Carolina Forest, SC (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Carolina Forest? Compare FMCSA-verified movers serving Horry County\'s fastest-growing suburb, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -203,7 +203,7 @@ export const carolinaForestScContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Carolina Forest?',
       answer:
-        'From Northeast and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,100 to $12,300 for full-service interstate transport in 2026–2027. Final price depends on exact volume, packing services, gated-community shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Northeast and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,100 to $12,300 for full-service interstate transport in 2026–2027. Final price depends on exact volume, packing services, gated-community shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'What HOA rules affect Carolina Forest moves?',

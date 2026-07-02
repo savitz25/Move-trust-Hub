@@ -5,7 +5,7 @@ export const rehobothBeachDeContent: CityHubContent = {
   h1: 'Moving to Rehoboth Beach, DE: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Rehoboth Beach, DE (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Rehoboth Beach, DE (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Rehoboth Beach, the Nation\'s Summer Capital? Compare FMCSA-verified movers, estimate Sussex County boardwalk corridor costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Boardwalk district, tax-free shopping, Rehoboth Avenue. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const rehobothBeachDeContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Rehoboth Beach?',
       answer:
-        'From Pennsylvania, New York, New Jersey, Maryland, Virginia, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, boardwalk or North Shores accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Pennsylvania, New York, New Jersey, Maryland, Virginia, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, boardwalk or North Shores accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Rehoboth Beach compare to Lewes for moving costs?',

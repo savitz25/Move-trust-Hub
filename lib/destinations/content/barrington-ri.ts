@@ -5,7 +5,7 @@ export const barringtonRiContent: CityHubContent = {
   h1: 'Moving to Barrington, RI: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Barrington, RI (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Barrington, RI (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Barrington in Bristol County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Prestigious East Bay coastal community, top-rated schools, luxury waterfront living. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -230,7 +230,7 @@ export const barringtonRiContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Barrington?',
       answer:
-        'From New York, New Jersey, Massachusetts, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,400 to $15,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, waterfront or estate accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Massachusetts, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,400 to $15,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, waterfront or estate accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Barrington compare to Newport for moving costs?',

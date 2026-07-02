@@ -5,7 +5,7 @@ export const frederickMdContent: CityHubContent = {
   h1: 'Moving to Frederick, MD: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Frederick, MD (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Frederick, MD (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Frederick in Frederick County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Historic mountain trendsetter, Carroll Creek downtown, Catoctin corridor, Urbana spillover. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -230,7 +230,7 @@ export const frederickMdContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Frederick?',
       answer:
-        'From Virginia, Pennsylvania, New York, California, Texas, Florida, and D.C. spillover origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Carroll Creek or Urbana accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Virginia, Pennsylvania, New York, California, Texas, Florida, and D.C. spillover origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Carroll Creek or Urbana accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Frederick compare to Bethesda for moving costs?',

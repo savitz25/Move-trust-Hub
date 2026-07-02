@@ -5,7 +5,7 @@ export const fairbanksAkContent: CityHubContent = {
   h1: 'Moving to Fairbanks, AK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Fairbanks, AK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Fairbanks, AK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Fairbanks in Fairbanks North Star Borough? Compare FMCSA-verified movers, estimate Alaska Highway interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Interior hub, university, Northern Lights, affordability. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const fairbanksAkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Fairbanks?',
       answer:
-        'From Washington, California, Texas, and Colorado origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $10,500 to $19,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Interior routing surcharges, winter or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Washington, California, Texas, and Colorado origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $10,500 to $19,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Interior routing surcharges, winter or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Fairbanks compare to Anchorage for moving costs?',

@@ -5,7 +5,7 @@ export const austinTxContent: CityHubContent = {
   h1: 'Moving to Austin, TX: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Austin, TX (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Austin, TX (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Austin? Compare FMCSA-verified movers serving Travis County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. South Congress, Domain, and Hill Country neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

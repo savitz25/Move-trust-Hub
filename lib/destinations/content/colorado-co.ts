@@ -28,7 +28,7 @@ export const coloradoClusterContent: ColoradoClusterContent = {
   h1: 'Moving to Colorado: Denver, Front Range & Mountain City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Colorado (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Colorado (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Colorado inbound moving guides for Denver, Colorado Springs, Boulder, Fort Collins, Castle Rock, Parker, and more. Front Range jobs, outdoor lifestyle, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -46,7 +46,7 @@ export const coloradoClusterContent: ColoradoClusterContent = {
   heroSubheadline:
     'Colorado ranks among America\'s top lifestyle-and-job-growth inbound states in 2026 — drawing California, Texas, New York, and Florida households to Denver\'s RiNo and Capitol Hill urban energy, Colorado Springs\' Pikes Peak and military-aerospace corridor, Boulder\'s Flatirons tech culture, and family-friendly south-metro master-plans from Castle Rock to Parker. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are accepting a Denver corporate transfer into LoDo high-rises, relocating a military family to Colorado Springs near Peterson and Schriever, moving a CSU-bound household into Fort Collins\' historic Old Town, or downsizing from California into Pueblo\'s riverwalk affordability, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are accepting a Denver corporate transfer into LoDo high-rises, relocating a military family to Colorado Springs near Peterson and Schriever, moving a CSU-bound household into Fort Collins\' historic Old Town, or downsizing from California into Pueblo\'s riverwalk affordability, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Colorado moves involve Front Range logistics that generic mountain-state guides overlook: I-25 and I-70 corridor congestion, foothills driveway grades, altitude-sensitive scheduling for long carries, winter pass delays on mountain approaches, and HOA move-day rules in Douglas and Arapahoe County master-plans — factors our city guides surface so you can plan with confidence.',
     'Ten live Colorado hubs span the Denver metro (Denver, Arvada, Centennial, Boulder), south-metro growth (Castle Rock, Parker), and northern and southern Front Range corridors (Fort Collins, Longmont, Colorado Springs, Pueblo). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

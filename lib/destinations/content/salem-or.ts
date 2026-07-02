@@ -5,7 +5,7 @@ export const salemOrContent: CityHubContent = {
   h1: 'Moving to Salem, OR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Salem, OR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Salem, OR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Salem or the greater Marion and Polk county corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const salemOrContent: CityHubContent = {
   heroSubheadline:
     'Salem continues to attract California, Washington, Colorado, and Texas households drawn to Oregon\'s state capital, stable government and healthcare employment, central Willamette Valley location between Portland and Eugene, and among the most affordable major-city housing in the Pacific Northwest. Our independent directory lets you compare FMCSA-licensed interstate movers serving Salem, Keizer, West Salem, and Marion and Polk counties. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Salem and the Marion–Polk county corridor rank among the most value-driven inbound markets in Oregon for 2026. Whether you are relocating from California, Washington, Colorado, or Texas for a state-agency role, healthcare employment, manufacturing, or affordable family living within an hour of Portland, Eugene, and the coast, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Salem and the Marion–Polk county corridor rank among the most value-driven inbound markets in Oregon for 2026. Whether you are relocating from California, Washington, Colorado, or Texas for a state-agency role, healthcare employment, manufacturing, or affordable family living within an hour of Portland, Eugene, and the coast, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Salem, Keizer, West Salem across the Willamette River in Polk County, Silverton, Woodburn, and surrounding Marion and Polk communities. Interstate shipments into Salem often involve I-5 corridor scheduling, state-campus and Capitol Mall proximity logistics, rainy-season loading windows, and new-build subdivision shuttle requirements — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oregon.',
   ],
@@ -213,7 +213,7 @@ export const salemOrContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Salem?',
       answer:
-        'From California, Washington, Colorado, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,900 to $12,000 for full-service interstate transport in 2026. Salem\'s central I-5 position often yields competitive pricing relative to Portland or Bend. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Washington, Colorado, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,900 to $12,000 for full-service interstate transport in 2026. Salem\'s central I-5 position often yields competitive pricing relative to Portland or Bend. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Does West Salem fall under Marion or Polk County for movers?',

@@ -5,7 +5,7 @@ export const baltimoreMdContent: CityHubContent = {
   h1: 'Moving to Baltimore, MD — Fells Point & Federal Hill: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Baltimore, MD (2026) — Fells Point & Federal Hill Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Baltimore, MD (2026) — Fells Point & Federal Hill Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Baltimore in Baltimore City? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Urban value play, Fells Point cobblestones, Federal Hill harbor views, Canton rowhouses, Locust Point. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -230,7 +230,7 @@ export const baltimoreMdContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Baltimore?',
       answer:
-        'From Virginia, Pennsylvania, New York, California, Texas, Florida, and D.C. spillover origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $10,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Fells Point or Federal Hill accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Virginia, Pennsylvania, New York, California, Texas, Florida, and D.C. spillover origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $10,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Fells Point or Federal Hill accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Baltimore compare to Bethesda for moving costs?',

@@ -533,8 +533,8 @@ export default function CarrierVsBrokerPage() {
                   scores for any company — regardless of type.
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Request free quotes from 2–3 top-rated options and compare them directly on our
-                  platform before signing anything.
+                  Compare top-rated carriers and brokers side-by-side in our directory before signing
+                  anything — then request written estimates directly from your shortlisted movers.
                 </p>
               </div>
             </div>
@@ -612,13 +612,13 @@ export default function CarrierVsBrokerPage() {
               <Link href="/companies" className="text-primary underline underline-offset-2">
                 directory
               </Link>
-              , compare movers side-by-side, and request competitive quotes — all with no obligation.
+              , and compare movers side-by-side in our independent directory.
             </p>
 
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg" className="shadow-sm">
-                <Link href="/">
-                  Get Free Interstate Quotes
+                <Link href="/companies">
+                  Compare Trusted Movers
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

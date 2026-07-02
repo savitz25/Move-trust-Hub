@@ -86,12 +86,7 @@ export default function VerifyDotPage() {
             directory yet.
           </p>
           <div className="mt-6">
-            <PageHeroCta
-              quoteLabel="Get Free Moving Quotes"
-              calculatorLabel="Estimate My Move"
-              showTrustBadges={false}
-              showMicrocopy={false}
-            />
+            <PageHeroCta showTrustBadges={false} />
           </div>
         </div>
       </div>
@@ -126,18 +121,14 @@ export default function VerifyDotPage() {
 
         <section className="mt-12 rounded-2xl border bg-muted/30 p-6 sm:p-8 text-center">
           <h2 className="text-2xl font-semibold tracking-tight">
-            Verified the carrier? Get competitive quotes next.
+            Verified the carrier? Compare movers next.
           </h2>
           <p className="mt-2 text-muted-foreground max-w-lg mx-auto">
-            Compare FMCSA-licensed interstate movers with real reviews and
-            transparent pricing — free, no obligation.
+            Browse FMCSA-licensed interstate movers with attributable reviews in
+            our independent directory — no lead fees, no paid placements.
           </p>
           <div className="mt-6 flex justify-center">
-            <PageHeroCta
-              quoteLabel="Get Free Quotes Now"
-              showTrustBadges
-              className="justify-center"
-            />
+            <PageHeroCta showTrustBadges className="justify-center" />
           </div>
         </section>
       </div>

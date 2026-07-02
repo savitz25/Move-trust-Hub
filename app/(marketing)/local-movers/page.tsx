@@ -69,11 +69,7 @@ export default function LocalMoversHubPage() {
             .
           </p>
           <div className="mt-6">
-            <PageHeroCta
-              quoteLabel="Get Free Interstate Quotes"
-              calculatorHref="/moving-calculator"
-              prefilledData={{ notes: 'Local movers hub — quote request' }}
-            />
+            <PageHeroCta />
           </div>
           <TrustBadges variant="compact" className="mt-6" />
         </div>

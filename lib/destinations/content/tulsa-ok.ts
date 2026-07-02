@@ -5,7 +5,7 @@ export const tulsaOkContent: CityHubContent = {
   h1: 'Moving to Tulsa, OK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Tulsa, OK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Tulsa, OK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Tulsa or the greater Tulsa metro? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const tulsaOkContent: CityHubContent = {
   heroSubheadline:
     'Tulsa continues to attract Texas, California, Colorado, and Missouri households drawn to its Art Deco skyline, Gathering Place riverfront park, Cain\'s Ballroom music heritage, tree-lined green landscape, and growing reputation as a remote-work haven with affordable housing and a revitalized downtown. Our independent directory lets you compare FMCSA-licensed interstate movers serving Tulsa, Wagoner, and Creek counties. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Tulsa and the greater Tulsa metro rank among the most compelling affordable inbound destinations in the South Central corridor for 2026. Whether you are relocating from Dallas, Los Angeles, Denver, or St. Louis, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Tulsa and the greater Tulsa metro rank among the most compelling affordable inbound destinations in the South Central corridor for 2026. Whether you are relocating from Dallas, Los Angeles, Denver, or St. Louis, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving downtown Tulsa, the Deco District, Brookside, Cherry Street, and surrounding Tulsa County communities, with corridor context for Broken Arrow and Jenks in Wagoner and Creek counties. Interstate shipments into Tulsa often involve historic-building access constraints, Arkansas River corridor logistics, tornado-season contingency planning, and I-44 scheduling between Oklahoma City and northwest Arkansas — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oklahoma.',
   ],
@@ -222,7 +222,7 @@ export const tulsaOkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Tulsa?',
       answer:
-        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,500 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,500 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Oklahoma?',

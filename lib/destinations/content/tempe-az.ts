@@ -5,7 +5,7 @@ export const tempeAzContent: CityHubContent = {
   h1: 'Moving to Tempe, AZ: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Tempe, AZ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Tempe, AZ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Tempe or the ASU corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -26,7 +26,7 @@ export const tempeAzContent: CityHubContent = {
   heroSubheadline:
     'Tempe — home to Arizona State University and one of the Valley\'s most walkable urban cores — draws California, Illinois, Washington, and Texas households seeking Mill Avenue culture, tech-startup energy, light-rail connectivity, and an active desert lifestyle minutes from Phoenix and Scottsdale. Our independent directory lets you compare FMCSA-licensed interstate movers serving Maricopa County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Tempe ranks among the highest-intent inbound destinations in the Phoenix metro for 2026, fueled by ASU enrollment growth, tech-startup spillover from the university\'s innovation corridor, and young professionals priced out of coastal metros. Whether you are relocating from San Jose, Minneapolis, Portland, or Austin to a Mill Avenue loft, ASU-adjacent apartment, or South Tempe single-family home, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Tempe ranks among the highest-intent inbound destinations in the Phoenix metro for 2026, fueled by ASU enrollment growth, tech-startup spillover from the university\'s innovation corridor, and young professionals priced out of coastal metros. Whether you are relocating from San Jose, Minneapolis, Portland, or Austin to a Mill Avenue loft, ASU-adjacent apartment, or South Tempe single-family home, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. Tempe moves involve urban-college-town logistics that generic Arizona guides overlook: August move-in congestion around ASU, downtown parking and loading-zone permits, summer heat limiting crew hours, and HOA scheduling in master-planned South Tempe subdivisions — all legitimate cost drivers that should appear in writing before you book.',
     'This guide covers movers serving downtown Tempe, Mill Avenue, the ASU campus corridor, South Tempe family neighborhoods, and the broader Maricopa County footprint. Interstate shipments into Tempe frequently involve apartment elevator reservations, narrow urban loading zones, and early-morning summer scheduling — factors that affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arizona.',
   ],
@@ -216,7 +216,7 @@ export const tempeAzContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Tempe?',
       answer:
-        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,300 to $11,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, apartment or HOA accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,300 to $11,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, apartment or HOA accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Tempe?',

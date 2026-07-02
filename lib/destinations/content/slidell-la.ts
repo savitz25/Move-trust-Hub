@@ -5,7 +5,7 @@ export const slidellLaContent: CityHubContent = {
   h1: 'Moving to Slidell, LA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Slidell, LA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Slidell, LA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Slidell in St. Tammany Parish? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Peaceful Northshore nature community, Lake Pontchartrain access, New Orleans commute option. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -219,7 +219,7 @@ export const slidellLaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Slidell?',
       answer:
-        'From Texas, Florida, California, and Mississippi origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,000 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, waterfront or bayou accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Florida, California, and Mississippi origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,000 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, waterfront or bayou accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Slidell compare to Mandeville for moving costs?',

@@ -5,7 +5,7 @@ export const foleyAlContent: CityHubContent = {
   h1: 'Moving to Foley, AL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Foley, AL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Foley, AL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Foley or Baldwin County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Fastest-growing coastal retail hub, Gulf beach proximity, Tanger Outlets corridor. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const foleyAlContent: CityHubContent = {
   heroSubheadline:
     'Foley anchors Baldwin County\'s fastest-growing inland corridor — a retail and services hub minutes from Gulf Shores and Orange Beach with Tanger Outlets, OWA entertainment district, and explosive percentage growth drawing Texas, Florida, Georgia, and Midwest households seeking Gulf Coast lifestyle without direct beachfront insurance premiums. Master-planned subdivisions along Highway 59 and the Foley Beach Express expand daily as remote workers and retirees trade urban congestion for Southern hospitality and 20-minute beach access. Our independent directory lets you compare FMCSA-licensed interstate movers serving Foley, Elberta, and the greater Baldwin County corridor. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Foley ranks among Alabama\'s highest-percentage inbound growth destinations for 2026 — whether you are relocating from Houston, Atlanta, Nashville, Chicago, or a Florida Panhandle metro chasing Baldwin County\'s retail corridor and Gulf beach proximity, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Foley ranks among Alabama\'s highest-percentage inbound growth destinations for 2026 — whether you are relocating from Houston, Atlanta, Nashville, Chicago, or a Florida Panhandle metro chasing Baldwin County\'s retail corridor and Gulf beach proximity, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Foley, Elberta, Magnolia Springs spillover, and surrounding Baldwin County communities, with corridor context for Gulf Shores and Orange Beach deliveries on shared Highway 59 and Foley Beach Express lanes. Interstate shipments into Foley often involve new-build subdivision shuttle requirements, summer peak-season demand overlapping hurricane contingency windows, and OWA-district traffic that affects delivery scheduling — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/alabama.',
   ],
@@ -206,7 +206,7 @@ export const foleyAlContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Foley?',
       answer:
-        'From Texas, Florida, Georgia, and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, season, and hurricane-season scheduling. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Florida, Georgia, and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,400 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, season, and hurricane-season scheduling. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does hurricane season affect moves to Foley?',

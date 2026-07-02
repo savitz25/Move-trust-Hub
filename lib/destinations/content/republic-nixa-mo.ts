@@ -5,7 +5,7 @@ export const republicNixaMoContent: CityHubContent = {
   h1: 'Moving to Republic & Nixa, MO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Republic & Nixa, MO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Republic & Nixa, MO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Republic or Nixa in Christian County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Explosive southwest Ozark sprawl, new-build subdivisions, Springfield proximity, Ozark hillsides. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const republicNixaMoContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Republic or Nixa?',
       answer:
-        'From Arkansas, Texas, Kansas, Illinois, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Ozark hillside or new-build accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Arkansas, Texas, Kansas, Illinois, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Ozark hillside or new-build accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Republic/Nixa compare to Springfield for moving costs?',

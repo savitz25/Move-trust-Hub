@@ -5,7 +5,7 @@ export const elkoNvContent: CityHubContent = {
   h1: 'Moving to Elko, NV: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Elko, NV (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Elko, NV (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Elko in Northeastern Nevada? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Mountainous rural workhorse, gold mining corridor, Jarbidge wilderness proximity. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -220,7 +220,7 @@ export const elkoNvContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Elko?',
       answer:
-        'From California, Arizona, Texas, Utah, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $11,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, ranch-country or mining-transfer accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Arizona, Texas, Utah, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $11,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, ranch-country or mining-transfer accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Elko compare to Reno for moving costs?',

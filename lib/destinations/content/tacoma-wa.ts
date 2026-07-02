@@ -5,7 +5,7 @@ export const tacomaWaContent: CityHubContent = {
   h1: 'Moving to Tacoma, WA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Tacoma, WA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Tacoma, WA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Tacoma in Pierce County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Gritty-chic maritime, Stadium District, Proctor, North End, Ruston Way. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const tacomaWaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Tacoma?',
       answer:
-        'From California, Oregon, Idaho, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $11,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, North End or Ruston Way accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Oregon, Idaho, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $11,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, North End or Ruston Way accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Tacoma compare to Seattle for moving costs?',

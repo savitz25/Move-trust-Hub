@@ -5,7 +5,7 @@ export const omahaNeContent: CityHubContent = {
   h1: 'Moving to Omaha, NE: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Omaha, NE (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Omaha, NE (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Omaha in Douglas County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Economic powerhouse, Henry Doorly Zoo, College World Series, Old Market, Dundee, Aksarben. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const omahaNeContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Omaha?',
       answer:
-        'From Iowa, Kansas, South Dakota, Colorado, Texas, California, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or Aksarben accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Iowa, Kansas, South Dakota, Colorado, Texas, California, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or Aksarben accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Omaha compare to Papillion for moving costs?',

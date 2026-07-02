@@ -5,7 +5,7 @@ export const marysvilleWaContent: CityHubContent = {
   h1: 'Moving to Marysville, WA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Marysville, WA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Marysville, WA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Marysville in Snohomish County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. North-Sound expansion outlet, Smokey Point, Getchell, Lakewood. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -220,7 +220,7 @@ export const marysvilleWaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Marysville?',
       answer:
-        'From California, Oregon, Idaho, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $13,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Smokey Point or Lakewood accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Oregon, Idaho, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $13,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Smokey Point or Lakewood accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Marysville compare to Shoreline or Everett for moving costs?',

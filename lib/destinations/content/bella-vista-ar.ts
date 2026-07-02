@@ -5,7 +5,7 @@ export const bellaVistaArContent: CityHubContent = {
   h1: 'Moving to Bella Vista, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Bella Vista, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Bella Vista, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Bella Vista or Benton County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Master-planned golf, lakes, trails, retiree and family appeal. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const bellaVistaArContent: CityHubContent = {
   heroSubheadline:
     'Bella Vista is Northwest Arkansas\'s master-planned recreation destination — seven championship golf courses, seven lakes, 50+ miles of hiking and biking trails, and a community designed for both active retirees and families who want Ozark beauty minutes from Bentonville corporate jobs. Texas, California, Tennessee, and Missouri households relocate here for lakefront living, low crime, and a lifestyle that blends outdoor recreation with I-49 access to the full NWA employment corridor. Our independent directory lets you compare FMCSA-licensed interstate movers serving Bella Vista, Bentonville, and surrounding Benton County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Bella Vista remains one of the most distinctive inbound moving markets in Northwest Arkansas for 2026 — a purpose-built recreational community that attracts retirees, remote workers, and families seeking lake-and-trail living without sacrificing Benton County school access and corporate commute options. Whether you are relocating from Dallas, Houston, Nashville, Kansas City, or Southern California for lifestyle quality, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Bella Vista remains one of the most distinctive inbound moving markets in Northwest Arkansas for 2026 — a purpose-built recreational community that attracts retirees, remote workers, and families seeking lake-and-trail living without sacrificing Benton County school access and corporate commute options. Whether you are relocating from Dallas, Houston, Nashville, Kansas City, or Southern California for lifestyle quality, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Bella Vista, the POA-managed golf-and-lake neighborhoods, Lake Windsor and Loch Lomond areas, and the Highway 71 and US-71B corridors connecting to Bentonville and Rogers. Interstate shipments into Bella Vista often involve POA gate access, lake-area narrow roads, golf-course community HOA rules, and summer peak-season demand on shared NWA carrier lanes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -218,7 +218,7 @@ export const bellaVistaArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Bella Vista?',
       answer:
-        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, lake-area shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, lake-area shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

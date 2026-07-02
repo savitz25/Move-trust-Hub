@@ -5,7 +5,7 @@ export const goodyearSurpriseAzContent: CityHubContent = {
   h1: 'Moving to Goodyear & Surprise, AZ: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Goodyear & Surprise, AZ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Goodyear & Surprise, AZ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Goodyear, Surprise, or the West Valley growth corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const goodyearSurpriseAzContent: CityHubContent = {
   heroSubheadline:
     'Goodyear and Surprise anchor the West Valley\'s corporate and family growth corridor in 2026 — drawing California, Illinois, Washington, and Texas households to new-construction value, regional parks, spring-training culture, and Phoenix metro employment without East Valley price tags. Our independent directory lets you compare FMCSA-licensed interstate movers serving Maricopa County\'s western cities. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Goodyear and Surprise remain among Arizona\'s highest-intent West Valley inbound markets for 2026. Whether you are relocating from Los Angeles into an Estrella Mountain foothills community, transferring from Dallas into a Surprise master-planned subdivision near the Loop 303 tech corridor, or moving from Portland for remote-work flexibility with access to Goodyear Ballpark and regional park networks, the fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Goodyear and Surprise remain among Arizona\'s highest-intent West Valley inbound markets for 2026. Whether you are relocating from Los Angeles into an Estrella Mountain foothills community, transferring from Dallas into a Surprise master-planned subdivision near the Loop 303 tech corridor, or moving from Portland for remote-work flexibility with access to Goodyear Ballpark and regional park networks, the fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence helps you evaluate FMCSA safety ratings and verified reviews without pressure from a single broker or carrier.',
     'This guide covers movers serving Goodyear, Surprise, Litchfield Park, El Mirage, and surrounding Maricopa County West Valley communities. Interstate deliveries into the corridor may involve HOA-governed move-day scheduling, summer heat loading windows, shuttle trucks in newer Surprise subdivisions, and Loop 303 rush-hour staging constraints — factors that affect timing and cost if omitted from your quote. See /moving-to/arizona for statewide guides including Buckeye, Phoenix, and Gilbert.',
   ],

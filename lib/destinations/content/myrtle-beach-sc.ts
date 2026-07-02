@@ -5,7 +5,7 @@ export const myrtleBeachScContent: CityHubContent = {
   h1: 'Moving to Myrtle Beach, SC: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Myrtle Beach, SC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Myrtle Beach, SC (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Myrtle Beach or the greater Wilmington, NC area? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Neighborhood logistics for Carolina Forest, oceanfront towers, and gated communities. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -26,7 +26,7 @@ export const myrtleBeachScContent: CityHubContent = {
   heroSubheadline:
     'The Grand Strand continues to attract retirees, remote workers, and families seeking coastal living with lower taxes and year-round sunshine. Our independent directory lets you compare FMCSA-licensed interstate movers serving Horry County, SC and neighboring Brunswick & New Hanover Counties, NC (Wilmington area). Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Myrtle Beach and the surrounding Grand Strand corridor remain one of the highest-intent inbound moving markets in the United States for 2026. Whether you are relocating from the Northeast, Midwest, or another Sunbelt state, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Myrtle Beach and the surrounding Grand Strand corridor remain one of the highest-intent inbound moving markets in the United States for 2026. Whether you are relocating from the Northeast, Midwest, or another Sunbelt state, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Myrtle Beach and the full Grand Strand — including our eight hyper-local city hubs for North Myrtle Beach, Surfside Beach, Atlantic Beach, Garden City Beach, Little River, Murrells Inlet, Socastee, and Carolina Forest — plus the greater Wilmington, NC area across the state line. Interstate shipments into coastal Carolina often involve condo elevators, gated-community shuttle trucks, and seasonal demand swings — all of which affect your final price if they are not disclosed upfront.',
   ],
@@ -242,7 +242,7 @@ export const myrtleBeachScContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Myrtle Beach?',
       answer:
-        'From Northeast and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,200 to $12,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Northeast and Midwest origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,200 to $12,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to South Carolina?',

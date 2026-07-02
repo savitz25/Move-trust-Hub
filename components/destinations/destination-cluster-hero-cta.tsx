@@ -16,14 +16,12 @@ export function DestinationClusterHeroCta({ clusterSlug, clusterLabel }: Props) 
 
   return (
     <PageHeroCta
-      quoteLabel={`Get Free Quotes to ${clusterLabel}`}
-      calculatorHref={calculatorHref}
-      prefilledData={{
-        toZip: market?.defaultToZip,
-        destinationSlug: clusterSlug,
-        marketPriority: market?.priority,
-        notes: `Inbound destination cluster: ${clusterLabel}`,
-      }}
+      primaryLabel={`Estimate Your Move to ${clusterLabel}`}
+      primaryHref={calculatorHref}
+      secondaryLabel="Compare Trusted Movers"
+      secondaryHref="/companies"
+      tertiaryLabel="Browse Local Movers"
+      tertiaryHref="/local-movers"
     />
   );
 }

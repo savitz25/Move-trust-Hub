@@ -5,7 +5,7 @@ export const gorhamMeContent: CityHubContent = {
   h1: 'Moving to Gorham, ME: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Gorham, ME (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Gorham, ME (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Gorham in Cumberland County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Suburban boom town, strong schools, University of Southern Maine campus. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -240,7 +240,7 @@ export const gorhamMeContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Gorham?',
       answer:
-        'From Massachusetts, New Hampshire, New York, Rhode Island, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,200 to $13,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, cul-de-sac or new-build accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Massachusetts, New Hampshire, New York, Rhode Island, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,200 to $13,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, cul-de-sac or new-build accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Gorham compare to Portland for moving costs?',

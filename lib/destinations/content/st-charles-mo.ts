@@ -5,7 +5,7 @@ export const stCharlesMoContent: CityHubContent = {
   h1: 'Moving to St. Charles, MO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to St. Charles, MO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to St. Charles, MO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to St. Charles on the Missouri River? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Historic Main Street, Katy Trail access, French colonial heritage, First Missouri State Capitol. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const stCharlesMoContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to St. Charles?',
       answer:
-        'From Illinois, Kansas, Texas, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Historic Main Street or Katy Trail accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Illinois, Kansas, Texas, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Historic Main Street or Katy Trail accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does St. Charles compare to O\'Fallon for moving costs?',

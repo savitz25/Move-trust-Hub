@@ -10,7 +10,7 @@ export const knoxvilleTnContent: CityHubContent = {
   h1: 'Moving to Knoxville, TN: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Knoxville, TN (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Knoxville, TN (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Knoxville? Compare FMCSA-verified movers serving Knox and Anderson counties, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

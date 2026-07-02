@@ -5,7 +5,7 @@ export const castleRockCoContent: CityHubContent = {
   h1: 'Moving to Castle Rock, CO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Castle Rock, CO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Castle Rock, CO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Castle Rock? Compare FMCSA-verified movers serving Douglas County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Master-planned communities, The Meadows, family-safe suburb on I-25. Independent directory.',
     keywords: [

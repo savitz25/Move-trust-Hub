@@ -5,7 +5,7 @@ export const smyrnaGaContent: CityHubContent = {
   h1: 'Moving to Smyrna, GA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Smyrna, GA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Smyrna, GA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Smyrna in Cobb County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Jonquil City charm, Truist Park convenience, retail growth, Braves corridor. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -220,7 +220,7 @@ export const smyrnaGaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Smyrna?',
       answer:
-        'From Florida, New York, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $12,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Market Village or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Florida, New York, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $12,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Market Village or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Smyrna compare to Atlanta for moving costs?',

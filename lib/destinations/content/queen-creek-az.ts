@@ -5,7 +5,7 @@ export const queenCreekAzContent: CityHubContent = {
   h1: 'Moving to Queen Creek, AZ: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Queen Creek, AZ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Queen Creek, AZ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Queen Creek or the fast-growing East Valley? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const queenCreekAzContent: CityHubContent = {
   heroSubheadline:
     'Queen Creek — one of the fastest-growing family destinations in the East Valley — draws California, Illinois, Washington, and Texas households with upscale suburban neighborhoods, strong community identity, excellent schools, and a small-town feel minutes from Chandler\'s Silicon Desert employers and Gilbert\'s heritage district charm. Our independent directory lets you compare FMCSA-licensed interstate movers serving Maricopa County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Queen Creek ranks among the highest-growth inbound suburbs in Maricopa County for 2026, attracting families who want newer construction, larger lots, and a tight-knit community atmosphere without sacrificing East Valley employment access. Whether you are relocating from Los Angeles, Minneapolis, Seattle, or Dallas to a Sossaman Estates home, a Hastings Farms subdivision, or a San Tan Valley corridor property, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Queen Creek ranks among the highest-growth inbound suburbs in Maricopa County for 2026, attracting families who want newer construction, larger lots, and a tight-knit community atmosphere without sacrificing East Valley employment access. Whether you are relocating from Los Angeles, Minneapolis, Seattle, or Dallas to a Sossaman Estates home, a Hastings Farms subdivision, or a San Tan Valley corridor property, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. Queen Creek moves involve fast-growth suburban logistics that generic Arizona guides overlook: new-build streets that prohibit 53-foot trailers, active construction zones near expanding corridors, summer heat limiting crew hours, and HOA move-day scheduling across master-planned communities — all legitimate cost drivers that should appear in writing before you book.',
     'This guide covers movers serving Queen Creek proper, San Tan Valley corridor communities, Schnepf Farms area neighborhoods, and the broader Maricopa County East Valley footprint. Interstate shipments into Queen Creek frequently involve shuttle trucks, HOA move-in certificates, and early-morning summer scheduling — factors that affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arizona.',
   ],
@@ -222,7 +222,7 @@ export const queenCreekAzContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Queen Creek?',
       answer:
-        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,200 to $11,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, shuttle trucks, HOA accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,200 to $11,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, shuttle trucks, HOA accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arizona?',

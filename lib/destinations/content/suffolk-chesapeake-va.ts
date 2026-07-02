@@ -5,7 +5,7 @@ export const suffolkChesapeakeVaContent: CityHubContent = {
   h1: 'Moving to Suffolk & Chesapeake, VA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Suffolk & Chesapeake, VA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Suffolk & Chesapeake, VA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Suffolk or Chesapeake in Hampton Roads? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Fastest-growing western Tidewater, newer housing, port & naval jobs. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const suffolkChesapeakeVaContent: CityHubContent = {
   heroSubheadline:
     'Suffolk and Chesapeake anchor Hampton Roads\' fastest-growing residential corridor — western Tidewater subdivisions, port and naval employment adjacency, and newer master-planned communities drawing Northeast, Mid-Atlantic, and military households seeking coastal Virginia lifestyle without Virginia Beach oceanfront premiums. Suffolk\'s expansive rural-suburban footprint (ZIP 23434 and surrounding western Tidewater) and Chesapeake\'s established suburban corridors along the Elizabeth River and Great Dismal Swamp fringe combine port-logistics jobs, defense-contractor demand, and family-friendly housing inventory that posts among the region\'s strongest net migration figures for 2026. Our independent directory lets you compare FMCSA-licensed interstate movers serving Suffolk and Chesapeake. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Suffolk and Chesapeake rank among Hampton Roads\' highest-intent inbound destinations for 2026 — whether you are PCSing to Naval Station Norfolk with a housing allowance targeting western Tidewater subdivisions, relocating from New York or New Jersey into a new-build Chesapeake community, accepting a port-logistics or defense-contractor role, or retiring from Pennsylvania into Suffolk\'s quieter acreage neighborhoods minutes from coastal amenities, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Suffolk and Chesapeake rank among Hampton Roads\' highest-intent inbound destinations for 2026 — whether you are PCSing to Naval Station Norfolk with a housing allowance targeting western Tidewater subdivisions, relocating from New York or New Jersey into a new-build Chesapeake community, accepting a port-logistics or defense-contractor role, or retiring from Pennsylvania into Suffolk\'s quieter acreage neighborhoods minutes from coastal amenities, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why Hampton Roads households use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Suffolk (ZIP 23434), North Suffolk, Chesapeake\'s Greenbrier and Great Bridge corridors, Western Branch, and surrounding Hampton Roads communities — with cross-links to Richmond, Northern Virginia, and other Virginia hubs for households still comparing corridors. Interstate deliveries into Suffolk and Chesapeake often involve bridge-tunnel routing through the Hampton Roads harbor, rural Suffolk long-driveway shuttle requirements, new-construction HOA move-in certificates, and summer military PCS season compressing carrier schedules — all legitimate cost drivers that should appear in writing before booking. For statewide context, see our parent guide at /moving-to/virginia.',
   ],
@@ -235,7 +235,7 @@ export const suffolkChesapeakeVaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Suffolk or Chesapeake?',
       answer:
-        'From New York, New Jersey, Pennsylvania, Maryland, and North Carolina origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $11,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, rural shuttle fees, military PCS timing, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Pennsylvania, Maryland, and North Carolina origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $11,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, rural shuttle fees, military PCS timing, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Suffolk compare to Virginia Beach for moving logistics?',

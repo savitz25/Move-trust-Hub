@@ -7,7 +7,7 @@ import { Shield, ArrowRight, Clock, DollarSign, Star, Truck, Headphones } from '
 import { FaqSection } from '@/components/seo/faq-section';
 import { homepageFaqItems } from '@/lib/seo/schemas';
 import { TrustBadges } from '@/components/trust/trust-badges';
-import { HomeQuoteButton } from '@/components/home/home-quote-button';
+
 import { HomeBelowFoldLoader } from '@/components/home/home-below-fold-loader';
 
 export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
@@ -18,43 +18,42 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium mb-5 sm:mb-6 max-w-full">
               <Truck className="h-4 w-4 shrink-0" />
-              <span className="truncate sm:whitespace-normal">FREE QUOTES • LICENSED MOVERS • 24HR RESPONSE</span>
+              <span className="truncate sm:whitespace-normal">INDEPENDENT DIRECTORY · NO LEAD FEES · NO PAID PLACEMENTS</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tighter mb-5 sm:mb-6 leading-[1.15]">
               Compare Trusted Interstate Movers<br className="hidden sm:block" />
-              <span className="sm:hidden"> </span>&amp; Get Free Long-Distance Quotes
+              <span className="sm:hidden"> </span>&amp; Research Your Move with Confidence
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-7 sm:mb-8 leading-relaxed">
-              Compare real reviews,{' '}
+              An unbiased directory for researching{' '}
               <Link href="/resources/fmcsa" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
-                FMCSA licensing data
+                FMCSA-licensed movers
               </Link>
-              , and pricing from America&apos;s top{' '}
-              <Link href="/companies" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
-                long-distance moving companies
-              </Link>
-              . Use our{' '}
+              , attributable reviews, and move costs. Use our{' '}
               <Link href="/moving-calculator" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
                 free moving calculator
               </Link>{' '}
-              first, then get matched with the best options — completely free.
+              and{' '}
+              <Link href="/companies" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
+                mover directory
+              </Link>{' '}
+              — we never sell your information to carriers.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 w-full max-w-md sm:max-w-none mx-auto">
-              <HomeQuoteButton
-                size="lg"
-                className="gap-2 text-base px-8 sm:px-10 h-12 sm:h-14 text-base sm:text-lg w-full sm:w-auto min-h-[48px]"
-              >
-                Get My Free Quotes <ArrowRight className="h-5 w-5" />
-              </HomeQuoteButton>
               <Link href="/moving-calculator" className="w-full sm:w-auto">
+                <Button size="lg" className="gap-2 text-base px-8 sm:px-10 h-12 sm:h-14 w-full min-h-[48px]">
+                  Use Free Moving Calculator <ArrowRight className="h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/companies" className="w-full sm:w-auto">
                 <Button size="lg" variant="outline" className="gap-2 text-base px-8 h-12 sm:h-14 w-full min-h-[48px]">
-                  Estimate My Move First
+                  Compare Trusted Movers
                 </Button>
               </Link>
             </div>
-            <p className="text-sm text-muted-foreground">Takes less than 60 seconds. No obligation.</p>
+            <p className="text-sm text-muted-foreground font-medium">Independent directory — not affiliated with listed movers.</p>
           </div>
         </div>
       </section>
@@ -74,18 +73,18 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
           {[
             {
               step: '01',
-              title: 'Tell Us About Your Move',
+              title: 'Estimate Your Move Size',
               desc: (
                 <>
-                  Use our <Link href="/moving-calculator" className="text-primary underline underline-offset-2">free moving calculator</Link> or quick form to share your from/to locations, date, and home size.
+                  Use our <Link href="/moving-calculator" className="text-primary underline underline-offset-2">free moving calculator</Link> to build a room-by-room inventory and learn your cubic footage before contacting movers.
                 </>
               ),
               icon: Truck,
             },
             {
               step: '02',
-              title: 'Compare Personalized Quotes',
-              desc: 'Receive 2-3 competitive quotes from top-rated, licensed interstate movers within 24 hours.',
+              title: 'Research Licensed Carriers',
+              desc: 'Browse FMCSA-verified interstate movers, filter by reputation, and verify USDOT numbers yourself before booking.',
               icon: Star,
             },
             {
@@ -119,9 +118,9 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { icon: DollarSign, title: 'Save Money', desc: 'Compare multiple quotes side-by-side so you never overpay.' },
-              { icon: Shield, title: 'Move with Confidence', desc: 'Every mover is FMCSA licensed with verified reviews and low complaint ratios.' },
-              { icon: Clock, title: 'Save Time', desc: 'Skip the phone calls. Get matched with the right movers instantly.' },
+              { icon: DollarSign, title: 'Plan Smarter', desc: 'Estimate move size and costs before you talk to any carrier — no sales pressure.' },
+              { icon: Shield, title: 'Verify Licensing', desc: 'Every directory listing includes USDOT data you can cross-check on FMCSA.gov.' },
+              { icon: Clock, title: 'Research Faster', desc: 'Compare reputation, services, and reviews in one independent directory.' },
               { icon: Headphones, title: 'Dedicated Support', desc: 'Our team is here to answer questions before, during, and after your move.' },
             ].map((benefit, i) => (
               <Card key={i} className="p-6 border border-border/50 shadow-trust">
@@ -251,13 +250,24 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
       </div>
 
       <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">Ready to start your move?</h2>
-        <p className="text-base sm:text-xl text-muted-foreground mb-8 max-w-md mx-auto">Join thousands of families who found their perfect interstate mover through us.</p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4">Ready to research your move?</h2>
+        <p className="text-base sm:text-xl text-muted-foreground mb-8 max-w-md mx-auto">
+          Start with our free tools — no lead forms, no paid placements, no obligation.
+        </p>
 
-        <HomeQuoteButton size="lg" className="text-base sm:text-lg px-10 sm:px-12 h-12 sm:h-14 min-h-[48px] w-full sm:w-auto max-w-sm sm:max-w-none mx-auto">
-          Get Your Free Quotes Now
-        </HomeQuoteButton>
-        <p className="text-xs text-muted-foreground mt-4">Takes 60 seconds • Completely free • No spam</p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link href="/moving-calculator">
+            <Button size="lg" className="text-base sm:text-lg px-10 sm:px-12 h-12 sm:h-14 min-h-[48px] w-full sm:w-auto gap-2">
+              Use Free Moving Calculator <ArrowRight className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/companies">
+            <Button size="lg" variant="outline" className="text-base sm:text-lg px-10 h-12 sm:h-14 min-h-[48px] w-full sm:w-auto">
+              Compare Trusted Movers
+            </Button>
+          </Link>
+        </div>
+        <p className="text-xs text-muted-foreground mt-4 font-medium">Independent Directory · No Lead Fees · No Paid Placements</p>
       </section>
     </div>
   );

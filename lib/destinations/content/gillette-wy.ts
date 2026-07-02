@@ -5,7 +5,7 @@ export const gilletteWyContent: CityHubContent = {
   h1: 'Moving to Gillette, WY: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Gillette, WY (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Gillette, WY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Gillette in Campbell County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Powder River Basin industrial workhorse, Gillette Avenue downtown, Country Club Estates, Sleepy Hollow. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const gilletteWyContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Gillette?',
       answer:
-        'From Colorado, Montana, Utah, Idaho, Texas, California, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Country Club Estates or Sleepy Hollow accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Colorado, Montana, Utah, Idaho, Texas, California, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Country Club Estates or Sleepy Hollow accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Gillette compare to Casper for moving costs?',

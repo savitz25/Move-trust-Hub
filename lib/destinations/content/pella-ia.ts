@@ -5,7 +5,7 @@ export const pellaIaContent: CityHubContent = {
   h1: 'Moving to Pella, IA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Pella, IA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Pella, IA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Pella in Marion County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Dutch heritage treasure, Tulip Time festival, Vermeer and Pella Windows corridor, Molengracht canals. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const pellaIaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Pella?',
       answer:
-        'From Illinois, Minnesota, Wisconsin, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Molengracht or Vermeer corridor accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Illinois, Minnesota, Wisconsin, California, Texas, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,500 to $9,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Molengracht or Vermeer corridor accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Pella compare to Des Moines for moving costs?',

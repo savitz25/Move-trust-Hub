@@ -480,7 +480,11 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             </p>
           )}
           <div className="mt-6">
-            <CountyPageHeroCta countyLabel={countyLabel} stateName={state.name} />
+            <CountyPageHeroCta
+              countyLabel={countyLabel}
+              stateName={state.name}
+              stateSlug={state.slug}
+            />
           </div>
           <TrustToolsBar className="mt-4" />
         </header>
@@ -734,7 +738,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           </p>
         </section>
 
-        <LocalMoversCta countyName={countyLabel} />
+        <LocalMoversCta countyName={countyLabel} stateSlug={state.slug} />
       </main>
     </>
   );

@@ -28,7 +28,7 @@ export const oklahomaClusterContent: OklahomaClusterContent = {
   h1: 'Moving to Oklahoma: OKC, Tulsa Metro & College Town City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Oklahoma (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Oklahoma (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Oklahoma inbound moving guides for Oklahoma City, Tulsa, Edmond, Norman, Broken Arrow, Jenks, and Stillwater. Affordable living, energy & aerospace jobs, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -46,7 +46,7 @@ export const oklahomaClusterContent: OklahomaClusterContent = {
   heroSubheadline:
     'Oklahoma ranks among the most affordable high-growth inbound destinations in the South Central and Midwest corridors for 2026 — drawing Texas, California, Colorado, and Missouri households with low cost of living, energy and aerospace employment, MAPS-funded urban revitalization in OKC, Tulsa\'s arts-and-culture renaissance, and top-ranked suburban school districts. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Oklahoma City\'s booming metro with Bricktown and Scissortail Park, Tulsa\'s Gathering Place and Art Deco skyline, Edmond\'s top-ranked schools, Norman\'s University of Oklahoma campus energy, Broken Arrow\'s Rose District affordability, Jenks\' upscale Riverwalk lifestyle, or Stillwater\'s practical OSU college-town stability, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Oklahoma City\'s booming metro with Bricktown and Scissortail Park, Tulsa\'s Gathering Place and Art Deco skyline, Edmond\'s top-ranked schools, Norman\'s University of Oklahoma campus energy, Broken Arrow\'s Rose District affordability, Jenks\' upscale Riverwalk lifestyle, or Stillwater\'s practical OSU college-town stability, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Oklahoma moves involve South Central logistics that generic guides overlook: tornado-season contingency planning, summer heat loading windows, new-build subdivision shuttle requirements in fast-growing suburbs, and I-35 / I-44 corridor scheduling between OKC and Tulsa — factors our city guides surface so you can plan with confidence.',
     'Seven live Oklahoma hubs span the OKC metro (Oklahoma City, Edmond, Norman), the Tulsa metro (Tulsa, Broken Arrow, Jenks), and the Stillwater college corridor. Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

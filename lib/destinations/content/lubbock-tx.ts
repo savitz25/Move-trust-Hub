@@ -5,7 +5,7 @@ export const lubbockTxContent: CityHubContent = {
   h1: 'Moving to Lubbock, TX: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Lubbock, TX (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Lubbock, TX (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Lubbock? Compare FMCSA-verified movers serving Lubbock County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

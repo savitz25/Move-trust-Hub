@@ -5,7 +5,7 @@ export const edmondOkContent: CityHubContent = {
   h1: 'Moving to Edmond, OK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Edmond, OK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Edmond, OK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Edmond or the north OKC metro? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const edmondOkContent: CityHubContent = {
   heroSubheadline:
     'Edmond — consistently ranked among Oklahoma\'s safest communities with top-rated public schools, family-oriented neighborhoods, and a walkable downtown filled with public art and local dining — draws Texas, California, Colorado, and Missouri households seeking OKC metro employment without inner-city trade-offs. Our independent directory lets you compare FMCSA-licensed interstate movers serving Edmond, north Oklahoma City, and Oklahoma County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Edmond and the north OKC corridor rank among the highest-intent suburban relocation destinations in the South Central United States for 2026. Whether you are relocating from Dallas, Houston, Denver, Kansas City, or coastal metros for aerospace, energy, healthcare, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Edmond and the north OKC corridor rank among the highest-intent suburban relocation destinations in the South Central United States for 2026. Whether you are relocating from Dallas, Houston, Denver, Kansas City, or coastal metros for aerospace, energy, healthcare, or remote-work flexibility, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Edmond, Deer Creek, Oak Tree, Coffee Creek, and surrounding Oklahoma County communities north of the state capital. Interstate shipments into Edmond frequently involve HOA-governed subdivision access, new-build streets that restrict full-size trailers, summer peak-season demand on the I-35 corridor, and tornado-season contingency planning — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oklahoma.',
   ],
@@ -213,7 +213,7 @@ export const edmondOkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Edmond?',
       answer:
-        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,000 to $9,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, HOA accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,000 to $9,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, HOA accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Edmond?',

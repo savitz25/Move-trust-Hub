@@ -5,7 +5,7 @@ export const sandpointIdContent: CityHubContent = {
   h1: 'Moving to Sandpoint, ID: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Sandpoint, ID (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Sandpoint, ID (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Sandpoint or the greater Bonner County Panhandle? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const sandpointIdContent: CityHubContent = {
   heroSubheadline:
     'Sandpoint continues to attract outdoor enthusiasts, remote workers, and retirees seeking small-town Panhandle charm on Lake Pend Oreille with Schweitzer Mountain ski access, boating, and hiking at their doorstep. Our independent directory lets you compare FMCSA-licensed interstate movers serving Bonner and Boundary counties. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Sandpoint and the surrounding Bonner County corridor rank among the most distinctive inbound lifestyle markets in northern Idaho for 2026. Whether you are relocating from California, Washington, Oregon, or Montana, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Sandpoint and the surrounding Bonner County corridor rank among the most distinctive inbound lifestyle markets in northern Idaho for 2026. Whether you are relocating from California, Washington, Oregon, or Montana, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Sandpoint, Ponderay, Dover, Priest River, and lakefront communities across Bonner and Boundary counties. Interstate shipments into the northern Panhandle often involve mountain terrain shuttle trucks, seasonal ski-resort traffic, and winter pass delays on US-95 and I-90 — all of which affect your final price if they are not disclosed upfront.',
   ],
@@ -205,7 +205,7 @@ export const sandpointIdContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Sandpoint?',
       answer:
-        'From California, Washington, Oregon, and Montana origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,100 to $13,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, mountain shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Washington, Oregon, and Montana origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,100 to $13,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, mountain shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Idaho?',

@@ -5,7 +5,7 @@ export const elmiraNyContent: CityHubContent = {
   h1: 'Moving to Elmira, NY: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Elmira, NY (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Elmira, NY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Elmira in Chemung County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Highly affordable Southern Tier living, among New York\'s lowest home prices, four-season value. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -220,7 +220,7 @@ export const elmiraNyContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Elmira?',
       answer:
-        'From New York, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, rural driveway accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,800 to $9,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, rural driveway accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Elmira compare to Glens Falls for moving costs?',

@@ -5,7 +5,7 @@ export const fortSmithArContent: CityHubContent = {
   h1: 'Moving to Fort Smith, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Fort Smith, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Fort Smith, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Fort Smith or Sebastian County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Border-city logistics, historic downtown revival, Chaffee Crossing growth. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const fortSmithArContent: CityHubContent = {
   heroSubheadline:
     'Fort Smith anchors western Arkansas as a border-city logistics and manufacturing hub — with historic downtown revival along Garrison Avenue, Chaffee Crossing redevelopment, and I-40 access to Tulsa, Dallas, and Little Rock — at housing costs well below Northwest Arkansas premiums. Texas, Oklahoma, Missouri, and Tennessee households relocate here for industrial employment, healthcare expansion, and a walkable riverfront core without Oklahoma City or Dallas metro price curves. Our independent directory lets you compare FMCSA-licensed interstate movers serving Sebastian County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Fort Smith and the greater Sebastian County corridor remain one of the highest-intent inbound moving markets in western Arkansas for 2026. Whether you are relocating from Dallas, Oklahoma City, Tulsa, Kansas City, Memphis, or Nashville for logistics transfers, manufacturing hiring, healthcare expansion, or border-state affordability, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Fort Smith and the greater Sebastian County corridor remain one of the highest-intent inbound moving markets in western Arkansas for 2026. Whether you are relocating from Dallas, Oklahoma City, Tulsa, Kansas City, Memphis, or Nashville for logistics transfers, manufacturing hiring, healthcare expansion, or border-state affordability, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Fort Smith, Van Buren, Greenwood, Barling, Chaffee Crossing, and surrounding Sebastian County communities along the Arkansas River and I-40 western corridor. Interstate shipments into Fort Smith often involve historic downtown narrow-street access, Chaffee Crossing new-build shuttle requirements, Arkansas River bridge traffic windows, and summer peak-season demand on shared South Central carrier lanes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -213,7 +213,7 @@ export const fortSmithArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Fort Smith?',
       answer:
-        'From Texas, Oklahoma, Missouri, and Tennessee origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,200 to $8,200 for full-service interstate transport in 2026. Oklahoma and north Texas origins often fall toward the lower end due to shorter I-40 distances. Final price depends on exact volume, packing services, shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, Oklahoma, Missouri, and Tennessee origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,200 to $8,200 for full-service interstate transport in 2026. Oklahoma and north Texas origins often fall toward the lower end due to shorter I-40 distances. Final price depends on exact volume, packing services, shuttle or long-carry fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

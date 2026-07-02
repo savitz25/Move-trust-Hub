@@ -5,7 +5,7 @@ export const pompanoBeachFlContent: CityHubContent = {
   h1: 'Moving to Pompano Beach, FL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Pompano Beach, FL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Pompano Beach, FL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Pompano Beach? Compare FMCSA-verified movers serving Broward and Palm Beach counties, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -26,7 +26,7 @@ export const pompanoBeachFlContent: CityHubContent = {
   heroSubheadline:
     'Pompano Beach offers an affordable Broward County beach lifestyle north of Fort Lauderdale — with a historic fishing pier, boating communities near the Hillsboro Inlet, and spillover demand from families comparing Palm Beach County prices. Our independent directory lets you compare FMCSA-licensed interstate movers and vetted Broward and Palm Beach County local carriers. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Whether you are arriving from the Northeast with a retiree household, relocating a family from the Midwest, or moving a waterfront condo with boating equipment, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Whether you are arriving from the Northeast with a retiree household, relocating a family from the Midwest, or moving a waterfront condo with boating equipment, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Pompano Beach moves span the Broward–Palm Beach county line, involving beach-access logistics, snowbird-season scheduling, and boating-community handling that should be disclosed on your written estimate.',
     'This guide covers movers serving Pompano Beach, Lighthouse Point, Hillsboro Beach, and the corridor between Deerfield Beach and Fort Lauderdale. Waterfront properties and fishing-community neighborhoods frequently require shuttle trucks, dock-path coordination, and HOA move windows that affect final pricing.',
   ],

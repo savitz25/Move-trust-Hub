@@ -5,7 +5,7 @@ export const massapequaParkNyContent: CityHubContent = {
   h1: 'Moving to Massapequa Park, NY: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Massapequa Park, NY (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Massapequa Park, NY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Massapequa Park in Nassau County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Quiet high-earning LI village, excellent schools, LIRR to Manhattan. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -215,7 +215,7 @@ export const massapequaParkNyContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Massapequa Park?',
       answer:
-        'From New Jersey, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,200 to $13,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, parkway routing accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New Jersey, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,200 to $13,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, parkway routing accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Massapequa Park compare to Hicksville for moving costs?',

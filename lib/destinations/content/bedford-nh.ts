@@ -5,7 +5,7 @@ export const bedfordNhContent: CityHubContent = {
   h1: 'Moving to Bedford, NH: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Bedford, NH (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Bedford, NH (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Bedford in Hillsborough County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Affluent suburb, top-rated schools, Manchester–Boston corridor value, no state income tax. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -214,7 +214,7 @@ export const bedfordNhContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Bedford?',
       answer:
-        'From Massachusetts, New York, Connecticut, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,400 to $13,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, cul-de-sac or estate accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Massachusetts, New York, Connecticut, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,400 to $13,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, cul-de-sac or estate accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Bedford compare to Lexington for moving costs?',

@@ -5,7 +5,7 @@ export const centennialCoContent: CityHubContent = {
   h1: 'Moving to Centennial, CO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Centennial, CO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Centennial, CO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Centennial in Arapahoe County? Compare FMCSA-verified movers serving the Denver Tech Center corridor, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

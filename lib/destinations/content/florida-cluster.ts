@@ -28,7 +28,7 @@ export const floridaClusterContent: FloridaClusterContent = {
   h1: 'Moving to Florida: South Florida, Gulf Coast & Central Florida City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Florida (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Florida (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Florida inbound moving guides for Miami, Fort Lauderdale, Boca Raton, Jacksonville, Naples, Sarasota, St. Augustine, Ocala, Wildwood, and more. FMCSA-verified movers, free calculator, and transparent cost data. Independent directory.',
     keywords: [
@@ -46,7 +46,7 @@ export const floridaClusterContent: FloridaClusterContent = {
   heroSubheadline:
     'Florida remains the highest-volume Sunbelt inbound corridor in 2026 — drawing retirees, remote workers, and families from the Northeast, Midwest, and California. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting the Miami-Dade and Broward metro, the Palm Beach County coastal corridor, northeast Florida around Jacksonville, or Gulf Coast markets like Sarasota and Naples, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting the Miami-Dade and Broward metro, the Palm Beach County coastal corridor, northeast Florida around Jacksonville, or Gulf Coast markets like Sarasota and Naples, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Florida moves involve unique logistics: snowbird-season scheduling, hurricane contingency planning, condo COI requirements, and gated-community shuttle trucks. Our city guides surface these factors so you can plan with confidence.',
     'Fourteen live Florida hubs now span three corridors: Miami-Dade and Broward (Miami through Pompano Beach), Palm Beach County (Boca Raton through Deerfield Beach), and Central & North Florida (Jacksonville through Wildwood). Browse each city guide below for 2026 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

@@ -5,7 +5,7 @@ export const worcesterMaContent: CityHubContent = {
   h1: 'Moving to Worcester, MA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Worcester, MA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Worcester, MA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Worcester in Worcester County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Revitalizing hub, colleges, healthcare, affordable vs Boston. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const worcesterMaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Worcester?',
       answer:
-        'From New York, New Jersey, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,200 for full-service interstate transport in 2026 — generally below comparable Cambridge or Brookline delivery from the same origin. Final price depends on exact volume, packing services, loft or triple-decker accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,200 for full-service interstate transport in 2026 — generally below comparable Cambridge or Brookline delivery from the same origin. Final price depends on exact volume, packing services, loft or triple-decker accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Worcester compare to Cambridge for moving costs?',

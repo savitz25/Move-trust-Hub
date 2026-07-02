@@ -5,7 +5,7 @@ export const tucsonMaranaAzContent: CityHubContent = {
   h1: 'Moving to Tucson & Marana, AZ: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Tucson & Marana, AZ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Tucson & Marana, AZ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Tucson, Marana, or greater Pima County? Compare FMCSA-verified movers, estimate costs with our free calculator (ZIP 85701 prefill), and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const tucsonMaranaAzContent: CityHubContent = {
   heroSubheadline:
     'Tucson and Marana continue to attract California, Illinois, Washington, and Texas households drawn to southern Arizona\'s relaxed pace, Santa Catalina mountain backdrops, a cooler climate than Phoenix, lower cost of living, and the University of Arizona\'s university-town energy — with fast-growing Marana adding northwest-suburb options along the I-10 corridor. Our independent directory lets you compare FMCSA-licensed interstate movers serving Pima County. Use our free calculator below (prefilled for ZIP 85701), then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Tucson and Marana remain one of the highest-intent inbound moving markets in southern Arizona for 2026. Whether you are relocating from Los Angeles, Chicago, Seattle, or Dallas, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Tucson and Marana remain one of the highest-intent inbound moving markets in southern Arizona for 2026. Whether you are relocating from Los Angeles, Chicago, Seattle, or Dallas, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Tucson, Marana, Oro Valley, Catalina Foothills, and surrounding Pima County communities. Interstate shipments into southern Arizona often involve summer heat loading restrictions, monsoon-season delivery contingency windows, foothills driveway access, and northwest-corridor new-build shuttle requirements — all of which affect your final price if they are not disclosed upfront. For statewide context and Phoenix metro comparisons, see our parent guide at /moving-to/arizona.',
   ],
@@ -216,7 +216,7 @@ export const tucsonMaranaAzContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Tucson?',
       answer:
-        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,500 to $10,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, summer heat accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Illinois, Washington, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,500 to $10,100 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, summer heat accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Tucson compare to Phoenix for movers and lifestyle?',

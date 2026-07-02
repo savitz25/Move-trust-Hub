@@ -29,7 +29,7 @@ export const connecticutClusterContent: ConnecticutClusterContent = {
   h1: 'Moving to Connecticut: Gold Coast, Fairfield County & Shoreline City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Connecticut (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Connecticut (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Connecticut inbound moving guides for Greenwich, Stamford, Westport, Fairfield, West Hartford, Mystic, and more. Gold Coast luxury, NYC commuter rail, shoreline lifestyle, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -47,7 +47,7 @@ export const connecticutClusterContent: ConnecticutClusterContent = {
   heroSubheadline:
     'Connecticut ranks among the Northeast\'s premier commuter-and-coastal inbound states in 2026 — drawing New York, New Jersey, Massachusetts, California, and Florida households to Greenwich\'s historic estates, Stamford\'s Harbor Point corporate towers, Westport\'s Compo Beach chic, West Hartford\'s walkable Blue Back Square, and Mystic\'s maritime seaport charm. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are accepting a Stamford finance role with Metro-North Grand Central access, relocating a family from Manhattan into West Hartford\'s top-rated school districts, downsizing from Boston into Norwalk\'s SoNo arts district, or choosing Mystic\'s relaxed shoreline over Hamptons pricing, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are accepting a Stamford finance role with Metro-North Grand Central access, relocating a family from Manhattan into West Hartford\'s top-rated school districts, downsizing from Boston into Norwalk\'s SoNo arts district, or choosing Mystic\'s relaxed shoreline over Hamptons pricing, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Connecticut moves involve Northeast logistics that generic New England guides overlook: Metro-North corridor closing clusters, Gold Coast estate driveway access, coastal flood-zone delivery planning, historic town-center narrow streets, and I-95/I-84 interchange congestion — factors our city guides surface so you can plan with confidence.',
     'Ten live Connecticut hubs span the Gold Coast (Greenwich, Stamford, Westport), Fairfield County coastal living (Fairfield, Norwalk, Milford), Hartford Valley suburbs (West Hartford, Glastonbury, Danbury), and eastern shoreline (Mystic). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

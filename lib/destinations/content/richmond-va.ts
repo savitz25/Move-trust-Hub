@@ -5,7 +5,7 @@ export const richmondVaContent: CityHubContent = {
   h1: 'Moving to Richmond, VA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Richmond, VA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Richmond, VA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Richmond, Virginia\'s state capital? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Revitalized downtown, arts and food scene, healthcare and finance employment. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const richmondVaContent: CityHubContent = {
   heroSubheadline:
     'Richmond — Virginia\'s state capital and a Central Virginia economic anchor — combines a revitalized downtown along the James River, nationally recognized arts and restaurant corridors from the Fan District to Scott\'s Addition, and diversified healthcare, finance, and state-government employment that draws households from New York, New Jersey, Florida, North Carolina, and closer Northern Virginia at housing costs below the D.C. orbit. VCU\'s urban campus, Fortune 500 regional headquarters, and I-95 and I-64 interchange logistics make ZIP 23219 one of the Mid-Atlantic\'s strongest inbound city markets for 2026. Our independent directory lets you compare FMCSA-licensed interstate movers serving Richmond city and the greater metro footprint. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Richmond and the greater Central Virginia metro continue to attract young professionals, healthcare workers, state-government employees, remote workers, and families relocating from the Northeast, Florida, North Carolina, and Northern Virginia spillover corridors. Whether you are accepting a finance or healthcare role in the West End, moving into a Shockoe Bottom loft near the riverfront, or trading a D.C. commute for a Fan District rowhouse with walkable Carytown access, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Richmond and the greater Central Virginia metro continue to attract young professionals, healthcare workers, state-government employees, remote workers, and families relocating from the Northeast, Florida, North Carolina, and Northern Virginia spillover corridors. Whether you are accepting a finance or healthcare role in the West End, moving into a Shockoe Bottom loft near the riverfront, or trading a D.C. commute for a Fan District rowhouse with walkable Carytown access, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why Richmond households use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving downtown Richmond (ZIP 23219), the Fan and Museum Districts, Carytown, Scott\'s Addition, Shockoe Bottom, Church Hill, Short Pump, and the city\'s full urban and suburban footprint — with Henrico and Chesterfield county spillover and cross-links to Fredericksburg, other Virginia hubs, and North Carolina and South Carolina corridors for households still comparing Mid-Atlantic and Southeast relocation markets. Interstate deliveries into Richmond often involve historic-rowhouse shuttle trucks, downtown loft elevator reservations, and legislative-session turnover that compresses spring schedules — all legitimate cost drivers that should appear in writing before booking. For statewide context, see our parent guide at /moving-to/virginia.',
   ],
@@ -229,7 +229,7 @@ export const richmondVaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Richmond?',
       answer:
-        'From New York, New Jersey, Florida, North Carolina, and Northern Virginia origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $10,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or historic-district accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Florida, North Carolina, and Northern Virginia origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $10,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or historic-district accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Richmond compare to Charlotte for moving costs?',

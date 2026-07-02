@@ -5,7 +5,7 @@ export const auburnOpelikaAlContent: CityHubContent = {
   h1: 'Moving to Auburn & Opelika, AL: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Auburn & Opelika, AL (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Auburn & Opelika, AL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Auburn, Opelika, or Lee County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Auburn University, manufacturing growth, strong schools. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const auburnOpelikaAlContent: CityHubContent = {
   heroSubheadline:
     'Auburn and Opelika form one of Alabama\'s most dynamic dual-city corridors — Auburn University\'s SEC campus energy, Opelika\'s revitalized historic downtown, Kia and supplier manufacturing growth along the I-85 spine, and Lee County schools that consistently outperform peer university metros draw Georgia, Florida, Texas, Tennessee, and California households seeking college-town culture with manufacturing-job stability. Tiger Walk traditions, Toomer\'s Corner weekends, and Opelika\'s Rail District breweries give the corridor a lifestyle blend rare for a market this size. Our independent directory lets you compare FMCSA-licensed interstate movers serving Auburn, Opelika, and greater Lee County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Auburn, Opelika, and Lee County rank among the fastest-growing university-manufacturing inbound markets in East Alabama for 2026. Whether you are relocating from Georgia, Florida, Texas, Tennessee, or California for Auburn University faculty roles, Kia supplier engineering, Opelika healthcare employment, or a deliberately affordable community with strong schools and SEC sports culture, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Auburn, Opelika, and Lee County rank among the fastest-growing university-manufacturing inbound markets in East Alabama for 2026. Whether you are relocating from Georgia, Florida, Texas, Tennessee, or California for Auburn University faculty roles, Kia supplier engineering, Opelika healthcare employment, or a deliberately affordable community with strong schools and SEC sports culture, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Auburn, Opelika, Auburn University campus-adjacent neighborhoods, and surrounding Lee County communities including Notasulga and Smiths Station spillover along the I-85 corridor. Interstate shipments into the Auburn–Opelika market often involve August academic-calendar turnover peaks, summer humidity loading windows, new-build subdivision shuttle requirements, and I-85 routing from Atlanta and Montgomery origins — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/alabama.',
   ],
@@ -212,7 +212,7 @@ export const auburnOpelikaAlContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Auburn or Opelika?',
       answer:
-        'From Georgia, Florida, Texas, Tennessee, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $8,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, campus or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Georgia, Florida, Texas, Tennessee, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,400 to $8,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, campus or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Alabama?',

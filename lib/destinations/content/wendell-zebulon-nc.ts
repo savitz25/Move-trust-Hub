@@ -5,7 +5,7 @@ export const wendellZebulonNcContent: CityHubContent = {
   h1: 'Moving to Wendell & Zebulon, NC: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Wendell & Zebulon, NC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Wendell & Zebulon, NC (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Wendell or Zebulon? Compare FMCSA-verified movers serving Wake and Johnston counties, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

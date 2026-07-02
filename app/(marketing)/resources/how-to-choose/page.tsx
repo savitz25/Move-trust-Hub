@@ -29,7 +29,7 @@ export default function HowToChoose() {
       <div className="not-prose bg-muted/50 border rounded-lg p-4 my-6">
         <p className="font-medium mb-2">Quick Win:</p>
         <p className="text-sm">
-          Use our <Link href="/moving-calculator" className="text-primary underline">Smart Move Estimator</Link> first to understand your volume and weight, then request free quotes from pre-vetted companies.
+          Use our <Link href="/moving-calculator" className="text-primary underline">Smart Move Estimator</Link> first to understand your volume and weight, then compare pre-vetted companies in our <Link href="/companies" className="text-primary underline">mover directory</Link>.
         </p>
       </div>
 
@@ -133,7 +133,7 @@ export default function HowToChoose() {
         <li><Link href="/moving-calculator">Our moving calculator</Link> helps you estimate volume and weight accurately</li>
         <li>Our <Link href="/companies">directory</Link> lets you filter by reputation score, price range, and services</li>
         <li><Link href="/local-movers">Local mover guides by county</Link> help you find vetted companies for in-state and short-distance moves</li>
-        <li>Request free quotes from 2–3 pre-screened companies directly through our site</li>
+        <li>Shortlist 2–3 pre-screened companies from our directory and request written estimates directly</li>
       </ul>
 
       <h2>Final Checklist Before Booking</h2>

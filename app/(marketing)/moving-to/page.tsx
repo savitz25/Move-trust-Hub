@@ -39,9 +39,8 @@ export default function MovingToIndexPage() {
             and free quote matching from FMCSA-licensed carriers.
           </p>
           <PageHeroCta
-            quoteLabel="Get Free Moving Quotes"
-            calculatorHref="/moving-calculator"
-            prefilledData={{ notes: 'Inbound destination index — quote request' }}
+            tertiaryLabel="Explore Destination Guides"
+            tertiaryHref="/moving-to"
           />
         </div>
 

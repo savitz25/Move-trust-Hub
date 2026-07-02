@@ -312,7 +312,7 @@ export function buildCountyFaqItems(
   return [
     {
       question: `How much do local movers cost in ${countyLabel}, ${stateName}?`,
-      answer: `Local moves in ${countyLabel} typically range from ${costs.studioRange} for studio or one-bedroom apartments to ${costs.familyRange} for larger homes. ${costs.note} Use our moving calculator for interstate estimates or request free quotes from vetted movers.`,
+      answer: `Local moves in ${countyLabel} typically range from ${costs.studioRange} for studio or one-bedroom apartments to ${costs.familyRange} for larger homes. ${costs.note} Use our moving calculator for interstate estimates or compare vetted movers in our directory.`,
     },
     {
       question: `What are the best local movers in ${countyLabel}?`,

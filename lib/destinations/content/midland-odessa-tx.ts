@@ -5,7 +5,7 @@ export const midlandOdessaTxContent: CityHubContent = {
   h1: 'Moving to Midland–Odessa, TX: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Midland–Odessa, TX (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Midland–Odessa, TX (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Midland or Odessa? Compare FMCSA-verified movers serving Midland and Ector counties, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [

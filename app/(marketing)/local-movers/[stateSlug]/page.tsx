@@ -200,9 +200,8 @@ export default async function LocalMoversStatePage({ params }: Props) {
           </p>
           <div className="mt-6">
             <PageHeroCta
-              quoteLabel="Get Free Interstate Quotes"
-              calculatorHref="/moving-calculator"
-              prefilledData={{ notes: `Local movers state hub: ${state.name}` }}
+              tertiaryLabel={`Browse ${state.name} Counties`}
+              tertiaryHref={`/local-movers/${state.slug}`}
             />
           </div>
           <TrustBadges variant="compact" className="mt-6" />
@@ -257,7 +256,7 @@ export default async function LocalMoversStatePage({ params }: Props) {
           countyLabel={state.name}
         />
 
-        <LocalMoversCta countyName={state.name} />
+        <LocalMoversCta countyName={state.name} stateSlug={state.slug} />
       </div>
     </>
   );

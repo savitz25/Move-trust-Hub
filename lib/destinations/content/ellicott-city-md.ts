@@ -5,7 +5,7 @@ export const ellicottCityMdContent: CityHubContent = {
   h1: 'Moving to Ellicott City, MD: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Ellicott City, MD (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Ellicott City, MD (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Ellicott City in Howard County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Historic family haven, Old Ellicott City charm, Patapsco valley scenery, Turf Valley estates. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const ellicottCityMdContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Ellicott City?',
       answer:
-        'From Virginia, Pennsylvania, New York, California, Texas, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $11,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Old Ellicott City or Turf Valley accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Virginia, Pennsylvania, New York, California, Texas, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $11,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Old Ellicott City or Turf Valley accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Ellicott City compare to Columbia for moving costs?',

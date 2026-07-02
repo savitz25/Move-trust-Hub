@@ -5,7 +5,7 @@ export const bangorMeContent: CityHubContent = {
   h1: 'Moving to Bangor, ME: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Bangor, ME (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Bangor, ME (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Bangor in Penobscot County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Central Maine hub, affordable housing, nature access, stable economy. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -240,7 +240,7 @@ export const bangorMeContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Bangor?',
       answer:
-        'From Massachusetts, New York, New Hampshire, Vermont, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, walk-up or driveway accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Massachusetts, New York, New Hampshire, Vermont, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, walk-up or driveway accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Bangor compare to Portland for moving costs?',

@@ -5,7 +5,7 @@ export const modestoCaContent: CityHubContent = {
   h1: 'Moving to Modesto, CA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Modesto, CA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Modesto, CA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Modesto or Stanislaus County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Agribusiness hub, gateway between Bay Area and Yosemite. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const modestoCaContent: CityHubContent = {
   heroSubheadline:
     'Modesto anchors Stanislaus County at the geographic sweet spot between Bay Area spillover affordability and Yosemite gateway recreation — an agribusiness center where almond orchards, dairy operations, and Gallo wine heritage meet growing suburban demand in Ceres, Riverbank, and Turlock. Households from San Jose, Oakland, and Los Angeles trade coastal housing premiums for Highway 99 corridor value, CSU Stanislaus employment, and weekend drives to Sierra foothills and Yosemite National Park. Our independent directory lets you compare FMCSA-licensed interstate and intrastate movers serving Stanislaus County and the central San Joaquin Valley. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Modesto and its Turlock–Ceres suburbs rank among the most balanced Central Valley inbound destinations for 2026 — affordable enough to attract Bay Area spillover buyers yet positioned on Highway 99 between Sacramento, Stockton, and Fresno logistics corridors. Whether you are relocating intrastate from San Jose or Los Angeles on a family budget shift, or moving interstate from Texas, Arizona, Nevada, or the Pacific Northwest, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov (and California PUC authority for pure intrastate shipments), and compare multiple quotes on equal cubic footage before you sign.',
+    'Modesto and its Turlock–Ceres suburbs rank among the most balanced Central Valley inbound destinations for 2026 — affordable enough to attract Bay Area spillover buyers yet positioned on Highway 99 between Sacramento, Stockton, and Fresno logistics corridors. Whether you are relocating intrastate from San Jose or Los Angeles on a family budget shift, or moving interstate from Texas, Arizona, Nevada, or the Pacific Northwest, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov (and California PUC authority for pure intrastate shipments), and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Modesto, Turlock, Ceres, Riverbank, and surrounding Stanislaus County communities, with corridor context for San Joaquin and Merced counties on shared Highway 99 lanes. Shipments into the Modesto metro often involve agribusiness-property long carries, Altamont Pass congestion from Bay Area origins, summer Central Valley heat loading windows, and Yosemite-adjacent seasonal access considerations — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/california.',
   ],
@@ -219,7 +219,7 @@ export const modestoCaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Modesto?',
       answer:
-        'From Bay Area and Los Angeles intrastate origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $4,700 to $7,400 for full-service transport in 2026. From Texas, Arizona, and out-of-state origins, expect $6,400 to $9,000. Final price depends on exact volume, packing services, agribusiness accessorials, shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Bay Area and Los Angeles intrastate origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $4,700 to $7,400 for full-service transport in 2026. From Texas, Arizona, and out-of-state origins, expect $6,400 to $9,000. Final price depends on exact volume, packing services, agribusiness accessorials, shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Modesto\'s Yosemite gateway location affect moving?',

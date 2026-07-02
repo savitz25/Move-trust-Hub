@@ -30,7 +30,7 @@ export const marylandClusterContent: MarylandClusterContent = {
   h1: 'Moving to Maryland: D.C. Suburbs, Chesapeake Bay & City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Maryland (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Maryland (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Maryland inbound moving guides for Bethesda, Columbia, Annapolis, Frederick, Baltimore, Rockville, and more. D.C. suburbs, elite schools, Chesapeake lifestyle, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -49,7 +49,7 @@ export const marylandClusterContent: MarylandClusterContent = {
   heroSubheadline:
     'Maryland ranks among the East Coast\'s most strategically positioned inbound states in 2026 — drawing Virginia, Pennsylvania, New York, California, Texas, and Florida households to Bethesda\'s NIH-and-Metro corridor, Columbia\'s master-planned Howard County benchmark, Annapolis\'s Naval Academy waterfront, and Baltimore\'s Fells Point urban value. D.C. suburb employment density, Chesapeake Bay lifestyle, and nationally ranked school districts create a relocation calculus that generic Mid-Atlantic guides rarely capture at city-level precision. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and ten city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are accepting an NIH corridor transfer into Bethesda Row walkability, relocating a Virginia family into Columbia\'s Merriweather district schools, downsizing from Manhattan into Annapolis sailing culture, or choosing Baltimore\'s Federal Hill rowhouses over D.C. rent premiums, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are accepting an NIH corridor transfer into Bethesda Row walkability, relocating a Virginia family into Columbia\'s Merriweather district schools, downsizing from Manhattan into Annapolis sailing culture, or choosing Baltimore\'s Federal Hill rowhouses over D.C. rent premiums, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Maryland moves involve East Coast logistics that statewide guides overlook: Metro Red Line COI protocols, Fells Point cobblestone shuttle staging, Severna Park waterfront long carries, Old Ellicott City flood-zone planning, I-270 biotech corridor closing clusters, and Eastern Shore bridge traffic — factors our city guides surface so you can plan with confidence.',
     'Ten live Maryland hubs span Montgomery County Metro corridors (Bethesda, Rockville, Silver Spring), Howard County excellence (Columbia, Ellicott City), Chesapeake and Annapolis waterfront (Annapolis, Severna Park), Baltimore urban neighborhoods (Fells Point, Federal Hill, Canton), and Frederick mountain trendsetting plus Eastern Shore arts culture (Frederick, Easton). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

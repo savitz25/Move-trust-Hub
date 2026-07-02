@@ -19,10 +19,9 @@ import type { VerifyDotResult } from '@/actions/verify-dot';
 
 type Props = {
   result: VerifyDotResult;
-  onGetQuotes: () => void;
 };
 
-export function DotVerifierResults({ result, onGetQuotes }: Props) {
+export function DotVerifierResults({ result }: Props) {
   if (!result.success) return null;
 
   const preview = result.preview;
@@ -42,8 +41,8 @@ export function DotVerifierResults({ result, onGetQuotes }: Props) {
         </p>
         <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
           Below is what Move Trust Hub has on file for{' '}
-          <strong>{result.displayNumber}</strong>. You can compare quotes or
-          open the official FMCSA record when you&apos;re ready.
+          <strong>{result.displayNumber}</strong>. Compare this carrier in our
+          directory or open the official FMCSA record when you&apos;re ready.
         </p>
       </div>
     </div>
@@ -181,13 +180,14 @@ export function DotVerifierResults({ result, onGetQuotes }: Props) {
         {inDirectory || hasPreview ? (
           <>
             <Button
-              type="button"
+              asChild
               size="lg"
               className="gap-2 min-h-[48px] flex-1"
-              onClick={onGetQuotes}
             >
-              Get Free Moving Quotes
-              <ArrowRight className="h-4 w-4" />
+              <Link href={result.directorySlug ? `/companies/${result.directorySlug}` : '/companies'}>
+                Compare Trusted Movers
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </Button>
             {saferUrl ? (
               <Button

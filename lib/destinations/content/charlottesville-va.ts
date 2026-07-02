@@ -5,7 +5,7 @@ export const charlottesvilleVaContent: CityHubContent = {
   h1: 'Moving to Charlottesville, VA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Charlottesville, VA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Charlottesville, VA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Charlottesville? Compare FMCSA-verified movers serving Albemarle County and the City of Charlottesville, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. UVA, healthcare, Blue Ridge access, culture, and remote-worker appeal. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const charlottesvilleVaContent: CityHubContent = {
   heroSubheadline:
     'Charlottesville anchors Central Virginia as a university-town cultural hub — home to the University of Virginia, UVA Health\'s regional medical campus, a nationally recognized Downtown Mall, Monticello heritage tourism, and Blue Ridge Mountain access along Skyline Drive and the Shenandoah corridor. Washington, D.C., Northern Virginia, New York, and Florida households increasingly choose Charlottesville and Albemarle County for healthcare careers, remote-work lifestyle, and retiree downsizing at lower housing costs than the D.C. metro while keeping world-class arts, wine country, and mountain recreation within a short drive. Our independent directory lets you compare FMCSA-licensed interstate movers serving the City of Charlottesville (ZIP 22902) and surrounding Albemarle County communities. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Charlottesville and Albemarle County continue to attract UVA faculty and staff, healthcare professionals joining UVA Health, remote workers leaving Northern Virginia and Northeast metros, and retirees trading D.C.-area density for vineyard-country acreage and walkable downtown living. Whether you are accepting a university affiliation, relocating into a Belmont historic home, or downsizing from New York into a Crozet mountain-view property, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Charlottesville and Albemarle County continue to attract UVA faculty and staff, healthcare professionals joining UVA Health, remote workers leaving Northern Virginia and Northeast metros, and retirees trading D.C.-area density for vineyard-country acreage and walkable downtown living. Whether you are accepting a university affiliation, relocating into a Belmont historic home, or downsizing from New York into a Crozet mountain-view property, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why Central Virginia households use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving downtown Charlottesville (ZIP 22902), the UVA Grounds corridor, Belmont, Fry\'s Spring, Crozet, Keswick, Ivy, and Albemarle County\'s full suburban and rural footprint — with cross-links to Roanoke and Richmond for households still comparing Virginia mountain-and-metro corridors. Interstate deliveries into the Charlottesville market often involve UVA semester turnover windows, historic-district shuttle trucks, hillside vineyard properties, and summer corporate relocation season on the I-64 and US-29 corridors — all legitimate cost drivers that should appear in writing before booking. For statewide context, see our parent guide at /moving-to/virginia.',
   ],
@@ -222,7 +222,7 @@ export const charlottesvilleVaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Charlottesville?',
       answer:
-        'From Washington, D.C., Northern Virginia, New York, Florida, and Ohio origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,100 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or hillside accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Washington, D.C., Northern Virginia, New York, Florida, and Ohio origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,100 to $11,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, downtown or hillside accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Charlottesville compare to Northern Virginia for moving costs?',

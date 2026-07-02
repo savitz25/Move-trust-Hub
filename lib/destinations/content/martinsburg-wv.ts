@@ -5,7 +5,7 @@ export const martinsburgWvContent: CityHubContent = {
   h1: 'Moving to Martinsburg, WV: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Martinsburg, WV (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Martinsburg, WV (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Martinsburg in Berkeley County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Fastest-growing Eastern Panhandle, DC commuter, affordable housing. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -215,7 +215,7 @@ export const martinsburgWvContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Martinsburg?',
       answer:
-        'From Maryland, Virginia, Pennsylvania, New York, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,600 to $10,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, rural or subdivision accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Maryland, Virginia, Pennsylvania, New York, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,600 to $10,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, rural or subdivision accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Martinsburg compare to Winchester, VA for moving costs?',

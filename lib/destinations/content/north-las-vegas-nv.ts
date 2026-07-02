@@ -5,7 +5,7 @@ export const northLasVegasNvContent: CityHubContent = {
   h1: 'Moving to North Las Vegas, NV: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to North Las Vegas, NV (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to North Las Vegas, NV (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to North Las Vegas in Clark County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. First-time buyer value, Aliante, Centennial Hills spillover, master-planned growth. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const northLasVegasNvContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to North Las Vegas?',
       answer:
-        'From California, Arizona, Texas, Utah, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $11,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Aliante or Centennial Hills accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Arizona, Texas, Utah, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $11,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Aliante or Centennial Hills accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does North Las Vegas compare to Henderson or Summerlin for moving costs?',

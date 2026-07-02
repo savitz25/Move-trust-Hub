@@ -5,7 +5,7 @@ export const boiseIdContent: CityHubContent = {
   h1: 'Moving to Boise, ID: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Boise, ID (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Boise, ID (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Boise or the greater Treasure Valley? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -26,7 +26,7 @@ export const boiseIdContent: CityHubContent = {
   heroSubheadline:
     'Boise continues to attract California, Washington, Oregon, and Texas households drawn to Idaho\'s state capital, growing tech and healthcare sectors, Boise River Greenbelt lifestyle, and foothills trail access minutes from downtown. Our independent directory lets you compare FMCSA-licensed interstate movers serving Ada, Canyon, and Gem counties. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Boise and the greater Treasure Valley remain one of the highest-intent inbound moving markets in the western United States for 2026. Whether you are relocating from the Bay Area, Seattle, Portland, or Austin, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Boise and the greater Treasure Valley remain one of the highest-intent inbound moving markets in the western United States for 2026. Whether you are relocating from the Bay Area, Seattle, Portland, or Austin, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Boise, Garden City, Eagle, Meridian, and surrounding Ada County communities, with corridor context for Canyon and Gem counties. Interstate shipments into the Treasure Valley often involve new-build subdivision access, foothills driveways with limited trailer turnaround, and summer peak-season demand — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/idaho.',
   ],
@@ -209,7 +209,7 @@ export const boiseIdContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Boise?',
       answer:
-        'From California, Pacific Northwest, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $13,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Pacific Northwest, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $13,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Idaho?',

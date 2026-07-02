@@ -5,7 +5,7 @@ export const draperUtContent: CityHubContent = {
   h1: 'Moving to Draper, UT: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Draper, UT (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Draper, UT (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Draper in Salt Lake County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Upscale foothill haven, Flight Park, SunCrest, Corner Canyon. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const draperUtContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Draper?',
       answer:
-        'From California, Arizona, Texas, Colorado, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $13,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, SunCrest or Corner Canyon accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Arizona, Texas, Colorado, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $13,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, SunCrest or Corner Canyon accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Draper compare to Lehi for moving costs?',

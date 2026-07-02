@@ -5,7 +5,7 @@ export const lexingtonMaContent: CityHubContent = {
   h1: 'Moving to Lexington, MA: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Lexington, MA (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Lexington, MA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Lexington in Middlesex County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Historic town, academic excellence, Revolutionary War heritage. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const lexingtonMaContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Lexington?',
       answer:
-        'From New York, New Jersey, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $14,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, village or historic home accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $9,000 to $14,800 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, village or historic home accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Lexington compare to Newton for moving costs?',

@@ -5,7 +5,7 @@ export const ofallonMoContent: CityHubContent = {
   h1: 'Moving to O\'Fallon, MO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to O\'Fallon, MO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to O\'Fallon, MO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to O\'Fallon in St. Charles County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. St. Louis family powerhouse, master-planned excellence, Fort Zumwalt schools, Winghaven community. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const ofallonMoContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to O\'Fallon?',
       answer:
-        'From Illinois, Kansas, Arkansas, Texas, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Winghaven or Fort Zumwalt corridor accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Illinois, Kansas, Arkansas, Texas, California, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Winghaven or Fort Zumwalt corridor accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does O\'Fallon compare to Chesterfield for moving costs?',

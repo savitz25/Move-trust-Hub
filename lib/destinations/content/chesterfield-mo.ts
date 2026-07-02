@@ -5,7 +5,7 @@ export const chesterfieldMoContent: CityHubContent = {
   h1: 'Moving to Chesterfield, MO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Chesterfield, MO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Chesterfield, MO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Chesterfield in St. Louis County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. West-county luxury, Chesterfield Valley corporate HQ corridor, Faust Park, Monarch Chesterfield, and executive inventory. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const chesterfieldMoContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Chesterfield?',
       answer:
-        'From Illinois, Kansas, Texas, California, and New York origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Chesterfield Valley or Faust Park accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Illinois, Kansas, Texas, California, and New York origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,400 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Chesterfield Valley or Faust Park accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Chesterfield compare to O\'Fallon for moving costs?',

@@ -5,7 +5,7 @@ export const princetonNjContent: CityHubContent = {
   h1: 'Moving to Princeton, NJ: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Princeton, NJ (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Princeton, NJ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Princeton in Mercer County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Ivy League prestige, upscale Nassau Street downtown, Princeton Junction rail access. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const princetonNjContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Princeton?',
       answer:
-        'From New York, Pennsylvania, New Jersey, Florida, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, borough or historic accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, Pennsylvania, New Jersey, Florida, California, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,600 to $12,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, borough or historic accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Princeton compare to West Windsor for moving costs?',

@@ -28,7 +28,7 @@ export const idahoClusterContent: IdahoClusterContent = {
   h1: 'Moving to Idaho: Treasure Valley, Panhandle & Statewide City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Idaho (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Idaho (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Idaho inbound moving guides for Boise, Meridian, Eagle, Nampa, Coeur d\'Alene, Sandpoint, Idaho Falls, and Twin Falls. No retirement income tax, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -46,7 +46,7 @@ export const idahoClusterContent: IdahoClusterContent = {
   heroSubheadline:
     'Idaho ranks among the top western inbound states in 2026 — drawing California, Washington, and Oregon households with no state income tax on retirement benefits, strong job growth in tech and healthcare, and an outdoor lifestyle spanning Treasure Valley urban living, Panhandle lakes, and Snake River canyon country. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are targeting Boise\'s state capital corridor, Meridian\'s fastest-growing family suburbs, affordable Nampa and Caldwell entry points, lakeside Coeur d\'Alene and Sandpoint, or eastern Idaho\'s Idaho Falls and Twin Falls growth markets, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are targeting Boise\'s state capital corridor, Meridian\'s fastest-growing family suburbs, affordable Nampa and Caldwell entry points, lakeside Coeur d\'Alene and Sandpoint, or eastern Idaho\'s Idaho Falls and Twin Falls growth markets, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Idaho moves involve western logistics that generic guides overlook: summer peak-season demand in the Treasure Valley, winter mountain-pass delays on I-90 into the Panhandle, Idaho National Laboratory security coordination in eastern Idaho, and canyon-edge accessorials near Twin Falls — factors our city guides surface so you can plan with confidence.',
     'Eight live Idaho hubs span the Treasure Valley (Boise, Meridian, Eagle, Nampa & Caldwell), the northern Panhandle (Coeur d\'Alene, Sandpoint), and eastern/southern corridors (Idaho Falls, Twin Falls). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

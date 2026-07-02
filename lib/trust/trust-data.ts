@@ -59,6 +59,12 @@ export const trustBadges = [
     description: 'Not affiliated with movers — verify FMCSA yourself',
     href: '/about#disclaimer',
   },
+  {
+    id: 'no-lead-fees',
+    label: 'No Lead Fees',
+    description: 'We do not sell your information or charge movers for placement',
+    href: '/about#disclaimer',
+  },
 ] as const;
 
 const homepageReviews = getHomepageAttributableReviews(4);
@@ -109,7 +115,7 @@ export const neutralTrustSignals = [
   },
   {
     title: 'Independent research directory',
-    body: 'Move Trust Hub is not affiliated with listed movers. Compare licensing, complaints, and reviews before requesting quotes.',
+    body: 'Move Trust Hub is not affiliated with listed movers. Compare licensing, complaints, and reviews before booking any carrier.',
     href: '/about#disclaimer',
   },
 ] as const;

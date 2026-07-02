@@ -5,7 +5,7 @@ export const eugeneOrContent: CityHubContent = {
   h1: 'Moving to Eugene, OR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Eugene, OR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Eugene, OR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Eugene or the greater Lane County corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const eugeneOrContent: CityHubContent = {
   heroSubheadline:
     'Eugene continues to attract California, Washington, Colorado, and Texas households drawn to the University of Oregon corridor, progressive eco-conscious culture, extensive bike infrastructure, Willamette Valley outdoor access, and housing costs well below Portland and Bend. Our independent directory lets you compare FMCSA-licensed interstate movers serving Eugene, Springfield, and Lane County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Eugene and the greater Lane County corridor remain one of the highest-intent Willamette Valley inbound markets in 2026. Whether you are relocating from the Bay Area, Seattle, Denver, or Austin for university employment, healthcare, tech spillover, or a lower-cost Pacific Northwest lifestyle, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Eugene and the greater Lane County corridor remain one of the highest-intent Willamette Valley inbound markets in 2026. Whether you are relocating from the Bay Area, Seattle, Denver, or Austin for university employment, healthcare, tech spillover, or a lower-cost Pacific Northwest lifestyle, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Eugene, Springfield, Cottage Grove, and surrounding Lane County communities, with corridor context for the southern Willamette Valley. Interstate shipments into Eugene often involve rainy-season loading windows, bike-lane street parking constraints, university-area lease turnover peaks, and I-5 corridor scheduling — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oregon.',
   ],
@@ -208,7 +208,7 @@ export const eugeneOrContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Eugene?',
       answer:
-        'From California, Washington, Colorado, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,500 to $12,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Washington, Colorado, and Texas origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $8,500 to $12,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Eugene compare to Portland or Bend for moving costs?',

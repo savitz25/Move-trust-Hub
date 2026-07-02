@@ -5,7 +5,7 @@ export const carsonCityNvContent: CityHubContent = {
   h1: 'Moving to Carson City, NV: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Carson City, NV (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Carson City, NV (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Carson City in the capital corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Historic capital, Eagle Valley, state government, Kit Carson Trail. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const carsonCityNvContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Carson City?',
       answer:
-        'From California, Arizona, Texas, Utah, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $12,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Eagle Valley or historic downtown accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From California, Arizona, Texas, Utah, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $7,000 to $12,000 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Eagle Valley or historic downtown accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Carson City compare to Reno for moving costs?',

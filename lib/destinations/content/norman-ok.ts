@@ -5,7 +5,7 @@ export const normanOkContent: CityHubContent = {
   h1: 'Moving to Norman, OK: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Norman, OK (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Norman, OK (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Norman or Cleveland County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const normanOkContent: CityHubContent = {
   heroSubheadline:
     'Norman — home to the University of Oklahoma, the lively Campus Corner district, and Lake Thunderbird recreation minutes from I-35 — combines a youthful academic vibe, strong public schools, and Cleveland County affordability that draws Texas, California, Colorado, and Missouri households in 2026. Our independent directory lets you compare FMCSA-licensed interstate movers serving Norman, south OKC metro, and Cleveland County. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Norman and Cleveland County rank among the most stable university-town inbound markets in the South Central United States for 2026. Whether you are relocating from Texas, California, Colorado, or Missouri for OU faculty roles, healthcare employment, aerospace supply-chain work, or a bikeable college-town lifestyle with strong schools, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Norman and Cleveland County rank among the most stable university-town inbound markets in the South Central United States for 2026. Whether you are relocating from Texas, California, Colorado, or Missouri for OU faculty roles, healthcare employment, aerospace supply-chain work, or a bikeable college-town lifestyle with strong schools, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Norman, Campus Corner, west Norman subdivisions, and Lake Thunderbird shoreline communities across Cleveland County. Interstate shipments into Norman often involve OU academic-calendar turnover peaks, apartment elevator protocols near campus, summer heat loading windows, and I-35 corridor scheduling — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/oklahoma.',
   ],
@@ -214,7 +214,7 @@ export const normanOkContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Norman?',
       answer:
-        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,900 to $9,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Colorado, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,900 to $9,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Norman compare to Edmond for movers?',

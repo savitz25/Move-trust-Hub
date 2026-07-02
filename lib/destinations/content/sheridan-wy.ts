@@ -5,7 +5,7 @@ export const sheridanWyContent: CityHubContent = {
   h1: 'Moving to Sheridan, WY: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Sheridan, WY (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Sheridan, WY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Sheridan in Sheridan County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Refined Western oasis, Bighorn Mountains, Downtown Sheridan, Coffeen Avenue, Big Horn Avenue, Kendrick Park. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -230,7 +230,7 @@ export const sheridanWyContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Sheridan?',
       answer:
-        'From Colorado, Montana, Utah, Idaho, Texas, California, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $11,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Coffeen Avenue or Downtown Sheridan accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Colorado, Montana, Utah, Idaho, Texas, California, New York, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $11,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Coffeen Avenue or Downtown Sheridan accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Sheridan compare to Cody for moving costs?',

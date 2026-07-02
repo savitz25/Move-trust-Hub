@@ -5,7 +5,7 @@ export const spartanburgScContent: CityHubContent = {
   h1: 'Moving to Spartanburg, SC: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Spartanburg, SC (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Spartanburg, SC (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Spartanburg or the I-85 Upstate corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. BMW, Michelin, logistics jobs, Wofford & USC Upstate. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -28,7 +28,7 @@ export const spartanburgScContent: CityHubContent = {
   heroSubheadline:
     'Spartanburg anchors South Carolina\'s I-85 automotive and logistics corridor — home to BMW\'s largest U.S. manufacturing footprint in Greer, dense Michelin and GE supplier employment, and a growing warehousing sector that draws manufacturing professionals and families from Charlotte, Atlanta, and the Northeast at housing costs well below big-metro premiums. Wofford College, Converse University, and USC Upstate add a strong higher-education base, while Greer, Boiling Springs, and Duncan deliver affordable suburban living minutes from industrial employers. Our independent directory lets you compare FMCSA-licensed interstate movers serving Spartanburg County and the greater Greenville–Spartanburg Upstate. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Spartanburg and its I-85 suburbs rank among the fastest-growing inbound moving destinations in South Carolina\'s Upstate for 2026. Whether you are relocating on a BMW or Michelin supplier transfer from New York or Ohio, accepting a logistics or manufacturing role along the Greer industrial corridor, or moving a young family from Florida into an affordable Boiling Springs subdivision, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Spartanburg and its I-85 suburbs rank among the fastest-growing inbound moving destinations in South Carolina\'s Upstate for 2026. Whether you are relocating on a BMW or Michelin supplier transfer from New York or Ohio, accepting a logistics or manufacturing role along the Greer industrial corridor, or moving a young family from Florida into an affordable Boiling Springs subdivision, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why manufacturing families and corporate transferees use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Spartanburg, Greer, Boiling Springs, Duncan, Lyman, and surrounding Spartanburg County communities — with corridor context for Greenville County spillover and Cherokee County (Gaffney) links along the same I-85 manufacturing belt. Interstate shipments into the Upstate often involve corporate relocation season scheduling, new-build subdivision shuttle requirements, and fiscal-year hiring peaks that tighten carrier availability — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/south-carolina.',
   ],
@@ -222,7 +222,7 @@ export const spartanburgScContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Spartanburg?',
       answer:
-        'From New York, New Jersey, Florida, and Ohio origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $10,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, corporate relocation timing, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From New York, New Jersey, Florida, and Ohio origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,800 to $10,600 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, stair or shuttle fees, corporate relocation timing, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to South Carolina?',

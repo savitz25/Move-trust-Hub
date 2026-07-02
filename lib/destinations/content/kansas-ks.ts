@@ -29,7 +29,7 @@ export const kansasClusterContent: KansasClusterContent = {
   h1: 'Moving to Kansas: Affordable Midwest City Guides & Trusted Movers',
   seo: {
     title:
-      'Moving to Kansas (2026) — Destination Guides, Costs & Free Quotes | Move Trust Hub',
+      'Moving to Kansas (2026) — Destination Guides, Costs & Trusted Movers | Move Trust Hub',
     description:
       'Explore Kansas inbound moving guides for Overland Park, Olathe, Lawrence, Wichita, Manhattan, Leawood, and more. Johnson County suburbs, university towns, aviation hub, FMCSA-verified movers, free calculator. Independent directory.',
     keywords: [
@@ -48,7 +48,7 @@ export const kansasClusterContent: KansasClusterContent = {
   heroSubheadline:
     'Kansas ranks among the Midwest\'s most family-forward inbound states in 2026 — drawing Missouri, Illinois, Texas, California, New York, and Florida households to Overland Park\'s Blue Valley school prestige, Lawrence\'s Mass Street cultural energy, Wichita\'s Air Capital aerospace employment, and Andover\'s fast-growing Butler County alternatives. Affordable housing relative to coastal metros, Johnson County corporate headquarters density, and deliberate university-town culture create a relocation calculus that generic Great Plains guides rarely capture at city-level precision. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and ten city-specific guides with cost tables and free quote matching.',
   introParagraphs: [
-    'Whether you are accepting a Sprint/T-Mobile corridor transfer into Overland Park corporate campuses, relocating a Kansas City family across the state line into Olathe\'s master-planned subdivisions, downsizing from Chicago into Lawrence\'s KU-adjacent neighborhoods, or choosing Andover\'s elite school districts over Wichita urban density, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare multiple quotes on equal cubic footage before signing.',
+    'Whether you are accepting a Sprint/T-Mobile corridor transfer into Overland Park corporate campuses, relocating a Kansas City family across the state line into Olathe\'s master-planned subdivisions, downsizing from Chicago into Lawrence\'s KU-adjacent neighborhoods, or choosing Andover\'s elite school districts over Wichita urban density, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Kansas moves involve Midwest logistics that statewide guides overlook: Johnson County HOA move-day protocols, KU and K-State August turnover clusters, Wichita Old Town loft elevator reservations, Topeka capital-session traffic, and Butler County new-build cul-de-sac shuttle staging — factors our city guides surface so you can plan with confidence.',
     'Ten live Kansas hubs span Johnson County suburbs (Overland Park, Olathe, Lenexa, Leawood, Shawnee), university corridors (Lawrence, Manhattan), aviation and Wichita metro growth (Wichita, Andover), and state capital stability (Topeka). Browse each city guide below for 2026–2027 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],

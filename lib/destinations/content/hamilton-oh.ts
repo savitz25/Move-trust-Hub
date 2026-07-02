@@ -5,7 +5,7 @@ export const hamiltonOhContent: CityHubContent = {
   h1: 'Moving to Hamilton, OH: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Hamilton, OH (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Hamilton, OH (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Hamilton in Butler County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Creative Great Miami River city, Spooky Nook Sports, artistic downtown revival, Cincinnati-corridor affordability. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -230,7 +230,7 @@ export const hamiltonOhContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Hamilton?',
       answer:
-        'From Illinois, Michigan, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,500 to $10,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, walk-up or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Illinois, Michigan, Pennsylvania, Florida, and California origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,500 to $10,500 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, walk-up or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Hamilton compare to Cincinnati for moving costs?',

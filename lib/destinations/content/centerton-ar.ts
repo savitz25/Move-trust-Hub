@@ -5,7 +5,7 @@ export const centertonArContent: CityHubContent = {
   h1: 'Moving to Centerton, AR: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Centerton, AR (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Centerton, AR (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Centerton or Benton County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Fastest-growing NWA city, affordable new construction near Bentonville. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -27,7 +27,7 @@ export const centertonArContent: CityHubContent = {
   heroSubheadline:
     'Centerton has become Northwest Arkansas\'s fastest-growing affordable entry point — a Benton County city where new construction subdivisions, family-friendly streets, and I-49 access to Bentonville corporate jobs attract Texas, California, Tennessee, and Missouri households priced out of closer-in NWA neighborhoods. Minutes from Walmart headquarters and Rogers employment corridors, Centerton delivers spillover value without sacrificing school quality or suburban safety. Our independent directory lets you compare FMCSA-licensed interstate movers serving Centerton, Decatur, and surrounding Benton County communities. Use our free calculator below, then request 2–3 personalized quotes in under 24 hours.',
   introParagraphs: [
-    'Centerton ranks among the highest-growth inbound moving markets in Arkansas for 2026 — a direct result of Northwest Arkansas corporate expansion pushing buyers north and west into affordable new-build communities. Whether you are relocating from Dallas, Houston, Nashville, Kansas City, or Southern California for a Bentonville-area job, remote-work flexibility, or lower effective housing costs, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare multiple quotes on equal cubic footage before you sign.',
+    'Centerton ranks among the highest-growth inbound moving markets in Arkansas for 2026 — a direct result of Northwest Arkansas corporate expansion pushing buyers north and west into affordable new-build communities. Whether you are relocating from Dallas, Houston, Nashville, Kansas City, or Southern California for a Bentonville-area job, remote-work flexibility, or lower effective housing costs, the process is the same: build an accurate inventory, verify carrier licensing on FMCSA.gov, and compare movers directly on equal cubic footage before you sign.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Company names and data are used for identification and research purposes only. That independence is exactly why families use us: you get transparent reputation scores, verified review counts, and side-by-side comparison tools without sales pressure from a single carrier.',
     'This guide covers movers serving Centerton, Decatur, Highfill, and the expanding Highway 102 and Main Street corridors that connect the city to Bentonville, Rogers, and Cave Springs. Interstate shipments into Centerton almost always involve active construction zones, unfinished subdivision streets, HOA move-in paperwork, and summer peak-season demand on shared NWA carrier lanes — all of which affect your final price if they are not disclosed upfront. For statewide context, see our parent guide at /moving-to/arkansas.',
   ],
@@ -218,7 +218,7 @@ export const centertonArContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Centerton?',
       answer:
-        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, shuttle or stair fees, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Texas, California, Tennessee, and Missouri origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $5,700 to $8,900 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, shuttle or stair fees, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'Are binding estimates required for moves to Arkansas?',

@@ -5,7 +5,7 @@ export const leesSummitMoContent: CityHubContent = {
   h1: 'Moving to Lee\'s Summit, MO: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Lee\'s Summit, MO (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Lee\'s Summit, MO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Lee\'s Summit in Jackson County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Premier KC suburb, Longview Lake prestige, R-7 school districts, downtown Lee\'s Summit charm. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const leesSummitMoContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Lee\'s Summit?',
       answer:
-        'From Illinois, Kansas, Texas, California, Arkansas, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Longview Lake or Woodland Hills accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Illinois, Kansas, Texas, California, Arkansas, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,200 to $10,200 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, Longview Lake or Woodland Hills accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Lee\'s Summit compare to Overland Park for moving costs?',

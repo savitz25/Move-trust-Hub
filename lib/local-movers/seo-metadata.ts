@@ -166,7 +166,7 @@ export function buildHubKeywords(): string[] {
 export function buildHubPageMetadata(): Metadata {
   const title = 'Local Movers by State & County — Find Trusted Movers Near You 2026';
   const description =
-    'Browse 3,100+ county-level local mover guides across all 50 states. FMCSA licensing, ratings, cost estimates, and moving tips. Compare movers and get free quotes today.';
+    'Browse 3,100+ county-level local mover guides across all 50 states. FMCSA licensing, ratings, cost estimates, and moving tips. Compare trusted movers in our independent directory.';
   const path = '/local-movers';
 
   return {

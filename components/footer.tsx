@@ -24,7 +24,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-2.5 text-sm text-muted-foreground max-w-[210px] leading-snug">
-              Independent directory for trusted interstate movers.
+              Independent directory for researching trusted interstate movers. No lead fees. No paid placements.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1 text-sm text-muted-foreground">
             <div className="font-semibold text-foreground mb-2 text-xs tracking-widest text-muted-foreground/80">TRUST &amp; TRANSPARENCY</div>
             <p className="leading-snug text-[13px]">
-              Independent directory — <strong>not affiliated</strong> with listed movers. FMCSA, BBB, and review data for research only.
+              Independent directory — <strong>not affiliated</strong> with listed movers. No lead fees, no paid placements. FMCSA, BBB, and review data for research only.
             </p>
             <p className="mt-2.5 text-[13px]">
               <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground transition-colors">

@@ -5,7 +5,7 @@ export const flowoodMsContent: CityHubContent = {
   h1: 'Moving to Flowood, MS: Compare Trusted Movers & Estimate Your Move',
   seo: {
     title:
-      'Moving to Flowood, MS (2026) — Costs, Best Movers & Free Quotes | Move Trust Hub',
+      'Moving to Flowood, MS (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
       'Planning a move to Flowood in Rankin County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Healthcare and commercial suburb convenient to Jackson. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
@@ -225,7 +225,7 @@ export const flowoodMsContent: CityHubContent = {
     {
       question: 'How much does it cost to move a 3-bedroom home to Flowood?',
       answer:
-        'From Louisiana, Alabama, Tennessee, Texas, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,000 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, subdivision or suburban accessorials, and season. Use our calculator for your specific inventory, then request matched quotes.',
+        'From Louisiana, Alabama, Tennessee, Texas, and Florida origins, a 3-bedroom household (roughly 5,000–7,000 cubic feet) typically ranges from $6,000 to $10,400 for full-service interstate transport in 2026. Final price depends on exact volume, packing services, subdivision or suburban accessorials, and season. Use our calculator for your specific inventory, then compare trusted movers in our directory.',
     },
     {
       question: 'How does Flowood compare to Brandon for moving costs?',

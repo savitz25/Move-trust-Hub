@@ -107,17 +107,9 @@ export async function CityHubTemplate({ market, content }: Props) {
 
           <div className="flex flex-col sm:flex-row gap-3 mb-3">
             <DestinationQuoteCta market={market} />
-            <Link
-              href={`/moving-calculator?toZip=${market.defaultToZip}&dest=${market.slug}`}
-              prefetch={false}
-              className="inline-flex items-center justify-center rounded-md border bg-card px-6 py-3 text-sm font-medium hover:border-primary/40 transition-colors min-h-[48px]"
-            >
-              Estimate My Move First
-              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-            </Link>
           </div>
-          <p className="text-xs text-muted-foreground mb-6">
-            Takes less than 60 seconds. No obligation.
+          <p className="text-xs text-muted-foreground mb-6 font-medium">
+            Independent Directory · No Lead Fees · No Paid Placements
           </p>
 
           <TrustBadges variant="compact" className="mb-4" />
@@ -142,8 +134,8 @@ export async function CityHubTemplate({ market, content }: Props) {
             {market.slug === 'myrtle-beach-sc' ? ' or Wilmington' : ''}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
-            Build your room-by-room inventory, then request quotes based on the same cubic
-            footage every carrier sees.
+            Build your room-by-room inventory, then compare FMCSA-licensed carriers using
+            the same cubic footage every mover evaluates.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -416,7 +408,7 @@ export async function CityHubTemplate({ market, content }: Props) {
           </h2>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
             Select up to 4 FMCSA-licensed carriers and compare reputation, reviews, and
-            services side-by-side — then request matched quotes to {destinationLabel}.
+            services side-by-side before contacting movers for {destinationLabel}.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
             <Link
@@ -426,11 +418,7 @@ export async function CityHubTemplate({ market, content }: Props) {
               <Scale className="h-4 w-4" aria-hidden="true" />
               Open Compare Tool
             </Link>
-            <DestinationQuoteCta
-              market={market}
-              variant="footer"
-              label={`Get Free Personalized Quotes to ${market.displayName}`}
-            />
+            <DestinationQuoteCta market={market} variant="footer" />
           </div>
           <p className="text-xs text-primary-foreground/60">
             Independent directory · Not affiliated with listed movers ·{' '}
