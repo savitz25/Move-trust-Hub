@@ -4,6 +4,7 @@ import {
   AUTO_CATEGORY,
   SITE_URL,
 } from './categories';
+import { lenderHref } from '@/lib/lender/paths';
 
 /**
  * CONTENT CLUSTER STRATEGY — topical authority mesh for lending directory SEO.
@@ -72,8 +73,8 @@ export const DIRECTORY_CLUSTERS: ContentCluster[] = [
     id: 'deposit-safety',
     pillarTitle: 'FDIC Insurance Explained',
     targetQuery: 'what does FDIC insurance cover',
-    hubHref: '/fdic-insured-banks',
-    stateHref: (slug) => `/fdic-insured-banks/${slug}#fdic-faq-heading`,
+    hubHref: lenderHref('/fdic-insured-banks'),
+    stateHref: (slug) => `${lenderHref(`/fdic-insured-banks/${slug}`)}#fdic-faq-heading`,
     hubHeading: 'Understanding FDIC Deposit Insurance Limits',
     keywordVariants: ['FDIC insurance limit 2026', 'is my bank FDIC insured', 'deposit safety'],
   },
@@ -81,8 +82,8 @@ export const DIRECTORY_CLUSTERS: ContentCluster[] = [
     id: 'mortgage-tools',
     pillarTitle: 'Free Mortgage Calculators',
     targetQuery: 'mortgage payment calculator',
-    hubHref: '/calculators',
-    stateHref: () => '/calculators',
+    hubHref: lenderHref('/calculators'),
+    stateHref: () => lenderHref('/calculators'),
     hubHeading: 'Mortgage Payment & Affordability Tools',
     keywordVariants: ['refinance calculator', 'DTI calculator', 'closing cost estimator'],
   },
@@ -90,8 +91,8 @@ export const DIRECTORY_CLUSTERS: ContentCluster[] = [
     id: 'trust-transparency',
     pillarTitle: 'How We Verify Listings',
     targetQuery: 'is LenderTrustHub legit',
-    hubHref: '/about',
-    stateHref: () => '/about',
+    hubHref: lenderHref('/about'),
+    stateHref: () => lenderHref('/about'),
     hubHeading: 'Our Verification Methodology',
     keywordVariants: ['no paid placements', 'independent lender directory', 'trust scores'],
   },
@@ -108,7 +109,7 @@ export const HUB_KEYWORD_SECTIONS = {
     internalLinks: [
       { label: 'Mortgage Lenders by State', href: MORTGAGE_CATEGORY.hubPath },
       { label: 'Auto Loan Companies', href: AUTO_CATEGORY.hubPath },
-      { label: 'Free Calculators', href: '/calculators' },
+      { label: 'Free Calculators', href: lenderHref('/calculators') },
     ],
   },
   mortgage: {
@@ -120,7 +121,7 @@ export const HUB_KEYWORD_SECTIONS = {
     internalLinks: [
       { label: 'FDIC Insured Banks', href: FDIC_CATEGORY.hubPath },
       { label: 'Auto Loan Companies', href: AUTO_CATEGORY.hubPath },
-      { label: 'Mortgage Calculators', href: '/calculators' },
+      { label: 'Mortgage Calculators', href: lenderHref('/calculators') },
     ],
   },
   auto: {
@@ -132,7 +133,7 @@ export const HUB_KEYWORD_SECTIONS = {
     internalLinks: [
       { label: 'FDIC Insured Banks', href: FDIC_CATEGORY.hubPath },
       { label: 'Mortgage Lenders', href: MORTGAGE_CATEGORY.hubPath },
-      { label: 'About Our Methodology', href: '/about' },
+      { label: 'About Our Methodology', href: lenderHref('/about') },
     ],
   },
 } as const;
@@ -143,7 +144,7 @@ export const INTERNAL_LINK_RULES = {
     (slug: string) => FDIC_CATEGORY.statePath(slug),
     (slug: string) => MORTGAGE_CATEGORY.statePath(slug),
     (slug: string) => AUTO_CATEGORY.statePath(slug),
-    () => '/calculators',
+    () => lenderHref('/calculators'),
     () => FDIC_CATEGORY.hubPath,
   ],
   hubPageMustLinkTo: DIRECTORY_CLUSTERS.map((c) => c.hubHref),

@@ -16,6 +16,7 @@ import {
   getStateSlugsWithLenders,
   MORTGAGE_DATA_UPDATED,
 } from '@/lib/lender/mortgage/stateLenders';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 import {
   buildMortgageStateDescription,
   buildMortgageStateJsonLd,
@@ -32,6 +33,7 @@ import {
  *   3. Swap LenderCard → vertical-specific card component
  */
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return getStateSlugsWithLenders().map((state) => ({ state }));
@@ -55,19 +57,17 @@ export async function generateMetadata({
     stats.verified
   );
 
-  return {
+  return buildHubMetadata('lender', {
     title,
     description,
+    path: `/local-lenders/${slug}`,
     keywords: [
       `mortgage lenders in ${stateMeta.fullName}`,
       `mortgage brokers ${stateMeta.fullName} 2026`,
       `best mortgage lenders ${stateMeta.fullName}`,
       'NMLS verified mortgage',
     ],
-    openGraph: { title, description, url: mortgageStateUrl(slug), locale: 'en_US' },
-    alternates: { canonical: mortgageStateUrl(slug) },
-    robots: { index: true, follow: true },
-  };
+  });
 }
 
 export default async function MortgageStatePage({

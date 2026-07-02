@@ -6,6 +6,7 @@ import { Search, MapPin } from 'lucide-react';
 import { Button } from '@/components/insurance/ui/button';
 import { Input } from '@/components/insurance/ui/input';
 import { INSURANCE_TYPES } from '@/lib/insurance/constants';
+import { insuranceHref } from '@/lib/insurance/paths';
 import { cn } from '@/lib/insurance/utils';
 
 interface ZipSearchProps {
@@ -24,7 +25,7 @@ export function ZipSearch({ className, defaultZip = '' }: ZipSearchProps) {
     if (zip.trim()) params.set('zip', zip.trim().slice(0, 5));
     if (types.length) params.set('type', types.join(','));
     const query = params.toString();
-    router.push(query ? `/directory?${query}` : '/directory');
+    router.push(query ? `${insuranceHref('/directory')}?${query}` : insuranceHref('/directory'));
   }
 
   function toggleType(value: string) {

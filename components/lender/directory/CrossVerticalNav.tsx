@@ -6,6 +6,7 @@ import {
   MORTGAGE_CATEGORY,
   AUTO_CATEGORY,
 } from '@/lib/lender/directory/categories';
+import { lenderHref } from '@/lib/lender/paths';
 
 const ICONS = {
   fdic: Landmark,
@@ -60,7 +61,7 @@ export function CrossVerticalNav({
     {
       id: 'calculators',
       label: 'Mortgage Calculators',
-      href: '/calculators',
+      href: lenderHref('/calculators'),
       icon: ICONS.calculators,
       description: 'Free payment & affordability tools',
     },

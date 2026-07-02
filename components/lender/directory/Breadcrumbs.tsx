@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+import { normalizeLenderHref } from '@/lib/lender/paths';
 
 export interface BreadcrumbItem {
   label: string;
@@ -20,7 +21,7 @@ export function Breadcrumbs({
           <li key={item.label} className="flex items-center gap-1">
             {i > 0 && <ChevronRight className="h-4 w-4 shrink-0" aria-hidden="true" />}
             {item.href ? (
-              <Link href={item.href} className="hover:text-[#00A3A1]">
+              <Link href={normalizeLenderHref(item.href)} className="hover:text-[#00A3A1]">
                 {item.label}
               </Link>
             ) : (
