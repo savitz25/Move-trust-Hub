@@ -21,7 +21,7 @@ export default function LenderNotFound() {
           <Link href={hubPath('lender', '/local-lenders')}>Local lenders</Link>
         </Button>
         <Button variant="ghost" asChild>
-          <Link href="/">Move Trust Hub</Link>
+          <Link href="/lender/">Move Trust Hub</Link>
         </Button>
       </div>
     </div>

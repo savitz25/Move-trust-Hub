@@ -18,7 +18,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/lib/lender/*": ["./lib/lender/*"],
+      "@/lib/insurance/*": ["./lib/insurance/*"],
+      "@/components/lender/*": ["./components/lender/*"],
+      "@/components/insurance/*": ["./components/insurance/*"]
     },
     "target": "ES2022"
   },

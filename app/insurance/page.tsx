@@ -9,7 +9,7 @@ export const metadata: Metadata = buildHubMetadata('insurance', {
   title: 'Insurance Trust Hub • Trusted Local Agents | Move Trust Hub',
   description:
     'Compare DOI-verified insurance agents and agencies. Health insurance hubs, ACA and Medicare calculators, and zero paid placements on Move Trust Hub.',
-  path: '/',
+  path: '/insurance/',
   keywords: [
     'insurance agents',
     'health insurance',

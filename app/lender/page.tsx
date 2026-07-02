@@ -9,7 +9,7 @@ export const metadata: Metadata = buildHubMetadata('lender', {
   title: 'Lender Trust Hub • Trusted Local Lenders | Move Trust Hub',
   description:
     'Compare NMLS-verified mortgage lenders and brokers by county. Free mortgage calculators, FDIC bank directory, and zero paid placements on Move Trust Hub.',
-  path: '/',
+  path: '/lender/',
   keywords: [
     'mortgage lenders',
     'NMLS verified lenders',

@@ -21,7 +21,7 @@ export default function InsuranceNotFound() {
           <Link href={hubPath('insurance', '/hubs/browse')}>Browse markets</Link>
         </Button>
         <Button variant="ghost" asChild>
-          <Link href="/">Move Trust Hub</Link>
+          <Link href="/insurance/">Move Trust Hub</Link>
         </Button>
       </div>
     </div>
