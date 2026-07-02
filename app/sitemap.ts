@@ -62,8 +62,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...destinationGuides.map((guide) => `/resources/guides/${guide.slug}`),
   ];
 
+  const hubLandingRoutes = [
+    '/lender',
+    '/insurance',
+    '/lender/local-lenders',
+    '/lender/calculators',
+    '/lender/fdic-insured-banks',
+    '/lender/about',
+    '/insurance/directory',
+    '/insurance/hubs',
+    '/insurance/hubs/browse',
+    '/insurance/calculators',
+    '/insurance/about',
+  ];
+
   const coreStaticRoutes = [
     '',
+    ...hubLandingRoutes,
     '/companies',
     '/local-movers',
     '/moving-to',
@@ -96,6 +111,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority:
         route === ''
           ? 1
+          : route === '/lender' || route === '/insurance'
+            ? 0.92
+            : route.startsWith('/lender/') || route.startsWith('/insurance/')
+              ? 0.88
           : route === '/local-movers'
             ? 0.9
             : route === '/verify-dot' || route === '/review'

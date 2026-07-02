@@ -19,6 +19,7 @@ const miCounties = generatedCounties
 const DETROIT_METRO = new Set(['wayne', 'oakland', 'macomb']);
 const PREMIUM_WEST = new Set(['kent', 'washtenaw']);
 const KEY_SECONDARY = new Set(['ingham', 'genesee', 'kalamazoo', 'ottawa']);
+
 const MAJOR = new Set([
   ...DETROIT_METRO,
   ...PREMIUM_WEST,
@@ -95,7 +96,8 @@ function buildCountyPack(countySlug: string, metro: string | undefined, target: 
     ids.push(id);
   };
 
-  const directoryLead = MAJOR.has(countySlug) ? 5 : 2;
+  const useLocalFirst = DETROIT_METRO.has(countySlug) || PREMIUM_WEST.has(countySlug);
+  const directoryLead = useLocalFirst ? 0 : MAJOR.has(countySlug) ? 5 : 2;
   for (const id of CORE_DIRECTORY_IDS.slice(0, directoryLead)) {
     add(id);
   }
@@ -188,5 +190,5 @@ for (const county of miCounties) {
 }
 
 console.log(
-  `Updated ${assignmentMap.size} counties. Under 5: ${under5}. Major under target: ${underTargetMajor}. Wayne: ${assignmentMap.get('wayne')?.length ?? 0} movers`
+  `Updated ${assignmentMap.size} counties. Under 5: ${under5}. Major under target: ${underTargetMajor}. Wayne: ${assignmentMap.get('wayne')?.length ?? 0}, Kent: ${assignmentMap.get('kent')?.length ?? 0}`
 );

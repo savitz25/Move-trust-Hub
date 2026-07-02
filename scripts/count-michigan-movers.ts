@@ -6,7 +6,11 @@ const miCounties = generatedCounties
   .filter((c) => c.stateSlug === 'michigan')
   .map(applyMichiganCountyOverrides);
 
-/** Detroit metro, Grand Rapids, university towns, and regional hubs */
+/** Detroit metro premium */
+const PREMIUM = new Set(['wayne', 'oakland', 'macomb']);
+/** Grand Rapids, Ann Arbor, secondary hubs */
+const SECONDARY = new Set(['kent', 'washtenaw', 'ingham', 'genesee', 'kalamazoo', 'ottawa']);
+/** Other regional hubs */
 const MAJOR = new Set([
   'wayne',
   'oakland',
@@ -25,19 +29,21 @@ const MAJOR = new Set([
   'marquette',
 ]);
 
-const under5: string[] = [];
-const under8Major: string[] = [];
-const under10Major: string[] = [];
-const under5Rural: string[] = [];
+function getMinTarget(slug: string): number {
+  if (PREMIUM.has(slug)) return 11;
+  if (SECONDARY.has(slug)) return slug === 'kent' || slug === 'washtenaw' ? 9 : 8;
+  if (MAJOR.has(slug)) return 8;
+  return 5;
+}
+
+const underMin: string[] = [];
 const distribution = new Map<number, number>();
 
 for (const c of miCounties) {
   const n = getMoversForCounty('michigan', c.slug)?.movers.length ?? 0;
   distribution.set(n, (distribution.get(n) ?? 0) + 1);
-  if (n < 5) under5.push(`${c.slug}: ${n}`);
-  if (MAJOR.has(c.slug) && n < 8) under8Major.push(`${c.slug}: ${n}`);
-  if (MAJOR.has(c.slug) && n < 10) under10Major.push(`${c.slug}: ${n}`);
-  if (!MAJOR.has(c.slug) && n < 5) under5Rural.push(`${c.slug}: ${n}`);
+  const min = getMinTarget(c.slug);
+  if (n < min) underMin.push(`${c.slug}: ${n} (min ${min})`);
 }
 
 console.log(`Michigan counties: ${miCounties.length}`);
@@ -45,18 +51,9 @@ console.log('\nDistribution:');
 for (const [n, count] of [...distribution.entries()].sort((a, b) => a[0] - b[0])) {
   console.log(`  ${n} movers: ${count} counties`);
 }
-console.log('\nUnder 5 (all):', under5.length);
-for (const line of under5) console.log(line);
+console.log('\nUnder minimum:', underMin.length);
+for (const line of underMin) console.log(line);
 
-console.log('\nMajor under 8:', under8Major.length);
-for (const line of under8Major) console.log(line);
-
-console.log('\nMajor under 10:', under10Major.length);
-for (const line of under10Major) console.log(line);
-
-console.log('\nRural under 5:', under5Rural.length);
-for (const line of under5Rural) console.log(line);
-
-if (under5.length === 0 && under8Major.length === 0) {
-  console.log('\n✓ All counties meet minimum mover targets (5 rural / 8 major).');
+if (underMin.length === 0) {
+  console.log('\n✓ All counties meet Michigan mover targets.');
 }

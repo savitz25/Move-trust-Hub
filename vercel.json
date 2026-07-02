@@ -1,15 +1,44 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
+  "regions": ["iad1"],
+  "headers": [
+    {
+      "source": "/lender/(.*)",
+      "headers": [
+        { "key": "X-Trust-Hub", "value": "lender" }
+      ]
+    },
+    {
+      "source": "/insurance/(.*)",
+      "headers": [
+        { "key": "X-Trust-Hub", "value": "insurance" }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "movetrusthub.com"
-        }
-      ],
-      "destination": "https://www.movetrusthub.com/:path*",
+      "has": [{ "type": "host", "value": "lendertrusthub.com" }],
+      "destination": "https://www.movetrusthub.com/lender/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.lendertrusthub.com" }],
+      "destination": "https://www.movetrusthub.com/lender/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "insurancetrusthub.com" }],
+      "destination": "https://www.movetrusthub.com/insurance/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.insurancetrusthub.com" }],
+      "destination": "https://www.movetrusthub.com/insurance/:path*",
       "permanent": true
     }
   ]

@@ -104,6 +104,13 @@ const MI_COUNTY_NEIGHBORS: Record<string, string[]> = {
 const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
   wayne: [
     {
+      slug: 'monroe',
+      name: 'Monroe',
+      seat: 'Monroe',
+      href: '/local-movers/michigan/monroe',
+      displayLabel: 'Monroe County, MI (Detroit–Windsor corridor)',
+    },
+    {
       slug: 'lucas',
       name: 'Lucas',
       seat: 'Toledo',
@@ -120,11 +127,18 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       displayLabel: 'Lucas County, OH (Toledo)',
     },
     {
-      slug: 'wayne',
-      name: 'Wayne',
-      seat: 'Detroit',
-      href: '/local-movers/michigan/wayne',
-      displayLabel: 'Wayne County, MI (Detroit / Windsor corridor)',
+      slug: 'fulton',
+      name: 'Fulton',
+      seat: 'Wauseon',
+      href: '/local-movers/ohio/fulton',
+      displayLabel: 'Fulton County, OH',
+    },
+    {
+      slug: 'lenawee',
+      name: 'Lenawee',
+      seat: 'Adrian',
+      href: '/local-movers/michigan/lenawee',
+      displayLabel: 'Lenawee County, MI',
     },
   ],
   berrien: [
@@ -142,6 +156,13 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       href: '/local-movers/indiana/st-joseph',
       displayLabel: 'St. Joseph County, IN (South Bend)',
     },
+    {
+      slug: 'porter',
+      name: 'Porter',
+      seat: 'Valparaiso',
+      href: '/local-movers/indiana/porter',
+      displayLabel: 'Porter County, IN',
+    },
   ],
   cass: [
     {
@@ -150,6 +171,13 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       seat: 'South Bend',
       href: '/local-movers/indiana/st-joseph',
       displayLabel: 'St. Joseph County, IN (South Bend)',
+    },
+    {
+      slug: 'elkhart',
+      name: 'Elkhart',
+      seat: 'Goshen',
+      href: '/local-movers/indiana/elkhart',
+      displayLabel: 'Elkhart County, IN',
     },
   ],
   'st-joseph': [
@@ -161,6 +189,38 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       displayLabel: 'Elkhart County, IN',
     },
   ],
+  hillsdale: [
+    {
+      slug: 'williams',
+      name: 'Williams',
+      seat: 'Bryan',
+      href: '/local-movers/ohio/williams',
+      displayLabel: 'Williams County, OH',
+    },
+    {
+      slug: 'fulton',
+      name: 'Fulton',
+      seat: 'Wauseon',
+      href: '/local-movers/ohio/fulton',
+      displayLabel: 'Fulton County, OH',
+    },
+  ],
+  lenawee: [
+    {
+      slug: 'lucas',
+      name: 'Lucas',
+      seat: 'Toledo',
+      href: '/local-movers/ohio/lucas',
+      displayLabel: 'Lucas County, OH',
+    },
+    {
+      slug: 'fulton',
+      name: 'Fulton',
+      seat: 'Wauseon',
+      href: '/local-movers/ohio/fulton',
+      displayLabel: 'Fulton County, OH',
+    },
+  ],
   menominee: [
     {
       slug: 'marinette',
@@ -168,6 +228,13 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       seat: 'Marinette',
       href: '/local-movers/wisconsin/marinette',
       displayLabel: 'Marinette County, WI',
+    },
+    {
+      slug: 'oconto',
+      name: 'Oconto',
+      seat: 'Oconto',
+      href: '/local-movers/wisconsin/oconto',
+      displayLabel: 'Oconto County, WI',
     },
   ],
   dickinson: [
@@ -178,6 +245,13 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       href: '/local-movers/wisconsin/marinette',
       displayLabel: 'Marinette County, WI',
     },
+    {
+      slug: 'florence',
+      name: 'Florence',
+      seat: 'Florence',
+      href: '/local-movers/wisconsin/florence',
+      displayLabel: 'Florence County, WI',
+    },
   ],
   gogebic: [
     {
@@ -186,6 +260,13 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       seat: 'Hurley',
       href: '/local-movers/wisconsin/iron',
       displayLabel: 'Iron County, WI',
+    },
+    {
+      slug: 'vilas',
+      name: 'Vilas',
+      seat: 'Eagle River',
+      href: '/local-movers/wisconsin/vilas',
+      displayLabel: 'Vilas County, WI',
     },
   ],
   iron: [
@@ -204,6 +285,24 @@ const MI_CROSS_BORDER_NEIGHBORS: Record<string, NearbyCountyLink[]> = {
       seat: 'Florence',
       href: '/local-movers/wisconsin/florence',
       displayLabel: 'Florence County, WI',
+    },
+  ],
+  chippewa: [
+    {
+      slug: 'mackinac',
+      name: 'Mackinac',
+      seat: 'St. Ignace',
+      href: '/local-movers/michigan/mackinac',
+      displayLabel: 'Mackinac County, MI (Sault Ste. Marie corridor)',
+    },
+  ],
+  emmet: [
+    {
+      slug: 'mackinac',
+      name: 'Mackinac',
+      seat: 'St. Ignace',
+      href: '/local-movers/michigan/mackinac',
+      displayLabel: 'Mackinac County, MI',
     },
   ],
 };

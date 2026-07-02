@@ -12,6 +12,8 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: [
       `${SITE_URL}/sitemap.xml`,
       `${SITE_URL}/sitemap-local/sitemap.xml`,
+      `${SITE_URL}/lender/sitemap.xml`,
+      `${SITE_URL}/insurance/sitemap.xml`,
     ],
   };
 }

@@ -1,8 +1,7 @@
 import type { Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { Navbar } from '@/components/navbar';
-import { Footer } from '@/components/footer';
+import { HubShell } from '@/components/hub/hub-shell';
 import { Suspense } from 'react';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
@@ -44,15 +43,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-1">
-            <Suspense fallback={<div className="h-96" />}>
-              {children}
-            </Suspense>
-          </main>
-          <Footer />
-        </div>
+        <HubShell>
+          <Suspense fallback={<div className="h-96" />}>{children}</Suspense>
+        </HubShell>
         <DeferredWidgets />
         <DeferredGtag />
         <DeferredAnalytics />
