@@ -43,8 +43,15 @@ export interface Company {
   complaintsLast12m?: number;
   revocationDate?: string | null;
   fmcsaDataHash?: string | null;
-  bbbRating: 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'NR';
+  bbbRating: 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'C-' | 'D+' | 'D' | 'D-' | 'F' | 'NR';
   bbbAccredited: boolean;
+  /** BBB automated refresh fields */
+  bbbLastChecked?: string | null;
+  complaintsLast36m?: number;
+  bbbCustomerReviews?: number;
+  bbbDataHash?: string | null;
+  bbbBusinessId?: string | null;
+  bbbAlertCount?: number;
 
   // Reputation
   overallRating: number; // 0-5

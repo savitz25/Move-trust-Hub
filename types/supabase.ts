@@ -56,11 +56,54 @@ export interface Database {
           data_hash: string | null;
           fmcsa_legal_name: string | null;
           fmcsa_raw: Json | null;
+          bbb_last_checked: string | null;
+          complaints_last_36m: number;
+          bbb_customer_reviews: number;
+          bbb_data_hash: string | null;
+          bbb_business_id: string | null;
+          bbb_alert_count: number;
+          bbb_raw: Json | null;
           created_at: string;
           updated_at: string;
         };
         Insert: Partial<Database['public']['Tables']['companies']['Row']>;
         Update: Partial<Database['public']['Tables']['companies']['Row']>;
+      };
+      bbb_refresh_runs: {
+        Row: {
+          id: string;
+          idempotency_key: string;
+          mode: string;
+          status: string;
+          triggered_by: string;
+          companies_total: number;
+          companies_processed: number;
+          companies_updated: number;
+          companies_failed: number;
+          changes_detected: number;
+          error_summary: string | null;
+          started_at: string;
+          finished_at: string | null;
+          metadata: Json | null;
+        };
+        Insert: Partial<Database['public']['Tables']['bbb_refresh_runs']['Row']>;
+        Update: Partial<Database['public']['Tables']['bbb_refresh_runs']['Row']>;
+      };
+      bbb_change_log: {
+        Row: {
+          id: string;
+          run_id: string | null;
+          company_id: string;
+          company_slug: string | null;
+          company_name: string | null;
+          field_name: string;
+          old_value: string | null;
+          new_value: string | null;
+          severity: string;
+          created_at: string;
+        };
+        Insert: Partial<Database['public']['Tables']['bbb_change_log']['Row']>;
+        Update: Partial<Database['public']['Tables']['bbb_change_log']['Row']>;
       };
       fmcsa_refresh_runs: {
         Row: {

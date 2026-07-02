@@ -16,6 +16,8 @@ import { CoverageMap } from '@/components/map/coverage-map';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
+import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
+import { BbbLastVerified } from '@/components/bbb/bbb-last-verified';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -71,6 +73,7 @@ export default async function CompanyProfilePage({ params }: Props) {
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
             {company.isVerified && <Badge variant="success">VERIFIED</Badge>}
             <FmcsaVerificationBadge company={company} />
+            <BbbVerificationBadge company={company} />
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
         </div>
@@ -175,10 +178,24 @@ export default async function CompanyProfilePage({ params }: Props) {
               </div>
               <div>
                 <div className="text-muted-foreground text-xs">BBB Rating</div>
-                <div className="flex items-center gap-2">
-                  {company.bbbRating} {company.bbbAccredited && <Badge variant="success" className="text-[10px]">Accredited</Badge>}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <BbbVerificationBadge company={company} showRating={false} />
+                  <span className="font-semibold">{company.bbbRating}</span>
                 </div>
+                <BbbLastVerified checkedAt={company.bbbLastChecked} className="mt-1" />
               </div>
+              {(company.complaintsLast36m ?? 0) > 0 ? (
+                <div>
+                  <div className="text-muted-foreground text-xs">BBB complaints (36 mo)</div>
+                  <div>{company.complaintsLast36m?.toLocaleString()}</div>
+                </div>
+              ) : null}
+              {(company.bbbCustomerReviews ?? 0) > 0 ? (
+                <div>
+                  <div className="text-muted-foreground text-xs">BBB customer reviews</div>
+                  <div>{company.bbbCustomerReviews?.toLocaleString()}</div>
+                </div>
+              ) : null}
               <div className="text-[11px] text-muted-foreground col-span-2">
                 Always verify the most current licensing and complaint information directly on the <a href="https://www.fmcsa.dot.gov/" target="_blank" className="underline">FMCSA website</a>.
               </div>

@@ -1,39 +1,36 @@
 import Link from 'next/link';
-import { FmcsaRefreshDashboard } from '@/components/admin/fmcsa-refresh-dashboard';
-import { isFmcsaRefreshConfigured } from '@/lib/fmcsa/refresh/auth';
-import { getFmcsaRefreshStats } from '@/lib/fmcsa/refresh/runner';
+import { BbbRefreshDashboard } from '@/components/admin/bbb-refresh-dashboard';
+import { isBbbRefreshConfigured } from '@/lib/bbb/refresh/auth';
+import { getBbbRefreshStats } from '@/lib/bbb/refresh/runner';
 import { Button } from '@/components/ui/button';
 
 export const metadata = {
-  title: 'FMCSA Refresh',
+  title: 'BBB Refresh',
   robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300;
 
-export default async function AdminFmcsaPage() {
-  const { runs, changes, companyStats } = await getFmcsaRefreshStats();
-  const configured = isFmcsaRefreshConfigured();
+export default async function AdminBbbPage() {
+  const { runs, changes, companyStats } = await getBbbRefreshStats();
+  const configured = isBbbRefreshConfigured();
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">FMCSA Data Refresh</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">BBB Data Refresh</h1>
           <p className="text-sm text-muted-foreground">
-            Automated carrier authority, safety rating, and complaint sync from FMCSA QCMobile API.
+            Automated BBB accreditation, rating, complaint, and alert sync for the movers directory.
           </p>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" asChild>
-            <Link href="/admin/bbb">BBB Refresh</Link>
+            <Link href="/admin/fmcsa">FMCSA Refresh</Link>
           </Button>
           <Button variant="outline" asChild>
             <Link href="/admin/quotes">Quotes</Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/admin/reviews">Reviews</Link>
           </Button>
           <Button variant="outline" asChild>
             <Link href="/admin">Companies</Link>
@@ -41,7 +38,7 @@ export default async function AdminFmcsaPage() {
         </div>
       </div>
 
-      <FmcsaRefreshDashboard
+      <BbbRefreshDashboard
         runs={runs as any}
         changes={changes as any}
         companyStats={companyStats}

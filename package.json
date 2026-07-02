@@ -94,7 +94,8 @@
     "audit:hub-seo": "tsx scripts/audit-hub-seo.ts",
     "fix:lender-paths": "tsx scripts/fix-lender-path-prefixes.ts",
     "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
-    "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts"
+    "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts",
+    "refresh:bbb": "tsx scripts/run-bbb-refresh.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
