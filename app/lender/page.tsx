@@ -1,15 +1,19 @@
 import type { Metadata } from 'next';
 import { LenderHomePage } from '@/components/hub/lender-home';
+import { SchemaInjector } from '@/components/hub/schema-injector';
+import { getHubConfig } from '@/lib/hub/config';
 import { buildHubMetadata } from '@/lib/hub/metadata';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
+import { buildHubHomeSchemaGraph } from '@/lib/hub/schemas';
 
 export const dynamic = 'force-static';
 
+const lenderConfig = getHubConfig('lender');
+
 export const metadata: Metadata = buildHubMetadata('lender', {
-  title: 'Lender Trust Hub • Trusted Local Lenders | Move Trust Hub',
-  description:
-    'Compare NMLS-verified mortgage lenders and brokers by county. Free mortgage calculators, FDIC bank directory, and zero paid placements on Move Trust Hub.',
-  path: '/lender/',
+  title: lenderConfig.homeTitle,
+  description: lenderConfig.homeDescription,
+  path: '/',
   keywords: [
     'mortgage lenders',
     'NMLS verified lenders',
@@ -20,32 +24,31 @@ export const metadata: Metadata = buildHubMetadata('lender', {
   ],
 });
 
+const LENDER_HOME_FAQ = [
+  {
+    question: 'How does Lender Trust Hub verify mortgage lenders?',
+    answer:
+      'We cross-reference NMLS Consumer Access licensing, CFPB complaint data, BBB accreditation, and attributed customer reviews. Listings are never sold or paid for.',
+  },
+  {
+    question: 'Can I find lenders in my county?',
+    answer:
+      'Yes. Enter your ZIP code to auto-detect your county and view ranked local lenders with county-specific experience scores and loan-type specialties.',
+  },
+];
+
 export default function LenderHubHomePage() {
   const canonical = hubCanonicalUrl('lender', '/');
+  const schema = buildHubHomeSchemaGraph('lender', LENDER_HOME_FAQ);
+  schema['@graph'].push({
+    '@type': 'SearchAction',
+    target: `${canonical}/local-lenders?zip={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  });
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: 'Lender Trust Hub',
-            url: canonical,
-            publisher: {
-              '@type': 'Organization',
-              name: 'Move Trust Hub',
-              url: 'https://www.movetrusthub.com',
-            },
-            potentialAction: {
-              '@type': 'SearchAction',
-              target: `${canonical}/local-lenders?zip={search_term_string}`,
-              'query-input': 'required name=search_term_string',
-            },
-          }),
-        }}
-      />
+      <SchemaInjector data={schema} />
       <LenderHomePage />
     </>
   );

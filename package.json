@@ -90,7 +90,8 @@
     "generate:us-map-geo": "tsx scripts/generate-us-map-geo.ts",
     "sync:hubs": "tsx scripts/sync-trust-hub-subapps.ts",
     "sync:hubs:dry": "tsx scripts/sync-trust-hub-subapps.ts --dry-run",
-    "sync:hubs:prefix-links": "tsx scripts/prefix-hub-links.ts"
+    "sync:hubs:prefix-links": "tsx scripts/prefix-hub-links.ts",
+    "audit:hub-seo": "tsx scripts/audit-hub-seo.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

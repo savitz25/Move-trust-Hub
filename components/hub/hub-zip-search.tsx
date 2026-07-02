@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { trackZipSearch } from '@/components/ga-events';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 
@@ -34,6 +35,7 @@ export function HubZipSearch({
           ? `${hubPath('insurance', '/hubs/browse')}?zip=${cleaned}`
           : `/local-movers?zip=${cleaned}`;
 
+    trackZipSearch({ hub, zip: cleaned, destination: target });
     router.push(target);
   }
 

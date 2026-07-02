@@ -1,7 +1,16 @@
 import type { Metadata } from 'next';
+import { getHubConfig } from '@/lib/hub/config';
 import { buildHubLayoutMetadata } from '@/lib/hub/metadata';
 
-export const metadata: Metadata = buildHubLayoutMetadata('lender');
+const lenderConfig = getHubConfig('lender');
+
+export const metadata: Metadata = {
+  ...buildHubLayoutMetadata('lender'),
+  title: {
+    default: lenderConfig.homeTitle,
+    template: lenderConfig.metadataTitleTemplate,
+  },
+};
 
 export default function LenderHubLayout({
   children,

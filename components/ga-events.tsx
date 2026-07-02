@@ -58,6 +58,42 @@ export function trackCalculatorComplete(params: {
   });
 }
 
+export function trackHubPageView(params: {
+  hub: string;
+  page_path: string;
+  page_title?: string;
+}) {
+  trackGaEvent('page_view', {
+    hub: params.hub,
+    page_path: params.page_path,
+    page_title: params.page_title,
+  });
+}
+
+export function trackZipSearch(params: {
+  hub: string;
+  zip: string;
+  destination: string;
+}) {
+  trackGaEvent('zip_search', {
+    hub: params.hub,
+    zip: params.zip,
+    destination: params.destination,
+  });
+}
+
+export function trackHubCalculatorUse(params: {
+  hub: string;
+  calculator_name: string;
+  page_path: string;
+}) {
+  trackGaEvent('hub_calculator_use', {
+    hub: params.hub,
+    calculator_name: params.calculator_name,
+    page_path: params.page_path,
+  });
+}
+
 export function trackQuoteFormSubmit(params: {
   from_zip: string;
   to_zip: string;

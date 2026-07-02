@@ -61,11 +61,10 @@ export const HUBS: Record<HubId, HubConfig> = {
     logoSrc: '/lender/brand/lender-trust-hub-logo-stacked-sm.png',
     logoAlt: 'Lender Trust Hub — trusted local mortgage lenders',
     accentClass: 'text-[#3B82F6]',
-    homeTitle:
-      'Lender Trust Hub • Trusted Local Lenders | Move Trust Hub',
+    homeTitle: 'Trusted Local Mortgage Lenders (2026) | NMLS-Verified Directory',
     homeDescription:
       'Compare NMLS-verified mortgage lenders and brokers by county. Free mortgage calculators, FDIC bank directory, and zero paid placements.',
-    metadataTitleTemplate: '%s | Lender Trust Hub • Move Trust Hub',
+    metadataTitleTemplate: '%s | Lender Trust Hub',
     navLinks: [
       { href: hubPath('lender', '/local-lenders'), label: 'Mortgage Lenders' },
       { href: hubPath('lender', '/fdic-insured-banks'), label: 'FDIC Banks' },
@@ -104,11 +103,10 @@ export const HUBS: Record<HubId, HubConfig> = {
     logoSrc: '/insurance/brand/insurance-trust-hub-logo-stacked-sm.png',
     logoAlt: 'Insurance Trust Hub — verified local insurance agents',
     accentClass: 'text-emerald-600',
-    homeTitle:
-      'Insurance Trust Hub • Trusted Local Agents | Move Trust Hub',
+    homeTitle: 'Trusted Local Insurance Agents (2026) | DOI-Verified Directory',
     homeDescription:
       'Compare DOI-verified insurance agents and agencies. Health insurance hubs, ACA and Medicare calculators, and zero paid placements.',
-    metadataTitleTemplate: '%s | Insurance Trust Hub • Move Trust Hub',
+    metadataTitleTemplate: '%s | Insurance Trust Hub',
     navLinks: [
       { href: hubPath('insurance', '/directory'), label: 'Directories' },
       { href: hubPath('insurance', '/hubs'), label: 'Health Hubs' },

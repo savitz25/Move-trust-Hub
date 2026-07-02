@@ -23,7 +23,9 @@ export function DeferredGtag() {
       script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
       document.head.appendChild(script);
 
-      gtag('config', GA_MEASUREMENT_ID);
+      gtag('config', GA_MEASUREMENT_ID, {
+        send_page_view: false,
+      });
       cleanup();
     };
 

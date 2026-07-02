@@ -1,7 +1,9 @@
 import type { Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { SchemaInjector } from '@/components/hub/schema-injector';
 import { HubShell } from '@/components/hub/hub-shell';
+import { buildTrustHubNetworkSchema } from '@/lib/hub/schemas';
 import { Suspense } from 'react';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
@@ -43,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+        <SchemaInjector data={buildTrustHubNetworkSchema()} />
         <HubShell>
           <Suspense fallback={<div className="h-96" />}>{children}</Suspense>
         </HubShell>

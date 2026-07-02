@@ -12,21 +12,26 @@ export type HubPageMetadataInput = {
   noIndex?: boolean;
 };
 
+function resolveHubTitle(hub: HubId, rawTitle: string): string {
+  const config = getHubConfig(hub);
+  if (hub === 'move') return rawTitle;
+  if (rawTitle.includes(config.siteName)) return rawTitle;
+  return `${rawTitle} | ${config.siteName}`;
+}
+
 export function buildHubMetadata(
   hub: HubId,
   input: HubPageMetadataInput
 ): Metadata {
-  const config = getHubConfig(hub);
   const canonical = hubCanonicalUrl(hub, input.path ?? '/');
-  const title =
-    hub === 'move'
-      ? input.title
-      : input.title.includes(config.siteName)
-        ? input.title
-        : `${input.title} | ${config.siteName}`;
+  const title = resolveHubTitle(hub, input.title);
+
+  // Sub-hub pages bypass the root Move title template to prevent duplicate suffixes.
+  const titleField: Metadata['title'] =
+    hub === 'move' ? title : { absolute: title };
 
   return {
-    title,
+    title: titleField,
     description: input.description,
     keywords: input.keywords,
     alternates: { canonical },
@@ -34,10 +39,12 @@ export function buildHubMetadata(
       title,
       description: input.description,
       url: canonical,
+      hub,
     }),
     twitter: buildTwitter({
       title,
       description: input.description,
+      hub,
     }),
     robots: input.noIndex ? { index: false, follow: false } : undefined,
     metadataBase: new URL(SITE_URL),
