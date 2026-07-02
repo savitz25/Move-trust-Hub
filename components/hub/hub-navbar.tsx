@@ -3,9 +3,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { HubLogo } from '@/components/hub/hub-logo';
-import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HubSelector } from '@/components/hub/hub-selector';
 import { getHubConfig, HUBS } from '@/lib/hub/config';
@@ -13,17 +12,11 @@ import { getHubFromPathname, hubPath } from '@/lib/hub/paths';
 import { DestinationsMegaMenuLazy } from '@/components/navbar/destinations-mega-menu-lazy';
 import { DestinationsMobileNav } from '@/components/navbar/destinations-mobile-nav';
 
-const QuoteModal = dynamic(
-  () => import('@/components/quote-modal').then((m) => m.QuoteModal),
-  { ssr: false }
-);
-
 export function HubNavbar() {
   const pathname = usePathname() ?? '/';
   const hubId = getHubFromPathname(pathname);
   const hub = getHubConfig(hubId);
   const [isOpen, setIsOpen] = useState(false);
-  const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   const homeHref = hubPath(hubId, '/');
   const showMoveExtras = hubId === 'move';
@@ -76,31 +69,28 @@ export function HubNavbar() {
               </Link>
             ))}
           {hub.ctaLabel && hub.ctaHref ? (
-            hubId === 'move' ? (
-              <Button
-                size="sm"
-                onClick={() => setShowQuoteModal(true)}
-                className="gap-2 bg-primary hover:bg-primary/90 shadow-sm"
-              >
-                <FileText className="h-4 w-4" /> {hub.ctaLabel}
-              </Button>
-            ) : (
-              <Button size="sm" asChild className="gap-2 shadow-sm">
-                <Link href={hub.ctaHref}>{hub.ctaLabel}</Link>
-              </Button>
-            )
+            <Button
+              size="sm"
+              asChild
+              className="gap-2 bg-primary hover:bg-primary/90 shadow-sm"
+            >
+              <Link prefetch={false} href={hub.ctaHref}>
+                {showMoveExtras ? (
+                  <Calculator className="h-4 w-4" aria-hidden="true" />
+                ) : null}
+                {hub.ctaLabel}
+              </Link>
+            </Button>
           ) : null}
         </div>
 
         <div className="flex lg:hidden items-center gap-2">
-          {hubId === 'move' ? (
-            <Button
-              size="sm"
-              className="gap-1.5 min-h-[44px] px-3"
-              onClick={() => setShowQuoteModal(true)}
-            >
-              <FileText className="h-4 w-4" aria-hidden="true" />
-              Quotes
+          {showMoveExtras && hub.ctaHref ? (
+            <Button size="sm" className="gap-1.5 min-h-[44px] px-3" asChild>
+              <Link prefetch={false} href={hub.ctaHref}>
+                <Calculator className="h-4 w-4" aria-hidden="true" />
+                Calculator
+              </Link>
             </Button>
           ) : hub.ctaHref ? (
             <Button size="sm" asChild className="min-h-[44px]">
@@ -133,10 +123,7 @@ export function HubNavbar() {
                 >
                   Movers Directory
                 </Link>
-                <DestinationsMobileNav
-                  onClose={() => setIsOpen(false)}
-                  onRequestQuote={() => setShowQuoteModal(true)}
-                />
+                <DestinationsMobileNav onClose={() => setIsOpen(false)} />
               </>
             ) : null}
             {hub.navLinks.map((link) => (
@@ -150,6 +137,23 @@ export function HubNavbar() {
                 {link.label}
               </Link>
             ))}
+            {showMoveExtras && hub.ctaHref ? (
+              <>
+                <Button className="w-full mt-2 min-h-[48px]" asChild>
+                  <Link prefetch={false} href={hub.ctaHref} onClick={() => setIsOpen(false)}>
+                    Use Free Moving Calculator
+                  </Link>
+                </Button>
+                <Link
+                  prefetch={false}
+                  href="/companies"
+                  onClick={() => setIsOpen(false)}
+                  className="text-center py-2 text-primary"
+                >
+                  Compare Trusted Movers →
+                </Link>
+              </>
+            ) : null}
             <div className="pt-2 border-t">
               <p className="text-xs text-muted-foreground mb-2">Switch hub</p>
               <div className="flex flex-wrap gap-2">
@@ -167,10 +171,6 @@ export function HubNavbar() {
             </div>
           </div>
         </div>
-      ) : null}
-
-      {showQuoteModal ? (
-        <QuoteModal open={showQuoteModal} onOpenChange={setShowQuoteModal} />
       ) : null}
     </nav>
   );

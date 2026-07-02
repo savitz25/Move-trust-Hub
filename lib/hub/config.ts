@@ -24,9 +24,9 @@ export const HUBS: Record<HubId, HubConfig> = {
     logoSrc: '/logo.png',
     logoAlt: 'Move Trust Hub — compare FMCSA-licensed interstate movers',
     accentClass: 'text-primary',
-    homeTitle: 'Free Moving Quotes (2026) | Compare FMCSA-Licensed Interstate Movers',
+    homeTitle: 'Compare FMCSA-Licensed Movers (2026) | Independent Moving Directory',
     homeDescription:
-      'Compare FMCSA-licensed interstate movers by reviews, pricing, and safety ratings. Free calculator, city guides, and county directories.',
+      'Research FMCSA-licensed interstate movers by reviews, pricing, and safety ratings. Free calculator, city guides, and county directories — no lead fees.',
     metadataTitleTemplate: '%s | Move Trust Hub',
     navLinks: [...MOVE_NAV],
     footerColumns: [
@@ -47,9 +47,9 @@ export const HUBS: Record<HubId, HubConfig> = {
         ],
       },
     ],
-    ctaLabel: 'Get Free Quotes',
+    ctaLabel: 'Moving Calculator',
     ctaHref: '/moving-calculator',
-    trustBadge: 'TRUSTED',
+    trustBadge: 'INDEPENDENT',
     verifyAuthority: { label: 'FMCSA', href: 'https://www.fmcsa.dot.gov/' },
   },
   lender: {
