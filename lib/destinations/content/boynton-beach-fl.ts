@@ -48,7 +48,7 @@ export const boyntonBeachFlContent: CityHubContent = {
     },
     {
       label: 'Michigan → Boynton Beach',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/illinois-to-florida',
       miles: '≈1,350 miles',
     },
   ],

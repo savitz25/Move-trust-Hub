@@ -40,7 +40,7 @@ export const spartanburgScContent: CityHubContent = {
     },
     {
       label: 'New Jersey → Spartanburg',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-jersey-to-south-carolina',
       miles: '≈650 miles',
     },
     {

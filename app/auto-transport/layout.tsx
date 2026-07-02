@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildAutoTransportSchemaGraph } from '@/lib/auto-transport/schema';
+import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMovePageMetadata({
   title: 'Auto Transport Calculator & Car Shipping Companies | Free Instant Estimates',
   description:
     'Estimate open and enclosed car shipping costs by ZIP code. Compare FMCSA-licensed auto transport companies, ratings, and services — then request free carrier quotes.',
+  path: '/auto-transport',
   keywords: [
     'auto transport calculator',
     'car shipping cost',
@@ -15,17 +17,7 @@ export const metadata: Metadata = {
     'ship a car cross country',
     'auto transport companies',
   ],
-  openGraph: {
-    title: 'Auto Transport Calculator & Car Shipping Directory',
-    description:
-      'Get an instant open or enclosed auto transport price range, then compare top-rated car shipping companies.',
-    url: 'https://www.movetrusthub.com/auto-transport',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://www.movetrusthub.com/auto-transport',
-  },
-};
+});
 
 export default function AutoTransportLayout({
   children,

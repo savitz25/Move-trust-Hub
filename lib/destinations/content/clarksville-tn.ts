@@ -39,7 +39,7 @@ export const clarksvilleTnContent: CityHubContent = {
     },
     {
       label: 'California → Clarksville',
-      href: '/resources/routes/california-to-texas',
+      href: '/resources/routes/california-to-tennessee',
       miles: '≈2,100 miles',
     },
     {

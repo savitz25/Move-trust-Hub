@@ -48,7 +48,7 @@ export const hollywoodFlContent: CityHubContent = {
     },
     {
       label: 'Michigan → Hollywood',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/illinois-to-florida',
       miles: '≈1,340 miles',
     },
   ],

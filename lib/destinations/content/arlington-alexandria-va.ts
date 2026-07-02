@@ -37,7 +37,7 @@ export const arlingtonAlexandriaVaContent: CityHubContent = {
   routeLinks: [
     {
       label: 'New York → Arlington / Alexandria',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/new-york-to-texas',
       miles: '≈230 miles',
     },
     {

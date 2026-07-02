@@ -44,7 +44,7 @@ export const houstonTxContent: CityHubContent = {
     },
     {
       label: 'Illinois → Houston',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/illinois-to-texas',
       miles: '≈940 miles',
     },
     {

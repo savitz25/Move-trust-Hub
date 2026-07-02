@@ -48,7 +48,7 @@ export const delrayBeachFlContent: CityHubContent = {
     },
     {
       label: 'California → Delray Beach',
-      href: '/resources/routes/california-to-texas',
+      href: '/resources/routes/california-to-florida',
       miles: '≈2,650 miles',
     },
   ],

@@ -34,12 +34,12 @@ export const nashvilleTnContent: CityHubContent = {
   routeLinks: [
     {
       label: 'California → Nashville',
-      href: '/resources/routes/california-to-texas',
+      href: '/resources/routes/california-to-tennessee',
       miles: '≈2,000 miles',
     },
     {
       label: 'Illinois → Nashville',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/illinois-to-tennessee',
       miles: '≈470 miles',
     },
     {

@@ -44,7 +44,7 @@ export const apexFuquayVarinaNcContent: CityHubContent = {
     },
     {
       label: 'California → Apex',
-      href: '/resources/routes/california-to-texas',
+      href: '/resources/routes/california-to-north-carolina',
       miles: '≈2,580 miles',
     },
     {

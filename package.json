@@ -92,7 +92,8 @@
     "sync:hubs:dry": "tsx scripts/sync-trust-hub-subapps.ts --dry-run",
     "sync:hubs:prefix-links": "tsx scripts/prefix-hub-links.ts",
     "audit:hub-seo": "tsx scripts/audit-hub-seo.ts",
-    "fix:lender-paths": "tsx scripts/fix-lender-path-prefixes.ts"
+    "fix:lender-paths": "tsx scripts/fix-lender-path-prefixes.ts",
+    "fix:route-links": "tsx scripts/fix-destination-route-links.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

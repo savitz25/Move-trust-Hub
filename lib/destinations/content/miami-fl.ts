@@ -43,12 +43,12 @@ export const miamiFlContent: CityHubContent = {
     },
     {
       label: 'Chicago → Miami',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/illinois-to-florida',
       miles: '≈1,380 miles',
     },
     {
       label: 'California → Miami',
-      href: '/resources/routes/california-to-texas',
+      href: '/resources/routes/california-to-florida',
       miles: '≈2,720 miles',
     },
   ],

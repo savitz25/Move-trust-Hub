@@ -35,17 +35,17 @@ export const salemOrContent: CityHubContent = {
   routeLinks: [
     {
       label: 'California → Oregon',
-      href: '/resources/routes/california-to-texas',
+      href: '/resources/routes/california-to-oregon',
       miles: 'Western corridor',
     },
     {
       label: 'Washington → Oregon',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/california-to-oregon',
       miles: '≈160 miles',
     },
     {
       label: 'Colorado → Oregon',
-      href: '/resources/routes/california-to-texas',
+      href: '/resources/routes/california-to-oregon',
       miles: '≈1,200 miles',
     },
     {

@@ -45,12 +45,12 @@ export const sarasotaFlContent: CityHubContent = {
     },
     {
       label: 'Illinois → Sarasota',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/illinois-to-florida',
       miles: '≈1,180 miles',
     },
     {
       label: 'Michigan → Sarasota',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/illinois-to-florida',
       miles: '≈1,320 miles',
     },
   ],

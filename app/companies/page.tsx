@@ -7,37 +7,23 @@ import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { getAllCompanies } from '@/lib/data-server';
-import {
-  SITE_URL,
-  buildOpenGraph,
-  buildTwitter,
-} from '@/lib/seo/site-metadata';
+import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 
-const COMPANIES_CANONICAL = `${SITE_URL}/companies`;
 const COMPANIES_TITLE = 'Directory of Interstate Moving Companies 2026';
 const COMPANIES_DESCRIPTION =
   'Browse and filter 25+ major interstate moving companies. Sort by reputation, rating, price, complaints, or years in business. See FMCSA, BBB, and verified reviews.';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMovePageMetadata({
   title: COMPANIES_TITLE,
   description: COMPANIES_DESCRIPTION,
-  alternates: {
-    canonical: COMPANIES_CANONICAL,
-  },
-  openGraph: buildOpenGraph({
-    title: COMPANIES_TITLE,
-    description: COMPANIES_DESCRIPTION,
-    url: COMPANIES_CANONICAL,
-  }),
-  twitter: buildTwitter({
-    title: COMPANIES_TITLE,
-    description: COMPANIES_DESCRIPTION,
-  }),
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+  path: '/companies',
+  keywords: [
+    'interstate moving companies directory',
+    'compare moving companies',
+    'FMCSA licensed movers list',
+    'moving company ratings 2026',
+  ],
+});
 
 export default async function CompaniesDirectoryPage() {
   const companies = await getAllCompanies();

@@ -44,7 +44,7 @@ export const austinTxContent: CityHubContent = {
     },
     {
       label: 'Illinois → Austin',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/illinois-to-texas',
       miles: '≈1,020 miles',
     },
     {

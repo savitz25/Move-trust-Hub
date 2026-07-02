@@ -1,28 +1,46 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { wrapHubPageMetadata } from '@/lib/hub/wrap-metadata';
+import { insuranceHref } from '@/lib/insurance/paths';
+import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { AcaSubsidyCalculator } from '@/components/insurance/calculators/aca-subsidy-calculator';
-import { buildMetadata } from '@/lib/insurance/seo/metadata';
 
-export const metadata: Metadata = buildMetadata({
+export const metadata: Metadata = wrapHubPageMetadata('insurance', {
   title: 'ACA Subsidy Estimator (2026)',
   description: 'Estimate marketplace premium tax credits by income and household size. Educational tool only.',
-  path: '/insurance/calculators/aca-subsidy',
+  path: '/calculators/aca-subsidy',
 });
+
+const FAQ = [
+  {
+    question: 'Is this an official Healthcare.gov subsidy calculation?',
+    answer:
+      'No. This is an educational estimator. Official premium tax credits are determined on HealthCare.gov or your state marketplace using current federal poverty level tables.',
+  },
+  {
+    question: 'What inputs affect my ACA subsidy estimate?',
+    answer:
+      'Household size, modified adjusted gross income, ZIP code, and plan metal tier all influence subsidy eligibility and amount.',
+  },
+];
 
 export default function AcaSubsidyPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-2xl">
-      <nav className="text-sm text-muted-foreground mb-6">
-        <Link href="/insurance/calculators">Calculators</Link> / ACA Subsidy
-      </nav>
-      <h1 className="text-3xl font-bold">ACA Subsidy Estimator</h1>
-      <p className="mt-2 text-muted-foreground text-sm">
-        Rough 2026 estimate only. Official subsidies are calculated at HealthCare.gov or your state
-        marketplace.
-      </p>
-      <div className="mt-8">
-        <AcaSubsidyCalculator />
-      </div>
-    </div>
+    <CalculatorPageShell
+      title="ACA Subsidy Estimator"
+      description="Rough 2026 estimate of marketplace premium tax credits by income and household size. Use before open enrollment to compare metal tiers with licensed agents in your market."
+      methodology={[
+        'Uses simplified federal poverty level brackets for educational planning — not IRS tax filing logic.',
+        'Subsidy amounts vary by ZIP rating area and plan selection on the ACA marketplace.',
+        'Results do not constitute tax, legal, or enrollment advice.',
+      ]}
+      faq={FAQ}
+      breadcrumbs={[
+        { label: 'Insurance', href: insuranceHref('/') },
+        { label: 'Calculators', href: insuranceHref('/calculators') },
+        { label: 'ACA Subsidy' },
+      ]}
+    >
+      <AcaSubsidyCalculator />
+    </CalculatorPageShell>
   );
 }

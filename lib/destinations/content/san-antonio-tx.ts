@@ -39,7 +39,7 @@ export const sanAntonioTxContent: CityHubContent = {
     },
     {
       label: 'Illinois → San Antonio',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/illinois-to-texas',
       miles: '≈1,080 miles',
     },
     {

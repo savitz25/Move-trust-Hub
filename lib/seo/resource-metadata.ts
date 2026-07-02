@@ -12,8 +12,8 @@ export function buildResourceMetadata(
     title,
     description,
     alternates: { canonical: url },
-    openGraph: buildOpenGraph({ title, description, url, type: 'article' }),
-    twitter: buildTwitter({ title, description }),
+    openGraph: buildOpenGraph({ title, description, url, type: 'article', hub: 'move' }),
+    twitter: buildTwitter({ title, description, hub: 'move' }),
     robots: { index: true, follow: true },
   };
 }

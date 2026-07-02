@@ -39,7 +39,7 @@ export const dallasFortWorthTxContent: CityHubContent = {
     },
     {
       label: 'Illinois → Dallas–Fort Worth',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/illinois-to-texas',
       miles: '≈920 miles',
     },
     {

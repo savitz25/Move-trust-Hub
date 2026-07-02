@@ -15,7 +15,13 @@ export function HubShell({ children }: { children: React.ReactNode }) {
   const showCrossLinks =
     pathname === '/' ||
     pathname === '/lender' ||
-    pathname === '/insurance';
+    pathname === '/insurance' ||
+    pathname === '/moving-calculator' ||
+    pathname === '/companies' ||
+    pathname === '/auto-transport' ||
+    pathname.startsWith('/lender/calculators') ||
+    pathname.startsWith('/insurance/calculators') ||
+    pathname.startsWith('/moving-to/');
 
   return (
     <div className="min-h-screen flex flex-col">

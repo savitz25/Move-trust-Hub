@@ -49,7 +49,7 @@ export const naplesFlContent: CityHubContent = {
     },
     {
       label: 'Illinois → Naples',
-      href: '/resources/routes/new-york-to-florida',
+      href: '/resources/routes/illinois-to-florida',
       miles: '≈1,320 miles',
     },
   ],

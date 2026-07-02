@@ -34,17 +34,17 @@ export const portlandOrContent: CityHubContent = {
   routeLinks: [
     {
       label: 'California → Portland',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/california-to-oregon',
       miles: '≈650–750 miles',
     },
     {
       label: 'Washington → Portland',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/california-to-oregon',
       miles: '≈175 miles',
     },
     {
       label: 'Colorado → Portland',
-      href: '/resources/routes/east-coast-to-west-coast',
+      href: '/resources/routes/california-to-oregon',
       miles: '≈1,250 miles',
     },
     {

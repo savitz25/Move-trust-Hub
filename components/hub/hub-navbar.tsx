@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
+import { HubLogo } from '@/components/hub/hub-logo';
 import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { Menu, X, FileText } from 'lucide-react';
@@ -42,15 +42,7 @@ export function HubNavbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
           <Link prefetch={false} href={homeHref} className="group">
-            <Image
-              src={hub.logoSrc}
-              alt={hub.logoAlt}
-              width={300}
-              height={75}
-              priority
-              sizes="(max-width: 768px) 180px, 300px"
-              className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]"
-            />
+            <HubLogo hubId={hubId} priority />
           </Link>
           <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
             {hub.trustBadge}
