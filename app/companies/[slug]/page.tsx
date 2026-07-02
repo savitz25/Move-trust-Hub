@@ -14,6 +14,8 @@ import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 import { CoverageMap } from '@/components/map/coverage-map';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
+import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
+import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -68,6 +70,7 @@ export default async function CompanyProfilePage({ params }: Props) {
           <div className="flex items-center gap-3">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
             {company.isVerified && <Badge variant="success">VERIFIED</Badge>}
+            <FmcsaVerificationBadge company={company} />
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
         </div>
@@ -153,8 +156,22 @@ export default async function CompanyProfilePage({ params }: Props) {
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground text-xs">FMCSA Data (approx last 24mo)</div>
-                <div>{company.fmcsaComplaints} complaints on {company.fmcsaShipments.toLocaleString()} shipments</div>
+                <div className="text-muted-foreground text-xs">FMCSA complaints (12 mo)</div>
+                <div>
+                  {(company.complaintsLast12m ?? company.fmcsaComplaints).toLocaleString()} complaints on{' '}
+                  {company.fmcsaShipments.toLocaleString()} shipments
+                </div>
+              </div>
+              {company.authorityActive === false || company.outOfService ? (
+                <div className="sm:col-span-2 rounded-md border border-destructive/30 bg-destructive/5 p-3 text-sm">
+                  {company.outOfService
+                    ? 'FMCSA reports an active out-of-service order for this carrier.'
+                    : 'FMCSA reports inactive or revoked operating authority.'}
+                  {company.revocationDate ? ` Revocation date: ${company.revocationDate}.` : ''}
+                </div>
+              ) : null}
+              <div className="sm:col-span-2">
+                <FmcsaLastVerified checkedAt={company.fmcsaLastChecked} />
               </div>
               <div>
                 <div className="text-muted-foreground text-xs">BBB Rating</div>

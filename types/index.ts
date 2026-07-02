@@ -36,6 +36,13 @@ export interface Company {
   fmcsaSafetyRating: 'Satisfactory' | 'Conditional' | 'Unsatisfactory' | 'Not Rated';
   fmcsaComplaints: number; // last 2 years reported
   fmcsaShipments: number; // approx reported
+  /** FMCSA automated refresh fields */
+  fmcsaLastChecked?: string | null;
+  authorityActive?: boolean | null;
+  outOfService?: boolean;
+  complaintsLast12m?: number;
+  revocationDate?: string | null;
+  fmcsaDataHash?: string | null;
   bbbRating: 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'NR';
   bbbAccredited: boolean;
 

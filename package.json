@@ -93,7 +93,8 @@
     "sync:hubs:prefix-links": "tsx scripts/prefix-hub-links.ts",
     "audit:hub-seo": "tsx scripts/audit-hub-seo.ts",
     "fix:lender-paths": "tsx scripts/fix-lender-path-prefixes.ts",
-    "fix:route-links": "tsx scripts/fix-destination-route-links.ts"
+    "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
+    "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

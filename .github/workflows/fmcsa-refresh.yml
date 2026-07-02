@@ -1,0 +1,70 @@
+name: FMCSA Refresh
+
+on:
+  schedule:
+    # Daily incremental at 06:15 UTC (fallback if Vercel cron unavailable)
+    - cron: '15 6 * * *'
+    # Weekly full refresh Sunday 05:15 UTC
+    - cron: '15 5 * * 0'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Refresh mode'
+        required: true
+        default: incremental
+        type: choice
+        options:
+          - incremental
+          - full
+      force:
+        description: 'Force run (ignore idempotency)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  incremental:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'incremental' || github.event_name == 'schedule' && github.event.schedule == '15 6 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-node@v4
+      - run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Trigger incremental FMCSA refresh
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://www.movetrusthub.com' }}
+          FORCE: ${{ github.event.inputs.force || 'false' }}
+        run: |
+          curl -fsS -X POST "${SITE_URL}/api/refresh/fmcsa" \
+            -H "Authorization: Bearer ${CRON_SECRET}" \
+            -H "x-github-action: true" \
+            -H "Content-Type: application/json" \
+            -d "{\"mode\":\"incremental\",\"force\":${FORCE}}" \
+            --max-time 600 -o response.json
+          cat response.json
+          jq -e '.status != "failed"' response.json
+
+  full:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'full' || github.event_name == 'schedule' && github.event.schedule == '15 5 * * 0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Trigger full FMCSA refresh
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://www.movetrusthub.com' }}
+          FORCE: ${{ github.event.inputs.force || 'false' }}
+        run: |
+          curl -fsS -X POST "${SITE_URL}/api/refresh/fmcsa" \
+            -H "Authorization: Bearer ${CRON_SECRET}" \
+            -H "x-github-action: true" \
+            -H "Content-Type: application/json" \
+            -d "{\"mode\":\"full\",\"force\":${FORCE}}" \
+            --max-time 600 -o response.json
+          cat response.json
+          jq -e '.status != "failed"' response.json

@@ -48,11 +48,55 @@ export interface Database {
           rating_breakdown: Json | null;
           is_verified: boolean;
           last_updated: string;
+          fmcsa_last_checked: string | null;
+          authority_active: boolean | null;
+          out_of_service: boolean;
+          complaints_last_12m: number;
+          revocation_date: string | null;
+          data_hash: string | null;
+          fmcsa_legal_name: string | null;
+          fmcsa_raw: Json | null;
           created_at: string;
           updated_at: string;
         };
         Insert: Partial<Database['public']['Tables']['companies']['Row']>;
         Update: Partial<Database['public']['Tables']['companies']['Row']>;
+      };
+      fmcsa_refresh_runs: {
+        Row: {
+          id: string;
+          idempotency_key: string;
+          mode: string;
+          status: string;
+          triggered_by: string;
+          companies_total: number;
+          companies_processed: number;
+          companies_updated: number;
+          companies_failed: number;
+          changes_detected: number;
+          error_summary: string | null;
+          started_at: string;
+          finished_at: string | null;
+          metadata: Json | null;
+        };
+        Insert: Partial<Database['public']['Tables']['fmcsa_refresh_runs']['Row']>;
+        Update: Partial<Database['public']['Tables']['fmcsa_refresh_runs']['Row']>;
+      };
+      fmcsa_change_log: {
+        Row: {
+          id: string;
+          run_id: string | null;
+          company_id: string;
+          company_slug: string | null;
+          company_name: string | null;
+          field_name: string;
+          old_value: string | null;
+          new_value: string | null;
+          severity: string;
+          created_at: string;
+        };
+        Insert: Partial<Database['public']['Tables']['fmcsa_change_log']['Row']>;
+        Update: Partial<Database['public']['Tables']['fmcsa_change_log']['Row']>;
       };
       reviews: {
         Row: {

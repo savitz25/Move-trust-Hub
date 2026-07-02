@@ -32,6 +32,9 @@ export default async function AdminQuotesPage() {
         </div>
         <div className="flex gap-2">
           <Button variant="outline" asChild>
+            <Link href="/admin/fmcsa">FMCSA Refresh</Link>
+          </Button>
+          <Button variant="outline" asChild>
             <Link href="/admin/reviews">Review Moderation</Link>
           </Button>
           <Button variant="outline" asChild>

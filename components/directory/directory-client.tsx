@@ -13,6 +13,7 @@ import { StarRating } from '@/components/ui/star-rating';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X } from 'lucide-react';
+import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Carrier', 'Container / Portable', 'Auto Transport', 'Storage'];
@@ -355,6 +356,7 @@ function CompanyCard({ company, compareStore }: { company: Company; compareStore
             {company.name}
           </Link>
           {company.isVerified && <Badge variant="success" className="text-[10px] h-fit">VERIFIED</Badge>}
+          <FmcsaVerificationBadge company={company} className="text-[10px] h-fit" />
         </div>
         <div className="text-sm text-muted-foreground">{company.headquarters} • Est. {company.foundedYear}</div>
 
