@@ -11,7 +11,7 @@ import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 
 const COMPANIES_TITLE = 'Directory of Interstate Moving Companies 2026';
 const COMPANIES_DESCRIPTION =
-  'Browse and filter 25+ major interstate moving companies. Sort by reputation, rating, price, complaints, or years in business. See FMCSA, BBB, and verified reviews.';
+  'Browse and filter 25+ major interstate moving companies. Sort by reputation, rating, price, complaints, or years in business. See FMCSA, BBB, and attributable on-site reviews.';
 
 export const metadata: Metadata = buildMovePageMetadata({
   title: COMPANIES_TITLE,

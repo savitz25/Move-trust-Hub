@@ -194,7 +194,7 @@ const fmcsaSteps = [
   'Visit the FMCSA Company Snapshot at fmcsa.dot.gov (or protectyourmove.gov)',
   'Verify operating authority status shows "Authorized" for Household Goods',
   'Review complaint ratios, safety ratings, and fleet size',
-  'Cross-reference with Move Trust Hub reputation scores and verified reviews',
+  'Cross-reference with Move Trust Hub reputation scores and attributable on-site reviews',
 ];
 
 const schoolScheduleTips = [
@@ -595,7 +595,7 @@ export default function BestTimeToMovePage() {
             <p className="text-muted-foreground leading-relaxed mb-6">
               Move Trust Hub is a completely independent directory — we do not accept paid
               placements from moving carriers. Use our transparent tools to evaluate top-rated
-              interstate movers based on real reviews, FMCSA complaint ratios, and reputation scores.
+              interstate movers based on attributable reviews and industry-reported volumes, FMCSA complaint ratios, and reputation scores.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild size="lg" className="shadow-sm">

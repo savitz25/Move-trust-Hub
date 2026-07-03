@@ -46,6 +46,7 @@ export async function moderateReview(params: {
       moderation_note: params.note?.trim() || null,
       moderated_at: new Date().toISOString(),
       moderated_by: 'admin',
+      verification_tier: status === 'approved' ? 'verified_mth' : 'email_pending',
     })
     .eq('id', params.reviewId)
     .select('company_id')

@@ -72,7 +72,7 @@ export default function Scams() {
         Be extremely cautious of companies with only a handful of reviews or reviews that all look similar.
       </p>
       <p>
-        Use our <Link href="/companies">directory</Link> to see real review volume and recent complaint history from the FMCSA.
+        Use our <Link href="/companies">directory</Link> to see transparent review data and recent complaint history from the FMCSA.
       </p>
 
       <h2>8. Price Changes Dramatically on Delivery Day</h2>

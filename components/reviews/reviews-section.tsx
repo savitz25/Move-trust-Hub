@@ -4,10 +4,13 @@ import React, { useState } from 'react';
 import { Review } from '@/types';
 import { getAllReviewsForCompany } from '@/lib/data';
 import { StarRating } from '@/components/ui/star-rating';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { format } from 'date-fns';
 import { Card, CardContent } from '@/components/ui/card';
+import { ReviewSourceBadge } from '@/components/trust/review-source-badge';
+import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
+import { isAttributableReview } from '@/lib/trust/verified-reviews';
+import { EXTERNAL_REVIEW_ATTRIBUTION_NOTE } from '@/lib/trust/review-display-policy';
 
 interface Props {
   companyId: string;
@@ -21,9 +24,10 @@ export function ReviewsSection({ companyId, companyName, initialReviews }: Props
   const [showVerifiedOnly, setShowVerifiedOnly] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const sources = ['All', ...Array.from(new Set(reviews.map(r => r.source)))];
+  const attributableOnly = reviews.filter(isAttributableReview);
+  const sources = ['All', ...Array.from(new Set(attributableOnly.map(r => r.source)))];
 
-  const filtered = reviews
+  const filtered = attributableOnly
     .filter(r => filterSource === 'All' || r.source === filterSource)
     .filter(r => !showVerifiedOnly || r.verified);
 
@@ -37,10 +41,10 @@ export function ReviewsSection({ companyId, companyName, initialReviews }: Props
   return (
     <div>
       <div className="flex items-center justify-between mb-3">
-        <h3 className="font-semibold text-xl">Customer Reviews</h3>
+        <h3 className="font-semibold text-xl">Attributed Google Reviews</h3>
         <div className="flex gap-2 text-xs">
           <Button size="sm" variant="outline" onClick={() => setShowVerifiedOnly(!showVerifiedOnly)}>
-            {showVerifiedOnly ? 'Show All' : 'Verified Only'}
+            {showVerifiedOnly ? 'Show All Attributed' : '5-Star Only'}
           </Button>
         </div>
       </div>
@@ -58,7 +62,11 @@ export function ReviewsSection({ companyId, companyName, initialReviews }: Props
       </div>
 
       <div className="space-y-3">
-        {filtered.length === 0 && <p className="text-muted-foreground py-6">No reviews match the current filters.</p>}
+        {filtered.length === 0 && (
+          <p className="text-muted-foreground py-6">
+            No attributed Google reviews on Move Trust Hub for this company yet.
+          </p>
+        )}
 
         {filtered.slice(0, 6).map((review) => (
           <Card key={review.id} className="review-card">
@@ -78,28 +86,23 @@ export function ReviewsSection({ companyId, companyName, initialReviews }: Props
               </div>
             </div>
             <div className="mt-3 text-sm leading-relaxed">{review.content}</div>
-            <div className="mt-2 flex items-center gap-2">
-              {review.verified ? (
-                <Badge variant="success" className="text-[10px]">Verified Move</Badge>
-              ) : (
-                <Badge variant="outline" className="text-[10px]">Unverified</Badge>
-              )}
+            <div className="mt-2">
+              <ReviewSourceBadge review={review} companyName={companyName} />
             </div>
           </Card>
         ))}
       </div>
 
-      {reviews.length > 6 && filtered.length > 0 && (
+      {attributableOnly.length > 6 && filtered.length > 0 && (
         <div className="mt-3">
           <Button variant="outline" size="sm" onClick={loadMore} disabled={isLoadingMore}>
-            {isLoadingMore ? 'Loading...' : 'Load all reviews for this company'}
+            {isLoadingMore ? 'Loading...' : 'Load all attributed reviews'}
           </Button>
         </div>
       )}
 
-      <p className="text-[10px] text-muted-foreground mt-4">
-        Reviews are aggregated from public sources and submitted customers. We do not guarantee authenticity of every review. Always cross-reference.
-      </p>
+      <p className="text-[10px] text-muted-foreground mt-4">{EXTERNAL_REVIEW_ATTRIBUTION_NOTE}</p>
+      <ReviewTransparencyNote compact className="mt-3" />
     </div>
   );
 }

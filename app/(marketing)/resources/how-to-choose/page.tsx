@@ -68,7 +68,7 @@ export default function HowToChoose() {
 
       <h2 id="reputation-score">3. Use Reputation Scores, Not Just Star Ratings</h2>
       <p>
-        A 4.9-star rating on Google from 12 reviews is less meaningful than a 4.3 average from 2,000 verified reviews.
+        A 4.9-star rating on Google from 12 reviews is less meaningful than a 4.3 average from 2,000 third-party reviews you can verify yourself.
       </p>
       <p>
         At Move Trust Hub we calculate a <strong>Reputation Score (0–100)</strong> that combines:

@@ -92,7 +92,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
               title: 'Book with Confidence',
               desc: (
                 <>
-                  Review real feedback in our <Link href="/companies" className="text-primary underline underline-offset-2">mover directory</Link>, <Link href="/compare" className="text-primary underline underline-offset-2">compare companies side-by-side</Link>, and book with confidence.
+                  Compare attributable on-site reviews and industry-reported volumes in our <Link href="/companies" className="text-primary underline underline-offset-2">mover directory</Link>, <Link href="/compare" className="text-primary underline underline-offset-2">compare companies side-by-side</Link>, and book with confidence.
                 </>
               ),
               icon: Shield,
@@ -120,7 +120,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             {[
               { icon: DollarSign, title: 'Plan Smarter', desc: 'Estimate move size and costs before you talk to any carrier — no sales pressure.' },
               { icon: Shield, title: 'Verify Licensing', desc: 'Verified listings include FMCSA USDOT data you can cross-check on FMCSA.gov.' },
-              { icon: Clock, title: 'Research Faster', desc: 'Compare reputation, services, and reviews in one independent directory.' },
+              { icon: Clock, title: 'Research Faster', desc: 'Compare reputation, services, and transparent review data in one independent directory.' },
               { icon: Headphones, title: 'Dedicated Support', desc: 'Our team is here to answer questions before, during, and after your move.' },
             ].map((benefit, i) => (
               <Card key={i} className="p-6 border border-border/50 shadow-trust">

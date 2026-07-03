@@ -16,9 +16,9 @@ const VERIFICATION_STEPS = [
   },
   {
     icon: BadgeCheck,
-    title: 'Directory-linked reviews only',
+    title: 'Attributed reviews only',
     detail:
-      'AggregateRating schema is emitted only when a mover links to our interstate directory and has named, attributable Google reviews.',
+      'We host a small set of named Google review excerpts on-site. AggregateRating schema is emitted only for moderated community reviews on /company profiles or directory-linked movers with attributable Google data.',
   },
   {
     icon: AlertTriangle,

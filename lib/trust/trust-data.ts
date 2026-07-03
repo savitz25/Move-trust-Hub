@@ -93,19 +93,20 @@ export const reviewHighlights = verifiedDirectoryCompanies
       companyName: company.name,
       slug: company.slug,
       rating: company.overallRating,
-      reviewCount: company.reviewCount,
+      attributableOnSite: homepageReviews.filter((r) => r.companySlug === company.slug)
+        .length,
       reputationScore: company.reputationScore,
       highlight: sample
-        ? `"${sample.quote.slice(0, 120)}${sample.quote.length > 120 ? '…' : ''}" — ${sample.name}, ${sample.source}`
+        ? `"${sample.quote.slice(0, 120)}${sample.quote.length > 120 ? '…' : ''}" — ${sample.name}, Attributed ${sample.source}`
         : `FMCSA USDOT ${company.usdotNumber} · ${company.headquarters}`,
-      source: sample ? `${sample.source} review` : 'FMCSA directory',
+      source: sample ? `Attributed ${sample.source} review` : 'FMCSA directory',
     };
   });
 
 export const neutralTrustSignals = [
   {
     title: 'Verify FMCSA licensing yourself',
-    body: 'Every directory listing includes a USDOT number you can look up on the official FMCSA SAFER site before booking.',
+    body: 'Verified listings include a USDOT number you can look up on the official FMCSA SAFER site before booking.',
     href: '/resources/fmcsa',
   },
   {

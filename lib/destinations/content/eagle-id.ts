@@ -220,7 +220,7 @@ export const eagleIdContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data and verified reviews so you can decide with confidence.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data and attributable reviews so you can decide with confidence.',
     },
   ],
   featuredInterstateSlugs: [

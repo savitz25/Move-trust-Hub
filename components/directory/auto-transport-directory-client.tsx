@@ -12,6 +12,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X, Truck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
+import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
@@ -265,7 +266,7 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                   <div className="text-right">
                     <StarRating rating={company.overallRating} />
                     <div className="text-xs text-muted-foreground mt-0.5">
-                      ({company.reviewCount.toLocaleString()} reviews)
+                      (<EditorialReviewVolume count={company.reviewCount} />)
                     </div>
                   </div>
                 </div>
@@ -331,7 +332,10 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                     <Link href={`/auto-transport/${c.slug}`}>{c.name}</Link>
                     <div className="text-xs text-muted-foreground">{c.headquarters}</div>
                   </td>
-                  <td className="p-3"><StarRating rating={c.overallRating} size="sm" /> <span className="text-xs">({c.reviewCount})</span></td>
+                  <td className="p-3">
+                    <StarRating rating={c.overallRating} size="sm" />{' '}
+                    <span className="text-xs">(<EditorialReviewVolume count={c.reviewCount} />)</span>
+                  </td>
                   <td className="p-3 font-semibold text-primary">{c.reputationScore}</td>
                   <td className="p-3">${c.avgPricePerMove.toLocaleString()}</td>
                   <td className="p-3">{(c.fmcsaComplaints / Math.max(c.fmcsaShipments, 1) * 1000).toFixed(1)}</td>

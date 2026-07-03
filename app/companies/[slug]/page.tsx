@@ -26,6 +26,9 @@ import {
   LicenseDisplay,
   LicenseMetadataDescription,
 } from '@/components/trust/license-display';
+import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
+import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
+import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -36,10 +39,15 @@ export async function generateMetadata({ params }: Props) {
   const company = await getCompanyBySlugAsync(slug);
   if (!company) return { title: 'Company Not Found' };
 
+  const reviewMeta = companyProfileReviewMeta({
+    companyId: company.id,
+    editorialReviewCount: company.reviewCount,
+    editorialRating: company.overallRating,
+  });
   const canonical = `${SITE_URL}/companies/${slug}`;
   return {
     title: `${company.name} — Reviews, Pricing & FMCSA Info`,
-    description: `${company.name} interstate mover profile. ${company.overallRating}★ from ${company.reviewCount} reviews. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
+    description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
     alternates: { canonical },
     robots: { index: true, follow: true },
   };
@@ -52,6 +60,11 @@ export default async function CompanyProfilePage({ params }: Props) {
   if (!company) notFound();
 
   const reviews = await getReviews(company.id, 8);
+  const reviewMeta = companyProfileReviewMeta({
+    companyId: company.id,
+    editorialReviewCount: company.reviewCount,
+    editorialRating: company.overallRating,
+  });
   const complaintRatio = (company.fmcsaComplaints / Math.max(company.fmcsaShipments, 1) * 1000).toFixed(2);
 
   const dot = company.usdotNumber?.replace(/\D/g, '');
@@ -103,7 +116,9 @@ export default async function CompanyProfilePage({ params }: Props) {
           <div className="text-xs text-muted-foreground">OVERALL RATING</div>
           <div className="flex items-baseline gap-2 mt-0.5">
             <StarRating rating={company.overallRating} size="lg" />
-            <span className="text-xs text-muted-foreground">({company.reviewCount.toLocaleString()} reviews)</span>
+            <span className="text-xs text-muted-foreground" title="Industry-reported volume from third-party platforms">
+              (<EditorialReviewVolume count={company.reviewCount} />)
+            </span>
           </div>
         </Card>
         <Card className="p-4">
@@ -235,7 +250,9 @@ export default async function CompanyProfilePage({ params }: Props) {
             mcNumber={company.mcNumber}
           />
 
-          {/* Aggregated third-party reviews */}
+          <ReviewTransparencyNote className="mb-4" />
+
+          {/* Attributed Google reviews (on-site only) */}
           <ReviewsSection companyId={company.id} companyName={company.name} initialReviews={reviews} />
         </div>
 
@@ -247,7 +264,16 @@ export default async function CompanyProfilePage({ params }: Props) {
               <div className="flex justify-between"><span className="text-muted-foreground">HQ</span><span>{company.headquarters}</span></div>
               <div className="flex justify-between"><span className="text-muted-foreground">Founded</span><span>{company.foundedYear}</span></div>
               <div className="flex justify-between"><span className="text-muted-foreground">Price Tier</span><span>{company.priceRange}</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">Review Volume</span><span>{company.reviewCount.toLocaleString()}</span></div>
+              <div className="flex justify-between gap-4">
+                <span className="text-muted-foreground shrink-0">On-site reviews</span>
+                <span className="text-right text-xs">{reviewMeta.headline}</span>
+              </div>
+              <div className="flex justify-between gap-4">
+                <span className="text-muted-foreground shrink-0">Industry volume</span>
+                <span className="text-right text-xs">
+                  <EditorialReviewVolume count={company.reviewCount} showNote />
+                </span>
+              </div>
               <div className="pt-2 border-t text-xs text-muted-foreground">Last data refresh: {company.lastUpdated}</div>
             </CardContent>
           </Card>

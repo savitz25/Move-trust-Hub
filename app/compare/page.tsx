@@ -24,7 +24,7 @@ export default async function ComparePage() {
         <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
           FMCSA ratings
         </Link>
-        , reputation scores, and verified reviews side-by-side.
+        , reputation scores, and transparent review data side-by-side.
       </p>
 
       <TrustBadges variant="compact" className="mb-6" />

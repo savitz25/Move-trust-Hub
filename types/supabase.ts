@@ -267,6 +267,7 @@ export interface Database {
           email_hash: string;
           move_date: string | null;
           source_page: string | null;
+          verification_tier: 'email_pending' | 'verified_mth';
           created_at: string;
           updated_at: string;
         };
@@ -277,6 +278,7 @@ export interface Database {
           rating: number;
           content: string;
           email_hash: string;
+          verification_tier?: 'email_pending' | 'verified_mth';
           title?: string | null;
           photo_urls?: Json;
           status?: 'pending' | 'approved' | 'rejected';

@@ -19,6 +19,7 @@ import {
   canShowVerifiedBadge,
   getLicenseDisplay,
 } from '@/lib/trust/company-display-policy';
+import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Carrier', 'Container / Portable', 'Auto Transport', 'Storage'];
@@ -296,7 +297,7 @@ export function DirectoryClient({ initialCompanies }: Props) {
                 <th className="text-left pl-5">Company</th>
                 <th>Rep. Score</th>
                 <th>Rating</th>
-                <th>Reviews</th>
+                <th>Industry volume</th>
                 <th>Avg Price</th>
                 <th>Years</th>
                 <th>Complaints /1k</th>
@@ -315,7 +316,9 @@ export function DirectoryClient({ initialCompanies }: Props) {
                     </td>
                     <td className="font-semibold text-center">{c.reputationScore}</td>
                     <td><StarRating rating={c.overallRating} size="sm" showNumber /></td>
-                    <td className="text-center tabular-nums">{c.reviewCount.toLocaleString()}</td>
+                    <td className="text-center tabular-nums text-xs">
+                      <EditorialReviewVolume count={c.reviewCount} />
+                    </td>
                     <td className="text-center tabular-nums">${c.avgPricePerMove.toLocaleString()}</td>
                     <td className="text-center">{c.yearsInBusiness}</td>
                     <td className="text-center text-xs">{ratio}</td>
@@ -368,7 +371,9 @@ function CompanyCard({ company, compareStore }: { company: Company; compareStore
 
         <div className="mt-3 flex items-baseline gap-2">
           <StarRating rating={company.overallRating} />
-          <span className="text-xs text-muted-foreground">({company.reviewCount.toLocaleString()})</span>
+          <span className="text-xs text-muted-foreground" title="Industry-reported volume from third-party platforms">
+            (<EditorialReviewVolume count={company.reviewCount} />)
+          </span>
         </div>
 
         <div className="mt-2 text-sm line-clamp-2 text-muted-foreground">{company.shortDescription}</div>

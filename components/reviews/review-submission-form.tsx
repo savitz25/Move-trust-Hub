@@ -224,8 +224,10 @@ export function ReviewSubmissionForm({
       </div>
 
       <p className="text-xs text-muted-foreground leading-relaxed">
-        By submitting, you confirm this review reflects your genuine experience. All
-        reviews are moderated before publication. We never sell your email. See our{' '}
+        By submitting, you confirm this review reflects your genuine experience with this
+        carrier. Your email is required for verification and duplicate prevention — it is
+        never published. All reviews enter a moderation queue and only appear after
+        Move Trust Hub approval as &ldquo;Verified by Move Trust Hub.&rdquo; See our{' '}
         <Link href="/privacy-policy" className="underline">
           Privacy Policy
         </Link>

@@ -50,7 +50,7 @@ export function CountyMarketInsightsPanel({
             {insights.avgRating > 0 ? `${insights.avgRating}★` : '—'}
           </div>
           <div className="text-xs text-muted-foreground mt-0.5">
-            {insights.totalReviews.toLocaleString()} total reviews
+            {insights.editorialReviewVolume.toLocaleString()} industry-reported (third-party)
           </div>
         </div>
         <div className="rounded-xl border bg-card p-4">

@@ -15,7 +15,7 @@ type TestimonialsSectionProps = {
 export function TestimonialsSection({
   title = 'Directory Research Highlights',
   subtitle =
-    'Illustrative quotes from our mover research dataset for planning context. These are not live Google reviews and are not emitted as structured Review schema. Submit moderated reviews on our review page.',
+    'Attributed Google review excerpts hosted on Move Trust Hub with named reviewers. These are not aggregated industry totals and are not emitted as fabricated AggregateRating schema. Submit moderated reviews on our review page.',
   className,
   columns = 2,
 }: TestimonialsSectionProps) {

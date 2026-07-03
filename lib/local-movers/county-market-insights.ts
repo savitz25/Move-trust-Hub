@@ -11,7 +11,8 @@ import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 export type CountyMarketInsights = {
   moverCount: number;
   avgRating: number;
-  totalReviews: number;
+  /** Sum of industry-reported review counts — not verified on Move Trust Hub */
+  editorialReviewVolume: number;
   usdotVerifiedCount: number;
   attributableReviewCount: number;
   topServices: string[];
@@ -109,7 +110,7 @@ export function buildCountyMarketInsights(
   movers: LocalMover[]
 ): CountyMarketInsights {
   const moverCount = movers.length;
-  const totalReviews = movers.reduce((sum, m) => sum + m.reviewCount, 0);
+  const editorialReviewVolume = movers.reduce((sum, m) => sum + m.reviewCount, 0);
   const avgRating =
     moverCount > 0
       ? Math.round((movers.reduce((sum, m) => sum + m.rating, 0) / moverCount) * 10) / 10
@@ -121,7 +122,7 @@ export function buildCountyMarketInsights(
   return {
     moverCount,
     avgRating,
-    totalReviews,
+    editorialReviewVolume,
     usdotVerifiedCount,
     attributableReviewCount,
     topServices: topServicesFromMovers(movers),

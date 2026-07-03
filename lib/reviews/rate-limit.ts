@@ -4,7 +4,7 @@ import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { hashEmail, hashIp } from '@/lib/reviews/hash';
 
-const IP_DAILY_LIMIT = 5;
+const IP_DAILY_LIMIT = 3;
 const EMAIL_COMPANY_DAYS = 90;
 
 export type RateLimitResult =

@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-07-03T14:17:44.657Z",
+  "onSiteAttributableGoogleReviews": 9,
+  "seedReviewRows": 24,
+  "seedAttributableRows": 9,
+  "editorialReviewVolume": {
+    "directoryIndustryReportedSum": 83670,
+    "autoTransportIndustryReportedSum": 121110,
+    "note": "Editorial volumes are third-party estimates — not hosted on Move Trust Hub"
+  },
+  "trustBadgeCount": 9,
+  "policy": {
+    "aggregateRatingSchema": "moderated_native_or_attributable_google_only",
+    "nativeReviewLabel": "Verified by Move Trust Hub",
+    "inflatedClaimRemoved": "52k+ Real Reviews (legacy trust-data)"
+  },
+  "inflatedClaimsInSource": [],
+  "status": "transparent_labels_required"
+}

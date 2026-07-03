@@ -8,6 +8,9 @@ import {
   LicenseDisplay,
   LicenseMetadataDescription,
 } from '@/components/trust/license-display';
+import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
+import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
+import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -24,9 +27,15 @@ export async function generateMetadata({ params }: Props) {
   const company = await getAutoTransportBySlugAsync(slug);
   if (!company) return { title: 'Company Not Found' };
 
+  const reviewMeta = companyProfileReviewMeta({
+    companyId: company.id,
+    editorialReviewCount: company.reviewCount,
+    editorialRating: company.overallRating,
+  });
+
   return {
     title: `${company.name} — Reviews, Pricing & Auto Transport Info`,
-    description: `${company.name} auto transport profile. ${company.overallRating}★ from ${company.reviewCount} reviews. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Open & enclosed vehicle shipping.`,
+    description: `${company.name} auto transport profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Open & enclosed vehicle shipping.`,
   };
 }
 
@@ -78,7 +87,9 @@ export default async function AutoTransportProfilePage({ params }: Props) {
           <div className="text-xs text-muted-foreground">OVERALL RATING</div>
           <div className="flex items-baseline gap-2 mt-0.5">
             <StarRating rating={company.overallRating} size="lg" />
-            <span className="text-xs text-muted-foreground">({company.reviewCount.toLocaleString()} reviews)</span>
+            <span className="text-xs text-muted-foreground" title="Industry-reported volume from third-party platforms">
+              (<EditorialReviewVolume count={company.reviewCount} />)
+            </span>
           </div>
         </Card>
         <Card className="p-4">
@@ -204,15 +215,14 @@ export default async function AutoTransportProfilePage({ params }: Props) {
             <CardTitle>Recent Customer Feedback</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-sm text-muted-foreground mb-4">
-              {company.reviewCount.toLocaleString()} verified reviews • {company.overallRating} average rating
-            </div>
-            <p className="text-sm">
-              Customers frequently praise {company.name} for on-time pickup and delivery, clear communication, and careful handling of vehicles. 
-              Common feedback highlights competitive pricing for enclosed transport and responsive customer service.
+            <ReviewTransparencyNote compact className="mb-4" />
+            <p className="text-sm text-muted-foreground">
+              {company.overallRating}★ editorial rating based on industry-reported third-party feedback — not
+              verified on Move Trust Hub. Research reviews on Google, BBB, and Trustpilot before booking.
             </p>
             <div className="mt-4 text-xs text-muted-foreground">
-              Full reviews and ratings available on Trustpilot, Google, BBB, and TransportReviews.com. Data last updated {company.lastUpdated}.
+              Industry-reported volume: <EditorialReviewVolume count={company.reviewCount} />. Last updated{' '}
+              {company.lastUpdated}.
             </div>
           </CardContent>
         </Card>

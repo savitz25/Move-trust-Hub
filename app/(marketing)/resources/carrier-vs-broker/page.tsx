@@ -317,7 +317,7 @@ export default function CarrierVsBrokerPage() {
                 Move Trust Hub
               </Link>
               , our independent directory helps you research and compare trusted options using
-              verified FMCSA data, real reviews, and reputation scores — with no paid placements.
+              verified FMCSA data, attributable on-site reviews, and reputation scores — with no paid placements.
             </p>
           </div>
         </section>
@@ -528,7 +528,7 @@ export default function CarrierVsBrokerPage() {
                   <Link href="/compare" className="text-primary underline underline-offset-2">
                     side-by-side comparison tool
                   </Link>{' '}
-                  to review FMCSA licensing, complaint ratios, verified reviews, and reputation
+                  to review FMCSA licensing, complaint ratios, attributable reviews, and reputation
                   scores for any company — regardless of type.
                 </p>
                 <p className="text-sm text-muted-foreground">
@@ -549,7 +549,7 @@ export default function CarrierVsBrokerPage() {
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Companies with strong in-house fleets and transparent broker practices consistently earn
-              higher customer satisfaction in verified reviews.
+              higher customer satisfaction in attributable third-party reviews.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">

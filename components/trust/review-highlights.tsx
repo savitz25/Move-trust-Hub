@@ -14,7 +14,7 @@ type ReviewHighlightsProps = {
 
 export function ReviewHighlights({
   title = 'Top-Rated Interstate Movers',
-  subtitle = 'Highlighted companies with strong reputation scores, verified reviews, and FMCSA data you can check yourself.',
+  subtitle = 'Highlighted companies with attributable on-site Google reviews, reputation scores, and FMCSA data you can check yourself.',
   className,
   compact = false,
 }: ReviewHighlightsProps) {
@@ -53,7 +53,7 @@ export function ReviewHighlights({
             <div className="flex items-center gap-2 mb-3">
               <StarRating rating={company.rating} />
               <span className="text-sm text-muted-foreground">
-                ({company.reviewCount.toLocaleString()} reviews)
+                ({company.attributableOnSite} attributed on-site)
               </span>
             </div>
 

@@ -3,11 +3,11 @@
 import { useState, useTransition } from 'react';
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { ChevronLeft, ChevronRight, ShieldCheck } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { NativeReviewVerifiedBadge } from '@/components/trust/review-source-badge';
 import { fetchCompanyReviews } from '@/actions/reviews';
 import type { PublicReview, ReviewSort } from '@/lib/reviews/queries';
 import { StarRating } from '@/components/ui/star-rating';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Select } from '@/components/ui/select';
@@ -98,9 +98,7 @@ export function PublicReviewList({
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-medium">{review.reviewer_name}</span>
-                    <Badge variant="outline" className="text-[10px] gap-1">
-                      <ShieldCheck className="h-3 w-3" /> Moderated
-                    </Badge>
+                    <NativeReviewVerifiedBadge />
                   </div>
                   <div className="mt-1">
                     <StarRating rating={review.rating} size="sm" showNumber={false} />
@@ -175,9 +173,9 @@ export function PublicReviewList({
       ) : null}
 
       <p className="text-[11px] text-muted-foreground mt-4 leading-relaxed">
-        Reviews are submitted by customers and approved by Move Trust Hub moderators.
-        We verify submissions for spam and duplicates but cannot guarantee every detail.
-        Always cross-check FMCSA licensing before booking.
+        Reviews are submitted by verified email, screened for spam and duplicates, and
+        approved by Move Trust Hub moderators before display. Approved reviews are labeled
+        &ldquo;Verified by Move Trust Hub.&rdquo; Always cross-check FMCSA licensing before booking.
       </p>
     </div>
   );

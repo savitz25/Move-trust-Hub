@@ -35,7 +35,7 @@ export default function ResourcesPage() {
       <h1 className="text-4xl font-semibold tracking-tight mb-2">Moving Resources &amp; Guides</h1>
       <p className="text-lg text-muted-foreground mb-6">
         Free, unbiased guides for interstate moves. Research movers with{' '}
-        <Link href="/companies" className="text-primary underline underline-offset-2">verified reviews</Link>
+        <Link href="/companies" className="text-primary underline underline-offset-2">attributable reviews</Link>
         , estimate volume in our{' '}
         <Link href="/moving-calculator" className="text-primary underline underline-offset-2">moving calculator</Link>
         , explore{' '}
