@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X, Truck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
@@ -73,7 +74,7 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
     }
 
     if (filters.onlyVerified) {
-      result = result.filter(c => c.isVerified);
+      result = result.filter((c) => canShowVerifiedBadge(c));
     }
 
     const sort = filters.sort || 'reputation';

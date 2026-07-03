@@ -11,7 +11,9 @@ import {
   isGeneratedTemplateMover,
 } from '../lib/trust/curated-listing-policy';
 import { assessLicense, isPlaceholderMoverId } from '../lib/trust/license-verification';
+import { canShowVerifiedBadge } from '../lib/trust/company-display-policy';
 import { seedCompanies } from '../data/seed-companies';
+import { seedAutoTransportCompanies } from '../data/seed-auto-transport';
 import {
   buildAttributableCountyReviews,
   countAttributableReviews,
@@ -36,6 +38,14 @@ const generatedIds = allMovers.filter((m) => isGeneratedTemplateMover(m.id)).len
 
 const suspiciousDirectory = seedCompanies.filter(
   (c) => !assessLicense(c.usdotNumber, c.mcNumber).isDisplayable
+);
+
+const suspiciousAutoTransport = seedAutoTransportCompanies.filter(
+  (c) => !assessLicense(c.usdotNumber, c.mcNumber).isDisplayable
+);
+
+const verifiedWithBadLicense = seedAutoTransportCompanies.filter(
+  (c) => c.isVerified && !canShowVerifiedBadge(c)
 );
 
 const params = getAllCountyParams();
@@ -97,6 +107,26 @@ const report = {
       issues: assessLicense(c.usdotNumber, c.mcNumber).issues,
     })),
   },
+  autoTransport: {
+    totalCompanies: seedAutoTransportCompanies.length,
+    displayableLicenses: seedAutoTransportCompanies.filter((c) =>
+      assessLicense(c.usdotNumber, c.mcNumber).isDisplayable
+    ).length,
+    suspiciousLicenseCompanies: suspiciousAutoTransport.map((c) => ({
+      id: c.id,
+      name: c.name,
+      usdot: c.usdotNumber,
+      mc: c.mcNumber,
+      isVerified: c.isVerified,
+      issues: assessLicense(c.usdotNumber, c.mcNumber).issues,
+    })),
+    verifiedBadgeViolations: verifiedWithBadLicense.map((c) => ({
+      id: c.id,
+      slug: c.slug,
+      usdot: c.usdotNumber,
+      mc: c.mcNumber,
+    })),
+  },
   reviews: {
     attributableGoogleReviews: countAttributableReviews(),
     countiesWithAttributableReviews: countiesWithReviews,
@@ -132,6 +162,8 @@ for (const [reason, count] of [...exclusionReasons.entries()].sort((a, b) => b[1
 }
 console.log('');
 console.log(`Directory companies with suspicious licenses: ${suspiciousDirectory.length}`);
+console.log(`Auto transport with suspicious licenses: ${suspiciousAutoTransport.length}`);
+console.log(`Auto transport verified-badge violations: ${verifiedWithBadLicense.length}`);
 console.log(`Attributable Google reviews in seed: ${countAttributableReviews()}`);
 console.log(`Counties with attributable reviews: ${countiesWithReviews} / ${params.length}`);
 console.log(`Counties with zero movers after filter: ${countiesZeroMovers}`);

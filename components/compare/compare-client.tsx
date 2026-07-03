@@ -10,6 +10,7 @@ import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { X } from 'lucide-react';
+import { getLicenseDisplay, LICENSE_PENDING_MESSAGE } from '@/lib/trust/company-display-policy';
 
 interface Props {
   allCompanies: Company[];
@@ -65,7 +66,24 @@ export function CompareClient({ allCompanies }: Props) {
     { label: 'Coverage', get: c => c.coverage },
     { label: 'Services', get: c => c.services.join(', ') },
     { label: 'Specialties', get: c => c.specialties.join(' • ') || '—' },
-    { label: 'USDOT / MC', get: c => <span className="font-mono text-xs">{c.usdotNumber} / {c.mcNumber}</span> },
+    {
+      label: 'USDOT / MC',
+      get: (c) => {
+        const display = getLicenseDisplay(c);
+        if (display.status === 'verified') {
+          return (
+            <span className="font-mono text-xs">
+              {display.usdot}
+              {display.mc ? ` / ${display.mc}` : ''}
+            </span>
+          );
+        }
+        if (display.status === 'marketplace') {
+          return <span className="text-xs text-muted-foreground">Marketplace</span>;
+        }
+        return <span className="text-xs text-muted-foreground">{LICENSE_PENDING_MESSAGE}</span>;
+      },
+    },
   ];
 
   return (

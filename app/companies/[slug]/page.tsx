@@ -18,6 +18,14 @@ import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-ba
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
 import { BbbLastVerified } from '@/components/bbb/bbb-last-verified';
+import {
+  canShowVerifiedBadge,
+  directoryVerifiedLabel,
+} from '@/lib/trust/company-display-policy';
+import {
+  LicenseDisplay,
+  LicenseMetadataDescription,
+} from '@/components/trust/license-display';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -31,7 +39,7 @@ export async function generateMetadata({ params }: Props) {
   const canonical = `${SITE_URL}/companies/${slug}`;
   return {
     title: `${company.name} — Reviews, Pricing & FMCSA Info`,
-    description: `${company.name} interstate mover profile. ${company.overallRating}★ from ${company.reviewCount} reviews. USDOT ${company.usdotNumber}. BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
+    description: `${company.name} interstate mover profile. ${company.overallRating}★ from ${company.reviewCount} reviews. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
     alternates: { canonical },
     robots: { index: true, follow: true },
   };
@@ -52,10 +60,11 @@ export default async function CompanyProfilePage({ params }: Props) {
     dot ? `DOT ${dot}` : mc ? `MC-${mc}` : company.name
   )}&slug=${dot ? slugFromCarrier('DOT', dot) : mc ? slugFromCarrier('MC', mc) : company.slug}`;
 
+  const verifiedLabel = directoryVerifiedLabel(company);
   const trustSignals = [
-    company.fmcsaSafetyRating === 'Satisfactory' && 'FMCSA Satisfactory',
+    company.fmcsaSafetyRating === 'Satisfactory' && verifiedLabel && 'FMCSA Satisfactory',
     company.bbbAccredited && `BBB ${company.bbbRating} Accredited`,
-    company.isVerified && 'Directory Verified',
+    verifiedLabel,
   ].filter(Boolean);
 
   return (
@@ -71,8 +80,8 @@ export default async function CompanyProfilePage({ params }: Props) {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            {company.isVerified && <Badge variant="success">VERIFIED</Badge>}
-            <FmcsaVerificationBadge company={company} />
+            {canShowVerifiedBadge(company) && <Badge variant="success">VERIFIED</Badge>}
+            {canShowVerifiedBadge(company) && <FmcsaVerificationBadge company={company} />}
             <BbbVerificationBadge company={company} />
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
@@ -142,13 +151,8 @@ export default async function CompanyProfilePage({ params }: Props) {
               <CardTitle>Licensing &amp; Compliance</CardTitle>
             </CardHeader>
             <CardContent className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm">
-              <div>
-                <div className="text-muted-foreground text-xs">USDOT Number</div>
-                <div className="font-mono font-semibold">{company.usdotNumber}</div>
-              </div>
-              <div>
-                <div className="text-muted-foreground text-xs">MC Number</div>
-                <div className="font-mono font-semibold">{company.mcNumber}</div>
+              <div className="sm:col-span-2">
+                <LicenseDisplay company={company} />
               </div>
               <div>
                 <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>

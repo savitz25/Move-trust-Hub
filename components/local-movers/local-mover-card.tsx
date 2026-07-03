@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { LocalMover } from '@/lib/local-movers/types';
+import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
 
 export function LocalMoverCard({
   mover,
@@ -17,6 +18,8 @@ export function LocalMoverCard({
   const profileHref = mover.profileSlug
     ? `/companies/${mover.profileSlug}`
     : null;
+
+  const license = getLicenseDisplay(mover);
 
   const locationLine = [
     mover.city,
@@ -74,16 +77,16 @@ export function LocalMoverCard({
       </div>
 
       <div className="grid sm:grid-cols-2 gap-2 text-xs text-muted-foreground mb-4">
-        {mover.usdotNumber && (
+        {license.status === 'verified' && license.usdot ? (
           <div>
-            <span className="font-medium text-foreground">USDOT:</span> {mover.usdotNumber}
+            <span className="font-medium text-foreground">USDOT:</span> {license.usdot}
           </div>
-        )}
-        {mover.mcNumber && (
+        ) : null}
+        {license.status === 'verified' && license.mc ? (
           <div>
-            <span className="font-medium text-foreground">MC:</span> {mover.mcNumber}
+            <span className="font-medium text-foreground">MC:</span> {license.mc}
           </div>
-        )}
+        ) : null}
         {mover.fmcsaSafetyRating && (
           <div className="inline-flex items-center gap-1">
             <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
@@ -98,12 +101,12 @@ export function LocalMoverCard({
       </div>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        {(mover.usdotNumber || mover.mcNumber) && (
+        {license.status === 'verified' && (license.usdot || license.mc) && (
           <Link
             href={`/review?carrier=${encodeURIComponent(
-              mover.usdotNumber
-                ? `DOT ${mover.usdotNumber.replace(/\D/g, '')}`
-                : `MC-${mover.mcNumber!.replace(/\D/g, '')}`
+              license.usdot
+                ? `DOT ${license.usdot.replace(/\D/g, '')}`
+                : `MC-${license.mc!.replace(/\D/g, '')}`
             )}`}
             className="text-sm text-muted-foreground hover:text-primary hover:underline"
           >

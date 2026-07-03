@@ -1,14 +1,16 @@
 {
-  "generatedAt": "2026-06-28T17:50:09.636Z",
+  "generatedAt": "2026-07-03T14:07:52.775Z",
   "catalog": {
-    "totalMoversInCatalog": 15966,
-    "displayableAfterPolicy": 316,
-    "excluded": 15650,
+    "totalMoversInCatalog": 15986,
+    "displayableAfterPolicy": 520,
+    "excluded": 15466,
     "regionalPlaceholderIds": 1318,
     "generatedTemplateIds": 392,
     "exclusionReasons": {
-      "license_known_placeholder_usdot": 1,
-      "license_missing_usdot": 13938,
+      "license_known_placeholder_usdot": 3,
+      "license_suspicious_usdot_pattern": 27,
+      "license_suspicious_mc_pattern": 8,
+      "license_missing_usdot": 13717,
       "regional_placeholder_id": 1318,
       "license_invalid_usdot_format": 1,
       "generated_template_catalog": 392
@@ -18,26 +20,83 @@
     "totalCompanies": 25,
     "suspiciousLicenseCompanies": []
   },
+  "autoTransport": {
+    "totalCompanies": 17,
+    "displayableLicenses": 12,
+    "suspiciousLicenseCompanies": [
+      {
+        "id": "shipyourcarnow",
+        "name": "ShipYourCarNow",
+        "usdot": "",
+        "mc": "",
+        "isVerified": false,
+        "issues": [
+          "missing_usdot"
+        ]
+      },
+      {
+        "id": "safeeds",
+        "name": "Safeeds Auto Transport",
+        "usdot": "",
+        "mc": "",
+        "isVerified": false,
+        "issues": [
+          "missing_usdot"
+        ]
+      },
+      {
+        "id": "global-auto",
+        "name": "Global Auto Transportation",
+        "usdot": "",
+        "mc": "",
+        "isVerified": false,
+        "issues": [
+          "missing_usdot"
+        ]
+      },
+      {
+        "id": "tempus-logix",
+        "name": "Tempus Logix",
+        "usdot": "",
+        "mc": "",
+        "isVerified": false,
+        "issues": [
+          "missing_usdot"
+        ]
+      },
+      {
+        "id": "payless",
+        "name": "Payless Auto Shipping",
+        "usdot": "",
+        "mc": "",
+        "isVerified": false,
+        "issues": [
+          "missing_usdot"
+        ]
+      }
+    ],
+    "verifiedBadgeViolations": []
+  },
   "reviews": {
     "attributableGoogleReviews": 9,
-    "countiesWithAttributableReviews": 17,
-    "countiesWithoutReviews": 3126
+    "countiesWithAttributableReviews": 181,
+    "countiesWithoutReviews": 2962
   },
   "counties": {
     "total": 3143,
-    "zeroMoversAfterFilter": 2255,
-    "totalDisplayedMoverSlots": 3026
+    "zeroMoversAfterFilter": 2129,
+    "totalDisplayedMoverSlots": 4274
   },
   "priorityMetros": [
     {
       "county": "california/los-angeles",
-      "movers": 8,
+      "movers": 7,
       "attributableReviews": 3
     },
     {
       "county": "california/san-diego",
-      "movers": 1,
-      "attributableReviews": 0
+      "movers": 10,
+      "attributableReviews": 3
     },
     {
       "county": "florida/broward",
@@ -51,23 +110,23 @@
     },
     {
       "county": "new-york/kings",
-      "movers": 3,
-      "attributableReviews": 1
+      "movers": 10,
+      "attributableReviews": 3
     },
     {
       "county": "new-york/new-york",
-      "movers": 3,
-      "attributableReviews": 1
+      "movers": 10,
+      "attributableReviews": 3
     },
     {
       "county": "georgia/fulton",
-      "movers": 4,
-      "attributableReviews": 0
+      "movers": 10,
+      "attributableReviews": 3
     },
     {
       "county": "illinois/cook",
-      "movers": 0,
-      "attributableReviews": 0
+      "movers": 10,
+      "attributableReviews": 3
     },
     {
       "county": "texas/dallas",
@@ -76,7 +135,7 @@
     },
     {
       "county": "texas/harris",
-      "movers": 10,
+      "movers": 9,
       "attributableReviews": 3
     }
   ],

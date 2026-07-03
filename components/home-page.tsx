@@ -119,7 +119,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
               { icon: DollarSign, title: 'Plan Smarter', desc: 'Estimate move size and costs before you talk to any carrier — no sales pressure.' },
-              { icon: Shield, title: 'Verify Licensing', desc: 'Every directory listing includes USDOT data you can cross-check on FMCSA.gov.' },
+              { icon: Shield, title: 'Verify Licensing', desc: 'Verified listings include FMCSA USDOT data you can cross-check on FMCSA.gov.' },
               { icon: Clock, title: 'Research Faster', desc: 'Compare reputation, services, and reviews in one independent directory.' },
               { icon: Headphones, title: 'Dedicated Support', desc: 'Our team is here to answer questions before, during, and after your move.' },
             ].map((benefit, i) => (

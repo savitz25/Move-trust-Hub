@@ -1,11 +1,19 @@
 import { notFound } from 'next/navigation';
 import { getAutoTransportBySlugAsync } from '@/lib/data-server';
+import {
+  canShowVerifiedBadge,
+  directoryVerifiedLabel,
+} from '@/lib/trust/company-display-policy';
+import {
+  LicenseDisplay,
+  LicenseMetadataDescription,
+} from '@/components/trust/license-display';
 import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, ShieldCheck, Truck } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -18,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: `${company.name} — Reviews, Pricing & Auto Transport Info`,
-    description: `${company.name} auto transport profile. ${company.overallRating}★ from ${company.reviewCount} reviews. USDOT ${company.usdotNumber}. BBB ${company.bbbRating}. Coverage: ${company.coverage}. Open & enclosed vehicle shipping.`,
+    description: `${company.name} auto transport profile. ${company.overallRating}★ from ${company.reviewCount} reviews. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Open & enclosed vehicle shipping.`,
   };
 }
 
@@ -32,10 +40,11 @@ export default async function AutoTransportProfilePage({ params }: Props) {
     ? ((company.fmcsaComplaints / company.fmcsaShipments) * 1000).toFixed(2) 
     : 'N/A';
 
+  const verifiedLabel = directoryVerifiedLabel(company);
   const trustSignals = [
-    company.fmcsaSafetyRating === 'Satisfactory' && 'FMCSA Satisfactory',
+    company.fmcsaSafetyRating === 'Satisfactory' && verifiedLabel && 'FMCSA Satisfactory',
     company.bbbAccredited && `BBB ${company.bbbRating} Accredited`,
-    company.isVerified && 'Directory Verified',
+    verifiedLabel,
   ].filter(Boolean);
 
   return (
@@ -49,7 +58,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            {company.isVerified && <Badge variant="success">VERIFIED</Badge>}
+            {canShowVerifiedBadge(company) && <Badge variant="success">VERIFIED</Badge>}
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
         </div>
@@ -127,22 +136,17 @@ export default async function AutoTransportProfilePage({ params }: Props) {
             <CardHeader>
               <CardTitle>Licensing &amp; Compliance</CardTitle>
             </CardHeader>
-            <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div>
-                <div className="text-muted-foreground text-xs">USDOT Number</div>
-                <div className="font-mono text-lg">{company.usdotNumber}</div>
-              </div>
-              <div>
-                <div className="text-muted-foreground text-xs">MC Number</div>
-                <div className="font-mono text-lg">{company.mcNumber}</div>
-              </div>
-              <div>
-                <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>
-                <div className="font-medium mt-0.5">{company.fmcsaSafetyRating}</div>
-              </div>
-              <div>
-                <div className="text-muted-foreground text-xs">BBB Rating</div>
-                <div className="font-medium mt-0.5">{company.bbbRating} {company.bbbAccredited ? '(Accredited)' : ''}</div>
+            <CardContent className="space-y-4 text-sm">
+              <LicenseDisplay company={company} />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>
+                  <div className="font-medium mt-0.5">{company.fmcsaSafetyRating}</div>
+                </div>
+                <div>
+                  <div className="text-muted-foreground text-xs">BBB Rating</div>
+                  <div className="font-medium mt-0.5">{company.bbbRating} {company.bbbAccredited ? '(Accredited)' : ''}</div>
+                </div>
               </div>
             </CardContent>
           </Card>

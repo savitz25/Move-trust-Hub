@@ -7,6 +7,7 @@ import { isSupabaseConfigured } from '@/lib/supabase/config';
 import { getCompanyBySlug } from '@/data/seed-companies';
 import { getReviewsForCompany } from '@/data/seed-reviews';
 import { seedAutoTransportCompanies, getAutoTransportBySlug } from '@/data/seed-auto-transport';
+import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
 import type { Company, Review } from '@/types';
 
 /** Server Component / Route Handler entry point — React cache() dedupes per request. */
@@ -32,12 +33,14 @@ export const getReviews = cache(async (companyId: string, limit = 12): Promise<R
 });
 
 export const getAllAutoTransportCompanies = cache(async (): Promise<Company[]> => {
-  return [...seedAutoTransportCompanies];
+  return seedAutoTransportCompanies.filter(isPubliclyDisplayableCompany);
 });
 
 export async function getAutoTransportBySlugAsync(
   slug: string
 ): Promise<Company | undefined> {
-  const companies = await getAllAutoTransportCompanies();
-  return companies.find((c) => c.slug === slug) || getAutoTransportBySlug(slug);
+  const company =
+    seedAutoTransportCompanies.find((c) => c.slug === slug) || getAutoTransportBySlug(slug);
+  if (!company || !isPubliclyDisplayableCompany(company)) return undefined;
+  return company;
 }

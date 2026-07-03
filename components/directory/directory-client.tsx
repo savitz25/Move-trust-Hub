@@ -15,6 +15,10 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X } from 'lucide-react';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
+import {
+  canShowVerifiedBadge,
+  getLicenseDisplay,
+} from '@/lib/trust/company-display-policy';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Carrier', 'Container / Portable', 'Auto Transport', 'Storage'];
@@ -356,8 +360,8 @@ function CompanyCard({ company, compareStore }: { company: Company; compareStore
           <Link href={`/companies/${company.slug}`} className="font-semibold text-xl tracking-tight group-hover:text-primary transition-colors">
             {company.name}
           </Link>
-          {company.isVerified && <Badge variant="success" className="text-[10px] h-fit">VERIFIED</Badge>}
-          <FmcsaVerificationBadge company={company} className="text-[10px] h-fit" />
+          {canShowVerifiedBadge(company) && <Badge variant="success" className="text-[10px] h-fit">VERIFIED</Badge>}
+          {canShowVerifiedBadge(company) && <FmcsaVerificationBadge company={company} className="text-[10px] h-fit" />}
           <BbbVerificationBadge company={company} className="text-[10px] h-fit" />
         </div>
         <div className="text-sm text-muted-foreground">{company.headquarters} • Est. {company.foundedYear}</div>

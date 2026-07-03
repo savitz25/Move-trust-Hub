@@ -12,7 +12,7 @@ const VERIFICATION_STEPS = [
     icon: ShieldCheck,
     title: 'FMCSA authority check',
     detail:
-      'We verify active interstate household goods authority and surface safety ratings where FMCSA publishes them.',
+      'Listings with a verified badge include FMCSA USDOT/MC numbers we have confirmed on SAFER. We surface safety ratings only where FMCSA publishes them.',
   },
   {
     icon: BadgeCheck,
