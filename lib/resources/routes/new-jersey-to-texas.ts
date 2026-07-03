@@ -318,7 +318,7 @@ export const newJerseyToTexasContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your New Jersey → Texas move',
+  ctaHeading: 'Plan your New Jersey → Texas move',
   internalLinks: [
     {
       label: 'Moving to Texas destination hub',

@@ -373,5 +373,5 @@ export const californiaToSouthCarolinaContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → South Carolina move',
+  ctaHeading: 'Plan your California → South Carolina move',
 };

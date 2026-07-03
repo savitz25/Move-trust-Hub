@@ -166,7 +166,7 @@ export function buildCountyDescription(
     ? `${marketSnippet.split('.')[0]}. `
     : '';
 
-  return `${topMover} in ${countyLabel}, ${county.stateCode}${seat}. ${localContext}FMCSA licensing, Google ratings, ${countyLabel} cost estimates, and expert moving tips for ${SEO_YEAR}. Free quotes.`;
+  return `${topMover} in ${countyLabel}, ${county.stateCode}${seat}. ${localContext}FMCSA licensing, Google ratings, ${countyLabel} cost estimates, and expert moving tips for ${SEO_YEAR}. Compare trusted movers in our directory.`;
 }
 
 export function buildStateTitle(stateName: string, countyCount: number): string {

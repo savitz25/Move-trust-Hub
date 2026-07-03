@@ -382,5 +382,5 @@ export const californiaToWyomingContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Wyoming move',
+  ctaHeading: 'Plan your California → Wyoming move',
 };

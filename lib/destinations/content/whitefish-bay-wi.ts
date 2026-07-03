@@ -7,7 +7,7 @@ export const whitefishBayWiContent: CityHubContent = {
     title:
       'Moving to Whitefish Bay, WI (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Whitefish Bay in Milwaukee County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Elite lakeside enclave, Lake Michigan North Shore, Klode Park, premium schools. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Whitefish Bay in Milwaukee County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Elite lakeside enclave, Lake Michigan North Shore, Klode Park, premium schools. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to whitefish bay wi',
       'whitefish bay wisconsin movers',
@@ -240,7 +240,7 @@ export const whitefishBayWiContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

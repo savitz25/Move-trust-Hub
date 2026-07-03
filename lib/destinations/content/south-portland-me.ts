@@ -7,7 +7,7 @@ export const southPortlandMeContent: CityHubContent = {
     title:
       'Moving to South Portland, ME (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to South Portland in Cumberland County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Coastal commercial hub, waterfront parks, retail corridors, Portland proximity. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to South Portland in Cumberland County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Coastal commercial hub, waterfront parks, retail corridors, Portland proximity. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to south portland me',
       'south portland maine movers',
@@ -260,7 +260,7 @@ export const southPortlandMeContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

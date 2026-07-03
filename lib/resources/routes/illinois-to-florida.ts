@@ -325,7 +325,7 @@ export const illinoisToFloridaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Illinois → Florida move',
+  ctaHeading: 'Plan your Illinois → Florida move',
   internalLinks: [
     {
       label: 'Moving to Florida destination hub',

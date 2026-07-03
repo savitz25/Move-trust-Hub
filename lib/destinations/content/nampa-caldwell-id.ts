@@ -7,7 +7,7 @@ export const nampaCaldwellIdContent: CityHubContent = {
     title:
       'Moving to Nampa & Caldwell, ID (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Nampa, Caldwell, or the affordable Treasure Valley? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Nampa, Caldwell, or the affordable Treasure Valley? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to nampa id',
       'moving to caldwell idaho',

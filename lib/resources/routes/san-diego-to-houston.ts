@@ -298,7 +298,7 @@ export const sanDiegoToHoustonContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your San Diego → Houston move',
+  ctaHeading: 'Plan your San Diego → Houston move',
   internalLinks: [
     {
       label: 'Houston city guide',

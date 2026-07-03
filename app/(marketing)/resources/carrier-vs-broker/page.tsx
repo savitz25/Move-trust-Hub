@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   Handshake,
   HelpCircle,
-  Phone,
   Scale,
   ShieldCheck,
   Truck,
@@ -218,7 +217,7 @@ const faqs = [
   {
     question: 'What should I do if something goes wrong?',
     answer:
-      'Document everything and contact the company that issued your Bill of Lading. For disputes, file complaints through FMCSA and BBB. Our specialist team at 1-800-918-1477 can provide guidance.',
+      'Document everything and contact the company that issued your Bill of Lading. For disputes, file complaints through FMCSA and BBB. You can also reach our team through the contact page for general guidance.',
   },
   {
     question: 'Does Move Trust Hub recommend only carriers?',
@@ -630,13 +629,12 @@ export default function CarrierVsBrokerPage() {
               </Button>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4 shrink-0" />
+            <div className="mt-6 text-sm text-muted-foreground">
               <span>
-                Or call our specialist team at{' '}
-                <a href="tel:18009181477" className="text-primary font-medium hover:underline">
-                  1-800-918-1477
-                </a>
+                Questions?{' '}
+                <Link href="/contact" className="text-primary font-medium hover:underline">
+                  Contact us
+                </Link>
               </span>
             </div>
           </section>

@@ -162,7 +162,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
                 className="block w-full"
               >
                 <Button className="w-full" variant="default">
-                  Get a Free Quote <ExternalLink className="h-4 w-4 ml-2" />
+                  Visit Company Website <ExternalLink className="h-4 w-4 ml-2" />
                 </Button>
               </a>
               <Link href={`/compare?add=${company.slug}`} className="block w-full">

@@ -368,5 +368,5 @@ export const californiaToArizonaContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Arizona move',
+  ctaHeading: 'Plan your California → Arizona move',
 };

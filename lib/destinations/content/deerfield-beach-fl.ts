@@ -7,7 +7,7 @@ export const deerfieldBeachFlContent: CityHubContent = {
     title:
       'Moving to Deerfield Beach, FL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Deerfield Beach? Compare FMCSA-verified movers serving Palm Beach and Broward counties, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Deerfield Beach? Compare FMCSA-verified movers serving Palm Beach and Broward counties, estimate interstate costs with our free calculator, and research carriers in our independent directory. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to deerfield beach fl',
       'deerfield beach movers',
@@ -216,7 +216,7 @@ export const deerfieldBeachFlContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed.',
     },
   ],
   featuredInterstateSlugs: [

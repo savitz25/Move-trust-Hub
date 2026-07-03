@@ -7,7 +7,7 @@ export const maricopaCasaGrandeAzContent: CityHubContent = {
     title:
       'Moving to Maricopa & Casa Grande, AZ (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Maricopa, Casa Grande, or the Pinal County affordability corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Maricopa, Casa Grande, or the Pinal County affordability corridor? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to maricopa az',
       'moving to casa grande arizona',

@@ -9,7 +9,6 @@ import {
   HelpCircle,
   Home,
   MapPin,
-  Phone,
   PiggyBank,
   ShieldCheck,
   TrendingDown,
@@ -545,13 +544,12 @@ export default function InterstateMovingCostsPage() {
               </Button>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4 shrink-0" />
+            <div className="mt-6 text-sm text-muted-foreground">
               <span>
-                Or call our specialist team at{' '}
-                <a href="tel:18009181477" className="text-primary font-medium hover:underline">
-                  1-800-918-1477
-                </a>
+                Questions?{' '}
+                <Link href="/contact" className="text-primary font-medium hover:underline">
+                  Contact us
+                </Link>
               </span>
             </div>
           </section>

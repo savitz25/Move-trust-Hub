@@ -92,7 +92,7 @@ export function buildQuoteConfirmationEmail(
 </head>
 <body style="margin:0;padding:0;background-color:#eef2f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
-    Your move quote request is confirmed. We're matching you with licensed movers within 24 hours.
+    Your Move Trust Hub inquiry is confirmed. Browse our independent mover directory to research licensed carriers.
   </div>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#eef2f7;">
@@ -236,8 +236,8 @@ export function buildQuoteConfirmationEmail(
                                 <div style="width:28px;height:28px;line-height:28px;background:#e0f2fe;color:#0077D4;border-radius:50%;text-align:center;font-size:13px;font-weight:800;">2</div>
                               </td>
                               <td style="vertical-align:top;padding-left:10px;">
-                                <p style="margin:0 0 2px;font-size:15px;line-height:1.4;color:#0f172a;font-weight:700;">2–3 movers reach out within 24 hours</p>
-                                <p style="margin:0;font-size:14px;line-height:1.5;color:#64748b;">Highly-rated companies contact you directly with custom quotes.</p>
+                                <p style="margin:0 0 2px;font-size:15px;line-height:1.4;color:#0f172a;font-weight:700;">Research movers in our directory</p>
+                                <p style="margin:0;font-size:14px;line-height:1.5;color:#64748b;">Compare FMCSA licensing, reviews, and reputation scores before contacting carriers directly.</p>
                               </td>
                             </tr>
                           </table>

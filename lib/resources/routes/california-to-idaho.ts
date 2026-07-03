@@ -386,5 +386,5 @@ export const californiaToIdahoContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Idaho move',
+  ctaHeading: 'Plan your California → Idaho move',
 };

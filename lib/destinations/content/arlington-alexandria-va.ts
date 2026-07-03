@@ -7,7 +7,7 @@ export const arlingtonAlexandriaVaContent: CityHubContent = {
     title:
       'Moving to Arlington & Alexandria, VA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Arlington or Alexandria in Northern Virginia? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Urban D.C. suburbs, top schools, Metro transit, Amazon HQ2, federal contractors. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Arlington or Alexandria in Northern Virginia? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Urban D.C. suburbs, top schools, Metro transit, Amazon HQ2, federal contractors. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to arlington va',
       'moving to alexandria va',
@@ -262,7 +262,7 @@ export const arlingtonAlexandriaVaContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

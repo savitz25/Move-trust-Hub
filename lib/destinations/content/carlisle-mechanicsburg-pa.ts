@@ -7,7 +7,7 @@ export const carlisleMechanicsburgPaContent: CityHubContent = {
     title:
       'Moving to Carlisle & Mechanicsburg, PA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Carlisle or Mechanicsburg in Cumberland County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Cumberland County growth, top schools, government and healthcare employment. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Carlisle or Mechanicsburg in Cumberland County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Cumberland County growth, top schools, government and healthcare employment. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to carlisle pa',
       'moving to mechanicsburg pa',
@@ -276,7 +276,7 @@ export const carlisleMechanicsburgPaContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

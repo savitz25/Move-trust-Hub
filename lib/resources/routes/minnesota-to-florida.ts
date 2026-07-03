@@ -325,7 +325,7 @@ export const minnesotaToFloridaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Minnesota → Florida move',
+  ctaHeading: 'Plan your Minnesota → Florida move',
   internalLinks: [
     {
       label: 'Moving to Florida destination hub',

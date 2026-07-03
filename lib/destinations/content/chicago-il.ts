@@ -7,7 +7,7 @@ export const chicagoIlContent: CityHubContent = {
     title:
       'Moving to Chicago, IL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Chicago? Compare FMCSA-verified movers serving Cook County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Loop, Lincoln Park, Lakeview & South Side guides. Independent directory.',
+      'Planning a move to Chicago? Compare FMCSA-verified movers serving Cook County, estimate interstate costs with our free calculator, and research carriers in our independent directory. Loop, Lincoln Park, Lakeview & South Side guides. Independent directory.',
     keywords: [
       'moving to chicago il',
       'chicago movers',
@@ -246,7 +246,7 @@ export const chicagoIlContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

@@ -44,7 +44,7 @@ export const floridaClusterContent: FloridaClusterContent = {
     canonicalPath: '/moving-to/florida',
   },
   heroSubheadline:
-    'Florida remains the highest-volume Sunbelt inbound corridor in 2026 — drawing retirees, remote workers, and families from the Northeast, Midwest, and California. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and free quote matching.',
+    'Florida remains the highest-volume Sunbelt inbound corridor in 2026 — drawing retirees, remote workers, and families from the Northeast, Midwest, and California. Our independent directory covers FMCSA-licensed interstate movers, county-level local directories, and city-specific guides with cost tables and trusted mover research tools.',
   introParagraphs: [
     'Whether you are targeting the Miami-Dade and Broward metro, the Palm Beach County coastal corridor, northeast Florida around Jacksonville, or Gulf Coast markets like Sarasota and Naples, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Florida moves involve unique logistics: snowbird-season scheduling, hurricane contingency planning, condo COI requirements, and gated-community shuttle trucks. Our city guides surface these factors so you can plan with confidence.',

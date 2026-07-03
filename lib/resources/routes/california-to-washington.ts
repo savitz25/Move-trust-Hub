@@ -390,5 +390,5 @@ export const californiaToWashingtonContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Washington move',
+  ctaHeading: 'Plan your California → Washington move',
 };

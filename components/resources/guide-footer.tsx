@@ -9,7 +9,7 @@ export function GuideCta({ prefilledNotes }: { prefilledNotes?: string }) {
     <div className="not-prose mt-10 rounded-xl border border-primary/20 bg-gradient-to-br from-primary/8 via-primary/5 to-transparent p-6 sm:p-8">
       <h3 className="font-semibold text-lg mb-2">Ready to plan your interstate move?</h3>
       <p className="text-sm text-muted-foreground mb-4">
-        Use our free tools to research licensed movers, estimate your volume, and request competitive quotes.
+        Use our free tools to research licensed movers, estimate your volume, and compare trusted movers.
       </p>
       <GuideCtaClient prefilledNotes={prefilledNotes} />
     </div>

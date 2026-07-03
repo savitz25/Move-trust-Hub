@@ -32,7 +32,7 @@ export default function Checklist() {
 
       <h2>8 Weeks Before Your Move</h2>
       <ul>
-        <li>Research and get quotes from at least 3 reputable interstate movers using our <Link href="/companies">directory</Link></li>
+        <li>Research and shortlist at least 3 reputable interstate movers using our <Link href="/companies">directory</Link></li>
         <li>Use our moving calculator to estimate your total volume and weight</li>
         <li>Verify mover licensing on fmcsa.dot.gov</li>
         <li>Create a moving binder or digital folder for estimates, contracts, and inventory</li>

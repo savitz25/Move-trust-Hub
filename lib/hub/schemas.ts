@@ -85,8 +85,8 @@ export function buildHubHomeSchemaGraph(hub: HubId, faqItems?: { question: strin
     graph.push({
       '@type': 'Service',
       '@id': `${hubUrl}#service`,
-      name: 'Interstate Moving Quote Matching',
-      serviceType: 'Moving company comparison and quote matching',
+      name: 'Interstate Moving Company Directory',
+      serviceType: 'Moving company comparison and mover research',
       provider: { '@id': org['@id'] },
       areaServed: { '@type': 'Country', name: 'United States' },
       url: hubUrl,

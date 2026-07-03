@@ -408,5 +408,5 @@ export const texasToCaliforniaContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your Texas → California move',
+  ctaHeading: 'Plan your Texas → California move',
 };

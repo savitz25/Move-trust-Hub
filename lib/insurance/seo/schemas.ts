@@ -44,13 +44,13 @@ export const homepageServiceSchema = {
     name: 'United States',
   },
   description:
-    'Compare licensed insurance agencies by state, specialty, and customer reviews. Request free quotes for auto, home, life, and business insurance.',
+    'Compare licensed insurance agencies by state, specialty, and customer reviews. Research auto, home, life, and business insurance options.',
   url: SITE_URL,
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    description: 'Free quote referral to licensed insurance agencies',
+    description: 'Independent insurance agency research directory',
   },
 };
 

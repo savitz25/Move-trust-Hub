@@ -7,7 +7,7 @@ export const seattleWaContent: CityHubContent = {
     title:
       'Moving to Seattle, WA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Seattle? Compare FMCSA-verified movers serving King County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Capitol Hill, Ballard, South Lake Union & Puget Sound guides. Independent directory.',
+      'Planning a move to Seattle? Compare FMCSA-verified movers serving King County, estimate interstate costs with our free calculator, and research carriers in our independent directory. Capitol Hill, Ballard, South Lake Union & Puget Sound guides. Independent directory.',
     keywords: [
       'moving to seattle wa',
       'seattle movers',
@@ -240,7 +240,7 @@ export const seattleWaContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

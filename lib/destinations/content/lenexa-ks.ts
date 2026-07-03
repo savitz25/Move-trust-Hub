@@ -7,7 +7,7 @@ export const lenexaKsContent: CityHubContent = {
     title:
       'Moving to Lenexa, KS (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Lenexa in Johnson County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Modern suburban pioneer, Lenexa City Center, Sar-Ko-Par trails, Legler and Renner Heights. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Lenexa in Johnson County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Modern suburban pioneer, Lenexa City Center, Sar-Ko-Par trails, Legler and Renner Heights. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to lenexa ks',
       'lenexa ks movers',
@@ -245,7 +245,7 @@ export const lenexaKsContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

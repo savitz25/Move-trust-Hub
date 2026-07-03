@@ -319,7 +319,7 @@ export const minnesotaToGeorgiaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Minnesota → Georgia move',
+  ctaHeading: 'Plan your Minnesota → Georgia move',
   internalLinks: [
     {
       label: 'Moving-to destination hub',

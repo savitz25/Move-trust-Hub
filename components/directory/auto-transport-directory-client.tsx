@@ -347,7 +347,7 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
       )}
 
       <div className="mt-8 text-xs text-muted-foreground">
-        Data is for research purposes. Always verify current FMCSA licensing, insurance, and get multiple quotes directly from providers. Auto transport pricing varies significantly based on route, vehicle type, season, and open vs. enclosed service.
+        Data is for research purposes. Always verify current FMCSA licensing and insurance, then contact providers directly for written estimates. Auto transport pricing varies significantly based on route, vehicle type, season, and open vs. enclosed service.
       </div>
     </div>
   );

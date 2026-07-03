@@ -132,7 +132,7 @@ export function AgentCard({ agent, rank, hubLabel, className }: AgentCardProps) 
             </Button>
           )}
           <Button size="sm" variant="trust" asChild>
-            <Link href={`/insurance/providers/${agent.slug}#quote`}>Get Free Health Quote</Link>
+            <Link href={`/insurance/providers/${agent.slug}#quote`}>Contact Agency</Link>
           </Button>
           <Link
             href={`/insurance/providers/${agent.slug}`}

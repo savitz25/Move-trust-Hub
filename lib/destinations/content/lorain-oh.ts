@@ -7,7 +7,7 @@ export const lorainOhContent: CityHubContent = {
     title:
       'Moving to Lorain, OH (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Lorain in Lorain County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Scenic Lake Erie port city, waterfront parks, short Cleveland commutes, Ohio Silicon Heartland affordability. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Lorain in Lorain County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Scenic Lake Erie port city, waterfront parks, short Cleveland commutes, Ohio Silicon Heartland affordability. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to lorain oh',
       'lorain oh movers',
@@ -255,7 +255,7 @@ export const lorainOhContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

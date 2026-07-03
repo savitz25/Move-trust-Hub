@@ -319,7 +319,7 @@ export const massachusettsToGeorgiaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Massachusetts → Georgia move',
+  ctaHeading: 'Plan your Massachusetts → Georgia move',
   internalLinks: [
     {
       label: 'Moving-to destination hub',

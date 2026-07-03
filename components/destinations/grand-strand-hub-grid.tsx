@@ -11,7 +11,7 @@ type Props = {
 
 export function GrandStrandHubGrid({
   heading = 'Explore the Grand Strand — City Guides',
-  description = 'Eight hyper-local hubs covering North Myrtle Beach through Murrells Inlet. Each includes 2026–2027 cost tables, calculator prefill, Horry & Georgetown county movers, and free quote matching.',
+  description = 'Eight hyper-local hubs covering North Myrtle Beach through Murrells Inlet. Each includes 2026–2027 cost tables, calculator prefill, Horry & Georgetown county movers, and trusted mover research tools.',
 }: Props) {
   const published = new Set(getPublishedCityHubSlugs());
 

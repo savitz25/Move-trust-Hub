@@ -410,5 +410,5 @@ export const newYorkToMyrtleBeachContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your New York → Myrtle Beach move',
+  ctaHeading: 'Plan your New York → Myrtle Beach move',
 };

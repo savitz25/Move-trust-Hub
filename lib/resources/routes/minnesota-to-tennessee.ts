@@ -316,7 +316,7 @@ export const minnesotaToTennesseeContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Minnesota → Tennessee move',
+  ctaHeading: 'Plan your Minnesota → Tennessee move',
   internalLinks: [
     {
       label: 'Moving to Tennessee destination hub',

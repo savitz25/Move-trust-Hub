@@ -7,7 +7,7 @@ export const daphneAlContent: CityHubContent = {
     title:
       'Moving to Daphne, AL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Daphne or eastern Mobile Bay? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Jubilee City, eastern shore safety, premium quality of life on Mobile Bay. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Daphne or eastern Mobile Bay? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Jubilee City, eastern shore safety, premium quality of life on Mobile Bay. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to daphne al',
       'daphne al movers',
@@ -226,7 +226,7 @@ export const daphneAlContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

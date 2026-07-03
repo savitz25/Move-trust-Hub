@@ -32,7 +32,7 @@ export function HubMatchForm({ hubName }: HubMatchFormProps) {
         setSubmitted(true);
       }}
     >
-      <h3 className="font-semibold text-foreground">Get Matched with 3 Free Quotes</h3>
+      <h3 className="font-semibold text-foreground">Compare Licensed Insurance Agencies</h3>
       <p className="text-xs text-muted-foreground">
         Independent matching in {hubName}. No paid placements.
       </p>

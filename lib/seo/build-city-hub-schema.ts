@@ -146,9 +146,9 @@ export function buildCityHubSchemaGraph(
     },
     {
       '@type': 'Service',
-      '@id': `${canonical}#quote-service`,
-      name: `Free Moving Quote Matching to ${destinationLabel}`,
-      serviceType: 'Interstate moving quote matching',
+      '@id': `${canonical}#directory-service`,
+      name: `Interstate Moving Research for ${destinationLabel}`,
+      serviceType: 'Interstate moving mover research',
       provider: { '@id': `${organizationSchema['@id']}` },
       areaServed: { '@id': `${canonical}#place` },
       offers: {
@@ -179,7 +179,7 @@ export function buildCityHubSchemaGraph(
           '@type': 'HowToStep',
           position: 1,
           name: 'Estimate your inventory',
-          text: 'Use the free room-by-room moving calculator to calculate cubic feet and weight before requesting quotes.',
+          text: 'Use the free room-by-room moving calculator to calculate cubic feet and weight before contacting movers.',
         },
         {
           '@type': 'HowToStep',

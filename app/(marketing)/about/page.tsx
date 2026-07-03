@@ -84,7 +84,7 @@ export default function AboutPage() {
                 The long-distance moving and auto transport industries are full of hidden fees, unreliable carriers, and hard-to-compare options. We aggregate FMCSA, BBB, and attributable customer reviews into clean, filterable directories so you can make confident decisions without the guesswork.
               </p>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                We also built free tools like the Smart Move Estimator (volume + weight) and instant quote matching to remove friction from the process.
+                We also built free tools like the Smart Move Estimator (volume + weight) and our independent mover directory to remove friction from the research process.
               </p>
             </div>
             <Card className="p-8 bg-muted/50 border-0">

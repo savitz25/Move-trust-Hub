@@ -317,7 +317,7 @@ export const minnesotaToSouthCarolinaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Minnesota → South Carolina move',
+  ctaHeading: 'Plan your Minnesota → South Carolina move',
   internalLinks: [
     {
       label: 'Free moving calculator',

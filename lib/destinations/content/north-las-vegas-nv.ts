@@ -7,7 +7,7 @@ export const northLasVegasNvContent: CityHubContent = {
     title:
       'Moving to North Las Vegas, NV (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to North Las Vegas in Clark County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. First-time buyer value, Aliante, Centennial Hills spillover, master-planned growth. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to North Las Vegas in Clark County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. First-time buyer value, Aliante, Centennial Hills spillover, master-planned growth. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to north las vegas nv',
       'north las vegas movers',
@@ -245,7 +245,7 @@ export const northLasVegasNvContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

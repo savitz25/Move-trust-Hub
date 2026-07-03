@@ -186,7 +186,7 @@ export function LeadForm({
           </>
         ) : (
           <>
-            <Send className="h-4 w-4" /> Request free quote
+            <Send className="h-4 w-4" /> Contact agency
           </>
         )}
       </Button>

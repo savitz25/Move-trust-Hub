@@ -319,7 +319,7 @@ export const pennsylvaniaToTexasContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Pennsylvania → Texas move',
+  ctaHeading: 'Plan your Pennsylvania → Texas move',
   internalLinks: [
     {
       label: 'Moving to Texas destination hub',

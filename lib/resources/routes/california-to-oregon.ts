@@ -394,5 +394,5 @@ export const californiaToOregonContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Oregon move',
+  ctaHeading: 'Plan your California → Oregon move',
 };

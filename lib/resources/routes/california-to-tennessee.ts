@@ -374,5 +374,5 @@ export const californiaToTennesseeContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Tennessee move',
+  ctaHeading: 'Plan your California → Tennessee move',
 };

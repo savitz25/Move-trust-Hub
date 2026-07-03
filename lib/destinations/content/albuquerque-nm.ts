@@ -7,7 +7,7 @@ export const albuquerqueNmContent: CityHubContent = {
     title:
       'Moving to Albuquerque, NM (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Albuquerque in Bernalillo County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Major metro, universities, film production, diverse neighborhoods. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Albuquerque in Bernalillo County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Major metro, universities, film production, diverse neighborhoods. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to albuquerque nm',
       'albuquerque nm movers',
@@ -239,7 +239,7 @@ export const albuquerqueNmContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

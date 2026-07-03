@@ -4,7 +4,7 @@ import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 export const metadata = buildResourceMetadata(
   '/terms-of-service',
   'Terms of Service — Move Trust Hub',
-  'Terms governing use of Move Trust Hub directories, quote tools, DOT verification, reviews, and informational content. Independent directory — not a moving company or broker.'
+  'Terms governing use of Move Trust Hub directories, calculators, DOT verification, reviews, and informational content. Independent directory — not a moving company or broker.'
 );
 
 const LAST_UPDATED = 'June 29, 2026';
@@ -21,16 +21,16 @@ const sections = [
     id: 'about-service',
     title: 'About our service',
     paragraphs: [
-      'Move Trust Hub is an independent informational directory and quote-matching platform. We are not a moving company, broker, or carrier. We do not transport goods, take deposits, or execute move contracts on your behalf.',
+      'Move Trust Hub is an independent informational directory and research directory platform. We are not a moving company, broker, or carrier. We do not transport goods, take deposits, or execute move contracts on your behalf.',
       'Company listings, ratings, and editorial content are provided for research purposes. We are not affiliated with, endorsed by, or partners of the companies listed unless explicitly stated.',
     ],
   },
   {
-    id: 'quote-tool',
-    title: 'Quote requests',
+    id: 'directory-tools',
+    title: 'Directory and tools',
     paragraphs: [
-      'When you submit a quote request, you authorize us to share relevant move details with FMCSA-licensed moving partners so they may contact you. Quote matching is free to you; we do not guarantee a specific number of responses, pricing, or availability.',
-      'You are responsible for verifying each carrier\'s licensing, insurance, and contract terms before booking.',
+      'Move Trust Hub provides free research tools — including a moving calculator, mover directory, and comparison features — for informational purposes only. We do not sell leads, broker moves, or guarantee pricing or availability from listed companies.',
+      'You are responsible for verifying each carrier\'s licensing, insurance, and contract terms before booking. Contact movers directly or use our contact form for general site inquiries.',
     ],
   },
   {
@@ -48,7 +48,7 @@ const sections = [
     list: [
       'Submit false, misleading, or fraudulent information.',
       'Attempt to scrape, overload, or disrupt the Site.',
-      'Use automated tools to submit spam reviews or quote requests.',
+      'Use automated tools to submit spam reviews or contact messages.',
       'Misrepresent your affiliation with Move Trust Hub or listed companies.',
       'Violate applicable laws or third-party rights.',
     ],
@@ -65,7 +65,7 @@ const sections = [
     id: 'liability',
     title: 'Limitation of liability',
     paragraphs: [
-      'To the fullest extent permitted by law, Move Trust Hub and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Site, quote matching, or reliance on directory information.',
+      'To the fullest extent permitted by law, Move Trust Hub and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Site, mover research, or reliance on directory information.',
       'Our total liability for any claim shall not exceed the amount you paid us (typically $0) in the twelve months preceding the claim.',
     ],
   },

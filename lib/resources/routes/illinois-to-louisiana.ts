@@ -325,7 +325,7 @@ export const illinoisToLouisianaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Illinois → Louisiana move',
+  ctaHeading: 'Plan your Illinois → Louisiana move',
   internalLinks: [
     {
       label: 'Local movers in Louisiana',

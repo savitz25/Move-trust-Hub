@@ -7,7 +7,7 @@ export const kitteryMeContent: CityHubContent = {
     title:
       'Moving to Kittery, ME (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Kittery in York County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Border town, Portsmouth Naval Shipyard, outlet shopping, coastal access. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Kittery in York County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Border town, Portsmouth Naval Shipyard, outlet shopping, coastal access. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to kittery me',
       'kittery maine movers',
@@ -260,7 +260,7 @@ export const kitteryMeContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

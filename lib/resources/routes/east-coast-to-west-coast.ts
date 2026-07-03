@@ -405,5 +405,5 @@ export const eastCoastToWestCoastContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your East Coast → West Coast move',
+  ctaHeading: 'Plan your East Coast → West Coast move',
 };

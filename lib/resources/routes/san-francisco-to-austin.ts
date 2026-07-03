@@ -299,7 +299,7 @@ export const sanFranciscoToAustinContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your San Francisco → Austin move',
+  ctaHeading: 'Plan your San Francisco → Austin move',
   internalLinks: [
     {
       label: 'California to Texas route guide',

@@ -377,5 +377,5 @@ export const californiaToNorthCarolinaContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → North Carolina move',
+  ctaHeading: 'Plan your California → North Carolina move',
 };

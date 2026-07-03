@@ -316,7 +316,7 @@ export const newJerseyToSouthCarolinaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your New Jersey → South Carolina move',
+  ctaHeading: 'Plan your New Jersey → South Carolina move',
   internalLinks: [
     {
       label: 'Free moving calculator',

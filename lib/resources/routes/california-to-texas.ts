@@ -411,5 +411,5 @@ export const californiaToTexasContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Texas move',
+  ctaHeading: 'Plan your California → Texas move',
 };

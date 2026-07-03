@@ -425,5 +425,5 @@ export const newYorkToFloridaContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your New York → Florida move',
+  ctaHeading: 'Plan your New York → Florida move',
 };

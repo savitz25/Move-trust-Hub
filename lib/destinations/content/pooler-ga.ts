@@ -7,7 +7,7 @@ export const poolerGaContent: CityHubContent = {
     title:
       'Moving to Pooler, GA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Pooler in Chatham County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Coastal boomtown, Hyundai EV plant influence, I-95 corridor growth, rapid expansion. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Pooler in Chatham County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Coastal boomtown, Hyundai EV plant influence, I-95 corridor growth, rapid expansion. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to pooler ga',
       'pooler ga movers',
@@ -240,7 +240,7 @@ export const poolerGaContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

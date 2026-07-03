@@ -7,7 +7,7 @@ export const charlesTownRansonWvContent: CityHubContent = {
     title:
       'Moving to Charles Town & Ranson, WV (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Charles Town or Ranson in Jefferson County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Rapid VA/MD border growth, new construction. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Charles Town or Ranson in Jefferson County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Rapid VA/MD border growth, new construction. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to charles town wv',
       'charles town wv movers',
@@ -235,7 +235,7 @@ export const charlesTownRansonWvContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

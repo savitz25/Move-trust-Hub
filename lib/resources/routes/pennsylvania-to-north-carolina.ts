@@ -316,7 +316,7 @@ export const pennsylvaniaToNorthCarolinaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Pennsylvania → North Carolina move',
+  ctaHeading: 'Plan your Pennsylvania → North Carolina move',
   internalLinks: [
     {
       label: 'Free moving calculator',

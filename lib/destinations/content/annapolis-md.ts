@@ -7,7 +7,7 @@ export const annapolisMdContent: CityHubContent = {
     title:
       'Moving to Annapolis, MD (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Annapolis in Anne Arundel County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Sailing capital, Naval Academy, colonial waterfront, Eastport, Ego Alley. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Annapolis in Anne Arundel County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Sailing capital, Naval Academy, colonial waterfront, Eastport, Ego Alley. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to annapolis md',
       'annapolis md movers',
@@ -250,7 +250,7 @@ export const annapolisMdContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

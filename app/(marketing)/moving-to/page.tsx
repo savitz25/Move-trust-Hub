@@ -36,7 +36,7 @@ export default function MovingToIndexPage() {
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mb-6">
             High-intent inbound guides for America&apos;s fastest-growing relocation markets.
             Each hub includes cost tables, route calculators, county-level mover directories,
-            and free quote matching from FMCSA-licensed carriers.
+            and trusted mover research tools from FMCSA-licensed carriers.
           </p>
           <PageHeroCta
             tertiaryLabel="Explore Destination Guides"

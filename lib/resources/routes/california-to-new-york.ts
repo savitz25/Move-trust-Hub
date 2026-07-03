@@ -400,5 +400,5 @@ export const californiaToNewYorkContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → New York move',
+  ctaHeading: 'Plan your California → New York move',
 };

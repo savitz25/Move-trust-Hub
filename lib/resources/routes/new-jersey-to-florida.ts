@@ -325,7 +325,7 @@ export const newJerseyToFloridaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your New Jersey → Florida move',
+  ctaHeading: 'Plan your New Jersey → Florida move',
   internalLinks: [
     {
       label: 'Moving to Florida destination hub',

@@ -377,5 +377,5 @@ export const californiaToFloridaContent: RouteGuideExtendedContent = {
       href: '/resources/scams',
     },
   ],
-  ctaHeading: 'Get quotes for your California → Florida move',
+  ctaHeading: 'Plan your California → Florida move',
 };

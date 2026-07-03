@@ -322,7 +322,7 @@ export const illinoisToArizonaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Illinois → Arizona move',
+  ctaHeading: 'Plan your Illinois → Arizona move',
   internalLinks: [
     {
       label: 'Moving to Arizona destination hub',

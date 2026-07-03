@@ -299,7 +299,7 @@ export const losAngelesToDallasFortWorthContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Los Angeles → Dallas–Fort Worth move',
+  ctaHeading: 'Plan your Los Angeles → Dallas–Fort Worth move',
   internalLinks: [
     {
       label: 'Free moving calculator',

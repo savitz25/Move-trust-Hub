@@ -7,7 +7,7 @@ export const castleRockCoContent: CityHubContent = {
     title:
       'Moving to Castle Rock, CO (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Castle Rock? Compare FMCSA-verified movers serving Douglas County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Master-planned communities, The Meadows, family-safe suburb on I-25. Independent directory.',
+      'Planning a move to Castle Rock? Compare FMCSA-verified movers serving Douglas County, estimate interstate costs with our free calculator, and research carriers in our independent directory. Master-planned communities, The Meadows, family-safe suburb on I-25. Independent directory.',
     keywords: [
       'moving to castle rock co',
       'castle rock movers',
@@ -235,7 +235,7 @@ export const castleRockCoContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

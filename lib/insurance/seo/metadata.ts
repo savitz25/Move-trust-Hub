@@ -6,7 +6,7 @@ export { SITE_URL };
 export const HOMEPAGE_TITLE =
   'Find Trusted Insurance Agents (2026) | Compare Licensed Agencies by State';
 export const HOMEPAGE_DESCRIPTION =
-  'Compare independent and captive insurance agencies by reviews, specialties, and state licensing. Get free quotes for auto, home, life, and business coverage.';
+  'Compare independent and captive insurance agencies by reviews, specialties, and state licensing. Research auto, home, life, and business coverage options.';
 
 export const DEFAULT_SITE_DESCRIPTION =
   'Insurance Trust Hub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and request quotes for auto, home, life, and business insurance.';

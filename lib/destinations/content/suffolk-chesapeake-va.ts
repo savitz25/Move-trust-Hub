@@ -7,7 +7,7 @@ export const suffolkChesapeakeVaContent: CityHubContent = {
     title:
       'Moving to Suffolk & Chesapeake, VA (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Suffolk or Chesapeake in Hampton Roads? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Fastest-growing western Tidewater, newer housing, port & naval jobs. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Suffolk or Chesapeake in Hampton Roads? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Fastest-growing western Tidewater, newer housing, port & naval jobs. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to suffolk va',
       'moving to chesapeake va',
@@ -255,7 +255,7 @@ export const suffolkChesapeakeVaContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [

@@ -327,7 +327,7 @@ export const illinoisToGeorgiaContent: RouteGuideExtendedContent = {
       text: 'Sign the bill of lading with accurate inventory, photograph high-value items, and keep your spread delivery window contacts handy through transit.',
     },
   ],
-  ctaHeading: 'Get quotes for your Illinois → Georgia move',
+  ctaHeading: 'Plan your Illinois → Georgia move',
   internalLinks: [
     {
       label: 'Moving-to destination hub',

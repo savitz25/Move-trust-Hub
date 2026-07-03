@@ -7,7 +7,7 @@ export const fortLauderdaleFlContent: CityHubContent = {
     title:
       'Moving to Fort Lauderdale, FL (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Fort Lauderdale? Compare FMCSA-verified movers serving Broward County, estimate interstate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Las Olas, Victoria Park, and Intracoastal neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Fort Lauderdale? Compare FMCSA-verified movers serving Broward County, estimate interstate costs with our free calculator, and research carriers in our independent directory. Las Olas, Victoria Park, and Intracoastal neighborhood logistics covered. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to fort lauderdale fl',
       'fort lauderdale movers',
@@ -256,7 +256,7 @@ export const fortLauderdaleFlContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed.',
     },
   ],
   featuredInterstateSlugs: [

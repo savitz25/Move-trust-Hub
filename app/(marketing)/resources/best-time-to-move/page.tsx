@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   CloudSnow,
   HelpCircle,
-  Phone,
   PiggyBank,
   ShieldCheck,
   Sun,
@@ -356,10 +355,7 @@ export default function BestTimeToMovePage() {
             </p>
 
             <div className="mt-8">
-              <GuideCtaClient
-                quoteLabel="Get Free Moving Quotes"
-                prefilledNotes="Best time to move guide — quote request"
-              />
+              <GuideCtaClient />
             </div>
             <TrustBadges variant="compact" className="mt-6" />
           </div>
@@ -737,13 +733,13 @@ export default function BestTimeToMovePage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                  Match with 2–3 top-rated, licensed movers within 24 hours
+                  Independent directory — no lead fees, no paid placements
                 </li>
               </ul>
               <div className="flex flex-wrap gap-3">
                 <Button asChild size="lg" className="shadow-sm">
-                  <Link href="/">
-                    Get Free Interstate Quotes
+                  <Link href="/companies">
+                    Compare Trusted Movers
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -754,12 +750,11 @@ export default function BestTimeToMovePage() {
             </div>
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4 shrink-0" />
               <span>
-                Need personalized help? Call our specialist team at{' '}
-                <a href="tel:18009181477" className="text-primary font-medium hover:underline">
-                  1-800-918-1477
-                </a>
+                Questions?{' '}
+                <Link href="/contact" className="text-primary font-medium hover:underline">
+                  Contact us
+                </Link>
               </span>
             </div>
           </section>

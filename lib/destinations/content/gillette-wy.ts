@@ -7,7 +7,7 @@ export const gilletteWyContent: CityHubContent = {
     title:
       'Moving to Gillette, WY (2026) — Costs, Best Movers & Trusted Movers | Move Trust Hub',
     description:
-      'Planning a move to Gillette in Campbell County? Compare FMCSA-verified movers, estimate costs with our free calculator, and get matched with 2–3 licensed quotes within 24 hours. Powder River Basin industrial workhorse, Gillette Avenue downtown, Country Club Estates, Sleepy Hollow. Independent directory. Transparent. No affiliation with listed companies.',
+      'Planning a move to Gillette in Campbell County? Compare FMCSA-verified movers, estimate costs with our free calculator, and research carriers in our independent directory. Powder River Basin industrial workhorse, Gillette Avenue downtown, Country Club Estates, Sleepy Hollow. Independent directory. Transparent. No affiliation with listed companies.',
     keywords: [
       'moving to gillette wy',
       'gillette wyoming movers',
@@ -245,7 +245,7 @@ export const gilletteWyContent: CityHubContent = {
     {
       question: 'Is Move Trust Hub affiliated with the movers listed?',
       answer:
-        'No. Move Trust Hub is an independent informational directory and quote-matching service. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
+        'No. Move Trust Hub is an independent informational directory. We are not affiliated with, endorsed by, or a partner of the companies listed. We help you research FMCSA data, verified reviews, and reputation scores so you can make an informed decision on your own.',
     },
   ],
   featuredInterstateSlugs: [
