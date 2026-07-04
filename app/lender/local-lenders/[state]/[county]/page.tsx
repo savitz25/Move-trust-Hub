@@ -1,9 +1,22 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+import { ClusterPageView } from '@/components/lender/cluster-page-view';
 import { LenderCard } from '@/components/lender/LenderCard';
 import { SearchBar } from '@/components/lender/SearchBar';
+import { tryGetClusterContent } from '@/lib/lender/clusters/content';
+import { getAllClusterParams } from '@/lib/lender/clusters/registry';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 import { getLendersByCounty } from '@/lib/lender/lenders';
+
+export const dynamic = 'force-static';
+
+export function generateStaticParams() {
+  return getAllClusterParams().map(({ state, cluster }) => ({
+    state,
+    county: cluster,
+  }));
+}
 
 function titleCase(slug: string): string {
   return slug
@@ -18,6 +31,14 @@ export async function generateMetadata({
   params: Promise<{ state: string; county: string }>;
 }): Promise<Metadata> {
   const { state, county } = await params;
+  const clusterMatch = tryGetClusterContent(state, county);
+  if (clusterMatch) {
+    return buildHubMetadata('lender', {
+      title: clusterMatch.content.title,
+      description: clusterMatch.content.description,
+      path: `/local-lenders/${state}/${county}`,
+    });
+  }
   const stateName = titleCase(state);
   const countyName = titleCase(county);
   const isOrange = state === 'florida' && county === 'orange';
@@ -489,6 +510,16 @@ export default async function CountyLendersPage({
   searchParams: Promise<{ zip?: string }>;
 }) {
   const { state, county } = await params;
+  const clusterMatch = tryGetClusterContent(state, county);
+  if (clusterMatch) {
+    return (
+      <ClusterPageView
+        state={state}
+        slug={clusterMatch.slug}
+        content={clusterMatch.content}
+      />
+    );
+  }
   const { zip } = await searchParams;
   const stateName = titleCase(state);
   const countyName = titleCase(county);

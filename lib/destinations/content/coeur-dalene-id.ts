@@ -128,7 +128,7 @@ export const coeurDaleneIdContent: CityHubContent = {
       title: "2026 Full Moving Guide to Coeur d'Alene",
       description:
         'Neighborhoods, lakefront timing, winter pass prep, and a printable mover-vetting checklist.',
-      href: '/resources/guides/moving-to-coeur-dalene-2026',
+      href: '/insurance/resources/guides/moving-to-coeur-dalene-2026',
     },
     {
       title: 'Verify any mover\'s USDOT & MC number',

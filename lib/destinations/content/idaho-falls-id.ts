@@ -128,7 +128,7 @@ export const idahoFallsIdContent: CityHubContent = {
       title: '2026 Full Moving Guide to Idaho Falls',
       description:
         'Neighborhoods, INL timing, Yellowstone corridor prep, and a printable mover-vetting checklist.',
-      href: '/resources/guides/moving-to-idaho-falls-2026',
+      href: '/insurance/resources/guides/moving-to-idaho-falls-2026',
     },
     {
       title: 'Verify any mover\'s USDOT & MC number',

@@ -12,6 +12,7 @@ export interface Article {
   updatedAt: string;
   readTime: string;
   category: string;
+  variant?: 'guide' | 'comparison';
   sections: ArticleSection[];
   relatedLinks: { href: string; label: string }[];
 }
@@ -55,9 +56,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/directory', label: 'Browse Insurance Agencies' },
-      { href: '/resources/independent-vs-captive', label: 'Independent vs. Captive Guide' },
-      { href: '/contact', label: 'Report a Data Issue' },
+      { href: '/insurance/directory', label: 'Browse Insurance Agencies' },
+      { href: '/insurance/resources/independent-vs-captive', label: 'Independent vs. Captive Guide' },
+      { href: '/insurance/contact', label: 'Report a Data Issue' },
     ],
   },
   {
@@ -92,9 +93,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/tools/cost-estimator', label: 'Premium Cost Estimator' },
-      { href: '/destinations/texas', label: 'Texas Insurance Guide' },
-      { href: '/destinations/florida', label: 'Florida Insurance Guide' },
+      { href: '/insurance/tools/cost-estimator', label: 'Premium Cost Estimator' },
+      { href: '/insurance/destinations/texas', label: 'Texas Insurance Guide' },
+      { href: '/insurance/destinations/florida', label: 'Florida Insurance Guide' },
     ],
   },
   {
@@ -131,9 +132,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
-      { href: '/resources/umbrella-insurance', label: 'Umbrella Insurance' },
-      { href: '/destinations/california', label: 'California Home Insurance' },
+      { href: '/insurance/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
+      { href: '/insurance/resources/umbrella-insurance', label: 'Umbrella Insurance' },
+      { href: '/insurance/destinations/california', label: 'California Home Insurance' },
     ],
   },
   {
@@ -163,9 +164,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/destinations/florida', label: 'Florida Insurance' },
-      { href: '/destinations/texas', label: 'Texas Insurance' },
-      { href: '/tools/cost-estimator', label: 'Cost Estimator' },
+      { href: '/insurance/destinations/florida', label: 'Florida Insurance' },
+      { href: '/insurance/destinations/texas', label: 'Texas Insurance' },
+      { href: '/insurance/tools/cost-estimator', label: 'Cost Estimator' },
     ],
   },
   {
@@ -195,9 +196,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/destinations/new-york', label: 'New York Insurance' },
-      { href: '/destinations/illinois', label: 'Illinois Insurance' },
-      { href: '/directory?type=renters', label: 'Find Renters Insurance Agents' },
+      { href: '/insurance/destinations/new-york', label: 'New York Insurance' },
+      { href: '/insurance/destinations/illinois', label: 'Illinois Insurance' },
+      { href: '/insurance/directory?type=renters', label: 'Find Renters Insurance Agents' },
     ],
   },
   {
@@ -233,9 +234,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/resources/homeowners-insurance-basics', label: 'Homeowners Basics' },
-      { href: '/resources/auto-insurance-costs-by-state', label: 'Auto Insurance Costs' },
-      { href: '/directory', label: 'Find an Agent' },
+      { href: '/insurance/resources/homeowners-insurance-basics', label: 'Homeowners Basics' },
+      { href: '/insurance/resources/auto-insurance-costs-by-state', label: 'Auto Insurance Costs' },
+      { href: '/insurance/directory', label: 'Find an Agent' },
     ],
   },
   {
@@ -265,9 +266,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
-      { href: '/directory', label: 'Agency Directory' },
-      { href: '/about', label: 'About Insurance Trust Hub' },
+      { href: '/insurance/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
+      { href: '/insurance/directory', label: 'Agency Directory' },
+      { href: '/insurance/about', label: 'About Insurance Trust Hub' },
     ],
   },
   {
@@ -303,9 +304,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/destinations/florida', label: 'Florida Insurance Hub' },
-      { href: '/destinations/north-carolina', label: 'North Carolina Insurance' },
-      { href: '/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
+      { href: '/insurance/destinations/florida', label: 'Florida Insurance Hub' },
+      { href: '/insurance/destinations/north-carolina', label: 'North Carolina Insurance' },
+      { href: '/insurance/resources/flood-insurance-guide', label: 'Flood Insurance Guide' },
     ],
   },
   {
@@ -336,36 +337,104 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/hubs/health-insurance', label: 'Health Insurance Hubs' },
-      { href: '/tools/aca-eligibility-checker', label: 'ACA Eligibility Checker' },
-      { href: '/hubs/florida/miami-dade', label: 'Miami-Dade Agents' },
+      { href: '/insurance/hubs/health-insurance', label: 'Health Insurance Hubs' },
+      { href: '/insurance/tools/aca-eligibility-checker', label: 'ACA Eligibility Checker' },
+      { href: '/insurance/hubs/florida/miami-dade', label: 'Miami-Dade Agents' },
     ],
   },
   {
     slug: 'medicare-advantage-guide',
-    title: 'Medicare Advantage vs Supplement: 2026 Comparison Guide',
+    title: 'Medicare Advantage Plans: 2026 Enrollment Guide',
     description:
-      'Compare Medicare Advantage (Part C), Medigap supplements, and Part D. Understand networks, out-of-pocket caps, and enrollment periods.',
+      'How Medicare Advantage (Part C) works — networks, out-of-pocket caps, drug coverage, and when to talk with a licensed agent.',
     publishedAt: '2026-05-10',
     updatedAt: '2026-07-01',
-    readTime: '10 min',
+    readTime: '8 min',
     category: 'Medicare',
     sections: [
       {
         heading: 'Medicare Advantage (Part C)',
         content:
           'Advantage plans bundle hospital, medical, and often drug coverage with an annual out-of-pocket maximum. They use HMO/PPO networks — popular in South Florida, Arizona, and Texas where penetration exceeds 50%.',
+        bullets: [
+          'Annual out-of-pocket maximum caps total spending',
+          'Often includes Part D prescription drug coverage',
+          'May offer dental, vision, and fitness extras',
+          'Network restrictions apply — verify your doctors',
+        ],
       },
       {
-        heading: 'Medigap supplements',
+        heading: 'Enrollment windows',
         content:
-          'Supplements pair with Original Medicare and reduce predictable cost-sharing. Best for seniors who want broad provider access and travel frequently. Premiums are higher but networks are wider.',
+          'Initial enrollment surrounds your 65th birthday. Annual enrollment (AEP) runs October 15–December 7. Medicare Advantage open enrollment (MA OEP) allows one switch January 1–March 31 for existing Advantage members.',
       },
     ],
     relatedLinks: [
-      { href: '/hubs/medicare', label: 'Medicare Specialists' },
-      { href: '/tools/medicare-plan-finder', label: 'Medicare Plan Finder' },
-      { href: '/hubs/south-florida', label: 'South Florida Medicare Agents' },
+      { href: '/insurance/resources/medicare-advantage-vs-medigap', label: 'Medicare Advantage vs Medigap' },
+      { href: '/insurance/hubs/medicare', label: 'Medicare Specialists' },
+      { href: '/insurance/tools/medicare-plan-finder', label: 'Medicare Plan Finder' },
+    ],
+  },
+  {
+    slug: 'medicare-advantage-vs-medigap',
+    title: 'Medicare Advantage vs Medigap: 2026 Side-by-Side Comparison',
+    description:
+      'Compare Medicare Advantage (Part C) and Medigap supplements on premiums, networks, drug coverage, travel flexibility, and enrollment rules.',
+    publishedAt: '2026-05-10',
+    updatedAt: '2026-07-01',
+    readTime: '12 min',
+    category: 'Medicare',
+    variant: 'comparison',
+    sections: [
+      {
+        heading: 'At a glance',
+        content:
+          'Medicare Advantage replaces Original Medicare with a managed plan that caps annual out-of-pocket costs. Medigap supplements Original Medicare by filling predictable cost-sharing gaps. You generally cannot pair Medigap with Advantage — the choice is usually one path or the other.',
+        bullets: [
+          'Advantage: lower premiums, network-based care, annual OOP cap',
+          'Medigap: higher premiums, any Medicare-accepting provider, predictable bills',
+          'Part D: often bundled in Advantage; separate plan with Medigap',
+          'Switching later may require medical underwriting for Medigap',
+        ],
+      },
+      {
+        heading: 'Medicare Advantage (Part C)',
+        content:
+          'Advantage plans bundle hospital (Part A), medical (Part B), and often prescription (Part D) coverage. HMO plans require in-network care; PPO plans allow out-of-network visits at higher cost. South Florida, Arizona, and Texas Sun Belt markets see Advantage penetration above 50%.',
+        bullets: [
+          'Monthly premium often $0–$50 beyond Part B',
+          'Annual out-of-pocket maximum ($0–$8,850+ in 2026)',
+          'Prior authorization and referral rules common on HMOs',
+          'Extra benefits: dental, vision, hearing, fitness',
+        ],
+      },
+      {
+        heading: 'Medigap (Medicare Supplement)',
+        content:
+          'Medigap policies pair with Original Medicare and pay some or all of deductibles, copays, and coinsurance. Plans are standardized (A–N) in most states. Best for seniors who want broad provider access, split time between states, or prefer predictable monthly costs over surprise bills.',
+        bullets: [
+          'Works with any provider that accepts Medicare',
+          'No annual network changes or formulary surprises',
+          'Premiums typically $100–$300+/month depending on plan letter and age',
+          'Does not include prescription drugs — add standalone Part D',
+        ],
+      },
+      {
+        heading: 'How to decide',
+        content:
+          'List your doctors, prescriptions, and travel patterns before comparing. If your specialists are in-network and you want extras like dental, Advantage may cost less monthly. If you see multiple specialists across systems or snowbird between states, Medigap plus Part D may be simpler long term.',
+        bullets: [
+          'Check hospital and specialist network adequacy',
+          'Model total cost: premium + expected copays + drug tiers',
+          'Ask about Medigap guaranteed-issue windows if switching from employer coverage',
+          'Consult a licensed Medicare agent — commissions do not increase your premium',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/insurance/hubs/medicare', label: 'Medicare Specialists' },
+      { href: '/insurance/calculators/medicare-gap', label: 'Medicare Gap Analyzer' },
+      { href: '/insurance/hubs/south-florida', label: 'South Florida Medicare Agents' },
     ],
   },
   {
@@ -390,9 +459,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/hubs/aca', label: 'ACA Marketplace Agents' },
-      { href: '/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
-      { href: '/hubs/florida/broward-county', label: 'Broward County Agents' },
+      { href: '/insurance/hubs/aca', label: 'ACA Marketplace Agents' },
+      { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
+      { href: '/insurance/hubs/florida/broward-county', label: 'Broward County Agents' },
     ],
   },
   {
@@ -422,9 +491,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/tools/license-verification', label: 'License Verification Tool' },
-      { href: '/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
-      { href: '/resources/avoiding-insurance-scams', label: 'Avoiding Insurance Scams' },
+      { href: '/insurance/tools/license-verification', label: 'License Verification Tool' },
+      { href: '/insurance/resources/how-to-choose-insurance-agent', label: 'How to Choose an Agent' },
+      { href: '/insurance/resources/avoiding-insurance-scams', label: 'Avoiding Insurance Scams' },
     ],
   },
   {
@@ -449,9 +518,9 @@ export const ARTICLES: Article[] = [
       },
     ],
     relatedLinks: [
-      { href: '/tools/license-verification', label: 'License Verification' },
-      { href: '/about', label: 'How We Verify Agents' },
-      { href: '/contact', label: 'Report Suspicious Listing' },
+      { href: '/insurance/tools/license-verification', label: 'License Verification' },
+      { href: '/insurance/about', label: 'How We Verify Agents' },
+      { href: '/insurance/contact', label: 'Report Suspicious Listing' },
     ],
   },
 ];

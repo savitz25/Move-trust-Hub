@@ -1,7 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "regions": ["iad1"],
+  "regions": [
+    "iad1"
+  ],
   "crons": [
     {
       "path": "/api/refresh/fmcsa?mode=incremental",
@@ -24,60 +26,236 @@
     {
       "source": "/lender/(.*)",
       "headers": [
-        { "key": "X-Trust-Hub", "value": "lender" },
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800" }
+        {
+          "key": "X-Trust-Hub",
+          "value": "lender"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+        }
       ]
     },
     {
       "source": "/insurance/(.*)",
       "headers": [
-        { "key": "X-Trust-Hub", "value": "insurance" },
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800" }
+        {
+          "key": "X-Trust-Hub",
+          "value": "insurance"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/(lender|insurance)/sitemap.xml",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/(.*\\.(?:js|css|woff2|png|jpg|jpeg|webp|avif|svg|ico))",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ],
   "redirects": [
     {
-      "source": "/local-lenders",
-      "destination": "/lender/local-lenders",
+      "source": "/calculators/premium-estimator",
+      "destination": "/insurance/calculators/premium-estimator",
       "permanent": true
     },
     {
-      "source": "/local-lenders/:path*",
-      "destination": "/lender/local-lenders/:path*",
+      "source": "/calculators/medicare-gap",
+      "destination": "/insurance/calculators/medicare-gap",
       "permanent": true
     },
     {
-      "source": "/fdic-insured-banks",
-      "destination": "/lender/fdic-insured-banks",
+      "source": "/calculators/aca-subsidy",
+      "destination": "/insurance/calculators/aca-subsidy",
       "permanent": true
     },
     {
-      "source": "/auto-loan-companies",
-      "destination": "/lender/auto-loan-companies",
+      "source": "/calculators/mortgage-payment",
+      "destination": "/lender/calculators?calc=payment",
       "permanent": true
     },
     {
-      "source": "/calculators",
-      "destination": "/lender/calculators",
+      "source": "/calculators/affordability",
+      "destination": "/lender/calculators?calc=affordability",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/refinance",
+      "destination": "/lender/calculators?calc=refinance",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/amortization",
+      "destination": "/lender/calculators?calc=amortization",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/rent-vs-buy",
+      "destination": "/lender/calculators?calc=rent-vs-buy",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/heloc",
+      "destination": "/lender/calculators?calc=heloc",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/down-payment",
+      "destination": "/lender/calculators?calc=down-payment",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/rental",
+      "destination": "/lender/calculators?calc=rental",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/dti",
+      "destination": "/lender/calculators?calc=dti",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/closing",
+      "destination": "/lender/calculators?calc=closing",
+      "permanent": true
+    },
+    {
+      "source": "/calculators/va",
+      "destination": "/lender/calculators?calc=payment",
+      "permanent": true
+    },
+    {
+      "source": "/resources/how-to-choose-health-insurance",
+      "destination": "/insurance/resources/health-insurance-2026-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/how-to-choose-health-insurance",
+      "destination": "/insurance/resources/health-insurance-2026-guide",
+      "permanent": true
+    },
+    {
+      "source": "/resources/understanding-aca-subsidies",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/understanding-aca-subsidies",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true
+    },
+    {
+      "source": "/resources/texas-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/texas-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true
+    },
+    {
+      "source": "/resources/california-home-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/california-home-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true
+    },
+    {
+      "source": "/resources/wildfire-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/wildfire-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true
+    },
+    {
+      "source": "/resources/new-york-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/new-york-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true
+    },
+    {
+      "source": "/resources/north-carolina-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/north-carolina-insurance",
+      "destination": "/insurance/resources/homeowners-insurance-basics",
+      "permanent": true
+    },
+    {
+      "source": "/resources/illinois-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/illinois-auto-insurance",
+      "destination": "/insurance/resources/auto-insurance-costs-by-state",
+      "permanent": true
+    },
+    {
+      "source": "/resources/obamacare-guide",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/obamacare-guide",
+      "destination": "/insurance/resources/aca-obamacare-guide",
+      "permanent": true
+    },
+    {
+      "source": "/resources/medigap-guide",
+      "destination": "/insurance/resources/medicare-advantage-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/medigap-guide",
+      "destination": "/insurance/resources/medicare-advantage-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/hubs/south-florida",
+      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
+      "permanent": true
+    },
+    {
+      "source": "/hubs/south-florida",
+      "destination": "/insurance/hubs/florida/miami-fort-lauderdale",
       "permanent": true
     },
     {
@@ -101,8 +279,68 @@
       "permanent": true
     },
     {
+      "source": "/destinations",
+      "destination": "/insurance/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/destinations/:path*",
+      "destination": "/insurance/destinations/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/providers",
+      "destination": "/insurance/providers",
+      "permanent": true
+    },
+    {
+      "source": "/providers/:path*",
+      "destination": "/insurance/providers/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/tools",
+      "destination": "/insurance/tools",
+      "permanent": true
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/insurance/tools/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/insurance/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/insurance/terms",
+      "permanent": true
+    },
+    {
+      "source": "/local-lenders",
+      "destination": "/lender/local-lenders",
+      "permanent": true
+    },
+    {
+      "source": "/local-lenders/:path*",
+      "destination": "/lender/local-lenders/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/fdic-insured-banks",
+      "destination": "/lender/fdic-insured-banks",
+      "permanent": true
+    },
+    {
       "source": "/fdic-insured-banks/:path*",
       "destination": "/lender/fdic-insured-banks/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/auto-loan-companies",
+      "destination": "/lender/auto-loan-companies",
       "permanent": true
     },
     {
@@ -111,36 +349,66 @@
       "permanent": true
     },
     {
+      "source": "/lenders",
+      "destination": "/lender/lenders",
+      "permanent": true
+    },
+    {
       "source": "/lenders/:path*",
       "destination": "/lender/lenders/:path*",
       "permanent": true
     },
     {
+      "source": "/calculators",
+      "destination": "/lender/calculators",
+      "permanent": true
+    },
+    {
       "source": "/calculators/:path*",
-      "destination": "/lender/calculators/:path*",
+      "destination": "/lender/calculators",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "lendertrusthub.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.lendertrusthub.com"
+        }
+      ],
       "destination": "https://www.movetrusthub.com/lender/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.lendertrusthub.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "lendertrusthub.com"
+        }
+      ],
       "destination": "https://www.movetrusthub.com/lender/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "insurancetrusthub.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.insurancetrusthub.com"
+        }
+      ],
       "destination": "https://www.movetrusthub.com/insurance/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.insurancetrusthub.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "insurancetrusthub.com"
+        }
+      ],
       "destination": "https://www.movetrusthub.com/insurance/:path*",
       "permanent": true
     }

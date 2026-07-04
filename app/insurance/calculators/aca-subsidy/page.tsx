@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { wrapHubPageMetadata } from '@/lib/hub/wrap-metadata';
+import { buildCalculatorToolSchema } from '@/lib/hub/templates/calculator-schema';
 import { insuranceHref } from '@/lib/insurance/paths';
 import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { AcaSubsidyCalculator } from '@/components/insurance/calculators/aca-subsidy-calculator';
@@ -7,7 +8,7 @@ import { AcaSubsidyCalculator } from '@/components/insurance/calculators/aca-sub
 export const metadata: Metadata = wrapHubPageMetadata('insurance', {
   title: 'ACA Subsidy Estimator (2026)',
   description: 'Estimate marketplace premium tax credits by income and household size. Educational tool only.',
-  path: '/calculators/aca-subsidy',
+  path: '/insurance/calculators/aca-subsidy',
 });
 
 const FAQ = [
@@ -23,9 +24,17 @@ const FAQ = [
   },
 ];
 
+const TOOL_SCHEMA = buildCalculatorToolSchema('insurance', {
+  path: '/calculators/aca-subsidy',
+  name: 'ACA Subsidy Estimator',
+  description:
+    'Estimate marketplace premium tax credits by income and household size for educational planning.',
+});
+
 export default function AcaSubsidyPage() {
   return (
     <CalculatorPageShell
+      schema={TOOL_SCHEMA}
       title="ACA Subsidy Estimator"
       description="Rough 2026 estimate of marketplace premium tax credits by income and household size. Use before open enrollment to compare metal tiers with licensed agents in your market."
       methodology={[

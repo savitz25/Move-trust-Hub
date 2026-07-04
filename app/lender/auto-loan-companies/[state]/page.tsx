@@ -89,8 +89,8 @@ export default async function AutoLoanStatePage({
       <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Auto Loan Companies', href: '/auto-loan-companies' },
+            { label: 'Home', href: '/lender' },
+            { label: 'Auto Loan Companies', href: '/lender/auto-loan-companies' },
             { label: stateMeta.fullName },
           ]}
         />

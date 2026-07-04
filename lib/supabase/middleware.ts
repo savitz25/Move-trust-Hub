@@ -1,7 +1,12 @@
 import { createServerClient } from '@supabase/ssr';
 import { type NextRequest, NextResponse } from 'next/server';
 import type { Database } from '@/types/supabase';
-import { getAdminSecret, getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/config';
+import {
+  getAdminSecret,
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  isSupabaseConfigured,
+} from '@/lib/supabase/config';
 
 const ADMIN_COOKIE = 'mth_admin_session';
 
@@ -16,6 +21,22 @@ export function isAdminAuthenticated(request: NextRequest): boolean {
  * Extend `matcher` in root middleware.ts when user accounts ship.
  */
 export async function updateSession(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (!isSupabaseConfigured()) {
+    if (pathname.startsWith('/admin')) {
+      const isLogin = pathname === '/admin/login';
+      const isApi = pathname.startsWith('/admin/api');
+      if (!isLogin && !isApi && !isAdminAuthenticated(request)) {
+        const loginUrl = request.nextUrl.clone();
+        loginUrl.pathname = '/admin/login';
+        loginUrl.searchParams.set('next', pathname);
+        return NextResponse.redirect(loginUrl);
+      }
+    }
+    return NextResponse.next({ request });
+  }
+
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient<Database>(
@@ -41,8 +62,6 @@ export async function updateSession(request: NextRequest) {
 
   // Refresh session if present (no-op for anonymous visitors)
   await supabase.auth.getUser();
-
-  const { pathname } = request.nextUrl;
 
   if (pathname.startsWith('/admin')) {
     const isLogin = pathname === '/admin/login';

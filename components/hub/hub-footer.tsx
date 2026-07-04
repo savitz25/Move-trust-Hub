@@ -106,12 +106,12 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
                 </Link>
               </div>
               <div>
-                <Link prefetch={false} href={hubPath(hub.id, '/privacy-policy')} className="hover:text-foreground transition-colors">
+                <Link prefetch={false} href={hub.legalLinks.privacy} className="hover:text-foreground transition-colors">
                   Privacy Policy
                 </Link>
               </div>
               <div>
-                <Link prefetch={false} href={hubPath(hub.id, '/terms-of-service')} className="hover:text-foreground transition-colors">
+                <Link prefetch={false} href={hub.legalLinks.terms} className="hover:text-foreground transition-colors">
                   Terms of Service
                 </Link>
               </div>

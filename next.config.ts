@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { getAllHubRedirects } from './lib/migration/hub-redirects';
 
 const nextConfig: NextConfig = {
   // Optimized for Vercel + production
@@ -41,31 +42,6 @@ const nextConfig: NextConfig = {
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
   async redirects() {
     return [
-      /** Standalone Trust Hub domains → subdirectory on movetrusthub.com */
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.lendertrusthub.com' }],
-        destination: 'https://www.movetrusthub.com/lender/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'lendertrusthub.com' }],
-        destination: 'https://www.movetrusthub.com/lender/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.insurancetrusthub.com' }],
-        destination: 'https://www.movetrusthub.com/insurance/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'insurancetrusthub.com' }],
-        destination: 'https://www.movetrusthub.com/insurance/:path*',
-        permanent: true,
-      },
       {
         source: '/sitemap-local/:state((?!sitemap)[^/]+)\\.xml',
         destination: '/sitemap-local/sitemap/:state.xml',
@@ -136,6 +112,7 @@ const nextConfig: NextConfig = {
         destination: '/moving-to/south-carolina/hilton-head-sc',
         permanent: true,
       },
+      ...getAllHubRedirects(),
     ];
   },
   // Generate sitemap and robots via metadata in app dir

@@ -28,6 +28,21 @@ export function hubCanonicalUrl(hub: HubId, path: string = '/'): string {
   return appPath === '/' ? site : `${site}${appPath}`;
 }
 
+/**
+ * Metadata and canonical builders expect hub-relative paths (`/resources/foo`).
+ * Strip an accidental `/insurance` or `/lender` prefix when pages pass full app paths.
+ */
+export function normalizeHubMetadataPath(hub: HubId, path: string): string {
+  const clean = path.startsWith('/') ? path : `/${path}`;
+  if (hub === 'move') return clean;
+  const prefix = hub === 'lender' ? '/lender' : '/insurance';
+  if (clean === prefix) return '/';
+  if (clean.startsWith(`${prefix}/`)) {
+    return clean.slice(prefix.length) || '/';
+  }
+  return clean;
+}
+
 /** Strip hub prefix from pathname for breadcrumb / active-link matching. */
 export function stripHubPrefix(hub: HubId, pathname: string): string {
   if (hub === 'move') return pathname || '/';

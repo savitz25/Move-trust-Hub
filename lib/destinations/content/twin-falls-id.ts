@@ -128,7 +128,7 @@ export const twinFallsIdContent: CityHubContent = {
       title: '2026 Full Moving Guide to Twin Falls',
       description:
         'Neighborhoods, canyon-property timing, I-84 corridor prep, and a printable mover-vetting checklist.',
-      href: '/resources/guides/moving-to-twin-falls-2026',
+      href: '/insurance/resources/guides/moving-to-twin-falls-2026',
     },
     {
       title: 'Verify any mover\'s USDOT & MC number',

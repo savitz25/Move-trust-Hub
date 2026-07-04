@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { wrapHubPageMetadata } from '@/lib/hub/wrap-metadata';
+import { buildCalculatorToolSchema } from '@/lib/hub/templates/calculator-schema';
 import { insuranceHref } from '@/lib/insurance/paths';
 import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { MedicareGapCalculator } from '@/components/insurance/calculators/medicare-gap-calculator';
@@ -8,7 +9,7 @@ export const metadata: Metadata = wrapHubPageMetadata('insurance', {
   title: 'Medicare Coverage Gap Analyzer',
   description:
     'Identify Medicare and health insurance gaps when moving, retiring, or losing employer coverage.',
-  path: '/calculators/medicare-gap',
+  path: '/insurance/calculators/medicare-gap',
 });
 
 const FAQ = [
@@ -29,9 +30,17 @@ const FAQ = [
   },
 ];
 
+const TOOL_SCHEMA = buildCalculatorToolSchema('insurance', {
+  path: '/calculators/medicare-gap',
+  name: 'Medicare Coverage Gap Analyzer',
+  description:
+    'Identify Medicare and health insurance gaps when moving, retiring, or losing employer coverage.',
+});
+
 export default function MedicareGapPage() {
   return (
     <CalculatorPageShell
+      schema={TOOL_SCHEMA}
       title="Medicare Coverage Gap Analyzer"
       description="Identify potential coverage gaps when moving states, aging into Medicare, or transitioning from employer plans. Educational guidance for common transition scenarios — not medical or legal advice."
       methodology={[

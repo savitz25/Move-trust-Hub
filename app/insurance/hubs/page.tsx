@@ -3,46 +3,47 @@ import Link from 'next/link';
 import { HubBrowser } from '@/components/insurance/hub-browser';
 import { ZipSearch } from '@/components/insurance/zip-search';
 import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
-import { buildMetadata } from '@/lib/insurance/seo/metadata';
+import { HubSectionPage } from '@/components/hub/templates';
+import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
+import { INSURANCE_SECTION_PRESETS } from '@/lib/hub/templates/section-presets';
+import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
 import { INSURANCE_HUBS } from '@/lib/insurance/hubs/registry';
 
-export const metadata: Metadata = buildMetadata({
+const preset = INSURANCE_SECTION_PRESETS.directories;
+
+export const metadata: Metadata = buildTemplateMetadata({
+  hub: 'insurance',
   title: 'Health Insurance Hubs — 50+ U.S. Markets',
   description:
-    'Explore verified insurance agent hubs across 50+ U.S. metros. Health insurance specialists for ACA, Medicare, employer plans, and multi-line coverage. 100% data-driven.',
+    'Explore verified insurance agent hubs across 50+ U.S. metros. Health insurance specialists for ACA, Medicare, employer plans, and multi-line coverage.',
   path: '/insurance/hubs',
+  keywords: ['health insurance hubs', 'Medicare agents', 'ACA marketplace', 'insurance directory'],
 });
 
 export default function HubsPage() {
   return (
     <>
-      <section className="border-b bg-gradient-to-br from-primary/5 via-background to-trust/5 py-14 md:py-20">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <p className="text-xs font-semibold tracking-[0.2em] text-trust uppercase mb-3">
-            100% data-driven · No paid placements
-          </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-foreground">
-            Health Insurance Hubs Across America
-          </h1>
-          <p className="mt-4 text-muted-foreground text-lg">
-            {INSURANCE_HUBS.length} verified market hubs featuring health insurance specialists in
-            every high-volume MSA. Search by ZIP or browse by state.
-          </p>
-          <div className="mt-8 flex justify-center">
-            <ZipSearch />
-          </div>
+      <HubSectionPage
+        hub="insurance"
+        eyebrow="Insurance Trust Hub · Health hubs"
+        title="Health Insurance Hubs Across America"
+        description={`${INSURANCE_HUBS.length} verified market hubs featuring health insurance specialists in every high-volume MSA. Search by ZIP or browse by state.`}
+        path="/hubs"
+        breadcrumbs={hubSectionBreadcrumbs('insurance', 'Health hubs')}
+        primaryCta={{ href: '/insurance/hubs/browse', label: 'Browse all markets' }}
+        secondaryCta={preset.secondaryCta}
+        links={preset.links}
+      >
+        <div className="mx-auto max-w-xl mb-10 flex justify-center">
+          <ZipSearch />
         </div>
-      </section>
-
-      <section className="container mx-auto px-4 py-12 md:py-16">
         <HubBrowser />
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          <Link href="/insurance/hubs/browse" className="text-primary font-medium hover:underline">
+          <Link href="/insurance/hubs/browse" className="font-medium text-primary hover:underline">
             View all {INSURANCE_HUBS.length} hubs →
           </Link>
         </p>
-      </section>
-
+      </HubSectionPage>
       <DisclaimerBanner />
     </>
   );

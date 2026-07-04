@@ -33,6 +33,8 @@
     "count:virginia-movers": "tsx scripts/count-virginia-movers.ts",
     "count:delaware-movers": "tsx scripts/count-delaware-movers.ts",
     "audit:delaware-seo": "tsx scripts/audit-delaware-seo.ts",
+    "audit:hub-404s": "tsx scripts/audit-hub-404s.ts",
+    "verify:hub": "tsx scripts/verify-hub-production.ts",
     "count:maryland-movers": "tsx scripts/count-maryland-movers.ts",
     "apply:maryland-mover-expansion": "tsx scripts/apply-maryland-mover-expansion.ts",
     "audit:maryland-seo": "tsx scripts/audit-maryland-seo.ts",
@@ -93,6 +95,9 @@
     "sync:hubs:prefix-links": "tsx scripts/prefix-hub-links.ts",
     "audit:hub-seo": "tsx scripts/audit-hub-seo.ts",
     "fix:lender-paths": "tsx scripts/fix-lender-path-prefixes.ts",
+    "fix:insurance-paths": "tsx scripts/fix-insurance-path-prefixes.ts",
+    "fix:all-hub-links": "tsx scripts/fix-all-hub-links.ts",
+    "sync:hub-redirects": "tsx scripts/export-vercel-hub-redirects.ts --write",
     "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
     "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts",
     "refresh:bbb": "tsx scripts/run-bbb-refresh.ts"

@@ -160,7 +160,7 @@ export const myrtleBeachScContent: CityHubContent = {
       title: '2026 Full Moving Guide to Myrtle Beach',
       description:
         'Neighborhoods, timing, hurricane prep, and a printable mover-vetting checklist.',
-      href: '/resources/guides/moving-to-myrtle-beach-2026',
+      href: '/insurance/resources/guides/moving-to-myrtle-beach-2026',
     },
     {
       title: 'Verify any mover\'s USDOT & MC number',

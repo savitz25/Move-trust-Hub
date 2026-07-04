@@ -101,8 +101,8 @@ export default async function FDICStatePage({
       <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'FDIC Insured Banks', href: '/fdic-insured-banks' },
+            { label: 'Home', href: '/lender' },
+            { label: 'FDIC Insured Banks', href: '/lender/fdic-insured-banks' },
             { label: stateMeta.fullName },
           ]}
         />

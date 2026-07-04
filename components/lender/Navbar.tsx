@@ -10,11 +10,11 @@ import { Button } from '@/components/lender/ui/button';
 import { FDIC_CATEGORY, MORTGAGE_CATEGORY, AUTO_CATEGORY } from '@/lib/lender/directory/categories';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
+  { href: '/lender', label: 'Home' },
   { href: MORTGAGE_CATEGORY.hubPath, label: 'Mortgage Lenders' },
   { href: FDIC_CATEGORY.hubPath, label: 'FDIC Banks' },
-  { href: '/calculators', label: 'Calculators' },
-  { href: '/about', label: 'Trust & Transparency' },
+  { href: '/lender/calculators', label: 'Calculators' },
+  { href: '/lender/about', label: 'Trust & Transparency' },
 ];
 
 export default function Navbar() {

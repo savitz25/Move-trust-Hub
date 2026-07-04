@@ -33,10 +33,24 @@ function walk(dir: string, files: string[] = []): string[] {
   return files;
 }
 
+const LENDER_CALC_SLUGS: Record<string, string> = {
+  'mortgage-payment': 'payment',
+  affordability: 'affordability',
+  refinance: 'refinance',
+  va: 'payment',
+};
+
 function prefixPath(path: string): string {
   if (!path.startsWith('/')) return path;
   if (path.startsWith('/lender')) return path;
   if (path === '/') return '/lender';
+
+  const calcMatch = path.match(/^\/calculators\/([^/?#]+)/);
+  if (calcMatch) {
+    const calcId = LENDER_CALC_SLUGS[calcMatch[1]] ?? calcMatch[1];
+    return `/lender/calculators?calc=${calcId}`;
+  }
+
   for (const root of ROUTE_ROOTS) {
     if (path === root || path.startsWith(`${root}/`) || path.startsWith(`${root}#`)) {
       return `/lender${path}`;
@@ -45,10 +59,16 @@ function prefixPath(path: string): string {
   return path;
 }
 
+function replaceHref(content: string, replacer: (path: string) => string): string {
+  return content
+    .replace(/href=(["'])(\/[^"']*)\1/g, (_, q, p) => `href=${q}${replacer(p)}${q}`)
+    .replace(/href:\s*(["'])(\/[^"']*)\1/g, (_, q, p) => `href: ${q}${replacer(p)}${q}`);
+}
+
 function transform(content: string): string {
   let out = content;
 
-  out = out.replace(/href=(["'])(\/[^"']*)\1/g, (_, q, p) => `href=${q}${prefixPath(p)}${q}`);
+  out = replaceHref(out, prefixPath);
 
   out = out.replace(/href=\{`(\/[^`]*?)`\}/g, (_, p) => {
     if (p.includes('${')) {

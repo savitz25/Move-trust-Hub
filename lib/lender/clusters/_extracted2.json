@@ -1,0 +1,615 @@
+{
+  "ann-arbor-kalamazoo-college-town-demand": {
+    "countyVar": "",
+    "bullets": [
+      "Ann Arbor boasts Michigan&apos;s highest major-city median listing price (~$549K) in insulated Tree Town",
+      "Constant influx of medical, tech, and university professionals sustains competitive luxury and mid-tier demand",
+      "Kalamazoo offers a more affordable college-town alternative (~$245K median) with surging out-of-state interest",
+      "Both markets show incredible resilience and steady price appreciation through economic cycles",
+      "Professional relocation programs and jumbo expertise matter in Ann Arbor; affordability drives Kalamazoo volume"
+    ],
+    "subtitle": "Washtenaw and Kalamazoo county lenders for Michigan&apos;s premier university towns — insulated Ann Arbor\n            demand and Kalamazoo&apos;s affordable alternative with strong out-of-state buyer interest."
+  },
+  "central-eastern-pa-affordability-havens": {
+    "countyVar": "",
+    "bullets": [
+      "Harrisburg median sale prices jumped roughly 16% year-over-year with 31-day average sales",
+      "Lehigh Valley (Allentown/Bethlehem) has virtually no inventory equilibrium — 22–31 day pending",
+      "Wrightsville (York County) ranked #12 hottest market nationally for suburban/rural charm",
+      "Proximity to NYC, Philadelphia, and Baltimore drives commuter and relocation demand",
+      "Buyers prioritize maximum square footage value in these scorcher affordability pockets"
+    ],
+    "subtitle": "Harrisburg, Lehigh Valley, and York County lenders for massive appreciation,\n            lean inventory, quick pending times, and maximum square footage for your dollar."
+  },
+  "central-florida": {
+    "countyVar": "CENTRAL_FLORIDA_HUB_COUNTIES",
+    "bullets": [
+      "First-time buyers and DPA programs drive much of Orange County volume",
+      "Acrisure Mortgage (formerly FBC) keeps national-lender HQ downtown Orlando",
+      "Veterans near MacDill commuters and local retiree populations need VA specialists",
+      "Winter Garden, Lake Nona, and Avalon Park suburban growth needs local branch access",
+      "Insurance math is often more forgiving than South Florida coastal markets"
+    ],
+    "subtitle": "Orlando metro lenders with local HQ roots, VA specialists, first-time buyer programs, and\n            the suburban growth expertise Orange County demands."
+  },
+  "central-illinois-affordability-gems": {
+    "countyVar": "",
+    "bullets": [
+      "Peoria ranks as a top midsize city for real estate investment with exceptional rent-to-price ratios",
+      "Peoria homes move in a median of just 20–26 days on market",
+      "Normal was named Zillow&apos;s #1 most popular college town in America",
+      "Revitalized uptown Normal and strong ISU-area rental demand drive McLean County activity",
+      "Low entry costs attract both first-time buyers and cash-flow-focused investors"
+    ],
+    "subtitle": "Peoria and Normal lenders for high-value, low-entry markets — exceptional rent-to-price ratios,\n            fast-moving inventory, and Zillow&apos;s #1 most popular college town."
+  },
+  "central-valley-alternatives": {
+    "countyVar": "CENTRAL_VALLEY_HUB_COUNTIES",
+    "bullets": [
+      "Clovis offers elite schools and low-crime suburbs at $400K–$430K medians — half coastal California",
+      "Bakersfield anchors agricultural heartland affordability with strong investor cash-flow potential",
+      "Bay Area and LA remote workers drive migration-driven purchase volume",
+      "Master-planned suburban layouts attract first-time buyers seeking traditional neighborhoods",
+      "Community credit unions and fast-closing brokers serve both family and investor segments"
+    ],
+    "subtitle": "Clovis and Bakersfield lenders for coastal California migrants, remote tech workers,\n            positive cash-flow investors, and traditional suburban buyers at roughly half state median prices."
+  },
+  "charlotte-metro": {
+    "countyVar": "CHARLOTTE_METRO_HUB_COUNTIES",
+    "bullets": [],
+    "subtitle": "Charlotte, Huntersville, Concord, and Gastonia lenders for banking/tech relocations,\n            $425K median suburban growth, and high-velocity purchase markets."
+  },
+  "chicago-proper-urban-resurgence": {
+    "countyVar": "",
+    "bullets": [
+      "Bidding wars and multiple offers within 48 hours are common in Lincoln Park, West Town, Logan Square, and Roscoe Village",
+      "Rising rental costs across neighborhoods have flipped monthly cost math toward homeownership",
+      "Calendar-driven buyers — pandemic city-stayers with school-age children — face hard deadlines before the school year",
+      "Historic rowhomes and renovated condos require lenders experienced in urban property types",
+      "Speed and certainty of close are competitive advantages in the urban resurgence"
+    ],
+    "subtitle": "Cook County lenders for Lincoln Park, West Town, Logan Square, and Roscoe Village — rising rental costs\n            flipping the math toward ownership and calendar-driven family demand."
+  },
+  "coastal-savannah": {
+    "countyVar": "COASTAL_SAVANNAH_HUB_COUNTIES",
+    "bullets": [
+      "Port of Savannah and Hyundai Metaplant drive industrial relocation volume",
+      "Flood zone insurance requirements differ sharply from inland Atlanta markets",
+      "Pooler and Rincon subdivisions sell in days — fast pre-approvals win offers",
+      "Historic Savannah homes need specialized appraisal and insurance coordination",
+      "VA and military families need local teams who understand timeline shifts"
+    ],
+    "subtitle": "Savannah, Pooler, Rincon, and Chatham County lenders with port relocation expertise,\n            coastal flood insurance navigation, and fast-tracked new-construction financing."
+  },
+  "colorado-springs-stability-volume": {
+    "countyVar": "",
+    "bullets": [
+      "Stability and volume leader with balanced purchase and refinance activity year-round",
+      "Strong military and defense infrastructure drives VA and Fountain/Falcon demand",
+      "Aerospace and tech job growth supports steady northeast suburban relocations",
+      "Falcon master-planned new construction absorbs consistent build-to-buy volume",
+      "Relative affordability vs. Denver makes El Paso County a reliable safety valve metro"
+    ],
+    "subtitle": "Colorado Springs, Fountain, and Falcon lenders for military infrastructure, aerospace and tech growth,\n            steady high-volume transactions, and relative affordability as a Denver safety valve."
+  },
+  "denver-metro-outer-rings-north-suburbs": {
+    "countyVar": "DENVER_OUTER_RINGS_HUB_COUNTIES",
+    "bullets": [
+      "Transactional volume shifting to Erie and Parker master-planned communities with modern layouts",
+      "Lafayette and Louisville offer top-tier schools and tech-corridor access without urban-core premiums",
+      "Centennial and Parker family suburbs avoid intense Denver proper bidding wars",
+      "Steady new-construction inventory increases demand for construction-to-permanent specialists",
+      "Corporate and family relocations drive move-up and VA program volume in outer rings"
+    ],
+    "subtitle": "Erie, Parker, Centennial, Lafayette, and Louisville lenders for master-planned new construction,\n            top-tier school districts, and family-friendly suburbs beyond Denver urban-core bidding wars."
+  },
+  "dfw-suburbs-silicon-prairie": {
+    "countyVar": "DFW_SILICON_PRAIRIE_HUB_COUNTIES",
+    "bullets": [
+      "Endless corporate relocation wave shifting volume north from Dallas proper",
+      "Texas Instruments and manufacturing/tech expansions drive Sherman-Denison workforce housing",
+      "Frisco, McKinney, and Prosper master-planned communities fuel new-construction demand",
+      "Infrastructure expansions support explosive suburban transactional growth",
+      "Fast-closing brokers win competitive offers in the Silicon Prairie equity-gain corridor"
+    ],
+    "subtitle": "Frisco, McKinney, Prosper, and Sherman-Denison lenders for the endless wave of corporate relocations,\n            Texas Instruments manufacturing corridor, and master-planned suburban transactional boom."
+  },
+  "first-time-buyer-waterfront-hubs": {
+    "countyVar": "",
+    "bullets": [
+      "Brookland offers tree-lined streets and Little Rome arts-district charm as a safety-valve entry point",
+      "Navy Yard delivers sleek waterfront condos with rooftop pools and plug-and-play modern lifestyle amenities",
+      "Capitol Riverfront attracts DC&apos;s incoming professional class with high transactional volume",
+      "First-time buyer programs essential for younger buyers priced into these dynamic hubs",
+      "High appreciation potential in two of DC&apos;s highest-volume neighborhoods for modern urban living"
+    ],
+    "subtitle": "Brookland and Navy Yard lenders for first-time buyer entry points, tree-lined Little Rome rowhouses,\n            and sleek waterfront condos with luxury amenities near Nationals Park."
+  },
+  "foothills-turnkey-mountain-towns": {
+    "countyVar": "FOOTHILLS_MOUNTAIN_HUB_COUNTIES",
+    "bullets": [
+      "Explosive sales-price growth driven by affluent Texas, California, and Florida lifestyle migration",
+      "Evergreen and Conifer offer mountain acreage privacy with Denver commuter pipeline access",
+      "Steamboat Springs turnkey mountain modern homes attract cash-heavy resort-tier buyers",
+      "Golden foothills combine tech-corridor proximity with premium school-driven demand",
+      "Jumbo, portfolio, and mountain-specific underwriting require specialized local lenders"
+    ],
+    "subtitle": "Evergreen, Golden, Conifer, and Steamboat Springs lenders for premium mountain modern homes,\n            acreage privacy, Denver commuter access, and affluent out-of-state lifestyle migration."
+  },
+  "gateway-cities-suburban-alternatives": {
+    "countyVar": "",
+    "bullets": [
+      "Safety-valve markets for buyers priced out of immediate Boston metro pricing",
+      "Lowell and Lynn offer urban amenities with commuter rail and transit connections",
+      "Revere and Malden provide Blue and Orange Line access with northward migration demand",
+      "Sharp rises in competitiveness reward lenders who close quickly on gateway inventory",
+      "Fraction of Boston costs with strong transit-oriented development momentum"
+    ],
+    "subtitle": "Lowell, Lynn, Revere, and Malden lenders for Boston-priced-out buyers — urban amenities,\n            strong commuting transit, and significantly lower pricing than Boston proper."
+  },
+  "grand-rapids-fast-moving-core": {
+    "countyVar": "",
+    "bullets": [
+      "Homes in Grand Rapids proper average just 6 days on market before going under contract",
+      "East Grand Rapids and Ada see pending times under 15 days with multiple offers as standard",
+      "Healthcare and manufacturing professional demand severely outpaces available inventory",
+      "Consistent top job market rankings attract waves of millennial relocations",
+      "Fast closings and strong pre-approval letters are essential to win in this powerhouse market"
+    ],
+    "subtitle": "Kent County lenders for West Michigan&apos;s consistent powerhouse — 6-day average contracts,\n            severe inventory crunch, and demand from healthcare and manufacturing professionals."
+  },
+  "grand-strand": {
+    "countyVar": "GRAND_STRAND_HUB_COUNTIES",
+    "bullets": [
+      "Northeast and Midwest retiree relocations drive second-home and primary-residence volume",
+      "Warrantable vs non-warrantable condo rules differ sharply from inland markets",
+      "High-wind mitigation credits and flood zone insurance affect every coastal pre-approval",
+      "Conway suburbs offer affordable manufactured and modular entry points",
+      "Competitive beachside listings need upfront underwriting and sub-30-day closes"
+    ],
+    "subtitle": "Myrtle Beach, Conway, and Horry County lenders for retiree relocations, coastal condos,\n            manufactured homes, remote workers, and fast competitive resale closings."
+  },
+  "greater-detroits-value-pockets": {
+    "countyVar": "",
+    "bullets": [
+      "Dearborn ranks as one of Zillow&apos;s top 5 most popular cities for home shoppers nationwide",
+      "Lincoln Park is a Redfin top 10 hottest neighborhood with 14% YoY sales growth and nearly 40% over-asking",
+      "Howell cracked Redfin&apos;s national top 10 hottest markets with a massive page-view surge and rapid bidding wars",
+      "Entry-level and transitional neighborhoods let buyers maximize purchasing power across the budget spectrum",
+      "Strong local economies and cultural communities drive intense competition at accessible price points"
+    ],
+    "subtitle": "Southeast Michigan lenders for Dearborn, Lincoln Park, and Howell — national hot markets where buyers\n            maximize purchasing power in entry-level, transitional, and high-end value pockets."
+  },
+  "greater-houston-metro": {
+    "countyVar": "GREATER_HOUSTON_HUB_COUNTIES",
+    "bullets": [
+      "Texas stability leader with positive year-over-year appreciation in suburban corridors",
+      "Katy and Conroe master-planned communities drive high-absorption new-build demand",
+      "The Woodlands and Sugar Land offer top-rated schools at manageable price points",
+      "Medical center and energy sector jobs support diverse relocation financing needs",
+      "Fast-closing brokers win competitive offers in resilient family suburban markets"
+    ],
+    "subtitle": "Katy, The Woodlands, Sugar Land, and Conroe lenders for master-planned community absorption,\n            top-rated school districts, medical and energy sector jobs, and positive year-over-year suburban growth."
+  },
+  "greater-nashville-metro": {
+    "countyVar": "GREATER_NASHVILLE_HUB_COUNTIES",
+    "bullets": [
+      "No state income tax draws high-earning corporate and healthcare relocations",
+      "Williamson County luxury in Franklin/Brentwood commands premium school-district pricing",
+      "Rutherford and Murfreesboro absorb high-volume starter and new-construction demand",
+      "Fort Campbell veteran influx and VA programs need military-specialist lenders",
+      "Competitive offer timelines demand brokers with sub-30-day close track records"
+    ],
+    "subtitle": "Nashville, Franklin, Brentwood, and Murfreesboro lenders for corporate relocations,\n            no state income tax advantage, healthcare/tech expansion, and high-transaction suburban growth."
+  },
+  "greater-pittsburgh-key-suburbs": {
+    "countyVar": "",
+    "bullets": [
+      "Baden (Beaver County) ranked #3 hottest housing market nationally on recent indexes",
+      "Pittsburgh Proper offers stability with well-priced homes pending in 8–14 days",
+      "Remote workers, tech professionals, and retirees drive lower cost-of-living demand",
+      "Tight suburban inventory pushes sale prices above historical averages rapidly",
+      "Minimal boom-and-bust volatility rewards lenders who understand Western PA pace"
+    ],
+    "subtitle": "Pittsburgh and Baden lenders for Western PA&apos;s surge — remote workers, tech professionals,\n            retirees, and the #3 hottest national suburb with 8–14 day pending velocity."
+  },
+  "high-demand-boston-neighborhoods": {
+    "countyVar": "",
+    "bullets": [
+      "East Boston waterfront proximity as a compelling Back Bay pricing alternative",
+      "Dorchester and Jamaica Plain offer space, culture, and strong rental-yield potential",
+      "High-competition transactions amid cooled luxury segments elsewhere in Boston",
+      "Mixed-use and rowhome inventory rewards lenders who understand neighborhood dynamics",
+      "Rapid appreciation pockets demand fast closings on limited neighborhood stock"
+    ],
+    "subtitle": "East Boston, Dorchester, and Jamaica Plain lenders for waterfront proximity, cultural appeal,\n            strong rental yields, and high-competition transactions without Back Bay pricing."
+  },
+  "high-velocity-mid-city-core": {
+    "countyVar": "",
+    "bullets": [
+      "Ironclad demand for renovated historic rowhomes and premium turn-key condos",
+      "Logan Circle and Thomas Circle anchor walkable, nightlife-adjacent urban core living",
+      "14th Street corridor draws high-earning young professionals, lobbyists, and tech transplants",
+      "Structurally capped inventory drives nearly 13% price jumps and quick premium sales",
+      "Zip 20005 lenders must handle fast closings on limited mid-city stock"
+    ],
+    "subtitle": "Logan Circle and Thomas Circle lenders for renovated historic rowhomes and premium condos,\n            14th Street corridor lifestyle, and quick premium sales in capped-inventory Zip 20005."
+  },
+  "highly-competitive-chicago-suburbs": {
+    "countyVar": "",
+    "bullets": [
+      "Wheaton ranks among the most competitive suburban markets with 60%+ above-list sales and 102.2% sale-to-list",
+      "Mount Prospect and Oak Park move at 41–44 days on market with immediate bidding wars",
+      "Evanston and Arlington Heights face roughly 2-month inventory supply, keeping sellers in control",
+      "Over 50% of homes sell above list price across premier collar county school districts",
+      "Fast closings and strong pre-approval letters are essential to win move-in-ready suburban stock"
+    ],
+    "subtitle": "DuPage, Cook, and Lake county lenders for some of the highest sale-to-list ratios in the country —\n            Wheaton, Glen Ellyn, Mount Prospect, Oak Park, Evanston, and Arlington Heights."
+  },
+  "hudson-river-gold-coast": {
+    "countyVar": "",
+    "bullets": [
+      "Return-to-office mandates in Manhattan keep the Hudson River waterfront a powerhouse",
+      "Hoboken posted 22.6% year-over-year price growth for luxury properties",
+      "Jersey City continues absorbing new high-density residential developments at rapid speed",
+      "Waterfront luxury and commuter financing demand outpaces supply across Hudson County",
+      "Manhattan-adjacent proximity drives relentless buyer competition on Gold Coast listings"
+    ],
+    "subtitle": "Hudson County lenders for the Manhattan-adjacent waterfront powerhouse — return-to-office mandates,\n            luxury appreciation, and rapid absorption of high-density residential developments."
+  },
+  "inland-empire-affordability-magnets": {
+    "countyVar": "",
+    "bullets": [
+      "SoCal&apos;s affordability safety valve with 50%+ spillover from coastal priced-out buyers",
+      "$625K–$710K medians attract middle-income families and logistics/distribution workers",
+      "Massive transactional volume with compressed timelines in Riverside and Moreno Valley",
+      "Master-planned and distribution-adjacent new construction drives builder-lender demand",
+      "Community credit unions and fast-closing brokers compete in high-volume purchase corridors"
+    ],
+    "subtitle": "Riverside and Moreno Valley lenders for logistics job growth, coastal spillover demand,\n            master-planned new homes, and middle-income families in California&apos;s high-transaction inland corridor."
+  },
+  "jacksonville": {
+    "countyVar": "JACKSONVILLE_HUB_COUNTIES",
+    "bullets": [
+      "NAS Jacksonville and Naval Station Mayport drive strong military and VA lending volume",
+      "Relative affordability vs. South Florida — different insurance and flood profiles",
+      "St. Johns, Clay, and Nassau suburban growth needs Northeast FL branch access",
+      "Physician and professional programs matter for local hospital and logistics workforce",
+      "Navy Federal membership is a common path for active-duty and veteran families"
+    ],
+    "subtitle": "Northeast Florida lenders with NAS Jacksonville and Mayport VA expertise, award-winning\n            local brokers, and affordable First Coast purchase and refinance options."
+  },
+  "knoxville-east-tennessee": {
+    "countyVar": "KNOXVILLE_EAST_TN_HUB_COUNTIES",
+    "bullets": [
+      "Farragut and Knox suburbs seeing 24%+ price surges with tight listing inventory",
+      "Retiree and remote-worker influx drives Maryville and Blount County demand",
+      "Gatlinburg and Pigeon Forge short-term rental investors need specialized financing",
+      "Mountain-view and lake properties require lenders familiar with scenic collateral",
+      "Competitive low-inventory markets demand brokers with sub-30-day close records"
+    ],
+    "subtitle": "Knoxville, Farragut, Maryville, and Smoky Mountains lenders for 5%+ appreciation,\n            tight inventory, retiree relocations, and Gatlinburg vacation rental investment."
+  },
+  "lansing-multi-family-investor-magnet": {
+    "countyVar": "",
+    "bullets": [
+      "Lansing-East Lansing features incredibly strong rent growth and ~6% multi-family vacancy",
+      "Average single-family values of $145K–$160K deliver exceptional cap rates for investors",
+      "Rapid turnarounds attract both investors and traditional buyers in a seller&apos;s market",
+      "Wall Street Journal/Realtor.com top emerging markets list validates capital region momentum",
+      "University-driven rental demand in East Lansing amplifies multi-family investment appeal"
+    ],
+    "subtitle": "Ingham County lenders for the state capital&apos;s scorching rental and multi-family markets —\n            strong cap rates, low vacancy, and a top emerging market per Wall Street Journal/Realtor.com."
+  },
+  "lowcountry": {
+    "countyVar": "LOWCOUNTRY_HUB_COUNTIES",
+    "bullets": [
+      "Boeing, Volvo, and port sector relocations drive corporate purchase volume",
+      "Non-warrantable condos and strict coastal HOA rules require specialized lenders",
+      "Wind-pool and flood insurance contingencies must clear early in underwriting",
+      "Summerville and Mt. Pleasant listings move fast — upfront pre-approvals win offers",
+      "Historic downtown Charleston assets need tailored appraisal coordination"
+    ],
+    "subtitle": "Charleston, Mt. Pleasant, and Summerville lenders for luxury condos, corporate relocations,\n            flood underwriting, and competitive coastal resale speed."
+  },
+  "metro-outer-ring": {
+    "countyVar": "METRO_OUTER_RING_HUB_COUNTIES",
+    "bullets": [
+      "Starter-home sweet spot at $340K–$390K in high-growth McDonough subdivisions",
+      "Georgia down payment assistance (DPA) programs are critical for first-time buyers",
+      "Master-planned new construction needs early rate locks during builder contracts",
+      "USDA-eligible terrain extends into Paulding and further-out affordability rings",
+      "Self-employed and unique credit profiles benefit from independent wholesale brokers"
+    ],
+    "subtitle": "McDonough, Henry County, and Atlanta&apos;s Affordability Belt — first-time buyers,\n            down payment assistance, new-construction subdivisions, and USDA outer-ring programs."
+  },
+  "metrowest-bread-and-butter-markets": {
+    "countyVar": "",
+    "bullets": [
+      "Bread &amp; butter single-family markets with incredibly competitive suburban demand",
+      "Top-tier school systems in Framingham, Natick, and Hudson anchor family buyer interest",
+      "Permanent hybrid-work reality makes manageable Boston commutes a lasting priority",
+      "Boston professionals seeking ideal balance of space, schools, and commute access",
+      "Classic suburban inventory moves fast — lenders must match competitive closing pace"
+    ],
+    "subtitle": "Framingham, Hudson, and Natick lenders for competitive single-family suburbs — top-tier schools,\n            manageable hybrid commutes, and the permanent hybrid-work reality for Boston professionals."
+  },
+  "middle-georgia": {
+    "countyVar": "MIDDLE_GEORGIA_HUB_COUNTIES",
+    "bullets": [
+      "Fort Eisenhower drives military and cybersecurity contractor relocation volume in the CSRA",
+      "Evans and Grovetown new construction needs early rate locks during builder contracts",
+      "Columbus sees double-digit price growth in the $180K–$280K first-time buyer range",
+      "Fort Moore VA buyers need BAH-matched loans and deployment-flexible timelines",
+      "Historic Columbus homes benefit from single-close renovation mortgage products"
+    ],
+    "subtitle": "Augusta CSRA and Columbus metro lenders with Fort Eisenhower cyber relocations,\n            Fort Moore VA expertise, new construction, and first-time buyer programs."
+  },
+  "national-superstars-suburban-velocity": {
+    "countyVar": "",
+    "bullets": [
+      "Marlton ranked #2 and Wayne #5 on Realtor.com&apos;s hottest ZIP codes in America",
+      "Marlton properties receive nearly triple the national average for listing views",
+      "Homes go under contract in a mere 17–19 days in these suburban velocity markets",
+      "Wayne faces severe structural under-supply with immediate bidding wars on every listing",
+      "I-295 corridor Philly commuters and Manhattan transit routes drive relentless demand"
+    ],
+    "subtitle": "Burlington and Passaic County lenders for two of America&apos;s hottest ZIP codes — extreme buyer demand,\n            blistering 17–19 day contracts, and I-295/Manhattan commuter sweet spots."
+  },
+  "north-atlanta": {
+    "countyVar": "NORTH_ATLANTA_HUB_COUNTIES",
+    "bullets": [
+      "Top-rated Forsyth and North Fulton schools drive premium $650K–$770K+ purchase volume",
+      "Tech and corporate relocations to Alpharetta, Avalon, and Johns Creek need fast pre-approvals",
+      "Cumming and Forsyth new construction requires builder-lender partnerships",
+      "Competitive offer timelines demand brokers with sub-30-day close track records",
+      "Jumbo and high-balance conventional loans are common in exurban luxury pockets"
+    ],
+    "subtitle": "Alpharetta, Johns Creek, Suwanee, and Cumming lenders with top-school-district expertise,\n            tech relocation support, and new construction financing on the GA-400 corridor."
+  },
+  "nyc-boroughs-brooklyn-queens-manhattan": {
+    "countyVar": "",
+    "bullets": [
+      "Southern Brooklyn rewards multi-family rental income and investor financing expertise",
+      "Queens corridors (Astoria, LIC, Flushing) show aggressive price growth and modern condo demand",
+      "Manhattan luxury co-op resurgence in a lean-inventory, high-competition environment",
+      "Borough-specific hot pockets require lenders who understand co-op boards and condo warrantability",
+      "Lean inventory and bidding wars demand fast closings on limited borough stock"
+    ],
+    "subtitle": "Brooklyn, Queens, and Manhattan lenders for multi-family rental plays, aggressive Queens growth,\n            luxury co-op resurgence, and lean-inventory bidding wars."
+  },
+  "nyc-suburbs-westchester-putnam": {
+    "countyVar": "",
+    "bullets": [
+      "White Plains and New Rochelle rank highly on national market heat indexes",
+      "Over 56% of homes sell above asking with 102%+ average sale-to-list in Westchester",
+      "Putnam County offers a more affordable alternative with ~11% year-over-year median gains",
+      "Major safety valve for Manhattan and Brooklyn buyers competing for limited suburban stock",
+      "Tri-State commuter access rewards lenders who understand relocation financing urgency"
+    ],
+    "subtitle": "White Plains, New Rochelle, and Putnam County lenders for buyers priced out of Manhattan and Brooklyn —\n            over-asking premiums, limited inventory, and double-digit suburban price gains."
+  },
+  "panhandle": {
+    "countyVar": "PANHANDLE_HUB_COUNTIES",
+    "bullets": [
+      "NAS Pensacola, Eglin AFB, and Hurlburt Field drive heavy VA and military lending volume",
+      "Panama City Beach and 30A bring second-home, tourism, and investor financing needs",
+      "Hurricane and wind coverage shape insurance math differently than inland Florida metros",
+      "Retirement and relocation buyers value local credit unions and long-tenured brokers",
+      "Escambia, Okaloosa, and Walton reach expanding beyond Bay County core"
+    ],
+    "subtitle": "Emerald Coast lenders with Eglin and NAS Pensacola VA expertise, Panama City Beach\n            brokers, military credit unions, and retirement and second-home financing."
+  },
+  "philadelphia-metro-area-collar-counties": {
+    "countyVar": "",
+    "bullets": [
+      "Philadelphia Metro ranks as the #6 hottest US housing market with 41%+ above-asking sales",
+      "Inventory sits roughly 39% below pre-pandemic levels, amplifying seller leverage",
+      "Montgomery, Chester, and Bucks collar counties drive suburban bidding wars on move-in-ready homes",
+      "NYC and DC relocators seek affordability without sacrificing suburban amenities",
+      "Lean inventory rewards lenders who close quickly on competitive collar county stock"
+    ],
+    "subtitle": "Philadelphia and collar county lenders for the #6 hottest US housing market — intense bidding wars,\n            move-in-ready demand, and affordability relative to NYC and DC."
+  },
+  "piedmont-triad": {
+    "countyVar": "PIEDMONT_TRIAD_HUB_COUNTIES",
+    "bullets": [],
+    "subtitle": "Greensboro, Winston-Salem, and High Point lenders for affordable entry-level homes,\n            12.5%+ appreciation, new construction, and retiree-friendly equity markets."
+  },
+  "research-triangle": {
+    "countyVar": "RESEARCH_TRIANGLE_HUB_COUNTIES",
+    "bullets": [],
+    "subtitle": "Raleigh-Durham-Chapel Hill lenders for tech, healthcare, and university relocations —\n            Cary, Apex, Fuquay-Varina, and $447K Raleigh median markets."
+  },
+  "rockford-national-standout": {
+    "countyVar": "",
+    "bullets": [
+      "Rockford ranks as Zillow&apos;s #1 most popular city for home shoppers in the entire United States",
+      "Over 60% of listing views come from out-of-town buyers priced out of the Chicago metro",
+      "Homes routinely go under contract in a median of just 11 days",
+      "Nearly 50% of properties sell above the original list price",
+      "Accessible entry point 90 minutes northwest of Chicago without collar-county price tags"
+    ],
+    "subtitle": "Winnebago County lenders for Zillow&apos;s #1 most popular US home shopping city — Chicago spillover demand,\n            11-day median contracts, and nearly 50% above-list sales."
+  },
+  "san-antonio-value-play": {
+    "countyVar": "",
+    "bullets": [
+      "Leveled pricing and accessibility as a major-metro value alternative to DFW and Houston",
+      "240,000+ defense-related jobs create a massive, stable built-in renter pool",
+      "Cash-flow investor demand supported by military families and healthcare employment",
+      "Stone Oak and UTSA corridor suburbs absorb consistent workforce housing volume",
+      "VA and defense-community lenders essential for the nation&apos;s largest military footprint"
+    ],
+    "subtitle": "San Antonio lenders for cash-flow investors, military families, and value-oriented buyers\n            in a leveled, accessible major metro anchored by a massive defense-related renter pool."
+  },
+  "silicon-valley-spine": {
+    "countyVar": "",
+    "bullets": [
+      "12–13 days on market with 65–68% of sales closing above list price",
+      "$1.5M+ medians driven by AI funding, semiconductor growth, and cash-heavy buyer pools",
+      "RSU and stock-liquidity income requires jumbo and portfolio underwriting expertise",
+      "Multiple-offer, non-contingent contracts demand fast closings and pre-underwritten strength",
+      "Tech-employee credit unions and private bank arms compete with national retail lenders"
+    ],
+    "subtitle": "San Jose and Cupertino lenders for AI and semiconductor professionals, stock-compensation buyers,\n            multiple-offer dynamics, and premium properties in North America&apos;s most competitive corridor."
+  },
+  "snohomish-transit-corridor": {
+    "countyVar": "",
+    "bullets": [
+      "Link light rail extension creates the &quot;Light Rail Effect&quot; near Lynnwood and Mountlake Terrace stations",
+      "Boeing-anchored Everett jobs drive robust aerospace and tech commuter demand",
+      "Single-family options below Seattle medians attract steady north corridor absorption",
+      "Transit-oriented development rapidly absorbs station-adjacent housing inventory",
+      "Water views and family suburbs in Everett complement Lynnwood commuter growth"
+    ],
+    "subtitle": "Lynnwood and Everett lenders for light rail commuters, Boeing and aerospace professionals,\n            and single-family buyers seeking options below Seattle medians in the north Sound corridor."
+  },
+  "south-florida": {
+    "countyVar": "SOUTH_FLORIDA_HUB_COUNTIES",
+    "bullets": [
+      "Wind mitigation and HO-6 insurance change real affordability math",
+      "High-rise condo approval lists vary by building and lender",
+      "Foreign national and ITIN programs are mainstream in Miami-Dade and Broward",
+      "FAR/BAR contract clocks favor lenders who close on time"
+    ],
+    "subtitle": "Miami-Dade, Broward, Palm Beach &amp; beyond — verified brokers who understand coastal\n            insurance, condo approvals, international buyers, and competitive contract timelines."
+  },
+  "south-jersey-shore-surge": {
+    "countyVar": "",
+    "bullets": [
+      "Wildwood registered a staggering 54–60% year-over-year price spike past $600K medians",
+      "Ocean City average sale prices breached $1.4 million with 25%+ year-over-year growth",
+      "Ventnor City saw a 60% jump in average sale prices to nearly $963,000",
+      "Luxury buyers and vacation-rental investors drive unprecedented coastal demand",
+      "Wildwood ranks among the top 10 hottest real estate markets in the country"
+    ],
+    "subtitle": "Cape May County lenders for the state&apos;s highest year-over-year appreciation — luxury buyers,\n            vacation-rental investors, and unprecedented coastal growth along the southern shoreline."
+  },
+  "south-sound-tacoma-puyallup": {
+    "countyVar": "",
+    "bullets": [
+      "Pierce County medians near $564K — roughly $300K below King County as a priced-out safety valve",
+      "Tacoma North End and Proctor offer historic charm with steady Seattle commuter demand",
+      "Puyallup master-planned communities and excellent schools drive suburban powerhouse growth",
+      "Sounder train corridor supports efficient Seattle commuter relocations",
+      "Joint Base Lewis-McChord proximity creates robust VA and military family lending demand"
+    ],
+    "subtitle": "Tacoma and Puyallup lenders for historic North End charm, suburban powerhouse growth,\n            Sounder rail commuters, and JBLM military families in Pierce County&apos;s affordability safety valve."
+  },
+  "southeast-valley-pinal-border": {
+    "countyVar": "",
+    "bullets": [
+      "Queen Creek and San Tan Valley lead Arizona with 50%+ population growth corridors",
+      "Queen Creek Marketplace and new schools drive premium suburban amenity demand",
+      "San Tan Valley offers more affordable new-construction spillover on the Pinal border",
+      "Tech and infrastructure expansions attract family relocations from central Phoenix",
+      "Fast-closing brokers win competitive offers in high-transaction master-planned communities"
+    ],
+    "subtitle": "Queen Creek and San Tan Valley lenders for 50%+ population surge, Queen Creek Marketplace,\n            premium suburban amenities, and affordable new-construction spillover on the Maricopa/Pinal line."
+  },
+  "southwest-washington-portland-border": {
+    "countyVar": "",
+    "bullets": [
+      "No Washington income tax plus Oregon sales-tax shopping creates a unique tax-haven financial setup",
+      "Massive downtown Vancouver waterfront revitalization drives urban-infill lending demand",
+      "Remote workers, retirees, and families flee Portland&apos;s higher cost of living across the Columbia River",
+      "High transactional volume from Portland spillover requires fast-closing broker expertise",
+      "Columbia River access and lifestyle appeal anchor one of the PNW&apos;s fastest-growing border markets"
+    ],
+    "subtitle": "Vancouver lenders for tax-haven lifestyle migration, downtown waterfront revitalization,\n            and high transactional volume from remote workers, retirees, and Portland spillover buyers."
+  },
+  "spacex-corridor-sleepy-town-booms": {
+    "countyVar": "SPACEX_CORRIDOR_HUB_COUNTIES",
+    "bullets": [
+      "SpaceX, Starlink, and Boring Company jobs transform Bastrop from rural to employment hub",
+      "Starbase drives immense transactional velocity in Brownsville and Southmost",
+      "High-earning engineering workers create jumbo and workforce housing demand",
+      "Rural affordability rapidly shifting to hyper-dense boomtown dynamics",
+      "Fast-closing brokers essential for industrial job creation pressure in both counties"
+    ],
+    "subtitle": "Bastrop and Brownsville lenders for SpaceX ecosystem workers, Starbase development,\n            engineering relocations, and sleepy towns transforming into hyper-dense employment hubs."
+  },
+  "sweet-spot-commuter-towns": {
+    "countyVar": "",
+    "bullets": [
+      "More than 95% of listings sell above ask across these high-momentum commuter corridors",
+      "Cranford homes sell in just 13 days with a $795K median on the Raritan Valley line",
+      "Rahway offers a $525K entry point as the premier emerging value play",
+      "Edison and New Brunswick surge past $605K driven by the Helix bio-tech district",
+      "Montclair and Maplewood see 11-day pending times with 105%+ sale-to-list ratios"
+    ],
+    "subtitle": "North and Central Jersey lenders for walkable downtowns with direct rail to Manhattan —\n            Cranford, Rahway, Edison, Montclair, and Maplewood seeing immense buyer momentum."
+  },
+  "tampa-bay": {
+    "countyVar": "TAMPA_BAY_HUB_COUNTIES",
+    "bullets": [
+      "MacDill AFB drives strong VA purchase and refinance volume across South Tampa",
+      "Wesley Chapel, Land O Lakes, and New Tampa suburban growth needs local branch access",
+      "First responders, educators, and nurses benefit from niche broker programs",
+      "Refinance volume runs high — competitive rate shopping matters more than in Orlando",
+      "Pinellas and Pasco reach expanding; Hillsborough remains the metro lending core"
+    ],
+    "subtitle": "Hillsborough County lenders with MacDill VA expertise, Wesley Chapel suburban growth\n            knowledge, first-responder programs, and fast-closing local brokers."
+  },
+  "transit-oriented-urban-hotspots-somerville-cambridge": {
+    "countyVar": "",
+    "bullets": [
+      "Green Line extension continuously drives up demand near new Somerville transit stations",
+      "Tech/biotech and higher education professionals fuel fierce competition for walkable urban stock",
+      "$930K+ Somerville and $1M+ Cambridge medians require jumbo-ready lender expertise",
+      "Modern condos and renovated rowhomes dominate premium transit-adjacent inventory",
+      "Perennially hot markets reward lenders who close fast on limited urban core listings"
+    ],
+    "subtitle": "Middlesex County lenders for perennially hot transit-oriented urban cores — Green Line extension demand,\n            tech/biotech and higher education professionals, and premium walkable neighborhoods."
+  },
+  "upper-northwest-value-surge": {
+    "countyVar": "",
+    "bullets": [
+      "17–23% price gains in Takoma and Brightwood appreciation corridors",
+      "Classic DC neighborhood feel with standalone homes, yards, and mature trees",
+      "Metro access without Georgetown or Spring Valley elite-enclave pricing",
+      "Quick-transaction pockets attract first-time buyers priced out of Ward 3 south",
+      "Northern tip hotspot serving families seeking quieter residential pace with urban access"
+    ],
+    "subtitle": "Takoma, Brightwood, and Colonial Village lenders for standalone single-family value plays with Metro access,\n            yards, and mature trees — at a massive discount to Georgetown or Spring Valley."
+  },
+  "upstate": {
+    "countyVar": "UPSTATE_SC_HUB_COUNTIES",
+    "bullets": [],
+    "subtitle": "Greenville-Spartanburg corridor lenders for manufacturing relocations, renovation loans,\n            tech workforce purchases, and USDA zero-down outer-ring programs."
+  },
+  "upstate-powerhouses-buffalo-albany": {
+    "countyVar": "",
+    "bullets": [
+      "Buffalo ranks among the top 3 hottest U.S. housing markets with 65% of homes selling above asking",
+      "40% fewer homes for sale drives low DOM and intense bidding wars in Erie County",
+      "Affordable $227K–$277K median entry attracts climate refuge and first-time buyers",
+      "Albany Capital District faces supply-and-demand imbalance with steady government-sector activity",
+      "Healthcare and education hub job growth rewards lenders who close fast on limited stock"
+    ],
+    "subtitle": "Buffalo and Albany lenders for top-hot markets — low-inventory bidding wars, climate refuge appeal,\n            healthcare and education job growth, and Capital District steady demand."
+  },
+  "west-valley-boomtowns": {
+    "countyVar": "",
+    "bullets": [
+      "Buckeye and Goodyear lead Arizona with 37%+ population growth and master-planned volume",
+      "Verrado, Tartesso, and DR Horton communities need construction-to-permanent specialists",
+      "Healthcare and logistics expansions along I-10 and Loop 303 drive corporate relocations",
+      "$430K median pricing attracts family buyers priced out of central Phoenix",
+      "Fast-closing brokers win competitive offers in high-transaction new-build corridors"
+    ],
+    "subtitle": "Buckeye and Goodyear lenders for master-planned communities, 37%+ population surge,\n            I-10/Loop 303 corporate expansions, and affordable family homes vs. central Phoenix."
+  },
+  "worcester-undisputed-growth-leader": {
+    "countyVar": "",
+    "bullets": [
+      "One of the country&apos;s hottest markets — undisputed Central Mass growth leader",
+      "Zoom Town effect draws remote workers and life sciences professionals seeking affordability",
+      "Downtown revitalization and Polar Park anchor investor and first-time buyer demand",
+      "Improved commuter rail access connects Worcester to Greater Boston employment centers",
+      "Exceptionally fast-moving market rewards lenders who can close quickly on limited inventory"
+    ],
+    "subtitle": "Worcester County lenders for the undisputed growth leader — Zoom Town remote workers, life sciences professionals,\n            Polar Park revitalization, and commuter rail access at relative affordability vs. Greater Boston."
+  }
+}

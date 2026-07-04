@@ -33,7 +33,7 @@ export function RelatedDirectoryLinks({
     },
     {
       label: 'Free Mortgage Calculators',
-      href: '/calculators',
+      href: '/lender/calculators',
       description: 'Payment, affordability & refinance tools',
     },
   ];

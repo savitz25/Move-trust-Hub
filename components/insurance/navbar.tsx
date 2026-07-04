@@ -6,12 +6,12 @@ import { BrandLogo } from '@/components/insurance/BrandLogo';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/insurance/ui/button';
 const NAV_LINKS = [
-  { href: '/directory', label: 'DIRECTORIES' },
-  { href: '/hubs', label: 'HEALTH HUBS' },
-  { href: '/hubs/browse', label: 'STATE & MSA BROWSER' },
-  { href: '/calculators', label: 'CALCULATORS' },
-  { href: '/about', label: 'TRUST & TRANSPARENCY' },
-  { href: '/about', label: 'ABOUT' },
+  { href: '/insurance/directory', label: 'DIRECTORIES' },
+  { href: '/insurance/hubs', label: 'HEALTH HUBS' },
+  { href: '/insurance/hubs/browse', label: 'STATE & MSA BROWSER' },
+  { href: '/insurance/calculators', label: 'CALCULATORS' },
+  { href: '/insurance/about', label: 'TRUST & TRANSPARENCY' },
+  { href: '/insurance/about', label: 'ABOUT' },
 ] as const;
 
 export function Navbar() {

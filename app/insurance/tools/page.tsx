@@ -13,40 +13,40 @@ export const metadata: Metadata = buildMetadata({
 
 const TOOLS = [
   {
-    href: '/tools/cost-estimator',
+    href: '/insurance/tools/cost-estimator',
     icon: Calculator,
     title: 'Premium cost estimator',
     description:
       'Get ballpark annual premium ranges by state and coverage type. Estimates only — not a quote.',
   },
   {
-    href: '/tools/needs-assessment',
+    href: '/insurance/tools/needs-assessment',
     icon: ClipboardCheck,
     title: 'Coverage needs assessment',
     description:
       'Answer a few questions to see which insurance types and agent specialties may fit your situation.',
   },
   {
-    href: '/tools/license-verification',
+    href: '/insurance/tools/license-verification',
     icon: ShieldCheck,
     title: 'License verification',
     description:
       'Links to every state insurance department lookup. Verify agents and agencies before you buy.',
   },
   {
-    href: '/tools/quote-comparison',
+    href: '/insurance/tools/quote-comparison',
     icon: Calculator,
     title: 'Quote comparison',
     description: 'Compare ballpark premium ranges by state and coverage type before contacting an agent.',
   },
   {
-    href: '/tools/medicare-plan-finder',
+    href: '/insurance/tools/medicare-plan-finder',
     icon: ClipboardCheck,
     title: 'Medicare plan finder',
     description: 'Estimate Medicare supplement gaps and compare plan types with educational tools.',
   },
   {
-    href: '/tools/aca-eligibility-checker',
+    href: '/insurance/tools/aca-eligibility-checker',
     icon: ShieldCheck,
     title: 'ACA eligibility checker',
     description: 'Rough marketplace subsidy estimate by income and household size.',

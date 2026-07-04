@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getHubsByState, getAllStateSlugs } from '@/lib/insurance/hubs/registry';
-import { SITE_URL } from '@/lib/insurance/constants';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 import { Card, CardContent } from '@/components/insurance/ui/card';
 import { Badge } from '@/components/insurance/ui/badge';
 import { MapPin } from 'lucide-react';
@@ -22,11 +22,11 @@ export async function generateMetadata({
   const hubs = getHubsByState(state);
   if (!hubs.length) return { title: 'Insurance Hubs' };
   const stateName = hubs[0].stateName;
-  return {
+  return buildHubMetadata('insurance', {
     title: `Insurance Agents in ${stateName} (2026) | Health Insurance Hubs`,
     description: `Compare ${hubs.length} verified insurance market hubs in ${stateName}. Health insurance specialists for ACA, Medicare, and multi-line coverage.`,
-    alternates: { canonical: `${SITE_URL}/hubs/${state}` },
-  };
+    path: `/hubs/${state}`,
+  });
 }
 
 export default async function StateHubsPage({

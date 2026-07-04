@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getHubBySlug, getAllHubParams } from '@/lib/insurance/hubs/registry';
 import { HubPageView } from '@/components/insurance/hub-page-view';
-import { SITE_URL } from '@/lib/insurance/constants';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 
 export const dynamic = 'force-static';
 
@@ -19,16 +19,11 @@ export async function generateMetadata({
   const hub = getHubBySlug(state, slug);
   if (!hub) return { title: 'Insurance Hub | Insurance Trust Hub' };
 
-  return {
+  return buildHubMetadata('insurance', {
     title: hub.metaTitle,
     description: hub.metaDescription,
-    alternates: { canonical: `${SITE_URL}/hubs/${state}/${slug}` },
-    openGraph: {
-      title: hub.metaTitle,
-      description: hub.metaDescription,
-      url: `${SITE_URL}/hubs/${state}/${slug}`,
-    },
-  };
+    path: `/hubs/${state}/${slug}`,
+  });
 }
 
 export default async function HubPage({

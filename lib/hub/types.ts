@@ -11,6 +11,11 @@ export type HubFooterColumn = {
   links: { href: string; label: string; external?: boolean }[];
 };
 
+export type HubLegalLinks = {
+  privacy: string;
+  terms: string;
+};
+
 export type HubConfig = {
   id: HubId;
   /** URL prefix — empty string for Move (root) */
@@ -26,6 +31,7 @@ export type HubConfig = {
   metadataTitleTemplate: string;
   navLinks: HubNavLink[];
   footerColumns: HubFooterColumn[];
+  legalLinks: HubLegalLinks;
   ctaLabel?: string;
   ctaHref?: string;
   trustBadge: string;

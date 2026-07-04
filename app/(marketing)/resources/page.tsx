@@ -111,7 +111,7 @@ export default function ResourcesPage() {
           {destinationGuides.map((guide) => (
             <Link
               key={guide.slug}
-              href={`/resources/guides/${guide.slug}`}
+              href={`/insurance/resources/guides/${guide.slug}`}
               prefetch={false}
               className="rounded-lg border px-4 py-3 text-sm hover:border-primary/40 hover:text-primary transition-colors"
             >

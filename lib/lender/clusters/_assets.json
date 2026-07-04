@@ -1,0 +1,2400 @@
+{
+  "ann-arbor-kalamazoo-college-town-demand": {
+    "title": "Ann Arbor & Kalamazoo Mortgage Lenders — College-Town Demand (2026)",
+    "description": "NMLS-verified mortgage lenders in Washtenaw and Kalamazoo Counties. Ann Arbor $549K median, Kalamazoo $245K affordability, medical/tech professionals, and steady university-town appreciation.",
+    "h1": "Trusted Mortgage Lenders — University Towns",
+    "badge": "NMLS Verified · Ann Arbor &amp; Kalamazoo · College-Town Demand",
+    "subtitle": "Washtenaw and Kalamazoo county lenders for Michigan&apos;s premier university towns — insulated Ann Arbor\n            demand and Kalamazoo&apos;s affordable alternative with strong out-of-state buyer interest.",
+    "bullets": [
+      "Ann Arbor boasts Michigan&apos;s highest major-city median listing price (~$549K) in insulated Tree Town",
+      "Constant influx of medical, tech, and university professionals sustains competitive luxury and mid-tier demand",
+      "Kalamazoo offers a more affordable college-town alternative (~$245K median) with surging out-of-state interest",
+      "Both markets show incredible resilience and steady price appreciation through economic cycles",
+      "Professional relocation programs and jumbo expertise matter in Ann Arbor; affordability drives Kalamazoo volume"
+    ],
+    "breadcrumbLabel": "Ann Arbor & Kalamazoo Hub",
+    "mortgageFile": "michiganLenders",
+    "countiesVar": "",
+    "areasVar": "ANN_ARBOR_KALAMAZOO_COLLEGE_TOWN_DEMAND_HUB_AREAS",
+    "lenderSlugsVar": "ANN_ARBOR_KALAMAZOO_COLLEGE_TOWN_DEMAND_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "University Towns — Start Here",
+    "whySectionTitle": "Why Ann Arbor &amp; Kalamazoo Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — University Towns",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/michigan/greater-detroits-value-pockets",
+        "label": "Greater Detroit Hub"
+      },
+      {
+        "href": "/lender/local-lenders/michigan/lansing-multi-family-investor-magnet",
+        "label": "Lansing Hub"
+      },
+      {
+        "href": "/lender/local-lenders/michigan/grand-rapids-fast-moving-core",
+        "label": "Grand Rapids Hub"
+      }
+    ],
+    "leadCaptureName": "Ann Arbor & Kalamazoo"
+  },
+  "central-eastern-pa-affordability-havens": {
+    "title": "Central & Eastern PA Mortgage Lenders — Harrisburg, Lehigh Valley & York (2026)",
+    "description": "NMLS-verified mortgage lenders in Harrisburg, Lehigh Valley, and York County. 16% YoY appreciation, 22–31 day pending, Wrightsville #12 hot market, and maximum square footage value.",
+    "h1": "Trusted Mortgage Lenders — Central &amp; Eastern PA",
+    "badge": "NMLS Verified · Affordability Havens · Harrisburg / Lehigh / York",
+    "subtitle": "Harrisburg, Lehigh Valley, and York County lenders for massive appreciation,\n            lean inventory, quick pending times, and maximum square footage for your dollar.",
+    "bullets": [
+      "Harrisburg median sale prices jumped roughly 16% year-over-year with 31-day average sales",
+      "Lehigh Valley (Allentown/Bethlehem) has virtually no inventory equilibrium — 22–31 day pending",
+      "Wrightsville (York County) ranked #12 hottest market nationally for suburban/rural charm",
+      "Proximity to NYC, Philadelphia, and Baltimore drives commuter and relocation demand",
+      "Buyers prioritize maximum square footage value in these scorcher affordability pockets"
+    ],
+    "breadcrumbLabel": "Central/Eastern PA Hub",
+    "mortgageFile": "pennsylvaniaLenders",
+    "countiesVar": "",
+    "areasVar": "CENTRAL_EASTERN_PA_HUB_AREAS",
+    "lenderSlugsVar": "CENTRAL_EASTERN_PA_AFFORDABILITY_HAVENS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Affordability Havens — Start Here",
+    "whySectionTitle": "Why Central &amp; Eastern PA Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Central &amp; Eastern PA",
+    "countyLinkHref": "/lender/local-lenders/pennsylvania/dauphin",
+    "countyLinkText": "Dauphin County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/pennsylvania/philadelphia-metro-area-collar-counties",
+        "label": "Philadelphia Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/pennsylvania/greater-pittsburgh-key-suburbs",
+        "label": "Greater Pittsburgh Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/gateway-cities-suburban-alternatives",
+        "label": "Gateway Cities Hub"
+      }
+    ],
+    "leadCaptureName": "Central/Eastern PA"
+  },
+  "central-florida": {
+    "title": "Central Florida Mortgage Lenders — Orange County & Orlando (2026)",
+    "description": "NMLS-verified mortgage lenders in Central Florida. Orlando HQ lenders, VA specialists, first-time buyer brokers, and down payment assistance experts in Orange County.",
+    "h1": "Trusted Mortgage Lenders in Central Florida",
+    "badge": "NMLS Verified · Zero Paid Placements · Orange County Focus",
+    "subtitle": "Orlando metro lenders with local HQ roots, VA specialists, first-time buyer programs, and\n            the suburban growth expertise Orange County demands.",
+    "bullets": [
+      "First-time buyers and DPA programs drive much of Orange County volume",
+      "Acrisure Mortgage (formerly FBC) keeps national-lender HQ downtown Orlando",
+      "Veterans near MacDill commuters and local retiree populations need VA specialists",
+      "Winter Garden, Lake Nona, and Avalon Park suburban growth needs local branch access",
+      "Insurance math is often more forgiving than South Florida coastal markets"
+    ],
+    "breadcrumbLabel": "Central Florida Hub",
+    "mortgageFile": "floridaLenders",
+    "countiesVar": "CENTRAL_FLORIDA_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "florida",
+      "orange"
+    ],
+    "featuredSectionTitle": "Orange County — Start Here",
+    "whySectionTitle": "Why Central Florida Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": "/lender/local-lenders/florida/orange",
+    "countyLinkText": "{orangeLenders.length} Orange County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/florida/south-florida",
+        "label": "South Florida Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/tampa-bay",
+        "label": "Tampa Bay Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/jacksonville",
+        "label": "Jacksonville Hub"
+      }
+    ],
+    "leadCaptureName": "Central Florida"
+  },
+  "central-illinois-affordability-gems": {
+    "title": "Central Illinois Mortgage Lenders — Peoria & Normal Affordability Gems (2026)",
+    "description": "NMLS-verified mortgage lenders in Peoria and McLean Counties. Peoria investment appeal, 20–26 day DOM, Normal as Zillow #1 college town, and exceptional rent-to-price ratios.",
+    "h1": "Trusted Mortgage Lenders — Central Illinois",
+    "badge": "NMLS Verified · Central Illinois · Affordability Gems",
+    "subtitle": "Peoria and Normal lenders for high-value, low-entry markets — exceptional rent-to-price ratios,\n            fast-moving inventory, and Zillow&apos;s #1 most popular college town.",
+    "bullets": [
+      "Peoria ranks as a top midsize city for real estate investment with exceptional rent-to-price ratios",
+      "Peoria homes move in a median of just 20–26 days on market",
+      "Normal was named Zillow&apos;s #1 most popular college town in America",
+      "Revitalized uptown Normal and strong ISU-area rental demand drive McLean County activity",
+      "Low entry costs attract both first-time buyers and cash-flow-focused investors"
+    ],
+    "breadcrumbLabel": "Central IL Hub",
+    "mortgageFile": "illinoisLenders",
+    "countiesVar": "",
+    "areasVar": "CENTRAL_ILLINOIS_AFFORDABILITY_GEMS_HUB_AREAS",
+    "lenderSlugsVar": "CENTRAL_ILLINOIS_AFFORDABILITY_GEMS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Central Illinois — Start Here",
+    "whySectionTitle": "Why Central Illinois Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Central Illinois",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/illinois/rockford-national-standout",
+        "label": "Rockford Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/highly-competitive-chicago-suburbs",
+        "label": "Chicago Suburbs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/chicago-proper-urban-resurgence",
+        "label": "Chicago Proper Hub"
+      }
+    ],
+    "leadCaptureName": "Central IL"
+  },
+  "central-valley-alternatives": {
+    "title": "Central Valley Alternatives Mortgage Lenders — Clovis & Bakersfield, CA (2026)",
+    "description": "NMLS-verified mortgage lenders in Central Valley Alternatives. Clovis elite-school suburbs, Bakersfield affordability, remote worker relocations, positive cash-flow investing, and $400K–$430K median financing.",
+    "h1": "Trusted Mortgage Lenders — Central Valley Alternatives",
+    "badge": "NMLS Verified · Affordability &amp; Cash Flow · Fresno &amp; Kern Focus",
+    "subtitle": "Clovis and Bakersfield lenders for coastal California migrants, remote tech workers,\n            positive cash-flow investors, and traditional suburban buyers at roughly half state median prices.",
+    "bullets": [
+      "Clovis offers elite schools and low-crime suburbs at $400K–$430K medians — half coastal California",
+      "Bakersfield anchors agricultural heartland affordability with strong investor cash-flow potential",
+      "Bay Area and LA remote workers drive migration-driven purchase volume",
+      "Master-planned suburban layouts attract first-time buyers seeking traditional neighborhoods",
+      "Community credit unions and fast-closing brokers serve both family and investor segments"
+    ],
+    "breadcrumbLabel": "Central Valley Alternatives Hub",
+    "mortgageFile": "californiaLenders",
+    "countiesVar": "CENTRAL_VALLEY_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "CENTRAL_VALLEY_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why Central Valley Alternatives Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Central Valley Alternatives",
+    "countyLinkHref": "/lender/local-lenders/california/fresno",
+    "countyLinkText": "Fresno County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/california/inland-empire-affordability-magnets",
+        "label": "Inland Empire Affordability Magnets Hub"
+      },
+      {
+        "href": "/lender/local-lenders/california/silicon-valley-spine",
+        "label": "Silicon Valley Spine Hub"
+      },
+      {
+        "href": "/lender/local-lenders/arizona/west-valley-boomtowns",
+        "label": "West Valley Boomtowns Hub"
+      }
+    ],
+    "leadCaptureName": "Central Valley Alternatives"
+  },
+  "charlotte-metro": {
+    "title": "Charlotte Metro Mortgage Lenders — Mecklenburg County (2026)",
+    "description": "NMLS-verified mortgage lenders in Charlotte metro. Corporate relocations, Huntersville and Concord suburbs, first-time buyers, and fast closings in Mecklenburg County.",
+    "h1": "Trusted Mortgage Lenders — Charlotte Metro",
+    "badge": "NMLS Verified · Mecklenburg County Focus",
+    "subtitle": "Charlotte, Huntersville, Concord, and Gastonia lenders for banking/tech relocations,\n            $425K median suburban growth, and high-velocity purchase markets.",
+    "bullets": [],
+    "breadcrumbLabel": "Charlotte Metro Hub",
+    "mortgageFile": "northCarolinaLenders",
+    "countiesVar": "CHARLOTTE_METRO_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "north-carolina",
+      "mecklenburg"
+    ],
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": null,
+    "lendersSectionTitle": "Top Verified Lenders in Mecklenburg County",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/north-carolina/research-triangle",
+        "label": "Research Triangle Hub"
+      },
+      {
+        "href": "/lender/local-lenders/north-carolina/piedmont-triad",
+        "label": "Piedmont Triad Hub"
+      }
+    ],
+    "leadCaptureName": "Charlotte Metro"
+  },
+  "chicago-proper-urban-resurgence": {
+    "title": "Chicago Proper Mortgage Lenders — Lincoln Park, Logan Square & Urban Resurgence (2026)",
+    "description": "NMLS-verified mortgage lenders in Chicago neighborhoods. Lincoln Park, West Town, Logan Square, and Roscoe Village bidding wars, 48-hour multiple offers, and rent-vs-own flip economics.",
+    "h1": "Trusted Mortgage Lenders — Chicago Proper",
+    "badge": "NMLS Verified · Chicago Proper · Urban Resurgence",
+    "subtitle": "Cook County lenders for Lincoln Park, West Town, Logan Square, and Roscoe Village — rising rental costs\n            flipping the math toward ownership and calendar-driven family demand.",
+    "bullets": [
+      "Bidding wars and multiple offers within 48 hours are common in Lincoln Park, West Town, Logan Square, and Roscoe Village",
+      "Rising rental costs across neighborhoods have flipped monthly cost math toward homeownership",
+      "Calendar-driven buyers — pandemic city-stayers with school-age children — face hard deadlines before the school year",
+      "Historic rowhomes and renovated condos require lenders experienced in urban property types",
+      "Speed and certainty of close are competitive advantages in the urban resurgence"
+    ],
+    "breadcrumbLabel": "Chicago Proper Hub",
+    "mortgageFile": "illinoisLenders",
+    "countiesVar": "",
+    "areasVar": "CHICAGO_PROPER_URBAN_RESURGENCE_HUB_AREAS",
+    "lenderSlugsVar": "CHICAGO_PROPER_URBAN_RESURGENCE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Chicago Proper — Start Here",
+    "whySectionTitle": "Why Chicago Proper Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Chicago Proper",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/illinois/rockford-national-standout",
+        "label": "Rockford Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/highly-competitive-chicago-suburbs",
+        "label": "Chicago Suburbs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/central-illinois-affordability-gems",
+        "label": "Central IL Hub"
+      }
+    ],
+    "leadCaptureName": "Chicago Proper"
+  },
+  "coastal-savannah": {
+    "title": "Coastal Savannah Mortgage Lenders — Chatham County, Pooler & Port Relocations (2026)",
+    "description": "NMLS-verified mortgage lenders in Coastal Savannah. Native leadership teams, VA/military relocations, flood zone expertise, Pooler new construction, and Port of Savannah industrial buyer programs.",
+    "h1": "Trusted Mortgage Lenders — Coastal Savannah",
+    "badge": "NMLS Verified · Zero Paid Placements · Chatham County Focus",
+    "subtitle": "Savannah, Pooler, Rincon, and Chatham County lenders with port relocation expertise,\n            coastal flood insurance navigation, and fast-tracked new-construction financing.",
+    "bullets": [
+      "Port of Savannah and Hyundai Metaplant drive industrial relocation volume",
+      "Flood zone insurance requirements differ sharply from inland Atlanta markets",
+      "Pooler and Rincon subdivisions sell in days — fast pre-approvals win offers",
+      "Historic Savannah homes need specialized appraisal and insurance coordination",
+      "VA and military families need local teams who understand timeline shifts"
+    ],
+    "breadcrumbLabel": "Coastal Savannah Hub",
+    "mortgageFile": "georgiaLenders",
+    "countiesVar": "COASTAL_SAVANNAH_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "georgia",
+      "chatham"
+    ],
+    "featuredSectionTitle": "Chatham County — Start Here",
+    "whySectionTitle": "Why Coastal Savannah Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/georgia/metro-outer-ring",
+        "label": "Metro Outer Ring Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/north-atlanta",
+        "label": "North Atlanta Hub"
+      }
+    ],
+    "leadCaptureName": "Coastal Savannah"
+  },
+  "colorado-springs-stability-volume": {
+    "title": "Colorado Springs Mortgage Lenders — Stability & Volume Leader, El Paso County (2026)",
+    "description": "NMLS-verified mortgage lenders in Colorado Springs. Military and defense financing, aerospace/tech relocations, Fountain and Falcon new construction, Ent Credit Union member rates, and Denver affordability safety valve.",
+    "h1": "Trusted Mortgage Lenders — Colorado Springs",
+    "badge": "NMLS Verified · Military &amp; Defense · El Paso County Focus",
+    "subtitle": "Colorado Springs, Fountain, and Falcon lenders for military infrastructure, aerospace and tech growth,\n            steady high-volume transactions, and relative affordability as a Denver safety valve.",
+    "bullets": [
+      "Stability and volume leader with balanced purchase and refinance activity year-round",
+      "Strong military and defense infrastructure drives VA and Fountain/Falcon demand",
+      "Aerospace and tech job growth supports steady northeast suburban relocations",
+      "Falcon master-planned new construction absorbs consistent build-to-buy volume",
+      "Relative affordability vs. Denver makes El Paso County a reliable safety valve metro"
+    ],
+    "breadcrumbLabel": "Colorado Springs Hub",
+    "mortgageFile": "coloradoLenders",
+    "countiesVar": "",
+    "areasVar": "COLORADO_SPRINGS_HUB_AREAS",
+    "lenderSlugsVar": "COLORADO_SPRINGS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Colorado Springs Metro — Start Here",
+    "whySectionTitle": "Why Colorado Springs Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Colorado Springs",
+    "countyLinkHref": "/lender/local-lenders/colorado/el-paso",
+    "countyLinkText": "El Paso County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/colorado/denver-metro-outer-rings-north-suburbs",
+        "label": "Denver Metro Outer Rings Hub"
+      },
+      {
+        "href": "/lender/local-lenders/california/central-valley-alternatives",
+        "label": "Central Valley Alternatives Hub"
+      },
+      {
+        "href": "/lender/local-lenders/arizona/west-valley-boomtowns",
+        "label": "West Valley Boomtowns Hub"
+      }
+    ],
+    "leadCaptureName": "Colorado Springs"
+  },
+  "denver-metro-outer-rings-north-suburbs": {
+    "title": "Denver Metro Outer Rings & North Suburbs Mortgage Lenders — Erie, Parker & Lafayette (2026)",
+    "description": "NMLS-verified mortgage lenders in Denver Metro outer rings. Erie and Parker master-planned new construction, Lafayette and Louisville top schools, Centennial family suburbs, and bidding-war-free suburban financing.",
+    "h1": "Trusted Mortgage Lenders — Denver Metro Outer Rings &amp; North Suburbs",
+    "badge": "NMLS Verified · Master-Planned &amp; Schools · Adams, Boulder &amp; Douglas Focus",
+    "subtitle": "Erie, Parker, Centennial, Lafayette, and Louisville lenders for master-planned new construction,\n            top-tier school districts, and family-friendly suburbs beyond Denver urban-core bidding wars.",
+    "bullets": [
+      "Transactional volume shifting to Erie and Parker master-planned communities with modern layouts",
+      "Lafayette and Louisville offer top-tier schools and tech-corridor access without urban-core premiums",
+      "Centennial and Parker family suburbs avoid intense Denver proper bidding wars",
+      "Steady new-construction inventory increases demand for construction-to-permanent specialists",
+      "Corporate and family relocations drive move-up and VA program volume in outer rings"
+    ],
+    "breadcrumbLabel": "Denver Metro Outer Rings & North Suburbs Hub",
+    "mortgageFile": "coloradoLenders",
+    "countiesVar": "DENVER_OUTER_RINGS_HUB_COUNTIES",
+    "areasVar": "DENVER_OUTER_RINGS_HUB_AREAS",
+    "lenderSlugsVar": "DENVER_OUTER_RINGS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why Denver Outer Rings &amp; North Suburbs Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Denver Metro Outer Rings",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/california/silicon-valley-spine",
+        "label": "Silicon Valley Spine Hub"
+      },
+      {
+        "href": "/lender/local-lenders/arizona/west-valley-boomtowns",
+        "label": "West Valley Boomtowns Hub"
+      },
+      {
+        "href": "/lender/local-lenders/tennessee/greater-nashville-metro",
+        "label": "Greater Nashville Metro Hub"
+      }
+    ],
+    "leadCaptureName": "Denver Metro Outer Rings & North Suburbs"
+  },
+  "dfw-suburbs-silicon-prairie": {
+    "title": "DFW Suburbs & Silicon Prairie Mortgage Lenders — Frisco, McKinney & Sherman (2026)",
+    "description": "NMLS-verified mortgage lenders in North Texas Silicon Prairie. Frisco and McKinney corporate relocations, Prosper master-planned new construction, Sherman-Denison Texas Instruments workforce housing, and high-transaction suburban boom financing.",
+    "h1": "Trusted Mortgage Lenders — DFW Suburbs &amp; Silicon Prairie",
+    "badge": "NMLS Verified · Corporate Relocations · Collin, Denton &amp; Grayson Focus",
+    "subtitle": "Frisco, McKinney, Prosper, and Sherman-Denison lenders for the endless wave of corporate relocations,\n            Texas Instruments manufacturing corridor, and master-planned suburban transactional boom.",
+    "bullets": [
+      "Endless corporate relocation wave shifting volume north from Dallas proper",
+      "Texas Instruments and manufacturing/tech expansions drive Sherman-Denison workforce housing",
+      "Frisco, McKinney, and Prosper master-planned communities fuel new-construction demand",
+      "Infrastructure expansions support explosive suburban transactional growth",
+      "Fast-closing brokers win competitive offers in the Silicon Prairie equity-gain corridor"
+    ],
+    "breadcrumbLabel": "DFW Suburbs & Silicon Prairie Hub",
+    "mortgageFile": "texasLenders",
+    "countiesVar": "DFW_SILICON_PRAIRIE_HUB_COUNTIES",
+    "areasVar": "DFW_SILICON_PRAIRIE_HUB_AREAS",
+    "lenderSlugsVar": "DFW_SILICON_PRAIRIE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why DFW Silicon Prairie Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — DFW Suburbs &amp; Silicon Prairie",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/colorado/denver-metro-outer-rings-north-suburbs",
+        "label": "Denver Metro Outer Rings Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/north-atlanta",
+        "label": "North Atlanta Hub"
+      },
+      {
+        "href": "/lender/local-lenders/arizona/southeast-valley-pinal-border",
+        "label": "Southeast Valley Hub"
+      }
+    ],
+    "leadCaptureName": "DFW Suburbs & Silicon Prairie"
+  },
+  "first-time-buyer-waterfront-hubs": {
+    "title": "Brookland & Navy Yard Mortgage Lenders — First-Time Buyer & Waterfront Hubs (2026)",
+    "description": "NMLS-verified mortgage lenders in DC Brookland and Navy Yard. First-time buyer entry-level rowhomes, modern waterfront condos with luxury amenities, Little Rome arts district, Capitol Riverfront, and high-transactional volume for younger buyers.",
+    "h1": "Trusted Mortgage Lenders — Brookland &amp; Navy Yard",
+    "badge": "NMLS Verified · First-Time Buyers · Brookland &amp; Navy Yard",
+    "subtitle": "Brookland and Navy Yard lenders for first-time buyer entry points, tree-lined Little Rome rowhouses,\n            and sleek waterfront condos with luxury amenities near Nationals Park.",
+    "bullets": [
+      "Brookland offers tree-lined streets and Little Rome arts-district charm as a safety-valve entry point",
+      "Navy Yard delivers sleek waterfront condos with rooftop pools and plug-and-play modern lifestyle amenities",
+      "Capitol Riverfront attracts DC&apos;s incoming professional class with high transactional volume",
+      "First-time buyer programs essential for younger buyers priced into these dynamic hubs",
+      "High appreciation potential in two of DC&apos;s highest-volume neighborhoods for modern urban living"
+    ],
+    "breadcrumbLabel": "First-Time Buyer & Waterfront Hubs",
+    "mortgageFile": "districtOfColumbiaLenders",
+    "countiesVar": "",
+    "areasVar": "",
+    "lenderSlugsVar": "FIRST_TIME_BUYER_WATERFRONT_HUBS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "DC Hubs — Start Here",
+    "whySectionTitle": "Why Brookland &amp; Navy Yard Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Brookland &amp; Navy Yard",
+    "countyLinkHref": "/lender/local-lenders/district-of-columbia/district-of-columbia",
+    "countyLinkText": "District of Columbia lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/district-of-columbia/upper-northwest-value-surge",
+        "label": "Upper Northwest Value Surge Hub"
+      },
+      {
+        "href": "/lender/local-lenders/district-of-columbia/high-velocity-mid-city-core",
+        "label": "Mid-City Core Hub"
+      },
+      {
+        "href": "/lender/local-lenders/washington/south-sound-tacoma-puyallup",
+        "label": "South Sound Hub"
+      }
+    ],
+    "leadCaptureName": "First-Time Buyer & Waterfront Hubs"
+  },
+  "foothills-turnkey-mountain-towns": {
+    "title": "Foothills & Turnkey Mountain Towns Mortgage Lenders — Evergreen & Steamboat, CO (2026)",
+    "description": "NMLS-verified mortgage lenders in Colorado foothills and mountain towns. Evergreen, Golden, Conifer luxury acreage, Steamboat Springs resort financing, jumbo loans, and affluent out-of-state lifestyle migration.",
+    "h1": "Trusted Mortgage Lenders — Foothills &amp; Turnkey Mountain Towns",
+    "badge": "NMLS Verified · Luxury &amp; Lifestyle · Jefferson &amp; Routt Focus",
+    "subtitle": "Evergreen, Golden, Conifer, and Steamboat Springs lenders for premium mountain modern homes,\n            acreage privacy, Denver commuter access, and affluent out-of-state lifestyle migration.",
+    "bullets": [
+      "Explosive sales-price growth driven by affluent Texas, California, and Florida lifestyle migration",
+      "Evergreen and Conifer offer mountain acreage privacy with Denver commuter pipeline access",
+      "Steamboat Springs turnkey mountain modern homes attract cash-heavy resort-tier buyers",
+      "Golden foothills combine tech-corridor proximity with premium school-driven demand",
+      "Jumbo, portfolio, and mountain-specific underwriting require specialized local lenders"
+    ],
+    "breadcrumbLabel": "Foothills & Mountain Towns Hub",
+    "mortgageFile": "coloradoLenders",
+    "countiesVar": "FOOTHILLS_MOUNTAIN_HUB_COUNTIES",
+    "areasVar": "FOOTHILLS_MOUNTAIN_HUB_AREAS",
+    "lenderSlugsVar": "FOOTHILLS_MOUNTAIN_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why Foothills &amp; Mountain Towns Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Foothills &amp; Mountain Towns",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/colorado/denver-metro-outer-rings-north-suburbs",
+        "label": "Denver Metro Outer Rings Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/colorado-springs-stability-volume",
+        "label": "Colorado Springs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/california/silicon-valley-spine",
+        "label": "Silicon Valley Spine Hub"
+      }
+    ],
+    "leadCaptureName": "Foothills & Mountain Towns"
+  },
+  "gateway-cities-suburban-alternatives": {
+    "title": "Gateway Cities Mortgage Lenders — Lowell, Lynn, Revere & Malden (2026)",
+    "description": "NMLS-verified mortgage lenders in Lowell, Lynn, Revere, and Malden. Boston spillover affordability, Orange and Blue Line transit access, and sharp competitiveness in gateway city safety valves.",
+    "h1": "Trusted Mortgage Lenders — Gateway Cities",
+    "badge": "NMLS Verified · Gateway Cities · Lowell / Lynn / Revere / Malden",
+    "subtitle": "Lowell, Lynn, Revere, and Malden lenders for Boston-priced-out buyers — urban amenities,\n            strong commuting transit, and significantly lower pricing than Boston proper.",
+    "bullets": [
+      "Safety-valve markets for buyers priced out of immediate Boston metro pricing",
+      "Lowell and Lynn offer urban amenities with commuter rail and transit connections",
+      "Revere and Malden provide Blue and Orange Line access with northward migration demand",
+      "Sharp rises in competitiveness reward lenders who close quickly on gateway inventory",
+      "Fraction of Boston costs with strong transit-oriented development momentum"
+    ],
+    "breadcrumbLabel": "Gateway Cities Hub",
+    "mortgageFile": "massachusettsLenders",
+    "countiesVar": "",
+    "areasVar": "GATEWAY_CITIES_HUB_AREAS",
+    "lenderSlugsVar": "GATEWAY_CITIES_SUBURBAN_ALTERNATIVES_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Gateway Cities — Start Here",
+    "whySectionTitle": "Why Gateway Cities Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Gateway Cities",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/massachusetts/high-demand-boston-neighborhoods",
+        "label": "Boston Neighborhoods Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/metrowest-bread-and-butter-markets",
+        "label": "MetroWest Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/worcester-undisputed-growth-leader",
+        "label": "Worcester Growth Hub"
+      }
+    ],
+    "leadCaptureName": "Gateway Cities"
+  },
+  "grand-rapids-fast-moving-core": {
+    "title": "Grand Rapids Mortgage Lenders — Fast-Moving Core (2026)",
+    "description": "NMLS-verified mortgage lenders in Grand Rapids, East Grand Rapids, and Ada. 6-day average DOM, under-15-day pending in suburbs, severe inventory crunch, and top millennial job market.",
+    "h1": "Trusted Mortgage Lenders — Grand Rapids",
+    "badge": "NMLS Verified · Grand Rapids · Fast-Moving Core",
+    "subtitle": "Kent County lenders for West Michigan&apos;s consistent powerhouse — 6-day average contracts,\n            severe inventory crunch, and demand from healthcare and manufacturing professionals.",
+    "bullets": [
+      "Homes in Grand Rapids proper average just 6 days on market before going under contract",
+      "East Grand Rapids and Ada see pending times under 15 days with multiple offers as standard",
+      "Healthcare and manufacturing professional demand severely outpaces available inventory",
+      "Consistent top job market rankings attract waves of millennial relocations",
+      "Fast closings and strong pre-approval letters are essential to win in this powerhouse market"
+    ],
+    "breadcrumbLabel": "Grand Rapids Hub",
+    "mortgageFile": "michiganLenders",
+    "countiesVar": "",
+    "areasVar": "GRAND_RAPIDS_FAST_MOVING_CORE_HUB_AREAS",
+    "lenderSlugsVar": "GRAND_RAPIDS_FAST_MOVING_CORE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Grand Rapids — Start Here",
+    "whySectionTitle": "Why Grand Rapids Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Grand Rapids",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/michigan/greater-detroits-value-pockets",
+        "label": "Greater Detroit Hub"
+      },
+      {
+        "href": "/lender/local-lenders/michigan/lansing-multi-family-investor-magnet",
+        "label": "Lansing Hub"
+      },
+      {
+        "href": "/lender/local-lenders/michigan/ann-arbor-kalamazoo-college-town-demand",
+        "label": "Ann Arbor &amp; Kalamazoo Hub"
+      }
+    ],
+    "leadCaptureName": "Grand Rapids"
+  },
+  "grand-strand": {
+    "title": "Grand Strand Mortgage Lenders — Myrtle Beach & Horry County (2026)",
+    "description": "NMLS-verified mortgage lenders on the Grand Strand. Retiree relocations, condo and beach financing, manufactured homes, FHA/VA, and 7-day upfront underwriting in Myrtle Beach.",
+    "h1": "Trusted Mortgage Lenders — Grand Strand",
+    "badge": "NMLS Verified · Zero Paid Placements · Horry County Focus",
+    "subtitle": "Myrtle Beach, Conway, and Horry County lenders for retiree relocations, coastal condos,\n            manufactured homes, remote workers, and fast competitive resale closings.",
+    "bullets": [
+      "Northeast and Midwest retiree relocations drive second-home and primary-residence volume",
+      "Warrantable vs non-warrantable condo rules differ sharply from inland markets",
+      "High-wind mitigation credits and flood zone insurance affect every coastal pre-approval",
+      "Conway suburbs offer affordable manufactured and modular entry points",
+      "Competitive beachside listings need upfront underwriting and sub-30-day closes"
+    ],
+    "breadcrumbLabel": "Grand Strand Hub",
+    "mortgageFile": "southCarolinaLenders",
+    "countiesVar": "GRAND_STRAND_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "south-carolina",
+      "horry"
+    ],
+    "featuredSectionTitle": "Horry County — Start Here",
+    "whySectionTitle": "Why the Grand Strand Is Different",
+    "lendersSectionTitle": "Top Verified Lenders in Horry County",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/south-carolina/upstate",
+        "label": "Upstate SC Hub"
+      },
+      {
+        "href": "/lender/local-lenders/south-carolina/lowcountry",
+        "label": "Lowcountry Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/panhandle",
+        "label": "Florida Panhandle Hub"
+      }
+    ],
+    "leadCaptureName": "Grand Strand"
+  },
+  "greater-detroits-value-pockets": {
+    "title": "Greater Detroit Mortgage Lenders — Dearborn, Lincoln Park & Howell (2026)",
+    "description": "NMLS-verified mortgage lenders in Dearborn, Lincoln Park, and Howell. Zillow top 5 city, Redfin top 10 hottest neighborhoods, 40% over-asking sales, and Southeast Michigan value pockets.",
+    "h1": "Trusted Mortgage Lenders — Greater Detroit",
+    "badge": "NMLS Verified · Greater Detroit · Value Pockets",
+    "subtitle": "Southeast Michigan lenders for Dearborn, Lincoln Park, and Howell — national hot markets where buyers\n            maximize purchasing power in entry-level, transitional, and high-end value pockets.",
+    "bullets": [
+      "Dearborn ranks as one of Zillow&apos;s top 5 most popular cities for home shoppers nationwide",
+      "Lincoln Park is a Redfin top 10 hottest neighborhood with 14% YoY sales growth and nearly 40% over-asking",
+      "Howell cracked Redfin&apos;s national top 10 hottest markets with a massive page-view surge and rapid bidding wars",
+      "Entry-level and transitional neighborhoods let buyers maximize purchasing power across the budget spectrum",
+      "Strong local economies and cultural communities drive intense competition at accessible price points"
+    ],
+    "breadcrumbLabel": "Greater Detroit Hub",
+    "mortgageFile": "michiganLenders",
+    "countiesVar": "",
+    "areasVar": "GREATER_DETROITS_VALUE_POCKETS_HUB_AREAS",
+    "lenderSlugsVar": "GREATER_DETROITS_VALUE_POCKETS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Greater Detroit — Start Here",
+    "whySectionTitle": "Why Greater Detroit Value Pockets Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Greater Detroit",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/illinois/rockford-national-standout",
+        "label": "Rockford Hub"
+      },
+      {
+        "href": "/lender/local-lenders/pennsylvania/greater-pittsburgh-key-suburbs",
+        "label": "Greater Pittsburgh Hub"
+      }
+    ],
+    "leadCaptureName": "Greater Detroit"
+  },
+  "greater-houston-metro": {
+    "title": "Greater Houston Metro Mortgage Lenders — Katy, The Woodlands & Sugar Land (2026)",
+    "description": "NMLS-verified mortgage lenders in Greater Houston Metro. Katy and Conroe master-planned communities, The Woodlands top schools, Sugar Land medical sector, energy and VA programs, and resilient suburban financing.",
+    "h1": "Trusted Mortgage Lenders — Greater Houston Metro",
+    "badge": "NMLS Verified · Resilient Suburbs · Harris, Fort Bend &amp; Montgomery Focus",
+    "subtitle": "Katy, The Woodlands, Sugar Land, and Conroe lenders for master-planned community absorption,\n            top-rated school districts, medical and energy sector jobs, and positive year-over-year suburban growth.",
+    "bullets": [
+      "Texas stability leader with positive year-over-year appreciation in suburban corridors",
+      "Katy and Conroe master-planned communities drive high-absorption new-build demand",
+      "The Woodlands and Sugar Land offer top-rated schools at manageable price points",
+      "Medical center and energy sector jobs support diverse relocation financing needs",
+      "Fast-closing brokers win competitive offers in resilient family suburban markets"
+    ],
+    "breadcrumbLabel": "Greater Houston Metro Hub",
+    "mortgageFile": "texasLenders",
+    "countiesVar": "GREATER_HOUSTON_HUB_COUNTIES",
+    "areasVar": "GREATER_HOUSTON_HUB_AREAS",
+    "lenderSlugsVar": "GREATER_HOUSTON_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why Greater Houston Metro Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Greater Houston Metro",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/texas/dfw-suburbs-silicon-prairie",
+        "label": "DFW Silicon Prairie Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/denver-metro-outer-rings-north-suburbs",
+        "label": "Denver Metro Outer Rings Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/tampa-bay",
+        "label": "Tampa Bay Hub"
+      }
+    ],
+    "leadCaptureName": "Greater Houston Metro"
+  },
+  "greater-nashville-metro": {
+    "title": "Greater Nashville Metro Mortgage Lenders — Davidson, Williamson & Rutherford (2026)",
+    "description": "NMLS-verified mortgage lenders in Greater Nashville. Corporate relocations, Franklin/Brentwood luxury, Murfreesboro fast closings, VA programs, and new-construction financing.",
+    "h1": "Trusted Mortgage Lenders — Greater Nashville Metro",
+    "badge": "NMLS Verified · Growth &amp; Wealth Engine · Davidson County Focus",
+    "subtitle": "Nashville, Franklin, Brentwood, and Murfreesboro lenders for corporate relocations,\n            no state income tax advantage, healthcare/tech expansion, and high-transaction suburban growth.",
+    "bullets": [
+      "No state income tax draws high-earning corporate and healthcare relocations",
+      "Williamson County luxury in Franklin/Brentwood commands premium school-district pricing",
+      "Rutherford and Murfreesboro absorb high-volume starter and new-construction demand",
+      "Fort Campbell veteran influx and VA programs need military-specialist lenders",
+      "Competitive offer timelines demand brokers with sub-30-day close track records"
+    ],
+    "breadcrumbLabel": "Greater Nashville Metro Hub",
+    "mortgageFile": "tennesseeLenders",
+    "countiesVar": "GREATER_NASHVILLE_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "GREATER_NASHVILLE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why Greater Nashville Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Greater Nashville Metro",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/north-carolina/charlotte-metro",
+        "label": "Charlotte Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/north-atlanta",
+        "label": "North Atlanta Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida",
+        "label": "Florida Regional Hubs"
+      }
+    ],
+    "leadCaptureName": "Greater Nashville Metro"
+  },
+  "greater-pittsburgh-key-suburbs": {
+    "title": "Greater Pittsburgh Mortgage Lenders — Allegheny & Beaver Counties (2026)",
+    "description": "NMLS-verified mortgage lenders in Pittsburgh and Baden. #3 hottest national suburb, 8–14 day pending times, remote worker influx, and stable Western PA markets.",
+    "h1": "Trusted Mortgage Lenders — Greater Pittsburgh",
+    "badge": "NMLS Verified · Greater Pittsburgh · Allegheny &amp; Beaver",
+    "subtitle": "Pittsburgh and Baden lenders for Western PA&apos;s surge — remote workers, tech professionals,\n            retirees, and the #3 hottest national suburb with 8–14 day pending velocity.",
+    "bullets": [
+      "Baden (Beaver County) ranked #3 hottest housing market nationally on recent indexes",
+      "Pittsburgh Proper offers stability with well-priced homes pending in 8–14 days",
+      "Remote workers, tech professionals, and retirees drive lower cost-of-living demand",
+      "Tight suburban inventory pushes sale prices above historical averages rapidly",
+      "Minimal boom-and-bust volatility rewards lenders who understand Western PA pace"
+    ],
+    "breadcrumbLabel": "Greater Pittsburgh Hub",
+    "mortgageFile": "pennsylvaniaLenders",
+    "countiesVar": "",
+    "areasVar": "GREATER_PITTSBURGH_HUB_AREAS",
+    "lenderSlugsVar": "GREATER_PITTSBURGH_KEY_SUBURBS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Greater Pittsburgh — Start Here",
+    "whySectionTitle": "Why Greater Pittsburgh Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Greater Pittsburgh",
+    "countyLinkHref": "/lender/local-lenders/pennsylvania/allegheny",
+    "countyLinkText": "Allegheny County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/pennsylvania/philadelphia-metro-area-collar-counties",
+        "label": "Philadelphia Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/pennsylvania/central-eastern-pa-affordability-havens",
+        "label": "Central/Eastern PA Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-york/upstate-powerhouses-buffalo-albany",
+        "label": "Upstate NY Powerhouses Hub"
+      }
+    ],
+    "leadCaptureName": "Greater Pittsburgh"
+  },
+  "high-demand-boston-neighborhoods": {
+    "title": "Boston Neighborhood Mortgage Lenders — East Boston, Dorchester & Jamaica Plain (2026)",
+    "description": "NMLS-verified mortgage lenders in East Boston, Dorchester, and Jamaica Plain. Waterfront proximity, cultural districts, rental yields, high-competition neighborhoods, and Back Bay alternatives.",
+    "h1": "Trusted Mortgage Lenders — Boston Neighborhoods",
+    "badge": "NMLS Verified · High-Demand Neighborhoods · Suffolk County",
+    "subtitle": "East Boston, Dorchester, and Jamaica Plain lenders for waterfront proximity, cultural appeal,\n            strong rental yields, and high-competition transactions without Back Bay pricing.",
+    "bullets": [
+      "East Boston waterfront proximity as a compelling Back Bay pricing alternative",
+      "Dorchester and Jamaica Plain offer space, culture, and strong rental-yield potential",
+      "High-competition transactions amid cooled luxury segments elsewhere in Boston",
+      "Mixed-use and rowhome inventory rewards lenders who understand neighborhood dynamics",
+      "Rapid appreciation pockets demand fast closings on limited neighborhood stock"
+    ],
+    "breadcrumbLabel": "Boston Neighborhoods Hub",
+    "mortgageFile": "massachusettsLenders",
+    "countiesVar": "",
+    "areasVar": "HIGH_DEMAND_BOSTON_NEIGHBORHOODS_HUB_AREAS",
+    "lenderSlugsVar": "HIGH_DEMAND_BOSTON_NEIGHBORHOODS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Boston Neighborhoods — Start Here",
+    "whySectionTitle": "Why These Neighborhoods Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Boston Neighborhoods",
+    "countyLinkHref": "/lender/local-lenders/massachusetts/suffolk",
+    "countyLinkText": "Suffolk County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/massachusetts/gateway-cities-suburban-alternatives",
+        "label": "Gateway Cities Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/transit-oriented-urban-hotspots-somerville-cambridge",
+        "label": "Cambridge &amp; Somerville Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/metrowest-bread-and-butter-markets",
+        "label": "MetroWest Hub"
+      }
+    ],
+    "leadCaptureName": "Boston Neighborhoods"
+  },
+  "high-velocity-mid-city-core": {
+    "title": "Mid-City DC Mortgage Lenders — Logan Circle & Thomas Circle, Zip 20005 (2026)",
+    "description": "NMLS-verified mortgage lenders in DC Zip 20005. Historic rowhome and premium condo financing, Logan Circle and Thomas Circle, 14th Street corridor, ironclad demand, capped inventory, and nearly 13% price jumps.",
+    "h1": "Trusted Mortgage Lenders — Mid-City Core DC",
+    "badge": "NMLS Verified · High-Velocity Urban · Zip 20005 · Logan Circle &amp; Thomas Circle",
+    "subtitle": "Logan Circle and Thomas Circle lenders for renovated historic rowhomes and premium condos,\n            14th Street corridor lifestyle, and quick premium sales in capped-inventory Zip 20005.",
+    "bullets": [
+      "Ironclad demand for renovated historic rowhomes and premium turn-key condos",
+      "Logan Circle and Thomas Circle anchor walkable, nightlife-adjacent urban core living",
+      "14th Street corridor draws high-earning young professionals, lobbyists, and tech transplants",
+      "Structurally capped inventory drives nearly 13% price jumps and quick premium sales",
+      "Zip 20005 lenders must handle fast closings on limited mid-city stock"
+    ],
+    "breadcrumbLabel": "Mid-City Core Hub",
+    "mortgageFile": "districtOfColumbiaLenders",
+    "countiesVar": "",
+    "areasVar": "HIGH_VELOCITY_MID_CITY_CORE_HUB_AREAS",
+    "lenderSlugsVar": "HIGH_VELOCITY_MID_CITY_CORE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Mid-City Core — Start Here",
+    "whySectionTitle": "Why Mid-City Core Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Mid-City Core",
+    "countyLinkHref": "/lender/local-lenders/district-of-columbia/district-of-columbia",
+    "countyLinkText": "District of Columbia lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/district-of-columbia/upper-northwest-value-surge",
+        "label": "Upper Northwest Value Surge Hub"
+      },
+      {
+        "href": "/lender/local-lenders/district-of-columbia/first-time-buyer-waterfront-hubs",
+        "label": "First-Time Buyer &amp; Waterfront Hubs"
+      },
+      {
+        "href": "/lender/local-lenders/washington/snohomish-transit-corridor",
+        "label": "Snohomish Transit Corridor Hub"
+      },
+      {
+        "href": "/lender/local-lenders/texas/san-antonio-value-play",
+        "label": "San Antonio Value Play Hub"
+      }
+    ],
+    "leadCaptureName": "Mid-City Core"
+  },
+  "highly-competitive-chicago-suburbs": {
+    "title": "Chicago Suburbs Mortgage Lenders — Wheaton, Evanston & Collar Counties (2026)",
+    "description": "NMLS-verified mortgage lenders in DuPage, Cook, and Lake Counties. Wheaton 102.2% sale-to-list, 60%+ above-list sales, 41–44 day market times, and top-school district bidding wars.",
+    "h1": "Trusted Mortgage Lenders — Chicago Suburbs",
+    "badge": "NMLS Verified · Chicago Suburbs · Collar Counties",
+    "subtitle": "DuPage, Cook, and Lake county lenders for some of the highest sale-to-list ratios in the country —\n            Wheaton, Glen Ellyn, Mount Prospect, Oak Park, Evanston, and Arlington Heights.",
+    "bullets": [
+      "Wheaton ranks among the most competitive suburban markets with 60%+ above-list sales and 102.2% sale-to-list",
+      "Mount Prospect and Oak Park move at 41–44 days on market with immediate bidding wars",
+      "Evanston and Arlington Heights face roughly 2-month inventory supply, keeping sellers in control",
+      "Over 50% of homes sell above list price across premier collar county school districts",
+      "Fast closings and strong pre-approval letters are essential to win move-in-ready suburban stock"
+    ],
+    "breadcrumbLabel": "Chicago Suburbs Hub",
+    "mortgageFile": "illinoisLenders",
+    "countiesVar": "",
+    "areasVar": "HIGHLY_COMPETITIVE_CHICAGO_SUBURBS_HUB_AREAS",
+    "lenderSlugsVar": "HIGHLY_COMPETITIVE_CHICAGO_SUBURBS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Chicago Suburbs — Start Here",
+    "whySectionTitle": "Why Chicago Suburbs Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Chicago Suburbs",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/illinois/rockford-national-standout",
+        "label": "Rockford Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/chicago-proper-urban-resurgence",
+        "label": "Chicago Proper Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/central-illinois-affordability-gems",
+        "label": "Central IL Hub"
+      }
+    ],
+    "leadCaptureName": "Chicago Suburbs"
+  },
+  "hudson-river-gold-coast": {
+    "title": "Jersey City & Hoboken Mortgage Lenders — Hudson River Gold Coast (2026)",
+    "description": "NMLS-verified mortgage lenders in Jersey City and Hoboken. Return-to-office driven demand, 22.6% YoY luxury growth, rapid high-density absorption, and Hudson River waterfront financing.",
+    "h1": "Trusted Mortgage Lenders — Hudson River Gold Coast",
+    "badge": "NMLS Verified · Jersey City &amp; Hoboken · Gold Coast",
+    "subtitle": "Hudson County lenders for the Manhattan-adjacent waterfront powerhouse — return-to-office mandates,\n            luxury appreciation, and rapid absorption of high-density residential developments.",
+    "bullets": [
+      "Return-to-office mandates in Manhattan keep the Hudson River waterfront a powerhouse",
+      "Hoboken posted 22.6% year-over-year price growth for luxury properties",
+      "Jersey City continues absorbing new high-density residential developments at rapid speed",
+      "Waterfront luxury and commuter financing demand outpaces supply across Hudson County",
+      "Manhattan-adjacent proximity drives relentless buyer competition on Gold Coast listings"
+    ],
+    "breadcrumbLabel": "Hudson Gold Coast Hub",
+    "mortgageFile": "newJerseyLenders",
+    "countiesVar": "",
+    "areasVar": "HUDSON_RIVER_GOLD_COAST_HUB_AREAS",
+    "lenderSlugsVar": "HUDSON_RIVER_GOLD_COAST_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Gold Coast — Start Here",
+    "whySectionTitle": "Why the Hudson Gold Coast Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Hudson Gold Coast",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/new-jersey/national-superstars-suburban-velocity",
+        "label": "National Superstars Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/south-jersey-shore-surge",
+        "label": "South Jersey Shore Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/sweet-spot-commuter-towns",
+        "label": "Sweet Spot Commuter Hub"
+      }
+    ],
+    "leadCaptureName": "Hudson Gold Coast"
+  },
+  "inland-empire-affordability-magnets": {
+    "title": "Inland Empire Affordability Magnets Mortgage Lenders — Riverside & Moreno Valley, CA (2026)",
+    "description": "NMLS-verified mortgage lenders in the Inland Empire affordability corridor. Middle-income family financing, logistics-worker relocations, $625K–$710K medians, new construction, and fast closings in Riverside County.",
+    "h1": "Trusted Mortgage Lenders — Inland Empire Affordability Magnets",
+    "badge": "NMLS Verified · SoCal Affordability Valve · Riverside County Focus",
+    "subtitle": "Riverside and Moreno Valley lenders for logistics job growth, coastal spillover demand,\n            master-planned new homes, and middle-income families in California&apos;s high-transaction inland corridor.",
+    "bullets": [
+      "SoCal&apos;s affordability safety valve with 50%+ spillover from coastal priced-out buyers",
+      "$625K–$710K medians attract middle-income families and logistics/distribution workers",
+      "Massive transactional volume with compressed timelines in Riverside and Moreno Valley",
+      "Master-planned and distribution-adjacent new construction drives builder-lender demand",
+      "Community credit unions and fast-closing brokers compete in high-volume purchase corridors"
+    ],
+    "breadcrumbLabel": "Inland Empire Affordability Magnets Hub",
+    "mortgageFile": "californiaLenders",
+    "countiesVar": "",
+    "areasVar": "INLAND_EMPIRE_HUB_AREAS",
+    "lenderSlugsVar": "INLAND_EMPIRE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Inland Empire — Start Here",
+    "whySectionTitle": "Why Inland Empire Affordability Magnets Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Inland Empire Affordability Magnets",
+    "countyLinkHref": "/lender/local-lenders/california/riverside",
+    "countyLinkText": "Riverside County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/california/silicon-valley-spine",
+        "label": "Silicon Valley Spine Hub"
+      },
+      {
+        "href": "/lender/local-lenders/arizona/southeast-valley-pinal-border",
+        "label": "Southeast Valley &amp; Pinal Border Hub"
+      },
+      {
+        "href": "/lender/local-lenders/arizona/west-valley-boomtowns",
+        "label": "West Valley Boomtowns Hub"
+      }
+    ],
+    "leadCaptureName": "Inland Empire Affordability Magnets"
+  },
+  "jacksonville": {
+    "title": "Jacksonville Mortgage Lenders — Duval County & Northeast FL (2026)",
+    "description": "NMLS-verified mortgage lenders in Jacksonville. Award-winning local brokers, VA specialists near NAS Jax and Mayport, Navy Federal, and national lenders with local branches.",
+    "h1": "Trusted Mortgage Lenders in Jacksonville",
+    "badge": "NMLS Verified · Zero Paid Placements · Duval County Focus",
+    "subtitle": "Northeast Florida lenders with NAS Jacksonville and Mayport VA expertise, award-winning\n            local brokers, and affordable First Coast purchase and refinance options.",
+    "bullets": [
+      "NAS Jacksonville and Naval Station Mayport drive strong military and VA lending volume",
+      "Relative affordability vs. South Florida — different insurance and flood profiles",
+      "St. Johns, Clay, and Nassau suburban growth needs Northeast FL branch access",
+      "Physician and professional programs matter for local hospital and logistics workforce",
+      "Navy Federal membership is a common path for active-duty and veteran families"
+    ],
+    "breadcrumbLabel": "Jacksonville Hub",
+    "mortgageFile": "floridaLenders",
+    "countiesVar": "JACKSONVILLE_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "florida",
+      "duval"
+    ],
+    "featuredSectionTitle": "Duval County — Start Here",
+    "whySectionTitle": "Why Jacksonville Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": "/lender/local-lenders/florida/duval",
+    "countyLinkText": "{duvalLenders.length} Duval County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/florida/tampa-bay",
+        "label": "Tampa Bay Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/panhandle",
+        "label": "Florida Panhandle Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/south-florida",
+        "label": "South Florida Hub"
+      }
+    ],
+    "leadCaptureName": "Jacksonville"
+  },
+  "knoxville-east-tennessee": {
+    "title": "Knoxville & East Tennessee Mortgage Lenders — Knox, Blount & Sevier (2026)",
+    "description": "NMLS-verified mortgage lenders in Knoxville and East Tennessee. Farragut appreciation, Maryville retirees, Gatlinburg vacation rentals, VA programs, and tight-inventory expertise.",
+    "h1": "Trusted Mortgage Lenders — Knoxville &amp; East Tennessee",
+    "badge": "NMLS Verified · Appreciation &amp; Scenic Living · Knox County Focus",
+    "subtitle": "Knoxville, Farragut, Maryville, and Smoky Mountains lenders for 5%+ appreciation,\n            tight inventory, retiree relocations, and Gatlinburg vacation rental investment.",
+    "bullets": [
+      "Farragut and Knox suburbs seeing 24%+ price surges with tight listing inventory",
+      "Retiree and remote-worker influx drives Maryville and Blount County demand",
+      "Gatlinburg and Pigeon Forge short-term rental investors need specialized financing",
+      "Mountain-view and lake properties require lenders familiar with scenic collateral",
+      "Competitive low-inventory markets demand brokers with sub-30-day close records"
+    ],
+    "breadcrumbLabel": "Knoxville & East Tennessee Hub",
+    "mortgageFile": "tennesseeLenders",
+    "countiesVar": "KNOXVILLE_EAST_TN_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "KNOXVILLE_EAST_TN_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why East Tennessee Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Knoxville &amp; East Tennessee",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/tennessee/greater-nashville-metro",
+        "label": "Greater Nashville Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/north-carolina/research-triangle",
+        "label": "Research Triangle Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/middle-georgia",
+        "label": "Middle Georgia Hub"
+      }
+    ],
+    "leadCaptureName": "Knoxville & East Tennessee"
+  },
+  "lansing-multi-family-investor-magnet": {
+    "title": "Lansing Mortgage Lenders — Multi-Family & Investor Magnet (2026)",
+    "description": "NMLS-verified mortgage lenders in Lansing and East Lansing. Scorching rent growth, ~6% multi-family vacancy, $145K–$160K values, strong cap rates, and WSJ/Realtor.com emerging market status.",
+    "h1": "Trusted Mortgage Lenders — Lansing",
+    "badge": "NMLS Verified · Lansing-East Lansing · Investor Magnet",
+    "subtitle": "Ingham County lenders for the state capital&apos;s scorching rental and multi-family markets —\n            strong cap rates, low vacancy, and a top emerging market per Wall Street Journal/Realtor.com.",
+    "bullets": [
+      "Lansing-East Lansing features incredibly strong rent growth and ~6% multi-family vacancy",
+      "Average single-family values of $145K–$160K deliver exceptional cap rates for investors",
+      "Rapid turnarounds attract both investors and traditional buyers in a seller&apos;s market",
+      "Wall Street Journal/Realtor.com top emerging markets list validates capital region momentum",
+      "University-driven rental demand in East Lansing amplifies multi-family investment appeal"
+    ],
+    "breadcrumbLabel": "Lansing Hub",
+    "mortgageFile": "michiganLenders",
+    "countiesVar": "",
+    "areasVar": "LANSING_MULTI_FAMILY_INVESTOR_MAGNET_HUB_AREAS",
+    "lenderSlugsVar": "LANSING_MULTI_FAMILY_INVESTOR_MAGNET_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Lansing — Start Here",
+    "whySectionTitle": "Why Lansing Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Lansing",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/michigan/greater-detroits-value-pockets",
+        "label": "Greater Detroit Hub"
+      },
+      {
+        "href": "/lender/local-lenders/michigan/grand-rapids-fast-moving-core",
+        "label": "Grand Rapids Hub"
+      },
+      {
+        "href": "/lender/local-lenders/michigan/ann-arbor-kalamazoo-college-town-demand",
+        "label": "Ann Arbor &amp; Kalamazoo Hub"
+      }
+    ],
+    "leadCaptureName": "Lansing"
+  },
+  "lowcountry": {
+    "title": "Lowcountry Mortgage Lenders — Charleston Metro & Mt. Pleasant (2026)",
+    "description": "NMLS-verified mortgage lenders in the Charleston Lowcountry. Luxury jumbo condos, Boeing/Volvo relocations, non-warrantable coastal financing, and rapid upfront underwriting.",
+    "h1": "Trusted Mortgage Lenders — Lowcountry",
+    "badge": "NMLS Verified · Zero Paid Placements · Charleston Metro Focus",
+    "subtitle": "Charleston, Mt. Pleasant, and Summerville lenders for luxury condos, corporate relocations,\n            flood underwriting, and competitive coastal resale speed.",
+    "bullets": [
+      "Boeing, Volvo, and port sector relocations drive corporate purchase volume",
+      "Non-warrantable condos and strict coastal HOA rules require specialized lenders",
+      "Wind-pool and flood insurance contingencies must clear early in underwriting",
+      "Summerville and Mt. Pleasant listings move fast — upfront pre-approvals win offers",
+      "Historic downtown Charleston assets need tailored appraisal coordination"
+    ],
+    "breadcrumbLabel": "Lowcountry Hub",
+    "mortgageFile": "southCarolinaLenders",
+    "countiesVar": "LOWCOUNTRY_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "south-carolina",
+      "charleston"
+    ],
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why the Lowcountry Is Different",
+    "lendersSectionTitle": "Top Verified Lenders in Charleston County",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/south-carolina/grand-strand",
+        "label": "Grand Strand Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/coastal-savannah",
+        "label": "Coastal Savannah Hub"
+      }
+    ],
+    "leadCaptureName": "Lowcountry"
+  },
+  "metro-outer-ring": {
+    "title": "Metro Atlanta Outer Ring Mortgage Lenders — Henry County & Affordability Belt (2026)",
+    "description": "NMLS-verified mortgage lenders on Atlanta\\",
+    "h1": "Trusted Mortgage Lenders — Metro Atlanta Outer Ring",
+    "badge": "NMLS Verified · Zero Paid Placements · Henry County Focus",
+    "subtitle": "McDonough, Henry County, and Atlanta&apos;s Affordability Belt — first-time buyers,\n            down payment assistance, new-construction subdivisions, and USDA outer-ring programs.",
+    "bullets": [
+      "Starter-home sweet spot at $340K–$390K in high-growth McDonough subdivisions",
+      "Georgia down payment assistance (DPA) programs are critical for first-time buyers",
+      "Master-planned new construction needs early rate locks during builder contracts",
+      "USDA-eligible terrain extends into Paulding and further-out affordability rings",
+      "Self-employed and unique credit profiles benefit from independent wholesale brokers"
+    ],
+    "breadcrumbLabel": "Metro Outer Ring Hub",
+    "mortgageFile": "georgiaLenders",
+    "countiesVar": "METRO_OUTER_RING_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "georgia",
+      "henry"
+    ],
+    "featuredSectionTitle": "Henry County — Start Here",
+    "whySectionTitle": "Why the Outer Ring Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/georgia/north-atlanta",
+        "label": "North Atlanta Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/coastal-savannah",
+        "label": "Coastal Savannah Hub"
+      }
+    ],
+    "leadCaptureName": "Metro Outer Ring"
+  },
+  "metrowest-bread-and-butter-markets": {
+    "title": "MetroWest Mortgage Lenders — Framingham, Hudson & Natick Bread & Butter Markets (2026)",
+    "description": "NMLS-verified mortgage lenders in Framingham, Hudson, and Natick. Top-tier school districts, hybrid-work suburban balance, competitive single-family markets, and permanent Boston professional demand.",
+    "h1": "Trusted Mortgage Lenders — MetroWest MA",
+    "badge": "NMLS Verified · Bread &amp; Butter Suburbs · Framingham / Hudson / Natick",
+    "subtitle": "Framingham, Hudson, and Natick lenders for competitive single-family suburbs — top-tier schools,\n            manageable hybrid commutes, and the permanent hybrid-work reality for Boston professionals.",
+    "bullets": [
+      "Bread &amp; butter single-family markets with incredibly competitive suburban demand",
+      "Top-tier school systems in Framingham, Natick, and Hudson anchor family buyer interest",
+      "Permanent hybrid-work reality makes manageable Boston commutes a lasting priority",
+      "Boston professionals seeking ideal balance of space, schools, and commute access",
+      "Classic suburban inventory moves fast — lenders must match competitive closing pace"
+    ],
+    "breadcrumbLabel": "MetroWest Hub",
+    "mortgageFile": "massachusettsLenders",
+    "countiesVar": "",
+    "areasVar": "METROWEST_BREAD_AND_BUTTER_HUB_AREAS",
+    "lenderSlugsVar": "METROWEST_BREAD_AND_BUTTER_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "MetroWest — Start Here",
+    "whySectionTitle": "Why MetroWest Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — MetroWest",
+    "countyLinkHref": "/lender/local-lenders/massachusetts/middlesex",
+    "countyLinkText": "Middlesex County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/massachusetts/transit-oriented-urban-hotspots-somerville-cambridge",
+        "label": "Cambridge &amp; Somerville Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/gateway-cities-suburban-alternatives",
+        "label": "Gateway Cities Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/high-demand-boston-neighborhoods",
+        "label": "Boston Neighborhoods Hub"
+      }
+    ],
+    "leadCaptureName": "MetroWest"
+  },
+  "middle-georgia": {
+    "title": "Middle Georgia Mortgage Lenders — Augusta & Columbus / Fort Moore (2026)",
+    "description": "NMLS-verified mortgage lenders in Middle Georgia. Fort Eisenhower military and cyber relocations, Augusta CSRA VA specialists, Columbus first-time buyers, and Fort Moore renovation loans.",
+    "h1": "Trusted Mortgage Lenders — Middle Georgia",
+    "badge": "NMLS Verified · Zero Paid Placements · Augusta &amp; Columbus Focus",
+    "subtitle": "Augusta CSRA and Columbus metro lenders with Fort Eisenhower cyber relocations,\n            Fort Moore VA expertise, new construction, and first-time buyer programs.",
+    "bullets": [
+      "Fort Eisenhower drives military and cybersecurity contractor relocation volume in the CSRA",
+      "Evans and Grovetown new construction needs early rate locks during builder contracts",
+      "Columbus sees double-digit price growth in the $180K–$280K first-time buyer range",
+      "Fort Moore VA buyers need BAH-matched loans and deployment-flexible timelines",
+      "Historic Columbus homes benefit from single-close renovation mortgage products"
+    ],
+    "breadcrumbLabel": "Middle Georgia Hub",
+    "mortgageFile": "georgiaLenders",
+    "countiesVar": "MIDDLE_GEORGIA_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "georgia",
+      "richmond"
+    ],
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why Middle Georgia Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": "/lender/local-lenders/georgia/richmond",
+    "countyLinkText": "{richmondLenders.length} Richmond County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/georgia/coastal-savannah",
+        "label": "Coastal Savannah Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/metro-outer-ring",
+        "label": "Metro Outer Ring Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/north-atlanta",
+        "label": "North Atlanta Hub"
+      }
+    ],
+    "leadCaptureName": "Middle Georgia"
+  },
+  "national-superstars-suburban-velocity": {
+    "title": "Marlton & Wayne Mortgage Lenders — National Superstars Suburban Velocity (2026)",
+    "description": "NMLS-verified mortgage lenders in Marlton and Wayne. Realtor.com #2 and #5 hottest US ZIP codes, 17–19 day contracts, triple-average listing views, and immediate bidding wars.",
+    "h1": "Trusted Mortgage Lenders — National Superstars",
+    "badge": "NMLS Verified · Marlton &amp; Wayne · Suburban Velocity",
+    "subtitle": "Burlington and Passaic County lenders for two of America&apos;s hottest ZIP codes — extreme buyer demand,\n            blistering 17–19 day contracts, and I-295/Manhattan commuter sweet spots.",
+    "bullets": [
+      "Marlton ranked #2 and Wayne #5 on Realtor.com&apos;s hottest ZIP codes in America",
+      "Marlton properties receive nearly triple the national average for listing views",
+      "Homes go under contract in a mere 17–19 days in these suburban velocity markets",
+      "Wayne faces severe structural under-supply with immediate bidding wars on every listing",
+      "I-295 corridor Philly commuters and Manhattan transit routes drive relentless demand"
+    ],
+    "breadcrumbLabel": "National Superstars Hub",
+    "mortgageFile": "newJerseyLenders",
+    "countiesVar": "",
+    "areasVar": "NATIONAL_SUPERSTARS_SUBURBAN_VELOCITY_HUB_AREAS",
+    "lenderSlugsVar": "NATIONAL_SUPERSTARS_SUBURBAN_VELOCITY_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Marlton &amp; Wayne — Start Here",
+    "whySectionTitle": "Why Marlton &amp; Wayne Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — National Superstars",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/new-jersey/south-jersey-shore-surge",
+        "label": "South Jersey Shore Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/sweet-spot-commuter-towns",
+        "label": "Sweet Spot Commuter Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/hudson-river-gold-coast",
+        "label": "Hudson Gold Coast Hub"
+      }
+    ],
+    "leadCaptureName": "National Superstars"
+  },
+  "north-atlanta": {
+    "title": "North Atlanta Mortgage Lenders — Forsyth, Alpharetta & Johns Creek (2026)",
+    "description": "NMLS-verified mortgage lenders in North Atlanta suburbs. Johns Creek brokers, Alpharetta Avalon experts, Cumming new construction, and Forsyth County school-district financing.",
+    "h1": "Trusted Mortgage Lenders in North Atlanta",
+    "badge": "NMLS Verified · Zero Paid Placements · Forsyth County Focus",
+    "subtitle": "Alpharetta, Johns Creek, Suwanee, and Cumming lenders with top-school-district expertise,\n            tech relocation support, and new construction financing on the GA-400 corridor.",
+    "bullets": [
+      "Top-rated Forsyth and North Fulton schools drive premium $650K–$770K+ purchase volume",
+      "Tech and corporate relocations to Alpharetta, Avalon, and Johns Creek need fast pre-approvals",
+      "Cumming and Forsyth new construction requires builder-lender partnerships",
+      "Competitive offer timelines demand brokers with sub-30-day close track records",
+      "Jumbo and high-balance conventional loans are common in exurban luxury pockets"
+    ],
+    "breadcrumbLabel": "North Atlanta Hub",
+    "mortgageFile": "georgiaLenders",
+    "countiesVar": "NORTH_ATLANTA_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "georgia",
+      "forsyth"
+    ],
+    "featuredSectionTitle": "Forsyth County — Start Here",
+    "whySectionTitle": "Why North Atlanta Suburbs Are Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": "/lender/local-lenders/georgia/forsyth",
+    "countyLinkText": "{forsythLenders.length} Forsyth County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/georgia/metro-outer-ring",
+        "label": "Metro Outer Ring Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/coastal-savannah",
+        "label": "Coastal Savannah Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida",
+        "label": "Florida Regional Hubs"
+      }
+    ],
+    "leadCaptureName": "North Atlanta"
+  },
+  "nyc-boroughs-brooklyn-queens-manhattan": {
+    "title": "NYC Borough Mortgage Lenders — Brooklyn, Queens & Manhattan (2026)",
+    "description": "NMLS-verified mortgage lenders in Brooklyn, Queens, and Manhattan. Multi-family, condo and co-op financing, Southern Brooklyn rental yields, Astoria/LIC growth, and luxury co-op resurgence.",
+    "h1": "Trusted Mortgage Lenders — NYC Boroughs",
+    "badge": "NMLS Verified · NYC Boroughs · Brooklyn / Queens / Manhattan",
+    "subtitle": "Brooklyn, Queens, and Manhattan lenders for multi-family rental plays, aggressive Queens growth,\n            luxury co-op resurgence, and lean-inventory bidding wars.",
+    "bullets": [
+      "Southern Brooklyn rewards multi-family rental income and investor financing expertise",
+      "Queens corridors (Astoria, LIC, Flushing) show aggressive price growth and modern condo demand",
+      "Manhattan luxury co-op resurgence in a lean-inventory, high-competition environment",
+      "Borough-specific hot pockets require lenders who understand co-op boards and condo warrantability",
+      "Lean inventory and bidding wars demand fast closings on limited borough stock"
+    ],
+    "breadcrumbLabel": "NYC Boroughs Hub",
+    "mortgageFile": "newYorkLenders",
+    "countiesVar": "",
+    "areasVar": "NYC_BOROUGHS_HUB_AREAS",
+    "lenderSlugsVar": "NYC_BOROUGHS_BROOKLYN_QUEENS_MANHATTAN_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "NYC Boroughs — Start Here",
+    "whySectionTitle": "Why NYC Boroughs Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — NYC Boroughs",
+    "countyLinkHref": "/lender/local-lenders/new-york/kings",
+    "countyLinkText": "Kings County (Brooklyn) lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/new-york/nyc-suburbs-westchester-putnam",
+        "label": "NYC Suburbs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-york/upstate-powerhouses-buffalo-albany",
+        "label": "Upstate Powerhouses Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/high-demand-boston-neighborhoods",
+        "label": "Boston Neighborhoods Hub"
+      }
+    ],
+    "leadCaptureName": "NYC Boroughs"
+  },
+  "nyc-suburbs-westchester-putnam": {
+    "title": "NYC Suburbs Mortgage Lenders — Westchester & Putnam Counties (2026)",
+    "description": "NMLS-verified mortgage lenders in White Plains, New Rochelle, and Putnam County. Tri-State surge, 56%+ over-asking sales, 102%+ sale-to-list, and suburban safety valve for Manhattan/Brooklyn buyers.",
+    "h1": "Trusted Mortgage Lenders — NYC Suburbs",
+    "badge": "NMLS Verified · Tri-State Surge · Westchester &amp; Putnam",
+    "subtitle": "White Plains, New Rochelle, and Putnam County lenders for buyers priced out of Manhattan and Brooklyn —\n            over-asking premiums, limited inventory, and double-digit suburban price gains.",
+    "bullets": [
+      "White Plains and New Rochelle rank highly on national market heat indexes",
+      "Over 56% of homes sell above asking with 102%+ average sale-to-list in Westchester",
+      "Putnam County offers a more affordable alternative with ~11% year-over-year median gains",
+      "Major safety valve for Manhattan and Brooklyn buyers competing for limited suburban stock",
+      "Tri-State commuter access rewards lenders who understand relocation financing urgency"
+    ],
+    "breadcrumbLabel": "NYC Suburbs Hub",
+    "mortgageFile": "newYorkLenders",
+    "countiesVar": "",
+    "areasVar": "NYC_SUBURBS_HUB_AREAS",
+    "lenderSlugsVar": "NYC_SUBURBS_WESTCHESTER_PUTNAM_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "NYC Suburbs — Start Here",
+    "whySectionTitle": "Why NYC Suburbs Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — NYC Suburbs",
+    "countyLinkHref": "/lender/local-lenders/new-york/westchester",
+    "countyLinkText": "Westchester County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/new-york/nyc-boroughs-brooklyn-queens-manhattan",
+        "label": "NYC Boroughs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-york/upstate-powerhouses-buffalo-albany",
+        "label": "Upstate Powerhouses Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/high-demand-boston-neighborhoods",
+        "label": "Boston Neighborhoods Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/metrowest-bread-and-butter-markets",
+        "label": "MetroWest Hub"
+      }
+    ],
+    "leadCaptureName": "NYC Suburbs"
+  },
+  "panhandle": {
+    "title": "Florida Panhandle Mortgage Lenders — Bay County & Emerald Coast (2026)",
+    "description": "NMLS-verified mortgage lenders in the Florida Panhandle. Panama City brokers, Eglin VA specialists, Navy communities, credit unions, and Emerald Coast beach financing.",
+    "h1": "Trusted Mortgage Lenders in the Florida Panhandle",
+    "badge": "NMLS Verified · Zero Paid Placements · Bay County Focus",
+    "subtitle": "Emerald Coast lenders with Eglin and NAS Pensacola VA expertise, Panama City Beach\n            brokers, military credit unions, and retirement and second-home financing.",
+    "bullets": [
+      "NAS Pensacola, Eglin AFB, and Hurlburt Field drive heavy VA and military lending volume",
+      "Panama City Beach and 30A bring second-home, tourism, and investor financing needs",
+      "Hurricane and wind coverage shape insurance math differently than inland Florida metros",
+      "Retirement and relocation buyers value local credit unions and long-tenured brokers",
+      "Escambia, Okaloosa, and Walton reach expanding beyond Bay County core"
+    ],
+    "breadcrumbLabel": "Florida Panhandle Hub",
+    "mortgageFile": "floridaLenders",
+    "countiesVar": "PANHANDLE_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "florida",
+      "bay"
+    ],
+    "featuredSectionTitle": "Bay County — Start Here",
+    "whySectionTitle": "Why the Panhandle Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": "/lender/local-lenders/florida/bay",
+    "countyLinkText": "{bayLenders.length} Bay County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/florida/jacksonville",
+        "label": "Jacksonville Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/tampa-bay",
+        "label": "Tampa Bay Hub"
+      }
+    ],
+    "leadCaptureName": "Florida Panhandle"
+  },
+  "philadelphia-metro-area-collar-counties": {
+    "title": "Philadelphia Metro Mortgage Lenders — Collar Counties (2026)",
+    "description": "NMLS-verified mortgage lenders in Philadelphia, Montgomery, Chester, and Bucks Counties. #6 hottest US market, 41%+ above-asking sales, collar county bidding wars, and NYC/DC affordability.",
+    "h1": "Trusted Mortgage Lenders — Philadelphia Metro",
+    "badge": "NMLS Verified · Philadelphia Metro · Collar Counties",
+    "subtitle": "Philadelphia and collar county lenders for the #6 hottest US housing market — intense bidding wars,\n            move-in-ready demand, and affordability relative to NYC and DC.",
+    "bullets": [
+      "Philadelphia Metro ranks as the #6 hottest US housing market with 41%+ above-asking sales",
+      "Inventory sits roughly 39% below pre-pandemic levels, amplifying seller leverage",
+      "Montgomery, Chester, and Bucks collar counties drive suburban bidding wars on move-in-ready homes",
+      "NYC and DC relocators seek affordability without sacrificing suburban amenities",
+      "Lean inventory rewards lenders who close quickly on competitive collar county stock"
+    ],
+    "breadcrumbLabel": "Philadelphia Metro Hub",
+    "mortgageFile": "pennsylvaniaLenders",
+    "countiesVar": "",
+    "areasVar": "PHILADELPHIA_METRO_HUB_AREAS",
+    "lenderSlugsVar": "PHILADELPHIA_METRO_AREA_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Philadelphia Metro — Start Here",
+    "whySectionTitle": "Why Philadelphia Metro Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Philadelphia Metro",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/pennsylvania/greater-pittsburgh-key-suburbs",
+        "label": "Greater Pittsburgh Hub"
+      },
+      {
+        "href": "/lender/local-lenders/pennsylvania/central-eastern-pa-affordability-havens",
+        "label": "Central/Eastern PA Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-york/nyc-suburbs-westchester-putnam",
+        "label": "NYC Suburbs Hub"
+      }
+    ],
+    "leadCaptureName": "Philadelphia Metro"
+  },
+  "piedmont-triad": {
+    "title": "Piedmont Triad Mortgage Lenders — Greensboro & Winston-Salem (2026)",
+    "description": "NMLS-verified mortgage lenders in the Piedmont Triad. Affordable $283K–$315K entry, equity-building markets, first-time buyers, and investor-friendly fast closings in Guilford and Forsyth.",
+    "h1": "Trusted Mortgage Lenders — Piedmont Triad",
+    "badge": "NMLS Verified · Guilford &amp; Forsyth Focus",
+    "subtitle": "Greensboro, Winston-Salem, and High Point lenders for affordable entry-level homes,\n            12.5%+ appreciation, new construction, and retiree-friendly equity markets.",
+    "bullets": [],
+    "breadcrumbLabel": "Piedmont Triad Hub",
+    "mortgageFile": "northCarolinaLenders",
+    "countiesVar": "PIEDMONT_TRIAD_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "north-carolina",
+      "guilford"
+    ],
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": null,
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/north-carolina/charlotte-metro",
+        "label": "Charlotte Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/north-carolina/research-triangle",
+        "label": "Research Triangle Hub"
+      }
+    ],
+    "leadCaptureName": "Piedmont Triad"
+  },
+  "research-triangle": {
+    "title": "Research Triangle Mortgage Lenders — Raleigh, Durham & Cary (2026)",
+    "description": "NMLS-verified mortgage lenders in the Research Triangle. Tech and education relocations, Cary/Apex suburbs, same-as-cash approvals, and competitive Wake County financing.",
+    "h1": "Trusted Mortgage Lenders — Research Triangle",
+    "badge": "NMLS Verified · Wake &amp; Durham Focus",
+    "subtitle": "Raleigh-Durham-Chapel Hill lenders for tech, healthcare, and university relocations —\n            Cary, Apex, Fuquay-Varina, and $447K Raleigh median markets.",
+    "bullets": [],
+    "breadcrumbLabel": "Research Triangle Hub",
+    "mortgageFile": "northCarolinaLenders",
+    "countiesVar": "RESEARCH_TRIANGLE_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "north-carolina",
+      "wake"
+    ],
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": null,
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/north-carolina/charlotte-metro",
+        "label": "Charlotte Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/north-carolina/piedmont-triad",
+        "label": "Piedmont Triad Hub"
+      }
+    ],
+    "leadCaptureName": "Research Triangle"
+  },
+  "rockford-national-standout": {
+    "title": "Rockford Mortgage Lenders — #1 US Home Shopping Market (2026)",
+    "description": "NMLS-verified mortgage lenders in Rockford and Winnebago County. Zillow #1 most popular US city, 11-day median contracts, 60%+ out-of-town buyers, and nearly 50% above-list sales.",
+    "h1": "Trusted Mortgage Lenders — Rockford",
+    "badge": "NMLS Verified · Rockford · National Standout",
+    "subtitle": "Winnebago County lenders for Zillow&apos;s #1 most popular US home shopping city — Chicago spillover demand,\n            11-day median contracts, and nearly 50% above-list sales.",
+    "bullets": [
+      "Rockford ranks as Zillow&apos;s #1 most popular city for home shoppers in the entire United States",
+      "Over 60% of listing views come from out-of-town buyers priced out of the Chicago metro",
+      "Homes routinely go under contract in a median of just 11 days",
+      "Nearly 50% of properties sell above the original list price",
+      "Accessible entry point 90 minutes northwest of Chicago without collar-county price tags"
+    ],
+    "breadcrumbLabel": "Rockford Hub",
+    "mortgageFile": "illinoisLenders",
+    "countiesVar": "",
+    "areasVar": "ROCKFORD_NATIONAL_STANDOUT_HUB_AREAS",
+    "lenderSlugsVar": "ROCKFORD_NATIONAL_STANDOUT_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Rockford — Start Here",
+    "whySectionTitle": "Why Rockford Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Rockford",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/illinois/highly-competitive-chicago-suburbs",
+        "label": "Chicago Suburbs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/chicago-proper-urban-resurgence",
+        "label": "Chicago Proper Hub"
+      },
+      {
+        "href": "/lender/local-lenders/illinois/central-illinois-affordability-gems",
+        "label": "Central IL Hub"
+      }
+    ],
+    "leadCaptureName": "Rockford"
+  },
+  "san-antonio-value-play": {
+    "title": "San Antonio Mortgage Lenders — Value Play Alternative, Bexar County (2026)",
+    "description": "NMLS-verified mortgage lenders in San Antonio. Cash-flow investor financing, military and defense community programs, stable renter pool from 240,000+ defense jobs, leveled pricing, and accessible major-metro value plays.",
+    "h1": "Trusted Mortgage Lenders — San Antonio",
+    "badge": "NMLS Verified · Military &amp; Cash-Flow · Bexar County Focus",
+    "subtitle": "San Antonio lenders for cash-flow investors, military families, and value-oriented buyers\n            in a leveled, accessible major metro anchored by a massive defense-related renter pool.",
+    "bullets": [
+      "Leveled pricing and accessibility as a major-metro value alternative to DFW and Houston",
+      "240,000+ defense-related jobs create a massive, stable built-in renter pool",
+      "Cash-flow investor demand supported by military families and healthcare employment",
+      "Stone Oak and UTSA corridor suburbs absorb consistent workforce housing volume",
+      "VA and defense-community lenders essential for the nation&apos;s largest military footprint"
+    ],
+    "breadcrumbLabel": "San Antonio Value Play Hub",
+    "mortgageFile": "texasLenders",
+    "countiesVar": "",
+    "areasVar": "SAN_ANTONIO_VALUE_PLAY_HUB_AREAS",
+    "lenderSlugsVar": "SAN_ANTONIO_VALUE_PLAY_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "San Antonio Metro — Start Here",
+    "whySectionTitle": "Why San Antonio Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — San Antonio",
+    "countyLinkHref": "/lender/local-lenders/texas/bexar",
+    "countyLinkText": "Bexar County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/texas/dfw-suburbs-silicon-prairie",
+        "label": "DFW Silicon Prairie Hub"
+      },
+      {
+        "href": "/lender/local-lenders/texas/greater-houston-metro",
+        "label": "Greater Houston Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/colorado-springs-stability-volume",
+        "label": "Colorado Springs Hub"
+      }
+    ],
+    "leadCaptureName": "San Antonio Value Play"
+  },
+  "silicon-valley-spine": {
+    "title": "Silicon Valley Spine Mortgage Lenders — San Jose & Cupertino, CA (2026)",
+    "description": "NMLS-verified mortgage lenders in Silicon Valley Spine. Jumbo and high-net-worth financing, RSU stock compensation, 12–13 day DOM, 65–68% above-list offers, and ultra-competitive Santa Clara County closings.",
+    "h1": "Trusted Mortgage Lenders — Silicon Valley Spine",
+    "badge": "NMLS Verified · Jumbo &amp; Tech Corridor · Santa Clara County Focus",
+    "subtitle": "San Jose and Cupertino lenders for AI and semiconductor professionals, stock-compensation buyers,\n            multiple-offer dynamics, and premium properties in North America&apos;s most competitive corridor.",
+    "bullets": [
+      "12–13 days on market with 65–68% of sales closing above list price",
+      "$1.5M+ medians driven by AI funding, semiconductor growth, and cash-heavy buyer pools",
+      "RSU and stock-liquidity income requires jumbo and portfolio underwriting expertise",
+      "Multiple-offer, non-contingent contracts demand fast closings and pre-underwritten strength",
+      "Tech-employee credit unions and private bank arms compete with national retail lenders"
+    ],
+    "breadcrumbLabel": "Silicon Valley Spine Hub",
+    "mortgageFile": "californiaLenders",
+    "countiesVar": "",
+    "areasVar": "SILICON_VALLEY_HUB_AREAS",
+    "lenderSlugsVar": "SILICON_VALLEY_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Silicon Valley Spine — Start Here",
+    "whySectionTitle": "Why Silicon Valley Spine Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Silicon Valley Spine",
+    "countyLinkHref": "/lender/local-lenders/california/santa-clara",
+    "countyLinkText": "Santa Clara County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/north-carolina/research-triangle",
+        "label": "Research Triangle Hub"
+      },
+      {
+        "href": "/lender/local-lenders/arizona/west-valley-boomtowns",
+        "label": "West Valley Boomtowns Hub"
+      },
+      {
+        "href": "/lender/local-lenders/tennessee/greater-nashville-metro",
+        "label": "Greater Nashville Metro Hub"
+      }
+    ],
+    "leadCaptureName": "Silicon Valley Spine"
+  },
+  "snohomish-transit-corridor": {
+    "title": "Snohomish County Mortgage Lenders — Lynnwood & Everett Transit Corridor (2026)",
+    "description": "NMLS-verified mortgage lenders in Snohomish County. Link light rail commuter financing, Boeing and aerospace professionals, transit-station proximity demand, single-family options below Seattle medians, and north Sound corridor growth.",
+    "h1": "Trusted Mortgage Lenders — Snohomish Transit Corridor",
+    "badge": "NMLS Verified · Light Rail &amp; Aerospace · Snohomish County Focus",
+    "subtitle": "Lynnwood and Everett lenders for light rail commuters, Boeing and aerospace professionals,\n            and single-family buyers seeking options below Seattle medians in the north Sound corridor.",
+    "bullets": [
+      "Link light rail extension creates the &quot;Light Rail Effect&quot; near Lynnwood and Mountlake Terrace stations",
+      "Boeing-anchored Everett jobs drive robust aerospace and tech commuter demand",
+      "Single-family options below Seattle medians attract steady north corridor absorption",
+      "Transit-oriented development rapidly absorbs station-adjacent housing inventory",
+      "Water views and family suburbs in Everett complement Lynnwood commuter growth"
+    ],
+    "breadcrumbLabel": "Snohomish Transit Corridor Hub",
+    "mortgageFile": "washingtonLenders",
+    "countiesVar": "",
+    "areasVar": "SNOHOMISH_TRANSIT_CORRIDOR_HUB_AREAS",
+    "lenderSlugsVar": "SNOHOMISH_TRANSIT_CORRIDOR_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "North Sound Corridor — Start Here",
+    "whySectionTitle": "Why Snohomish County Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Snohomish Corridor",
+    "countyLinkHref": "/lender/local-lenders/washington/snohomish",
+    "countyLinkText": "Snohomish County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/california/silicon-valley-spine",
+        "label": "Silicon Valley Spine Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/denver-metro-outer-rings-north-suburbs",
+        "label": "Denver Metro Outer Rings Hub"
+      },
+      {
+        "href": "/lender/local-lenders/texas/san-antonio-value-play",
+        "label": "San Antonio Value Play Hub"
+      }
+    ],
+    "leadCaptureName": "Snohomish Transit Corridor"
+  },
+  "south-florida": {
+    "title": "South Florida Mortgage Lenders — Miami, Broward, Palm Beach (2026)",
+    "description": "NMLS-verified mortgage brokers in South Florida. Compare local experts for coastal condos, VA loans, foreign national financing, and first-time buyer programs.",
+    "h1": "Discover Trusted Local Lenders in South Florida",
+    "badge": "NMLS Verified · Zero Paid Placements · Updated June 2026",
+    "subtitle": "Miami-Dade, Broward, Palm Beach &amp; beyond — verified brokers who understand coastal\n            insurance, condo approvals, international buyers, and competitive contract timelines.",
+    "bullets": [
+      "Wind mitigation and HO-6 insurance change real affordability math",
+      "High-rise condo approval lists vary by building and lender",
+      "Foreign national and ITIN programs are mainstream in Miami-Dade and Broward",
+      "FAR/BAR contract clocks favor lenders who close on time"
+    ],
+    "breadcrumbLabel": "South Florida Hub",
+    "mortgageFile": "floridaLenders",
+    "countiesVar": "SOUTH_FLORIDA_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "state",
+    "countyArg": null,
+    "featuredSectionTitle": "Featured Counties",
+    "whySectionTitle": "Why South Florida Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": "/lender/local-lenders/florida",
+    "countyLinkText": "Florida lenders →",
+    "alsoExplore": [],
+    "leadCaptureName": "South Florida"
+  },
+  "south-jersey-shore-surge": {
+    "title": "Wildwood & Ocean City Mortgage Lenders — South Jersey Shore Surge (2026)",
+    "description": "NMLS-verified mortgage lenders in Wildwood, North Wildwood, Ocean City, and Ventnor City. 54–60% YoY price spikes, $1.4M+ Ocean City medians, and ultra-luxury shore battlegrounds.",
+    "h1": "Trusted Mortgage Lenders — South Jersey Shore",
+    "badge": "NMLS Verified · Cape May County · Shore Surge",
+    "subtitle": "Cape May County lenders for the state&apos;s highest year-over-year appreciation — luxury buyers,\n            vacation-rental investors, and unprecedented coastal growth along the southern shoreline.",
+    "bullets": [
+      "Wildwood registered a staggering 54–60% year-over-year price spike past $600K medians",
+      "Ocean City average sale prices breached $1.4 million with 25%+ year-over-year growth",
+      "Ventnor City saw a 60% jump in average sale prices to nearly $963,000",
+      "Luxury buyers and vacation-rental investors drive unprecedented coastal demand",
+      "Wildwood ranks among the top 10 hottest real estate markets in the country"
+    ],
+    "breadcrumbLabel": "South Jersey Shore Hub",
+    "mortgageFile": "newJerseyLenders",
+    "countiesVar": "",
+    "areasVar": "SOUTH_JERSEY_SHORE_SURGE_HUB_AREAS",
+    "lenderSlugsVar": "SOUTH_JERSEY_SHORE_SURGE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Shore Surge — Start Here",
+    "whySectionTitle": "Why the South Jersey Shore Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — South Jersey Shore",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/new-jersey/national-superstars-suburban-velocity",
+        "label": "National Superstars Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/sweet-spot-commuter-towns",
+        "label": "Sweet Spot Commuter Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/hudson-river-gold-coast",
+        "label": "Hudson Gold Coast Hub"
+      }
+    ],
+    "leadCaptureName": "South Jersey Shore"
+  },
+  "south-sound-tacoma-puyallup": {
+    "title": "South Sound Mortgage Lenders — Tacoma & Puyallup, Pierce County (2026)",
+    "description": "NMLS-verified mortgage lenders in Pierce County. Tacoma historic charm, Puyallup master-planned growth, Sounder train commuters, JBLM military families, and affordability safety valve roughly $300K below King County medians.",
+    "h1": "Trusted Mortgage Lenders — South Sound",
+    "badge": "NMLS Verified · Commuter &amp; Military · Pierce County Focus",
+    "subtitle": "Tacoma and Puyallup lenders for historic North End charm, suburban powerhouse growth,\n            Sounder rail commuters, and JBLM military families in Pierce County&apos;s affordability safety valve.",
+    "bullets": [
+      "Pierce County medians near $564K — roughly $300K below King County as a priced-out safety valve",
+      "Tacoma North End and Proctor offer historic charm with steady Seattle commuter demand",
+      "Puyallup master-planned communities and excellent schools drive suburban powerhouse growth",
+      "Sounder train corridor supports efficient Seattle commuter relocations",
+      "Joint Base Lewis-McChord proximity creates robust VA and military family lending demand"
+    ],
+    "breadcrumbLabel": "South Sound Hub",
+    "mortgageFile": "washingtonLenders",
+    "countiesVar": "",
+    "areasVar": "SOUTH_SOUND_TACOMA_PUYALLUP_HUB_AREAS",
+    "lenderSlugsVar": "SOUTH_SOUND_TACOMA_PUYALLUP_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "South Sound — Start Here",
+    "whySectionTitle": "Why South Sound Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — South Sound",
+    "countyLinkHref": "/lender/local-lenders/washington/pierce",
+    "countyLinkText": "Pierce County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/washington/snohomish-transit-corridor",
+        "label": "Snohomish Transit Corridor Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/colorado-springs-stability-volume",
+        "label": "Colorado Springs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/texas/san-antonio-value-play",
+        "label": "San Antonio Value Play Hub"
+      }
+    ],
+    "leadCaptureName": "South Sound"
+  },
+  "southeast-valley-pinal-border": {
+    "title": "Southeast Valley Mortgage Lenders — Queen Creek & San Tan Valley, AZ (2026)",
+    "description": "NMLS-verified mortgage lenders on the Maricopa/Pinal border. Queen Creek new construction, San Tan Valley family spillover, 50%+ growth, and accessible East Valley financing.",
+    "h1": "Trusted Mortgage Lenders — Southeast Valley &amp; Pinal Border",
+    "badge": "NMLS Verified · Family-Centric Growth · Queen Creek Focus",
+    "subtitle": "Queen Creek and San Tan Valley lenders for 50%+ population surge, Queen Creek Marketplace,\n            premium suburban amenities, and affordable new-construction spillover on the Maricopa/Pinal line.",
+    "bullets": [
+      "Queen Creek and San Tan Valley lead Arizona with 50%+ population growth corridors",
+      "Queen Creek Marketplace and new schools drive premium suburban amenity demand",
+      "San Tan Valley offers more affordable new-construction spillover on the Pinal border",
+      "Tech and infrastructure expansions attract family relocations from central Phoenix",
+      "Fast-closing brokers win competitive offers in high-transaction master-planned communities"
+    ],
+    "breadcrumbLabel": "Southeast Valley & Pinal Border Hub",
+    "mortgageFile": "arizonaLenders",
+    "countiesVar": "",
+    "areasVar": "SOUTHEAST_VALLEY_HUB_AREAS",
+    "lenderSlugsVar": "SOUTHEAST_VALLEY_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Areas — Start Here",
+    "whySectionTitle": "Why Southeast Valley Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Southeast Valley &amp; Pinal Border",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/arizona/west-valley-boomtowns",
+        "label": "West Valley Boomtowns Hub"
+      },
+      {
+        "href": "/lender/local-lenders/tennessee/greater-nashville-metro",
+        "label": "Greater Nashville Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/central-florida",
+        "label": "Central Florida Hub"
+      }
+    ],
+    "leadCaptureName": "Southeast Valley & Pinal Border"
+  },
+  "southwest-washington-portland-border": {
+    "title": "Vancouver Mortgage Lenders — Southwest Washington / Portland Border, Clark County (2026)",
+    "description": "NMLS-verified mortgage lenders in Clark County. Tax-advantage relocation, waterfront revitalization, remote workers and retirees, cross-river commuters, and Portland cost-of-living spillover in Vancouver.",
+    "h1": "Trusted Mortgage Lenders — Vancouver / Portland Border",
+    "badge": "NMLS Verified · Tax Advantage &amp; Waterfront · Clark County Focus",
+    "subtitle": "Vancouver lenders for tax-haven lifestyle migration, downtown waterfront revitalization,\n            and high transactional volume from remote workers, retirees, and Portland spillover buyers.",
+    "bullets": [
+      "No Washington income tax plus Oregon sales-tax shopping creates a unique tax-haven financial setup",
+      "Massive downtown Vancouver waterfront revitalization drives urban-infill lending demand",
+      "Remote workers, retirees, and families flee Portland&apos;s higher cost of living across the Columbia River",
+      "High transactional volume from Portland spillover requires fast-closing broker expertise",
+      "Columbia River access and lifestyle appeal anchor one of the PNW&apos;s fastest-growing border markets"
+    ],
+    "breadcrumbLabel": "Portland Border Hub",
+    "mortgageFile": "washingtonLenders",
+    "countiesVar": "",
+    "areasVar": "SOUTHWEST_WA_PORTLAND_BORDER_HUB_AREAS",
+    "lenderSlugsVar": "SOUTHWEST_WA_PORTLAND_BORDER_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Southwest Washington — Start Here",
+    "whySectionTitle": "Why Vancouver Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Vancouver",
+    "countyLinkHref": "/lender/local-lenders/washington/clark",
+    "countyLinkText": "Clark County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/washington/snohomish-transit-corridor",
+        "label": "Snohomish Transit Corridor Hub"
+      },
+      {
+        "href": "/lender/local-lenders/washington/south-sound-tacoma-puyallup",
+        "label": "South Sound Hub"
+      },
+      {
+        "href": "/lender/local-lenders/california/inland-empire-affordability-magnets",
+        "label": "Inland Empire Affordability Hub"
+      }
+    ],
+    "leadCaptureName": "Portland Border"
+  },
+  "spacex-corridor-sleepy-town-booms": {
+    "title": "SpaceX Corridor Mortgage Lenders — Bastrop & Brownsville Sleepy Town Booms (2026)",
+    "description": "NMLS-verified mortgage lenders in the SpaceX Corridor. Bastrop SpaceX/Starlink relocations, Brownsville Starbase workforce housing, engineering tech workers, rural-to-boom financing, and hyper-dense employment hub transitions.",
+    "h1": "Trusted Mortgage Lenders — SpaceX Corridor",
+    "badge": "NMLS Verified · Tech &amp; Starbase · Bastrop &amp; Cameron Focus",
+    "subtitle": "Bastrop and Brownsville lenders for SpaceX ecosystem workers, Starbase development,\n            engineering relocations, and sleepy towns transforming into hyper-dense employment hubs.",
+    "bullets": [
+      "SpaceX, Starlink, and Boring Company jobs transform Bastrop from rural to employment hub",
+      "Starbase drives immense transactional velocity in Brownsville and Southmost",
+      "High-earning engineering workers create jumbo and workforce housing demand",
+      "Rural affordability rapidly shifting to hyper-dense boomtown dynamics",
+      "Fast-closing brokers essential for industrial job creation pressure in both counties"
+    ],
+    "breadcrumbLabel": "SpaceX Corridor Hub",
+    "mortgageFile": "texasLenders",
+    "countiesVar": "SPACEX_CORRIDOR_HUB_COUNTIES",
+    "areasVar": "SPACEX_CORRIDOR_HUB_AREAS",
+    "lenderSlugsVar": "SPACEX_CORRIDOR_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": "Why the SpaceX Corridor Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — SpaceX Corridor",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/texas/dfw-suburbs-silicon-prairie",
+        "label": "DFW Silicon Prairie Hub"
+      },
+      {
+        "href": "/lender/local-lenders/texas/greater-houston-metro",
+        "label": "Greater Houston Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/california/silicon-valley-spine",
+        "label": "Silicon Valley Spine Hub"
+      }
+    ],
+    "leadCaptureName": "SpaceX Corridor"
+  },
+  "sweet-spot-commuter-towns": {
+    "title": "Cranford & Montclair Mortgage Lenders — Sweet Spot Commuter Towns (2026)",
+    "description": "NMLS-verified mortgage lenders in Cranford, Rahway, Edison, New Brunswick, Montclair, and Maplewood. 95%+ above-ask sales, 11–13 day contracts, Helix bio-tech growth, and direct rail to Manhattan.",
+    "h1": "Trusted Mortgage Lenders — Sweet Spot Commuter Towns",
+    "badge": "NMLS Verified · Union/Middlesex/Essex · Commuter Sweet Spots",
+    "subtitle": "North and Central Jersey lenders for walkable downtowns with direct rail to Manhattan —\n            Cranford, Rahway, Edison, Montclair, and Maplewood seeing immense buyer momentum.",
+    "bullets": [
+      "More than 95% of listings sell above ask across these high-momentum commuter corridors",
+      "Cranford homes sell in just 13 days with a $795K median on the Raritan Valley line",
+      "Rahway offers a $525K entry point as the premier emerging value play",
+      "Edison and New Brunswick surge past $605K driven by the Helix bio-tech district",
+      "Montclair and Maplewood see 11-day pending times with 105%+ sale-to-list ratios"
+    ],
+    "breadcrumbLabel": "Sweet Spot Commuter Hub",
+    "mortgageFile": "newJerseyLenders",
+    "countiesVar": "",
+    "areasVar": "SWEET_SPOT_COMMUTER_TOWNS_HUB_AREAS",
+    "lenderSlugsVar": "SWEET_SPOT_COMMUTER_TOWNS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Commuter Sweet Spots — Start Here",
+    "whySectionTitle": "Why These Commuter Towns Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Sweet Spot Commuter Towns",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/new-jersey/national-superstars-suburban-velocity",
+        "label": "National Superstars Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/south-jersey-shore-surge",
+        "label": "South Jersey Shore Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-jersey/hudson-river-gold-coast",
+        "label": "Hudson Gold Coast Hub"
+      }
+    ],
+    "leadCaptureName": "Sweet Spot Commuter"
+  },
+  "tampa-bay": {
+    "title": "Tampa Bay Mortgage Lenders — Hillsborough County & MacDill VA (2026)",
+    "description": "NMLS-verified mortgage lenders in Tampa Bay. Independent brokers, VA specialists near MacDill, fast-closing teams, and national lenders with local Tampa branches.",
+    "h1": "Trusted Mortgage Lenders in Tampa Bay",
+    "badge": "NMLS Verified · Zero Paid Placements · Hillsborough County Focus",
+    "subtitle": "Hillsborough County lenders with MacDill VA expertise, Wesley Chapel suburban growth\n            knowledge, first-responder programs, and fast-closing local brokers.",
+    "bullets": [
+      "MacDill AFB drives strong VA purchase and refinance volume across South Tampa",
+      "Wesley Chapel, Land O Lakes, and New Tampa suburban growth needs local branch access",
+      "First responders, educators, and nurses benefit from niche broker programs",
+      "Refinance volume runs high — competitive rate shopping matters more than in Orlando",
+      "Pinellas and Pasco reach expanding; Hillsborough remains the metro lending core"
+    ],
+    "breadcrumbLabel": "Tampa Bay Hub",
+    "mortgageFile": "floridaLenders",
+    "countiesVar": "TAMPA_BAY_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "florida",
+      "hillsborough"
+    ],
+    "featuredSectionTitle": "Hillsborough County — Start Here",
+    "whySectionTitle": "Why Tampa Bay Is Different",
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": "/lender/local-lenders/florida/hillsborough",
+    "countyLinkText": "{hillsboroughLenders.length} Hillsborough County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/florida/south-florida",
+        "label": "South Florida Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/jacksonville",
+        "label": "Jacksonville Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/panhandle",
+        "label": "Florida Panhandle Hub"
+      }
+    ],
+    "leadCaptureName": "Tampa Bay"
+  },
+  "transit-oriented-urban-hotspots-somerville-cambridge": {
+    "title": "Cambridge & Somerville Mortgage Lenders — Transit-Oriented Urban Hotspots, Middlesex (2026)",
+    "description": "NMLS-verified mortgage lenders in Cambridge and Somerville. Green Line extension impact, tech/biotech and higher education professionals, $930K+ Somerville and $1M+ Cambridge medians, and fierce transit-oriented demand.",
+    "h1": "Trusted Mortgage Lenders — Cambridge &amp; Somerville",
+    "badge": "NMLS Verified · Transit-Oriented Urban · Cambridge &amp; Somerville",
+    "subtitle": "Middlesex County lenders for perennially hot transit-oriented urban cores — Green Line extension demand,\n            tech/biotech and higher education professionals, and premium walkable neighborhoods.",
+    "bullets": [
+      "Green Line extension continuously drives up demand near new Somerville transit stations",
+      "Tech/biotech and higher education professionals fuel fierce competition for walkable urban stock",
+      "$930K+ Somerville and $1M+ Cambridge medians require jumbo-ready lender expertise",
+      "Modern condos and renovated rowhomes dominate premium transit-adjacent inventory",
+      "Perennially hot markets reward lenders who close fast on limited urban core listings"
+    ],
+    "breadcrumbLabel": "Cambridge & Somerville Hub",
+    "mortgageFile": "massachusettsLenders",
+    "countiesVar": "",
+    "areasVar": "TRANSIT_ORIENTED_URBAN_HOTSPOTS_HUB_AREAS",
+    "lenderSlugsVar": "TRANSIT_ORIENTED_URBAN_HOTSPOTS_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Middlesex Urban Core — Start Here",
+    "whySectionTitle": "Why Cambridge &amp; Somerville Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Cambridge &amp; Somerville",
+    "countyLinkHref": "/lender/local-lenders/massachusetts/middlesex",
+    "countyLinkText": "Middlesex County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/massachusetts/metrowest-bread-and-butter-markets",
+        "label": "MetroWest Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/high-demand-boston-neighborhoods",
+        "label": "Boston Neighborhoods Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/worcester-undisputed-growth-leader",
+        "label": "Worcester Growth Leader Hub"
+      },
+      {
+        "href": "/lender/local-lenders/district-of-columbia/high-velocity-mid-city-core",
+        "label": "Mid-City Core Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/denver-metro-outer-rings-north-suburbs",
+        "label": "Denver Outer Rings Hub"
+      }
+    ],
+    "leadCaptureName": "Cambridge & Somerville"
+  },
+  "upper-northwest-value-surge": {
+    "title": "Upper Northwest DC Mortgage Lenders — Takoma, Brightwood & Colonial Village, Zip 20012 (2026)",
+    "description": "NMLS-verified mortgage lenders in DC Ward 3 North. Takoma, Brightwood, and Colonial Village single-family value plays, Metro access with yards and mature trees, 17–23% appreciation, and massive discount vs. Georgetown or Spring Valley.",
+    "h1": "Trusted Mortgage Lenders — Upper Northwest DC",
+    "badge": "NMLS Verified · Single-Family Value · Ward 3 North / Zip 20012",
+    "subtitle": "Takoma, Brightwood, and Colonial Village lenders for standalone single-family value plays with Metro access,\n            yards, and mature trees — at a massive discount to Georgetown or Spring Valley.",
+    "bullets": [
+      "17–23% price gains in Takoma and Brightwood appreciation corridors",
+      "Classic DC neighborhood feel with standalone homes, yards, and mature trees",
+      "Metro access without Georgetown or Spring Valley elite-enclave pricing",
+      "Quick-transaction pockets attract first-time buyers priced out of Ward 3 south",
+      "Northern tip hotspot serving families seeking quieter residential pace with urban access"
+    ],
+    "breadcrumbLabel": "Upper Northwest Hub",
+    "mortgageFile": "districtOfColumbiaLenders",
+    "countiesVar": "",
+    "areasVar": "UPPER_NORTHWEST_VALUE_SURGE_HUB_AREAS",
+    "lenderSlugsVar": "UPPER_NORTHWEST_VALUE_SURGE_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Ward 3 North — Start Here",
+    "whySectionTitle": "Why Upper Northwest Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Upper Northwest",
+    "countyLinkHref": "/lender/local-lenders/district-of-columbia/district-of-columbia",
+    "countyLinkText": "District of Columbia lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/district-of-columbia/high-velocity-mid-city-core",
+        "label": "Mid-City Core Hub"
+      },
+      {
+        "href": "/lender/local-lenders/district-of-columbia/first-time-buyer-waterfront-hubs",
+        "label": "First-Time Buyer &amp; Waterfront Hubs"
+      },
+      {
+        "href": "/lender/local-lenders/washington/snohomish-transit-corridor",
+        "label": "Snohomish Transit Corridor Hub"
+      },
+      {
+        "href": "/lender/local-lenders/washington/southwest-washington-portland-border",
+        "label": "Portland Border Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/colorado-springs-stability-volume",
+        "label": "Colorado Springs Hub"
+      }
+    ],
+    "leadCaptureName": "Upper Northwest"
+  },
+  "upstate": {
+    "title": "Upstate SC Mortgage Lenders — Greenville & Spartanburg (2026)",
+    "description": "NMLS-verified mortgage lenders in Upstate South Carolina. Greenville renovation loans, BMW/Michelin relocations, USDA Spartanburg programs, and fast upfront underwriting.",
+    "h1": "Trusted Mortgage Lenders — Upstate SC",
+    "badge": "NMLS Verified · Zero Paid Placements · Greenville &amp; Spartanburg",
+    "subtitle": "Greenville-Spartanburg corridor lenders for manufacturing relocations, renovation loans,\n            tech workforce purchases, and USDA zero-down outer-ring programs.",
+    "bullets": [],
+    "breadcrumbLabel": "Upstate SC Hub",
+    "mortgageFile": "southCarolinaLenders",
+    "countiesVar": "UPSTATE_SC_HUB_COUNTIES",
+    "areasVar": "",
+    "lenderSlugsVar": "",
+    "lenderFn": "county",
+    "countyArg": [
+      "south-carolina",
+      "greenville"
+    ],
+    "featuredSectionTitle": "Counties — Start Here",
+    "whySectionTitle": null,
+    "lendersSectionTitle": "Top Verified Lenders",
+    "countyLinkHref": null,
+    "countyLinkText": null,
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/south-carolina/grand-strand",
+        "label": "Grand Strand Hub"
+      },
+      {
+        "href": "/lender/local-lenders/south-carolina/lowcountry",
+        "label": "Lowcountry Hub"
+      },
+      {
+        "href": "/lender/local-lenders/georgia/north-atlanta",
+        "label": "North Atlanta Hub"
+      }
+    ],
+    "leadCaptureName": "Upstate SC"
+  },
+  "upstate-powerhouses-buffalo-albany": {
+    "title": "Upstate NY Mortgage Lenders — Buffalo & Albany Powerhouses (2026)",
+    "description": "NMLS-verified mortgage lenders in Buffalo and Albany. Low-inventory bidding wars, climate refuge appeal, healthcare/education hubs, Capital District supply-demand imbalance, and affordable $227K–$277K median entry.",
+    "h1": "Trusted Mortgage Lenders — Upstate NY",
+    "badge": "NMLS Verified · Upstate Powerhouses · Buffalo &amp; Albany",
+    "subtitle": "Buffalo and Albany lenders for top-hot markets — low-inventory bidding wars, climate refuge appeal,\n            healthcare and education job growth, and Capital District steady demand.",
+    "bullets": [
+      "Buffalo ranks among the top 3 hottest U.S. housing markets with 65% of homes selling above asking",
+      "40% fewer homes for sale drives low DOM and intense bidding wars in Erie County",
+      "Affordable $227K–$277K median entry attracts climate refuge and first-time buyers",
+      "Albany Capital District faces supply-and-demand imbalance with steady government-sector activity",
+      "Healthcare and education hub job growth rewards lenders who close fast on limited stock"
+    ],
+    "breadcrumbLabel": "Upstate Powerhouses Hub",
+    "mortgageFile": "newYorkLenders",
+    "countiesVar": "",
+    "areasVar": "UPSTATE_POWERHOUSES_HUB_AREAS",
+    "lenderSlugsVar": "UPSTATE_BUFFALO_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Upstate Powerhouses — Start Here",
+    "whySectionTitle": "Why Upstate Markets Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — Buffalo",
+    "countyLinkHref": "/lender/local-lenders/new-york/erie",
+    "countyLinkText": "Erie County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/new-york/nyc-boroughs-brooklyn-queens-manhattan",
+        "label": "NYC Boroughs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/new-york/nyc-suburbs-westchester-putnam",
+        "label": "NYC Suburbs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/worcester-undisputed-growth-leader",
+        "label": "Worcester Growth Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/gateway-cities-suburban-alternatives",
+        "label": "Gateway Cities Hub"
+      }
+    ],
+    "leadCaptureName": "Upstate Powerhouses"
+  },
+  "west-valley-boomtowns": {
+    "title": "West Valley Boomtowns Mortgage Lenders — Buckeye & Goodyear, AZ (2026)",
+    "description": "NMLS-verified mortgage lenders in West Valley boomtowns. Verrado and Tartesso new construction, 37%+ growth, VA relocations, and $430K median family financing in Maricopa County.",
+    "h1": "Trusted Mortgage Lenders — West Valley Boomtowns",
+    "badge": "NMLS Verified · Boomtown Growth · Maricopa County Focus",
+    "subtitle": "Buckeye and Goodyear lenders for master-planned communities, 37%+ population surge,\n            I-10/Loop 303 corporate expansions, and affordable family homes vs. central Phoenix.",
+    "bullets": [
+      "Buckeye and Goodyear lead Arizona with 37%+ population growth and master-planned volume",
+      "Verrado, Tartesso, and DR Horton communities need construction-to-permanent specialists",
+      "Healthcare and logistics expansions along I-10 and Loop 303 drive corporate relocations",
+      "$430K median pricing attracts family buyers priced out of central Phoenix",
+      "Fast-closing brokers win competitive offers in high-transaction new-build corridors"
+    ],
+    "breadcrumbLabel": "West Valley Boomtowns Hub",
+    "mortgageFile": "arizonaLenders",
+    "countiesVar": "",
+    "areasVar": "WEST_VALLEY_HUB_AREAS",
+    "lenderSlugsVar": "WEST_VALLEY_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "West Valley — Start Here",
+    "whySectionTitle": "Why West Valley Boomtowns Are Different",
+    "lendersSectionTitle": "Top Verified Lenders — West Valley Boomtowns",
+    "countyLinkHref": "/lender/local-lenders/arizona/maricopa",
+    "countyLinkText": "Maricopa County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/tennessee/greater-nashville-metro",
+        "label": "Greater Nashville Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/north-carolina/charlotte-metro",
+        "label": "Charlotte Metro Hub"
+      },
+      {
+        "href": "/lender/local-lenders/florida/central-florida",
+        "label": "Central Florida Hub"
+      }
+    ],
+    "leadCaptureName": "West Valley Boomtowns"
+  },
+  "worcester-undisputed-growth-leader": {
+    "title": "Worcester MA Mortgage Lenders — Undisputed Growth Leader, Zip 01608 (2026)",
+    "description": "NMLS-verified mortgage lenders in Worcester County. Zoom Town growth leader, life sciences and remote worker financing, Polar Park revitalization, commuter rail access, and relative affordability vs. Greater Boston.",
+    "h1": "Trusted Mortgage Lenders — Worcester MA",
+    "badge": "NMLS Verified · Undisputed Growth Leader · Worcester / Zip 01608",
+    "subtitle": "Worcester County lenders for the undisputed growth leader — Zoom Town remote workers, life sciences professionals,\n            Polar Park revitalization, and commuter rail access at relative affordability vs. Greater Boston.",
+    "bullets": [
+      "One of the country&apos;s hottest markets — undisputed Central Mass growth leader",
+      "Zoom Town effect draws remote workers and life sciences professionals seeking affordability",
+      "Downtown revitalization and Polar Park anchor investor and first-time buyer demand",
+      "Improved commuter rail access connects Worcester to Greater Boston employment centers",
+      "Exceptionally fast-moving market rewards lenders who can close quickly on limited inventory"
+    ],
+    "breadcrumbLabel": "Worcester Growth Hub",
+    "mortgageFile": "massachusettsLenders",
+    "countiesVar": "",
+    "areasVar": "WORCESTER_UNDISPUTED_GROWTH_LEADER_HUB_AREAS",
+    "lenderSlugsVar": "WORCESTER_UNDISPUTED_GROWTH_LEADER_LENDER_SLUGS",
+    "lenderFn": "slugs",
+    "countyArg": null,
+    "featuredSectionTitle": "Central Mass — Start Here",
+    "whySectionTitle": "Why Worcester Is Different",
+    "lendersSectionTitle": "Top Verified Lenders — Worcester",
+    "countyLinkHref": "/lender/local-lenders/massachusetts/worcester",
+    "countyLinkText": "Worcester County lenders →",
+    "alsoExplore": [
+      {
+        "href": "/lender/local-lenders/massachusetts/transit-oriented-urban-hotspots-somerville-cambridge",
+        "label": "Cambridge &amp; Somerville Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/high-demand-boston-neighborhoods",
+        "label": "Boston Neighborhoods Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/gateway-cities-suburban-alternatives",
+        "label": "Gateway Cities Hub"
+      },
+      {
+        "href": "/lender/local-lenders/massachusetts/metrowest-bread-and-butter-markets",
+        "label": "MetroWest Hub"
+      },
+      {
+        "href": "/lender/local-lenders/district-of-columbia/upper-northwest-value-surge",
+        "label": "Upper Northwest Value Surge Hub"
+      },
+      {
+        "href": "/lender/local-lenders/district-of-columbia/high-velocity-mid-city-core",
+        "label": "Mid-City Core Hub"
+      },
+      {
+        "href": "/lender/local-lenders/colorado/colorado-springs-stability-volume",
+        "label": "Colorado Springs Hub"
+      },
+      {
+        "href": "/lender/local-lenders/texas/san-antonio-value-play",
+        "label": "San Antonio Value Play Hub"
+      }
+    ],
+    "leadCaptureName": "Worcester Growth"
+  }
+}

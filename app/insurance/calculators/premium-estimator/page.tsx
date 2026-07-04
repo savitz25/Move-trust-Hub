@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { wrapHubPageMetadata } from '@/lib/hub/wrap-metadata';
+import { buildCalculatorToolSchema } from '@/lib/hub/templates/calculator-schema';
 import { insuranceHref } from '@/lib/insurance/paths';
 import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { CostEstimatorTool } from '@/components/insurance/tools/cost-estimator-tool';
@@ -8,7 +9,7 @@ export const metadata: Metadata = wrapHubPageMetadata('insurance', {
   title: 'Insurance Premium Estimator (2026)',
   description:
     'Estimate auto, health, homeowners, and Medicare premium ranges by state. Estimates only.',
-  path: '/calculators/premium-estimator',
+  path: '/insurance/calculators/premium-estimator',
 });
 
 const FAQ = [
@@ -29,9 +30,17 @@ const FAQ = [
   },
 ];
 
+const TOOL_SCHEMA = buildCalculatorToolSchema('insurance', {
+  path: '/calculators/premium-estimator',
+  name: 'Insurance Premium Estimator',
+  description:
+    'Estimate auto, homeowners, health, and Medicare premium ranges by state and profile.',
+});
+
 export default function PremiumEstimatorPage() {
   return (
     <CalculatorPageShell
+      schema={TOOL_SCHEMA}
       title="Insurance Premium Estimator"
       description="Estimate auto, homeowners, health, and Medicare premium ranges by state and profile. Seeded averages for educational comparison — verify every figure with licensed agents before enrolling."
       methodology={[

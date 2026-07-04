@@ -164,7 +164,7 @@ export const knoxvilleTnContent: CityHubContent = {
     {
       title: '2026 Moving Guide to Knoxville',
       description: 'Neighborhoods, timing, and mover-vetting checklist.',
-      href: '/resources/guides/moving-to-knoxville-2026',
+      href: '/insurance/resources/guides/moving-to-knoxville-2026',
     },
     {
       title: 'Verify any mover\'s USDOT & MC number',

@@ -59,7 +59,7 @@ export default function AutoLoanCompaniesHubPage() {
       <JsonLd data={jsonLd} />
 
       <div className="container mx-auto px-4 pt-6">
-        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Auto Loan Companies' }]} />
+        <Breadcrumbs items={[{ label: 'Home', href: '/lender' }, { label: 'Auto Loan Companies' }]} />
       </div>
 
       <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0d3a5c] py-14 text-white">

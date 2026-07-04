@@ -2,16 +2,21 @@
  * Shared Supabase environment configuration.
  * Never import service-role keys in client components.
  */
+function readEnv(value: string | undefined): string | undefined {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed : undefined;
+}
+
 export function getSupabaseUrl(): string | undefined {
-  return process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  return readEnv(process.env.NEXT_PUBLIC_SUPABASE_URL);
 }
 
 export function getSupabaseAnonKey(): string | undefined {
-  return process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
+  return readEnv(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 }
 
 export function getSupabaseServiceRoleKey(): string | undefined {
-  return process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+  return readEnv(process.env.SUPABASE_SERVICE_ROLE_KEY);
 }
 
 /** True when public (anon) credentials are present — safe for browser + RSC reads. */

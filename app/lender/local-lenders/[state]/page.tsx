@@ -92,8 +92,8 @@ export default async function MortgageStatePage({
       <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Mortgage Lenders', href: '/local-lenders' },
+            { label: 'Home', href: '/lender' },
+            { label: 'Mortgage Lenders', href: '/lender/local-lenders' },
             { label: stateMeta.fullName },
           ]}
         />

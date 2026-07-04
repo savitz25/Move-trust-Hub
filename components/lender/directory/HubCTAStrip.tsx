@@ -24,7 +24,7 @@ const CTAS = [
   {
     icon: Calculator,
     label: 'Calculators',
-    href: '/calculators',
+    href: '/lender/calculators',
     copy: 'Free payment tools',
   },
 ] as const;

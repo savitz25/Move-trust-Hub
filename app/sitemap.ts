@@ -62,19 +62,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...destinationGuides.map((guide) => `/resources/guides/${guide.slug}`),
   ];
 
-  const hubLandingRoutes = [
-    '/lender',
-    '/insurance',
-    '/lender/local-lenders',
-    '/lender/calculators',
-    '/lender/fdic-insured-banks',
-    '/lender/about',
-    '/insurance/directory',
-    '/insurance/hubs',
-    '/insurance/hubs/browse',
-    '/insurance/calculators',
-    '/insurance/about',
-  ];
+  /** Hub home pages only — detail URLs live in /lender/sitemap.xml and /insurance/sitemap.xml */
+  const hubLandingRoutes = ['/lender', '/insurance'];
 
   const coreStaticRoutes = [
     '',

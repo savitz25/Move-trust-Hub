@@ -58,7 +58,7 @@ export default function FDICInsuredBanksPage() {
       <div className="container mx-auto px-4 pt-6">
         <Breadcrumbs
           items={[
-            { label: 'Home', href: '/' },
+            { label: 'Home', href: '/lender' },
             { label: 'FDIC Insured Banks' },
           ]}
         />

@@ -2,16 +2,18 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SpecialtyTopicPage } from '@/components/insurance/specialty-topic-page';
 import { getSpecialtyTopic } from '@/lib/insurance/hubs/specialty-topics';
-import { SITE_URL } from '@/lib/insurance/constants';
+import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
 
 const topic = getSpecialtyTopic('aca');
 if (!topic) throw new Error('aca topic missing');
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildTemplateMetadata({
+  hub: 'insurance',
   title: topic.metaTitle,
   description: topic.metaDescription,
-  alternates: { canonical: `${SITE_URL}${topic.path}` },
-};
+  path: '/insurance/hubs/aca',
+  keywords: ['ACA agents', 'Obamacare', 'marketplace enrollment', 'premium tax credits'],
+});
 
 export default function AcaTopicPage() {
   const t = getSpecialtyTopic('aca');

@@ -4,17 +4,21 @@ import { SearchFilters } from '@/components/insurance/search-filters';
 import { DirectoryControls } from '@/components/insurance/directory-controls';
 import { ProviderCard } from '@/components/insurance/provider-card';
 import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
+import { HealthHubDirectoryTemplate } from '@/components/hub/templates';
 import { searchProviders } from '@/lib/insurance/providers/queries';
-import { buildMetadata } from '@/lib/insurance/seo/metadata';
+import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
+import { INSURANCE_DIRECTORY_LANDING } from '@/lib/hub/templates/landing-data';
+import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
 import type { Provider } from '@/types/insurance/provider';
 import type { InsuranceType, Specialty } from '@/lib/insurance/constants';
 import { cn } from '@/lib/insurance/utils';
 
-export const metadata: Metadata = buildMetadata({
-  title: 'Insurance Agency Directory — Search Licensed Agents by State',
-  description:
-    'Search and compare licensed insurance agencies by state, coverage type, rating, and specialty. Read reviews and contact agencies directly.',
+export const metadata: Metadata = buildTemplateMetadata({
+  hub: 'insurance',
+  title: INSURANCE_DIRECTORY_LANDING.title,
+  description: INSURANCE_DIRECTORY_LANDING.subtitle,
   path: '/insurance/directory',
+  keywords: ['insurance agency directory', 'licensed agents', 'DOI verified', 'insurance search'],
 });
 
 interface DirectoryPageProps {
@@ -72,51 +76,49 @@ export default async function DirectoryPage({ searchParams }: DirectoryPageProps
   const isList = view === 'list';
 
   return (
-    <div className="container mx-auto px-4 py-10 md:py-14">
-      <div className="max-w-3xl mb-10">
-        <h1 className="section-heading">Insurance agency directory</h1>
-        <p className="mt-3 text-muted-foreground leading-relaxed">
-          Search licensed independent and captive agencies by location, coverage type, and customer
-          ratings. Always verify licensing with your state insurance department.
-        </p>
-      </div>
+    <HealthHubDirectoryTemplate
+      hub="insurance"
+      data={INSURANCE_DIRECTORY_LANDING}
+      path="/directory"
+      variant="directory"
+      breadcrumbs={hubSectionBreadcrumbs('insurance', 'Directory')}
+    >
+      <section>
+        <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <Suspense fallback={<div className="skeleton h-96 rounded-xl" />}>
+              <SearchFilters />
+            </Suspense>
+          </aside>
 
-      <div className="grid lg:grid-cols-[280px_1fr] gap-8">
-        <aside className="lg:sticky lg:top-24 lg:self-start">
-          <Suspense fallback={<div className="skeleton h-96 rounded-xl" />}>
-            <SearchFilters />
-          </Suspense>
-        </aside>
+          <div>
+            <Suspense fallback={null}>
+              <DirectoryControls total={total} className="mb-6" />
+            </Suspense>
 
-        <div>
-          <Suspense fallback={null}>
-            <DirectoryControls total={total} className="mb-6" />
-          </Suspense>
-
-          {providers.length === 0 ? (
-            <div className="rounded-xl border bg-muted/30 p-12 text-center">
-              <p className="font-medium">No agencies match your filters</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Try broadening your search or clearing filters.
-              </p>
-            </div>
-          ) : (
-            <div
-              className={cn(
-                isList
-                  ? 'flex flex-col gap-4'
-                  : 'grid sm:grid-cols-2 xl:grid-cols-3 gap-5'
-              )}
-            >
-              {providers.map((provider) => (
-                <ProviderCard key={provider.id} provider={provider} />
-              ))}
-            </div>
-          )}
+            {providers.length === 0 ? (
+              <div className="rounded-xl border bg-muted/30 p-12 text-center">
+                <p className="font-medium">No agencies match your filters</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Try broadening your search or clearing filters.
+                </p>
+              </div>
+            ) : (
+              <div
+                className={cn(
+                  isList ? 'flex flex-col gap-4' : 'grid gap-5 sm:grid-cols-2 xl:grid-cols-3'
+                )}
+              >
+                {providers.map((provider) => (
+                  <ProviderCard key={provider.id} provider={provider} />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
 
-      <DisclaimerBanner className="mt-12 rounded-xl border" compact />
-    </div>
+        <DisclaimerBanner className="mt-12 rounded-xl border" compact />
+      </section>
+    </HealthHubDirectoryTemplate>
   );
 }
