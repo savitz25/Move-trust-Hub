@@ -37,7 +37,7 @@ export function SuggestCompanyCta({
 
   const isDotFlow = Boolean(carrierQuery.trim());
   const buttonLabel =
-    label ?? (isDotFlow ? 'Add This Company to Directory' : 'Company not listed? Suggest it');
+    label ?? (isDotFlow ? 'Add This Company to Our Directory' : 'Company not listed? Suggest it');
 
   function handleClick() {
     if (initialDotPreview?.legalName) {

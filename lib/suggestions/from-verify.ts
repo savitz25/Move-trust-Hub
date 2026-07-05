@@ -16,18 +16,19 @@ export function fmcsaPreviewFromVerifyResult(
 
   return {
     displayNumber: result.displayNumber,
-    usdot: parsed.type === 'DOT' ? parsed.value : null,
-    mcNumber: parsed.type === 'MC' ? parsed.value : null,
+    usdot: preview.usdot ?? (parsed.type === 'DOT' ? parsed.value : null),
+    mcNumber: preview.mcNumber ?? (parsed.type === 'MC' ? parsed.value : null),
     legalName: preview.legalName ?? null,
     dbaName: preview.dbaName ?? null,
     headquarters: preview.physicalAddress ?? null,
     phone: preview.phone ?? null,
     authorityStatus:
-      preview.allowedToOperate === 'Y'
+      preview.authorityStatus ??
+      (preview.allowedToOperate === 'Y'
         ? 'Active'
         : preview.allowedToOperate
           ? String(preview.allowedToOperate)
-          : null,
+          : null),
     safetyRating: preview.safetyRating ?? null,
     allowedToOperate: preview.allowedToOperate ?? null,
   };

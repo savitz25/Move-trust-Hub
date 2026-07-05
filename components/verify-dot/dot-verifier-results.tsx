@@ -7,18 +7,18 @@ import {
   Building2,
   CheckCircle2,
   ExternalLink,
-  MapPin,
-  Phone,
   SearchX,
   ShieldCheck,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import type { VerifyDotResult } from '@/actions/verify-dot';
+import { FmcsaStructuredPreview } from '@/components/suggestions/fmcsa-structured-preview';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 import { fmcsaPreviewFromVerifyResult } from '@/lib/suggestions/from-verify';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
+
+const ADD_DIRECTORY_LABEL = 'Add This Company to Our Directory';
 
 type Props = {
   result: VerifyDotResult;
@@ -61,12 +61,12 @@ export function DotVerifierResults({ result }: Props) {
       <ShieldCheck className="h-5 w-5 shrink-0 text-muted-foreground mt-0.5" aria-hidden="true" />
       <div>
         <p className="font-medium text-foreground">
-          Public FMCSA data available
+          FMCSA verified — not yet in our directory
         </p>
         <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-          This carrier isn&apos;t in our directory yet, but we pulled a preview
-          from FMCSA records for <strong>{result.displayNumber}</strong>. Confirm
-          licensing on the official government site before you book.
+          We pulled structured licensing data from FMCSA for{' '}
+          <strong>{result.displayNumber}</strong>. Review the details below, then add
+          this carrier to Move Trust Hub without leaving the site.
         </p>
       </div>
     </div>
@@ -78,13 +78,11 @@ export function DotVerifierResults({ result }: Props) {
       <SearchX className="h-5 w-5 shrink-0 text-amber-700 dark:text-amber-400 mt-0.5" aria-hidden="true" />
       <div>
         <p className="font-medium text-foreground">
-          No record in our directory
+          No FMCSA preview available
         </p>
         <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-          We don&apos;t have <strong>{result.displayNumber}</strong> in Move Trust
-          Hub yet. Use the button below to open the official FMCSA SAFER Company
-          Snapshot — the authoritative source for authority status, safety
-          ratings, inspections, and crash history.
+          We couldn&apos;t pull structured data for <strong>{result.displayNumber}</strong>.
+          Open the official FMCSA SAFER record to confirm authority status before you book.
         </p>
       </div>
     </div>
@@ -95,75 +93,15 @@ export function DotVerifierResults({ result }: Props) {
       {statusBanner}
 
       {hasPreview && preview ? (
-        <Card className="border-primary/20 bg-primary/5 p-5 sm:p-6">
-          <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <Badge variant="secondary" className="mb-2">
-                {inDirectory
-                  ? 'Move Trust Hub Directory'
-                  : preview.source === 'fmcsa_api'
-                    ? 'FMCSA Data Preview'
-                    : 'Carrier Preview'}
-              </Badge>
-              <h2 className="text-xl font-semibold tracking-tight">
-                {preview.legalName}
-              </h2>
-              {preview.dbaName ? (
-                <p className="text-sm text-muted-foreground mt-1">
-                  DBA: {preview.dbaName}
-                </p>
-              ) : null}
-            </div>
-            {preview.safetyRating ? (
-              <Badge
-                variant={
-                  preview.safetyRating === 'Satisfactory' ? 'default' : 'outline'
-                }
-                className="shrink-0"
-              >
-                FMCSA: {preview.safetyRating}
-              </Badge>
-            ) : null}
-          </div>
-
-          <dl className="mt-4 grid gap-2 text-sm sm:grid-cols-2">
-            {preview.physicalAddress ? (
-              <div className="flex gap-2">
-                <MapPin className="h-4 w-4 shrink-0 text-muted-foreground mt-0.5" />
-                <div>
-                  <dt className="text-xs text-muted-foreground">Address</dt>
-                  <dd>{preview.physicalAddress}</dd>
-                </div>
-              </div>
-            ) : null}
-            {preview.phone ? (
-              <div className="flex gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-muted-foreground mt-0.5" />
-                <div>
-                  <dt className="text-xs text-muted-foreground">Phone</dt>
-                  <dd>{preview.phone}</dd>
-                </div>
-              </div>
-            ) : null}
-            {preview.allowedToOperate ? (
-              <div className="flex gap-2">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-muted-foreground mt-0.5" />
-                <div>
-                  <dt className="text-xs text-muted-foreground">
-                    Allowed to operate
-                  </dt>
-                  <dd>
-                    {preview.allowedToOperate === 'Y'
-                      ? 'Yes'
-                      : preview.allowedToOperate}
-                  </dd>
-                </div>
-              </div>
-            ) : null}
-          </dl>
+        <>
+          <FmcsaStructuredPreview
+            preview={preview}
+            displayNumber={carrierQuery}
+            inDirectory={inDirectory}
+          />
 
           {result.directorySlug ? (
-            <div className="mt-4 rounded-lg border bg-background/80 p-3 text-sm">
+            <div className="rounded-lg border bg-background/80 p-3 text-sm">
               <Building2 className="inline h-4 w-4 mr-1.5 text-primary" />
               See reviews, service areas, and more on our{' '}
               <Link
@@ -174,13 +112,7 @@ export function DotVerifierResults({ result }: Props) {
               </Link>
             </div>
           ) : null}
-
-          <p className="mt-4 text-xs text-muted-foreground">
-            {inDirectory
-              ? 'Directory data is maintained by Move Trust Hub. Licensing and safety details can change — confirm on FMCSA before signing a contract.'
-              : 'Preview may be incomplete. The official FMCSA SAFER report is the authoritative source for licensing and safety data.'}
-          </p>
-        </Card>
+        </>
       ) : null}
 
       <div className="flex flex-col sm:flex-row gap-3">
@@ -221,17 +153,21 @@ export function DotVerifierResults({ result }: Props) {
       </div>
 
       {showAddToDirectory ? (
-        <div className="rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5 text-center space-y-3">
+        <div className="rounded-lg border-2 border-primary/25 bg-primary/5 p-5 text-center space-y-3">
+          <Badge variant="secondary" className="mb-1">
+            Not in directory
+          </Badge>
           <p className="text-sm text-muted-foreground">
             {hasPreview
-              ? `FMCSA confirms ${preview?.legalName ?? carrierQuery} — add it to Move Trust Hub so families can compare this carrier on-site.`
-              : 'This carrier number is not in our directory yet. We will verify it against FMCSA before publishing.'}
+              ? `Add ${preview?.legalName ?? carrierQuery} to Move Trust Hub using verified FMCSA data.`
+              : 'Submit this carrier for review — we will verify it against FMCSA before publishing.'}
           </p>
           <SuggestCompanyCta
             sourcePage="/verify-dot"
             carrierQuery={carrierQuery}
             dotPreview={dotPreviewForSuggest}
             className="min-h-[48px]"
+            label={ADD_DIRECTORY_LABEL}
           />
         </div>
       ) : null}

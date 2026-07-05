@@ -5,11 +5,11 @@ import {
   parseCarrierNumber,
   verifyDotSchema,
 } from '@/lib/verify-dot/schema';
-import { resolveCarrierPreview } from '@/lib/verify-dot/fmcsa';
+import { resolveCarrierPreview, type FmcsaPreview } from '@/lib/verify-dot/fmcsa';
 import { findCompanyByCarrierNumber } from '@/lib/verify-dot/directory-lookup';
+import { lookupFmcsaForSuggestion } from '@/lib/suggestions/fmcsa-lookup';
 import { logDotVerification } from '@/lib/verify-dot/log';
 import { logger } from '@/lib/logging/logger';
-import type { FmcsaPreview } from '@/lib/verify-dot/fmcsa';
 
 export type VerifyDotResult = {
   success: boolean;
@@ -62,10 +62,30 @@ export async function verifyCarrierNumber(
   });
 
   const directory = await findCompanyByCarrierNumber(carrier);
-  const { saferUrl, preview } = await resolveCarrierPreview(
+  const { saferUrl, preview: basePreview } = await resolveCarrierPreview(
     carrier,
     directory.preview
   );
+
+  let preview: FmcsaPreview | null = basePreview;
+
+  if (!directory.slug) {
+    const fmcsa = await lookupFmcsaForSuggestion(carrier.display);
+    if (fmcsa) {
+      preview = {
+        legalName: fmcsa.legalName ?? basePreview?.legalName,
+        dbaName: fmcsa.dbaName ?? basePreview?.dbaName,
+        physicalAddress: fmcsa.headquarters ?? basePreview?.physicalAddress,
+        phone: fmcsa.phone ?? basePreview?.phone,
+        usdot: fmcsa.usdot ?? (carrier.type === 'DOT' ? carrier.value : undefined),
+        mcNumber: fmcsa.mcNumber ?? (carrier.type === 'MC' ? carrier.value : undefined),
+        authorityStatus: fmcsa.authorityStatus ?? undefined,
+        allowedToOperate: fmcsa.allowedToOperate ?? basePreview?.allowedToOperate,
+        safetyRating: fmcsa.safetyRating ?? basePreview?.safetyRating,
+        source: 'fmcsa_api',
+      };
+    }
+  }
 
   logger.info('dot.verification_completed', {
     numberType: carrier.type,

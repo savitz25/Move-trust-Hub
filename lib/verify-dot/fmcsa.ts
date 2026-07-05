@@ -5,6 +5,9 @@ export type FmcsaPreview = {
   dbaName?: string;
   physicalAddress?: string;
   phone?: string;
+  usdot?: string;
+  mcNumber?: string;
+  authorityStatus?: string;
   allowedToOperate?: string;
   safetyRating?: string;
   outOfService?: string;

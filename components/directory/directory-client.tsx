@@ -20,7 +20,8 @@ import {
   getLicenseDisplay,
 } from '@/lib/trust/company-display-policy';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
-import { motion, AnimatePresence } from 'framer-motion';
+
+import { DirectoryCarrierFmcsaPanel } from '@/components/suggestions/directory-carrier-fmcsa-panel';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
@@ -171,9 +172,15 @@ export function DirectoryClient({ initialCompanies }: Props) {
         </div>
       </div>
 
-      <AnimatePresence>
-        {showFilters && (
-          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden mb-6">
+      <div
+        className={`grid transition-[grid-template-rows,opacity,margin] duration-200 ease-out ${
+          showFilters
+            ? 'mb-6 grid-rows-[1fr] opacity-100'
+            : 'mb-0 grid-rows-[0fr] opacity-0 pointer-events-none'
+        }`}
+        aria-hidden={!showFilters}
+      >
+        <div className="min-h-0 overflow-hidden">
             <Card className="p-5">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {/* Min Rating */}
@@ -284,9 +291,8 @@ export function DirectoryClient({ initialCompanies }: Props) {
                 </div>
               )}
             </Card>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      </div>
 
       {/* Results count */}
       <div className="flex justify-between items-center mb-3 text-sm">
@@ -371,19 +377,10 @@ export function DirectoryClient({ initialCompanies }: Props) {
             </button>
           </p>
           {parsedCarrierSearch && carrierNotInDirectory ? (
-            <div className="mx-auto max-w-md space-y-3 rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5">
-              <p className="text-sm text-muted-foreground">
-                <strong>{parsedCarrierSearch.display}</strong> isn&apos;t in our directory yet. We&apos;ll
-                pull verified FMCSA licensing data before you submit.
-              </p>
-              <SuggestCompanyCta
-                sourcePage="/companies"
-                carrierQuery={filters.search?.trim() ?? parsedCarrierSearch.display}
-                variant="default"
-                size="default"
-                className="w-full"
-              />
-            </div>
+            <DirectoryCarrierFmcsaPanel
+              carrierQuery={filters.search?.trim() ?? parsedCarrierSearch.display}
+              displayNumber={parsedCarrierSearch.display}
+            />
           ) : filters.search?.trim() ? (
             <div className="mx-auto max-w-md space-y-3 rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5">
               <p className="text-sm text-muted-foreground">
