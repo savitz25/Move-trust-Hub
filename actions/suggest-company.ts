@@ -4,7 +4,12 @@ import { headers } from 'next/headers';
 import { suggestCompanySchema } from '@/lib/suggestions/schema';
 import { checkSuggestionDuplicate } from '@/lib/suggestions/duplicates';
 import { checkSuggestionRateLimit } from '@/lib/suggestions/rate-limit';
-import { lookupFmcsaForSuggestion } from '@/lib/suggestions/fmcsa-lookup';
+import {
+  lookupFmcsaForSuggestion,
+  toFmcsaSuggestionPreview,
+} from '@/lib/suggestions/fmcsa-lookup';
+import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
+import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 import { hashEmail, hashIp } from '@/lib/reviews/hash';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
@@ -16,12 +21,44 @@ export type SubmitSuggestionResult = {
   suggestionId?: string;
 };
 
+export type PreviewFmcsaSuggestionResult = {
+  success: boolean;
+  error?: string;
+  preview?: FmcsaSuggestionPreview;
+};
+
 function clientIpFromHeaders(headerStore: Headers): string | null {
   return (
     headerStore.get('x-forwarded-for')?.split(',')[0]?.trim() ||
     headerStore.get('x-real-ip') ||
     null
   );
+}
+
+export async function previewFmcsaSuggestion(
+  carrierQuery: string
+): Promise<PreviewFmcsaSuggestionResult> {
+  const parsed = parseCarrierNumber(carrierQuery.trim());
+  if (!parsed) {
+    return {
+      success: false,
+      error: 'Enter a valid USDOT or MC number (3–8 digits).',
+    };
+  }
+
+  const fmcsa = await lookupFmcsaForSuggestion(carrierQuery);
+  if (!fmcsa?.legalName) {
+    return {
+      success: false,
+      error:
+        'No FMCSA record found for that number. Confirm it on safer.fmcsa.dot.gov before submitting.',
+    };
+  }
+
+  return {
+    success: true,
+    preview: toFmcsaSuggestionPreview(fmcsa),
+  };
 }
 
 export async function submitCompanySuggestion(
@@ -58,16 +95,36 @@ export async function submitCompanySuggestion(
     return { success: false, error: rateCheck.reason };
   }
 
+  const carrierParsed = parsed.data.carrierQuery
+    ? parseCarrierNumber(parsed.data.carrierQuery)
+    : null;
+
+  let fmcsa = carrierParsed
+    ? await lookupFmcsaForSuggestion(parsed.data.carrierQuery!)
+    : null;
+
+  const companyName =
+    fmcsa?.legalName?.trim() ||
+    parsed.data.name?.trim() ||
+    null;
+
+  if (!companyName) {
+    return {
+      success: false,
+      error: carrierParsed
+        ? 'Could not verify this carrier with FMCSA. Try again or confirm the USDOT number.'
+        : 'Company name is required when no USDOT/MC number is provided.',
+    };
+  }
+
   const duplicateCheck = await checkSuggestionDuplicate({
-    name: parsed.data.name,
-    usdot: parsed.data.usdot,
+    name: companyName,
+    usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
   });
 
   if (duplicateCheck.duplicate) {
     return { success: false, error: duplicateCheck.reason };
   }
-
-  const fmcsa = await lookupFmcsaForSuggestion(parsed.data.usdot);
 
   const admin = createAdminClient();
   const emailHash = hashEmail(parsed.data.suggestedByEmail);
@@ -76,9 +133,9 @@ export async function submitCompanySuggestion(
   const { data: inserted, error } = await admin
     .from('company_suggestions')
     .insert({
-      name: parsed.data.name,
-      usdot: fmcsa?.usdot ?? parsed.data.usdot?.replace(/\D/g, '') ?? null,
-      mc_number: fmcsa?.mcNumber ?? null,
+      name: companyName,
+      usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
+      mc_number: fmcsa?.mcNumber ?? (carrierParsed?.type === 'MC' ? carrierParsed.value : null),
       details: parsed.data.details,
       status: 'pending',
       suggested_by_name: parsed.data.suggestedByName,
@@ -87,7 +144,7 @@ export async function submitCompanySuggestion(
       ip_hash: ipHash,
       email_hash: emailHash,
       source_page: parsed.data.sourcePage || '/companies',
-      legal_name: fmcsa?.legalName,
+      legal_name: fmcsa?.legalName ?? companyName,
       headquarters: fmcsa?.headquarters,
       phone: fmcsa?.phone,
       authority_status: fmcsa?.authorityStatus,
@@ -112,6 +169,7 @@ export async function submitCompanySuggestion(
     suggestionId: inserted.id,
     usdot: fmcsa?.usdot,
     hasFmcsa: Boolean(fmcsa),
+    trustedDot: Boolean(carrierParsed && fmcsa),
   });
 
   return { success: true, suggestionId: inserted.id };

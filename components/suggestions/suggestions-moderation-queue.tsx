@@ -3,8 +3,9 @@
 import { useState, useTransition } from 'react';
 import { format } from 'date-fns';
 import Link from 'next/link';
-import { Check, ExternalLink, Loader2, MapPin, ShieldCheck, X } from 'lucide-react';
+import { Check, ExternalLink, Loader2, MapPin, X } from 'lucide-react';
 import { moderateSuggestion } from '@/actions/moderate-suggestions';
+import { AdminFmcsaPreview } from '@/components/suggestions/admin-fmcsa-preview';
 import type { PendingSuggestion } from '@/lib/suggestions/queries';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -53,12 +54,7 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
   return (
     <div className="space-y-4">
       {queue.map((suggestion) => {
-        const preview = suggestion.fmcsa_preview as {
-          legalName?: string;
-          physicalAddress?: string;
-          allowedToOperate?: string;
-          safetyRating?: string;
-        } | null;
+        const hasFmcsa = Boolean(suggestion.usdot || suggestion.fmcsa_raw || suggestion.fmcsa_preview);
 
         return (
           <Card key={suggestion.id} className="p-5">
@@ -67,13 +63,14 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="font-semibold text-lg">{suggestion.legal_name || suggestion.name}</span>
                   <Badge variant="outline">Pending</Badge>
+                  {hasFmcsa ? <Badge variant="default">FMCSA verified</Badge> : null}
                   {suggestion.usdot ? (
                     <Badge variant="secondary">DOT {suggestion.usdot}</Badge>
                   ) : null}
+                  {suggestion.mc_number ? (
+                    <Badge variant="secondary">MC-{suggestion.mc_number}</Badge>
+                  ) : null}
                 </div>
-                {suggestion.name !== suggestion.legal_name && suggestion.legal_name ? (
-                  <p className="text-sm text-muted-foreground">Suggested as: {suggestion.name}</p>
-                ) : null}
                 <p className="text-sm text-muted-foreground mt-1">
                   {suggestion.suggested_by_name} · {suggestion.suggested_by_email}
                 </p>
@@ -83,24 +80,21 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
               </time>
             </div>
 
-            {(suggestion.headquarters || preview?.physicalAddress) && (
-              <p className="mt-3 text-sm flex items-start gap-2">
-                <MapPin className="h-4 w-4 shrink-0 text-muted-foreground mt-0.5" />
-                {suggestion.headquarters || preview?.physicalAddress}
-              </p>
+            {hasFmcsa ? (
+              <AdminFmcsaPreview suggestion={suggestion} />
+            ) : (
+              <>
+                {suggestion.headquarters ? (
+                  <p className="mt-3 text-sm flex items-start gap-2">
+                    <MapPin className="h-4 w-4 shrink-0 text-muted-foreground mt-0.5" />
+                    {suggestion.headquarters}
+                  </p>
+                ) : null}
+                {suggestion.details ? (
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{suggestion.details}</p>
+                ) : null}
+              </>
             )}
-
-            {suggestion.authority_status && (
-              <p className="mt-2 text-sm flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-muted-foreground" />
-                Authority: {suggestion.authority_status}
-                {preview?.safetyRating ? ` · FMCSA ${preview.safetyRating}` : ''}
-              </p>
-            )}
-
-            {suggestion.details ? (
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{suggestion.details}</p>
-            ) : null}
 
             {suggestion.source_page ? (
               <p className="mt-2 text-xs text-muted-foreground">Source: {suggestion.source_page}</p>

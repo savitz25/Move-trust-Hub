@@ -17,6 +17,8 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import type { VerifyDotResult } from '@/actions/verify-dot';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
+import { fmcsaPreviewFromVerifyResult } from '@/lib/suggestions/from-verify';
+import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
 type Props = {
   result: VerifyDotResult;
@@ -29,6 +31,10 @@ export function DotVerifierResults({ result }: Props) {
   const inDirectory = Boolean(result.directorySlug);
   const hasPreview = Boolean(preview?.legalName);
   const saferUrl = result.saferUrl;
+  const carrierQuery = result.displayNumber ?? '';
+  const validCarrier = carrierQuery ? parseCarrierNumber(carrierQuery) : null;
+  const dotPreviewForSuggest = fmcsaPreviewFromVerifyResult(result);
+  const showAddToDirectory = !inDirectory && Boolean(validCarrier);
 
   const statusBanner = inDirectory ? (
     <div
@@ -214,19 +220,17 @@ export function DotVerifierResults({ result }: Props) {
         ) : null}
       </div>
 
-      {!inDirectory ? (
+      {showAddToDirectory ? (
         <div className="rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5 text-center space-y-3">
           <p className="text-sm text-muted-foreground">
-            Know this carrier? Help us expand the directory so other families can compare trusted movers.
+            {hasPreview
+              ? `FMCSA confirms ${preview?.legalName ?? carrierQuery} — add it to Move Trust Hub so families can compare this carrier on-site.`
+              : 'This carrier number is not in our directory yet. We will verify it against FMCSA before publishing.'}
           </p>
           <SuggestCompanyCta
             sourcePage="/verify-dot"
-            initialName={preview?.legalName ?? ''}
-            initialUsdot={
-              result.numberType === 'DOT' && result.displayNumber
-                ? result.displayNumber.replace(/\D/g, '')
-                : ''
-            }
+            carrierQuery={carrierQuery}
+            dotPreview={dotPreviewForSuggest}
             className="min-h-[48px]"
           />
         </div>

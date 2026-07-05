@@ -3,28 +3,38 @@
 import { useEffect, useState, useTransition } from 'react';
 import { Building2, Loader2, PlusCircle } from 'lucide-react';
 import { submitCompanySuggestion } from '@/actions/suggest-company';
+import { DotReadonlyFields } from '@/components/suggestions/dot-readonly-fields';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
 import { toast } from 'sonner';
 
 type Props = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   sourcePage: string;
+  /** FMCSA-trusted mode — core DOT fields are read-only */
+  dotPreview?: FmcsaSuggestionPreview | null;
+  carrierQuery?: string;
+  /** Fallback manual mode when no valid USDOT/MC */
   initialName?: string;
-  initialUsdot?: string;
+  loadingPreview?: boolean;
+  previewError?: string | null;
 };
 
 export function SuggestCompanyModal({
   open,
   onOpenChange,
   sourcePage,
+  dotPreview = null,
+  carrierQuery = '',
   initialName = '',
-  initialUsdot = '',
+  loadingPreview = false,
+  previewError = null,
 }: Props) {
+  const isDotMode = Boolean(dotPreview?.legalName && carrierQuery);
   const [name, setName] = useState(initialName);
-  const [usdot, setUsdot] = useState(initialUsdot);
   const [details, setDetails] = useState('');
   const [suggestedByName, setSuggestedByName] = useState('');
   const [suggestedByEmail, setSuggestedByEmail] = useState('');
@@ -32,15 +42,13 @@ export function SuggestCompanyModal({
   const [pending, startTransition] = useTransition();
 
   useEffect(() => {
-    if (open && !submitted) {
+    if (open && !submitted && !isDotMode) {
       setName(initialName);
-      setUsdot(initialUsdot);
     }
-  }, [open, initialName, initialUsdot, submitted]);
+  }, [open, initialName, submitted, isDotMode]);
 
   function resetForm() {
     setName(initialName);
-    setUsdot(initialUsdot);
     setDetails('');
     setSuggestedByName('');
     setSuggestedByEmail('');
@@ -56,8 +64,8 @@ export function SuggestCompanyModal({
     e.preventDefault();
     startTransition(async () => {
       const res = await submitCompanySuggestion({
-        name,
-        usdot: usdot || null,
+        carrierQuery: isDotMode ? carrierQuery : null,
+        name: isDotMode ? null : name,
         details: details || null,
         suggestedByName,
         suggestedByEmail,
@@ -77,11 +85,11 @@ export function SuggestCompanyModal({
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="max-w-lg">
+      <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Building2 className="h-5 w-5 text-primary" />
-            Suggest a missing company
+            {isDotMode ? 'Add company to directory' : 'Suggest a missing company'}
           </DialogTitle>
           <DialogClose onClose={() => handleOpenChange(false)} />
         </DialogHeader>
@@ -89,61 +97,73 @@ export function SuggestCompanyModal({
         {submitted ? (
           <div className="px-6 pb-6 space-y-4">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Thank you — we&apos;ll review and add it shortly. Our team verifies FMCSA
-              licensing before publishing new directory listings.
+              Thank you — we&apos;ll review and add it shortly. FMCSA licensing data is already
+              on file for this carrier.
             </p>
             <Button className="w-full" onClick={() => handleOpenChange(false)}>
               Close
             </Button>
           </div>
+        ) : loadingPreview ? (
+          <div className="px-6 pb-8 flex flex-col items-center gap-3 text-sm text-muted-foreground">
+            <Loader2 className="h-6 w-6 animate-spin text-primary" />
+            Loading FMCSA carrier data…
+          </div>
+        ) : previewError ? (
+          <div className="px-6 pb-6 space-y-4">
+            <p className="text-sm text-destructive" role="alert">
+              {previewError}
+            </p>
+            <Button variant="outline" className="w-full" onClick={() => handleOpenChange(false)}>
+              Close
+            </Button>
+          </div>
         ) : (
           <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-4">
-            <p className="text-sm text-muted-foreground">
-              Help other families find trustworthy movers. If you know the USDOT number,
-              we&apos;ll pull FMCSA authority and address data automatically.
-            </p>
-
-            <div>
-              <label htmlFor="suggest-name" className="text-sm font-medium">
-                Company name <span className="text-destructive">*</span>
-              </label>
-              <Input
-                id="suggest-name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. ABC Moving & Storage"
-                className="mt-1.5"
-                required
-                maxLength={120}
-                disabled={pending}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="suggest-usdot" className="text-sm font-medium">
-                USDOT number <span className="text-muted-foreground font-normal">(optional)</span>
-              </label>
-              <Input
-                id="suggest-usdot"
-                value={usdot}
-                onChange={(e) => setUsdot(e.target.value)}
-                placeholder="e.g. 1234567"
-                className="mt-1.5"
-                inputMode="numeric"
-                maxLength={20}
-                disabled={pending}
-              />
-            </div>
+            {isDotMode && dotPreview ? (
+              <>
+                <p className="text-sm text-muted-foreground">
+                  This carrier is verified via FMCSA but not yet in our directory. Review the
+                  official record below and add optional notes.
+                </p>
+                <DotReadonlyFields preview={dotPreview} />
+              </>
+            ) : (
+              <>
+                <p className="text-sm text-muted-foreground">
+                  Help other families find trustworthy movers. Include as much detail as you can.
+                </p>
+                <div>
+                  <label htmlFor="suggest-name" className="text-sm font-medium">
+                    Company name <span className="text-destructive">*</span>
+                  </label>
+                  <Input
+                    id="suggest-name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="e.g. ABC Moving & Storage"
+                    className="mt-1.5"
+                    required
+                    maxLength={120}
+                    disabled={pending}
+                  />
+                </div>
+              </>
+            )}
 
             <div>
               <label htmlFor="suggest-details" className="text-sm font-medium">
-                Additional details <span className="text-muted-foreground font-normal">(optional)</span>
+                Your notes <span className="text-muted-foreground font-normal">(optional)</span>
               </label>
               <textarea
                 id="suggest-details"
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
-                placeholder="City/state, website, or why this mover should be listed…"
+                placeholder={
+                  isDotMode
+                    ? 'Why you’re adding this carrier, website, or service area…'
+                    : 'City/state, USDOT if known, or why this mover should be listed…'
+                }
                 className="mt-1.5 flex min-h-[88px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 maxLength={1000}
                 disabled={pending}
@@ -184,7 +204,7 @@ export function SuggestCompanyModal({
 
             <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
-            <Button type="submit" className="w-full gap-2" disabled={pending}>
+            <Button type="submit" className="w-full gap-2" disabled={pending || (isDotMode && !dotPreview)}>
               {pending ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -193,13 +213,13 @@ export function SuggestCompanyModal({
               ) : (
                 <>
                   <PlusCircle className="h-4 w-4" />
-                  Submit suggestion
+                  {isDotMode ? 'Submit for directory review' : 'Submit suggestion'}
                 </>
               )}
             </Button>
 
             <p className="text-xs text-muted-foreground">
-              Submissions are moderated. We limit duplicate and excessive requests to protect the directory.
+              Submissions are moderated. Duplicate and excessive requests are rate-limited.
             </p>
           </form>
         )}

@@ -22,6 +22,7 @@ import {
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
+import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
 const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Carrier', 'Container / Portable', 'Auto Transport', 'Storage'];
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
@@ -63,6 +64,22 @@ export function DirectoryClient({ initialCompanies }: Props) {
   const selectedCount = compareStore.selectedSlugs.length;
 
   const [companies, setCompanies] = useState<Company[]>(initialCompanies);
+
+  const parsedCarrierSearch = useMemo(() => {
+    const q = filters.search?.trim();
+    if (!q) return null;
+    return parseCarrierNumber(q);
+  }, [filters.search]);
+
+  const carrierNotInDirectory = useMemo(() => {
+    if (!parsedCarrierSearch) return false;
+    const norm = (v: string) => v.replace(/\D/g, '');
+    return !initialCompanies.some((c) =>
+      parsedCarrierSearch.type === 'DOT'
+        ? norm(c.usdotNumber || '') === parsedCarrierSearch.value
+        : norm(c.mcNumber || '') === parsedCarrierSearch.value
+    );
+  }, [parsedCarrierSearch, initialCompanies]);
 
   // Debounced filter application (pure client filter — no lib/data bundle)
   React.useEffect(() => {
@@ -353,11 +370,25 @@ export function DirectoryClient({ initialCompanies }: Props) {
               Clear filters
             </button>
           </p>
-          {filters.search?.trim() ? (
+          {parsedCarrierSearch && carrierNotInDirectory ? (
             <div className="mx-auto max-w-md space-y-3 rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5">
               <p className="text-sm text-muted-foreground">
-                Can&apos;t find <strong>{filters.search}</strong>? Suggest it and we&apos;ll verify FMCSA
-                licensing before adding it to the directory.
+                <strong>{parsedCarrierSearch.display}</strong> isn&apos;t in our directory yet. We&apos;ll
+                pull verified FMCSA licensing data before you submit.
+              </p>
+              <SuggestCompanyCta
+                sourcePage="/companies"
+                carrierQuery={filters.search?.trim() ?? parsedCarrierSearch.display}
+                variant="default"
+                size="default"
+                className="w-full"
+              />
+            </div>
+          ) : filters.search?.trim() ? (
+            <div className="mx-auto max-w-md space-y-3 rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5">
+              <p className="text-sm text-muted-foreground">
+                Can&apos;t find <strong>{filters.search}</strong>? Suggest it and we&apos;ll verify before
+                adding it to the directory.
               </p>
               <SuggestCompanyCta
                 sourcePage="/companies"
