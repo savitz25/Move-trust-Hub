@@ -1,6 +1,9 @@
 import type { HubId } from '@/lib/hub/types';
 
 export const HUB_HEADER = 'x-trust-hub';
+export const PATHNAME_HEADER = 'x-pathname';
+export const HUB_COOKIE = 'mth-hub';
+export const PATHNAME_COOKIE = 'mth-pathname';
 
 /** Detect active hub from pathname (works in middleware, server, and client). */
 export function getHubFromPathname(pathname: string): HubId {

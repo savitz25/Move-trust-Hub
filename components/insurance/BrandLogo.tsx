@@ -17,8 +17,7 @@ export function BrandLogo({
     <span className="flex min-w-0 max-w-[min(340px,72vw)] items-center gap-2.5 sm:gap-3">
       <span className="flex h-11 w-11 shrink-0 items-center justify-center sm:h-12 sm:w-12 md:h-[52px] md:w-[52px]">
         <img
-          src="/brand/insurance-trust-hub-icon-192.png"
-          srcSet="/brand/insurance-trust-hub-icon-192.png 192w, /brand/insurance-trust-hub-icon.png 512w"
+          src="/insurance/brand/insurance-trust-hub-icon-192.png"
           sizes="(max-width: 768px) 44px, 52px"
           alt=""
           aria-hidden="true"
@@ -59,8 +58,7 @@ export function BrandLogo({
 export function BrandLogoStacked({ className = '' }: { className?: string }) {
   return (
     <img
-      src="/brand/insurance-trust-hub-logo-stacked-sm.png"
-      srcSet="/brand/insurance-trust-hub-logo-stacked-sm.png 600w, /brand/insurance-trust-hub-logo-stacked.png 1200w"
+      src="/insurance/brand/insurance-trust-hub-logo-stacked-sm.png"
       sizes="(max-width: 640px) 110px, 140px"
       alt="Insurance Trust Hub"
       width={600}

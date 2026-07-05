@@ -1,16 +1,16 @@
-'use client';
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { HUB_ORDER, HUBS } from '@/lib/hub/config';
-import { getHubFromPathname, hubPath } from '@/lib/hub/paths';
+import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 
-export function HubSelector({ className }: { className?: string }) {
-  const pathname = usePathname() ?? '/';
-  const active = getHubFromPathname(pathname);
-
+export function HubSelector({
+  activeHub,
+  className,
+}: {
+  activeHub: HubId;
+  className?: string;
+}) {
   return (
     <div
       role="tablist"
@@ -22,7 +22,7 @@ export function HubSelector({ className }: { className?: string }) {
     >
       {HUB_ORDER.map((hubId) => {
         const hub = HUBS[hubId];
-        const isActive = active === hubId;
+        const isActive = activeHub === hubId;
         return (
           <Link
             key={hubId}

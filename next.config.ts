@@ -27,6 +27,9 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 160, 200, 240],
+    minimumCacheTTL: 31536000,
   },
   // Enable React strict mode
   reactStrictMode: true,
@@ -37,6 +40,9 @@ const nextConfig: NextConfig = {
       '@radix-ui/react-*',
       'framer-motion',
       'sonner',
+      'recharts',
+      '@tanstack/react-table',
+      'date-fns',
     ],
   },
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
@@ -121,6 +127,24 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/logo.png',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/insurance/brand/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/lender/brand/:path*',
         headers: [
           {
             key: 'Cache-Control',

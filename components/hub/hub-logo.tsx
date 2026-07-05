@@ -18,7 +18,9 @@ export function HubLogo({
       alt={hub.logoAlt}
       width={240}
       height={60}
+      quality={75}
       priority={priority}
+      fetchPriority={priority ? 'high' : 'auto'}
       sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 240px"
       className="h-12 w-auto max-w-[240px] object-contain object-left transition-transform group-hover:scale-[1.02]"
     />

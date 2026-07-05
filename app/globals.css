@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* Exclude non-UI trees from class scanning — faster builds, fewer false-positive tokens. */
+@source not "../data";
+@source not "../scripts";
+@source not "../types";
+@source not "../lib/destinations/content";
 
 /* Tailwind v4 theme registration for shadcn-style CSS variables.
    This makes classes like border-border, bg-card, text-foreground, etc. work
@@ -33,6 +40,46 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* Critical above-fold: stable metrics while the main stylesheet + Geist load. */
+@layer base {
+  /* LCP: homepage hero h1 */
+  h1.font-semibold.tracking-tighter {
+    font-size: 1.875rem;
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+  }
+
+  @media (min-width: 640px) {
+    h1.font-semibold.tracking-tighter {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1.font-semibold.tracking-tighter {
+      font-size: 3.75rem;
+    }
+  }
+
+  /* Navbar chrome: reserve sticky header height (trust bar + main nav). */
+  nav.sticky.top-0 {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  /* Hero shell: matches from-primary/8 via-background to-background. */
+  section.bg-gradient-to-br.from-primary\/8 {
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(var(--primary) / 0.08),
+      hsl(var(--background)),
+      hsl(var(--background))
+    );
+  }
 }
 
 @layer base {
