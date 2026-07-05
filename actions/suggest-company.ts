@@ -46,6 +46,13 @@ export async function previewFmcsaSuggestion(
     };
   }
 
+  if (!process.env.FMCSA_WEB_KEY?.trim()) {
+    return {
+      success: false,
+      error: 'FMCSA lookup is temporarily unavailable. Please try again later.',
+    };
+  }
+
   const fmcsa = await lookupFmcsaForSuggestion(carrierQuery);
   if (!fmcsa?.legalName) {
     return {

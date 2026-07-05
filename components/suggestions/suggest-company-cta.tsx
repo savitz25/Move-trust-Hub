@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { Loader2, PlusCircle } from 'lucide-react';
 import { previewFmcsaSuggestion } from '@/actions/suggest-company';
 import { SuggestCompanyModal } from '@/components/suggestions/suggest-company-modal';
@@ -11,7 +11,7 @@ type Props = {
   sourcePage: string;
   /** When set, opens FMCSA-trusted flow */
   carrierQuery?: string;
-  /** Skip FMCSA fetch when verify page already loaded preview */
+  /** Pre-loaded FMCSA data from verify page or directory panel */
   dotPreview?: FmcsaSuggestionPreview | null;
   initialName?: string;
   variant?: 'default' | 'outline' | 'secondary';
@@ -39,9 +39,22 @@ export function SuggestCompanyCta({
   const buttonLabel =
     label ?? (isDotFlow ? 'Add This Company to Our Directory' : 'Company not listed? Suggest it');
 
-  function handleClick() {
+  useEffect(() => {
     if (initialDotPreview?.legalName) {
       setDotPreview(initialDotPreview);
+    }
+  }, [initialDotPreview]);
+
+  function resolveCachedPreview(): FmcsaSuggestionPreview | null {
+    if (dotPreview?.legalName) return dotPreview;
+    if (initialDotPreview?.legalName) return initialDotPreview;
+    return null;
+  }
+
+  function handleClick() {
+    const cached = resolveCachedPreview();
+    if (cached) {
+      setDotPreview(cached);
       setPreviewError(null);
       setOpen(true);
       return;

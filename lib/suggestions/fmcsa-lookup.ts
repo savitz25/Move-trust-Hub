@@ -1,10 +1,14 @@
 import 'server-only';
 
-import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
+import {
+  fetchFmcsaCarrierByParsed,
+  formatFmcsaPhysicalAddress,
+} from '@/lib/fmcsa/refresh/fetch-carrier';
 import { parseCarrierNumber, type ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 import { resolveCarrierPreview } from '@/lib/verify-dot/fmcsa';
 import type { FmcsaPreview } from '@/lib/verify-dot/fmcsa';
 import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
+import type { FmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/types';
 
 export type SuggestionFmcsaData = {
   displayNumber: string;
@@ -21,13 +25,10 @@ export type SuggestionFmcsaData = {
   fmcsaRaw: Record<string, unknown> | null;
 };
 
-function normalizeUsdot(value: string | null | undefined): string | null {
-  if (!value) return null;
-  const digits = value.replace(/\D/g, '');
-  return digits.length >= 3 ? digits : null;
-}
-
-function buildAuthorityStatus(snapshot: Awaited<ReturnType<typeof fetchFmcsaCarrierSnapshot>>, preview: FmcsaPreview | null): string | null {
+function buildAuthorityStatus(
+  snapshot: FmcsaCarrierSnapshot | null,
+  preview: FmcsaPreview | null
+): string | null {
   if (snapshot) {
     if (snapshot.authorityActive) return 'Active';
     if (snapshot.allowedToOperate) return 'Registered';
@@ -38,17 +39,59 @@ function buildAuthorityStatus(snapshot: Awaited<ReturnType<typeof fetchFmcsaCarr
   return null;
 }
 
-function snapshotAddress(raw: Record<string, unknown> | null | undefined): string | null {
-  if (!raw) return null;
-  const address = [
-    raw.phyStreet as string | undefined,
-    raw.phyCity as string | undefined,
-    raw.phyState as string | undefined,
-    raw.phyZipcode as string | undefined,
-  ]
-    .filter(Boolean)
-    .join(', ');
-  return address || null;
+function snapshotFromFallbackPreview(
+  parsed: ParsedCarrierNumber,
+  preview: FmcsaPreview
+): SuggestionFmcsaData {
+  return {
+    displayNumber: parsed.display,
+    legalName: preview.legalName ?? null,
+    dbaName: preview.dbaName ?? null,
+    headquarters: preview.physicalAddress ?? null,
+    phone: preview.phone ?? null,
+    authorityStatus: buildAuthorityStatus(null, preview),
+    safetyRating: preview.safetyRating ?? null,
+    allowedToOperate: preview.allowedToOperate ?? null,
+    usdot: parsed.type === 'DOT' ? parsed.value : preview.usdot ?? null,
+    mcNumber: parsed.type === 'MC' ? parsed.value : preview.mcNumber ?? null,
+    fmcsaPreview: preview,
+    fmcsaRaw: null,
+  };
+}
+
+function snapshotToSuggestionData(
+  parsed: ParsedCarrierNumber,
+  snapshot: FmcsaCarrierSnapshot,
+  preview: FmcsaPreview | null
+): SuggestionFmcsaData {
+  const raw = snapshot.raw as {
+    phyStreet?: string;
+    phyCity?: string;
+    phyState?: string;
+    phyZipcode?: string;
+    telephone?: string;
+    docketNumber?: string;
+  };
+
+  const headquarters =
+    formatFmcsaPhysicalAddress(raw) ?? preview?.physicalAddress ?? null;
+
+  return {
+    displayNumber: parsed.display,
+    legalName: snapshot.legalName ?? preview?.legalName ?? null,
+    dbaName: snapshot.dbaName ?? preview?.dbaName ?? null,
+    headquarters,
+    phone: raw.telephone ?? preview?.phone ?? null,
+    authorityStatus: buildAuthorityStatus(snapshot, preview),
+    safetyRating: snapshot.safetyRating ?? preview?.safetyRating ?? null,
+    allowedToOperate: snapshot.allowedToOperate ? 'Y' : preview?.allowedToOperate ?? 'N',
+    usdot: snapshot.dotNumber?.replace(/\D/g, '') ?? (parsed.type === 'DOT' ? parsed.value : null),
+    mcNumber:
+      snapshot.mcNumber ??
+      (parsed.type === 'MC' ? parsed.value : raw.docketNumber?.replace(/\D/g, '') ?? null),
+    fmcsaPreview: preview,
+    fmcsaRaw: snapshot.raw,
+  };
 }
 
 export function toFmcsaSuggestionPreview(data: SuggestionFmcsaData): FmcsaSuggestionPreview {
@@ -67,48 +110,37 @@ export function toFmcsaSuggestionPreview(data: SuggestionFmcsaData): FmcsaSugges
 }
 
 async function lookupFromParsed(parsed: ParsedCarrierNumber): Promise<SuggestionFmcsaData | null> {
+  const snapshot = await fetchFmcsaCarrierByParsed(parsed);
   const { preview } = await resolveCarrierPreview(parsed, null);
-  const dotForSnapshot =
-    parsed.type === 'DOT' ? parsed.value : normalizeUsdot((preview as { dotNumber?: string })?.dotNumber as string) ?? parsed.value;
 
-  const snapshot = await fetchFmcsaCarrierSnapshot(
-    dotForSnapshot,
-    parsed.type === 'MC' ? parsed.value : null
-  );
+  if (snapshot?.legalName) {
+    return snapshotToSuggestionData(parsed, snapshot, preview);
+  }
 
-  const legalName = snapshot?.legalName ?? preview?.legalName ?? null;
-  if (!legalName && !preview?.legalName) return null;
+  if (preview?.legalName) {
+    return snapshotFromFallbackPreview(parsed, preview);
+  }
 
-  const raw = snapshot?.raw ?? null;
-  const headquarters = preview?.physicalAddress ?? snapshotAddress(raw) ?? null;
-
-  return {
-    displayNumber: parsed.display,
-    legalName,
-    dbaName: snapshot?.dbaName ?? preview?.dbaName ?? null,
-    headquarters,
-    phone: preview?.phone ?? (raw?.telephone as string | undefined) ?? null,
-    authorityStatus: buildAuthorityStatus(snapshot, preview),
-    safetyRating: snapshot?.safetyRating ?? preview?.safetyRating ?? null,
-    allowedToOperate: snapshot
-      ? snapshot.allowedToOperate
-        ? 'Y'
-        : 'N'
-      : preview?.allowedToOperate ?? null,
-    usdot: snapshot?.dotNumber?.replace(/\D/g, '') ?? (parsed.type === 'DOT' ? parsed.value : null),
-    mcNumber:
-      snapshot?.mcNumber ??
-      (parsed.type === 'MC' ? parsed.value : (raw?.docketNumber as string | undefined)?.replace(/\D/g, '') ?? null),
-    fmcsaPreview: preview,
-    fmcsaRaw: raw,
-  };
+  return null;
 }
 
 export async function lookupFmcsaForSuggestion(
   carrierInput?: string | null
 ): Promise<SuggestionFmcsaData | null> {
   if (!carrierInput?.trim()) return null;
+
+  if (!process.env.FMCSA_WEB_KEY?.trim()) {
+    console.error('[fmcsa-lookup] FMCSA_WEB_KEY is not configured');
+  }
+
   const parsed = parseCarrierNumber(carrierInput.trim());
   if (!parsed) return null;
   return lookupFromParsed(parsed);
+}
+
+/** Map verify-dot FmcsaPreview + full snapshot into suggestion pre-fill data. */
+export async function lookupFmcsaForCarrierDisplay(
+  carrierInput: string
+): Promise<SuggestionFmcsaData | null> {
+  return lookupFmcsaForSuggestion(carrierInput);
 }

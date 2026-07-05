@@ -1,5 +1,6 @@
 import 'server-only';
 
+import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 import type { FmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/types';
 import { FMCSA_REFRESH_CONFIG, sleep } from '@/lib/fmcsa/refresh/rate-limit';
 
@@ -8,6 +9,11 @@ type FmcsaApiCarrier = {
   docketNumber?: string;
   legalName?: string;
   dbaName?: string;
+  phyStreet?: string;
+  phyCity?: string;
+  phyState?: string;
+  phyZipcode?: string;
+  telephone?: string;
   allowedToOperate?: string;
   safetyRating?: string;
   oosDate?: string;
@@ -24,6 +30,13 @@ type FmcsaApiCarrier = {
   totalDrivers?: number;
   carrierOperation?: { carrierOperationDesc?: string };
 };
+
+export function formatFmcsaPhysicalAddress(carrier: FmcsaApiCarrier): string | null {
+  const address = [carrier.phyStreet, carrier.phyCity, carrier.phyState, carrier.phyZipcode]
+    .filter(Boolean)
+    .join(', ');
+  return address || null;
+}
 
 function normalizeSafetyRating(
   raw?: string | null
@@ -75,6 +88,17 @@ async function fetchCarrierByDot(
 ): Promise<FmcsaApiCarrier | null> {
   const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
   const url = `${base}/${encodeURIComponent(dot)}?webKey=${encodeURIComponent(webKey)}`;
+  const json = await fetchJson<{ content?: { carrier?: FmcsaApiCarrier } }>(url);
+  return json?.content?.carrier ?? null;
+}
+
+async function fetchCarrierByMc(
+  mc: string,
+  webKey: string
+): Promise<FmcsaApiCarrier | null> {
+  const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
+  const digits = mc.replace(/\D/g, '');
+  const url = `${base}/docket-number/MC${encodeURIComponent(digits)}?webKey=${encodeURIComponent(webKey)}`;
   const json = await fetchJson<{ content?: { carrier?: FmcsaApiCarrier } }>(url);
   return json?.content?.carrier ?? null;
 }
@@ -137,16 +161,33 @@ function snapshotFromCarrier(
   };
 }
 
-/** Fetch FMCSA carrier snapshot by USDOT with retries and rate limiting. */
-export async function fetchFmcsaCarrierSnapshot(
-  usdot: string,
-  mcNumber?: string | null
+async function snapshotFromResolvedCarrier(params: {
+  carrier: FmcsaApiCarrier;
+  dot: string;
+  mcNumber?: string;
+  webKey: string;
+}): Promise<FmcsaCarrierSnapshot | null> {
+  let complaints = params.carrier.totalComplaints ?? params.carrier.complaintCount ?? 0;
+  const complaintFetch = await fetchComplaintsByDot(params.dot, params.webKey);
+  if (complaintFetch !== null) {
+    complaints = complaintFetch;
+  }
+
+  await sleep(FMCSA_REFRESH_CONFIG.requestDelayMs);
+  return snapshotFromCarrier(
+    params.carrier,
+    params.dot,
+    params.mcNumber,
+    complaints
+  );
+}
+
+/** Fetch FMCSA snapshot by parsed USDOT or MC docket (primary lookup for suggest/verify flows). */
+export async function fetchFmcsaCarrierByParsed(
+  parsed: ParsedCarrierNumber
 ): Promise<FmcsaCarrierSnapshot | null> {
   const webKey = process.env.FMCSA_WEB_KEY?.trim();
   if (!webKey) return null;
-
-  const dot = usdot.replace(/\D/g, '');
-  if (!dot) return null;
 
   let lastError: unknown = null;
 
@@ -156,27 +197,75 @@ export async function fetchFmcsaCarrierSnapshot(
     }
 
     try {
+      if (parsed.type === 'MC') {
+        const carrier = await fetchCarrierByMc(parsed.value, webKey);
+        if (!carrier?.legalName) {
+          lastError = new Error(`No carrier data for MC ${parsed.value}`);
+          continue;
+        }
+        const dot = String(carrier.dotNumber ?? '').replace(/\D/g, '');
+        if (!dot) {
+          lastError = new Error(`MC ${parsed.value} missing linked USDOT`);
+          continue;
+        }
+        return snapshotFromResolvedCarrier({
+          carrier,
+          dot,
+          mcNumber: parsed.value,
+          webKey,
+        });
+      }
+
+      const dot = parsed.value.replace(/\D/g, '');
       const carrier = await fetchCarrierByDot(dot, webKey);
       if (!carrier?.legalName) {
         lastError = new Error(`No carrier data for DOT ${dot}`);
         continue;
       }
 
-      let complaints =
-        carrier.totalComplaints ?? carrier.complaintCount ?? 0;
-
-      const complaintFetch = await fetchComplaintsByDot(dot, webKey);
-      if (complaintFetch !== null) {
-        complaints = complaintFetch;
-      }
-
-      await sleep(FMCSA_REFRESH_CONFIG.requestDelayMs);
-      return snapshotFromCarrier(carrier, dot, mcNumber?.replace(/\D/g, '') || undefined, complaints);
+      const mcDigits = carrier.docketNumber?.replace(/\D/g, '') || undefined;
+      return snapshotFromResolvedCarrier({
+        carrier,
+        dot,
+        mcNumber: mcDigits,
+        webKey,
+      });
     } catch (err) {
       lastError = err;
     }
   }
 
-  console.error('[fmcsa-refresh] fetch failed', { dot, error: lastError });
+  console.error('[fmcsa-refresh] fetch by parsed failed', {
+    type: parsed.type,
+    value: parsed.value,
+    error: lastError,
+  });
   return null;
+}
+
+/** Fetch FMCSA carrier snapshot by USDOT with retries and rate limiting. */
+export async function fetchFmcsaCarrierSnapshot(
+  usdot: string,
+  mcNumber?: string | null
+): Promise<FmcsaCarrierSnapshot | null> {
+  const dot = usdot.replace(/\D/g, '');
+  if (!dot) return null;
+
+  const parsed = {
+    type: 'DOT' as const,
+    value: dot,
+    display: `DOT ${dot}`,
+  };
+
+  const snapshot = await fetchFmcsaCarrierByParsed(parsed);
+  if (!snapshot) return null;
+
+  if (mcNumber?.replace(/\D/g, '')) {
+    return {
+      ...snapshot,
+      mcNumber: mcNumber.replace(/\D/g, ''),
+    };
+  }
+
+  return snapshot;
 }

@@ -70,20 +70,22 @@ export async function verifyCarrierNumber(
   let preview: FmcsaPreview | null = basePreview;
 
   if (!directory.slug) {
-    const fmcsa = await lookupFmcsaForSuggestion(carrier.display);
-    if (fmcsa) {
+    const fmcsa = await lookupFmcsaForSuggestion(parsedInput.data.query);
+    if (fmcsa?.legalName) {
       preview = {
-        legalName: fmcsa.legalName ?? basePreview?.legalName,
-        dbaName: fmcsa.dbaName ?? basePreview?.dbaName,
-        physicalAddress: fmcsa.headquarters ?? basePreview?.physicalAddress,
-        phone: fmcsa.phone ?? basePreview?.phone,
+        legalName: fmcsa.legalName,
+        dbaName: fmcsa.dbaName ?? undefined,
+        physicalAddress: fmcsa.headquarters ?? undefined,
+        phone: fmcsa.phone ?? undefined,
         usdot: fmcsa.usdot ?? (carrier.type === 'DOT' ? carrier.value : undefined),
         mcNumber: fmcsa.mcNumber ?? (carrier.type === 'MC' ? carrier.value : undefined),
         authorityStatus: fmcsa.authorityStatus ?? undefined,
-        allowedToOperate: fmcsa.allowedToOperate ?? basePreview?.allowedToOperate,
-        safetyRating: fmcsa.safetyRating ?? basePreview?.safetyRating,
+        allowedToOperate: fmcsa.allowedToOperate ?? undefined,
+        safetyRating: fmcsa.safetyRating ?? undefined,
         source: 'fmcsa_api',
       };
+    } else if (!preview?.legalName && basePreview?.legalName) {
+      preview = basePreview;
     }
   }
 

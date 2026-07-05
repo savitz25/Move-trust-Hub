@@ -34,7 +34,7 @@ export function DotVerifierResults({ result }: Props) {
   const carrierQuery = result.displayNumber ?? '';
   const validCarrier = carrierQuery ? parseCarrierNumber(carrierQuery) : null;
   const dotPreviewForSuggest = fmcsaPreviewFromVerifyResult(result);
-  const showAddToDirectory = !inDirectory && Boolean(validCarrier);
+  const showAddToDirectory = !inDirectory && Boolean(validCarrier) && hasPreview;
 
   const statusBanner = inDirectory ? (
     <div
