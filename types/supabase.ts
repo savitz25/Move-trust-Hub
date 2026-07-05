@@ -321,6 +321,67 @@ export interface Database {
         };
         Update: Partial<Database['public']['Tables']['dot_verifications']['Row']>;
       };
+      company_suggestions: {
+        Row: {
+          id: string;
+          name: string;
+          usdot: string | null;
+          mc_number: string | null;
+          details: string | null;
+          status: 'pending' | 'approved' | 'rejected';
+          suggested_by_name: string | null;
+          suggested_by_email: string | null;
+          submitter_ip: string | null;
+          ip_hash: string | null;
+          email_hash: string | null;
+          source_page: string | null;
+          legal_name: string | null;
+          headquarters: string | null;
+          phone: string | null;
+          authority_status: string | null;
+          fmcsa_preview: Json | null;
+          fmcsa_raw: Json | null;
+          company_id: string | null;
+          moderation_note: string | null;
+          moderated_at: string | null;
+          moderated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          name: string;
+          email_hash: string;
+          usdot?: string | null;
+          mc_number?: string | null;
+          details?: string | null;
+          status?: 'pending' | 'approved' | 'rejected';
+          suggested_by_name?: string | null;
+          suggested_by_email?: string | null;
+          submitter_ip?: string | null;
+          ip_hash?: string | null;
+          source_page?: string | null;
+          legal_name?: string | null;
+          headquarters?: string | null;
+          phone?: string | null;
+          authority_status?: string | null;
+          fmcsa_preview?: Json | null;
+          fmcsa_raw?: Json | null;
+        };
+        Update: Partial<Database['public']['Tables']['company_suggestions']['Row']>;
+      };
+      suggestion_rate_limits: {
+        Row: {
+          id: string;
+          ip_hash: string;
+          email_hash: string;
+          created_at: string;
+        };
+        Insert: {
+          ip_hash: string;
+          email_hash: string;
+        };
+        Update: Partial<Database['public']['Tables']['suggestion_rate_limits']['Row']>;
+      };
       saved_comparisons: {
         Row: {
           id: string;

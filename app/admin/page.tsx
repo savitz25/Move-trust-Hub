@@ -89,6 +89,9 @@ export default function AdminDashboard() {
         </div>
         <div className="flex gap-2">
           <Button variant="outline" asChild>
+            <Link href="/admin/suggestions">Suggestions</Link>
+          </Button>
+          <Button variant="outline" asChild>
             <Link href="/admin/quotes">Quote Analytics</Link>
           </Button>
           <Button onClick={startNew}>+ Add New Company</Button>

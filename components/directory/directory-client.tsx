@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from 'react';
 import { Company, DirectoryFilters, SortOption, ServiceType } from '@/types';
-import { getFilteredCompanies } from '@/lib/data';
+import { filterCompanies } from '@/lib/directory/filter-companies';
 import { useCompareStore } from '@/store/compare-store';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -21,6 +21,7 @@ import {
 } from '@/lib/trust/company-display-policy';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 
 const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Carrier', 'Container / Portable', 'Auto Transport', 'Storage'];
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
@@ -63,18 +64,17 @@ export function DirectoryClient({ initialCompanies }: Props) {
 
   const [companies, setCompanies] = useState<Company[]>(initialCompanies);
 
-  // Debounced filter application
+  // Debounced filter application (pure client filter — no lib/data bundle)
   React.useEffect(() => {
-    const run = async () => {
-      const result = await getFilteredCompanies({
+    const t = setTimeout(() => {
+      const result = filterCompanies(initialCompanies, {
         ...filters,
         services: selectedServices,
       });
       setCompanies(result);
-    };
-    const t = setTimeout(run, 80);
+    }, 80);
     return () => clearTimeout(t);
-  }, [filters, selectedServices]);
+  }, [filters, selectedServices, initialCompanies]);
 
   // Sync URL (nice for sharing filtered views)
   React.useEffect(() => {
@@ -346,7 +346,35 @@ export function DirectoryClient({ initialCompanies }: Props) {
       )}
 
       {companies.length === 0 && (
-        <div className="text-center py-12 border rounded-xl">No companies match your current filters. <button onClick={clearAllFilters} className="text-primary underline">Clear filters</button></div>
+        <div className="text-center py-12 border rounded-xl space-y-5 px-4">
+          <p>
+            No companies match your current filters.{' '}
+            <button onClick={clearAllFilters} className="text-primary underline">
+              Clear filters
+            </button>
+          </p>
+          {filters.search?.trim() ? (
+            <div className="mx-auto max-w-md space-y-3 rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5">
+              <p className="text-sm text-muted-foreground">
+                Can&apos;t find <strong>{filters.search}</strong>? Suggest it and we&apos;ll verify FMCSA
+                licensing before adding it to the directory.
+              </p>
+              <SuggestCompanyCta
+                sourcePage="/companies"
+                initialName={filters.search.trim()}
+                variant="default"
+                size="default"
+                className="w-full"
+              />
+            </div>
+          ) : (
+            <SuggestCompanyCta
+              sourcePage="/companies"
+              variant="outline"
+              size="default"
+            />
+          )}
+        </div>
       )}
     </div>
   );

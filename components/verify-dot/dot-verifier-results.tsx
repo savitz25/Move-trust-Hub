@@ -16,6 +16,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import type { VerifyDotResult } from '@/actions/verify-dot';
+import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 
 type Props = {
   result: VerifyDotResult;
@@ -212,6 +213,24 @@ export function DotVerifierResults({ result }: Props) {
           </Button>
         ) : null}
       </div>
+
+      {!inDirectory ? (
+        <div className="rounded-lg border border-dashed border-primary/30 bg-primary/5 p-5 text-center space-y-3">
+          <p className="text-sm text-muted-foreground">
+            Know this carrier? Help us expand the directory so other families can compare trusted movers.
+          </p>
+          <SuggestCompanyCta
+            sourcePage="/verify-dot"
+            initialName={preview?.legalName ?? ''}
+            initialUsdot={
+              result.numberType === 'DOT' && result.displayNumber
+                ? result.displayNumber.replace(/\D/g, '')
+                : ''
+            }
+            className="min-h-[48px]"
+          />
+        </div>
+      ) : null}
 
       <p className="text-xs text-muted-foreground">
         {saferUrl ? (

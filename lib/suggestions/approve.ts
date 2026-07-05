@@ -1,0 +1,124 @@
+import 'server-only';
+
+import { computeReputationScore } from '@/data/seed-companies';
+import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
+import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
+import { createAdminClient } from '@/lib/supabase/admin';
+import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
+import type { Json } from '@/types/supabase';
+
+export type CompanySuggestionRow = {
+  id: string;
+  name: string;
+  usdot: string | null;
+  mc_number: string | null;
+  details: string | null;
+  legal_name: string | null;
+  headquarters: string | null;
+  phone: string | null;
+  authority_status: string | null;
+  fmcsa_preview: Json | null;
+  fmcsa_raw: Json | null;
+};
+
+export async function approveSuggestionToCompany(
+  suggestion: CompanySuggestionRow
+): Promise<{ companyId: string; slug: string } | null> {
+  const admin = createAdminClient();
+  const usdot = suggestion.usdot?.replace(/\D/g, '') || null;
+  const displayName = suggestion.legal_name || suggestion.name;
+  const slug = await resolveUniqueCompanySlug({ name: displayName, usdot });
+  const companyId = slug;
+
+  let snapshot = usdot ? await fetchFmcsaCarrierSnapshot(usdot, suggestion.mc_number) : null;
+
+  if (!snapshot && suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object') {
+    const raw = suggestion.fmcsa_raw as Record<string, unknown>;
+    snapshot = {
+      dotNumber: usdot || '',
+      mcNumber: suggestion.mc_number?.replace(/\D/g, '') || undefined,
+      legalName: suggestion.legal_name || suggestion.name,
+      allowedToOperate: suggestion.authority_status === 'Active',
+      authorityActive: suggestion.authority_status === 'Active',
+      outOfService: false,
+      safetyRating: 'Not Rated',
+      complaintsLast12m: 0,
+      shipments: 1000,
+      raw,
+    };
+  }
+
+  const dataHash = snapshot ? computeFmcsaDataHash(snapshot) : null;
+  const reputationScore = computeReputationScore({
+    overallRating: 0,
+    reviewCount: 0,
+    fmcsaComplaints: snapshot?.complaintsLast12m ?? 0,
+    fmcsaShipments: snapshot?.shipments ?? 1000,
+    bbbRating: 'NR',
+    bbbAccredited: false,
+    isVerified: Boolean(snapshot?.authorityActive),
+    yearsInBusiness: 0,
+  });
+
+  const row = {
+    id: companyId,
+    slug,
+    name: displayName,
+    short_description: suggestion.details?.slice(0, 200) || `Interstate moving company (USDOT ${usdot || 'pending'}).`,
+    description:
+      suggestion.details ||
+      `${displayName} was added to Move Trust Hub from a community suggestion. FMCSA licensing data is shown when available.`,
+    headquarters: suggestion.headquarters || '',
+    website: '',
+    usdot_number: usdot ? usdot : null,
+    mc_number: suggestion.mc_number || snapshot?.mcNumber || null,
+    fmcsa_safety_rating: snapshot?.safetyRating ?? 'Not Rated',
+    fmcsa_complaints: snapshot?.complaintsLast12m ?? 0,
+    fmcsa_shipments: snapshot?.shipments ?? 1000,
+    authority_active: snapshot?.authorityActive ?? null,
+    out_of_service: snapshot?.outOfService ?? false,
+    complaints_last_12m: snapshot?.complaintsLast12m ?? 0,
+    revocation_date: snapshot?.revocationDate ?? null,
+    data_hash: dataHash,
+    fmcsa_last_checked: snapshot ? new Date().toISOString() : null,
+    fmcsa_legal_name: snapshot?.legalName ?? suggestion.legal_name,
+    fmcsa_raw: snapshot?.raw ?? suggestion.fmcsa_raw,
+    bbb_rating: 'NR',
+    bbb_accredited: false,
+    overall_rating: 0,
+    review_count: 0,
+    reputation_score: reputationScore,
+    years_in_business: 0,
+    avg_price_per_move: 0,
+    price_range: '$$',
+    coverage: 'Continental US',
+    services: ['Full Service'],
+    specialties: [],
+    rating_breakdown: {
+      fiveStar: 0,
+      fourStar: 0,
+      threeStar: 0,
+      twoStar: 0,
+      oneStar: 0,
+    },
+    is_verified: Boolean(snapshot?.authorityActive && snapshot?.allowedToOperate),
+    last_updated: new Date().toISOString(),
+  };
+
+  const { error } = await admin.from('companies').insert(row);
+  if (error) {
+    if (error.code === '23505') {
+      const { data: existing } = await admin
+        .from('companies')
+        .select('id, slug')
+        .eq('slug', slug)
+        .maybeSingle();
+      if (existing) {
+        return { companyId: existing.id, slug: existing.slug };
+      }
+    }
+    throw new Error(error.message);
+  }
+
+  return { companyId, slug };
+}
