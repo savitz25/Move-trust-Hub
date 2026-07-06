@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Loader2, Search, ShieldCheck } from 'lucide-react';
 import { verifyCarrierNumber, type VerifyDotResult } from '@/actions/verify-dot';
 import { Button } from '@/components/ui/button';
@@ -16,7 +17,13 @@ type Props = {
 };
 
 export function DotVerifier({ sourcePage = '/verify-dot' }: Props) {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    const prefill = searchParams.get('q') || searchParams.get('carrier') || '';
+    if (prefill) setQuery(prefill);
+  }, [searchParams]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<VerifyDotResult | null>(null);

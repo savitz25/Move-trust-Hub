@@ -1,4 +1,34 @@
+import { scoreCompanySearch } from '@/lib/directory/search-scoring';
 import type { Company, DirectoryFilters } from '@/types';
+
+function compareBySort(
+  a: Company,
+  b: Company,
+  sort: DirectoryFilters['sort'] | undefined
+): number {
+  const mode = sort || 'reputation';
+  switch (mode) {
+    case 'reputation':
+      return b.reputationScore - a.reputationScore;
+    case 'rating':
+      return b.overallRating - a.overallRating;
+    case 'reviews':
+      return b.reviewCount - a.reviewCount;
+    case 'price-low':
+      return a.avgPricePerMove - b.avgPricePerMove;
+    case 'price-high':
+      return b.avgPricePerMove - a.avgPricePerMove;
+    case 'years':
+      return b.yearsInBusiness - a.yearsInBusiness;
+    case 'complaints': {
+      const ratioA = a.fmcsaComplaints / Math.max(a.fmcsaShipments, 1);
+      const ratioB = b.fmcsaComplaints / Math.max(b.fmcsaShipments, 1);
+      return ratioA - ratioB;
+    }
+    default:
+      return b.reputationScore - a.reputationScore;
+  }
+}
 
 /** Pure client-safe filter/sort — no Supabase or seed imports. */
 export function filterCompanies(
@@ -6,21 +36,17 @@ export function filterCompanies(
   filters: Partial<DirectoryFilters>
 ): Company[] {
   let result = [...companies];
+  const searchQuery = filters.search?.trim() ?? '';
 
-  if (filters.search && filters.search.trim().length > 1) {
-    const q = filters.search.toLowerCase().trim();
-    result = result.filter((c) => {
-      const name = (c.name ?? '').toLowerCase();
-      const description = (c.shortDescription ?? '').toLowerCase();
-      const headquarters = (c.headquarters ?? '').toLowerCase();
-      const specialties = Array.isArray(c.specialties) ? c.specialties : [];
-      return (
-        name.includes(q) ||
-        description.includes(q) ||
-        headquarters.includes(q) ||
-        specialties.some((s) => String(s).toLowerCase().includes(q))
-      );
-    });
+  if (searchQuery.length > 0) {
+    result = result
+      .map((company) => ({ company, score: scoreCompanySearch(company, searchQuery) }))
+      .filter((row) => row.score > 0)
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return compareBySort(a.company, b.company, filters.sort);
+      })
+      .map((row) => row.company);
   }
 
   if (filters.minRating && filters.minRating > 0) {
@@ -73,30 +99,9 @@ export function filterCompanies(
     });
   }
 
-  const sort = filters.sort || 'reputation';
-  result.sort((a, b) => {
-    switch (sort) {
-      case 'reputation':
-        return b.reputationScore - a.reputationScore;
-      case 'rating':
-        return b.overallRating - a.overallRating;
-      case 'reviews':
-        return b.reviewCount - a.reviewCount;
-      case 'price-low':
-        return a.avgPricePerMove - b.avgPricePerMove;
-      case 'price-high':
-        return b.avgPricePerMove - a.avgPricePerMove;
-      case 'years':
-        return b.yearsInBusiness - a.yearsInBusiness;
-      case 'complaints': {
-        const ratioA = a.fmcsaComplaints / Math.max(a.fmcsaShipments, 1);
-        const ratioB = b.fmcsaComplaints / Math.max(b.fmcsaShipments, 1);
-        return ratioA - ratioB;
-      }
-      default:
-        return b.reputationScore - a.reputationScore;
-    }
-  });
+  if (searchQuery.length === 0) {
+    result.sort((a, b) => compareBySort(a, b, filters.sort));
+  }
 
   return result;
 }
