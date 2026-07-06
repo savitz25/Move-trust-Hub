@@ -9,6 +9,9 @@ import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { getAllCompanies } from '@/lib/data-server';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 
+/** Revalidate so admin-approved companies appear without a full redeploy. */
+export const revalidate = 60;
+
 const COMPANIES_TITLE = 'Directory of Interstate Moving Companies 2026';
 const COMPANIES_DESCRIPTION =
   'Browse and filter 25+ major interstate moving companies. Sort by reputation, rating, price, complaints, or years in business. See FMCSA, BBB, and attributable on-site reviews.';

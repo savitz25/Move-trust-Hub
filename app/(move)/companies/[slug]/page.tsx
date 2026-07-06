@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getCompanyBySlugAsync, getReviews } from '@/lib/data-server';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCompanyDirectorySchemaGraph } from '@/lib/seo/build-company-directory-schema';
@@ -30,6 +30,8 @@ import { EditorialReviewVolume } from '@/components/trust/editorial-review-volum
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 
+export const revalidate = 60;
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -44,7 +46,7 @@ export async function generateMetadata({ params }: Props) {
     editorialReviewCount: company.reviewCount,
     editorialRating: company.overallRating,
   });
-  const canonical = `${SITE_URL}/companies/${slug}`;
+  const canonical = `${SITE_URL}/companies/${company.slug}`;
   return {
     title: `${company.name} — Reviews, Pricing & FMCSA Info`,
     description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
@@ -58,6 +60,10 @@ export default async function CompanyProfilePage({ params }: Props) {
   const company = await getCompanyBySlugAsync(slug);
 
   if (!company) notFound();
+
+  if (company.slug !== slug) {
+    redirect(`/companies/${company.slug}`);
+  }
 
   const reviews = await getReviews(company.id, 8);
   const reviewMeta = companyProfileReviewMeta({

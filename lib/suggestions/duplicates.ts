@@ -15,7 +15,7 @@ function normalizeName(name: string): string {
 
 export type DuplicateCheckResult =
   | { duplicate: false }
-  | { duplicate: true; reason: string };
+  | { duplicate: true; reason: string; existingSlug?: string };
 
 export async function checkSuggestionDuplicate(params: {
   name: string;
@@ -40,6 +40,7 @@ export async function checkSuggestionDuplicate(params: {
       return {
         duplicate: true,
         reason: `${inDirectory[0].name} is already in our directory.`,
+        existingSlug: inDirectory[0].slug,
       };
     }
 
@@ -73,7 +74,7 @@ export async function checkSuggestionDuplicate(params: {
 
   const { data: nameMatches } = await admin
     .from('companies')
-    .select('name')
+    .select('name, slug')
     .ilike('name', params.name.trim())
     .limit(1);
 
@@ -81,6 +82,7 @@ export async function checkSuggestionDuplicate(params: {
     return {
       duplicate: true,
       reason: `${nameMatches[0].name} is already listed in our directory.`,
+      existingSlug: nameMatches[0].slug,
     };
   }
 

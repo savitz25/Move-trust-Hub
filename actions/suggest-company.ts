@@ -10,6 +10,7 @@ import {
 } from '@/lib/suggestions/fmcsa-lookup';
 import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
+import { predictCompanyProfileSlug } from '@/lib/directory/resolve-company';
 import { hashEmail, hashIp } from '@/lib/reviews/hash';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
@@ -19,6 +20,11 @@ export type SubmitSuggestionResult = {
   success: boolean;
   error?: string;
   suggestionId?: string;
+  /** Predicted profile slug after admin approval */
+  profileSlug?: string;
+  /** Link to existing profile when duplicate already in directory */
+  existingProfileSlug?: string;
+  pendingReview?: boolean;
 };
 
 export type PreviewFmcsaSuggestionResult = {
@@ -130,7 +136,11 @@ export async function submitCompanySuggestion(
   });
 
   if (duplicateCheck.duplicate) {
-    return { success: false, error: duplicateCheck.reason };
+    return {
+      success: false,
+      error: duplicateCheck.reason,
+      existingProfileSlug: duplicateCheck.existingSlug,
+    };
   }
 
   const admin = createAdminClient();
@@ -179,5 +189,15 @@ export async function submitCompanySuggestion(
     trustedDot: Boolean(carrierParsed && fmcsa),
   });
 
-  return { success: true, suggestionId: inserted.id };
+  const profileSlug = predictCompanyProfileSlug({
+    name: companyName,
+    usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
+  });
+
+  return {
+    success: true,
+    suggestionId: inserted.id,
+    profileSlug,
+    pendingReview: true,
+  };
 }

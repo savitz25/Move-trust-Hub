@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState, useTransition } from 'react';
-import { Building2, Loader2, PlusCircle } from 'lucide-react';
+import Link from 'next/link';
+import { Building2, ExternalLink, Loader2, PlusCircle } from 'lucide-react';
 import { submitCompanySuggestion } from '@/actions/suggest-company';
 import { DotReadonlyFields } from '@/components/suggestions/dot-readonly-fields';
 import { Button } from '@/components/ui/button';
@@ -9,6 +10,11 @@ import { Input } from '@/components/ui/input';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
 import { toast } from 'sonner';
+
+type SubmitSuccessState = {
+  profileSlug: string;
+  pendingReview: boolean;
+};
 
 type Props = {
   open: boolean;
@@ -39,6 +45,7 @@ export function SuggestCompanyModal({
   const [suggestedByName, setSuggestedByName] = useState('');
   const [suggestedByEmail, setSuggestedByEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
   const [pending, startTransition] = useTransition();
 
   useEffect(() => {
@@ -53,6 +60,7 @@ export function SuggestCompanyModal({
     setSuggestedByName('');
     setSuggestedByEmail('');
     setSubmitted(false);
+    setSubmitSuccess(null);
   }
 
   function handleOpenChange(next: boolean) {
@@ -74,12 +82,29 @@ export function SuggestCompanyModal({
       });
 
       if (!res.success) {
-        toast.error(res.error ?? 'Submission failed');
+        if (res.existingProfileSlug) {
+          toast.error(
+            <span>
+              {res.error ?? 'This company is already listed.'}{' '}
+              <Link href={`/companies/${res.existingProfileSlug}`} className="underline font-medium">
+                View profile
+              </Link>
+            </span>
+          );
+        } else {
+          toast.error(res.error ?? 'Submission failed');
+        }
         return;
       }
 
+      if (res.profileSlug) {
+        setSubmitSuccess({
+          profileSlug: res.profileSlug,
+          pendingReview: Boolean(res.pendingReview),
+        });
+      }
       setSubmitted(true);
-      toast.success('Thank you — we’ll review and add it shortly.');
+      toast.success('Submission received — pending directory review.');
     });
   }
 
@@ -97,9 +122,30 @@ export function SuggestCompanyModal({
         {submitted ? (
           <div className="px-6 pb-6 space-y-4">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Thank you — we&apos;ll review and add it shortly. FMCSA licensing data is already
-              on file for this carrier.
+              {submitSuccess?.pendingReview
+                ? 'Thank you — your submission is pending review. FMCSA licensing data is already on file for this carrier. Once approved, the profile will be live at the link below (usually within one business day).'
+                : 'Thank you — we&apos;ll review and add it shortly.'}
             </p>
+            {submitSuccess?.profileSlug ? (
+              <div className="rounded-md border bg-muted/40 p-4 space-y-2">
+                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                  Expected profile URL
+                </p>
+                <Link
+                  href={`/companies/${submitSuccess.profileSlug}`}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                >
+                  /companies/{submitSuccess.profileSlug}
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </Link>
+                {submitSuccess.pendingReview ? (
+                  <p className="text-xs text-muted-foreground">
+                    The page may show &quot;not found&quot; until moderation is complete. You can
+                    bookmark this link and check back after approval.
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
             <Button className="w-full" onClick={() => handleOpenChange(false)}>
               Close
             </Button>

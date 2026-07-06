@@ -98,10 +98,11 @@ export async function moderateSuggestion(params: {
       slug: approved.slug,
     });
 
-    revalidatePath('/companies');
-    revalidatePath(`/companies/${approved.slug}`);
-    revalidatePath('/verify-dot');
-    revalidatePath('/admin/suggestions');
+    revalidatePath('/companies', 'page');
+    revalidatePath(`/companies/${approved.slug}`, 'page');
+    revalidatePath('/verify-dot', 'page');
+    revalidatePath('/admin/suggestions', 'page');
+    revalidatePath('/sitemap.xml');
 
     return { success: true, companySlug: approved.slug };
   } catch (err) {

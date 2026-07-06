@@ -2,15 +2,9 @@ import 'server-only';
 
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
+import { slugifyCompanyName } from '@/lib/utils/slugify';
 
-export function slugifyCompanyName(name: string): string {
-  return name
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 72);
-}
+export { slugifyCompanyName } from '@/lib/utils/slugify';
 
 function normalizeUsdot(value: string | null | undefined): string | null {
   if (!value) return null;
@@ -23,7 +17,8 @@ export async function resolveUniqueCompanySlug(params: {
   usdot?: string | null;
 }): Promise<string> {
   const dot = normalizeUsdot(params.usdot);
-  const base = dot ? `dot-${dot}` : slugifyCompanyName(params.name) || 'company';
+  const nameSlug = slugifyCompanyName(params.name);
+  const base = nameSlug && nameSlug !== 'company' ? nameSlug : dot ? `dot-${dot}` : 'company';
 
   if (!isSupabaseAdminConfigured()) return base;
 
