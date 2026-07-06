@@ -28,7 +28,17 @@ type FmcsaApiCarrier = {
   totalInspections?: number;
   totalPowerUnits?: number;
   totalDrivers?: number;
-  carrierOperation?: { carrierOperationDesc?: string };
+  mcs150Mileage?: number | string;
+  mcs150mileage?: number | string;
+  annualMileage?: number | string;
+  censusTypeId?: { censusType?: string; censusTypeDesc?: string };
+  carrierOperation?: { carrierOperationDesc?: string; carrierOperationCode?: string };
+  _supplemental?: {
+    cargoCarried?: unknown[];
+    operationClassification?: unknown[];
+    authority?: unknown[];
+    oos?: unknown[];
+  };
 };
 
 export function formatFmcsaPhysicalAddress(carrier: FmcsaApiCarrier): string | null {
@@ -103,6 +113,52 @@ async function fetchCarrierByMc(
   return json?.content?.carrier ?? null;
 }
 
+function extractContentArray(json: Record<string, unknown> | null, keys: string[]): unknown[] {
+  if (!json) return [];
+  const content = json.content;
+  if (!content || typeof content !== 'object') return [];
+  const record = content as Record<string, unknown>;
+  for (const key of keys) {
+    const value = record[key];
+    if (Array.isArray(value)) return value;
+    if (value && typeof value === 'object') return [value];
+  }
+  return [];
+}
+
+async function fetchSupplementalCarrierData(
+  dot: string,
+  webKey: string
+): Promise<FmcsaApiCarrier['_supplemental']> {
+  const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
+  const key = `webKey=${encodeURIComponent(webKey)}`;
+
+  const [cargoJson, opJson, authorityJson, oosJson] = await Promise.all([
+    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/cargo-carried?${key}`),
+    fetchJson<Record<string, unknown>>(
+      `${base}/${encodeURIComponent(dot)}/operation-classification?${key}`
+    ),
+    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/authority?${key}`),
+    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/oos?${key}`),
+  ]);
+
+  return {
+    cargoCarried: extractContentArray(cargoJson, [
+      'cargoCarried',
+      'cargoClasses',
+      'cargoClass',
+    ]),
+    operationClassification: extractContentArray(opJson, [
+      'operationClassifications',
+      'operationClassification',
+      'operationClasses',
+      'operationClass',
+    ]),
+    authority: extractContentArray(authorityJson, ['carrierAuthority', 'authority', 'authorities']),
+    oos: extractContentArray(oosJson, ['oos', 'oosList', 'outOfService']),
+  };
+}
+
 async function fetchComplaintsByDot(dot: string, webKey: string): Promise<number | null> {
   const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
   const url = `${base}/${encodeURIComponent(dot)}/complaints?webKey=${encodeURIComponent(webKey)}`;
@@ -173,9 +229,16 @@ async function snapshotFromResolvedCarrier(params: {
     complaints = complaintFetch;
   }
 
+  const supplemental = await fetchSupplementalCarrierData(params.dot, params.webKey);
   await sleep(FMCSA_REFRESH_CONFIG.requestDelayMs);
+
+  const enrichedCarrier: FmcsaApiCarrier = {
+    ...params.carrier,
+    _supplemental: supplemental,
+  };
+
   return snapshotFromCarrier(
-    params.carrier,
+    enrichedCarrier,
     params.dot,
     params.mcNumber,
     complaints

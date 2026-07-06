@@ -71,7 +71,9 @@ export async function verifyCarrierNumber(
 
   if (!directory.slug) {
     const fmcsa = await lookupFmcsaForSuggestion(parsedInput.data.query);
-    if (fmcsa?.legalName) {
+    if (fmcsa?.fmcsaPreview?.legalName) {
+      preview = fmcsa.fmcsaPreview;
+    } else if (fmcsa?.legalName) {
       preview = {
         legalName: fmcsa.legalName,
         dbaName: fmcsa.dbaName ?? undefined,

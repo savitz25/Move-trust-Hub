@@ -1,6 +1,8 @@
 import type { CarrierNumberType, ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 
-export type FmcsaPreview = {
+import type { FmcsaEnrichedFields } from '@/lib/fmcsa/preview-types';
+
+export type FmcsaPreview = FmcsaEnrichedFields & {
   legalName?: string;
   dbaName?: string;
   physicalAddress?: string;
