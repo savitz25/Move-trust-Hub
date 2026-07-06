@@ -12,14 +12,15 @@ import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { ArrowUpDown, Filter, Plus, X } from 'lucide-react';
-import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
-import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
-import {
-  canShowVerifiedBadge,
-  getLicenseDisplay,
-} from '@/lib/trust/company-display-policy';
+import { Filter, X } from 'lucide-react';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
+import { CompanyCard } from '@/components/directory/company-card';
+import {
+  companyProfileHref,
+  formatAvgPricePerMove,
+  formatCompanyHeadquarters,
+  normalizeCompaniesForDisplay,
+} from '@/lib/directory/normalize-company';
 
 import { DirectoryCarrierFmcsaPanel } from '@/components/suggestions/directory-carrier-fmcsa-panel';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
@@ -64,7 +65,12 @@ export function DirectoryClient({ initialCompanies }: Props) {
   const compareStore = useCompareStore();
   const selectedCount = compareStore.selectedSlugs.length;
 
-  const [companies, setCompanies] = useState<Company[]>(initialCompanies);
+  const normalizedInitial = useMemo(
+    () => normalizeCompaniesForDisplay(initialCompanies),
+    [initialCompanies]
+  );
+
+  const [companies, setCompanies] = useState<Company[]>(normalizedInitial);
 
   const parsedCarrierSearch = useMemo(() => {
     const q = filters.search?.trim();
@@ -75,24 +81,24 @@ export function DirectoryClient({ initialCompanies }: Props) {
   const carrierNotInDirectory = useMemo(() => {
     if (!parsedCarrierSearch) return false;
     const norm = (v: string) => v.replace(/\D/g, '');
-    return !initialCompanies.some((c) =>
+    return !normalizedInitial.some((c) =>
       parsedCarrierSearch.type === 'DOT'
         ? norm(c.usdotNumber || '') === parsedCarrierSearch.value
         : norm(c.mcNumber || '') === parsedCarrierSearch.value
     );
-  }, [parsedCarrierSearch, initialCompanies]);
+  }, [parsedCarrierSearch, normalizedInitial]);
 
   // Debounced filter application (pure client filter — no lib/data bundle)
   React.useEffect(() => {
     const t = setTimeout(() => {
-      const result = filterCompanies(initialCompanies, {
+      const result = filterCompanies(normalizedInitial, {
         ...filters,
         services: selectedServices,
       });
       setCompanies(result);
     }, 80);
     return () => clearTimeout(t);
-  }, [filters, selectedServices, initialCompanies]);
+  }, [filters, selectedServices, normalizedInitial]);
 
   // Sync URL (nice for sharing filtered views)
   React.useEffect(() => {
@@ -303,11 +309,13 @@ export function DirectoryClient({ initialCompanies }: Props) {
       {/* GRID VIEW */}
       {view === 'grid' && (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          <AnimatePresence>
-            {companies.map(company => (
-              <CompanyCard key={company.id} company={company} compareStore={compareStore} />
-            ))}
-          </AnimatePresence>
+          {companies.map((company) => (
+            <CompanyCard
+              key={company.id || company.slug}
+              company={company}
+              compareStore={compareStore}
+            />
+          ))}
         </div>
       )}
 
@@ -329,25 +337,33 @@ export function DirectoryClient({ initialCompanies }: Props) {
             </thead>
             <tbody>
               {companies.map((c) => {
-                const ratio = (c.fmcsaComplaints / Math.max(c.fmcsaShipments, 1) * 1000).toFixed(1);
+                const shipments = Math.max(Number(c.fmcsaShipments) || 0, 1);
+                const ratio = ((Number(c.fmcsaComplaints) || 0) / shipments * 1000).toFixed(1);
                 const selected = compareStore.isSelected(c.slug);
+                const profileHref = companyProfileHref(c);
                 return (
-                  <tr key={c.id} className="hover:bg-muted/40 border-b last:border-0">
+                  <tr key={c.id || c.slug} className="hover:bg-muted/40 border-b last:border-0">
                     <td className="pl-5 py-3 font-medium">
-                      <Link href={`/companies/${c.slug}`} className="hover:underline">{c.name}</Link>
-                      <div className="text-xs text-muted-foreground">{c.headquarters}</div>
+                      <Link href={profileHref} className="hover:underline">
+                        {c.name || 'Unnamed company'}
+                      </Link>
+                      <div className="text-xs text-muted-foreground">
+                        {formatCompanyHeadquarters(c.headquarters)}
+                      </div>
                     </td>
-                    <td className="font-semibold text-center">{c.reputationScore}</td>
-                    <td><StarRating rating={c.overallRating} size="sm" showNumber /></td>
+                    <td className="font-semibold text-center">{c.reputationScore ?? 0}</td>
+                    <td><StarRating rating={Number(c.overallRating) || 0} size="sm" showNumber /></td>
                     <td className="text-center tabular-nums text-xs">
-                      <EditorialReviewVolume count={c.reviewCount} />
+                      <EditorialReviewVolume count={Number(c.reviewCount) || 0} />
                     </td>
-                    <td className="text-center tabular-nums">${c.avgPricePerMove.toLocaleString()}</td>
-                    <td className="text-center">{c.yearsInBusiness}</td>
+                    <td className="text-center tabular-nums">
+                      {formatAvgPricePerMove(c.avgPricePerMove)}
+                    </td>
+                    <td className="text-center">{c.yearsInBusiness ?? 0}</td>
                     <td className="text-center text-xs">{ratio}</td>
                     <td className="text-right pr-4">
                       <div className="flex justify-end gap-2">
-                        <Link href={`/companies/${c.slug}`}>
+                        <Link href={profileHref}>
                           <Button size="sm" variant="outline">Profile</Button>
                         </Link>
                         <Button
@@ -405,73 +421,5 @@ export function DirectoryClient({ initialCompanies }: Props) {
         </div>
       )}
     </div>
-  );
-}
-
-function CompanyCard({ company, compareStore }: { company: Company; compareStore: ReturnType<typeof useCompareStore> }) {
-  const isSelected = compareStore.isSelected(company.slug);
-  const canAdd = compareStore.canAddMore();
-
-  return (
-    <Card className="company-card group overflow-hidden flex flex-col">
-      <div className="p-5 flex-1">
-        <div className="flex justify-between">
-          <Link href={`/companies/${company.slug}`} className="font-semibold text-xl tracking-tight group-hover:text-primary transition-colors">
-            {company.name}
-          </Link>
-          {canShowVerifiedBadge(company) && <Badge variant="success" className="text-[10px] h-fit">VERIFIED</Badge>}
-          {canShowVerifiedBadge(company) && <FmcsaVerificationBadge company={company} className="text-[10px] h-fit" />}
-          <BbbVerificationBadge company={company} className="text-[10px] h-fit" />
-        </div>
-        <div className="text-sm text-muted-foreground">{company.headquarters} • Est. {company.foundedYear}</div>
-
-        <div className="mt-3 flex items-baseline gap-2">
-          <StarRating rating={company.overallRating} />
-          <span className="text-xs text-muted-foreground" title="Industry-reported volume from third-party platforms">
-            (<EditorialReviewVolume count={company.reviewCount} />)
-          </span>
-        </div>
-
-        <div className="mt-2 text-sm line-clamp-2 text-muted-foreground">{company.shortDescription}</div>
-
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {company.services.slice(0, 2).map(s => (
-            <Badge key={s} variant="outline" className="text-xs">{s}</Badge>
-          ))}
-          {company.specialties.slice(0, 1).map(s => (
-            <Badge key={s} variant="secondary" className="text-xs">{s}</Badge>
-          ))}
-        </div>
-      </div>
-
-      <div className="border-t px-5 py-3.5 bg-muted/20 flex items-center justify-between text-sm">
-        <div>
-          <span className="font-semibold tabular-nums">{company.reputationScore}</span>
-          <span className="text-muted-foreground"> rep • ${company.avgPricePerMove.toLocaleString()}</span>
-        </div>
-        <div className="flex gap-2">
-          <Link
-            href={`/review?carrier=${encodeURIComponent(
-              company.usdotNumber ? `DOT ${company.usdotNumber.replace(/\D/g, '')}` : company.mcNumber ? `MC-${company.mcNumber.replace(/\D/g, '')}` : company.name
-            )}`}
-          >
-            <Button size="sm" variant="ghost" className="h-8 px-2 text-xs">Review</Button>
-          </Link>
-          <Link href={`/companies/${company.slug}`}>
-            <Button size="sm" variant="ghost" className="h-8 px-3">Details</Button>
-          </Link>
-          <Button
-            size="sm"
-            variant={isSelected ? 'default' : 'outline'}
-            className="h-8 px-3 gap-1"
-            onClick={() => compareStore.toggleCompany(company)}
-            disabled={!isSelected && !canAdd}
-          >
-            {isSelected ? <X className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5" />}
-            {isSelected ? 'Remove' : 'Compare'}
-          </Button>
-        </div>
-      </div>
-    </Card>
   );
 }

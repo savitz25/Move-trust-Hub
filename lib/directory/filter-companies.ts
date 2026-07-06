@@ -9,13 +9,18 @@ export function filterCompanies(
 
   if (filters.search && filters.search.trim().length > 1) {
     const q = filters.search.toLowerCase().trim();
-    result = result.filter(
-      (c) =>
-        c.name.toLowerCase().includes(q) ||
-        c.shortDescription.toLowerCase().includes(q) ||
-        c.headquarters.toLowerCase().includes(q) ||
-        c.specialties.some((s) => s.toLowerCase().includes(q))
-    );
+    result = result.filter((c) => {
+      const name = (c.name ?? '').toLowerCase();
+      const description = (c.shortDescription ?? '').toLowerCase();
+      const headquarters = (c.headquarters ?? '').toLowerCase();
+      const specialties = Array.isArray(c.specialties) ? c.specialties : [];
+      return (
+        name.includes(q) ||
+        description.includes(q) ||
+        headquarters.includes(q) ||
+        specialties.some((s) => String(s).toLowerCase().includes(q))
+      );
+    });
   }
 
   if (filters.minRating && filters.minRating > 0) {
@@ -27,7 +32,10 @@ export function filterCompanies(
   }
 
   if (filters.services && filters.services.length > 0) {
-    result = result.filter((c) => filters.services!.some((svc) => c.services.includes(svc)));
+    result = result.filter((c) => {
+      const services = Array.isArray(c.services) ? c.services : [];
+      return filters.services!.some((svc) => services.includes(svc));
+    });
   }
 
   if (filters.coverage && filters.coverage !== 'Any') {
@@ -46,7 +54,10 @@ export function filterCompanies(
   }
 
   if (filters.onlyFullService) {
-    result = result.filter((c) => c.services.includes('Full Service'));
+    result = result.filter((c) => {
+      const services = Array.isArray(c.services) ? c.services : [];
+      return services.includes('Full Service');
+    });
   }
 
   if (filters.onlyVerified) {
@@ -54,11 +65,12 @@ export function filterCompanies(
   }
 
   if (filters.specialties && filters.specialties.length) {
-    result = result.filter((c) =>
-      filters.specialties!.some((sp) =>
-        c.specialties.some((cs) => cs.toLowerCase().includes(sp.toLowerCase()))
-      )
-    );
+    result = result.filter((c) => {
+      const specialties = Array.isArray(c.specialties) ? c.specialties : [];
+      return filters.specialties!.some((sp) =>
+        specialties.some((cs) => String(cs).toLowerCase().includes(sp.toLowerCase()))
+      );
+    });
   }
 
   const sort = filters.sort || 'reputation';
