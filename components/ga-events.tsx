@@ -2,6 +2,16 @@
 
 export const GA_MEASUREMENT_ID = 'G-433BDVV8MJ';
 
+/** Cross-domain linker — preserves GA4 sessions across 308 legacy → movetrusthub.com */
+export const GA_CROSS_DOMAIN_LINKS = [
+  'movetrusthub.com',
+  'www.movetrusthub.com',
+  'lendertrusthub.com',
+  'www.lendertrusthub.com',
+  'insurancetrusthub.com',
+  'www.insurancetrusthub.com',
+] as const;
+
 type GaEventParams = Record<string, string | number | boolean | undefined | null>;
 
 declare global {
@@ -55,6 +65,18 @@ export function trackCalculatorComplete(params: {
     item_count: params.item_count,
     calculator_mode: params.mode,
     page_path: '/moving-calculator',
+  });
+}
+
+export function trackLegacyArrival(params: {
+  legacy_source: string;
+  hub: string;
+  page_path?: string;
+}) {
+  trackGaEvent('legacy_redirect_arrival', {
+    legacy_source: params.legacy_source,
+    hub: params.hub,
+    page_path: params.page_path,
   });
 }
 

@@ -9,7 +9,9 @@ import {
 /**
  * Hub migration redirects for movetrusthub.com.
  *
- * Order matters: specific calculator + alias rules before broad catch-alls.
+ * Order matters in vercel.json:
+ *   1. Host-based legacy domain rules FIRST (lendertrusthub / insurancetrusthub)
+ *   2. Specific calculator + alias rules before broad catch-alls
  * Keep in sync with vercel.json `redirects` (edge runs before Next.js).
  *
  * IMPORTANT: Do NOT blanket-redirect `/resources` — Move marketing guides live at /resources/*.
@@ -129,30 +131,30 @@ function resourceAliasRedirects(): Redirect[] {
   return rules;
 }
 
-/** Standalone Trust Hub domains → movetrusthub.com subdirectories. */
+/** Standalone Trust Hub domains → movetrusthub.com subdirectories (+ ?from= for welcome banner). */
 export const HUB_DOMAIN_REDIRECTS: Redirect[] = [
   {
     source: '/:path*',
     has: [{ type: 'host', value: 'www.lendertrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/lender/:path*',
+    destination: 'https://www.movetrusthub.com/lender/:path*?from=lendertrusthub',
     permanent: true,
   },
   {
     source: '/:path*',
     has: [{ type: 'host', value: 'lendertrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/lender/:path*',
+    destination: 'https://www.movetrusthub.com/lender/:path*?from=lendertrusthub',
     permanent: true,
   },
   {
     source: '/:path*',
     has: [{ type: 'host', value: 'www.insurancetrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/insurance/:path*',
+    destination: 'https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub',
     permanent: true,
   },
   {
     source: '/:path*',
     has: [{ type: 'host', value: 'insurancetrusthub.com' }],
-    destination: 'https://www.movetrusthub.com/insurance/:path*',
+    destination: 'https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub',
     permanent: true,
   },
 ];
@@ -223,10 +225,12 @@ export function resolveHubMigrationRedirect(
   if (host) {
     const h = normalizeHost(host);
     if (h === 'lendertrusthub.com' || h === 'www.lendertrusthub.com') {
-      return `https://www.movetrusthub.com/lender${pathname === '/' ? '' : pathname}`;
+      const path = `/lender${pathname === '/' ? '' : pathname}`;
+      return `${path}?from=lendertrusthub`;
     }
     if (h === 'insurancetrusthub.com' || h === 'www.insurancetrusthub.com') {
-      return `https://www.movetrusthub.com/insurance${pathname === '/' ? '' : pathname}`;
+      const path = `/insurance${pathname === '/' ? '' : pathname}`;
+      return `${path}?from=insurancetrusthub`;
     }
   }
 

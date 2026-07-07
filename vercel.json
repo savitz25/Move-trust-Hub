@@ -149,6 +149,50 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.lendertrusthub.com"
+        }
+      ],
+      "destination": "https://www.movetrusthub.com/lender/:path*?from=lendertrusthub",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lendertrusthub.com"
+        }
+      ],
+      "destination": "https://www.movetrusthub.com/lender/:path*?from=lendertrusthub",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.insurancetrusthub.com"
+        }
+      ],
+      "destination": "https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "insurancetrusthub.com"
+        }
+      ],
+      "destination": "https://www.movetrusthub.com/insurance/:path*?from=insurancetrusthub",
+      "permanent": true
+    },
+    {
       "source": "/calculators/premium-estimator",
       "destination": "/insurance/calculators/premium-estimator",
       "permanent": true
@@ -436,50 +480,6 @@
     {
       "source": "/calculators/:path*",
       "destination": "/lender/calculators",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.lendertrusthub.com"
-        }
-      ],
-      "destination": "https://www.movetrusthub.com/lender/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "lendertrusthub.com"
-        }
-      ],
-      "destination": "https://www.movetrusthub.com/lender/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.insurancetrusthub.com"
-        }
-      ],
-      "destination": "https://www.movetrusthub.com/insurance/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "insurancetrusthub.com"
-        }
-      ],
-      "destination": "https://www.movetrusthub.com/insurance/:path*",
       "permanent": true
     }
   ]
