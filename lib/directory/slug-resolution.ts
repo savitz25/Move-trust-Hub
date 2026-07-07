@@ -1,3 +1,4 @@
+import { buildCompanySlugBase } from '@/lib/utils/company-slug';
 import { slugifyCompanyName } from '@/lib/utils/slugify';
 import { normalizeUsdot } from '@/lib/trust/license-verification';
 import type { Company } from '@/types';
@@ -65,8 +66,5 @@ export function predictCompanyProfileSlug(params: {
   name: string;
   usdot?: string | null;
 }): string {
-  const nameSlug = slugifyCompanyName(params.name);
-  if (nameSlug && nameSlug !== 'company') return nameSlug;
-  const dot = params.usdot?.replace(/\D/g, '');
-  return dot && dot.length >= 3 ? `dot-${dot}` : 'company';
+  return buildCompanySlugBase(params);
 }

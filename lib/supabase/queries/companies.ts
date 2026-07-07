@@ -8,7 +8,24 @@ import type { Database } from '@/types/supabase';
 import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
 import { seedCompanies } from '@/data/seed-companies';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
+import { normalizeCompanyUsdot } from '@/lib/utils/company-slug';
 import type { Company } from '@/types';
+
+function createAnonSupabaseClient() {
+  const url = getSupabaseUrl();
+  const anonKey = getSupabaseAnonKey();
+  if (!url || !anonKey) return null;
+  return createSupabaseClient<Database>(url, anonKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
+
+function parseUsdotFromSlugInput(input: string): string | null {
+  const dotPrefix = input.match(/^dot-(\d{3,8})$/i);
+  if (dotPrefix) return dotPrefix[1]!;
+  if (/^\d{3,8}$/.test(input)) return input;
+  return null;
+}
 
 const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
   fiveStar: 0,
@@ -78,9 +95,11 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  const supabase = createSupabaseClient<Database>(url, anonKey, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
+  const supabase = createAnonSupabaseClient();
+  if (!supabase) {
+    return [...seedCompanies];
+  }
+
   const { data, error } = await supabase
     .from('companies')
     .select('*')
@@ -103,3 +122,44 @@ const getCompaniesDataCached = unstable_cache(
 export const getCompaniesCached = cache(async (): Promise<Company[]> => {
   return getCompaniesDataCached();
 });
+
+/**
+ * Direct DB lookup for a company profile — bypasses directory list cache.
+ * Resolves by canonical slug, id alias, or USDOT (raw digits / dot-{n}).
+ */
+export async function getCompanyBySlugOrUsdotFromDb(
+  slugOrAlias: string
+): Promise<Company | undefined> {
+  if (!isSupabaseConfigured()) return undefined;
+
+  const input = slugOrAlias.trim();
+  if (!input) return undefined;
+
+  const supabase = createAnonSupabaseClient();
+  if (!supabase) return undefined;
+
+  const { data: bySlugOrId, error: slugError } = await supabase
+    .from('companies')
+    .select('*')
+    .or(`slug.eq.${input},id.eq.${input}`)
+    .maybeSingle();
+
+  if (!slugError && bySlugOrId) {
+    return mapRow(bySlugOrId as Record<string, unknown>);
+  }
+
+  const usdot = parseUsdotFromSlugInput(input) ?? normalizeCompanyUsdot(input);
+  if (usdot) {
+    const { data: byUsdot, error: usdotError } = await supabase
+      .from('companies')
+      .select('*')
+      .eq('usdot_number', usdot)
+      .maybeSingle();
+
+    if (!usdotError && byUsdot) {
+      return mapRow(byUsdot as Record<string, unknown>);
+    }
+  }
+
+  return undefined;
+}

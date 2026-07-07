@@ -2,7 +2,10 @@ import 'server-only';
 
 import { cache } from 'react';
 import { createClient } from '@/lib/supabase/server';
-import { getCompaniesCached } from '@/lib/supabase/queries/companies';
+import {
+  getCompaniesCached,
+  getCompanyBySlugOrUsdotFromDb,
+} from '@/lib/supabase/queries/companies';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 import { resolveCompanyBySlug } from '@/lib/directory/resolve-company';
 import { getReviewsForCompany } from '@/data/seed-reviews';
@@ -15,7 +18,10 @@ export const getAllCompanies = getCompaniesCached;
 
 export async function getCompanyBySlugAsync(slug: string): Promise<Company | undefined> {
   const companies = await getAllCompanies();
-  return resolveCompanyBySlug(slug, companies);
+  const fromList = resolveCompanyBySlug(slug, companies);
+  if (fromList) return fromList;
+
+  return getCompanyBySlugOrUsdotFromDb(slug);
 }
 
 export const getReviews = cache(async (companyId: string, limit = 12): Promise<Review[]> => {

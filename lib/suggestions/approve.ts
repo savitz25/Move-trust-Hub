@@ -4,6 +4,7 @@ import { computeReputationScore } from '@/data/seed-companies';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
 import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
 import { createAdminClient } from '@/lib/supabase/admin';
+import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
 import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
 import type { Json } from '@/types/supabase';
 
@@ -29,7 +30,12 @@ export async function approveSuggestionToCompany(
   const admin = createAdminClient();
   const usdot = suggestion.usdot?.replace(/\D/g, '') || null;
   const displayName = suggestion.legal_name || suggestion.name;
-  const slug = await resolveUniqueCompanySlug({ name: displayName, usdot });
+  const resolvedSlug = await resolveUniqueCompanySlug({ name: displayName, usdot });
+  const slug = ensurePublishableCompanySlug({
+    slug: resolvedSlug,
+    name: displayName,
+    usdot,
+  });
   const companyId = slug;
 
   let snapshot = usdot ? await fetchFmcsaCarrierSnapshot(usdot, suggestion.mc_number) : null;
@@ -126,17 +132,49 @@ export async function approveSuggestionToCompany(
   const { error } = await admin.from('companies').insert(row);
   if (error) {
     if (error.code === '23505') {
-      const { data: existing } = await admin
-        .from('companies')
-        .select('id, slug')
-        .eq('slug', slug)
-        .maybeSingle();
+      const existing = await findExistingApprovedCompany(admin, { slug, companyId, usdot });
       if (existing) {
-        return { companyId: existing.id, slug: existing.slug };
+        return existing;
       }
     }
     throw new Error(error.message);
   }
 
   return { companyId, slug };
+}
+
+async function findExistingApprovedCompany(
+  admin: ReturnType<typeof createAdminClient>,
+  params: { slug: string; companyId: string; usdot: string | null }
+): Promise<{ companyId: string; slug: string } | null> {
+  const { data: bySlug } = await admin
+    .from('companies')
+    .select('id, slug')
+    .eq('slug', params.slug)
+    .maybeSingle();
+  if (bySlug?.slug) {
+    return { companyId: bySlug.id, slug: bySlug.slug };
+  }
+
+  const { data: byId } = await admin
+    .from('companies')
+    .select('id, slug')
+    .eq('id', params.companyId)
+    .maybeSingle();
+  if (byId?.slug) {
+    return { companyId: byId.id, slug: byId.slug };
+  }
+
+  if (params.usdot) {
+    const { data: byUsdot } = await admin
+      .from('companies')
+      .select('id, slug')
+      .eq('usdot_number', params.usdot)
+      .maybeSingle();
+    if (byUsdot?.slug) {
+      return { companyId: byUsdot.id, slug: byUsdot.slug };
+    }
+  }
+
+  return null;
 }
