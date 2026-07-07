@@ -5,8 +5,8 @@ import { assertAdminSession } from '@/lib/admin/auth';
 import {
   getOrphanedApprovedSuggestions,
   publishSuggestionToDirectory,
-  type OrphanedApprovedSuggestion,
 } from '@/lib/suggestions/repair-approved';
+import type { OrphanedApprovedSuggestion } from '@/lib/suggestions/suggestion-shared';
 import { getPendingSuggestions } from '@/lib/suggestions/queries';
 import { getCompanyBySlugOrUsdotFromDb } from '@/lib/supabase/queries/companies';
 import { createAdminClient } from '@/lib/supabase/admin';

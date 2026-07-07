@@ -5,14 +5,10 @@ import { getCompanyBySlugOrUsdotFromDb } from '@/lib/supabase/queries/companies'
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { approveSuggestionToCompany, type CompanySuggestionRow } from '@/lib/suggestions/approve';
-import { buildCompanySlugBase } from '@/lib/utils/company-slug';
+import type { OrphanedApprovedSuggestion } from '@/lib/suggestions/suggestion-shared';
 import { logger } from '@/lib/logging/logger';
 
-export type OrphanedApprovedSuggestion = CompanySuggestionRow & {
-  status: string;
-  company_id: string | null;
-  created_at: string;
-};
+export type { OrphanedApprovedSuggestion } from '@/lib/suggestions/suggestion-shared';
 
 export async function getOrphanedApprovedSuggestions(): Promise<OrphanedApprovedSuggestion[]> {
   if (!isSupabaseAdminConfigured()) return [];
@@ -79,13 +75,4 @@ export async function publishSuggestionToDirectory(
   revalidatePublishedCompany(published.slug);
 
   return published;
-}
-
-export function predictedProfileSlugForSuggestion(
-  suggestion: Pick<CompanySuggestionRow, 'name' | 'legal_name' | 'usdot'>
-): string {
-  return buildCompanySlugBase({
-    name: suggestion.legal_name || suggestion.name,
-    usdot: suggestion.usdot,
-  });
 }

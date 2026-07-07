@@ -8,7 +8,7 @@ import { repairOrphanedApprovedSuggestion } from '@/actions/moderate-suggestions
 import {
   predictedProfileSlugForSuggestion,
   type OrphanedApprovedSuggestion,
-} from '@/lib/suggestions/repair-approved';
+} from '@/lib/suggestions/suggestion-shared';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
