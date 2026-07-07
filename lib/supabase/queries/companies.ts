@@ -8,7 +8,8 @@ import type { Database } from '@/types/supabase';
 import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
 import { seedCompanies } from '@/data/seed-companies';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
-import { normalizeCompanyUsdot } from '@/lib/utils/company-slug';
+import { buildCompanySlugBase, normalizeCompanyUsdot } from '@/lib/utils/company-slug';
+import { slugifyCompanyName } from '@/lib/utils/slugify';
 import type { Company } from '@/types';
 
 function createAnonSupabaseClient() {
@@ -158,6 +159,44 @@ export async function getCompanyBySlugOrUsdotFromDb(
 
     if (!usdotError && byUsdot) {
       return mapRow(byUsdot as Record<string, unknown>);
+    }
+  }
+
+  const nameFromSlug = input.includes('-') ? input.replace(/-/g, ' ') : input;
+  const { data: byName, error: nameError } = await supabase
+    .from('companies')
+    .select('*')
+    .ilike('name', nameFromSlug)
+    .limit(1)
+    .maybeSingle();
+
+  if (!nameError && byName) {
+    return mapRow(byName as Record<string, unknown>);
+  }
+
+  const predictedSlug = buildCompanySlugBase({ name: nameFromSlug, usdot: null });
+  if (predictedSlug && predictedSlug !== input) {
+    const { data: byPredicted, error: predictedError } = await supabase
+      .from('companies')
+      .select('*')
+      .eq('slug', predictedSlug)
+      .maybeSingle();
+
+    if (!predictedError && byPredicted) {
+      return mapRow(byPredicted as Record<string, unknown>);
+    }
+  }
+
+  const collapsedSlug = slugifyCompanyName(nameFromSlug);
+  if (collapsedSlug && collapsedSlug !== input && collapsedSlug !== predictedSlug) {
+    const { data: byCollapsed, error: collapsedError } = await supabase
+      .from('companies')
+      .select('*')
+      .eq('slug', collapsedSlug)
+      .maybeSingle();
+
+    if (!collapsedError && byCollapsed) {
+      return mapRow(byCollapsed as Record<string, unknown>);
     }
   }
 

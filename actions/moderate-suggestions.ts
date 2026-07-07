@@ -2,9 +2,13 @@
 
 import { revalidatePath } from 'next/cache';
 import { assertAdminSession } from '@/lib/admin/auth';
-import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
-import { approveSuggestionToCompany } from '@/lib/suggestions/approve';
+import {
+  getOrphanedApprovedSuggestions,
+  publishSuggestionToDirectory,
+  type OrphanedApprovedSuggestion,
+} from '@/lib/suggestions/repair-approved';
 import { getPendingSuggestions } from '@/lib/suggestions/queries';
+import { getCompanyBySlugOrUsdotFromDb } from '@/lib/supabase/queries/companies';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { logger } from '@/lib/logging/logger';
@@ -22,6 +26,15 @@ export async function getSuggestionModerationQueue() {
     return [];
   }
   return getPendingSuggestions();
+}
+
+export async function getOrphanedApprovedSuggestionQueue(): Promise<OrphanedApprovedSuggestion[]> {
+  try {
+    await assertAdminSession();
+  } catch {
+    return [];
+  }
+  return getOrphanedApprovedSuggestions();
 }
 
 export async function moderateSuggestion(params: {
@@ -73,7 +86,7 @@ export async function moderateSuggestion(params: {
   }
 
   try {
-    const approved = await approveSuggestionToCompany(suggestion);
+    const approved = await publishSuggestionToDirectory(suggestion);
     if (!approved) {
       return { success: false, error: 'Failed to create company record' };
     }
@@ -99,12 +112,64 @@ export async function moderateSuggestion(params: {
       slug: approved.slug,
     });
 
-    revalidatePublishedCompany(approved.slug);
     revalidatePath('/admin/suggestions', 'page');
 
     return { success: true, companySlug: approved.slug };
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Approval failed';
+    return { success: false, error: message };
+  }
+}
+
+export async function repairOrphanedApprovedSuggestion(params: {
+  suggestionId: string;
+}): Promise<ModerateSuggestionResult> {
+  try {
+    await assertAdminSession();
+  } catch {
+    return { success: false, error: 'Unauthorized' };
+  }
+
+  if (!isSupabaseAdminConfigured()) {
+    return { success: false, error: 'Supabase admin not configured' };
+  }
+
+  const admin = createAdminClient();
+  const { data: suggestion, error: fetchError } = await admin
+    .from('company_suggestions')
+    .select('*')
+    .eq('id', params.suggestionId)
+    .eq('status', 'approved')
+    .maybeSingle();
+
+  if (fetchError || !suggestion) {
+    return { success: false, error: 'Approved suggestion not found' };
+  }
+
+  try {
+    const published = await publishSuggestionToDirectory(suggestion);
+    if (!published) {
+      return { success: false, error: 'Failed to publish company profile' };
+    }
+
+    const readable = await getCompanyBySlugOrUsdotFromDb(published.slug);
+    if (!readable) {
+      return {
+        success: false,
+        error: `Published ${published.slug} but profile is still not readable`,
+      };
+    }
+
+    logger.info('suggestion.repaired', {
+      suggestionId: params.suggestionId,
+      companyId: published.companyId,
+      slug: published.slug,
+    });
+
+    revalidatePath('/admin/suggestions', 'page');
+    return { success: true, companySlug: published.slug };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Repair failed';
     return { success: false, error: message };
   }
 }

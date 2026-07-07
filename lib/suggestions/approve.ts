@@ -4,6 +4,7 @@ import { computeReputationScore } from '@/data/seed-companies';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
 import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
 import { createAdminClient } from '@/lib/supabase/admin';
+import { insertCompanyWithFallback } from '@/lib/suggestions/insert-company';
 import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
 import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
 import type { Json } from '@/types/supabase';
@@ -129,15 +130,15 @@ export async function approveSuggestionToCompany(
     last_updated: new Date().toISOString(),
   };
 
-  const { error } = await admin.from('companies').insert(row);
-  if (error) {
-    if (error.code === '23505') {
+  const insertResult = await insertCompanyWithFallback(admin, row);
+  if (!insertResult.ok) {
+    if (insertResult.code === '23505') {
       const existing = await findExistingApprovedCompany(admin, { slug, companyId, usdot });
       if (existing) {
         return existing;
       }
     }
-    throw new Error(error.message);
+    throw new Error(insertResult.error);
   }
 
   return { companyId, slug };

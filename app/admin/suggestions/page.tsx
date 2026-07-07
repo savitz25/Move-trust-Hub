@@ -1,5 +1,9 @@
 import Link from 'next/link';
-import { getSuggestionModerationQueue } from '@/actions/moderate-suggestions';
+import {
+  getOrphanedApprovedSuggestionQueue,
+  getSuggestionModerationQueue,
+} from '@/actions/moderate-suggestions';
+import { OrphanedApprovedQueue } from '@/components/suggestions/orphaned-approved-queue';
 import { SuggestionsModerationQueue } from '@/components/suggestions/suggestions-moderation-queue';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { Button } from '@/components/ui/button';
@@ -13,7 +17,10 @@ export const metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function AdminSuggestionsPage() {
-  const queue = await getSuggestionModerationQueue();
+  const [queue, orphans] = await Promise.all([
+    getSuggestionModerationQueue(),
+    getOrphanedApprovedSuggestionQueue(),
+  ]);
   const adminReady = isSupabaseAdminConfigured();
 
   return (
@@ -41,6 +48,8 @@ export default async function AdminSuggestionsPage() {
           load and moderate suggestions.
         </Card>
       )}
+
+      <OrphanedApprovedQueue initialOrphans={orphans} />
 
       <p className="text-sm text-muted-foreground mb-4">
         {queue.length} pending suggestion{queue.length === 1 ? '' : 's'}
