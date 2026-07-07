@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { enrichmentSnapshotSchema } from '@/lib/suggestions/enrichment-snapshot-schema';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
 export const suggestCompanySchema = z
@@ -31,6 +32,8 @@ export const suggestCompanySchema = z
     sourcePage: z.string().max(120).optional().nullable(),
     /** Honeypot — must be empty */
     website: z.string().max(0).optional().nullable(),
+    /** Optional preview snapshot from modal — avoids duplicate scrape on submit */
+    enrichmentSnapshot: enrichmentSnapshotSchema,
   })
   .superRefine((data, ctx) => {
     const carrier = data.carrierQuery ? parseCarrierNumber(data.carrierQuery) : null;

@@ -123,6 +123,13 @@ export function SuggestCompanyModal({
         suggestedByEmail,
         sourcePage,
         website: '',
+        enrichmentSnapshot: activePreview
+          ? {
+              google: activePreview.google,
+              publicScrape: activePreview.publicScrape,
+              fetchedAt: activePreview.fetchedAt,
+            }
+          : null,
       });
 
       if (!res.success) {
@@ -274,7 +281,7 @@ export function SuggestCompanyModal({
                 }
                 className="mt-1.5 flex min-h-[88px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 maxLength={1000}
-                disabled={pending}
+                disabled={pending || loadingManualPreview}
               />
             </div>
 
@@ -290,7 +297,7 @@ export function SuggestCompanyModal({
                   className="mt-1.5"
                   required
                   maxLength={80}
-                  disabled={pending}
+                  disabled={pending || loadingManualPreview}
                 />
               </div>
               <div>
@@ -305,7 +312,7 @@ export function SuggestCompanyModal({
                   className="mt-1.5"
                   required
                   maxLength={254}
-                  disabled={pending}
+                  disabled={pending || loadingManualPreview}
                 />
               </div>
             </div>
@@ -320,7 +327,7 @@ export function SuggestCompanyModal({
               {pending ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  Submitting…
+                  Saving suggestion &amp; verification data…
                 </>
               ) : (
                 <>

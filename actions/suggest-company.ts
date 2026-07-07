@@ -9,7 +9,12 @@ import {
   toFmcsaSuggestionPreview,
 } from '@/lib/suggestions/fmcsa-lookup';
 import type { EnrichedCompanyPreview, FmcsaSuggestionPreview } from '@/lib/suggestions/types';
+import { resolveSubmissionEnrichment } from '@/lib/suggestions/enrichment-snapshot';
 import { enrichCompanySources } from '@/lib/verification/enrich-company';
+import {
+  buildCompanySuggestionInsertRow,
+  insertCompanySuggestion,
+} from '@/lib/suggestions/insert-suggestion';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 import { predictCompanyProfileSlug } from '@/lib/directory/resolve-company';
 import { hashEmail, hashIp } from '@/lib/reviews/hash';
@@ -141,137 +146,131 @@ export async function previewEnrichedCompanySuggestion(input: {
 export async function submitCompanySuggestion(
   raw: unknown
 ): Promise<SubmitSuggestionResult> {
-  const parsed = suggestCompanySchema.safeParse(raw);
-  if (!parsed.success) {
-    const first = parsed.error.flatten().fieldErrors;
-    const msg =
-      Object.values(first).flat()[0] ?? 'Please check your suggestion and try again.';
-    return { success: false, error: msg };
-  }
+  try {
+    const parsed = suggestCompanySchema.safeParse(raw);
+    if (!parsed.success) {
+      const first = parsed.error.flatten().fieldErrors;
+      const msg =
+        Object.values(first).flat()[0] ?? 'Please check your suggestion and try again.';
+      return { success: false, error: msg };
+    }
 
-  if (parsed.data.website) {
-    return { success: false, error: 'Submission rejected.' };
-  }
+    if (parsed.data.website) {
+      return { success: false, error: 'Submission rejected.' };
+    }
 
-  if (!isSupabaseAdminConfigured()) {
-    return {
-      success: false,
-      error: 'Suggestions are temporarily unavailable. Please try again later.',
-    };
-  }
-
-  const headerStore = await headers();
-  const userIp = clientIpFromHeaders(headerStore);
-
-  const rateCheck = await checkSuggestionRateLimit({
-    ip: userIp,
-    email: parsed.data.suggestedByEmail,
-  });
-
-  if (!rateCheck.allowed) {
-    return { success: false, error: rateCheck.reason };
-  }
-
-  const carrierParsed = parsed.data.carrierQuery
-    ? parseCarrierNumber(parsed.data.carrierQuery)
-    : null;
-
-  let fmcsa = carrierParsed
-    ? await lookupFmcsaForSuggestion(parsed.data.carrierQuery!)
-    : null;
-
-  const companyName =
-    fmcsa?.legalName?.trim() ||
-    parsed.data.name?.trim() ||
-    null;
-
-  if (!companyName) {
-    return {
-      success: false,
-      error: carrierParsed
-        ? 'Could not verify this carrier with FMCSA. Try again or confirm the USDOT number.'
-        : 'Company name is required when no USDOT/MC number is provided.',
-    };
-  }
-
-  const enrichment = await enrichCompanySources({
-    legalName: companyName,
-    headquarters: fmcsa?.headquarters,
-    phone: fmcsa?.phone,
-  });
-
-  const duplicateCheck = await checkSuggestionDuplicate({
-    name: companyName,
-    usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
-  });
-
-  if (duplicateCheck.duplicate) {
-    return {
-      success: false,
-      error: duplicateCheck.reason,
-      existingProfileSlug: duplicateCheck.existingSlug,
-    };
-  }
-
-  const admin = createAdminClient();
-  const emailHash = hashEmail(parsed.data.suggestedByEmail);
-  const ipHash = userIp ? hashIp(userIp) : null;
-
-  const { data: inserted, error } = await admin
-    .from('company_suggestions')
-    .insert({
-      name: companyName,
-      usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
-      mc_number: fmcsa?.mcNumber ?? (carrierParsed?.type === 'MC' ? carrierParsed.value : null),
-      details: parsed.data.details,
-      status: 'pending',
-      suggested_by_name: parsed.data.suggestedByName,
-      suggested_by_email: parsed.data.suggestedByEmail,
-      submitter_ip: userIp,
-      ip_hash: ipHash,
-      email_hash: emailHash,
-      source_page: parsed.data.sourcePage || '/companies',
-      legal_name: fmcsa?.legalName ?? companyName,
-      headquarters: fmcsa?.headquarters,
-      phone: fmcsa?.phone,
-      authority_status: fmcsa?.authorityStatus,
-      fmcsa_preview: fmcsa?.fmcsaPreview ?? null,
-      fmcsa_raw: fmcsa?.fmcsaRaw ?? null,
-      google_data: enrichment.google,
-      public_scrape_data: enrichment.publicScrape,
-    })
-    .select('id')
-    .single();
-
-  if (error || !inserted) {
-    if (error?.code === '23505') {
+    if (!isSupabaseAdminConfigured()) {
       return {
         success: false,
-        error: 'This company is already pending review. We will add it shortly.',
+        error: 'Suggestions are temporarily unavailable. Please try again later.',
       };
     }
-    logger.error('suggestion.submit_failed', { error: error?.message });
-    return { success: false, error: 'Failed to save your suggestion. Please try again.' };
+
+    const headerStore = await headers();
+    const userIp = clientIpFromHeaders(headerStore);
+
+    const rateCheck = await checkSuggestionRateLimit({
+      ip: userIp,
+      email: parsed.data.suggestedByEmail,
+    });
+
+    if (!rateCheck.allowed) {
+      return { success: false, error: rateCheck.reason };
+    }
+
+    const carrierParsed = parsed.data.carrierQuery
+      ? parseCarrierNumber(parsed.data.carrierQuery)
+      : null;
+
+    let fmcsa = carrierParsed
+      ? await lookupFmcsaForSuggestion(parsed.data.carrierQuery!)
+      : null;
+
+    const companyName =
+      fmcsa?.legalName?.trim() ||
+      parsed.data.name?.trim() ||
+      null;
+
+    if (!companyName) {
+      return {
+        success: false,
+        error: carrierParsed
+          ? 'Could not verify this carrier with FMCSA. Try again or confirm the USDOT number.'
+          : 'Company name is required when no USDOT/MC number is provided.',
+      };
+    }
+
+    const enrichment = await resolveSubmissionEnrichment({
+      legalName: companyName,
+      headquarters: fmcsa?.headquarters,
+      phone: fmcsa?.phone,
+      snapshot: parsed.data.enrichmentSnapshot,
+    });
+
+    const duplicateCheck = await checkSuggestionDuplicate({
+      name: companyName,
+      usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
+    });
+
+    if (duplicateCheck.duplicate) {
+      return {
+        success: false,
+        error: duplicateCheck.reason,
+        existingProfileSlug: duplicateCheck.existingSlug,
+      };
+    }
+
+    const admin = createAdminClient();
+    const emailHash = hashEmail(parsed.data.suggestedByEmail);
+    const ipHash = userIp ? hashIp(userIp) : null;
+
+    const row = buildCompanySuggestionInsertRow({
+      parsed: parsed.data,
+      companyName,
+      fmcsa,
+      carrierParsed,
+      enrichment,
+      userIp,
+      emailHash,
+      ipHash,
+    });
+
+    const insertResult = await insertCompanySuggestion(admin, row);
+
+    if (!insertResult.ok) {
+      return { success: false, error: insertResult.error };
+    }
+
+    logger.info('suggestion.submitted', {
+      suggestionId: insertResult.id,
+      usdot: fmcsa?.usdot,
+      hasFmcsa: Boolean(fmcsa),
+      hasGoogle: Boolean(enrichment.google?.status === 'ok'),
+      hasPublicScrape: Boolean(enrichment.publicScrape),
+      enrichmentStored: insertResult.enrichmentStored,
+      trustedDot: Boolean(carrierParsed && fmcsa),
+    });
+
+    const profileSlug = predictCompanyProfileSlug({
+      name: companyName,
+      usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
+    });
+
+    return {
+      success: true,
+      suggestionId: insertResult.id,
+      profileSlug,
+      pendingReview: true,
+    };
+  } catch (err) {
+    logger.error('suggestion.submit_exception', {
+      message: err instanceof Error ? err.message : 'unknown',
+      stack: err instanceof Error ? err.stack : undefined,
+    });
+    return {
+      success: false,
+      error:
+        'Something went wrong while saving your suggestion. Please wait a moment and try again.',
+    };
   }
-
-  logger.info('suggestion.submitted', {
-    suggestionId: inserted.id,
-    usdot: fmcsa?.usdot,
-    hasFmcsa: Boolean(fmcsa),
-    hasGoogle: Boolean(enrichment.google?.status === 'ok'),
-    hasPublicScrape: Boolean(enrichment.publicScrape),
-    trustedDot: Boolean(carrierParsed && fmcsa),
-  });
-
-  const profileSlug = predictCompanyProfileSlug({
-    name: companyName,
-    usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
-  });
-
-  return {
-    success: true,
-    suggestionId: inserted.id,
-    profileSlug,
-    pendingReview: true,
-  };
 }
