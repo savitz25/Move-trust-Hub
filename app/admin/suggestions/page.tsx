@@ -1,11 +1,12 @@
 import Link from 'next/link';
-import {
-  getOrphanedApprovedSuggestionQueue,
-  getSuggestionModerationQueue,
-} from '@/actions/moderate-suggestions';
+import { Suspense } from 'react';
 import { OrphanedApprovedQueue } from '@/components/suggestions/orphaned-approved-queue';
 import { SuggestionsModerationQueue } from '@/components/suggestions/suggestions-moderation-queue';
+import { AdminLoginForm } from '@/components/admin/admin-login-form';
+import { isAdminSession } from '@/lib/admin/auth';
 import { getDirectoryDbStatus } from '@/lib/directory/directory-db-status';
+import { getOrphanedApprovedSuggestions } from '@/lib/suggestions/repair-approved';
+import { getPendingSuggestions } from '@/lib/suggestions/queries';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -18,14 +19,14 @@ export const metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function AdminSuggestionsPage() {
-  const [queue, orphans, dbStatus] = await Promise.all([
-    getSuggestionModerationQueue(),
-    getOrphanedApprovedSuggestionQueue(),
-    getDirectoryDbStatus(),
-  ]);
   const adminReady = isSupabaseAdminConfigured();
+  const loggedIn = await isAdminSession();
+  const dbStatus = await getDirectoryDbStatus();
+  const queue = loggedIn && adminReady ? await getPendingSuggestions() : [];
+  const orphans = loggedIn && adminReady ? await getOrphanedApprovedSuggestions() : [];
   const directoryBlocked =
     adminReady && (!dbStatus.companiesTableReadable || dbStatus.seedFallbackActive);
+  const needsLogin = adminReady && dbStatus.pendingSuggestions > 0 && !loggedIn;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -79,13 +80,38 @@ export default async function AdminSuggestionsPage() {
         </Card>
       ) : null}
 
+      {needsLogin ? (
+        <Card className="mb-6 border-primary/30 bg-primary/5 p-5">
+          <p className="font-medium">Sign in to approve suggestions</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            There {dbStatus.pendingSuggestions === 1 ? 'is' : 'are'}{' '}
+            <strong>{dbStatus.pendingSuggestions}</strong> pending suggestion
+            {dbStatus.pendingSuggestions === 1 ? '' : 's'} in the database (including Vellar
+            Holdings, Cirta Moving, America First Moving, and others). Submitting a company only
+            queues it — you must sign in and click <strong>Approve</strong> before{' '}
+            <code>/companies/[slug]</code> goes live.
+          </p>
+          <Suspense fallback={<p className="mt-4 text-sm text-muted-foreground">Loading sign-in…</p>}>
+            <AdminLoginForm className="mt-4 max-w-sm" redirectTo="/admin/suggestions" />
+          </Suspense>
+        </Card>
+      ) : null}
+
       <OrphanedApprovedQueue initialOrphans={orphans} />
 
       <p className="text-sm text-muted-foreground mb-4">
-        {queue.length} pending suggestion{queue.length === 1 ? '' : 's'}
+        {loggedIn
+          ? `${queue.length} pending suggestion${queue.length === 1 ? '' : 's'}`
+          : `Sign in to view the moderation queue (${dbStatus.pendingSuggestions} pending in database)`}
       </p>
 
-      <SuggestionsModerationQueue initialQueue={queue} />
+      {loggedIn ? (
+        <SuggestionsModerationQueue initialQueue={queue} />
+      ) : (
+        <Card className="p-8 text-center text-muted-foreground">
+          Admin session required to approve or reject suggestions.
+        </Card>
+      )}
     </div>
   );
 }

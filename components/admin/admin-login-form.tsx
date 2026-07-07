@@ -6,7 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 
-export function AdminLoginForm({ className }: { className?: string }) {
+export function AdminLoginForm({
+  className,
+  redirectTo,
+}: {
+  className?: string;
+  redirectTo?: string;
+}) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [secret, setSecret] = useState('');
@@ -29,7 +35,7 @@ export function AdminLoginForm({ className }: { className?: string }) {
         return;
       }
 
-      const next = searchParams.get('next') || '/admin/quotes';
+      const next = searchParams.get('next') || redirectTo || '/admin/quotes';
       router.push(next);
       router.refresh();
     } catch {

@@ -182,17 +182,23 @@ export function SuggestCompanyModal({
                 <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
                   Expected profile URL
                 </p>
-                <Link
-                  href={`/companies/${submitSuccess.profileSlug}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-                >
-                  /companies/{submitSuccess.profileSlug}
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </Link>
+                {submitSuccess.pendingReview ? (
+                  <p className="text-sm font-mono text-foreground">
+                    /companies/{submitSuccess.profileSlug}
+                  </p>
+                ) : (
+                  <Link
+                    href={`/companies/${submitSuccess.profileSlug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                  >
+                    /companies/{submitSuccess.profileSlug}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </Link>
+                )}
                 {submitSuccess.pendingReview ? (
                   <p className="text-xs text-muted-foreground">
-                    The page may show &quot;not found&quot; until moderation is complete. You can
-                    bookmark this link and check back after approval.
+                    This URL is reserved for after admin approval. It will show &quot;not
+                    found&quot; until then — that is expected.
                   </p>
                 ) : null}
               </div>
