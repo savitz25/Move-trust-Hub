@@ -1,7 +1,7 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
 import { assertAdminSession } from '@/lib/admin/auth';
+import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
 import { enrichCompanySources } from '@/lib/verification/enrich-company';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
@@ -66,8 +66,7 @@ export async function refreshCompanyVerificationData(
     return { success: false, error: 'Failed to save refreshed data' };
   }
 
-  revalidatePath(`/companies/${company.slug}`);
-  revalidatePath('/companies');
+  revalidatePublishedCompany(company.slug);
 
   return { success: true };
 }

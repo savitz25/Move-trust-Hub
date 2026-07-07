@@ -1,8 +1,11 @@
 import 'server-only';
 
 import { cache } from 'react';
-import { createClient } from '@/lib/supabase/server';
-import { isSupabaseConfigured } from '@/lib/supabase/config';
+import { unstable_cache } from 'next/cache';
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
+import { getSupabaseAnonKey, getSupabaseUrl, isSupabaseConfigured } from '@/lib/supabase/config';
+import type { Database } from '@/types/supabase';
+import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
 import { seedCompanies } from '@/data/seed-companies';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
 import type { Company } from '@/types';
@@ -64,13 +67,20 @@ function mapRow(row: Record<string, unknown>): Company {
   });
 }
 
-/** Cached server-side company fetch — use in Server Components and generateMetadata. */
-export const getCompaniesCached = cache(async (): Promise<Company[]> => {
+async function fetchCompaniesFromDatabase(): Promise<Company[]> {
   if (!isSupabaseConfigured()) {
     return [...seedCompanies];
   }
 
-  const supabase = await createClient();
+  const url = getSupabaseUrl();
+  const anonKey = getSupabaseAnonKey();
+  if (!url || !anonKey) {
+    return [...seedCompanies];
+  }
+
+  const supabase = createSupabaseClient<Database>(url, anonKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
   const { data, error } = await supabase
     .from('companies')
     .select('*')
@@ -81,4 +91,15 @@ export const getCompaniesCached = cache(async (): Promise<Company[]> => {
   }
 
   return data.map((row) => mapRow(row as Record<string, unknown>));
+}
+
+const getCompaniesDataCached = unstable_cache(
+  fetchCompaniesFromDatabase,
+  ['companies-directory-v1'],
+  { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 60 }
+);
+
+/** Cached server-side company fetch — use in Server Components and generateMetadata. */
+export const getCompaniesCached = cache(async (): Promise<Company[]> => {
+  return getCompaniesDataCached();
 });

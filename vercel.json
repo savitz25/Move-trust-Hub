@@ -24,6 +24,32 @@
   ],
   "headers": [
     {
+      "source": "/companies",
+      "headers": [
+        {
+          "key": "X-Trust-Hub",
+          "value": "move"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=60, stale-while-revalidate=300"
+        }
+      ]
+    },
+    {
+      "source": "/companies/:path*",
+      "headers": [
+        {
+          "key": "X-Trust-Hub",
+          "value": "move"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=60, stale-while-revalidate=300"
+        }
+      ]
+    },
+    {
       "source": "/",
       "headers": [
         {

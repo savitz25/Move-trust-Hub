@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { assertAdminSession } from '@/lib/admin/auth';
+import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
 import { approveSuggestionToCompany } from '@/lib/suggestions/approve';
 import { getPendingSuggestions } from '@/lib/suggestions/queries';
 import { createAdminClient } from '@/lib/supabase/admin';
@@ -98,11 +99,8 @@ export async function moderateSuggestion(params: {
       slug: approved.slug,
     });
 
-    revalidatePath('/companies', 'page');
-    revalidatePath(`/companies/${approved.slug}`, 'page');
-    revalidatePath('/verify-dot', 'page');
+    revalidatePublishedCompany(approved.slug);
     revalidatePath('/admin/suggestions', 'page');
-    revalidatePath('/sitemap.xml');
 
     return { success: true, companySlug: approved.slug };
   } catch (err) {
