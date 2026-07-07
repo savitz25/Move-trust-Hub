@@ -3,9 +3,11 @@ import 'server-only';
 import { computeReputationScore } from '@/data/seed-companies';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
 import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
+import { logger } from '@/lib/logging/logger';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { insertCompanyWithFallback } from '@/lib/suggestions/insert-company';
 import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
+import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
 import type { Json } from '@/types/supabase';
 
@@ -39,7 +41,18 @@ export async function approveSuggestionToCompany(
   });
   const companyId = slug;
 
-  let snapshot = usdot ? await fetchFmcsaCarrierSnapshot(usdot, suggestion.mc_number) : null;
+  let snapshot: Awaited<ReturnType<typeof fetchFmcsaCarrierSnapshot>> = null;
+  if (usdot) {
+    try {
+      snapshot = await fetchFmcsaCarrierSnapshot(usdot, suggestion.mc_number);
+    } catch (err) {
+      // FMCSA timeout must not block directory approval — use suggestion snapshot below.
+      logger.warn('approve.fmcsa_fetch_failed', {
+        usdot,
+        message: err instanceof Error ? err.message : String(err),
+      });
+    }
+  }
 
   if (!snapshot && suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object') {
     const raw = suggestion.fmcsa_raw as Record<string, unknown>;
@@ -148,6 +161,14 @@ async function findExistingApprovedCompany(
   admin: ReturnType<typeof createAdminClient>,
   params: { slug: string; companyId: string; usdot: string | null }
 ): Promise<{ companyId: string; slug: string } | null> {
+  for (const key of [params.slug, params.companyId, params.usdot ? `dot-${params.usdot}` : null, params.usdot]) {
+    if (!key) continue;
+    const viaRpc = await getDirectoryCompanyViaRpc(admin, key);
+    if (viaRpc?.slug && viaRpc?.id) {
+      return { companyId: String(viaRpc.id), slug: String(viaRpc.slug) };
+    }
+  }
+
   const { data: bySlug } = await admin
     .from('companies')
     .select('id, slug')

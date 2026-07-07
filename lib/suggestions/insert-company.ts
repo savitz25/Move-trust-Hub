@@ -11,7 +11,10 @@ import {
   COMPANIES_TABLE_SETUP_MESSAGE,
   isCompaniesTableUnavailableError,
 } from '@/lib/suggestions/companies-table-error';
-import { publishCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
+import {
+  fetchDirectoryHealthRpc,
+  publishCompanyViaRpc,
+} from '@/lib/suggestions/publish-company-rpc';
 import { logger } from '@/lib/logging/logger';
 import type { Database } from '@/types/supabase';
 import type { Json } from '@/types/supabase';
@@ -88,6 +91,23 @@ export async function insertCompanyWithFallback(
   row: CompanyInsertPayload
 ): Promise<{ ok: true } | { ok: false; error: string; code?: string }> {
   const sanitized = sanitizeCompanyInsertRow(row);
+  const health = await fetchDirectoryHealthRpc(admin);
+
+  if (health?.companies_table_exists) {
+    const rpcFirst = await publishCompanyViaRpc(admin, sanitized);
+    if (rpcFirst.ok) {
+      logger.info('company.insert_rpc_primary_succeeded', {
+        slug: rpcFirst.slug,
+        existing: rpcFirst.existing,
+      });
+      return { ok: true };
+    }
+    if (rpcFirst.rpcMissing) {
+      return { ok: false, error: COMPANIES_RPC_SETUP_MESSAGE, code: rpcFirst.code };
+    }
+    return { ok: false, error: rpcFirst.error, code: rpcFirst.code };
+  }
+
   const attempts = buildInsertAttempts(sanitized);
 
   let lastError: { message?: string; code?: string } | null = null;

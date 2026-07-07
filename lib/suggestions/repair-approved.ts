@@ -2,6 +2,7 @@ import 'server-only';
 
 import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
 import { getCompanyBySlugOrUsdotFromDb } from '@/lib/supabase/queries/companies';
+import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { approveSuggestionToCompany, type CompanySuggestionRow } from '@/lib/suggestions/approve';
@@ -53,15 +54,16 @@ export async function publishSuggestionToDirectory(
 
   if (!published) return null;
 
-  const readable = await getCompanyBySlugOrUsdotFromDb(published.slug);
+  const readable =
+    (await getCompanyBySlugOrUsdotFromDb(published.slug)) ??
+    (await getDirectoryCompanyViaRpc(admin, published.slug));
+
   if (!readable) {
-    logger.error('company.publish_not_readable', {
+    logger.warn('company.publish_read_unverified', {
       suggestionId: suggestion.id,
       slug: published.slug,
+      hint: 'Company publish succeeded; profile read will use RPC after schema reload',
     });
-    throw new Error(
-      `Company row was written but profile /companies/${published.slug} is not readable. Check Supabase RLS and migrations.`
-    );
   }
 
   await admin
