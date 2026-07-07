@@ -80,6 +80,11 @@ export interface Company {
   // Trust signals
   isVerified: boolean; // we mark as verified if we have direct data sources
   lastUpdated: string; // ISO date
+
+  /** Google Places API enrichment */
+  googleData?: import('@/lib/verification/types').GooglePlacesData | null;
+  /** Public scrape enrichment (BBB / Trustpilot / Yelp) — lower confidence */
+  publicScrapeData?: import('@/lib/verification/types').PublicScrapeData | null;
 }
 
 export interface Review {

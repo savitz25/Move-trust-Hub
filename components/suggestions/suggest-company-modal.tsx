@@ -3,12 +3,12 @@
 import { useEffect, useState, useTransition } from 'react';
 import Link from 'next/link';
 import { Building2, ExternalLink, Loader2, PlusCircle } from 'lucide-react';
-import { submitCompanySuggestion } from '@/actions/suggest-company';
-import { DotReadonlyFields } from '@/components/suggestions/dot-readonly-fields';
+import { previewEnrichedCompanySuggestion, submitCompanySuggestion } from '@/actions/suggest-company';
+import { MultiSourcePreviewCard } from '@/components/verification/multi-source-preview-card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
+import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
 import { toast } from 'sonner';
 
 type SubmitSuccessState = {
@@ -20,27 +20,30 @@ type Props = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   sourcePage: string;
-  /** FMCSA-trusted mode — core DOT fields are read-only */
-  dotPreview?: FmcsaSuggestionPreview | null;
+  enrichedPreview?: EnrichedCompanyPreview | null;
   carrierQuery?: string;
-  /** Fallback manual mode when no valid USDOT/MC */
   initialName?: string;
   loadingPreview?: boolean;
   previewError?: string | null;
+  onEnrichedPreviewChange?: (preview: EnrichedCompanyPreview | null) => void;
 };
 
 export function SuggestCompanyModal({
   open,
   onOpenChange,
   sourcePage,
-  dotPreview = null,
+  enrichedPreview = null,
   carrierQuery = '',
   initialName = '',
   loadingPreview = false,
   previewError = null,
+  onEnrichedPreviewChange,
 }: Props) {
-  const isDotMode = Boolean(dotPreview?.legalName && carrierQuery);
+  const isDotMode = Boolean(enrichedPreview?.fmcsa?.legalName && carrierQuery);
   const [name, setName] = useState(initialName);
+  const [manualPreview, setManualPreview] = useState<EnrichedCompanyPreview | null>(null);
+  const [manualPreviewError, setManualPreviewError] = useState<string | null>(null);
+  const [loadingManualPreview, startManualPreviewTransition] = useTransition();
   const [details, setDetails] = useState('');
   const [suggestedByName, setSuggestedByName] = useState('');
   const [suggestedByEmail, setSuggestedByEmail] = useState('');
@@ -54,6 +57,8 @@ export function SuggestCompanyModal({
     }
   }, [open, initialName, submitted, isDotMode]);
 
+  const activePreview = isDotMode ? enrichedPreview : manualPreview ?? enrichedPreview;
+
   function resetForm() {
     setName(initialName);
     setDetails('');
@@ -61,6 +66,30 @@ export function SuggestCompanyModal({
     setSuggestedByEmail('');
     setSubmitted(false);
     setSubmitSuccess(null);
+    setManualPreview(null);
+    setManualPreviewError(null);
+    onEnrichedPreviewChange?.(null);
+  }
+
+  function loadManualEnrichmentPreview() {
+    const trimmed = name.trim();
+    if (!trimmed) {
+      setManualPreviewError('Enter a company name first.');
+      return;
+    }
+
+    startManualPreviewTransition(async () => {
+      setManualPreviewError(null);
+      const res = await previewEnrichedCompanySuggestion({ companyName: trimmed });
+      if (!res.success || !res.preview) {
+        setManualPreviewError(res.error ?? 'Could not load rating data.');
+        setManualPreview(null);
+        onEnrichedPreviewChange?.(null);
+        return;
+      }
+      setManualPreview(res.preview);
+      onEnrichedPreviewChange?.(res.preview);
+    });
   }
 
   function handleOpenChange(next: boolean) {
@@ -123,7 +152,7 @@ export function SuggestCompanyModal({
           <div className="px-6 pb-6 space-y-4">
             <p className="text-sm leading-relaxed text-muted-foreground">
               {submitSuccess?.pendingReview
-                ? 'Thank you — your submission is pending review. FMCSA licensing data is already on file for this carrier. Once approved, the profile will be live at the link below (usually within one business day).'
+                ? 'Thank you — your submission is pending review. FMCSA, Google, and public rating data are on file. Once approved, the profile will be live at the link below (usually within one business day).'
                 : 'Thank you — we&apos;ll review and add it shortly.'}
             </p>
             {submitSuccess?.profileSlug ? (
@@ -153,7 +182,7 @@ export function SuggestCompanyModal({
         ) : loadingPreview ? (
           <div className="px-6 pb-8 flex flex-col items-center gap-3 text-sm text-muted-foreground">
             <Loader2 className="h-6 w-6 animate-spin text-primary" />
-            Loading FMCSA carrier data…
+            Loading FMCSA, Google, and public rating data…
           </div>
         ) : previewError ? (
           <div className="px-6 pb-6 space-y-4">
@@ -166,18 +195,19 @@ export function SuggestCompanyModal({
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-4">
-            {isDotMode && dotPreview ? (
+            {isDotMode && activePreview ? (
               <>
                 <p className="text-sm text-muted-foreground">
-                  This carrier is verified via FMCSA but not yet in our directory. Review the
-                  official record below and add optional notes.
+                  This carrier is verified via FMCSA but not yet in our directory. Review enriched
+                  data from multiple sources below, then add optional notes.
                 </p>
-                <DotReadonlyFields preview={dotPreview} />
+                <MultiSourcePreviewCard preview={activePreview} />
               </>
             ) : (
               <>
                 <p className="text-sm text-muted-foreground">
-                  Help other families find trustworthy movers. Include as much detail as you can.
+                  Help other families find trustworthy movers. We can pull Google and public ratings
+                  before you submit.
                 </p>
                 <div>
                   <label htmlFor="suggest-name" className="text-sm font-medium">
@@ -186,14 +216,44 @@ export function SuggestCompanyModal({
                   <Input
                     id="suggest-name"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      if (manualPreview) {
+                        setManualPreview(null);
+                        onEnrichedPreviewChange?.(null);
+                      }
+                    }}
                     placeholder="e.g. ABC Moving & Storage"
                     className="mt-1.5"
                     required
                     maxLength={120}
-                    disabled={pending}
+                    disabled={pending || loadingManualPreview}
                   />
                 </div>
+                <Button
+                  type="button"
+                  variant="secondary"
+                  className="w-full gap-2"
+                  disabled={pending || loadingManualPreview || !name.trim()}
+                  onClick={loadManualEnrichmentPreview}
+                >
+                  {loadingManualPreview ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Loading Google &amp; public ratings…
+                    </>
+                  ) : (
+                    'Look up Google & public ratings'
+                  )}
+                </Button>
+                {manualPreviewError ? (
+                  <p className="text-xs text-destructive" role="alert">
+                    {manualPreviewError}
+                  </p>
+                ) : null}
+                {activePreview && !isDotMode ? (
+                  <MultiSourcePreviewCard preview={activePreview} showFmcsa={false} />
+                ) : null}
               </>
             )}
 
@@ -250,7 +310,11 @@ export function SuggestCompanyModal({
 
             <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
-            <Button type="submit" className="w-full gap-2" disabled={pending || (isDotMode && !dotPreview)}>
+            <Button
+              type="submit"
+              className="w-full gap-2"
+              disabled={pending || loadingManualPreview || (isDotMode && !activePreview?.fmcsa)}
+            >
               {pending ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -265,7 +329,8 @@ export function SuggestCompanyModal({
             </Button>
 
             <p className="text-xs text-muted-foreground">
-              Submissions are moderated. Duplicate and excessive requests are rate-limited.
+              Submissions are moderated. FMCSA is primary; Google API is supplemental; public scrape
+              data is shown for transparency only.
             </p>
           </form>
         )}

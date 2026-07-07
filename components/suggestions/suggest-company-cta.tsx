@@ -2,10 +2,10 @@
 
 import { useEffect, useState, useTransition } from 'react';
 import { Loader2, PlusCircle } from 'lucide-react';
-import { previewFmcsaSuggestion } from '@/actions/suggest-company';
+import { previewEnrichedCompanySuggestion } from '@/actions/suggest-company';
 import { SuggestCompanyModal } from '@/components/suggestions/suggest-company-modal';
 import { Button } from '@/components/ui/button';
-import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
+import type { EnrichedCompanyPreview, FmcsaSuggestionPreview } from '@/lib/suggestions/types';
 
 type Props = {
   sourcePage: string;
@@ -31,7 +31,7 @@ export function SuggestCompanyCta({
   label,
 }: Props) {
   const [open, setOpen] = useState(false);
-  const [dotPreview, setDotPreview] = useState<FmcsaSuggestionPreview | null>(initialDotPreview);
+  const [enrichedPreview, setEnrichedPreview] = useState<EnrichedCompanyPreview | null>(null);
   const [previewError, setPreviewError] = useState<string | null>(null);
   const [loadingPreview, startPreviewTransition] = useTransition();
 
@@ -40,43 +40,49 @@ export function SuggestCompanyCta({
     label ?? (isDotFlow ? 'Add This Company to Our Directory' : 'Company not listed? Suggest it');
 
   useEffect(() => {
-    if (initialDotPreview?.legalName) {
-      setDotPreview(initialDotPreview);
+    if (initialDotPreview?.legalName && carrierQuery) {
+      setEnrichedPreview({
+        fmcsa: initialDotPreview,
+        google: null,
+        publicScrape: null,
+        fetchedAt: new Date().toISOString(),
+      });
     }
-  }, [initialDotPreview]);
-
-  function resolveCachedPreview(): FmcsaSuggestionPreview | null {
-    if (dotPreview?.legalName) return dotPreview;
-    if (initialDotPreview?.legalName) return initialDotPreview;
-    return null;
-  }
+  }, [initialDotPreview, carrierQuery]);
 
   function handleClick() {
-    const cached = resolveCachedPreview();
-    if (cached) {
-      setDotPreview(cached);
-      setPreviewError(null);
-      setOpen(true);
-      return;
-    }
-
     if (!carrierQuery.trim()) {
-      setDotPreview(null);
       setPreviewError(null);
       setOpen(true);
+
+      if (initialName.trim()) {
+        startPreviewTransition(async () => {
+          const res = await previewEnrichedCompanySuggestion({ companyName: initialName.trim() });
+          if (!res.success || !res.preview) {
+            setEnrichedPreview(null);
+            return;
+          }
+          setEnrichedPreview(res.preview);
+        });
+      } else {
+        setEnrichedPreview(null);
+      }
       return;
     }
 
     startPreviewTransition(async () => {
       setPreviewError(null);
-      const res = await previewFmcsaSuggestion(carrierQuery);
+      const res = await previewEnrichedCompanySuggestion({
+        carrierQuery,
+        companyName: initialName || undefined,
+      });
       if (!res.success || !res.preview) {
-        setPreviewError(res.error ?? 'Could not load FMCSA data.');
-        setDotPreview(null);
+        setPreviewError(res.error ?? 'Could not load verification data.');
+        setEnrichedPreview(null);
         setOpen(true);
         return;
       }
-      setDotPreview(res.preview);
+      setEnrichedPreview(res.preview);
       setOpen(true);
     });
   }
@@ -96,17 +102,18 @@ export function SuggestCompanyCta({
         ) : (
           <PlusCircle className="h-4 w-4 mr-2" />
         )}
-        {loadingPreview ? 'Loading FMCSA data…' : buttonLabel}
+        {loadingPreview ? 'Loading verification data…' : buttonLabel}
       </Button>
       <SuggestCompanyModal
         open={open}
         onOpenChange={setOpen}
         sourcePage={sourcePage}
-        dotPreview={dotPreview}
+        enrichedPreview={enrichedPreview}
         carrierQuery={carrierQuery}
         initialName={initialName}
         loadingPreview={loadingPreview}
         previewError={previewError}
+        onEnrichedPreviewChange={setEnrichedPreview}
       />
     </>
   );

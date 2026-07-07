@@ -1,4 +1,8 @@
 import type { UsdotStatusLabel } from '@/lib/fmcsa/preview-types';
+import type {
+  GooglePlacesData,
+  PublicScrapeData,
+} from '@/lib/verification/types';
 
 /** Client-safe FMCSA preview for suggestion modal (no raw API payload). */
 export type FmcsaSuggestionPreview = {
@@ -22,4 +26,12 @@ export type FmcsaSuggestionPreview = {
   authorityStatus: string | null;
   safetyRating: string | null;
   allowedToOperate: string | null;
+};
+
+/** Client-safe multi-source preview for suggestion modal. */
+export type EnrichedCompanyPreview = {
+  fmcsa: FmcsaSuggestionPreview | null;
+  google: GooglePlacesData | null;
+  publicScrape: PublicScrapeData | null;
+  fetchedAt: string;
 };

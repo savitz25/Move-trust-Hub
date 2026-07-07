@@ -18,6 +18,8 @@ export type PendingSuggestion = {
   source_page: string | null;
   fmcsa_preview: Record<string, unknown> | null;
   fmcsa_raw: Record<string, unknown> | null;
+  google_data: Record<string, unknown> | null;
+  public_scrape_data: Record<string, unknown> | null;
   created_at: string;
 };
 
@@ -28,7 +30,7 @@ export async function getPendingSuggestions(): Promise<PendingSuggestion[]> {
   const { data, error } = await admin
     .from('company_suggestions')
     .select(
-      'id, name, usdot, mc_number, details, suggested_by_name, suggested_by_email, legal_name, headquarters, phone, authority_status, source_page, fmcsa_preview, fmcsa_raw, created_at'
+      'id, name, usdot, mc_number, details, suggested_by_name, suggested_by_email, legal_name, headquarters, phone, authority_status, source_page, fmcsa_preview, fmcsa_raw, google_data, public_scrape_data, created_at'
     )
     .eq('status', 'pending')
     .order('created_at', { ascending: true });

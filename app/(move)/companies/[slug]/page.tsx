@@ -29,6 +29,9 @@ import {
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
+import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
+import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
+import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
 
 export const revalidate = 60;
 
@@ -90,6 +93,7 @@ export default async function CompanyProfilePage({ params }: Props) {
     <>
       <JsonLd data={buildCompanyDirectorySchemaGraph(company)} />
     <div className="container mx-auto px-4 py-8 max-w-5xl">
+      <AdminRefreshVerificationShell companyId={company.id} />
       <Link href="/companies" className="inline-flex items-center gap-1 text-sm mb-4 text-muted-foreground hover:text-foreground">
         <ArrowLeft className="h-4 w-4" /> Back to Directory
       </Link>
@@ -102,7 +106,15 @@ export default async function CompanyProfilePage({ params }: Props) {
             {canShowVerifiedBadge(company) && <Badge variant="success">VERIFIED</Badge>}
             {canShowVerifiedBadge(company) && <FmcsaVerificationBadge company={company} />}
             <BbbVerificationBadge company={company} />
+            {company.googleData?.status === 'ok' ? (
+              <GoogleRatingBadge data={company.googleData} />
+            ) : null}
           </div>
+          {company.publicScrapeData ? (
+            <div className="mt-2">
+              <PublicScrapeBadges data={company.publicScrapeData} />
+            </div>
+          ) : null}
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
         </div>
         <div className="flex items-center gap-3">
@@ -201,6 +213,26 @@ export default async function CompanyProfilePage({ params }: Props) {
               <div className="sm:col-span-2">
                 <FmcsaLastVerified checkedAt={company.fmcsaLastChecked} />
               </div>
+              {company.googleData?.status === 'ok' ? (
+                <div className="sm:col-span-2 rounded-md border border-amber-200/50 bg-amber-50/30 dark:bg-amber-950/10 p-3">
+                  <div className="text-muted-foreground text-xs mb-1">Google Places (API)</div>
+                  <GoogleRatingBadge data={company.googleData} />
+                  {company.googleData.last_fetched ? (
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Last fetched {new Date(company.googleData.last_fetched).toLocaleDateString()}
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
+              {company.publicScrapeData ? (
+                <div className="sm:col-span-2 rounded-md border border-dashed p-3">
+                  <div className="text-muted-foreground text-xs mb-2">Public web ratings (scraped)</div>
+                  <PublicScrapeBadges data={company.publicScrapeData} />
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Lower confidence than FMCSA or Google API. Confirm on official sites before booking.
+                  </p>
+                </div>
+              ) : null}
               <div>
                 <div className="text-muted-foreground text-xs">BBB Rating</div>
                 <div className="flex items-center gap-2 flex-wrap">

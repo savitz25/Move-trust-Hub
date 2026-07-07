@@ -8,7 +8,8 @@ import {
   lookupFmcsaForSuggestion,
   toFmcsaSuggestionPreview,
 } from '@/lib/suggestions/fmcsa-lookup';
-import type { FmcsaSuggestionPreview } from '@/lib/suggestions/types';
+import type { EnrichedCompanyPreview, FmcsaSuggestionPreview } from '@/lib/suggestions/types';
+import { enrichCompanySources } from '@/lib/verification/enrich-company';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 import { predictCompanyProfileSlug } from '@/lib/directory/resolve-company';
 import { hashEmail, hashIp } from '@/lib/reviews/hash';
@@ -33,6 +34,12 @@ export type PreviewFmcsaSuggestionResult = {
   preview?: FmcsaSuggestionPreview;
 };
 
+export type PreviewEnrichedSuggestionResult = {
+  success: boolean;
+  error?: string;
+  preview?: EnrichedCompanyPreview;
+};
+
 function clientIpFromHeaders(headerStore: Headers): string | null {
   return (
     headerStore.get('x-forwarded-for')?.split(',')[0]?.trim() ||
@@ -41,37 +48,94 @@ function clientIpFromHeaders(headerStore: Headers): string | null {
   );
 }
 
-export async function previewFmcsaSuggestion(
-  carrierQuery: string
-): Promise<PreviewFmcsaSuggestionResult> {
-  const parsed = parseCarrierNumber(carrierQuery.trim());
-  if (!parsed) {
+async function buildEnrichedPreview(input: {
+  carrierQuery?: string;
+  companyName?: string;
+  headquarters?: string | null;
+  phone?: string | null;
+}): Promise<PreviewEnrichedSuggestionResult> {
+  let fmcsaPreview: FmcsaSuggestionPreview | null = null;
+  let legalName = input.companyName?.trim() || '';
+  let headquarters = input.headquarters ?? null;
+  let phone = input.phone ?? null;
+
+  if (input.carrierQuery?.trim()) {
+    const parsed = parseCarrierNumber(input.carrierQuery.trim());
+    if (!parsed) {
+      return {
+        success: false,
+        error: 'Enter a valid USDOT or MC number (3–8 digits).',
+      };
+    }
+
+    if (!process.env.FMCSA_WEB_KEY?.trim()) {
+      return {
+        success: false,
+        error: 'FMCSA lookup is temporarily unavailable. Please try again later.',
+      };
+    }
+
+    const fmcsa = await lookupFmcsaForSuggestion(input.carrierQuery);
+    if (!fmcsa?.legalName) {
+      return {
+        success: false,
+        error:
+          'No FMCSA record found for that number. Confirm it on safer.fmcsa.dot.gov before submitting.',
+      };
+    }
+
+    fmcsaPreview = toFmcsaSuggestionPreview(fmcsa);
+    legalName = fmcsa.legalName;
+    headquarters = fmcsa.headquarters ?? headquarters;
+    phone = fmcsa.phone ?? phone;
+  }
+
+  if (!legalName) {
     return {
       success: false,
-      error: 'Enter a valid USDOT or MC number (3–8 digits).',
+      error: 'Company name or a valid USDOT/MC number is required.',
     };
   }
 
-  if (!process.env.FMCSA_WEB_KEY?.trim()) {
-    return {
-      success: false,
-      error: 'FMCSA lookup is temporarily unavailable. Please try again later.',
-    };
-  }
-
-  const fmcsa = await lookupFmcsaForSuggestion(carrierQuery);
-  if (!fmcsa?.legalName) {
-    return {
-      success: false,
-      error:
-        'No FMCSA record found for that number. Confirm it on safer.fmcsa.dot.gov before submitting.',
-    };
-  }
+  const enrichment = await enrichCompanySources({
+    legalName,
+    headquarters,
+    phone,
+  });
 
   return {
     success: true,
-    preview: toFmcsaSuggestionPreview(fmcsa),
+    preview: {
+      fmcsa: fmcsaPreview,
+      google: enrichment.google,
+      publicScrape: enrichment.publicScrape,
+      fetchedAt: enrichment.fetchedAt,
+    },
   };
+}
+
+export async function previewFmcsaSuggestion(
+  carrierQuery: string
+): Promise<PreviewFmcsaSuggestionResult> {
+  const res = await buildEnrichedPreview({ carrierQuery });
+  if (!res.success || !res.preview) {
+    return { success: false, error: res.error };
+  }
+  if (!res.preview.fmcsa) {
+    return { success: false, error: res.error ?? 'FMCSA preview unavailable' };
+  }
+  return { success: true, preview: res.preview.fmcsa };
+}
+
+/** Multi-source preview: FMCSA + Google Places + public scrape (parallel). */
+export async function previewEnrichedCompanySuggestion(input: {
+  carrierQuery?: string;
+  companyName?: string;
+}): Promise<PreviewEnrichedSuggestionResult> {
+  return buildEnrichedPreview({
+    carrierQuery: input.carrierQuery,
+    companyName: input.companyName,
+  });
 }
 
 export async function submitCompanySuggestion(
@@ -130,6 +194,12 @@ export async function submitCompanySuggestion(
     };
   }
 
+  const enrichment = await enrichCompanySources({
+    legalName: companyName,
+    headquarters: fmcsa?.headquarters,
+    phone: fmcsa?.phone,
+  });
+
   const duplicateCheck = await checkSuggestionDuplicate({
     name: companyName,
     usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
@@ -167,6 +237,8 @@ export async function submitCompanySuggestion(
       authority_status: fmcsa?.authorityStatus,
       fmcsa_preview: fmcsa?.fmcsaPreview ?? null,
       fmcsa_raw: fmcsa?.fmcsaRaw ?? null,
+      google_data: enrichment.google,
+      public_scrape_data: enrichment.publicScrape,
     })
     .select('id')
     .single();
@@ -186,6 +258,8 @@ export async function submitCompanySuggestion(
     suggestionId: inserted.id,
     usdot: fmcsa?.usdot,
     hasFmcsa: Boolean(fmcsa),
+    hasGoogle: Boolean(enrichment.google?.status === 'ok'),
+    hasPublicScrape: Boolean(enrichment.publicScrape),
     trustedDot: Boolean(carrierParsed && fmcsa),
   });
 

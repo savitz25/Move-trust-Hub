@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 import { Check, ExternalLink, Loader2, MapPin, X } from 'lucide-react';
 import { moderateSuggestion } from '@/actions/moderate-suggestions';
-import { AdminFmcsaPreview } from '@/components/suggestions/admin-fmcsa-preview';
+import { AdminEnrichedPreview } from '@/components/verification/admin-enriched-preview';
 import type { PendingSuggestion } from '@/lib/suggestions/queries';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -55,6 +55,8 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
     <div className="space-y-4">
       {queue.map((suggestion) => {
         const hasFmcsa = Boolean(suggestion.usdot || suggestion.fmcsa_raw || suggestion.fmcsa_preview);
+        const hasGoogle = Boolean(suggestion.google_data);
+        const hasPublic = Boolean(suggestion.public_scrape_data);
 
         return (
           <Card key={suggestion.id} className="p-5">
@@ -64,6 +66,8 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
                   <span className="font-semibold text-lg">{suggestion.legal_name || suggestion.name}</span>
                   <Badge variant="outline">Pending</Badge>
                   {hasFmcsa ? <Badge variant="default">FMCSA verified</Badge> : null}
+                  {hasGoogle ? <Badge variant="outline">Google data</Badge> : null}
+                  {hasPublic ? <Badge variant="secondary">Public ratings</Badge> : null}
                   {suggestion.usdot ? (
                     <Badge variant="secondary">DOT {suggestion.usdot}</Badge>
                   ) : null}
@@ -80,8 +84,10 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
               </time>
             </div>
 
-            {hasFmcsa ? (
-              <AdminFmcsaPreview suggestion={suggestion} />
+            {hasFmcsa || hasGoogle || hasPublic ? (
+              <div className="mt-4">
+                <AdminEnrichedPreview suggestion={suggestion} />
+              </div>
             ) : (
               <>
                 {suggestion.headquarters ? (

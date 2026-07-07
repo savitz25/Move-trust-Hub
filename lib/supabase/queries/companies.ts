@@ -59,6 +59,8 @@ function mapRow(row: Record<string, unknown>): Company {
       (row.rating_breakdown as Company['ratingBreakdown']) ?? EMPTY_RATING_BREAKDOWN,
     isVerified: Boolean(row.is_verified),
     lastUpdated: (row.last_updated as string)?.slice?.(0, 10) || '',
+    googleData: (row.google_data as Company['googleData']) ?? null,
+    publicScrapeData: (row.public_scrape_data as Company['publicScrapeData']) ?? null,
   });
 }
 

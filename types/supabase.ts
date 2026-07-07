@@ -63,6 +63,8 @@ export interface Database {
           bbb_business_id: string | null;
           bbb_alert_count: number;
           bbb_raw: Json | null;
+          google_data: Json | null;
+          public_scrape_data: Json | null;
           created_at: string;
           updated_at: string;
         };
@@ -341,6 +343,8 @@ export interface Database {
           authority_status: string | null;
           fmcsa_preview: Json | null;
           fmcsa_raw: Json | null;
+          google_data: Json | null;
+          public_scrape_data: Json | null;
           company_id: string | null;
           moderation_note: string | null;
           moderated_at: string | null;
@@ -366,6 +370,8 @@ export interface Database {
           authority_status?: string | null;
           fmcsa_preview?: Json | null;
           fmcsa_raw?: Json | null;
+          google_data?: Json | null;
+          public_scrape_data?: Json | null;
         };
         Update: Partial<Database['public']['Tables']['company_suggestions']['Row']>;
       };

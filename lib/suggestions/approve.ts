@@ -19,6 +19,8 @@ export type CompanySuggestionRow = {
   authority_status: string | null;
   fmcsa_preview: Json | null;
   fmcsa_raw: Json | null;
+  google_data?: Json | null;
+  public_scrape_data?: Json | null;
 };
 
 export async function approveSuggestionToCompany(
@@ -48,14 +50,28 @@ export async function approveSuggestionToCompany(
     };
   }
 
+  const googleData = suggestion.google_data as {
+    rating?: number | null;
+    review_count?: number | null;
+  } | null;
+  const publicScrape = suggestion.public_scrape_data as {
+    bbb_rating?: string | null;
+    bbb_accredited?: boolean | null;
+  } | null;
+
+  const overallRating = googleData?.rating && googleData.rating > 0 ? googleData.rating : 0;
+  const reviewCount = googleData?.review_count ?? 0;
+  const bbbRating =
+    (publicScrape?.bbb_rating as import('@/types').Company['bbbRating']) || 'NR';
+
   const dataHash = snapshot ? computeFmcsaDataHash(snapshot) : null;
   const reputationScore = computeReputationScore({
-    overallRating: 0,
-    reviewCount: 0,
+    overallRating,
+    reviewCount,
     fmcsaComplaints: snapshot?.complaintsLast12m ?? 0,
     fmcsaShipments: snapshot?.shipments ?? 1000,
-    bbbRating: 'NR',
-    bbbAccredited: false,
+    bbbRating,
+    bbbAccredited: Boolean(publicScrape?.bbb_accredited),
     isVerified: Boolean(snapshot?.authorityActive),
     yearsInBusiness: 0,
   });
@@ -83,10 +99,12 @@ export async function approveSuggestionToCompany(
     fmcsa_last_checked: snapshot ? new Date().toISOString() : null,
     fmcsa_legal_name: snapshot?.legalName ?? suggestion.legal_name,
     fmcsa_raw: snapshot?.raw ?? suggestion.fmcsa_raw,
-    bbb_rating: 'NR',
-    bbb_accredited: false,
-    overall_rating: 0,
-    review_count: 0,
+    bbb_rating: bbbRating,
+    bbb_accredited: Boolean(publicScrape?.bbb_accredited),
+    google_data: suggestion.google_data ?? null,
+    public_scrape_data: suggestion.public_scrape_data ?? null,
+    overall_rating: overallRating,
+    review_count: reviewCount,
     reputation_score: reputationScore,
     years_in_business: 0,
     avg_price_per_move: 0,
