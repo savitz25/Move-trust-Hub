@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useTransition } from 'react';
+import { useEffect, useRef, useState, useTransition } from 'react';
 import Link from 'next/link';
 import { Building2, ExternalLink, Loader2, PlusCircle } from 'lucide-react';
 import { previewEnrichedCompanySuggestion, submitCompanySuggestion } from '@/actions/suggest-company';
@@ -50,12 +50,47 @@ export function SuggestCompanyModal({
   const [submitted, setSubmitted] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
   const [pending, startTransition] = useTransition();
+  const lastAutoFetchedName = useRef('');
 
   useEffect(() => {
     if (open && !submitted && !isDotMode) {
       setName(initialName);
     }
   }, [open, initialName, submitted, isDotMode]);
+
+  // Manual mover suggestions: auto-fetch Google + public ratings after the user pauses typing.
+  useEffect(() => {
+    if (!open || submitted || isDotMode || loadingPreview) return;
+
+    const trimmed = name.trim();
+    if (trimmed.length < 3) {
+      lastAutoFetchedName.current = '';
+      setManualPreview(null);
+      setManualPreviewError(null);
+      return;
+    }
+
+    if (trimmed === lastAutoFetchedName.current) return;
+    if (enrichedPreview && trimmed === initialName.trim()) return;
+
+    const timer = window.setTimeout(() => {
+      lastAutoFetchedName.current = trimmed;
+      startManualPreviewTransition(async () => {
+        setManualPreviewError(null);
+        const res = await previewEnrichedCompanySuggestion({ companyName: trimmed });
+        if (!res.success || !res.preview) {
+          setManualPreviewError(res.error ?? 'Could not load rating data.');
+          setManualPreview(null);
+          onEnrichedPreviewChange?.(null);
+          return;
+        }
+        setManualPreview(res.preview);
+        onEnrichedPreviewChange?.(res.preview);
+      });
+    }, 700);
+
+    return () => window.clearTimeout(timer);
+  }, [open, submitted, isDotMode, loadingPreview, name, initialName, enrichedPreview, onEnrichedPreviewChange]);
 
   const activePreview = isDotMode ? enrichedPreview : manualPreview ?? enrichedPreview;
 
@@ -68,28 +103,8 @@ export function SuggestCompanyModal({
     setSubmitSuccess(null);
     setManualPreview(null);
     setManualPreviewError(null);
+    lastAutoFetchedName.current = '';
     onEnrichedPreviewChange?.(null);
-  }
-
-  function loadManualEnrichmentPreview() {
-    const trimmed = name.trim();
-    if (!trimmed) {
-      setManualPreviewError('Enter a company name first.');
-      return;
-    }
-
-    startManualPreviewTransition(async () => {
-      setManualPreviewError(null);
-      const res = await previewEnrichedCompanySuggestion({ companyName: trimmed });
-      if (!res.success || !res.preview) {
-        setManualPreviewError(res.error ?? 'Could not load rating data.');
-        setManualPreview(null);
-        onEnrichedPreviewChange?.(null);
-        return;
-      }
-      setManualPreview(res.preview);
-      onEnrichedPreviewChange?.(res.preview);
-    });
   }
 
   function handleOpenChange(next: boolean) {
@@ -206,8 +221,8 @@ export function SuggestCompanyModal({
             ) : (
               <>
                 <p className="text-sm text-muted-foreground">
-                  Help other families find trustworthy movers. We can pull Google and public ratings
-                  before you submit.
+                  Help other families find trustworthy movers. Google and public ratings load
+                  automatically once you enter a company name.
                 </p>
                 <div>
                   <label htmlFor="suggest-name" className="text-sm font-medium">
@@ -218,10 +233,7 @@ export function SuggestCompanyModal({
                     value={name}
                     onChange={(e) => {
                       setName(e.target.value);
-                      if (manualPreview) {
-                        setManualPreview(null);
-                        onEnrichedPreviewChange?.(null);
-                      }
+                      lastAutoFetchedName.current = '';
                     }}
                     placeholder="e.g. ABC Moving & Storage"
                     className="mt-1.5"
@@ -230,22 +242,12 @@ export function SuggestCompanyModal({
                     disabled={pending || loadingManualPreview}
                   />
                 </div>
-                <Button
-                  type="button"
-                  variant="secondary"
-                  className="w-full gap-2"
-                  disabled={pending || loadingManualPreview || !name.trim()}
-                  onClick={loadManualEnrichmentPreview}
-                >
-                  {loadingManualPreview ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      Loading Google &amp; public ratings…
-                    </>
-                  ) : (
-                    'Look up Google & public ratings'
-                  )}
-                </Button>
+                {loadingManualPreview ? (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                    Loading Google &amp; public ratings…
+                  </div>
+                ) : null}
                 {manualPreviewError ? (
                   <p className="text-xs text-destructive" role="alert">
                     {manualPreviewError}
