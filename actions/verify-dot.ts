@@ -90,7 +90,7 @@ export async function verifyCarrierNumber(
       preview = basePreview;
     }
 
-    const legalNameHint = preview?.legalName ?? fmcsa?.legalName;
+    const legalNameHint = preview?.legalName ?? fmcsa?.legalName ?? undefined;
     if (legalNameHint) {
       directory = await findCompanyByCarrierNumber(carrier, legalNameHint);
     }

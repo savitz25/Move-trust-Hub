@@ -339,17 +339,18 @@ export async function getCompanyByCarrierFromDb(
       .ilike('name', hint)
       .limit(5);
 
-    if (!nameError && byNameRows?.length) {
-      const exactName = byNameRows.find(
-        (row) => String(row.name).trim().toLowerCase() === hint.toLowerCase()
+    const nameRows = (byNameRows ?? []) as Record<string, unknown>[];
+    if (!nameError && nameRows.length) {
+      const exactName = nameRows.find(
+        (row) => String(row.name ?? '').trim().toLowerCase() === hint.toLowerCase()
       );
-      if (exactName) return mapRow(exactName as Record<string, unknown>);
+      if (exactName) return mapRow(exactName);
 
-      const fuzzy = byNameRows.find((row) => {
-        const company = mapRow(row as Record<string, unknown>);
+      const fuzzy = nameRows.find((row) => {
+        const company = mapRow(row);
         return companyMatchesCarrier(parsed, company);
       });
-      if (fuzzy) return mapRow(fuzzy as Record<string, unknown>);
+      if (fuzzy) return mapRow(fuzzy);
     }
   }
 
