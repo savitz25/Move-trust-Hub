@@ -100,7 +100,8 @@
     "sync:hub-redirects": "tsx scripts/export-vercel-hub-redirects.ts --write",
     "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
     "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts",
-    "refresh:bbb": "tsx scripts/run-bbb-refresh.ts"
+    "refresh:bbb": "tsx scripts/run-bbb-refresh.ts",
+    "backfill:verification": "tsx scripts/backfill-company-verification.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
