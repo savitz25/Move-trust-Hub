@@ -187,3 +187,6 @@ begin
   raise notice 'ensure_companies_directory: public.companies is ready for /companies/[slug] publishing';
 end;
 $$;
+
+-- Required so Supabase API (PostgREST) sees public.companies immediately
+notify pgrst, 'reload schema';

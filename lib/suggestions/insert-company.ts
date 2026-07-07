@@ -6,6 +6,10 @@ import {
   toGoogleDataColumn,
   toPublicScrapeColumn,
 } from '@/lib/suggestions/jsonb-payload';
+import {
+  COMPANIES_TABLE_SETUP_MESSAGE,
+  isCompaniesTableUnavailableError,
+} from '@/lib/suggestions/companies-table-error';
 import { logger } from '@/lib/logging/logger';
 import type { Database } from '@/types/supabase';
 import type { Json } from '@/types/supabase';
@@ -105,16 +109,9 @@ export async function insertCompanyWithFallback(
       return { ok: false, error: error.message, code: error.code };
     }
 
-    const missingTable =
-      error.code === '42P01' ||
-      (error.message.toLowerCase().includes('relation') &&
-        error.message.toLowerCase().includes('does not exist'));
-
-    if (missingTable) {
-      const msg =
-        'Directory table public.companies is missing in Supabase. Run migration 20260708140000_ensure_companies_directory.sql, then approve again.';
+    if (isCompaniesTableUnavailableError(error.message, error.code)) {
       logger.error('company.insert_missing_table', { slug: attempt.row.slug, message: error.message });
-      return { ok: false, error: msg, code: error.code };
+      return { ok: false, error: COMPANIES_TABLE_SETUP_MESSAGE, code: error.code };
     }
 
     if (!isMissingColumnError(error.message, error.code)) {

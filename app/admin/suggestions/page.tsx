@@ -25,7 +25,10 @@ export default async function AdminSuggestionsPage() {
   const queue = loggedIn && adminReady ? await getPendingSuggestions() : [];
   const orphans = loggedIn && adminReady ? await getOrphanedApprovedSuggestions() : [];
   const directoryBlocked =
-    adminReady && (!dbStatus.companiesTableReadable || dbStatus.seedFallbackActive);
+    adminReady &&
+    (!dbStatus.companiesTableReadable ||
+      !dbStatus.companiesPublishReady ||
+      dbStatus.seedFallbackActive);
   const needsLogin = adminReady && dbStatus.pendingSuggestions > 0 && !loggedIn;
 
   return (
@@ -64,12 +67,25 @@ export default async function AdminSuggestionsPage() {
         >
           <p className="font-medium">Directory database</p>
           <p className="mt-1">{dbStatus.message}</p>
-          {directoryBlocked ? (
+          {!dbStatus.companiesPublishReady ? (
+            <ol className="mt-3 list-decimal pl-5 text-xs space-y-1">
+              <li>
+                Supabase → <strong>SQL Editor</strong> → run{' '}
+                <code>supabase/migrations/20260708140000_ensure_companies_directory.sql</code>
+              </li>
+              <li>
+                Run <code>supabase/runbooks/fix-companies-approve.sql</code> (reload API schema)
+              </li>
+              <li>
+                Supabase → <strong>Settings → API → Reload schema</strong>
+              </li>
+              <li>Wait one minute, refresh this page, then click Approve again</li>
+            </ol>
+          ) : directoryBlocked ? (
             <p className="mt-2 text-xs">
               Submitted companies are stored in <code>company_suggestions</code> until approval
               writes to <code>public.companies</code>. Profile URLs like{' '}
-              <code>/companies/cirta-moving-llc</code> read from that table — not from suggestions
-              or the 25 bundled seed movers shown on /companies today.
+              <code>/companies/vellar-holdings-llc</code> go live only after Approve succeeds.
             </p>
           ) : null}
           <ul className="mt-2 text-xs space-y-0.5">
