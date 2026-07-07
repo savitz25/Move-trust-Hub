@@ -67,6 +67,12 @@ export default async function AdminSuggestionsPage() {
         >
           <p className="font-medium">Directory database</p>
           <p className="mt-1">{dbStatus.message}</p>
+          {dbStatus.supabaseProjectHost ? (
+            <p className="mt-1 text-xs text-muted-foreground">
+              Connected Supabase project: <code>{dbStatus.supabaseProjectHost}</code>
+              {dbStatus.publishUsesRpc ? ' · publish RPC active' : ''}
+            </p>
+          ) : null}
           {!dbStatus.companiesPublishReady ? (
             <ol className="mt-3 list-decimal pl-5 text-xs space-y-1">
               <li>
@@ -74,10 +80,12 @@ export default async function AdminSuggestionsPage() {
                 <code>supabase/migrations/20260708140000_ensure_companies_directory.sql</code>
               </li>
               <li>
-                Run <code>supabase/runbooks/fix-companies-approve.sql</code> (reload API schema)
+                Run{' '}
+                <code>supabase/migrations/20260709140000_publish_directory_company_rpc.sql</code>
               </li>
               <li>
-                Supabase → <strong>Settings → API → Reload schema</strong>
+                Run <code>notify pgrst, &apos;reload schema&apos;;</code> then{' '}
+                <strong>Settings → API → Reload schema</strong>
               </li>
               <li>Wait one minute, refresh this page, then click Approve again</li>
             </ol>
@@ -89,9 +97,19 @@ export default async function AdminSuggestionsPage() {
             </p>
           ) : null}
           <ul className="mt-2 text-xs space-y-0.5">
+            <li>Supabase project: {dbStatus.supabaseProjectHost ?? 'not configured'}</li>
+            <li>
+              Postgres <code>companies</code> table:{' '}
+              {dbStatus.postgresCompaniesExists == null
+                ? 'unknown (run RPC migration)'
+                : dbStatus.postgresCompaniesExists
+                  ? 'exists'
+                  : 'missing'}
+            </li>
+            <li>Publish RPC: {dbStatus.publishRpcAvailable ? 'ready' : 'not installed'}</li>
             <li>Pending suggestions: {dbStatus.pendingSuggestions}</li>
             <li>Approved suggestions: {dbStatus.approvedSuggestions}</li>
-            <li>Published directory rows: {dbStatus.companiesRowCount}</li>
+            <li>API published rows: {dbStatus.companiesRowCount}</li>
           </ul>
         </Card>
       ) : null}

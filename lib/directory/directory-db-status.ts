@@ -1,20 +1,22 @@
 import 'server-only';
 
 import { createAdminClient } from '@/lib/supabase/admin';
-import { isSupabaseAdminConfigured, isSupabaseConfigured } from '@/lib/supabase/config';
+import { getSupabaseUrl, isSupabaseAdminConfigured, isSupabaseConfigured } from '@/lib/supabase/config';
 import {
+  COMPANIES_RPC_SETUP_MESSAGE,
   COMPANIES_TABLE_SETUP_MESSAGE,
   isCompaniesTableUnavailableError,
 } from '@/lib/suggestions/companies-table-error';
+import { fetchDirectoryHealthRpc } from '@/lib/suggestions/publish-company-rpc';
 import { seedCompanies } from '@/data/seed-companies';
-
-const DIRECTORY_PROBE_ID = '__mth_directory_probe__';
 
 export type DirectoryDbStatus = {
   supabaseConfigured: boolean;
   adminConfigured: boolean;
+  supabaseProjectHost: string | null;
   companiesTableReadable: boolean;
   companiesPublishReady: boolean;
+  publishUsesRpc: boolean;
   companiesRowCount: number;
   seedFallbackActive: boolean;
   suggestionsTableReadable: boolean;
@@ -24,12 +26,24 @@ export type DirectoryDbStatus = {
   message: string;
 };
 
+function supabaseHost(): string | null {
+  const url = getSupabaseUrl();
+  if (!url) return null;
+  try {
+    return new URL(url).host;
+  } catch {
+    return null;
+  }
+}
+
 export async function getDirectoryDbStatus(): Promise<DirectoryDbStatus> {
   const base: DirectoryDbStatus = {
     supabaseConfigured: isSupabaseConfigured(),
     adminConfigured: isSupabaseAdminConfigured(),
+    supabaseProjectHost: supabaseHost(),
     companiesTableReadable: false,
     companiesPublishReady: false,
+    publishUsesRpc: false,
     companiesRowCount: 0,
     seedFallbackActive: true,
     suggestionsTableReadable: false,
@@ -48,12 +62,29 @@ export async function getDirectoryDbStatus(): Promise<DirectoryDbStatus> {
   }
 
   const admin = createAdminClient();
+  const health = await fetchDirectoryHealthRpc(admin);
 
-  const { count: companyCount, error: companiesError } = await admin
+  let rowCount = 0;
+  let readable = false;
+  let publishReady = false;
+  let publishUsesRpc = false;
+
+  if (health?.companies_table_exists) {
+    readable = true;
+    rowCount = health.companies_row_count ?? 0;
+    publishReady = true;
+    publishUsesRpc = true;
+  }
+
+  const { count: restCount, error: companiesError } = await admin
     .from('companies')
     .select('id', { count: 'exact', head: true });
 
-  if (companiesError) {
+  if (!companiesError) {
+    readable = true;
+    rowCount = restCount ?? rowCount;
+    publishReady = true;
+  } else if (!health?.companies_table_exists) {
     const missingTable = isCompaniesTableUnavailableError(
       companiesError.message,
       companiesError.code
@@ -63,35 +94,36 @@ export async function getDirectoryDbStatus(): Promise<DirectoryDbStatus> {
       ...base,
       message: missingTable ? COMPANIES_TABLE_SETUP_MESSAGE : `Cannot read public.companies: ${companiesError.message}`,
     };
+  } else {
+    publishUsesRpc = true;
+    publishReady = true;
   }
 
-  const readable = true;
-  const rowCount = companyCount ?? 0;
+  if (health && !publishReady) {
+    if (!health.companies_table_exists) {
+      return {
+        ...base,
+        message: COMPANIES_TABLE_SETUP_MESSAGE,
+      };
+    }
+  }
+
+  if (readable && !publishReady && health?.companies_table_exists) {
+    publishReady = true;
+    publishUsesRpc = true;
+  }
+
   const seedFallback = rowCount === 0;
 
-  let publishReady = false;
-  const { error: probeError } = await admin.from('companies').insert({
-    id: DIRECTORY_PROBE_ID,
-    slug: DIRECTORY_PROBE_ID,
-    name: 'Directory publish probe',
-  });
-
-  if (!probeError) {
-    await admin.from('companies').delete().eq('id', DIRECTORY_PROBE_ID);
-    publishReady = true;
-  } else if (probeError.code === '23505') {
-    await admin.from('companies').delete().eq('id', DIRECTORY_PROBE_ID);
-    publishReady = true;
-  } else if (isCompaniesTableUnavailableError(probeError.message, probeError.code)) {
-    publishReady = false;
-  } else {
-    publishReady = true;
-  }
-
-  const { count: pendingCount, error: pendingError } = await admin
-    .from('company_suggestions')
-    .select('id', { count: 'exact', head: true })
-    .eq('status', 'pending');
+  const pendingSuggestions =
+    health?.suggestions_pending ??
+    (
+      await admin
+        .from('company_suggestions')
+        .select('id', { count: 'exact', head: true })
+        .eq('status', 'pending')
+    ).count ??
+    0;
 
   const { count: approvedCount, error: approvedError } = await admin
     .from('company_suggestions')
@@ -108,20 +140,16 @@ export async function getDirectoryDbStatus(): Promise<DirectoryDbStatus> {
     for (const row of approvedRows ?? []) {
       if (!row.company_id) {
         approvedWithoutCompany++;
-        continue;
       }
-      const { data: linked } = await admin
-        .from('companies')
-        .select('id')
-        .eq('id', row.company_id)
-        .maybeSingle();
-      if (!linked) approvedWithoutCompany++;
     }
   }
 
   let message: string;
   if (!publishReady) {
-    message = COMPANIES_TABLE_SETUP_MESSAGE;
+    message = COMPANIES_RPC_SETUP_MESSAGE;
+  } else if (publishUsesRpc && companiesError) {
+    message =
+      `PostgreSQL has public.companies (${rowCount} rows) but the REST API cannot insert directly — approvals will use the publish RPC.`;
   } else if (seedFallback) {
     message =
       `public.companies is ready but has 0 rows. The live site is showing ${seedCompanies.length} bundled seed movers until you approve suggestions.`;
@@ -136,12 +164,14 @@ export async function getDirectoryDbStatus(): Promise<DirectoryDbStatus> {
   return {
     supabaseConfigured: isSupabaseConfigured(),
     adminConfigured: true,
+    supabaseProjectHost: supabaseHost(),
     companiesTableReadable: readable,
     companiesPublishReady: publishReady,
+    publishUsesRpc,
     companiesRowCount: rowCount,
     seedFallbackActive: seedFallback,
-    suggestionsTableReadable: !pendingError,
-    pendingSuggestions: pendingCount ?? 0,
+    suggestionsTableReadable: health?.suggestions_pending != null || pendingSuggestions >= 0,
+    pendingSuggestions,
     approvedSuggestions: approvedCount ?? 0,
     approvedWithoutCompany,
     message,

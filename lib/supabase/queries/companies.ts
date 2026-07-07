@@ -9,6 +9,8 @@ import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
 import { logger } from '@/lib/logging/logger';
 import { seedCompanies } from '@/data/seed-companies';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
+import { isCompaniesTableUnavailableError } from '@/lib/suggestions/companies-table-error';
+import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { buildCompanySlugBase, normalizeCompanyUsdot } from '@/lib/utils/company-slug';
 import { slugifyCompanyName } from '@/lib/utils/slugify';
 import type { Company } from '@/types';
@@ -169,6 +171,13 @@ export async function getCompanyBySlugOrUsdotFromDb(
     return mapRow(bySlugOrId as Record<string, unknown>);
   }
 
+  if (slugError && isCompaniesTableUnavailableError(slugError.message, slugError.code)) {
+    const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
+    if (viaRpc) {
+      return mapRow(viaRpc);
+    }
+  }
+
   const usdot = parseUsdotFromSlugInput(input) ?? normalizeCompanyUsdot(input);
   if (usdot) {
     const { data: byUsdot, error: usdotError } = await supabase
@@ -218,6 +227,11 @@ export async function getCompanyBySlugOrUsdotFromDb(
     if (!collapsedError && byCollapsed) {
       return mapRow(byCollapsed as Record<string, unknown>);
     }
+  }
+
+  const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
+  if (viaRpc) {
+    return mapRow(viaRpc);
   }
 
   return undefined;

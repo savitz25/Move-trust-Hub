@@ -13,4 +13,7 @@ export function isCompaniesTableUnavailableError(
 }
 
 export const COMPANIES_TABLE_SETUP_MESSAGE =
-  'The Supabase API cannot see public.companies yet. In Supabase SQL Editor, run supabase/migrations/20260708140000_ensure_companies_directory.sql, then run supabase/runbooks/fix-companies-approve.sql, then Settings → API → Reload schema. Wait one minute and approve again.';
+  'Directory publish is not ready. In Supabase SQL Editor run, in order: (1) supabase/migrations/20260708140000_ensure_companies_directory.sql, (2) supabase/migrations/20260709140000_publish_directory_company_rpc.sql, (3) notify pgrst, \'reload schema\'; then Settings → API → Reload schema. Confirm Vercel NEXT_PUBLIC_SUPABASE_URL matches this project.';
+
+export const COMPANIES_RPC_SETUP_MESSAGE =
+  'Run supabase/migrations/20260709140000_publish_directory_company_rpc.sql in Supabase SQL Editor, reload API schema, then approve again. This adds a publish function that works even when the API table cache is stale.';

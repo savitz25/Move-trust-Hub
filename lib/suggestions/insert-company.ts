@@ -7,9 +7,11 @@ import {
   toPublicScrapeColumn,
 } from '@/lib/suggestions/jsonb-payload';
 import {
+  COMPANIES_RPC_SETUP_MESSAGE,
   COMPANIES_TABLE_SETUP_MESSAGE,
   isCompaniesTableUnavailableError,
 } from '@/lib/suggestions/companies-table-error';
+import { publishCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { logger } from '@/lib/logging/logger';
 import type { Database } from '@/types/supabase';
 import type { Json } from '@/types/supabase';
@@ -110,6 +112,17 @@ export async function insertCompanyWithFallback(
     }
 
     if (isCompaniesTableUnavailableError(error.message, error.code)) {
+      const rpc = await publishCompanyViaRpc(admin, sanitized);
+      if (rpc.ok) {
+        logger.info('company.insert_rpc_succeeded', {
+          slug: rpc.slug,
+          existing: rpc.existing,
+        });
+        return { ok: true };
+      }
+      if (rpc.rpcMissing) {
+        return { ok: false, error: COMPANIES_RPC_SETUP_MESSAGE, code: rpc.code };
+      }
       logger.error('company.insert_missing_table', { slug: attempt.row.slug, message: error.message });
       return { ok: false, error: COMPANIES_TABLE_SETUP_MESSAGE, code: error.code };
     }
@@ -130,6 +143,23 @@ export async function insertCompanyWithFallback(
       message: error.message,
       slug: attempt.row.slug,
     });
+  }
+
+  if (lastError && isCompaniesTableUnavailableError(lastError.message, lastError.code)) {
+    const rpc = await publishCompanyViaRpc(admin, sanitized);
+    if (rpc.ok) {
+      logger.info('company.insert_rpc_succeeded', {
+        slug: rpc.slug,
+        existing: rpc.existing,
+      });
+      return { ok: true };
+    }
+
+    if (rpc.rpcMissing) {
+      return { ok: false, error: COMPANIES_RPC_SETUP_MESSAGE, code: rpc.code };
+    }
+
+    return { ok: false, error: rpc.error, code: rpc.code };
   }
 
   return {
