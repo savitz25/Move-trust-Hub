@@ -6,7 +6,7 @@ language sql
 stable
 security definer
 set search_path = public
-as $$
+as $mth$
   select jsonb_build_object(
     'companies_table_exists',
       exists (
@@ -34,14 +34,14 @@ as $$
         else 0
       end
   );
-$$;
+$mth$;
 
 create or replace function public.mth_publish_directory_company(payload jsonb)
 returns jsonb
 language plpgsql
 security definer
 set search_path = public
-as $$
+as $mth$
 declare
   v_id text := coalesce(payload->>'id', payload->>'slug');
   v_slug text := coalesce(payload->>'slug', payload->>'id');
@@ -118,7 +118,7 @@ begin
     coalesce((payload->>'reputation_score')::int, 0),
     coalesce((payload->>'years_in_business')::int, 0),
     coalesce((payload->>'avg_price_per_move')::int, 0),
-    coalesce(payload->>'price_range', '$$'),
+    coalesce(payload->>'price_range', chr(36) || chr(36)),
     coalesce(payload->>'coverage', 'Continental US'),
     coalesce(payload->'services', '["Full Service"]'::jsonb),
     coalesce(payload->'specialties', '[]'::jsonb),
@@ -159,7 +159,7 @@ exception
       'existing', true
     );
 end;
-$$;
+$mth$;
 
 create or replace function public.mth_get_directory_company(p_key text)
 returns jsonb
@@ -167,7 +167,7 @@ language plpgsql
 stable
 security definer
 set search_path = public
-as $$
+as $mth$
 declare
   v_row public.companies%rowtype;
   v_usdot text;
@@ -204,7 +204,7 @@ begin
 
   return null;
 end;
-$$;
+$mth$;
 
 grant execute on function public.mth_directory_health() to service_role;
 grant execute on function public.mth_publish_directory_company(jsonb) to service_role;
