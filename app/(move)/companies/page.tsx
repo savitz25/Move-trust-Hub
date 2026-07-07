@@ -53,7 +53,7 @@ export default async function CompaniesDirectoryPage() {
       <TrustBadges variant="compact" className="mb-4" />
       <TrustToolsBar className="mb-8" />
 
-      <HowWeScorePanel className="mb-8" />
+      <HowWeScorePanel className="mb-8" collapsible />
 
       <DirectoryLoader initialCompanies={companies} />
 
