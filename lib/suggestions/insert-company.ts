@@ -105,6 +105,18 @@ export async function insertCompanyWithFallback(
       return { ok: false, error: error.message, code: error.code };
     }
 
+    const missingTable =
+      error.code === '42P01' ||
+      (error.message.toLowerCase().includes('relation') &&
+        error.message.toLowerCase().includes('does not exist'));
+
+    if (missingTable) {
+      const msg =
+        'Directory table public.companies is missing in Supabase. Run migration 20260708140000_ensure_companies_directory.sql, then approve again.';
+      logger.error('company.insert_missing_table', { slug: attempt.row.slug, message: error.message });
+      return { ok: false, error: msg, code: error.code };
+    }
+
     if (!isMissingColumnError(error.message, error.code)) {
       logger.error('company.insert_failed', {
         attempt: attempt.label,

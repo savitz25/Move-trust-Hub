@@ -6,6 +6,7 @@ import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { getSupabaseAnonKey, getSupabaseUrl, isSupabaseConfigured } from '@/lib/supabase/config';
 import type { Database } from '@/types/supabase';
 import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
+import { logger } from '@/lib/logging/logger';
 import { seedCompanies } from '@/data/seed-companies';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
 import { buildCompanySlugBase, normalizeCompanyUsdot } from '@/lib/utils/company-slug';
@@ -106,7 +107,26 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     .select('*')
     .order('reputation_score', { ascending: false });
 
-  if (error || !data?.length) {
+  if (error) {
+    const missingTable =
+      error.message.includes('does not exist') ||
+      error.message.includes('schema cache') ||
+      error.code === '42P01';
+    logger.error('companies.fetch_failed', {
+      code: error.code,
+      message: error.message,
+      missingTable,
+      hint: missingTable
+        ? 'Run supabase/migrations/20260708140000_ensure_companies_directory.sql'
+        : undefined,
+    });
+    return [...seedCompanies];
+  }
+
+  if (!data?.length) {
+    logger.warn('companies.fetch_empty', {
+      hint: 'public.companies has no rows; serving seed fallback until movers are published',
+    });
     return [...seedCompanies];
   }
 
