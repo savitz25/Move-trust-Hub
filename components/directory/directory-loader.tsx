@@ -17,10 +17,22 @@ const DirectoryClient = createClientLoader<{ initialCompanies: Company[] }>(
   },
 );
 
-export function DirectoryLoader({ initialCompanies }: { initialCompanies: Company[] }) {
+import type { DirectorySearchScope } from '@/lib/directory/search-scope';
+
+type LoaderProps = {
+  initialCompanies: Company[];
+  sourcePage?: string;
+  scope?: DirectorySearchScope;
+};
+
+export function DirectoryLoader({ initialCompanies, sourcePage, scope }: LoaderProps) {
   return (
     <ErrorBoundary fallbackTitle="Unable to load the company directory">
-      <DirectoryClient initialCompanies={initialCompanies} />
+      <DirectoryClient
+        initialCompanies={initialCompanies}
+        sourcePage={sourcePage}
+        scope={scope}
+      />
     </ErrorBoundary>
   );
 }

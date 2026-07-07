@@ -6,6 +6,7 @@ import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-b
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
+import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState, localStates } from '@/lib/local-movers/states';
@@ -205,6 +206,15 @@ export default async function LocalMoversStatePage({ params }: Props) {
             />
           </div>
           <TrustBadges variant="compact" className="mt-6" />
+        </div>
+
+        <div className="mb-12">
+          <DirectorySearchEmbed
+            sourcePage={path}
+            scope={{ stateCode: state.code, stateName: state.name }}
+            heading={`Search movers in ${state.name}`}
+            description="Uses the same nationwide directory as /companies. Optionally prefer movers serving this state."
+          />
         </div>
 
         {hasCounties ? (

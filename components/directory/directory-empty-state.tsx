@@ -5,6 +5,7 @@ import { ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DirectoryCarrierFmcsaPanel } from '@/components/suggestions/directory-carrier-fmcsa-panel';
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
+import { buildVerifyDotHref } from '@/lib/directory/verify-dot-link';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 
 type Props = {
@@ -12,20 +13,16 @@ type Props = {
   hasActiveFilters: boolean;
   parsedCarrier: ParsedCarrierNumber | null;
   carrierNotInDirectory: boolean;
+  sourcePage?: string;
   onClearFilters: () => void;
 };
-
-function verifyDotHref(searchTerm: string, parsedCarrier: ParsedCarrierNumber | null): string {
-  const q = parsedCarrier?.display ?? searchTerm.trim();
-  if (!q) return '/verify-dot';
-  return `/verify-dot?q=${encodeURIComponent(q)}`;
-}
 
 export function DirectoryEmptyState({
   searchTerm,
   hasActiveFilters,
   parsedCarrier,
   carrierNotInDirectory,
+  sourcePage = '/companies',
   onClearFilters,
 }: Props) {
   const trimmed = searchTerm.trim();
@@ -51,9 +48,9 @@ export function DirectoryEmptyState({
 
       <div className="mt-6 flex w-full max-w-md flex-col gap-3">
         <Button asChild size="lg" className="w-full gap-2 min-h-[48px]">
-          <Link href={verifyDotHref(trimmed, parsedCarrier)}>
+          <Link href={buildVerifyDotHref(trimmed, parsedCarrier)}>
             <ShieldCheck className="h-4 w-4" />
-            Verify your company via DOT
+            Verify this company via DOT
           </Link>
         </Button>
 
@@ -75,7 +72,7 @@ export function DirectoryEmptyState({
       ) : trimmed ? (
         <div className="mt-6 w-full max-w-md space-y-2">
           <SuggestCompanyCta
-            sourcePage="/companies"
+            sourcePage={sourcePage}
             carrierQuery={parsedCarrier ? trimmed : undefined}
             initialName={parsedCarrier ? undefined : trimmed}
             variant="outline"

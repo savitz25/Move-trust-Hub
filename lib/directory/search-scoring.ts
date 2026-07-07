@@ -1,3 +1,5 @@
+import type { DirectorySearchScope } from '@/lib/directory/search-scope';
+import { companyMatchesSearchScope } from '@/lib/directory/search-scope';
 import type { Company } from '@/types';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
@@ -36,9 +38,22 @@ function fuzzyNameScore(name: string, query: string): number {
  * Relevance score for directory search. Higher = better match.
  * Returns 0 when the company should be excluded.
  */
-export function scoreCompanySearch(company: Company, rawQuery: string): number {
+function scopeBoost(company: Company, scope?: DirectorySearchScope): number {
+  if (!scope) return 0;
+  let boost = 0;
+  const id = company.id || company.slug;
+  if (scope.preferredMoverIds?.includes(id)) boost += 120;
+  if (companyMatchesSearchScope(company, scope)) boost += 60;
+  return boost;
+}
+
+export function scoreCompanySearch(
+  company: Company,
+  rawQuery: string,
+  scope?: DirectorySearchScope
+): number {
   const query = rawQuery.trim();
-  if (!query) return 1;
+  if (!query) return 1 + scopeBoost(company, scope);
 
   const qNorm = normalizeText(query);
   const name = normalizeText(company.name ?? '');
@@ -52,34 +67,37 @@ export function scoreCompanySearch(company: Company, rawQuery: string): number {
   if (parsed) {
     const usdot = digitsOnly(company.usdotNumber ?? '');
     const mc = digitsOnly(company.mcNumber ?? '');
-    if (parsed.type === 'DOT' && usdot === parsed.value) return 1200;
-    if (parsed.type === 'MC' && mc === parsed.value) return 1200;
+    if (parsed.type === 'DOT' && usdot === parsed.value) return 1200 + scopeBoost(company, scope);
+    if (parsed.type === 'MC' && mc === parsed.value) return 1200 + scopeBoost(company, scope);
   }
 
   const queryDigits = digitsOnly(query);
   if (queryDigits.length >= 3) {
-    if (digitsOnly(company.usdotNumber ?? '') === queryDigits) return 1100;
-    if (digitsOnly(company.mcNumber ?? '') === queryDigits) return 1100;
+    if (digitsOnly(company.usdotNumber ?? '') === queryDigits) return 1100 + scopeBoost(company, scope);
+    if (digitsOnly(company.mcNumber ?? '') === queryDigits) return 1100 + scopeBoost(company, scope);
   }
 
   if (!qNorm) return 0;
 
-  if (name === qNorm) return 1000;
-  if (name.startsWith(qNorm)) return 900;
-  if (name.split(' ').some((word) => word.startsWith(qNorm))) return 820;
+  const boost = scopeBoost(company, scope);
+
+  if (name === qNorm) return 1000 + boost;
+  if (name.startsWith(qNorm)) return 900 + boost;
+  if (name.split(' ').some((word) => word.startsWith(qNorm))) return 820 + boost;
 
   const fuzzy = fuzzyNameScore(name, qNorm);
-  if (fuzzy > 0) return fuzzy;
+  if (fuzzy > 0) return fuzzy + boost;
 
-  if (name.includes(qNorm)) return 600;
+  if (name.includes(qNorm)) return 600 + boost;
 
-  if (headquarters.includes(qNorm)) return 350;
-  if (specialties.includes(qNorm)) return 320;
-  if (description.includes(qNorm)) return 280;
+  if (headquarters.includes(qNorm)) return 350 + boost;
+  if (specialties.includes(qNorm)) return 320 + boost;
+  if (description.includes(qNorm)) return 280 + boost;
 
   if (qNorm.length === 1 && name.startsWith(qNorm)) return 750;
 
-  return 0;
+  const boosted = scopeBoost(company, scope);
+  return boosted > 0 ? boosted : 0;
 }
 
 export function compareSearchRelevance(a: Company, b: Company, query: string): number {

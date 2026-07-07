@@ -6,7 +6,7 @@ import { ReviewHighlights } from '@/components/trust/review-highlights';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
-import { getAllCompanies } from '@/lib/data-server';
+import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 
 /** Revalidate so admin-approved companies appear without a full redeploy. */
@@ -29,7 +29,7 @@ export const metadata: Metadata = buildMovePageMetadata({
 });
 
 export default async function CompaniesDirectoryPage() {
-  const companies = await getAllCompanies();
+  const companies = await getUnifiedDirectoryCompanies();
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -41,7 +41,8 @@ export default async function CompaniesDirectoryPage() {
           Interstate Moving Companies
         </h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          All major national players. Filter by coverage, services, price, and reputation. Click
+          Search all FMCSA-licensed movers nationwide — directory profiles plus curated local
+          listings. Filter by coverage, services, price, and reputation. Click
           any company for a full profile with{' '}
           <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
             FMCSA licensing

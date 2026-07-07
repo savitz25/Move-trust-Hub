@@ -1,5 +1,10 @@
+import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
 import type { Company, DirectoryFilters } from '@/types';
+
+export type DirectoryFilterInput = Partial<DirectoryFilters> & {
+  scope?: DirectorySearchScope;
+};
 
 function compareBySort(
   a: Company,
@@ -33,14 +38,17 @@ function compareBySort(
 /** Pure client-safe filter/sort — no Supabase or seed imports. */
 export function filterCompanies(
   companies: Company[],
-  filters: Partial<DirectoryFilters>
+  filters: DirectoryFilterInput
 ): Company[] {
-  let result = [...companies];
+  let result = applyScopeToCompanies([...companies], filters.scope);
   const searchQuery = filters.search?.trim() ?? '';
 
   if (searchQuery.length > 0) {
     result = result
-      .map((company) => ({ company, score: scoreCompanySearch(company, searchQuery) }))
+      .map((company) => ({
+        company,
+        score: scoreCompanySearch(company, searchQuery, filters.scope),
+      }))
       .filter((row) => row.score > 0)
       .sort((a, b) => {
         if (b.score !== a.score) return b.score - a.score;

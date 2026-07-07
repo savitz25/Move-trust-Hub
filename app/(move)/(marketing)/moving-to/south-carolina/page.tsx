@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
+import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { DestinationClusterHeroCta } from '@/components/destinations/destination-cluster-hero-cta';
 import {
   southCarolinaClusterContent,
@@ -153,6 +154,17 @@ export default function SouthCarolinaClusterPage() {
             ))}
 
             <DestinationClusterHeroCta clusterSlug="south-carolina" clusterLabel="South Carolina" />
+          </div>
+        </section>
+
+        <section className="py-10 border-b bg-muted/20">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <DirectorySearchEmbed
+              sourcePage="/moving-to/south-carolina"
+              scope={{ stateCode: 'SC', stateName: 'South Carolina' }}
+              heading="Search movers for your South Carolina move"
+              description="One search across our full FMCSA-verified directory — not limited to a single destination page."
+            />
           </div>
         </section>
 

@@ -172,6 +172,7 @@ import {
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
+import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-cta';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState } from '@/lib/local-movers/states';
@@ -499,6 +500,20 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             inboundRoutes={inboundRoutes}
           />
         ) : null}
+
+        <div className="mb-10">
+          <DirectorySearchEmbed
+            sourcePage={path}
+            scope={{
+              stateCode: county.stateCode,
+              stateName: state.name,
+              countyLabel,
+              preferredMoverIds: movers.map((m) => m.id),
+            }}
+            heading="Search the full mover directory"
+            description={`Find any licensed mover nationwide — same search as /companies. Prefer listings serving ${countyLabel}.`}
+          />
+        </div>
 
         <section className="mb-10" id="movers" aria-labelledby="movers-heading">
           <h2 id="movers-heading" className="text-2xl font-semibold tracking-tight mb-4">

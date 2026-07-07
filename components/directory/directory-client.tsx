@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Company, DirectoryFilters, SortOption, ServiceType } from '@/types';
 import { filterCompanies } from '@/lib/directory/filter-companies';
+import type { DirectorySearchScope } from '@/lib/directory/search-scope';
 import { useCompareStore } from '@/store/compare-store';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -44,9 +45,15 @@ const BBB_OPTIONS = ['A+', 'A', 'A-', 'B+', 'B', 'B-'];
 
 interface Props {
   initialCompanies: Company[];
+  sourcePage?: string;
+  scope?: DirectorySearchScope;
 }
 
-export function DirectoryClient({ initialCompanies }: Props) {
+export function DirectoryClient({
+  initialCompanies,
+  sourcePage = '/companies',
+  scope,
+}: Props) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialSearch = searchParams.get('search') || '';
@@ -82,8 +89,9 @@ export function DirectoryClient({ initialCompanies }: Props) {
         ...filters,
         search: debouncedSearch,
         services: selectedServices,
+        scope,
       }),
-    [normalizedInitial, filters, debouncedSearch, selectedServices]
+    [normalizedInitial, filters, debouncedSearch, selectedServices, scope]
   );
 
   const parsedCarrierSearch = useMemo(() => {
@@ -387,6 +395,7 @@ export function DirectoryClient({ initialCompanies }: Props) {
             hasActiveFilters={hasActiveFilters}
             parsedCarrier={parsedCarrierSearch}
             carrierNotInDirectory={carrierNotInDirectory}
+            sourcePage={sourcePage}
             onClearFilters={clearAllFilters}
           />
         ) : view === 'grid' ? (
