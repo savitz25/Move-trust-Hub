@@ -13,6 +13,8 @@ import { isCompaniesTableUnavailableError } from '@/lib/suggestions/companies-ta
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { buildCompanySlugBase, normalizeCompanyUsdot } from '@/lib/utils/company-slug';
 import { slugifyCompanyName } from '@/lib/utils/slugify';
+import { normalizeMc, normalizeUsdot } from '@/lib/trust/license-verification';
+import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 import type { Company } from '@/types';
 
 function createAnonSupabaseClient() {
@@ -232,6 +234,123 @@ export async function getCompanyBySlugOrUsdotFromDb(
   const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
   if (viaRpc) {
     return mapRow(viaRpc);
+  }
+
+  return undefined;
+}
+
+function usdotStorageVariants(digits: string): string[] {
+  return [...new Set([digits, `DOT ${digits}`, `DOT-${digits}`, `USDOT ${digits}`])];
+}
+
+function mcStorageVariants(digits: string): string[] {
+  return [...new Set([digits, `MC ${digits}`, `MC-${digits}`, `MC${digits}`])];
+}
+
+function carrierLookupKeys(parsed: ParsedCarrierNumber): string[] {
+  const keys = new Set<string>([parsed.value]);
+  if (parsed.type === 'DOT') {
+    keys.add(`dot-${parsed.value}`);
+  } else {
+    keys.add(`mc-${parsed.value}`);
+  }
+  return [...keys];
+}
+
+function companyMatchesCarrier(parsed: ParsedCarrierNumber, company: Company): boolean {
+  if (parsed.type === 'DOT') {
+    const usdot = normalizeUsdot(company.usdotNumber);
+    return Boolean(usdot) && usdot === parsed.value;
+  }
+  const mc = normalizeMc(company.mcNumber);
+  return Boolean(mc) && mc === parsed.value;
+}
+
+async function queryCompanyByColumnVariants(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  column: 'usdot_number' | 'mc_number',
+  variants: string[]
+): Promise<Company | undefined> {
+  for (const variant of variants) {
+    const { data, error } = await supabase
+      .from('companies')
+      .select('*')
+      .eq(column, variant)
+      .maybeSingle();
+
+    if (!error && data) {
+      return mapRow(data as Record<string, unknown>);
+    }
+  }
+  return undefined;
+}
+
+/**
+ * Resolve a directory company from a USDOT/MC search — same strategies as profile pages.
+ * Bypasses the directory list cache for accurate verify-dot duplicate detection.
+ */
+export async function getCompanyByCarrierFromDb(
+  parsed: ParsedCarrierNumber,
+  legalNameHint?: string
+): Promise<Company | undefined> {
+  if (!isSupabaseConfigured()) return undefined;
+
+  const supabase = createAnonSupabaseClient();
+  if (!supabase) return undefined;
+
+  for (const key of carrierLookupKeys(parsed)) {
+    const bySlugOrUsdot = await getCompanyBySlugOrUsdotFromDb(key);
+    if (bySlugOrUsdot) return bySlugOrUsdot;
+  }
+
+  if (parsed.type === 'DOT') {
+    const byUsdot = await queryCompanyByColumnVariants(
+      supabase,
+      'usdot_number',
+      usdotStorageVariants(parsed.value)
+    );
+    if (byUsdot) return byUsdot;
+  } else {
+    const byMc = await queryCompanyByColumnVariants(
+      supabase,
+      'mc_number',
+      mcStorageVariants(parsed.value)
+    );
+    if (byMc) return byMc;
+  }
+
+  const hint = legalNameHint?.trim();
+  if (hint) {
+    const slugGuess = slugifyCompanyName(hint);
+    if (slugGuess) {
+      const bySlugGuess = await getCompanyBySlugOrUsdotFromDb(slugGuess);
+      if (bySlugGuess) return bySlugGuess;
+
+      const predictedSlug = buildCompanySlugBase({ name: hint, usdot: parsed.type === 'DOT' ? parsed.value : null });
+      if (predictedSlug && predictedSlug !== slugGuess) {
+        const byPredicted = await getCompanyBySlugOrUsdotFromDb(predictedSlug);
+        if (byPredicted) return byPredicted;
+      }
+    }
+
+    const { data: byNameRows, error: nameError } = await supabase
+      .from('companies')
+      .select('*')
+      .ilike('name', hint)
+      .limit(5);
+
+    if (!nameError && byNameRows?.length) {
+      const exactName = byNameRows.find(
+        (row) => String(row.name).trim().toLowerCase() === hint.toLowerCase()
+      );
+      if (exactName) return mapRow(exactName as Record<string, unknown>);
+
+      const fuzzy = byNameRows.find((row) => {
+        const company = mapRow(row as Record<string, unknown>);
+        return companyMatchesCarrier(parsed, company);
+      });
+      if (fuzzy) return mapRow(fuzzy as Record<string, unknown>);
+    }
   }
 
   return undefined;

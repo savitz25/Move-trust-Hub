@@ -61,7 +61,7 @@ export async function verifyCarrierNumber(
     userIp,
   });
 
-  const directory = await findCompanyByCarrierNumber(carrier);
+  let directory = await findCompanyByCarrierNumber(carrier);
   const { saferUrl, preview: basePreview } = await resolveCarrierPreview(
     carrier,
     directory.preview
@@ -88,6 +88,18 @@ export async function verifyCarrierNumber(
       };
     } else if (!preview?.legalName && basePreview?.legalName) {
       preview = basePreview;
+    }
+
+    const legalNameHint = preview?.legalName ?? fmcsa?.legalName;
+    if (legalNameHint) {
+      directory = await findCompanyByCarrierNumber(carrier, legalNameHint);
+    }
+
+    if (!directory.slug && fmcsa?.usdot && carrier.type === 'MC') {
+      const dotCarrier = parseCarrierNumber(fmcsa.usdot);
+      if (dotCarrier) {
+        directory = await findCompanyByCarrierNumber(dotCarrier, legalNameHint);
+      }
     }
   }
 
