@@ -30,7 +30,7 @@ import { EditorialReviewVolume } from '@/components/trust/editorial-review-volum
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
-import { GooglePlacesPanel } from '@/components/verification/google-places-panel';
+import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
 
@@ -161,7 +161,9 @@ export default async function CompanyProfilePage({ params }: Props) {
         </Card>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6">
+      <GoogleReviewsSection data={company.googleData} companyName={company.name} />
+
+      <div className="grid lg:grid-cols-3 gap-6 mt-8">
         {/* Left/Main column */}
         <div className="lg:col-span-2 space-y-6">
           <Card>
@@ -214,9 +216,6 @@ export default async function CompanyProfilePage({ params }: Props) {
               <div className="sm:col-span-2">
                 <FmcsaLastVerified checkedAt={company.fmcsaLastChecked} />
               </div>
-              {company.googleData?.status === 'ok' ? (
-                <GooglePlacesPanel data={company.googleData} />
-              ) : null}
               {company.publicScrapeData ? (
                 <div className="sm:col-span-2 rounded-md border border-dashed p-3">
                   <div className="text-muted-foreground text-xs mb-2">Public web ratings (scraped)</div>
