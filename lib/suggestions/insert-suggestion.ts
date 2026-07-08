@@ -63,7 +63,7 @@ export async function insertCompanySuggestion(
       logger.warn('suggestion.insert_without_enrichment_columns', {
         suggestionId: retry.data.id,
         usdot: row.usdot,
-        hint: 'Run migration 20260707120000_multi_source_verification.sql',
+        hint: 'Google/BBB snapshot packed in fmcsa_preview._enrichment; run migration 20260707120000_multi_source_verification.sql for dedicated columns',
       });
       return { ok: true, id: retry.data.id, enrichmentStored: false };
     }

@@ -9,6 +9,8 @@ import {
   toJsonbColumn,
   toPublicScrapeColumn,
 } from '@/lib/suggestions/jsonb-payload';
+import { packFmcsaPreviewWithEnrichment } from '@/lib/suggestions/suggestion-enrichment-storage';
+import { toFmcsaSuggestionPreview } from '@/lib/suggestions/fmcsa-lookup';
 
 export type CompanySuggestionInsertRow = {
   name: string;
@@ -65,7 +67,10 @@ export function buildCompanySuggestionInsertRow(input: {
     headquarters: fmcsa?.headquarters ?? null,
     phone: fmcsa?.phone ?? null,
     authority_status: fmcsa?.authorityStatus ?? null,
-    fmcsa_preview: toJsonbColumn(fmcsa?.fmcsaPreview ?? null, {
+    fmcsa_preview: packFmcsaPreviewWithEnrichment(
+      fmcsa ? toFmcsaSuggestionPreview(fmcsa) : null,
+      enrichment
+    ) ?? toJsonbColumn(fmcsa?.fmcsaPreview ?? null, {
       label: 'fmcsa_preview',
       maxBytes: 60_000,
     }),

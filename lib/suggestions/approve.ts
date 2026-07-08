@@ -16,6 +16,7 @@ import { insertCompanyWithFallback } from '@/lib/suggestions/insert-company';
 import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
+import { resolveApprovalEnrichment } from '@/lib/suggestions/suggestion-enrichment-storage';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import type { Json } from '@/types/supabase';
 
@@ -63,8 +64,20 @@ export async function approveSuggestionToCompany(
 
   const snapshot = resolvePublishFmcsaSnapshot(suggestion, liveSnapshot);
 
-  const googleData = suggestion.google_data as GooglePlacesData | null;
-  const publicScrape = suggestion.public_scrape_data as PublicScrapeData | null;
+  const resolvedEnrichment = await resolveApprovalEnrichment(suggestion);
+  const googleData = resolvedEnrichment.google;
+  const publicScrape = resolvedEnrichment.publicScrape;
+
+  logger.info('approve.enrichment_resolved', {
+    suggestionId: suggestion.id,
+    slug,
+    source: suggestion.google_data || suggestion.public_scrape_data ? 'columns' : 'packed_or_live',
+    hasGoogle: Boolean(googleData?.status === 'ok'),
+    googleRating: googleData?.rating ?? null,
+    googleReviews: googleData?.review_count ?? null,
+    hasBbb: Boolean(publicScrape?.bbb_rating),
+    bbbRating: publicScrape?.bbb_rating ?? null,
+  });
 
   const overallRating =
     googleData?.status === 'ok' && googleData.rating && googleData.rating > 0

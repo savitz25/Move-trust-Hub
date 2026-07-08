@@ -9,11 +9,7 @@ import {
   publicScrapeFromVerificationSources,
   type VerificationSources,
 } from '@/lib/verification/backfill-helpers';
-import {
-  toGoogleDataColumn,
-  toPublicScrapeColumn,
-  toJsonbColumn,
-} from '@/lib/suggestions/jsonb-payload';
+import { toJsonbColumn } from '@/lib/suggestions/jsonb-payload';
 import { logger } from '@/lib/logging/logger';
 import type { Database } from '@/types/supabase';
 import type { Json } from '@/types/supabase';
@@ -55,6 +51,7 @@ export type EnrichmentCopyLog = {
   googleReviewCount: number | null;
   bbbRating: string | null;
   patchAttempts: string[];
+  storageMode: 'verification_sources' | 'legacy_columns' | 'ratings_only' | 'failed';
   error?: string;
 };
 
@@ -83,7 +80,6 @@ function readExistingEnrichment(row: Record<string, unknown> | null) {
   };
 }
 
-/** Prefer incoming Google when existing is missing or not ok. */
 function mergeGoogle(
   existing: GooglePlacesData | null,
   incoming: GooglePlacesData | null
@@ -95,7 +91,6 @@ function mergeGoogle(
   return incoming;
 }
 
-/** Prefer incoming scrape when existing BBB/Google scrape fields are empty. */
 function mergePublicScrape(
   existing: PublicScrapeData | null,
   incoming: PublicScrapeData | null
@@ -106,56 +101,37 @@ function mergePublicScrape(
   return { ...existing, ...incoming };
 }
 
-function buildPatch(input: PublishedEnrichmentInput, mergeWithExisting: {
-  google: GooglePlacesData | null;
-  scrape: PublicScrapeData | null;
-}): Record<string, unknown> {
-  const google = mergeGoogle(mergeWithExisting.google, input.googleData);
-  const scrape = mergePublicScrape(mergeWithExisting.scrape, input.publicScrape);
+function buildMergedSources(
+  input: PublishedEnrichmentInput,
+  existing: { google: GooglePlacesData | null; scrape: PublicScrapeData | null }
+): VerificationSources {
+  const google = mergeGoogle(existing.google, input.googleData);
+  const scrape = mergePublicScrape(existing.scrape, input.publicScrape);
 
-  const overallRating =
-    google?.status === 'ok' && google.rating && google.rating > 0
-      ? google.rating
-      : input.overallRating;
-  const reviewCount =
-    google?.status === 'ok' && google.review_count != null
-      ? google.review_count
-      : input.reviewCount;
-
-  const sources: VerificationSources = {
+  return {
     ...input.verificationSources,
     ...(google ? { google } : {}),
     ...(scrape ? { public_scrape: scrape } : {}),
   };
+}
 
-  return {
-    google_data: toGoogleDataColumn(google),
-    public_scrape_data: toPublicScrapeColumn(scrape),
-    verification_sources: toJsonbColumn(sources, { label: 'verification_sources' }),
-    verification_last_synced_at: new Date().toISOString(),
-    overall_rating: overallRating,
-    review_count: reviewCount,
-    bbb_rating: scrape?.bbb_rating ?? input.bbbRating,
-    bbb_accredited: scrape?.bbb_accredited ?? input.bbbAccredited,
-    reputation_score: input.reputationScore,
-    coverage: input.coverage,
-    fmcsa_raw: input.fmcsaRaw,
-    fmcsa_last_checked: input.fmcsaLastChecked,
-    fmcsa_legal_name: input.fmcsaLegalName,
-    fmcsa_safety_rating: input.fmcsaSafetyRating,
-    authority_active: input.authorityActive,
-    out_of_service: input.outOfService,
-    complaints_last_12m: input.complaintsLast12m,
-    revocation_date: input.revocationDate,
-    data_hash: input.dataHash,
-    last_updated: new Date().toISOString().slice(0, 10),
-  };
+function ratingsFromGoogle(
+  google: GooglePlacesData | null,
+  fallbackRating: number,
+  fallbackCount: number
+): { overallRating: number; reviewCount: number } {
+  if (google?.status === 'ok' && google.rating && google.rating > 0) {
+    return {
+      overallRating: google.rating,
+      reviewCount: google.review_count ?? fallbackCount,
+    };
+  }
+  return { overallRating: fallbackRating, reviewCount: fallbackCount };
 }
 
 /**
  * Explicitly copy suggestion enrichment onto a published company row.
- * The publish RPC only inserts core columns; this patch ensures Google/BBB/FMCSA
- * data is visible on the profile immediately after approval.
+ * Uses verification_sources when legacy google_data/public_scrape_data columns are absent.
  */
 export async function applyPublishedEnrichment(
   admin: SupabaseClient<Database>,
@@ -177,6 +153,7 @@ export async function applyPublishedEnrichment(
     googleReviewCount: input.googleData?.review_count ?? null,
     bbbRating: input.publicScrape?.bbb_rating ?? input.bbbRating ?? null,
     patchAttempts: [],
+    storageMode: 'failed',
   };
 
   const { data: existingRow } = await admin
@@ -189,37 +166,63 @@ export async function applyPublishedEnrichment(
     (existingRow as Record<string, unknown> | null) ?? null
   );
 
-  const basePatch = buildPatch(input, existing);
+  const sources = buildMergedSources(input, existing);
+  const google = sources.google ?? null;
+  const scrape = sources.public_scrape ?? null;
+  const { overallRating, reviewCount } = ratingsFromGoogle(
+    google,
+    input.overallRating,
+    input.reviewCount
+  );
 
-  const attempts: Array<{ label: string; patch: Record<string, unknown> }> = [
-    { label: 'full', patch: basePatch },
-    {
-      label: 'without_verification_sources',
-      patch: stripKeys(basePatch, ['verification_sources', 'verification_last_synced_at']),
-    },
-    {
-      label: 'ratings_and_json_only',
-      patch: {
-        google_data: basePatch.google_data,
-        public_scrape_data: basePatch.public_scrape_data,
-        overall_rating: basePatch.overall_rating,
-        review_count: basePatch.review_count,
-        bbb_rating: basePatch.bbb_rating,
-        bbb_accredited: basePatch.bbb_accredited,
-        reputation_score: basePatch.reputation_score,
-        last_updated: basePatch.last_updated,
-      },
-    },
+  const verificationSourcesJson = toJsonbColumn(sources, { label: 'verification_sources' });
+
+  const verificationSourcesPatch: Record<string, unknown> = {
+    verification_sources: verificationSourcesJson,
+    verification_last_synced_at: new Date().toISOString(),
+    overall_rating: overallRating,
+    review_count: reviewCount,
+    bbb_rating: scrape?.bbb_rating ?? input.bbbRating,
+    bbb_accredited: scrape?.bbb_accredited ?? input.bbbAccredited,
+    reputation_score: input.reputationScore,
+    coverage: input.coverage,
+    fmcsa_raw: input.fmcsaRaw,
+    fmcsa_last_checked: input.fmcsaLastChecked,
+    fmcsa_legal_name: input.fmcsaLegalName,
+    fmcsa_safety_rating: input.fmcsaSafetyRating,
+    authority_active: input.authorityActive,
+    out_of_service: input.outOfService,
+    complaints_last_12m: input.complaintsLast12m,
+    revocation_date: input.revocationDate,
+    data_hash: input.dataHash,
+    last_updated: new Date().toISOString().slice(0, 10),
+  };
+
+  const legacyPatch: Record<string, unknown> = {
+    ...verificationSourcesPatch,
+    google_data: google ? toJsonbColumn(google, { label: 'google_data' }) : null,
+    public_scrape_data: scrape ? toJsonbColumn(scrape, { label: 'public_scrape_data' }) : null,
+  };
+
+  const attempts: Array<{ label: string; patch: Record<string, unknown>; mode: EnrichmentCopyLog['storageMode'] }> = [
+    { label: 'verification_sources_bundle', patch: verificationSourcesPatch, mode: 'verification_sources' },
+    { label: 'legacy_full', patch: legacyPatch, mode: 'legacy_columns' },
     {
       label: 'ratings_only',
-      patch: {
-        overall_rating: basePatch.overall_rating,
-        review_count: basePatch.review_count,
-        bbb_rating: basePatch.bbb_rating,
-        bbb_accredited: basePatch.bbb_accredited,
-        reputation_score: basePatch.reputation_score,
-        last_updated: basePatch.last_updated,
-      },
+      patch: stripKeys(verificationSourcesPatch, [
+        'verification_sources',
+        'verification_last_synced_at',
+        'fmcsa_raw',
+        'fmcsa_last_checked',
+        'fmcsa_legal_name',
+        'data_hash',
+        'authority_active',
+        'out_of_service',
+        'complaints_last_12m',
+        'revocation_date',
+        'fmcsa_safety_rating',
+      ]),
+      mode: 'ratings_only',
     },
   ];
 
@@ -236,21 +239,25 @@ export async function applyPublishedEnrichment(
     log.patchAttempts.push(attempt.label);
 
     if (!error) {
-      log.copied.google_data = basePatch.google_data != null;
-      log.copied.public_scrape_data = basePatch.public_scrape_data != null;
+      log.storageMode = attempt.mode;
       log.copied.verification_sources = 'verification_sources' in attempt.patch;
-      log.copied.fmcsa_raw = basePatch.fmcsa_raw != null;
-      log.copied.overall_rating = (basePatch.overall_rating as number) > 0;
-      log.copied.review_count = (basePatch.review_count as number) > 0;
-      log.copied.bbb_rating = Boolean(basePatch.bbb_rating && basePatch.bbb_rating !== 'NR');
+      log.copied.google_data = Boolean(google);
+      log.copied.public_scrape_data = Boolean(scrape);
+      log.copied.fmcsa_raw = input.fmcsaRaw != null;
+      log.copied.overall_rating = overallRating > 0;
+      log.copied.review_count = reviewCount > 0;
+      log.copied.bbb_rating = Boolean(scrape?.bbb_rating && scrape.bbb_rating !== 'NR');
 
       logger.info('approve.enrichment_copied', {
         companyKey,
         attempt: attempt.label,
+        storageMode: attempt.mode,
         copied: log.copied,
         googleRating: log.googleRating,
         googleReviewCount: log.googleReviewCount,
         bbbRating: log.bbbRating,
+        hasGoogleInSources: Boolean(google),
+        hasScrapeInSources: Boolean(scrape),
       });
 
       return log;
