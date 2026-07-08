@@ -17,7 +17,7 @@ import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
-import { BbbLastVerified } from '@/components/bbb/bbb-last-verified';
+import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
 import {
   canShowVerifiedBadge,
   directoryVerifiedLabel,
@@ -85,9 +85,17 @@ export default async function CompanyProfilePage({ params }: Props) {
   )}&slug=${dot ? slugFromCarrier('DOT', dot) : mc ? slugFromCarrier('MC', mc) : company.slug}`;
 
   const verifiedLabel = directoryVerifiedLabel(company);
+  const scrapeBbb = company.publicScrapeData;
+  const showScrapeBbb = hasBbbPublicScrapeData(scrapeBbb);
+  const bbbTrustSignal = showScrapeBbb && scrapeBbb?.bbb_rating
+    ? `BBB ${scrapeBbb.bbb_rating}${scrapeBbb.bbb_accredited ? ' Accredited' : ''} (public)`
+    : company.bbbAccredited && company.bbbRating
+      ? `BBB ${company.bbbRating} Accredited`
+      : null;
+
   const trustSignals = [
     company.fmcsaSafetyRating === 'Satisfactory' && verifiedLabel && 'FMCSA Satisfactory',
-    company.bbbAccredited && `BBB ${company.bbbRating} Accredited`,
+    bbbTrustSignal,
     verifiedLabel,
   ].filter(Boolean);
 
@@ -107,14 +115,17 @@ export default async function CompanyProfilePage({ params }: Props) {
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
             {canShowVerifiedBadge(company) && <Badge variant="success">VERIFIED</Badge>}
             {canShowVerifiedBadge(company) && <FmcsaVerificationBadge company={company} />}
-            <BbbVerificationBadge company={company} />
+            {!showScrapeBbb ? <BbbVerificationBadge company={company} /> : null}
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
           </div>
           {company.publicScrapeData ? (
             <div className="mt-2">
-              <PublicScrapeBadges data={company.publicScrapeData} />
+              <PublicScrapeBadges
+                data={company.publicScrapeData}
+                excludeBbb={showScrapeBbb}
+              />
             </div>
           ) : null}
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
@@ -217,34 +228,26 @@ export default async function CompanyProfilePage({ params }: Props) {
               <div className="sm:col-span-2">
                 <FmcsaLastVerified checkedAt={company.fmcsaLastChecked} />
               </div>
-              {company.publicScrapeData ? (
+              {showScrapeBbb && scrapeBbb ? (
                 <div className="sm:col-span-2 rounded-md border border-dashed p-3">
-                  <div className="text-muted-foreground text-xs mb-2">Public web ratings (scraped)</div>
-                  <PublicScrapeBadges data={company.publicScrapeData} />
-                  <BbbPublicDetail data={company.publicScrapeData} />
+                  <div className="text-muted-foreground text-xs mb-2">BBB — Public / scraped</div>
+                  <BbbPublicDetail data={scrapeBbb} />
                   <p className="text-xs text-muted-foreground mt-2">
-                    Lower confidence than FMCSA or Google API. Confirm on official sites before booking.
+                    Lower confidence than FMCSA or Google API. Confirm on the official BBB profile
+                    before booking.
                   </p>
                 </div>
               ) : null}
-              <div>
-                <div className="text-muted-foreground text-xs">BBB Rating</div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <BbbVerificationBadge company={company} showRating={false} />
-                  <span className="font-semibold">{company.bbbRating}</span>
-                </div>
-                <BbbLastVerified checkedAt={company.bbbLastChecked} className="mt-1" />
-              </div>
-              {(company.complaintsLast36m ?? 0) > 0 ? (
-                <div>
-                  <div className="text-muted-foreground text-xs">BBB complaints (36 mo)</div>
-                  <div>{company.complaintsLast36m?.toLocaleString()}</div>
-                </div>
-              ) : null}
-              {(company.bbbCustomerReviews ?? 0) > 0 ? (
-                <div>
-                  <div className="text-muted-foreground text-xs">BBB customer reviews</div>
-                  <div>{company.bbbCustomerReviews?.toLocaleString()}</div>
+              {company.publicScrapeData &&
+              !showScrapeBbb &&
+              (company.publicScrapeData.trustpilot_rating != null ||
+                company.publicScrapeData.yelp_rating != null) ? (
+                <div className="sm:col-span-2 rounded-md border border-dashed p-3">
+                  <div className="text-muted-foreground text-xs mb-2">Public web ratings (scraped)</div>
+                  <PublicScrapeBadges data={company.publicScrapeData} excludeBbb />
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Lower confidence than FMCSA or Google API. Confirm on official sites before booking.
+                  </p>
                 </div>
               ) : null}
               <div className="text-[11px] text-muted-foreground col-span-2">

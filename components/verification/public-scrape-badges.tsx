@@ -5,13 +5,16 @@ import type { PublicScrapeData } from '@/lib/verification/types';
 export function PublicScrapeBadges({
   data,
   className,
+  excludeBbb = false,
 }: {
   data: PublicScrapeData;
   className?: string;
+  /** Hide BBB when a dedicated BbbPublicDetail block is shown on the profile */
+  excludeBbb?: boolean;
 }) {
   const items: string[] = [];
 
-  if (data.bbb_rating) {
+  if (!excludeBbb && data.bbb_rating) {
     const acc = data.bbb_accredited ? ' Accredited' : '';
     items.push(`BBB ${data.bbb_rating}${acc}`);
   }
