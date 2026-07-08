@@ -1,7 +1,13 @@
 import 'server-only';
 
 import { fetchBbbBusinessSnapshot } from '@/lib/bbb/refresh/fetch-business';
-import type { CompanyEnrichmentInput, PublicScrapeData, PublicSourceMeta } from '@/lib/verification/types';
+import type {
+  BbbScrapeDetails,
+  BbbReviewSnippet,
+  CompanyEnrichmentInput,
+  PublicScrapeData,
+  PublicSourceMeta,
+} from '@/lib/verification/types';
 import {
   SCRAPE_TIMEOUT_MS,
   SCRAPE_USER_AGENT,
@@ -126,12 +132,85 @@ async function scrapeYelp(
   };
 }
 
+function extractBbbProfileUrl(html: string): string | null {
+  const match = html.match(/href="(\/us\/[^"]+\/profile\/[^"]+)"/i);
+  if (!match?.[1]) return null;
+  return `https://www.bbb.org${match[1].replace(/&amp;/g, '&')}`;
+}
+
+function parseLabeledField(html: string, labels: string[]): string | null {
+  for (const label of labels) {
+    const re = new RegExp(`${label}[^<]{0,40}</[^>]+>\\s*<[^>]+>\\s*([^<]+)`, 'i');
+    const m = html.match(re);
+    if (m?.[1]?.trim()) return m[1].trim();
+    const inline = new RegExp(`${label}[:\\s]+([A-Za-z0-9 ,/]+)`, 'i');
+    const m2 = html.match(inline);
+    if (m2?.[1]?.trim()) return m2[1].trim();
+  }
+  return null;
+}
+
+function parseBbbReviewSnippets(html: string): BbbReviewSnippet[] {
+  const snippets: BbbReviewSnippet[] = [];
+  const blocks = html.match(/Customer Review[\s\S]{0,1200}/gi) ?? [];
+  for (const block of blocks.slice(0, 3)) {
+    const author =
+      block.match(/(?:Customer|Reviewer)[:\s]+([A-Za-z][A-Za-z .'-]{1,40})/i)?.[1]?.trim() ??
+      block.match(/"author"\s*:\s*"([^"]+)"/i)?.[1]?.trim();
+    const date =
+      block.match(/(?:Date|Posted)[:\s]+([A-Za-z]+ \d{1,2},? \d{4})/i)?.[1]?.trim() ??
+      block.match(/(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1]?.trim();
+    const text =
+      block.match(/"reviewBody"\s*:\s*"([^"]{20,400})"/i)?.[1]?.trim() ??
+      block.match(/<p[^>]*>([^<]{30,400})<\/p>/i)?.[1]?.trim();
+    if (text) {
+      snippets.push({
+        text: text.replace(/\s+/g, ' ').slice(0, 400),
+        author,
+        date,
+      });
+    }
+  }
+  return snippets;
+}
+
+async function scrapeBbbProfileDetails(profileUrl: string): Promise<BbbScrapeDetails> {
+  const html = await fetchHtml(profileUrl);
+  if (!html) {
+    return {
+      accreditation_status: null,
+      file_opened_date: null,
+      accredited_since: null,
+      profile_url: profileUrl,
+      review_snippets: [],
+    };
+  }
+
+  const accredited = /BBB Accredited Business|Accredited Business/i.test(html);
+  const notAccredited = /Not BBB Accredited|Not Accredited/i.test(html);
+  const accreditation_status = accredited
+    ? 'BBB Accredited Business'
+    : notAccredited
+      ? 'Not BBB Accredited'
+      : null;
+
+  return {
+    accreditation_status,
+    file_opened_date: parseLabeledField(html, ['File Opened', 'Business Started', 'Years in Business']),
+    accredited_since: parseLabeledField(html, ['BBB Accredited Since', 'Accredited Since']),
+    profile_url: profileUrl,
+    review_snippets: parseBbbReviewSnippets(html),
+  };
+}
+
 async function scrapeBbbPublic(
   companyName: string,
   city: string,
   state: string
 ): Promise<
-  Pick<PublicScrapeData, 'bbb_rating' | 'bbb_review_count' | 'bbb_accredited'> & { meta: PublicSourceMeta }
+  Pick<PublicScrapeData, 'bbb_rating' | 'bbb_review_count' | 'bbb_accredited' | 'bbb_details'> & {
+    meta: PublicSourceMeta;
+  }
 > {
   const q = encodeURIComponent(`${companyName} ${city} ${state}`.trim());
   const url = `https://www.bbb.org/search?find_text=${q}&find_country=USA`;
@@ -141,6 +220,7 @@ async function scrapeBbbPublic(
       bbb_rating: null,
       bbb_review_count: null,
       bbb_accredited: null,
+      bbb_details: null,
       meta: { status: 'error', method: 'public_scrape', url, error: 'Request failed' },
     };
   }
@@ -149,15 +229,68 @@ async function scrapeBbbPublic(
   const accredited = /accredited|BBB Accredited/i.test(html);
   const count = parseCount(html, [/(\d[\d,]*)\s*customer reviews/i, /(\d[\d,]*)\s*reviews/i]);
 
+  const profileUrl = extractBbbProfileUrl(html);
+  const bbb_details = profileUrl ? await scrapeBbbProfileDetails(profileUrl) : null;
+
   return {
     bbb_rating: gradeMatch?.[1] ?? null,
     bbb_review_count: count,
     bbb_accredited: accredited || null,
+    bbb_details,
     meta: {
-      status: gradeMatch || count ? 'ok' : 'not_found',
+      status: gradeMatch || count || profileUrl ? 'ok' : 'not_found',
       method: 'public_scrape',
-      url,
+      url: profileUrl ?? url,
     },
+  };
+}
+
+function bbbDetailsFromApiSnapshot(snapshot: {
+  accredited: boolean;
+  profileUrl?: string;
+  customerReviews: number;
+}): BbbScrapeDetails {
+  return {
+    accreditation_status: snapshot.accredited
+      ? 'BBB Accredited Business'
+      : 'Not BBB Accredited',
+    file_opened_date: null,
+    accredited_since: null,
+    profile_url: snapshot.profileUrl ?? null,
+    review_snippets: [],
+  };
+}
+
+function flattenBbbDetailsForUi(
+  details: BbbScrapeDetails | null
+): Pick<
+  PublicScrapeData,
+  | 'bbb_accreditation_status'
+  | 'bbb_file_opened'
+  | 'bbb_accredited_since'
+  | 'bbb_profile_url'
+  | 'bbb_recent_reviews'
+> {
+  if (!details) {
+    return {
+      bbb_accreditation_status: null,
+      bbb_file_opened: null,
+      bbb_accredited_since: null,
+      bbb_profile_url: null,
+      bbb_recent_reviews: [],
+    };
+  }
+
+  return {
+    bbb_accreditation_status: details.accreditation_status,
+    bbb_file_opened: details.file_opened_date,
+    bbb_accredited_since: details.accredited_since,
+    bbb_profile_url: details.profile_url,
+    bbb_recent_reviews: details.review_snippets.map((snippet) => ({
+      text: snippet.text,
+      date: snippet.date,
+      author: snippet.author,
+    })),
   };
 }
 
@@ -187,6 +320,7 @@ export async function fetchPublicScrapeData(
   let bbb_rating: string | null = null;
   let bbb_review_count: number | null = null;
   let bbb_accredited: boolean | null = null;
+  let bbb_details: BbbScrapeDetails | null = null;
   let bbbMeta: PublicSourceMeta | undefined;
 
   const bbbApi = await fetchBbbBusinessSnapshot({
@@ -199,12 +333,24 @@ export async function fetchPublicScrapeData(
     bbb_rating = bbbApi.rating;
     bbb_review_count = bbbApi.customerReviews ?? null;
     bbb_accredited = bbbApi.accredited;
-    bbbMeta = { status: 'ok', method: 'bbb_api' };
+    bbb_details = bbbDetailsFromApiSnapshot(bbbApi);
+    if (bbbApi.profileUrl) {
+      const profileDetails = await scrapeBbbProfileDetails(bbbApi.profileUrl);
+      bbb_details = {
+        ...bbb_details,
+        ...profileDetails,
+        accreditation_status:
+          profileDetails.accreditation_status ?? bbb_details.accreditation_status,
+        profile_url: bbbApi.profileUrl,
+      };
+    }
+    bbbMeta = { status: 'ok', method: 'bbb_api', url: bbbApi.profileUrl };
   } else {
     const scraped = await scrapeBbbPublic(input.legalName, city, state);
     bbb_rating = scraped.bbb_rating;
     bbb_review_count = scraped.bbb_review_count;
     bbb_accredited = scraped.bbb_accredited;
+    bbb_details = scraped.bbb_details;
     bbbMeta = scraped.meta;
   }
 
@@ -213,11 +359,15 @@ export async function fetchPublicScrapeData(
     scrapeYelp(input.legalName, city, state),
   ]);
 
+  const bbbUiFields = flattenBbbDetailsForUi(bbb_details);
+
   return {
     confidence: 'public',
     bbb_rating,
     bbb_review_count,
     bbb_accredited,
+    bbb_details,
+    ...bbbUiFields,
     trustpilot_rating: trustpilot.trustpilot_rating,
     trustpilot_review_count: trustpilot.trustpilot_review_count,
     yelp_rating: yelp.yelp_rating,

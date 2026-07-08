@@ -44,17 +44,33 @@ export type BbbPublicReview = {
   author?: string;
 };
 
+export type BbbReviewSnippet = {
+  text: string;
+  author?: string;
+  date?: string;
+  rating?: number;
+};
+
+/** Extended BBB fields from API or public profile scrape. */
+export type BbbScrapeDetails = {
+  accreditation_status: string | null;
+  file_opened_date: string | null;
+  accredited_since: string | null;
+  profile_url: string | null;
+  review_snippets: BbbReviewSnippet[];
+};
+
 export type PublicScrapeData = {
   /** Always "public" — never treat scrape data as authoritative */
   confidence: 'public';
   bbb_rating: string | null;
   bbb_review_count: number | null;
   bbb_accredited: boolean | null;
-  /** e.g. "BBB Accredited" | "Not BBB Accredited" */
+  /** Nested BBB profile scrape (backfill storage). */
+  bbb_details?: BbbScrapeDetails | null;
+  /** Flat fields for profile UI (derived from bbb_details when present). */
   bbb_accreditation_status?: string | null;
-  /** BBB profile "Business Started" or "File Opened" date when available */
   bbb_file_opened?: string | null;
-  /** "BBB Accredited Since" from public profile */
   bbb_accredited_since?: string | null;
   bbb_profile_url?: string | null;
   bbb_recent_reviews?: BbbPublicReview[];
