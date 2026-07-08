@@ -6,7 +6,10 @@ import {
 } from '@/lib/verification/bbb-public-display';
 import type { PublicScrapeData } from '@/lib/verification/types';
 
-/** BBB fields from public_scrape — single source for profile Licensing & Compliance */
+/**
+ * BBB block for Licensing & Compliance — only rendered when hasBbbPublicScrapeData() is true.
+ * Parent must gate on that helper; returns null if listing is unconfirmed.
+ */
 export function BbbPublicDetail({ data }: { data: PublicScrapeData }) {
   if (!hasBbbPublicScrapeData(data)) {
     return null;

@@ -92,6 +92,7 @@ export type CompanyEnrichmentInput = {
   city?: string | null;
   state?: string | null;
   phone?: string | null;
+  usdotNumber?: string | null;
 };
 
 export type CompanyEnrichmentResult = {

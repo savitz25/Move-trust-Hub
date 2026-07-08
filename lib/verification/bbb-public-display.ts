@@ -46,16 +46,37 @@ export function normalizeBbbPublicDisplay(
   };
 }
 
+/**
+ * Show the BBB profile section only when we have a confirmed BBB listing.
+ *
+ * Rules (all must pass):
+ * 1. sources.bbb.status === 'ok' (scrape or API found a real profile)
+ * 2. A bbb.org profile URL exists (proves listing, not search-page noise)
+ * 3. At least one substantive field from the profile (rating, accreditation, or file opened)
+ *
+ * When false, profiles must hide the entire BBB block — no "Unverified" fallback.
+ */
 export function hasBbbPublicScrapeData(data: PublicScrapeData | null | undefined): boolean {
   if (!data) return false;
+
+  const bbbSource = data.sources?.bbb;
+  if (bbbSource?.status !== 'ok') return false;
+
   const normalized = normalizeBbbPublicDisplay(data);
+  const profileUrl = normalized.profileUrl?.trim() ?? '';
+  const hasProfileUrl =
+    profileUrl.includes('bbb.org') && profileUrl.includes('/profile/');
+  const isOfficialApi = bbbSource.method === 'bbb_api';
+
+  // Public scrape must include a profile URL; official BBB API may omit it but still counts.
+  if (!hasProfileUrl && !isOfficialApi) return false;
+
   return Boolean(
     normalized.rating ||
       normalized.accreditationStatus ||
       normalized.fileOpened ||
       normalized.accreditedSince ||
-      normalized.profileUrl ||
-      normalized.reviewCount != null ||
+      (normalized.reviewCount != null && normalized.reviewCount > 0) ||
       normalized.recentReviews.length > 0
   );
 }

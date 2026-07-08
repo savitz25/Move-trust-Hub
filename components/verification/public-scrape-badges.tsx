@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Globe } from 'lucide-react';
+import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
 import type { PublicScrapeData } from '@/lib/verification/types';
 
 export function PublicScrapeBadges({
@@ -14,7 +15,8 @@ export function PublicScrapeBadges({
 }) {
   const items: string[] = [];
 
-  if (!excludeBbb && data.bbb_rating) {
+  // BBB badge only when a confirmed listing exists (same rules as profile BBB section).
+  if (!excludeBbb && hasBbbPublicScrapeData(data) && data.bbb_rating) {
     const acc = data.bbb_accredited ? ' Accredited' : '';
     items.push(`BBB ${data.bbb_rating}${acc}`);
   }

@@ -134,6 +134,7 @@ export function formatGooglePull(google: GooglePlacesData | null | undefined): s
 
 export function formatBbbPull(scrape: PublicScrapeData | null | undefined): string {
   if (!scrape) return 'bbb: —';
+  if (scrape.sources.bbb?.status === 'not_found') return 'bbb: not listed';
   const d = scrape.bbb_details;
   const parts = [
     `bbb: grade=${scrape.bbb_rating ?? '—'}`,
@@ -144,6 +145,7 @@ export function formatBbbPull(scrape: PublicScrapeData | null | undefined): stri
     `reviews=${scrape.bbb_review_count ?? '—'}`,
     d?.review_snippets?.length ? `bbb_snippets=${d.review_snippets.length}` : null,
     scrape.sources.bbb?.method ? `via=${scrape.sources.bbb.method}` : null,
+    scrape.bbb_profile_url ? 'listed=yes' : 'listed=no',
   ].filter(Boolean);
   return parts.join(' ');
 }
@@ -302,6 +304,7 @@ export async function runProductionBackfill(
     const input: CompanyEnrichmentInput = {
       legalName: target.name,
       headquarters: target.headquarters,
+      usdotNumber: target.usdotNumber,
     };
 
     try {
@@ -318,7 +321,10 @@ export async function runProductionBackfill(
       );
 
       if (enrichment.google?.status === 'ok') stats.googleOk++;
-      if (enrichment.publicScrape?.bbb_rating || enrichment.publicScrape?.bbb_details) {
+      if (
+        enrichment.publicScrape?.sources.bbb?.status === 'ok' &&
+        enrichment.publicScrape?.bbb_profile_url
+      ) {
         stats.bbbOk++;
       }
 

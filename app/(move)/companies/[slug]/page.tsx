@@ -16,7 +16,6 @@ import { CoverageMap } from '@/components/map/coverage-map';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
-import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
 import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
 import {
   canShowVerifiedBadge,
@@ -87,10 +86,10 @@ export default async function CompanyProfilePage({ params }: Props) {
   const verifiedLabel = directoryVerifiedLabel(company);
   const scrapeBbb = company.publicScrapeData;
   const showScrapeBbb = hasBbbPublicScrapeData(scrapeBbb);
-  const bbbTrustSignal = showScrapeBbb && scrapeBbb?.bbb_rating
-    ? `BBB ${scrapeBbb.bbb_rating}${scrapeBbb.bbb_accredited ? ' Accredited' : ''} (public)`
-    : company.bbbAccredited && company.bbbRating
-      ? `BBB ${company.bbbRating} Accredited`
+  // BBB trust signal only when a confirmed public BBB listing exists — never legacy/unverified.
+  const bbbTrustSignal =
+    showScrapeBbb && scrapeBbb?.bbb_rating
+      ? `BBB ${scrapeBbb.bbb_rating}${scrapeBbb.bbb_accredited ? ' Accredited' : ''} (public)`
       : null;
 
   const trustSignals = [
@@ -115,7 +114,6 @@ export default async function CompanyProfilePage({ params }: Props) {
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
             {canShowVerifiedBadge(company) && <Badge variant="success">VERIFIED</Badge>}
             {canShowVerifiedBadge(company) && <FmcsaVerificationBadge company={company} />}
-            {!showScrapeBbb ? <BbbVerificationBadge company={company} /> : null}
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
