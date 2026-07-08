@@ -88,6 +88,8 @@ export function buildBackfillTargetList(
     );
   }
 
+  const slugsClaimed = new Set([...byKey.values()].map((t) => t.slug));
+
   const curated = Object.values(fullMoversCatalog).filter(isCuratedMover);
   for (const mover of curated) {
     const target = catalogTargetFromMover(mover);
@@ -95,9 +97,12 @@ export function buildBackfillTargetList(
       slug: target.slug,
       usdotNumber: target.usdotNumber,
     });
-    if (!byKey.has(key)) {
-      byKey.set(key, target);
+    // Skip catalog rows when Supabase (or an earlier catalog row) already owns this profile slug.
+    if (byKey.has(key) || slugsClaimed.has(target.slug)) {
+      continue;
     }
+    byKey.set(key, target);
+    slugsClaimed.add(target.slug);
   }
 
   return [...byKey.values()].sort((a, b) => a.name.localeCompare(b.name));

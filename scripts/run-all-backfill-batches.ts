@@ -18,7 +18,8 @@ const baseOpts = parseProductionBackfillArgs(process.argv.slice(2));
 baseOpts.scriptName = 'run-all-backfill-batches';
 
 async function main(): Promise<void> {
-  let offset = baseOpts.offset;
+  // Always start at offset 0: enriched companies drop out of the candidate list
+  // after each batch, so a fixed offset would skip rows when running sequentially.
   const totals: ProductionBackfillStats = {
     processed: 0,
     updated: 0,
@@ -37,7 +38,7 @@ async function main(): Promise<void> {
   for (let batchNum = 1; batchNum <= 50; batchNum++) {
     const { stats, exitCode } = await runProductionBackfill({
       ...baseOpts,
-      offset,
+      offset: 0,
     });
 
     totals.processed += stats.processed;
@@ -50,17 +51,21 @@ async function main(): Promise<void> {
     totals.bbbOk += stats.bbbOk;
 
     if (stats.processed === 0) {
-      console.log(`\nNo more candidates at offset ${offset}. Done.`);
+      console.log('\nNo more candidates needing enrichment. Done.');
+      break;
+    }
+
+    if (stats.updated === 0) {
+      console.log('\nNo progress in last batch (all skipped or unchanged). Done.');
       break;
     }
 
     if (exitCode !== 0 && stats.errors >= stats.processed) {
-      console.error(`\nBatch at offset ${offset} failed entirely. Stopping.`);
+      console.error(`\nBatch ${batchNum} failed entirely. Stopping.`);
       process.exit(1);
     }
 
-    offset += baseOpts.batch;
-    console.log(`\n── Completed batch ${batchNum} (next offset: ${offset}) ──\n`);
+    console.log(`\n── Completed batch ${batchNum} ──\n`);
   }
 
   console.log('\n══════════════════════════════════════');
