@@ -1,5 +1,3 @@
-import 'server-only';
-
 /** In-memory rate limiter for respectful public scraping (per-process). */
 const buckets = new Map<string, number[]>();
 

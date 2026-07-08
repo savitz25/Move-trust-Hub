@@ -1,5 +1,3 @@
-import 'server-only';
-
 import type { CompanyEnrichmentInput, GooglePlacesData } from '@/lib/verification/types';
 
 const FIELD_MASK = [

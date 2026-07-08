@@ -1,5 +1,3 @@
-import 'server-only';
-
 import type { BbbPublicReview, PublicSourceMeta } from '@/lib/verification/types';
 import {
   SCRAPE_TIMEOUT_MS,
