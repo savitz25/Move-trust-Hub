@@ -9,16 +9,41 @@ export const ENRICHMENT_STALE_DAYS = 30;
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
+export type VerificationSources = {
+  google?: GooglePlacesData | null;
+  public_scrape?: PublicScrapeData | null;
+  fmcsa?: Record<string, unknown>;
+  bbb?: Record<string, unknown>;
+  [key: string]: unknown;
+};
+
 export type MoverCompanyRow = {
   id: string;
   slug: string;
   name: string;
   headquarters: string | null;
-  google_data: GooglePlacesData | null;
-  public_scrape_data: PublicScrapeData | null;
+  verification_sources: VerificationSources;
+  verification_last_synced_at: string | null;
   overall_rating: number | null;
   review_count: number | null;
 };
+
+export function parseVerificationSources(raw: unknown): VerificationSources {
+  if (!raw || typeof raw !== 'object') return {};
+  return raw as VerificationSources;
+}
+
+export function googleFromVerificationSources(
+  sources: VerificationSources
+): GooglePlacesData | null {
+  return parseGoogleData(sources.google);
+}
+
+export function publicScrapeFromVerificationSources(
+  sources: VerificationSources
+): PublicScrapeData | null {
+  return parsePublicScrapeData(sources.public_scrape);
+}
 
 export function parseGoogleData(raw: unknown): GooglePlacesData | null {
   if (!raw || typeof raw !== 'object') return null;
@@ -65,8 +90,8 @@ export function companyNeedsVerificationBackfill(
   row: MoverCompanyRow,
   options?: { force?: boolean }
 ): { needsGoogle: boolean; needsScrape: boolean; needsAny: boolean } {
-  const google = parseGoogleData(row.google_data);
-  const scrape = parsePublicScrapeData(row.public_scrape_data);
+  const google = googleFromVerificationSources(row.verification_sources);
+  const scrape = publicScrapeFromVerificationSources(row.verification_sources);
   const needsGoogle = needsGoogleEnrichment(google, options);
   const needsScrape = needsPublicScrapeEnrichment(scrape, options);
   return {
@@ -78,7 +103,8 @@ export function companyNeedsVerificationBackfill(
 
 /**
  * Build a safe partial update — never touches FMCSA / BBB official columns on companies.
- * Only google_data, public_scrape_data, overall_rating, review_count, last_updated.
+ * Merges google + public_scrape into verification_sources; may update overall_rating,
+ * review_count, verification_last_synced_at, and last_updated.
  */
 export function buildVerificationBackfillUpdate(
   row: MoverCompanyRow,
@@ -87,10 +113,11 @@ export function buildVerificationBackfillUpdate(
   refreshScrape: boolean
 ): Record<string, unknown> | null {
   const updates: Record<string, unknown> = {};
+  const nextSources: VerificationSources = { ...row.verification_sources };
   let changed = false;
 
   if (refreshGoogle && enrichment.google) {
-    const existing = parseGoogleData(row.google_data);
+    const existing = googleFromVerificationSources(row.verification_sources);
     const incoming = enrichment.google;
 
     const shouldApply =
@@ -99,7 +126,7 @@ export function buildVerificationBackfillUpdate(
       !existing;
 
     if (shouldApply) {
-      updates.google_data = incoming;
+      nextSources.google = incoming;
       changed = true;
 
       if (incoming.status === 'ok' && incoming.rating != null && incoming.rating > 0) {
@@ -112,12 +139,14 @@ export function buildVerificationBackfillUpdate(
   }
 
   if (refreshScrape && enrichment.publicScrape) {
-    updates.public_scrape_data = enrichment.publicScrape;
+    nextSources.public_scrape = enrichment.publicScrape;
     changed = true;
   }
 
   if (!changed) return null;
 
+  updates.verification_sources = nextSources;
+  updates.verification_last_synced_at = new Date().toISOString();
   updates.last_updated = new Date().toISOString().slice(0, 10);
   return updates;
 }

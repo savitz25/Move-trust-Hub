@@ -1,11 +1,12 @@
 /**
  * Safe multi-source verification backfill for published mover companies (~387 rows).
  *
- * Enriches google_data + public_scrape_data only — never overwrites FMCSA fields.
+ * Enriches verification_sources.google + verification_sources.public_scrape only —
+ * never overwrites FMCSA fields or top-level BBB columns.
  *
  * Usage:
- *   npx tsx scripts/backfill-company-verification.ts --dry-run
- *   npx tsx scripts/backfill-company-verification.ts --batch 25
+ *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --dry-run
+ *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --batch 25
  *   npx tsx scripts/backfill-company-verification.ts --batch 25 --offset 50
  *   npx tsx scripts/backfill-company-verification.ts --batch 25 --force
  *
@@ -29,8 +30,7 @@ import {
   companyNeedsVerificationBackfill,
   FMCSA_PROTECTED_COLUMNS,
   type MoverCompanyRow,
-  parseGoogleData,
-  parsePublicScrapeData,
+  parseVerificationSources,
 } from '../lib/verification/backfill-helpers';
 import { fetchGooglePlacesData } from '../lib/verification/google-places';
 import { fetchPublicScrapeData } from '../lib/verification/public-scrape';
@@ -128,8 +128,9 @@ function mapRow(row: Record<string, unknown>): MoverCompanyRow {
     slug: String(row.slug),
     name: String(row.name),
     headquarters: (row.headquarters as string | null) ?? null,
-    google_data: parseGoogleData(row.google_data),
-    public_scrape_data: parsePublicScrapeData(row.public_scrape_data),
+    verification_sources: parseVerificationSources(row.verification_sources),
+    verification_last_synced_at:
+      (row.verification_last_synced_at as string | null) ?? null,
     overall_rating: (row.overall_rating as number | null) ?? null,
     review_count: (row.review_count as number | null) ?? null,
   };
@@ -159,7 +160,7 @@ async function main() {
   const { data: allRows, error: listError } = await admin
     .from('companies')
     .select(
-      'id, slug, name, headquarters, google_data, public_scrape_data, overall_rating, review_count'
+      'id, slug, name, headquarters, verification_sources, verification_last_synced_at, overall_rating, review_count'
     )
     .order('name', { ascending: true });
 
