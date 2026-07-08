@@ -15,6 +15,10 @@ import { buildCompanySlugBase, normalizeCompanyUsdot } from '@/lib/utils/company
 import { slugifyCompanyName } from '@/lib/utils/slugify';
 import { normalizeMc, normalizeUsdot } from '@/lib/trust/license-verification';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
+import {
+  resolveGoogleDataFromRow,
+  resolvePublicScrapeFromRow,
+} from '@/lib/verification/resolve-company-row';
 import type { Company } from '@/types';
 
 function createAnonSupabaseClient() {
@@ -85,8 +89,8 @@ function mapRow(row: Record<string, unknown>): Company {
       (row.rating_breakdown as Company['ratingBreakdown']) ?? EMPTY_RATING_BREAKDOWN,
     isVerified: Boolean(row.is_verified),
     lastUpdated: (row.last_updated as string)?.slice?.(0, 10) || '',
-    googleData: (row.google_data as Company['googleData']) ?? null,
-    publicScrapeData: (row.public_scrape_data as Company['publicScrapeData']) ?? null,
+    googleData: resolveGoogleDataFromRow(row),
+    publicScrapeData: resolvePublicScrapeFromRow(row),
   });
 }
 

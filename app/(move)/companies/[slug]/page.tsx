@@ -30,6 +30,7 @@ import { EditorialReviewVolume } from '@/components/trust/editorial-review-volum
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
+import { GooglePlacesPanel } from '@/components/verification/google-places-panel';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
 
@@ -214,15 +215,7 @@ export default async function CompanyProfilePage({ params }: Props) {
                 <FmcsaLastVerified checkedAt={company.fmcsaLastChecked} />
               </div>
               {company.googleData?.status === 'ok' ? (
-                <div className="sm:col-span-2 rounded-md border border-amber-200/50 bg-amber-50/30 dark:bg-amber-950/10 p-3">
-                  <div className="text-muted-foreground text-xs mb-1">Google Places (API)</div>
-                  <GoogleRatingBadge data={company.googleData} />
-                  {company.googleData.last_fetched ? (
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Last fetched {new Date(company.googleData.last_fetched).toLocaleDateString()}
-                    </p>
-                  ) : null}
-                </div>
+                <GooglePlacesPanel data={company.googleData} />
               ) : null}
               {company.publicScrapeData ? (
                 <div className="sm:col-span-2 rounded-md border border-dashed p-3">
