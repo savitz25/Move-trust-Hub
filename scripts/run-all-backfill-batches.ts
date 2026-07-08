@@ -18,8 +18,9 @@ const baseOpts = parseProductionBackfillArgs(process.argv.slice(2));
 baseOpts.scriptName = 'run-all-backfill-batches';
 
 async function main(): Promise<void> {
-  // Always start at offset 0: enriched companies drop out of the candidate list
-  // after each batch, so a fixed offset would skip rows when running sequentially.
+  // Without --force: always offset 0 — enriched companies drop out of the candidate list.
+  // With --force: increment offset — every company stays a candidate until processed once.
+  let offset = baseOpts.offset;
   const totals: ProductionBackfillStats = {
     processed: 0,
     updated: 0,
@@ -33,12 +34,15 @@ async function main(): Promise<void> {
 
   console.log('── Full directory backfill (all batches) ──');
   console.log(`Mode: ${baseOpts.dryRun ? 'DRY RUN' : 'LIVE'} | Batch size: ${baseOpts.batch}`);
+  if (baseOpts.force) {
+    console.log('Force mode: advancing offset each batch until all targets processed.');
+  }
   console.log('');
 
   for (let batchNum = 1; batchNum <= 50; batchNum++) {
     const { stats, exitCode } = await runProductionBackfill({
       ...baseOpts,
-      offset: 0,
+      offset: baseOpts.force ? offset : 0,
     });
 
     totals.processed += stats.processed;
@@ -55,7 +59,7 @@ async function main(): Promise<void> {
       break;
     }
 
-    if (stats.updated === 0) {
+    if (!baseOpts.force && stats.updated === 0) {
       console.log('\nNo progress in last batch (all skipped or unchanged). Done.');
       break;
     }
@@ -65,7 +69,15 @@ async function main(): Promise<void> {
       process.exit(1);
     }
 
-    console.log(`\n── Completed batch ${batchNum} ──\n`);
+    if (baseOpts.force) {
+      offset += baseOpts.batch;
+      if (stats.processed < baseOpts.batch) {
+        console.log(`\n── Completed final force batch ${batchNum} (offset window exhausted) ──\n`);
+        break;
+      }
+    }
+
+    console.log(`\n── Completed batch ${batchNum}${baseOpts.force ? ` (next offset: ${offset})` : ''} ──\n`);
   }
 
   console.log('\n══════════════════════════════════════');
