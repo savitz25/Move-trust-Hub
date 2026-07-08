@@ -101,7 +101,8 @@
     "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
     "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts",
     "refresh:bbb": "tsx scripts/run-bbb-refresh.ts",
-    "backfill:verification": "tsx scripts/backfill-company-verification.ts"
+    "backfill:verification": "tsx scripts/backfill-company-verification.ts",
+    "test:enrich-prodigy": "tsx scripts/test-enrich-prodigy.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

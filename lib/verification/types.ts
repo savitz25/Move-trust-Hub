@@ -38,12 +38,26 @@ export type PublicSourceMeta = {
   error?: string;
 };
 
+export type BbbPublicReview = {
+  text: string;
+  date?: string;
+  author?: string;
+};
+
 export type PublicScrapeData = {
   /** Always "public" — never treat scrape data as authoritative */
   confidence: 'public';
   bbb_rating: string | null;
   bbb_review_count: number | null;
   bbb_accredited: boolean | null;
+  /** e.g. "BBB Accredited" | "Not BBB Accredited" */
+  bbb_accreditation_status?: string | null;
+  /** BBB profile "Business Started" or "File Opened" date when available */
+  bbb_file_opened?: string | null;
+  /** "BBB Accredited Since" from public profile */
+  bbb_accredited_since?: string | null;
+  bbb_profile_url?: string | null;
+  bbb_recent_reviews?: BbbPublicReview[];
   trustpilot_rating: number | null;
   trustpilot_review_count: number | null;
   yelp_rating: number | null;

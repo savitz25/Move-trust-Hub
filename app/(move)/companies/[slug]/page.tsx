@@ -30,6 +30,7 @@ import { EditorialReviewVolume } from '@/components/trust/editorial-review-volum
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
+import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
@@ -220,6 +221,7 @@ export default async function CompanyProfilePage({ params }: Props) {
                 <div className="sm:col-span-2 rounded-md border border-dashed p-3">
                   <div className="text-muted-foreground text-xs mb-2">Public web ratings (scraped)</div>
                   <PublicScrapeBadges data={company.publicScrapeData} />
+                  <BbbPublicDetail data={company.publicScrapeData} />
                   <p className="text-xs text-muted-foreground mt-2">
                     Lower confidence than FMCSA or Google API. Confirm on official sites before booking.
                   </p>
