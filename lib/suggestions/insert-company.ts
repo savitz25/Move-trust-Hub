@@ -4,6 +4,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import {
   isMissingEnrichmentColumnError,
   toGoogleDataColumn,
+  toJsonbColumn,
   toPublicScrapeColumn,
 } from '@/lib/suggestions/jsonb-payload';
 import {
@@ -82,6 +83,11 @@ export function sanitizeCompanyInsertRow(row: CompanyInsertPayload): CompanyInse
   if ('fmcsa_raw' in next && next.fmcsa_raw != null) {
     next.fmcsa_raw = next.fmcsa_raw as Json;
   }
+  if ('verification_sources' in next && next.verification_sources != null) {
+    next.verification_sources = toJsonbColumn(next.verification_sources, {
+      label: 'verification_sources',
+    });
+  }
   if ('services' in next && !Array.isArray(next.services)) {
     next.services = ['Full Service'];
   }
@@ -91,10 +97,14 @@ export function sanitizeCompanyInsertRow(row: CompanyInsertPayload): CompanyInse
   return next;
 }
 
+export type CompanyInsertResult =
+  | { ok: true; slug: string; companyId: string; existing: boolean }
+  | { ok: false; error: string; code?: string };
+
 export async function insertCompanyWithFallback(
   admin: SupabaseClient<Database>,
   row: CompanyInsertPayload
-): Promise<{ ok: true } | { ok: false; error: string; code?: string }> {
+): Promise<CompanyInsertResult> {
   const sanitized = sanitizeCompanyInsertRow(row);
   const health = await fetchDirectoryHealthRpc(admin);
 
@@ -105,7 +115,12 @@ export async function insertCompanyWithFallback(
         slug: rpcFirst.slug,
         existing: rpcFirst.existing,
       });
-      return { ok: true };
+      return {
+        ok: true,
+        slug: rpcFirst.slug,
+        companyId: rpcFirst.companyId,
+        existing: rpcFirst.existing,
+      };
     }
     if (rpcFirst.rpcMissing) {
       return { ok: false, error: COMPANIES_RPC_SETUP_MESSAGE, code: rpcFirst.code };
@@ -127,7 +142,13 @@ export async function insertCompanyWithFallback(
           usdot: attempt.row.usdot_number,
         });
       }
-      return { ok: true };
+      const publishedSlug = String(attempt.row.slug ?? attempt.row.id ?? '');
+      return {
+        ok: true,
+        slug: publishedSlug,
+        companyId: publishedSlug,
+        existing: false,
+      };
     }
 
     lastError = error;
@@ -143,7 +164,12 @@ export async function insertCompanyWithFallback(
           slug: rpc.slug,
           existing: rpc.existing,
         });
-        return { ok: true };
+        return {
+          ok: true,
+          slug: rpc.slug,
+          companyId: rpc.companyId,
+          existing: rpc.existing,
+        };
       }
       if (rpc.rpcMissing) {
         return { ok: false, error: COMPANIES_RPC_SETUP_MESSAGE, code: rpc.code };
@@ -177,7 +203,12 @@ export async function insertCompanyWithFallback(
         slug: rpc.slug,
         existing: rpc.existing,
       });
-      return { ok: true };
+      return {
+        ok: true,
+        slug: rpc.slug,
+        companyId: rpc.companyId,
+        existing: rpc.existing,
+      };
     }
 
     if (rpc.rpcMissing) {

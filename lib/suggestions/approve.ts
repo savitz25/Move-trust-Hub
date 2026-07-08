@@ -11,6 +11,7 @@ import {
   isPublishVerified,
   resolvePublishFmcsaSnapshot,
 } from '@/lib/suggestions/publish-snapshot';
+import { applyPublishedEnrichment } from '@/lib/suggestions/apply-published-enrichment';
 import { insertCompanyWithFallback } from '@/lib/suggestions/insert-company';
 import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
@@ -97,6 +98,27 @@ export async function approveSuggestionToCompany(
     publicScrape,
   });
 
+  const enrichmentInput = {
+    googleData,
+    publicScrape,
+    verificationSources,
+    overallRating,
+    reviewCount,
+    bbbRating,
+    bbbAccredited: Boolean(publicScrape?.bbb_accredited),
+    reputationScore,
+    coverage: coverageFromHeadquarters(headquarters),
+    fmcsaRaw: (snapshot?.raw ?? suggestion.fmcsa_raw) as Json | null,
+    fmcsaLastChecked: snapshot ? new Date().toISOString() : null,
+    fmcsaLegalName: snapshot?.legalName ?? suggestion.legal_name,
+    fmcsaSafetyRating: snapshot?.safetyRating ?? 'Not Rated',
+    authorityActive: snapshot?.authorityActive ?? null,
+    outOfService: snapshot?.outOfService ?? false,
+    complaintsLast12m: snapshot?.complaintsLast12m ?? 0,
+    revocationDate: snapshot?.revocationDate ?? null,
+    dataHash,
+  };
+
   const row = {
     id: companyId,
     slug,
@@ -153,13 +175,31 @@ export async function approveSuggestionToCompany(
     if (insertResult.code === '23505') {
       const existing = await findExistingApprovedCompany(admin, { slug, companyId, usdot });
       if (existing) {
+        await applyPublishedEnrichment(admin, existing.slug, enrichmentInput);
         return existing;
       }
     }
     throw new Error(insertResult.error);
   }
 
-  return { companyId, slug };
+  const publishedSlug = insertResult.slug;
+  const publishedId = insertResult.companyId;
+  const enrichmentLog = await applyPublishedEnrichment(admin, publishedSlug, enrichmentInput);
+
+  logger.info('approve.company_published', {
+    suggestionId: suggestion.id,
+    slug: publishedSlug,
+    companyId: publishedId,
+    existingRecord: insertResult.existing,
+    usdot,
+    hasGoogleOnSuggestion: Boolean(googleData),
+    hasPublicScrapeOnSuggestion: Boolean(publicScrape),
+    hasFmcsaOnSuggestion: Boolean(suggestion.fmcsa_raw || snapshot),
+    enrichmentCopied: enrichmentLog.copied,
+    enrichmentError: enrichmentLog.error,
+  });
+
+  return { companyId: publishedId, slug: publishedSlug };
 }
 
 async function findExistingApprovedCompany(

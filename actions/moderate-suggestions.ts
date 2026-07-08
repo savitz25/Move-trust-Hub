@@ -110,6 +110,10 @@ export async function moderateSuggestion(params: {
       suggestionId: params.suggestionId,
       companyId: approved.companyId,
       slug: approved.slug,
+      hadGoogleOnSuggestion: Boolean(suggestion.google_data),
+      hadPublicScrapeOnSuggestion: Boolean(suggestion.public_scrape_data),
+      hadFmcsaOnSuggestion: Boolean(suggestion.fmcsa_raw || suggestion.fmcsa_preview),
+      headquarters: suggestion.headquarters,
     });
 
     revalidatePath('/admin/suggestions', 'page');
