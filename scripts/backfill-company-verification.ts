@@ -1,5 +1,6 @@
 /**
- * Safe multi-source verification backfill for published mover companies (~387 rows).
+ * Safe multi-source verification backfill for ALL directory movers
+ * (Supabase companies + curated static catalog, ~500+ unified targets).
  *
  * Enriches verification_sources.google + verification_sources.public_scrape only —
  * never overwrites FMCSA fields or top-level BBB columns.
@@ -7,8 +8,9 @@
  * Usage:
  *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --dry-run
  *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --batch 25
- *   npx tsx scripts/backfill-company-verification.ts --batch 25 --offset 50
- *   npx tsx scripts/backfill-company-verification.ts --batch 25 --force
+ *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --batch 25 --offset 50
+ *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --batch 25 --force
+ *   npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --batch 25 --source catalog
  *
  * Requires in .env.local:
  *   NEXT_PUBLIC_SUPABASE_URL
@@ -19,19 +21,24 @@
  *   - Public scrape: lib/verification/scrape-rate-limit.ts (per-host window)
  *   - Google: --delay-ms between companies (default 400ms)
  *
- * After a non-dry run, directory list cache refreshes within ~60s; profile pages may
- * need a deploy or wait for ISR. Updated slugs are printed for manual checks.
+ * After a non-dry run, directory list cache refreshes within ~60s.
  */
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import { createClient } from '@supabase/supabase-js';
 import {
+  buildBackfillTargetList,
+  countBackfillTargetsBySource,
+  type BackfillTarget,
+  type BackfillTargetSource,
+} from '../lib/verification/build-backfill-targets';
+import {
   buildVerificationBackfillUpdate,
   companyNeedsVerificationBackfill,
   FMCSA_PROTECTED_COLUMNS,
   type MoverCompanyRow,
-  parseVerificationSources,
 } from '../lib/verification/backfill-helpers';
+import { persistBackfillUpdate } from '../lib/verification/persist-backfill';
 import { fetchGooglePlacesData } from '../lib/verification/google-places';
 import { fetchPublicScrapeData } from '../lib/verification/public-scrape';
 import type { CompanyEnrichmentInput, CompanyEnrichmentResult } from '../lib/verification/types';
@@ -62,12 +69,15 @@ function loadEnvLocal(): void {
 
 loadEnvLocal();
 
+type SourceFilter = 'all' | BackfillTargetSource;
+
 type CliOptions = {
   batch: number;
   offset: number;
   dryRun: boolean;
   force: boolean;
   delayMs: number;
+  source: SourceFilter;
 };
 
 function parseArgs(argv: string[]): CliOptions {
@@ -76,16 +86,21 @@ function parseArgs(argv: string[]): CliOptions {
   let dryRun = false;
   let force = false;
   let delayMs = 400;
+  let source: SourceFilter = 'all';
 
   for (const arg of argv) {
     if (arg === '--dry-run') dryRun = true;
     else if (arg === '--force') force = true;
-    else if (arg.startsWith('--batch=')) batch = Math.max(1, Number.parseInt(arg.split('=')[1] ?? '25', 10));
-    else if (arg === '--batch') {
-      /* allow --batch 25 via next arg handled below */
+    else if (arg.startsWith('--batch=')) {
+      batch = Math.max(1, Number.parseInt(arg.split('=')[1] ?? '25', 10));
+    } else if (arg.startsWith('--offset=')) {
+      offset = Math.max(0, Number.parseInt(arg.split('=')[1] ?? '0', 10));
+    } else if (arg.startsWith('--delay-ms=')) {
+      delayMs = Math.max(0, Number.parseInt(arg.split('=')[1] ?? '400', 10));
+    } else if (arg.startsWith('--source=')) {
+      const value = arg.split('=')[1]?.trim();
+      if (value === 'supabase' || value === 'catalog') source = value;
     }
-    else if (arg.startsWith('--offset=')) offset = Math.max(0, Number.parseInt(arg.split('=')[1] ?? '0', 10));
-    else if (arg.startsWith('--delay-ms=')) delayMs = Math.max(0, Number.parseInt(arg.split('=')[1] ?? '400', 10));
   }
 
   const batchIdx = argv.indexOf('--batch');
@@ -98,7 +113,13 @@ function parseArgs(argv: string[]): CliOptions {
     offset = Math.max(0, Number.parseInt(argv[offsetIdx + 1]!, 10));
   }
 
-  return { batch, offset, dryRun, force, delayMs };
+  const sourceIdx = argv.indexOf('--source');
+  if (sourceIdx >= 0 && argv[sourceIdx + 1] && !argv[sourceIdx + 1]!.startsWith('--')) {
+    const value = argv[sourceIdx + 1]!.trim();
+    if (value === 'supabase' || value === 'catalog') source = value;
+  }
+
+  return { batch, offset, dryRun, force, delayMs, source };
 }
 
 function sleep(ms: number): Promise<void> {
@@ -122,17 +143,16 @@ async function fetchEnrichment(
   };
 }
 
-function mapRow(row: Record<string, unknown>): MoverCompanyRow {
+function toMoverRow(target: BackfillTarget): MoverCompanyRow {
   return {
-    id: String(row.id),
-    slug: String(row.slug),
-    name: String(row.name),
-    headquarters: (row.headquarters as string | null) ?? null,
-    verification_sources: parseVerificationSources(row.verification_sources),
-    verification_last_synced_at:
-      (row.verification_last_synced_at as string | null) ?? null,
-    overall_rating: (row.overall_rating as number | null) ?? null,
-    review_count: (row.review_count as number | null) ?? null,
+    id: target.id,
+    slug: target.slug,
+    name: target.name,
+    headquarters: target.headquarters,
+    verification_sources: target.verification_sources,
+    verification_last_synced_at: target.verification_last_synced_at,
+    overall_rating: target.overall_rating,
+    review_count: target.review_count,
   };
 }
 
@@ -150,9 +170,10 @@ async function main() {
     auth: { autoRefreshToken: false, persistSession: false },
   });
 
-  console.log('── Mover verification backfill ──');
+  console.log('── Mover verification backfill (unified) ──');
   console.log(`Mode: ${opts.dryRun ? 'DRY RUN (no writes)' : 'LIVE'}`);
   console.log(`Batch: ${opts.batch} | Offset: ${opts.offset} | Force: ${opts.force}`);
+  console.log(`Source filter: ${opts.source}`);
   console.log(`Stale threshold: 30 days | Inter-company delay: ${opts.delayMs}ms`);
   console.log(`Protected columns (never written): ${FMCSA_PROTECTED_COLUMNS.join(', ')}`);
   console.log('');
@@ -160,7 +181,7 @@ async function main() {
   const { data: allRows, error: listError } = await admin
     .from('companies')
     .select(
-      'id, slug, name, headquarters, verification_sources, verification_last_synced_at, overall_rating, review_count'
+      'id, slug, name, headquarters, usdot_number, mc_number, verification_sources, verification_last_synced_at, overall_rating, review_count'
     )
     .order('name', { ascending: true });
 
@@ -169,18 +190,31 @@ async function main() {
     process.exit(1);
   }
 
-  const companies = (allRows ?? []).map((r) => mapRow(r as Record<string, unknown>));
-  console.log(`Total mover companies in directory: ${companies.length}`);
+  const allTargets = buildBackfillTargetList((allRows ?? []) as Record<string, unknown>[]);
+  const sourceCounts = countBackfillTargetsBySource(allTargets);
 
-  const candidates = companies
-    .map((row) => ({ row, plan: companyNeedsVerificationBackfill(row, { force: opts.force }) }))
+  console.log(`Unified directory targets: ${sourceCounts.total}`);
+  console.log(`  Supabase rows: ${sourceCounts.supabase}`);
+  console.log(`  Catalog-only:  ${sourceCounts.catalogOnly}`);
+  console.log('');
+
+  const filteredTargets =
+    opts.source === 'all'
+      ? allTargets
+      : allTargets.filter((t) => t.source === opts.source);
+
+  const candidates = filteredTargets
+    .map((target) => ({
+      target,
+      plan: companyNeedsVerificationBackfill(toMoverRow(target), { force: opts.force }),
+    }))
     .filter(({ plan }) => plan.needsAny);
 
   console.log(`Candidates needing enrichment: ${candidates.length}`);
 
   const slice = candidates.slice(opts.offset, opts.offset + opts.batch);
   if (!slice.length) {
-    console.log('No companies in this batch window. Try a lower offset or disable --force.');
+    console.log('No companies in this batch window. Try a lower offset or --force.');
     return;
   }
 
@@ -191,30 +225,30 @@ async function main() {
     updated: 0,
     skipped: 0,
     errors: 0,
+    supabase: 0,
+    catalog: 0,
   };
   const updatedSlugs: string[] = [];
   const errorLog: Array<{ slug: string; error: string }> = [];
 
   for (let i = 0; i < slice.length; i++) {
-    const { row, plan } = slice[i]!;
-    const label = `[${opts.offset + i + 1}/${candidates.length}] ${row.slug}`;
+    const { target, plan } = slice[i]!;
+    const label = `[${opts.offset + i + 1}/${candidates.length}] ${target.slug} (${target.source})`;
     stats.processed++;
 
     const input: CompanyEnrichmentInput = {
-      legalName: row.name,
-      headquarters: row.headquarters,
+      legalName: target.name,
+      headquarters: target.headquarters,
     };
 
     try {
-      if (plan.needsGoogle && plan.needsScrape) {
-        await sleep(opts.delayMs);
-      } else if (plan.needsGoogle) {
+      if (plan.needsGoogle || plan.needsScrape) {
         await sleep(opts.delayMs);
       }
 
       const enrichment = await fetchEnrichment(input, plan.needsGoogle, plan.needsScrape);
       const updates = buildVerificationBackfillUpdate(
-        row,
+        toMoverRow(target),
         enrichment,
         plan.needsGoogle,
         plan.needsScrape
@@ -230,7 +264,9 @@ async function main() {
       if (opts.dryRun) {
         console.log(`${label} — would update: ${fields}`);
         if (enrichment.google?.status) {
-          console.log(`    google: ${enrichment.google.status} rating=${enrichment.google.rating ?? '—'}`);
+          console.log(
+            `    google: ${enrichment.google.status} rating=${enrichment.google.rating ?? '—'}`
+          );
         }
         if (enrichment.publicScrape) {
           console.log(
@@ -238,29 +274,32 @@ async function main() {
           );
         }
         stats.updated++;
-        updatedSlugs.push(row.slug);
+        if (target.source === 'supabase') stats.supabase++;
+        else stats.catalog++;
+        updatedSlugs.push(target.slug);
         continue;
       }
 
-      const { error: updateError } = await admin
-        .from('companies')
-        .update(updates)
-        .eq('id', row.id);
+      const { error: persistError } = await persistBackfillUpdate(admin, target, updates, {
+        catalogStub: target.source === 'catalog',
+      });
 
-      if (updateError) {
-        console.error(`${label} — ERROR: ${updateError.message}`);
-        errorLog.push({ slug: row.slug, error: updateError.message });
+      if (persistError) {
+        console.error(`${label} — ERROR: ${persistError}`);
+        errorLog.push({ slug: target.slug, error: persistError });
         stats.errors++;
         continue;
       }
 
       console.log(`${label} — updated (${fields})`);
       stats.updated++;
-      updatedSlugs.push(row.slug);
+      if (target.source === 'supabase') stats.supabase++;
+      else stats.catalog++;
+      updatedSlugs.push(target.slug);
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       console.error(`${label} — ERROR: ${message}`);
-      errorLog.push({ slug: row.slug, error: message });
+      errorLog.push({ slug: target.slug, error: message });
       stats.errors++;
     }
   }
@@ -284,9 +323,9 @@ async function main() {
 
   if (!opts.dryRun && stats.updated > 0) {
     console.log('\nRevalidation: companies-directory cache tag refreshes within ~60s.');
-    console.log('Spot-check profiles listed above. Re-run next batch with:');
+    console.log('Spot-check profiles listed above. Next batch:');
     console.log(
-      `  npx tsx scripts/backfill-company-verification.ts --batch ${opts.batch} --offset ${opts.offset + opts.batch}`
+      `  npx tsx --require ./scripts/stub-server-only.cjs scripts/backfill-company-verification.ts --batch ${opts.batch} --offset ${opts.offset + opts.batch}`
     );
   }
 
