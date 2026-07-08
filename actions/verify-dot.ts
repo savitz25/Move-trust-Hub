@@ -1,15 +1,28 @@
 'use server';
 
 import { headers } from 'next/headers';
+import { searchFmcsaCarriersByNameAndStateForVerify } from '@/lib/fmcsa/refresh/name-search';
 import {
   parseCarrierNumber,
   verifyDotSchema,
+  verifyNameStateSchema,
 } from '@/lib/verify-dot/schema';
+import { isValidUsStateCode } from '@/lib/verify-dot/us-states';
 import { resolveCarrierPreview, type FmcsaPreview } from '@/lib/verify-dot/fmcsa';
 import { findCompanyByCarrierNumber } from '@/lib/verify-dot/directory-lookup';
 import { lookupFmcsaForSuggestion } from '@/lib/suggestions/fmcsa-lookup';
 import { logDotVerification } from '@/lib/verify-dot/log';
 import { logger } from '@/lib/logging/logger';
+
+export type VerifyDotNameCandidate = {
+  dotNumber: string;
+  mcNumber: string | null;
+  legalName: string;
+  dbaName: string | null;
+  city: string | null;
+  state: string | null;
+  relevanceScore: number;
+};
 
 export type VerifyDotResult = {
   success: boolean;
@@ -23,12 +36,72 @@ export type VerifyDotResult = {
   logged?: boolean;
 };
 
+export type NameStateSearchResult = {
+  success: boolean;
+  error?: string;
+  companyName?: string;
+  state?: string;
+  candidates?: VerifyDotNameCandidate[];
+};
+
 function clientIpFromHeaders(headerStore: Headers): string | null {
   return (
     headerStore.get('x-forwarded-for')?.split(',')[0]?.trim() ||
     headerStore.get('x-real-ip') ||
     null
   );
+}
+
+export async function searchCarriersByNameState(
+  raw: unknown
+): Promise<NameStateSearchResult> {
+  const parsedInput = verifyNameStateSchema.safeParse(raw);
+  if (!parsedInput.success) {
+    return {
+      success: false,
+      error: 'Enter a company name and select a state.',
+    };
+  }
+
+  if (!process.env.FMCSA_WEB_KEY?.trim()) {
+    return {
+      success: false,
+      error: 'FMCSA lookup is temporarily unavailable. Try again later.',
+    };
+  }
+
+  const { companyName, state } = parsedInput.data;
+  if (!isValidUsStateCode(state)) {
+    return { success: false, error: 'Select a valid US state.' };
+  }
+
+  const candidates = await searchFmcsaCarriersByNameAndStateForVerify({
+    companyName,
+    state,
+  });
+
+  if (!candidates.length) {
+    return {
+      success: false,
+      error: `No FMCSA carriers found matching "${companyName}" in ${state}. Try a shorter name or verify by DOT/MC.`,
+      companyName,
+      state,
+      candidates: [],
+    };
+  }
+
+  logger.info('dot.name_state_search', {
+    companyName,
+    state,
+    matchCount: candidates.length,
+  });
+
+  return {
+    success: true,
+    companyName,
+    state,
+    candidates,
+  };
 }
 
 export async function verifyCarrierNumber(

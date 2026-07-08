@@ -90,7 +90,7 @@ async function fetchJson<T>(url: string): Promise<T | null> {
   }
 }
 
-async function fetchCarrierByDot(
+export async function fetchCarrierByDot(
   dot: string,
   webKey: string
 ): Promise<FmcsaApiCarrier | null> {
@@ -215,7 +215,7 @@ function snapshotFromCarrier(
   };
 }
 
-async function snapshotFromResolvedCarrier(params: {
+export async function snapshotFromResolvedCarrier(params: {
   carrier: FmcsaApiCarrier;
   dot: string;
   mcNumber?: string;

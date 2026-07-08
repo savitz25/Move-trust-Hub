@@ -56,3 +56,15 @@ export const verifyDotSchema = z.object({
 });
 
 export type VerifyDotInput = z.infer<typeof verifyDotSchema>;
+
+export const verifyNameStateSchema = z.object({
+  companyName: z.string().trim().min(2).max(120),
+  state: z
+    .string()
+    .trim()
+    .transform((value) => value.toUpperCase())
+    .pipe(z.string().regex(/^[A-Z]{2}$/, 'Select a valid US state.')),
+  sourcePage: z.string().max(120).optional().nullable(),
+});
+
+export type VerifyNameStateInput = z.infer<typeof verifyNameStateSchema>;

@@ -1,9 +1,9 @@
 import { SITE_URL } from '@/lib/seo/site-metadata';
 
 export const VERIFY_DOT_TITLE =
-  'Verify a DOT Number — Free FMCSA Mover License Lookup (2026)';
+  'Verify a Moving Company — Free FMCSA DOT & Name Lookup (2026)';
 export const VERIFY_DOT_DESCRIPTION =
-  'Instantly verify any moving company USDOT or MC number. We log your search and link you to the official FMCSA SAFER database for safety ratings, authority, and complaint history.';
+  'Verify any interstate mover by USDOT, MC number, or company name and state. We pull FMCSA licensing data and link you to the official SAFER database for authority, safety ratings, and complaint history.';
 
 export const VERIFY_DOT_CANONICAL = `${SITE_URL}/verify-dot`;
 
@@ -27,6 +27,11 @@ export const verifyDotFaqItems = [
     question: 'What if the company is not in your database?',
     answer:
       'You can still verify any carrier. We redirect you to FMCSA SAFER with your number pre-filled so you can review licensing, safety ratings, and insurance on the government site.',
+  },
+  {
+    question: 'Can I search by company name instead of a DOT number?',
+    answer:
+      'Yes. Use Search by Name + State on our verify tool. Enter the mover name and state where they operate; if FMCSA returns multiple similar carriers, pick the correct match and we run the same full verification and directory suggestion flow as a license search.',
   },
   {
     question: 'What should I look for on the FMCSA report?',

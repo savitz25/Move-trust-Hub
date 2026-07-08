@@ -3,7 +3,7 @@ import 'server-only';
 import { revalidatePath } from 'next/cache';
 import { computeReputationScore } from '@/data/seed-companies';
 import { detectFieldChanges } from '@/lib/fmcsa/refresh/changes';
-import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
+import { fetchFmcsaCarrierForCompany } from '@/lib/fmcsa/refresh/fetch-carrier';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
 import { sendRefreshSummaryAlert } from '@/lib/fmcsa/refresh/notify';
 import { FMCSA_REFRESH_CONFIG } from '@/lib/fmcsa/refresh/rate-limit';
@@ -42,7 +42,7 @@ async function selectCompanies(
   let query = supabase
     .from('companies')
     .select(
-      'id, slug, name, usdot_number, mc_number, fmcsa_safety_rating, fmcsa_complaints, fmcsa_shipments, authority_active, out_of_service, complaints_last_12m, revocation_date, data_hash, fmcsa_last_checked, reputation_score, overall_rating, review_count, bbb_rating, bbb_accredited, is_verified, years_in_business'
+      'id, slug, name, headquarters, usdot_number, mc_number, fmcsa_safety_rating, fmcsa_complaints, fmcsa_shipments, authority_active, out_of_service, complaints_last_12m, revocation_date, data_hash, fmcsa_last_checked, fmcsa_raw, reputation_score, overall_rating, review_count, bbb_rating, bbb_accredited, is_verified, years_in_business'
     )
     .not('usdot_number', 'is', null)
     .neq('usdot_number', '')
@@ -191,11 +191,38 @@ export async function runFmcsaRefresh(options: RefreshOptions): Promise<RefreshR
       continue;
     }
 
-    const snapshot = await fetchFmcsaCarrierSnapshot(dot, company.mc_number);
+    const fetchResult = await fetchFmcsaCarrierForCompany({
+      usdot: dot,
+      mcNumber: company.mc_number,
+      companyName: company.name,
+      headquarters: company.headquarters,
+      fmcsaLastChecked: company.fmcsa_last_checked,
+      fmcsaRaw: company.fmcsa_raw ?? null,
+    });
+
+    if (fetchResult.lookupMethod === 'skipped_existing') {
+      continue;
+    }
+
+    const snapshot = fetchResult.snapshot;
     if (!snapshot) {
       failed++;
-      errors.push(`${company.slug}: FMCSA lookup failed for DOT ${dot}`);
+      const suffix = fetchResult.nameMatch
+        ? ` (name search: no confident match; best query "${fetchResult.nameMatch.query}")`
+        : '';
+      errors.push(
+        `${company.slug}: ${fetchResult.error ?? `FMCSA lookup failed for DOT ${dot}`}${suffix}`
+      );
       continue;
+    }
+
+    if (fetchResult.lookupMethod === 'name_search' && fetchResult.nameMatch) {
+      console.log('[fmcsa-refresh] recovered via name search', {
+        slug: company.slug,
+        matchedDot: fetchResult.nameMatch.matchedDot,
+        matchedLegalName: fetchResult.nameMatch.matchedLegalName,
+        confidence: fetchResult.nameMatch.confidence,
+      });
     }
 
     const dataHash = computeFmcsaDataHash(snapshot);

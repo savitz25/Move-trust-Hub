@@ -4,9 +4,8 @@ import {
   detectBatchFieldChanges,
   extractDisplayFieldsFromSnapshot,
 } from '@/lib/fmcsa/refresh/batch-fields';
-import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier-core';
+import { fetchFmcsaCarrierForCompany } from '@/lib/fmcsa/refresh/fetch-company';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
-import { FMCSA_REFRESH_CONFIG, sleep } from '@/lib/fmcsa/refresh/rate-limit';
 import type {
   BatchCompanyOutcome,
   BatchRefreshOptions,
@@ -18,7 +17,7 @@ import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import type { ServiceType } from '@/types';
 
 const COMPANY_SELECT =
-  'id, slug, name, usdot_number, mc_number, fmcsa_safety_rating, fmcsa_complaints, fmcsa_shipments, authority_active, out_of_service, complaints_last_12m, revocation_date, data_hash, fmcsa_last_checked, fmcsa_raw, services, reputation_score, overall_rating, review_count, bbb_rating, bbb_accredited, is_verified, years_in_business';
+  'id, slug, name, headquarters, usdot_number, mc_number, fmcsa_safety_rating, fmcsa_complaints, fmcsa_shipments, authority_active, out_of_service, complaints_last_12m, revocation_date, data_hash, fmcsa_last_checked, fmcsa_raw, services, reputation_score, overall_rating, review_count, bbb_rating, bbb_accredited, is_verified, years_in_business';
 
 async function countCompaniesWithUsdot(): Promise<number> {
   const supabase = createAdminClient();
@@ -54,7 +53,7 @@ async function selectBatchCompanies(
 
 function buildFmcsaUpdatePayload(
   company: CompanyRefreshRow,
-  snapshot: Awaited<ReturnType<typeof fetchFmcsaCarrierSnapshot>>,
+  snapshot: NonNullable<Awaited<ReturnType<typeof fetchFmcsaCarrierForCompany>>['snapshot']>,
   dataHash: string
 ) {
   if (!snapshot) return null;
@@ -180,22 +179,61 @@ export async function runFmcsaBatchRefresh(
       continue;
     }
 
-    const snapshot = await fetchFmcsaCarrierSnapshot(dot, company.mc_number);
-    await sleep(FMCSA_REFRESH_CONFIG.requestDelayMs);
+    const fetchResult = await fetchFmcsaCarrierForCompany({
+      usdot: dot,
+      mcNumber: company.mc_number,
+      companyName: company.name,
+      headquarters: company.headquarters,
+      fmcsaLastChecked: company.fmcsa_last_checked,
+      fmcsaRaw: company.fmcsa_raw ?? null,
+    });
 
+    if (fetchResult.lookupMethod === 'skipped_existing') {
+      unchanged++;
+      outcomes.push({
+        index: offset + i + 1,
+        company,
+        status: 'skipped_existing',
+        lookupMethod: 'skipped_existing',
+        changes: [],
+        error: fetchResult.skippedReason,
+      });
+      continue;
+    }
+
+    const snapshot = fetchResult.snapshot;
     if (!snapshot) {
       failed++;
-      const error = `FMCSA lookup failed for DOT ${dot} — existing data preserved`;
+      const error =
+        fetchResult.error ?? `FMCSA lookup failed for DOT ${dot} — existing data preserved`;
       errors.push(`${company.slug}: ${error}`);
       outcomes.push({
         index: offset + i + 1,
         company,
         status: 'failed',
+        lookupMethod: fetchResult.lookupMethod,
+        nameMatch: fetchResult.nameMatch
+          ? {
+              query: fetchResult.nameMatch.query,
+              matchedLegalName: fetchResult.nameMatch.matchedLegalName,
+              matchedDot: fetchResult.nameMatch.matchedDot,
+              confidence: fetchResult.nameMatch.confidence,
+            }
+          : undefined,
         changes: [],
         error,
       });
       continue;
     }
+
+    const nameMatchSummary = fetchResult.nameMatch
+      ? {
+          query: fetchResult.nameMatch.query,
+          matchedLegalName: fetchResult.nameMatch.matchedLegalName,
+          matchedDot: fetchResult.nameMatch.matchedDot,
+          confidence: fetchResult.nameMatch.confidence,
+        }
+      : undefined;
 
     const dataHash = computeFmcsaDataHash(snapshot);
     const fieldChanges = detectBatchFieldChanges(company, snapshot);
@@ -211,6 +249,8 @@ export async function runFmcsaBatchRefresh(
         index: offset + i + 1,
         company,
         status: 'dry_run',
+        lookupMethod: fetchResult.lookupMethod,
+        nameMatch: nameMatchSummary,
         changes: fieldChanges,
         displayFields,
       });
@@ -256,6 +296,8 @@ export async function runFmcsaBatchRefresh(
         index: offset + i + 1,
         company,
         status: 'updated',
+        lookupMethod: fetchResult.lookupMethod,
+        nameMatch: nameMatchSummary,
         changes: fieldChanges,
         displayFields,
       });
@@ -265,6 +307,8 @@ export async function runFmcsaBatchRefresh(
         index: offset + i + 1,
         company,
         status: 'unchanged',
+        lookupMethod: fetchResult.lookupMethod,
+        nameMatch: nameMatchSummary,
         changes: [],
         displayFields,
       });

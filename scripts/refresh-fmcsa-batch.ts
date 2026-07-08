@@ -4,11 +4,12 @@
  * First test batch (dry run — no DB writes):
  *   npm run refresh:fmcsa:batch -- --batch=10 --offset=0 --dry-run
  *
- * First live batch (10 companies):
- *   npm run refresh:fmcsa:batch -- --batch=10 --offset=0
+ * Recover missing FMCSA data (name fallback for bad USDOTs):
+ *   npm run refresh:fmcsa:batch -- --batch=25 --offset=0 --dry-run
+ *   npm run refresh:fmcsa:batch -- --batch=25 --offset=0
  *
  * Next batch:
- *   npm run refresh:fmcsa:batch -- --batch=25 --offset=10
+ *   npm run refresh:fmcsa:batch -- --batch=25 --offset=25
  *
  * Requires .env.local:
  *   SUPABASE_SERVICE_ROLE_KEY, NEXT_PUBLIC_SUPABASE_URL, FMCSA_WEB_KEY
@@ -99,7 +100,19 @@ function printOutcome(outcome: BatchCompanyOutcome, position: number, total: num
     return;
   }
 
-  console.log('  + Fetched from FMCSA API');
+  if (outcome.status === 'skipped_existing') {
+    console.log(`  ~ ${outcome.error ?? 'Existing FMCSA data preserved (USDOT lookup failed)'}`);
+    return;
+  }
+
+  if (outcome.lookupMethod === 'name_search' && outcome.nameMatch) {
+    const m = outcome.nameMatch;
+    console.log(
+      `  + Fetched via NAME SEARCH (query="${m.query}", matched DOT ${m.matchedDot}, ${m.matchedLegalName}, confidence ${m.confidence.toFixed(2)})`
+    );
+  } else {
+    console.log('  + Fetched from FMCSA API (USDOT lookup)');
+  }
   printChangeLines(outcome);
 
   if (outcome.status === 'dry_run') {
@@ -120,6 +133,9 @@ async function main() {
   console.log(`Offset: ${offset}`);
   console.log(`Dry run: ${dryRun ? 'yes (no writes)' : 'no (will write on success)'}`);
   console.log('Safety: failed API lookups never overwrite existing company data.');
+  console.log(
+    'Fallback: when USDOT fails, tries FMCSA name search with city/state fuzzy matching (high confidence only).'
+  );
   console.log(
     'Fields updated on success: entity type, USDOT status, power units, MC number, authority, safety rating, complaints, fmcsa_raw, and related FMCSA columns.'
   );
@@ -149,6 +165,10 @@ async function main() {
   console.log(`Unchanged: ${result.companiesUnchanged}`);
   console.log(`Failed: ${result.companiesFailed}`);
   console.log(`Field changes detected: ${result.changesDetected}`);
+  const nameRecovered = result.outcomes.filter((o) => o.lookupMethod === 'name_search').length;
+  const skippedExisting = result.outcomes.filter((o) => o.status === 'skipped_existing').length;
+  if (nameRecovered) console.log(`Recovered via name search: ${nameRecovered}`);
+  if (skippedExisting) console.log(`Skipped (existing FMCSA preserved): ${skippedExisting}`);
   console.log(`Duration: ${(result.durationMs / 1000).toFixed(1)}s`);
 
   if (result.errors.length) {

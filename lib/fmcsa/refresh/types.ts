@@ -27,6 +27,7 @@ export type CompanyRefreshRow = {
   id: string;
   slug: string;
   name: string;
+  headquarters?: string | null;
   usdot_number: string | null;
   mc_number: string | null;
   fmcsa_safety_rating: string | null;
@@ -88,7 +89,14 @@ export type BatchRefreshOptions = {
 export type BatchCompanyOutcome = {
   index: number;
   company: CompanyRefreshRow;
-  status: 'updated' | 'unchanged' | 'failed' | 'dry_run';
+  status: 'updated' | 'unchanged' | 'failed' | 'dry_run' | 'skipped_existing';
+  lookupMethod?: 'dot' | 'name_search' | 'skipped_existing';
+  nameMatch?: {
+    query: string;
+    matchedLegalName: string;
+    matchedDot: string;
+    confidence: number;
+  };
   changes: FieldChange[];
   error?: string;
   displayFields?: {

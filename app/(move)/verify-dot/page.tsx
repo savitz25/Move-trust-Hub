@@ -76,14 +76,14 @@ export default function VerifyDotPage() {
             FREE TOOL · OFFICIAL FMCSA LINK
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
-            Verify a DOT Number
+            Verify a Moving Company
           </h1>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Check any interstate mover&apos;s <strong>USDOT</strong> or{' '}
-            <strong>MC number</strong> before you sign. We link you directly to
-            the official FMCSA SAFER Company Snapshot — the same government
-            database regulators use — even if the company isn&apos;t in our
-            directory yet.
+            Check any interstate mover before you sign — search by{' '}
+            <strong>USDOT</strong> or <strong>MC number</strong>, or by{' '}
+            <strong>company name and state</strong>. We pull structured FMCSA data
+            and link you to the official SAFER Company Snapshot, even if the
+            company isn&apos;t in our directory yet.
           </p>
           <div className="mt-6">
             <PageHeroCta showTrustBadges={false} />
