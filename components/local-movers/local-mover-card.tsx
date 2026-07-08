@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { LocalMover } from '@/lib/local-movers/types';
+import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
 import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
+import { assessLicense } from '@/lib/trust/license-verification';
 
 export function LocalMoverCard({
   mover,
@@ -15,9 +17,15 @@ export function LocalMoverCard({
   countyLabel?: string;
   stateCode?: string;
 }) {
-  const profileHref = mover.profileSlug
-    ? `/companies/${mover.profileSlug}`
-    : null;
+  const hasDirectoryProfile =
+    Boolean(mover.profileSlug) ||
+    assessLicense(mover.usdotNumber, mover.mcNumber).isDisplayable;
+  const profileSlug =
+    mover.profileSlug ||
+    (hasDirectoryProfile
+      ? predictCompanyProfileSlug({ name: mover.name, usdot: mover.usdotNumber })
+      : '');
+  const profileHref = profileSlug ? `/companies/${profileSlug}` : null;
 
   const license = getLicenseDisplay(mover);
 
@@ -45,7 +53,13 @@ export function LocalMoverCard({
           </div>
           <div className="min-w-0">
             <h3 className="text-lg font-semibold tracking-tight leading-tight">
-              {mover.name}
+              {profileHref ? (
+                <Link href={profileHref} className="hover:text-primary transition-colors">
+                  {mover.name}
+                </Link>
+              ) : (
+                mover.name
+              )}
             </h3>
             <p className="text-xs text-muted-foreground mt-0.5">{locationLine}</p>
           </div>

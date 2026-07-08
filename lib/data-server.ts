@@ -6,6 +6,7 @@ import {
   getCompaniesCached,
   getCompanyBySlugOrUsdotFromDb,
 } from '@/lib/supabase/queries/companies';
+import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 import { resolveCompanyBySlug } from '@/lib/directory/resolve-company';
 import { getReviewsForCompany } from '@/data/seed-reviews';
@@ -17,7 +18,7 @@ import type { Company, Review } from '@/types';
 export const getAllCompanies = getCompaniesCached;
 
 export async function getCompanyBySlugAsync(slug: string): Promise<Company | undefined> {
-  const companies = await getAllCompanies();
+  const companies = await getUnifiedDirectoryCompanies();
   const fromList = resolveCompanyBySlug(slug, companies);
   if (fromList) return fromList;
 

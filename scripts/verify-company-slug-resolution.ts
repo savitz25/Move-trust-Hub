@@ -2,6 +2,8 @@
  * Smoke test for company slug alias resolution.
  * Run: npx tsx scripts/verify-company-slug-resolution.ts
  */
+import { fullMoversCatalog } from '../lib/local-movers/catalog';
+import { localMoverToCompany } from '../lib/directory/local-mover-to-company';
 import { resolveCompanyFromList, predictCompanyProfileSlug } from '../lib/directory/slug-resolution';
 import type { Company } from '../types';
 
@@ -60,6 +62,21 @@ if (predicted !== 'america-first-moving') {
   failed++;
 } else {
   console.log(`OK: predictCompanyProfileSlug -> ${predicted}`);
+}
+
+const ufMover = fullMoversCatalog['uf-mover-guys-storage'];
+if (!ufMover || ufMover.name !== 'UF Mover Guys & Storage') {
+  console.error('FAIL: uf-mover-guys-storage did not resolve to UF Mover Guys & Storage');
+  failed++;
+} else {
+  const ufCompany = localMoverToCompany(ufMover);
+  const fromList = resolveCompanyFromList([ufCompany], 'uf-mover-guys-storage');
+  if (!fromList) {
+    console.error('FAIL: local mover profile slug did not round-trip');
+    failed++;
+  } else {
+    console.log(`OK: local mover profile -> ${fromList.slug}`);
+  }
 }
 
 if (failed > 0) {

@@ -1,4 +1,5 @@
 import type { LocalMover } from '@/lib/local-movers/types';
+import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
 import type { Company, ServiceType } from '@/types';
 
@@ -17,7 +18,9 @@ function mapServices(services: string[]): ServiceType[] {
 
 /** Convert a local-movers catalog entry into a directory-searchable Company row. */
 export function localMoverToCompany(mover: LocalMover): Company {
-  const slug = (mover.profileSlug || mover.id).trim();
+  const slug =
+    mover.profileSlug ||
+    predictCompanyProfileSlug({ name: mover.name, usdot: mover.usdotNumber });
   const bbb = mover.bbbRating as Company['bbbRating'] | undefined;
 
   return normalizeCompanyForDisplay({
