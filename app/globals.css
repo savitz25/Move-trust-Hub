@@ -174,15 +174,14 @@
     @apply h-full bg-accent transition-all;
   }
 
-  /* Map */
+  /* Coverage map — per-state highlighting on company profiles */
   .coverage-map svg path {
-    @apply transition-colors duration-150;
+    @apply transition-opacity duration-150;
   }
-  .coverage-map svg path:hover {
-    @apply fill-primary/20;
-  }
-  .coverage-map .state-covered {
-    @apply fill-primary/70;
+  @media (hover: hover) {
+    .coverage-map .state-covered:hover {
+      fill-opacity: 1;
+    }
   }
 
   /* Review card - sharper */
