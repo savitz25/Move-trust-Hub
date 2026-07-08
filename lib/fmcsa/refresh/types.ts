@@ -38,6 +38,8 @@ export type CompanyRefreshRow = {
   revocation_date: string | null;
   data_hash: string | null;
   fmcsa_last_checked: string | null;
+  fmcsa_raw?: Record<string, unknown> | null;
+  services?: string[] | null;
   reputation_score: number;
   overall_rating: number | null;
   review_count: number;
@@ -75,4 +77,44 @@ export type RefreshOptions = {
   limit?: number;
   /** Force re-run even if idempotency key exists */
   force?: boolean;
+};
+
+export type BatchRefreshOptions = {
+  batch: number;
+  offset: number;
+  dryRun?: boolean;
+};
+
+export type BatchCompanyOutcome = {
+  index: number;
+  company: CompanyRefreshRow;
+  status: 'updated' | 'unchanged' | 'failed' | 'dry_run';
+  changes: FieldChange[];
+  error?: string;
+  displayFields?: {
+    entityType: string | null;
+    usdotStatus: string | null;
+    powerUnits: string | null;
+    mcNumber: string | null;
+    authorityStatus: string | null;
+    safetyRating: string | null;
+    complaintsLast12m: string | null;
+  };
+};
+
+export type BatchRefreshResult = {
+  batch: number;
+  offset: number;
+  dryRun: boolean;
+  totalWithUsdot: number;
+  companiesSelected: number;
+  companiesProcessed: number;
+  companiesUpdated: number;
+  companiesUnchanged: number;
+  companiesFailed: number;
+  changesDetected: number;
+  errors: string[];
+  durationMs: number;
+  outcomes: BatchCompanyOutcome[];
+  nextOffset: number;
 };
