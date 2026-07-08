@@ -2,7 +2,7 @@ import { MultiSourcePreviewCard } from '@/components/verification/multi-source-p
 import type { PendingSuggestion } from '@/lib/suggestions/queries';
 import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
 import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
-import { unpackFmcsaPreview } from '@/lib/suggestions/suggestion-enrichment-storage';
+import { unpackFmcsaPreview } from '@/lib/suggestions/suggestion-enrichment-pack';
 
 type Props = {
   suggestion: PendingSuggestion;
