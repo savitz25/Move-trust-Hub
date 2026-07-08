@@ -201,48 +201,71 @@ type BbbSearchCandidate = {
   profileUrl: string;
   city?: string;
   state?: string;
+  rating?: string | null;
+  accredited?: boolean;
 };
 
+function decodeJsonString(value: string): string {
+  return value
+    .replace(/\\u003c/gi, '<')
+    .replace(/\\u003e/gi, '>')
+    .replace(/\\u0026/gi, '&')
+    .replace(/\\"/g, '"')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * BBB embeds full search hits in page JSON (businessName, rating, bbbMember, reportUrl).
+ * This is the authoritative source — profile pages often return 403 to scrapers.
+ */
 function extractSearchCandidates(html: string): BbbSearchCandidate[] {
   const seen = new Set<string>();
   const candidates: BbbSearchCandidate[] = [];
 
-  const patterns = [
-    /href="(\/us\/[^"]+\/profile\/[^"?#]+)"[^>]*>([^<]{3,120})</gi,
-    /href="(\/us\/[^"]+\/profile\/[^"?#]+)"[\s\S]{0,400}?<[^>]*class="[^"]*business-name[^"]*"[^>]*>([^<]+)</gi,
-  ];
+  for (const chunk of html.split('{"id":"').slice(1)) {
+    const businessName = chunk.match(/"businessName":"((?:\\.|[^"\\])*)"/)?.[1];
+    const city = chunk.match(/"city":"((?:\\.|[^"\\])*)"/)?.[1];
+    const state = chunk.match(/"state":"((?:\\.|[^"\\])*)"/)?.[1];
+    const rating = chunk.match(/"rating":"((?:\\.|[^"\\])*)"/)?.[1];
+    const bbbMember = chunk.match(/"bbbMember":(true|false)/)?.[1];
+    const reportUrl = chunk.match(/"reportUrl":"((?:\\.|[^"\\])*)"/)?.[1];
+    if (!businessName || !reportUrl) continue;
 
-  for (const re of patterns) {
-    for (const match of html.matchAll(re)) {
-      const path = match[1]?.replace(/&amp;/g, '&');
-      const name = match[2]?.replace(/<[^>]+>/g, '').trim();
-      if (!path || !name || path.includes('/addressId/')) continue;
-      const profileUrl = absoluteBbbUrl(path);
-      if (seen.has(profileUrl)) continue;
-      seen.add(profileUrl);
+    const name = decodeJsonString(businessName);
+    const profileUrl = absoluteBbbUrl(decodeJsonString(reportUrl));
+    if (!profileUrl.includes('/profile/') || profileUrl.includes('/addressId/')) continue;
+    if (seen.has(profileUrl)) continue;
+    seen.add(profileUrl);
 
-      const context = match[0] ?? '';
-      const city = context.match(/([A-Za-z .'-]+),\s*([A-Z]{2})\b/)?.[1]?.trim();
-      const state = context.match(/,\s*([A-Z]{2})\b/)?.[1]?.trim();
-
-      candidates.push({ name, profileUrl, city, state });
-    }
-  }
-
-  const hqMatch = html.match(/View HQ Business Profile[\s\S]*?href="([^"]+)"/i);
-  if (hqMatch?.[1]) {
-    const profileUrl = absoluteBbbUrl(hqMatch[1]);
-    if (!seen.has(profileUrl)) {
-      seen.add(profileUrl);
-      candidates.unshift({ name: '', profileUrl });
-    }
+    candidates.push({
+      name,
+      profileUrl,
+      city: decodeJsonString(city ?? ''),
+      state: decodeJsonString(state ?? '').toUpperCase(),
+      rating: rating ? decodeJsonString(rating) : null,
+      accredited: bbbMember === 'true',
+    });
   }
 
   return candidates;
 }
 
+function isUsableProfileHtml(html: string | null): html is string {
+  if (!html || html.length < 8000) return false;
+  if (/access denied|captcha|cf-browser-verification/i.test(html)) return false;
+  return /business-name|BBB Rating|bbb.org\/us\//i.test(html);
+}
+
 function searchIndicatesNoResults(html: string): boolean {
-  return /no results found|0 results|couldn't find|we didn't find|no businesses found/i.test(html);
+  if (/"results":\[\{/.test(html) || /<h3[^>]*result-business-name/i.test(html)) {
+    return false;
+  }
+  return /no results found|search again,\s*no results found|0 results|couldn't find|we didn't find|no businesses found/i.test(
+    html
+  );
 }
 
 function scoreSearchCandidate(
@@ -423,9 +446,41 @@ function buildSearchQueries(input: BbbPublicScrapeInput, geo: { city: string; st
   return [...queries];
 }
 
+function resultFromSearchHit(
+  hit: BbbSearchCandidate,
+  input: BbbPublicScrapeInput
+): BbbPublicScrapeResult {
+  const accredited = hit.accredited ?? false;
+  const accreditation_status = accredited
+    ? 'BBB Accredited Business'
+    : 'Not BBB Accredited';
+
+  const details: BbbScrapeDetails = {
+    accreditation_status,
+    file_opened_date: null,
+    accredited_since: null,
+    profile_url: hit.profileUrl,
+    review_snippets: [],
+  };
+
+  return {
+    bbb_rating: hit.rating ?? null,
+    bbb_review_count: null,
+    bbb_accredited: accredited,
+    bbb_details: details,
+    bbb_accreditation_status: accreditation_status,
+    bbb_file_opened: null,
+    bbb_accredited_since: null,
+    bbb_profile_url: hit.profileUrl,
+    bbb_recent_reviews: [],
+    meta: { status: 'ok', method: 'public_scrape', url: hit.profileUrl },
+    listed: true,
+  };
+}
+
 /**
- * Robust public BBB scrape: search → score profile candidates → parse profile page only.
- * Returns listed=false when no confirmed BBB profile exists (hide BBB UI on profiles).
+ * Robust public BBB scrape: search JSON → score match → optional profile enrichment.
+ * Returns listed=false when no confirmed BBB search hit exists.
  */
 export async function fetchBbbPublicScrape(
   input: BbbPublicScrapeInput
@@ -444,16 +499,15 @@ export async function fetchBbbPublicScrape(
 
     if (searchIndicatesNoResults(searchHtml)) continue;
 
-    const candidates = extractSearchCandidates(searchHtml);
-    for (const candidate of candidates) {
+    for (const candidate of extractSearchCandidates(searchHtml)) {
       const score = scoreSearchCandidate(candidate, input, geo);
-      if (score < 0.4) continue;
+      if (score < 0.45) continue;
       if (!bestCandidate || score > bestCandidate.score) {
         bestCandidate = { candidate, score };
       }
     }
 
-    if (bestCandidate && bestCandidate.score >= 0.65) break;
+    if (bestCandidate && bestCandidate.score >= 0.55) break;
   }
 
   if (!bestCandidate) {
@@ -464,55 +518,39 @@ export async function fetchBbbPublicScrape(
     });
   }
 
+  let result = resultFromSearchHit(bestCandidate.candidate, input);
+
+  // Best-effort profile enrichment (file opened, reviews). BBB often returns 403 — search data still counts.
   const profileHtml = await fetchHtml(bestCandidate.candidate.profileUrl);
-  if (!profileHtml) {
-    return emptyBbbResult({
-      status: 'error',
-      method: 'public_scrape',
-      url: bestCandidate.candidate.profileUrl,
-      error: 'Profile fetch failed',
-    });
+  if (isUsableProfileHtml(profileHtml)) {
+    const enriched = await parseBbbProfilePage(
+      profileHtml,
+      bestCandidate.candidate.profileUrl,
+      input
+    );
+    if (enriched) {
+      result = {
+        ...result,
+        bbb_rating: enriched.bbb_rating ?? result.bbb_rating,
+        bbb_review_count: enriched.bbb_review_count,
+        bbb_accredited: enriched.bbb_accredited ?? result.bbb_accredited,
+        bbb_details: enriched.bbb_details,
+        bbb_accreditation_status:
+          enriched.bbb_accreditation_status ?? result.bbb_accreditation_status,
+        bbb_file_opened: enriched.bbb_file_opened,
+        bbb_accredited_since: enriched.bbb_accredited_since,
+        bbb_recent_reviews: enriched.bbb_recent_reviews,
+      };
+    }
   }
 
-  const parsed = await parseBbbProfilePage(
-    profileHtml,
-    bestCandidate.candidate.profileUrl,
-    input
-  );
-
-  if (!parsed) {
-    return emptyBbbResult({
-      status: 'not_found',
-      method: 'public_scrape',
-      url: bestCandidate.candidate.profileUrl,
-      error: 'Profile did not match company',
-    });
-  }
-
-  const hasSubstantiveData = Boolean(
-    parsed.bbb_rating ||
-      parsed.bbb_accreditation_status ||
-      parsed.bbb_file_opened ||
-      parsed.bbb_profile_url
-  );
-
-  if (!hasSubstantiveData) {
+  if (!result.bbb_rating && !result.bbb_accredited) {
     return emptyBbbResult({
       status: 'not_found',
       method: 'public_scrape',
       url: bestCandidate.candidate.profileUrl,
     });
   }
-
-  const result: BbbPublicScrapeResult = {
-    ...parsed,
-    meta: {
-      status: 'ok',
-      method: 'public_scrape',
-      url: parsed.bbb_profile_url ?? bestCandidate.candidate.profileUrl,
-    },
-    listed: true,
-  };
 
   warnIfSuspiciousBbbScrape(input, result);
   return result;
