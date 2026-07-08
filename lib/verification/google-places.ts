@@ -11,12 +11,13 @@ const FIELD_MASK = [
   'places.reviews',
 ].join(',');
 
-function getApiKey(): string | null {
-  return (
-    process.env.GOOGLE_PLACES_API_KEY?.trim() ||
-    process.env.GOOGLE_MAPS_API_KEY?.trim() ||
-    null
-  );
+/** Server-side Places API (New) key — set as GOOGLE_PLACES_API_KEY on Vercel. */
+export function getGooglePlacesApiKey(): string | null {
+  return process.env.GOOGLE_PLACES_API_KEY?.trim() || null;
+}
+
+export function isGooglePlacesConfigured(): boolean {
+  return Boolean(getGooglePlacesApiKey());
 }
 
 function buildTextQuery(input: CompanyEnrichmentInput): string {
@@ -42,7 +43,7 @@ export async function fetchGooglePlacesData(
   input: CompanyEnrichmentInput
 ): Promise<GooglePlacesData> {
   const now = new Date().toISOString();
-  const apiKey = getApiKey();
+  const apiKey = getGooglePlacesApiKey();
 
   if (!apiKey) {
     return {
