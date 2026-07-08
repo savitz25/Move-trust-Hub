@@ -37,10 +37,11 @@ export const suggestCompanySchema = z
   })
   .superRefine((data, ctx) => {
     const carrier = data.carrierQuery ? parseCarrierNumber(data.carrierQuery) : null;
-    if (!carrier && (!data.name || data.name.length < 2)) {
+    if (!carrier) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: 'Enter a valid USDOT/MC number or company name.',
+        message:
+          'Verify the carrier with FMCSA first — enter a valid USDOT or MC number, or use Name + State search.',
         path: ['carrierQuery'],
       });
     }

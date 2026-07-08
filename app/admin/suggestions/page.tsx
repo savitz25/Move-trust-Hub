@@ -37,7 +37,8 @@ export default async function AdminSuggestionsPage() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Company Suggestions</h1>
           <p className="text-sm text-muted-foreground">
-            Approve user-submitted carriers to add them to the Move Trust Hub directory.
+            Review multi-source onboarding submissions (FMCSA primary, Google supplemental, BBB
+            public scrape). Approving publishes the company profile and revalidates directory caches.
           </p>
         </div>
         <div className="flex gap-2">

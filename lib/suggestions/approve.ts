@@ -5,10 +5,17 @@ import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
 import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
 import { logger } from '@/lib/logging/logger';
 import { createAdminClient } from '@/lib/supabase/admin';
+import { buildVerificationSourcesFromOnboarding } from '@/lib/suggestions/build-verification-sources';
+import {
+  coverageFromHeadquarters,
+  isPublishVerified,
+  resolvePublishFmcsaSnapshot,
+} from '@/lib/suggestions/publish-snapshot';
 import { insertCompanyWithFallback } from '@/lib/suggestions/insert-company';
 import { ensurePublishableCompanySlug } from '@/lib/utils/company-slug';
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { resolveUniqueCompanySlug } from '@/lib/suggestions/slug';
+import type { GooglePlacesData, PublicScrapeData } from '@/lib/verification/types';
 import type { Json } from '@/types/supabase';
 
 export type CompanySuggestionRow = {
@@ -41,12 +48,11 @@ export async function approveSuggestionToCompany(
   });
   const companyId = slug;
 
-  let snapshot: Awaited<ReturnType<typeof fetchFmcsaCarrierSnapshot>> = null;
-  if (usdot) {
+  let liveSnapshot: Awaited<ReturnType<typeof fetchFmcsaCarrierSnapshot>> = null;
+  if (usdot && !suggestion.fmcsa_raw) {
     try {
-      snapshot = await fetchFmcsaCarrierSnapshot(usdot, suggestion.mc_number);
+      liveSnapshot = await fetchFmcsaCarrierSnapshot(usdot, suggestion.mc_number);
     } catch (err) {
-      // FMCSA timeout must not block directory approval — use suggestion snapshot below.
       logger.warn('approve.fmcsa_fetch_failed', {
         usdot,
         message: err instanceof Error ? err.message : String(err),
@@ -54,32 +60,15 @@ export async function approveSuggestionToCompany(
     }
   }
 
-  if (!snapshot && suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object') {
-    const raw = suggestion.fmcsa_raw as Record<string, unknown>;
-    snapshot = {
-      dotNumber: usdot || '',
-      mcNumber: suggestion.mc_number?.replace(/\D/g, '') || undefined,
-      legalName: suggestion.legal_name || suggestion.name,
-      allowedToOperate: suggestion.authority_status === 'Active',
-      authorityActive: suggestion.authority_status === 'Active',
-      outOfService: false,
-      safetyRating: 'Not Rated',
-      complaintsLast12m: 0,
-      shipments: 1000,
-      raw,
-    };
-  }
+  const snapshot = resolvePublishFmcsaSnapshot(suggestion, liveSnapshot);
 
-  const googleData = suggestion.google_data as {
-    rating?: number | null;
-    review_count?: number | null;
-  } | null;
-  const publicScrape = suggestion.public_scrape_data as {
-    bbb_rating?: string | null;
-    bbb_accredited?: boolean | null;
-  } | null;
+  const googleData = suggestion.google_data as GooglePlacesData | null;
+  const publicScrape = suggestion.public_scrape_data as PublicScrapeData | null;
 
-  const overallRating = googleData?.rating && googleData.rating > 0 ? googleData.rating : 0;
+  const overallRating =
+    googleData?.status === 'ok' && googleData.rating && googleData.rating > 0
+      ? googleData.rating
+      : 0;
   const reviewCount = googleData?.review_count ?? 0;
   const bbbRating =
     (publicScrape?.bbb_rating as import('@/types').Company['bbbRating']) || 'NR';
@@ -92,19 +81,33 @@ export async function approveSuggestionToCompany(
     fmcsaShipments: snapshot?.shipments ?? 1000,
     bbbRating,
     bbbAccredited: Boolean(publicScrape?.bbb_accredited),
-    isVerified: Boolean(snapshot?.authorityActive),
+    isVerified: isPublishVerified(snapshot),
     yearsInBusiness: 0,
+  });
+
+  const headquarters = suggestion.headquarters || '';
+  const verificationSources = buildVerificationSourcesFromOnboarding({
+    fmcsaSnapshot: snapshot,
+    fmcsaRaw:
+      snapshot?.raw ??
+      (suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object'
+        ? (suggestion.fmcsa_raw as Record<string, unknown>)
+        : null),
+    google: googleData,
+    publicScrape,
   });
 
   const row = {
     id: companyId,
     slug,
     name: displayName,
-    short_description: suggestion.details?.slice(0, 200) || `Interstate moving company (USDOT ${usdot || 'pending'}).`,
+    short_description:
+      suggestion.details?.slice(0, 200) ||
+      `Interstate moving company${usdot ? ` (USDOT ${usdot})` : ''}.`,
     description:
       suggestion.details ||
-      `${displayName} was added to Move Trust Hub from a community suggestion. FMCSA licensing data is shown when available.`,
-    headquarters: suggestion.headquarters || '',
+      `${displayName} was added to Move Trust Hub through our multi-source onboarding process. FMCSA licensing is primary; Google and public ratings are supplemental.`,
+    headquarters,
     website: '',
     usdot_number: usdot ? usdot : null,
     mc_number: suggestion.mc_number || snapshot?.mcNumber || null,
@@ -123,13 +126,15 @@ export async function approveSuggestionToCompany(
     bbb_accredited: Boolean(publicScrape?.bbb_accredited),
     google_data: suggestion.google_data ?? null,
     public_scrape_data: suggestion.public_scrape_data ?? null,
+    verification_sources: verificationSources,
+    verification_last_synced_at: new Date().toISOString(),
     overall_rating: overallRating,
     review_count: reviewCount,
     reputation_score: reputationScore,
     years_in_business: 0,
     avg_price_per_move: 0,
     price_range: '$$',
-    coverage: 'Continental US',
+    coverage: coverageFromHeadquarters(headquarters),
     services: ['Full Service'],
     specialties: [],
     rating_breakdown: {
@@ -139,7 +144,7 @@ export async function approveSuggestionToCompany(
       twoStar: 0,
       oneStar: 0,
     },
-    is_verified: Boolean(snapshot?.authorityActive && snapshot?.allowedToOperate),
+    is_verified: isPublishVerified(snapshot),
     last_updated: new Date().toISOString(),
   };
 

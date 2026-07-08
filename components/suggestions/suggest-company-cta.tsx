@@ -9,7 +9,7 @@ import type { EnrichedCompanyPreview, FmcsaSuggestionPreview } from '@/lib/sugge
 
 type Props = {
   sourcePage: string;
-  /** When set, opens FMCSA-trusted flow */
+  /** When set, pre-loads FMCSA + enrichment for verified carrier flow */
   carrierQuery?: string;
   /** Pre-loaded FMCSA data from verify page or directory panel */
   dotPreview?: FmcsaSuggestionPreview | null;
@@ -28,16 +28,14 @@ export function SuggestCompanyCta({
   variant = 'default',
   size = 'lg',
   className,
-  label,
+  label = 'Add Company to Directory',
 }: Props) {
   const [open, setOpen] = useState(false);
   const [enrichedPreview, setEnrichedPreview] = useState<EnrichedCompanyPreview | null>(null);
   const [previewError, setPreviewError] = useState<string | null>(null);
   const [loadingPreview, startPreviewTransition] = useTransition();
 
-  const isDotFlow = Boolean(carrierQuery.trim());
-  const buttonLabel =
-    label ?? (isDotFlow ? 'Add This Company to Our Directory' : 'Company not listed? Suggest it');
+  const hasCarrierQuery = Boolean(carrierQuery.trim());
 
   useEffect(() => {
     if (initialDotPreview?.legalName && carrierQuery) {
@@ -51,39 +49,22 @@ export function SuggestCompanyCta({
   }, [initialDotPreview, carrierQuery]);
 
   function handleClick() {
-    if (!carrierQuery.trim()) {
-      setPreviewError(null);
-      setOpen(true);
+    setPreviewError(null);
+    setOpen(true);
 
-      if (initialName.trim()) {
-        startPreviewTransition(async () => {
-          const res = await previewEnrichedCompanySuggestion({ companyName: initialName.trim() });
-          if (!res.success || !res.preview) {
-            setEnrichedPreview(null);
-            return;
-          }
-          setEnrichedPreview(res.preview);
-        });
-      } else {
-        setEnrichedPreview(null);
-      }
+    if (!hasCarrierQuery) {
+      setEnrichedPreview(null);
       return;
     }
 
     startPreviewTransition(async () => {
-      setPreviewError(null);
-      const res = await previewEnrichedCompanySuggestion({
-        carrierQuery,
-        companyName: initialName || undefined,
-      });
+      const res = await previewEnrichedCompanySuggestion({ carrierQuery });
       if (!res.success || !res.preview) {
         setPreviewError(res.error ?? 'Could not load verification data.');
         setEnrichedPreview(null);
-        setOpen(true);
         return;
       }
       setEnrichedPreview(res.preview);
-      setOpen(true);
     });
   }
 
@@ -102,7 +83,7 @@ export function SuggestCompanyCta({
         ) : (
           <PlusCircle className="h-4 w-4 mr-2" />
         )}
-        {loadingPreview ? 'Loading verification data…' : buttonLabel}
+        {loadingPreview ? 'Loading verification data…' : label}
       </Button>
       <SuggestCompanyModal
         open={open}

@@ -1,6 +1,7 @@
 'use server';
 
 import { headers } from 'next/headers';
+import { searchCarriersByNameState } from '@/actions/verify-dot';
 import { suggestCompanySchema } from '@/lib/suggestions/schema';
 import { checkSuggestionDuplicate } from '@/lib/suggestions/duplicates';
 import { checkSuggestionRateLimit } from '@/lib/suggestions/rate-limit';
@@ -21,6 +22,7 @@ import { hashEmail, hashIp } from '@/lib/reviews/hash';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { logger } from '@/lib/logging/logger';
+import type { NameStateSearchResult } from '@/actions/verify-dot';
 
 export type SubmitSuggestionResult = {
   success: boolean;
@@ -55,57 +57,48 @@ function clientIpFromHeaders(headerStore: Headers): string | null {
 
 async function buildEnrichedPreview(input: {
   carrierQuery?: string;
-  companyName?: string;
-  headquarters?: string | null;
-  phone?: string | null;
 }): Promise<PreviewEnrichedSuggestionResult> {
-  let fmcsaPreview: FmcsaSuggestionPreview | null = null;
-  let legalName = input.companyName?.trim() || '';
-  let headquarters = input.headquarters ?? null;
-  let phone = input.phone ?? null;
-
-  if (input.carrierQuery?.trim()) {
-    const parsed = parseCarrierNumber(input.carrierQuery.trim());
-    if (!parsed) {
-      return {
-        success: false,
-        error: 'Enter a valid USDOT or MC number (3–8 digits).',
-      };
-    }
-
-    if (!process.env.FMCSA_WEB_KEY?.trim()) {
-      return {
-        success: false,
-        error: 'FMCSA lookup is temporarily unavailable. Please try again later.',
-      };
-    }
-
-    const fmcsa = await lookupFmcsaForSuggestion(input.carrierQuery);
-    if (!fmcsa?.legalName) {
-      return {
-        success: false,
-        error:
-          'No FMCSA record found for that number. Confirm it on safer.fmcsa.dot.gov before submitting.',
-      };
-    }
-
-    fmcsaPreview = toFmcsaSuggestionPreview(fmcsa);
-    legalName = fmcsa.legalName;
-    headquarters = fmcsa.headquarters ?? headquarters;
-    phone = fmcsa.phone ?? phone;
-  }
-
-  if (!legalName) {
+  if (!input.carrierQuery?.trim()) {
     return {
       success: false,
-      error: 'Company name or a valid USDOT/MC number is required.',
+      error: 'A verified USDOT or MC number is required.',
     };
   }
 
+  const parsed = parseCarrierNumber(input.carrierQuery.trim());
+  if (!parsed) {
+    return {
+      success: false,
+      error: 'Enter a valid USDOT or MC number (3–8 digits).',
+    };
+  }
+
+  if (!process.env.FMCSA_WEB_KEY?.trim()) {
+    return {
+      success: false,
+      error: 'FMCSA lookup is temporarily unavailable. Please try again later.',
+    };
+  }
+
+  const fmcsa = await lookupFmcsaForSuggestion(input.carrierQuery);
+  if (!fmcsa?.legalName) {
+    return {
+      success: false,
+      error:
+        'No FMCSA record found for that number. Confirm it on safer.fmcsa.dot.gov before submitting.',
+    };
+  }
+
+  const fmcsaPreview = toFmcsaSuggestionPreview(fmcsa);
+  const legalName = fmcsa.legalName;
+
   const enrichment = await enrichCompanySources({
     legalName,
-    headquarters,
-    phone,
+    headquarters: fmcsa.headquarters,
+    phone: fmcsa.phone,
+    city: fmcsaPreview.addressCity,
+    state: fmcsaPreview.addressState,
+    usdotNumber: fmcsa.usdot,
   });
 
   return {
@@ -117,6 +110,12 @@ async function buildEnrichedPreview(input: {
       fetchedAt: enrichment.fetchedAt,
     },
   };
+}
+
+export async function searchCarriersForOnboarding(
+  raw: unknown
+): Promise<NameStateSearchResult> {
+  return searchCarriersByNameState(raw);
 }
 
 export async function previewFmcsaSuggestion(
@@ -132,15 +131,20 @@ export async function previewFmcsaSuggestion(
   return { success: true, preview: res.preview.fmcsa };
 }
 
-/** Multi-source preview: FMCSA + Google Places + public scrape (parallel). */
+/** Multi-source preview: FMCSA (required) + Google Places + public BBB scrape in parallel. */
 export async function previewEnrichedCompanySuggestion(input: {
   carrierQuery?: string;
   companyName?: string;
 }): Promise<PreviewEnrichedSuggestionResult> {
-  return buildEnrichedPreview({
-    carrierQuery: input.carrierQuery,
-    companyName: input.companyName,
-  });
+  if (input.carrierQuery?.trim()) {
+    return buildEnrichedPreview({ carrierQuery: input.carrierQuery });
+  }
+
+  return {
+    success: false,
+    error:
+      'FMCSA verification is required. Search by USDOT/MC or use Name + State to find the carrier first.',
+  };
 }
 
 export async function submitCompanySuggestion(
@@ -166,6 +170,15 @@ export async function submitCompanySuggestion(
       };
     }
 
+    const carrierParsed = parseCarrierNumber(parsed.data.carrierQuery!);
+    if (!carrierParsed) {
+      return {
+        success: false,
+        error:
+          'FMCSA verification is required before submitting. Search by USDOT/MC or Name + State.',
+      };
+    }
+
     const headerStore = await headers();
     const userIp = clientIpFromHeaders(headerStore);
 
@@ -178,25 +191,13 @@ export async function submitCompanySuggestion(
       return { success: false, error: rateCheck.reason };
     }
 
-    const carrierParsed = parsed.data.carrierQuery
-      ? parseCarrierNumber(parsed.data.carrierQuery)
-      : null;
-
-    let fmcsa = carrierParsed
-      ? await lookupFmcsaForSuggestion(parsed.data.carrierQuery!)
-      : null;
-
-    const companyName =
-      fmcsa?.legalName?.trim() ||
-      parsed.data.name?.trim() ||
-      null;
+    const fmcsa = await lookupFmcsaForSuggestion(parsed.data.carrierQuery!);
+    const companyName = fmcsa?.legalName?.trim();
 
     if (!companyName) {
       return {
         success: false,
-        error: carrierParsed
-          ? 'Could not verify this carrier with FMCSA. Try again or confirm the USDOT number.'
-          : 'Company name is required when no USDOT/MC number is provided.',
+        error: 'Could not verify this carrier with FMCSA. Confirm the USDOT/MC number and try again.',
       };
     }
 
@@ -209,7 +210,7 @@ export async function submitCompanySuggestion(
 
     const duplicateCheck = await checkSuggestionDuplicate({
       name: companyName,
-      usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
+      usdot: fmcsa?.usdot ?? (carrierParsed.type === 'DOT' ? carrierParsed.value : null),
     });
 
     if (duplicateCheck.duplicate) {
@@ -248,12 +249,12 @@ export async function submitCompanySuggestion(
       hasGoogle: Boolean(enrichment.google?.status === 'ok'),
       hasPublicScrape: Boolean(enrichment.publicScrape),
       enrichmentStored: insertResult.enrichmentStored,
-      trustedDot: Boolean(carrierParsed && fmcsa),
+      trustedDot: true,
     });
 
     const profileSlug = predictCompanyProfileSlug({
       name: companyName,
-      usdot: fmcsa?.usdot ?? (carrierParsed?.type === 'DOT' ? carrierParsed.value : null),
+      usdot: fmcsa?.usdot ?? (carrierParsed.type === 'DOT' ? carrierParsed.value : null),
     });
 
     return {

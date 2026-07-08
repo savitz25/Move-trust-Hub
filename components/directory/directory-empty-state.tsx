@@ -74,11 +74,11 @@ export function DirectoryEmptyState({
           <SuggestCompanyCta
             sourcePage={sourcePage}
             carrierQuery={parsedCarrier ? trimmed : undefined}
-            initialName={parsedCarrier ? undefined : trimmed}
+            initialName={trimmed}
             variant="outline"
             size="default"
             className="w-full"
-            label="Suggest this company for our directory"
+            label="Add company to directory"
           />
         </div>
       ) : null}

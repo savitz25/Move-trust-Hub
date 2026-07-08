@@ -12,9 +12,9 @@ export function DotReadonlyFields({ preview }: Props) {
     <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-1">
       <div className="flex items-center gap-2 mb-3">
         <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
-        <span className="text-sm font-semibold">FMCSA verified carrier data</span>
-        <Badge variant="secondary" className="text-[10px] ml-auto">
-          Read-only
+        <span className="text-sm font-semibold">FMCSA carrier data</span>
+        <Badge variant="default" className="text-[10px] ml-auto">
+          FMCSA primary
         </Badge>
       </div>
       <dl>

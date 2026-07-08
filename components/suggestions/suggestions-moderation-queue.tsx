@@ -65,9 +65,13 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="font-semibold text-lg">{suggestion.legal_name || suggestion.name}</span>
                   <Badge variant="outline">Pending</Badge>
-                  {hasFmcsa ? <Badge variant="default">FMCSA verified</Badge> : null}
-                  {hasGoogle ? <Badge variant="outline">Google data</Badge> : null}
-                  {hasPublic ? <Badge variant="secondary">Public ratings</Badge> : null}
+                  {hasFmcsa ? (
+                    <Badge variant="default">FMCSA primary</Badge>
+                  ) : (
+                    <Badge variant="destructive">Missing FMCSA</Badge>
+                  )}
+                  {hasGoogle ? <Badge variant="outline">Google supplemental</Badge> : null}
+                  {hasPublic ? <Badge variant="secondary">Public scrape</Badge> : null}
                   {suggestion.usdot ? (
                     <Badge variant="secondary">DOT {suggestion.usdot}</Badge>
                   ) : null}
@@ -118,15 +122,20 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
               </a>
             ) : null}
 
+            <p className="mt-3 text-xs text-muted-foreground">
+              Approving publishes the company profile, attaches all source data, sets coverage from
+              the office address, and revalidates directory caches.
+            </p>
+
             <div className="mt-4 flex gap-2">
               <Button
                 size="sm"
                 className="gap-1"
-                disabled={pending}
+                disabled={pending || !hasFmcsa}
                 onClick={() => handleAction(suggestion.id, 'approve')}
               >
                 {pending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Check className="h-3.5 w-3.5" />}
-                Approve
+                Approve &amp; publish
               </Button>
               <Button
                 size="sm"

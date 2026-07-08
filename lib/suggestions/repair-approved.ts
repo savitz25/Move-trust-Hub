@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
+import { revalidateDestinationPaths } from '@/lib/suggestions/revalidate-destination';
 import { getCompanyBySlugOrUsdotFromDb } from '@/lib/supabase/queries/companies';
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
 import { createAdminClient } from '@/lib/supabase/admin';
@@ -75,6 +76,7 @@ export async function publishSuggestionToDirectory(
     .eq('id', suggestion.id);
 
   revalidatePublishedCompany(published.slug);
+  revalidateDestinationPaths(suggestion.headquarters);
 
   return published;
 }

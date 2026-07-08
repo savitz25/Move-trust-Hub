@@ -3,7 +3,9 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { DotReadonlyFields } from '@/components/suggestions/dot-readonly-fields';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
+import { BbbOnboardingPreview } from '@/components/verification/bbb-onboarding-preview';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
+import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
 import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
 
 type Props = {
@@ -13,6 +15,7 @@ type Props = {
 
 export function MultiSourcePreviewCard({ preview, showFmcsa = true }: Props) {
   const { fmcsa, google, publicScrape } = preview;
+  const showBbb = publicScrape ? hasBbbPublicScrapeData(publicScrape) : false;
 
   return (
     <div className="space-y-4">
@@ -26,7 +29,7 @@ export function MultiSourcePreviewCard({ preview, showFmcsa = true }: Props) {
             <Star className="h-4 w-4 text-amber-500" aria-hidden />
             <span className="text-sm font-semibold">Google business data</span>
             <Badge variant="outline" className="text-[10px] ml-auto">
-              Google Places API
+              Google Places API · supplemental
             </Badge>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -40,7 +43,7 @@ export function MultiSourcePreviewCard({ preview, showFmcsa = true }: Props) {
           ) : null}
           {google.review_snippets?.length ? (
             <ul className="space-y-2 text-xs text-muted-foreground border-t pt-3">
-              {google.review_snippets.map((r, i) => (
+              {google.review_snippets.slice(0, 3).map((r, i) => (
                 <li key={i}>
                   <span className="font-medium text-foreground">{r.rating}★</span>
                   {r.author ? ` · ${r.author}` : ''}
@@ -53,23 +56,26 @@ export function MultiSourcePreviewCard({ preview, showFmcsa = true }: Props) {
         </Card>
       ) : google?.status === 'error' || google?.status === 'not_found' ? (
         <p className="text-xs text-muted-foreground rounded-md border border-dashed p-3">
-          Google Places: {google.status === 'not_found' ? 'No matching business found.' : 'Lookup unavailable.'}
+          Google Places:{' '}
+          {google.status === 'not_found' ? 'No matching business found.' : 'Lookup unavailable.'}
         </p>
       ) : null}
 
-      {publicScrape ? (
+      {showBbb && publicScrape ? <BbbOnboardingPreview data={publicScrape} /> : null}
+
+      {publicScrape &&
+      (publicScrape.trustpilot_rating != null || publicScrape.yelp_rating != null) ? (
         <Card className="border-muted bg-muted/30 p-4 space-y-3">
           <div className="flex items-center gap-2 flex-wrap">
             <Globe className="h-4 w-4 text-muted-foreground" aria-hidden />
-            <span className="text-sm font-semibold">Public web ratings</span>
+            <span className="text-sm font-semibold">Other public web ratings</span>
             <Badge variant="secondary" className="text-[10px] ml-auto">
-              Public / scraped
+              Public / scraped · lowest confidence
             </Badge>
           </div>
-          <PublicScrapeBadges data={publicScrape} />
+          <PublicScrapeBadges data={publicScrape} excludeBbb />
           <p className="text-xs text-muted-foreground">
-            Scraped from public BBB, Trustpilot, and Yelp pages. Lower confidence than FMCSA
-            or Google API — confirm independently before booking.
+            Scraped from public Trustpilot and Yelp pages. Confirm independently before booking.
           </p>
         </Card>
       ) : null}
@@ -77,8 +83,11 @@ export function MultiSourcePreviewCard({ preview, showFmcsa = true }: Props) {
       {fmcsa?.legalName ? (
         <p className="text-xs text-muted-foreground flex items-start gap-1.5">
           <ShieldCheck className="h-3.5 w-3.5 shrink-0 mt-0.5 text-primary" aria-hidden />
-          FMCSA is the primary licensing source. Google is the preferred supplemental rating.
-          Public scrape data is shown for transparency only.
+          <span>
+            <strong className="font-medium text-foreground">FMCSA is primary.</strong> Google
+            Places API is supplemental. BBB and other public scrape data are shown for
+            transparency only — lowest confidence tier.
+          </span>
         </p>
       ) : null}
     </div>

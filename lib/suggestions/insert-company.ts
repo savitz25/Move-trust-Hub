@@ -44,7 +44,12 @@ function stripKeys(row: CompanyInsertPayload, keys: string[]): CompanyInsertPayl
 }
 
 function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
-  const enrichmentCols = ['google_data', 'public_scrape_data'];
+  const enrichmentCols = [
+    'google_data',
+    'public_scrape_data',
+    'verification_sources',
+    'verification_last_synced_at',
+  ];
   const fmcsaExtendedCols = [
     'fmcsa_last_checked',
     'fmcsa_legal_name',
