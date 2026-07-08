@@ -3,6 +3,8 @@
 export type ServiceType = 
   | 'Full Service'
   | 'Carrier'
+  | 'Broker'
+  | 'Carrier / Broker'
   | 'Container / Portable'
   | 'Auto Transport'
   | 'Storage';
@@ -43,6 +45,12 @@ export interface Company {
   complaintsLast12m?: number;
   revocationDate?: string | null;
   fmcsaDataHash?: string | null;
+  /** FMCSA census entity type (Broker, Carrier, Carrier/Broker, etc.) */
+  entityType?: string | null;
+  /** FMCSA operating status derived from fmcsa_raw */
+  usdotStatus?: 'ACTIVE' | 'OUT OF SERVICE' | 'INACTIVE' | null;
+  /** Fleet size from FMCSA census */
+  powerUnits?: number | null;
   bbbRating: 'A+' | 'A' | 'A-' | 'B+' | 'B' | 'B-' | 'C+' | 'C' | 'C-' | 'D+' | 'D' | 'D-' | 'F' | 'NR';
   bbbAccredited: boolean;
   /** BBB automated refresh fields */

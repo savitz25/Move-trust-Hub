@@ -10,6 +10,8 @@ function mapServices(services: string[]): ServiceType[] {
     if (s.includes('auto')) mapped.add('Auto Transport');
     else if (s.includes('storage')) mapped.add('Storage');
     else if (s.includes('container') || s.includes('portable')) mapped.add('Container / Portable');
+    else if (s.includes('carrier/broker') || s.includes('broker/carrier')) mapped.add('Carrier / Broker');
+    else if (s.includes('broker')) mapped.add('Broker');
     else if (s.includes('carrier')) mapped.add('Carrier');
     else mapped.add('Full Service');
   }

@@ -1,3 +1,4 @@
+import { companyMatchesServiceFilter } from '@/lib/fmcsa/derive-directory-services';
 import { Company, Review, DirectoryFilters, SortOption } from '@/types';
 import { seedCompanies, getCompanyBySlug } from '@/data/seed-companies';
 import { seedReviews, getReviewsForCompany } from '@/data/seed-reviews';
@@ -90,8 +91,8 @@ export async function getFilteredCompanies(filters: Partial<DirectoryFilters>): 
 
   // Services
   if (filters.services && filters.services.length > 0) {
-    result = result.filter(c =>
-      filters.services!.some(svc => c.services.includes(svc))
+    result = result.filter((c) =>
+      filters.services!.some((svc) => companyMatchesServiceFilter(c, svc))
     );
   }
 

@@ -1,5 +1,6 @@
 import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
+import { companyMatchesServiceFilter } from '@/lib/fmcsa/derive-directory-services';
 import type { Company, DirectoryFilters } from '@/types';
 
 export type DirectoryFilterInput = Partial<DirectoryFilters> & {
@@ -66,10 +67,9 @@ export function filterCompanies(
   }
 
   if (filters.services && filters.services.length > 0) {
-    result = result.filter((c) => {
-      const services = Array.isArray(c.services) ? c.services : [];
-      return filters.services!.some((svc) => services.includes(svc));
-    });
+    result = result.filter((c) =>
+      filters.services!.some((svc) => companyMatchesServiceFilter(c, svc))
+    );
   }
 
   if (filters.coverage && filters.coverage !== 'Any') {

@@ -19,6 +19,7 @@ import {
   resolveGoogleDataFromRow,
   resolvePublicScrapeFromRow,
 } from '@/lib/verification/resolve-company-row';
+import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
 import type { Company } from '@/types';
 
 function createAnonSupabaseClient() {
@@ -46,6 +47,9 @@ const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
 };
 
 function mapRow(row: Record<string, unknown>): Company {
+  const baseServices = (row.services as Company['services']) || [];
+  const fmcsaFields = extractFmcsaFieldsFromRow(row, baseServices);
+
   return normalizeCompanyForDisplay({
     id: row.id as string,
     slug: row.slug as string,
@@ -83,7 +87,10 @@ function mapRow(row: Record<string, unknown>): Company {
     avgPricePerMove: (row.avg_price_per_move as number) || 0,
     priceRange: (row.price_range as string) || '',
     coverage: (row.coverage as Company['coverage']) || 'Continental US',
-    services: (row.services as Company['services']) || [],
+    services: fmcsaFields.services,
+    entityType: fmcsaFields.entityType,
+    usdotStatus: fmcsaFields.usdotStatus,
+    powerUnits: fmcsaFields.powerUnits,
     specialties: (row.specialties as string[]) || [],
     ratingBreakdown:
       (row.rating_breakdown as Company['ratingBreakdown']) ?? EMPTY_RATING_BREAKDOWN,

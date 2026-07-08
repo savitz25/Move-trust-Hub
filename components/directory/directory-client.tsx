@@ -29,7 +29,19 @@ const SEARCH_DEBOUNCE_MS = 350;
 const URL_SYNC_DEBOUNCE_MS = 450;
 const RESULTS_MIN_HEIGHT = 'min-h-[480px] md:min-h-[520px]';
 
-const SERVICE_OPTIONS: ServiceType[] = ['Full Service', 'Carrier', 'Container / Portable', 'Auto Transport', 'Storage'];
+const SERVICE_OPTIONS: ServiceType[] = [
+  'Full Service',
+  'Carrier',
+  'Broker',
+  'Carrier / Broker',
+  'Container / Portable',
+  'Auto Transport',
+  'Storage',
+];
+
+function serviceFilterLabel(service: ServiceType): string {
+  return service === 'Carrier / Broker' ? 'Carrier/Broker' : service;
+}
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
   { value: 'reputation', label: 'Reputation Score (High → Low)' },
   { value: 'rating', label: 'Customer Rating' },
@@ -357,7 +369,7 @@ export function DirectoryClient({
                     onClick={() => toggleService(svc)}
                     className={`filter-chip ${selectedServices.includes(svc) ? 'filter-chip-active' : ''}`}
                   >
-                    {svc}
+                    {serviceFilterLabel(svc)}
                   </button>
                 ))}
               </div>

@@ -21,10 +21,8 @@ import {
   canShowVerifiedBadge,
   directoryVerifiedLabel,
 } from '@/lib/trust/company-display-policy';
-import {
-  LicenseDisplay,
-  LicenseMetadataDescription,
-} from '@/components/trust/license-display';
+import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
+import { LicenseMetadataDescription } from '@/components/trust/license-display';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
@@ -198,7 +196,7 @@ export default async function CompanyProfilePage({ params }: Props) {
             </CardHeader>
             <CardContent className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm">
               <div className="sm:col-span-2">
-                <LicenseDisplay company={company} />
+                <FmcsaDotCompliance company={company} />
               </div>
               <div>
                 <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>

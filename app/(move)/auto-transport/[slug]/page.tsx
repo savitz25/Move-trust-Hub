@@ -4,10 +4,8 @@ import {
   canShowVerifiedBadge,
   directoryVerifiedLabel,
 } from '@/lib/trust/company-display-policy';
-import {
-  LicenseDisplay,
-  LicenseMetadataDescription,
-} from '@/components/trust/license-display';
+import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
+import { LicenseMetadataDescription } from '@/components/trust/license-display';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
@@ -148,7 +146,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
               <CardTitle>Licensing &amp; Compliance</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
-              <LicenseDisplay company={company} />
+              <FmcsaDotCompliance company={company} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>
