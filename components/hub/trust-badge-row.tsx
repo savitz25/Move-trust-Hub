@@ -36,6 +36,13 @@ export function TrustBadgeRow({ hub, className }: TrustBadgeRowProps) {
       aria-label={`${config.siteName} trust signals`}
     >
       <div className="container mx-auto px-4">
+        <p className="mb-3 text-center text-xs text-muted-foreground md:text-left">
+          {hub === 'move'
+            ? 'We’re on your side — independent research, friendly guidance, zero lead fees.'
+            : hub === 'lender'
+              ? 'Transparent lender data you can actually trust — no pay-to-play listings.'
+              : 'Licensed agents, plain-language guides, and comparisons without the sales pitch.'}
+        </p>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-3">
             {badges.map((badge) => (

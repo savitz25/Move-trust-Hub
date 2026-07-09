@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
-import { ArrowRight, Home, Landmark, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Home, Landmark, ShieldCheck, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 
@@ -11,9 +14,9 @@ type LifeEventBundle = {
 
 const LIFE_EVENT_BUNDLES: Record<HubId, LifeEventBundle> = {
   move: {
-    title: 'Planning a move? Cover the full life event',
+    title: 'Big move ahead? We’ve got the whole journey covered',
     description:
-      'Research movers, then line up insurance and mortgage options for your new address — all verified, all independent.',
+      'Movers are step one — smart relocators also line up insurance and financing for the new address. Same trusted data, zero sales pressure.',
     links: [
       { hub: 'move', label: 'Moving Calculator', href: '/moving-calculator' },
       { hub: 'insurance', label: 'Insurance in Your Market', href: '/insurance/hubs/browse' },
@@ -58,18 +61,28 @@ export function HubCrossLinkBar({ hub }: { hub: HubId }) {
     >
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
+          <p className="mb-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+            Cross-vertical synergy
+          </p>
           <h2 className="text-xl font-semibold tracking-tight md:text-2xl">{bundle.title}</h2>
           <p className="mt-2 text-sm text-muted-foreground md:text-base">{bundle.description}</p>
         </div>
         <div className="mx-auto mt-6 grid max-w-4xl gap-3 sm:grid-cols-3">
-          {bundle.links.map((link) => {
+          {bundle.links.map((link, index) => {
             const Icon = HUB_ICONS[link.hub];
             const href = link.hub === hub ? hubPath(hub, link.href) : hubPath(link.hub, link.href);
             return (
-              <Link
+              <motion.div
                 key={link.label}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: index * 0.08, duration: 0.35 }}
+              >
+              <Link
                 href={href}
-                className="group flex items-center justify-between rounded-lg border bg-card px-4 py-3 text-sm font-medium shadow-sm transition-colors hover:border-primary/40 hover:bg-muted/50"
+                className="group flex items-center justify-between rounded-lg border bg-card px-4 py-3 text-sm font-medium shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-muted/50 hover-lift"
               >
                 <span className="inline-flex items-center gap-2">
                   <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
@@ -80,6 +93,7 @@ export function HubCrossLinkBar({ hub }: { hub: HubId }) {
                   aria-hidden="true"
                 />
               </Link>
+              </motion.div>
             );
           })}
         </div>

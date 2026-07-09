@@ -9,6 +9,9 @@ export function shouldShowCrossLinks(pathname: string): boolean {
     pathname === '/auto-transport' ||
     pathname.startsWith('/lender/calculators') ||
     pathname.startsWith('/insurance/calculators') ||
-    pathname.startsWith('/moving-to/')
+    pathname.startsWith('/moving-to/') ||
+    pathname.startsWith('/resources') ||
+    pathname.startsWith('/lender/resources') ||
+    pathname.startsWith('/insurance/resources')
   );
 }

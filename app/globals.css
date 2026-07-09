@@ -208,6 +208,29 @@
   .sr-only {
     @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
   }
+
+  .hover-lift {
+    @apply transition-transform duration-200 ease-out;
+  }
+  @media (hover: hover) {
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .celebrate-pulse {
+    animation: celebrate-pulse 1.6s ease-in-out 1;
+  }
+}
+
+@keyframes celebrate-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+  }
+  40% {
+    box-shadow: 0 0 0 6px hsl(var(--primary) / 0.12);
+  }
 }
 
 /* Smooth loading states */

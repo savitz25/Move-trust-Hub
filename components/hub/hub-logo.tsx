@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
 import { getHubConfig } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
@@ -14,7 +14,7 @@ export function HubLogo({
   const hub = getHubConfig(hubId);
 
   return (
-    <Image
+    <OptimizedImage
       src={hub.logoSrc}
       alt={hub.logoAlt}
       width={300}
@@ -23,7 +23,7 @@ export function HubLogo({
       priority={priority}
       fetchPriority={priority ? 'high' : 'auto'}
       sizes={IMAGE_SIZES.headerLogo}
-      className="h-12 w-auto max-w-[300px] object-contain object-left transition-transform group-hover:scale-[1.02]"
+      className="h-12 w-auto max-w-[300px] object-contain object-left transition-transform duration-200 group-hover:scale-[1.02]"
     />
   );
 }

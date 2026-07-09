@@ -28,7 +28,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
           <h1 className="text-3xl font-semibold leading-[1.12] tracking-tighter sm:text-4xl md:text-5xl lg:text-[3.25rem]">
             Compare Trusted Interstate Movers
             <br className="hidden sm:block" />
-            <span className="sm:hidden"> </span>&amp; Research Your Move with Confidence
+            <span className="sm:hidden"> </span>&amp; Actually Enjoy Planning Your Move
           </h1>
         }
         description={
@@ -88,9 +88,11 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
 
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <div className="text-primary font-semibold tracking-widest text-sm mb-2">3 SIMPLE STEPS</div>
+          <div className="text-primary font-semibold tracking-widest text-sm mb-2">YOUR MOVE, YOUR PACE</div>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">How Move Trust Hub Works</h2>
-          <p className="mt-3 text-muted-foreground max-w-md mx-auto">We make finding and booking the right interstate mover easy and transparent.</p>
+          <p className="mt-3 text-muted-foreground max-w-md mx-auto">
+            Think of us as your moving coach — we teach you what to look for, then let you compare with confidence.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">

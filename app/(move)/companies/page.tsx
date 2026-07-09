@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DirectoryLoader } from '@/components/directory/directory-loader';
+import { InternalLinkHub } from '@/components/seo/internal-link-hub';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { ReviewHighlights } from '@/components/trust/review-highlights';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
+import { buildCompaniesDirectorySchemaGraph } from '@/lib/seo/build-directory-list-schema';
+import { JsonLd } from '@/lib/seo/json-ld';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 
 /** Revalidate so admin-approved companies appear without a full redeploy. */
@@ -30,9 +33,12 @@ export const metadata: Metadata = buildMovePageMetadata({
 
 export default async function CompaniesDirectoryPage() {
   const companies = await getUnifiedDirectoryCompanies();
+  const directorySchema = buildCompaniesDirectorySchemaGraph(companies);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
+      <JsonLd data={directorySchema} />
+      <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <div className="uppercase tracking-[2px] text-xs text-primary font-semibold">
           COMPREHENSIVE DIRECTORY
@@ -41,13 +47,12 @@ export default async function CompaniesDirectoryPage() {
           Interstate Moving Companies
         </h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          Search FMCSA-verified interstate movers with active operating authority. Filter by
-          coverage, services, price, and reputation. Click any company for a
-          full profile with{' '}
+          Your shortlist starts here. Search FMCSA-verified interstate movers with active operating
+          authority — filter by coverage, services, price, and reputation. Every profile includes{' '}
           <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
             FMCSA licensing
           </Link>{' '}
-          and recent reviews.
+          context and moderated reviews. No paid placements, ever.
         </p>
       </div>
 
@@ -64,8 +69,11 @@ export default async function CompaniesDirectoryPage() {
         className="py-16 mt-8 border-t"
         compact
         title="Featured Review Highlights"
-        subtitle="A quick look at highly rated interstate movers with verified review volume and reputation scores."
+        subtitle="Real feedback from verified moves — the kind of detail star ratings alone won't show you."
       />
+
+      <InternalLinkHub className="mt-12" />
     </div>
+    </>
   );
 }
