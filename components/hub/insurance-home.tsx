@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, MapPin, Shield, Calculator } from 'lucide-react';
+import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
 import { HubZipSearch } from '@/components/hub/hub-zip-search';
 import { HubTrustBar } from '@/components/hub/hub-trust-bar';
 import { HubHowItWorks } from '@/components/hub/hub-how-it-works';
@@ -54,46 +55,40 @@ const FEATURED_ARTICLES = [
 export function InsuranceHomePage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b bg-gradient-to-br from-primary/5 via-background to-emerald-500/5">
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-sm font-semibold text-emerald-700 border border-emerald-500/20">
-              <Shield className="h-4 w-4" aria-hidden="true" />
-              DOI VERIFIED · ZERO PAID PLACEMENTS · HEALTH FOCUS
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-              Discover Honest Insurance Agents
-              <br />
-              <span className="text-emerald-600">in Your Market</span>
-            </h1>
-            <p className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Transparent data, confident choices. Compare verified local insurance agents and
-              agencies — with health insurance specialists (ACA, Medicare, employer plans) highlighted
-              in every high-volume hub.
-            </p>
-
-            <div className="mt-10 flex justify-center">
-              <HubZipSearch hub="insurance" />
-            </div>
-
-            <p className="mt-4 text-sm text-muted-foreground">
-              Trusted Local Agents · Verified Licensing · All 50 States & 3,000+ Counties
-            </p>
-
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" asChild className="gap-2">
-                <Link href={hubPath('insurance', '/calculators')}>
-                  Explore Calculators <Calculator className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href={hubPath('insurance', '/about')}>How We Verify Agents</Link>
-              </Button>
-            </div>
+      <HubHeroBanner
+        hub="insurance"
+        eyebrow={
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-semibold text-emerald-700">
+            <Shield className="h-4 w-4" aria-hidden="true" />
+            DOI VERIFIED · ZERO PAID PLACEMENTS · HEALTH FOCUS
           </div>
+        }
+        title={
+          <h1 className="text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+            Discover Honest Insurance Agents
+            <br />
+            <span className="text-emerald-600">in Your Market</span>
+          </h1>
+        }
+        description="Transparent data, confident choices. Compare verified local insurance agents and agencies — with health insurance specialists (ACA, Medicare, employer plans) highlighted in every high-volume hub."
+      >
+        <div className="flex justify-center lg:justify-start">
+          <HubZipSearch hub="insurance" />
         </div>
-      </section>
+        <p className="text-sm text-muted-foreground">
+          Trusted Local Agents · Verified Licensing · All 50 States & 3,000+ Counties
+        </p>
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+          <Button size="lg" asChild className="w-full gap-2 sm:w-auto">
+            <Link href={hubPath('insurance', '/calculators')}>
+              Explore Calculators <Calculator className="h-5 w-5" aria-hidden="true" />
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
+            <Link href={hubPath('insurance', '/about')}>How We Verify Agents</Link>
+          </Button>
+        </div>
+      </HubHeroBanner>
 
       <HubTrustBar
         items={[

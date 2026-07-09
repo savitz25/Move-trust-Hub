@@ -9,54 +9,78 @@ import { homepageFaqItems } from '@/lib/seo/schemas';
 import { TrustBadges } from '@/components/trust/trust-badges';
 
 import { HomeBelowFoldLoader } from '@/components/home/home-below-fold-loader';
+import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
 
 export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
   return (
     <div className="flex flex-col">
-      <section className="relative bg-gradient-to-br from-primary/8 via-background to-background border-b">
-        <div className="container mx-auto px-4 py-12 sm:py-16 md:py-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 text-emerald-700 px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium mb-5 sm:mb-6 max-w-full">
-              <Truck className="h-4 w-4 shrink-0" />
-              <span className="truncate sm:whitespace-normal">INDEPENDENT DIRECTORY · NO LEAD FEES · NO PAID PLACEMENTS</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tighter mb-5 sm:mb-6 leading-[1.15]">
-              Compare Trusted Interstate Movers<br className="hidden sm:block" />
-              <span className="sm:hidden"> </span>&amp; Research Your Move with Confidence
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-7 sm:mb-8 leading-relaxed">
-              An unbiased directory for researching{' '}
-              <Link href="/resources/fmcsa" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
-                FMCSA-licensed movers
-              </Link>
-              , attributable reviews, and move costs. Use our{' '}
-              <Link href="/moving-calculator" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
-                free moving calculator
-              </Link>{' '}
-              and{' '}
-              <Link href="/companies" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">
-                mover directory
-              </Link>{' '}
-              — we never sell your information to carriers.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 w-full max-w-md sm:max-w-none mx-auto">
-              <Link href="/moving-calculator" className="w-full sm:w-auto">
-                <Button size="lg" className="gap-2 text-base px-8 sm:px-10 h-12 sm:h-14 w-full min-h-[48px]">
-                  Use Free Moving Calculator <ArrowRight className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/companies" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="gap-2 text-base px-8 h-12 sm:h-14 w-full min-h-[48px]">
-                  Compare Trusted Movers
-                </Button>
-              </Link>
-            </div>
-            <p className="text-sm text-muted-foreground font-medium">Independent directory — not affiliated with listed movers.</p>
+      <HubHeroBanner
+        hub="move"
+        eyebrow={
+          <div className="inline-flex max-w-full items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700 sm:px-4 sm:text-sm">
+            <Truck className="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span className="truncate sm:whitespace-normal">
+              INDEPENDENT DIRECTORY · NO LEAD FEES · NO PAID PLACEMENTS
+            </span>
           </div>
+        }
+        title={
+          <h1 className="text-3xl font-semibold leading-[1.12] tracking-tighter sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+            Compare Trusted Interstate Movers
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>&amp; Research Your Move with Confidence
+          </h1>
+        }
+        description={
+          <>
+            An unbiased directory for researching{' '}
+            <Link
+              href="/resources/fmcsa"
+              className="text-foreground underline underline-offset-2 transition-colors hover:text-primary"
+            >
+              FMCSA-licensed movers
+            </Link>
+            , attributable reviews, and move costs. Use our{' '}
+            <Link
+              href="/moving-calculator"
+              className="text-foreground underline underline-offset-2 transition-colors hover:text-primary"
+            >
+              free moving calculator
+            </Link>{' '}
+            and{' '}
+            <Link
+              href="/companies"
+              className="text-foreground underline underline-offset-2 transition-colors hover:text-primary"
+            >
+              mover directory
+            </Link>{' '}
+            — we never sell your information to carriers.
+          </>
+        }
+      >
+        <div className="flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+          <Link href="/moving-calculator" className="w-full sm:w-auto">
+            <Button
+              size="lg"
+              className="h-12 min-h-[48px] w-full gap-2 px-8 text-base sm:h-14 sm:px-10"
+            >
+              Use Free Moving Calculator <ArrowRight className="h-5 w-5" aria-hidden="true" />
+            </Button>
+          </Link>
+          <Link href="/companies" className="w-full sm:w-auto">
+            <Button
+              size="lg"
+              variant="outline"
+              className="h-12 min-h-[48px] w-full gap-2 px-8 text-base sm:h-14"
+            >
+              Compare Trusted Movers
+            </Button>
+          </Link>
         </div>
-      </section>
+        <p className="text-sm font-medium text-muted-foreground">
+          Independent directory — not affiliated with listed movers.
+        </p>
+      </HubHeroBanner>
 
       {mapSection}
 

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
 import { HubZipSearch } from '@/components/hub/hub-zip-search';
 import { HubTrustBar } from '@/components/hub/hub-trust-bar';
 import { HubHowItWorks } from '@/components/hub/hub-how-it-works';
@@ -10,45 +11,38 @@ import { hubPath } from '@/lib/hub/paths';
 export function LenderHomePage() {
   return (
     <div>
-      <section className="relative border-b bg-gradient-to-br from-[#0A2540]/5 via-background to-emerald-500/5">
-        <div className="container mx-auto px-4 py-16 md:py-24">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
-              <Shield className="h-4 w-4" aria-hidden="true" />
-              NMLS VERIFIED • ZERO PAID PLACEMENTS • COUNTY INSIGHTS
-            </div>
-
-            <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-              Discover Honest Lenders
-              <br />
-              <span className="text-[#3B82F6]">in Your County</span>
-            </h1>
-
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Transparent data, confident choices. Compare verified local mortgage lenders
-              and brokers backed by NMLS licensing, CFPB complaints, BBB ratings, and
-              real reviews.
-            </p>
-
-            <HubZipSearch hub="lender" className="mx-auto mb-6 max-w-xl" />
-
-            <p className="mb-8 text-sm text-muted-foreground">
-              Trusted Local Lenders • Verified County Insights • National Expertise
-            </p>
-
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" asChild className="gap-2">
-                <Link href={hubPath('lender', '/calculators')}>
-                  Try Free Calculators <ArrowRight className="h-5 w-5" aria-hidden="true" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href={hubPath('lender', '/about')}>How We Verify Lenders</Link>
-              </Button>
-            </div>
+      <HubHeroBanner
+        hub="lender"
+        eyebrow={
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
+            <Shield className="h-4 w-4" aria-hidden="true" />
+            NMLS VERIFIED • ZERO PAID PLACEMENTS • COUNTY INSIGHTS
           </div>
+        }
+        title={
+          <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+            Discover Honest Lenders
+            <br />
+            <span className="text-[#3B82F6]">in Your County</span>
+          </h1>
+        }
+        description="Transparent data, confident choices. Compare verified local mortgage lenders and brokers backed by NMLS licensing, CFPB complaints, BBB ratings, and real reviews."
+      >
+        <HubZipSearch hub="lender" className="mx-auto max-w-xl lg:mx-0" />
+        <p className="text-sm text-muted-foreground">
+          Trusted Local Lenders • Verified County Insights • National Expertise
+        </p>
+        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+          <Button size="lg" asChild className="w-full gap-2 sm:w-auto">
+            <Link href={hubPath('lender', '/calculators')}>
+              Try Free Calculators <ArrowRight className="h-5 w-5" aria-hidden="true" />
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
+            <Link href={hubPath('lender', '/about')}>How We Verify Lenders</Link>
+          </Button>
         </div>
-      </section>
+      </HubHeroBanner>
 
       <HubTrustBar
         items={[
