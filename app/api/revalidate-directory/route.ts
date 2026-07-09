@@ -1,0 +1,34 @@
+import { revalidatePath, revalidateTag } from 'next/cache';
+import { NextRequest, NextResponse } from 'next/server';
+import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
+
+export const runtime = 'nodejs';
+
+/** POST /api/revalidate-directory — bust directory cache after DB cleanup (requires secret). */
+export async function POST(request: NextRequest) {
+  const secret = process.env.REVALIDATE_SECRET?.trim();
+  if (!secret) {
+    return NextResponse.json({ ok: false, error: 'REVALIDATE_SECRET not configured' }, { status: 503 });
+  }
+
+  const auth = request.headers.get('authorization');
+  const bearer = auth?.startsWith('Bearer ') ? auth.slice(7) : null;
+  const querySecret = request.nextUrl.searchParams.get('secret');
+  if (bearer !== secret && querySecret !== secret) {
+    return NextResponse.json({ ok: false, error: 'Unauthorized' }, { status: 401 });
+  }
+
+  revalidateTag(COMPANIES_DIRECTORY_TAG);
+  revalidatePath('/companies', 'page');
+  revalidatePath('/companies', 'layout');
+  revalidatePath('/compare', 'page');
+  revalidatePath('/sitemap.xml');
+
+  return NextResponse.json({
+    ok: true,
+    revalidated: true,
+    tag: COMPANIES_DIRECTORY_TAG,
+    paths: ['/companies', '/compare', '/sitemap.xml'],
+    at: new Date().toISOString(),
+  });
+}

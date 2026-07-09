@@ -14,7 +14,7 @@ export const revalidate = 60;
 
 const COMPANIES_TITLE = 'Directory of Interstate Moving Companies 2026';
 const COMPANIES_DESCRIPTION =
-  'Search all FMCSA-licensed movers nationwide — directory profiles plus curated local listings. Sort by reputation, rating, price, complaints, or years in business.';
+  'Search FMCSA-verified interstate movers with active operating authority. Sort by reputation, rating, price, complaints, or years in business.';
 
 export const metadata: Metadata = buildMovePageMetadata({
   title: COMPANIES_TITLE,
@@ -41,8 +41,8 @@ export default async function CompaniesDirectoryPage() {
           Interstate Moving Companies
         </h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          Search all FMCSA-licensed movers nationwide — directory profiles plus curated local
-          listings. Filter by coverage, services, price, and reputation. Click any company for a
+          Search FMCSA-verified interstate movers with active operating authority. Filter by
+          coverage, services, price, and reputation. Click any company for a
           full profile with{' '}
           <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
             FMCSA licensing
