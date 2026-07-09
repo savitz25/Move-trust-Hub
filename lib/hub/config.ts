@@ -1,6 +1,12 @@
 import type { HubConfig, HubId } from '@/lib/hub/types';
 import { hubPath } from '@/lib/hub/paths';
 
+/** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
+export const TRUST_HUB_LOGO = {
+  src: '/logo.png',
+  alt: 'Move Trust Hub — compare FMCSA-licensed interstate movers',
+} as const;
+
 const MOVE_NAV = [
   { href: '/companies', label: 'Movers Directory' },
   { href: '/local-movers', label: 'Local Movers' },
@@ -21,8 +27,8 @@ export const HUBS: Record<HubId, HubConfig> = {
     siteName: 'Move Trust Hub',
     shortName: 'Move',
     tagline: 'Independent directory for trusted interstate movers.',
-    logoSrc: '/logo.png',
-    logoAlt: 'Move Trust Hub — compare FMCSA-licensed interstate movers',
+    logoSrc: TRUST_HUB_LOGO.src,
+    logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-primary',
     homeTitle: 'Compare FMCSA-Licensed Movers (2026) | Independent Moving Directory',
     homeDescription:
@@ -59,8 +65,8 @@ export const HUBS: Record<HubId, HubConfig> = {
     siteName: 'Lender Trust Hub',
     shortName: 'Lender',
     tagline: 'NMLS-verified mortgage lenders and county-level insights.',
-    logoSrc: '/lender/brand/lender-trust-hub-logo-stacked-sm.png',
-    logoAlt: 'Lender Trust Hub — trusted local mortgage lenders',
+    logoSrc: TRUST_HUB_LOGO.src,
+    logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-[#3B82F6]',
     homeTitle: 'Trusted Local Mortgage Lenders (2026) | NMLS-Verified Directory',
     homeDescription:
@@ -105,8 +111,8 @@ export const HUBS: Record<HubId, HubConfig> = {
     siteName: 'Insurance Trust Hub',
     shortName: 'Insurance',
     tagline: 'DOI-verified agents with health insurance hub coverage.',
-    logoSrc: '/insurance/brand/insurance-trust-hub-logo-stacked-sm.png',
-    logoAlt: 'Insurance Trust Hub — verified local insurance agents',
+    logoSrc: TRUST_HUB_LOGO.src,
+    logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-emerald-600',
     homeTitle: 'Trusted Local Insurance Agents (2026) | DOI-Verified Directory',
     homeDescription:

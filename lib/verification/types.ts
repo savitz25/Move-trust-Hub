@@ -93,6 +93,8 @@ export type CompanyEnrichmentInput = {
   state?: string | null;
   phone?: string | null;
   usdotNumber?: string | null;
+  /** When set, fetches Place Details directly (required for service-area businesses). */
+  placeId?: string | null;
 };
 
 export type CompanyEnrichmentResult = {

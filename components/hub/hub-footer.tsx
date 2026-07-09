@@ -44,7 +44,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
               <span className="relative block h-12 w-[192px] shrink-0" aria-hidden="true">
                 <Image
                   src={hub.logoSrc}
-                  alt=""
+                  alt={hub.logoAlt}
                   width={192}
                   height={48}
                   loading="lazy"

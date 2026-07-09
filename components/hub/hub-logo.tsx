@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import type { HubId } from '@/lib/hub/types';
+import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
 import { getHubConfig } from '@/lib/hub/config';
+import type { HubId } from '@/lib/hub/types';
 
-/** Optimized header logo — caps requested width to avoid 3840px src requests. */
+/** Optimized header logo — shared Move Trust Hub mark across all hub sections. */
 export function HubLogo({
   hubId,
   priority = false,
@@ -16,13 +17,13 @@ export function HubLogo({
     <Image
       src={hub.logoSrc}
       alt={hub.logoAlt}
-      width={240}
-      height={60}
-      quality={75}
+      width={300}
+      height={75}
+      quality={DEFAULT_IMAGE_QUALITY}
       priority={priority}
       fetchPriority={priority ? 'high' : 'auto'}
-      sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 240px"
-      className="h-12 w-auto max-w-[240px] object-contain object-left transition-transform group-hover:scale-[1.02]"
+      sizes={IMAGE_SIZES.headerLogo}
+      className="h-12 w-auto max-w-[300px] object-contain object-left transition-transform group-hover:scale-[1.02]"
     />
   );
 }

@@ -1,9 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
+import { TRUST_HUB_LOGO } from '@/lib/hub/config';
 
-/**
- * Header logo: crisp emblem PNG + HTML wordmark (true transparency, no composite artifacts).
- * Matches LenderTrustHub.com logo treatment.
- */
+/** Header logo — same Move Trust Hub mark as the main site. */
 export function BrandLogo({
   href = '/',
   priority = false,
@@ -11,36 +11,22 @@ export function BrandLogo({
   href?: string;
   priority?: boolean;
 }) {
-  const load = priority ? 'eager' : 'lazy';
-
-  const inner = (
-    <span className="flex min-w-0 max-w-[min(340px,72vw)] items-center gap-2.5 sm:gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center sm:h-12 sm:w-12 md:h-[52px] md:w-[52px]">
-        <img
-          src="/insurance/brand/insurance-trust-hub-icon-192.png"
-          sizes="(max-width: 768px) 44px, 52px"
-          alt=""
-          aria-hidden="true"
-          width={192}
-          height={192}
-          className="h-full w-full object-contain object-center"
-          loading={load}
-          decoding="async"
-        />
-      </span>
-      <span className="flex min-w-0 flex-col justify-center gap-0.5 py-0.5">
-        <span className="truncate text-[15px] font-bold leading-tight tracking-tight text-[#0A2540] transition-colors group-hover:text-trust sm:text-base md:text-[17px]">
-          Insurance Trust Hub
-        </span>
-        <span className="text-[7px] font-semibold uppercase leading-tight tracking-[0.14em] text-muted-foreground sm:text-[8px] md:text-[9px]">
-          Verified Insurance Directories
-        </span>
-      </span>
-    </span>
+  const image = (
+    <Image
+      src={TRUST_HUB_LOGO.src}
+      alt={TRUST_HUB_LOGO.alt}
+      width={300}
+      height={75}
+      quality={DEFAULT_IMAGE_QUALITY}
+      priority={priority}
+      fetchPriority={priority ? 'high' : 'auto'}
+      sizes={IMAGE_SIZES.headerLogo}
+      className="h-12 w-auto max-w-[300px] object-contain object-left transition-transform group-hover:scale-[1.02]"
+    />
   );
 
   if (!href) {
-    return <div className="flex items-center">{inner}</div>;
+    return <div className="flex items-center">{image}</div>;
   }
 
   return (
@@ -49,23 +35,22 @@ export function BrandLogo({
       className="group flex shrink-0 items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-trust focus-visible:ring-offset-2 rounded-lg"
       aria-label="Insurance Trust Hub — home"
     >
-      {inner}
+      {image}
     </Link>
   );
 }
 
-/** Stacked logo for footer */
+/** Footer logo — same Move Trust Hub mark as the main site. */
 export function BrandLogoStacked({ className = '' }: { className?: string }) {
   return (
-    <img
-      src="/insurance/brand/insurance-trust-hub-logo-stacked-sm.png"
-      sizes="(max-width: 640px) 110px, 140px"
-      alt="Insurance Trust Hub"
-      width={600}
-      height={611}
-      className={`h-auto w-[100px] object-contain object-left py-1 sm:w-[130px] ${className}`}
+    <Image
+      src={TRUST_HUB_LOGO.src}
+      alt={TRUST_HUB_LOGO.alt}
+      width={192}
+      height={48}
       loading="lazy"
-      decoding="async"
+      sizes={IMAGE_SIZES.footerLogo}
+      className={`h-12 w-[192px] object-contain object-left ${className}`}
     />
   );
 }
