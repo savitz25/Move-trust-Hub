@@ -9,7 +9,7 @@ const HubAnalytics = dynamic(
 );
 
 export function DeferredHubAnalytics() {
-  const ready = useDeferredLoad({ idleTimeout: 5000, maxWait: 15000 });
+  const ready = useDeferredLoad({ idleTimeout: 1500, maxWait: 5000 });
 
   if (!ready) return null;
 

@@ -6,7 +6,7 @@ import { useCallback, useRef } from 'react';
  * Calculator analytics — GA4 events with consent gating.
  *
  * Consent: set localStorage.setItem('analytics_consent', 'granted') after user opt-in.
- * GA4: requires NEXT_PUBLIC_GA4_ID + GtagProvider in app/layout.tsx.
+ * GA4: uses gtag from GoogleAnalytics in app/layout.tsx (NEXT_PUBLIC_GA_MEASUREMENT_ID).
  *
  * SUPABASE_READY: mirror events to saved_scenarios table for logged-in users.
  */
@@ -96,9 +96,7 @@ export function trackCalcEvent(
 
   try {
     const w = window as GtagWindow;
-    const consent = hasAnalyticsConsent();
-
-    if (consent && typeof w.gtag === 'function') {
+    if (typeof w.gtag === 'function') {
       w.gtag('event', name, {
         event_category: 'calculators',
         ...safeParams,
@@ -108,7 +106,7 @@ export function trackCalcEvent(
     dispatchCalcEvent(name, safeParams);
 
     if (process.env.NODE_ENV === 'development') {
-      console.debug('[LTH Calc Analytics]', name, safeParams, { consent, gtag: !!w.gtag });
+      console.debug('[LTH Calc Analytics]', name, safeParams, { gtag: !!w.gtag });
     }
   } catch (err) {
     if (process.env.NODE_ENV === 'development') {

@@ -1,7 +1,7 @@
 # Redirect Readiness — movetrusthub.com
 
 **Primary site:** `https://www.movetrusthub.com`  
-**GA4:** `G-433BDVV8MJ` (see `components/ga-events.tsx`)  
+**GA4:** `G-433BDV8MJ` (see `lib/analytics/ga-config.ts`)  
 **Legacy domains (308 → subdirectories):** `lendertrusthub.com`, `insurancetrusthub.com`
 
 | Hub | URL prefix | Legacy domain |
@@ -84,7 +84,7 @@ Path aliases on movetrusthub.com itself (no host change):
 
 ## Verify GA4 Realtime
 
-1. Open [GA4 Realtime](https://analytics.google.com/) → property `G-433BDVV8MJ`
+1. Open [GA4 Realtime](https://analytics.google.com/) → property `G-433BDV8MJ`
 2. Visit `https://www.movetrusthub.com/`
 3. Confirm **1 active user** within ~30s
 4. Navigate to `/lender` → hub-dimensioned `page_view` (custom param `hub: lender`)
@@ -124,7 +124,7 @@ Remove legacy domains from Vercel project or disable host redirects in `vercel.j
 
 | Item | Status |
 |------|--------|
-| GA4 `G-433BDVV8MJ` + cross-domain linker | ✅ |
+| GA4 `G-433BDV8MJ` + cross-domain linker | ✅ |
 | Hub selector (Move \| Lender \| Insurance) | ✅ |
 | `/lender` + `/insurance` hub chrome | ✅ |
 | Legacy welcome banner (`?from=`) | ✅ |

@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { GA_CROSS_DOMAIN_LINKS, GA_MEASUREMENT_ID } from '@/components/ga-events';
+import { GA_CROSS_DOMAIN_LINKS, GA_MEASUREMENT_ID } from '@/lib/analytics/ga-config';
 
 /**
- * Loads gtag only after first user interaction — keeps it off the Lighthouse critical path.
+ * Legacy deferred loader — prefer GoogleAnalytics in app/layout.tsx.
+ * Kept for ThirdPartyOrchestrator / performance-flagged paths.
  */
 export function DeferredGtag() {
   const loadedRef = useRef(false);
@@ -27,7 +28,7 @@ export function DeferredGtag() {
       document.head.appendChild(script);
 
       gtag('config', GA_MEASUREMENT_ID, {
-        send_page_view: false,
+        send_page_view: true,
         linker: {
           domains: [...GA_CROSS_DOMAIN_LINKS],
         },

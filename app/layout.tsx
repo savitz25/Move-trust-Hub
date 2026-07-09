@@ -5,10 +5,10 @@ import { SchemaInjector } from '@/components/hub/schema-injector';
 
 import { buildTrustHubNetworkSchema } from '@/lib/hub/schemas';
 import { Suspense } from 'react';
+import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { DeferredHubAnalytics } from '@/components/hub/deferred-hub-analytics';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
-import { DeferredGtag } from '@/components/performance/deferred-gtag';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 
 // LCP hero uses font-semibold (600). Preload only 400 + 600 — drop 700 to save one font file.
@@ -55,9 +55,9 @@ export default function RootLayout({
         >
           {children}
         </Suspense>
+        <GoogleAnalytics />
         <DeferredHubAnalytics />
         <DeferredWidgets />
-        <DeferredGtag />
         <DeferredAnalytics />
       </body>
     </html>

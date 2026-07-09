@@ -1,16 +1,9 @@
 'use client';
 
-export const GA_MEASUREMENT_ID = 'G-433BDVV8MJ';
-
-/** Cross-domain linker — preserves GA4 sessions across 308 legacy → movetrusthub.com */
-export const GA_CROSS_DOMAIN_LINKS = [
-  'movetrusthub.com',
-  'www.movetrusthub.com',
-  'lendertrusthub.com',
-  'www.lendertrusthub.com',
-  'insurancetrusthub.com',
-  'www.insurancetrusthub.com',
-] as const;
+export {
+  GA_CROSS_DOMAIN_LINKS,
+  GA_MEASUREMENT_ID,
+} from '@/lib/analytics/ga-config';
 
 type GaEventParams = Record<string, string | number | boolean | undefined | null>;
 
