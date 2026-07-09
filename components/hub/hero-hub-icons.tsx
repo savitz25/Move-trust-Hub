@@ -4,7 +4,7 @@ type HeroIconProps = {
   className?: string;
 };
 
-/** Interstate moving — delivery truck with packed boxes. */
+/** Interstate moving — box truck with cargo bay, cab, and packed boxes. */
 export function MovingHeroIcon({ className }: HeroIconProps) {
   return (
     <svg
@@ -14,24 +14,46 @@ export function MovingHeroIcon({ className }: HeroIconProps) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <rect x="6" y="26" width="32" height="16" rx="2.5" fill="#0077D4" />
-      <path d="M38 26h11l5 7v9H38V26Z" fill="#003366" />
-      <rect x="10" y="29" width="7" height="7" rx="1" fill="#B8E4FF" />
-      <rect x="19" y="29" width="7" height="7" rx="1" fill="#B8E4FF" />
-      <rect x="28" y="29" width="6" height="7" rx="1" fill="#B8E4FF" />
-      <circle cx="17" cy="44" r="3.5" fill="#003366" />
-      <circle cx="17" cy="44" r="1.5" fill="#F7F8FA" />
-      <circle cx="45" cy="44" r="3.5" fill="#003366" />
-      <circle cx="45" cy="44" r="1.5" fill="#F7F8FA" />
-      <path d="M4 20h10l3.5 6H4V20Z" fill="#00C6FF" />
+      {/* Cargo box — tall moving van body */}
+      <rect x="7" y="15" width="30" height="24" rx="2" fill="#0077D4" />
+      <path d="M7 19h30" stroke="#005FA3" strokeWidth="1.25" />
       <path
-        d="M50 16h7v5h-7l-1.5-2.5L50 16Z"
-        fill="#0077D4"
+        d="M12 22h20M12 27h20M12 32h20"
+        stroke="#B8E4FF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
       />
+
+      {/* Cab — separate from cargo (box-truck profile) */}
+      <path d="M37 22h13l5 6v11H37V22Z" fill="#003366" />
+      <path d="M39 24h9l3.5 4.5V33H39V24Z" fill="#B8E4FF" />
+      <path d="M37 22v17" stroke="#005FA3" strokeWidth="1.25" />
+
+      {/* Bumper & exhaust stack */}
+      <rect x="52" y="34" width="3" height="3" rx="0.75" fill="#003366" />
+      <rect x="54" y="26" width="1.5" height="6" rx="0.75" fill="#64748B" />
+
+      {/* Wheels — rear axle + front cab axle */}
+      <circle cx="18" cy="43" r="4" fill="#003366" />
+      <circle cx="18" cy="43" r="2" fill="#F7F8FA" />
+      <circle cx="46" cy="43" r="4" fill="#003366" />
+      <circle cx="46" cy="43" r="2" fill="#F7F8FA" />
+
+      {/* Packed boxes beside the truck */}
+      <rect x="4" y="30" width="6" height="6" rx="1" fill="#00C6FF" />
+      <rect x="4" y="24" width="5" height="5" rx="1" fill="#4DB8FF" />
       <path
-        d="M52 14v8M55.5 16l3.5-1.5v5l-3.5-1.5"
-        stroke="#003366"
-        strokeWidth="1.75"
+        d="M5 27h3M5.5 25.5v3"
+        stroke="#0077D4"
+        strokeWidth="0.75"
+        strokeLinecap="round"
+      />
+
+      {/* Motion arrow — interstate move */}
+      <path
+        d="M54 14h6M58 12l3 2-3 2"
+        stroke="#0077D4"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
