@@ -1,8 +1,18 @@
-import Image from 'next/image';
 import type { ReactNode } from 'react';
+import {
+  InsuranceHeroIcon,
+  LendingHeroIcon,
+  MovingHeroIcon,
+} from '@/components/hub/hero-hub-icons';
 import { HUB_HERO_PRESETS } from '@/lib/hub/hero-presets';
 import type { HubId } from '@/lib/hub/types';
 import { cn } from '@/lib/utils';
+
+const HUB_HERO_ICONS = {
+  move: MovingHeroIcon,
+  lender: LendingHeroIcon,
+  insurance: InsuranceHeroIcon,
+} as const;
 
 export type HubHeroBannerProps = {
   hub: HubId;
@@ -14,8 +24,7 @@ export type HubHeroBannerProps = {
 };
 
 /**
- * Two-column hub hero — copy left, section label + circular emblem right.
- * Matches the clean off-white reference layout across Move, Lender, and Insurance.
+ * Two-column hub hero — copy left, section label + circular concept icon right.
  */
 export function HubHeroBanner({
   hub,
@@ -26,14 +35,10 @@ export function HubHeroBanner({
   className,
 }: HubHeroBannerProps) {
   const preset = HUB_HERO_PRESETS[hub];
+  const Icon = HUB_HERO_ICONS[hub];
 
   return (
-    <section
-      className={cn(
-        'relative border-b bg-[#F7F8FA]',
-        className
-      )}
-    >
+    <section className={cn('relative border-b bg-[#F7F8FA]', className)}>
       <div className="container mx-auto px-4 py-12 sm:py-14 md:py-16 lg:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-12 xl:gap-16">
           <div className="order-2 mx-auto w-full max-w-2xl text-center lg:order-1 lg:mx-0 lg:max-w-none lg:text-left">
@@ -61,24 +66,20 @@ export function HubHeroBanner({
                   'relative flex h-44 w-44 items-center justify-center rounded-full bg-white sm:h-52 sm:w-52 md:h-60 md:w-60 lg:h-64 lg:w-64',
                   'shadow-trust-lg ring-1 ring-black/[0.06]'
                 )}
-                aria-hidden="true"
               >
                 <div
                   className={cn(
                     'absolute inset-2 rounded-full bg-gradient-to-br opacity-90',
                     preset.ringGradient
                   )}
+                  aria-hidden="true"
                 />
-                <div className="relative z-10 flex h-[62%] w-[62%] items-center justify-center rounded-full bg-white/80 p-3 shadow-sm ring-1 ring-black/[0.04]">
-                  <Image
-                    src={preset.iconSrc}
-                    alt={preset.iconAlt}
-                    width={192}
-                    height={192}
-                    priority
-                    sizes="(max-width: 640px) 140px, (max-width: 1024px) 180px, 220px"
-                    className="h-full w-full object-contain"
-                  />
+                <div
+                  className="relative z-10 flex h-[58%] w-[58%] items-center justify-center rounded-full bg-white/90 p-4 shadow-sm ring-1 ring-black/[0.04]"
+                  role="img"
+                  aria-label={preset.iconLabel}
+                >
+                  <Icon className="h-full w-full" />
                 </div>
               </div>
             </div>
