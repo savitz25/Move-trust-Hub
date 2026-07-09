@@ -129,6 +129,7 @@ export const HUBS: Record<HubId, HubConfig> = {
       { href: hubPath('insurance', '/hubs'), label: 'Health Hubs' },
       { href: hubPath('insurance', '/hubs/browse'), label: 'State Browser' },
       { href: hubPath('insurance', '/calculators'), label: 'Calculators' },
+      { href: hubPath('insurance', '/resources'), label: 'Resources' },
       { href: hubPath('insurance', '/about'), label: 'Trust & Transparency' },
       { href: hubPath('insurance', '/contact'), label: 'Contact' },
     ],
@@ -144,7 +145,11 @@ export const HUBS: Record<HubId, HubConfig> = {
       {
         title: 'RESOURCES',
         links: [
-          { href: hubPath('insurance', '/resources'), label: 'Guides' },
+          { href: hubPath('insurance', '/resources'), label: 'All Guides' },
+          {
+            href: hubPath('insurance', '/resources/how-to-choose-health-insurance-plan'),
+            label: 'Choose a Health Plan',
+          },
           { href: hubPath('insurance', '/calculators'), label: 'Calculators' },
           { href: hubPath('insurance', '/about'), label: 'How We Verify' },
         ],

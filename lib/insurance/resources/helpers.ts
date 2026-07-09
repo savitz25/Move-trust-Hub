@@ -40,7 +40,7 @@ export function getRelatedArticles(article: Article, limit = 3): Article[] {
 export function getFeaturedResourceSlugs(): string[] {
   return [
     'medicare-advantage-vs-medigap',
-    'health-insurance-2026-guide',
+    'how-to-choose-health-insurance-plan',
     'aca-obamacare-guide',
     'how-to-choose-insurance-agent',
   ];

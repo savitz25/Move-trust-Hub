@@ -27,8 +27,8 @@ export const INSURANCE_SECTION_PRESETS: Record<
         description: 'Side-by-side comparison for seniors',
       },
       {
-        href: hubPath('insurance', '/resources/health-insurance-2026-guide'),
-        label: 'Health insurance 2026',
+        href: hubPath('insurance', '/resources/how-to-choose-health-insurance-plan'),
+        label: 'Choose a health plan',
       },
       {
         href: hubPath('insurance', '/resources/aca-obamacare-guide'),

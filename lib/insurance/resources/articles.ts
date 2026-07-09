@@ -310,36 +310,49 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
-    slug: 'health-insurance-2026-guide',
-    title: 'Health Insurance Guide 2026: ACA, Employer & Individual Plans',
+    slug: 'how-to-choose-health-insurance-plan',
+    title:
+      'How to Choose the Right Health Insurance Plan in 2026: Key Factors, Networks & Cost Comparison Guide',
     description:
-      'Navigate 2026 health insurance options — marketplace subsidies, employer open enrollment, and when to use a licensed agent.',
-    publishedAt: '2026-05-01',
-    updatedAt: '2026-07-01',
-    readTime: '11 min',
+      'Learn how to select the best health insurance plan in 2026. Compare metal tiers, networks, deductibles, premiums, and subsidies. Use independent tools on our platform for transparent side-by-side comparisons and personalized guidance.',
+    publishedAt: '2026-07-09',
+    updatedAt: '2026-07-09',
+    readTime: '14 min',
     category: 'Health Insurance',
     sections: [
       {
-        heading: 'Your 2026 coverage options',
+        heading: 'Understanding health plan metal tiers',
         content:
-          'Most Americans get coverage through an employer, the ACA marketplace, Medicare (65+), or Medicaid. Each path has different enrollment windows, network rules, and subsidy mechanics. Independent agents help compare all available paths in your ZIP code.',
+          'ACA marketplace plans are categorized into Bronze, Silver, Gold, and Platinum tiers that indicate how costs are split between you and the insurer. Compare total annual costs — premiums plus expected out-of-pocket spending — not premiums alone.',
         bullets: [
-          'Employer-sponsored group plans',
-          'ACA marketplace (HealthCare.gov or state exchange)',
-          'Medicare Advantage, supplement, and Part D',
-          'Short-term and gap coverage between jobs',
+          'Bronze (60% plan / 40% you) — lowest premiums, highest deductibles',
+          'Silver (70% plan / 30% you) — moderate balance; cost-sharing reductions for lower incomes',
+          'Gold (80% plan / 20% you) — higher premiums, lower out-of-pocket costs',
+          'Platinum (90% plan / 10% you) — highest premiums, lowest out-of-pocket costs',
         ],
       },
       {
-        heading: 'When to use an agent',
+        heading: 'Provider networks and access',
         content:
-          'Complex households — mixed employer/part-time income, immigration status questions, or chronic-condition network needs — benefit from agent guidance at no direct cost to you (agents earn carrier commissions).',
+          'Network type determines flexibility and costs for in-network versus out-of-network care. Verify preferred doctors, hospitals, and prescriptions before enrolling.',
+        bullets: [
+          'HMO — lower costs, PCP referrals, limited out-of-network',
+          'PPO — greater provider flexibility, no referrals required',
+          'EPO — no out-of-network except emergencies',
+          'POS — hybrid HMO/PPO model',
+        ],
+      },
+      {
+        heading: 'Step-by-step plan comparison',
+        content:
+          'Assess your medical needs, check subsidy eligibility, compare plans side-by-side, verify provider directories, and read exclusions before enrolling during open enrollment.',
       },
     ],
     relatedLinks: [
       { href: '/insurance/hubs/health-insurance', label: 'Health Insurance Hubs' },
+      { href: '/insurance/calculators/aca-subsidy', label: 'ACA Subsidy Calculator' },
       { href: '/insurance/tools/aca-eligibility-checker', label: 'ACA Eligibility Checker' },
-      { href: '/insurance/hubs/florida/miami-dade', label: 'Miami-Dade Agents' },
+      { href: '/insurance/directory', label: 'Agency Directory' },
     ],
   },
   {

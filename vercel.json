@@ -264,12 +264,17 @@
     },
     {
       "source": "/resources/how-to-choose-health-insurance",
-      "destination": "/insurance/resources/health-insurance-2026-guide",
+      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
       "permanent": true
     },
     {
       "source": "/insurance/resources/how-to-choose-health-insurance",
-      "destination": "/insurance/resources/health-insurance-2026-guide",
+      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
+      "permanent": true
+    },
+    {
+      "source": "/insurance/resources/health-insurance-2026-guide",
+      "destination": "/insurance/resources/how-to-choose-health-insurance-plan",
       "permanent": true
     },
     {

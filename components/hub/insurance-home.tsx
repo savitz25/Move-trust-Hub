@@ -35,9 +35,10 @@ const FEATURED_HUBS = [
 
 const FEATURED_ARTICLES = [
   {
-    slug: 'how-to-choose-health-insurance',
-    title: 'How to Choose Health Insurance',
-    description: 'Compare ACA, employer, and Medicare options with licensing checks.',
+    slug: 'how-to-choose-health-insurance-plan',
+    title: 'How to Choose a Health Insurance Plan',
+    description:
+      'Compare metal tiers, networks, deductibles, premiums, and subsidies for 2026 coverage.',
   },
   {
     slug: 'understanding-aca-subsidies',
