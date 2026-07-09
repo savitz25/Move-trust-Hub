@@ -6,11 +6,13 @@ import {
 } from '@/lib/fmcsa/refresh/batch-fields';
 import { fetchFmcsaCarrierForCompany } from '@/lib/fmcsa/refresh/fetch-company';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
+import { INACTIVE_DOT_NO_MATCH_REASON } from '@/lib/fmcsa/refresh/inactive-dot';
 import type {
   BatchCompanyOutcome,
   BatchRefreshOptions,
   BatchRefreshResult,
   CompanyRefreshRow,
+  InactiveDotRemovalRecord,
 } from '@/lib/fmcsa/refresh/types';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
@@ -99,7 +101,30 @@ function buildFmcsaUpdatePayload(
     payload.mc_number = nextMc;
   }
 
+  const nextDot = snapshot.dotNumber?.replace(/\D/g, '') || null;
+  const prevDot = company.usdot_number?.replace(/\D/g, '') || null;
+  if (nextDot && nextDot !== prevDot) {
+    payload.usdot_number = nextDot;
+  }
+
   return payload;
+}
+
+function buildRemovalRecord(
+  company: CompanyRefreshRow,
+  fetchResult: Awaited<ReturnType<typeof fetchFmcsaCarrierForCompany>>
+): InactiveDotRemovalRecord {
+  return {
+    id: company.id,
+    slug: company.slug,
+    name: company.name,
+    usdot_number: company.usdot_number,
+    mc_number: company.mc_number,
+    headquarters: company.headquarters ?? null,
+    reason: fetchResult.removalReason ?? INACTIVE_DOT_NO_MATCH_REASON,
+    inactiveDot: fetchResult.inactiveDot ?? company.usdot_number ?? undefined,
+    inactiveSaferMessage: fetchResult.inactiveSaferMessage,
+  };
 }
 
 export async function runFmcsaBatchRefresh(
@@ -123,8 +148,11 @@ export async function runFmcsaBatchRefresh(
       companiesUpdated: 0,
       companiesUnchanged: 0,
       companiesFailed: 0,
+      companiesRemoved: 0,
+      companiesDotCorrected: 0,
       changesDetected: 0,
       errors: ['SUPABASE_SERVICE_ROLE_KEY not configured'],
+      removals: [],
       durationMs: Date.now() - started,
       outcomes,
       nextOffset: offset + batch,
@@ -142,8 +170,11 @@ export async function runFmcsaBatchRefresh(
       companiesUpdated: 0,
       companiesUnchanged: 0,
       companiesFailed: 0,
+      companiesRemoved: 0,
+      companiesDotCorrected: 0,
       changesDetected: 0,
       errors: ['FMCSA_WEB_KEY not configured'],
+      removals: [],
       durationMs: Date.now() - started,
       outcomes,
       nextOffset: offset + batch,
@@ -158,7 +189,10 @@ export async function runFmcsaBatchRefresh(
   let updated = 0;
   let unchanged = 0;
   let failed = 0;
+  let removed = 0;
+  let dotCorrected = 0;
   let changesDetected = 0;
+  const removals: InactiveDotRemovalRecord[] = [];
 
   for (let i = 0; i < companies.length; i++) {
     const company = companies[i]!;
@@ -186,6 +220,7 @@ export async function runFmcsaBatchRefresh(
       headquarters: company.headquarters,
       fmcsaLastChecked: company.fmcsa_last_checked,
       fmcsaRaw: company.fmcsa_raw ?? null,
+      batchMode: true,
     });
 
     if (fetchResult.lookupMethod === 'skipped_existing') {
@@ -203,6 +238,55 @@ export async function runFmcsaBatchRefresh(
 
     const snapshot = fetchResult.snapshot;
     if (!snapshot) {
+      if (fetchResult.removeCandidate) {
+        const removal = buildRemovalRecord(company, fetchResult);
+        removals.push(removal);
+
+        if (dryRun) {
+          outcomes.push({
+            index: offset + i + 1,
+            company,
+            status: 'would_remove',
+            lookupMethod: fetchResult.lookupMethod,
+            removal,
+            changes: [],
+            error: fetchResult.error,
+          });
+        } else {
+          const { error: deleteError } = await supabase
+            .from('companies')
+            .delete()
+            .eq('id', company.id);
+
+          if (deleteError) {
+            failed++;
+            const error = `Remove failed — ${deleteError.message}`;
+            errors.push(`${company.slug}: ${error}`);
+            outcomes.push({
+              index: offset + i + 1,
+              company,
+              status: 'failed',
+              removal,
+              changes: [],
+              error,
+            });
+            continue;
+          }
+
+          removed++;
+          outcomes.push({
+            index: offset + i + 1,
+            company,
+            status: 'removed',
+            lookupMethod: fetchResult.lookupMethod,
+            removal,
+            changes: [],
+            error: fetchResult.error,
+          });
+        }
+        continue;
+      }
+
       failed++;
       const error =
         fetchResult.error ?? `FMCSA lookup failed for DOT ${dot} — existing data preserved`;
@@ -241,8 +325,12 @@ export async function runFmcsaBatchRefresh(
     changesDetected += fieldChanges.length;
 
     const updatePayload = buildFmcsaUpdatePayload(company, snapshot, dataHash);
+    const correctedDot = Boolean(fetchResult.dotCorrected);
+    if (correctedDot) dotCorrected++;
     const hasMeaningfulChanges =
-      fieldChanges.length > 0 || company.data_hash !== dataHash;
+      fieldChanges.length > 0 ||
+      company.data_hash !== dataHash ||
+      correctedDot;
 
     if (dryRun) {
       outcomes.push({
@@ -251,6 +339,8 @@ export async function runFmcsaBatchRefresh(
         status: 'dry_run',
         lookupMethod: fetchResult.lookupMethod,
         nameMatch: nameMatchSummary,
+        dotCorrected: correctedDot,
+        previousDot: fetchResult.previousDot,
         changes: fieldChanges,
         displayFields,
       });
@@ -298,6 +388,8 @@ export async function runFmcsaBatchRefresh(
         status: 'updated',
         lookupMethod: fetchResult.lookupMethod,
         nameMatch: nameMatchSummary,
+        dotCorrected: correctedDot,
+        previousDot: fetchResult.previousDot,
         changes: fieldChanges,
         displayFields,
       });
@@ -309,9 +401,25 @@ export async function runFmcsaBatchRefresh(
         status: 'unchanged',
         lookupMethod: fetchResult.lookupMethod,
         nameMatch: nameMatchSummary,
+        dotCorrected: correctedDot,
+        previousDot: fetchResult.previousDot,
         changes: [],
         displayFields,
       });
+    }
+  }
+
+  if (!dryRun && (removed > 0 || updated > 0)) {
+    try {
+      const { revalidatePath, revalidateTag } = await import('next/cache');
+      const { COMPANIES_DIRECTORY_TAG } = await import('@/lib/directory/revalidate-company');
+      revalidateTag(COMPANIES_DIRECTORY_TAG);
+      revalidatePath('/companies', 'page');
+      revalidatePath('/companies', 'layout');
+      revalidatePath('/verify-dot', 'page');
+      revalidatePath('/sitemap.xml');
+    } catch {
+      // CLI scripts run outside Next.js request context
     }
   }
 
@@ -325,8 +433,11 @@ export async function runFmcsaBatchRefresh(
     companiesUpdated: updated,
     companiesUnchanged: unchanged,
     companiesFailed: failed,
+    companiesRemoved: removed,
+    companiesDotCorrected: dotCorrected,
     changesDetected,
     errors,
+    removals,
     durationMs: Date.now() - started,
     outcomes,
     nextOffset: offset + companies.length,

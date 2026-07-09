@@ -100,6 +100,15 @@ function printOutcome(outcome: BatchCompanyOutcome, position: number, total: num
     return;
   }
 
+  if (outcome.status === 'removed' || outcome.status === 'would_remove') {
+    const reason = outcome.removal?.reason ?? 'Inactive DOT with no name match';
+    console.log(`  - REMOVED: ${reason}`);
+    if (outcome.removal?.inactiveDot) {
+      console.log(`    inactive USDOT: ${outcome.removal.inactiveDot}`);
+    }
+    return;
+  }
+
   if (outcome.status === 'skipped_existing') {
     console.log(`  ~ ${outcome.error ?? 'Existing FMCSA data preserved (USDOT lookup failed)'}`);
     return;
@@ -107,8 +116,11 @@ function printOutcome(outcome: BatchCompanyOutcome, position: number, total: num
 
   if (outcome.lookupMethod === 'name_search' && outcome.nameMatch) {
     const m = outcome.nameMatch;
+    const dotNote = outcome.dotCorrected && outcome.previousDot
+      ? ` (corrected DOT ${outcome.previousDot} → ${m.matchedDot})`
+      : '';
     console.log(
-      `  + Fetched via NAME SEARCH (query="${m.query}", matched DOT ${m.matchedDot}, ${m.matchedLegalName}, confidence ${m.confidence.toFixed(2)})`
+      `  + Fetched via NAME SEARCH (query="${m.query}", matched DOT ${m.matchedDot}, ${m.matchedLegalName}, confidence ${m.confidence.toFixed(2)})${dotNote}`
     );
   } else {
     console.log('  + Fetched from FMCSA API (USDOT lookup)');
@@ -132,9 +144,9 @@ async function main() {
   console.log(`Batch size: ${batch}`);
   console.log(`Offset: ${offset}`);
   console.log(`Dry run: ${dryRun ? 'yes (no writes)' : 'no (will write on success)'}`);
-  console.log('Safety: failed API lookups never overwrite existing company data.');
+  console.log('Inactive DOT rule: SAFER inactive USDOT → name+state search → remove if no confident match.');
   console.log(
-    'Fallback: when USDOT fails, tries FMCSA name search with city/state fuzzy matching (high confidence only).'
+    'Fallback: when USDOT is inactive/missing, tries FMCSA name search with city/state fuzzy matching (high confidence only).'
   );
   console.log(
     'Fields updated on success: entity type, USDOT status, power units, MC number, authority, safety rating, complaints, fmcsa_raw, and related FMCSA columns.'
@@ -164,6 +176,8 @@ async function main() {
   console.log(`Updated: ${result.companiesUpdated}`);
   console.log(`Unchanged: ${result.companiesUnchanged}`);
   console.log(`Failed: ${result.companiesFailed}`);
+  console.log(`Removed (inactive DOT, no name match): ${result.companiesRemoved}`);
+  console.log(`DOT corrected via name search: ${result.companiesDotCorrected}`);
   console.log(`Field changes detected: ${result.changesDetected}`);
   const nameRecovered = result.outcomes.filter((o) => o.lookupMethod === 'name_search').length;
   const skippedExisting = result.outcomes.filter((o) => o.status === 'skipped_existing').length;

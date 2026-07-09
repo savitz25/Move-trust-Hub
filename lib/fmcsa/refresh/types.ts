@@ -86,10 +86,29 @@ export type BatchRefreshOptions = {
   dryRun?: boolean;
 };
 
+export type InactiveDotRemovalRecord = {
+  id: string;
+  slug: string;
+  name: string;
+  usdot_number: string | null;
+  mc_number: string | null;
+  headquarters: string | null;
+  reason: string;
+  inactiveDot?: string;
+  inactiveSaferMessage?: string | null;
+};
+
 export type BatchCompanyOutcome = {
   index: number;
   company: CompanyRefreshRow;
-  status: 'updated' | 'unchanged' | 'failed' | 'dry_run' | 'skipped_existing';
+  status:
+    | 'updated'
+    | 'unchanged'
+    | 'failed'
+    | 'dry_run'
+    | 'skipped_existing'
+    | 'removed'
+    | 'would_remove';
   lookupMethod?: 'dot' | 'name_search' | 'skipped_existing';
   nameMatch?: {
     query: string;
@@ -97,6 +116,9 @@ export type BatchCompanyOutcome = {
     matchedDot: string;
     confidence: number;
   };
+  removal?: InactiveDotRemovalRecord;
+  dotCorrected?: boolean;
+  previousDot?: string;
   changes: FieldChange[];
   error?: string;
   displayFields?: {
@@ -120,8 +142,11 @@ export type BatchRefreshResult = {
   companiesUpdated: number;
   companiesUnchanged: number;
   companiesFailed: number;
+  companiesRemoved: number;
+  companiesDotCorrected: number;
   changesDetected: number;
   errors: string[];
+  removals: InactiveDotRemovalRecord[];
   durationMs: number;
   outcomes: BatchCompanyOutcome[];
   nextOffset: number;

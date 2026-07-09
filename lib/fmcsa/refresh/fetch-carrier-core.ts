@@ -1,6 +1,12 @@
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
+import {
+  classifyDotLookupResponse,
+  type DotLookupResult,
+} from '@/lib/fmcsa/refresh/inactive-dot';
 import type { FmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/types';
 import { FMCSA_REFRESH_CONFIG, sleep } from '@/lib/fmcsa/refresh/rate-limit';
+
+export type { DotLookupResult } from '@/lib/fmcsa/refresh/inactive-dot';
 
 type FmcsaApiCarrier = {
   dotNumber?: number | string;
@@ -90,14 +96,26 @@ async function fetchJson<T>(url: string): Promise<T | null> {
   }
 }
 
+export async function lookupCarrierByDot(
+  dot: string,
+  webKey: string
+): Promise<DotLookupResult & { carrier: FmcsaApiCarrier | null }> {
+  const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
+  const url = `${base}/${encodeURIComponent(dot)}?webKey=${encodeURIComponent(webKey)}`;
+  const json = await fetchJson<Record<string, unknown>>(url);
+  const classified = classifyDotLookupResponse(dot, json);
+  return {
+    ...classified,
+    carrier: (classified.carrier as FmcsaApiCarrier | null) ?? null,
+  };
+}
+
 export async function fetchCarrierByDot(
   dot: string,
   webKey: string
 ): Promise<FmcsaApiCarrier | null> {
-  const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
-  const url = `${base}/${encodeURIComponent(dot)}?webKey=${encodeURIComponent(webKey)}`;
-  const json = await fetchJson<{ content?: { carrier?: FmcsaApiCarrier } }>(url);
-  return json?.content?.carrier ?? null;
+  const result = await lookupCarrierByDot(dot, webKey);
+  return result.carrier;
 }
 
 async function fetchCarrierByMc(
@@ -278,9 +296,12 @@ export async function fetchFmcsaCarrierByParsed(
       }
 
       const dot = parsed.value.replace(/\D/g, '');
-      const carrier = await fetchCarrierByDot(dot, webKey);
+      const lookup = await lookupCarrierByDot(dot, webKey);
+      const carrier = lookup.carrier;
       if (!carrier?.legalName) {
-        lastError = new Error(`No carrier data for DOT ${dot}`);
+        lastError = new Error(
+          lookup.saferMessage ?? `No carrier data for DOT ${dot}`
+        );
         continue;
       }
 
