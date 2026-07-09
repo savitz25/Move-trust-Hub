@@ -48,7 +48,7 @@ export const guides: GuideEntry[] = [
     excerpt: 'A step-by-step framework using reputation scores, licensing verification, and quote evaluation.',
     category: 'Buying Guide',
     href: '/resources/how-to-choose',
-    related: ['carrier-vs-broker', 'fmcsa', 'scams', 'move-size-weight', 'routes'],
+    related: ['carrier-vs-broker', 'fmcsa', 'interstate-moving-insurance', 'scams', 'move-size-weight', 'routes'],
   },
   {
     slug: 'carrier-vs-broker',
@@ -73,7 +73,17 @@ export const guides: GuideEntry[] = [
     excerpt: 'What USDOT numbers, safety ratings, and complaint ratios mean when choosing a long-distance mover.',
     category: 'Regulation',
     href: '/resources/fmcsa',
-    related: ['how-to-choose', 'scams', 'routes'],
+    related: ['interstate-moving-insurance', 'how-to-choose', 'scams', 'routes'],
+  },
+  {
+    slug: 'interstate-moving-insurance',
+    title:
+      'Interstate Moving Insurance Explained: Valuation Options, Coverage Limits & What to Choose in 2026',
+    excerpt:
+      'Compare FMCSA Released Value vs. Full Value Protection, coverage limits, costs, third-party options, and how to choose the right level for your belongings.',
+    category: 'Regulation',
+    href: '/resources/interstate-moving-insurance',
+    related: ['fmcsa', 'how-to-choose', 'carrier-vs-broker', 'interstate-moving-costs', 'checklist'],
   },
   {
     slug: 'checklist',

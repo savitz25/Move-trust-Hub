@@ -46,6 +46,7 @@ export const MOVE_RESOURCE_SLUGS = new Set([
   'packing-checklist',
   'checklist',
   'carrier-vs-broker',
+  'interstate-moving-insurance',
   'fmcsa',
   'scams',
   'routes',
