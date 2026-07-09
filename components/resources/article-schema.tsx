@@ -1,4 +1,7 @@
 import { JsonLd } from '@/lib/seo/json-ld';
+import { hubCanonicalUrl } from '@/lib/hub/paths';
+import type { HubId } from '@/lib/hub/types';
+import { getSiteNameForHub } from '@/lib/seo/site-metadata';
 
 const SITE_URL = 'https://www.movetrusthub.com';
 
@@ -6,14 +9,19 @@ export function ArticleSchema({
   title,
   description,
   path,
+  hub = 'move',
   datePublished = '2026-06-01',
 }: {
   title: string;
   description: string;
   path: string;
+  hub?: HubId;
   datePublished?: string;
 }) {
-  const url = `${SITE_URL}${path}`;
+  const url = path.startsWith('http') ? path : `${SITE_URL}${path}`;
+  const siteName = getSiteNameForHub(hub);
+  const homeUrl = hub === 'move' ? SITE_URL : hubCanonicalUrl(hub, '/');
+  const resourcesUrl = hubCanonicalUrl(hub, '/resources');
 
   return (
     <JsonLd
@@ -23,8 +31,8 @@ export function ArticleSchema({
           {
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Resources', item: `${SITE_URL}/resources` },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: homeUrl },
+              { '@type': 'ListItem', position: 2, name: 'Resources', item: resourcesUrl },
               { '@type': 'ListItem', position: 3, name: title, item: url },
             ],
           },
@@ -37,12 +45,12 @@ export function ArticleSchema({
             dateModified: new Date().toISOString().split('T')[0],
             author: {
               '@type': 'Organization',
-              name: 'Move Trust Hub',
-              url: SITE_URL,
+              name: siteName,
+              url: homeUrl,
             },
             publisher: {
               '@type': 'Organization',
-              name: 'Move Trust Hub',
+              name: siteName,
               logo: {
                 '@type': 'ImageObject',
                 url: `${SITE_URL}/logo.png`,

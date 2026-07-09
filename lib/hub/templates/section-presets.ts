@@ -119,6 +119,44 @@ export const INSURANCE_SECTION_PRESETS: Record<
 };
 
 export const LENDER_SECTION_PRESETS: Partial<Record<HubSectionPreset['section'], HubSectionPreset>> = {
+  resources: {
+    hub: 'lender',
+    section: 'resources',
+    eyebrow: 'Lender Trust Hub · Guides',
+    title: 'Mortgage lender resources & guides',
+    description:
+      'Independent guides on NMLS verification, lender comparison, and home financing decisions. Educational content only — verify licensing through NMLS Consumer Access.',
+    primaryCta: {
+      href: hubPath('lender', '/resources'),
+      label: 'Browse all guides',
+    },
+    secondaryCta: {
+      href: hubPath('lender', '/local-lenders'),
+      label: 'Lender directory',
+    },
+    links: [
+      {
+        href: hubPath('lender', '/resources/how-to-choose-mortgage-lender'),
+        label: 'How to choose a mortgage lender',
+        description: 'Key factors, red flags & comparison tips for 2026',
+      },
+      {
+        href: hubPath('lender', '/compare'),
+        label: 'Side-by-side lender comparison',
+      },
+      {
+        href: hubPath('lender', '/about#nmls'),
+        label: 'NMLS verification guide',
+      },
+    ],
+    faq: [
+      {
+        question: 'Does Lender Trust Hub originate loans?',
+        answer:
+          'No. We are an independent directory and education site. NMLS-registered lenders and brokers are listed for research — always verify licensing through NMLS Consumer Access.',
+      },
+    ],
+  },
   calculators: {
     hub: 'lender',
     section: 'calculators',

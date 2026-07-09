@@ -96,10 +96,15 @@ export function LenderHomePage() {
               </span>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button variant="outline" asChild>
               <Link href={hubPath('lender', '/local-lenders')}>
                 Browse local lenders by state <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href={hubPath('lender', '/resources/how-to-choose-mortgage-lender')}>
+                How to choose a lender <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>

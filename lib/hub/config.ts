@@ -76,6 +76,7 @@ export const HUBS: Record<HubId, HubConfig> = {
       { href: hubPath('lender', '/local-lenders'), label: 'Mortgage Lenders' },
       { href: hubPath('lender', '/fdic-insured-banks'), label: 'FDIC Banks' },
       { href: hubPath('lender', '/calculators'), label: 'Calculators' },
+      { href: hubPath('lender', '/resources'), label: 'Resources' },
       { href: hubPath('lender', '/about'), label: 'Trust & Transparency' },
       { href: hubPath('lender', '/contact'), label: 'Contact' },
     ],
@@ -91,6 +92,11 @@ export const HUBS: Record<HubId, HubConfig> = {
       {
         title: 'RESOURCES',
         links: [
+          { href: hubPath('lender', '/resources'), label: 'All Guides' },
+          {
+            href: hubPath('lender', '/resources/how-to-choose-mortgage-lender'),
+            label: 'Choose a Lender',
+          },
           { href: hubPath('lender', '/about'), label: 'How We Verify' },
           { href: hubPath('lender', '/about#nmls'), label: 'NMLS Guide' },
         ],

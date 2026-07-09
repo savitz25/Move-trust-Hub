@@ -22,6 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/local-lenders',
     '/fdic-insured-banks',
     '/auto-loan-companies',
+    '/resources',
+    '/resources/how-to-choose-mortgage-lender',
   ];
 
   const staticRoutes = staticPaths.map((path) =>
