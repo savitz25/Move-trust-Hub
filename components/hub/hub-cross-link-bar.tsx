@@ -1,8 +1,5 @@
-'use client';
-
 import Link from 'next/link';
 import { ArrowRight, Home, Landmark, ShieldCheck, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 
@@ -56,7 +53,7 @@ export function HubCrossLinkBar({ hub }: { hub: HubId }) {
 
   return (
     <section
-      className="border-t bg-gradient-to-r from-muted/30 via-background to-muted/30 py-10"
+      className="content-auto border-t bg-gradient-to-r from-muted/30 via-background to-muted/30 py-10"
       aria-label="Cross-hub life event resources"
     >
       <div className="container mx-auto px-4">
@@ -73,27 +70,25 @@ export function HubCrossLinkBar({ hub }: { hub: HubId }) {
             const Icon = HUB_ICONS[link.hub];
             const href = link.hub === hub ? hubPath(hub, link.href) : hubPath(link.hub, link.href);
             return (
-              <motion.div
+              <div
                 key={link.label}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ delay: index * 0.08, duration: 0.35 }}
+                className="animate-stagger-in"
+                style={{ animationDelay: `${index * 80}ms` }}
               >
-              <Link
-                href={href}
-                className="group flex items-center justify-between rounded-lg border bg-card px-4 py-3 text-sm font-medium shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-muted/50 hover-lift"
-              >
-                <span className="inline-flex items-center gap-2">
-                  <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
-                  {link.label}
-                </span>
-                <ArrowRight
-                  className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5"
-                  aria-hidden="true"
-                />
-              </Link>
-              </motion.div>
+                <Link
+                  href={href}
+                  className="group flex items-center justify-between rounded-lg border bg-card px-4 py-3 text-sm font-medium shadow-sm transition-all duration-200 hover:border-primary/40 hover:bg-muted/50 hover-lift"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
+                    {link.label}
+                  </span>
+                  <ArrowRight
+                    className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </div>
             );
           })}
         </div>

@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
 import { Lightbulb, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -58,11 +57,8 @@ export function MoveCoachTip({ hub }: { hub: HubId }) {
   }
 
   return (
-    <motion.aside
-      initial={{ opacity: 0, y: -6 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="border-b border-amber-200/60 bg-gradient-to-r from-amber-50/80 via-background to-amber-50/40"
+    <aside
+      className="animate-fade-in-up border-b border-amber-200/60 bg-gradient-to-r from-amber-50/80 via-background to-amber-50/40"
       aria-label="Moving coach tip"
     >
       <div className="container mx-auto flex flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
@@ -89,6 +85,6 @@ export function MoveCoachTip({ hub }: { hub: HubId }) {
           </button>
         </div>
       </div>
-    </motion.aside>
+    </aside>
   );
 }

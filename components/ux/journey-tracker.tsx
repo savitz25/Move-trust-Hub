@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, PartyPopper, Sparkles } from 'lucide-react';
 import {
   JOURNEY_STEPS,
@@ -58,33 +57,24 @@ export function JourneyTracker({ hub }: { hub: HubId }) {
         </div>
         <div className="flex items-center gap-3">
           <div className="h-2 w-32 overflow-hidden rounded-full bg-muted sm:w-40">
-            <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-primary"
-              initial={{ width: 0 }}
-              animate={{ width: `${progress}%` }}
-              transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-primary transition-[width] duration-500 ease-out"
+              style={{ width: `${progress}%` }}
             />
           </div>
           <span className="text-xs font-semibold tabular-nums text-primary">{progress}%</span>
         </div>
       </div>
 
-      <AnimatePresence>
-        {celebrate ? (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-emerald-200/50 bg-emerald-50/60"
-          >
-            <p className="container mx-auto flex items-center gap-2 px-4 py-2 text-sm text-emerald-800">
-              <PartyPopper className="h-4 w-4 shrink-0" aria-hidden="true" />
-              Nice work — you&apos;re building a smarter move plan. Keep going!
-              <CheckCircle2 className="ml-auto h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
-            </p>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      {celebrate ? (
+        <div className="animate-slide-down overflow-hidden border-t border-emerald-200/50 bg-emerald-50/60 celebrate-pulse">
+          <p className="container mx-auto flex items-center gap-2 px-4 py-2 text-sm text-emerald-800">
+            <PartyPopper className="h-4 w-4 shrink-0" aria-hidden="true" />
+            Nice work — you&apos;re building a smarter move plan. Keep going!
+            <CheckCircle2 className="ml-auto h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+          </p>
+        </div>
+      ) : null}
     </div>
   );
 }

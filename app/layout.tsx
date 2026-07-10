@@ -59,18 +59,12 @@ export default function RootLayout({
     <html lang="en" className="light">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <SchemaInjector data={buildTrustHubNetworkSchema()} />
-        <Suspense
-          fallback={
-            <div className="min-h-[50vh] animate-pulse bg-muted/10" aria-hidden="true" />
-          }
-        >
-          {children}
-        </Suspense>
+        <Suspense fallback={null}>{children}</Suspense>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

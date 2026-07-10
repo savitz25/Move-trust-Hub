@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { AnimatePresence, motion } from 'framer-motion';
 import { PartyPopper, Sparkles, X } from 'lucide-react';
 import { trackLegacyArrival } from '@/components/ga-events';
 import { hubPath } from '@/lib/hub/paths';
@@ -67,50 +66,39 @@ export function LegacyWelcomeBanner({ hubId }: LegacyWelcomeBannerProps) {
   }
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: 'auto', opacity: 1 }}
-        exit={{ height: 0, opacity: 0 }}
-        transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-        className="overflow-hidden border-b border-primary/20 bg-gradient-to-r from-primary/8 via-sky-500/8 to-primary/5"
-        role="alert"
-        aria-live="polite"
-      >
-        <div className="container mx-auto flex flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-start gap-3 sm:items-center">
-            <motion.span
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 2.2, repeatDelay: 4 }}
-              className="mt-0.5 shrink-0 sm:mt-0"
-              aria-hidden
-            >
-              <PartyPopper className="h-5 w-5 text-amber-500" />
-            </motion.span>
-            <p className="text-sm font-medium leading-snug text-foreground">
-              <Sparkles className="mr-1 inline h-4 w-4 text-amber-500" aria-hidden />
-              Welcome from <strong>{legacy.brand}</strong> {legacy.emoji} Everything now lives here on{' '}
-              <strong>Move Trust Hub</strong> — same trusted data, one home. Your bookmarks still work!
-            </p>
-          </div>
-          <div className="flex shrink-0 items-center gap-2">
-            <Button size="sm" asChild>
-              <Link href={hubPath(hubId, '/')}>Explore {legacy.brand}</Link>
-            </Button>
-            <Button size="sm" variant="outline" asChild>
-              <Link href="/">Move Trust Hub home</Link>
-            </Button>
-            <button
-              type="button"
-              onClick={handleDismiss}
-              className="rounded-lg p-1.5 transition-colors hover:bg-muted"
-              aria-label="Dismiss welcome message"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          </div>
+    <div
+      className="animate-slide-down overflow-hidden border-b border-primary/20 bg-gradient-to-r from-primary/8 via-sky-500/8 to-primary/5"
+      role="alert"
+      aria-live="polite"
+    >
+      <div className="container mx-auto flex flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-start gap-3 sm:items-center">
+          <span className="animate-wiggle mt-0.5 shrink-0 sm:mt-0" aria-hidden>
+            <PartyPopper className="h-5 w-5 text-amber-500" />
+          </span>
+          <p className="text-sm font-medium leading-snug text-foreground">
+            <Sparkles className="mr-1 inline h-4 w-4 text-amber-500" aria-hidden />
+            Welcome from <strong>{legacy.brand}</strong> {legacy.emoji} Everything now lives here on{' '}
+            <strong>Move Trust Hub</strong> — same trusted data, one home. Your bookmarks still work!
+          </p>
         </div>
-      </motion.div>
-    </AnimatePresence>
+        <div className="flex shrink-0 items-center gap-2">
+          <Button size="sm" asChild>
+            <Link href={hubPath(hubId, '/')}>Explore {legacy.brand}</Link>
+          </Button>
+          <Button size="sm" variant="outline" asChild>
+            <Link href="/">Move Trust Hub home</Link>
+          </Button>
+          <button
+            type="button"
+            onClick={handleDismiss}
+            className="rounded-lg p-1.5 transition-colors hover:bg-muted"
+            aria-label="Dismiss welcome message"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

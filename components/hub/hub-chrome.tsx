@@ -1,13 +1,14 @@
-import { Suspense } from 'react';
-import { MoveTipsOptIn } from '@/components/conversion/move-tips-opt-in';
 import { HubCrossLinkBar } from '@/components/hub/hub-cross-link-bar';
 import { HubFooter } from '@/components/hub/hub-footer';
 import { HubNavbar } from '@/components/hub/hub-navbar';
-import { LegacyWelcomeBanner } from '@/components/hub/legacy-welcome-banner';
 import { TrustBadgeRow } from '@/components/hub/trust-badge-row';
+import {
+  DeferredJourneyTracker,
+  DeferredLegacyWelcomeBanner,
+  DeferredMoveCoachTip,
+  DeferredMoveTipsOptIn,
+} from '@/components/performance/deferred-ux-chrome';
 import { HubRecommendationStrip } from '@/components/ux/hub-recommendation-strip';
-import { JourneyTracker } from '@/components/ux/journey-tracker';
-import { MoveCoachTip } from '@/components/ux/move-coach-tip';
 import { shouldShowCrossLinks } from '@/lib/hub/cross-link-paths';
 import { getRequestPathname } from '@/lib/hub/request-context';
 import type { HubId } from '@/lib/hub/types';
@@ -26,25 +27,15 @@ export async function HubChrome({
   return (
     <div className="min-h-screen flex flex-col">
       <HubNavbar hubId={hubId} />
-      <Suspense fallback={null}>
-        <LegacyWelcomeBanner hubId={hubId} />
-      </Suspense>
-      <Suspense fallback={null}>
-        <MoveCoachTip hub={hubId} />
-      </Suspense>
-      <Suspense fallback={null}>
-        <JourneyTracker hub={hubId} />
-      </Suspense>
+      <DeferredLegacyWelcomeBanner hubId={hubId} />
+      <DeferredMoveCoachTip hub={hubId} />
+      <DeferredJourneyTracker hub={hubId} />
       <TrustBadgeRow hub={hubId} />
       <main className="flex-1">{children}</main>
       <HubRecommendationStrip hub={hubId} />
       {showCrossLinks ? <HubCrossLinkBar hub={hubId} /> : null}
       <HubFooter hubId={hubId} />
-      {hubId === 'move' ? (
-        <Suspense fallback={null}>
-          <MoveTipsOptIn />
-        </Suspense>
-      ) : null}
+      {hubId === 'move' ? <DeferredMoveTipsOptIn /> : null}
     </div>
   );
 }

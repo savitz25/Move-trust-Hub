@@ -3,6 +3,7 @@ import { getAllHubRedirects } from './lib/migration/hub-redirects';
 
 const nextConfig: NextConfig = {
   // Optimized for Vercel + production
+  poweredByHeader: false,
   // Temporarily ignore TS/ESLint errors during build so we can deploy while cleaning up types
   // (Run `npm run typecheck` and `npm run lint` locally to see/fix issues)
   typescript: {
@@ -27,6 +28,7 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/avif', 'image/webp'],
+    qualities: [75],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 160, 200, 240],
     minimumCacheTTL: 31536000,
@@ -125,6 +127,24 @@ const nextConfig: NextConfig = {
   // Headers for security / SEO
   async headers() {
     return [
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/_next/image',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
       {
         source: '/logo.png',
         headers: [

@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { TrustBadges } from '@/components/trust/trust-badges';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
 import { SITE_EMAIL } from '@/lib/contact';
 import { HUB_ORDER, HUBS, getHubConfig } from '@/lib/hub/config';
 import { hubPath } from '@/lib/hub/paths';
@@ -42,13 +43,14 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
           <div className="col-span-2 md:col-span-1">
             <Link prefetch={false} href={homeHref} className="flex items-center gap-2 font-semibold text-base tracking-tight">
               <span className="relative block h-12 w-[192px] shrink-0" aria-hidden="true">
-                <Image
+                <OptimizedImage
                   src={hub.logoSrc}
                   alt={hub.logoAlt}
                   width={192}
                   height={48}
+                  quality={DEFAULT_IMAGE_QUALITY}
                   loading="lazy"
-                  sizes="192px"
+                  sizes={IMAGE_SIZES.footerLogo}
                   className="h-12 w-[192px] object-contain object-left"
                 />
               </span>
