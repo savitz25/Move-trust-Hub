@@ -14,6 +14,7 @@ import { Card } from '@/components/ui/card';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildSaferLookupUrl } from '@/lib/verify-dot/fmcsa';
 import { SITE_URL } from '@/lib/seo/site-metadata';
+import { reviewUrlForMovingCompany } from '@/lib/reviews/review-url';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -46,9 +47,11 @@ export default async function CompanyReviewProfilePage({ params }: Props) {
     sort: 'newest',
   });
 
-  const reviewHref = `/review?carrier=${encodeURIComponent(
-    company.dot_number ? `DOT ${company.dot_number}` : company.mc_number ? `MC-${company.mc_number}` : slug
-  )}&slug=${slug}`;
+  const reviewHref = reviewUrlForMovingCompany({
+    slug: company.slug,
+    dotNumber: company.dot_number,
+    mcNumber: company.mc_number,
+  });
 
   const saferUrl =
     company.dot_number || company.mc_number

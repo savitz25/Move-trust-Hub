@@ -5,6 +5,7 @@ import type { LocalMover } from '@/lib/local-movers/types';
 import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
 import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
 import { assessLicense } from '@/lib/trust/license-verification';
+import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 
 export function LocalMoverCard({
   mover,
@@ -118,18 +119,18 @@ export function LocalMoverCard({
       </div>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        {license.status === 'verified' && (license.usdot || license.mc) && (
+        {license.status === 'verified' && (license.usdot || license.mc) && profileSlug ? (
           <Link
-            href={`/review?carrier=${encodeURIComponent(
-              license.usdot
-                ? `DOT ${license.usdot.replace(/\D/g, '')}`
-                : `MC-${license.mc!.replace(/\D/g, '')}`
-            )}`}
+            href={reviewUrlForDirectoryCompany({
+              usdotNumber: license.usdot,
+              mcNumber: license.mc,
+              slug: profileSlug,
+            })}
             className="text-sm text-muted-foreground hover:text-primary hover:underline"
           >
             Leave a review
           </Link>
-        )}
+        ) : null}
         {profileHref ? (
           <Link
             href={profileHref}

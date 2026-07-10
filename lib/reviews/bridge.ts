@@ -3,6 +3,7 @@ import 'server-only';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import type { MovingCompanyRecord } from '@/lib/reviews/companies';
+import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 
@@ -58,7 +59,7 @@ export async function findMovingCompanyForLegacy(params: {
 
 export function reviewPageUrlForCarrier(parsed: ParsedCarrierNumber): string {
   const slug = slugFromCarrier(parsed.type, parsed.value);
-  return `/review?carrier=${encodeURIComponent(parsed.display)}&slug=${slug}`;
+  return buildReviewPageUrl({ slug, carrier: parsed.display });
 }
 
 export async function getMovingCompanySlugsForSitemap(): Promise<

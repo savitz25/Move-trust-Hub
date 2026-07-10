@@ -5,6 +5,7 @@ import { PublicReviewList } from '@/components/reviews/public-review-list';
 import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
 import { StarRating } from '@/components/ui/star-rating';
 import { Card } from '@/components/ui/card';
+import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 
 type Props = {
@@ -31,7 +32,11 @@ export async function LegacyCompanyUserReviews({
   const carrierDisplay = dot ? `DOT ${dot}` : mc ? `MC-${mc}` : '';
   const reviewSlug = movingCompany?.slug
     ?? (dot ? slugFromCarrier('DOT', dot) : mc ? slugFromCarrier('MC', mc) : '');
-  const reviewHref = `/review?carrier=${encodeURIComponent(carrierDisplay)}${reviewSlug ? `&slug=${reviewSlug}` : ''}`;
+  const reviewHref = buildReviewPageUrl({
+    slug: reviewSlug || undefined,
+    carrier: carrierDisplay || undefined,
+    sourcePage: movingCompany ? `/company/${movingCompany.slug}` : undefined,
+  });
 
   if (!movingCompany || movingCompany.approved_review_count === 0) {
     return (

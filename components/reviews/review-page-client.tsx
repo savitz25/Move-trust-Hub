@@ -4,16 +4,36 @@ import { useState } from 'react';
 import type { LookupCarrierPreview } from '@/actions/reviews';
 import { CarrierReviewSearch } from '@/components/reviews/carrier-review-search';
 import { ReviewSubmissionForm } from '@/components/reviews/review-submission-form';
+import {
+  ReviewProgressSteps,
+  type ReviewFlowStep,
+} from '@/components/reviews/review-progress-steps';
 import { Card } from '@/components/ui/card';
 
 type Props = {
   initialCarrierQuery?: string;
+  initialCarrier?: LookupCarrierPreview;
+  initialDisplayNumber?: string;
+  sourcePage?: string;
+  prefillFromProfile?: boolean;
 };
 
-export function ReviewPageClient({ initialCarrierQuery }: Props) {
-  const [step, setStep] = useState<'search' | 'form'>('search');
-  const [carrier, setCarrier] = useState<LookupCarrierPreview | null>(null);
-  const [displayNumber, setDisplayNumber] = useState<string | null>(null);
+export function ReviewPageClient({
+  initialCarrierQuery,
+  initialCarrier,
+  initialDisplayNumber,
+  sourcePage = '/review',
+  prefillFromProfile = false,
+}: Props) {
+  const hasPrefill = Boolean(initialCarrier && initialDisplayNumber);
+
+  const [step, setStep] = useState<'search' | 'form'>(hasPrefill ? 'form' : 'search');
+  const [carrier, setCarrier] = useState<LookupCarrierPreview | null>(
+    initialCarrier ?? null
+  );
+  const [displayNumber, setDisplayNumber] = useState<string | null>(
+    initialDisplayNumber ?? null
+  );
 
   function handleCarrierSelected(preview: LookupCarrierPreview, display: string) {
     setCarrier(preview);
@@ -21,14 +41,17 @@ export function ReviewPageClient({ initialCarrierQuery }: Props) {
     setStep('form');
   }
 
+  const searchStep: ReviewFlowStep = 'rate';
+
   return (
     <Card className="border-2 border-primary/15 shadow-lg p-6 sm:p-8">
       {step === 'search' ? (
         <>
-          <h2 className="text-lg font-semibold mb-1">Step 1 — Find the mover</h2>
-          <p className="text-sm text-muted-foreground mb-6">
-            Search by USDOT or MC number. We&apos;ll match our directory or prepare a new
-            carrier record when you submit.
+          <ReviewProgressSteps current={searchStep} />
+          <h2 className="text-xl font-semibold mb-1">Find your moving company</h2>
+          <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+            Search by <strong>USDOT</strong> or <strong>MC number</strong> to start your review.
+            We&apos;ll match our directory or prepare a carrier record when you submit.
           </p>
           <CarrierReviewSearch
             initialQuery={initialCarrierQuery}
@@ -36,21 +59,17 @@ export function ReviewPageClient({ initialCarrierQuery }: Props) {
           />
         </>
       ) : carrier && displayNumber ? (
-        <>
-          <h2 className="text-lg font-semibold mb-1">Step 2 — Share your experience</h2>
-          <p className="text-sm text-muted-foreground mb-6">
-            Honest, detailed reviews help families avoid scams. All submissions are moderated.
-          </p>
-          <ReviewSubmissionForm
-            carrier={carrier}
-            displayNumber={displayNumber}
-            onBack={() => {
-              setStep('search');
-              setCarrier(null);
-              setDisplayNumber(null);
-            }}
-          />
-        </>
+        <ReviewSubmissionForm
+          carrier={carrier}
+          displayNumber={displayNumber}
+          sourcePage={sourcePage}
+          skipSearch={prefillFromProfile}
+          onBack={() => {
+            setStep('search');
+            setCarrier(null);
+            setDisplayNumber(null);
+          }}
+        />
       ) : null}
     </Card>
   );

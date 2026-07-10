@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Loader2, Search, ShieldCheck } from 'lucide-react';
 import { lookupCarrierForReview, type LookupCarrierPreview } from '@/actions/reviews';
 import { Button } from '@/components/ui/button';
@@ -21,14 +21,14 @@ export function CarrierReviewSearch({ initialQuery = '', onCarrierSelected }: Pr
   const [error, setError] = useState<string | null>(null);
   const [preview, setPreview] = useState<LookupCarrierPreview | null>(null);
   const [displayNumber, setDisplayNumber] = useState<string | null>(null);
+  const autoSearched = useRef(false);
 
-  async function handleSearch(e: React.FormEvent) {
-    e.preventDefault();
+  async function runLookup(searchQuery: string) {
     setLoading(true);
     setError(null);
     setPreview(null);
 
-    const res = await lookupCarrierForReview(query);
+    const res = await lookupCarrierForReview(searchQuery);
     setLoading(false);
 
     if (!res.success || !res.preview) {
@@ -38,6 +38,17 @@ export function CarrierReviewSearch({ initialQuery = '', onCarrierSelected }: Pr
 
     setPreview(res.preview);
     setDisplayNumber(res.displayNumber ?? null);
+  }
+
+  useEffect(() => {
+    if (!initialQuery.trim() || autoSearched.current) return;
+    autoSearched.current = true;
+    void runLookup(initialQuery.trim());
+  }, [initialQuery]);
+
+  async function handleSearch(e: React.FormEvent) {
+    e.preventDefault();
+    await runLookup(query);
   }
 
   function handleContinue() {

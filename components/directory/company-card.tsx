@@ -18,6 +18,7 @@ import {
   formatFoundedLabel,
   normalizeCompanyForDisplay,
 } from '@/lib/directory/normalize-company';
+import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -46,11 +47,11 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
   const services = company.services.slice(0, 2);
   const specialties = company.specialties.slice(0, 1);
 
-  const reviewCarrier = company.usdotNumber
-    ? `DOT ${company.usdotNumber.replace(/\D/g, '')}`
-    : company.mcNumber
-      ? `MC-${company.mcNumber.replace(/\D/g, '')}`
-      : company.name;
+  const reviewHref = reviewUrlForDirectoryCompany({
+    usdotNumber: company.usdotNumber,
+    mcNumber: company.mcNumber,
+    slug: company.slug,
+  });
 
   return (
     <Card className="company-card group overflow-hidden flex flex-col">
@@ -114,7 +115,7 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
           </span>
         </div>
         <div className="flex gap-2 shrink-0">
-          <Link href={`/review?carrier=${encodeURIComponent(reviewCarrier)}`}>
+          <Link href={reviewHref}>
             <Button size="sm" variant="ghost" className="h-8 px-2 text-xs">
               Review
             </Button>

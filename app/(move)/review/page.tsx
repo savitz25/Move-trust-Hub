@@ -9,6 +9,7 @@ import {
   REVIEW_PAGE_TITLE,
   reviewFaqItems,
 } from '@/lib/reviews/seo';
+import { resolveInitialReviewCarrier } from '@/lib/reviews/resolve-initial-carrier';
 
 export const metadata = buildResourceMetadata(
   '/review',
@@ -17,7 +18,7 @@ export const metadata = buildResourceMetadata(
 );
 
 type Props = {
-  searchParams: Promise<{ carrier?: string; slug?: string }>;
+  searchParams: Promise<{ carrier?: string; slug?: string; source?: string }>;
 };
 
 const reviewPageSchema = {
@@ -56,7 +57,13 @@ const reviewPageSchema = {
 
 export default async function ReviewPage({ searchParams }: Props) {
   const params = await searchParams;
-  const initialCarrier = params.carrier?.trim() || undefined;
+  const slug = params.slug?.trim();
+  const carrier = params.carrier?.trim();
+  const sourcePage = params.source?.trim() || '/review';
+
+  const resolved = await resolveInitialReviewCarrier({ slug, carrier });
+  const prefillFromProfile = Boolean(resolved?.success && resolved.preview);
+  const companyName = resolved?.preview?.name;
 
   return (
     <>
@@ -68,18 +75,36 @@ export default async function ReviewPage({ searchParams }: Props) {
             Community Reviews · Moderated
           </p>
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            Leave a Moving Company Review
+            {prefillFromProfile && companyName
+              ? `Review ${companyName}`
+              : 'Leave a Moving Company Review'}
           </h1>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Search any interstate carrier by <strong>USDOT</strong> or{' '}
-            <strong>MC number</strong>. Your review helps other families choose licensed
-            movers — every submission is checked before publication.
+            {prefillFromProfile && companyName ? (
+              <>
+                Share your experience with <strong>{companyName}</strong>. Rate your move,
+                write your review, and help other families choose licensed movers — every
+                submission is checked before publication.
+              </>
+            ) : (
+              <>
+                Search any interstate carrier by <strong>USDOT</strong> or{' '}
+                <strong>MC number</strong>. Your review helps other families choose licensed
+                movers — every submission is checked before publication.
+              </>
+            )}
           </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-10 sm:py-14 max-w-3xl">
-        <ReviewPageClient initialCarrierQuery={initialCarrier} />
+        <ReviewPageClient
+          initialCarrierQuery={carrier}
+          initialCarrier={resolved?.preview}
+          initialDisplayNumber={resolved?.displayNumber}
+          sourcePage={sourcePage}
+          prefillFromProfile={prefillFromProfile}
+        />
 
         <section className="mt-12 prose prose-neutral max-w-none text-sm">
           <h2>How moderation works</h2>
@@ -87,6 +112,12 @@ export default async function ReviewPage({ searchParams }: Props) {
             Reviews enter a <strong>pending</strong> queue when submitted. Our team checks
             for spam, duplicate emails, and policy violations before approving. Rejected
             reviews are not published. Typical turnaround is 1–3 business days.
+          </p>
+          <p>
+            <strong>Transparency:</strong> Approved Move Trust Hub reviews are labeled
+            &ldquo;Verified by Move Trust Hub.&rdquo; Google-sourced reviews on company
+            profiles remain clearly attributed to Google and are separate from our moderated
+            community reviews.
           </p>
           <p>
             Looking up a carrier first? Try our{' '}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MessageSquarePlus, ShieldCheck, Calculator, Scale } from 'lucide-react';
+import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 
 type Props = {
   className?: string;
@@ -10,9 +11,7 @@ type Props = {
  * Cross-links high-trust tools for E-E-A-T and internal linking clusters.
  */
 export function TrustToolsBar({ className = '', carrierQuery }: Props) {
-  const reviewHref = carrierQuery
-    ? `/review?carrier=${encodeURIComponent(carrierQuery)}`
-    : '/review';
+  const reviewHref = buildReviewPageUrl({ carrier: carrierQuery });
 
   return (
     <nav

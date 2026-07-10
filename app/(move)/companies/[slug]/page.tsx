@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { ReviewsSection } from '@/components/reviews/reviews-section';
 import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
 import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
-import { slugFromCarrier } from '@/lib/reviews/schema';
+import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CoverageMap } from '@/components/map/coverage-map';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
@@ -75,11 +75,11 @@ export default async function CompanyProfilePage({ params }: Props) {
   });
   const complaintRatio = (company.fmcsaComplaints / Math.max(company.fmcsaShipments, 1) * 1000).toFixed(2);
 
-  const dot = company.usdotNumber?.replace(/\D/g, '');
-  const mc = company.mcNumber?.replace(/\D/g, '');
-  const reviewHref = `/review?carrier=${encodeURIComponent(
-    dot ? `DOT ${dot}` : mc ? `MC-${mc}` : company.name
-  )}&slug=${dot ? slugFromCarrier('DOT', dot) : mc ? slugFromCarrier('MC', mc) : company.slug}`;
+  const reviewHref = reviewUrlForDirectoryCompany({
+    usdotNumber: company.usdotNumber,
+    mcNumber: company.mcNumber,
+    slug: company.slug,
+  });
 
   const verifiedLabel = directoryVerifiedLabel(company);
   const scrapeBbb = company.publicScrapeData;

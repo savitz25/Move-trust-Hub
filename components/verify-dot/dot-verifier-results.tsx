@@ -17,6 +17,8 @@ import { FmcsaStructuredPreview } from '@/components/suggestions/fmcsa-structure
 import { SuggestCompanyCta } from '@/components/suggestions/suggest-company-cta';
 import { fmcsaPreviewFromVerifyResult } from '@/lib/suggestions/from-verify';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
+import { buildReviewPageUrl } from '@/lib/reviews/review-url';
+import { slugFromCarrier } from '@/lib/reviews/schema';
 
 const ADD_DIRECTORY_LABEL = 'Add This Company to Our Directory';
 
@@ -33,6 +35,11 @@ export function DotVerifierResults({ result }: Props) {
   const saferUrl = result.saferUrl;
   const carrierQuery = result.displayNumber ?? '';
   const validCarrier = carrierQuery ? parseCarrierNumber(carrierQuery) : null;
+  const reviewHref = buildReviewPageUrl({
+    carrier: carrierQuery || undefined,
+    slug: validCarrier ? slugFromCarrier(validCarrier.type, validCarrier.value) : undefined,
+    sourcePage: '/verify-dot',
+  });
   const dotPreviewForSuggest = fmcsaPreviewFromVerifyResult(result);
   const showAddToDirectory = !inDirectory && Boolean(validCarrier) && hasPreview;
 
@@ -187,10 +194,7 @@ export function DotVerifierResults({ result }: Props) {
             {' · '}
           </>
         ) : null}
-        <Link
-          href={`/review?carrier=${encodeURIComponent(result.displayNumber ?? '')}`}
-          className="underline underline-offset-2 hover:text-foreground"
-        >
+        <Link href={reviewHref} className="underline underline-offset-2 hover:text-foreground">
           Leave a moderated review
         </Link>
       </p>
