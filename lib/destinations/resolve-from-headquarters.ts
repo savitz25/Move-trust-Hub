@@ -1,3 +1,4 @@
+import { countyAliasesForCity } from '@/lib/destinations/city-county-aliases';
 import { markets } from '@/lib/destinations/markets';
 import { parseCountyKey } from '@/lib/destinations/county-keys';
 import { normalizePlace, parseHeadquarters } from '@/lib/fmcsa/refresh/parse-headquarters';
@@ -21,7 +22,7 @@ function countiesForCity(stateSlug: string, city: string | null): string[] {
   const normalizedCity = normalizePlace(city);
   if (!normalizedCity) return [];
 
-  return getCountiesForState(stateSlug)
+  const fromSeatOrName = getCountiesForState(stateSlug)
     .filter((county) => {
       const seat = county.seat ? normalizePlace(county.seat) : '';
       const countyName = normalizePlace(county.name);
@@ -34,6 +35,9 @@ function countiesForCity(stateSlug: string, city: string | null): string[] {
       );
     })
     .map((county) => county.slug);
+
+  const fromAliases = countyAliasesForCity(stateSlug, city);
+  return [...new Set([...fromSeatOrName, ...fromAliases])];
 }
 
 function marketSlugsForCountyKey(countyKey: string, city: string | null, stateCode: string): string[] {
