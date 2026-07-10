@@ -1,13 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { CityHubTemplate } from '@/components/destinations/city-hub-template';
-import { JsonLd } from '@/lib/seo/json-ld';
-import { buildCityHubSchemaGraph } from '@/lib/seo/build-city-hub-schema';
 import { getCityHubContent, getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import { getMarketBySlug } from '@/lib/destinations/markets';
-import { getMoversForMarket } from '@/lib/destinations/get-movers-for-market';
 import { buildCityHubMetadata } from '@/lib/seo/destination-seo';
-import { SITE_URL } from '@/lib/seo/site-metadata';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -35,13 +31,5 @@ export default async function KansasCityHubPage({ params }: Props) {
 
   if (!market || !content || market.clusterParent !== 'kansas') notFound();
 
-  const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
-  const movers = getMoversForMarket(market, 6);
-
-  return (
-    <>
-      <JsonLd data={buildCityHubSchemaGraph(market, content, canonical, movers)} />
-      <CityHubTemplate market={market} content={content} />
-    </>
-  );
+  return <CityHubTemplate market={market} content={content} />;
 }

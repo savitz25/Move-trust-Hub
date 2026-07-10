@@ -8,7 +8,13 @@ import { DestinationCalculatorEmbed } from '@/components/destinations/destinatio
 import { DestinationMapSnippet } from '@/components/destinations/destination-map-snippet';
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
 import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
-import { getMoversForMarket, countMoversForMarket } from '@/lib/destinations/get-movers-for-market';
+import {
+  countMoversForMarketAsync,
+  getMoversForMarketAsync,
+} from '@/lib/destinations/get-movers-for-market-async';
+import { JsonLd } from '@/lib/seo/json-ld';
+import { buildCityHubSchemaGraph } from '@/lib/seo/build-city-hub-schema';
+import { SITE_URL } from '@/lib/seo/site-metadata';
 import {
   getMarketCountyDirectoryLinks,
   getMarketMoversDirectoryHref,
@@ -33,8 +39,9 @@ type Props = {
 
 export async function CityHubTemplate({ market, content }: Props) {
   const destinationLabel = `${market.displayName}, ${market.stateCode}`;
-  const localMovers = getMoversForMarket(market, 6);
-  const totalMovers = countMoversForMarket(market);
+  const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
+  const localMovers = await getMoversForMarketAsync(market, 6);
+  const totalMovers = await countMoversForMarketAsync(market);
   const featuredCompanies = (
     await Promise.all(
       content.featuredInterstateSlugs.map((slug) => getCompanyBySlugAsync(slug))
@@ -62,7 +69,9 @@ export async function CityHubTemplate({ market, content }: Props) {
   });
 
   return (
-    <div className="min-h-screen">
+    <>
+      <JsonLd data={buildCityHubSchemaGraph(market, content, canonical, localMovers)} />
+      <div className="min-h-screen">
       {/* §1 Hero */}
       <section
         aria-labelledby="hero-heading"
@@ -468,5 +477,6 @@ export async function CityHubTemplate({ market, content }: Props) {
         </div>
       </section>
     </div>
+    </>
   );
 }

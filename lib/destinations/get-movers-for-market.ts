@@ -11,16 +11,21 @@ export type MarketMoverEntry = {
   countySlug: string;
 };
 
-export function getMoversForMarket(market: Market, limit = 18): MarketMoverEntry[] {
+export function buildMarketMoverEntries(
+  market: Market,
+  limit: number,
+  countyResults: Array<{
+    countyKey: string;
+    result: { county: { name: string }; movers: LocalMover[] } | null;
+  }>
+): MarketMoverEntry[] {
   const seen = new Set<string>();
   const entries: MarketMoverEntry[] = [];
 
-  for (const countyKey of market.primaryCounties) {
+  for (const { countyKey, result } of countyResults) {
+    if (!result) continue;
     const parsed = parseCountyKey(countyKey);
     if (!parsed) continue;
-
-    const result = getMoversForCounty(parsed.stateSlug, parsed.countySlug);
-    if (!result) continue;
 
     const stateCode = countyKey.slice(countyKey.lastIndexOf('-') + 1).toUpperCase();
     const countyLabel = result.county.name.includes('County')
@@ -42,6 +47,18 @@ export function getMoversForMarket(market: Market, limit = 18): MarketMoverEntry
   }
 
   return entries;
+}
+
+export function getMoversForMarket(market: Market, limit = 18): MarketMoverEntry[] {
+  const countyResults = market.primaryCounties.map((countyKey) => {
+    const parsed = parseCountyKey(countyKey);
+    return {
+      countyKey,
+      result: parsed ? getMoversForCounty(parsed.stateSlug, parsed.countySlug) : null,
+    };
+  });
+
+  return buildMarketMoverEntries(market, limit, countyResults);
 }
 
 export function countMoversForMarket(market: Market): number {

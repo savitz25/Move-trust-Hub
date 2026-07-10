@@ -1,0 +1,1 @@
+export const APPROVED_COUNTY_MOVERS_TAG = 'approved-county-movers';

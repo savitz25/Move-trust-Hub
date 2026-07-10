@@ -5,12 +5,72 @@ const US_STATE_ABBREVS = new Set([
   'VA', 'WA', 'WV', 'WI', 'WY', 'DC',
 ]);
 
+const STATE_NAME_TO_CODE: Record<string, string> = {
+  alabama: 'AL',
+  alaska: 'AK',
+  arizona: 'AZ',
+  arkansas: 'AR',
+  california: 'CA',
+  colorado: 'CO',
+  connecticut: 'CT',
+  delaware: 'DE',
+  florida: 'FL',
+  georgia: 'GA',
+  hawaii: 'HI',
+  idaho: 'ID',
+  illinois: 'IL',
+  indiana: 'IN',
+  iowa: 'IA',
+  kansas: 'KS',
+  kentucky: 'KY',
+  louisiana: 'LA',
+  maine: 'ME',
+  maryland: 'MD',
+  massachusetts: 'MA',
+  michigan: 'MI',
+  minnesota: 'MN',
+  mississippi: 'MS',
+  missouri: 'MO',
+  montana: 'MT',
+  nebraska: 'NE',
+  nevada: 'NV',
+  'new hampshire': 'NH',
+  'new jersey': 'NJ',
+  'new mexico': 'NM',
+  'new york': 'NY',
+  'north carolina': 'NC',
+  'north dakota': 'ND',
+  ohio: 'OH',
+  oklahoma: 'OK',
+  oregon: 'OR',
+  pennsylvania: 'PA',
+  'rhode island': 'RI',
+  'south carolina': 'SC',
+  'south dakota': 'SD',
+  tennessee: 'TN',
+  texas: 'TX',
+  utah: 'UT',
+  vermont: 'VT',
+  virginia: 'VA',
+  washington: 'WA',
+  'west virginia': 'WV',
+  wisconsin: 'WI',
+  wyoming: 'WY',
+  'district of columbia': 'DC',
+};
+
 export type ParsedHeadquarters = {
   city: string | null;
   state: string | null;
 };
 
-/** Parse "City, ST" or "City, State" from directory headquarters. */
+function tokenToState(token: string): string | null {
+  const upper = token.toUpperCase();
+  if (US_STATE_ABBREVS.has(upper)) return upper;
+  return STATE_NAME_TO_CODE[token.toLowerCase()] ?? null;
+}
+
+/** Parse city/state from "City, ST" or full street addresses like "123 Main St, Honolulu, HI, 96819". */
 export function parseHeadquarters(headquarters: string | null | undefined): ParsedHeadquarters {
   if (!headquarters?.trim()) return { city: null, state: null };
 
@@ -20,11 +80,25 @@ export function parseHeadquarters(headquarters: string | null | undefined): Pars
     .filter(Boolean);
 
   if (parts.length < 2) {
-    const maybeState = parts[0]?.toUpperCase();
-    if (maybeState && US_STATE_ABBREVS.has(maybeState)) {
-      return { city: null, state: maybeState };
-    }
+    const maybeState = tokenToState(parts[0] ?? '');
+    if (maybeState) return { city: null, state: maybeState };
     return { city: parts[0] ?? null, state: null };
+  }
+
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const segmentTokens = parts[i]!.split(/\s+/).filter(Boolean);
+    for (const token of segmentTokens) {
+      const state = tokenToState(token);
+      if (!state) continue;
+      const city = i > 0 ? parts[i - 1]! : parts[0] ?? null;
+      return { city: city || null, state };
+    }
+
+    const wholeSegmentState = tokenToState(parts[i]!);
+    if (wholeSegmentState) {
+      const city = i > 0 ? parts[i - 1]! : parts[0] ?? null;
+      return { city: city || null, state: wholeSegmentState };
+    }
   }
 
   const last = parts[parts.length - 1]!;

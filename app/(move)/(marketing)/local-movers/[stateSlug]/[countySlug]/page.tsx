@@ -193,9 +193,9 @@ import {
   buildCountyTitle,
   getAllCountyParams,
   getCountyPath,
-  getMoversForCounty,
   getStatePath,
 } from '@/lib/local-movers/index';
+import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
 
 type Props = { params: Promise<{ stateSlug: string; countySlug: string }> };
 
@@ -212,7 +212,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { stateSlug, countySlug } = await params;
   const state = getLocalState(stateSlug);
-  const result = getMoversForCounty(stateSlug, countySlug);
+  const result = await getMoversForCountyAsync(stateSlug, countySlug);
   if (!state || !result) return {};
 
   return buildCountyPageMetadata(
@@ -226,7 +226,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LocalMoversCountyPage({ params }: Props) {
   const { stateSlug, countySlug } = await params;
   const state = getLocalState(stateSlug);
-  const result = getMoversForCounty(stateSlug, countySlug);
+  const result = await getMoversForCountyAsync(stateSlug, countySlug);
 
   if (!state || !result) notFound();
 

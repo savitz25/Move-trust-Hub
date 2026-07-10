@@ -47,6 +47,17 @@ export function isGeneratedTemplateMover(id: string): boolean {
 }
 
 export function evaluateCuratedListing(mover: LocalMover): CuratedListingVerdict {
+  if (mover.id.startsWith('directory-') && mover.profileSlug) {
+    const license = assessLicense(mover.usdotNumber, mover.mcNumber);
+    if (license.isDisplayable) {
+      return {
+        isDisplayable: true,
+        reason: 'onboarded_directory_profile',
+        tier: 'directory_linked',
+      };
+    }
+  }
+
   if (isPlaceholderMoverId(mover.id)) {
     return { isDisplayable: false, reason: 'regional_placeholder_id', tier: 'excluded' };
   }

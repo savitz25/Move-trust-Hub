@@ -71,6 +71,31 @@ export interface Database {
         Insert: Partial<Database['public']['Tables']['companies']['Row']>;
         Update: Partial<Database['public']['Tables']['companies']['Row']>;
       };
+      company_destination_assignments: {
+        Row: {
+          id: string;
+          company_id: string;
+          company_slug: string;
+          state_slug: string;
+          county_slug: string;
+          destination_slug: string | null;
+          headquarters: string | null;
+          source: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          company_id: string;
+          company_slug: string;
+          state_slug: string;
+          county_slug: string;
+          destination_slug?: string | null;
+          headquarters?: string | null;
+          source?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['company_destination_assignments']['Row']>;
+      };
       bbb_refresh_runs: {
         Row: {
           id: string;

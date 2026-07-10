@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
+import { assignApprovedCompanyToDestinations } from '@/lib/suggestions/assign-company-destination';
 import { revalidateDestinationPaths } from '@/lib/suggestions/revalidate-destination';
 import { getCompanyBySlugOrUsdotFromDb } from '@/lib/supabase/queries/companies';
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
@@ -75,8 +76,22 @@ export async function publishSuggestionToDirectory(
     })
     .eq('id', suggestion.id);
 
+  const destinationAssignment = await assignApprovedCompanyToDestinations({
+    companyId: published.companyId,
+    companySlug: published.slug,
+    headquarters: suggestion.headquarters,
+  });
+
   revalidatePublishedCompany(published.slug);
   revalidateDestinationPaths(suggestion.headquarters);
+
+  logger.info('company.publish_destination_linked', {
+    suggestionId: suggestion.id,
+    slug: published.slug,
+    headquarters: suggestion.headquarters,
+    counties: destinationAssignment.assignedCounties,
+    destinationSlugs: destinationAssignment.destinationSlugs,
+  });
 
   return published;
 }
