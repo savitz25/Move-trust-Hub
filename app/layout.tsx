@@ -1,15 +1,26 @@
 import type { Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { SchemaInjector } from '@/components/hub/schema-injector';
 
 import { buildTrustHubNetworkSchema } from '@/lib/hub/schemas';
 import { Suspense } from 'react';
-import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { DeferredHubAnalytics } from '@/components/hub/deferred-hub-analytics';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
+
+// GA4 FIXED - G-433BDVV8MJ - verified in page source
+const GA_MEASUREMENT_ID = 'G-433BDVV8MJ';
+const GA_LINKER_DOMAINS = JSON.stringify([
+  'movetrusthub.com',
+  'www.movetrusthub.com',
+  'lendertrusthub.com',
+  'www.lendertrusthub.com',
+  'insurancetrusthub.com',
+  'www.insurancetrusthub.com',
+]);
 
 // LCP hero uses font-semibold (600). Preload only 400 + 600 — drop 700 to save one font file.
 const geistSans = Geist({
@@ -55,7 +66,22 @@ export default function RootLayout({
         >
           {children}
         </Suspense>
-        <GoogleAnalytics />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              send_page_view: true,
+              linker: { domains: ${GA_LINKER_DOMAINS} }
+            });
+          `}
+        </Script>
         <DeferredHubAnalytics />
         <DeferredWidgets />
         <DeferredAnalytics />

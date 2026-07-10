@@ -6,7 +6,7 @@
 export const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ||
   process.env.NEXT_PUBLIC_GA4_ID?.trim() ||
-  'G-433BDV8MJ';
+  'G-433BDVV8MJ';
 
 /** Cross-domain linker — preserves GA4 sessions across 308 legacy → movetrusthub.com */
 export const GA_CROSS_DOMAIN_LINKS = [
