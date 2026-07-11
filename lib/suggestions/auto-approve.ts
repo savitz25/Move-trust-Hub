@@ -33,7 +33,7 @@ export async function approveAndPublishSuggestion(
   };
   const { error: updateError } = await admin
     .from('company_suggestions')
-    .update(moderationUpdate)
+    .update(moderationUpdate as never)
     .eq('id', suggestion.id);
 
   if (updateError) {
