@@ -1,7 +1,7 @@
 import 'server-only';
 
 import type { Json } from '@/types/supabase';
-import { unpackCoverageFromFmcsaPreview } from '@/lib/suggestions/suggestion-coverage-storage';
+import { unpackCoverageFromFmcsaPreview } from '@/lib/suggestions/suggestion-coverage-pack';
 import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
 
 export function coverageFromSuggestionRow(row: {
