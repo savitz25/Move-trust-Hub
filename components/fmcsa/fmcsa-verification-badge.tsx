@@ -23,7 +23,8 @@ export function deriveFmcsaBadgeStatus(company: Pick<
   ) {
     return 'warning';
   }
-  if (company.fmcsaSafetyRating === 'Satisfactory' && company.authorityActive !== false) {
+  // authorityActive === false already returned critical above
+  if (company.fmcsaSafetyRating === 'Satisfactory') {
     return 'verified';
   }
   return 'unknown';
