@@ -14,7 +14,12 @@ export type SuggestionRateLimitResult =
 export async function checkSuggestionRateLimit(params: {
   ip: string | null;
   email: string;
+  bypass?: boolean;
 }): Promise<SuggestionRateLimitResult> {
+  if (params.bypass) {
+    return { allowed: true };
+  }
+
   if (!isSupabaseAdminConfigured()) {
     return { allowed: true };
   }

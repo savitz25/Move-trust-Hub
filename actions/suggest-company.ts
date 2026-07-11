@@ -4,7 +4,11 @@ import { headers } from 'next/headers';
 import { searchCarriersByNameState } from '@/actions/verify-dot';
 import { suggestCompanySchema } from '@/lib/suggestions/schema';
 import { checkSuggestionDuplicate } from '@/lib/suggestions/duplicates';
+import { getAdminSubmitterDefaults } from '@/lib/admin/submitter-defaults';
+import { approveAndPublishSuggestion } from '@/lib/suggestions/auto-approve';
 import { checkSuggestionRateLimit } from '@/lib/suggestions/rate-limit';
+import { isTrustedCompanySubmitter } from '@/lib/suggestions/trusted-submitter';
+import { isAdminSession } from '@/lib/admin/auth';
 import {
   lookupFmcsaForSuggestion,
   toFmcsaSuggestionPreview,
@@ -46,6 +50,22 @@ export type PreviewEnrichedSuggestionResult = {
   error?: string;
   preview?: EnrichedCompanyPreview;
 };
+
+export type SuggestionSubmitterDefaults = {
+  isTrustedSubmitter: boolean;
+  suggestedByName: string;
+  suggestedByEmail: string;
+};
+
+export async function getSuggestionSubmitterDefaults(): Promise<SuggestionSubmitterDefaults> {
+  const defaults = getAdminSubmitterDefaults();
+  const admin = await isAdminSession();
+  return {
+    isTrustedSubmitter: admin,
+    suggestedByName: admin ? defaults.name : '',
+    suggestedByEmail: admin ? defaults.email : '',
+  };
+}
 
 function clientIpFromHeaders(headerStore: Headers): string | null {
   return (
@@ -181,10 +201,12 @@ export async function submitCompanySuggestion(
 
     const headerStore = await headers();
     const userIp = clientIpFromHeaders(headerStore);
+    const trustedSubmitter = await isTrustedCompanySubmitter();
 
     const rateCheck = await checkSuggestionRateLimit({
       ip: userIp,
       email: parsed.data.suggestedByEmail,
+      bypass: trustedSubmitter,
     });
 
     if (!rateCheck.allowed) {
@@ -250,12 +272,46 @@ export async function submitCompanySuggestion(
       hasPublicScrape: Boolean(enrichment.publicScrape),
       enrichmentStored: insertResult.enrichmentStored,
       trustedDot: true,
+      trustedSubmitter,
     });
 
     const profileSlug = predictCompanyProfileSlug({
       name: companyName,
       usdot: fmcsa?.usdot ?? (carrierParsed.type === 'DOT' ? carrierParsed.value : null),
     });
+
+    if (trustedSubmitter) {
+      const { data: suggestionRow, error: fetchError } = await admin
+        .from('company_suggestions')
+        .select('*')
+        .eq('id', insertResult.id)
+        .maybeSingle();
+
+      if (fetchError || !suggestionRow) {
+        return {
+          success: false,
+          error: 'Suggestion saved but could not be loaded for publishing. Check /admin/suggestions.',
+        };
+      }
+
+      const approved = await approveAndPublishSuggestion(suggestionRow, 'admin_direct');
+      if (!approved.ok) {
+        return {
+          success: false,
+          error: approved.error,
+          suggestionId: insertResult.id,
+          profileSlug,
+          pendingReview: true,
+        };
+      }
+
+      return {
+        success: true,
+        suggestionId: insertResult.id,
+        profileSlug: approved.slug,
+        pendingReview: false,
+      };
+    }
 
     return {
       success: true,

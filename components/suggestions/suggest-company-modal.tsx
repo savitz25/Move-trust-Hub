@@ -3,7 +3,10 @@
 import { useEffect, useState, useTransition } from 'react';
 import Link from 'next/link';
 import { Building2, ExternalLink, Loader2, PlusCircle } from 'lucide-react';
-import { submitCompanySuggestion } from '@/actions/suggest-company';
+import {
+  getSuggestionSubmitterDefaults,
+  submitCompanySuggestion,
+} from '@/actions/suggest-company';
 import { OnboardingCarrierLookup } from '@/components/suggestions/onboarding-carrier-lookup';
 import { MultiSourcePreviewCard } from '@/components/verification/multi-source-preview-card';
 import { Button } from '@/components/ui/button';
@@ -46,6 +49,7 @@ export function SuggestCompanyModal({
   const [details, setDetails] = useState('');
   const [suggestedByName, setSuggestedByName] = useState('');
   const [suggestedByEmail, setSuggestedByEmail] = useState('');
+  const [isTrustedSubmitter, setIsTrustedSubmitter] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
   const [pending, startTransition] = useTransition();
@@ -63,6 +67,18 @@ export function SuggestCompanyModal({
       setLookupError(previewError);
     }
   }, [open, previewError]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    getSuggestionSubmitterDefaults().then((defaults) => {
+      setIsTrustedSubmitter(defaults.isTrustedSubmitter);
+      if (defaults.isTrustedSubmitter) {
+        setSuggestedByName(defaults.suggestedByName);
+        setSuggestedByEmail(defaults.suggestedByEmail);
+      }
+    });
+  }, [open]);
 
   function resetForm() {
     setActivePreview(null);
@@ -133,7 +149,11 @@ export function SuggestCompanyModal({
         });
       }
       setSubmitted(true);
-      toast.success('Submission received — pending admin review.');
+      if (res.pendingReview) {
+        toast.success('Submission received — pending admin review.');
+      } else {
+        toast.success('Company published to the directory.');
+      }
     });
   }
 
@@ -151,22 +171,32 @@ export function SuggestCompanyModal({
         {submitted ? (
           <div className="px-6 pb-6 space-y-4">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Thank you — your submission is in the admin review queue. FMCSA, Google, and BBB
-              data are on file. Once approved, the profile will be live at the link below (usually
-              within one business day).
+              {submitSuccess?.pendingReview
+                ? 'Thank you — your submission is in the admin review queue. FMCSA, Google, and BBB data are on file. Once approved, the profile will be live at the link below (usually within one business day).'
+                : 'Published — this company is live in the directory with FMCSA, Google, and BBB data on file. County and destination coverage were assigned from the headquarters address.'}
             </p>
             {submitSuccess?.profileSlug ? (
               <div className="rounded-md border bg-muted/40 p-4 space-y-2">
                 <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                  Expected profile URL
+                  {submitSuccess.pendingReview ? 'Expected profile URL' : 'Live profile'}
                 </p>
                 <p className="text-sm font-mono text-foreground">
                   /companies/{submitSuccess.profileSlug}
                 </p>
-                <p className="text-xs text-muted-foreground">
-                  This URL is reserved for after admin approval. It will show &quot;not found&quot;
-                  until then — that is expected.
-                </p>
+                {submitSuccess.pendingReview ? (
+                  <p className="text-xs text-muted-foreground">
+                    This URL is reserved for after admin approval. It will show &quot;not found&quot;
+                    until then — that is expected.
+                  </p>
+                ) : (
+                  <Link
+                    href={`/companies/${submitSuccess.profileSlug}`}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                  >
+                    View profile
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </Link>
+                )}
               </div>
             ) : null}
             <Button className="w-full" onClick={() => handleOpenChange(false)}>
@@ -198,9 +228,9 @@ export function SuggestCompanyModal({
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <p className="text-sm text-muted-foreground">
-                  Review the multi-source preview below. FMCSA is primary; Google is supplemental;
-                  BBB/public scrape is lowest confidence. Add optional notes, then submit for admin
-                  review.
+                  {isTrustedSubmitter
+                    ? 'Admin mode — review the preview below, then publish directly to the directory. No daily limits apply while you are logged in.'
+                    : 'Review the multi-source preview below. FMCSA is primary; Google is supplemental; BBB/public scrape is lowest confidence. Add optional notes, then submit for admin review.'}
                 </p>
 
                 <MultiSourcePreviewCard preview={activePreview!} />
@@ -280,12 +310,12 @@ export function SuggestCompanyModal({
                   {pending ? (
                     <>
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      Submitting to review queue…
+                      {isTrustedSubmitter ? 'Publishing to directory…' : 'Submitting to review queue…'}
                     </>
                   ) : (
                     <>
                       <PlusCircle className="h-4 w-4" />
-                      Add to Directory
+                      {isTrustedSubmitter ? 'Publish to Directory' : 'Add to Directory'}
                     </>
                   )}
                 </Button>
