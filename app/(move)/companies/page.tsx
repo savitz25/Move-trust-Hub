@@ -11,14 +11,14 @@ import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory'
 import { buildCompaniesDirectorySchemaGraph } from '@/lib/seo/build-directory-list-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
-import { formatAttributedReviewsLabel } from '@/lib/trust/site-messaging';
+import { formatAttributedReviewsLabel } from '@/lib/trust/site-stats';
 
 /** Revalidate so admin-approved companies appear without a full redeploy. */
 export const revalidate = 60;
 
-const COMPANIES_TITLE = 'Directory of Interstate Moving Companies 2026';
+const COMPANIES_TITLE = 'Compare FMCSA-Licensed Interstate Movers | Independent Directory';
 const COMPANIES_DESCRIPTION =
-  'Search FMCSA-verified interstate movers with active operating authority. Sort by reputation, rating, price, complaints, or years in business.';
+  'Search FMCSA-licensed interstate movers with active operating authority. Sort by reputation, attributable reviews, price, complaints, or years in business. Independent directory — no lead fees.';
 
 export const metadata: Metadata = buildMovePageMetadata({
   title: COMPANIES_TITLE,
@@ -45,7 +45,7 @@ export default async function CompaniesDirectoryPage() {
           COMPREHENSIVE DIRECTORY
         </div>
         <h1 className="text-4xl font-semibold tracking-tight mt-1">
-          Interstate Moving Companies
+          Compare FMCSA-Licensed Interstate Movers
         </h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">
           Your shortlist starts here. Search FMCSA-verified interstate movers with active operating

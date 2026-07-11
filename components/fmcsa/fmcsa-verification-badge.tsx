@@ -1,7 +1,10 @@
+import type { ReactNode } from 'react';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, ShieldCheck, ShieldX } from 'lucide-react';
 import type { Company } from '@/types';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
+import { badgeLegendHref } from '@/lib/trust/site-stats';
 
 export type FmcsaBadgeStatus = 'verified' | 'warning' | 'critical' | 'unknown';
 
@@ -33,6 +36,13 @@ const LABELS: Record<FmcsaBadgeStatus, string> = {
   unknown: 'FMCSA Unverified',
 };
 
+const LEGEND_IDS: Record<FmcsaBadgeStatus, string> = {
+  verified: 'fmcsa',
+  warning: 'fmcsa-warning',
+  critical: 'fmcsa-critical',
+  unknown: 'fmcsa-unknown',
+};
+
 const TOOLTIPS: Record<FmcsaBadgeStatus, string> = {
   verified:
     VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa')?.description ?? LABELS.verified,
@@ -50,6 +60,7 @@ const TOOLTIPS: Record<FmcsaBadgeStatus, string> = {
 export function FmcsaVerificationBadge({
   company,
   className,
+  linkToLegend = true,
 }: {
   company: Pick<
     Company,
@@ -59,40 +70,53 @@ export function FmcsaVerificationBadge({
     | 'fmcsaLastChecked'
   >;
   className?: string;
+  linkToLegend?: boolean;
 }) {
   const status = deriveFmcsaBadgeStatus(company);
   const tooltip = TOOLTIPS[status];
+  const legendId = LEGEND_IDS[status];
+
+  let badge: ReactNode;
 
   if (status === 'verified') {
-    return (
+    badge = (
       <Badge variant="success" className={className} title={tooltip}>
         <ShieldCheck className="h-3.5 w-3.5 mr-1" />
         {LABELS.verified}
       </Badge>
     );
-  }
-
-  if (status === 'warning') {
-    return (
+  } else if (status === 'warning') {
+    badge = (
       <Badge variant="warning" className={className} title={tooltip}>
         <AlertTriangle className="h-3.5 w-3.5 mr-1" />
         {LABELS.warning}
       </Badge>
     );
-  }
-
-  if (status === 'critical') {
-    return (
+  } else if (status === 'critical') {
+    badge = (
       <Badge variant="destructive" className={className} title={tooltip}>
         <ShieldX className="h-3.5 w-3.5 mr-1" />
         {LABELS.critical}
       </Badge>
     );
+  } else {
+    badge = (
+      <Badge variant="secondary" className={className} title={tooltip}>
+        {LABELS.unknown}
+      </Badge>
+    );
   }
 
+  if (!linkToLegend) return badge;
+
   return (
-    <Badge variant="secondary" className={className} title={tooltip}>
-      {LABELS.unknown}
-    </Badge>
+    <Link
+      href={badgeLegendHref(legendId, true)}
+      className="inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
+      title={`${tooltip} — see badge legend`}
+      aria-label={`${LABELS[status]}: ${tooltip}. View badge legend.`}
+    >
+      {badge}
+    </Link>
   );
 }

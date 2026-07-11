@@ -3,6 +3,7 @@ import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import { reviewHighlights } from '@/lib/trust/trust-data';
+import { MethodologyLink } from '@/components/trust/methodology-link';
 import { cn } from '@/lib/utils';
 
 type ReviewHighlightsProps = {
@@ -64,7 +65,9 @@ export function ReviewHighlights({
             <div className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">
                 Reputation:{' '}
-                <strong className="text-primary">{company.reputationScore}/100</strong>
+                <MethodologyLink anchor="reputationScore" className="font-semibold text-primary">
+                  {company.reputationScore}/100
+                </MethodologyLink>
               </span>
               <span className="inline-flex items-center gap-1 text-primary font-medium group-hover:underline">
                 View profile <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />

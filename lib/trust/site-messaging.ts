@@ -1,5 +1,3 @@
-import { getSiteAttributableReviewCount } from '@/lib/trust/review-display-policy';
-
 /** Canonical header pill shown in nav bars across Move, Lender, and Insurance hubs. */
 export const HEADER_TRUST_BADGE = 'INDEPENDENT & VERIFIED DIRECTORY';
 
@@ -14,16 +12,12 @@ export const CTA_COMPARE_TRUSTED_MOVERS = 'Compare Trusted Movers';
 export const DIRECTORY_INDEPENDENCE_TAGLINE =
   'Independent directory — not affiliated with listed movers. We do not sell leads or match you with carriers.';
 
-export const ATTRIBUTED_REVIEWS_EXPLANATION =
-  'Named Google reviews published on Move Trust Hub for verified movers — not industry-wide or inflated totals.';
-
-/** User-facing label for the verified on-site review count (footers, trust bars, badges). */
-export function formatAttributedReviewsLabel(count?: number): string {
-  const n = count ?? getSiteAttributableReviewCount();
-  if (n === 0) return '0 Attributed Reviews from Verified Movers';
-  if (n === 1) return '1 Attributed Review from Verified Movers';
-  return `${n} Attributed Reviews from Verified Movers`;
-}
+export {
+  ATTRIBUTED_REVIEWS_EXPLANATION,
+  formatAttributedReviewsLabel,
+  METHODOLOGY_PAGE_PATH,
+  methodologyHref,
+} from '@/lib/trust/site-stats';
 
 export const VERIFICATION_BADGE_LEGEND = [
   {

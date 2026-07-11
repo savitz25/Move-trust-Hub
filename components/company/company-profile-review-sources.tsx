@@ -7,6 +7,7 @@ import {
   PROFILE_METRIC_TOOLTIPS,
 } from '@/lib/trust/profile-metrics';
 import { REVIEW_TRANSPARENCY_DISCLAIMER } from '@/lib/trust/review-display-policy';
+import { methodologyHref } from '@/lib/trust/site-stats';
 import type { Company } from '@/types';
 import type { GooglePlacesData } from '@/lib/verification/types';
 
@@ -36,6 +37,7 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
             <MetricLabel
               label="Industry-reported rating"
               tooltip={PROFILE_METRIC_TOOLTIPS.overallRating}
+              methodologyAnchor="reviewAttribution"
             />
             <dd className="mt-2 flex items-center gap-2">
               <StarRating rating={sources.editorialRating} size="sm" />
@@ -50,6 +52,7 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
             <MetricLabel
               label="Google Places snapshot"
               tooltip={PROFILE_METRIC_TOOLTIPS.googlePlaces}
+              methodologyAnchor="reviewAttribution"
             />
             {sources.googleAvailable ? (
               <>
@@ -86,6 +89,7 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
             <MetricLabel
               label="On-site attributed reviews"
               tooltip={PROFILE_METRIC_TOOLTIPS.onSiteReviews}
+              methodologyAnchor="reviewAttribution"
             />
             <dd className="mt-2 font-semibold">{sources.attributableOnSiteLabel}</dd>
             <dd className="text-xs text-muted-foreground mt-1 leading-relaxed">
@@ -97,7 +101,10 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
           </div>
         </dl>
         <p className="text-[11px] text-muted-foreground mt-4 leading-relaxed border-t pt-3">
-          {REVIEW_TRANSPARENCY_DISCLAIMER}
+          {REVIEW_TRANSPARENCY_DISCLAIMER}{' '}
+          <Link href={methodologyHref('reviewAttribution')} className="text-primary underline underline-offset-2">
+            Read our review methodology →
+          </Link>
         </p>
       </CardContent>
     </Card>

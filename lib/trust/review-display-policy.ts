@@ -1,6 +1,6 @@
 import type { Review } from '@/types';
+import { getSiteAttributableReviewCount } from '@/lib/trust/site-stats';
 import {
-  countAttributableReviews,
   getAttributableReviewsForCompany,
   isAttributableReview,
 } from '@/lib/trust/verified-reviews';
@@ -26,9 +26,7 @@ export type ReviewSourceDisplay = {
 
 const GOOGLE_SEARCH_URL = 'https://www.google.com/search?q=';
 
-export function getSiteAttributableReviewCount(): number {
-  return countAttributableReviews();
-}
+export { getSiteAttributableReviewCount } from '@/lib/trust/site-stats';
 
 export function getCompanyAttributableReviewCount(companyId: string): number {
   return getAttributableReviewsForCompany(companyId, 100).length;

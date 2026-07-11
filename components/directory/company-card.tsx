@@ -20,6 +20,7 @@ import {
   normalizeCompanyForDisplay,
 } from '@/lib/directory/normalize-company';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
+import { MethodologyLink } from '@/components/trust/methodology-link';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -107,7 +108,9 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
 
       <div className="border-t px-5 py-3.5 bg-muted/20 flex items-center justify-between text-sm gap-3">
         <div className="min-w-0">
-          <span className="font-semibold tabular-nums">{company.reputationScore}</span>
+          <MethodologyLink anchor="reputationScore" className="font-semibold tabular-nums no-underline">
+            {company.reputationScore}
+          </MethodologyLink>
           <span className="text-muted-foreground">
             {' '}
             rep • {formatAvgPricePerMove(company.avgPricePerMove)}

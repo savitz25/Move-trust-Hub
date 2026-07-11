@@ -1,35 +1,17 @@
-import { seedCompanies } from '@/data/seed-companies';
-import { assessLicense } from '@/lib/trust/license-verification';
+import { getHomepageAttributableReviews } from '@/lib/trust/verified-reviews';
 import {
   ATTRIBUTED_REVIEWS_EXPLANATION,
   formatAttributedReviewsLabel,
-} from '@/lib/trust/site-messaging';
-import {
-  countAttributableReviews,
-  getHomepageAttributableReviews,
-} from '@/lib/trust/verified-reviews';
+  formatDirectoryAvgRating,
+  getDirectoryTrustStats,
+  getVerifiedDirectoryCompanies,
+  methodologyHref,
+} from '@/lib/trust/site-stats';
 
-const verifiedDirectoryCompanies = seedCompanies.filter(
-  (c) => c.isVerified && assessLicense(c.usdotNumber, c.mcNumber).isDisplayable
-);
+const stats = getDirectoryTrustStats();
+const verifiedDirectoryCompanies = getVerifiedDirectoryCompanies();
 
-const attributableReviewCount = countAttributableReviews();
-
-const avgDirectoryRating =
-  verifiedDirectoryCompanies.length > 0
-    ? Math.round(
-        (verifiedDirectoryCompanies.reduce((sum, c) => sum + c.overallRating, 0) /
-          verifiedDirectoryCompanies.length) *
-          10
-      ) / 10
-    : 0;
-
-export const trustStats = {
-  verifiedMovers: verifiedDirectoryCompanies.length,
-  attributableReviews: attributableReviewCount,
-  averageRating: avgDirectoryRating,
-  fmcsaLicensed: verifiedDirectoryCompanies.length,
-};
+export const trustStats = stats;
 
 export const trustBadges = [
   {
@@ -41,21 +23,21 @@ export const trustBadges = [
   },
   {
     id: 'licensed',
-    label: `${verifiedDirectoryCompanies.length} Directory Movers`,
+    label: `${stats.verifiedMovers} Directory Movers`,
     description: 'Interstate carriers with verifiable USDOT records',
     href: '/companies',
   },
   {
     id: 'reviews',
-    label: formatAttributedReviewsLabel(attributableReviewCount),
+    label: formatAttributedReviewsLabel(stats.attributableReviews),
     description: ATTRIBUTED_REVIEWS_EXPLANATION,
-    href: '/companies?sort=reputation',
+    href: methodologyHref('reviewAttribution'),
   },
   {
     id: 'rating',
-    label: `${avgDirectoryRating}★ Directory Avg`,
+    label: formatDirectoryAvgRating(stats.averageRating),
     description: 'Across FMCSA-licensed interstate listings',
-    href: '/companies?sort=rating',
+    href: methodologyHref('reputationScore'),
   },
   {
     id: 'independent',
@@ -86,9 +68,7 @@ export const testimonials = homepageReviews.map((review) => ({
 }));
 
 export const reviewHighlights = verifiedDirectoryCompanies
-  .filter((c) =>
-    homepageReviews.some((r) => r.companySlug === c.slug)
-  )
+  .filter((c) => homepageReviews.some((r) => r.companySlug === c.slug))
   .sort((a, b) => b.reputationScore - a.reputationScore)
   .slice(0, 3)
   .map((company) => {
@@ -97,8 +77,7 @@ export const reviewHighlights = verifiedDirectoryCompanies
       companyName: company.name,
       slug: company.slug,
       rating: company.overallRating,
-      attributableOnSite: homepageReviews.filter((r) => r.companySlug === company.slug)
-        .length,
+      attributableOnSite: homepageReviews.filter((r) => r.companySlug === company.slug).length,
       reputationScore: company.reputationScore,
       highlight: sample
         ? `"${sample.quote.slice(0, 120)}${sample.quote.length > 120 ? '…' : ''}" — ${sample.name}, Attributed ${sample.source}`
@@ -116,7 +95,7 @@ export const neutralTrustSignals = [
   {
     title: 'Attributed reviews only',
     body: 'We display named Google reviews where available. Pages without sourced reviews use neutral trust signals — no fabricated quotes.',
-    href: '/companies',
+    href: methodologyHref('reviewAttribution'),
   },
   {
     title: 'Independent research directory',

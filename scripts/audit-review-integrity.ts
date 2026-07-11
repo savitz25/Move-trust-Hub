@@ -10,8 +10,10 @@ import {
   countAttributableReviews,
   isAttributableReview,
 } from '../lib/trust/verified-reviews';
-import { getSiteAttributableReviewCount } from '../lib/trust/review-display-policy';
-import { formatAttributedReviewsLabel } from '../lib/trust/site-messaging';
+import {
+  formatAttributedReviewsLabel,
+  getSiteAttributableReviewCount,
+} from '../lib/trust/site-stats';
 
 const attributable = countAttributableReviews();
 const editorialDirectoryVolume = seedCompanies.reduce((s, c) => s + c.reviewCount, 0);

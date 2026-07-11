@@ -150,7 +150,7 @@ export default function AboutPage() {
 
           <p className="text-center text-sm text-muted-foreground mt-6 max-w-md mx-auto">
             Scores are recalculated regularly. We never fabricate reviews or inflate ratings.{' '}
-            <Link href="/resources/how-to-choose#reputation-score" className="text-primary hover:underline">
+            <Link href="/about/how-we-score-movers#reputation-score" className="text-primary hover:underline">
               Full methodology
             </Link>
           </p>

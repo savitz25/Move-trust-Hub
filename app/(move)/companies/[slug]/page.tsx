@@ -36,6 +36,8 @@ import { PublicScrapeBadges } from '@/components/verification/public-scrape-badg
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
 import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
+import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness';
+
 
 export const revalidate = 60;
 
@@ -55,8 +57,8 @@ export async function generateMetadata({ params }: Props) {
   });
   const canonical = `${SITE_URL}/companies/${company.slug}`;
   return {
-    title: `${company.name} — Reviews, Pricing & FMCSA Info`,
-    description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}.`,
+    title: `${company.name} — FMCSA Profile, Ratings & Pricing`,
+    description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Independent directory — verify FMCSA licensing yourself.`,
     alternates: { canonical },
     robots: { index: true, follow: true },
   };
@@ -132,7 +134,7 @@ export default async function CompanyProfilePage({ params }: Props) {
           ) : null}
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
           {canShowVerifiedBadge(company) ? (
-            <VerificationBadgeLegend className="mt-4" compact />
+            <VerificationBadgeLegend className="mt-4" />
           ) : null}
         </div>
         <div className="flex items-center gap-3">
@@ -145,6 +147,12 @@ export default async function CompanyProfilePage({ params }: Props) {
           </Link>
         </div>
       </div>
+
+      <ProfileDataFreshness
+        fmcsaLastChecked={company.fmcsaLastChecked}
+        lastUpdated={company.lastUpdated}
+        className="mb-6"
+      />
 
       <CompanyProfileStats company={company} />
 

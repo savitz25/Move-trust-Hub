@@ -5,6 +5,7 @@ import {
   REPUTATION_SCORE_FACTORS,
   REPUTATION_SCORE_THRESHOLD,
 } from '@/lib/trust/reputation-score-factors';
+import { methodologyHref } from '@/lib/trust/site-stats';
 
 type Props = {
   className?: string;
@@ -44,7 +45,7 @@ function HowWeScoreBody({ compact = false }: { compact?: boolean }) {
 
       <div className="flex flex-wrap gap-2 text-sm">
         <Link
-          href="/resources/how-to-choose#reputation-score"
+          href={methodologyHref('reputationScore')}
           className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1.5 font-medium hover:border-primary/40 hover:text-primary transition-colors"
         >
           <Scale className="h-3.5 w-3.5" aria-hidden="true" />
@@ -128,7 +129,7 @@ export function HowWeScorePanel({
 
       <div className="flex flex-wrap gap-2 text-sm">
         <Link
-          href="/resources/how-to-choose#reputation-score"
+          href={methodologyHref('reputationScore')}
           className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1.5 font-medium hover:border-primary/40 hover:text-primary transition-colors"
         >
           <Scale className="h-3.5 w-3.5" aria-hidden="true" />

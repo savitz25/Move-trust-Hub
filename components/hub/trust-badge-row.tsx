@@ -2,20 +2,21 @@ import Link from 'next/link';
 import { Shield, ExternalLink } from 'lucide-react';
 import { getHubConfig } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
-import { formatAttributedReviewsLabel } from '@/lib/trust/site-messaging';
+import { formatAttributedReviewsLabel, methodologyHref } from '@/lib/trust/site-stats';
 
 type TrustBadgeRowProps = {
   hub: HubId;
   className?: string;
 };
 
-const HUB_BADGES: Record<HubId, { label: string; detail: string }[]> = {
+const HUB_BADGES: Record<HubId, { label: string; detail: string; href?: string }[]> = {
   move: [
-    { label: 'FMCSA Licensed', detail: 'DOT/MC verification on every interstate carrier' },
-    { label: 'Independent', detail: 'No paid placements or carrier affiliations' },
+    { label: 'FMCSA Licensed', detail: 'DOT/MC verification on every interstate carrier', href: '/resources/fmcsa' },
+    { label: 'Independent', detail: 'No paid placements or carrier affiliations', href: '/about#disclaimer' },
     {
       label: 'Attributed Reviews',
       detail: formatAttributedReviewsLabel(),
+      href: methodologyHref('reviewAttribution'),
     },
   ],
   lender: [
@@ -49,16 +50,32 @@ export function TrustBadgeRow({ hub, className }: TrustBadgeRowProps) {
         </p>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-3">
-            {badges.map((badge) => (
-              <div
-                key={badge.label}
-                className="inline-flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 text-sm"
-                title={badge.detail}
-              >
-                <Shield className="h-3.5 w-3.5 text-primary shrink-0" aria-hidden="true" />
-                <span className="font-medium">{badge.label}</span>
-              </div>
-            ))}
+            {badges.map((badge) => {
+              const inner = (
+                <>
+                  <Shield className="h-3.5 w-3.5 text-primary shrink-0" aria-hidden="true" />
+                  <span className="font-medium">{badge.label}</span>
+                </>
+              );
+              return badge.href ? (
+                <Link
+                  key={badge.label}
+                  href={badge.href}
+                  className="inline-flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 text-sm hover:border-primary/40 transition-colors"
+                  title={badge.detail}
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <div
+                  key={badge.label}
+                  className="inline-flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 text-sm"
+                  title={badge.detail}
+                >
+                  {inner}
+                </div>
+              );
+            })}
           </div>
           {config.verifyAuthority && (
             <Link

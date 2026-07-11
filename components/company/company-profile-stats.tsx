@@ -8,6 +8,7 @@ import {
   formatFmcsaSafetyLabel,
   PROFILE_METRIC_TOOLTIPS,
 } from '@/lib/trust/profile-metrics';
+import { MethodologyLink } from '@/components/trust/methodology-link';
 import { ShieldCheck } from 'lucide-react';
 
 type CompanyProfileStatsProps = {
@@ -32,6 +33,7 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
         <MetricLabel
           label="Editorial star rating"
           tooltip={PROFILE_METRIC_TOOLTIPS.overallRating}
+          methodologyAnchor="reviewAttribution"
         />
         <div className="flex items-baseline gap-2 mt-1">
           <StarRating rating={company.overallRating} size="lg" />
@@ -45,9 +47,12 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
         <MetricLabel
           label="Reputation score"
           tooltip={PROFILE_METRIC_TOOLTIPS.reputationScore}
+          methodologyAnchor="reputationScore"
         />
         <p className="text-3xl font-semibold mt-1 tabular-nums text-primary leading-none">
-          {company.reputationScore}
+          <MethodologyLink anchor="reputationScore" className="no-underline hover:text-primary">
+            {company.reputationScore}
+          </MethodologyLink>
           <span className="text-lg font-normal text-muted-foreground"> / 100</span>
         </p>
         <p className="text-[11px] text-muted-foreground leading-snug">Directory composite score</p>
