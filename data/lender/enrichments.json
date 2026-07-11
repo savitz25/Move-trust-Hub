@@ -1,0 +1,1042 @@
+{
+  "metro-home-finance": {
+    "slug": "metro-home-finance",
+    "google_rating": 5,
+    "google_review_count": 94,
+    "google_place_id": "ChIJ05KMtsNZwokRu91CH1c0Ajk",
+    "google_review_snippets": [
+      {
+        "text": "Steven Esses -\n\nIt was truly a pleasure working with Steven. He brings a great attitude, strong work ethic, and a level of professionalism that makes collaboration easy and enjoyable. Steven is reliable, thoughtful, and always willing to go the extra mile to make sure things are ",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Michael Ash"
+      },
+      {
+        "text": "I had a great experience with Steven Esses at FM Home Loans he made it very easy and effortless Thank you",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Ely E"
+      },
+      {
+        "text": "I recently closed on my new home, and I couldn’t be more grateful for the experience I had working with my brother as my mortgage broker. While it’s always special to go through a major life milestone with family, what stood out to me most was not just the personal connection – i",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Zevi Hofstatter"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 54,
+    "enriched_at": "2026-07-11T02:30:10.657Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ05KMtsNZwokRu91CH1c0Ajk",
+        "name": "FM Home Loans",
+        "rating": 5,
+        "review_count": 94,
+        "formatted_address": "145 E 57th St 6th fl, New York, NY 10022, USA",
+        "review_snippets": [
+          {
+            "text": "Steven Esses -\n\nIt was truly a pleasure working with Steven. He brings a great attitude, strong work ethic, and a level of professionalism that makes collaboration easy and enjoyable. Steven is reliable, thoughtful, and always willing to go the extra mile to make sure things are ",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Michael Ash"
+          },
+          {
+            "text": "I had a great experience with Steven Esses at FM Home Loans he made it very easy and effortless Thank you",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Ely E"
+          },
+          {
+            "text": "I recently closed on my new home, and I couldn’t be more grateful for the experience I had working with my brother as my mortgage broker. While it’s always special to go through a major life milestone with family, what stood out to me most was not just the personal connection – i",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Zevi Hofstatter"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:30:10.657Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ05KMtsNZwokRu91CH1c0Ajk",
+          "displayName": "FM Home Loans",
+          "rating": 5,
+          "userRatingCount": 94
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Metro Home Finance",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:10.658Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 54,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 4,
+          "google_local_match": 15,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:10.657Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:10.657Z",
+      "partial_failures": []
+    }
+  },
+  "pacific-trust-mortgage": {
+    "slug": "pacific-trust-mortgage",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": "ChIJFSmp2sm4woARou6vMRXmO90",
+    "google_review_snippets": [],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 54,
+    "enriched_at": "2026-07-11T02:30:10.619Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJFSmp2sm4woARou6vMRXmO90",
+        "name": "Pacific Trust Group",
+        "rating": null,
+        "review_count": null,
+        "formatted_address": "606 N Larchmont Blvd, Los Angeles, CA 90004, USA",
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T02:30:10.620Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJFSmp2sm4woARou6vMRXmO90",
+          "displayName": "Pacific Trust Group"
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Pacific Trust Mortgage",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:10.656Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 54,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 4,
+          "google_local_match": 15,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:10.619Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:10.619Z",
+      "partial_failures": []
+    }
+  },
+  "lone-star-lending": {
+    "slug": "lone-star-lending",
+    "google_rating": 4.9,
+    "google_review_count": 162,
+    "google_place_id": "ChIJj1aSRmHHQIYRT0oh5wx9S_E",
+    "google_review_snippets": [
+      {
+        "text": "I had a phenomenal experience with Texas Loan Star during my home financing process.  Mike and Lisa were absolutely flawless in handling the details of the loan. They were both very knowledgeable, patient and professional.  I without any hesitation recommend Texas Loan Star to an",
+        "rating": 5,
+        "relative_time": "4 weeks ago",
+        "author": "Ken Davis"
+      },
+      {
+        "text": "I had a great experience with Texas Loan Star. My point of contact, Halley Spencer, was knowledgeable, transparent, efficient, and provided great rates. He ensured I was updated through every step of the process and made my first home purchase extremely smooth.",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Dylan Nguyen"
+      },
+      {
+        "text": "I had an outstanding experience working with Texas Loan Star, especially with Halley Spencer. From start to finish, Halley made the mortgage process smooth, transparent, and stress-free. He was incredibly knowledgeable, patient, and always took the time to explain every detail so",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Elizabeth Nevarez"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 39,
+    "enriched_at": "2026-07-11T02:30:19.008Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJj1aSRmHHQIYRT0oh5wx9S_E",
+        "name": "Texas Loan Star Inc",
+        "rating": 4.9,
+        "review_count": 162,
+        "formatted_address": "2233 Yale St, Houston, TX 77008, USA",
+        "review_snippets": [
+          {
+            "text": "I had a phenomenal experience with Texas Loan Star during my home financing process.  Mike and Lisa were absolutely flawless in handling the details of the loan. They were both very knowledgeable, patient and professional.  I without any hesitation recommend Texas Loan Star to an",
+            "rating": 5,
+            "relative_time": "4 weeks ago",
+            "author": "Ken Davis"
+          },
+          {
+            "text": "I had a great experience with Texas Loan Star. My point of contact, Halley Spencer, was knowledgeable, transparent, efficient, and provided great rates. He ensured I was updated through every step of the process and made my first home purchase extremely smooth.",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Dylan Nguyen"
+          },
+          {
+            "text": "I had an outstanding experience working with Texas Loan Star, especially with Halley Spencer. From start to finish, Halley made the mortgage process smooth, transparent, and stress-free. He was incredibly knowledgeable, patient, and always took the time to explain every detail so",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Elizabeth Nevarez"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:30:19.008Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJj1aSRmHHQIYRT0oh5wx9S_E",
+          "displayName": "Texas Loan Star Inc",
+          "rating": 4.9,
+          "userRatingCount": 162
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Lone Star Lending",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:19.010Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 39,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 4,
+          "google_local_match": 0,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:19.008Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:19.008Z",
+      "partial_failures": []
+    }
+  },
+  "windy-city-mortgage": {
+    "slug": "windy-city-mortgage",
+    "google_rating": 5,
+    "google_review_count": 31,
+    "google_place_id": "ChIJl_rMw7TND4gRIaJVQu43ZAA",
+    "google_review_snippets": [
+      {
+        "text": "Joseph Mullappallil is my go-to person for any mortgage-related questions. He takes the time to explain options clearly, walks through the numbers patiently, and provides practical guidance tailored to individual needs. What I appreciate most is his accessibility and honest advic",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Xavier Tomy"
+      },
+      {
+        "text": "Mr Jeremy Karedan  has been very helpful  to support  me through out the process. As a loan officer he used to regularly interact with me regarding the loan process status  and how to financially prepare for the closing. His professional focused approach made me things easier wit",
+        "rating": 5,
+        "relative_time": "11 months ago",
+        "author": "Santosh Iype"
+      },
+      {
+        "text": "Working with Jeremy as my mortgage lender made the home-buying process incredibly smooth and stress-free. From day one, he was knowledgeable, attentive, and always available to answer my questions, guiding me through each step with patience and clarity. His expertise and dedicati",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "shiek syed jaleel mohamed"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 62,
+    "enriched_at": "2026-07-11T02:30:19.021Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJl_rMw7TND4gRIaJVQu43ZAA",
+        "name": "Citywide Mortgage of America Corporation",
+        "rating": 5,
+        "review_count": 31,
+        "formatted_address": "4323 Irving Park Rd, Chicago, IL 60641, USA",
+        "review_snippets": [
+          {
+            "text": "Joseph Mullappallil is my go-to person for any mortgage-related questions. He takes the time to explain options clearly, walks through the numbers patiently, and provides practical guidance tailored to individual needs. What I appreciate most is his accessibility and honest advic",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Xavier Tomy"
+          },
+          {
+            "text": "Mr Jeremy Karedan  has been very helpful  to support  me through out the process. As a loan officer he used to regularly interact with me regarding the loan process status  and how to financially prepare for the closing. His professional focused approach made me things easier wit",
+            "rating": 5,
+            "relative_time": "11 months ago",
+            "author": "Santosh Iype"
+          },
+          {
+            "text": "Working with Jeremy as my mortgage lender made the home-buying process incredibly smooth and stress-free. From day one, he was knowledgeable, attentive, and always available to answer my questions, guiding me through each step with patience and clarity. His expertise and dedicati",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "shiek syed jaleel mohamed"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:30:19.021Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJl_rMw7TND4gRIaJVQu43ZAA",
+          "displayName": "Citywide Mortgage of America Corporation",
+          "rating": 5,
+          "userRatingCount": 31
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Windy City Mortgage Co.",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:19.022Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 62,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 12,
+          "google_local_match": 15,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:19.021Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:19.021Z",
+      "partial_failures": []
+    }
+  },
+  "peach-state-home-loans": {
+    "slug": "peach-state-home-loans",
+    "google_rating": 5,
+    "google_review_count": 21,
+    "google_place_id": "ChIJqWzHTlEP9YgROzcCrccVY_w",
+    "google_review_snippets": [
+      {
+        "text": "Alexis and her team are nothing short of amazing. They are fantastic with communication and are clear on the process and timelines every step of the way!",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Zack Busch"
+      },
+      {
+        "text": "Alexis and Team are incredible. They tell you what they can and can't do and are one of my favorite options for shortterm capital",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Andrew Schlag"
+      },
+      {
+        "text": "As a first-time private money lender, I had a lot of questions and was naturally a bit nervous. The team at Peach Tree Capital made the entire process smooth and stress-free. What stood out most was their consistent communication—every question I had was answered quickly and thor",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Omar J. Gaitan"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 39,
+    "enriched_at": "2026-07-11T02:30:26.756Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJqWzHTlEP9YgROzcCrccVY_w",
+        "name": "Peach State Capital Group",
+        "rating": 5,
+        "review_count": 21,
+        "formatted_address": "290 Carpenter Dr NE, Sandy Springs, GA 30328, USA",
+        "review_snippets": [
+          {
+            "text": "Alexis and her team are nothing short of amazing. They are fantastic with communication and are clear on the process and timelines every step of the way!",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Zack Busch"
+          },
+          {
+            "text": "Alexis and Team are incredible. They tell you what they can and can't do and are one of my favorite options for shortterm capital",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Andrew Schlag"
+          },
+          {
+            "text": "As a first-time private money lender, I had a lot of questions and was naturally a bit nervous. The team at Peach Tree Capital made the entire process smooth and stress-free. What stood out most was their consistent communication—every question I had was answered quickly and thor",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Omar J. Gaitan"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:30:26.756Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJqWzHTlEP9YgROzcCrccVY_w",
+          "displayName": "Peach State Capital Group",
+          "rating": 5,
+          "userRatingCount": 21
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Peach State Home Loans",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:26.758Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 39,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 4,
+          "google_local_match": 0,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:26.756Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:26.756Z",
+      "partial_failures": []
+    }
+  },
+  "cascade-home-lending": {
+    "slug": "cascade-home-lending",
+    "google_rating": 5,
+    "google_review_count": 182,
+    "google_place_id": "ChIJhydBIEQFkFQRnL7sHAxsy3k",
+    "google_review_snippets": [
+      {
+        "text": "We had an absolutely fantastic experience working with Dave Zulinke. He found us the absolute best deal for our mortgage and made the entire process incredibly smooth and fast. What really set Dave apart was his responsiveness—he was always available to answer our questions, even",
+        "rating": 5,
+        "relative_time": "4 weeks ago",
+        "author": "Jennifer Reyes"
+      },
+      {
+        "text": "I loved working with Dave Zulinke! He is very professional and he keeps everyone up to date on where the transaction is. It is very important in Real Estate when helping clients to have the Realtir and lender work hand in hand . This was the case with Dave! Let’s do it again Dave",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Christophilis Team"
+      },
+      {
+        "text": "My husband and I are first time home buyers and had the pleasure of working with Dave as our lender. We had found a house we loved and he got us pre-approved as soon as he could even with our unique situation we had. Everything from this first interaction with Dave all the way to",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Mandy Maas"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 39,
+    "enriched_at": "2026-07-11T02:30:32.033Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJhydBIEQFkFQRnL7sHAxsy3k",
+        "name": "Cascade Lending Group",
+        "rating": 5,
+        "review_count": 182,
+        "formatted_address": "4720 200th St SW Unit 205, Lynnwood, WA 98036, USA",
+        "review_snippets": [
+          {
+            "text": "We had an absolutely fantastic experience working with Dave Zulinke. He found us the absolute best deal for our mortgage and made the entire process incredibly smooth and fast. What really set Dave apart was his responsiveness—he was always available to answer our questions, even",
+            "rating": 5,
+            "relative_time": "4 weeks ago",
+            "author": "Jennifer Reyes"
+          },
+          {
+            "text": "I loved working with Dave Zulinke! He is very professional and he keeps everyone up to date on where the transaction is. It is very important in Real Estate when helping clients to have the Realtir and lender work hand in hand . This was the case with Dave! Let’s do it again Dave",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Christophilis Team"
+          },
+          {
+            "text": "My husband and I are first time home buyers and had the pleasure of working with Dave as our lender. We had found a house we loved and he got us pre-approved as soon as he could even with our unique situation we had. Everything from this first interaction with Dave all the way to",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Mandy Maas"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:30:32.033Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJhydBIEQFkFQRnL7sHAxsy3k",
+          "displayName": "Cascade Lending Group",
+          "rating": 5,
+          "userRatingCount": 182
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Cascade Home Lending",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:32.033Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 39,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 4,
+          "google_local_match": 0,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:32.033Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:32.033Z",
+      "partial_failures": []
+    }
+  },
+  "rocky-mountain-mortgage": {
+    "slug": "rocky-mountain-mortgage",
+    "google_rating": 5,
+    "google_review_count": 15,
+    "google_place_id": "ChIJ__87uSWIbIcRUlni3_LaB7A",
+    "google_review_snippets": [
+      {
+        "text": "I had an excellent experience working with Rocky Mountain Mortgage. From the initial consultation through closing, their team was professional, attentive, and highly knowledgeable. They communicated clearly throughout the entire process, keeping me informed at every stage and mak",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Shaya !!"
+      },
+      {
+        "text": "I had an outstanding experience with Rocky Mountain Mortgage from start to finish. The team was professional, responsive, and incredibly knowledgeable throughout the entire mortgage process. They took the time to explain every step clearly, answered all my questions quickly, and ",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Josiah Trout"
+      },
+      {
+        "text": "Not my first purchase and not my last as Rocky Mountain Mortgage works for you! My genuine respect for Michelles work ethic has beaten out some of the biggest Mortgage Companies by beating or meeting every APR review.\n\nMichelle at Rocky Mountain Mortgage is absolutely phenomenal!",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Gregory Schimmel"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 39,
+    "enriched_at": "2026-07-11T02:30:49.977Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ__87uSWIbIcRUlni3_LaB7A",
+        "name": "Rocky Mountain Mortgage, LLC",
+        "rating": 5,
+        "review_count": 15,
+        "formatted_address": "15137 E Wesley Ave, Aurora, CO 80014, USA",
+        "review_snippets": [
+          {
+            "text": "I had an excellent experience working with Rocky Mountain Mortgage. From the initial consultation through closing, their team was professional, attentive, and highly knowledgeable. They communicated clearly throughout the entire process, keeping me informed at every stage and mak",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Shaya !!"
+          },
+          {
+            "text": "I had an outstanding experience with Rocky Mountain Mortgage from start to finish. The team was professional, responsive, and incredibly knowledgeable throughout the entire mortgage process. They took the time to explain every step clearly, answered all my questions quickly, and ",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Josiah Trout"
+          },
+          {
+            "text": "Not my first purchase and not my last as Rocky Mountain Mortgage works for you! My genuine respect for Michelles work ethic has beaten out some of the biggest Mortgage Companies by beating or meeting every APR review.\n\nMichelle at Rocky Mountain Mortgage is absolutely phenomenal!",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Gregory Schimmel"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:30:49.977Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ__87uSWIbIcRUlni3_LaB7A",
+          "displayName": "Rocky Mountain Mortgage, LLC",
+          "rating": 5,
+          "userRatingCount": 15
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Rocky Mountain Mortgage",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:49.978Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 39,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 4,
+          "google_local_match": 0,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:49.977Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:49.977Z",
+      "partial_failures": []
+    }
+  },
+  "golden-gate-home-loans": {
+    "slug": "golden-gate-home-loans",
+    "google_rating": 5,
+    "google_review_count": 111,
+    "google_place_id": "ChIJ12nZENaEhYARIG3xTWtwH2k",
+    "google_review_snippets": [
+      {
+        "text": "Sofia and the team at Golden Gate Lending are truly best-in-class. I recently brought Sofia into a transaction after another lender was unable to perform, and she immediately stepped in, assessed the situation, and got the deal back on track.\n\nThroughout the process, Sofia was ex",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Miriam Wells"
+      },
+      {
+        "text": "My client was referred to these folks by a trusted advisor. Their performance on closing the transaction was the best performance I have ever seen in my almost 50 years of practice. Summarized- High Integrity, Accuracy in their representations, and outstanding client communicatio",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Brent Waldman"
+      },
+      {
+        "text": "I recently worked with the group on a 4-unit conversion project in San Rafael, and Sofia was absolutely outstanding. She was proactive, highly communicative, and made sure all the funding conditions were handled efficiently so we could stay on schedule. It’s rare to find a lender",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Sahap Borak"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 35,
+    "enriched_at": "2026-07-11T02:30:55.295Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ12nZENaEhYARIG3xTWtwH2k",
+        "name": "Golden Gate Lending Group | Short Term Bridge Loans California",
+        "rating": 5,
+        "review_count": 111,
+        "formatted_address": "81 Casa Buena Dr #5, Corte Madera, CA 94925, USA",
+        "review_snippets": [
+          {
+            "text": "Sofia and the team at Golden Gate Lending are truly best-in-class. I recently brought Sofia into a transaction after another lender was unable to perform, and she immediately stepped in, assessed the situation, and got the deal back on track.\n\nThroughout the process, Sofia was ex",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Miriam Wells"
+          },
+          {
+            "text": "My client was referred to these folks by a trusted advisor. Their performance on closing the transaction was the best performance I have ever seen in my almost 50 years of practice. Summarized- High Integrity, Accuracy in their representations, and outstanding client communicatio",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Brent Waldman"
+          },
+          {
+            "text": "I recently worked with the group on a 4-unit conversion project in San Rafael, and Sofia was absolutely outstanding. She was proactive, highly communicative, and made sure all the funding conditions were handled efficiently so we could stay on schedule. It’s rare to find a lender",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Sahap Borak"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:30:55.295Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ12nZENaEhYARIG3xTWtwH2k",
+          "displayName": "Golden Gate Lending Group | Short Term Bridge Loans California",
+          "rating": 5,
+          "userRatingCount": 111
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Golden Gate Home Loans",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:30:55.295Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 35,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 0,
+          "google_local_match": 0,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:30:55.295Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:30:55.295Z",
+      "partial_failures": []
+    }
+  },
+  "liberty-lending-solutions": {
+    "slug": "liberty-lending-solutions",
+    "google_rating": 1.3,
+    "google_review_count": 23,
+    "google_place_id": "ChIJPdaxYRFawokRau2UYKweYrY",
+    "google_review_snippets": [
+      {
+        "text": "Rating: ⭐☆☆☆☆ (0 stars if I could)\nSave yourself the massive headache, wasted months, and broken promises. Avoid Liberty 1 Lending, specifically Billy Bazzi and Kassem Faraj.\nI brought them two investment deals, and it was a complete disaster from start to finish:\nBait-and-Switch",
+        "rating": 1,
+        "relative_time": "a month ago",
+        "author": "Eric Jacobs"
+      },
+      {
+        "text": "Like I see from several others, I never applied for a loan, nor did I reach out, but I keep getting robo calls and texts. There doesn't seem to be a way to stop it since I'm not even talking to a person. I use my phone for work, which makes this even more annoying.",
+        "rating": 1,
+        "relative_time": "3 months ago",
+        "author": "Joshua Schuettenhelm"
+      },
+      {
+        "text": "Multiple phone calls a day for a “loan” I never requested. Blocking their numbers never seems to work because they seem to have yet another number to attempt to allegedly scam people with.",
+        "rating": 1,
+        "relative_time": "3 months ago",
+        "author": "SB"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_score": null,
+    "bbb_profile_url": null,
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 43,
+    "enriched_at": "2026-07-11T02:31:18.198Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJPdaxYRFawokRau2UYKweYrY",
+        "name": "Liberty Lending",
+        "rating": 1.3,
+        "review_count": 23,
+        "formatted_address": "11 Broadway #1732, New York, NY 10004, USA",
+        "review_snippets": [
+          {
+            "text": "Rating: ⭐☆☆☆☆ (0 stars if I could)\nSave yourself the massive headache, wasted months, and broken promises. Avoid Liberty 1 Lending, specifically Billy Bazzi and Kassem Faraj.\nI brought them two investment deals, and it was a complete disaster from start to finish:\nBait-and-Switch",
+            "rating": 1,
+            "relative_time": "a month ago",
+            "author": "Eric Jacobs"
+          },
+          {
+            "text": "Like I see from several others, I never applied for a loan, nor did I reach out, but I keep getting robo calls and texts. There doesn't seem to be a way to stop it since I'm not even talking to a person. I use my phone for work, which makes this even more annoying.",
+            "rating": 1,
+            "relative_time": "3 months ago",
+            "author": "Joshua Schuettenhelm"
+          },
+          {
+            "text": "Multiple phone calls a day for a “loan” I never requested. Blocking their numbers never seems to work because they seem to have yet another number to attempt to allegedly scam people with.",
+            "rating": 1,
+            "relative_time": "3 months ago",
+            "author": "SB"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:31:18.198Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJPdaxYRFawokRau2UYKweYrY",
+          "displayName": "Liberty Lending",
+          "rating": 1.3,
+          "userRatingCount": 23
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Liberty Lending Solutions",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:31:18.199Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 43,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 8,
+          "google_local_match": 0,
+          "bbb_presence": 0,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:31:18.198Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:31:18.198Z",
+      "partial_failures": []
+    }
+  },
+  "heartland-home-finance": {
+    "slug": "heartland-home-finance",
+    "google_rating": 4.8,
+    "google_review_count": 378,
+    "google_place_id": "ChIJH9EtYXJNGIgRdsuMRjyCzns",
+    "google_review_snippets": [
+      {
+        "text": "Jamie Franco was an absolute professional and she made it very easy to work with her even when I had a question in the middle of the night she responded as quickly as possible which was surprising because it was the middle of the night. She was just amazing knowledgeable and very",
+        "rating": 5,
+        "relative_time": "3 weeks ago",
+        "author": "James Smedley"
+      },
+      {
+        "text": "Great experience refinancing my home! Jamie Franco was incredibly helpful throughout the entire process — clear communication, quick answers, and truly professional support. Everything was smooth and stress-free, and they worked hard to secure a great rate for me. Highly recommen",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Jacob Reder"
+      },
+      {
+        "text": "We had an incredible experience working with Brett Vanheulen at Heartland Mortgage. After dealing with a nightmare situation with another company for over 2.5 months, we were honestly exhausted and frustrated. Then Brett was recommended to us —and everything changed.\n\nFrom start ",
+        "rating": 5,
+        "relative_time": "2 months ago",
+        "author": "Tonya Griffin"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_score": "A+",
+    "bbb_profile_url": "https://www.bbb.org/us/mi/southfield/profile/consumer-finance-companies/heartland-home-finance--0372-45003705",
+    "cfpb_complaints_count": 0,
+    "cfpb_recent_issues": [],
+    "county_experience_score": 45,
+    "enriched_at": "2026-07-11T02:31:18.045Z",
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJH9EtYXJNGIgRdsuMRjyCzns",
+        "name": "Heartland Home Mortgage",
+        "rating": 4.8,
+        "review_count": 378,
+        "formatted_address": "6190 Kalamazoo Ave SE, Grand Rapids, MI 49508, USA",
+        "review_snippets": [
+          {
+            "text": "Jamie Franco was an absolute professional and she made it very easy to work with her even when I had a question in the middle of the night she responded as quickly as possible which was surprising because it was the middle of the night. She was just amazing knowledgeable and very",
+            "rating": 5,
+            "relative_time": "3 weeks ago",
+            "author": "James Smedley"
+          },
+          {
+            "text": "Great experience refinancing my home! Jamie Franco was incredibly helpful throughout the entire process — clear communication, quick answers, and truly professional support. Everything was smooth and stress-free, and they worked hard to secure a great rate for me. Highly recommen",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Jacob Reder"
+          },
+          {
+            "text": "We had an incredible experience working with Brett Vanheulen at Heartland Mortgage. After dealing with a nightmare situation with another company for over 2.5 months, we were honestly exhausted and frustrated. Then Brett was recommended to us —and everything changed.\n\nFrom start ",
+            "rating": 5,
+            "relative_time": "2 months ago",
+            "author": "Tonya Griffin"
+          }
+        ],
+        "last_fetched": "2026-07-11T02:31:18.045Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJH9EtYXJNGIgRdsuMRjyCzns",
+          "displayName": "Heartland Home Mortgage",
+          "rating": 4.8,
+          "userRatingCount": 378
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/mi/southfield/profile/consumer-finance-companies/heartland-home-finance--0372-45003705",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "cfpb": {
+        "source": "cfpb_public_api",
+        "company_query": "Heartland Home Finance",
+        "complaints_count": 0,
+        "recent_issues": [],
+        "recent_products": [],
+        "last_fetched": "2026-07-11T02:31:18.047Z",
+        "status": "ok"
+      },
+      "county": {
+        "score": 45,
+        "factors": {
+          "primary_county": 30,
+          "zip_coverage": 0,
+          "google_local_match": 0,
+          "bbb_presence": 10,
+          "tenure": 5
+        },
+        "computed_at": "2026-07-11T02:31:18.045Z"
+      },
+      "years_in_business": null,
+      "fetched_at": "2026-07-11T02:31:18.045Z",
+      "partial_failures": []
+    }
+  }
+}
