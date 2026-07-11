@@ -9,7 +9,9 @@ import {
   toJsonbColumn,
   toPublicScrapeColumn,
 } from '@/lib/suggestions/jsonb-payload';
+import { mergeCoverageIntoFmcsaPreview } from '@/lib/suggestions/suggestion-coverage-storage';
 import { packFmcsaPreviewWithEnrichment } from '@/lib/suggestions/suggestion-enrichment-storage';
+import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
 import { toFmcsaSuggestionPreview } from '@/lib/suggestions/fmcsa-lookup';
 
 export type CompanySuggestionInsertRow = {
@@ -46,8 +48,9 @@ export function buildCompanySuggestionInsertRow(input: {
   emailHash: string;
   ipHash: string | null;
   includeEnrichment?: boolean;
+  coverage?: WebsiteCoverageData | null;
 }): CompanySuggestionInsertRow {
-  const { parsed, companyName, fmcsa, carrierParsed, enrichment, userIp, emailHash, ipHash } =
+  const { parsed, companyName, fmcsa, carrierParsed, enrichment, userIp, emailHash, ipHash, coverage } =
     input;
   const includeEnrichment = input.includeEnrichment !== false;
 
@@ -83,6 +86,10 @@ export function buildCompanySuggestionInsertRow(input: {
   if (includeEnrichment) {
     row.google_data = toGoogleDataColumn(enrichment.google);
     row.public_scrape_data = toPublicScrapeColumn(enrichment.publicScrape);
+  }
+
+  if (coverage) {
+    row.fmcsa_preview = mergeCoverageIntoFmcsaPreview(row.fmcsa_preview, coverage);
   }
 
   return row;

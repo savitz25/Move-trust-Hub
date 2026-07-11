@@ -1,4 +1,5 @@
 import type { UsdotStatusLabel } from '@/lib/fmcsa/preview-types';
+import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
 import type {
   GooglePlacesData,
   PublicScrapeData,
@@ -33,5 +34,6 @@ export type EnrichedCompanyPreview = {
   fmcsa: FmcsaSuggestionPreview | null;
   google: GooglePlacesData | null;
   publicScrape: PublicScrapeData | null;
+  websiteCoverage?: WebsiteCoverageData | null;
   fetchedAt: string;
 };

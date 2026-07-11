@@ -8,11 +8,13 @@ import {
   submitCompanySuggestion,
 } from '@/actions/suggest-company';
 import { OnboardingCarrierLookup } from '@/components/suggestions/onboarding-carrier-lookup';
+import { OnboardingCoverageConsent } from '@/components/suggestions/onboarding-coverage-consent';
 import { MultiSourcePreviewCard } from '@/components/verification/multi-source-preview-card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import type { EnrichedCompanyPreview } from '@/lib/suggestions/types';
+import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
 import { toast } from 'sonner';
 
 type SubmitSuccessState = {
@@ -50,6 +52,9 @@ export function SuggestCompanyModal({
   const [suggestedByName, setSuggestedByName] = useState('');
   const [suggestedByEmail, setSuggestedByEmail] = useState('');
   const [isTrustedSubmitter, setIsTrustedSubmitter] = useState(false);
+  const [coverageConsent, setCoverageConsent] = useState(false);
+  const [websiteUrl, setWebsiteUrl] = useState('');
+  const [websiteCoverage, setWebsiteCoverage] = useState<WebsiteCoverageData | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<SubmitSuccessState | null>(null);
   const [pending, startTransition] = useTransition();
@@ -87,6 +92,9 @@ export function SuggestCompanyModal({
     setDetails('');
     setSuggestedByName('');
     setSuggestedByEmail('');
+    setCoverageConsent(false);
+    setWebsiteUrl('');
+    setWebsiteCoverage(null);
     setSubmitted(false);
     setSubmitSuccess(null);
     onEnrichedPreviewChange?.(null);
@@ -124,6 +132,9 @@ export function SuggestCompanyModal({
               fetchedAt: activePreview.fetchedAt,
             }
           : null,
+        coverageConsent,
+        websiteUrl: websiteUrl || null,
+        coverageSnapshot: websiteCoverage,
       });
 
       if (!res.success) {
@@ -173,7 +184,7 @@ export function SuggestCompanyModal({
             <p className="text-sm leading-relaxed text-muted-foreground">
               {submitSuccess?.pendingReview
                 ? 'Thank you — your submission is in the admin review queue. FMCSA, Google, and BBB data are on file. Once approved, the profile will be live at the link below (usually within one business day).'
-                : 'Published — this company is live in the directory with FMCSA, Google, and BBB data on file. County and destination coverage were assigned from the headquarters address.'}
+                : 'Published — this company is live in the main directory with county and destination placement from the headquarters address and any explicit website service areas you approved.'}
             </p>
             {submitSuccess?.profileSlug ? (
               <div className="rounded-md border bg-muted/40 p-4 space-y-2">
@@ -234,6 +245,15 @@ export function SuggestCompanyModal({
                 </p>
 
                 <MultiSourcePreviewCard preview={activePreview!} />
+
+                <OnboardingCoverageConsent
+                  defaultWebsiteUrl={activePreview?.google?.website_url ?? ''}
+                  coverage={websiteCoverage}
+                  onCoverageChange={setWebsiteCoverage}
+                  onConsentChange={setCoverageConsent}
+                  onWebsiteUrlChange={setWebsiteUrl}
+                  disabled={pending}
+                />
 
                 <Button
                   type="button"

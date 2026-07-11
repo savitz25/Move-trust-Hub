@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { coverageSnapshotSchema } from '@/lib/suggestions/coverage-snapshot-schema';
 import { enrichmentSnapshotSchema } from '@/lib/suggestions/enrichment-snapshot-schema';
 import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
@@ -34,6 +35,15 @@ export const suggestCompanySchema = z
     website: z.string().max(0).optional().nullable(),
     /** Optional preview snapshot from modal — avoids duplicate scrape on submit */
     enrichmentSnapshot: enrichmentSnapshotSchema,
+    coverageConsent: z.boolean().optional().default(false),
+    websiteUrl: z
+      .string()
+      .trim()
+      .max(300)
+      .optional()
+      .nullable()
+      .or(z.literal('').transform(() => null)),
+    coverageSnapshot: coverageSnapshotSchema,
   })
   .superRefine((data, ctx) => {
     const carrier = data.carrierQuery ? parseCarrierNumber(data.carrierQuery) : null;

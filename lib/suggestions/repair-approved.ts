@@ -2,6 +2,7 @@ import 'server-only';
 
 import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
 import { assignApprovedCompanyToDestinations } from '@/lib/suggestions/assign-company-destination';
+import { coverageFromSuggestionRow } from '@/lib/suggestions/resolve-suggestion-coverage';
 import { revalidateDestinationPaths } from '@/lib/suggestions/revalidate-destination';
 import { getCompanyBySlugOrUsdotFromDb } from '@/lib/supabase/queries/companies';
 import { getDirectoryCompanyViaRpc } from '@/lib/suggestions/publish-company-rpc';
@@ -85,6 +86,7 @@ export async function publishSuggestionToDirectory(
         ? (suggestion.fmcsa_raw as Record<string, unknown>)
         : null,
     legalName: suggestion.legal_name ?? suggestion.name,
+    coverage: coverageFromSuggestionRow(suggestion),
   });
 
   revalidatePublishedCompany(published.slug);
@@ -99,6 +101,8 @@ export async function publishSuggestionToDirectory(
     parsedState: destinationAssignment.debug.parsedState,
     primaryCity: destinationAssignment.debug.primaryCity,
     detectedCities: destinationAssignment.debug.detectedCities,
+    coverageApplied: destinationAssignment.debug.coverageApplied,
+    coverageSummary: destinationAssignment.debug.coverageSummary,
     counties: destinationAssignment.assignedCounties,
     destinationSlugs: destinationAssignment.destinationSlugs,
   });

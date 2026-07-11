@@ -17,6 +17,7 @@ export type GooglePlacesData = {
   rating: number | null;
   review_count: number | null;
   formatted_address: string | null;
+  website_url: string | null;
   review_snippets: Array<{
     text: string;
     rating: number;

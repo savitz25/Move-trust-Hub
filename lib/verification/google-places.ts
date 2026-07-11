@@ -4,6 +4,7 @@ const SEARCH_FIELD_MASK = [
   'places.id',
   'places.displayName',
   'places.formattedAddress',
+  'places.websiteUri',
   'places.rating',
   'places.userRatingCount',
   'places.reviews',
@@ -13,6 +14,7 @@ const DETAILS_FIELD_MASK = [
   'id',
   'displayName',
   'formattedAddress',
+  'websiteUri',
   'rating',
   'userRatingCount',
   'reviews',
@@ -22,6 +24,7 @@ type PlacePayload = {
   id?: string;
   displayName?: { text?: string };
   formattedAddress?: string;
+  websiteUri?: string;
   rating?: number;
   userRatingCount?: number;
   reviews?: Array<{
@@ -77,6 +80,7 @@ function mapPlaceToGoogleData(place: PlacePayload, now: string): GooglePlacesDat
     rating: place.rating ?? null,
     review_count: place.userRatingCount ?? null,
     formatted_address: place.formattedAddress ?? null,
+    website_url: place.websiteUri?.trim() || null,
     review_snippets: snippets.filter((s) => s.text.length > 0),
     last_fetched: now,
     status: 'ok',
@@ -101,6 +105,7 @@ function emptyGoogleData(
     rating: null,
     review_count: null,
     formatted_address: null,
+    website_url: null,
     review_snippets: [],
     last_fetched: now,
     status,

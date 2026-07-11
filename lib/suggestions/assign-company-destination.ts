@@ -1,8 +1,8 @@
 import {
-  resolveDestinationsWithDebug,
-  type ResolvedDestinationAssignment,
-} from '@/lib/destinations/resolve-from-headquarters';
-import type { HeadquartersResolutionInput } from '@/lib/destinations/headquarters-input';
+  resolveCompanyDestinationsWithDebug,
+  type CompanyDestinationInput,
+} from '@/lib/destinations/resolve-company-destinations';
+import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
 import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-movers-tag';
 import { logger } from '@/lib/logging/logger';
 import { createAdminClient } from '@/lib/supabase/admin';
@@ -16,7 +16,7 @@ type DestinationAssignmentInsert =
 export type DestinationAssignmentResult = {
   assignedCounties: Array<{ stateSlug: string; countySlug: string }>;
   destinationSlugs: string[];
-  debug: ReturnType<typeof resolveDestinationsWithDebug>;
+  debug: ReturnType<typeof resolveCompanyDestinationsWithDebug>;
 };
 
 export async function assignApprovedCompanyToDestinations(params: {
@@ -25,14 +25,16 @@ export async function assignApprovedCompanyToDestinations(params: {
   headquarters?: string | null;
   fmcsaRaw?: Record<string, unknown> | null;
   legalName?: string | null;
+  coverage?: WebsiteCoverageData | null;
 }): Promise<DestinationAssignmentResult> {
-  const resolutionInput: HeadquartersResolutionInput = {
+  const resolutionInput: CompanyDestinationInput = {
     headquarters: params.headquarters,
     fmcsaRaw: params.fmcsaRaw,
     legalName: params.legalName,
+    coverage: params.coverage ?? null,
   };
 
-  const debug = resolveDestinationsWithDebug(resolutionInput);
+  const debug = resolveCompanyDestinationsWithDebug(resolutionInput);
   const resolved = debug.assignments;
 
   logger.info('onboarding.destination_resolve', {
@@ -44,6 +46,9 @@ export async function assignApprovedCompanyToDestinations(params: {
     parsedState: debug.parsedState,
     primaryCity: debug.primaryCity,
     detectedCities: debug.detectedCities,
+    coverageApplied: debug.coverageApplied,
+    coverageSummary: debug.coverageSummary,
+    coverageNationalOnly: debug.coverageNationalOnly,
     assignmentCount: resolved.length,
     counties: resolved.map((entry) => `${entry.stateSlug}/${entry.countySlug}`),
     destinationSlugs: resolved.flatMap((entry) => entry.marketSlugs),
@@ -92,7 +97,7 @@ export async function assignApprovedCompanyToDestinations(params: {
       county_slug: entry.countySlug,
       destination_slug: primaryDestination,
       headquarters: debug.effectiveAddress ?? params.headquarters ?? null,
-      source: 'onboarding_approval',
+        source: debug.coverageApplied ? 'onboarding_coverage' : 'onboarding_approval',
       updated_at: now,
     };
     const { error } = await admin

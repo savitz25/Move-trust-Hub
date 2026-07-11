@@ -26,7 +26,10 @@ import { hashEmail, hashIp } from '@/lib/reviews/hash';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { logger } from '@/lib/logging/logger';
+import type { WebsiteCoverageData } from '@/lib/verification/coverage-scrape-types';
+import { scrapeWebsiteCoverage } from '@/lib/verification/website-coverage-scrape';
 import type { NameStateSearchResult } from '@/actions/verify-dot';
+import type { SuggestCompanyInput } from '@/lib/suggestions/schema';
 
 export type SubmitSuggestionResult = {
   success: boolean;
@@ -56,6 +59,80 @@ export type SuggestionSubmitterDefaults = {
   suggestedByName: string;
   suggestedByEmail: string;
 };
+
+export type ScrapeWebsiteCoverageResult = {
+  success: boolean;
+  coverage?: WebsiteCoverageData;
+  error?: string;
+};
+
+function skippedCoverage(): WebsiteCoverageData {
+  return {
+    consentGiven: false,
+    websiteUrl: null,
+    scrapedAt: new Date().toISOString(),
+    status: 'skipped',
+    isNationalOnly: false,
+    summary: null,
+    stateSlugs: [],
+    cities: [],
+    counties: [],
+    officeAddresses: [],
+    regions: [],
+    pagesFetched: [],
+    rawSnippets: [],
+  };
+}
+
+async function resolveSubmissionCoverage(
+  parsed: SuggestCompanyInput,
+  websiteFallback?: string | null
+): Promise<WebsiteCoverageData> {
+  if (parsed.coverageSnapshot) {
+    return parsed.coverageSnapshot as WebsiteCoverageData;
+  }
+
+  if (!parsed.coverageConsent) {
+    return skippedCoverage();
+  }
+
+  const websiteUrl = parsed.websiteUrl || websiteFallback || null;
+  if (!websiteUrl) {
+    return {
+      ...skippedCoverage(),
+      consentGiven: true,
+      status: 'not_found',
+      error: 'No website URL available for coverage scan.',
+    };
+  }
+
+  return scrapeWebsiteCoverage({
+    websiteUrl,
+    consentGiven: true,
+  });
+}
+
+export async function scrapeWebsiteCoverageForOnboarding(input: {
+  websiteUrl: string;
+  consentGiven: boolean;
+}): Promise<ScrapeWebsiteCoverageResult> {
+  try {
+    const coverage = await scrapeWebsiteCoverage(input);
+    if (coverage.status === 'error') {
+      return {
+        success: false,
+        coverage,
+        error: coverage.error ?? 'Website coverage scan failed.',
+      };
+    }
+    return { success: true, coverage };
+  } catch (err) {
+    return {
+      success: false,
+      error: err instanceof Error ? err.message : 'Website coverage scan failed.',
+    };
+  }
+}
 
 export async function getSuggestionSubmitterDefaults(): Promise<SuggestionSubmitterDefaults> {
   const defaults = getAdminSubmitterDefaults();
@@ -230,6 +307,12 @@ export async function submitCompanySuggestion(
       snapshot: parsed.data.enrichmentSnapshot,
     });
 
+    const websiteFallback =
+      parsed.data.websiteUrl ||
+      parsed.data.enrichmentSnapshot?.google?.website_url ||
+      null;
+    const coverage = await resolveSubmissionCoverage(parsed.data, websiteFallback);
+
     const duplicateCheck = await checkSuggestionDuplicate({
       name: companyName,
       usdot: fmcsa?.usdot ?? (carrierParsed.type === 'DOT' ? carrierParsed.value : null),
@@ -256,6 +339,7 @@ export async function submitCompanySuggestion(
       userIp,
       emailHash,
       ipHash,
+      coverage,
     });
 
     const insertResult = await insertCompanySuggestion(admin, row);
@@ -273,6 +357,9 @@ export async function submitCompanySuggestion(
       enrichmentStored: insertResult.enrichmentStored,
       trustedDot: true,
       trustedSubmitter,
+      coverageStatus: coverage.status,
+      coverageNationalOnly: coverage.isNationalOnly,
+      coverageSummary: coverage.summary,
     });
 
     const profileSlug = predictCompanyProfileSlug({

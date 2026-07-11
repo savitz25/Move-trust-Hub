@@ -6,8 +6,9 @@ import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
 import { logger } from '@/lib/logging/logger';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { buildVerificationSourcesFromOnboarding } from '@/lib/suggestions/build-verification-sources';
+import { formatCompanyCoverageLabel } from '@/lib/destinations/resolve-company-destinations';
+import { coverageFromSuggestionRow } from '@/lib/suggestions/resolve-suggestion-coverage';
 import {
-  coverageFromHeadquarters,
   isPublishVerified,
   resolvePublishFmcsaSnapshot,
 } from '@/lib/suggestions/publish-snapshot';
@@ -100,6 +101,12 @@ export async function approveSuggestionToCompany(
   });
 
   const headquarters = suggestion.headquarters || '';
+  const websiteCoverage = coverageFromSuggestionRow(suggestion);
+  const coverageLabel = formatCompanyCoverageLabel(headquarters, websiteCoverage);
+  const websiteUrl =
+    websiteCoverage?.websiteUrl ||
+    (googleData?.website_url?.trim() ? googleData.website_url.trim() : '');
+
   const verificationSources = buildVerificationSourcesFromOnboarding({
     fmcsaSnapshot: snapshot,
     fmcsaRaw:
@@ -120,7 +127,7 @@ export async function approveSuggestionToCompany(
     bbbRating,
     bbbAccredited: Boolean(publicScrape?.bbb_accredited),
     reputationScore,
-    coverage: coverageFromHeadquarters(headquarters),
+    coverage: coverageLabel,
     fmcsaRaw: (snapshot?.raw ?? suggestion.fmcsa_raw) as Json | null,
     fmcsaLastChecked: snapshot ? new Date().toISOString() : null,
     fmcsaLegalName: snapshot?.legalName ?? suggestion.legal_name,
@@ -143,7 +150,7 @@ export async function approveSuggestionToCompany(
       suggestion.details ||
       `${displayName} was added to Move Trust Hub through our multi-source onboarding process. FMCSA licensing is primary; Google and public ratings are supplemental.`,
     headquarters,
-    website: '',
+    website: websiteUrl,
     usdot_number: usdot ? usdot : null,
     mc_number: suggestion.mc_number || snapshot?.mcNumber || null,
     fmcsa_safety_rating: snapshot?.safetyRating ?? 'Not Rated',
@@ -169,7 +176,7 @@ export async function approveSuggestionToCompany(
     years_in_business: 0,
     avg_price_per_move: 0,
     price_range: '$$',
-    coverage: coverageFromHeadquarters(headquarters),
+    coverage: coverageLabel,
     services: ['Full Service'],
     specialties: [],
     rating_breakdown: {

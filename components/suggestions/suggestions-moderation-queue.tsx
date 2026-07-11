@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 import { Check, ExternalLink, Loader2, MapPin, X } from 'lucide-react';
 import { moderateSuggestion } from '@/actions/moderate-suggestions';
+import { AdminCoveragePreview } from '@/components/suggestions/admin-coverage-preview';
 import { AdminEnrichedPreview } from '@/components/verification/admin-enriched-preview';
 import type { PendingSuggestion } from '@/lib/suggestions/queries';
 import { Badge } from '@/components/ui/badge';
@@ -91,6 +92,7 @@ export function SuggestionsModerationQueue({ initialQueue }: Props) {
             {hasFmcsa || hasGoogle || hasPublic ? (
               <div className="mt-4">
                 <AdminEnrichedPreview suggestion={suggestion} />
+                <AdminCoveragePreview suggestion={suggestion} />
               </div>
             ) : (
               <>

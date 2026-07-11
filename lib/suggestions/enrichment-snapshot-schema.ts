@@ -8,6 +8,7 @@ const googleSnapshotSchema = z
     rating: z.number().nullable().optional(),
     review_count: z.number().nullable().optional(),
     formatted_address: z.string().nullable().optional(),
+    website_url: z.string().nullable().optional(),
     review_snippets: z
       .array(
         z.object({
