@@ -13,6 +13,7 @@ import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-us
 import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CoverageMap } from '@/components/map/coverage-map';
+import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
@@ -68,6 +69,7 @@ export default async function CompanyProfilePage({ params }: Props) {
   }
 
   const reviews = await getReviews(company.id, 8);
+  const assignmentStateSlugs = await getCompanyAssignmentStateSlugs(company.slug);
   const reviewMeta = companyProfileReviewMeta({
     companyId: company.id,
     editorialReviewCount: company.reviewCount,
@@ -309,7 +311,12 @@ export default async function CompanyProfilePage({ params }: Props) {
             </CardContent>
           </Card>
 
-          <CoverageMap companyName={company.name} coverage={company.coverage} />
+          <CoverageMap
+            companyName={company.name}
+            coverage={company.coverage}
+            headquarters={company.headquarters}
+            assignmentStateSlugs={assignmentStateSlugs}
+          />
 
           <Card className="bg-muted/30">
             <CardContent className="pt-5 text-xs leading-relaxed text-muted-foreground">
