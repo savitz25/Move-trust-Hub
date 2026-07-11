@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Search, MapPin } from 'lucide-react';
 import { Button } from '@/components/lender/ui/button';
 import { getCountyFromZip } from '@/lib/lender/lenders';
+import { hubPath } from '@/lib/hub/paths';
 
 export function SearchBar({ className }: { className?: string }) {
   const [zip, setZip] = useState('');
@@ -21,9 +22,11 @@ export function SearchBar({ className }: { className?: string }) {
     setError('');
     const county = getCountyFromZip(trimmed);
     if (county) {
-      router.push(`/local-lenders/${county.stateSlug}/${county.countySlug}?zip=${trimmed}`);
+      router.push(
+        `${hubPath('lender', `/local-lenders/${county.stateSlug}/${county.countySlug}`)}?zip=${trimmed}`
+      );
     } else {
-      router.push(`/local-lenders?zip=${trimmed}`);
+      router.push(`${hubPath('lender', '/local-lenders')}?zip=${trimmed}`);
     }
   }
 

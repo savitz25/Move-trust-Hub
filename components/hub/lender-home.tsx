@@ -4,8 +4,10 @@ import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
 import { HubZipSearch } from '@/components/hub/hub-zip-search';
 import { HubTrustBar } from '@/components/hub/hub-trust-bar';
 import { HubHowItWorks } from '@/components/hub/hub-how-it-works';
+import { MortgageLenderDirectoryBoundary } from '@/components/lender/mortgage-lender-directory-boundary';
 import { Button } from '@/components/ui/button';
 import { hubPath } from '@/lib/hub/paths';
+import { lenders } from '@/lib/lender/lenders';
 
 /** Adapted from lender-trust-hub homepage — paths prefixed for /lender */
 export function LenderHomePage() {
@@ -53,6 +55,8 @@ export function LenderHomePage() {
           'No Paid Placements',
         ]}
       />
+
+      <MortgageLenderDirectoryBoundary lenders={lenders} />
 
       <HubHowItWorks
         subheading="Your Path to the Right Lender"

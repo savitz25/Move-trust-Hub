@@ -42,7 +42,7 @@ export default function LenderHubHomePage() {
   const schema = buildHubHomeSchemaGraph('lender', LENDER_HOME_FAQ);
   schema['@graph'].push({
     '@type': 'SearchAction',
-    target: `${canonical}/local-lenders?zip={search_term_string}`,
+    target: `${canonical}?search={search_term_string}`,
     'query-input': 'required name=search_term_string',
   });
 
