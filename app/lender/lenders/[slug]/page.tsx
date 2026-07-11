@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Star, ShieldCheck, ChevronRight, Phone, ExternalLink } from 'lucide-react';
 import { getLenderBySlug, lenders } from '@/lib/lender/lenders';
+import { getLenderBySlugFromDb } from '@/lib/lender/supabase/queries/lenders';
+import { DbLenderProfile } from '@/components/lender/onboarding/db-lender-profile';
 import { Badge } from '@/components/lender/ui/badge';
 import { MatchLenderButton } from '@/components/lender/MatchLenderButton';
 import { RelatedDirectoryLinks } from '@/components/lender/directory/RelatedDirectoryLinks';
@@ -31,6 +33,11 @@ export default async function LenderProfilePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const dbLender = await getLenderBySlugFromDb(slug);
+  if (dbLender?.published_from_onboarding) {
+    return <DbLenderProfile lender={dbLender} />;
+  }
+
   const lender = getLenderBySlug(slug);
   if (!lender) notFound();
 
