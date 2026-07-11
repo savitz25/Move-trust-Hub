@@ -47898,5 +47898,4003 @@
       "partial_failures": [],
       "needs_manual_review": false
     }
+  },
+  "ryan-jerome-st-louis": {
+    "slug": "ryan-jerome-st-louis",
+    "google_rating": 4.2,
+    "google_review_count": 5,
+    "google_place_id": "ChIJdczqeSnL2IcRiGE_tsC3lvw",
+    "google_review_snippets": [
+      {
+        "text": "BEWARE !!! Jerome wrote my Home and Auto Insurance and took my Payment.  Less than a week later I received a letter from the Insurance Company stating I was Cancelled at the Agent's Request! The Insurance Company charged me for a week of coverage and they also stated that I would",
+        "rating": 1,
+        "relative_time": "a year ago",
+        "author": "Bill Meyer"
+      },
+      {
+        "text": "I am a retired attorney and met with Mr Smart to review my policies (home and auto).  He was open and honest  and broke things down so I could easily understand and showed me how to save money on my policies. He’s a really nice family man whose been in the insurance business for ",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "J. Justin Meehan"
+      },
+      {
+        "text": "Best insurance agent in town! He really knows his craft and is a great family man!",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Jajuan Harris"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/az/bullhead-city/profile/general-contractor/ryan-jerome-schmaltz-1126-1000161502",
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:06:20.846Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJdczqeSnL2IcRiGE_tsC3lvw",
+        "name": "Jerome Smart Agency LLC",
+        "rating": 4.2,
+        "review_count": 5,
+        "formatted_address": "1409 Washington Ave Ste 309, St. Louis, MO 63103, USA",
+        "website_url": "http://www.smartifs.com/",
+        "review_snippets": [
+          {
+            "text": "BEWARE !!! Jerome wrote my Home and Auto Insurance and took my Payment.  Less than a week later I received a letter from the Insurance Company stating I was Cancelled at the Agent's Request! The Insurance Company charged me for a week of coverage and they also stated that I would",
+            "rating": 1,
+            "relative_time": "a year ago",
+            "author": "Bill Meyer"
+          },
+          {
+            "text": "I am a retired attorney and met with Mr Smart to review my policies (home and auto).  He was open and honest  and broke things down so I could easily understand and showed me how to save money on my policies. He’s a really nice family man whose been in the insurance business for ",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "J. Justin Meehan"
+          },
+          {
+            "text": "Best insurance agent in town! He really knows his craft and is a great family man!",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Jajuan Harris"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:06:20.847Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJdczqeSnL2IcRiGE_tsC3lvw",
+          "displayName": "Jerome Smart Agency LLC",
+          "rating": 4.2,
+          "userRatingCount": 5
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/az/bullhead-city/profile/general-contractor/ryan-jerome-schmaltz-1126-1000161502",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:06:20.846Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sadique-insurance-san-jose": {
+    "slug": "sadique-insurance-san-jose",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": "ChIJW__NVhs1joARYJl6KmEb0A0",
+    "google_review_snippets": [],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/ca/san-jose/profile/insurance-agent/sadique-insurance-agency-inc-1216-1000062622",
+    "trust_score": 79,
+    "enriched_at": "2026-07-11T18:06:20.868Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJW__NVhs1joARYJl6KmEb0A0",
+        "name": "Sadique Insurance Agency Inc.",
+        "rating": null,
+        "review_count": null,
+        "formatted_address": "1900 Camden Ave Suit 101, San Jose, CA 95124, USA",
+        "website_url": "https://www.sadiqueinsurance.com/",
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:06:20.868Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJW__NVhs1joARYJl6KmEb0A0",
+          "displayName": "Sadique Insurance Agency Inc."
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/ca/san-jose/profile/insurance-agent/sadique-insurance-agency-inc-1216-1000062622",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 79,
+      "fetched_at": "2026-07-11T18:06:20.868Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sam-duffield-birmingham": {
+    "slug": "sam-duffield-birmingham",
+    "google_rating": 5,
+    "google_review_count": 35,
+    "google_place_id": "ChIJEbyeDeEXiYgRC1Fc65Ul8vA",
+    "google_review_snippets": [
+      {
+        "text": "Sam was very helpful and professional with getting me signed up for my insurance needs.  He took his time and explained the best options to suit my situation and answered all of my questions.  Additional products/options were offered; however, there was never any undue pressure t",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Debi Copeland"
+      },
+      {
+        "text": "So thankful to have attended one of Sam’s seminars at the Foley Public Library.  He was patient, very very knowledgeable and professional.  Gave him my name and number and he has since called as scheduled while providing critical information to assist in helping me find the best ",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Cheryl Burke"
+      },
+      {
+        "text": "I am so glad that Sam was conducting a seminar in our area. He answered all of my questions, and I had a lot of them. He is very professional and knowledgeable. A great source of information is exactly what I needed, before making life-changing decisions.\nNow, I have a great agen",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Garry Singleton"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:06:28.475Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJEbyeDeEXiYgRC1Fc65Ul8vA",
+        "name": "Sam Duffield",
+        "rating": 5,
+        "review_count": 35,
+        "formatted_address": "Two Perimeter Park South Suite 100 E, Birmingham, AL 35243, USA",
+        "website_url": null,
+        "review_snippets": [
+          {
+            "text": "Sam was very helpful and professional with getting me signed up for my insurance needs.  He took his time and explained the best options to suit my situation and answered all of my questions.  Additional products/options were offered; however, there was never any undue pressure t",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Debi Copeland"
+          },
+          {
+            "text": "So thankful to have attended one of Sam’s seminars at the Foley Public Library.  He was patient, very very knowledgeable and professional.  Gave him my name and number and he has since called as scheduled while providing critical information to assist in helping me find the best ",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Cheryl Burke"
+          },
+          {
+            "text": "I am so glad that Sam was conducting a seminar in our area. He answered all of my questions, and I had a lot of them. He is very professional and knowledgeable. A great source of information is exactly what I needed, before making life-changing decisions.\nNow, I have a great agen",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Garry Singleton"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:06:28.475Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJEbyeDeEXiYgRC1Fc65Ul8vA",
+          "displayName": "Sam Duffield",
+          "rating": 5,
+          "userRatingCount": 35
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:06:28.475Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "safe-insurance-solutions-oklahoma-city": {
+    "slug": "safe-insurance-solutions-oklahoma-city",
+    "google_rating": 5,
+    "google_review_count": 15,
+    "google_place_id": "ChIJ3a0kv8QdsocRztAYJZK39Rs",
+    "google_review_snippets": [
+      {
+        "text": "Jamie & her team are extremely knowledgeable with top-notch customer service!  They found the best coverage for my needs and had me set up with policies the same day.  Everyone I have referred to Safe Insurance Solutions has had the same experience.  They are the best in the indu",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Mandi Tompkins"
+      },
+      {
+        "text": "Jamie and her team are the best! I’ve never meet Jamie in person but consider her a friend. She has met our insurance needs and helped out several of our friends and family. If you’re having trouble navigating the world of insurance, you need Safe Insurance Solutions.",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Misty Stossel"
+      },
+      {
+        "text": "I have referred several friends and family members to Jamie Stafford and they all were very impressed and had Jamie help them . I personally look forward to working with Jamie and Safe Insurance Solutions in the next year and a half. Highly recommend them.",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "mike hostmyer"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/ok/oklahoma-city/profile/insurance-agency/safe-insurance-solutions-0995-90132019",
+    "trust_score": 91,
+    "enriched_at": "2026-07-11T18:06:28.454Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ3a0kv8QdsocRztAYJZK39Rs",
+        "name": "Safe Insurance Solutions LLC",
+        "rating": 5,
+        "review_count": 15,
+        "formatted_address": "2932 NW 122nd St #26, Oklahoma City, OK 73120, USA",
+        "website_url": "https://www.safeplaceins.com/",
+        "review_snippets": [
+          {
+            "text": "Jamie & her team are extremely knowledgeable with top-notch customer service!  They found the best coverage for my needs and had me set up with policies the same day.  Everyone I have referred to Safe Insurance Solutions has had the same experience.  They are the best in the indu",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Mandi Tompkins"
+          },
+          {
+            "text": "Jamie and her team are the best! I’ve never meet Jamie in person but consider her a friend. She has met our insurance needs and helped out several of our friends and family. If you’re having trouble navigating the world of insurance, you need Safe Insurance Solutions.",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Misty Stossel"
+          },
+          {
+            "text": "I have referred several friends and family members to Jamie Stafford and they all were very impressed and had Jamie help them . I personally look forward to working with Jamie and Safe Insurance Solutions in the next year and a half. Highly recommend them.",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "mike hostmyer"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:06:28.454Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ3a0kv8QdsocRztAYJZK39Rs",
+          "displayName": "Safe Insurance Solutions LLC",
+          "rating": 5,
+          "userRatingCount": 15
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/ok/oklahoma-city/profile/insurance-agency/safe-insurance-solutions-0995-90132019",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 91,
+      "fetched_at": "2026-07-11T18:06:28.454Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sandy-johnson-new-orleans": {
+    "slug": "sandy-johnson-new-orleans",
+    "google_rating": 5,
+    "google_review_count": 12,
+    "google_place_id": "ChIJe7wUv-amIIYRegKqppRZbvA",
+    "google_review_snippets": [
+      {
+        "text": "Mr. Sean was so helpful! I appreciate his time and patience. He carefully explained to me what was going on with my policy to help me get a better understanding of the price. Thank you for your help, I learned a lot that day.",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Nieysha Brown"
+      },
+      {
+        "text": "Over the top customer service. Will jump thru all the hoops to help you. With insurance they way it is now, you really need people that know their S***.",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "William Mercier"
+      },
+      {
+        "text": "Excellent experience with this agency.  The staff is friendly and knowledgeable.  They assisted me with my insurance.  I would highly recommend this agency.",
+        "rating": 5,
+        "relative_time": "8 years ago",
+        "author": "Faith Stowe"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/ca/laguna-woods/profile/general-contractor/sandy-johnson-1126-1000168065",
+    "trust_score": 91,
+    "enriched_at": "2026-07-11T18:06:41.126Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJe7wUv-amIIYRegKqppRZbvA",
+        "name": "T Larry Johnson Insurance Agency",
+        "rating": 5,
+        "review_count": 12,
+        "formatted_address": "1009 Whitney Ave., Terrytown, LA 70056, USA",
+        "website_url": "https://www.3611982.com/",
+        "review_snippets": [
+          {
+            "text": "Mr. Sean was so helpful! I appreciate his time and patience. He carefully explained to me what was going on with my policy to help me get a better understanding of the price. Thank you for your help, I learned a lot that day.",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Nieysha Brown"
+          },
+          {
+            "text": "Over the top customer service. Will jump thru all the hoops to help you. With insurance they way it is now, you really need people that know their S***.",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "William Mercier"
+          },
+          {
+            "text": "Excellent experience with this agency.  The staff is friendly and knowledgeable.  They assisted me with my insurance.  I would highly recommend this agency.",
+            "rating": 5,
+            "relative_time": "8 years ago",
+            "author": "Faith Stowe"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:06:41.126Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJe7wUv-amIIYRegKqppRZbvA",
+          "displayName": "T Larry Johnson Insurance Agency",
+          "rating": 5,
+          "userRatingCount": 12
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/ca/laguna-woods/profile/general-contractor/sandy-johnson-1126-1000168065",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 91,
+      "fetched_at": "2026-07-11T18:06:41.126Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sc-insurance-advisors-denver": {
+    "slug": "sc-insurance-advisors-denver",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": "ChIJ-3cs9mm_Co0RLOQ-0D4QMEA",
+    "google_review_snippets": [],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 71,
+    "enriched_at": "2026-07-11T18:06:46.403Z",
+    "needs_manual_review": true,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ-3cs9mm_Co0RLOQ-0D4QMEA",
+        "name": "SC Insurance Advisors",
+        "rating": null,
+        "review_count": null,
+        "formatted_address": "3773 Cherry Creek N Dr #965, Denver, CO 80209, USA",
+        "website_url": "https://scinsuranceadvisors.net/",
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:06:46.403Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ-3cs9mm_Co0RLOQ-0D4QMEA",
+          "displayName": "SC Insurance Advisors"
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 71,
+      "fetched_at": "2026-07-11T18:06:46.403Z",
+      "partial_failures": [],
+      "needs_manual_review": true
+    }
+  },
+  "scott-carpenter-sacramento": {
+    "slug": "scott-carpenter-sacramento",
+    "google_rating": 5,
+    "google_review_count": 151,
+    "google_place_id": "ChIJdYT-ZYTdmoARsoMNg0n1g84",
+    "google_review_snippets": [
+      {
+        "text": "I had a great experience working with Jot at Capital Hill Insurance. Jot was professional, knowledgeable, and truly attentive to my needs. He took the time to explain my coverage options clearly and made sure I felt confident in every decision. His responsiveness and dedication t",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Kymberley Dumas"
+      },
+      {
+        "text": "Jot is an amazing insurance broker when it comes to finding the right policy for your business and real estate needs. His honesty and fair pricing are truly one of a kind and reflect the high level of service he provides. He is one of the few agents left who genuinely puts client",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Gold Rush Properties Group"
+      },
+      {
+        "text": "I’m so grateful we were connected with Jot. We’ve worked with him for car insurance, purchasing our home, and home insurance, and every experience has been excellent. He saved us a significant amount of time and money—including cutting our auto insurance cost in half compared to ",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Lauren"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 88,
+    "enriched_at": "2026-07-11T18:07:09.102Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJdYT-ZYTdmoARsoMNg0n1g84",
+        "name": "Capital Hill Insurance Agency",
+        "rating": 5,
+        "review_count": 151,
+        "formatted_address": "10265 Old Placerville Rd Ste 11, Sacramento, CA 95827, USA",
+        "website_url": "http://www.capitalhillins.com/",
+        "review_snippets": [
+          {
+            "text": "I had a great experience working with Jot at Capital Hill Insurance. Jot was professional, knowledgeable, and truly attentive to my needs. He took the time to explain my coverage options clearly and made sure I felt confident in every decision. His responsiveness and dedication t",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Kymberley Dumas"
+          },
+          {
+            "text": "Jot is an amazing insurance broker when it comes to finding the right policy for your business and real estate needs. His honesty and fair pricing are truly one of a kind and reflect the high level of service he provides. He is one of the few agents left who genuinely puts client",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Gold Rush Properties Group"
+          },
+          {
+            "text": "I’m so grateful we were connected with Jot. We’ve worked with him for car insurance, purchasing our home, and home insurance, and every experience has been excellent. He saved us a significant amount of time and money—including cutting our auto insurance cost in half compared to ",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Lauren"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:07:09.102Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJdYT-ZYTdmoARsoMNg0n1g84",
+          "displayName": "Capital Hill Insurance Agency",
+          "rating": 5,
+          "userRatingCount": 151
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 88,
+      "fetched_at": "2026-07-11T18:07:09.102Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "scott-ivey-birmingham": {
+    "slug": "scott-ivey-birmingham",
+    "google_rating": 5,
+    "google_review_count": 26,
+    "google_place_id": "ChIJN4OVzWUjiYgRaIZ0ekpVvzE",
+    "google_review_snippets": [
+      {
+        "text": "Extremely impressed with the help I received from Keone! Signing my mom up for supplemental insurance went super smooth. My mom insisted on meeting him in person because she’s old school! He stayed late to help us since I didn’t get off until 5. Mom doesn’t like a lot of people b",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "joanna mccollum"
+      },
+      {
+        "text": "Keone was great! He took time to explain everything in detail. My father is retired military and not the easiest person to talk to but Keone was patient and answered every question my dad threw at him. Would highly recommend anyone looking for supplemental insurance to speak with",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Ian Insalaco"
+      },
+      {
+        "text": "Keone was great working with my uncle. My uncle had a zillion questions and none of this phased him at all. He was extremely patient and thorough. I highly recommend them. Keep up the great work!!",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Tyler Crooke"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:07:09.288Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJN4OVzWUjiYgRaIZ0ekpVvzE",
+        "name": "Birmingham Medicare Specialists",
+        "rating": 5,
+        "review_count": 26,
+        "formatted_address": "420 20th St N Ste 2200- #2202, Birmingham, AL 35203, USA",
+        "website_url": "http://birmingham-medicare.com/",
+        "review_snippets": [
+          {
+            "text": "Extremely impressed with the help I received from Keone! Signing my mom up for supplemental insurance went super smooth. My mom insisted on meeting him in person because she’s old school! He stayed late to help us since I didn’t get off until 5. Mom doesn’t like a lot of people b",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "joanna mccollum"
+          },
+          {
+            "text": "Keone was great! He took time to explain everything in detail. My father is retired military and not the easiest person to talk to but Keone was patient and answered every question my dad threw at him. Would highly recommend anyone looking for supplemental insurance to speak with",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Ian Insalaco"
+          },
+          {
+            "text": "Keone was great working with my uncle. My uncle had a zillion questions and none of this phased him at all. He was extremely patient and thorough. I highly recommend them. Keep up the great work!!",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Tyler Crooke"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:07:09.289Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJN4OVzWUjiYgRaIZ0ekpVvzE",
+          "displayName": "Birmingham Medicare Specialists",
+          "rating": 5,
+          "userRatingCount": 26
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:07:09.288Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sean-cusack-portland": {
+    "slug": "sean-cusack-portland",
+    "google_rating": 4.8,
+    "google_review_count": 66,
+    "google_place_id": "ChIJJ9ZAPBY6DogRoMELIrGDvwQ",
+    "google_review_snippets": [
+      {
+        "text": "Tracy Ramel is a wonderful agent! She is very attentive to my needs and is ALWAYS available to help me. She gets the best rates and she is a true professional. There is no doubt that you would be in great hands with Cusack Insurance!",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Christine Burger"
+      },
+      {
+        "text": "I want to commend Alex and Tracy at Cusack Insurance for their exceptional service. Their expertise, personalized approach, and efficient communication not only simplified my car insurance process but also resulted in a budget-friendly plan during these challenging times.\n\nIt's n",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Noemi Vizcarrondo"
+      },
+      {
+        "text": "Cusack Insurance has serviced us for many years and provided us with amazing service.  Tom and Tracy are very kind and personable.  Tracy's service is outstanding with prompt return of my phone calls and quick, thorough research to find us the best rates and best coverage.  They ",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Terry Woodsmoke"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:07:28.549Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJJ9ZAPBY6DogRoMELIrGDvwQ",
+        "name": "Cusack Insurance LLC",
+        "rating": 4.8,
+        "review_count": 66,
+        "formatted_address": "5700 95th St, Oak Lawn, IL 60453, USA",
+        "website_url": "http://www.cusackinsurance.com/",
+        "review_snippets": [
+          {
+            "text": "Tracy Ramel is a wonderful agent! She is very attentive to my needs and is ALWAYS available to help me. She gets the best rates and she is a true professional. There is no doubt that you would be in great hands with Cusack Insurance!",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Christine Burger"
+          },
+          {
+            "text": "I want to commend Alex and Tracy at Cusack Insurance for their exceptional service. Their expertise, personalized approach, and efficient communication not only simplified my car insurance process but also resulted in a budget-friendly plan during these challenging times.\n\nIt's n",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Noemi Vizcarrondo"
+          },
+          {
+            "text": "Cusack Insurance has serviced us for many years and provided us with amazing service.  Tom and Tracy are very kind and personable.  Tracy's service is outstanding with prompt return of my phone calls and quick, thorough research to find us the best rates and best coverage.  They ",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Terry Woodsmoke"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:07:28.549Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJJ9ZAPBY6DogRoMELIrGDvwQ",
+          "displayName": "Cusack Insurance LLC",
+          "rating": 4.8,
+          "userRatingCount": 66
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:07:28.549Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "scott-quintiliano-hartford": {
+    "slug": "scott-quintiliano-hartford",
+    "google_rating": 5,
+    "google_review_count": 44,
+    "google_place_id": "ChIJ7fOK4iax54kRNA9E7WUo3ck",
+    "google_review_snippets": [
+      {
+        "text": "When Nick came to my house personally, and went over some information about applying Life Insurance he was very kind, considerate and polite. I asked questions and he gave me answers that I was looking for. I would definitely recommend him as a broker because of his knowledge and",
+        "rating": 5,
+        "relative_time": "11 months ago",
+        "author": "Elizabeth Luck"
+      },
+      {
+        "text": "Nick is very knowledgeable about his services that he renders to people.\nNick is very patient and understanding and he listens that's one thing that he does he listens not too many people really listen to what you have to say he listens.\n\nHe cares he's a good asset for where he's",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Charles Patton"
+      },
+      {
+        "text": "Nick is amazing! He's knowledgeable, honest, friendly and personable. I would strongly recommend Nick to anyone in need of insurance and/or assistance with Medicare. He explained everything to me so that I was able to understand exactly what needed to be done. I look forward to w",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Jan Read"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:07:28.340Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ7fOK4iax54kRNA9E7WUo3ck",
+        "name": "Nick Pitruzzello - Independent Insurance Broker & Retirement Planning",
+        "rating": 5,
+        "review_count": 44,
+        "formatted_address": "20 Waterside Dr Ste 202, Farmington, CT 06032, USA",
+        "website_url": "https://nickpitruzzello.myasbagent.net/",
+        "review_snippets": [
+          {
+            "text": "When Nick came to my house personally, and went over some information about applying Life Insurance he was very kind, considerate and polite. I asked questions and he gave me answers that I was looking for. I would definitely recommend him as a broker because of his knowledge and",
+            "rating": 5,
+            "relative_time": "11 months ago",
+            "author": "Elizabeth Luck"
+          },
+          {
+            "text": "Nick is very knowledgeable about his services that he renders to people.\nNick is very patient and understanding and he listens that's one thing that he does he listens not too many people really listen to what you have to say he listens.\n\nHe cares he's a good asset for where he's",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Charles Patton"
+          },
+          {
+            "text": "Nick is amazing! He's knowledgeable, honest, friendly and personable. I would strongly recommend Nick to anyone in need of insurance and/or assistance with Medicare. He explained everything to me so that I was able to understand exactly what needed to be done. I look forward to w",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Jan Read"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:07:28.340Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ7fOK4iax54kRNA9E7WUo3ck",
+          "displayName": "Nick Pitruzzello - Independent Insurance Broker & Retirement Planning",
+          "rating": 5,
+          "userRatingCount": 44
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:07:28.340Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "selected-benefits-dfw": {
+    "slug": "selected-benefits-dfw",
+    "google_rating": 5,
+    "google_review_count": 20,
+    "google_place_id": "ChIJmcaqEk6ZToYRyZhQ2au3gGY",
+    "google_review_snippets": [
+      {
+        "text": "I have been with Selected Benefits since 2017 working with Steve Wendlandt.  The customer service is outstanding as Steve always helps me select the best health plan for my specific needs on an annual basis.  Steve is always available to help me with any insurance issues or conta",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "vivian huynh"
+      },
+      {
+        "text": "I’ve had a great experience working with Steve Wendlandt on our family health insurance. He is incredibly knowledgeable, patient, and genuinely cares about helping you find the right coverage. Steve takes the time to explain all the options clearly and in a way that’s easy to und",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Tina Faraz"
+      },
+      {
+        "text": "I am self employed and Steve was implementable in helping my wife and i get affordable health insurance. Steve was able to help us understand different coverages and plans in a very easy way. So glad we found him.",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Omar Ayala"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": true,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/tx/houston/profile/health-insurance/selected-benefits-inc-0915-35001650",
+    "trust_score": 98,
+    "enriched_at": "2026-07-11T18:07:46.389Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJmcaqEk6ZToYRyZhQ2au3gGY",
+        "name": "Selected Benefits",
+        "rating": 5,
+        "review_count": 20,
+        "formatted_address": "1412 Main St Ste 600B, Dallas, TX 75202, USA",
+        "website_url": "https://www.selectedbenefits.com/dallas/",
+        "review_snippets": [
+          {
+            "text": "I have been with Selected Benefits since 2017 working with Steve Wendlandt.  The customer service is outstanding as Steve always helps me select the best health plan for my specific needs on an annual basis.  Steve is always available to help me with any insurance issues or conta",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "vivian huynh"
+          },
+          {
+            "text": "I’ve had a great experience working with Steve Wendlandt on our family health insurance. He is incredibly knowledgeable, patient, and genuinely cares about helping you find the right coverage. Steve takes the time to explain all the options clearly and in a way that’s easy to und",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Tina Faraz"
+          },
+          {
+            "text": "I am self employed and Steve was implementable in helping my wife and i get affordable health insurance. Steve was able to help us understand different coverages and plans in a very easy way. So glad we found him.",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Omar Ayala"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:07:46.389Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJmcaqEk6ZToYRyZhQ2au3gGY",
+          "displayName": "Selected Benefits",
+          "rating": 5,
+          "userRatingCount": 20
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": true,
+        "bbb_accreditation_status": "BBB Accredited Business",
+        "bbb_profile_url": "https://www.bbb.org/us/tx/houston/profile/health-insurance/selected-benefits-inc-0915-35001650",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 98,
+      "fetched_at": "2026-07-11T18:07:46.389Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "selected-benefits-houston": {
+    "slug": "selected-benefits-houston",
+    "google_rating": 5,
+    "google_review_count": 158,
+    "google_place_id": "ChIJhfeIcxvBQIYRxi-FW1zwBpI",
+    "google_review_snippets": [
+      {
+        "text": "We always love working with Steve Wendlandt at Selected Benefits. We have worked with him for well over a decade and have always had a positive experience. He is a fantastic communicator, always takes my call, and a true expert in the industry. I have been able to rely on him for",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Kara Kolker"
+      },
+      {
+        "text": "I would give Steve 10 stars if I could. He has gone to great lengths to keep my family member insured at a price we can afford. Always listens, always professional, knowledgeable about all options, and most of all kind (don't give many reviews with that word any more)!",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Vickie"
+      },
+      {
+        "text": "Steve provided exceptional guidance in helping me understand both the available options and associated costs. This has been the best insurance experience I’ve ever had. He was consistently organized, prompt, and genuinely eager to assist. I highly recommend his services.",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Sally Cisarik"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": true,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/tx/houston/profile/health-insurance/selected-benefits-inc-0915-35001650",
+    "trust_score": 100,
+    "enriched_at": "2026-07-11T18:07:46.413Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJhfeIcxvBQIYRxi-FW1zwBpI",
+        "name": "Selected Benefits",
+        "rating": 5,
+        "review_count": 158,
+        "formatted_address": "4405 Directors Row, Houston, TX 77092, USA",
+        "website_url": "https://www.selectedbenefits.com/?utm_source=GBP&utm_medium=organic",
+        "review_snippets": [
+          {
+            "text": "We always love working with Steve Wendlandt at Selected Benefits. We have worked with him for well over a decade and have always had a positive experience. He is a fantastic communicator, always takes my call, and a true expert in the industry. I have been able to rely on him for",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Kara Kolker"
+          },
+          {
+            "text": "I would give Steve 10 stars if I could. He has gone to great lengths to keep my family member insured at a price we can afford. Always listens, always professional, knowledgeable about all options, and most of all kind (don't give many reviews with that word any more)!",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Vickie"
+          },
+          {
+            "text": "Steve provided exceptional guidance in helping me understand both the available options and associated costs. This has been the best insurance experience I’ve ever had. He was consistently organized, prompt, and genuinely eager to assist. I highly recommend his services.",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Sally Cisarik"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:07:46.413Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJhfeIcxvBQIYRxi-FW1zwBpI",
+          "displayName": "Selected Benefits",
+          "rating": 5,
+          "userRatingCount": 158
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": true,
+        "bbb_accreditation_status": "BBB Accredited Business",
+        "bbb_profile_url": "https://www.bbb.org/us/tx/houston/profile/health-insurance/selected-benefits-inc-0915-35001650",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 100,
+      "fetched_at": "2026-07-11T18:07:46.413Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "selva-kumar-richmond": {
+    "slug": "selva-kumar-richmond",
+    "google_rating": 5,
+    "google_review_count": 221,
+    "google_place_id": "ChIJfRuu70ENsYkRkJeXMwubR-g",
+    "google_review_snippets": [
+      {
+        "text": "I had a great experience with Karla Ordonez and Karla’s Insurance Agency. Karla is very humble, kind, and genuinely cares about helping people. Everyone in the office is friendly, knowledgeable, and always willing to help.\n\nThey found me a great price for my FR44 insurance and fi",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Bridgett Pittman-Corson"
+      },
+      {
+        "text": "Karla Insurance provides excellent service at all times for tittle work or insurance She is always very professional, responsive, and helpful. I truly appreciate her dedication and support — highly recommend!",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Fernando Gonzalez"
+      },
+      {
+        "text": "If you want reliable service, look for Karla's Insurance Agency as Jessica and Karla are if not the most informative and easiest people to find an amazing quote and without a doubt went through extra hoops for us. I will be coming back here again",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Katherine Medrano"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 88,
+    "enriched_at": "2026-07-11T18:08:14.264Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJfRuu70ENsYkRkJeXMwubR-g",
+        "name": "Karla's Insurance Agency, Inc.",
+        "rating": 5,
+        "review_count": 221,
+        "formatted_address": "4222 Bonniebank Rd Suite 300, Richmond, VA 23234, USA",
+        "website_url": "https://karlasinsurance.com/",
+        "review_snippets": [
+          {
+            "text": "I had a great experience with Karla Ordonez and Karla’s Insurance Agency. Karla is very humble, kind, and genuinely cares about helping people. Everyone in the office is friendly, knowledgeable, and always willing to help.\n\nThey found me a great price for my FR44 insurance and fi",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Bridgett Pittman-Corson"
+          },
+          {
+            "text": "Karla Insurance provides excellent service at all times for tittle work or insurance She is always very professional, responsive, and helpful. I truly appreciate her dedication and support — highly recommend!",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Fernando Gonzalez"
+          },
+          {
+            "text": "If you want reliable service, look for Karla's Insurance Agency as Jessica and Karla are if not the most informative and easiest people to find an amazing quote and without a doubt went through extra hoops for us. I will be coming back here again",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Katherine Medrano"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:08:14.264Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJfRuu70ENsYkRkJeXMwubR-g",
+          "displayName": "Karla's Insurance Agency, Inc.",
+          "rating": 5,
+          "userRatingCount": 221
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 88,
+      "fetched_at": "2026-07-11T18:08:14.264Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "senior-benefits-consultants-honolulu": {
+    "slug": "senior-benefits-consultants-honolulu",
+    "google_rating": 5,
+    "google_review_count": 2,
+    "google_place_id": "ChIJHbWb0J9tAHwROUpK7SRXsl4",
+    "google_review_snippets": [
+      {
+        "text": "Excellent consultation with Vance Kobayashi this week. He is extremely knowledgeable on the Medicare program. I highly encourage personnel who are nearing the age of 65 and Medicare eligible/enrollment to contact him for his services!",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Nathan Koide"
+      },
+      {
+        "text": "I contacted Vance for help with my medicare advantage coverage, i wanted to reduce my out of pocket medicare costs with one of his plans, he came highly recommended by a friend and he was very helpful and saved me $$$ on my medicare plan, i highly recommend his services...",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "pat suenaga"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:08:14.281Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJHbWb0J9tAHwROUpK7SRXsl4",
+        "name": "Senior Benefits Consultants",
+        "rating": 5,
+        "review_count": 2,
+        "formatted_address": "1580 Makaloa St #1250, Honolulu, HI 96814, USA",
+        "website_url": "https://www.sbchi.com/",
+        "review_snippets": [
+          {
+            "text": "Excellent consultation with Vance Kobayashi this week. He is extremely knowledgeable on the Medicare program. I highly encourage personnel who are nearing the age of 65 and Medicare eligible/enrollment to contact him for his services!",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Nathan Koide"
+          },
+          {
+            "text": "I contacted Vance for help with my medicare advantage coverage, i wanted to reduce my out of pocket medicare costs with one of his plans, he came highly recommended by a friend and he was very helpful and saved me $$$ on my medicare plan, i highly recommend his services...",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "pat suenaga"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:08:14.281Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJHbWb0J9tAHwROUpK7SRXsl4",
+          "displayName": "Senior Benefits Consultants",
+          "rating": 5,
+          "userRatingCount": 2
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:08:14.281Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "senior-solutions-insurance-agency-hawaii-honolulu": {
+    "slug": "senior-solutions-insurance-agency-hawaii-honolulu",
+    "google_rating": 5,
+    "google_review_count": 5,
+    "google_place_id": "ChIJA2_xN8-FbIcRWDBWxjV6724",
+    "google_review_snippets": [
+      {
+        "text": "SSI has a team of experts that know all about Medicare. I needed help signing my mom up and they gave both of us peace of mind that everything is going to be okay, and it was! Thanks Senior Solutions Insurance",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Kevenly DesAuguste"
+      },
+      {
+        "text": "Loving the products SSI has and the customer service I got answering my questions. Thank you Chris for your patience!",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Mercedes Ruiz"
+      },
+      {
+        "text": "Great people doing great things!  Give them a call for your Life Insurance, Health Insurance, and Medicare needs :)",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Sarah Martin"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:08:28.048Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJA2_xN8-FbIcRWDBWxjV6724",
+        "name": "Senior Solutions Insurance",
+        "rating": 5,
+        "review_count": 5,
+        "formatted_address": "5775 DTC Blvd Ste 250 South, Greenwood Village, CO 80111, USA",
+        "website_url": "https://www.ssifinalexpense.com/",
+        "review_snippets": [
+          {
+            "text": "SSI has a team of experts that know all about Medicare. I needed help signing my mom up and they gave both of us peace of mind that everything is going to be okay, and it was! Thanks Senior Solutions Insurance",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Kevenly DesAuguste"
+          },
+          {
+            "text": "Loving the products SSI has and the customer service I got answering my questions. Thank you Chris for your patience!",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Mercedes Ruiz"
+          },
+          {
+            "text": "Great people doing great things!  Give them a call for your Life Insurance, Health Insurance, and Medicare needs :)",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Sarah Martin"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:08:28.048Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJA2_xN8-FbIcRWDBWxjV6724",
+          "displayName": "Senior Solutions Insurance",
+          "rating": 5,
+          "userRatingCount": 5
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:08:28.048Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "senior-insurance-representatives-tampa": {
+    "slug": "senior-insurance-representatives-tampa",
+    "google_rating": 5,
+    "google_review_count": 349,
+    "google_place_id": "ChIJNQpX0r7rwogRr8-_Q_c4etI",
+    "google_review_snippets": [
+      {
+        "text": "I had the absolute best experience working with Jake on my Medicare, Medigap, Dental, prescription drug plan recommendation, applications and guidance.  He took all the guesswork out of the process and made what could have been overwhelming feel simple and stress-free. Jake’s pro",
+        "rating": 5,
+        "relative_time": "7 months ago",
+        "author": "Michael Yadach"
+      },
+      {
+        "text": "Jake was great to work with. He made the transition to Medicare with all of the choices easy. He was personable, very knowledgeable, and he made things easy to understand. I am extremely pleased with his service.",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Sonya Smith"
+      },
+      {
+        "text": "Jake Zimmerman was invaluable to me for helping me navigate not only Medicare but with the other insurance policies that I needed to meet my needs.  I highly recommend Jake.  He takes the confusion and frustration out of the process.",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Pat Thompson"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": true,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/fl/tampa/profile/medicare-supplement/senior-insurance-representatives-inc-0653-90382655",
+    "trust_score": 100,
+    "enriched_at": "2026-07-11T18:08:28.010Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJNQpX0r7rwogRr8-_Q_c4etI",
+        "name": "Senior Insurance Representatives, Inc.",
+        "rating": 5,
+        "review_count": 349,
+        "formatted_address": "6302 Nesting Ct, Tampa, FL 33625, USA",
+        "website_url": "https://www.seniorinsurancereps.com/",
+        "review_snippets": [
+          {
+            "text": "I had the absolute best experience working with Jake on my Medicare, Medigap, Dental, prescription drug plan recommendation, applications and guidance.  He took all the guesswork out of the process and made what could have been overwhelming feel simple and stress-free. Jake’s pro",
+            "rating": 5,
+            "relative_time": "7 months ago",
+            "author": "Michael Yadach"
+          },
+          {
+            "text": "Jake was great to work with. He made the transition to Medicare with all of the choices easy. He was personable, very knowledgeable, and he made things easy to understand. I am extremely pleased with his service.",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Sonya Smith"
+          },
+          {
+            "text": "Jake Zimmerman was invaluable to me for helping me navigate not only Medicare but with the other insurance policies that I needed to meet my needs.  I highly recommend Jake.  He takes the confusion and frustration out of the process.",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Pat Thompson"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:08:28.010Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJNQpX0r7rwogRr8-_Q_c4etI",
+          "displayName": "Senior Insurance Representatives, Inc.",
+          "rating": 5,
+          "userRatingCount": 349
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": true,
+        "bbb_accreditation_status": "BBB Accredited Business",
+        "bbb_profile_url": "https://www.bbb.org/us/fl/tampa/profile/medicare-supplement/senior-insurance-representatives-inc-0653-90382655",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 100,
+      "fetched_at": "2026-07-11T18:08:28.010Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sentinel-retirement-services-tucson": {
+    "slug": "sentinel-retirement-services-tucson",
+    "google_rating": 5,
+    "google_review_count": 15,
+    "google_place_id": "ChIJ34-4ovUN1oYRonqjCKd9I3M",
+    "google_review_snippets": [
+      {
+        "text": "We’ve known Stacey for many years, and her integrity and heart show through in everything she does. She makes complicated information easy to understand and always has her clients’ best interest in mind. She’s one of the few people in this industry who values relationships over m",
+        "rating": 5,
+        "relative_time": "7 months ago",
+        "author": "Nyx Lynn Merkler"
+      },
+      {
+        "text": "Stacey is an incredible sales consultant, fabulous resource. I hired many sales professionals in my career, she is excellent, great follow up, very knowledgeable, great positive attitude. She has been very helpful to us during our journey to seek Healthcare Coverage. I can't say ",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "AJ Leane"
+      },
+      {
+        "text": "I am incredibly grateful for the support and guidance I received from Stacey. Her personalized approach to navigating Medicare made the process stress-free. She took the time to understand my unique needs and found the perfect plan for me. Her expertise and compassion shine throu",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Chris K"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": true,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/az/tucson/profile/insurance-agency/sentinel-retirement-services-1286-20110317",
+    "trust_score": 96,
+    "enriched_at": "2026-07-11T18:08:41.020Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ34-4ovUN1oYRonqjCKd9I3M",
+        "name": "Sentinel Retirement Services",
+        "rating": 5,
+        "review_count": 15,
+        "formatted_address": "207 W Speedway Blvd, Tucson, AZ 85705, USA",
+        "website_url": "https://sentinelretirementservices.com/",
+        "review_snippets": [
+          {
+            "text": "We’ve known Stacey for many years, and her integrity and heart show through in everything she does. She makes complicated information easy to understand and always has her clients’ best interest in mind. She’s one of the few people in this industry who values relationships over m",
+            "rating": 5,
+            "relative_time": "7 months ago",
+            "author": "Nyx Lynn Merkler"
+          },
+          {
+            "text": "Stacey is an incredible sales consultant, fabulous resource. I hired many sales professionals in my career, she is excellent, great follow up, very knowledgeable, great positive attitude. She has been very helpful to us during our journey to seek Healthcare Coverage. I can't say ",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "AJ Leane"
+          },
+          {
+            "text": "I am incredibly grateful for the support and guidance I received from Stacey. Her personalized approach to navigating Medicare made the process stress-free. She took the time to understand my unique needs and found the perfect plan for me. Her expertise and compassion shine throu",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Chris K"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:08:41.020Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ34-4ovUN1oYRonqjCKd9I3M",
+          "displayName": "Sentinel Retirement Services",
+          "rating": 5,
+          "userRatingCount": 15
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": true,
+        "bbb_accreditation_status": "BBB Accredited Business",
+        "bbb_profile_url": "https://www.bbb.org/us/az/tucson/profile/insurance-agency/sentinel-retirement-services-1286-20110317",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 96,
+      "fetched_at": "2026-07-11T18:08:41.020Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "set-point-insurance-cincinnati": {
+    "slug": "set-point-insurance-cincinnati",
+    "google_rating": 4.9,
+    "google_review_count": 63,
+    "google_place_id": "ChIJvcseBuidQIgRs5QCAupB-q0",
+    "google_review_snippets": [
+      {
+        "text": "My homeowners insurance went up drastically, raising my mortgage payment drastically also. I needed to change companies to a cheaper one, but still get good coverage. They helped me do that. The agent was very helpful, patient with me, and stayed in touch during the process. They",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Victoria Williams"
+      },
+      {
+        "text": "Melissa is great at what she does. She assisted with claim and was able to get the job done. She has been assisting with my insurance needs for years now and I will continue to use her.\nVery professional. Highly recommend.",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "James W"
+      },
+      {
+        "text": "I did not know this sort of personalized protection even existed. It’s like a group of the smartest people you’ve ever met, all laser focused on just you and your business. Very clever people. Highly recommended!",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Larry Turner"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 84,
+    "enriched_at": "2026-07-11T18:08:41.034Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJvcseBuidQIgRs5QCAupB-q0",
+        "name": "CoverPoint Insurance Solutions",
+        "rating": 4.9,
+        "review_count": 63,
+        "formatted_address": "3610 Pentagon Blvd Suite 110, Dayton, OH 45431, USA",
+        "website_url": "https://coverpointinsurance.com/",
+        "review_snippets": [
+          {
+            "text": "My homeowners insurance went up drastically, raising my mortgage payment drastically also. I needed to change companies to a cheaper one, but still get good coverage. They helped me do that. The agent was very helpful, patient with me, and stayed in touch during the process. They",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Victoria Williams"
+          },
+          {
+            "text": "Melissa is great at what she does. She assisted with claim and was able to get the job done. She has been assisting with my insurance needs for years now and I will continue to use her.\nVery professional. Highly recommend.",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "James W"
+          },
+          {
+            "text": "I did not know this sort of personalized protection even existed. It’s like a group of the smartest people you’ve ever met, all laser focused on just you and your business. Very clever people. Highly recommended!",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Larry Turner"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:08:41.034Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJvcseBuidQIgRs5QCAupB-q0",
+          "displayName": "CoverPoint Insurance Solutions",
+          "rating": 4.9,
+          "userRatingCount": 63
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 84,
+      "fetched_at": "2026-07-11T18:08:41.034Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "shari-guidry-houston": {
+    "slug": "shari-guidry-houston",
+    "google_rating": 5,
+    "google_review_count": 50,
+    "google_place_id": "ChIJf76q0r7FQIYRpBaxt5sn1MY",
+    "google_review_snippets": [
+      {
+        "text": "Sharon at SDR Insurance was such a pleasure to work with! She made getting insurance simple and stress-free. Her communication was excellent — she always got back to me quickly and explained everything clearly. Sharon is super organized, efficient, and really cares about helping ",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Brittney Bookman"
+      },
+      {
+        "text": "I had a great experience working with Sharon, the owner of SDR Insurance Agency.  She took the time to walk me through all my options for homeowners, auto, and flood insurance, making sure I understood the coverage details.\n\nSharon was patient, knowledgeable, and very responsive ",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Kristen Gardner"
+      },
+      {
+        "text": "Sharon is amazing! She helped me with both my businesses… she is quick with her response and helped not only my Real Estate clients with  their home insurance but also with my General Liability for my Personal Training and Coaching coverage. I highly recommend her and her team. T",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Jamie Ramos"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:09:03.946Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJf76q0r7FQIYRpBaxt5sn1MY",
+        "name": "SDR Insurance Agency, LLC",
+        "rating": 5,
+        "review_count": 50,
+        "formatted_address": "7676 Hillmont St #240c, Houston, TX 77040, USA",
+        "website_url": "https://www.sdrinsuranceagency.com/",
+        "review_snippets": [
+          {
+            "text": "Sharon at SDR Insurance was such a pleasure to work with! She made getting insurance simple and stress-free. Her communication was excellent — she always got back to me quickly and explained everything clearly. Sharon is super organized, efficient, and really cares about helping ",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Brittney Bookman"
+          },
+          {
+            "text": "I had a great experience working with Sharon, the owner of SDR Insurance Agency.  She took the time to walk me through all my options for homeowners, auto, and flood insurance, making sure I understood the coverage details.\n\nSharon was patient, knowledgeable, and very responsive ",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Kristen Gardner"
+          },
+          {
+            "text": "Sharon is amazing! She helped me with both my businesses… she is quick with her response and helped not only my Real Estate clients with  their home insurance but also with my General Liability for my Personal Training and Coaching coverage. I highly recommend her and her team. T",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Jamie Ramos"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:03.946Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJf76q0r7FQIYRpBaxt5sn1MY",
+          "displayName": "SDR Insurance Agency, LLC",
+          "rating": 5,
+          "userRatingCount": 50
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:09:03.946Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "shane-thomas-denver": {
+    "slug": "shane-thomas-denver",
+    "google_rating": 5,
+    "google_review_count": 452,
+    "google_place_id": "ChIJ2T5aMVSHbIcR4_91zJHTLSw",
+    "google_review_snippets": [
+      {
+        "text": "Jenna is amazing!  I was originally feeling overwhelmed with obtaining Medicare.  Jenna was so patient and found several of the best options for me to choose from.  She was knowledgeable and so kind and with me every step of the way, keeping in touch and answering any questions I",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Kim McCallum"
+      },
+      {
+        "text": "Jenna Padilla is the best.   She not only is very knowledgeable about Medicare and all options, she makes the whole process simple and pleasant.  There is no worrying, or agonizing, because Jenna takes matters into her own hands.  She explains everything thoroughly without hesita",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Kristin Maas"
+      },
+      {
+        "text": "Integrity Health Advisors with Shane and Clara have been my Medicare health advisors since I enrolled in Medicare 3 years ago.  I cannot recommend them highly enough.  I have a reasonably complex health regiment and when it came time to transition to Medicare, I found them as a r",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Brian Starbuck"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/ma/medfield/profile/carpenter/shanes-custom-woodworking-0021-19712",
+    "trust_score": 98,
+    "enriched_at": "2026-07-11T18:09:03.768Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ2T5aMVSHbIcR4_91zJHTLSw",
+        "name": "Integrity Health Advisors",
+        "rating": 5,
+        "review_count": 452,
+        "formatted_address": "6551 S Revere Pkwy #290, Centennial, CO 80111, USA",
+        "website_url": "https://integrityhealthadvisors.com/?utm_source=GMB&utm_campaign=GMB%20centennial",
+        "review_snippets": [
+          {
+            "text": "Jenna is amazing!  I was originally feeling overwhelmed with obtaining Medicare.  Jenna was so patient and found several of the best options for me to choose from.  She was knowledgeable and so kind and with me every step of the way, keeping in touch and answering any questions I",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Kim McCallum"
+          },
+          {
+            "text": "Jenna Padilla is the best.   She not only is very knowledgeable about Medicare and all options, she makes the whole process simple and pleasant.  There is no worrying, or agonizing, because Jenna takes matters into her own hands.  She explains everything thoroughly without hesita",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Kristin Maas"
+          },
+          {
+            "text": "Integrity Health Advisors with Shane and Clara have been my Medicare health advisors since I enrolled in Medicare 3 years ago.  I cannot recommend them highly enough.  I have a reasonably complex health regiment and when it came time to transition to Medicare, I found them as a r",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Brian Starbuck"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:03.768Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ2T5aMVSHbIcR4_91zJHTLSw",
+          "displayName": "Integrity Health Advisors",
+          "rating": 5,
+          "userRatingCount": 452
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/ma/medfield/profile/carpenter/shanes-custom-woodworking-0021-19712",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 98,
+      "fetched_at": "2026-07-11T18:09:03.768Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sharri-crawford-albuquerque": {
+    "slug": "sharri-crawford-albuquerque",
+    "google_rating": 5,
+    "google_review_count": 4,
+    "google_place_id": "ChIJMdo4VAANIocRWtWxbCVkOSY",
+    "google_review_snippets": [
+      {
+        "text": "Natalie was a lifesaver. I had just purchased a vehicle and needed same-day coverage. She walked me through every step, answered all my questions, and found cheap car insurance without sacrificing important protections. Excellent experience from beginning to end.",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Mia Phillips"
+      },
+      {
+        "text": "Affordable auto insurance with real value. They helped me customize my coverage and find discounts I didn’t even know existed.The service was quick, and the final quote fit perfectly within my budget. Definitely worth it",
+        "rating": 5,
+        "relative_time": "2 months ago",
+        "author": "Zyler Crestmoore"
+      },
+      {
+        "text": "I needed cheap car insurance fast and wasn’t expecting much, but Luis really came through. He found me a lower monthly rate than my previous company and handled everything in one call. Super smooth process.",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "COREY JUNITA"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:09:21.474Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJMdo4VAANIocRWtWxbCVkOSY",
+        "name": "Albuquerque's Affordable Insurance Agency",
+        "rating": 5,
+        "review_count": 4,
+        "formatted_address": "500 4th St NW #108, Albuquerque, NM 87102, USA",
+        "website_url": null,
+        "review_snippets": [
+          {
+            "text": "Natalie was a lifesaver. I had just purchased a vehicle and needed same-day coverage. She walked me through every step, answered all my questions, and found cheap car insurance without sacrificing important protections. Excellent experience from beginning to end.",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Mia Phillips"
+          },
+          {
+            "text": "Affordable auto insurance with real value. They helped me customize my coverage and find discounts I didn’t even know existed.The service was quick, and the final quote fit perfectly within my budget. Definitely worth it",
+            "rating": 5,
+            "relative_time": "2 months ago",
+            "author": "Zyler Crestmoore"
+          },
+          {
+            "text": "I needed cheap car insurance fast and wasn’t expecting much, but Luis really came through. He found me a lower monthly rate than my previous company and handled everything in one call. Super smooth process.",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "COREY JUNITA"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:21.474Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJMdo4VAANIocRWtWxbCVkOSY",
+          "displayName": "Albuquerque's Affordable Insurance Agency",
+          "rating": 5,
+          "userRatingCount": 4
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:09:21.474Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "shaun-elizabeth-abshire-detroit": {
+    "slug": "shaun-elizabeth-abshire-detroit",
+    "google_rating": 5,
+    "google_review_count": 91,
+    "google_place_id": "ChIJS75DpVw3O4gRz8r5IqJZDSE",
+    "google_review_snippets": [
+      {
+        "text": "Shaun was excellent to deal with.  He is a professional who knows the business well. Shaun returned all calls quickly and always had answers for us.   He helped us find a fantastic plan that included the Providers we use.  He made the transaction easy.  Would highly recommend Sha",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Kim Nasarzewski"
+      },
+      {
+        "text": "Elizabeth Abshire is absolutely great. She is very knowledgeable about all the plans. She listens to your concerns and helps find the best solutions for each individual. I am going to use her office when I retire.",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Elizabeth Davies"
+      },
+      {
+        "text": "I had an awful experience trying to find health insurance, Preferred Insured Agency changed all of that, Shaun was extremely knowledgeable and very delightful to work with he answered every question I had and helped me obtain good insurance! I can’t praise him enough. I can now r",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "mary kelly"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:09:26.513Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJS75DpVw3O4gRz8r5IqJZDSE",
+        "name": "Agents of the Preferred Insured",
+        "rating": 5,
+        "review_count": 91,
+        "formatted_address": "1469 Fort St, Wyandotte, MI 48192, USA",
+        "website_url": "https://prefer.insure/",
+        "review_snippets": [
+          {
+            "text": "Shaun was excellent to deal with.  He is a professional who knows the business well. Shaun returned all calls quickly and always had answers for us.   He helped us find a fantastic plan that included the Providers we use.  He made the transaction easy.  Would highly recommend Sha",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Kim Nasarzewski"
+          },
+          {
+            "text": "Elizabeth Abshire is absolutely great. She is very knowledgeable about all the plans. She listens to your concerns and helps find the best solutions for each individual. I am going to use her office when I retire.",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Elizabeth Davies"
+          },
+          {
+            "text": "I had an awful experience trying to find health insurance, Preferred Insured Agency changed all of that, Shaun was extremely knowledgeable and very delightful to work with he answered every question I had and helped me obtain good insurance! I can’t praise him enough. I can now r",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "mary kelly"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:26.513Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJS75DpVw3O4gRz8r5IqJZDSE",
+          "displayName": "Agents of the Preferred Insured",
+          "rating": 5,
+          "userRatingCount": 91
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:09:26.513Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "shawn-yeatts-fresno": {
+    "slug": "shawn-yeatts-fresno",
+    "google_rating": 4.1,
+    "google_review_count": 247,
+    "google_place_id": "ChIJhXIsogNmlIARk_aSgvw_Cow",
+    "google_review_snippets": [
+      {
+        "text": "Very unexperienced staff especially PRACHI ARORA. She had been very unprofessional and rude. They ignore my calls by saying PRACHI ARORA is on lunch, called them nearly 15 times in a day. I have been working with them since 2019 and they have never provided loss/run. Only 5 days ",
+        "rating": 1,
+        "relative_time": "2 months ago",
+        "author": "Kultar Singh"
+      },
+      {
+        "text": "Just purchased a new home and was getting ridiculous quotes for homeowners insurance. Gave Ranjeet a call and he hooked up me up. Lowesr price across the nation. I highly recommend giving them a call he saved me thousands a year.",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Anthony C"
+      },
+      {
+        "text": "In my nine years of trucking, I can confidently say that Jagdeep Insurance has been the most reliable and trustworthy partner I’ve ever worked with. I had received a quote from them in the past, and today — when most others stepped back due to safety score and claims challenges —",
+        "rating": 5,
+        "relative_time": "9 months ago",
+        "author": "Nachhatar Dhaliwal"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 81,
+    "enriched_at": "2026-07-11T18:09:35.622Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJhXIsogNmlIARk_aSgvw_Cow",
+        "name": "Jagdeep Singh Insurance Agency, Inc",
+        "rating": 4.1,
+        "review_count": 247,
+        "formatted_address": "4185 W Figarden Dr #101, Fresno, CA 93722, USA",
+        "website_url": "http://www.jsinghagency.com/",
+        "review_snippets": [
+          {
+            "text": "Very unexperienced staff especially PRACHI ARORA. She had been very unprofessional and rude. They ignore my calls by saying PRACHI ARORA is on lunch, called them nearly 15 times in a day. I have been working with them since 2019 and they have never provided loss/run. Only 5 days ",
+            "rating": 1,
+            "relative_time": "2 months ago",
+            "author": "Kultar Singh"
+          },
+          {
+            "text": "Just purchased a new home and was getting ridiculous quotes for homeowners insurance. Gave Ranjeet a call and he hooked up me up. Lowesr price across the nation. I highly recommend giving them a call he saved me thousands a year.",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Anthony C"
+          },
+          {
+            "text": "In my nine years of trucking, I can confidently say that Jagdeep Insurance has been the most reliable and trustworthy partner I’ve ever worked with. I had received a quote from them in the past, and today — when most others stepped back due to safety score and claims challenges —",
+            "rating": 5,
+            "relative_time": "9 months ago",
+            "author": "Nachhatar Dhaliwal"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:35.622Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJhXIsogNmlIARk_aSgvw_Cow",
+          "displayName": "Jagdeep Singh Insurance Agency, Inc",
+          "rating": 4.1,
+          "userRatingCount": 247
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 81,
+      "fetched_at": "2026-07-11T18:09:35.622Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "shawnee-christenson-minneapolis": {
+    "slug": "shawnee-christenson-minneapolis",
+    "google_rating": 5,
+    "google_review_count": 262,
+    "google_place_id": "ChIJpc6Sd1Q2s1IRdF4_4C_vykQ",
+    "google_review_snippets": [
+      {
+        "text": "Gretchen Sanna explained several key concepts I was unaware of that are critical to choosing health care coverage on MNSure. She answered my questions and helped us choose the best plans for each individual member of our household. She let me know that she is available to advocat",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Debbie Warne-Jacobsen"
+      },
+      {
+        "text": "Mark was pretty thorough and showed several comparisons of plans just so I could see which would best fit my needs. It was just what I needed help with as Medicare didn't initially allow me to choose a plan at the time of signing up. Thanks again Mark and Crosstown Insurance for ",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Cynthia P"
+      },
+      {
+        "text": "Gretchen is an excellent representative of Crosstown Insurance.  She has been vital to myself and many others I have referred to her for help.  She is patient and helpful with the many different questions and explains answers clearly.  Very responsive and caring.",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Katheryn Hanson"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 88,
+    "enriched_at": "2026-07-11T18:09:37.536Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJpc6Sd1Q2s1IRdF4_4C_vykQ",
+        "name": "Crosstown Insurance",
+        "rating": 5,
+        "review_count": 262,
+        "formatted_address": "9220 Bass Lake Rd #225, New Hope, MN 55428, USA",
+        "website_url": "http://www.crosstowninsurance.com/",
+        "review_snippets": [
+          {
+            "text": "Gretchen Sanna explained several key concepts I was unaware of that are critical to choosing health care coverage on MNSure. She answered my questions and helped us choose the best plans for each individual member of our household. She let me know that she is available to advocat",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Debbie Warne-Jacobsen"
+          },
+          {
+            "text": "Mark was pretty thorough and showed several comparisons of plans just so I could see which would best fit my needs. It was just what I needed help with as Medicare didn't initially allow me to choose a plan at the time of signing up. Thanks again Mark and Crosstown Insurance for ",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Cynthia P"
+          },
+          {
+            "text": "Gretchen is an excellent representative of Crosstown Insurance.  She has been vital to myself and many others I have referred to her for help.  She is patient and helpful with the many different questions and explains answers clearly.  Very responsive and caring.",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Katheryn Hanson"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:37.536Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJpc6Sd1Q2s1IRdF4_4C_vykQ",
+          "displayName": "Crosstown Insurance",
+          "rating": 5,
+          "userRatingCount": 262
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 88,
+      "fetched_at": "2026-07-11T18:09:37.536Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sherah-beasley-austin": {
+    "slug": "sherah-beasley-austin",
+    "google_rating": 5,
+    "google_review_count": 23,
+    "google_place_id": "ChIJVyZ3rcLPRIYRMaxkD_U0OiA",
+    "google_review_snippets": [
+      {
+        "text": "Felix helped me and was very attentive and kind. He was able to find me an insurance policy that fit my budget. Excellent service 😊",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Música FMA."
+      },
+      {
+        "text": "Diana me ayudó\nCon mi seguro",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Pedro Sierra"
+      },
+      {
+        "text": "Excellent.\nService\nVery Good",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Juan carlos Adriano"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:09:53.346Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJVyZ3rcLPRIYRMaxkD_U0OiA",
+        "name": "Ez-Way insurance agency",
+        "rating": 5,
+        "review_count": 23,
+        "formatted_address": "1200 W Howard Ln ste N, Austin, TX 78753, USA",
+        "website_url": null,
+        "review_snippets": [
+          {
+            "text": "Felix helped me and was very attentive and kind. He was able to find me an insurance policy that fit my budget. Excellent service 😊",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Música FMA."
+          },
+          {
+            "text": "Diana me ayudó\nCon mi seguro",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Pedro Sierra"
+          },
+          {
+            "text": "Excellent.\nService\nVery Good",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Juan carlos Adriano"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:53.346Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJVyZ3rcLPRIYRMaxkD_U0OiA",
+          "displayName": "Ez-Way insurance agency",
+          "rating": 5,
+          "userRatingCount": 23
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:09:53.346Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sherri-peart-des-moines": {
+    "slug": "sherri-peart-des-moines",
+    "google_rating": 5,
+    "google_review_count": 12,
+    "google_place_id": "ChIJ_V26Lmmj7ocRk7tJ1Otv81E",
+    "google_review_snippets": [
+      {
+        "text": "Rosario Marquez is truly the best in insurance. She went over everything and I actually understood it.Thank you so very much Rosario. You are the best!!!",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Teresa Eaker"
+      },
+      {
+        "text": "I didn't know how great it would be to have an insurance agent of my own until needed help.\n.  As a patient at Oak Street Health they set me up withRosario c Marquez of True Care Insurance.. i told her i needed ouut of my insurance pick and into one more similar to my most recent",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "rebecca harris"
+      },
+      {
+        "text": "Absolutely love Rosario, she's been the best, made us all feel comfortable in making the decisions we did. Made sure we knew what was going on, kept us updated could contact her anytime we had questions, I'd call her part of my family with the way she's helped with my mom's stuff",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Alicia Reber"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:09:58.712Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ_V26Lmmj7ocRk7tJ1Otv81E",
+        "name": "True Care Insurance",
+        "rating": 5,
+        "review_count": 12,
+        "formatted_address": "113 Army Post Rd, Des Moines, IA 50315, USA",
+        "website_url": "http://www.truecare-insurance.com/",
+        "review_snippets": [
+          {
+            "text": "Rosario Marquez is truly the best in insurance. She went over everything and I actually understood it.Thank you so very much Rosario. You are the best!!!",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Teresa Eaker"
+          },
+          {
+            "text": "I didn't know how great it would be to have an insurance agent of my own until needed help.\n.  As a patient at Oak Street Health they set me up withRosario c Marquez of True Care Insurance.. i told her i needed ouut of my insurance pick and into one more similar to my most recent",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "rebecca harris"
+          },
+          {
+            "text": "Absolutely love Rosario, she's been the best, made us all feel comfortable in making the decisions we did. Made sure we knew what was going on, kept us updated could contact her anytime we had questions, I'd call her part of my family with the way she's helped with my mom's stuff",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Alicia Reber"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:09:58.712Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ_V26Lmmj7ocRk7tJ1Otv81E",
+          "displayName": "True Care Insurance",
+          "rating": 5,
+          "userRatingCount": 12
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:09:58.712Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sid-martinez-san-antonio": {
+    "slug": "sid-martinez-san-antonio",
+    "google_rating": 4.3,
+    "google_review_count": 90,
+    "google_place_id": "ChIJI-deLZRZXIYRZUogtosMSfo",
+    "google_review_snippets": [
+      {
+        "text": "I have My car insurance on this agency at very good Price.",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Miguel Arellano"
+      },
+      {
+        "text": "Awful customer service agent’s working there. Was looking for a simple quote, gave them all my info thinking I was going to get a quote right away since they didn’t have any customers when I called,\n\nThen was told that I was going to get a call back sometime during the day, that ",
+        "rating": 1,
+        "relative_time": "a year ago",
+        "author": "Jesus Ovalle"
+      },
+      {
+        "text": "I love this place! They are super sweet n really work with yall n help yall they go above and beyond",
+        "rating": 5,
+        "relative_time": "9 months ago",
+        "author": "Hector Lopez"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 79,
+    "enriched_at": "2026-07-11T18:10:16.593Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJI-deLZRZXIYRZUogtosMSfo",
+        "name": "Martinez Insurance Agency, Inc",
+        "rating": 4.3,
+        "review_count": 90,
+        "formatted_address": "3330 SW Military Dr, San Antonio, TX 78211, USA",
+        "website_url": "https://www.martinezinsurance.net/",
+        "review_snippets": [
+          {
+            "text": "I have My car insurance on this agency at very good Price.",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Miguel Arellano"
+          },
+          {
+            "text": "Awful customer service agent’s working there. Was looking for a simple quote, gave them all my info thinking I was going to get a quote right away since they didn’t have any customers when I called,\n\nThen was told that I was going to get a call back sometime during the day, that ",
+            "rating": 1,
+            "relative_time": "a year ago",
+            "author": "Jesus Ovalle"
+          },
+          {
+            "text": "I love this place! They are super sweet n really work with yall n help yall they go above and beyond",
+            "rating": 5,
+            "relative_time": "9 months ago",
+            "author": "Hector Lopez"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:10:16.594Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJI-deLZRZXIYRZUogtosMSfo",
+          "displayName": "Martinez Insurance Agency, Inc",
+          "rating": 4.3,
+          "userRatingCount": 90
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 79,
+      "fetched_at": "2026-07-11T18:10:16.593Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "siegel-insurance-inc-atlanta": {
+    "slug": "siegel-insurance-inc-atlanta",
+    "google_rating": 4.6,
+    "google_review_count": 78,
+    "google_place_id": "ChIJvXQFzoEI9YgRGkQxoQ1OKKo",
+    "google_review_snippets": [
+      {
+        "text": "A tremendous THANK YOU to my account representative Tammie Weathers! When I called from a car dealership to ask that she please expedite arranging for my newly purchased car to have insurance coverage, she responded cheerfully and quickly, and minutes later I was driving home in ",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Martha F"
+      },
+      {
+        "text": "Siegel is great. Very proactive on making sure we are with the best company for our circumstances. Refer all my friends, family, and clients to them.",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Michael Lipsey"
+      },
+      {
+        "text": "I highly recommend Siegel Insurance Agency in Atlanta, Georgia. Ms. Rani Walker, Personal Lines Account Manager, was recently especially helpful. Through Siegel, I have a Traveler’s umbrella coverage of home and auto. My mortgage lender had made a mistake, and, even though I coul",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Jack Butler"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/ga/atlanta/profile/fire-insurance/siegel-insurance-inc-0443-27058908",
+    "trust_score": 92,
+    "enriched_at": "2026-07-11T18:10:19.605Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJvXQFzoEI9YgRGkQxoQ1OKKo",
+        "name": "Siegel Insurance",
+        "rating": 4.6,
+        "review_count": 78,
+        "formatted_address": "2987 Clairmont Rd, Atlanta, GA 30329, USA",
+        "website_url": "http://www.siegelinsurance.com/",
+        "review_snippets": [
+          {
+            "text": "A tremendous THANK YOU to my account representative Tammie Weathers! When I called from a car dealership to ask that she please expedite arranging for my newly purchased car to have insurance coverage, she responded cheerfully and quickly, and minutes later I was driving home in ",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Martha F"
+          },
+          {
+            "text": "Siegel is great. Very proactive on making sure we are with the best company for our circumstances. Refer all my friends, family, and clients to them.",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Michael Lipsey"
+          },
+          {
+            "text": "I highly recommend Siegel Insurance Agency in Atlanta, Georgia. Ms. Rani Walker, Personal Lines Account Manager, was recently especially helpful. Through Siegel, I have a Traveler’s umbrella coverage of home and auto. My mortgage lender had made a mistake, and, even though I coul",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Jack Butler"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:10:19.605Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJvXQFzoEI9YgRGkQxoQ1OKKo",
+          "displayName": "Siegel Insurance",
+          "rating": 4.6,
+          "userRatingCount": 78
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/ga/atlanta/profile/fire-insurance/siegel-insurance-inc-0443-27058908",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 92,
+      "fetched_at": "2026-07-11T18:10:19.605Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "simply-senior-solutions-st-louis": {
+    "slug": "simply-senior-solutions-st-louis",
+    "google_rating": 5,
+    "google_review_count": 2266,
+    "google_place_id": "ChIJedf1K-Ul34cRK0B0VcJBiaw",
+    "google_review_snippets": [
+      {
+        "text": "Beth was tremendous help getting me enrolled in a Medicare Advantage plan.  She went through all my providers and let me know who was in network and who was out of network.  She went through all my medications and provided me information about what their costs would be and which ",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Jeanne Kinsey (Jeanna)"
+      },
+      {
+        "text": "Aaron Weaver best agent ever. Aaron helped me set up my Medicare insurance and Life Insurance for me and my wife. Very knowledgeable, very patience. Answers all questions. Would totally recommend others to him because Aaron took the stress out of signing up.",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Denise Coleman"
+      },
+      {
+        "text": "Travis Boyer was very helpful with enrolling in Medicare coverage. Travis explained the A - D coverages of Medicare and the plan I signed for was a plan called, Devoted GiveBack Plan.\nThis was the best plan available for my needs and the cost was the lowest plan compared to other",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Mike Archuleta"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/ca/san-diego/profile/assisted-living-facilities/simply-settled-1126-172007906",
+    "trust_score": 98,
+    "enriched_at": "2026-07-11T18:10:33.585Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJedf1K-Ul34cRK0B0VcJBiaw",
+        "name": "Senior Health Solutions",
+        "rating": 5,
+        "review_count": 2266,
+        "formatted_address": "3779 New Town Blvd, St Charles, MO 63301, USA",
+        "website_url": "http://www.seniorhealthsolutions.net/",
+        "review_snippets": [
+          {
+            "text": "Beth was tremendous help getting me enrolled in a Medicare Advantage plan.  She went through all my providers and let me know who was in network and who was out of network.  She went through all my medications and provided me information about what their costs would be and which ",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Jeanne Kinsey (Jeanna)"
+          },
+          {
+            "text": "Aaron Weaver best agent ever. Aaron helped me set up my Medicare insurance and Life Insurance for me and my wife. Very knowledgeable, very patience. Answers all questions. Would totally recommend others to him because Aaron took the stress out of signing up.",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Denise Coleman"
+          },
+          {
+            "text": "Travis Boyer was very helpful with enrolling in Medicare coverage. Travis explained the A - D coverages of Medicare and the plan I signed for was a plan called, Devoted GiveBack Plan.\nThis was the best plan available for my needs and the cost was the lowest plan compared to other",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Mike Archuleta"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:10:33.585Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJedf1K-Ul34cRK0B0VcJBiaw",
+          "displayName": "Senior Health Solutions",
+          "rating": 5,
+          "userRatingCount": 2266
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/ca/san-diego/profile/assisted-living-facilities/simply-settled-1126-172007906",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 98,
+      "fetched_at": "2026-07-11T18:10:33.585Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "smith-berclair-insurance-memphis": {
+    "slug": "smith-berclair-insurance-memphis",
+    "google_rating": 5,
+    "google_review_count": 8,
+    "google_place_id": "ChIJIdWx5OqDf4gRF6F4zMkipiw",
+    "google_review_snippets": [
+      {
+        "text": "Great hospitality and customer service and great people and awesome Stan\nSmith goes the extra mile",
+        "rating": 5,
+        "relative_time": "9 months ago",
+        "author": "Edward Cave"
+      },
+      {
+        "text": "I have had insurance with them for many years and have been very happy with their service.",
+        "rating": 5,
+        "relative_time": "3 years ago",
+        "author": "Catherine House"
+      },
+      {
+        "text": "Great place to work gave me a quote $202 less than the rest",
+        "rating": 5,
+        "relative_time": "6 years ago",
+        "author": "Smiley Joe Show"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": true,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/tn/memphis/profile/insurance-companies/smith-berclair-insurance-inc-0543-33007780",
+    "trust_score": 98,
+    "enriched_at": "2026-07-11T18:10:35.587Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJIdWx5OqDf4gRF6F4zMkipiw",
+        "name": "Smith-Berclair Insurance",
+        "rating": 5,
+        "review_count": 8,
+        "formatted_address": "7200 Goodlett Farms Pkwy Ste 103, Cordova, TN 38016, USA",
+        "website_url": "http://www.smithberclair.com/",
+        "review_snippets": [
+          {
+            "text": "Great hospitality and customer service and great people and awesome Stan\nSmith goes the extra mile",
+            "rating": 5,
+            "relative_time": "9 months ago",
+            "author": "Edward Cave"
+          },
+          {
+            "text": "I have had insurance with them for many years and have been very happy with their service.",
+            "rating": 5,
+            "relative_time": "3 years ago",
+            "author": "Catherine House"
+          },
+          {
+            "text": "Great place to work gave me a quote $202 less than the rest",
+            "rating": 5,
+            "relative_time": "6 years ago",
+            "author": "Smiley Joe Show"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:10:35.587Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJIdWx5OqDf4gRF6F4zMkipiw",
+          "displayName": "Smith-Berclair Insurance",
+          "rating": 5,
+          "userRatingCount": 8
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": true,
+        "bbb_accreditation_status": "BBB Accredited Business",
+        "bbb_profile_url": "https://www.bbb.org/us/tn/memphis/profile/insurance-companies/smith-berclair-insurance-inc-0543-33007780",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 98,
+      "fetched_at": "2026-07-11T18:10:35.587Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sneed-insurance-agency-memphis": {
+    "slug": "sneed-insurance-agency-memphis",
+    "google_rating": 4.9,
+    "google_review_count": 45,
+    "google_place_id": "ChIJY-_aMIyFf4gRSK_7ICrraB4",
+    "google_review_snippets": [
+      {
+        "text": "I can’t say enough good things about my experience with Sneed Insurance, especially thanks to Alex Nelson. From our very first conversation, Alex went above and beyond to provide exceptional customer service. He was not only professional and knowledgeable, but also incredibly kin",
+        "rating": 5,
+        "relative_time": "11 months ago",
+        "author": "Alex Buii"
+      },
+      {
+        "text": "Sneed Insurance makes business coverage simple and stress-free. Their team took the time to understand our company’s needs and found the right policies without any of the usual back-and-forth or confusion. They’re responsive, knowledgeable, and always willing to explain the detai",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Russell Hale"
+      },
+      {
+        "text": "Alex just saved me a boatload of money on both my homeowners and auto policies. This guy is AMBITIOUS in getting you taken care of. He is genuinely concerned in getting you taken care of! Go in and meet him and make your own opinion. You won’t regret it.No sales pitches or anythi",
+        "rating": 5,
+        "relative_time": "10 months ago",
+        "author": "DM BROK"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 86,
+    "enriched_at": "2026-07-11T18:10:53.366Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJY-_aMIyFf4gRSK_7ICrraB4",
+        "name": "Sneed Insurance",
+        "rating": 4.9,
+        "review_count": 45,
+        "formatted_address": "4515 Poplar Ave #322, Memphis, TN 38117, USA",
+        "website_url": "http://www.sneedinsurance.com/",
+        "review_snippets": [
+          {
+            "text": "I can’t say enough good things about my experience with Sneed Insurance, especially thanks to Alex Nelson. From our very first conversation, Alex went above and beyond to provide exceptional customer service. He was not only professional and knowledgeable, but also incredibly kin",
+            "rating": 5,
+            "relative_time": "11 months ago",
+            "author": "Alex Buii"
+          },
+          {
+            "text": "Sneed Insurance makes business coverage simple and stress-free. Their team took the time to understand our company’s needs and found the right policies without any of the usual back-and-forth or confusion. They’re responsive, knowledgeable, and always willing to explain the detai",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Russell Hale"
+          },
+          {
+            "text": "Alex just saved me a boatload of money on both my homeowners and auto policies. This guy is AMBITIOUS in getting you taken care of. He is genuinely concerned in getting you taken care of! Go in and meet him and make your own opinion. You won’t regret it.No sales pitches or anythi",
+            "rating": 5,
+            "relative_time": "10 months ago",
+            "author": "DM BROK"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:10:53.366Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJY-_aMIyFf4gRSK_7ICrraB4",
+          "displayName": "Sneed Insurance",
+          "rating": 4.9,
+          "userRatingCount": 45
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 86,
+      "fetched_at": "2026-07-11T18:10:53.366Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "snyder-insurance-group-jacksonville": {
+    "slug": "snyder-insurance-group-jacksonville",
+    "google_rating": 4.9,
+    "google_review_count": 502,
+    "google_place_id": "ChIJm1ZpVD3K5YgRE0DoJF24_mo",
+    "google_review_snippets": [
+      {
+        "text": "Balina was absolutely amazing to work with. She was knowledgeable, responsive, honest, and made the entire process simple and stress-free. Most importantly, she helped me save a substantial amount of money on both my homeowners and auto insurance while still making sure I had gre",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Sean"
+      },
+      {
+        "text": "We have been working with Ricci Insurance for almost five years, and the experience has been excellent. Balina, Angela, and the entire team are always cooperative, available, and pleasant to work with whenever we need anything. We truly appreciate our business relationship with t",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "GY Diamant LLC"
+      },
+      {
+        "text": "Chris Finney! Hands down one of the finest customer support professionals I’ve ever interacted with. His knowledge is unmatched, his politeness genuine, and his response time lightning-fast. Even though I only had a few general questions, he treated me with the same care and atte",
+        "rating": 5,
+        "relative_time": "7 months ago",
+        "author": "Julian Martinez"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 89,
+    "enriched_at": "2026-07-11T18:10:58.528Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJm1ZpVD3K5YgRE0DoJF24_mo",
+        "name": "Ricci Insurance Group",
+        "rating": 4.9,
+        "review_count": 502,
+        "formatted_address": "3721 Dupont Station Ct S, Jacksonville, FL 32217, USA",
+        "website_url": "http://www.ricciinsurancegroup.com/",
+        "review_snippets": [
+          {
+            "text": "Balina was absolutely amazing to work with. She was knowledgeable, responsive, honest, and made the entire process simple and stress-free. Most importantly, she helped me save a substantial amount of money on both my homeowners and auto insurance while still making sure I had gre",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Sean"
+          },
+          {
+            "text": "We have been working with Ricci Insurance for almost five years, and the experience has been excellent. Balina, Angela, and the entire team are always cooperative, available, and pleasant to work with whenever we need anything. We truly appreciate our business relationship with t",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "GY Diamant LLC"
+          },
+          {
+            "text": "Chris Finney! Hands down one of the finest customer support professionals I’ve ever interacted with. His knowledge is unmatched, his politeness genuine, and his response time lightning-fast. Even though I only had a few general questions, he treated me with the same care and atte",
+            "rating": 5,
+            "relative_time": "7 months ago",
+            "author": "Julian Martinez"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:10:58.528Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJm1ZpVD3K5YgRE0DoJF24_mo",
+          "displayName": "Ricci Insurance Group",
+          "rating": 4.9,
+          "userRatingCount": 502
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 89,
+      "fetched_at": "2026-07-11T18:10:58.528Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "south-florida-insurance-brokers-miami-fort-lauderdale": {
+    "slug": "south-florida-insurance-brokers-miami-fort-lauderdale",
+    "google_rating": 5,
+    "google_review_count": 170,
+    "google_place_id": "ChIJLQX6XqC32YgR5pZqRWrbp_Y",
+    "google_review_snippets": [
+      {
+        "text": "Ernesto Espinosa's services went way beyond expectations. From just one phone call, he was able to discern the insurance needs of my 95-year-old aunt, explain succinctly the drug plans available as well as taking care of all forms and questionnaires required.\nErnesto stayed on to",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "M LR"
+      },
+      {
+        "text": "I had a great experience working with Ernesto. He was incredibly patient throughout the entire process, took the time to answer all of my questions, and helped me find the right plan for my needs. His knowledge and guidance made everything so much easier. I truly appreciated how ",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Alexandra Novella Suarez"
+      },
+      {
+        "text": "I had a great experience working with Ernesto as our insurance broker. He helped my mother find the best insurance (Medicare) option for her needs and was incredibly patient throughout the entire process. He explained everything clearly, was efficient, and very knowledgeable abou",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Belinda Marti"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 90,
+    "enriched_at": "2026-07-11T18:11:10.854Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJLQX6XqC32YgR5pZqRWrbp_Y",
+        "name": "South Florida Insurance Brokers",
+        "rating": 5,
+        "review_count": 170,
+        "formatted_address": "3590 Coral Wy, Miami, FL 33145, USA",
+        "website_url": "https://sfib.net/",
+        "review_snippets": [
+          {
+            "text": "Ernesto Espinosa's services went way beyond expectations. From just one phone call, he was able to discern the insurance needs of my 95-year-old aunt, explain succinctly the drug plans available as well as taking care of all forms and questionnaires required.\nErnesto stayed on to",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "M LR"
+          },
+          {
+            "text": "I had a great experience working with Ernesto. He was incredibly patient throughout the entire process, took the time to answer all of my questions, and helped me find the right plan for my needs. His knowledge and guidance made everything so much easier. I truly appreciated how ",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Alexandra Novella Suarez"
+          },
+          {
+            "text": "I had a great experience working with Ernesto as our insurance broker. He helped my mother find the best insurance (Medicare) option for her needs and was incredibly patient throughout the entire process. He explained everything clearly, was efficient, and very knowledgeable abou",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Belinda Marti"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:11:10.854Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJLQX6XqC32YgR5pZqRWrbp_Y",
+          "displayName": "South Florida Insurance Brokers",
+          "rating": 5,
+          "userRatingCount": 170
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 90,
+      "fetched_at": "2026-07-11T18:11:10.854Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "south-florida-insurance-brokers-tampa-bay": {
+    "slug": "south-florida-insurance-brokers-tampa-bay",
+    "google_rating": 5,
+    "google_review_count": 21,
+    "google_place_id": "ChIJ36FA93sL3ogRGipi5Etelsk",
+    "google_review_snippets": [
+      {
+        "text": "Working with Ernesto was a superb experience. He has vast knowledge and expertise with the Medicare Advantage health plans. He helped choose the best plan that fitted my needs and concerns. He went above and beyond to provide me with additional information that will make my livin",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Jose Salazar"
+      },
+      {
+        "text": "Ernesto was extremely knowledgeable about Medicare and the different plan options available. He guided me through the entire process of switching from a Medicare Advantage PPO Employee Plan to a Medigap Plan that better fits my needs and includes the majority of my healthcare pro",
+        "rating": 5,
+        "relative_time": "5 months ago",
+        "author": "Jesus Loreto"
+      },
+      {
+        "text": "Speaking with Ernesto today was a pleasure. He was able to answer my questions and advise me about the process of switching or keeping my current plan. I have put him in my phone so I can reach out to him.\nThank you\nBeth Wajts",
+        "rating": 5,
+        "relative_time": "2 months ago",
+        "author": "Beth Wajts"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 85,
+    "enriched_at": "2026-07-11T18:11:19.692Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ36FA93sL3ogRGipi5Etelsk",
+        "name": "South Florida Insurance Brokers - Medicare Experts now also in Central Florida",
+        "rating": 5,
+        "review_count": 21,
+        "formatted_address": "1037 Cepheus Pl NW, Palm Bay, FL 32907, USA",
+        "website_url": "https://sfib.net/palm-bay-florida/",
+        "review_snippets": [
+          {
+            "text": "Working with Ernesto was a superb experience. He has vast knowledge and expertise with the Medicare Advantage health plans. He helped choose the best plan that fitted my needs and concerns. He went above and beyond to provide me with additional information that will make my livin",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Jose Salazar"
+          },
+          {
+            "text": "Ernesto was extremely knowledgeable about Medicare and the different plan options available. He guided me through the entire process of switching from a Medicare Advantage PPO Employee Plan to a Medigap Plan that better fits my needs and includes the majority of my healthcare pro",
+            "rating": 5,
+            "relative_time": "5 months ago",
+            "author": "Jesus Loreto"
+          },
+          {
+            "text": "Speaking with Ernesto today was a pleasure. He was able to answer my questions and advise me about the process of switching or keeping my current plan. I have put him in my phone so I can reach out to him.\nThank you\nBeth Wajts",
+            "rating": 5,
+            "relative_time": "2 months ago",
+            "author": "Beth Wajts"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:11:19.692Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ36FA93sL3ogRGipi5Etelsk",
+          "displayName": "South Florida Insurance Brokers - Medicare Experts now also in Central Florida",
+          "rating": 5,
+          "userRatingCount": 21
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 85,
+      "fetched_at": "2026-07-11T18:11:19.692Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "southern-arizona-senior-healthcare-tucson": {
+    "slug": "southern-arizona-senior-healthcare-tucson",
+    "google_rating": 5,
+    "google_review_count": 1,
+    "google_place_id": "ChIJ26tHrNVx1oYRHOn5SAcMMUI",
+    "google_review_snippets": [],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:11:30.292Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ26tHrNVx1oYRHOn5SAcMMUI",
+        "name": "Senior Healthcare Partnerships LLC",
+        "rating": 5,
+        "review_count": 1,
+        "formatted_address": "2120 W Ina Rd Ste 105, Tucson, AZ 85741, USA",
+        "website_url": "https://seniorhealthcarepartnerships.com/",
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:11:30.292Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ26tHrNVx1oYRHOn5SAcMMUI",
+          "displayName": "Senior Healthcare Partnerships LLC",
+          "rating": 5,
+          "userRatingCount": 1
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:11:30.292Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "stephanie-floyd-insurance-austin": {
+    "slug": "stephanie-floyd-insurance-austin",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": null,
+    "google_review_snippets": [],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 71,
+    "enriched_at": "2026-07-11T18:11:35.171Z",
+    "needs_manual_review": true,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": null,
+        "name": null,
+        "rating": null,
+        "review_count": null,
+        "formatted_address": null,
+        "website_url": null,
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:11:35.171Z",
+        "status": "not_found"
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 71,
+      "fetched_at": "2026-07-11T18:11:35.171Z",
+      "partial_failures": [],
+      "needs_manual_review": true
+    }
+  },
+  "stephen-burgett-des-moines": {
+    "slug": "stephen-burgett-des-moines",
+    "google_rating": 5,
+    "google_review_count": 10,
+    "google_place_id": "ChIJY1tUqrlxN4gRm_HXzjyFb0s",
+    "google_review_snippets": [
+      {
+        "text": "These guys are helpful and knowledgeable in all things insurance!",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Mike Miller"
+      },
+      {
+        "text": "Been our insurance company for a long time, I would recommend them. Ask for Jeff Allison",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Mike Koenig"
+      },
+      {
+        "text": "Motorcycle Insurance and everything else",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "James Chanay"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:11:47.770Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJY1tUqrlxN4gRm_HXzjyFb0s",
+        "name": "Burgett Insurance Agency, Inc",
+        "rating": 5,
+        "review_count": 10,
+        "formatted_address": "105 Washington St, Killbuck, OH 44637, USA",
+        "website_url": "http://www.burgettinsurance.com/",
+        "review_snippets": [
+          {
+            "text": "These guys are helpful and knowledgeable in all things insurance!",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Mike Miller"
+          },
+          {
+            "text": "Been our insurance company for a long time, I would recommend them. Ask for Jeff Allison",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Mike Koenig"
+          },
+          {
+            "text": "Motorcycle Insurance and everything else",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "James Chanay"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:11:47.770Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJY1tUqrlxN4gRm_HXzjyFb0s",
+          "displayName": "Burgett Insurance Agency, Inc",
+          "rating": 5,
+          "userRatingCount": 10
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:11:47.770Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sterling-insurance-agency-wilmington-nc": {
+    "slug": "sterling-insurance-agency-wilmington-nc",
+    "google_rating": 4.6,
+    "google_review_count": 9,
+    "google_place_id": "ChIJT3SxHeL0qYkRttxQ0YQjLo0",
+    "google_review_snippets": [
+      {
+        "text": "Carlos was very helpful when I needed to fix my health plan. He explained options simply, compared costs honestly and made enrollment stress free.",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Hillary Gonzales"
+      },
+      {
+        "text": "Manuel made everything easy to follow. He focused on my health priorities and ensured my insurance needs were satisfied.",
+        "rating": 5,
+        "relative_time": "2 months ago",
+        "author": "SALGADO JUAREZ MARIFER"
+      },
+      {
+        "text": "Michael assisted me with new coverage and explained everything step by step. I never felt confused, and now I feel more confident about my health needs",
+        "rating": 5,
+        "relative_time": "2 months ago",
+        "author": "Margarita Flores"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/mi/sterling-heights/profile/insurance-companies/sterling-insurance-agency-0372-32006158",
+    "trust_score": 90,
+    "enriched_at": "2026-07-11T18:11:48.274Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJT3SxHeL0qYkRttxQ0YQjLo0",
+        "name": "Wilmington Insurance",
+        "rating": 4.6,
+        "review_count": 9,
+        "formatted_address": "5006 Randall Pkwy, Wilmington, NC 28403, USA",
+        "website_url": null,
+        "review_snippets": [
+          {
+            "text": "Carlos was very helpful when I needed to fix my health plan. He explained options simply, compared costs honestly and made enrollment stress free.",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Hillary Gonzales"
+          },
+          {
+            "text": "Manuel made everything easy to follow. He focused on my health priorities and ensured my insurance needs were satisfied.",
+            "rating": 5,
+            "relative_time": "2 months ago",
+            "author": "SALGADO JUAREZ MARIFER"
+          },
+          {
+            "text": "Michael assisted me with new coverage and explained everything step by step. I never felt confused, and now I feel more confident about my health needs",
+            "rating": 5,
+            "relative_time": "2 months ago",
+            "author": "Margarita Flores"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:11:48.274Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJT3SxHeL0qYkRttxQ0YQjLo0",
+          "displayName": "Wilmington Insurance",
+          "rating": 4.6,
+          "userRatingCount": 9
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/mi/sterling-heights/profile/insurance-companies/sterling-insurance-agency-0372-32006158",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 90,
+      "fetched_at": "2026-07-11T18:11:48.274Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "sterling-medicare-solutions-phoenix": {
+    "slug": "sterling-medicare-solutions-phoenix",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": "ChIJmynbvN0PK4cRz9Ti_XhciVU",
+    "google_review_snippets": [],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 71,
+    "enriched_at": "2026-07-11T18:12:10.519Z",
+    "needs_manual_review": true,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJmynbvN0PK4cRz9Ti_XhciVU",
+        "name": "Sterling Life and Health Planning",
+        "rating": null,
+        "review_count": null,
+        "formatted_address": "4600 E Washington St #300, Phoenix, AZ 85034, USA",
+        "website_url": "https://sterlinglifehealth.com/",
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:12:10.519Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJmynbvN0PK4cRz9Ti_XhciVU",
+          "displayName": "Sterling Life and Health Planning"
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 71,
+      "fetched_at": "2026-07-11T18:12:10.519Z",
+      "partial_failures": [],
+      "needs_manual_review": true
+    }
+  },
+  "sterling-insurance-group-wilmington-nc": {
+    "slug": "sterling-insurance-group-wilmington-nc",
+    "google_rating": 4.8,
+    "google_review_count": 180,
+    "google_place_id": "ChIJ_YPpTBX1qYkRxg_1sVHXtfU",
+    "google_review_snippets": [
+      {
+        "text": "I called Heather Gamester at Sheally Insurance because I felt I was paying too much for car insurance. She immediately remembered my specific situation (buying a car from my parents and getting my own policy) and got straight to work. The same day, she presented me with a much be",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Jillian Hon"
+      },
+      {
+        "text": "Big shout out to Heather Gamester!  We refer our clients, family and friends to her.  She is one of the most knowledgeable insurance professionals I've ever met and always willing to help educate others.  Cannot say enough good things about this company and the service they provi",
+        "rating": 5,
+        "relative_time": "8 months ago",
+        "author": "Suzanne Biswas"
+      },
+      {
+        "text": "Good experience with Heather while purchasing home insurance. She is very professional and helpful. She also takes the time to answer all questions. I would highly recommend working with her",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Carmen Light"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/mi/sterling-heights/profile/insurance-agent/sterling-insurance-group-0372-90021122",
+    "trust_score": 94,
+    "enriched_at": "2026-07-11T18:12:09.443Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ_YPpTBX1qYkRxg_1sVHXtfU",
+        "name": "Sheally Insurance Group",
+        "rating": 4.8,
+        "review_count": 180,
+        "formatted_address": "34 Covil Ave, Wilmington, NC 28403, USA",
+        "website_url": "http://sheallyinsurance.com/",
+        "review_snippets": [
+          {
+            "text": "I called Heather Gamester at Sheally Insurance because I felt I was paying too much for car insurance. She immediately remembered my specific situation (buying a car from my parents and getting my own policy) and got straight to work. The same day, she presented me with a much be",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Jillian Hon"
+          },
+          {
+            "text": "Big shout out to Heather Gamester!  We refer our clients, family and friends to her.  She is one of the most knowledgeable insurance professionals I've ever met and always willing to help educate others.  Cannot say enough good things about this company and the service they provi",
+            "rating": 5,
+            "relative_time": "8 months ago",
+            "author": "Suzanne Biswas"
+          },
+          {
+            "text": "Good experience with Heather while purchasing home insurance. She is very professional and helpful. She also takes the time to answer all questions. I would highly recommend working with her",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Carmen Light"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:12:09.443Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ_YPpTBX1qYkRxg_1sVHXtfU",
+          "displayName": "Sheally Insurance Group",
+          "rating": 4.8,
+          "userRatingCount": 180
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/mi/sterling-heights/profile/insurance-agent/sterling-insurance-group-0372-90021122",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 94,
+      "fetched_at": "2026-07-11T18:12:09.443Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "steve-adlman-birmingham": {
+    "slug": "steve-adlman-birmingham",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": "ChIJZWRxts4eiYgRl55aoNKu3rY",
+    "google_review_snippets": [],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 71,
+    "enriched_at": "2026-07-11T18:12:31.623Z",
+    "needs_manual_review": true,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJZWRxts4eiYgRl55aoNKu3rY",
+        "name": "65 Plus Health Plans LLC",
+        "rating": null,
+        "review_count": null,
+        "formatted_address": "120 Raleigh Ave, Birmingham, AL 35209, USA",
+        "website_url": "https://www.alabamamedicareplans.com/?utm_source=GBP&utm_medium=organic&utm_campaign=office",
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:12:31.623Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJZWRxts4eiYgRl55aoNKu3rY",
+          "displayName": "65 Plus Health Plans LLC"
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 71,
+      "fetched_at": "2026-07-11T18:12:31.623Z",
+      "partial_failures": [],
+      "needs_manual_review": true
+    }
+  },
+  "sterling-medicare-solutions-san-francisco": {
+    "slug": "sterling-medicare-solutions-san-francisco",
+    "google_rating": 5,
+    "google_review_count": 112,
+    "google_place_id": "ChIJO8OfSEXLj4ARYMMBvuhLXGw",
+    "google_review_snippets": [
+      {
+        "text": "I was looking for help with Medicare and was having trouble getting someone to return my call. I heard about Gary based on his high reviews and decided to call him. From the very first phone call, it was obvious that he was very knowledgeable. It was such a relief to talk to him!",
+        "rating": 5,
+        "relative_time": "6 months ago",
+        "author": "Laurel Lint"
+      },
+      {
+        "text": "Gary provided exactly the help I needed to navigate all the Medicare options and plans. He was unfailingly helpful and patient in explaining the benefits of each plan. I never felt pushed to accept anything, and Gary always checked to make sure that I understood the information h",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Whitebow"
+      },
+      {
+        "text": "Gary is very knowledgeable and professional while being straightforward about planning my retirement.  I had a lot of questions and needed guidance with parts of Medicare Insurance & Social Security benefits.  He did a great job in guiding me to the most beneficial plans for me. ",
+        "rating": 5,
+        "relative_time": "7 months ago",
+        "author": "Jack Newhart"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 90,
+    "enriched_at": "2026-07-11T18:12:30.503Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJO8OfSEXLj4ARYMMBvuhLXGw",
+        "name": "Bay Area Health Insurance | Medicare - International Travel Health Insurance - Insurance Agent in Bay Area",
+        "rating": 5,
+        "review_count": 112,
+        "formatted_address": "1816 Tully Rd Ste 186, San Jose, CA 95122, USA",
+        "website_url": "https://www.bayareahealthinsurance.com/?utm_source=Google%20Maps",
+        "review_snippets": [
+          {
+            "text": "I was looking for help with Medicare and was having trouble getting someone to return my call. I heard about Gary based on his high reviews and decided to call him. From the very first phone call, it was obvious that he was very knowledgeable. It was such a relief to talk to him!",
+            "rating": 5,
+            "relative_time": "6 months ago",
+            "author": "Laurel Lint"
+          },
+          {
+            "text": "Gary provided exactly the help I needed to navigate all the Medicare options and plans. He was unfailingly helpful and patient in explaining the benefits of each plan. I never felt pushed to accept anything, and Gary always checked to make sure that I understood the information h",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Whitebow"
+          },
+          {
+            "text": "Gary is very knowledgeable and professional while being straightforward about planning my retirement.  I had a lot of questions and needed guidance with parts of Medicare Insurance & Social Security benefits.  He did a great job in guiding me to the most beneficial plans for me. ",
+            "rating": 5,
+            "relative_time": "7 months ago",
+            "author": "Jack Newhart"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:12:30.503Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJO8OfSEXLj4ARYMMBvuhLXGw",
+          "displayName": "Bay Area Health Insurance | Medicare - International Travel Health Insurance - Insurance Agent in Bay Area",
+          "rating": 5,
+          "userRatingCount": 112
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 90,
+      "fetched_at": "2026-07-11T18:12:30.503Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "steve-potje-rn-st-louis": {
+    "slug": "steve-potje-rn-st-louis",
+    "google_rating": 5,
+    "google_review_count": 1,
+    "google_place_id": "ChIJwSjVWPysGGIR_sFSYKrgQ1I",
+    "google_review_snippets": [
+      {
+        "text": "Steve really helped me understand my options and made the process so seamless. I really appreciate his professionalism and expertise. I can’t recommend him enough!",
+        "rating": 5,
+        "relative_time": "3 weeks ago",
+        "author": "Tammy Potje"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:12:47.840Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJwSjVWPysGGIR_sFSYKrgQ1I",
+        "name": "Potje Team Health Insurance",
+        "rating": 5,
+        "review_count": 1,
+        "formatted_address": "5411 Hagemann Pointe Dr, St. Louis, MO 63128, USA",
+        "website_url": "https://www.potjeteam.com/",
+        "review_snippets": [
+          {
+            "text": "Steve really helped me understand my options and made the process so seamless. I really appreciate his professionalism and expertise. I can’t recommend him enough!",
+            "rating": 5,
+            "relative_time": "3 weeks ago",
+            "author": "Tammy Potje"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:12:47.840Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJwSjVWPysGGIR_sFSYKrgQ1I",
+          "displayName": "Potje Team Health Insurance",
+          "rating": 5,
+          "userRatingCount": 1
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:12:47.840Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "steve-wilson-minneapolis": {
+    "slug": "steve-wilson-minneapolis",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": "ChIJ6eSpf2pX54YRf0fRaTcwop4",
+    "google_review_snippets": [],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/tn/cleveland/profile/life-insurance/steve-wilson-jr-0483-40081867",
+    "trust_score": 79,
+    "enriched_at": "2026-07-11T18:12:47.854Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ6eSpf2pX54YRf0fRaTcwop4",
+        "name": "Steve Wilson Insurance Agency",
+        "rating": null,
+        "review_count": null,
+        "formatted_address": "6006 N Mesa St #1008, El Paso, TX 79912, USA",
+        "website_url": null,
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:12:47.854Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ6eSpf2pX54YRf0fRaTcwop4",
+          "displayName": "Steve Wilson Insurance Agency"
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/tn/cleveland/profile/life-insurance/steve-wilson-jr-0483-40081867",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 79,
+      "fetched_at": "2026-07-11T18:12:47.854Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "steven-graves-dfw": {
+    "slug": "steven-graves-dfw",
+    "google_rating": 3,
+    "google_review_count": 6,
+    "google_place_id": "ChIJqVXMm8ueToYR84XgPC-SHQg",
+    "google_review_snippets": [
+      {
+        "text": "I have been working with Steve the past two years on my personal and business needs.  During that time, he has provided outstanding service.  His knowledge of the various products has led me to drop certain coverages I have carried for years that were never needed and to pick up ",
+        "rating": 5,
+        "relative_time": "10 years ago",
+        "author": "ntxjohn"
+      },
+      {
+        "text": "Total failure of an insurance agency. They take your money, but do not care about their clients enough to properly communicate with them.\n\nI would not recommend this company to anyone base on their poor performance.",
+        "rating": 1,
+        "relative_time": "a year ago",
+        "author": "Corbin Milenbaugh DDS"
+      },
+      {
+        "text": "I've used Stephen Graves for a number of years, both for my person and business insurance. He was able to reduce my business premiums by over 35% - I was paying about $40k a year (and gave me better coverage) and my homeowners by about 40%. I was surprised by the drop in my homeo",
+        "rating": 5,
+        "relative_time": "11 years ago",
+        "author": "Darren Houck"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 67,
+    "enriched_at": "2026-07-11T18:13:03.959Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJqVXMm8ueToYR84XgPC-SHQg",
+        "name": "Steven Graves Insurance",
+        "rating": 3,
+        "review_count": 6,
+        "formatted_address": "375 Municipal Dr #126, Richardson, TX 75080, USA",
+        "website_url": "http://abcohomeins.com/about-steven-graves-insurance-agency/",
+        "review_snippets": [
+          {
+            "text": "I have been working with Steve the past two years on my personal and business needs.  During that time, he has provided outstanding service.  His knowledge of the various products has led me to drop certain coverages I have carried for years that were never needed and to pick up ",
+            "rating": 5,
+            "relative_time": "10 years ago",
+            "author": "ntxjohn"
+          },
+          {
+            "text": "Total failure of an insurance agency. They take your money, but do not care about their clients enough to properly communicate with them.\n\nI would not recommend this company to anyone base on their poor performance.",
+            "rating": 1,
+            "relative_time": "a year ago",
+            "author": "Corbin Milenbaugh DDS"
+          },
+          {
+            "text": "I've used Stephen Graves for a number of years, both for my person and business insurance. He was able to reduce my business premiums by over 35% - I was paying about $40k a year (and gave me better coverage) and my homeowners by about 40%. I was surprised by the drop in my homeo",
+            "rating": 5,
+            "relative_time": "11 years ago",
+            "author": "Darren Houck"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:13:03.959Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJqVXMm8ueToYR84XgPC-SHQg",
+          "displayName": "Steven Graves Insurance",
+          "rating": 3,
+          "userRatingCount": 6
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 67,
+      "fetched_at": "2026-07-11T18:13:03.959Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "steven-litzsinger-st-louis": {
+    "slug": "steven-litzsinger-st-louis",
+    "google_rating": 5,
+    "google_review_count": 7,
+    "google_place_id": "ChIJm6ZdpgnN2IcRgpgc8-fLPWM",
+    "google_review_snippets": [
+      {
+        "text": "Steven was extremely helpful. We had spent hours trying to find a plan that checked every box we needed. We were about to give up. Thankfully Steven saved the day and got the exact plan we needed!",
+        "rating": 5,
+        "relative_time": "a month ago",
+        "author": "Leslie Hazel"
+      },
+      {
+        "text": "Steve was great! Professional, friendly, and knowledgeable. He helped us save a ton of money! I highly recommend working with Insurance Advisory Group, and letting them look at your policy",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Yonatan Schmidt"
+      },
+      {
+        "text": "Excellent services.\nThey provide clear and concise information.\nThey accommodate you on what you need and want",
+        "rating": 5,
+        "relative_time": "3 months ago",
+        "author": "Vincent Sequerra"
+      }
+    ],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 83,
+    "enriched_at": "2026-07-11T18:13:10.569Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJm6ZdpgnN2IcRgpgc8-fLPWM",
+        "name": "Insurance Advisory Group",
+        "rating": 5,
+        "review_count": 7,
+        "formatted_address": "138 W Adams Ave, Kirkwood, MO 63122, USA",
+        "website_url": "https://www.insuranceag.net/",
+        "review_snippets": [
+          {
+            "text": "Steven was extremely helpful. We had spent hours trying to find a plan that checked every box we needed. We were about to give up. Thankfully Steven saved the day and got the exact plan we needed!",
+            "rating": 5,
+            "relative_time": "a month ago",
+            "author": "Leslie Hazel"
+          },
+          {
+            "text": "Steve was great! Professional, friendly, and knowledgeable. He helped us save a ton of money! I highly recommend working with Insurance Advisory Group, and letting them look at your policy",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Yonatan Schmidt"
+          },
+          {
+            "text": "Excellent services.\nThey provide clear and concise information.\nThey accommodate you on what you need and want",
+            "rating": 5,
+            "relative_time": "3 months ago",
+            "author": "Vincent Sequerra"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:13:10.569Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJm6ZdpgnN2IcRgpgc8-fLPWM",
+          "displayName": "Insurance Advisory Group",
+          "rating": 5,
+          "userRatingCount": 7
+        }
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 83,
+      "fetched_at": "2026-07-11T18:13:10.569Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "stoneworks-benefits-austin": {
+    "slug": "stoneworks-benefits-austin",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": null,
+    "google_review_snippets": [],
+    "bbb_rating": null,
+    "bbb_accredited": null,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": null,
+    "trust_score": 71,
+    "enriched_at": "2026-07-11T18:13:30.164Z",
+    "needs_manual_review": true,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": null,
+        "name": null,
+        "rating": null,
+        "review_count": null,
+        "formatted_address": null,
+        "website_url": null,
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:13:30.164Z",
+        "status": "not_found"
+      },
+      "bbb": {
+        "bbb_rating": null,
+        "bbb_review_count": null,
+        "bbb_accredited": null,
+        "bbb_accreditation_status": null,
+        "bbb_profile_url": null,
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": false,
+        "complaint_count": null
+      },
+      "trust_score": 71,
+      "fetched_at": "2026-07-11T18:13:30.164Z",
+      "partial_failures": [],
+      "needs_manual_review": true
+    }
+  },
+  "strategic-insurance-indianapolis": {
+    "slug": "strategic-insurance-indianapolis",
+    "google_rating": 5,
+    "google_review_count": 4,
+    "google_place_id": "ChIJ3eyyUrJTa4gR_EBEWCkGIV0",
+    "google_review_snippets": [
+      {
+        "text": "Rod Stuart was exceptional with his recommendation for Delta Dental for a family member.  They had notable upcoming dental expenses for 2024 and his recommendation saved us over $2000 due to having the proper coverage.  Rod understands these plans and the nuances that each one of",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Judi Neu"
+      },
+      {
+        "text": "Rodney has been invaluable during the process of signing my mother up for Medicare before she turned 65.  He has gone above and beyond to ensure she was enrolled properly.  I cannot say enough good things about our experience with him  I highly recommend Rodney to anyone and ever",
+        "rating": 5,
+        "relative_time": "a year ago",
+        "author": "Tabitha Salati"
+      },
+      {
+        "text": "10/10\n\nRod is awesome. He takes the complex world of insurance and makes it simple for the average Joe! Prompt and professional customer service and you’re able to actually get ahold of a real person when you call!\n\nLook no further for your insurance needs- Rod Stuart is your guy",
+        "rating": 5,
+        "relative_time": "2 years ago",
+        "author": "Zack"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": true,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/in/indianapolis/profile/insurance-agency/strategic-insurance-inc-0382-90058503",
+    "trust_score": 96,
+    "enriched_at": "2026-07-11T18:13:30.368Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJ3eyyUrJTa4gR_EBEWCkGIV0",
+        "name": "Strategic Insurance",
+        "rating": 5,
+        "review_count": 4,
+        "formatted_address": "2323 E 58th St, Indianapolis, IN 46220, USA",
+        "website_url": "http://www.stratins.com/",
+        "review_snippets": [
+          {
+            "text": "Rod Stuart was exceptional with his recommendation for Delta Dental for a family member.  They had notable upcoming dental expenses for 2024 and his recommendation saved us over $2000 due to having the proper coverage.  Rod understands these plans and the nuances that each one of",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Judi Neu"
+          },
+          {
+            "text": "Rodney has been invaluable during the process of signing my mother up for Medicare before she turned 65.  He has gone above and beyond to ensure she was enrolled properly.  I cannot say enough good things about our experience with him  I highly recommend Rodney to anyone and ever",
+            "rating": 5,
+            "relative_time": "a year ago",
+            "author": "Tabitha Salati"
+          },
+          {
+            "text": "10/10\n\nRod is awesome. He takes the complex world of insurance and makes it simple for the average Joe! Prompt and professional customer service and you’re able to actually get ahold of a real person when you call!\n\nLook no further for your insurance needs- Rod Stuart is your guy",
+            "rating": 5,
+            "relative_time": "2 years ago",
+            "author": "Zack"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:13:30.368Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJ3eyyUrJTa4gR_EBEWCkGIV0",
+          "displayName": "Strategic Insurance",
+          "rating": 5,
+          "userRatingCount": 4
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": true,
+        "bbb_accreditation_status": "BBB Accredited Business",
+        "bbb_profile_url": "https://www.bbb.org/us/in/indianapolis/profile/insurance-agency/strategic-insurance-inc-0382-90058503",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 96,
+      "fetched_at": "2026-07-11T18:13:30.368Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "summit-health-partners-phoenix": {
+    "slug": "summit-health-partners-phoenix",
+    "google_rating": 4.2,
+    "google_review_count": 10,
+    "google_place_id": "ChIJZ3la2xR0K4cRVBERYPsuJq0",
+    "google_review_snippets": [
+      {
+        "text": "Kia and Anica were so sweet amd helpful! I hope this gets back to them.",
+        "rating": 5,
+        "relative_time": "4 months ago",
+        "author": "Myra P"
+      },
+      {
+        "text": "Summit has always proven to be super responsive and fully focused on the client’s needs. Their professional staff always work diligently to accomplish benefit goals along with cost savings and to accomplish great things within a specific budget.  Their knowledgeable staff is pati",
+        "rating": 5,
+        "relative_time": "4 years ago",
+        "author": "Peggy H"
+      },
+      {
+        "text": "You cannot speak with a person!  They keep placing a claim on my Social Security account that they are covering my claims.  I have never authorized them to claim anything. and they are committing SS fraud and I will contact SS about their fake claims for stuff.",
+        "rating": 1,
+        "relative_time": "a year ago",
+        "author": "Jeannie Martin"
+      }
+    ],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/nc/fletcher/profile/outpatient-surgery-center/western-carolina-surgery-center-0473-92035491",
+    "trust_score": 82,
+    "enriched_at": "2026-07-11T18:13:47.959Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJZ3la2xR0K4cRVBERYPsuJq0",
+        "name": "Summit Administration Services",
+        "rating": 4.2,
+        "review_count": 10,
+        "formatted_address": "17550 N Perimeter Dr #400, Scottsdale, AZ 85255, USA",
+        "website_url": "https://www.summit-inc.net/",
+        "review_snippets": [
+          {
+            "text": "Kia and Anica were so sweet amd helpful! I hope this gets back to them.",
+            "rating": 5,
+            "relative_time": "4 months ago",
+            "author": "Myra P"
+          },
+          {
+            "text": "Summit has always proven to be super responsive and fully focused on the client’s needs. Their professional staff always work diligently to accomplish benefit goals along with cost savings and to accomplish great things within a specific budget.  Their knowledgeable staff is pati",
+            "rating": 5,
+            "relative_time": "4 years ago",
+            "author": "Peggy H"
+          },
+          {
+            "text": "You cannot speak with a person!  They keep placing a claim on my Social Security account that they are covering my claims.  I have never authorized them to claim anything. and they are committing SS fraud and I will contact SS about their fake claims for stuff.",
+            "rating": 1,
+            "relative_time": "a year ago",
+            "author": "Jeannie Martin"
+          }
+        ],
+        "last_fetched": "2026-07-11T18:13:47.959Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJZ3la2xR0K4cRVBERYPsuJq0",
+          "displayName": "Summit Administration Services",
+          "rating": 4.2,
+          "userRatingCount": 10
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/nc/fletcher/profile/outpatient-surgery-center/western-carolina-surgery-center-0473-92035491",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 82,
+      "fetched_at": "2026-07-11T18:13:47.959Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
+  },
+  "summit-health-partners-san-francisco": {
+    "slug": "summit-health-partners-san-francisco",
+    "google_rating": null,
+    "google_review_count": null,
+    "google_place_id": "ChIJE6qVBjN9hYARgAnV4n733ec",
+    "google_review_snippets": [],
+    "bbb_rating": "A+",
+    "bbb_accredited": false,
+    "bbb_complaint_count": null,
+    "bbb_profile_url": "https://www.bbb.org/us/nc/fletcher/profile/outpatient-surgery-center/western-carolina-surgery-center-0473-92035491",
+    "trust_score": 76,
+    "enriched_at": "2026-07-11T18:13:53.062Z",
+    "needs_manual_review": false,
+    "enrichment_json": {
+      "google": {
+        "source": "google_places_api",
+        "place_id": "ChIJE6qVBjN9hYARgAnV4n733ec",
+        "name": "Summit Partners Insurance Services",
+        "rating": null,
+        "review_count": null,
+        "formatted_address": "89 Davis Rd #280, Orinda, CA 94563, USA",
+        "website_url": null,
+        "review_snippets": [],
+        "last_fetched": "2026-07-11T18:13:53.062Z",
+        "status": "ok",
+        "raw_response": {
+          "id": "ChIJE6qVBjN9hYARgAnV4n733ec",
+          "displayName": "Summit Partners Insurance Services"
+        }
+      },
+      "bbb": {
+        "bbb_rating": "A+",
+        "bbb_review_count": null,
+        "bbb_accredited": false,
+        "bbb_accreditation_status": "Not BBB Accredited",
+        "bbb_profile_url": "https://www.bbb.org/us/nc/fletcher/profile/outpatient-surgery-center/western-carolina-surgery-center-0473-92035491",
+        "bbb_recent_reviews": [],
+        "bbb_file_opened": null,
+        "bbb_accredited_since": null,
+        "listed": true,
+        "complaint_count": null
+      },
+      "trust_score": 76,
+      "fetched_at": "2026-07-11T18:13:53.062Z",
+      "partial_failures": [],
+      "needs_manual_review": false
+    }
   }
 }
