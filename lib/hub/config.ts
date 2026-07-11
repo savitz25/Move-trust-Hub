@@ -74,6 +74,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     metadataTitleTemplate: '%s | Lender Trust Hub',
     navLinks: [
       { href: hubPath('lender', '/local-lenders'), label: 'Mortgage Lenders' },
+      { href: hubPath('lender', '/onboard'), label: 'Verify NMLS' },
       { href: hubPath('lender', '/fdic-insured-banks'), label: 'FDIC Banks' },
       { href: hubPath('lender', '/calculators'), label: 'Calculators' },
       { href: hubPath('lender', '/resources'), label: 'Resources' },
@@ -97,6 +98,7 @@ export const HUBS: Record<HubId, HubConfig> = {
             href: hubPath('lender', '/resources/how-to-choose-mortgage-lender'),
             label: 'Choose a Lender',
           },
+          { href: hubPath('lender', '/onboard'), label: 'NMLS Lender Lookup' },
           { href: hubPath('lender', '/about'), label: 'How We Verify' },
           { href: hubPath('lender', '/about#nmls'), label: 'NMLS Guide' },
         ],
@@ -109,6 +111,11 @@ export const HUBS: Record<HubId, HubConfig> = {
       terms: hubPath('lender', '/terms'),
     },
     trustBadge: 'NMLS VERIFIED',
+    verifyTool: {
+      label: 'NMLS Lender Lookup & Onboarding',
+      shortLabel: 'Lookup by NMLS ID or Name',
+      href: hubPath('lender', '/onboard'),
+    },
     verifyAuthority: { label: 'NMLS Consumer Access', href: 'https://www.nmlsconsumeraccess.org/' },
   },
   insurance: {

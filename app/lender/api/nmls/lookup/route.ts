@@ -20,5 +20,12 @@ export async function GET(request: Request) {
   }
 
   const enriched = await enrichLenderSources(lookup.preview, zip);
-  return NextResponse.json({ success: true, preview: enriched });
+  return NextResponse.json(
+    { success: true, preview: enriched },
+    {
+      headers: {
+        'Cache-Control': 'private, no-store',
+      },
+    }
+  );
 }

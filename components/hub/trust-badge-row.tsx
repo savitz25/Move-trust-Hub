@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import { Shield, ExternalLink } from 'lucide-react';
+import { Shield, ExternalLink, Search } from 'lucide-react';
 import { getHubConfig } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
+import { Button } from '@/components/ui/button';
+import { NmlsOfficialSourceLink } from '@/components/lender/onboarding/nmls-official-source-link';
 
 type TrustBadgeRowProps = {
   hub: HubId;
@@ -29,6 +31,7 @@ const HUB_BADGES: Record<HubId, { label: string; detail: string }[]> = {
 export function TrustBadgeRow({ hub, className }: TrustBadgeRowProps) {
   const config = getHubConfig(hub);
   const badges = HUB_BADGES[hub];
+  const verifyTool = config.verifyTool;
 
   return (
     <section
@@ -56,17 +59,30 @@ export function TrustBadgeRow({ hub, className }: TrustBadgeRowProps) {
               </div>
             ))}
           </div>
-          {config.verifyAuthority && (
-            <Link
-              href={config.verifyAuthority.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Verify via {config.verifyAuthority.label}
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-            </Link>
-          )}
+
+          <div className="flex flex-col items-stretch sm:items-end gap-2">
+            {verifyTool ? (
+              <Button asChild size="sm" className="gap-2 shadow-sm">
+                <Link href={verifyTool.href}>
+                  <Search className="h-4 w-4" aria-hidden="true" />
+                  {verifyTool.shortLabel ?? verifyTool.label}
+                </Link>
+              </Button>
+            ) : null}
+            {hub === 'lender' ? (
+              <NmlsOfficialSourceLink className="justify-end" />
+            ) : config.verifyAuthority ? (
+              <Link
+                href={config.verifyAuthority.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Official source: {config.verifyAuthority.label}
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            ) : null}
+          </div>
         </div>
       </div>
     </section>

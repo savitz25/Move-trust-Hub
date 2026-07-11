@@ -1,11 +1,13 @@
 import Link from 'next/link';
-import { Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { Shield, ArrowRight, CheckCircle, Search } from 'lucide-react';
 import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
 import { HubZipSearch } from '@/components/hub/hub-zip-search';
 import { HubTrustBar } from '@/components/hub/hub-trust-bar';
 import { HubHowItWorks } from '@/components/hub/hub-how-it-works';
 import { Button } from '@/components/ui/button';
 import { hubPath } from '@/lib/hub/paths';
+import { LENDER_LOOKUP_TAGLINE } from '@/lib/lender/onboarding/constants';
+import { NmlsOfficialSourceLink } from '@/components/lender/onboarding/nmls-official-source-link';
 
 /** Adapted from lender-trust-hub homepage — paths prefixed for /lender */
 export function LenderHomePage() {
@@ -33,14 +35,23 @@ export function LenderHomePage() {
           Trusted Local Lenders • Verified County Insights • National Expertise
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-          <Button size="lg" asChild className="w-full gap-2 sm:w-auto">
+          <Button size="lg" asChild className="w-full gap-2 sm:w-auto bg-[#0A2540] hover:bg-[#0A2540]/90">
+            <Link href={hubPath('lender', '/onboard')}>
+              <Search className="h-5 w-5" aria-hidden="true" />
+              Lookup Lender by NMLS ID or Name
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
             <Link href={hubPath('lender', '/calculators')}>
               Try Free Calculators <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="w-full sm:w-auto">
-            <Link href={hubPath('lender', '/about')}>How We Verify Lenders</Link>
-          </Button>
+        </div>
+        <p className="text-sm text-muted-foreground max-w-xl lg:mx-0 mx-auto text-center lg:text-left">
+          {LENDER_LOOKUP_TAGLINE}
+        </p>
+        <div className="flex justify-center lg:justify-start">
+          <NmlsOfficialSourceLink />
         </div>
       </HubHeroBanner>
 
@@ -97,6 +108,12 @@ export function LenderHomePage() {
             ))}
           </div>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button asChild className="gap-2">
+              <Link href={hubPath('lender', '/onboard')}>
+                <Search className="h-4 w-4" aria-hidden="true" />
+                Verify or Add Your Company
+              </Link>
+            </Button>
             <Button variant="outline" asChild>
               <Link href={hubPath('lender', '/local-lenders')}>
                 Browse local lenders by state <ArrowRight className="ml-2 h-4 w-4" />
