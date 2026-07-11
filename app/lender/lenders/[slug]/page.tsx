@@ -7,6 +7,7 @@ import { getEnrichedLenderBySlug } from '@/lib/lender/enrichment/get-enriched';
 import { Badge } from '@/components/lender/ui/badge';
 import { MatchLenderButton } from '@/components/lender/MatchLenderButton';
 import { RelatedDirectoryLinks } from '@/components/lender/directory/RelatedDirectoryLinks';
+import { LenderProfileBack } from '@/components/lender/lender-profile-back';
 import { LenderTrustSignals } from '@/components/lender/lender-trust-signals';
 
 export function generateStaticParams() {
@@ -29,10 +30,13 @@ export async function generateMetadata({
 
 export default async function LenderProfilePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ from?: string }>;
 }) {
   const { slug } = await params;
+  const { from } = await searchParams;
   const lender = getEnrichedLenderBySlug(slug);
   if (!lender) notFound();
 
@@ -40,6 +44,8 @@ export default async function LenderProfilePage({
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <LenderProfileBack fromParam={from} />
+
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
         <ol className="flex flex-wrap items-center gap-1">
           <li><Link href="/lender/" className="hover:text-[#3B82F6]">Home</Link></li>

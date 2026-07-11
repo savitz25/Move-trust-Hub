@@ -3,6 +3,7 @@ import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/lender/ui/badge';
 import type { Lender } from '@/lib/lender/mockData';
 import { mergeLenderWithEnrichment, type EnrichedLender } from '@/lib/lender/enrichment/merge';
+import { buildLenderProfileHref } from '@/lib/lender/lender-profile-links';
 
 function toEnrichedLender(lender: Lender | EnrichedLender): EnrichedLender {
   return 'isEnriched' in lender ? lender : mergeLenderWithEnrichment(lender);
@@ -12,12 +13,16 @@ export function LenderCard({
   lender: lenderInput,
   rank,
   countyLabel,
+  profileReturnPath,
 }: {
   lender: Lender | EnrichedLender;
   rank: number;
   countyLabel?: string;
+  /** When set, profile links include a return path back to search results. */
+  profileReturnPath?: string;
 }) {
   const lender = toEnrichedLender(lenderInput);
+  const profileHref = buildLenderProfileHref(lender.slug, profileReturnPath);
   const locationLine = [
     lender.city,
     lender.state,
@@ -42,10 +47,7 @@ export function LenderCard({
           </div>
           <div className="min-w-0">
             <h3 className="text-lg font-semibold leading-tight tracking-tight text-[#0A2540]">
-              <Link
-                href={`/lender/lenders/${lender.slug}`}
-                className="hover:text-[#3B82F6] transition-colors"
-              >
+              <Link href={profileHref} className="hover:text-[#3B82F6] transition-colors">
                 {lender.name}
               </Link>
             </h3>
@@ -112,7 +114,7 @@ export function LenderCard({
         </div>
         <div className="flex gap-2">
           <Link
-            href={`/lender/lenders/${lender.slug}`}
+            href={profileHref}
             className="text-sm font-semibold text-[#3B82F6] hover:text-[#0A2540] transition-colors"
           >
             View Profile

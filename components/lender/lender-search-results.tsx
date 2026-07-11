@@ -4,6 +4,7 @@ import { Search } from 'lucide-react';
 import { LenderCard } from '@/components/lender/LenderCard';
 import { useLenderSearch } from '@/components/lender/lender-search-context';
 import { Button } from '@/components/ui/button';
+import { buildLenderSearchReturnPath } from '@/lib/lender/lender-profile-links';
 
 const PREVIEW_COUNT = 12;
 
@@ -13,7 +14,10 @@ type Props = {
 };
 
 export function LenderSearchResults({ showPreview = true, compact = false }: Props) {
-  const { hasQuery, results, totalCount, clear, activeQuery } = useLenderSearch();
+  const { hasQuery, results, totalCount, clear, activeQuery, basePath } = useLenderSearch();
+  const profileReturnPath = hasQuery
+    ? buildLenderSearchReturnPath(basePath, activeQuery)
+    : undefined;
 
   if (!hasQuery && !showPreview) return null;
 
@@ -54,6 +58,7 @@ export function LenderSearchResults({ showPreview = true, compact = false }: Pro
                 lender={lender}
                 rank={index + 1}
                 countyLabel={`${lender.county} County, ${lender.state}`}
+                profileReturnPath={profileReturnPath}
               />
             ))
           ) : (
