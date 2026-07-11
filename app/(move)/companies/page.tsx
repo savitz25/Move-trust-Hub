@@ -11,6 +11,7 @@ import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory'
 import { buildCompaniesDirectorySchemaGraph } from '@/lib/seo/build-directory-list-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
+import { formatAttributedReviewsLabel } from '@/lib/trust/site-messaging';
 
 /** Revalidate so admin-approved companies appear without a full redeploy. */
 export const revalidate = 60;
@@ -69,7 +70,7 @@ export default async function CompaniesDirectoryPage() {
         className="py-16 mt-8 border-t"
         compact
         title="Featured Review Highlights"
-        subtitle="Real feedback from verified moves — the kind of detail star ratings alone won't show you."
+        subtitle={`${formatAttributedReviewsLabel()} on Move Trust Hub — named reviewer excerpts from verified movers, not inflated industry totals.`}
       />
 
       <InternalLinkHub className="mt-12" />

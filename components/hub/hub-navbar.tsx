@@ -8,6 +8,7 @@ import { DestinationsMegaMenuLazy } from '@/components/navbar/destinations-mega-
 import { getHubConfig } from '@/lib/hub/config';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
+import { HeaderTrustBadge } from '@/components/trust/header-trust-badge';
 
 export function HubNavbar({ hubId }: { hubId: HubId }) {
   const hub = getHubConfig(hubId);
@@ -34,9 +35,7 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
           <Link prefetch={false} href={homeHref} className="group">
             <HubLogo hubId={hubId} priority />
           </Link>
-          <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
-            {hub.trustBadge}
-          </div>
+          <HeaderTrustBadge />
         </div>
 
         <div className="hidden lg:flex items-center gap-6 text-sm">

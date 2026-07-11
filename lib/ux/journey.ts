@@ -17,7 +17,7 @@ export const JOURNEY_STEPS: {
   {
     id: 'estimate',
     label: 'Size your move',
-    coachTip: 'Start with cubic footage — it keeps quotes honest and protects you from lowball bids.',
+    coachTip: 'Start with cubic footage — it keeps estimates honest and protects you from lowball bids.',
     href: '/moving-calculator',
   },
   {
@@ -40,7 +40,7 @@ export const JOURNEY_STEPS: {
   },
   {
     id: 'review',
-    label: 'Read real reviews',
+    label: 'Read attributed reviews',
     coachTip: 'Attributed reviews from verified moves help you spot patterns other sites miss.',
     href: '/review',
   },

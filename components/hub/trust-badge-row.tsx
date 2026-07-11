@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Shield, ExternalLink } from 'lucide-react';
 import { getHubConfig } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
+import { formatAttributedReviewsLabel } from '@/lib/trust/site-messaging';
 
 type TrustBadgeRowProps = {
   hub: HubId;
@@ -12,7 +13,10 @@ const HUB_BADGES: Record<HubId, { label: string; detail: string }[]> = {
   move: [
     { label: 'FMCSA Licensed', detail: 'DOT/MC verification on every interstate carrier' },
     { label: 'Independent', detail: 'No paid placements or carrier affiliations' },
-    { label: 'Attributed Reviews', detail: 'Customer feedback tied to verified moves' },
+    {
+      label: 'Attributed Reviews',
+      detail: formatAttributedReviewsLabel(),
+    },
   ],
   lender: [
     { label: 'NMLS Verified', detail: 'License checks via NMLS Consumer Access' },

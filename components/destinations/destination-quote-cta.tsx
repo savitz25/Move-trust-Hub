@@ -36,7 +36,7 @@ export function DestinationQuoteCta({ market, variant = 'primary' }: Props) {
         }
       >
         <Scale className="h-4 w-4" aria-hidden="true" />
-        Compare Trusted Movers
+        Browse Verified Movers
       </Link>
     </div>
   );

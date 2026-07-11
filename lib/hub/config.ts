@@ -1,5 +1,6 @@
 import type { HubConfig, HubId } from '@/lib/hub/types';
 import { hubPath } from '@/lib/hub/paths';
+import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
 export const TRUST_HUB_LOGO = {
@@ -56,7 +57,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     ctaLabel: 'Moving Calculator',
     ctaHref: '/moving-calculator',
     legalLinks: { privacy: '/privacy-policy', terms: '/terms-of-service' },
-    trustBadge: 'INDEPENDENT',
+    trustBadge: HEADER_TRUST_BADGE,
     verifyAuthority: { label: 'FMCSA', href: 'https://www.fmcsa.dot.gov/' },
   },
   lender: {
@@ -108,7 +109,7 @@ export const HUBS: Record<HubId, HubConfig> = {
       privacy: hubPath('lender', '/privacy'),
       terms: hubPath('lender', '/terms'),
     },
-    trustBadge: 'NMLS VERIFIED',
+    trustBadge: HEADER_TRUST_BADGE,
     verifyAuthority: { label: 'NMLS Consumer Access', href: 'https://www.nmlsconsumeraccess.org/' },
   },
   insurance: {
@@ -161,7 +162,7 @@ export const HUBS: Record<HubId, HubConfig> = {
       privacy: hubPath('insurance', '/privacy'),
       terms: hubPath('insurance', '/terms'),
     },
-    trustBadge: 'INDEPENDENT',
+    trustBadge: HEADER_TRUST_BADGE,
     verifyAuthority: { label: 'NAIC', href: 'https://www.naic.org/' },
   },
 };

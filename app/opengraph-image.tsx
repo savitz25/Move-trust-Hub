@@ -1,7 +1,8 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Move Trust Hub — free interstate moving quotes from licensed long-distance movers';
+export const alt =
+  'Move Trust Hub — independent directory to browse and compare FMCSA-licensed interstate movers';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -57,7 +58,7 @@ export default function OpenGraphImage() {
               letterSpacing: '-0.03em',
             }}
           >
-            Free Interstate Moving Quotes
+            Browse &amp; Compare Verified Movers
           </div>
           <div
             style={{
@@ -67,8 +68,8 @@ export default function OpenGraphImage() {
               maxWidth: 920,
             }}
           >
-            Compare licensed long-distance movers by price, reviews, and FMCSA ratings.
-            Save time and money on your move.
+            Independent directory for FMCSA-licensed interstate movers — attributable reviews,
+            pricing context, and safety data. No lead fees. No quote matching.
           </div>
         </div>
 
@@ -109,7 +110,7 @@ export default function OpenGraphImage() {
               border: '1px solid rgba(255,255,255,0.18)',
             }}
           >
-            Trusted Reviews
+            Attributed Reviews
           </span>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { BrandLogo } from '@/components/insurance/BrandLogo';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/insurance/ui/button';
+import { HeaderTrustBadge } from '@/components/trust/header-trust-badge';
 const NAV_LINKS = [
   { href: '/insurance/directory', label: 'DIRECTORIES' },
   { href: '/insurance/hubs', label: 'HEALTH HUBS' },
@@ -23,9 +24,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
           <BrandLogo priority />
-          <div className="hidden md:flex items-center rounded-full bg-trust/10 px-2 py-0.5 text-[9px] font-semibold tracking-[1px] text-trust border border-trust/20">
-            INDEPENDENT
-          </div>
+          <HeaderTrustBadge className="bg-trust/10 text-trust border-trust/20" />
         </div>
 
         <div className="hidden xl:flex items-center gap-6 text-sm">

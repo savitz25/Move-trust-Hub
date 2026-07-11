@@ -14,7 +14,7 @@ import {
 import type { HubId } from '@/lib/hub/types';
 
 const PAGE_TIPS: Record<string, string> = {
-  '/': 'Hey — no rush. Start with our calculator to learn your move size before anyone quotes you.',
+  '/': 'Hey — no rush. Start with our calculator to learn your move size before contacting carriers.',
   '/moving-calculator':
     'Pro tip: room-by-room inventory beats guessing. Movers price on cubic feet, not vibes.',
   '/companies':

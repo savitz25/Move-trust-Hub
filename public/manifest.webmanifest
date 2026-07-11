@@ -1,7 +1,7 @@
 {
   "name": "Move Trust Hub",
   "short_name": "Move Trust Hub",
-  "description": "Compare FMCSA-licensed interstate movers and get free moving quotes.",
+  "description": "Browse and compare FMCSA-licensed interstate movers in an independent directory — no lead fees or quote matching.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

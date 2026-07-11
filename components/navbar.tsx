@@ -7,6 +7,7 @@ import { Menu, X, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DestinationsMegaMenuLazy } from '@/components/navbar/destinations-mega-menu-lazy';
 import { DestinationsMobileNav } from '@/components/navbar/destinations-mobile-nav';
+import { HeaderTrustBadge } from '@/components/trust/header-trust-badge';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,9 +41,7 @@ export function Navbar() {
               className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]"
             />
           </Link>
-          <div className="hidden md:flex items-center rounded-full bg-muted/70 px-1.5 py-px text-[8px] font-medium tracking-[1px] text-muted-foreground border border-border/50">
-            INDEPENDENT
-          </div>
+          <HeaderTrustBadge />
         </div>
 
         <div className="hidden md:flex items-center gap-8 text-sm">

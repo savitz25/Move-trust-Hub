@@ -25,7 +25,7 @@ import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
 const TITLE = 'Best Time to Move Interstate in 2026: Seasonal Pricing & Tips';
 const DESCRIPTION =
-  'Discover the best time to move interstate in 2026. Compare peak vs off-peak pricing, weather risks, and booking windows. Use our free calculator and compare quotes on MoveTrustHub.com.';
+  'Discover the best time to move interstate in 2026. Compare peak vs off-peak pricing, weather risks, and booking windows. Use our free calculator and browse verified movers on MoveTrustHub.com.';
 
 const quickReference = [
   {
@@ -171,7 +171,7 @@ const planningSteps = [
   },
   {
     step: '03',
-    title: 'Compare at least 3 independent quotes',
+    title: 'Compare at least 3 verified movers',
     items: [
       'Never trust a phone estimate without a virtual or in-person survey',
       'Compare binding vs non-binding estimates side by side',
@@ -244,7 +244,7 @@ const faqs = [
   {
     question: 'Does Move Trust Hub recommend specific moving dates?',
     answer:
-      'No. We are an independent directory with no paid placements. We provide data-driven planning guidance and free tools — calculator, comparisons, and quotes — so you can choose dates and companies based on your priorities. Always verify licensing directly with FMCSA.gov.',
+      'No. We are an independent directory with no paid placements. We provide data-driven planning guidance and free tools — calculator, comparisons, and mover profiles — so you can choose dates and companies based on your priorities. Always verify licensing directly with FMCSA.gov.',
   },
 ];
 

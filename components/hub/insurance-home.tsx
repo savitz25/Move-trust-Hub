@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { hubPath } from '@/lib/hub/paths';
+import { HERO_TRUST_EYEBROW } from '@/lib/trust/site-messaging';
 
 const FEATURED_HUBS = [
   {
@@ -61,7 +62,7 @@ export function InsuranceHomePage() {
         eyebrow={
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-sm font-semibold text-emerald-700">
             <Shield className="h-4 w-4" aria-hidden="true" />
-            DOI VERIFIED · ZERO PAID PLACEMENTS · HEALTH FOCUS
+            {HERO_TRUST_EYEBROW}
           </div>
         }
         title={

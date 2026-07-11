@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, ShieldCheck, ShieldX } from 'lucide-react';
 import type { Company } from '@/types';
+import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
 
 export type FmcsaBadgeStatus = 'verified' | 'warning' | 'critical' | 'unknown';
 
@@ -32,6 +33,20 @@ const LABELS: Record<FmcsaBadgeStatus, string> = {
   unknown: 'FMCSA Unverified',
 };
 
+const TOOLTIPS: Record<FmcsaBadgeStatus, string> = {
+  verified:
+    VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa')?.description ?? LABELS.verified,
+  warning:
+    VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa-warning')?.description ??
+    LABELS.warning,
+  critical:
+    VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa-critical')?.description ??
+    LABELS.critical,
+  unknown:
+    VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa-unknown')?.description ??
+    LABELS.unknown,
+};
+
 export function FmcsaVerificationBadge({
   company,
   className,
@@ -46,10 +61,11 @@ export function FmcsaVerificationBadge({
   className?: string;
 }) {
   const status = deriveFmcsaBadgeStatus(company);
+  const tooltip = TOOLTIPS[status];
 
   if (status === 'verified') {
     return (
-      <Badge variant="success" className={className}>
+      <Badge variant="success" className={className} title={tooltip}>
         <ShieldCheck className="h-3.5 w-3.5 mr-1" />
         {LABELS.verified}
       </Badge>
@@ -58,7 +74,7 @@ export function FmcsaVerificationBadge({
 
   if (status === 'warning') {
     return (
-      <Badge variant="warning" className={className}>
+      <Badge variant="warning" className={className} title={tooltip}>
         <AlertTriangle className="h-3.5 w-3.5 mr-1" />
         {LABELS.warning}
       </Badge>
@@ -67,7 +83,7 @@ export function FmcsaVerificationBadge({
 
   if (status === 'critical') {
     return (
-      <Badge variant="destructive" className={className}>
+      <Badge variant="destructive" className={className} title={tooltip}>
         <ShieldX className="h-3.5 w-3.5 mr-1" />
         {LABELS.critical}
       </Badge>
@@ -75,7 +91,7 @@ export function FmcsaVerificationBadge({
   }
 
   return (
-    <Badge variant="secondary" className={className}>
+    <Badge variant="secondary" className={className} title={tooltip}>
       {LABELS.unknown}
     </Badge>
   );

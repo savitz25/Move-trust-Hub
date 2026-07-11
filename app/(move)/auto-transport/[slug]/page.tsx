@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
+import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -65,7 +66,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            {canShowVerifiedBadge(company) && <Badge variant="success">VERIFIED</Badge>}
+            {canShowVerifiedBadge(company) ? <DirectoryVerifiedBadge /> : null}
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
         </div>

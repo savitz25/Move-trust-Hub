@@ -1,6 +1,10 @@
 import { seedCompanies } from '@/data/seed-companies';
 import { assessLicense } from '@/lib/trust/license-verification';
 import {
+  ATTRIBUTED_REVIEWS_EXPLANATION,
+  formatAttributedReviewsLabel,
+} from '@/lib/trust/site-messaging';
+import {
   countAttributableReviews,
   getHomepageAttributableReviews,
 } from '@/lib/trust/verified-reviews';
@@ -43,8 +47,8 @@ export const trustBadges = [
   },
   {
     id: 'reviews',
-    label: `${attributableReviewCount} Attributed Google Reviews`,
-    description: 'Sourced reviews with named reviewers — not representative quotes',
+    label: formatAttributedReviewsLabel(attributableReviewCount),
+    description: ATTRIBUTED_REVIEWS_EXPLANATION,
     href: '/companies?sort=reputation',
   },
   {

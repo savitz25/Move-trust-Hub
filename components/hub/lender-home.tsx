@@ -9,6 +9,7 @@ import { LenderSearchResults } from '@/components/lender/lender-search-results';
 import { Button } from '@/components/ui/button';
 import { hubPath } from '@/lib/hub/paths';
 import { lenders } from '@/lib/lender/lenders';
+import { HERO_TRUST_EYEBROW } from '@/lib/trust/site-messaging';
 
 /** Adapted from lender-trust-hub homepage — paths prefixed for /lender */
 export function LenderHomePage() {
@@ -20,7 +21,7 @@ export function LenderHomePage() {
           eyebrow={
             <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200">
               <Shield className="h-4 w-4" aria-hidden="true" />
-              NMLS VERIFIED • ZERO PAID PLACEMENTS • COUNTY INSIGHTS
+              {HERO_TRUST_EYEBROW}
             </div>
           }
           title={

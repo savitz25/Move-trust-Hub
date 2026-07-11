@@ -119,7 +119,7 @@ export function ResourceArticleTemplate({
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
                     {hub === 'insurance'
-                      ? 'Ready to compare quotes? Browse agencies in our independent directory.'
+                      ? 'Browse licensed agencies in our independent directory — no quote matching or lead fees.'
                       : 'Compare NMLS-verified lenders in your state and county cluster.'}
                   </p>
                   <Button asChild className="mt-4 w-full gap-2">

@@ -11,6 +11,7 @@ import {
   isAttributableReview,
 } from '../lib/trust/verified-reviews';
 import { getSiteAttributableReviewCount } from '../lib/trust/review-display-policy';
+import { formatAttributedReviewsLabel } from '../lib/trust/site-messaging';
 
 const attributable = countAttributableReviews();
 const editorialDirectoryVolume = seedCompanies.reduce((s, c) => s + c.reviewCount, 0);
@@ -56,5 +57,5 @@ console.log(`On-site attributable Google reviews: ${attributable}`);
 console.log(`Seed review rows: ${seedReviews.length}`);
 console.log(`Directory industry-reported volume sum: ${editorialDirectoryVolume.toLocaleString()}`);
 console.log(`Auto transport industry-reported volume sum: ${editorialAutoVolume.toLocaleString()}`);
-console.log(`Trust badge displays: ${getSiteAttributableReviewCount()} Attributed Google Reviews`);
+console.log(`Trust badge displays: ${formatAttributedReviewsLabel(getSiteAttributableReviewCount())}`);
 console.log('\nWrote scripts/output/review-integrity-report.json');

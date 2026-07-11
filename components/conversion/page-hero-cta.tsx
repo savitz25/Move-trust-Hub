@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, Calculator, Scale, MapPinned, BookOpen } from 'lucide-react';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { cn } from '@/lib/utils';
+import { HERO_TRUST_EYEBROW } from '@/lib/trust/site-messaging';
 
 type PageHeroCtaProps = {
   primaryLabel?: string;
@@ -32,7 +33,7 @@ export function PageHeroCta({
   secondaryHref = '/companies',
   tertiaryLabel,
   tertiaryHref,
-  trustTagline = 'Independent Directory · No Lead Fees · No Paid Placements',
+  trustTagline = HERO_TRUST_EYEBROW,
   showTrustBadges = true,
   className,
 }: PageHeroCtaProps) {

@@ -32,6 +32,8 @@ import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
+import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
+import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 
 export const revalidate = 60;
 
@@ -110,10 +112,10 @@ export default async function CompanyProfilePage({ params }: Props) {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
         <div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            {canShowVerifiedBadge(company) && <Badge variant="success">VERIFIED</Badge>}
-            {canShowVerifiedBadge(company) && <FmcsaVerificationBadge company={company} />}
+            {canShowVerifiedBadge(company) ? <DirectoryVerifiedBadge /> : null}
+            {canShowVerifiedBadge(company) ? <FmcsaVerificationBadge company={company} /> : null}
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
@@ -127,6 +129,9 @@ export default async function CompanyProfilePage({ params }: Props) {
             </div>
           ) : null}
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
+          {canShowVerifiedBadge(company) ? (
+            <VerificationBadgeLegend className="mt-4" compact />
+          ) : null}
         </div>
         <div className="flex items-center gap-3">
           <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">

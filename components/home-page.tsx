@@ -10,6 +10,7 @@ import { TrustBadges } from '@/components/trust/trust-badges';
 
 import { HomeBelowFoldLoader } from '@/components/home/home-below-fold-loader';
 import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
+import { HERO_TRUST_EYEBROW } from '@/lib/trust/site-messaging';
 
 export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
   return (
@@ -20,7 +21,7 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
           <div className="inline-flex max-w-full items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700 sm:px-4 sm:text-sm">
             <Truck className="h-4 w-4 shrink-0" aria-hidden="true" />
             <span className="truncate sm:whitespace-normal">
-              INDEPENDENT DIRECTORY · NO LEAD FEES · NO PAID PLACEMENTS
+              {HERO_TRUST_EYEBROW}
             </span>
           </div>
         }

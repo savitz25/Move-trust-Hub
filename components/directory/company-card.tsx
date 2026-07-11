@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
+import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
 import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
@@ -65,9 +66,7 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
           </Link>
           <div className="flex flex-wrap gap-1 justify-end">
             {canShowVerifiedBadge(company) ? (
-              <Badge variant="success" className="text-[10px] h-fit">
-                VERIFIED
-              </Badge>
+              <DirectoryVerifiedBadge compact />
             ) : null}
             <FmcsaVerificationBadge company={company} className="text-[10px] h-fit" />
             <BbbVerificationBadge company={company} className="text-[10px] h-fit" />
