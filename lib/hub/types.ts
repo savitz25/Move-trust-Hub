@@ -35,8 +35,5 @@ export type HubConfig = {
   ctaLabel?: string;
   ctaHref?: string;
   trustBadge: string;
-  /** In-house verification / lookup tool (e.g. /verify-dot, /lender/onboard) */
-  verifyTool?: { label: string; href: string; shortLabel?: string };
-  /** Official external regulator source — secondary transparency link */
   verifyAuthority: { label: string; href: string };
 };
