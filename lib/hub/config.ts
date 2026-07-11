@@ -1,5 +1,6 @@
 import type { HubConfig, HubId } from '@/lib/hub/types';
 import { hubPath } from '@/lib/hub/paths';
+import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
@@ -8,18 +9,8 @@ export const TRUST_HUB_LOGO = {
   alt: 'Move Trust Hub — compare FMCSA-licensed interstate movers',
 } as const;
 
-const MOVE_NAV = [
-  { href: '/companies', label: 'Movers Directory' },
-  { href: '/local-movers', label: 'Local Movers' },
-  { href: '/auto-transport', label: 'Auto Transport' },
-  { href: '/moving-calculator', label: 'Move Calculator' },
-  { href: '/verify-dot', label: 'Verify DOT' },
-  { href: '/review', label: 'Reviews' },
-  { href: '/compare', label: 'Compare' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-] as const;
+/** Five high-intent items — detailed links live in footer and guide pages. */
+const MOVE_NAV = [...MOVE_PRIMARY_NAV];
 
 export const HUBS: Record<HubId, HubConfig> = {
   move: {
@@ -40,22 +31,23 @@ export const HUBS: Record<HubId, HubConfig> = {
       {
         title: 'DIRECTORY',
         links: [
-          { href: '/companies', label: 'All Companies' },
+          { href: '/companies', label: 'Find Movers' },
           { href: '/local-movers', label: 'Local Movers by State' },
+          { href: '/auto-transport', label: 'Auto Transport' },
           { href: '/compare', label: 'Compare Tool' },
         ],
       },
       {
         title: 'RESOURCES',
         links: [
-          { href: '/resources', label: 'All Guides' },
-          { href: '/moving-calculator', label: 'Moving Calculator' },
-          { href: '/verify-dot', label: 'Verify DOT Number' },
+          { href: '/resources', label: 'Guides' },
+          { href: '/moving-calculator', label: 'Calculator' },
+          { href: '/verify-dot', label: 'Verify DOT' },
+          { href: '/about', label: 'About' },
+          { href: '/contact', label: 'Contact' },
         ],
       },
     ],
-    ctaLabel: 'Moving Calculator',
-    ctaHref: '/moving-calculator',
     legalLinks: { privacy: '/privacy-policy', terms: '/terms-of-service' },
     trustBadge: HEADER_TRUST_BADGE,
     verifyAuthority: { label: 'FMCSA', href: 'https://www.fmcsa.dot.gov/' },

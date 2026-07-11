@@ -60,21 +60,21 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         }
       >
         <div className="flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-          <Link href="/moving-calculator" className="w-full sm:w-auto">
+          <Link href="/companies" className="w-full sm:w-auto">
             <Button
               size="lg"
               className="h-12 min-h-[48px] w-full gap-2 px-8 text-base sm:h-14 sm:px-10"
             >
-              Use Free Moving Calculator <ArrowRight className="h-5 w-5" aria-hidden="true" />
+              Find Movers <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Button>
           </Link>
-          <Link href="/companies" className="w-full sm:w-auto">
+          <Link href="/moving-calculator" className="w-full sm:w-auto">
             <Button
               size="lg"
               variant="outline"
               className="h-12 min-h-[48px] w-full gap-2 px-8 text-base sm:h-14"
             >
-              Compare Trusted Movers
+              Open Calculator
             </Button>
           </Link>
         </div>
@@ -283,14 +283,14 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="/moving-calculator">
+          <Link href="/companies">
             <Button size="lg" className="text-base sm:text-lg px-10 sm:px-12 h-12 sm:h-14 min-h-[48px] w-full sm:w-auto gap-2">
-              Use Free Moving Calculator <ArrowRight className="h-5 w-5" />
+              Browse Verified Movers <ArrowRight className="h-5 w-5" />
             </Button>
           </Link>
-          <Link href="/companies">
+          <Link href="/compare">
             <Button size="lg" variant="outline" className="text-base sm:text-lg px-10 h-12 sm:h-14 min-h-[48px] w-full sm:w-auto">
-              Compare Trusted Movers
+              Compare Side-by-Side
             </Button>
           </Link>
         </div>

@@ -60,7 +60,7 @@ export function HubCrossLinkBar({ hub }: { hub: HubId }) {
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-            Cross-vertical synergy
+            After your move
           </p>
           <h2 className="text-xl font-semibold tracking-tight md:text-2xl">{bundle.title}</h2>
           <p className="mt-2 text-sm text-muted-foreground md:text-base">{bundle.description}</p>

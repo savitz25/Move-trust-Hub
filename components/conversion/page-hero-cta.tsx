@@ -27,10 +27,10 @@ const iconForHref = (href: string) => {
 };
 
 export function PageHeroCta({
-  primaryLabel = 'Use Free Moving Calculator',
-  primaryHref = '/moving-calculator',
-  secondaryLabel = 'Compare Trusted Movers',
-  secondaryHref = '/companies',
+  primaryLabel = 'Find Movers',
+  primaryHref = '/companies',
+  secondaryLabel = 'Open Calculator',
+  secondaryHref = '/moving-calculator',
   tertiaryLabel,
   tertiaryHref,
   trustTagline = HERO_TRUST_EYEBROW,

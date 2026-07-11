@@ -3,7 +3,8 @@ import { TrustBadges } from '@/components/trust/trust-badges';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
 import { SITE_EMAIL } from '@/lib/contact';
-import { HUB_ORDER, HUBS, getHubConfig } from '@/lib/hub/config';
+import { AfterYourMoveModule } from '@/components/hub/after-your-move-module';
+import { getHubConfig } from '@/lib/hub/config';
 import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 
@@ -15,29 +16,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
   return (
     <footer className="border-t bg-muted/20">
       <div className="container mx-auto px-4 py-10">
-        <div className="mb-8 rounded-xl border bg-card p-5">
-          <div className="font-semibold text-xs tracking-widest text-muted-foreground mb-3">
-            TRUST HUB FAMILY
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4 text-sm">
-            {HUB_ORDER.map((id) => {
-              const h = HUBS[id];
-              const isActive = id === hub.id;
-              return (
-                <Link
-                  key={id}
-                  href={hubPath(id, '/')}
-                  className={`rounded-lg border p-4 transition-colors hover:border-primary/40 ${
-                    isActive ? 'border-primary/50 bg-primary/5' : 'bg-background'
-                  }`}
-                >
-                  <div className="font-semibold">{h.siteName}</div>
-                  <p className="mt-1 text-xs text-muted-foreground leading-snug">{h.tagline}</p>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+        <AfterYourMoveModule hubId={hub.id} />
 
         <div className="grid grid-cols-2 md:grid-cols-6 gap-y-9">
           <div className="col-span-2 md:col-span-1">

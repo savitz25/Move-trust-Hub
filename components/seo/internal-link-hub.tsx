@@ -14,7 +14,7 @@ const MOVE_LINKS: InternalLink[] = [
   {
     href: '/moving-calculator',
     label: 'Moving calculator',
-    description: 'Estimate cubic footage before you request quotes.',
+    description: 'Estimate cubic footage before you contact carriers.',
     icon: Calculator,
   },
   {

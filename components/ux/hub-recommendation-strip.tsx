@@ -72,15 +72,14 @@ export function HubRecommendationStrip({ hub }: { hub: HubId }) {
   return (
     <section
       className="border-t bg-card py-8"
-      aria-label="Personalized cross-vertical recommendations"
+      aria-label="Related services after your move"
     >
       <div className="container mx-auto px-4">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-          Your full life-event toolkit
+          After your move
         </p>
         <h2 className="mt-1 text-center text-lg font-semibold tracking-tight">
-          People researching {hub === 'move' ? 'moves' : hub === 'lender' ? 'lenders' : 'insurance'}{' '}
-          also explore
+          Moving support resources
         </h2>
         <div className="mx-auto mt-5 grid max-w-3xl gap-3 sm:grid-cols-2">
           {recs.map((rec) => {
