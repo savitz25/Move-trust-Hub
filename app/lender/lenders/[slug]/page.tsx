@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Star, ShieldCheck, ChevronRight, Phone, ExternalLink } from 'lucide-react';
-import { getLenderBySlug, lenders } from '@/lib/lender/lenders';
+import { lenders } from '@/lib/lender/lenders';
+import { getEnrichedLenderBySlug } from '@/lib/lender/enrichment/get-enriched';
 import { Badge } from '@/components/lender/ui/badge';
 import { MatchLenderButton } from '@/components/lender/MatchLenderButton';
 import { RelatedDirectoryLinks } from '@/components/lender/directory/RelatedDirectoryLinks';
+import { LenderTrustSignals } from '@/components/lender/lender-trust-signals';
 
 export function generateStaticParams() {
   return lenders.map((l) => ({ slug: l.slug }));
@@ -17,7 +19,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const lender = getLenderBySlug(slug);
+  const lender = getEnrichedLenderBySlug(slug);
   if (!lender) return { title: 'Lender Not Found' };
   return {
     title: `${lender.name} — NMLS #${lender.nmlsId}`,
@@ -31,7 +33,7 @@ export default async function LenderProfilePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const lender = getLenderBySlug(slug);
+  const lender = getEnrichedLenderBySlug(slug);
   if (!lender) notFound();
 
   const countyLabel = `${lender.county} County, ${lender.state}`;
@@ -64,6 +66,9 @@ export default async function LenderProfilePage({
                   <ShieldCheck className="h-3 w-3" aria-hidden="true" />
                   NMLS Verified
                 </span>
+                {lender.bbbAccredited ? (
+                  <span className="trust-badge">BBB Accredited</span>
+                ) : null}
                 <Badge variant="outline">{lender.type}</Badge>
               </div>
               <h1 className="text-3xl font-bold text-[#0A2540]">{lender.name}</h1>
@@ -114,15 +119,6 @@ export default async function LenderProfilePage({
             </div>
           </div>
 
-          <div className="mb-6 grid gap-3 rounded-xl border border-zinc-100 bg-zinc-50 p-4 text-sm sm:grid-cols-2">
-            <div><strong>BBB Rating:</strong> {lender.bbbRating}</div>
-            <div><strong>CFPB Complaints:</strong> {lender.cfpbComplaints}</div>
-            <div><strong>Google Rating:</strong> {lender.googleRating}/5</div>
-            <div><strong>Trustpilot:</strong> {lender.trustpilotRating}/5</div>
-            <div><strong>National Volume Rank:</strong> #{lender.nationalVolumeRank}</div>
-            <div><strong>Credit Tiers Served:</strong> {lender.creditTiers.join(', ')}</div>
-          </div>
-
           <div className="flex flex-wrap gap-3">
             {lender.phone && (
               <a
@@ -153,13 +149,9 @@ export default async function LenderProfilePage({
           </div>
         </div>
 
-        <RelatedDirectoryLinks stateSlug={lender.stateSlug} stateName={lender.state} />
+        <LenderTrustSignals lender={lender} className="mt-6" />
 
-        <p className="mt-6 text-center text-xs text-zinc-400">
-          Data aggregated from NMLS, CFPB, BBB, Google, and Trustpilot for informational
-          purposes. Lender Trust Hub is not a lender or broker and does not provide
-          financial advice.
-        </p>
+        <RelatedDirectoryLinks stateSlug={lender.stateSlug} stateName={lender.state} />
       </div>
     </div>
   );

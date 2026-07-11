@@ -42,7 +42,8 @@ export function isGooglePlacesConfigured(): boolean {
 }
 
 function buildTextQuery(input: CompanyEnrichmentInput): string {
-  const parts = [input.legalName, 'moving company'];
+  const category = input.businessCategory?.trim() || 'moving company';
+  const parts = [input.legalName, category];
   if (input.city) parts.push(input.city);
   if (input.state) parts.push(input.state);
   else if (input.headquarters) parts.push(input.headquarters);

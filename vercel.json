@@ -20,6 +20,14 @@
     {
       "path": "/api/refresh/bbb?mode=full",
       "schedule": "0 4 * * 0"
+    },
+    {
+      "path": "/api/refresh/lenders?mode=incremental&limit=40",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/refresh/lenders?mode=full&limit=80",
+      "schedule": "0 3 * * 0"
     }
   ],
   "headers": [

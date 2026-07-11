@@ -7,7 +7,9 @@ import { SearchBar } from '@/components/lender/SearchBar';
 import { tryGetClusterContent } from '@/lib/lender/clusters/content';
 import { getAllClusterParams } from '@/lib/lender/clusters/registry';
 import { buildHubMetadata } from '@/lib/hub/metadata';
-import { getLendersByCounty } from '@/lib/lender/lenders';
+import { getEnrichedLendersByCounty } from '@/lib/lender/enrichment/get-enriched';
+import { LenderDirectoryFilters } from '@/components/lender/lender-directory-filters';
+import { Suspense } from 'react';
 
 export const dynamic = 'force-static';
 
@@ -507,7 +509,7 @@ export default async function CountyLendersPage({
   searchParams,
 }: {
   params: Promise<{ state: string; county: string }>;
-  searchParams: Promise<{ zip?: string }>;
+  searchParams: Promise<{ zip?: string; minRating?: string; bbbAccredited?: string }>;
 }) {
   const { state, county } = await params;
   const clusterMatch = tryGetClusterContent(state, county);
@@ -520,10 +522,14 @@ export default async function CountyLendersPage({
       />
     );
   }
-  const { zip } = await searchParams;
+  const { zip, minRating, bbbAccredited } = await searchParams;
   const stateName = titleCase(state);
   const countyName = titleCase(county);
-  const lenders = getLendersByCounty(state, county);
+  const lenders = getEnrichedLendersByCounty(state, county, {
+    zip,
+    minGoogleRating: minRating ? Number(minRating) : undefined,
+    bbbAccredited: bbbAccredited === 'true',
+  });
   const countyLabel = `${countyName} County, ${stateName}`;
 
   return (
@@ -548,6 +554,10 @@ export default async function CountyLendersPage({
         </p>
         <SearchBar className="mt-6 max-w-xl" />
       </div>
+
+      <Suspense fallback={null}>
+        <LenderDirectoryFilters />
+      </Suspense>
 
       <div className="mx-auto max-w-3xl space-y-4">
         {lenders.length > 0 ? (

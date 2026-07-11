@@ -295,6 +295,64 @@ All seed data is synthesized to be realistic and representative based on publicl
 
 Always display fresh "last updated" dates.
 
+## Lender Profile Enrichment (LenderTrustHub)
+
+Bulk-enriches all mortgage lender profiles with Google Places, BBB, CFPB, and county experience scores. Results are stored in Supabase (`lenders` table) and exported to `data/lender/enrichments.json` for static profile pages.
+
+### Environment variables
+
+| Variable | Required | Purpose |
+|----------|----------|---------|
+| `GOOGLE_PLACES_API_KEY` | Recommended | Google Places API (New) — ratings & review snippets |
+| `BBB_API_KEY` | Optional | Official BBB partner API (falls back to public scrape) |
+| `SUPABASE_SERVICE_ROLE_KEY` | For DB persist | Upsert enriched rows to `lenders` |
+| `NEXT_PUBLIC_SUPABASE_URL` | For DB persist | Lender Supabase project URL |
+| `CRON_SECRET` | For scheduled refresh | Auth header for `/api/refresh/lenders` |
+
+### One-time full run
+
+```bash
+# Apply migration first (Supabase SQL editor or CLI)
+# supabase/migrations/20260710190000_lender_enrichment.sql
+
+# Dry-run single lender
+npx tsx --require ./scripts/stub-server-only.cjs scripts/enrich-lenders-batch.ts --slug=<lender-slug>
+
+# Dry-run first 10 lenders
+npx tsx --require ./scripts/stub-server-only.cjs scripts/enrich-lenders-batch.ts --limit=10
+
+# Live run (writes JSON + Supabase)
+npx tsx --require ./scripts/stub-server-only.cjs scripts/enrich-lenders-batch.ts --confirm --mode=full
+```
+
+Process all 647 lenders in batches to respect rate limits:
+
+```bash
+npx tsx --require ./scripts/stub-server-only.cjs scripts/enrich-lenders-batch.ts --confirm --mode=full --limit=40 --offset=0
+npx tsx --require ./scripts/stub-server-only.cjs scripts/enrich-lenders-batch.ts --confirm --mode=full --limit=40 --offset=40
+# ... repeat until offset >= 647
+```
+
+### Scheduled refresh (Vercel Cron)
+
+`vercel.json` includes:
+
+- Daily incremental: `/api/refresh/lenders?mode=incremental&limit=40` at 08:00 UTC
+- Weekly full batch: `/api/refresh/lenders?mode=full&limit=80` Sunday 03:00 UTC
+
+Manual trigger (admin session or cron secret):
+
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" "https://www.movetrusthub.com/api/refresh/lenders?mode=incremental&limit=5"
+```
+
+### Testing checklist
+
+1. **Single lender dry-run** — confirm Google/BBB/CFPB logs in `scripts/output/lender-enrichment-*.json`
+2. **Profile page** — visit `/lender/lenders/<slug>` and verify Trust Signals section
+3. **Directory filters** — county page `?minRating=4.5&bbbAccredited=true`
+4. **Bulk dry-run** — `--limit=10` without `--confirm` should not write files
+
 ## License & Legal
 
 Educational / informational use. Not affiliated with any listed moving company.

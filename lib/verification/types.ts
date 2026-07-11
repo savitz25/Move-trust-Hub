@@ -95,6 +95,8 @@ export type CompanyEnrichmentInput = {
   usdotNumber?: string | null;
   /** When set, fetches Place Details directly (required for service-area businesses). */
   placeId?: string | null;
+  /** Appended to Google text search — defaults to "moving company" in mover flows. */
+  businessCategory?: string | null;
 };
 
 export type CompanyEnrichmentResult = {

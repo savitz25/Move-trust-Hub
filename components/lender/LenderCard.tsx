@@ -2,16 +2,22 @@ import Link from 'next/link';
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/lender/ui/badge';
 import type { Lender } from '@/lib/lender/mockData';
+import { mergeLenderWithEnrichment, type EnrichedLender } from '@/lib/lender/enrichment/merge';
+
+function toEnrichedLender(lender: Lender | EnrichedLender): EnrichedLender {
+  return 'isEnriched' in lender ? lender : mergeLenderWithEnrichment(lender);
+}
 
 export function LenderCard({
-  lender,
+  lender: lenderInput,
   rank,
   countyLabel,
 }: {
-  lender: Lender;
+  lender: Lender | EnrichedLender;
   rank: number;
   countyLabel?: string;
 }) {
+  const lender = toEnrichedLender(lenderInput);
   const locationLine = [
     lender.city,
     lender.state,
@@ -99,7 +105,10 @@ export function LenderCard({
               NMLS Verified
             </span>
           )}
-          <span className="text-xs text-zinc-500">BBB {lender.bbbRating}</span>
+          <span className="text-xs text-zinc-500">
+            BBB {lender.bbbRating}
+            {lender.bbbAccredited ? ' · Accredited' : ''}
+          </span>
         </div>
         <div className="flex gap-2">
           <Link
