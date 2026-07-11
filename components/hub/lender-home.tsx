@@ -4,6 +4,7 @@ import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
 import { HubZipSearch } from '@/components/hub/hub-zip-search';
 import { HubTrustBar } from '@/components/hub/hub-trust-bar';
 import { HubHowItWorks } from '@/components/hub/hub-how-it-works';
+import { LenderHeroCompanySearch } from '@/components/lender/lender-hero-company-search';
 import { MortgageLenderDirectoryBoundary } from '@/components/lender/mortgage-lender-directory-boundary';
 import { Button } from '@/components/ui/button';
 import { hubPath } from '@/lib/hub/paths';
@@ -30,9 +31,20 @@ export function LenderHomePage() {
         }
         description="Transparent data, confident choices. Compare verified local mortgage lenders and brokers backed by NMLS licensing, CFPB complaints, BBB ratings, and real reviews."
       >
-        <HubZipSearch hub="lender" className="mx-auto max-w-xl lg:mx-0" />
+        <div className="mx-auto w-full max-w-xl space-y-4 lg:mx-0">
+          <LenderHeroCompanySearch />
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center" aria-hidden="true">
+              <div className="w-full border-t border-zinc-200" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase tracking-wide">
+              <span className="bg-background px-3 text-muted-foreground">or find by ZIP</span>
+            </div>
+          </div>
+          <HubZipSearch hub="lender" className="w-full" placeholder="Enter ZIP for county lenders" />
+        </div>
         <p className="text-sm text-muted-foreground">
-          Trusted Local Lenders • Verified County Insights • National Expertise
+          Search 647+ lenders by name • ZIP for county listings • NMLS verified
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
           <Button size="lg" asChild className="w-full gap-2 sm:w-auto">
@@ -46,6 +58,8 @@ export function LenderHomePage() {
         </div>
       </HubHeroBanner>
 
+      <MortgageLenderDirectoryBoundary lenders={lenders} />
+
       <HubTrustBar
         items={[
           'NMLS License Verification',
@@ -55,8 +69,6 @@ export function LenderHomePage() {
           'No Paid Placements',
         ]}
       />
-
-      <MortgageLenderDirectoryBoundary lenders={lenders} />
 
       <HubHowItWorks
         subheading="Your Path to the Right Lender"

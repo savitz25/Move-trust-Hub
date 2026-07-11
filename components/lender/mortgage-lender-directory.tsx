@@ -18,6 +18,7 @@ import { getCountyFromZip } from '@/lib/lender/lenders';
 const SEARCH_DEBOUNCE_MS = 300;
 const URL_SYNC_DEBOUNCE_MS = 400;
 const NEAR_ZIP_STORAGE_KEY = 'mth-lender-near-zip';
+const DEFAULT_PREVIEW_COUNT = 12;
 
 const POPULAR_FILTERS: { id: LenderPopularFilter; label: string }[] = [
   { id: 'near-me', label: 'Near Me' },
@@ -203,8 +204,22 @@ export function MortgageLenderDirectory({ lenders }: Props) {
       ? getCountyFromZip(nearZip)
       : undefined;
 
+  const displayLenders = hasActiveFilters
+    ? filteredLenders
+    : filteredLenders.slice(0, DEFAULT_PREVIEW_COUNT);
+
+  useEffect(() => {
+    const shouldScroll =
+      window.location.hash.includes('mortgage-lender-directory') ||
+      initialSearch.length > 0 ||
+      initialFilters.length > 0 ||
+      initialZip.length > 0;
+    if (!shouldScroll) return;
+    document.getElementById('mortgage-lender-directory')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [initialSearch, initialFilters.length, initialZip]);
+
   return (
-    <section id="mortgage-lender-directory" className="border-t bg-card py-12 md:py-16">
+    <section id="mortgage-lender-directory" className="scroll-mt-24 border-t bg-card py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-8 max-w-3xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#3B82F6]">
@@ -306,8 +321,11 @@ export function MortgageLenderDirectory({ lenders }: Props) {
         </div>
 
         <div className="mx-auto mb-6 max-w-3xl text-center text-sm text-zinc-600" role="status" aria-live="polite">
-          {filteredLenders.length === lenders.length && !hasActiveFilters ? (
-            <span>Browse all {lenders.length.toLocaleString()} verified lenders</span>
+          {!hasActiveFilters ? (
+            <span>
+              Previewing top {displayLenders.length} of {lenders.length.toLocaleString()} verified lenders —
+              search above to explore the full directory
+            </span>
           ) : (
             <span>
               Showing {filteredLenders.length.toLocaleString()} lender
@@ -329,8 +347,8 @@ export function MortgageLenderDirectory({ lenders }: Props) {
         </div>
 
         <div className="mx-auto max-w-3xl space-y-4">
-          {filteredLenders.length > 0 ? (
-            filteredLenders.map((lender, index) => (
+          {displayLenders.length > 0 ? (
+            displayLenders.map((lender, index) => (
               <LenderCard
                 key={lender.id}
                 lender={lender}
