@@ -86,18 +86,33 @@ export function parseHeadquarters(headquarters: string | null | undefined): Pars
   }
 
   for (let i = parts.length - 1; i >= 0; i--) {
-    const segmentTokens = parts[i]!.split(/\s+/).filter(Boolean);
+    const segment = parts[i]!;
+    const zipStripped = segment.replace(/\s+\d{5}(-\d{4})?$/, '').trim();
+    const segmentTokens = zipStripped.split(/\s+/).filter(Boolean);
+
     for (const token of segmentTokens) {
       const state = tokenToState(token);
       if (!state) continue;
-      const city = i > 0 ? parts[i - 1]! : parts[0] ?? null;
-      return { city: city || null, state };
+      const cityPart = i > 0 ? parts[i - 1]! : parts[0] ?? null;
+      const city = cityPart?.replace(/\s+\d{5}(-\d{4})?$/, '').trim() || null;
+      return { city, state };
     }
 
-    const wholeSegmentState = tokenToState(parts[i]!);
+    const stateZipMatch = zipStripped.match(/^([A-Za-z]{2})$/);
+    if (stateZipMatch) {
+      const state = tokenToState(stateZipMatch[1]!);
+      if (state) {
+        const cityPart = i > 0 ? parts[i - 1]! : parts[0] ?? null;
+        const city = cityPart?.replace(/\s+\d{5}(-\d{4})?$/, '').trim() || null;
+        return { city, state };
+      }
+    }
+
+    const wholeSegmentState = tokenToState(zipStripped);
     if (wholeSegmentState) {
-      const city = i > 0 ? parts[i - 1]! : parts[0] ?? null;
-      return { city: city || null, state: wholeSegmentState };
+      const cityPart = i > 0 ? parts[i - 1]! : parts[0] ?? null;
+      const city = cityPart?.replace(/\s+\d{5}(-\d{4})?$/, '').trim() || null;
+      return { city, state: wholeSegmentState };
     }
   }
 

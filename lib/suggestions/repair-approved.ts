@@ -80,6 +80,11 @@ export async function publishSuggestionToDirectory(
     companyId: published.companyId,
     companySlug: published.slug,
     headquarters: suggestion.headquarters,
+    fmcsaRaw:
+      suggestion.fmcsa_raw && typeof suggestion.fmcsa_raw === 'object'
+        ? (suggestion.fmcsa_raw as Record<string, unknown>)
+        : null,
+    legalName: suggestion.legal_name ?? suggestion.name,
   });
 
   revalidatePublishedCompany(published.slug);
@@ -89,6 +94,11 @@ export async function publishSuggestionToDirectory(
     suggestionId: suggestion.id,
     slug: published.slug,
     headquarters: suggestion.headquarters,
+    effectiveAddress: destinationAssignment.debug.effectiveAddress,
+    parsedCity: destinationAssignment.debug.parsedCity,
+    parsedState: destinationAssignment.debug.parsedState,
+    primaryCity: destinationAssignment.debug.primaryCity,
+    detectedCities: destinationAssignment.debug.detectedCities,
     counties: destinationAssignment.assignedCounties,
     destinationSlugs: destinationAssignment.destinationSlugs,
   });
