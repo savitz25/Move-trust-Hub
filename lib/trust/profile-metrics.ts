@@ -6,7 +6,7 @@ import {
   getCompanyAttributableReviewCount,
 } from '@/lib/trust/review-display-policy';
 import type { GooglePlacesData } from '@/lib/verification/types';
-import { hasDisplayableGoogleReviews } from '@/lib/verification/google-profile-url';
+
 
 export const PROFILE_METRIC_TOOLTIPS = {
   overallRating:
@@ -59,14 +59,14 @@ export function buildProfileReviewSources(
   googleData?: GooglePlacesData | null
 ): ProfileReviewSources {
   const attributableOnSiteCount = getCompanyAttributableReviewCount(company.id);
-  const googleAvailable = hasDisplayableGoogleReviews(googleData);
+  const googleAvailable = Boolean(
+    googleData?.status === 'ok' && googleData.rating != null && googleData.rating > 0
+  );
   const googleReviewCount = googleData?.review_count ?? null;
   const editorialReviewCount = company.reviewCount;
 
   const hasContradictionRisk =
-    attributableOnSiteCount > 0 &&
-    !googleAvailable &&
-    (googleData == null || googleData.status !== 'ok');
+    attributableOnSiteCount > 0 && !googleAvailable && googleData?.status !== 'ok';
 
   return {
     editorialRating: company.overallRating,
@@ -74,7 +74,7 @@ export function buildProfileReviewSources(
     editorialVolumeLabel: formatEditorialReviewVolume(editorialReviewCount),
     attributableOnSiteCount,
     attributableOnSiteLabel: formatAttributableReviewCount(attributableOnSiteCount),
-    googleRating: googleAvailable ? googleData!.rating : null,
+    googleRating: googleAvailable && googleData ? googleData.rating : null,
     googleReviewCount: googleAvailable ? googleReviewCount : null,
     googleAvailable,
     hasContradictionRisk,
