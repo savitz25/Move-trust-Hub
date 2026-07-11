@@ -23,6 +23,13 @@ export interface Provider {
   local_market_experience?: number;
   avg_response_hours?: number;
   bbb_rating?: string;
+  google_rating?: number | null;
+  google_review_count?: number | null;
+  google_place_id?: string | null;
+  bbb_accredited?: boolean | null;
+  bbb_complaint_count?: number | null;
+  enriched_at?: string | null;
+  needs_manual_review?: boolean;
   carriers?: string[];
   created_at?: string;
   updated_at?: string;
@@ -35,6 +42,8 @@ export interface ProviderFilters {
   specialty?: Specialty;
   verifiedOnly?: boolean;
   minRating?: number;
+  minGoogleRating?: number;
+  bbbAccreditedOnly?: boolean;
   query?: string;
   limit?: number;
   offset?: number;

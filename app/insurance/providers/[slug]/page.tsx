@@ -24,6 +24,8 @@ import { INSURANCE_TYPES } from '@/lib/insurance/constants';
 import { LeadForm } from '@/components/insurance/lead-form';
 import { ReviewForm } from '@/components/insurance/review-form';
 import { StarRating } from '@/components/insurance/star-rating';
+import { TrustVerificationSummary } from '@/components/insurance/trust-verification-summary';
+import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
 import { Badge } from '@/components/insurance/ui/badge';
 import { Button } from '@/components/insurance/ui/button';
@@ -101,10 +103,23 @@ export default async function ProviderPage({ params }: ProviderPageProps) {
                   {provider.short_description}
                 </p>
               )}
-              <div className="mt-4 flex flex-wrap items-center gap-4">
+              <div className="mt-4 flex flex-wrap items-center gap-3">
                 <StarRating rating={provider.rating} size="lg" />
+                {provider.google_rating != null && (
+                  <GoogleRatingBadge
+                    data={{
+                      status: 'ok',
+                      rating: provider.google_rating,
+                      review_count: provider.google_review_count ?? provider.review_count,
+                    }}
+                  />
+                )}
+                {provider.bbb_accredited && (
+                  <Badge variant="outline">BBB Accredited</Badge>
+                )}
                 <span className="text-sm text-muted-foreground">
                   {provider.review_count} review{provider.review_count !== 1 ? 's' : ''}
+                  {provider.trust_score != null ? ` · Trust ${provider.trust_score}/100` : ''}
                 </span>
               </div>
             </div>
@@ -141,6 +156,8 @@ export default async function ProviderPage({ params }: ProviderPageProps) {
                 </p>
               </section>
             )}
+
+            <TrustVerificationSummary provider={provider} />
 
             <section>
               <h2 className="text-xl font-semibold mb-4">License information</h2>

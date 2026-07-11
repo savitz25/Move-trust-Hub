@@ -123,7 +123,10 @@ export function AgentCard({ agent, rank, hubLabel, className }: AgentCardProps) 
               DOI Verified
             </span>
           )}
-          <span className="text-xs text-muted-foreground">NAIC Verified · BBB {agent.bbbRating}</span>
+          <span className="text-xs text-muted-foreground">
+            NAIC Verified · BBB {agent.bbbRating}
+            {'bbbAccredited' in agent && agent.bbbAccredited ? ' · Accredited' : ''}
+          </span>
         </div>
         <div className="flex gap-2">
           {agent.phone && (

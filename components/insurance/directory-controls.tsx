@@ -25,7 +25,7 @@ export function DirectoryControls({ total, className }: DirectoryControlsProps) 
     if (value) params.set(key, value);
     else params.delete(key);
     startTransition(() => {
-      router.push(`/directory?${params.toString()}`);
+      router.push(`/insurance/directory?${params.toString()}`);
     });
   }
 
@@ -47,6 +47,7 @@ export function DirectoryControls({ total, className }: DirectoryControlsProps) 
             aria-label="Sort agencies"
           >
             <option value="rating">Top rated</option>
+            <option value="trust">Trust score</option>
             <option value="reviews">Most reviews</option>
             <option value="relevance">Relevance</option>
           </Select>

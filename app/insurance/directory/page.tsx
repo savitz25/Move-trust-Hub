@@ -5,11 +5,10 @@ import { DirectoryControls } from '@/components/insurance/directory-controls';
 import { ProviderCard } from '@/components/insurance/provider-card';
 import { DisclaimerBanner } from '@/components/insurance/disclaimer-banner';
 import { HealthHubDirectoryTemplate } from '@/components/hub/templates';
-import { searchProviders } from '@/lib/insurance/providers/queries';
+import { searchProviders, sortEnrichedProviders } from '@/lib/insurance/providers/queries';
 import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
 import { INSURANCE_DIRECTORY_LANDING } from '@/lib/hub/templates/landing-data';
 import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
-import type { Provider } from '@/types/insurance/provider';
 import type { InsuranceType, Specialty } from '@/lib/insurance/constants';
 import { cn } from '@/lib/insurance/utils';
 
@@ -30,27 +29,6 @@ function getParam(params: Record<string, string | string[] | undefined>, key: st
   return Array.isArray(val) ? val[0] ?? '' : val ?? '';
 }
 
-function sortProviders(providers: Provider[], sort: string, query: string): Provider[] {
-  const sorted = [...providers];
-  switch (sort) {
-    case 'reviews':
-      return sorted.sort((a, b) => b.review_count - a.review_count);
-    case 'relevance':
-      if (!query) return sorted;
-      const q = query.toLowerCase();
-      return sorted.sort((a, b) => {
-        const score = (p: Provider) =>
-          (p.name.toLowerCase().includes(q) ? 3 : 0) +
-          (p.city.toLowerCase().includes(q) ? 2 : 0) +
-          (p.specialties.some((s) => s.toLowerCase().includes(q)) ? 1 : 0);
-        return score(b) - score(a);
-      });
-    case 'rating':
-    default:
-      return sorted.sort((a, b) => b.rating - a.rating);
-  }
-}
-
 export default async function DirectoryPage({ searchParams }: DirectoryPageProps) {
   const params = await searchParams;
   const query = getParam(params, 'q');
@@ -59,6 +37,8 @@ export default async function DirectoryPage({ searchParams }: DirectoryPageProps
   const specialty = getParam(params, 'specialty') as Specialty | '';
   const verifiedOnly = getParam(params, 'verified') === 'true';
   const minRating = getParam(params, 'minRating');
+  const minGoogleRating = getParam(params, 'minGoogleRating');
+  const bbbAccreditedOnly = getParam(params, 'bbbAccredited') === 'true';
   const sort = getParam(params, 'sort') || 'rating';
   const view = getParam(params, 'view') || 'grid';
 
@@ -69,10 +49,12 @@ export default async function DirectoryPage({ searchParams }: DirectoryPageProps
     specialty: specialty || undefined,
     verifiedOnly,
     minRating: minRating ? Number(minRating) : undefined,
+    minGoogleRating: minGoogleRating ? Number(minGoogleRating) : undefined,
+    bbbAccreditedOnly,
     limit: 48,
   });
 
-  const providers = sortProviders(rawProviders, sort, query);
+  const providers = sortEnrichedProviders(rawProviders, sort, query);
   const isList = view === 'list';
 
   return (

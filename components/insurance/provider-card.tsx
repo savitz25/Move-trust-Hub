@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { BadgeCheck, MapPin } from 'lucide-react';
+import { BadgeCheck, MapPin, Shield } from 'lucide-react';
+import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import type { Provider } from '@/types/insurance/provider';
 import { INSURANCE_TYPES } from '@/lib/insurance/constants';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/insurance/ui/card';
@@ -51,9 +52,28 @@ export function ProviderCard({ provider, className }: ProviderCardProps) {
           </p>
         )}
 
-        <StarRating rating={provider.rating} size="sm" />
+        <div className="flex flex-wrap items-center gap-2">
+          <StarRating rating={provider.rating} size="sm" />
+          {provider.google_rating != null && (
+            <GoogleRatingBadge
+              data={{
+                status: 'ok',
+                rating: provider.google_rating,
+                review_count: provider.google_review_count ?? provider.review_count,
+              }}
+              className="text-[11px]"
+            />
+          )}
+          {provider.bbb_accredited && (
+            <Badge variant="outline" className="text-[10px] gap-0.5">
+              <Shield className="h-3 w-3" aria-hidden />
+              BBB
+            </Badge>
+          )}
+        </div>
         <p className="text-xs text-muted-foreground">
           {provider.review_count} review{provider.review_count !== 1 ? 's' : ''}
+          {provider.trust_score != null ? ` · Trust ${provider.trust_score}/100` : ''}
           {provider.years_in_business
             ? ` · ${provider.years_in_business} years in business`
             : ''}

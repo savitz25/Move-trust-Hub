@@ -28,6 +28,14 @@
     {
       "path": "/api/refresh/lenders?mode=full&limit=80",
       "schedule": "0 3 * * 0"
+    },
+    {
+      "path": "/api/refresh/insurance-providers?mode=incremental&limit=40",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/refresh/insurance-providers?mode=full&limit=50",
+      "schedule": "0 2 * * 0"
     }
   ],
   "headers": [

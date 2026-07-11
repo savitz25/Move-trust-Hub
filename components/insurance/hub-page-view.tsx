@@ -3,7 +3,8 @@ import { Shield, MapPin, Users, Star } from 'lucide-react';
 import type { InsuranceHub } from '@/types/insurance/agent';
 import { getAgentsForHub, getFeaturedHealthAgents, getHubStats } from '@/lib/insurance/hubs/agents';
 import { getCuratedHubConfig } from '@/lib/insurance/hubs/data/curated-hubs';
-import { AgentCard } from '@/components/insurance/agent-card';
+import { HubAgentList } from '@/components/insurance/hub-agent-list';
+import { enrichHubAgent } from '@/lib/insurance/enrichment/get-enriched';
 import { HubAgentTable } from '@/components/insurance/hub-agent-table';
 import { ZipSearch } from '@/components/insurance/zip-search';
 import { HubMatchForm } from '@/components/insurance/hub-match-form';
@@ -20,8 +21,8 @@ interface HubPageViewProps {
 export function HubPageView({ hub, canonicalPath }: HubPageViewProps) {
   const { stateSlug: state, slug } = hub;
   const path = canonicalPath ?? `/hubs/${state}/${slug}`;
-  const allAgents = getAgentsForHub(hub);
-  const healthAgents = getFeaturedHealthAgents(hub);
+  const allAgents = getAgentsForHub(hub).map(enrichHubAgent);
+  const healthAgents = getFeaturedHealthAgents(hub).map(enrichHubAgent);
   const otherAgents = allAgents.filter((a) => !a.isHealthFeatured);
   const stats = getHubStats(hub);
   const curatedConfig = getCuratedHubConfig(hub.slug);
@@ -136,37 +137,23 @@ export function HubPageView({ hub, canonicalPath }: HubPageViewProps) {
               </section>
             )}
 
-            <section>
-              <h2 className="text-2xl font-bold mb-2">
-                Health Insurance Specialists in {hub.shortName}
-              </h2>
-              <p className="text-sm text-muted-foreground mb-6">
-                {curatedConfig?.featuredHealthLine ??
-                  '60% health emphasis · Featured Medicare/ACA agencies · Diverse-population brokers'}
-              </p>
-              <div className="space-y-5">
-                {healthAgents.map((agent, i) => (
-                  <AgentCard key={agent.id} agent={agent} rank={i + 1} hubLabel={hub.shortName} />
-                ))}
-              </div>
-            </section>
+            <HubAgentList
+              agents={healthAgents}
+              hubLabel={hub.shortName}
+              title={`Health Insurance Specialists in ${hub.shortName}`}
+              description={
+                curatedConfig?.featuredHealthLine ??
+                '60% health emphasis · Featured Medicare/ACA agencies · Diverse-population brokers'
+              }
+            />
 
-            <section>
-              <h2 className="text-2xl font-bold mb-2">Full Directory — Multi-Line Agencies</h2>
-              <p className="text-sm text-muted-foreground mb-6">
-                Home, auto, life, and commercial partners serving {hub.msaName}
-              </p>
-              <div className="space-y-5">
-                {otherAgents.map((agent, i) => (
-                  <AgentCard
-                    key={agent.id}
-                    agent={agent}
-                    rank={healthAgents.length + i + 1}
-                    hubLabel={hub.shortName}
-                  />
-                ))}
-              </div>
-            </section>
+            <HubAgentList
+              agents={otherAgents}
+              hubLabel={hub.shortName}
+              rankOffset={healthAgents.length}
+              title="Full Directory — Multi-Line Agencies"
+              description={`Home, auto, life, and commercial partners serving ${hub.msaName}`}
+            />
           </div>
 
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">

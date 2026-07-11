@@ -8,6 +8,13 @@ import {
   searchFallbackProviders,
 } from '@/lib/insurance/providers/fallback-data';
 import { getHubAgentBySlug } from '@/lib/insurance/hubs/agent-lookup';
+import {
+  enrichProviders,
+  filterEnrichedProviders,
+  getEnrichedProvider,
+  sortEnrichedProviders,
+} from '@/lib/insurance/enrichment/get-enriched';
+import type { EnrichedProvider } from '@/lib/insurance/enrichment/merge';
 import type { InsuranceType, Specialty } from '@/lib/insurance/constants';
 import type { Provider as DbProvider } from '@/types/insurance/supabase';
 
@@ -30,11 +37,20 @@ function mapRowToProvider(row: DbProvider): Provider {
     website: contact.website ?? null,
     insurance_types: row.categories as InsuranceType[],
     specialties: row.specialties as Specialty[],
-    rating: Number(row.rating ?? 0),
-    review_count: Number(row.review_count ?? 0),
+    rating: Number(row.google_rating ?? row.rating ?? 0),
+    review_count: Number(row.google_review_count ?? row.review_count ?? 0),
     is_verified: row.verified,
     license_number: license?.license_number ?? null,
     years_in_business: row.years_in_business,
+    trust_score: row.trust_score ?? undefined,
+    bbb_rating: row.bbb_rating ?? undefined,
+    google_rating: row.google_rating,
+    google_review_count: row.google_review_count,
+    google_place_id: row.google_place_id,
+    bbb_accredited: row.bbb_accredited,
+    bbb_complaint_count: row.bbb_complaint_count,
+    enriched_at: row.enriched_at,
+    needs_manual_review: row.needs_manual_review,
     created_at: row.created_at,
     updated_at: row.updated_at,
   };
@@ -42,9 +58,11 @@ function mapRowToProvider(row: DbProvider): Provider {
 
 export async function getProviders(
   filters: ProviderFilters = {}
-): Promise<{ providers: Provider[]; total: number }> {
+): Promise<{ providers: EnrichedProvider[]; total: number }> {
   if (!isSupabaseConfigured()) {
-    return searchFallbackProviders(filters);
+    const { providers, total } = searchFallbackProviders(filters);
+    const enriched = filterEnrichedProviders(enrichProviders(providers), filters);
+    return { providers: enriched, total: enriched.length };
   }
 
   const supabase = await createClient();
@@ -57,7 +75,15 @@ export async function getProviders(
     query = query.contains('cities', [filters.city]);
   }
   if (filters.verifiedOnly) query = query.eq('verified', true);
-  if (filters.minRating) query = query.gte('rating', filters.minRating);
+  if (filters.minRating) {
+    query = query.or(`google_rating.gte.${filters.minRating},and(google_rating.is.null,rating.gte.${filters.minRating})`);
+  }
+  if (filters.minGoogleRating) {
+    query = query.gte('google_rating', filters.minGoogleRating);
+  }
+  if (filters.bbbAccreditedOnly) {
+    query = query.eq('bbb_accredited', true);
+  }
   if (filters.insuranceType) {
     query = query.contains('categories', [filters.insuranceType]);
   }
@@ -68,7 +94,10 @@ export async function getProviders(
     query = query.or(`name.ilike.%${filters.query}%,description.ilike.%${filters.query}%`);
   }
 
+  query = query.order('google_rating', { ascending: false, nullsFirst: false });
+  query = query.order('trust_score', { ascending: false, nullsFirst: false });
   query = query.order('rating', { ascending: false });
+
   const offset = filters.offset ?? 0;
   const limit = filters.limit ?? 24;
   query = query.range(offset, offset + limit - 1);
@@ -76,20 +105,24 @@ export async function getProviders(
   const { data, count, error } = await query;
 
   if (error || !data) {
-    return searchFallbackProviders(filters);
+    const { providers, total } = searchFallbackProviders(filters);
+    const enriched = filterEnrichedProviders(enrichProviders(providers), filters);
+    return { providers: enriched, total: enriched.length };
   }
 
-  const providers = data.map((row) => mapRowToProvider(row as DbProvider));
+  const providers = enrichProviders(data.map((row) => mapRowToProvider(row as DbProvider)));
+  const filtered = filterEnrichedProviders(providers, filters);
 
-  return { providers, total: count ?? providers.length };
+  return { providers: filtered, total: count ?? filtered.length };
 }
 
-export async function getProviderBySlug(slug: string): Promise<Provider | null> {
+export async function getProviderBySlug(slug: string): Promise<EnrichedProvider | null> {
   const hubAgent = getHubAgentBySlug(slug);
-  if (hubAgent) return hubAgent;
+  if (hubAgent) return getEnrichedProvider(hubAgent);
 
   if (!isSupabaseConfigured()) {
-    return getFallbackProviderBySlug(slug) ?? null;
+    const fallback = getFallbackProviderBySlug(slug);
+    return fallback ? getEnrichedProvider(fallback) : null;
   }
 
   const supabase = await createClient();
@@ -100,18 +133,21 @@ export async function getProviderBySlug(slug: string): Promise<Provider | null> 
     .maybeSingle();
 
   if (error || !data) {
-    return getFallbackProviderBySlug(slug) ?? null;
+    const fallback = getFallbackProviderBySlug(slug);
+    return fallback ? getEnrichedProvider(fallback) : null;
   }
 
-  return mapRowToProvider(data as DbProvider);
+  return getEnrichedProvider(mapRowToProvider(data as DbProvider));
 }
 
 export async function searchProviders(
   filters: ProviderFilters
-): Promise<{ providers: Provider[]; total: number }> {
+): Promise<{ providers: EnrichedProvider[]; total: number }> {
   return getProviders(filters);
 }
 
 export function getAllFallbackProviders(): Provider[] {
   return FALLBACK_PROVIDERS;
 }
+
+export { sortEnrichedProviders };

@@ -112,6 +112,8 @@ export function searchFallbackProviders(filters: {
   specialty?: Specialty;
   verifiedOnly?: boolean;
   minRating?: number;
+  minGoogleRating?: number;
+  bbbAccreditedOnly?: boolean;
   query?: string;
   limit?: number;
   offset?: number;

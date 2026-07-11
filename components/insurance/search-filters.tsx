@@ -26,6 +26,8 @@ export function SearchFilters({ className }: SearchFiltersProps) {
   const specialty = searchParams.get('specialty') ?? '';
   const verifiedOnly = searchParams.get('verified') === 'true';
   const minRating = searchParams.get('minRating') ?? '';
+  const minGoogleRating = searchParams.get('minGoogleRating') ?? '';
+  const bbbAccredited = searchParams.get('bbbAccredited') === 'true';
 
   const updateParams = useCallback(
     (updates: Record<string, string | null>) => {
@@ -38,7 +40,7 @@ export function SearchFilters({ className }: SearchFiltersProps) {
         }
       });
       startTransition(() => {
-        router.push(`/directory?${params.toString()}`);
+        router.push(`/insurance/directory?${params.toString()}`);
       });
     },
     [router, searchParams]
@@ -53,7 +55,9 @@ export function SearchFilters({ className }: SearchFiltersProps) {
       type: (formData.get('type') as string) || null,
       specialty: (formData.get('specialty') as string) || null,
       minRating: (formData.get('minRating') as string) || null,
+      minGoogleRating: (formData.get('minGoogleRating') as string) || null,
       verified: formData.get('verified') === 'on' ? 'true' : null,
+      bbbAccredited: formData.get('bbbAccredited') === 'on' ? 'true' : null,
     });
   }
 
@@ -141,17 +145,40 @@ export function SearchFilters({ className }: SearchFiltersProps) {
             <option value="4.5">4.5+</option>
           </Select>
         </div>
+
+        <div>
+          <Label htmlFor="filter-google-rating" className="text-xs text-muted-foreground mb-1.5 block">
+            Google rating
+          </Label>
+          <Select id="filter-google-rating" name="minGoogleRating" defaultValue={minGoogleRating}>
+            <option value="">Any Google rating</option>
+            <option value="4">4+ Stars</option>
+            <option value="4.5">4.5+ Stars</option>
+          </Select>
+        </div>
       </div>
 
-      <div className="flex items-center gap-2">
-        <Checkbox
-          id="filter-verified"
-          name="verified"
-          defaultChecked={verifiedOnly}
-        />
-        <Label htmlFor="filter-verified" className="text-sm font-normal cursor-pointer">
-          Verified agencies only
-        </Label>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <Checkbox
+            id="filter-verified"
+            name="verified"
+            defaultChecked={verifiedOnly}
+          />
+          <Label htmlFor="filter-verified" className="text-sm font-normal cursor-pointer">
+            Verified agencies only
+          </Label>
+        </div>
+        <div className="flex items-center gap-2">
+          <Checkbox
+            id="filter-bbb"
+            name="bbbAccredited"
+            defaultChecked={bbbAccredited}
+          />
+          <Label htmlFor="filter-bbb" className="text-sm font-normal cursor-pointer">
+            BBB Accredited only
+          </Label>
+        </div>
       </div>
 
       <div className="flex gap-2 pt-1">
