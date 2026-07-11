@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { StarRating } from '@/components/ui/star-rating';
-import {
-  googleMapsProfileUrl,
-  hasDisplayableGoogleReviews,
-} from '@/lib/verification/google-profile-url';
+import { MetricLabel } from '@/components/trust/metric-label';
+import { googleMapsProfileUrl } from '@/lib/verification/google-profile-url';
+import { PROFILE_METRIC_TOOLTIPS } from '@/lib/trust/profile-metrics';
+import { buildGoogleAttributionSearchUrl } from '@/lib/trust/review-display-policy';
 import type { GooglePlacesData } from '@/lib/verification/types';
 
 function GoogleWordmark({ className }: { className?: string }) {
@@ -24,29 +24,42 @@ function GoogleWordmark({ className }: { className?: string }) {
 type Props = {
   data: GooglePlacesData | null | undefined;
   companyName: string;
+  attributableOnSiteCount?: number;
 };
 
-export function GoogleReviewsSection({ data, companyName }: Props) {
+export function GoogleReviewsSection({
+  data,
+  companyName,
+  attributableOnSiteCount = 0,
+}: Props) {
   const profileUrl = data ? googleMapsProfileUrl(data) : null;
-  const hasData = hasDisplayableGoogleReviews(data);
+  const hasApiSnapshot = Boolean(
+    data?.status === 'ok' && data.rating != null && data.rating > 0
+  );
+  const partialData: GooglePlacesData | null =
+    data?.status === 'ok' && !hasApiSnapshot ? data : null;
+  const showPartial =
+    partialData != null &&
+    Boolean(
+      partialData.review_snippets?.length ||
+        partialData.review_count != null ||
+        partialData.rating != null
+    );
 
   return (
-    <Card className="overflow-hidden border-l-4 border-l-[#4285F4] bg-gradient-to-br from-white to-[#f8faff] dark:from-background dark:to-[#0d1117]">
+    <Card className="overflow-hidden border-l-4 border-l-[#4285F4] bg-gradient-to-br from-white to-[#f8faff] dark:from-background dark:to-[#0d1117] mb-8">
       <CardHeader className="pb-3">
         <CardTitle className="flex flex-wrap items-center gap-2 text-lg">
           <GoogleWordmark className="font-semibold tracking-tight" />
           <span className="text-foreground font-medium">Reviews from Google</span>
         </CardTitle>
-        <p className="text-xs text-muted-foreground">
-          Licensed business ratings from Google Places — separate from Move Trust Hub moderated reviews.
-        </p>
+        <MetricLabel
+          label="Google Places API snapshot"
+          tooltip={PROFILE_METRIC_TOOLTIPS.googlePlaces}
+        />
       </CardHeader>
       <CardContent className="space-y-4">
-        {!hasData ? (
-          <p className="text-sm text-muted-foreground rounded-md border border-dashed bg-muted/20 px-4 py-6 text-center">
-            Google data not yet available for {companyName}.
-          </p>
-        ) : (
+        {hasApiSnapshot && data ? (
           <>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
@@ -56,10 +69,16 @@ export function GoogleReviewsSection({ data, companyName }: Props) {
                   </span>
                   <StarRating rating={data.rating!} size="lg" showNumber={false} />
                 </div>
-                <p className="text-sm text-muted-foreground mt-1">
+                <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
                   {data.review_count != null
-                    ? `${data.review_count.toLocaleString()} Google review${data.review_count === 1 ? '' : 's'}`
-                    : 'Google reviews'}
+                    ? `${data.review_count.toLocaleString()} reviews on Google Maps (API snapshot)`
+                    : 'Google Maps reviews'}
+                  {attributableOnSiteCount > 0 ? (
+                    <span className="block text-xs mt-1">
+                      Plus {attributableOnSiteCount} attributed excerpt
+                      {attributableOnSiteCount === 1 ? '' : 's'} published on Move Trust Hub below.
+                    </span>
+                  ) : null}
                 </p>
                 {data.name ? (
                   <p className="text-xs text-muted-foreground mt-1">{data.name}</p>
@@ -101,13 +120,76 @@ export function GoogleReviewsSection({ data, companyName }: Props) {
               </ul>
             ) : null}
 
-            <p className="text-[11px] text-muted-foreground border-t pt-3">
+            <p className="text-[11px] text-muted-foreground border-t pt-3 leading-relaxed">
               {data.last_fetched
                 ? `Google Places data last updated ${new Date(data.last_fetched).toLocaleDateString()}. `
                 : ''}
               Excerpts are attributed to named Google reviewers where provided by the API.
             </p>
           </>
+        ) : showPartial && partialData ? (
+          <div className="rounded-md border bg-muted/20 px-4 py-4 text-sm space-y-2">
+            <p className="text-muted-foreground leading-relaxed">
+              Partial Google Places data is on file for {companyName}.
+              {partialData.review_count != null
+                ? ` Google reports ${partialData.review_count.toLocaleString()} reviews`
+                : ''}
+              {partialData.rating != null ? ` at ${partialData.rating.toFixed(1)}★` : ''}.
+            </p>
+            {profileUrl ? (
+              <Link
+                href={profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1a73e8] hover:underline"
+              >
+                Open Google Maps profile
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+              </Link>
+            ) : null}
+          </div>
+        ) : attributableOnSiteCount > 0 ? (
+          <div className="rounded-md border border-dashed bg-muted/20 px-4 py-5 text-sm text-center space-y-2">
+            <p className="text-muted-foreground leading-relaxed">
+              A live Google Places snapshot is not loaded for this profile, but Move Trust Hub
+              publishes {attributableOnSiteCount} attributed Google review
+              {attributableOnSiteCount === 1 ? '' : 's'} below with named reviewers.
+            </p>
+            <Link
+              href="#attributed-reviews"
+              className="text-primary font-medium hover:underline underline-offset-2"
+            >
+              Jump to attributed on-site reviews
+            </Link>
+            <p className="text-xs text-muted-foreground">
+              Or{' '}
+              <Link
+                href={buildGoogleAttributionSearchUrl(companyName)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2"
+              >
+                search {companyName} on Google
+              </Link>{' '}
+              to confirm the latest public rating.
+            </p>
+          </div>
+        ) : (
+          <div className="rounded-md border border-dashed bg-muted/20 px-4 py-6 text-center space-y-2">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Google Places data is not loaded for {companyName}. Use industry-reported ratings in
+              the stats above, or confirm directly on Google Maps before booking.
+            </p>
+            <Link
+              href={buildGoogleAttributionSearchUrl(companyName)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1a73e8] hover:underline"
+            >
+              Search Google for {companyName}
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+            </Link>
+          </div>
         )}
       </CardContent>
     </Card>

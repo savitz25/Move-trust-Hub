@@ -9,12 +9,12 @@ import { LicenseMetadataDescription } from '@/components/trust/license-display';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
-import { StarRating } from '@/components/ui/star-rating';
+import { CompanyProfileStats, FmcsaSafetyMetric } from '@/components/company/company-profile-stats';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
 
 interface Props {
@@ -43,10 +43,6 @@ export default async function AutoTransportProfilePage({ params }: Props) {
   const company = await getAutoTransportBySlugAsync(slug);
 
   if (!company) notFound();
-
-  const complaintRatio = company.fmcsaShipments 
-    ? ((company.fmcsaComplaints / company.fmcsaShipments) * 1000).toFixed(2) 
-    : 'N/A';
 
   const verifiedLabel = directoryVerifiedLabel(company);
   const trustSignals = [
@@ -80,36 +76,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
         </div>
       </div>
 
-      {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">OVERALL RATING</div>
-          <div className="flex items-baseline gap-2 mt-0.5">
-            <StarRating rating={company.overallRating} size="lg" />
-            <span className="text-xs text-muted-foreground" title="Industry-reported volume from third-party platforms">
-              (<EditorialReviewVolume count={company.reviewCount} />)
-            </span>
-          </div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">REPUTATION SCORE</div>
-          <div className="text-4xl font-semibold mt-0.5 tabular-nums text-primary">{company.reputationScore}<span className="text-xl font-normal text-muted-foreground">/100</span></div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">AVG PRICE (cross-country open)</div>
-          <div className="text-3xl font-semibold mt-1 tabular-nums">${company.avgPricePerMove.toLocaleString()}</div>
-          <div className="text-xs text-muted-foreground mt-0.5">{company.priceRange}</div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">COMPLAINT RATIO (per 1,000 shipments)</div>
-          <div className="text-3xl font-semibold mt-1 tabular-nums">{complaintRatio}</div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">COVERAGE</div>
-          <div className="mt-1 text-xl font-medium">{company.coverage}</div>
-          <div className="text-xs text-muted-foreground mt-1">Open & Enclosed available</div>
-        </Card>
-      </div>
+      <CompanyProfileStats company={company} variant="auto-transport" />
 
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Main Info */}
@@ -150,8 +117,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
               <FmcsaDotCompliance company={company} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>
-                  <div className="font-medium mt-0.5">{company.fmcsaSafetyRating}</div>
+                  <FmcsaSafetyMetric rating={company.fmcsaSafetyRating} />
                 </div>
                 <div>
                   <div className="text-muted-foreground text-xs">BBB Rating</div>

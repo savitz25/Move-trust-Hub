@@ -3,18 +3,21 @@ import { getCompanyBySlugAsync, getReviews } from '@/lib/data-server';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCompanyDirectorySchemaGraph } from '@/lib/seo/build-company-directory-schema';
 import { SITE_URL } from '@/lib/seo/site-metadata';
-import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { ReviewsSection } from '@/components/reviews/reviews-section';
+import { AttributedReviewsPanel } from '@/components/reviews/attributed-reviews-panel';
+import { CompanyProfileStats, FmcsaSafetyMetric } from '@/components/company/company-profile-stats';
+import { CompanyProfileReviewSources } from '@/components/company/company-profile-review-sources';
+import { getCompanyAttributableReviewCount } from '@/lib/trust/review-display-policy';
 import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
 import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
-import { CoverageMap } from '@/components/map/coverage-map';
+import { CoverageAreaCard } from '@/components/map/coverage-area-card';
 import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
-import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { MetricLabel } from '@/components/trust/metric-label';
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
@@ -25,7 +28,6 @@ import {
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
 import { LicenseMetadataDescription } from '@/components/trust/license-display';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
-import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
@@ -77,7 +79,7 @@ export default async function CompanyProfilePage({ params }: Props) {
     editorialReviewCount: company.reviewCount,
     editorialRating: company.overallRating,
   });
-  const complaintRatio = (company.fmcsaComplaints / Math.max(company.fmcsaShipments, 1) * 1000).toFixed(2);
+  const attributableOnSiteCount = getCompanyAttributableReviewCount(company.id);
 
   const reviewHref = reviewUrlForDirectoryCompany({
     usdotNumber: company.usdotNumber,
@@ -144,39 +146,15 @@ export default async function CompanyProfilePage({ params }: Props) {
         </div>
       </div>
 
-      {/* Quick Stats Bar */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">OVERALL RATING</div>
-          <div className="flex items-baseline gap-2 mt-0.5">
-            <StarRating rating={company.overallRating} size="lg" />
-            <span className="text-xs text-muted-foreground" title="Industry-reported volume from third-party platforms">
-              (<EditorialReviewVolume count={company.reviewCount} />)
-            </span>
-          </div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">REPUTATION SCORE</div>
-          <div className="text-4xl font-semibold mt-0.5 tabular-nums text-primary">{company.reputationScore}<span className="text-xl font-normal text-muted-foreground">/100</span></div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">AVG. PRICE (3BR CROSS-COUNTRY)</div>
-          <div className="text-3xl font-semibold mt-0.5 tabular-nums">${company.avgPricePerMove.toLocaleString()}</div>
-          <div className="text-xs">{company.priceRange}</div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">FMCSA COMPLAINT RATIO</div>
-          <div className="text-3xl font-semibold mt-0.5 tabular-nums">{complaintRatio}</div>
-          <div className="text-xs">per 1,000 shipments</div>
-        </Card>
-        <Card className="p-4">
-          <div className="text-xs text-muted-foreground">COVERAGE</div>
-          <div className="font-semibold mt-1">{company.coverage}</div>
-          <div className="text-xs mt-1 text-emerald-600 flex items-center gap-1"><ShieldCheck className="h-3.5 w-3.5" /> {company.services.join(' • ')}</div>
-        </Card>
-      </div>
+      <CompanyProfileStats company={company} />
 
-      <GoogleReviewsSection data={company.googleData} companyName={company.name} />
+      <CompanyProfileReviewSources company={company} googleData={company.googleData} />
+
+      <GoogleReviewsSection
+        data={company.googleData}
+        companyName={company.name}
+        attributableOnSiteCount={attributableOnSiteCount}
+      />
 
       <div className="grid lg:grid-cols-3 gap-6 mt-8">
         {/* Left/Main column */}
@@ -206,16 +184,19 @@ export default async function CompanyProfilePage({ params }: Props) {
                 <FmcsaDotCompliance company={company} />
               </div>
               <div>
-                <div className="text-muted-foreground text-xs">FMCSA Safety Rating</div>
-                <div>
+                <FmcsaSafetyMetric rating={company.fmcsaSafetyRating} />
+                <div className="mt-2">
                   <Badge variant={company.fmcsaSafetyRating === 'Satisfactory' ? 'success' : 'warning'}>
                     {company.fmcsaSafetyRating}
                   </Badge>
                 </div>
               </div>
               <div>
-                <div className="text-muted-foreground text-xs">FMCSA complaints (12 mo)</div>
-                <div>
+                <MetricLabel
+                  label="FMCSA complaints (12 mo)"
+                  tooltip="Consumer complaints filed with FMCSA in the last 12 months, compared to total household-goods shipments."
+                />
+                <div className="mt-1 text-sm">
                   {(company.complaintsLast12m ?? company.fmcsaComplaints).toLocaleString()} complaints on{' '}
                   {company.fmcsaShipments.toLocaleString()} shipments
                 </div>
@@ -288,10 +269,11 @@ export default async function CompanyProfilePage({ params }: Props) {
             mcNumber={company.mcNumber}
           />
 
-          <ReviewTransparencyNote className="mb-4" />
-
-          {/* Attributed Google reviews (on-site only) */}
-          <ReviewsSection companyId={company.id} companyName={company.name} initialReviews={reviews} />
+          <AttributedReviewsPanel
+            companyId={company.id}
+            companyName={company.name}
+            initialReviews={reviews}
+          />
         </div>
 
         {/* Sidebar */}
@@ -316,7 +298,7 @@ export default async function CompanyProfilePage({ params }: Props) {
             </CardContent>
           </Card>
 
-          <CoverageMap
+          <CoverageAreaCard
             companyName={company.name}
             coverage={company.coverage}
             headquarters={company.headquarters}
