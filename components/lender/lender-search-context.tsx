@@ -12,9 +12,15 @@ import {
 import { useRouter, useSearchParams } from 'next/navigation';
 import { trackZipSearch } from '@/components/ga-events';
 import { hubPath } from '@/lib/hub/paths';
-import { getCountyFromZip } from '@/lib/lender/lenders';
 import type { Lender } from '@/lib/lender/mockData';
 import { searchLenders } from '@/lib/lender/search-lenders';
+import {
+  isLenderZipQuery,
+  resolveLenderNameResultsPath,
+  resolveLenderZipTarget,
+} from '@/lib/lender/lender-search-submit';
+
+type LenderSearchBasePath = '/local-lenders' | '/';
 
 type LenderSearchContextValue = {
   input: string;
@@ -25,6 +31,7 @@ type LenderSearchContextValue = {
   results: Lender[];
   totalCount: number;
   activeQuery: string;
+  basePath: LenderSearchBasePath;
 };
 
 const LenderSearchContext = createContext<LenderSearchContextValue | null>(null);
@@ -35,15 +42,13 @@ export function useLenderSearch() {
   return ctx;
 }
 
-function isZipQuery(value: string): boolean {
-  return /^\d{5}$/.test(value.trim());
-}
-
 export function LenderSearchProvider({
   lenders,
+  basePath = '/',
   children,
 }: {
   lenders: Lender[];
+  basePath?: LenderSearchBasePath;
   children: ReactNode;
 }) {
   const router = useRouter();
@@ -69,28 +74,22 @@ export function LenderSearchProvider({
     const trimmed = input.trim();
     if (!trimmed) return;
 
-    if (isZipQuery(trimmed)) {
-      const zip = trimmed;
-      const county = getCountyFromZip(zip);
-      const target = county
-        ? `${hubPath('lender', `/local-lenders/${county.stateSlug}/${county.countySlug}`)}?zip=${zip}`
-        : `${hubPath('lender', '/local-lenders')}?zip=${zip}`;
-      trackZipSearch({ hub: 'lender', zip, destination: target });
+    if (isLenderZipQuery(trimmed)) {
+      const target = resolveLenderZipTarget(trimmed);
+      trackZipSearch({ hub: 'lender', zip: trimmed, destination: target });
       router.push(target);
       return;
     }
 
     setActiveQuery(trimmed);
-    const params = new URLSearchParams();
-    params.set('search', trimmed);
-    router.replace(`${hubPath('lender', '/')}?${params.toString()}`, { scroll: false });
-  }, [input, router]);
+    router.replace(resolveLenderNameResultsPath(trimmed, basePath), { scroll: false });
+  }, [input, router, basePath]);
 
   const clear = useCallback(() => {
     setInput('');
     setActiveQuery('');
-    router.replace(hubPath('lender', '/'), { scroll: false });
-  }, [router]);
+    router.replace(hubPath('lender', basePath), { scroll: false });
+  }, [router, basePath]);
 
   const value = useMemo(
     () => ({
@@ -102,8 +101,9 @@ export function LenderSearchProvider({
       results,
       totalCount: lenders.length,
       activeQuery,
+      basePath,
     }),
-    [input, submit, clear, hasQuery, results, lenders.length, activeQuery]
+    [input, submit, clear, hasQuery, results, lenders.length, activeQuery, basePath]
   );
 
   return <LenderSearchContext.Provider value={value}>{children}</LenderSearchContext.Provider>;

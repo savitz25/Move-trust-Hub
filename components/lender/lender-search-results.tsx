@@ -7,17 +7,29 @@ import { Button } from '@/components/ui/button';
 
 const PREVIEW_COUNT = 12;
 
-export function LenderSearchResults() {
+type Props = {
+  showPreview?: boolean;
+  compact?: boolean;
+};
+
+export function LenderSearchResults({ showPreview = true, compact = false }: Props) {
   const { hasQuery, results, totalCount, clear, activeQuery } = useLenderSearch();
+
+  if (!hasQuery && !showPreview) return null;
 
   const displayResults = hasQuery ? results : results.slice(0, PREVIEW_COUNT);
 
   return (
-    <section id="lender-search-results" className="scroll-mt-24 border-t bg-card py-12 md:py-16">
+    <section
+      id="lender-search-results"
+      className={`scroll-mt-24 ${compact ? 'py-8' : 'border-t bg-card py-12 md:py-16'}`}
+    >
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-6 max-w-3xl text-center">
-          <h2 className="text-2xl font-bold text-[#0A2540] md:text-3xl">Verified Mortgage Lenders</h2>
-          <p className="mt-2 text-sm text-zinc-600" role="status" aria-live="polite">
+          {!compact ? (
+            <h2 className="text-2xl font-bold text-[#0A2540] md:text-3xl">Verified Mortgage Lenders</h2>
+          ) : null}
+          <p className={`text-sm text-zinc-600 ${compact ? '' : 'mt-2'}`} role="status" aria-live="polite">
             {hasQuery ? (
               <>
                 Showing {results.length.toLocaleString()} lender{results.length !== 1 ? 's' : ''}
