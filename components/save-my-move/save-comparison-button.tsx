@@ -5,6 +5,7 @@ import { Bookmark } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import { saveComparisonAction } from '@/actions/save-my-move';
+import { stashPendingSaveAction } from '@/lib/save-my-move/pending-action';
 import { trackSaveMyMoveComparison } from '@/components/ga-events';
 import { toast } from 'sonner';
 
@@ -14,12 +15,19 @@ type SaveComparisonButtonProps = {
 };
 
 export function SaveComparisonButton({ companySlugs, className }: SaveComparisonButtonProps) {
-  const { requireAuth } = useSaveMyMove();
+  const { requireAuth, user } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
 
   if (companySlugs.length === 0) return null;
 
   const handleSave = async () => {
+    if (!user) {
+      stashPendingSaveAction({
+        type: 'comparison',
+        payload: { companySlugs },
+      });
+    }
+
     if (!requireAuth({ context: 'comparison', redirectPath: '/compare' })) return;
     setSaving(true);
     try {

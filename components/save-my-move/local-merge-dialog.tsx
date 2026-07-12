@@ -12,6 +12,7 @@ import { mergeLocalDataAction } from '@/actions/save-my-move';
 import {
   getLocalMergePayload,
   dismissMergeForSession,
+  clearLocalMergeStorage,
 } from '@/lib/save-my-move/local-merge';
 import { trackSaveMyMoveMerge } from '@/components/ga-events';
 import { toast } from 'sonner';
@@ -35,6 +36,7 @@ export function LocalMergeDialog({ open, onOpenChange }: LocalMergeDialogProps) 
         compareSlugs: payload.compareSlugs,
       });
       trackSaveMyMoveMerge({ merged_inventory: hasInventory, merged_compare: hasCompare });
+      clearLocalMergeStorage();
       toast.success('Saved to your account');
       onOpenChange(false);
     } catch {

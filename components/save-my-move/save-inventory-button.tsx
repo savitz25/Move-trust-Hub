@@ -5,6 +5,7 @@ import { Bookmark } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import { saveInventoryAction } from '@/actions/save-my-move';
+import { stashPendingSaveAction } from '@/lib/save-my-move/pending-action';
 import type { InventoryItem } from '@/store/calculator-store';
 import { trackSaveMyMoveInventory } from '@/components/ga-events';
 import { toast } from 'sonner';
@@ -28,19 +29,27 @@ export function SaveInventoryButton({
   size = 'sm',
   className,
 }: SaveInventoryButtonProps) {
-  const { requireAuth } = useSaveMyMove();
+  const { requireAuth, user } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
 
   if (inventory.length === 0) return null;
 
   const handleSave = async () => {
+    const name =
+      totalVolume > 0
+        ? `Move — ${Math.round(totalVolume)} cu ft`
+        : 'My Move Inventory';
+
+    if (!user) {
+      stashPendingSaveAction({
+        type: 'inventory',
+        payload: { name, inventory, mode, movePreset },
+      });
+    }
+
     if (!requireAuth({ context: 'inventory', redirectPath: '/moving-calculator' })) return;
     setSaving(true);
     try {
-      const name =
-        totalVolume > 0
-          ? `Move — ${Math.round(totalVolume)} cu ft`
-          : 'My Move Inventory';
       await saveInventoryAction({
         name,
         inventory,

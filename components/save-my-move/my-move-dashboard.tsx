@@ -23,7 +23,20 @@ import {
 } from '@/actions/account';
 import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import type { InventoryItem } from '@/store/calculator-store';
+import { generateInventoryPdf } from '@/lib/moving-calculator/pdf-export';
+import { MOVE_PRESETS } from '@/lib/moving-calculator/move-presets';
+import { trackPdfDownloaded } from '@/components/ga-events';
 import { toast } from 'sonner';
+
+function groupInventoryByRoom(inventory: InventoryItem[]): [string, InventoryItem[]][] {
+  const groups: Record<string, InventoryItem[]> = {};
+  for (const item of inventory) {
+    const room = item.room || 'Unassigned';
+    if (!groups[room]) groups[room] = [];
+    groups[room].push(item);
+  }
+  return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
+}
 
 type DashboardData = Awaited<ReturnType<typeof import('@/actions/save-my-move').getMyMoveDashboardData>>;
 
@@ -97,6 +110,30 @@ export function MyMoveDashboard({ initialData }: Props) {
     window.location.reload();
   };
 
+  const handleDownloadPdf = (
+    inventory: InventoryItem[],
+    totalVolume: number,
+    totalItems: number,
+    movePreset: string | null
+  ) => {
+    if (inventory.length === 0) {
+      toast.error('Inventory is empty');
+      return;
+    }
+    const presetLabel = movePreset
+      ? MOVE_PRESETS.find((p) => p.id === movePreset)?.label ?? null
+      : null;
+    generateInventoryPdf({
+      inventory,
+      groupedByRoom: groupInventoryByRoom(inventory),
+      totalVolume,
+      totalItems,
+      presetLabel,
+    });
+    trackPdfDownloaded({ volume: Math.round(totalVolume), item_count: totalItems });
+    toast.success('PDF downloaded');
+  };
+
   const handleEmailInventory = async (inventory: InventoryItem[], name: string) => {
     try {
       const res = await fetch('/api/save-my-move/email-inventory', {
@@ -156,6 +193,20 @@ export function MyMoveDashboard({ initialData }: Props) {
                     <Button
                       size="sm"
                       variant="outline"
+                      onClick={() =>
+                        handleDownloadPdf(
+                          items,
+                          Number(inv.total_volume ?? 0),
+                          inv.total_items ?? 0,
+                          inv.move_preset
+                        )
+                      }
+                    >
+                      <Download className="h-3.5 w-3.5 mr-1" /> Download PDF
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
                       onClick={() => handleEmailInventory(items, inv.name)}
                     >
                       <Mail className="h-3.5 w-3.5 mr-1" /> Email to me
@@ -198,7 +249,7 @@ export function MyMoveDashboard({ initialData }: Props) {
                       href={`/companies/${mover.company_slug}`}
                       className="font-medium text-primary hover:underline flex items-center gap-1"
                     >
-                      {mover.company_slug.replace(/-/g, ' ')}
+                      {data.companyNames[mover.company_slug] ?? mover.company_slug.replace(/-/g, ' ')}
                       <ExternalLink className="h-3 w-3" />
                     </Link>
                     <Input

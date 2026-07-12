@@ -1,14 +1,15 @@
 import { NextResponse } from 'next/server';
-import { createHash } from 'crypto';
 import { createClient } from '@/lib/supabase/server';
-import { createAdminClient } from '@/lib/supabase/admin';
-import { isSupabaseConfigured } from '@/lib/supabase/config';
+import { isSupabaseAdminConfigured, isSupabaseConfigured } from '@/lib/supabase/config';
+import { checkMagicLinkRateLimit } from '@/lib/save-my-move/magic-link-rate-limit';
+import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 
-const MAX_REQUESTS_PER_HOUR = 5;
-const WINDOW_MS = 60 * 60 * 1000;
-
-function hashEmail(email: string): string {
-  return createHash('sha256').update(email.toLowerCase().trim()).digest('hex');
+function getClientIp(request: Request): string | null {
+  return (
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    request.headers.get('x-real-ip') ||
+    null
+  );
 }
 
 export async function POST(request: Request) {
@@ -28,49 +29,30 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Valid email required' }, { status: 400 });
   }
 
-  const emailHash = hashEmail(email);
-
   try {
-    const admin = createAdminClient();
-    const now = new Date();
-    const { data: existing } = await admin
-      .from('magic_link_rate_limits')
-      .select('*')
-      .eq('email_hash', emailHash)
-      .maybeSingle();
-
-    if (existing) {
-      const windowStart = new Date(existing.window_start).getTime();
-      const inWindow = now.getTime() - windowStart < WINDOW_MS;
-      if (inWindow && existing.request_count >= MAX_REQUESTS_PER_HOUR) {
-        return NextResponse.json(
-          { error: 'Too many requests. Try again in an hour.' },
-          { status: 429 }
-        );
-      }
-      await admin.from('magic_link_rate_limits').upsert({
-        email_hash: emailHash,
-        request_count: inWindow ? existing.request_count + 1 : 1,
-        window_start: inWindow ? existing.window_start : now.toISOString(),
-        last_request_at: now.toISOString(),
-      });
-    } else {
-      await admin.from('magic_link_rate_limits').insert({
-        email_hash: emailHash,
-        request_count: 1,
-        window_start: now.toISOString(),
-        last_request_at: now.toISOString(),
-      });
+    const rateCheck = await checkMagicLinkRateLimit({
+      email,
+      ip: getClientIp(request),
+    });
+    if (!rateCheck.allowed) {
+      return NextResponse.json({ error: rateCheck.reason }, { status: 429 });
     }
   } catch (err) {
     console.error('[magic-link] rate limit check failed', err);
-    // Continue — rate limit is best-effort if table not migrated yet
+    if (isSupabaseAdminConfigured()) {
+      return NextResponse.json(
+        { error: 'Sign-in temporarily unavailable. Try again shortly.' },
+        { status: 503 }
+      );
+    }
   }
 
   const origin = new URL(request.url).origin;
-  const next = body.next?.startsWith('/') ? body.next : '/my-move';
+  const next = sanitizePostLoginPath(body.next);
   const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(next)}`;
 
+  // Google OAuth and magic link with the same email address resolve to one
+  // auth.users row automatically (Supabase Auth identity linking).
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithOtp({
     email,

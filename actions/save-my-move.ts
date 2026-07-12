@@ -207,12 +207,64 @@ export async function getSavedInventoryAction(id: string) {
   return data;
 }
 
+export async function getCompanyNamesBySlugs(
+  slugs: string[]
+): Promise<Record<string, string>> {
+  const unique = [...new Set(slugs.map((s) => s.trim()).filter(Boolean))];
+  if (unique.length === 0) return {};
+
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from('companies')
+    .select('slug, name')
+    .in('slug', unique);
+
+  const names: Record<string, string> = {};
+  for (const row of data ?? []) {
+    names[row.slug] = row.name;
+  }
+  for (const slug of unique) {
+    if (!names[slug]) {
+      names[slug] = slug.replace(/-/g, ' ');
+    }
+  }
+  return names;
+}
+
+async function ensureUserProfile(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  user: { id: string; email?: string | null }
+) {
+  const { data: existing } = await supabase
+    .from('user_profiles')
+    .select('*')
+    .eq('id', user.id)
+    .maybeSingle();
+
+  if (existing) return existing;
+
+  const { data: created, error } = await supabase
+    .from('user_profiles')
+    .upsert(
+      {
+        id: user.id,
+        email: user.email?.trim().toLowerCase() ?? '',
+      },
+      { onConflict: 'id' }
+    )
+    .select('*')
+    .single();
+
+  if (error) throw new Error(error.message);
+  return created;
+}
+
 export async function getMyMoveDashboardData() {
   const user = await requireAuthenticatedUser();
   const supabase = await createClient();
+  const profile = await ensureUserProfile(supabase, user);
 
-  const [profileRes, inventoriesRes, moversRes, comparisonsRes] = await Promise.all([
-    supabase.from('user_profiles').select('*').eq('id', user.id).maybeSingle(),
+  const [inventoriesRes, moversRes, comparisonsRes] = await Promise.all([
     supabase
       .from('saved_inventories')
       .select('*')
@@ -230,11 +282,15 @@ export async function getMyMoveDashboardData() {
       .order('created_at', { ascending: false }),
   ]);
 
+  const moverSlugs = (moversRes.data ?? []).map((m) => m.company_slug);
+  const companyNames = await getCompanyNamesBySlugs(moverSlugs);
+
   return {
-    user: { id: user.id, email: user.email ?? profileRes.data?.email ?? '' },
-    profile: profileRes.data,
+    user: { id: user.id, email: user.email ?? profile.email ?? '' },
+    profile,
     inventories: inventoriesRes.data ?? [],
     movers: moversRes.data ?? [],
     comparisons: comparisonsRes.data ?? [],
+    companyNames,
   };
 }

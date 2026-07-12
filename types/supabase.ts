@@ -428,6 +428,7 @@ export interface Database {
           name?: string | null;
         };
         Update: Partial<Database['public']['Tables']['saved_comparisons']['Row']>;
+        Relationships: [];
       };
       user_profiles: {
         Row: {
@@ -445,6 +446,7 @@ export interface Database {
           mover_alerts_opt_in?: boolean;
         };
         Update: Partial<Database['public']['Tables']['user_profiles']['Row']>;
+        Relationships: [];
       };
       saved_inventories: {
         Row: {
@@ -469,6 +471,7 @@ export interface Database {
           total_items?: number | null;
         };
         Update: Partial<Database['public']['Tables']['saved_inventories']['Row']>;
+        Relationships: [];
       };
       saved_movers: {
         Row: {
@@ -485,6 +488,7 @@ export interface Database {
           notes?: string | null;
         };
         Update: Partial<Database['public']['Tables']['saved_movers']['Row']>;
+        Relationships: [];
       };
       magic_link_rate_limits: {
         Row: {
@@ -500,6 +504,23 @@ export interface Database {
           last_request_at?: string;
         };
         Update: Partial<Database['public']['Tables']['magic_link_rate_limits']['Row']>;
+        Relationships: [];
+      };
+      magic_link_ip_rate_limits: {
+        Row: {
+          ip_hash: string;
+          request_count: number;
+          window_start: string;
+          last_request_at: string;
+        };
+        Insert: {
+          ip_hash: string;
+          request_count?: number;
+          window_start?: string;
+          last_request_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['magic_link_ip_rate_limits']['Row']>;
+        Relationships: [];
       };
     };
     Views: {

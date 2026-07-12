@@ -69,3 +69,10 @@ export function dismissMergeForSession(): void {
   if (typeof window === 'undefined') return;
   sessionStorage.setItem(LOCAL_MERGE_DISMISSED_KEY, '1');
 }
+
+/** Remove local-only calculator and compare data after a successful account merge. */
+export function clearLocalMergeStorage(): void {
+  if (typeof window === 'undefined') return;
+  localStorage.removeItem(CALCULATOR_KEY);
+  localStorage.removeItem(COMPARE_KEY);
+}

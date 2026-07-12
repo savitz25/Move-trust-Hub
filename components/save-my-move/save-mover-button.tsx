@@ -5,6 +5,7 @@ import { Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import { saveMoverAction } from '@/actions/save-my-move';
+import { stashPendingSaveAction } from '@/lib/save-my-move/pending-action';
 import { trackSaveMyMoveMover } from '@/components/ga-events';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
@@ -22,10 +23,17 @@ export function SaveMoverButton({
   variant = 'icon',
   className,
 }: SaveMoverButtonProps) {
-  const { requireAuth } = useSaveMyMove();
+  const { requireAuth, user } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
 
   const handleSave = async () => {
+    if (!user) {
+      stashPendingSaveAction({
+        type: 'mover',
+        payload: { companySlug, companyName },
+      });
+    }
+
     if (!requireAuth({ context: 'mover', redirectPath: `/companies/${companySlug}` })) return;
     setSaving(true);
     try {

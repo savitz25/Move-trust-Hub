@@ -52,8 +52,20 @@ export async function deleteAccountAction() {
     throw new Error('Account deletion unavailable');
   }
 
-  // Cascade via FK deletes user_profiles, saved_inventories, saved_movers, saved_comparisons
-  const { error } = await admin.auth.admin.deleteUser(user.id);
+  // Belt-and-suspenders: explicit deletes before auth user removal.
+  // FKs on auth.users also cascade (user_profiles, saved_inventories,
+  // saved_movers, saved_comparisons) — see 20260712190000_save_my_move.sql.
+  const userId = user.id;
+  const deleteErrors = await Promise.all([
+    admin.from('saved_inventories').delete().eq('user_id', userId),
+    admin.from('saved_movers').delete().eq('user_id', userId),
+    admin.from('saved_comparisons').delete().eq('user_id', userId),
+    admin.from('user_profiles').delete().eq('id', userId),
+  ]);
+  const firstDeleteError = deleteErrors.find((r) => r.error)?.error;
+  if (firstDeleteError) throw new Error(firstDeleteError.message);
+
+  const { error } = await admin.auth.admin.deleteUser(userId);
   if (error) throw new Error(error.message);
 
   const supabase = await createClient();

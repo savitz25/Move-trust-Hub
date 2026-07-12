@@ -38,6 +38,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         href: '/compare',
         description: 'Side-by-side up to 4 movers',
       },
+      {
+        label: 'My Move',
+        href: '/my-move',
+        description: 'Saved inventories, movers & comparisons',
+      },
     ],
   },
 ];
@@ -97,6 +102,7 @@ export const MOVE_NAV_AUDIT_PATHS = [
   '/local-movers',
   '/auto-transport',
   '/compare',
+  '/my-move',
   '/moving-to',
   '/moving-calculator',
   '/verify-dot',
