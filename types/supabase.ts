@@ -15,7 +15,7 @@ export type Json =
 export type QuoteStatus = 'new' | 'contacted' | 'matched' | 'closed' | 'spam';
 export type QuoteServiceType = 'moving' | 'auto-transport';
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       companies: {
@@ -70,6 +70,7 @@ export interface Database {
         };
         Insert: Partial<Database['public']['Tables']['companies']['Row']>;
         Update: Partial<Database['public']['Tables']['companies']['Row']>;
+        Relationships: [];
       };
       company_destination_assignments: {
         Row: {
@@ -95,6 +96,7 @@ export interface Database {
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['company_destination_assignments']['Row']>;
+        Relationships: [];
       };
       bbb_refresh_runs: {
         Row: {
@@ -115,6 +117,7 @@ export interface Database {
         };
         Insert: Partial<Database['public']['Tables']['bbb_refresh_runs']['Row']>;
         Update: Partial<Database['public']['Tables']['bbb_refresh_runs']['Row']>;
+        Relationships: [];
       };
       bbb_change_log: {
         Row: {
@@ -131,6 +134,7 @@ export interface Database {
         };
         Insert: Partial<Database['public']['Tables']['bbb_change_log']['Row']>;
         Update: Partial<Database['public']['Tables']['bbb_change_log']['Row']>;
+        Relationships: [];
       };
       fmcsa_refresh_runs: {
         Row: {
@@ -151,6 +155,7 @@ export interface Database {
         };
         Insert: Partial<Database['public']['Tables']['fmcsa_refresh_runs']['Row']>;
         Update: Partial<Database['public']['Tables']['fmcsa_refresh_runs']['Row']>;
+        Relationships: [];
       };
       fmcsa_change_log: {
         Row: {
@@ -167,6 +172,7 @@ export interface Database {
         };
         Insert: Partial<Database['public']['Tables']['fmcsa_change_log']['Row']>;
         Update: Partial<Database['public']['Tables']['fmcsa_change_log']['Row']>;
+        Relationships: [];
       };
       reviews: {
         Row: {
@@ -184,6 +190,7 @@ export interface Database {
         };
         Insert: Partial<Database['public']['Tables']['reviews']['Row']>;
         Update: Partial<Database['public']['Tables']['reviews']['Row']>;
+        Relationships: [];
       };
       quote_requests: {
         Row: {
@@ -229,6 +236,7 @@ export interface Database {
           status?: QuoteStatus;
         };
         Update: Partial<Database['public']['Tables']['quote_requests']['Row']>;
+        Relationships: [];
       };
       saved_quotes: {
         Row: {
@@ -247,6 +255,7 @@ export interface Database {
           payload?: Json;
         };
         Update: Partial<Database['public']['Tables']['saved_quotes']['Row']>;
+        Relationships: [];
       };
       moving_companies: {
         Row: {
@@ -274,6 +283,7 @@ export interface Database {
           name: string;
         };
         Update: Partial<Database['public']['Tables']['moving_companies']['Row']>;
+        Relationships: [];
       };
       company_reviews: {
         Row: {
@@ -315,6 +325,7 @@ export interface Database {
           user_id?: string | null;
         };
         Update: Partial<Database['public']['Tables']['company_reviews']['Row']>;
+        Relationships: [];
       };
       review_rate_limits: {
         Row: {
@@ -330,6 +341,7 @@ export interface Database {
           email_hash?: string | null;
         };
         Update: Partial<Database['public']['Tables']['review_rate_limits']['Row']>;
+        Relationships: [];
       };
       dot_verifications: {
         Row: {
@@ -347,6 +359,7 @@ export interface Database {
           source_page?: string | null;
         };
         Update: Partial<Database['public']['Tables']['dot_verifications']['Row']>;
+        Relationships: [];
       };
       company_suggestions: {
         Row: {
@@ -399,6 +412,7 @@ export interface Database {
           public_scrape_data?: Json | null;
         };
         Update: Partial<Database['public']['Tables']['company_suggestions']['Row']>;
+        Relationships: [];
       };
       suggestion_rate_limits: {
         Row: {
@@ -412,6 +426,7 @@ export interface Database {
           email_hash: string;
         };
         Update: Partial<Database['public']['Tables']['suggestion_rate_limits']['Row']>;
+        Relationships: [];
       };
       saved_comparisons: {
         Row: {
@@ -531,7 +546,17 @@ export interface Database {
           with_phone: number;
           attributed: number;
         };
+        Relationships: [];
       };
     };
+    Functions: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+    CompositeTypes: {
+      [_ in never]: never;
+    };
   };
-}
+};

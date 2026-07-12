@@ -15,12 +15,13 @@ type SaveComparisonButtonProps = {
 };
 
 export function SaveComparisonButton({ companySlugs, className }: SaveComparisonButtonProps) {
-  const { requireAuth, user } = useSaveMyMove();
+  const { requireAuth, user, loading } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
 
   if (companySlugs.length === 0) return null;
 
   const handleSave = async () => {
+    if (loading) return;
     if (!user) {
       stashPendingSaveAction({
         type: 'comparison',
@@ -42,7 +43,7 @@ export function SaveComparisonButton({ companySlugs, className }: SaveComparison
   };
 
   return (
-    <Button variant="outline" size="sm" onClick={handleSave} disabled={saving} className={className}>
+    <Button variant="outline" size="sm" onClick={handleSave} disabled={saving || loading} className={className}>
       <Bookmark className="h-3.5 w-3.5 mr-1.5" />
       {saving ? 'Saving…' : 'Save this comparison'}
     </Button>

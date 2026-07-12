@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   Package, Heart, GitCompare, Download, Trash2, Mail, ExternalLink,
@@ -13,6 +13,7 @@ import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import {
   deleteInventoryAction,
   deleteComparisonAction,
+  getMyMoveDashboardData,
   removeSavedMoverAction,
   updateMoverNotesAction,
 } from '@/actions/save-my-move';
@@ -47,26 +48,67 @@ type Props = {
 export function MyMoveDashboard({ initialData }: Props) {
   const { user, loading, openSaveModal } = useSaveMyMove();
   const [data, setData] = useState(initialData);
+  const [dataLoading, setDataLoading] = useState(false);
+  const [dataError, setDataError] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
-  if (loading) {
+  useEffect(() => {
+    if (!user || data) return;
+
+    let cancelled = false;
+    setDataLoading(true);
+    setDataError(false);
+
+    getMyMoveDashboardData()
+      .then((next) => {
+        if (!cancelled) setData(next);
+      })
+      .catch(() => {
+        if (!cancelled) setDataError(true);
+      })
+      .finally(() => {
+        if (!cancelled) setDataLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [user, data]);
+
+  if (loading || (user && !data && dataLoading)) {
     return <div className="h-40 rounded-xl border bg-muted/20 animate-pulse" />;
   }
 
-  if (!user || !data) {
+  if (!user) {
     return (
       <Card className="p-8 text-center">
         <Package className="h-10 w-10 mx-auto text-primary/60 mb-3" />
         <p className="text-muted-foreground mb-4">
           Sign in to access saved inventories, mover shortlists, and comparisons.
         </p>
-        <Button onClick={() => openSaveModal({ redirectPath: '/my-move' })}>
+        <Button onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}>
           Save My Move
         </Button>
         <p className="text-xs text-muted-foreground mt-4">
           No password needed — Google or a one-time email link.
         </p>
+      </Card>
+    );
+  }
+
+  if (!data) {
+    return (
+      <Card className="p-8 text-center">
+        <Package className="h-10 w-10 mx-auto text-primary/60 mb-3" />
+        <p className="text-muted-foreground mb-4">
+          {dataError
+            ? 'Could not load your saved data. Please try again.'
+            : 'Loading your saved data…'}
+        </p>
+        {dataError && (
+          <Button onClick={() => window.location.reload()}>Retry</Button>
+        )}
       </Card>
     );
   }

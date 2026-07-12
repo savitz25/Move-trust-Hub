@@ -171,12 +171,20 @@ export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) 
 
   const requireAuth = useCallback(
     (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => {
+      if (loading) return false;
       if (user) return true;
       openSaveModal(opts);
       return false;
     },
-    [user, openSaveModal]
+    [loading, user, openSaveModal]
   );
+
+  // Resume a stashed save if auth resolved after the user clicked save during loading.
+  useEffect(() => {
+    if (!loading && user) {
+      void executePendingSaveAction();
+    }
+  }, [loading, user, executePendingSaveAction]);
 
   const value = useMemo(
     () => ({

@@ -23,12 +23,12 @@ export function SaveMoverButton({
   variant = 'icon',
   className,
 }: SaveMoverButtonProps) {
-  const { requireAuth, user, isMoverSaved, markMoverSaved } = useSaveMyMove();
+  const { requireAuth, user, loading, isMoverSaved, markMoverSaved } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
   const saved = user ? isMoverSaved(companySlug) : false;
 
   const handleSave = async () => {
-    if (saved) return;
+    if (loading || saved) return;
 
     if (!user) {
       stashPendingSaveAction({
@@ -57,7 +57,7 @@ export function SaveMoverButton({
         variant={saved ? 'secondary' : 'outline'}
         size="sm"
         onClick={handleSave}
-        disabled={saving || saved}
+        disabled={saving || saved || loading}
         className={className}
         aria-pressed={saved}
       >
@@ -71,7 +71,7 @@ export function SaveMoverButton({
     <button
       type="button"
       onClick={handleSave}
-      disabled={saving}
+      disabled={saving || saved || loading}
       className={cn(
         'inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
         saved

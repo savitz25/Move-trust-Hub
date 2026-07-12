@@ -29,12 +29,13 @@ export function SaveInventoryButton({
   size = 'sm',
   className,
 }: SaveInventoryButtonProps) {
-  const { requireAuth, user } = useSaveMyMove();
+  const { requireAuth, user, loading } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
 
   if (inventory.length === 0) return null;
 
   const handleSave = async () => {
+    if (loading) return;
     const name =
       totalVolume > 0
         ? `Move — ${Math.round(totalVolume)} cu ft`
@@ -74,7 +75,7 @@ export function SaveInventoryButton({
       size={size}
       className={className}
       onClick={handleSave}
-      disabled={saving}
+      disabled={saving || loading}
     >
       <Bookmark className="h-3.5 w-3.5 mr-1.5" />
       {saving ? 'Saving…' : 'Save this inventory'}
