@@ -42,6 +42,7 @@ export function MovingCalculatorClient() {
   const [mobileBasketOpen, setMobileBasketOpen] = useState(false);
   const calculatorStarted = useRef(false);
   const calculatorCompleted = useRef(false);
+  const savedLoadDone = useRef(false);
   const shareLoaded = useRef(false);
 
   const totalVolume = useMemo(
@@ -83,9 +84,31 @@ export function MovingCalculatorClient() {
     [undo]
   );
 
-  // Load shared inventory from URL
+  // Load saved inventory from account (?load=id)
   useEffect(() => {
-    if (shareLoaded.current) return;
+    const loadId = searchParams.get('load');
+    if (!loadId || savedLoadDone.current) return;
+    savedLoadDone.current = true;
+    fetch(`/api/save-my-move/inventory/${loadId}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!data?.inventory) return;
+        loadFromShare(
+          data.inventory,
+          data.mode ?? 'room',
+          data.move_preset ?? null
+        );
+        toast.success(`Loaded "${data.name}"`, {
+          description: 'Adjust quantities or add items as needed.',
+        });
+        markCalculatorStarted('saved_inventory');
+      })
+      .catch(() => {});
+  }, [searchParams, loadFromShare, markCalculatorStarted]);
+
+  // Load shared inventory from URL (?inv=)
+  useEffect(() => {
+    if (savedLoadDone.current || shareLoaded.current) return;
     const param = getShareParamFromUrl(searchParams.toString());
     if (!param) return;
     const shared = decodeShareParam(param);

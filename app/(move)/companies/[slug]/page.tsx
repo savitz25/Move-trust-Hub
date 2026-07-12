@@ -13,6 +13,7 @@ import { CompanyProfileReviewSources } from '@/components/company/company-profil
 import { getCompanyAttributableReviewCount } from '@/lib/trust/review-display-policy';
 import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
 import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
+import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CoverageAreaCard } from '@/components/map/coverage-area-card';
 import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
@@ -136,6 +137,11 @@ export default async function CompanyProfilePage({ params }: Props) {
             Visit official site <ExternalLink className="h-3.5 w-3.5" />
           </a>
           <UserReviewsCta href={reviewHref} />
+          <SaveMoverButton
+            companySlug={company.slug}
+            companyName={company.name}
+            variant="button"
+          />
           <Link href={`/compare?add=${company.slug}`}>
             <Button>Add to Compare</Button>
           </Link>

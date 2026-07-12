@@ -7,7 +7,7 @@ export const metadata = buildResourceMetadata(
   'How Move Trust Hub collects, uses, stores, and protects personal information from contact forms, reviews, and site usage. Learn how to request data deletion.'
 );
 
-const LAST_UPDATED = 'July 2, 2026';
+const LAST_UPDATED = 'July 12, 2026';
 
 const sections = [
   {
@@ -25,6 +25,7 @@ const sections = [
     list: [
       'Review submissions: reviewer name, email (kept private), rating, review text, optional photos, optional move date, and carrier DOT/MC number.',
       'Contact form: name, email, subject, and message content.',
+      'Save My Move (optional accounts): email address only, saved moving inventories, saved mover shortlists with private notes, saved comparisons, and email preference settings. Accounts are passwordless (Google sign-in or one-time email link).',
       'DOT verification searches: carrier number searched, timestamp, source page, and anonymized IP address for abuse prevention.',
       'Technical data: browser type, pages visited, and referral source via standard analytics (when enabled).',
     ],
@@ -36,6 +37,8 @@ const sections = [
     list: [
       'Moderate and publish customer reviews when approved.',
       'Respond to contact inquiries, data corrections, and privacy requests.',
+      'Store and sync your saved inventories and mover shortlists when you choose to use Save My Move.',
+      'Send transactional emails you request (sign-in links, inventory copies, requested documents). Marketing emails are off by default.',
       'Prevent spam, fraud, and abuse (rate limiting, duplicate review detection).',
       'Improve our directory, tools, and website performance.',
       'Comply with legal obligations.',
@@ -57,6 +60,7 @@ const sections = [
     title: 'Data retention',
     paragraphs: [
       'Review submissions are retained for moderation and display (approved reviews are published; rejected reviews are not shown publicly). Contact messages are retained as long as needed to resolve your inquiry.',
+      'Save My Move data is retained until you delete individual items or delete your account from the My Move dashboard. Account deletion permanently removes your email, saved inventories, mover shortlists, comparisons, and preferences.',
       'You may request deletion of your personal data at any time (see "Your rights" below).',
     ],
   },

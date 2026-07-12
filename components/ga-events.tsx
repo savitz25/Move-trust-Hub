@@ -108,6 +108,40 @@ export function trackBoxesSuggested(params: { box_count: number }) {
   });
 }
 
+export function trackSaveMyMoveAuth(params: { method: string }) {
+  trackGaEvent('save_my_move_auth_started', {
+    method: params.method,
+  });
+}
+
+export function trackSaveMyMoveInventory(params: { item_count: number }) {
+  trackGaEvent('save_my_move_inventory', {
+    item_count: params.item_count,
+  });
+}
+
+export function trackSaveMyMoveMover(params: { company_slug: string }) {
+  trackGaEvent('save_my_move_mover', {
+    company_slug: params.company_slug,
+  });
+}
+
+export function trackSaveMyMoveComparison(params: { mover_count: number }) {
+  trackGaEvent('save_my_move_comparison', {
+    mover_count: params.mover_count,
+  });
+}
+
+export function trackSaveMyMoveMerge(params: {
+  merged_inventory: boolean;
+  merged_compare: boolean;
+}) {
+  trackGaEvent('save_my_move_merge', {
+    merged_inventory: params.merged_inventory,
+    merged_compare: params.merged_compare,
+  });
+}
+
 export function trackLegacyArrival(params: {
   legacy_source: string;
   hub: string;

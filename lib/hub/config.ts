@@ -42,6 +42,7 @@ export const HUBS: Record<HubId, HubConfig> = {
         links: [
           { href: '/resources', label: 'Guides' },
           { href: '/moving-calculator', label: 'Calculator' },
+          { href: '/my-move', label: 'My Move (optional)' },
           { href: '/verify-dot', label: 'Verify DOT' },
           { href: '/review', label: 'Leave a Review' },
           { href: '/about', label: 'About' },

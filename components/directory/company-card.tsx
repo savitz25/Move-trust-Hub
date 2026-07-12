@@ -18,6 +18,7 @@ import {
 } from '@/lib/directory/normalize-company';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { MethodologyLink } from '@/components/trust/methodology-link';
+import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -107,7 +108,8 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
             rep • {formatAvgPricePerMove(company.avgPricePerMove)}
           </span>
         </div>
-        <div className="flex gap-2 shrink-0">
+        <div className="flex gap-2 shrink-0 items-center">
+          <SaveMoverButton companySlug={company.slug} companyName={company.name} />
           <Link href={reviewHref}>
             <Button size="sm" variant="ghost" className="h-8 px-2 text-xs">
               Review

@@ -420,6 +420,7 @@ export interface Database {
           company_slugs: string[];
           name: string | null;
           created_at: string;
+          updated_at?: string | null;
         };
         Insert: {
           user_id: string;
@@ -427,6 +428,78 @@ export interface Database {
           name?: string | null;
         };
         Update: Partial<Database['public']['Tables']['saved_comparisons']['Row']>;
+      };
+      user_profiles: {
+        Row: {
+          id: string;
+          email: string;
+          marketing_opt_in: boolean;
+          mover_alerts_opt_in: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          email: string;
+          marketing_opt_in?: boolean;
+          mover_alerts_opt_in?: boolean;
+        };
+        Update: Partial<Database['public']['Tables']['user_profiles']['Row']>;
+      };
+      saved_inventories: {
+        Row: {
+          id: string;
+          user_id: string;
+          name: string;
+          inventory: Json;
+          mode: string | null;
+          move_preset: string | null;
+          total_volume: number | null;
+          total_items: number | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          name?: string;
+          inventory?: Json;
+          mode?: string | null;
+          move_preset?: string | null;
+          total_volume?: number | null;
+          total_items?: number | null;
+        };
+        Update: Partial<Database['public']['Tables']['saved_inventories']['Row']>;
+      };
+      saved_movers: {
+        Row: {
+          id: string;
+          user_id: string;
+          company_slug: string;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          company_slug: string;
+          notes?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['saved_movers']['Row']>;
+      };
+      magic_link_rate_limits: {
+        Row: {
+          email_hash: string;
+          request_count: number;
+          window_start: string;
+          last_request_at: string;
+        };
+        Insert: {
+          email_hash: string;
+          request_count?: number;
+          window_start?: string;
+          last_request_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['magic_link_rate_limits']['Row']>;
       };
     };
     Views: {

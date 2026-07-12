@@ -109,11 +109,26 @@ Set `deleted_at = now()` instead of hard-deleting quote rows. Analytics exclude 
 - [ ] Enable Supabase daily backups (Pro plan) + Point-in-Time Recovery
 - [ ] Optional: Database Webhook → `process-quote` Edge Function
 
+## Save My Move (optional passwordless accounts)
+
+**Migration:** `supabase/migrations/20260712190000_save_my_move.sql`
+
+Tables: `user_profiles`, `saved_inventories`, `saved_movers`, `magic_link_rate_limits` (+ existing `saved_comparisons`).
+
+**Supabase Auth setup (Dashboard):**
+1. Enable **Google** provider (scopes: email, profile only).
+2. Set Site URL: `https://www.movetrusthub.com`
+3. Add redirect URL: `https://www.movetrusthub.com/auth/callback`
+4. **Email (magic link):** set OTP expiry to **900 seconds (15 min)** under Auth → Email.
+5. Disable email confirmations for magic link if double-confirm blocks sign-in.
+
+**Routes:** `/my-move` (dashboard), `/auth/callback`, `/api/auth/magic-link` (rate-limited).
+
 ## Growth roadmap
 
-| Feature | Schema ready | Code hook |
-|---------|--------------|-----------|
-| User accounts | `saved_quotes`, `saved_comparisons` | Supabase Auth + middleware |
-| Saved quotes | `saved_quotes` table | `auth.uid()` RLS |
-| Mover dashboards | extend `companies` ownership | service_role + Auth |
-| Realtime admin | Supabase Realtime on `quote_requests` | admin client subscribe |
+| Feature | Status |
+|---------|--------|
+| Save My Move accounts | Shipped — Google OAuth + magic link |
+| Saved inventories / movers / comparisons | `saved_inventories`, `saved_movers`, `saved_comparisons` |
+| Mover dashboards | extend `companies` ownership — future |
+| Realtime admin | Supabase Realtime on `quote_requests` — future |

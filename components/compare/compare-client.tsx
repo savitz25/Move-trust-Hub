@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { X } from 'lucide-react';
 import { getLicenseDisplay, LICENSE_PENDING_MESSAGE } from '@/lib/trust/company-display-policy';
+import { SaveComparisonButton } from '@/components/save-my-move/save-comparison-button';
 
 interface Props {
   allCompanies: Company[];
@@ -88,9 +89,12 @@ export function CompareClient({ allCompanies }: Props) {
 
   return (
     <div>
-      <div className="flex justify-between mb-4">
+      <div className="flex flex-wrap justify-between items-center gap-3 mb-4">
         <div className="text-sm text-muted-foreground">Showing {selected.length} of 4 companies</div>
-        <Button variant="outline" size="sm" onClick={store.clearAll}>Clear All</Button>
+        <div className="flex gap-2">
+          <SaveComparisonButton companySlugs={store.selectedSlugs} />
+          <Button variant="outline" size="sm" onClick={store.clearAll}>Clear All</Button>
+        </div>
       </div>
 
       <div className="overflow-x-auto border rounded-2xl bg-card">

@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AnimatedNumber } from '@/components/moving-calculator/animated-number';
 import { ExportActions } from '@/components/moving-calculator/export-actions';
+import { SaveInventoryButton } from '@/components/save-my-move/save-inventory-button';
 import {
   formatItemDisplayName,
   isSpecialHandlingItem,
@@ -279,6 +280,13 @@ export function MoveBasketSummary({
       {/* Export */}
       {inventory.length > 0 && (
         <div className="space-y-2">
+          <SaveInventoryButton
+            inventory={inventory}
+            mode={mode}
+            movePreset={movePreset}
+            totalVolume={totalVolume}
+            className="w-full"
+          />
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Export inventory</p>
           <ExportActions
             inventory={inventory}
