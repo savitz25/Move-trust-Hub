@@ -24,6 +24,7 @@ import {
 } from '@/actions/account';
 import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import type { InventoryItem } from '@/store/calculator-store';
+import { parseInventoryJson } from '@/lib/save-my-move/types';
 import { generateInventoryPdf } from '@/lib/moving-calculator/pdf-export';
 import { MOVE_PRESETS } from '@/lib/moving-calculator/move-presets';
 import { trackPdfDownloaded } from '@/components/ga-events';
@@ -219,7 +220,7 @@ export function MyMoveDashboard({ initialData }: Props) {
         ) : (
           <div className="space-y-3">
             {data.inventories.map((inv) => {
-              const items = (inv.inventory as InventoryItem[]) ?? [];
+              const items = parseInventoryJson(inv.inventory);
               return (
                 <Card key={inv.id}>
                   <CardHeader className="pb-2 flex flex-row items-center justify-between">

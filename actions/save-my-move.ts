@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
 import { requireAuthenticatedUser } from '@/lib/save-my-move/auth';
 import type { InventoryItem } from '@/store/calculator-store';
-import type { SavedInventoryPayload } from '@/lib/save-my-move/types';
+import { inventoryToJson, type SavedInventoryPayload } from '@/lib/save-my-move/types';
 
 function inventoryTotals(inventory: InventoryItem[]) {
   const totalVolume = inventory.reduce((s, i) => s + i.volume * i.quantity, 0);
@@ -29,7 +29,7 @@ export async function saveInventoryAction(input: {
       .from('saved_inventories')
       .update({
         name,
-        inventory: input.inventory,
+        inventory: inventoryToJson(input.inventory),
         mode: input.mode ?? 'room',
         move_preset: input.movePreset ?? null,
         total_volume: totalVolume,
@@ -49,7 +49,7 @@ export async function saveInventoryAction(input: {
     .insert({
       user_id: user.id,
       name,
-      inventory: input.inventory,
+      inventory: inventoryToJson(input.inventory),
       mode: input.mode ?? 'room',
       move_preset: input.movePreset ?? null,
       total_volume: totalVolume,

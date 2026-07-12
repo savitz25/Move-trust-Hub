@@ -1,4 +1,14 @@
 import type { InventoryItem, InputMode } from '@/store/calculator-store';
+import type { Json } from '@/types/supabase';
+
+export function inventoryToJson(items: InventoryItem[]): Json {
+  return items as unknown as Json;
+}
+
+export function parseInventoryJson(json: Json | null | undefined): InventoryItem[] {
+  if (!json || !Array.isArray(json)) return [];
+  return json as unknown as InventoryItem[];
+}
 
 export type SavedInventoryPayload = {
   inventory: InventoryItem[];
