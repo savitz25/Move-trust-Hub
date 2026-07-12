@@ -14,6 +14,7 @@ import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import { trackSaveMyMoveAuth } from '@/components/ga-events';
 import { toast } from 'sonner';
 import {
+  buildAuthCallbackRedirect,
   sanitizePostLoginPath,
   stashPostLoginRedirect,
 } from '@/lib/save-my-move/redirect';
@@ -54,13 +55,12 @@ export function SaveMyMoveModal({
     setLoading('google');
     trackSaveMyMoveAuth({ method: 'google' });
     stashPostLoginRedirect(safeRedirectPath);
-    const origin = window.location.origin;
     // Google OAuth and magic link with the same email merge into one Supabase
     // Auth user automatically (identity linking on matching email).
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${origin}/auth/callback?next=${encodeURIComponent(safeRedirectPath)}`,
+        redirectTo: buildAuthCallbackRedirect(safeRedirectPath),
         queryParams: { prompt: 'select_account' },
         scopes: 'email profile',
       },

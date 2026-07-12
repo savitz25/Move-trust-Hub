@@ -1,6 +1,21 @@
 /** Default landing page after Save My Move sign-in. */
 export const DEFAULT_POST_LOGIN_PATH = '/my-move';
 
+/**
+ * Canonical OAuth / magic-link callback — must match Supabase Auth redirect allowlist.
+ * Do not use window.location.origin; preview/staging hosts are not registered with Google.
+ */
+export const AUTH_CALLBACK_URL = 'https://www.movetrusthub.com/auth/callback';
+
+/** Build callback URL with optional post-login path (?next=). */
+export function buildAuthCallbackRedirect(next?: string | null): string {
+  const safeNext = sanitizePostLoginPath(next);
+  if (safeNext === DEFAULT_POST_LOGIN_PATH) {
+    return AUTH_CALLBACK_URL;
+  }
+  return `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(safeNext)}`;
+}
+
 const POST_LOGIN_REDIRECT_KEY = 'save-my-move-post-login-redirect';
 
 /**
