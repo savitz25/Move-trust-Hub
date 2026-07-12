@@ -4,6 +4,10 @@ import {
   extractPowerUnits,
   formatAuthorityStatus,
 } from '@/lib/fmcsa/carrier-fields';
+import {
+  formatEntityTypeLabel,
+  resolveEntityTypeFromFmcsaRaw,
+} from '@/lib/fmcsa/entity-type-display';
 import type { CompanyRefreshRow, FieldChange } from '@/lib/fmcsa/refresh/types';
 import type { FmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/types';
 
@@ -33,7 +37,9 @@ export function extractDisplayFieldsFromRow(
   const carrier = asCarrier(company.fmcsa_raw);
 
   return {
-    entityType: carrier ? extractEntityType(carrier) : null,
+    entityType: carrier
+      ? formatEntityTypeLabel(extractEntityType(carrier))
+      : null,
     usdotStatus: carrier
       ? deriveUsdotStatus(carrier)
       : company.out_of_service
@@ -58,7 +64,7 @@ export function extractDisplayFieldsFromSnapshot(
   const carrier = snapshot.raw;
 
   return {
-    entityType: extractEntityType(carrier),
+    entityType: resolveEntityTypeFromFmcsaRaw(carrier),
     usdotStatus: deriveUsdotStatus(carrier),
     powerUnits:
       extractPowerUnits(carrier) !== null

@@ -12,7 +12,9 @@ export function normalizeFmcsaEntityType(
 ): string | null {
   if (!entityType) return null;
   const trimmed = entityType.trim();
-  return trimmed || null;
+  if (!trimmed) return null;
+  if (trimmed.toLowerCase() === 'not available') return null;
+  return trimmed;
 }
 
 function entityTypeKey(entityType: string): string {

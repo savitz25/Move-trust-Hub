@@ -1,0 +1,23 @@
+{
+  "completedAt": "2026-07-12T15:55:27.966Z",
+  "dryRun": false,
+  "batchSize": 25,
+  "batchesRun": 6,
+  "durationSec": "77.6",
+  "processed": 129,
+  "updated": 9,
+  "unchanged": 120,
+  "failed": 0,
+  "removed": 0,
+  "dotCorrected": 0,
+  "changesDetected": 3,
+  "nameRecovered": 0,
+  "skippedExisting": 0,
+  "errors": [],
+  "entityTypes": {
+    "Carrier": 125,
+    "Carrier/Broker": 3,
+    "Broker": 1
+  },
+  "totalWithUsdot": 129
+}

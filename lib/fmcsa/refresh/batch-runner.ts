@@ -14,6 +14,7 @@ import type {
   CompanyRefreshRow,
   InactiveDotRemovalRecord,
 } from '@/lib/fmcsa/refresh/types';
+import { supportsEntityTypeColumn } from '@/lib/fmcsa/refresh/entity-type-column';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import type { ServiceType } from '@/types';
@@ -56,7 +57,8 @@ async function selectBatchCompanies(
 function buildFmcsaUpdatePayload(
   company: CompanyRefreshRow,
   snapshot: NonNullable<Awaited<ReturnType<typeof fetchFmcsaCarrierForCompany>>['snapshot']>,
-  dataHash: string
+  dataHash: string,
+  includeEntityTypeColumn: boolean
 ) {
   if (!snapshot) return null;
 
@@ -80,6 +82,7 @@ function buildFmcsaUpdatePayload(
 
   const nextMc = snapshot.mcNumber?.replace(/\D/g, '') || null;
   const payload: Record<string, unknown> = {
+    ...(includeEntityTypeColumn ? { entity_type: display.entityType } : {}),
     fmcsa_safety_rating: snapshot.safetyRating,
     fmcsa_complaints: snapshot.complaintsLast12m,
     fmcsa_shipments: snapshot.shipments,
@@ -182,6 +185,8 @@ export async function runFmcsaBatchRefresh(
   }
 
   const supabase = createAdminClient();
+  const batchMode = options.batchMode !== false;
+  const includeEntityTypeColumn = await supportsEntityTypeColumn(supabase);
   const totalWithUsdot = await countCompaniesWithUsdot();
   const companies = await selectBatchCompanies(offset, batch);
 
@@ -220,7 +225,7 @@ export async function runFmcsaBatchRefresh(
       headquarters: company.headquarters,
       fmcsaLastChecked: company.fmcsa_last_checked,
       fmcsaRaw: company.fmcsa_raw ?? null,
-      batchMode: true,
+      batchMode,
     });
 
     if (fetchResult.lookupMethod === 'skipped_existing') {
@@ -324,7 +329,12 @@ export async function runFmcsaBatchRefresh(
     const displayFields = extractDisplayFieldsFromSnapshot(snapshot);
     changesDetected += fieldChanges.length;
 
-    const updatePayload = buildFmcsaUpdatePayload(company, snapshot, dataHash);
+    const updatePayload = buildFmcsaUpdatePayload(
+      company,
+      snapshot,
+      dataHash,
+      includeEntityTypeColumn
+    );
     const correctedDot = Boolean(fetchResult.dotCorrected);
     if (correctedDot) dotCorrected++;
     const hasMeaningfulChanges =

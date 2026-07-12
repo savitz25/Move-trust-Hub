@@ -101,6 +101,7 @@
     "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
     "refresh:fmcsa": "tsx scripts/run-fmcsa-refresh.ts",
     "refresh:fmcsa:batch": "tsx --require ./scripts/stub-server-only.cjs scripts/refresh-fmcsa-batch.ts",
+    "refresh:fmcsa:all-entity-types": "tsx --require ./scripts/stub-server-only.cjs scripts/refresh-all-fmcsa-entity-types.ts",
     "refresh:bbb": "tsx scripts/run-bbb-refresh.ts",
     "backfill:verification": "tsx scripts/backfill-company-verification.ts",
     "test:enrich-prodigy": "tsx scripts/test-enrich-prodigy.ts"

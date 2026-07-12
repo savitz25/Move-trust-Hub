@@ -84,6 +84,8 @@ export type BatchRefreshOptions = {
   batch: number;
   offset: number;
   dryRun?: boolean;
+  /** When false, inactive DOT carriers are not auto-removed (entity-type backfill safe mode). */
+  batchMode?: boolean;
 };
 
 export type InactiveDotRemovalRecord = {

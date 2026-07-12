@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { LicenseDisplay } from '@/components/trust/license-display';
-import { resolveEntityTypeForDisplay } from '@/lib/fmcsa/entity-type-display';
+import {
+  ENTITY_TYPE_NOT_AVAILABLE,
+  resolveEntityTypeLabelForProfile,
+} from '@/lib/fmcsa/entity-type-display';
 import {
   buildFmcsaSaferUrl,
   normalizeMc,
@@ -76,18 +79,19 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
   const mcLabel = formatMc(company.mcNumber);
   const hasFmcsaContext = hasFmcsaComplianceContext(company);
 
-  const entityTypeResolved = resolveEntityTypeForDisplay({
-    entityType: company.entityType,
-    fmcsaRaw,
-    services: company.services,
-  });
-  const entityTypeDisplay =
-    entityTypeResolved ?? (hasFmcsaContext ? 'Not available' : null);
+  const entityTypeDisplay = resolveEntityTypeLabelForProfile(
+    {
+      entityType: company.entityType,
+      fmcsaRaw,
+      services: company.services,
+    },
+    hasFmcsaContext
+  );
 
-  const rows: Array<{ label: string; value: string | null; mono?: boolean }> = [
+  const rows: Array<{ label: string; value: string | null; mono?: boolean; muted?: boolean }> = [
+    { label: 'Entity Type', value: entityTypeDisplay, muted: entityTypeDisplay === ENTITY_TYPE_NOT_AVAILABLE },
     { label: 'US DOT Number', value: usdotLabel, mono: true },
     { label: 'MC Number', value: mcLabel, mono: true },
-    { label: 'Entity Type', value: entityTypeDisplay },
     { label: 'US DOT Status', value: formatUsdotStatus(company.usdotStatus) },
     { label: 'Authority Status', value: formatAuthorityStatus(company) },
     {
@@ -116,9 +120,9 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
               className={
                 row.mono
                   ? 'font-mono text-lg'
-                  : row.value === 'Not available'
+                  : row.muted
                     ? 'font-medium text-muted-foreground'
-                    : 'font-medium'
+                    : 'font-semibold text-foreground'
               }
             >
               {row.value}

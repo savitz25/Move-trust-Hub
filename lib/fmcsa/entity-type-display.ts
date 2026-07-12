@@ -1,6 +1,9 @@
 import { extractEntityType } from '@/lib/fmcsa/carrier-fields';
 import type { ServiceType } from '@/types';
 
+/** Shown in Licensing & Compliance when FMCSA data exists but type is unknown. */
+export const ENTITY_TYPE_NOT_AVAILABLE = 'Not Available';
+
 const ENTITY_TYPE_LABELS: Record<string, string> = {
   BROKER: 'Broker',
   CARRIER: 'Carrier',
@@ -19,6 +22,7 @@ export function formatEntityTypeLabel(raw: string | null | undefined): string | 
   if (/^broker$/i.test(trimmed)) return 'Broker';
   if (/^carrier$/i.test(trimmed)) return 'Carrier';
   if (/carrier\s*\/\s*broker/i.test(trimmed)) return 'Carrier/Broker';
+  if (trimmed.toLowerCase() === 'not available') return ENTITY_TYPE_NOT_AVAILABLE;
 
   return trimmed;
 }
@@ -61,4 +65,23 @@ export function resolveEntityTypeForDisplay(
   }
 
   return formatEntityTypeLabel(deriveEntityTypeFromServices(input.services));
+}
+
+/** Canonical entity type for DB storage after an FMCSA refresh. */
+export function resolveEntityTypeFromFmcsaRaw(
+  raw: Record<string, unknown> | null | undefined
+): string {
+  if (!raw || typeof raw !== 'object') return ENTITY_TYPE_NOT_AVAILABLE;
+  const resolved = formatEntityTypeLabel(extractEntityType(raw));
+  return resolved ?? ENTITY_TYPE_NOT_AVAILABLE;
+}
+
+/** Profile display label — includes Not Available when FMCSA context exists. */
+export function resolveEntityTypeLabelForProfile(
+  input: EntityTypeResolutionInput,
+  hasFmcsaContext: boolean
+): string | null {
+  const resolved = resolveEntityTypeForDisplay(input);
+  if (resolved) return resolved;
+  return hasFmcsaContext ? ENTITY_TYPE_NOT_AVAILABLE : null;
 }
