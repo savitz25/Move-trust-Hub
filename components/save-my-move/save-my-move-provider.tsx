@@ -21,6 +21,7 @@ import type { SaveMyMoveContext } from '@/lib/save-my-move/types';
 import { getCurrentPathForRedirect, sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 import { usePostLoginRedirect } from '@/hooks/use-post-login-redirect';
 import {
+  getSavedMoverSlugsAction,
   saveComparisonAction,
   saveInventoryAction,
   saveMoverAction,
@@ -35,6 +36,9 @@ import { toast } from 'sonner';
 type SaveMyMoveContextValue = {
   user: User | null;
   loading: boolean;
+  savedMoverSlugs: ReadonlySet<string>;
+  isMoverSaved: (companySlug: string) => boolean;
+  markMoverSaved: (companySlug: string) => void;
   openSaveModal: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => void;
   requireAuth: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => boolean;
 };
@@ -47,52 +51,83 @@ export function useSaveMyMove() {
   return ctx;
 }
 
-async function executePendingSaveAction() {
-  const pending = consumePendingSaveAction();
-  if (!pending) return;
-
-  try {
-    switch (pending.type) {
-      case 'inventory': {
-        await saveInventoryAction(pending.payload);
-        const itemCount = pending.payload.inventory.reduce((s, i) => s + i.quantity, 0);
-        trackSaveMyMoveInventory({ item_count: itemCount });
-        toast.success('Inventory saved', {
-          description: 'View it anytime in My Move.',
-          action: {
-            label: 'Open',
-            onClick: () => {
-              window.location.href = '/my-move';
-            },
-          },
-        });
-        break;
-      }
-      case 'mover': {
-        await saveMoverAction({ companySlug: pending.payload.companySlug });
-        trackSaveMyMoveMover({ company_slug: pending.payload.companySlug });
-        toast.success(`${pending.payload.companyName} saved to your shortlist`);
-        break;
-      }
-      case 'comparison': {
-        await saveComparisonAction({ companySlugs: pending.payload.companySlugs });
-        trackSaveMyMoveComparison({ mover_count: pending.payload.companySlugs.length });
-        toast.success('Comparison saved to My Move');
-        break;
-      }
-    }
-  } catch {
-    toast.error('Could not complete your save — try again from the page');
-  }
-}
-
 export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [savedMoverSlugs, setSavedMoverSlugs] = useState<Set<string>>(new Set());
   const [modalOpen, setModalOpen] = useState(false);
   const [redirectPath, setRedirectPath] = useState('/my-move');
   const [modalContext, setModalContext] = useState<SaveMyMoveContext>('dashboard');
   const [showMerge, setShowMerge] = useState(false);
+
+  const markMoverSaved = useCallback((companySlug: string) => {
+    setSavedMoverSlugs((prev) => new Set(prev).add(companySlug));
+  }, []);
+
+  const isMoverSaved = useCallback(
+    (companySlug: string) => savedMoverSlugs.has(companySlug),
+    [savedMoverSlugs]
+  );
+
+  const executePendingSaveAction = useCallback(async () => {
+    const pending = consumePendingSaveAction();
+    if (!pending) return;
+
+    try {
+      switch (pending.type) {
+        case 'inventory': {
+          await saveInventoryAction(pending.payload);
+          const itemCount = pending.payload.inventory.reduce((s, i) => s + i.quantity, 0);
+          trackSaveMyMoveInventory({ item_count: itemCount });
+          toast.success('Inventory saved', {
+            description: 'View it anytime in My Move.',
+            action: {
+              label: 'Open',
+              onClick: () => {
+                window.location.href = '/my-move';
+              },
+            },
+          });
+          break;
+        }
+        case 'mover': {
+          await saveMoverAction({ companySlug: pending.payload.companySlug });
+          markMoverSaved(pending.payload.companySlug);
+          trackSaveMyMoveMover({ company_slug: pending.payload.companySlug });
+          toast.success(`${pending.payload.companyName} saved to your shortlist`);
+          break;
+        }
+        case 'comparison': {
+          await saveComparisonAction({ companySlugs: pending.payload.companySlugs });
+          trackSaveMyMoveComparison({ mover_count: pending.payload.companySlugs.length });
+          toast.success('Comparison saved to My Move');
+          break;
+        }
+      }
+    } catch {
+      toast.error('Could not complete your save — try again from the page');
+    }
+  }, [markMoverSaved]);
+
+  useEffect(() => {
+    if (!user) {
+      setSavedMoverSlugs(new Set());
+      return;
+    }
+
+    let cancelled = false;
+    getSavedMoverSlugsAction()
+      .then((slugs) => {
+        if (!cancelled) setSavedMoverSlugs(new Set(slugs));
+      })
+      .catch(() => {
+        if (!cancelled) setSavedMoverSlugs(new Set());
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [user?.id]);
 
   useEffect(() => {
     const supabase = createBrowserSupabaseClient();
@@ -118,7 +153,7 @@ export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) 
     });
 
     return () => sub.subscription.unsubscribe();
-  }, []);
+  }, [executePendingSaveAction]);
 
   usePostLoginRedirect(user);
 
@@ -144,8 +179,16 @@ export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) 
   );
 
   const value = useMemo(
-    () => ({ user, loading, openSaveModal, requireAuth }),
-    [user, loading, openSaveModal, requireAuth]
+    () => ({
+      user,
+      loading,
+      savedMoverSlugs,
+      isMoverSaved,
+      markMoverSaved,
+      openSaveModal,
+      requireAuth,
+    }),
+    [user, loading, savedMoverSlugs, isMoverSaved, markMoverSaved, openSaveModal, requireAuth]
   );
 
   return (

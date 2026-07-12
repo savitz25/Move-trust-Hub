@@ -23,10 +23,13 @@ export function SaveMoverButton({
   variant = 'icon',
   className,
 }: SaveMoverButtonProps) {
-  const { requireAuth, user } = useSaveMyMove();
+  const { requireAuth, user, isMoverSaved, markMoverSaved } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
+  const saved = user ? isMoverSaved(companySlug) : false;
 
   const handleSave = async () => {
+    if (saved) return;
+
     if (!user) {
       stashPendingSaveAction({
         type: 'mover',
@@ -38,6 +41,7 @@ export function SaveMoverButton({
     setSaving(true);
     try {
       await saveMoverAction({ companySlug });
+      markMoverSaved(companySlug);
       trackSaveMyMoveMover({ company_slug: companySlug });
       toast.success(`${companyName} saved to your shortlist`);
     } catch {
@@ -49,9 +53,16 @@ export function SaveMoverButton({
 
   if (variant === 'button') {
     return (
-      <Button variant="outline" size="sm" onClick={handleSave} disabled={saving} className={className}>
-        <Heart className="h-3.5 w-3.5 mr-1" />
-        {saving ? 'Saving…' : 'Save mover'}
+      <Button
+        variant={saved ? 'secondary' : 'outline'}
+        size="sm"
+        onClick={handleSave}
+        disabled={saving || saved}
+        className={className}
+        aria-pressed={saved}
+      >
+        <Heart className={cn('h-3.5 w-3.5 mr-1', saved && 'fill-current text-primary')} />
+        {saved ? 'Saved' : saving ? 'Saving…' : 'Save mover'}
       </Button>
     );
   }
@@ -62,15 +73,20 @@ export function SaveMoverButton({
       onClick={handleSave}
       disabled={saving}
       className={cn(
-        'inline-flex items-center justify-center rounded-full p-1.5 text-muted-foreground',
-        'hover:text-primary hover:bg-primary/10 transition-colors',
+        'inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
+        saved
+          ? 'text-primary bg-primary/10'
+          : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40',
         className
       )}
-      aria-label={`Save ${companyName} to your shortlist`}
-      title="Save to My Move"
+      aria-label={
+        saved ? `${companyName} saved to your shortlist` : `Save ${companyName} to your shortlist`
+      }
+      aria-pressed={saved}
+      title={saved ? 'Saved to My Move' : 'Save to My Move'}
     >
-      <Heart className="h-4 w-4" />
+      <Heart className={cn('h-4 w-4', saved && 'fill-current')} />
     </button>
   );
 }

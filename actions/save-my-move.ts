@@ -94,6 +94,17 @@ export async function saveMoverAction(input: { companySlug: string; notes?: stri
   return { id: data.id };
 }
 
+export async function getSavedMoverSlugsAction(): Promise<string[]> {
+  const user = await requireAuthenticatedUser();
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('saved_movers')
+    .select('company_slug')
+    .eq('user_id', user.id);
+  if (error) throw new Error(error.message);
+  return (data ?? []).map((row) => row.company_slug);
+}
+
 export async function removeSavedMoverAction(id: string) {
   const user = await requireAuthenticatedUser();
   const supabase = await createClient();
@@ -283,7 +294,8 @@ export async function getMyMoveDashboardData() {
   ]);
 
   const moverSlugs = (moversRes.data ?? []).map((m) => m.company_slug);
-  const companyNames = await getCompanyNamesBySlugs(moverSlugs);
+  const comparisonSlugs = (comparisonsRes.data ?? []).flatMap((c) => c.company_slugs ?? []);
+  const companyNames = await getCompanyNamesBySlugs([...moverSlugs, ...comparisonSlugs]);
 
   return {
     user: { id: user.id, email: user.email ?? profile.email ?? '' },

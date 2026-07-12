@@ -292,18 +292,23 @@ export function MyMoveDashboard({ initialData }: Props) {
           </Card>
         ) : (
           <div className="space-y-3">
-            {data.comparisons.map((comp) => (
+            {data.comparisons.map((comp) => {
+              const moverNames = comp.company_slugs.map(
+                (slug: string) => data.companyNames[slug] ?? slug.replace(/-/g, ' ')
+              );
+
+              return (
               <Card key={comp.id} className="p-4 flex items-center justify-between gap-3">
-                <div>
+                <div className="min-w-0">
                   <p className="font-medium">{comp.name ?? 'Comparison'}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {comp.company_slugs.length} movers
+                  <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+                    {moverNames.join(' · ')}
                   </p>
                 </div>
                 <div className="flex gap-2">
                   <Button size="sm" variant="outline" asChild>
                     <Link
-                      href={`/compare?${comp.company_slugs.map((s) => `add=${s}`).join('&')}`}
+                      href={`/compare?${comp.company_slugs.map((s: string) => `add=${s}`).join('&')}`}
                     >
                       Open
                     </Link>
@@ -318,7 +323,8 @@ export function MyMoveDashboard({ initialData }: Props) {
                   </Button>
                 </div>
               </Card>
-            ))}
+              );
+            })}
           </div>
         )}
       </section>
