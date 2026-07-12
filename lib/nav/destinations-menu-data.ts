@@ -150,13 +150,13 @@ function buildMenuData(): DestinationsMenuData {
         id: 'fmcsa',
         label: 'Verify a DOT Number',
         description: 'Look up USDOT & MC on FMCSA',
-        href: '/resources/fmcsa',
+        href: '/verify-dot',
       },
       {
         id: 'reviews',
         label: 'Leave a Review',
-        description: 'Browse movers to review',
-        href: '/companies?sort=rating',
+        description: 'Share a moderated review',
+        href: '/review',
       },
       {
         id: 'calculator',

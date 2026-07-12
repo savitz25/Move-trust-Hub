@@ -70,7 +70,7 @@ export function DestinationsMobileNav({ onClose }: Props) {
             <div className="grid grid-cols-2 gap-2.5">
               <Link
                 prefetch={false}
-                href="/resources/fmcsa"
+                href="/verify-dot"
                 className="flex items-center gap-2 rounded-lg border bg-muted/30 px-3 text-xs font-medium min-h-[48px] active:bg-muted/50 transition-colors"
                 onClick={onClose}
                 aria-label="Verify a DOT number on FMCSA"
@@ -80,7 +80,7 @@ export function DestinationsMobileNav({ onClose }: Props) {
               </Link>
               <Link
                 prefetch={false}
-                href="/companies?sort=rating"
+                href="/review"
                 className="flex items-center gap-2 rounded-lg border bg-muted/30 px-3 text-xs font-medium min-h-[48px] active:bg-muted/50 transition-colors"
                 onClick={onClose}
                 aria-label="Leave a review for a moving company"
