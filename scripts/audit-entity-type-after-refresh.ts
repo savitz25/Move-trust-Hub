@@ -1,7 +1,7 @@
 /**
  * Post-refresh audit: entity type coverage across all directory companies.
  *
- *   npx tsx scripts/audit-entity-type-after-refresh.ts
+ *   npx tsx --require ./scripts/stub-server-only.cjs scripts/audit-entity-type-after-refresh.ts
  */
 import { loadEnvLocal } from '../lib/verification/load-env-local';
 import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
@@ -15,7 +15,7 @@ async function main() {
   const supabase = createAdminClient();
   const { data, error } = await supabase
     .from('companies')
-    .select('slug, name, usdot_number, fmcsa_raw, entity_type, services')
+    .select('slug, name, usdot_number, fmcsa_raw, services')
     .not('usdot_number', 'is', null)
     .neq('usdot_number', '');
 
@@ -31,15 +31,12 @@ async function main() {
       row as Record<string, unknown>,
       (row.services as ServiceType[]) ?? []
     );
-    const fromColumn =
-      typeof row.entity_type === 'string' ? row.entity_type.trim() : null;
     const label =
-      fromColumn ||
       fmcsaFields.entityType ||
       (raw ? resolveEntityTypeFromFmcsaRaw(raw) : 'No FMCSA data');
 
     counts[label] = (counts[label] ?? 0) + 1;
-    if (!fmcsaFields.entityType && !fromColumn && raw) {
+    if (!fmcsaFields.entityType && raw) {
       missing.push({
         slug: row.slug,
         name: row.name,
