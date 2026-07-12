@@ -77,7 +77,7 @@ export function HubSectionPage({
             <p className={`mb-2 text-xs font-semibold uppercase tracking-widest ${accent}`}>
               {eyebrow}
             </p>
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{title}</h1>
+            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{description}</p>
             {(primaryCta || secondaryCta) && (
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

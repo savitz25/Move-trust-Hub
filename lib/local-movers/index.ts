@@ -211,13 +211,7 @@ export {
   buildHubKeywords,
 } from '@/lib/local-movers/seo-metadata';
 
-export function getCountyPath(stateSlug: string, countySlug: string): string {
-  return `/local-movers/${stateSlug}/${countySlug}`;
-}
-
-export function getStatePath(stateSlug: string): string {
-  return `/local-movers/${stateSlug}`;
-}
+export { getCountyPath, getStatePath } from '@/lib/local-movers/paths';
 
 export { getLocalState, localStates } from '@/lib/local-movers/states';
 export {

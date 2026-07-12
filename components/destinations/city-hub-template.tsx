@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { IMAGE_SIZES } from '@/lib/images/constants';
 import Link from 'next/link';
 import { MapPin, ArrowRight, Scale } from 'lucide-react';
 import { TrustBadges } from '@/components/trust/trust-badges';
@@ -324,13 +325,13 @@ export async function CityHubTemplate({ market, content }: Props) {
           ))}
 
           <div className="rounded-xl border overflow-hidden">
-            <Image
+            <OptimizedImage
               src={content.seo.ogImagePath}
               alt={content.seo.ogImageAlt}
               width={1200}
               height={630}
               loading="lazy"
-              sizes="(max-width: 768px) 100vw, 72rem"
+              sizes={IMAGE_SIZES.contentWide}
               className="w-full h-auto"
             />
           </div>

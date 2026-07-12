@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { permanentRedirect } from 'next/navigation';
 import { LegacyFallbackPage } from '@/components/hub/templates/legacy-fallback-page';
 import { buildHubMetadata } from '@/lib/hub/metadata';
-import { resolveHubLegacyPath } from '@/lib/migration/hub-legacy-resolver';
+import { resolveHubLegacyPathCached } from '@/lib/migration/hub-legacy-resolver-cached';
 
 type PageProps = {
   params: Promise<{ legacy?: string[] }>;
@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { legacy } = await params;
-  const resolution = resolveHubLegacyPath('insurance', legacy);
+  const resolution = resolveHubLegacyPathCached('insurance', legacy);
 
   if (resolution.type === 'redirect') {
     return { title: 'Redirecting…' };
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
  */
 export default async function InsuranceLegacyCatchAll({ params }: PageProps) {
   const { legacy } = await params;
-  const resolution = resolveHubLegacyPath('insurance', legacy);
+  const resolution = resolveHubLegacyPathCached('insurance', legacy);
 
   if (resolution.type === 'redirect') {
     permanentRedirect(resolution.destination);

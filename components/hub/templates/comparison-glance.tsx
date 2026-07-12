@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Scale } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { ResourceArticleSection } from '@/lib/hub/templates/types';
@@ -7,7 +8,7 @@ type Props = {
 };
 
 /** Renders the first "at a glance" section as a scannable comparison card grid. */
-export function ComparisonGlance({ section }: Props) {
+export const ComparisonGlance = memo(function ComparisonGlance({ section }: Props) {
   if (!section.bullets?.length) return null;
 
   return (
@@ -40,4 +41,4 @@ export function ComparisonGlance({ section }: Props) {
       </CardContent>
     </Card>
   );
-}
+});

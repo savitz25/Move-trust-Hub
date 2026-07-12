@@ -7,7 +7,7 @@ import { CrossVerticalNav } from '@/components/lender/directory/CrossVerticalNav
 import { LeadCaptureForm } from '@/components/lender/directory/LeadCaptureForm';
 import { PersonalizedBanner } from '@/components/lender/directory/PersonalizedBanner';
 import { LenderCard } from '@/components/lender/LenderCard';
-import { SearchBar } from '@/components/lender/SearchBar';
+import { SearchBarLoader } from '@/components/lender/search-bar-loader';
 import { STATE_BY_SLUG } from '@/lib/lender/fdic/states';
 import { FDIC_CATEGORY, AUTO_CATEGORY } from '@/lib/lender/directory/categories';
 import {
@@ -112,7 +112,7 @@ export default async function MortgageStatePage({
             {stats.avgTrustScore}
           </p>
           <div className="mt-6">
-            <SearchBar className="mx-auto max-w-md" />
+            <SearchBarLoader className="mx-auto max-w-md" />
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { assignApprovedCompanyToDestinations } from '@/lib/suggestions/assign-company-destination';
+
 import { revalidateDestinationPaths } from '@/lib/suggestions/revalidate-destination';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';

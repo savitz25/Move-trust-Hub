@@ -8,8 +8,16 @@ const HubAnalytics = dynamic(
   { ssr: false }
 );
 
-export function DeferredHubAnalytics() {
-  const ready = useDeferredLoad({ idleTimeout: 1500, maxWait: 5000 });
+export function DeferredHubAnalytics({
+  interactionOnly = true,
+}: {
+  interactionOnly?: boolean;
+}) {
+  const ready = useDeferredLoad({
+    idleTimeout: 7_000,
+    maxWait: 28_000,
+    interactionOnly,
+  });
 
   if (!ready) return null;
 

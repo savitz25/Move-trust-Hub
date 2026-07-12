@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { IMAGE_SIZES } from '@/lib/images/constants';
 import { format } from 'date-fns';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { NativeReviewVerifiedBadge } from '@/components/trust/review-source-badge';
@@ -130,12 +131,13 @@ export function PublicReviewList({
                       rel="noopener noreferrer"
                       className="relative block h-20 w-20 rounded-md overflow-hidden border"
                     >
-                      <Image
+                      <OptimizedImage
                         src={url}
                         alt="Review photo"
                         fill
+                        loading="lazy"
                         className="object-cover"
-                        sizes="80px"
+                        sizes={IMAGE_SIZES.reviewThumb}
                       />
                     </a>
                   ))}

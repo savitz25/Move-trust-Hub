@@ -1,10 +1,11 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  // Tailwind v4 primary purge scope is @source in app/globals.css.
+  // This array is a compatibility fallback for tailwindcss-animate.
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     container: {

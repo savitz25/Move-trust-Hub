@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/ui/optimized-image';
+import { IMAGE_SIZES } from '@/lib/images/constants';
 import { MoveDesktopNav } from '@/components/nav/move-desktop-nav';
 import { MoveMobileNavLoader } from '@/components/nav/move-mobile-nav-loader';
 import { HeaderTrustBadge } from '@/components/trust/header-trust-badge';
@@ -13,16 +14,18 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 sm:h-[4.5rem] items-center justify-between px-4">
         <div className="flex items-center gap-2 sm:gap-3">
           <Link prefetch={false} href="/" className="group">
-            <Image
-              src="/logo.png"
-              alt="Move Trust Hub — independent interstate moving directory"
-              width={300}
-              height={75}
-              priority
-              fetchPriority="high"
-              sizes="(max-width: 768px) 180px, 300px"
-              className="h-12 w-auto transition-transform group-hover:scale-[1.02] max-w-[300px]"
-            />
+            <span className="hub-logo-slot relative block shrink-0 max-w-[300px]">
+              <OptimizedImage
+                src="/logo.png"
+                alt="Move Trust Hub — independent interstate moving directory"
+                width={300}
+                height={75}
+                priority
+                fetchPriority="high"
+                sizes={IMAGE_SIZES.headerLogo}
+                className="h-full w-full object-contain object-left transition-transform group-hover:scale-[1.02]"
+              />
+            </span>
           </Link>
           <HeaderTrustBadge className="hidden xl:flex" />
         </div>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { ClusterPageView } from '@/components/lender/cluster-page-view';
 import { LenderCard } from '@/components/lender/LenderCard';
-import { SearchBar } from '@/components/lender/SearchBar';
+import { SearchBarLoader } from '@/components/lender/search-bar-loader';
 import { tryGetClusterContent } from '@/lib/lender/clusters/content';
 import { getAllClusterParams } from '@/lib/lender/clusters/registry';
 import { buildHubMetadata } from '@/lib/hub/metadata';
@@ -552,7 +552,7 @@ export default async function CountyLendersPage({
           {lenders.length} verified lender{lenders.length !== 1 ? 's' : ''} ranked by
           county experience score and trust score. {zip ? `Showing results for ZIP ${zip}.` : ''}
         </p>
-        <SearchBar className="mt-6 max-w-xl" />
+        <SearchBarLoader className="mt-6 max-w-xl" />
       </div>
 
       <Suspense fallback={null}>

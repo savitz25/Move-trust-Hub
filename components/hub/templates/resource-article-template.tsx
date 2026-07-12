@@ -14,7 +14,7 @@ import {
   buildComparisonArticleSchema,
   buildTemplateSchemaGraph,
 } from '@/lib/hub/templates/schemas';
-import { ComparisonGlance } from '@/components/hub/templates/comparison-glance';
+import { ComparisonGlanceLoader } from '@/components/hub/templates/comparison-glance-loader';
 import type { ResourceArticleData } from '@/lib/hub/templates/types';
 
 export type ResourceArticleTemplateProps = {
@@ -65,7 +65,7 @@ export function ResourceArticleTemplate({
                 </Badge>
               ) : null}
             </div>
-            <h1 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+            <h1 className="text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
               {article.title}
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{article.description}</p>
@@ -90,7 +90,7 @@ export function ResourceArticleTemplate({
                   section.heading.toLowerCase().includes('glance');
 
                 if (isGlance) {
-                  return <ComparisonGlance key={section.heading} section={section} />;
+                  return <ComparisonGlanceLoader key={section.heading} section={section} />;
                 }
 
                 return (

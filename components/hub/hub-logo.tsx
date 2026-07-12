@@ -3,7 +3,7 @@ import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
 import { getHubConfig } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
 
-/** Optimized header logo — shared Move Trust Hub mark across all hub sections. */
+/** Optimized header logo — headerLogoSrc + fixed slot to prevent CLS. */
 export function HubLogo({
   hubId,
   priority = false,
@@ -12,18 +12,23 @@ export function HubLogo({
   priority?: boolean;
 }) {
   const hub = getHubConfig(hubId);
+  const src = hub.headerLogoSrc;
+  const imgClass =
+    'h-full w-full object-contain object-left transition-transform group-hover:scale-[1.02]';
 
   return (
-    <OptimizedImage
-      src={hub.logoSrc}
-      alt={hub.logoAlt}
-      width={300}
-      height={75}
-      quality={DEFAULT_IMAGE_QUALITY}
-      priority={priority}
-      fetchPriority={priority ? 'high' : 'auto'}
-      sizes={IMAGE_SIZES.headerLogo}
-      className="h-12 w-auto max-w-[300px] object-contain object-left transition-transform duration-200 group-hover:scale-[1.02]"
-    />
+    <span className="hub-logo-slot relative block shrink-0">
+      <OptimizedImage
+        src={src}
+        alt={hub.logoAlt}
+        width={300}
+        height={75}
+        quality={DEFAULT_IMAGE_QUALITY}
+        priority={priority}
+        fetchPriority={priority ? 'high' : 'auto'}
+        sizes={IMAGE_SIZES.headerLogo}
+        className={imgClass}
+      />
+    </span>
   );
 }

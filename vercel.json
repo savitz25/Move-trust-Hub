@@ -68,31 +68,38 @@
     {
       "source": "/",
       "headers": [
-        {
-          "key": "X-Trust-Hub",
-          "value": "move"
-        },
+        { "key": "X-Trust-Hub", "value": "move" },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
-        }
+        },
+        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/:path((?!insurance|lender|admin|api|_next).+)",
       "headers": [
-        {
-          "key": "X-Trust-Hub",
-          "value": "move"
-        },
+        { "key": "X-Trust-Hub", "value": "move" },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
-        }
+        },
+        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
       "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/_next/image(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -110,29 +117,36 @@
       ]
     },
     {
-      "source": "/lender/(.*)",
+      "source": "/sitemap-local/(.*)",
       "headers": [
         {
-          "key": "X-Trust-Hub",
-          "value": "lender"
-        },
-        {
           "key": "Cache-Control",
-          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+          "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
         }
       ]
     },
     {
-      "source": "/insurance/(.*)",
+      "source": "/lender/:path((?!admin(?:/|$)).*)",
       "headers": [
-        {
-          "key": "X-Trust-Hub",
-          "value": "insurance"
-        },
+        { "key": "X-Trust-Hub", "value": "lender" },
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
-        }
+        },
+        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
+        { "key": "Vary", "value": "Accept-Encoding" }
+      ]
+    },
+    {
+      "source": "/insurance/:path((?!admin(?:/|$)).*)",
+      "headers": [
+        { "key": "X-Trust-Hub", "value": "insurance" },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+        },
+        { "key": "CDN-Cache-Control", "value": "max-age=86400" },
+        { "key": "Vary", "value": "Accept-Encoding" }
       ]
     },
     {
@@ -154,12 +168,83 @@
       ]
     },
     {
-      "source": "/(.*\\.(?:js|css|woff2|png|jpg|jpeg|webp|avif|svg|ico))",
+      "source": "/(.*\\.(?:js|css|woff2|ttf|otf|png|jpg|jpeg|webp|avif|svg|ico))",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
         }
+      ]
+    },
+    {
+      "source": "/api/companies",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=604800"
+        },
+        { "key": "CDN-Cache-Control", "value": "max-age=3600" }
+      ]
+    },
+    {
+      "source": "/api/reviews",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=3600, stale-while-revalidate=604800"
+        },
+        { "key": "CDN-Cache-Control", "value": "max-age=3600" }
+      ]
+    },
+    {
+      "source": "/api/zip-distance",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/api/performance-flags",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=300, stale-while-revalidate=600"
+        }
+      ]
+    },
+    {
+      "source": "/api/refresh/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" },
+        { "key": "CDN-Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/api/chat",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
+      ]
+    },
+    {
+      "source": "/api/send-quote-email",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
+      ]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" },
+        { "key": "CDN-Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/(insurance|lender)/admin/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "private, no-store, max-age=0" },
+        { "key": "CDN-Cache-Control", "value": "no-store" }
       ]
     }
   ],

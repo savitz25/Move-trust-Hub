@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { HubChrome } from '@/components/hub/hub-chrome';
+import { HubSegmentShell } from '@/components/hub/hub-segment-shell';
 import { getHubConfig } from '@/lib/hub/config';
 import { buildHubLayoutMetadata } from '@/lib/hub/metadata';
 
@@ -18,5 +18,5 @@ export default function InsuranceHubLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <HubChrome hubId="insurance">{children}</HubChrome>;
+  return <HubSegmentShell hubId="insurance">{children}</HubSegmentShell>;
 }

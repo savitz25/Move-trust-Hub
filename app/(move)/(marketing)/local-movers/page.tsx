@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
-import { StateSelector } from '@/components/local-movers/state-selector';
+import { StateSelector } from '@/components/local-movers/state-selector-loader';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { localStates } from '@/lib/local-movers/states';
-import { getCountiesForState } from '@/lib/local-movers/geography/index';
-import { buildHubPageMetadata, getCountyPath } from '@/lib/local-movers/index';
+import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
+import { buildHubPageMetadata } from '@/lib/local-movers/index';
+import { getCountyPath } from '@/lib/local-movers/paths';
 
 export const dynamic = 'force-static';
 
@@ -25,8 +26,17 @@ const featuredCounties = [
 ];
 
 export default function LocalMoversHubPage() {
-  const totalCounties = localStates.reduce(
-    (sum, state) => sum + getCountiesForState(state.slug).length,
+  const statesForSelector = localStates.map((state) => {
+    const hasCounties = stateHasCounties(state.slug);
+    return {
+      ...state,
+      hasCounties,
+      countyCount: hasCounties ? getCountiesForState(state.slug).length : 0,
+    };
+  });
+
+  const totalCounties = statesForSelector.reduce(
+    (sum, state) => sum + state.countyCount,
     0
   );
 
@@ -100,7 +110,7 @@ export default function LocalMoversHubPage() {
             All 50 states covered — {totalCounties.toLocaleString()} county guides with
             5–10 vetted local movers each (major metros up to 10).
           </p>
-          <StateSelector states={localStates} />
+          <StateSelector states={statesForSelector} />
         </section>
 
         <LocalMoversCta />

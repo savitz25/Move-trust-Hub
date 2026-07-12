@@ -1,9 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const dynamic = 'force-static';
 import { CompareLoader } from '@/components/compare/compare-loader';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { getAllCompanies } from '@/lib/data-server';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Compare Movers Side-by-Side | Move Trust Hub',
   description:
     'Select up to 4 interstate moving companies and compare reputation scores, ratings, pricing, licensing, services, and complaint ratios in one table.',

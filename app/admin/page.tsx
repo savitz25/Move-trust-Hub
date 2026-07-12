@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Company } from '@/types';
 import { getAllCompanies, saveCompany, deleteCompany } from '@/lib/data';
+import { getAdminCompanyStats, type AdminCompanyStats } from '@/actions/admin-company-stats';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ import { toast } from 'sonner';
 
 export default function AdminDashboard() {
   const [companies, setCompanies] = useState<Company[]>([]);
+  const [stats, setStats] = useState<AdminCompanyStats | null>(null);
   const [editing, setEditing] = useState<Partial<Company> | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -20,8 +22,9 @@ export default function AdminDashboard() {
 
   async function load() {
     setLoading(true);
-    const data = await getAllCompanies();
+    const [data, sourceStats] = await Promise.all([getAllCompanies(), getAdminCompanyStats()]);
     setCompanies(data);
+    setStats(sourceStats);
     setLoading(false);
   }
 
@@ -119,7 +122,52 @@ export default function AdminDashboard() {
         </Card>
       )}
 
-      <div className="text-sm mb-2">{companies.length} companies loaded</div>
+      {stats && (
+        <Card className="p-4 mb-6 space-y-3">
+          <p className="text-sm text-muted-foreground">
+            This page edits the <strong>interstate directory</strong> stored in Supabase (
+            <code className="text-xs">companies</code> table). County/local mover listings are a
+            separate static catalog in code and are not listed here.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+            <div className="rounded-lg border p-3">
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">
+                Directory (editable here)
+              </div>
+              <div className="text-2xl font-semibold tabular-nums">{stats.supabaseDirectory}</div>
+            </div>
+            <div className="rounded-lg border p-3">
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">
+                Local movers (county pages)
+              </div>
+              <div className="text-2xl font-semibold tabular-nums">
+                {stats.localMoversDisplayable.toLocaleString()}
+              </div>
+              <div className="text-xs text-muted-foreground">
+                {stats.localMoversTotal.toLocaleString()} total in catalog
+              </div>
+            </div>
+            <div className="rounded-lg border p-3">
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">
+                Linked to directory profiles
+              </div>
+              <div className="text-2xl font-semibold tabular-nums">
+                {stats.localMoversDirectoryLinked}
+              </div>
+            </div>
+            <div className="rounded-lg border p-3">
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">
+                Pending suggestions
+              </div>
+              <div className="text-2xl font-semibold tabular-nums">{stats.pendingSuggestions}</div>
+            </div>
+          </div>
+        </Card>
+      )}
+
+      <div className="text-sm mb-2">
+        {loading ? 'Loading…' : `${companies.length} directory companies loaded`}
+      </div>
       <div className="border rounded-xl overflow-hidden">
         <table className="w-full text-sm">
           <thead className="bg-muted/60">

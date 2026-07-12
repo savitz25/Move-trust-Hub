@@ -24,6 +24,8 @@ export type HubConfig = {
   shortName: string;
   tagline: string;
   logoSrc: string;
+  /** Lightweight logo for navbar LCP — footer keeps full logoSrc. */
+  headerLogoSrc: string;
   logoAlt: string;
   accentClass: string;
   homeTitle: string;

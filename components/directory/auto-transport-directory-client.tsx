@@ -10,7 +10,7 @@ import { StarRating } from '@/components/ui/star-rating';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X, Truck } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';

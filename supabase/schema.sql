@@ -103,10 +103,12 @@ alter table public.reviews enable row level security;
 alter table public.saved_comparisons enable row level security;
 
 -- Public read access for directory (anyone can read companies + reviews)
+drop policy if exists "Public can read companies" on public.companies;
 create policy "Public can read companies"
   on public.companies for select
   using (true);
 
+drop policy if exists "Public can read reviews" on public.reviews;
 create policy "Public can read reviews"
   on public.reviews for select
   using (true);
@@ -115,15 +117,20 @@ create policy "Public can read reviews"
 -- For demo / simplicity, allow service_role or use admin dashboard with RLS later.
 -- For production: Create an "admin" role or use Supabase Edge Functions + service key.
 
+drop policy if exists "Service role can manage companies" on public.companies;
 create policy "Service role can manage companies"
   on public.companies for all
-  using (auth.role() = 'service_role');
+  to service_role
+  using (true) with check (true);
 
+drop policy if exists "Service role can manage reviews" on public.reviews;
 create policy "Service role can manage reviews"
   on public.reviews for all
-  using (auth.role() = 'service_role');
+  to service_role
+  using (true) with check (true);
 
 -- Users can manage only their own saved comparisons
+drop policy if exists "Users can manage own saved comparisons" on public.saved_comparisons;
 create policy "Users can manage own saved comparisons"
   on public.saved_comparisons for all
   using (auth.uid() = user_id);
@@ -141,6 +148,7 @@ begin
 end;
 $$;
 
+drop trigger if exists companies_updated_at on public.companies;
 create trigger companies_updated_at
   before update on public.companies
   for each row execute procedure public.handle_updated_at();
@@ -181,13 +189,16 @@ create index if not exists idx_quote_requests_destination on public.quote_reques
 -- RLS: Public can submit leads (insert only). No public read.
 alter table public.quote_requests enable row level security;
 
+drop policy if exists "Anyone can submit quote requests" on public.quote_requests;
 create policy "Anyone can submit quote requests"
   on public.quote_requests for insert
   with check (true);
 
+drop policy if exists "Service role can manage quote requests" on public.quote_requests;
 create policy "Service role can manage quote requests"
   on public.quote_requests for all
-  using (auth.role() = 'service_role');
+  to service_role
+  using (true) with check (true);
 
 comment on table public.quote_requests is 'Lead capture from Get Free Quotes modal. Contains contact + move details for matching with movers.';
 

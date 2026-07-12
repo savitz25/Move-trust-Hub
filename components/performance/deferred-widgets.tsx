@@ -13,27 +13,43 @@ const Toaster = dynamic(
   { ssr: false }
 );
 
-function DeferredToaster() {
-  const ready = useDeferredLoad({ idleTimeout: 2000, maxWait: 8000 });
+function DeferredToaster({ interactionOnly }: { interactionOnly: boolean }) {
+  const ready = useDeferredLoad({
+    idleTimeout: 2500,
+    maxWait: 10_000,
+    interactionOnly,
+  });
   if (!ready) return null;
   return <Toaster position="top-center" richColors closeButton />;
 }
 
-function DeferredChatbot() {
+function DeferredChatbot({
+  enabled,
+  interactionOnly,
+}: {
+  enabled: boolean;
+  interactionOnly: boolean;
+}) {
   const ready = useDeferredLoad({
-    idleTimeout: 6000,
-    maxWait: 20000,
-    includeScroll: true,
+    idleTimeout: 8_000,
+    maxWait: 30_000,
+    interactionOnly,
   });
-  if (!ready) return null;
+  if (!enabled || !ready) return null;
   return <Chatbot />;
 }
 
-export function DeferredWidgets() {
+export function DeferredWidgets({
+  enableChatbot = false,
+  interactionOnly = true,
+}: {
+  enableChatbot?: boolean;
+  interactionOnly?: boolean;
+}) {
   return (
     <>
-      <DeferredToaster />
-      <DeferredChatbot />
+      <DeferredToaster interactionOnly={interactionOnly} />
+      <DeferredChatbot enabled={enableChatbot} interactionOnly={interactionOnly} />
     </>
   );
 }

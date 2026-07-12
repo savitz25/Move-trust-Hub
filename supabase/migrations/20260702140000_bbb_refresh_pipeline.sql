@@ -86,12 +86,14 @@ create index if not exists idx_bbb_change_log_severity
 alter table public.bbb_refresh_runs enable row level security;
 alter table public.bbb_change_log enable row level security;
 
+drop policy if exists "Service role full access bbb_refresh_runs" on public.bbb_refresh_runs;
 create policy "Service role full access bbb_refresh_runs"
   on public.bbb_refresh_runs for all
-  using (auth.role() = 'service_role')
-  with check (auth.role() = 'service_role');
+  to service_role
+  using (true) with check (true);
 
+drop policy if exists "Service role full access bbb_change_log" on public.bbb_change_log;
 create policy "Service role full access bbb_change_log"
   on public.bbb_change_log for all
-  using (auth.role() = 'service_role')
-  with check (auth.role() = 'service_role');
+  to service_role
+  using (true) with check (true);

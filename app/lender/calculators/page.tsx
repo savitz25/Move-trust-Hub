@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CalculatorHub } from '@/components/lender/CalculatorHub';
+import { CalculatorHubLoader } from '@/components/lender/calculator-hub-loader';
 import { JsonLd } from '@/components/lender/directory/JsonLd';
 import { TrustBar } from '@/components/lender/TrustBar';
-import { SearchBar } from '@/components/lender/SearchBar';
+import { SearchBarLoader } from '@/components/lender/search-bar-loader';
+
+export const dynamic = 'force-static';
 import { calculatorsPageSchema } from '@/lib/lender/seo/calculators';
 import { CALC_DISCLAIMER } from '@/lib/lender/calculators/registry';
 
@@ -57,7 +59,7 @@ export default function CalculatorsPage() {
               integration — zero paid placements, always.
             </p>
             <div className="mt-8">
-              <SearchBar className="mx-auto max-w-lg" />
+              <SearchBarLoader className="mx-auto max-w-lg" />
             </div>
           </div>
         </div>
@@ -68,7 +70,7 @@ export default function CalculatorsPage() {
       </div>
 
       <div className="container mx-auto px-4 py-10 md:py-14">
-        <CalculatorHub />
+        <CalculatorHubLoader />
       </div>
 
       <TrustBar />

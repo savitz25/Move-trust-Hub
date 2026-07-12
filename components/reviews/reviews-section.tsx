@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Review } from '@/types';
-import { getAllReviewsForCompany } from '@/lib/data';
+
 import { StarRating } from '@/components/ui/star-rating';
 import { Button } from '@/components/ui/button';
 import { format } from 'date-fns';
@@ -33,9 +33,15 @@ export function ReviewsSection({ companyId, companyName, initialReviews }: Props
 
   const loadMore = async () => {
     setIsLoadingMore(true);
-    const more = await getAllReviewsForCompany(companyId);
-    setReviews(more);
-    setIsLoadingMore(false);
+    try {
+      const res = await fetch(`/api/reviews?companyId=${encodeURIComponent(companyId)}`);
+      if (res.ok) {
+        const data = (await res.json()) as { reviews: Review[] };
+        setReviews(data.reviews);
+      }
+    } finally {
+      setIsLoadingMore(false);
+    }
   };
 
   return (

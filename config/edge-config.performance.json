@@ -1,0 +1,11 @@
+{
+  "performance": {
+    "enableGtag": true,
+    "enableVercelAnalytics": true,
+    "enableHubAnalytics": true,
+    "enableChatbot": false,
+    "deferThirdPartyUntilInteraction": true,
+    "htmlCacheSeconds": 86400,
+    "apiCacheSeconds": 3600
+  }
+}

@@ -39,7 +39,7 @@ export function StateGuideTemplate({ hub, state, children }: StateGuideTemplateP
           <p className={`mb-2 text-xs font-semibold uppercase tracking-widest ${accent}`}>
             Destination guide
           </p>
-          <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
             {state.name} insurance landscape
           </h1>
           <p className="mt-2 text-lg font-medium text-primary">{state.tagline}</p>

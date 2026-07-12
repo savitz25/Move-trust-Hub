@@ -61,7 +61,7 @@ export function CalculatorLandingTemplate({
               {eyebrow}
             </p>
           ) : null}
-          <h1 className="text-3xl font-bold md:text-4xl">{title}</h1>
+          <h1 className="text-3xl font-semibold md:text-4xl">{title}</h1>
           <p className="mt-3 text-lg text-muted-foreground">{description}</p>
         </div>
 

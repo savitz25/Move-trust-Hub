@@ -62,7 +62,7 @@ export function HealthHubDirectoryTemplate({
               {data.trustLabel}
             </p>
           ) : null}
-          <h1 className="mx-auto max-w-4xl text-3xl font-bold md:text-5xl">{data.title}</h1>
+          <h1 className="mx-auto max-w-4xl text-3xl font-semibold md:text-5xl">{data.title}</h1>
           <p className="mx-auto mt-3 max-w-2xl text-lg opacity-90">{data.subtitle}</p>
           {heroChildren ? <div className="mt-6 flex justify-center">{heroChildren}</div> : null}
         </div>

@@ -1,11 +1,24 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
-/* Exclude non-UI trees from class scanning — faster builds, fewer false-positive tokens. */
+/*
+ * Tailwind v4 purge scope — scan only UI trees; exclude data/content blobs that
+ * inflate the CSS bundle via false-positive class detection.
+ */
+@source "../app";
+@source "../components";
 @source not "../data";
 @source not "../scripts";
 @source not "../types";
+@source not "../actions";
+@source not "../store";
 @source not "../lib/destinations/content";
+@source not "../lib/resources";
+@source not "../lib/lender/mortgage";
+@source not "../lib/migration";
+@source not "../lib/verify-dot";
+@source not "../lib/data.ts";
+@source not "../lib/data-server.ts";
 
 /* Tailwind v4 theme registration for shadcn-style CSS variables.
    This makes classes like border-border, bg-card, text-foreground, etc. work
@@ -42,56 +55,7 @@
   --radius-sm: calc(var(--radius) - 4px);
 }
 
-/* Critical above-fold: stable metrics while the main stylesheet + Geist load. */
-@layer base {
-  /* LCP: homepage hero h1 */
-  h1.font-semibold.tracking-tighter {
-    font-size: 1.875rem;
-    line-height: 1.15;
-    font-weight: 600;
-    letter-spacing: -0.05em;
-  }
-
-  @media (min-width: 640px) {
-    h1.font-semibold.tracking-tighter {
-      font-size: 2.25rem;
-    }
-  }
-
-  @media (min-width: 768px) {
-    h1.font-semibold.tracking-tighter {
-      font-size: 3.75rem;
-    }
-  }
-
-  /* Navbar chrome: reserve sticky header height (trust bar + main nav). */
-  nav.sticky.top-0 {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
-
-  /* Mega-menu panels portal to body — prevent horizontal scrollbar layout shift */
-  html {
-    overflow-x: clip;
-  }
-
-  .mega-menu-panel {
-    position: fixed;
-    z-index: 200;
-    pointer-events: auto;
-  }
-
-  /* Hero shell: matches from-primary/8 via-background to-background. */
-  section.bg-gradient-to-br.from-primary\/8 {
-    background-image: linear-gradient(
-      to bottom right,
-      hsl(var(--primary) / 0.08),
-      hsl(var(--background)),
-      hsl(var(--background))
-    );
-  }
-}
+/* Above-fold rules live in app/critical.css (imported before this file in layout). */
 
 @layer base {
   :root {
@@ -139,77 +103,7 @@
   }
 }
 
-/* Trust-focused component styles */
-@layer components {
-  .trust-badge {
-    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border;
-  }
-  .trust-badge-verified {
-    @apply bg-emerald-50 text-emerald-700 border-emerald-200;
-  }
-  .trust-badge-fmcsa {
-    @apply bg-blue-50 text-blue-700 border-blue-200;
-  }
-  .star {
-    @apply text-amber-500;
-  }
-
-  .company-card {
-    @apply bg-card border border-border/70 rounded-xl shadow-trust transition-all duration-150 hover:shadow-trust-lg hover:border-border;
-  }
-
-  .section-heading {
-    @apply text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground;
-  }
-
-  .stat-card {
-    @apply bg-card border border-border/60 rounded-xl p-6 text-center;
-  }
-
-  .filter-chip {
-    @apply inline-flex items-center rounded-full border px-3 py-1 text-sm transition-colors hover:bg-muted cursor-pointer;
-  }
-  .filter-chip-active {
-    @apply bg-primary text-primary-foreground border-primary hover:bg-primary/90;
-  }
-
-  /* Table styling for TanStack + directory */
-  .data-table th {
-    @apply bg-muted/50 font-medium text-muted-foreground;
-  }
-
-  .rating-bar {
-    @apply h-2 bg-muted rounded-full overflow-hidden;
-  }
-  .rating-fill {
-    @apply h-full bg-accent transition-all;
-  }
-
-  /* Coverage map — per-state highlighting on company profiles */
-  .coverage-map svg path {
-    @apply transition-opacity duration-150;
-  }
-  @media (hover: hover) {
-    .coverage-map .state-covered:hover {
-      fill-opacity: 1;
-    }
-  }
-
-  /* Review card - sharper */
-  .review-card {
-    @apply border border-border/70 rounded-xl p-5 bg-card;
-  }
-
-  /* Comparison table */
-  .compare-table td, .compare-table th {
-    @apply px-4 py-3 text-sm align-top border-b;
-  }
-
-  /* Cleaner trust bar / proof elements */
-  .trust-proof {
-    @apply bg-muted/40 border-y;
-  }
-}
+/* Directory/component classes — deferred via DeferredUiStyles (app/ui-components.css). */
 
 /* Accessibility + focus states */
 @layer utilities {

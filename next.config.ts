@@ -1,7 +1,23 @@
 import type { NextConfig } from 'next';
+import bundleAnalyzer from '@next/bundle-analyzer';
+import { IMMUTABLE_ASSET, apiCacheControl } from './lib/cache/control';
 import { getAllHubRedirects } from './lib/migration/hub-redirects';
+import {
+  OUTPUT_FILE_TRACING_EXCLUDES,
+  ROUTER_STALE_TIMES,
+} from './lib/performance/build-config';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  // SWC minifies all prod bundles by default in Next 15 — `swcMinify` was removed (always on).
+  productionBrowserSourceMaps: false,
+  compress: true,
   // Optimized for Vercel + production
   poweredByHeader: false,
   // Temporarily ignore TS/ESLint errors during build so we can deploy while cleaning up types
@@ -11,6 +27,10 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  compiler: {
+    // SWC transform — strips console.* in prod (keeps warn/error for observability).
+    removeConsole: isProd ? { exclude: ['error', 'warn'] } : false,
   },
   images: {
     remotePatterns: [
@@ -27,24 +47,49 @@ const nextConfig: NextConfig = {
         hostname: '*.supabase.co',
       },
     ],
+    localPatterns: [
+      { pathname: '/logo.png' },
+      { pathname: '/images/**' },
+      { pathname: '/fonts/**' },
+      { pathname: '/insurance/brand/**' },
+      { pathname: '/lender/brand/**' },
+    ],
     formats: ['image/avif', 'image/webp'],
     qualities: [75],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 160, 200, 240],
+    qualities: [75],
     minimumCacheTTL: 31536000,
+    contentDispositionType: 'inline',
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  // Enable React strict mode
   reactStrictMode: true,
-  // Experimental for Next 15
+  serverExternalPackages: ['@supabase/supabase-js'],
+  outputFileTracingExcludes: OUTPUT_FILE_TRACING_EXCLUDES,
   experimental: {
+    staleTimes: ROUTER_STALE_TIMES,
     optimizePackageImports: [
+      '@vercel/analytics',
+      '@vercel/speed-insights',
+      '@supabase/ssr',
       'lucide-react',
-      '@radix-ui/react-*',
+      '@radix-ui/react-checkbox',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-label',
+      '@radix-ui/react-select',
+      '@radix-ui/react-slider',
+      '@radix-ui/react-slot',
+      '@radix-ui/react-tabs',
       'framer-motion',
       'sonner',
       'recharts',
       '@tanstack/react-table',
       'date-fns',
+      'zod',
+      'zustand',
+      'react-hook-form',
+      '@hookform/resolvers',
     ],
   },
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
@@ -124,8 +169,19 @@ const nextConfig: NextConfig = {
     ];
   },
   // Generate sitemap and robots via metadata in app dir
-  // Headers for security / SEO
+  // Headers: immutable static assets + security baseline (HTML CDN TTL is middleware + vercel.json).
   async headers() {
+    const securityHeaders = [
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'X-Frame-Options', value: 'DENY' },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      { key: 'X-DNS-Prefetch-Control', value: 'on' },
+      {
+        key: 'Permissions-Policy',
+        value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+      },
+    ];
+
     return [
       {
         source: '/_next/static/:path*',
@@ -147,50 +203,54 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/logo.png',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
+        headers: [{ key: 'Cache-Control', value: IMMUTABLE_ASSET }],
       },
       {
         source: '/insurance/brand/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
+        headers: [{ key: 'Cache-Control', value: IMMUTABLE_ASSET }],
       },
       {
         source: '/lender/brand/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
+        headers: [{ key: 'Cache-Control', value: IMMUTABLE_ASSET }],
+      },
+      {
+        source: '/images/:path*',
+        headers: [{ key: 'Cache-Control', value: IMMUTABLE_ASSET }],
+      },
+      {
+        source: '/fonts/:path*',
+        headers: [{ key: 'Cache-Control', value: IMMUTABLE_ASSET }],
+      },
+      {
+        source: '/_next/static/:path*',
+        headers: [{ key: 'Cache-Control', value: IMMUTABLE_ASSET }],
+      },
+      {
+        source: '/api/companies',
+        headers: [{ key: 'Cache-Control', value: apiCacheControl(3600) }],
+      },
+      {
+        source: '/api/reviews',
+        headers: [{ key: 'Cache-Control', value: apiCacheControl(3600) }],
+      },
+      {
+        source: '/lender/fdic-insured-banks/:path*',
+        headers: [{ key: 'Cache-Control', value: apiCacheControl(86400) }],
+      },
+      {
+        source: '/lender/local-lenders/:path*',
+        headers: [{ key: 'Cache-Control', value: apiCacheControl(86400) }],
+      },
+      {
+        source: '/lender/auto-loan-companies/:path*',
+        headers: [{ key: 'Cache-Control', value: apiCacheControl(86400) }],
       },
       {
         source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-        ],
+        headers: securityHeaders,
       },
     ];
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

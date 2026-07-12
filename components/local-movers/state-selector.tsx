@@ -3,11 +3,10 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Search, MapPin } from 'lucide-react';
-import type { LocalState } from '@/lib/local-movers/types';
-import { getStatePath, stateHasCounties } from '@/lib/local-movers/index';
-import { getCountiesForState } from '@/lib/local-movers/geography/index';
+import type { StateSelectorItem } from '@/lib/local-movers/types';
+import { getStatePath } from '@/lib/local-movers/paths';
 
-export function StateSelector({ states }: { states: LocalState[] }) {
+export function StateSelector({ states }: { states: StateSelectorItem[] }) {
   const [query, setQuery] = useState('');
 
   const filtered = useMemo(() => {
@@ -35,37 +34,30 @@ export function StateSelector({ states }: { states: LocalState[] }) {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-        {filtered.map((state) => {
-          const hasCounties = stateHasCounties(state.slug);
-          const countyCount = hasCounties
-            ? getCountiesForState(state.slug).length
-            : 0;
-
-          return (
-            <Link
-              key={state.slug}
-              href={getStatePath(state.slug)}
-              className="group rounded-xl border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
-            >
-              <div className="flex items-center justify-between gap-2 mb-1">
-                <span className="text-xs font-bold text-primary/70 tracking-wider">
-                  {state.code}
+        {filtered.map((state) => (
+          <Link
+            key={state.slug}
+            href={getStatePath(state.slug)}
+            className="group rounded-xl border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
+          >
+            <div className="flex items-center justify-between gap-2 mb-1">
+              <span className="text-xs font-bold text-primary/70 tracking-wider">
+                {state.code}
+              </span>
+              {state.hasCounties && (
+                <span className="text-[10px] text-muted-foreground">
+                  {state.countyCount} counties
                 </span>
-                {hasCounties && (
-                  <span className="text-[10px] text-muted-foreground">
-                    {countyCount} counties
-                  </span>
-                )}
-              </div>
-              <div className="font-semibold text-sm group-hover:text-primary transition-colors leading-snug">
-                {state.name}
-              </div>
-              {!hasCounties && (
-                <div className="text-[10px] text-muted-foreground mt-1">Coming soon</div>
               )}
-            </Link>
-          );
-        })}
+            </div>
+            <div className="font-semibold text-sm group-hover:text-primary transition-colors leading-snug">
+              {state.name}
+            </div>
+            {!state.hasCounties && (
+              <div className="text-[10px] text-muted-foreground mt-1">Coming soon</div>
+            )}
+          </Link>
+        ))}
       </div>
 
       {filtered.length === 0 && (

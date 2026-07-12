@@ -1,0 +1,73 @@
+/**
+ * Below-fold / directory component styles — loaded after first paint via DeferredUiStyles.
+ */
+@import "tailwindcss" reference;
+@config "../tailwind.config.ts";
+
+@layer components {
+  .trust-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border;
+  }
+  .trust-badge-verified {
+    @apply bg-emerald-50 text-emerald-700 border-emerald-200;
+  }
+  .trust-badge-fmcsa {
+    @apply bg-blue-50 text-blue-700 border-blue-200;
+  }
+  .star {
+    @apply text-amber-500;
+  }
+
+  .company-card {
+    @apply bg-card border border-border/70 rounded-xl shadow-trust transition-all duration-150 hover:shadow-trust-lg hover:border-border;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground;
+  }
+
+  .stat-card {
+    @apply bg-card border border-border/60 rounded-xl p-6 text-center;
+  }
+
+  .filter-chip {
+    @apply inline-flex items-center rounded-full border px-3 py-1 text-sm transition-colors hover:bg-muted cursor-pointer;
+  }
+  .filter-chip-active {
+    @apply bg-primary text-primary-foreground border-primary hover:bg-primary/90;
+  }
+
+  .data-table th {
+    @apply bg-muted/50 font-medium text-muted-foreground;
+  }
+
+  .rating-bar {
+    @apply h-2 bg-muted rounded-full overflow-hidden;
+  }
+  .rating-fill {
+    @apply h-full bg-accent transition-all;
+  }
+
+  .coverage-map svg path {
+    @apply transition-colors duration-150;
+  }
+  .coverage-map svg path:hover {
+    @apply fill-primary/20;
+  }
+  .coverage-map .state-covered {
+    @apply fill-primary/70;
+  }
+
+  .review-card {
+    @apply border border-border/70 rounded-xl p-5 bg-card;
+  }
+
+  .compare-table td,
+  .compare-table th {
+    @apply px-4 py-3 text-sm align-top border-b;
+  }
+
+  .trust-proof {
+    @apply bg-muted/40 border-y;
+  }
+}

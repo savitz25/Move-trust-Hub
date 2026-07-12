@@ -2,26 +2,30 @@
 
 import dynamic from 'next/dynamic';
 import { useDeferredLoad } from '@/lib/hooks/use-deferred-load';
+import { DeferredSpeedInsights } from '@/components/performance/deferred-speed-insights';
 
 const Analytics = dynamic(
   () => import('@vercel/analytics/next').then((m) => m.Analytics),
-  { ssr: false }
+  { ssr: false },
 );
 
-const SpeedInsights = dynamic(
-  () => import('@vercel/speed-insights/next').then((m) => m.SpeedInsights),
-  { ssr: false }
-);
-
-export function DeferredAnalytics() {
-  const ready = useDeferredLoad({ idleTimeout: 3500, maxWait: 12000 });
+export function DeferredAnalytics({
+  interactionOnly = true,
+}: {
+  interactionOnly?: boolean;
+}) {
+  const ready = useDeferredLoad({
+    idleTimeout: 6_000,
+    maxWait: 25_000,
+    interactionOnly,
+  });
 
   if (!ready) return null;
 
   return (
     <>
       <Analytics />
-      <SpeedInsights />
+      <DeferredSpeedInsights interactionOnly={interactionOnly} />
     </>
   );
 }

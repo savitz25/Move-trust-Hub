@@ -4,7 +4,7 @@ import { Breadcrumbs } from '@/components/lender/directory/Breadcrumbs';
 import { NationalHubShell } from '@/components/lender/directory/NationalHubShell';
 import { HubCTAStrip } from '@/components/lender/directory/HubCTAStrip';
 import { LeadCaptureForm } from '@/components/lender/directory/LeadCaptureForm';
-import { SearchBar } from '@/components/lender/SearchBar';
+import { SearchBarLoader } from '@/components/lender/search-bar-loader';
 import { SITE_URL, AUTO_CATEGORY } from '@/lib/lender/directory/categories';
 import { autoProviders } from '@/lib/lender/auto/providers';
 import { US_STATES } from '@/lib/lender/fdic/states';
@@ -72,7 +72,7 @@ export default function AutoLoanCompaniesHubPage() {
             Compare auto loan companies by state. Trust scores, APR ranges, and loan types for new,
             used, refinance, and bad credit financing.
           </p>
-          <SearchBar className="mx-auto mt-8 max-w-md" />
+          <SearchBarLoader className="mx-auto mt-8 max-w-md" />
         </div>
       </section>
 

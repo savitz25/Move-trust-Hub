@@ -4,7 +4,22 @@
  *
  * This script is idempotent (upserts by id).
  */
+import { readFileSync, existsSync } from 'fs';
+import { resolve } from 'path';
 import { createClient } from '@supabase/supabase-js';
+
+function loadEnvLocal() {
+  const path = resolve(process.cwd(), '.env.local');
+  if (!existsSync(path)) return;
+  for (const line of readFileSync(path, 'utf8').split('\n')) {
+    const m = line.match(/^([^#=]+)=(.*)$/);
+    if (m && !process.env[m[1].trim()]) {
+      process.env[m[1].trim()] = m[2].trim().replace(/^["']|["']$/g, '');
+    }
+  }
+}
+
+loadEnvLocal();
 import { seedCompanies } from '../data/seed-companies';
 import { seedReviews } from '../data/seed-reviews';
 import type { Database } from '../types/supabase';

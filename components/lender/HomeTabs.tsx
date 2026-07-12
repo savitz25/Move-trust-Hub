@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { LenderCard } from '@/components/lender/LenderCard';
-import { CalculatorHub } from '@/components/lender/CalculatorHub';
+import { CalculatorHubLoader } from '@/components/lender/calculator-hub-loader';
 import type { Lender } from '@/lib/lender/mockData';
 
 export function HomeTabs({ lenders }: { lenders: Lender[] }) {
@@ -45,7 +45,7 @@ export function HomeTabs({ lenders }: { lenders: Lender[] }) {
         </div>
       ) : (
         <div className="mx-auto max-w-2xl">
-          <CalculatorHub />
+          <CalculatorHubLoader />
         </div>
       )}
     </section>

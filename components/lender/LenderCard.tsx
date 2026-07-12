@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Link from 'next/link';
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/lender/ui/badge';
@@ -9,7 +10,7 @@ function toEnrichedLender(lender: Lender | EnrichedLender): EnrichedLender {
   return 'isEnriched' in lender ? lender : mergeLenderWithEnrichment(lender);
 }
 
-export function LenderCard({
+export const LenderCard = memo(function LenderCard({
   lender: lenderInput,
   rank,
   countyLabel,
@@ -133,4 +134,4 @@ export function LenderCard({
       </div>
     </article>
   );
-}
+});

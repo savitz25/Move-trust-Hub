@@ -1,6 +1,5 @@
-import { companyMatchesServiceFilter } from '@/lib/fmcsa/derive-directory-services';
-import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
-import { Company, Review, DirectoryFilters, SortOption } from '@/types';
+import { Company, Review, DirectoryFilters } from '@/types';
+import { filterCompanies } from '@/lib/directory/filter-companies';
 import { seedCompanies, getCompanyBySlug } from '@/data/seed-companies';
 import { seedReviews, getReviewsForCompany } from '@/data/seed-reviews';
 import { seedAutoTransportCompanies, getAutoTransportBySlug } from '@/data/seed-auto-transport';
@@ -67,94 +66,7 @@ export async function getAllReviewsForCompany(companyId: string): Promise<Review
 // Advanced filtering + sorting (client-side for demo + works great with TanStack Table later)
 export async function getFilteredCompanies(filters: Partial<DirectoryFilters>): Promise<Company[]> {
   const all = await getAllCompanies();
-  let result = [...all];
-
-  // Text search
-  if (filters.search && filters.search.trim().length > 1) {
-    const q = filters.search.toLowerCase().trim();
-    result = result.filter(c =>
-      c.name.toLowerCase().includes(q) ||
-      c.shortDescription.toLowerCase().includes(q) ||
-      c.headquarters.toLowerCase().includes(q) ||
-      c.specialties.some(s => s.toLowerCase().includes(q))
-    );
-  }
-
-  // Rating floor
-  if (filters.minRating && filters.minRating > 0) {
-    result = result.filter(c => c.overallRating >= filters.minRating!);
-  }
-
-  // Price ceiling
-  if (filters.maxPrice && filters.maxPrice < 12000) {
-    result = result.filter(c => c.avgPricePerMove <= filters.maxPrice!);
-  }
-
-  // Services
-  if (filters.services && filters.services.length > 0) {
-    result = result.filter((c) =>
-      filters.services!.some((svc) => companyMatchesServiceFilter(c, svc))
-    );
-  }
-
-  // Coverage
-  if (filters.coverage && filters.coverage !== 'Any') {
-    result = result.filter(c => c.coverage === filters.coverage || c.coverage === 'All 50 States');
-  }
-
-  // BBB
-  if (filters.bbbMin) {
-    const order = ['C','B-','B','B+','A-','A','A+'];
-    const minIdx = order.indexOf(filters.bbbMin);
-    result = result.filter(c => {
-      const idx = order.indexOf(c.bbbRating);
-      return idx >= minIdx;
-    });
-  }
-
-  // Full service only
-  if (filters.onlyFullService) {
-    result = result.filter(c => c.services.includes('Full Service'));
-  }
-
-  if (filters.onlyVerified) {
-    result = result.filter((c) => canShowVerifiedBadge(c));
-  }
-
-  // Specialties
-  if (filters.specialties && filters.specialties.length) {
-    result = result.filter(c =>
-      filters.specialties!.some(sp => c.specialties.some(cs => cs.toLowerCase().includes(sp.toLowerCase())))
-    );
-  }
-
-  // Sorting
-  const sort = filters.sort || 'reputation';
-  result.sort((a, b) => {
-    switch (sort) {
-      case 'reputation':
-        return b.reputationScore - a.reputationScore;
-      case 'rating':
-        return b.overallRating - a.overallRating;
-      case 'reviews':
-        return b.reviewCount - a.reviewCount;
-      case 'price-low':
-        return a.avgPricePerMove - b.avgPricePerMove;
-      case 'price-high':
-        return b.avgPricePerMove - a.avgPricePerMove;
-      case 'years':
-        return b.yearsInBusiness - a.yearsInBusiness;
-      case 'complaints': {
-        const ratioA = a.fmcsaComplaints / Math.max(a.fmcsaShipments, 1);
-        const ratioB = b.fmcsaComplaints / Math.max(b.fmcsaShipments, 1);
-        return ratioA - ratioB; // lower complaints ratio = better (but for sort we want lowest first)
-      }
-      default:
-        return b.reputationScore - a.reputationScore;
-    }
-  });
-
-  return result;
+  return filterCompanies(all, filters);
 }
 
 // Utility for complaint ratio display

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Breadcrumbs } from '@/components/lender/directory/Breadcrumbs';
-import { LeadCaptureForm } from '@/components/lender/directory/LeadCaptureForm';
-import { SearchBar } from '@/components/lender/SearchBar';
+import { LeadCaptureLoader } from '@/components/lender/lead-capture-loader';
+import { SearchBarLoader } from '@/components/lender/search-bar-loader';
 import { LenderCard } from '@/components/lender/LenderCard';
 import { STATE_BY_SLUG } from '@/lib/lender/fdic/states';
 import {
@@ -64,10 +64,10 @@ export function ClusterPageView({ state, slug, content }: ClusterPageViewProps) 
           <p className="mb-3 inline-flex rounded-full border border-teal-400/40 bg-teal-500/10 px-4 py-1.5 text-sm">
             {decodeHtml(content.badge)}
           </p>
-          <h1 className="text-3xl font-bold md:text-5xl">{decodeHtml(content.h1)}</h1>
+          <h1 className="text-3xl font-semibold md:text-5xl">{decodeHtml(content.h1)}</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">{decodeHtml(content.subtitle)}</p>
           <div className="mt-6">
-            <SearchBar className="mx-auto max-w-md" />
+            <SearchBarLoader className="mx-auto max-w-md" />
           </div>
         </div>
       </section>
@@ -149,7 +149,7 @@ export function ClusterPageView({ state, slug, content }: ClusterPageViewProps) 
               </div>
             </section>
 
-            <LeadCaptureForm
+            <LeadCaptureLoader
               stateName={leadCaptureName}
               categoryId="mortgage"
               variant="state-page-v2"
@@ -190,7 +190,7 @@ export function ClusterPageView({ state, slug, content }: ClusterPageViewProps) 
                 before signing disclosures.
               </p>
             </div>
-            <LeadCaptureForm
+            <LeadCaptureLoader
               stateName={leadCaptureName}
               categoryId="mortgage"
               variant="sidebar-minimal"

@@ -30,6 +30,12 @@ export type LocalState = {
   code: string;
 };
 
+/** Precomputed on the server — keeps geography data out of client bundles. */
+export type StateSelectorItem = LocalState & {
+  hasCounties: boolean;
+  countyCount: number;
+};
+
 export type CountyMoverAssignment = {
   stateSlug: string;
   countySlug: string;
