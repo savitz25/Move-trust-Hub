@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { LicenseDisplay } from '@/components/trust/license-display';
+import { resolveEntityTypeForDisplay } from '@/lib/fmcsa/entity-type-display';
 import {
   buildFmcsaSaferUrl,
   normalizeMc,
@@ -11,8 +12,17 @@ import type { Company } from '@/types';
 type Props = {
   company: Pick<
     Company,
-    'usdotNumber' | 'mcNumber' | 'entityType' | 'usdotStatus' | 'powerUnits'
+    | 'usdotNumber'
+    | 'mcNumber'
+    | 'entityType'
+    | 'usdotStatus'
+    | 'powerUnits'
+    | 'services'
+    | 'authorityActive'
+    | 'outOfService'
   >;
+  /** Optional raw FMCSA payload for display-time entity type resolution */
+  fmcsaRaw?: Record<string, unknown> | null;
   className?: string;
 };
 
@@ -33,12 +43,53 @@ function formatUsdotStatus(status: Company['usdotStatus']): string | null {
   return 'Active';
 }
 
-export function FmcsaDotCompliance({ company, className = '' }: Props) {
-  const rows = [
-    { label: 'Entity Type', value: company.entityType ?? null },
+function formatAuthorityStatus(
+  company: Pick<Company, 'authorityActive' | 'outOfService' | 'usdotStatus'>
+): string | null {
+  if (company.outOfService) return 'Out of Service';
+  if (company.authorityActive === true) return 'Active';
+  if (company.authorityActive === false) return 'Inactive';
+
+  const usdotStatus = formatUsdotStatus(company.usdotStatus);
+  if (usdotStatus) return usdotStatus;
+  return null;
+}
+
+function hasFmcsaComplianceContext(
+  company: Pick<
+    Company,
+    'usdotNumber' | 'mcNumber' | 'entityType' | 'usdotStatus' | 'authorityActive' | 'outOfService'
+  >
+): boolean {
+  return Boolean(
+    normalizeUsdot(company.usdotNumber) ||
+      normalizeMc(company.mcNumber) ||
+      company.entityType ||
+      company.usdotStatus ||
+      company.authorityActive != null ||
+      company.outOfService
+  );
+}
+
+export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props) {
+  const usdotLabel = formatUsdot(company.usdotNumber);
+  const mcLabel = formatMc(company.mcNumber);
+  const hasFmcsaContext = hasFmcsaComplianceContext(company);
+
+  const entityTypeResolved = resolveEntityTypeForDisplay({
+    entityType: company.entityType,
+    fmcsaRaw,
+    services: company.services,
+  });
+  const entityTypeDisplay =
+    entityTypeResolved ?? (hasFmcsaContext ? 'Not available' : null);
+
+  const rows: Array<{ label: string; value: string | null; mono?: boolean }> = [
+    { label: 'US DOT Number', value: usdotLabel, mono: true },
+    { label: 'MC Number', value: mcLabel, mono: true },
+    { label: 'Entity Type', value: entityTypeDisplay },
     { label: 'US DOT Status', value: formatUsdotStatus(company.usdotStatus) },
-    { label: 'US DOT Number', value: formatUsdot(company.usdotNumber) },
-    { label: 'MC Number', value: formatMc(company.mcNumber) },
+    { label: 'Authority Status', value: formatAuthorityStatus(company) },
     {
       label: 'Power Units',
       value:
@@ -61,7 +112,15 @@ export function FmcsaDotCompliance({ company, className = '' }: Props) {
         {rows.map((row) => (
           <div key={row.label}>
             <div className="text-muted-foreground text-xs">{row.label}</div>
-            <div className={row.label.includes('Number') ? 'font-mono text-lg' : 'font-medium'}>
+            <div
+              className={
+                row.mono
+                  ? 'font-mono text-lg'
+                  : row.value === 'Not available'
+                    ? 'font-medium text-muted-foreground'
+                    : 'font-medium'
+              }
+            >
               {row.value}
             </div>
           </div>

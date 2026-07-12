@@ -80,14 +80,35 @@ export function deriveUsdotStatus(carrier: CarrierLike): UsdotStatusLabel {
   return allowed === 'Y' ? 'ACTIVE' : 'INACTIVE';
 }
 
+function isActiveAuthorityCode(code: string | null | undefined): boolean {
+  if (!code) return false;
+  const normalized = code.trim().toUpperCase();
+  return normalized === 'A' || normalized === 'ACTIVE';
+}
+
+/** Infer entity type from active FMCSA authority when census type is absent. */
+export function deriveEntityTypeFromAuthority(carrier: CarrierLike): string | null {
+  const common = isActiveAuthorityCode(stringOrNull(carrier.commonAuthorityStatus));
+  const contract = isActiveAuthorityCode(stringOrNull(carrier.contractAuthorityStatus));
+  const broker = isActiveAuthorityCode(stringOrNull(carrier.brokerAuthorityStatus));
+
+  const hasCarrierAuthority = common || contract;
+  if (hasCarrierAuthority && broker) return 'Carrier/Broker';
+  if (broker) return 'Broker';
+  if (hasCarrierAuthority) return 'Carrier';
+  return null;
+}
+
 export function extractEntityType(carrier: CarrierLike): string | null {
   const census = asRecord(carrier.censusTypeId);
-  return (
+  const fromCensus =
     stringOrNull(census?.censusTypeDesc) ??
     stringOrNull(census?.censusType) ??
     stringOrNull(carrier.entityType) ??
-    null
-  );
+    null;
+
+  if (fromCensus) return fromCensus;
+  return deriveEntityTypeFromAuthority(carrier);
 }
 
 export function buildAddressParts(carrier: CarrierLike): FmcsaAddressParts {
