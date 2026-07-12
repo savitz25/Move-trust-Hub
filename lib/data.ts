@@ -1,4 +1,5 @@
 import { companyMatchesServiceFilter } from '@/lib/fmcsa/derive-directory-services';
+import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 import { Company, Review, DirectoryFilters, SortOption } from '@/types';
 import { seedCompanies, getCompanyBySlug } from '@/data/seed-companies';
 import { seedReviews, getReviewsForCompany } from '@/data/seed-reviews';
@@ -117,7 +118,7 @@ export async function getFilteredCompanies(filters: Partial<DirectoryFilters>): 
   }
 
   if (filters.onlyVerified) {
-    result = result.filter(c => c.isVerified);
+    result = result.filter((c) => canShowVerifiedBadge(c));
   }
 
   // Specialties

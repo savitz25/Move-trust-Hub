@@ -5,29 +5,26 @@ import { AlertTriangle, ShieldCheck, ShieldX } from 'lucide-react';
 import type { Company } from '@/types';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
 import { badgeLegendHref } from '@/lib/trust/site-stats';
+import {
+  deriveFmcsaVerificationStatus,
+  type FmcsaVerificationStatus,
+} from '@/lib/trust/verification-status';
 
-export type FmcsaBadgeStatus = 'verified' | 'warning' | 'critical' | 'unknown';
+export type FmcsaBadgeStatus = FmcsaVerificationStatus;
 
-export function deriveFmcsaBadgeStatus(company: Pick<
-  Company,
-  | 'authorityActive'
-  | 'outOfService'
-  | 'fmcsaSafetyRating'
-  | 'fmcsaLastChecked'
->): FmcsaBadgeStatus {
-  if (!company.fmcsaLastChecked) return 'unknown';
-  if (company.outOfService || company.authorityActive === false) return 'critical';
-  if (
-    company.fmcsaSafetyRating === 'Unsatisfactory' ||
-    company.fmcsaSafetyRating === 'Conditional'
-  ) {
-    return 'warning';
-  }
-  // authorityActive === false already returned critical above
-  if (company.fmcsaSafetyRating === 'Satisfactory') {
-    return 'verified';
-  }
-  return 'unknown';
+export function deriveFmcsaBadgeStatus(
+  company: Pick<
+    Company,
+    | 'usdotNumber'
+    | 'mcNumber'
+    | 'authorityActive'
+    | 'outOfService'
+    | 'fmcsaSafetyRating'
+    | 'fmcsaLastChecked'
+    | 'usdotStatus'
+  >
+): FmcsaBadgeStatus | null {
+  return deriveFmcsaVerificationStatus(company);
 }
 
 const LABELS: Record<FmcsaBadgeStatus, string> = {
@@ -61,19 +58,26 @@ const TOOLTIPS: Record<FmcsaBadgeStatus, string> = {
 export function FmcsaVerificationBadge({
   company,
   className,
+  status: statusOverride,
   linkToLegend = true,
 }: {
   company: Pick<
     Company,
+    | 'usdotNumber'
+    | 'mcNumber'
     | 'authorityActive'
     | 'outOfService'
     | 'fmcsaSafetyRating'
     | 'fmcsaLastChecked'
+    | 'usdotStatus'
   >;
   className?: string;
+  status?: FmcsaBadgeStatus;
   linkToLegend?: boolean;
 }) {
-  const status = deriveFmcsaBadgeStatus(company);
+  const status = statusOverride ?? deriveFmcsaVerificationStatus(company);
+  if (!status) return null;
+
   const tooltip = TOOLTIPS[status];
   const legendId = LEGEND_IDS[status];
 

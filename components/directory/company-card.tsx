@@ -7,10 +7,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
-import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
-import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
-import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
-import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
+import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import {
   companyProfileHref,
@@ -65,13 +62,7 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
           >
             {company.name}
           </Link>
-          <div className="flex flex-wrap gap-1 justify-end">
-            {canShowVerifiedBadge(company) ? (
-              <DirectoryVerifiedBadge compact />
-            ) : null}
-            <FmcsaVerificationBadge company={company} className="text-[10px] h-fit" />
-            <BbbVerificationBadge company={company} className="text-[10px] h-fit" />
-          </div>
+          <CompanyVerificationBadges company={company} compact />
         </div>
 
         <div className="text-sm text-muted-foreground mt-1">{locationLine}</div>

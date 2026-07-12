@@ -12,6 +12,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { ArrowUpDown, Filter, Plus, X, Truck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
+import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 
 const SORT_OPTIONS: { value: SortOption; label: string }[] = [
@@ -256,12 +257,13 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
           {companies.length > 0 ? (
             companies.map((company) => (
               <Card key={company.id} className="p-5 hover:shadow-md transition-shadow">
-                <div className="flex justify-between items-start">
-                  <div>
+                <div className="flex justify-between items-start gap-2">
+                  <div className="min-w-0">
                     <Link href={`/auto-transport/${company.slug}`} className="font-semibold text-xl hover:text-primary">
                       {company.name}
                     </Link>
                     <div className="text-sm text-muted-foreground mt-0.5">{company.headquarters}</div>
+                    <CompanyVerificationBadges company={company} compact className="mt-2 justify-start" />
                   </div>
                   <div className="text-right">
                     <StarRating rating={company.overallRating} />

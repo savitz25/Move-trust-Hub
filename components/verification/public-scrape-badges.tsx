@@ -1,25 +1,18 @@
 import { Badge } from '@/components/ui/badge';
 import { Globe } from 'lucide-react';
-import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
 import type { PublicScrapeData } from '@/lib/verification/types';
 
 export function PublicScrapeBadges({
   data,
   className,
-  excludeBbb = false,
+  /** BBB is rendered via BbbVerificationBadge — always excluded here to avoid duplicates */
+  excludeBbb = true,
 }: {
   data: PublicScrapeData;
   className?: string;
-  /** Hide BBB when a dedicated BbbPublicDetail block is shown on the profile */
   excludeBbb?: boolean;
 }) {
   const items: string[] = [];
-
-  // BBB badge only when a confirmed listing exists (same rules as profile BBB section).
-  if (!excludeBbb && hasBbbPublicScrapeData(data) && data.bbb_rating) {
-    const acc = data.bbb_accredited ? ' Accredited' : '';
-    items.push(`BBB ${data.bbb_rating}${acc}`);
-  }
   if (data.trustpilot_rating != null) {
     items.push(`Trustpilot ${data.trustpilot_rating.toFixed(1)}`);
   }

@@ -1,6 +1,7 @@
 import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
 import { companyMatchesServiceFilter } from '@/lib/fmcsa/derive-directory-services';
+import { canShowVerifiedBadge } from '@/lib/trust/company-display-policy';
 import type { Company, DirectoryFilters } from '@/types';
 
 export type DirectoryFilterInput = Partial<DirectoryFilters> & {
@@ -95,7 +96,7 @@ export function filterCompanies(
   }
 
   if (filters.onlyVerified) {
-    result = result.filter((c) => c.isVerified);
+    result = result.filter((c) => canShowVerifiedBadge(c));
   }
 
   if (filters.specialties && filters.specialties.length) {

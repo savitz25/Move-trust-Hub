@@ -1,68 +1,71 @@
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { AlertTriangle, Award, ShieldAlert } from 'lucide-react';
+import { Award, ShieldAlert } from 'lucide-react';
 import type { Company } from '@/types';
+import {
+  deriveBbbVerificationStatus,
+  getBbbDisplayFromScrape,
+  type BbbVerificationStatus,
+} from '@/lib/trust/verification-status';
+import { badgeLegendHref } from '@/lib/trust/site-stats';
+import { cn } from '@/lib/utils';
 
-export type BbbBadgeStatus = 'accredited' | 'rated' | 'warning' | 'unknown';
+const BBB_VERIFIED_TOOLTIP =
+  'Confirmed BBB business listing from our most recent public scrape or BBB API check.';
+const BBB_UNVERIFIED_TOOLTIP =
+  'No confirmed BBB listing found in our latest scrape — verify independently on BBB.org.';
 
 export function deriveBbbBadgeStatus(
-  company: Pick<
-    Company,
-    'bbbAccredited' | 'bbbRating' | 'bbbLastChecked' | 'bbbAlertCount'
-  >
-): BbbBadgeStatus {
-  if (!company.bbbLastChecked) return 'unknown';
-  if ((company.bbbAlertCount ?? 0) > 0) return 'warning';
-  if (company.bbbAccredited) return 'accredited';
-  const rating = company.bbbRating ?? 'NR';
-  if (rating === 'F' || rating.startsWith('D') || rating.startsWith('C')) return 'warning';
-  if (rating !== 'NR') return 'rated';
-  return 'unknown';
+  company: Pick<Company, 'publicScrapeData'>
+): BbbVerificationStatus {
+  return deriveBbbVerificationStatus(company.publicScrapeData);
 }
 
 export function BbbVerificationBadge({
   company,
   className,
-  showRating = true,
+  status: statusOverride,
+  linkToLegend = true,
 }: {
-  company: Pick<
-    Company,
-    'bbbAccredited' | 'bbbRating' | 'bbbLastChecked' | 'bbbAlertCount'
-  >;
+  company: Pick<Company, 'publicScrapeData'>;
   className?: string;
-  showRating?: boolean;
+  status?: BbbVerificationStatus;
+  linkToLegend?: boolean;
 }) {
-  const status = deriveBbbBadgeStatus(company);
+  const status = statusOverride ?? deriveBbbVerificationStatus(company.publicScrapeData);
+  const { rating, accredited } = getBbbDisplayFromScrape(company.publicScrapeData);
 
-  if (status === 'accredited') {
-    return (
-      <Badge variant="success" className={className}>
-        <Award className="h-3.5 w-3.5 mr-1" />
-        BBB Accredited{showRating && company.bbbRating ? ` ${company.bbbRating}` : ''}
+  const badge =
+    status === 'verified' ? (
+      <Badge variant="success" className={className} title={BBB_VERIFIED_TOOLTIP}>
+        <Award className="h-3.5 w-3.5 mr-1" aria-hidden="true" />
+        BBB Verified
+        {rating ? ` ${rating}` : ''}
+        {accredited ? ' · Accredited' : ''}
+      </Badge>
+    ) : (
+      <Badge variant="outline" className={className} title={BBB_UNVERIFIED_TOOLTIP}>
+        <ShieldAlert className="h-3.5 w-3.5 mr-1" aria-hidden="true" />
+        BBB Unverified
       </Badge>
     );
-  }
 
-  if (status === 'rated' && showRating && company.bbbRating && company.bbbRating !== 'NR') {
-    return (
-      <Badge variant="secondary" className={className}>
-        BBB {company.bbbRating}
-      </Badge>
-    );
-  }
+  if (!linkToLegend) return badge;
 
-  if (status === 'warning') {
-    return (
-      <Badge variant="warning" className={className}>
-        <AlertTriangle className="h-3.5 w-3.5 mr-1" />
-        BBB Warning
-      </Badge>
-    );
-  }
+  const legendId = status === 'verified' ? 'bbb-verified' : 'bbb-unverified';
 
   return (
-    <Badge variant="outline" className={className}>
-      <ShieldAlert className="h-3.5 w-3.5 mr-1" />
-      BBB Unverified
-    </Badge>
+    <Link
+      href={badgeLegendHref(legendId, true)}
+      className={cn('inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full')}
+      title={`${status === 'verified' ? BBB_VERIFIED_TOOLTIP : BBB_UNVERIFIED_TOOLTIP} — see badge legend`}
+      aria-label={
+        status === 'verified'
+          ? `BBB Verified${rating ? ` ${rating}` : ''}: ${BBB_VERIFIED_TOOLTIP}`
+          : `BBB Unverified: ${BBB_UNVERIFIED_TOOLTIP}`
+      }
+    >
+      {badge}
+    </Link>
   );
 }

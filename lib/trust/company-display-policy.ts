@@ -4,6 +4,7 @@ import {
   buildFmcsaSaferUrl,
   isMarketplaceListing,
 } from '@/lib/trust/license-verification';
+import { hasActiveDotLicense } from '@/lib/trust/verification-status';
 
 export const LICENSE_PENDING_MESSAGE = 'Licensing details pending verification';
 
@@ -27,11 +28,16 @@ export function canShowLicenseNumbers(
 }
 
 export function canShowVerifiedBadge(
-  company: Pick<Company, 'isVerified' | 'usdotNumber' | 'mcNumber'>
+  company: Pick<
+    Company,
+    | 'usdotNumber'
+    | 'mcNumber'
+    | 'authorityActive'
+    | 'outOfService'
+    | 'usdotStatus'
+  >
 ): boolean {
-  if (!company.isVerified) return false;
-  if (isMarketplaceListing(company.usdotNumber, company.mcNumber)) return false;
-  return assessLicense(company.usdotNumber, company.mcNumber).isDisplayable;
+  return hasActiveDotLicense(company);
 }
 
 function hasNoLicenseOnFile(
@@ -77,7 +83,14 @@ export function getLicenseDisplay(
 }
 
 export function directoryVerifiedLabel(
-  company: Pick<Company, 'isVerified' | 'usdotNumber' | 'mcNumber'>
+  company: Pick<
+    Company,
+    | 'usdotNumber'
+    | 'mcNumber'
+    | 'authorityActive'
+    | 'outOfService'
+    | 'usdotStatus'
+  >
 ): string | null {
   return canShowVerifiedBadge(company) ? 'Directory Verified' : null;
 }

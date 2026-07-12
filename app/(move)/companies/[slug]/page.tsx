@@ -18,13 +18,10 @@ import { CoverageAreaCard } from '@/components/map/coverage-area-card';
 import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { MetricLabel } from '@/components/trust/metric-label';
-import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
-import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
-import {
-  canShowVerifiedBadge,
-  directoryVerifiedLabel,
-} from '@/lib/trust/company-display-policy';
+
+import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
+import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
 import { LicenseMetadataDescription } from '@/components/trust/license-display';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
@@ -34,7 +31,7 @@ import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
 import { PublicScrapeBadges } from '@/components/verification/public-scrape-badges';
 import { AdminRefreshVerificationShell } from '@/components/verification/admin-refresh-verification-shell';
-import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
+import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness';
 
@@ -89,9 +86,10 @@ export default async function CompanyProfilePage({ params }: Props) {
     slug: company.slug,
   });
 
+  const verification = getCompanyVerificationStatus(company);
   const verifiedLabel = directoryVerifiedLabel(company);
   const scrapeBbb = company.publicScrapeData;
-  const showScrapeBbb = hasBbbPublicScrapeData(scrapeBbb);
+  const showScrapeBbb = verification.bbb === 'verified';
   // BBB trust signal only when a confirmed public BBB listing exists — never legacy/unverified.
   const bbbTrustSignal =
     showScrapeBbb && scrapeBbb?.bbb_rating
@@ -118,22 +116,18 @@ export default async function CompanyProfilePage({ params }: Props) {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            {canShowVerifiedBadge(company) ? <DirectoryVerifiedBadge /> : null}
-            {canShowVerifiedBadge(company) ? <FmcsaVerificationBadge company={company} /> : null}
+            <CompanyVerificationBadges company={company} className="justify-start" />
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
           </div>
           {company.publicScrapeData ? (
             <div className="mt-2">
-              <PublicScrapeBadges
-                data={company.publicScrapeData}
-                excludeBbb={showScrapeBbb}
-              />
+              <PublicScrapeBadges data={company.publicScrapeData} excludeBbb />
             </div>
           ) : null}
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
-          {canShowVerifiedBadge(company) ? (
+          {verification.directoryVerified || verification.fmcsa || verification.bbb ? (
             <VerificationBadgeLegend className="mt-4" />
           ) : null}
         </div>

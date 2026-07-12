@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import { getAutoTransportBySlugAsync } from '@/lib/data-server';
-import {
-  canShowVerifiedBadge,
-  directoryVerifiedLabel,
-} from '@/lib/trust/company-display-policy';
+import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
+import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
+import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
+import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
 import { LicenseMetadataDescription } from '@/components/trust/license-display';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
@@ -15,7 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
-import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-badge';
+
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -44,10 +44,13 @@ export default async function AutoTransportProfilePage({ params }: Props) {
 
   if (!company) notFound();
 
+  const verification = getCompanyVerificationStatus(company);
   const verifiedLabel = directoryVerifiedLabel(company);
   const trustSignals = [
     company.fmcsaSafetyRating === 'Satisfactory' && verifiedLabel && 'FMCSA Satisfactory',
-    company.bbbAccredited && `BBB ${company.bbbRating} Accredited`,
+    verification.bbb === 'verified' &&
+      company.bbbRating &&
+      `BBB ${company.bbbRating}${company.bbbAccredited ? ' Accredited' : ''}`,
     verifiedLabel,
   ].filter(Boolean);
 
@@ -60,11 +63,14 @@ export default async function AutoTransportProfilePage({ params }: Props) {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
         <div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            {canShowVerifiedBadge(company) ? <DirectoryVerifiedBadge /> : null}
+            <CompanyVerificationBadges company={company} className="justify-start" />
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
+          {verification.directoryVerified || verification.fmcsa || verification.bbb ? (
+            <VerificationBadgeLegend className="mt-4" />
+          ) : null}
         </div>
         <div className="flex items-center gap-3">
           <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">
