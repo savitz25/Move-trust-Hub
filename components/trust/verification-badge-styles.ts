@@ -20,15 +20,15 @@ export function verificationBadgeClasses(
 ): string {
   const toneClasses = {
     success:
-      'border-emerald-600/35 bg-emerald-50 text-emerald-800 hover:bg-emerald-100/80 dark:bg-emerald-950/35 dark:text-emerald-300 dark:border-emerald-500/30',
+      'border-emerald-600/35 bg-emerald-50 text-black hover:bg-emerald-100/80 dark:bg-emerald-950/35 dark:text-neutral-100 dark:border-emerald-500/30',
     warning:
-      'border-amber-600/35 bg-amber-50 text-amber-900 hover:bg-amber-100/80 dark:bg-amber-950/35 dark:text-amber-200 dark:border-amber-500/30',
+      'border-amber-600/35 bg-amber-50 text-black hover:bg-amber-100/80 dark:bg-amber-950/35 dark:text-neutral-100 dark:border-amber-500/30',
     critical:
-      'border-red-600/35 bg-red-50 text-red-800 hover:bg-red-100/80 dark:bg-red-950/35 dark:text-red-300 dark:border-red-500/30',
+      'border-red-600/35 bg-red-50 text-black hover:bg-red-100/80 dark:bg-red-950/35 dark:text-neutral-100 dark:border-red-500/30',
     muted:
-      'border-border/70 bg-muted/50 text-muted-foreground hover:bg-muted/70',
+      'border-border/70 bg-muted/50 text-black hover:bg-muted/70 dark:text-neutral-100',
     neutral:
-      'border-border/80 bg-background text-foreground hover:bg-muted/40',
+      'border-border/80 bg-background text-black hover:bg-muted/40 dark:text-neutral-100',
   }[tone];
 
   return cn(
