@@ -14,6 +14,8 @@ type CalculatorPageShellProps = {
   breadcrumbs?: { label: string; href?: string }[];
   children: React.ReactNode;
   schema?: Record<string, unknown>;
+  /** Wider layout for complex calculator UIs (default: max-w-4xl) */
+  wide?: boolean;
 };
 
 export function CalculatorPageShell({
@@ -24,6 +26,7 @@ export function CalculatorPageShell({
   breadcrumbs,
   children,
   schema,
+  wide,
 }: CalculatorPageShellProps) {
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -40,7 +43,7 @@ export function CalculatorPageShell({
       {schema ? <SchemaInjector data={schema} /> : null}
       <SchemaInjector data={faqSchema} />
 
-      <div className="container mx-auto px-4 py-10 md:py-14 max-w-4xl">
+      <div className={`container mx-auto px-4 py-10 md:py-14 ${wide ? 'max-w-6xl' : 'max-w-4xl'}`}>
         {breadcrumbs?.length ? (
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
             {breadcrumbs.map((crumb, index) => (

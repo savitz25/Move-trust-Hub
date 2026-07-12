@@ -14,6 +14,7 @@ const METHODOLOGY = [
 export default function MovingCalculatorPage() {
   return (
     <CalculatorPageShell
+      wide
       title="Free Moving Calculator — Cubic Feet, Weight & Truck Size"
       description="Build a room-by-room moving inventory and instantly estimate total cubic footage, household-goods weight, and recommended truck size before you compare FMCSA-licensed interstate movers."
       methodology={METHODOLOGY}

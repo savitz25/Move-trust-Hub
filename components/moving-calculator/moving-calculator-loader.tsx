@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { CalculatorSkeleton } from '@/components/moving-calculator/calculator-skeleton';
 
@@ -12,5 +13,9 @@ const MovingCalculatorClient = dynamic(
 );
 
 export function MovingCalculatorLoader() {
-  return <MovingCalculatorClient />;
+  return (
+    <Suspense fallback={<CalculatorSkeleton />}>
+      <MovingCalculatorClient />
+    </Suspense>
+  );
 }

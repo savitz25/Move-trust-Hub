@@ -61,6 +61,53 @@ export function trackCalculatorComplete(params: {
   });
 }
 
+export function trackPresetSelected(params: { preset: string }) {
+  trackGaEvent('preset_selected', {
+    preset: params.preset,
+    page_path: '/moving-calculator',
+  });
+}
+
+export function trackItemAdded(params: {
+  item_name: string;
+  room?: string;
+  mode?: string;
+  source?: string;
+}) {
+  trackGaEvent('item_added', {
+    item_name: params.item_name,
+    room: params.room,
+    calculator_mode: params.mode,
+    source: params.source,
+    page_path: '/moving-calculator',
+  });
+}
+
+export function trackPdfDownloaded(params: {
+  volume: number;
+  item_count: number;
+}) {
+  trackGaEvent('pdf_downloaded', {
+    volume: params.volume,
+    item_count: params.item_count,
+    page_path: '/moving-calculator',
+  });
+}
+
+export function trackInventoryShared(params: { method: string }) {
+  trackGaEvent('inventory_shared', {
+    method: params.method,
+    page_path: '/moving-calculator',
+  });
+}
+
+export function trackBoxesSuggested(params: { box_count: number }) {
+  trackGaEvent('boxes_suggested_added', {
+    box_count: params.box_count,
+    page_path: '/moving-calculator',
+  });
+}
+
 export function trackLegacyArrival(params: {
   legacy_source: string;
   hub: string;
