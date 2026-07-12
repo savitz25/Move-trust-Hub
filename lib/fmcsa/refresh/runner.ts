@@ -2,6 +2,8 @@ import 'server-only';
 
 import { revalidatePath } from 'next/cache';
 import { computeReputationScore } from '@/data/seed-companies';
+import { extractDisplayFieldsFromSnapshot } from '@/lib/fmcsa/refresh/batch-fields';
+import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import { detectFieldChanges } from '@/lib/fmcsa/refresh/changes';
 import { fetchFmcsaCarrierForCompany } from '@/lib/fmcsa/refresh/fetch-carrier';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
@@ -42,7 +44,7 @@ async function selectCompanies(
   let query = supabase
     .from('companies')
     .select(
-      'id, slug, name, headquarters, usdot_number, mc_number, fmcsa_safety_rating, fmcsa_complaints, fmcsa_shipments, authority_active, out_of_service, complaints_last_12m, revocation_date, data_hash, fmcsa_last_checked, fmcsa_raw, reputation_score, overall_rating, review_count, bbb_rating, bbb_accredited, is_verified, years_in_business'
+      'id, slug, name, headquarters, usdot_number, mc_number, fmcsa_safety_rating, fmcsa_complaints, fmcsa_shipments, authority_active, out_of_service, complaints_last_12m, revocation_date, data_hash, fmcsa_last_checked, fmcsa_raw, services, reputation_score, overall_rating, review_count, bbb_rating, bbb_accredited, is_verified, years_in_business'
     )
     .not('usdot_number', 'is', null)
     .neq('usdot_number', '')
@@ -237,6 +239,10 @@ export async function runFmcsaRefresh(options: RefreshOptions): Promise<RefreshR
       continue;
     }
 
+    const display = extractDisplayFieldsFromSnapshot(snapshot);
+    const existingServices = (company.services ?? []) as import('@/types').ServiceType[];
+    const services = mergeServicesWithEntityType(existingServices, display.entityType);
+
     const reputationScore = computeReputationScore({
       overallRating: company.overall_rating ?? 0,
       reviewCount: company.review_count,
@@ -262,6 +268,7 @@ export async function runFmcsaRefresh(options: RefreshOptions): Promise<RefreshR
         fmcsa_last_checked: new Date().toISOString(),
         fmcsa_legal_name: snapshot.legalName ?? null,
         fmcsa_raw: snapshot.raw,
+        services,
         reputation_score: reputationScore,
         last_updated: new Date().toISOString(),
         updated_at: new Date().toISOString(),

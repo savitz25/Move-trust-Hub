@@ -3,6 +3,7 @@ import {
   extractEntityType,
   extractPowerUnits,
 } from '@/lib/fmcsa/carrier-fields';
+import { formatEntityTypeLabel } from '@/lib/fmcsa/entity-type-display';
 import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import type { UsdotStatusLabel } from '@/lib/fmcsa/preview-types';
 import type { Company, ServiceType } from '@/types';
@@ -26,7 +27,10 @@ export function extractFmcsaFieldsFromRow(
   existingServices: ServiceType[]
 ): FmcsaFieldsFromRow {
   const carrier = asCarrierLike(row.fmcsa_raw);
-  const entityType = carrier ? extractEntityType(carrier) : null;
+  const persisted =
+    typeof row.entity_type === 'string' ? formatEntityTypeLabel(row.entity_type) : null;
+  const fromRaw = carrier ? formatEntityTypeLabel(extractEntityType(carrier)) : null;
+  const entityType = persisted ?? fromRaw;
 
   let usdotStatus: UsdotStatusLabel | null = carrier
     ? deriveUsdotStatus(carrier)
