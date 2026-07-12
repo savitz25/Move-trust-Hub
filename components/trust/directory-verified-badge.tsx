@@ -3,33 +3,42 @@ import { BadgeCheck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
 import { badgeLegendHref } from '@/lib/trust/site-stats';
+import {
+  verificationBadgeClasses,
+  verificationBadgeIconClass,
+  verificationBadgeLinkClass,
+  type VerificationBadgeSize,
+} from '@/components/trust/verification-badge-styles';
 import { cn } from '@/lib/utils';
 
 const DIRECTORY_LEGEND = VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'directory')!;
 
 type DirectoryVerifiedBadgeProps = {
   className?: string;
+  /** @deprecated Use size="compact" */
   compact?: boolean;
-  /** When true, links to in-page #badge-legend anchor on profiles. */
+  size?: VerificationBadgeSize;
   linkToLegend?: boolean;
 };
 
 export function DirectoryVerifiedBadge({
   className,
   compact = false,
+  size,
   linkToLegend = true,
 }: DirectoryVerifiedBadgeProps) {
+  const resolvedSize: VerificationBadgeSize = size ?? (compact ? 'compact' : 'profile');
+
   const badge = (
     <Badge
-      variant="success"
+      variant="outline"
       className={cn(
-        compact && 'text-[10px] h-fit',
-        linkToLegend && 'hover:ring-2 hover:ring-emerald-500/30 transition-shadow',
-        className
+        verificationBadgeClasses(resolvedSize, 'success', className),
+        linkToLegend && 'hover:ring-1 hover:ring-emerald-500/25 transition-shadow'
       )}
       title={DIRECTORY_LEGEND.description}
     >
-      <BadgeCheck className="h-3.5 w-3.5 mr-1" aria-hidden="true" />
+      <BadgeCheck className={verificationBadgeIconClass(resolvedSize)} aria-hidden="true" />
       {DIRECTORY_LEGEND.label}
     </Badge>
   );
@@ -39,7 +48,7 @@ export function DirectoryVerifiedBadge({
   return (
     <Link
       href={badgeLegendHref('directory', true)}
-      className="inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
+      className={verificationBadgeLinkClass()}
       title={`${DIRECTORY_LEGEND.description} — see badge legend`}
       aria-label={`${DIRECTORY_LEGEND.label}: ${DIRECTORY_LEGEND.description}. View badge legend.`}
     >

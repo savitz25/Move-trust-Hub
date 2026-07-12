@@ -65,7 +65,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            <CompanyVerificationBadges company={company} className="justify-start" />
+            <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
           </div>
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
           {verification.directoryVerified || verification.fmcsa || verification.bbb ? (

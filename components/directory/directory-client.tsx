@@ -16,6 +16,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { Filter, Loader2, X } from 'lucide-react';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { CompanyCard } from '@/components/directory/company-card';
+import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { DirectoryEmptyState } from '@/components/directory/directory-empty-state';
 import {
   companyProfileHref,
@@ -450,6 +451,11 @@ export function DirectoryClient({
                         <div className="text-xs text-muted-foreground">
                           {formatCompanyHeadquarters(c.headquarters)}
                         </div>
+                        <CompanyVerificationBadges
+                          company={c}
+                          size="compact"
+                          className="mt-1.5 justify-start"
+                        />
                       </td>
                       <td className="font-semibold text-center">{c.reputationScore ?? 0}</td>
                       <td>

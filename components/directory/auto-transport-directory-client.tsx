@@ -263,7 +263,7 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                       {company.name}
                     </Link>
                     <div className="text-sm text-muted-foreground mt-0.5">{company.headquarters}</div>
-                    <CompanyVerificationBadges company={company} compact className="mt-2 justify-start" />
+                    <CompanyVerificationBadges company={company} size="compact" className="mt-1.5 justify-start" />
                   </div>
                   <div className="text-right">
                     <StarRating rating={company.overallRating} />
@@ -333,6 +333,11 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                   <td className="p-3 font-medium">
                     <Link href={`/auto-transport/${c.slug}`}>{c.name}</Link>
                     <div className="text-xs text-muted-foreground">{c.headquarters}</div>
+                    <CompanyVerificationBadges
+                      company={c}
+                      size="compact"
+                      className="mt-1.5 justify-start"
+                    />
                   </td>
                   <td className="p-3">
                     <StarRating rating={c.overallRating} size="sm" />{' '}

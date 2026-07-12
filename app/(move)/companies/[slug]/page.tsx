@@ -114,9 +114,9 @@ export default async function CompanyProfilePage({ params }: Props) {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
         <div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
             <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
-            <CompanyVerificationBadges company={company} className="justify-start" />
+            <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}

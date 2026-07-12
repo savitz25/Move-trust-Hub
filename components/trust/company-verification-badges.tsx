@@ -3,11 +3,14 @@ import { DirectoryVerifiedBadge } from '@/components/trust/directory-verified-ba
 import { FmcsaVerificationBadge } from '@/components/fmcsa/fmcsa-verification-badge';
 import { BbbVerificationBadge } from '@/components/bbb/bbb-verification-badge';
 import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
+import type { VerificationBadgeSize } from '@/components/trust/verification-badge-styles';
 import { cn } from '@/lib/utils';
 
 type CompanyVerificationBadgesProps = {
   company: Company;
+  /** @deprecated Use size="compact" */
   compact?: boolean;
+  size?: VerificationBadgeSize;
   linkToLegend?: boolean;
   className?: string;
 };
@@ -19,9 +22,11 @@ type CompanyVerificationBadgesProps = {
 export function CompanyVerificationBadges({
   company,
   compact = false,
+  size,
   linkToLegend = true,
   className,
 }: CompanyVerificationBadgesProps) {
+  const resolvedSize: VerificationBadgeSize = size ?? (compact ? 'compact' : 'profile');
   const status = getCompanyVerificationStatus(company);
   const showDirectory = status.directoryVerified;
   const showFmcsa = status.fmcsa !== null;
@@ -32,23 +37,23 @@ export function CompanyVerificationBadges({
   }
 
   return (
-    <div className={cn('flex flex-wrap gap-1 justify-end', className)}>
+    <div className={cn('flex flex-wrap items-center gap-1', className)}>
       {showDirectory ? (
-        <DirectoryVerifiedBadge compact={compact} linkToLegend={linkToLegend} />
+        <DirectoryVerifiedBadge size={resolvedSize} linkToLegend={linkToLegend} />
       ) : null}
       {showFmcsa ? (
         <FmcsaVerificationBadge
           company={company}
-          className={compact ? 'text-[10px] h-fit' : undefined}
           linkToLegend={linkToLegend}
+          size={resolvedSize}
           status={status.fmcsa ?? undefined}
         />
       ) : null}
       {showBbb ? (
         <BbbVerificationBadge
           company={company}
-          className={compact ? 'text-[10px] h-fit' : undefined}
           linkToLegend={linkToLegend}
+          size={resolvedSize}
           status={status.bbb}
         />
       ) : null}

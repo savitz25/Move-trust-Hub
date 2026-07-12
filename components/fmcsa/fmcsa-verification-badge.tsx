@@ -6,9 +6,16 @@ import type { Company } from '@/types';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
 import { badgeLegendHref } from '@/lib/trust/site-stats';
 import {
+  verificationBadgeClasses,
+  verificationBadgeIconClass,
+  verificationBadgeLinkClass,
+  type VerificationBadgeSize,
+} from '@/components/trust/verification-badge-styles';
+import {
   deriveFmcsaVerificationStatus,
   type FmcsaVerificationStatus,
 } from '@/lib/trust/verification-status';
+import { cn } from '@/lib/utils';
 
 export type FmcsaBadgeStatus = FmcsaVerificationStatus;
 
@@ -55,10 +62,18 @@ const TOOLTIPS: Record<FmcsaBadgeStatus, string> = {
     LABELS.unknown,
 };
 
+const TONE: Record<FmcsaBadgeStatus, 'success' | 'warning' | 'critical' | 'muted'> = {
+  verified: 'success',
+  warning: 'warning',
+  critical: 'critical',
+  unknown: 'muted',
+};
+
 export function FmcsaVerificationBadge({
   company,
   className,
   status: statusOverride,
+  size = 'profile',
   linkToLegend = true,
 }: {
   company: Pick<
@@ -73,6 +88,7 @@ export function FmcsaVerificationBadge({
   >;
   className?: string;
   status?: FmcsaBadgeStatus;
+  size?: VerificationBadgeSize;
   linkToLegend?: boolean;
 }) {
   const status = statusOverride ?? deriveFmcsaVerificationStatus(company);
@@ -80,33 +96,51 @@ export function FmcsaVerificationBadge({
 
   const tooltip = TOOLTIPS[status];
   const legendId = LEGEND_IDS[status];
+  const tone = TONE[status];
+  const iconClass = verificationBadgeIconClass(size);
 
   let badge: ReactNode;
 
   if (status === 'verified') {
     badge = (
-      <Badge variant="success" className={className} title={tooltip}>
-        <ShieldCheck className="h-3.5 w-3.5 mr-1" />
+      <Badge
+        variant="outline"
+        className={verificationBadgeClasses(size, tone, className)}
+        title={tooltip}
+      >
+        <ShieldCheck className={iconClass} />
         {LABELS.verified}
       </Badge>
     );
   } else if (status === 'warning') {
     badge = (
-      <Badge variant="warning" className={className} title={tooltip}>
-        <AlertTriangle className="h-3.5 w-3.5 mr-1" />
+      <Badge
+        variant="outline"
+        className={verificationBadgeClasses(size, tone, className)}
+        title={tooltip}
+      >
+        <AlertTriangle className={iconClass} />
         {LABELS.warning}
       </Badge>
     );
   } else if (status === 'critical') {
     badge = (
-      <Badge variant="destructive" className={className} title={tooltip}>
-        <ShieldX className="h-3.5 w-3.5 mr-1" />
+      <Badge
+        variant="outline"
+        className={verificationBadgeClasses(size, tone, className)}
+        title={tooltip}
+      >
+        <ShieldX className={iconClass} />
         {LABELS.critical}
       </Badge>
     );
   } else {
     badge = (
-      <Badge variant="secondary" className={className} title={tooltip}>
+      <Badge
+        variant="outline"
+        className={verificationBadgeClasses(size, tone, className)}
+        title={tooltip}
+      >
         {LABELS.unknown}
       </Badge>
     );
@@ -117,7 +151,7 @@ export function FmcsaVerificationBadge({
   return (
     <Link
       href={badgeLegendHref(legendId, true)}
-      className="inline-flex focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
+      className={cn(verificationBadgeLinkClass(), 'hover:ring-1 hover:ring-primary/20 transition-shadow')}
       title={`${tooltip} — see badge legend`}
       aria-label={`${LABELS[status]}: ${tooltip}. View badge legend.`}
     >

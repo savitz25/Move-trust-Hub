@@ -55,14 +55,14 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
   return (
     <Card className="company-card group overflow-hidden flex flex-col">
       <div className="p-5 flex-1">
-        <div className="flex flex-wrap items-start justify-between gap-2">
+        <div className="space-y-1.5">
           <Link
             href={profileHref}
-            className="font-semibold text-xl tracking-tight group-hover:text-primary transition-colors"
+            className="font-semibold text-xl tracking-tight group-hover:text-primary transition-colors block"
           >
             {company.name}
           </Link>
-          <CompanyVerificationBadges company={company} compact />
+          <CompanyVerificationBadges company={company} size="compact" className="justify-start" />
         </div>
 
         <div className="text-sm text-muted-foreground mt-1">{locationLine}</div>
