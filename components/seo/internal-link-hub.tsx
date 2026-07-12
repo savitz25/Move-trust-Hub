@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Calculator, MapPinned, Scale, ShieldCheck } from 'lucide-react';
-import { hubPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 
 type InternalLink = {
@@ -10,6 +9,7 @@ type InternalLink = {
   icon: typeof BookOpen;
 };
 
+/** Move-hub tools only — cross-vertical links live in footer After Your Move module. */
 const MOVE_LINKS: InternalLink[] = [
   {
     href: '/moving-calculator',
@@ -20,7 +20,7 @@ const MOVE_LINKS: InternalLink[] = [
   {
     href: '/resources/how-to-choose',
     label: 'How to choose a mover',
-    description: 'Step-by-step framework for 2026 interstate moves.',
+    description: 'Step-by-step framework for interstate moves.',
     icon: BookOpen,
   },
   {
@@ -42,23 +42,17 @@ const MOVE_LINKS: InternalLink[] = [
     icon: ShieldCheck,
   },
   {
-    href: hubPath('lender', '/resources/how-to-choose-mortgage-lender'),
-    label: 'Mortgage lender guide',
-    description: 'Buying after your move? Compare NMLS-verified lenders.',
-    icon: BookOpen,
-  },
-  {
-    href: hubPath('insurance', '/resources/how-to-choose-health-insurance-plan'),
-    label: 'Health insurance guide',
-    description: 'New state, new plan — compare networks and metal tiers.',
+    href: '/verify-dot',
+    label: 'Verify a DOT number',
+    description: 'Look up USDOT/MC and jump to the official FMCSA record.',
     icon: ShieldCheck,
   },
 ];
 
 export function InternalLinkHub({
   hub = 'move',
-  title = 'Keep exploring — your move toolkit',
-  subtitle = 'Independent guides and tools to research every step of your relocation.',
+  title = 'Moving research tools',
+  subtitle = 'Independent guides and tools for your interstate move — no lead fees.',
   className,
 }: {
   hub?: HubId;
@@ -66,7 +60,7 @@ export function InternalLinkHub({
   subtitle?: string;
   className?: string;
 }) {
-  const links = hub === 'move' ? MOVE_LINKS : MOVE_LINKS.slice(0, 4);
+  if (hub !== 'move') return null;
 
   return (
     <section
@@ -78,7 +72,7 @@ export function InternalLinkHub({
       </h2>
       <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
       <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-        {links.map((link) => {
+        {MOVE_LINKS.map((link) => {
           const Icon = link.icon;
           return (
             <li key={link.href}>

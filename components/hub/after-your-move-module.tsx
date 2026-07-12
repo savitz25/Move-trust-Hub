@@ -10,7 +10,7 @@ type RelatedLink = {
 const RELATED_BY_HUB: Record<HubId, { intro: string; links: RelatedLink[] }> = {
   move: {
     intro:
-      'Settling in often means new financing and insurance. These sister directories use the same independent, no-paid-placement approach.',
+      'Settling in often means new financing and insurance — these sister directories use the same no-paid-placement approach.',
     links: [
       { href: hubPath('lender', '/local-lenders'), label: 'Mortgage lenders by county' },
       { href: hubPath('insurance', '/hubs/browse'), label: 'Health insurance agents' },
@@ -19,7 +19,7 @@ const RELATED_BY_HUB: Record<HubId, { intro: string; links: RelatedLink[] }> = {
   },
   lender: {
     intro:
-      'Closing on a home often overlaps with a move. Research carriers and coverage with the same transparent directories.',
+      'Closing on a home often overlaps with a move — these sister directories use the same no-paid-placement approach.',
     links: [
       { href: hubPath('move', '/companies'), label: 'Find interstate movers' },
       { href: hubPath('insurance', '/directory'), label: 'Insurance agents' },
@@ -28,7 +28,7 @@ const RELATED_BY_HUB: Record<HubId, { intro: string; links: RelatedLink[] }> = {
   },
   insurance: {
     intro:
-      'Coverage changes when you relocate. These independent tools can help with the rest of the transition.',
+      'Coverage often changes when you relocate — these sister directories use the same no-paid-placement approach.',
     links: [
       { href: hubPath('move', '/companies'), label: 'Find movers' },
       { href: hubPath('lender', '/local-lenders'), label: 'Mortgage lenders' },

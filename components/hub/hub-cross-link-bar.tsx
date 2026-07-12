@@ -1,3 +1,6 @@
+/**
+ * @deprecated Removed from site chrome — use AfterYourMoveModule in HubFooter instead.
+ */
 import Link from 'next/link';
 import { ArrowRight, Home, Landmark, ShieldCheck, Sparkles } from 'lucide-react';
 import { hubPath } from '@/lib/hub/paths';

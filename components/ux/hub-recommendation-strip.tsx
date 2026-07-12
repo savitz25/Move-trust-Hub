@@ -1,3 +1,7 @@
+/**
+ * @deprecated Removed from site chrome — cross-promotion is limited to HubFamilyBar
+ * (top switcher) and AfterYourMoveModule (footer). Kept for reference only.
+ */
 'use client';
 
 import Link from 'next/link';

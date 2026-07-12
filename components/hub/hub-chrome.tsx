@@ -1,3 +1,4 @@
+import { HubFamilyBar } from '@/components/hub/hub-family-bar';
 import { HubFooter } from '@/components/hub/hub-footer';
 import { HubNavbar } from '@/components/hub/hub-navbar';
 import { TrustBadgeRow } from '@/components/hub/trust-badge-row';
@@ -19,6 +20,7 @@ export async function HubChrome({
 }) {
   return (
     <div className="min-h-screen flex flex-col">
+      <HubFamilyBar activeHub={hubId} />
       <HubNavbar hubId={hubId} />
       <DeferredLegacyWelcomeBanner hubId={hubId} />
       <DeferredMoveCoachTip hub={hubId} />

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { Shield, ArrowRight } from 'lucide-react';
 import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
 import { HubTrustBar } from '@/components/hub/hub-trust-bar';
 import { HubHowItWorks } from '@/components/hub/hub-how-it-works';
@@ -83,40 +83,7 @@ export function LenderHomePage() {
           ]}
         />
 
-        <section className="border-t bg-card py-12">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-4">
-              {[
-                'NMLS License Verification',
-                'CFPB Complaint Data',
-                'BBB Accreditation',
-                'Google & Trustpilot Reviews',
-                'County Experience Scores',
-                'No Paid Placements',
-              ].map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center gap-1.5 rounded-full border bg-background px-4 py-2 text-sm"
-                >
-                  <CheckCircle className="h-4 w-4 text-emerald-600" aria-hidden="true" />
-                  {badge}
-                </span>
-              ))}
-            </div>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button variant="outline" asChild>
-                <Link href={hubPath('lender', '/local-lenders')}>
-                  Browse local lenders by state <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href={hubPath('lender', '/resources/how-to-choose-mortgage-lender')}>
-                  How to choose a lender <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+
       </div>
     </LenderSearchBoundary>
   );

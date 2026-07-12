@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BrandLogoStacked } from '@/components/insurance/BrandLogo';
-import { DISCLAIMER, MOVE_TRUST_HUB_URL, SITE_EMAIL, SITE_NAME } from '@/lib/insurance/constants';
+import { DISCLAIMER, SITE_EMAIL, SITE_NAME } from '@/lib/insurance/constants';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -76,16 +76,7 @@ export function Footer() {
               TRUST NETWORK
             </div>
             <p className="leading-snug text-[13px]">
-              Part of the Trust Hub family. Also explore{' '}
-              <a
-                href={MOVE_TRUST_HUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-primary hover:underline underline-offset-2"
-              >
-                Move Trust Hub
-              </a>{' '}
-              for licensed interstate movers.
+              Part of the Trust Hub family — independent directories with no paid placements.
             </p>
             <p className="mt-2.5 text-[13px]">
               <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground transition-colors">
