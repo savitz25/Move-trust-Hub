@@ -16,8 +16,8 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
   const isMoveHub = hubId === 'move';
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative">
-      <div className="container mx-auto flex h-16 sm:h-[4.5rem] items-center justify-between px-4">
+    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto relative flex h-16 sm:h-[4.5rem] items-center justify-between px-4 overflow-visible">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <Link prefetch={false} href={homeHref} className="group shrink-0">
             <HubLogo hubId={hubId} priority />

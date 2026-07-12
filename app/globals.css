@@ -71,6 +71,17 @@
     z-index: 50;
   }
 
+  /* Mega-menu panels portal to body — prevent horizontal scrollbar layout shift */
+  html {
+    overflow-x: clip;
+  }
+
+  .mega-menu-panel {
+    position: fixed;
+    z-index: 200;
+    pointer-events: auto;
+  }
+
   /* Hero shell: matches from-primary/8 via-background to-background. */
   section.bg-gradient-to-br.from-primary\/8 {
     background-image: linear-gradient(

@@ -3,24 +3,31 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import { MegaMenuPanel } from '@/components/nav/mega-menu-panel';
+import { useMegaMenuHoverBridge } from '@/components/nav/use-mega-menu-panel';
 import { getDestinationsMenuData } from '@/lib/nav/destinations-menu-data';
 import { DestinationsMegaMenuTools } from '@/components/navbar/destinations-mega-menu-tools';
 import { DestinationsMegaMenuStates } from '@/components/navbar/destinations-mega-menu-states';
 import { DestinationsMegaMenuRoutes } from '@/components/navbar/destinations-mega-menu-routes';
+
+const DESTINATIONS_PANEL_WIDTH_PX = 920;
+const DESTINATIONS_PANEL_MAX_HEIGHT_PX = 540;
 
 export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const containerRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const menuData = useMemo(() => getDestinationsMenuData(), []);
+  const { openMenu, scheduleClose } = useMegaMenuHoverBridge(setOpen);
 
   const close = useCallback(() => setOpen(false), []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
+      const target = event.target as Node;
+      if (containerRef.current?.contains(target)) return;
+      if (panelRef.current?.contains(target)) return;
+      setOpen(false);
     }
     function handleEscape(event: KeyboardEvent) {
       if (event.key === 'Escape') setOpen(false);
@@ -30,9 +37,7 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
       const target = event.target as HTMLElement;
       if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') return;
       event.preventDefault();
-      const search = panelRef.current?.querySelector<HTMLInputElement>(
-        'input[type="search"]'
-      );
+      const search = panelRef.current?.querySelector<HTMLInputElement>('input[type="search"]');
       search?.focus();
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -49,8 +54,8 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
     <div
       ref={containerRef}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={scheduleClose}
     >
       <div className="inline-flex items-center gap-0.5 group/trigger">
         <Link
@@ -79,21 +84,20 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
         </button>
       </div>
 
-      {/* Fixed height + opacity toggle — zero layout shift on open */}
-      <div
-        className={`absolute left-0 top-full pt-2 z-50 w-[min(94vw,920px)] h-[min(72vh,540px)] transition-opacity duration-150 ${
-          open
-            ? 'opacity-100 pointer-events-auto visible'
-            : 'opacity-0 pointer-events-none invisible'
-        }`}
-        aria-hidden={!open}
+      <MegaMenuPanel
+        open={open}
+        triggerRef={containerRef}
+        panelWidthPx={DESTINATIONS_PANEL_WIDTH_PX}
+        align="center-viewport"
+        panelId="destinations-mega-menu-panel"
+        ariaLabel="Destinations navigation"
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
       >
         <div
           ref={panelRef}
-          id="destinations-mega-menu-panel"
-          role="navigation"
-          aria-label="Destinations navigation"
-          className="rounded-xl border bg-background shadow-lg flex flex-col h-full"
+          className="rounded-xl border bg-background shadow-lg flex flex-col overflow-hidden"
+          style={{ maxHeight: `min(72vh, ${DESTINATIONS_PANEL_MAX_HEIGHT_PX}px)` }}
         >
           <div className="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[minmax(180px,200px)_1fr_1fr_1.15fr] gap-6 flex-1 min-h-0 overflow-hidden">
             <div className="sm:col-span-2 lg:col-span-1 lg:row-span-1 border-b sm:border-b lg:border-b-0 lg:border-r border-border/50 pb-4 sm:pb-4 lg:pb-0 lg:pr-4 min-h-0">
@@ -138,7 +142,7 @@ export function DestinationsMegaMenu({ defaultOpen = false }: { defaultOpen?: bo
             </Link>
           </div>
         </div>
-      </div>
+      </MegaMenuPanel>
     </div>
   );
 }

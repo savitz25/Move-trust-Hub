@@ -3,44 +3,47 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { MegaMenuPanel } from '@/components/nav/mega-menu-panel';
+import { useMegaMenuHoverBridge } from '@/components/nav/use-mega-menu-panel';
 import type { NavMegaColumn } from '@/lib/nav/move-nav-config';
 import { cn } from '@/lib/utils';
 
 type NavMegaDropdownProps = {
   label: string;
-  /** Optional landing page when clicking the label (dropdown still opens on chevron/hover). */
   href?: string;
   columns: NavMegaColumn[];
   panelWidth?: 'sm' | 'md' | 'lg';
+  /** Align wide panels to trigger end (e.g. rightmost Guides item). */
+  align?: 'start' | 'end';
 };
 
-const WIDTH_CLASS = {
-  sm: 'w-[min(92vw,360px)]',
-  md: 'w-[min(92vw,480px)]',
-  lg: 'w-[min(92vw,560px)]',
+const PANEL_WIDTH_PX = {
+  sm: 360,
+  md: 480,
+  lg: 560,
 } as const;
 
-/**
- * Reusable mega-dropdown for Find Movers and Guides.
- * Hover opens on desktop; click toggles for keyboard and touch.
- */
 export function NavMegaDropdown({
   label,
   href,
   columns,
   panelWidth = 'md',
+  align = 'start',
 }: NavMegaDropdownProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
+  const { openMenu, scheduleClose } = useMegaMenuHoverBridge(setOpen);
 
   const close = useCallback(() => setOpen(false), []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
+      const target = event.target as Node;
+      if (containerRef.current?.contains(target)) return;
+      const panel = document.getElementById(panelId);
+      if (panel?.contains(target)) return;
+      setOpen(false);
     }
     function handleEscape(event: KeyboardEvent) {
       if (event.key === 'Escape') setOpen(false);
@@ -51,14 +54,14 @@ export function NavMegaDropdown({
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscape);
     };
-  }, []);
+  }, [panelId]);
 
   return (
     <div
       ref={containerRef}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={scheduleClose}
     >
       <div className="inline-flex items-center gap-0.5">
         {href ? (
@@ -89,26 +92,18 @@ export function NavMegaDropdown({
         </button>
       </div>
 
-      <div
-        className={cn(
-          'absolute left-0 top-full pt-2 z-50 transition-opacity duration-150',
-          WIDTH_CLASS[panelWidth],
-          open ? 'opacity-100 pointer-events-auto visible' : 'opacity-0 pointer-events-none invisible'
-        )}
-        aria-hidden={!open}
+      <MegaMenuPanel
+        open={open}
+        triggerRef={containerRef}
+        panelWidthPx={PANEL_WIDTH_PX[panelWidth]}
+        align={align}
+        panelId={panelId}
+        ariaLabel={`${label} navigation`}
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
       >
-        <div
-          id={panelId}
-          role="navigation"
-          aria-label={`${label} navigation`}
-          className="rounded-xl border bg-background shadow-lg p-4"
-        >
-          <div
-            className={cn(
-              'grid gap-5',
-              columns.length > 1 ? 'sm:grid-cols-2' : 'grid-cols-1'
-            )}
-          >
+        <div className="rounded-xl border bg-background shadow-lg p-4">
+          <div className={cn('grid gap-5', columns.length > 1 ? 'sm:grid-cols-2' : 'grid-cols-1')}>
             {columns.map((column) => (
               <div key={column.title}>
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">
@@ -139,7 +134,7 @@ export function NavMegaDropdown({
             ))}
           </div>
         </div>
-      </div>
+      </MegaMenuPanel>
     </div>
   );
 }

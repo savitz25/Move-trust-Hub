@@ -25,7 +25,13 @@ export function MoveDesktopNav() {
           {link.label}
         </Link>
       ))}
-      <NavMegaDropdown label="Guides" href="/resources" columns={GUIDES_NAV} panelWidth="lg" />
+      <NavMegaDropdown
+        label="Guides"
+        href="/resources"
+        columns={GUIDES_NAV}
+        panelWidth="lg"
+        align="end"
+      />
     </div>
   );
 }
