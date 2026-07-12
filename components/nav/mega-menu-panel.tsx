@@ -56,10 +56,13 @@ export function MegaMenuPanel({
       aria-label={ariaLabel}
       className={cn('mega-menu-panel', className)}
       style={{
+        position: 'fixed',
+        zIndex: 200,
         top: position.top,
         left: position.left,
         width: position.width,
         maxWidth: `calc(100vw - ${32}px)`,
+        pointerEvents: 'auto',
       }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

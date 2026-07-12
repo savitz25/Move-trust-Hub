@@ -105,6 +105,19 @@
 
 /* Directory/component classes — deferred via DeferredUiStyles (app/ui-components.css). */
 
+/* Mega-menu panels portal to document.body — must stay above sticky nav (z-50). */
+@layer base {
+  html {
+    overflow-x: clip;
+  }
+
+  .mega-menu-panel {
+    position: fixed;
+    z-index: 200;
+    pointer-events: auto;
+  }
+}
+
 /* Accessibility + focus states */
 @layer utilities {
   .focus-ring {
