@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { Shield, Mail } from 'lucide-react';
 import {
   Dialog,
@@ -34,69 +34,141 @@ type SaveMyMoveModalProps = {
   context?: SaveMyMoveContext;
 };
 
+/** OAuth buttons isolated from email input state to prevent GSI reflow while typing. */
+const SaveMyMoveOAuthButtons = memo(function SaveMyMoveOAuthButtons({
+  open,
+  loading,
+  onGoogleStart,
+  onGoogleSuccess,
+  onGoogleError,
+  onFacebookStart,
+}: {
+  open: boolean;
+  loading: 'google' | 'facebook' | 'email' | null;
+  onGoogleStart: () => void;
+  onGoogleSuccess: () => void;
+  onGoogleError: () => void;
+  onFacebookStart: () => void;
+}) {
+  const disabled = loading !== null;
+
+  return (
+    <div className="space-y-3">
+      <GoogleSignInButton
+        active={open}
+        disabled={disabled}
+        onStart={onGoogleStart}
+        onSuccess={onGoogleSuccess}
+        onError={onGoogleError}
+      />
+      <FacebookSignInButton disabled={disabled} onStart={onFacebookStart} />
+    </div>
+  );
+});
+
+/** Email field isolated so keystrokes do not re-render OAuth iframes. */
+const SaveMyMoveEmailForm = memo(function SaveMyMoveEmailForm({
+  loading,
+  onSubmit,
+}: {
+  loading: 'google' | 'facebook' | 'email' | null;
+  onSubmit: (email: string) => void;
+}) {
+  const [email, setEmail] = useState('');
+  const disabled = loading !== null;
+
+  const handleSubmit = () => onSubmit(email);
+
+  return (
+    <div className="space-y-2">
+      <Input
+        type="email"
+        placeholder="you@example.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+        aria-label="Email for sign-in link"
+        autoComplete="email"
+      />
+      <Button
+        variant="outline"
+        className="w-full"
+        onClick={handleSubmit}
+        disabled={disabled}
+      >
+        {loading === 'email' ? 'Sending…' : 'Email me a sign-in link'}
+      </Button>
+    </div>
+  );
+});
+
 export function SaveMyMoveModal({
   open,
   onOpenChange,
   redirectPath = '/my-move',
   context = 'dashboard',
 }: SaveMyMoveModalProps) {
-  const [email, setEmail] = useState('');
   const [loading, setLoading] = useState<'google' | 'facebook' | 'email' | null>(null);
   const [emailSent, setEmailSent] = useState(false);
+  const [sentEmail, setSentEmail] = useState('');
 
   const safeRedirectPath = sanitizePostLoginPath(redirectPath);
 
-  const handleGoogleStart = () => {
+  const handleGoogleStart = useCallback(() => {
     setLoading('google');
     trackSaveMyMoveAuth({ method: 'google' });
     stashPostLoginRedirect(safeRedirectPath);
-  };
+  }, [safeRedirectPath]);
 
-  const handleGoogleSuccess = () => {
+  const handleGoogleSuccess = useCallback(() => {
     setLoading(null);
     onOpenChange(false);
-  };
+  }, [onOpenChange]);
 
-  const handleGoogleError = () => {
+  const handleGoogleError = useCallback(() => {
     setLoading(null);
-  };
+  }, []);
 
-  const handleFacebookStart = () => {
+  const handleFacebookStart = useCallback(() => {
     setLoading('facebook');
     trackSaveMyMoveAuth({ method: 'facebook' });
     stashPostLoginRedirect(safeRedirectPath);
-  };
+  }, [safeRedirectPath]);
 
-  const handleMagicLink = async () => {
-    const trimmed = email.trim().toLowerCase();
-    if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-      toast.error('Enter a valid email address');
-      return;
-    }
-    setLoading('email');
-    trackSaveMyMoveAuth({ method: 'magic_link' });
-    stashPostLoginRedirect(safeRedirectPath);
-    try {
-      const res = await fetch('/api/auth/magic-link', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: trimmed, next: safeRedirectPath }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.error ?? 'Could not send sign-in link');
+  const handleMagicLink = useCallback(
+    async (email: string) => {
+      const trimmed = email.trim().toLowerCase();
+      if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+        toast.error('Enter a valid email address');
         return;
       }
-      setEmailSent(true);
-      toast.success('Check your email', {
-        description: 'We sent a single-use sign-in link (expires in 15 minutes).',
-      });
-    } catch {
-      toast.error('Could not send sign-in link');
-    } finally {
-      setLoading(null);
-    }
-  };
+      setLoading('email');
+      trackSaveMyMoveAuth({ method: 'magic_link' });
+      stashPostLoginRedirect(safeRedirectPath);
+      try {
+        const res = await fetch('/api/auth/magic-link', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: trimmed, next: safeRedirectPath }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          toast.error(data.error ?? 'Could not send sign-in link');
+          return;
+        }
+        setSentEmail(trimmed);
+        setEmailSent(true);
+        toast.success('Check your email', {
+          description: 'We sent a single-use sign-in link (expires in 15 minutes).',
+        });
+      } catch {
+        toast.error('Could not send sign-in link');
+      } finally {
+        setLoading(null);
+      }
+    },
+    [safeRedirectPath]
+  );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -125,7 +197,7 @@ export function SaveMyMoveModal({
           {emailSent ? (
             <div className="text-center py-2 space-y-2">
               <Mail className="h-8 w-8 mx-auto text-primary opacity-80" />
-              <p className="text-sm font-medium">Sign-in link sent to {email}</p>
+              <p className="text-sm font-medium">Sign-in link sent to {sentEmail}</p>
               <p className="text-xs text-muted-foreground">
                 Open the link on any device. It expires in 15 minutes and works once.
               </p>
@@ -134,18 +206,14 @@ export function SaveMyMoveModal({
               </Button>
             </div>
           ) : (
-            <div className="space-y-3">
-              <GoogleSignInButton
-                active={open && !emailSent}
-                disabled={loading !== null}
-                onStart={handleGoogleStart}
-                onSuccess={handleGoogleSuccess}
-                onError={handleGoogleError}
-              />
-
-              <FacebookSignInButton
-                disabled={loading !== null}
-                onStart={handleFacebookStart}
+            <>
+              <SaveMyMoveOAuthButtons
+                open={open}
+                loading={loading}
+                onGoogleStart={handleGoogleStart}
+                onGoogleSuccess={handleGoogleSuccess}
+                onGoogleError={handleGoogleError}
+                onFacebookStart={handleFacebookStart}
               />
 
               <div className="relative">
@@ -157,25 +225,8 @@ export function SaveMyMoveModal({
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Input
-                  type="email"
-                  placeholder="you@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleMagicLink()}
-                  aria-label="Email for sign-in link"
-                />
-                <Button
-                  variant="outline"
-                  className="w-full"
-                  onClick={handleMagicLink}
-                  disabled={loading !== null}
-                >
-                  {loading === 'email' ? 'Sending…' : 'Email me a sign-in link'}
-                </Button>
-              </div>
-            </div>
+              <SaveMyMoveEmailForm loading={loading} onSubmit={handleMagicLink} />
+            </>
           )}
         </div>
       </DialogContent>

@@ -9,6 +9,8 @@ import { getGoogleOAuthClientId } from '@/lib/save-my-move/google-client-id';
 import { toast } from 'sonner';
 
 const GSI_SCRIPT_URL = 'https://accounts.google.com/gsi/client';
+/** GSI large button height — reserve space to prevent layout shift. */
+const GSI_BUTTON_HEIGHT_PX = 44;
 
 type GoogleSignInButtonProps = {
   onStart?: () => void;
@@ -29,21 +31,36 @@ export function GoogleSignInButton({
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonHostRef = useRef<HTMLDivElement>(null);
   const nonceRef = useRef('');
+  const renderedRef = useRef(false);
   const [gsiReady, setGsiReady] = useState(false);
   const [width, setWidth] = useState(0);
   const clientId = getGoogleOAuthClientId();
 
+  // Measure width once when the modal opens — avoid ResizeObserver reflow loops while typing.
   useEffect(() => {
+    if (!active) {
+      renderedRef.current = false;
+      if (buttonHostRef.current) buttonHostRef.current.innerHTML = '';
+      if (typeof window !== 'undefined' && window.google?.accounts?.id) {
+        window.google.accounts.id.cancel();
+      }
+      return;
+    }
+
     const el = containerRef.current;
     if (!el) return;
 
-    const updateWidth = () => setWidth(Math.floor(el.getBoundingClientRect().width));
-    updateWidth();
+    const measure = () => Math.floor(el.getBoundingClientRect().width);
+    setWidth(measure());
 
-    const observer = new ResizeObserver(updateWidth);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    // One delayed remeasure for post-animation layout only (dialog enter).
+    const timer = window.setTimeout(() => {
+      const next = measure();
+      setWidth((prev) => (prev !== next ? next : prev));
+    }, 120);
+
+    return () => window.clearTimeout(timer);
+  }, [active]);
 
   const handleCredential = useCallback(
     async (response: google.accounts.id.CredentialResponse) => {
@@ -75,13 +92,7 @@ export function GoogleSignInButton({
     [onStart, onSuccess, onError]
   );
 
-  useEffect(() => {
-    if (!active && typeof window !== 'undefined' && window.google?.accounts?.id) {
-      window.google.accounts.id.cancel();
-      if (buttonHostRef.current) buttonHostRef.current.innerHTML = '';
-    }
-  }, [active]);
-
+  // Render GSI iframe once per open — never re-render on parent state (e.g. email typing).
   useEffect(() => {
     if (
       !active ||
@@ -89,7 +100,7 @@ export function GoogleSignInButton({
       !clientId ||
       !buttonHostRef.current ||
       width < 1 ||
-      disabled ||
+      renderedRef.current ||
       typeof window === 'undefined' ||
       !window.google?.accounts?.id
     ) {
@@ -123,12 +134,14 @@ export function GoogleSignInButton({
         logo_alignment: 'left',
         width,
       });
+
+      renderedRef.current = true;
     })();
 
     return () => {
       cancelled = true;
     };
-  }, [active, gsiReady, clientId, width, disabled, handleCredential]);
+  }, [active, gsiReady, clientId, width, handleCredential]);
 
   if (!clientId) {
     return (
@@ -153,7 +166,11 @@ export function GoogleSignInButton({
         strategy="afterInteractive"
         onLoad={() => setGsiReady(true)}
       />
-      <div ref={containerRef} className="w-full min-h-[44px]">
+      <div
+        ref={containerRef}
+        className="w-full"
+        style={{ minHeight: GSI_BUTTON_HEIGHT_PX }}
+      >
         <div
           ref={buttonHostRef}
           className={
