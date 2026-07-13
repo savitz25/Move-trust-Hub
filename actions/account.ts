@@ -4,6 +4,14 @@ import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { requireAuthenticatedUser } from '@/lib/save-my-move/auth';
+import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
+
+/** Create user_profiles on first Google ID-token or magic-link sign-in. */
+export async function ensureUserProfileAction() {
+  const user = await requireAuthenticatedUser();
+  const supabase = await createClient();
+  await ensureUserProfile(supabase, user);
+}
 
 export async function updateEmailPreferencesAction(input: {
   marketingOptIn: boolean;

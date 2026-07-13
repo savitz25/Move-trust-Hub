@@ -134,7 +134,9 @@ Must return `true`. If `false`, Auth → Providers → Google is off on **this**
 4. **Email (magic link):** set OTP expiry to **900 seconds (15 min)** under Auth → Email.
 5. Disable email confirmations for magic link if double-confirm blocks sign-in.
 
-**App OAuth entry:** `GET /api/auth/google` → `signInWithOAuth` with `redirectTo: https://www.movetrusthub.com/auth/callback`
+**Google sign-in (Save My Move modal):** Official [Google Identity Services](https://developers.google.com/identity/gsi/web) button → `signInWithIdToken` in the browser. Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to the same OAuth web client ID as Supabase Auth → Google.
+
+**Fallback OAuth entry:** `GET /api/auth/google` → `signInWithOAuth` with `redirectTo: https://www.movetrusthub.com/auth/callback` (used when `NEXT_PUBLIC_GOOGLE_CLIENT_ID` is unset).
 
 **Routes:** `/my-move` (dashboard), `/auth/callback`, `/api/auth/magic-link` (rate-limited).
 

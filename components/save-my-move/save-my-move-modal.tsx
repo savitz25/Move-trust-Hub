@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { GoogleSignInButton } from '@/components/save-my-move/google-sign-in-button';
 import { trackSaveMyMoveAuth } from '@/components/ga-events';
 import { toast } from 'sonner';
 import {
@@ -44,12 +45,19 @@ export function SaveMyMoveModal({
 
   const safeRedirectPath = sanitizePostLoginPath(redirectPath);
 
-  const handleGoogle = () => {
+  const handleGoogleStart = () => {
     setLoading('google');
     trackSaveMyMoveAuth({ method: 'google' });
     stashPostLoginRedirect(safeRedirectPath);
-    // Server route owns signInWithOAuth + canonical redirectTo (Supabase allowlist).
-    window.location.assign('/api/auth/google');
+  };
+
+  const handleGoogleSuccess = () => {
+    setLoading(null);
+    onOpenChange(false);
+  };
+
+  const handleGoogleError = () => {
+    setLoading(null);
   };
 
   const handleMagicLink = async () => {
@@ -120,13 +128,13 @@ export function SaveMyMoveModal({
             </div>
           ) : (
             <div className="space-y-3">
-              <Button
-                className="w-full"
-                onClick={handleGoogle}
+              <GoogleSignInButton
+                active={open && !emailSent}
                 disabled={loading !== null}
-              >
-                {loading === 'google' ? 'Redirecting…' : 'Continue with Google'}
-              </Button>
+                onStart={handleGoogleStart}
+                onSuccess={handleGoogleSuccess}
+                onError={handleGoogleError}
+              />
 
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
