@@ -124,7 +124,7 @@ curl -s "https://uvqkyupfnpswdozmuzih.supabase.co/auth/v1/settings" \
   -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" | jq '.external | {google, facebook}'
 ```
 
-Both should return `true` when enabled. **Note:** `/auth/v1/settings` can report `facebook: false` even when Facebook OAuth works. `/api/auth/facebook` never blocks on the settings API — it uses `signInWithOAuth`, then a manual authorize URL fallback, with forced-refresh diagnostics logged server-side.
+Both should return `true` when enabled. **Note:** `/auth/v1/settings` can report `facebook: false` even when Facebook OAuth works. `/api/auth/facebook` has **zero settings preflight** — it always tries `signInWithOAuth` (SSR → plain client) then manual authorize URL. Full settings JSON is logged server-side for diagnostics only.
 
 **Supabase Auth setup (Dashboard → project `uvqkyupfnpswdozmuzih`):**
 1. **Authentication → URL Configuration:**

@@ -9,16 +9,17 @@ type AuthSettingsExternal = Partial<Record<SaveMyMoveOAuthProvider, boolean>>;
 export type OAuthProviderSettingsSnapshot = {
   projectRef: string | null;
   providers: AuthSettingsExternal;
-  rawExternal?: AuthSettingsExternal;
+  /** Complete /auth/v1/settings JSON — diagnostic only. */
+  fullResponse: Record<string, unknown> | null;
   fetchedAt: string;
   httpStatus?: number;
+  cacheBuster: string;
 };
 
 const SUPABASE_PROJECT_REF = 'uvqkyupfnpswdozmuzih';
 
 /**
- * Live provider flags from Supabase — always force-refreshed (never cached).
- * Settings API can lag the dashboard; advisory only — never block OAuth on this.
+ * Force-refresh Supabase auth settings — diagnostic only, never used to gate OAuth.
  */
 export async function fetchOAuthProviderSettings(
   options: { forceRefresh?: boolean } = {}
@@ -26,42 +27,62 @@ export async function fetchOAuthProviderSettings(
   const url = getSupabaseUrl();
   const anonKey = getSupabaseAnonKey();
   const projectRef = getSupabaseProjectRef();
+  const cacheBuster = String(options.forceRefresh !== false ? Date.now() : 0);
 
   if (!url || !anonKey) {
-    return { projectRef, providers: {}, fetchedAt: new Date().toISOString() };
+    return {
+      projectRef,
+      providers: {},
+      fullResponse: null,
+      fetchedAt: new Date().toISOString(),
+      cacheBuster,
+    };
   }
 
-  const cacheBuster = options.forceRefresh !== false ? `?_=${Date.now()}` : '';
-
   try {
-    const res = await fetch(`${url}/auth/v1/settings${cacheBuster}`, {
+    const res = await fetch(`${url}/auth/v1/settings?_=${cacheBuster}&force=1`, {
       headers: {
         apikey: anonKey,
-        'Cache-Control': 'no-cache, no-store',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
         Pragma: 'no-cache',
+        Expires: '0',
       },
       cache: 'no-store',
+      next: { revalidate: 0 },
     });
-    if (!res.ok) {
-      return {
-        projectRef,
-        providers: {},
-        fetchedAt: new Date().toISOString(),
-        httpStatus: res.status,
-      };
-    }
-    const settings = (await res.json()) as { external?: AuthSettingsExternal };
-    const external = settings.external ?? {};
+    const fullResponse = (await res.json()) as Record<string, unknown>;
+    const external = (fullResponse.external ?? {}) as AuthSettingsExternal;
     return {
       projectRef,
       providers: external,
-      rawExternal: external,
+      fullResponse,
       fetchedAt: new Date().toISOString(),
       httpStatus: res.status,
+      cacheBuster,
     };
-  } catch {
-    return { projectRef, providers: {}, fetchedAt: new Date().toISOString() };
+  } catch (err) {
+    return {
+      projectRef,
+      providers: {},
+      fullResponse: { error: err instanceof Error ? err.message : 'fetch_failed' },
+      fetchedAt: new Date().toISOString(),
+      cacheBuster,
+    };
   }
+}
+
+/** Fire-and-forget settings log — never awaited before OAuth kickoff. */
+export function logSettingsSnapshotAsync(label: string): void {
+  void fetchOAuthProviderSettings({ forceRefresh: true }).then((snapshot) => {
+    console.info(`[auth/facebook] ${label}`, {
+      projectRef: snapshot.projectRef,
+      cacheBuster: snapshot.cacheBuster,
+      httpStatus: snapshot.httpStatus,
+      settingsApiFacebook: snapshot.providers.facebook,
+      fullSettingsResponse: snapshot.fullResponse,
+      note: 'Diagnostic only — does not gate OAuth',
+    });
+  });
 }
 
 export function getSupabaseProjectRef(): string | null {
