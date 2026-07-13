@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 import { motion, AnimatePresence, useDragControls, PanInfo } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -32,6 +32,12 @@ export function MobileBottomSheet({
 }: MobileBottomSheetProps) {
   const dragControls = useDragControls();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+
+  useEffect(() => {
+    if (open) closeRef.current?.focus();
+  }, [open]);
 
   useEffect(() => {
     if (!open) return;
@@ -60,7 +66,12 @@ export function MobileBottomSheet({
   return (
     <AnimatePresence>
       {open && (
-        <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label={title}>
+        <div
+          className="fixed inset-0 z-50 md:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
+        >
           <motion.button
             type="button"
             initial={{ opacity: 0 }}
@@ -96,12 +107,15 @@ export function MobileBottomSheet({
               <div className="h-1 w-10 rounded-full bg-muted-foreground/30 mb-3" aria-hidden />
               <div className="flex w-full items-start justify-between gap-3">
                 <div className="min-w-0 text-left">
-                  <h2 className="text-lg font-semibold leading-tight">{title}</h2>
+                  <h2 id={titleId} className="text-lg font-semibold leading-tight">
+                    {title}
+                  </h2>
                   {description ? (
                     <p className="text-sm text-muted-foreground mt-0.5">{description}</p>
                   ) : null}
                 </div>
                 <Button
+                  ref={closeRef}
                   type="button"
                   variant="ghost"
                   size="icon"

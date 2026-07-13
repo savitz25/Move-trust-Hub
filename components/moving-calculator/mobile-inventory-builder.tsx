@@ -184,6 +184,7 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
           onClick={() => setMode('room')}
           className={cn(
             'flex flex-1 items-center justify-center gap-2 rounded-lg min-h-12 text-sm font-semibold transition-colors',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
             mode === 'room' ? 'bg-card shadow-sm text-foreground' : 'text-muted-foreground'
           )}
         >
@@ -196,6 +197,7 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
           onClick={() => setMode('quick')}
           className={cn(
             'flex flex-1 items-center justify-center gap-2 rounded-lg min-h-12 text-sm font-semibold transition-colors',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
             mode === 'quick' ? 'bg-card shadow-sm text-foreground' : 'text-muted-foreground'
           )}
         >
@@ -329,12 +331,15 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
               value={customName}
               onChange={(e) => setCustomName(e.target.value)}
               className="min-h-12 text-base"
+              aria-label="Custom item name"
             />
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Item size">
               {CUSTOM_SIZES.map((size) => (
                 <button
                   key={size.label}
                   type="button"
+                  role="radio"
+                  aria-checked={customSize === size.volume}
                   onClick={() => setCustomSize(size.volume)}
                   className={cn(
                     'rounded-xl border min-h-12 px-3 text-sm font-medium transition-colors',

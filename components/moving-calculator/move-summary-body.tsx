@@ -186,6 +186,9 @@ export function MoveSummaryBody({
               </li>
             ))}
           </ul>
+          <p className="text-[10px] text-amber-700 dark:text-amber-300 mt-2">
+            Tell movers about these items when requesting quotes.
+          </p>
         </div>
       )}
 
