@@ -55,12 +55,15 @@ export function OnboardingStrip({ onPresetSelect }: OnboardingStripProps) {
                   onClick={() => handleSelect(preset.id)}
                   className={cn(
                     'flex flex-col items-center justify-center gap-1.5 rounded-xl border-2 border-border/70',
-                    'bg-card px-3 py-4 sm:py-5 text-center transition-all duration-150',
+                    'bg-card px-3 text-center transition-all duration-150',
+                    // Mobile: 48px+ touch height; desktop unchanged
+                    'min-h-[88px] py-4 sm:min-h-0 sm:py-5',
                     'hover:border-primary hover:bg-primary/5 hover:shadow-trust',
+                    'active:scale-[0.98] md:active:scale-100',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2'
                   )}
                 >
-                  <span className="text-2xl" aria-hidden="true">{preset.icon}</span>
+                  <span className="text-2xl md:text-2xl" aria-hidden="true">{preset.icon}</span>
                   <span className="text-sm font-semibold">{preset.label}</span>
                   <span className="text-[10px] text-muted-foreground leading-tight hidden sm:block">
                     {preset.description}

@@ -10,7 +10,9 @@ import { TrustBadges } from '@/components/trust/trust-badges';
 import { MovingCalculatorSeoSections } from '@/components/moving-calculator-seo-sections';
 import { OnboardingStrip } from '@/components/moving-calculator/onboarding-strip';
 import { InventoryBuilder } from '@/components/moving-calculator/inventory-builder';
+import { MobileInventoryBuilder } from '@/components/moving-calculator/mobile-inventory-builder';
 import { MoveBasketSummary } from '@/components/moving-calculator/move-basket-summary';
+import { MobileStickySummary } from '@/components/moving-calculator/mobile-sticky-summary';
 import { useCalculatorStore, type InventoryItem } from '@/store/calculator-store';
 import {
   getMoveRecommendation,
@@ -142,7 +144,7 @@ export function MovingCalculatorClient() {
   return (
     <div className="w-full">
       {/* Trust strip */}
-      <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 max-md:mb-4">
         <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary w-fit">
           <Calculator className="h-3.5 w-3.5" />
           Free · Instant · No signup · We never sell your info
@@ -155,13 +157,28 @@ export function MovingCalculatorClient() {
         <OnboardingStrip onPresetSelect={() => markCalculatorStarted('preset')} />
       </div>
 
-      {/* Three-zone layout: 65% builder / 35% summary */}
+      {/*
+        Layout breakpoints:
+        - < md (768px): MobileInventoryBuilder + MobileStickySummary (phone-native UX)
+        - md–lg: InventoryBuilder + tablet sticky basket (unchanged iPad portrait flow)
+        - lg+: two-column grid with sidebar summary (unchanged desktop)
+      */}
       <div className="grid lg:grid-cols-[minmax(0,1.85fr)_minmax(0,1fr)] gap-5 lg:gap-6 items-start">
-        <section aria-label="Inventory builder">
-          <InventoryBuilder
-            onInteraction={markCalculatorStarted}
-            showUndoToast={showUndoToast}
-          />
+        <section aria-label="Inventory builder" className="min-w-0">
+          {/* MOBILE (<768px): step-by-step rooms + bottom-sheet item picker */}
+          <div className="md:hidden">
+            <MobileInventoryBuilder
+              onInteraction={markCalculatorStarted}
+              showUndoToast={showUndoToast}
+            />
+          </div>
+          {/* TABLET + DESKTOP (≥768px): original inventory builder — unchanged */}
+          <div className="hidden md:block">
+            <InventoryBuilder
+              onInteraction={markCalculatorStarted}
+              showUndoToast={showUndoToast}
+            />
+          </div>
         </section>
 
         <section aria-label="Move basket summary" className="hidden lg:block">
@@ -180,7 +197,21 @@ export function MovingCalculatorClient() {
         </section>
       </div>
 
-      {/* Mobile sticky basket */}
+      {/* MOBILE (<768px): sticky summary bar + full summary bottom sheet */}
+      <MobileStickySummary
+        inventory={inventory}
+        groupedByRoom={groupedByRoom}
+        totalVolume={totalVolume}
+        totalItems={totalItems}
+        movePreset={movePreset}
+        mode={mode}
+        onUpdateQty={updateQuantity}
+        onRemove={removeItem}
+        onClear={clearInventory}
+        onAddBoxes={addSuggestedBoxes}
+      />
+
+      {/* TABLET (768–1023px): original collapsible sticky basket — unchanged */}
       <MoveBasketSummary
         inventory={inventory}
         groupedByRoom={groupedByRoom}
@@ -198,7 +229,7 @@ export function MovingCalculatorClient() {
 
       <MovingCalculatorSeoSections />
 
-      <section className="mt-8 max-w-3xl rounded-xl border bg-muted/30 p-6 sm:p-8">
+      <section className="mt-8 max-w-3xl rounded-xl border bg-muted/30 p-6 sm:p-8 max-md:mb-4">
         <h2 className="text-xl font-semibold tracking-tight mb-3">
           Next Steps After You Estimate Your Move
         </h2>
