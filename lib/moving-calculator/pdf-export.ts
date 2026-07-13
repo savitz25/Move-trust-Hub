@@ -7,7 +7,7 @@ import {
   LBS_PER_CU_FT,
 } from '@/lib/moving-calculator/estimates';
 
-type PdfExportData = {
+export type PdfExportData = {
   inventory: InventoryItem[];
   groupedByRoom: [string, InventoryItem[]][];
   totalVolume: number;
@@ -15,7 +15,12 @@ type PdfExportData = {
   presetLabel?: string | null;
 };
 
-export function generateInventoryPdf(data: PdfExportData): void {
+export function inventoryPdfFilename(): string {
+  const dateStr = new Date().toISOString().slice(0, 10);
+  return `move-inventory-${dateStr}.pdf`;
+}
+
+export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
   const doc = new jsPDF({ unit: 'pt', format: 'letter' });
   const pageWidth = doc.internal.pageSize.getWidth();
   const margin = 48;
@@ -164,5 +169,20 @@ export function generateInventoryPdf(data: PdfExportData): void {
   );
   doc.text('We never sell your information.', margin, footerY + 12);
 
+  return doc;
+}
+
+export function generateInventoryPdfBase64(data: PdfExportData): string {
+  const doc = buildInventoryPdfDocument(data);
+  return doc.output('base64');
+}
+
+export function generateInventoryPdf(data: PdfExportData): void {
+  const doc = buildInventoryPdfDocument(data);
+  const dateStr = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
   doc.save(`move-inventory-${dateStr.replace(/,?\s+/g, '-')}.pdf`);
 }

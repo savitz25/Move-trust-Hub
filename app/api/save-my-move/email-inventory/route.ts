@@ -1,16 +1,37 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { createClient } from '@/lib/supabase/server';
-import { formatItemDisplayName } from '@/lib/moving-calculator/display-names';
 import { estimateWeight, getMoveRecommendation } from '@/lib/moving-calculator/estimates';
+import { groupInventoryByRoom } from '@/lib/moving-calculator/group-inventory';
 import {
-  buildTransactionalEmailFooter,
-  buildTransactionalTextFooter,
-} from '@/lib/emails/transactional-footer';
+  generateInventoryPdfBase64,
+  inventoryPdfFilename,
+} from '@/lib/moving-calculator/pdf-export';
+import { MOVE_PRESETS } from '@/lib/moving-calculator/move-presets';
+import {
+  buildInventoryReportEmailHtml,
+  buildInventoryReportEmailText,
+  buildInventoryReportSubject,
+} from '@/lib/emails/inventory-report';
 import type { InventoryItem } from '@/store/calculator-store';
 
 function resolveFrom(): string {
   return process.env.RESEND_FROM?.trim() || 'Move Trust Hub <notifications@movetrusthub.com>';
+}
+
+function resolveRecipientName(user: {
+  email?: string;
+  user_metadata?: Record<string, unknown>;
+}): string | null {
+  const meta = user.user_metadata ?? {};
+  const fromMeta =
+    (typeof meta.full_name === 'string' && meta.full_name) ||
+    (typeof meta.name === 'string' && meta.name) ||
+    null;
+  if (fromMeta) return fromMeta;
+  const email = user.email?.trim();
+  if (!email) return null;
+  return email.split('@')[0] ?? null;
 }
 
 export async function POST(request: Request) {
@@ -25,7 +46,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Email service unavailable' }, { status: 503 });
   }
 
-  let body: { inventory?: InventoryItem[]; name?: string };
+  let body: { inventory?: InventoryItem[]; name?: string; movePreset?: string | null };
   try {
     body = await request.json();
   } catch {
@@ -40,41 +61,44 @@ export async function POST(request: Request) {
   const totalVolume = inventory.reduce((s, i) => s + i.volume * i.quantity, 0);
   const totalItems = inventory.reduce((s, i) => s + i.quantity, 0);
   const recommendation = getMoveRecommendation(totalVolume);
-  const label = body.name?.trim() || 'My Move Inventory';
+  const inventoryName = body.name?.trim() || 'My Move Inventory';
+  const presetLabel = body.movePreset
+    ? MOVE_PRESETS.find((p) => p.id === body.movePreset)?.label ?? null
+    : null;
 
-  const lines = inventory.map(
-    (item) =>
-      `• ${formatItemDisplayName(item.name)} × ${item.quantity} (${Math.round(item.volume * item.quantity)} cu ft)`
-  );
+  const emailData = {
+    recipientName: resolveRecipientName(user),
+    inventoryName,
+    totalVolume,
+    totalWeight: estimateWeight(totalVolume),
+    totalItems,
+    truckSize: recommendation.truck,
+    moveSizeLabel: recommendation.label,
+    movers: recommendation.movers,
+    duration: recommendation.duration,
+  };
 
-  const text = [
-    label,
-    '',
-    `Total: ${Math.round(totalVolume)} cu ft · ${estimateWeight(totalVolume)} lbs · ${totalItems} items`,
-    `Truck: ${recommendation.truck}`,
-    '',
-    ...lines,
-    '',
-    buildTransactionalTextFooter(),
-  ].join('\n');
-
-  const html = `
-    <div style="font-family:system-ui,sans-serif;max-width:560px;color:#111;">
-      <h2 style="color:#0077D4;">${label}</h2>
-      <p><strong>${Math.round(totalVolume)} cu ft</strong> · ${estimateWeight(totalVolume)} lbs · ${totalItems} items<br />
-      Truck: ${recommendation.truck}</p>
-      <ul style="padding-left:20px;line-height:1.6;">${lines.map((l) => `<li>${l.replace(/^• /, '')}</li>`).join('')}</ul>
-      ${buildTransactionalEmailFooter('Manage preferences at movetrusthub.com/my-move')}
-    </div>
-  `;
+  const pdfBase64 = generateInventoryPdfBase64({
+    inventory,
+    groupedByRoom: groupInventoryByRoom(inventory),
+    totalVolume,
+    totalItems,
+    presetLabel,
+  });
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
     from: resolveFrom(),
     to: user.email,
-    subject: `Your moving inventory — ${Math.round(totalVolume)} cu ft`,
-    html,
-    text,
+    subject: buildInventoryReportSubject(totalVolume),
+    html: buildInventoryReportEmailHtml(emailData),
+    text: buildInventoryReportEmailText(emailData),
+    attachments: [
+      {
+        filename: inventoryPdfFilename(),
+        content: pdfBase64,
+      },
+    ],
   });
 
   if (error) {

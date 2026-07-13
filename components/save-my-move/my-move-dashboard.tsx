@@ -26,19 +26,10 @@ import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import type { InventoryItem } from '@/store/calculator-store';
 import { parseInventoryJson } from '@/lib/save-my-move/types';
 import { generateInventoryPdf } from '@/lib/moving-calculator/pdf-export';
+import { groupInventoryByRoom } from '@/lib/moving-calculator/group-inventory';
 import { MOVE_PRESETS } from '@/lib/moving-calculator/move-presets';
 import { trackPdfDownloaded } from '@/components/ga-events';
 import { toast } from 'sonner';
-
-function groupInventoryByRoom(inventory: InventoryItem[]): [string, InventoryItem[]][] {
-  const groups: Record<string, InventoryItem[]> = {};
-  for (const item of inventory) {
-    const room = item.room || 'Unassigned';
-    if (!groups[room]) groups[room] = [];
-    groups[room].push(item);
-  }
-  return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
-}
 
 type DashboardData = Awaited<ReturnType<typeof import('@/actions/save-my-move').getMyMoveDashboardData>>;
 
@@ -177,15 +168,21 @@ export function MyMoveDashboard({ initialData }: Props) {
     toast.success('PDF downloaded');
   };
 
-  const handleEmailInventory = async (inventory: InventoryItem[], name: string) => {
+  const handleEmailInventory = async (
+    inventory: InventoryItem[],
+    name: string,
+    movePreset: string | null
+  ) => {
     try {
       const res = await fetch('/api/save-my-move/email-inventory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ inventory, name }),
+        body: JSON.stringify({ inventory, name, movePreset }),
       });
       if (!res.ok) throw new Error();
-      toast.success('Inventory emailed to you');
+      toast.success('Inventory emailed', {
+        description: 'Check your inbox — a PDF report is attached.',
+      });
     } catch {
       toast.error('Could not send email');
     }
@@ -250,7 +247,7 @@ export function MyMoveDashboard({ initialData }: Props) {
                     <Button
                       size="sm"
                       variant="outline"
-                      onClick={() => handleEmailInventory(items, inv.name)}
+                      onClick={() => handleEmailInventory(items, inv.name, inv.move_preset)}
                     >
                       <Mail className="h-3.5 w-3.5 mr-1" /> Email to me
                     </Button>
