@@ -117,34 +117,51 @@ Tables: `user_profiles`, `saved_inventories`, `saved_movers`, `magic_link_rate_l
 
 **Production project ref:** `uvqkyupfnpswdozmuzih` (must match `NEXT_PUBLIC_SUPABASE_URL` on Vercel).
 
-**Verify Google is enabled on the live project** (not a different Supabase project):
+**Verify OAuth providers on the live project** (not a different Supabase project):
 
 ```bash
 curl -s "https://uvqkyupfnpswdozmuzih.supabase.co/auth/v1/settings" \
-  -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" | jq '.external.google'
+  -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" | jq '.external | {google, facebook}'
 ```
 
-Must return `true`. If `false`, Auth → Providers → Google is off on **this** project.
+Both should return `true` when enabled. If `false`, Auth → Providers is off on **this** project.
 
 **Supabase Auth setup (Dashboard → project `uvqkyupfnpswdozmuzih`):**
-1. Enable **Google** provider (scopes: email, profile only) and **Save**.
-2. **Authentication → URL Configuration:**
-   - **Site URL:** `https://www.movetrusthub.com` (NOT `http://localhost:3000` — if Site URL is localhost, OAuth sends users to localhost after Google sign-in)
+1. **Authentication → URL Configuration:**
+   - **Site URL:** `https://www.movetrusthub.com` (NOT `http://localhost:3000` — if Site URL is localhost, OAuth sends users to localhost after sign-in)
    - **Redirect URLs:** add `https://www.movetrusthub.com/auth/callback`
+2. Enable **Google** provider (scopes: email, profile only) and **Save**.
+3. Enable **Facebook** provider — paste App ID + App Secret from Meta (see below) and **Save**.
 4. **Email (magic link):** set OTP expiry to **900 seconds (15 min)** under Auth → Email.
 5. Disable email confirmations for magic link if double-confirm blocks sign-in.
 
-**Google sign-in (Save My Move modal):** Official [Google Identity Services](https://developers.google.com/identity/gsi/web) button → `signInWithIdToken` in the browser. Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to the same OAuth web client ID as Supabase Auth → Google.
+**Google sign-in (Save My Move modal):** Official [Google Identity Services](https://developers.google.com/identity/gsi/web) button → `signInWithIdToken` in the browser. Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` on Vercel to the same OAuth web client ID as Supabase Auth → Google.
 
-**Fallback OAuth entry:** `GET /api/auth/google` → `signInWithOAuth` with `redirectTo: https://www.movetrusthub.com/auth/callback` (used when `NEXT_PUBLIC_GOOGLE_CLIENT_ID` is unset).
+**Fallback Google OAuth:** `GET /api/auth/google` → `signInWithOAuth` (used when `NEXT_PUBLIC_GOOGLE_CLIENT_ID` is unset).
 
-**Routes:** `/my-move` (dashboard), `/auth/callback`, `/api/auth/magic-link` (rate-limited).
+**Facebook sign-in (Save My Move modal):** `GET /api/auth/facebook` → `signInWithOAuth` with `redirectTo: https://www.movetrusthub.com/auth/callback`. Saved movers, inventories, and comparisons are keyed to `auth.users.id` — provider-agnostic.
+
+### Facebook App setup (Meta for Developers)
+
+1. Go to [developers.facebook.com](https://developers.facebook.com/) → **My Apps** → **Create App** → type **Consumer** (or **None** if Consumer is unavailable).
+2. Add product **Facebook Login** → **Settings** → **Web**.
+3. **Valid OAuth Redirect URIs** — add exactly:
+   ```
+   https://uvqkyupfnpswdozmuzih.supabase.co/auth/v1/callback
+   ```
+4. **App Domains:** `movetrusthub.com`, `www.movetrusthub.com`
+5. **Settings → Basic:** copy **App ID** and **App Secret**.
+6. Supabase Dashboard → **Authentication → Providers → Facebook:** paste App ID + App Secret, enable provider, Save.
+7. **App Review:** request `email` and `public_profile` permissions if the app is in Development mode (add test users under **Roles → Test Users**, or switch to Live when ready).
+8. **Data Deletion Callback URL** (optional but recommended): `https://www.movetrusthub.com/privacy-policy`
+
+**Routes:** `/my-move` (dashboard), `/auth/callback`, `/api/auth/google`, `/api/auth/facebook`, `/api/auth/magic-link` (rate-limited).
 
 ## Growth roadmap
 
 | Feature | Status |
 |---------|--------|
-| Save My Move accounts | Shipped — Google OAuth + magic link |
+| Save My Move accounts | Shipped — Google, Facebook OAuth + magic link |
 | Saved inventories / movers / comparisons | `saved_inventories`, `saved_movers`, `saved_comparisons` |
 | Mover dashboards | extend `companies` ownership — future |
 | Realtime admin | Supabase Realtime on `quote_requests` — future |

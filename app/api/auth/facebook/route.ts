@@ -9,32 +9,31 @@ import {
 import { isOAuthProviderEnabled } from '@/lib/save-my-move/auth-provider-enabled';
 
 /**
- * Server-side Google OAuth kickoff — single source of truth for redirectTo.
- * Client navigates here; Supabase returns the Google consent URL.
+ * Server-side Facebook OAuth kickoff — single source of truth for redirectTo.
+ * Client navigates here; Supabase returns the Facebook consent URL.
  */
 export async function GET() {
   if (!isSupabaseConfigured()) {
     return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=not_configured'));
   }
 
-  if (!(await isOAuthProviderEnabled('google'))) {
-    console.error('[auth/google] Google provider disabled on Supabase project');
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google_not_enabled'));
+  if (!(await isOAuthProviderEnabled('facebook'))) {
+    console.error('[auth/facebook] Facebook provider disabled on Supabase project');
+    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=facebook_not_enabled'));
   }
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
+    provider: 'facebook',
     options: {
       redirectTo: AUTH_CALLBACK_URL,
-      queryParams: { prompt: 'select_account' },
-      scopes: 'email profile',
+      scopes: 'email public_profile',
     },
   });
 
   if (error) {
-    console.error('[auth/google] signInWithOAuth failed', error.message);
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google'));
+    console.error('[auth/facebook] signInWithOAuth failed', error.message);
+    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=facebook'));
   }
 
   if (data.url) {
@@ -42,5 +41,5 @@ export async function GET() {
     return NextResponse.redirect(safeUrl);
   }
 
-  return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google'));
+  return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=facebook'));
 }

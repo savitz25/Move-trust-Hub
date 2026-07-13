@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { FacebookSignInButton } from '@/components/save-my-move/facebook-sign-in-button';
 import { GoogleSignInButton } from '@/components/save-my-move/google-sign-in-button';
 import { trackSaveMyMoveAuth } from '@/components/ga-events';
 import { toast } from 'sonner';
@@ -40,7 +41,7 @@ export function SaveMyMoveModal({
   context = 'dashboard',
 }: SaveMyMoveModalProps) {
   const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState<'google' | 'email' | null>(null);
+  const [loading, setLoading] = useState<'google' | 'facebook' | 'email' | null>(null);
   const [emailSent, setEmailSent] = useState(false);
 
   const safeRedirectPath = sanitizePostLoginPath(redirectPath);
@@ -58,6 +59,12 @@ export function SaveMyMoveModal({
 
   const handleGoogleError = () => {
     setLoading(null);
+  };
+
+  const handleFacebookStart = () => {
+    setLoading('facebook');
+    trackSaveMyMoveAuth({ method: 'facebook' });
+    stashPostLoginRedirect(safeRedirectPath);
   };
 
   const handleMagicLink = async () => {
@@ -134,6 +141,11 @@ export function SaveMyMoveModal({
                 onStart={handleGoogleStart}
                 onSuccess={handleGoogleSuccess}
                 onError={handleGoogleError}
+              />
+
+              <FacebookSignInButton
+                disabled={loading !== null}
+                onStart={handleFacebookStart}
               />
 
               <div className="relative">

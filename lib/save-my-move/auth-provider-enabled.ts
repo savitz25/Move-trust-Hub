@@ -2,8 +2,14 @@ import 'server-only';
 
 import { getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/config';
 
-/** True when Google OAuth is enabled on the linked Supabase Auth project. */
-export async function isGoogleProviderEnabled(): Promise<boolean> {
+export type SaveMyMoveOAuthProvider = 'google' | 'facebook';
+
+type AuthSettingsExternal = Partial<Record<SaveMyMoveOAuthProvider, boolean>>;
+
+/** True when an OAuth provider is enabled on the linked Supabase Auth project. */
+export async function isOAuthProviderEnabled(
+  provider: SaveMyMoveOAuthProvider
+): Promise<boolean> {
   const url = getSupabaseUrl();
   const anonKey = getSupabaseAnonKey();
   if (!url || !anonKey) return false;
@@ -14,8 +20,8 @@ export async function isGoogleProviderEnabled(): Promise<boolean> {
       next: { revalidate: 60 },
     });
     if (!res.ok) return false;
-    const settings = (await res.json()) as { external?: { google?: boolean } };
-    return settings.external?.google === true;
+    const settings = (await res.json()) as { external?: AuthSettingsExternal };
+    return settings.external?.[provider] === true;
   } catch {
     return false;
   }
