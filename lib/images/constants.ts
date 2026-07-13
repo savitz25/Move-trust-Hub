@@ -8,7 +8,8 @@ export const IMAGE_SIZES = {
 
 export const DEFAULT_IMAGE_QUALITY = 75;
 
-/** SVG and other vector assets should bypass the image optimizer. */
+/** SVG and logo PNG must bypass the optimizer to preserve alpha (no white WebP matte). */
 export function shouldBypassImageOptimizer(src: string): boolean {
-  return /\.svg($|\?)/i.test(src);
+  if (/\.svg($|\?)/i.test(src)) return true;
+  return /\/logo\.png($|\?)/i.test(src) || src === '/logo.png';
 }

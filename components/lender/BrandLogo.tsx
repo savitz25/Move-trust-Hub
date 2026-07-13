@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
-import { TRUST_HUB_LOGO } from '@/lib/hub/config';
+import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
 
 /** Header logo — same Move Trust Hub mark as the main site. */
 export function BrandLogo({
@@ -12,17 +10,9 @@ export function BrandLogo({
   priority?: boolean;
 }) {
   const image = (
-    <Image
-      src={TRUST_HUB_LOGO.src}
-      alt={TRUST_HUB_LOGO.alt}
-      width={300}
-      height={75}
-      quality={DEFAULT_IMAGE_QUALITY}
-      priority={priority}
-      fetchPriority={priority ? 'high' : 'auto'}
-      sizes={IMAGE_SIZES.headerLogo}
-      className="h-12 w-auto max-w-[300px] object-contain object-left transition-transform group-hover:scale-[1.02]"
-    />
+    <span className="hub-logo-slot relative block shrink-0 max-w-[300px]">
+      <TrustHubLogoImage variant="header" priority={priority} />
+    </span>
   );
 
   if (!href) {
@@ -43,14 +33,8 @@ export function BrandLogo({
 /** Footer logo — same Move Trust Hub mark as the main site. */
 export function BrandLogoStacked({ className = '' }: { className?: string }) {
   return (
-    <Image
-      src={TRUST_HUB_LOGO.src}
-      alt={TRUST_HUB_LOGO.alt}
-      width={192}
-      height={48}
-      loading="lazy"
-      sizes={IMAGE_SIZES.footerLogo}
-      className={`h-12 w-[192px] object-contain object-left ${className}`}
-    />
+    <span className={`relative block h-12 w-[192px] shrink-0 bg-transparent ${className}`}>
+      <TrustHubLogoImage variant="footer" />
+    </span>
   );
 }

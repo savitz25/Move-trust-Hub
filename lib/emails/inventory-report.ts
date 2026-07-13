@@ -146,7 +146,7 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                       <tr>
                         <td style="vertical-align:middle;">
-                          <img src="https://www.movetrusthub.com/logo.png" alt="Move Trust Hub" width="200" style="display:block;border:0;max-width:200px;height:auto;" />
+                          <img src="https://www.movetrusthub.com/logo.png" alt="Move Trust Hub" width="200" style="display:block;border:0;max-width:200px;height:auto;background:transparent;" />
                         </td>
                         <td align="right" style="vertical-align:middle;">
                           <span style="display:inline-block;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.24);color:#ffffff;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:8px 12px;border-radius:999px;">

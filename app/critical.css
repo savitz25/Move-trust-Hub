@@ -89,6 +89,11 @@ nav.sticky.top-0 {
   height: 3rem;
   max-width: 10rem;
   flex-shrink: 0;
+  background: transparent;
+}
+
+.hub-logo-slot img {
+  background: transparent !important;
 }
 
 @media (min-width: 640px) {
