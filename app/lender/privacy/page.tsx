@@ -1,18 +1,33 @@
 import type { Metadata } from 'next';
-import { hubPath } from '@/lib/hub/paths';
+import { SchemaInjector } from '@/components/hub/schema-injector';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 import { SITE_EMAIL } from '@/lib/contact';
+import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
+import { buildCollectionPageSchema, buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Lender Trust Hub',
-  description: 'Privacy policy for Lender Trust Hub — how we collect, use, and protect your information.',
-  alternates: { canonical: `https://www.movetrusthub.com${hubPath('lender', '/privacy')}` },
-};
+const PRIVACY_DESCRIPTION =
+  'Privacy policy for Lender Trust Hub — how we collect, use, and protect your information.';
+
+export const metadata: Metadata = buildHubMetadata('lender', {
+  title: 'Privacy Policy',
+  description: PRIVACY_DESCRIPTION,
+  path: '/privacy',
+});
 
 export default function LenderPrivacyPage() {
   const effectiveDate = 'June 1, 2026';
+  const schema = buildTemplateSchemaGraph({
+    hub: 'lender',
+    path: '/privacy',
+    breadcrumbs: hubSectionBreadcrumbs('lender', 'Privacy Policy'),
+    nodes: [
+      buildCollectionPageSchema('lender', '/privacy', 'Privacy Policy', PRIVACY_DESCRIPTION),
+    ],
+  });
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10 md:py-14">
+      <SchemaInjector data={schema} />
       <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
       <p className="mt-2 text-sm text-muted-foreground">Effective date: {effectiveDate}</p>
 

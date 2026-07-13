@@ -5,7 +5,7 @@ import { SITE_EMAIL, SITE_NAME, SITE_URL } from '@/lib/insurance/constants';
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy',
   description: `Privacy policy for ${SITE_NAME} — how we collect, use, and protect your information.`,
-  path: '/insurance/privacy',
+  path: '/privacy',
 });
 
 export default function PrivacyPage() {

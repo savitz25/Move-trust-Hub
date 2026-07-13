@@ -37,7 +37,18 @@ export function buildHubOrganizationSchema(hub: HubId) {
   };
 }
 
-export function buildHubWebsiteSchema(hub: HubId) {
+export function buildWebsiteSearchAction(target: string) {
+  return {
+    '@type': 'SearchAction',
+    target,
+    'query-input': 'required name=search_term_string',
+  };
+}
+
+export function buildHubWebsiteSchema(
+  hub: HubId,
+  options?: { searchTarget?: string }
+) {
   const config = getHubConfig(hub);
   const hubUrl = hubCanonicalUrl(hub, '/');
 
@@ -49,6 +60,9 @@ export function buildHubWebsiteSchema(hub: HubId) {
     publisher: { '@id': `${hubUrl}#organization` },
     isPartOf: { '@id': `${SITE_URL}/#website` },
     inLanguage: 'en-US',
+    ...(options?.searchTarget
+      ? { potentialAction: buildWebsiteSearchAction(options.searchTarget) }
+      : {}),
   };
 }
 
@@ -73,11 +87,15 @@ export function buildTrustHubNetworkSchema() {
   };
 }
 
-export function buildHubHomeSchemaGraph(hub: HubId, faqItems?: { question: string; answer: string }[]) {
+export function buildHubHomeSchemaGraph(
+  hub: HubId,
+  faqItems?: { question: string; answer: string }[],
+  options?: { searchTarget?: string }
+) {
   const config = getHubConfig(hub);
   const hubUrl = hubCanonicalUrl(hub, '/');
   const org = buildHubOrganizationSchema(hub);
-  const website = buildHubWebsiteSchema(hub);
+  const website = buildHubWebsiteSchema(hub, options);
 
   const graph: Record<string, unknown>[] = [org, website];
 

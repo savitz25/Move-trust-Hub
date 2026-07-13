@@ -13,17 +13,6 @@ export const metadata: Metadata = {
   title: 'Mortgage Payment Calculator with PMI & Charts – Verified Lenders',
   description:
     'Free mortgage calculators: PITI payment, affordability, refinance breakeven, amortization, rent vs buy, HELOC, down payment planner & rental cash flow. Match to NMLS-verified lenders.',
-  keywords: [
-    'mortgage payment calculator',
-    'PITI calculator',
-    'home affordability calculator',
-    'refinance breakeven calculator',
-    'amortization calculator',
-    'rent vs buy calculator',
-    'HELOC calculator',
-    'mortgage calculators Florida',
-    'local mortgage lenders',
-  ],
   alternates: { canonical: 'https://www.movetrusthub.com/lender/calculators' },
   openGraph: {
     title: 'Mortgage Calculators Hub | Lender Trust Hub',

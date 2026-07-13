@@ -33,10 +33,12 @@ export const HUBS: Record<HubId, HubConfig> = {
     headerLogoSrc: TRUST_HUB_LOGO.src,
     logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-primary',
-    homeTitle: 'Compare FMCSA-Licensed Movers (2026) | Independent Moving Directory',
+    homeTitle: 'Compare FMCSA-Licensed Movers (2026) | MoveTrustHub',
     homeDescription:
-      'Research FMCSA-licensed interstate movers by reviews, pricing, and safety ratings. Free calculator, city guides, and county directories — no lead fees.',
+      'Compare 25+ FMCSA-licensed interstate movers by verified reviews, pricing, and safety data. Independent directory — no lead fees, no paid placements.',
     metadataTitleTemplate: '%s | Move Trust Hub',
+    applicationName: 'Move Trust Hub',
+    category: 'moving services',
     navLinks: [...MOVE_NAV],
     footerColumns: [
       {
@@ -87,10 +89,12 @@ export const HUBS: Record<HubId, HubConfig> = {
     headerLogoSrc: TRUST_HUB_LOGO.src,
     logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-[#3B82F6]',
-    homeTitle: 'Trusted Local Mortgage Lenders (2026) | NMLS-Verified Directory',
+    homeTitle: 'Mortgage Lenders Directory (2026) | LenderTrustHub',
     homeDescription:
-      'Compare NMLS-verified mortgage lenders and brokers by county. Free mortgage calculators, FDIC bank directory, and zero paid placements.',
+      'Compare NMLS-verified mortgage lenders by county. FDIC bank directory, free calculators, and zero paid placements. Independent financial directory.',
     metadataTitleTemplate: '%s | Lender Trust Hub',
+    applicationName: 'Lender Trust Hub',
+    category: 'financial services',
     navLinks: [
       { href: hubPath('lender', '/local-lenders'), label: 'Mortgage Lenders' },
       { href: hubPath('lender', '/fdic-insured-banks'), label: 'FDIC Banks' },
@@ -140,10 +144,12 @@ export const HUBS: Record<HubId, HubConfig> = {
     headerLogoSrc: TRUST_HUB_LOGO.src,
     logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-emerald-600',
-    homeTitle: 'Trusted Local Insurance Agents (2026) | DOI-Verified Directory',
+    homeTitle: 'Licensed Insurance Agents Directory (2026) | InsuranceTrustHub',
     homeDescription:
-      'Compare DOI-verified insurance agents and agencies. Health insurance hubs, ACA and Medicare calculators, and zero paid placements.',
+      'Find DOI-verified insurance agents by state. Compare health, Medicare, auto and home specialists. Independent directory — no pay-to-play rankings.',
     metadataTitleTemplate: '%s | Insurance Trust Hub',
+    applicationName: 'Insurance Trust Hub',
+    category: 'insurance services',
     navLinks: [
       { href: hubPath('insurance', '/directory'), label: 'Directories' },
       { href: hubPath('insurance', '/hubs'), label: 'Health Hubs' },

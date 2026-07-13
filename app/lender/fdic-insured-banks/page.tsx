@@ -3,7 +3,8 @@ import { JsonLd } from '@/components/lender/directory/JsonLd';
 import { FDICBanksExplorerDynamic } from '@/components/lender/fdic/FDICBanksExplorerDynamic';
 import { NationalHubShell } from '@/components/lender/directory/NationalHubShell';
 import { Breadcrumbs } from '@/components/lender/directory/Breadcrumbs';
-import { SITE_URL, FDIC_CATEGORY } from '@/lib/lender/directory/categories';
+import { buildHubMetadata } from '@/lib/hub/metadata';
+import { FDIC_CATEGORY } from '@/lib/lender/directory/categories';
 import { stateData, getStateData, DEFAULT_STATE_CODE, DATA_UPDATED } from '@/lib/lender/fdic/stateData';
 import { US_STATES, STATE_BY_CODE } from '@/lib/lender/fdic/states';
 import { HubCTAStrip } from '@/components/lender/directory/HubCTAStrip';
@@ -24,29 +25,11 @@ const stateGrid = US_STATES.filter((s) => s.hasData).map((s) => ({
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildHubMetadata('lender', {
   title: buildHubTitle(),
   description: buildHubDescription(totalBanks),
-  keywords: [
-    'FDIC insured banks',
-    'FDIC banks by state',
-    'list of FDIC banks 2026',
-    'FDIC bank directory',
-    'trusted FDIC banks',
-    'FDIC banks near me',
-  ],
-  openGraph: {
-    title: buildHubTitle(),
-    description: buildHubDescription(totalBanks),
-    siteName: 'Lender Trust Hub',
-    type: 'website',
-    url: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
-    locale: 'en_US',
-  },
-  alternates: {
-    canonical: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
-  },
-};
+  path: '/fdic-insured-banks',
+});
 
 export default function FDICInsuredBanksPage() {
   const jsonLd = buildHubJsonLd(totalBanks, stateCount);

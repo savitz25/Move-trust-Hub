@@ -9,7 +9,7 @@ export const metadata: Metadata = wrapHubPageMetadata('insurance', {
   title: 'Medicare Coverage Gap Analyzer',
   description:
     'Identify Medicare and health insurance gaps when moving, retiring, or losing employer coverage.',
-  path: '/insurance/calculators/medicare-gap',
+  path: '/calculators/medicare-gap',
 });
 
 const FAQ = [

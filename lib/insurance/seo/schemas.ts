@@ -1,12 +1,15 @@
 import { trustHubLogoUrl } from '@/lib/hub/config';
-import { SITE_EMAIL, SITE_NAME, SITE_URL } from '@/lib/insurance/constants';
+import { hubCanonicalUrl } from '@/lib/hub/paths';
+import { SITE_EMAIL, SITE_NAME } from '@/lib/insurance/constants';
 import type { Provider } from '@/types/insurance/provider';
+
+const INSURANCE_HUB_URL = hubCanonicalUrl('insurance', '/');
 
 export const organizationSchema = {
   '@type': 'Organization',
-  '@id': `${SITE_URL}/#organization`,
+  '@id': `${INSURANCE_HUB_URL}#organization`,
   name: SITE_NAME,
-  url: SITE_URL,
+  url: INSURANCE_HUB_URL,
   logo: trustHubLogoUrl(),
   email: SITE_EMAIL,
   contactPoint: {
@@ -22,31 +25,31 @@ export const organizationSchema = {
 
 export const websiteSchema = {
   '@type': 'WebSite',
-  '@id': `${SITE_URL}/#website`,
+  '@id': `${INSURANCE_HUB_URL}#website`,
   name: SITE_NAME,
-  url: SITE_URL,
-  publisher: { '@id': `${SITE_URL}/#organization` },
+  url: INSURANCE_HUB_URL,
+  publisher: { '@id': `${INSURANCE_HUB_URL}#organization` },
   inLanguage: 'en-US',
   potentialAction: {
     '@type': 'SearchAction',
-    target: `${SITE_URL}/directory?q={search_term_string}`,
+    target: `${INSURANCE_HUB_URL}/directory?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
   },
 };
 
 export const homepageServiceSchema = {
   '@type': 'Service',
-  '@id': `${SITE_URL}/#insurance-quote-service`,
+  '@id': `${INSURANCE_HUB_URL}#insurance-quote-service`,
   name: 'Insurance Agency Matching',
   serviceType: 'Insurance agency comparison and quote referral',
-  provider: { '@id': `${SITE_URL}/#organization` },
+  provider: { '@id': `${INSURANCE_HUB_URL}#organization` },
   areaServed: {
     '@type': 'Country',
     name: 'United States',
   },
   description:
     'Compare licensed insurance agencies by state, specialty, and customer reviews. Research auto, home, life, and business insurance options.',
-  url: SITE_URL,
+  url: INSURANCE_HUB_URL,
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -56,11 +59,13 @@ export const homepageServiceSchema = {
 };
 
 export function buildInsuranceAgencySchema(provider: Provider) {
+  const providerUrl = hubCanonicalUrl('insurance', `/providers/${provider.slug}`);
+
   return {
     '@type': 'InsuranceAgency',
-    '@id': `${SITE_URL}/providers/${provider.slug}/#agency`,
+    '@id': `${providerUrl}#agency`,
     name: provider.name,
-    url: provider.website ?? `${SITE_URL}/providers/${provider.slug}`,
+    url: provider.website ?? providerUrl,
     description: provider.short_description ?? provider.description,
     telephone: provider.phone ?? undefined,
     address: {
@@ -87,12 +92,14 @@ export function buildInsuranceAgencySchema(provider: Provider) {
 }
 
 export function buildLocalBusinessSchema(provider: Provider) {
+  const providerUrl = hubCanonicalUrl('insurance', `/providers/${provider.slug}`);
+
   return {
     '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}/providers/${provider.slug}/#localbusiness`,
+    '@id': `${providerUrl}#localbusiness`,
     name: provider.name,
     image: provider.logo ?? trustHubLogoUrl(),
-    url: provider.website ?? `${SITE_URL}/providers/${provider.slug}`,
+    url: provider.website ?? providerUrl,
     telephone: provider.phone ?? undefined,
     address: {
       '@type': 'PostalAddress',

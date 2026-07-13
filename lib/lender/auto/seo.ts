@@ -1,5 +1,9 @@
 import type { StateMeta } from '@/lib/lender/fdic/types';
-import { SITE_URL, AUTO_CATEGORY } from '@/lib/lender/directory/categories';
+import { lenderCanonical, LENDER_HUB_URL } from '@/lib/lender/canonical';
+import { AUTO_CATEGORY } from '@/lib/lender/directory/categories';
+
+const SITE_URL = LENDER_HUB_URL;
+const AUTO_HUB_URL = lenderCanonical('/auto-loan-companies');
 import type { AutoLoanProvider } from './types';
 import { getStateAutoStats } from './stateProviders';
 
@@ -10,11 +14,11 @@ export function autoStatePath(slug: string): string {
 }
 
 export function autoStateUrl(slug: string): string {
-  return `${SITE_URL}${autoStatePath(slug)}`;
+  return lenderCanonical(`/auto-loan-companies/${slug}`);
 }
 
 export function buildAutoStateTitle(stateName: string, count: number): string {
-  return `Auto Loan Companies in ${stateName} ${YEAR} | ${count} Verified Lenders | LenderTrustHub`;
+  return `Auto Loan Companies in ${stateName} (${YEAR})`;
 }
 
 export function buildAutoStateDescription(
@@ -27,7 +31,7 @@ export function buildAutoStateDescription(
 }
 
 export function buildAutoHubTitle(): string {
-  return `Auto Loan Companies by State ${YEAR} | Verified Directory | LenderTrustHub`;
+  return `Auto Loan Companies by State (${YEAR})`;
 }
 
 export function buildAutoHubDescription(total: number): string {
@@ -58,7 +62,7 @@ export function buildAutoStateJsonLd(
             '@type': 'ListItem',
             position: 2,
             name: 'Auto Loan Companies',
-            item: `${SITE_URL}${AUTO_CATEGORY.hubPath}`,
+            item: `${AUTO_HUB_URL}`,
           },
           { '@type': 'ListItem', position: 3, name: stateMeta.fullName, item: pageUrl },
         ],
@@ -86,7 +90,7 @@ export function buildAutoStateJsonLd(
           item: {
             '@type': 'FinancialService',
             name: p.name,
-            url: p.website || `${SITE_URL}${AUTO_CATEGORY.hubPath}/${stateMeta.slug}#provider-${p.id}`,
+            url: p.website || `${AUTO_HUB_URL}/${stateMeta.slug}#provider-${p.id}`,
             areaServed: stateMeta.fullName,
             aggregateRating: {
               '@type': 'AggregateRating',
@@ -136,7 +140,7 @@ export function buildAutoHubJsonLd(totalProviders: number, stateCount: number) {
         '@type': 'WebPage',
         name: buildAutoHubTitle(),
         description: buildAutoHubDescription(totalProviders),
-        url: `${SITE_URL}${AUTO_CATEGORY.hubPath}`,
+        url: `${AUTO_HUB_URL}`,
       },
       {
         '@type': 'ItemList',

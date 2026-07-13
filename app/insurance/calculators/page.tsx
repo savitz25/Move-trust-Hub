@@ -17,7 +17,6 @@ export const metadata: Metadata = buildTemplateMetadata({
   title: preset.title,
   description: preset.description,
   path: '/calculators',
-  keywords: ['insurance calculator', 'Medicare gap', 'ACA subsidy', 'premium estimator'],
 });
 
 export default function CalculatorsPage() {

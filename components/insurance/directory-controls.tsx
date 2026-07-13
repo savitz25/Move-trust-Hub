@@ -5,6 +5,7 @@ import { useTransition } from 'react';
 import { Grid3X3, List, ArrowUpDown } from 'lucide-react';
 import { Button } from '@/components/insurance/ui/button';
 import { Select } from '@/components/insurance/ui/select';
+import { insuranceHref } from '@/lib/insurance/paths';
 import { cn } from '@/lib/insurance/utils';
 
 interface DirectoryControlsProps {
@@ -25,7 +26,7 @@ export function DirectoryControls({ total, className }: DirectoryControlsProps) 
     if (value) params.set(key, value);
     else params.delete(key);
     startTransition(() => {
-      router.push(`/insurance/directory?${params.toString()}`);
+      router.push(`${insuranceHref('/directory')}?${params.toString()}`);
     });
   }
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'ACA Eligibility Checker — Subsidy & Marketplace Estimator',
   description:
     'Check ACA marketplace subsidy eligibility with our educational income estimator. Official enrollment at HealthCare.gov or your state exchange.',
-  path: '/insurance/tools/aca-eligibility-checker',
+  path: '/tools/aca-eligibility-checker',
 });
 
 export default function AcaEligibilityCheckerPage() {

@@ -5,7 +5,7 @@ import { DISCLAIMER, SITE_EMAIL, SITE_NAME, SITE_URL } from '@/lib/insurance/con
 export const metadata: Metadata = buildMetadata({
   title: 'Terms of Service',
   description: `Terms of service for using ${SITE_NAME} directory, tools, and resources.`,
-  path: '/insurance/terms',
+  path: '/terms',
 });
 
 export default function TermsPage() {

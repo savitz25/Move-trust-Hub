@@ -14,14 +14,6 @@ export const metadata: Metadata = buildHubMetadata('insurance', {
   title: insuranceConfig.homeTitle,
   description: insuranceConfig.homeDescription,
   path: '/',
-  keywords: [
-    'insurance agents',
-    'health insurance',
-    'DOI verified',
-    'ACA marketplace',
-    'Medicare agents',
-    'insurance directory',
-  ],
 });
 
 const INSURANCE_HOME_FAQ = [
@@ -38,12 +30,8 @@ const INSURANCE_HOME_FAQ = [
 ];
 
 export default function InsuranceHubHomePage() {
-  const canonical = hubCanonicalUrl('insurance', '/');
-  const schema = buildHubHomeSchemaGraph('insurance', INSURANCE_HOME_FAQ);
-  schema['@graph'].push({
-    '@type': 'SearchAction',
-    target: `${canonical}/hubs/browse?zip={search_term_string}`,
-    'query-input': 'required name=search_term_string',
+  const schema = buildHubHomeSchemaGraph('insurance', INSURANCE_HOME_FAQ, {
+    searchTarget: `${hubCanonicalUrl('insurance', '/')}/hubs/browse?zip={search_term_string}`,
   });
 
   return (

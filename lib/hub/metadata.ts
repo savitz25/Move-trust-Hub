@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getHubConfig } from '@/lib/hub/config';
-import { hubCanonicalUrl } from '@/lib/hub/paths';
+import { hubCanonicalUrl, normalizeHubMetadataPath } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
 
@@ -8,14 +8,15 @@ export type HubPageMetadataInput = {
   title: string;
   description: string;
   path?: string;
-  keywords?: string[];
   noIndex?: boolean;
 };
 
 function resolveHubTitle(hub: HubId, rawTitle: string): string {
   const config = getHubConfig(hub);
   if (hub === 'move') return rawTitle;
-  if (rawTitle.includes(config.siteName)) return rawTitle;
+  const brandTokens = [config.siteName, config.applicationName, config.shortName];
+  if (brandTokens.some((token) => rawTitle.includes(token))) return rawTitle;
+  if (/LenderTrustHub|InsuranceTrustHub|MoveTrustHub/i.test(rawTitle)) return rawTitle;
   return `${rawTitle} | ${config.siteName}`;
 }
 
@@ -23,8 +24,10 @@ export function buildHubMetadata(
   hub: HubId,
   input: HubPageMetadataInput
 ): Metadata {
-  const canonical = hubCanonicalUrl(hub, input.path ?? '/');
+  const cleanPath = normalizeHubMetadataPath(hub, input.path ?? '/');
+  const canonical = hubCanonicalUrl(hub, cleanPath);
   const title = resolveHubTitle(hub, input.title);
+  const config = getHubConfig(hub);
 
   // Sub-hub pages bypass the root Move title template to prevent duplicate suffixes.
   const titleField: Metadata['title'] =
@@ -33,7 +36,8 @@ export function buildHubMetadata(
   return {
     title: titleField,
     description: input.description,
-    keywords: input.keywords,
+    applicationName: config.applicationName,
+    category: config.category,
     alternates: { canonical },
     openGraph: buildOpenGraph({
       title,
@@ -57,11 +61,5 @@ export function buildHubLayoutMetadata(hub: HubId): Metadata {
     title: config.homeTitle,
     description: config.homeDescription,
     path: '/',
-    keywords:
-      hub === 'lender'
-        ? ['mortgage lenders', 'NMLS verified', 'county lenders', 'mortgage calculator']
-        : hub === 'insurance'
-          ? ['insurance agents', 'health insurance', 'DOI verified', 'ACA', 'Medicare']
-          : undefined,
   });
 }

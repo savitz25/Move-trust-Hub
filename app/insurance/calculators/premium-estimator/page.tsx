@@ -9,7 +9,7 @@ export const metadata: Metadata = wrapHubPageMetadata('insurance', {
   title: 'Insurance Premium Estimator (2026)',
   description:
     'Estimate auto, health, homeowners, and Medicare premium ranges by state. Estimates only.',
-  path: '/insurance/calculators/premium-estimator',
+  path: '/calculators/premium-estimator',
 });
 
 const FAQ = [

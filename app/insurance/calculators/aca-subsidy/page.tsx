@@ -8,7 +8,7 @@ import { AcaSubsidyCalculator } from '@/components/insurance/calculators/aca-sub
 export const metadata: Metadata = wrapHubPageMetadata('insurance', {
   title: 'ACA Subsidy Estimator (2026)',
   description: 'Estimate marketplace premium tax credits by income and household size. Educational tool only.',
-  path: '/insurance/calculators/aca-subsidy',
+  path: '/calculators/aca-subsidy',
 });
 
 const FAQ = [

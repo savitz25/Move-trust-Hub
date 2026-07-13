@@ -16,8 +16,7 @@ export const metadata: Metadata = buildTemplateMetadata({
   title: 'Health Insurance Hubs — 50+ U.S. Markets',
   description:
     'Explore verified insurance agent hubs across 50+ U.S. metros. Health insurance specialists for ACA, Medicare, employer plans, and multi-line coverage.',
-  path: '/insurance/hubs',
-  keywords: ['health insurance hubs', 'Medicare agents', 'ACA marketplace', 'insurance directory'],
+  path: '/hubs',
 });
 
 export default function HubsPage() {

@@ -24,7 +24,6 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: { absolute: `${content.seo.title} | Move Trust Hub` },
   description: content.seo.description,
-  keywords: content.seo.keywords,
   alternates: { canonical: `${SITE_URL}${content.seo.canonicalPath}` },
   openGraph: buildOpenGraph({
     title: content.seo.title,

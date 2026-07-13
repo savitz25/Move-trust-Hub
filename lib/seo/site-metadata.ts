@@ -5,9 +5,9 @@ export const SITE_URL = 'https://www.movetrusthub.com';
 export const SITE_NAME = 'Move Trust Hub';
 
 export const HOMEPAGE_TITLE =
-  'Compare FMCSA-Licensed Movers (2026) | Independent Moving Directory';
+  'Compare FMCSA-Licensed Movers (2026) | MoveTrustHub';
 export const HOMEPAGE_DESCRIPTION =
-  'Research FMCSA-licensed interstate movers by attributable reviews, pricing, and safety ratings. Free moving calculator, 480+ city guides, and 3,100+ county directories. Independent directory — no lead fees, no paid placements.';
+  'Compare 25+ FMCSA-licensed interstate movers by verified reviews, pricing, and safety data. Independent directory — no lead fees, no paid placements.';
 
 export const DEFAULT_SITE_DESCRIPTION =
   'Compare FMCSA-licensed interstate movers by reviews, pricing, and reputation. Free moving calculator and trusted long-distance carrier research at Move Trust Hub — independent directory, no lead fees.';
@@ -103,17 +103,6 @@ export const rootLayoutMetadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: DEFAULT_SITE_DESCRIPTION,
-  keywords: [
-    'interstate movers',
-    'moving companies USA',
-    'compare moving companies',
-    'FMCSA licensed movers',
-    'long distance movers',
-    'independent moving directory',
-    'moving calculator',
-    'trusted movers directory',
-    'move trust hub',
-  ],
   authors: [{ name: SITE_NAME }],
   icons: {
     icon: TRUST_HUB_LOGO.src,

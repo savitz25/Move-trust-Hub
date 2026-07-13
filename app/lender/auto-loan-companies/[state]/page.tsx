@@ -17,11 +17,11 @@ import {
   getStateAutoStats,
   AUTO_DATA_UPDATED,
 } from '@/lib/lender/auto/stateProviders';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 import {
   buildAutoStateDescription,
   buildAutoStateJsonLd,
   buildAutoStateTitle,
-  autoStateUrl,
 } from '@/lib/lender/auto/seo';
 
 /**
@@ -41,7 +41,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { state: slug } = await params;
   const stateMeta = STATE_BY_SLUG.get(slug);
-  if (!stateMeta) return { title: 'Auto Loan Companies | LenderTrustHub' };
+  if (!stateMeta) {
+    return buildHubMetadata('lender', {
+      title: 'Auto Loan Companies',
+      description: 'Browse verified auto loan companies by state.',
+      path: '/auto-loan-companies',
+    });
+  }
 
   const stats = getStateAutoStats(slug);
   const title = buildAutoStateTitle(stateMeta.fullName, stats.total);
@@ -52,19 +58,11 @@ export async function generateMetadata({
     stats.avgAprLow
   );
 
-  return {
+  return buildHubMetadata('lender', {
     title,
     description,
-    keywords: [
-      `auto loan companies in ${stateMeta.fullName}`,
-      `car loan rates ${stateMeta.fullName} 2026`,
-      `best auto lenders ${stateMeta.fullName}`,
-      'auto finance directory',
-    ],
-    openGraph: { title, description, url: autoStateUrl(slug), locale: 'en_US' },
-    alternates: { canonical: autoStateUrl(slug) },
-    robots: { index: true, follow: true },
-  };
+    path: `/auto-loan-companies/${slug}`,
+  });
 }
 
 export default async function AutoLoanStatePage({

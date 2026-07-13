@@ -8,15 +8,6 @@ export const metadata: Metadata = buildMovePageMetadata({
   description:
     'Estimate open and enclosed car shipping costs by ZIP code. Compare FMCSA-licensed auto transport companies, ratings, and services in our independent directory.',
   path: '/auto-transport',
-  keywords: [
-    'auto transport calculator',
-    'car shipping cost',
-    'vehicle transport estimate',
-    'open auto transport',
-    'enclosed car shipping',
-    'ship a car cross country',
-    'auto transport companies',
-  ],
 });
 
 export default function AutoTransportLayout({

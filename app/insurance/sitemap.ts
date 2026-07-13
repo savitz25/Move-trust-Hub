@@ -4,7 +4,7 @@ import { ARTICLES } from '@/lib/insurance/resources/articles';
 import { FALLBACK_PROVIDERS } from '@/lib/insurance/providers/fallback-data';
 import { INSURANCE_HUBS, getAllStateSlugs } from '@/lib/insurance/hubs/registry';
 import { SPECIALTY_TOPICS } from '@/lib/insurance/hubs/specialty-topics';
-import { hubSitemapEntry } from '@/lib/hub/sitemap-helpers';
+import { finalizeHubSitemap, hubSitemapEntry } from '@/lib/hub/sitemap-helpers';
 
 const HUB = 'insurance' as const;
 
@@ -18,10 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/providers',
     '/hubs',
     '/hubs/browse',
-
-    '/hubs/health-insurance',
-    '/hubs/medicare',
-    '/hubs/aca',
+    // Specialty hubs (/hubs/health-insurance, medicare, aca) come from SPECIALTY_TOPICS below.
     '/calculators',
     '/calculators/premium-estimator',
     '/calculators/medicare-gap',
@@ -90,7 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     hubSitemapEntry(HUB, `/hubs/${state}`, { priority: 0.8 })
   );
 
-  return [
+  return finalizeHubSitemap(HUB, [
     ...staticRoutes,
     ...browseStates,
     ...specialtyTopics,
@@ -100,5 +97,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...providers,
     ...hubPages,
     ...hubStatePages,
-  ];
+  ]);
 }

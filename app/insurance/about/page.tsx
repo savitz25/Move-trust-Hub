@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'About Insurance Trust Hub — Independence & Verification',
   description:
     'Learn how Insurance Trust Hub researches agencies, verifies listings, and maintains editorial independence.',
-  path: '/insurance/about',
+  path: '/about',
 });
 
 export default function AboutPage() {

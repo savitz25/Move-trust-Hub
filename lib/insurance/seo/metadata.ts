@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { TRUST_HUB_LOGO } from '@/lib/hub/config';
-import { SITE_NAME, SITE_URL } from '@/lib/insurance/constants';
+import { hubCanonicalUrl, normalizeHubMetadataPath } from '@/lib/hub/paths';
+import { SITE_NAME } from '@/lib/insurance/constants';
+import { SITE_URL as ROOT_SITE_URL } from '@/lib/seo/site-metadata';
 
-export { SITE_URL };
+export const SITE_URL = hubCanonicalUrl('insurance', '/');
 
 export const HOMEPAGE_TITLE =
   'Find Trusted Insurance Agents (2026) | Compare Licensed Agencies by State';
@@ -61,12 +63,16 @@ export interface BuildMetadataOptions {
 }
 
 export function buildMetadata(options: BuildMetadataOptions): Metadata {
-  const url = options.path ? `${SITE_URL}${options.path}` : SITE_URL;
+  const cleanPath = normalizeHubMetadataPath('insurance', options.path ?? '/');
+  const url = hubCanonicalUrl('insurance', cleanPath);
 
   return {
     title: options.title,
     description: options.description,
+    applicationName: SITE_NAME,
+    category: 'insurance services',
     alternates: { canonical: url },
+    metadataBase: new URL(ROOT_SITE_URL),
     openGraph: buildOpenGraph({
       title: options.title,
       description: options.description,
@@ -103,16 +109,6 @@ export const rootLayoutMetadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: DEFAULT_SITE_DESCRIPTION,
-  keywords: [
-    'insurance agents',
-    'insurance agencies',
-    'auto insurance quotes',
-    'homeowners insurance',
-    'independent insurance agent',
-    'insurance directory',
-    'compare insurance agents',
-    'insurance trust hub',
-  ],
   authors: [{ name: SITE_NAME }],
   icons: {
     icon: [{ url: TRUST_HUB_LOGO.src, type: 'image/png' }],

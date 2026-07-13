@@ -21,7 +21,6 @@ import {
   buildMortgageStateDescription,
   buildMortgageStateJsonLd,
   buildMortgageStateTitle,
-  mortgageStateUrl,
 } from '@/lib/lender/mortgage/seo';
 
 /**
@@ -46,7 +45,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { state: slug } = await params;
   const stateMeta = STATE_BY_SLUG.get(slug);
-  if (!stateMeta) return { title: 'Mortgage Lenders | LenderTrustHub' };
+  if (!stateMeta) {
+    return buildHubMetadata('lender', {
+      title: 'Mortgage Lenders',
+      description: 'Browse NMLS-verified mortgage lenders by state.',
+      path: '/local-lenders',
+    });
+  }
 
   const lenders = getLendersByStateSlug(slug);
   const stats = getStateMortgageStats(slug);
@@ -61,12 +66,6 @@ export async function generateMetadata({
     title,
     description,
     path: `/local-lenders/${slug}`,
-    keywords: [
-      `mortgage lenders in ${stateMeta.fullName}`,
-      `mortgage brokers ${stateMeta.fullName} 2026`,
-      `best mortgage lenders ${stateMeta.fullName}`,
-      'NMLS verified mortgage',
-    ],
   });
 }
 

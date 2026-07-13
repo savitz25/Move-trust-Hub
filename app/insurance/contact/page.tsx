@@ -9,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Contact Insurance Trust Hub',
   description:
     'Get in touch for general inquiries, data corrections, listing updates, partnerships, or press requests.',
-  path: '/insurance/contact',
+  path: '/contact',
 });
 
 export default function ContactPage() {

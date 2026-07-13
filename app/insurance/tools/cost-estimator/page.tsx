@@ -6,7 +6,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Insurance Premium Cost Estimator (Estimates Only)',
   description:
     'Estimate auto, home, renters, and other insurance premium ranges by U.S. state. Educational tool — not a binding quote.',
-  path: '/insurance/tools/cost-estimator',
+  path: '/tools/cost-estimator',
 });
 
 export default function CostEstimatorPage() {

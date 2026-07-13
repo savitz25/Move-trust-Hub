@@ -3,9 +3,14 @@ import { MapPin, Shield } from 'lucide-react';
 import { SchemaInjector } from '@/components/hub/schema-injector';
 import { HubBreadcrumbs } from '@/components/hub/templates/hub-breadcrumbs';
 import { Card, CardContent } from '@/components/ui/card';
-import { hubPath } from '@/lib/hub/paths';
+import { hubCanonicalUrl, hubPath } from '@/lib/hub/paths';
 import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
-import { buildCollectionPageSchema, buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
+import {
+  buildCollectionPageSchema,
+  buildItemListSchema,
+  buildTemplateSchemaGraph,
+  type ItemListEntry,
+} from '@/lib/hub/templates/schemas';
 import type { HubId } from '@/lib/hub/types';
 import type { HealthHubDirectoryData, TemplateBreadcrumb } from '@/lib/hub/templates/types';
 
@@ -17,6 +22,7 @@ export type HealthHubDirectoryTemplateProps = {
   children?: React.ReactNode;
   heroChildren?: React.ReactNode;
   variant?: 'health-hub' | 'directory';
+  itemListItems?: ItemListEntry[];
 };
 
 export function HealthHubDirectoryTemplate({
@@ -27,6 +33,7 @@ export function HealthHubDirectoryTemplate({
   children,
   heroChildren,
   variant = 'health-hub',
+  itemListItems,
 }: HealthHubDirectoryTemplateProps) {
   const isInsurance = hub === 'insurance';
   const crumbs =
@@ -36,12 +43,17 @@ export function HealthHubDirectoryTemplate({
       variant === 'directory' ? 'Directory' : 'Health hubs',
       data.title
     );
+  const pageUrl = hubCanonicalUrl(hub, path);
+  const itemListNode = itemListItems?.length
+    ? buildItemListSchema(pageUrl, itemListItems, data.title)
+    : null;
   const schema = buildTemplateSchemaGraph({
     hub,
     path,
     breadcrumbs: crumbs,
     nodes: [
       buildCollectionPageSchema(hub, path, data.title, data.subtitle),
+      ...(itemListNode ? [itemListNode] : []),
     ],
   });
   const gradient =

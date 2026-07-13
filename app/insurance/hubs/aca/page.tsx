@@ -11,8 +11,7 @@ export const metadata: Metadata = buildTemplateMetadata({
   hub: 'insurance',
   title: topic.metaTitle,
   description: topic.metaDescription,
-  path: '/insurance/hubs/aca',
-  keywords: ['ACA agents', 'Obamacare', 'marketplace enrollment', 'premium tax credits'],
+  path: '/hubs/aca',
 });
 
 export default function AcaTopicPage() {

@@ -1,17 +1,32 @@
 import type { Metadata } from 'next';
 import { Shield, Database, Eye, Ban } from 'lucide-react';
+import { SchemaInjector } from '@/components/hub/schema-injector';
 import { TrustBar } from '@/components/lender/TrustBar';
+import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
+import { buildCollectionPageSchema, buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
 import { TRUST_STATS } from '@/lib/lender/mockData';
+
+const ABOUT_DESCRIPTION =
+  'Learn how Lender Trust Hub verifies mortgage lenders using NMLS, CFPB, BBB, Google, and Trustpilot data. Independent, zero paid placements.';
 
 export const metadata: Metadata = {
   title: 'Trust & Transparency',
-  description:
-    'Learn how Lender Trust Hub verifies mortgage lenders using NMLS, CFPB, BBB, Google, and Trustpilot data. Independent, zero paid placements.',
+  description: ABOUT_DESCRIPTION,
 };
 
 export default function AboutPage() {
+  const schema = buildTemplateSchemaGraph({
+    hub: 'lender',
+    path: '/about',
+    breadcrumbs: hubSectionBreadcrumbs('lender', 'Trust & Transparency'),
+    nodes: [
+      buildCollectionPageSchema('lender', '/about', 'Trust & Transparency', ABOUT_DESCRIPTION),
+    ],
+  });
+
   return (
     <div>
+      <SchemaInjector data={schema} />
       <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0A2540]/90 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <Shield className="mx-auto mb-4 h-12 w-12 text-[#14B8A6]" aria-hidden="true" />

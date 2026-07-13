@@ -31,6 +31,8 @@ export type HubConfig = {
   homeTitle: string;
   homeDescription: string;
   metadataTitleTemplate: string;
+  applicationName: string;
+  category: string;
   navLinks: HubNavLink[];
   footerColumns: HubFooterColumn[];
   legalLinks: HubLegalLinks;

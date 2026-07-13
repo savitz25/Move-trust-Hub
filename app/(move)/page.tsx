@@ -17,18 +17,8 @@ import {
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: HOMEPAGE_SEO_TITLE,
+  title: { absolute: HOMEPAGE_SEO_TITLE },
   description: HOMEPAGE_SEO_DESCRIPTION,
-  keywords: [
-    'compare moving companies',
-    'independent moving directory',
-    'FMCSA licensed movers',
-    'interstate movers',
-    'local movers directory',
-    'moving to myrtle beach',
-    'moving to florida',
-    'moving calculator',
-  ],
   openGraph: buildOpenGraph({
     title: HOMEPAGE_SEO_TITLE,
     description: HOMEPAGE_SEO_DESCRIPTION,

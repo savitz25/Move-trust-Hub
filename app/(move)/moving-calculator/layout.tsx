@@ -8,15 +8,6 @@ export const metadata: Metadata = buildMovePageMetadata({
   description:
     'Build a room-by-room moving inventory and instantly calculate total cubic feet, estimated weight, and recommended truck size. Free interstate move estimator from Move Trust Hub.',
   path: '/moving-calculator',
-  keywords: [
-    'moving calculator',
-    'cubic feet calculator',
-    'moving inventory calculator',
-    'estimate move weight',
-    'truck size calculator',
-    'interstate move estimator',
-    'moving volume calculator',
-  ],
 });
 
 export default function MovingCalculatorLayout({

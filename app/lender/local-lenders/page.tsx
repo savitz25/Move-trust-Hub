@@ -6,7 +6,8 @@ import { HubCTAStrip } from '@/components/lender/directory/HubCTAStrip';
 import { LeadCaptureForm } from '@/components/lender/directory/LeadCaptureForm';
 import { LocalLendersHubClient } from '@/components/lender/local-lenders-hub-client';
 import { PersonalizedLenderBannerBoundary } from '@/components/lender/PersonalizedLenderBannerBoundary';
-import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/lender/directory/categories';
+import { buildHubMetadata } from '@/lib/hub/metadata';
+import { MORTGAGE_CATEGORY } from '@/lib/lender/directory/categories';
 import { lenders } from '@/lib/lender/mockData';
 import { US_STATES } from '@/lib/lender/fdic/states';
 import {
@@ -31,25 +32,11 @@ const stateGrid = US_STATES.filter((s) => slugSet.has(s.slug)).map((s) => ({
   region: s.region,
 }));
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildHubMetadata('lender', {
   title: buildMortgageHubTitle(),
   description: buildMortgageHubDescription(lenders.length),
-  keywords: [
-    'mortgage lenders by state',
-    'NMLS verified mortgage brokers',
-    'local mortgage lenders',
-    'best mortgage lenders 2026',
-  ],
-  openGraph: {
-    title: buildMortgageHubTitle(),
-    description: buildMortgageHubDescription(lenders.length),
-    url: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
-    locale: 'en_US',
-  },
-  alternates: {
-    canonical: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
-  },
-};
+  path: '/local-lenders',
+});
 
 export default function LocalLendersHubPage() {
   const jsonLd = buildMortgageHubJsonLd(lenders.length, stateGrid.length);

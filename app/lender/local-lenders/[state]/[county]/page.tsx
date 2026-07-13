@@ -6,6 +6,7 @@ import { LenderCard } from '@/components/lender/LenderCard';
 import { SearchBarLoader } from '@/components/lender/search-bar-loader';
 import { tryGetClusterContent } from '@/lib/lender/clusters/content';
 import { getAllClusterParams } from '@/lib/lender/clusters/registry';
+import { evaluateLenderClusterIndexability } from '@/lib/hub/indexability';
 import { buildHubMetadata } from '@/lib/hub/metadata';
 import { getEnrichedLendersByCounty } from '@/lib/lender/enrichment/get-enriched';
 import { LenderDirectoryFilters } from '@/components/lender/lender-directory-filters';
@@ -33,12 +34,15 @@ export async function generateMetadata({
   params: Promise<{ state: string; county: string }>;
 }): Promise<Metadata> {
   const { state, county } = await params;
+  const indexDecision = evaluateLenderClusterIndexability(state, county);
+  const noIndex = indexDecision.tier === 'noindex';
   const clusterMatch = tryGetClusterContent(state, county);
   if (clusterMatch) {
     return buildHubMetadata('lender', {
       title: clusterMatch.content.title,
       description: clusterMatch.content.description,
       path: `/local-lenders/${state}/${county}`,
+      noIndex,
     });
   }
   const stateName = titleCase(state);
@@ -134,8 +138,7 @@ export async function generateMetadata({
   const isNjMiddlesex = state === 'new-jersey' && county === 'middlesex';
   const isNjEssex = state === 'new-jersey' && county === 'essex';
   const isNjHudson = state === 'new-jersey' && county === 'hudson';
-  return {
-    title: isOrange
+  const title = isOrange
       ? `Best Mortgage Lenders in Orange County, FL — Orlando Metro (2026)`
       : isHillsborough
         ? `Best Mortgage Lenders in Hillsborough County, FL — Tampa Bay (2026)`
@@ -317,8 +320,8 @@ export async function generateMetadata({
                                                                                                                                                                                           ? `Best Mortgage Lenders in Essex County, NJ — Montclair & Maplewood Elite Schools (2026)`
                                                                                                                                                                                           : isNjHudson
                                                                                                                                                                                             ? `Best Mortgage Lenders in Hudson County, NJ — Jersey City & Hoboken Gold Coast (2026)`
-                                                                                                                                                                                            : `Mortgage Lenders in ${countyName} County, ${stateName}`,
-    description: isOrange
+                                                                                                                                                                                            : `Mortgage Lenders in ${countyName} County, ${stateName}`;
+  const description = isOrange
       ? `Compare 9 NMLS-verified Orlando mortgage lenders. Acrisure HQ, VA specialists, first-time buyer brokers, and DPA programs in Orange County.`
       : isHillsborough
         ? `Compare 10 NMLS-verified Tampa Bay mortgage lenders. MacDill VA specialists, Wesley Chapel brokers, fast closings, and national lenders with local Tampa branches.`
@@ -500,8 +503,14 @@ export async function generateMetadata({
                                                                                                                                                                                           ? `Compare 12+ NMLS-verified Essex mortgage lenders. Montclair 11-day pending, 105%+ sale-to-list, elite schools, Union/Middlesex supplements.`
                                                                                                                                                                                           : isNjHudson
                                                                                                                                                                                             ? `Compare 12 NMLS-verified Hudson mortgage lenders. Hoboken 22.6% luxury growth, Jersey City high-density absorption, return-to-office Gold Coast demand.`
-                                                                                                                                                                                            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`,
-  };
+                                                                                                                                                                                            : `Compare verified mortgage lenders and brokers in ${countyName} County, ${stateName}. NMLS verified with county experience scores.`;
+
+  return buildHubMetadata('lender', {
+    title,
+    description,
+    path: `/local-lenders/${state}/${county}`,
+    noIndex,
+  });
 }
 
 export default async function CountyLendersPage({

@@ -10,9 +10,9 @@ export const DESTINATIONS_INDEX_DESCRIPTION =
 
 /** Refined homepage meta — targets quote + directory + local movers keywords */
 export const HOMEPAGE_SEO_TITLE =
-  'Compare FMCSA-Licensed Movers (2026) | Independent Moving Directory';
+  'Compare FMCSA-Licensed Movers (2026) | MoveTrustHub';
 export const HOMEPAGE_SEO_DESCRIPTION =
-  'Research 25+ FMCSA-licensed interstate movers by attributable reviews, pricing, and safety ratings. Free moving calculator, 480+ city destination guides, and 3,100+ county local mover directories. Independent directory — no lead fees, no paid placements.';
+  'Compare 25+ FMCSA-licensed interstate movers by verified reviews, pricing, and safety data. Independent directory — no lead fees, no paid placements.';
 
 export function buildCityHubMetadata(content: CityHubContent): Metadata {
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
@@ -20,7 +20,6 @@ export function buildCityHubMetadata(content: CityHubContent): Metadata {
   return {
     title: { absolute: content.seo.title },
     description: content.seo.description,
-    keywords: content.seo.keywords,
     alternates: { canonical },
     openGraph: {
       ...buildOpenGraph({

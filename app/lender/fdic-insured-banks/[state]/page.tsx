@@ -11,11 +11,11 @@ import { FDICBanksExplorerDynamic } from '@/components/lender/fdic/FDICBanksExpl
 import { StateInsightsSection } from '@/components/lender/fdic/StateInsightsSection';
 import { STATE_BY_SLUG, US_STATES } from '@/lib/lender/fdic/states';
 import { getStateData, DATA_UPDATED } from '@/lib/lender/fdic/stateData';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 import {
   buildStateDescription,
   buildStateJsonLd,
   buildStateTitle,
-  statePageUrl,
 } from '@/lib/lender/fdic/seo';
 
 /** ISR: revalidate daily — keeps data fresh without full rebuilds */
@@ -32,10 +32,22 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { state: slug } = await params;
   const stateMeta = STATE_BY_SLUG.get(slug);
-  if (!stateMeta?.hasData) return { title: 'FDIC Banks | LenderTrustHub' };
+  if (!stateMeta?.hasData) {
+    return buildHubMetadata('lender', {
+      title: 'FDIC Banks',
+      description: 'Browse FDIC-insured banks by state.',
+      path: '/fdic-insured-banks',
+    });
+  }
 
   const stateData = getStateData(stateMeta.code);
-  if (!stateData) return { title: 'FDIC Banks | LenderTrustHub' };
+  if (!stateData) {
+    return buildHubMetadata('lender', {
+      title: 'FDIC Banks',
+      description: 'Browse FDIC-insured banks by state.',
+      path: '/fdic-insured-banks',
+    });
+  }
 
   const hqCount = stateData.banks.filter((b) =>
     new RegExp(`, ${stateMeta.code}(?:\\s|$)`).test(b.headquarters_address)
@@ -49,31 +61,11 @@ export async function generateMetadata({
     hqCount
   );
 
-  return {
+  return buildHubMetadata('lender', {
     title,
     description,
-    keywords: [
-      `FDIC insured banks in ${stateMeta.fullName}`,
-      `list of FDIC banks in ${stateMeta.fullName} 2026`,
-      `${stateMeta.fullName} FDIC banks near me`,
-      `best FDIC banks in ${stateMeta.fullName}`,
-      'FDIC bank directory',
-      'verified FDIC institutions',
-    ],
-    openGraph: {
-      title,
-      description,
-      siteName: 'Lender Trust Hub',
-      type: 'website',
-      url: statePageUrl(slug),
-      locale: 'en_US',
-    },
-    alternates: {
-      canonical: statePageUrl(slug),
-      // hreflang: expand when adding locales — languages: { 'en-US': statePageUrl(slug) }
-    },
-    robots: { index: true, follow: true },
-  };
+    path: `/fdic-insured-banks/${slug}`,
+  });
 }
 
 export default async function FDICStatePage({

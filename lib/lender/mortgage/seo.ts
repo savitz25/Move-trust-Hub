@@ -1,6 +1,10 @@
 import type { Lender } from '@/lib/lender/mockData';
 import type { StateMeta } from '@/lib/lender/fdic/types';
-import { SITE_URL, MORTGAGE_CATEGORY } from '@/lib/lender/directory/categories';
+import { lenderCanonical, lenderCanonicalFromAppPath, LENDER_HUB_URL } from '@/lib/lender/canonical';
+import { MORTGAGE_CATEGORY } from '@/lib/lender/directory/categories';
+
+const SITE_URL = LENDER_HUB_URL;
+const MORTGAGE_HUB_URL = lenderCanonical('/local-lenders');
 import { getStateMortgageStats } from './stateLenders';
 
 const YEAR = MORTGAGE_CATEGORY.year;
@@ -10,11 +14,11 @@ export function mortgageStatePath(slug: string): string {
 }
 
 export function mortgageStateUrl(slug: string): string {
-  return `${SITE_URL}${mortgageStatePath(slug)}`;
+  return lenderCanonical(`/local-lenders/${slug}`);
 }
 
 export function buildMortgageStateTitle(stateName: string, count: number): string {
-  return `Mortgage Lenders in ${stateName} ${YEAR} | ${count} NMLS Verified | LenderTrustHub`;
+  return `Mortgage Lenders in ${stateName} — NMLS Verified`;
 }
 
 export function buildMortgageStateDescription(
@@ -22,11 +26,11 @@ export function buildMortgageStateDescription(
   count: number,
   verified: number
 ): string {
-  return `Compare ${count} mortgage lenders and brokers in ${stateName}. ${verified} NMLS verified. County experience scores, trust ratings, and free calculators. No paid placements.`;
+  return `Compare ${count} NMLS-verified mortgage lenders in ${stateName}. County trust scores, free calculators, and zero paid placements. Independent directory.`;
 }
 
 export function buildMortgageHubTitle(): string {
-  return `Mortgage Lenders by State ${YEAR} | NMLS Verified Directory | LenderTrustHub`;
+  return `Mortgage Lenders by State (${YEAR}) — NMLS Verified`;
 }
 
 export function buildMortgageHubDescription(total: number): string {
@@ -63,7 +67,7 @@ export function buildMortgageStateJsonLd(
             '@type': 'ListItem',
             position: 2,
             name: 'Mortgage Lenders',
-            item: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
+            item: `${MORTGAGE_HUB_URL}`,
           },
           { '@type': 'ListItem', position: 3, name: stateMeta.fullName, item: pageUrl },
         ],
@@ -145,7 +149,7 @@ export function buildMortgageHubJsonLd(totalLenders: number, stateCount: number)
         '@type': 'WebPage',
         name: buildMortgageHubTitle(),
         description: buildMortgageHubDescription(totalLenders),
-        url: `${SITE_URL}${MORTGAGE_CATEGORY.hubPath}`,
+        url: `${MORTGAGE_HUB_URL}`,
       },
       {
         '@type': 'ItemList',

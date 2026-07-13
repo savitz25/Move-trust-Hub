@@ -8,6 +8,12 @@ import type {
   TemplateFaqItem,
 } from '@/lib/hub/templates/types';
 
+function isWebPageNode(node: Record<string, unknown>): boolean {
+  const type = node['@type'];
+  if (type === 'WebPage') return true;
+  return Array.isArray(type) && type.includes('WebPage');
+}
+
 export function buildTemplateSchemaGraph(params: {
   hub: HubId;
   path: string;
@@ -24,10 +30,49 @@ export function buildTemplateSchemaGraph(params: {
         path: stripHubPrefix(params.hub, b.href!),
       }))
   );
+  const hasWebPage = params.nodes.some(isWebPageNode);
 
   return {
     '@context': 'https://schema.org',
-    '@graph': [{ '@id': `${pageUrl}#webpage`, url: pageUrl, ...crumbs }, ...params.nodes],
+    '@graph': [
+      ...(hasWebPage
+        ? []
+        : [
+            {
+              '@type': 'WebPage',
+              '@id': `${pageUrl}#webpage`,
+              url: pageUrl,
+            },
+          ]),
+      {
+        ...crumbs,
+        '@id': `${pageUrl}#breadcrumb`,
+      },
+      ...params.nodes,
+    ],
+  };
+}
+
+export type ItemListEntry = { name: string; url: string };
+
+export function buildItemListSchema(
+  pageUrl: string,
+  items: ItemListEntry[],
+  name?: string
+): Record<string, unknown> | null {
+  if (!items.length) return null;
+
+  return {
+    '@type': 'ItemList',
+    '@id': `${pageUrl}#itemlist`,
+    ...(name ? { name } : {}),
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
   };
 }
 

@@ -21,13 +21,14 @@ const HUB_BADGES: Record<HubId, { label: string; detail: string; href?: string }
   ],
   lender: [
     { label: 'NMLS Verified', detail: 'License checks via NMLS Consumer Access' },
-    { label: 'CFPB & BBB Data', detail: 'Complaint and accreditation transparency' },
-    { label: 'County Insights', detail: 'Local loan performance by geography' },
+    { label: 'FDIC BankFind Sourced', detail: 'Bank data verified against FDIC records' },
+    { label: 'No Paid Placements', detail: 'Rankings are not sold to lenders or brokers' },
+    { label: 'CFPB Data', detail: 'Complaint transparency from public CFPB records' },
   ],
   insurance: [
     { label: 'DOI Verified', detail: 'State Department of Insurance license checks' },
     { label: 'NAIC Standards', detail: 'Aligned with national insurance oversight' },
-    { label: 'Health Focus', detail: 'ACA, Medicare, and employer plan specialists' },
+    { label: 'No Paid Placements', detail: 'Agent rankings are never pay-to-play' },
   ],
 };
 

@@ -19,7 +19,6 @@ export const metadata: Metadata = buildTemplateMetadata({
   title: preset.title,
   description: preset.description,
   path: '/resources',
-  keywords: ['insurance guides', 'Medicare comparison', 'ACA guide', 'insurance resources'],
 });
 
 export default function ResourcesPage() {

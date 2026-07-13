@@ -31,7 +31,6 @@ export async function generateMetadata({ params }: StatePageProps): Promise<Meta
     title: `${dest.name} Insurance Guide — Coverage, Costs & Local Agents`,
     description: dest.description,
     path: `/destinations/${slug}`,
-    keywords: [`${dest.name} insurance`, `${dest.code} insurance agents`, 'moving insurance'],
   });
 }
 

@@ -5,7 +5,8 @@ import { NationalHubShell } from '@/components/lender/directory/NationalHubShell
 import { HubCTAStrip } from '@/components/lender/directory/HubCTAStrip';
 import { LeadCaptureForm } from '@/components/lender/directory/LeadCaptureForm';
 import { SearchBarLoader } from '@/components/lender/search-bar-loader';
-import { SITE_URL, AUTO_CATEGORY } from '@/lib/lender/directory/categories';
+import { buildHubMetadata } from '@/lib/hub/metadata';
+import { AUTO_CATEGORY } from '@/lib/lender/directory/categories';
 import { autoProviders } from '@/lib/lender/auto/providers';
 import { US_STATES } from '@/lib/lender/fdic/states';
 import {
@@ -30,26 +31,11 @@ const stateGrid = US_STATES.filter((s) => slugSet.has(s.slug)).map((s) => ({
   region: s.region,
 }));
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildHubMetadata('lender', {
   title: buildAutoHubTitle(),
   description: buildAutoHubDescription(autoProviders.length),
-  keywords: [
-    'auto loan companies by state',
-    'best auto loan lenders 2026',
-    'car loan rates by state',
-    'auto finance companies near me',
-    'used car loan lenders',
-  ],
-  openGraph: {
-    title: buildAutoHubTitle(),
-    description: buildAutoHubDescription(autoProviders.length),
-    url: `${SITE_URL}${AUTO_CATEGORY.hubPath}`,
-    locale: 'en_US',
-  },
-  alternates: {
-    canonical: `${SITE_URL}${AUTO_CATEGORY.hubPath}`,
-  },
-};
+  path: '/auto-loan-companies',
+});
 
 export default function AutoLoanCompaniesHubPage() {
   const jsonLd = buildAutoHubJsonLd(autoProviders.length, stateGrid.length);

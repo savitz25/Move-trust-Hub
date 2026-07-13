@@ -9,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Insurance Providers Directory — Verified Agencies',
   description:
     'Browse verified insurance agencies and brokerages nationwide. Compare ratings, licensing, and specialties before requesting a quote.',
-  path: '/insurance/providers',
+  path: '/providers',
 });
 
 export default function ProvidersDirectoryPage() {

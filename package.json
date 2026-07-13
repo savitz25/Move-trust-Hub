@@ -94,6 +94,7 @@
     "sync:hubs:dry": "tsx scripts/sync-trust-hub-subapps.ts --dry-run",
     "sync:hubs:prefix-links": "tsx scripts/prefix-hub-links.ts",
     "audit:hub-seo": "tsx scripts/audit-hub-seo.ts",
+    "audit:sitemap-hygiene": "tsx scripts/audit-sitemap-hygiene.ts",
     "fix:lender-paths": "tsx scripts/fix-lender-path-prefixes.ts",
     "fix:insurance-paths": "tsx scripts/fix-insurance-path-prefixes.ts",
     "fix:all-hub-links": "tsx scripts/fix-all-hub-links.ts",

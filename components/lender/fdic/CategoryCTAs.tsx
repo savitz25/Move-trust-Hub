@@ -64,6 +64,14 @@ export function CategoryCTAs({ stateMeta }: { stateMeta: StateMeta }) {
             );
           }
 
+          if (!item.live) {
+            return (
+              <div key={item.title} className={className} aria-disabled="true">
+                {inner}
+              </div>
+            );
+          }
+
           return (
             <Link key={item.title} href={item.href} className={className}>
               {inner}

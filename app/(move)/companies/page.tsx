@@ -24,12 +24,6 @@ export const metadata: Metadata = buildMovePageMetadata({
   title: COMPANIES_TITLE,
   description: COMPANIES_DESCRIPTION,
   path: '/companies',
-  keywords: [
-    'interstate moving companies directory',
-    'compare moving companies',
-    'FMCSA licensed movers list',
-    'moving company ratings 2026',
-  ],
 });
 
 export default async function CompaniesDirectoryPage() {

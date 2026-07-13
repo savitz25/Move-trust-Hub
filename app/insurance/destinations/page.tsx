@@ -13,8 +13,7 @@ export const metadata: Metadata = buildTemplateMetadata({
   title: 'Insurance by Destination — State & City Guides for Movers',
   description:
     'Explore insurance landscapes, moving guidance, and local agency directories for popular U.S. destinations.',
-  path: '/insurance/destinations',
-  keywords: ['moving insurance', 'state insurance guide', 'destination insurance'],
+  path: '/destinations',
 });
 
 export default function DestinationsPage() {

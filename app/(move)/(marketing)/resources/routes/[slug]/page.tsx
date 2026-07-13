@@ -34,7 +34,6 @@ export async function generateMetadata({ params }: Props) {
     return {
       title: extended.seo.title,
       description: extended.seo.description,
-      keywords: extended.seo.keywords,
       openGraph: buildOpenGraph({
         title: extended.seo.title,
         description: extended.seo.description,

@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Insurance Tools — Calculators & Verification Helpers',
   description:
     'Free educational tools: premium cost estimator, coverage needs assessment, and state license verification links.',
-  path: '/insurance/tools',
+  path: '/tools',
 });
 
 const TOOLS = [

@@ -7,6 +7,7 @@ import { DESTINATION_STATES } from '@/lib/insurance/destinations/data';
 import { INSURANCE_TYPES } from '@/lib/insurance/constants';
 import { Button } from '@/components/insurance/ui/button';
 import { Select } from '@/components/insurance/ui/select';
+import { insuranceHref } from '@/lib/insurance/paths';
 import { cn } from '@/lib/insurance/utils';
 
 interface HeroSearchProps {
@@ -29,7 +30,7 @@ export function HeroSearch({ className }: HeroSearchProps) {
     if (insuranceType) params.set('type', insuranceType);
 
     const query = params.toString();
-    router.push(query ? `/directory?${query}` : '/directory');
+    router.push(query ? `${insuranceHref('/directory')}?${query}` : insuranceHref('/directory'));
   }
 
   return (

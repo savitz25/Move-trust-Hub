@@ -6,7 +6,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Insurance Needs Assessment Quiz',
   description:
     'Answer five questions to discover which insurance types and agent specialties may fit your situation.',
-  path: '/insurance/tools/needs-assessment',
+  path: '/tools/needs-assessment',
 });
 
 export default function NeedsAssessmentPage() {

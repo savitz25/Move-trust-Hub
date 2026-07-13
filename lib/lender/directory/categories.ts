@@ -1,7 +1,9 @@
 import type { DirectoryCategoryConfig } from './types';
+import { LENDER_HUB_URL } from '@/lib/lender/canonical';
 import { lenderHref } from '@/lib/lender/paths';
 
-export const SITE_URL = 'https://www.movetrusthub.com/lender';
+/** Lender hub root URL for JSON-LD (not for concatenating with lenderHref paths). */
+export const SITE_URL = LENDER_HUB_URL;
 
 /** FDIC banks — live production vertical */
 export const FDIC_CATEGORY: DirectoryCategoryConfig = {
@@ -32,18 +34,7 @@ export const FDIC_CATEGORY: DirectoryCategoryConfig = {
       description: 'Payment & affordability tools',
       live: true,
     },
-    {
-      label: 'Credit Repair',
-      href: (s) => lenderHref(`/credit-repair/${s}`),
-      description: 'Transparent credit repair listings',
-      live: false,
-    },
-    {
-      label: 'MCA Companies',
-      href: (s) => lenderHref(`/mca-companies/${s}`),
-      description: 'Merchant cash advance directory',
-      live: false,
-    },
+
   ],
 };
 

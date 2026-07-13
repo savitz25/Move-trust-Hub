@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Medicare Plan Finder — Advantage vs Supplement Estimator',
   description:
     'Educational Medicare gap and supplement cost estimator. Compare plan types, then consult a licensed Medicare agent in your market.',
-  path: '/insurance/tools/medicare-plan-finder',
+  path: '/tools/medicare-plan-finder',
 });
 
 export default function MedicarePlanFinderPage() {

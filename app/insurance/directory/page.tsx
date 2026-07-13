@@ -9,15 +9,17 @@ import { searchProviders, sortEnrichedProviders } from '@/lib/insurance/provider
 import { buildTemplateMetadata } from '@/lib/hub/templates/metadata';
 import { INSURANCE_DIRECTORY_LANDING } from '@/lib/hub/templates/landing-data';
 import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
+import { hubCanonicalUrl } from '@/lib/hub/paths';
 import type { InsuranceType, Specialty } from '@/lib/insurance/constants';
 import { cn } from '@/lib/insurance/utils';
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = buildTemplateMetadata({
   hub: 'insurance',
-  title: INSURANCE_DIRECTORY_LANDING.title,
+  title: 'Licensed Insurance Agents Directory (2026)',
   description: INSURANCE_DIRECTORY_LANDING.subtitle,
-  path: '/insurance/directory',
-  keywords: ['insurance agency directory', 'licensed agents', 'DOI verified', 'insurance search'],
+  path: '/directory',
 });
 
 interface DirectoryPageProps {
@@ -64,6 +66,10 @@ export default async function DirectoryPage({ searchParams }: DirectoryPageProps
       path="/directory"
       variant="directory"
       breadcrumbs={hubSectionBreadcrumbs('insurance', 'Directory')}
+      itemListItems={providers.slice(0, 20).map((provider) => ({
+        name: provider.name,
+        url: hubCanonicalUrl('insurance', `/providers/${provider.slug}`),
+      }))}
     >
       <section>
         <div className="grid gap-8 lg:grid-cols-[280px_1fr]">

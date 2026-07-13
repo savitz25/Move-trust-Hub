@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useTransition } from 'react';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import { INSURANCE_TYPES, SPECIALTIES, US_STATES } from '@/lib/insurance/constants';
+import { insuranceHref } from '@/lib/insurance/paths';
 import { Input } from '@/components/insurance/ui/input';
 import { Select } from '@/components/insurance/ui/select';
 import { Checkbox } from '@/components/insurance/ui/checkbox';
@@ -40,7 +41,7 @@ export function SearchFilters({ className }: SearchFiltersProps) {
         }
       });
       startTransition(() => {
-        router.push(`/insurance/directory?${params.toString()}`);
+        router.push(`${insuranceHref('/directory')}?${params.toString()}`);
       });
     },
     [router, searchParams]
@@ -63,7 +64,7 @@ export function SearchFilters({ className }: SearchFiltersProps) {
 
   function clearFilters() {
     startTransition(() => {
-      router.push('/insurance/directory');
+      router.push(insuranceHref('/directory'));
     });
   }
 

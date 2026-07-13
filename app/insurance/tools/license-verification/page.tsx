@@ -6,7 +6,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Insurance Agent License Verification — State Lookup Links',
   description:
     'Educational tool with links to official state insurance department license lookups for all 50 states.',
-  path: '/insurance/tools/license-verification',
+  path: '/tools/license-verification',
 });
 
 export default function LicenseVerificationPage() {

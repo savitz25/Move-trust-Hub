@@ -1,4 +1,22 @@
+import { normalizeAddressZip } from '@/lib/format/zip';
 import type { FDICBank, RegulatorKey } from './types';
+
+/** Fix leading-zero ZIP codes stripped from spreadsheet imports (e.g. VT 5403 → 05403). */
+export function normalizeHeadquartersAddress(address: string): string {
+  const match = address.match(/,\s*([A-Z]{2})\s+(\d{3,5})(?:-\d{4})?$/);
+  if (!match) return address;
+  const [, state, zipDigits] = match;
+  const normalized = normalizeAddressZip(zipDigits);
+  if (!normalized) return address;
+  return address.replace(/,\s*[A-Z]{2}\s+\d{3,5}(?:-\d{4})?$/, `, ${state} ${normalized}`);
+}
+
+export function normalizeFdicBank(bank: FDICBank): FDICBank {
+  return {
+    ...bank,
+    headquarters_address: normalizeHeadquartersAddress(bank.headquarters_address),
+  };
+}
 
 export function getRegulatorKey(regulator: string): RegulatorKey {
   const r = regulator.toLowerCase();

@@ -6,7 +6,6 @@ export const metadata: Metadata = buildHubMetadata('lender', {
   description:
     'Side-by-side comparison of NMLS-verified mortgage lenders by trust score, ratings, loan types, and county experience.',
   path: '/compare',
-  keywords: ['compare mortgage lenders', 'lender comparison tool', 'NMLS verified'],
 });
 
 export default function CompareLayout({ children }: { children: React.ReactNode }) {

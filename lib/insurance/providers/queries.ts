@@ -113,6 +113,10 @@ export async function getProviders(
   const providers = enrichProviders(data.map((row) => mapRowToProvider(row as DbProvider)));
   const filtered = filterEnrichedProviders(providers, filters);
 
+  if (providers.length === 0) {
+    return searchFallbackProviders(filters);
+  }
+
   return { providers: filtered, total: count ?? filtered.length };
 }
 

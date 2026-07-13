@@ -9,7 +9,7 @@ import { Badge } from '@/components/insurance/ui/badge';
 export const metadata: Metadata = buildMetadata({
   title: 'All Insurance Hubs — Complete Directory',
   description: `Browse all ${INSURANCE_HUBS.length} insurance market hubs with health insurance specialist listings.`,
-  path: '/insurance/hubs/browse',
+  path: '/hubs/browse',
 });
 
 export default function AllHubsPage() {

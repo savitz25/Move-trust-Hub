@@ -1,19 +1,34 @@
 import type { Metadata } from 'next';
 import { Mail, MessageSquare } from 'lucide-react';
+import { SchemaInjector } from '@/components/hub/schema-injector';
+import { Card, CardContent } from '@/components/ui/card';
 import { SITE_EMAIL } from '@/lib/contact';
 import { hubPath } from '@/lib/hub/paths';
-import { Card, CardContent } from '@/components/ui/card';
+import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
+import { buildCollectionPageSchema, buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
+
+const CONTACT_DESCRIPTION =
+  'Contact Lender Trust Hub for listing corrections, data inquiries, partnerships, or press requests.';
 
 export const metadata: Metadata = {
   title: 'Contact Lender Trust Hub',
-  description:
-    'Contact Lender Trust Hub for listing corrections, data inquiries, partnerships, or press requests.',
+  description: CONTACT_DESCRIPTION,
   alternates: { canonical: `https://www.movetrusthub.com${hubPath('lender', '/contact')}` },
 };
 
 export default function LenderContactPage() {
+  const schema = buildTemplateSchemaGraph({
+    hub: 'lender',
+    path: '/contact',
+    breadcrumbs: hubSectionBreadcrumbs('lender', 'Contact'),
+    nodes: [
+      buildCollectionPageSchema('lender', '/contact', 'Contact Lender Trust Hub', CONTACT_DESCRIPTION),
+    ],
+  });
+
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10 md:py-14">
+      <SchemaInjector data={schema} />
       <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Contact Lender Trust Hub</h1>
       <p className="mt-3 text-muted-foreground leading-relaxed">
         Questions about NMLS verification, lender listings, or directory data? Reach out — we respond

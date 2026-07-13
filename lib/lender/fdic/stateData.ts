@@ -6,6 +6,7 @@
  * 2. Import the generated JSON below
  * 3. Add entry to stateData and set hasData: true in lib/fdic/states.ts
  */
+import { normalizeFdicBank } from './utils';
 import type { StateFDICData } from './types';
 import alabamaData from './data/alabama.json';
 import alaskaData from './data/alaska.json';
@@ -117,7 +118,12 @@ export const DEFAULT_STATE_CODE = 'FL';
 export const DATA_UPDATED = '2026-06-26';
 
 export function getStateData(code: string): StateFDICData | null {
-  return stateData[code] ?? null;
+  const raw = stateData[code];
+  if (!raw) return null;
+  return {
+    ...raw,
+    banks: raw.banks.map(normalizeFdicBank),
+  };
 }
 
 export function getAvailableStateCodes(): string[] {

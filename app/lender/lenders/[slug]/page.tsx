@@ -2,8 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Star, ShieldCheck, ChevronRight, Phone, ExternalLink } from 'lucide-react';
-import { lenders } from '@/lib/lender/lenders';
+import { SchemaInjector } from '@/components/hub/schema-injector';
+import { hubPath } from '@/lib/hub/paths';
+import { buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
 import { getEnrichedLenderBySlug } from '@/lib/lender/enrichment/get-enriched';
+import { lenders } from '@/lib/lender/lenders';
+import { buildLenderFinancialServiceSchema } from '@/lib/lender/seo/schemas';
+import { evaluateLenderProfileIndexability } from '@/lib/hub/indexability';
+import { buildHubMetadata } from '@/lib/hub/metadata';
 import { Badge } from '@/components/lender/ui/badge';
 import { MatchLenderButton } from '@/components/lender/MatchLenderButton';
 import { RelatedDirectoryLinks } from '@/components/lender/directory/RelatedDirectoryLinks';
@@ -22,10 +28,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const lender = getEnrichedLenderBySlug(slug);
   if (!lender) return { title: 'Lender Not Found' };
-  return {
+  const indexDecision = evaluateLenderProfileIndexability(lender);
+  return buildHubMetadata('lender', {
     title: `${lender.name} — NMLS #${lender.nmlsId}`,
     description: lender.shortDescription,
-  };
+    path: `/lenders/${slug}`,
+    noIndex: indexDecision.tier === 'noindex',
+  });
 }
 
 export default async function LenderProfilePage({
@@ -41,9 +50,23 @@ export default async function LenderProfilePage({
   if (!lender) notFound();
 
   const countyLabel = `${lender.county} County, ${lender.state}`;
+  const schema = buildTemplateSchemaGraph({
+    hub: 'lender',
+    path: `/lenders/${lender.slug}`,
+    breadcrumbs: [
+      { label: 'Home', href: hubPath('lender', '/') },
+      {
+        label: countyLabel,
+        href: hubPath('lender', `/local-lenders/${lender.stateSlug}/${lender.countySlug}`),
+      },
+      { label: lender.name },
+    ],
+    nodes: [buildLenderFinancialServiceSchema(lender)],
+  });
 
   return (
     <div className="container mx-auto px-4 py-12">
+      <SchemaInjector data={schema} />
       <LenderProfileBack fromParam={from} />
 
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">

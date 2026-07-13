@@ -4,7 +4,8 @@ import { stateData } from '@/lib/lender/fdic/stateData';
 import { getStateSlugsWithLenders } from '@/lib/lender/mortgage/stateLenders';
 import { getStateSlugsWithAutoProviders } from '@/lib/lender/auto/stateProviders';
 import { getAllClusterParams } from '@/lib/lender/clusters/registry';
-import { hubSitemapEntry } from '@/lib/hub/sitemap-helpers';
+import { shouldIndexLenderCluster } from '@/lib/hub/indexability';
+import { finalizeHubSitemap, hubSitemapEntry } from '@/lib/hub/sitemap-helpers';
 
 const HUB = 'lender' as const;
 
@@ -45,9 +46,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     hubSitemapEntry(HUB, `/auto-loan-companies/${state}`, { lastModified: now, priority: 0.8 })
   );
 
-  const clusters = getAllClusterParams().map(({ state, cluster }) =>
-    hubSitemapEntry(HUB, `/local-lenders/${state}/${cluster}`, { lastModified: now, priority: 0.82 })
-  );
+  const clusters = getAllClusterParams()
+    .filter(({ state, cluster }) => shouldIndexLenderCluster(state, cluster))
+    .map(({ state, cluster }) =>
+      hubSitemapEntry(HUB, `/local-lenders/${state}/${cluster}`, { lastModified: now, priority: 0.82 })
+    );
 
   const profiles = lenders.map((l) =>
     hubSitemapEntry(HUB, `/lenders/${l.slug}`, {
@@ -57,5 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...staticRoutes, ...fdicStates, ...mortgageStates, ...autoStates, ...clusters, ...profiles];
+  return finalizeHubSitemap(HUB, [
+    ...staticRoutes,
+    ...fdicStates,
+    ...mortgageStates,
+    ...autoStates,
+    ...clusters,
+    ...profiles,
+  ]);
 }

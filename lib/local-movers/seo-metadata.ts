@@ -172,7 +172,6 @@ export function buildHubPageMetadata(): Metadata {
   return {
     title,
     description,
-    keywords: buildHubKeywords(),
     alternates: { canonical: `${SITE_URL}${path}` },
     openGraph: buildOpenGraph(title, description, path),
     twitter: buildTwitter(title, description),

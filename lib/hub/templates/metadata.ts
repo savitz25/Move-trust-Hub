@@ -9,7 +9,6 @@ export function buildTemplateMetadata(input: TemplateMetadataInput): Metadata {
     title: input.title,
     description: input.description,
     path,
-    keywords: input.keywords,
     noIndex: input.noIndex,
   });
 
@@ -42,10 +41,5 @@ export function buildArticleTemplateMetadata(
     description: article.description,
     path: `/resources/${article.slug}`,
     type: 'article',
-    keywords: [
-      article.category ?? 'insurance guide',
-      article.variant === 'comparison' ? 'insurance comparison' : 'insurance guide',
-      article.title,
-    ],
   });
 }

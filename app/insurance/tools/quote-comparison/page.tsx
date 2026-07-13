@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   title: 'Insurance Quote Comparison Tool (Estimates Only)',
   description:
     'Compare ballpark insurance premium ranges by state and coverage type. Educational estimates — contact a licensed agent for binding quotes.',
-  path: '/insurance/tools/quote-comparison',
+  path: '/tools/quote-comparison',
 });
 
 export default function QuoteComparisonPage() {

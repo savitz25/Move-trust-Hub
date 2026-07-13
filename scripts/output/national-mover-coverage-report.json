@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-07-07T14:06:16.197Z",
+  "totalCounties": 3143,
+  "zeroMovers": 1308,
+  "zeroMoversPct": 41.6,
+  "lowMovers1to4": 614,
+  "distribution": {
+    "0": 1308,
+    "1": 127,
+    "2": 226,
+    "3": 133,
+    "4": 128,
+    "5": 156,
+    "6": 44,
+    "7": 81,
+    "8": 12,
+    "9": 2,
+    "10": 862,
+    "11": 2,
+    "12": 59,
+    "13": 3
+  },
+  "topEmptyStates": [
+    {
+      "stateSlug": "minnesota",
+      "stateName": "Minnesota",
+      "emptyCounties": 85
+    },
+    {
+      "stateSlug": "ohio",
+      "stateName": "Ohio",
+      "emptyCounties": 84
+    },
+    {
+      "stateSlug": "oklahoma",
+      "stateName": "Oklahoma",
+      "emptyCounties": 77
+    },
+    {
+      "stateSlug": "arkansas",
+      "stateName": "Arkansas",
+      "emptyCounties": 72
+    },
+    {
+      "stateSlug": "wisconsin",
+      "stateName": "Wisconsin",
+      "emptyCounties": 72
+    },
+    {
+      "stateSlug": "south-dakota",
+      "stateName": "South Dakota",
+      "emptyCounties": 66
+    },
+    {
+      "stateSlug": "texas",
+      "stateName": "Texas",
+      "emptyCounties": 66
+    },
+    {
+      "stateSlug": "pennsylvania",
+      "stateName": "Pennsylvania",
+      "emptyCounties": 62
+    }
+  ],
+  "zeroByState": {
+    "minnesota": 85,
+    "ohio": 84,
+    "oklahoma": 77,
+    "arkansas": 72,
+    "wisconsin": 72,
+    "south-dakota": 66,
+    "texas": 66,
+    "pennsylvania": 62,
+    "colorado": 59,
+    "montana": 56,
+    "west-virginia": 55,
+    "north-dakota": 53,
+    "louisiana": 51,
+    "idaho": 44,
+    "washington": 36,
+    "oregon": 34,
+    "new-mexico": 33,
+    "tennessee": 32,
+    "alaska": 29,
+    "utah": 27,
+    "iowa": 26,
+    "wyoming": 23,
+    "mississippi": 20,
+    "maryland": 19,
+    "maine": 16,
+    "nevada": 15,
+    "massachusetts": 14,
+    "vermont": 14,
+    "arizona": 13,
+    "new-york": 12,
+    "new-hampshire": 10,
+    "connecticut": 8,
+    "georgia": 6,
+    "hawaii": 5,
+    "rhode-island": 5,
+    "delaware": 3,
+    "south-carolina": 3,
+    "florida": 2,
+    "district-of-columbia": 1
+  }
+}

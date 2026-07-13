@@ -1,6 +1,10 @@
 import type { FDICBank, StateFDICData, StateMeta } from './types';
 import { computeExtendedStateStats } from './utils';
-import { SITE_URL, FDIC_CATEGORY } from '@/lib/lender/directory/categories';
+import { lenderCanonical, lenderCanonicalFromAppPath, LENDER_HUB_URL } from '@/lib/lender/canonical';
+import { FDIC_CATEGORY } from '@/lib/lender/directory/categories';
+
+const SITE_URL = LENDER_HUB_URL;
+const FDIC_HUB_URL = lenderCanonical('/fdic-insured-banks');
 import { generateStateInsights } from './insights';
 
 const CURRENT_YEAR = FDIC_CATEGORY.year;
@@ -10,12 +14,12 @@ export function statePagePath(slug: string): string {
 }
 
 export function statePageUrl(slug: string): string {
-  return `${SITE_URL}${statePagePath(slug)}`;
+  return lenderCanonical(`/fdic-insured-banks/${slug}`);
 }
 
 export function buildStateTitle(stateName: string, bankCount?: number): string {
   const countPart = bankCount ? ` — ${bankCount} Verified Institutions` : '';
-  return `FDIC Insured Banks in ${stateName} ${CURRENT_YEAR} | Full List${countPart} | LenderTrustHub`;
+  return `FDIC Banks in ${stateName} (${CURRENT_YEAR})${countPart}`;
 }
 
 export function buildStateDescription(
@@ -25,11 +29,11 @@ export function buildStateDescription(
   hqCount?: number
 ): string {
   const hqPart = hqCount ? ` ${hqCount} headquartered locally.` : '';
-  return `Complete ${CURRENT_YEAR} list of ${bankCount} FDIC-insured banks in ${stateName}.${hqPart} Compare institutions, filter by regulator, verify via FDIC BankFind. Updated ${updated}. Free — no paid placements.`;
+  return `Complete ${CURRENT_YEAR} list of ${bankCount} FDIC-insured banks in ${stateName}.${hqPart} Filter by regulator and verify via FDIC BankFind. Free, independent directory.`;
 }
 
 export function buildHubTitle(): string {
-  return `FDIC Insured Banks by State ${CURRENT_YEAR} | All 50 States + DC | LenderTrustHub`;
+  return `FDIC-Insured Banks by State (${CURRENT_YEAR})`;
 }
 
 export function buildHubDescription(totalBanks: number): string {
@@ -49,7 +53,7 @@ function buildWebSiteSchema() {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/fdic-insured-banks?q={search_term_string}`,
+        urlTemplate: `${FDIC_HUB_URL}?q={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },
@@ -86,7 +90,7 @@ function buildBreadcrumbSchema(stateMeta: StateMeta) {
         '@type': 'ListItem',
         position: 2,
         name: 'FDIC Insured Banks',
-        item: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
+        item: `${FDIC_HUB_URL}`,
       },
       {
         '@type': 'ListItem',
@@ -314,10 +318,10 @@ export function buildHubJsonLd(totalBanks: number, stateCount: number): Record<s
       buildWebSiteSchema(),
       {
         '@type': 'WebPage',
-        '@id': `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
+        '@id': `${FDIC_HUB_URL}`,
         name: buildHubTitle(),
         description: buildHubDescription(totalBanks),
-        url: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
+        url: `${FDIC_HUB_URL}`,
         inLanguage: 'en-US',
         isPartOf: { '@id': `${SITE_URL}/#website` },
         offers: buildAggregateOfferSchema('United States'),
@@ -330,7 +334,7 @@ export function buildHubJsonLd(totalBanks: number, stateCount: number): Record<s
             '@type': 'ListItem',
             position: 2,
             name: 'FDIC Insured Banks',
-            item: `${SITE_URL}${FDIC_CATEGORY.hubPath}`,
+            item: `${FDIC_HUB_URL}`,
           },
         ],
       },
