@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/server';
 import { requireAuthenticatedUser } from '@/lib/save-my-move/auth';
 import type { InventoryItem } from '@/store/calculator-store';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
+import type { CompanySummary } from '@/lib/save-my-move/dashboard-types';
 import { inventoryToJson, type SavedInventoryPayload } from '@/lib/save-my-move/types';
 
 function inventoryTotals(inventory: InventoryItem[]) {
@@ -219,6 +220,59 @@ export async function getSavedInventoryAction(id: string) {
   return data;
 }
 
+export async function getCompanySummariesBySlugs(
+  slugs: string[]
+): Promise<Record<string, CompanySummary>> {
+  const unique = [...new Set(slugs.map((s) => s.trim()).filter(Boolean))];
+  if (unique.length === 0) return {};
+
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from('companies')
+    .select(
+      'slug, name, overall_rating, review_count, reputation_score, avg_price_per_move, fmcsa_safety_rating, is_verified, usdot_number'
+    )
+    .in('slug', unique);
+
+  if (error) {
+    console.error('[getCompanySummariesBySlugs]', error.message);
+    return {};
+  }
+
+  const summaries: Record<string, CompanySummary> = {};
+  for (const row of data ?? []) {
+    summaries[row.slug] = {
+      slug: row.slug,
+      name: row.name,
+      overallRating: Number(row.overall_rating) || 0,
+      reviewCount: Number(row.review_count) || 0,
+      reputationScore: Number(row.reputation_score) || 0,
+      avgPricePerMove: Number(row.avg_price_per_move) || 0,
+      fmcsaSafetyRating: row.fmcsa_safety_rating ?? 'Not Rated',
+      isVerified: Boolean(row.is_verified),
+      usdotNumber: row.usdot_number ?? '',
+    };
+  }
+
+  for (const slug of unique) {
+    if (!summaries[slug]) {
+      summaries[slug] = {
+        slug,
+        name: slug.replace(/-/g, ' '),
+        overallRating: 0,
+        reviewCount: 0,
+        reputationScore: 0,
+        avgPricePerMove: 0,
+        fmcsaSafetyRating: 'Not Rated',
+        isVerified: false,
+        usdotNumber: '',
+      };
+    }
+  }
+
+  return summaries;
+}
+
 export async function getCompanyNamesBySlugs(
   slugs: string[]
 ): Promise<Record<string, string>> {
@@ -268,7 +322,11 @@ export async function getMyMoveDashboardData() {
 
   const moverSlugs = (moversRes.data ?? []).map((m) => m.company_slug);
   const comparisonSlugs = (comparisonsRes.data ?? []).flatMap((c) => c.company_slugs ?? []);
-  const companyNames = await getCompanyNamesBySlugs([...moverSlugs, ...comparisonSlugs]);
+  const allSlugs = [...moverSlugs, ...comparisonSlugs];
+  const [companyNames, companySummaries] = await Promise.all([
+    getCompanyNamesBySlugs(allSlugs),
+    getCompanySummariesBySlugs(allSlugs),
+  ]);
 
   return {
     user: { id: user.id, email: user.email ?? profile.email ?? '' },
@@ -277,5 +335,6 @@ export async function getMyMoveDashboardData() {
     movers: moversRes.data ?? [],
     comparisons: comparisonsRes.data ?? [],
     companyNames,
+    companySummaries,
   };
 }

@@ -1,24 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import {
-  Package, Heart, GitCompare, Download, Trash2, Mail, ExternalLink,
-  Settings, LogOut,
-} from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { GitCompare, Heart, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
+import { MoveHqHero } from '@/components/save-my-move/move-hq/move-hq-hero';
+import { MoveHqQuickActions } from '@/components/save-my-move/move-hq/move-hq-quick-actions';
+import { MoveHqEmptyState } from '@/components/save-my-move/move-hq/move-hq-empty-state';
+import { InventoryCard } from '@/components/save-my-move/move-hq/inventory-card';
+import { MoverCard } from '@/components/save-my-move/move-hq/mover-card';
+import { ComparisonCard } from '@/components/save-my-move/move-hq/comparison-card';
+import { CompareBar } from '@/components/save-my-move/move-hq/compare-bar';
+import { SettingsDrawer } from '@/components/save-my-move/move-hq/settings-drawer';
 import {
   deleteInventoryAction,
   deleteComparisonAction,
   getMyMoveDashboardData,
   removeSavedMoverAction,
+  saveInventoryAction,
   updateMoverNotesAction,
 } from '@/actions/save-my-move';
 import {
-  updateEmailPreferencesAction,
   exportAccountDataAction,
   deleteAccountAction,
 } from '@/actions/account';
@@ -28,25 +30,37 @@ import { parseInventoryJson } from '@/lib/save-my-move/types';
 import { generateInventoryPdf } from '@/lib/moving-calculator/pdf-export';
 import { groupInventoryByRoom } from '@/lib/moving-calculator/group-inventory';
 import { MOVE_PRESETS } from '@/lib/moving-calculator/move-presets';
+import {
+  computeMoveReadiness,
+  greetingNameFromEmail,
+  totalInventoryVolume,
+} from '@/lib/save-my-move/dashboard-utils';
+import { buildMyMoveDemoData } from '@/lib/save-my-move/dashboard-demo';
+import type { MyMoveDashboardPayload } from '@/lib/save-my-move/dashboard-types';
 import { trackPdfDownloaded } from '@/components/ga-events';
 import { toast } from 'sonner';
 
-type DashboardData = Awaited<ReturnType<typeof import('@/actions/save-my-move').getMyMoveDashboardData>>;
-
 type Props = {
-  initialData: DashboardData | null;
+  initialData: MyMoveDashboardPayload | null;
+  demo?: boolean;
 };
 
-export function MyMoveDashboard({ initialData }: Props) {
+export function MyMoveDashboard({ initialData, demo = false }: Props) {
   const { user, loading, openSaveModal } = useSaveMyMove();
   const [data, setData] = useState(initialData);
   const [dataLoading, setDataLoading] = useState(false);
   const [dataError, setDataError] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [emailingId, setEmailingId] = useState<string | null>(null);
+  const [selectedMovers, setSelectedMovers] = useState<string[]>([]);
 
   useEffect(() => {
+    if (demo && user) {
+      setData(buildMyMoveDemoData(user.email ?? 'you@example.com'));
+      return;
+    }
     if (!user || data) return;
 
     let cancelled = false;
@@ -67,44 +81,56 @@ export function MyMoveDashboard({ initialData }: Props) {
     return () => {
       cancelled = true;
     };
-  }, [user, data]);
+  }, [user, data, demo]);
 
-  if (loading || (user && !data && dataLoading)) {
-    return <div className="h-40 rounded-xl border bg-muted/20 animate-pulse" />;
+  const readiness = useMemo(() => {
+    if (!data) {
+      return computeMoveReadiness({ inventoryCount: 0, moverCount: 0, comparisonCount: 0 });
+    }
+    return computeMoveReadiness({
+      inventoryCount: data.inventories.length,
+      moverCount: data.movers.length,
+      comparisonCount: data.comparisons.length,
+    });
+  }, [data]);
+
+  if (loading || (user && !data && dataLoading && !demo)) {
+    return <div className="h-48 rounded-2xl border bg-muted/20 animate-pulse" aria-busy="true" />;
   }
 
   if (!user) {
     return (
-      <Card className="p-8 text-center">
-        <Package className="h-10 w-10 mx-auto text-primary/60 mb-3" />
-        <p className="text-muted-foreground mb-4">
-          Sign in to access saved inventories, mover shortlists, and comparisons.
+      <div className="rounded-2xl border bg-card p-10 text-center shadow-sm">
+        <Package className="h-12 w-12 mx-auto text-primary/60 mb-4" aria-hidden="true" />
+        <h2 className="text-xl font-semibold">Your Move HQ awaits</h2>
+        <p className="text-muted-foreground mt-2 mb-6 max-w-md mx-auto">
+          Sign in to sync inventories, mover shortlists, and comparisons across devices.
         </p>
         <Button onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}>
           Save My Move
         </Button>
         <p className="text-xs text-muted-foreground mt-4">
-          No password needed — Google or a one-time email link.
+          No password needed — Google, Facebook, or a one-time email link.
         </p>
-      </Card>
+      </div>
     );
   }
 
   if (!data) {
     return (
-      <Card className="p-8 text-center">
-        <Package className="h-10 w-10 mx-auto text-primary/60 mb-3" />
+      <div className="rounded-2xl border bg-card p-10 text-center shadow-sm">
+        <Package className="h-12 w-12 mx-auto text-primary/60 mb-4" aria-hidden="true" />
         <p className="text-muted-foreground mb-4">
-          {dataError
-            ? 'Could not load your saved data. Please try again.'
-            : 'Loading your saved data…'}
+          {dataError ? 'Could not load your saved data. Please try again.' : 'Loading your Move HQ…'}
         </p>
-        {dataError && (
-          <Button onClick={() => window.location.reload()}>Retry</Button>
-        )}
-      </Card>
+        {dataError && <Button onClick={() => window.location.reload()}>Retry</Button>}
+      </div>
     );
   }
+
+  const isDemoMode = demo;
+  const greetingName = greetingNameFromEmail(data.user.email);
+  const volumeTotal = totalInventoryVolume(data.inventories);
 
   const handleExport = async () => {
     setExporting(true);
@@ -196,7 +222,7 @@ export function MyMoveDashboard({ initialData }: Props) {
       toast.success('Inventory emailed', {
         description: payload?.pdfAttached
           ? `Sent to ${sentTo} with PDF attached.`
-          : `Sent to ${sentTo}. Open My Move to download the PDF.`,
+          : `Sent to ${sentTo}.`,
       });
     } catch {
       toast.error('Could not send email. Check your connection and try again.');
@@ -206,244 +232,222 @@ export function MyMoveDashboard({ initialData }: Props) {
   };
 
   const refreshAfter = async (fn: () => Promise<void>) => {
+    if (isDemoMode) {
+      toast.message('Demo mode — action not saved');
+      return;
+    }
     await fn();
     window.location.reload();
   };
 
+  const handleRename = async (id: string, name: string, items: InventoryItem[]) => {
+    if (isDemoMode) {
+      toast.message('Demo mode — rename not saved');
+      return;
+    }
+    const inv = data.inventories.find((i) => i.id === id);
+    if (!inv) return;
+    await saveInventoryAction({
+      id,
+      name,
+      inventory: items,
+      mode: inv.mode ?? 'room',
+      movePreset: inv.move_preset,
+    });
+    toast.success('Inventory renamed');
+    window.location.reload();
+  };
+
+  const handleDuplicate = async (
+    id: string,
+    name: string,
+    items: InventoryItem[],
+    movePreset: string | null
+  ) => {
+    if (isDemoMode) {
+      toast.message('Demo mode — duplicate not saved');
+      return;
+    }
+    const inv = data.inventories.find((i) => i.id === id);
+    if (!inv) return;
+    await saveInventoryAction({
+      name: `${name} (copy)`,
+      inventory: items,
+      mode: inv.mode ?? 'room',
+      movePreset,
+    });
+    toast.success('Inventory duplicated');
+    window.location.reload();
+  };
+
+  const toggleMoverSelect = (slug: string) => {
+    setSelectedMovers((prev) =>
+      prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]
+    );
+  };
+
   return (
-    <div className="space-y-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground">
-        <span>Signed in as {data.user.email}</span>
-        <Button variant="ghost" size="sm" onClick={handleSignOut}>
-          <LogOut className="h-3.5 w-3.5 mr-1" /> Sign out
+    <div className="space-y-6 pb-24 md:pb-8">
+      <div className="flex items-center justify-end gap-2">
+        {isDemoMode && (
+          <span className="text-xs font-medium text-amber-700 bg-amber-500/10 border border-amber-500/20 rounded-full px-3 py-1">
+            Preview mode — add <code className="font-mono">?demo=1</code> to explore the layout
+          </span>
+        )}
+        <Button
+          variant="outline"
+          size="sm"
+          className="gap-1.5"
+          onClick={() => setSettingsOpen(true)}
+          aria-label="Open settings"
+        >
+          <Settings className="h-4 w-4" />
+          <span className="hidden sm:inline">Settings</span>
         </Button>
       </div>
 
-      {/* Inventories */}
-      <section>
-        <h2 className="text-lg font-semibold flex items-center gap-2 mb-3">
-          <Package className="h-5 w-5 text-primary" /> My Inventories
-        </h2>
-        {data.inventories.length === 0 ? (
-          <Card className="p-6 text-center text-sm text-muted-foreground">
-            No saved inventories yet.{' '}
-            <Link href="/moving-calculator" className="text-primary hover:underline">
-              Build one in the calculator
-            </Link>
-          </Card>
-        ) : (
-          <div className="space-y-3">
-            {data.inventories.map((inv) => {
-              const items = parseInventoryJson(inv.inventory);
-              return (
-                <Card key={inv.id}>
-                  <CardHeader className="pb-2 flex flex-row items-center justify-between">
-                    <CardTitle className="text-base">{inv.name}</CardTitle>
-                    <span className="text-xs text-muted-foreground tabular-nums">
-                      {Math.round(Number(inv.total_volume ?? 0))} cu ft · {inv.total_items ?? 0} items
-                    </span>
-                  </CardHeader>
-                  <CardContent className="flex flex-wrap gap-2">
-                    <Button size="sm" variant="outline" asChild>
-                      <Link href={`/moving-calculator?load=${inv.id}`}>Open in calculator</Link>
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() =>
-                        handleDownloadPdf(
-                          items,
-                          Number(inv.total_volume ?? 0),
-                          inv.total_items ?? 0,
-                          inv.move_preset
-                        )
-                      }
-                    >
-                      <Download className="h-3.5 w-3.5 mr-1" /> Download PDF
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      disabled={emailingId === inv.id}
-                      onClick={() =>
-                        handleEmailInventory(items, inv.name, inv.move_preset, inv.id)
-                      }
-                    >
-                      <Mail className="h-3.5 w-3.5 mr-1" />
-                      {emailingId === inv.id ? 'Sending…' : 'Email to me'}
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="text-destructive"
-                      onClick={() => refreshAfter(() => deleteInventoryAction(inv.id))}
-                    >
-                      <Trash2 className="h-3.5 w-3.5 mr-1" /> Delete
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        )}
-      </section>
+      <MoveHqHero
+        greetingName={greetingName}
+        totalVolume={volumeTotal}
+        inventoryCount={data.inventories.length}
+        readiness={readiness}
+      />
 
-      {/* Saved movers */}
-      <section>
-        <h2 className="text-lg font-semibold flex items-center gap-2 mb-3">
-          <Heart className="h-5 w-5 text-primary" /> Saved Movers
-        </h2>
-        {data.movers.length === 0 ? (
-          <Card className="p-6 text-center text-sm text-muted-foreground">
-            No saved movers yet.{' '}
-            <Link href="/companies" className="text-primary hover:underline">
-              Browse the directory
-            </Link>
-          </Card>
-        ) : (
-          <div className="space-y-3">
-            {data.movers.map((mover) => (
-              <Card key={mover.id} className="p-4">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex-1 min-w-0">
-                    <Link
-                      href={`/companies/${mover.company_slug}`}
-                      className="font-medium text-primary hover:underline flex items-center gap-1"
-                    >
-                      {data.companyNames[mover.company_slug] ?? mover.company_slug.replace(/-/g, ' ')}
-                      <ExternalLink className="h-3 w-3" />
-                    </Link>
-                    <Input
-                      className="mt-2 text-sm"
-                      placeholder="Private notes (only you can see these)"
-                      defaultValue={mover.notes ?? ''}
-                      onBlur={(e) =>
-                        updateMoverNotesAction(mover.id, e.target.value).then(() =>
-                          toast.success('Notes saved')
-                        )
-                      }
-                    />
-                  </div>
-                  <Button
-                    size="icon"
-                    variant="ghost"
-                    className="text-destructive shrink-0"
-                    onClick={() => refreshAfter(() => removeSavedMoverAction(mover.id))}
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-        )}
-      </section>
+      <MoveHqQuickActions />
 
-      {/* Comparisons */}
-      <section>
-        <h2 className="text-lg font-semibold flex items-center gap-2 mb-3">
-          <GitCompare className="h-5 w-5 text-primary" /> Saved Comparisons
-        </h2>
-        {data.comparisons.length === 0 ? (
-          <Card className="p-6 text-center text-sm text-muted-foreground">
-            No saved comparisons yet.{' '}
-            <Link href="/compare" className="text-primary hover:underline">
-              Compare movers
-            </Link>
-          </Card>
-        ) : (
-          <div className="space-y-3">
-            {data.comparisons.map((comp) => {
-              const moverNames = comp.company_slugs.map(
-                (slug: string) => data.companyNames[slug] ?? slug.replace(/-/g, ' ')
-              );
-
-              return (
-              <Card key={comp.id} className="p-4 flex items-center justify-between gap-3">
-                <div className="min-w-0">
-                  <p className="font-medium">{comp.name ?? 'Comparison'}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
-                    {moverNames.join(' · ')}
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <Button size="sm" variant="outline" asChild>
-                    <Link
-                      href={`/compare?${comp.company_slugs.map((s: string) => `add=${s}`).join('&')}`}
-                    >
-                      Open
-                    </Link>
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="text-destructive"
-                    onClick={() => refreshAfter(() => deleteComparisonAction(comp.id))}
-                  >
-                    <Trash2 className="h-3.5 w-3.5" />
-                  </Button>
-                </div>
-              </Card>
-              );
-            })}
-          </div>
-        )}
-      </section>
-
-      {/* Email preferences */}
-      <section>
-        <h2 className="text-lg font-semibold flex items-center gap-2 mb-3">
-          <Settings className="h-5 w-5 text-primary" /> Email Preferences
-        </h2>
-        <Card className="p-4 space-y-4 text-sm">
-          <label className="flex items-start gap-3 opacity-80">
-            <input type="checkbox" checked disabled className="mt-1" />
-            <span>
-              <strong>Transactional emails</strong> (sign-in links, requested documents) — always on
-            </span>
-          </label>
-          <label className="flex items-start gap-3 cursor-pointer">
-            <input
-              type="checkbox"
-              className="mt-1"
-              defaultChecked={data.profile?.marketing_opt_in ?? false}
-              onChange={(e) =>
-                updateEmailPreferencesAction({
-                  marketingOptIn: e.target.checked,
-                  moverAlertsOptIn: data.profile?.mover_alerts_opt_in ?? false,
-                }).then(() => toast.success('Preferences updated'))
-              }
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
+        <section className="lg:col-span-7 space-y-4" aria-labelledby="inventories-heading">
+          <h2 id="inventories-heading" className="text-lg font-semibold flex items-center gap-2">
+            <Package className="h-5 w-5 text-primary" aria-hidden="true" />
+            My Inventories
+          </h2>
+          {data.inventories.length === 0 ? (
+            <MoveHqEmptyState
+              icon={Package}
+              title="No inventories yet"
+              description="Build a room-by-room list in the calculator — we'll auto-name it and track your volume."
+              ctaLabel="Open calculator"
+              ctaHref="/moving-calculator"
             />
-            <span>Marketing updates (off by default — we never sell your information)</span>
-          </label>
-          <label className="flex items-start gap-3 cursor-pointer">
-            <input
-              type="checkbox"
-              className="mt-1"
-              defaultChecked={data.profile?.mover_alerts_opt_in ?? false}
-              onChange={(e) =>
-                updateEmailPreferencesAction({
-                  marketingOptIn: data.profile?.marketing_opt_in ?? false,
-                  moverAlertsOptIn: e.target.checked,
-                }).then(() => toast.success('Preferences updated'))
-              }
-            />
-            <span>Saved mover alerts (FMCSA / safety rating changes for your shortlist)</span>
-          </label>
-        </Card>
-      </section>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {data.inventories.map((inv) => {
+                const items = parseInventoryJson(inv.inventory);
+                return (
+                  <InventoryCard
+                    key={inv.id}
+                    id={inv.id}
+                    name={inv.name}
+                    movePreset={inv.move_preset}
+                    totalVolume={Number(inv.total_volume ?? 0)}
+                    totalItems={inv.total_items ?? 0}
+                    items={items}
+                    emailing={emailingId === inv.id}
+                    onRename={handleRename}
+                    onDuplicate={handleDuplicate}
+                    onDelete={(id) => refreshAfter(() => deleteInventoryAction(id))}
+                    onDownloadPdf={handleDownloadPdf}
+                    onEmail={handleEmailInventory}
+                  />
+                );
+              })}
+            </div>
+          )}
+        </section>
 
-      {/* Account actions */}
-      <section className="flex flex-wrap gap-3 pt-4 border-t">
-        <Button variant="outline" onClick={handleExport} disabled={exporting}>
-          <Download className="h-3.5 w-3.5 mr-1.5" />
-          {exporting ? 'Exporting…' : 'Download my data'}
-        </Button>
-        <Button variant="destructive" onClick={handleDeleteAccount} disabled={deleting}>
-          <Trash2 className="h-3.5 w-3.5 mr-1.5" />
-          {deleting ? 'Deleting…' : 'Delete my account'}
-        </Button>
-      </section>
+        <div className="lg:col-span-5 space-y-8">
+          <section aria-labelledby="movers-heading" className="space-y-4">
+            <h2 id="movers-heading" className="text-lg font-semibold flex items-center gap-2">
+              <Heart className="h-5 w-5 text-primary" aria-hidden="true" />
+              Saved Movers
+            </h2>
+            {data.movers.length === 0 ? (
+              <MoveHqEmptyState
+                icon={Heart}
+                title="No saved movers"
+                description="Shortlist FMCSA-licensed carriers from the directory — compare ratings side by side."
+                ctaLabel="Browse movers"
+                ctaHref="/companies"
+              />
+            ) : (
+              <div className="space-y-3">
+                {data.movers.map((mover) => (
+                  <MoverCard
+                    key={mover.id}
+                    id={mover.id}
+                    companySlug={mover.company_slug}
+                    companyName={
+                      data.companyNames[mover.company_slug] ??
+                      mover.company_slug.replace(/-/g, ' ')
+                    }
+                    summary={data.companySummaries[mover.company_slug]}
+                    notes={mover.notes}
+                    selected={selectedMovers.includes(mover.company_slug)}
+                    onToggleSelect={toggleMoverSelect}
+                    onNotesChange={(id, notes) =>
+                      isDemoMode
+                        ? Promise.resolve(toast.message('Demo mode'))
+                        : updateMoverNotesAction(id, notes).then(() => toast.success('Notes saved'))
+                    }
+                    onRemove={(id) => refreshAfter(() => removeSavedMoverAction(id))}
+                    demo={isDemoMode}
+                  />
+                ))}
+              </div>
+            )}
+          </section>
+
+          <section aria-labelledby="comparisons-heading" className="space-y-4">
+            <h2 id="comparisons-heading" className="text-lg font-semibold flex items-center gap-2">
+              <GitCompare className="h-5 w-5 text-primary" aria-hidden="true" />
+              Saved Comparisons
+            </h2>
+            {data.comparisons.length === 0 ? (
+              <MoveHqEmptyState
+                icon={GitCompare}
+                title="No comparisons saved"
+                description="Pick two or more movers and save a side-by-side view for price and rating deltas."
+                ctaLabel="Compare movers"
+                ctaHref="/compare"
+              />
+            ) : (
+              <div className="space-y-3">
+                {data.comparisons.map((comp) => (
+                  <ComparisonCard
+                    key={comp.id}
+                    id={comp.id}
+                    name={comp.name}
+                    slugs={comp.company_slugs ?? []}
+                    companyNames={data.companyNames}
+                    companySummaries={data.companySummaries}
+                    onDelete={(id) => refreshAfter(() => deleteComparisonAction(id))}
+                    demo={isDemoMode}
+                  />
+                ))}
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
+
+      <CompareBar
+        selectedSlugs={selectedMovers}
+        companyNames={data.companyNames}
+        onClear={() => setSelectedMovers([])}
+      />
+
+      <SettingsDrawer
+        open={settingsOpen}
+        onOpenChange={setSettingsOpen}
+        email={data.user.email}
+        marketingOptIn={data.profile?.marketing_opt_in ?? false}
+        moverAlertsOptIn={data.profile?.mover_alerts_opt_in ?? false}
+        exporting={exporting}
+        deleting={deleting}
+        onExport={handleExport}
+        onDeleteAccount={handleDeleteAccount}
+        onSignOut={handleSignOut}
+      />
     </div>
   );
 }

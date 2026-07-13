@@ -7,15 +7,22 @@ import { getMyMoveDashboardData } from '@/actions/save-my-move';
 
 export const metadata = buildResourceMetadata(
   '/my-move',
-  'My Move — Saved Inventories & Movers',
-  'Optional Save My Move dashboard. Access saved moving inventories, mover shortlists, and comparisons across devices. No account required to use our tools.'
+  'My Move — Move HQ Dashboard',
+  'Your Move HQ — saved inventories, mover shortlists, comparisons, and move readiness in one independent dashboard.'
 );
 
-export default async function MyMovePage() {
+type PageProps = {
+  searchParams: Promise<{ demo?: string }>;
+};
+
+export default async function MyMovePage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const demo = params.demo === '1';
+
   const user = await getAuthenticatedUser();
   let initialData = null;
 
-  if (user) {
+  if (user && !demo) {
     try {
       initialData = await getMyMoveDashboardData();
     } catch {
@@ -24,18 +31,21 @@ export default async function MyMovePage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10 md:py-14 max-w-4xl">
-      <header className="mb-8">
+    <div className="container mx-auto px-4 py-8 md:py-12 max-w-6xl">
+      <header className="mb-6 md:mb-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">
+          Move HQ
+        </p>
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">My Move</h1>
-        <p className="mt-3 text-muted-foreground leading-relaxed">
-          Optional convenience — save inventories and mover shortlists across devices.
-          Every tool on Move Trust Hub works without signing in.
+        <p className="mt-2 text-muted-foreground leading-relaxed max-w-2xl">
+          Your independent command center — inventories, shortlists, and comparisons synced across
+          devices. Every tool on Move Trust Hub still works without signing in.
         </p>
       </header>
       <Suspense fallback={null}>
         <AuthErrorToast />
       </Suspense>
-      <MyMoveDashboard initialData={initialData} />
+      <MyMoveDashboard initialData={initialData} demo={demo} />
     </div>
   );
 }
