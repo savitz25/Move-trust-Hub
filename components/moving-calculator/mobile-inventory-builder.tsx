@@ -155,7 +155,7 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
   };
 
   return (
-    <div className="md:hidden space-y-4">
+    <div className="md:hidden space-y-4 w-full max-w-full overflow-x-hidden">
       {/* Progress */}
       <div className="rounded-xl border bg-card p-4 shadow-trust">
         <div className="flex items-center justify-between text-sm mb-2">
@@ -208,22 +208,22 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
       {mode === 'room' && (
         <div className="space-y-2">
           {roomStats.map(({ room, count, volume, items }) => {
-            const expanded = expandedRooms[room] ?? false;
+            const expanded = expandedRooms[room] ?? count > 0;
             const icon = CATEGORY_ICONS[room];
             return (
-              <div key={room} className="rounded-xl border bg-card overflow-hidden shadow-trust">
-                <div className="flex items-center gap-2 p-3">
+              <div key={room} className="rounded-xl border bg-card overflow-hidden shadow-trust w-full">
+                <div className="p-3 space-y-2">
                   <button
                     type="button"
                     onClick={() => toggleRoomAccordion(room)}
-                    className="flex flex-1 items-center gap-3 min-h-12 text-left"
+                    className="flex w-full items-center gap-3 min-h-12 text-left touch-manipulation"
                     aria-expanded={expanded}
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                       {icon}
                     </span>
                     <span className="flex-1 min-w-0">
-                      <span className="font-semibold block">{room}</span>
+                      <span className="font-semibold block break-words">{room}</span>
                       <span className="text-xs text-muted-foreground">
                         {count > 0
                           ? `${count} items · ${Math.round(volume)} cu ft`
@@ -236,19 +236,20 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
                       <ChevronRight className="h-5 w-5 text-muted-foreground shrink-0" />
                     )}
                   </button>
+
                   <Button
                     type="button"
                     size="lg"
-                    className="min-h-11 shrink-0 px-4"
+                    className="w-full min-h-12 touch-manipulation"
                     onClick={() => openRoomPicker(room)}
                   >
-                    <Plus className="h-4 w-4 mr-1" />
-                    Add
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add items
                   </Button>
                 </div>
 
                 {expanded && items.length > 0 && (
-                  <div className="border-t px-3 pb-3 pt-2 space-y-2">
+                  <div className="border-t px-3 pb-3 pt-2 space-y-2.5">
                     {items.map((item) => (
                       <ItemCard
                         key={item.id}
@@ -342,13 +343,15 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
                   aria-checked={customSize === size.volume}
                   onClick={() => setCustomSize(size.volume)}
                   className={cn(
-                    'rounded-xl border min-h-12 px-3 text-sm font-medium transition-colors',
+                    'rounded-xl border min-h-12 px-2 text-sm font-medium transition-colors touch-manipulation',
+                    'flex flex-col items-center justify-center text-center leading-tight',
                     customSize === size.volume
                       ? 'border-primary bg-primary/10 text-primary'
                       : 'border-border'
                   )}
                 >
-                  {size.label} · {size.volume} cu ft
+                  <span>{size.label}</span>
+                  <span className="text-[11px] text-muted-foreground">{size.volume} cu ft</span>
                 </button>
               ))}
             </div>
@@ -367,13 +370,13 @@ export function MobileInventoryBuilder({ onInteraction, showUndoToast }: MobileI
         description="Tap + to add · large items may need special handling"
         fullScreen
       >
-        <div className="space-y-5 pb-6">
+        <div className="space-y-5 pb-8 w-full max-w-full">
           {pickerGroups.map((group) => (
-            <div key={group.label}>
+            <div key={group.label} className="w-full">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 sticky top-0 bg-background py-2 z-10">
                 {group.label}
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-2.5 w-full">
                 {group.items.map((item) => (
                   <ItemCard
                     key={item.name}

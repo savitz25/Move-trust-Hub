@@ -94,14 +94,22 @@ export function MobileBottomSheet({
             dragElastic={{ top: 0, bottom: 0.35 }}
             onDragEnd={handleDragEnd}
             className={cn(
-              'absolute inset-x-0 bottom-0 flex flex-col rounded-t-2xl border-t bg-background shadow-trust-lg',
-              fullScreen ? 'top-12 max-h-[calc(100dvh-3rem)]' : 'max-h-[min(88dvh,640px)]',
+              'absolute inset-x-0 bottom-0 flex flex-col border-t bg-background shadow-trust-lg overflow-hidden',
+              fullScreen
+                ? 'top-0 max-h-[100dvh] rounded-none'
+                : 'max-h-[min(88dvh,640px)] rounded-t-2xl',
               className
             )}
-            style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+            style={{
+              paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+              paddingTop: fullScreen ? 'env(safe-area-inset-top, 0px)' : undefined,
+            }}
           >
             <div
-              className="flex shrink-0 cursor-grab active:cursor-grabbing flex-col items-center pt-3 pb-2 px-4"
+              className={cn(
+                'flex shrink-0 cursor-grab active:cursor-grabbing flex-col items-center pb-2 px-3 sm:px-4',
+                fullScreen ? 'pt-2' : 'pt-3'
+              )}
               onPointerDown={(e) => dragControls.start(e)}
             >
               <div className="h-1 w-10 rounded-full bg-muted-foreground/30 mb-3" aria-hidden />
@@ -130,7 +138,7 @@ export function MobileBottomSheet({
 
             <div
               ref={scrollRef}
-              className="flex-1 overflow-y-auto overscroll-contain px-4 pb-4"
+              className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain px-3 pb-4 sm:px-4"
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               {children}

@@ -166,7 +166,7 @@ export function MovingCalculatorClient() {
       <div className="grid lg:grid-cols-[minmax(0,1.85fr)_minmax(0,1fr)] gap-5 lg:gap-6 items-start">
         <section aria-label="Inventory builder" className="min-w-0">
           {/* MOBILE (<768px): step-by-step rooms + bottom-sheet item picker */}
-          <div className="md:hidden">
+          <div className="md:hidden w-full max-w-full overflow-x-hidden">
             <MobileInventoryBuilder
               onInteraction={markCalculatorStarted}
               showUndoToast={showUndoToast}
