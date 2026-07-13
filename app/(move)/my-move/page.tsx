@@ -1,5 +1,7 @@
+import { Suspense } from 'react';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { MyMoveDashboard } from '@/components/save-my-move/my-move-dashboard';
+import { AuthErrorToast } from '@/components/save-my-move/auth-error-toast';
 import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
 import { getMyMoveDashboardData } from '@/actions/save-my-move';
 
@@ -30,6 +32,9 @@ export default async function MyMovePage() {
           Every tool on Move Trust Hub works without signing in.
         </p>
       </header>
+      <Suspense fallback={null}>
+        <AuthErrorToast />
+      </Suspense>
       <MyMoveDashboard initialData={initialData} />
     </div>
   );
