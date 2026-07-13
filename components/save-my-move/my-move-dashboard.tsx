@@ -44,6 +44,7 @@ export function MyMoveDashboard({ initialData }: Props) {
   const [dataError, setDataError] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [emailingId, setEmailingId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!user || data) return;
@@ -171,20 +172,36 @@ export function MyMoveDashboard({ initialData }: Props) {
   const handleEmailInventory = async (
     inventory: InventoryItem[],
     name: string,
-    movePreset: string | null
+    movePreset: string | null,
+    inventoryId: string
   ) => {
+    setEmailingId(inventoryId);
     try {
       const res = await fetch('/api/save-my-move/email-inventory', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ inventory, name, movePreset }),
       });
-      if (!res.ok) throw new Error();
+      const payload = (await res.json().catch(() => null)) as {
+        error?: string;
+        pdfAttached?: boolean;
+      } | null;
+
+      if (!res.ok) {
+        toast.error(payload?.error ?? 'Could not send email');
+        return;
+      }
+
+      const sentTo = user?.email ?? 'your inbox';
       toast.success('Inventory emailed', {
-        description: 'Check your inbox — a PDF report is attached.',
+        description: payload?.pdfAttached
+          ? `Sent to ${sentTo} with PDF attached.`
+          : `Sent to ${sentTo}. Open My Move to download the PDF.`,
       });
     } catch {
-      toast.error('Could not send email');
+      toast.error('Could not send email. Check your connection and try again.');
+    } finally {
+      setEmailingId(null);
     }
   };
 
@@ -247,9 +264,13 @@ export function MyMoveDashboard({ initialData }: Props) {
                     <Button
                       size="sm"
                       variant="outline"
-                      onClick={() => handleEmailInventory(items, inv.name, inv.move_preset)}
+                      disabled={emailingId === inv.id}
+                      onClick={() =>
+                        handleEmailInventory(items, inv.name, inv.move_preset, inv.id)
+                      }
                     >
-                      <Mail className="h-3.5 w-3.5 mr-1" /> Email to me
+                      <Mail className="h-3.5 w-3.5 mr-1" />
+                      {emailingId === inv.id ? 'Sending…' : 'Email to me'}
                     </Button>
                     <Button
                       size="sm"

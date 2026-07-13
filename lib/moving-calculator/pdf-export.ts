@@ -174,7 +174,9 @@ export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
 
 export function generateInventoryPdfBase64(data: PdfExportData): string {
   const doc = buildInventoryPdfDocument(data);
-  return doc.output('base64');
+  // jsPDF v4: output('base64') returns null — use arraybuffer instead.
+  const buffer = doc.output('arraybuffer');
+  return Buffer.from(buffer).toString('base64');
 }
 
 export function generateInventoryPdf(data: PdfExportData): void {

@@ -1,8 +1,10 @@
+import { formatItemDisplayName } from '@/lib/moving-calculator/display-names';
 import { LBS_PER_CU_FT } from '@/lib/moving-calculator/estimates';
 import {
   buildTransactionalEmailFooter,
   buildTransactionalTextFooter,
 } from '@/lib/emails/transactional-footer';
+import type { InventoryItem } from '@/store/calculator-store';
 
 export type InventoryReportEmailData = {
   recipientName?: string | null;
@@ -14,7 +16,17 @@ export type InventoryReportEmailData = {
   moveSizeLabel: string;
   movers: string;
   duration: string;
+  groupedByRoom: [string, InventoryItem[]][];
+  pdfAttached: boolean;
 };
+
+function escapeHtml(text: string): string {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
 
 function firstName(name: string | null | undefined): string {
   if (!name?.trim()) return '';
@@ -28,11 +40,70 @@ function statCard(label: string, value: string): string {
         <tr>
           <td style="padding:16px 18px;">
             <p style="margin:0 0 4px;font-size:11px;line-height:1.4;color:#64748b;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">${label}</p>
-            <p style="margin:0;font-size:16px;line-height:1.35;color:#0f172a;font-weight:700;">${value}</p>
+            <p style="margin:0;font-size:16px;line-height:1.35;color:#0f172a;font-weight:700;">${escapeHtml(value)}</p>
           </td>
         </tr>
       </table>
     </td>`;
+}
+
+function buildInventoryListHtml(groupedByRoom: [string, InventoryItem[]][]): string {
+  if (groupedByRoom.length === 0) return '';
+
+  const rooms = groupedByRoom
+    .map(([room, items]) => {
+      const roomTotal = items.reduce((s, i) => s + i.volume * i.quantity, 0);
+      const rows = items
+        .map((item) => {
+          const label = escapeHtml(formatItemDisplayName(item.name));
+          const lineVol = Math.round(item.volume * item.quantity);
+          return `<tr>
+            <td style="padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#334155;">${label}</td>
+            <td align="right" style="padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#64748b;white-space:nowrap;">× ${item.quantity}</td>
+            <td align="right" style="padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#64748b;white-space:nowrap;">${lineVol} cu ft</td>
+          </tr>`;
+        })
+        .join('');
+
+      return `
+        <div style="margin-bottom:16px;">
+          <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#0077D4;text-transform:uppercase;letter-spacing:0.06em;">
+            ${escapeHtml(room)} <span style="color:#64748b;font-weight:600;">(${Math.round(roomTotal)} cu ft)</span>
+          </p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            ${rows}
+          </table>
+        </div>`;
+    })
+    .join('');
+
+  return `
+    <tr>
+      <td style="padding:8px 32px 16px 32px;">
+        <h2 style="margin:0 0 14px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
+          Your inventory
+        </h2>
+        <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;">
+          ${rooms}
+        </div>
+      </td>
+    </tr>`;
+}
+
+function buildInventoryListText(groupedByRoom: [string, InventoryItem[]][]): string[] {
+  if (groupedByRoom.length === 0) return [];
+
+  const lines = ['INVENTORY'];
+  for (const [room, items] of groupedByRoom) {
+    const roomTotal = items.reduce((s, i) => s + i.volume * i.quantity, 0);
+    lines.push('', `${room} (${Math.round(roomTotal)} cu ft)`);
+    for (const item of items) {
+      lines.push(
+        `  • ${formatItemDisplayName(item.name)} × ${item.quantity} (${Math.round(item.volume * item.quantity)} cu ft)`
+      );
+    }
+  }
+  return lines;
 }
 
 export function buildInventoryReportSubject(totalVolume: number): string {
@@ -45,6 +116,9 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
   const volume = `${Math.round(data.totalVolume).toLocaleString()} cu ft`;
   const weight = `${data.totalWeight.toLocaleString()} lbs`;
   const items = `${data.totalItems.toLocaleString()} items`;
+  const attachmentNote = data.pdfAttached
+    ? 'A printable PDF report is attached to this email.'
+    : 'View or download a PDF anytime from your My Move dashboard.';
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -52,11 +126,11 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>${buildInventoryReportSubject(data.totalVolume)}</title>
+  <title>${escapeHtml(buildInventoryReportSubject(data.totalVolume))}</title>
 </head>
 <body style="margin:0;padding:0;background-color:#eef2f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
-    Your moving inventory summary is attached as a PDF. Share it with movers for accurate, comparable quotes.
+    Your moving inventory summary — ${volume}, ${items}. Share with movers for accurate quotes.
   </div>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#eef2f7;">
@@ -93,11 +167,11 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
                 <tr>
                   <td style="padding:36px 32px 12px 32px;">
                     <h1 style="margin:0 0 10px;font-size:26px;line-height:1.25;font-weight:800;color:#0f172a;letter-spacing:-0.02em;">
-                      ${greeting}
+                      ${escapeHtml(greeting)}
                     </h1>
                     <p style="margin:0;font-size:16px;line-height:1.6;color:#64748b;">
-                      Your moving inventory <strong style="color:#0f172a;">${data.inventoryName}</strong> is ready.
-                      A full itemized report is attached as a PDF.
+                      Your moving inventory <strong style="color:#0f172a;">${escapeHtml(data.inventoryName)}</strong> is ready.
+                      ${escapeHtml(attachmentNote)}
                     </p>
                   </td>
                 </tr>
@@ -124,7 +198,7 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
                         <td style="padding:16px 18px;">
                           <p style="margin:0 0 4px;font-size:11px;line-height:1.4;color:#0369a1;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Move profile</p>
                           <p style="margin:0;font-size:14px;line-height:1.5;color:#0f172a;">
-                            <strong>${data.moveSizeLabel}</strong> · ${data.movers} · ${data.duration}
+                            <strong>${escapeHtml(data.moveSizeLabel)}</strong> · ${escapeHtml(data.movers)} · ${escapeHtml(data.duration)}
                           </p>
                           <p style="margin:8px 0 0;font-size:12px;line-height:1.5;color:#64748b;">
                             Weight estimated at ${LBS_PER_CU_FT} lbs per cu ft — industry average for household goods.
@@ -135,6 +209,8 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
                   </td>
                 </tr>
 
+                ${buildInventoryListHtml(data.groupedByRoom)}
+
                 <tr>
                   <td style="padding:16px 32px 8px 32px;">
                     <h2 style="margin:0 0 14px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
@@ -144,21 +220,21 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
                       <tr>
                         <td style="padding:0 0 12px 0;">
                           <p style="margin:0;font-size:15px;line-height:1.55;color:#334155;">
-                            <strong style="color:#0f172a;">1.</strong> Open the attached PDF for your full room-by-room inventory.
+                            <strong style="color:#0f172a;">1.</strong> ${data.pdfAttached ? 'Open the attached PDF for a printable copy.' : 'Download the PDF from My Move for a printable copy.'}
                           </p>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding:0 0 12px 0;">
                           <p style="margin:0;font-size:15px;line-height:1.55;color:#334155;">
-                            <strong style="color:#0f172a;">2.</strong> Share the same list with every mover so quotes are based on equal cubic footage.
+                            <strong style="color:#0f172a;">2.</strong> Share this same inventory with every mover for comparable quotes.
                           </p>
                         </td>
                       </tr>
                       <tr>
                         <td style="padding:0 0 4px 0;">
                           <p style="margin:0;font-size:15px;line-height:1.55;color:#334155;">
-                            <strong style="color:#0f172a;">3.</strong> Manage saved inventories, movers, and comparisons anytime in My Move.
+                            <strong style="color:#0f172a;">3.</strong> Manage saved inventories, movers, and comparisons in My Move.
                           </p>
                         </td>
                       </tr>
@@ -215,11 +291,15 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
 export function buildInventoryReportEmailText(data: InventoryReportEmailData): string {
   const greetingName = firstName(data.recipientName);
   const greeting = greetingName ? `Hi ${greetingName},` : 'Hi there,';
+  const attachmentNote = data.pdfAttached
+    ? 'A printable PDF report is attached.'
+    : 'Download a PDF anytime from My Move: https://www.movetrusthub.com/my-move';
 
   return [
     greeting,
     '',
-    `Your moving inventory "${data.inventoryName}" is attached as a PDF.`,
+    `Your moving inventory "${data.inventoryName}" is ready.`,
+    attachmentNote,
     '',
     'SUMMARY',
     `Total volume: ${Math.round(data.totalVolume).toLocaleString()} cu ft`,
@@ -228,9 +308,13 @@ export function buildInventoryReportEmailText(data: InventoryReportEmailData): s
     `Truck size: ${data.truckSize}`,
     `Move size: ${data.moveSizeLabel} · ${data.movers} · ${data.duration}`,
     '',
+    ...buildInventoryListText(data.groupedByRoom),
+    '',
     'NEXT STEPS',
-    '1. Open the attached PDF for your full room-by-room inventory.',
-    '2. Share the same list with every mover for comparable quotes.',
+    data.pdfAttached
+      ? '1. Open the attached PDF for a printable copy.'
+      : '1. Download the PDF from My Move.',
+    '2. Share this same inventory with every mover for comparable quotes.',
     '3. Manage saved inventories in My Move: https://www.movetrusthub.com/my-move',
     '',
     'Compare licensed movers: https://www.movetrusthub.com/companies',
