@@ -1,5 +1,12 @@
 export type HubId = 'move' | 'lender' | 'insurance';
 
+/**
+ * P2-14 owner decision: unify public branding (MoveTrustHub vs "Trust Hub" suffixes,
+ * vertical logos, and legacy lendertrusthub.com / insurancetrusthub.com redirect copy).
+ * Until resolved, each hub keeps its vertical siteName in metadata and JSON-LD Organization.
+ */
+export const BRAND_COHERENCE_REVIEW_PENDING = true;
+
 export type HubNavLink = {
   href: string;
   label: string;
