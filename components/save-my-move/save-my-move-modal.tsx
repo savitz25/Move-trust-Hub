@@ -10,11 +10,9 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import { trackSaveMyMoveAuth } from '@/components/ga-events';
 import { toast } from 'sonner';
 import {
-  buildAuthCallbackRedirect,
   sanitizePostLoginPath,
   stashPostLoginRedirect,
 } from '@/lib/save-my-move/redirect';
@@ -46,29 +44,12 @@ export function SaveMyMoveModal({
 
   const safeRedirectPath = sanitizePostLoginPath(redirectPath);
 
-  const handleGoogle = async () => {
-    const supabase = createBrowserSupabaseClient();
-    if (!supabase) {
-      toast.error('Sign-in is temporarily unavailable');
-      return;
-    }
+  const handleGoogle = () => {
     setLoading('google');
     trackSaveMyMoveAuth({ method: 'google' });
     stashPostLoginRedirect(safeRedirectPath);
-    // Google OAuth and magic link with the same email merge into one Supabase
-    // Auth user automatically (identity linking on matching email).
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: buildAuthCallbackRedirect(safeRedirectPath),
-        queryParams: { prompt: 'select_account' },
-        scopes: 'email profile',
-      },
-    });
-    if (error) {
-      toast.error('Could not start Google sign-in');
-      setLoading(null);
-    }
+    // Server route owns signInWithOAuth + canonical redirectTo (Supabase allowlist).
+    window.location.assign('/api/auth/google');
   };
 
   const handleMagicLink = async () => {

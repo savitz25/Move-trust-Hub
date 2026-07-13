@@ -115,12 +115,25 @@ Set `deleted_at = now()` instead of hard-deleting quote rows. Analytics exclude 
 
 Tables: `user_profiles`, `saved_inventories`, `saved_movers`, `magic_link_rate_limits` (+ existing `saved_comparisons`).
 
-**Supabase Auth setup (Dashboard):**
-1. Enable **Google** provider (scopes: email, profile only).
+**Production project ref:** `uvqkyupfnpswdozmuzih` (must match `NEXT_PUBLIC_SUPABASE_URL` on Vercel).
+
+**Verify Google is enabled on the live project** (not a different Supabase project):
+
+```bash
+curl -s "https://uvqkyupfnpswdozmuzih.supabase.co/auth/v1/settings" \
+  -H "apikey: $NEXT_PUBLIC_SUPABASE_ANON_KEY" | jq '.external.google'
+```
+
+Must return `true`. If `false`, Auth → Providers → Google is off on **this** project.
+
+**Supabase Auth setup (Dashboard → project `uvqkyupfnpswdozmuzih`):**
+1. Enable **Google** provider (scopes: email, profile only) and **Save**.
 2. Set Site URL: `https://www.movetrusthub.com`
 3. Add redirect URL: `https://www.movetrusthub.com/auth/callback`
 4. **Email (magic link):** set OTP expiry to **900 seconds (15 min)** under Auth → Email.
 5. Disable email confirmations for magic link if double-confirm blocks sign-in.
+
+**App OAuth entry:** `GET /api/auth/google` → `signInWithOAuth` with `redirectTo: https://www.movetrusthub.com/auth/callback`
 
 **Routes:** `/my-move` (dashboard), `/auth/callback`, `/api/auth/magic-link` (rate-limited).
 

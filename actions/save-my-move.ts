@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
 import { requireAuthenticatedUser } from '@/lib/save-my-move/auth';
 import type { InventoryItem } from '@/store/calculator-store';
+import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
 import { inventoryToJson, type SavedInventoryPayload } from '@/lib/save-my-move/types';
 
 function inventoryTotals(inventory: InventoryItem[]) {
@@ -240,34 +241,6 @@ export async function getCompanyNamesBySlugs(
     }
   }
   return names;
-}
-
-async function ensureUserProfile(
-  supabase: Awaited<ReturnType<typeof createClient>>,
-  user: { id: string; email?: string | null }
-) {
-  const { data: existing } = await supabase
-    .from('user_profiles')
-    .select('*')
-    .eq('id', user.id)
-    .maybeSingle();
-
-  if (existing) return existing;
-
-  const { data: created, error } = await supabase
-    .from('user_profiles')
-    .upsert(
-      {
-        id: user.id,
-        email: user.email?.trim().toLowerCase() ?? '',
-      },
-      { onConflict: 'id' }
-    )
-    .select('*')
-    .single();
-
-  if (error) throw new Error(error.message);
-  return created;
 }
 
 export async function getMyMoveDashboardData() {
