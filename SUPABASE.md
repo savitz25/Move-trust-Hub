@@ -128,8 +128,9 @@ Must return `true`. If `false`, Auth → Providers → Google is off on **this**
 
 **Supabase Auth setup (Dashboard → project `uvqkyupfnpswdozmuzih`):**
 1. Enable **Google** provider (scopes: email, profile only) and **Save**.
-2. Set Site URL: `https://www.movetrusthub.com`
-3. Add redirect URL: `https://www.movetrusthub.com/auth/callback`
+2. **Authentication → URL Configuration:**
+   - **Site URL:** `https://www.movetrusthub.com` (NOT `http://localhost:3000` — if Site URL is localhost, OAuth sends users to localhost after Google sign-in)
+   - **Redirect URLs:** add `https://www.movetrusthub.com/auth/callback`
 4. **Email (magic link):** set OTP expiry to **900 seconds (15 min)** under Auth → Email.
 5. Disable email confirmations for magic link if double-confirm blocks sign-in.
 

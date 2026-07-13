@@ -1,23 +1,25 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
-import { AUTH_CALLBACK_URL } from '@/lib/save-my-move/redirect';
+import {
+  AUTH_CALLBACK_URL,
+  ensureProductionOAuthUrl,
+  productionAuthRedirect,
+} from '@/lib/save-my-move/auth-redirect';
 import { isGoogleProviderEnabled } from '@/lib/save-my-move/google-provider-enabled';
 
 /**
  * Server-side Google OAuth kickoff — single source of truth for redirectTo.
  * Client navigates here; Supabase returns the Google consent URL.
  */
-export async function GET(request: Request) {
-  const { origin } = new URL(request.url);
-
+export async function GET() {
   if (!isSupabaseConfigured()) {
-    return NextResponse.redirect(`${origin}/my-move?auth=error&reason=not_configured`);
+    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=not_configured'));
   }
 
   if (!(await isGoogleProviderEnabled())) {
     console.error('[auth/google] Google provider disabled on Supabase project');
-    return NextResponse.redirect(`${origin}/my-move?auth=error&reason=google_not_enabled`);
+    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google_not_enabled'));
   }
 
   const supabase = await createClient();
@@ -32,12 +34,13 @@ export async function GET(request: Request) {
 
   if (error) {
     console.error('[auth/google] signInWithOAuth failed', error.message);
-    return NextResponse.redirect(`${origin}/my-move?auth=error&reason=google`);
+    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google'));
   }
 
   if (data.url) {
-    return NextResponse.redirect(data.url);
+    const safeUrl = ensureProductionOAuthUrl(data.url);
+    return NextResponse.redirect(safeUrl);
   }
 
-  return NextResponse.redirect(`${origin}/my-move?auth=error&reason=google`);
+  return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google'));
 }

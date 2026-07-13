@@ -1,19 +1,54 @@
 /** Default landing page after Save My Move sign-in. */
 export const DEFAULT_POST_LOGIN_PATH = '/my-move';
 
+/** Production site origin — never use localhost or Vercel preview URLs for auth. */
+export const PRODUCTION_SITE_ORIGIN = 'https://www.movetrusthub.com';
+
 /**
  * Canonical OAuth / magic-link callback — must match Supabase Auth redirect allowlist.
  * Do not use window.location.origin; preview/staging hosts are not registered with Google.
  */
-export const AUTH_CALLBACK_URL = 'https://www.movetrusthub.com/auth/callback';
+export const AUTH_CALLBACK_URL = `${PRODUCTION_SITE_ORIGIN}/auth/callback`;
 
-/** Build callback URL with optional post-login path (?next=). */
-export function buildAuthCallbackRedirect(next?: string | null): string {
-  const safeNext = sanitizePostLoginPath(next);
-  if (safeNext === DEFAULT_POST_LOGIN_PATH) {
-    return AUTH_CALLBACK_URL;
+const LOCAL_HOST_PATTERN = /localhost|127\.0\.0\.1/i;
+
+/** True when a URL points at local development (must not be used for OAuth redirects). */
+export function isLocalAuthUrl(url: string): boolean {
+  try {
+    return LOCAL_HOST_PATTERN.test(new URL(url).host);
+  } catch {
+    return LOCAL_HOST_PATTERN.test(url);
   }
-  return `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(safeNext)}`;
+}
+
+/**
+ * Post-auth browser redirect — production always uses movetrusthub.com,
+ * never request origin (avoids Supabase Site URL localhost fallback leaking through).
+ */
+export function productionAuthRedirect(path: string, request?: Request): string {
+  const safePath = path.startsWith('/') ? path : `/${path}`;
+  if (process.env.NODE_ENV === 'development') {
+    const origin = request ? new URL(request.url).origin : 'http://localhost:3000';
+    return `${origin}${safePath}`;
+  }
+  return `${PRODUCTION_SITE_ORIGIN}${safePath}`;
+}
+
+/**
+ * Force redirect_to / emailRedirectTo to the production callback.
+ * Supabase may substitute Site URL (e.g. localhost:3000) when allowlist is wrong.
+ */
+export function ensureProductionOAuthUrl(oauthUrl: string): string {
+  try {
+    const parsed = new URL(oauthUrl);
+    const redirectTo = parsed.searchParams.get('redirect_to');
+    if (!redirectTo || isLocalAuthUrl(redirectTo)) {
+      parsed.searchParams.set('redirect_to', AUTH_CALLBACK_URL);
+    }
+    return parsed.toString();
+  } catch {
+    return oauthUrl;
+  }
 }
 
 const POST_LOGIN_REDIRECT_KEY = 'save-my-move-post-login-redirect';

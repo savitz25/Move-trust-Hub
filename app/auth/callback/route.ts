@@ -1,21 +1,8 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
+import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
-
-function postLoginRedirectUrl(request: Request, nextPath: string): string {
-  const { origin } = new URL(request.url);
-  const forwardedHost = request.headers.get('x-forwarded-host');
-  const forwardedProto = request.headers.get('x-forwarded-proto') ?? 'https';
-
-  if (process.env.NODE_ENV === 'development') {
-    return `${origin}${nextPath}`;
-  }
-  if (forwardedHost) {
-    return `${forwardedProto}://${forwardedHost}${nextPath}`;
-  }
-  return `${origin}${nextPath}`;
-}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -29,7 +16,7 @@ export async function GET(request: Request) {
       error: oauthError,
       description: errorDescription,
     });
-    return NextResponse.redirect(postLoginRedirectUrl(request, '/my-move?auth=error'));
+    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error', request));
   }
 
   if (code) {
@@ -46,10 +33,10 @@ export async function GET(request: Request) {
           console.error('[auth/callback] ensureUserProfile failed', profileErr);
         }
       }
-      return NextResponse.redirect(postLoginRedirectUrl(request, next));
+      return NextResponse.redirect(productionAuthRedirect(next, request));
     }
     console.error('[auth/callback] exchangeCodeForSession failed', error.message);
   }
 
-  return NextResponse.redirect(postLoginRedirectUrl(request, '/my-move?auth=error'));
+  return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error', request));
 }
