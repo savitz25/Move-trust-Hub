@@ -11,6 +11,7 @@ import {
   GUIDES_NAV,
   MOVE_DIRECT_NAV,
 } from '@/lib/nav/move-nav-config';
+import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
 import { cn } from '@/lib/utils';
 
 const tapTarget =
@@ -68,6 +69,7 @@ export function MoveMobileNav() {
 
   return (
     <div className="flex lg:hidden items-center gap-2">
+      <MyMoveNavLink variant="mobile-header" onNavigate={close} />
       <Button size="sm" asChild className="min-h-[44px] px-3">
         <Link prefetch={false} href="/moving-calculator" onClick={close}>
           Calculator
@@ -87,6 +89,7 @@ export function MoveMobileNav() {
       {isOpen ? (
         <div className="absolute left-0 right-0 top-full z-50 border-t bg-background px-4 py-4 shadow-md max-h-[min(80vh,640px)] overflow-y-auto overscroll-contain">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-1 text-sm">
+            <MyMoveNavLink variant="mobile-menu" onNavigate={close} />
             <MobileAccordionSection
               title="Find Movers"
               open={openSection === 'movers'}

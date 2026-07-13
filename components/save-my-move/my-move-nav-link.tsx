@@ -1,0 +1,104 @@
+'use client';
+
+import Link from 'next/link';
+import { Heart } from 'lucide-react';
+import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
+import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
+
+type MyMoveNavLinkProps = {
+  variant: 'desktop' | 'mobile-header' | 'mobile-menu';
+  onNavigate?: () => void;
+  className?: string;
+};
+
+export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkProps) {
+  const ctx = useSaveMyMoveOptional();
+  const user = ctx?.user;
+  const loading = ctx?.loading ?? true;
+
+  if (loading || !user) return null;
+
+  const savedCount = ctx.savedMoverSlugs.size;
+  const showBadge = savedCount > 0;
+
+  const label = (
+    <>
+      <Heart
+        className={cn(
+          'shrink-0',
+          variant === 'mobile-header' ? 'h-5 w-5' : 'h-4 w-4',
+          showBadge && 'fill-primary text-primary'
+        )}
+        aria-hidden="true"
+      />
+      {variant !== 'mobile-header' ? <span>My Move</span> : null}
+      {showBadge ? (
+        <Badge
+          variant="default"
+          className={cn(
+            'min-w-[1.25rem] justify-center px-1.5 py-0 text-[10px] leading-none tabular-nums',
+            variant === 'mobile-header' && 'absolute -top-1 -right-1 h-4 min-w-4 px-1 text-[9px]'
+          )}
+          aria-label={`${savedCount} saved movers`}
+        >
+          {savedCount > 99 ? '99+' : savedCount}
+        </Badge>
+      ) : null}
+    </>
+  );
+
+  if (variant === 'mobile-header') {
+    return (
+      <Link
+        prefetch={false}
+        href="/my-move"
+        onClick={onNavigate}
+        className={cn(
+          'relative inline-flex h-11 w-11 items-center justify-center rounded-md text-primary',
+          'hover:bg-primary/10 active:bg-primary/15 transition-colors',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30',
+          className
+        )}
+        aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
+      >
+        {label}
+      </Link>
+    );
+  }
+
+  if (variant === 'mobile-menu') {
+    return (
+      <Link
+        prefetch={false}
+        href="/my-move"
+        onClick={onNavigate}
+        className={cn(
+          'flex items-center gap-2 rounded-lg border border-primary/25 bg-primary/5 px-3 py-3',
+          'font-semibold text-primary hover:bg-primary/10 active:bg-primary/15 transition-colors',
+          'min-h-[48px] mb-2',
+          className
+        )}
+      >
+        {label}
+      </Link>
+    );
+  }
+
+  return (
+    <Link
+      prefetch={false}
+      href="/my-move"
+      onClick={onNavigate}
+      className={cn(
+        'inline-flex items-center gap-1.5 rounded-md px-2 py-1 -my-1',
+        'font-semibold text-primary hover:text-primary/90 hover:bg-primary/5 transition-colors whitespace-nowrap',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30',
+        className
+      )}
+      aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
+    >
+      {label}
+    </Link>
+  );
+}

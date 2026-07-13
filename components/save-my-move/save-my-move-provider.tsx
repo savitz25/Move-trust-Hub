@@ -51,6 +51,11 @@ export function useSaveMyMove() {
   return ctx;
 }
 
+/** Safe for navbar chrome while DeferredSaveMyMove hydrates — returns null outside provider. */
+export function useSaveMyMoveOptional() {
+  return useContext(Ctx);
+}
+
 export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { NavMegaDropdown } from '@/components/nav/nav-mega-dropdown';
 import { DestinationsMegaMenuLazy } from '@/components/navbar/destinations-mega-menu-lazy';
+import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
 import {
   FIND_MOVERS_NAV,
   GUIDES_NAV,
@@ -32,6 +33,7 @@ export function MoveDesktopNav() {
         panelWidth="lg"
         align="end"
       />
+      <MyMoveNavLink variant="desktop" />
     </div>
   );
 }
