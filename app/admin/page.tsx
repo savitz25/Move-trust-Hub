@@ -95,6 +95,9 @@ export default function AdminDashboard() {
           <Button variant="outline" asChild>
             <Link href="/admin/quotes">Quote Analytics</Link>
           </Button>
+          <Button variant="outline" asChild>
+            <Link href="/admin/my-move-users">My Move Users</Link>
+          </Button>
           <Button onClick={startNew}>+ Add New Company</Button>
         </div>
       </div>

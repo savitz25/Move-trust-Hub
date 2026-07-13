@@ -6,6 +6,7 @@ import { requireAuthenticatedUser } from '@/lib/save-my-move/auth';
 import type { InventoryItem } from '@/store/calculator-store';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
 import type { CompanySummary } from '@/lib/save-my-move/dashboard-types';
+import { logMyMoveActivity } from '@/lib/save-my-move/activity-log';
 import { inventoryToJson, type SavedInventoryPayload } from '@/lib/save-my-move/types';
 
 function inventoryTotals(inventory: InventoryItem[]) {
@@ -43,6 +44,7 @@ export async function saveInventoryAction(input: {
       .single();
     if (error) throw new Error(error.message);
     revalidatePath('/my-move');
+    await logMyMoveActivity(user.id, 'save_inventory', { inventoryId: data.id, name });
     return { id: data.id };
   }
 
@@ -61,6 +63,7 @@ export async function saveInventoryAction(input: {
     .single();
   if (error) throw new Error(error.message);
   revalidatePath('/my-move');
+  await logMyMoveActivity(user.id, 'save_inventory', { inventoryId: data.id, name });
   return { id: data.id };
 }
 
@@ -93,6 +96,10 @@ export async function saveMoverAction(input: { companySlug: string; notes?: stri
     .single();
   if (error) throw new Error(error.message);
   revalidatePath('/my-move');
+  await logMyMoveActivity(user.id, 'save_mover', {
+    companySlug: input.companySlug,
+    savedMoverId: data.id,
+  });
   return { id: data.id };
 }
 
@@ -150,6 +157,10 @@ export async function saveComparisonAction(input: {
       .single();
     if (error) throw new Error(error.message);
     revalidatePath('/my-move');
+    await logMyMoveActivity(user.id, 'save_comparison', {
+      comparisonId: data.id,
+      companySlugs: input.companySlugs,
+    });
     return { id: data.id };
   }
 
@@ -164,6 +175,10 @@ export async function saveComparisonAction(input: {
     .single();
   if (error) throw new Error(error.message);
   revalidatePath('/my-move');
+  await logMyMoveActivity(user.id, 'save_comparison', {
+    comparisonId: data.id,
+    companySlugs: input.companySlugs,
+  });
   return { id: data.id };
 }
 

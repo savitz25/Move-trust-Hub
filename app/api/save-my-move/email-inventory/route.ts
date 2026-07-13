@@ -14,6 +14,7 @@ import {
   buildInventoryReportEmailText,
   buildInventoryReportSubject,
 } from '@/lib/emails/inventory-report';
+import { logMyMoveActivity } from '@/lib/save-my-move/activity-log';
 
 export const runtime = 'nodejs';
 
@@ -144,6 +145,13 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+
+    await logMyMoveActivity(user.id, 'email_inventory', {
+      inventoryName,
+      totalItems,
+      totalVolume,
+      resendId: data?.id ?? null,
+    });
 
     return NextResponse.json({
       success: true,

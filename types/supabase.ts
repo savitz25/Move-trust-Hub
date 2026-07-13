@@ -537,6 +537,22 @@ export type Database = {
         Update: Partial<Database['public']['Tables']['magic_link_ip_rate_limits']['Row']>;
         Relationships: [];
       };
+      my_move_activity_events: {
+        Row: {
+          id: string;
+          user_id: string;
+          event_type: string;
+          metadata: Json;
+          created_at: string;
+        };
+        Insert: {
+          user_id: string;
+          event_type: string;
+          metadata?: Json;
+        };
+        Update: Partial<Database['public']['Tables']['my_move_activity_events']['Row']>;
+        Relationships: [];
+      };
     };
     Views: {
       quote_analytics_summary: {
@@ -550,7 +566,26 @@ export type Database = {
       };
     };
     Functions: {
-      [_ in never]: never;
+      admin_list_my_move_users: {
+        Args: {
+          p_search?: string;
+          p_sort_column?: string;
+          p_sort_dir?: string;
+          p_limit?: number;
+          p_offset?: number;
+        };
+        Returns: {
+          user_id: string;
+          email: string;
+          account_created_at: string;
+          last_active_at: string;
+          inventory_count: number;
+          mover_count: number;
+          comparison_count: number;
+          emails_sent: number;
+          total_count: number;
+        }[];
+      };
     };
     Enums: {
       [_ in never]: never;

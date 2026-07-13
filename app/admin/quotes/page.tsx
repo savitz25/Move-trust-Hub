@@ -38,6 +38,9 @@ export default async function AdminQuotesPage() {
             <Link href="/admin/bbb">BBB Refresh</Link>
           </Button>
           <Button variant="outline" asChild>
+            <Link href="/admin/my-move-users">My Move Users</Link>
+          </Button>
+          <Button variant="outline" asChild>
             <Link href="/admin/reviews">Review Moderation</Link>
           </Button>
           <Button variant="outline" asChild>
