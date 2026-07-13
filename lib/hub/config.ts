@@ -6,7 +6,9 @@ import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 /** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
 export const TRUST_HUB_LOGO = {
   src: '/logo.png',
-  alt: 'Move Trust Hub — compare FMCSA-licensed interstate movers',
+  alt: 'Move Trust Hub',
+  width: 759,
+  height: 239,
 } as const;
 
 /** Five high-intent items — detailed links live in footer and guide pages. */
@@ -74,7 +76,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     shortName: 'Lender',
     tagline: 'NMLS-verified mortgage lenders and county-level insights.',
     logoSrc: TRUST_HUB_LOGO.src,
-    headerLogoSrc: '/lender/brand/lender-trust-hub-logo-nav.svg',
+    headerLogoSrc: TRUST_HUB_LOGO.src,
     logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-[#3B82F6]',
     homeTitle: 'Trusted Local Mortgage Lenders (2026) | NMLS-Verified Directory',
@@ -127,7 +129,7 @@ export const HUBS: Record<HubId, HubConfig> = {
     shortName: 'Insurance',
     tagline: 'DOI-verified agents with health insurance hub coverage.',
     logoSrc: TRUST_HUB_LOGO.src,
-    headerLogoSrc: '/insurance/brand/insurance-trust-hub-icon-192.png',
+    headerLogoSrc: TRUST_HUB_LOGO.src,
     logoAlt: TRUST_HUB_LOGO.alt,
     accentClass: 'text-emerald-600',
     homeTitle: 'Trusted Local Insurance Agents (2026) | DOI-Verified Directory',

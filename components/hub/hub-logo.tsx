@@ -1,6 +1,6 @@
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { DEFAULT_IMAGE_QUALITY, IMAGE_SIZES } from '@/lib/images/constants';
-import { getHubConfig } from '@/lib/hub/config';
+import { getHubConfig, TRUST_HUB_LOGO } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
 
 /** Optimized header logo — headerLogoSrc + fixed slot to prevent CLS. */
@@ -21,8 +21,8 @@ export function HubLogo({
       <OptimizedImage
         src={src}
         alt={hub.logoAlt}
-        width={300}
-        height={75}
+        width={TRUST_HUB_LOGO.width}
+        height={TRUST_HUB_LOGO.height}
         quality={DEFAULT_IMAGE_QUALITY}
         priority={priority}
         fetchPriority={priority ? 'high' : 'auto'}

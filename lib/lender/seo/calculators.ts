@@ -26,7 +26,7 @@ export function calculatorsPageSchema() {
         '@id': `${SITE}/#organization`,
         name: 'Lender Trust Hub',
         url: SITE,
-        logo: `${SITE}/brand/lender-trust-hub-logo-stacked.png`,
+        logo: 'https://www.movetrusthub.com/logo.png',
         description: 'Independent NMLS-verified mortgage lender directory. Zero paid placements.',
         sameAs: ['https://www.movetrusthub.com'],
       },

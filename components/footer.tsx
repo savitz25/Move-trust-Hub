@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { IMAGE_SIZES } from '@/lib/images/constants';
+import { TRUST_HUB_LOGO } from '@/lib/hub/config';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { SITE_EMAIL } from '@/lib/contact';
 export function Footer() {
@@ -14,10 +15,10 @@ export function Footer() {
             <Link prefetch={false} href="/" className="flex items-center gap-2 font-semibold text-base tracking-tight">
               <span className="relative block h-12 w-[192px] shrink-0" aria-hidden="true">
                 <OptimizedImage
-                  src="/logo.png"
-                  alt="Move Trust Hub logo — compare licensed long-distance movers"
+                  src={TRUST_HUB_LOGO.src}
+                  alt={TRUST_HUB_LOGO.alt}
                   width={192}
-                  height={48}
+                  height={60}
                   loading="lazy"
                   sizes={IMAGE_SIZES.footerLogo}
                   className="h-12 w-[192px] object-contain object-left"

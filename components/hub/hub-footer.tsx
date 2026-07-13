@@ -26,7 +26,7 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
                   src={hub.logoSrc}
                   alt={hub.logoAlt}
                   width={192}
-                  height={48}
+                  height={60}
                   quality={DEFAULT_IMAGE_QUALITY}
                   loading="lazy"
                   sizes={IMAGE_SIZES.footerLogo}
