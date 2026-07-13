@@ -31,6 +31,7 @@ import {
   trackSaveMyMoveInventory,
   trackSaveMyMoveMover,
 } from '@/components/ga-events';
+import { emailMoverDetailsClient } from '@/lib/save-my-move/email-mover-client';
 import { toast } from 'sonner';
 
 type SaveMyMoveContextValue = {
@@ -99,7 +100,17 @@ export function SaveMyMoveProvider({ children }: { children: React.ReactNode }) 
           await saveMoverAction({ companySlug: pending.payload.companySlug });
           markMoverSaved(pending.payload.companySlug);
           trackSaveMyMoveMover({ company_slug: pending.payload.companySlug });
-          toast.success(`${pending.payload.companyName} saved to your shortlist`);
+          if (pending.payload.sendEmail) {
+            const emailResult = await emailMoverDetailsClient(pending.payload.companySlug);
+            if (emailResult.success) {
+              toast.success(`We emailed you details about ${pending.payload.companyName}`);
+            } else {
+              toast.success(`${pending.payload.companyName} saved to your shortlist`);
+              toast.error(emailResult.error ?? 'Could not send email');
+            }
+          } else {
+            toast.success(`${pending.payload.companyName} saved to your shortlist`);
+          }
           break;
         }
         case 'comparison': {

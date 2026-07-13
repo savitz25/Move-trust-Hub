@@ -11,13 +11,13 @@ import { CompanyVerificationBadges } from '@/components/trust/company-verificati
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import {
   companyProfileHref,
-  formatAvgPricePerMove,
   formatCompanyHeadquarters,
   formatFoundedLabel,
   normalizeCompanyForDisplay,
 } from '@/lib/directory/normalize-company';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { MethodologyLink } from '@/components/trust/methodology-link';
+import { MoverEmailButton } from '@/components/save-my-move/mover-email-button';
 import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
 
 type CompareStore = {
@@ -99,14 +99,14 @@ export function CompanyCard({ company: rawCompany, compareStore }: Props) {
       </div>
 
       <div className="border-t px-5 py-3.5 bg-muted/20 flex items-center justify-between text-sm gap-3">
-        <div className="min-w-0">
-          <MethodologyLink anchor="reputationScore" className="font-semibold tabular-nums no-underline">
-            {company.reputationScore}
-          </MethodologyLink>
-          <span className="text-muted-foreground">
-            {' '}
-            rep • {formatAvgPricePerMove(company.avgPricePerMove)}
-          </span>
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="min-w-0">
+            <MethodologyLink anchor="reputationScore" className="font-semibold tabular-nums no-underline">
+              {company.reputationScore}
+            </MethodologyLink>
+            <span className="text-muted-foreground"> rep</span>
+          </div>
+          <MoverEmailButton companySlug={company.slug} companyName={company.name} />
         </div>
         <div className="flex gap-2 shrink-0 items-center">
           <SaveMoverButton companySlug={company.slug} companyName={company.name} />

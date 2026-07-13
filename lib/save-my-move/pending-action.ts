@@ -17,6 +17,7 @@ export type PendingMoverAction = {
   payload: {
     companySlug: string;
     companyName: string;
+    sendEmail?: boolean;
   };
 };
 
