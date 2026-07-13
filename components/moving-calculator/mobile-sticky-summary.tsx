@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ChevronUp, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SaveInventoryButton } from '@/components/save-my-move/save-inventory-button';
 import { AnimatedNumber } from '@/components/moving-calculator/animated-number';
 import { MobileBottomSheet } from '@/components/moving-calculator/mobile-bottom-sheet';
 import { MoveSummaryBody, type MoveSummaryBodyProps } from '@/components/moving-calculator/move-summary-body';
@@ -17,7 +18,7 @@ type MobileStickySummaryProps = MoveSummaryBodyProps;
  * Desktop/tablet uses the sidebar MoveBasketSummary instead.
  */
 export function MobileStickySummary(props: MobileStickySummaryProps) {
-  const { totalVolume, totalItems } = props;
+  const { totalVolume, totalItems, inventory, mode, movePreset } = props;
   const [sheetOpen, setSheetOpen] = useState(false);
   const [keyboardOffset, setKeyboardOffset] = useState(0);
 
@@ -80,10 +81,17 @@ export function MobileStickySummary(props: MobileStickySummaryProps) {
 
         {totalVolume > 0 && (
           <div className="flex gap-2 px-4 pb-3">
-            <Button size="lg" className="flex-1 min-h-12 text-sm font-semibold" asChild>
-              <Link href="/companies">Get free quotes</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="min-h-12 px-4" asChild>
+            <SaveInventoryButton
+              inventory={inventory}
+              mode={mode}
+              movePreset={movePreset}
+              totalVolume={totalVolume}
+              variant="default"
+              size="lg"
+              label="Save for later"
+              className="flex-1 min-h-12 text-sm font-semibold"
+            />
+            <Button size="lg" variant="outline" className="min-h-12 px-4 shrink-0" asChild>
               <Link href="/compare">Compare</Link>
             </Button>
           </div>
@@ -100,7 +108,7 @@ export function MobileStickySummary(props: MobileStickySummaryProps) {
         open={sheetOpen}
         onOpenChange={setSheetOpen}
         title="Your Move Basket"
-        description="Live estimate · auto-saved on this device"
+        description="Live estimate · save to My Move to pick up on any device"
       >
         <MoveSummaryBody {...props} touchFriendly />
       </MobileBottomSheet>

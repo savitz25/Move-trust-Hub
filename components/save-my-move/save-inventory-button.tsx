@@ -9,6 +9,7 @@ import { stashPendingSaveAction } from '@/lib/save-my-move/pending-action';
 import type { InventoryItem } from '@/store/calculator-store';
 import { trackSaveMyMoveInventory } from '@/components/ga-events';
 import { toast } from 'sonner';
+import { cn } from '@/lib/utils';
 
 type SaveInventoryButtonProps = {
   inventory: InventoryItem[];
@@ -18,6 +19,8 @@ type SaveInventoryButtonProps = {
   variant?: 'default' | 'outline' | 'ghost';
   size?: 'default' | 'sm' | 'lg';
   className?: string;
+  /** Button label (default: "Save this inventory") */
+  label?: string;
 };
 
 export function SaveInventoryButton({
@@ -28,6 +31,7 @@ export function SaveInventoryButton({
   variant = 'outline',
   size = 'sm',
   className,
+  label = 'Save this inventory',
 }: SaveInventoryButtonProps) {
   const { requireAuth, user, loading } = useSaveMyMove();
   const [saving, setSaving] = useState(false);
@@ -77,8 +81,8 @@ export function SaveInventoryButton({
       onClick={handleSave}
       disabled={saving || loading}
     >
-      <Bookmark className="h-3.5 w-3.5 mr-1.5" />
-      {saving ? 'Saving…' : 'Save this inventory'}
+      <Bookmark className={cn('shrink-0', size === 'lg' ? 'h-4 w-4 mr-2' : 'h-3.5 w-3.5 mr-1.5')} />
+      {saving ? 'Saving…' : label}
     </Button>
   );
 }
