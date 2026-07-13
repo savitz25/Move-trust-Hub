@@ -9,11 +9,20 @@ type AuthSettingsExternal = Partial<Record<SaveMyMoveOAuthProvider, boolean>>;
 export type OAuthProviderSettingsSnapshot = {
   projectRef: string | null;
   providers: AuthSettingsExternal;
+  rawExternal?: AuthSettingsExternal;
   fetchedAt: string;
+  httpStatus?: number;
 };
 
-/** Live provider flags from Supabase — never cached (settings API can lag the dashboard). */
-export async function fetchOAuthProviderSettings(): Promise<OAuthProviderSettingsSnapshot> {
+const SUPABASE_PROJECT_REF = 'uvqkyupfnpswdozmuzih';
+
+/**
+ * Live provider flags from Supabase — always force-refreshed (never cached).
+ * Settings API can lag the dashboard; advisory only — never block OAuth on this.
+ */
+export async function fetchOAuthProviderSettings(
+  options: { forceRefresh?: boolean } = {}
+): Promise<OAuthProviderSettingsSnapshot> {
   const url = getSupabaseUrl();
   const anonKey = getSupabaseAnonKey();
   const projectRef = getSupabaseProjectRef();
@@ -22,44 +31,51 @@ export async function fetchOAuthProviderSettings(): Promise<OAuthProviderSetting
     return { projectRef, providers: {}, fetchedAt: new Date().toISOString() };
   }
 
+  const cacheBuster = options.forceRefresh !== false ? `?_=${Date.now()}` : '';
+
   try {
-    const res = await fetch(`${url}/auth/v1/settings`, {
-      headers: { apikey: anonKey },
+    const res = await fetch(`${url}/auth/v1/settings${cacheBuster}`, {
+      headers: {
+        apikey: anonKey,
+        'Cache-Control': 'no-cache, no-store',
+        Pragma: 'no-cache',
+      },
       cache: 'no-store',
     });
     if (!res.ok) {
-      return { projectRef, providers: {}, fetchedAt: new Date().toISOString() };
+      return {
+        projectRef,
+        providers: {},
+        fetchedAt: new Date().toISOString(),
+        httpStatus: res.status,
+      };
     }
     const settings = (await res.json()) as { external?: AuthSettingsExternal };
+    const external = settings.external ?? {};
     return {
       projectRef,
-      providers: settings.external ?? {},
+      providers: external,
+      rawExternal: external,
       fetchedAt: new Date().toISOString(),
+      httpStatus: res.status,
     };
   } catch {
     return { projectRef, providers: {}, fetchedAt: new Date().toISOString() };
   }
 }
 
-/**
- * Advisory check only — do NOT block OAuth on this result.
- * Supabase /auth/v1/settings can report false while signInWithOAuth still works.
- */
-export async function isOAuthProviderEnabled(
-  provider: SaveMyMoveOAuthProvider
-): Promise<boolean> {
-  const { providers } = await fetchOAuthProviderSettings();
-  return providers[provider] === true;
-}
-
 export function getSupabaseProjectRef(): string | null {
   const url = getSupabaseUrl();
-  if (!url) return null;
+  if (!url) return SUPABASE_PROJECT_REF;
   try {
-    return new URL(url).hostname.split('.')[0] ?? null;
+    return new URL(url).hostname.split('.')[0] ?? SUPABASE_PROJECT_REF;
   } catch {
-    return null;
+    return SUPABASE_PROJECT_REF;
   }
+}
+
+export function getSupabaseProjectIdForErrors(): string {
+  return getSupabaseProjectRef() ?? SUPABASE_PROJECT_REF;
 }
 
 /** Map Supabase OAuth errors to user-facing redirect reasons. */

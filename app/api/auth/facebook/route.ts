@@ -3,12 +3,15 @@ import { isSupabaseConfigured } from '@/lib/supabase/config';
 import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import {
   oauthErrorRedirect,
-  startOAuthSignIn,
+  startFacebookOAuthSignIn,
 } from '@/lib/save-my-move/start-oauth-sign-in';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 /**
- * Server-side Facebook OAuth kickoff — single source of truth for redirectTo.
- * Provider availability is determined by signInWithOAuth, not the settings API.
+ * Facebook OAuth kickoff — never blocks on settings API.
+ * Uses signInWithOAuth first, then manual authorize URL fallback.
  */
 export async function GET(request: Request) {
   if (!isSupabaseConfigured()) {
@@ -17,14 +20,19 @@ export async function GET(request: Request) {
     );
   }
 
-  const result = await startOAuthSignIn({
-    provider: 'facebook',
-    scopes: 'email public_profile',
-  });
+  const result = await startFacebookOAuthSignIn();
 
   if (!result.ok) {
-    return NextResponse.redirect(oauthErrorRedirect(result.reason, request));
+    console.error('[auth/facebook] kickoff failed', {
+      reason: result.reason,
+      detail: result.detail,
+      diagnostics: result.diagnostics,
+    });
+    return NextResponse.redirect(
+      oauthErrorRedirect(result.reason, request, result.detail ? { detail: result.detail } : undefined)
+    );
   }
 
+  console.info('[auth/facebook] redirecting to OAuth', { method: result.method });
   return NextResponse.redirect(result.redirectUrl);
 }
