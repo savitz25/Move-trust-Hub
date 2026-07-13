@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { TRUST_HUB_LOGO } from '@/lib/hub/config';
 import { SITE_NAME, SITE_URL } from '@/lib/insurance/constants';
 
 export { SITE_URL };
@@ -12,10 +13,10 @@ export const DEFAULT_SITE_DESCRIPTION =
   'Insurance Trust Hub is an independent directory of licensed insurance agencies. Research providers, read verified reviews, and request quotes for auto, home, life, and business insurance.';
 
 export const OG_IMAGE = {
-  url: '/logo.png',
-  width: 759,
-  height: 239,
-  alt: 'Move Trust Hub',
+  url: TRUST_HUB_LOGO.src,
+  width: TRUST_HUB_LOGO.width,
+  height: TRUST_HUB_LOGO.height,
+  alt: TRUST_HUB_LOGO.alt,
 } as const;
 
 export function buildOpenGraph(
@@ -114,8 +115,8 @@ export const rootLayoutMetadata: Metadata = {
   ],
   authors: [{ name: SITE_NAME }],
   icons: {
-    icon: [{ url: '/logo.png', type: 'image/png' }],
-    apple: [{ url: '/logo.png', type: 'image/png' }],
+    icon: [{ url: TRUST_HUB_LOGO.src, type: 'image/png' }],
+    apple: [{ url: TRUST_HUB_LOGO.src, type: 'image/png' }],
   },
   openGraph: buildOpenGraph(),
   twitter: buildTwitter(),

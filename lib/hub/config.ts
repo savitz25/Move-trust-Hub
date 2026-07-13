@@ -3,13 +3,21 @@ import { hubPath } from '@/lib/hub/paths';
 import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
+/** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
+export const TRUST_HUB_LOGO_VERSION = '20260713';
+
 /** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
 export const TRUST_HUB_LOGO = {
-  src: '/logo.png',
+  src: `/logo.png?v=${TRUST_HUB_LOGO_VERSION}`,
   alt: 'Move Trust Hub',
-  width: 759,
-  height: 239,
+  width: 712,
+  height: 192,
 } as const;
+
+/** Absolute logo URL for emails, JSON-LD, and external embeds. */
+export function trustHubLogoUrl(baseUrl = 'https://www.movetrusthub.com'): string {
+  return `${baseUrl}/logo.png?v=${TRUST_HUB_LOGO_VERSION}`;
+}
 
 /** Five high-intent items — detailed links live in footer and guide pages. */
 const MOVE_NAV = [...MOVE_PRIMARY_NAV];

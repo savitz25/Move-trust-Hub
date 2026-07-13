@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { TRUST_HUB_LOGO } from '@/lib/hub/config';
 
 export const SITE_URL = 'https://www.movetrusthub.com';
 export const SITE_NAME = 'Move Trust Hub';
@@ -115,8 +116,8 @@ export const rootLayoutMetadata: Metadata = {
   ],
   authors: [{ name: SITE_NAME }],
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: TRUST_HUB_LOGO.src,
+    apple: TRUST_HUB_LOGO.src,
   },
   manifest: '/manifest.webmanifest',
   openGraph: buildOpenGraph(),

@@ -4,6 +4,7 @@ import {
   getPrimaryEditorForContent,
 } from '@/lib/trust/editorial-team';
 import { RESOURCES_CONTENT_UPDATED } from '@/lib/seo/content-dates';
+import { trustHubLogoUrl } from '@/lib/hub/config';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import type { RouteGuide } from '@/lib/resources/routes';
 import type { RouteGuideExtendedContent } from '@/lib/resources/routes/types';
@@ -53,7 +54,7 @@ export function buildRouteGuideSchemaGraph(
         name: 'Move Trust Hub',
         logo: {
           '@type': 'ImageObject',
-          url: `${SITE_URL}/logo.png`,
+          url: trustHubLogoUrl(SITE_URL),
         },
       },
       mainEntityOfPage: canonical,

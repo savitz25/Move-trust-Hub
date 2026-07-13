@@ -1,4 +1,5 @@
 import { SITE_EMAIL } from '@/lib/contact';
+import { trustHubLogoUrl } from '@/lib/hub/config';
 
 const SITE_URL = 'https://www.movetrusthub.com';
 
@@ -7,7 +8,7 @@ export const organizationSchema = {
   '@id': `${SITE_URL}/#organization`,
   name: 'Move Trust Hub',
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: trustHubLogoUrl(SITE_URL),
   email: SITE_EMAIL,
   contactPoint: {
     '@type': 'ContactPoint',

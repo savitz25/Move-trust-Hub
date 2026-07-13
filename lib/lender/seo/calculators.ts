@@ -1,3 +1,4 @@
+import { trustHubLogoUrl } from '@/lib/hub/config';
 import { CALCULATORS } from '@/lib/lender/calculators/registry';
 
 const SITE = 'https://www.movetrusthub.com/lender';
@@ -26,7 +27,7 @@ export function calculatorsPageSchema() {
         '@id': `${SITE}/#organization`,
         name: 'Lender Trust Hub',
         url: SITE,
-        logo: 'https://www.movetrusthub.com/logo.png',
+        logo: trustHubLogoUrl(),
         description: 'Independent NMLS-verified mortgage lender directory. Zero paid placements.',
         sameAs: ['https://www.movetrusthub.com'],
       },

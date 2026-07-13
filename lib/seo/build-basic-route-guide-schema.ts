@@ -1,5 +1,6 @@
 import { organizationSchema } from '@/lib/seo/schemas';
 import { RESOURCES_CONTENT_UPDATED } from '@/lib/seo/content-dates';
+import { trustHubLogoUrl } from '@/lib/hub/config';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import type { RouteGuide } from '@/lib/resources/routes';
 
@@ -49,7 +50,7 @@ export function buildBasicRouteGuideSchemaGraph(route: RouteGuide, path: string)
           name: 'Move Trust Hub',
           logo: {
             '@type': 'ImageObject',
-            url: `${SITE_URL}/logo.png`,
+            url: trustHubLogoUrl(SITE_URL),
           },
         },
         mainEntityOfPage: canonical,

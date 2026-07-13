@@ -1,5 +1,5 @@
 import { SITE_EMAIL } from '@/lib/contact';
-import { getHubConfig } from '@/lib/hub/config';
+import { getHubConfig, trustHubLogoUrl } from '@/lib/hub/config';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
 import { SITE_URL } from '@/lib/seo/site-metadata';
@@ -9,7 +9,7 @@ const PARENT_ORG = {
   '@id': `${SITE_URL}/#organization`,
   name: 'Move Trust Hub',
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: trustHubLogoUrl(SITE_URL),
   email: SITE_EMAIL,
   description:
     'Independent Trust Hub network for verified movers, mortgage lenders, and insurance agents in the United States.',

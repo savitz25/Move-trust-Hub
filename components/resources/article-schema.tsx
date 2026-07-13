@@ -1,6 +1,7 @@
 import { JsonLd } from '@/lib/seo/json-ld';
 import { hubCanonicalUrl } from '@/lib/hub/paths';
 import type { HubId } from '@/lib/hub/types';
+import { trustHubLogoUrl } from '@/lib/hub/config';
 import { getSiteNameForHub } from '@/lib/seo/site-metadata';
 
 const SITE_URL = 'https://www.movetrusthub.com';
@@ -53,7 +54,7 @@ export function ArticleSchema({
               name: siteName,
               logo: {
                 '@type': 'ImageObject',
-                url: `${SITE_URL}/logo.png`,
+                url: trustHubLogoUrl(SITE_URL),
               },
             },
             mainEntityOfPage: url,

@@ -1,3 +1,4 @@
+import { trustHubLogoUrl } from '@/lib/hub/config';
 import { SITE_EMAIL, SITE_NAME, SITE_URL } from '@/lib/insurance/constants';
 import type { Provider } from '@/types/insurance/provider';
 
@@ -6,7 +7,7 @@ export const organizationSchema = {
   '@id': `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
-  logo: 'https://www.movetrusthub.com/logo.png',
+  logo: trustHubLogoUrl(),
   email: SITE_EMAIL,
   contactPoint: {
     '@type': 'ContactPoint',
@@ -90,7 +91,7 @@ export function buildLocalBusinessSchema(provider: Provider) {
     '@type': 'LocalBusiness',
     '@id': `${SITE_URL}/providers/${provider.slug}/#localbusiness`,
     name: provider.name,
-    image: provider.logo ?? 'https://www.movetrusthub.com/logo.png',
+    image: provider.logo ?? trustHubLogoUrl(),
     url: provider.website ?? `${SITE_URL}/providers/${provider.slug}`,
     telephone: provider.phone ?? undefined,
     address: {

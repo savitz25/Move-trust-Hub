@@ -1,3 +1,4 @@
+import { trustHubLogoUrl } from '@/lib/hub/config';
 import {
   CALIFORNIA_COUNTY_CONTENT_UPDATED,
   FLORIDA_COUNTY_CONTENT_UPDATED,
@@ -451,7 +452,7 @@ export function buildCountySchemaGraph({
       '@id': ORG_ID,
       name: 'Move Trust Hub',
       url: SITE_URL,
-      logo: `${SITE_URL}/logo.png`,
+      logo: trustHubLogoUrl(SITE_URL),
       sameAs: ['https://www.fmcsa.dot.gov/'],
     },
     {
