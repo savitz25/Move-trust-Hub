@@ -1,45 +1,30 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
+import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import {
-  AUTH_CALLBACK_URL,
-  ensureProductionOAuthUrl,
-  productionAuthRedirect,
-} from '@/lib/save-my-move/auth-redirect';
-import { isOAuthProviderEnabled } from '@/lib/save-my-move/auth-provider-enabled';
+  oauthErrorRedirect,
+  startOAuthSignIn,
+} from '@/lib/save-my-move/start-oauth-sign-in';
 
 /**
  * Server-side Facebook OAuth kickoff — single source of truth for redirectTo.
- * Client navigates here; Supabase returns the Facebook consent URL.
+ * Provider availability is determined by signInWithOAuth, not the settings API.
  */
-export async function GET() {
+export async function GET(request: Request) {
   if (!isSupabaseConfigured()) {
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=not_configured'));
+    return NextResponse.redirect(
+      productionAuthRedirect('/my-move?auth=error&reason=not_configured', request)
+    );
   }
 
-  if (!(await isOAuthProviderEnabled('facebook'))) {
-    console.error('[auth/facebook] Facebook provider disabled on Supabase project');
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=facebook_not_enabled'));
-  }
-
-  const supabase = await createClient();
-  const { data, error } = await supabase.auth.signInWithOAuth({
+  const result = await startOAuthSignIn({
     provider: 'facebook',
-    options: {
-      redirectTo: AUTH_CALLBACK_URL,
-      scopes: 'email public_profile',
-    },
+    scopes: 'email public_profile',
   });
 
-  if (error) {
-    console.error('[auth/facebook] signInWithOAuth failed', error.message);
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=facebook'));
+  if (!result.ok) {
+    return NextResponse.redirect(oauthErrorRedirect(result.reason, request));
   }
 
-  if (data.url) {
-    const safeUrl = ensureProductionOAuthUrl(data.url);
-    return NextResponse.redirect(safeUrl);
-  }
-
-  return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=facebook'));
+  return NextResponse.redirect(result.redirectUrl);
 }

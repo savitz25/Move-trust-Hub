@@ -1,46 +1,31 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
+import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import {
-  AUTH_CALLBACK_URL,
-  ensureProductionOAuthUrl,
-  productionAuthRedirect,
-} from '@/lib/save-my-move/auth-redirect';
-import { isOAuthProviderEnabled } from '@/lib/save-my-move/auth-provider-enabled';
+  oauthErrorRedirect,
+  startOAuthSignIn,
+} from '@/lib/save-my-move/start-oauth-sign-in';
 
 /**
  * Server-side Google OAuth kickoff — single source of truth for redirectTo.
- * Client navigates here; Supabase returns the Google consent URL.
+ * Provider availability is determined by signInWithOAuth, not the settings API.
  */
-export async function GET() {
+export async function GET(request: Request) {
   if (!isSupabaseConfigured()) {
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=not_configured'));
+    return NextResponse.redirect(
+      productionAuthRedirect('/my-move?auth=error&reason=not_configured', request)
+    );
   }
 
-  if (!(await isOAuthProviderEnabled('google'))) {
-    console.error('[auth/google] Google provider disabled on Supabase project');
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google_not_enabled'));
-  }
-
-  const supabase = await createClient();
-  const { data, error } = await supabase.auth.signInWithOAuth({
+  const result = await startOAuthSignIn({
     provider: 'google',
-    options: {
-      redirectTo: AUTH_CALLBACK_URL,
-      queryParams: { prompt: 'select_account' },
-      scopes: 'email profile',
-    },
+    scopes: 'email profile',
+    queryParams: { prompt: 'select_account' },
   });
 
-  if (error) {
-    console.error('[auth/google] signInWithOAuth failed', error.message);
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google'));
+  if (!result.ok) {
+    return NextResponse.redirect(oauthErrorRedirect(result.reason, request));
   }
 
-  if (data.url) {
-    const safeUrl = ensureProductionOAuthUrl(data.url);
-    return NextResponse.redirect(safeUrl);
-  }
-
-  return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error&reason=google'));
+  return NextResponse.redirect(result.redirectUrl);
 }
