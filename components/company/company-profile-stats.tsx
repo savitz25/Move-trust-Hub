@@ -35,11 +35,17 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
           tooltip={PROFILE_METRIC_TOOLTIPS.overallRating}
           methodologyAnchor="reviewAttribution"
         />
-        <div className="flex items-baseline gap-2 mt-1">
-          <StarRating rating={company.overallRating} size="lg" />
-          <span className="text-xs text-muted-foreground leading-snug">
+        <div
+          className="mt-1 flex flex-col gap-1"
+          aria-label={`Editorial star rating: ${company.overallRating.toFixed(1)} out of 5, based on ${company.reviewCount.toLocaleString()} industry-reported reviews`}
+        >
+          <StarRating rating={company.overallRating} size="lg" showNumber={false} />
+          <p className="text-3xl font-semibold tabular-nums leading-none">
+            {company.overallRating.toFixed(1)}
+          </p>
+          <p className="text-[11px] text-muted-foreground leading-snug">
             based on <EditorialReviewVolume count={company.reviewCount} />
-          </span>
+          </p>
         </div>
       </Card>
 
