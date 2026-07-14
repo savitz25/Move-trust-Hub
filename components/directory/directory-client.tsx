@@ -18,6 +18,7 @@ import { EditorialReviewVolume } from '@/components/trust/editorial-review-volum
 import { CompanyCard } from '@/components/directory/company-card';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { DirectoryEmptyState } from '@/components/directory/directory-empty-state';
+import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import {
   companyProfileHref,
   formatAvgPricePerMove,
@@ -418,6 +419,7 @@ export function DirectoryClient({
                 key={company.id || company.slug}
                 company={company}
                 compareStore={compareStore}
+                profileReturnPath={sourcePage}
               />
             ))}
           </div>
@@ -441,7 +443,9 @@ export function DirectoryClient({
                   const shipments = Math.max(Number(c.fmcsaShipments) || 0, 1);
                   const ratio = ((Number(c.fmcsaComplaints) || 0) / shipments * 1000).toFixed(1);
                   const selected = compareStore.isSelected(c.slug);
-                  const profileHref = companyProfileHref(c);
+                  const profileHref = sourcePage
+                    ? buildCompanyProfileHref(c.slug, sourcePage)
+                    : companyProfileHref(c);
                   return (
                     <tr key={c.id || c.slug} className="hover:bg-muted/40 border-b last:border-0">
                       <td className="pl-5 py-3 font-medium">

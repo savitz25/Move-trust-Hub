@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Star, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { LocalMover } from '@/lib/local-movers/types';
+import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
 import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
 import { assessLicense } from '@/lib/trust/license-verification';
@@ -12,11 +13,14 @@ export function LocalMoverCard({
   rank,
   countyLabel,
   stateCode,
+  profileReturnPath,
 }: {
   mover: LocalMover;
   rank: number;
   countyLabel?: string;
   stateCode?: string;
+  /** When set, profile links return to this page (e.g. county directory). */
+  profileReturnPath?: string;
 }) {
   const hasDirectoryProfile =
     Boolean(mover.profileSlug) ||
@@ -26,7 +30,9 @@ export function LocalMoverCard({
     (hasDirectoryProfile
       ? predictCompanyProfileSlug({ name: mover.name, usdot: mover.usdotNumber })
       : '');
-  const profileHref = profileSlug ? `/companies/${profileSlug}` : null;
+  const profileHref = profileSlug
+    ? buildCompanyProfileHref(profileSlug, profileReturnPath)
+    : null;
 
   const license = getLicenseDisplay(mover);
 

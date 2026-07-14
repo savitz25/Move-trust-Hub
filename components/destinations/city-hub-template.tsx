@@ -229,6 +229,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                   company={company}
                   rank={index + 1}
                   areaLabel={countyLabels[index] ?? destinationLabel}
+                  profileReturnPath={content.seo.canonicalPath}
                 />
               ))}
             </div>
@@ -245,6 +246,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                     rank={index + 1}
                     countyLabel={entry.countyLabel}
                     stateCode={entry.stateCode}
+                    profileReturnPath={content.seo.canonicalPath}
                   />
                 ))}
               </div>

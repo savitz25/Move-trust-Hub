@@ -17,7 +17,9 @@ import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CoverageAreaCard } from '@/components/map/coverage-area-card';
 import { getCompanyAssignmentStateSlugs } from '@/lib/map/company-assignment-state-slugs';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { CompanyProfileBack } from '@/components/directory/company-profile-back-link';
+import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import { MetricLabel } from '@/components/trust/metric-label';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 
@@ -41,6 +43,7 @@ export const revalidate = 60;
 
 interface Props {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ from?: string }>;
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -62,14 +65,15 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export default async function CompanyProfilePage({ params }: Props) {
+export default async function CompanyProfilePage({ params, searchParams }: Props) {
   const { slug } = await params;
+  const { from } = await searchParams;
   const company = await getCompanyBySlugAsync(slug);
 
   if (!company) notFound();
 
   if (company.slug !== slug) {
-    redirect(`/companies/${company.slug}`);
+    redirect(buildCompanyProfileHref(company.slug, from));
   }
 
   const reviews = await getReviews(company.id, 8);
@@ -108,9 +112,7 @@ export default async function CompanyProfilePage({ params }: Props) {
       <JsonLd data={buildCompanyDirectorySchemaGraph(company)} />
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <AdminRefreshVerificationShell companyId={company.id} />
-      <Link href="/companies" className="inline-flex items-center gap-1 text-sm mb-4 text-muted-foreground hover:text-foreground">
-        <ArrowLeft className="h-4 w-4" /> Back to Directory
-      </Link>
+      <CompanyProfileBack fromParam={from} />
 
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">

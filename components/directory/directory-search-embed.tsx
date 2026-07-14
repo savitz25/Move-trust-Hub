@@ -141,6 +141,7 @@ export function DirectorySearchEmbed({
                 key={company.id || company.slug}
                 company={company}
                 compareStore={compareStore}
+                profileReturnPath={sourcePage}
               />
             ))}
           </div>

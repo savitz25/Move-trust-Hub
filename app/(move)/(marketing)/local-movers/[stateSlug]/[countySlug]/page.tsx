@@ -528,6 +528,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                     rank={index + 1}
                     countyLabel={countyLabel}
                     stateCode={county.stateCode}
+                    profileReturnPath={path}
                   />
                 </li>
               ))}

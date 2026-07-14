@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
+import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import {
   companyProfileHref,
   formatCompanyHeadquarters,
@@ -29,13 +30,17 @@ type CompareStore = {
 type Props = {
   company: Company;
   compareStore: CompareStore;
+  /** When set, profile links return to this page (e.g. county directory). */
+  profileReturnPath?: string;
 };
 
-export function CompanyCard({ company: rawCompany, compareStore }: Props) {
+export function CompanyCard({ company: rawCompany, compareStore, profileReturnPath }: Props) {
   const company = normalizeCompanyForDisplay(rawCompany);
   const isSelected = compareStore.isSelected(company.slug);
   const canAdd = compareStore.canAddMore();
-  const profileHref = companyProfileHref(company);
+  const profileHref = profileReturnPath
+    ? buildCompanyProfileHref(company.slug, profileReturnPath)
+    : companyProfileHref(company);
   const foundedLabel = formatFoundedLabel(company.foundedYear);
   const locationLine = [
     formatCompanyHeadquarters(company.headquarters),
