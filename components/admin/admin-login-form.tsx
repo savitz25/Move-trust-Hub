@@ -26,6 +26,7 @@ export function AdminLoginForm({
       const res = await fetch('/admin/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
         body: JSON.stringify({ secret }),
       });
 
@@ -35,7 +36,7 @@ export function AdminLoginForm({
         return;
       }
 
-      const next = searchParams.get('next') || redirectTo || '/admin/quotes';
+      const next = searchParams.get('next') || redirectTo || '/admin';
       router.push(next);
       router.refresh();
     } catch {

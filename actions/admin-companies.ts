@@ -15,10 +15,7 @@ import {
   resolveGoogleDataFromRow,
   resolvePublicScrapeFromRow,
 } from '@/lib/verification/resolve-company-row';
-import { getCompaniesCached } from '@/lib/supabase/queries/companies';
-
-const LIST_SELECT =
-  'id, slug, name, headquarters, usdot_number, mc_number, authority_active, out_of_service, reputation_score, last_updated, overall_rating, review_count, bbb_rating, fmcsa_last_checked, bbb_last_checked, google_data, public_scrape_data';
+import { loadAdminCompaniesForDashboard } from '@/lib/admin/load-companies-dashboard';
 
 const DETAIL_SELECT = '*';
 
@@ -59,40 +56,8 @@ function buildAuditLog(row: Record<string, unknown>): AdminRefreshAuditEntry[] {
 
 export async function listAdminCompanies(): Promise<AdminCompanyListItem[]> {
   await assertAdminSession();
-
-  if (!isSupabaseAdminConfigured()) {
-    const seed = await getCompaniesCached();
-    return seed.map((c) =>
-      mapAdminListItem({
-        id: c.id,
-        slug: c.slug,
-        name: c.name,
-        headquarters: c.headquarters,
-        usdot_number: c.usdotNumber,
-        mc_number: c.mcNumber,
-        authority_active: c.authorityActive ?? c.isVerified,
-        out_of_service: c.outOfService,
-        reputation_score: c.reputationScore,
-        last_updated: c.lastUpdated,
-        overall_rating: c.overallRating,
-        review_count: c.reviewCount,
-        bbb_rating: c.bbbRating,
-        fmcsa_last_checked: c.fmcsaLastChecked,
-        bbb_last_checked: c.bbbLastChecked,
-        google_data: c.googleData,
-        public_scrape_data: c.publicScrapeData,
-      })
-    );
-  }
-
-  const admin = createAdminClient();
-  const { data, error } = await admin
-    .from('companies')
-    .select(LIST_SELECT)
-    .order('reputation_score', { ascending: false });
-
-  if (error) throw new Error(error.message);
-  return (data ?? []).map((row) => mapAdminListItem(row as Record<string, unknown>));
+  const result = await loadAdminCompaniesForDashboard();
+  return result.companies;
 }
 
 export async function getAdminCompanyDetail(companyId: string): Promise<AdminCompanyDetail | null> {

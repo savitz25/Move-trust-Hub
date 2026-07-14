@@ -12,7 +12,7 @@ export default function AdminLoginPage() {
       <p className="mt-2 text-sm text-muted-foreground">
         Sign in with your admin secret to view quote analytics and manage data.
       </p>
-      <AdminLoginForm className="mt-8" />
+      <AdminLoginForm className="mt-8" redirectTo="/admin" />
     </div>
   );
 }

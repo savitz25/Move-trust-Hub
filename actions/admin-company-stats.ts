@@ -1,10 +1,10 @@
 'use server';
 
-import { createClient } from '@supabase/supabase-js';
 import { assertAdminSession } from '@/lib/admin/auth';
 import { fullMoversCatalog } from '@/lib/local-movers/catalog';
 import { evaluateCuratedListing } from '@/lib/trust/curated-listing-policy';
-import { isSupabaseConfigured } from '@/lib/supabase/config';
+import { createAdminClient } from '@/lib/supabase/admin';
+import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 
 export type AdminCompanyStats = {
   supabaseDirectory: number;
@@ -22,20 +22,21 @@ export async function getAdminCompanyStats(): Promise<AdminCompanyStats> {
   let pendingSuggestions = 0;
   let movingCompanies = 0;
 
-  if (isSupabaseConfigured()) {
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-    const supabase = createClient(url, key);
+  if (isSupabaseAdminConfigured()) {
+    try {
+      const supabase = createAdminClient();
+      const [companies, suggestions, reviewCompanies] = await Promise.all([
+        supabase.from('companies').select('id', { count: 'exact', head: true }),
+        supabase.from('company_suggestions').select('id', { count: 'exact', head: true }),
+        supabase.from('moving_companies').select('id', { count: 'exact', head: true }),
+      ]);
 
-    const [companies, suggestions, reviewCompanies] = await Promise.all([
-      supabase.from('companies').select('id', { count: 'exact', head: true }),
-      supabase.from('company_suggestions').select('id', { count: 'exact', head: true }),
-      supabase.from('moving_companies').select('id', { count: 'exact', head: true }),
-    ]);
-
-    supabaseDirectory = companies.count ?? 0;
-    pendingSuggestions = suggestions.count ?? 0;
-    movingCompanies = reviewCompanies.count ?? 0;
+      supabaseDirectory = companies.count ?? 0;
+      pendingSuggestions = suggestions.count ?? 0;
+      movingCompanies = reviewCompanies.count ?? 0;
+    } catch {
+      /* Stats are optional — dashboard still loads without counts */
+    }
   }
 
   const movers = Object.values(fullMoversCatalog);

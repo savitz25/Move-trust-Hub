@@ -66,9 +66,16 @@ function formatDate(value: string | null) {
 type Props = {
   initialCompanies: AdminCompanyListItem[];
   stats: AdminCompanyStats | null;
+  loadWarning?: string;
+  dataSource?: 'supabase' | 'seed';
 };
 
-export function CompaniesDashboard({ initialCompanies, stats }: Props) {
+export function CompaniesDashboard({
+  initialCompanies,
+  stats,
+  loadWarning,
+  dataSource,
+}: Props) {
   const [companies, setCompanies] = useState(initialCompanies);
   const [globalFilter, setGlobalFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -301,6 +308,20 @@ export function CompaniesDashboard({ initialCompanies, stats }: Props) {
           </Button>
         </div>
       </div>
+
+      {loadWarning ? (
+        <Card className="border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          <p className="font-semibold">Company data warning</p>
+          <p className="mt-1">{loadWarning}</p>
+        </Card>
+      ) : null}
+
+      {dataSource === 'seed' && !loadWarning ? (
+        <Card className="border-sky-200 bg-sky-50 p-4 text-sm text-sky-950">
+          Showing bundled seed companies — connect <code>SUPABASE_SERVICE_ROLE_KEY</code> for live
+          directory edits.
+        </Card>
+      ) : null}
 
       {stats ? (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
