@@ -333,6 +333,7 @@ export const texasMarketMoverCounts: Record<string, number> = {
   zavala: 27,
 };
 
+
 /** Arizona — exact listed (active directory only) movers per county page */
 export const arizonaMarketMoverCounts: Record<string, number> = {
   apache: 24,
