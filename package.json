@@ -107,6 +107,7 @@
     "refresh:bbb": "tsx scripts/run-bbb-refresh.ts",
     "backfill:verification": "tsx scripts/backfill-company-verification.ts",
     "test:enrich-prodigy": "tsx scripts/test-enrich-prodigy.ts",
+    "export:og": "tsx scripts/export-og-images.tsx",
     "analyze": "cross-env ANALYZE=true npm run build",
     "analyze:server": "cross-env ANALYZE=true BUNDLE_ANALYZE=server npm run build",
     "analyze:browser": "cross-env ANALYZE=true BUNDLE_ANALYZE=browser npm run build"
