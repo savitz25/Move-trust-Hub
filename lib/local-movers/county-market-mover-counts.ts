@@ -333,12 +333,33 @@ export const texasMarketMoverCounts: Record<string, number> = {
   zavala: 27,
 };
 
+/** Arizona — exact listed (active directory only) movers per county page */
+export const arizonaMarketMoverCounts: Record<string, number> = {
+  apache: 24,
+  cochise: 24,
+  coconino: 24,
+  gila: 24,
+  graham: 24,
+  greenlee: 24,
+  'la-paz': 24,
+  maricopa: 24,
+  mohave: 24,
+  navajo: 24,
+  pima: 24,
+  pinal: 24,
+  'santa-cruz': 24,
+  yavapai: 24,
+  yuma: 24,
+};
+
+
 
 
 
 const marketCountsByState: Record<string, Record<string, number>> = {
   california: californiaMarketMoverCounts,
   texas: texasMarketMoverCounts,
+  arizona: arizonaMarketMoverCounts,
 };
 
 /**
