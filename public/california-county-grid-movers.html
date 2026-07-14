@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>California Counties — MoveTrustHub</title>
+  <style>
+    :root {
+      --brand-blue: #0077D4;
+      --brand-blue-deep: #003366;
+      --brand-blue-light: #1E9FFF;
+      --yellow: #F5C518;
+      --yellow-soft: #FFF4C2;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --card: #ffffff;
+      --bg: #f8fafc;
+      --radius: 12px;
+      --shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 1px 3px -1px rgb(15 23 42 / 0.06);
+      --shadow-hover: 0 8px 16px -4px rgb(15 23 42 / 0.08), 0 2px 6px -2px rgb(15 23 42 / 0.05);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 28px 56px;
+      background: #fff;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid #cfe7fa;
+      background: #f0f8ff;
+      color: var(--brand-blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--brand-blue-deep);
+    }
+
+    .subtitle {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 62ch;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      display: flex;
+      align-items: stretch;
+      min-height: 72px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      border-color: color-mix(in srgb, var(--brand-blue) 40%, var(--border));
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-body {
+      flex: 1 1 auto;
+      min-width: 0;
+      padding: 14px 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .county-name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .card:hover .county-name {
+      color: var(--brand-blue);
+    }
+
+    .seat {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .seat svg {
+      flex: 0 0 auto;
+      width: 12px;
+      height: 12px;
+      color: #94a3b8;
+    }
+
+    /* Yellow brand accent bar */
+    .accent-bar {
+      flex: 0 0 4px;
+      width: 4px;
+      background: linear-gradient(180deg, #F7D045 0%, #E8B006 100%);
+      align-self: stretch;
+    }
+
+    /* Mover count badge — right of yellow bar */
+    .count-wrap {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      padding: 0 10px 0 8px;
+      background: linear-gradient(90deg, #fffef8 0%, #ffffff 100%);
+    }
+
+    .count-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 64px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid #e8edf3;
+      background: #f8fafc;
+      color: var(--brand-blue-deep);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      white-space: nowrap;
+      box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8);
+    }
+
+    .count-badge.high {
+      background: #eef7ff;
+      border-color: #c5e2fa;
+      color: #004a8a;
+    }
+
+    .count-badge.medium {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .count-badge.low {
+      background: #fffbeb;
+      border-color: #fde68a;
+      color: #713f12;
+    }
+
+    .count-badge.zero {
+      background: #f1f5f9;
+      border-color: #e2e8f0;
+      color: #475569;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .count-badge .num {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin: 0 0 18px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+    }
+    .dot.high { background: #0077D4; }
+    .dot.medium { background: #64748b; }
+    .dot.low { background: #eab308; }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 11px;
+      color: #94a3b8;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 960px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .page { padding: 24px 16px 40px; }
+      h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="capture">
+    <div class="eyebrow">CA · 58 County Guides</div>
+    <h1>Local Movers in California</h1>
+    <p class="subtitle">
+      Browse county guides with available local moving companies. Counts reflect estimated active movers serving each county market — high-population metros have denser coverage.
+    </p>
+
+    <h2 class="section-title">Counties in California</h2>
+    <div class="legend">
+      <span><i class="dot high"></i> High density (50–300+ movers)</span>
+      <span><i class="dot medium"></i> Medium (10–49)</span>
+      <span><i class="dot low"></i> Rural / limited (1–9)</span>
+    </div>
+
+    <div class="grid" id="county-grid"></div>
+
+    <p class="footer-note">
+      MoveTrustHub · Market availability estimates for UI preview. Live curated listings may differ. Yellow accent marks each county card; bold count badges sit to the right of the bar for fast scanning.
+    </p>
+  </div>
+
+  <script>
+    // Realistic market availability by population density / known CA mover markets
+    const counties = [
+      { name: 'Alameda', seat: 'Oakland', movers: 98 },
+      { name: 'Alpine', seat: 'Markleeville', movers: 2 },
+      { name: 'Amador', seat: 'Jackson', movers: 8 },
+      { name: 'Butte', seat: 'Oroville', movers: 18 },
+      { name: 'Calaveras', seat: 'San Andreas', movers: 7 },
+      { name: 'Colusa', seat: 'Colusa', movers: 5 },
+      { name: 'Contra Costa', seat: 'Martinez', movers: 76 },
+      { name: 'Del Norte', seat: 'Crescent City', movers: 4 },
+      { name: 'El Dorado', seat: 'Placerville', movers: 22 },
+      { name: 'Fresno', seat: 'Fresno', movers: 58 },
+      { name: 'Glenn', seat: 'Willows', movers: 4 },
+      { name: 'Humboldt', seat: 'Eureka', movers: 14 },
+      { name: 'Imperial', seat: 'El Centro', movers: 12 },
+      { name: 'Inyo', seat: 'Independence', movers: 3 },
+      { name: 'Kern', seat: 'Bakersfield', movers: 52 },
+      { name: 'Kings', seat: 'Hanford', movers: 11 },
+      { name: 'Lake', seat: 'Lakeport', movers: 6 },
+      { name: 'Lassen', seat: 'Susanville', movers: 3 },
+      { name: 'Los Angeles', seat: 'Los Angeles', movers: 312 },
+      { name: 'Madera', seat: 'Madera', movers: 14 },
+      { name: 'Marin', seat: 'San Rafael', movers: 42 },
+      { name: 'Mariposa', seat: 'Mariposa', movers: 4 },
+      { name: 'Mendocino', seat: 'Ukiah', movers: 9 },
+      { name: 'Merced', seat: 'Merced', movers: 16 },
+      { name: 'Modoc', seat: 'Alturas', movers: 1 },
+      { name: 'Mono', seat: 'Bridgeport', movers: 2 },
+      { name: 'Monterey', seat: 'Salinas', movers: 28 },
+      { name: 'Napa', seat: 'Napa', movers: 24 },
+      { name: 'Nevada', seat: 'Nevada City', movers: 12 },
+      { name: 'Orange', seat: 'Santa Ana', movers: 186 },
+      { name: 'Placer', seat: 'Auburn', movers: 48 },
+      { name: 'Plumas', seat: 'Quincy', movers: 3 },
+      { name: 'Riverside', seat: 'Riverside', movers: 118 },
+      { name: 'Sacramento', seat: 'Sacramento', movers: 94 },
+      { name: 'San Benito', seat: 'Hollister', movers: 10 },
+      { name: 'San Bernardino', seat: 'San Bernardino', movers: 124 },
+      { name: 'San Diego', seat: 'San Diego', movers: 168 },
+      { name: 'San Francisco', seat: 'San Francisco', movers: 88 },
+      { name: 'San Joaquin', seat: 'Stockton', movers: 44 },
+      { name: 'San Luis Obispo', seat: 'San Luis Obispo', movers: 26 },
+      { name: 'San Mateo', seat: 'Redwood City', movers: 72 },
+      { name: 'Santa Barbara', seat: 'Santa Barbara', movers: 34 },
+      { name: 'Santa Clara', seat: 'San Jose', movers: 142 },
+      { name: 'Santa Cruz', seat: 'Santa Cruz', movers: 32 },
+      { name: 'Shasta', seat: 'Redding', movers: 18 },
+      { name: 'Sierra', seat: 'Downieville', movers: 1 },
+      { name: 'Siskiyou', seat: 'Yreka', movers: 5 },
+      { name: 'Solano', seat: 'Fairfield', movers: 36 },
+      { name: 'Sonoma', seat: 'Santa Rosa', movers: 46 },
+      { name: 'Stanislaus', seat: 'Modesto', movers: 38 },
+      { name: 'Sutter', seat: 'Yuba City', movers: 11 },
+      { name: 'Tehama', seat: 'Red Bluff', movers: 6 },
+      { name: 'Trinity', seat: 'Weaverville', movers: 2 },
+      { name: 'Tulare', seat: 'Visalia', movers: 28 },
+      { name: 'Tuolumne', seat: 'Sonora', movers: 8 },
+      { name: 'Ventura', seat: 'Ventura', movers: 64 },
+      { name: 'Yolo', seat: 'Woodland', movers: 28 },
+      { name: 'Yuba', seat: 'Marysville', movers: 10 },
+    ];
+
+    function badgeClass(n) {
+      if (n <= 0) return 'zero';
+      if (n >= 50) return 'high';
+      if (n >= 10) return 'medium';
+      return 'low';
+    }
+
+    function badgeLabel(n) {
+      if (n <= 0) return 'Contact Us';
+      if (n === 1) return '1 Mover';
+      if (n <= 3) return `${n} Movers`; // still numeric for scanability
+      return `${n} Movers`;
+    }
+
+    const pin = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
+
+    const grid = document.getElementById('county-grid');
+    grid.innerHTML = counties.map((c) => {
+      const cls = badgeClass(c.movers);
+      const label = badgeLabel(c.movers);
+      // Highlight the number portion; singular for 1
+      const htmlLabel = c.movers <= 0
+        ? label
+        : c.movers === 1
+          ? `<span class="num">1</span>&nbsp;Mover`
+          : `<span class="num">${c.movers}</span>&nbsp;Movers`;
+      return `
+        <a class="card" href="#" aria-label="${c.name} County — ${label}">
+          <div class="card-body">
+            <div class="county-name">${c.name}</div>
+            <div class="seat">${pin}${c.seat}</div>
+          </div>
+          <div class="accent-bar" aria-hidden="true"></div>
+          <div class="count-wrap">
+            <span class="count-badge ${cls}">${htmlLabel}</span>
+          </div>
+        </a>`;
+    }).join('');
+  </script>
+</body>
+</html>

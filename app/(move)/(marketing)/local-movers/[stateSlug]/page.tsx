@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MapPin } from 'lucide-react';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
+import { CountyGridCard } from '@/components/local-movers/county-grid-card';
 import { CountyInternalLinks } from '@/components/local-movers/county-internal-links';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
@@ -15,8 +15,10 @@ import {
   buildStatePageMetadata,
   buildStateTitle,
   getCountyPath,
+  getMoversForCounty,
   getStatePath,
 } from '@/lib/local-movers/index';
+import { getCountyMarketMoverCount } from '@/lib/local-movers/county-market-mover-counts';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
 
 type Props = { params: Promise<{ stateSlug: string }> };
@@ -225,23 +227,28 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 : `Counties in ${state.name}`}
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {counties.map((county) => (
-                <Link
-                  key={county.slug}
-                  href={getCountyPath(state.slug, county.slug)}
-                  className="group rounded-xl border bg-card p-4 hover:border-primary/40 hover:shadow-sm transition-all"
-                >
-                  <div className="font-semibold text-sm group-hover:text-primary transition-colors">
-                    {county.name}
-                  </div>
-                  {county.seat && (
-                    <div className="text-[11px] text-muted-foreground mt-1 flex items-center gap-1">
-                      <MapPin className="h-3 w-3" aria-hidden="true" />
-                      {county.seat}
-                    </div>
-                  )}
-                </Link>
-              ))}
+              {counties.map((county) => {
+                const marketCount = getCountyMarketMoverCount(
+                  state.slug,
+                  county.slug
+                );
+                const curatedCount =
+                  getMoversForCounty(state.slug, county.slug)?.movers.length ??
+                  0;
+                // Prefer market estimates (e.g. CA density map); else curated listings
+                const moverCount =
+                  marketCount !== null ? marketCount : curatedCount;
+
+                return (
+                  <CountyGridCard
+                    key={county.slug}
+                    href={getCountyPath(state.slug, county.slug)}
+                    name={county.name}
+                    seat={county.seat}
+                    moverCount={moverCount}
+                  />
+                );
+              })}
             </div>
           </section>
         ) : (
