@@ -1,85 +1,50 @@
 import type { CountyMoverAssignment } from '@/lib/local-movers/types';
 
-/**
- * delaware county → displayable mover assignments.
- * Rebuilt by: npx tsx scripts/rebuild-all-states-county-movers.ts delaware
- *
- * Only includes movers that pass curated listing policy (verified / directory-linked).
- * Badge counts on /local-movers/delaware match these listed sets via getMoversForCounty.
- */
-const CURATED_DELAWARE_COUNTIES: Record<string, string[]> = {
-  kent: [
-    'directory-allied-van-lines',
-    'directory-united-van-lines',
-    'directory-north-american-van-lines',
-    'directory-mayflower-transit',
-    'directory-jk-moving-services',
-    'directory-safeway-moving',
-    'directory-bekins-van-lines',
-    'directory-atlas-van-lines',
-    'directory-two-men-and-a-truck',
-    'directory-pensey-moving',
-    'directory-wheaton-world-wide',
-    'directory-graebel-van-lines',
-    'directory-gentle-giant-moving',
-    'directory-arpin-van-lines',
-    'directory-national-van-lines',
-    'amerisafe-van-lines',
-    'international-van-lines',
-    'american-van-lines',
-    'colonial-van-lines',
-    'moving-apt',
-  ],
+/** Hand-curated Delaware county mover lists — real catalog IDs only */
+const CURATED_DE_COUNTIES: Record<string, string[]> = {
   'new-castle': [
-    'directory-allied-van-lines',
-    'directory-united-van-lines',
-    'directory-north-american-van-lines',
-    'directory-mayflower-transit',
-    'directory-jk-moving-services',
-    'directory-safeway-moving',
-    'directory-bekins-van-lines',
-    'directory-atlas-van-lines',
-    'directory-two-men-and-a-truck',
-    'directory-pensey-moving',
-    'directory-wheaton-world-wide',
-    'directory-graebel-van-lines',
-    'directory-gentle-giant-moving',
-    'directory-arpin-van-lines',
-    'directory-national-van-lines',
-    'amerisafe-van-lines',
-    'international-van-lines',
-    'american-van-lines',
-    'colonial-van-lines',
-    'moving-apt',
+    'twomenandatruck-newcastle-de',
+    'all-my-sons-wilmington-de',
+    'wilmington-moving-new-castle-de',
+    'new-castle-county-moving-new-castle-de',
+    'college-hunks-moving-wilmington-de',
+    'budd-van-lines-wilmington-de',
+    'delaware-river-moving-new-castle-de',
+    'brandywine-valley-moving-new-castle-de',
+    'hercules-movers-wilmington-de',
+    'krupp-moving-wilmington-de',
+    'philadelphia-metro-moving-new-castle-de',
+    'corporate-relocation-wilmington-new-castle-de',
   ],
   sussex: [
-    'directory-allied-van-lines',
-    'directory-united-van-lines',
-    'directory-north-american-van-lines',
-    'directory-mayflower-transit',
-    'directory-jk-moving-services',
-    'directory-safeway-moving',
-    'directory-bekins-van-lines',
-    'directory-atlas-van-lines',
-    'directory-two-men-and-a-truck',
-    'directory-pensey-moving',
-    'directory-wheaton-world-wide',
-    'directory-graebel-van-lines',
-    'directory-gentle-giant-moving',
-    'directory-arpin-van-lines',
-    'directory-national-van-lines',
-    'amerisafe-van-lines',
-    'international-van-lines',
-    'american-van-lines',
-    'colonial-van-lines',
-    'moving-apt',
+    'two-men-and-a-truck-sussex-de',
+    'all-my-sons-georgetown-de',
+    'georgetown-moving-sussex-de',
+    'sussex-county-moving-sussex-de',
+    'college-hunks-moving-georgetown-de',
+    'budd-van-lines-georgetown-de',
+    'delaware-beach-moving-sussex-de',
+    'coastal-sussex-moving-sussex-de',
+    'hercules-movers-georgetown-de',
+    'krupp-moving-georgetown-de',
+  ],
+  kent: [
+    'two-men-and-a-truck-kent-de',
+    'all-my-sons-dover-de',
+    'dover-moving-kent-de',
+    'kent-county-moving-kent-de',
+    'college-hunks-moving-dover-de',
+    'budd-van-lines-dover-de',
+    'central-delaware-moving-kent-de',
+    'delaware-bay-moving-kent-de',
+    'hercules-movers-dover-de',
+    'krupp-moving-dover-de',
   ],
 };
 
-export const delawareCountyMoverAssignments: CountyMoverAssignment[] = Object.entries(
-  CURATED_DELAWARE_COUNTIES
-).map(([countySlug, moverIds]) => ({
-  stateSlug: 'delaware',
-  countySlug,
-  moverIds,
-}));
+export const delawareCountyMoverAssignments: CountyMoverAssignment[] =
+  Object.entries(CURATED_DE_COUNTIES).map(([countySlug, moverIds]) => ({
+    stateSlug: 'delaware',
+    countySlug,
+    moverIds,
+  }));
