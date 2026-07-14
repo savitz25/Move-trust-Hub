@@ -121,9 +121,17 @@ export async function fetchLiveCountyPage(
 
   let status = 0;
   let html = '';
+  const bypassSecret = process.env.VERCEL_AUTOMATION_BYPASS_SECRET?.trim();
+  const headers: Record<string, string> = {
+    'User-Agent': 'MoveTrustHub-CountyAudit/1.1-revised',
+  };
+  if (bypassSecret) {
+    headers['x-vercel-protection-bypass'] = bypassSecret;
+  }
+
   try {
     const response = await fetch(url, {
-      headers: { 'User-Agent': 'MoveTrustHub-CountyAudit/1.1-revised' },
+      headers,
       redirect: 'follow',
     });
     status = response.status;
