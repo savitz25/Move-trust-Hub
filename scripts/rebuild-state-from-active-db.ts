@@ -81,30 +81,80 @@ const NATIONAL_SLUGS = new Set([
   'u-pack',
 ]);
 
-/** State slug → HQ detection helpers */
-const STATE_HQ: Record<
-  string,
-  { code: string; name: string; cities: RegExp }
-> = {
-  nevada: {
-    code: 'nv',
-    name: 'nevada',
-    cities:
-      /^(las vegas|henderson|reno|north las vegas|sparks|carson city|fernley|elko|mesquite|boulder city|fallon|winnemucca|west wendover|ely|yerington|pahrump|incline village)\b/i,
-  },
-  oregon: {
-    code: 'or',
-    name: 'oregon',
-    cities:
-      /^(portland|salem|eugene|gresham|hillsboro|bend|beaverton|medford|springfield|corvallis|albany|tigard|lake oswego|keizer|grants pass|oregon city|mcminnville|redmond|tualatin|west linn|woodburn|forest grove|newberg|roseburg|klamath falls|ashland|milwaukie|wilsonville|happy valley|troutdale)\b/i,
-  },
-  washington: {
-    code: 'wa',
-    name: 'washington',
-    cities:
-      /^(seattle|spokane|tacoma|vancouver|bellevue|kent|everett|renton|spokane valley|federal way|yakima|kirkland|bellingham|kennewick|auburn|pasco|marysville|lakewood|redmond|shoreline|richland|sammamish|burien|olympia|lacey|edmonds|bothell|lynnwood|bremerton|puvallup|issaquah|longview|mount vernon|wenatchee|pullman)\b/i,
-  },
+/** Optional city regex overrides for major metros (code/name still primary) */
+const STATE_CITY_OVERRIDES: Record<string, RegExp> = {
+  nevada:
+    /^(las vegas|henderson|reno|north las vegas|sparks|carson city|elko|pahrump)\b/i,
+  oregon:
+    /^(portland|salem|eugene|gresham|hillsboro|bend|beaverton|medford|springfield|corvallis)\b/i,
+  washington:
+    /^(seattle|spokane|tacoma|vancouver|bellevue|kent|everett|renton|yakima|kirkland|bellingham|olympia)\b/i,
+  florida:
+    /^(miami|orlando|tampa|jacksonville|fort lauderdale|tallahassee|st petersburg|hialeah|port st lucie|cape coral)\b/i,
+  'new-york':
+    /^(new york|brooklyn|queens|bronx|manhattan|buffalo|rochester|yonkers|syracuse|albany)\b/i,
+  illinois: /^(chicago|aurora|naperville|joliet|rockford|springfield|peoria)\b/i,
+  georgia: /^(atlanta|augusta|columbus|macon|savannah|athens|sandy springs)\b/i,
+  pennsylvania:
+    /^(philadelphia|pittsburgh|allentown|erie|reading|scranton|bethlehem|lancaster)\b/i,
+  ohio: /^(columbus|cleveland|cincinnati|toledo|akron|dayton|parma|canton)\b/i,
+  michigan: /^(detroit|grand rapids|warren|sterling heights|ann arbor|lansing|flint)\b/i,
+  'north-carolina':
+    /^(charlotte|raleigh|greensboro|durham|winston-salem|fayetteville|cary|wilmington|asheville)\b/i,
+  'south-carolina':
+    /^(columbia|charleston|north charleston|mount pleasant|rock hill|greenville|summerville)\b/i,
+  virginia:
+    /^(virginia beach|norfolk|chesapeake|richmond|newport news|alexandria|hampton|roanoke)\b/i,
+  massachusetts:
+    /^(boston|worcester|springfield|cambridge|lowell|brockton|quincy|lynn|new bedford)\b/i,
+  colorado: /^(denver|colorado springs|aurora|fort collins|lakewood|thornton|arvada|westminster|pueblo)\b/i,
+  utah: /^(salt lake city|west valley city|provo|west jordan|oremlayton|sandy|ogden|st george)\b/i,
+  minnesota: /^(minneapolis|saint paul|rochester|duluth|bloomington|brooklyn park|plymouth)\b/i,
+  wisconsin: /^(milwaukee|madison|green bay|kenosha|racine|appleton|waukesha)\b/i,
+  missouri: /^(kansas city|st louis|springfield|columbia|independence|lee's summit|o'fallon)\b/i,
+  indiana: /^(indianapolis|fort wayne|evansville|south bend|carmel|fishers|bloomington)\b/i,
+  tennessee: /^(nashville|memphis|knoxville|chattanooga|clarksville|murfreesboro|franklin)\b/i,
+  alabama: /^(birmingham|montgomery|huntsville|mobile|tuscaloosa|hoover|dothan)\b/i,
+  louisiana: /^(new orleans|baton rouge|shreveport|lafayette|lake charles|kenner|bossier city)\b/i,
+  kentucky: /^(louisville|lexington|bowling green|owensboro|covington|richmond|georgetown)\b/i,
+  oklahoma: /^(oklahoma city|tulsa|norman|broken arrow|edmond|lawton|moore)\b/i,
+  arkansas: /^(little rock|fort smith|fayetteville|springdale|jonesboro|rogers|conway)\b/i,
+  mississippi: /^(jackson|gulfport|southaven|hattiesburg|biloxi|meridian|tupelo)\b/i,
+  kansas: /^(wichita|overland park|kansas city|olathe|topeka|lawrence|shawnee)\b/i,
+  iowa: /^(des moines|cedar rapids|davenport|sioux city|iowa city|waterloo|council bluffs)\b/i,
+  nebraska: /^(omaha|lincoln|bellevue|grand island|kearney|fremont|hastings)\b/i,
+  idaho: /^(boise|meridian|nampa|idaho falls|pocatello|caldwell|coeur d'alene)\b/i,
+  montana: /^(billings|missoula|great falls|bozeman|butte|helena|kalispell)\b/i,
+  wyoming: /^(cheyenne|casper|laramie|gillette|rock springs|sheridan|green river)\b/i,
+  'north-dakota': /^(fargo|bismarck|grand forks|minot|west fargo|williston|dickinson)\b/i,
+  'south-dakota': /^(sioux falls|rapid city|aberdeen|brookings|watertown|mitchell|yankton)\b/i,
+  alaska: /^(anchorage|fairbanks|juneau|sitka|ketchikan|wasilla|kenai)\b/i,
+  hawaii: /^(honolulu|east honolulu|pearl city|hilo|kailua|waipahu|kaneohe)\b/i,
+  maine: /^(portland|lewiston|bangor|south portland|auburn|biddeford|sanford)\b/i,
+  'new-hampshire': /^(manchester|nashua|concord|derry|dover|rochester|salem)\b/i,
+  vermont: /^(burlington|south burlington|rutland|barre|montpelier|winooski)\b/i,
+  'rhode-island': /^(providence|warwick|cranston|pawtucket|east providence|woonsocket)\b/i,
+  connecticut: /^(bridgeport|new haven|stamford|hartford|waterbury|norwalk|danbury)\b/i,
+  delaware: /^(wilmington|dover|newark|middletown|smyrna|milford|seaford)\b/i,
+  maryland: /^(baltimore|frederick|rockville|gaithersburg|bowie|hagerstown|annapolis)\b/i,
+  'new-jersey':
+    /^(newark|jersey city|paterson|elizabeth|edison|woodbridge|lakewood|toms river|hamilton|trenton)\b/i,
+  'district-of-columbia': /^(washington|washington dc|washington, dc)\b/i,
 };
+
+function getStateHq(stateSlug: string): {
+  code: string;
+  name: string;
+  cities: RegExp;
+} {
+  const meta = localStates.find((s) => s.slug === stateSlug);
+  if (!meta) throw new Error(`Unknown state: ${stateSlug}`);
+  return {
+    code: meta.code.toLowerCase(),
+    name: meta.name.toLowerCase(),
+    cities: STATE_CITY_OVERRIDES[stateSlug] ?? /$a/, // never match bare cities if no override
+  };
+}
 
 const MAJOR_COUNTIES: Record<string, string[]> = {
   nevada: ['clark', 'washoe', 'carson-city', 'douglas', 'lyon', 'nye', 'elko'],
@@ -128,6 +178,50 @@ const MAJOR_COUNTIES: Record<string, string[]> = {
     'whatcom',
     'yakima',
   ],
+  florida: ['miami-dade', 'broward', 'palm-beach', 'orange', 'hillsborough', 'duval'],
+  'new-york': ['new-york', 'kings', 'queens', 'bronx', 'nassau', 'suffolk', 'erie'],
+  illinois: ['cook', 'dupage', 'lake', 'will', 'kane', 'mchenry'],
+  georgia: ['fulton', 'gwinnett', 'dekalb', 'cobb', 'chatham', 'richmond'],
+  pennsylvania: ['philadelphia', 'allegheny', 'montgomery', 'bucks', 'delaware'],
+  ohio: ['cuyahoga', 'franklin', 'hamilton', 'summit', 'montgomery', 'lucas'],
+  michigan: ['wayne', 'oakland', 'macomb', 'kent', 'genesee', 'washtenaw'],
+  'north-carolina': ['mecklenburg', 'wake', 'guilford', 'forsyth', 'durham'],
+  colorado: ['denver', 'el-paso', 'arapahoe', 'jefferson', 'adams', 'boulder'],
+  virginia: ['fairfax', 'virginia-beach', 'prince-william', 'loudoun', 'chesterfield'],
+  massachusetts: ['middlesex', 'worcester', 'essex', 'suffolk', 'norfolk'],
+  indiana: ['marion', 'lake', 'allen', 'hamilton', 'st-joseph'],
+  tennessee: ['shelby', 'davidson', 'knox', 'hamilton', 'rutherford'],
+  missouri: ['st-louis', 'jackson', 'st-charles', 'greene', 'clay'],
+  wisconsin: ['milwaukee', 'dane', 'waukesha', 'brown', 'racine'],
+  minnesota: ['hennepin', 'ramsey', 'dakota', 'anoka', 'washington'],
+  alabama: ['jefferson', 'mobile', 'madison', 'montgomery', 'shelby'],
+  louisiana: ['east-baton-rouge', 'orleans', 'jefferson', 'caddo', 'st-tammany'],
+  kentucky: ['jefferson', 'fayette', 'kenton', 'boone', 'warren'],
+  'south-carolina': ['greenville', 'richland', 'charleston', 'horry', 'spartanburg'],
+  oklahoma: ['oklahoma', 'tulsa', 'cleveland', 'canadian', 'comanche'],
+  connecticut: ['fairfield', 'hartford', 'new-haven', 'new-london'],
+  maryland: ['montgomery', 'prince-georges', 'baltimore', 'anne-arundel', 'howard'],
+  'new-jersey': ['bergen', 'middlesex', 'essex', 'hudson', 'monmouth', 'ocean'],
+  utah: ['salt-lake', 'utah', 'davis', 'weber', 'washington'],
+  iowa: ['polk', 'linn', 'scott', 'johnson', 'black-hawk'],
+  kansas: ['johnson', 'sedgwick', 'shawnee', 'wyandotte', 'douglas'],
+  arkansas: ['pulaski', 'benton', 'washington', 'sebastian', 'faulkner'],
+  mississippi: ['hinds', 'harrison', 'desoto', 'rankin', 'jackson'],
+  nebraska: ['douglas', 'lancaster', 'sarpy', 'hall', 'buffalo'],
+  'west-virginia': ['kanawha', 'berkeley', 'monongalia', 'cabell', 'wood'],
+  idaho: ['ada', 'canyon', 'kootenai', 'bonneville', 'twin-falls'],
+  'new-hampshire': ['hillsborough', 'rockingham', 'merrimack', 'strafford'],
+  maine: ['cumberland', 'york', 'penobscot', 'kennebec'],
+  hawaii: ['honolulu', 'hawaii', 'maui', 'kauai'],
+  alaska: ['anchorage', 'fairbanks-north-star', 'matanuska-susitna', 'kenai-peninsula'],
+  'rhode-island': ['providence', 'kent', 'washington', 'newport', 'bristol'],
+  delaware: ['new-castle', 'kent', 'sussex'],
+  vermont: ['chittenden', 'rutland', 'washington', 'windsor'],
+  montana: ['yellowstone', 'missoula', 'gallatin', 'flathead', 'cascade'],
+  wyoming: ['laramie', 'natrona', 'campbell', 'sweetwater', 'albany'],
+  'north-dakota': ['cass', 'burleigh', 'grand-forks', 'ward', 'williams'],
+  'south-dakota': ['minnehaha', 'pennington', 'lincoln', 'brown'],
+  'district-of-columbia': ['district-of-columbia'],
 };
 
 type CompanyRow = {
@@ -164,8 +258,7 @@ function isNational(c: CompanyRow): boolean {
 }
 
 function isStateHq(stateSlug: string, c: CompanyRow): boolean {
-  const cfg = STATE_HQ[stateSlug];
-  if (!cfg) return false;
+  const cfg = getStateHq(stateSlug);
 
   // City-specific franchise slugs only become state-focused via destination rows
   if (
@@ -176,20 +269,30 @@ function isStateHq(stateSlug: string, c: CompanyRow): boolean {
     return false;
   }
 
+  // Avoid false positives: OR/IN/ME/HI/DE as substrings in addresses
+  const shortAmbiguous = new Set(['or', 'in', 'me', 'hi', 'de', 'ok', 'co', 'wa', 'la', 'ma', 'pa', 'va', 'mt', 'al']);
+
   const hq = (c.headquarters || '').toLowerCase();
   const code = cfg.code;
   const name = cfg.name;
 
-  // Prefer explicit state code / full state name in HQ
+  // Prefer explicit state code after comma
   if (new RegExp(`,\\s*${code}\\b`, 'i').test(hq)) return true;
-  if (hq.endsWith(` ${name}`) || new RegExp(`\\b${name}\\b`).test(hq)) {
+  // Full state name
+  if (new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(hq)) {
     return true;
   }
 
-  // City-only HQ: only match if HQ string also contains state code/name,
-  // or is a multi-token string that ends with known city AND contains state.
-  // Bare city names like "Auburn" are too ambiguous across states.
-  if (cfg.cities.test(hq) && (hq.includes(`, ${code}`) || hq.includes(name))) {
+  // City + state code/name only
+  if (
+    cfg.cities.test(hq) &&
+    (new RegExp(`,\\s*${code}\\b`, 'i').test(hq) || hq.includes(name))
+  ) {
+    return true;
+  }
+
+  // For non-ambiguous codes, also accept " CITY CODE" endings
+  if (!shortAmbiguous.has(code) && new RegExp(`\\s${code}$`, 'i').test(hq.trim())) {
     return true;
   }
 
@@ -216,12 +319,14 @@ function constName(stateSlug: string): string {
   return `CURATED_${stateSlug.replace(/-/g, '_').toUpperCase()}_COUNTIES`;
 }
 
-async function rebuildState(stateSlug: string) {
+async function rebuildState(
+  stateSlug: string,
+  opts: { skipCatalog?: boolean; skipBadges?: boolean } = {}
+) {
   const stateMeta = localStates.find((s) => s.slug === stateSlug);
   if (!stateMeta) throw new Error(`Unknown state: ${stateSlug}`);
-  if (!STATE_HQ[stateSlug]) {
-    throw new Error(`STATE_HQ config missing for ${stateSlug}`);
-  }
+  // Ensures state is known to localStates / getStateHq
+  getStateHq(stateSlug);
 
   loadEnvLocal();
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -301,14 +406,15 @@ async function rebuildState(stateSlug: string) {
     `National: ${nationalSlugs.size}; state-focused: ${stateWideSlugs.size}`
   );
 
-  // Refresh shared active catalog
-  const moverEntries: string[] = [];
-  for (const c of displayable) {
-    if (SLUG_AS_MOVER_ID.has(c.slug)) continue;
-    const id = moverIdForSlug(c.slug);
-    const city =
-      c.headquarters?.split(',')[0]?.trim() || c.headquarters || '';
-    moverEntries.push(`  '${id}': {
+  // Refresh shared active catalog (skip in parallel assignment-only mode)
+  if (!opts.skipCatalog) {
+    const moverEntries: string[] = [];
+    for (const c of displayable) {
+      if (SLUG_AS_MOVER_ID.has(c.slug)) continue;
+      const id = moverIdForSlug(c.slug);
+      const city =
+        c.headquarters?.split(',')[0]?.trim() || c.headquarters || '';
+      moverEntries.push(`  '${id}': {
     id: '${id}',
     name: ${JSON.stringify(c.name)},
     profileSlug: ${JSON.stringify(c.slug)},
@@ -323,11 +429,11 @@ async function rebuildState(stateSlug: string) {
     bbbRating: ${JSON.stringify(c.bbb_rating || undefined)},
     city: ${JSON.stringify(city)},
   },`);
-  }
+    }
 
-  writeFileSync(
-    'data/active-directory-movers.ts',
-    `import type { LocalMover } from '@/lib/local-movers/types';
+    writeFileSync(
+      'data/active-directory-movers.ts',
+      `import type { LocalMover } from '@/lib/local-movers/types';
 
 /**
  * Active directory companies from Supabase.
@@ -347,7 +453,8 @@ export const ACTIVE_MOVER_ID_WHITELIST = new Set<string>([
 ${displayable.map((c) => `  '${moverIdForSlug(c.slug)}',`).join('\n')}
 ]);
 `
-  );
+    );
+  }
 
   const counties = getCountiesForState(stateSlug);
   const assignments: Record<string, string[]> = {};
@@ -647,20 +754,49 @@ async function verifyState(stateSlug: string) {
 }
 
 async function main() {
-  const args = process.argv.slice(2).filter((a) => !a.startsWith('--'));
-  const states = args.length ? args : ['nevada', 'oregon', 'washington'];
+  const flags = new Set(process.argv.filter((a) => a.startsWith('--')));
+  const skipCatalog = flags.has('--skip-catalog');
+  const skipBadges = flags.has('--skip-badges');
+  const skipVerify = flags.has('--skip-verify');
+  const allRemaining = flags.has('--all-remaining');
 
-  for (const stateSlug of states) {
-    const { counts } = await rebuildState(stateSlug);
-    patchBadgeCounts(stateSlug, counts);
+  const DONE = new Set([
+    'california',
+    'texas',
+    'arizona',
+    'new-mexico',
+    'nevada',
+    'oregon',
+    'washington',
+  ]);
+
+  const args = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+  const states = allRemaining
+    ? localStates.map((s) => s.slug).filter((s) => !DONE.has(s))
+    : args.length
+      ? args
+      : ['nevada', 'oregon', 'washington'];
+
+  console.log(`Processing ${states.length} state(s): ${states.join(', ')}`);
+
+  // When rebuilding many states, write catalog once on first state
+  let catalogWritten = skipCatalog;
+  for (let i = 0; i < states.length; i++) {
+    const stateSlug = states[i]!;
+    const { counts } = await rebuildState(stateSlug, {
+      skipCatalog: catalogWritten,
+      skipBadges,
+    });
+    catalogWritten = true;
+    if (!skipBadges) {
+      patchBadgeCounts(stateSlug, counts);
+    }
   }
 
-  // Re-verify after all writes (need fresh module cache — run via separate process ideally)
-  // Clear require cache by dynamic import of re-built files is flaky in same process;
-  // spawn verification inline after rebuild by re-importing getMoversForCounty
-  // which was already loaded... Force re-verify using assignment files only.
-  for (const stateSlug of states) {
-    await verifyState(stateSlug);
+  if (!skipVerify) {
+    for (const stateSlug of states) {
+      await verifyState(stateSlug);
+    }
   }
 }
 
