@@ -165,6 +165,9 @@ export async function fetchLiveCountyPage(
   const hasJsonLd = /application\/ld\+json/i.test(html);
 
   if (status !== 200) errors.push(`http_${status}`);
+  if (title === 'Login – Vercel' || title === 'Login - Vercel') {
+    errors.push('vercel_deployment_protection');
+  }
   if (!title) errors.push('missing_title');
   if (!metaDescription) errors.push('missing_meta_description');
   if (!robots) errors.push('missing_robots_meta');

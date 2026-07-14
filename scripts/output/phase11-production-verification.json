@@ -1,12 +1,7 @@
 {
-  "generatedAt": "2026-07-14T18:46:58.592Z",
-  "auditOrigin": "https://www.movetrusthub.com",
+  "generatedAt": "2026-07-14T18:46:43.233Z",
+  "verificationPhase": "production",
   "deployCommitHash": "22950ef0",
-  "catalog": {
-    "total": 16099,
-    "fabricatedIds": 8961,
-    "displayableIds": 633
-  },
   "circuitBreaker": {
     "tier1": 97,
     "tier2": 3046,
@@ -36,106 +31,37 @@
     "whichNumberIsCanonicalToday": "evaluateCountyIndexabilityFromResult() — used by county page metadata, robots, and sitemap",
     "inversionExplanation": "Phase 2 counted UI guide tiers using the loose index evaluator (3,142). Phase 1 thin-county audit used the same loose evaluator at an earlier date but with stricter review/research requirements yielding 110. Phase 1.1 unified on one strict evaluator; Tier 1 is now 97 and the sitemap emits only those URLs."
   },
-  "counties": {
-    "total": 3143,
-    "minExplicitMoversToIndex": 3,
-    "maxTier1Allowed": 400,
-    "tier1": 97,
-    "tier2": 3046,
-    "tier1Reasons": {
-      "explicit_curated_county": 97
-    },
-    "tier2Reasons": {
-      "outside_tier1_coverage_wave": 1507,
-      "batch_template_research": 1489,
-      "missing_county_research": 50
-    },
-    "indexSyncAsyncMismatch": 0,
-    "indexedWithZeroMovers": 0,
-    "indexedRegionalFallback": 0,
-    "renderedFabricatedNames": 0,
-    "legacyTestimonialLeak": 0
-  },
   "probePlan": {
-    "named": [
-      {
-        "label": "Sherman NE",
-        "path": "/local-movers/nebraska/sherman"
-      },
-      {
-        "label": "Douglas CO",
-        "path": "/local-movers/colorado/douglas"
-      },
-      {
-        "label": "Highlands FL",
-        "path": "/local-movers/florida/highlands"
-      },
-      {
-        "label": "Fairfax VA",
-        "path": "/local-movers/virginia/fairfax"
-      },
-      {
-        "label": "Harris TX",
-        "path": "/local-movers/texas/harris"
-      },
-      {
-        "label": "Cook IL",
-        "path": "/local-movers/illinois/cook"
-      },
-      {
-        "label": "Philadelphia PA",
-        "path": "/local-movers/pennsylvania/philadelphia"
-      },
-      {
-        "label": "Franklin OH",
-        "path": "/local-movers/ohio/franklin"
-      },
-      {
-        "label": "Wake NC",
-        "path": "/local-movers/north-carolina/wake"
-      },
-      {
-        "label": "Fulton GA",
-        "path": "/local-movers/georgia/fulton"
-      }
-    ],
-    "seededRandom": [
-      {
-        "label": "wyandot ohio (seeded)",
-        "path": "/local-movers/ohio/wyandot"
-      },
-      {
-        "label": "paulding ohio (seeded)",
-        "path": "/local-movers/ohio/paulding"
-      },
-      {
-        "label": "allegheny pennsylvania (seeded)",
-        "path": "/local-movers/pennsylvania/allegheny"
-      },
-      {
-        "label": "oceana michigan (seeded)",
-        "path": "/local-movers/michigan/oceana"
-      },
-      {
-        "label": "howard missouri (seeded)",
-        "path": "/local-movers/missouri/howard"
-      },
-      {
-        "label": "big-horn wyoming (seeded)",
-        "path": "/local-movers/wyoming/big-horn"
-      },
-      {
-        "label": "washington nebraska (seeded)",
-        "path": "/local-movers/nebraska/washington"
-      }
-    ],
+    "namedCount": 10,
+    "seededRandomCount": 7,
+    "totalProbes": 17,
     "seededSample": {
       "seed": 580194032,
       "selectionCode": "seedFromCommitHash(commitHash) → mulberry32 → Fisher-Yates shuffle of getAllCountyParams() → take first 7 after excluding named probes",
       "digest": "07b954c45ba641b9"
-    }
+    },
+    "seededRandomUrls": [
+      "https://www.movetrusthub.com/local-movers/ohio/wyandot",
+      "https://www.movetrusthub.com/local-movers/ohio/paulding",
+      "https://www.movetrusthub.com/local-movers/pennsylvania/allegheny",
+      "https://www.movetrusthub.com/local-movers/michigan/oceana",
+      "https://www.movetrusthub.com/local-movers/missouri/howard",
+      "https://www.movetrusthub.com/local-movers/wyoming/big-horn",
+      "https://www.movetrusthub.com/local-movers/nebraska/washington"
+    ],
+    "namedUrls": [
+      "https://www.movetrusthub.com/local-movers/nebraska/sherman",
+      "https://www.movetrusthub.com/local-movers/colorado/douglas",
+      "https://www.movetrusthub.com/local-movers/florida/highlands",
+      "https://www.movetrusthub.com/local-movers/virginia/fairfax",
+      "https://www.movetrusthub.com/local-movers/texas/harris",
+      "https://www.movetrusthub.com/local-movers/illinois/cook",
+      "https://www.movetrusthub.com/local-movers/pennsylvania/philadelphia",
+      "https://www.movetrusthub.com/local-movers/ohio/franklin",
+      "https://www.movetrusthub.com/local-movers/north-carolina/wake",
+      "https://www.movetrusthub.com/local-movers/georgia/fulton"
+    ]
   },
-  "sampleMismatches": [],
   "liveVerification": {
     "origin": "https://www.movetrusthub.com",
     "probes": [
@@ -431,5 +357,5 @@
     ],
     "failedProbeCount": 0
   },
-  "phase1Pass": true
+  "phase11Pass": true
 }

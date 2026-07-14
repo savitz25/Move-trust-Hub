@@ -1,0 +1,695 @@
+{
+  "generatedAt": "2026-07-14T18:47:31.742Z",
+  "verificationPhase": "preview",
+  "deployCommitHash": "22950ef0",
+  "auditOrigin": "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app",
+  "circuitBreaker": {
+    "tier1": 97,
+    "tier2": 3046,
+    "maxAllowed": 400,
+    "pass": true,
+    "producingRule": "evaluateCountyIndexabilityFromResult: 3+ explicit county movers, no regional fallback, non-batch cited research, deep-county or premium-metro wave only",
+    "tier1Reasons": {
+      "explicit_curated_county": 97
+    },
+    "tier2Reasons": {
+      "outside_tier1_coverage_wave": 1507,
+      "batch_template_research": 1489,
+      "missing_county_research": 50
+    }
+  },
+  "indexabilityReconciliation": {
+    "phase1ReportedIndexed": 110,
+    "phase1Evaluator": "evaluateCountyIndexability() in scripts/audit-thin-counties.ts (2026-06-30 snapshot)",
+    "phase1RuleSummary": "Strict legacy gate: MIN_MOVERS_TO_INDEX=5, blocked regional fallback, required curated reviews + research for many paths; ~3,033 counties noindexed (mostly zero movers + generic template).",
+    "phase2ReportedTier1": 3142,
+    "phase2Evaluator": "classifyCountyGuideTier(indexDecision) in scripts/audit-phase2-compliance.ts (pre-1.1)",
+    "phase2RuleSummary": "Tier 1 was equated to indexDecision.tier===index only — before batch-template and coverage-wave gates. Nearly every county with 5+ movers and explicit assignment indexed (~97% of counties with movers).",
+    "phase11CorrectedTier1": 97,
+    "phase11Evaluator": "evaluateCountyIndexabilityFromResult() — canonical for pages, metadata, and sitemap",
+    "phase11RuleSummary": "3+ explicit county movers, no regional pool, non-batch cited research, deep-county or premium-metro coverage wave only. MAX_TIER1_COUNT=400 circuit breaker.",
+    "liveSitemapEvaluator": "app/sitemap-local/sitemap.ts → evaluateCountyIndexabilityFromResult() with getMoversForCountyAsync()",
+    "whichNumberIsCanonicalToday": "evaluateCountyIndexabilityFromResult() — used by county page metadata, robots, and sitemap",
+    "inversionExplanation": "Phase 2 counted UI guide tiers using the loose index evaluator (3,142). Phase 1 thin-county audit used the same loose evaluator at an earlier date but with stricter review/research requirements yielding 110. Phase 1.1 unified on one strict evaluator; Tier 1 is now 97 and the sitemap emits only those URLs."
+  },
+  "probePlan": {
+    "namedCount": 10,
+    "seededRandomCount": 7,
+    "totalProbes": 17,
+    "seededSample": {
+      "seed": 580194032,
+      "selectionCode": "seedFromCommitHash(commitHash) → mulberry32 → Fisher-Yates shuffle of getAllCountyParams() → take first 7 after excluding named probes",
+      "digest": "07b954c45ba641b9"
+    },
+    "seededRandomUrls": [
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/ohio/wyandot",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/ohio/paulding",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/pennsylvania/allegheny",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/michigan/oceana",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/missouri/howard",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/wyoming/big-horn",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/nebraska/washington"
+    ],
+    "namedUrls": [
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/nebraska/sherman",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/colorado/douglas",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/florida/highlands",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/virginia/fairfax",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/texas/harris",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/illinois/cook",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/pennsylvania/philadelphia",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/ohio/franklin",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/north-carolina/wake",
+      "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app/local-movers/georgia/fulton"
+    ]
+  },
+  "liveVerification": {
+    "origin": "https://move-trust-epzjwclgq-savitz25-s-projects.vercel.app",
+    "probes": [
+      {
+        "label": "Sherman NE",
+        "path": "/local-movers/nebraska/sherman",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Douglas CO",
+        "path": "/local-movers/colorado/douglas",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Highlands FL",
+        "path": "/local-movers/florida/highlands",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Fairfax VA",
+        "path": "/local-movers/virginia/fairfax",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Harris TX",
+        "path": "/local-movers/texas/harris",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Cook IL",
+        "path": "/local-movers/illinois/cook",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Philadelphia PA",
+        "path": "/local-movers/pennsylvania/philadelphia",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Franklin OH",
+        "path": "/local-movers/ohio/franklin",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Wake NC",
+        "path": "/local-movers/north-carolina/wake",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Fulton GA",
+        "path": "/local-movers/georgia/fulton",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "wyandot ohio (seeded)",
+        "path": "/local-movers/ohio/wyandot",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "paulding ohio (seeded)",
+        "path": "/local-movers/ohio/paulding",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "allegheny pennsylvania (seeded)",
+        "path": "/local-movers/pennsylvania/allegheny",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "oceana michigan (seeded)",
+        "path": "/local-movers/michigan/oceana",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "howard missouri (seeded)",
+        "path": "/local-movers/missouri/howard",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "big-horn wyoming (seeded)",
+        "path": "/local-movers/wyoming/big-horn",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "washington nebraska (seeded)",
+        "path": "/local-movers/nebraska/washington",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      }
+    ],
+    "failedProbeCount": 17
+  },
+  "vercelDeploymentProtection": {
+    "blocked": true,
+    "note": "Vercel preview URLs require VERCEL_AUTOMATION_BYPASS_SECRET for automated HTML fetch. Rendered metadata builder audit used as preview fallback."
+  },
+  "renderedMetadataAudit": {
+    "results": [
+      {
+        "label": "Sherman NE",
+        "path": "/local-movers/nebraska/sherman",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Sherman County (Loup City), NE | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Douglas CO",
+        "path": "/local-movers/colorado/douglas",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Douglas County (Castle Rock), CO | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Highlands FL",
+        "path": "/local-movers/florida/highlands",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Highlands County (Sebring), FL | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Fairfax VA",
+        "path": "/local-movers/virginia/fairfax",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Fairfax County (Fairfax), VA | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Harris TX",
+        "path": "/local-movers/texas/harris",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Harris County (Houston), TX | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Cook IL",
+        "path": "/local-movers/illinois/cook",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Cook County (Chicago), IL | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Philadelphia PA",
+        "path": "/local-movers/pennsylvania/philadelphia",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Philadelphia County (Philadelphia), PA | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Franklin OH",
+        "path": "/local-movers/ohio/franklin",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Franklin County (Columbus), OH | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Wake NC",
+        "path": "/local-movers/north-carolina/wake",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Wake County (Raleigh), NC | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Fulton GA",
+        "path": "/local-movers/georgia/fulton",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Fulton County (Atlanta), GA | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "wyandot ohio (seeded)",
+        "path": "/local-movers/ohio/wyandot",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Wyandot County (Upper Sandusky), OH | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "paulding ohio (seeded)",
+        "path": "/local-movers/ohio/paulding",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Paulding County (Paulding), OH | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "allegheny pennsylvania (seeded)",
+        "path": "/local-movers/pennsylvania/allegheny",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Allegheny County (Pittsburgh), PA | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "oceana michigan (seeded)",
+        "path": "/local-movers/michigan/oceana",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Oceana County (Hart), MI | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "howard missouri (seeded)",
+        "path": "/local-movers/missouri/howard",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Howard County (Ellicott City), MO | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "big-horn wyoming (seeded)",
+        "path": "/local-movers/wyoming/big-horn",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Big Horn County (Basin), WY | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "washington nebraska (seeded)",
+        "path": "/local-movers/nebraska/washington",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Washington County (Blair), NE | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      }
+    ],
+    "failedProbeCount": 0,
+    "pass": true
+  },
+  "phase11Pass": true
+}
