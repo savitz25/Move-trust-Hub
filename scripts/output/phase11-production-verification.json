@@ -1,18 +1,19 @@
 {
-  "generatedAt": "2026-07-14T18:46:43.233Z",
+  "generatedAt": "2026-07-14T19:19:42.730Z",
   "verificationPhase": "production",
-  "deployCommitHash": "22950ef0",
+  "deployCommitHash": "0a618615",
+  "auditOrigin": "https://www.movetrusthub.com",
   "circuitBreaker": {
-    "tier1": 97,
-    "tier2": 3046,
+    "tier1": 254,
+    "tier2": 2889,
     "maxAllowed": 400,
     "pass": true,
     "producingRule": "evaluateCountyIndexabilityFromResult: 3+ explicit county movers, no regional fallback, non-batch cited research, deep-county or premium-metro wave only",
     "tier1Reasons": {
-      "explicit_curated_county": 97
+      "explicit_curated_county": 254
     },
     "tier2Reasons": {
-      "outside_tier1_coverage_wave": 1507,
+      "outside_tier1_coverage_wave": 1350,
       "batch_template_research": 1489,
       "missing_county_research": 50
     }
@@ -36,18 +37,18 @@
     "seededRandomCount": 7,
     "totalProbes": 17,
     "seededSample": {
-      "seed": 580194032,
+      "seed": 174163477,
       "selectionCode": "seedFromCommitHash(commitHash) → mulberry32 → Fisher-Yates shuffle of getAllCountyParams() → take first 7 after excluding named probes",
-      "digest": "07b954c45ba641b9"
+      "digest": "34cf562402c198a5"
     },
     "seededRandomUrls": [
-      "https://www.movetrusthub.com/local-movers/ohio/wyandot",
-      "https://www.movetrusthub.com/local-movers/ohio/paulding",
-      "https://www.movetrusthub.com/local-movers/pennsylvania/allegheny",
-      "https://www.movetrusthub.com/local-movers/michigan/oceana",
-      "https://www.movetrusthub.com/local-movers/missouri/howard",
-      "https://www.movetrusthub.com/local-movers/wyoming/big-horn",
-      "https://www.movetrusthub.com/local-movers/nebraska/washington"
+      "https://www.movetrusthub.com/local-movers/nebraska/pierce",
+      "https://www.movetrusthub.com/local-movers/missouri/buchanan",
+      "https://www.movetrusthub.com/local-movers/alabama/bullock",
+      "https://www.movetrusthub.com/local-movers/montana/meagher",
+      "https://www.movetrusthub.com/local-movers/california/alpine",
+      "https://www.movetrusthub.com/local-movers/arkansas/faulkner",
+      "https://www.movetrusthub.com/local-movers/texas/colorado"
     ],
     "namedUrls": [
       "https://www.movetrusthub.com/local-movers/nebraska/sherman",
@@ -106,7 +107,7 @@
         "status": 200,
         "title": "Movers Serving Highlands County (Sebring), FL | 2026 Guide | Move Trust Hub",
         "metaDescription": "Compare 26 FMCSA-licensed movers serving Highlands County, FL near Sebring. Highlands County features lakes, golf communities, and retiree populations in Sebring and Avon Park. Independent directory —",
-        "robots": "noindex, follow",
+        "robots": "index, follow",
         "hasKeywordsMeta": false,
         "hasMoversServingTitle": true,
         "hasMoversServingH1": true,
@@ -236,12 +237,12 @@
         "pass": true
       },
       {
-        "label": "wyandot ohio (seeded)",
-        "path": "/local-movers/ohio/wyandot",
+        "label": "pierce nebraska (seeded)",
+        "path": "/local-movers/nebraska/pierce",
         "probeGroup": "seeded-random",
         "status": 200,
-        "title": "Movers Serving Wyandot County (Upper Sandusky), OH | 2026 Guide | Move Trust Hub",
-        "metaDescription": "Compare 25 FMCSA-licensed movers serving Wyandot County, OH near Upper Sandusky. Wyandot County is a rural Northwest Ohio county with residential demand centered on Upper Sandusky. Independent directo",
+        "title": "Movers Serving Pierce County (Pierce), NE | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 24 FMCSA-licensed movers serving Pierce County, NE near Pierce. Pierce County, NE is a rural Nebraska county centered on Pierce with residential, agricultural, and regional moving demand acros",
         "robots": "noindex, follow",
         "hasKeywordsMeta": false,
         "hasMoversServingTitle": true,
@@ -253,12 +254,12 @@
         "pass": true
       },
       {
-        "label": "paulding ohio (seeded)",
-        "path": "/local-movers/ohio/paulding",
+        "label": "buchanan missouri (seeded)",
+        "path": "/local-movers/missouri/buchanan",
         "probeGroup": "seeded-random",
         "status": 200,
-        "title": "Movers Serving Paulding County (Paulding), OH | 2026 Guide | Move Trust Hub",
-        "metaDescription": "Compare 25 FMCSA-licensed movers serving Paulding County, OH near Paulding. Paulding County is a rural Northwest Ohio county with residential demand centered on Paulding. Independent directory — FMCSA",
+        "title": "Movers Serving Buchanan County (St. Joseph), MO | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 24 FMCSA-licensed movers serving Buchanan County, MO near St. Joseph. Buchanan County is the core of the St. Independent directory — FMCSA licensing, industry-reported ratings, and moving tips",
         "robots": "noindex, follow",
         "hasKeywordsMeta": false,
         "hasMoversServingTitle": true,
@@ -270,12 +271,46 @@
         "pass": true
       },
       {
-        "label": "allegheny pennsylvania (seeded)",
-        "path": "/local-movers/pennsylvania/allegheny",
+        "label": "bullock alabama (seeded)",
+        "path": "/local-movers/alabama/bullock",
         "probeGroup": "seeded-random",
         "status": 200,
-        "title": "Movers Serving Allegheny County (Pittsburgh), PA | 2026 Guide | Move Trust Hub",
-        "metaDescription": "Compare 26 FMCSA-licensed movers serving Allegheny County, PA near Pittsburgh. Allegheny County is Pittsburgh and its hills — Oakland university housing, Lawrenceville rehabs, and suburban South Hills",
+        "title": "Movers Serving Bullock County (Union Springs), AL | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 25 FMCSA-licensed movers serving Bullock County, AL near Union Springs. Bullock County is a rural county in East Alabama with residential demand centered on Union Springs. Independent director",
+        "robots": "noindex, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasMoversServingH1": true,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "meagher montana (seeded)",
+        "path": "/local-movers/montana/meagher",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Movers Serving Meagher County (White Sulphur Springs), MT | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 24 FMCSA-licensed movers serving Meagher County, MT near White Sulphur Springs. Meagher County is a central Montana county centered on White Sulphur Springs with rural residential demand acros",
+        "robots": "noindex, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasMoversServingH1": true,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "alpine california (seeded)",
+        "path": "/local-movers/california/alpine",
+        "probeGroup": "seeded-random",
+        "status": 200,
+        "title": "Movers Serving Alpine County (Markleeville), CA | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 31 FMCSA-licensed movers serving Alpine County, CA near Markleeville. Alpine County is California&#x27;s least populous and most rural county in the Sierra Nevada. Independent directory — FMCS",
         "robots": "index, follow",
         "hasKeywordsMeta": false,
         "hasMoversServingTitle": true,
@@ -287,12 +322,12 @@
         "pass": true
       },
       {
-        "label": "oceana michigan (seeded)",
-        "path": "/local-movers/michigan/oceana",
+        "label": "faulkner arkansas (seeded)",
+        "path": "/local-movers/arkansas/faulkner",
         "probeGroup": "seeded-random",
         "status": 200,
-        "title": "Movers Serving Oceana County (Hart), MI | 2026 Guide | Move Trust Hub",
-        "metaDescription": "Compare 24 FMCSA-licensed movers serving Oceana County, MI near Hart. Oceana County is a rural West Michigan county with strong agricultural and residential demand across Hart, Shelby, and Pentwater a",
+        "title": "Movers Serving Faulkner County (Conway), AR | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 25 FMCSA-licensed movers serving Faulkner County, AR near Conway. Faulkner County is one of Arkansas’s fastest-growing counties with strong suburban residential demand north of Little Rock. In",
         "robots": "noindex, follow",
         "hasKeywordsMeta": false,
         "hasMoversServingTitle": true,
@@ -304,46 +339,12 @@
         "pass": true
       },
       {
-        "label": "howard missouri (seeded)",
-        "path": "/local-movers/missouri/howard",
+        "label": "colorado texas (seeded)",
+        "path": "/local-movers/texas/colorado",
         "probeGroup": "seeded-random",
         "status": 200,
-        "title": "Movers Serving Howard County (Ellicott City), MO | 2026 Guide | Move Trust Hub",
-        "metaDescription": "Compare 24 FMCSA-licensed movers serving Howard County, MO near Ellicott City. Howard County is a rural Central Missouri county with residential demand. Independent directory — FMCSA licensing, indust",
-        "robots": "noindex, follow",
-        "hasKeywordsMeta": false,
-        "hasMoversServingTitle": true,
-        "hasMoversServingH1": true,
-        "hasArtifactText": false,
-        "renderedArtifactPatterns": [],
-        "hasJsonLd": true,
-        "errors": [],
-        "pass": true
-      },
-      {
-        "label": "big-horn wyoming (seeded)",
-        "path": "/local-movers/wyoming/big-horn",
-        "probeGroup": "seeded-random",
-        "status": 200,
-        "title": "Movers Serving Big Horn County (Basin), WY | 2026 Guide | Move Trust Hub",
-        "metaDescription": "Compare 25 FMCSA-licensed movers serving Big Horn County, WY near Basin. Big Horn County, WY is a north-central Wyoming county centered on Basin with rural residential demand across Bighorn Canyon and",
-        "robots": "noindex, follow",
-        "hasKeywordsMeta": false,
-        "hasMoversServingTitle": true,
-        "hasMoversServingH1": true,
-        "hasArtifactText": false,
-        "renderedArtifactPatterns": [],
-        "hasJsonLd": true,
-        "errors": [],
-        "pass": true
-      },
-      {
-        "label": "washington nebraska (seeded)",
-        "path": "/local-movers/nebraska/washington",
-        "probeGroup": "seeded-random",
-        "status": 200,
-        "title": "Movers Serving Washington County (Blair), NE | 2026 Guide | Move Trust Hub",
-        "metaDescription": "Compare 24 FMCSA-licensed movers serving Washington County, NE near Blair. Washington County, NE is an eastern Omaha metro county centered on Blair with residential spillover, Elkhorn River north corr",
+        "title": "Movers Serving Colorado County, TX | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 30 FMCSA-licensed movers serving Colorado County, TX. Colorado County is one of Texas&#x27;s least populous counties with Columbus as the seat. Independent directory — FMCSA licensing, industr",
         "robots": "noindex, follow",
         "hasKeywordsMeta": false,
         "hasMoversServingTitle": true,
@@ -356,6 +357,9 @@
       }
     ],
     "failedProbeCount": 0
+  },
+  "vercelDeploymentProtection": {
+    "blocked": false
   },
   "phase11Pass": true
 }

@@ -23,6 +23,7 @@ import {
   serializeProbeResults,
   type LiveCountyProbe,
 } from './lib/live-county-audit';
+import { auditRenderedMetadataProbes } from './lib/rendered-metadata-probe-audit';
 
 /** Additional Florida verification counties (Phase 3). */
 const FL_PHASE3_PROBES: LiveCountyProbe[] = [
@@ -50,6 +51,7 @@ const FL_PHASE3_PROBES: LiveCountyProbe[] = [
 ];
 
 async function main() {
+  const phase = process.env.VERIFICATION_PHASE ?? 'production';
   const origin = process.env.AUDIT_ORIGIN ?? PRODUCTION_ORIGIN;
   const commitHash = process.env.DEPLOY_COMMIT_HASH;
   const circuitBreaker = assertTier1CircuitBreakerOrExit();
@@ -79,9 +81,19 @@ async function main() {
   const allProbes = [...probePlan.all, ...FL_PHASE3_PROBES];
   const liveResults = await fetchAllAuditProbes(allProbes, origin);
   const liveSerialized = serializeProbeResults(origin, liveResults);
+  const deploymentProtectionBlocked = liveResults.every((r) =>
+    r.errors.includes('vercel_deployment_protection')
+  );
+  const renderedMetadataAudit =
+    phase === 'preview' && deploymentProtectionBlocked
+      ? auditRenderedMetadataProbes(allProbes)
+      : undefined;
+  const livePass = liveSerialized.failedProbeCount === 0;
+  const previewMetadataFallbackPass = Boolean(renderedMetadataAudit?.pass);
 
   const report = {
     generatedAt: new Date().toISOString(),
+    verificationPhase: phase,
     auditOrigin: origin,
     deployCommitHash: probePlan.commitHash,
     phase3Requirements: {
@@ -101,13 +113,27 @@ async function main() {
     },
     circuitBreaker,
     liveVerification: liveSerialized,
+    vercelDeploymentProtection: deploymentProtectionBlocked
+      ? {
+          blocked: true,
+          note:
+            'Vercel preview requires VERCEL_AUTOMATION_BYPASS_SECRET for HTML fetch; rendered metadata audit used as fallback.',
+        }
+      : { blocked: false },
+    renderedMetadataAudit,
     floridaProbes: FL_PHASE3_PROBES.map((p) => `${origin}${p.path}`),
     phase3Pass:
       DEEP_COUNTY_TOTAL >= 150 &&
       circuitBreaker.pass &&
-      liveSerialized.failedProbeCount === 0,
+      (livePass || (phase === 'preview' && previewMetadataFallbackPass)),
   };
 
+  const outFile =
+    phase === 'preview'
+      ? 'scripts/output/phase3-preview-verification.json'
+      : 'scripts/output/phase3-production-verification.json';
+
+  writeFileSync(outFile, JSON.stringify(report, null, 2));
   writeFileSync('scripts/output/phase3-compliance-report.json', JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));
 

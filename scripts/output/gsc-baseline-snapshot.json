@@ -1,11 +1,11 @@
 {
-  "capturedAt": "2026-07-14T18:26:22.470Z",
+  "capturedAt": "2026-07-14T19:22:39.020Z",
   "origin": "https://www.movetrusthub.com",
   "note": "GSC indexed/impressions/clicks per state require Search Console API credentials. This baseline captures live sitemap county URL counts and evaluator Tier-1 counts per state as reproducible deploy proxies.",
   "gscApiConfigured": false,
   "totals": {
-    "tier1EvaluatorCount": 97,
-    "sitemapCountyUrlsLive": 97
+    "tier1EvaluatorCount": 254,
+    "sitemapCountyUrlsLive": 254
   },
   "perState": [
     {
@@ -26,8 +26,8 @@
       "stateSlug": "arizona",
       "stateCode": "AZ",
       "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/arizona.xml",
-      "sitemapCountyUrls": 0,
-      "tier1CountyCount": 0
+      "sitemapCountyUrls": 1,
+      "tier1CountyCount": 1
     },
     {
       "stateSlug": "arkansas",
@@ -40,8 +40,8 @@
       "stateSlug": "california",
       "stateCode": "CA",
       "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/california.xml",
-      "sitemapCountyUrls": 8,
-      "tier1CountyCount": 8
+      "sitemapCountyUrls": 58,
+      "tier1CountyCount": 58
     },
     {
       "stateSlug": "colorado",
@@ -75,15 +75,15 @@
       "stateSlug": "florida",
       "stateCode": "FL",
       "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/florida.xml",
-      "sitemapCountyUrls": 7,
-      "tier1CountyCount": 7
+      "sitemapCountyUrls": 67,
+      "tier1CountyCount": 67
     },
     {
       "stateSlug": "georgia",
       "stateCode": "GA",
       "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/georgia.xml",
-      "sitemapCountyUrls": 4,
-      "tier1CountyCount": 4
+      "sitemapCountyUrls": 30,
+      "tier1CountyCount": 30
     },
     {
       "stateSlug": "hawaii",
@@ -166,8 +166,8 @@
       "stateSlug": "michigan",
       "stateCode": "MI",
       "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/michigan.xml",
-      "sitemapCountyUrls": 5,
-      "tier1CountyCount": 5
+      "sitemapCountyUrls": 6,
+      "tier1CountyCount": 6
     },
     {
       "stateSlug": "minnesota",
@@ -222,8 +222,8 @@
       "stateSlug": "new-jersey",
       "stateCode": "NJ",
       "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/new-jersey.xml",
-      "sitemapCountyUrls": 5,
-      "tier1CountyCount": 5
+      "sitemapCountyUrls": 10,
+      "tier1CountyCount": 10
     },
     {
       "stateSlug": "new-mexico",
@@ -236,8 +236,8 @@
       "stateSlug": "new-york",
       "stateCode": "NY",
       "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/new-york.xml",
-      "sitemapCountyUrls": 6,
-      "tier1CountyCount": 6
+      "sitemapCountyUrls": 20,
+      "tier1CountyCount": 20
     },
     {
       "stateSlug": "north-carolina",

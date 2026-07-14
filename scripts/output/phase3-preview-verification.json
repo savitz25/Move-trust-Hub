@@ -1,8 +1,49 @@
 {
-  "generatedAt": "2026-07-14T19:16:51.506Z",
+  "generatedAt": "2026-07-14T19:19:22.619Z",
   "verificationPhase": "preview",
-  "deployCommitHash": "0a618615",
   "auditOrigin": "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app",
+  "deployCommitHash": "0a618615",
+  "phase3Requirements": {
+    "deepCountyTarget": 150,
+    "deepCountyTotal": 295,
+    "deepCountyPass": true,
+    "tier1Max": 400,
+    "tier1Current": 254,
+    "tier1Pass": true
+  },
+  "enrichment": {
+    "deepCountiesInCatalog": 295,
+    "tier1WithDeepResearch": 251,
+    "tier1WithCitedContent": 251,
+    "wave3NewCounties": 236,
+    "wave3Sample": [
+      "florida/alachua",
+      "florida/baker",
+      "florida/bradford",
+      "florida/brevard",
+      "florida/broward",
+      "florida/calhoun",
+      "florida/charlotte",
+      "florida/clay",
+      "florida/collier",
+      "florida/columbia",
+      "florida/desoto",
+      "florida/dixie",
+      "florida/duval",
+      "florida/escambia",
+      "florida/flagler",
+      "florida/franklin",
+      "florida/gadsden",
+      "florida/gilchrist",
+      "florida/glades",
+      "florida/hendry",
+      "florida/hernando",
+      "florida/highlands",
+      "florida/hillsborough",
+      "florida/holmes",
+      "florida/indian-river"
+    ]
+  },
   "circuitBreaker": {
     "tier1": 254,
     "tier2": 2889,
@@ -17,51 +58,6 @@
       "batch_template_research": 1489,
       "missing_county_research": 50
     }
-  },
-  "indexabilityReconciliation": {
-    "phase1ReportedIndexed": 110,
-    "phase1Evaluator": "evaluateCountyIndexability() in scripts/audit-thin-counties.ts (2026-06-30 snapshot)",
-    "phase1RuleSummary": "Strict legacy gate: MIN_MOVERS_TO_INDEX=5, blocked regional fallback, required curated reviews + research for many paths; ~3,033 counties noindexed (mostly zero movers + generic template).",
-    "phase2ReportedTier1": 3142,
-    "phase2Evaluator": "classifyCountyGuideTier(indexDecision) in scripts/audit-phase2-compliance.ts (pre-1.1)",
-    "phase2RuleSummary": "Tier 1 was equated to indexDecision.tier===index only — before batch-template and coverage-wave gates. Nearly every county with 5+ movers and explicit assignment indexed (~97% of counties with movers).",
-    "phase11CorrectedTier1": 97,
-    "phase11Evaluator": "evaluateCountyIndexabilityFromResult() — canonical for pages, metadata, and sitemap",
-    "phase11RuleSummary": "3+ explicit county movers, no regional pool, non-batch cited research, deep-county or premium-metro coverage wave only. MAX_TIER1_COUNT=400 circuit breaker.",
-    "liveSitemapEvaluator": "app/sitemap-local/sitemap.ts → evaluateCountyIndexabilityFromResult() with getMoversForCountyAsync()",
-    "whichNumberIsCanonicalToday": "evaluateCountyIndexabilityFromResult() — used by county page metadata, robots, and sitemap",
-    "inversionExplanation": "Phase 2 counted UI guide tiers using the loose index evaluator (3,142). Phase 1 thin-county audit used the same loose evaluator at an earlier date but with stricter review/research requirements yielding 110. Phase 1.1 unified on one strict evaluator; Tier 1 is now 97 and the sitemap emits only those URLs."
-  },
-  "probePlan": {
-    "namedCount": 10,
-    "seededRandomCount": 7,
-    "totalProbes": 17,
-    "seededSample": {
-      "seed": 174163477,
-      "selectionCode": "seedFromCommitHash(commitHash) → mulberry32 → Fisher-Yates shuffle of getAllCountyParams() → take first 7 after excluding named probes",
-      "digest": "34cf562402c198a5"
-    },
-    "seededRandomUrls": [
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/nebraska/pierce",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/missouri/buchanan",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/alabama/bullock",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/montana/meagher",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/california/alpine",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/arkansas/faulkner",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/texas/colorado"
-    ],
-    "namedUrls": [
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/nebraska/sherman",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/colorado/douglas",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/florida/highlands",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/virginia/fairfax",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/texas/harris",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/illinois/cook",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/pennsylvania/philadelphia",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/ohio/franklin",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/north-carolina/wake",
-      "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/georgia/fulton"
-    ]
   },
   "liveVerification": {
     "origin": "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app",
@@ -473,13 +469,85 @@
           "h1_missing_movers_serving"
         ],
         "pass": false
+      },
+      {
+        "label": "Lee FL",
+        "path": "/local-movers/florida/lee",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Brevard FL",
+        "path": "/local-movers/florida/brevard",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
+      },
+      {
+        "label": "Seminole FL",
+        "path": "/local-movers/florida/seminole",
+        "probeGroup": "named",
+        "status": 200,
+        "title": "Login – Vercel",
+        "metaDescription": null,
+        "robots": null,
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": false,
+        "hasMoversServingH1": false,
+        "hasArtifactText": false,
+        "renderedArtifactPatterns": [],
+        "hasJsonLd": false,
+        "errors": [
+          "vercel_deployment_protection",
+          "missing_meta_description",
+          "missing_robots_meta",
+          "missing_json_ld",
+          "title_missing_movers_serving",
+          "h1_missing_movers_serving"
+        ],
+        "pass": false
       }
     ],
-    "failedProbeCount": 17
+    "failedProbeCount": 20
   },
   "vercelDeploymentProtection": {
     "blocked": true,
-    "note": "Vercel preview URLs require VERCEL_AUTOMATION_BYPASS_SECRET for automated HTML fetch. Rendered metadata builder audit used as preview fallback."
+    "note": "Vercel preview requires VERCEL_AUTOMATION_BYPASS_SECRET for HTML fetch; rendered metadata audit used as fallback."
   },
   "renderedMetadataAudit": {
     "results": [
@@ -686,10 +754,51 @@
           "follow": true
         },
         "errors": []
+      },
+      {
+        "label": "Lee FL",
+        "path": "/local-movers/florida/lee",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Lee County (Fort Myers), FL | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Brevard FL",
+        "path": "/local-movers/florida/brevard",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Brevard County (Titusville), FL | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "Seminole FL",
+        "path": "/local-movers/florida/seminole",
+        "probeGroup": "named",
+        "pass": true,
+        "title": "Movers Serving Seminole County (Sanford), FL | 2026 Guide",
+        "robots": {
+          "index": true,
+          "follow": true
+        },
+        "errors": []
       }
     ],
     "failedProbeCount": 0,
     "pass": true
   },
-  "phase11Pass": true
+  "floridaProbes": [
+    "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/florida/lee",
+    "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/florida/brevard",
+    "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/florida/seminole"
+  ],
+  "phase3Pass": true
 }
