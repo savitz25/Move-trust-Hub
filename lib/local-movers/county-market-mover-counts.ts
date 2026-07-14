@@ -2,15 +2,73 @@
  * Estimated active movers serving each county market (density-based).
  * Used on state county grids for scanable “X Movers” badges.
  * Distinct from curated listing length on county detail pages.
- *
- * Full USA map: lib/local-movers/market-mover-counts/usa-market-mover-counts.generated.ts
- * Regenerate: npx tsx scripts/generate-usa-market-mover-counts.ts
  */
 
-import { californiaMarketMoverCounts } from '@/lib/local-movers/market-mover-counts/california';
-import { usaMarketMoverCounts } from '@/lib/local-movers/market-mover-counts/usa-market-mover-counts.generated';
+/** California — all 58 counties */
+export const californiaMarketMoverCounts: Record<string, number> = {
+  alameda: 98,
+  alpine: 2,
+  amador: 8,
+  butte: 18,
+  calaveras: 7,
+  colusa: 5,
+  'contra-costa': 76,
+  'del-norte': 4,
+  'el-dorado': 22,
+  fresno: 58,
+  glenn: 4,
+  humboldt: 14,
+  imperial: 12,
+  inyo: 3,
+  kern: 52,
+  kings: 11,
+  lake: 6,
+  lassen: 3,
+  'los-angeles': 312,
+  madera: 14,
+  marin: 42,
+  mariposa: 4,
+  mendocino: 9,
+  merced: 16,
+  modoc: 1,
+  mono: 2,
+  monterey: 28,
+  napa: 24,
+  nevada: 12,
+  orange: 186,
+  placer: 48,
+  plumas: 3,
+  riverside: 118,
+  sacramento: 94,
+  'san-benito': 10,
+  'san-bernardino': 124,
+  'san-diego': 168,
+  'san-francisco': 88,
+  'san-joaquin': 44,
+  'san-luis-obispo': 26,
+  'san-mateo': 72,
+  'santa-barbara': 34,
+  'santa-clara': 142,
+  'santa-cruz': 32,
+  shasta: 18,
+  sierra: 1,
+  siskiyou: 5,
+  solano: 36,
+  sonoma: 46,
+  stanislaus: 38,
+  sutter: 11,
+  tehama: 6,
+  trinity: 2,
+  tulare: 28,
+  tuolumne: 8,
+  ventura: 64,
+  yolo: 28,
+  yuba: 10,
+};
 
-export { californiaMarketMoverCounts };
+const marketCountsByState: Record<string, Record<string, number>> = {
+  california: californiaMarketMoverCounts,
+};
 
 /**
  * Market-availability estimate for a county, if we have one.
@@ -20,16 +78,10 @@ export function getCountyMarketMoverCount(
   stateSlug: string,
   countySlug: string
 ): number | null {
-  const map = usaMarketMoverCounts[stateSlug];
+  const map = marketCountsByState[stateSlug];
   if (!map) return null;
   const n = map[countySlug];
   return typeof n === 'number' ? n : null;
-}
-
-/** True when we have a full market-count map for the state. */
-export function stateHasMarketMoverCounts(stateSlug: string): boolean {
-  const map = usaMarketMoverCounts[stateSlug];
-  return Boolean(map && Object.keys(map).length > 0);
 }
 
 export type MoverCountBadgeTier = 'high' | 'medium' | 'low' | 'zero';
