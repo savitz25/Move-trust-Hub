@@ -1,5 +1,5 @@
-import { hasDeepCountyResearch } from '@/data/deep-county-research';
-import { getCountyResearch } from '@/lib/local-movers/county-research';
+import { hasCitedCountyResearchContent } from '@/lib/local-movers/county-research-citations';
+import { getCountyResearch, getRawCountyResearch } from '@/lib/local-movers/county-research';
 
 export const BATCH_FMCSA_TIP =
   'Obtain multiple estimates and re-verify FMCSA authority, BBB rating, and current reviews';
@@ -14,7 +14,7 @@ export function isBatchTemplateCountyResearch(
   stateSlug: string,
   countySlug: string
 ): boolean {
-  const research = getCountyResearch(stateSlug, countySlug);
+  const research = getRawCountyResearch(stateSlug, countySlug);
   const tips = research?.tips ?? [];
   if (tips.length < 4) return false;
 
@@ -32,9 +32,12 @@ export function classifyCountyContentTier(
   hasResearch: boolean
 ): CountyContentTier {
   if (!hasResearch) return 'runtime_programmatic_shell';
-  if (hasDeepCountyResearch(stateSlug, countySlug)) return 'grok_heavy_original';
+  const research = getCountyResearch(stateSlug, countySlug);
   if (isBatchTemplateCountyResearch(stateSlug, countySlug)) {
     return 'batch_template_research';
   }
-  return 'grok_heavy_original';
+  if (hasCitedCountyResearchContent(research)) {
+    return 'grok_heavy_original';
+  }
+  return 'batch_template_research';
 }

@@ -41,4 +41,49 @@ if (violations.length > 0) {
   process.exit(1);
 }
 
-console.log('OK: no runtime imports of deprecated county-testimonials modules');
+async function main() {
+  console.log('OK: no runtime imports of deprecated county-testimonials modules');
+
+  const { fetchAllRequiredLiveCounties, PRODUCTION_ORIGIN } = await import('./lib/live-county-audit');
+  const liveResults = await fetchAllRequiredLiveCounties();
+  const liveProbeReport: Array<{ label: string; path: string; status: number; pass: boolean; issues: string[] }> = [];
+
+  for (const result of liveResults) {
+    const issues: string[] = [];
+    let html = '';
+    try {
+      const response = await fetch(`${PRODUCTION_ORIGIN}${result.probe.path}`, {
+        headers: { 'User-Agent': 'MoveTrustHub-TestimonialGuard/1.1' },
+      });
+      html = await response.text();
+      if (response.status !== 200) issues.push(`http_${response.status}`);
+      if (/Loup River Sherman Moving/i.test(html)) issues.push('fabricated_testimonial_quote');
+      if (/\bloup river sherman\b/i.test(html)) issues.push('artifact_text');
+      if (/<meta[^>]+name=["']keywords["']/i.test(html)) issues.push('forbidden_keywords_meta');
+    } catch (error) {
+      issues.push(`fetch_failed:${error instanceof Error ? error.message : String(error)}`);
+    }
+
+    liveProbeReport.push({
+      label: result.probe.label,
+      path: result.probe.path,
+      status: result.status,
+      pass: issues.length === 0,
+      issues,
+    });
+  }
+
+  const failures = liveProbeReport.filter((probe) => !probe.pass);
+  if (failures.length > 0) {
+    console.error('Live testimonial guard failures:');
+    failures.forEach((probe) => console.error(`  - ${probe.label}: ${probe.issues.join(', ')}`));
+    process.exit(1);
+  }
+
+  console.log(`Live testimonial guard OK (${liveResults.length} county probes)`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

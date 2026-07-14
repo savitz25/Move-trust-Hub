@@ -1489,12 +1489,12 @@ export const nebraskaCountyResearch: Record<string, CuratedCountyResearch> = {
   },
   sherman: {
     marketNotes:
-      'Sherman County is a rural Nebraska county centered on Loup City with residential, agricultural, and loup river sherman corridor demand across surrounding communities.',
+      'Sherman County is a rural Nebraska county centered on Loup City with residential and agricultural moving demand along the Loup River Valley.',
     costs: {
       studioRange: '$750–$1,500',
       familyRange: '$2,600–$5,800+',
       avgHourly: '$100–$155/hr for a 2-person crew',
-      note: 'Sherman County pricing reflects Loup City-area demand, loup river sherman travel distances, agricultural property logistics, and competition among regional agents serving Sherman County communities.',
+      note: 'Sherman County pricing reflects Loup City-area demand, rural travel distances across the Loup River Valley, agricultural property logistics, and competition among regional agents serving Sherman County communities.',
     },
     tips: [
       'Verify coverage for Loup City and surrounding areas before booking.',

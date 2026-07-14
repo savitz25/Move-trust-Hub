@@ -96,7 +96,6 @@ export function buildCountyPageMetadata(
 ): Metadata {
   const title = buildCountyPageTitle(county, getSeoYear());
   const description = buildCountyDescription(county, stateName, movers.length);
-  const keywords = buildCountyKeywords(county, stateName, movers).slice(0, 12);
   const resolvedIndexDecision =
     indexDecision ?? evaluateCountyIndexability(county.stateSlug, county.slug);
   const shouldIndex = resolvedIndexDecision.tier === 'index';
@@ -104,7 +103,6 @@ export function buildCountyPageMetadata(
   return {
     title,
     description,
-    keywords,
     alternates: { canonical: `${SITE_URL}${path}` },
     openGraph: buildOpenGraph(title, description, path),
     twitter: buildTwitter(title, description),

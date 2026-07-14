@@ -52,6 +52,7 @@ import { applyWisconsinCountyOverrides } from '@/lib/local-movers/geography/wisc
 import { marylandSupplementalCounties } from '@/lib/local-movers/geography/maryland-supplemental';
 import { applyTennesseeCountyOverrides } from '@/lib/local-movers/geography/tennessee-overrides';
 import { applyTexasCountyOverrides } from '@/lib/local-movers/geography/texas-overrides';
+import { applyCountySeatOverrides } from '@/lib/local-movers/geography/county-seat-overrides';
 
 const curatedStateSlugs = new Set(['california', 'florida', 'new-jersey', 'new-york']);
 
@@ -127,7 +128,8 @@ const allCounties: LocalCounty[] = [
     .map(applyNebraskaCountyOverrides)
     .map(applyIowaCountyOverrides)
     .map(applyMinnesotaCountyOverrides)
-    .map(applyWisconsinCountyOverrides),
+    .map(applyWisconsinCountyOverrides)
+    .map(applyCountySeatOverrides),
 ];
 
 export function getCountiesForState(stateSlug: string): LocalCounty[] {

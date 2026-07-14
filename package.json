@@ -24,6 +24,7 @@
     "audit:phase1": "tsx scripts/audit-phase1-compliance.ts",
     "audit:phase2": "tsx scripts/audit-phase2-compliance.ts",
     "guard:testimonials": "tsx scripts/guard-county-testimonial-imports.ts",
+    "revalidate:local-movers": "tsx scripts/revalidate-local-movers.ts",
     "count:tennessee-movers": "tsx scripts/count-tennessee-movers.ts",
     "count:alabama-movers": "tsx scripts/count-alabama-movers.ts",
     "count:mississippi-movers": "tsx scripts/count-mississippi-movers.ts",

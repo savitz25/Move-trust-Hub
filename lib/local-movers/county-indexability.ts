@@ -1,11 +1,12 @@
-import {
-  getCountyResearch,
-  hasCountyResearch,
-  isGenericTemplateCountyResearch,
-  marketNotesDescribeThinMarket,
-} from '@/lib/local-movers/county-research';
+import { hasCitedCountyResearchContent } from '@/lib/local-movers/county-research-citations';
+import { hasDeepCountyResearch } from '@/data/deep-county-research';
+import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content-quality';
+import { getCountyResearch, hasCountyResearch } from '@/lib/local-movers/county-research';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
-import { getMoversForCounty, hasExplicitCountyAssignment } from '@/lib/local-movers/index';
+import {
+  countExplicitCountyMovers,
+  getMoversForCounty,
+} from '@/lib/local-movers/index';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -16,8 +17,8 @@ export type CountyIndexDecision = {
   reason: string;
 };
 
-const MIN_MOVERS_TO_INDEX = 5;
-const MIN_MOVERS_PREMIUM_INDEX = 8;
+/** Counties need 3+ explicitly assigned movers — regional metro pools do not qualify. */
+export const MIN_EXPLICIT_MOVERS_TO_INDEX = 3;
 
 type CountyMoverResult = {
   county: LocalCounty;
@@ -34,77 +35,40 @@ export function evaluateCountyIndexabilityFromResult(
     return { tier: 'noindex', reason: 'missing_county' };
   }
 
-  const { movers, isRegionalFallback } = result;
-  const moverCount = movers.length;
+  const { isRegionalFallback } = result;
+  const explicitCount = countExplicitCountyMovers(stateSlug, countySlug);
   const research = getCountyResearch(stateSlug, countySlug);
   const hasResearch = hasCountyResearch(stateSlug, countySlug);
-  const hasCuratedReviews = hasAttributableCountyReviews(movers);
-  const hasExplicit = hasExplicitCountyAssignment(stateSlug, countySlug);
-  const thinMarket = marketNotesDescribeThinMarket(research?.marketNotes);
 
-  if (moverCount === 0) {
-    return { tier: 'noindex', reason: 'zero_movers' };
+  if (explicitCount === 0) {
+    return { tier: 'noindex', reason: 'no_explicit_assignment' };
   }
 
   if (isRegionalFallback) {
     return { tier: 'noindex', reason: 'regional_metro_fallback' };
   }
 
-  if (moverCount < MIN_MOVERS_TO_INDEX) {
-    return { tier: 'noindex', reason: 'insufficient_verified_movers' };
+  if (explicitCount < MIN_EXPLICIT_MOVERS_TO_INDEX) {
+    return { tier: 'noindex', reason: 'insufficient_explicit_movers' };
   }
 
-  if (thinMarket && moverCount < MIN_MOVERS_PREMIUM_INDEX) {
-    return { tier: 'noindex', reason: 'thin_market_limited_coverage' };
+  if (!hasResearch) {
+    return { tier: 'noindex', reason: 'missing_county_research' };
   }
 
-  if (
-    hasResearch &&
-    isGenericTemplateCountyResearch(stateSlug, countySlug) &&
-    (!isPremiumMetroCounty(stateSlug, countySlug) ||
-      moverCount < MIN_MOVERS_PREMIUM_INDEX)
-  ) {
-    return { tier: 'noindex', reason: 'generic_template_research' };
+  if (isBatchTemplateCountyResearch(stateSlug, countySlug)) {
+    return { tier: 'noindex', reason: 'batch_template_research' };
   }
 
-  if (hasExplicit && hasResearch && hasCuratedReviews && moverCount >= MIN_MOVERS_TO_INDEX) {
-    return { tier: 'index', reason: 'fully_curated_county' };
+  if (!hasCitedCountyResearchContent(research)) {
+    return { tier: 'noindex', reason: 'uncited_research' };
   }
 
-  if (hasResearch && moverCount >= MIN_MOVERS_PREMIUM_INDEX) {
-    return { tier: 'index', reason: 'researched_substantive_listings' };
+  if (!hasDeepCountyResearch(stateSlug, countySlug) && !isPremiumMetroCounty(stateSlug, countySlug)) {
+    return { tier: 'noindex', reason: 'outside_tier1_coverage_wave' };
   }
 
-  if (hasExplicit && moverCount >= MIN_MOVERS_PREMIUM_INDEX) {
-    return { tier: 'index', reason: 'explicit_assignment_substantive_listings' };
-  }
-
-  const usdotCoverage =
-    moverCount > 0 ? movers.filter((m) => Boolean(m.usdotNumber)).length / moverCount : 0;
-
-  if (
-    isPremiumMetroCounty(stateSlug, countySlug) &&
-    hasExplicit &&
-    hasResearch &&
-    moverCount >= MIN_MOVERS_PREMIUM_INDEX &&
-    usdotCoverage >= 0.6
-  ) {
-    return { tier: 'index', reason: 'premium_metro_verified_listings' };
-  }
-
-  if (!hasResearch && moverCount < MIN_MOVERS_PREMIUM_INDEX) {
-    return { tier: 'noindex', reason: 'uncurated_template_page' };
-  }
-
-  if (moverCount >= MIN_MOVERS_TO_INDEX && usdotCoverage < 0.6) {
-    return { tier: 'noindex', reason: 'insufficient_fmcsa_verification' };
-  }
-
-  if (moverCount >= MIN_MOVERS_TO_INDEX && hasResearch && hasCuratedReviews) {
-    return { tier: 'index', reason: 'curated_minimum_listings' };
-  }
-
-  return { tier: 'noindex', reason: 'default_quality_guard' };
+  return { tier: 'index', reason: 'explicit_curated_county' };
 }
 
 /** Sync evaluator — uses seed/assignment catalog only (no Supabase approved movers). */

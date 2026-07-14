@@ -1,4 +1,5 @@
 import { getDeepCountyFaqExtras } from '@/data/deep-county-research';
+import { sanitizeCountyResearchText } from '@/lib/local-movers/county-research-sanitizer';
 import { buildCountyPageTitle } from '@/lib/local-movers/county-display-copy';
 import { getCountyResearch } from '@/lib/local-movers/county-research';
 import { getCaliforniaCountyResearch } from '@/data/california-county-research';
@@ -114,7 +115,7 @@ export function buildCountyDescription(
     moverCount > 0
       ? `Compare ${moverCount} FMCSA-licensed movers serving ${countyLabel}`
       : `Verified mover listings for ${countyLabel} are being expanded`;
-  const marketSnippet = buildCountyMarketNotes(county);
+  const marketSnippet = sanitizeCountyResearchText(buildCountyMarketNotes(county));
   const localContext = marketSnippet
     ? `${marketSnippet.split('.')[0]}. `
     : '';

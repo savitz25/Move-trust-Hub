@@ -51,8 +51,8 @@ import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
 import { getWyomingCountyResearch } from '@/data/wyoming-county-research';
 import {
   getDeepCountyResearch,
-  hasDeepCountyResearch,
 } from '@/data/deep-county-research';
+import { applyCountyResearchCitations } from '@/lib/local-movers/county-research-citations';
 import { getMoversForCounty } from '@/lib/local-movers/index';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 
@@ -127,13 +127,20 @@ const RESEARCH_GETTERS: Record<
   wyoming: getWyomingCountyResearch,
 };
 
+export function getRawCountyResearch(
+  stateSlug: string,
+  countySlug: string
+): CountyResearch | undefined {
+  return getDeepCountyResearch(stateSlug, countySlug) ?? RESEARCH_GETTERS[stateSlug]?.(countySlug);
+}
+
 export function getCountyResearch(
   stateSlug: string,
   countySlug: string
 ): CountyResearch | undefined {
-  const deep = getDeepCountyResearch(stateSlug, countySlug);
-  if (deep) return deep;
-  return RESEARCH_GETTERS[stateSlug]?.(countySlug);
+  const raw = getRawCountyResearch(stateSlug, countySlug);
+  if (!raw?.marketNotes) return undefined;
+  return applyCountyResearchCitations(raw);
 }
 
 export function hasCountyResearch(stateSlug: string, countySlug: string): boolean {
@@ -173,9 +180,7 @@ export function isGenericTemplateCountyResearch(
   stateSlug: string,
   countySlug: string
 ): boolean {
-  if (hasDeepCountyResearch(stateSlug, countySlug)) return false;
-
-  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
+  const research = getRawCountyResearch(stateSlug, countySlug);
   if (!research) return true;
 
   const tips = research.tips ?? [];

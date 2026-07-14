@@ -100,6 +100,8 @@ export const PREMIUM_METRO_COUNTIES: ReadonlyArray<{ stateSlug: string; countySl
   { stateSlug: 'new-jersey', countySlug: 'middlesex' },
   { stateSlug: 'new-jersey', countySlug: 'monmouth' },
   // Florida (expand)
+  { stateSlug: 'florida', countySlug: 'miami-dade' },
+  { stateSlug: 'florida', countySlug: 'broward' },
   { stateSlug: 'florida', countySlug: 'palm-beach' },
   { stateSlug: 'florida', countySlug: 'hillsborough' },
   { stateSlug: 'florida', countySlug: 'orange' },

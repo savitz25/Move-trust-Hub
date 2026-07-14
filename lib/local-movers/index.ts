@@ -141,23 +141,27 @@ function resolveMoverIds(county: LocalCounty): string[] {
   return [];
 }
 
-export function hasExplicitCountyAssignment(
-  stateSlug: string,
-  countySlug: string
-): boolean {
+function getExplicitAssignmentMovers(stateSlug: string, countySlug: string): LocalMover[] {
   const entry = allCountyAssignments.find(
     (assignment) =>
       assignment.stateSlug === stateSlug && assignment.countySlug === countySlug
   );
-  if (!entry?.moverIds.length) return false;
+  if (!entry?.moverIds.length) return [];
 
-  const displayableIds = filterAssignmentMoverIds(entry.moverIds).filter(
-    (id) => {
-      const mover = fullMoversCatalog[id];
-      return Boolean(mover) && isCuratedMover(mover);
-    }
-  );
-  return displayableIds.length > 0;
+  return filterAssignmentMoverIds(entry.moverIds)
+    .map((id) => fullMoversCatalog[id])
+    .filter((mover): mover is LocalMover => Boolean(mover) && isCuratedMover(mover));
+}
+
+export function countExplicitCountyMovers(stateSlug: string, countySlug: string): number {
+  return getExplicitAssignmentMovers(stateSlug, countySlug).length;
+}
+
+export function hasExplicitCountyAssignment(
+  stateSlug: string,
+  countySlug: string
+): boolean {
+  return countExplicitCountyMovers(stateSlug, countySlug) > 0;
 }
 
 export function getMoversForCounty(

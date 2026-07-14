@@ -1,9 +1,8 @@
-import { hasDeepCountyResearch } from '@/data/deep-county-research';
-import { classifyCountyContentTier } from '@/lib/local-movers/county-content-quality';
 import type { CountyIndexDecision } from '@/lib/local-movers/county-indexability';
-import { hasCountyResearch } from '@/lib/local-movers/county-research';
+import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content-quality';
+import { getCountyResearch } from '@/lib/local-movers/county-research';
 
-/** Tier 1 = indexable, enriched county guides. Tier 2 = noindex,follow limited coverage. */
+/** Tier 1 = indexable county guides. Tier 2 = noindex limited coverage. */
 export type CountyGuideTier = 'tier1' | 'tier2';
 
 export type CountyGuideTierMeta = {
@@ -14,19 +13,9 @@ export type CountyGuideTierMeta = {
 };
 
 export function classifyCountyGuideTier(
-  indexDecision: CountyIndexDecision,
-  stateSlug: string,
-  countySlug: string
+  indexDecision: CountyIndexDecision
 ): CountyGuideTier {
-  if (indexDecision.tier === 'noindex') return 'tier2';
-  if (hasDeepCountyResearch(stateSlug, countySlug)) return 'tier1';
-  const contentTier = classifyCountyContentTier(
-    stateSlug,
-    countySlug,
-    hasCountyResearch(stateSlug, countySlug)
-  );
-  if (contentTier === 'grok_heavy_original') return 'tier1';
-  return 'tier1';
+  return indexDecision.tier === 'index' ? 'tier1' : 'tier2';
 }
 
 export function getCountyGuideTierMeta(
@@ -34,12 +23,16 @@ export function getCountyGuideTierMeta(
   stateSlug: string,
   countySlug: string
 ): CountyGuideTierMeta {
-  const tier = classifyCountyGuideTier(indexDecision, stateSlug, countySlug);
+  const tier = classifyCountyGuideTier(indexDecision);
   if (tier === 'tier1') {
+    const enriched = Boolean(
+      getCountyResearch(stateSlug, countySlug) &&
+        !isBatchTemplateCountyResearch(stateSlug, countySlug)
+    );
     return {
       tier,
       label: 'Full county guide',
-      badge: hasDeepCountyResearch(stateSlug, countySlug) ? 'Enriched' : 'Full guide',
+      badge: enriched ? 'Enriched' : 'Full guide',
     };
   }
   return {
