@@ -13,9 +13,11 @@ import {
   MOVE_OG_CONFIG,
   type TrustHubOgConfig,
 } from '../lib/og/trust-hub-og-config';
+import { getOgLogoDataUrl } from '../lib/og/get-og-logo-src';
 import { TrustHubOgImage } from '../lib/og/trust-hub-og-image';
 
 const SIZE = { width: 1200, height: 630 };
+const LOGO_SRC = getOgLogoDataUrl();
 
 const EXPORTS: Array<{ filename: string; config: TrustHubOgConfig }> = [
   { filename: 'moving-og.png', config: MOVE_OG_CONFIG },
@@ -24,7 +26,10 @@ const EXPORTS: Array<{ filename: string; config: TrustHubOgConfig }> = [
 ];
 
 async function exportOne(filename: string, config: TrustHubOgConfig): Promise<void> {
-  const response = new ImageResponse(<TrustHubOgImage config={config} />, SIZE);
+  const response = new ImageResponse(
+    <TrustHubOgImage config={config} logoSrc={LOGO_SRC} />,
+    SIZE
+  );
   const buffer = Buffer.from(await response.arrayBuffer());
   const outDir = resolve(process.cwd(), 'public/og');
   mkdirSync(outDir, { recursive: true });

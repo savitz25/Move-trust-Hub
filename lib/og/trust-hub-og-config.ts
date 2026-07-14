@@ -17,7 +17,7 @@ export const MOVE_OG_CONFIG: TrustHubOgConfig = {
   subHeadline: 'Estimate Cubic Feet • Weight • Truck Size Instantly',
   supportingText: 'Compare FMCSA-Licensed Movers • Independent Directory • No Lead Fees',
   domain: 'www.movetrusthub.com',
-  trustBadges: ['FMCSA Licensed', 'No Lead Fees', 'Independent'],
+  trustBadges: ['FMCSA', 'Google', 'BBB Verified', 'Attributed Reviews'],
 };
 
 export const LENDER_OG_CONFIG: TrustHubOgConfig = {

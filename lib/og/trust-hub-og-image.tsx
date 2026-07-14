@@ -1,10 +1,9 @@
 import React from 'react';
 import type { TrustHubOgConfig } from '@/lib/og/trust-hub-og-config';
-import { TRUST_HUB_LOGO_VERSION } from '@/lib/hub/config';
+import { OG_LOGO_DISPLAY_HEIGHT, OG_LOGO_DISPLAY_WIDTH } from '@/lib/og/get-og-logo-src';
 
 const NAVY = '#0A2540';
 const TEAL = '#00BFA5';
-const LOGO_URL = `https://www.movetrusthub.com/logo.png?v=${TRUST_HUB_LOGO_VERSION}`;
 
 function Illustration({ vertical }: { vertical: TrustHubOgConfig['vertical'] }) {
   if (vertical === 'move') {
@@ -250,7 +249,13 @@ function Illustration({ vertical }: { vertical: TrustHubOgConfig['vertical'] }) 
   );
 }
 
-export function TrustHubOgImage({ config }: { config: TrustHubOgConfig }) {
+export function TrustHubOgImage({
+  config,
+  logoSrc,
+}: {
+  config: TrustHubOgConfig;
+  logoSrc: string;
+}) {
   return (
     <div
       style={{
@@ -284,7 +289,12 @@ export function TrustHubOgImage({ config }: { config: TrustHubOgConfig }) {
           paddingBottom: 8,
         }}
       >
-        <img src={LOGO_URL} alt="Move Trust Hub" width={420} height={113} />
+        <img
+          src={logoSrc}
+          alt="Move Trust Hub"
+          width={OG_LOGO_DISPLAY_WIDTH}
+          height={OG_LOGO_DISPLAY_HEIGHT}
+        />
       </div>
 
       <div
@@ -337,7 +347,53 @@ export function TrustHubOgImage({ config }: { config: TrustHubOgConfig }) {
           >
             {config.supportingText}
           </div>
-          <div style={{ display: 'flex', gap: 10, marginTop: 8, flexWrap: 'wrap' }}>
+          {config.vertical !== 'move' ? (
+            <div style={{ display: 'flex', gap: 10, marginTop: 8, flexWrap: 'wrap' }}>
+              {config.trustBadges.map((badge) => (
+                <span
+                  key={badge}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    padding: '8px 14px',
+                    borderRadius: 999,
+                    background: '#FFFFFF',
+                    border: `1.5px solid ${TEAL}55`,
+                    color: NAVY,
+                    fontSize: 15,
+                    fontWeight: 600,
+                  }}
+                >
+                  <span
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: 4,
+                      background: TEAL,
+                    }}
+                  />
+                  {badge}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </div>
+
+        <Illustration vertical={config.vertical} />
+      </div>
+
+      {config.vertical === 'move' ? (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0 48px 28px',
+            gap: 16,
+          }}
+        >
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', flex: 1 }}>
             {config.trustBadges.map((badge) => (
               <span
                 key={badge}
@@ -350,7 +406,7 @@ export function TrustHubOgImage({ config }: { config: TrustHubOgConfig }) {
                   background: '#FFFFFF',
                   border: `1.5px solid ${TEAL}55`,
                   color: NAVY,
-                  fontSize: 15,
+                  fontSize: 14,
                   fontWeight: 600,
                 }}
               >
@@ -366,24 +422,33 @@ export function TrustHubOgImage({ config }: { config: TrustHubOgConfig }) {
               </span>
             ))}
           </div>
+          <div
+            style={{
+              fontSize: 17,
+              fontWeight: 600,
+              color: '#6B8296',
+              letterSpacing: '0.01em',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {config.domain}
+          </div>
         </div>
-
-        <Illustration vertical={config.vertical} />
-      </div>
-
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 28,
-          right: 48,
-          fontSize: 17,
-          fontWeight: 600,
-          color: '#6B8296',
-          letterSpacing: '0.01em',
-        }}
-      >
-        {config.domain}
-      </div>
+      ) : (
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 28,
+            right: 48,
+            fontSize: 17,
+            fontWeight: 600,
+            color: '#6B8296',
+            letterSpacing: '0.01em',
+          }}
+        >
+          {config.domain}
+        </div>
+      )}
     </div>
   );
 }
