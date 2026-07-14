@@ -353,6 +353,116 @@ export const arizonaMarketMoverCounts: Record<string, number> = {
   yuma: 24,
 };
 
+/** Washington — exact listed (active directory only) movers per county page */
+export const washingtonMarketMoverCounts: Record<string, number> = {
+  adams: 25,
+  asotin: 25,
+  benton: 25,
+  chelan: 25,
+  clallam: 25,
+  clark: 25,
+  columbia: 25,
+  cowlitz: 25,
+  douglas: 25,
+  ferry: 25,
+  franklin: 25,
+  garfield: 25,
+  grant: 25,
+  'grays-harbor': 25,
+  island: 25,
+  jefferson: 25,
+  king: 25,
+  kitsap: 25,
+  kittitas: 25,
+  klickitat: 25,
+  lewis: 25,
+  lincoln: 25,
+  mason: 25,
+  okanogan: 25,
+  pacific: 25,
+  'pend-oreille': 25,
+  pierce: 25,
+  'san-juan': 25,
+  skagit: 25,
+  skamania: 25,
+  snohomish: 25,
+  spokane: 25,
+  stevens: 25,
+  thurston: 25,
+  wahkiakum: 25,
+  'walla-walla': 25,
+  whatcom: 25,
+  whitman: 25,
+  yakima: 25,
+};
+
+
+
+/** Oregon — exact listed (active directory only) movers per county page */
+export const oregonMarketMoverCounts: Record<string, number> = {
+  baker: 25,
+  benton: 25,
+  clackamas: 25,
+  clatsop: 25,
+  columbia: 25,
+  coos: 25,
+  crook: 25,
+  curry: 25,
+  deschutes: 25,
+  douglas: 25,
+  gilliam: 25,
+  grant: 25,
+  harney: 25,
+  'hood-river': 25,
+  jackson: 25,
+  jefferson: 25,
+  josephine: 25,
+  klamath: 25,
+  lake: 25,
+  lane: 25,
+  lincoln: 25,
+  linn: 25,
+  malheur: 25,
+  marion: 25,
+  morrow: 25,
+  multnomah: 25,
+  polk: 25,
+  sherman: 25,
+  tillamook: 25,
+  umatilla: 25,
+  union: 25,
+  wallowa: 25,
+  wasco: 25,
+  washington: 25,
+  wheeler: 25,
+  yamhill: 25,
+};
+
+
+
+/** Nevada — exact listed (active directory only) movers per county page */
+export const nevadaMarketMoverCounts: Record<string, number> = {
+  'carson-city': 26,
+  churchill: 26,
+  clark: 26,
+  douglas: 26,
+  elko: 26,
+  esmeralda: 26,
+  eureka: 26,
+  humboldt: 26,
+  lander: 26,
+  lincoln: 26,
+  lyon: 26,
+  mineral: 26,
+  nye: 26,
+  pershing: 26,
+  storey: 26,
+  washoe: 26,
+  'white-pine': 26,
+};
+
+
+
 /** New Mexico — exact listed (active directory only) movers per county page */
 export const newMexicoMarketMoverCounts: Record<string, number> = {
   bernalillo: 26,
@@ -399,6 +509,9 @@ const marketCountsByState: Record<string, Record<string, number>> = {
   california: californiaMarketMoverCounts,
   texas: texasMarketMoverCounts,
   arizona: arizonaMarketMoverCounts,
+  washington: washingtonMarketMoverCounts,
+  oregon: oregonMarketMoverCounts,
+  nevada: nevadaMarketMoverCounts,
   'new-mexico': newMexicoMarketMoverCounts,
 };
 
