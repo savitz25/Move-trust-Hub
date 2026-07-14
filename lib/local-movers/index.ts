@@ -59,7 +59,8 @@ import { getLocalState } from '@/lib/local-movers/states';
 import { isCuratedMover } from '@/lib/trust/curated-listing-policy';
 
 const MAX_MOVERS_PER_COUNTY = 10;
-const LARGE_MARKET_MAX_MOVERS = 20;
+/** Explicit assignments may list more than 10 — show full curated set (CA uses ~20–30). */
+const LARGE_MARKET_MAX_MOVERS = 40;
 
 const curatedAssignmentStateSlugs = CURATED_STATE_SLUGS;
 const generatedAssignmentsWithoutCurated = generatedCountyAssignments.filter(

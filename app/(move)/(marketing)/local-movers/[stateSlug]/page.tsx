@@ -237,16 +237,22 @@ export default async function LocalMoversStatePage({ params }: Props) {
             </div>
             <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
               {counties.map((county) => {
-                const marketCount = getCountyMarketMoverCount(
+                // Badge always matches the county page listing count
+                // (getMoversForCounty = same source as county pages).
+                // CA also keeps a synced map for reference / future tooling.
+                const listedCount =
+                  getMoversForCounty(state.slug, county.slug)?.movers.length ??
+                  0;
+                const mappedCount = getCountyMarketMoverCount(
                   state.slug,
                   county.slug
                 );
-                const curatedCount =
-                  getMoversForCounty(state.slug, county.slug)?.movers.length ??
-                  0;
-                // Prefer market estimates (e.g. CA density map); else curated listings
                 const moverCount =
-                  marketCount !== null ? marketCount : curatedCount;
+                  listedCount > 0
+                    ? listedCount
+                    : mappedCount !== null
+                      ? mappedCount
+                      : 0;
 
                 return (
                   <CountyGridCard
