@@ -314,6 +314,7 @@ export function MoveSummaryBody({
             totalVolume={totalVolume}
             totalItems={totalItems}
             mode={mode}
+            movePreset={movePreset}
             presetLabel={presetLabel}
           />
         </div>

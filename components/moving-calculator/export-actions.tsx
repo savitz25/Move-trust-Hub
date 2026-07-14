@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import { Download, Printer, Copy, Mail, Link2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import { generateInventoryPdf } from '@/lib/moving-calculator/pdf-export';
 import { encodeShareUrl } from '@/lib/moving-calculator/share-url';
 import { formatItemDisplayName, isSpecialHandlingItem } from '@/lib/moving-calculator/display-names';
@@ -23,6 +25,7 @@ type ExportActionsProps = {
   totalVolume: number;
   totalItems: number;
   mode: string;
+  movePreset: string | null;
   presetLabel?: string | null;
 };
 
@@ -32,8 +35,11 @@ export function ExportActions({
   totalVolume,
   totalItems,
   mode,
+  movePreset,
   presetLabel,
 }: ExportActionsProps) {
+  const { requireAuth, user, loading } = useSaveMyMove();
+  const [emailing, setEmailing] = useState(false);
   const recommendation = getMoveRecommendation(totalVolume);
   const totalWeight = estimateWeight(totalVolume);
 
@@ -122,15 +128,48 @@ export function ExportActions({
     }
   };
 
-  const handleEmail = () => {
+  const handleEmail = async () => {
     if (inventory.length === 0) {
       toast.error('Add items before emailing');
       return;
     }
-    const subject = encodeURIComponent(`My Moving Inventory — ${Math.round(totalVolume)} cu ft`);
-    const body = encodeURIComponent(buildSummaryText());
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
-    trackInventoryShared({ method: 'email' });
+    if (loading || emailing) return;
+
+    if (!requireAuth({ context: 'inventory', redirectPath: '/moving-calculator' })) {
+      return;
+    }
+
+    const name =
+      totalVolume > 0
+        ? `Move — ${Math.round(totalVolume)} cu ft`
+        : 'My Move Inventory';
+
+    setEmailing(true);
+    try {
+      const res = await fetch('/api/save-my-move/email-inventory', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ inventory, name, movePreset }),
+      });
+      const payload = (await res.json().catch(() => null)) as { error?: string } | null;
+
+      if (!res.ok) {
+        if (res.status === 401) {
+          requireAuth({ context: 'inventory', redirectPath: '/moving-calculator' });
+          return;
+        }
+        toast.error(payload?.error ?? 'Could not send email');
+        return;
+      }
+
+      toast.success('Inventory emailed successfully');
+      trackInventoryShared({ method: 'email' });
+    } catch {
+      toast.error('Could not send email. Check your connection and try again.');
+    } finally {
+      setEmailing(false);
+    }
   };
 
   const handleShareLink = async () => {
@@ -170,7 +209,19 @@ export function ExportActions({
       <Button variant="outline" size="sm" onClick={handleCopy} className="gap-1.5">
         <Copy className="h-3.5 w-3.5" /> Copy
       </Button>
-      <Button variant="outline" size="sm" onClick={handleEmail} className="gap-1.5">
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={handleEmail}
+        className="gap-1.5"
+        disabled={emailing || loading}
+        aria-busy={emailing}
+        aria-label={
+          user
+            ? `Email inventory to ${user.email ?? 'your account'}`
+            : 'Email inventory — sign in required'
+        }
+      >
         <Mail className="h-3.5 w-3.5" /> Email me
       </Button>
       <Button variant="outline" size="sm" onClick={handleShareLink} className="gap-1.5 col-span-2 sm:col-span-1">
