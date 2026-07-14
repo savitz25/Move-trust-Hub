@@ -353,6 +353,44 @@ export const arizonaMarketMoverCounts: Record<string, number> = {
   yuma: 24,
 };
 
+/** New Mexico — exact listed (active directory only) movers per county page */
+export const newMexicoMarketMoverCounts: Record<string, number> = {
+  bernalillo: 26,
+  catron: 26,
+  chaves: 26,
+  cibola: 26,
+  colfax: 26,
+  curry: 26,
+  'de-baca': 26,
+  'doa-ana': 26,
+  eddy: 26,
+  grant: 26,
+  guadalupe: 26,
+  harding: 26,
+  hidalgo: 26,
+  lea: 26,
+  lincoln: 26,
+  'los-alamos': 26,
+  luna: 26,
+  mckinley: 26,
+  mora: 26,
+  otero: 26,
+  quay: 26,
+  'rio-arriba': 26,
+  roosevelt: 26,
+  'san-juan': 26,
+  'san-miguel': 26,
+  sandoval: 26,
+  'santa-fe': 26,
+  sierra: 26,
+  socorro: 26,
+  taos: 26,
+  torrance: 26,
+  union: 26,
+  valencia: 26,
+};
+
+
 
 
 
@@ -361,6 +399,7 @@ const marketCountsByState: Record<string, Record<string, number>> = {
   california: californiaMarketMoverCounts,
   texas: texasMarketMoverCounts,
   arizona: arizonaMarketMoverCounts,
+  'new-mexico': newMexicoMarketMoverCounts,
 };
 
 /**
