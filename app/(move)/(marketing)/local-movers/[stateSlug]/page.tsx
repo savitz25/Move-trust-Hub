@@ -14,59 +14,17 @@ import {
   buildStateDescription,
   buildStatePageMetadata,
   buildStateTitle,
-  getCountyPath,
-  getMoversForCounty,
   getStatePath,
 } from '@/lib/local-movers/index';
-import { getCountyMarketMoverCount } from '@/lib/local-movers/county-market-mover-counts';
-import { evaluateCountyIndexability } from '@/lib/local-movers/county-indexability';
-import { getCountyGuideTierMeta } from '@/lib/local-movers/county-tier';
+import { StateHubTier1Links } from '@/components/local-movers/state-hub-tier1-links';
+import {
+  buildStateHubCountyRows,
+  buildStateHubStats,
+  pickTier1QuickLinks,
+} from '@/lib/local-movers/state-hub-helpers';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
-import type { LocalCounty } from '@/lib/local-movers/types';
 
 type Props = { params: Promise<{ stateSlug: string }> };
-
-function sortStateHubCounties(
-  stateSlug: string,
-  counties: LocalCounty[]
-): { county: LocalCounty; moverCount: number; guideBadge: string }[] {
-  return counties
-    .map((county) => {
-      const listedCount =
-        getMoversForCounty(stateSlug, county.slug)?.movers.length ?? 0;
-      const mappedCount = getCountyMarketMoverCount(stateSlug, county.slug);
-      const moverCount =
-        listedCount > 0
-          ? listedCount
-          : mappedCount !== null
-            ? mappedCount
-            : 0;
-      const indexDecision = evaluateCountyIndexability(stateSlug, county.slug);
-      const tierMeta = getCountyGuideTierMeta(
-        indexDecision,
-        stateSlug,
-        county.slug
-      );
-
-      return {
-        county,
-        moverCount,
-        guideBadge: tierMeta.badge,
-        sortIndex: tierMeta.tier === 'tier1' ? 1 : 0,
-      };
-    })
-    .sort(
-      (a, b) =>
-        b.sortIndex - a.sortIndex ||
-        b.moverCount - a.moverCount ||
-        a.county.name.localeCompare(b.county.name)
-    )
-    .map(({ county, moverCount, guideBadge }) => ({
-      county,
-      moverCount,
-      guideBadge,
-    }));
-}
 
 export const dynamic = 'force-static';
 
@@ -94,6 +52,9 @@ export default async function LocalMoversStatePage({ params }: Props) {
   if (!state) notFound();
 
   const counties = getCountiesForState(stateSlug);
+  const hubRows = buildStateHubCountyRows(stateSlug, counties);
+  const hubStats = buildStateHubStats(hubRows);
+  const tier1QuickLinks = pickTier1QuickLinks(hubRows, stateSlug === 'florida' ? 10 : 8);
   const hasCounties = stateHasCounties(stateSlug);
   const title = buildStateTitle(state.name, counties.length);
   const description = buildStateDescription(state.name, counties.length);
@@ -263,36 +224,37 @@ export default async function LocalMoversStatePage({ params }: Props) {
         </div>
 
         {hasCounties ? (
-          <section className="mb-14">
-            <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-                  {state.slug === 'district-of-columbia'
-                    ? 'Washington, DC local mover guide'
-                    : `Counties in ${state.name}`}
-                </h2>
-                <p className="mt-1.5 text-sm text-slate-500">
-                  {state.slug === 'district-of-columbia'
-                    ? 'Curated local movers for the capital region'
-                    : `${counties.length} county guides · Full guide counties listed first · Limited pages stay crawlable with noindex`}
-                </p>
+          <>
+            <StateHubTier1Links stateName={state.name} links={tier1QuickLinks} />
+            <section className="mb-14">
+              <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                    {state.slug === 'district-of-columbia'
+                      ? 'Washington, DC local mover guide'
+                      : `Counties in ${state.name}`}
+                  </h2>
+                  <p className="mt-1.5 text-sm text-slate-500">
+                    {state.slug === 'district-of-columbia'
+                      ? 'Curated local movers for the capital region'
+                      : `${hubStats.totalCounties} county guides · ${hubStats.tier1Count} Tier 1 · ${hubStats.deepGuideCount} deep guides · Deep/Tier 1 listed first`}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
-              {sortStateHubCounties(state.slug, counties).map(
-                ({ county, moverCount, guideBadge }) => (
+              <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
+                {hubRows.map(({ county, moverCount, guideBadge, href }) => (
                   <CountyGridCard
                     key={county.slug}
-                    href={getCountyPath(state.slug, county.slug)}
+                    href={href}
                     name={county.name}
                     seat={county.seat}
                     moverCount={moverCount}
                     guideBadge={guideBadge}
                   />
-                )
-              )}
-            </div>
-          </section>
+                ))}
+              </div>
+            </section>
+          </>
         ) : (
           <section className="mb-12 rounded-2xl border bg-muted/30 p-6 sm:p-8">
             <h2 className="text-xl font-semibold mb-2">County guides coming soon</h2>

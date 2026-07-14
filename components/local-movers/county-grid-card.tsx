@@ -77,7 +77,9 @@ export function CountyGridCard({
                 'inline-flex h-5 items-center rounded-full px-2 text-[10px] font-semibold leading-none ring-1 ring-inset',
                 guideBadge === 'Limited'
                   ? 'bg-amber-50 text-amber-800 ring-amber-200/80'
-                  : 'bg-emerald-50 text-emerald-800 ring-emerald-200/80'
+                  : guideBadge === 'Deep guide'
+                    ? 'bg-sky-50 text-sky-900 ring-sky-200/80'
+                    : 'bg-emerald-50 text-emerald-800 ring-emerald-200/80'
               )}
             >
               {guideBadge}

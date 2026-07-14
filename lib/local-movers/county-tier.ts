@@ -1,3 +1,4 @@
+import { hasDeepCountyResearch } from '@/data/deep-county-research';
 import type { CountyIndexDecision } from '@/lib/local-movers/county-indexability';
 import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content-quality';
 import { getCountyResearch } from '@/lib/local-movers/county-research';
@@ -29,10 +30,11 @@ export function getCountyGuideTierMeta(
       getCountyResearch(stateSlug, countySlug) &&
         !isBatchTemplateCountyResearch(stateSlug, countySlug)
     );
+    const deep = hasDeepCountyResearch(stateSlug, countySlug);
     return {
       tier,
-      label: 'Full county guide',
-      badge: enriched ? 'Enriched' : 'Full guide',
+      label: deep ? 'Deep researched county guide' : 'Full county guide',
+      badge: deep ? 'Deep guide' : enriched ? 'Enriched' : 'Full guide',
     };
   }
   return {

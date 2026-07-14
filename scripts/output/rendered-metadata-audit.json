@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T18:28:37.998Z",
+  "generatedAt": "2026-07-14T19:10:38.681Z",
   "auditedCount": 17,
   "failures": 0,
   "pass": true,
@@ -32,7 +32,7 @@
       "pass": true,
       "title": "Movers Serving Highlands County (Sebring), FL | 2026 Guide",
       "robots": {
-        "index": false,
+        "index": true,
         "follow": true
       },
       "errors": []
@@ -115,10 +115,10 @@
       "errors": []
     },
     {
-      "label": "mecosta michigan (seeded)",
-      "path": "/local-movers/michigan/mecosta",
+      "label": "clay west-virginia (seeded)",
+      "path": "/local-movers/west-virginia/clay",
       "pass": true,
-      "title": "Movers Serving Mecosta County (Big Rapids), MI | 2026 Guide",
+      "title": "Movers Serving Clay County (Vermillion), WV | 2026 Guide",
       "robots": {
         "index": false,
         "follow": true
@@ -126,10 +126,10 @@
       "errors": []
     },
     {
-      "label": "garrard kentucky (seeded)",
-      "path": "/local-movers/kentucky/garrard",
+      "label": "jo-daviess illinois (seeded)",
+      "path": "/local-movers/illinois/jo-daviess",
       "pass": true,
-      "title": "Movers Serving Garrard County (Lancaster), KY | 2026 Guide",
+      "title": "Movers Serving Jo Daviess County (Galena), IL | 2026 Guide",
       "robots": {
         "index": false,
         "follow": true
@@ -137,10 +137,10 @@
       "errors": []
     },
     {
-      "label": "webster west-virginia (seeded)",
-      "path": "/local-movers/west-virginia/webster",
+      "label": "yavapai arizona (seeded)",
+      "path": "/local-movers/arizona/yavapai",
       "pass": true,
-      "title": "Movers Serving Webster County (Webster Springs), WV | 2026 Guide",
+      "title": "Movers Serving Yavapai County (Prescott), AZ | 2026 Guide",
       "robots": {
         "index": false,
         "follow": true
@@ -148,10 +148,10 @@
       "errors": []
     },
     {
-      "label": "washington oklahoma (seeded)",
-      "path": "/local-movers/oklahoma/washington",
+      "label": "dale alabama (seeded)",
+      "path": "/local-movers/alabama/dale",
       "pass": true,
-      "title": "Movers Serving Washington County (Weiser), OK | 2026 Guide",
+      "title": "Movers Serving Dale County (Ozark), AL | 2026 Guide",
       "robots": {
         "index": false,
         "follow": true
@@ -159,10 +159,10 @@
       "errors": []
     },
     {
-      "label": "jackson florida (seeded)",
-      "path": "/local-movers/florida/jackson",
+      "label": "brown ohio (seeded)",
+      "path": "/local-movers/ohio/brown",
       "pass": true,
-      "title": "Movers Serving Jackson County (Marianna), FL | 2026 Guide",
+      "title": "Movers Serving Brown County (Aberdeen), OH | 2026 Guide",
       "robots": {
         "index": false,
         "follow": true
@@ -170,10 +170,10 @@
       "errors": []
     },
     {
-      "label": "lamar georgia (seeded)",
-      "path": "/local-movers/georgia/lamar",
+      "label": "doniphan kansas (seeded)",
+      "path": "/local-movers/kansas/doniphan",
       "pass": true,
-      "title": "Movers Serving Lamar County (Barnesville), GA | 2026 Guide",
+      "title": "Movers Serving Doniphan County (Troy), KS | 2026 Guide",
       "robots": {
         "index": false,
         "follow": true
@@ -181,10 +181,10 @@
       "errors": []
     },
     {
-      "label": "ripley indiana (seeded)",
-      "path": "/local-movers/indiana/ripley",
+      "label": "hardin tennessee (seeded)",
+      "path": "/local-movers/tennessee/hardin",
       "pass": true,
-      "title": "Movers Serving Ripley County (Versailles), IN | 2026 Guide",
+      "title": "Movers Serving Hardin County (Savannah), TN | 2026 Guide",
       "robots": {
         "index": false,
         "follow": true

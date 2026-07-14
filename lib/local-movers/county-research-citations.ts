@@ -2,6 +2,7 @@ import {
   containsResearchArtifact,
   sanitizeCountyResearchText,
 } from '@/lib/local-movers/county-research-sanitizer';
+import { getStateDotCitationList } from '@/lib/local-movers/state-dot-citations';
 
 export const CENSUS_SOURCE = 'U.S. Census Bureau QuickFacts';
 export const FMCSA_SOURCE = 'FMCSA licensing database (fmcsa.gov)';
@@ -13,6 +14,10 @@ const INLINE_CITATION_MARKERS = [
   /bbb/i,
   /move trust hub verified/i,
   /sources:/i,
+  /department of transportation/i,
+  /\bdot\b/i,
+  /fdot/i,
+  /caltrans/i,
 ];
 
 const POPULATION_CLAIM = /\b\d[\d,.]*\s*(?:million|m\+|k\+|residents|population)\b/i;
@@ -62,8 +67,21 @@ export function hasCitedCountyResearchContent(research: CitableResearch | undefi
   return true;
 }
 
-export function applyCountyResearchCitations<T extends CitableResearch>(research: T): T {
+export function buildCitationSources(stateSlug?: string): string[] {
   const sources = [CENSUS_SOURCE, FMCSA_SOURCE, 'Move Trust Hub verified listings'];
+  if (stateSlug) {
+    for (const dot of getStateDotCitationList(stateSlug)) {
+      if (!sources.includes(dot)) sources.push(dot);
+    }
+  }
+  return sources;
+}
+
+export function applyCountyResearchCitations<T extends CitableResearch>(
+  research: T,
+  stateSlug?: string
+): T {
+  const sources = buildCitationSources(stateSlug);
 
   const marketNotes = appendMandatorySourceBlock(
     stripUncitedPopulationClaims(sanitizeCountyResearchText(research.marketNotes) ?? ''),

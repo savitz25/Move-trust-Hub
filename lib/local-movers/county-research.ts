@@ -140,7 +140,7 @@ export function getCountyResearch(
 ): CountyResearch | undefined {
   const raw = getRawCountyResearch(stateSlug, countySlug);
   if (!raw?.marketNotes) return undefined;
-  return applyCountyResearchCitations(raw);
+  return applyCountyResearchCitations(raw, stateSlug);
 }
 
 export function hasCountyResearch(stateSlug: string, countySlug: string): boolean {
