@@ -1,14 +1,330 @@
 {
-  "generatedAt": "2026-07-14T18:04:46.402Z",
+  "generatedAt": "2026-07-14T18:18:07.649Z",
   "deepResearch": {
     "totalDeepCounties": 59,
     "deepNotServed": 0,
+    "deepStillBatchTemplate": 0,
+    "deepUncited": 0,
     "sampleFailures": []
   },
   "guideTiers": {
-    "tier1": 3142,
-    "tier2": 1,
-    "tier1Enriched": 59
+    "tier1": 97,
+    "tier2": 3046,
+    "tier1Enriched": 59,
+    "tier1WithinLowHundreds": true,
+    "sample": [
+      {
+        "key": "california/alameda",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "california/orange",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "california/riverside",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "california/sacramento",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "california/san-bernardino",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "california/san-diego",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "california/san-francisco",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "california/santa-clara",
+        "explicitMovers": 31,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "florida/broward",
+        "explicitMovers": 26,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "florida/duval",
+        "explicitMovers": 26,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "florida/hillsborough",
+        "explicitMovers": 26,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "florida/miami-dade",
+        "explicitMovers": 26,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "florida/orange",
+        "explicitMovers": 26,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "florida/palm-beach",
+        "explicitMovers": 26,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "florida/pinellas",
+        "explicitMovers": 26,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-jersey/bergen",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-jersey/essex",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-jersey/hudson",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-jersey/middlesex",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-jersey/monmouth",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-york/kings",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-york/nassau",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-york/new-york",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-york/queens",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      },
+      {
+        "key": "new-york/suffolk",
+        "explicitMovers": 25,
+        "guideTier": "tier1",
+        "indexReason": "explicit_curated_county",
+        "badge": "Enriched"
+      }
+    ]
+  },
+  "liveProduction": {
+    "origin": "https://www.movetrusthub.com",
+    "probes": [
+      {
+        "label": "Sherman NE",
+        "path": "/local-movers/nebraska/sherman",
+        "status": 200,
+        "title": "Movers Serving Sherman County (Loup City), NE | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 24 FMCSA-licensed movers serving Sherman County, NE near Loup City. Sherman County is a rural Nebraska county centered on Loup City with residential and",
+        "robots": "noindex, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Douglas CO",
+        "path": "/local-movers/colorado/douglas",
+        "status": 200,
+        "title": "Movers Serving Douglas County (Castle Rock), CO | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 24 FMCSA-licensed movers serving Douglas County, CO near Castle Rock. Douglas County is Denver’s affluent south-suburban corridor — Castle Rock, Highlan",
+        "robots": "noindex, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Miami-Dade FL",
+        "path": "/local-movers/florida/miami-dade",
+        "status": 200,
+        "title": "Movers Serving Miami-Dade County (Miami), FL | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 26 FMCSA-licensed movers serving Miami-Dade County, FL near Miami. Miami-Dade is a major urban and coastal county with dense high-rises, diverse neighbo",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Fairfax VA",
+        "path": "/local-movers/virginia/fairfax",
+        "status": 200,
+        "title": "Movers Serving Fairfax County (Fairfax), VA | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 25 FMCSA-licensed movers serving Fairfax County, VA near Fairfax. Fairfax County anchors the Washington DC metro’s Virginia side with 1. Independent dir",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Harris TX",
+        "path": "/local-movers/texas/harris",
+        "status": 200,
+        "title": "Movers Serving Harris County (Houston), TX | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 27 FMCSA-licensed movers serving Harris County, TX near Houston. Harris County is Greater Houston — the nation’s fourth-largest metro with petrochemical",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Cook IL",
+        "path": "/local-movers/illinois/cook",
+        "status": 200,
+        "title": "Movers Serving Cook County (Chicago), IL | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 25 FMCSA-licensed movers serving Cook County, IL near Chicago. Cook County includes Chicago and dense inner-ring suburbs with high-rise lakefront towers",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Philadelphia PA",
+        "path": "/local-movers/pennsylvania/philadelphia",
+        "status": 200,
+        "title": "Movers Serving Philadelphia County (Philadelphia), PA | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 26 FMCSA-licensed movers serving Philadelphia County, PA near Philadelphia. Philadelphia County is the city consolidated — rowhomes in Fishtown and Sout",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Franklin OH",
+        "path": "/local-movers/ohio/franklin",
+        "status": 200,
+        "title": "Movers Serving Franklin County (Columbus), OH | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 26 FMCSA-licensed movers serving Franklin County, OH near Columbus. Franklin County is Columbus — state government, Ohio State University, and fast-grow",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Wake NC",
+        "path": "/local-movers/north-carolina/wake",
+        "status": 200,
+        "title": "Movers Serving Wake County (Raleigh), NC | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 26 FMCSA-licensed movers serving Wake County, NC near Raleigh. Wake County is the Raleigh-Durham Research Triangle anchor — RTP corporate relocations, N",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      },
+      {
+        "label": "Fulton GA",
+        "path": "/local-movers/georgia/fulton",
+        "status": 200,
+        "title": "Movers Serving Fulton County (Atlanta), GA | 2026 Guide | Move Trust Hub",
+        "metaDescription": "Compare 28 FMCSA-licensed movers serving Fulton County, GA near Atlanta. Fulton County is the core of the Atlanta metro with high residential, commercial, and u",
+        "robots": "index, follow",
+        "hasKeywordsMeta": false,
+        "hasMoversServingTitle": true,
+        "hasJsonLd": true,
+        "errors": [],
+        "pass": true
+      }
+    ],
+    "failedProbeCount": 0
   },
   "phase2Pass": true
 }
