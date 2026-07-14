@@ -220,13 +220,22 @@ export default async function LocalMoversStatePage({ params }: Props) {
         </div>
 
         {hasCounties ? (
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold tracking-tight mb-4">
-              {state.slug === 'district-of-columbia'
-                ? 'Washington, DC local mover guide'
-                : `Counties in ${state.name}`}
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <section className="mb-14">
+            <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                  {state.slug === 'district-of-columbia'
+                    ? 'Washington, DC local mover guide'
+                    : `Counties in ${state.name}`}
+                </h2>
+                <p className="mt-1.5 text-sm text-slate-500">
+                  {state.slug === 'district-of-columbia'
+                    ? 'Curated local movers for the capital region'
+                    : `${counties.length} county guides · uniform market coverage at a glance`}
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
               {counties.map((county) => {
                 const marketCount = getCountyMarketMoverCount(
                   state.slug,
