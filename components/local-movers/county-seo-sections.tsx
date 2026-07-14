@@ -102,10 +102,10 @@ export function CountyTestimonialSection({
   return (
     <section
       className="mb-10 rounded-2xl border border-primary/15 bg-primary/5 p-6"
-      aria-labelledby="county-testimonials-heading"
+      aria-labelledby="county-attributed-reviews-heading"
     >
       <h2
-        id="county-testimonials-heading"
+        id="county-attributed-reviews-heading"
         className="text-lg font-semibold tracking-tight mb-2 flex items-center gap-2"
       >
         <MessageSquareQuote className="h-5 w-5 text-primary" aria-hidden="true" />

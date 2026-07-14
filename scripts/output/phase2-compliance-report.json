@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-07-14T18:04:46.402Z",
+  "deepResearch": {
+    "totalDeepCounties": 59,
+    "deepNotServed": 0,
+    "sampleFailures": []
+  },
+  "guideTiers": {
+    "tier1": 3142,
+    "tier2": 1,
+    "tier1Enriched": 59
+  },
+  "phase2Pass": true
+}

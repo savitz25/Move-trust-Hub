@@ -12,6 +12,8 @@ type CountyGridCardProps = {
   seat?: string;
   /** Market estimate or curated listing count; omit to hide badge */
   moverCount?: number | null;
+  /** Tier 1 full guide vs Tier 2 limited coverage */
+  guideBadge?: string;
 };
 
 /**
@@ -23,6 +25,7 @@ export function CountyGridCard({
   name,
   seat,
   moverCount,
+  guideBadge,
 }: CountyGridCardProps) {
   const showBadge = moverCount !== undefined && moverCount !== null;
   const count = moverCount ?? 0;
@@ -33,7 +36,7 @@ export function CountyGridCard({
     <Link
       href={href}
       className={cn(
-        'group relative flex h-[88px] items-stretch overflow-hidden rounded-2xl',
+        'group relative flex min-h-[96px] items-stretch overflow-hidden rounded-2xl',
         'border border-slate-200/90 bg-white',
         'shadow-[0_1px_2px_rgb(15_23_42/0.04),0_1px_3px_rgb(15_23_42/0.03)]',
         'transition-all duration-200 ease-out',
@@ -67,34 +70,48 @@ export function CountyGridCard({
           )}
         </div>
 
-        {showBadge ? (
-          <span
-            className={cn(
-              'inline-flex h-7 shrink-0 items-center justify-center rounded-full px-2.5',
-              'text-[11px] font-semibold tabular-nums tracking-tight leading-none',
-              'ring-1 ring-inset transition-colors',
-              tier === 'high' &&
-                'bg-sky-50 text-[#004a8a] ring-sky-200/80',
-              tier === 'medium' &&
-                'bg-slate-100 text-slate-700 ring-slate-200/90',
-              tier === 'low' &&
-                'bg-slate-50 text-slate-600 ring-slate-200/80',
-              tier === 'zero' &&
-                'bg-slate-50 text-slate-500 ring-slate-200/70'
-            )}
-          >
-            {count > 0 ? (
-              <>
-                <span className="font-bold">{count}</span>
-                <span className="ml-1 font-medium opacity-90">
-                  {count === 1 ? 'Mover' : 'Movers'}
-                </span>
-              </>
-            ) : (
-              <span className="font-medium">Contact Us</span>
-            )}
-          </span>
-        ) : null}
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          {guideBadge ? (
+            <span
+              className={cn(
+                'inline-flex h-5 items-center rounded-full px-2 text-[10px] font-semibold leading-none ring-1 ring-inset',
+                guideBadge === 'Limited'
+                  ? 'bg-amber-50 text-amber-800 ring-amber-200/80'
+                  : 'bg-emerald-50 text-emerald-800 ring-emerald-200/80'
+              )}
+            >
+              {guideBadge}
+            </span>
+          ) : null}
+          {showBadge ? (
+            <span
+              className={cn(
+                'inline-flex h-7 items-center justify-center rounded-full px-2.5',
+                'text-[11px] font-semibold tabular-nums tracking-tight leading-none',
+                'ring-1 ring-inset transition-colors',
+                tier === 'high' &&
+                  'bg-sky-50 text-[#004a8a] ring-sky-200/80',
+                tier === 'medium' &&
+                  'bg-slate-100 text-slate-700 ring-slate-200/90',
+                tier === 'low' &&
+                  'bg-slate-50 text-slate-600 ring-slate-200/80',
+                tier === 'zero' &&
+                  'bg-slate-50 text-slate-500 ring-slate-200/70'
+              )}
+            >
+              {count > 0 ? (
+                <>
+                  <span className="font-bold">{count}</span>
+                  <span className="ml-1 font-medium opacity-90">
+                    {count === 1 ? 'Mover' : 'Movers'}
+                  </span>
+                </>
+              ) : (
+                <span className="font-medium">Building</span>
+              )}
+            </span>
+          ) : null}
+        </div>
       </div>
     </Link>
   );

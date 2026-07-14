@@ -19,9 +19,54 @@ import {
   getStatePath,
 } from '@/lib/local-movers/index';
 import { getCountyMarketMoverCount } from '@/lib/local-movers/county-market-mover-counts';
+import { evaluateCountyIndexability } from '@/lib/local-movers/county-indexability';
+import { getCountyGuideTierMeta } from '@/lib/local-movers/county-tier';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
+import type { LocalCounty } from '@/lib/local-movers/types';
 
 type Props = { params: Promise<{ stateSlug: string }> };
+
+function sortStateHubCounties(
+  stateSlug: string,
+  counties: LocalCounty[]
+): { county: LocalCounty; moverCount: number; guideBadge: string }[] {
+  return counties
+    .map((county) => {
+      const listedCount =
+        getMoversForCounty(stateSlug, county.slug)?.movers.length ?? 0;
+      const mappedCount = getCountyMarketMoverCount(stateSlug, county.slug);
+      const moverCount =
+        listedCount > 0
+          ? listedCount
+          : mappedCount !== null
+            ? mappedCount
+            : 0;
+      const indexDecision = evaluateCountyIndexability(stateSlug, county.slug);
+      const tierMeta = getCountyGuideTierMeta(
+        indexDecision,
+        stateSlug,
+        county.slug
+      );
+
+      return {
+        county,
+        moverCount,
+        guideBadge: tierMeta.badge,
+        sortIndex: tierMeta.tier === 'tier1' ? 1 : 0,
+      };
+    })
+    .sort(
+      (a, b) =>
+        b.sortIndex - a.sortIndex ||
+        b.moverCount - a.moverCount ||
+        a.county.name.localeCompare(b.county.name)
+    )
+    .map(({ county, moverCount, guideBadge }) => ({
+      county,
+      moverCount,
+      guideBadge,
+    }));
+}
 
 export const dynamic = 'force-static';
 
@@ -193,8 +238,6 @@ export default async function LocalMoversStatePage({ params }: Props) {
                                                                       ? 'Browse all 83 Michigan county guides — up to 13 curated movers in Wayne, Oakland, and Macomb (Detroit metro), 11 in Kent (Grand Rapids) and Washtenaw (Ann Arbor), 10 in Ingham, Genesee, Kalamazoo, and Ottawa, and 7 regional specialists in every county. Southeast Michigan covers auto-industry corporate moves and dense suburban logistics; West Michigan covers manufacturing and family relocations; Ann Arbor and Lansing cover university and state-government moves; the Upper Peninsula and rural counties emphasize lake-effect winters, remote logistics, tourism, and long-distance hauls. FMCSA licensing, cost estimates, and Michigan-specific moving tips.'
                                                                     : state.slug === 'wisconsin'
                                                                       ? 'Browse all 72 Wisconsin county guides — up to 12 curated movers in Milwaukee and Waukesha counties, 9–10 in Dane (Madison), Brown (Green Bay), Racine, Kenosha, Outagamie, and Winnebago, and 5–7 regional specialists in every county. Milwaukee metro covers manufacturing, corporate, and suburban family moves; Madison covers UW–Madison and state government relocations; Green Bay and Fox Cities cover manufacturing and logistics; Door County and northwoods counties cover tourism and seasonal moves; rural counties emphasize dairy/agricultural hauls, harsh winters, and long-distance relocations. FMCSA licensing, cost estimates, and Wisconsin-specific moving tips.'
-                                                                      : state.slug === 'michigan'
-                                                                        ? 'Browse all 83 Michigan county guides — up to 13 curated movers in Wayne, Oakland, and Macomb (Detroit metro), 11 in Kent (Grand Rapids) and Washtenaw (Ann Arbor), 10 in Ingham (Lansing), Genesee (Flint), Kalamazoo, and Ottawa, and 7 regional specialists in every county. Southeast Michigan covers auto industry corporate relocations and urban/suburban moves; West Michigan covers manufacturing and family logistics; Ann Arbor and Lansing cover university and state government moves; Upper Peninsula and lakeshore counties cover remote winter logistics, tourism, and second-home relocations. FMCSA licensing, cost estimates, and Michigan-specific moving tips.'
                                                                     : state.slug === 'minnesota'
                                                                       ? 'Browse all 87 Minnesota county guides — up to 13 curated movers in Hennepin (Minneapolis) and Ramsey (Saint Paul), 9–10 in Dakota, Anoka, Washington, Scott, Carver, and Olmsted (Rochester), 8–9 in St. Louis (Duluth), and 5–7 regional specialists in every county. Twin Cities metros cover Fortune 500 corporate headquarters, suburban family moves, and high-density urban logistics; Rochester covers Mayo Clinic medical professional relocations; Duluth and North Shore counties cover tourism, seasonal, and second-home logistics; lakes-country and rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves. FMCSA licensing, cost estimates, and Minnesota-specific moving tips.'
                                                                       : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
@@ -231,39 +274,23 @@ export default async function LocalMoversStatePage({ params }: Props) {
                 <p className="mt-1.5 text-sm text-slate-500">
                   {state.slug === 'district-of-columbia'
                     ? 'Curated local movers for the capital region'
-                    : `${counties.length} county guides · uniform market coverage at a glance`}
+                    : `${counties.length} county guides · Full guide counties listed first · Limited pages stay crawlable with noindex`}
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
-              {counties.map((county) => {
-                // Badge always matches the county page listing count
-                // (getMoversForCounty = same source as county pages).
-                // CA also keeps a synced map for reference / future tooling.
-                const listedCount =
-                  getMoversForCounty(state.slug, county.slug)?.movers.length ??
-                  0;
-                const mappedCount = getCountyMarketMoverCount(
-                  state.slug,
-                  county.slug
-                );
-                const moverCount =
-                  listedCount > 0
-                    ? listedCount
-                    : mappedCount !== null
-                      ? mappedCount
-                      : 0;
-
-                return (
+              {sortStateHubCounties(state.slug, counties).map(
+                ({ county, moverCount, guideBadge }) => (
                   <CountyGridCard
                     key={county.slug}
                     href={getCountyPath(state.slug, county.slug)}
                     name={county.name}
                     seat={county.seat}
                     moverCount={moverCount}
+                    guideBadge={guideBadge}
                   />
-                );
-              })}
+                )
+              )}
             </div>
           </section>
         ) : (

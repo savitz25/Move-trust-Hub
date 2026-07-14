@@ -1,4 +1,6 @@
+import { getDeepCountyFaqExtras } from '@/data/deep-county-research';
 import { buildCountyPageTitle } from '@/lib/local-movers/county-display-copy';
+import { getCountyResearch } from '@/lib/local-movers/county-research';
 import { getCaliforniaCountyResearch } from '@/data/california-county-research';
 import { getFloridaCountyResearch } from '@/data/florida-county-research';
 import { getNewJerseyCountyResearch } from '@/data/new-jersey-county-research';
@@ -260,7 +262,7 @@ export function buildCountyFaqItems(
   const topMover = movers[0];
   const topMoverList = topMovers.map((m) => `${m.name} (${m.rating}â˜…)`).join(', ');
 
-  return [
+  const baseFaqs: CountyFaqItem[] = [
     {
       question: `How much do local movers cost in ${countyLabel}, ${stateName}?`,
       answer: `Local moves in ${countyLabel} typically range from ${costs.studioRange} for studio or one-bedroom apartments to ${costs.familyRange} for larger homes. ${costs.note} Use our moving calculator for interstate estimates or compare vetted movers in our directory.`,
@@ -290,6 +292,9 @@ export function buildCountyFaqItems(
       answer: `Get written estimates after an inventory survey, avoid large upfront deposits via wire or gift cards, verify USDOT numbers on FMCSA.gov, and compare multiple companies. Read our guide on spotting red flags before booking movers in ${location}.`,
     },
   ];
+
+  const extras = getDeepCountyFaqExtras(county.stateSlug, county.slug) ?? [];
+  return [...baseFaqs, ...extras];
 }
 
 export type CountyCostGuide = {
@@ -300,6 +305,9 @@ export type CountyCostGuide = {
 };
 
 export function buildCountyMarketNotes(county: LocalCounty): string | undefined {
+  const merged = getCountyResearch(county.stateSlug, county.slug);
+  if (merged?.marketNotes) return merged.marketNotes;
+
   if (county.stateSlug === 'california') {
     return getCaliforniaCountyResearch(county.slug)?.marketNotes;
   }
@@ -460,6 +468,9 @@ export function buildCountyCostGuide(
   county: LocalCounty,
   stateName: string
 ): CountyCostGuide {
+  const merged = getCountyResearch(county.stateSlug, county.slug);
+  if (merged?.costs) return merged.costs;
+
   if (county.stateSlug === 'california') {
     const curated = getCaliforniaCountyResearch(county.slug)?.costs;
     if (curated) return curated;
@@ -704,6 +715,9 @@ export function buildCountyCostGuide(
 }
 
 export function buildCountyTips(county: LocalCounty, _stateName: string): string[] {
+  const merged = getCountyResearch(county.stateSlug, county.slug);
+  if (merged?.tips?.length) return merged.tips;
+
   if (county.stateSlug === 'california') {
     const curated = getCaliforniaCountyResearch(county.slug)?.tips;
     if (curated?.length) return curated;
@@ -1005,7 +1019,6 @@ export const STATE_CODE_TO_SLUG: Record<string, string> = {
   DC: 'district-of-columbia',
   WA: 'washington',
   WV: 'west-virginia',
-  WI: 'wisconsin',
   WY: 'wyoming',
 };
 

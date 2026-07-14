@@ -49,6 +49,10 @@ import { getWashingtonCountyResearch } from '@/data/washington-county-research';
 import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-research';
 import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
 import { getWyomingCountyResearch } from '@/data/wyoming-county-research';
+import {
+  getDeepCountyResearch,
+  hasDeepCountyResearch,
+} from '@/data/deep-county-research';
 import { getMoversForCounty } from '@/lib/local-movers/index';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 
@@ -127,6 +131,8 @@ export function getCountyResearch(
   stateSlug: string,
   countySlug: string
 ): CountyResearch | undefined {
+  const deep = getDeepCountyResearch(stateSlug, countySlug);
+  if (deep) return deep;
   return RESEARCH_GETTERS[stateSlug]?.(countySlug);
 }
 
@@ -167,6 +173,8 @@ export function isGenericTemplateCountyResearch(
   stateSlug: string,
   countySlug: string
 ): boolean {
+  if (hasDeepCountyResearch(stateSlug, countySlug)) return false;
+
   const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
   if (!research) return true;
 
@@ -184,15 +192,14 @@ export function getCountyResearchCosts(
   stateSlug: string,
   countySlug: string
 ): CountyResearch['costs'] | undefined {
-  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
-  return research?.costs;
+  return getCountyResearch(stateSlug, countySlug)?.costs;
 }
 
 export function extractSeasonalAdviceFromResearch(
   stateSlug: string,
   countySlug: string
 ): string | undefined {
-  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
+  const research = getCountyResearch(stateSlug, countySlug);
   if (!research?.costs?.note) return undefined;
   return research.costs.note;
 }
@@ -201,7 +208,7 @@ export function extractParkingHoaNotes(
   stateSlug: string,
   countySlug: string
 ): string[] {
-  const research = RESEARCH_GETTERS[stateSlug]?.(countySlug) as CountyResearch | undefined;
+  const research = getCountyResearch(stateSlug, countySlug);
   if (!research?.tips?.length) return [];
 
   return research.tips.filter((tip) =>

@@ -1,3 +1,4 @@
+import { hasDeepCountyResearch } from '@/data/deep-county-research';
 import { getCountyResearch } from '@/lib/local-movers/county-research';
 
 export const BATCH_FMCSA_TIP =
@@ -31,6 +32,7 @@ export function classifyCountyContentTier(
   hasResearch: boolean
 ): CountyContentTier {
   if (!hasResearch) return 'runtime_programmatic_shell';
+  if (hasDeepCountyResearch(stateSlug, countySlug)) return 'grok_heavy_original';
   if (isBatchTemplateCountyResearch(stateSlug, countySlug)) {
     return 'batch_template_research';
   }
