@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-14T19:19:22.619Z",
+  "generatedAt": "2026-07-14T19:50:24.710Z",
   "verificationPhase": "preview",
-  "auditOrigin": "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app",
-  "deployCommitHash": "0a618615",
+  "auditOrigin": "https://move-trust-hub-git-main-savitz25-s-projects.vercel.app",
+  "deployCommitHash": "aeeb19eb",
   "phase3Requirements": {
     "deepCountyTarget": 150,
     "deepCountyTotal": 295,
@@ -60,7 +60,7 @@
     }
   },
   "liveVerification": {
-    "origin": "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app",
+    "origin": "https://move-trust-hub-git-main-savitz25-s-projects.vercel.app",
     "probes": [
       {
         "label": "Sherman NE",
@@ -303,8 +303,8 @@
         "pass": false
       },
       {
-        "label": "pierce nebraska (seeded)",
-        "path": "/local-movers/nebraska/pierce",
+        "label": "grand-forks north-dakota (seeded)",
+        "path": "/local-movers/north-dakota/grand-forks",
         "probeGroup": "seeded-random",
         "status": 200,
         "title": "Login – Vercel",
@@ -327,8 +327,8 @@
         "pass": false
       },
       {
-        "label": "buchanan missouri (seeded)",
-        "path": "/local-movers/missouri/buchanan",
+        "label": "forsyth georgia (seeded)",
+        "path": "/local-movers/georgia/forsyth",
         "probeGroup": "seeded-random",
         "status": 200,
         "title": "Login – Vercel",
@@ -351,8 +351,8 @@
         "pass": false
       },
       {
-        "label": "bullock alabama (seeded)",
-        "path": "/local-movers/alabama/bullock",
+        "label": "hopkins texas (seeded)",
+        "path": "/local-movers/texas/hopkins",
         "probeGroup": "seeded-random",
         "status": 200,
         "title": "Login – Vercel",
@@ -375,8 +375,8 @@
         "pass": false
       },
       {
-        "label": "meagher montana (seeded)",
-        "path": "/local-movers/montana/meagher",
+        "label": "bowie texas (seeded)",
+        "path": "/local-movers/texas/bowie",
         "probeGroup": "seeded-random",
         "status": 200,
         "title": "Login – Vercel",
@@ -399,8 +399,8 @@
         "pass": false
       },
       {
-        "label": "alpine california (seeded)",
-        "path": "/local-movers/california/alpine",
+        "label": "coahoma mississippi (seeded)",
+        "path": "/local-movers/mississippi/coahoma",
         "probeGroup": "seeded-random",
         "status": 200,
         "title": "Login – Vercel",
@@ -423,8 +423,8 @@
         "pass": false
       },
       {
-        "label": "faulkner arkansas (seeded)",
-        "path": "/local-movers/arkansas/faulkner",
+        "label": "nance nebraska (seeded)",
+        "path": "/local-movers/nebraska/nance",
         "probeGroup": "seeded-random",
         "status": 200,
         "title": "Login – Vercel",
@@ -447,8 +447,8 @@
         "pass": false
       },
       {
-        "label": "colorado texas (seeded)",
-        "path": "/local-movers/texas/colorado",
+        "label": "garfield montana (seeded)",
+        "path": "/local-movers/montana/garfield",
         "probeGroup": "seeded-random",
         "status": 200,
         "title": "Login – Vercel",
@@ -672,11 +672,11 @@
         "errors": []
       },
       {
-        "label": "pierce nebraska (seeded)",
-        "path": "/local-movers/nebraska/pierce",
+        "label": "grand-forks north-dakota (seeded)",
+        "path": "/local-movers/north-dakota/grand-forks",
         "probeGroup": "seeded-random",
         "pass": true,
-        "title": "Movers Serving Pierce County (Pierce), NE | 2026 Guide",
+        "title": "Movers Serving Grand Forks County (Grand Forks), ND | 2026 Guide",
         "robots": {
           "index": false,
           "follow": true
@@ -684,47 +684,11 @@
         "errors": []
       },
       {
-        "label": "buchanan missouri (seeded)",
-        "path": "/local-movers/missouri/buchanan",
+        "label": "forsyth georgia (seeded)",
+        "path": "/local-movers/georgia/forsyth",
         "probeGroup": "seeded-random",
         "pass": true,
-        "title": "Movers Serving Buchanan County (St. Joseph), MO | 2026 Guide",
-        "robots": {
-          "index": false,
-          "follow": true
-        },
-        "errors": []
-      },
-      {
-        "label": "bullock alabama (seeded)",
-        "path": "/local-movers/alabama/bullock",
-        "probeGroup": "seeded-random",
-        "pass": true,
-        "title": "Movers Serving Bullock County (Union Springs), AL | 2026 Guide",
-        "robots": {
-          "index": false,
-          "follow": true
-        },
-        "errors": []
-      },
-      {
-        "label": "meagher montana (seeded)",
-        "path": "/local-movers/montana/meagher",
-        "probeGroup": "seeded-random",
-        "pass": true,
-        "title": "Movers Serving Meagher County (White Sulphur Springs), MT | 2026 Guide",
-        "robots": {
-          "index": false,
-          "follow": true
-        },
-        "errors": []
-      },
-      {
-        "label": "alpine california (seeded)",
-        "path": "/local-movers/california/alpine",
-        "probeGroup": "seeded-random",
-        "pass": true,
-        "title": "Movers Serving Alpine County (Markleeville), CA | 2026 Guide",
+        "title": "Movers Serving Forsyth County (Cumming), GA | 2026 Guide",
         "robots": {
           "index": true,
           "follow": true
@@ -732,11 +696,11 @@
         "errors": []
       },
       {
-        "label": "faulkner arkansas (seeded)",
-        "path": "/local-movers/arkansas/faulkner",
+        "label": "hopkins texas (seeded)",
+        "path": "/local-movers/texas/hopkins",
         "probeGroup": "seeded-random",
         "pass": true,
-        "title": "Movers Serving Faulkner County (Conway), AR | 2026 Guide",
+        "title": "Movers Serving Hopkins County, TX | 2026 Guide",
         "robots": {
           "index": false,
           "follow": true
@@ -744,11 +708,47 @@
         "errors": []
       },
       {
-        "label": "colorado texas (seeded)",
-        "path": "/local-movers/texas/colorado",
+        "label": "bowie texas (seeded)",
+        "path": "/local-movers/texas/bowie",
         "probeGroup": "seeded-random",
         "pass": true,
-        "title": "Movers Serving Colorado County, TX | 2026 Guide",
+        "title": "Movers Serving Bowie County, TX | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "coahoma mississippi (seeded)",
+        "path": "/local-movers/mississippi/coahoma",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Coahoma County (Clarksdale), MS | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "nance nebraska (seeded)",
+        "path": "/local-movers/nebraska/nance",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Nance County (Fullerton), NE | 2026 Guide",
+        "robots": {
+          "index": false,
+          "follow": true
+        },
+        "errors": []
+      },
+      {
+        "label": "garfield montana (seeded)",
+        "path": "/local-movers/montana/garfield",
+        "probeGroup": "seeded-random",
+        "pass": true,
+        "title": "Movers Serving Garfield County (Jordan), MT | 2026 Guide",
         "robots": {
           "index": false,
           "follow": true
@@ -796,9 +796,9 @@
     "pass": true
   },
   "floridaProbes": [
-    "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/florida/lee",
-    "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/florida/brevard",
-    "https://move-trust-hwu1ouu8x-savitz25-s-projects.vercel.app/local-movers/florida/seminole"
+    "https://move-trust-hub-git-main-savitz25-s-projects.vercel.app/local-movers/florida/lee",
+    "https://move-trust-hub-git-main-savitz25-s-projects.vercel.app/local-movers/florida/brevard",
+    "https://move-trust-hub-git-main-savitz25-s-projects.vercel.app/local-movers/florida/seminole"
   ],
   "phase3Pass": true
 }

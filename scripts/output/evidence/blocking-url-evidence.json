@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-07-14T19:31:32.662Z",
+  "capturedAt": "2026-07-14T19:52:26.361Z",
   "origin": "https://www.movetrusthub.com",
   "captures": [
     {
@@ -11,10 +11,10 @@
         "reason": "outside_tier1_coverage_wave"
       },
       "countySeat": "Loup City",
-      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700",
-      "vercelCache": "HIT",
-      "age": "67",
-      "htmlBytes": 317992,
+      "cacheControl": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800",
+      "vercelCache": "PRERENDER",
+      "age": "0",
+      "htmlBytes": 318020,
       "titleMatch": "Movers Serving Sherman County (Loup City), NE | 2026 Guide | Move Trust Hub",
       "robotsMatch": "noindex, follow"
     },
@@ -27,10 +27,10 @@
         "reason": "batch_template_research"
       },
       "countySeat": "Castle Rock",
-      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700",
-      "vercelCache": "HIT",
-      "age": "155",
-      "htmlBytes": 321585,
+      "cacheControl": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800",
+      "vercelCache": "PRERENDER",
+      "age": "0",
+      "htmlBytes": 321613,
       "titleMatch": "Movers Serving Douglas County (Castle Rock), CO | 2026 Guide | Move Trust Hub",
       "robotsMatch": "noindex, follow"
     }

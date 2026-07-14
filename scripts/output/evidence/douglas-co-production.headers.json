@@ -1,11 +1,13 @@
 {
-  "age": "155",
-  "cache-control": "s-maxage=300, stale-while-revalidate=31535700",
+  "access-control-allow-origin": "*",
+  "age": "0",
+  "cache-control": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800",
   "cdn-cache-control": "max-age=86400",
+  "content-disposition": "inline",
   "content-encoding": "br",
   "content-type": "text/html; charset=utf-8",
-  "date": "Tue, 14 Jul 2026 19:28:57 GMT",
-  "etag": "W/\"3ozg1gog626w4x\"",
+  "date": "Tue, 14 Jul 2026 19:52:26 GMT",
+  "etag": "W/\"892274af04d97ab4d127127f4cfadf2c\"",
   "permissions-policy": "camera=(), microphone=(), geolocation=(), interest-cohort=()",
   "referrer-policy": "strict-origin-when-cross-origin",
   "server": "Vercel",
@@ -19,6 +21,6 @@
   "x-nextjs-prerender": "1",
   "x-nextjs-stale-time": "300",
   "x-trust-hub": "move",
-  "x-vercel-cache": "HIT",
-  "x-vercel-id": "iad1::iad1::7cxd7-1784057491756-2b8bdc085d3f"
+  "x-vercel-cache": "PRERENDER",
+  "x-vercel-id": "iad1::zgs8q-1784058746096-d17cf81b7192"
 }
