@@ -1,6 +1,7 @@
 /**
- * Phase 1 compliance — fabrication, indexability alignment, legacy testimonials, live URL probes.
+ * Phase 1 compliance — fabrication, indexability, live rendered HTML probes.
  * Run: npx tsx scripts/audit-phase1-compliance.ts
+ * Preview: AUDIT_ORIGIN=https://your-preview.vercel.app npx tsx scripts/audit-phase1-compliance.ts
  */
 import { writeFileSync } from 'node:fs';
 import { getAllCountyParams } from '../lib/local-movers/geography/index';
@@ -14,10 +15,17 @@ import { fullMoversCatalog } from '../lib/local-movers/catalog';
 import { isCuratedMover } from '../lib/trust/curated-listing-policy';
 import { isFabricatedMoverId } from '../lib/trust/fabricated-mover-id';
 import { buildCountyTestimonials } from '../lib/local-movers/county-seo';
+import { INDEXABILITY_RECONCILIATION } from './lib/indexability-reconciliation';
 import {
-  fetchAllRequiredLiveCounties,
-  type LiveCountyFetchResult,
+  buildAllAuditProbes,
+  fetchAllAuditProbes,
+  PRODUCTION_ORIGIN,
+  serializeProbeResults,
 } from './lib/live-county-audit';
+import {
+  evaluateTier1CircuitBreaker,
+  MAX_TIER1_COUNT,
+} from './lib/tier1-circuit-breaker';
 
 const fabricatedCatalogIds = Object.keys(fullMoversCatalog).filter(isFabricatedMoverId);
 const displayableCatalogIds = Object.keys(fullMoversCatalog).filter((id) => {
@@ -28,15 +36,10 @@ const displayableCatalogIds = Object.keys(fullMoversCatalog).filter((id) => {
 let indexSyncAsyncMismatch = 0;
 let indexedWithZeroMovers = 0;
 let indexedRegionalFallback = 0;
-let indexedInsufficientExplicit = 0;
 let renderedFabricatedNames = 0;
 let legacyTestimonialLeak = 0;
-let tier1Count = 0;
-let tier2Count = 0;
 
 const sampleMismatches: string[] = [];
-const tier1Reasons: Record<string, number> = {};
-const tier2Reasons: Record<string, number> = {};
 
 for (const { stateSlug, countySlug } of getAllCountyParams()) {
   const sync = getMoversForCounty(stateSlug, countySlug);
@@ -53,13 +56,8 @@ for (const { stateSlug, countySlug } of getAllCountyParams()) {
   }
 
   if (asyncDecision.tier === 'index') {
-    tier1Count += 1;
-    tier1Reasons[asyncDecision.reason] = (tier1Reasons[asyncDecision.reason] ?? 0) + 1;
     if ((sync?.movers.length ?? 0) === 0) indexedWithZeroMovers += 1;
     if (sync?.isRegionalFallback) indexedRegionalFallback += 1;
-  } else {
-    tier2Count += 1;
-    tier2Reasons[asyncDecision.reason] = (tier2Reasons[asyncDecision.reason] ?? 0) + 1;
   }
 
   for (const mover of sync?.movers ?? []) {
@@ -77,73 +75,70 @@ for (const { stateSlug, countySlug } of getAllCountyParams()) {
 }
 
 async function main() {
-let liveResults: LiveCountyFetchResult[] = [];
-let liveFetchError: string | undefined;
-try {
-  liveResults = await fetchAllRequiredLiveCounties();
-} catch (error) {
-  liveFetchError = error instanceof Error ? error.message : String(error);
-}
+  const origin = process.env.AUDIT_ORIGIN ?? PRODUCTION_ORIGIN;
+  const commitHash = process.env.DEPLOY_COMMIT_HASH;
+  const circuitBreaker = evaluateTier1CircuitBreaker();
+  const probePlan = buildAllAuditProbes(commitHash);
 
-const liveFailures = liveResults.filter((result) => result.errors.length > 0);
+  let liveResults = [];
+  let liveFetchError: string | undefined;
+  try {
+    liveResults = await fetchAllAuditProbes(probePlan.all, origin);
+  } catch (error) {
+    liveFetchError = error instanceof Error ? error.message : String(error);
+  }
 
-const report = {
-  generatedAt: new Date().toISOString(),
-  catalog: {
-    total: Object.keys(fullMoversCatalog).length,
-    fabricatedIds: fabricatedCatalogIds.length,
-    displayableIds: displayableCatalogIds.length,
-  },
-  counties: {
-    total: getAllCountyParams().length,
-    minExplicitMoversToIndex: MIN_EXPLICIT_MOVERS_TO_INDEX,
-    tier1: tier1Count,
-    tier2: tier2Count,
-    tier1Reasons,
-    tier2Reasons,
-    indexSyncAsyncMismatch,
-    indexedWithZeroMovers,
-    indexedRegionalFallback,
-    renderedFabricatedNames,
-    legacyTestimonialLeak,
-  },
-  sampleMismatches,
-  liveProduction: {
-    origin: 'https://www.movetrusthub.com',
-    fetchError: liveFetchError,
-    probes: liveResults.map((result) => ({
-      label: result.probe.label,
-      path: result.probe.path,
-      status: result.status,
-      title: result.title,
-      metaDescription: result.metaDescription?.slice(0, 160) ?? null,
-      robots: result.robots,
-      hasKeywordsMeta: result.hasKeywordsMeta,
-      hasMoversServingTitle: result.hasMoversServingTitle,
-      hasMoversServingH1: result.hasMoversServingH1,
-      hasArtifactText: result.hasArtifactText,
-      hasJsonLd: result.hasJsonLd,
-      errors: result.errors,
-      pass: result.errors.length === 0,
-    })),
-    failedProbeCount: liveFailures.length,
-  },
-  phase1Pass:
-    renderedFabricatedNames === 0 &&
-    legacyTestimonialLeak === 0 &&
-    indexedWithZeroMovers === 0 &&
-    indexedRegionalFallback === 0 &&
-    tier1Count <= 500 &&
-    liveFailures.length === 0 &&
-    !liveFetchError,
-};
+  const liveSerialized = serializeProbeResults(origin, liveResults);
 
-writeFileSync('scripts/output/phase1-compliance-report.json', JSON.stringify(report, null, 2));
-console.log(JSON.stringify(report, null, 2));
+  const report = {
+    generatedAt: new Date().toISOString(),
+    auditOrigin: origin,
+    deployCommitHash: probePlan.commitHash,
+    catalog: {
+      total: Object.keys(fullMoversCatalog).length,
+      fabricatedIds: fabricatedCatalogIds.length,
+      displayableIds: displayableCatalogIds.length,
+    },
+    circuitBreaker,
+    indexabilityReconciliation: INDEXABILITY_RECONCILIATION,
+    counties: {
+      total: getAllCountyParams().length,
+      minExplicitMoversToIndex: MIN_EXPLICIT_MOVERS_TO_INDEX,
+      maxTier1Allowed: MAX_TIER1_COUNT,
+      tier1: circuitBreaker.tier1,
+      tier2: circuitBreaker.tier2,
+      tier1Reasons: circuitBreaker.tier1Reasons,
+      tier2Reasons: circuitBreaker.tier2Reasons,
+      indexSyncAsyncMismatch,
+      indexedWithZeroMovers,
+      indexedRegionalFallback,
+      renderedFabricatedNames,
+      legacyTestimonialLeak,
+    },
+    probePlan: {
+      named: probePlan.named.map((p) => ({ label: p.label, path: p.path })),
+      seededRandom: probePlan.seededRandom.map((p) => ({ label: p.label, path: p.path })),
+      seededSample: probePlan.seededSample,
+    },
+    sampleMismatches,
+    liveVerification: {
+      ...liveSerialized,
+      fetchError: liveFetchError,
+    },
+    phase1Pass:
+      circuitBreaker.pass &&
+      renderedFabricatedNames === 0 &&
+      legacyTestimonialLeak === 0 &&
+      indexedWithZeroMovers === 0 &&
+      indexedRegionalFallback === 0 &&
+      liveSerialized.failedProbeCount === 0 &&
+      !liveFetchError,
+  };
 
-if (!report.phase1Pass) {
-  process.exitCode = 1;
-}
+  writeFileSync('scripts/output/phase1-compliance-report.json', JSON.stringify(report, null, 2));
+  console.log(JSON.stringify(report, null, 2));
+
+  if (!report.phase1Pass) process.exit(1);
 }
 
 main().catch((error) => {

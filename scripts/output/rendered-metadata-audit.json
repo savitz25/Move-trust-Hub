@@ -1,0 +1,195 @@
+{
+  "generatedAt": "2026-07-14T18:28:37.998Z",
+  "auditedCount": 17,
+  "failures": 0,
+  "pass": true,
+  "results": [
+    {
+      "label": "Sherman NE",
+      "path": "/local-movers/nebraska/sherman",
+      "pass": true,
+      "title": "Movers Serving Sherman County (Loup City), NE | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Douglas CO",
+      "path": "/local-movers/colorado/douglas",
+      "pass": true,
+      "title": "Movers Serving Douglas County (Castle Rock), CO | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Highlands FL",
+      "path": "/local-movers/florida/highlands",
+      "pass": true,
+      "title": "Movers Serving Highlands County (Sebring), FL | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Fairfax VA",
+      "path": "/local-movers/virginia/fairfax",
+      "pass": true,
+      "title": "Movers Serving Fairfax County (Fairfax), VA | 2026 Guide",
+      "robots": {
+        "index": true,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Harris TX",
+      "path": "/local-movers/texas/harris",
+      "pass": true,
+      "title": "Movers Serving Harris County (Houston), TX | 2026 Guide",
+      "robots": {
+        "index": true,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Cook IL",
+      "path": "/local-movers/illinois/cook",
+      "pass": true,
+      "title": "Movers Serving Cook County (Chicago), IL | 2026 Guide",
+      "robots": {
+        "index": true,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Philadelphia PA",
+      "path": "/local-movers/pennsylvania/philadelphia",
+      "pass": true,
+      "title": "Movers Serving Philadelphia County (Philadelphia), PA | 2026 Guide",
+      "robots": {
+        "index": true,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Franklin OH",
+      "path": "/local-movers/ohio/franklin",
+      "pass": true,
+      "title": "Movers Serving Franklin County (Columbus), OH | 2026 Guide",
+      "robots": {
+        "index": true,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Wake NC",
+      "path": "/local-movers/north-carolina/wake",
+      "pass": true,
+      "title": "Movers Serving Wake County (Raleigh), NC | 2026 Guide",
+      "robots": {
+        "index": true,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "Fulton GA",
+      "path": "/local-movers/georgia/fulton",
+      "pass": true,
+      "title": "Movers Serving Fulton County (Atlanta), GA | 2026 Guide",
+      "robots": {
+        "index": true,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "mecosta michigan (seeded)",
+      "path": "/local-movers/michigan/mecosta",
+      "pass": true,
+      "title": "Movers Serving Mecosta County (Big Rapids), MI | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "garrard kentucky (seeded)",
+      "path": "/local-movers/kentucky/garrard",
+      "pass": true,
+      "title": "Movers Serving Garrard County (Lancaster), KY | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "webster west-virginia (seeded)",
+      "path": "/local-movers/west-virginia/webster",
+      "pass": true,
+      "title": "Movers Serving Webster County (Webster Springs), WV | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "washington oklahoma (seeded)",
+      "path": "/local-movers/oklahoma/washington",
+      "pass": true,
+      "title": "Movers Serving Washington County (Weiser), OK | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "jackson florida (seeded)",
+      "path": "/local-movers/florida/jackson",
+      "pass": true,
+      "title": "Movers Serving Jackson County (Marianna), FL | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "lamar georgia (seeded)",
+      "path": "/local-movers/georgia/lamar",
+      "pass": true,
+      "title": "Movers Serving Lamar County (Barnesville), GA | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    },
+    {
+      "label": "ripley indiana (seeded)",
+      "path": "/local-movers/indiana/ripley",
+      "pass": true,
+      "title": "Movers Serving Ripley County (Versailles), IN | 2026 Guide",
+      "robots": {
+        "index": false,
+        "follow": true
+      },
+      "errors": []
+    }
+  ]
+}

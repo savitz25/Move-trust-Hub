@@ -1,13 +1,17 @@
 /**
- * CI guard — block runtime imports of deprecated fabricated county testimonials.
- * Run: npx tsx scripts/guard-county-testimonial-imports.ts
+ * CI guard — block runtime imports of deprecated fabricated county testimonials
+ * + live rendered HTML spot-check on all 17 audit probe URLs.
  */
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import {
+  buildAllAuditProbes,
+  PRODUCTION_ORIGIN,
+  serializeProbeResults,
+} from './lib/live-county-audit';
 
 const ROOT = join(__dirname, '..');
 const SCAN_DIRS = ['app', 'components', 'lib', 'actions'];
-/** Match deprecated data module imports only — not aria ids like county-testimonials-heading */
 const FORBIDDEN =
   /(?:import\s+[^'"]+\s+from\s+['"][^'"]*county-testimonials|from\s+['"][^'"]*county-testimonials)/;
 const ALLOWED_PREFIXES = ['scripts/', 'data/'];
@@ -44,18 +48,25 @@ if (violations.length > 0) {
 async function main() {
   console.log('OK: no runtime imports of deprecated county-testimonials modules');
 
-  const { fetchAllRequiredLiveCounties, PRODUCTION_ORIGIN } = await import('./lib/live-county-audit');
-  const liveResults = await fetchAllRequiredLiveCounties();
-  const liveProbeReport: Array<{ label: string; path: string; status: number; pass: boolean; issues: string[] }> = [];
+  const origin = process.env.AUDIT_ORIGIN ?? PRODUCTION_ORIGIN;
+  const probePlan = buildAllAuditProbes(process.env.DEPLOY_COMMIT_HASH);
+  const liveProbeReport: Array<{
+    label: string;
+    path: string;
+    status: number;
+    pass: boolean;
+    issues: string[];
+  }> = [];
 
-  for (const result of liveResults) {
+  for (const probe of probePlan.all) {
     const issues: string[] = [];
-    let html = '';
+    let status = 0;
     try {
-      const response = await fetch(`${PRODUCTION_ORIGIN}${result.probe.path}`, {
-        headers: { 'User-Agent': 'MoveTrustHub-TestimonialGuard/1.1' },
+      const response = await fetch(`${origin}${probe.path}`, {
+        headers: { 'User-Agent': 'MoveTrustHub-TestimonialGuard/1.1-revised' },
       });
-      html = await response.text();
+      status = response.status;
+      const html = await response.text();
       if (response.status !== 200) issues.push(`http_${response.status}`);
       if (/Loup River Sherman Moving/i.test(html)) issues.push('fabricated_testimonial_quote');
       if (/\bloup river sherman\b/i.test(html)) issues.push('artifact_text');
@@ -65,22 +76,39 @@ async function main() {
     }
 
     liveProbeReport.push({
-      label: result.probe.label,
-      path: result.probe.path,
-      status: result.status,
+      label: probe.label,
+      path: probe.path,
+      status,
       pass: issues.length === 0,
       issues,
     });
   }
 
   const failures = liveProbeReport.filter((probe) => !probe.pass);
+  const serialized = serializeProbeResults(
+    origin,
+    liveProbeReport.map((row) => ({
+      probe: probePlan.all.find((p) => p.path === row.path)!,
+      status: row.status,
+      title: null,
+      metaDescription: null,
+      robots: null,
+      hasKeywordsMeta: row.issues.includes('forbidden_keywords_meta'),
+      hasMoversServingTitle: true,
+      hasMoversServingH1: true,
+      hasArtifactText: row.issues.some((i) => i.startsWith('artifact')),
+      hasJsonLd: true,
+      renderedArtifactPatterns: row.issues.filter((i) => i.startsWith('artifact')),
+      errors: row.issues,
+    }))
+  );
+
   if (failures.length > 0) {
-    console.error('Live testimonial guard failures:');
-    failures.forEach((probe) => console.error(`  - ${probe.label}: ${probe.issues.join(', ')}`));
+    console.error('Live testimonial guard failures:', JSON.stringify(serialized, null, 2));
     process.exit(1);
   }
 
-  console.log(`Live testimonial guard OK (${liveResults.length} county probes)`);
+  console.log(`Live testimonial guard OK (${probePlan.all.length} county probes on ${origin})`);
 }
 
 main().catch((error) => {

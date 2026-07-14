@@ -20,6 +20,9 @@ export type CountyIndexDecision = {
 /** Counties need 3+ explicitly assigned movers — regional metro pools do not qualify. */
 export const MIN_EXPLICIT_MOVERS_TO_INDEX = 3;
 
+/** Hard deploy stop — see scripts/lib/tier1-circuit-breaker.ts */
+export const MAX_TIER1_COUNT = 400;
+
 type CountyMoverResult = {
   county: LocalCounty;
   movers: LocalMover[];

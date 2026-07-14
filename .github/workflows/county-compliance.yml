@@ -1,0 +1,41 @@
+name: County SEO Compliance
+
+on:
+  pull_request:
+    paths:
+      - 'lib/local-movers/**'
+      - 'app/(move)/(marketing)/local-movers/**'
+      - 'app/sitemap-local/**'
+      - 'scripts/audit-phase*.ts'
+      - 'scripts/guard-*.ts'
+      - 'data/**-county-research.ts'
+      - 'data/deep-county-research/**'
+  push:
+    branches:
+      - main
+      - 'phase-1-1-*'
+
+jobs:
+  county-compliance-guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Circuit breaker (Tier 1 <= 400)
+        run: npx tsx scripts/lib/tier1-circuit-breaker.ts
+
+      - name: Guard content-tier exemptions
+        run: npm run guard:content-exemptions
+
+      - name: Guard testimonial imports
+        run: npm run guard:testimonials
+
+      - name: Rendered metadata audit
+        run: npm run audit:rendered-metadata

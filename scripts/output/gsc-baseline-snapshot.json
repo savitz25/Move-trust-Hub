@@ -1,0 +1,369 @@
+{
+  "capturedAt": "2026-07-14T18:26:22.470Z",
+  "origin": "https://www.movetrusthub.com",
+  "note": "GSC indexed/impressions/clicks per state require Search Console API credentials. This baseline captures live sitemap county URL counts and evaluator Tier-1 counts per state as reproducible deploy proxies.",
+  "gscApiConfigured": false,
+  "totals": {
+    "tier1EvaluatorCount": 97,
+    "sitemapCountyUrlsLive": 97
+  },
+  "perState": [
+    {
+      "stateSlug": "alabama",
+      "stateCode": "AL",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/alabama.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "alaska",
+      "stateCode": "AK",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/alaska.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "arizona",
+      "stateCode": "AZ",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/arizona.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "arkansas",
+      "stateCode": "AR",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/arkansas.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "california",
+      "stateCode": "CA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/california.xml",
+      "sitemapCountyUrls": 8,
+      "tier1CountyCount": 8
+    },
+    {
+      "stateSlug": "colorado",
+      "stateCode": "CO",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/colorado.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "connecticut",
+      "stateCode": "CT",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/connecticut.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "delaware",
+      "stateCode": "DE",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/delaware.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "district-of-columbia",
+      "stateCode": "DC",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/district-of-columbia.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "florida",
+      "stateCode": "FL",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/florida.xml",
+      "sitemapCountyUrls": 7,
+      "tier1CountyCount": 7
+    },
+    {
+      "stateSlug": "georgia",
+      "stateCode": "GA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/georgia.xml",
+      "sitemapCountyUrls": 4,
+      "tier1CountyCount": 4
+    },
+    {
+      "stateSlug": "hawaii",
+      "stateCode": "HI",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/hawaii.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "idaho",
+      "stateCode": "ID",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/idaho.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "illinois",
+      "stateCode": "IL",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/illinois.xml",
+      "sitemapCountyUrls": 4,
+      "tier1CountyCount": 4
+    },
+    {
+      "stateSlug": "indiana",
+      "stateCode": "IN",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/indiana.xml",
+      "sitemapCountyUrls": 2,
+      "tier1CountyCount": 2
+    },
+    {
+      "stateSlug": "iowa",
+      "stateCode": "IA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/iowa.xml",
+      "sitemapCountyUrls": 2,
+      "tier1CountyCount": 2
+    },
+    {
+      "stateSlug": "kansas",
+      "stateCode": "KS",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/kansas.xml",
+      "sitemapCountyUrls": 3,
+      "tier1CountyCount": 3
+    },
+    {
+      "stateSlug": "kentucky",
+      "stateCode": "KY",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/kentucky.xml",
+      "sitemapCountyUrls": 4,
+      "tier1CountyCount": 4
+    },
+    {
+      "stateSlug": "louisiana",
+      "stateCode": "LA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/louisiana.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "maine",
+      "stateCode": "ME",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/maine.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "maryland",
+      "stateCode": "MD",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/maryland.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "massachusetts",
+      "stateCode": "MA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/massachusetts.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "michigan",
+      "stateCode": "MI",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/michigan.xml",
+      "sitemapCountyUrls": 5,
+      "tier1CountyCount": 5
+    },
+    {
+      "stateSlug": "minnesota",
+      "stateCode": "MN",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/minnesota.xml",
+      "sitemapCountyUrls": 2,
+      "tier1CountyCount": 2
+    },
+    {
+      "stateSlug": "mississippi",
+      "stateCode": "MS",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/mississippi.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "missouri",
+      "stateCode": "MO",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/missouri.xml",
+      "sitemapCountyUrls": 2,
+      "tier1CountyCount": 2
+    },
+    {
+      "stateSlug": "montana",
+      "stateCode": "MT",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/montana.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "nebraska",
+      "stateCode": "NE",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/nebraska.xml",
+      "sitemapCountyUrls": 2,
+      "tier1CountyCount": 2
+    },
+    {
+      "stateSlug": "nevada",
+      "stateCode": "NV",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/nevada.xml",
+      "sitemapCountyUrls": 1,
+      "tier1CountyCount": 1
+    },
+    {
+      "stateSlug": "new-hampshire",
+      "stateCode": "NH",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/new-hampshire.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "new-jersey",
+      "stateCode": "NJ",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/new-jersey.xml",
+      "sitemapCountyUrls": 5,
+      "tier1CountyCount": 5
+    },
+    {
+      "stateSlug": "new-mexico",
+      "stateCode": "NM",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/new-mexico.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "new-york",
+      "stateCode": "NY",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/new-york.xml",
+      "sitemapCountyUrls": 6,
+      "tier1CountyCount": 6
+    },
+    {
+      "stateSlug": "north-carolina",
+      "stateCode": "NC",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/north-carolina.xml",
+      "sitemapCountyUrls": 5,
+      "tier1CountyCount": 5
+    },
+    {
+      "stateSlug": "north-dakota",
+      "stateCode": "ND",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/north-dakota.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "ohio",
+      "stateCode": "OH",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/ohio.xml",
+      "sitemapCountyUrls": 4,
+      "tier1CountyCount": 4
+    },
+    {
+      "stateSlug": "oklahoma",
+      "stateCode": "OK",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/oklahoma.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "oregon",
+      "stateCode": "OR",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/oregon.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "pennsylvania",
+      "stateCode": "PA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/pennsylvania.xml",
+      "sitemapCountyUrls": 5,
+      "tier1CountyCount": 5
+    },
+    {
+      "stateSlug": "rhode-island",
+      "stateCode": "RI",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/rhode-island.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "south-carolina",
+      "stateCode": "SC",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/south-carolina.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "south-dakota",
+      "stateCode": "SD",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/south-dakota.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "tennessee",
+      "stateCode": "TN",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/tennessee.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "texas",
+      "stateCode": "TX",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/texas.xml",
+      "sitemapCountyUrls": 8,
+      "tier1CountyCount": 8
+    },
+    {
+      "stateSlug": "utah",
+      "stateCode": "UT",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/utah.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "vermont",
+      "stateCode": "VT",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/vermont.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "virginia",
+      "stateCode": "VA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/virginia.xml",
+      "sitemapCountyUrls": 18,
+      "tier1CountyCount": 18
+    },
+    {
+      "stateSlug": "washington",
+      "stateCode": "WA",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/washington.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "west-virginia",
+      "stateCode": "WV",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/west-virginia.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "wisconsin",
+      "stateCode": "WI",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/wisconsin.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    },
+    {
+      "stateSlug": "wyoming",
+      "stateCode": "WY",
+      "sitemapUrl": "https://www.movetrusthub.com/sitemap-local/sitemap/wyoming.xml",
+      "sitemapCountyUrls": 0,
+      "tier1CountyCount": 0
+    }
+  ]
+}
