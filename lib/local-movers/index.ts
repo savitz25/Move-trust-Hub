@@ -57,6 +57,7 @@ import { CURATED_STATE_SLUGS } from '@/lib/local-movers/curated-states';
 import { getCounty } from '@/lib/local-movers/geography/index';
 import { getLocalState } from '@/lib/local-movers/states';
 import { isCuratedMover } from '@/lib/trust/curated-listing-policy';
+import { filterAssignmentMoverIds } from '@/lib/trust/fabricated-mover-id';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 /** Explicit assignments may list more than 10 — show full curated set (CA uses ~20–30). */
@@ -130,11 +131,11 @@ function resolveMoverIds(county: LocalCounty): string[] {
   );
 
   if (assignment?.moverIds.length) {
-    return assignment.moverIds;
+    return filterAssignmentMoverIds(assignment.moverIds);
   }
 
   if (county.metro && fullMetroPools[county.metro]) {
-    return fullMetroPools[county.metro];
+    return filterAssignmentMoverIds(fullMetroPools[county.metro]);
   }
 
   return [];
@@ -144,12 +145,19 @@ export function hasExplicitCountyAssignment(
   stateSlug: string,
   countySlug: string
 ): boolean {
-  return allCountyAssignments.some(
-    (entry) =>
-      entry.stateSlug === stateSlug &&
-      entry.countySlug === countySlug &&
-      entry.moverIds.length > 0
+  const entry = allCountyAssignments.find(
+    (assignment) =>
+      assignment.stateSlug === stateSlug && assignment.countySlug === countySlug
   );
+  if (!entry?.moverIds.length) return false;
+
+  const displayableIds = filterAssignmentMoverIds(entry.moverIds).filter(
+    (id) => {
+      const mover = fullMoversCatalog[id];
+      return Boolean(mover) && isCuratedMover(mover);
+    }
+  );
+  return displayableIds.length > 0;
 }
 
 export function getMoversForCounty(
@@ -161,6 +169,13 @@ export function getMoversForCounty(
 
   const moverIds = resolveMoverIds(county);
   const hasExplicitAssignment = hasExplicitCountyAssignment(stateSlug, countySlug);
+  const usedMetroPool =
+    !allCountyAssignments.some(
+      (entry) =>
+        entry.stateSlug === stateSlug &&
+        entry.countySlug === countySlug &&
+        filterAssignmentMoverIds(entry.moverIds).length > 0
+    ) && Boolean(county.metro);
 
   const resolved = moverIds
     .map((id) => fullMoversCatalog[id])
@@ -179,7 +194,7 @@ export function getMoversForCounty(
   return {
     county,
     movers,
-    isRegionalFallback: !hasExplicitAssignment && Boolean(county.metro),
+    isRegionalFallback: usedMetroPool && movers.length > 0,
   };
 }
 

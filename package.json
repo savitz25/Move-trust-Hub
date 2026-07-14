@@ -21,6 +21,7 @@
     "supabase:types": "supabase gen types typescript --linked > types/supabase.ts",
     "generate:sitemap": "next build",
     "validate:county-schema": "tsx scripts/validate-county-schema.ts",
+    "audit:phase1": "tsx scripts/audit-phase1-compliance.ts",
     "count:tennessee-movers": "tsx scripts/count-tennessee-movers.ts",
     "count:alabama-movers": "tsx scripts/count-alabama-movers.ts",
     "count:mississippi-movers": "tsx scripts/count-mississippi-movers.ts",

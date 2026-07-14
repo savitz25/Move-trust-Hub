@@ -53,7 +53,8 @@ import {
   NEW_YORK_COUNTY_CONTENT_UPDATED,
   TEXAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
-import { shouldIndexCounty } from '@/lib/local-movers/county-indexability';
+import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
+import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { localStates } from '@/lib/local-movers/states';
@@ -656,6 +657,16 @@ export default async function sitemap({
   id: string;
 }): Promise<MetadataRoute.Sitemap> {
   const counties = getCountiesForState(id);
+  const indexableCounties = (
+    await Promise.all(
+      counties.map(async (county) => {
+        const result = await getMoversForCountyAsync(id, county.slug);
+        const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
+        return decision.tier === 'index' ? county : null;
+      })
+    )
+  ).filter((county): county is NonNullable<typeof county> => Boolean(county));
+
   const lastModified =
     id === 'california'
       ? new Date(CALIFORNIA_COUNTY_CONTENT_UPDATED)
@@ -768,9 +779,7 @@ export default async function sitemap({
       changeFrequency: 'weekly',
       priority: 0.85,
     },
-    ...counties
-      .filter((county) => shouldIndexCounty(id, county.slug))
-      .map((county) => ({
+    ...indexableCounties.map((county) => ({
       url: `${SITE_URL}/local-movers/${id}/${county.slug}`,
       lastModified,
       changeFrequency: 'weekly',

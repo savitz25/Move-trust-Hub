@@ -177,9 +177,13 @@ import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-ct
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { getLocalState } from '@/lib/local-movers/states';
 import {
-  evaluateCountyIndexability,
+  evaluateCountyIndexabilityFromResult,
   shouldUseCuratedTestimonials,
 } from '@/lib/local-movers/county-indexability';
+import {
+  buildCountyHeroIntro,
+  buildMoversSectionHeading,
+} from '@/lib/local-movers/county-display-copy';
 import {
   buildCountyCostGuide,
   buildCountyDescription,
@@ -215,11 +219,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const result = await getMoversForCountyAsync(stateSlug, countySlug);
   if (!state || !result) return {};
 
+  const indexDecision = evaluateCountyIndexabilityFromResult(
+    stateSlug,
+    countySlug,
+    result
+  );
+
   return buildCountyPageMetadata(
     result.county,
     state.name,
     result.movers,
-    getCountyPath(stateSlug, countySlug)
+    getCountyPath(stateSlug, countySlug),
+    indexDecision
   );
 }
 
@@ -240,7 +251,11 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const tips = buildCountyTips(county, state.name);
   const testimonials = buildCountyTestimonials(county, state.name, movers);
   const visibleTestimonials = shouldUseCuratedTestimonials(movers) ? testimonials : [];
-  const indexDecision = evaluateCountyIndexability(stateSlug, countySlug);
+  const indexDecision = evaluateCountyIndexabilityFromResult(
+    stateSlug,
+    countySlug,
+    result
+  );
   const marketNotes = buildCountyMarketNotes(county);
   const marketInsights = buildCountyMarketInsights(stateSlug, countySlug, county, movers);
   const outboundRoutes = getOutboundRouteLinksForState(county.stateCode);
@@ -438,13 +453,16 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             </p>
           )}
           <p className="text-muted-foreground leading-relaxed">
-            Compare {movers.length} local moving companies serving {countyLabel}.
-            Ratings, services, and FMCSA licensing — plus links to full
-            profiles in our{' '}
-            <Link href="/companies" className="text-primary font-medium hover:underline">
-              interstate directory
-            </Link>
-            .
+            {buildCountyHeroIntro(countyLabel, movers.length, isRegionalFallback)}{' '}
+            {movers.length > 0 ? (
+              <>
+                Full profiles are in our{' '}
+                <Link href="/companies" className="text-primary font-medium hover:underline">
+                  interstate directory
+                </Link>
+                .
+              </>
+            ) : null}
           </p>
           {marketNotes && (
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed rounded-xl border bg-muted/20 px-4 py-3">
@@ -517,7 +535,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
 
         <section className="mb-10" id="movers" aria-labelledby="movers-heading">
           <h2 id="movers-heading" className="text-2xl font-semibold tracking-tight mb-4">
-            Best moving companies in {countyLabel}, {county.stateCode}
+            {buildMoversSectionHeading(countyLabel, movers.length)}
           </h2>
           {movers.length > 0 ? (
             <ol className="space-y-4 list-none p-0 m-0">

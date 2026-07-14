@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-07-14T17:44:35.331Z",
+  "catalog": {
+    "total": 16096,
+    "fabricatedIds": 8961,
+    "displayableIds": 630
+  },
+  "counties": {
+    "total": 3143,
+    "indexSyncAsyncMismatch": 0,
+    "indexedWithZeroMovers": 0,
+    "renderedFabricatedNames": 0,
+    "legacyTestimonialLeak": 0
+  },
+  "sampleMismatches": [],
+  "phase1Pass": true
+}

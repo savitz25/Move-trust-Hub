@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
-import { evaluateCountyIndexability } from '@/lib/local-movers/county-indexability';
+import {
+  evaluateCountyIndexability,
+  type CountyIndexDecision,
+} from '@/lib/local-movers/county-indexability';
+import { buildCountyPageTitle } from '@/lib/local-movers/county-display-copy';
 import { buildCountyLabel } from '@/lib/local-movers/schema-helpers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import {
   buildCountyDescription,
-  buildCountyTitle,
   buildStateDescription,
   buildStateTitle,
   getSeoYear,
@@ -88,13 +91,15 @@ export function buildCountyPageMetadata(
   county: LocalCounty,
   stateName: string,
   movers: LocalMover[],
-  path: string
+  path: string,
+  indexDecision?: CountyIndexDecision
 ): Metadata {
-  const title = buildCountyTitle(county, stateName);
+  const title = buildCountyPageTitle(county, getSeoYear());
   const description = buildCountyDescription(county, stateName, movers.length);
   const keywords = buildCountyKeywords(county, stateName, movers).slice(0, 12);
-  const indexDecision = evaluateCountyIndexability(county.stateSlug, county.slug);
-  const shouldIndex = indexDecision.tier === 'index';
+  const resolvedIndexDecision =
+    indexDecision ?? evaluateCountyIndexability(county.stateSlug, county.slug);
+  const shouldIndex = resolvedIndexDecision.tier === 'index';
 
   return {
     title,
@@ -180,8 +185,4 @@ export function buildHubPageMetadata(): Metadata {
   };
 }
 
-export function buildCountyH1(county: LocalCounty): string {
-  const countyLabel = buildCountyLabel(county);
-  const seat = county.seat ? ` (${county.seat})` : '';
-  return `Top Local Movers in ${countyLabel}${seat}, ${county.stateCode}`;
-}
+export { buildCountyPageH1 as buildCountyH1 } from '@/lib/local-movers/county-display-copy';

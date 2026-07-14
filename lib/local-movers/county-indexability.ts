@@ -7,7 +7,7 @@ import {
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { getMoversForCounty, hasExplicitCountyAssignment } from '@/lib/local-movers/index';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
-import type { LocalMover } from '@/lib/local-movers/types';
+import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
 export type CountyIndexTier = 'index' | 'noindex';
 
@@ -19,16 +19,22 @@ export type CountyIndexDecision = {
 const MIN_MOVERS_TO_INDEX = 5;
 const MIN_MOVERS_PREMIUM_INDEX = 8;
 
-export function evaluateCountyIndexability(
+type CountyMoverResult = {
+  county: LocalCounty;
+  movers: LocalMover[];
+  isRegionalFallback: boolean;
+};
+
+export function evaluateCountyIndexabilityFromResult(
   stateSlug: string,
-  countySlug: string
+  countySlug: string,
+  result: CountyMoverResult | null
 ): CountyIndexDecision {
-  const result = getMoversForCounty(stateSlug, countySlug);
   if (!result) {
     return { tier: 'noindex', reason: 'missing_county' };
   }
 
-  const { county, movers, isRegionalFallback } = result;
+  const { movers, isRegionalFallback } = result;
   const moverCount = movers.length;
   const research = getCountyResearch(stateSlug, countySlug);
   const hasResearch = hasCountyResearch(stateSlug, countySlug);
@@ -99,6 +105,18 @@ export function evaluateCountyIndexability(
   }
 
   return { tier: 'noindex', reason: 'default_quality_guard' };
+}
+
+/** Sync evaluator — uses seed/assignment catalog only (no Supabase approved movers). */
+export function evaluateCountyIndexability(
+  stateSlug: string,
+  countySlug: string
+): CountyIndexDecision {
+  return evaluateCountyIndexabilityFromResult(
+    stateSlug,
+    countySlug,
+    getMoversForCounty(stateSlug, countySlug)
+  );
 }
 
 export function shouldIndexCounty(stateSlug: string, countySlug: string): boolean {

@@ -153,7 +153,7 @@ export function buildLocalMovingServiceName(
   stateName: string | undefined
 ): string {
   if (county && stateName) {
-    return `Local Moving Companies in ${buildCountyLabel(county)}, ${stateName}`;
+    return `Movers Serving ${buildCountyLabel(county)}, ${stateName}`;
   }
   return 'Local Moving Services';
 }
@@ -223,7 +223,7 @@ export function buildReviewSchemaName(testimonial: CountyTestimonial): string {
 }
 
 export function buildFaqSchemaName(countyLabel: string): string {
-  return `FAQ: Local movers in ${countyLabel}`;
+  return `FAQ: Movers serving ${countyLabel}`;
 }
 
 export function buildMoversItemListName(
@@ -231,9 +231,9 @@ export function buildMoversItemListName(
   stateName: string | undefined
 ): string {
   if (county) {
-    return `Top Local Movers in ${buildCountyLabel(county)}`;
+    return `Movers Serving ${buildCountyLabel(county)}`;
   }
-  return `Local Movers in ${stateName ?? 'the United States'}`;
+  return `Movers Serving ${stateName ?? 'the United States'}`;
 }
 
 export function buildCountyPlaceSchema(

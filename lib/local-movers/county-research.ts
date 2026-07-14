@@ -49,57 +49,8 @@ import { getWashingtonCountyResearch } from '@/data/washington-county-research';
 import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-research';
 import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
 import { getWyomingCountyResearch } from '@/data/wyoming-county-research';
-import { getAlabamaCountyTestimonials } from '@/data/alabama-county-testimonials';
-import { getAlaskaCountyTestimonials } from '@/data/alaska-county-testimonials';
-import { getArizonaCountyTestimonials } from '@/data/arizona-county-testimonials';
-import { getArkansasCountyTestimonials } from '@/data/arkansas-county-testimonials';
-import { getCaliforniaCountyTestimonials } from '@/data/california-county-testimonials';
-import { getColoradoCountyTestimonials } from '@/data/colorado-county-testimonials';
-import { getConnecticutCountyTestimonials } from '@/data/connecticut-county-testimonials';
-import { getDelawareCountyTestimonials } from '@/data/delaware-county-testimonials';
-import { getDistrictOfColumbiaCountyTestimonials } from '@/data/district-of-columbia-county-testimonials';
-import { getFloridaCountyTestimonials } from '@/data/florida-county-testimonials';
-import { getGeorgiaCountyTestimonials } from '@/data/georgia-county-testimonials';
-import { getHawaiiCountyTestimonials } from '@/data/hawaii-county-testimonials';
-import { getIdahoCountyTestimonials } from '@/data/idaho-county-testimonials';
-import { getIllinoisCountyTestimonials } from '@/data/illinois-county-testimonials';
-import { getIndianaCountyTestimonials } from '@/data/indiana-county-testimonials';
-import { getIowaCountyTestimonials } from '@/data/iowa-county-testimonials';
-import { getKansasCountyTestimonials } from '@/data/kansas-county-testimonials';
-import { getKentuckyCountyTestimonials } from '@/data/kentucky-county-testimonials';
-import { getLouisianaCountyTestimonials } from '@/data/louisiana-county-testimonials';
-import { getMaineCountyTestimonials } from '@/data/maine-county-testimonials';
-import { getMarylandCountyTestimonials } from '@/data/maryland-county-testimonials';
-import { getMassachusettsCountyTestimonials } from '@/data/massachusetts-county-testimonials';
-import { getMichiganCountyTestimonials } from '@/data/michigan-county-testimonials';
-import { getMinnesotaCountyTestimonials } from '@/data/minnesota-county-testimonials';
-import { getMississippiCountyTestimonials } from '@/data/mississippi-county-testimonials';
-import { getMissouriCountyTestimonials } from '@/data/missouri-county-testimonials';
-import { getMontanaCountyTestimonials } from '@/data/montana-county-testimonials';
-import { getNebraskaCountyTestimonials } from '@/data/nebraska-county-testimonials';
-import { getNevadaCountyTestimonials } from '@/data/nevada-county-testimonials';
-import { getNewHampshireCountyTestimonials } from '@/data/new-hampshire-county-testimonials';
-import { getNewJerseyCountyTestimonials } from '@/data/new-jersey-county-testimonials';
-import { getNewMexicoCountyTestimonials } from '@/data/new-mexico-county-testimonials';
-import { getNewYorkCountyTestimonials } from '@/data/new-york-county-testimonials';
-import { getNorthCarolinaCountyTestimonials } from '@/data/north-carolina-county-testimonials';
-import { getNorthDakotaCountyTestimonials } from '@/data/north-dakota-county-testimonials';
-import { getOhioCountyTestimonials } from '@/data/ohio-county-testimonials';
-import { getOklahomaCountyTestimonials } from '@/data/oklahoma-county-testimonials';
-import { getOregonCountyTestimonials } from '@/data/oregon-county-testimonials';
-import { getPennsylvaniaCountyTestimonials } from '@/data/pennsylvania-county-testimonials';
-import { getRhodeIslandCountyTestimonials } from '@/data/rhode-island-county-testimonials';
-import { getSouthCarolinaCountyTestimonials } from '@/data/south-carolina-county-testimonials';
-import { getSouthDakotaCountyTestimonials } from '@/data/south-dakota-county-testimonials';
-import { getTennesseeCountyTestimonials } from '@/data/tennessee-county-testimonials';
-import { getTexasCountyTestimonials } from '@/data/texas-county-testimonials';
-import { getUtahCountyTestimonials } from '@/data/utah-county-testimonials';
-import { getVermontCountyTestimonials } from '@/data/vermont-county-testimonials';
-import { getVirginiaCountyTestimonials } from '@/data/virginia-county-testimonials';
-import { getWashingtonCountyTestimonials } from '@/data/washington-county-testimonials';
-import { getWestVirginiaCountyTestimonials } from '@/data/west-virginia-county-testimonials';
-import { getWisconsinCountyTestimonials } from '@/data/wisconsin-county-testimonials';
-import { getWyomingCountyTestimonials } from '@/data/wyoming-county-testimonials';
+import { getMoversForCounty } from '@/lib/local-movers/index';
+import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 
 type CountyResearch = {
   marketNotes: string;
@@ -172,60 +123,6 @@ const RESEARCH_GETTERS: Record<
   wyoming: getWyomingCountyResearch,
 };
 
-const TESTIMONIAL_GETTERS: Record<string, (countySlug: string) => unknown[]> = {
-  alabama: getAlabamaCountyTestimonials,
-  alaska: getAlaskaCountyTestimonials,
-  arizona: getArizonaCountyTestimonials,
-  arkansas: getArkansasCountyTestimonials,
-  california: getCaliforniaCountyTestimonials,
-  colorado: getColoradoCountyTestimonials,
-  connecticut: getConnecticutCountyTestimonials,
-  delaware: getDelawareCountyTestimonials,
-  'district-of-columbia': getDistrictOfColumbiaCountyTestimonials,
-  florida: getFloridaCountyTestimonials,
-  georgia: getGeorgiaCountyTestimonials,
-  hawaii: getHawaiiCountyTestimonials,
-  idaho: getIdahoCountyTestimonials,
-  illinois: getIllinoisCountyTestimonials,
-  indiana: getIndianaCountyTestimonials,
-  iowa: getIowaCountyTestimonials,
-  kansas: getKansasCountyTestimonials,
-  kentucky: getKentuckyCountyTestimonials,
-  louisiana: getLouisianaCountyTestimonials,
-  maine: getMaineCountyTestimonials,
-  maryland: getMarylandCountyTestimonials,
-  massachusetts: getMassachusettsCountyTestimonials,
-  michigan: getMichiganCountyTestimonials,
-  minnesota: getMinnesotaCountyTestimonials,
-  mississippi: getMississippiCountyTestimonials,
-  missouri: getMissouriCountyTestimonials,
-  montana: getMontanaCountyTestimonials,
-  nebraska: getNebraskaCountyTestimonials,
-  nevada: getNevadaCountyTestimonials,
-  'new-hampshire': getNewHampshireCountyTestimonials,
-  'new-jersey': getNewJerseyCountyTestimonials,
-  'new-mexico': getNewMexicoCountyTestimonials,
-  'new-york': getNewYorkCountyTestimonials,
-  'north-carolina': getNorthCarolinaCountyTestimonials,
-  'north-dakota': getNorthDakotaCountyTestimonials,
-  ohio: getOhioCountyTestimonials,
-  oklahoma: getOklahomaCountyTestimonials,
-  oregon: getOregonCountyTestimonials,
-  pennsylvania: getPennsylvaniaCountyTestimonials,
-  'rhode-island': getRhodeIslandCountyTestimonials,
-  'south-carolina': getSouthCarolinaCountyTestimonials,
-  'south-dakota': getSouthDakotaCountyTestimonials,
-  tennessee: getTennesseeCountyTestimonials,
-  texas: getTexasCountyTestimonials,
-  utah: getUtahCountyTestimonials,
-  vermont: getVermontCountyTestimonials,
-  virginia: getVirginiaCountyTestimonials,
-  washington: getWashingtonCountyTestimonials,
-  'west-virginia': getWestVirginiaCountyTestimonials,
-  wisconsin: getWisconsinCountyTestimonials,
-  wyoming: getWyomingCountyTestimonials,
-};
-
 export function getCountyResearch(
   stateSlug: string,
   countySlug: string
@@ -237,12 +134,14 @@ export function hasCountyResearch(stateSlug: string, countySlug: string): boolea
   return Boolean(getCountyResearch(stateSlug, countySlug));
 }
 
+/** True only when attributable on-site reviews exist for directory-linked movers on this county page. */
 export function hasCuratedCountyTestimonials(
   stateSlug: string,
   countySlug: string
 ): boolean {
-  const testimonials = TESTIMONIAL_GETTERS[stateSlug]?.(countySlug) ?? [];
-  return testimonials.length >= 2;
+  const result = getMoversForCounty(stateSlug, countySlug);
+  if (!result) return false;
+  return hasAttributableCountyReviews(result.movers);
 }
 
 export function parseCountyPopulationFromNotes(marketNotes?: string): number | null {
