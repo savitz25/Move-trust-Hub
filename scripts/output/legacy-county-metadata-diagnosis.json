@@ -1,0 +1,272 @@
+{
+  "generatedAt": "2026-07-14T19:31:25.247Z",
+  "metadataPath": {
+    "route": "app/(move)/(marketing)/local-movers/[stateSlug]/[countySlug]/page.tsx",
+    "generateMetadata": "resolveCountyPageSeo() → buildCountyPageMetadata()",
+    "evaluator": "evaluateCountyIndexabilityFromResult() via getMoversForCountyAsync()",
+    "staticGeneration": "force-static + generateStaticParams (ISR/prerender cache may serve stale HTML until revalidate)",
+    "seatOverrides": "lib/local-movers/geography/county-seat-overrides.ts (final pass after state overrides)",
+    "noAlternateCountyRoutes": true
+  },
+  "countiesWithSeatOverrides": 2898,
+  "spotlight": {
+    "nebraska/sherman": {
+      "tier": {
+        "tier": "noindex",
+        "reason": "outside_tier1_coverage_wave"
+      },
+      "canonicalSeat": "Loup City",
+      "metadataTitle": "Movers Serving Sherman County (Loup City), NE | 2026 Guide"
+    },
+    "colorado/douglas": {
+      "tier": {
+        "tier": "noindex",
+        "reason": "batch_template_research"
+      },
+      "canonicalSeat": "Castle Rock",
+      "metadataTitle": "Movers Serving Douglas County (Castle Rock), CO | 2026 Guide"
+    }
+  },
+  "legacyRiskSample": [
+    {
+      "key": "connecticut/fairfield",
+      "canonicalSeat": "Bridgeport",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "connecticut/hartford",
+      "canonicalSeat": "Hartford",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "connecticut/litchfield",
+      "canonicalSeat": "Torrington",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "connecticut/middlesex",
+      "canonicalSeat": "Middletown",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "connecticut/new-haven",
+      "canonicalSeat": "New Haven",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "connecticut/new-london",
+      "canonicalSeat": "New London",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "connecticut/tolland",
+      "canonicalSeat": "Rockville",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "connecticut/windham",
+      "canonicalSeat": "Willimantic",
+      "tier": "noindex",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/alameda",
+      "canonicalSeat": "Oakland",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/alpine",
+      "canonicalSeat": "Markleeville",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/amador",
+      "canonicalSeat": "Jackson",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/butte",
+      "canonicalSeat": "Oroville",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/calaveras",
+      "canonicalSeat": "San Andreas",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/colusa",
+      "canonicalSeat": "Colusa",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/contra-costa",
+      "canonicalSeat": "Martinez",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/del-norte",
+      "canonicalSeat": "Crescent City",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/el-dorado",
+      "canonicalSeat": "Placerville",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/fresno",
+      "canonicalSeat": "Fresno",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/glenn",
+      "canonicalSeat": "Willows",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/humboldt",
+      "canonicalSeat": "Eureka",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/imperial",
+      "canonicalSeat": "El Centro",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/inyo",
+      "canonicalSeat": "Independence",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/kern",
+      "canonicalSeat": "Bakersfield",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/kings",
+      "canonicalSeat": "Hanford",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/lake",
+      "canonicalSeat": "Lakeport",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/lassen",
+      "canonicalSeat": "Susanville",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/los-angeles",
+      "canonicalSeat": "Los Angeles",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/madera",
+      "canonicalSeat": "Madera",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/marin",
+      "canonicalSeat": "San Rafael",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/mariposa",
+      "canonicalSeat": "Mariposa",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/mendocino",
+      "canonicalSeat": "Ukiah",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/merced",
+      "canonicalSeat": "Merced",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/modoc",
+      "canonicalSeat": "Alturas",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/mono",
+      "canonicalSeat": "Bridgeport",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/monterey",
+      "canonicalSeat": "Salinas",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/napa",
+      "canonicalSeat": "Napa",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/nevada",
+      "canonicalSeat": "Nevada City",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/orange",
+      "canonicalSeat": "Santa Ana",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/placer",
+      "canonicalSeat": "Auburn",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    },
+    {
+      "key": "california/plumas",
+      "canonicalSeat": "Quincy",
+      "tier": "index",
+      "reason": "seat_override_applied_in_geography_pipeline"
+    }
+  ]
+}

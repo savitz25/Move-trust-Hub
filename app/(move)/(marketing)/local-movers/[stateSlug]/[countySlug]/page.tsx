@@ -175,31 +175,24 @@ import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
 import { CountyPageHeroCta } from '@/components/local-movers/county-page-hero-cta';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
-import { getLocalState } from '@/lib/local-movers/states';
-import {
-  evaluateCountyIndexabilityFromResult,
-  shouldUseCuratedTestimonials,
-} from '@/lib/local-movers/county-indexability';
+
+import { shouldUseCuratedTestimonials } from '@/lib/local-movers/county-indexability';
+import { resolveCountyPageSeo } from '@/lib/local-movers/county-page-seo';
 import {
   buildCountyHeroIntro,
   buildMoversSectionHeading,
 } from '@/lib/local-movers/county-display-copy';
 import {
   buildCountyCostGuide,
-  buildCountyDescription,
   buildCountyFaqItems,
   buildCountyH1,
   buildCountyMarketNotes,
-  buildCountyPageMetadata,
   buildCountyTestimonials,
   buildCountyTips,
   buildCountyLabel,
-  buildCountyTitle,
   getAllCountyParams,
-  getCountyPath,
   getStatePath,
 } from '@/lib/local-movers/index';
-import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
 
 type Props = { params: Promise<{ stateSlug: string; countySlug: string }> };
 
@@ -215,47 +208,31 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { stateSlug, countySlug } = await params;
-  const state = getLocalState(stateSlug);
-  const result = await getMoversForCountyAsync(stateSlug, countySlug);
-  if (!state || !result) return {};
-
-  const indexDecision = evaluateCountyIndexabilityFromResult(
-    stateSlug,
-    countySlug,
-    result
-  );
-
-  return buildCountyPageMetadata(
-    result.county,
-    state.name,
-    result.movers,
-    getCountyPath(stateSlug, countySlug),
-    indexDecision
-  );
+  const seo = await resolveCountyPageSeo(stateSlug, countySlug);
+  return seo?.metadata ?? {};
 }
 
 export default async function LocalMoversCountyPage({ params }: Props) {
   const { stateSlug, countySlug } = await params;
-  const state = getLocalState(stateSlug);
-  const result = await getMoversForCountyAsync(stateSlug, countySlug);
+  const seo = await resolveCountyPageSeo(stateSlug, countySlug);
+  if (!seo) notFound();
 
-  if (!state || !result) notFound();
-
-  const { county, movers, isRegionalFallback } = result;
-  const title = buildCountyTitle(county, state.name);
-  const description = buildCountyDescription(county, state.name, movers.length);
-  const path = getCountyPath(stateSlug, countySlug);
+  const {
+    state,
+    county,
+    movers,
+    isRegionalFallback,
+    title,
+    description,
+    path,
+    indexDecision,
+  } = seo;
   const countyLabel = buildCountyLabel(county);
   const faqItems = buildCountyFaqItems(county, state.name, movers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
   const testimonials = buildCountyTestimonials(county, state.name, movers);
   const visibleTestimonials = shouldUseCuratedTestimonials(movers) ? testimonials : [];
-  const indexDecision = evaluateCountyIndexabilityFromResult(
-    stateSlug,
-    countySlug,
-    result
-  );
   const marketNotes = buildCountyMarketNotes(county);
   const marketInsights = buildCountyMarketInsights(stateSlug, countySlug, county, movers);
   const outboundRoutes = getOutboundRouteLinksForState(county.stateCode);

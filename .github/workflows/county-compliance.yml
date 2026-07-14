@@ -39,3 +39,6 @@ jobs:
 
       - name: Rendered metadata audit
         run: npm run audit:rendered-metadata
+
+      - name: Guard canonical county metadata path
+        run: npm run guard:canonical-county-metadata

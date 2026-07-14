@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-07-14T19:42:24.107Z",
+  "origin": "https://www.movetrusthub.com",
+  "totalCounties": 3143,
+  "failureCount": 0,
+  "pass": true,
+  "durationMs": 26654,
+  "failures": [],
+  "tierSpotCheck": {
+    "nebraska/sherman": {
+      "tier": "noindex",
+      "reason": "outside_tier1_coverage_wave"
+    },
+    "colorado/douglas": {
+      "tier": "noindex",
+      "reason": "batch_template_research"
+    }
+  }
+}

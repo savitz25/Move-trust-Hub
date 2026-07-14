@@ -1,0 +1,38 @@
+{
+  "capturedAt": "2026-07-14T19:31:32.662Z",
+  "origin": "https://www.movetrusthub.com",
+  "captures": [
+    {
+      "label": "sherman-ne",
+      "url": "https://www.movetrusthub.com/local-movers/nebraska/sherman",
+      "status": 200,
+      "tier": {
+        "tier": "noindex",
+        "reason": "outside_tier1_coverage_wave"
+      },
+      "countySeat": "Loup City",
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700",
+      "vercelCache": "HIT",
+      "age": "67",
+      "htmlBytes": 317992,
+      "titleMatch": "Movers Serving Sherman County (Loup City), NE | 2026 Guide | Move Trust Hub",
+      "robotsMatch": "noindex, follow"
+    },
+    {
+      "label": "douglas-co",
+      "url": "https://www.movetrusthub.com/local-movers/colorado/douglas",
+      "status": 200,
+      "tier": {
+        "tier": "noindex",
+        "reason": "batch_template_research"
+      },
+      "countySeat": "Castle Rock",
+      "cacheControl": "s-maxage=300, stale-while-revalidate=31535700",
+      "vercelCache": "HIT",
+      "age": "155",
+      "htmlBytes": 321585,
+      "titleMatch": "Movers Serving Douglas County (Castle Rock), CO | 2026 Guide | Move Trust Hub",
+      "robotsMatch": "noindex, follow"
+    }
+  ]
+}
