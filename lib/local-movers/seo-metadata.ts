@@ -7,82 +7,12 @@ import {
   buildCountyTitle,
   buildStateDescription,
   buildStateTitle,
-  getSeoYear,
 } from '@/lib/local-movers/county-seo';
-
-const SITE_URL = 'https://www.movetrusthub.com';
-const SITE_NAME = 'Move Trust Hub';
-
-function buildOpenGraph(title: string, description: string, path: string): Metadata['openGraph'] {
-  return {
-    title,
-    description,
-    url: `${SITE_URL}${path}`,
-    siteName: SITE_NAME,
-    locale: 'en_US',
-    type: 'website',
-  };
-}
-
-function buildTwitter(title: string, description: string): Metadata['twitter'] {
-  return {
-    card: 'summary_large_image',
-    title,
-    description,
-  };
-}
-
-const BASE_LOCAL_KEYWORDS = [
-  'local movers',
-  'moving companies',
-  'local moving companies',
-  'FMCSA licensed movers',
-  'moving cost estimate',
-  'free moving quotes',
-];
-
-export function buildCountyKeywords(
-  county: LocalCounty,
-  stateName: string,
-  movers: LocalMover[]
-): string[] {
-  const countyLabel = buildCountyLabel(county);
-  const seat = county.seat;
-  const code = county.stateCode;
-  const topNames = movers.slice(0, 3).map((m) => m.name);
-
-  const keywords = new Set<string>([
-    ...BASE_LOCAL_KEYWORDS,
-    `local movers ${countyLabel}`,
-    `local movers ${countyLabel} ${code}`,
-    `${countyLabel} movers`,
-    `${countyLabel} moving companies`,
-    `moving companies ${countyLabel}`,
-    `best movers ${countyLabel}`,
-    `top movers ${countyLabel} ${getSeoYear()}`,
-    `${stateName} local movers`,
-    `local movers ${stateName}`,
-    `${code} local movers`,
-    `affordable movers ${countyLabel}`,
-    `residential movers ${countyLabel}`,
-  ]);
-
-  if (seat) {
-    keywords.add(`movers ${seat}`);
-    keywords.add(`movers ${seat} ${code}`);
-    keywords.add(`moving companies ${seat}`);
-    keywords.add(`local movers ${seat}`);
-    keywords.add(`best movers in ${seat}`);
-    keywords.add(`${seat} moving company`);
-  }
-
-  for (const name of topNames) {
-    keywords.add(name);
-    keywords.add(`${name} ${countyLabel}`);
-  }
-
-  return Array.from(keywords);
-}
+import {
+  SITE_URL,
+  buildOpenGraph,
+  buildTwitter,
+} from '@/lib/seo/site-metadata';
 
 export function buildCountyPageMetadata(
   county: LocalCounty,
@@ -92,17 +22,16 @@ export function buildCountyPageMetadata(
 ): Metadata {
   const title = buildCountyTitle(county, stateName);
   const description = buildCountyDescription(county, stateName, movers.length);
-  const keywords = buildCountyKeywords(county, stateName, movers).slice(0, 12);
+  const url = `${SITE_URL}${path}`;
   const indexDecision = evaluateCountyIndexability(county.stateSlug, county.slug);
   const shouldIndex = indexDecision.tier === 'index';
 
   return {
     title,
     description,
-    keywords,
-    alternates: { canonical: `${SITE_URL}${path}` },
-    openGraph: buildOpenGraph(title, description, path),
-    twitter: buildTwitter(title, description),
+    alternates: { canonical: url },
+    openGraph: buildOpenGraph({ title, description, url }),
+    twitter: buildTwitter({ title, description }),
     robots: shouldIndex
       ? { index: true, follow: true }
       : { index: false, follow: true },
@@ -110,57 +39,25 @@ export function buildCountyPageMetadata(
   };
 }
 
-export function buildStateKeywords(
-  stateName: string,
-  stateCode: string,
-  countyCount: number
-): string[] {
-  return [
-    ...BASE_LOCAL_KEYWORDS,
-    `local movers ${stateName}`,
-    `${stateName} moving companies`,
-    `${stateCode} local movers`,
-    `${stateName} county movers`,
-    `movers by county ${stateName}`,
-    `${stateName} moving guide`,
-    `${countyCount} counties ${stateName} movers`,
-    `best local movers ${stateName} ${getSeoYear()}`,
-  ];
-}
-
 export function buildStatePageMetadata(
   stateName: string,
-  stateCode: string,
+  _stateCode: string,
   countyCount: number,
   path: string
 ): Metadata {
   const title = buildStateTitle(stateName, countyCount);
   const description = buildStateDescription(stateName, countyCount);
-  const keywords = buildStateKeywords(stateName, stateCode, countyCount);
+  const url = `${SITE_URL}${path}`;
 
   return {
     title,
     description,
-    keywords,
-    alternates: { canonical: `${SITE_URL}${path}` },
-    openGraph: buildOpenGraph(title, description, path),
-    twitter: buildTwitter(title, description),
+    alternates: { canonical: url },
+    openGraph: buildOpenGraph({ title, description, url }),
+    twitter: buildTwitter({ title, description }),
     robots: { index: true, follow: true },
     category: 'Local Moving Services',
   };
-}
-
-export function buildHubKeywords(): string[] {
-  return [
-    ...BASE_LOCAL_KEYWORDS,
-    'local movers by county',
-    'local movers by state',
-    'county moving guides',
-    'find movers near me',
-    'USA local movers directory',
-    `local movers directory ${getSeoYear()}`,
-    '50 states moving companies',
-  ];
 }
 
 export function buildHubPageMetadata(): Metadata {
@@ -168,13 +65,14 @@ export function buildHubPageMetadata(): Metadata {
   const description =
     'Browse 3,100+ county-level local mover guides across all 50 states. FMCSA licensing, ratings, cost estimates, and moving tips. Compare trusted movers in our independent directory.';
   const path = '/local-movers';
+  const url = `${SITE_URL}${path}`;
 
   return {
     title,
     description,
-    alternates: { canonical: `${SITE_URL}${path}` },
-    openGraph: buildOpenGraph(title, description, path),
-    twitter: buildTwitter(title, description),
+    alternates: { canonical: url },
+    openGraph: buildOpenGraph({ title, description, url }),
+    twitter: buildTwitter({ title, description }),
     robots: { index: true, follow: true },
     category: 'Local Moving Services',
   };

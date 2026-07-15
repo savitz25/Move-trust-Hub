@@ -49,6 +49,7 @@ import { getWashingtonCountyResearch } from '@/data/washington-county-research';
 import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-research';
 import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
 import { getWyomingCountyResearch } from '@/data/wyoming-county-research';
+import { withDeepCountyResearch } from '@/data/deep-county-research/index';
 import { getAlabamaCountyTestimonials } from '@/data/alabama-county-testimonials';
 import { getAlaskaCountyTestimonials } from '@/data/alaska-county-testimonials';
 import { getArizonaCountyTestimonials } from '@/data/arizona-county-testimonials';
@@ -230,7 +231,8 @@ export function getCountyResearch(
   stateSlug: string,
   countySlug: string
 ): CountyResearch | undefined {
-  return RESEARCH_GETTERS[stateSlug]?.(countySlug);
+  const base = RESEARCH_GETTERS[stateSlug]?.(countySlug);
+  return withDeepCountyResearch(stateSlug, countySlug, base);
 }
 
 export function hasCountyResearch(stateSlug: string, countySlug: string): boolean {

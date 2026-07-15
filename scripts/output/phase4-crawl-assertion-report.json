@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-07-15T03:52:13.233Z",
+  "seed": "e45161f8d9e5ae9e132fb2b6bb3a1169e7fa6d60",
+  "base": null,
+  "fullCrawl": false,
+  "summary": {
+    "totalCounties": 3143,
+    "localFailures": 0,
+    "productionFailures": 0,
+    "totalFailures": 0,
+    "durationMs": 1688
+  },
+  "failures": [],
+  "probePaths": [
+    "/",
+    "/contact",
+    "/about",
+    "/companies",
+    "/compare",
+    "/moving-calculator",
+    "/my-move",
+    "/local-movers",
+    "/local-movers/california",
+    "/local-movers/florida",
+    "/local-movers/texas",
+    "/local-movers/virginia/fairfax",
+    "/local-movers/colorado/douglas",
+    "/local-movers/nebraska/sherman",
+    "/local-movers/florida/highlands",
+    "/moving-to",
+    "/moving-to/myrtle-beach-sc",
+    "/resources",
+    "/privacy-policy",
+    "/terms-of-service"
+  ]
+}

@@ -10,7 +10,6 @@ export type MovePageMetadataInput = {
   description: string;
   /** App path starting with `/` (e.g. `/companies`, `/about`). */
   path: string;
-  keywords?: string[];
   type?: 'website' | 'article';
   noIndex?: boolean;
 };
@@ -24,7 +23,6 @@ export function buildMovePageMetadata(input: MovePageMetadataInput): Metadata {
   return {
     title: input.title,
     description: input.description,
-    keywords: input.keywords,
     metadataBase: new URL(SITE_URL),
     alternates: { canonical: url },
     openGraph: buildOpenGraph({

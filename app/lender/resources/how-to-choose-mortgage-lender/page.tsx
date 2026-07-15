@@ -156,13 +156,6 @@ export const metadata = buildTemplateMetadata({
   description: DESCRIPTION,
   path: '/resources/how-to-choose-mortgage-lender',
   type: 'article',
-  keywords: [
-    'mortgage lender',
-    'NMLS verification',
-    'mortgage comparison',
-    'choose a lender',
-    '2026 mortgage',
-  ],
 });
 
 export default function HowToChooseMortgageLenderPage() {

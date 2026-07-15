@@ -53,9 +53,7 @@ export function StateSelector({ states }: { states: StateSelectorItem[] }) {
             <div className="font-semibold text-sm group-hover:text-primary transition-colors leading-snug">
               {state.name}
             </div>
-            {!state.hasCounties && (
-              <div className="text-[10px] text-muted-foreground mt-1">Coming soon</div>
-            )}
+
           </Link>
         ))}
       </div>

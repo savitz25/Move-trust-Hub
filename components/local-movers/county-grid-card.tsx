@@ -12,6 +12,8 @@ type CountyGridCardProps = {
   seat?: string;
   /** Market estimate or curated listing count; omit to hide badge */
   moverCount?: number | null;
+  /** Indexed county with deep original research */
+  isDeepGuide?: boolean;
 };
 
 /**
@@ -23,6 +25,7 @@ export function CountyGridCard({
   name,
   seat,
   moverCount,
+  isDeepGuide = false,
 }: CountyGridCardProps) {
   const showBadge = moverCount !== undefined && moverCount !== null;
   const count = moverCount ?? 0;
@@ -41,7 +44,13 @@ export function CountyGridCard({
         'hover:border-primary/35 hover:shadow-[0_10px_24px_-8px_rgb(0_119_212/0.18),0_4px_10px_-4px_rgb(15_23_42/0.08)]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2'
       )}
-      aria-label={showBadge ? `${name} County — ${label}` : `${name} County`}
+      aria-label={
+        isDeepGuide
+          ? `${name} County — Deep guide${showBadge ? ` · ${label}` : ''}`
+          : showBadge
+            ? `${name} County — ${label}`
+            : `${name} County`
+      }
     >
       {/* Brand teal/blue left accent */}
       <span
@@ -51,8 +60,15 @@ export function CountyGridCard({
 
       <div className="flex min-w-0 flex-1 items-center gap-3 pl-4 pr-3">
         <div className="min-w-0 flex-1">
-          <div className="truncate text-[15px] font-semibold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-primary">
-            {name}
+          <div className="flex min-w-0 items-center gap-1.5">
+            <div className="truncate text-[15px] font-semibold leading-snug tracking-tight text-slate-900 transition-colors group-hover:text-primary">
+              {name}
+            </div>
+            {isDeepGuide ? (
+              <span className="shrink-0 rounded-full bg-amber-50 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-amber-800 ring-1 ring-amber-200/90">
+                Deep
+              </span>
+            ) : null}
           </div>
           {seat ? (
             <div className="mt-1 flex items-center gap-1.5 text-[12px] leading-none text-slate-500">

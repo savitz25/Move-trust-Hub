@@ -18,7 +18,6 @@ export const metadata: Metadata = buildTemplateMetadata({
   title: preset.title,
   description: preset.description,
   path: '/resources',
-  keywords: ['mortgage lender guide', 'NMLS verification', 'mortgage comparison', 'lender resources'],
 });
 
 export default function LenderResourcesPage() {
