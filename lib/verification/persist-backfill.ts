@@ -59,7 +59,7 @@ export async function persistBackfillUpdate(
     slug: target.slug,
     name: target.name,
     headquarters: target.headquarters || 'United States',
-    short_description: `${target.name} — mover directory profile (catalog enrichment).`,
+    short_description: `${target.name} — mover directory profile (independent directory profile).`,
     description: '',
     usdot_number: target.usdotNumber,
     mc_number: target.mcNumber,

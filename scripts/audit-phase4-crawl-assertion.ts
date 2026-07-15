@@ -165,8 +165,11 @@ function scanHtml(url: string, html: string): Failure[] {
     }
   }
 
-  const ogImage = html.match(/property=["']og:image["'][^>]*content=["']([^"']+)["']/i);
-  if (!ogImage && !html.includes('og:image')) {
+  const hasOgImage =
+    /property=["']og:image["']/i.test(html) ||
+    /name=["']twitter:image["']/i.test(html) ||
+    /\/opengraph-image/i.test(html);
+  if (!hasOgImage) {
     failures.push({ url, reason: 'missing_og_image' });
   }
 
