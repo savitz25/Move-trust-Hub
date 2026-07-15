@@ -49,9 +49,7 @@ import { getWashingtonCountyResearch } from '@/data/washington-county-research';
 import { getWestVirginiaCountyResearch } from '@/data/west-virginia-county-research';
 import { getWisconsinCountyResearch } from '@/data/wisconsin-county-research';
 import { getWyomingCountyResearch } from '@/data/wyoming-county-research';
-import {
-  getDeepCountyResearch,
-} from '@/data/deep-county-research';
+import { getDeepCountyResearch } from '@/data/deep-county-research';
 import { applyCountyResearchCitations } from '@/lib/local-movers/county-research-citations';
 import { getMoversForCounty } from '@/lib/local-movers/index';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';

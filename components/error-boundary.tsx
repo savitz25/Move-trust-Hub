@@ -33,8 +33,8 @@ export class ErrorBoundary extends React.Component<Props, State> {
             {this.props.fallbackTitle ?? 'Something went wrong'}
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            We hit a temporary issue. Your quote request may still have been saved — try
-            refreshing or contact us if the problem persists.
+            We hit a temporary issue loading this page. Try refreshing, or contact us if
+            the problem persists.
           </p>
           <Button
             className="mt-6"

@@ -8,7 +8,9 @@ import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 export const metadata = buildResourceMetadata(
   '/contact',
   'Contact Move Trust Hub — Support & Data Requests',
-  'Reach Move Trust Hub for directory corrections, privacy requests, review questions, and general support. We respond within 2–5 business days.'
+  'Reach Move Trust Hub for directory corrections, privacy requests, review questions, and general support. We respond within 2–5 business days.',
+  'move',
+  'website'
 );
 
 export default function ContactPage() {

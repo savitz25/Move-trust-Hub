@@ -7,14 +7,15 @@ export function buildResourceMetadata(
   path: string,
   title: string,
   description: string,
-  hub: OgHub = 'move'
+  hub: OgHub = 'move',
+  type: 'website' | 'article' = 'article'
 ): Metadata {
   const url = `${SITE_URL}${path}`;
   return {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: buildOpenGraph({ title, description, url, type: 'article', hub }),
+    openGraph: buildOpenGraph({ title, description, url, type, hub }),
     twitter: buildTwitter({ title, description, hub }),
     robots: { index: true, follow: true },
   };

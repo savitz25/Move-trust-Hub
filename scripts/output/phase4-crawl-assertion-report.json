@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-07-15T03:57:57.099Z",
+  "seed": "1ba5a47891c2da5541a3bf16fc0471be4ae254eb",
+  "base": "https://www.movetrusthub.com",
+  "fullCrawl": false,
+  "summary": {
+    "totalCounties": 3143,
+    "localFailures": 0,
+    "productionFailures": 23,
+    "totalFailures": 23,
+    "durationMs": 7055
+  },
+  "failures": [
+    {
+      "url": "https://www.movetrusthub.com/companies",
+      "reason": "artifact:catalog enrichment",
+      "snippet": "catalog enrichment"
+    },
+    {
+      "url": "https://www.movetrusthub.com/compare",
+      "reason": "artifact:catalog enrichment",
+      "snippet": "catalog enrichment"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/california",
+      "reason": "artifact:meta\\s+name=[\"']keywords[\"']",
+      "snippet": "meta name=\"keywords\""
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/california",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/florida",
+      "reason": "artifact:meta\\s+name=[\"']keywords[\"']",
+      "snippet": "meta name=\"keywords\""
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/florida",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/texas",
+      "reason": "artifact:meta\\s+name=[\"']keywords[\"']",
+      "snippet": "meta name=\"keywords\""
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/texas",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/virginia/fairfax",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/colorado/douglas",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/colorado/douglas",
+      "reason": "production_robots_mismatch expected_index (fully_curated_county)"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/nebraska/sherman",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/nebraska/sherman",
+      "reason": "production_robots_mismatch expected_index (fully_curated_county)"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/florida/highlands",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/moving-to",
+      "reason": "artifact:meta\\s+name=[\"']keywords[\"']",
+      "snippet": "meta name=\"keywords\""
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/new-york/warren",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/new-york/warren",
+      "reason": "production_robots_mismatch expected_index (fully_curated_county)"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/florida/desoto",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/florida/highlands",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/california/san-joaquin",
+      "reason": "artifact:catalog enrichment",
+      "snippet": "catalog enrichment"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/california/san-joaquin",
+      "reason": "missing_og_image"
+    },
+    {
+      "url": "https://www.movetrusthub.com/local-movers/florida/st-johns",
+      "reason": "missing_og_image"
+    }
+  ],
+  "probePaths": [
+    "/",
+    "/contact",
+    "/about",
+    "/companies",
+    "/compare",
+    "/moving-calculator",
+    "/my-move",
+    "/local-movers",
+    "/local-movers/california",
+    "/local-movers/florida",
+    "/local-movers/texas",
+    "/local-movers/virginia/fairfax",
+    "/local-movers/colorado/douglas",
+    "/local-movers/nebraska/sherman",
+    "/local-movers/florida/highlands",
+    "/moving-to",
+    "/moving-to/myrtle-beach-sc",
+    "/resources",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/local-movers/new-york/warren",
+    "/local-movers/florida/desoto",
+    "/local-movers/florida/highlands",
+    "/local-movers/california/san-joaquin",
+    "/local-movers/florida/st-johns"
+  ]
+}

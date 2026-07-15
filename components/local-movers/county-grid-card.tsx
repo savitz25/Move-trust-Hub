@@ -44,9 +44,14 @@ export function CountyGridCard({
         'hover:border-primary/35 hover:shadow-[0_10px_24px_-8px_rgb(0_119_212/0.18),0_4px_10px_-4px_rgb(15_23_42/0.08)]',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2'
       )}
-      aria-label={showBadge ? `${name} County — ${label}` : `${name} County`}
+      aria-label={
+        guideBadge
+          ? `${name} County — ${guideBadge}${showBadge ? ` · ${label}` : ''}`
+          : showBadge
+            ? `${name} County — ${label}`
+            : `${name} County`
+      }
     >
-      {/* Brand teal/blue left accent */}
       <span
         className="absolute inset-y-0 left-0 w-[3px] bg-gradient-to-b from-[#1E9FFF] via-[#0077D4] to-[#005FA8]"
         aria-hidden="true"

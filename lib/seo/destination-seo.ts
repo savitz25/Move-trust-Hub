@@ -51,15 +51,6 @@ export function buildDestinationsIndexMetadata(): Metadata {
   return {
     title: { absolute: `${DESTINATIONS_INDEX_TITLE} | Move Trust Hub` },
     description: DESTINATIONS_INDEX_DESCRIPTION,
-    keywords: [
-      'moving destinations',
-      'moving to myrtle beach',
-      'moving to florida',
-      'best cities to move to 2026',
-      'inbound moving guides',
-      'relocation cost guides',
-      'FMCSA movers by city',
-    ],
     alternates: { canonical },
     openGraph: buildOpenGraph({
       title: DESTINATIONS_INDEX_TITLE,

@@ -223,12 +223,9 @@ export {
 } from '@/lib/local-movers/county-seo';
 export {
   buildCountyPageMetadata,
-  buildCountyKeywords,
   buildCountyH1,
   buildStatePageMetadata,
-  buildStateKeywords,
   buildHubPageMetadata,
-  buildHubKeywords,
 } from '@/lib/local-movers/seo-metadata';
 
 export { getCountyPath, getStatePath } from '@/lib/local-movers/paths';

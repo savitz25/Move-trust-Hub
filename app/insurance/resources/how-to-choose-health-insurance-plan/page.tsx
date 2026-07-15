@@ -157,13 +157,6 @@ export const metadata = buildTemplateMetadata({
   description: DESCRIPTION,
   path: '/resources/how-to-choose-health-insurance-plan',
   type: 'article',
-  keywords: [
-    'health insurance',
-    'ACA marketplace',
-    'metal tiers',
-    'health plan comparison',
-    '2026 open enrollment',
-  ],
 });
 
 export default function HowToChooseHealthInsurancePlanPage() {

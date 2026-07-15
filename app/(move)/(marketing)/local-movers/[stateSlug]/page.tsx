@@ -7,8 +7,8 @@ import { CountyInternalLinks } from '@/components/local-movers/county-internal-l
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
-import { TrustBadges } from '@/components/trust/trust-badges';
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
+import { StateHubTier1Links } from '@/components/local-movers/state-hub-tier1-links';
 import { getLocalState, localStates } from '@/lib/local-movers/states';
 import {
   buildStateDescription,
@@ -16,7 +16,6 @@ import {
   buildStateTitle,
   getStatePath,
 } from '@/lib/local-movers/index';
-import { StateHubTier1Links } from '@/components/local-movers/state-hub-tier1-links';
 import {
   buildStateHubCountyRows,
   buildStateHubStats,
@@ -92,126 +91,21 @@ export default async function LocalMoversStatePage({ params }: Props) {
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
             {hasCounties
-              ? state.slug === 'california' ||
-                state.slug === 'florida' ||
-                state.slug === 'georgia' ||
-                state.slug === 'new-jersey' ||
-                state.slug === 'new-york' ||
-                state.slug === 'south-carolina' ||
-                state.slug === 'north-carolina' ||
-                state.slug === 'tennessee' ||
-                state.slug === 'alabama' ||
-                state.slug === 'mississippi' ||
-                state.slug === 'louisiana' ||
-                state.slug === 'oklahoma' ||
-                state.slug === 'arkansas' ||
-                state.slug === 'kansas' ||
-                state.slug === 'missouri' ||
-                state.slug === 'illinois' ||
-                state.slug === 'michigan' ||
-                state.slug === 'indiana' ||
-                state.slug === 'ohio' ||
-                state.slug === 'kentucky' ||
-                state.slug === 'west-virginia' ||
-                state.slug === 'virginia' ||
-                state.slug === 'district-of-columbia' ||
-                state.slug === 'delaware' ||
-                state.slug === 'maryland' ||
-                state.slug === 'pennsylvania' ||
-                state.slug === 'connecticut' ||
-                state.slug === 'massachusetts' ||
-                state.slug === 'rhode-island' ||
-                state.slug === 'vermont' ||
-                state.slug === 'new-hampshire' ||
-                state.slug === 'maine' ||
-                state.slug === 'hawaii' ||
-                state.slug === 'alaska' ||
-                state.slug === 'washington' ||
-                state.slug === 'oregon' ||
-                state.slug === 'nevada' ||
-                state.slug === 'arizona' ||
-                state.slug === 'new-mexico' ||
-                state.slug === 'utah' ||
-                state.slug === 'colorado' ||
-                state.slug === 'idaho' ||
-                state.slug === 'montana' ||
-                state.slug === 'wyoming' ||
-                state.slug === 'north-dakota' ||
-                state.slug === 'south-dakota' ||
-                state.slug === 'nebraska' ||
-                state.slug === 'iowa' ||
-                state.slug === 'minnesota' ||
-                state.slug === 'wisconsin' ||
-                state.slug === 'texas'
-                ? state.slug === 'district-of-columbia'
-                  ? 'Washington, DC local mover guide — 15 curated companies experienced with government, diplomatic, high-rise, and corporate relocations. FMCSA licensing, DC cost estimates, and capital-city moving tips.'
-                  : state.slug === 'delaware'
-                    ? 'Browse all 3 Delaware county guides — up to 12 curated movers in New Castle (Wilmington metro), 8+ in Kent and Sussex. FMCSA licensing, cost estimates, and county-specific tips for corporate, beach, and retirement moves.'
-                    : state.slug === 'maryland'
-                      ? 'Browse all 24 Maryland jurisdiction guides — 10 curated movers in every county and Baltimore City. FMCSA licensing, cost estimates, and local moving tips from DC suburbs to the Eastern Shore and Western Maryland.'
-                      : state.slug === 'pennsylvania'
-                        ? 'Browse all 67 Pennsylvania county guides — 10 curated movers in every county from Philadelphia and Pittsburgh to Harrisburg, Erie, Scranton, and rural regional markets statewide. FMCSA licensing, cost estimates, and local moving tips.'
-                        : state.slug === 'connecticut'
-                          ? 'Browse all 8 Connecticut county guides — up to 12 curated movers in Fairfield County (NYC corridor and Gold Coast), 8–10 movers in Hartford, New Haven, and coastal counties. FMCSA licensing, cost estimates, and county-specific moving tips.'
-                          : state.slug === 'massachusetts'
-                            ? 'Browse all 14 Massachusetts county guides — 10 curated movers per county from Boston and Middlesex through Worcester, Cape Cod, the Berkshires, and the islands. FMCSA licensing, cost estimates, and county-specific moving tips.'
-                            : state.slug === 'rhode-island'
-                              ? 'Browse all 5 Rhode Island county guides — 10 curated movers per county from Providence and Kent through Washington, Newport, and Bristol. FMCSA licensing, cost estimates, and county-specific moving tips.'
-                              : state.slug === 'vermont'
-                                ? 'Browse all 14 Vermont county guides — up to 10 curated movers in Chittenden (Burlington), 6–10 regional specialists in every county experienced with rural roads, winter weather, and seasonal moves. FMCSA licensing, cost estimates, and county-specific moving tips.'
-                                : state.slug === 'new-hampshire'
-                                  ? 'Browse all 10 New Hampshire county guides — up to 10 curated movers in Hillsborough (Manchester–Nashua) and Rockingham (Seacoast), 7–10 regional specialists in every county from southern suburban corridors through Lakes Region, White Mountains, and North Country. FMCSA licensing, cost estimates, and county-specific moving tips.'
-                                  : state.slug === 'maine'
-                                    ? 'Browse all 16 Maine county guides — up to 10 curated movers in Cumberland (Portland), 7–9 in York (Seacoast), and 6–10 regional specialists in every county experienced with rural roads, harsh winters, and tourism/second-home moves. FMCSA licensing, cost estimates, and county-specific moving tips.'
-                                    : state.slug === 'hawaii'
-                                      ? 'Browse all 5 Hawaii county guides — up to 10 curated movers on Oahu (Honolulu) and Maui, 6–10 island specialists on Kauai and Hawaii Island (Big Island), experienced with inter-island shipping, military moves, and mainland-to-Hawaii relocations. FMCSA licensing, cost estimates, and island-specific moving tips.'
-                                      : state.slug === 'alaska'
-                                        ? 'Browse all 29 Alaska borough guides — up to 10 curated movers in Anchorage Municipality, 8–10 in Fairbanks North Star and Matanuska-Susitna, and 5+ regional specialists in every borough experienced with military PCS, oil & gas relocations, harsh winters, and Lower 48 long-distance moves. FMCSA licensing, cost estimates, and Alaska-specific moving tips.'
-                                        : state.slug === 'washington'
-                                          ? 'Browse all 39 Washington county guides — up to 12 curated movers in King County (Seattle metro), 10+ in Snohomish and Pierce, 9–10 in Spokane, and 6–10 regional specialists in every county. Western Washington covers tech-corridor, corporate, military (JBLM), and high-density moves; Eastern Washington covers suburban, rural, and agricultural markets. FMCSA licensing, cost estimates, and Washington-specific moving tips.'
-                                          : state.slug === 'oregon'
-                                            ? 'Browse all 36 Oregon county guides — up to 12 curated movers in Portland metro (Multnomah, Washington, Clackamas), 9–10 in Lane and Marion, and 6–10 regional specialists in every county. Portland metro covers tech, corporate, and high-density moves; Willamette Valley, Central Oregon (Bend), coast, and eastern Oregon each have localized guides. FMCSA licensing, cost estimates, and Oregon-specific moving tips.'
-                                            : state.slug === 'nevada'
-                                              ? 'Browse all 17 Nevada county guides — up to 12 curated movers in Clark County (Las Vegas metro), 9–10 in Washoe (Reno–Sparks), and 6–10 regional specialists in every county. Las Vegas covers tourism, corporate, military, and high-density moves; Reno covers tech, manufacturing, and logistics; rural Nevada covers mining and remote regional hauls. FMCSA licensing, cost estimates, and Nevada-specific moving tips.'
-                                              : state.slug === 'arizona'
-                                                ? 'Browse all 15 Arizona county guides — up to 12 curated movers in Maricopa County (Phoenix metro), 9–10 in Pima (Tucson), and 6–10 regional specialists in every county. Phoenix metro covers corporate growth, retirement/snowbird moves, and extreme heat logistics; Tucson covers university, Davis-Monthan AFB military PCS, and retirement moves; rural Arizona covers mining, border corridors, and long-distance regional hauls. FMCSA licensing, cost estimates, and Arizona-specific moving tips.'
-                                                : state.slug === 'new-mexico'
-                                                  ? 'Browse all 33 New Mexico county guides — up to 11 curated movers in Bernalillo County (Albuquerque metro), 8–9 in Santa Fe and Doña Ana (Las Cruces), and 5–7 regional specialists in every county. Albuquerque covers corporate, Kirtland AFB military PCS, and suburban moves; Santa Fe and Taos cover tourism, second-home, and retirement moves; southern New Mexico covers border and military corridors; rural counties emphasize long-distance hauls and remote logistics. FMCSA licensing, cost estimates, and New Mexico-specific moving tips.'
-                                                  : state.slug === 'utah'
-                                                    ? 'Browse all 29 Utah county guides — up to 12 curated movers in Salt Lake County (Salt Lake City metro), 9–10 in Utah County (Provo-Orem / Silicon Slopes), 8–9 in Davis, Weber, and Washington (St. George), and 6–8 regional specialists in every county. Wasatch Front metros cover tech growth, family moves, and Hill AFB military PCS; southern Utah covers retirement, tourism, and snowbird moves; rural counties emphasize long-distance hauls and outdoor-lifestyle logistics. FMCSA licensing, cost estimates, and Utah-specific moving tips.'
-                                                    : state.slug === 'colorado'
-                                                      ? 'Browse all 64 Colorado county guides — up to 12 curated movers in Denver metro (Denver, Arapahoe, Jefferson, Adams, Douglas), 10–11 in El Paso (Colorado Springs), 9–10 in Boulder, Larimer, and Weld, and 6–8 regional specialists in every county. Denver metro covers tech/corporate growth and outdoor-lifestyle family moves; Colorado Springs covers Fort Carson and Peterson SFB military PCS; mountain counties cover tourism and second-home logistics; eastern plains and Western Slope counties emphasize long-distance and agricultural hauls. FMCSA licensing, cost estimates, and Colorado-specific moving tips.'
-                                                      : state.slug === 'idaho'
-                                                        ? 'Browse all 44 Idaho county guides — up to 11 curated movers in Ada County (Boise metro), 8–9 in Canyon (Nampa–Caldwell), and 5–7 regional specialists in every county. Treasure Valley guides cover rapid suburban growth, corporate relocations, and family moves; northern Idaho covers Coeur d\'Alene lakeside tourism and second-home logistics; Sun Valley and Teton Valley cover resort-season moves; rural counties emphasize agricultural hauls, long-distance relocations, and remote logistics. FMCSA licensing, cost estimates, and Idaho-specific moving tips.'
-                                                        : state.slug === 'montana'
-                                                          ? 'Browse all 56 Montana county guides — up to 11 curated movers in Yellowstone County (Billings), 8–10 in Missoula and Gallatin (Bozeman), 8 in Cascade (Great Falls), and 5–7 regional specialists in every county. Billings covers regional hub, corporate, and agricultural moves; Missoula and Bozeman cover university, tourism, and outdoor-lifestyle growth; Great Falls covers Malmstrom AFB military PCS; Glacier and Yellowstone gateway counties emphasize tourism and second-home logistics; rural Hi-Line and plains counties emphasize harsh winters, remote logistics, and long-distance Lower 48 hauls. FMCSA licensing, cost estimates, and Montana-specific moving tips.'
-                                                          : state.slug === 'wyoming'
-                                                            ? 'Browse all 23 Wyoming county guides — up to 10 curated movers in Laramie County (Cheyenne), 8–9 in Natrona (Casper), 7–8 in Teton (Jackson Hole), and 5–7 regional specialists in every county. Cheyenne covers government, F.E. Warren AFB military PCS, and Front Range regional hub moves; Casper covers oil-and-gas energy-sector relocations; Jackson Hole covers luxury resort and second-home logistics; Campbell, Sweetwater, and Albany cover energy-basin and university demand; rural counties emphasize harsh winters, remote ranch properties, and very long-distance Lower 48 hauls. FMCSA licensing, cost estimates, and Wyoming-specific moving tips.'
-                                                            : state.slug === 'north-dakota'
-                                                              ? 'Browse all 53 North Dakota county guides — up to 10 curated movers in Cass County (Fargo), 8–9 in Burleigh (Bismarck), 7–8 in Williams (Williston / Bakken) and Grand Forks, and 5–7 regional specialists in every county. Fargo covers corporate, university, and suburban Red River Valley moves; Bismarck covers state government and regional hub relocations; Bakken counties (Williams, McKenzie, Mountrail) emphasize oil-and-gas energy-sector relocations; rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves. FMCSA licensing, cost estimates, and North Dakota-specific moving tips.'
-                                                              : state.slug === 'south-dakota'
-                                                                ? 'Browse all 66 South Dakota county guides — up to 11 curated movers in Minnehaha County (Sioux Falls), 9–10 in Pennington (Rapid City / Black Hills), 7–8 in Brown (Aberdeen), Codington (Watertown), and Lincoln, and 5–7 regional specialists in every county. Sioux Falls covers corporate, university, and suburban Big Sioux Valley moves; Rapid City covers Mount Rushmore tourism, Black Hills second-home logistics, and Ellsworth AFB military PCS; Black Hills counties (Lawrence, Custer, Meade) emphasize tourism and seasonal demand; rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves. FMCSA licensing, cost estimates, and South Dakota-specific moving tips.'
-                                                                : state.slug === 'nebraska'
-                                                                  ? 'Browse all 93 Nebraska county guides — up to 12 curated movers in Douglas County (Omaha), 10 in Sarpy (Papillion / Bellevue) and Lancaster (Lincoln), 7–8 in Hall (Grand Island), Buffalo (Kearney), and Dodge (Fremont), and 5–7 regional specialists in every county. Omaha covers corporate, suburban family moves, and Offutt AFB military PCS; Lincoln covers University of Nebraska and state government relocations; central Platte Valley counties cover agricultural and I-80 corridor demand; rural counties emphasize corn/soybean/cattle agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves. FMCSA licensing, cost estimates, and Nebraska-specific moving tips.'
-                                                                  : state.slug === 'iowa'
-                                                                    ? 'Browse 73 Iowa county guides — up to 12 curated movers in Polk County (Des Moines), 9–10 in Linn (Cedar Rapids), Johnson (Iowa City), and Scott (Quad Cities), 8 in Woodbury (Sioux City), and 5–7 regional specialists in every curated county. Des Moines covers insurance and finance headquarters, corporate relocations, and suburban family moves; the Cedar Rapids–Iowa City corridor covers manufacturing, University of Iowa campus turnover, and professional relocations; Quad Cities and Sioux City cover cross-border and agricultural processing logistics; rural counties emphasize corn/soybean/pork agricultural hauls, ethanol-industry corridors, harsh winters, remote logistics, and very long-distance Lower 48 moves. FMCSA licensing, cost estimates, and Iowa-specific moving tips.'
-                                                                    : state.slug === 'michigan'
-                                                                      ? 'Browse all 83 Michigan county guides — up to 13 curated movers in Wayne, Oakland, and Macomb (Detroit metro), 11 in Kent (Grand Rapids) and Washtenaw (Ann Arbor), 10 in Ingham, Genesee, Kalamazoo, and Ottawa, and 7 regional specialists in every county. Southeast Michigan covers auto-industry corporate moves and dense suburban logistics; West Michigan covers manufacturing and family relocations; Ann Arbor and Lansing cover university and state-government moves; the Upper Peninsula and rural counties emphasize lake-effect winters, remote logistics, tourism, and long-distance hauls. FMCSA licensing, cost estimates, and Michigan-specific moving tips.'
-                                                                    : state.slug === 'wisconsin'
-                                                                      ? 'Browse all 72 Wisconsin county guides — up to 12 curated movers in Milwaukee and Waukesha counties, 9–10 in Dane (Madison), Brown (Green Bay), Racine, Kenosha, Outagamie, and Winnebago, and 5–7 regional specialists in every county. Milwaukee metro covers manufacturing, corporate, and suburban family moves; Madison covers UW–Madison and state government relocations; Green Bay and Fox Cities cover manufacturing and logistics; Door County and northwoods counties cover tourism and seasonal moves; rural counties emphasize dairy/agricultural hauls, harsh winters, and long-distance relocations. FMCSA licensing, cost estimates, and Wisconsin-specific moving tips.'
-                                                                    : state.slug === 'minnesota'
-                                                                      ? 'Browse all 87 Minnesota county guides — up to 13 curated movers in Hennepin (Minneapolis) and Ramsey (Saint Paul), 9–10 in Dakota, Anoka, Washington, Scott, Carver, and Olmsted (Rochester), 8–9 in St. Louis (Duluth), and 5–7 regional specialists in every county. Twin Cities metros cover Fortune 500 corporate headquarters, suburban family moves, and high-density urban logistics; Rochester covers Mayo Clinic medical professional relocations; Duluth and North Shore counties cover tourism, seasonal, and second-home logistics; lakes-country and rural counties emphasize agricultural hauls, harsh winters, remote logistics, and very long-distance Lower 48 moves. FMCSA licensing, cost estimates, and Minnesota-specific moving tips.'
-                                                                      : `Browse all ${counties.length} ${state.name} county guides — 5–10 curated local movers per county, FMCSA licensing, cost estimates, and county-specific moving tips. Major metros include up to 10 ranked companies.`
-                : `Browse ${counties.length} county guides for local moving companies in ${state.name}. Each page lists top-rated movers with FMCSA info and profile links.`
-              : `County-level local mover guides for ${state.name} are coming soon. In the meantime, use our interstate directory and moving calculator.`}
+              ? description
+              : `Independent local mover research for ${state.name}. Browse our interstate directory and moving calculator while county guides expand.`}
           </p>
+          {hasCounties ? (
+            <p className="mt-3 text-sm text-muted-foreground">
+              {hubStats.deepGuideCount > 0 ? `${hubStats.deepGuideCount} deep guides · ` : ''}
+              {hubStats.tier1Count} Tier 1 · {hubStats.totalCounties} county guides
+            </p>
+          ) : null}
           <div className="mt-6">
             <PageHeroCta
               tertiaryLabel={`Browse ${state.name} Counties`}
               tertiaryHref={`/local-movers/${state.slug}`}
             />
           </div>
-          <TrustBadges variant="compact" className="mt-6" />
         </div>
 
         <div className="mb-12">
@@ -241,6 +135,17 @@ export default async function LocalMoversStatePage({ params }: Props) {
                   </p>
                 </div>
               </div>
+              <div className="mb-4 flex flex-wrap gap-2 text-[11px] text-slate-500">
+                <span className="rounded-full bg-sky-50 px-2 py-1 font-semibold text-sky-900 ring-1 ring-sky-200/80">
+                  Deep guide
+                </span>
+                <span className="rounded-full bg-emerald-50 px-2 py-1 font-semibold text-emerald-800 ring-1 ring-emerald-200/80">
+                  Tier 1
+                </span>
+                <span className="rounded-full bg-amber-50 px-2 py-1 font-semibold text-amber-800 ring-1 ring-amber-200/80">
+                  Limited
+                </span>
+              </div>
               <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 sm:gap-4">
                 {hubRows.map(({ county, moverCount, guideBadge, href }) => (
                   <CountyGridCard
@@ -257,10 +162,10 @@ export default async function LocalMoversStatePage({ params }: Props) {
           </>
         ) : (
           <section className="mb-12 rounded-2xl border bg-muted/30 p-6 sm:p-8">
-            <h2 className="text-xl font-semibold mb-2">County guides coming soon</h2>
+            <h2 className="text-xl font-semibold mb-2">County guides in progress</h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              We&apos;re expanding local mover coverage state by state. Add county
-              geography data and mover assignments to scale — no new page templates needed.
+              Use our interstate mover directory and moving calculator while county-level
+              guides for {state.name} are being expanded.
             </p>
             <Link
               href="/companies"
