@@ -40,7 +40,7 @@ export default async function CompaniesDirectoryPage() {
         <div className="uppercase tracking-[2px] text-xs text-primary font-semibold">
           COMPREHENSIVE DIRECTORY
         </div>
-        <h1 className="text-4xl font-semibold tracking-tight mt-1">
+        <h1 className="text-4xl font-semibold tracking-tighter mt-1">
           Compare FMCSA-Licensed Interstate Movers
         </h1>
         <p className="mt-2 max-w-2xl text-muted-foreground">

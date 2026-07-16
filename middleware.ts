@@ -2,7 +2,6 @@ import { type NextRequest, NextResponse } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
 import { PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
 import { needsAuthSession } from '@/lib/middleware/auth-paths';
-import { getCachedPerformanceFlags } from '@/lib/performance/flags-cache';
 import {
   cdnCacheControl,
   htmlCacheControl,
@@ -11,6 +10,12 @@ import {
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
+
+/** Path-specific HTML TTL — must stay aligned with page `revalidate` and vercel.json. */
+function htmlCacheSecondsForPath(pathname: string, defaultSeconds: number): number {
+  if (pathname === '/companies' || pathname.startsWith('/companies/')) return 60;
+  return defaultSeconds;
+}
 
 function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
   const cache = htmlCacheControl(sMaxAge);
@@ -58,18 +63,11 @@ export async function middleware(request: NextRequest) {
       request: { headers: requestHeaders },
     });
 
-    if (!process.env.EDGE_CONFIG) {
-      applyPublicCacheHeaders(
-        response,
-        DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds
-      );
-      return response;
-    }
-
-    const flags = await getCachedPerformanceFlags();
+    const baseTtl =
+      DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
     applyPublicCacheHeaders(
       response,
-      flags.htmlCacheSeconds ?? DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds
+      htmlCacheSecondsForPath(pathname, baseTtl)
     );
     return response;
   } catch (err) {

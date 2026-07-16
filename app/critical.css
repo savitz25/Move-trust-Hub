@@ -46,7 +46,8 @@ body {
 }
 
 /* LCP heroes — self-hosted 600 woff2 (preloaded in layout <head>) */
-h1.font-semibold.tracking-tighter {
+h1.font-semibold.tracking-tighter,
+h1.font-semibold.tracking-tight {
   font-family: 'Geist', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.875rem;
   line-height: 1.15;
@@ -55,13 +56,15 @@ h1.font-semibold.tracking-tighter {
 }
 
 @media (min-width: 640px) {
-  h1.font-semibold.tracking-tighter {
+  h1.font-semibold.tracking-tighter,
+  h1.font-semibold.tracking-tight {
     font-size: 2.25rem;
   }
 }
 
 @media (min-width: 768px) {
-  h1.font-semibold.tracking-tighter {
+  h1.font-semibold.tracking-tighter,
+  h1.font-semibold.tracking-tight {
     font-size: 3.75rem;
   }
 }
@@ -74,12 +77,18 @@ h1.font-semibold.tracking-tighter {
 
 /* LCP: lender / insurance heroes now use font-semibold tracking-tighter (same as move). */
 
-/* Navbar chrome: trust bar h-10 + main nav h-20 */
+/* Main navbar — family bar is separate; reserve nav row height only */
 nav.sticky.top-0 {
   position: sticky;
   top: 0;
   z-index: 50;
-  min-height: 7.5rem;
+  min-height: 4rem;
+}
+
+@media (min-width: 640px) {
+  nav.sticky.top-0 {
+    min-height: 4.5rem;
+  }
 }
 
 /* Header logo slot — matches HubLogo sizes breakpoints */

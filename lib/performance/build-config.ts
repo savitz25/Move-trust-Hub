@@ -6,7 +6,7 @@
 /** Client router cache (seconds) — longer static TTL reduces RSC refetch on back/forward. */
 export const ROUTER_STALE_TIMES = {
   dynamic: 30,
-  static: 300,
+  static: 1800,
 } as const;
 
 /** Trim serverless trace blobs that pages never import at runtime. */

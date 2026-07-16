@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { MovingCalculatorLoader } from '@/components/moving-calculator/moving-calculator-loader';
+
+export const dynamic = 'force-static';
 import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { calculatorFaqItems } from '@/lib/seo/schemas';
 

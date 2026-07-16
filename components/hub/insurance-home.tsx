@@ -66,7 +66,7 @@ export function InsuranceHomePage() {
           </div>
         }
         title={
-          <h1 className="text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+          <h1 className="text-3xl font-semibold leading-[1.1] tracking-tighter sm:text-4xl md:text-5xl lg:text-[3.25rem]">
             Discover Honest Insurance Agents
             <br />
             <span className="text-emerald-600">in Your Market</span>

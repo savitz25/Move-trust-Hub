@@ -74,13 +74,17 @@ export function HealthHubDirectoryTemplate({
               {data.trustLabel}
             </p>
           ) : null}
-          <h1 className="mx-auto max-w-4xl text-3xl font-semibold md:text-5xl">{data.title}</h1>
+          <h1 className="mx-auto max-w-4xl text-3xl font-semibold tracking-tighter md:text-5xl">
+            {data.title}
+          </h1>
           <p className="mx-auto mt-3 max-w-2xl text-lg opacity-90">{data.subtitle}</p>
           {heroChildren ? <div className="mt-6 flex justify-center">{heroChildren}</div> : null}
         </div>
       </section>
 
       <div className="container mx-auto space-y-12 px-4 py-10 md:py-14">
+        {variant === 'directory' ? children : null}
+
         <section className="max-w-3xl">
           <h2 className="mb-4 text-2xl font-bold">Market overview</h2>
           <p className="leading-relaxed text-muted-foreground">{data.marketSnapshot}</p>
@@ -128,7 +132,7 @@ export function HealthHubDirectoryTemplate({
           </section>
         ) : null}
 
-        {children}
+        {variant !== 'directory' ? children : null}
       </div>
     </>
   );

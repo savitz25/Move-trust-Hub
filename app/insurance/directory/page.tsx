@@ -53,7 +53,7 @@ export default async function DirectoryPage({ searchParams }: DirectoryPageProps
     minRating: minRating ? Number(minRating) : undefined,
     minGoogleRating: minGoogleRating ? Number(minGoogleRating) : undefined,
     bbbAccreditedOnly,
-    limit: 48,
+    limit: 24,
   });
 
   const providers = sortEnrichedProviders(rawProviders, sort, query);
@@ -74,7 +74,20 @@ export default async function DirectoryPage({ searchParams }: DirectoryPageProps
       <section>
         <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <Suspense fallback={<div className="skeleton h-96 rounded-xl" />}>
+            <Suspense
+              fallback={
+                <div className="min-h-[540px] rounded-xl border bg-card p-5 space-y-4">
+                  <div className="skeleton h-4 w-32" />
+                  <div className="skeleton h-10 w-full" />
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <div key={index} className="skeleton h-[72px] rounded-md" />
+                    ))}
+                  </div>
+                  <div className="skeleton h-10 w-full" />
+                </div>
+              }
+            >
               <SearchFilters />
             </Suspense>
           </aside>

@@ -15,11 +15,8 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  // SWC minifies all prod bundles by default in Next 15 — `swcMinify` was removed (always on).
   productionBrowserSourceMaps: false,
   compress: true,
-  // Optimized for Vercel + production
-  poweredByHeader: false,
   // Temporarily ignore TS/ESLint errors during build so we can deploy while cleaning up types
   // (Run `npm run typecheck` and `npm run lint` locally to see/fix issues)
   typescript: {
@@ -58,7 +55,6 @@ const nextConfig: NextConfig = {
     qualities: [75],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 160, 200, 240],
-    qualities: [75],
     minimumCacheTTL: 31536000,
     contentDispositionType: 'inline',
     dangerouslyAllowSVG: true,

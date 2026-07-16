@@ -23,8 +23,12 @@ export async function HubChrome({
       <HubFamilyBar activeHub={hubId} />
       <HubNavbar hubId={hubId} />
       <DeferredLegacyWelcomeBanner hubId={hubId} />
-      <DeferredMoveCoachTip hub={hubId} />
-      <DeferredJourneyTracker hub={hubId} />
+      {hubId === 'move' ? (
+        <>
+          <DeferredMoveCoachTip hub={hubId} />
+          <DeferredJourneyTracker hub={hubId} />
+        </>
+      ) : null}
       <TrustBadgeRow hub={hubId} />
       <main className="flex-1">{children}</main>
       <HubFooter hubId={hubId} />
