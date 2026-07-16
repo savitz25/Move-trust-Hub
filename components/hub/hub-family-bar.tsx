@@ -7,7 +7,7 @@ import type { HubId } from '@/lib/hub/types';
  */
 export function HubFamilyBar({ activeHub }: { activeHub: HubId }) {
   return (
-    <div className="border-b bg-muted/30">
+    <div className="hub-family-bar border-b bg-muted/30">
       <div className="container mx-auto flex items-center justify-between gap-3 px-4 py-1.5">
         <p className="hidden text-[11px] text-muted-foreground sm:block">
           Trust Hub family — independent directories, no paid placements

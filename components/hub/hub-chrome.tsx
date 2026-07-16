@@ -29,8 +29,8 @@ export async function HubChrome({
           <DeferredJourneyTracker hub={hubId} />
         </>
       ) : null}
-      <TrustBadgeRow hub={hubId} />
-      <main className="flex-1">{children}</main>
+      <TrustBadgeRow hub={hubId} className="hidden md:block border-y bg-muted/20 py-6" />
+      <main className="flex-1 pb-[env(safe-area-inset-bottom)] sm:pb-0">{children}</main>
       <HubFooter hubId={hubId} />
       {hubId === 'move' ? <DeferredMoveTipsOptIn /> : null}
     </div>

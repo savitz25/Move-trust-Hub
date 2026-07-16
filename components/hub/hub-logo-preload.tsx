@@ -12,6 +12,6 @@ export function HubLogoPreload({ hubId }: { hubId: HubId }) {
   if (!shouldBypassImageOptimizer(logoSrc)) {
     return null;
   }
-  preload(logoSrc, { as: 'image', fetchPriority: 'high' });
+  preload(logoSrc, { as: 'image', fetchPriority: 'low' });
   return null;
 }

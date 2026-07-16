@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 /** Loads directory/component CSS after first paint — shrinks render-blocking CSS. */
 export function DeferredUiStyles() {
   const ready = useDeferredLoad({
-    idleTimeout: 1200,
-    maxWait: 5000,
+    idleTimeout: 2000,
+    maxWait: 6000,
     interactionOnly: false,
   });
 

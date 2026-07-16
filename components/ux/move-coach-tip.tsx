@@ -58,7 +58,7 @@ export function MoveCoachTip({ hub }: { hub: HubId }) {
 
   return (
     <aside
-      className="animate-fade-in-up border-b border-amber-200/60 bg-gradient-to-r from-amber-50/80 via-background to-amber-50/40"
+      className="animate-fade-in-up fixed bottom-0 left-0 right-0 z-40 border-t border-amber-200/60 bg-gradient-to-r from-amber-50/95 via-background to-amber-50/90 shadow-[0_-4px_12px_rgba(0,0,0,0.06)] sm:static sm:bottom-auto sm:border-b sm:border-t-0 sm:shadow-none"
       aria-label="Moving coach tip"
     >
       <div className="container mx-auto flex flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">

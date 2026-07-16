@@ -77,6 +77,11 @@ h1.font-semibold.tracking-tight {
 
 /* LCP: lender / insurance heroes now use font-semibold tracking-tighter (same as move). */
 
+/* Hub family switcher — prevents header stack CLS */
+.hub-family-bar {
+  min-height: 2.25rem;
+}
+
 /* Main navbar — family bar is separate; reserve nav row height only */
 nav.sticky.top-0 {
   position: sticky;

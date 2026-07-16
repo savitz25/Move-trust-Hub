@@ -6,7 +6,10 @@ import { useInView } from '@/lib/hooks/use-in-view';
 const HomeBelowFold = dynamic(
   () =>
     import('@/components/home/home-below-fold').then((m) => m.HomeBelowFold),
-  { ssr: false }
+  {
+    ssr: false,
+    loading: () => <BelowFoldPlaceholder />,
+  }
 );
 
 function BelowFoldPlaceholder() {

@@ -5,7 +5,13 @@ import { Suspense } from 'react';
 import { useDeferredLoad } from '@/lib/hooks/use-deferred-load';
 import type { HubId } from '@/lib/hub/types';
 
-const UX_DEFER = { idleTimeout: 1200, maxWait: 6000, includeScroll: true } as const;
+/** Interaction-first on mobile PSI — avoids layout shifts before LCP settles. */
+const UX_DEFER = {
+  idleTimeout: 4000,
+  maxWait: 12000,
+  includeScroll: false,
+  interactionOnly: false,
+} as const;
 
 const LegacyWelcomeBanner = dynamic(
   () => import('@/components/hub/legacy-welcome-banner').then((m) => m.LegacyWelcomeBanner),
