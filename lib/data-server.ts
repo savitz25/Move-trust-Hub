@@ -39,6 +39,10 @@ export const getReviews = cache(async (companyId: string, limit = 12): Promise<R
   return getReviewsForCompany(companyId, limit);
 });
 
+export const getAllReviewsForCompany = cache(async (companyId: string): Promise<Review[]> => {
+  return getReviews(companyId, 500);
+});
+
 export const getAllAutoTransportCompanies = cache(async (): Promise<Company[]> => {
   return seedAutoTransportCompanies.filter(isPubliclyDisplayableCompany);
 });

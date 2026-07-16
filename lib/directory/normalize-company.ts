@@ -49,7 +49,17 @@ export function normalizeCompanyForDisplay(company: Company): Company {
 }
 
 export function normalizeCompaniesForDisplay(companies: Company[]): Company[] {
-  return companies.map(normalizeCompanyForDisplay);
+  if (!Array.isArray(companies)) return [];
+
+  return companies
+    .map((company) => {
+      try {
+        return normalizeCompanyForDisplay(company);
+      } catch {
+        return null;
+      }
+    })
+    .filter((row): row is Company => row !== null);
 }
 
 export function formatCompanyHeadquarters(headquarters: string | null | undefined): string {

@@ -7,6 +7,8 @@ import { logger } from '@/lib/logging/logger';
 type Props = {
   children: React.ReactNode;
   fallbackTitle?: string;
+  /** When set, primary action reloads or re-runs instead of only resetting boundary state. */
+  onRetry?: () => void;
 };
 
 type State = { hasError: boolean };
@@ -38,7 +40,13 @@ export class ErrorBoundary extends React.Component<Props, State> {
           </p>
           <Button
             className="mt-6"
-            onClick={() => this.setState({ hasError: false })}
+            onClick={() => {
+              if (this.props.onRetry) {
+                this.props.onRetry();
+                return;
+              }
+              this.setState({ hasError: false });
+            }}
           >
             Try again
           </Button>

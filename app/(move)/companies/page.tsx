@@ -7,6 +7,7 @@ import { ReviewHighlights } from '@/components/trust/review-highlights';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
+import { prepareCompaniesForDirectoryClient } from '@/lib/directory/directory-client-payload';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { buildCompaniesDirectorySchemaGraph } from '@/lib/seo/build-directory-list-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
@@ -29,6 +30,7 @@ export const metadata: Metadata = buildMovePageMetadata({
 export default async function CompaniesDirectoryPage() {
   const companies = await getUnifiedDirectoryCompanies();
   const directorySchema = buildCompaniesDirectorySchemaGraph(companies);
+  const directoryClientCompanies = prepareCompaniesForDirectoryClient(companies);
 
   return (
     <>
@@ -56,7 +58,7 @@ export default async function CompaniesDirectoryPage() {
 
       <HowWeScorePanel className="mb-8" collapsible />
 
-      <DirectoryLoader initialCompanies={companies} />
+      <DirectoryLoader initialCompanies={directoryClientCompanies} />
 
       <VerificationTransparency className="mt-10" />
 

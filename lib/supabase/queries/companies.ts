@@ -145,7 +145,19 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  return data.map((row) => mapRow(row as Record<string, unknown>));
+  return data
+    .map((row) => {
+      try {
+        return mapRow(row as Record<string, unknown>);
+      } catch (err) {
+        logger.warn('companies.map_row_failed', {
+          id: (row as Record<string, unknown>).id,
+          message: err instanceof Error ? err.message : String(err),
+        });
+        return null;
+      }
+    })
+    .filter((company): company is Company => company !== null);
 }
 
 const getCompaniesDataCached = unstable_cache(

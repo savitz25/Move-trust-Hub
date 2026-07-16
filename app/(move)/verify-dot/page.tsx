@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { DotVerifier } from '@/components/verify-dot/dot-verifier';
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
@@ -92,7 +93,13 @@ export default function VerifyDotPage() {
       </div>
 
       <div className="container mx-auto px-4 py-10 sm:py-14 max-w-3xl">
-        <DotVerifier sourcePage="/verify-dot" />
+        <Suspense
+          fallback={
+            <div className="h-64 rounded-xl border bg-muted/30 animate-pulse" aria-hidden="true" />
+          }
+        >
+          <DotVerifier sourcePage="/verify-dot" />
+        </Suspense>
 
         <section className="mt-12 prose prose-neutral max-w-none">
           <h2>Why verify before you book</h2>
