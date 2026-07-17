@@ -4,7 +4,7 @@ import { getPortalMfaStatus } from '@/lib/portal/mfa';
 import { getPortalPasswordStatus } from '@/lib/portal/password';
 import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 import { PortalCreatePasswordForm } from '@/components/portal/portal-create-password-form';
-import { PORTAL_NAME } from '@/lib/portal/messaging';
+import { PORTAL_NAME, PORTAL_TAGLINE } from '@/lib/portal/messaging';
 
 export const dynamic = 'force-dynamic';
 
@@ -24,7 +24,9 @@ export default async function PortalCreatePasswordPage({
 
   const mfa = await getPortalMfaStatus();
   if (mfa?.needsChallenge) {
-    redirect(`/portal/mfa?next=${encodeURIComponent(`/portal/create-password?next=${encodeURIComponent(safeNext)}`)}`);
+    redirect(
+      `/portal/mfa?next=${encodeURIComponent(`/portal/create-password?next=${encodeURIComponent(safeNext)}`)}`
+    );
   }
 
   const pw = await getPortalPasswordStatus();
@@ -33,11 +35,27 @@ export default async function PortalCreatePasswordPage({
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-lg flex flex-col items-center">
-      <p className="text-xs font-semibold uppercase tracking-wider text-primary self-start mb-4">
-        {PORTAL_NAME}
-      </p>
-      <PortalCreatePasswordForm nextPath={safeNext} email={user.email ?? null} />
+    <div className="relative min-h-[calc(100vh-8rem)]">
+      {/* Soft page backdrop — matches portal trust aesthetic */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-muted/50 via-background to-background"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/[0.07] via-transparent to-transparent"
+        aria-hidden
+      />
+
+      <div className="container mx-auto flex max-w-lg flex-col items-center px-4 py-10 sm:py-14">
+        <header className="mb-8 w-full text-center sm:mb-10">
+          <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+            {PORTAL_NAME}
+          </p>
+          <p className="mt-1.5 text-sm text-muted-foreground">{PORTAL_TAGLINE}</p>
+        </header>
+
+        <PortalCreatePasswordForm nextPath={safeNext} email={user.email ?? null} />
+      </div>
     </div>
   );
 }
