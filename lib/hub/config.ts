@@ -4,7 +4,7 @@ import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
-export const TRUST_HUB_LOGO_VERSION = '20260713';
+export const TRUST_HUB_LOGO_VERSION = '20260717';
 
 /** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
 export const TRUST_HUB_LOGO = {
