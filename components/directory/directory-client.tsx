@@ -260,6 +260,7 @@ export function DirectoryClient({
 
   const loadNextPage = () => {
     if (loadingMore || loadingFilter || !hasMore) return;
+    // Always append the next batch of pageSize — no total browse cap.
     void fetchPage(companies.length, pageSize, true);
   };
 
@@ -267,6 +268,7 @@ export function DirectoryClient({
     if (loadingMore || loadingFilter || !hasMore) return;
     const remaining = Math.max(totalMatches - companies.length, 0);
     if (remaining <= 0) return;
+    // Load every remaining match in one request (API allows full directory size).
     void fetchPage(companies.length, remaining, true);
   };
 

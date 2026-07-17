@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { apiCacheControl } from '@/lib/cache/control';
-import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
+import {
+  DIRECTORY_MAX_PAGE_LIMIT,
+  DIRECTORY_PAGE_SIZE,
+} from '@/lib/directory/page-size';
 import { queryDirectoryPage } from '@/lib/directory/query-directory-page';
 import { getPerformanceFlags } from '@/lib/edge-config/get-performance-flags';
 import type { DirectoryFilters, ServiceType, SortOption } from '@/types';
@@ -16,13 +19,14 @@ function parseNonNegInt(raw: string | null, fallback: number): number {
 /**
  * GET /api/directory/companies
  * Server-side filter/sort + offset/limit for progressive directory loading.
+ * Paginate with offset until hasMore is false — no total browse ceiling.
  */
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const offset = parseNonNegInt(searchParams.get('offset'), 0);
   const limit = Math.min(
     Math.max(parseNonNegInt(searchParams.get('limit'), DIRECTORY_PAGE_SIZE), 1),
-    200
+    DIRECTORY_MAX_PAGE_LIMIT
   );
 
   const servicesRaw = searchParams.get('services');
