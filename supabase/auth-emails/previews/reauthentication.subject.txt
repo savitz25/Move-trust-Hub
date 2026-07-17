@@ -1,0 +1,1 @@
+{{ .Token }} is your Move Trust Hub verification code

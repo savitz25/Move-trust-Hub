@@ -134,6 +134,9 @@ Both should return `true` when enabled. **Note:** `/auth/v1/settings` can report
 3. Enable **Facebook** provider — paste App ID + App Secret from Meta (see below) and **Save**.
 4. **Email (magic link):** set OTP expiry to **900 seconds (15 min)** under Auth → Email.
 5. Disable email confirmations for magic link if double-confirm blocks sign-in.
+6. **Brand auth emails as Move Trust Hub** (not “Supabase Auth”):
+   - Custom SMTP sender name + branded templates — see **[docs/SUPABASE_AUTH_EMAILS.md](docs/SUPABASE_AUTH_EMAILS.md)**
+   - Generate / apply: `npm run supabase:auth-emails` (optional `SUPABASE_ACCESS_TOKEN` for API apply)
 
 **Google sign-in (Save My Move modal):** Official [Google Identity Services](https://developers.google.com/identity/gsi/web) button → `signInWithIdToken` in the browser. Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` on Vercel to the same OAuth web client ID as Supabase Auth → Google.
 

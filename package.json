@@ -19,6 +19,7 @@
     "typecheck": "tsc --noEmit",
     "seed": "tsx scripts/seed.ts",
     "supabase:types": "supabase gen types typescript --linked > types/supabase.ts",
+    "supabase:auth-emails": "tsx scripts/apply-supabase-auth-emails.ts",
     "generate:sitemap": "next build",
     "validate:county-schema": "tsx scripts/validate-county-schema.ts",
     "audit:phase1": "tsx scripts/audit-phase1-compliance.ts",
