@@ -121,6 +121,27 @@ export function PublicReviewList({
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {review.content}
               </p>
+              {review.dispute_status === 'under_review' ? (
+                <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-amber-700">
+                  Under Review
+                </p>
+              ) : null}
+              {review.owner_response ? (
+                <div className="mt-3 rounded-lg border bg-muted/30 p-3">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                    Verified Owner
+                  </p>
+                  <p className="mt-1 text-sm text-foreground">{review.owner_response}</p>
+                  {review.owner_response_at ? (
+                    <time
+                      className="mt-1 block text-[11px] text-muted-foreground"
+                      dateTime={review.owner_response_at}
+                    >
+                      {format(new Date(review.owner_response_at), 'MMM d, yyyy')}
+                    </time>
+                  ) : null}
+                </div>
+              ) : null}
               {review.photo_urls.length > 0 ? (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {review.photo_urls.map((url) => (

@@ -52,6 +52,7 @@ export function Footer() {
               <div><Link prefetch={false} href="/resources/packing-checklist" className="hover:text-foreground transition-colors">Packing Checklist</Link></div>
               <div><Link prefetch={false} href="/verify-dot" className="hover:text-foreground transition-colors">Verify DOT Number</Link></div>
               <div><Link prefetch={false} href="/review" className="hover:text-foreground transition-colors">Leave a Review</Link></div>
+              <div><Link prefetch={false} href="/for-movers" className="hover:text-foreground transition-colors">For Moving Companies</Link></div>
               <div><Link prefetch={false} href="/resources/fmcsa" className="hover:text-foreground transition-colors">FMCSA Guide</Link></div>
             </div>
           </div>

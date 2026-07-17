@@ -58,6 +58,7 @@ export const HUBS: Record<HubId, HubConfig> = {
           { href: '/my-move', label: 'My Move (optional)' },
           { href: '/verify-dot', label: 'Verify DOT' },
           { href: '/review', label: 'Leave a Review' },
+          { href: '/for-movers', label: 'For Moving Companies' },
           { href: '/about', label: 'About' },
           { href: '/about/how-we-score-movers', label: 'How We Score' },
           { href: '/contact', label: 'Contact' },

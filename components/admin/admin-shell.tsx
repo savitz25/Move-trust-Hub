@@ -2,13 +2,25 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Building2, FileText, LayoutDashboard, MessageSquare, RefreshCw, Shield, Users } from 'lucide-react';
+import {
+  Building2,
+  FileText,
+  LayoutDashboard,
+  MessageSquare,
+  RefreshCw,
+  Shield,
+  Users,
+  BadgeCheck,
+  AlertTriangle,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV = [
   { href: '/admin', label: 'Companies', icon: LayoutDashboard, exact: true },
   { href: '/admin/suggestions', label: 'Suggestions', icon: Building2 },
   { href: '/admin/reviews', label: 'Reviews', icon: MessageSquare },
+  { href: '/admin/portal-claims', label: 'Portal Claims', icon: BadgeCheck },
+  { href: '/admin/portal-disputes', label: 'Portal Disputes', icon: AlertTriangle },
   { href: '/admin/quotes', label: 'Quotes', icon: FileText },
   { href: '/admin/my-move-users', label: 'My Move Users', icon: Users },
   { href: '/admin/fmcsa', label: 'FMCSA Batch', icon: RefreshCw },

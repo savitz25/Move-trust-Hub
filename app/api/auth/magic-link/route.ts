@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { isSupabaseAdminConfigured, isSupabaseConfigured } from '@/lib/supabase/config';
 import { checkMagicLinkRateLimit } from '@/lib/save-my-move/magic-link-rate-limit';
 import { AUTH_CALLBACK_URL } from '@/lib/save-my-move/auth-redirect';
+import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 
 function getClientIp(request: Request): string | null {
   return (
@@ -47,7 +48,8 @@ export async function POST(request: Request) {
     }
   }
 
-  const redirectTo = AUTH_CALLBACK_URL;
+  const nextPath = sanitizePostLoginPath(body.next);
+  const redirectTo = `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(nextPath)}`;
 
   // Google OAuth and magic link with the same email address resolve to one
   // auth.users row automatically (Supabase Auth identity linking).

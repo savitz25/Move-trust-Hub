@@ -37,6 +37,7 @@ import { AdminRefreshVerificationShell } from '@/components/verification/admin-r
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness';
+import { ClaimProfileCta } from '@/components/portal/claim-cta';
 
 
 export const revalidate = 60;
@@ -153,6 +154,13 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
       <ProfileDataFreshness
         fmcsaLastChecked={company.fmcsaLastChecked}
         lastUpdated={company.lastUpdated}
+        className="mb-6"
+      />
+
+      <ClaimProfileCta
+        companySlug={company.slug}
+        companyName={company.name}
+        variant="profile"
         className="mb-6"
       />
 

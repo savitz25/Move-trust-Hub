@@ -15,6 +15,9 @@ export type PublicReview = {
   photo_urls: string[];
   move_date: string | null;
   created_at: string;
+  owner_response?: string | null;
+  owner_response_at?: string | null;
+  dispute_status?: string | null;
 };
 
 export type ReviewSort = 'newest' | 'oldest' | 'highest' | 'lowest';
@@ -40,9 +43,12 @@ export async function getApprovedReviews(
 
   let query = client
     .from('company_reviews')
-    .select('id, company_id, reviewer_name, rating, title, content, photo_urls, move_date, created_at', {
-      count: 'exact',
-    })
+    .select(
+      'id, company_id, reviewer_name, rating, title, content, photo_urls, move_date, created_at, owner_response, owner_response_at, dispute_status',
+      {
+        count: 'exact',
+      }
+    )
     .eq('company_id', companyId)
     .eq('status', 'approved');
 
