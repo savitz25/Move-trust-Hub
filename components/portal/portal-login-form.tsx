@@ -6,10 +6,16 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 
-export function PortalLoginForm({ next = '/portal' }: { next?: string }) {
+export function PortalLoginForm({
+  next = '/portal',
+  initialError = null,
+}: {
+  next?: string;
+  initialError?: string | null;
+}) {
   const [pending, startTransition] = useTransition();
   const [message, setMessage] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(initialError);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -20,17 +26,31 @@ export function PortalLoginForm({ next = '/portal' }: { next?: string }) {
       .toLowerCase();
 
     startTransition(async () => {
-      const res = await fetch('/api/auth/magic-link', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, next }),
-      });
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (!res.ok) {
-        setError(data.error ?? 'Could not send sign-in link');
-        return;
+      try {
+        const res = await fetch('/api/auth/magic-link', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, next }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          error?: string;
+          success?: boolean;
+        };
+        if (!res.ok) {
+          setError(
+            data.error ??
+              'Could not send the sign-in link. Please try again in a few minutes.'
+          );
+          return;
+        }
+        setMessage(
+          'Check your email for a secure Move Trust Hub sign-in link (from Move Trust Hub / notifications@movetrusthub.com). It expires shortly and signs you into the Verified Mover Portal.'
+        );
+      } catch {
+        setError(
+          'Network error while sending the sign-in link. Check your connection and try again.'
+        );
       }
-      setMessage('Check your email for a secure magic link. It signs you into the Verified Mover Portal.');
     });
   }
 
@@ -62,6 +82,9 @@ export function PortalLoginForm({ next = '/portal' }: { next?: string }) {
           {pending ? 'Sending…' : 'Email me a magic link'}
         </Button>
       </form>
+      <p className="mt-3 text-xs text-muted-foreground">
+        Tip: check spam/junk if nothing arrives within a minute. Links expire for security.
+      </p>
     </Card>
   );
 }

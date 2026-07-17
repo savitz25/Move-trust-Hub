@@ -103,7 +103,19 @@ The script PATCHes:
 | **Site URL** | `https://www.movetrusthub.com` |
 | **Redirect URLs** | `https://www.movetrusthub.com/auth/callback` |
 
-Magic links use `emailRedirectTo` → production callback with optional `?next=/portal` (see `app/api/auth/magic-link/route.ts`).
+Magic links use `emailRedirectTo` → production callback with optional `?next=/portal` when Supabase sends mail.
+
+### Production delivery (preferred)
+
+The app **does not rely on Supabase’s built-in mailer** for portal/Save My Move magic links when Resend is configured:
+
+1. `auth.admin.generateLink` creates the token (no email sent by Supabase).
+2. Resend delivers a **Move Trust Hub** branded message (`lib/auth/magic-link-email.ts`).
+3. The link hits `/auth/confirm?token_hash=…&type=…&next=…` which runs `verifyOtp` and sets the session.
+
+This avoids Supabase’s common `over_email_send_rate_limit` error (“Could not send sign-in link”).
+
+Requires Vercel env: `RESEND_API_KEY`, `RESEND_FROM`, `SUPABASE_SERVICE_ROLE_KEY`.
 
 ---
 
@@ -131,13 +143,17 @@ Tone: professional, transparent, independent directory — no lead fees / no pai
    - **From:** Move Trust Hub \<notifications@…@movetrusthub.com\>
    - **Subject:** Your Move Trust Hub sign-in link  
    - **Body:** logo, navy CTA, links to movetrusthub.com  
-3. Click through → lands on `https://www.movetrusthub.com/auth/callback` then the intended app path.
+3. Click through → `/auth/confirm` (Resend path) or `/auth/callback` (legacy Supabase mailer) → intended app path (e.g. `/portal`).
+
+If send fails with a rate-limit message, wait ~1 hour or ensure Resend delivery is active (see production path above).
 
 ---
 
 ## 6. Related app code
 
 - Magic link API: `app/api/auth/magic-link/route.ts`
-- Auth callback: `app/auth/callback/route.ts`
+- Core sender: `lib/auth/request-magic-link.ts` + `lib/auth/magic-link-email.ts`
+- Token confirm: `app/auth/confirm/route.ts`
+- Auth callback (OAuth / Supabase mailer): `app/auth/callback/route.ts`
 - Logo URL helper: `trustHubLogoUrl()` in `lib/hub/config.ts`
 - Transactional (non-auth) mail already uses `RESEND_FROM=Move Trust Hub <…>`

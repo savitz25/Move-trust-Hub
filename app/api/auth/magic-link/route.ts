@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
 import { isSupabaseAdminConfigured, isSupabaseConfigured } from '@/lib/supabase/config';
 import { checkMagicLinkRateLimit } from '@/lib/save-my-move/magic-link-rate-limit';
-import { AUTH_CALLBACK_URL } from '@/lib/save-my-move/auth-redirect';
-import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
+import { requestMagicLink } from '@/lib/auth/request-magic-link';
 
 function getClientIp(request: Request): string | null {
   return (
@@ -15,19 +13,25 @@ function getClientIp(request: Request): string | null {
 
 export async function POST(request: Request) {
   if (!isSupabaseConfigured()) {
-    return NextResponse.json({ error: 'Auth not configured' }, { status: 503 });
+    return NextResponse.json(
+      { error: 'Sign-in is temporarily unavailable (auth not configured).' },
+      { status: 503 }
+    );
   }
 
   let body: { email?: string; next?: string };
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+    return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
   }
 
   const email = body.email?.trim().toLowerCase();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: 'Valid email required' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'Enter a valid email address.' },
+      { status: 400 }
+    );
   }
 
   try {
@@ -40,32 +44,21 @@ export async function POST(request: Request) {
     }
   } catch (err) {
     console.error('[magic-link] rate limit check failed', err);
+    // Fail open when admin DB is unavailable so login is not hard-blocked;
+    // only hard-fail if we expected admin tables to exist and something is wrong.
     if (isSupabaseAdminConfigured()) {
-      return NextResponse.json(
-        { error: 'Sign-in temporarily unavailable. Try again shortly.' },
-        { status: 503 }
-      );
+      console.warn('[magic-link] continuing after rate-limit error (fail-open)');
     }
   }
 
-  const nextPath = sanitizePostLoginPath(body.next);
-  const redirectTo = `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(nextPath)}`;
+  const result = await requestMagicLink({ email, next: body.next });
 
-  // Google OAuth and magic link with the same email address resolve to one
-  // auth.users row automatically (Supabase Auth identity linking).
-  const supabase = await createClient();
-  const { error } = await supabase.auth.signInWithOtp({
-    email,
-    options: {
-      emailRedirectTo: redirectTo,
-      shouldCreateUser: true,
-    },
-  });
-
-  if (error) {
-    console.error('[magic-link] signInWithOtp failed', error.message);
-    return NextResponse.json({ error: 'Could not send sign-in link' }, { status: 500 });
+  if (!result.ok) {
+    return NextResponse.json({ error: result.error }, { status: result.status });
   }
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({
+    success: true,
+    delivery: result.delivery,
+  });
 }

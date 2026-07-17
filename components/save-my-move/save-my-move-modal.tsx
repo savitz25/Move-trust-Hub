@@ -153,16 +153,22 @@ export function SaveMyMoveModal({
         });
         const data = await res.json();
         if (!res.ok) {
-          toast.error(data.error ?? 'Could not send sign-in link');
+          toast.error(
+            data.error ??
+              'Could not send the sign-in link. Please try again in a few minutes.'
+          );
           return;
         }
         setSentEmail(trimmed);
         setEmailSent(true);
         toast.success('Check your email', {
-          description: 'We sent a single-use sign-in link (expires in 15 minutes).',
+          description:
+            'We sent a single-use Move Trust Hub sign-in link (expires shortly). Check spam if needed.',
         });
       } catch {
-        toast.error('Could not send sign-in link');
+        toast.error(
+          'Network error while sending the sign-in link. Check your connection and try again.'
+        );
       } finally {
         setLoading(null);
       }

@@ -5,6 +5,7 @@ const AUTH_PATH_PREFIXES = [
   '/lender/admin',
   '/auth',
   '/my-move',
+  '/portal',
 ] as const;
 
 /** Cron / mutation APIs — never cache at edge. */
