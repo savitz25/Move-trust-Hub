@@ -40,7 +40,8 @@ import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness'
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
 
 
-export const revalidate = 60;
+/** Keep aligned with directory ISR + CDN s-maxage (tag revalidation on publish). */
+export const revalidate = 300;
 
 interface Props {
   params: Promise<{ slug: string }>;

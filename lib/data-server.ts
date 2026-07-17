@@ -17,12 +17,16 @@ import type { Company, Review } from '@/types';
 /** Server Component / Route Handler entry point — React cache() dedupes per request. */
 export const getAllCompanies = getCompaniesCached;
 
+/**
+ * Profile lookup: prefer single-row DB (or seed) resolution before materializing
+ * the full directory — avoids loading every company on cold profile/metadata paths.
+ */
 export async function getCompanyBySlugAsync(slug: string): Promise<Company | undefined> {
-  const companies = await getUnifiedDirectoryCompanies();
-  const fromList = resolveCompanyBySlug(slug, companies);
-  if (fromList) return fromList;
+  const fromDb = await getCompanyBySlugOrUsdotFromDb(slug);
+  if (fromDb && isPubliclyDisplayableCompany(fromDb)) return fromDb;
 
-  return getCompanyBySlugOrUsdotFromDb(slug);
+  const companies = await getUnifiedDirectoryCompanies();
+  return resolveCompanyBySlug(slug, companies);
 }
 
 export const getReviews = cache(async (companyId: string, limit = 12): Promise<Review[]> => {

@@ -163,7 +163,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
   ['companies-directory-v1'],
-  { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 60 }
+  { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
 /** Cached server-side company fetch — use in Server Components and generateMetadata. */

@@ -14,8 +14,12 @@ import { JsonLd } from '@/lib/seo/json-ld';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 import { formatAttributedReviewsLabel } from '@/lib/trust/site-stats';
 
-/** Revalidate so admin-approved companies appear without a full redeploy. */
-export const revalidate = 60;
+/**
+ * ISR TTL for directory HTML — keep aligned with middleware, vercel.json,
+ * and `unstable_cache` revalidate in companies / unified-directory queries.
+ * Tag revalidation on publish still busts cache immediately.
+ */
+export const revalidate = 300;
 
 const COMPANIES_TITLE = 'Compare FMCSA-Licensed Interstate Movers | Independent Directory';
 const COMPANIES_DESCRIPTION =

@@ -13,7 +13,8 @@ const IS_DEV = process.env.NODE_ENV === 'development';
 
 /** Path-specific HTML TTL — must stay aligned with page `revalidate` and vercel.json. */
 function htmlCacheSecondsForPath(pathname: string, defaultSeconds: number): number {
-  if (pathname === '/companies' || pathname.startsWith('/companies/')) return 60;
+  // Directory + profiles: 5 min CDN (was 60s — high origin churn under crawl/traffic)
+  if (pathname === '/companies' || pathname.startsWith('/companies/')) return 300;
   return defaultSeconds;
 }
 
