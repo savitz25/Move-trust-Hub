@@ -1,10 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Plus, X } from 'lucide-react';
 import type { Company } from '@/types';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
@@ -17,10 +15,7 @@ import {
   normalizeCompanyForDisplay,
 } from '@/lib/directory/normalize-company';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
-import { MethodologyLink } from '@/components/trust/methodology-link';
-import { MoverEmailButton } from '@/components/save-my-move/mover-email-button';
-import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
-import { ClaimProfileCta } from '@/components/portal/claim-cta';
+import { CompanyCardActions } from '@/components/directory/company-card-actions';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -37,16 +32,11 @@ type Props = {
 
 export function CompanyCard({ company: rawCompany, compareStore, profileReturnPath }: Props) {
   const company = normalizeCompanyForDisplay(rawCompany);
-  const isSelected = compareStore.isSelected(company.slug);
-  const canAdd = compareStore.canAddMore();
   const profileHref = profileReturnPath
     ? buildCompanyProfileHref(company.slug, profileReturnPath)
     : companyProfileHref(company);
   const foundedLabel = formatFoundedLabel(company.foundedYear);
-  const locationLine = [
-    formatCompanyHeadquarters(company.headquarters),
-    foundedLabel,
-  ]
+  const locationLine = [formatCompanyHeadquarters(company.headquarters), foundedLabel]
     .filter(Boolean)
     .join(' • ');
 
@@ -104,43 +94,12 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
         )}
       </div>
 
-      <div className="border-t px-5 py-3.5 bg-muted/20 space-y-2">
-        <div className="flex items-center justify-between text-sm gap-3">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <div className="min-w-0">
-              <MethodologyLink anchor="reputationScore" className="font-semibold tabular-nums no-underline">
-                {company.reputationScore}
-              </MethodologyLink>
-              <span className="text-muted-foreground"> rep</span>
-            </div>
-            <MoverEmailButton companySlug={company.slug} companyName={company.name} />
-          </div>
-          <div className="flex gap-2 shrink-0 items-center">
-            <SaveMoverButton companySlug={company.slug} companyName={company.name} />
-            <Link href={reviewHref}>
-              <Button size="sm" variant="ghost" className="h-8 px-2 text-xs">
-                Review
-              </Button>
-            </Link>
-            <Link href={profileHref}>
-              <Button size="sm" variant="ghost" className="h-8 px-3">
-                Details
-              </Button>
-            </Link>
-            <Button
-              size="sm"
-              variant={isSelected ? 'default' : 'outline'}
-              className="h-8 px-3 gap-1"
-              onClick={() => compareStore.toggleCompany(company)}
-              disabled={!isSelected && !canAdd}
-            >
-              {isSelected ? <X className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5" />}
-              {isSelected ? 'Remove' : 'Compare'}
-            </Button>
-          </div>
-        </div>
-        <ClaimProfileCta companySlug={company.slug} variant="card" />
-      </div>
+      <CompanyCardActions
+        company={company}
+        profileHref={profileHref}
+        reviewHref={reviewHref}
+        compareStore={compareStore}
+      />
     </Card>
   );
 }

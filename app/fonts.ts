@@ -1,26 +1,17 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 
 /**
- * LCP weight is self-hosted in public/fonts + critical.css (stable preload path).
- * next/font loads 400/700 after first paint — no second blocking font for heroes.
+ * LCP weight (600) is self-hosted in public/fonts + critical.css.
+ * Single next/font instance for body weights — avoid overwriting --font-geist-sans.
+ * size-adjusted fallback reduces CLS when webfonts swap in.
  */
-export const geistSansBody = Geist({
+export const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['400', '700'],
   display: 'swap',
   preload: false,
-  adjustFontFallback: false,
-  fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-});
-
-export const geistSansBold = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-  weight: ['700'],
-  display: 'swap',
-  preload: false,
-  adjustFontFallback: false,
+  adjustFontFallback: true,
   fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
 });
 
@@ -35,8 +26,4 @@ export const geistMono = Geist_Mono({
   fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
 });
 
-export const siteFontVariables = [
-  geistSansBody.variable,
-  geistSansBold.variable,
-  geistMono.variable,
-].join(' ');
+export const siteFontVariables = [geistSans.variable, geistMono.variable].join(' ');

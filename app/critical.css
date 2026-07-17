@@ -45,12 +45,12 @@ body {
   padding-inline: 1rem;
 }
 
-/* LCP heroes — self-hosted 600 woff2 (preloaded in layout <head>) */
+/* LCP heroes — match home-page.tsx: text-3xl → sm:4xl → md:5xl → lg:3.25rem */
 h1.font-semibold.tracking-tighter,
 h1.font-semibold.tracking-tight {
   font-family: 'Geist', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.875rem;
-  line-height: 1.15;
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 1.12;
   font-weight: 600;
   letter-spacing: -0.05em;
 }
@@ -58,21 +58,34 @@ h1.font-semibold.tracking-tight {
 @media (min-width: 640px) {
   h1.font-semibold.tracking-tighter,
   h1.font-semibold.tracking-tight {
-    font-size: 2.25rem;
+    font-size: 2.25rem; /* sm:text-4xl */
   }
 }
 
 @media (min-width: 768px) {
   h1.font-semibold.tracking-tighter,
   h1.font-semibold.tracking-tight {
-    font-size: 3.75rem;
+    font-size: 3rem; /* md:text-5xl */
   }
 }
 
 @media (min-width: 1024px) {
-  h1.font-semibold.tracking-tighter.leading-\[1\.1\] {
-    line-height: 1.1;
+  h1.font-semibold.tracking-tighter,
+  h1.font-semibold.tracking-tight {
+    font-size: 3.25rem; /* lg:text-[3.25rem] */
   }
+  h1.font-semibold.tracking-tighter.leading-\[1\.1\],
+  h1.font-semibold.tracking-tighter.leading-\[1\.12\] {
+    line-height: 1.12;
+  }
+}
+
+/* Directory cards — avoid FOUC/CLS when deferred UI CSS loads */
+.company-card {
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border) / 0.7);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.04);
 }
 
 /* LCP: lender / insurance heroes now use font-semibold tracking-tighter (same as move). */

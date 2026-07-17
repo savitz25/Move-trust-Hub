@@ -46,6 +46,57 @@ const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
   oneStar: 0,
 };
 
+/**
+ * Directory list projection — omits bbb_raw / timestamps and the heaviest blobs
+ * not needed for mapRow when entity_type is persisted (google_data, description).
+ * Profile single-row lookups still use select('*').
+ */
+export const COMPANY_LIST_COLUMNS = [
+  'id',
+  'slug',
+  'name',
+  'logo',
+  'short_description',
+  'founded_year',
+  'headquarters',
+  'website',
+  'usdot_number',
+  'mc_number',
+  'fmcsa_safety_rating',
+  'fmcsa_complaints',
+  'fmcsa_shipments',
+  'fmcsa_last_checked',
+  'authority_active',
+  'out_of_service',
+  'complaints_last_12m',
+  'revocation_date',
+  'data_hash',
+  'entity_type',
+  'fmcsa_raw',
+  'bbb_rating',
+  'bbb_accredited',
+  'bbb_last_checked',
+  'complaints_last_36m',
+  'bbb_customer_reviews',
+  'bbb_data_hash',
+  'bbb_business_id',
+  'bbb_alert_count',
+  'overall_rating',
+  'review_count',
+  'reputation_score',
+  'years_in_business',
+  'avg_price_per_move',
+  'price_range',
+  'coverage',
+  'services',
+  'specialties',
+  'rating_breakdown',
+  'is_verified',
+  'last_updated',
+  'public_scrape_data',
+  'verification_sources',
+].join(', ');
+
 function mapRow(row: Record<string, unknown>): Company {
   const baseServices = (row.services as Company['services']) || [];
   const fmcsaFields = extractFmcsaFieldsFromRow(row, baseServices);
@@ -119,7 +170,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 
   const { data, error } = await supabase
     .from('companies')
-    .select('*')
+    .select(COMPANY_LIST_COLUMNS)
     .order('reputation_score', { ascending: false });
 
   if (error) {
@@ -162,7 +213,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
-  ['companies-directory-v1'],
+  ['companies-directory-v3-projected'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 

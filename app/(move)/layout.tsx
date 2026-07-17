@@ -1,10 +1,10 @@
-import { HubChrome } from '@/components/hub/hub-chrome';
+import { HubSegmentShell } from '@/components/hub/hub-segment-shell';
 import { DeferredSaveMyMove } from '@/components/performance/deferred-save-my-move';
 
 export default function MoveHubLayout({ children }: { children: React.ReactNode }) {
   return (
     <DeferredSaveMyMove>
-      <HubChrome hubId="move">{children}</HubChrome>
+      <HubSegmentShell hubId="move">{children}</HubSegmentShell>
     </DeferredSaveMyMove>
   );
 }

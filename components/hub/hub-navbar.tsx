@@ -20,7 +20,7 @@ export function HubNavbar({ hubId }: { hubId: HubId }) {
       <div className="container mx-auto relative flex h-16 sm:h-[4.5rem] items-center justify-between px-4 overflow-visible">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <Link prefetch={false} href={homeHref} className="group shrink-0">
-            <HubLogo hubId={hubId} />
+            <HubLogo hubId={hubId} priority />
           </Link>
           <HeaderTrustBadge className="hidden xl:flex" />
         </div>

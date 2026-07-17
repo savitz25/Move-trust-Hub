@@ -19,12 +19,16 @@ export function TrustHubLogoImage({
 }: TrustHubLogoImageProps) {
   const isHeader = variant === 'header';
 
+  // Intrinsic attributes match display slot (not source PNG 712×192) for CLS
+  const displayW = isHeader ? 240 : 192;
+  const displayH = isHeader ? 65 : 52;
+
   return (
     <img
       src={TRUST_HUB_LOGO.src}
       alt={TRUST_HUB_LOGO.alt}
-      width={isHeader ? TRUST_HUB_LOGO.width : 192}
-      height={isHeader ? TRUST_HUB_LOGO.height : 60}
+      width={displayW}
+      height={displayH}
       fetchPriority={priority ? 'high' : 'auto'}
       loading={priority ? 'eager' : 'lazy'}
       decoding={priority ? 'sync' : 'async'}

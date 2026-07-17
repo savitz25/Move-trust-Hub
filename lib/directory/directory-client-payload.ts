@@ -1,8 +1,19 @@
-import type { PublicScrapeData } from '@/lib/verification/types';
+import type { PublicScrapeData, PublicSourceMeta } from '@/lib/verification/types';
 import { normalizeCompanyForDisplay } from '@/lib/directory/normalize-company';
 import type { Company } from '@/types';
 
-/** BBB badge fields only — omit review snippets and bulky scrape payloads. */
+const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
+  fiveStar: 0,
+  fourStar: 0,
+  threeStar: 0,
+  twoStar: 0,
+  oneStar: 0,
+};
+
+/**
+ * Minimal BBB scrape for directory badges only.
+ * Drops review snippets, Trustpilot, Yelp, and unused scrape noise.
+ */
 function trimPublicScrapeForDirectory(
   data: PublicScrapeData | null | undefined
 ): PublicScrapeData | undefined {
@@ -11,14 +22,21 @@ function trimPublicScrapeForDirectory(
   const bbbSource = data.sources?.bbb;
   if (!bbbSource) return undefined;
 
+  const bbbMeta: PublicSourceMeta = {
+    status: bbbSource.status,
+    method: bbbSource.method,
+    ...(bbbSource.url ? { url: bbbSource.url } : {}),
+  };
+
   return {
-    confidence: 'public' as const,
-    sources: { bbb: bbbSource },
+    confidence: 'public',
+    sources: { bbb: bbbMeta },
     bbb_rating: data.bbb_rating ?? null,
     bbb_review_count: data.bbb_review_count ?? null,
     bbb_accredited: data.bbb_accredited ?? null,
     bbb_accreditation_status: data.bbb_accreditation_status ?? null,
     bbb_accredited_since: data.bbb_accredited_since ?? null,
+    bbb_file_opened: data.bbb_file_opened ?? data.bbb_details?.file_opened_date ?? null,
     bbb_profile_url: data.bbb_profile_url ?? data.bbb_details?.profile_url ?? null,
     bbb_details: data.bbb_details
       ? {
@@ -39,8 +57,8 @@ function trimPublicScrapeForDirectory(
 }
 
 /**
- * Strip enrichment blobs before serializing companies into the client directory island.
- * Keeps verification badge fields while avoiding multi‑MB RSC payloads.
+ * Explicit directory DTO — do not spread full Company (avoids multi‑MB RSC hydration).
+ * Keeps filter/sort/badge/search fields only.
  */
 export function prepareCompaniesForDirectoryClient(companies: Company[]): Company[] {
   if (!Array.isArray(companies)) return [];
@@ -48,13 +66,44 @@ export function prepareCompaniesForDirectoryClient(companies: Company[]): Compan
   return companies
     .map((raw) => {
       try {
-        const company = normalizeCompanyForDisplay(raw);
+        const c = normalizeCompanyForDisplay(raw);
         return {
-          ...company,
+          id: c.id,
+          slug: c.slug,
+          name: c.name,
+          shortDescription: c.shortDescription,
           description: '',
+          foundedYear: c.foundedYear,
+          headquarters: c.headquarters,
+          website: '',
+          usdotNumber: c.usdotNumber,
+          mcNumber: c.mcNumber,
+          fmcsaSafetyRating: c.fmcsaSafetyRating,
+          fmcsaComplaints: c.fmcsaComplaints,
+          fmcsaShipments: c.fmcsaShipments,
+          fmcsaLastChecked: c.fmcsaLastChecked ?? null,
+          authorityActive: c.authorityActive,
+          outOfService: c.outOfService,
+          usdotStatus: c.usdotStatus,
+          entityType: c.entityType,
+          powerUnits: c.powerUnits,
+          bbbRating: c.bbbRating,
+          bbbAccredited: c.bbbAccredited,
+          overallRating: c.overallRating,
+          reviewCount: c.reviewCount,
+          reputationScore: c.reputationScore,
+          yearsInBusiness: c.yearsInBusiness,
+          avgPricePerMove: c.avgPricePerMove,
+          priceRange: c.priceRange,
+          coverage: c.coverage,
+          services: c.services,
+          specialties: (c.specialties ?? []).slice(0, 3),
+          ratingBreakdown: EMPTY_RATING_BREAKDOWN,
+          isVerified: c.isVerified,
+          lastUpdated: c.lastUpdated,
           googleData: undefined,
-          publicScrapeData: trimPublicScrapeForDirectory(company.publicScrapeData),
-        };
+          publicScrapeData: trimPublicScrapeForDirectory(c.publicScrapeData),
+        } satisfies Company;
       } catch {
         return null;
       }

@@ -66,6 +66,11 @@ export function buildHubWebsiteSchema(
   };
 }
 
+/**
+ * Root layout only — parent org + main site.
+ * Hub-specific Organization/WebSite live on lender/insurance home graphs
+ * (avoids shipping cross-hub JSON-LD on every page).
+ */
 export function buildTrustHubNetworkSchema() {
   return {
     '@context': 'https://schema.org',
@@ -79,10 +84,6 @@ export function buildTrustHubNetworkSchema() {
         publisher: { '@id': PARENT_ORG['@id'] },
         inLanguage: 'en-US',
       },
-      ...(['lender', 'insurance'] as const).map((hub) => [
-        buildHubOrganizationSchema(hub),
-        buildHubWebsiteSchema(hub),
-      ]).flat(),
     ],
   };
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, CheckCircle2, MapPin, Search } from 'lucide-react';
 import type {
   MapSearchResult,
@@ -344,90 +343,76 @@ export function InteractiveUSMap({ statesMeta }: Props) {
                 : 'Click any state to zoom in and explore county-level local mover guides.'}
             </desc>
 
-            <AnimatePresence mode="wait">
-              {activeStateSlug && countyGeo ? (
-                <motion.g
-                  key={`counties-${activeStateSlug}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {countyGeo.counties.map((county) => (
-                    <a
-                      key={county.slug}
-                      href={county.href}
-                      aria-label={`${county.name}, ${activeStateName} local movers`}
-                      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 rounded-sm"
-                    >
-                      <path
-                        d={county.path}
-                        fill={COUNTY_FILL}
-                        stroke={STROKE}
-                        strokeWidth={0.5}
-                        className="transition-colors duration-150 cursor-pointer"
-                        style={{ vectorEffect: 'non-scaling-stroke' }}
-                        onMouseEnter={(e) => {
-                          (e.target as SVGPathElement).setAttribute('fill', COUNTY_HOVER);
-                        }}
-                        onMouseLeave={(e) => {
-                          (e.target as SVGPathElement).setAttribute('fill', COUNTY_FILL);
-                        }}
-                      />
-                    </a>
-                  ))}
-                </motion.g>
-              ) : (
-                statesGeo && (
-                  <motion.g
-                    key="states"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+            {activeStateSlug && countyGeo ? (
+              <g key={`counties-${activeStateSlug}`}>
+                {countyGeo.counties.map((county) => (
+                  <a
+                    key={county.slug}
+                    href={county.href}
+                    aria-label={`${county.name}, ${activeStateName} local movers`}
+                    className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 rounded-sm"
                   >
-                    {statesGeo.states.map((state) => {
-                      const curated = curatedBySlug.get(state.slug) ?? state.curated;
-                      return (
-                        <a
-                          key={state.slug}
-                          href={state.href}
-                          aria-label={`${state.name}${curated ? ', fully curated local mover guides' : ''}. Click to explore counties.`}
-                          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
-                          onClick={(e) => handleStateActivate(state.slug, e)}
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              handleStateActivate(state.slug, e);
-                            }
+                    <path
+                      d={county.path}
+                      fill={COUNTY_FILL}
+                      stroke={STROKE}
+                      strokeWidth={0.5}
+                      className="transition-colors duration-150 cursor-pointer"
+                      style={{ vectorEffect: 'non-scaling-stroke' }}
+                      onMouseEnter={(e) => {
+                        (e.target as SVGPathElement).setAttribute('fill', COUNTY_HOVER);
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.target as SVGPathElement).setAttribute('fill', COUNTY_FILL);
+                      }}
+                    />
+                  </a>
+                ))}
+              </g>
+            ) : (
+              statesGeo && (
+                <g key="states">
+                  {statesGeo.states.map((state) => {
+                    const curated = curatedBySlug.get(state.slug) ?? state.curated;
+                    return (
+                      <a
+                        key={state.slug}
+                        href={state.href}
+                        aria-label={`${state.name}${curated ? ', fully curated local mover guides' : ''}. Click to explore counties.`}
+                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
+                        onClick={(e) => handleStateActivate(state.slug, e)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            handleStateActivate(state.slug, e);
+                          }
+                        }}
+                      >
+                        <path
+                          d={state.path}
+                          fill={curated ? CURATED_FILL : DEFAULT_FILL}
+                          stroke={STROKE}
+                          strokeWidth={0.75}
+                          className="transition-colors duration-150 cursor-pointer"
+                          style={{ vectorEffect: 'non-scaling-stroke' }}
+                          onMouseEnter={(e) => {
+                            (e.target as SVGPathElement).setAttribute(
+                              'fill',
+                              curated ? CURATED_HOVER : DEFAULT_HOVER
+                            );
                           }}
-                        >
-                          <path
-                            d={state.path}
-                            fill={curated ? CURATED_FILL : DEFAULT_FILL}
-                            stroke={STROKE}
-                            strokeWidth={0.75}
-                            className="transition-colors duration-150 cursor-pointer"
-                            style={{ vectorEffect: 'non-scaling-stroke' }}
-                            onMouseEnter={(e) => {
-                              (e.target as SVGPathElement).setAttribute(
-                                'fill',
-                                curated ? CURATED_HOVER : DEFAULT_HOVER
-                              );
-                            }}
-                            onMouseLeave={(e) => {
-                              (e.target as SVGPathElement).setAttribute(
-                                'fill',
-                                curated ? CURATED_FILL : DEFAULT_FILL
-                              );
-                            }}
-                          />
-                        </a>
-                      );
-                    })}
-                  </motion.g>
-                )
-              )}
-            </AnimatePresence>
+                          onMouseLeave={(e) => {
+                            (e.target as SVGPathElement).setAttribute(
+                              'fill',
+                              curated ? CURATED_FILL : DEFAULT_FILL
+                            );
+                          }}
+                        />
+                      </a>
+                    );
+                  })}
+                </g>
+              )
+            )}
           </svg>
         )}
 

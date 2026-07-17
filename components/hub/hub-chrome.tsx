@@ -1,7 +1,6 @@
 import { HubFamilyBar } from '@/components/hub/hub-family-bar';
 import { HubFooter } from '@/components/hub/hub-footer';
 import { HubNavbar } from '@/components/hub/hub-navbar';
-import { TrustBadgeRow } from '@/components/hub/trust-badge-row';
 import {
   DeferredJourneyTracker,
   DeferredLegacyWelcomeBanner,
@@ -10,7 +9,10 @@ import {
 } from '@/components/performance/deferred-ux-chrome';
 import type { HubId } from '@/lib/hub/types';
 
-/** Server-rendered hub chrome — pass explicit hubId from segment layouts for correct SSG. */
+/**
+ * Server-rendered hub chrome — pass explicit hubId from segment layouts for correct SSG.
+ * Trust badge row lives on hub home pages only (not every deep page) for HTML/LCP budget.
+ */
 export async function HubChrome({
   hubId,
   children,
@@ -29,7 +31,6 @@ export async function HubChrome({
           <DeferredJourneyTracker hub={hubId} />
         </>
       ) : null}
-      <TrustBadgeRow hub={hubId} className="hidden md:block border-y bg-muted/20 py-6" />
       <main className="flex-1 pb-[env(safe-area-inset-bottom)] sm:pb-0">{children}</main>
       <HubFooter hubId={hubId} />
       {hubId === 'move' ? <DeferredMoveTipsOptIn /> : null}

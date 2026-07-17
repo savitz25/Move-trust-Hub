@@ -5,7 +5,7 @@ import { ArrowRight, Truck } from 'lucide-react';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { HubHeroBanner } from '@/components/hub/hub-hero-banner';
-import { HomeBelowFoldLoader } from '@/components/home/home-below-fold-loader';
+import { HomeBelowFold } from '@/components/home/home-below-fold';
 import { HERO_TRUST_EYEBROW } from '@/lib/trust/site-messaging';
 
 export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
@@ -82,7 +82,8 @@ export function HomePage({ mapSection }: { mapSection?: ReactNode }) {
 
       {mapSection}
 
-      <HomeBelowFoldLoader />
+      {/* SSR how-it-works / FAQ for SEO + LCP; ReviewHighlights stays lazy inside */}
+      <HomeBelowFold />
     </div>
   );
 }
