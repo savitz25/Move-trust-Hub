@@ -10,19 +10,29 @@ import {
 } from '@/lib/portal/reviews';
 import { syncCompanyReputation } from '@/lib/portal/reputation-sync';
 import { updateServiceArea } from '@/lib/portal/service-area';
+import { assertPortalMfaSatisfied } from '@/lib/portal/mfa';
 import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
 import { assertAdminSession } from '@/lib/admin/auth';
 import { getCompanyBySlugAsync } from '@/lib/data-server';
 import type { DisputeCategoryId } from '@/lib/portal/messaging';
 import type { ServiceAreaInput } from '@/lib/portal/types';
 
+async function requireOwnerUser() {
+  const user = await getAuthenticatedUser();
+  if (!user) return { ok: false as const, error: 'Sign in required' as const };
+  const mfa = await assertPortalMfaSatisfied();
+  if (!mfa.ok) return { ok: false as const, error: mfa.error };
+  return { ok: true as const, user };
+}
+
 export async function postOwnerResponseAction(params: {
   companySlug: string;
   reviewId: string;
   response: string;
 }) {
-  const user = await getAuthenticatedUser();
-  if (!user) return { success: false as const, error: 'Sign in required' };
+  const auth = await requireOwnerUser();
+  if (!auth.ok) return { success: false as const, error: auth.error };
+  const user = auth.user;
 
   const owner = await getOwnerByCompanySlug(user.id, params.companySlug);
   if (!owner) return { success: false as const, error: 'Not a verified owner of this company' };
@@ -64,8 +74,9 @@ export async function disputeReviewAction(params: {
   category: DisputeCategoryId;
   reason: string;
 }) {
-  const user = await getAuthenticatedUser();
-  if (!user) return { success: false as const, error: 'Sign in required' };
+  const auth = await requireOwnerUser();
+  if (!auth.ok) return { success: false as const, error: auth.error };
+  const user = auth.user;
 
   const owner = await getOwnerByCompanySlug(user.id, params.companySlug);
   if (!owner) return { success: false as const, error: 'Not a verified owner of this company' };
@@ -99,8 +110,9 @@ export async function disputeReviewAction(params: {
 }
 
 export async function syncReputationAction(companySlug: string) {
-  const user = await getAuthenticatedUser();
-  if (!user) return { success: false as const, error: 'Sign in required' };
+  const auth = await requireOwnerUser();
+  if (!auth.ok) return { success: false as const, error: auth.error };
+  const user = auth.user;
 
   const owner = await getOwnerByCompanySlug(user.id, companySlug);
   if (!owner) return { success: false as const, error: 'Not a verified owner of this company' };
@@ -121,8 +133,9 @@ export async function updateServiceAreaAction(
   companySlug: string,
   input: ServiceAreaInput
 ) {
-  const user = await getAuthenticatedUser();
-  if (!user) return { success: false as const, error: 'Sign in required' };
+  const auth = await requireOwnerUser();
+  if (!auth.ok) return { success: false as const, error: auth.error };
+  const user = auth.user;
 
   const owner = await getOwnerByCompanySlug(user.id, companySlug);
   if (!owner) return { success: false as const, error: 'Not a verified owner of this company' };

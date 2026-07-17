@@ -90,9 +90,48 @@ export async function portalPathAfterAuth(nextPath: string): Promise<string> {
       return `/portal/mfa?next=${encodeURIComponent(next)}`;
     }
   } catch {
-    // MFA API unavailable — allow through
+    // If status fails, still try aal next-level check below via assert
+    const check = await assertPortalMfaSatisfied();
+    if (!check.ok) {
+      return `/portal/mfa?next=${encodeURIComponent(next)}`;
+    }
   }
   return next;
+}
+
+/**
+ * Server-action guard: when TOTP is enrolled, session must be AAL2.
+ * Fail closed only when we know factors exist and AAL is insufficient.
+ * If MFA APIs are unreachable, do not lock out owners who never enrolled.
+ */
+export async function assertPortalMfaSatisfied(): Promise<
+  { ok: true } | { ok: false; error: string }
+> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return { ok: false, error: 'Sign in required' };
+
+  try {
+    const { data: factors, error: factorsError } = await supabase.auth.mfa.listFactors();
+    if (factorsError) return { ok: true };
+
+    const verified = factors?.totp?.filter((f) => f.status === 'verified') ?? [];
+    if (verified.length === 0) return { ok: true };
+
+    const { data: aal } = await supabase.auth.mfa.getAuthenticatorAssuranceLevel();
+    if (!aal || (aal.nextLevel === 'aal2' && aal.currentLevel !== 'aal2')) {
+      return {
+        ok: false,
+        error:
+          'Two-factor authentication required. Enter your authenticator code, then try again.',
+      };
+    }
+    return { ok: true };
+  } catch {
+    return { ok: true };
+  }
 }
 
 /**
@@ -101,7 +140,7 @@ export async function portalPathAfterAuth(nextPath: string): Promise<string> {
  */
 export async function requirePortalSession(options?: {
   nextPath?: string;
-  /** Allow AAL1 (e.g. MFA challenge page itself, security setup). */
+  /** Allow AAL1 (e.g. MFA challenge page itself, security setup when MFA off). */
   allowAal1?: boolean;
 }): Promise<{ userId: string; email: string | null }> {
   const supabase = await createClient();
@@ -116,13 +155,9 @@ export async function requirePortalSession(options?: {
   }
 
   if (!options?.allowAal1) {
-    try {
-      const { data: aal } = await supabase.auth.mfa.getAuthenticatorAssuranceLevel();
-      if (aal?.nextLevel === 'aal2' && aal.currentLevel !== 'aal2') {
-        redirect(`/portal/mfa?next=${encodeURIComponent(next)}`);
-      }
-    } catch {
-      // continue if MFA endpoint fails
+    const check = await assertPortalMfaSatisfied();
+    if (!check.ok && check.error !== 'Sign in required') {
+      redirect(`/portal/mfa?next=${encodeURIComponent(next)}`);
     }
   }
 

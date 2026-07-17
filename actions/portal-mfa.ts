@@ -3,6 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { createClient } from '@/lib/supabase/server';
 import {
+  assertPortalMfaSatisfied,
   clearBackupCodeHashes,
   consumeBackupCode,
   generateBackupCodes,
@@ -59,6 +60,9 @@ export async function clearPortalBackupCodesAction(): Promise<{
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { success: false, error: 'Sign in required' };
+
+  const mfa = await assertPortalMfaSatisfied();
+  if (!mfa.ok) return { success: false, error: mfa.error };
 
   const result = await clearBackupCodeHashes(user.id);
   if (!result.ok) return { success: false, error: result.error };
