@@ -21,45 +21,70 @@ export function ClaimForm({ companySlug, companyName, usdotNumber, defaultEmail 
   const [pending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const [magicLinkNote, setMagicLinkNote] = useState<string | null>(null);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
     setSuccess(null);
+    setMagicLinkNote(null);
     const fd = new FormData(e.currentTarget);
+    const email = String(fd.get('email') ?? '')
+      .trim()
+      .toLowerCase();
 
     startTransition(async () => {
-      const result = await submitClaimAction({
-        companySlug,
-        claimantName: String(fd.get('name') ?? ''),
-        claimantEmail: String(fd.get('email') ?? ''),
-        claimantPhone: String(fd.get('phone') ?? '') || undefined,
-        claimantTitle: String(fd.get('title') ?? '') || undefined,
-        usdotSubmitted: String(fd.get('usdot') ?? ''),
-      });
-
-      if (!result.success) {
-        setError(result.error);
-        return;
-      }
-
-      setSuccess(result.message);
-
-      // Send magic link for verification login
       try {
-        await fetch('/api/auth/magic-link', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: String(fd.get('email') ?? '').trim().toLowerCase(),
-            next: '/portal',
-          }),
+        const result = await submitClaimAction({
+          companySlug,
+          claimantName: String(fd.get('name') ?? ''),
+          claimantEmail: email,
+          claimantPhone: String(fd.get('phone') ?? '') || undefined,
+          claimantTitle: String(fd.get('title') ?? '') || undefined,
+          usdotSubmitted: String(fd.get('usdot') ?? ''),
         });
-      } catch {
-        // Claim still succeeded; user can sign in manually
-      }
 
-      router.refresh();
+        if (!result.success) {
+          setError(result.error);
+          return;
+        }
+
+        setSuccess(result.message);
+
+        // Send magic link for verification login (claim already saved)
+        try {
+          const res = await fetch('/api/auth/magic-link', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email,
+              next: '/portal',
+            }),
+          });
+          const data = (await res.json().catch(() => ({}))) as { error?: string };
+          if (!res.ok) {
+            setMagicLinkNote(
+              data.error ??
+                'Claim saved, but we could not email a sign-in link. Use Portal sign-in with this email.'
+            );
+          } else {
+            setMagicLinkNote(
+              'We emailed a Move Trust Hub sign-in link. Check inbox and spam, then open /portal after signing in.'
+            );
+          }
+        } catch {
+          setMagicLinkNote(
+            'Claim saved, but the sign-in email could not be sent (network error). Use /portal/login with this email.'
+          );
+        }
+
+        router.refresh();
+      } catch (err) {
+        console.error('[portal] claim form error', err);
+        setError(
+          'Something went wrong submitting your claim. Please try again, or email info@movetrusthub.com with your USDOT.'
+        );
+      }
     });
   }
 
@@ -68,11 +93,15 @@ export function ClaimForm({ companySlug, companyName, usdotNumber, defaultEmail 
       <Card className="p-6 space-y-3">
         <h2 className="text-lg font-semibold text-foreground">Claim submitted</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">{success}</p>
-        <p className="text-sm text-muted-foreground">
-          Check your inbox for a secure sign-in link. After you verify your email, our team
-          confirms ownership (DOT match + contact review). Then you can manage{' '}
-          <strong>{companyName}</strong> in the Verified Mover Portal.
-        </p>
+        {magicLinkNote ? (
+          <p className="text-sm text-muted-foreground leading-relaxed">{magicLinkNote}</p>
+        ) : (
+          <p className="text-sm text-muted-foreground">
+            Check your inbox for a secure sign-in link. After you verify your email, our team
+            confirms ownership (DOT match + contact review). Then you can manage{' '}
+            <strong>{companyName}</strong> in the Verified Mover Portal.
+          </p>
+        )}
         <Button asChild variant="outline">
           <a href="/portal">Go to portal</a>
         </Button>

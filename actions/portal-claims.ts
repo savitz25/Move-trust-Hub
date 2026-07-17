@@ -19,18 +19,48 @@ function clientIp(h: Headers): string | null {
 export async function submitClaimAction(input: SubmitClaimInput) {
   const user = await getAuthenticatedUser();
   const h = await headers();
-  const result = await submitCompanyClaim(input, {
-    userId: user?.id ?? null,
-    ip: clientIp(h),
+  const ip = clientIp(h);
+
+  console.info('[portal.claim] action_start', {
+    slug: input.companySlug,
+    email: input.claimantEmail?.trim().toLowerCase() || null,
+    hasUser: Boolean(user?.id),
+    ip: ip ? 'set' : null,
   });
 
-  if (result.success) {
-    revalidatePath('/portal');
-    revalidatePath(`/portal/claim/${input.companySlug}`);
-    revalidatePath('/admin/portal-claims');
-  }
+  try {
+    const result = await submitCompanyClaim(input, {
+      userId: user?.id ?? null,
+      ip,
+    });
 
-  return result;
+    if (result.success) {
+      console.info('[portal.claim] action_ok', {
+        claimId: result.claimId,
+        slug: input.companySlug,
+      });
+      revalidatePath('/portal');
+      revalidatePath(`/portal/claim/${input.companySlug}`);
+      revalidatePath('/admin/portal-claims');
+    } else {
+      console.warn('[portal.claim] action_rejected', {
+        slug: input.companySlug,
+        error: result.error,
+      });
+    }
+
+    return result;
+  } catch (err) {
+    console.error('[portal.claim] action_exception', {
+      slug: input.companySlug,
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return {
+      success: false as const,
+      error:
+        'Unexpected error submitting claim. Please try again or email info@movetrusthub.com with your USDOT.',
+    };
+  }
 }
 
 export async function linkMyPendingClaimsAction() {

@@ -35,9 +35,22 @@ Apply in the Supabase SQL Editor (or `supabase db push`):
 supabase/migrations/20260717120000_mover_portal.sql
 ```
 
+Or with a database password:
+
+```bash
+# SUPABASE_DB_PASSWORD or SUPABASE_DB_URL required
+npx tsx scripts/apply-portal-migration.ts
+```
+
 The migration is **idempotent** and safe to re-run. It also bootstraps `moving_companies` + `company_reviews` if the public review system was never applied to this project (otherwise you get `relation "public.company_reviews" does not exist`).
 
 Requires `public.companies` to already exist (directory table).
+
+### Runtime fallback (production safety)
+
+If `company_claims` is missing from PostgREST (migration not applied), claim submission **still works** by storing rows in `company_suggestions` with `source_page = 'portal_claim'`. Admin queue, pending claim list, and post-approval ownership read that fallback. Logs: `[portal.claim] …`.
+
+Apply the migration when you can so native tables + owner response columns are used.
 
 Tables:
 
