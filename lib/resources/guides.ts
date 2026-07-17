@@ -73,7 +73,13 @@ export const guides: GuideEntry[] = [
     excerpt: 'What USDOT numbers, safety ratings, and complaint ratios mean when choosing a long-distance mover.',
     category: 'Regulation',
     href: '/resources/fmcsa',
-    related: ['interstate-moving-insurance', 'how-to-choose', 'scams', 'routes'],
+    related: [
+      'bill-of-lading-shipper-rights',
+      'interstate-moving-insurance',
+      'how-to-choose',
+      'scams',
+      'routes',
+    ],
   },
   {
     slug: 'interstate-moving-insurance',
@@ -83,7 +89,31 @@ export const guides: GuideEntry[] = [
       'Compare FMCSA Released Value vs. Full Value Protection, coverage limits, costs, third-party options, and how to choose the right level for your belongings.',
     category: 'Regulation',
     href: '/resources/interstate-moving-insurance',
-    related: ['fmcsa', 'how-to-choose', 'carrier-vs-broker', 'interstate-moving-costs', 'checklist'],
+    related: [
+      'bill-of-lading-shipper-rights',
+      'fmcsa',
+      'how-to-choose',
+      'carrier-vs-broker',
+      'interstate-moving-costs',
+      'checklist',
+    ],
+  },
+  {
+    slug: 'bill-of-lading-shipper-rights',
+    title:
+      'Understanding Your Bill of Lading and Shipper Rights in Long-Distance Moves',
+    excerpt:
+      'What your interstate Bill of Lading really means: key sections, FMCSA shipper rights, valuation, delivery windows, and how to protect yourself before you sign.',
+    category: 'Regulation',
+    href: '/resources/bill-of-lading-shipper-rights',
+    related: [
+      'interstate-moving-insurance',
+      'fmcsa',
+      'how-to-choose',
+      'scams',
+      'checklist',
+      'carrier-vs-broker',
+    ],
   },
   {
     slug: 'checklist',

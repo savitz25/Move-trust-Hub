@@ -22,6 +22,17 @@ export const lenderGuides: LenderGuideEntry[] = [
     readTime: '12 min read',
     updatedAt: 'July 2026',
   },
+  {
+    slug: 'fixed-vs-adjustable-rate-mortgages',
+    title:
+      'Fixed-Rate vs. Adjustable-Rate Mortgages in 2026: Pros, Cons, Break-Even Analysis, and When to Choose Each',
+    excerpt:
+      'Compare fixed-rate and ARM options for 2026: pros, cons, break-even math, rate risk, and when each loan type fits your timeline and risk tolerance.',
+    category: 'Planning',
+    href: '/lender/resources/fixed-vs-adjustable-rate-mortgages',
+    readTime: '12 min read',
+    updatedAt: 'July 2026',
+  },
 ];
 
 export function getLenderGuide(slug: string) {

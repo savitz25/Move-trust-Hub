@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/auto-loan-companies',
     '/resources',
     '/resources/how-to-choose-mortgage-lender',
+    '/resources/fixed-vs-adjustable-rate-mortgages',
   ];
 
   const staticRoutes = staticPaths.map((path) =>

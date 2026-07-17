@@ -39,6 +39,7 @@ export function getRelatedArticles(article: Article, limit = 3): Article[] {
 
 export function getFeaturedResourceSlugs(): string[] {
   return [
+    'short-term-health-insurance-vs-aca-marketplace',
     'medicare-advantage-vs-medigap',
     'how-to-choose-health-insurance-plan',
     'aca-obamacare-guide',
