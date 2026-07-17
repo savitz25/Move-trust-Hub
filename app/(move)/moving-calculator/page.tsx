@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { MovingCalculatorLoader } from '@/components/moving-calculator/moving-calculator-loader';
-
-export const dynamic = 'force-static';
 import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { calculatorFaqItems } from '@/lib/seo/schemas';
+
+// Allow searchParams soft-nav / prefill from homepage (?fromZip&preset=…).
+// force-static + client query strings caused production ChunkLoadError on SPA transitions.
+export const dynamic = 'force-dynamic';
 
 const METHODOLOGY = [
   'Room-by-room mode uses industry-standard cubic-foot volumes for common furniture, appliances, and box counts.',

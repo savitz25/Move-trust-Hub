@@ -13,19 +13,25 @@ type OnboardingStripProps = {
 
 export function OnboardingStrip({ onPresetSelect }: OnboardingStripProps) {
   const { onboardingDismissed, loadPreset, inventory } = useCalculatorStore();
+  const items = Array.isArray(inventory) ? inventory : [];
 
   const handleSelect = (presetId: MovePresetId) => {
-    loadPreset(presetId);
-    trackPresetSelected({ preset: presetId });
-    onPresetSelect?.(presetId);
-    toast.success(getPresetToastMessage(presetId), {
-      description: presetId === 'scratch' || presetId === 'custom'
-        ? 'Add items room by room or search below.'
-        : 'Fine-tune quantities anytime.',
-    });
+    try {
+      loadPreset(presetId);
+      trackPresetSelected({ preset: presetId });
+      onPresetSelect?.(presetId);
+      toast.success(getPresetToastMessage(presetId), {
+        description:
+          presetId === 'scratch' || presetId === 'custom'
+            ? 'Add items room by room or search below.'
+            : 'Fine-tune quantities anytime.',
+      });
+    } catch {
+      // keep strip usable if a preset fails to load
+    }
   };
 
-  const collapsed = onboardingDismissed && inventory.length > 0;
+  const collapsed = onboardingDismissed && items.length > 0;
 
   return (
     <AnimatePresence mode="wait">

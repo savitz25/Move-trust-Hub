@@ -187,29 +187,43 @@ export const useCalculatorStore = create<CalculatorState>()(
 
       loadPreset: (presetId) => {
         const { inventory, undoStack } = get();
-        set({ undoStack: [...undoStack.slice(-4), pushUndo(inventory)] });
+        const safeInventory = Array.isArray(inventory) ? inventory : [];
+        set({ undoStack: [...undoStack.slice(-4), pushUndo(safeInventory)] });
 
         if (presetId === 'scratch' || presetId === 'custom') {
           set({ inventory: [], movePreset: presetId, selectedRoom: 'Living Room' });
         } else {
-          const items = buildPresetInventory(presetId, getVolume);
-          set({
-            inventory: items,
-            movePreset: presetId,
-            selectedRoom: 'Living Room',
-            mode: 'room',
-          });
+          try {
+            const items = buildPresetInventory(presetId, getVolume);
+            set({
+              inventory: Array.isArray(items) ? items : [],
+              movePreset: presetId,
+              selectedRoom: 'Living Room',
+              mode: 'room',
+            });
+          } catch {
+            set({
+              inventory: [],
+              movePreset: presetId,
+              selectedRoom: 'Living Room',
+              mode: 'room',
+            });
+          }
         }
         get().markInteraction();
       },
 
       loadFromShare: (items, mode, preset) => {
+        const list = Array.isArray(items) ? items : [];
         set({
-          inventory: items.map((item) => ({
-            ...item,
+          inventory: list.map((item) => ({
+            name: String(item?.name ?? 'Item'),
+            volume: Math.max(0, Number(item?.volume) || 0),
+            quantity: Math.max(1, Number(item?.quantity) || 1),
+            room: item?.room,
             id: generateId(),
           })),
-          mode: mode ?? 'room',
+          mode: mode === 'quick' || mode === 'room' ? mode : 'room',
           movePreset: preset ?? null,
           onboardingDismissed: true,
         });
@@ -235,6 +249,25 @@ export const useCalculatorStore = create<CalculatorState>()(
         onboardingDismissed: state.onboardingDismissed,
         selectedRoom: state.selectedRoom,
       }),
+      merge: (persisted, current) => {
+        const p = (persisted ?? {}) as Partial<CalculatorState>;
+        const inventory = Array.isArray(p.inventory)
+          ? p.inventory.filter(
+              (item) =>
+                item &&
+                typeof item === 'object' &&
+                typeof (item as InventoryItem).name === 'string' &&
+                typeof (item as InventoryItem).id === 'string'
+            )
+          : current.inventory;
+        return {
+          ...current,
+          ...p,
+          inventory,
+          mode: p.mode === 'quick' || p.mode === 'room' ? p.mode : current.mode,
+          undoStack: [],
+        };
+      },
     }
   )
 );

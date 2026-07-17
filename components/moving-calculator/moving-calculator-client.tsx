@@ -22,16 +22,21 @@ import {
   decodeShareParam,
   getShareParamFromUrl,
 } from '@/lib/moving-calculator/share-url';
+import { readCalculatorPrefill } from '@/lib/moving-calculator/url-prefill';
 import {
   trackCalculatorStart,
   trackCalculatorComplete,
 } from '@/components/ga-events';
 
+function asInventory(value: unknown): InventoryItem[] {
+  return Array.isArray(value) ? (value as InventoryItem[]) : [];
+}
+
 export function MovingCalculatorClient() {
   const searchParams = useSearchParams();
   const {
     mode,
-    inventory,
+    inventory: rawInventory,
     movePreset,
     updateQuantity,
     removeItem,
@@ -42,28 +47,40 @@ export function MovingCalculatorClient() {
     undo,
   } = useCalculatorStore();
 
+  const inventory = asInventory(rawInventory);
+
   const [mobileBasketOpen, setMobileBasketOpen] = useState(false);
+  const [storeReady, setStoreReady] = useState(false);
   const calculatorStarted = useRef(false);
   const calculatorCompleted = useRef(false);
   const savedLoadDone = useRef(false);
   const shareLoaded = useRef(false);
   const presetFromUrlLoaded = useRef(false);
 
-  const fromZip = searchParams.get('fromZip') || '';
-  const toZip = searchParams.get('toZip') || '';
-  const fromCity = searchParams.get('fromCity') || '';
-  const toCity = searchParams.get('toCity') || '';
+  const prefill = useMemo(
+    () => readCalculatorPrefill(searchParams),
+    [searchParams]
+  );
+  const { fromZip, toZip, fromCity, toCity, preset: urlPreset } = prefill;
 
   const totalVolume = useMemo(
-    () => inventory.reduce((sum, item) => sum + item.volume * item.quantity, 0),
+    () =>
+      inventory.reduce(
+        (sum, item) =>
+          sum + (Number(item.volume) || 0) * (Number(item.quantity) || 0),
+        0
+      ),
     [inventory]
   );
   const totalItems = useMemo(
-    () => inventory.reduce((sum, item) => sum + item.quantity, 0),
+    () => inventory.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0),
     [inventory]
   );
   const totalWeight = useMemo(() => estimateWeight(totalVolume), [totalVolume]);
-  const recommendation = useMemo(() => getMoveRecommendation(totalVolume), [totalVolume]);
+  const recommendation = useMemo(
+    () => getMoveRecommendation(totalVolume),
+    [totalVolume]
+  );
 
   const groupedByRoom = useMemo(() => {
     const groups: Record<string, InventoryItem[]> = {};
@@ -79,99 +96,154 @@ export function MovingCalculatorClient() {
     (interaction: string) => {
       if (calculatorStarted.current) return;
       calculatorStarted.current = true;
-      trackCalculatorStart({ interaction, mode });
+      try {
+        trackCalculatorStart({ interaction, mode });
+      } catch {
+        // analytics must never break the calculator
+      }
     },
     [mode]
   );
 
   const showUndoToast = useCallback(
     (message: string) => {
-      toast.success(message, {
-        action: { label: 'Undo', onClick: () => undo() },
-      });
+      try {
+        toast.success(message, {
+          action: { label: 'Undo', onClick: () => undo() },
+        });
+      } catch {
+        // ignore toast failures
+      }
     },
     [undo]
   );
 
+  // Wait for Zustand persist rehydration before applying URL / share loads
+  useEffect(() => {
+    const api = useCalculatorStore.persist;
+    if (api?.hasHydrated?.()) {
+      setStoreReady(true);
+      return;
+    }
+    const unsub = api?.onFinishHydration?.(() => setStoreReady(true));
+    // Fallback if persist API is missing or already hydrated without callback
+    const t = window.setTimeout(() => setStoreReady(true), 0);
+    return () => {
+      unsub?.();
+      window.clearTimeout(t);
+    };
+  }, []);
+
   // Load saved inventory from account (?load=id)
   useEffect(() => {
+    if (!storeReady) return;
     const loadId = searchParams.get('load');
     if (!loadId || savedLoadDone.current) return;
     savedLoadDone.current = true;
-    fetch(`/api/save-my-move/inventory/${loadId}`)
+    fetch(`/api/save-my-move/inventory/${encodeURIComponent(loadId)}`)
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        if (!data?.inventory) return;
+        if (!data?.inventory || !Array.isArray(data.inventory)) return;
         loadFromShare(
           data.inventory,
           data.mode ?? 'room',
           data.move_preset ?? null
         );
-        toast.success(`Loaded "${data.name}"`, {
-          description: 'Adjust quantities or add items as needed.',
-        });
+        try {
+          toast.success(`Loaded "${data.name || 'inventory'}"`, {
+            description: 'Adjust quantities or add items as needed.',
+          });
+        } catch {
+          // ignore
+        }
         markCalculatorStarted('saved_inventory');
       })
-      .catch(() => {});
-  }, [searchParams, loadFromShare, markCalculatorStarted]);
+      .catch(() => {
+        // keep page usable if saved inventory fails
+      });
+  }, [storeReady, searchParams, loadFromShare, markCalculatorStarted]);
 
   // Load shared inventory from URL (?inv=)
   useEffect(() => {
+    if (!storeReady) return;
     if (savedLoadDone.current || shareLoaded.current) return;
-    const param = getShareParamFromUrl(searchParams.toString());
-    if (!param) return;
-    const shared = decodeShareParam(param);
-    if (!shared) return;
-    shareLoaded.current = true;
-    loadFromShare(
-      shared.inventory,
-      shared.mode,
-      shared.preset as Parameters<typeof loadFromShare>[2]
-    );
-    toast.success('Shared inventory loaded', {
-      description: 'Adjust quantities or add items as needed.',
-    });
-    markCalculatorStarted('share_link');
-  }, [searchParams, loadFromShare, markCalculatorStarted]);
+    try {
+      const param = getShareParamFromUrl(searchParams.toString());
+      if (!param) return;
+      const shared = decodeShareParam(param);
+      if (!shared?.inventory?.length) return;
+      shareLoaded.current = true;
+      loadFromShare(
+        shared.inventory,
+        shared.mode,
+        shared.preset as Parameters<typeof loadFromShare>[2]
+      );
+      try {
+        toast.success('Shared inventory loaded', {
+          description: 'Adjust quantities or add items as needed.',
+        });
+      } catch {
+        // ignore
+      }
+      markCalculatorStarted('share_link');
+    } catch {
+      // malformed share param — ignore and show empty calculator
+    }
+  }, [storeReady, searchParams, loadFromShare, markCalculatorStarted]);
 
-  // Homepage route flow: ?preset=studio|1-bedroom|… pre-selects move size
+  // Homepage route flow: ?preset=… pre-selects move size
   useEffect(() => {
-    if (savedLoadDone.current || shareLoaded.current || presetFromUrlLoaded.current) return;
-    const raw = searchParams.get('preset');
-    if (!raw) return;
-    const allowed = new Set([
-      'studio',
-      '1-bedroom',
-      '2-bedroom',
-      '3-bedroom',
-      '4-plus',
-      'custom',
-      'scratch',
-    ]);
-    if (!allowed.has(raw)) return;
+    if (!storeReady) return;
+    if (savedLoadDone.current || shareLoaded.current || presetFromUrlLoaded.current) {
+      return;
+    }
+    if (!urlPreset) return;
+
     presetFromUrlLoaded.current = true;
-    loadPreset(raw as Parameters<typeof loadPreset>[0]);
-    markCalculatorStarted('homepage_preset');
-    toast.success('Move size loaded from your route', {
-      description: fromZip
-        ? `Route ${fromZip}${toZip ? ` → ${toZip}` : ''} · adjust inventory anytime.`
-        : 'Fine-tune quantities anytime.',
-    });
-  }, [searchParams, loadPreset, markCalculatorStarted, fromZip, toZip]);
+    try {
+      loadPreset(urlPreset);
+      markCalculatorStarted('homepage_preset');
+      try {
+        toast.success('Move size loaded from your route', {
+          description: fromZip
+            ? `Route ${fromZip}${toZip ? ` → ${toZip}` : ''} · adjust inventory anytime.`
+            : 'Fine-tune quantities anytime.',
+        });
+      } catch {
+        // ignore toast failures
+      }
+    } catch {
+      // preset load failed — leave calculator empty/usable
+      presetFromUrlLoaded.current = false;
+    }
+  }, [
+    storeReady,
+    urlPreset,
+    loadPreset,
+    markCalculatorStarted,
+    fromZip,
+    toZip,
+  ]);
 
   // Track completion milestone
   useEffect(() => {
     if (totalVolume <= 0 || totalItems <= 0 || calculatorCompleted.current) return;
     calculatorCompleted.current = true;
-    trackCalculatorComplete({
-      volume: Math.round(totalVolume),
-      weight: totalWeight,
-      truck_size: recommendation.truck,
-      move_size: recommendation.label,
-      item_count: totalItems,
-      mode,
-    });
+    try {
+      trackCalculatorComplete({
+        volume: Math.round(totalVolume),
+        weight: totalWeight,
+        truck_size: recommendation.truck,
+        move_size: recommendation.label,
+        item_count: totalItems,
+        mode,
+      });
+    } catch {
+      // ignore
+    }
   }, [totalVolume, totalItems, totalWeight, recommendation, mode]);
+
+  const showRouteBanner = Boolean(fromZip || toZip || fromCity || toCity);
 
   return (
     <div className="w-full">
@@ -184,7 +256,7 @@ export function MovingCalculatorClient() {
         <TrustBadges variant="compact" className="text-xs" />
       </div>
 
-      {fromZip || toZip ? (
+      {showRouteBanner ? (
         <div className="mb-5 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
           <span className="font-semibold text-foreground">Your route: </span>
           <span className="text-muted-foreground">

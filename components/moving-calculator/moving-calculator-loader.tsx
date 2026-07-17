@@ -1,21 +1,26 @@
 'use client';
 
 import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
+import { ErrorBoundary } from '@/components/error-boundary';
 import { CalculatorSkeleton } from '@/components/moving-calculator/calculator-skeleton';
+import { MovingCalculatorClient } from '@/components/moving-calculator/moving-calculator-client';
 
-const MovingCalculatorClient = dynamic(
-  () =>
-    import('@/components/moving-calculator/moving-calculator-client').then(
-      (m) => m.MovingCalculatorClient
-    ),
-  { ssr: false, loading: () => <CalculatorSkeleton /> }
-);
-
+/**
+ * Calculator is client-only (Zustand + useSearchParams).
+ * Avoid next/dynamic({ ssr: false }) here — soft navigations with homepage
+ * prefill query params were resolving broken chunk URLs (*.undefined.js).
+ */
 export function MovingCalculatorLoader() {
   return (
-    <Suspense fallback={<CalculatorSkeleton />}>
-      <MovingCalculatorClient />
-    </Suspense>
+    <ErrorBoundary
+      fallbackTitle="Unable to load the moving calculator"
+      onRetry={() => {
+        if (typeof window !== 'undefined') window.location.reload();
+      }}
+    >
+      <Suspense fallback={<CalculatorSkeleton />}>
+        <MovingCalculatorClient />
+      </Suspense>
+    </ErrorBoundary>
   );
 }

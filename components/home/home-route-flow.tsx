@@ -19,6 +19,7 @@ import { StarRating } from '@/components/ui/star-rating';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import type { MovePresetId } from '@/lib/moving-calculator/move-presets';
+import { navigateToCalculator } from '@/lib/moving-calculator/url-prefill';
 import { cn } from '@/lib/utils';
 import type { HomeRouteMover, HomeRouteResult } from '@/lib/home/resolve-route-from-zip';
 import type { Company } from '@/types';
@@ -164,6 +165,11 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
   const fromId = useId();
   const toId = useId();
 
+  /** Hard-nav to calculator so homepage prefill query params never hit broken SPA chunk loads. */
+  const goCalculator = useCallback((href: string) => {
+    navigateToCalculator(href);
+  }, []);
+
   const [fromZip, setFromZip] = useState('');
   const [toZip, setToZip] = useState('');
   const [fromPlace, setFromPlace] = useState<ZipPlaceLabel | null>(null);
@@ -307,7 +313,7 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
   const goEstimate = () => {
     setShowPresets(true);
     if (selectedPreset) {
-      router.push(calculatorHref);
+      goCalculator(calculatorHref);
     }
   };
 
@@ -315,7 +321,7 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
     setSelectedPreset(id);
     const url = new URL(route?.calculatorHref || '/moving-calculator', 'https://www.movetrusthub.com');
     url.searchParams.set('preset', id);
-    router.push(`${url.pathname}?${url.searchParams.toString()}`);
+    goCalculator(`${url.pathname}?${url.searchParams.toString()}`);
   };
 
   return (
@@ -451,13 +457,17 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
                 </button>
               ))}
             </div>
-            <Link
+            <a
               href={calculatorHref}
+              onClick={(e) => {
+                e.preventDefault();
+                goCalculator(calculatorHref);
+              }}
               className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
             >
               Continue to full calculator
               <ChevronRight className="h-4 w-4" aria-hidden />
-            </Link>
+            </a>
           </div>
         )}
       </div>
@@ -545,24 +555,49 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
             href: '/compare',
             icon: Truck,
           },
-        ].map((step) => (
-          <Link
-            key={step.n}
-            href={step.href}
-            className="group relative overflow-hidden rounded-2xl border bg-gradient-to-br from-white to-muted/40 p-5 transition-all hover:border-primary/40 hover:shadow-md"
-          >
-            <div className="mb-3 flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground shadow-sm">
-                {step.n}
-              </span>
-              <step.icon className="h-5 w-5 text-primary" aria-hidden />
-            </div>
-            <h3 className="font-semibold tracking-tight group-hover:text-primary">
-              {step.title}
-            </h3>
-            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
-          </Link>
-        ))}
+        ].map((step) => {
+          const isCalculator =
+            step.href.startsWith('/moving-calculator') ||
+            step.href.includes('moving-calculator?');
+          const className =
+            'group relative overflow-hidden rounded-2xl border bg-gradient-to-br from-white to-muted/40 p-5 transition-all hover:border-primary/40 hover:shadow-md';
+          const body = (
+            <>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground shadow-sm">
+                  {step.n}
+                </span>
+                <step.icon className="h-5 w-5 text-primary" aria-hidden />
+              </div>
+              <h3 className="font-semibold tracking-tight group-hover:text-primary">
+                {step.title}
+              </h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                {step.desc}
+              </p>
+            </>
+          );
+          if (isCalculator) {
+            return (
+              <a
+                key={step.n}
+                href={step.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goCalculator(step.href);
+                }}
+                className={className}
+              >
+                {body}
+              </a>
+            );
+          }
+          return (
+            <Link key={step.n} href={step.href} className={className}>
+              {body}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
