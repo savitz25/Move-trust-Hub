@@ -5,9 +5,13 @@ import type { Company } from '@/types';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { createClientLoader } from '@/lib/performance/create-client-loader';
 import type { DirectorySearchScope } from '@/lib/directory/search-scope';
+import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
 
 type DirectoryClientProps = {
   initialCompanies: Company[];
+  /** Total matches for the SSR query; defaults to initialCompanies.length. */
+  initialTotal?: number;
+  pageSize?: number;
   sourcePage?: string;
   scope?: DirectorySearchScope;
 };
@@ -24,12 +28,20 @@ const DirectoryClient = createClientLoader<DirectoryClientProps>(
   'DirectoryClient',
   {
     loading: () => <DirectorySkeleton />,
-  },
+  }
 );
 
 type LoaderProps = DirectoryClientProps;
 
-export function DirectoryLoader({ initialCompanies, sourcePage, scope }: LoaderProps) {
+export function DirectoryLoader({
+  initialCompanies,
+  initialTotal,
+  pageSize = DIRECTORY_PAGE_SIZE,
+  sourcePage,
+  scope,
+}: LoaderProps) {
+  const total = initialTotal ?? initialCompanies.length;
+
   return (
     <ErrorBoundary
       fallbackTitle="Unable to load the company directory"
@@ -38,6 +50,8 @@ export function DirectoryLoader({ initialCompanies, sourcePage, scope }: LoaderP
       <Suspense fallback={<DirectorySkeleton />}>
         <DirectoryClient
           initialCompanies={initialCompanies}
+          initialTotal={total}
+          pageSize={pageSize}
           sourcePage={sourcePage}
           scope={scope}
         />

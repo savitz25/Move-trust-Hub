@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Company, DirectoryFilters, SortOption, ServiceType } from '@/types';
-import { filterCompanies } from '@/lib/directory/filter-companies';
+import { buildDirectoryApiQuery } from '@/lib/directory/build-directory-api-query';
+import { DIRECTORY_PAGE_SIZE } from '@/lib/directory/page-size';
 import type { DirectorySearchScope } from '@/lib/directory/search-scope';
 import { useCompareStore } from '@/store/compare-store';
 import { Card } from '@/components/ui/card';
@@ -13,7 +14,7 @@ import { Badge } from '@/components/ui/badge';
 import { StarRating } from '@/components/ui/star-rating';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Filter, Loader2, X } from 'lucide-react';
+import { ChevronDown, Filter, Loader2, X } from 'lucide-react';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { CompanyCard } from '@/components/directory/company-card';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
@@ -29,6 +30,7 @@ import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 
 const SEARCH_DEBOUNCE_MS = 350;
 const URL_SYNC_DEBOUNCE_MS = 450;
+const FILTER_FETCH_DEBOUNCE_MS = 280;
 const RESULTS_MIN_HEIGHT = 'min-h-[480px] md:min-h-[520px]';
 
 const SERVICE_OPTIONS: ServiceType[] = [
@@ -58,15 +60,29 @@ const COVERAGE_OPTIONS = ['Any', 'All 50 States', 'Continental US', 'East Coast'
 const BBB_OPTIONS = ['A+', 'A', 'A-', 'B+', 'B', 'B-'];
 
 interface Props {
+  /** First page of results (server-side offset 0). */
   initialCompanies: Company[];
+  /** Total matches for the SSR query (filtered when URL params present). */
+  initialTotal?: number;
+  pageSize?: number;
   sourcePage?: string;
   scope?: DirectorySearchScope;
 }
 
+type DirectoryPageResponse = {
+  companies: Company[];
+  total: number;
+  offset: number;
+  limit: number;
+  hasMore: boolean;
+};
+
 export function DirectoryClient({
   initialCompanies,
+  initialTotal = initialCompanies.length,
+  pageSize = DIRECTORY_PAGE_SIZE,
   sourcePage = '/companies',
-  scope,
+  scope: _scope,
 }: Props) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -83,29 +99,73 @@ export function DirectoryClient({
     coverage: (searchParams.get('coverage') as DirectoryFilters['coverage']) || 'Any',
     onlyFullService: searchParams.get('full') === 'true',
     onlyVerified: searchParams.get('verified') === 'true',
+    bbbMin: searchParams.get('bbbMin') || undefined,
   });
 
   const [showFilters, setShowFilters] = useState(true);
   const [view, setView] = useState<'grid' | 'table'>('grid');
-  const [selectedServices, setSelectedServices] = useState<ServiceType[]>([]);
+  const [selectedServices, setSelectedServices] = useState<ServiceType[]>(() => {
+    const raw = searchParams.get('services');
+    if (!raw) return [];
+    return raw
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean) as ServiceType[];
+  });
+
+  const [companies, setCompanies] = useState(() =>
+    normalizeCompaniesForDisplay(initialCompanies)
+  );
+  const [totalMatches, setTotalMatches] = useState(initialTotal);
+  const [hasMore, setHasMore] = useState(initialCompanies.length < initialTotal);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [loadingFilter, setLoadingFilter] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  const fetchSeq = useRef(0);
+  const skipInitialFilterFetch = useRef(true);
 
   const compareStore = useCompareStore();
   const selectedCount = compareStore.selectedSlugs.length;
 
-  const normalizedInitial = useMemo(
-    () => normalizeCompaniesForDisplay(initialCompanies),
-    [initialCompanies]
-  );
-
-  const companies = useMemo(
-    () =>
-      filterCompanies(normalizedInitial, {
-        ...filters,
+  const fetchPage = useCallback(
+    async (offset: number, limit: number, append: boolean) => {
+      const seq = ++fetchSeq.current;
+      const qs = buildDirectoryApiQuery({
+        offset,
+        limit,
+        filters,
         search: debouncedSearch,
         services: selectedServices,
-        scope,
-      }),
-    [normalizedInitial, filters, debouncedSearch, selectedServices, scope]
+      });
+
+      if (append) setLoadingMore(true);
+      else setLoadingFilter(true);
+      setLoadError(null);
+
+      try {
+        const res = await fetch(`/api/directory/companies?${qs}`, {
+          headers: { Accept: 'application/json' },
+        });
+        if (!res.ok) throw new Error('Could not load companies');
+        const data = (await res.json()) as DirectoryPageResponse;
+        if (seq !== fetchSeq.current) return;
+
+        const next = normalizeCompaniesForDisplay(data.companies ?? []);
+        setCompanies((prev) => (append ? [...prev, ...next] : next));
+        setTotalMatches(data.total ?? 0);
+        setHasMore(Boolean(data.hasMore));
+      } catch {
+        if (seq !== fetchSeq.current) return;
+        setLoadError('Could not load more companies. Please try again.');
+      } finally {
+        if (seq === fetchSeq.current) {
+          setLoadingMore(false);
+          setLoadingFilter(false);
+        }
+      }
+    },
+    [debouncedSearch, filters, selectedServices]
   );
 
   const parsedCarrierSearch = useMemo(() => {
@@ -117,12 +177,12 @@ export function DirectoryClient({
   const carrierNotInDirectory = useMemo(() => {
     if (!parsedCarrierSearch) return false;
     const norm = (v: string) => v.replace(/\D/g, '');
-    return !normalizedInitial.some((c) =>
+    return !companies.some((c) =>
       parsedCarrierSearch.type === 'DOT'
         ? norm(c.usdotNumber || '') === parsedCarrierSearch.value
         : norm(c.mcNumber || '') === parsedCarrierSearch.value
     );
-  }, [parsedCarrierSearch, normalizedInitial]);
+  }, [parsedCarrierSearch, companies]);
 
   useEffect(() => {
     if (searchInput === debouncedSearch) {
@@ -137,6 +197,18 @@ export function DirectoryClient({
     return () => window.clearTimeout(timer);
   }, [searchInput, debouncedSearch]);
 
+  // Re-fetch first page when filters/search change (skip mount — SSR seed is enough)
+  useEffect(() => {
+    if (skipInitialFilterFetch.current) {
+      skipInitialFilterFetch.current = false;
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      void fetchPage(0, pageSize, false);
+    }, FILTER_FETCH_DEBOUNCE_MS);
+    return () => window.clearTimeout(timer);
+  }, [debouncedSearch, filters, selectedServices, pageSize, fetchPage]);
+
   useEffect(() => {
     const timer = window.setTimeout(() => {
       const params = new URLSearchParams();
@@ -147,6 +219,8 @@ export function DirectoryClient({
       if (filters.coverage && filters.coverage !== 'Any') params.set('coverage', filters.coverage);
       if (filters.onlyFullService) params.set('full', 'true');
       if (filters.onlyVerified) params.set('verified', 'true');
+      if (filters.bbbMin) params.set('bbbMin', filters.bbbMin);
+      if (selectedServices.length) params.set('services', selectedServices.join(','));
 
       const nextQuery = params.toString();
       const currentQuery = searchParams.toString();
@@ -157,7 +231,7 @@ export function DirectoryClient({
 
     return () => window.clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only push URL when local filter state changes
-  }, [debouncedSearch, filters, router]);
+  }, [debouncedSearch, filters, selectedServices, router]);
 
   const updateFilter = <K extends keyof DirectoryFilters>(key: K, value: DirectoryFilters[K]) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
@@ -179,8 +253,21 @@ export function DirectoryClient({
       coverage: 'Any',
       onlyFullService: false,
       onlyVerified: false,
+      bbbMin: undefined,
     });
     setSelectedServices([]);
+  };
+
+  const loadNextPage = () => {
+    if (loadingMore || loadingFilter || !hasMore) return;
+    void fetchPage(companies.length, pageSize, true);
+  };
+
+  const showAll = () => {
+    if (loadingMore || loadingFilter || !hasMore) return;
+    const remaining = Math.max(totalMatches - companies.length, 0);
+    if (remaining <= 0) return;
+    void fetchPage(companies.length, remaining, true);
   };
 
   const activeFilterCount = [
@@ -191,10 +278,14 @@ export function DirectoryClient({
     filters.coverage !== 'Any',
     filters.onlyFullService,
     filters.onlyVerified,
+    Boolean(filters.bbbMin),
   ].filter(Boolean).length;
 
   const hasActiveFilters = activeFilterCount > 0;
-  const showEmptyState = companies.length === 0;
+  const showEmptyState = companies.length === 0 && !loadingFilter;
+  const showingFrom = totalMatches === 0 || companies.length === 0 ? 0 : 1;
+  const showingTo = companies.length;
+  const isBusy = loadingFilter || isSearchPending;
 
   return (
     <div>
@@ -388,22 +479,39 @@ export function DirectoryClient({
         </div>
       </div>
 
-      <div className="flex justify-between items-center mb-3 text-sm min-h-[1.25rem]">
-        <div aria-live="polite" aria-atomic="true">
-          {isSearchPending ? (
-            <span className="text-muted-foreground">Updating results…</span>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-3 text-sm min-h-[1.25rem]">
+        <div aria-live="polite" aria-atomic="true" className="text-muted-foreground">
+          {isBusy ? (
+            <span className="inline-flex items-center gap-1.5">
+              <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden />
+              Updating results…
+            </span>
+          ) : totalMatches === 0 ? (
+            <span>No companies match your criteria</span>
           ) : (
             <>
-              <span className="font-medium tabular-nums">{companies.length}</span> companies match
-              your criteria
+              Showing{' '}
+              <span className="font-medium text-foreground tabular-nums">
+                {showingFrom}–{showingTo}
+              </span>{' '}
+              of{' '}
+              <span className="font-medium text-foreground tabular-nums">{totalMatches}</span>{' '}
+              {totalMatches === 1 ? 'company' : 'companies'}
             </>
           )}
         </div>
-        <div className="text-muted-foreground hidden sm:block">Click row or card to view full profile</div>
+        <div className="text-muted-foreground hidden sm:block">
+          Click row or card to view full profile
+        </div>
       </div>
 
-      <div className={`relative ${RESULTS_MIN_HEIGHT}`} aria-busy={isSearchPending}>
-        {showEmptyState ? (
+      <div className={`relative ${RESULTS_MIN_HEIGHT}`} aria-busy={isBusy}>
+        {loadingFilter && companies.length === 0 ? (
+          <div
+            className="h-[480px] rounded-xl border bg-muted/30 animate-pulse"
+            aria-hidden
+          />
+        ) : showEmptyState ? (
           <DirectoryEmptyState
             searchTerm={debouncedSearch}
             hasActiveFilters={hasActiveFilters}
@@ -441,7 +549,10 @@ export function DirectoryClient({
               <tbody>
                 {companies.map((c) => {
                   const shipments = Math.max(Number(c.fmcsaShipments) || 0, 1);
-                  const ratio = ((Number(c.fmcsaComplaints) || 0) / shipments * 1000).toFixed(1);
+                  const ratio = (
+                    ((Number(c.fmcsaComplaints) || 0) / shipments) *
+                    1000
+                  ).toFixed(1);
                   const selected = compareStore.isSelected(c.slug);
                   const profileHref = sourcePage
                     ? buildCompanyProfileHref(c.slug, sourcePage)
@@ -497,6 +608,51 @@ export function DirectoryClient({
             </table>
           </div>
         )}
+
+        {loadError ? (
+          <p className="mt-4 text-center text-sm text-destructive" role="alert">
+            {loadError}
+          </p>
+        ) : null}
+
+        {!showEmptyState && hasMore ? (
+          <div className="mt-10 flex flex-col items-center gap-3 border-t pt-8">
+            <Button
+              type="button"
+              size="lg"
+              className="h-12 min-w-[min(100%,20rem)] px-8 text-base font-semibold shadow-sm"
+              disabled={loadingMore || loadingFilter}
+              onClick={loadNextPage}
+            >
+              {loadingMore ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                  Loading…
+                </>
+              ) : (
+                <>
+                  Show the next {pageSize} companies
+                  <ChevronDown className="ml-2 h-4 w-4" aria-hidden />
+                </>
+              )}
+            </Button>
+            <button
+              type="button"
+              className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline disabled:opacity-50"
+              disabled={loadingMore || loadingFilter}
+              onClick={showAll}
+            >
+              Show all remaining ({Math.max(totalMatches - companies.length, 0)})
+            </button>
+          </div>
+        ) : null}
+
+        {!showEmptyState && !hasMore && totalMatches > pageSize ? (
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            You&apos;ve reached the end of the directory
+            {hasActiveFilters ? ' for these filters' : ''}.
+          </p>
+        ) : null}
       </div>
     </div>
   );
