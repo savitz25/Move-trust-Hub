@@ -12,12 +12,17 @@ export async function GET(request: Request) {
   const oauthError = searchParams.get('error');
   const errorDescription = searchParams.get('error_description');
 
+  const failPath =
+    next.startsWith('/portal')
+      ? `/portal/login?auth=error&next=${encodeURIComponent(next)}`
+      : '/my-move?auth=error';
+
   if (oauthError) {
     console.error('[auth/callback] OAuth provider error', {
       error: oauthError,
       description: errorDescription,
     });
-    return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error', request));
+    return NextResponse.redirect(productionAuthRedirect(failPath, request));
   }
 
   if (code) {
@@ -34,11 +39,12 @@ export async function GET(request: Request) {
           console.error('[auth/callback] ensureUserProfile failed', profileErr);
         }
       }
+      // Portal destinations: MFA / optional password; others (e.g. /my-move) pass through.
       const destination = await portalPathAfterAuth(next);
       return NextResponse.redirect(productionAuthRedirect(destination, request));
     }
     console.error('[auth/callback] exchangeCodeForSession failed', error.message);
   }
 
-  return NextResponse.redirect(productionAuthRedirect('/my-move?auth=error', request));
+  return NextResponse.redirect(productionAuthRedirect(failPath, request));
 }

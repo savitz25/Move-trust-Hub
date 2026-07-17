@@ -3,17 +3,29 @@ import { PortalLoginForm } from '@/components/portal/portal-login-form';
 import { PORTAL_NAME, PORTAL_TAGLINE } from '@/lib/portal/messaging';
 import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 
+function portalLoginErrorMessage(params: {
+  auth?: string;
+  reason?: string;
+}): string | null {
+  if (params.auth !== 'error') return null;
+  const reason = params.reason?.toLowerCase() ?? '';
+  if (reason.includes('not_configured') || reason.includes('provider')) {
+    return 'Google sign-in is not available right now. Use a magic link or password, or try again later.';
+  }
+  if (reason.includes('google') || reason.includes('oauth')) {
+    return 'Google sign-in did not complete. Try again, or use a magic link or password instead.';
+  }
+  return 'That sign-in attempt failed or expired. Try Google again, or request a new magic link below.';
+}
+
 export default async function PortalLoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ next?: string; auth?: string }>;
+  searchParams: Promise<{ next?: string; auth?: string; reason?: string }>;
 }) {
   const params = await searchParams;
   const next = sanitizePostLoginPath(params.next ?? '/portal');
-  const initialError =
-    params.auth === 'error'
-      ? 'That sign-in link is invalid or expired. Request a new magic link below.'
-      : null;
+  const initialError = portalLoginErrorMessage(params);
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-lg">

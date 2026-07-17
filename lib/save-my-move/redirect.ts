@@ -34,16 +34,36 @@ export function productionAuthRedirect(path: string, request?: Request): string 
   return `${PRODUCTION_SITE_ORIGIN}${safePath}`;
 }
 
+/** Auth callback URL with optional post-login `next` path (portal, my-move, etc.). */
+export function authCallbackUrlWithNext(nextPath?: string | null): string {
+  const next = sanitizePostLoginPath(nextPath);
+  return `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(next)}`;
+}
+
 /**
  * Force redirect_to / emailRedirectTo to the production callback.
  * Supabase may substitute Site URL (e.g. localhost:3000) when allowlist is wrong.
+ * Preserves `next` when present so portal OAuth still lands on /portal.
  */
 export function ensureProductionOAuthUrl(oauthUrl: string): string {
   try {
     const parsed = new URL(oauthUrl);
     const redirectTo = parsed.searchParams.get('redirect_to');
     if (!redirectTo || isLocalAuthUrl(redirectTo)) {
-      parsed.searchParams.set('redirect_to', AUTH_CALLBACK_URL);
+      let nextFromRedirect: string | null = null;
+      if (redirectTo) {
+        try {
+          nextFromRedirect = new URL(redirectTo).searchParams.get('next');
+        } catch {
+          nextFromRedirect = null;
+        }
+      }
+      parsed.searchParams.set(
+        'redirect_to',
+        nextFromRedirect
+          ? authCallbackUrlWithNext(nextFromRedirect)
+          : AUTH_CALLBACK_URL
+      );
     }
     return parsed.toString();
   } catch {

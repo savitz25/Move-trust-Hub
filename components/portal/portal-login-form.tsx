@@ -4,6 +4,7 @@ import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import { resolvePortalContinuePathAction } from '@/actions/portal-password';
+import { PortalGoogleSignIn } from '@/components/portal/portal-google-sign-in';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -104,9 +105,21 @@ export function PortalLoginForm({
     <Card className="p-6 max-w-md">
       <h2 className="text-lg font-semibold">Portal sign-in</h2>
       <p className="mt-1 text-sm text-muted-foreground">
-        Use the same email you used to claim your company. Magic links always work. Password is
-        optional if you created one. 2FA may ask for an authenticator code next.
+        Use the same email you used to claim your company. Sign in with Google, a magic link, or
+        an optional password. 2FA may ask for an authenticator code next.
       </p>
+
+      <div className="mt-5 space-y-3">
+        <PortalGoogleSignIn next={next} disabled={pending} />
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center" aria-hidden>
+            <div className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-card px-2 text-muted-foreground">or continue with email</span>
+          </div>
+        </div>
+      </div>
 
       <div className="mt-4 flex rounded-lg border p-1 bg-muted/40" role="tablist">
         <button

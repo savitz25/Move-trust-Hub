@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
-import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
+import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 import {
   oauthErrorRedirect,
   startOAuthSignIn,
@@ -8,12 +8,16 @@ import {
 
 /**
  * Server-side Google OAuth kickoff — single source of truth for redirectTo.
+ * Optional `?next=` controls post-login destination (portal vs Save My Move).
  * Provider availability is determined by signInWithOAuth, not the settings API.
  */
 export async function GET(request: Request) {
+  const url = new URL(request.url);
+  const next = sanitizePostLoginPath(url.searchParams.get('next'));
+
   if (!isSupabaseConfigured()) {
     return NextResponse.redirect(
-      productionAuthRedirect('/my-move?auth=error&reason=not_configured', request)
+      oauthErrorRedirect('not_configured', request, { next })
     );
   }
 
@@ -21,10 +25,13 @@ export async function GET(request: Request) {
     provider: 'google',
     scopes: 'email profile',
     queryParams: { prompt: 'select_account' },
+    nextPath: next,
   });
 
   if (!result.ok) {
-    return NextResponse.redirect(oauthErrorRedirect(result.reason, request));
+    return NextResponse.redirect(
+      oauthErrorRedirect(result.reason, request, { next })
+    );
   }
 
   return NextResponse.redirect(result.redirectUrl);
