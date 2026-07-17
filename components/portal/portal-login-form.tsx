@@ -1,10 +1,16 @@
 'use client';
 
 import { useState, useTransition } from 'react';
+import { useRouter } from 'next/navigation';
+import { createBrowserSupabaseClient } from '@/lib/supabase/client';
+import { resolvePortalContinuePathAction } from '@/actions/portal-password';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
+
+type Mode = 'magic' | 'password';
 
 export function PortalLoginForm({
   next = '/portal',
@@ -13,11 +19,13 @@ export function PortalLoginForm({
   next?: string;
   initialError?: string | null;
 }) {
+  const router = useRouter();
+  const [mode, setMode] = useState<Mode>('magic');
   const [pending, startTransition] = useTransition();
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(initialError);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onMagicLink(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setMessage(null);
     setError(null);
@@ -54,37 +62,151 @@ export function PortalLoginForm({
     });
   }
 
+  function onPassword(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setMessage(null);
+    setError(null);
+    const form = new FormData(e.currentTarget);
+    const email = String(form.get('email') ?? '')
+      .trim()
+      .toLowerCase();
+    const password = String(form.get('password') ?? '');
+
+    startTransition(async () => {
+      try {
+        const supabase = createBrowserSupabaseClient();
+        if (!supabase) {
+          setError('Authentication is not configured.');
+          return;
+        }
+        const { error: signErr } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        if (signErr) {
+          setError(
+            signErr.message.includes('Invalid login')
+              ? 'Incorrect email or password. Try magic link if you have not set a password.'
+              : signErr.message
+          );
+          return;
+        }
+        const { path } = await resolvePortalContinuePathAction(next);
+        router.replace(path);
+        router.refresh();
+      } catch {
+        setError('Sign-in failed. Check your connection and try again.');
+      }
+    });
+  }
+
   return (
     <Card className="p-6 max-w-md">
       <h2 className="text-lg font-semibold">Portal sign-in</h2>
       <p className="mt-1 text-sm text-muted-foreground">
-        Use the same email you used to claim your company. No password — magic link only. If you
-        enabled 2FA, you will enter an authenticator code after the link.
+        Use the same email you used to claim your company. Magic links always work. Password is
+        optional if you created one. 2FA may ask for an authenticator code next.
       </p>
-      <form onSubmit={onSubmit} className="mt-4 space-y-3">
-        <div className="space-y-1.5">
-          <Label htmlFor="portal-email">Email</Label>
-          <Input
-            id="portal-email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder="you@yourmovingcompany.com"
-          />
-        </div>
-        {error ? (
-          <p className="text-sm text-destructive" role="alert">
-            {error}
+
+      <div className="mt-4 flex rounded-lg border p-1 bg-muted/40" role="tablist">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mode === 'magic'}
+          className={cn(
+            'flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+            mode === 'magic' ? 'bg-background shadow-sm' : 'text-muted-foreground'
+          )}
+          onClick={() => {
+            setMode('magic');
+            setError(null);
+            setMessage(null);
+          }}
+        >
+          Magic link
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mode === 'password'}
+          className={cn(
+            'flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+            mode === 'password' ? 'bg-background shadow-sm' : 'text-muted-foreground'
+          )}
+          onClick={() => {
+            setMode('password');
+            setError(null);
+            setMessage(null);
+          }}
+        >
+          Password
+        </button>
+      </div>
+
+      {mode === 'magic' ? (
+        <form onSubmit={onMagicLink} className="mt-4 space-y-3">
+          <div className="space-y-1.5">
+            <Label htmlFor="portal-email">Email</Label>
+            <Input
+              id="portal-email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder="you@yourmovingcompany.com"
+            />
+          </div>
+          {error ? (
+            <p className="text-sm text-destructive" role="alert">
+              {error}
+            </p>
+          ) : null}
+          {message ? <p className="text-sm text-emerald-700">{message}</p> : null}
+          <Button type="submit" disabled={pending} className="w-full">
+            {pending ? 'Sending…' : 'Email me a magic link'}
+          </Button>
+        </form>
+      ) : (
+        <form onSubmit={onPassword} className="mt-4 space-y-3">
+          <div className="space-y-1.5">
+            <Label htmlFor="portal-email-pw">Email</Label>
+            <Input
+              id="portal-email-pw"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder="you@yourmovingcompany.com"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="portal-password">Password</Label>
+            <Input
+              id="portal-password"
+              name="password"
+              type="password"
+              required
+              autoComplete="current-password"
+              placeholder="Your portal password"
+            />
+          </div>
+          {error ? (
+            <p className="text-sm text-destructive" role="alert">
+              {error}
+            </p>
+          ) : null}
+          <Button type="submit" disabled={pending} className="w-full">
+            {pending ? 'Signing in…' : 'Sign in with password'}
+          </Button>
+          <p className="text-xs text-muted-foreground">
+            No password yet? Use the magic link tab — you can create a password after sign-in.
           </p>
-        ) : null}
-        {message ? <p className="text-sm text-emerald-700">{message}</p> : null}
-        <Button type="submit" disabled={pending} className="w-full">
-          {pending ? 'Sending…' : 'Email me a magic link'}
-        </Button>
-      </form>
+        </form>
+      )}
+
       <p className="mt-3 text-xs text-muted-foreground">
-        Tip: check spam/junk if nothing arrives within a minute. Links expire for security.
+        Tip: check spam/junk if a magic link does not arrive within a minute. Links expire for
+        security.
       </p>
     </Card>
   );

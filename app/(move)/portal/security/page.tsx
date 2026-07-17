@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { requirePortalSession, getPortalMfaStatus } from '@/lib/portal/mfa';
+import { getPortalPasswordStatus } from '@/lib/portal/password';
 import { getActiveOwnersForUser } from '@/lib/portal/ownership';
 import { PortalShell } from '@/components/portal/portal-shell';
 import { PortalMfaManager } from '@/components/portal/portal-mfa-manager';
+import { PortalPasswordManager } from '@/components/portal/portal-password-manager';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,6 +27,7 @@ export default async function PortalSecurityPage({
     redirect('/portal/mfa?next=%2Fportal%2Fsecurity');
   }
 
+  const passwordStatus = await getPortalPasswordStatus();
   const owners = await getActiveOwnersForUser(session.userId);
 
   return (
@@ -38,17 +41,21 @@ export default async function PortalSecurityPage({
         </Link>
         <h2 className="mt-3 text-xl font-semibold">Security</h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Manage two-factor authentication for your Verified Mover Portal account (
+          Password and two-factor authentication for your Verified Mover Portal account (
           {session.email ?? 'signed in'}).
         </p>
       </div>
 
-      <PortalMfaManager
-        initiallyEnabled={status?.enabled ?? false}
-        factorFriendlyName={status?.factorFriendlyName ?? null}
-        backupCodesRemaining={status?.backupCodesRemaining ?? 0}
-        showRecoveredBanner={params.recovered === '1'}
-      />
+      <div className="space-y-6">
+        <PortalPasswordManager passwordEnabled={passwordStatus?.passwordEnabled ?? false} />
+
+        <PortalMfaManager
+          initiallyEnabled={status?.enabled ?? false}
+          factorFriendlyName={status?.factorFriendlyName ?? null}
+          backupCodesRemaining={status?.backupCodesRemaining ?? 0}
+          showRecoveredBanner={params.recovered === '1'}
+        />
+      </div>
     </PortalShell>
   );
 }

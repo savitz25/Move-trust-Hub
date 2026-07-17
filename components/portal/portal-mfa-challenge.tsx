@@ -4,6 +4,7 @@ import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import { recoverPortalMfaWithBackupCodeAction } from '@/actions/portal-mfa';
+import { resolvePortalContinuePathAction } from '@/actions/portal-password';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -70,7 +71,9 @@ export function PortalMfaChallenge({ nextPath, factorId: initialFactorId }: Prop
           return;
         }
 
-        router.replace(nextPath);
+        // May offer optional password setup after first full verification
+        const { path } = await resolvePortalContinuePathAction(nextPath);
+        router.replace(path);
         router.refresh();
       } catch {
         setError('Verification failed. Check your connection and try again.');

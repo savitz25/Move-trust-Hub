@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
+import { getPortalPasswordStatus } from '@/lib/portal/password';
 
 export type PortalMfaStatus = {
   enabled: boolean;
@@ -79,8 +80,12 @@ export async function portalPathAfterAuth(nextPath: string): Promise<string> {
   const next = sanitizePostLoginPath(nextPath);
   if (!next.startsWith('/portal')) return next;
 
-  // Never bounce the MFA page itself
-  if (next.startsWith('/portal/mfa') || next.startsWith('/portal/login')) {
+  // Never bounce intermediate auth steps onto themselves
+  if (
+    next.startsWith('/portal/mfa') ||
+    next.startsWith('/portal/login') ||
+    next.startsWith('/portal/create-password')
+  ) {
     return next;
   }
 
@@ -96,6 +101,17 @@ export async function portalPathAfterAuth(nextPath: string): Promise<string> {
       return `/portal/mfa?next=${encodeURIComponent(next)}`;
     }
   }
+
+  // After first verification (magic link / MFA), optionally offer password setup
+  try {
+    const pw = await getPortalPasswordStatus();
+    if (pw?.shouldOfferCreatePassword) {
+      return `/portal/create-password?next=${encodeURIComponent(next)}`;
+    }
+  } catch {
+    // continue to destination
+  }
+
   return next;
 }
 

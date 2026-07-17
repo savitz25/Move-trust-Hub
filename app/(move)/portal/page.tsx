@@ -8,6 +8,7 @@ import {
 import { getClaimsForUser, linkClaimToUser } from '@/lib/portal/claims';
 import { getSyncCooldownState } from '@/lib/portal/reputation-sync';
 import { getPortalMfaStatus } from '@/lib/portal/mfa';
+import { getPortalPasswordStatus } from '@/lib/portal/password';
 import { PortalShell } from '@/components/portal/portal-shell';
 import { PortalLoginForm } from '@/components/portal/portal-login-form';
 import { ReputationSyncPanel } from '@/components/portal/reputation-sync-panel';
@@ -41,6 +42,11 @@ export default async function PortalDashboardPage() {
   const mfa = await getPortalMfaStatus();
   if (mfa?.needsChallenge) {
     redirect('/portal/mfa?next=%2Fportal');
+  }
+
+  const pw = await getPortalPasswordStatus();
+  if (pw?.shouldOfferCreatePassword) {
+    redirect('/portal/create-password?next=%2Fportal');
   }
 
   const owners = await getActiveOwnersForUser(user.id);
