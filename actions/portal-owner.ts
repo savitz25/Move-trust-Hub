@@ -127,11 +127,14 @@ export async function updateServiceAreaAction(
   const owner = await getOwnerByCompanySlug(user.id, companySlug);
   if (!owner) return { success: false as const, error: 'Not a verified owner of this company' };
 
+  const company = await getCompanyBySlugAsync(owner.company_slug);
+
   const result = await updateServiceArea({
     companyId: owner.company_id,
     companySlug: owner.company_slug,
     userId: user.id,
     input,
+    headquarters: company?.headquarters,
   });
 
   if (result.success) {

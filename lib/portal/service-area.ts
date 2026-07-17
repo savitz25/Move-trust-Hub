@@ -1,13 +1,47 @@
 import 'server-only';
 
+import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
 import { ensurePortalProfile } from '@/lib/portal/ownership';
 import { portalAdmin } from '@/lib/portal/db';
+import { isMissingRelationError } from '@/lib/portal/schema';
+import { propagateServiceAreaAssignments } from '@/lib/portal/service-area-propagate';
+import {
+  parseCountyStorageKey,
+  countyStorageKey,
+  stateCodeToSlug,
+} from '@/lib/portal/county-catalog';
 import type { ServiceAreaInput, ServiceAreaMode } from '@/lib/portal/types';
-import { revalidatePublishedCompany } from '@/lib/directory/revalidate-company';
 import { US_STATES } from '@/lib/portal/us-states';
+import { createAdminClient } from '@/lib/supabase/admin';
+import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
+import { localStates } from '@/lib/local-movers/states';
 
 function normalizeStates(states: string[]): string[] {
   return [...new Set(states.map((s) => s.trim().toUpperCase()).filter((s) => US_STATES.has(s)))];
+}
+
+function normalizeCountyKeys(counties: string[]): string[] {
+  const out = new Set<string>();
+  for (const raw of counties) {
+    const parsed = parseCountyStorageKey(raw);
+    if (parsed) {
+      out.add(countyStorageKey(parsed.stateSlug, parsed.countySlug));
+      continue;
+    }
+    // Allow "CODE/county-slug" from the editor
+    const slash = raw.indexOf('/');
+    if (slash > 0) {
+      const left = raw.slice(0, slash).trim();
+      const right = raw.slice(slash + 1).trim().toLowerCase();
+      if (US_STATES.has(left.toUpperCase())) {
+        const slug = stateCodeToSlug(left.toUpperCase());
+        if (slug && right) out.add(countyStorageKey(slug, right));
+      } else if (left && right) {
+        out.add(countyStorageKey(left.toLowerCase(), right));
+      }
+    }
+  }
+  return [...out].slice(0, 500);
 }
 
 function coverageLabelFromMode(mode: ServiceAreaMode, states: string[]): string {
@@ -16,7 +50,6 @@ function coverageLabelFromMode(mode: ServiceAreaMode, states: string[]): string 
   if (states.length === 0) return 'Continental US';
   if (states.length >= 40) return 'All 50 States';
   if (states.length >= 15) return 'Continental US';
-  // Best-effort region label for directory filter compatibility
   const east = ['ME', 'NH', 'VT', 'MA', 'RI', 'CT', 'NY', 'NJ', 'PA', 'DE', 'MD', 'VA', 'WV', 'NC', 'SC', 'GA', 'FL', 'DC'];
   const west = ['CA', 'OR', 'WA', 'NV', 'AZ', 'UT', 'ID', 'MT', 'WY', 'CO', 'NM', 'HI', 'AK'];
   const south = ['TX', 'OK', 'AR', 'LA', 'MS', 'AL', 'TN', 'KY', 'FL', 'GA', 'SC', 'NC', 'VA'];
@@ -33,8 +66,7 @@ function coverageLabelFromMode(mode: ServiceAreaMode, states: string[]): string 
 }
 
 /**
- * "Verified coverage" heuristic: states with review activity or listed HQ/authority.
- * Owners can claim broader areas; UI shows which are verified vs claimed.
+ * "Verified coverage" heuristic: HQ state, destination assignments, USDOT signal.
  */
 export async function getVerifiedCoverageSignals(params: {
   companyId: string;
@@ -45,13 +77,38 @@ export async function getVerifiedCoverageSignals(params: {
   const verified = new Set<string>();
 
   const hq = params.headquarters ?? '';
-  const hqState = hq.split(',').map((p) => p.trim())[1]?.slice(0, 2).toUpperCase();
-  if (hqState && US_STATES.has(hqState)) {
-    verified.add(hqState);
-    notes.push(`Headquarters state (${hqState}) counted as verified coverage.`);
+  const parts = hq.split(',').map((p) => p.trim());
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const token = parts[i].replace(/\d+/g, '').trim().toUpperCase();
+    const hqState = token.slice(0, 2);
+    if (hqState && US_STATES.has(hqState)) {
+      verified.add(hqState);
+      notes.push(`Headquarters state (${hqState}) counted as verified coverage.`);
+      break;
+    }
   }
 
-  // FMCSA authority is interstate by nature when active — signal national capability, not spam
+  if (isSupabaseAdminConfigured()) {
+    try {
+      const admin = createAdminClient();
+      const { data } = await admin
+        .from('company_destination_assignments')
+        .select('state_slug')
+        .eq('company_id', params.companyId);
+      if (data?.length) {
+        for (const row of data) {
+          const code = localStates.find((s) => s.slug === row.state_slug)?.code;
+          if (code) verified.add(code);
+        }
+        notes.push(
+          `${data.length} county assignment(s) from onboarding / prior coverage linked to verified listings.`
+        );
+      }
+    } catch {
+      // ignore
+    }
+  }
+
   if (params.usdotNumber) {
     notes.push('Active USDOT authority supports interstate lane claims (not local spam expansion).');
   }
@@ -59,29 +116,43 @@ export async function getVerifiedCoverageSignals(params: {
   return { verifiedStates: Array.from(verified), notes };
 }
 
+export type UpdateServiceAreaResult = {
+  success: boolean;
+  error?: string;
+  locations?: string[];
+  destinationHrefs?: string[];
+  assignedCountyCount?: number;
+};
+
 export async function updateServiceArea(params: {
   companyId: string;
   companySlug: string;
   userId: string;
   input: ServiceAreaInput;
-}): Promise<{ success: boolean; error?: string }> {
+  headquarters?: string | null;
+}): Promise<UpdateServiceAreaResult> {
   await ensurePortalProfile(params.companyId, params.companySlug);
 
   const mode = params.input.mode;
   let states = normalizeStates(params.input.states);
-  let counties = [...new Set(params.input.counties.map((c) => c.trim()).filter(Boolean))].slice(
-    0,
-    200
-  );
+  let counties = normalizeCountyKeys(params.input.counties);
   let radius = params.input.radiusMiles;
+
+  // Ensure states include any state implied by county keys
+  for (const key of counties) {
+    const parsed = parseCountyStorageKey(key);
+    if (!parsed) continue;
+    const code = localStates.find((s) => s.slug === parsed.stateSlug)?.code;
+    if (code && !states.includes(code)) states.push(code);
+  }
 
   if (mode === 'national') {
     states = [];
     counties = [];
     radius = null;
   } else if (mode === 'regional') {
-    if (states.length === 0) {
-      return { success: false, error: 'Select at least one state for regional coverage.' };
+    if (states.length === 0 && counties.length === 0) {
+      return { success: false, error: 'Select at least one state or county for regional coverage.' };
     }
     if (states.length > 25) {
       return {
@@ -92,28 +163,25 @@ export async function updateServiceArea(params: {
     radius = null;
   } else {
     // local
-    if (!radius || radius < 10 || radius > 500) {
-      return { success: false, error: 'Local coverage requires a radius between 10 and 500 miles from HQ.' };
+    if (radius != null && (radius < 10 || radius > 500)) {
+      return { success: false, error: 'Local coverage radius must be between 10 and 500 miles.' };
     }
+    if (!radius) radius = 50;
     if (states.length === 0 && counties.length === 0) {
       return {
         success: false,
-        error: 'Select your home state (and optional counties) for local coverage.',
+        error: 'Select your home state and/or counties for local coverage.',
       };
     }
   }
 
   const lanes = (params.input.primaryInterstateLanes ?? [])
     .map((l) => ({
-      from: String(l.from ?? '').trim().slice(0, 80),
-      to: String(l.to ?? '').trim().slice(0, 80),
+      from: String(l.from ?? '').trim().toUpperCase().slice(0, 80),
+      to: String(l.to ?? '').trim().toUpperCase().slice(0, 80),
     }))
     .filter((l) => l.from && l.to)
     .slice(0, 20);
-
-  if (lanes.length > 20) {
-    return { success: false, error: 'Maximum 20 primary interstate lanes.' };
-  }
 
   const admin = portalAdmin();
   const { error } = await admin
@@ -129,9 +197,10 @@ export async function updateServiceArea(params: {
     })
     .eq('company_id', params.companyId);
 
-  if (error) return { success: false, error: error.message };
+  if (error && !isMissingRelationError(error)) {
+    return { success: false, error: error.message };
+  }
 
-  // Keep directory `coverage` in sync with a coarse Region-compatible label
   const coverage = coverageLabelFromMode(mode, states);
   await admin
     .from('companies')
@@ -142,6 +211,28 @@ export async function updateServiceArea(params: {
     })
     .eq('id', params.companyId);
 
+  const propagation = await propagateServiceAreaAssignments({
+    companyId: params.companyId,
+    companySlug: params.companySlug,
+    headquarters: params.headquarters,
+    mode,
+    states,
+    counties,
+  });
+
   revalidatePublishedCompany(params.companySlug);
-  return { success: true };
+
+  const locations =
+    mode === 'national'
+      ? ['National coverage (all 50 states)']
+      : propagation.locationLabels.length > 0
+        ? propagation.locationLabels
+        : states.map((s) => localStates.find((x) => x.code === s)?.name ?? s);
+
+  return {
+    success: true,
+    locations,
+    destinationHrefs: propagation.destinationHrefs,
+    assignedCountyCount: propagation.assignedCounties.length,
+  };
 }
