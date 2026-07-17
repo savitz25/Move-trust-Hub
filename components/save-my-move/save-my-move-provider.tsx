@@ -46,10 +46,26 @@ type SaveMyMoveContextValue = {
 
 const Ctx = createContext<SaveMyMoveContextValue | null>(null);
 
+/**
+ * Used while DeferredSaveMyMove has not mounted the real provider yet.
+ * loading: true prevents save/auth clicks from firing against a half-ready client.
+ */
+const DEFERRED_FALLBACK: SaveMyMoveContextValue = {
+  user: null,
+  loading: true,
+  savedMoverSlugs: new Set(),
+  isMoverSaved: () => false,
+  markMoverSaved: () => {},
+  openSaveModal: () => {},
+  requireAuth: () => false,
+};
+
+/**
+ * Always safe during DeferredSaveMyMove hydration — never throws.
+ * Prefer this (or useSaveMyMoveOptional) over assuming the provider is mounted.
+ */
 export function useSaveMyMove() {
-  const ctx = useContext(Ctx);
-  if (!ctx) throw new Error('useSaveMyMove must be used within SaveMyMoveProvider');
-  return ctx;
+  return useContext(Ctx) ?? DEFERRED_FALLBACK;
 }
 
 /** Safe for navbar chrome while DeferredSaveMyMove hydrates — returns null outside provider. */

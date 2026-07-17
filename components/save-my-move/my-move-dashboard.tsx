@@ -166,9 +166,28 @@ export function MyMoveDashboard({ initialData, demo = false }: Props) {
   };
 
   const handleSignOut = async () => {
-    const supabase = createBrowserSupabaseClient();
-    await supabase?.auth.signOut();
-    window.location.reload();
+    // Always leave a clean page — never leave the user on a crashed client tree.
+    // Reload of /my-move used to race DeferredSaveMyMove and throw useSaveMyMove.
+    try {
+      setSettingsOpen(false);
+      const supabase = createBrowserSupabaseClient();
+      if (supabase) {
+        await supabase.auth.signOut({ scope: 'global' });
+      }
+    } catch {
+      // Session may already be gone; still navigate away.
+    }
+    try {
+      // Clear any leftover auth storage keys that can confuse a half-signed-out client.
+      for (const key of Object.keys(window.localStorage)) {
+        if (key.startsWith('sb-') && key.includes('auth')) {
+          window.localStorage.removeItem(key);
+        }
+      }
+    } catch {
+      // private mode / blocked storage
+    }
+    window.location.assign('/');
   };
 
   const handleDownloadPdf = (
