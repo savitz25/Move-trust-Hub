@@ -145,7 +145,8 @@ export function getGuide(slug: string) {
   return guides.find((g) => g.slug === slug);
 }
 
-export function getRelatedGuides(slugs: string[]) {
+export function getRelatedGuides(slugs?: string[] | null) {
+  if (!slugs?.length) return [];
   return slugs
     .map((slug) => guides.find((g) => g.slug === slug))
     .filter((g): g is GuideEntry => Boolean(g));

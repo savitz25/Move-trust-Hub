@@ -357,7 +357,13 @@ export default function BillOfLadingShipperRightsPage() {
             </p>
           </section>
 
-          <GuideFooter />
+          <GuideFooter
+            relatedSlugs={[
+              'how-to-choose',
+              'interstate-moving-costs',
+              'scams',
+            ]}
+          />
         </div>
       </div>
     </>

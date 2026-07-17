@@ -4,19 +4,19 @@ import { getRelatedGuides } from '@/lib/resources/guides';
 import { GuideCtaClient } from '@/components/resources/guide-cta-client';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 
-export function GuideCta({ prefilledNotes }: { prefilledNotes?: string }) {
+export function GuideCta(_props?: { prefilledNotes?: string }) {
   return (
     <div className="not-prose mt-10 rounded-xl border border-primary/20 bg-gradient-to-br from-primary/8 via-primary/5 to-transparent p-6 sm:p-8">
       <h3 className="font-semibold text-lg mb-2">Ready to plan your interstate move?</h3>
       <p className="text-sm text-muted-foreground mb-4">
         Use our free tools to research licensed movers, estimate your volume, and compare trusted movers.
       </p>
-      <GuideCtaClient prefilledNotes={prefilledNotes} />
+      <GuideCtaClient />
     </div>
   );
 }
 
-export function RelatedGuides({ slugs }: { slugs: string[] }) {
+export function RelatedGuides({ slugs }: { slugs?: string[] | null }) {
   const related = getRelatedGuides(slugs);
   if (!related.length) return null;
 
@@ -44,9 +44,10 @@ export function GuideFooter({
   relatedSlugs,
   prefilledNotes,
 }: {
-  relatedSlugs: string[];
+  /** Optional — empty/missing is safe (no related block). */
+  relatedSlugs?: string[] | null;
   prefilledNotes?: string;
-}) {
+} = {}) {
   return (
     <>
       <RelatedGuides slugs={relatedSlugs} />
