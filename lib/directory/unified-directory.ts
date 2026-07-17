@@ -19,9 +19,17 @@ import type { Company } from '@/types';
 async function buildUnifiedDirectory(): Promise<Company[]> {
   const directoryCompanies = await getCompaniesCached();
 
-  const activeCatalogCompanies = Object.values(activeDirectoryMovers).map(
-    localMoverToCompany
-  );
+  // Snapshot is already filtered to FMCSA-active movers (see data/active-directory-movers.ts).
+  const activeCatalogCompanies = Object.values(activeDirectoryMovers).map((mover) => {
+    const company = localMoverToCompany(mover);
+    return {
+      ...company,
+      authorityActive: true as const,
+      outOfService: false,
+      usdotStatus: 'ACTIVE' as const,
+      isVerified: true,
+    };
+  });
 
   return mergeDirectoryCompanies(directoryCompanies, activeCatalogCompanies);
 }
