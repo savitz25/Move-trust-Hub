@@ -38,6 +38,7 @@ export function MovingCalculatorClient() {
     clearInventory,
     addSuggestedBoxes,
     loadFromShare,
+    loadPreset,
     undo,
   } = useCalculatorStore();
 
@@ -46,6 +47,12 @@ export function MovingCalculatorClient() {
   const calculatorCompleted = useRef(false);
   const savedLoadDone = useRef(false);
   const shareLoaded = useRef(false);
+  const presetFromUrlLoaded = useRef(false);
+
+  const fromZip = searchParams.get('fromZip') || '';
+  const toZip = searchParams.get('toZip') || '';
+  const fromCity = searchParams.get('fromCity') || '';
+  const toCity = searchParams.get('toCity') || '';
 
   const totalVolume = useMemo(
     () => inventory.reduce((sum, item) => sum + item.volume * item.quantity, 0),
@@ -127,6 +134,31 @@ export function MovingCalculatorClient() {
     markCalculatorStarted('share_link');
   }, [searchParams, loadFromShare, markCalculatorStarted]);
 
+  // Homepage route flow: ?preset=studio|1-bedroom|… pre-selects move size
+  useEffect(() => {
+    if (savedLoadDone.current || shareLoaded.current || presetFromUrlLoaded.current) return;
+    const raw = searchParams.get('preset');
+    if (!raw) return;
+    const allowed = new Set([
+      'studio',
+      '1-bedroom',
+      '2-bedroom',
+      '3-bedroom',
+      '4-plus',
+      'custom',
+      'scratch',
+    ]);
+    if (!allowed.has(raw)) return;
+    presetFromUrlLoaded.current = true;
+    loadPreset(raw as Parameters<typeof loadPreset>[0]);
+    markCalculatorStarted('homepage_preset');
+    toast.success('Move size loaded from your route', {
+      description: fromZip
+        ? `Route ${fromZip}${toZip ? ` → ${toZip}` : ''} · adjust inventory anytime.`
+        : 'Fine-tune quantities anytime.',
+    });
+  }, [searchParams, loadPreset, markCalculatorStarted, fromZip, toZip]);
+
   // Track completion milestone
   useEffect(() => {
     if (totalVolume <= 0 || totalItems <= 0 || calculatorCompleted.current) return;
@@ -151,6 +183,22 @@ export function MovingCalculatorClient() {
         </div>
         <TrustBadges variant="compact" className="text-xs" />
       </div>
+
+      {fromZip || toZip ? (
+        <div className="mb-5 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
+          <span className="font-semibold text-foreground">Your route: </span>
+          <span className="text-muted-foreground">
+            {fromCity || fromZip || 'Pickup'}
+            {fromZip ? ` (${fromZip})` : ''}
+            {' → '}
+            {toCity || toZip || 'Delivery'}
+            {toZip ? ` (${toZip})` : ''}
+          </span>
+          <span className="mt-1 block text-xs text-muted-foreground">
+            Prefills from the homepage planner. Confirm move size below if you haven&apos;t already.
+          </span>
+        </div>
+      ) : null}
 
       {/* Onboarding */}
       <div className="mb-6">

@@ -20,14 +20,14 @@ export function HomeBelowFold() {
       <section className="container mx-auto px-4 py-14 content-auto">
         <div className="text-center mb-10 max-w-2xl mx-auto">
           <div className="text-primary font-semibold tracking-widest text-xs mb-2">
-            HOW IT WORKS
+            YOUR MOVE PLAYBOOK
           </div>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            Research movers with confidence
+            Three fun steps from ZIP to shortlist
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Verify licensing, compare reputation, and understand costs — without lead forms or
-            paid placements.
+            Start with From → To above, then size your move, browse local guides, and compare —
+            without lead forms or paid placements.
           </p>
         </div>
 
@@ -35,46 +35,50 @@ export function HomeBelowFold() {
           {[
             {
               step: '01',
-              title: 'Estimate your move size',
+              title: 'Confirm your move size',
               desc: (
                 <>
-                  Use our{' '}
+                  Pick Studio, 1BR, 2BR, 3BR+, or full house. Our{' '}
                   <Link href="/moving-calculator" className="text-primary underline underline-offset-2">
-                    moving calculator
+                    calculator
                   </Link>{' '}
-                  to build a room-by-room inventory before contacting carriers.
+                  pre-loads inventory so estimates feel real, not random.
                 </>
               ),
               icon: Truck,
             },
             {
               step: '02',
-              title: 'Verify FMCSA licensing',
+              title: 'Browse local movers in your county',
               desc: (
                 <>
-                  Browse{' '}
+                  Your pickup ZIP routes you to{' '}
+                  <Link href="/local-movers" className="text-primary underline underline-offset-2">
+                    state &amp; county guides
+                  </Link>{' '}
+                  plus the{' '}
                   <Link href="/companies" className="text-primary underline underline-offset-2">
-                    verified interstate movers
-                  </Link>{' '}
-                  or{' '}
-                  <Link href="/verify-dot" className="text-primary underline underline-offset-2">
-                    look up any USDOT number
-                  </Link>{' '}
-                  on the official SAFER system.
+                    FMCSA directory
+                  </Link>
+                  .
                 </>
               ),
               icon: Shield,
             },
             {
               step: '03',
-              title: 'Compare before you book',
+              title: 'Compare & contact',
               desc: (
                 <>
-                  Use our{' '}
+                  Use{' '}
                   <Link href="/compare" className="text-primary underline underline-offset-2">
-                    comparison tool
+                    side-by-side compare
                   </Link>{' '}
-                  to weigh reputation scores, complaints, and services side by side.
+                  and{' '}
+                  <Link href="/verify-dot" className="text-primary underline underline-offset-2">
+                    USDOT lookup
+                  </Link>{' '}
+                  before you book — independent research only.
                 </>
               ),
               icon: ArrowRight,

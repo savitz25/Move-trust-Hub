@@ -10,9 +10,9 @@ export const DESTINATIONS_INDEX_DESCRIPTION =
 
 /** Refined homepage meta — targets quote + directory + local movers keywords */
 export const HOMEPAGE_SEO_TITLE =
-  'Compare FMCSA-Licensed Movers (2026) | MoveTrustHub';
+  'Where Are You Moving? ZIP Planner + FMCSA Movers | MoveTrustHub';
 export const HOMEPAGE_SEO_DESCRIPTION =
-  'Compare 25+ FMCSA-licensed interstate movers by verified reviews, pricing, and safety data. Independent directory — no lead fees, no paid placements.';
+  'Enter From & To ZIPs to find trusted movers for your route, estimate move size, and browse county guides. Independent FMCSA directory — no lead fees, no paid placements.';
 
 export function buildCityHubMetadata(content: CityHubContent): Metadata {
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;

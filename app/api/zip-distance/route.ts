@@ -4,51 +4,8 @@ import {
   haversineMiles,
   isValidUsZip,
 } from '@/lib/auto-transport/distance';
+import { lookupUsZip } from '@/lib/geo/lookup-us-zip';
 import type { ZipDistanceResult } from '@/lib/auto-transport/types';
-
-type ZippopotamResponse = {
-  places?: Array<{
-    latitude: string;
-    longitude: string;
-    'place name'?: string;
-    'state abbreviation'?: string;
-  }>;
-};
-
-const zipCache = new Map<
-  string,
-  { lat: number; lng: number; city?: string; state?: string }
->();
-
-async function lookupZip(zip: string) {
-  const cached = zipCache.get(zip);
-  if (cached) return cached;
-
-  const response = await fetch(`https://api.zippopotam.us/us/${zip}`, {
-    next: { revalidate: 60 * 60 * 24 * 30 },
-  });
-
-  if (!response.ok) {
-    throw new Error(`ZIP ${zip} not found`);
-  }
-
-  const data = (await response.json()) as ZippopotamResponse;
-  const place = data.places?.[0];
-
-  if (!place?.latitude || !place.longitude) {
-    throw new Error(`ZIP ${zip} has no coordinates`);
-  }
-
-  const result = {
-    lat: Number(place.latitude),
-    lng: Number(place.longitude),
-    city: place['place name'],
-    state: place['state abbreviation'],
-  };
-
-  zipCache.set(zip, result);
-  return result;
-}
 
 export async function GET(req: NextRequest) {
   const fromZip = req.nextUrl.searchParams.get('from')?.trim() ?? '';
@@ -69,7 +26,13 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const [from, to] = await Promise.all([lookupZip(fromZip), lookupZip(toZip)]);
+    const [from, to] = await Promise.all([lookupUsZip(fromZip), lookupUsZip(toZip)]);
+    if (!from || !to) {
+      return NextResponse.json(
+        { error: 'One or both ZIP codes could not be found.' },
+        { status: 404 }
+      );
+    }
     const straightLineMiles = Math.round(
       haversineMiles({ lat: from.lat, lng: from.lng }, { lat: to.lat, lng: to.lng })
     );
@@ -81,9 +44,9 @@ export async function GET(req: NextRequest) {
       straightLineMiles,
       drivingMiles,
       fromCity: from.city,
-      fromState: from.state,
+      fromState: from.stateCode,
       toCity: to.city,
-      toState: to.state,
+      toState: to.stateCode,
     };
 
     return NextResponse.json(payload, {
