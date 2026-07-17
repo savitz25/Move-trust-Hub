@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
+import { requirePortalSession } from '@/lib/portal/mfa';
 import { getActiveOwnersForUser } from '@/lib/portal/ownership';
 import {
   getMovingCompanyIdForDirectoryCompany,
@@ -14,10 +14,9 @@ import { Card } from '@/components/ui/card';
 export const dynamic = 'force-dynamic';
 
 export default async function PortalReviewsPage() {
-  const user = await getAuthenticatedUser();
-  if (!user) redirect('/portal/login');
+  const session = await requirePortalSession({ nextPath: '/portal/reviews' });
 
-  const owners = await getActiveOwnersForUser(user.id);
+  const owners = await getActiveOwnersForUser(session.userId);
   if (owners.length === 0) redirect('/portal');
 
   const primary = owners[0];

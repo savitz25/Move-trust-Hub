@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
 import {
   getActiveOwnersForUser,
@@ -6,6 +7,7 @@ import {
 } from '@/lib/portal/ownership';
 import { getClaimsForUser, linkClaimToUser } from '@/lib/portal/claims';
 import { getSyncCooldownState } from '@/lib/portal/reputation-sync';
+import { getPortalMfaStatus } from '@/lib/portal/mfa';
 import { PortalShell } from '@/components/portal/portal-shell';
 import { PortalLoginForm } from '@/components/portal/portal-login-form';
 import { ReputationSyncPanel } from '@/components/portal/reputation-sync-panel';
@@ -34,6 +36,11 @@ export default async function PortalDashboardPage() {
         </p>
       </div>
     );
+  }
+
+  const mfa = await getPortalMfaStatus();
+  if (mfa?.needsChallenge) {
+    redirect('/portal/mfa?next=%2Fportal');
   }
 
   const owners = await getActiveOwnersForUser(user.id);
@@ -144,6 +151,27 @@ export default async function PortalDashboardPage() {
           lastSyncAt={cooldown.lastSyncAt}
           lastSummary={profile.last_reputation_sync_summary}
         />
+
+        <Card className="p-5 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 className="font-semibold">Account security</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {mfa?.enabled
+                ? 'Two-factor authentication is on. Manage authenticator and backup codes.'
+                : 'Protect your portal with Google Authenticator (optional, strongly recommended).'}
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <Badge variant={mfa?.enabled ? 'success' : 'secondary'}>
+              {mfa?.enabled ? '2FA on' : '2FA off'}
+            </Badge>
+            <Button asChild size="sm" variant={mfa?.enabled ? 'outline' : 'default'}>
+              <Link href="/portal/security">
+                {mfa?.enabled ? 'Manage 2FA' : 'Enable 2FA'}
+              </Link>
+            </Button>
+          </div>
+        </Card>
 
         <div className="grid sm:grid-cols-2 gap-4">
           <Card className="p-5">

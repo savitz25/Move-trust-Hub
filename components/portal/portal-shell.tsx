@@ -6,6 +6,7 @@ const NAV = [
   { href: '/portal', label: 'Dashboard', exact: true },
   { href: '/portal/reviews', label: 'Reviews' },
   { href: '/portal/service-area', label: 'Service area' },
+  { href: '/portal/security', label: 'Security', exact: true },
   { href: '/for-movers', label: 'About the portal' },
 ];
 

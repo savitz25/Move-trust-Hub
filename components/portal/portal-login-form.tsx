@@ -58,7 +58,8 @@ export function PortalLoginForm({
     <Card className="p-6 max-w-md">
       <h2 className="text-lg font-semibold">Portal sign-in</h2>
       <p className="mt-1 text-sm text-muted-foreground">
-        Use the same email you used to claim your company. No password — magic link only.
+        Use the same email you used to claim your company. No password — magic link only. If you
+        enabled 2FA, you will enter an authenticator code after the link.
       </p>
       <form onSubmit={onSubmit} className="mt-4 space-y-3">
         <div className="space-y-1.5">

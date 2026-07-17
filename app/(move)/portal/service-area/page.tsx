@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
+import { requirePortalSession } from '@/lib/portal/mfa';
 import { getActiveOwnersForUser, ensurePortalProfile } from '@/lib/portal/ownership';
 import { getVerifiedCoverageSignals } from '@/lib/portal/service-area';
 import {
@@ -16,10 +16,9 @@ import { ServiceAreaEditor } from '@/components/portal/service-area-editor';
 export const dynamic = 'force-dynamic';
 
 export default async function PortalServiceAreaPage() {
-  const user = await getAuthenticatedUser();
-  if (!user) redirect('/portal/login');
+  const session = await requirePortalSession({ nextPath: '/portal/service-area' });
 
-  const owners = await getActiveOwnersForUser(user.id);
+  const owners = await getActiveOwnersForUser(session.userId);
   if (owners.length === 0) redirect('/portal');
 
   const primary = owners[0];
