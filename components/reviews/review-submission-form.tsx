@@ -70,7 +70,8 @@ export function ReviewSubmissionForm({
 
     const formData = new FormData();
     formData.set('carrierQuery', displayNumber);
-    if (!carrier.inDatabase) formData.set('companyName', carrier.name);
+    // Always pass display name so placeholder "DOT … Carrier" rows get upgraded
+    if (carrier.name?.trim()) formData.set('companyName', carrier.name.trim());
     formData.set('reviewerName', reviewerName);
     formData.set('reviewerEmail', reviewerEmail);
     formData.set('rating', String(rating));

@@ -29,11 +29,15 @@ export async function getModerationQueue() {
 
 export async function searchReviewsForAdmin(
   filters: AdminReviewFilters
-): Promise<{ reviews: AdminReviewRow[]; total: number }> {
+): Promise<{ reviews: AdminReviewRow[]; total: number; error?: string }> {
   try {
     await assertAdminSession();
   } catch {
-    return { reviews: [], total: 0 };
+    return {
+      reviews: [],
+      total: 0,
+      error: 'Unauthorized — sign in at /admin/login to load the moderation queue.',
+    };
   }
   return searchAdminReviews(filters);
 }

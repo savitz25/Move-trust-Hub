@@ -80,16 +80,53 @@ export async function findOrCreateMovingCompany(params: {
     .eq(column, params.parsed.value)
     .maybeSingle();
 
-  if (existing) return existing as MovingCompanyRecord;
-
   const legacy = await lookupLegacyCompany(params.parsed);
   const { preview } = await resolveCarrierPreview(params.parsed, null);
 
-  const name =
+  const resolvedName =
     params.nameOverride?.trim() ||
     legacy?.name ||
     preview?.legalName ||
-    `${params.parsed.display} Carrier`;
+    null;
+
+  if (existing) {
+    const current = existing as MovingCompanyRecord;
+    // Upgrade placeholder "DOT 123 Carrier" names when we learn the legal name
+    const isPlaceholder = /^DOT\s+\d+\s+Carrier$/i.test(current.name) ||
+      /^MC\s+\d+\s+Carrier$/i.test(current.name);
+    const betterName =
+      resolvedName &&
+      resolvedName !== current.name &&
+      (isPlaceholder || params.nameOverride?.trim());
+    if (
+      betterName ||
+      (!current.legacy_company_id && legacy?.id) ||
+      (!current.address && (preview?.physicalAddress || legacy?.headquarters))
+    ) {
+      const { data: updated } = await admin
+        .from('moving_companies')
+        .update({
+          name: betterName ? resolvedName : current.name,
+          address:
+            current.address ||
+            preview?.physicalAddress ||
+            legacy?.headquarters ||
+            null,
+          phone: current.phone || preview?.phone || null,
+          website: current.website || legacy?.website || null,
+          legacy_company_id: current.legacy_company_id || legacy?.id || null,
+          source: legacy ? 'directory_sync' : current.source || 'user_review',
+        })
+        .eq('id', current.id)
+        .select('*')
+        .single();
+      if (updated) return updated as MovingCompanyRecord;
+    }
+    return current;
+  }
+
+  const name =
+    resolvedName || `${params.parsed.display} Carrier`;
 
   const row = {
     slug,

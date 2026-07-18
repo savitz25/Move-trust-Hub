@@ -29,6 +29,8 @@ type Props = {
   initialReviews: AdminReviewRow[];
   initialTotal: number;
   initialStatus: AdminReviewStatus;
+  /** Query/load failure — never treat as empty queue */
+  initialError?: string;
 };
 
 const STATUS_TABS: { value: AdminReviewStatus; label: string }[] = [
@@ -48,10 +50,12 @@ export function ReviewsAdminDashboard({
   initialReviews,
   initialTotal,
   initialStatus,
+  initialError,
 }: Props) {
   const [reviews, setReviews] = useState(initialReviews);
   const [total, setTotal] = useState(initialTotal);
   const [status, setStatus] = useState<AdminReviewStatus>(initialStatus);
+  const [loadError, setLoadError] = useState<string | undefined>(initialError);
   const [q, setQ] = useState('');
   const [rating, setRating] = useState<string>('');
   const [fromDate, setFromDate] = useState('');
@@ -90,8 +94,12 @@ export function ReviewsAdminDashboard({
         });
         setReviews(res.reviews);
         setTotal(res.total);
+        setLoadError(res.error);
         setStatus(nextStatus);
         setPage(nextPage);
+        if (res.error) {
+          toast.error('Could not load reviews', { description: res.error });
+        }
       });
     },
     [status, page, q, rating, fromDate, toDate]
@@ -233,11 +241,20 @@ export function ReviewsAdminDashboard({
         {pending ? ' · loading…' : ''}
       </p>
 
+      {loadError ? (
+        <Card className="border-destructive/40 bg-destructive/5 p-4 text-sm text-destructive">
+          <p className="font-semibold">Queue load error</p>
+          <p className="mt-1">{loadError}</p>
+        </Card>
+      ) : null}
+
       {reviews.length === 0 ? (
         <Card className="p-8 text-center text-muted-foreground">
-          {status === 'pending'
-            ? 'No pending reviews — queue is clear.'
-            : 'No reviews match your filters.'}
+          {loadError
+            ? 'Reviews could not be loaded — this is not an empty queue.'
+            : status === 'pending'
+              ? 'No pending reviews — queue is clear.'
+              : 'No reviews match your filters.'}
         </Card>
       ) : (
         <div className="space-y-3">
@@ -256,6 +273,9 @@ export function ReviewsAdminDashboard({
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {review.company_name ?? 'Unknown carrier'}
+                    {review.company_dot ? (
+                      <span className="tabular-nums"> · USDOT {review.company_dot}</span>
+                    ) : null}
                     {review.company_slug ? (
                       <>
                         {' · '}

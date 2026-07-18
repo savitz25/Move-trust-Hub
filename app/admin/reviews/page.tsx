@@ -27,7 +27,7 @@ function parseStatus(raw?: string): AdminReviewStatus {
 export default async function AdminReviewsPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const status = parseStatus(params.status);
-  const { reviews, total } = await searchReviewsForAdmin({
+  const { reviews, total, error: loadError } = await searchReviewsForAdmin({
     status,
     page: 1,
     pageSize: 25,
@@ -64,10 +64,21 @@ export default async function AdminReviewsPage({ searchParams }: PageProps) {
         </Card>
       )}
 
+      {loadError ? (
+        <Card className="mb-6 border-destructive/40 bg-destructive/5 p-4 text-sm text-destructive">
+          <p className="font-semibold">Could not load the moderation queue</p>
+          <p className="mt-1 text-destructive/90">{loadError}</p>
+          <p className="mt-2 text-muted-foreground">
+            New submissions may still be stored — refresh after fixing the error above.
+          </p>
+        </Card>
+      ) : null}
+
       <ReviewsAdminDashboard
         initialReviews={reviews}
         initialTotal={total}
         initialStatus={status}
+        initialError={loadError}
       />
     </div>
   );

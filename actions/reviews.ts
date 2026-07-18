@@ -197,23 +197,53 @@ export async function submitReview(raw: unknown): Promise<SubmitReviewResult> {
       email_hash: emailHash,
       status: 'pending',
       photo_urls: [],
+      verification_tier: 'email_pending',
     })
-    .select('id')
+    .select('id, status, company_id')
     .single();
 
-  if (error || !inserted) {
-    logger.error('review.submit_failed', { error: error?.message, companyId: company.id });
+  if (error || !inserted?.id) {
+    logger.error('review.submit_failed', {
+      error: error?.message,
+      code: error?.code,
+      details: error?.details,
+      companyId: company.id,
+      carrier: carrier.display,
+    });
     return { success: false, error: 'Failed to save your review. Please try again.' };
+  }
+
+  // Hard verify the row is actually pending (never celebrate a phantom insert)
+  const { data: verified, error: verifyError } = await admin
+    .from('company_reviews')
+    .select('id, status')
+    .eq('id', inserted.id)
+    .maybeSingle();
+
+  if (verifyError || !verified || verified.status !== 'pending') {
+    logger.error('review.submit_verify_failed', {
+      reviewId: inserted.id,
+      status: verified?.status,
+      verifyError: verifyError?.message,
+    });
+    return {
+      success: false,
+      error: 'Your review could not be confirmed in our queue. Please try again.',
+    };
   }
 
   logger.info('review.submitted', {
     reviewId: inserted.id,
     companyId: company.id,
+    companySlug: company.slug,
+    carrier: carrier.display,
     rating: parsed.data.rating,
+    status: verified.status,
   });
 
   // Purge native + directory profiles that may show this carrier's community block
   await revalidatePathsForMovingCompany(company.id);
+  revalidatePath('/admin/reviews');
 
   return {
     success: true,
