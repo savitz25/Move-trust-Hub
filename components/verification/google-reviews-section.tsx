@@ -68,16 +68,22 @@ export function GoogleReviewsSection({
           <>
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
-                <div className="flex items-baseline gap-3 flex-wrap">
-                  <span className="text-4xl font-semibold tabular-nums text-[#4285F4]">
-                    {data.rating!.toFixed(1)}
-                  </span>
-                  <StarRating rating={data.rating!} size="lg" showNumber={false} />
-                </div>
+                {data.rating != null && data.rating > 0 ? (
+                  <div className="flex items-baseline gap-3 flex-wrap">
+                    <span className="text-4xl font-semibold tabular-nums text-[#4285F4]">
+                      {data.rating.toFixed(1)}
+                    </span>
+                    <StarRating rating={data.rating} size="lg" showNumber={false} />
+                  </div>
+                ) : (
+                  <p className="text-sm font-medium text-foreground">Google Places snapshot</p>
+                )}
                 <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
                   {data.review_count != null
                     ? `${data.review_count.toLocaleString()} reviews on Google Maps (API snapshot)`
-                    : 'Google Maps reviews'}
+                    : data.review_snippets?.length
+                      ? 'Attributed Google review excerpts (API snapshot)'
+                      : 'Google Maps reviews'}
                   {attributableOnSiteCount > 0 ? (
                     <span className="block text-xs mt-1">
                       Plus {attributableOnSiteCount} attributed excerpt
