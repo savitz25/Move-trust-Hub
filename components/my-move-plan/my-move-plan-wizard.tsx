@@ -48,6 +48,11 @@ import {
   stashPendingWizardOutreach,
 } from '@/lib/my-move-plan/pending-outreach';
 import {
+  consumePendingEmailMoveReport,
+  stashPendingEmailMoveReport,
+} from '@/lib/my-move-plan/pending-email-report';
+import { buildPlanName } from '@/lib/my-move-plan/plan-library';
+import {
   MY_MOVE_PLAN_RETURN_PATH,
   MY_MOVE_PLAN_SECTION_ID,
 } from '@/lib/my-move-plan/return-path';
@@ -135,9 +140,13 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
   const [inventory, setInventory] = useState<PlanInventoryItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
   const [emailPendingSlug, setEmailPendingSlug] = useState<string | null>(null);
+  const [emailSending, setEmailSending] = useState(false);
+  const [reportEmailed, setReportEmailed] = useState(false);
+  const [emailedTo, setEmailedTo] = useState<string | null>(null);
 
   const routeAbort = useRef<AbortController | null>(null);
   const outreachHandledRef = useRef(false);
+  const emailReportHandledRef = useRef(false);
 
   const applySavedPlan = useCallback((saved: ReturnType<typeof loadMyMovePlan>) => {
     if (!saved) return;
@@ -448,29 +457,6 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
     }
   };
 
-  const copyAllOutreachTemplates = async () => {
-    if (shortlist.length === 0) return;
-    const blocks = shortlist.map((mover) => {
-      const { body } = buildOutreachEmail({
-        from: fromPlace,
-        to: toPlace,
-        drivingMiles,
-        inventory,
-        estimatedWeight: weight,
-        mover,
-      });
-      return `========== ${mover.name} ==========\n${body}`;
-    });
-    try {
-      await navigator.clipboard.writeText(blocks.join('\n\n'));
-      toast.success(`Copied ${shortlist.length} estimate templates`, {
-        description: 'Paste into separate emails for each mover so they quote the same inventory.',
-      });
-    } catch {
-      toast.error('Could not copy templates — try one mover at a time');
-    }
-  };
-
   const handleEmailOutreach = useCallback(
     (mover: HomeRouteMover) => {
       persistPlan();
@@ -516,64 +502,129 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
     [persistPlan, saveMyMove, openEstimateMailto]
   );
 
-  const handleSendAll = useCallback(() => {
-    persistPlan();
-    if (shortlist.length === 0) {
-      toast.message('Shortlist is empty', {
-        description: 'Pick up to 3 movers so they all quote the same inventory.',
+  const sendMoveReportEmail = useCallback(async (): Promise<boolean> => {
+    if (inventory.length === 0 || totals.totalVolume <= 0) {
+      toast.error('Add inventory before emailing your report');
+      return false;
+    }
+
+    setEmailSending(true);
+    try {
+      const planName = buildPlanName(planSnapshot);
+      const res = await fetch('/api/save-my-move/email-inventory', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          inventory,
+          name: planName,
+          movePreset: preset,
+          isMovePlan: true,
+          routeFrom: fromPlace?.label ?? null,
+          routeTo: toPlace?.label ?? null,
+          drivingMiles,
+          shortlistNames: shortlist.map((m) => m.name),
+        }),
       });
-      setStep('shortlist');
+      const data = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        email?: string;
+        success?: boolean;
+      };
+
+      if (!res.ok) {
+        toast.error(data.error ?? 'Could not send your report email');
+        return false;
+      }
+
+      const to = data.email ?? saveMyMove.user?.email ?? null;
+      setEmailedTo(to);
+      setReportEmailed(true);
+      toast.success('Move report sent', {
+        description: to ? `Delivered to ${to}` : 'Check your inbox',
+      });
+      return true;
+    } catch {
+      toast.error('Network error while sending your report');
+      return false;
+    } finally {
+      setEmailSending(false);
+    }
+  }, [
+    inventory,
+    totals.totalVolume,
+    planSnapshot,
+    preset,
+    fromPlace?.label,
+    toPlace?.label,
+    drivingMiles,
+    shortlist,
+    saveMyMove.user?.email,
+  ]);
+
+  const handleEmailMeReport = useCallback(() => {
+    persistPlan();
+    setReportEmailed(false);
+
+    if (inventory.length === 0 || totals.totalVolume <= 0) {
+      toast.message('Build your inventory first', {
+        description: 'We need a documented load to email your move report.',
+      });
+      setStep('inventory');
       return;
     }
 
     if (saveMyMove.loading) {
       toast.message('Preparing sign-in…');
+      stashPendingEmailMoveReport();
       return;
     }
 
     if (!saveMyMove.user) {
-      const first = shortlist[0];
-      stashPendingWizardOutreach({
-        companySlug: first.slug,
-        companyName: first.name,
-      });
-      stashPendingSaveAction({
-        type: 'mover',
-        payload: {
-          companySlug: first.slug,
-          companyName: first.name,
-          sendEmail: true,
-        },
-      });
-      setEmailPendingSlug(first.slug);
+      stashPendingEmailMoveReport();
       saveMyMove.openSaveModal({
         redirectPath: MY_MOVE_PLAN_RETURN_PATH,
-        context: 'mover',
+        context: 'dashboard',
       });
-      toast.message('Sign in to send your report', {
-        description: 'After sign-in we open your first draft and copy all templates.',
+      toast.message('Sign in to email your report', {
+        description: 'After you sign in, we’ll send the move report to your email.',
       });
       return;
     }
 
-    void copyAllOutreachTemplates().then(() => {
-      openEstimateMailto(shortlist[0]);
-      if (shortlist.length > 1) {
-        toast.message('First draft opened', {
-          description: `All ${shortlist.length} templates are on your clipboard for the other movers.`,
-        });
-      }
-    });
-  }, [persistPlan, shortlist, saveMyMove, openEstimateMailto, fromPlace, toPlace, drivingMiles, inventory, weight]);
+    void sendMoveReportEmail();
+  }, [
+    persistPlan,
+    inventory.length,
+    totals.totalVolume,
+    saveMyMove,
+    sendMoveReportEmail,
+  ]);
 
-  // Allow a new post-auth outreach after sign-out
+  // Allow a new post-auth flow after sign-out
   useEffect(() => {
     if (!saveMyMove.user) {
       outreachHandledRef.current = false;
+      emailReportHandledRef.current = false;
     }
   }, [saveMyMove.user]);
 
-  // After magic-link / OAuth / password sign-in, complete a stashed estimate email
+  // After magic-link / OAuth / password sign-in, email stashed move report
+  useEffect(() => {
+    if (!hydrated || saveMyMove.loading || !saveMyMove.user) return;
+    if (emailReportHandledRef.current) return;
+    if (!consumePendingEmailMoveReport()) return;
+
+    emailReportHandledRef.current = true;
+    const plan = loadMyMovePlan();
+    if (plan?.step) setStep(plan.step);
+    else setStep('report');
+
+    window.setTimeout(() => {
+      void sendMoveReportEmail();
+    }, 400);
+  }, [hydrated, saveMyMove.loading, saveMyMove.user, sendMoveReportEmail]);
+
+  // After magic-link / OAuth / password sign-in, complete a stashed per-mover outreach
   useEffect(() => {
     if (!hydrated || saveMyMove.loading || !saveMyMove.user) return;
     if (outreachHandledRef.current) return;
@@ -607,12 +658,10 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
       coverageTier: 'national',
     };
 
-    // Restore wizard context after auth round-trip
     if (plan?.step) {
       setStep(plan.step);
     }
 
-    // Small delay so mail clients don't compete with auth redirect paint
     window.setTimeout(() => {
       openEstimateMailto(mover, plan);
     }, 350);
@@ -1185,11 +1234,15 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
             truck={truck}
             shortlist={shortlist}
             signedIn={Boolean(signedInUser)}
+            userEmail={signedInUser?.email ?? null}
             emailPendingSlug={emailPendingSlug}
             offerPasswordUpgrade={offerPasswordUpgrade}
             authLoading={saveMyMove.loading}
+            emailSending={emailSending}
+            reportEmailed={reportEmailed}
+            emailedTo={emailedTo}
             profileHref={profileHref}
-            onSendAll={handleSendAll}
+            onEmailMeReport={handleEmailMeReport}
             onEmailMover={handleEmailOutreach}
             onCopyTemplate={(m) => void copyOutreach(m)}
             onCopyPlan={() => void copyPlan()}
@@ -1199,6 +1252,10 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
             onRemoveMover={removeMover}
             onPersistPlan={persistPlan}
             onOpenFullCalculator={openFullCalculator}
+            onResetEmailConfirmation={() => {
+              setReportEmailed(false);
+              setEmailedTo(null);
+            }}
           />
         ) : null}
       </div>

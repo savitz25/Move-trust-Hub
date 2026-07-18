@@ -43,11 +43,15 @@ type Props = {
   truck: TruckRec;
   shortlist: HomeRouteMover[];
   signedIn: boolean;
+  userEmail?: string | null;
   emailPendingSlug: string | null;
   offerPasswordUpgrade: boolean;
   authLoading: boolean;
+  emailSending?: boolean;
+  reportEmailed?: boolean;
+  emailedTo?: string | null;
   profileHref: (slug: string) => string;
-  onSendAll: () => void;
+  onEmailMeReport: () => void;
   onEmailMover: (mover: HomeRouteMover) => void;
   onCopyTemplate: (mover: HomeRouteMover) => void;
   onCopyPlan: () => void;
@@ -57,6 +61,7 @@ type Props = {
   onRemoveMover: (slug: string) => void;
   onPersistPlan: () => void;
   onOpenFullCalculator?: () => void;
+  onResetEmailConfirmation?: () => void;
 };
 
 export function ReportReadyStep({
@@ -71,11 +76,15 @@ export function ReportReadyStep({
   truck,
   shortlist,
   signedIn,
+  userEmail = null,
   emailPendingSlug,
   offerPasswordUpgrade,
   authLoading,
+  emailSending = false,
+  reportEmailed = false,
+  emailedTo = null,
   profileHref,
-  onSendAll,
+  onEmailMeReport,
   onEmailMover,
   onCopyTemplate,
   onCopyPlan,
@@ -85,18 +94,17 @@ export function ReportReadyStep({
   onRemoveMover,
   onPersistPlan,
   onOpenFullCalculator,
+  onResetEmailConfirmation,
 }: Props) {
   const [inventoryOpen, setInventoryOpen] = useState(false);
   const [menuOpenSlug, setMenuOpenSlug] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   const n = shortlist.length;
-  const sendLabel =
-    n === 0
-      ? 'Pick movers to send your report'
-      : n === 1
-        ? 'Send report to this mover'
-        : `Send report to all ${n} movers`;
+  const primaryLabel = signedIn
+    ? 'Email me my move report'
+    : 'Sign in & email me my report';
+  const primaryBusy = authLoading || emailSending;
 
   useEffect(() => {
     if (!menuOpenSlug) return;
@@ -108,6 +116,101 @@ export function ReportReadyStep({
     document.addEventListener('mousedown', onDoc);
     return () => document.removeEventListener('mousedown', onDoc);
   }, [menuOpenSlug]);
+
+  if (reportEmailed) {
+    const deliveredTo = emailedTo || userEmail || 'your inbox';
+    return (
+      <div className="space-y-6 sm:space-y-8">
+        <div className="relative overflow-hidden rounded-3xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50 via-white to-sky-50 px-5 py-8 text-center shadow-sm sm:px-8 sm:py-10">
+          <div
+            className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-200/30 blur-2xl"
+            aria-hidden
+          />
+          <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-600 text-white shadow-lg shadow-emerald-600/30">
+            <CheckCircle2 className="h-9 w-9" aria-hidden />
+          </div>
+          <p className="relative mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">
+            Report delivered
+          </p>
+          <h2 className="relative mt-2 text-balance text-2xl font-semibold tracking-tight text-[#0A2540] sm:text-3xl">
+            Your move report has been sent
+          </h2>
+          <p className="relative mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
+            We emailed your professional move report to{' '}
+            <strong className="text-foreground">{deliveredTo}</strong>.
+          </p>
+        </div>
+
+        <section className="rounded-2xl border bg-card px-4 py-5 sm:px-6">
+          <h3 className="text-base font-semibold">What to do next</h3>
+          <ol className="mt-3 space-y-3 text-sm text-muted-foreground">
+            <li className="flex gap-3">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                1
+              </span>
+              <span>
+                <strong className="text-foreground">Check your inbox</strong> (and spam/junk) for
+                “Your Move Report” from Move Trust Hub. Open the PDF attachment if included.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                2
+              </span>
+              <span>
+                <strong className="text-foreground">Contact your shortlisted movers</strong> and
+                share this same report so every quote uses identical inventory and route details.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                3
+              </span>
+              <span>
+                <strong className="text-foreground">Compare fairly</strong>
+                {n > 0
+                  ? ` — your ${n} shortlisted mover${n === 1 ? '' : 's'} should price the same load for side-by-side estimates.`
+                  : ' — shortlist up to 3 movers so you can compare apples-to-apples quotes.'}
+              </span>
+            </li>
+          </ol>
+
+          <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+            {shortlist.slice(0, 3).map((m) => (
+              <Button key={m.slug} variant="outline" size="sm" asChild className="justify-start">
+                <Link href={profileHref(m.slug)} onClick={() => onPersistPlan()}>
+                  <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                  {m.name}
+                </Link>
+              </Button>
+            ))}
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/my-move/reports">My Move Reports</Link>
+            </Button>
+            {onResetEmailConfirmation ? (
+              <Button type="button" variant="ghost" size="sm" onClick={onResetEmailConfirmation}>
+                Back to report
+              </Button>
+            ) : null}
+          </div>
+        </section>
+
+        {n > 0 ? (
+          <section className="rounded-2xl border bg-muted/20 px-4 py-4 sm:px-5">
+            <div className="flex items-center gap-2 text-sm font-semibold">
+              <ShieldCheck className="h-4 w-4 text-emerald-600" aria-hidden />
+              Fair comparison reminder
+            </div>
+            <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+              All shortlisted movers should receive the same inventory and route from this report —
+              that&apos;s how you get comparable estimates. No lead resellers; you contact movers
+              directly.
+            </p>
+          </section>
+        ) : null}
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6 sm:space-y-8">
@@ -268,16 +371,25 @@ export function ReportReadyStep({
         ) : null}
       </article>
 
-      {/* Primary conversion */}
+      {/* Primary conversion — email me the report */}
       <section className="space-y-3 rounded-2xl border border-primary/20 bg-gradient-to-b from-primary/[0.06] to-transparent p-4 sm:p-5">
         <div className="flex items-start gap-2">
-          <Users className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
+          <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
           <div>
             <h3 className="text-base font-semibold tracking-tight sm:text-lg">
-              Get comparable estimates
+              Get your report by email
             </h3>
             <p className="mt-0.5 text-sm text-muted-foreground">
-              One shared report → fair side-by-side quotes from your shortlist.
+              We&apos;ll send a professional move report
+              {signedIn && userEmail ? (
+                <>
+                  {' '}
+                  to <strong className="text-foreground">{userEmail}</strong>
+                </>
+              ) : (
+                ' to your inbox'
+              )}
+              — route, inventory, and truck profile you can share with every shortlisted mover.
             </p>
           </div>
         </div>
@@ -286,12 +398,32 @@ export function ReportReadyStep({
           type="button"
           size="lg"
           className="h-14 w-full gap-2 rounded-2xl text-base font-semibold shadow-md shadow-primary/20 sm:h-16 sm:text-lg"
-          disabled={authLoading}
-          onClick={onSendAll}
+          disabled={primaryBusy || totalVolume <= 0}
+          onClick={onEmailMeReport}
         >
           <Mail className="h-5 w-5" aria-hidden />
-          {sendLabel}
+          {emailSending ? 'Sending report…' : primaryLabel}
         </Button>
+        {totalVolume <= 0 ? (
+          <p className="text-center text-sm text-muted-foreground">
+            Add inventory before emailing your report.
+          </p>
+        ) : !signedIn ? (
+          <p className="text-center text-xs text-muted-foreground">
+            Free My Move sign-in required so we know where to send your report. Magic link, Google,
+            or password — no spam.
+          </p>
+        ) : null}
+
+        <div className="pt-1">
+          <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-foreground">
+            <Users className="h-4 w-4 text-primary" aria-hidden />
+            Your shortlist
+            {n > 0 ? (
+              <span className="font-normal text-muted-foreground">({n}/3)</span>
+            ) : null}
+          </div>
+        </div>
 
         {n === 0 ? (
           <p className="text-center text-sm text-muted-foreground">
@@ -302,7 +434,8 @@ export function ReportReadyStep({
               onClick={onEditShortlist}
             >
               Pick up to 3
-            </button>
+            </button>{' '}
+            so you can share this same report for fair quotes.
           </p>
         ) : (
           <ul className="divide-y rounded-xl border bg-white/90">

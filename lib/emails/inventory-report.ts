@@ -19,6 +19,11 @@ export type InventoryReportEmailData = {
   duration: string;
   groupedByRoom: [string, InventoryItem[]][];
   pdfAttached: boolean;
+  /** Optional My Move Plan context */
+  routeFrom?: string | null;
+  routeTo?: string | null;
+  drivingMiles?: number | null;
+  shortlistNames?: string[];
 };
 
 function escapeHtml(text: string): string {
@@ -107,7 +112,13 @@ function buildInventoryListText(groupedByRoom: [string, InventoryItem[]][]): str
   return lines;
 }
 
-export function buildInventoryReportSubject(totalVolume: number): string {
+export function buildInventoryReportSubject(
+  totalVolume: number,
+  opts?: { isMovePlan?: boolean }
+): string {
+  if (opts?.isMovePlan) {
+    return `Your Move Report – ${Math.round(totalVolume).toLocaleString()} cu ft`;
+  }
   return `Your Moving Inventory – ${Math.round(totalVolume).toLocaleString()} cu ft`;
 }
 
@@ -171,11 +182,38 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
                       ${escapeHtml(greeting)}
                     </h1>
                     <p style="margin:0;font-size:16px;line-height:1.6;color:#64748b;">
-                      Your moving inventory <strong style="color:#0f172a;">${escapeHtml(data.inventoryName)}</strong> is ready.
+                      Your move report <strong style="color:#0f172a;">${escapeHtml(data.inventoryName)}</strong> is ready.
                       ${escapeHtml(attachmentNote)}
                     </p>
                   </td>
                 </tr>
+
+                ${
+                  data.routeFrom || (data.shortlistNames && data.shortlistNames.length > 0)
+                    ? `<tr>
+                  <td style="padding:8px 32px 4px 32px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:14px;">
+                      <tr>
+                        <td style="padding:16px 18px;">
+                          <p style="margin:0 0 6px;font-size:11px;line-height:1.4;color:#047857;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Your plan</p>
+                          ${
+                            data.routeFrom
+                              ? `<p style="margin:0 0 6px;font-size:14px;line-height:1.5;color:#0f172a;"><strong>Route:</strong> ${escapeHtml(data.routeFrom)}${data.routeTo ? ` → ${escapeHtml(data.routeTo)}` : ''}${data.drivingMiles ? ` · ~${data.drivingMiles.toLocaleString()} mi` : ''}</p>`
+                              : ''
+                          }
+                          ${
+                            data.shortlistNames && data.shortlistNames.length > 0
+                              ? `<p style="margin:0;font-size:14px;line-height:1.5;color:#0f172a;"><strong>Shortlist:</strong> ${escapeHtml(data.shortlistNames.join(', '))}</p>
+                          <p style="margin:8px 0 0;font-size:12px;line-height:1.5;color:#64748b;">Send this same inventory to each mover for fair, comparable estimates.</p>`
+                              : ''
+                          }
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>`
+                    : ''
+                }
 
                 <tr>
                   <td style="padding:8px 26px 8px 26px;">

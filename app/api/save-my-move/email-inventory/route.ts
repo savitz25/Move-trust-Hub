@@ -84,7 +84,16 @@ export async function POST(request: Request) {
       );
     }
 
-    let body: { inventory?: unknown; name?: string; movePreset?: string | null };
+    let body: {
+      inventory?: unknown;
+      name?: string;
+      movePreset?: string | null;
+      routeFrom?: string | null;
+      routeTo?: string | null;
+      drivingMiles?: number | null;
+      shortlistNames?: string[];
+      isMovePlan?: boolean;
+    };
     try {
       body = await request.json();
     } catch {
@@ -100,10 +109,15 @@ export async function POST(request: Request) {
     const totalVolume = inventory.reduce((s, i) => s + i.volume * i.quantity, 0);
     const totalItems = inventory.reduce((s, i) => s + i.quantity, 0);
     const recommendation = getMoveRecommendation(totalVolume);
-    const inventoryName = body.name?.trim() || 'My Move Inventory';
+    const inventoryName =
+      body.name?.trim() ||
+      (body.isMovePlan ? 'My Move Report' : 'My Move Inventory');
     const presetLabel = body.movePreset
       ? MOVE_PRESETS.find((p) => p.id === body.movePreset)?.label ?? null
       : null;
+    const shortlistNames = Array.isArray(body.shortlistNames)
+      ? body.shortlistNames.filter((n): n is string => typeof n === 'string' && n.trim().length > 0)
+      : [];
 
     const emailData = {
       recipientName: resolveRecipientName(user),
@@ -117,6 +131,13 @@ export async function POST(request: Request) {
       duration: recommendation.duration,
       groupedByRoom,
       pdfAttached: false,
+      routeFrom: body.routeFrom?.trim() || null,
+      routeTo: body.routeTo?.trim() || null,
+      drivingMiles:
+        typeof body.drivingMiles === 'number' && Number.isFinite(body.drivingMiles)
+          ? body.drivingMiles
+          : null,
+      shortlistNames,
     };
 
     const pdfAttachment = tryBuildPdfAttachment(
@@ -129,10 +150,13 @@ export async function POST(request: Request) {
     emailData.pdfAttached = pdfAttachment !== null;
 
     const resend = new Resend(apiKey);
+    const isMovePlan = Boolean(
+      body.isMovePlan || emailData.routeFrom || shortlistNames.length > 0
+    );
     const { data, error } = await resend.emails.send({
       from: resolveFrom(),
       to: user.email,
-      subject: buildInventoryReportSubject(totalVolume),
+      subject: buildInventoryReportSubject(totalVolume, { isMovePlan }),
       html: buildInventoryReportEmailHtml(emailData),
       text: buildInventoryReportEmailText(emailData),
       attachments: pdfAttachment ? [pdfAttachment] : undefined,
@@ -157,6 +181,7 @@ export async function POST(request: Request) {
       success: true,
       id: data?.id,
       pdfAttached: emailData.pdfAttached,
+      email: user.email,
     });
   } catch (error) {
     console.error('[email-inventory] Unexpected error:', error);
