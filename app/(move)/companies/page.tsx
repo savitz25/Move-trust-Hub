@@ -62,12 +62,20 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
             Compare FMCSA-Licensed Interstate Movers
           </h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">
-            Your shortlist starts here. Search FMCSA-verified interstate movers with active operating
-            authority — filter by coverage, services, price, and reputation. Every profile includes{' '}
+            Your shortlist starts here. Search interstate movers licensed by the U.S. Department of
+            Transportation (FMCSA) for state-to-state moves — filter by coverage, services, price, and
+            reputation. Every profile includes{' '}
             <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
               FMCSA licensing
             </Link>{' '}
-            context and moderated reviews.
+            context and attributed customer reviews. This is a curated directory —{' '}
+            <Link
+              href="/about/how-we-score-movers#how-we-vet"
+              className="text-primary underline underline-offset-2"
+            >
+              see how we vet our movers
+            </Link>
+            .
           </p>
         </div>
 

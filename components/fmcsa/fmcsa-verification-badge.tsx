@@ -4,7 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { AlertTriangle, ShieldCheck, ShieldX } from 'lucide-react';
 import type { Company } from '@/types';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
-import { badgeLegendHref } from '@/lib/trust/site-stats';
+import { badgeLegendHref, methodologyHref } from '@/lib/trust/methodology-paths';
+import { FMCSA_PLAIN_ENGLISH, FMCSA_VERIFIED_TOOLTIP } from '@/lib/trust/fmcsa-consumer-copy';
 import {
   verificationBadgeClasses,
   verificationBadgeIconClass,
@@ -50,7 +51,8 @@ const LEGEND_IDS: Record<FmcsaBadgeStatus, string> = {
 
 const TOOLTIPS: Record<FmcsaBadgeStatus, string> = {
   verified:
-    VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa')?.description ?? LABELS.verified,
+    VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa')?.description ??
+    FMCSA_VERIFIED_TOOLTIP,
   warning:
     VERIFICATION_BADGE_LEGEND.find((item) => item.id === 'fmcsa-warning')?.description ??
     LABELS.warning,
@@ -100,6 +102,10 @@ export function FmcsaVerificationBadge({
   const legendId = LEGEND_IDS[status];
   const tone = TONE[status];
   const iconClass = verificationBadgeIconClass(size);
+  const accessibleTitle =
+    status === 'verified'
+      ? `${LABELS.verified}. ${FMCSA_PLAIN_ENGLISH} ${tooltip}`
+      : `${LABELS[status]}. ${tooltip}`;
 
   let badge: ReactNode;
 
@@ -108,7 +114,7 @@ export function FmcsaVerificationBadge({
       <Badge
         variant="outline"
         className={verificationBadgeClasses(size, tone, className)}
-        title={tooltip}
+        title={accessibleTitle}
       >
         <ShieldCheck className={iconClass} />
         {LABELS.verified}
@@ -119,7 +125,7 @@ export function FmcsaVerificationBadge({
       <Badge
         variant="outline"
         className={verificationBadgeClasses(size, tone, className)}
-        title={tooltip}
+        title={accessibleTitle}
       >
         <AlertTriangle className={iconClass} />
         {LABELS.warning}
@@ -130,7 +136,7 @@ export function FmcsaVerificationBadge({
       <Badge
         variant="outline"
         className={verificationBadgeClasses(size, tone, className)}
-        title={tooltip}
+        title={accessibleTitle}
       >
         <ShieldX className={iconClass} />
         {LABELS.critical}
@@ -140,12 +146,16 @@ export function FmcsaVerificationBadge({
 
   if (!linkToLegend) return badge;
 
+  // Profile legend + full vetting explainer
+  const href =
+    size === 'profile' ? badgeLegendHref(legendId, true) : methodologyHref('vetting');
+
   return (
     <Link
-      href={badgeLegendHref(legendId, true)}
+      href={href}
       className={cn(verificationBadgeLinkClass(), 'hover:ring-1 hover:ring-primary/20 transition-shadow')}
-      title={`${tooltip} — see badge legend`}
-      aria-label={`${LABELS[status]}: ${tooltip}. View badge legend.`}
+      title={`${accessibleTitle} — see how we vet movers`}
+      aria-label={`${LABELS[status]}: ${FMCSA_PLAIN_ENGLISH} ${tooltip}. See how we vet movers.`}
     >
       {badge}
     </Link>

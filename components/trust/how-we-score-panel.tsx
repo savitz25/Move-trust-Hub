@@ -5,7 +5,8 @@ import {
   REPUTATION_SCORE_FACTORS,
   REPUTATION_SCORE_THRESHOLD,
 } from '@/lib/trust/reputation-score-factors';
-import { methodologyHref } from '@/lib/trust/site-stats';
+import { methodologyHref } from '@/lib/trust/methodology-paths';
+import { HOW_WE_VET_HREF, HOW_WE_VET_LABEL } from '@/lib/trust/vetting-criteria';
 
 type Props = {
   className?: string;
@@ -44,6 +45,13 @@ function HowWeScoreBody({ compact = false }: { compact?: boolean }) {
       )}
 
       <div className="flex flex-wrap gap-2 text-sm">
+        <Link
+          href={HOW_WE_VET_HREF}
+          className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1.5 font-medium hover:border-primary/40 hover:text-primary transition-colors"
+        >
+          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+          {HOW_WE_VET_LABEL}
+        </Link>
         <Link
           href={methodologyHref('reputationScore')}
           className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1.5 font-medium hover:border-primary/40 hover:text-primary transition-colors"
@@ -128,6 +136,13 @@ export function HowWeScorePanel({
       )}
 
       <div className="flex flex-wrap gap-2 text-sm">
+        <Link
+          href={HOW_WE_VET_HREF}
+          className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1.5 font-medium hover:border-primary/40 hover:text-primary transition-colors"
+        >
+          <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+          {HOW_WE_VET_LABEL}
+        </Link>
         <Link
           href={methodologyHref('reputationScore')}
           className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1.5 font-medium hover:border-primary/40 hover:text-primary transition-colors"

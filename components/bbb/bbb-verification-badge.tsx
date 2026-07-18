@@ -7,7 +7,7 @@ import {
   getBbbDisplayFromScrape,
   type BbbVerificationStatus,
 } from '@/lib/trust/verification-status';
-import { badgeLegendHref } from '@/lib/trust/site-stats';
+import { badgeLegendHref } from '@/lib/trust/methodology-paths';
 import {
   verificationBadgeClasses,
   verificationBadgeIconClass,

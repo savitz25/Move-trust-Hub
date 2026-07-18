@@ -58,7 +58,14 @@ export function buildProfileReviewSources(
   company: Pick<Company, 'id' | 'overallRating' | 'reviewCount'>,
   googleData?: GooglePlacesData | null
 ): ProfileReviewSources {
-  const attributableOnSiteCount = getCompanyAttributableReviewCount(company.id);
+  // Live Google snippets take precedence over seed-only counts when present.
+  const fromGoogle = company.googleData?.status === 'ok'
+    ? (company.googleData.review_snippets ?? []).filter((s) => (s.text?.trim() ?? '').length >= 8).length
+    : 0;
+  const attributableOnSiteCount = Math.max(
+    fromGoogle,
+    getCompanyAttributableReviewCount(company.id)
+  );
   const googleAvailable = Boolean(
     googleData?.status === 'ok' && googleData.rating != null && googleData.rating > 0
   );

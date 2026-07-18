@@ -1,5 +1,4 @@
 import type { Review } from '@/types';
-import { getSiteAttributableReviewCount } from '@/lib/trust/site-stats';
 import {
   getAttributableReviewsForCompany,
   isAttributableReview,
@@ -8,7 +7,7 @@ import {
 export const NATIVE_REVIEW_VERIFIED_LABEL = 'Verified by Move Trust Hub';
 
 export const REVIEW_TRANSPARENCY_DISCLAIMER =
-  'Move Trust Hub hosts a small set of attributed Google reviews and moderated community submissions. Industry-reported review volumes on company profiles reflect third-party platforms — not reviews collected or verified on this site.';
+  'Move Trust Hub publishes attributed Google customer reviews (named reviewers) and moderated community submissions — not reviews written by the movers. Industry-reported review volumes on profiles reflect third-party platforms and are never mixed into our on-site attributed total.';
 
 export const EDITORIAL_REVIEW_VOLUME_NOTE =
   'Industry-reported volume from third-party platforms — not verified on Move Trust Hub.';
@@ -26,8 +25,6 @@ export type ReviewSourceDisplay = {
 
 const GOOGLE_SEARCH_URL = 'https://www.google.com/search?q=';
 
-export { getSiteAttributableReviewCount } from '@/lib/trust/site-stats';
-
 export function getCompanyAttributableReviewCount(companyId: string): number {
   return getAttributableReviewsForCompany(companyId, 100).length;
 }
@@ -38,9 +35,9 @@ export function formatEditorialReviewVolume(count: number): string {
 }
 
 export function formatAttributableReviewCount(count: number): string {
-  if (count === 0) return 'No attributed reviews on-site yet';
-  if (count === 1) return '1 attributed Google review on-site';
-  return `${count} attributed Google reviews on-site`;
+  if (count === 0) return 'No attributed Google reviews published yet';
+  if (count === 1) return '1 attributed Google review we published';
+  return `${count} attributed Google reviews we published`;
 }
 
 export function getReviewSourceDisplay(review: Review): ReviewSourceDisplay {

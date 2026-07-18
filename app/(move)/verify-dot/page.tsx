@@ -87,7 +87,7 @@ export default function VerifyDotPage() {
             company isn&apos;t in our directory yet.
           </p>
           <div className="mt-6">
-            <PageHeroCta showTrustBadges={false} />
+            <PageHeroCta />
           </div>
         </div>
       </div>

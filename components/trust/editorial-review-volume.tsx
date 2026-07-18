@@ -3,7 +3,7 @@ import {
   EDITORIAL_REVIEW_VOLUME_NOTE,
   formatEditorialReviewVolume,
 } from '@/lib/trust/review-display-policy';
-import { methodologyHref } from '@/lib/trust/site-stats';
+import { methodologyHref } from '@/lib/trust/methodology-paths';
 
 type Props = {
   count: number;

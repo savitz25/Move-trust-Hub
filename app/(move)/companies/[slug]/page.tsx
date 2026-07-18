@@ -12,6 +12,7 @@ import { AttributedReviewsPanel } from '@/components/reviews/attributed-reviews-
 import { CompanyProfileStats, FmcsaSafetyMetric } from '@/components/company/company-profile-stats';
 import { CompanyProfileReviewSources } from '@/components/company/company-profile-review-sources';
 import { getCompanyAttributableReviewCount } from '@/lib/trust/review-display-policy';
+import { countAttributedReviewsForCompany } from '@/lib/trust/attributed-review-count';
 import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
 import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
 import { SaveMoverButton } from '@/components/save-my-move/save-mover-button';
@@ -39,6 +40,8 @@ import { CompanyVerificationBadges } from '@/components/trust/company-verificati
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { ProfileDataFreshness } from '@/components/trust/profile-data-freshness';
 import { ClaimProfileCta } from '@/components/portal/claim-cta';
+import { SeeHowWeVetLink } from '@/components/trust/see-how-we-vet-link';
+import { FMCSA_PLAIN_ENGLISH } from '@/lib/trust/fmcsa-consumer-copy';
 
 
 /** Keep aligned with directory ISR + CDN s-maxage (tag revalidation on publish). */
@@ -92,7 +95,11 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
     editorialReviewCount: company.reviewCount,
     editorialRating: company.overallRating,
   });
-  const attributableOnSiteCount = getCompanyAttributableReviewCount(company.id);
+  // Prefer Google snippets on the profile when present; else curated seed excerpts.
+  const attributableOnSiteCount = Math.max(
+    countAttributedReviewsForCompany(company),
+    getCompanyAttributableReviewCount(company.id)
+  );
 
   const reviewHref = reviewUrlForDirectoryCompany({
     usdotNumber: company.usdotNumber,
@@ -140,7 +147,13 @@ export default async function CompanyProfilePage({ params, searchParams }: Props
           ) : null}
           <div className="text-muted-foreground">{company.headquarters} • Founded {company.foundedYear} • {company.yearsInBusiness} years in business</div>
           {verification.directoryVerified || verification.fmcsa || verification.bbb ? (
-            <VerificationBadgeLegend className="mt-4" />
+            <div className="mt-4 space-y-2">
+              <p className="text-xs text-muted-foreground max-w-xl leading-relaxed">
+                <strong className="text-foreground">FMCSA</strong> — {FMCSA_PLAIN_ENGLISH}
+              </p>
+              <SeeHowWeVetLink className="text-xs" />
+              <VerificationBadgeLegend className="mt-2" />
+            </div>
           ) : null}
         </div>
         <div className="flex items-center gap-3">

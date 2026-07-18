@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Info } from 'lucide-react';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
-import { methodologyHref } from '@/lib/trust/site-stats';
+import { methodologyHref } from '@/lib/trust/methodology-paths';
 import { cn } from '@/lib/utils';
 
 type VerificationBadgeLegendProps = {

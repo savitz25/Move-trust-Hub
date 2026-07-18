@@ -1,8 +1,8 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Calculator, Scale, MapPinned, BookOpen } from 'lucide-react';
-import { TrustBadges } from '@/components/trust/trust-badges';
 
 type PageHeroCtaProps = {
   primaryLabel?: string;
@@ -13,7 +13,8 @@ type PageHeroCtaProps = {
   tertiaryHref?: string;
   /** Optional; omit by default so independence messaging stays in header + footer only. */
   trustTagline?: string;
-  showTrustBadges?: boolean;
+  /** Server-rendered trust strip (e.g. <TrustBadges />) — do not import async Server Components here. */
+  trustStrip?: ReactNode;
   className?: string;
 };
 
@@ -33,7 +34,7 @@ export function PageHeroCta({
   tertiaryLabel,
   tertiaryHref,
   trustTagline,
-  showTrustBadges = false,
+  trustStrip,
   className,
 }: PageHeroCtaProps) {
   const PrimaryIcon = iconForHref(primaryHref);
@@ -75,9 +76,7 @@ export function PageHeroCta({
           {trustTagline}
         </p>
       ) : null}
-      {showTrustBadges ? (
-        <TrustBadges variant="compact" className="mt-6" />
-      ) : null}
+      {trustStrip ? <div className="mt-6">{trustStrip}</div> : null}
     </div>
   );
 }

@@ -7,7 +7,7 @@ import {
   METHODOLOGY_ANCHORS,
   methodologyHref,
   type MethodologyReturnContext,
-} from '@/lib/trust/site-stats';
+} from '@/lib/trust/methodology-paths';
 
 type MethodologyAnchor = keyof typeof METHODOLOGY_ANCHORS;
 

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Star } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { badgeLegendHref } from '@/lib/trust/site-stats';
+import { badgeLegendHref } from '@/lib/trust/methodology-paths';
 import type { GooglePlacesData } from '@/lib/verification/types';
 
 export function GoogleRatingBadge({

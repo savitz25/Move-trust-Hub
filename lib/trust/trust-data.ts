@@ -1,48 +1,66 @@
-import { getHomepageAttributableReviews } from '@/lib/trust/verified-reviews';
-import {
-  formatDirectoryAvgRating,
-  getDirectoryTrustStats,
-  getVerifiedDirectoryCompanies,
-  methodologyHref,
-} from '@/lib/trust/site-stats';
-
-const stats = getDirectoryTrustStats();
-const verifiedDirectoryCompanies = getVerifiedDirectoryCompanies();
-
-export const trustStats = stats;
-
 /**
- * Functional trust signals only (FMCSA, directory size, scoring).
- * Independence / no-lead-fees is stated once in header + footer — not repeated here.
+ * Client-safe trust content (testimonials / highlights from seed).
+ * Live badge stats live in getLiveTrustBadges / TrustBadges Server Component.
  */
-export const trustBadges = [
-  {
-    id: 'fmcsa',
-    label: 'FMCSA DOT/MC Checked',
-    description: 'Every listed interstate carrier has a verifiable USDOT/MC record',
-    href: '/resources/fmcsa',
-    externalHref: 'https://www.fmcsa.dot.gov/',
-  },
-  {
-    id: 'licensed',
-    label: `${stats.verifiedMovers} Directory Movers`,
-    description: 'Interstate carriers with verifiable USDOT records',
-    href: '/companies',
-  },
-  {
-    id: 'rating',
-    label: formatDirectoryAvgRating(stats.averageRating),
-    description: 'Across FMCSA-licensed interstate listings',
-    href: methodologyHref('reputationScore'),
-  },
-  {
-    id: 'methodology',
-    label: 'Transparent Scoring',
-    description: 'Reputation scores and review attribution explained in full',
-    href: methodologyHref('reputationScore'),
-  },
-] as const;
+import { getHomepageAttributableReviews } from '@/lib/trust/verified-reviews';
+import { getVerifiedDirectoryCompaniesSeed } from '@/lib/trust/verified-directory-seed';
+import { methodologyHref } from '@/lib/trust/methodology-paths';
+import { FMCSA_CHECKED_TOOLTIP } from '@/lib/trust/fmcsa-consumer-copy';
+import { HOW_WE_VET_HREF } from '@/lib/trust/vetting-criteria';
 
+export type TrustBadgeItem = {
+  id: string;
+  label: string;
+  description: string;
+  href: string;
+  externalHref?: string;
+};
+
+export type DirectoryTrustStats = {
+  verifiedMovers: number;
+  attributableReviews: number;
+  averageRating: number;
+  fmcsaLicensed: number;
+};
+
+/** Build trust badges from stats — never freeze counts at import time for live UI. */
+export function buildTrustBadges(stats: DirectoryTrustStats): TrustBadgeItem[] {
+  return [
+    {
+      id: 'fmcsa',
+      label: 'FMCSA DOT/MC Checked',
+      description: FMCSA_CHECKED_TOOLTIP,
+      href: HOW_WE_VET_HREF,
+      externalHref: 'https://www.fmcsa.dot.gov/',
+    },
+    {
+      id: 'licensed',
+      label: `${stats.verifiedMovers.toLocaleString()} Directory Movers`,
+      description: 'Interstate carriers with verifiable USDOT records in our curated directory',
+      href: '/companies',
+    },
+    {
+      id: 'rating',
+      label: `${stats.averageRating}★ Directory Avg`,
+      description: 'Across FMCSA-licensed interstate listings we publish',
+      href: methodologyHref('reputationScore'),
+    },
+    {
+      id: 'vetting',
+      label: 'How we vet movers',
+      description: 'USDOT, active authority, insurance, and out-of-service checks explained',
+      href: HOW_WE_VET_HREF,
+    },
+    {
+      id: 'methodology',
+      label: 'Transparent Scoring',
+      description: 'Reputation scores and review attribution explained in full',
+      href: methodologyHref('reputationScore'),
+    },
+  ];
+}
+
+const verifiedDirectoryCompanies = getVerifiedDirectoryCompaniesSeed();
 const homepageReviews = getHomepageAttributableReviews(4);
 
 export const testimonials = homepageReviews.map((review) => ({
@@ -79,12 +97,12 @@ export const reviewHighlights = verifiedDirectoryCompanies
 export const neutralTrustSignals = [
   {
     title: 'Verify FMCSA licensing yourself',
-    body: 'Verified listings include a USDOT number you can look up on the official FMCSA SAFER site before booking.',
+    body: 'Verified listings include a USDOT number you can look up on the official FMCSA SAFER site before booking. FMCSA licenses movers for interstate (state-to-state) moves.',
     href: '/resources/fmcsa',
   },
   {
-    title: 'Attributed reviews only',
-    body: 'We display named Google reviews where available. Pages without sourced reviews use neutral trust signals — no fabricated quotes.',
+    title: 'Attributed customer reviews only',
+    body: 'We publish named Google customer reviews where available — not reviews written by the movers. Pages without sourced reviews use neutral trust signals.',
     href: methodologyHref('reviewAttribution'),
   },
   {
@@ -97,6 +115,6 @@ export const neutralTrustSignals = [
 export const toolLinks = {
   'moving-calculator': { label: 'Moving Calculator', href: '/moving-calculator' },
   compare: { label: 'Compare Tool', href: '/compare' },
-  companies: { label: 'Mover Directory', href: '/companies' },
+  companies: { label: 'Find Movers', href: '/companies' },
   fmcsa: { label: 'FMCSA Guide', href: '/resources/fmcsa' },
 } as const;

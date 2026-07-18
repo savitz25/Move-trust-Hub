@@ -12,36 +12,33 @@ export const CTA_COMPARE_TRUSTED_MOVERS = 'Compare Trusted Movers';
 export const DIRECTORY_INDEPENDENCE_TAGLINE =
   'Independent directory — not affiliated with listed movers. We do not sell leads or match you with carriers.';
 
-export {
-  ATTRIBUTED_REVIEWS_EXPLANATION,
-  formatAttributedReviewsLabel,
-  METHODOLOGY_PAGE_PATH,
-  methodologyHref,
-} from '@/lib/trust/site-stats';
+// Note: do not re-export from site-stats here — that module is server-only.
+// Import methodology helpers from '@/lib/trust/site-stats' in Server Components.
 
 export const VERIFICATION_BADGE_LEGEND = [
   {
     id: 'directory',
     label: 'Directory Verified',
     description:
-      'Listed with an active FMCSA-licensed USDOT/MC record from our DOT data sync — not a paid placement.',
+      'Listed after our license checks on public FMCSA data (USDOT/MC). Not a paid placement. FMCSA licenses movers for interstate (state-to-state) moves under the U.S. Department of Transportation.',
   },
   {
     id: 'fmcsa',
     label: 'FMCSA Verified',
     description:
-      'Active operating authority and satisfactory FMCSA safety rating based on our most recent public SAFER check.',
+      'Licensed by the U.S. Department of Transportation for interstate (state-to-state) moves. We confirmed active operating authority and a satisfactory FMCSA safety rating on our most recent public SAFER check.',
   },
   {
     id: 'fmcsa-warning',
     label: 'FMCSA Warning',
     description:
-      'Conditional or unsatisfactory FMCSA safety rating — review the official SAFER record before booking.',
+      'Conditional or unsatisfactory FMCSA safety rating — review the official SAFER record before booking. FMCSA is the federal agency that licenses interstate movers.',
   },
   {
     id: 'fmcsa-critical',
     label: 'Authority Alert',
-    description: 'Out-of-service or inactive authority flagged on the latest FMCSA check.',
+    description:
+      'Out-of-service or inactive authority flagged on the latest FMCSA check. Do not treat this carrier as fully cleared for interstate moves until you re-verify on SAFER.',
   },
   {
     id: 'bbb-verified',

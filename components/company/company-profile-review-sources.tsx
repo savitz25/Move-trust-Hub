@@ -7,7 +7,7 @@ import {
   PROFILE_METRIC_TOOLTIPS,
 } from '@/lib/trust/profile-metrics';
 import { REVIEW_TRANSPARENCY_DISCLAIMER } from '@/lib/trust/review-display-policy';
-import { methodologyHref } from '@/lib/trust/site-stats';
+import { methodologyHref } from '@/lib/trust/methodology-paths';
 import type { Company } from '@/types';
 import type { GooglePlacesData } from '@/lib/verification/types';
 

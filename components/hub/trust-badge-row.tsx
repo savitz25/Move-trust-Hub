@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Shield, ExternalLink } from 'lucide-react';
 import { getHubConfig } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
-import { methodologyHref } from '@/lib/trust/site-stats';
+import { methodologyHref } from '@/lib/trust/methodology-paths';
 
 type TrustBadgeRowProps = {
   hub: HubId;
@@ -11,7 +11,17 @@ type TrustBadgeRowProps = {
 
 const HUB_BADGES: Record<HubId, { label: string; detail: string; href?: string }[]> = {
   move: [
-    { label: 'FMCSA Licensed', detail: 'DOT/MC verification on every interstate carrier', href: '/resources/fmcsa' },
+    {
+      label: 'FMCSA Licensed',
+      detail:
+        'Licensed by the U.S. Department of Transportation for interstate (state-to-state) moves. We check USDOT/MC on every interstate carrier.',
+      href: '/resources/fmcsa',
+    },
+    {
+      label: 'How we vet movers',
+      detail: 'USDOT, active authority, insurance, and out-of-service checks — curated, not scraped',
+      href: '/about/how-we-score-movers#how-we-vet',
+    },
     {
       label: 'Transparent Scoring',
       detail: 'Reputation methodology published — no black-box rankings',
@@ -42,7 +52,7 @@ export function TrustBadgeRow({ hub, className }: TrustBadgeRowProps) {
       <div className="container mx-auto px-4">
         <p className="mb-3 text-center text-xs text-muted-foreground md:text-left">
           {hub === 'move'
-            ? 'Research tools and FMCSA context for interstate movers.'
+            ? 'FMCSA licenses movers for interstate (state-to-state) moves. Research tools and curated listings — not a raw scrape.'
             : hub === 'lender'
               ? 'Transparent lender data you can actually trust.'
               : 'Licensed agents, plain-language guides, and clear comparisons.'}

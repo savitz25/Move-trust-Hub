@@ -7,6 +7,7 @@ import {
   BadgeCheck,
   Database,
   ArrowRight,
+  ClipboardCheck,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -22,25 +23,34 @@ import {
   REPUTATION_SCORE_SUMMARY,
 } from '@/lib/trust/reputation-score-factors';
 import {
-  getDirectoryTrustStats,
+  getDirectoryTrustStatsAsync,
   formatAttributedReviewsLabel,
   METHODOLOGY_PAGE_PATH,
+  ATTRIBUTED_REVIEWS_EXPLANATION,
 } from '@/lib/trust/site-stats';
 import {
   REVIEW_TRANSPARENCY_DISCLAIMER,
   EDITORIAL_REVIEW_VOLUME_NOTE,
 } from '@/lib/trust/review-display-policy';
 import { DIRECTORY_INDEPENDENCE_TAGLINE } from '@/lib/trust/site-messaging';
+import {
+  FMCSA_ACRONYM_EXPANDED,
+  FMCSA_PLAIN_ENGLISH,
+} from '@/lib/trust/fmcsa-consumer-copy';
+import {
+  HOW_WE_VET_INTRO,
+  MOVER_VETTING_CRITERIA,
+} from '@/lib/trust/vetting-criteria';
 
 export const metadata = buildResourceMetadata(
   METHODOLOGY_PAGE_PATH,
-  'How We Score Movers — Reputation, Reviews & Data Sources',
-  'Transparent methodology for Move Trust Hub reputation scores, review attribution, FMCSA data sync, and verification badges. Independent directory — no inflated review counts.'
+  'How We Score Movers — Reputation, Reviews & Vetting Criteria',
+  'Transparent methodology for Move Trust Hub reputation scores, review attribution, FMCSA licensing checks, and how we vet movers. Independent directory — honest review counts.'
 );
 
-const stats = getDirectoryTrustStats();
+export default async function HowWeScoreMoversPage() {
+  const stats = await getDirectoryTrustStatsAsync();
 
-export default function HowWeScoreMoversPage() {
   return (
     <div className="min-h-screen bg-background">
       <JsonLd
@@ -71,11 +81,12 @@ export default function HowWeScoreMoversPage() {
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
             {DIRECTORY_INDEPENDENCE_TAGLINE} This page explains every number you see on our
-            directory — reputation scores, review counts, and verification badges.
+            directory — reputation scores, review counts, verification badges, and how we vet
+            listings.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <span className="rounded-full border bg-background px-3 py-1.5 tabular-nums">
-              {stats.verifiedMovers} FMCSA-licensed listings
+              {stats.verifiedMovers.toLocaleString()} FMCSA-licensed listings
             </span>
             <span className="rounded-full border bg-background px-3 py-1.5">
               {formatAttributedReviewsLabel(stats.attributableReviews)}
@@ -84,10 +95,58 @@ export default function HowWeScoreMoversPage() {
               {stats.averageRating}★ directory average
             </span>
           </div>
+          <p className="mt-4 text-sm text-muted-foreground max-w-2xl leading-relaxed">
+            <strong className="text-foreground">What is FMCSA?</strong> {FMCSA_ACRONYM_EXPANDED}{' '}
+            {FMCSA_PLAIN_ENGLISH}
+          </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12 max-w-4xl space-y-12">
+        {/* How we vet */}
+        <section id="how-we-vet" className="scroll-mt-24">
+          <div className="flex items-start gap-3 mb-6">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-500/10">
+              <ClipboardCheck className="h-5 w-5 text-emerald-700" aria-hidden="true" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">How we vet our movers</h2>
+              <p className="text-muted-foreground mt-2 leading-relaxed">{HOW_WE_VET_INTRO}</p>
+            </div>
+          </div>
+
+          <ol className="space-y-3" role="list">
+            {MOVER_VETTING_CRITERIA.map((criterion, index) => (
+              <li
+                key={criterion.id}
+                className="flex items-start gap-3 rounded-xl border bg-card px-4 py-3 text-sm"
+              >
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-600/10 text-xs font-bold text-emerald-800 tabular-nums">
+                  {index + 1}
+                </span>
+                <div>
+                  <div className="font-medium">{criterion.title}</div>
+                  <p className="text-muted-foreground leading-relaxed mt-0.5">{criterion.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+            This is a curated research directory — not a raw scrape of every company name on the
+            internet. You should still re-verify USDOT authority on{' '}
+            <a
+              href="https://www.fmcsa.dot.gov/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-medium hover:underline"
+            >
+              FMCSA.gov
+            </a>{' '}
+            before booking.
+          </p>
+        </section>
+
         {/* Reputation Score */}
         <section id="reputation-score" className="scroll-mt-24">
           <div className="flex items-start gap-3 mb-6">
@@ -141,14 +200,15 @@ export default function HowWeScoreMoversPage() {
           <div className="grid gap-4 sm:grid-cols-3">
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle className="text-base">On-site attributed reviews</CardTitle>
+                <CardTitle className="text-base">Attributed Google reviews we publish</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground leading-relaxed">
                 <p className="font-semibold text-foreground text-lg tabular-nums mb-2">
                   {formatAttributedReviewsLabel(stats.attributableReviews)}
                 </p>
-                Named Google reviewer excerpts we publish with full attribution. This is the only
-                review count shown in trust badges and homepage stats.
+                {ATTRIBUTED_REVIEWS_EXPLANATION} This total is calculated from live directory data
+                (Google review snippets on company profiles plus curated on-site excerpts) and updates
+                automatically as companies are added.
               </CardContent>
             </Card>
             <Card>
@@ -166,7 +226,7 @@ export default function HowWeScoreMoversPage() {
                 <CardTitle className="text-base">Google Places snapshot</CardTitle>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground leading-relaxed">
-                Live API data when available. May differ from industry-reported totals. Confirm
+                Live API data when available (rating + short attributed excerpts). Confirm
                 independently on Google Maps before booking.
               </CardContent>
             </Card>
@@ -193,8 +253,8 @@ export default function HowWeScoreMoversPage() {
             <li className="flex items-start gap-2">
               <ShieldCheck className="h-4 w-4 shrink-0 mt-0.5 text-emerald-600" aria-hidden="true" />
               <span>
-                <strong className="text-foreground">FMCSA SAFER</strong> — USDOT authority, safety
-                rating, complaints, shipments
+                <strong className="text-foreground">FMCSA SAFER</strong> — {FMCSA_PLAIN_ENGLISH}{' '}
+                USDOT authority, safety rating, complaints, shipments
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -208,7 +268,7 @@ export default function HowWeScoreMoversPage() {
               <Star className="h-4 w-4 shrink-0 mt-0.5 text-amber-600" aria-hidden="true" />
               <span>
                 <strong className="text-foreground">Google Places API</strong> — live rating
-                snapshots where configured
+                snapshots and attributed review snippets where configured
               </span>
             </li>
           </ul>

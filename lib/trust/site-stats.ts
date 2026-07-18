@@ -2,71 +2,40 @@
  * Single source of truth for directory-wide trust metrics.
  * All homepage, hub, directory, and badge surfaces must import from here.
  */
-import { seedCompanies } from '@/data/seed-companies';
-import { assessLicense } from '@/lib/trust/license-verification';
+import 'server-only';
+
+import { countAttributedReviewsAcrossCompanies } from '@/lib/trust/attributed-review-count';
+import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
+import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { countAttributableReviews } from '@/lib/trust/verified-reviews';
+import { getLiveAttributedReviewCount } from '@/lib/trust/attributed-review-count';
+import { getVerifiedDirectoryCompaniesSeed } from '@/lib/trust/verified-directory-seed';
 
-/** Canonical methodology page — link every reputation score and review count here. */
-export const METHODOLOGY_PAGE_PATH = '/about/how-we-score-movers';
+export {
+  METHODOLOGY_PAGE_PATH,
+  METHODOLOGY_ANCHORS,
+  methodologyHref,
+  badgeLegendHref,
+  type MethodologyReturnContext,
+} from '@/lib/trust/methodology-paths';
 
-export const METHODOLOGY_ANCHORS = {
-  reputationScore: 'reputation-score',
-  reviewAttribution: 'review-attribution',
-  dataSources: 'data-sources',
-  badges: 'badges',
-} as const;
-
-export type MethodologyReturnContext = {
-  /** Internal path only, e.g. `/companies/amerisafe-van-lines` */
-  returnPath?: string;
-  /** Short label for back button, e.g. company name */
-  returnLabel?: string;
-};
+const seedVerifiedDirectoryCompanies = getVerifiedDirectoryCompaniesSeed();
 
 /**
- * Canonical methodology URL with optional return context for back-navigation.
- * Query params sit before the hash: `/about/how-we-score-movers?from=...#section`
+ * Seed-only count — used by offline scripts and as a fallback.
+ * Prefer {@link getSiteAttributableReviewCountLive} in UI.
  */
-export function methodologyHref(
-  anchor?: keyof typeof METHODOLOGY_ANCHORS,
-  opts?: MethodologyReturnContext
-): string {
-  const hash = anchor ? `#${METHODOLOGY_ANCHORS[anchor]}` : '';
-  const path = METHODOLOGY_PAGE_PATH;
-
-  if (!opts?.returnPath || !opts.returnPath.startsWith('/') || opts.returnPath.startsWith('//')) {
-    return `${path}${hash}`;
-  }
-
-  const params = new URLSearchParams();
-  params.set('from', opts.returnPath);
-  if (opts.returnLabel?.trim()) {
-    params.set('fromLabel', opts.returnLabel.trim().slice(0, 80));
-  }
-  return `${path}?${params.toString()}${hash}`;
-}
-
-export function badgeLegendHref(badgeId: string, onProfile = false): string {
-  if (onProfile) return `#badge-${badgeId}`;
-  return `${methodologyHref('badges')}#badge-${badgeId}`;
-}
-
-const verifiedDirectoryCompanies = seedCompanies.filter(
-  (c) => c.isVerified && assessLicense(c.usdotNumber, c.mcNumber).isDisplayable
-);
-
-let cachedAttributableCount: number | null = null;
-
-/** Count of named, attributable Google reviews published on Move Trust Hub. */
 export function getSiteAttributableReviewCount(): number {
-  if (cachedAttributableCount === null) {
-    cachedAttributableCount = countAttributableReviews();
-  }
-  return cachedAttributableCount;
+  return countAttributableReviews();
+}
+
+/** Live count from directory companies + Google snippets (auto-updates with ISR). */
+export async function getSiteAttributableReviewCountLive(): Promise<number> {
+  return getLiveAttributedReviewCount();
 }
 
 export function getVerifiedDirectoryCompanies() {
-  return verifiedDirectoryCompanies;
+  return seedVerifiedDirectoryCompanies;
 }
 
 export type DirectoryTrustStats = {
@@ -76,16 +45,15 @@ export type DirectoryTrustStats = {
   fmcsaLicensed: number;
 };
 
-/** Canonical directory metrics — use everywhere instead of ad-hoc counts. */
-export function getDirectoryTrustStats(): DirectoryTrustStats {
-  const attributableReviews = getSiteAttributableReviewCount();
-  const verifiedMovers = verifiedDirectoryCompanies.length;
+function buildStatsFromCompanies(
+  companies: { overallRating: number; isVerified?: boolean }[],
+  attributableReviews: number
+): DirectoryTrustStats {
+  const verifiedMovers = companies.length;
   const averageRating =
     verifiedMovers > 0
       ? Math.round(
-          (verifiedDirectoryCompanies.reduce((sum, c) => sum + c.overallRating, 0) /
-            verifiedMovers) *
-            10
+          (companies.reduce((sum, c) => sum + (c.overallRating || 0), 0) / verifiedMovers) * 10
         ) / 10
       : 0;
 
@@ -97,18 +65,42 @@ export function getDirectoryTrustStats(): DirectoryTrustStats {
   };
 }
 
-export const ATTRIBUTED_REVIEWS_EXPLANATION =
-  'Named Google review excerpts published on Move Trust Hub with reviewer attribution — not industry-wide or inflated totals.';
+/** Seed-only metrics (scripts / offline). Prefer {@link getDirectoryTrustStatsAsync} in UI. */
+export function getDirectoryTrustStats(): DirectoryTrustStats {
+  return buildStatsFromCompanies(
+    seedVerifiedDirectoryCompanies,
+    getSiteAttributableReviewCount()
+  );
+}
 
 /**
- * Secondary / methodology copy only — not for homepage hero trust badges.
- * Prefer FMCSA, independent scoring, and no-lead-fees messaging in high-visibility UI.
+ * Live directory metrics for trust badges, methodology, homepage.
+ * Revalidated with the companies directory cache (~5 min + tag on publish).
+ */
+export async function getDirectoryTrustStatsAsync(): Promise<DirectoryTrustStats> {
+  try {
+    const companies = (await getUnifiedDirectoryCompanies()).filter(isPubliclyDisplayableCompany);
+    if (companies.length > 0) {
+      const attributableReviews = countAttributedReviewsAcrossCompanies(companies);
+      return buildStatsFromCompanies(companies, attributableReviews);
+    }
+  } catch {
+    // fall through
+  }
+  return getDirectoryTrustStats();
+}
+
+export const ATTRIBUTED_REVIEWS_EXPLANATION =
+  'Named Google customer review excerpts we publish on Move Trust Hub with reviewer attribution — not industry-wide totals and not written by the movers.';
+
+/**
+ * Secondary / methodology copy. Pass the live count from getDirectoryTrustStatsAsync.
  */
 export function formatAttributedReviewsLabel(count?: number): string {
   const n = count ?? getSiteAttributableReviewCount();
   if (n === 0) return 'Attributed Google reviews on-site';
-  if (n === 1) return '1 attributed Google review on-site';
-  return `${n} attributed Google reviews on-site`;
+  if (n === 1) return '1 attributed Google review we published';
+  return `${n.toLocaleString()} attributed Google reviews we published`;
 }
 
 export function formatDirectoryAvgRating(rating?: number): string {

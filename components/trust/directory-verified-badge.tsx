@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { BadgeCheck } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { VERIFICATION_BADGE_LEGEND } from '@/lib/trust/site-messaging';
-import { badgeLegendHref } from '@/lib/trust/site-stats';
+import { badgeLegendHref } from '@/lib/trust/methodology-paths';
 import {
   verificationBadgeClasses,
   verificationBadgeIconClass,
