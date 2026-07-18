@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { Award, ShieldAlert } from 'lucide-react';
+import { Award } from 'lucide-react';
 import type { Company } from '@/types';
 import {
   deriveBbbVerificationStatus,
@@ -18,8 +18,6 @@ import { cn } from '@/lib/utils';
 
 const BBB_VERIFIED_TOOLTIP =
   'Confirmed BBB business listing from our most recent public scrape or BBB API check.';
-const BBB_UNVERIFIED_TOOLTIP =
-  'No confirmed BBB listing found in our latest scrape — verify independently on BBB.org.';
 
 export function deriveBbbBadgeStatus(
   company: Pick<Company, 'publicScrapeData'>
@@ -53,6 +51,9 @@ export function BbbVerificationBadge({
   linkToLegend?: boolean;
 }) {
   const status = statusOverride ?? deriveBbbVerificationStatus(company.publicScrapeData);
+  // Never render “BBB Unverified” on public listings — omit badge when no confirmed listing.
+  if (status !== 'verified') return null;
+
   const { rating, accredited } = getBbbDisplayFromScrape(company.publicScrapeData);
   const iconClass = verificationBadgeIconClass(size);
 
@@ -64,41 +65,25 @@ export function BbbVerificationBadge({
     .filter(Boolean)
     .join(' — ');
 
-  const badge =
-    status === 'verified' ? (
-      <Badge
-        variant="outline"
-        className={verificationBadgeClasses(size, 'success', className)}
-        title={verifiedTitle}
-      >
-        <Award className={iconClass} aria-hidden="true" />
-        {bbbVerifiedLabel(size, rating, accredited)}
-      </Badge>
-    ) : (
-      <Badge
-        variant="outline"
-        className={verificationBadgeClasses(size, 'muted', className)}
-        title={BBB_UNVERIFIED_TOOLTIP}
-      >
-        <ShieldAlert className={iconClass} aria-hidden="true" />
-        BBB Unverified
-      </Badge>
-    );
+  const badge = (
+    <Badge
+      variant="outline"
+      className={verificationBadgeClasses(size, 'success', className)}
+      title={verifiedTitle}
+    >
+      <Award className={iconClass} aria-hidden="true" />
+      {bbbVerifiedLabel(size, rating, accredited)}
+    </Badge>
+  );
 
   if (!linkToLegend) return badge;
 
-  const legendId = status === 'verified' ? 'bbb-verified' : 'bbb-unverified';
-
   return (
     <Link
-      href={badgeLegendHref(legendId, true)}
+      href={badgeLegendHref('bbb-verified', true)}
       className={cn(verificationBadgeLinkClass(), 'hover:ring-1 hover:ring-primary/20 transition-shadow')}
-      title={`${status === 'verified' ? verifiedTitle : BBB_UNVERIFIED_TOOLTIP} — see badge legend`}
-      aria-label={
-        status === 'verified'
-          ? `${bbbVerifiedLabel(size, rating, accredited)}: ${verifiedTitle}`
-          : `BBB Unverified: ${BBB_UNVERIFIED_TOOLTIP}`
-      }
+      title={`${verifiedTitle} — see badge legend`}
+      aria-label={`${bbbVerifiedLabel(size, rating, accredited)}: ${verifiedTitle}`}
     >
       {badge}
     </Link>

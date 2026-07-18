@@ -91,8 +91,10 @@ export function FmcsaVerificationBadge({
   size?: VerificationBadgeSize;
   linkToLegend?: boolean;
 }) {
-  const status = statusOverride ?? deriveFmcsaVerificationStatus(company);
-  if (!status) return null;
+  const rawStatus = statusOverride ?? deriveFmcsaVerificationStatus(company);
+  // Never render “FMCSA Unverified” on public surfaces
+  if (!rawStatus || rawStatus === 'unknown') return null;
+  const status = rawStatus;
 
   const tooltip = TOOLTIPS[status];
   const legendId = LEGEND_IDS[status];
@@ -123,7 +125,7 @@ export function FmcsaVerificationBadge({
         {LABELS.warning}
       </Badge>
     );
-  } else if (status === 'critical') {
+  } else {
     badge = (
       <Badge
         variant="outline"
@@ -132,16 +134,6 @@ export function FmcsaVerificationBadge({
       >
         <ShieldX className={iconClass} />
         {LABELS.critical}
-      </Badge>
-    );
-  } else {
-    badge = (
-      <Badge
-        variant="outline"
-        className={verificationBadgeClasses(size, tone, className)}
-        title={tooltip}
-      >
-        {LABELS.unknown}
       </Badge>
     );
   }

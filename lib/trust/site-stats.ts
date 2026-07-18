@@ -98,14 +98,17 @@ export function getDirectoryTrustStats(): DirectoryTrustStats {
 }
 
 export const ATTRIBUTED_REVIEWS_EXPLANATION =
-  'Named Google reviews published on Move Trust Hub for verified movers — not industry-wide or inflated totals.';
+  'Named Google review excerpts published on Move Trust Hub with reviewer attribution — not industry-wide or inflated totals.';
 
-/** User-facing label for the verified on-site review count (footers, trust bars, badges). */
+/**
+ * Secondary / methodology copy only — not for homepage hero trust badges.
+ * Prefer FMCSA, independent scoring, and no-lead-fees messaging in high-visibility UI.
+ */
 export function formatAttributedReviewsLabel(count?: number): string {
   const n = count ?? getSiteAttributableReviewCount();
-  if (n === 0) return '0 Attributed Reviews from Verified Movers';
-  if (n === 1) return '1 Attributed Review from Verified Movers';
-  return `${n} Attributed Reviews from Verified Movers`;
+  if (n === 0) return 'Attributed Google reviews on-site';
+  if (n === 1) return '1 attributed Google review on-site';
+  return `${n} attributed Google reviews on-site`;
 }
 
 export function formatDirectoryAvgRating(rating?: number): string {

@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 import { FaqSection } from '@/components/seo/faq-section';
 import { InternalLinkHub } from '@/components/seo/internal-link-hub';
 import { homepageFaqItems } from '@/lib/seo/schemas';
-import { formatAttributedReviewsLabel } from '@/lib/trust/site-stats';
+
 
 const ReviewHighlights = dynamic(
   () =>
@@ -166,7 +166,7 @@ export function HomeBelowFold() {
         className="py-14 border-t"
         compact
         title="Featured review highlights"
-        subtitle={`${formatAttributedReviewsLabel()} on Move Trust Hub — named reviewer excerpts from verified movers, not inflated industry totals.`}
+        subtitle="Named Google review excerpts with reviewer attribution — independent research, not paid placements or inflated industry totals."
       />
 
       <div className="container mx-auto px-4 pb-14">

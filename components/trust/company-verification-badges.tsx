@@ -16,8 +16,8 @@ type CompanyVerificationBadgesProps = {
 };
 
 /**
- * Renders Directory, FMCSA, and BBB badges from the verification SSOT.
- * Use on company cards, directory listings, and profile headers.
+ * Renders positive verification badges only (Directory / FMCSA / BBB Verified).
+ * Never shows “Unverified” on listed carriers — that contradicts directory trust claims.
  */
 export function CompanyVerificationBadges({
   company,
@@ -29,8 +29,9 @@ export function CompanyVerificationBadges({
   const resolvedSize: VerificationBadgeSize = size ?? (compact ? 'compact' : 'profile');
   const status = getCompanyVerificationStatus(company);
   const showDirectory = status.directoryVerified;
-  const showFmcsa = status.fmcsa !== null;
-  const showBbb = true;
+  // Hide unknown; only verified / warning / critical
+  const showFmcsa = status.fmcsa === 'verified' || status.fmcsa === 'warning' || status.fmcsa === 'critical';
+  const showBbb = status.bbb === 'verified';
 
   if (!showDirectory && !showFmcsa && !showBbb) {
     return null;
@@ -41,12 +42,12 @@ export function CompanyVerificationBadges({
       {showDirectory ? (
         <DirectoryVerifiedBadge size={resolvedSize} linkToLegend={linkToLegend} />
       ) : null}
-      {showFmcsa ? (
+      {showFmcsa && status.fmcsa ? (
         <FmcsaVerificationBadge
           company={company}
           linkToLegend={linkToLegend}
           size={resolvedSize}
-          status={status.fmcsa ?? undefined}
+          status={status.fmcsa}
         />
       ) : null}
       {showBbb ? (
@@ -54,7 +55,7 @@ export function CompanyVerificationBadges({
           company={company}
           linkToLegend={linkToLegend}
           size={resolvedSize}
-          status={status.bbb}
+          status="verified"
         />
       ) : null}
     </div>

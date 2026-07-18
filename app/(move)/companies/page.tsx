@@ -14,8 +14,6 @@ import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory'
 import { buildCompaniesDirectorySchemaGraph } from '@/lib/seo/build-directory-list-schema';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
-import { formatAttributedReviewsLabel } from '@/lib/trust/site-stats';
-
 /**
  * ISR TTL for directory HTML — keep aligned with middleware, vercel.json,
  * and `unstable_cache` revalidate in companies / unified-directory queries.
@@ -91,7 +89,7 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
           className="py-16 mt-8 border-t"
           compact
           title="Featured Review Highlights"
-          subtitle={`${formatAttributedReviewsLabel()} on Move Trust Hub — named reviewer excerpts from verified movers, not inflated industry totals.`}
+          subtitle="Named Google review excerpts with reviewer attribution — independent research, not paid placements or inflated industry totals."
         />
 
         <InternalLinkHub className="mt-12" />

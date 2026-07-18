@@ -97,7 +97,7 @@ export function InsuranceHomePage() {
           'State DOI License Verification',
           'NAIC Public Records',
           'BBB Ratings',
-          'Attributed Reviews',
+          'Transparent Methodology',
           'No Paid Placements',
         ]}
       />

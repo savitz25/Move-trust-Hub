@@ -64,8 +64,13 @@ export function hasActiveDotLicense(company: DotLicenseFields): boolean {
 }
 
 /**
- * FMCSA badge status — active DOT carriers default to verified unless warning/critical.
- * Avoids showing "FMCSA Unverified" alongside Directory Verified for the same carrier.
+ * FMCSA badge status for public directory UI.
+ * - Active DOT carriers → verified (never "unverified" when listed)
+ * - Safety issues → warning; authority issues → critical
+ * - Incomplete refresh data → null (badge hidden; Directory Verified still covers DOT/MC)
+ *
+ * Public listings must never show "FMCSA Unverified" — that contradicts site-wide
+ * "DOT/MC verification on every interstate carrier" claims.
  */
 export function deriveFmcsaVerificationStatus(
   company: CompanyVerificationFields
@@ -88,22 +93,30 @@ export function deriveFmcsaVerificationStatus(
     return 'warning';
   }
 
+  // Displayable DOT with active/unknown-but-not-revoked authority → verified
   if (hasActiveDotLicense(company)) {
     return 'verified';
   }
 
-  if (company.fmcsaLastChecked) return 'unknown';
+  // Incomplete sync: do not show a negative badge on a listed carrier
   return null;
 }
 
 /**
- * BBB Verified only when public scrape (or API) returned a confirmed listing.
- * Otherwise BBB Unverified — including missing or failed scrapes.
+ * BBB badge for public UI: only "verified" when scrape/API confirmed a listing.
+ * Missing BBB data is not shown as "Unverified" (that reads like the mover is shady).
  */
 export function deriveBbbVerificationStatus(
   publicScrapeData?: PublicScrapeData | null
 ): BbbVerificationStatus {
   return hasBbbPublicScrapeData(publicScrapeData) ? 'verified' : 'unverified';
+}
+
+/** True when a BBB Verified badge should render (never show BBB Unverified publicly). */
+export function shouldShowBbbVerifiedBadge(
+  publicScrapeData?: PublicScrapeData | null
+): boolean {
+  return deriveBbbVerificationStatus(publicScrapeData) === 'verified';
 }
 
 export function getBbbDisplayFromScrape(
@@ -126,12 +139,20 @@ export function getBbbDisplayFromScrape(
 export function getCompanyVerificationStatus(
   company: CompanyVerificationFields
 ): CompanyVerificationSnapshot {
+  const directoryVerified = hasActiveDotLicense(company);
+  let fmcsa = deriveFmcsaVerificationStatus(company);
+
+  // Never pair Directory Verified with a missing/unknown FMCSA state — show verified.
+  if (directoryVerified && (fmcsa === null || fmcsa === 'unknown')) {
+    fmcsa = 'verified';
+  }
+
   const bbb = deriveBbbVerificationStatus(company.publicScrapeData);
   const bbbDisplay = getBbbDisplayFromScrape(company.publicScrapeData);
 
   return {
-    directoryVerified: hasActiveDotLicense(company),
-    fmcsa: deriveFmcsaVerificationStatus(company),
+    directoryVerified,
+    fmcsa,
     bbb,
     bbbRating: bbbDisplay.rating,
     bbbAccredited: bbbDisplay.accredited,

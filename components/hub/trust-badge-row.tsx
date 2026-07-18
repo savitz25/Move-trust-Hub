@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Shield, ExternalLink } from 'lucide-react';
 import { getHubConfig } from '@/lib/hub/config';
 import type { HubId } from '@/lib/hub/types';
-import { formatAttributedReviewsLabel, methodologyHref } from '@/lib/trust/site-stats';
+import { methodologyHref } from '@/lib/trust/site-stats';
 
 type TrustBadgeRowProps = {
   hub: HubId;
@@ -14,9 +14,9 @@ const HUB_BADGES: Record<HubId, { label: string; detail: string; href?: string }
     { label: 'FMCSA Licensed', detail: 'DOT/MC verification on every interstate carrier', href: '/resources/fmcsa' },
     { label: 'Independent', detail: 'No paid placements or carrier affiliations', href: '/about#disclaimer' },
     {
-      label: 'Attributed Reviews',
-      detail: formatAttributedReviewsLabel(),
-      href: methodologyHref('reviewAttribution'),
+      label: 'Transparent Scoring',
+      detail: 'Reputation methodology published — no black-box rankings',
+      href: methodologyHref('reputationScore'),
     },
   ],
   lender: [

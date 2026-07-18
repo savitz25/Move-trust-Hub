@@ -1,7 +1,5 @@
 import { getHomepageAttributableReviews } from '@/lib/trust/verified-reviews';
 import {
-  ATTRIBUTED_REVIEWS_EXPLANATION,
-  formatAttributedReviewsLabel,
   formatDirectoryAvgRating,
   getDirectoryTrustStats,
   getVerifiedDirectoryCompanies,
@@ -16,8 +14,8 @@ export const trustStats = stats;
 export const trustBadges = [
   {
     id: 'fmcsa',
-    label: 'FMCSA Licensing Checked',
-    description: 'USDOT numbers formatted and screened against placeholder patterns',
+    label: 'FMCSA DOT/MC Checked',
+    description: 'Every listed interstate carrier has a verifiable USDOT/MC record',
     href: '/resources/fmcsa',
     externalHref: 'https://www.fmcsa.dot.gov/',
   },
@@ -28,12 +26,6 @@ export const trustBadges = [
     href: '/companies',
   },
   {
-    id: 'reviews',
-    label: formatAttributedReviewsLabel(stats.attributableReviews),
-    description: ATTRIBUTED_REVIEWS_EXPLANATION,
-    href: methodologyHref('reviewAttribution'),
-  },
-  {
     id: 'rating',
     label: formatDirectoryAvgRating(stats.averageRating),
     description: 'Across FMCSA-licensed interstate listings',
@@ -42,7 +34,7 @@ export const trustBadges = [
   {
     id: 'independent',
     label: 'Independent Directory',
-    description: 'Not affiliated with movers — verify FMCSA yourself',
+    description: 'No paid placements — verify FMCSA yourself',
     href: '/about#disclaimer',
   },
   {
@@ -50,6 +42,12 @@ export const trustBadges = [
     label: 'No Lead Fees',
     description: 'We do not sell your information or charge movers for placement',
     href: '/about#disclaimer',
+  },
+  {
+    id: 'methodology',
+    label: 'Transparent Scoring',
+    description: 'Reputation scores and review attribution explained in full',
+    href: methodologyHref('reputationScore'),
   },
 ] as const;
 

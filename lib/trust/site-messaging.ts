@@ -44,21 +44,10 @@ export const VERIFICATION_BADGE_LEGEND = [
     description: 'Out-of-service or inactive authority flagged on the latest FMCSA check.',
   },
   {
-    id: 'fmcsa-unknown',
-    label: 'FMCSA Unverified',
-    description: 'FMCSA record not yet refreshed or incomplete — verify licensing yourself on FMCSA.gov.',
-  },
-  {
     id: 'bbb-verified',
     label: 'BBB Verified',
     description:
-      'Confirmed BBB business listing from our most recent public scrape or BBB API check — includes rating when available.',
-  },
-  {
-    id: 'bbb-unverified',
-    label: 'BBB Unverified',
-    description:
-      'No confirmed BBB listing found in our latest scrape — verify independently on BBB.org before booking.',
+      'Confirmed BBB business listing from our most recent public scrape or BBB API check — includes rating when available. When no BBB listing is confirmed, no BBB badge is shown.',
   },
   {
     id: 'google',

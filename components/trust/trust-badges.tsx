@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BadgeCheck, ExternalLink, ShieldCheck, Star } from 'lucide-react';
+import { BadgeCheck, ExternalLink, Scale, ShieldCheck, Star } from 'lucide-react';
 import { trustBadges } from '@/lib/trust/trust-data';
 import { cn } from '@/lib/utils';
 
@@ -9,6 +9,8 @@ const iconMap = {
   reviews: Star,
   rating: Star,
   independent: ShieldCheck,
+  methodology: Scale,
+  'no-lead-fees': ShieldCheck,
 } as const;
 
 type TrustBadgesProps = {
