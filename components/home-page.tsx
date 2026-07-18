@@ -14,8 +14,8 @@ async function getFallbackMovers() {
     const all = prepareCompaniesForDirectoryClient(await getUnifiedDirectoryCompanies());
     return [...all]
       .sort((a, b) => (b.reputationScore || 0) - (a.reputationScore || 0))
-      .slice(0, 4)
-      .map(toHomeRouteMover);
+      .slice(0, 10)
+      .map((c) => toHomeRouteMover(c, 'national'));
   } catch {
     return [];
   }

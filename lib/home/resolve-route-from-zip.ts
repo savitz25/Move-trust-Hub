@@ -12,6 +12,7 @@ import {
   resolveLocalMoversHref,
   type CountyMatchMethod,
 } from '@/lib/home/resolve-local-movers-href';
+import type { MoverCoverageTier } from '@/lib/home/rank-movers-for-route';
 import type { Company } from '@/types';
 
 export type { CountyMatchMethod };
@@ -32,6 +33,8 @@ export type HomeRouteMover = {
   mcNumber: string;
   shortDescription: string;
   services: string[];
+  /** local (county) → state → national for shortlist ranking UI */
+  coverageTier?: MoverCoverageTier;
 };
 
 export type HomeRouteResult = {
@@ -61,17 +64,10 @@ function companyMatchesPlace(company: Company, place: UsZipPlace): boolean {
   return false;
 }
 
-function scoreCompanyForPlace(company: Company, place: UsZipPlace): number {
-  const hq = (company.headquarters || '').toLowerCase();
-  const city = place.city.toLowerCase();
-  let score = company.reputationScore || 0;
-  if (hq.includes(city)) score += 40;
-  if (company.isVerified) score += 8;
-  score += Math.min(company.overallRating || 0, 5) * 4;
-  return score;
-}
-
-export function toHomeRouteMover(company: Company): HomeRouteMover {
+export function toHomeRouteMover(
+  company: Company,
+  coverageTier?: MoverCoverageTier
+): HomeRouteMover {
   return {
     slug: company.slug,
     name: company.name,
@@ -84,6 +80,7 @@ export function toHomeRouteMover(company: Company): HomeRouteMover {
     mcNumber: company.mcNumber,
     shortDescription: company.shortDescription,
     services: (company.services || []).slice(0, 2),
+    coverageTier,
   };
 }
 
@@ -112,20 +109,58 @@ export async function buildHomeRouteResult(
   const all = prepareCompaniesForDirectoryClient(
     await getUnifiedDirectoryCompanies()
   );
-  const matched = all
-    .filter((c) => companyMatchesPlace(c, from))
-    .sort(
-      (a, b) => scoreCompanyForPlace(b, from) - scoreCompanyForPlace(a, from)
-    );
 
-  const pool =
-    matched.length >= 3
-      ? matched
-      : [...all].sort(
-          (a, b) => (b.reputationScore || 0) - (a.reputationScore || 0)
+  // Prefer companies assigned to this county when available (true "local" set).
+  let localSlugs: Set<string> | undefined;
+  if (local.county) {
+    try {
+      const { getApprovedMoversForCounty } = await import(
+        '@/lib/local-movers/approved-county-movers'
+      );
+      const approved = await getApprovedMoversForCounty(
+        from.stateSlug,
+        local.county.slug
+      );
+      if (approved.length) {
+        localSlugs = new Set(
+          approved
+            .map((m) => m.profileSlug)
+            .filter((slug): slug is string => Boolean(slug))
         );
+      }
+    } catch {
+      localSlugs = undefined;
+    }
+  }
 
-  const topMovers = pool.slice(0, 4).map(toHomeRouteMover);
+  const { rankMoversForPickup } = await import('@/lib/home/rank-movers-for-route');
+  const ranked = rankMoversForPickup(all, from, local.county, {
+    limit: 10,
+    localSlugs,
+  });
+
+  // If ranking is sparse, pad with reputation leaders (already classified).
+  let topPool = ranked;
+  if (topPool.length < 10) {
+    const seen = new Set(topPool.map((c) => c.slug));
+    const pad = [...all]
+      .sort((a, b) => (b.reputationScore || 0) - (a.reputationScore || 0))
+      .filter((c) => !seen.has(c.slug))
+      .slice(0, 10 - topPool.length)
+      .map((c) => ({
+        ...c,
+        coverageTier: (localSlugs?.has(c.slug)
+          ? 'local'
+          : companyMatchesPlace(c, from)
+            ? 'state'
+            : 'national') as import('@/lib/home/rank-movers-for-route').MoverCoverageTier,
+      }));
+    topPool = [...topPool, ...pad];
+  }
+
+  const topMovers = topPool.slice(0, 10).map((c) =>
+    toHomeRouteMover(c, c.coverageTier)
+  );
 
   return {
     from,

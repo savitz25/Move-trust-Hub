@@ -429,48 +429,10 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
               identical details to each mover.
             </div>
 
-            <div className="grid gap-2 sm:grid-cols-2">
-              {movers.slice(0, 6).map((m) => {
-                const selected = shortlist.some((s) => s.slug === m.slug);
-                return (
-                  <button
-                    key={m.slug}
-                    type="button"
-                    onClick={() => toggleMover(m)}
-                    className={cn(
-                      'rounded-2xl border p-3 text-left transition-all',
-                      selected
-                        ? 'border-primary bg-primary/10 shadow-sm'
-                        : 'border-border bg-card hover:border-primary/40'
-                    )}
-                  >
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="font-semibold tracking-tight">{m.name}</div>
-                      <span
-                        className={cn(
-                          'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px]',
-                          selected
-                            ? 'border-primary bg-primary text-primary-foreground'
-                            : 'border-muted-foreground/30'
-                        )}
-                      >
-                        {selected ? <Check className="h-3 w-3" /> : null}
-                      </span>
-                    </div>
-                    <div className="mt-1 text-xs text-muted-foreground">{m.headquarters}</div>
-                    <div className="mt-2 flex items-center gap-2">
-                      <StarRating rating={m.overallRating} size="sm" />
-                      <span className="text-xs text-muted-foreground">
-                        <EditorialReviewVolume count={m.reviewCount} />
-                      </span>
-                    </div>
-                    <div className="mt-1 text-xs font-medium text-primary">
-                      Score {m.reputationScore}/100
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+            <p className="text-xs text-muted-foreground">
+              Top 10 for your pickup area — local first, then statewide, then national (by
+              reputation score).
+            </p>
 
             {movers.length === 0 ? (
               <p className="text-sm text-muted-foreground">
@@ -480,7 +442,92 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                 </Link>{' '}
                 or continue and add movers later.
               </p>
-            ) : null}
+            ) : (
+              <div className="max-h-[28rem] space-y-4 overflow-y-auto pr-0.5 sm:max-h-none">
+                {(
+                  [
+                    {
+                      tier: 'local' as const,
+                      label: `Local · ${route?.localAreaLabel || fromPlace?.label || 'your area'}`,
+                    },
+                    {
+                      tier: 'state' as const,
+                      label: `Statewide · ${fromPlace?.stateCode || 'your state'}`,
+                    },
+                    { tier: 'national' as const, label: 'National carriers' },
+                  ] as const
+                ).map((group) => {
+                  const groupMovers = movers
+                    .filter((m) => (m.coverageTier ?? 'national') === group.tier)
+                    .slice(0, 10);
+                  if (!groupMovers.length) return null;
+                  return (
+                    <div key={group.tier}>
+                      <div className="mb-2 flex items-center gap-2">
+                        <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                          {group.label}
+                        </span>
+                        <span className="h-px flex-1 bg-border" aria-hidden />
+                      </div>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        {groupMovers.map((m) => {
+                          const selected = shortlist.some((s) => s.slug === m.slug);
+                          return (
+                            <button
+                              key={m.slug}
+                              type="button"
+                              onClick={() => toggleMover(m)}
+                              className={cn(
+                                'rounded-2xl border p-3 text-left transition-all',
+                                selected
+                                  ? 'border-primary bg-primary/10 shadow-sm'
+                                  : 'border-border bg-card hover:border-primary/40'
+                              )}
+                            >
+                              <div className="flex items-start justify-between gap-2">
+                                <div className="min-w-0">
+                                  <div className="font-semibold tracking-tight leading-snug">
+                                    {m.name}
+                                  </div>
+                                  <Badge
+                                    variant="outline"
+                                    className="mt-1 border-primary/20 bg-background px-1.5 py-0 text-[10px] font-medium capitalize text-primary"
+                                  >
+                                    {group.tier}
+                                  </Badge>
+                                </div>
+                                <span
+                                  className={cn(
+                                    'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px]',
+                                    selected
+                                      ? 'border-primary bg-primary text-primary-foreground'
+                                      : 'border-muted-foreground/30'
+                                  )}
+                                >
+                                  {selected ? <Check className="h-3 w-3" /> : null}
+                                </span>
+                              </div>
+                              <div className="mt-1 text-xs text-muted-foreground">
+                                {m.headquarters}
+                              </div>
+                              <div className="mt-2 flex items-center gap-2">
+                                <StarRating rating={m.overallRating} size="sm" />
+                                <span className="text-xs text-muted-foreground">
+                                  <EditorialReviewVolume count={m.reviewCount} />
+                                </span>
+                              </div>
+                              <div className="mt-1 text-xs font-medium text-primary">
+                                Score {m.reputationScore}/100
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
 
             <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
               <Button type="button" variant="ghost" onClick={() => setStep('route')} className="gap-1">
