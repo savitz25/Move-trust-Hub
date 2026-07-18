@@ -1,33 +1,23 @@
 import { trustHubLogoUrl } from '@/lib/hub/config';
-import { formatItemDisplayName } from '@/lib/moving-calculator/display-names';
+import {
+  formatItemDisplayName,
+  formatQuantityFirstItem,
+} from '@/lib/moving-calculator/display-names';
 import { LBS_PER_CU_FT } from '@/lib/moving-calculator/estimates';
 import {
   buildTransactionalEmailFooter,
   buildTransactionalTextFooter,
 } from '@/lib/emails/transactional-footer';
+import {
+  normalizeWebsiteHref,
+  telHref,
+  type ShortlistMoverCard,
+} from '@/lib/my-move-plan/shortlist-mover-card';
 import type { InventoryItem } from '@/store/calculator-store';
 
-/** Compact mover card for My Move Report emails. */
-export type ShortlistMoverEmailCard = {
-  name: string;
-  slug: string;
-  profileUrl: string;
-  overallRating: number | null;
-  reviewCount: number | null;
-  reputationScore: number | null;
-  googleRating: number | null;
-  googleReviewCount: number | null;
-  fmcsaSafetyRating: string | null;
-  entityType: string | null;
-  usdotNumber: string | null;
-  mcNumber: string | null;
-  powerUnits: number | null;
-  authorityLabel: string | null;
-  headquarters: string | null;
-  phone: string | null;
-  email: string | null;
-  website: string | null;
-};
+/** @deprecated Prefer ShortlistMoverCard — kept as alias for call sites. */
+export type ShortlistMoverEmailCard = ShortlistMoverCard;
+export type { ShortlistMoverCard };
 
 export type InventoryReportEmailData = {
   recipientName?: string | null;
@@ -46,7 +36,7 @@ export type InventoryReportEmailData = {
   routeTo?: string | null;
   drivingMiles?: number | null;
   shortlistNames?: string[];
-  shortlistMovers?: ShortlistMoverEmailCard[];
+  shortlistMovers?: ShortlistMoverCard[];
 };
 
 function escapeHtml(text: string): string {
@@ -76,147 +66,87 @@ function statCard(label: string, value: string): string {
     </td>`;
 }
 
-/** Compact 2-column item rows for denser inventory (email-client safe tables). */
-function buildCompactItemRowsHtml(items: InventoryItem[]): string {
-  const cells = items.map((item) => {
-    const label = escapeHtml(formatItemDisplayName(item.name));
-    const lineVol = Math.round(item.volume * item.quantity);
-    return `
-      <td width="50%" style="padding:4px 6px 4px 0;vertical-align:top;font-size:12px;line-height:1.35;color:#334155;">
-        <span style="color:#0f172a;">${label}</span>
-        <span style="color:#64748b;"> · ×${item.quantity} · ${lineVol} cu ft</span>
-      </td>`;
-  });
-
-  const rows: string[] = [];
-  for (let i = 0; i < cells.length; i += 2) {
-    const left = cells[i];
-    const right =
-      cells[i + 1] ??
-      `<td width="50%" style="padding:4px 0;vertical-align:top;"></td>`;
-    rows.push(`<tr>${left}${right}</tr>`);
-  }
-  return rows.join('');
+/**
+ * Quantity-first inventory rows (professional moving-software style).
+ * Single-column table for reliable desktop + mobile email clients.
+ * Format: "10 × Medium Moving Box" … line cu ft right-aligned.
+ */
+function buildQuantityFirstItemRowsHtml(items: InventoryItem[]): string {
+  return items
+    .map((item, index) => {
+      const qty =
+        Number.isFinite(item.quantity) && item.quantity > 0
+          ? Math.round(item.quantity)
+          : 1;
+      const name = escapeHtml(formatItemDisplayName(item.name));
+      const lineVol = Math.round(
+        (Number.isFinite(item.volume) ? item.volume : 0) * qty
+      );
+      const border =
+        index < items.length - 1 ? 'border-bottom:1px solid #f1f5f9;' : '';
+      return `
+        <tr>
+          <td width="44" valign="top" style="padding:7px 8px 7px 0;${border}vertical-align:top;white-space:nowrap;">
+            <span style="font-size:13px;line-height:1.4;font-weight:700;color:#0f172a;font-variant-numeric:tabular-nums;">${qty}&nbsp;×</span>
+          </td>
+          <td valign="top" style="padding:7px 8px 7px 0;${border}vertical-align:top;">
+            <span style="font-size:13px;line-height:1.4;color:#0f172a;">${name}</span>
+          </td>
+          <td width="72" align="right" valign="top" style="padding:7px 0;${border}vertical-align:top;white-space:nowrap;">
+            <span style="font-size:12px;line-height:1.4;color:#64748b;font-variant-numeric:tabular-nums;">${lineVol.toLocaleString()}&nbsp;cu&nbsp;ft</span>
+          </td>
+        </tr>`;
+    })
+    .join('');
 }
 
 function buildInventoryListHtml(groupedByRoom: [string, InventoryItem[]][]): string {
   if (groupedByRoom.length === 0) return '';
 
+  const grandVolume = groupedByRoom.reduce(
+    (sum, [, items]) =>
+      sum + items.reduce((s, i) => s + i.volume * i.quantity, 0),
+    0
+  );
+  const grandLines = groupedByRoom.reduce((sum, [, items]) => sum + items.length, 0);
+  const grandPieces = groupedByRoom.reduce(
+    (sum, [, items]) =>
+      sum + items.reduce((s, i) => s + (Number.isFinite(i.quantity) ? i.quantity : 0), 0),
+    0
+  );
+
   const rooms = groupedByRoom
     .map(([room, items]) => {
       const roomTotal = items.reduce((s, i) => s + i.volume * i.quantity, 0);
+      const pieceCount = items.reduce(
+        (s, i) => s + (Number.isFinite(i.quantity) ? i.quantity : 0),
+        0
+      );
       return `
-        <div style="margin-bottom:12px;">
-          <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#0077D4;text-transform:uppercase;letter-spacing:0.05em;">
-            ${escapeHtml(room)} <span style="color:#64748b;font-weight:600;">(${Math.round(roomTotal)} cu ft · ${items.length} lines)</span>
-          </p>
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            ${buildCompactItemRowsHtml(items)}
-          </table>
-        </div>`;
-    })
-    .join('');
-
-  return `
-    <tr>
-      <td style="padding:8px 32px 16px 32px;">
-        <h2 style="margin:0 0 10px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
-          Your inventory
-        </h2>
-        <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:12px 14px;">
-          ${rooms}
-        </div>
-      </td>
-    </tr>`;
-}
-
-function buildShortlistMoverCardsHtml(movers: ShortlistMoverEmailCard[]): string {
-  if (!movers.length) return '';
-
-  const cards = movers
-    .map((m, idx) => {
-      const trustBits: string[] = [];
-      if (m.overallRating != null && m.overallRating > 0) {
-        trustBits.push(
-          `${m.overallRating.toFixed(1)}★${m.reviewCount ? ` (${m.reviewCount.toLocaleString()})` : ''}`
-        );
-      }
-      if (m.googleRating != null && m.googleRating > 0) {
-        trustBits.push(
-          `Google ${m.googleRating.toFixed(1)}★${m.googleReviewCount ? ` (${m.googleReviewCount.toLocaleString()})` : ''}`
-        );
-      }
-      if (m.reputationScore != null && m.reputationScore > 0) {
-        trustBits.push(`Score ${m.reputationScore}/100`);
-      }
-      if (m.fmcsaSafetyRating) {
-        trustBits.push(`FMCSA ${m.fmcsaSafetyRating}`);
-      }
-
-      const licenseBits: string[] = [];
-      if (m.entityType) licenseBits.push(escapeHtml(m.entityType));
-      if (m.usdotNumber) licenseBits.push(`USDOT ${escapeHtml(m.usdotNumber)}`);
-      if (m.mcNumber) licenseBits.push(`MC ${escapeHtml(m.mcNumber)}`);
-      if (m.powerUnits != null && m.powerUnits > 0) {
-        licenseBits.push(`${m.powerUnits} power units`);
-      }
-      if (m.authorityLabel) licenseBits.push(escapeHtml(m.authorityLabel));
-
-      const contactBits: string[] = [];
-      if (m.phone) {
-        const tel = m.phone.replace(/[^\d+]/g, '');
-        contactBits.push(
-          `<a href="tel:${escapeHtml(tel)}" style="color:#0077D4;text-decoration:none;font-weight:600;">${escapeHtml(m.phone)}</a>`
-        );
-      }
-      if (m.email) {
-        contactBits.push(
-          `<a href="mailto:${escapeHtml(m.email)}" style="color:#0077D4;text-decoration:none;font-weight:600;">${escapeHtml(m.email)}</a>`
-        );
-      }
-      if (m.website) {
-        const href = m.website.startsWith('http') ? m.website : `https://${m.website}`;
-        contactBits.push(
-          `<a href="${escapeHtml(href)}" style="color:#0077D4;text-decoration:none;font-weight:600;">Website</a>`
-        );
-      }
-      if (m.headquarters) {
-        contactBits.push(`<span style="color:#64748b;">${escapeHtml(m.headquarters)}</span>`);
-      }
-
-      return `
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 12px 0;background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px 0;">
           <tr>
-            <td style="padding:14px 16px;">
+            <td style="padding:0 0 6px 0;border-bottom:2px solid #e2e8f0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td style="vertical-align:top;">
-                    <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#0077D4;letter-spacing:0.06em;text-transform:uppercase;">
-                      Mover ${idx + 1} of ${movers.length}
+                  <td valign="bottom" style="vertical-align:bottom;">
+                    <p style="margin:0;font-size:12px;font-weight:700;color:#0077D4;text-transform:uppercase;letter-spacing:0.06em;">
+                      ${escapeHtml(room)}
                     </p>
-                    <p style="margin:0 0 6px;font-size:16px;font-weight:800;color:#0f172a;line-height:1.3;">
-                      ${escapeHtml(m.name)}
+                  </td>
+                  <td align="right" valign="bottom" style="vertical-align:bottom;">
+                    <p style="margin:0;font-size:12px;font-weight:600;color:#64748b;font-variant-numeric:tabular-nums;">
+                      ${Math.round(roomTotal).toLocaleString()} cu ft
+                      <span style="font-weight:500;color:#94a3b8;"> · ${Math.round(pieceCount)} pcs</span>
                     </p>
-                    ${
-                      trustBits.length
-                        ? `<p style="margin:0 0 8px;font-size:12px;line-height:1.45;color:#334155;">${escapeHtml(trustBits.join(' · '))}</p>`
-                        : ''
-                    }
-                    ${
-                      licenseBits.length
-                        ? `<p style="margin:0 0 8px;font-size:12px;line-height:1.45;color:#64748b;"><strong style="color:#0f172a;">Licensing:</strong> ${licenseBits.join(' · ')}</p>`
-                        : ''
-                    }
-                    ${
-                      contactBits.length
-                        ? `<p style="margin:0 0 10px;font-size:12px;line-height:1.5;color:#334155;"><strong style="color:#0f172a;">Contact:</strong> ${contactBits.join(' · ')}</p>`
-                        : ''
-                    }
-                    <a href="${escapeHtml(m.profileUrl)}" style="display:inline-block;background:#f0f9ff;border:1px solid #bae6fd;color:#0369a1;font-size:12px;font-weight:700;text-decoration:none;padding:8px 12px;border-radius:8px;">
-                      View full profile →
-                    </a>
                   </td>
                 </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:2px 0 0 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                ${buildQuantityFirstItemRowsHtml(items)}
               </table>
             </td>
           </tr>
@@ -226,12 +156,174 @@ function buildShortlistMoverCardsHtml(movers: ShortlistMoverEmailCard[]): string
 
   return `
     <tr>
+      <td style="padding:8px 32px 16px 32px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 10px 0;">
+          <tr>
+            <td valign="bottom" style="vertical-align:bottom;">
+              <h2 style="margin:0;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
+                Inventory
+              </h2>
+            </td>
+            <td align="right" valign="bottom" style="vertical-align:bottom;">
+              <p style="margin:0;font-size:12px;line-height:1.4;color:#64748b;font-variant-numeric:tabular-nums;">
+                <strong style="color:#0f172a;">${Math.round(grandVolume).toLocaleString()} cu ft</strong>
+                · ${Math.round(grandPieces).toLocaleString()} pcs
+                · ${grandLines} lines
+              </p>
+            </td>
+          </tr>
+        </table>
+        <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:14px 16px 4px 16px;">
+          ${rooms}
+        </div>
+      </td>
+    </tr>`;
+}
+
+function moverDetailRow(label: string, valueHtml: string): string {
+  return `
+    <tr>
+      <td width="92" valign="top" style="padding:4px 10px 4px 0;vertical-align:top;font-size:11px;line-height:1.4;color:#64748b;font-weight:600;white-space:nowrap;">
+        ${escapeHtml(label)}
+      </td>
+      <td valign="top" style="padding:4px 0;vertical-align:top;font-size:13px;line-height:1.45;color:#0f172a;">
+        ${valueHtml}
+      </td>
+    </tr>`;
+}
+
+function buildShortlistMoverCardsHtml(movers: ShortlistMoverCard[]): string {
+  if (!movers.length) return '';
+
+  const cards = movers
+    .map((m, idx) => {
+      const detailRows: string[] = [];
+
+      // Contact — clickable phone / email first
+      if (m.phone != null && String(m.phone).trim()) {
+        const phone = String(m.phone).trim();
+        detailRows.push(
+          moverDetailRow(
+            'Phone',
+            `<a href="tel:${escapeHtml(telHref(phone))}" style="color:#0077D4;text-decoration:none;font-weight:700;">${escapeHtml(phone)}</a>`
+          )
+        );
+      }
+      if (m.email != null && String(m.email).trim()) {
+        const email = String(m.email).trim();
+        detailRows.push(
+          moverDetailRow(
+            'Email',
+            `<a href="mailto:${escapeHtml(email)}" style="color:#0077D4;text-decoration:none;font-weight:700;">${escapeHtml(email)}</a>`
+          )
+        );
+      }
+      if (m.website != null && String(m.website).trim()) {
+        const website = String(m.website).trim();
+        const href = normalizeWebsiteHref(website);
+        detailRows.push(
+          moverDetailRow(
+            'Website',
+            `<a href="${escapeHtml(href)}" style="color:#0077D4;text-decoration:none;font-weight:600;">${escapeHtml(website.replace(/^https?:\/\//i, ''))}</a>`
+          )
+        );
+      }
+      if (m.address != null && String(m.address).trim()) {
+        detailRows.push(
+          moverDetailRow('Address', escapeHtml(String(m.address).trim()))
+        );
+      }
+
+      // Licensing snapshot
+      if (m.entityType) {
+        detailRows.push(moverDetailRow('Type', escapeHtml(m.entityType)));
+      }
+      if (m.usdotNumber) {
+        detailRows.push(
+          moverDetailRow('USDOT', `<strong>${escapeHtml(m.usdotNumber)}</strong>`)
+        );
+      }
+      if (m.mcNumber) {
+        detailRows.push(moverDetailRow('MC', escapeHtml(m.mcNumber)));
+      }
+      if (m.powerUnits != null && m.powerUnits > 0) {
+        detailRows.push(
+          moverDetailRow(
+            'Power units',
+            `${m.powerUnits.toLocaleString()}`
+          )
+        );
+      }
+      if (m.authorityLabel) {
+        detailRows.push(moverDetailRow('Authority', escapeHtml(m.authorityLabel)));
+      }
+
+      // Trust signals
+      const trustParts: string[] = [];
+      if (m.googleRating != null && m.googleRating > 0) {
+        trustParts.push(
+          `Google ${m.googleRating.toFixed(1)}★${
+            m.googleReviewCount ? ` (${m.googleReviewCount.toLocaleString()})` : ''
+          }`
+        );
+      }
+      if (m.overallRating != null && m.overallRating > 0) {
+        trustParts.push(
+          `Hub ${m.overallRating.toFixed(1)}★${
+            m.reviewCount ? ` (${m.reviewCount.toLocaleString()})` : ''
+          }`
+        );
+      }
+      if (m.reputationScore != null && m.reputationScore > 0) {
+        trustParts.push(`Reputation ${m.reputationScore}/100`);
+      }
+      if (m.fmcsaSafetyRating) {
+        trustParts.push(`FMCSA ${m.fmcsaSafetyRating}`);
+      }
+      if (trustParts.length) {
+        detailRows.push(moverDetailRow('Trust', escapeHtml(trustParts.join(' · '))));
+      }
+
+      const missingContact =
+        !m.phone && !m.email
+          ? `<p style="margin:8px 0 0;font-size:12px;line-height:1.45;color:#64748b;">Phone/email not on file — open the profile or website to contact this mover.</p>`
+          : '';
+
+      return `
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px 0;background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;">
+          <tr>
+            <td style="padding:16px 18px;">
+              <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#0077D4;letter-spacing:0.06em;text-transform:uppercase;">
+                Shortlisted mover ${idx + 1} of ${movers.length}
+              </p>
+              <p style="margin:0 0 10px;font-size:17px;font-weight:800;color:#0f172a;line-height:1.3;">
+                ${escapeHtml(m.name)}
+              </p>
+              ${
+                detailRows.length
+                  ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 12px 0;">
+                      ${detailRows.join('')}
+                    </table>`
+                  : ''
+              }
+              ${missingContact}
+              <a href="${escapeHtml(m.profileUrl)}" style="display:inline-block;background:#f8fafc;border:1px solid #e2e8f0;color:#0369a1;font-size:12px;font-weight:600;text-decoration:none;padding:8px 12px;border-radius:8px;">
+                View full profile →
+              </a>
+            </td>
+          </tr>
+        </table>`;
+    })
+    .join('');
+
+  return `
+    <tr>
       <td style="padding:4px 32px 8px 32px;">
-        <h2 style="margin:0 0 10px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
+        <h2 style="margin:0 0 6px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
           Your shortlisted movers
         </h2>
-        <p style="margin:0 0 12px;font-size:13px;line-height:1.5;color:#64748b;">
-          Contact each mover with this same report for fair, comparable estimates. Independent directory — no lead resellers.
+        <p style="margin:0 0 14px;font-size:13px;line-height:1.5;color:#64748b;">
+          Contact details and licensing for each mover — call or email from this report. Share the same inventory for comparable estimates.
         </p>
         ${cards}
       </td>
@@ -241,13 +333,35 @@ function buildShortlistMoverCardsHtml(movers: ShortlistMoverEmailCard[]): string
 function buildInventoryListText(groupedByRoom: [string, InventoryItem[]][]): string[] {
   if (groupedByRoom.length === 0) return [];
 
-  const lines = ['INVENTORY'];
+  const grandVolume = groupedByRoom.reduce(
+    (sum, [, items]) =>
+      sum + items.reduce((s, i) => s + i.volume * i.quantity, 0),
+    0
+  );
+  const lines = [
+    'INVENTORY',
+    `Total: ${Math.round(grandVolume).toLocaleString()} cu ft`,
+  ];
   for (const [room, items] of groupedByRoom) {
     const roomTotal = items.reduce((s, i) => s + i.volume * i.quantity, 0);
-    lines.push('', `${room} (${Math.round(roomTotal)} cu ft)`);
+    const pieceCount = items.reduce(
+      (s, i) => s + (Number.isFinite(i.quantity) ? i.quantity : 0),
+      0
+    );
+    lines.push(
+      '',
+      `${room} — ${Math.round(roomTotal).toLocaleString()} cu ft · ${Math.round(pieceCount)} pcs`
+    );
     for (const item of items) {
+      const qty =
+        Number.isFinite(item.quantity) && item.quantity > 0
+          ? Math.round(item.quantity)
+          : 1;
+      const lineVol = Math.round(
+        (Number.isFinite(item.volume) ? item.volume : 0) * qty
+      );
       lines.push(
-        `  • ${formatItemDisplayName(item.name)} × ${item.quantity} (${Math.round(item.volume * item.quantity)} cu ft)`
+        `  ${formatQuantityFirstItem(item.name, qty)}  (${lineVol.toLocaleString()} cu ft)`
       );
     }
   }
@@ -267,9 +381,12 @@ export function buildInventoryReportSubject(
 export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): string {
   const greetingName = firstName(data.recipientName);
   const greeting = greetingName ? `Hi ${greetingName},` : 'Hi there,';
-  const volume = `${Math.round(data.totalVolume).toLocaleString()} cu ft`;
-  const weight = `${data.totalWeight.toLocaleString()} lbs`;
-  const items = `${data.totalItems.toLocaleString()} items`;
+  const totalVolume = Number.isFinite(data.totalVolume) ? data.totalVolume : 0;
+  const totalWeight = Number.isFinite(data.totalWeight) ? data.totalWeight : 0;
+  const totalItems = Number.isFinite(data.totalItems) ? data.totalItems : 0;
+  const volume = `${Math.round(totalVolume).toLocaleString()} cu ft`;
+  const weight = `${totalWeight.toLocaleString()} lbs`;
+  const items = `${totalItems.toLocaleString()} items`;
   const attachmentNote = data.pdfAttached
     ? 'A printable PDF report is attached to this email.'
     : 'View or download a PDF anytime from your My Move dashboard.';
@@ -280,7 +397,7 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>${escapeHtml(buildInventoryReportSubject(data.totalVolume))}</title>
+  <title>${escapeHtml(buildInventoryReportSubject(totalVolume))}</title>
 </head>
 <body style="margin:0;padding:0;background-color:#eef2f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
@@ -471,25 +588,31 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
 </html>`;
 }
 
-function buildShortlistMoverCardsText(movers: ShortlistMoverEmailCard[]): string[] {
+function buildShortlistMoverCardsText(movers: ShortlistMoverCard[]): string[] {
   if (!movers.length) return [];
   const lines = ['SHORTLISTED MOVERS'];
   movers.forEach((m, i) => {
     lines.push('');
     lines.push(`${i + 1}. ${m.name}`);
-    if (m.overallRating)
-      lines.push(
-        `   Rating: ${m.overallRating.toFixed(1)}★${m.reviewCount ? ` (${m.reviewCount})` : ''}`
-      );
-    if (m.reputationScore) lines.push(`   Reputation score: ${m.reputationScore}/100`);
-    if (m.fmcsaSafetyRating) lines.push(`   FMCSA: ${m.fmcsaSafetyRating}`);
-    if (m.entityType) lines.push(`   Type: ${m.entityType}`);
-    if (m.usdotNumber) lines.push(`   USDOT: ${m.usdotNumber}`);
-    if (m.powerUnits) lines.push(`   Power units: ${m.powerUnits}`);
-    if (m.authorityLabel) lines.push(`   Authority: ${m.authorityLabel}`);
     if (m.phone) lines.push(`   Phone: ${m.phone}`);
     if (m.email) lines.push(`   Email: ${m.email}`);
     if (m.website) lines.push(`   Website: ${m.website}`);
+    if (m.address) lines.push(`   Address: ${m.address}`);
+    if (m.entityType) lines.push(`   Type: ${m.entityType}`);
+    if (m.usdotNumber) lines.push(`   USDOT: ${m.usdotNumber}`);
+    if (m.mcNumber) lines.push(`   MC: ${m.mcNumber}`);
+    if (m.powerUnits) lines.push(`   Power units: ${m.powerUnits}`);
+    if (m.authorityLabel) lines.push(`   Authority: ${m.authorityLabel}`);
+    if (m.googleRating)
+      lines.push(
+        `   Google: ${m.googleRating.toFixed(1)}★${m.googleReviewCount ? ` (${m.googleReviewCount})` : ''}`
+      );
+    if (m.overallRating)
+      lines.push(
+        `   Hub rating: ${m.overallRating.toFixed(1)}★${m.reviewCount ? ` (${m.reviewCount})` : ''}`
+      );
+    if (m.reputationScore) lines.push(`   Reputation score: ${m.reputationScore}/100`);
+    if (m.fmcsaSafetyRating) lines.push(`   FMCSA safety: ${m.fmcsaSafetyRating}`);
     lines.push(`   Profile: ${m.profileUrl}`);
   });
   return lines;

@@ -14,8 +14,12 @@ export function loadMyMovePlan(): MyMovePlanState | null {
     return {
       ...EMPTY_PLAN_STATE,
       ...parsed,
-      shortlist: Array.isArray(parsed.shortlist) ? parsed.shortlist : [],
-      inventory: Array.isArray(parsed.inventory) ? parsed.inventory : [],
+      shortlist: Array.isArray(parsed.shortlist)
+        ? parsed.shortlist.filter((m) => m && typeof m === 'object')
+        : [],
+      inventory: Array.isArray(parsed.inventory)
+        ? parsed.inventory.filter((i) => i && typeof i === 'object')
+        : [],
     };
   } catch {
     return null;

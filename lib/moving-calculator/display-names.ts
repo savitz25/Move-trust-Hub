@@ -231,6 +231,19 @@ export function groupItemsBySubgroup(
   return result;
 }
 
+/**
+ * Professional moving-inventory line: quantity first.
+ * e.g. "10 × Medium Moving Box", "2 × Queen Bed with Mattress & Box Spring"
+ */
+export function formatQuantityFirstItem(
+  rawName: string,
+  quantity: number
+): string {
+  const qty =
+    Number.isFinite(quantity) && quantity > 0 ? Math.round(quantity) : 1;
+  return `${qty} × ${formatItemDisplayName(rawName)}`;
+}
+
 /** Items requiring special mover handling */
 export const SPECIAL_HANDLING_PATTERNS = [
   /piano/i,

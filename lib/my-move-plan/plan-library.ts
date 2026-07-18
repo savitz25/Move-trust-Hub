@@ -34,22 +34,29 @@ function newId(): string {
   return `plan-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
-export function buildPlanName(plan: MyMovePlanState): string {
-  const from = plan.fromPlace?.label?.split(',')[0]?.trim() || 'Origin';
-  const to = plan.toPlace?.label?.split(',')[0]?.trim();
+export function buildPlanName(plan: MyMovePlanState | null | undefined): string {
+  const from = plan?.fromPlace?.label?.split(',')[0]?.trim() || 'Origin';
+  const to = plan?.toPlace?.label?.split(',')[0]?.trim();
   const route = to ? `${from} → ${to}` : from;
-  const { totalVolume } = planInventoryTotals(plan.inventory);
+  const { totalVolume } = planInventoryTotals(plan?.inventory);
   if (totalVolume > 0) {
     return `${route} · ${totalVolume.toLocaleString()} cu ft`;
   }
-  if (plan.shortlist.length > 0) {
-    return `${route} · ${plan.shortlist.length} mover${plan.shortlist.length === 1 ? '' : 's'}`;
+  const shortlist = Array.isArray(plan?.shortlist) ? plan!.shortlist : [];
+  if (shortlist.length > 0) {
+    return `${route} · ${shortlist.length} mover${shortlist.length === 1 ? '' : 's'}`;
   }
   return route;
 }
 
 export function planStats(plan: MyMovePlanState) {
-  const { totalVolume, totalItems } = planInventoryTotals(plan.inventory);
+  const safePlan: MyMovePlanState = {
+    ...EMPTY_PLAN_STATE,
+    ...plan,
+    shortlist: Array.isArray(plan?.shortlist) ? plan.shortlist.filter(Boolean) : [],
+    inventory: Array.isArray(plan?.inventory) ? plan.inventory.filter(Boolean) : [],
+  };
+  const { totalVolume, totalItems } = planInventoryTotals(safePlan.inventory);
   const weight = estimateWeight(totalVolume);
   const truck = getMoveRecommendation(totalVolume);
   return {
@@ -58,12 +65,14 @@ export function planStats(plan: MyMovePlanState) {
     weight,
     truckLabel: truck.truck,
     truckSize: truck.label,
-    readiness: computeMoveReadiness(plan),
-    routeFrom: plan.fromPlace?.label ?? null,
-    routeTo: plan.toPlace?.label ?? null,
-    drivingMiles: plan.drivingMiles,
-    shortlistNames: plan.shortlist.map((m) => m.name),
-    shortlistCount: plan.shortlist.length,
+    readiness: computeMoveReadiness(safePlan),
+    routeFrom: safePlan.fromPlace?.label ?? null,
+    routeTo: safePlan.toPlace?.label ?? null,
+    drivingMiles: safePlan.drivingMiles,
+    shortlistNames: safePlan.shortlist
+      .map((m) => m?.name)
+      .filter((n): n is string => typeof n === 'string' && n.trim().length > 0),
+    shortlistCount: safePlan.shortlist.length,
   };
 }
 
@@ -148,6 +157,8 @@ export function upsertActivePlanFromState(
   const plan: MyMovePlanState = {
     ...EMPTY_PLAN_STATE,
     ...state,
+    shortlist: Array.isArray(state?.shortlist) ? state.shortlist.filter(Boolean) : [],
+    inventory: Array.isArray(state?.inventory) ? state.inventory.filter(Boolean) : [],
     updatedAt: now,
   };
   const readiness = computeMoveReadiness(plan);

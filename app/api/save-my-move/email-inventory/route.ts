@@ -13,10 +13,13 @@ import {
   buildInventoryReportEmailHtml,
   buildInventoryReportEmailText,
   buildInventoryReportSubject,
-  type ShortlistMoverEmailCard,
 } from '@/lib/emails/inventory-report';
 import { logMyMoveActivity } from '@/lib/save-my-move/activity-log';
 import { getCompanyBySlugAsync } from '@/lib/data-server';
+import {
+  emptyShortlistMoverCard,
+  type ShortlistMoverCard,
+} from '@/lib/my-move-plan/shortlist-mover-card';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import type { Company } from '@/types';
 
@@ -53,12 +56,69 @@ function authorityLabel(company: Company): string | null {
   return null;
 }
 
-function companyToShortlistCard(company: Company): ShortlistMoverEmailCard {
+function nonEmptyString(value: unknown): string | null {
+  if (typeof value !== 'string') return null;
+  const t = value.trim();
+  return t.length > 0 ? t : null;
+}
+
+/** Pull phone from Google enrichment (typed or legacy/raw shapes). */
+function phoneFromGoogleData(google: Company['googleData']): string | null {
+  if (!google) return null;
+  const g = google as Record<string, unknown>;
+  const direct = nonEmptyString(g.phone);
+  if (direct) return direct;
+  const raw = g.raw_response;
+  if (raw && typeof raw === 'object') {
+    const r = raw as Record<string, unknown>;
+    return (
+      nonEmptyString(r.nationalPhoneNumber) ||
+      nonEmptyString(r.internationalPhoneNumber) ||
+      nonEmptyString(r.formattedPhoneNumber) ||
+      nonEmptyString(r.phone) ||
+      null
+    );
+  }
+  return null;
+}
+
+function telephoneFromFmcsaRaw(raw: unknown): string | null {
+  if (!raw || typeof raw !== 'object') return null;
+  const carrier = raw as Record<string, unknown>;
+  return nonEmptyString(carrier.telephone) || nonEmptyString(carrier.phone);
+}
+
+function emailFromUnknown(value: unknown): string | null {
+  const s = nonEmptyString(value);
+  if (!s || !s.includes('@')) return null;
+  return s;
+}
+
+function companyToShortlistCard(
+  company: Company,
+  fmcsaExtras?: { phone?: string | null }
+): ShortlistMoverCard {
   const google = company.googleData;
-  const phoneFromGoogle =
-    google && typeof (google as { phone?: string }).phone === 'string'
-      ? (google as { phone?: string }).phone ?? null
-      : null;
+  const phone =
+    phoneFromGoogleData(google) ||
+    nonEmptyString(fmcsaExtras?.phone) ||
+    null;
+  const address =
+    nonEmptyString(google?.formatted_address) ||
+    nonEmptyString(company.headquarters) ||
+    null;
+  const website =
+    nonEmptyString(company.website) || nonEmptyString(google?.website_url) || null;
+
+  // Email is rarely in directory data; still surface if present on enrichment blobs
+  const googleRec = google as Record<string, unknown> | null | undefined;
+  const email =
+    emailFromUnknown(googleRec?.email) ||
+    emailFromUnknown(
+      googleRec?.raw_response && typeof googleRec.raw_response === 'object'
+        ? (googleRec.raw_response as Record<string, unknown>).email
+        : null
+    );
 
   return {
     name: company.name,
@@ -75,73 +135,76 @@ function companyToShortlistCard(company: Company): ShortlistMoverEmailCard {
     mcNumber: company.mcNumber || null,
     powerUnits: company.powerUnits ?? null,
     authorityLabel: authorityLabel(company),
-    headquarters: company.headquarters || null,
-    phone: phoneFromGoogle,
-    email: null,
-    website: company.website || google?.website_url || null,
+    address,
+    phone,
+    email,
+    website,
   };
+}
+
+/** Batch-load FMCSA telephone from fmcsa_raw for shortlisted slugs. */
+async function loadFmcsaPhoneBySlug(
+  slugs: string[]
+): Promise<Map<string, string>> {
+  const map = new Map<string, string>();
+  if (!slugs.length) return map;
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from('companies')
+      .select('slug, fmcsa_raw')
+      .in('slug', slugs);
+    if (error || !data) return map;
+    for (const row of data) {
+      const slug = typeof row.slug === 'string' ? row.slug : '';
+      const phone = telephoneFromFmcsaRaw(row.fmcsa_raw);
+      if (slug && phone) map.set(slug, phone);
+    }
+  } catch {
+    // best-effort enrichment
+  }
+  return map;
 }
 
 async function resolveShortlistMovers(
   slugs: string[],
   nameFallback: string[]
-): Promise<ShortlistMoverEmailCard[]> {
+): Promise<ShortlistMoverCard[]> {
   const unique = [...new Set(slugs.map((s) => s.trim()).filter(Boolean))].slice(0, 3);
   if (!unique.length && nameFallback.length) {
-    return nameFallback.slice(0, 3).map((name, i) => ({
-      name,
-      slug: '',
-      profileUrl: `${SITE_URL}/companies`,
-      overallRating: null,
-      reviewCount: null,
-      reputationScore: null,
-      googleRating: null,
-      googleReviewCount: null,
-      fmcsaSafetyRating: null,
-      entityType: null,
-      usdotNumber: null,
-      mcNumber: null,
-      powerUnits: null,
-      authorityLabel: null,
-      headquarters: null,
-      phone: null,
-      email: null,
-      website: null,
-    }));
+    return nameFallback.slice(0, 3).map((name) =>
+      emptyShortlistMoverCard({
+        name,
+        slug: '',
+        profileUrl: `${SITE_URL}/companies`,
+      })
+    );
   }
 
-  const cards: ShortlistMoverEmailCard[] = [];
+  const fmcsaPhones = await loadFmcsaPhoneBySlug(unique);
+  const cards: ShortlistMoverCard[] = [];
   for (let i = 0; i < unique.length; i++) {
     const slug = unique[i]!;
     try {
       const company = await getCompanyBySlugAsync(slug);
       if (company) {
-        cards.push(companyToShortlistCard(company));
+        cards.push(
+          companyToShortlistCard(company, {
+            phone: fmcsaPhones.get(slug) ?? null,
+          })
+        );
         continue;
       }
     } catch {
       // fall through to name fallback
     }
-    cards.push({
-      name: nameFallback[i] || slug.replace(/-/g, ' '),
-      slug,
-      profileUrl: `${SITE_URL}/companies/${slug}`,
-      overallRating: null,
-      reviewCount: null,
-      reputationScore: null,
-      googleRating: null,
-      googleReviewCount: null,
-      fmcsaSafetyRating: null,
-      entityType: null,
-      usdotNumber: null,
-      mcNumber: null,
-      powerUnits: null,
-      authorityLabel: null,
-      headquarters: null,
-      phone: null,
-      email: null,
-      website: null,
-    });
+    cards.push(
+      emptyShortlistMoverCard({
+        name: nameFallback[i] || slug.replace(/-/g, ' '),
+        slug,
+        profileUrl: `${SITE_URL}/companies/${slug}`,
+      })
+    );
   }
   return cards;
 }
@@ -151,7 +214,14 @@ function tryBuildPdfAttachment(
   groupedByRoom: ReturnType<typeof groupInventoryByRoom>,
   totalVolume: number,
   totalItems: number,
-  presetLabel: string | null
+  presetLabel: string | null,
+  shortlistMovers: ShortlistMoverCard[],
+  route?: {
+    routeFrom?: string | null;
+    routeTo?: string | null;
+    drivingMiles?: number | null;
+    inventoryName?: string | null;
+  }
 ) {
   try {
     const content = generateInventoryPdfBase64({
@@ -160,6 +230,11 @@ function tryBuildPdfAttachment(
       totalVolume,
       totalItems,
       presetLabel,
+      shortlistMovers,
+      routeFrom: route?.routeFrom ?? null,
+      routeTo: route?.routeTo ?? null,
+      drivingMiles: route?.drivingMiles ?? null,
+      inventoryName: route?.inventoryName ?? null,
     });
     if (!content) return null;
     return {
@@ -257,7 +332,14 @@ export async function POST(request: Request) {
       groupedByRoom,
       totalVolume,
       totalItems,
-      presetLabel
+      presetLabel,
+      shortlistMovers,
+      {
+        routeFrom: emailData.routeFrom,
+        routeTo: emailData.routeTo,
+        drivingMiles: emailData.drivingMiles,
+        inventoryName,
+      }
     );
     emailData.pdfAttached = pdfAttachment !== null;
 

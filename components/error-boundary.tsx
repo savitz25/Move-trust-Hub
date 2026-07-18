@@ -41,11 +41,9 @@ export class ErrorBoundary extends React.Component<Props, State> {
           <Button
             className="mt-6"
             onClick={() => {
-              if (this.props.onRetry) {
-                this.props.onRetry();
-                return;
-              }
-              this.setState({ hasError: false });
+              this.setState({ hasError: false }, () => {
+                this.props.onRetry?.();
+              });
             }}
           >
             Try again

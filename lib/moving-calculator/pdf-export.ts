@@ -1,11 +1,16 @@
 import { jsPDF } from 'jspdf';
 import type { InventoryItem } from '@/store/calculator-store';
-import { formatItemDisplayName, isSpecialHandlingItem } from '@/lib/moving-calculator/display-names';
+import {
+  formatItemDisplayName,
+  formatQuantityFirstItem,
+  isSpecialHandlingItem,
+} from '@/lib/moving-calculator/display-names';
 import {
   estimateWeight,
   getMoveRecommendation,
   LBS_PER_CU_FT,
 } from '@/lib/moving-calculator/estimates';
+import type { ShortlistMoverCard } from '@/lib/my-move-plan/shortlist-mover-card';
 
 export type PdfExportData = {
   inventory: InventoryItem[];
@@ -13,6 +18,12 @@ export type PdfExportData = {
   totalVolume: number;
   totalItems: number;
   presetLabel?: string | null;
+  /** Shortlisted movers with contact + licensing (Move Report) */
+  shortlistMovers?: ShortlistMoverCard[];
+  routeFrom?: string | null;
+  routeTo?: string | null;
+  drivingMiles?: number | null;
+  inventoryName?: string | null;
 };
 
 export function inventoryPdfFilename(): string {
@@ -30,6 +41,7 @@ export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
   const recommendation = getMoveRecommendation(data.totalVolume);
   const totalWeight = estimateWeight(data.totalVolume);
   const specialItems = data.inventory.filter((item) => isSpecialHandlingItem(item.name));
+  const shortlist = Array.isArray(data.shortlistMovers) ? data.shortlistMovers : [];
   const dateStr = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -52,11 +64,35 @@ export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
   doc.text('Move Trust Hub', margin, 36);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'normal');
-  doc.text('Moving Inventory Report', margin, 54);
+  doc.text(
+    data.inventoryName?.trim() || 'Moving Inventory Report',
+    margin,
+    54
+  );
   doc.text(dateStr, pageWidth - margin, 54, { align: 'right' });
 
   y = 96;
   doc.setTextColor(30, 30, 30);
+
+  // Route (when present)
+  if (data.routeFrom) {
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(0, 119, 212);
+    doc.text('ROUTE', margin, y);
+    y += 14;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    doc.setTextColor(30, 30, 30);
+    const routeLine = `${data.routeFrom}${data.routeTo ? ` → ${data.routeTo}` : ''}${
+      data.drivingMiles != null && Number.isFinite(data.drivingMiles)
+        ? `  ·  ~${Math.round(data.drivingMiles).toLocaleString()} mi`
+        : ''
+    }`;
+    const routeLines = doc.splitTextToSize(routeLine, contentWidth);
+    doc.text(routeLines, margin, y);
+    y += routeLines.length * 14 + 10;
+  }
 
   // Summary box
   doc.setFillColor(245, 248, 252);
@@ -106,6 +142,101 @@ export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
   doc.text(instructionLines, margin, y);
   y += instructionLines.length * 12 + 16;
 
+  // Shortlisted movers — self-contained contact + licensing cards
+  if (shortlist.length > 0) {
+    addPageIfNeeded(40);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(12);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Shortlisted Movers', margin, y);
+    y += 12;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(80, 80, 80);
+    doc.text(
+      'Contact each mover with this report. Licensing details below for verification.',
+      margin,
+      y
+    );
+    y += 16;
+
+    shortlist.forEach((m, idx) => {
+      const detailLines: string[] = [];
+      if (m.phone) detailLines.push(`Phone: ${m.phone}`);
+      if (m.email) detailLines.push(`Email: ${m.email}`);
+      if (m.website) detailLines.push(`Website: ${m.website}`);
+      if (m.address) detailLines.push(`Address: ${m.address}`);
+      if (m.entityType) detailLines.push(`Type: ${m.entityType}`);
+      if (m.usdotNumber) detailLines.push(`USDOT: ${m.usdotNumber}`);
+      if (m.mcNumber) detailLines.push(`MC: ${m.mcNumber}`);
+      if (m.powerUnits != null && m.powerUnits > 0) {
+        detailLines.push(`Power units: ${m.powerUnits.toLocaleString()}`);
+      }
+      if (m.authorityLabel) detailLines.push(`Authority: ${m.authorityLabel}`);
+      const trust: string[] = [];
+      if (m.googleRating != null && m.googleRating > 0) {
+        trust.push(
+          `Google ${m.googleRating.toFixed(1)}★${
+            m.googleReviewCount ? ` (${m.googleReviewCount})` : ''
+          }`
+        );
+      }
+      if (m.overallRating != null && m.overallRating > 0) {
+        trust.push(
+          `Hub ${m.overallRating.toFixed(1)}★${m.reviewCount ? ` (${m.reviewCount})` : ''}`
+        );
+      }
+      if (m.reputationScore != null && m.reputationScore > 0) {
+        trust.push(`Reputation ${m.reputationScore}/100`);
+      }
+      if (m.fmcsaSafetyRating) trust.push(`FMCSA ${m.fmcsaSafetyRating}`);
+      if (trust.length) detailLines.push(trust.join(' · '));
+      if (m.profileUrl) detailLines.push(`Profile: ${m.profileUrl}`);
+      if (!m.phone && !m.email) {
+        detailLines.push('Phone/email not on file — see profile or website.');
+      }
+
+      // Estimate card height
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      const nameLines = doc.splitTextToSize(m.name, contentWidth - 24);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      const wrappedDetails: string[] = [];
+      for (const line of detailLines) {
+        wrappedDetails.push(...doc.splitTextToSize(line, contentWidth - 24));
+      }
+      const cardH = 22 + nameLines.length * 13 + wrappedDetails.length * 12 + 14;
+      addPageIfNeeded(cardH + 8);
+
+      doc.setDrawColor(226, 232, 240);
+      doc.setFillColor(255, 255, 255);
+      doc.roundedRect(margin, y, contentWidth, cardH, 5, 5, 'FD');
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(9);
+      doc.setTextColor(0, 119, 212);
+      doc.text(`MOVER ${idx + 1} OF ${shortlist.length}`, margin + 12, y + 14);
+
+      doc.setFontSize(12);
+      doc.setTextColor(15, 23, 42);
+      doc.text(nameLines, margin + 12, y + 28);
+      let dy = y + 28 + nameLines.length * 13;
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      for (const line of wrappedDetails) {
+        doc.text(line, margin + 12, dy);
+        dy += 12;
+      }
+
+      y += cardH + 10;
+    });
+
+    y += 6;
+  }
+
   // Special handling
   if (specialItems.length > 0) {
     addPageIfNeeded(40 + specialItems.length * 14);
@@ -120,14 +251,17 @@ export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
     doc.setFontSize(9);
     doc.setTextColor(60, 60, 60);
     for (const item of specialItems) {
-      const label = formatItemDisplayName(item.name);
-      doc.text(`• ${label} × ${item.quantity} — notify movers in advance`, margin + 12, y);
+      doc.text(
+        `• ${formatQuantityFirstItem(item.name, item.quantity)} — notify movers in advance`,
+        margin + 12,
+        y
+      );
       y += 14;
     }
     y += 12;
   }
 
-  // Itemized by room
+  // Itemized by room — quantity-first
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
   doc.setTextColor(30, 30, 30);
@@ -140,7 +274,12 @@ export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
     doc.setFontSize(10);
     doc.setTextColor(0, 119, 212);
     const roomTotal = items.reduce((s, i) => s + i.volume * i.quantity, 0);
-    doc.text(`${room} (${Math.round(roomTotal)} cu ft)`, margin, y);
+    const roomPcs = items.reduce((s, i) => s + i.quantity, 0);
+    doc.text(
+      `${room}  ·  ${Math.round(roomTotal)} cu ft  ·  ${roomPcs} pcs`,
+      margin,
+      y
+    );
     y += 16;
 
     doc.setFont('helvetica', 'normal');
@@ -148,9 +287,14 @@ export function buildInventoryPdfDocument(data: PdfExportData): jsPDF {
     doc.setTextColor(50, 50, 50);
     for (const item of items) {
       addPageIfNeeded(14);
+      const qty = item.quantity > 0 ? Math.round(item.quantity) : 1;
       const label = formatItemDisplayName(item.name);
-      const line = `${label}  ·  ${item.volume} cu ft × ${item.quantity}  =  ${Math.round(item.volume * item.quantity)} cu ft`;
-      doc.text(line, margin + 8, y);
+      const lineVol = Math.round(item.volume * qty);
+      // Quantity first: "10 × Medium Moving Box"
+      const left = `${qty} × ${label}`;
+      const right = `${lineVol} cu ft`;
+      doc.text(left, margin + 8, y, { maxWidth: contentWidth - 80 });
+      doc.text(right, pageWidth - margin, y, { align: 'right' });
       y += 14;
     }
     y += 8;

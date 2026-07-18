@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   Check,
@@ -22,6 +22,7 @@ import {
 import { Button } from '@/components/ui/button';
 import type { HomeRouteMover } from '@/lib/home/resolve-route-from-zip';
 import type { ConfirmedPlace } from '@/components/location/location-place-input';
+import { formatItemDisplayName } from '@/lib/moving-calculator/display-names';
 import type { PlanInventoryItem } from '@/lib/my-move-plan/types';
 
 type TruckRec = {
@@ -100,7 +101,33 @@ export function ReportReadyStep({
   const [menuOpenSlug, setMenuOpenSlug] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  const n = shortlist.length;
+  // Defensive: never assume parent passed arrays (session restore / partial plans)
+  const safeShortlist = (Array.isArray(shortlist) ? shortlist : []).filter(
+    (m): m is HomeRouteMover => Boolean(m && typeof m.slug === 'string' && m.slug)
+  );
+  const safeInventory = (Array.isArray(inventory) ? inventory : []).filter(
+    (item): item is PlanInventoryItem => Boolean(item && typeof item.name === 'string')
+  );
+  const inventoryByRoom = useMemo(() => {
+    const groups = new Map<string, PlanInventoryItem[]>();
+    for (const item of safeInventory) {
+      const room = item.room?.trim() || 'Unassigned';
+      const list = groups.get(room) ?? [];
+      list.push(item);
+      groups.set(room, list);
+    }
+    return [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
+  }, [safeInventory]);
+  const safeVolume = Number.isFinite(totalVolume) ? totalVolume : 0;
+  const safeWeight = Number.isFinite(weight) ? weight : 0;
+  const safeItems = Number.isFinite(totalItems) ? totalItems : 0;
+  const safeReadiness = Number.isFinite(readiness) ? readiness : 0;
+  const truckLabel = truck?.truck || 'Truck size TBD';
+  const truckSize = truck?.label || 'Size TBD';
+  const truckMovers = truck?.movers || '';
+  const truckDuration = truck?.duration;
+
+  const n = safeShortlist.length;
   const primaryLabel = signedIn
     ? 'Email me my move report'
     : 'Sign in & email me my report';
@@ -176,14 +203,31 @@ export function ReportReadyStep({
           </ol>
 
           <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-            {shortlist.slice(0, 3).map((m) => (
-              <Button key={m.slug} variant="outline" size="sm" asChild className="justify-start">
-                <Link href={profileHref(m.slug)} onClick={() => onPersistPlan()}>
-                  <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-                  {m.name}
-                </Link>
-              </Button>
-            ))}
+            {safeShortlist.slice(0, 3).map((m) => {
+              let href = `/companies/${m.slug}`;
+              try {
+                href = profileHref(m.slug);
+              } catch {
+                // keep fallback href
+              }
+              return (
+                <Button key={m.slug} variant="outline" size="sm" asChild className="justify-start">
+                  <Link
+                    href={href}
+                    onClick={() => {
+                      try {
+                        onPersistPlan();
+                      } catch {
+                        // non-fatal
+                      }
+                    }}
+                  >
+                    <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                    {m.name || m.slug}
+                  </Link>
+                </Button>
+              );
+            })}
             <Button variant="outline" size="sm" asChild>
               <Link href="/my-move/reports">My Move Reports</Link>
             </Button>
@@ -250,11 +294,11 @@ export function ReportReadyStep({
           </span>
           <div className="mt-1 flex items-baseline gap-1">
             <span className="text-4xl font-bold tabular-nums tracking-tight text-emerald-700 sm:text-5xl">
-              {readiness}
+              {safeReadiness}
             </span>
             <span className="text-lg font-medium text-muted-foreground">/100</span>
           </div>
-          {readiness >= 100 ? (
+          {safeReadiness >= 100 ? (
             <span className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-emerald-700">
               <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
               Plan complete — ready to request quotes
@@ -308,11 +352,11 @@ export function ReportReadyStep({
               Load size
             </div>
             <p className="text-2xl font-semibold tabular-nums tracking-tight">
-              {totalVolume.toLocaleString()}
+              {safeVolume.toLocaleString()}
               <span className="ml-1 text-sm font-normal text-muted-foreground">cu ft</span>
             </p>
             <p className="text-xs text-muted-foreground">
-              ~{weight.toLocaleString()} lbs · {totalItems} items
+              ~{safeWeight.toLocaleString()} lbs · {safeItems} items
             </p>
             <button
               type="button"
@@ -336,37 +380,66 @@ export function ReportReadyStep({
               <Truck className="h-3.5 w-3.5" aria-hidden />
               Recommended truck
             </div>
-            <p className="text-sm font-semibold leading-snug">{truck.truck}</p>
+            <p className="text-sm font-semibold leading-snug">{truckLabel}</p>
             <p className="text-xs text-muted-foreground">
-              {truck.label} · {truck.movers}
-              {truck.duration ? ` · ${truck.duration}` : ''}
+              {truckSize}
+              {truckMovers ? ` · ${truckMovers}` : ''}
+              {truckDuration ? ` · ${truckDuration}` : ''}
             </p>
           </div>
         </div>
 
         {inventoryOpen ? (
           <div className="border-t bg-slate-50/50 px-4 py-3 sm:px-5">
-            <p className="mb-2 text-xs font-medium text-muted-foreground">
-              Inventory line items ({inventory.length})
-            </p>
-            <ul className="max-h-48 space-y-1 overflow-y-auto text-xs sm:text-sm">
-              {inventory.map((item) => (
-                <li
-                  key={item.id}
-                  className="flex justify-between gap-2 border-b border-border/40 py-1 last:border-0"
-                >
-                  <span className="min-w-0 truncate">
-                    {item.name}
-                    {item.room ? (
-                      <span className="text-muted-foreground"> · {item.room}</span>
-                    ) : null}
-                  </span>
-                  <span className="shrink-0 tabular-nums text-muted-foreground">
-                    ×{item.quantity}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+              <p className="text-xs font-medium text-muted-foreground">
+                Inventory ({safeInventory.length} lines · {safeItems} pcs)
+              </p>
+              <p className="text-xs font-semibold tabular-nums text-foreground">
+                {safeVolume.toLocaleString()} cu ft total
+              </p>
+            </div>
+            <div className="max-h-56 space-y-3 overflow-y-auto">
+              {inventoryByRoom.map(([room, items]) => {
+                const roomVol = Math.round(
+                  items.reduce((s, i) => s + i.volume * i.quantity, 0)
+                );
+                const roomPcs = items.reduce((s, i) => s + i.quantity, 0);
+                return (
+                  <div key={room}>
+                    <div className="mb-1 flex items-baseline justify-between gap-2 border-b border-border/60 pb-1">
+                      <span className="text-[11px] font-semibold uppercase tracking-wide text-primary">
+                        {room}
+                      </span>
+                      <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground">
+                        {roomVol.toLocaleString()} cu ft · {roomPcs} pcs
+                      </span>
+                    </div>
+                    <ul className="space-y-0.5 text-xs sm:text-sm">
+                      {items.map((item) => {
+                        const lineVol = Math.round(item.volume * item.quantity);
+                        return (
+                          <li
+                            key={item.id || `${room}-${item.name}`}
+                            className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-baseline gap-x-2 py-0.5"
+                          >
+                            <span className="tabular-nums font-semibold text-foreground">
+                              {item.quantity}&nbsp;×
+                            </span>
+                            <span className="min-w-0 truncate text-foreground">
+                              {formatItemDisplayName(item.name)}
+                            </span>
+                            <span className="shrink-0 tabular-nums text-muted-foreground">
+                              {lineVol.toLocaleString()} cu ft
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         ) : null}
       </article>
@@ -398,13 +471,19 @@ export function ReportReadyStep({
           type="button"
           size="lg"
           className="h-14 w-full gap-2 rounded-2xl text-base font-semibold shadow-md shadow-primary/20 sm:h-16 sm:text-lg"
-          disabled={primaryBusy || totalVolume <= 0}
-          onClick={onEmailMeReport}
+          disabled={primaryBusy || safeVolume <= 0}
+          onClick={() => {
+            try {
+              onEmailMeReport();
+            } catch {
+              // Parent also guards; never let a sync throw white-screen the app
+            }
+          }}
         >
           <Mail className="h-5 w-5" aria-hidden />
           {emailSending ? 'Sending report…' : primaryLabel}
         </Button>
-        {totalVolume <= 0 ? (
+        {safeVolume <= 0 ? (
           <p className="text-center text-sm text-muted-foreground">
             Add inventory before emailing your report.
           </p>
@@ -439,8 +518,15 @@ export function ReportReadyStep({
           </p>
         ) : (
           <ul className="divide-y rounded-xl border bg-white/90">
-            {shortlist.map((m, idx) => {
+            {safeShortlist.map((m, idx) => {
               const open = menuOpenSlug === m.slug;
+              const moverName = m.name || m.slug;
+              let moverHref = `/companies/${m.slug}`;
+              try {
+                moverHref = profileHref(m.slug);
+              } catch {
+                // keep fallback
+              }
               return (
                 <li
                   key={m.slug}
@@ -453,7 +539,7 @@ export function ReportReadyStep({
                     {idx + 1}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <div className="truncate text-sm font-semibold">{m.name}</div>
+                    <div className="truncate text-sm font-semibold">{moverName}</div>
                     <div className="truncate text-xs text-muted-foreground">
                       {m.headquarters || 'Shortlisted mover'}
                     </div>
@@ -465,7 +551,7 @@ export function ReportReadyStep({
                       size="icon"
                       variant="ghost"
                       className="h-8 w-8"
-                      aria-label={`More actions for ${m.name}`}
+                      aria-label={`More actions for ${moverName}`}
                       aria-expanded={open}
                       onClick={() =>
                         setMenuOpenSlug((s) => (s === m.slug ? null : m.slug))
@@ -480,7 +566,11 @@ export function ReportReadyStep({
                           className="flex w-full items-center gap-2 px-3 py-2 text-left hover:bg-muted"
                           onClick={() => {
                             setMenuOpenSlug(null);
-                            onCopyTemplate(m);
+                            try {
+                              onCopyTemplate(m);
+                            } catch {
+                              // non-fatal
+                            }
                           }}
                         >
                           <ClipboardCopy className="h-3.5 w-3.5" />
@@ -492,16 +582,24 @@ export function ReportReadyStep({
                           disabled={authLoading && emailPendingSlug === m.slug}
                           onClick={() => {
                             setMenuOpenSlug(null);
-                            onEmailMover(m);
+                            try {
+                              onEmailMover(m);
+                            } catch {
+                              // non-fatal
+                            }
                           }}
                         >
                           <Mail className="h-3.5 w-3.5" />
                           Email this mover
                         </button>
                         <Link
-                          href={profileHref(m.slug)}
+                          href={moverHref}
                           onClick={() => {
-                            onPersistPlan();
+                            try {
+                              onPersistPlan();
+                            } catch {
+                              // non-fatal
+                            }
                             setMenuOpenSlug(null);
                           }}
                           className="flex w-full items-center gap-2 px-3 py-2 hover:bg-muted"

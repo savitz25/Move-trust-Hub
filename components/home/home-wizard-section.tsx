@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Zap } from 'lucide-react';
 import { MyMovePlanWizard } from '@/components/my-move-plan/my-move-plan-wizard';
+import { ErrorBoundary } from '@/components/error-boundary';
 import type { HomeRouteMover } from '@/lib/home/resolve-route-from-zip';
 import type { MyMovePlanStep } from '@/lib/my-move-plan/types';
 import { stepToPhase } from '@/lib/my-move-plan/readiness';
@@ -59,10 +60,12 @@ export function HomeWizardSection({ fallbackMovers = [] }: Props) {
       </div>
 
       <div className="mx-auto mt-8 max-w-4xl sm:mt-10">
-        <MyMovePlanWizard
-          fallbackMovers={fallbackMovers}
-          onStepChange={setStep}
-        />
+        <ErrorBoundary fallbackTitle="My Move Plan hit a temporary issue">
+          <MyMovePlanWizard
+            fallbackMovers={fallbackMovers}
+            onStepChange={setStep}
+          />
+        </ErrorBoundary>
       </div>
     </>
   );

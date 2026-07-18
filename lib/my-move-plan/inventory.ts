@@ -13,9 +13,20 @@ export function createPlanInventoryFromPreset(
   return buildPresetInventory(presetId, getVolume);
 }
 
-export function planInventoryTotals(inventory: PlanInventoryItem[]) {
-  const totalVolume = inventory.reduce((s, i) => s + i.volume * i.quantity, 0);
-  const totalItems = inventory.reduce((s, i) => s + i.quantity, 0);
+export function planInventoryTotals(
+  inventory: PlanInventoryItem[] | null | undefined
+) {
+  const items = Array.isArray(inventory) ? inventory : [];
+  let totalVolume = 0;
+  let totalItems = 0;
+  for (const item of items) {
+    if (!item || typeof item !== 'object') continue;
+    const volume = Number(item.volume);
+    const quantity = Number(item.quantity);
+    if (!Number.isFinite(volume) || !Number.isFinite(quantity)) continue;
+    totalVolume += volume * quantity;
+    totalItems += quantity;
+  }
   return {
     totalVolume: Math.round(totalVolume),
     totalItems,
