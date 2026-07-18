@@ -29,6 +29,8 @@ export type Database = {
           founded_year: number | null;
           headquarters: string | null;
           website: string | null;
+          physical_address: string | null;
+          phone: string | null;
           usdot_number: string | null;
           mc_number: string | null;
           fmcsa_safety_rating: string | null;

@@ -2,6 +2,7 @@ import 'server-only';
 
 import { revalidatePath } from 'next/cache';
 import { computeReputationScore } from '@/data/seed-companies';
+import { extractContactFromFmcsaRaw } from '@/lib/fmcsa/company-from-row';
 import { extractDisplayFieldsFromSnapshot } from '@/lib/fmcsa/refresh/batch-fields';
 import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import { detectFieldChanges } from '@/lib/fmcsa/refresh/changes';
@@ -254,25 +255,35 @@ export async function runFmcsaRefresh(options: RefreshOptions): Promise<RefreshR
       yearsInBusiness: company.years_in_business ?? 0,
     });
 
+    const contact = extractContactFromFmcsaRaw(snapshot.raw);
+    const updateRow: Record<string, unknown> = {
+      fmcsa_safety_rating: snapshot.safetyRating,
+      fmcsa_complaints: snapshot.complaintsLast12m,
+      fmcsa_shipments: snapshot.shipments,
+      complaints_last_12m: snapshot.complaintsLast12m,
+      authority_active: snapshot.authorityActive,
+      out_of_service: snapshot.outOfService,
+      revocation_date: snapshot.revocationDate,
+      data_hash: dataHash,
+      fmcsa_last_checked: new Date().toISOString(),
+      fmcsa_legal_name: snapshot.legalName ?? null,
+      fmcsa_raw: snapshot.raw,
+      services,
+      reputation_score: reputationScore,
+      last_updated: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    if (contact.physicalAddress) {
+      updateRow.physical_address = contact.physicalAddress;
+      if (!company.headquarters?.trim()) {
+        updateRow.headquarters = contact.physicalAddress;
+      }
+    }
+    if (contact.phone) updateRow.phone = contact.phone;
+
     const { error: updateError } = await supabase
       .from('companies')
-      .update({
-        fmcsa_safety_rating: snapshot.safetyRating,
-        fmcsa_complaints: snapshot.complaintsLast12m,
-        fmcsa_shipments: snapshot.shipments,
-        complaints_last_12m: snapshot.complaintsLast12m,
-        authority_active: snapshot.authorityActive,
-        out_of_service: snapshot.outOfService,
-        revocation_date: snapshot.revocationDate,
-        data_hash: dataHash,
-        fmcsa_last_checked: new Date().toISOString(),
-        fmcsa_legal_name: snapshot.legalName ?? null,
-        fmcsa_raw: snapshot.raw,
-        services,
-        reputation_score: reputationScore,
-        last_updated: new Date().toISOString(),
-        updated_at: new Date().toISOString(),
-      })
+      .update(updateRow as never)
       .eq('id', company.id);
 
     if (updateError) {

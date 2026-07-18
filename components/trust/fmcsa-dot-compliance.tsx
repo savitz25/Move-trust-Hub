@@ -23,11 +23,30 @@ type Props = {
     | 'services'
     | 'authorityActive'
     | 'outOfService'
+    | 'physicalAddress'
+    | 'phone'
+    | 'headquarters'
   >;
   /** Optional raw FMCSA payload for display-time entity type resolution */
   fmcsaRaw?: Record<string, unknown> | null;
   className?: string;
 };
+
+function formatPhoneDisplay(phone: string): string {
+  const digits = phone.replace(/\D/g, '');
+  if (digits.length === 10) {
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+  }
+  if (digits.length === 11 && digits.startsWith('1')) {
+    return `(${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`;
+  }
+  return phone.trim();
+}
+
+function telHref(phone: string): string {
+  const digits = phone.replace(/[^\d+]/g, '');
+  return digits || phone.trim();
+}
 
 function formatUsdot(value: string): string | null {
   const digits = normalizeUsdot(value);
@@ -88,7 +107,18 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
     hasFmcsaContext
   );
 
-  const rows: Array<{ label: string; value: string | null; mono?: boolean; muted?: boolean }> = [
+  const physicalAddress =
+    company.physicalAddress?.trim() || company.headquarters?.trim() || null;
+  const phoneRaw = company.phone?.trim() || null;
+
+  const rows: Array<{
+    label: string;
+    value: string | null;
+    mono?: boolean;
+    muted?: boolean;
+    href?: string | null;
+    wide?: boolean;
+  }> = [
     { label: 'Entity Type', value: entityTypeDisplay, muted: entityTypeDisplay === ENTITY_TYPE_NOT_AVAILABLE },
     { label: 'US DOT Number', value: usdotLabel, mono: true },
     { label: 'MC Number', value: mcLabel, mono: true },
@@ -100,6 +130,16 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
         company.powerUnits !== null && company.powerUnits !== undefined
           ? String(company.powerUnits)
           : null,
+    },
+    {
+      label: 'Physical Address',
+      value: physicalAddress,
+      wide: true,
+    },
+    {
+      label: 'Phone',
+      value: phoneRaw ? formatPhoneDisplay(phoneRaw) : null,
+      href: phoneRaw ? `tel:${telHref(phoneRaw)}` : null,
     },
   ].filter((row) => row.value);
 
@@ -114,7 +154,7 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
     <div className={className}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-sm">
         {rows.map((row) => (
-          <div key={row.label}>
+          <div key={row.label} className={row.wide ? 'sm:col-span-2' : undefined}>
             <div className="text-muted-foreground text-xs">{row.label}</div>
             <div
               className={
@@ -125,7 +165,13 @@ export function FmcsaDotCompliance({ company, fmcsaRaw, className = '' }: Props)
                     : 'font-semibold text-foreground'
               }
             >
-              {row.value}
+              {row.href ? (
+                <a href={row.href} className="text-primary hover:underline">
+                  {row.value}
+                </a>
+              ) : (
+                row.value
+              )}
             </div>
           </div>
         ))}

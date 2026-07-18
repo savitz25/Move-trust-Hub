@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { computeReputationScore } from '@/data/seed-companies';
+import { extractContactFromFmcsaRaw } from '@/lib/fmcsa/company-from-row';
 import { computeFmcsaDataHash } from '@/lib/fmcsa/refresh/hash';
 import { fetchFmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/fetch-carrier';
 import { logger } from '@/lib/logging/logger';
@@ -100,7 +101,16 @@ export async function approveSuggestionToCompany(
     yearsInBusiness: 0,
   });
 
-  const headquarters = suggestion.headquarters || '';
+  const contactFromSnapshot = snapshot
+    ? extractContactFromFmcsaRaw(snapshot.raw)
+    : extractContactFromFmcsaRaw(suggestion.fmcsa_raw);
+
+  const headquarters =
+    suggestion.headquarters ||
+    contactFromSnapshot.physicalAddress ||
+    '';
+  const phone =
+    suggestion.phone?.trim() || contactFromSnapshot.phone || null;
   const websiteCoverage = coverageFromSuggestionRow(suggestion);
   const coverageLabel = formatCompanyCoverageLabel(headquarters, websiteCoverage);
   const websiteUrl =
@@ -150,6 +160,9 @@ export async function approveSuggestionToCompany(
       suggestion.details ||
       `${displayName} was added to Move Trust Hub through our multi-source onboarding process. FMCSA licensing is primary; Google and public ratings are supplemental.`,
     headquarters,
+    physical_address:
+      contactFromSnapshot.physicalAddress || headquarters || null,
+    phone,
     website: websiteUrl,
     usdot_number: usdot ? usdot : null,
     mc_number: suggestion.mc_number || snapshot?.mcNumber || null,

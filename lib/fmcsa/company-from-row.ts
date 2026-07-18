@@ -1,4 +1,5 @@
 import {
+  buildAddressParts,
   deriveUsdotStatus,
   extractEntityType,
   extractPowerUnits,
@@ -14,12 +15,35 @@ function asCarrierLike(value: unknown): CarrierLike | null {
   return value && typeof value === 'object' ? (value as CarrierLike) : null;
 }
 
+function stringOrNull(value: unknown): string | null {
+  if (value === null || value === undefined) return null;
+  const s = String(value).trim();
+  return s.length > 0 ? s : null;
+}
+
 export type FmcsaFieldsFromRow = {
   entityType: string | null;
   usdotStatus: UsdotStatusLabel | null;
   powerUnits: number | null;
   services: ServiceType[];
+  /** Prefer persisted columns; fall back to fmcsa_raw */
+  physicalAddress: string | null;
+  phone: string | null;
 };
+
+/** Extract physical address + phone from an FMCSA carrier object. */
+export function extractContactFromFmcsaRaw(raw: unknown): {
+  physicalAddress: string | null;
+  phone: string | null;
+} {
+  const carrier = asCarrierLike(raw);
+  if (!carrier) return { physicalAddress: null, phone: null };
+  const address = buildAddressParts(carrier);
+  return {
+    physicalAddress: address.combined,
+    phone: stringOrNull(carrier.telephone) ?? stringOrNull(carrier.phone),
+  };
+}
 
 /** Extract FMCSA directory + compliance fields from a companies table row. */
 export function extractFmcsaFieldsFromRow(
@@ -41,6 +65,37 @@ export function extractFmcsaFieldsFromRow(
 
   const powerUnits = carrier ? extractPowerUnits(carrier) : null;
   const services = mergeServicesWithEntityType(existingServices, entityType);
+  const fromRawContact = extractContactFromFmcsaRaw(row.fmcsa_raw);
+  const googlePhone = phoneFromGoogleData(row.google_data);
 
-  return { entityType, usdotStatus, powerUnits, services };
+  return {
+    entityType,
+    usdotStatus,
+    powerUnits,
+    services,
+    physicalAddress:
+      stringOrNull(row.physical_address) ||
+      fromRawContact.physicalAddress ||
+      stringOrNull(row.headquarters),
+    // Prefer FMCSA telephone; fall back to Google Places when census omits phone
+    phone: stringOrNull(row.phone) || fromRawContact.phone || googlePhone,
+  };
+}
+
+function phoneFromGoogleData(google: unknown): string | null {
+  if (!google || typeof google !== 'object') return null;
+  const g = google as Record<string, unknown>;
+  const direct = stringOrNull(g.phone);
+  if (direct) return direct;
+  const raw = g.raw_response;
+  if (raw && typeof raw === 'object') {
+    const r = raw as Record<string, unknown>;
+    return (
+      stringOrNull(r.nationalPhoneNumber) ||
+      stringOrNull(r.internationalPhoneNumber) ||
+      stringOrNull(r.formattedPhoneNumber) ||
+      stringOrNull(r.phone)
+    );
+  }
+  return null;
 }

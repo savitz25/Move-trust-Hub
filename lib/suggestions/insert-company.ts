@@ -61,14 +61,17 @@ function buildInsertAttempts(baseRow: CompanyInsertPayload): InsertAttempt[] {
     'complaints_last_12m',
     'revocation_date',
   ];
+  const contactCols = ['physical_address', 'phone'];
 
   const withoutEnrichment = stripKeys(baseRow, enrichmentCols);
   const withoutFmcsaExtended = stripKeys(withoutEnrichment, fmcsaExtendedCols);
+  const withoutContact = stripKeys(withoutFmcsaExtended, contactCols);
 
   return [
     { label: 'full', row: baseRow },
     { label: 'without_enrichment', row: withoutEnrichment },
     { label: 'without_fmcsa_extended', row: withoutFmcsaExtended },
+    { label: 'without_contact_cols', row: withoutContact },
   ];
 }
 

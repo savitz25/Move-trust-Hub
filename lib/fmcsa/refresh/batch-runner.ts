@@ -1,4 +1,5 @@
 import { computeReputationScore } from '@/data/seed-companies';
+import { extractContactFromFmcsaRaw } from '@/lib/fmcsa/company-from-row';
 import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import {
   detectBatchFieldChanges,
@@ -81,6 +82,7 @@ function buildFmcsaUpdatePayload(
   });
 
   const nextMc = snapshot.mcNumber?.replace(/\D/g, '') || null;
+  const contact = extractContactFromFmcsaRaw(snapshot.raw);
   const payload: Record<string, unknown> = {
     ...(includeEntityTypeColumn ? { entity_type: display.entityType } : {}),
     fmcsa_safety_rating: snapshot.safetyRating,
@@ -99,6 +101,16 @@ function buildFmcsaUpdatePayload(
     last_updated: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   };
+
+  if (contact.physicalAddress) {
+    payload.physical_address = contact.physicalAddress;
+    if (!company.headquarters?.trim()) {
+      payload.headquarters = contact.physicalAddress;
+    }
+  }
+  if (contact.phone) {
+    payload.phone = contact.phone;
+  }
 
   if (nextMc) {
     payload.mc_number = nextMc;

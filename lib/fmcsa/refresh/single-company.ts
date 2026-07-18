@@ -1,6 +1,7 @@
 import 'server-only';
 
 import { computeReputationScore } from '@/data/seed-companies';
+import { extractContactFromFmcsaRaw } from '@/lib/fmcsa/company-from-row';
 import { mergeServicesWithEntityType } from '@/lib/fmcsa/derive-directory-services';
 import {
   detectBatchFieldChanges,
@@ -19,6 +20,17 @@ import type { ServiceType } from '@/types';
 const COMPANY_SELECT =
   'id, slug, name, headquarters, usdot_number, mc_number, fmcsa_safety_rating, fmcsa_complaints, fmcsa_shipments, authority_active, out_of_service, complaints_last_12m, revocation_date, data_hash, fmcsa_last_checked, fmcsa_raw, services, reputation_score, overall_rating, review_count, bbb_rating, bbb_accredited, is_verified, years_in_business';
 
+/** Contact fields from FMCSA snapshot for storage on companies. */
+export function contactFieldsFromSnapshot(
+  snapshot: NonNullable<Awaited<ReturnType<typeof fetchFmcsaCarrierForCompany>>['snapshot']>
+): { physical_address: string | null; phone: string | null } {
+  const contact = extractContactFromFmcsaRaw(snapshot.raw);
+  return {
+    physical_address: contact.physicalAddress,
+    phone: contact.phone,
+  };
+}
+
 function buildFmcsaUpdatePayload(
   company: CompanyRefreshRow,
   snapshot: NonNullable<Awaited<ReturnType<typeof fetchFmcsaCarrierForCompany>>['snapshot']>,
@@ -28,6 +40,7 @@ function buildFmcsaUpdatePayload(
   const display = extractDisplayFieldsFromSnapshot(snapshot);
   const existingServices = (company.services ?? []) as ServiceType[];
   const services = mergeServicesWithEntityType(existingServices, display.entityType);
+  const contact = contactFieldsFromSnapshot(snapshot);
 
   const reputationScore = computeReputationScore({
     overallRating: company.overall_rating ?? 0,
@@ -59,6 +72,18 @@ function buildFmcsaUpdatePayload(
     last_updated: new Date().toISOString().slice(0, 10),
     updated_at: new Date().toISOString(),
   };
+
+  // Prefer FMCSA street address / phone when present (do not clear existing if missing)
+  if (contact.physical_address) {
+    payload.physical_address = contact.physical_address;
+    // Keep headquarters usable for city/state tools when it was empty
+    if (!company.headquarters?.trim()) {
+      payload.headquarters = contact.physical_address;
+    }
+  }
+  if (contact.phone) {
+    payload.phone = contact.phone;
+  }
 
   if (nextMc) payload.mc_number = nextMc;
 

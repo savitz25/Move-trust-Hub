@@ -31,7 +31,11 @@ export interface Company {
   foundedYear: number;
   headquarters: string;
   website: string;
-  
+  /** FMCSA physical street address when captured */
+  physicalAddress?: string | null;
+  /** Business phone from FMCSA (or onboarding) */
+  phone?: string | null;
+
   // Licensing & Compliance (FMCSA)
   usdotNumber: string;
   mcNumber: string;
