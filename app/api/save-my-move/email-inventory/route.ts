@@ -13,8 +13,12 @@ import {
   buildInventoryReportEmailHtml,
   buildInventoryReportEmailText,
   buildInventoryReportSubject,
+  type ShortlistMoverEmailCard,
 } from '@/lib/emails/inventory-report';
 import { logMyMoveActivity } from '@/lib/save-my-move/activity-log';
+import { getCompanyBySlugAsync } from '@/lib/data-server';
+import { SITE_URL } from '@/lib/seo/site-metadata';
+import type { Company } from '@/types';
 
 export const runtime = 'nodejs';
 
@@ -39,6 +43,107 @@ function resolveRecipientName(user: {
   const email = user.email?.trim();
   if (!email) return null;
   return email.split('@')[0] ?? null;
+}
+
+function authorityLabel(company: Company): string | null {
+  if (company.outOfService) return 'Out of service';
+  if (company.authorityActive === true) return 'Active authority';
+  if (company.authorityActive === false) return 'Inactive authority';
+  if (company.usdotStatus) return company.usdotStatus;
+  return null;
+}
+
+function companyToShortlistCard(company: Company): ShortlistMoverEmailCard {
+  const google = company.googleData;
+  const phoneFromGoogle =
+    google && typeof (google as { phone?: string }).phone === 'string'
+      ? (google as { phone?: string }).phone ?? null
+      : null;
+
+  return {
+    name: company.name,
+    slug: company.slug,
+    profileUrl: `${SITE_URL}/companies/${company.slug}`,
+    overallRating: company.overallRating || null,
+    reviewCount: company.reviewCount || null,
+    reputationScore: company.reputationScore || null,
+    googleRating: google?.rating ?? null,
+    googleReviewCount: google?.review_count ?? null,
+    fmcsaSafetyRating: company.fmcsaSafetyRating || null,
+    entityType: company.entityType ?? null,
+    usdotNumber: company.usdotNumber || null,
+    mcNumber: company.mcNumber || null,
+    powerUnits: company.powerUnits ?? null,
+    authorityLabel: authorityLabel(company),
+    headquarters: company.headquarters || null,
+    phone: phoneFromGoogle,
+    email: null,
+    website: company.website || google?.website_url || null,
+  };
+}
+
+async function resolveShortlistMovers(
+  slugs: string[],
+  nameFallback: string[]
+): Promise<ShortlistMoverEmailCard[]> {
+  const unique = [...new Set(slugs.map((s) => s.trim()).filter(Boolean))].slice(0, 3);
+  if (!unique.length && nameFallback.length) {
+    return nameFallback.slice(0, 3).map((name, i) => ({
+      name,
+      slug: '',
+      profileUrl: `${SITE_URL}/companies`,
+      overallRating: null,
+      reviewCount: null,
+      reputationScore: null,
+      googleRating: null,
+      googleReviewCount: null,
+      fmcsaSafetyRating: null,
+      entityType: null,
+      usdotNumber: null,
+      mcNumber: null,
+      powerUnits: null,
+      authorityLabel: null,
+      headquarters: null,
+      phone: null,
+      email: null,
+      website: null,
+    }));
+  }
+
+  const cards: ShortlistMoverEmailCard[] = [];
+  for (let i = 0; i < unique.length; i++) {
+    const slug = unique[i]!;
+    try {
+      const company = await getCompanyBySlugAsync(slug);
+      if (company) {
+        cards.push(companyToShortlistCard(company));
+        continue;
+      }
+    } catch {
+      // fall through to name fallback
+    }
+    cards.push({
+      name: nameFallback[i] || slug.replace(/-/g, ' '),
+      slug,
+      profileUrl: `${SITE_URL}/companies/${slug}`,
+      overallRating: null,
+      reviewCount: null,
+      reputationScore: null,
+      googleRating: null,
+      googleReviewCount: null,
+      fmcsaSafetyRating: null,
+      entityType: null,
+      usdotNumber: null,
+      mcNumber: null,
+      powerUnits: null,
+      authorityLabel: null,
+      headquarters: null,
+      phone: null,
+      email: null,
+      website: null,
+    });
+  }
+  return cards;
 }
 
 function tryBuildPdfAttachment(
@@ -92,6 +197,7 @@ export async function POST(request: Request) {
       routeTo?: string | null;
       drivingMiles?: number | null;
       shortlistNames?: string[];
+      shortlistSlugs?: string[];
       isMovePlan?: boolean;
     };
     try {
@@ -118,6 +224,11 @@ export async function POST(request: Request) {
     const shortlistNames = Array.isArray(body.shortlistNames)
       ? body.shortlistNames.filter((n): n is string => typeof n === 'string' && n.trim().length > 0)
       : [];
+    const shortlistSlugs = Array.isArray(body.shortlistSlugs)
+      ? body.shortlistSlugs.filter((s): s is string => typeof s === 'string' && s.trim().length > 0)
+      : [];
+
+    const shortlistMovers = await resolveShortlistMovers(shortlistSlugs, shortlistNames);
 
     const emailData = {
       recipientName: resolveRecipientName(user),
@@ -138,6 +249,7 @@ export async function POST(request: Request) {
           ? body.drivingMiles
           : null,
       shortlistNames,
+      shortlistMovers,
     };
 
     const pdfAttachment = tryBuildPdfAttachment(

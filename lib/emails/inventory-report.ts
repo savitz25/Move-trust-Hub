@@ -7,6 +7,28 @@ import {
 } from '@/lib/emails/transactional-footer';
 import type { InventoryItem } from '@/store/calculator-store';
 
+/** Compact mover card for My Move Report emails. */
+export type ShortlistMoverEmailCard = {
+  name: string;
+  slug: string;
+  profileUrl: string;
+  overallRating: number | null;
+  reviewCount: number | null;
+  reputationScore: number | null;
+  googleRating: number | null;
+  googleReviewCount: number | null;
+  fmcsaSafetyRating: string | null;
+  entityType: string | null;
+  usdotNumber: string | null;
+  mcNumber: string | null;
+  powerUnits: number | null;
+  authorityLabel: string | null;
+  headquarters: string | null;
+  phone: string | null;
+  email: string | null;
+  website: string | null;
+};
+
 export type InventoryReportEmailData = {
   recipientName?: string | null;
   inventoryName: string;
@@ -24,6 +46,7 @@ export type InventoryReportEmailData = {
   routeTo?: string | null;
   drivingMiles?: number | null;
   shortlistNames?: string[];
+  shortlistMovers?: ShortlistMoverEmailCard[];
 };
 
 function escapeHtml(text: string): string {
@@ -53,31 +76,42 @@ function statCard(label: string, value: string): string {
     </td>`;
 }
 
+/** Compact 2-column item rows for denser inventory (email-client safe tables). */
+function buildCompactItemRowsHtml(items: InventoryItem[]): string {
+  const cells = items.map((item) => {
+    const label = escapeHtml(formatItemDisplayName(item.name));
+    const lineVol = Math.round(item.volume * item.quantity);
+    return `
+      <td width="50%" style="padding:4px 6px 4px 0;vertical-align:top;font-size:12px;line-height:1.35;color:#334155;">
+        <span style="color:#0f172a;">${label}</span>
+        <span style="color:#64748b;"> · ×${item.quantity} · ${lineVol} cu ft</span>
+      </td>`;
+  });
+
+  const rows: string[] = [];
+  for (let i = 0; i < cells.length; i += 2) {
+    const left = cells[i];
+    const right =
+      cells[i + 1] ??
+      `<td width="50%" style="padding:4px 0;vertical-align:top;"></td>`;
+    rows.push(`<tr>${left}${right}</tr>`);
+  }
+  return rows.join('');
+}
+
 function buildInventoryListHtml(groupedByRoom: [string, InventoryItem[]][]): string {
   if (groupedByRoom.length === 0) return '';
 
   const rooms = groupedByRoom
     .map(([room, items]) => {
       const roomTotal = items.reduce((s, i) => s + i.volume * i.quantity, 0);
-      const rows = items
-        .map((item) => {
-          const label = escapeHtml(formatItemDisplayName(item.name));
-          const lineVol = Math.round(item.volume * item.quantity);
-          return `<tr>
-            <td style="padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#334155;">${label}</td>
-            <td align="right" style="padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#64748b;white-space:nowrap;">× ${item.quantity}</td>
-            <td align="right" style="padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:14px;color:#64748b;white-space:nowrap;">${lineVol} cu ft</td>
-          </tr>`;
-        })
-        .join('');
-
       return `
-        <div style="margin-bottom:16px;">
-          <p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#0077D4;text-transform:uppercase;letter-spacing:0.06em;">
-            ${escapeHtml(room)} <span style="color:#64748b;font-weight:600;">(${Math.round(roomTotal)} cu ft)</span>
+        <div style="margin-bottom:12px;">
+          <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#0077D4;text-transform:uppercase;letter-spacing:0.05em;">
+            ${escapeHtml(room)} <span style="color:#64748b;font-weight:600;">(${Math.round(roomTotal)} cu ft · ${items.length} lines)</span>
           </p>
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            ${rows}
+            ${buildCompactItemRowsHtml(items)}
           </table>
         </div>`;
     })
@@ -86,12 +120,120 @@ function buildInventoryListHtml(groupedByRoom: [string, InventoryItem[]][]): str
   return `
     <tr>
       <td style="padding:8px 32px 16px 32px;">
-        <h2 style="margin:0 0 14px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
+        <h2 style="margin:0 0 10px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
           Your inventory
         </h2>
-        <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;">
+        <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:12px 14px;">
           ${rooms}
         </div>
+      </td>
+    </tr>`;
+}
+
+function buildShortlistMoverCardsHtml(movers: ShortlistMoverEmailCard[]): string {
+  if (!movers.length) return '';
+
+  const cards = movers
+    .map((m, idx) => {
+      const trustBits: string[] = [];
+      if (m.overallRating != null && m.overallRating > 0) {
+        trustBits.push(
+          `${m.overallRating.toFixed(1)}★${m.reviewCount ? ` (${m.reviewCount.toLocaleString()})` : ''}`
+        );
+      }
+      if (m.googleRating != null && m.googleRating > 0) {
+        trustBits.push(
+          `Google ${m.googleRating.toFixed(1)}★${m.googleReviewCount ? ` (${m.googleReviewCount.toLocaleString()})` : ''}`
+        );
+      }
+      if (m.reputationScore != null && m.reputationScore > 0) {
+        trustBits.push(`Score ${m.reputationScore}/100`);
+      }
+      if (m.fmcsaSafetyRating) {
+        trustBits.push(`FMCSA ${m.fmcsaSafetyRating}`);
+      }
+
+      const licenseBits: string[] = [];
+      if (m.entityType) licenseBits.push(escapeHtml(m.entityType));
+      if (m.usdotNumber) licenseBits.push(`USDOT ${escapeHtml(m.usdotNumber)}`);
+      if (m.mcNumber) licenseBits.push(`MC ${escapeHtml(m.mcNumber)}`);
+      if (m.powerUnits != null && m.powerUnits > 0) {
+        licenseBits.push(`${m.powerUnits} power units`);
+      }
+      if (m.authorityLabel) licenseBits.push(escapeHtml(m.authorityLabel));
+
+      const contactBits: string[] = [];
+      if (m.phone) {
+        const tel = m.phone.replace(/[^\d+]/g, '');
+        contactBits.push(
+          `<a href="tel:${escapeHtml(tel)}" style="color:#0077D4;text-decoration:none;font-weight:600;">${escapeHtml(m.phone)}</a>`
+        );
+      }
+      if (m.email) {
+        contactBits.push(
+          `<a href="mailto:${escapeHtml(m.email)}" style="color:#0077D4;text-decoration:none;font-weight:600;">${escapeHtml(m.email)}</a>`
+        );
+      }
+      if (m.website) {
+        const href = m.website.startsWith('http') ? m.website : `https://${m.website}`;
+        contactBits.push(
+          `<a href="${escapeHtml(href)}" style="color:#0077D4;text-decoration:none;font-weight:600;">Website</a>`
+        );
+      }
+      if (m.headquarters) {
+        contactBits.push(`<span style="color:#64748b;">${escapeHtml(m.headquarters)}</span>`);
+      }
+
+      return `
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 12px 0;background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;">
+          <tr>
+            <td style="padding:14px 16px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="vertical-align:top;">
+                    <p style="margin:0 0 4px;font-size:11px;font-weight:700;color:#0077D4;letter-spacing:0.06em;text-transform:uppercase;">
+                      Mover ${idx + 1} of ${movers.length}
+                    </p>
+                    <p style="margin:0 0 6px;font-size:16px;font-weight:800;color:#0f172a;line-height:1.3;">
+                      ${escapeHtml(m.name)}
+                    </p>
+                    ${
+                      trustBits.length
+                        ? `<p style="margin:0 0 8px;font-size:12px;line-height:1.45;color:#334155;">${escapeHtml(trustBits.join(' · '))}</p>`
+                        : ''
+                    }
+                    ${
+                      licenseBits.length
+                        ? `<p style="margin:0 0 8px;font-size:12px;line-height:1.45;color:#64748b;"><strong style="color:#0f172a;">Licensing:</strong> ${licenseBits.join(' · ')}</p>`
+                        : ''
+                    }
+                    ${
+                      contactBits.length
+                        ? `<p style="margin:0 0 10px;font-size:12px;line-height:1.5;color:#334155;"><strong style="color:#0f172a;">Contact:</strong> ${contactBits.join(' · ')}</p>`
+                        : ''
+                    }
+                    <a href="${escapeHtml(m.profileUrl)}" style="display:inline-block;background:#f0f9ff;border:1px solid #bae6fd;color:#0369a1;font-size:12px;font-weight:700;text-decoration:none;padding:8px 12px;border-radius:8px;">
+                      View full profile →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>`;
+    })
+    .join('');
+
+  return `
+    <tr>
+      <td style="padding:4px 32px 8px 32px;">
+        <h2 style="margin:0 0 10px;font-size:13px;line-height:1.4;color:#64748b;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">
+          Your shortlisted movers
+        </h2>
+        <p style="margin:0 0 12px;font-size:13px;line-height:1.5;color:#64748b;">
+          Contact each mover with this same report for fair, comparable estimates. Independent directory — no lead resellers.
+        </p>
+        ${cards}
       </td>
     </tr>`;
 }
@@ -248,6 +390,8 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
                   </td>
                 </tr>
 
+                ${buildShortlistMoverCardsHtml(data.shortlistMovers ?? [])}
+
                 ${buildInventoryListHtml(data.groupedByRoom)}
 
                 <tr>
@@ -327,6 +471,30 @@ export function buildInventoryReportEmailHtml(data: InventoryReportEmailData): s
 </html>`;
 }
 
+function buildShortlistMoverCardsText(movers: ShortlistMoverEmailCard[]): string[] {
+  if (!movers.length) return [];
+  const lines = ['SHORTLISTED MOVERS'];
+  movers.forEach((m, i) => {
+    lines.push('');
+    lines.push(`${i + 1}. ${m.name}`);
+    if (m.overallRating)
+      lines.push(
+        `   Rating: ${m.overallRating.toFixed(1)}★${m.reviewCount ? ` (${m.reviewCount})` : ''}`
+      );
+    if (m.reputationScore) lines.push(`   Reputation score: ${m.reputationScore}/100`);
+    if (m.fmcsaSafetyRating) lines.push(`   FMCSA: ${m.fmcsaSafetyRating}`);
+    if (m.entityType) lines.push(`   Type: ${m.entityType}`);
+    if (m.usdotNumber) lines.push(`   USDOT: ${m.usdotNumber}`);
+    if (m.powerUnits) lines.push(`   Power units: ${m.powerUnits}`);
+    if (m.authorityLabel) lines.push(`   Authority: ${m.authorityLabel}`);
+    if (m.phone) lines.push(`   Phone: ${m.phone}`);
+    if (m.email) lines.push(`   Email: ${m.email}`);
+    if (m.website) lines.push(`   Website: ${m.website}`);
+    lines.push(`   Profile: ${m.profileUrl}`);
+  });
+  return lines;
+}
+
 export function buildInventoryReportEmailText(data: InventoryReportEmailData): string {
   const greetingName = firstName(data.recipientName);
   const greeting = greetingName ? `Hi ${greetingName},` : 'Hi there,';
@@ -337,15 +505,20 @@ export function buildInventoryReportEmailText(data: InventoryReportEmailData): s
   return [
     greeting,
     '',
-    `Your moving inventory "${data.inventoryName}" is ready.`,
+    `Your move report "${data.inventoryName}" is ready.`,
     attachmentNote,
     '',
     'SUMMARY',
+    data.routeFrom
+      ? `Route: ${data.routeFrom}${data.routeTo ? ` → ${data.routeTo}` : ''}${data.drivingMiles ? ` · ~${data.drivingMiles} mi` : ''}`
+      : null,
     `Total volume: ${Math.round(data.totalVolume).toLocaleString()} cu ft`,
     `Est. weight: ${data.totalWeight.toLocaleString()} lbs`,
     `Items: ${data.totalItems.toLocaleString()}`,
     `Truck size: ${data.truckSize}`,
     `Move size: ${data.moveSizeLabel} · ${data.movers} · ${data.duration}`,
+    '',
+    ...buildShortlistMoverCardsText(data.shortlistMovers ?? []),
     '',
     ...buildInventoryListText(data.groupedByRoom),
     '',
@@ -353,13 +526,15 @@ export function buildInventoryReportEmailText(data: InventoryReportEmailData): s
     data.pdfAttached
       ? '1. Open the attached PDF for a printable copy.'
       : '1. Download the PDF from My Move.',
-    '2. Share this same inventory with every mover for comparable quotes.',
-    '3. Manage saved inventories in My Move: https://www.movetrusthub.com/my-move',
+    '2. Contact each shortlisted mover with this same report for comparable quotes.',
+    '3. Manage plans in My Move Reports: https://www.movetrusthub.com/my-move/reports',
     '',
     'Compare licensed movers: https://www.movetrusthub.com/companies',
     '',
     'Disclaimer: This inventory is an estimate for planning and quoting only. Move Trust Hub is an independent directory — we never sell your information.',
     '',
     buildTransactionalTextFooter(),
-  ].join('\n');
+  ]
+    .filter((line) => line !== null)
+    .join('\n');
 }

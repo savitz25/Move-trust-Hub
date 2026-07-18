@@ -523,6 +523,7 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
           routeTo: toPlace?.label ?? null,
           drivingMiles,
           shortlistNames: shortlist.map((m) => m.name),
+          shortlistSlugs: shortlist.map((m) => m.slug),
         }),
       });
       const data = (await res.json().catch(() => ({}))) as {
