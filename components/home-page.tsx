@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import Link from 'next/link';
 import { TrustBadges } from '@/components/trust/trust-badges';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { HomeBelowFold } from '@/components/home/home-below-fold';
@@ -64,20 +63,14 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Drop in your ZIPs. We&apos;ll surface trusted movers for your pickup area, pre-fill
-              the{' '}
-              <Link
-                href="/moving-calculator"
-                className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
-              >
-                moving calculator
-              </Link>
-              , and route you to local county guides — independent research, zero lead fees.
+              Start one free Move Plan: lock your route, shortlist up to three trusted movers,
+              build an inventory, and get a report you can send for comparable estimates — no lead
+              forms, no paid placements.
             </p>
 
             <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
               <Zap className="h-3.5 w-3.5" aria-hidden />
-              Task-driven · Real-time ZIP intel · Instant next steps
+              City or ZIP · trusted movers · no lead form
             </div>
           </div>
 
