@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ReviewPageClient } from '@/components/reviews/review-page-client';
 import { FaqSection } from '@/components/seo/faq-section';
@@ -11,15 +12,24 @@ import {
 } from '@/lib/reviews/seo';
 import { resolveInitialReviewCarrier } from '@/lib/reviews/resolve-initial-carrier';
 
-export const metadata = buildResourceMetadata(
-  '/review',
-  REVIEW_PAGE_TITLE,
-  REVIEW_PAGE_DESCRIPTION
-);
-
 type Props = {
   searchParams: Promise<{ carrier?: string; slug?: string; source?: string }>;
 };
+
+/**
+ * Always canonicalize to /review. Prefill query params (?carrier=, ?slug=) are
+ * noindex so GSC does not treat each carrier deep-link as a duplicate page.
+ */
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const params = await searchParams;
+  const hasPrefill = Boolean(params.carrier?.trim() || params.slug?.trim());
+  const base = buildResourceMetadata('/review', REVIEW_PAGE_TITLE, REVIEW_PAGE_DESCRIPTION);
+  if (!hasPrefill) return base;
+  return {
+    ...base,
+    robots: { index: false, follow: true },
+  };
+}
 
 const reviewPageSchema = {
   '@context': 'https://schema.org',

@@ -94,6 +94,33 @@ const nextConfig: NextConfig = {
   // Legacy/wrong GSC submissions used /sitemap-local/{state}.xml — canonical path is /sitemap-local/sitemap/{state}.xml
   async redirects() {
     return [
+      // GSC 404 cleanup: doubled hub prefixes from bad absolute links
+      {
+        source: '/insurance/insurance/:path*',
+        destination: '/insurance/:path*',
+        permanent: true,
+      },
+      {
+        source: '/lender/lender/:path*',
+        destination: '/lender/:path*',
+        permanent: true,
+      },
+      // GSC 404: legacy bare route → Alabama Huntsville destination hub
+      {
+        source: '/from-georgia-to-huntsville',
+        destination: '/moving-to/alabama/huntsville-al',
+        permanent: true,
+      },
+      {
+        source: '/from-georgia-to-huntsville-al',
+        destination: '/moving-to/alabama/huntsville-al',
+        permanent: true,
+      },
+      {
+        source: '/from-georgia-to-huntsville/:path*',
+        destination: '/moving-to/alabama/huntsville-al',
+        permanent: true,
+      },
       {
         source: '/sitemap-local/:state((?!sitemap)[^/]+)\\.xml',
         destination: '/sitemap-local/sitemap/:state.xml',

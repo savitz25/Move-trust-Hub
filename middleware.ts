@@ -29,6 +29,34 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   try {
+    // Force HTTPS when Vercel/edge reports plain HTTP (GSC: http://www.movetrusthub.com/)
+    const proto = request.headers.get('x-forwarded-proto');
+    if (proto === 'http') {
+      const httpsUrl = request.nextUrl.clone();
+      httpsUrl.protocol = 'https:';
+      return NextResponse.redirect(httpsUrl, 308);
+    }
+
+    // Permanent cleanup redirects (also declared in next.config — middleware catches edge cases)
+    if (pathname.startsWith('/insurance/insurance')) {
+      const stripped = pathname.replace(/^\/insurance\/insurance/, '/insurance') || '/insurance';
+      return NextResponse.redirect(new URL(stripped + request.nextUrl.search, request.url), 308);
+    }
+    if (pathname.startsWith('/lender/lender')) {
+      const stripped = pathname.replace(/^\/lender\/lender/, '/lender') || '/lender';
+      return NextResponse.redirect(new URL(stripped + request.nextUrl.search, request.url), 308);
+    }
+    if (
+      pathname === '/from-georgia-to-huntsville' ||
+      pathname.startsWith('/from-georgia-to-huntsville/') ||
+      pathname === '/from-georgia-to-huntsville-al'
+    ) {
+      return NextResponse.redirect(
+        new URL('/moving-to/alabama/huntsville-al', request.url),
+        308
+      );
+    }
+
     if (IS_DEV) {
       const { resolveHubMigrationRedirect } = await import('@/lib/migration/hub-redirects');
       const migrationDestination = resolveHubMigrationRedirect(

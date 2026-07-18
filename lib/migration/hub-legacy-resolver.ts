@@ -142,6 +142,16 @@ export function resolveInsuranceLegacyPath(segments: string[]): LegacyResolution
     };
   }
 
+  // GSC: /insurance/insurance/hubs/aca (doubled hub prefix from bad absolute links)
+  if (segments[0] === 'insurance') {
+    const rest = segments.slice(1).join('/');
+    return {
+      type: 'redirect',
+      destination: hubPath('insurance', rest ? `/${rest}` : '/'),
+      reason: 'double_insurance_prefix',
+    };
+  }
+
   const [head, second, ...rest] = segments;
   const aliasTarget = INSURANCE_SEGMENT_ALIASES[head];
   if (aliasTarget && segments.length === 1) {

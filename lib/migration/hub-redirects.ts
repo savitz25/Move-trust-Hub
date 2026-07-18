@@ -271,6 +271,18 @@ export function resolveHubMigrationRedirect(
     return null;
   }
 
+  // Doubled hub prefixes from bad absolute links (GSC 404 / soft-404)
+  if (pathname.startsWith('/insurance/insurance')) {
+    return pathname.replace(/^\/insurance\/insurance/, '/insurance') || '/insurance';
+  }
+  if (pathname.startsWith('/lender/lender')) {
+    return pathname.replace(/^\/lender\/lender/, '/lender') || '/lender';
+  }
+
+  if (pathname === '/from-georgia-to-huntsville' || pathname.startsWith('/from-georgia-to-huntsville')) {
+    return '/moving-to/alabama/huntsville-al';
+  }
+
   if (pathname.startsWith('/insurance/') || pathname.startsWith('/lender/')) {
     return null;
   }

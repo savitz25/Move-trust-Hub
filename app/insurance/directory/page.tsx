@@ -15,13 +15,6 @@ import { cn } from '@/lib/insurance/utils';
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = buildTemplateMetadata({
-  hub: 'insurance',
-  title: 'Licensed Insurance Agents Directory (2026)',
-  description: INSURANCE_DIRECTORY_LANDING.subtitle,
-  path: '/directory',
-});
-
 interface DirectoryPageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
@@ -29,6 +22,52 @@ interface DirectoryPageProps {
 function getParam(params: Record<string, string | string[] | undefined>, key: string): string {
   const val = params[key];
   return Array.isArray(val) ? val[0] ?? '' : val ?? '';
+}
+
+/** Query keys that create filtered views — canonicalize + noindex to avoid GSC duplicates. */
+const FILTER_KEYS = [
+  'q',
+  'state',
+  'type',
+  'specialty',
+  'verified',
+  'minRating',
+  'minGoogleRating',
+  'bbbAccredited',
+  'sort',
+  'view',
+] as const;
+
+function hasDirectoryFilters(
+  params: Record<string, string | string[] | undefined>
+): boolean {
+  return FILTER_KEYS.some((key) => {
+    const value = getParam(params, key);
+    if (!value) return false;
+    // Default sort/view are not meaningful filter variants for indexing
+    if (key === 'sort' && value === 'rating') return false;
+    if (key === 'view' && value === 'grid') return false;
+    return true;
+  });
+}
+
+/**
+ * Always emit a clean canonical (/insurance/directory).
+ * Filtered/search result URLs are noindex so GSC does not treat them as duplicates.
+ */
+export async function generateMetadata({
+  searchParams,
+}: DirectoryPageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const filtered = hasDirectoryFilters(params);
+
+  return buildTemplateMetadata({
+    hub: 'insurance',
+    title: 'Licensed Insurance Agents Directory (2026)',
+    description: INSURANCE_DIRECTORY_LANDING.subtitle,
+    path: '/directory',
+    noIndex: filtered,
+  });
 }
 
 export default async function DirectoryPage({ searchParams }: DirectoryPageProps) {
