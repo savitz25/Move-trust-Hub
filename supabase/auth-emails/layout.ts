@@ -7,8 +7,8 @@ export const BRAND = {
   name: 'Move Trust Hub',
   supportName: 'MoveTrustHub Support',
   siteUrl: 'https://www.movetrusthub.com',
-  // Official transparent wordmark (public/logo.png ← MoveTrustHub-recreated-transparent.png)
-  logoUrl: 'https://www.movetrusthub.com/logo.png?v=20260717',
+  // Keep in sync with TRUST_HUB_LOGO_VERSION in lib/hub/config.ts
+  logoUrl: 'https://www.movetrusthub.com/logo.png?v=20260718',
   supportEmail: 'info@movetrusthub.com',
   primary: '#0A2540',
   accent: '#00BFA5',

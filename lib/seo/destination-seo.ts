@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { CityHubContent } from '@/lib/destinations/types';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
+import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
 
 /** Destinations index — high-intent inbound hub landing */
 export const DESTINATIONS_INDEX_TITLE =
@@ -16,14 +17,15 @@ export const HOMEPAGE_SEO_DESCRIPTION =
 
 export function buildCityHubMetadata(content: CityHubContent): Metadata {
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
+  const documentTitle = formatDocumentTitle(content.seo.title);
 
   return {
-    title: { absolute: content.seo.title },
+    title: absoluteDocumentTitle(content.seo.title),
     description: content.seo.description,
     alternates: { canonical },
     openGraph: {
       ...buildOpenGraph({
-        title: content.seo.title,
+        title: documentTitle,
         description: content.seo.description,
         url: canonical,
       }),
@@ -37,7 +39,7 @@ export function buildCityHubMetadata(content: CityHubContent): Metadata {
       ],
     },
     twitter: buildTwitter({
-      title: content.seo.title,
+      title: documentTitle,
       description: content.seo.description,
     }),
     robots: { index: true, follow: true },
@@ -47,18 +49,19 @@ export function buildCityHubMetadata(content: CityHubContent): Metadata {
 
 export function buildDestinationsIndexMetadata(): Metadata {
   const canonical = `${SITE_URL}/moving-to`;
+  const documentTitle = formatDocumentTitle(DESTINATIONS_INDEX_TITLE);
 
   return {
-    title: { absolute: `${DESTINATIONS_INDEX_TITLE} | Move Trust Hub` },
+    title: absoluteDocumentTitle(DESTINATIONS_INDEX_TITLE),
     description: DESTINATIONS_INDEX_DESCRIPTION,
     alternates: { canonical },
     openGraph: buildOpenGraph({
-      title: DESTINATIONS_INDEX_TITLE,
+      title: documentTitle,
       description: DESTINATIONS_INDEX_DESCRIPTION,
       url: canonical,
     }),
     twitter: buildTwitter({
-      title: DESTINATIONS_INDEX_TITLE,
+      title: documentTitle,
       description: DESTINATIONS_INDEX_DESCRIPTION,
     }),
     robots: { index: true, follow: true },

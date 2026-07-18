@@ -23,7 +23,7 @@ const content = southCarolinaClusterContent;
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { absolute: `${content.seo.title} | Move Trust Hub` },
+  title: { absolute: content.seo.title },
   description: content.seo.description,
   alternates: { canonical: `${SITE_URL}${content.seo.canonicalPath}` },
   openGraph: buildOpenGraph({

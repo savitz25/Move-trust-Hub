@@ -59,9 +59,11 @@ export function buildOpenGraph(
 ): NonNullable<Metadata['openGraph']> {
   const hub = overrides.hub ?? 'move';
   const ogImage = getOgImageForHub(hub);
+  // Prefer explicit overrides. Do not fall back to homepage title — that leaked onto
+  // company profiles and other deep pages when they only set `metadata.title`.
   return {
-    title: overrides.title ?? HOMEPAGE_TITLE,
-    description: overrides.description ?? HOMEPAGE_DESCRIPTION,
+    ...(overrides.title ? { title: overrides.title } : {}),
+    ...(overrides.description ? { description: overrides.description } : {}),
     url: overrides.url ?? SITE_URL,
     siteName: getSiteNameForHub(hub),
     type: overrides.type ?? 'website',
@@ -81,8 +83,8 @@ export function buildTwitter(
   const ogImage = getOgImageForHub(hub);
   return {
     card: 'summary_large_image',
-    title: overrides.title ?? HOMEPAGE_TITLE,
-    description: overrides.description ?? HOMEPAGE_DESCRIPTION,
+    ...(overrides.title ? { title: overrides.title } : {}),
+    ...(overrides.description ? { description: overrides.description } : {}),
     images: [ogImage.url],
   };
 }
@@ -109,8 +111,15 @@ export const rootLayoutMetadata: Metadata = {
     apple: TRUST_HUB_LOGO.src,
   },
   manifest: '/manifest.webmanifest',
-  openGraph: buildOpenGraph(),
-  twitter: buildTwitter(),
+  // Root OG/Twitter omit title so child routes cannot inherit the homepage headline.
+  // Each page should set openGraph/twitter via buildMovePageMetadata (or absolute title + buildOpenGraph).
+  openGraph: buildOpenGraph({
+    description: DEFAULT_SITE_DESCRIPTION,
+    url: SITE_URL,
+  }),
+  twitter: buildTwitter({
+    description: DEFAULT_SITE_DESCRIPTION,
+  }),
   robots: {
     index: true,
     follow: true,

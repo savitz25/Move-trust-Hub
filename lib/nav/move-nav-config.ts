@@ -19,7 +19,8 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
     title: 'Directories',
     links: [
       {
-        label: 'All Companies',
+        // Canonical label for /companies site-wide (nav, footer, CTAs).
+        label: 'Find Movers',
         href: '/companies',
         description: 'FMCSA-licensed interstate movers',
       },
@@ -91,6 +92,11 @@ export const GUIDES_NAV: NavMegaColumn[] = [
       { label: 'About', href: '/about', description: 'Mission & trust center' },
       { label: 'Contact', href: '/contact', description: 'Questions & corrections' },
       { label: 'Leave a Review', href: '/review', description: 'Moderated community reviews' },
+      {
+        label: 'For Moving Companies',
+        href: '/for-movers',
+        description: 'Claim profile & portal for carriers',
+      },
     ],
   },
 ];

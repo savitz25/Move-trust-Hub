@@ -4,6 +4,7 @@ import {
   buildOpenGraph,
   buildTwitter,
 } from '@/lib/seo/site-metadata';
+import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
 
 export type MovePageMetadataInput = {
   title: string;
@@ -17,23 +18,24 @@ export type MovePageMetadataInput = {
 /** Canonical + OG/Twitter metadata for Move hub pages at the site root. */
 export function buildMovePageMetadata(input: MovePageMetadataInput): Metadata {
   const path = input.path.startsWith('/') ? input.path : `/${input.path}`;
-  const canonical = `${SITE_URL}${path === '/' ? '' : path}`.replace(/\/$/, '') || SITE_URL;
-  const url = path === '/' ? SITE_URL : `${SITE_URL}${path}`;
+  const url = path === '/' ? SITE_URL : `${SITE_URL}${path}`.replace(/\/$/, '');
+  const documentTitle = formatDocumentTitle(input.title);
 
   return {
-    title: input.title,
+    // absolute — never rely on layout template (prevents "| Move Trust Hub | Move Trust Hub")
+    title: absoluteDocumentTitle(input.title),
     description: input.description,
     metadataBase: new URL(SITE_URL),
     alternates: { canonical: url },
     openGraph: buildOpenGraph({
-      title: input.title,
+      title: documentTitle,
       description: input.description,
       url,
       type: input.type ?? 'website',
       hub: 'move',
     }),
     twitter: buildTwitter({
-      title: input.title,
+      title: documentTitle,
       description: input.description,
       hub: 'move',
     }),

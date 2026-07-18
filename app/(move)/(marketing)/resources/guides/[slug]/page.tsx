@@ -11,6 +11,7 @@ import {
   getDestinationGuide,
 } from '@/lib/resources/destination-guides';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
+import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -24,18 +25,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!guide) return {};
 
   const canonical = `${SITE_URL}/resources/guides/${guide.slug}`;
+  const documentTitle = formatDocumentTitle(guide.title);
 
   return {
-    title: `${guide.title} | Move Trust Hub`,
+    title: absoluteDocumentTitle(guide.title),
     description: guide.description,
     alternates: { canonical },
     openGraph: buildOpenGraph({
-      title: guide.title,
+      title: documentTitle,
       description: guide.description,
       url: canonical,
       type: 'article',
     }),
-    twitter: buildTwitter({ title: guide.title, description: guide.description }),
+    twitter: buildTwitter({ title: documentTitle, description: guide.description }),
     robots: { index: true, follow: true },
   };
 }

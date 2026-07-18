@@ -1,8 +1,9 @@
+import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { getCompanyBySlugAsync, getReviews } from '@/lib/data-server';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCompanyDirectorySchemaGraph } from '@/lib/seo/build-company-directory-schema';
-import { SITE_URL } from '@/lib/seo/site-metadata';
+import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -48,23 +49,29 @@ interface Props {
   searchParams: Promise<{ from?: string }>;
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const company = await getCompanyBySlugAsync(slug);
-  if (!company) return { title: 'Company Not Found' };
+  if (!company) {
+    return buildMovePageMetadata({
+      title: 'Company Not Found',
+      description: 'This mover profile could not be found in the Move Trust Hub directory.',
+      path: `/companies/${slug}`,
+      noIndex: true,
+    });
+  }
 
   const reviewMeta = companyProfileReviewMeta({
     companyId: company.id,
     editorialReviewCount: company.reviewCount,
     editorialRating: company.overallRating,
   });
-  const canonical = `${SITE_URL}/companies/${company.slug}`;
-  return {
+  // Canonical always uses the resolved company.slug (aliases redirect in the page body).
+  return buildMovePageMetadata({
     title: `${company.name} — FMCSA Profile, Ratings & Pricing`,
     description: `${company.name} interstate mover profile. ${reviewMeta.headline}. ${LicenseMetadataDescription(company)} BBB ${company.bbbRating}. Coverage: ${company.coverage}. Independent directory — verify FMCSA licensing yourself.`,
-    alternates: { canonical },
-    robots: { index: true, follow: true },
-  };
+    path: `/companies/${company.slug}`,
+  });
 }
 
 export default async function CompanyProfilePage({ params, searchParams }: Props) {

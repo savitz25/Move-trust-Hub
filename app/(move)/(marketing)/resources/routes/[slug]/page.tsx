@@ -11,6 +11,7 @@ import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { GuideFooter } from '@/components/resources/guide-footer';
 import { RouteHeroCta } from '@/components/resources/route-hero-cta';
 import { SITE_URL, buildOpenGraph, buildTwitter } from '@/lib/seo/site-metadata';
+import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
 import { getStateSlugFromCode } from '@/lib/local-movers/index';
 import { getExtendedRouteGuide } from '@/lib/resources/routes/content';
 import { getRouteGuide, routeGuides } from '@/lib/resources/routes';
@@ -31,17 +32,18 @@ export async function generateMetadata({ params }: Props) {
   const canonical = `${SITE_URL}/resources/routes/${route.slug}`;
 
   if (extended) {
+    const documentTitle = formatDocumentTitle(extended.seo.title);
     return {
-      title: extended.seo.title,
+      title: absoluteDocumentTitle(extended.seo.title),
       description: extended.seo.description,
       openGraph: buildOpenGraph({
-        title: extended.seo.title,
+        title: documentTitle,
         description: extended.seo.description,
         url: canonical,
         type: 'article',
       }),
       twitter: buildTwitter({
-        title: extended.seo.title,
+        title: documentTitle,
         description: extended.seo.description,
       }),
       alternates: { canonical },
@@ -50,12 +52,13 @@ export async function generateMetadata({ params }: Props) {
 
   const title = `${route.title} — Interstate Moving Route Guide`;
   const description = `Plan your ${route.from} to ${route.to} move: ${route.distance}, ${route.deliveryWindow}, cost factors, and how to compare licensed long-distance movers.`;
+  const documentTitle = formatDocumentTitle(title);
 
   return {
-    title,
+    title: absoluteDocumentTitle(title),
     description,
-    openGraph: buildOpenGraph({ title, description, url: canonical, type: 'article' }),
-    twitter: buildTwitter({ title, description }),
+    openGraph: buildOpenGraph({ title: documentTitle, description, url: canonical, type: 'article' }),
+    twitter: buildTwitter({ title: documentTitle, description }),
     alternates: { canonical },
   };
 }

@@ -4,7 +4,7 @@ import { MOVE_PRIMARY_NAV } from '@/lib/nav/move-primary-nav';
 import { HEADER_TRUST_BADGE } from '@/lib/trust/site-messaging';
 
 /** Bump when replacing public/logo.png to bust immutable CDN/browser cache. */
-export const TRUST_HUB_LOGO_VERSION = '20260717';
+export const TRUST_HUB_LOGO_VERSION = '20260718';
 
 /** Canonical header/footer logo — shared across Move, Lender, and Insurance hubs. */
 export const TRUST_HUB_LOGO = {
@@ -48,6 +48,7 @@ export const HUBS: Record<HubId, HubConfig> = {
           { href: '/local-movers', label: 'Local Movers by State' },
           { href: '/auto-transport', label: 'Auto Transport' },
           { href: '/compare', label: 'Compare Tool' },
+          { href: '/my-move', label: 'My Move' },
         ],
       },
       {
@@ -55,7 +56,6 @@ export const HUBS: Record<HubId, HubConfig> = {
         links: [
           { href: '/resources', label: 'Guides' },
           { href: '/moving-calculator', label: 'Calculator' },
-          { href: '/my-move', label: 'My Move (optional)' },
           { href: '/verify-dot', label: 'Verify DOT' },
           { href: '/review', label: 'Leave a Review' },
           { href: '/for-movers', label: 'For Moving Companies' },

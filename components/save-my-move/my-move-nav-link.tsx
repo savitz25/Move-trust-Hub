@@ -12,19 +12,14 @@ type MyMoveNavLinkProps = {
   className?: string;
 };
 
+/** Always visible My Move entry — badge only when signed in with saved movers. */
 export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkProps) {
   const ctx = useSaveMyMoveOptional();
-  const user = ctx?.user;
-  const loading = ctx?.loading ?? true;
-
-  if (loading || !user) return null;
-
-  const savedCount = ctx.savedMoverSlugs.size;
-  const showBadge = savedCount > 0;
+  const savedCount = ctx?.savedMoverSlugs?.size ?? 0;
+  const showBadge = Boolean(ctx?.user) && savedCount > 0;
 
   const heartClass = cn(
-    'shrink-0',
-    variant === 'mobile-header' ? 'h-4 w-4' : 'h-4 w-4',
+    'shrink-0 h-4 w-4',
     showBadge && 'fill-primary text-primary'
   );
 
@@ -105,7 +100,7 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
         className
       )}
       aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
-      title="Move HQ · plans at /my-move/reports"
+      title="My Move — saved plans and shortlists"
     >
       <Heart className={heartClass} aria-hidden="true" />
       <span>My Move</span>

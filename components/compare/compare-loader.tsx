@@ -1,22 +1,18 @@
 'use client';
 
 import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
 import type { Company } from '@/types';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { CompareClient } from '@/components/compare/compare-client';
 
 const CompareSkeleton = () => (
   <div className="h-96 border rounded-xl bg-muted/30 animate-pulse" aria-hidden="true" />
 );
 
-const CompareClient = dynamic(
-  () => import('@/components/compare/compare-client').then((m) => m.CompareClient),
-  {
-    ssr: false,
-    loading: () => <CompareSkeleton />,
-  }
-);
-
+/**
+ * Compare tool with SSR enabled so the empty state / shell is in the HTML.
+ * Deep-link selection still hydrates from ?add= on the client.
+ */
 export function CompareLoader({ allCompanies }: { allCompanies: Company[] }) {
   return (
     <ErrorBoundary

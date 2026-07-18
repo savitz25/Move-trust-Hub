@@ -25,7 +25,7 @@ export function Footer() {
           <div>
             <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">DIRECTORY</div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
-              <div><Link prefetch={false} href="/companies" className="hover:text-foreground transition-colors">All Companies</Link></div>
+              <div><Link prefetch={false} href="/companies" className="hover:text-foreground transition-colors">Find Movers</Link></div>
               <div><Link prefetch={false} href="/companies?sort=reputation" className="hover:text-foreground transition-colors">Top Rated</Link></div>
               <div><Link prefetch={false} href="/compare" className="hover:text-foreground transition-colors">Compare Tool</Link></div>
             </div>
@@ -47,6 +47,7 @@ export function Footer() {
             <div className="font-semibold mb-2.5 text-xs tracking-widest text-muted-foreground/80">RESOURCES</div>
             <div className="space-y-1.5 text-sm text-muted-foreground">
               <div><Link prefetch={false} href="/resources" className="hover:text-foreground transition-colors">All Guides</Link></div>
+              <div><Link prefetch={false} href="/my-move" className="hover:text-foreground transition-colors">My Move</Link></div>
               <div><Link prefetch={false} href="/resources/how-to-choose" className="hover:text-foreground transition-colors">How to Choose a Mover</Link></div>
               <div><Link prefetch={false} href="/resources/interstate-moving-costs" className="hover:text-foreground transition-colors">Moving Costs 2026</Link></div>
               <div><Link prefetch={false} href="/resources/routes" className="hover:text-foreground transition-colors">Route Guides</Link></div>
