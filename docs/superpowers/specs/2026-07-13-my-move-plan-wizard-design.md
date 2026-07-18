@@ -31,6 +31,10 @@ Replace the dual homepage CTAs (“Find Trusted Movers” / “Get My Move Estim
 - Auth: `useSaveMyMoveOptional` after report
 - Entry: `HomeRouteFlow` re-exports `MyMovePlanWizard`
 
+## Optional password (post-value upgrade)
+
+After the report (or first Save My Move sign-in), customers may create an optional password for faster logins — same standards as the Verified Mover Portal (Supabase Auth, strength rules, skippable). Magic link remains the default. Manage under **My Move → Settings**.
+
 ## Out of v1
 
 - PDF email send, public inventory URL, Apple login, full room-by-room wizard UI

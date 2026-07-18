@@ -5,7 +5,7 @@ import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
 import { isEmailOtpType } from '@/lib/auth/otp-types';
-import { portalPathAfterAuth } from '@/lib/portal/mfa';
+import { pathAfterAuth } from '@/lib/auth/path-after-auth';
 
 /**
  * Completes magic-link / email OTP sign-in for links we send via Resend
@@ -50,6 +50,6 @@ export async function GET(request: Request) {
     }
   }
 
-  const destination = await portalPathAfterAuth(next);
+  const destination = await pathAfterAuth(next);
   return NextResponse.redirect(productionAuthRedirect(destination, request));
 }

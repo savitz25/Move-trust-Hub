@@ -3,7 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { sanitizePostLoginPath } from '@/lib/save-my-move/redirect';
 import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
-import { portalPathAfterAuth } from '@/lib/portal/mfa';
+import { pathAfterAuth } from '@/lib/auth/path-after-auth';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -39,8 +39,8 @@ export async function GET(request: Request) {
           console.error('[auth/callback] ensureUserProfile failed', profileErr);
         }
       }
-      // Portal destinations: MFA / optional password; others (e.g. /my-move) pass through.
-      const destination = await portalPathAfterAuth(next);
+      // Portal: MFA / optional password. My Move: optional password after value-first save.
+      const destination = await pathAfterAuth(next);
       return NextResponse.redirect(productionAuthRedirect(destination, request));
     }
     console.error('[auth/callback] exchangeCodeForSession failed', error.message);

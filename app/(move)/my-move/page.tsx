@@ -1,8 +1,10 @@
 import { Suspense } from 'react';
+import { redirect } from 'next/navigation';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { MyMoveDashboard } from '@/components/save-my-move/my-move-dashboard';
 import { AuthErrorToast } from '@/components/save-my-move/auth-error-toast';
 import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
+import { getMyMovePasswordStatus } from '@/lib/save-my-move/password';
 import { getMyMoveDashboardData } from '@/actions/save-my-move';
 
 export const metadata = buildResourceMetadata(
@@ -21,8 +23,15 @@ export default async function MyMovePage({ searchParams }: PageProps) {
 
   const user = await getAuthenticatedUser();
   let initialData = null;
+  let passwordEnabled = false;
 
   if (user && !demo) {
+    const pw = await getMyMovePasswordStatus();
+    if (pw?.shouldOfferCreatePassword) {
+      redirect('/my-move/create-password?next=%2Fmy-move');
+    }
+    passwordEnabled = pw?.passwordEnabled ?? false;
+
     try {
       initialData = await getMyMoveDashboardData();
     } catch {
@@ -45,7 +54,11 @@ export default async function MyMovePage({ searchParams }: PageProps) {
       <Suspense fallback={null}>
         <AuthErrorToast />
       </Suspense>
-      <MyMoveDashboard initialData={initialData} demo={demo} />
+      <MyMoveDashboard
+        initialData={initialData}
+        demo={demo}
+        passwordEnabled={passwordEnabled}
+      />
     </div>
   );
 }

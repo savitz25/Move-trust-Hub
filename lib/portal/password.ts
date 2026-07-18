@@ -5,12 +5,17 @@ import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { scorePasswordStrength } from '@/lib/portal/password-strength';
+import {
+  PORTAL_PASSWORD_ENABLED_KEY,
+  PORTAL_PASSWORD_PROMPT_DISMISSED_KEY,
+} from '@/lib/portal/password-meta';
+import { MY_MOVE_PASSWORD_ENABLED_KEY } from '@/lib/save-my-move/password-meta';
 import { randomBytes } from 'crypto';
 
-/** user_metadata: owner opted into email+password for portal convenience */
-export const PORTAL_PASSWORD_ENABLED_KEY = 'portal_password_enabled';
-/** user_metadata: owner skipped the one-time create-password screen */
-export const PORTAL_PASSWORD_PROMPT_DISMISSED_KEY = 'portal_password_prompt_dismissed';
+export {
+  PORTAL_PASSWORD_ENABLED_KEY,
+  PORTAL_PASSWORD_PROMPT_DISMISSED_KEY,
+} from '@/lib/portal/password-meta';
 
 export type PortalPasswordStatus = {
   passwordEnabled: boolean;
@@ -28,7 +33,10 @@ export function passwordStatusFromUser(user: User | null | undefined): PortalPas
     };
   }
   const meta = (user.user_metadata ?? {}) as Record<string, unknown>;
-  const passwordEnabled = meta[PORTAL_PASSWORD_ENABLED_KEY] === true;
+  // Password is shared on auth.users — honor My Move opt-in too so we don't re-prompt.
+  const passwordEnabled =
+    meta[PORTAL_PASSWORD_ENABLED_KEY] === true ||
+    meta[MY_MOVE_PASSWORD_ENABLED_KEY] === true;
   const promptDismissed = meta[PORTAL_PASSWORD_PROMPT_DISMISSED_KEY] === true;
   return {
     passwordEnabled,
@@ -99,7 +107,10 @@ export async function mergeUserMetadata(
   }
 }
 
-/** Invalidate password login by rotating to a random secret and clearing the portal flag. */
+/**
+ * Invalidate password login by clearing the portal flag.
+ * Rotates the Auth password only when My Move is not also using password login.
+ */
 export async function revokePortalPasswordLogin(
   userId: string
 ): Promise<{ ok: boolean; error?: string }> {
@@ -113,14 +124,27 @@ export async function revokePortalPasswordLogin(
     const admin = createAdminClient();
     const { data, error: getErr } = await admin.auth.admin.getUserById(userId);
     if (getErr || !data.user) return { ok: false, error: getErr?.message ?? 'User not found' };
+
+    const meta = (data.user.user_metadata ?? {}) as Record<string, unknown>;
+    const myMoveStillEnabled = meta[MY_MOVE_PASSWORD_ENABLED_KEY] === true;
+    const nextMeta = {
+      ...meta,
+      [PORTAL_PASSWORD_ENABLED_KEY]: false,
+      [PORTAL_PASSWORD_PROMPT_DISMISSED_KEY]: true,
+    };
+
+    if (myMoveStillEnabled) {
+      const { error } = await admin.auth.admin.updateUserById(userId, {
+        user_metadata: nextMeta,
+      });
+      if (error) return { ok: false, error: error.message };
+      return { ok: true };
+    }
+
     const randomPassword = randomBytes(32).toString('base64url');
     const { error } = await admin.auth.admin.updateUserById(userId, {
       password: randomPassword,
-      user_metadata: {
-        ...(data.user.user_metadata ?? {}),
-        [PORTAL_PASSWORD_ENABLED_KEY]: false,
-        [PORTAL_PASSWORD_PROMPT_DISMISSED_KEY]: true,
-      },
+      user_metadata: nextMeta,
     });
     if (error) return { ok: false, error: error.message };
     return { ok: true };

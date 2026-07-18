@@ -43,9 +43,14 @@ import { toast } from 'sonner';
 type Props = {
   initialData: MyMoveDashboardPayload | null;
   demo?: boolean;
+  passwordEnabled?: boolean;
 };
 
-export function MyMoveDashboard({ initialData, demo = false }: Props) {
+export function MyMoveDashboard({
+  initialData,
+  demo = false,
+  passwordEnabled = false,
+}: Props) {
   const { user, loading, openSaveModal } = useSaveMyMove();
   const [data, setData] = useState(initialData);
   const [dataLoading, setDataLoading] = useState(false);
@@ -110,7 +115,7 @@ export function MyMoveDashboard({ initialData, demo = false }: Props) {
           Save My Move
         </Button>
         <p className="text-xs text-muted-foreground mt-4">
-          No password needed — Google, Facebook, or a one-time email link.
+          Magic link by default — or optional password after you save. Also Google and Facebook.
         </p>
       </div>
     );
@@ -461,6 +466,7 @@ export function MyMoveDashboard({ initialData, demo = false }: Props) {
         email={data.user.email}
         marketingOptIn={data.profile?.marketing_opt_in ?? false}
         moverAlertsOptIn={data.profile?.mover_alerts_opt_in ?? false}
+        passwordEnabled={passwordEnabled}
         exporting={exporting}
         deleting={deleting}
         onExport={handleExport}

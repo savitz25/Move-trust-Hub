@@ -7,6 +7,7 @@ import {
   Check,
   ChevronLeft,
   ClipboardCopy,
+  KeyRound,
   Loader2,
   Mail,
   MapPin,
@@ -24,6 +25,11 @@ import {
   type ConfirmedPlace,
 } from '@/components/location/location-place-input';
 import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
+import {
+  MY_MOVE_PASSWORD_ENABLED_KEY,
+  MY_MOVE_PASSWORD_PROMPT_DISMISSED_KEY,
+} from '@/lib/save-my-move/password-meta';
+import { PORTAL_PASSWORD_ENABLED_KEY } from '@/lib/portal/password-meta';
 import type { HomeRouteMover, HomeRouteResult } from '@/lib/home/resolve-route-from-zip';
 import {
   MOVE_PRESETS,
@@ -262,10 +268,30 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
 
   const openSave = useCallback(() => {
     saveMyMove?.openSaveModal({
-      redirectPath: '/',
+      // Land on My Move so create-password offer runs after first save/sign-in
+      redirectPath: '/my-move',
       context: 'dashboard',
     });
   }, [saveMyMove]);
+
+  const signedInUser = saveMyMove?.user ?? null;
+  const userHasPassword = Boolean(
+    signedInUser &&
+      (((signedInUser.user_metadata ?? {}) as Record<string, unknown>)[
+        MY_MOVE_PASSWORD_ENABLED_KEY
+      ] === true ||
+        ((signedInUser.user_metadata ?? {}) as Record<string, unknown>)[
+          PORTAL_PASSWORD_ENABLED_KEY
+        ] === true)
+  );
+  const userDismissedPasswordPrompt = Boolean(
+    signedInUser &&
+      ((signedInUser.user_metadata ?? {}) as Record<string, unknown>)[
+        MY_MOVE_PASSWORD_PROMPT_DISMISSED_KEY
+      ] === true
+  );
+  const offerPasswordUpgrade =
+    Boolean(signedInUser) && !userHasPassword && !userDismissedPasswordPrompt;
 
   return (
     <div className="w-full">
@@ -837,10 +863,13 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
 
             <div className="flex flex-col gap-2 rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <div className="font-semibold">Save this plan for later?</div>
+                <div className="font-semibold">
+                  {signedInUser ? 'Your plan is ready to keep' : 'Save this plan for later?'}
+                </div>
                 <p className="text-sm text-muted-foreground">
-                  Optional free My Move profile — email your plan or come back anytime. Your
-                  report is already yours above.
+                  {signedInUser
+                    ? 'Signed in — open Move HQ anytime, or add a password for faster future logins.'
+                    : 'Optional free My Move profile — email your plan or come back anytime. Your report is already yours above.'}
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -848,9 +877,23 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                   <ClipboardCopy className="h-4 w-4" />
                   Copy full plan
                 </Button>
-                <Button type="button" onClick={openSave} className="gap-1">
-                  Save My Move
-                </Button>
+                {signedInUser ? (
+                  <Button type="button" variant="outline" asChild className="gap-1">
+                    <Link href="/my-move">Open Move HQ</Link>
+                  </Button>
+                ) : (
+                  <Button type="button" onClick={openSave} className="gap-1">
+                    Save My Move
+                  </Button>
+                )}
+                {offerPasswordUpgrade ? (
+                  <Button type="button" className="gap-1" asChild>
+                    <Link href="/my-move/create-password?next=%2Fmy-move">
+                      <KeyRound className="h-4 w-4" />
+                      Create password
+                    </Link>
+                  </Button>
+                ) : null}
               </div>
             </div>
 

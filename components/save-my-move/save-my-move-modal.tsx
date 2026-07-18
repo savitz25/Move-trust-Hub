@@ -1,6 +1,7 @@
 'use client';
 
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState, useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 import { Shield, Mail } from 'lucide-react';
 import {
   Dialog,
@@ -10,6 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { FacebookSignInButton } from '@/components/save-my-move/facebook-sign-in-button';
 import { GoogleSignInButton } from '@/components/save-my-move/google-sign-in-button';
 import { trackSaveMyMoveAuth } from '@/components/ga-events';
@@ -18,7 +20,10 @@ import {
   sanitizePostLoginPath,
   stashPostLoginRedirect,
 } from '@/lib/save-my-move/redirect';
+import { createBrowserSupabaseClient } from '@/lib/supabase/client';
+import { resolveMyMoveContinuePathAction } from '@/actions/my-move-password';
 import type { SaveMyMoveContext } from '@/lib/save-my-move/types';
+import { cn } from '@/lib/utils';
 
 const CONTEXT_HEADINGS: Record<SaveMyMoveContext, string> = {
   inventory: 'Save this inventory',
@@ -26,6 +31,8 @@ const CONTEXT_HEADINGS: Record<SaveMyMoveContext, string> = {
   comparison: 'Save this comparison',
   dashboard: 'Save your move',
 };
+
+type AuthMode = 'magic' | 'password';
 
 type SaveMyMoveModalProps = {
   open: boolean;
@@ -44,7 +51,7 @@ const SaveMyMoveOAuthButtons = memo(function SaveMyMoveOAuthButtons({
   onFacebookStart,
 }: {
   open: boolean;
-  loading: 'google' | 'facebook' | 'email' | null;
+  loading: 'google' | 'facebook' | 'email' | 'password' | null;
   onGoogleStart: () => void;
   onGoogleSuccess: () => void;
   onGoogleError: () => void;
@@ -71,7 +78,7 @@ const SaveMyMoveEmailForm = memo(function SaveMyMoveEmailForm({
   loading,
   onSubmit,
 }: {
-  loading: 'google' | 'facebook' | 'email' | null;
+  loading: 'google' | 'facebook' | 'email' | 'password' | null;
   onSubmit: (email: string) => void;
 }) {
   const [email, setEmail] = useState('');
@@ -108,9 +115,15 @@ export function SaveMyMoveModal({
   redirectPath = '/my-move',
   context = 'dashboard',
 }: SaveMyMoveModalProps) {
-  const [loading, setLoading] = useState<'google' | 'facebook' | 'email' | null>(null);
+  const router = useRouter();
+  const [loading, setLoading] = useState<'google' | 'facebook' | 'email' | 'password' | null>(
+    null
+  );
   const [emailSent, setEmailSent] = useState(false);
   const [sentEmail, setSentEmail] = useState('');
+  const [mode, setMode] = useState<AuthMode>('magic');
+  const [passwordError, setPasswordError] = useState<string | null>(null);
+  const [pending, startTransition] = useTransition();
 
   const safeRedirectPath = sanitizePostLoginPath(redirectPath);
 
@@ -123,6 +136,7 @@ export function SaveMyMoveModal({
   const handleGoogleSuccess = useCallback(() => {
     setLoading(null);
     onOpenChange(false);
+    // usePostLoginRedirect consumes stashed path and offers create-password when needed
   }, [onOpenChange]);
 
   const handleGoogleError = useCallback(() => {
@@ -176,6 +190,61 @@ export function SaveMyMoveModal({
     [safeRedirectPath]
   );
 
+  function onPassword(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setPasswordError(null);
+    const form = new FormData(e.currentTarget);
+    const email = String(form.get('email') ?? '')
+      .trim()
+      .toLowerCase();
+    const password = String(form.get('password') ?? '');
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setPasswordError('Enter a valid email address');
+      return;
+    }
+    if (!password) {
+      setPasswordError('Enter your password');
+      return;
+    }
+
+    setLoading('password');
+    trackSaveMyMoveAuth({ method: 'password' });
+    startTransition(async () => {
+      try {
+        const supabase = createBrowserSupabaseClient();
+        if (!supabase) {
+          setPasswordError('Authentication is not configured.');
+          setLoading(null);
+          return;
+        }
+        const { error: signErr } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        if (signErr) {
+          setPasswordError(
+            signErr.message.includes('Invalid login')
+              ? 'Incorrect email or password. Try a magic link if you have not set a password.'
+              : signErr.message
+          );
+          setLoading(null);
+          return;
+        }
+        onOpenChange(false);
+        const { path } = await resolveMyMoveContinuePathAction(safeRedirectPath);
+        router.replace(path);
+        router.refresh();
+      } catch {
+        setPasswordError('Sign-in failed. Check your connection and try again.');
+      } finally {
+        setLoading(null);
+      }
+    });
+  }
+
+  const busy = loading !== null || pending;
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
@@ -184,7 +253,8 @@ export function SaveMyMoveModal({
         </DialogHeader>
         <div className="px-6 pb-6 space-y-4">
           <p className="text-sm text-muted-foreground">
-            Optional — everything on Move Trust Hub works without an account.
+            Optional — everything on Move Trust Hub works without an account. Magic link is the
+            default; password is an optional upgrade after you save.
           </p>
 
           <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 space-y-1.5 text-xs text-foreground leading-relaxed">
@@ -227,11 +297,85 @@ export function SaveMyMoveModal({
                   <span className="w-full border-t" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-background px-2 text-muted-foreground">or</span>
+                  <span className="bg-background px-2 text-muted-foreground">or continue with email</span>
                 </div>
               </div>
 
-              <SaveMyMoveEmailForm loading={loading} onSubmit={handleMagicLink} />
+              <div className="flex rounded-lg border p-1 bg-muted/40" role="tablist">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={mode === 'magic'}
+                  className={cn(
+                    'flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+                    mode === 'magic' ? 'bg-background shadow-sm' : 'text-muted-foreground'
+                  )}
+                  onClick={() => {
+                    setMode('magic');
+                    setPasswordError(null);
+                  }}
+                >
+                  Magic link
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={mode === 'password'}
+                  className={cn(
+                    'flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors',
+                    mode === 'password' ? 'bg-background shadow-sm' : 'text-muted-foreground'
+                  )}
+                  onClick={() => {
+                    setMode('password');
+                    setPasswordError(null);
+                  }}
+                >
+                  Password
+                </button>
+              </div>
+
+              {mode === 'magic' ? (
+                <SaveMyMoveEmailForm loading={loading} onSubmit={handleMagicLink} />
+              ) : (
+                <form onSubmit={onPassword} className="space-y-3">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="my-move-login-email">Email</Label>
+                    <Input
+                      id="my-move-login-email"
+                      name="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      placeholder="you@example.com"
+                      disabled={busy}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="my-move-login-password">Password</Label>
+                    <Input
+                      id="my-move-login-password"
+                      name="password"
+                      type="password"
+                      required
+                      autoComplete="current-password"
+                      placeholder="Your My Move password"
+                      disabled={busy}
+                    />
+                  </div>
+                  {passwordError ? (
+                    <p className="text-sm text-destructive" role="alert">
+                      {passwordError}
+                    </p>
+                  ) : null}
+                  <Button type="submit" disabled={busy} className="w-full">
+                    {loading === 'password' || pending ? 'Signing in…' : 'Sign in with password'}
+                  </Button>
+                  <p className="text-xs text-muted-foreground">
+                    No password yet? Use the magic link tab — you can create a password after you
+                    save your plan.
+                  </p>
+                </form>
+              )}
             </>
           )}
         </div>

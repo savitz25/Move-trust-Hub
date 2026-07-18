@@ -5,6 +5,7 @@ import { Download, LogOut, Settings, Trash2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { updateEmailPreferencesAction } from '@/actions/account';
+import { MyMovePasswordManager } from '@/components/save-my-move/my-move-password-manager';
 import { toast } from 'sonner';
 
 type SettingsDrawerProps = {
@@ -13,6 +14,7 @@ type SettingsDrawerProps = {
   email: string;
   marketingOptIn: boolean;
   moverAlertsOptIn: boolean;
+  passwordEnabled?: boolean;
   exporting: boolean;
   deleting: boolean;
   onExport: () => void;
@@ -26,6 +28,7 @@ export function SettingsDrawer({
   email,
   marketingOptIn,
   moverAlertsOptIn,
+  passwordEnabled = false,
   exporting,
   deleting,
   onExport,
@@ -128,6 +131,11 @@ export function SettingsDrawer({
                     <span>Saved mover alerts (FMCSA / safety changes)</span>
                   </label>
                 </div>
+              </section>
+
+              <section className="space-y-3 pt-2 border-t">
+                <h3 className="font-semibold">Sign-in &amp; security</h3>
+                <MyMovePasswordManager passwordEnabled={passwordEnabled} />
               </section>
 
               <section className="space-y-3 pt-2 border-t">
