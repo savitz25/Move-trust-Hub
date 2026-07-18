@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
-import { TrustBadges } from '@/components/trust/trust-badges';
 import { SITE_EMAIL } from '@/lib/contact';
+
+/** Single secondary placement of independence / no-lead-fees messaging (site chrome). */
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -15,8 +16,9 @@ export function Footer() {
                 <TrustHubLogoImage variant="footer" />
               </span>
             </Link>
-            <p className="mt-2.5 text-sm text-muted-foreground max-w-[210px] leading-snug">
-              Independent directory for researching trusted interstate movers. No lead fees. No paid placements.
+            <p className="mt-2.5 text-sm text-muted-foreground max-w-[240px] leading-snug">
+              Independent directory for researching trusted interstate movers. No lead fees. No paid
+              placements.
             </p>
           </div>
 
@@ -71,11 +73,8 @@ export function Footer() {
           </div>
 
           <div className="col-span-2 md:col-span-1 text-sm text-muted-foreground">
-            <div className="font-semibold text-foreground mb-2 text-xs tracking-widest text-muted-foreground/80">TRUST &amp; TRANSPARENCY</div>
-            <p className="leading-snug text-[13px]">
-              Independent directory — <strong>not affiliated</strong> with listed movers. No lead fees, no paid placements. FMCSA, BBB, and review data for research only.
-            </p>
-            <p className="mt-2.5 text-[13px]">
+            <div className="font-semibold text-foreground mb-2 text-xs tracking-widest text-muted-foreground/80">CONTACT</div>
+            <p className="text-[13px]">
               <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground transition-colors">
                 {SITE_EMAIL}
               </a>
@@ -87,9 +86,6 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t py-5">
-        <div className="container mx-auto px-4 mb-4">
-          <TrustBadges variant="compact" className="justify-center" />
-        </div>
         <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
           Always verify licensing directly with{' '}
           <a href="https://www.fmcsa.dot.gov/" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">

@@ -17,7 +17,7 @@ export function LocalMoversCta({ countyName, stateSlug }: LocalMoversCtaProps) {
       <p className="text-sm text-muted-foreground mb-5 max-w-2xl leading-relaxed">
         Local movers handle in-county and short-distance relocations. For interstate
         moves, use our free calculator to estimate volume, then compare FMCSA-licensed
-        carriers in our independent directory — no lead fees, no paid placements.
+        carriers in the directory.
       </p>
       <div className="flex flex-wrap gap-3">
         <Link
@@ -57,9 +57,6 @@ export function LocalMoversCta({ countyName, stateSlug }: LocalMoversCtaProps) {
           </Link>
         )}
       </div>
-      <p className="text-xs text-muted-foreground mt-4 font-medium">
-        Independent Directory · No Lead Fees · No Paid Placements
-      </p>
     </div>
   );
 }

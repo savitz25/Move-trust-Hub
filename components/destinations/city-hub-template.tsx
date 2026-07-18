@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { MapPin, ArrowRight, Scale } from 'lucide-react';
-import { TrustBadges } from '@/components/trust/trust-badges';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
 import { DestinationCalculatorEmbed } from '@/components/destinations/destination-calculator-embed';
@@ -114,14 +113,10 @@ export async function CityHubTemplate({ market, content }: Props) {
             </p>
           ))}
 
-          <div className="flex flex-col sm:flex-row gap-3 mb-3">
+          <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <DestinationQuoteCta market={market} />
           </div>
-          <p className="text-xs text-muted-foreground mb-6 font-medium">
-            Independent Directory · No Lead Fees · No Paid Placements
-          </p>
 
-          <TrustBadges variant="compact" className="mb-4" />
           <TrustToolsBar />
         </div>
       </section>
@@ -192,8 +187,7 @@ export async function CityHubTemplate({ market, content }: Props) {
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl">
                 Featured FMCSA-licensed interstate carriers plus vetted local movers from{' '}
-                {countyLabels.join(', ')}. Independent directory — verify licensing yourself
-                before booking.
+                {countyLabels.join(', ')}. Confirm current licensing before booking.
               </p>
             </div>
             <Link
@@ -416,7 +410,7 @@ export async function CityHubTemplate({ market, content }: Props) {
             Select up to 4 FMCSA-licensed carriers and compare reputation, reviews, and
             services side-by-side before contacting movers for {destinationLabel}.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/compare"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-background text-foreground px-6 py-3 text-sm font-medium hover:bg-background/90 transition-colors"
@@ -426,12 +420,6 @@ export async function CityHubTemplate({ market, content }: Props) {
             </Link>
             <DestinationQuoteCta market={market} variant="footer" />
           </div>
-          <p className="text-xs text-primary-foreground/60">
-            Independent directory · Not affiliated with listed movers ·{' '}
-            <Link href="/about#disclaimer" className="underline">
-              Disclaimer
-            </Link>
-          </p>
         </div>
       </section>
 

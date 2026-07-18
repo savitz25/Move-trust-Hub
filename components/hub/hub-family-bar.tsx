@@ -10,7 +10,7 @@ export function HubFamilyBar({ activeHub }: { activeHub: HubId }) {
     <div className="hub-family-bar border-b bg-muted/30">
       <div className="container mx-auto flex items-center justify-between gap-3 px-4 py-1.5">
         <p className="hidden text-[11px] text-muted-foreground sm:block">
-          Trust Hub family — independent directories, no paid placements
+          Trust Hub family — Move · Lender · Insurance
         </p>
         <HubSelector activeHub={activeHub} className="ml-auto" />
       </div>

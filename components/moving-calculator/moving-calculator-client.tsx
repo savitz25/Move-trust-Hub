@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { Calculator } from 'lucide-react';
 import { toast } from 'sonner';
 
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import { MovingCalculatorSeoSections } from '@/components/moving-calculator-seo-sections';
 import { OnboardingStrip } from '@/components/moving-calculator/onboarding-strip';
 import { InventoryBuilder } from '@/components/moving-calculator/inventory-builder';
@@ -247,13 +247,11 @@ export function MovingCalculatorClient() {
 
   return (
     <div className="w-full">
-      {/* Trust strip */}
-      <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 max-md:mb-4">
+      <div className="mb-6 max-md:mb-4">
         <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary w-fit">
           <Calculator className="h-3.5 w-3.5" />
-          Free · Instant · No signup · We never sell your info
+          Free · Instant · No signup
         </div>
-        <TrustBadges variant="compact" className="text-xs" />
       </div>
 
       {showRouteBanner ? (

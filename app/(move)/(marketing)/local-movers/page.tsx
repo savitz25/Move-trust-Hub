@@ -5,7 +5,7 @@ import { StateSelector } from '@/components/local-movers/state-selector-loader';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import { LocalMoversSchema } from '@/components/local-movers/local-movers-schema';
 import { localStates } from '@/lib/local-movers/states';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
@@ -85,7 +85,6 @@ export default function LocalMoversHubPage() {
           <div className="mt-6">
             <LocalMoversPlaceSearch />
           </div>
-          <TrustBadges variant="compact" className="mt-6" />
         </div>
 
         <section className="mb-10">

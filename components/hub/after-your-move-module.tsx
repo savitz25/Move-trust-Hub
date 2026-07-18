@@ -63,9 +63,6 @@ export function AfterYourMoveModule({ hubId }: { hubId: HubId }) {
           </li>
         ))}
       </ul>
-      <p className="mt-3 text-[11px] text-muted-foreground">
-        Independent directories — not affiliated with listed providers. No lead fees.
-      </p>
     </aside>
   );
 }

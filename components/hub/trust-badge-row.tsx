@@ -12,23 +12,21 @@ type TrustBadgeRowProps = {
 const HUB_BADGES: Record<HubId, { label: string; detail: string; href?: string }[]> = {
   move: [
     { label: 'FMCSA Licensed', detail: 'DOT/MC verification on every interstate carrier', href: '/resources/fmcsa' },
-    { label: 'Independent', detail: 'No paid placements or carrier affiliations', href: '/about#disclaimer' },
     {
       label: 'Transparent Scoring',
       detail: 'Reputation methodology published — no black-box rankings',
       href: methodologyHref('reputationScore'),
     },
+    { label: 'Verify Yourself', detail: 'Confirm licensing on FMCSA.gov before booking', href: '/verify-dot' },
   ],
   lender: [
     { label: 'NMLS Verified', detail: 'License checks via NMLS Consumer Access' },
     { label: 'FDIC BankFind Sourced', detail: 'Bank data verified against FDIC records' },
-    { label: 'No Paid Placements', detail: 'Rankings are not sold to lenders or brokers' },
     { label: 'CFPB Data', detail: 'Complaint transparency from public CFPB records' },
   ],
   insurance: [
     { label: 'DOI Verified', detail: 'State Department of Insurance license checks' },
     { label: 'NAIC Standards', detail: 'Aligned with national insurance oversight' },
-    { label: 'No Paid Placements', detail: 'Agent rankings are never pay-to-play' },
   ],
 };
 
@@ -44,10 +42,10 @@ export function TrustBadgeRow({ hub, className }: TrustBadgeRowProps) {
       <div className="container mx-auto px-4">
         <p className="mb-3 text-center text-xs text-muted-foreground md:text-left">
           {hub === 'move'
-            ? 'We’re on your side — independent research, friendly guidance, zero lead fees.'
+            ? 'Research tools and FMCSA context for interstate movers.'
             : hub === 'lender'
-              ? 'Transparent lender data you can actually trust — no pay-to-play listings.'
-              : 'Licensed agents, plain-language guides, and comparisons without the sales pitch.'}
+              ? 'Transparent lender data you can actually trust.'
+              : 'Licensed agents, plain-language guides, and clear comparisons.'}
         </p>
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-3">

@@ -131,11 +131,10 @@ export default function VerifyDotPage() {
             Verified the carrier? Compare movers next.
           </h2>
           <p className="mt-2 text-muted-foreground max-w-lg mx-auto">
-            Browse FMCSA-licensed interstate movers with attributable reviews in
-            our independent directory — no lead fees, no paid placements.
+            Browse FMCSA-licensed interstate movers with attributable reviews next.
           </p>
           <div className="mt-6 flex justify-center">
-            <PageHeroCta showTrustBadges className="justify-center" />
+            <PageHeroCta className="justify-center" />
           </div>
         </section>
       </div>

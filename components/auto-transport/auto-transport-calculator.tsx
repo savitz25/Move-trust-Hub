@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 
 import { InfoTooltip } from '@/components/auto-transport/info-tooltip';
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import {
   calculateAutoTransportEstimate,
   formatCurrency,
@@ -312,18 +312,11 @@ export function AutoTransportCalculator() {
                 <span className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1 text-muted-foreground">
                   Insured transport options
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-1 text-muted-foreground">
-                  Independent directory
-                </span>
               </div>
             </CardContent>
           </Card>
         </div>
       </section>
-
-      <div className="border-b py-6">
-        <TrustBadges variant="compact" className="justify-center" />
-      </div>
 
     </>
   );

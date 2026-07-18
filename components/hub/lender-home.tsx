@@ -57,7 +57,6 @@ export function LenderHomePage() {
             'CFPB Complaint Data',
             'BBB Accreditation',
             'County Experience Scores',
-            'No Paid Placements',
           ]}
         />
 

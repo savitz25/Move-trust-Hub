@@ -19,7 +19,6 @@ export function RouteHeroCta({ from, to, destinationHubPath }: RouteHeroCtaProps
         destinationHubPath ? `Explore ${to} Moving Guide` : 'Learn More About This Route'
       }
       tertiaryHref={destinationHubPath ?? '#route-overview'}
-      showTrustBadges
       className="mb-8"
     />
   );

@@ -166,7 +166,7 @@ export function HomeBelowFold() {
         className="py-14 border-t"
         compact
         title="Featured review highlights"
-        subtitle="Named Google review excerpts with reviewer attribution — independent research, not paid placements or inflated industry totals."
+        subtitle="Named Google review excerpts with reviewer attribution — not inflated industry totals."
       />
 
       <div className="container mx-auto px-4 pb-14">

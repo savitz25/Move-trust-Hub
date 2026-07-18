@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 export const dynamic = 'force-static';
 import { CompareLoader } from '@/components/compare/compare-loader';
-import { TrustBadges } from '@/components/trust/trust-badges';
 import { getAllCompanies } from '@/lib/data-server';
 
 export const metadata: Metadata = {
@@ -29,8 +28,6 @@ export default async function ComparePage() {
         </Link>
         , reputation scores, and transparent review data side-by-side.
       </p>
-
-      <TrustBadges variant="compact" className="mb-6" />
 
       <CompareLoader allCompanies={companies} />
     </div>

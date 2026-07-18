@@ -19,7 +19,7 @@ import { Button } from '@/components/ui/button';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideCtaClient } from '@/components/resources/guide-cta-client';
 import { GuideFooter } from '@/components/resources/guide-footer';
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
@@ -252,19 +252,18 @@ export default function InterstateMovingCostsPage() {
             <div className="mt-8">
               <GuideCtaClient />
             </div>
-            <TrustBadges variant="compact" className="mt-6" />
 
             <p className="mt-5 text-base text-muted-foreground leading-relaxed max-w-2xl">
               At{' '}
               <Link href="/" className="text-primary underline underline-offset-2">
                 Move Trust Hub
               </Link>
-              , our independent tools — including the free{' '}
+              , free tools — including the{' '}
               <Link href="/moving-calculator" className="text-primary underline underline-offset-2">
                 Moving Calculator
               </Link>{' '}
-              and side-by-side comparisons — help you obtain transparent quotes from verified,
-              licensed movers with no paid placements.
+              and side-by-side comparisons — help you obtain transparent quotes from
+              licensed movers.
             </p>
           </div>
         </section>

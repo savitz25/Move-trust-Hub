@@ -11,6 +11,10 @@ const verifiedDirectoryCompanies = getVerifiedDirectoryCompanies();
 
 export const trustStats = stats;
 
+/**
+ * Functional trust signals only (FMCSA, directory size, scoring).
+ * Independence / no-lead-fees is stated once in header + footer — not repeated here.
+ */
 export const trustBadges = [
   {
     id: 'fmcsa',
@@ -30,18 +34,6 @@ export const trustBadges = [
     label: formatDirectoryAvgRating(stats.averageRating),
     description: 'Across FMCSA-licensed interstate listings',
     href: methodologyHref('reputationScore'),
-  },
-  {
-    id: 'independent',
-    label: 'Independent Directory',
-    description: 'No paid placements — verify FMCSA yourself',
-    href: '/about#disclaimer',
-  },
-  {
-    id: 'no-lead-fees',
-    label: 'No Lead Fees',
-    description: 'We do not sell your information or charge movers for placement',
-    href: '/about#disclaimer',
   },
   {
     id: 'methodology',

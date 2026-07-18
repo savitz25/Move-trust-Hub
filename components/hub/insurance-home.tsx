@@ -98,7 +98,6 @@ export function InsuranceHomePage() {
           'NAIC Public Records',
           'BBB Ratings',
           'Transparent Methodology',
-          'No Paid Placements',
         ]}
       />
 

@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import { ArrowRight, Calculator, Scale, MapPinned, BookOpen } from 'lucide-react';
 import { TrustBadges } from '@/components/trust/trust-badges';
-import { cn } from '@/lib/utils';
-import { HERO_TRUST_EYEBROW } from '@/lib/trust/site-messaging';
 
 type PageHeroCtaProps = {
   primaryLabel?: string;
@@ -13,6 +11,7 @@ type PageHeroCtaProps = {
   secondaryHref?: string;
   tertiaryLabel?: string;
   tertiaryHref?: string;
+  /** Optional; omit by default so independence messaging stays in header + footer only. */
   trustTagline?: string;
   showTrustBadges?: boolean;
   className?: string;
@@ -33,8 +32,8 @@ export function PageHeroCta({
   secondaryHref = '/moving-calculator',
   tertiaryLabel,
   tertiaryHref,
-  trustTagline = HERO_TRUST_EYEBROW,
-  showTrustBadges = true,
+  trustTagline,
+  showTrustBadges = false,
   className,
 }: PageHeroCtaProps) {
   const PrimaryIcon = iconForHref(primaryHref);
@@ -71,9 +70,11 @@ export function PageHeroCta({
           </Link>
         ) : null}
       </div>
-      <p className="text-xs text-muted-foreground mt-3 font-medium tracking-wide">
-        {trustTagline}
-      </p>
+      {trustTagline ? (
+        <p className="text-xs text-muted-foreground mt-3 font-medium tracking-wide">
+          {trustTagline}
+        </p>
+      ) : null}
       {showTrustBadges ? (
         <TrustBadges variant="compact" className="mt-6" />
       ) : null}

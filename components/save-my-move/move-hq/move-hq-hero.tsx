@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { CalendarDays, Package, Sparkles } from 'lucide-react';
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import { ProgressRing } from '@/components/save-my-move/move-hq/progress-ring';
 import { ConfettiBurst } from '@/components/save-my-move/move-hq/confetti-burst';
 import type { MoveReadiness } from '@/lib/save-my-move/dashboard-utils';
@@ -48,8 +48,7 @@ export function MoveHqHero({
               Welcome back, {greetingName}
             </h2>
             <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-xl">
-              Your independent command center — inventories, shortlists, and comparisons in one
-              place. No lead fees, ever.
+              Your command center — inventories, shortlists, and comparisons in one place.
             </p>
           </div>
 
@@ -86,7 +85,6 @@ export function MoveHqHero({
             </div>
           </div>
 
-          <TrustBadges variant="compact" className="opacity-90" />
         </div>
 
         <div className="flex flex-col items-center gap-4 lg:items-end shrink-0">

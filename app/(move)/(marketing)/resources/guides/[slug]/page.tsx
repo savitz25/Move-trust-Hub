@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideCtaClient } from '@/components/resources/guide-cta-client';
 import { GuideFooter } from '@/components/resources/guide-footer';
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import {
   destinationGuides,
   getDestinationGuide,
@@ -66,7 +66,6 @@ export default async function DestinationGuidePage({ params }: Props) {
         </p>
 
         <GuideCtaClient />
-        <TrustBadges variant="compact" className="mb-10" />
 
         {guide.sections.map((section) => (
           <section key={section.heading} className="mb-10">

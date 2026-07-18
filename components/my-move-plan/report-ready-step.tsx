@@ -132,7 +132,7 @@ export function ReportReadyStep({
         </h2>
         <p className="relative mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
           Everything you need for comparable estimates — same route, same inventory, three
-          independent movers. No lead fees. No ranking payola.
+          independent movers with documented inventory.
         </p>
 
         {/* Achievement score */}

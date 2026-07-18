@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
-import { TrustBadgeRow } from '@/components/hub/trust-badge-row';
+
 import { SITE_EMAIL } from '@/lib/contact';
 import { AfterYourMoveModule } from '@/components/hub/after-your-move-module';
 import { getHubConfig } from '@/lib/hub/config';
@@ -104,8 +104,8 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
               TRUST &amp; TRANSPARENCY
             </div>
             <p className="leading-snug text-[13px]">
-              Independent directory — <strong>not affiliated</strong> with listed providers.
-              Data for research only.
+              Independent directory — <strong>not affiliated</strong> with listed providers. No
+              lead fees. No paid placements. Data for research only.
             </p>
             <p className="mt-2.5 text-[13px]">
               <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground transition-colors">
@@ -119,9 +119,6 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
         </div>
       </div>
       <div className="border-t py-5">
-        <div className="container mx-auto px-4 mb-4">
-          <TrustBadgeRow hub={hub.id} className="border-0 bg-transparent py-0" />
-        </div>
         <p className="text-center text-[10px] text-muted-foreground/70 tracking-wide">
           Always verify licensing directly with{' '}
           <a

@@ -19,7 +19,7 @@ import { Button } from '@/components/ui/button';
 import { ArticleSchema } from '@/components/resources/article-schema';
 import { GuideCtaClient } from '@/components/resources/guide-cta-client';
 import { GuideFooter } from '@/components/resources/guide-footer';
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 
@@ -357,7 +357,6 @@ export default function BestTimeToMovePage() {
             <div className="mt-8">
               <GuideCtaClient />
             </div>
-            <TrustBadges variant="compact" className="mt-6" />
           </div>
         </section>
 
@@ -733,7 +732,7 @@ export default function BestTimeToMovePage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                  Independent directory — no lead fees, no paid placements
+                  Transparent FMCSA context on every profile
                 </li>
               </ul>
               <div className="flex flex-wrap gap-3">

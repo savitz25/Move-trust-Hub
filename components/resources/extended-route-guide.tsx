@@ -213,7 +213,7 @@ export function ExtendedRouteGuide({
               <Link href="/companies" className="text-primary underline underline-offset-2">
                 compare FMCSA-licensed interstate carriers
               </Link>{' '}
-              in our independent directory — no lead fees, no paid placements.
+              in our directory.
             </p>
           </div>
         </div>

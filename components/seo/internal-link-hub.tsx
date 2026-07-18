@@ -52,7 +52,7 @@ const MOVE_LINKS: InternalLink[] = [
 export function InternalLinkHub({
   hub = 'move',
   title = 'Moving research tools',
-  subtitle = 'Independent guides and tools for your interstate move — no lead fees.',
+  subtitle = 'Guides and tools for your interstate move.',
   className,
 }: {
   hub?: HubId;

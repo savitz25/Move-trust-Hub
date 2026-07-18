@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { TrustBadges } from '@/components/trust/trust-badges';
+
 import { TestimonialsSection } from '@/components/trust/testimonials-section';
 import { PageHeroCta } from '@/components/conversion/page-hero-cta';
 import { destinationGuides } from '@/lib/resources/destination-guides';
@@ -47,8 +47,6 @@ export default function ResourcesPage() {
       </p>
 
       <PageHeroCta />
-
-      <TrustBadges variant="grid" className="mb-10 mt-8" />
 
       {categoryOrder.map((category) => {
         const items = guidesByCategory[category];

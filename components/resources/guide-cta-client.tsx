@@ -19,7 +19,6 @@ export function GuideCtaClient({
       primaryHref={calculatorHref}
       secondaryLabel={secondaryLabel}
       secondaryHref={secondaryHref}
-      showTrustBadges
     />
   );
 }

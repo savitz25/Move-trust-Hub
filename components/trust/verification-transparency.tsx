@@ -42,9 +42,8 @@ export function VerificationTransparency({ className = '' }: Props) {
         How we verify companies
       </h2>
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-        Move Trust Hub is an independent directory — not affiliated with any mover. Our editorial
-        team applies the checks below before a company appears in county guides or earns review
-        schema.
+        Our editorial team applies the checks below before a company appears in county guides or
+        earns review schema.
       </p>
       <ol className="space-y-3 mb-4" role="list">
         {VERIFICATION_STEPS.map((step, index) => (

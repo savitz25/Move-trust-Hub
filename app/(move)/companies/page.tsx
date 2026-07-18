@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DirectoryLoader } from '@/components/directory/directory-loader';
 import { InternalLinkHub } from '@/components/seo/internal-link-hub';
-import { TrustBadges } from '@/components/trust/trust-badges';
 import { ReviewHighlights } from '@/components/trust/review-highlights';
 import { HowWeScorePanel } from '@/components/trust/how-we-score-panel';
 import { VerificationTransparency } from '@/components/trust/verification-transparency';
@@ -68,11 +67,10 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
             <Link href="/resources/fmcsa" className="text-primary underline underline-offset-2">
               FMCSA licensing
             </Link>{' '}
-            context and moderated reviews. No paid placements, ever.
+            context and moderated reviews.
           </p>
         </div>
 
-        <TrustBadges variant="compact" className="mb-4" />
         <TrustToolsBar className="mb-8" />
 
         <HowWeScorePanel className="mb-8" collapsible />
@@ -89,7 +87,7 @@ export default async function CompaniesDirectoryPage({ searchParams }: PageProps
           className="py-16 mt-8 border-t"
           compact
           title="Featured Review Highlights"
-          subtitle="Named Google review excerpts with reviewer attribution — independent research, not paid placements or inflated industry totals."
+          subtitle="Named Google review excerpts with reviewer attribution — not inflated industry totals."
         />
 
         <InternalLinkHub className="mt-12" />

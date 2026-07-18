@@ -54,7 +54,7 @@ export function DestinationCostVisual({ destinationLabel, rows, ariaLabel }: Pro
       </div>
 
       <figcaption className="border-t border-white/10 px-5 py-3 text-xs text-slate-500 sm:px-6">
-        Independent directory · compare FMCSA-verified movers · movetrusthub.com
+        Compare FMCSA-licensed movers · movetrusthub.com
       </figcaption>
     </figure>
   );

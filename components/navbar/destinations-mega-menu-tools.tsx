@@ -77,9 +77,6 @@ export const DestinationsMegaMenuTools = memo(function DestinationsMegaMenuTools
             Free Moving Calculator
           </Link>
         </Button>
-        <p className="text-[10px] text-center text-muted-foreground">
-          Independent · No lead fees · No paid placements
-        </p>
       </div>
     </div>
   );
