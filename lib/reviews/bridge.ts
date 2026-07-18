@@ -18,30 +18,38 @@ export type UserReviewStats = {
   companyId: string | null;
 };
 
-export async function findMovingCompanyForLegacy(params: {
+/**
+ * Find all moving_companies rows that could hold reviews for a directory profile.
+ * Prefers legacy_company_id, then DOT, then MC — returns unique rows.
+ * Opportunistically backfills legacy_company_id when missing.
+ */
+export async function findMovingCompaniesForLegacy(params: {
   legacyId: string;
   usdotNumber?: string;
   mcNumber?: string;
-}): Promise<MovingCompanyRecord | null> {
-  if (!isSupabaseAdminConfigured()) return null;
+}): Promise<MovingCompanyRecord[]> {
+  if (!isSupabaseAdminConfigured()) return [];
   const admin = createAdminClient();
+  const byId = new Map<string, MovingCompanyRecord>();
 
   const { data: byLegacy } = await admin
     .from('moving_companies')
     .select('*')
-    .eq('legacy_company_id', params.legacyId)
-    .maybeSingle();
+    .eq('legacy_company_id', params.legacyId);
 
-  if (byLegacy) return byLegacy as MovingCompanyRecord;
+  for (const row of byLegacy ?? []) {
+    byId.set(row.id, row as MovingCompanyRecord);
+  }
 
   const dot = normalizeDigits(params.usdotNumber || '');
   if (dot) {
     const { data } = await admin
       .from('moving_companies')
       .select('*')
-      .eq('dot_number', dot)
-      .maybeSingle();
-    if (data) return data as MovingCompanyRecord;
+      .eq('dot_number', dot);
+    for (const row of data ?? []) {
+      byId.set(row.id, row as MovingCompanyRecord);
+    }
   }
 
   const mc = normalizeDigits(params.mcNumber || '');
@@ -49,12 +57,43 @@ export async function findMovingCompanyForLegacy(params: {
     const { data } = await admin
       .from('moving_companies')
       .select('*')
-      .eq('mc_number', mc)
-      .maybeSingle();
-    if (data) return data as MovingCompanyRecord;
+      .eq('mc_number', mc);
+    for (const row of data ?? []) {
+      byId.set(row.id, row as MovingCompanyRecord);
+    }
   }
 
-  return null;
+  const rows = Array.from(byId.values());
+
+  // Backfill legacy link so future lookups and revalidation hit the directory slug
+  for (const row of rows) {
+    if (!row.legacy_company_id && params.legacyId) {
+      void admin
+        .from('moving_companies')
+        .update({ legacy_company_id: params.legacyId })
+        .eq('id', row.id)
+        .then(() => undefined)
+        .catch(() => undefined);
+      row.legacy_company_id = params.legacyId;
+    }
+  }
+
+  // Prefer the carrier with the most approved reviews as primary
+  rows.sort(
+    (a, b) => (b.approved_review_count || 0) - (a.approved_review_count || 0)
+  );
+
+  return rows;
+}
+
+/** Primary moving company for a directory profile (most approved reviews). */
+export async function findMovingCompanyForLegacy(params: {
+  legacyId: string;
+  usdotNumber?: string;
+  mcNumber?: string;
+}): Promise<MovingCompanyRecord | null> {
+  const rows = await findMovingCompaniesForLegacy(params);
+  return rows[0] ?? null;
 }
 
 export function reviewPageUrlForCarrier(parsed: ParsedCarrierNumber): string {

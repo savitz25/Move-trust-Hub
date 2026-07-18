@@ -14,6 +14,7 @@ import { assertPortalMfaSatisfied } from '@/lib/portal/mfa';
 import { getAuthenticatedUser } from '@/lib/save-my-move/auth';
 import { assertAdminSession } from '@/lib/admin/auth';
 import { getCompanyBySlugAsync } from '@/lib/data-server';
+import { revalidatePathsForMovingCompany } from '@/lib/reviews/revalidate-paths';
 import type { DisputeCategoryId } from '@/lib/portal/messaging';
 import type { ServiceAreaInput } from '@/lib/portal/types';
 
@@ -63,7 +64,7 @@ export async function postOwnerResponseAction(params: {
   if (result.success) {
     revalidatePath(`/portal/reviews`);
     revalidatePath(`/companies/${params.companySlug}`);
-    revalidatePath(`/company/${params.companySlug}`);
+    await revalidatePathsForMovingCompany(movingId);
   }
   return result;
 }
@@ -105,6 +106,7 @@ export async function disputeReviewAction(params: {
     revalidatePath('/portal/reviews');
     revalidatePath('/admin/portal-disputes');
     revalidatePath(`/companies/${params.companySlug}`);
+    await revalidatePathsForMovingCompany(movingId);
   }
   return result;
 }

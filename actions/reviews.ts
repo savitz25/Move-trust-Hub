@@ -20,6 +20,7 @@ import {
   type PublicReview,
   type ReviewSort,
 } from '@/lib/reviews/queries';
+import { revalidatePathsForMovingCompany } from '@/lib/reviews/revalidate-paths';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { logger } from '@/lib/logging/logger';
@@ -211,8 +212,8 @@ export async function submitReview(raw: unknown): Promise<SubmitReviewResult> {
     rating: parsed.data.rating,
   });
 
-  revalidatePath(`/company/${company.slug}`);
-  revalidatePath('/review');
+  // Purge native + directory profiles that may show this carrier's community block
+  await revalidatePathsForMovingCompany(company.id);
 
   return {
     success: true,
@@ -261,11 +262,17 @@ export async function submitReviewWithPhotos(
 
 export async function fetchCompanyReviews(params: {
   companyId: string;
+  /** When DOT/MC created duplicate moving_companies, pass all ids */
+  companyIds?: string[];
   page?: number;
   pageSize?: number;
   sort?: ReviewSort;
 }): Promise<FetchReviewsResult> {
-  return getApprovedReviews(params.companyId, {
+  const ids =
+    params.companyIds && params.companyIds.length > 0
+      ? params.companyIds
+      : [params.companyId];
+  return getApprovedReviews(ids, {
     page: params.page,
     pageSize: params.pageSize,
     sort: params.sort,

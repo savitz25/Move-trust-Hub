@@ -116,10 +116,15 @@ export function ReviewSubmissionForm({
 
           <div className="mx-auto mt-4 max-w-sm rounded-lg border bg-background/80 px-4 py-3 text-left text-xs text-muted-foreground">
             <p className="font-medium text-foreground mb-1">What happens next</p>
-            <ul className="space-y-1 list-disc pl-4">
-              <li>Our team checks for spam and policy compliance</li>
-              <li>Approved reviews appear as &ldquo;Verified by Move Trust Hub&rdquo;</li>
-              <li>Google-sourced reviews on profiles remain clearly attributed</li>
+            <ul className="space-y-1.5 list-disc pl-4 leading-relaxed">
+              <li>Our team checks for spam, duplicates, and policy compliance</li>
+              <li>
+                After approval, your review appears on the company profile under{' '}
+                <strong className="text-foreground">Customer Reviews</strong> with a{' '}
+                &ldquo;Verified by Move Trust Hub&rdquo; badge
+              </li>
+              <li>Your email stays private — we never publish it or sell your data</li>
+              <li>Independent directory — no paid placements or ranking boosts</li>
             </ul>
           </div>
 

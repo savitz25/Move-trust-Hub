@@ -4,7 +4,13 @@ import { revalidatePath } from 'next/cache';
 import { assertAdminSession } from '@/lib/admin/auth';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
-import { getPendingReviewsForModeration } from '@/lib/reviews/queries';
+import {
+  getPendingReviewsForModeration,
+  searchAdminReviews,
+  type AdminReviewFilters,
+  type AdminReviewRow,
+} from '@/lib/reviews/queries';
+import { revalidatePathsForMovingCompany } from '@/lib/reviews/revalidate-paths';
 import { logger } from '@/lib/logging/logger';
 
 export type ModerateReviewResult = {
@@ -19,6 +25,17 @@ export async function getModerationQueue() {
     return [];
   }
   return getPendingReviewsForModeration();
+}
+
+export async function searchReviewsForAdmin(
+  filters: AdminReviewFilters
+): Promise<{ reviews: AdminReviewRow[]; total: number }> {
+  try {
+    await assertAdminSession();
+  } catch {
+    return { reviews: [], total: 0 };
+  }
+  return searchAdminReviews(filters);
 }
 
 export async function moderateReview(params: {
@@ -56,24 +73,14 @@ export async function moderateReview(params: {
     return { success: false, error: error?.message ?? 'Update failed' };
   }
 
-  const { data: companyRow } = await admin
-    .from('moving_companies')
-    .select('slug')
-    .eq('id', review.company_id)
-    .maybeSingle();
-
-  const slug = companyRow?.slug;
-
   logger.info('review.moderated', {
     reviewId: params.reviewId,
     status,
-    companySlug: slug,
+    companyId: review.company_id,
   });
 
-  if (slug) {
-    revalidatePath(`/company/${slug}`);
-    revalidatePath(`/companies/${slug}`);
-  }
+  // Correctly purge /company/{movingSlug} AND /companies/{directorySlug}
+  await revalidatePathsForMovingCompany(review.company_id);
   revalidatePath('/admin/reviews');
 
   return { success: true };
