@@ -4,11 +4,21 @@ import { prepareCompaniesForDirectoryClient } from '@/lib/directory/directory-cl
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import type { UsZipPlace } from '@/lib/geo/lookup-us-zip';
 import {
-  getCountiesForState,
-  getCountyPath,
-  getStatePath,
-} from '@/lib/local-movers/index';
+  resolveCountyFromCoords,
+  type CensusCountyHit,
+} from '@/lib/geo/resolve-county-from-coords';
+import {
+  appendZipQuery,
+  resolveLocalMoversHref,
+  type CountyMatchMethod,
+} from '@/lib/home/resolve-local-movers-href';
 import type { Company } from '@/types';
+
+export type { CountyMatchMethod };
+export {
+  matchCensusToLocalCounty,
+  resolveLocalMoversHref,
+} from '@/lib/home/resolve-local-movers-href';
 
 export type HomeRouteMover = {
   slug: string;
@@ -32,63 +42,9 @@ export type HomeRouteResult = {
   calculatorHref: string;
   localAreaLabel: string;
   topMovers: HomeRouteMover[];
+  /** How the county page was chosen (analytics / debugging). */
+  countyMatchMethod?: CountyMatchMethod;
 };
-
-function normalizeCity(value: string): string {
-  return value
-    .toLowerCase()
-    .replace(/\bst\.\b/g, 'saint')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim();
-}
-
-/** Best-effort city → county path within a state. */
-export function resolveLocalMoversHref(place: UsZipPlace): {
-  href: string;
-  label: string;
-} {
-  const statePath = getStatePath(place.stateSlug);
-  const counties = getCountiesForState(place.stateSlug);
-  if (!counties.length) {
-    return {
-      href: statePath,
-      label: `${place.city}, ${place.stateCode}`,
-    };
-  }
-
-  const city = normalizeCity(place.city);
-  let best:
-    | { slug: string; name: string; score: number }
-    | undefined;
-
-  for (const county of counties) {
-    const name = normalizeCity(county.name.replace(/ county$/i, ''));
-    let score = 0;
-    if (name === city) score = 100;
-    else if (city.includes(name) || name.includes(city)) score = 70;
-    else {
-      const cityTokens = city.split(' ').filter(Boolean);
-      const nameTokens = name.split(' ').filter(Boolean);
-      const overlap = cityTokens.filter((t) => nameTokens.includes(t)).length;
-      if (overlap > 0) score = 40 + overlap * 10;
-    }
-    if (!best || score > best.score) {
-      best = { slug: county.slug, name: county.name, score };
-    }
-  }
-
-  if (best && best.score >= 40) {
-    return {
-      href: getCountyPath(place.stateSlug, best.slug),
-      label: `${best.name}, ${place.stateCode}`,
-    };
-  }
-
-  return {
-    href: statePath,
-    label: `${place.stateName} local movers`,
-  };
-}
 
 function companyMatchesPlace(company: Company, place: UsZipPlace): boolean {
   const hq = (company.headquarters || '').toLowerCase();
@@ -135,7 +91,15 @@ export async function buildHomeRouteResult(
   from: UsZipPlace,
   to: UsZipPlace | null
 ): Promise<HomeRouteResult> {
-  const local = resolveLocalMoversHref(from);
+  let census: CensusCountyHit | null = null;
+  try {
+    census = await resolveCountyFromCoords(from.lat, from.lng);
+  } catch {
+    census = null;
+  }
+
+  const local = resolveLocalMoversHref(from, census);
+  const moversHref = appendZipQuery(local.href, from.zip, to?.zip ?? null);
   const directoryHref = `/companies?search=${encodeURIComponent(from.city)}`;
 
   const calcParams = new URLSearchParams();
@@ -145,25 +109,32 @@ export async function buildHomeRouteResult(
   calcParams.set('toCity', to?.city ?? '');
   const calculatorHref = `/moving-calculator?${calcParams.toString()}`;
 
-  const all = prepareCompaniesForDirectoryClient(await getUnifiedDirectoryCompanies());
+  const all = prepareCompaniesForDirectoryClient(
+    await getUnifiedDirectoryCompanies()
+  );
   const matched = all
     .filter((c) => companyMatchesPlace(c, from))
-    .sort((a, b) => scoreCompanyForPlace(b, from) - scoreCompanyForPlace(a, from));
+    .sort(
+      (a, b) => scoreCompanyForPlace(b, from) - scoreCompanyForPlace(a, from)
+    );
 
   const pool =
     matched.length >= 3
       ? matched
-      : [...all].sort((a, b) => (b.reputationScore || 0) - (a.reputationScore || 0));
+      : [...all].sort(
+          (a, b) => (b.reputationScore || 0) - (a.reputationScore || 0)
+        );
 
   const topMovers = pool.slice(0, 4).map(toHomeRouteMover);
 
   return {
     from,
     to,
-    moversHref: local.href,
+    moversHref,
     directoryHref,
     calculatorHref,
     localAreaLabel: local.label,
     topMovers,
+    countyMatchMethod: local.method,
   };
 }
