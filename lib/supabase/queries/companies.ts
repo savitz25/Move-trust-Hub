@@ -21,6 +21,7 @@ import {
 } from '@/lib/verification/resolve-company-row';
 import { extractFmcsaFieldsFromRow } from '@/lib/fmcsa/company-from-row';
 import type { Company } from '@/types';
+import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
 
 function createAnonSupabaseClient() {
   const url = getSupabaseUrl();
@@ -47,11 +48,10 @@ const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
 };
 
 /**
- * Directory list projection — omits bbb_raw / timestamps and the heaviest blobs
- * not needed for mapRow when entity_type is persisted (google_data, description).
+ * Core directory list projection — safe when enrichment columns lag migrations.
  * Profile single-row lookups still use select('*').
  */
-export const COMPANY_LIST_COLUMNS = [
+const COMPANY_LIST_CORE_COLUMNS = [
   'id',
   'slug',
   'name',
@@ -93,6 +93,11 @@ export const COMPANY_LIST_COLUMNS = [
   'rating_breakdown',
   'is_verified',
   'last_updated',
+].join(', ');
+
+/** Full list projection when public_scrape_data / verification_sources exist. */
+export const COMPANY_LIST_COLUMNS = [
+  COMPANY_LIST_CORE_COLUMNS,
   'public_scrape_data',
   'verification_sources',
 ].join(', ');
@@ -152,6 +157,54 @@ function mapRow(row: Record<string, unknown>): Company {
   });
 }
 
+/**
+ * When production DB lags migrations (e.g. missing public_scrape_data), prefer core
+ * projection for the rest of the process so SSG doesn't double-fail on every page.
+ */
+let companyListSelectMode: 'full' | 'core' = 'full';
+
+const COMPANIES_FETCH_TIMEOUT_MS = 12_000;
+
+async function withTimeout<T>(
+  promise: Promise<T>,
+  ms: number,
+  label: string
+): Promise<T | null> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise<null>((resolve) => {
+        timer = setTimeout(() => {
+          logger.warn('companies.fetch_timeout', { label, ms });
+          resolve(null);
+        }, ms);
+      }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+function isSchemaColumnError(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false;
+  return (
+    error.code === '42703' ||
+    error.code === 'PGRST204' ||
+    isMissingEnrichmentColumnError(error.message)
+  );
+}
+
+async function selectCompanyList(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  columns: string
+) {
+  return supabase
+    .from('companies')
+    .select(columns)
+    .order('reputation_score', { ascending: false });
+}
+
 async function fetchCompaniesFromDatabase(): Promise<Company[]> {
   if (!isSupabaseConfigured()) {
     return [...seedCompanies];
@@ -168,10 +221,42 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  const { data, error } = await supabase
-    .from('companies')
-    .select(COMPANY_LIST_COLUMNS)
-    .order('reputation_score', { ascending: false });
+  const primaryColumns =
+    companyListSelectMode === 'core' ? COMPANY_LIST_CORE_COLUMNS : COMPANY_LIST_COLUMNS;
+
+  const primary = await withTimeout(
+    selectCompanyList(supabase, primaryColumns),
+    COMPANIES_FETCH_TIMEOUT_MS,
+    companyListSelectMode
+  );
+
+  if (!primary) {
+    // Timed out under SSG concurrency — seed is better than a 60s page hang.
+    return [...seedCompanies];
+  }
+
+  let data = primary.data;
+  let error = primary.error;
+
+  // Production may lag migrations (e.g. missing public_scrape_data). Retry core columns.
+  if (error && isSchemaColumnError(error)) {
+    companyListSelectMode = 'core';
+    logger.warn('companies.fetch_retry_core_columns', {
+      code: error.code,
+      message: error.message,
+      hint: 'Run supabase/migrations/20260708140000_ensure_companies_directory.sql',
+    });
+    const retry = await withTimeout(
+      selectCompanyList(supabase, COMPANY_LIST_CORE_COLUMNS),
+      COMPANIES_FETCH_TIMEOUT_MS,
+      'core-retry'
+    );
+    if (!retry) {
+      return [...seedCompanies];
+    }
+    data = retry.data;
+    error = retry.error;
+  }
 
   if (error) {
     const missingTable =
@@ -186,6 +271,10 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
         ? 'Run supabase/migrations/20260708140000_ensure_companies_directory.sql'
         : undefined,
     });
+    // Remember schema lag so concurrent SSG pages skip the failing full projection.
+    if (isSchemaColumnError(error)) {
+      companyListSelectMode = 'core';
+    }
     return [...seedCompanies];
   }
 
@@ -213,7 +302,8 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
-  ['companies-directory-v3-projected'],
+  // Bump cache key when projection strategy changes
+  ['companies-directory-v5-timeout-core-fallback'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
@@ -237,11 +327,39 @@ export async function getCompanyBySlugOrUsdotFromDb(
   const supabase = createAnonSupabaseClient();
   if (!supabase) return undefined;
 
-  const { data: bySlugOrId, error: slugError } = await supabase
+  // Cap total lookup time so city-hub SSG (many featured slugs) cannot stack timeouts.
+  const overall = await withTimeout(
+    resolveCompanyBySlugOrUsdotInner(supabase, input),
+    COMPANIES_FETCH_TIMEOUT_MS,
+    'slug-or-usdot-total'
+  );
+  return overall ?? undefined;
+}
+
+async function resolveCompanyBySlugOrUsdotInner(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  input: string
+): Promise<Company | undefined> {
+  // Prefer safe projection — select('*') can break when schema cache lists missing columns.
+  const profileSelect =
+    companyListSelectMode === 'core' ? COMPANY_LIST_CORE_COLUMNS : COMPANY_LIST_COLUMNS;
+
+  let { data: bySlugOrId, error: slugError } = await supabase
     .from('companies')
-    .select('*')
+    .select(profileSelect)
     .or(`slug.eq.${input},id.eq.${input}`)
     .maybeSingle();
+
+  if (slugError && isSchemaColumnError(slugError)) {
+    companyListSelectMode = 'core';
+    const core = await supabase
+      .from('companies')
+      .select(COMPANY_LIST_CORE_COLUMNS)
+      .or(`slug.eq.${input},id.eq.${input}`)
+      .maybeSingle();
+    bySlugOrId = core.data;
+    slugError = core.error;
+  }
 
   if (!slugError && bySlugOrId) {
     return mapRow(bySlugOrId as Record<string, unknown>);
@@ -254,14 +372,16 @@ export async function getCompanyBySlugOrUsdotFromDb(
     }
   }
 
+  const listCols =
+    companyListSelectMode === 'core' ? COMPANY_LIST_CORE_COLUMNS : COMPANY_LIST_COLUMNS;
+
   const usdot = parseUsdotFromSlugInput(input) ?? normalizeCompanyUsdot(input);
   if (usdot) {
     const { data: byUsdot, error: usdotError } = await supabase
       .from('companies')
-      .select('*')
+      .select(listCols)
       .eq('usdot_number', usdot)
       .maybeSingle();
-
     if (!usdotError && byUsdot) {
       return mapRow(byUsdot as Record<string, unknown>);
     }
@@ -270,11 +390,10 @@ export async function getCompanyBySlugOrUsdotFromDb(
   const nameFromSlug = input.includes('-') ? input.replace(/-/g, ' ') : input;
   const { data: byName, error: nameError } = await supabase
     .from('companies')
-    .select('*')
+    .select(listCols)
     .ilike('name', nameFromSlug)
     .limit(1)
     .maybeSingle();
-
   if (!nameError && byName) {
     return mapRow(byName as Record<string, unknown>);
   }
@@ -283,10 +402,9 @@ export async function getCompanyBySlugOrUsdotFromDb(
   if (predictedSlug && predictedSlug !== input) {
     const { data: byPredicted, error: predictedError } = await supabase
       .from('companies')
-      .select('*')
+      .select(listCols)
       .eq('slug', predictedSlug)
       .maybeSingle();
-
     if (!predictedError && byPredicted) {
       return mapRow(byPredicted as Record<string, unknown>);
     }
@@ -296,10 +414,9 @@ export async function getCompanyBySlugOrUsdotFromDb(
   if (collapsedSlug && collapsedSlug !== input && collapsedSlug !== predictedSlug) {
     const { data: byCollapsed, error: collapsedError } = await supabase
       .from('companies')
-      .select('*')
+      .select(listCols)
       .eq('slug', collapsedSlug)
       .maybeSingle();
-
     if (!collapsedError && byCollapsed) {
       return mapRow(byCollapsed as Record<string, unknown>);
     }

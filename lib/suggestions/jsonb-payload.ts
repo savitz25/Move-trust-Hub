@@ -68,8 +68,9 @@ export function isMissingEnrichmentColumnError(message?: string | null): boolean
   return (
     lower.includes('google_data') ||
     lower.includes('public_scrape_data') ||
+    lower.includes('verification_sources') ||
     lower.includes('schema cache') ||
-    lower.includes('column') && lower.includes('does not exist')
+    (lower.includes('column') && lower.includes('does not exist'))
   );
 }
 

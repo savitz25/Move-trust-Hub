@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   compress: true,
+  // Large marketing surface (~5k county + city hubs). Concurrent Supabase lag
+  // previously killed pages at 60s; keep headroom above per-fetch 12s timeouts.
+  staticPageGenerationTimeout: 180,
   // Temporarily ignore TS/ESLint errors during build so we can deploy while cleaning up types
   // (Run `npm run typecheck` and `npm run lint` locally to see/fix issues)
   typescript: {
