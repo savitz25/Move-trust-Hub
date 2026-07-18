@@ -176,6 +176,12 @@ export async function submitReview(raw: unknown): Promise<SubmitReviewResult> {
   });
 
   if (!rateCheck.allowed) {
+    logger.warn('review.submit_rate_limited', {
+      reason: rateCheck.reason,
+      code: 'code' in rateCheck ? rateCheck.code : undefined,
+      companyId: company.id,
+      hasIp: Boolean(userIp),
+    });
     return { success: false, error: rateCheck.reason };
   }
 
