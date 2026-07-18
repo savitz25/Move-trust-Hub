@@ -136,6 +136,11 @@ export async function fetchGooglePlacesByPlaceId(placeId: string): Promise<Googl
 
     if (!res.ok) {
       const errText = await res.text().catch(() => '');
+      console.error('[google_places.details_failed]', {
+        status: res.status,
+        placeId: id,
+        body: errText.slice(0, 300),
+      });
       return emptyGoogleData(
         now,
         res.status === 404 ? 'not_found' : 'error',
@@ -150,6 +155,10 @@ export async function fetchGooglePlacesByPlaceId(placeId: string): Promise<Googl
 
     return mapPlaceToGoogleData(place, now);
   } catch (err) {
+    console.error('[google_places.details_exception]', {
+      placeId: id,
+      message: err instanceof Error ? err.message : String(err),
+    });
     return emptyGoogleData(
       now,
       'error',
@@ -193,11 +202,14 @@ export async function fetchGooglePlacesData(
 
     if (!res.ok) {
       const errText = await res.text().catch(() => '');
-      return emptyGoogleData(
-        now,
-        'error',
-        `Google Places API ${res.status}: ${errText.slice(0, 200)}`
-      );
+      const message = `Google Places API ${res.status}: ${errText.slice(0, 200)}`;
+      // Surface quota / auth failures in server logs (Vercel) without crashing enrichment.
+      console.error('[google_places.searchText_failed]', {
+        status: res.status,
+        query: textQuery.slice(0, 120),
+        body: errText.slice(0, 300),
+      });
+      return emptyGoogleData(now, 'error', message);
     }
 
     const json = (await res.json()) as { places?: PlacePayload[] };
@@ -208,6 +220,10 @@ export async function fetchGooglePlacesData(
 
     return mapPlaceToGoogleData(place, now);
   } catch (err) {
+    console.error('[google_places.searchText_exception]', {
+      query: textQuery.slice(0, 120),
+      message: err instanceof Error ? err.message : String(err),
+    });
     return emptyGoogleData(
       now,
       'error',

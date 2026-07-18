@@ -48,8 +48,13 @@ const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
 };
 
 /**
- * Core directory list projection — safe when enrichment columns lag migrations.
- * Profile single-row lookups still use select('*').
+ * Safe directory/profile projection for production Supabase.
+ *
+ * IMPORTANT: Production packs Google Places enrichment into `verification_sources.google`
+ * (legacy `google_data` / `public_scrape_data` columns often do not exist).
+ * Those optional columns must NOT be in the default select — a missing column makes
+ * PostgREST reject the whole query, and the previous core fallback dropped
+ * verification_sources, so profiles always showed “Google Places data is not loaded”.
  */
 const COMPANY_LIST_CORE_COLUMNS = [
   'id',
@@ -93,14 +98,18 @@ const COMPANY_LIST_CORE_COLUMNS = [
   'rating_breakdown',
   'is_verified',
   'last_updated',
-].join(', ');
-
-/** Full list projection when public_scrape_data / verification_sources exist. */
-export const COMPANY_LIST_COLUMNS = [
-  COMPANY_LIST_CORE_COLUMNS,
-  'public_scrape_data',
+  // Google Places + BBB scrape snapshots live here in production.
   'verification_sources',
 ].join(', ');
+
+/**
+ * Optional legacy enrichment columns — only when COMPANY_LIST_ENRICHMENT=1
+ * and migrations that add google_data / public_scrape_data have been applied.
+ */
+export const COMPANY_LIST_COLUMNS =
+  process.env.COMPANY_LIST_ENRICHMENT === '1'
+    ? [COMPANY_LIST_CORE_COLUMNS, 'google_data', 'public_scrape_data'].join(', ')
+    : COMPANY_LIST_CORE_COLUMNS;
 
 function mapRow(row: Record<string, unknown>): Company {
   const baseServices = (row.services as Company['services']) || [];
@@ -116,6 +125,8 @@ function mapRow(row: Record<string, unknown>): Company {
     foundedYear: (row.founded_year as number) || 0,
     headquarters: (row.headquarters as string) || '',
     website: (row.website as string) || '',
+    physicalAddress: fmcsaFields.physicalAddress,
+    phone: fmcsaFields.phone,
     usdotNumber: (row.usdot_number as string) || '',
     mcNumber: (row.mc_number as string) || '',
     fmcsaSafetyRating:
@@ -158,8 +169,8 @@ function mapRow(row: Record<string, unknown>): Company {
 }
 
 /**
- * Default to core columns — production currently lacks public_scrape_data.
- * Set COMPANY_LIST_ENRICHMENT=1 after migrations to include scrape/verification blobs.
+ * Default select already includes verification_sources (Google snapshots).
+ * COMPANY_LIST_ENRICHMENT=1 adds legacy google_data / public_scrape_data only after migrations.
  */
 let companyListSelectMode: 'full' | 'core' =
   process.env.COMPANY_LIST_ENRICHMENT === '1' ? 'full' : 'core';
@@ -303,8 +314,8 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
 
 const getCompaniesDataCached = unstable_cache(
   fetchCompaniesFromDatabase,
-  // Bump cache key when projection strategy changes
-  ['companies-directory-v5-timeout-core-fallback'],
+  // Bump when projection includes verification_sources for Google Places display
+  ['companies-directory-v6-verification-sources'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 

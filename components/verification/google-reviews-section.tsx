@@ -33,8 +33,13 @@ export function GoogleReviewsSection({
   attributableOnSiteCount = 0,
 }: Props) {
   const profileUrl = data ? googleMapsProfileUrl(data) : null;
+  // Show full card when we have a rating OR review snippets (Places API sometimes returns
+  // snippets without a numeric rating, or vice versa).
   const hasApiSnapshot = Boolean(
-    data?.status === 'ok' && data.rating != null && data.rating > 0
+    data?.status === 'ok' &&
+      ((data.rating != null && data.rating > 0) ||
+        (data.review_snippets?.length ?? 0) > 0 ||
+        (data.review_count != null && data.review_count > 0))
   );
   const partialData: GooglePlacesData | null =
     data?.status === 'ok' && !hasApiSnapshot ? data : null;

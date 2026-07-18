@@ -124,6 +124,8 @@
     "refresh:fmcsa:all-entity-types": "tsx --require ./scripts/stub-server-only.cjs scripts/refresh-all-fmcsa-entity-types.ts",
     "refresh:bbb": "tsx scripts/run-bbb-refresh.ts",
     "backfill:verification": "tsx scripts/backfill-company-verification.ts",
+    "reenrich:google": "tsx scripts/reenrich-missing-google.ts",
+    "reenrich:google:dry": "tsx scripts/reenrich-missing-google.ts --dry-run",
     "test:enrich-prodigy": "tsx scripts/test-enrich-prodigy.ts",
     "analyze": "cross-env ANALYZE=true npm run build",
     "analyze:server": "cross-env ANALYZE=true BUNDLE_ANALYZE=server npm run build",
