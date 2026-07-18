@@ -28,7 +28,10 @@ import {
   pushCalculatorInventoryIntoPlan,
   seedCalculatorFromPlan,
 } from '@/lib/my-move-plan/calculator-bridge';
-import { ReturnToPlanBanner } from '@/components/moving-calculator/return-to-plan-banner';
+import {
+  ReturnToPlanBanner,
+  ReturnToPlanBottomPanel,
+} from '@/components/moving-calculator/return-to-plan-actions';
 import {
   trackCalculatorStart,
   trackCalculatorComplete,
@@ -348,6 +351,7 @@ export function MovingCalculatorClient() {
             totalItems={totalItems}
             movePreset={movePreset}
             mode={mode}
+            fromPlan={fromPlan}
             onUpdateQty={updateQuantity}
             onRemove={removeItem}
             onClear={clearInventory}
@@ -364,6 +368,7 @@ export function MovingCalculatorClient() {
         totalItems={totalItems}
         movePreset={movePreset}
         mode={mode}
+        fromPlan={fromPlan}
         onUpdateQty={updateQuantity}
         onRemove={removeItem}
         onClear={clearInventory}
@@ -378,6 +383,7 @@ export function MovingCalculatorClient() {
         totalItems={totalItems}
         movePreset={movePreset}
         mode={mode}
+        fromPlan={fromPlan}
         onUpdateQty={updateQuantity}
         onRemove={removeItem}
         onClear={clearInventory}
@@ -386,37 +392,41 @@ export function MovingCalculatorClient() {
         onToggleMobile={() => setMobileBasketOpen((v) => !v)}
       />
 
-      <MovingCalculatorSeoSections />
+      {!fromPlan ? <MovingCalculatorSeoSections /> : null}
 
-      <section className="mt-8 max-w-3xl rounded-xl border bg-muted/30 p-6 sm:p-8 max-md:mb-4">
-        <h2 className="text-xl font-semibold tracking-tight mb-3">
-          Next Steps After You Estimate Your Move
-        </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-          Volumes use industry-standard averages (7 lbs per cu ft for weight).
-          Export your inventory as a PDF and give the same list to every mover for comparable quotes.
-        </p>
-        <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium">
-          <Link href="/resources/move-size-weight" className="text-primary hover:underline">
-            Why move size matters
-          </Link>
-          <Link href="/companies" className="text-primary hover:underline">
-            Browse interstate movers
-          </Link>
-          <Link href="/compare" className="text-primary hover:underline">
-            Compare movers
-          </Link>
-          <Link href="/resources/how-to-choose" className="text-primary hover:underline">
-            How to choose a mover
-          </Link>
-          <Link href="/resources/scams" className="text-primary hover:underline">
-            Avoid moving scams
-          </Link>
-        </div>
-        <p className="text-xs text-muted-foreground mt-4">
-          This calculator is for estimation only. Actual space and weight may vary based on packing style and item sizes.
-        </p>
-      </section>
+      {fromPlan ? (
+        <ReturnToPlanBottomPanel />
+      ) : (
+        <section className="mt-8 max-w-3xl rounded-xl border bg-muted/30 p-6 sm:p-8 max-md:mb-4">
+          <h2 className="text-xl font-semibold tracking-tight mb-3">
+            Next Steps After You Estimate Your Move
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            Volumes use industry-standard averages (7 lbs per cu ft for weight).
+            Export your inventory as a PDF and give the same list to every mover for comparable quotes.
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium">
+            <Link href="/resources/move-size-weight" className="text-primary hover:underline">
+              Why move size matters
+            </Link>
+            <Link href="/companies" className="text-primary hover:underline">
+              Browse interstate movers
+            </Link>
+            <Link href="/compare" className="text-primary hover:underline">
+              Compare movers
+            </Link>
+            <Link href="/resources/how-to-choose" className="text-primary hover:underline">
+              How to choose a mover
+            </Link>
+            <Link href="/resources/scams" className="text-primary hover:underline">
+              Avoid moving scams
+            </Link>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            This calculator is for estimation only. Actual space and weight may vary based on packing style and item sizes.
+          </p>
+        </section>
+      )}
     </div>
   );
 }

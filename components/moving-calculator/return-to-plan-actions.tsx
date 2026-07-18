@@ -9,22 +9,19 @@ import {
   returnToMyMoveReportPath,
 } from '@/lib/my-move-plan/calculator-bridge';
 import { toast } from 'sonner';
+import { cn } from '@/lib/utils';
 
 function asInventory(value: unknown): InventoryItem[] {
   return Array.isArray(value) ? (value as InventoryItem[]) : [];
 }
 
-/**
- * Prominent CTA when the calculator was opened from My Move Plan.
- * Saves current inventory into the plan and returns to Report Ready.
- */
-export function ReturnToPlanBanner() {
+export function useReturnToMyMovePlan() {
   const router = useRouter();
   const rawInventory = useCalculatorStore((s) => s.inventory);
   const movePreset = useCalculatorStore((s) => s.movePreset);
   const inventory = asInventory(rawInventory);
 
-  function handleReturn(target: 'report' | 'inventory') {
+  function returnToPlan(target: 'report' | 'inventory' = 'report') {
     if (inventory.length === 0) {
       toast.message('Add items first', {
         description: 'Build your inventory, then return to the Move Plan report.',
@@ -43,6 +40,13 @@ export function ReturnToPlanBanner() {
     );
     router.push(returnToMyMoveReportPath());
   }
+
+  return { returnToPlan, inventoryCount: inventory.length };
+}
+
+/** Top-of-page banner when calculator opened from My Move Plan. */
+export function ReturnToPlanBanner() {
+  const { returnToPlan } = useReturnToMyMovePlan();
 
   return (
     <div className="mb-6 overflow-hidden rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 via-white to-sky-50 shadow-sm">
@@ -69,7 +73,7 @@ export function ReturnToPlanBanner() {
             type="button"
             size="lg"
             className="h-12 w-full gap-2 rounded-xl bg-emerald-600 font-semibold shadow-md hover:bg-emerald-700"
-            onClick={() => handleReturn('report')}
+            onClick={() => returnToPlan('report')}
           >
             Return to My Move Report
             <ArrowRight className="h-4 w-4" aria-hidden />
@@ -77,12 +81,74 @@ export function ReturnToPlanBanner() {
           <button
             type="button"
             className="text-center text-xs font-medium text-muted-foreground hover:text-primary hover:underline"
-            onClick={() => handleReturn('inventory')}
+            onClick={() => returnToPlan('inventory')}
           >
             Save &amp; continue plan (inventory step)
           </button>
         </div>
       </div>
     </div>
+  );
+}
+
+/** Compact primary CTA for basket sidebar / bottom of page. */
+export function ReturnToPlanPrimaryButton({
+  className,
+  size = 'lg',
+  label = 'Return to My Move Plan',
+}: {
+  className?: string;
+  size?: 'default' | 'sm' | 'lg';
+  label?: string;
+}) {
+  const { returnToPlan } = useReturnToMyMovePlan();
+
+  return (
+    <Button
+      type="button"
+      size={size}
+      className={cn(
+        'w-full gap-2 rounded-xl bg-emerald-600 font-semibold shadow-md hover:bg-emerald-700',
+        size === 'lg' && 'h-12',
+        className
+      )}
+      onClick={() => returnToPlan('report')}
+    >
+      {label}
+      <ArrowRight className="h-4 w-4" aria-hidden />
+    </Button>
+  );
+}
+
+/** Full-width bottom section when in plan context. */
+export function ReturnToPlanBottomPanel() {
+  const { returnToPlan } = useReturnToMyMovePlan();
+
+  return (
+    <section className="mt-8 max-w-3xl rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-background p-6 sm:p-8 max-md:mb-4">
+      <div className="flex items-start gap-3">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white">
+          <FileCheck2 className="h-5 w-5" aria-hidden />
+        </span>
+        <div className="min-w-0 flex-1">
+          <h2 className="text-xl font-semibold tracking-tight">
+            Done refining your inventory?
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            Continue to your Move Report so every shortlisted mover quotes this same load. Your
+            updates are saved into My Move Plan automatically.
+          </p>
+          <Button
+            type="button"
+            size="lg"
+            className="mt-5 h-14 w-full gap-2 rounded-2xl bg-emerald-600 text-base font-semibold shadow-md hover:bg-emerald-700 sm:max-w-md"
+            onClick={() => returnToPlan('report')}
+          >
+            Continue to Move Report
+            <ArrowRight className="h-5 w-5" aria-hidden />
+          </Button>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AnimatedNumber } from '@/components/moving-calculator/animated-number';
 import { ExportActions } from '@/components/moving-calculator/export-actions';
+import { ReturnToPlanPrimaryButton } from '@/components/moving-calculator/return-to-plan-actions';
 import { SaveInventoryButton } from '@/components/save-my-move/save-inventory-button';
 import {
   formatItemDisplayName,
@@ -36,6 +37,8 @@ export type MoveSummaryBodyProps = {
   totalItems: number;
   movePreset: string | null;
   mode: string;
+  /** When true, show return-to-plan CTA instead of compare-movers links. */
+  fromPlan?: boolean;
   onUpdateQty: (id: string, qty: number) => void;
   onRemove: (id: string) => void;
   onClear: () => void;
@@ -51,6 +54,7 @@ export function MoveSummaryBody({
   totalItems,
   movePreset,
   mode,
+  fromPlan = false,
   onUpdateQty,
   onRemove,
   onClear,
@@ -323,14 +327,28 @@ export function MoveSummaryBody({
       <div className="rounded-lg border bg-muted/20 p-3 space-y-2">
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <Shield className="h-3.5 w-3.5 text-primary shrink-0" />
-          <span>We never sell your information. No account required.</span>
+          <span>
+            {fromPlan
+              ? 'Inventory syncs to My Move Plan. No lead resellers.'
+              : 'We never sell your information. No account required.'}
+          </span>
         </div>
-        <Button size={touchFriendly ? 'lg' : 'sm'} className="w-full min-h-11" asChild>
-          <Link href="/companies">Compare licensed movers</Link>
-        </Button>
-        <Button size={touchFriendly ? 'lg' : 'sm'} variant="outline" className="w-full min-h-11" asChild>
-          <Link href="/compare">Compare movers side-by-side</Link>
-        </Button>
+        {fromPlan ? (
+          <ReturnToPlanPrimaryButton
+            size={touchFriendly ? 'lg' : 'default'}
+            className="min-h-11"
+            label="Return to My Move Plan"
+          />
+        ) : (
+          <>
+            <Button size={touchFriendly ? 'lg' : 'sm'} className="w-full min-h-11" asChild>
+              <Link href="/companies">Compare licensed movers</Link>
+            </Button>
+            <Button size={touchFriendly ? 'lg' : 'sm'} variant="outline" className="w-full min-h-11" asChild>
+              <Link href="/compare">Compare movers side-by-side</Link>
+            </Button>
+          </>
+        )}
       </div>
     </div>
   );

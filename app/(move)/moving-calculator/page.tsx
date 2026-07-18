@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { MovingCalculatorLoader } from '@/components/moving-calculator/moving-calculator-loader';
+import { CalculatorPageFooter } from '@/components/moving-calculator/calculator-page-footer';
 import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { calculatorFaqItems } from '@/lib/seo/schemas';
 
@@ -29,20 +29,7 @@ export default function MovingCalculatorPage() {
       ]}
     >
       <MovingCalculatorLoader />
-
-      <div className="mt-8 rounded-xl border bg-card p-5 text-sm text-muted-foreground">
-        <p>
-          Ready to research carriers?{' '}
-          <Link href="/companies" className="text-primary font-medium hover:underline">
-            Compare trusted movers
-          </Link>{' '}
-          in our independent directory, or{' '}
-          <Link href="/contact" className="text-primary font-medium hover:underline">
-            contact us
-          </Link>{' '}
-          with questions about your estimate.
-        </p>
-      </div>
+      <CalculatorPageFooter />
     </CalculatorPageShell>
   );
 }
