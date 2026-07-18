@@ -1,5 +1,3 @@
-import { OptimizedImage } from '@/components/ui/optimized-image';
-import { IMAGE_SIZES } from '@/lib/images/constants';
 import Link from 'next/link';
 import { MapPin, ArrowRight, Scale } from 'lucide-react';
 import { TrustBadges } from '@/components/trust/trust-badges';
@@ -9,6 +7,7 @@ import { DestinationCalculatorEmbed } from '@/components/destinations/destinatio
 import { DestinationMapSnippet } from '@/components/destinations/destination-map-snippet';
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
 import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
+import { DestinationCostVisual } from '@/components/destinations/destination-cost-visual';
 import {
   countMoversForMarketAsync,
   getMoversForMarketAsync,
@@ -326,17 +325,12 @@ export async function CityHubTemplate({ market, content }: Props) {
             </div>
           ))}
 
-          <div className="rounded-xl border overflow-hidden">
-            <OptimizedImage
-              src={content.seo.ogImagePath}
-              alt={content.seo.ogImageAlt}
-              width={1200}
-              height={630}
-              loading="lazy"
-              sizes={IMAGE_SIZES.contentWide}
-              className="w-full h-auto"
-            />
-          </div>
+          {/* Data-driven visual — never depends on SVG BOM / missing static assets */}
+          <DestinationCostVisual
+            destinationLabel={destinationLabel}
+            rows={content.costTableRows}
+            ariaLabel={content.seo.ogImageAlt}
+          />
         </div>
       </section>
 

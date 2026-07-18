@@ -26,7 +26,7 @@ export const knoxvilleTnContent: CityHubContent = {
       'oak ridge movers',
     ],
     canonicalPath: '/moving-to/tennessee/knoxville-tn',
-    ogImagePath: '/images/destinations/knoxville-cost-infographic.svg',
+    ogImagePath: '/images/destinations/knoxville-tn-cost-infographic.svg',
     ogImageAlt:
       '2026 interstate moving costs to Knoxville TN by home size – Move Trust Hub',
   },
