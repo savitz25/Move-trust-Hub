@@ -12,6 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
+import { MethodologyBackNav } from '@/components/trust/methodology-back-nav';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { SITE_URL } from '@/lib/seo/site-metadata';
@@ -56,6 +57,12 @@ export default function HowWeScoreMoversPage() {
 
       <div className="border-b bg-muted/30">
         <div className="container mx-auto px-4 py-14 max-w-4xl">
+          <div className="mb-6">
+            <MethodologyBackNav
+              fallbackHref="/companies"
+              fallbackLabel="Back to Directory"
+            />
+          </div>
           <Badge variant="secondary" className="mb-4">
             Transparency · Methodology
           </Badge>

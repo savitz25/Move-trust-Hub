@@ -26,6 +26,13 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
     variant === 'auto-transport'
       ? PROFILE_METRIC_TOOLTIPS.avgPriceAuto
       : PROFILE_METRIC_TOOLTIPS.avgPriceMove;
+  const returnContext = {
+    returnPath:
+      variant === 'auto-transport'
+        ? `/auto-transport/${company.slug}`
+        : `/companies/${company.slug}`,
+    returnLabel: company.name,
+  };
 
   return (
     <section aria-label="Company profile statistics" className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
@@ -34,6 +41,7 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
           label="Editorial star rating"
           tooltip={PROFILE_METRIC_TOOLTIPS.overallRating}
           methodologyAnchor="reviewAttribution"
+          returnContext={returnContext}
         />
         <div
           className="mt-1 flex flex-col gap-1"
@@ -54,9 +62,14 @@ export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfil
           label="Reputation score"
           tooltip={PROFILE_METRIC_TOOLTIPS.reputationScore}
           methodologyAnchor="reputationScore"
+          returnContext={returnContext}
         />
         <p className="text-3xl font-semibold mt-1 tabular-nums text-primary leading-none">
-          <MethodologyLink anchor="reputationScore" className="no-underline hover:text-primary">
+          <MethodologyLink
+            anchor="reputationScore"
+            className="no-underline hover:text-primary"
+            returnContext={returnContext}
+          >
             {company.reputationScore}
           </MethodologyLink>
           <span className="text-lg font-normal text-muted-foreground"> / 100</span>

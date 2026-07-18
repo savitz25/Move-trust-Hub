@@ -16,6 +16,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EditorialTeamPanel } from '@/components/trust/editorial-team-panel';
+import { MethodologyBackNav } from '@/components/trust/methodology-back-nav';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { buildAboutPageSchemaGraph } from '@/lib/seo/schemas';
@@ -46,6 +47,9 @@ export default function AboutPage() {
       {/* Hero */}
       <div className="border-b bg-muted/30">
         <div className="container mx-auto px-4 py-16 max-w-5xl">
+          <div className="mb-6 flex justify-start">
+            <MethodologyBackNav fallbackHref="/" fallbackLabel="Back to Home" />
+          </div>
           <div className="flex flex-col items-center text-center">
             <Badge variant="secondary" className="mb-4">Est. 2026 • Independent</Badge>
             <h1 className="text-5xl md:text-6xl font-semibold tracking-tighter mb-4">

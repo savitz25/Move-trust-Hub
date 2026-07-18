@@ -1,6 +1,7 @@
 'use client';
 
 import { Slider } from '@/components/lender/ui/slider';
+import { InfoTooltip } from '@/components/ui/info-tooltip';
 import { cn } from '@/lib/lender/utils';
 
 interface CalcSliderProps {
@@ -17,17 +18,24 @@ interface CalcSliderProps {
 }
 
 export function CalcSlider({
-  label, value, min, max, step, onChange, format, suffix, tip, className,
+  label,
+  value,
+  min,
+  max,
+  step,
+  onChange,
+  format,
+  suffix,
+  tip,
+  className,
 }: CalcSliderProps) {
   const display = format ? format(value) : `${value}${suffix ?? ''}`;
   return (
     <div className={cn('space-y-2', className)}>
       <div className="flex justify-between text-sm">
-        <span className="font-medium text-[#0F172A] dark:text-zinc-200">
+        <span className="inline-flex items-center gap-1.5 font-medium text-[#0F172A] dark:text-zinc-200">
           {label}
-          {tip && (
-            <span className="ml-1 text-zinc-400" title={tip} aria-label={tip}>ⓘ</span>
-          )}
+          {tip ? <InfoTooltip title={label} description={tip} /> : null}
         </span>
         <span className="font-bold text-emerald-600">{display}</span>
       </div>

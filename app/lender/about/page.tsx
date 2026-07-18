@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Shield, Database, Eye, Ban } from 'lucide-react';
 import { SchemaInjector } from '@/components/hub/schema-injector';
 import { TrustBar } from '@/components/lender/TrustBar';
+import { MethodologyBackNav } from '@/components/trust/methodology-back-nav';
 import { hubSectionBreadcrumbs } from '@/lib/hub/templates/breadcrumbs';
 import { buildCollectionPageSchema, buildTemplateSchemaGraph } from '@/lib/hub/templates/schemas';
 import { TRUST_STATS } from '@/lib/lender/mockData';
@@ -27,6 +28,9 @@ export default function AboutPage() {
   return (
     <div>
       <SchemaInjector data={schema} />
+      <div className="container mx-auto px-4 pt-6">
+        <MethodologyBackNav fallbackHref="/lender" fallbackLabel="Back to Lender Trust Hub" />
+      </div>
       <section className="border-b border-zinc-200 bg-gradient-to-br from-[#0A2540] to-[#0A2540]/90 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <Shield className="mx-auto mb-4 h-12 w-12 text-[#14B8A6]" aria-hidden="true" />

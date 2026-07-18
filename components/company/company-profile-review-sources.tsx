@@ -21,6 +21,10 @@ type Props = {
  */
 export function CompanyProfileReviewSources({ company, googleData }: Props) {
   const sources = buildProfileReviewSources(company, googleData);
+  const returnContext = {
+    returnPath: `/companies/${company.slug}`,
+    returnLabel: company.name,
+  };
 
   return (
     <Card className="mb-8 border-dashed bg-muted/10">
@@ -38,6 +42,7 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
               label="Industry-reported rating"
               tooltip={PROFILE_METRIC_TOOLTIPS.overallRating}
               methodologyAnchor="reviewAttribution"
+              returnContext={returnContext}
             />
             <dd className="mt-2 flex items-center gap-2">
               <StarRating rating={sources.editorialRating} size="sm" />
@@ -53,6 +58,7 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
               label="Google Places snapshot"
               tooltip={PROFILE_METRIC_TOOLTIPS.googlePlaces}
               methodologyAnchor="reviewAttribution"
+              returnContext={returnContext}
             />
             {sources.googleAvailable ? (
               <>
@@ -90,6 +96,7 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
               label="On-site attributed reviews"
               tooltip={PROFILE_METRIC_TOOLTIPS.onSiteReviews}
               methodologyAnchor="reviewAttribution"
+              returnContext={returnContext}
             />
             <dd className="mt-2 font-semibold">{sources.attributableOnSiteLabel}</dd>
             <dd className="text-xs text-muted-foreground mt-1 leading-relaxed">
@@ -102,7 +109,10 @@ export function CompanyProfileReviewSources({ company, googleData }: Props) {
         </dl>
         <p className="text-[11px] text-muted-foreground mt-4 leading-relaxed border-t pt-3">
           {REVIEW_TRANSPARENCY_DISCLAIMER}{' '}
-          <Link href={methodologyHref('reviewAttribution')} className="text-primary underline underline-offset-2">
+          <Link
+            href={methodologyHref('reviewAttribution', returnContext)}
+            className="text-primary underline underline-offset-2"
+          >
             Read our review methodology →
           </Link>
         </p>

@@ -3,6 +3,7 @@ import { BadgeCheck, Database, Scale, Shield } from 'lucide-react';
 import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { DISCLAIMER, SITE_NAME } from '@/lib/insurance/constants';
 import { Card, CardContent } from '@/components/insurance/ui/card';
+import { MethodologyBackNav } from '@/components/trust/methodology-back-nav';
 
 export const metadata: Metadata = buildMetadata({
   title: 'About Insurance Trust Hub — Independence & Verification',
@@ -14,6 +15,12 @@ export const metadata: Metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-10 md:py-14 max-w-3xl">
+      <div className="mb-6">
+        <MethodologyBackNav
+          fallbackHref="/insurance"
+          fallbackLabel="Back to Insurance Trust Hub"
+        />
+      </div>
       <h1 className="section-heading">About {SITE_NAME}</h1>
       <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
         {SITE_NAME} is an independent informational directory. We help consumers research licensed
