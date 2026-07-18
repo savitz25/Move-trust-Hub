@@ -7,6 +7,7 @@ const AUTH_PATH_PREFIXES = [
   '/my-move',
   '/portal',
 ] as const;
+// /my-move/reports is covered by /my-move prefix
 
 /** Cron / mutation APIs — never cache at edge. */
 const NO_CACHE_API_PREFIXES = [

@@ -457,6 +457,12 @@ export function ReportReadyStep({
           >
             Copy full plan
           </button>
+          <Link
+            href="/my-move/reports"
+            className="text-muted-foreground hover:text-foreground hover:underline"
+          >
+            All my plans
+          </Link>
           {signedIn ? (
             <Link
               href="/my-move"

@@ -65,21 +65,31 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
 
   if (variant === 'mobile-menu') {
     return (
-      <Link
-        prefetch={false}
-        href="/my-move"
-        onClick={onNavigate}
-        className={cn(
-          'flex items-center gap-2 rounded-lg border border-primary/25 bg-primary/5 px-3 py-3',
-          'font-semibold text-primary hover:bg-primary/10 active:bg-primary/15 transition-colors',
-          'min-h-[48px] mb-2',
-          className
-        )}
-      >
-        <Heart className={heartClass} aria-hidden="true" />
-        <span>My Move</span>
-        {badge}
-      </Link>
+      <div className="mb-2 space-y-1">
+        <Link
+          prefetch={false}
+          href="/my-move"
+          onClick={onNavigate}
+          className={cn(
+            'flex items-center gap-2 rounded-lg border border-primary/25 bg-primary/5 px-3 py-3',
+            'font-semibold text-primary hover:bg-primary/10 active:bg-primary/15 transition-colors',
+            'min-h-[48px]',
+            className
+          )}
+        >
+          <Heart className={heartClass} aria-hidden="true" />
+          <span>My Move</span>
+          {badge}
+        </Link>
+        <Link
+          prefetch={false}
+          href="/my-move/reports"
+          onClick={onNavigate}
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+        >
+          Move Reports
+        </Link>
+      </div>
     );
   }
 
@@ -95,6 +105,7 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
         className
       )}
       aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
+      title="Move HQ · plans at /my-move/reports"
     >
       <Heart className={heartClass} aria-hidden="true" />
       <span>My Move</span>

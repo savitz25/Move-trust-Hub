@@ -1,10 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { Calculator, GitCompare, Search, ShieldCheck } from 'lucide-react';
+import { Calculator, FileText, GitCompare, Search, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const ACTIONS = [
+  {
+    href: '/my-move/reports',
+    label: 'Reports',
+    icon: FileText,
+    description: 'Saved plans',
+  },
   {
     href: '/moving-calculator',
     label: 'Calculator',

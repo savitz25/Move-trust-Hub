@@ -19,7 +19,7 @@ function needsAuthImmediately(pathname: string | null): boolean {
     // Homepage wizard: Email / Save actions must open the auth modal without a silent no-op
     pathname === '/' ||
     pathname === '/my-move' ||
-    pathname.startsWith('/my-move/') ||
+    pathname.startsWith('/my-move/') || // includes /my-move/reports
     pathname === '/portal' ||
     pathname.startsWith('/portal/')
   );

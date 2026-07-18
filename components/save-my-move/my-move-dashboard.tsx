@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import { GitCompare, Heart, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import { MoveHqHero } from '@/components/save-my-move/move-hq/move-hq-hero';
 import { MoveHqQuickActions } from '@/components/save-my-move/move-hq/move-hq-quick-actions';
+import { MyMoveReports } from '@/components/my-move-plan/my-move-reports';
 import { MoveHqEmptyState } from '@/components/save-my-move/move-hq/move-hq-empty-state';
 import { InventoryCard } from '@/components/save-my-move/move-hq/inventory-card';
 import { MoverCard } from '@/components/save-my-move/move-hq/mover-card';
@@ -105,18 +107,26 @@ export function MyMoveDashboard({
 
   if (!user) {
     return (
-      <div className="rounded-2xl border bg-card p-10 text-center shadow-sm">
-        <Package className="h-12 w-12 mx-auto text-primary/60 mb-4" aria-hidden="true" />
-        <h2 className="text-xl font-semibold">Your Move HQ awaits</h2>
-        <p className="text-muted-foreground mt-2 mb-6 max-w-md mx-auto">
-          Sign in to sync inventories, mover shortlists, and comparisons across devices.
-        </p>
-        <Button onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}>
-          Save My Move
-        </Button>
-        <p className="text-xs text-muted-foreground mt-4">
-          Magic link by default — or optional password after you save. Also Google and Facebook.
-        </p>
+      <div className="space-y-6">
+        <div className="rounded-2xl border bg-card p-10 text-center shadow-sm">
+          <Package className="h-12 w-12 mx-auto text-primary/60 mb-4" aria-hidden="true" />
+          <h2 className="text-xl font-semibold">Your Move HQ awaits</h2>
+          <p className="text-muted-foreground mt-2 mb-6 max-w-md mx-auto">
+            Sign in to sync inventories, mover shortlists, and comparisons across devices.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <Button onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}>
+              Save My Move
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="/my-move/reports">View move plans on this device</Link>
+            </Button>
+          </div>
+          <p className="text-xs text-muted-foreground mt-4">
+            Magic link by default — or optional password after you save. Also Google and Facebook.
+          </p>
+        </div>
+        <MyMoveReports compact />
       </div>
     );
   }
@@ -338,6 +348,8 @@ export function MyMoveDashboard({
       />
 
       <MoveHqQuickActions />
+
+      <MyMoveReports compact />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
         <section className="lg:col-span-7 space-y-4" aria-labelledby="inventories-heading">

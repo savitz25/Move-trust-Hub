@@ -57,6 +57,7 @@ import {
   stepToPhase,
 } from '@/lib/my-move-plan/readiness';
 import { loadMyMovePlan, saveMyMovePlan } from '@/lib/my-move-plan/storage';
+import { upsertActivePlanFromState } from '@/lib/my-move-plan/plan-library';
 import type {
   MyMovePlanState,
   MyMovePlanStep,
@@ -211,6 +212,14 @@ export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardPr
     if (!hydrated) return;
     if (!fromPlace && step === 'route') return;
     saveMyMovePlan(planSnapshot);
+    // Persist into multi-plan library once the user has a route or inventory
+    if (fromPlace || planSnapshot.inventory.length > 0) {
+      try {
+        upsertActivePlanFromState(planSnapshot);
+      } catch {
+        // library write is best-effort
+      }
+    }
   }, [planSnapshot, hydrated, fromPlace, step]);
 
   useEffect(() => {

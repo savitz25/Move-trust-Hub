@@ -43,6 +43,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         href: '/my-move',
         description: 'Saved inventories, movers & comparisons',
       },
+      {
+        label: 'Move Reports',
+        href: '/my-move/reports',
+        description: 'All plans built on the site',
+      },
     ],
   },
 ];
@@ -103,6 +108,7 @@ export const MOVE_NAV_AUDIT_PATHS = [
   '/auto-transport',
   '/compare',
   '/my-move',
+  '/my-move/reports',
   '/moving-to',
   '/moving-calculator',
   '/verify-dot',
