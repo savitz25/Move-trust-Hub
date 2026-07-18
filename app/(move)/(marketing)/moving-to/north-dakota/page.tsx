@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, ND</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function NorthDakotaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Red River Valley — Live City Guides
+              Red River Valley — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Fargo, West Fargo, Horace, Grand Forks, and Wahpeton — NDSU tech culture, family
@@ -171,7 +163,7 @@ export default function NorthDakotaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Capital Corridor — Live City Guides
+              Capital Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bismarck and Mandan — polished state capital living and historic western character
@@ -184,7 +176,7 @@ export default function NorthDakotaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Energy & Western — Live City Guides
+              Energy & Western — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Williston, Dickinson, and Minot — Bakken energy employment, Badlands gateway living,

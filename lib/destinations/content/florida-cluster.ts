@@ -48,7 +48,7 @@ export const floridaClusterContent: FloridaClusterContent = {
   introParagraphs: [
     'Whether you are targeting the Miami-Dade and Broward metro, the Palm Beach County coastal corridor, northeast Florida around Jacksonville, or Gulf Coast markets like Sarasota and Naples, the relocation fundamentals are identical: document your inventory with our free calculator, verify every carrier on FMCSA.gov, and compare movers directly on equal cubic footage before signing.',
     'Move Trust Hub is an independent informational directory — we are not affiliated with, endorsed by, or a partner of the moving companies listed. Florida moves involve unique logistics: snowbird-season scheduling, hurricane contingency planning, condo COI requirements, and gated-community shuttle trucks. Our city guides surface these factors so you can plan with confidence.',
-    'Fourteen live Florida hubs now span three corridors: Miami-Dade and Broward (Miami through Pompano Beach), Palm Beach County (Boca Raton through Deerfield Beach), and Central & North Florida (Jacksonville through Wildwood). Browse each city guide below for 2026 cost tables, calculator prefill by ZIP, and county-level mover directories.',
+    'Florida city guides span three corridors: Miami-Dade and Broward (Miami through Pompano Beach), Palm Beach County (Boca Raton through Deerfield Beach), and Central & North Florida (Jacksonville through Wildwood). Browse each city guide below for 2026 cost tables, calculator prefill by ZIP, and county-level mover directories.',
   ],
   miamiDadeBrowardCorridor: [
     {

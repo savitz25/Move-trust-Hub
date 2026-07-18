@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, NC</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>

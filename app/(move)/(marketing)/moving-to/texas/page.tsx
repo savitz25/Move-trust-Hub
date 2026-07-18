@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, TX</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,10 +150,10 @@ export default function TexasClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Dallas–Fort Worth Metro — Live City Guides
+              Dallas–Fort Worth Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Four production-ready hubs covering DFW corporate corridors, Las
+              City guides covering DFW corporate corridors, Las
               Colinas, Arlington, and value-oriented Grand Prairie suburbs.
             </p>
             <CorridorCityGrid cities={content.dfwMetroCorridor} published={published} />
@@ -171,10 +163,10 @@ export default function TexasClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Major Texas Metros — Live City Guides
+              Major Texas Metros — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Three production-ready hubs covering Austin tech, Houston energy and
+              City guides covering Austin tech, Houston energy and
               medical employment, and San Antonio military-and-family affordability.
             </p>
             <CorridorCityGrid cities={content.majorMetrosCorridor} published={published} />
@@ -184,10 +176,10 @@ export default function TexasClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              West Texas — Live City Guides
+              West Texas — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Three production-ready hubs covering El Paso military relocations,
+              City guides covering El Paso military relocations,
               Lubbock university life, and Midland–Odessa energy corridor growth.
             </p>
             <CorridorCityGrid cities={content.westTexasCorridor} published={published} />

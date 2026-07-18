@@ -11,7 +11,7 @@ type Props = {
 
 export function GrandStrandHubGrid({
   heading = 'Explore the Grand Strand — City Guides',
-  description = 'Eight hyper-local hubs covering North Myrtle Beach through Murrells Inlet. Each includes 2026–2027 cost tables, calculator prefill, Horry & Georgetown county movers, and trusted mover research tools.',
+  description = 'City guides covering North Myrtle Beach through Murrells Inlet. Each includes 2026–2027 cost tables, calculator prefill, Horry & Georgetown county movers, and trusted mover research tools.',
 }: Props) {
   const published = new Set(getPublishedCityHubSlugs());
 
@@ -29,7 +29,7 @@ export function GrandStrandHubGrid({
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {grandStrandCities.map((city) => {
             const market = getMarketBySlug(city.slug);
-            const isLive = published.has(city.slug);
+            const isPublished = published.has(city.slug);
             const path = market
               ? getMarketPath(market)
               : `/moving-to/south-carolina/${city.slug}`;
@@ -39,29 +39,18 @@ export function GrandStrandHubGrid({
                 key={city.slug}
                 className="rounded-xl border bg-card p-5 hover:border-primary/40 transition-colors"
               >
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="font-semibold text-sm leading-snug">
-                    {isLive ? (
-                      <Link href={path} className="hover:text-primary transition-colors">
-                        {city.displayName}, SC
-                      </Link>
-                    ) : (
-                      <span>{city.displayName}, SC</span>
-                    )}
-                  </h3>
-                  {isLive ? (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                      Live
-                    </span>
+                <h3 className="font-semibold text-sm leading-snug mb-2">
+                  {isPublished ? (
+                    <Link href={path} className="hover:text-primary transition-colors">
+                      {city.displayName}, SC
+                    </Link>
                   ) : (
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                      Soon
-                    </span>
+                    <span>{city.displayName}, SC</span>
                   )}
-                </div>
+                </h3>
                 <p className="text-xs text-muted-foreground mb-1">ZIP {city.zip}</p>
                 <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{city.tagline}</p>
-                {isLive && market ? (
+                {isPublished && market ? (
                   <div className="flex flex-col gap-1">
                     <Link
                       href={path}

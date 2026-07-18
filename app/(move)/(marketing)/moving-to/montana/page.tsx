@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, MT</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function MontanaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Gallatin Corridor — Live City Guides
+              Gallatin Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bozeman and Belgrade — Bridger Bowl tech-and-outdoor mecca and airport-corridor
@@ -171,7 +163,7 @@ export default function MontanaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Flathead Corridor — Live City Guides
+              Flathead Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Kalispell and Whitefish — Glacier gateway living and Big Mountain ski luxury.
@@ -183,7 +175,7 @@ export default function MontanaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Yellowstone Corridor — Live City Guides
+              Yellowstone Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Billings and Livingston — eastern Montana economic powerhouse and Yellowstone River
@@ -196,7 +188,7 @@ export default function MontanaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Western Corridor — Live City Guides
+              Western Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Missoula and Hamilton — Clark Fork creative capital and Bitterroot ranch-country
@@ -209,7 +201,7 @@ export default function MontanaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Central Corridor — Live City Guides
+              Central Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Helena and Great Falls — state-capital stability and Missouri River budget value.

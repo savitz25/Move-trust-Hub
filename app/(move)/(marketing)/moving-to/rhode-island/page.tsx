@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, RI</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function RhodeIslandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Capital &amp; Urban — Live City Guides
+              Capital &amp; Urban — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Providence, Cranston, and Warwick — Brown-and-RISD cultural capital, Pawtuxet Village
@@ -171,7 +163,7 @@ export default function RhodeIslandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              East Bay Coastal — Live City Guides
+              East Bay Coastal — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Barrington, East Greenwich, and Bristol — prestigious schools, upscale Main Street
@@ -184,7 +176,7 @@ export default function RhodeIslandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              South County &amp; Newport — Live City Guides
+              South County &amp; Newport — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               North Kingstown and Newport — Wickford harbor villages and world-famous Gilded Age
@@ -197,7 +189,7 @@ export default function RhodeIslandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Northern Suburbs — Live City Guides
+              Northern Suburbs — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Cumberland and Lincoln — Massachusetts-border commuter growth and peaceful

@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, MD</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function MarylandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Montgomery Metro — Live City Guides
+              Montgomery Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bethesda, Rockville, and Silver Spring — NIH corridor employment,
@@ -171,7 +163,7 @@ export default function MarylandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Howard County — Live City Guides
+              Howard County — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Columbia and Ellicott City — master-planned village centers,
@@ -184,7 +176,7 @@ export default function MarylandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Chesapeake Waterfront — Live City Guides
+              Chesapeake Waterfront — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Annapolis and Severna Park — Naval Academy employment, Ego Alley sailing,
@@ -197,7 +189,7 @@ export default function MarylandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Baltimore Urban — Live City Guide
+              Baltimore Urban — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Baltimore — Fells Point cobblestones, Canton rowhouses, and Federal Hill
@@ -210,7 +202,7 @@ export default function MarylandClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Frederick & Eastern Shore — Live City Guides
+              Frederick & Eastern Shore — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Frederick and Easton — Carroll Creek mountain-town revival and Talbot County

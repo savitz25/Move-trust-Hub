@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, ID</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,10 +150,10 @@ export default function IdahoClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Treasure Valley — Live City Guides
+              Treasure Valley — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
-              Four production-ready hubs covering Boise, Meridian, Eagle, and the
+              City guides covering Boise, Meridian, Eagle, and the
               affordable Nampa–Caldwell corridor — Idaho&apos;s highest-intent inbound
               market driven by California and Pacific Northwest outmigration.
             </p>
@@ -172,7 +164,7 @@ export default function IdahoClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Northern Panhandle — Live City Guides
+              Northern Panhandle — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Lakeside Coeur d&apos;Alene and Sandpoint on Lake Pend Oreille — popular
@@ -186,7 +178,7 @@ export default function IdahoClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Eastern &amp; Southern Idaho — Live City Guides
+              Eastern &amp; Southern Idaho — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Idaho Falls and Twin Falls — economic resilience, national-park gateway

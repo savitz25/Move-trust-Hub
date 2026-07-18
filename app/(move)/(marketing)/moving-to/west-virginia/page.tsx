@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, WV</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function WestVirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Eastern Panhandle — Live City Guides
+              Eastern Panhandle — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Martinsburg, Charles Town, Ranson, and Shepherdstown — West Virginia&apos;s fastest-growing
@@ -171,7 +163,7 @@ export default function WestVirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              North &amp; University Corridor — Live City Guides
+              North &amp; University Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Morgantown and Bridgeport — WVU research energy, healthcare employment, and polished
@@ -184,7 +176,7 @@ export default function WestVirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Central &amp; Kanawha Valley — Live City Guides
+              Central &amp; Kanawha Valley — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Charleston and Hurricane &amp; Teays Valley — state-capital government and healthcare jobs
@@ -197,7 +189,7 @@ export default function WestVirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Mountains &amp; Lifestyle — Live City Guides
+              Mountains &amp; Lifestyle — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Lewisburg and Elkins — arts-forward Greenbrier Valley living and affordable Appalachian

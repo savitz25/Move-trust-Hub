@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, IL</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function IllinoisClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Chicagoland Urban — Live City Guide
+              Chicagoland Urban — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Chicago — America&apos;s third-largest city with Loop high-rises, Lincoln Park
@@ -171,7 +163,7 @@ export default function IllinoisClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Premier Northwest — Live City Guides
+              Premier Northwest — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Buffalo Grove, Naperville, Arlington Heights, and Palatine — #1-ranked Illinois
@@ -185,7 +177,7 @@ export default function IllinoisClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Corporate Transit — Live City Guides
+              Corporate Transit — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Schaumburg, Des Plaines, and Skokie — Fortune 500 office density, O&apos;Hare transit
@@ -198,7 +190,7 @@ export default function IllinoisClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Fox Valley Southwest — Live City Guides
+              Fox Valley Southwest — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bolingbrook and Elgin — master-planned Will County communities and affordable Fox
@@ -211,7 +203,7 @@ export default function IllinoisClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Downstate Central — Live City Guide
+              Downstate Central — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bloomington — resilient McLean County hub with State Farm headquarters and Illinois

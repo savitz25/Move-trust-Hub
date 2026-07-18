@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, MS</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function MississippiClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Gulf Coast — Live City Guides
+              Gulf Coast — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Gulfport and Ocean Springs — Mississippi&apos;s #1 coastal city with port-sector
@@ -172,7 +164,7 @@ export default function MississippiClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Jackson Metro — Live City Guides
+              Jackson Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Madison, Flowood, Brandon, Ridgeland, and Jackson — affluent A+ school suburbs,
@@ -186,7 +178,7 @@ export default function MississippiClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Hub Cities — Live City Guides
+              Hub Cities — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Hattiesburg and Oxford — Hub City university economy and sophisticated Ole Miss
@@ -199,7 +191,7 @@ export default function MississippiClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Border Growth — Live City Guide
+              Border Growth — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Olive Branch — fastest-growing Memphis-border boomtown with low taxes and suburban

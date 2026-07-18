@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, PA</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function PennsylvaniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Western Pennsylvania — Live City Guides
+              Western Pennsylvania — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Pittsburgh, Erie, and Johnstown — tech revival, Great Lakes waterfront, and among the
@@ -171,7 +163,7 @@ export default function PennsylvaniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Allegheny Mountains — Live City Guides
+              Allegheny Mountains — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Altoona — budget-friendly mountain living with Allegheny Mountains outdoor access.
@@ -183,7 +175,7 @@ export default function PennsylvaniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Lehigh &amp; Northeast — Live City Guides
+              Lehigh &amp; Northeast — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bethlehem and Scranton — Lehigh Valley innovation and historic Electric City
@@ -196,7 +188,7 @@ export default function PennsylvaniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Central Pennsylvania — Live City Guides
+              Central Pennsylvania — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Lancaster, Chambersburg, State College, and Williamsport — arts-and-farmland charm,

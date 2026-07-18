@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, WA</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function WashingtonClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Puget Sound — Live City Guides
+              Puget Sound — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Seattle, Bellevue, Redmond, Tacoma, and Shoreline — resurgent urban core, Eastside tech
@@ -172,7 +164,7 @@ export default function WashingtonClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              North Sound & Southwest — Live City Guides
+              North Sound & Southwest — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Sammamish, Marysville, and Vancouver — Lake Sammamish family king, Smokey Point North
@@ -185,7 +177,7 @@ export default function WashingtonClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Inland Washington — Live City Guides
+              Inland Washington — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Spokane Valley and Pasco (Tri-Cities) — Inland Northwest bargain living and sun-drenched

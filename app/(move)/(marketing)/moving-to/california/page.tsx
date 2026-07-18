@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, CA</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function CaliforniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Sacramento &amp; Greater Sacramento — Live City Guides
+              Sacramento &amp; Greater Sacramento — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               State capital tech and government employment, American River lifestyle, and Bay Area
@@ -171,7 +163,7 @@ export default function CaliforniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Central Valley — Live City Guides
+              Central Valley — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bakersfield, Fresno, Stockton, and Modesto — California&apos;s most affordable inland
@@ -184,7 +176,7 @@ export default function CaliforniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Affordable Southern California — Live City Guides
+              Affordable Southern California — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Inland Empire, San Diego North County, Ventura/Oxnard, and Antelope Valley — SoCal
@@ -197,7 +189,7 @@ export default function CaliforniaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Northern California — Live City Guides
+              Northern California — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Redding and Shasta County — outdoor gateway living and healthcare employment at costs

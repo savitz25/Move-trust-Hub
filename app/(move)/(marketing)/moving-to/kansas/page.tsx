@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, KS</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function KansasClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Johnson County — Live City Guides
+              Johnson County — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Overland Park, Olathe, Lenexa, Leawood, and Shawnee — Blue Valley schools,
@@ -171,7 +163,7 @@ export default function KansasClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              University Corridor — Live City Guides
+              University Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Lawrence and Manhattan — KU Mass Street culture, KSU Little Apple energy,
@@ -184,7 +176,7 @@ export default function KansasClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Aviation & Wichita Metro — Live City Guides
+              Aviation & Wichita Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Wichita and Andover — Air Capital aerospace employment, Old Town loft culture,
@@ -197,7 +189,7 @@ export default function KansasClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              State Capital — Live City Guides
+              State Capital — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Topeka — government employment stability, revitalized downtown, and

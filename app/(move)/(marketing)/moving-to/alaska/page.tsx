@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, AK</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function AlaskaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Anchorage Metro &amp; Mat-Su — Live City Guides
+              Anchorage Metro &amp; Mat-Su — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Anchorage, Wasilla, and Palmer — largest-city hub employment, fastest-growing Mat-Su
@@ -171,7 +163,7 @@ export default function AlaskaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Interior Alaska — Live City Guide
+              Interior Alaska — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Fairbanks — university culture, Northern Lights lifestyle, and Interior affordability.
@@ -183,7 +175,7 @@ export default function AlaskaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Southeast Island Communities — Live City Guides
+              Southeast Island Communities — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Juneau, Sitka, and Ketchikan — state capital government, safest maritime heritage,
@@ -196,7 +188,7 @@ export default function AlaskaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Kenai Peninsula — Live City Guides
+              Kenai Peninsula — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Soldotna, Kenai, and Homer — Kenai River recreation, fishing and petrochemical

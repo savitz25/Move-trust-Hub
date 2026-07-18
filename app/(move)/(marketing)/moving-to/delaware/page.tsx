@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, DE</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function DelawareClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Northern Corporate — Live City Guides
+              Northern Corporate — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Wilmington, Newark, and Hockessin — Christina Riverfront revival,
@@ -171,7 +163,7 @@ export default function DelawareClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Route 1 Growth — Live City Guides
+              Route 1 Growth — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Middletown and Smyrna — Appoquinimink school prestige and Kent County
@@ -184,7 +176,7 @@ export default function DelawareClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Capital & Central — Live City Guides
+              Capital & Central — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Dover and Milford — state capital stability, Air Force Base rotations,
@@ -197,7 +189,7 @@ export default function DelawareClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Southern Shore — Live City Guides
+              Southern Shore — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Lewes, Rehoboth Beach, and Milton — Cape Henlopen quiet luxury, boardwalk

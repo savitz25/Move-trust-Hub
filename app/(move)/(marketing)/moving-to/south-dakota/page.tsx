@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, SD</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function SouthDakotaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Sioux Falls Metro — Live City Guides
+              Sioux Falls Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Sioux Falls, Harrisburg, Brandon, and Tea — economic engine living, explosive
@@ -171,7 +163,7 @@ export default function SouthDakotaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Black Hills & Western — Live City Guides
+              Black Hills & Western — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Rapid City, Spearfish, and Box Elder — Mount Rushmore gateway adventure, alpine
@@ -184,7 +176,7 @@ export default function SouthDakotaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Eastern Corridor — Live City Guides
+              Eastern Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Brookings, Watertown, and Vermillion — SDSU brainy college culture, Lake Kampeska

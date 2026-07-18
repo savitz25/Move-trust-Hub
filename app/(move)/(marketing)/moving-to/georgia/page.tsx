@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, GA</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function GeorgiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              North Fulton Elite Suburbs — Live City Guides
+              North Fulton Elite Suburbs — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Johns Creek, Alpharetta, and Roswell — #1 in Georgia prestige, Technology City of the
@@ -171,7 +163,7 @@ export default function GeorgiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Metro Atlanta — Live City Guides
+              Metro Atlanta — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Atlanta, Decatur, Smyrna, and Cumming — BeltLine cultural capital, MARTA walkability,
@@ -184,7 +176,7 @@ export default function GeorgiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Coastal Growth — Live City Guides
+              Coastal Growth — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Savannah and Pooler — historic port tourism, logistics expansion, and Hyundai EV plant
@@ -197,7 +189,7 @@ export default function GeorgiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Heartland — Live City Guides
+              Heartland — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Warner Robins — Robins Air Force Base defense-aerospace stability and Houston County

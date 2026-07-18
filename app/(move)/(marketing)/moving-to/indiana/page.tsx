@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, IN</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function IndianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Hamilton County Elite Suburbs — Live City Guides
+              Hamilton County Elite Suburbs — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Carmel, Fishers, and Noblesville — #1 and #2 ranked America suburbs, master-planned
@@ -171,7 +163,7 @@ export default function IndianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Indianapolis Metro — Live City Guides
+              Indianapolis Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Indianapolis and Greenwood — capital-city tech boom, sports culture, and southside
@@ -184,7 +176,7 @@ export default function IndianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Heartland Cities — Live City Guides
+              Heartland Cities — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Columbus, Fort Wayne, and Evansville — Cummins corporate stability, riverfront
@@ -197,7 +189,7 @@ export default function IndianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              College Towns — Live City Guides
+              College Towns — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bloomington and Muncie — Indiana University vibrancy and Ball State affordable

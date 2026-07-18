@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, LA</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function LouisianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Greater New Orleans — Live City Guides
+              Greater New Orleans — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Metairie and Kenner — Louisiana&apos;s #1 inbound suburb, family-first Jefferson
@@ -171,7 +163,7 @@ export default function LouisianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Northshore — Live City Guides
+              Northshore — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Slidell and Mandeville — peaceful Lake Pontchartrain nature communities and affluent
@@ -184,7 +176,7 @@ export default function LouisianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Acadiana &amp; Southwest — Live City Guides
+              Acadiana &amp; Southwest — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Lafayette, Lake Charles, and Houma — Cajun cultural capital, industrial energy boom,
@@ -197,7 +189,7 @@ export default function LouisianaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Capital &amp; North — Live City Guides
+              Capital &amp; North — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Baton Rouge, Prairieville, and Bossier City — state capital and LSU employment,

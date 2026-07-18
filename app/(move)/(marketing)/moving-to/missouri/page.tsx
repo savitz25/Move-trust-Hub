@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, MO</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function MissouriClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Kansas City Metro — Live City Guides
+              Kansas City Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Kansas City, Lee&apos;s Summit, and Liberty — cultural riverfront revival,
@@ -171,7 +163,7 @@ export default function MissouriClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              St. Louis Metro — Live City Guides
+              St. Louis Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               O&apos;Fallon, Chesterfield, St. Charles, and St. Louis — master-planned families,
@@ -184,7 +176,7 @@ export default function MissouriClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Central Missouri — Live City Guide
+              Central Missouri — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Columbia — Mizzou intellectual culture and Farmers Market high-value consensus.
@@ -196,7 +188,7 @@ export default function MissouriClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Ozark Corridors — Live City Guides
+              Ozark Corridors — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Springfield and Republic/Nixa — Ozark urban affordability and explosive southwest growth.

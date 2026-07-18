@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, AL</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function AlabamaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              North Alabama — Live City Guides
+              North Alabama — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Huntsville, Madison, and Athens — Rocket City defense and aerospace corridor with
@@ -171,7 +163,7 @@ export default function AlabamaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Coastal South — Live City Guides
+              Coastal South — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Foley, Daphne, and Fairhope &amp; Gulf Shores — Baldwin County Gulf Coast lifestyle
@@ -184,7 +176,7 @@ export default function AlabamaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Central &amp; East Alabama — Live City Guides
+              Central &amp; East Alabama — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Hoover and Auburn &amp; Opelika — upscale Birmingham-metro master-planned living and

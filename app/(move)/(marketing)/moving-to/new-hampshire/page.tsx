@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, NH</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function NewHampshireClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Southern Border — Live City Guides
+              Southern Border — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Nashua, Bedford, Merrimack, and Amherst — Massachusetts-border commuter value, top
@@ -171,7 +163,7 @@ export default function NewHampshireClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Manchester Metro — Live City Guide
+              Manchester Metro — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Manchester — New Hampshire&apos;s largest city with Millyard revitalization, tech and
@@ -184,7 +176,7 @@ export default function NewHampshireClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Seacoast — Live City Guides
+              Seacoast — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Portsmouth and Dover — upscale historic seaport prestige and fast-growing riverside
@@ -197,7 +189,7 @@ export default function NewHampshireClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Capital Region — Live City Guide
+              Capital Region — City Guide
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Concord — walkable state capital with government employment stability and Merrimack
@@ -210,7 +202,7 @@ export default function NewHampshireClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Upper Valley — Live City Guides
+              Upper Valley — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Hanover and Lebanon — Dartmouth College intellectual enclave and Dartmouth-Hitchcock

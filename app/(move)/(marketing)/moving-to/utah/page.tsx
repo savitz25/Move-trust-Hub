@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, UT</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function UtahClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Salt Lake Metro — Live City Guides
+              Salt Lake Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Salt Lake City, Ogden, Farmington, and Draper — urban basecamp living, historic
@@ -171,7 +163,7 @@ export default function UtahClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Silicon Slopes — Live City Guides
+              Silicon Slopes — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Lehi, Provo & Orem, American Fork, and Saratoga Springs & Eagle Mountain — tech
@@ -185,7 +177,7 @@ export default function UtahClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Resort & Southern — Live City Guides
+              Resort & Southern — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Park City and St. George — Sundance alpine luxury and sun-drenched desert oasis

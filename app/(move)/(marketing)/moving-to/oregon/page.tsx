@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, OR</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function OregonClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Portland Metro — Live City Guides
+              Portland Metro — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Portland&apos;s creative urban neighborhoods and Washington County&apos;s Silicon Forest
@@ -172,7 +164,7 @@ export default function OregonClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Willamette Valley — Live City Guides
+              Willamette Valley — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Eugene, Corvallis, and Salem — university and government employment anchors with
@@ -185,7 +177,7 @@ export default function OregonClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Central Oregon — Live City Guides
+              Central Oregon — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Bend — the outdoor capital with Mt. Bachelor skiing, Deschutes River recreation, craft

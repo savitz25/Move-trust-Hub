@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, NJ</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function NewJerseyClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Hudson Waterfront — Live City Guides
+              Hudson Waterfront — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Jersey City, Hoboken, Bayonne, and Union City — Manhattan-adjacent urban living with
@@ -171,7 +163,7 @@ export default function NewJerseyClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              North Jersey Gateway — Live City Guides
+              North Jersey Gateway — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Clifton and Passaic &amp; Elizabeth — suburban parks and schools with regional transit
@@ -184,7 +176,7 @@ export default function NewJerseyClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Upscale Suburbs — Live City Guides
+              Upscale Suburbs — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Morristown, Montclair, and Princeton — top-ranked suburbs with Midtown Direct trains,
@@ -197,7 +189,7 @@ export default function NewJerseyClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              South Jersey — Live City Guides
+              South Jersey — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Vineland — affordable Cumberland County living with space, farm-to-table appeal, and

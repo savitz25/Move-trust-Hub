@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, WI</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function WisconsinClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Madison Corridor — Live City Guides
+              Madison Corridor — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Madison, Verona, and Sun Prairie — vibrant consensus king, Epic tech sandbox, and
@@ -171,7 +163,7 @@ export default function WisconsinClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Milwaukee & Lake Country — Live City Guides
+              Milwaukee & Lake Country — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Brookfield, Oconomowoc, and Whitefish Bay — premium West suburb polish, Lac La Belle
@@ -187,7 +179,7 @@ export default function WisconsinClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Fox Valley & Northeast — Live City Guides
+              Fox Valley & Northeast — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Appleton and Green Bay — Fox Valley powerhouse culture and affordable Titletown
@@ -200,7 +192,7 @@ export default function WisconsinClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Western Wisconsin — Live City Guides
+              Western Wisconsin — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Eau Claire and La Crosse — creative indie renaissance and scenic Mississippi bluff

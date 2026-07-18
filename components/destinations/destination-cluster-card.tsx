@@ -68,17 +68,21 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
   const path = getMarketPath(market);
   const hasParentHubPage =
     market.isClusterParent && LIVE_CLUSTER_PARENT_SLUGS.has(market.slug);
-  const isCityHubLive = publishedSlugs.has(market.slug);
+  const isCityHubPublished = publishedSlugs.has(market.slug);
   const subCities = market.isClusterParent ? getSortedClusterMarkets(market.slug) : [];
-  const hasLiveSubCity = subCities.some((sub) => publishedSlugs.has(sub.slug));
+  const hasPublishedSubCity = subCities.some((sub) => publishedSlugs.has(sub.slug));
   const isClusterActive =
-    isCityHubLive || hasParentHubPage || (market.isClusterParent && hasLiveSubCity);
+    isCityHubPublished || hasParentHubPage || (market.isClusterParent && hasPublishedSubCity);
   const clusterCtaLabel =
-    isCityHubLive ? 'View guide' : hasParentHubPage || hasLiveSubCity ? 'View cluster' : 'View guide';
+    isCityHubPublished
+      ? 'View guide'
+      : hasParentHubPage || hasPublishedSubCity
+        ? 'Browse city guides'
+        : 'View guide';
 
   return (
     <div className="rounded-xl border bg-card p-5 hover:border-primary/40 transition-colors">
-      <div className="flex items-start justify-between gap-2 mb-2">
+      <div className="mb-2">
         <h2 className="font-semibold text-lg">
           {isClusterActive ? (
             <Link href={path} className="hover:text-primary transition-colors">
@@ -92,15 +96,6 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
             </span>
           )}
         </h2>
-        {isClusterActive ? (
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-            {isCityHubLive ? 'Live' : 'Partial'}
-          </span>
-        ) : (
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-            Soon
-          </span>
-        )}
       </div>
 
       <p className="text-sm text-muted-foreground mb-3">{market.inboundGrowthStat}</p>
@@ -118,32 +113,29 @@ export function DestinationClusterCard({ market, publishedSlugs }: Props) {
       {subCities.length > 0 && (
         <ul
           className="mt-3 pt-3 border-t text-xs space-y-1.5"
-          aria-label={`${market.displayName} sub-city guides`}
+          aria-label={`${market.displayName} city guides`}
         >
           {subCities.map((sub) => {
             const subPath = getMarketPath(sub);
-            const subLive = publishedSlugs.has(sub.slug);
+            const subPublished = publishedSlugs.has(sub.slug);
 
             return (
               <li key={sub.slug}>
-                {subLive ? (
+                {subPublished ? (
                   <Link
                     href={subPath}
                     prefetch={false}
                     className="text-primary hover:underline font-medium"
-                    aria-label={`${sub.displayName}, ${sub.stateCode} — live city guide`}
+                    aria-label={`${sub.displayName}, ${sub.stateCode} city guide`}
                   >
                     {sub.displayName}
                   </Link>
                 ) : (
                   <span
                     className="text-muted-foreground"
-                    aria-label={`${sub.displayName}, ${sub.stateCode} — city guide coming soon`}
+                    aria-label={`${sub.displayName}, ${sub.stateCode}`}
                   >
                     {sub.displayName}
-                    <span className="text-[10px] uppercase tracking-wide ml-1.5 text-muted-foreground/70">
-                      (soon)
-                    </span>
                   </span>
                 )}
               </li>

@@ -67,15 +67,7 @@ function CorridorCityGrid({
                   <span>{city.displayName}, VA</span>
                 )}
               </h3>
-              {isLive ? (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 shrink-0">
-                  Live
-                </span>
-              ) : (
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground shrink-0">
-                  Soon
-                </span>
-              )}
+              
             </div>
             <p className="text-sm text-muted-foreground mb-1">ZIP {city.zip}</p>
             <p className="text-sm text-muted-foreground mb-4">{city.tagline}</p>
@@ -158,7 +150,7 @@ export default function VirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Northern Virginia — Live City Guides
+              Northern Virginia — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Arlington, Alexandria, Leesburg, Fairfax, and Winchester — the DC-metro corridor driving
@@ -172,7 +164,7 @@ export default function VirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              I-95 Central Virginia — Live City Guides
+              I-95 Central Virginia — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Fredericksburg, Culpeper, and Richmond — commuter-belt growth for households priced out
@@ -186,7 +178,7 @@ export default function VirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Hampton Roads — Live City Guides
+              Hampton Roads — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Suffolk and Chesapeake — fastest-growing Hampton Roads corridor with newer housing,
@@ -199,7 +191,7 @@ export default function VirginiaClusterPage() {
         <section className="py-12 md:py-16 border-b">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-              Mountains &amp; College Towns — Live City Guides
+              Mountains &amp; College Towns — City Guides
             </h2>
             <p className="text-muted-foreground mb-8 max-w-3xl">
               Charlottesville and Roanoke — UVA culture, Blue Ridge recreation, and affordable valley
