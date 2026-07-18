@@ -7,10 +7,7 @@ import { DestinationMapSnippet } from '@/components/destinations/destination-map
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
 import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
 import { DestinationCostVisual } from '@/components/destinations/destination-cost-visual';
-import {
-  countMoversForMarketAsync,
-  getMoversForMarketAsync,
-} from '@/lib/destinations/get-movers-for-market-async';
+import { getMoversForMarketAsync } from '@/lib/destinations/get-movers-for-market-async';
 import { JsonLd } from '@/lib/seo/json-ld';
 import { buildCityHubSchemaGraph } from '@/lib/seo/build-city-hub-schema';
 import { SITE_URL } from '@/lib/seo/site-metadata';
@@ -39,8 +36,10 @@ type Props = {
 export async function CityHubTemplate({ market, content }: Props) {
   const destinationLabel = `${market.displayName}, ${market.stateCode}`;
   const canonical = `${SITE_URL}${content.seo.canonicalPath}`;
-  const localMovers = await getMoversForMarketAsync(market, 6);
-  const totalMovers = await countMoversForMarketAsync(market);
+  // Single market fetch — avoid double county/DB work during SSG of thousands of city hubs.
+  const marketMovers = await getMoversForMarketAsync(market, 100);
+  const localMovers = marketMovers.slice(0, 6);
+  const totalMovers = marketMovers.length;
   const featuredCompanies = (
     await Promise.all(
       content.featuredInterstateSlugs.map((slug) => getCompanyBySlugAsync(slug))

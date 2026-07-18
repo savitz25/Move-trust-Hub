@@ -10,15 +10,19 @@ import { evaluateLenderClusterIndexability } from '@/lib/hub/indexability';
 import { buildHubMetadata } from '@/lib/hub/metadata';
 import { getEnrichedLendersByCounty } from '@/lib/lender/enrichment/get-enriched';
 import { LenderDirectoryFilters } from '@/components/lender/lender-directory-filters';
+import { ssgParams } from '@/lib/ssg/ssg-params';
 import { Suspense } from 'react';
 
 export const dynamic = 'force-static';
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllClusterParams().map(({ state, cluster }) => ({
-    state,
-    county: cluster,
-  }));
+  return ssgParams(
+    getAllClusterParams().map(({ state, cluster }) => ({
+      state,
+      county: cluster,
+    }))
+  );
 }
 
 function titleCase(slug: string): string {

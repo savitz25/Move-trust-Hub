@@ -4,15 +4,17 @@ import { CityHubTemplate } from '@/components/destinations/city-hub-template';
 import { getCityHubContent, getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import { getMarketBySlug } from '@/lib/destinations/markets';
 import { buildCityHubMetadata } from '@/lib/seo/destination-seo';
+import { ssgParams } from '@/lib/ssg/ssg-params';
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamic = 'force-static';
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return getPublishedCityHubSlugs()
+  return ssgParams(getPublishedCityHubSlugs()
     .filter((slug) => getMarketBySlug(slug)?.clusterParent === 'connecticut')
-    .map((slug) => ({ slug }));
+    .map((slug) => ({ slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

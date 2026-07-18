@@ -4,11 +4,13 @@ import { getHubBySlug, getAllHubParams } from '@/lib/insurance/hubs/registry';
 import { HubPageView } from '@/components/insurance/hub-page-view';
 import { evaluateInsuranceHubIndexability } from '@/lib/hub/indexability';
 import { buildHubMetadata } from '@/lib/hub/metadata';
+import { ssgParams } from '@/lib/ssg/ssg-params';
 
 export const dynamic = 'force-static';
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return getAllHubParams();
+  return ssgParams(getAllHubParams());
 }
 
 export async function generateMetadata({

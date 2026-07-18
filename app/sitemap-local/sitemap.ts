@@ -54,7 +54,7 @@ import {
   TEXAS_COUNTY_CONTENT_UPDATED,
 } from '@/components/local-movers/county-editorial-trust';
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
-import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
+import { getMoversForCounty } from '@/lib/local-movers/index';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { localStates } from '@/lib/local-movers/states';
@@ -656,16 +656,13 @@ export default async function sitemap({
 }: {
   id: string;
 }): Promise<MetadataRoute.Sitemap> {
+  // Sync seed catalog only — do not hit Supabase while generating ~50 state sitemaps at build.
   const counties = getCountiesForState(id);
-  const indexableCounties = (
-    await Promise.all(
-      counties.map(async (county) => {
-        const result = await getMoversForCountyAsync(id, county.slug);
-        const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
-        return decision.tier === 'index' ? county : null;
-      })
-    )
-  ).filter((county): county is NonNullable<typeof county> => Boolean(county));
+  const indexableCounties = counties.filter((county) => {
+    const result = getMoversForCounty(id, county.slug);
+    const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
+    return decision.tier === 'index';
+  });
 
   const lastModified =
     id === 'california'

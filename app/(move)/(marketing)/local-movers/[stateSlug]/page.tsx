@@ -22,13 +22,15 @@ import {
   pickTier1QuickLinks,
 } from '@/lib/local-movers/state-hub-helpers';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
+import { ssgParams } from '@/lib/ssg/ssg-params';
 
 type Props = { params: Promise<{ stateSlug: string }> };
 
 export const dynamic = 'force-static';
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return localStates.map((state) => ({ stateSlug: state.slug }));
+  return ssgParams(localStates.map((state) => ({ stateSlug: state.slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

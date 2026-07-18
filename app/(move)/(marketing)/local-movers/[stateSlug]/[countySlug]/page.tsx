@@ -183,6 +183,7 @@ import {
   buildMoversSectionHeading,
 } from '@/lib/local-movers/county-display-copy';
 import {
+import { ssgParams } from '@/lib/ssg/ssg-params';
   buildCountyCostGuide,
   buildCountyFaqItems,
   buildCountyH1,
@@ -200,10 +201,10 @@ export const dynamic = 'force-static';
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return getAllCountyParams().map(({ stateSlug, countySlug }) => ({
+  return ssgParams(getAllCountyParams().map(({ stateSlug, countySlug }) => ({
     stateSlug,
     countySlug,
-  }));
+  })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

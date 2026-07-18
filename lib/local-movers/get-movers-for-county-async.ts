@@ -6,6 +6,7 @@ import {
   hasExplicitCountyAssignment,
 } from '@/lib/local-movers/index';
 import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
+import { isProductionBuildPhase } from '@/lib/ssg/ssg-params';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
 const MAX_MOVERS_PER_COUNTY = 10;
@@ -17,6 +18,12 @@ export async function getMoversForCountyAsync(
 ): Promise<{ county: LocalCounty; movers: LocalMover[]; isRegionalFallback: boolean } | null> {
   const base = getMoversForCounty(stateSlug, countySlug);
   if (!base) return null;
+
+  // Bulk SSG + live Supabase cannot coexist on Vercel (thousands of concurrent calls).
+  // Seed catalog is enough for build; runtime / on-demand pages merge approved movers.
+  if (isProductionBuildPhase() && process.env.BULK_SSG !== '1') {
+    return base;
+  }
 
   const approved = await getApprovedMoversForCounty(stateSlug, countySlug);
   if (!approved.length) return base;

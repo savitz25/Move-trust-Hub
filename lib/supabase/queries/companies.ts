@@ -158,10 +158,11 @@ function mapRow(row: Record<string, unknown>): Company {
 }
 
 /**
- * When production DB lags migrations (e.g. missing public_scrape_data), prefer core
- * projection for the rest of the process so SSG doesn't double-fail on every page.
+ * Default to core columns — production currently lacks public_scrape_data.
+ * Set COMPANY_LIST_ENRICHMENT=1 after migrations to include scrape/verification blobs.
  */
-let companyListSelectMode: 'full' | 'core' = 'full';
+let companyListSelectMode: 'full' | 'core' =
+  process.env.COMPANY_LIST_ENRICHMENT === '1' ? 'full' : 'core';
 
 const COMPANIES_FETCH_TIMEOUT_MS = 12_000;
 

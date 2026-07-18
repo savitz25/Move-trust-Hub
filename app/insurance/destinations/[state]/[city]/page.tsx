@@ -11,17 +11,22 @@ import { buildMetadata } from '@/lib/insurance/seo/metadata';
 import { ProviderCard } from '@/components/insurance/provider-card';
 import { Card, CardContent } from '@/components/insurance/ui/card';
 import { Button } from '@/components/insurance/ui/button';
+import { ssgParams } from '@/lib/ssg/ssg-params';
 
 interface CityPageProps {
   params: Promise<{ state: string; city: string }>;
 }
 
+export const dynamicParams = true;
+
 export function generateStaticParams() {
-  return DESTINATION_STATES.flatMap((state) =>
-    state.cities.map((city) => ({
-      state: state.slug,
-      city: city.slug,
-    }))
+  return ssgParams(
+    DESTINATION_STATES.flatMap((state) =>
+      state.cities.map((city) => ({
+        state: state.slug,
+        city: city.slug,
+      }))
+    )
   );
 }
 
