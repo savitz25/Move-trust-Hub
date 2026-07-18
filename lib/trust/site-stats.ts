@@ -4,11 +4,10 @@
  */
 import 'server-only';
 
-import { countAttributedReviewsAcrossCompanies } from '@/lib/trust/attributed-review-count';
+import { getLiveAttributedReviewCount } from '@/lib/trust/attributed-review-count';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { countAttributableReviews } from '@/lib/trust/verified-reviews';
-import { getLiveAttributedReviewCount } from '@/lib/trust/attributed-review-count';
 import { getVerifiedDirectoryCompaniesSeed } from '@/lib/trust/verified-directory-seed';
 
 export {
@@ -79,9 +78,11 @@ export function getDirectoryTrustStats(): DirectoryTrustStats {
  */
 export async function getDirectoryTrustStatsAsync(): Promise<DirectoryTrustStats> {
   try {
-    const companies = (await getUnifiedDirectoryCompanies()).filter(isPubliclyDisplayableCompany);
+    const [companies, attributableReviews] = await Promise.all([
+      getUnifiedDirectoryCompanies().then((rows) => rows.filter(isPubliclyDisplayableCompany)),
+      getLiveAttributedReviewCount(),
+    ]);
     if (companies.length > 0) {
-      const attributableReviews = countAttributedReviewsAcrossCompanies(companies);
       return buildStatsFromCompanies(companies, attributableReviews);
     }
   } catch {
