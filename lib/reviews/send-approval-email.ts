@@ -97,14 +97,14 @@ export async function resolveReviewProfileUrl(movingCompanyId: string): Promise<
   if (directorySlug) {
     return {
       companyName,
-      profileUrl: `${SITE_URL}/companies/${directorySlug}#customer-reviews`,
+      profileUrl: `${SITE_URL}/companies/${directorySlug}#community-reviews`,
     };
   }
 
   if (moving.slug) {
     return {
       companyName,
-      profileUrl: `${SITE_URL}/company/${moving.slug}#customer-reviews`,
+      profileUrl: `${SITE_URL}/company/${moving.slug}#community-reviews`,
     };
   }
 
