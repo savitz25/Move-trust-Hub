@@ -152,3 +152,22 @@ export function lookupCityCountyAlias(
   const key = `${norm(city)}|${stateCode.trim().toLowerCase()}`;
   return ALIASES[key] ?? null;
 }
+
+/** All offline city→county alias entries for place search indexing. */
+export function listCityCountyAliases(): Array<{
+  city: string;
+  stateCode: string;
+  countySlug: string;
+}> {
+  return Object.entries(ALIASES).map(([key, countySlug]) => {
+    const [city, stateCode] = key.split('|');
+    return {
+      city: city
+        .split(' ')
+        .map((w) => (w ? w[0]!.toUpperCase() + w.slice(1) : w))
+        .join(' '),
+      stateCode: stateCode!.toUpperCase(),
+      countySlug,
+    };
+  });
+}

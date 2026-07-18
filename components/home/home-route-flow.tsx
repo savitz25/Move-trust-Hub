@@ -23,13 +23,10 @@ import { navigateToCalculator } from '@/lib/moving-calculator/url-prefill';
 import { cn } from '@/lib/utils';
 import type { HomeRouteMover, HomeRouteResult } from '@/lib/home/resolve-route-from-zip';
 import type { Company } from '@/types';
-
-type ZipPlaceLabel = {
-  zip: string;
-  city: string;
-  state: string;
-  label: string;
-};
+import {
+  LocationPlaceInput,
+  type ConfirmedPlace,
+} from '@/components/location/location-place-input';
 
 type RouteResponse = HomeRouteResult & {
   drivingMiles?: number | null;
@@ -43,10 +40,6 @@ const PRESET_CHIPS: { id: MovePresetId; label: string; icon: string }[] = [
   { id: '3-bedroom', label: '3BR', icon: '🏡' },
   { id: '4-plus', label: 'Full house', icon: '🏘️' },
 ];
-
-function digitsOnly(value: string): string {
-  return value.replace(/\D/g, '').slice(0, 5);
-}
 
 function moverToCompanyStub(m: HomeRouteMover): Company {
   return {
@@ -88,72 +81,15 @@ function moverToCompanyStub(m: HomeRouteMover): Company {
   };
 }
 
-function ZipField({
-  id,
-  label,
-  placeholder,
-  value,
-  onChange,
-  place,
-  loading,
-  autoFocus,
-}: {
-  id: string;
-  label: string;
-  placeholder: string;
-  value: string;
-  onChange: (zip: string) => void;
-  place: ZipPlaceLabel | null;
-  loading: boolean;
-  autoFocus?: boolean;
-}) {
-  return (
-    <div className="relative flex-1 min-w-0">
-      <label htmlFor={id} className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-primary/80">
-        {label}
-      </label>
-      <div
-        className={cn(
-          'group relative rounded-2xl border-2 bg-white shadow-sm transition-all',
-          'focus-within:border-primary focus-within:shadow-md focus-within:ring-4 focus-within:ring-primary/15',
-          place ? 'border-emerald-300/80' : 'border-border/80'
-        )}
-      >
-        <div className="flex items-center gap-2 px-3 sm:px-4">
-          <MapPin
-            className={cn(
-              'h-5 w-5 shrink-0',
-              place ? 'text-emerald-600' : 'text-muted-foreground'
-            )}
-            aria-hidden
-          />
-          <input
-            id={id}
-            inputMode="numeric"
-            autoComplete="postal-code"
-            autoFocus={autoFocus}
-            maxLength={5}
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => onChange(digitsOnly(e.target.value))}
-            className="h-14 w-full bg-transparent text-lg font-semibold tracking-wide text-foreground outline-none placeholder:font-normal placeholder:text-muted-foreground/70 sm:h-16 sm:text-xl"
-            aria-describedby={place ? `${id}-hint` : undefined}
-          />
-          {loading ? (
-            <Loader2 className="h-5 w-5 shrink-0 animate-spin text-primary" aria-hidden />
-          ) : null}
-        </div>
-        {place ? (
-          <p
-            id={`${id}-hint`}
-            className="border-t border-emerald-100 bg-emerald-50/80 px-3 py-1.5 text-sm font-medium text-emerald-800 sm:px-4"
-          >
-            {place.label}
-          </p>
-        ) : null}
-      </div>
-    </div>
-  );
+function withToZip(href: string, toZip: string | null | undefined): string {
+  if (!toZip) return href;
+  try {
+    const url = new URL(href, 'https://www.movetrusthub.com');
+    url.searchParams.set('toZip', toZip);
+    return `${url.pathname}?${url.searchParams.toString()}`;
+  } catch {
+    return href;
+  }
 }
 
 type HomeRouteFlowProps = {
@@ -170,95 +106,23 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
     navigateToCalculator(href);
   }, []);
 
-  const [fromZip, setFromZip] = useState('');
-  const [toZip, setToZip] = useState('');
-  const [fromPlace, setFromPlace] = useState<ZipPlaceLabel | null>(null);
-  const [toPlace, setToPlace] = useState<ZipPlaceLabel | null>(null);
-  const [fromLoading, setFromLoading] = useState(false);
-  const [toLoading, setToLoading] = useState(false);
+  const [fromText, setFromText] = useState('');
+  const [toText, setToText] = useState('');
+  const [fromPlace, setFromPlace] = useState<ConfirmedPlace | null>(null);
+  const [toPlace, setToPlace] = useState<ConfirmedPlace | null>(null);
   const [routeLoading, setRouteLoading] = useState(false);
   const [route, setRoute] = useState<RouteResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selectedPreset, setSelectedPreset] = useState<MovePresetId | null>(null);
   const [showPresets, setShowPresets] = useState(false);
 
-  const fromAbort = useRef<AbortController | null>(null);
-  const toAbort = useRef<AbortController | null>(null);
   const routeAbort = useRef<AbortController | null>(null);
 
-  const lookupZip = useCallback(
-    async (
-      zip: string,
-      which: 'from' | 'to'
-    ): Promise<ZipPlaceLabel | null> => {
-      if (zip.length !== 5) return null;
-      const abort = new AbortController();
-      if (which === 'from') {
-        fromAbort.current?.abort();
-        fromAbort.current = abort;
-        setFromLoading(true);
-      } else {
-        toAbort.current?.abort();
-        toAbort.current = abort;
-        setToLoading(true);
-      }
-
-      try {
-        const res = await fetch(`/api/zip-lookup?zip=${zip}`, {
-          signal: abort.signal,
-          headers: { Accept: 'application/json' },
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'ZIP not found');
-        return {
-          zip: data.zip,
-          city: data.city,
-          state: data.state,
-          label: data.label,
-        };
-      } catch (err) {
-        if ((err as Error).name === 'AbortError') return null;
-        return null;
-      } finally {
-        if (which === 'from') setFromLoading(false);
-        else setToLoading(false);
-      }
-    },
-    []
-  );
-
+  // Enrich with top movers + calculator when we have a pickup ZIP
   useEffect(() => {
-    if (fromZip.length !== 5) {
-      setFromPlace(null);
-      return;
-    }
-    let cancelled = false;
-    void lookupZip(fromZip, 'from').then((place) => {
-      if (!cancelled) setFromPlace(place);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [fromZip, lookupZip]);
-
-  useEffect(() => {
-    if (toZip.length !== 5) {
-      setToPlace(null);
-      return;
-    }
-    let cancelled = false;
-    void lookupZip(toZip, 'to').then((place) => {
-      if (!cancelled) setToPlace(place);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [toZip, lookupZip]);
-
-  useEffect(() => {
-    if (fromZip.length !== 5) {
+    const fromZip = fromPlace?.zip;
+    if (!fromZip || fromZip.length !== 5) {
       setRoute(null);
-      setError(null);
       return;
     }
 
@@ -270,7 +134,8 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
       setError(null);
 
       const params = new URLSearchParams({ from: fromZip });
-      if (toZip.length === 5) params.set('to', toZip);
+      const toZip = toPlace?.zip;
+      if (toZip && toZip.length === 5) params.set('to', toZip);
 
       void fetch(`/api/home-route?${params}`, {
         signal: abort.signal,
@@ -283,28 +148,55 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
         })
         .catch((err: Error) => {
           if (err.name === 'AbortError') return;
+          // City/county resolve already succeeded — keep CTA usable without top-movers panel.
           setRoute(null);
-          setError(err.message || 'Could not resolve route');
+          setError(null);
         })
         .finally(() => setRouteLoading(false));
     }, 280);
 
     return () => window.clearTimeout(timer);
-  }, [fromZip, toZip]);
+  }, [fromPlace?.zip, toPlace?.zip]);
 
-  const ready = Boolean(fromPlace && fromZip.length === 5);
+  const ready = Boolean(fromPlace);
   const movers = route?.topMovers?.length ? route.topMovers : fallbackMovers;
 
-  const calculatorHref = useMemo(() => {
-    const base = route?.calculatorHref || '/moving-calculator';
-    if (!selectedPreset) return base;
-    const url = new URL(base, 'https://www.movetrusthub.com');
-    url.searchParams.set('preset', selectedPreset);
-    return `${url.pathname}?${url.searchParams.toString()}`;
-  }, [route?.calculatorHref, selectedPreset]);
+  const baseMoversHref = useMemo(() => {
+    if (route?.moversHref) return route.moversHref;
+    if (fromPlace?.moversHref) return fromPlace.moversHref;
+    return '/local-movers';
+  }, [route?.moversHref, fromPlace?.moversHref]);
 
-  const moversHref = route?.moversHref || '/companies';
-  const directoryHref = route?.directoryHref || '/companies';
+  const moversHref = withToZip(baseMoversHref, toPlace?.zip);
+
+  const calculatorHref = useMemo(() => {
+    if (route?.calculatorHref) {
+      const base = route.calculatorHref;
+      if (!selectedPreset) return base;
+      const url = new URL(base, 'https://www.movetrusthub.com');
+      url.searchParams.set('preset', selectedPreset);
+      return `${url.pathname}?${url.searchParams.toString()}`;
+    }
+
+    if (!fromPlace) return '/moving-calculator';
+    const params = new URLSearchParams();
+    if (fromPlace.zip) params.set('fromZip', fromPlace.zip);
+    params.set('fromCity', fromPlace.city);
+    params.set('fromState', fromPlace.stateCode);
+    if (toPlace?.zip) params.set('toZip', toPlace.zip);
+    if (toPlace) {
+      params.set('toCity', toPlace.city);
+      params.set('toState', toPlace.stateCode);
+    }
+    if (selectedPreset) params.set('preset', selectedPreset);
+    return `/moving-calculator?${params.toString()}`;
+  }, [route?.calculatorHref, selectedPreset, fromPlace, toPlace]);
+
+  const directoryHref =
+    route?.directoryHref ||
+    (fromPlace
+      ? `/companies?search=${encodeURIComponent(fromPlace.city)}`
+      : '/companies');
 
   const goMovers = () => {
     router.push(moversHref);
@@ -319,29 +211,28 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
 
   const pickPreset = (id: MovePresetId) => {
     setSelectedPreset(id);
-    const url = new URL(route?.calculatorHref || '/moving-calculator', 'https://www.movetrusthub.com');
+    const url = new URL(calculatorHref, 'https://www.movetrusthub.com');
     url.searchParams.set('preset', id);
     goCalculator(`${url.pathname}?${url.searchParams.toString()}`);
   };
 
   return (
     <div className="w-full">
-      {/* ZIP inputs */}
       <div className="rounded-3xl border border-white/60 bg-white/90 p-4 shadow-xl shadow-primary/10 backdrop-blur-md sm:p-6 md:p-8">
         <div className="mb-4 flex items-center gap-2 text-sm font-medium text-muted-foreground">
           <Sparkles className="h-4 w-4 text-primary" aria-hidden />
-          Instant route planner — no account, no lead form
+          Instant route planner — city or ZIP, no account, no lead form
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-4">
-          <ZipField
+          <LocationPlaceInput
             id={fromId}
             label="Moving from"
-            placeholder="From ZIP"
-            value={fromZip}
-            onChange={setFromZip}
-            place={fromPlace}
-            loading={fromLoading}
+            placeholder="City or From ZIP"
+            value={fromText}
+            onChange={setFromText}
+            confirmed={fromPlace}
+            onConfirm={setFromPlace}
             autoFocus
           />
 
@@ -354,14 +245,14 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
             </div>
           </div>
 
-          <ZipField
+          <LocationPlaceInput
             id={toId}
             label="Moving to"
-            placeholder="To ZIP"
-            value={toZip}
-            onChange={setToZip}
-            place={toPlace}
-            loading={toLoading}
+            placeholder="City or To ZIP (optional)"
+            value={toText}
+            onChange={setToText}
+            confirmed={toPlace}
+            onConfirm={setToPlace}
           />
         </div>
 
@@ -380,8 +271,8 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
           </p>
         ) : (
           <p className="mt-3 text-sm text-muted-foreground">
-            Enter your pickup ZIP to unlock movers and estimates. Delivery ZIP is optional but
-            improves accuracy.
+            Type a city (e.g. Boca Raton) or ZIP. Confirm City, State when asked —
+            we route you to the correct county movers page. Delivery is optional.
           </p>
         )}
 
@@ -391,7 +282,6 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
           </p>
         ) : null}
 
-        {/* Primary CTAs */}
         <div
           className={cn(
             'mt-5 grid gap-3 transition-all duration-300 sm:grid-cols-2',
@@ -427,7 +317,6 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
           </Button>
         </div>
 
-        {/* Move size chips (shown after estimate CTA or when ready) */}
         {(showPresets || (ready && selectedPreset)) && (
           <div className="mt-5 rounded-2xl border bg-gradient-to-br from-primary/5 via-background to-background p-4">
             <p className="mb-3 text-sm font-semibold text-foreground">
@@ -472,7 +361,6 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
         )}
       </div>
 
-      {/* Top movers for pickup area */}
       {ready && movers.length > 0 ? (
         <div className="mt-8">
           <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
@@ -529,7 +417,6 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
         </div>
       ) : null}
 
-      {/* Guided next steps */}
       <div className="mt-10 grid gap-3 sm:grid-cols-3">
         {[
           {
@@ -542,62 +429,45 @@ export function HomeRouteFlow({ fallbackMovers = [] }: HomeRouteFlowProps) {
           {
             n: '2',
             title: 'Browse local movers in your county',
-            desc: route?.localAreaLabel
-              ? `Jump into ${route.localAreaLabel} guides with vetted listings.`
-              : 'ZIP unlocks the right state and county mover guide.',
+            desc: fromPlace?.countyName
+              ? `Jump into ${fromPlace.countyName} County guides with vetted listings.`
+              : route?.localAreaLabel
+                ? `Jump into ${route.localAreaLabel} guides with vetted listings.`
+                : 'City or ZIP unlocks the right state and county mover guide.',
             href: ready ? moversHref : '/local-movers',
             icon: MapPin,
           },
           {
             n: '3',
-            title: 'Compare & contact',
-            desc: 'Side-by-side reputation, licensing, and reviews — no lead fees.',
-            href: '/compare',
+            title: 'Compare verified profiles',
+            desc: 'FMCSA authority, ratings, and services — no lead-form paywall.',
+            href: directoryHref,
             icon: Truck,
           },
-        ].map((step) => {
-          const isCalculator =
-            step.href.startsWith('/moving-calculator') ||
-            step.href.includes('moving-calculator?');
-          const className =
-            'group relative overflow-hidden rounded-2xl border bg-gradient-to-br from-white to-muted/40 p-5 transition-all hover:border-primary/40 hover:shadow-md';
-          const body = (
-            <>
-              <div className="mb-3 flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground shadow-sm">
-                  {step.n}
-                </span>
-                <step.icon className="h-5 w-5 text-primary" aria-hidden />
-              </div>
-              <h3 className="font-semibold tracking-tight group-hover:text-primary">
-                {step.title}
-              </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                {step.desc}
-              </p>
-            </>
-          );
-          if (isCalculator) {
-            return (
-              <a
-                key={step.n}
-                href={step.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  goCalculator(step.href);
-                }}
-                className={className}
-              >
-                {body}
-              </a>
-            );
-          }
-          return (
-            <Link key={step.n} href={step.href} className={className}>
-              {body}
-            </Link>
-          );
-        })}
+        ].map((step) => (
+          <Link
+            key={step.n}
+            href={step.href}
+            onClick={(e) => {
+              if (step.href.startsWith('/moving-calculator')) {
+                e.preventDefault();
+                goCalculator(step.href);
+              }
+            }}
+            className="group rounded-2xl border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-sm"
+          >
+            <div className="mb-2 flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                {step.n}
+              </span>
+              <step.icon className="h-4 w-4 text-primary" aria-hidden />
+            </div>
+            <div className="font-semibold tracking-tight group-hover:text-primary">
+              {step.title}
+            </div>
+            <p className="mt-1 text-sm text-muted-foreground">{step.desc}</p>
+          </Link>
+        ))}
       </div>
     </div>
   );

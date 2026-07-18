@@ -11,6 +11,7 @@ import { localStates } from '@/lib/local-movers/states';
 import { getCountiesForState, stateHasCounties } from '@/lib/local-movers/geography/index';
 import { buildHubPageMetadata } from '@/lib/local-movers/index';
 import { getCountyPath } from '@/lib/local-movers/paths';
+import { LocalMoversPlaceSearch } from '@/components/local-movers/local-movers-place-search';
 
 export const dynamic = 'force-static';
 
@@ -80,6 +81,9 @@ export default function LocalMoversHubPage() {
           </p>
           <div className="mt-6">
             <PageHeroCta />
+          </div>
+          <div className="mt-6">
+            <LocalMoversPlaceSearch />
           </div>
           <TrustBadges variant="compact" className="mt-6" />
         </div>
