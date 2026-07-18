@@ -8,6 +8,7 @@ import { SaveInventoryButton } from '@/components/save-my-move/save-inventory-bu
 import { AnimatedNumber } from '@/components/moving-calculator/animated-number';
 import { MobileBottomSheet } from '@/components/moving-calculator/mobile-bottom-sheet';
 import { MoveSummaryBody, type MoveSummaryBodyProps } from '@/components/moving-calculator/move-summary-body';
+import { ReturnToPlanPrimaryButton } from '@/components/moving-calculator/return-to-plan-actions';
 import { estimateWeight, getMoveRecommendation } from '@/lib/moving-calculator/estimates';
 import { cn } from '@/lib/utils';
 
@@ -18,7 +19,7 @@ type MobileStickySummaryProps = MoveSummaryBodyProps;
  * Desktop/tablet uses the sidebar MoveBasketSummary instead.
  */
 export function MobileStickySummary(props: MobileStickySummaryProps) {
-  const { totalVolume, totalItems, inventory, mode, movePreset } = props;
+  const { totalVolume, totalItems, inventory, mode, movePreset, fromPlan } = props;
   const [sheetOpen, setSheetOpen] = useState(false);
   const [keyboardOffset, setKeyboardOffset] = useState(0);
 
@@ -81,19 +82,29 @@ export function MobileStickySummary(props: MobileStickySummaryProps) {
 
         {totalVolume > 0 && (
           <div className="flex gap-2 px-4 pb-3">
-            <SaveInventoryButton
-              inventory={inventory}
-              mode={mode}
-              movePreset={movePreset}
-              totalVolume={totalVolume}
-              variant="default"
-              size="lg"
-              label="Save for later"
-              className="flex-1 min-h-12 text-sm font-semibold"
-            />
-            <Button size="lg" variant="outline" className="min-h-12 px-4 shrink-0" asChild>
-              <Link href="/compare">Compare</Link>
-            </Button>
+            {fromPlan ? (
+              <ReturnToPlanPrimaryButton
+                size="lg"
+                className="min-h-12 flex-1 text-sm"
+                label="Return to My Move Plan"
+              />
+            ) : (
+              <>
+                <SaveInventoryButton
+                  inventory={inventory}
+                  mode={mode}
+                  movePreset={movePreset}
+                  totalVolume={totalVolume}
+                  variant="default"
+                  size="lg"
+                  label="Save for later"
+                  className="flex-1 min-h-12 text-sm font-semibold"
+                />
+                <Button size="lg" variant="outline" className="min-h-12 px-4 shrink-0" asChild>
+                  <Link href="/compare">Compare</Link>
+                </Button>
+              </>
+            )}
           </div>
         )}
       </div>
