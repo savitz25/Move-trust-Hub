@@ -45,11 +45,17 @@ import {
 import { cn } from '@/lib/utils';
 
 type Props = {
-  /** When true, only show a compact preview strip for the dashboard. */
+  /**
+   * Dashboard embedding mode:
+   * - full featured plan cards as the visual priority
+   * - not a thin strip
+   */
   compact?: boolean;
+  /** Optional: notify parent when plan count is known (for layout hierarchy). */
+  onPlanCount?: (count: number) => void;
 };
 
-export function MyMoveReports({ compact = false }: Props) {
+export function MyMoveReports({ compact = false, onPlanCount }: Props) {
   const router = useRouter();
   const { user, openSaveModal } = useSaveMyMove();
   const [plans, setPlans] = useState<MovePlanRecord[]>([]);
@@ -107,6 +113,11 @@ export function MyMoveReports({ compact = false }: Props) {
       showArchived ? plans : plans.filter((p) => !p.archived),
     [plans, showArchived]
   );
+
+  useEffect(() => {
+    if (!hydrated) return;
+    onPlanCount?.(visible.length);
+  }, [hydrated, visible.length, onPlanCount]);
 
   function openPlan(id: string, stepOverride?: 'report' | 'inventory' | 'shortlist') {
     const record = openPlanInSession(id);
@@ -210,45 +221,215 @@ export function MyMoveReports({ compact = false }: Props) {
   }
 
   if (compact) {
+    const featured = visible.slice(0, 3);
+    const hasPlans = featured.length > 0;
+
     return (
-      <Card className="overflow-hidden border-primary/15">
-        <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
-          <div className="flex gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-              <FileText className="h-5 w-5" aria-hidden />
+      <section
+        aria-labelledby="move-plans-heading"
+        className={cn(
+          'relative overflow-hidden rounded-3xl border shadow-md',
+          hasPlans
+            ? 'border-emerald-200/80 bg-gradient-to-br from-emerald-50/90 via-white to-sky-50/60 shadow-emerald-900/5'
+            : 'border-border/80 bg-card shadow-sm'
+        )}
+      >
+        {/* Header */}
+        <div className="relative flex flex-col gap-4 border-b border-black/5 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-6">
+          <div className="flex gap-3 sm:gap-4">
+            <span
+              className={cn(
+                'flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-white shadow-sm',
+                hasPlans ? 'bg-emerald-600 shadow-emerald-600/25' : 'bg-primary/90'
+              )}
+            >
+              <FileText className="h-6 w-6" aria-hidden />
             </span>
             <div>
-              <h2 className="font-semibold tracking-tight">Move Plans &amp; Reports</h2>
-              <p className="text-sm text-muted-foreground">
-                {visible.length === 0
-                  ? 'Plans you build on the homepage appear here.'
-                  : `${visible.length} plan${visible.length === 1 ? '' : 's'} on this device${
-                      user ? ' / account' : ''
-                    }`}
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-emerald-800/80">
+                Primary · your work
+              </p>
+              <h2
+                id="move-plans-heading"
+                className="text-xl font-semibold tracking-tight text-[#0A2540] sm:text-2xl"
+              >
+                Move Plans &amp; Reports
+              </h2>
+              <p className="mt-1 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                {hasPlans
+                  ? `${visible.length} plan${visible.length === 1 ? '' : 's'} ready — open any report to continue, email it to yourself, or refine inventory.`
+                  : 'Plans you build on the homepage appear here with route, inventory, and shortlist in one place.'}
               </p>
             </div>
           </div>
-          <Button asChild className="shrink-0">
-            <Link href="/my-move/reports">View all plans</Link>
-          </Button>
+          <div className="flex flex-wrap gap-2">
+            <Button asChild variant={hasPlans ? 'outline' : 'default'} size="sm">
+              <Link href="/#my-move-plan">Start a plan</Link>
+            </Button>
+            {hasPlans ? (
+              <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+                <Link href="/my-move/reports">View all plans</Link>
+              </Button>
+            ) : (
+              <Button asChild variant="outline" size="sm">
+                <Link href="/my-move/reports">Open reports</Link>
+              </Button>
+            )}
+          </div>
         </div>
-        {visible.slice(0, 2).map((p) => {
-          const stats = planStats(p.plan);
-          return (
-            <button
-              key={p.id}
-              type="button"
-              onClick={() => openPlan(p.id)}
-              className="flex w-full items-center justify-between gap-3 border-t px-4 py-3 text-left text-sm hover:bg-muted/40 sm:px-5"
+
+        {!hasPlans ? (
+          <div className="px-5 py-8 text-center sm:px-6 sm:py-10">
+            <p className="text-sm text-muted-foreground">
+              No plans yet. Lock a route, shortlist movers, and build inventory on the homepage —
+              your report becomes the centerpiece of Move HQ.
+            </p>
+            <Button asChild className="mt-4">
+              <Link href="/#my-move-plan">Open My Move Plan wizard</Link>
+            </Button>
+          </div>
+        ) : (
+          <ul className="divide-y divide-black/5">
+            {featured.map((record, idx) => {
+              const stats = planStats(record.plan);
+              const isPrimary = idx === 0;
+              return (
+                <li
+                  key={record.id}
+                  className={cn(
+                    'px-4 py-5 sm:px-6',
+                    isPrimary && 'bg-white/70 sm:bg-white/50'
+                  )}
+                >
+                  <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch lg:justify-between">
+                    <div className="min-w-0 flex-1 space-y-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {isPrimary ? (
+                          <Badge className="bg-emerald-600 hover:bg-emerald-600">Latest</Badge>
+                        ) : null}
+                        <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                          {record.name}
+                        </h3>
+                        <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold tabular-nums text-emerald-800">
+                          Readiness {record.readiness}/100
+                        </span>
+                      </div>
+
+                      <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+                        <MapPin className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
+                        <span className="font-medium text-foreground">
+                          {stats.routeFrom ?? 'Route TBD'}
+                        </span>
+                        {stats.routeTo ? (
+                          <>
+                            <span className="text-foreground/40">→</span>
+                            <span className="font-medium text-foreground">{stats.routeTo}</span>
+                          </>
+                        ) : null}
+                        {stats.drivingMiles ? (
+                          <span className="tabular-nums text-xs">
+                            · ~{stats.drivingMiles.toLocaleString()} mi
+                          </span>
+                        ) : null}
+                      </p>
+
+                      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                        <div className="rounded-xl border bg-white/80 px-3 py-2.5 shadow-sm">
+                          <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                            <Package className="h-3 w-3" /> Volume
+                          </div>
+                          <p className="mt-0.5 text-base font-semibold tabular-nums">
+                            {stats.totalVolume > 0
+                              ? `${stats.totalVolume.toLocaleString()} cu ft`
+                              : '—'}
+                          </p>
+                          <p className="text-[11px] text-muted-foreground">
+                            {stats.totalVolume > 0
+                              ? `~${stats.weight.toLocaleString()} lbs · ${stats.totalItems} items`
+                              : 'No inventory yet'}
+                          </p>
+                        </div>
+                        <div className="rounded-xl border bg-white/80 px-3 py-2.5 shadow-sm">
+                          <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                            <Truck className="h-3 w-3" /> Truck
+                          </div>
+                          <p className="mt-0.5 text-sm font-semibold leading-snug line-clamp-2">
+                            {stats.totalVolume > 0 ? stats.truckLabel : '—'}
+                          </p>
+                          <p className="text-[11px] text-muted-foreground">
+                            {stats.totalVolume > 0 ? stats.truckSize : 'Add inventory'}
+                          </p>
+                        </div>
+                        <div className="col-span-2 rounded-xl border bg-white/80 px-3 py-2.5 shadow-sm sm:col-span-2">
+                          <div className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                            <Users className="h-3 w-3" /> Shortlist
+                          </div>
+                          <p className="mt-0.5 text-sm font-semibold">
+                            {stats.shortlistCount}/3 movers
+                          </p>
+                          <p className="line-clamp-1 text-[11px] text-muted-foreground">
+                            {stats.shortlistNames.length
+                              ? stats.shortlistNames.join(' · ')
+                              : 'No movers shortlisted'}
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="text-[11px] text-muted-foreground">
+                        Updated{' '}
+                        {formatDistanceToNow(new Date(record.updatedAt), { addSuffix: true })}
+                        <span className="mx-1.5 text-border">·</span>
+                        Created{' '}
+                        {formatDistanceToNow(new Date(record.createdAt), { addSuffix: true })}
+                      </p>
+                    </div>
+
+                    <div className="flex shrink-0 flex-col gap-2 sm:flex-row sm:items-center lg:w-44 lg:flex-col lg:items-stretch">
+                      <Button
+                        type="button"
+                        className="w-full bg-emerald-600 hover:bg-emerald-700 lg:flex-none"
+                        onClick={() => openPlan(record.id)}
+                      >
+                        Open plan
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="w-full gap-1.5"
+                        onClick={() => openPlan(record.id, 'report')}
+                      >
+                        <Send className="h-3.5 w-3.5" />
+                        Send report
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        className="w-full gap-1.5 text-muted-foreground"
+                        onClick={() => openPlan(record.id, 'inventory')}
+                      >
+                        <Pencil className="h-3.5 w-3.5" />
+                        Edit
+                      </Button>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+
+        {hasPlans && visible.length > 3 ? (
+          <div className="border-t border-black/5 px-5 py-3 text-center sm:px-6">
+            <Link
+              href="/my-move/reports"
+              className="text-sm font-medium text-primary hover:underline"
             >
-              <span className="min-w-0 truncate font-medium">{p.name}</span>
-              <span className="shrink-0 text-xs text-muted-foreground tabular-nums">
-                {p.readiness}/100
-              </span>
-            </button>
-          );
-        })}
-      </Card>
+              View {visible.length - 3} more plan{visible.length - 3 === 1 ? '' : 's'} →
+            </Link>
+          </div>
+        ) : null}
+      </section>
     );
   }
 

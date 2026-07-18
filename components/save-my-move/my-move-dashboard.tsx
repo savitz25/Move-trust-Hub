@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { GitCompare, Heart, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
 import { MoveHqHero } from '@/components/save-my-move/move-hq/move-hq-hero';
 import { MoveHqQuickActions } from '@/components/save-my-move/move-hq/move-hq-quick-actions';
@@ -62,6 +63,8 @@ export function MyMoveDashboard({
   const [deleting, setDeleting] = useState(false);
   const [emailingId, setEmailingId] = useState<string | null>(null);
   const [selectedMovers, setSelectedMovers] = useState<string[]>([]);
+  const [planCount, setPlanCount] = useState(0);
+  const plansPrimary = planCount > 0;
 
   useEffect(() => {
     if (demo && user) {
@@ -108,25 +111,23 @@ export function MyMoveDashboard({
   if (!user) {
     return (
       <div className="space-y-6">
-        <div className="rounded-2xl border bg-card p-10 text-center shadow-sm">
-          <Package className="h-12 w-12 mx-auto text-primary/60 mb-4" aria-hidden="true" />
-          <h2 className="text-xl font-semibold">Your Move HQ awaits</h2>
-          <p className="text-muted-foreground mt-2 mb-6 max-w-md mx-auto">
-            Sign in to sync inventories, mover shortlists, and comparisons across devices.
+        <MyMoveReports compact onPlanCount={setPlanCount} />
+        <div className="rounded-2xl border border-dashed bg-muted/20 p-6 text-center sm:p-8">
+          <h2 className="text-lg font-semibold">Sync across devices</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+            Sign in to keep inventories, mover shortlists, and comparisons in the cloud — your plans
+            on this device already appear above.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <Button onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}>
-              Save My Move
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/my-move/reports">View move plans on this device</Link>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-4">
-            Magic link by default — or optional password after you save. Also Google and Facebook.
+          <Button
+            className="mt-4"
+            onClick={() => openSaveModal({ redirectPath: '/my-move', context: 'dashboard' })}
+          >
+            Save My Move
+          </Button>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Magic link by default — or optional password. Also Google and Facebook.
           </p>
         </div>
-        <MyMoveReports compact />
       </div>
     );
   }
@@ -349,21 +350,52 @@ export function MyMoveDashboard({
 
       <MoveHqQuickActions />
 
-      <MyMoveReports compact />
+      {/* Focal point: full move reports */}
+      <MyMoveReports compact onPlanCount={setPlanCount} />
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
-        <section className="lg:col-span-7 space-y-4" aria-labelledby="inventories-heading">
-          <h2 id="inventories-heading" className="text-lg font-semibold flex items-center gap-2">
-            <Package className="h-5 w-5 text-primary" aria-hidden="true" />
-            My Inventories
-          </h2>
+      {/* Secondary library — de-emphasized when plans exist */}
+      <div
+        className={cn(
+          'grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8',
+          plansPrimary && 'opacity-95'
+        )}
+      >
+        <section
+          className={cn(
+            'lg:col-span-7 space-y-4',
+            plansPrimary && data.inventories.length === 0 && 'order-2'
+          )}
+          aria-labelledby="inventories-heading"
+        >
+          <div className="flex items-center justify-between gap-2">
+            <h2
+              id="inventories-heading"
+              className={cn(
+                'font-semibold flex items-center gap-2',
+                plansPrimary ? 'text-base text-muted-foreground' : 'text-lg'
+              )}
+            >
+              <Package className="h-5 w-5 text-primary" aria-hidden="true" />
+              Saved inventories
+            </h2>
+            {plansPrimary ? (
+              <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+                Secondary
+              </span>
+            ) : null}
+          </div>
           {data.inventories.length === 0 ? (
             <MoveHqEmptyState
               icon={Package}
               title="No inventories yet"
-              description="Build a room-by-room list in the calculator — we'll auto-name it and track your volume."
+              description={
+                plansPrimary
+                  ? 'Optional — your full move plan already includes inventory. Use the calculator to save extra named lists.'
+                  : "Build a room-by-room list in the calculator — we'll auto-name it and track your volume."
+              }
               ctaLabel="Open calculator"
               ctaHref="/moving-calculator"
+              quiet={plansPrimary}
             />
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -393,17 +425,35 @@ export function MyMoveDashboard({
 
         <div className="lg:col-span-5 space-y-8">
           <section aria-labelledby="movers-heading" className="space-y-4">
-            <h2 id="movers-heading" className="text-lg font-semibold flex items-center gap-2">
-              <Heart className="h-5 w-5 text-primary" aria-hidden="true" />
-              Saved Movers
-            </h2>
+            <div className="flex items-center justify-between gap-2">
+              <h2
+                id="movers-heading"
+                className={cn(
+                  'font-semibold flex items-center gap-2',
+                  plansPrimary ? 'text-base text-muted-foreground' : 'text-lg'
+                )}
+              >
+                <Heart className="h-5 w-5 text-primary" aria-hidden="true" />
+                Saved movers
+              </h2>
+              {plansPrimary ? (
+                <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+                  Secondary
+                </span>
+              ) : null}
+            </div>
             {data.movers.length === 0 ? (
               <MoveHqEmptyState
                 icon={Heart}
                 title="No saved movers"
-                description="Shortlist FMCSA-licensed carriers from the directory — compare ratings side by side."
+                description={
+                  plansPrimary
+                    ? 'Optional — movers on your plans are already shortlisted. Save more from the directory anytime.'
+                    : 'Shortlist FMCSA-licensed carriers from the directory — compare ratings side by side.'
+                }
                 ctaLabel="Browse movers"
                 ctaHref="/companies"
+                quiet={plansPrimary}
               />
             ) : (
               <div className="space-y-3">
@@ -434,17 +484,35 @@ export function MyMoveDashboard({
           </section>
 
           <section aria-labelledby="comparisons-heading" className="space-y-4">
-            <h2 id="comparisons-heading" className="text-lg font-semibold flex items-center gap-2">
-              <GitCompare className="h-5 w-5 text-primary" aria-hidden="true" />
-              Saved Comparisons
-            </h2>
+            <div className="flex items-center justify-between gap-2">
+              <h2
+                id="comparisons-heading"
+                className={cn(
+                  'font-semibold flex items-center gap-2',
+                  plansPrimary ? 'text-base text-muted-foreground' : 'text-lg'
+                )}
+              >
+                <GitCompare className="h-5 w-5 text-primary" aria-hidden="true" />
+                Saved comparisons
+              </h2>
+              {plansPrimary ? (
+                <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+                  Secondary
+                </span>
+              ) : null}
+            </div>
             {data.comparisons.length === 0 ? (
               <MoveHqEmptyState
                 icon={GitCompare}
                 title="No comparisons saved"
-                description="Pick two or more movers and save a side-by-side view for price and rating deltas."
+                description={
+                  plansPrimary
+                    ? 'Optional — compare movers from your plan shortlist anytime.'
+                    : 'Pick two or more movers and save a side-by-side view for price and rating deltas.'
+                }
                 ctaLabel="Compare movers"
                 ctaHref="/compare"
+                quiet={plansPrimary}
               />
             ) : (
               <div className="space-y-3">
