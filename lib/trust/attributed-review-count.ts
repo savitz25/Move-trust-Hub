@@ -15,28 +15,44 @@ import {
 import type { Company } from '@/types';
 import type { GooglePlacesData } from '@/lib/verification/types';
 
+type SnippetLike = {
+  text?: string;
+  author?: string;
+  rating?: number;
+};
+
+function countSnippets(snippets: SnippetLike[] | null | undefined): number {
+  if (!Array.isArray(snippets)) return 0;
+  return snippets.filter((snippet) => {
+    const text = snippet.text?.trim() ?? '';
+    if (text.length < 8) return false;
+    return Boolean(snippet.author?.trim()) || text.length >= 40;
+  }).length;
+}
+
+function googleDataFromVerificationSources(
+  sources: unknown
+): GooglePlacesData | null {
+  if (!sources || typeof sources !== 'object') return null;
+  const google = (sources as Record<string, unknown>).google;
+  if (!google || typeof google !== 'object') return null;
+  return google as GooglePlacesData;
+}
+
 /**
  * Count named Google review snippets published on a company profile
  * (from Google Places enrichment — typically up to ~3 per company).
  */
 export function countGoogleAttributedSnippets(company: Company): number {
-  return countSnippetsInGoogleData(company.googleData);
-}
-
-function countSnippetsInGoogleData(data: GooglePlacesData | null | undefined): number {
-  if (!data || data.status !== 'ok') return 0;
-  return (data.review_snippets ?? []).filter((snippet) => {
-    const text = snippet.text?.trim() ?? '';
-    if (text.length < 8) return false;
-    // Prefer named reviewers; still count substantive snippets shown on the profile.
-    return Boolean(snippet.author?.trim()) || text.length >= 40;
-  }).length;
+  const direct = countSnippets(company.googleData?.review_snippets);
+  if (direct > 0) return direct;
+  // Production packs Google enrichment into verification_sources when legacy columns lag.
+  return 0;
 }
 
 /**
  * Per-company attributed count: prefer live Google snippets when present,
  * otherwise fall back to on-site curated seed reviews for that company.
- * Never sums both for the same company (avoids double-counting).
  */
 export function countAttributedReviewsForCompany(company: Company): number {
   const fromGoogle = countGoogleAttributedSnippets(company);
@@ -49,16 +65,12 @@ export function countAttributedReviewsAcrossCompanies(companies: Company[]): num
   return companies.reduce((sum, company) => sum + countAttributedReviewsForCompany(company), 0);
 }
 
-type GoogleDataRow = {
-  id: string;
-  google_data: GooglePlacesData | null;
-};
-
 /**
- * Lightweight Supabase projection — directory list queries omit google_data for payload size,
- * so site-wide badge counts must fetch snippets separately.
+ * Lightweight Supabase projection — directory list omits enrichment blobs for payload size.
+ * Production stores Google snippets under verification_sources.google.review_snippets
+ * (legacy google_data column may not exist yet).
  */
-async function fetchGoogleSnippetTotalUncached(): Promise<number> {
+async function fetchAttributedSnippetTotalUncached(): Promise<number> {
   if (!isSupabaseConfigured()) return 0;
 
   const url = getSupabaseUrl();
@@ -70,59 +82,65 @@ async function fetchGoogleSnippetTotalUncached(): Promise<number> {
   });
 
   let total = 0;
-  const pageSize = 1000;
+  const pageSize = 500;
 
-  for (let from = 0; ; from += pageSize) {
-    // Prefer verified listings; fall back to all rows if the filter is unsupported.
-    let query = supabase
-      .from('companies')
-      .select('id, google_data')
-      .range(from, from + pageSize - 1);
+  // Prefer verification_sources (present in production). Fall back to google_data if available.
+  for (const column of ['verification_sources', 'google_data'] as const) {
+    total = 0;
+    let ok = true;
 
-    const { data, error } = await query;
+    for (let from = 0; ; from += pageSize) {
+      const { data, error } = await supabase
+        .from('companies')
+        .select(`id, ${column}`)
+        .range(from, from + pageSize - 1);
 
-    if (error) {
-      // Column may be missing in lagging schemas — caller falls back to seed.
-      if (
-        error.code === '42703' ||
-        error.message?.toLowerCase().includes('google_data') ||
-        error.message?.toLowerCase().includes('does not exist')
-      ) {
-        return 0;
+      if (error) {
+        ok = false;
+        break;
       }
-      return 0;
+      if (!data?.length) break;
+
+      for (const row of data as Record<string, unknown>[]) {
+        if (column === 'verification_sources') {
+          const google = googleDataFromVerificationSources(row.verification_sources);
+          total += countSnippets(google?.review_snippets);
+        } else {
+          const google = row.google_data as GooglePlacesData | null;
+          total += countSnippets(google?.review_snippets);
+        }
+      }
+
+      if (data.length < pageSize) break;
     }
 
-    if (!data?.length) break;
-
-    for (const row of data as GoogleDataRow[]) {
-      total += countSnippetsInGoogleData(row.google_data);
+    if (ok && total > 0) return total;
+    if (ok && total === 0 && column === 'verification_sources') {
+      // Column exists but empty — try google_data next.
+      continue;
     }
-
-    if (data.length < pageSize) break;
+    if (!ok) continue;
   }
 
   return total;
 }
 
-const getCachedGoogleSnippetTotal = unstable_cache(
-  fetchGoogleSnippetTotalUncached,
-  ['attributed-google-snippets-total-v1'],
+const getCachedAttributedSnippetTotal = unstable_cache(
+  fetchAttributedSnippetTotalUncached,
+  ['attributed-review-snippets-total-v2-verification-sources'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
 /**
  * Live site-wide total for trust badges.
- * Uses Google review_snippets on companies (auto-updates when enrichment runs)
- * plus seed attributed reviews when DB has no snippets yet.
+ * Auto-updates when companies are published/enriched (directory cache tag + 5m revalidate).
  */
 export async function getLiveAttributedReviewCount(): Promise<number> {
   try {
-    const googleTotal = await getCachedGoogleSnippetTotal();
+    const liveTotal = await getCachedAttributedSnippetTotal();
     const seedTotal = countAttributableReviews();
-    // Prefer the larger honest source: production Google enrichment OR seed curated set.
-    // Do not sum both (would double-count seed companies that also have snippets).
-    if (googleTotal > 0) return Math.max(googleTotal, seedTotal);
+    // Prefer live enrichment when present; never sum both (avoids double-count).
+    if (liveTotal > 0) return liveTotal;
     return seedTotal;
   } catch {
     return countAttributableReviews();
