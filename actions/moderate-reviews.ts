@@ -11,11 +11,14 @@ import {
   type AdminReviewRow,
 } from '@/lib/reviews/queries';
 import { revalidatePathsForMovingCompany } from '@/lib/reviews/revalidate-paths';
+import { sendReviewApprovalEmail } from '@/lib/reviews/send-approval-email';
 import { logger } from '@/lib/logging/logger';
 
 export type ModerateReviewResult = {
   success: boolean;
   error?: string;
+  /** Present after approve — whether the confirmation email was sent */
+  approvalEmailSent?: boolean;
 };
 
 export async function getModerationQueue() {
@@ -60,6 +63,21 @@ export async function moderateReview(params: {
   const status = params.action === 'approve' ? 'approved' : 'rejected';
   const admin = createAdminClient();
 
+  // Load current row so we only email on transition → approved
+  const { data: existing, error: loadError } = await admin
+    .from('company_reviews')
+    .select(
+      'id, company_id, status, reviewer_name, reviewer_email, rating, title, content'
+    )
+    .eq('id', params.reviewId)
+    .maybeSingle();
+
+  if (loadError || !existing) {
+    return { success: false, error: loadError?.message ?? 'Review not found' };
+  }
+
+  const previousStatus = existing.status;
+
   const { data: review, error } = await admin
     .from('company_reviews')
     .update({
@@ -80,6 +98,7 @@ export async function moderateReview(params: {
   logger.info('review.moderated', {
     reviewId: params.reviewId,
     status,
+    previousStatus,
     companyId: review.company_id,
   });
 
@@ -87,5 +106,20 @@ export async function moderateReview(params: {
   await revalidatePathsForMovingCompany(review.company_id);
   revalidatePath('/admin/reviews');
 
-  return { success: true };
+  let approvalEmailSent = false;
+  if (params.action === 'approve') {
+    const emailResult = await sendReviewApprovalEmail({
+      reviewId: params.reviewId,
+      companyId: review.company_id,
+      reviewerEmail: existing.reviewer_email,
+      reviewerName: existing.reviewer_name,
+      rating: existing.rating,
+      title: existing.title,
+      content: existing.content,
+      previousStatus,
+    });
+    approvalEmailSent = emailResult.sent === true;
+  }
+
+  return { success: true, approvalEmailSent };
 }

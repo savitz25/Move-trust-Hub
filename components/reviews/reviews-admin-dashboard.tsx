@@ -114,7 +114,9 @@ export function ReviewsAdminDashboard({
       }
       toast.success(
         action === 'approve'
-          ? 'Review approved — company profiles revalidated'
+          ? res.approvalEmailSent
+            ? 'Review approved — confirmation email sent to reviewer'
+            : 'Review approved — company profiles revalidated'
           : 'Review denied'
       );
       load({ page: 1 });
