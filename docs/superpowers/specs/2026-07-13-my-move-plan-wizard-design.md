@@ -49,6 +49,12 @@ After the report (or first Save My Move sign-in), customers may create an option
 - **Email** on the report shortlist requires My Move sign-in (modal if signed out), then opens a prefilled estimate-request draft. Pending outreach is stashed across auth.
 - Profile links use `?from=/#my-move-plan` so company **Back to My Move Plan** returns to the homepage wizard; plan state lives in `sessionStorage` (`mth-my-move-plan-v1`).
 
+## Homepage hero + calculator bridge
+
+- Homepage H1/body update by phase (Plan / Build / Book) via `HomeWizardSection` + `onStepChange`.
+- Plan & Build (and Book when inventory exists) steppers are clickable.
+- Full calculator opens with `?fromPlan=1`, seeds inventory from the plan, shows **Return to My Move Report**, and writes inventory back to plan session storage.
+
 ## Out of v1
 
 - PDF email send, public inventory URL, Apple login, full room-by-room wizard UI

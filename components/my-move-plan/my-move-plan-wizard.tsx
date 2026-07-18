@@ -62,7 +62,12 @@ import type {
   MyMovePlanStep,
   PlanInventoryItem,
 } from '@/lib/my-move-plan/types';
+import {
+  CALCULATOR_FROM_PLAN_HREF,
+  seedCalculatorFromPlan,
+} from '@/lib/my-move-plan/calculator-bridge';
 import { ReportReadyStep } from '@/components/my-move-plan/report-ready-step';
+import { useCalculatorStore } from '@/store/calculator-store';
 import { cn } from '@/lib/utils';
 
 type RouteResponse = HomeRouteResult & {
@@ -107,9 +112,11 @@ const PHASE_SHELL: Record<
 
 type WizardProps = {
   fallbackMovers?: HomeRouteMover[];
+  /** Notify parent (homepage hero) when the wizard step changes. */
+  onStepChange?: (step: MyMovePlanStep) => void;
 };
 
-export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
+export function MyMovePlanWizard({ fallbackMovers = [], onStepChange }: WizardProps) {
   const fromId = useId();
   const toId = useId();
   const saveMyMove = useSaveMyMove();
@@ -131,33 +138,60 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
   const routeAbort = useRef<AbortController | null>(null);
   const outreachHandledRef = useRef(false);
 
-  // Resume session + scroll back to wizard after profile navigation
-  useEffect(() => {
-    const saved = loadMyMovePlan();
-    if (saved?.fromPlace) {
+  const applySavedPlan = useCallback((saved: ReturnType<typeof loadMyMovePlan>) => {
+    if (!saved) return;
+    if (saved.fromPlace) {
       setFromPlace(saved.fromPlace);
       setFromText(saved.fromPlace.label);
-      if (saved.toPlace) {
-        setToPlace(saved.toPlace);
-        setToText(saved.toPlace.label);
-      }
-      setDrivingMiles(saved.drivingMiles);
-      setShortlist(saved.shortlist);
-      setPreset(saved.preset);
-      setInventory(saved.inventory);
-      if (saved.step && saved.step !== 'route') setStep(saved.step);
     }
+    if (saved.toPlace) {
+      setToPlace(saved.toPlace);
+      setToText(saved.toPlace.label);
+    } else if (saved.fromPlace) {
+      setToPlace(null);
+      setToText('');
+    }
+    if (saved.drivingMiles != null) setDrivingMiles(saved.drivingMiles);
+    if (Array.isArray(saved.shortlist)) setShortlist(saved.shortlist);
+    if (saved.preset !== undefined) setPreset(saved.preset);
+    if (Array.isArray(saved.inventory)) setInventory(saved.inventory);
+    if (saved.step) setStep(saved.step);
+  }, []);
+
+  // Resume session + scroll back after profile / calculator navigation
+  useEffect(() => {
+    const saved = loadMyMovePlan();
+    applySavedPlan(saved);
     setHydrated(true);
 
     if (typeof window !== 'undefined' && window.location.hash === `#${MY_MOVE_PLAN_SECTION_ID}`) {
-      // Wait a frame so restored step content is in the DOM
       window.requestAnimationFrame(() => {
         document
           .getElementById(MY_MOVE_PLAN_SECTION_ID)
           ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     }
-  }, []);
+  }, [applySavedPlan]);
+
+  // Re-apply plan when returning from the full calculator (SPA or bfcache)
+  useEffect(() => {
+    const rehydrate = () => {
+      const saved = loadMyMovePlan();
+      if (!saved?.inventory?.length && !saved?.step) return;
+      applySavedPlan(saved);
+      if (window.location.hash === `#${MY_MOVE_PLAN_SECTION_ID}`) {
+        document
+          .getElementById(MY_MOVE_PLAN_SECTION_ID)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    window.addEventListener('pageshow', rehydrate);
+    window.addEventListener('focus', rehydrate);
+    return () => {
+      window.removeEventListener('pageshow', rehydrate);
+      window.removeEventListener('focus', rehydrate);
+    };
+  }, [applySavedPlan]);
 
   const planSnapshot: MyMovePlanState = useMemo(
     () => ({
@@ -178,6 +212,10 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
     if (!fromPlace && step === 'route') return;
     saveMyMovePlan(planSnapshot);
   }, [planSnapshot, hydrated, fromPlace, step]);
+
+  useEffect(() => {
+    onStepChange?.(step);
+  }, [step, onStepChange]);
 
   useEffect(() => {
     const fromZip = fromPlace?.zip;
@@ -277,6 +315,39 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
     setStep('report');
   };
 
+  /** Clickable Plan / Build (and Book when inventory is ready). */
+  const goToPhase = (phaseId: 'plan' | 'build' | 'book') => {
+    if (phaseId === 'plan') {
+      setStep('route');
+      return;
+    }
+    if (phaseId === 'build') {
+      if (!fromPlace) {
+        toast.message('Lock your route first', {
+          description: 'Confirm where you are moving from to build your shortlist.',
+        });
+        setStep('route');
+        return;
+      }
+      // Prefer inventory if already started; otherwise shortlist
+      if (inventory.length > 0 || preset) {
+        setStep('inventory');
+      } else {
+        setStep('shortlist');
+      }
+      return;
+    }
+    // book
+    if (totals.totalVolume <= 0) {
+      toast.message('Build your inventory first', {
+        description: 'Pick a home size so movers quote the same load.',
+      });
+      if (fromPlace) setStep(inventory.length || preset ? 'inventory' : 'shortlist');
+      return;
+    }
+    setStep('report');
+  };
+
   const copyPlan = async () => {
     const text = buildFullPlanClipboard({
       from: fromPlace,
@@ -297,6 +368,13 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
 
   const persistPlan = useCallback(() => {
     saveMyMovePlan(planSnapshot);
+  }, [planSnapshot]);
+
+  const openFullCalculator = useCallback(() => {
+    saveMyMovePlan(planSnapshot);
+    const loadFromShare = useCalculatorStore.getState().loadFromShare;
+    seedCalculatorFromPlan({ loadFromShare });
+    window.location.href = CALCULATOR_FROM_PLAN_HREF;
   }, [planSnapshot]);
 
   const profileHref = useCallback((slug: string) => {
@@ -607,16 +685,27 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                 (phase.id === 'plan' && step !== 'route') ||
                 (phase.id === 'build' && step === 'report') ||
                 (phase.id === 'book' && step === 'report');
+              const clickable =
+                phase.id === 'plan' ||
+                phase.id === 'build' ||
+                (phase.id === 'book' && totals.totalVolume > 0);
               return (
                 <div key={phase.id} className="flex flex-1 items-center gap-1 sm:gap-2" role="listitem">
-                  <div
+                  <button
+                    type="button"
+                    disabled={!clickable && !active}
+                    onClick={() => goToPhase(phase.id)}
+                    aria-current={active ? 'step' : undefined}
                     className={cn(
-                      'flex min-h-9 flex-1 flex-col items-center justify-center rounded-2xl px-1 py-1.5 text-center text-xs font-semibold transition-colors sm:min-h-11 sm:text-sm',
+                      'flex min-h-9 w-full flex-1 flex-col items-center justify-center rounded-2xl px-1 py-1.5 text-center text-xs font-semibold transition-colors sm:min-h-11 sm:text-sm',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40',
+                      clickable && !active && 'cursor-pointer hover:opacity-90',
                       active && activePhase === 'plan' && 'bg-sky-600 text-white shadow-sm',
                       active && activePhase === 'build' && 'bg-violet-600 text-white shadow-sm',
                       active && activePhase === 'book' && 'bg-emerald-600 text-white shadow-sm',
                       done && !active && 'bg-foreground/10 text-foreground',
-                      !active && !done && 'bg-muted/80 text-muted-foreground'
+                      !active && !done && 'bg-muted/80 text-muted-foreground',
+                      !clickable && !active && 'cursor-default opacity-70'
                     )}
                   >
                     <span className="inline-flex items-center gap-1">
@@ -631,7 +720,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                     >
                       {phase.hint}
                     </span>
-                  </div>
+                  </button>
                   {idx < PHASES.length - 1 ? (
                     <div className="hidden h-px w-3 bg-border sm:block" aria-hidden />
                   ) : null}
@@ -766,11 +855,17 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
               </Badge>
             </div>
 
-            <div className="rounded-2xl border border-violet-200/70 bg-violet-50/90 px-4 py-3 text-sm leading-relaxed text-foreground">
-              <strong className="font-semibold text-violet-900">Why 3?</strong>{' '}
-              Getting three estimates on the <em>same</em> inventory is the only way to compare
-              fairly — no sales pitch, no lead broker middleman. We help you send identical
-              details to each mover.
+            <div className="space-y-2 rounded-2xl border border-violet-200/70 bg-violet-50/90 px-4 py-3 text-sm leading-relaxed text-foreground">
+              <p>
+                <strong className="font-semibold text-violet-900">Why shortlist three movers?</strong>{' '}
+                Three estimates on the <em>same</em> inventory is how you compare fairly — not
+                vague phone quotes on different load sizes.
+              </p>
+              <p className="text-violet-950/80">
+                <strong className="font-semibold text-violet-900">Shared inventory next.</strong>{' '}
+                After you pick movers, you&apos;ll document one load profile. Every shortlisted
+                carrier gets that same brief — no lead resellers, no paid ranking.
+              </p>
             </div>
 
             <p className="text-xs text-muted-foreground">
@@ -903,11 +998,12 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
                 Step 2 · Build · Inventory
               </div>
               <h2 className="text-xl font-semibold tracking-tight text-[#0A2540] sm:text-2xl">
-                How big is your move?
+                Document one shared load for all three movers
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Tap a home size template — we pre-load typical items. Adjust quantities; volume,
-                weight, and truck size update live.
+                Tap a home size to pre-load typical items, then refine quantities. This inventory
+                becomes the quote brief every shortlisted mover receives — so estimates stay
+                comparable.
               </p>
             </div>
 
@@ -1027,15 +1123,21 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
               </div>
             ) : null}
 
-            <p className="text-xs text-muted-foreground">
-              Want room-by-room detail?{' '}
-              <Link
-                href="/moving-calculator"
-                className="font-medium text-primary hover:underline"
+            <div className="rounded-xl border border-violet-200/60 bg-white/70 px-3 py-3 sm:flex sm:items-center sm:justify-between sm:gap-3">
+              <p className="text-sm text-muted-foreground">
+                Need room-by-room detail? Open the full calculator — then return to your report
+                with the updated inventory.
+              </p>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="mt-2 w-full shrink-0 border-violet-300 sm:mt-0 sm:w-auto"
+                onClick={openFullCalculator}
               >
                 Open full calculator
-              </Link>
-            </p>
+              </Button>
+            </div>
 
             <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
               <Button
@@ -1087,6 +1189,7 @@ export function MyMovePlanWizard({ fallbackMovers = [] }: WizardProps) {
             onEditShortlist={() => setStep('shortlist')}
             onRemoveMover={removeMover}
             onPersistPlan={persistPlan}
+            onOpenFullCalculator={openFullCalculator}
           />
         ) : null}
       </div>

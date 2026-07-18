@@ -56,6 +56,7 @@ type Props = {
   onEditShortlist: () => void;
   onRemoveMover: (slug: string) => void;
   onPersistPlan: () => void;
+  onOpenFullCalculator?: () => void;
 };
 
 export function ReportReadyStep({
@@ -83,6 +84,7 @@ export function ReportReadyStep({
   onEditShortlist,
   onRemoveMover,
   onPersistPlan,
+  onOpenFullCalculator,
 }: Props) {
   const [inventoryOpen, setInventoryOpen] = useState(false);
   const [menuOpenSlug, setMenuOpenSlug] = useState<string | null>(null);
@@ -481,12 +483,15 @@ export function ReportReadyStep({
             </Link>
           ) : null}
         </div>
-        <Link
-          href="/moving-calculator"
-          className="text-xs text-muted-foreground hover:text-primary hover:underline"
-        >
-          Refine in full calculator →
-        </Link>
+        {onOpenFullCalculator ? (
+          <button
+            type="button"
+            onClick={onOpenFullCalculator}
+            className="text-left text-xs text-muted-foreground hover:text-primary hover:underline"
+          >
+            Refine inventory in full calculator →
+          </button>
+        ) : null}
       </footer>
     </div>
   );

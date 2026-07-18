@@ -1,11 +1,10 @@
 import type { ReactNode } from 'react';
 import { TrustToolsBar } from '@/components/seo/trust-tools-bar';
 import { HomeBelowFold } from '@/components/home/home-below-fold';
-import { HomeRouteFlow } from '@/components/home/home-route-flow';
+import { HomeWizardSection } from '@/components/home/home-wizard-section';
 import { prepareCompaniesForDirectoryClient } from '@/lib/directory/directory-client-payload';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { toHomeRouteMover } from '@/lib/home/resolve-route-from-zip';
-import { Zap } from 'lucide-react';
 
 async function getFallbackMovers() {
   try {
@@ -50,25 +49,7 @@ export async function HomePage({ mapSection }: { mapSection?: ReactNode }) {
         />
 
         <div className="container relative mx-auto px-4 py-10 sm:py-14 md:py-16 lg:py-20">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-balance text-3xl font-semibold leading-[1.1] tracking-tighter text-[#0A2540] sm:text-4xl md:text-5xl lg:text-[3.35rem]">
-              Where are you moving from and to?
-            </h1>
-
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Start one free Move Plan: lock your route, shortlist up to three trusted movers,
-              build an inventory, and get a report you can send for comparable estimates.
-            </p>
-
-            <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-              <Zap className="h-3.5 w-3.5" aria-hidden />
-              City or ZIP · trusted movers · free tools
-            </div>
-          </div>
-
-          <div className="mx-auto mt-8 max-w-4xl sm:mt-10">
-            <HomeRouteFlow fallbackMovers={fallbackMovers} />
-          </div>
+          <HomeWizardSection fallbackMovers={fallbackMovers} />
         </div>
       </section>
 

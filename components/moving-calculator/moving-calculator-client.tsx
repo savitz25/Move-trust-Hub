@@ -24,6 +24,12 @@ import {
 } from '@/lib/moving-calculator/share-url';
 import { readCalculatorPrefill } from '@/lib/moving-calculator/url-prefill';
 import {
+  isCalculatorFromPlan,
+  pushCalculatorInventoryIntoPlan,
+  seedCalculatorFromPlan,
+} from '@/lib/my-move-plan/calculator-bridge';
+import { ReturnToPlanBanner } from '@/components/moving-calculator/return-to-plan-banner';
+import {
   trackCalculatorStart,
   trackCalculatorComplete,
 } from '@/components/ga-events';
@@ -56,11 +62,13 @@ export function MovingCalculatorClient() {
   const savedLoadDone = useRef(false);
   const shareLoaded = useRef(false);
   const presetFromUrlLoaded = useRef(false);
+  const planSeeded = useRef(false);
 
   const prefill = useMemo(
     () => readCalculatorPrefill(searchParams),
     [searchParams]
   );
+  const fromPlan = useMemo(() => isCalculatorFromPlan(searchParams), [searchParams]);
   const { fromZip, toZip, fromCity, toCity, preset: urlPreset } = prefill;
 
   const totalVolume = useMemo(
@@ -191,12 +199,44 @@ export function MovingCalculatorClient() {
     }
   }, [storeReady, searchParams, loadFromShare, markCalculatorStarted]);
 
+  // My Move Plan → calculator: ensure plan inventory is in the store
+  useEffect(() => {
+    if (!storeReady || !fromPlan || planSeeded.current) return;
+    planSeeded.current = true;
+    const seeded = seedCalculatorFromPlan({ loadFromShare });
+    if (seeded) {
+      markCalculatorStarted('my_move_plan');
+      try {
+        toast.success('Inventory loaded from your Move Plan', {
+          description: 'Edit freely, then return to your report when ready.',
+        });
+      } catch {
+        // ignore
+      }
+    }
+  }, [storeReady, fromPlan, loadFromShare, markCalculatorStarted]);
+
+  // Keep Move Plan session inventory in sync while refining from the calculator
+  useEffect(() => {
+    if (!storeReady || !fromPlan) return;
+    if (inventory.length === 0) return;
+    const t = window.setTimeout(() => {
+      pushCalculatorInventoryIntoPlan({
+        inventory,
+        movePreset,
+        step: 'report',
+      });
+    }, 600);
+    return () => window.clearTimeout(t);
+  }, [storeReady, fromPlan, inventory, movePreset]);
+
   // Homepage route flow: ?preset=… pre-selects move size
   useEffect(() => {
     if (!storeReady) return;
     if (savedLoadDone.current || shareLoaded.current || presetFromUrlLoaded.current) {
       return;
     }
+    if (fromPlan) return; // plan inventory takes priority over generic preset
     if (!urlPreset) return;
 
     presetFromUrlLoaded.current = true;
@@ -247,6 +287,7 @@ export function MovingCalculatorClient() {
 
   return (
     <div className="w-full">
+      {fromPlan ? <ReturnToPlanBanner /> : null}
       <div className="mb-6 max-md:mb-4">
         <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary w-fit">
           <Calculator className="h-3.5 w-3.5" />
